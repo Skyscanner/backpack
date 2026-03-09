@@ -21,14 +21,6 @@ import { axe } from 'jest-axe';
 
 import { BpkCheckboxCardSimple } from '../../index';
 
-// Known architectural issue: BpkCheckboxCard.Control renders a hidden <input> inside
-// <div role="checkbox">, which triggers axe's nested-interactive rule. This is a
-// pre-existing V2 design constraint (the hidden input is needed for form submission).
-// All other axe rules are checked in full.
-const AXE_OPTIONS = {
-  rules: { 'nested-interactive': { enabled: false } },
-};
-
 describe('BpkCheckboxCard accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
@@ -39,7 +31,7 @@ describe('BpkCheckboxCard accessibility tests', () => {
         price="£100"
       />,
     );
-    const results = await axe(container, AXE_OPTIONS);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
@@ -52,7 +44,7 @@ describe('BpkCheckboxCard accessibility tests', () => {
         price="£100"
       />,
     );
-    const results = await axe(container, AXE_OPTIONS);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
@@ -65,7 +57,7 @@ describe('BpkCheckboxCard accessibility tests', () => {
         disabled
       />,
     );
-    const results = await axe(container, AXE_OPTIONS);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
@@ -79,7 +71,7 @@ describe('BpkCheckboxCard accessibility tests', () => {
         price="£85"
       />,
     );
-    const results = await axe(container, AXE_OPTIONS);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
@@ -92,7 +84,7 @@ describe('BpkCheckboxCard accessibility tests', () => {
         price="£100"
       />,
     );
-    const results = await axe(container, AXE_OPTIONS);
+    const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 });

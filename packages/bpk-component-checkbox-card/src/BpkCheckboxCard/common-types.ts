@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import type { ChangeEvent } from 'react';
 
 /**
  * Variant types for visual presentation based on canvas/surface background
@@ -62,7 +61,4 @@ export type CheckboxCardSize =
 /**
  * Change handler signature for checkbox card
  */
-export type CheckboxCardChangeHandler = (
-  checked: boolean,
-  event: ChangeEvent<HTMLInputElement>,
-) => void;
+export type CheckboxCardChangeHandler = (checked: boolean) => void;

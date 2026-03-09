@@ -21,9 +21,11 @@ import userEvent from '@testing-library/user-event';
 
 import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from './index';
 
+import type { RootProps } from './BpkCheckboxCardRoot';
+
 describe('BpkCheckboxCard (compound component)', () => {
   // Helper to render a minimal card
-  const renderCard = (props: Record<string, any> = {}) =>
+  const renderCard = (props: Partial<RootProps> = {}) =>
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}} {...props}>
         <BpkCheckboxCard.Control />
@@ -206,7 +208,22 @@ describe('BpkCheckboxCard (compound component)', () => {
     expect(card).toHaveAttribute('aria-checked', 'true');
   });
 
-  it('should pass name and value to hidden input', () => {
+  it('should pass name and value to hidden input when checked', () => {
+    render(
+      <BpkCheckboxCard.Root checked onCheckedChange={() => {}} name="hotel-option" value="city-centre">
+        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Label>Form test</BpkCheckboxCard.Label>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>,
+    );
+
+    const input = document.querySelector('input[type="hidden"]') as HTMLInputElement;
+    expect(input.name).toBe('hotel-option');
+    expect(input.value).toBe('city-centre');
+  });
+
+  it('should not render hidden input when unchecked', () => {
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}} name="hotel-option" value="city-centre">
         <BpkCheckboxCard.Control />
@@ -216,9 +233,7 @@ describe('BpkCheckboxCard (compound component)', () => {
       </BpkCheckboxCard.Root>,
     );
 
-    const input = document.querySelector('input[type="checkbox"]') as HTMLInputElement;
-    expect(input.name).toBe('hotel-option');
-    expect(input.value).toBe('city-centre');
+    expect(document.querySelector('input')).toBeNull();
   });
 
   it('should render with extremely long label text', () => {

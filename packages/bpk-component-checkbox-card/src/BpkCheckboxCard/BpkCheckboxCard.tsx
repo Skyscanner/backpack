@@ -33,28 +33,23 @@ const getClassName = cssModules(STYLES);
 // ─── Control ─────────────────────────────────────────────────────────────────
 
 /**
- * BpkCheckboxCard.Control - Hidden checkbox input for form submission
+ * BpkCheckboxCard.Control - Hidden input for form submission
  *
- * Renders a hidden checkbox input that maintains form state.
+ * Renders a hidden input that carries the form value when checked.
+ * Only rendered when the card is checked, not disabled, and has a name.
  * Accessibility (role, aria-checked, keyboard) is handled by the Root div.
- * The input is aria-hidden so screen readers interact with the Root instead.
  */
 
 function Control() {
-  const { checked, disabled, name, required, value } = useCheckboxCardContext();
+  const { checked, disabled, name, value } = useCheckboxCardContext();
+
+  if (!checked || disabled || !name) return null;
 
   return (
     <input
-      type="checkbox"
-      className={getClassName('bpk-checkbox-card-control')}
-      checked={checked}
-      disabled={disabled}
-      required={required}
+      type="hidden"
       name={name}
-      value={value}
-      aria-hidden
-      tabIndex={-1}
-      onChange={() => {}}
+      value={value ?? 'on'}
     />
   );
 }

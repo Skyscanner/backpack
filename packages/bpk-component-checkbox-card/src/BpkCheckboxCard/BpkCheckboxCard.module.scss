@@ -27,10 +27,10 @@
   min-width: calc(tokens.$bpk-one-pixel-rem * 44); // Minimum touch target
   min-height: calc(tokens.$bpk-one-pixel-rem * 44);
   transition:
-    background-color,
-    border-color,
+    background-color tokens.$bpk-duration-sm ease-in-out,
+    border-color tokens.$bpk-duration-sm ease-in-out,
     color tokens.$bpk-duration-sm ease-in-out;
-  border: calc(tokens.$bpk-one-pixel-rem * 1) solid
+  border: tokens.$bpk-border-size-sm solid
     var(--bpk-checkbox-card-border-default, #{tokens.$bpk-line-day});
 
   // CSS Variables for theming (with Backpack token fallbacks)
@@ -115,20 +115,6 @@
   }
 }
 
-// Control - hidden checkbox input
-.bpk-checkbox-card-control {
-  position: absolute;
-  width: tokens.$bpk-one-pixel-rem;
-  height: tokens.$bpk-one-pixel-rem;
-  margin: calc(tokens.$bpk-one-pixel-rem * -1);
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
-  opacity: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
 // Content container
 .bpk-checkbox-card-content {
   width: 100%;
@@ -208,7 +194,7 @@
   height: calc(tokens.$bpk-one-pixel-rem * 20);
   justify-content: center;
   align-items: center;
-  border: calc(tokens.$bpk-one-pixel-rem * 2) solid
+  border: tokens.$bpk-border-size-lg solid
     var(--bpk-checkbox-card-indicator-color, #{tokens.$bpk-core-accent-day});
   border-radius: 50%;
   background-color: var(
@@ -231,17 +217,11 @@
       );
     border: solid
       var(--bpk-checkbox-card-indicator-fg, #{tokens.$bpk-color-white});
-    border-width: 0 calc(tokens.$bpk-one-pixel-rem * 2)
-      calc(tokens.$bpk-one-pixel-rem * 2) 0;
+    border-width: 0 tokens.$bpk-border-size-lg tokens.$bpk-border-size-lg 0;
   }
 
   // Checked state — show the indicator
   .bpk-checkbox-card-root--checked & {
     display: flex;
-  }
-
-  // Disabled state
-  .bpk-checkbox-card-root--disabled & {
-    opacity: 0.5;
   }
 }

@@ -6,18 +6,10 @@ exports[`BpkCheckboxCard (compound component) should render correctly when check
     aria-checked="true"
     aria-describedby=":r4:"
     aria-labelledby=":r3:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md bpk-checkbox-card-root--checked"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--checked"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      checked=""
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -45,18 +37,10 @@ exports[`BpkCheckboxCard (compound component) should render correctly when disab
     aria-describedby=":r7:"
     aria-disabled="true"
     aria-labelledby=":r6:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md bpk-checkbox-card-root--disabled"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--disabled"
     role="checkbox"
     tabindex="-1"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      disabled=""
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -83,17 +67,10 @@ exports[`BpkCheckboxCard (compound component) should render correctly with all c
     aria-checked="false"
     aria-describedby=":ra:"
     aria-labelledby=":r9:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -132,17 +109,10 @@ exports[`BpkCheckboxCard (compound component) should render correctly with minim
     aria-checked="false"
     aria-describedby=":r1:"
     aria-labelledby=":r0:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -170,19 +140,10 @@ exports[`BpkCheckboxCard (compound component) should render disabled and checked
     aria-describedby=":rp:"
     aria-disabled="true"
     aria-labelledby=":ro:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md bpk-checkbox-card-root--checked bpk-checkbox-card-root--disabled"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--checked bpk-checkbox-card-root--disabled"
     role="checkbox"
     tabindex="-1"
   >
-    <input
-      aria-hidden="true"
-      checked=""
-      class="bpk-checkbox-card-control"
-      disabled=""
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -209,17 +170,10 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasContrast var
     aria-checked="false"
     aria-describedby=":rg:"
     aria-labelledby=":rf:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-contrast bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-contrast bpk-checkbox-card-root--radius-rounded"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -246,17 +200,10 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasDefault vari
     aria-checked="false"
     aria-describedby=":rd:"
     aria-labelledby=":rc:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -283,17 +230,10 @@ exports[`BpkCheckboxCard (compound component) should render onSurfaceContrast va
     aria-checked="false"
     aria-describedby=":rj:"
     aria-labelledby=":ri:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-surface-contrast bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-surface-contrast bpk-checkbox-card-root--radius-rounded"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -320,17 +260,10 @@ exports[`BpkCheckboxCard (compound component) should render square radius correc
     aria-checked="false"
     aria-describedby=":rm:"
     aria-labelledby=":rl:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-square bpk-checkbox-card-root--size-md"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-square"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -355,19 +288,12 @@ exports[`BpkCheckboxCard (compound component) should render with extremely long 
 <DocumentFragment>
   <div
     aria-checked="false"
-    aria-describedby=":r1n:"
-    aria-labelledby=":r1m:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--size-md"
+    aria-describedby=":r1q:"
+    aria-labelledby=":r1p:"
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
     role="checkbox"
     tabindex="0"
   >
-    <input
-      aria-hidden="true"
-      class="bpk-checkbox-card-control"
-      tabindex="-1"
-      type="checkbox"
-      value=""
-    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -378,7 +304,7 @@ exports[`BpkCheckboxCard (compound component) should render with extremely long 
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":r1m:"
+          id=":r1p:"
         >
           This is an extremely long label that will definitely exceed the maximum line count and should be truncated
         </span>

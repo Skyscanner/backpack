@@ -95,16 +95,14 @@ export type RootProps = {
   size?: CheckboxCardSize;
 
   /**
-   * Custom width for the card
-   * Accepts CSS values (e.g., "200px", "100%", "auto") or numeric pixel values
+   * Custom width for the card. Accepts CSS values (e.g., "10rem", "100%", "auto").
    */
-  width?: string | number;
+  width?: string;
 
   /**
-   * Custom height for the card
-   * Accepts CSS values (e.g., "150px", "auto") or numeric pixel values
+   * Custom height for the card. Accepts CSS values (e.g., "9.375rem", "auto").
    */
-  height?: string | number;
+  height?: string;
 
   /**
    * ARIA label for accessibility
@@ -144,7 +142,6 @@ export type RootProps = {
  *     <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
  *   </BpkCheckboxCard.Content>
  * </BpkCheckboxCard.Root>
- *
  * @returns {JSX.Element} Rendered checkbox card root container with context.
  */
 export function Root({
@@ -193,7 +190,6 @@ export function Root({
     'bpk-checkbox-card-root',
     `bpk-checkbox-card-root--${variant}`,
     `bpk-checkbox-card-root--radius-${radius}`,
-    `bpk-checkbox-card-root--size-${size}`,
     checked && 'bpk-checkbox-card-root--checked',
     disabled && 'bpk-checkbox-card-root--disabled'
   );
@@ -202,10 +198,10 @@ export function Root({
   const customStyles: CSSProperties = useMemo(() => {
     const styles: CSSProperties = {};
     if (width !== undefined) {
-      styles.width = typeof width === 'number' ? `${width}px` : width;
+      styles.width = width;
     }
     if (height !== undefined) {
-      styles.height = typeof height === 'number' ? `${height}px` : height;
+      styles.height = height;
     }
     return styles;
   }, [width, height]);

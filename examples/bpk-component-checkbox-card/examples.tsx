@@ -18,7 +18,7 @@
 
 import { useState } from 'react';
 
-import { statusSuccessSpotDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { BpkCheckboxCard, BpkCheckboxCardSimple, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES, createCheckboxCardTheme } from '../../packages/bpk-component-checkbox-card';
 import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
@@ -42,13 +42,13 @@ export const BasicExample = () => {
   const [selected2, setSelected2] = useState(true);
 
   return (
-    <div style={{ padding: '24px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+    <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
       <BpkCheckboxCard.Root
         checked={selected1}
         onCheckedChange={setSelected1}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-        width={150}
-        height={150}
+        width="9.375rem"
+        height="9.375rem"
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
@@ -61,8 +61,8 @@ export const BasicExample = () => {
         onCheckedChange={setSelected2}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
         radius={CHECKBOX_CARD_RADIUS.square}
-        width={150}
-        height={150}
+        width="9.375rem"
+        height="9.375rem"
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
@@ -82,12 +82,12 @@ export const WithMultiContentExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ padding: '24px', display: 'flex', gap: '16px' }}>
+    <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem' }}>
       <BpkCheckboxCard.Root
         checked={selected}
         onCheckedChange={setSelected}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-        width={150}
+        width="9.375rem"
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
@@ -118,16 +118,16 @@ export const AllVariantsExample = () => {
   const [selected3, setSelected3] = useState(false);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '24px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', padding: '1.5rem' }}>
       {/* onCanvasDefault */}
       <div>
-        <h4 style={{ marginBottom: '12px' }}>On Canvas Default</h4>
+        <h4 style={{ marginBottom: '0.75rem' }}>On Canvas Default</h4>
         <BpkCheckboxCard.Root
           checked={selected1}
           onCheckedChange={setSelected1}
           variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-          width={150}
-          height={150}
+          width="9.375rem"
+          height="9.375rem"
         >
           <BpkCheckboxCard.Control />
           <BpkCheckboxCard.Content>
@@ -138,13 +138,13 @@ export const AllVariantsExample = () => {
 
       {/* onCanvasContrast */}
       <div>
-        <h4 style={{ marginBottom: '12px' }}>On Canvas Contrast</h4>
+        <h4 style={{ marginBottom: '0.75rem' }}>On Canvas Contrast</h4>
         <BpkCheckboxCard.Root
           checked={selected2}
           onCheckedChange={setSelected2}
           variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}
-          width={150}
-          height={150}
+          width="9.375rem"
+          height="9.375rem"
         >
           <BpkCheckboxCard.Control />
           <BpkCheckboxCard.Content>
@@ -155,14 +155,14 @@ export const AllVariantsExample = () => {
 
       {/* onSurfaceContrast */}
       <div>
-        <h4 style={{ marginBottom: '12px' }}>On Surface Contrast (Dark)</h4>
-        <div style={{ background: '#05203C', padding: '24px' }}>
+        <h4 style={{ marginBottom: '0.75rem' }}>On Surface Contrast (Dark)</h4>
+        <div style={{ background: surfaceContrastDay, padding: '1.5rem' }}>
           <BpkCheckboxCard.Root
             checked={selected3}
             onCheckedChange={setSelected3}
             variant={CHECKBOX_CARD_VARIANTS.onSurfaceContrast}
-            width={150}
-            height={150}
+            width="9.375rem"
+            height="9.375rem"
           >
             <BpkCheckboxCard.Control />
             <BpkCheckboxCard.Content>
@@ -184,12 +184,12 @@ export const WithImageExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ padding: '24px' }}>
+    <div style={{ padding: '1.5rem' }}>
       <BpkCheckboxCard.Root
         checked={selected}
         onCheckedChange={setSelected}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-        width={200}
+        width="12.5rem"
       >
         <BpkCheckboxCard.Control />
         <BpkCheckboxCard.Content>
@@ -218,7 +218,7 @@ export const WithInlineLayoutExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ padding: '24px' }}>
+    <div style={{ padding: '1.5rem' }}>
       <BpkCheckboxCard.Root
         checked={selected}
         onCheckedChange={setSelected}
@@ -261,17 +261,17 @@ export const WithIndicatorExample = () => {
   };
 
   const indicatorTheme = createCheckboxCardTheme({
-    checkboxCardBgChecked: '#FFFFFF',
-    checkboxCardFgChecked: '#111236',
-    checkboxCardBorderChecked: '#111236',
-    checkboxCardIndicatorColor: '#111236',
+    checkboxCardBgChecked: colorWhite,
+    checkboxCardFgChecked: textPrimaryDay,
+    checkboxCardBorderChecked: textPrimaryDay,
+    checkboxCardIndicatorColor: textPrimaryDay,
   });
 
   return (
-    <div style={{ padding: '24px' }}>
-      <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select neighbourhoods</p>
+    <div style={{ padding: '1.5rem' }}>
+      <p style={{ marginBottom: '1rem', fontWeight: 600 }}>Select neighbourhoods</p>
       <BpkThemeProvider theme={indicatorTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           {options.map(({ description, disabled, icon: CardIcon, id, label, price }) => (
             <BpkCheckboxCard.Root
               key={id}
@@ -279,7 +279,7 @@ export const WithIndicatorExample = () => {
               onCheckedChange={() => toggle(id)}
               variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
               disabled={disabled}
-              width={140}
+              width="8.75rem"
             >
               <BpkCheckboxCard.Control />
               <BpkCheckboxCard.Indicator />
@@ -316,9 +316,9 @@ export const WithSizesExample = () => {
   ];
 
   return (
-    <div style={{ padding: '24px' }}>
-      <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select size</p>
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+    <div style={{ padding: '1.5rem' }}>
+      <p style={{ marginBottom: '1rem', fontWeight: 600 }}>Select size</p>
+      <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
         {sizes.map(({ description, id, label, price }) => (
           <BpkCheckboxCard.Root
             key={id}
@@ -326,7 +326,7 @@ export const WithSizesExample = () => {
             onCheckedChange={() => setSelected(id)}
             variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
             size={id}
-            width={140}
+            width="8.75rem"
           >
             <BpkCheckboxCard.Control />
             <BpkCheckboxCard.Content>
@@ -354,20 +354,20 @@ export const WithCustomThemeExample = () => {
   const [selected2, setSelected2] = useState(true);
 
   const customTheme = createCheckboxCardTheme({
-    checkboxCardFgDefault: '#111236',
-    checkboxCardFgSecondary: '#68697F',
-    checkboxCardBgHover: '#F1F2F8',
-    checkboxCardBorderDefault: '#B2B2BF',
-    checkboxCardBorderHover: '#68697F',
+    checkboxCardFgDefault: textPrimaryDay,
+    checkboxCardFgSecondary: textSecondaryDay,
+    checkboxCardBgHover: canvasContrastDay,
+    checkboxCardBorderDefault: lineDay,
+    checkboxCardBorderHover: textSecondaryDay,
     checkboxCardBgChecked: '#FF6B35',
-    checkboxCardBgDisabled: '#F1F2F8',
-    checkboxCardFgDisabled: '#B2B2BF',
+    checkboxCardBgDisabled: canvasContrastDay,
+    checkboxCardFgDisabled: lineDay,
   });
 
   return (
-    <div style={{ padding: '24px' }}>
+    <div style={{ padding: '1.5rem' }}>
       <BpkThemeProvider theme={customTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <BpkCheckboxCard.Root
             checked={selected1}
             onCheckedChange={setSelected1}
@@ -414,7 +414,7 @@ export const SimpleAPIExample = () => {
   const [selected3, setSelected3] = useState(false);
 
   return (
-    <div style={{ padding: '24px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+    <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
       <BpkCheckboxCardSimple
         checked={selected1}
         onChange={setSelected1}
@@ -481,27 +481,27 @@ export const WithImageGridExample = () => {
   // Checked: keep white bg, black border, dark text
   // Hover:   keep white bg, black border (no indicator — indicator only appears when checked)
   const theme = createCheckboxCardTheme({
-    checkboxCardBgChecked: '#FFFFFF',
-    checkboxCardFgChecked: '#111236',
-    checkboxCardBorderChecked: '#111236',
-    checkboxCardBgHover: '#FFFFFF',
-    checkboxCardBorderHover: '#111236',
-    checkboxCardIndicatorColor: '#111236',
-    checkboxCardIndicatorFg: '#FFFFFF',
+    checkboxCardBgChecked: colorWhite,
+    checkboxCardFgChecked: textPrimaryDay,
+    checkboxCardBorderChecked: textPrimaryDay,
+    checkboxCardBgHover: colorWhite,
+    checkboxCardBorderHover: textPrimaryDay,
+    checkboxCardIndicatorColor: textPrimaryDay,
+    checkboxCardIndicatorFg: colorWhite,
   });
 
   return (
-    <div style={{ padding: '24px' }}>
-      <p style={{ marginBottom: '16px', fontWeight: 600 }}>Select car type</p>
+    <div style={{ padding: '1.5rem' }}>
+      <p style={{ marginBottom: '1rem', fontWeight: 600 }}>Select car type</p>
       <BpkThemeProvider theme={theme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           {carTypes.map(({ id, label, price, src }) => (
             <BpkCheckboxCard.Root
               key={id}
               checked={selected.includes(id)}
               onCheckedChange={() => toggle(id)}
               variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-              width={160}
+              width="10rem"
             >
               <BpkCheckboxCard.Control />
               <BpkCheckboxCard.Indicator />
@@ -547,7 +547,7 @@ export const WithMetadataExample = () => {
   };
 
   return (
-    <div style={{ padding: '24px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+    <div style={{ padding: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
       {neighbourhoods.map(({ avgPrice, count, id, name }) => (
         <BpkCheckboxCard.Root
           key={id}
@@ -560,8 +560,8 @@ export const WithMetadataExample = () => {
             <BpkVStack gap="bpk-spacing-sm" align="start" width="100%">
               <BpkCheckboxCard.Label>{`${name} (${count})`}</BpkCheckboxCard.Label>
               <BpkHStack gap="bpk-spacing-sm" align="center">
-                <TrendDownIconLg style={{ color: statusSuccessSpotDay, width: '16px', height: '16px' }} />
-                <span style={{ color: statusSuccessSpotDay, fontSize: '12px', fontWeight: 600 }}>{avgPrice} avg.</span>
+                <TrendDownIconLg style={{ color: statusSuccessSpotDay, width: '1rem', height: '1rem' }} />
+                <span style={{ color: statusSuccessSpotDay, fontSize: '0.75rem', fontWeight: 600 }}>{avgPrice} avg.</span>
               </BpkHStack>
             </BpkVStack>
           </BpkCheckboxCard.Content>

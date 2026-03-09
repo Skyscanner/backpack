@@ -104,14 +104,14 @@ export type BpkCheckboxCardSimpleProps = {
   value?: string;
 
   /**
-   * Custom width
+   * Custom width. Accepts CSS values (e.g., "10rem", "100%", "auto").
    */
-  width?: string | number;
+  width?: string;
 
   /**
-   * Custom height
+   * Custom height. Accepts CSS values (e.g., "9.375rem", "auto").
    */
-  height?: string | number;
+  height?: string;
 
   /**
    * Visual indicator element to render.
@@ -154,7 +154,6 @@ export type BpkCheckboxCardSimpleProps = {
  *   price="£85"
  *   variant="onCanvasDefault"
  * />
- *
  * @returns {JSX.Element} Rendered checkbox card using the simple props API.
  */
 export function BpkCheckboxCardSimple({
