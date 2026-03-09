@@ -101,25 +101,30 @@ const VariantsExample = () => (
   </div>
 );
 
+const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = ['surfaceHero', 'surfaceContrast'];
+
 const SurfaceColorsExample = () => (
   <div className={getClassName('bpk-card-v2-examples__grid')}>
-    {SURFACE_COLORS.map((color) => (
-      <div
-        key={color}
-        className={getClassName('bpk-card-v2-examples__card-wrapper')}
-      >
-        <BpkCardV2.Root bgColor={color} variant="outlined">
-          <BpkCardV2.Header>
-            <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">
-              {color}
-            </BpkText>
-          </BpkCardV2.Header>
-          <BpkCardV2.Body>
-            <BpkText>Surface color example.</BpkText>
-          </BpkCardV2.Body>
-        </BpkCardV2.Root>
-      </div>
-    ))}
+    {SURFACE_COLORS.map((color) => {
+      const textColor = DARK_SURFACE_COLORS.includes(color) ? TEXT_COLORS.textOnDark : undefined;
+      return (
+        <div
+          key={color}
+          className={getClassName('bpk-card-v2-examples__card-wrapper')}
+        >
+          <BpkCardV2.Root bgColor={color} variant="outlined">
+            <BpkCardV2.Header>
+              <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3" color={textColor}>
+                {color}
+              </BpkText>
+            </BpkCardV2.Header>
+            <BpkCardV2.Body>
+              <BpkText color={textColor}>Surface color example.</BpkText>
+            </BpkCardV2.Body>
+          </BpkCardV2.Root>
+        </div>
+      );
+    })}
   </div>
 );
 

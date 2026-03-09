@@ -28,8 +28,6 @@ import {
   PackagesCardExample,
   FlightsCardExample,
   HotelCardExample,
-  CustomPaddingExample,
-  InteractiveExample,
   AllExamples,
 } from './examples';
 
@@ -45,48 +43,6 @@ export const SurfaceColors = SurfaceColorsExample;
 export const PackagesCard = PackagesCardExample;
 export const FlightsCard = FlightsCardExample;
 export const HotelsCard = HotelCardExample;
-export const CustomPadding = CustomPaddingExample;
-
-export const Interactive = {
-  render: InteractiveExample,
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['default', 'outlined', 'noElevation'],
-    },
-    bgColor: {
-      control: { type: 'select' },
-      options: [
-        'surfaceDefault',
-        'surfaceElevated',
-        'surfaceTint',
-        'surfaceSubtle',
-        'surfaceHero',
-        'surfaceContrast',
-        'surfaceLowContrast',
-        'surfaceHighlight',
-      ],
-    },
-    columns: {
-      control: { type: 'text' },
-      description: 'Column fractions (e.g. "7fr 3fr", "1fr 1fr 1fr")',
-    },
-    showHeader: {
-      control: { type: 'boolean' },
-    },
-    showFooter: {
-      control: { type: 'boolean' },
-    },
-  },
-  args: {
-    variant: 'default',
-    bgColor: 'surfaceDefault',
-    columns: '',
-    showHeader: true,
-    showFooter: true,
-  },
-};
-
 export const VisualTest = AllExamples;
 export const VisualTestWithZoom = {
   render: VisualTest,
