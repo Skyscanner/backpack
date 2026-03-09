@@ -78,7 +78,7 @@ const DefaultExample = () => (
 );
 
 const VariantsExample = () => (
-  <div>
+  <div className={getClassName('bpk-card-v2-examples__canvas-contrast')}>
     <div className={getClassName('bpk-card-v2-examples__grid')}>
       {VARIANTS.map((variant) => (
         <div
