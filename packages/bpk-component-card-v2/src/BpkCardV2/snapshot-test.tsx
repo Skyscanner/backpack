@@ -40,12 +40,29 @@ describe('BpkCardV2 Snapshots', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('matches snapshot - split layout', () => {
+  it('matches snapshot - multi-column layout with divider', () => {
     const { container } = renderWithProvider(
       <BpkCardV2.Root>
-        <BpkCardV2.Body split splitRatio={70}>
-          <BpkCardV2.Primary>Main content area (70%)</BpkCardV2.Primary>
-          <BpkCardV2.Secondary>Sidebar area (30%)</BpkCardV2.Secondary>
+        <BpkCardV2.Body columns="7fr 3fr">
+          <BpkCardV2.Section>Main content area (70%)</BpkCardV2.Section>
+          <BpkCardV2.Divider />
+          <BpkCardV2.Section>Sidebar area (30%)</BpkCardV2.Section>
+        </BpkCardV2.Body>
+      </BpkCardV2.Root>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('matches snapshot - three-column layout', () => {
+    const { container } = renderWithProvider(
+      <BpkCardV2.Root>
+        <BpkCardV2.Body columns="1fr 2fr 1fr">
+          <BpkCardV2.Section>Left</BpkCardV2.Section>
+          <BpkCardV2.Divider />
+          <BpkCardV2.Section>Center</BpkCardV2.Section>
+          <BpkCardV2.Divider />
+          <BpkCardV2.Section>Right</BpkCardV2.Section>
         </BpkCardV2.Body>
       </BpkCardV2.Root>,
     );
@@ -78,14 +95,15 @@ describe('BpkCardV2 Snapshots', () => {
     const { container } = renderWithProvider(
       <BpkCardV2.Root variant="default" bgColor="surfaceDefault">
         <BpkCardV2.Header>Product</BpkCardV2.Header>
-        <BpkCardV2.Body split splitRatio={65}>
-          <BpkCardV2.Primary>
+        <BpkCardV2.Body columns="65fr 35fr">
+          <BpkCardV2.Section>
             <img src="product.jpg" alt="Product" />
-          </BpkCardV2.Primary>
-          <BpkCardV2.Secondary>
+          </BpkCardV2.Section>
+          <BpkCardV2.Divider />
+          <BpkCardV2.Section>
             <h3>Description</h3>
             <p>Product details</p>
-          </BpkCardV2.Secondary>
+          </BpkCardV2.Section>
         </BpkCardV2.Body>
         <BpkCardV2.Footer>
           <button type="button">Add to cart</button>

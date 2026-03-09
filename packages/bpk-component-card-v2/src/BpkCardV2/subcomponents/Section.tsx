@@ -19,38 +19,42 @@
 import { BpkBox, BpkSpacing } from '../../../../bpk-component-layout';
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-import type { BpkCardV2SecondaryProps } from '../common-types';
+import type { BpkCardV2SectionProps } from '../common-types';
 
 /**
- * Secondary subcomponent for split layout in BpkCardV2.
+ * Section subcomponent for multi-column layouts in BpkCardV2.
  *
- * Renders a BpkBox for the secondary (sidebar) content area in a split layout.
- * Width is injected by BpkCardV2.Body via cloneElement based on splitRatio.
+ * Generic content area used with the `columns` prop on BpkCardV2.Body.
+ * Flex value is injected by Body via cloneElement based on the columns spec.
  * All BpkBox props can be used to customise the layout.
  *
- * Must be used as a child of BpkCardV2.Body with split={true}.
+ * @returns {JSX.Element} Section component
  *
  * @example
- * <BpkCardV2.Body split splitRatio={70}>
- *   <BpkCardV2.Primary>Main content area</BpkCardV2.Primary>
- *   <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
+ * <BpkCardV2.Body columns="1fr 2fr 1fr">
+ *   <BpkCardV2.Section>Left</BpkCardV2.Section>
+ *   <BpkCardV2.Section>Center</BpkCardV2.Section>
+ *   <BpkCardV2.Section>Right</BpkCardV2.Section>
  * </BpkCardV2.Body>
- *
- * @returns {JSX.Element} Secondary component
  */
-const Secondary = ({
+const Section = ({
   children,
   display = 'flex',
-  flex = '1 1 auto',
   flexDirection = 'column',
   padding = BpkSpacing.Base,
   ...rest
-}: BpkCardV2SecondaryProps) => (
-  <BpkBox display={display} flex={flex} flexDirection={flexDirection} padding={padding} {...getDataComponentAttribute('CardV2.Secondary')} {...rest}>
+}: BpkCardV2SectionProps) => (
+  <BpkBox
+    display={display}
+    flexDirection={flexDirection}
+    padding={padding}
+    {...getDataComponentAttribute('CardV2.Section')}
+    {...rest}
+  >
     {children}
   </BpkBox>
 );
 
-Secondary.displayName = 'BpkCardV2.Secondary';
+Section.displayName = 'BpkCardV2.Section';
 
-export default Secondary;
+export default Section;

@@ -17,11 +17,11 @@
  */
 
 import Body from './subcomponents/Body';
+import Divider from './subcomponents/Divider';
 import Footer from './subcomponents/Footer';
 import Header from './subcomponents/Header';
-import Primary from './subcomponents/Primary';
 import Root from './subcomponents/Root';
-import Secondary from './subcomponents/Secondary';
+import Section from './subcomponents/Section';
 
 import type { BpkCardV2Namespace } from './common-types';
 
@@ -29,7 +29,7 @@ import type { BpkCardV2Namespace } from './common-types';
  * BpkCardV2 is a composable, responsive card component namespace for Backpack.
  *
  * It provides subcomponents for explicit multi-section composition (Root, Header, Body, Footer),
- * flexible split layouts (Primary/Secondary), and customizable surface colors.
+ * flexible multi-column layouts (Section/Divider), and customizable surface colors.
  *
  * @example
  * // Basic card
@@ -40,11 +40,12 @@ import type { BpkCardV2Namespace } from './common-types';
  * </BpkCardV2.Root>
  *
  * @example
- * // Split layout (70/30 on desktop, stacked on mobile)
+ * // Multi-column layout (70/30 on desktop, stacked on mobile)
  * <BpkCardV2.Root bgColor="surfaceElevated">
- *   <BpkCardV2.Body split splitRatio={70}>
- *     <BpkCardV2.Primary>Main content</BpkCardV2.Primary>
- *     <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
+ *   <BpkCardV2.Body columns="7fr 3fr">
+ *     <BpkCardV2.Section>Main content</BpkCardV2.Section>
+ *     <BpkCardV2.Divider />
+ *     <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
  *   </BpkCardV2.Body>
  * </BpkCardV2.Root>
  */
@@ -52,8 +53,8 @@ const BpkCardV2: BpkCardV2Namespace = {
   Root,
   Header,
   Body,
-  Primary,
-  Secondary,
+  Section,
+  Divider,
   Footer,
 };
 

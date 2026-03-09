@@ -97,12 +97,13 @@ describe('BpkCardV2 Accessibility', () => {
       expect(results).toHaveNoViolations();
     });
 
-    it('has no accessibility violations - split layout', async () => {
+    it('has no accessibility violations - multi-column layout', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root aria-label="Split layout card">
-          <BpkCardV2.Body split splitRatio={70}>
-            <BpkCardV2.Primary>Main content</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
+        <BpkCardV2.Root aria-label="Multi-column card">
+          <BpkCardV2.Body columns="7fr 3fr">
+            <BpkCardV2.Section>Main content</BpkCardV2.Section>
+            <BpkCardV2.Divider />
+            <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
           </BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
@@ -140,15 +141,16 @@ describe('BpkCardV2 Accessibility', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root variant="default" bgColor="surfaceDefault" aria-label="Complex card">
           <BpkCardV2.Header>Product Details</BpkCardV2.Header>
-          <BpkCardV2.Body split splitRatio={65}>
-            <BpkCardV2.Primary>
+          <BpkCardV2.Body columns="65fr 35fr">
+            <BpkCardV2.Section>
               <h3>Main Section</h3>
               <p>Product information goes here</p>
-            </BpkCardV2.Primary>
-            <BpkCardV2.Secondary>
+            </BpkCardV2.Section>
+            <BpkCardV2.Divider />
+            <BpkCardV2.Section>
               <h3>Related</h3>
               <p>Related content</p>
-            </BpkCardV2.Secondary>
+            </BpkCardV2.Section>
           </BpkCardV2.Body>
           <BpkCardV2.Footer>
             <button type="button">Action</button>

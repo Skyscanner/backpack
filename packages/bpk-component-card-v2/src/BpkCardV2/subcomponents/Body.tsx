@@ -22,17 +22,36 @@ import { Children, cloneElement, isValidElement } from 'react';
 import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-import Divider from './Divider';
-
 import type { BpkCardV2BodyProps } from '../common-types';
 
+/**
+ * Parse a columns string like "1fr 2fr 1fr" into an array of numeric ratios.
+ * Only supports `fr` units.
+ *
+ * @param {string} columns - Space-separated fr values (e.g. "1fr 2fr 1fr")
+ * @returns {number[]} Array of numeric ratios, e.g. [1, 2, 1]
+ */
+const parseColumns = (columns: string): number[] =>
+  columns
+    .trim()
+    .split(/\s+/)
+    .map((part) => {
+      const match = part.match(/^(\d+(?:\.\d+)?)fr$/);
+      if (!match) {
+        throw new Error(
+          `BpkCardV2.Body: Invalid column value "${part}". Only fr units are supported (e.g. "1fr 2fr 1fr").`,
+        );
+      }
+      return parseFloat(match[1]);
+    });
 
 /**
  * Body subcomponent for BpkCardV2.
  *
  * Renders the main content area of the card as a BpkFlex container.
  * Defaults to vertical (column) direction with base padding.
- * Supports optional two-column split layout using Primary and Secondary subcomponents.
+ * Supports multi-column layouts using Section subcomponents with the columns prop.
+ * Place `<BpkCardV2.Divider />` between Section children where you want dividers.
  * All BpkFlex props can be used to customise the layout.
  *
  * @example
@@ -40,64 +59,68 @@ import type { BpkCardV2BodyProps } from '../common-types';
  * <BpkCardV2.Body>Content here</BpkCardV2.Body>
  *
  * @example
- * // Split layout (70/30)
- * <BpkCardV2.Body split splitRatio={70}>
- *   <BpkCardV2.Primary>Main content (70%)</BpkCardV2.Primary>
- *   <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
+ * // Multi-column layout with fractions
+ * <BpkCardV2.Body columns="1fr 2fr 1fr">
+ *   <BpkCardV2.Section>Left</BpkCardV2.Section>
+ *   <BpkCardV2.Section>Center (2x wide)</BpkCardV2.Section>
+ *   <BpkCardV2.Section>Right</BpkCardV2.Section>
+ * </BpkCardV2.Body>
+ *
+ * @example
+ * // Multi-column with selective divider
+ * <BpkCardV2.Body columns="7fr 3fr">
+ *   <BpkCardV2.Section>Main content</BpkCardV2.Section>
+ *   <BpkCardV2.Divider />
+ *   <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
  * </BpkCardV2.Body>
  *
  * @returns {JSX.Element} Body component
  */
 const Body = ({
   children,
+  columns,
   direction,
   padding,
-  split = false,
-  splitRatio = 70,
   ...rest
 }: BpkCardV2BodyProps) => {
-  const resolvedDirection = direction ?? (split
+  const isMultiColumn = !!columns;
+
+  const resolvedDirection = direction ?? (isMultiColumn
     ? { base: 'column' as const, tablet: 'row' as const }
     : 'column' as const);
 
-  const resolvedPadding = padding ?? (split ? BpkSpacing.None : BpkSpacing.Base);
+  const resolvedPadding = padding ?? (isMultiColumn ? BpkSpacing.None : BpkSpacing.Base);
 
-  // In split layout, inject responsive width into Primary/Secondary children
-  // and insert a divider between them
-  const processedChildren = split
-    ? Children.toArray(children).reduce<ReactNode[]>((acc, child, index) => {
-        if (isValidElement(child)) {
-          const isPrimary = child.type && (child.type as { displayName?: string }).displayName === 'BpkCardV2.Primary';
-          const isSecondary = child.type && (child.type as { displayName?: string }).displayName === 'BpkCardV2.Secondary';
+  let processedChildren: ReactNode = children;
 
-          if (isPrimary) {
-            acc.push(
-              cloneElement(child as ReactElement, {
-                key: child.key ?? 'primary',
-                width: child.props.width ?? { base: '100%', tablet: `${splitRatio}%` },
-              }),
-            );
-          } else if (isSecondary) {
-            acc.push(
-              cloneElement(child as ReactElement, {
-                key: child.key ?? 'secondary',
-                width: child.props.width ?? { base: '100%', tablet: `${100 - splitRatio}%` },
-              }),
-            );
-          } else {
-            acc.push(child);
-          }
+  if (isMultiColumn) {
+    // Multi-column: parse fractions and inject flex ratios into Section children.
+    // Dividers are NOT auto-inserted — place <BpkCardV2.Divider /> explicitly
+    // between Section children where you want them.
+    const ratios = parseColumns(columns);
+    const childArray = Children.toArray(children).filter(isValidElement);
+    let sectionIndex = 0;
 
-          // Insert divider after first child if there's a next child
-          if (index === 0 && Children.count(children) > 1) {
-            acc.push(<Divider key="bpk-card-v2-divider" />);
-          }
-        } else {
-          acc.push(child);
+    processedChildren = childArray.map((child) => {
+      const isSection = (child.type as { displayName?: string })?.displayName === 'BpkCardV2.Section';
+
+      if (isSection) {
+        const ratio = ratios[sectionIndex];
+        sectionIndex += 1;
+
+        if (ratio !== undefined) {
+          const childElement = child as ReactElement<{ flex?: unknown }>;
+          return cloneElement(childElement, {
+            key: child.key ?? `section-${sectionIndex}`,
+            // On mobile: full width (stacked). On tablet+: flex ratio for proportional sizing.
+            flex: childElement.props.flex ?? { base: '1 1 auto', tablet: `${ratio} 1 0%` },
+          });
         }
-        return acc;
-      }, [])
-    : children;
+      }
+
+      return child;
+    });
+  }
 
   return (
     <BpkFlex

@@ -144,25 +144,25 @@ describe('BpkCardV2 Integration Tests', () => {
     });
   });
 
-  describe('Split Layout', () => {
-    it('renders Primary and Secondary content in split layout', () => {
+  describe('Multi-Column Layout', () => {
+    it('renders Section content in columns layout', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body split splitRatio={50}>
-            <BpkCardV2.Primary>Primary (50%)</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Secondary (50%)</BpkCardV2.Secondary>
+          <BpkCardV2.Body columns="1fr 1fr">
+            <BpkCardV2.Section>Left (50%)</BpkCardV2.Section>
+            <BpkCardV2.Section>Right (50%)</BpkCardV2.Section>
           </BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
-      expect(screen.getByText('Primary (50%)')).toBeInTheDocument();
-      expect(screen.getByText('Secondary (50%)')).toBeInTheDocument();
+      expect(screen.getByText('Left (50%)')).toBeInTheDocument();
+      expect(screen.getByText('Right (50%)')).toBeInTheDocument();
     });
 
-    it('renders content without split when split is false', () => {
+    it('renders content without columns when columns is not set', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body split={false}>Content</BpkCardV2.Body>
+          <BpkCardV2.Body>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
@@ -191,26 +191,27 @@ describe('BpkCardV2 Integration Tests', () => {
       renderWithProvider(
         <BpkCardV2.Root>
           <BpkCardV2.Header>Outer</BpkCardV2.Header>
-          <BpkCardV2.Body split splitRatio={60}>
-            <BpkCardV2.Primary>
+          <BpkCardV2.Body columns="6fr 4fr">
+            <BpkCardV2.Section>
               <div>
-                <h3>Primary Section</h3>
+                <h3>Main Section</h3>
                 <BpkCardV2.Root bgColor="surfaceElevated">
                   <BpkCardV2.Body>Nested card</BpkCardV2.Body>
                 </BpkCardV2.Root>
               </div>
-            </BpkCardV2.Primary>
-            <BpkCardV2.Secondary>
-              <div>Secondary Section</div>
-            </BpkCardV2.Secondary>
+            </BpkCardV2.Section>
+            <BpkCardV2.Divider />
+            <BpkCardV2.Section>
+              <div>Sidebar Section</div>
+            </BpkCardV2.Section>
           </BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
       expect(screen.getByText('Outer')).toBeInTheDocument();
-      expect(screen.getByText('Primary Section')).toBeInTheDocument();
+      expect(screen.getByText('Main Section')).toBeInTheDocument();
       expect(screen.getByText('Nested card')).toBeInTheDocument();
-      expect(screen.getByText('Secondary Section')).toBeInTheDocument();
+      expect(screen.getByText('Sidebar Section')).toBeInTheDocument();
     });
   });
 

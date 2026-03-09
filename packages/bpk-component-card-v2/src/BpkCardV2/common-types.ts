@@ -38,7 +38,7 @@ export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
  * BpkCardV2 root component props.
  *
  * Composable card component with explicit Header/Body/Footer subcomponents.
- * Supports multiple surface colors, visual variants, and responsive split layouts.
+ * Supports multiple surface colors, visual variants, and responsive multi-column layouts.
  *
  * @example
  * <BpkCardV2 variant="default" bgColor="surfaceDefault">
@@ -72,44 +72,38 @@ export type BpkCardV2HeaderProps = BpkFlexProps;
  *
  * Renders card main content area as a BpkFlex container.
  * Defaults to vertical (column) direction with base padding.
- * Supports optional split layout with Primary and Secondary subcomponents.
+ * Supports multi-column layouts using Section subcomponents with the columns prop.
  * All BpkFlex props are supported for layout customisation.
  *
  * @example
  * // Simple body
  * <BpkCardV2.Body>Content</BpkCardV2.Body>
  *
- * // Split layout (70/30 on desktop, stacked on mobile)
- * <BpkCardV2.Body split splitRatio={70}>
- *   <BpkCardV2.Primary>Main (70%)</BpkCardV2.Primary>
- *   <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
+ * // Multi-column layout (70/30 on desktop, stacked on mobile)
+ * <BpkCardV2.Body columns="7fr 3fr">
+ *   <BpkCardV2.Section>Main content</BpkCardV2.Section>
+ *   <BpkCardV2.Divider />
+ *   <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
  * </BpkCardV2.Body>
  */
 export type BpkCardV2BodyProps = BpkFlexProps & {
-  /** Enable two-column split layout (default: false) */
-  split?: boolean;
-
-  /** Primary section width percentage on desktop (0-100, default: 70) */
-  splitRatio?: number;
+  /**
+   * Multi-column layout using fraction syntax (e.g. "1fr 2fr 1fr").
+   * Each fraction maps to a Section child's flex ratio.
+   * Place `<BpkCardV2.Divider />` between Section children where you want dividers.
+   * On mobile, sections stack vertically; on tablet+, they use the specified ratios.
+   */
+  columns?: string;
 };
 
 /**
- * BpkCardV2.Primary component props.
+ * BpkCardV2.Section component props.
  *
- * Primary content area in split layout. Renders a BpkBox.
- * Takes splitRatio width on desktop, full width on mobile.
+ * Generic content area for multi-column layouts. Renders a BpkBox.
+ * Flex ratio is injected by BpkCardV2.Body based on the columns spec.
  * All BpkBox props are supported for layout customisation.
  */
-export type BpkCardV2PrimaryProps = BpkBoxProps;
-
-/**
- * BpkCardV2.Secondary component props.
- *
- * Secondary content area in split layout. Renders a BpkBox.
- * Takes (100 - splitRatio) width on desktop, full width on mobile.
- * All BpkBox props are supported for layout customisation.
- */
-export type BpkCardV2SecondaryProps = BpkBoxProps;
+export type BpkCardV2SectionProps = BpkBoxProps;
 
 /**
  * BpkCardV2.Footer component props.
@@ -129,7 +123,7 @@ export type BpkCardV2Namespace = {
   Root: ForwardRefExoticComponent<BpkCardV2Props & RefAttributes<HTMLDivElement>>;
   Header: { (props: BpkCardV2HeaderProps): ReactNode; displayName?: string };
   Body: { (props: BpkCardV2BodyProps): ReactNode; displayName?: string };
-  Primary: { (props: BpkCardV2PrimaryProps): ReactNode; displayName?: string };
-  Secondary: { (props: BpkCardV2SecondaryProps): ReactNode; displayName?: string };
+  Section: { (props: BpkCardV2SectionProps): ReactNode; displayName?: string };
+  Divider: { (): ReactNode; displayName?: string };
   Footer: { (props: BpkCardV2FooterProps): ReactNode; displayName?: string };
 };

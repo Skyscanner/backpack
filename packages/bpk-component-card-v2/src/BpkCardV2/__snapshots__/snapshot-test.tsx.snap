@@ -47,8 +47,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-vqze51"
-        data-backpack-ds-component="CardV2.Primary"
+        class="css-yg9qae"
+        data-backpack-ds-component="CardV2.Section"
       >
         <img
           alt="Product"
@@ -60,8 +60,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-7ppk48"
-        data-backpack-ds-component="CardV2.Secondary"
+        class="css-yhiwe7"
+        data-backpack-ds-component="CardV2.Section"
       >
         <h3>
           Description
@@ -119,6 +119,38 @@ exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
 </div>
 `;
 
+exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default"
+    data-backpack-ds-component="CardV2"
+    data-bg-color="surfaceDefault"
+  >
+    <div
+      class="css-kq6lf"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      <div
+        class="css-1syrnvy"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Main content area (70%)
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
+      />
+      <div
+        class="css-1n1x0pj"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Sidebar area (30%)
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
 <div>
   <div
@@ -142,7 +174,7 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
 </div>
 `;
 
-exports[`BpkCardV2 Snapshots matches snapshot - split layout 1`] = `
+exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
 <div>
   <div
     class="bpk-card-v2 bpk-card-v2--default"
@@ -154,20 +186,30 @@ exports[`BpkCardV2 Snapshots matches snapshot - split layout 1`] = `
       data-backpack-ds-component="CardV2.Body"
     >
       <div
-        class="css-5xyhay"
-        data-backpack-ds-component="CardV2.Primary"
+        class="css-18l3558"
+        data-backpack-ds-component="CardV2.Section"
       >
-        Main content area (70%)
+        Left
       </div>
       <div
         class="bpk-card-v2__divider"
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
-        class="css-1psxrdm"
-        data-backpack-ds-component="CardV2.Secondary"
+        class="css-10d789w"
+        data-backpack-ds-component="CardV2.Section"
       >
-        Sidebar area (30%)
+        Center
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
+      />
+      <div
+        class="css-18l3558"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Right
       </div>
     </div>
   </div>

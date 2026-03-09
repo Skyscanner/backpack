@@ -72,6 +72,11 @@
   }
 }
 
+// Default variant - interactive card with pointer cursor
+.bpk-card-v2--default {
+  cursor: pointer;
+}
+
 // Outlined variant - replaces shadow with border
 .bpk-card-v2--outlined {
   border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
@@ -91,7 +96,7 @@
   }
 }
 
-// Divider between primary and secondary in split layout
+// Divider between sections in multi-column layout
 // Horizontal on mobile, vertical on desktop
 .bpk-card-v2__divider {
   // Mobile: horizontal divider

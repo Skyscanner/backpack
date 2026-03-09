@@ -23,7 +23,7 @@ import STYLES from '../BpkCardV2.module.scss';
 const getClassName = cssModules(STYLES);
 
 /**
- * Divider between Primary and Secondary in split layout.
+ * Divider between Section children in multi-column layout.
  *
  * Renders as a horizontal line on mobile and a vertical line on desktop.
  * Styled via SCSS for breakpoint handling.

@@ -16,12 +16,11 @@
  * limitations under the License.
  */
 
-import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
 import BpkButton from '../../packages/bpk-component-button';
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
 import BpkCarousel from '../../packages/bpk-component-carousel';
 import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
-import { BpkFlex, BpkGrid, BpkSpacing, BpkBox, BpkHStack, BpkVStack } from '../../packages/bpk-component-layout';
+import { BpkFlex, BpkGrid, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
 import BpkLink from '../../packages/bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
@@ -126,8 +125,6 @@ const carouselImageUrls = [
   'https://content.skyscnr.com/m/f8b42e98e2b79a6/original/Carousel-placeholder-3.jpg',
   'https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg',
 ];
-const imagesList = carouselImageUrls.map(url => <div><img src={url} alt='hotel bedroom' /></div>)
-
 const carouselImages = carouselImageUrls.map((url) => (
   <div key={url} style={{ width: '100%', height: '100%' }}>
     <img
@@ -148,8 +145,8 @@ const DealOption = ({ text }: { text: string }) => (
 const PackagesCardExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
-      <BpkCardV2.Body split splitRatio={70}>
-        <BpkCardV2.Primary padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
+      <BpkCardV2.Body columns="7fr 3fr">
+        <BpkCardV2.Section padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
           <div className={getClassName('bpk-card-v2-examples__carousel-wrapper')}>
             <BpkCarousel images={carouselImages} bottom={16}/>
           </div>
@@ -161,8 +158,9 @@ const PackagesCardExample = () => (
               5 star hotel · Free cancellation
             </BpkText>
           </BpkFlex>
-        </BpkCardV2.Primary>
-        <BpkCardV2.Secondary padding={BpkSpacing.MD} gap={BpkSpacing.LG} justifyContent='end'>
+        </BpkCardV2.Section>
+        <BpkCardV2.Divider />
+        <BpkCardV2.Section padding={BpkSpacing.MD} gap={BpkSpacing.LG} justifyContent='end'>
             <BpkFlex direction='column' gap={BpkSpacing.MD}>
               <BpkPrice
                 size={SIZES.Large}
@@ -173,8 +171,9 @@ const PackagesCardExample = () => (
               <DealOption text='Skyland' />
             </BpkFlex>
             <BpkButton onClick={() => alert('Book now')} fullWidth>Go to site</BpkButton>
-        </BpkCardV2.Secondary>
+        </BpkCardV2.Section>
       </BpkCardV2.Body>
+
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
         <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
           <BpkCardV2.Body justify="space-between" direction={{ base: 'column', mobile: 'row' }} gap={BpkSpacing.MD}>
@@ -237,8 +236,8 @@ const FlightLeg = ({
 const FlightsCardExample = () => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
     <BpkCardV2.Root>
-      <BpkCardV2.Body split splitRatio={70}>
-        <BpkCardV2.Primary gap={BpkSpacing.Base}>
+      <BpkCardV2.Body columns="7fr 3fr">
+        <BpkCardV2.Section gap={BpkSpacing.Base}>
           <FlightLeg
             airlineName="Skyscanner Air"
             departureTime="06:20"
@@ -257,8 +256,9 @@ const FlightsCardExample = () => (
             duration="2h 35m"
             stops="Direct"
           />
-        </BpkCardV2.Primary>
-        <BpkCardV2.Secondary gap={BpkSpacing.Base} justifyContent="end">
+        </BpkCardV2.Section>
+        <BpkCardV2.Divider />
+        <BpkCardV2.Section gap={BpkSpacing.Base} justifyContent="end">
           <BpkFlex direction="column" gap={BpkSpacing.SM}>
             <BpkPrice
               size={SIZES.Large}
@@ -270,7 +270,125 @@ const FlightsCardExample = () => (
           <BpkButton onClick={() => alert('Select flight')} fullWidth>
             Select
           </BpkButton>
-        </BpkCardV2.Secondary>
+        </BpkCardV2.Section>
+      </BpkCardV2.Body>
+    </BpkCardV2.Root>
+  </div>
+);
+
+const MultiColumnExample = () => (
+  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+    <BpkCardV2.Root>
+      <BpkCardV2.Body columns="1fr 2fr 1fr">
+        <BpkCardV2.Section>
+          <AirlineLogo />
+          <BpkText textStyle={TEXT_STYLES.footnote} tagName="span">Skyland Airlines</BpkText>
+        </BpkCardV2.Section>
+        <BpkCardV2.Section gap={BpkSpacing.Base}>
+          <FlightLeg
+            airlineName="Skyland"
+            departureTime="06:20"
+            departureCode="LHR"
+            arrivalTime="09:50"
+            arrivalCode="BCN"
+            duration="2h 30m"
+            stops="Direct"
+          />
+          <FlightLeg
+            airlineName="Skyland"
+            departureTime="18:30"
+            departureCode="BCN"
+            arrivalTime="20:05"
+            arrivalCode="LHR"
+            duration="2h 35m"
+            stops="Direct"
+          />
+        </BpkCardV2.Section>
+        <BpkCardV2.Section gap={BpkSpacing.Base} justifyContent="end">
+          <BpkPrice
+            size={SIZES.Large}
+            price="£752"
+            trailingText="total"
+            align={ALIGNS.right}
+          />
+          <BpkButton onClick={() => alert('Select')} fullWidth>
+            Select
+          </BpkButton>
+        </BpkCardV2.Section>
+      </BpkCardV2.Body>
+    </BpkCardV2.Root>
+  </div>
+);
+
+const ThreeEqualColumnsExample = () => (
+  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+    <BpkCardV2.Root variant="outlined">
+      <BpkCardV2.Header>
+        <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
+          Compare options
+        </BpkText>
+      </BpkCardV2.Header>
+      <BpkCardV2.Body columns="1fr 1fr 1fr">
+        <BpkCardV2.Section gap={BpkSpacing.SM}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Economy</BpkText>
+          <BpkText textStyle={TEXT_STYLES.footnote}>Basic fare, no extras</BpkText>
+          <BpkText textStyle={TEXT_STYLES.heading3}>£120</BpkText>
+        </BpkCardV2.Section>
+        <BpkCardV2.Section gap={BpkSpacing.SM}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Premium</BpkText>
+          <BpkText textStyle={TEXT_STYLES.footnote}>Extra legroom, meals</BpkText>
+          <BpkText textStyle={TEXT_STYLES.heading3}>£280</BpkText>
+        </BpkCardV2.Section>
+        <BpkCardV2.Section gap={BpkSpacing.SM}>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Business</BpkText>
+          <BpkText textStyle={TEXT_STYLES.footnote}>Lounge, flat bed</BpkText>
+          <BpkText textStyle={TEXT_STYLES.heading3}>£850</BpkText>
+        </BpkCardV2.Section>
+      </BpkCardV2.Body>
+    </BpkCardV2.Root>
+  </div>
+);
+
+const SelectiveDividerExample = () => (
+  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+    <BpkCardV2.Root>
+      <BpkCardV2.Body columns="1fr 2fr 1fr">
+        <BpkCardV2.Section>
+          <AirlineLogo />
+          <BpkText textStyle={TEXT_STYLES.footnote} tagName="span">Skyland Airlines</BpkText>
+        </BpkCardV2.Section>
+        <BpkCardV2.Section gap={BpkSpacing.Base}>
+          <FlightLeg
+            airlineName="Skyland"
+            departureTime="06:20"
+            departureCode="LHR"
+            arrivalTime="09:50"
+            arrivalCode="BCN"
+            duration="2h 30m"
+            stops="Direct"
+          />
+          <FlightLeg
+            airlineName="Skyland"
+            departureTime="18:30"
+            departureCode="BCN"
+            arrivalTime="20:05"
+            arrivalCode="LHR"
+            duration="2h 35m"
+            stops="Direct"
+          />
+        </BpkCardV2.Section>
+        <BpkCardV2.Divider />
+        <BpkCardV2.Section gap={BpkSpacing.Base} justifyContent="end">
+          <BpkPrice
+            size={SIZES.Large}
+            price="£752"
+            trailingText="total"
+            align={ALIGNS.right}
+          />
+          <BpkButton onClick={() => alert('Select')} fullWidth>
+            Select
+          </BpkButton>
+        </BpkCardV2.Section>
       </BpkCardV2.Body>
     </BpkCardV2.Root>
   </div>
@@ -321,18 +439,16 @@ const CustomPaddingExample = () => (
 type InteractiveExampleProps = {
   variant?: BpkCardV2Variant;
   bgColor?: BpkCardV2SurfaceColor;
-  split?: boolean;
-  splitRatio?: number;
+  columns?: string;
   showHeader?: boolean;
   showFooter?: boolean;
 };
 
 const InteractiveExample = ({
   bgColor = 'surfaceDefault',
+  columns,
   showFooter = true,
   showHeader = true,
-  split = false,
-  splitRatio = 70,
   variant = 'default',
 }: InteractiveExampleProps) => (
   <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
@@ -344,15 +460,16 @@ const InteractiveExample = ({
           </BpkText>
         </BpkCardV2.Header>
       )}
-      <BpkCardV2.Body split={split} splitRatio={splitRatio}>
-        {split ? (
+      <BpkCardV2.Body columns={columns}>
+        {columns ? (
           <>
-            <BpkCardV2.Primary>
-              <Placeholder label="Primary area" />
-            </BpkCardV2.Primary>
-            <BpkCardV2.Secondary>
-              <Placeholder label="Secondary area" />
-            </BpkCardV2.Secondary>
+            <BpkCardV2.Section>
+              <Placeholder label="Section 1" />
+            </BpkCardV2.Section>
+            <BpkCardV2.Divider />
+            <BpkCardV2.Section>
+              <Placeholder label="Section 2" />
+            </BpkCardV2.Section>
           </>
         ) : (
           <BpkText>
@@ -404,6 +521,24 @@ const AllExamples = () => (
     </div>
     <div className={getClassName('bpk-card-v2-examples__section')}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+        Multi-Column (1fr 2fr 1fr)
+      </BpkText>
+      <MultiColumnExample />
+    </div>
+    <div className={getClassName('bpk-card-v2-examples__section')}>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+        Three Equal Columns (1fr 1fr 1fr)
+      </BpkText>
+      <ThreeEqualColumnsExample />
+    </div>
+    <div className={getClassName('bpk-card-v2-examples__section')}>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+        Selective Divider (only between Section 2 &amp; 3)
+      </BpkText>
+      <SelectiveDividerExample />
+    </div>
+    <div className={getClassName('bpk-card-v2-examples__section')}>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Custom Padding
       </BpkText>
       <CustomPaddingExample />
@@ -417,6 +552,9 @@ export {
   SurfaceColorsExample,
   PackagesCardExample,
   FlightsCardExample,
+  MultiColumnExample,
+  ThreeEqualColumnsExample,
+  SelectiveDividerExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,

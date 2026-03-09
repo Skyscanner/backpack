@@ -30,7 +30,7 @@ const getClassName = cssModules(STYLES);
  * BpkCardV2.Root is the root container for the card component.
  *
  * It supports explicit multi-section composition (Header, Body, Footer), flexible
- * split layouts (Primary/Secondary), and customizable surface colors. The component
+ * multi-column layouts (Section/Divider), and customizable surface colors. The component
  * is mobile-first and automatically adapts layout across breakpoints.
  *
  * @example
@@ -41,11 +41,12 @@ const getClassName = cssModules(STYLES);
  * </BpkCardV2.Root>
  *
  * @example
- * // Split layout (70/30 on desktop, stacked on mobile)
+ * // Multi-column layout (70/30 on desktop, stacked on mobile)
  * <BpkCardV2.Root bgColor="surfaceElevated">
- *   <BpkCardV2.Body split splitRatio={70}>
- *     <BpkCardV2.Primary>Main content</BpkCardV2.Primary>
- *     <BpkCardV2.Secondary>Sidebar</BpkCardV2.Secondary>
+ *   <BpkCardV2.Body columns="7fr 3fr">
+ *     <BpkCardV2.Section>Main content</BpkCardV2.Section>
+ *     <BpkCardV2.Divider />
+ *     <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
  *   </BpkCardV2.Body>
  * </BpkCardV2.Root>
  */

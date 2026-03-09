@@ -27,6 +27,9 @@ import {
   SurfaceColorsExample,
   PackagesCardExample,
   FlightsCardExample,
+  MultiColumnExample,
+  ThreeEqualColumnsExample,
+  SelectiveDividerExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,
@@ -43,6 +46,9 @@ export const Variants = VariantsExample;
 export const SurfaceColors = SurfaceColorsExample;
 export const PackagesCard = PackagesCardExample;
 export const FlightsCard = FlightsCardExample;
+export const MultiColumn = MultiColumnExample;
+export const ThreeEqualColumns = ThreeEqualColumnsExample;
+export const SelectiveDivider = SelectiveDividerExample;
 export const CustomPadding = CustomPaddingExample;
 
 export const Interactive = {
@@ -65,11 +71,9 @@ export const Interactive = {
         'surfaceHighlight',
       ],
     },
-    split: {
-      control: { type: 'boolean' },
-    },
-    splitRatio: {
-      control: { type: 'range', min: 10, max: 90, step: 5 },
+    columns: {
+      control: { type: 'text' },
+      description: 'Column fractions (e.g. "7fr 3fr", "1fr 1fr 1fr")',
     },
     showHeader: {
       control: { type: 'boolean' },
@@ -81,8 +85,7 @@ export const Interactive = {
   args: {
     variant: 'default',
     bgColor: 'surfaceDefault',
-    split: false,
-    splitRatio: 70,
+    columns: '',
     showHeader: true,
     showFooter: true,
   },

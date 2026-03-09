@@ -75,27 +75,44 @@ describe('BpkCardV2', () => {
     });
   });
 
-  describe('Split Layout', () => {
-    it('renders Primary and Secondary in split layout', () => {
+  describe('Multi-Column Layout', () => {
+    it('renders Section children in columns layout', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body split>
-            <BpkCardV2.Primary>Primary content</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Secondary content</BpkCardV2.Secondary>
+          <BpkCardV2.Body columns="7fr 3fr">
+            <BpkCardV2.Section>Main content</BpkCardV2.Section>
+            <BpkCardV2.Section>Sidebar</BpkCardV2.Section>
           </BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
-      expect(screen.getByText('Primary content')).toBeInTheDocument();
-      expect(screen.getByText('Secondary content')).toBeInTheDocument();
+      expect(screen.getByText('Main content')).toBeInTheDocument();
+      expect(screen.getByText('Sidebar')).toBeInTheDocument();
     });
 
-    it('inserts divider between Primary and Secondary', () => {
+    it('renders three Section children', () => {
+      renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Body columns="1fr 2fr 1fr">
+            <BpkCardV2.Section>Left</BpkCardV2.Section>
+            <BpkCardV2.Section>Center</BpkCardV2.Section>
+            <BpkCardV2.Section>Right</BpkCardV2.Section>
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>,
+      );
+
+      expect(screen.getByText('Left')).toBeInTheDocument();
+      expect(screen.getByText('Center')).toBeInTheDocument();
+      expect(screen.getByText('Right')).toBeInTheDocument();
+    });
+
+    it('renders explicit Divider between sections', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body split>
-            <BpkCardV2.Primary>Main</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Side</BpkCardV2.Secondary>
+          <BpkCardV2.Body columns="7fr 3fr">
+            <BpkCardV2.Section>Main</BpkCardV2.Section>
+            <BpkCardV2.Divider />
+            <BpkCardV2.Section>Side</BpkCardV2.Section>
           </BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
@@ -103,10 +120,23 @@ describe('BpkCardV2', () => {
       expect(container.querySelector('[class*="bpk-card-v2__divider"]')).toBeInTheDocument();
     });
 
-    it('does not insert divider when split is false', () => {
+    it('does not render divider when none is placed', () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body split={false}>Content</BpkCardV2.Body>
+          <BpkCardV2.Body columns="1fr 1fr">
+            <BpkCardV2.Section>Left</BpkCardV2.Section>
+            <BpkCardV2.Section>Right</BpkCardV2.Section>
+          </BpkCardV2.Body>
+        </BpkCardV2.Root>,
+      );
+
+      expect(container.querySelector('[class*="bpk-card-v2__divider"]')).not.toBeInTheDocument();
+    });
+
+    it('does not insert divider when columns is not set', () => {
+      const { container } = renderWithProvider(
+        <BpkCardV2.Root>
+          <BpkCardV2.Body>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
@@ -195,8 +225,8 @@ describe('BpkCardV2', () => {
       expect(BpkCardV2.Root.displayName).toBe('BpkCardV2.Root');
       expect(BpkCardV2.Header.displayName).toBe('BpkCardV2.Header');
       expect(BpkCardV2.Body.displayName).toBe('BpkCardV2.Body');
-      expect(BpkCardV2.Primary.displayName).toBe('BpkCardV2.Primary');
-      expect(BpkCardV2.Secondary.displayName).toBe('BpkCardV2.Secondary');
+      expect(BpkCardV2.Section.displayName).toBe('BpkCardV2.Section');
+      expect(BpkCardV2.Divider.displayName).toBe('BpkCardV2.Divider');
       expect(BpkCardV2.Footer.displayName).toBe('BpkCardV2.Footer');
     });
   });
@@ -241,32 +271,18 @@ describe('BpkCardV2', () => {
       expect(screen.getByText('Content')).toBeInTheDocument();
     });
 
-    it('renders Primary with BpkBox and passes layout props', () => {
+    it('renders Section with BpkBox and passes layout props', () => {
       renderWithProvider(
         <BpkCardV2.Root>
-          <BpkCardV2.Body split>
-            <BpkCardV2.Primary data-testid="primary">Main</BpkCardV2.Primary>
-            <BpkCardV2.Secondary>Side</BpkCardV2.Secondary>
+          <BpkCardV2.Body columns="1fr 1fr">
+            <BpkCardV2.Section data-testid="section-1">Left</BpkCardV2.Section>
+            <BpkCardV2.Section data-testid="section-2">Right</BpkCardV2.Section>
           </BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
 
-      expect(screen.getByTestId('primary')).toBeInTheDocument();
-      expect(screen.getByText('Main')).toBeInTheDocument();
-    });
-
-    it('renders Secondary with BpkBox and passes layout props', () => {
-      renderWithProvider(
-        <BpkCardV2.Root>
-          <BpkCardV2.Body split>
-            <BpkCardV2.Primary>Main</BpkCardV2.Primary>
-            <BpkCardV2.Secondary data-testid="secondary">Side</BpkCardV2.Secondary>
-          </BpkCardV2.Body>
-        </BpkCardV2.Root>,
-      );
-
-      expect(screen.getByTestId('secondary')).toBeInTheDocument();
-      expect(screen.getByText('Side')).toBeInTheDocument();
+      expect(screen.getByTestId('section-1')).toBeInTheDocument();
+      expect(screen.getByTestId('section-2')).toBeInTheDocument();
     });
   });
 });
