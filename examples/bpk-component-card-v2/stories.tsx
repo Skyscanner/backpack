@@ -27,9 +27,6 @@ import {
   SurfaceColorsExample,
   PackagesCardExample,
   FlightsCardExample,
-  MultiColumnExample,
-  ThreeEqualColumnsExample,
-  SelectiveDividerExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,
@@ -46,9 +43,6 @@ export const Variants = VariantsExample;
 export const SurfaceColors = SurfaceColorsExample;
 export const PackagesCard = PackagesCardExample;
 export const FlightsCard = FlightsCardExample;
-export const MultiColumn = MultiColumnExample;
-export const ThreeEqualColumns = ThreeEqualColumnsExample;
-export const SelectiveDivider = SelectiveDividerExample;
 export const CustomPadding = CustomPaddingExample;
 
 export const Interactive = {
