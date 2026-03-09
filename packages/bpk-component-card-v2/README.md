@@ -25,10 +25,13 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 ### Split layout (70/30 two-column on desktop, stacked on mobile)
 
 ```tsx
+import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
+
 <BpkCardV2.Root>
-  <BpkCardV2.Body split splitRatio={70}>
-    <BpkCardV2.Primary>Main content (70%)</BpkCardV2.Primary>
-    <BpkCardV2.Secondary>Sidebar (30%)</BpkCardV2.Secondary>
+  <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }}>
+    <BpkCardV2.Section>Main content (70%)</BpkCardV2.Section>
+    <BpkCardV2.Divider />
+    <BpkCardV2.Section>Sidebar (30%)</BpkCardV2.Section>
   </BpkCardV2.Body>
 </BpkCardV2.Root>
 ```
@@ -37,19 +40,21 @@ import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card-v2';
 
 ```tsx
 <BpkCardV2.Root bgColor="surfaceElevated">
-  Card with elevated surface color
+  <BpkCardV2.Body>Card with elevated surface color</BpkCardV2.Body>
 </BpkCardV2.Root>
 ```
 
 ### With custom padding
 
 ```tsx
+import { BpkSpacing } from '@skyscanner/backpack-web/bpk-component-layout';
+
 <BpkCardV2.Root>
-  <BpkCardV2.Header padding="lg">Large padding header</BpkCardV2.Header>
-  <BpkCardV2.Body padding={{ vertical: 'sm', horizontal: 'xl' }}>
-    Custom vertical and horizontal padding
+  <BpkCardV2.Header padding={BpkSpacing.LG}>Large padding header</BpkCardV2.Header>
+  <BpkCardV2.Body padding={BpkSpacing.SM}>
+    Custom padding body
   </BpkCardV2.Body>
-  <BpkCardV2.Footer padding={{ top: 'none', bottom: 'md' }}>
+  <BpkCardV2.Footer paddingTop={BpkSpacing.None} paddingBottom={BpkSpacing.Base}>
     Individual side padding
   </BpkCardV2.Footer>
 </BpkCardV2.Root>
