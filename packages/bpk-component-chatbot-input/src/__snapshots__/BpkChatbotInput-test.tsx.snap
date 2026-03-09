@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkChatbotInput common behaviours renders with composor type correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chatbot-input--composor"
+    data-backpack-ds-component="ChatbotInput"
+    data-testid="bpk-chatbot-input-container"
+    role="presentation"
+  >
+    <div
+      class="bpk-chatbot-textarea-field__container"
+      style="height: 24px;"
+    >
+      <div
+        class="bpk-chatbot-textarea-field__field"
+      >
+        <label
+          class="bpk-chatbot-textarea-field__label"
+          for="bpk-chatbot-textarea"
+        >
+          Ask away
+        </label>
+        <textarea
+          aria-label="Ask away"
+          autocapitalize="sentences"
+          autocomplete="off"
+          autocorrect="off"
+          class="bpk-chatbot-textarea-field__textarea"
+          data-testid="bpk-chatbot-textarea-field"
+          id="bpk-chatbot-textarea"
+          placeholder="Ask away"
+          rows="1"
+          spellcheck="true"
+          style="height: 24px; resize: none;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <button
+      aria-label="Send"
+      class="bpk-button bpk-button--icon-only bpk-button--primary"
+      data-backpack-ds-component="Button"
+      data-testid="bpk-chatbot-input-send"
+      disabled=""
+      type="button"
+    >
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+      >
+        <svg
+          aria-hidden="true"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkChatbotInput should render correctly with default props 1`] = `
+<DocumentFragment>
+  <div
+    class="bpk-chatbot-input--default"
+    data-backpack-ds-component="ChatbotInput"
+    data-testid="bpk-chatbot-input-container"
+    role="presentation"
+  >
+    <div
+      class="bpk-chatbot-input-field"
+      role="presentation"
+    >
+      <label
+        class="bpk-chatbot-input-field__label"
+        for="bpk-chatbot-input"
+      >
+        Ask away
+      </label>
+      <input
+        aria-label="Ask away"
+        autocapitalize="sentences"
+        autocomplete="off"
+        autocorrect="off"
+        class="bpk-chatbot-input-field__input"
+        data-testid="bpk-chatbot-input-field"
+        enterkeyhint="send"
+        id="bpk-chatbot-input"
+        inputmode="text"
+        placeholder="Ask away"
+        spellcheck="true"
+        tabindex="0"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      aria-label="Send"
+      class="bpk-button bpk-button--icon-only bpk-button--featured"
+      data-backpack-ds-component="Button"
+      data-testid="bpk-chatbot-input-send"
+      type="button"
+    >
+      <span
+        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+      >
+        <svg
+          aria-hidden="true"
+          class="bpk-icon--rtl-support"
+          height="1rem"
+          viewBox="0 0 24 24"
+          width="1rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
