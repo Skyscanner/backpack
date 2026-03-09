@@ -27,6 +27,7 @@ import {
   SurfaceColorsExample,
   PackagesCardExample,
   FlightsCardExample,
+  HotelCardExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,
@@ -43,6 +44,7 @@ export const Variants = VariantsExample;
 export const SurfaceColors = SurfaceColorsExample;
 export const PackagesCard = PackagesCardExample;
 export const FlightsCard = FlightsCardExample;
+export const HotelsCard = HotelCardExample;
 export const CustomPadding = CustomPaddingExample;
 
 export const Interactive = {

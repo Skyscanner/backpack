@@ -16,14 +16,18 @@
  * limitations under the License.
  */
 
+import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
 import BpkButton from '../../packages/bpk-component-button';
 import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
 import BpkCarousel from '../../packages/bpk-component-carousel';
 import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
-import { BpkFlex, BpkGrid, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
+import { BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
 import BpkLink from '../../packages/bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkRating from '../../packages/bpk-component-rating';
+import BpkStarRating from '../../packages/bpk-component-star-rating';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -276,6 +280,58 @@ const FlightsCardExample = () => (
   </div>
 );
 
+const HotelCardExample = () => (
+  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+    <BpkCardV2.Root>
+      <BpkCardV2.Body columns="3fr 4fr 3fr">
+        <BpkCardV2.Section padding={BpkSpacing.None}>
+          <BpkCarousel images={carouselImages} bottom={16}/>
+        </BpkCardV2.Section>
+        <BpkCardV2.Section gap={BpkSpacing.MD}>
+          <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+            The Ritz-Carlton New York, Central Park
+          </BpkText>
+          <BpkStarRating
+            rating={4}
+            maxRating={4}
+            ratingLabel="4 star hotel"
+          />
+          <BpkText textStyle={TEXT_STYLES.footnote}>
+            0.85 miles from Central Park
+          </BpkText>
+          <BpkRating
+            ariaLabel="4.5 out of 5 rating based on 1,532 reviews"
+            value={4.5}
+            title=""
+            subtitle="1,532 reviews"
+          />
+          <BpkHStack>
+            <BpkBadge>Great for couples</BpkBadge>
+            <BpkBadge>City view</BpkBadge>
+          </BpkHStack>
+        </BpkCardV2.Section>
+        <BpkCardV2.Divider />
+        <BpkCardV2.Section gap={BpkSpacing.Base} justifyContent="end">
+          <BpkFlex direction="column" gap={BpkSpacing.SM}>
+            <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textError}>Our cheapest price</BpkText>
+            <BpkPrice
+              size={SIZES.Large}
+              previousPrice="£2,033"
+              leadingText="19% off"
+              price="£1,830"
+              trailingText="a night"
+            />
+            <BpkLink href="https://example.com" target="_blank">£3,360 total</BpkLink>
+          </BpkFlex>
+          <BpkButton onClick={() => alert('Select hotel')} fullWidth>
+            Go to site
+          </BpkButton>
+        </BpkCardV2.Section>
+      </BpkCardV2.Body>
+    </BpkCardV2.Root>
+  </div>
+);  
+
 const CustomPaddingExample = () => (
   <div className={getClassName('bpk-card-v2-examples__grid')}>
     <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
@@ -317,7 +373,7 @@ const CustomPaddingExample = () => (
     </div>
   </div>
 );
-
+  
 type InteractiveExampleProps = {
   variant?: BpkCardV2Variant;
   bgColor?: BpkCardV2SurfaceColor;
@@ -416,6 +472,7 @@ export {
   SurfaceColorsExample,
   PackagesCardExample,
   FlightsCardExample,
+  HotelCardExample,
   CustomPaddingExample,
   InteractiveExample,
   AllExamples,
