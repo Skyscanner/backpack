@@ -37,7 +37,6 @@
 @mixin bpk-segmented-control-v2 {
   --bpk-segmented-control-bg: #{tokens.$bpk-private-segmented-control-canvas-default-day};
   --bpk-segmented-control-item-color: #{tokens.$bpk-text-primary-day};
-  --bpk-segmented-control-item-disabled-color: #{tokens.$bpk-text-disabled-day};
   --bpk-segmented-control-indicator-bg: #{tokens.$bpk-core-primary-day};
   --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
   --bpk-segmented-control-border-radius: #{tokens.$bpk-border-radius-sm};
@@ -149,11 +148,6 @@
   // Ark-UI renders Item as a <label>. Reset label defaults.
   display: contents;
   cursor: pointer;
-
-  &[data-disabled] {
-    cursor: not-allowed;
-    pointer-events: none;
-  }
 }
 
 /// Segmented control item control (the visible, interactive area).
@@ -190,17 +184,6 @@
     background-color: var(--bpk-segmented-control-indicator-bg);
     color: var(--bpk-segmented-control-indicator-color);
     border-inline-start-color: transparent;
-  }
-
-  &[data-disabled] {
-    color: var(--bpk-segmented-control-item-disabled-color);
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  &[data-state='checked'][data-disabled] {
-    color: var(--bpk-segmented-control-indicator-color);
-    opacity: 1;
   }
 }
 

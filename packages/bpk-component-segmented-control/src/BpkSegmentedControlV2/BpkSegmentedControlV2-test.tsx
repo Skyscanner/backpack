@@ -37,12 +37,10 @@ jest.mock('../../../bpk-react-utils', () => ({
 
 const ThreeItemControl = ({
   defaultValue,
-  disabled,
   onChange,
   value,
 }: {
   defaultValue?: string;
-  disabled?: boolean;
   onChange?: (newValue: string) => void;
   value?: string;
 }) => (
@@ -51,7 +49,6 @@ const ThreeItemControl = ({
     value={value}
     defaultValue={defaultValue}
     onChange={onChange}
-    disabled={disabled}
   >
     <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
     <BpkSegmentedControlV2.Item value="rating">
@@ -125,41 +122,6 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
     });
   });
 
-  it('root disabled: clicking any item does not fire onChange', async () => {
-    const onChange = jest.fn();
-    render(<ThreeItemControl value="price" onChange={onChange} disabled />);
-    const ratingLabel = screen.getByText('Rating');
-    fireEvent.click(ratingLabel);
-    await waitFor(() => {
-      expect(onChange).not.toHaveBeenCalled();
-    });
-  });
-
-  it('individual item disabled: only that item is non-interactive', () => {
-    const onChange = jest.fn();
-    render(
-      <BpkSegmentedControlV2.Root
-        label="Cabin class"
-        value="economy"
-        onChange={onChange}
-      >
-        <BpkSegmentedControlV2.Item value="economy">
-          Economy
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="premium" disabled>
-          Premium
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="business">
-          Business
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const radioInputs = screen.getAllByRole('radio');
-    const premiumInput = radioInputs.find(
-      (radio) => (radio as HTMLInputElement).value === 'premium',
-    );
-    expect(premiumInput).toBeDisabled();
-  });
 });
 
 describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', () => {
@@ -591,33 +553,6 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     ).toBeChecked();
   });
 
-  it('snapshot: root disabled', () => {
-    render(
-      <BpkSegmentedControlV2.Root
-        label="Snapshot"
-        defaultValue="price"
-        disabled
-      >
-        <BpkSegmentedControlV2.Item value="price">
-          Price
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          Rating
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    expect(screen.getByRole('radiogroup')).toHaveAttribute(
-      'aria-disabled',
-      'true',
-    );
-    const radioInputs = screen.getAllByRole('radio');
-    radioInputs.forEach((radio) => expect(radio).toBeDisabled());
-    expect(
-      radioInputs.find(
-        (radio) => (radio as HTMLInputElement).value === 'price',
-      ),
-    ).toBeChecked();
-  });
 });
 
 describe('BpkSegmentedControlV2 — US5: Composable custom content', () => {

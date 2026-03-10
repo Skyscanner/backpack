@@ -55,11 +55,6 @@ export type BpkSegmentedControlV2RootProps = {
    */
   shadow?: boolean;
   /**
-   * Disables all items in the group.
-   * @default false
-   */
-  disabled?: boolean;
-  /**
    * Controls whether arrow-key navigation automatically selects the focused item.
    * 'automatic': selection follows focus immediately.
    * 'manual': selection requires an explicit Space or Enter keypress.
@@ -82,9 +77,4 @@ export type BpkSegmentedControlV2ItemProps = {
    * Visible content of the segment — text, icons, or a combination.
    */
   children: ReactNode;
-  /**
-   * Disables this individual item.
-   * @default false
-   */
-  disabled?: boolean;
 };

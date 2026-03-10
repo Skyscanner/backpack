@@ -64,7 +64,6 @@ const BpkSegmentedControlV2Root = ({
   activationMode = 'automatic',
   children,
   defaultValue,
-  disabled = false,
   label,
   onChange,
   shadow = false,
@@ -131,7 +130,6 @@ const BpkSegmentedControlV2Root = ({
             }
           : undefined
       }
-      disabled={disabled}
       orientation="horizontal"
       onKeyDown={handleKeyDown}
       {...getDataComponentAttribute('SegmentedControlV2')}
@@ -146,7 +144,6 @@ const BpkSegmentedControlV2Root = ({
           <SegmentGroup.Item
             key={item.props.value}
             value={item.props.value}
-            disabled={item.props.disabled ?? false}
             className={getClassName('bpk-segmented-control-v2__item')}
           >
             <SegmentGroup.ItemControl

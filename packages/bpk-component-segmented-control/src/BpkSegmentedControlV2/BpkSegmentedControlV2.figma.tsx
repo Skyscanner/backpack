@@ -30,13 +30,11 @@ figma.connect(BpkSegmentedControlV2.Root, 'https://www.figma.com/design/KXf2gHNL
       'Surface Contrast': SEGMENT_TYPES_V2.SurfaceContrast,
     }),
     shadow: figma.boolean('Shadow'),
-    disabled: figma.boolean('Disabled'),
   },
-  example: ({ disabled, shadow, type }) => (
+  example: ({ shadow, type }) => (
     <BpkSegmentedControlV2.Root
       type={type}
       shadow={shadow}
-      disabled={disabled}
       defaultValue="option1"
       label="Select option"
     >

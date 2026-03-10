@@ -29,8 +29,6 @@ import {
   SurfaceDefault,
   SurfaceContrast,
   WithShadow,
-  RootDisabled,
-  IndividualItemDisabled,
   WithIconAndText,
   IconOnly,
   RtlLayout,
@@ -77,16 +75,6 @@ export const TypeSurfaceContrast = {
 export const Shadow = {
   render: WithShadow,
   name: 'With shadow',
-};
-
-export const DisabledRoot = {
-  render: RootDisabled,
-  name: 'Root disabled',
-};
-
-export const DisabledItem = {
-  render: IndividualItemDisabled,
-  name: 'Individual item disabled',
 };
 
 export const IconAndText = {

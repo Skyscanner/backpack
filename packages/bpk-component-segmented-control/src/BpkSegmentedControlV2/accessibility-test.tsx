@@ -45,43 +45,6 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('no axe violations: root disabled', async () => {
-    const { container } = render(
-      <BpkSegmentedControlV2.Root
-        label="Disabled group"
-        defaultValue="price"
-        disabled
-      >
-        <BpkSegmentedControlV2.Item value="price">
-          Price
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          Rating
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  it('no axe violations: individual item disabled', async () => {
-    const { container } = render(
-      <BpkSegmentedControlV2.Root label="Cabin class" defaultValue="economy">
-        <BpkSegmentedControlV2.Item value="economy">
-          Economy
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="premium" disabled>
-          Premium
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="business">
-          Business
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
   it('no axe violations: no initial selection', async () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Choose option">

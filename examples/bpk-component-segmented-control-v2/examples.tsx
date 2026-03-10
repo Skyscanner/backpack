@@ -166,43 +166,6 @@ const WithShadow = () => {
   );
 };
 
-const RootDisabled = () => (
-  <BpkSegmentedControlV2.Root
-    label="Unavailable filter"
-    defaultValue="all"
-    disabled
-  >
-    <BpkSegmentedControlV2.Item value="all">All</BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="direct">
-      Direct
-    </BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="one-stop">
-      1 stop
-    </BpkSegmentedControlV2.Item>
-  </BpkSegmentedControlV2.Root>
-);
-
-const IndividualItemDisabled = () => {
-  const [selected, setSelected] = useState('economy');
-  return (
-    <BpkSegmentedControlV2.Root
-      label="Cabin class"
-      value={selected}
-      onChange={setSelected}
-    >
-      <BpkSegmentedControlV2.Item value="economy">
-        Economy
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="premium" disabled>
-        Premium (sold out)
-      </BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="business">
-        Business
-      </BpkSegmentedControlV2.Item>
-    </BpkSegmentedControlV2.Root>
-  );
-};
-
 const WithIconAndText = () => {
   const [selected, setSelected] = useState('grid');
   return (
@@ -503,8 +466,6 @@ export {
   SurfaceDefault,
   SurfaceContrast,
   WithShadow,
-  RootDisabled,
-  IndividualItemDisabled,
   WithIconAndText,
   IconOnly,
   RtlLayout,
