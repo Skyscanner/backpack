@@ -24,14 +24,28 @@
 @use 'shadows';
 @use 'utils';
 
+// Private helper: applies a box-shadow border with CSS variable fallback.
+// bpk-border-sm() uses a box-shadow shorthand, so bpk-themeable-property cannot
+// embed a CSS variable inside it — this mixin applies the two-line fallback pattern manually.
+@mixin bpk-chip-themeable-border($var-name, $fallback-color) {
+  box-shadow: 0 0 0 tokens.$bpk-border-size-sm $fallback-color inset;
+  box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+    var(#{$var-name}, $fallback-color) inset;
+}
+
 @mixin bpk-chip {
   display: inline-flex;
   height: tokens.bpk-spacing-xl();
   padding: 0 tokens.bpk-spacing-base();
   align-items: center;
   border: none;
-  border-radius: tokens.$bpk-border-radius-xs * 2;
   cursor: pointer;
+
+  @include utils.bpk-themeable-property(
+    border-radius,
+    --bpk-chip-border-radius,
+    tokens.$bpk-border-radius-xs * 2
+  );
 
   &__leading-accessory-view {
     display: inline-flex;
@@ -49,17 +63,33 @@
   }
 
   &--on-dark {
-    background-color: transparent;
-    color: tokens.$bpk-text-on-dark-day;
-
-    @include borders.bpk-border-sm(tokens.$bpk-line-on-dark-day);
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-chip-on-dark-background-color,
+      transparent
+    );
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-chip-on-dark-text-color,
+      tokens.$bpk-text-on-dark-day
+    );
+    @include bpk-chip-themeable-border(
+      --bpk-chip-on-dark-border-color,
+      tokens.$bpk-line-on-dark-day
+    );
 
     @include utils.bpk-hover {
-      @include borders.bpk-border-sm(tokens.$bpk-surface-default-day);
+      @include bpk-chip-themeable-border(
+        --bpk-chip-on-dark-hover-border-color,
+        tokens.$bpk-surface-default-day
+      );
     }
 
     &:active:not(:disabled) {
-      @include borders.bpk-border-sm(tokens.$bpk-surface-default-day);
+      @include bpk-chip-themeable-border(
+        --bpk-chip-on-dark-active-border-color,
+        tokens.$bpk-surface-default-day
+      );
     }
 
     &-selected {
@@ -76,10 +106,20 @@
       @include borders.bpk-border-sm(transparent);
 
       @include utils.bpk-hover {
+        @include utils.bpk-themeable-property(
+          background-color,
+          --bpk-chip-on-dark-selected-hover-background-color,
+          tokens.$bpk-surface-default-day
+        );
         @include borders.bpk-border-sm(transparent);
       }
 
       &:active:not(:disabled) {
+        @include utils.bpk-themeable-property(
+          background-color,
+          --bpk-chip-on-dark-selected-active-background-color,
+          tokens.$bpk-surface-default-day
+        );
         @include borders.bpk-border-sm(transparent);
       }
     }
@@ -108,17 +148,33 @@
   }
 
   &--default {
-    background-color: transparent;
-    color: tokens.$bpk-text-primary-day;
-
-    @include borders.bpk-border-sm(tokens.$bpk-line-day);
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-chip-default-background-color,
+      transparent
+    );
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-chip-default-text-color,
+      tokens.$bpk-text-primary-day
+    );
+    @include bpk-chip-themeable-border(
+      --bpk-chip-default-border-color,
+      tokens.$bpk-line-day
+    );
 
     @include utils.bpk-hover {
-      @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
+      @include bpk-chip-themeable-border(
+        --bpk-chip-default-hover-border-color,
+        tokens.$bpk-core-primary-day
+      );
     }
 
     &:active:not(:disabled) {
-      @include borders.bpk-border-sm(tokens.$bpk-core-primary-day);
+      @include bpk-chip-themeable-border(
+        --bpk-chip-default-active-border-color,
+        tokens.$bpk-core-primary-day
+      );
     }
 
     &-selected {
@@ -135,10 +191,20 @@
       @include borders.bpk-border-sm(transparent);
 
       @include utils.bpk-hover {
+        @include utils.bpk-themeable-property(
+          background-color,
+          --bpk-chip-default-selected-hover-background-color,
+          tokens.$bpk-core-primary-day
+        );
         @include borders.bpk-border-sm(transparent);
       }
 
       &:active:not(:disabled) {
+        @include utils.bpk-themeable-property(
+          background-color,
+          --bpk-chip-default-selected-active-background-color,
+          tokens.$bpk-core-primary-day
+        );
         @include borders.bpk-border-sm(transparent);
       }
     }
@@ -167,17 +233,32 @@
   }
 
   &--on-image {
-    background-color: tokens.$bpk-surface-default-day;
-    color: tokens.$bpk-text-primary-day;
-
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-chip-on-image-background-color,
+      tokens.$bpk-surface-default-day
+    );
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-chip-on-image-text-color,
+      tokens.$bpk-text-primary-day
+    );
     @include shadows.bpk-box-shadow-sm;
 
     @include utils.bpk-hover {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      @include utils.bpk-themeable-property(
+        background-color,
+        --bpk-chip-on-image-hover-background-color,
+        tokens.$bpk-canvas-contrast-day
+      );
     }
 
     &:active:not(:disabled) {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      @include utils.bpk-themeable-property(
+        background-color,
+        --bpk-chip-on-image-active-background-color,
+        tokens.$bpk-canvas-contrast-day
+      );
     }
 
     &-selected {

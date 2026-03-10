@@ -16,10 +16,15 @@
  * limitations under the License.
  */
 
-import themeAttributes from './themeAttributes';
+import themeAttributes, {
+  chipBorderRadiusThemeAttributes,
+  chipDefaultThemeAttributes,
+  chipOnDarkThemeAttributes,
+  chipOnImageThemeAttributes,
+} from './themeAttributes';
 
 describe('themeAttributes', () => {
-  it('exports the expected attributes', () => {
+  it('default export preserves the original 8 selected-state attributes for backward compatibility', () => {
     expect(themeAttributes).toEqual([
       'chipDefaultSelectedBackgroundColor',
       'chipDefaultSelectedTextColor',
@@ -29,6 +34,51 @@ describe('themeAttributes', () => {
       'chipOnImageSelectedHoverBackgroundColor',
       'chipOnImageSelectedActiveBackgroundColor',
       'chipOnImageSelectedTextColor',
+    ]);
+  });
+
+  it('chipBorderRadiusThemeAttributes exports the border-radius attribute', () => {
+    expect(chipBorderRadiusThemeAttributes).toEqual(['chipBorderRadius']);
+  });
+
+  it('chipDefaultThemeAttributes exports all default variant attributes', () => {
+    expect(chipDefaultThemeAttributes).toEqual([
+      'chipDefaultBackgroundColor',
+      'chipDefaultTextColor',
+      'chipDefaultBorderColor',
+      'chipDefaultHoverBorderColor',
+      'chipDefaultActiveBorderColor',
+      'chipDefaultSelectedBackgroundColor',
+      'chipDefaultSelectedTextColor',
+      'chipDefaultSelectedHoverBackgroundColor',
+      'chipDefaultSelectedActiveBackgroundColor',
+    ]);
+  });
+
+  it('chipOnDarkThemeAttributes exports all on-dark variant attributes', () => {
+    expect(chipOnDarkThemeAttributes).toEqual([
+      'chipOnDarkBackgroundColor',
+      'chipOnDarkTextColor',
+      'chipOnDarkBorderColor',
+      'chipOnDarkHoverBorderColor',
+      'chipOnDarkActiveBorderColor',
+      'chipOnDarkSelectedBackgroundColor',
+      'chipOnDarkSelectedTextColor',
+      'chipOnDarkSelectedHoverBackgroundColor',
+      'chipOnDarkSelectedActiveBackgroundColor',
+    ]);
+  });
+
+  it('chipOnImageThemeAttributes exports all on-image variant attributes', () => {
+    expect(chipOnImageThemeAttributes).toEqual([
+      'chipOnImageBackgroundColor',
+      'chipOnImageTextColor',
+      'chipOnImageHoverBackgroundColor',
+      'chipOnImageActiveBackgroundColor',
+      'chipOnImageSelectedBackgroundColor',
+      'chipOnImageSelectedTextColor',
+      'chipOnImageSelectedHoverBackgroundColor',
+      'chipOnImageSelectedActiveBackgroundColor',
     ]);
   });
 });
