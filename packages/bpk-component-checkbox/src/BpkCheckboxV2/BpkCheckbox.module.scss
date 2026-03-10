@@ -19,6 +19,7 @@
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
 @use '../../../bpk-mixins/forms';
+@use '../../../bpk-mixins/utils';
 
 // Root — flex row container (renders as <label> via Ark)
 .bpk-checkbox-v2 {
@@ -45,8 +46,13 @@
   align-items: center;
   flex-shrink: 0;
   border: tokens.$bpk-one-pixel-rem * 3 solid tokens.$bpk-line-day;
-  border-radius: tokens.$bpk-border-radius-xs; // .25rem = 4px
   background-color: tokens.$bpk-canvas-day;
+
+  @include utils.bpk-themeable-property(
+    border-radius,
+    --bpk-checkbox-border-radius,
+    tokens.$bpk-border-radius-xs
+  );
 
   // Focus — keyboard only
   &[data-focus-visible] {
@@ -57,17 +63,34 @@
   // Checked state — fill + white checkmark via mixin (same as v1)
   &[data-state='checked'] {
     border-width: tokens.$bpk-one-pixel-rem * 3;
-    border-color: tokens.$bpk-core-accent-day;
-    background-color: tokens.$bpk-core-accent-day;
 
+    @include utils.bpk-themeable-property(
+      border-color,
+      --bpk-checkbox-selected-color,
+      tokens.$bpk-core-accent-day
+    );
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-checkbox-selected-color,
+      tokens.$bpk-core-accent-day
+    );
     @include forms.bpk-checkbox__checkmark;
   }
 
   // Indeterminate state — fill + white horizontal dash (same as v1 ::before)
   &[data-state='indeterminate'] {
     border-width: tokens.$bpk-one-pixel-rem * 3;
-    border-color: tokens.$bpk-core-accent-day;
-    background-color: tokens.$bpk-core-accent-day;
+
+    @include utils.bpk-themeable-property(
+      border-color,
+      --bpk-checkbox-selected-color,
+      tokens.$bpk-core-accent-day
+    );
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-checkbox-selected-color,
+      tokens.$bpk-core-accent-day
+    );
 
     &::before {
       content: '';
@@ -83,15 +106,21 @@
     border-color: tokens.$bpk-status-danger-spot-day;
   }
 
-  // Disabled — muted background, no interactivity
+  // Disabled — white background, grey border (matches V1)
   &[data-disabled] {
-    border-color: tokens.$bpk-line-day;
-    background-color: tokens.$bpk-canvas-contrast-day;
+    border-color: tokens.$bpk-text-disabled-day;
+    background-color: tokens.$bpk-canvas-day;
 
     &[data-state='checked'],
     &[data-state='indeterminate'] {
       border-color: tokens.$bpk-text-disabled-day;
-      background-color: tokens.$bpk-text-disabled-day;
+      background-color: tokens.$bpk-canvas-day;
+    }
+
+    // Grey checkmark for disabled+checked (same SVG as V1's :disabled override)
+    &[data-state='checked'] {
+      // stylelint-disable-next-line function-url-quotes
+      background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%229%22%20viewBox%3D%220%200%2013%209%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.35352%203.64648L5.5%207.5L11.5%201.5%22%20stroke%3D%22lightgrey%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
     }
   }
 }

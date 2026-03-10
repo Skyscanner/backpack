@@ -9,9 +9,16 @@ description: |
   discovery, slot component API design principles, SCSS token mapping rules, accessibility
   verification criteria, Storybook composition coverage, and full test suite verification.
 author: Claude Code
-version: 1.2.0
-date: 2026-03-05
+version: 1.3.0
+date: 2026-03-10
 changelog: |
+  v1.3.0 (2026-03-10):
+  - Added M6 (themeable properties) to mandatory clarification checklist
+  - Added Phase 5.4: full BpkThemeProvider theming implementation pattern
+  - Key rule: one themeAttributes array per dimension (avoid "all or nothing" trap)
+  - Consumer pattern: spread arrays into flat string[] when combining dimensions
+  - Added Common Issues: BpkThemeProvider "all or nothing" drops all CSS vars
+
   v1.2.0 (2026-03-05):
   - Added Figma MCP known limitations: cannot identify icon SVG geometry inside components
   - Added Figma MCP troubleshooting: call get_metadata first when get_design_context fails
@@ -69,6 +76,18 @@ Output a structured gap report and ask for missing mandatory items before procee
 | M3 | **Component name** | `BpkX.Root` naming — must be confirmed | Not stated or ambiguous |
 | M4 | **Required slot components** | Drives TypeScript structure | Not listed, or only partially listed |
 | M5 | **Component placement** | Determines file structure and import paths | Not stated — always ask explicitly |
+| M6 | **Themeable properties** | Determines which CSS properties expose `--bpk-*` CSS vars via `BpkThemeProvider` | Not stated — always ask explicitly |
+
+#### M6 — Themeable Properties (always ask the user)
+
+Ask before implementing:
+```
+Which visual properties should be themeable via BpkThemeProvider?
+Common candidates for form controls: selected/checked colour, border-radius.
+Leave blank if no theming support is needed.
+```
+
+Once confirmed, implement following Phase 5.4.
 
 #### M5 — Component Placement (always ask the user)
 
@@ -406,7 +425,89 @@ Similarly, any `border-radius` on a pill-shaped element (e.g. an indeterminate d
 
 **How to verify:** Compare `VisualTest` (100% zoom) and `VisualTestWithZoom` (200% zoom) stories side-by-side using Playwright MCP screenshots. Any icon or shape that looks proportionally different between the two has a fixed-px dimension that should be converted to `rem`.
 
-### 5.4 Storybook Stories — Coverage Rules
+### 5.4 BpkThemeProvider Theming Support
+
+If the user confirmed themeable properties in M6, implement as follows.
+
+#### Step 1 — SCSS: use `bpk-themeable-property` mixin
+
+For each themeable property, replace the hardcoded token with the mixin:
+
+```scss
+@use '../../../bpk-mixins/utils';
+
+&[data-state='checked'] {
+  // Before: border-color: tokens.$bpk-core-accent-day;
+  @include utils.bpk-themeable-property(
+    border-color,
+    --bpk-[name]-selected-color,   // CSS variable name (kebab-case, bpk- prefix)
+    tokens.$bpk-core-accent-day    // fallback token (used when not themed)
+  );
+}
+```
+
+`BpkThemeProvider` derives the CSS variable name automatically from the camelCase theme key:
+`selectedColor` → `--bpk-[name]-selected-color`
+
+#### Step 2 — `themeAttributes.ts`: one array per themeable dimension
+
+**Critical:** Create a **separate named export per property**. Never combine multiple properties into one array.
+
+```typescript
+// src/Bpk[Name]V2/themeAttributes.ts
+export const [name][PropertyA]ThemeAttributes = ['[name][PropertyA]'];
+export const [name][PropertyB]ThemeAttributes = ['[name][PropertyB]'];
+```
+
+**Why separate arrays?** `BpkThemeProvider` enforces "all or nothing" — if any attribute in an array is missing from `theme`, it clears ALL CSS variables. Separate arrays let consumers theme one property independently without having to provide all others.
+
+#### Step 3 — `index.ts`: export each array
+
+```typescript
+export {
+  [name][PropertyA]ThemeAttributes,
+  [name][PropertyB]ThemeAttributes,
+  Bpk[Name]V2,
+};
+```
+
+#### Step 4 — Consumer usage pattern
+
+```tsx
+import {
+  [name][PropertyA]ThemeAttributes,
+  [name][PropertyB]ThemeAttributes,
+} from '@skyscanner/backpack-web/bpk-component-[name]';
+
+// Theme one property only
+<BpkThemeProvider
+  theme={{ [name][PropertyA]: 'value' }}
+  themeAttributes={[name][PropertyA]ThemeAttributes}
+>
+
+// Theme multiple properties together — spread into a flat array (TypeScript type is string | string[], not string[][])
+<BpkThemeProvider
+  theme={{ [name][PropertyA]: 'value', [name][PropertyB]: 'value' }}
+  themeAttributes={[...[name][PropertyA]ThemeAttributes, ...[name][PropertyB]ThemeAttributes]}
+>
+```
+
+#### Storybook: add a `ThemedExample`
+
+```tsx
+export const ThemedExample = () => (
+  <BpkThemeProvider
+    theme={{ /* confirmed themeable properties */ }}
+    themeAttributes={[/* spread all relevant arrays */]}
+  >
+    {/* variants that exercise the themed properties */}
+  </BpkThemeProvider>
+);
+```
+
+---
+
+### 5.5 Storybook Stories — Coverage Rules
 
 Stories are not for showcasing isolated props. For a slot-based component, stories demonstrate **compositions** — how slots are combined to achieve real use cases.
 
@@ -416,6 +517,34 @@ Required coverage:
 3. **`VisualTest` export** pointing at the most representative story (used for Percy visual regression)
 
 Story naming: use the pattern from the requirements as the story name (e.g. `TitleAndSubtitle`, `InlineLinkInLabel`). Do not create generic `Playground` or `Default` stories as the only entries.
+
+**Layout in examples:** Never use `<div style={{ display: 'flex', ... }}>` for layout in `examples.tsx`. Use BPK layout components instead. Always wrap in `BpkProvider`.
+
+**Avoid `BpkVStack` / `BpkHStack`** — they default to `align="center"` (Chakra behaviour), which centres items unexpectedly. Use `BpkFlex` with an explicit `direction` instead:
+
+```tsx
+import {
+  BpkFlex,
+  BpkProvider,
+  BpkSpacing,
+} from '../../packages/bpk-component-layout';
+
+// Vertical stack — left-aligned by default (flex stretch)
+export const MixedExample = () => (
+  <BpkProvider>
+    <BpkFlex direction="column" gap={BpkSpacing.Base}>
+      <SimpleLabelExample />
+      <TitleAndSubtitleExample />
+    </BpkFlex>
+  </BpkProvider>
+);
+
+// Slot wrapper inside a component (e.g. label + description)
+<BpkFlex direction="column">
+  <BpkCheckbox.Label>…</BpkCheckbox.Label>
+  <BpkCheckbox.Description>…</BpkCheckbox.Description>
+</BpkFlex>
+```
 
 ---
 
@@ -545,6 +674,12 @@ onCheckedChange={(details) => onCheckedChange?.(details.checked)}
 [data-disabled] & { … }
 [data-state='checked'] & { … }
 ```
+
+### BpkThemeProvider applies no CSS variables — custom colour has no effect
+
+**Symptom:** Component renders in default colour despite `BpkThemeProvider` wrapping it
+
+**Rule:** `BpkThemeProvider` requires every attribute listed in `themeAttributes` to be present in `theme`. If any is missing, all CSS variables are cleared. Keep one array per dimension so consumers only need to provide what they use.
 
 ### Figma MCP `get_design_context` returns "nothing selected" error
 

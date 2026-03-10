@@ -20,13 +20,13 @@ import { BpkCheckboxV2 as BpkCheckbox } from '../../packages/bpk-component-check
 
 import {
   DefaultCheckedExample,
-  DisabledCheckedExample,
-  DisabledExample,
+  DisabledStatesExample,
   IndeterminateExample,
   InlineLinkInLabelExample,
   InvalidExample,
   MixedExample,
   SimpleLabelExample,
+  ThemedExample,
   TitleAndSubtitleExample,
 } from './examples';
 
@@ -39,10 +39,10 @@ export const SimpleLabel = SimpleLabelExample;
 export const TitleAndSubtitle = TitleAndSubtitleExample;
 export const InlineLinkInLabel = InlineLinkInLabelExample;
 export const DefaultChecked = DefaultCheckedExample;
-export const Disabled = DisabledExample;
-export const DisabledChecked = DisabledCheckedExample;
+export const Disabled = DisabledStatesExample;
 export const Indeterminate = IndeterminateExample;
 export const Invalid = InvalidExample;
+export const Themed = ThemedExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
