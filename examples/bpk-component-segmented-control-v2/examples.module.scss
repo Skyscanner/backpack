@@ -50,25 +50,21 @@
   background-color: tokens.$bpk-surface-contrast-day;
 }
 
-.bpk-component-segmented-control-stories__price {
-  color: tokens.$bpk-core-accent-day;
+.bpk-component-segmented-control-stories__complex {
+  --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-base()};
+  --bpk-segmented-control-padding-y: #{tokens.bpk-spacing-md()};
 
-  [data-state='checked'] & {
-    color: inherit;
-  }
+  text-align: start;
 }
 
 .bpk-component-segmented-control-stories__info-btn {
   display: inline-flex;
-  padding: 0;
   border: none;
   background: none;
-  color: tokens.$bpk-core-accent-day;
+  color: inherit;
   cursor: pointer;
-
-  [data-state='checked'] & {
-    color: inherit;
-  }
+  padding-block: 0;
+  padding-inline: 0 tokens.bpk-spacing-sm();
 
   svg {
     fill: currentcolor;

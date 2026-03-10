@@ -41,7 +41,8 @@
   --bpk-segmented-control-indicator-bg: #{tokens.$bpk-core-primary-day};
   --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
   --bpk-segmented-control-border-radius: #{tokens.$bpk-border-radius-sm};
-  --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-base()};
+  --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-sm()};
+  --bpk-segmented-control-padding-y: #{tokens.bpk-spacing-md()};
   --bpk-segmented-control-divider-color: #{tokens.$bpk-line-day};
 
   display: grid;
@@ -165,9 +166,9 @@
 @mixin bpk-segmented-control-v2__item-control {
   display: flex;
   min-height: tokens.bpk-spacing-xl();
-  padding: var(--bpk-segmented-control-padding-y, 0)
+  padding: var(--bpk-segmented-control-padding-y)
     var(--bpk-segmented-control-padding-x);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   transition:
     background-color tokens.$bpk-duration-xs ease-in-out,
@@ -211,14 +212,18 @@
 ///   }
 
 @mixin bpk-segmented-control-v2__item-text {
-  display: flex;
-  min-width: 0;
-  align-items: center;
-  gap: tokens.bpk-spacing-sm();
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   pointer-events: none;
 
   svg {
-    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
     fill: currentcolor;
+    margin-inline-end: tokens.bpk-spacing-sm();
   }
 }

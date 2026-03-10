@@ -22,7 +22,6 @@ import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
 import InformationCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
 import ListIcon from '../../packages/bpk-component-icon/sm/list';
 import {
-  BpkBox,
   BpkHStack,
   BpkProvider,
   BpkSpacing,
@@ -333,7 +332,6 @@ const NoInitialSelection = () => (
   </BpkSegmentedControlV2.Root>
 );
 
-// Stacks multi-line item content vertically, matching v1's block-layout buttons.
 const ComplexItemContent = ({
   duration,
   label,
@@ -343,10 +341,10 @@ const ComplexItemContent = ({
   label: string;
   price: string;
 }) => (
-  <BpkVStack gap={BpkSpacing.XS}>
-    <BpkBox>{label}</BpkBox>
-    <BpkBox>{price}</BpkBox>
-    <BpkBox>{duration}</BpkBox>
+  <BpkVStack gap={BpkSpacing.None} align="start">
+    <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+    <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
+    <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
   </BpkVStack>
 );
 
@@ -370,7 +368,12 @@ const ComplexTypeExample = ({
   type?: (typeof SEGMENT_TYPES_V2)[keyof typeof SEGMENT_TYPES_V2];
 }) => (
   <BpkProvider>
-    <div className={getClassName(wrapperClassByType[type])}>
+    <div
+      className={getClassName(
+        wrapperClassByType[type],
+        'bpk-component-segmented-control-stories__complex',
+      )}
+    >
       <BpkSegmentedControlV2.Root
         label="Sort flight itineraries"
         defaultValue="cheapest"
@@ -433,45 +436,44 @@ const ComplexContentWithIcon = () => {
 
   return (
     <BpkProvider>
-      <BpkSegmentedControlV2.Root
-        label="Sort flight itineraries"
-        value={selected}
-        onChange={setSelected}
-        shadow
-      >
-        {flightSortItems.map(
-          ({ duration, label, price, showInfoIcon, value }) => (
-            <BpkSegmentedControlV2.Item key={value} value={value}>
-              <BpkVStack gap={BpkSpacing.XS} align="start">
-                <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
-                <BpkHStack gap={BpkSpacing.SM} align="center">
-                  <BpkText
-                    textStyle={TEXT_STYLES.heading5}
-                    className={getClassName(
-                      'bpk-component-segmented-control-stories__price',
-                    )}
-                  >
-                    {price}
-                  </BpkText>
-                  {showInfoIcon && (
-                    <button
-                      type="button"
-                      className={getClassName(
-                        'bpk-component-segmented-control-stories__info-btn',
-                      )}
-                      onClick={handleInfoClick(label)}
-                      aria-label={`More info about ${label}`}
-                    >
-                      <InformationCircleIcon />
-                    </button>
-                  )}
-                </BpkHStack>
-                <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
-              </BpkVStack>
-            </BpkSegmentedControlV2.Item>
-          ),
+      <div
+        className={getClassName(
+          'bpk-component-segmented-control-stories__complex',
         )}
-      </BpkSegmentedControlV2.Root>
+      >
+        <BpkSegmentedControlV2.Root
+          label="Sort flight itineraries"
+          value={selected}
+          onChange={setSelected}
+          shadow
+        >
+          {flightSortItems.map(
+            ({ duration, label, price, showInfoIcon, value }) => (
+              <BpkSegmentedControlV2.Item key={value} value={value}>
+                <BpkVStack gap={BpkSpacing.None} align="start">
+                  <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+                  <BpkHStack gap={BpkSpacing.XS} align="center">
+                    <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
+                    {showInfoIcon && (
+                      <button
+                        type="button"
+                        className={getClassName(
+                          'bpk-component-segmented-control-stories__info-btn',
+                        )}
+                        onClick={handleInfoClick(label)}
+                        aria-label={`More info about ${label}`}
+                      >
+                        <InformationCircleIcon />
+                      </button>
+                    )}
+                  </BpkHStack>
+                  <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
+                </BpkVStack>
+              </BpkSegmentedControlV2.Item>
+            ),
+          )}
+        </BpkSegmentedControlV2.Root>
+      </div>
     </BpkProvider>
   );
 };
