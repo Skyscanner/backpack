@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkButtonV2 as BpkButton } from './BpkButton';
+import BpkButton from './BpkButton';
 
 describe('BpkButton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues when used as a button', async () => {
