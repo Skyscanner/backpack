@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkChatbotInput common behaviours renders with composor type correctly 1`] = `
+exports[`BpkChatbotInput common behaviours renders with composer type correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-chatbot-input--composor"
+    class="bpk-chatbot-input--composer"
     data-backpack-ds-component="ChatbotInput"
     data-testid="bpk-chatbot-input-container"
     role="presentation"

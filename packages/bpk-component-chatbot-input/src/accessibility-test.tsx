@@ -40,11 +40,11 @@ describe('BpkChatbotInput accessibility tests', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('should not have accessibility issues (composor type)', async () => {
+  it('should not have accessibility issues (composer type)', async () => {
     const { container } = render(
       <BpkChatbotInput
         {...defaultProps}
-        inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+        inputType={CHATBOT_INPUT_TYPES.COMPOSER}
       />,
     );
     const results = await axe(container);
@@ -53,7 +53,7 @@ describe('BpkChatbotInput accessibility tests', () => {
 
   it('should not have accessibility issues when loading', async () => {
     const { container } = render(
-      <BpkChatbotInput {...defaultProps} isPolling />,
+      <BpkChatbotInput {...defaultProps} isLoading />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

@@ -61,35 +61,26 @@ export const DefaultExample = () => (
   </div>
 );
 
-export const DefaultPollingExample = () => (
+export const DefaultLoadingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-      isPolling
-    />
-  </div>
-);
-
-export const DefaultSendingExample = () => (
-  <div className={getClassName('bpk-chatbot-input-examples')}>
-    <ChatbotInputWithState
-      inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-      isSending
       initialValue="Some message"
+      isLoading
     />
   </div>
 );
 
-export const ComposorExample = () => (
+export const ComposerExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
-    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSOR} />
+    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
   </div>
 );
 
-export const ComposorWithValueExample = () => (
+export const ComposerWithValueExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
-      inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+      inputType={CHATBOT_INPUT_TYPES.COMPOSER}
       initialValue="I'd like to hire a car in Edinburgh for the weekend"
     />
   </div>

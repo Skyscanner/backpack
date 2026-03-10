@@ -16,7 +16,13 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent, MouseEvent, RefObject, TouchEvent } from 'react';
+import type {
+  KeyboardEvent,
+  MouseEvent,
+  ReactElement,
+  RefObject,
+  TouchEvent,
+} from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -44,20 +50,20 @@ export type BpkChatbotInputProps = {
   onInputBlur: () => void;
   onSubmit: () => void | Promise<void>;
   inputPlaceholder?: string;
-  isSending?: boolean;
-  isPolling?: boolean;
+  isLoading?: boolean;
   inputType?: ChatbotInputType;
   maxCharacters?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
+  iconLoading?: ReactElement;
 };
 
 const BpkChatbotInput = ({
+  iconLoading,
   inputPlaceholder = '',
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,
   inputValue,
-  isPolling = false,
-  isSending = false,
+  isLoading = false,
   loadingAriaLabel,
   maxCharacters = MAX_CHARACTERS,
   onInputBlur,
@@ -80,8 +86,7 @@ const BpkChatbotInput = ({
     inputPlaceholder,
     inputType,
     inputValue,
-    isPolling,
-    isSending,
+    isLoading,
     maxCharacters,
     onInputBlur,
     onInputChange,
@@ -92,13 +97,13 @@ const BpkChatbotInput = ({
   });
 
   const containerClassName = getClassName(
-    isDefault ? 'bpk-chatbot-input--default' : 'bpk-chatbot-input--composor',
+    isDefault ? 'bpk-chatbot-input--default' : 'bpk-chatbot-input--composer',
     isOverLimit &&
       !isDefault &&
-      STYLES['bpk-chatbot-input--composor--overLimit'],
+      STYLES['bpk-chatbot-input--composer--overLimit'],
     isExpanding &&
       !isDefault &&
-      STYLES['bpk-chatbot-input--composor--expanding'],
+      STYLES['bpk-chatbot-input--composer--expanding'],
   );
 
   const handleContainerEvent = (
@@ -131,8 +136,8 @@ const BpkChatbotInput = ({
           {...inputProps}
         />
       )}
-      {isDefault && isPolling ? (
-        <LoadingButton ariaLabel={loadingAriaLabel} />
+      {isDefault && isLoading ? (
+        <LoadingButton ariaLabel={loadingAriaLabel} iconLoading={iconLoading} />
       ) : (
         <SendButton
           inputType={inputType}

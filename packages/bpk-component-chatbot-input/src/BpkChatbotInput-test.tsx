@@ -57,12 +57,12 @@ describe('BpkChatbotInput', () => {
       expect(input.tagName).toBe('INPUT');
     });
 
-    it('renders LoadingButton when isPolling', () => {
+    it('renders LoadingButton when isLoading', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
           inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-          isPolling
+          isLoading
         />,
       );
 
@@ -79,12 +79,12 @@ describe('BpkChatbotInput', () => {
     });
   });
 
-  describe('composor type', () => {
+  describe('composer type', () => {
     it('renders textarea field', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
         />,
       );
 
@@ -96,7 +96,7 @@ describe('BpkChatbotInput', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
           inputValue=""
         />,
       );
@@ -113,11 +113,11 @@ describe('BpkChatbotInput', () => {
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
-    it('submits on Enter key in composor mode', () => {
+    it('submits on Enter key in composer mode', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
           inputValue="Hello"
         />,
       );
@@ -125,11 +125,11 @@ describe('BpkChatbotInput', () => {
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
-    it('does not submit on Shift+Enter in composor mode', () => {
+    it('does not submit on Shift+Enter in composer mode', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
           inputValue="Hello"
         />,
       );
@@ -180,17 +180,17 @@ describe('BpkChatbotInput', () => {
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
-    it('disables input when isSending is true', () => {
-      render(<BpkChatbotInput {...defaultProps} isSending />);
+    it('disables input when isLoading is true', () => {
+      render(<BpkChatbotInput {...defaultProps} isLoading />);
 
       expect(screen.getByRole('textbox')).toBeDisabled();
     });
 
-    it('renders with composor type correctly', () => {
+    it('renders with composer type correctly', () => {
       const { asFragment } = render(
         <BpkChatbotInput
           {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSOR}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
         />,
       );
       expect(asFragment()).toMatchSnapshot();

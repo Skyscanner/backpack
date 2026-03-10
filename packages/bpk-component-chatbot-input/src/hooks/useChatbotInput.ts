@@ -32,8 +32,7 @@ interface UseChatbotInputOptions {
   onInputBlur: () => void;
   onSubmit: () => void | Promise<void>;
   inputPlaceholder?: string;
-  isSending?: boolean;
-  isPolling?: boolean;
+  isLoading?: boolean;
   inputType?: string;
   maxCharacters?: number;
   onInputClick?: () => void;
@@ -56,8 +55,7 @@ const useChatbotInput = ({
   inputPlaceholder = '',
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,
   inputValue,
-  isPolling = false,
-  isSending = false,
+  isLoading = false,
   maxCharacters = MAX_CHARACTERS,
   onInputBlur,
   onInputChange,
@@ -71,7 +69,7 @@ const useChatbotInput = ({
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const isOverLimit = inputValue.length > maxCharacters;
-  const isDisabled = isSending || isPolling;
+  const isDisabled = isLoading;
 
   const { isExpanding } = useTextAreaAutoResize({
     ref: inputRef as RefObject<HTMLTextAreaElement>,
@@ -79,10 +77,10 @@ const useChatbotInput = ({
   });
 
   const handleSubmit = useCallback(() => {
-    if (inputValue.trim() && !isSending && !isOverLimit) {
+    if (inputValue.trim() && !isLoading && !isOverLimit) {
       onSubmit();
     }
-  }, [inputValue, onSubmit, isSending, isOverLimit]);
+  }, [inputValue, onSubmit, isLoading, isOverLimit]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {

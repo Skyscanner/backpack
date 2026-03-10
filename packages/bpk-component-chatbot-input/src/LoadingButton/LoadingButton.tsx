@@ -16,30 +16,37 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
+import {
+  BpkButtonV2,
+  BUTTON_TYPES,
+  SIZE_TYPES,
+} from '../../../bpk-component-button';
 import {
   BpkSpinner,
   SPINNER_TYPES,
 } from '../../../bpk-component-spinner';
-import { cssModules } from '../../../bpk-react-utils';
-
-import STYLES from './LoadingButton.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export interface LoadingButtonProps {
   ariaLabel: string;
+  iconLoading?: ReactElement;
 }
 
-const LoadingButton = ({ ariaLabel }: LoadingButtonProps) => (
-  <button
-    type="button"
-    className={getClassName('bpk-chatbot-loading-button')}
-    aria-label={ariaLabel}
+const LoadingButton = ({
+  ariaLabel,
+  iconLoading = <BpkSpinner type={SPINNER_TYPES.light} />,
+}: LoadingButtonProps) => (
+  <BpkButtonV2
+    type={BUTTON_TYPES.featured}
+    size={SIZE_TYPES.small}
+    iconOnly
     disabled
+    aria-label={ariaLabel}
     data-testid="bpk-chatbot-input-loading"
   >
-    <BpkSpinner type={SPINNER_TYPES.light} />
-  </button>
+    {iconLoading}
+  </BpkButtonV2>
 );
 
 export default LoadingButton;

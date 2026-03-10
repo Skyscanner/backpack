@@ -18,7 +18,7 @@
 
 export const CHATBOT_INPUT_TYPES = {
   DEFAULT: 'default',
-  COMPOSOR: 'composor',
+  COMPOSER: 'composer',
 } as const;
 
 export type ChatbotInputType =
