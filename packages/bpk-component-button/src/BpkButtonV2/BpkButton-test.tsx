@@ -193,6 +193,104 @@ describe('BpkButton', () => {
   });
 
 
+  describe('icon props', () => {
+    it('should render correctly with leadingIcon', () => {
+      const { asFragment } = render(
+        <BpkButton leadingIcon={<span>icon</span>}>Label</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should apply bpk-button--has-icon class when leadingIcon is provided', () => {
+      const { container } = render(
+        <BpkButton leadingIcon={<span>icon</span>}>Label</BpkButton>,
+      );
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--has-icon')).toBe(true);
+    });
+
+    it('should render leading-icon span with correct BEM class', () => {
+      const { container } = render(
+        <BpkButton leadingIcon={<span>icon</span>}>Label</BpkButton>,
+      );
+      const leadingSpan = container.querySelector('.bpk-button__leading-icon');
+      expect(leadingSpan).toBeInTheDocument();
+      expect(leadingSpan?.textContent).toBe('icon');
+    });
+
+    it('should render correctly with trailingIcon', () => {
+      const { asFragment } = render(
+        <BpkButton trailingIcon={<span>→</span>}>Label</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render correctly with both leadingIcon and trailingIcon', () => {
+      const { asFragment } = render(
+        <BpkButton leadingIcon={<span>icon</span>} trailingIcon={<span>→</span>}>Label</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should apply bpk-button--has-icon class when trailingIcon is provided', () => {
+      const { container } = render(
+        <BpkButton trailingIcon={<span>→</span>}>Label</BpkButton>,
+      );
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--has-icon')).toBe(true);
+    });
+
+    it('should render trailing-icon span with correct BEM class', () => {
+      const { container } = render(
+        <BpkButton trailingIcon={<span>→</span>}>Label</BpkButton>,
+      );
+      const trailingSpan = container.querySelector('.bpk-button__trailing-icon');
+      expect(trailingSpan).toBeInTheDocument();
+      expect(trailingSpan?.textContent).toBe('→');
+    });
+
+    it('should NOT apply bpk-button--has-icon class when no icon props provided', () => {
+      const { container } = render(
+        <BpkButton>Label</BpkButton>,
+      );
+      expect(container?.firstElementChild?.classList?.contains('bpk-button--has-icon')).toBe(false);
+    });
+
+    it('should NOT render icon spans when icon props are absent', () => {
+      const { container } = render(
+        <BpkButton>Label</BpkButton>,
+      );
+      expect(container.querySelector('.bpk-button__leading-icon')).not.toBeInTheDocument();
+      expect(container.querySelector('.bpk-button__trailing-icon')).not.toBeInTheDocument();
+    });
+
+    it('should render correctly with leadingIcon and large size', () => {
+      const { asFragment } = render(
+        <BpkButton size={SIZE_TYPES.large} leadingIcon={<span>icon</span>}>Large</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render correctly with leadingIcon and fullWidth', () => {
+      const { asFragment } = render(
+        <BpkButton fullWidth leadingIcon={<span>icon</span>}>Full width</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render correctly with leadingIcon and disabled', () => {
+      const { asFragment } = render(
+        <BpkButton disabled leadingIcon={<span>icon</span>}>Disabled</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render correctly with leadingIcon as anchor (href)', () => {
+      const { asFragment } = render(
+        <BpkButton href="#" leadingIcon={<span>icon</span>}>Link button</BpkButton>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
+
   describe('link type buttons', () => {
     it('should render link type with underline span wrapper', () => {
       const { container } = render(

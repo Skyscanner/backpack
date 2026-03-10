@@ -35,16 +35,19 @@ export const BpkButtonV2 = ({
   href = null,
   iconOnly = false,
   implicit = false,
+  leadingIcon = null,
   onClick = () => {},
   rel: propRel = undefined,
   size = SIZE_TYPES.small,
   submit = false,
+  trailingIcon = null,
   type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
   const alternate = type === BUTTON_TYPES.linkOnDark;
   const shouldUnderline = isLinkType && !iconOnly && !disabled;
+  const hasIcons = !!(leadingIcon || trailingIcon);
 
   const classNames = getCommonClassName(
     'bpk-button',
@@ -53,6 +56,7 @@ export const BpkButtonV2 = ({
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
     fullWidth && 'bpk-button--full-width',
+    hasIcons && 'bpk-button--has-icon',
     isLinkType && iconOnly && 'bpk-button--link--icon-only',
     isLinkType && implicit && 'bpk-button--link--implicit',
     className,
@@ -71,6 +75,18 @@ export const BpkButtonV2 = ({
     ? <span className={underlinedClassName}>{children}</span>
     : children;
 
+  const leadingIconEl = leadingIcon ? (
+    <span className={getCommonClassName('bpk-button__leading-icon')}>
+      {leadingIcon}
+    </span>
+  ) : null;
+
+  const trailingIconEl = trailingIcon ? (
+    <span className={getCommonClassName('bpk-button__trailing-icon')}>
+      {trailingIcon}
+    </span>
+  ) : null;
+
   const target = blank ? '_blank' : '';
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
@@ -85,7 +101,9 @@ export const BpkButtonV2 = ({
         rel={rel}
         {...rest}
       >
+        {leadingIconEl}
         {content}
+        {trailingIconEl}
       </a>
     );
   }
@@ -99,7 +117,9 @@ export const BpkButtonV2 = ({
       onClick={onClick}
       {...rest}
     >
+      {leadingIconEl}
       {content}
+      {trailingIconEl}
     </button>
   );
 };

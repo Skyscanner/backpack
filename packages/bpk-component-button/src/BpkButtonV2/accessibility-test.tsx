@@ -33,4 +33,43 @@ describe('BpkButton accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have accessibility issues with leadingIcon', async () => {
+    const { container } = render(
+      <BpkButton leadingIcon={<span aria-hidden="true">★</span>}>Search</BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with trailingIcon', async () => {
+    const { container } = render(
+      <BpkButton trailingIcon={<span aria-hidden="true">→</span>}>Next</BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with both icons', async () => {
+    const { container } = render(
+      <BpkButton
+        leadingIcon={<span aria-hidden="true">★</span>}
+        trailingIcon={<span aria-hidden="true">→</span>}
+      >
+        Go
+      </BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with disabled button and leadingIcon', async () => {
+    const { container } = render(
+      <BpkButton disabled leadingIcon={<span aria-hidden="true">★</span>}>
+        Disabled
+      </BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

@@ -52,5 +52,7 @@ export type Props = {
   submit?: boolean;
   href?: string | null;
   blank?: boolean;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };

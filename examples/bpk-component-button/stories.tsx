@@ -34,6 +34,8 @@ import {
   FullWidthExample,
   SubmitButtonExample,
   ThemedBorderRadiusExample,
+  LeadingIconExample,
+  TrailingIconExample,
 } from './examples';
 
 export default {
@@ -76,3 +78,17 @@ export const SubmitButton = () => <SubmitButtonExample />;
 export const FullWidth = () => <FullWidthExample />;
 
 export const ThemedCornerRadius = () => <ThemedBorderRadiusExample />;
+
+export const BpkButtonWithLeadingIcon = () => <LeadingIconExample />;
+BpkButtonWithLeadingIcon.storyName = 'Bpk Button With leading icon';
+
+export const BpkButtonWithTrailingIcon = () => <TrailingIconExample />;
+BpkButtonWithTrailingIcon.storyName = 'Bpk Button With trailing icon';
+
+export const BpkButtonIconsVisualTest = () => (
+  <>
+    <LeadingIconExample />
+    <TrailingIconExample />
+  </>
+);
+BpkButtonIconsVisualTest.storyName = 'Visual Test With Icons';

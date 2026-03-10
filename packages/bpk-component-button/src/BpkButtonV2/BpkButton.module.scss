@@ -17,6 +17,7 @@
  */
 
 @use '../../../bpk-mixins/buttons';
+@use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
 
 .bpk-button {
@@ -107,6 +108,24 @@
 
   &--full-width {
     @include buttons.bpk-button--full-width;
+  }
+
+  &--has-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: tokens.bpk-spacing-md();
+  }
+
+  &--full-width#{&}--has-icon {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__leading-icon,
+  &__trailing-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    text-decoration: none;
   }
 
   /* stylelint-disable selector-max-compound-selectors */

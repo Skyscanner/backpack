@@ -26,6 +26,7 @@ import {
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
+import SmallLightningIcon from '../../packages/bpk-component-icon/sm/lightning';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -125,6 +126,46 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
 };
 
 ButtonStory.defaultProps = { className: null };
+
+const ButtonWithIconStory = ({ className, wrapped, ...rest }: StoryProps) => {
+  const Wrapped = wrapped;
+  return (
+    <div
+      className={[getClassName('bpk-button-story-wrapper'), className].join(
+        ' ',
+      )}
+    >
+      &nbsp;
+      <Wrapped onClick={action('Button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
+        Disabled
+      </Wrapped>
+      &nbsp;
+      <Wrapped
+        size={SIZE_TYPES.large}
+        onClick={action('Button clicked')}
+        {...rest}
+      >
+        Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped
+        size={SIZE_TYPES.large}
+        disabled
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        Disabled
+      </Wrapped>
+      &nbsp;
+    </div>
+  );
+};
+
+ButtonWithIconStory.defaultProps = { className: null };
 
 const PrimaryExample = (props: any) => (
   <ButtonStory wrapped={BpkButton} {...props} />
@@ -325,6 +366,14 @@ const AnchorTagsExample = () => (
   </>
 );
 
+const LeadingIconExample = (props: any) => (
+  <ButtonWithIconStory wrapped={BpkButton} leadingIcon={<SmallLightningIcon />} {...props} />
+);
+
+const TrailingIconExample = (props: any) => (
+  <ButtonWithIconStory wrapped={BpkButton} trailingIcon={<RtlSmallLongArrowRightIcon />} {...props} />
+);
+
 export {
   PrimaryExample,
   PrimaryOnDarkExample,
@@ -341,4 +390,6 @@ export {
   FullWidthExample,
   SubmitButtonExample,
   ThemedBorderRadiusExample,
+  LeadingIconExample,
+  TrailingIconExample,
 };

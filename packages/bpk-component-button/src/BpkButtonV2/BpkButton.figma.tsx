@@ -18,16 +18,11 @@
 
 import figma from '@figma/code-connect'
 
-import { withButtonAlignment } from "../../../bpk-component-icon"
 import LightningIcon from '../../../bpk-component-icon/sm/lightning';
 import LongArrowRightIcon  from '../../../bpk-component-icon/sm/long-arrow-right';
 
 import { BpkButtonV2 as BpkButton  } from "./BpkButton"
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
-
-
-const AlignedArrowIcon = withButtonAlignment(LongArrowRightIcon);
-const AlignedLightningIcon = withButtonAlignment(LightningIcon);
 
 figma.connect(
   BpkButton,
@@ -53,22 +48,27 @@ figma.connect(
       isDisabled: figma.enum('State', {
         "Disabled": true,
       }),
-      leftContent: figma.enum('Icon', {
-        "Left": <AlignedLightningIcon />
+      leadingIcon: figma.enum('Icon', {
+        "Left": <LightningIcon />
       }),
       label: figma.textContent("Label"),
-      rightContent: figma.enum('Icon', {
-        "Right": <AlignedArrowIcon />
+      trailingIcon: figma.enum('Icon', {
+        "Right": <LongArrowRightIcon />
       }),
       iconOnly: figma.enum('Icon', {
         "Icon only": true,
       })
     },
-    example: ({ iconOnly, isDisabled, label, leftContent, rightContent, size, style }) => (
-        <BpkButton type={style} size={size} disabled={isDisabled} iconOnly={iconOnly}>
-          {leftContent}
+    example: ({ iconOnly, isDisabled, label, leadingIcon, size, style, trailingIcon }) => (
+        <BpkButton
+          type={style}
+          size={size}
+          disabled={isDisabled}
+          iconOnly={iconOnly}
+          leadingIcon={leadingIcon}
+          trailingIcon={trailingIcon}
+        >
           {label}
-          {rightContent}
         </BpkButton>
       )
   },
