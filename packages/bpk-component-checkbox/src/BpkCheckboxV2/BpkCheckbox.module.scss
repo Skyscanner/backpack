@@ -44,19 +44,19 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border: tokens.$bpk-border-size-xl solid tokens.$bpk-line-day;
+  border: tokens.$bpk-one-pixel-rem * 3 solid tokens.$bpk-line-day;
   border-radius: tokens.$bpk-border-radius-xs; // .25rem = 4px
   background-color: tokens.$bpk-canvas-day;
 
   // Focus — keyboard only
   &[data-focus-visible] {
-    outline: tokens.$bpk-border-size-xl solid tokens.$bpk-core-accent-day;
+    outline: tokens.$bpk-one-pixel-rem * 3 solid tokens.$bpk-core-accent-day;
     outline-offset: tokens.$bpk-one-pixel-rem * 2;
   }
 
   // Checked state — fill + white checkmark via mixin (same as v1)
   &[data-state='checked'] {
-    border-width: tokens.$bpk-border-size-xl;
+    border-width: tokens.$bpk-one-pixel-rem * 3;
     border-color: tokens.$bpk-core-accent-day;
     background-color: tokens.$bpk-core-accent-day;
 
@@ -65,18 +65,15 @@
 
   // Indeterminate state — fill + white horizontal dash (same as v1 ::before)
   &[data-state='indeterminate'] {
-    border-width: tokens.$bpk-border-size-xl;
+    border-width: tokens.$bpk-one-pixel-rem * 3;
     border-color: tokens.$bpk-core-accent-day;
     background-color: tokens.$bpk-core-accent-day;
 
     &::before {
-      position: absolute;
-      top: tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem;
-      left: tokens.bpk-spacing-sm() * 0.5;
       content: '';
       width: tokens.bpk-spacing-xxl() * 0.25;
       height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
-      border-radius: tokens.$bpk-border-size-lg;
+      border-radius: tokens.$bpk-one-pixel-rem * 2;
       background-color: tokens.$bpk-surface-default-day;
     }
   }

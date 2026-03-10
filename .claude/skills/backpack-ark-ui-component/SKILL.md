@@ -373,21 +373,7 @@ Remove any `@use` import that goes unused — the linter will error.
 
 **Do NOT write custom inline SVG components for icons that already exist in `bpk-mixins`.**
 
-For form control icons specifically:
-- **Checkmark** → `@include forms.bpk-checkbox__checkmark;` applied to the control element on `[data-state='checked']`
-- **Indeterminate dash** → CSS `::before` pseudo-element on the control element (same approach as V1):
-  ```scss
-  &[data-state='indeterminate']::before {
-    position: absolute;
-    top: tokens.bpk-spacing-sm() + tokens.$bpk-one-pixel-rem;
-    left: tokens.bpk-spacing-sm() * 0.5;
-    content: '';
-    width: tokens.bpk-spacing-xxl() * 0.25;
-    height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
-    border-radius: tokens.$bpk-border-size-lg;
-    background-color: tokens.$bpk-surface-default-day;
-  }
-  ```
+When positioning indicator elements (e.g. a dash or dot) inside a V2 control, **do not use `position: absolute` with hardcoded `top`/`left` values copied from V1** if the control is a flex container (`display: flex; justify-content: center; align-items: center`) — flexbox centres children automatically at all zoom levels, making manual offsets unnecessary and incorrect.
 
 When icon rendering is done entirely via CSS on the Control element, the Indicator slot component can simply return `null` — no children needed.
 
@@ -402,6 +388,23 @@ When icon rendering is done entirely via CSS on the Control element, the Indicat
 - Every value that came from Figma must map to a Backpack token (from the mapping built in Phase 2.2)
 - All sizes in `rem`, never `px`
 - No `$bpk-private-*` tokens from other components
+
+#### ⚠️ Zoom Proportionality: Always Use `rem`-based Tokens for Dimensions
+
+When a V2 control element reuses a V1 mixin that contains `calc(100% - Xrem)` in `background-size` (e.g. `bpk-checkbox__checkmark`), the `100%` resolves to the **padding box** width (`background-origin: padding-box` default). This means the border width directly affects how large the SVG icon appears at different zoom levels.
+
+**The trap:**
+
+| Property | Fixed-px token | `rem`-based token |
+|---|---|---|
+| `border: $bpk-border-size-xl` | stays 3px at 200% zoom | scales to 6px at 200% zoom |
+| Effect on `background-size: calc(100% - Xrem)` | padding box stays large → SVG appears **bigger** than V1 | padding box shrinks proportionally → SVG matches V1 |
+
+**Rule:** Any dimensional property on a V2 control that shares a mixin with V1 must use the **same token form** as V1. If V1 uses `$bpk-one-pixel-rem * 3`, V2 must also use `$bpk-one-pixel-rem * 3`, not `$bpk-border-size-xl` — even though both equal 3px at 1× zoom.
+
+Similarly, any `border-radius` on a pill-shaped element (e.g. an indeterminate dash whose `border-radius` exceeds half its height) must also be `rem`-based so the pill shape is preserved at all zoom levels. Use `$bpk-one-pixel-rem * N` rather than `$bpk-border-size-*`.
+
+**How to verify:** Compare `VisualTest` (100% zoom) and `VisualTestWithZoom` (200% zoom) stories side-by-side using Playwright MCP screenshots. Any icon or shape that looks proportionally different between the two has a fixed-px dimension that should be converted to `rem`.
 
 ### 5.4 Storybook Stories — Coverage Rules
 
