@@ -36,6 +36,7 @@ import {
   ThemedBorderRadiusExample,
   LeadingIconExample,
   TrailingIconExample,
+  LinkWithIconExample,
 } from './examples';
 
 export default {
@@ -84,6 +85,9 @@ BpkButtonWithLeadingIcon.storyName = 'Bpk Button With leading icon';
 
 export const BpkButtonWithTrailingIcon = () => <TrailingIconExample />;
 BpkButtonWithTrailingIcon.storyName = 'Bpk Button With trailing icon';
+
+export const BpkButtonLinkWithIcon = () => <LinkWithIconExample />;
+BpkButtonLinkWithIcon.storyName = 'Link button with icon (underline test)';
 
 export const BpkButtonIconsVisualTest = () => (
   <>

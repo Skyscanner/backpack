@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkButton icon props should render correctly with both leadingIcon and trailingIcon 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    type="button"
+  >
+    <span
+      class="bpk-button__leading-icon"
+    >
+      <span>
+        icon
+      </span>
+    </span>
+    Label
+    <span
+      class="bpk-button__trailing-icon"
+    >
+      <span>
+        →
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButton icon props should render correctly with leadingIcon 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    type="button"
+  >
+    <span
+      class="bpk-button__leading-icon"
+    >
+      <span>
+        icon
+      </span>
+    </span>
+    Label
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButton icon props should render correctly with leadingIcon and disabled 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    disabled=""
+    type="button"
+  >
+    <span
+      class="bpk-button__leading-icon"
+    >
+      <span>
+        icon
+      </span>
+    </span>
+    Disabled
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButton icon props should render correctly with leadingIcon and fullWidth 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary bpk-button--full-width bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    type="button"
+  >
+    <span
+      class="bpk-button__leading-icon"
+    >
+      <span>
+        icon
+      </span>
+    </span>
+    Full width
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButton icon props should render correctly with leadingIcon and large size 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--large bpk-button--primary bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    type="button"
+  >
+    <span
+      class="bpk-button__leading-icon"
+    >
+      <span>
+        icon
+      </span>
+    </span>
+    Large
+  </button>
+</DocumentFragment>
+`;
+
+exports[`BpkButton icon props should render correctly with leadingIcon as anchor (href) 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-button bpk-button--primary bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    href="#"
+    target=""
+  >
+    <span
+      class="bpk-button__leading-icon"
+    >
+      <span>
+        icon
+      </span>
+    </span>
+    Link button
+  </a>
+</DocumentFragment>
+`;
+
+exports[`BpkButton icon props should render correctly with trailingIcon 1`] = `
+<DocumentFragment>
+  <button
+    class="bpk-button bpk-button--primary bpk-button--has-icon"
+    data-backpack-ds-component="Button"
+    type="button"
+  >
+    Label
+    <span
+      class="bpk-button__trailing-icon"
+    >
+      <span>
+        →
+      </span>
+    </span>
+  </button>
+</DocumentFragment>
+`;

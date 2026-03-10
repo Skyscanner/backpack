@@ -374,6 +374,10 @@ const TrailingIconExample = (props: any) => (
   <ButtonWithIconStory wrapped={BpkButton} trailingIcon={<RtlSmallLongArrowRightIcon />} {...props} />
 );
 
+const LinkWithIconExample = (props: any) => (
+  <ButtonWithIconStory wrapped={BpkButton} type={BUTTON_TYPES.link} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} {...props} />
+);
+
 export {
   PrimaryExample,
   PrimaryOnDarkExample,
@@ -392,4 +396,5 @@ export {
   ThemedBorderRadiusExample,
   LeadingIconExample,
   TrailingIconExample,
+  LinkWithIconExample,
 };
