@@ -40,8 +40,6 @@
   --bpk-segmented-control-indicator-bg: #{tokens.$bpk-core-primary-day};
   --bpk-segmented-control-indicator-color: #{tokens.$bpk-text-on-dark-day};
   --bpk-segmented-control-border-radius: #{tokens.$bpk-border-radius-sm};
-  --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-sm()};
-  --bpk-segmented-control-padding-y: #{tokens.bpk-spacing-md()};
   --bpk-segmented-control-divider-color: #{tokens.$bpk-line-day};
 
   display: grid;
@@ -160,8 +158,8 @@
 @mixin bpk-segmented-control-v2__item-control {
   display: flex;
   min-height: tokens.bpk-spacing-xl();
-  padding: var(--bpk-segmented-control-padding-y)
-    var(--bpk-segmented-control-padding-x);
+  padding: var(--bpk-segmented-control-padding-y, #{tokens.bpk-spacing-md()})
+    var(--bpk-segmented-control-padding-x, #{tokens.bpk-spacing-sm()});
   justify-content: flex-start;
   align-items: center;
   transition:

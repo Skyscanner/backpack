@@ -18,6 +18,10 @@
 
 import { type MouseEvent, useState } from 'react';
 
+import BpkButton, {
+  BUTTON_TYPES,
+} from '../../packages/bpk-component-button';
+import ChevronDownIcon from '../../packages/bpk-component-icon/sm/chevron-down';
 import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
 import InformationCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
 import ListIcon from '../../packages/bpk-component-icon/sm/list';
@@ -441,6 +445,71 @@ const ComplexContentWithIcon = () => {
   );
 };
 
+const ComplexContentWithButton = () => {
+  const [selected, setSelected] = useState('best');
+
+  const handleInfoClick =
+    (label: string) => (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+    };
+
+  const handleSortClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+  };
+
+  return (
+    <BpkProvider>
+      <div
+        className={getClassName(
+          'bpk-component-segmented-control-stories__complex',
+        )}
+      >
+        <BpkSegmentedControlV2.Root
+          label="Sort flight itineraries"
+          value={selected}
+          onChange={setSelected}
+          shadow
+        >
+          {flightSortItems.map(
+            ({ duration, label, price, showInfoIcon, value }) => (
+              <BpkSegmentedControlV2.Item key={value} value={value}>
+                <BpkVStack gap={BpkSpacing.None} align="start">
+                  <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+                  <BpkHStack gap={BpkSpacing.XS} align="center">
+                    <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
+                    {showInfoIcon && (
+                      <button
+                        type="button"
+                        className={getClassName(
+                          'bpk-component-segmented-control-stories__info-btn',
+                        )}
+                        onClick={handleInfoClick(label)}
+                        aria-label={`More info about ${label}`}
+                      >
+                        <InformationCircleIcon />
+                      </button>
+                    )}
+                  </BpkHStack>
+                  <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
+                </BpkVStack>
+              </BpkSegmentedControlV2.Item>
+            ),
+          )}
+          <BpkSegmentedControlV2.Item value="sort">
+            <BpkButton
+              type={BUTTON_TYPES.link}
+              onClick={handleSortClick}
+            >
+              Sort
+              <ChevronDownIcon />
+            </BpkButton>
+          </BpkSegmentedControlV2.Item>
+        </BpkSegmentedControlV2.Root>
+      </div>
+    </BpkProvider>
+  );
+};
+
 const VisualExample = () => (
   <BpkProvider>
     <BpkVStack
@@ -458,6 +527,7 @@ const VisualExample = () => (
 );
 
 export {
+  ComplexContentWithButton,
   ComplexContentWithIcon,
   DefaultCanvasDefault,
   UncontrolledDefaultValue,

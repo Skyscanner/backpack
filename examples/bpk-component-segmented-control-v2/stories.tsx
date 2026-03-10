@@ -22,6 +22,7 @@ import {
 } from '../../packages/bpk-component-segmented-control';
 
 import {
+  ComplexContentWithButton,
   ComplexContentWithIcon,
   DefaultCanvasDefault,
   UncontrolledDefaultValue,
@@ -110,6 +111,11 @@ export const NoneSelected = {
 export const ComplexContentIcon = {
   render: ComplexContentWithIcon,
   name: 'Complex content with icon',
+};
+
+export const ComplexContentButton = {
+  render: ComplexContentWithButton,
+  name: 'Complex content with button in slot',
 };
 
 export const ComplexContent = {
