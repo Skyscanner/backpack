@@ -48,16 +48,16 @@ figma.connect(
       isDisabled: figma.enum('State', {
         "Disabled": true,
       }),
-      leadingIcon: figma.enum('Icon', {
-        "Left": <LightningIcon />
+      leadingIcon: figma.boolean('Leading icon', {
+        true: <LightningIcon />,
+        false: undefined,
       }),
       label: figma.textContent("Label"),
-      trailingIcon: figma.enum('Icon', {
-        "Right": <LongArrowRightIcon />
+      trailingIcon: figma.boolean('Trailing icon', {
+        true: <LongArrowRightIcon />,
+        false: undefined,
       }),
-      iconOnly: figma.enum('Icon', {
-        "Icon only": true,
-      })
+      iconOnly: figma.boolean('Icon only')
     },
     example: ({ iconOnly, isDisabled, label, leadingIcon, size, style, trailingIcon }) => (
         <BpkButton
