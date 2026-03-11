@@ -15,7 +15,7 @@ it's necessary in overcoming z-index issues when absolutely positioning elements
 
 ```js
 import { Portal } from '@skyscanner/backpack-web/bpk-react-utils';
-import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
 import { Component } from 'react';
 
