@@ -260,8 +260,16 @@ const ThemedIconColorExample = () => (
 
 const ThemedTypographyExample = () => (
   <BpkThemeProvider
-    theme={{ badgeFontSize: fontSizeBase, badgeFontWeight: fontWeightBold, badgeLineHeight: lineHeightBase }}
-    themeAttributes={['badgeFontSize', 'badgeFontWeight', 'badgeLineHeight']}
+    theme={{
+      badgeFontSize: fontSizeBase,
+      badgeFontWeight: fontWeightBold,
+      badgeLineHeight: lineHeightBase,
+    }}
+    themeAttributes={[
+      'badgeFontSize',
+      'badgeFontWeight',
+      'badgeLineHeight',
+    ]}
   >
     <BadgeLayout>
       <BpkBadge>Normal</BpkBadge>
