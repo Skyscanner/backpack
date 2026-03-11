@@ -90,3 +90,5 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveHoverBackgroundColor',
   'buttonDestructiveActiveBackgroundColor',
 ];
+
+export const linkThemeAttributes = ['buttonLinkLoadingColor'];
