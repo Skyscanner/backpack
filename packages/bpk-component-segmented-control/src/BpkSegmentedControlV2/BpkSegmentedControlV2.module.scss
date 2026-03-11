@@ -29,14 +29,26 @@
 
   &--canvas-contrast {
     @include segmented-control.bpk-segmented-control-v2--canvas-contrast;
+
+    .bpk-segmented-control-v2__item-control {
+      @include segmented-control.bpk-segmented-control-v2__item-control--canvas-contrast;
+    }
   }
 
   &--surface-default {
     @include segmented-control.bpk-segmented-control-v2--surface-default;
+
+    .bpk-segmented-control-v2__item-control {
+      @include segmented-control.bpk-segmented-control-v2__item-control--surface-default;
+    }
   }
 
   &--surface-contrast {
     @include segmented-control.bpk-segmented-control-v2--surface-contrast;
+
+    .bpk-segmented-control-v2__item-control {
+      @include segmented-control.bpk-segmented-control-v2__item-control--surface-contrast;
+    }
   }
 
   &--shadow {
@@ -53,33 +65,36 @@
   @include segmented-control.bpk-segmented-control-v2__item;
 
   &:first-of-type .bpk-segmented-control-v2__item-control {
-    border-end-start-radius: var(--bpk-segmented-control-border-radius);
+    border-end-start-radius: tokens.$bpk-border-radius-sm;
     border-inline-start: none;
-    border-start-start-radius: var(--bpk-segmented-control-border-radius);
+    border-start-start-radius: tokens.$bpk-border-radius-sm;
   }
 
   &:last-of-type .bpk-segmented-control-v2__item-control {
-    border-end-end-radius: var(--bpk-segmented-control-border-radius);
-    border-start-end-radius: var(--bpk-segmented-control-border-radius);
+    border-end-end-radius: tokens.$bpk-border-radius-sm;
+    border-start-end-radius: tokens.$bpk-border-radius-sm;
   }
 
   // stylelint-disable-next-line selector-pseudo-class-no-unknown
   &:has([data-state='checked']) + .bpk-segmented-control-v2__item {
-    --bpk-segmented-control-item-divider-color: transparent;
+    // stylelint-disable-next-line selector-max-compound-selectors
+    .bpk-segmented-control-v2__item-control {
+      border-inline-start-color: transparent;
+    }
   }
 
   // stylelint-disable-next-line selector-pseudo-class-no-unknown
   &:has(:focus-visible) .bpk-segmented-control-v2__item-control {
     z-index: 1;
-
-    // stylelint-disable-next-line order/properties-order
+    outline: calc(tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
     outline-offset: calc(tokens.$bpk-one-pixel-rem * -2);
-
-    @include utils.bpk-focus-indicator;
   }
 }
 
 .bpk-segmented-control-v2__item-control {
+  padding: var(--bpk-segmented-control-padding-y, #{tokens.bpk-spacing-sm()})
+    var(--bpk-segmented-control-padding-x, #{tokens.bpk-spacing-md()});
+
   @include segmented-control.bpk-segmented-control-v2__item-control;
 }
 
