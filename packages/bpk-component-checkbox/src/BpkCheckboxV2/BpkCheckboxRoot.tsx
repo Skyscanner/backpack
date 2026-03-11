@@ -33,12 +33,10 @@ export type BpkCheckboxRootProps = {
   checked?: BpkCheckedState;
   defaultChecked?: BpkCheckedState;
   disabled?: boolean;
-  form?: string;
   id?: string;
   invalid?: boolean;
   name?: string;
   onCheckedChange?: (checked: BpkCheckedState) => void;
-  readOnly?: boolean;
   required?: boolean;
   value?: string;
 };
@@ -48,12 +46,10 @@ const BpkCheckboxRoot = ({
   children,
   defaultChecked,
   disabled = false,
-  form,
   id,
   invalid = false,
   name,
   onCheckedChange,
-  readOnly = false,
   required = false,
   value,
 }: BpkCheckboxRootProps) => (
@@ -62,12 +58,10 @@ const BpkCheckboxRoot = ({
     checked={checked}
     defaultChecked={defaultChecked}
     disabled={disabled}
-    form={form}
     id={id}
     invalid={invalid}
     name={name}
     onCheckedChange={(details) => onCheckedChange?.(details.checked)}
-    readOnly={readOnly}
     required={required}
     value={value}
     {...getDataComponentAttribute('CheckboxV2')}
