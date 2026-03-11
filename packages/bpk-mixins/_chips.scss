@@ -27,7 +27,7 @@
 // Private helper: applies a box-shadow border with CSS variable fallback.
 // bpk-border-sm() uses a box-shadow shorthand, so bpk-themeable-property cannot
 // embed a CSS variable inside it — this mixin applies the two-line fallback pattern manually.
-@mixin bpk-chip-themeable-border($var-name, $fallback-color) {
+@mixin _bpk-chip-themeable-border($var-name, $fallback-color) {
   box-shadow: 0 0 0 tokens.$bpk-border-size-sm $fallback-color inset;
   box-shadow: 0 0 0 tokens.$bpk-border-size-sm
     var(#{$var-name}, $fallback-color) inset;
@@ -73,20 +73,20 @@
       --bpk-chip-on-dark-text-color,
       tokens.$bpk-text-on-dark-day
     );
-    @include bpk-chip-themeable-border(
+    @include _bpk-chip-themeable-border(
       --bpk-chip-on-dark-border-color,
       tokens.$bpk-line-on-dark-day
     );
 
     @include utils.bpk-hover {
-      @include bpk-chip-themeable-border(
+      @include _bpk-chip-themeable-border(
         --bpk-chip-on-dark-hover-border-color,
         tokens.$bpk-surface-default-day
       );
     }
 
     &:active:not(:disabled) {
-      @include bpk-chip-themeable-border(
+      @include _bpk-chip-themeable-border(
         --bpk-chip-on-dark-active-border-color,
         tokens.$bpk-surface-default-day
       );
@@ -158,7 +158,7 @@
       --bpk-chip-default-text-color,
       tokens.$bpk-text-primary-day
     );
-    @include bpk-chip-themeable-border(
+    @include _bpk-chip-themeable-border(
       --bpk-chip-default-border-color,
       tokens.$bpk-line-day
     );
@@ -169,14 +169,14 @@
         --bpk-chip-default-hover-background-color,
         transparent
       );
-      @include bpk-chip-themeable-border(
+      @include _bpk-chip-themeable-border(
         --bpk-chip-default-hover-border-color,
         tokens.$bpk-core-primary-day
       );
     }
 
     &:active:not(:disabled) {
-      @include bpk-chip-themeable-border(
+      @include _bpk-chip-themeable-border(
         --bpk-chip-default-active-border-color,
         tokens.$bpk-core-primary-day
       );
