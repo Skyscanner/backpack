@@ -29,6 +29,7 @@ import BpkImage from '../../packages/bpk-component-image';
 import { BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice from '../../packages/bpk-component-price';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
 
@@ -42,7 +43,7 @@ export const BasicExample = () => {
   const [selected2, setSelected2] = useState(true);
 
   return (
-    <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-base" wrap="wrap">
       <BpkCheckboxCard.Root
         checked={selected1}
         onCheckedChange={setSelected1}
@@ -69,7 +70,7 @@ export const BasicExample = () => {
           {/* Empty content - no icon, label, or price */}
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
-    </div>
+    </BpkHStack>
   );
 };
 
@@ -82,7 +83,7 @@ export const WithMultiContentExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+    <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-base">
       <BpkCheckboxCard.Root
         checked={selected}
         onCheckedChange={setSelected}
@@ -103,7 +104,7 @@ export const WithMultiContentExample = () => {
           </BpkVStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
-    </div>
+    </BpkHStack>
   );
 };
 
@@ -118,10 +119,10 @@ export const AllVariantsExample = () => {
   const [selected3, setSelected3] = useState(false);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', padding: '1.5rem' }}>
+    <BpkVStack gap="bpk-spacing-lg" padding="bpk-spacing-lg" align="start">
       {/* onCanvasDefault */}
-      <div>
-        <h4 style={{ marginBottom: '0.75rem' }}>On Canvas Default</h4>
+      <BpkVStack gap="bpk-spacing-md" align="start">
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Canvas Default</BpkText>
         <BpkCheckboxCard.Root
           checked={selected1}
           onCheckedChange={setSelected1}
@@ -134,11 +135,11 @@ export const AllVariantsExample = () => {
             {/* Empty content - no icon, label, or price */}
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
-      </div>
+      </BpkVStack>
 
       {/* onCanvasContrast */}
-      <div>
-        <h4 style={{ marginBottom: '0.75rem' }}>On Canvas Contrast</h4>
+      <BpkVStack gap="bpk-spacing-md" align="start">
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Canvas Contrast</BpkText>
         <BpkCheckboxCard.Root
           checked={selected2}
           onCheckedChange={setSelected2}
@@ -151,11 +152,11 @@ export const AllVariantsExample = () => {
             {/* Empty content - no icon, label, or price */}
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
-      </div>
+      </BpkVStack>
 
       {/* onSurfaceContrast */}
-      <div>
-        <h4 style={{ marginBottom: '0.75rem' }}>On Surface Contrast (Dark)</h4>
+      <BpkVStack gap="bpk-spacing-md" align="start">
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Surface Contrast (Dark)</BpkText>
         <div style={{ background: surfaceContrastDay, padding: '1.5rem' }}>
           <BpkCheckboxCard.Root
             checked={selected3}
@@ -170,8 +171,8 @@ export const AllVariantsExample = () => {
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
         </div>
-      </div>
-    </div>
+      </BpkVStack>
+    </BpkVStack>
   );
 };
 
@@ -184,7 +185,7 @@ export const WithImageExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ padding: '1.5rem' }}>
+    <BpkVStack padding="bpk-spacing-lg" align="start">
       <BpkCheckboxCard.Root
         checked={selected}
         onCheckedChange={setSelected}
@@ -205,7 +206,7 @@ export const WithImageExample = () => {
           </BpkVStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
-    </div>
+    </BpkVStack>
   );
 };
 
@@ -218,7 +219,7 @@ export const WithInlineLayoutExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div style={{ padding: '1.5rem' }}>
+    <BpkVStack padding="bpk-spacing-lg" align="stretch">
       <BpkCheckboxCard.Root
         checked={selected}
         onCheckedChange={setSelected}
@@ -232,7 +233,7 @@ export const WithInlineLayoutExample = () => {
           </BpkHStack>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>
-    </div>
+    </BpkVStack>
   );
 };
 
@@ -268,10 +269,10 @@ export const WithIndicatorExample = () => {
   });
 
   return (
-    <div style={{ padding: '1.5rem' }}>
-      <p style={{ marginBottom: '1rem', fontWeight: 600 }}>Select neighbourhoods</p>
+    <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select neighbourhoods</BpkText>
       <BpkThemeProvider theme={indicatorTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+        <BpkHStack gap="bpk-spacing-md" wrap="wrap" align="stretch">
           {options.map(({ description, disabled, icon: CardIcon, id, label, price }) => (
             <BpkCheckboxCard.Root
               key={id}
@@ -295,9 +296,9 @@ export const WithIndicatorExample = () => {
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
           ))}
-        </div>
+        </BpkHStack>
       </BpkThemeProvider>
-    </div>
+    </BpkVStack>
   );
 };
 
@@ -316,9 +317,9 @@ export const WithSizesExample = () => {
   ];
 
   return (
-    <div style={{ padding: '1.5rem' }}>
-      <p style={{ marginBottom: '1rem', fontWeight: 600 }}>Select size</p>
-      <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+    <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select size</BpkText>
+      <BpkHStack gap="bpk-spacing-md" wrap="wrap" align="flex-start">
         {sizes.map(({ description, id, label, price }) => (
           <BpkCheckboxCard.Root
             key={id}
@@ -339,8 +340,8 @@ export const WithSizesExample = () => {
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
         ))}
-      </div>
-    </div>
+      </BpkHStack>
+    </BpkVStack>
   );
 };
 
@@ -365,9 +366,9 @@ export const WithCustomThemeExample = () => {
   });
 
   return (
-    <div style={{ padding: '1.5rem' }}>
+    <BpkVStack padding="bpk-spacing-lg" align="start">
       <BpkThemeProvider theme={customTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+        <BpkHStack gap="bpk-spacing-base" wrap="wrap">
           <BpkCheckboxCard.Root
             checked={selected1}
             onCheckedChange={setSelected1}
@@ -397,9 +398,9 @@ export const WithCustomThemeExample = () => {
               </BpkVStack>
             </BpkCheckboxCard.Content>
           </BpkCheckboxCard.Root>
-        </div>
+        </BpkHStack>
       </BpkThemeProvider>
-    </div>
+    </BpkVStack>
   );
 };
 
@@ -414,7 +415,7 @@ export const SimpleAPIExample = () => {
   const [selected3, setSelected3] = useState(false);
 
   return (
-    <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+    <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-base" wrap="wrap">
       <BpkCheckboxCardSimple
         checked={selected1}
         onChange={setSelected1}
@@ -437,7 +438,7 @@ export const SimpleAPIExample = () => {
         price={<BpkPrice price="£78" leadingText="from" />}
         disabled
       />
-    </div>
+    </BpkHStack>
   );
 };
 
@@ -491,10 +492,10 @@ export const WithImageGridExample = () => {
   });
 
   return (
-    <div style={{ padding: '1.5rem' }}>
-      <p style={{ marginBottom: '1rem', fontWeight: 600 }}>Select car type</p>
+    <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type</BpkText>
       <BpkThemeProvider theme={theme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+        <BpkHStack gap="bpk-spacing-md" wrap="wrap">
           {carTypes.map(({ id, label, price, src }) => (
             <BpkCheckboxCard.Root
               key={id}
@@ -519,9 +520,9 @@ export const WithImageGridExample = () => {
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
           ))}
-        </div>
+        </BpkHStack>
       </BpkThemeProvider>
-    </div>
+    </BpkVStack>
   );
 };
 
@@ -547,7 +548,7 @@ export const WithMetadataExample = () => {
   };
 
   return (
-    <div style={{ padding: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+    <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-md" wrap="wrap">
       {neighbourhoods.map(({ avgPrice, count, id, name }) => (
         <BpkCheckboxCard.Root
           key={id}
@@ -567,6 +568,6 @@ export const WithMetadataExample = () => {
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
       ))}
-    </div>
+    </BpkHStack>
   );
 };
