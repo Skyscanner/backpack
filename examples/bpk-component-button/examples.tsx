@@ -68,6 +68,10 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         Button
       </Wrapped>
       &nbsp;
+      <Wrapped loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
+        Loading
+      </Wrapped>
+      &nbsp;
       <Wrapped onClick={action('Button clicked')} {...rest}>
         Button <AlignedSmallLongArrowRightIcon />
       </Wrapped>
@@ -82,6 +86,15 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         {...rest}
       >
         Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped
+        loading
+        size={SIZE_TYPES.large}
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        {...rest}
+      >
+        Loading
       </Wrapped>
       &nbsp;
       <Wrapped
@@ -111,10 +124,31 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       </Wrapped>
       &nbsp;
       <Wrapped
+        loading
+        iconOnly
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        aria-label="Loading"
+        {...rest}
+      >
+        <AlignedSmallLongArrowRightIcon />
+      </Wrapped>
+      &nbsp;
+      <Wrapped
         iconOnly
         size={SIZE_TYPES.large}
         onClick={action('Button clicked')}
         aria-label="Button"
+        {...rest}
+      >
+        <AlignedLargeLongArrowRightIcon />
+      </Wrapped>
+      &nbsp;
+      <Wrapped
+        loading
+        iconOnly
+        size={SIZE_TYPES.large}
+        onClick={action('THIS SHOULD NEVER HAPPEN')}
+        aria-label="Loading"
         {...rest}
       >
         <AlignedLargeLongArrowRightIcon />
@@ -174,6 +208,11 @@ const LinkExample = (props: any) => (
       Button
     </BpkButton>
     &nbsp;
+    {/* Loading Link */}
+    <BpkButton type={BUTTON_TYPES.link} loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+      Loading
+    </BpkButton>
+    &nbsp;
     {/* Link with icon */}
     <BpkButton type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
       Button <RtlSmallLongArrowRightIcon />
@@ -199,18 +238,33 @@ const LinkExample = (props: any) => (
       Button
     </BpkButton>
     &nbsp;
+    {/* Large Loading Link */}
+    <BpkButton type={BUTTON_TYPES.link} loading size={SIZE_TYPES.large} onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+      Loading
+    </BpkButton>
+    &nbsp;
     {/* Large Link with icon */}
     <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
       Button <RtlLargeLongArrowRightIcon />
     </BpkButton>
     &nbsp;
-    {/* The iconOnly Link */}
+    {/* iconOnly Link */}
     <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
+      <RtlSmallLongArrowRightIcon />
+    </BpkButton>
+    &nbsp;
+    {/* Loading iconOnly Link */}
+    <BpkButton type={BUTTON_TYPES.link} loading iconOnly onClick={action('THIS SHOULD NEVER HAPPEN')} aria-label="Loading icon link" {...props}>
       <RtlSmallLongArrowRightIcon />
     </BpkButton>
     &nbsp;
     {/* Large iconOnly Link */}
     <BpkButton type={BUTTON_TYPES.link} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
+      <RtlLargeLongArrowRightIcon />
+    </BpkButton>
+    &nbsp;
+    {/* Large loading iconOnly Link */}
+    <BpkButton type={BUTTON_TYPES.link} loading iconOnly size={SIZE_TYPES.large} onClick={action('THIS SHOULD NEVER HAPPEN')} aria-label="Large loading icon link" {...props}>
       <RtlLargeLongArrowRightIcon />
     </BpkButton>
   </div>
@@ -222,6 +276,11 @@ const LinkOnDarkExample = (props: any) => (
       {/* Default LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
         Button
+      </BpkButton>
+      &nbsp;
+      {/* Loading LinkOnDark */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+        Loading
       </BpkButton>
       &nbsp;
       {/* LinkOnDark with icon */}
@@ -249,18 +308,33 @@ const LinkOnDarkExample = (props: any) => (
         Button
       </BpkButton>
       &nbsp;
+      {/* Large Loading LinkOnDark */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} loading size={SIZE_TYPES.large} onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
+        Loading
+      </BpkButton>
+      &nbsp;
       {/* Large LinkOnDark with icon */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
         Button <RtlLargeLongArrowRightIcon />
       </BpkButton>
       &nbsp;
-      {/* The iconOnly LinkOnDark */}
+      {/* iconOnly LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
+        <RtlSmallLongArrowRightIcon />
+      </BpkButton>
+      &nbsp;
+      {/* Loading iconOnly LinkOnDark */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} loading iconOnly onClick={action('THIS SHOULD NEVER HAPPEN')} aria-label="Loading icon link" {...props}>
         <RtlSmallLongArrowRightIcon />
       </BpkButton>
       &nbsp;
       {/* Large iconOnly LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly size={SIZE_TYPES.large} onClick={action('Link clicked')} aria-label="Large icon link" {...props}>
+        <RtlLargeLongArrowRightIcon />
+      </BpkButton>
+      &nbsp;
+      {/* Large loading iconOnly LinkOnDark */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} loading iconOnly size={SIZE_TYPES.large} onClick={action('THIS SHOULD NEVER HAPPEN')} aria-label="Large loading icon link" {...props}>
         <RtlLargeLongArrowRightIcon />
       </BpkButton>
     </div>
