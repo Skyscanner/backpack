@@ -59,12 +59,22 @@ figma.connect(
       }),
       iconOnly: figma.boolean('Icon only')
     },
-    example: ({ iconOnly, isDisabled, label, leadingIcon, size, style, trailingIcon }) => (
+    example: ({ iconOnly, isDisabled, label, leadingIcon, size, style, trailingIcon }) =>
+      iconOnly ? (
         <BpkButton
           type={style}
           size={size}
           disabled={isDisabled}
-          iconOnly={iconOnly}
+          iconOnly
+          aria-label={label}
+        >
+          <LightningIcon />
+        </BpkButton>
+      ) : (
+        <BpkButton
+          type={style}
+          size={size}
+          disabled={isDisabled}
           leadingIcon={leadingIcon}
           trailingIcon={trailingIcon}
         >
