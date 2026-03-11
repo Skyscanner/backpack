@@ -90,6 +90,8 @@ import BpkBadge, { allBadgeThemeAttributes } from '@skyscanner/backpack-web/bpk-
 
 #### Shared (all variants)
 
+These four attributes are exported together as `badgeThemeAttributes` and apply to every badge variant.
+
 | Theme attribute | CSS custom property | Default |
 |---|---|---|
 | `badgeBorderRadius` | `--bpk-badge-border-radius` | `tokens.$bpk-border-radius-xs` |

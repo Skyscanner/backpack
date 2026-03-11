@@ -280,6 +280,10 @@
 ///   }
 
 @mixin bpk-badge--outline {
+  // The inset border intentionally shares --bpk-badge-outline-text-color with the text colour.
+  // This means badgeOutlineTextColor controls both the text and the visible border simultaneously.
+  // There is no separate badgeOutlineBorderColor attribute by design — if independent colours are
+  // ever needed, a dedicated CSS variable and theme attribute should be introduced at that point.
   box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
     tokens.$bpk-text-on-dark-day;
   box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm

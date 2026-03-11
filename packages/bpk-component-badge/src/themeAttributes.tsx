@@ -91,8 +91,9 @@ export const allBadgeThemeAttributes = [
 
 /**
  * @deprecated The keys in this array pre-date full badge theming support and map to CSS variables
- * that no longer exist. Use per-variant arrays (e.g. badgeNormalThemeAttributes) for fine-grained
- * theming, or allBadgeThemeAttributes for the complete list.
+ * that were never wired up in the SCSS (the previous mixin used static token values directly).
+ * Use per-variant arrays (e.g. badgeNormalThemeAttributes) for fine-grained theming, or
+ * allBadgeThemeAttributes for the complete list.
  * Will be removed in the next major release.
  */
 const themeAttributes = [
