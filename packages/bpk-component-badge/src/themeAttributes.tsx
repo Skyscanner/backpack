@@ -16,8 +16,78 @@
  * limitations under the License.
  */
 
-export default [
-  'badgeBackgroundColor',
-  'badgeSuccessBackgroundColor',
-  'badgeDestructiveBackgroundColor',
+export const badgeThemeAttributes = [
+  'badgeFontSize',
+  'badgeFontWeight',
+  'badgeLineHeight',
+  'badgeBorderRadius',
 ];
+
+export const badgeNormalThemeAttributes = [
+  'badgeNormalBackgroundColor',
+  'badgeNormalTextColor',
+  'badgeNormalIconColor',
+];
+
+export const badgeWarningThemeAttributes = [
+  'badgeWarningBackgroundColor',
+  'badgeWarningTextColor',
+  'badgeWarningIconColor',
+];
+
+export const badgeSuccessThemeAttributes = [
+  'badgeSuccessBackgroundColor',
+  'badgeSuccessTextColor',
+  'badgeSuccessIconColor',
+];
+
+export const badgeCriticalThemeAttributes = [
+  'badgeCriticalBackgroundColor',
+  'badgeCriticalTextColor',
+  'badgeCriticalIconColor',
+];
+
+export const badgeInverseThemeAttributes = [
+  'badgeInverseBackgroundColor',
+  'badgeInverseTextColor',
+  'badgeInverseIconColor',
+];
+
+export const badgeOutlineThemeAttributes = [
+  'badgeOutlineBackgroundColor',
+  'badgeOutlineTextColor',
+  'badgeOutlineIconColor',
+];
+
+export const badgeStrongThemeAttributes = [
+  'badgeStrongBackgroundColor',
+  'badgeStrongTextColor',
+  'badgeStrongIconColor',
+];
+
+export const badgeBrandThemeAttributes = [
+  'badgeBrandBackgroundColor',
+  'badgeBrandTextColor',
+  'badgeBrandIconColor',
+];
+
+/**
+ * Combined badge theme attributes.
+ * @deprecated Use the per-variant theme attribute arrays instead (e.g. badgeNormalThemeAttributes,
+ * badgeWarningThemeAttributes, etc.) for fine-grained theming control. Passing this combined
+ * array to BpkThemeProvider requires supplying all 29 attributes or the theme is silently ignored.
+ * This export's content changed in a breaking way and will be removed in the next major release.
+ */
+const themeAttributes = [
+  ...badgeThemeAttributes,
+  ...badgeNormalThemeAttributes,
+  ...badgeWarningThemeAttributes,
+  ...badgeSuccessThemeAttributes,
+  ...badgeCriticalThemeAttributes,
+  ...badgeInverseThemeAttributes,
+  ...badgeOutlineThemeAttributes,
+  ...badgeStrongThemeAttributes,
+  ...badgeBrandThemeAttributes,
+];
+
+export default themeAttributes;

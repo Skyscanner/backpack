@@ -16,14 +16,104 @@
  * limitations under the License.
  */
 
-import { themeAttributes } from '../index';
+import {
+  themeAttributes,
+  badgeThemeAttributes,
+  badgeNormalThemeAttributes,
+  badgeWarningThemeAttributes,
+  badgeSuccessThemeAttributes,
+  badgeCriticalThemeAttributes,
+  badgeInverseThemeAttributes,
+  badgeOutlineThemeAttributes,
+  badgeStrongThemeAttributes,
+  badgeBrandThemeAttributes,
+} from '../index';
 
-describe('rating component themeAttributes', () => {
-  it('exports the expected attributes', () => {
-    expect(themeAttributes).toEqual([
-      'badgeBackgroundColor',
+describe('badge component themeAttributes', () => {
+  it('should export the correct general theme attributes', () => {
+    expect(badgeThemeAttributes).toEqual([
+      'badgeFontSize',
+      'badgeFontWeight',
+      'badgeLineHeight',
+      'badgeBorderRadius',
+    ]);
+  });
+
+  it('should export the correct normal theme attributes', () => {
+    expect(badgeNormalThemeAttributes).toEqual([
+      'badgeNormalBackgroundColor',
+      'badgeNormalTextColor',
+      'badgeNormalIconColor',
+    ]);
+  });
+
+  it('should export the correct warning theme attributes', () => {
+    expect(badgeWarningThemeAttributes).toEqual([
+      'badgeWarningBackgroundColor',
+      'badgeWarningTextColor',
+      'badgeWarningIconColor',
+    ]);
+  });
+
+  it('should export the correct success theme attributes', () => {
+    expect(badgeSuccessThemeAttributes).toEqual([
       'badgeSuccessBackgroundColor',
-      'badgeDestructiveBackgroundColor',
+      'badgeSuccessTextColor',
+      'badgeSuccessIconColor',
+    ]);
+  });
+
+  it('should export the correct critical theme attributes', () => {
+    expect(badgeCriticalThemeAttributes).toEqual([
+      'badgeCriticalBackgroundColor',
+      'badgeCriticalTextColor',
+      'badgeCriticalIconColor',
+    ]);
+  });
+
+  it('should export the correct inverse theme attributes', () => {
+    expect(badgeInverseThemeAttributes).toEqual([
+      'badgeInverseBackgroundColor',
+      'badgeInverseTextColor',
+      'badgeInverseIconColor',
+    ]);
+  });
+
+  it('should export the correct outline theme attributes', () => {
+    expect(badgeOutlineThemeAttributes).toEqual([
+      'badgeOutlineBackgroundColor',
+      'badgeOutlineTextColor',
+      'badgeOutlineIconColor',
+    ]);
+  });
+
+  it('should export the correct strong theme attributes', () => {
+    expect(badgeStrongThemeAttributes).toEqual([
+      'badgeStrongBackgroundColor',
+      'badgeStrongTextColor',
+      'badgeStrongIconColor',
+    ]);
+  });
+
+  it('should export the correct brand theme attributes', () => {
+    expect(badgeBrandThemeAttributes).toEqual([
+      'badgeBrandBackgroundColor',
+      'badgeBrandTextColor',
+      'badgeBrandIconColor',
+    ]);
+  });
+
+  it('should export a combined themeAttributes array with all variant attributes in order', () => {
+    expect(themeAttributes).toEqual([
+      ...badgeThemeAttributes,
+      ...badgeNormalThemeAttributes,
+      ...badgeWarningThemeAttributes,
+      ...badgeSuccessThemeAttributes,
+      ...badgeCriticalThemeAttributes,
+      ...badgeInverseThemeAttributes,
+      ...badgeOutlineThemeAttributes,
+      ...badgeStrongThemeAttributes,
+      ...badgeBrandThemeAttributes,
     ]);
   });
 });
