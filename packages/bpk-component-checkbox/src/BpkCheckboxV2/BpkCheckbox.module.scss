@@ -45,7 +45,7 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  border: tokens.$bpk-one-pixel-rem * 3 solid tokens.$bpk-line-day;
+  border: tokens.$bpk-one-pixel-rem * 3 solid tokens.$bpk-text-secondary-day;
   background-color: tokens.$bpk-canvas-day;
 
   @include utils.bpk-themeable-property(
