@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/buttons';
 @use '../../../bpk-mixins/typography';
 
@@ -28,14 +27,10 @@
   }
 
   &--icon-only {
-    border-radius: tokens.$bpk-button-border-radius;
-
     @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: tokens.$bpk-button-border-radius;
-
     @include buttons.bpk-button--large-icon-only;
   }
 

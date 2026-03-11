@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-export const buttonThemeAttributes = ['buttonFontSize'];
+export const buttonThemeAttributes = ['buttonFontSize', 'buttonBorderRadius'];
 
 export const primaryThemeAttributes = [
   'buttonPrimaryTextColor',
