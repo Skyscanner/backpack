@@ -18,6 +18,7 @@
 
 import {
   themeAttributes,
+  allBadgeThemeAttributes,
   badgeThemeAttributes,
   badgeNormalThemeAttributes,
   badgeWarningThemeAttributes,
@@ -103,8 +104,16 @@ describe('badge component themeAttributes', () => {
     ]);
   });
 
-  it('should export a combined themeAttributes array with all variant attributes in order', () => {
+  it('should export the deprecated themeAttributes default with the legacy keys', () => {
     expect(themeAttributes).toEqual([
+      'badgeBackgroundColor',
+      'badgeSuccessBackgroundColor',
+      'badgeDestructiveBackgroundColor',
+    ]);
+  });
+
+  it('should export allBadgeThemeAttributes with all variant attributes in order', () => {
+    expect(allBadgeThemeAttributes).toEqual([
       ...badgeThemeAttributes,
       ...badgeNormalThemeAttributes,
       ...badgeWarningThemeAttributes,

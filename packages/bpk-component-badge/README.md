@@ -80,6 +80,12 @@ export default () => (
 );
 ```
 
+To theme all variants at once, use `allBadgeThemeAttributes`. All attributes must be supplied or `BpkThemeProvider` will silently ignore the theme:
+
+```tsx
+import BpkBadge, { allBadgeThemeAttributes } from '@skyscanner/backpack-web/bpk-component-badge';
+```
+
 ### Theme attributes reference
 
 #### Shared (all variants)

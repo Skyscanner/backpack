@@ -123,7 +123,7 @@ const StrongExample = () => (
 
 const BrandExample = () => (
   <BadgeLayout>
-    <BpkBadge type={BADGE_TYPES.brand}>Strong</BpkBadge>
+    <BpkBadge type={BADGE_TYPES.brand}>Brand</BpkBadge>
     &nbsp;
     <BpkBadge type={BADGE_TYPES.brand}>
       <BpkSmallTickIcon />
@@ -265,11 +265,7 @@ const ThemedTypographyExample = () => (
       badgeFontWeight: fontWeightBold,
       badgeLineHeight: lineHeightBase,
     }}
-    themeAttributes={[
-      'badgeFontSize',
-      'badgeFontWeight',
-      'badgeLineHeight',
-    ]}
+    themeAttributes={['badgeFontSize', 'badgeFontWeight', 'badgeLineHeight']}
   >
     <BadgeLayout>
       <BpkBadge>Normal</BpkBadge>

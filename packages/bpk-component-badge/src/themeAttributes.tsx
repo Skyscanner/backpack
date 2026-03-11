@@ -72,13 +72,12 @@ export const badgeBrandThemeAttributes = [
 ];
 
 /**
- * Combined badge theme attributes.
- * @deprecated Use the per-variant theme attribute arrays instead (e.g. badgeNormalThemeAttributes,
- * badgeWarningThemeAttributes, etc.) for fine-grained theming control. Passing this combined
- * array to BpkThemeProvider requires supplying all 29 attributes or the theme is silently ignored.
- * This export's content changed in a breaking way and will be removed in the next major release.
+ * Combined array of all badge theme attributes across all variants and shared properties.
+ * Requires all these attributes to be present in the BpkThemeProvider theme object or theming
+ * will be silently ignored. Prefer per-variant arrays (e.g. badgeNormalThemeAttributes) for
+ * targeted theming.
  */
-const themeAttributes = [
+export const allBadgeThemeAttributes = [
   ...badgeThemeAttributes,
   ...badgeNormalThemeAttributes,
   ...badgeWarningThemeAttributes,
@@ -88,6 +87,18 @@ const themeAttributes = [
   ...badgeOutlineThemeAttributes,
   ...badgeStrongThemeAttributes,
   ...badgeBrandThemeAttributes,
+];
+
+/**
+ * @deprecated The keys in this array pre-date full badge theming support and map to CSS variables
+ * that no longer exist. Use per-variant arrays (e.g. badgeNormalThemeAttributes) for fine-grained
+ * theming, or allBadgeThemeAttributes for the complete list.
+ * Will be removed in the next major release.
+ */
+const themeAttributes = [
+  'badgeBackgroundColor',
+  'badgeSuccessBackgroundColor',
+  'badgeDestructiveBackgroundColor',
 ];
 
 export default themeAttributes;

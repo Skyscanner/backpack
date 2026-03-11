@@ -18,6 +18,7 @@
 
 import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
 import themeAttributes, {
+  allBadgeThemeAttributes,
   badgeThemeAttributes,
   badgeNormalThemeAttributes,
   badgeWarningThemeAttributes,
@@ -34,6 +35,7 @@ export default component;
 export {
   BADGE_TYPES,
   themeAttributes,
+  allBadgeThemeAttributes,
   badgeThemeAttributes,
   badgeNormalThemeAttributes,
   badgeWarningThemeAttributes,
