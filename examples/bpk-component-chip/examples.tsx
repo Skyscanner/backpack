@@ -20,6 +20,7 @@ import type { ReactNode} from 'react';
 import { useState } from 'react';
 
 import {
+  corePrimaryDay,
   lineDay,
   statusDangerSpotDay,
   surfaceHighlightDay,
@@ -324,18 +325,22 @@ const ThemedExample = () => (
         chipDefaultBorderColor: statusDangerSpotDay,
         chipDefaultHoverBackgroundColor: surfaceHighlightDay,
         chipDefaultHoverBorderColor: lineDay,
+        chipDefaultActiveBorderColor: corePrimaryDay,
         chipDefaultSelectedBackgroundColor: statusDangerSpotDay,
         chipDefaultSelectedTextColor: textOnDarkDay,
         chipDefaultSelectedHoverBackgroundColor: statusDangerSpotDay,
+        chipDefaultSelectedActiveBackgroundColor: statusDangerSpotDay,
       }}
       themeAttributes={[
         'chipBorderRadius',
         'chipDefaultBorderColor',
         'chipDefaultHoverBackgroundColor',
         'chipDefaultHoverBorderColor',
+        'chipDefaultActiveBorderColor',
         'chipDefaultSelectedBackgroundColor',
         'chipDefaultSelectedTextColor',
         'chipDefaultSelectedHoverBackgroundColor',
+        'chipDefaultSelectedActiveBackgroundColor',
       ]}
     >
       <StatefulSelectableChips type={CHIP_TYPES.default} />
