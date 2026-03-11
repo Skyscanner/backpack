@@ -158,8 +158,8 @@
 @mixin bpk-segmented-control-v2__item-control {
   display: flex;
   min-height: tokens.bpk-spacing-xl();
-  padding: var(--bpk-segmented-control-padding-y, #{tokens.bpk-spacing-md()})
-    var(--bpk-segmented-control-padding-x, #{tokens.bpk-spacing-sm()});
+  padding: var(--bpk-segmented-control-padding-y, #{tokens.bpk-spacing-sm()})
+    var(--bpk-segmented-control-padding-x, #{tokens.bpk-spacing-md()});
   justify-content: flex-start;
   align-items: center;
   transition:

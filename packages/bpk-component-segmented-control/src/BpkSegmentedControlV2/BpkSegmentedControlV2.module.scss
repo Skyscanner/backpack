@@ -17,6 +17,7 @@
  */
 
 @use '../../../bpk-mixins/segmented-control';
+@use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/utils';
 
 .bpk-segmented-control-v2 {
@@ -70,6 +71,9 @@
   // stylelint-disable-next-line selector-pseudo-class-no-unknown
   &:has(:focus-visible) .bpk-segmented-control-v2__item-control {
     z-index: 1;
+
+    // stylelint-disable-next-line order/properties-order
+    outline-offset: calc(tokens.$bpk-one-pixel-rem * -2);
 
     @include utils.bpk-focus-indicator;
   }
