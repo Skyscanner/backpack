@@ -21,7 +21,10 @@ import userEvent from '@testing-library/user-event';
 
 import BpkCheckbox from './BpkCheckbox';
 
-const SimpleCheckbox = ({ ...props }: Record<string, unknown> = {}) => (
+import type { BpkCheckboxRootProps } from './BpkCheckboxRoot';
+
+
+const SimpleCheckbox = (props: Partial<BpkCheckboxRootProps> = {}) => (
   <BpkCheckbox.Root {...props}>
     <BpkCheckbox.Control>
       <BpkCheckbox.Indicator />
