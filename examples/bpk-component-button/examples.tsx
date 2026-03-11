@@ -69,8 +69,16 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         Button
       </Wrapped>
       &nbsp;
-      <Wrapped onClick={action('Button clicked')} {...rest}>
-        Button <AlignedSmallLongArrowRightIcon />
+      <Wrapped trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped leadingIcon={<SmallLightningIcon />} onClick={action('Button clicked')} {...rest}>
+        Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Button clicked')} {...rest}>
+        Button
       </Wrapped>
       &nbsp;
       <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
@@ -87,10 +95,30 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       &nbsp;
       <Wrapped
         size={SIZE_TYPES.large}
+        trailingIcon={<RtlLargeLongArrowRightIcon />}
         onClick={action('Button clicked')}
         {...rest}
       >
-        Button <AlignedLargeLongArrowRightIcon />
+        Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped
+        size={SIZE_TYPES.large}
+        leadingIcon={<SmallLightningIcon />}
+        onClick={action('Button clicked')}
+        {...rest}
+      >
+        Button
+      </Wrapped>
+      &nbsp;
+      <Wrapped
+        size={SIZE_TYPES.large}
+        leadingIcon={<SmallLightningIcon />}
+        trailingIcon={<RtlLargeLongArrowRightIcon />}
+        onClick={action('Button clicked')}
+        {...rest}
+      >
+        Button
       </Wrapped>
       &nbsp;
       <Wrapped
@@ -127,45 +155,6 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
 
 ButtonStory.defaultProps = { className: null };
 
-const ButtonWithIconStory = ({ className, wrapped, ...rest }: StoryProps) => {
-  const Wrapped = wrapped;
-  return (
-    <div
-      className={[getClassName('bpk-button-story-wrapper'), className].join(
-        ' ',
-      )}
-    >
-      &nbsp;
-      <Wrapped onClick={action('Button clicked')} {...rest}>
-        Button
-      </Wrapped>
-      &nbsp;
-      <Wrapped disabled onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
-        Disabled
-      </Wrapped>
-      &nbsp;
-      <Wrapped
-        size={SIZE_TYPES.large}
-        onClick={action('Button clicked')}
-        {...rest}
-      >
-        Button
-      </Wrapped>
-      &nbsp;
-      <Wrapped
-        size={SIZE_TYPES.large}
-        disabled
-        onClick={action('THIS SHOULD NEVER HAPPEN')}
-        {...rest}
-      >
-        Disabled
-      </Wrapped>
-      &nbsp;
-    </div>
-  );
-};
-
-ButtonWithIconStory.defaultProps = { className: null };
 
 const PrimaryExample = (props: any) => (
   <ButtonStory wrapped={BpkButton} {...props} />
@@ -215,9 +204,19 @@ const LinkExample = (props: any) => (
       Button
     </BpkButton>
     &nbsp;
-    {/* Link with icon */}
-    <BpkButton type={BUTTON_TYPES.link} onClick={action('Link clicked')} {...props}>
-      Button <RtlSmallLongArrowRightIcon />
+    {/* Link with trailing icon */}
+    <BpkButton type={BUTTON_TYPES.link} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButton>
+    &nbsp;
+    {/* Link with leading icon */}
+    <BpkButton type={BUTTON_TYPES.link} leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButton>
+    &nbsp;
+    {/* Link with leading and trailing icon */}
+    <BpkButton type={BUTTON_TYPES.link} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      Button
     </BpkButton>
     &nbsp;
     {/* Implicit Link */}
@@ -225,9 +224,19 @@ const LinkExample = (props: any) => (
       Button
     </BpkButton>
     &nbsp;
-    {/* Implicit Link with icon */}
-    <BpkButton type={BUTTON_TYPES.link} implicit onClick={action('Link clicked')} {...props}>
-      Button <RtlSmallLongArrowRightIcon />
+    {/* Implicit Link with trailing icon */}
+    <BpkButton type={BUTTON_TYPES.link} implicit trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButton>
+    &nbsp;
+    {/* Implicit Link with leading icon */}
+    <BpkButton type={BUTTON_TYPES.link} implicit leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButton>
+    &nbsp;
+    {/* Implicit Link with leading and trailing icon */}
+    <BpkButton type={BUTTON_TYPES.link} implicit leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      Button
     </BpkButton>
     &nbsp;
     {/* Disabled Link */}
@@ -240,12 +249,22 @@ const LinkExample = (props: any) => (
       Button
     </BpkButton>
     &nbsp;
-    {/* Large Link with icon */}
-    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
-      Button <RtlLargeLongArrowRightIcon />
+    {/* Large Link with trailing icon */}
+    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      Button
     </BpkButton>
     &nbsp;
-    {/* The iconOnly Link */}
+    {/* Large Link with leading icon */}
+    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButton>
+    &nbsp;
+    {/* Large Link with leading and trailing icon */}
+    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      Button
+    </BpkButton>
+    &nbsp;
+    {/* iconOnly Link */}
     <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
       <RtlSmallLongArrowRightIcon />
     </BpkButton>
@@ -265,9 +284,19 @@ const LinkOnDarkExample = (props: any) => (
         Button
       </BpkButton>
       &nbsp;
-      {/* LinkOnDark with icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} onClick={action('Link clicked')} {...props}>
-        Button <RtlSmallLongArrowRightIcon />
+      {/* LinkOnDark with trailing icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButton>
+      &nbsp;
+      {/* LinkOnDark with leading icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButton>
+      &nbsp;
+      {/* LinkOnDark with leading and trailing icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+        Button
       </BpkButton>
       &nbsp;
       {/* Implicit LinkOnDark */}
@@ -275,9 +304,19 @@ const LinkOnDarkExample = (props: any) => (
         Button
       </BpkButton>
       &nbsp;
-      {/* Implicit LinkOnDark with icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} implicit onClick={action('Link clicked')} {...props}>
-        Button <RtlSmallLongArrowRightIcon />
+      {/* Implicit LinkOnDark with trailing icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} implicit trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButton>
+      &nbsp;
+      {/* Implicit LinkOnDark with leading icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} implicit leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButton>
+      &nbsp;
+      {/* Implicit LinkOnDark with leading and trailing icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} implicit leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+        Button
       </BpkButton>
       &nbsp;
       {/* Disabled LinkOnDark */}
@@ -290,12 +329,22 @@ const LinkOnDarkExample = (props: any) => (
         Button
       </BpkButton>
       &nbsp;
-      {/* Large LinkOnDark with icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} onClick={action('Link clicked')} {...props}>
-        Button <RtlLargeLongArrowRightIcon />
+      {/* Large LinkOnDark with trailing icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+        Button
       </BpkButton>
       &nbsp;
-      {/* The iconOnly LinkOnDark */}
+      {/* Large LinkOnDark with leading icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButton>
+      &nbsp;
+      {/* Large LinkOnDark with leading and trailing icon */}
+      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+        Button
+      </BpkButton>
+      &nbsp;
+      {/* iconOnly LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
         <RtlSmallLongArrowRightIcon />
       </BpkButton>
@@ -366,18 +415,6 @@ const AnchorTagsExample = () => (
   </>
 );
 
-const LeadingIconExample = (props: any) => (
-  <ButtonWithIconStory wrapped={BpkButton} leadingIcon={<SmallLightningIcon />} {...props} />
-);
-
-const TrailingIconExample = (props: any) => (
-  <ButtonWithIconStory wrapped={BpkButton} trailingIcon={<RtlSmallLongArrowRightIcon />} {...props} />
-);
-
-const LinkWithIconExample = (props: any) => (
-  <ButtonWithIconStory wrapped={BpkButton} type={BUTTON_TYPES.link} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlSmallLongArrowRightIcon />} {...props} />
-);
-
 export {
   PrimaryExample,
   PrimaryOnDarkExample,
@@ -394,7 +431,4 @@ export {
   FullWidthExample,
   SubmitButtonExample,
   ThemedBorderRadiusExample,
-  LeadingIconExample,
-  TrailingIconExample,
-  LinkWithIconExample,
 };
