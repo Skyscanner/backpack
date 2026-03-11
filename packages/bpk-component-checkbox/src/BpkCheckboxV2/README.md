@@ -78,7 +78,7 @@ const [checked, setChecked] = useState(false);
 
 <BpkCheckbox.Root
   checked={checked}
-  onCheckedChange={({ checked: next }) => setChecked(next)}
+  onCheckedChange={(next) => setChecked(next)}
 >
   <BpkCheckbox.Control>
     <BpkCheckbox.Indicator />
@@ -126,4 +126,4 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
 | `Indicator` | `null` | ✓ | Checkmark/dash rendered via CSS — no children needed |
 | `Label` | `<span>` | ✓ | Primary label text; clicking toggles the checkbox |
 | `Description` | `<span>` | — | Secondary/subtitle text below the label |
-| `HiddenInput` | `<input type="hidden">` | ✓ | Native input for form submission |
+| `HiddenInput` | `<input type="checkbox">` | ✓ | Visually hidden native input for form submission and accessibility |

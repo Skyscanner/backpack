@@ -56,8 +56,7 @@
 
   // Focus — keyboard only
   &[data-focus-visible] {
-    outline: tokens.$bpk-one-pixel-rem * 3 solid tokens.$bpk-core-accent-day;
-    outline-offset: tokens.$bpk-one-pixel-rem * 2;
+    @include utils.bpk-focus-indicator;
   }
 
   // Checked state — fill + white checkmark via mixin (same as v1)
@@ -96,7 +95,7 @@
       content: '';
       width: tokens.bpk-spacing-xxl() * 0.25;
       height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
-      border-radius: tokens.$bpk-one-pixel-rem * 2;
+      border-radius: tokens.$bpk-border-size-lg;
       background-color: tokens.$bpk-surface-default-day;
     }
   }

@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Checkbox, type CheckedState } from '@ark-ui/react/checkbox';
+import { Checkbox } from '@ark-ui/react/checkbox';
 
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
@@ -26,16 +26,18 @@ import STYLES from './BpkCheckbox.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export type BpkCheckedState = boolean | 'indeterminate';
+
 export type BpkCheckboxRootProps = {
   children: ReactNode;
-  checked?: CheckedState;
-  defaultChecked?: CheckedState;
+  checked?: BpkCheckedState;
+  defaultChecked?: BpkCheckedState;
   disabled?: boolean;
   form?: string;
   id?: string;
   invalid?: boolean;
   name?: string;
-  onCheckedChange?: (checked: CheckedState) => void;
+  onCheckedChange?: (checked: BpkCheckedState) => void;
   readOnly?: boolean;
   required?: boolean;
   value?: string;

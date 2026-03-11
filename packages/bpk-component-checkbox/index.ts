@@ -25,7 +25,7 @@ import {
 import themeAttributes from './src/themeAttributes';
 
 export type { BpkCheckboxProps };
-export type { BpkCheckboxRootProps } from './src/BpkCheckboxV2/BpkCheckboxRoot';
+export type { BpkCheckboxRootProps, BpkCheckedState } from './src/BpkCheckboxV2/BpkCheckboxRoot';
 export type { BpkCheckboxControlProps } from './src/BpkCheckboxV2/BpkCheckboxControl';
 export type { BpkCheckboxLabelProps } from './src/BpkCheckboxV2/BpkCheckboxLabel';
 export type { BpkCheckboxDescriptionProps } from './src/BpkCheckboxV2/BpkCheckboxDescription';
