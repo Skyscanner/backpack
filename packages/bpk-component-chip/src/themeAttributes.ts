@@ -35,6 +35,7 @@ export const chipDefaultThemeAttributes = [
   'chipDefaultBackgroundColor',
   'chipDefaultTextColor',
   'chipDefaultBorderColor',
+  'chipDefaultHoverBackgroundColor',
   'chipDefaultHoverBorderColor',
   'chipDefaultActiveBorderColor',
   'chipDefaultSelectedBackgroundColor',

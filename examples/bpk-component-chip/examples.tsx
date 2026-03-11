@@ -20,7 +20,9 @@ import type { ReactNode} from 'react';
 import { useState } from 'react';
 
 import {
-  statusWarningSpotDay,
+  lineDay,
+  statusDangerSpotDay,
+  surfaceHighlightDay,
   textOnDarkDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
@@ -319,17 +321,21 @@ const ThemedExample = () => (
     <BpkThemeProvider
       theme={{
         chipBorderRadius: '1rem',
-        chipDefaultBorderColor: '#ff5a5f',
-        chipDefaultHoverBorderColor: statusWarningSpotDay,
-        chipDefaultSelectedBackgroundColor: '#ff5a5f',
+        chipDefaultBorderColor: statusDangerSpotDay,
+        chipDefaultHoverBackgroundColor: surfaceHighlightDay,
+        chipDefaultHoverBorderColor: lineDay,
+        chipDefaultSelectedBackgroundColor: statusDangerSpotDay,
         chipDefaultSelectedTextColor: textOnDarkDay,
+        chipDefaultSelectedHoverBackgroundColor: statusDangerSpotDay,
       }}
       themeAttributes={[
         'chipBorderRadius',
         'chipDefaultBorderColor',
+        'chipDefaultHoverBackgroundColor',
         'chipDefaultHoverBorderColor',
         'chipDefaultSelectedBackgroundColor',
         'chipDefaultSelectedTextColor',
+        'chipDefaultSelectedHoverBackgroundColor',
       ]}
     >
       <StatefulSelectableChips type={CHIP_TYPES.default} />
