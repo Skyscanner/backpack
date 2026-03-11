@@ -167,7 +167,7 @@
       @include utils.bpk-themeable-property(
         background-color,
         --bpk-chip-default-hover-background-color,
-        tokens.$bpk-canvas-day
+        transparent
       );
       @include bpk-chip-themeable-border(
         --bpk-chip-default-hover-border-color,
