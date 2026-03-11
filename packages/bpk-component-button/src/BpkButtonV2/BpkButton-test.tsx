@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { BpkButtonV2 as BpkButton } from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
@@ -192,6 +192,140 @@ describe('BpkButton', () => {
     expect(el).toHaveClass('bpk-button--full-width');
   });
 
+
+  describe('loading prop', () => {
+    it('should render without spinner or aria-busy when loading=false', () => {
+      const { container } = render(
+        <BpkButton loading={false}>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).not.toBeInTheDocument();
+      expect(container.firstElementChild).not.toHaveAttribute('aria-busy');
+    });
+
+    it('should render spinner, disable interaction, and hide children when loading=true', () => {
+      const { container } = render(
+        <BpkButton loading>My button</BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+      expect(el).toBeDisabled();
+      expect(el).toHaveAttribute('aria-busy', 'true');
+
+      const hiddenDiv = container.querySelector('[class*="bpk-button__content--hidden"]');
+      expect(hiddenDiv).toBeInTheDocument();
+      expect(hiddenDiv).toHaveTextContent('My button');
+
+      // href is suppressed: renders as <button>, not <a>
+      const { container: hrefContainer } = render(
+        <BpkButton loading href="#">My button</BpkButton>,
+      );
+      expect(hrefContainer.firstElementChild?.tagName).toBe('BUTTON');
+      expect(hrefContainer.firstElementChild).toBeDisabled();
+    });
+
+    it('should render a LargeSpinner when loading=true with size=large', () => {
+      const { container } = render(
+        <BpkButton loading size={SIZE_TYPES.large}>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[data-backpack-ds-component="LargeSpinner"]')).toBeInTheDocument();
+    });
+
+    it('should not call onClick when loading=true', () => {
+      const mockOnClick = jest.fn();
+      const { container } = render(
+        <BpkButton loading onClick={mockOnClick}>My button</BpkButton>,
+      );
+
+      fireEvent.click(container.firstElementChild!);
+      expect(mockOnClick).not.toHaveBeenCalled();
+    });
+
+    it('should render spinner correctly when loading=true and iconOnly=true', () => {
+      const { container } = render(
+        <BpkButton loading iconOnly aria-label="Loading">
+          <span>Icon</span>
+        </BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+      expect(el).toBeDisabled();
+      expect(el).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should render correctly when loading=true and fullWidth=true', () => {
+      const { container } = render(
+        <BpkButton loading fullWidth>My button</BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+      expect(el).toBeDisabled();
+      expect(el).toHaveClass('bpk-button--full-width');
+    });
+
+    it('should render as disabled when both loading=true and disabled=true', () => {
+      const { container } = render(
+        <BpkButton loading disabled>My button</BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(el).toBeDisabled();
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+    });
+
+    it('should use primary spinner for secondary type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.secondary} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--primary"]')).toBeInTheDocument();
+    });
+
+    it('should use primary spinner for destructive type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.destructive} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--primary"]')).toBeInTheDocument();
+    });
+
+    it('should use primary spinner for link type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.link} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--primary"]')).toBeInTheDocument();
+    });
+
+    it('should use light spinner for featured type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.featured} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--light"]')).toBeInTheDocument();
+    });
+
+    it('should not render underline wrapper for link type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.link} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-button--link-underlined"]')).not.toBeInTheDocument();
+    });
+
+    it('should not render underline wrapper and should use light spinner for linkOnDark type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.linkOnDark} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-button--link-underlined"]')).not.toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-spinner--light"]')).toBeInTheDocument();
+    });
+  });
 
   describe('link type buttons', () => {
     it('should render link type with underline span wrapper', () => {
