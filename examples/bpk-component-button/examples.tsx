@@ -28,12 +28,9 @@ import {
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
 import { cssModules } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './BpkButtonStory.module.scss';
 
