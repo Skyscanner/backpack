@@ -19,17 +19,21 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkCheckboxCardSimple } from '../../index';
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from './BpkCheckboxCard';
 
 describe('BpkCheckboxCard accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkCheckboxCardSimple
+      <BpkCheckboxCard.Root
         checked={false}
-        onChange={() => {}}
-        label="Select option"
-        price="£100"
-      />,
+        onCheckedChange={() => {}}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+      >
+        <BpkCheckboxCard.HiddenInput />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Label>Select option</BpkCheckboxCard.Label>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -37,12 +41,16 @@ describe('BpkCheckboxCard accessibility tests', () => {
 
   it('should not have accessibility issues when checked', async () => {
     const { container } = render(
-      <BpkCheckboxCardSimple
+      <BpkCheckboxCard.Root
         checked
-        onChange={() => {}}
-        label="Selected option"
-        price="£100"
-      />,
+        onCheckedChange={() => {}}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+      >
+        <BpkCheckboxCard.HiddenInput />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Label>Selected option</BpkCheckboxCard.Label>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -50,12 +58,17 @@ describe('BpkCheckboxCard accessibility tests', () => {
 
   it('should not have accessibility issues when disabled', async () => {
     const { container } = render(
-      <BpkCheckboxCardSimple
+      <BpkCheckboxCard.Root
         checked={false}
-        onChange={() => {}}
-        label="Disabled option"
+        onCheckedChange={() => {}}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
         disabled
-      />,
+      >
+        <BpkCheckboxCard.HiddenInput />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Label>Disabled option</BpkCheckboxCard.Label>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -63,26 +76,17 @@ describe('BpkCheckboxCard accessibility tests', () => {
 
   it('should not have accessibility issues with rich content', async () => {
     const { container } = render(
-      <BpkCheckboxCardSimple
+      <BpkCheckboxCard.Root
         checked={false}
-        onChange={() => {}}
-        label="Rich content"
-        description="Central location"
-        price="£85"
-      />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  it('should not have accessibility issues with aria-label only', async () => {
-    const { container } = render(
-      <BpkCheckboxCardSimple
-        checked={false}
-        onChange={() => {}}
-        ariaLabel="Select city centre option for £100"
-        price="£100"
-      />,
+        onCheckedChange={() => {}}
+        variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+      >
+        <BpkCheckboxCard.HiddenInput />
+        <BpkCheckboxCard.Content>
+          <BpkCheckboxCard.Label>Rich content</BpkCheckboxCard.Label>
+          <BpkCheckboxCard.Description>Central location</BpkCheckboxCard.Description>
+        </BpkCheckboxCard.Content>
+      </BpkCheckboxCard.Root>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

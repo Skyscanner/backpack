@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/typography';
-@use '../../../bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
 
 // Root container — rendered as <label> by Ark UI's CheckboxRoot.
 // Ark UI sets data-state="checked"/"unchecked" and data-disabled on this element.
@@ -26,20 +26,24 @@
   position: relative;
   display: block;
   min-width: calc(tokens.$bpk-one-pixel-rem * 44); // Minimum touch target
+  height: 100%;
   min-height: calc(tokens.$bpk-one-pixel-rem * 44);
   transition:
     background-color tokens.$bpk-duration-sm ease-in-out,
     border-color tokens.$bpk-duration-sm ease-in-out,
     color tokens.$bpk-duration-sm ease-in-out;
   border: tokens.$bpk-border-size-sm solid
-    var(--bpk-checkbox-card-border-default, #{tokens.$bpk-line-day});
+    var(--bpk-checkbox-card-default-border-color, #{tokens.$bpk-line-day});
 
   // CSS Variables for theming (with Backpack token fallbacks)
   background-color: var(
-    --bpk-checkbox-card-bg-default,
+    --bpk-checkbox-card-default-background-color,
     #{tokens.$bpk-canvas-day}
   );
-  color: var(--bpk-checkbox-card-fg-default, #{tokens.$bpk-text-primary-day});
+  color: var(
+    --bpk-checkbox-card-default-text-color,
+    #{tokens.$bpk-text-primary-day}
+  );
   cursor: pointer;
   box-sizing: border-box;
 
@@ -47,11 +51,11 @@
   &:not([data-state='checked']):not([data-disabled]) {
     @include utils.bpk-hover {
       border-color: var(
-        --bpk-checkbox-card-border-hover,
+        --bpk-checkbox-card-hover-border-color,
         #{tokens.$bpk-line-day}
       );
       background-color: var(
-        --bpk-checkbox-card-bg-hover,
+        --bpk-checkbox-card-hover-background-color,
         #{tokens.$bpk-surface-low-contrast-day}
       );
     }
@@ -59,22 +63,25 @@
 
   // Checked state
   &[data-state='checked'] {
-    border-color: var(--bpk-checkbox-card-border-checked, transparent);
+    border-color: var(--bpk-checkbox-card-checked-border-color, transparent);
     background-color: var(
-      --bpk-checkbox-card-bg-checked,
+      --bpk-checkbox-card-checked-background-color,
       #{tokens.$bpk-surface-contrast-day}
     );
-    color: var(--bpk-checkbox-card-fg-checked, #{tokens.$bpk-text-on-dark-day});
+    color: var(
+      --bpk-checkbox-card-checked-text-color,
+      #{tokens.$bpk-text-on-dark-day}
+    );
   }
 
   // Disabled state
   &[data-disabled] {
     background-color: var(
-      --bpk-checkbox-card-bg-disabled,
+      --bpk-checkbox-card-disabled-background-color,
       #{tokens.$bpk-canvas-day}
     );
     color: var(
-      --bpk-checkbox-card-fg-disabled,
+      --bpk-checkbox-card-disabled-text-color,
       #{tokens.$bpk-text-disabled-day}
     );
     cursor: not-allowed;
@@ -92,46 +99,34 @@
 
   // Visual variants - override CSS variables
   &--on-canvas-default {
-    --bpk-checkbox-card-bg-default: #{tokens.$bpk-canvas-day};
-    --bpk-checkbox-card-border-default: #{tokens.$bpk-line-day};
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
   }
 
   &--on-canvas-contrast {
-    --bpk-checkbox-card-bg-default: #{tokens.$bpk-canvas-contrast-day};
-    --bpk-checkbox-card-bg-hover: #{tokens.$bpk-canvas-contrast-day};
-    --bpk-checkbox-card-border-default: transparent;
-    --bpk-checkbox-card-border-hover: #{tokens.$bpk-line-day};
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-contrast-day};
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-contrast-day};
+    --bpk-checkbox-card-default-border-color: transparent;
+    --bpk-checkbox-card-hover-border-color: #{tokens.$bpk-line-day};
   }
 
   &--on-surface-contrast {
-    --bpk-checkbox-card-bg-default: #{tokens.$bpk-surface-tint-day};
-    --bpk-checkbox-card-fg-default: #{tokens.$bpk-text-on-dark-day};
-    --bpk-checkbox-card-fg-secondary: #{tokens.$bpk-text-on-dark-day};
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-surface-tint-day};
+    --bpk-checkbox-card-default-text-color: #{tokens.$bpk-text-on-dark-day};
+    --bpk-checkbox-card-secondary-text-color: #{tokens.$bpk-text-on-dark-day};
 
     // TODO: Replace with a dedicated public token from backpack-foundations (current value: rgb(4, 24, 45))
-    --bpk-checkbox-card-bg-hover: #{tokens.$bpk-surface-contrast-day};
-    --bpk-checkbox-card-bg-checked: #{tokens.$bpk-core-accent-day};
-    --bpk-checkbox-card-border-default: transparent;
-    --bpk-checkbox-card-border-hover: transparent;
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-surface-contrast-day};
+    --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-core-accent-day};
+    --bpk-checkbox-card-default-border-color: transparent;
+    --bpk-checkbox-card-hover-border-color: transparent;
   }
 }
 
 // Content container
 .bpk-checkbox-card-content {
   width: 100%;
-  padding: tokens.bpk-spacing-md(); // default (md)
-
-  &--size-sm {
-    padding: tokens.bpk-spacing-sm();
-  }
-
-  &--size-md {
-    padding: tokens.bpk-spacing-md();
-  }
-
-  &--size-lg {
-    padding: tokens.bpk-spacing-lg();
-  }
+  padding: tokens.bpk-spacing-md();
 }
 
 // Label slot
@@ -160,7 +155,7 @@
   display: -webkit-box;
   width: 100%;
   color: var(
-    --bpk-checkbox-card-fg-secondary,
+    --bpk-checkbox-card-secondary-text-color,
     #{tokens.$bpk-text-secondary-day}
   );
   text-align: center;
@@ -196,10 +191,13 @@
   justify-content: center;
   align-items: center;
   border: tokens.$bpk-border-size-lg solid
-    var(--bpk-checkbox-card-indicator-color, #{tokens.$bpk-core-accent-day});
+    var(
+      --bpk-checkbox-card-indicator-background-color,
+      #{tokens.$bpk-core-accent-day}
+    );
   border-radius: 50%;
   background-color: var(
-    --bpk-checkbox-card-indicator-color,
+    --bpk-checkbox-card-indicator-background-color,
     #{tokens.$bpk-core-accent-day}
   );
   box-sizing: border-box;
@@ -217,7 +215,7 @@
         calc(tokens.$bpk-one-pixel-rem * -2)
       );
     border: solid
-      var(--bpk-checkbox-card-indicator-fg, #{tokens.$bpk-color-white});
+      var(--bpk-checkbox-card-indicator-text-color, #{tokens.$bpk-color-white});
     border-width: 0 tokens.$bpk-border-size-lg tokens.$bpk-border-size-lg 0;
   }
 

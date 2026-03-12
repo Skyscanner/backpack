@@ -47,10 +47,10 @@ import {
  * } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
  *
  * const theme = createCheckboxCardTheme({
- *   checkboxCardBgChecked: '#FFFFFF',
- *   checkboxCardFgChecked: '#111236',
- *   checkboxCardBorderChecked: '#111236',
- *   checkboxCardIndicatorColor: '#111236',
+ *   checkboxCardCheckedBackgroundColor: '#FFFFFF',
+ *   checkboxCardCheckedTextColor: '#111236',
+ *   checkboxCardCheckedBorderColor: '#111236',
+ *   checkboxCardIndicatorBackgroundColor: '#111236',
  * });
  *
  * <BpkThemeProvider theme={theme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
@@ -60,19 +60,19 @@ import {
  * </BpkThemeProvider>
  */
 const CHECKBOX_CARD_THEME_ATTRIBUTES = [
-  'checkboxCardBgDefault',
-  'checkboxCardFgDefault',
-  'checkboxCardFgSecondary',
-  'checkboxCardBgHover',
-  'checkboxCardBorderDefault',
-  'checkboxCardBorderHover',
-  'checkboxCardBgChecked',
-  'checkboxCardFgChecked',
-  'checkboxCardBorderChecked',
-  'checkboxCardBgDisabled',
-  'checkboxCardFgDisabled',
-  'checkboxCardIndicatorColor',
-  'checkboxCardIndicatorFg',
+  'checkboxCardDefaultBackgroundColor',
+  'checkboxCardDefaultTextColor',
+  'checkboxCardSecondaryTextColor',
+  'checkboxCardHoverBackgroundColor',
+  'checkboxCardDefaultBorderColor',
+  'checkboxCardHoverBorderColor',
+  'checkboxCardCheckedBackgroundColor',
+  'checkboxCardCheckedTextColor',
+  'checkboxCardCheckedBorderColor',
+  'checkboxCardDisabledBackgroundColor',
+  'checkboxCardDisabledTextColor',
+  'checkboxCardIndicatorBackgroundColor',
+  'checkboxCardIndicatorTextColor',
 ] as const;
 
 type CheckboxCardThemeKey = (typeof CHECKBOX_CARD_THEME_ATTRIBUTES)[number];
@@ -80,19 +80,19 @@ type CheckboxCardTheme = Record<CheckboxCardThemeKey, string>;
 
 /** Default theme values matching the SCSS token fallbacks */
 const CHECKBOX_CARD_DEFAULT_THEME: CheckboxCardTheme = {
-  checkboxCardBgDefault: canvasDay,
-  checkboxCardFgDefault: textPrimaryDay,
-  checkboxCardFgSecondary: textSecondaryDay,
-  checkboxCardBgHover: surfaceLowContrastDay,
-  checkboxCardBorderDefault: lineDay,
-  checkboxCardBorderHover: lineDay,
-  checkboxCardBgChecked: surfaceContrastDay,
-  checkboxCardFgChecked: textOnDarkDay,
-  checkboxCardBorderChecked: 'transparent',
-  checkboxCardBgDisabled: canvasDay,
-  checkboxCardFgDisabled: textDisabledDay,
-  checkboxCardIndicatorColor: coreAccentDay,
-  checkboxCardIndicatorFg: colorWhite,
+  checkboxCardDefaultBackgroundColor: canvasDay,
+  checkboxCardDefaultTextColor: textPrimaryDay,
+  checkboxCardSecondaryTextColor: textSecondaryDay,
+  checkboxCardHoverBackgroundColor: surfaceLowContrastDay,
+  checkboxCardDefaultBorderColor: lineDay,
+  checkboxCardHoverBorderColor: lineDay,
+  checkboxCardCheckedBackgroundColor: surfaceContrastDay,
+  checkboxCardCheckedTextColor: textOnDarkDay,
+  checkboxCardCheckedBorderColor: 'transparent',
+  checkboxCardDisabledBackgroundColor: canvasDay,
+  checkboxCardDisabledTextColor: textDisabledDay,
+  checkboxCardIndicatorBackgroundColor: coreAccentDay,
+  checkboxCardIndicatorTextColor: colorWhite,
 };
 
 /**
@@ -101,9 +101,9 @@ const CHECKBOX_CARD_DEFAULT_THEME: CheckboxCardTheme = {
  *
  * @example
  * const theme = createCheckboxCardTheme({
- *   checkboxCardBgChecked: '#FFFFFF',
- *   checkboxCardBorderChecked: '#111236',
- *   checkboxCardIndicatorColor: '#111236',
+ *   checkboxCardCheckedBackgroundColor: '#FFFFFF',
+ *   checkboxCardCheckedBorderColor: '#111236',
+ *   checkboxCardIndicatorBackgroundColor: '#111236',
  * });
  */
 

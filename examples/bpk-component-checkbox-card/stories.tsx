@@ -26,9 +26,7 @@ import {
   WithImageExample,
   WithIndicatorExample,
   WithInlineLayoutExample,
-  WithSizesExample,
   WithCustomThemeExample,
-  SimpleAPIExample,
   WithMetadataExample,
   WithImageGridExample,
 } from './examples';
@@ -45,8 +43,6 @@ export const AllVariants = AllVariantsExample;
 export const WithImage = WithImageExample;
 export const WithIndicator = WithIndicatorExample;
 export const WithInlineLayout = WithInlineLayoutExample;
-export const WithSizes = WithSizesExample;
 export const WithCustomTheme = WithCustomThemeExample;
-export const SimpleAPI = SimpleAPIExample;
 export const WithMetadata = WithMetadataExample;
 export const WithImageGrid = WithImageGridExample;

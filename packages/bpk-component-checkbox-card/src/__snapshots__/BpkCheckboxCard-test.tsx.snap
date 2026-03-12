@@ -21,7 +21,7 @@ exports[`BpkCheckboxCard (compound component) should render correctly when check
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -61,7 +61,7 @@ exports[`BpkCheckboxCard (compound component) should render correctly when disab
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -99,7 +99,7 @@ exports[`BpkCheckboxCard (compound component) should render correctly with all c
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -148,7 +148,7 @@ exports[`BpkCheckboxCard (compound component) should render correctly with minim
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -189,7 +189,7 @@ exports[`BpkCheckboxCard (compound component) should render disabled and checked
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -227,7 +227,7 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasContrast var
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -265,7 +265,7 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasDefault vari
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -303,7 +303,7 @@ exports[`BpkCheckboxCard (compound component) should render onSurfaceContrast va
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -341,7 +341,7 @@ exports[`BpkCheckboxCard (compound component) should render square radius correc
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"
@@ -379,7 +379,7 @@ exports[`BpkCheckboxCard (compound component) should render with extremely long 
       value="on"
     />
     <div
-      class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
+      class="bpk-checkbox-card-content"
     >
       <div
         class="bpk-checkbox-card-label"

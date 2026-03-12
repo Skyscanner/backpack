@@ -20,13 +20,12 @@ import type { CSSProperties, ReactNode } from 'react';
 
 import { CheckboxHiddenInput } from '@ark-ui/react/checkbox';
 
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import { Root } from './BpkCheckboxCardRoot';
-import { useCheckboxCardContext } from './CheckboxCardContext';
 
-import type { TextStyle } from '../../../bpk-component-text/src/BpkText';
+import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 
 import STYLES from './BpkCheckboxCard.module.scss';
 
@@ -65,10 +64,8 @@ export type ContentProps = {
  */
 
 function Content({ children }: ContentProps) {
-  const { size } = useCheckboxCardContext();
-
   return (
-    <div className={getClassName('bpk-checkbox-card-content', `bpk-checkbox-card-content--size-${size}`)}>
+    <div className={getClassName('bpk-checkbox-card-content')}>
       {children}
     </div>
   );

@@ -44,21 +44,6 @@ export type CheckboxCardRadius =
   (typeof CHECKBOX_CARD_RADIUS)[keyof typeof CHECKBOX_CARD_RADIUS];
 
 /**
- * Size variants for card density
- * - sm: Compact padding for dense layouts
- * - md: Standard padding (default)
- * - lg: Spacious padding for prominent cards
- */
-export const CHECKBOX_CARD_SIZES = {
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg',
-} as const;
-
-export type CheckboxCardSize =
-  (typeof CHECKBOX_CARD_SIZES)[keyof typeof CHECKBOX_CARD_SIZES];
-
-/**
  * Change handler signature for checkbox card
  */
 export type CheckboxCardChangeHandler = (checked: boolean) => void;

@@ -16,33 +16,27 @@
  * limitations under the License.
  */
 
-// V2 API - Compound Component (New, Recommended)
-export { BpkCheckboxCard, default } from './src/BpkCheckboxCard';
+export {
+  BpkCheckboxCard,
+  default,
+  CHECKBOX_CARD_VARIANTS,
+  CHECKBOX_CARD_RADIUS,
+  useCheckboxCardContext,
+} from './src/BpkCheckboxCard';
 
-// V2 API - Backward Compatible Simple Wrapper
-export { BpkCheckboxCardSimple } from './src/BpkCheckboxCardSimple/BpkCheckboxCardSimple';
-
-// Export all types
 export type {
   BpkCheckboxCardRootProps,
   BpkCheckboxCardContentProps,
   BpkCheckboxCardLabelProps,
   BpkCheckboxCardDescriptionProps,
   CheckboxCardContextValue,
+  CheckboxCardVariant,
+  CheckboxCardRadius,
+  CheckboxCardChangeHandler,
 } from './src/BpkCheckboxCard';
 
-// Export common types and constants
 export {
-  CHECKBOX_CARD_VARIANTS,
-  CHECKBOX_CARD_RADIUS,
-  CHECKBOX_CARD_SIZES,
-  type CheckboxCardVariant,
-  type CheckboxCardRadius,
-  type CheckboxCardSize,
-  type CheckboxCardChangeHandler,
-  useCheckboxCardContext,
-} from './src/BpkCheckboxCard';
-
-// Export theme attributes and helper for BpkThemeProvider
-export { default as CHECKBOX_CARD_THEME_ATTRIBUTES, createCheckboxCardTheme } from './src/themeAttributes';
+  default as CHECKBOX_CARD_THEME_ATTRIBUTES,
+  createCheckboxCardTheme,
+} from './src/themeAttributes';
 

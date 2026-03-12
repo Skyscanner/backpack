@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
 import { CheckboxRoot } from '@ark-ui/react/checkbox';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
-import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, CHECKBOX_CARD_SIZES } from './common-types';
+import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from './common-types';
 
-import type { CheckboxCardVariant, CheckboxCardRadius, CheckboxCardSize } from './common-types';
+import type { CheckboxCardVariant, CheckboxCardRadius } from './common-types';
 
 import STYLES from './BpkCheckboxCard.module.scss';
 
@@ -91,22 +91,6 @@ export type RootProps = {
   radius?: CheckboxCardRadius;
 
   /**
-   * Size variant controlling card padding density.
-   * @default "md"
-   */
-  size?: CheckboxCardSize;
-
-  /**
-   * Custom width for the card. Accepts CSS values (e.g., "10rem", "100%", "auto").
-   */
-  width?: string;
-
-  /**
-   * Custom height for the card. Accepts CSS values (e.g., "9.375rem", "auto").
-   */
-  height?: string;
-
-  /**
    * ARIA label for accessibility.
    * Provide if no visible label is present.
    */
@@ -156,27 +140,17 @@ export function Root({
   children,
   defaultChecked,
   disabled = false,
-  height,
   name,
   onCheckedChange,
   radius = CHECKBOX_CARD_RADIUS.rounded,
   required = false,
-  size = CHECKBOX_CARD_SIZES.md,
   value,
   variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
-  width,
 }: RootProps) {
   const contextValue = useMemo(
-    () => ({ variant, radius, size }),
-    [variant, radius, size],
+    () => ({ variant, radius }),
+    [variant, radius],
   );
-
-  const customStyles: CSSProperties = useMemo(() => {
-    const styles: CSSProperties = {};
-    if (width !== undefined) styles.width = width;
-    if (height !== undefined) styles.height = height;
-    return styles;
-  }, [width, height]);
 
   return (
     <CheckboxCardContext.Provider value={contextValue}>
@@ -199,7 +173,6 @@ export function Root({
             `bpk-checkbox-card-root--${variant}`,
             `bpk-checkbox-card-root--radius-${radius}`,
           )}
-          style={Object.keys(customStyles).length > 0 ? customStyles : undefined}
         >
           {children}
         </label>

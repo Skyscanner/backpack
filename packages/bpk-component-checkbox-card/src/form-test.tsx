@@ -21,7 +21,7 @@ import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { BpkCheckboxCardSimple } from '../../index';
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from './BpkCheckboxCard';
 
 // @zag-js/dom-query uses PointerEvent internally; jsdom doesn't provide it.
 beforeAll(() => {
@@ -34,14 +34,18 @@ describe('BpkCheckboxCard form tests', () => {
       const [isChecked, setIsChecked] = useState(false);
       return (
         <form data-testid="form">
-          <BpkCheckboxCardSimple
+          <BpkCheckboxCard.Root
             name="hotel-option"
             value="city-centre"
             checked={isChecked}
-            onChange={(checked) => setIsChecked(checked)}
-            label="City Centre"
-            price="£85"
-          />
+            onCheckedChange={(checked) => setIsChecked(checked)}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
           <button type="submit">Submit</button>
         </form>
       );
@@ -67,22 +71,30 @@ describe('BpkCheckboxCard form tests', () => {
 
       return (
         <div>
-          <BpkCheckboxCardSimple
+          <BpkCheckboxCard.Root
             name="option"
             value="opt1"
             checked={selectedId === 'opt1'}
-            onChange={() => setSelectedId('opt1')}
-            label="Option 1"
-            price="£100"
-          />
-          <BpkCheckboxCardSimple
+            onCheckedChange={() => setSelectedId('opt1')}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>Option 1</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+          <BpkCheckboxCard.Root
             name="option"
             value="opt2"
             checked={selectedId === 'opt2'}
-            onChange={() => setSelectedId('opt2')}
-            label="Option 2"
-            price="£85"
-          />
+            onCheckedChange={() => setSelectedId('opt2')}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>Option 2</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
         </div>
       );
     };
@@ -114,30 +126,42 @@ describe('BpkCheckboxCard form tests', () => {
 
       return (
         <div>
-          <BpkCheckboxCardSimple
+          <BpkCheckboxCard.Root
             name="option1"
             value="opt1"
             checked={selected.includes('opt1')}
-            onChange={() => handleChange('opt1')}
-            label="Option 1"
-            price="£100"
-          />
-          <BpkCheckboxCardSimple
+            onCheckedChange={() => handleChange('opt1')}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>Option 1</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+          <BpkCheckboxCard.Root
             name="option2"
             value="opt2"
             checked={selected.includes('opt2')}
-            onChange={() => handleChange('opt2')}
-            label="Option 2"
-            price="£85"
-          />
-          <BpkCheckboxCardSimple
+            onCheckedChange={() => handleChange('opt2')}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>Option 2</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+          <BpkCheckboxCard.Root
             name="option3"
             value="opt3"
             checked={selected.includes('opt3')}
-            onChange={() => handleChange('opt3')}
-            label="Option 3"
-            price="£122"
-          />
+            onCheckedChange={() => handleChange('opt3')}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>Option 3</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
         </div>
       );
     };
