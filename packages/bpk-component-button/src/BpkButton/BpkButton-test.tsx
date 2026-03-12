@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import { BpkButtonV2 as BpkButton } from './BpkButton';
+import BpkButton from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
 
 describe('BpkButton', () => {
