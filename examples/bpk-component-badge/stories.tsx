@@ -31,11 +31,15 @@ import {
   DockedLeadingExample,
   DockedTrailingExample,
   MixedExample,
+  ThemedCornerRadiusExample,
+  ThemedBackgroundColorExample,
+  ThemedIconColorExample,
+  ThemedTypographyExample,
 } from './examples';
 
 export default {
   title: 'bpk-component-badge',
-  component: BpkBadge
+  component: BpkBadge,
 };
 
 export const Default = DefaultExample;
@@ -49,8 +53,15 @@ export const Outline = OutlineExample;
 export const Centered = CenteredExample;
 export const DockedRight = DockedLeadingExample;
 export const DockedLeft = DockedTrailingExample;
+export const ThemedCornerRadius = ThemedCornerRadiusExample;
+export const ThemedBackgroundColor = ThemedBackgroundColorExample;
+export const ThemedIconColor = ThemedIconColorExample;
+export const ThemedTypography = ThemedTypographyExample;
+
 export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
+export const VisualTestWithZoom = {
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
+  },
 };
