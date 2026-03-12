@@ -49,6 +49,10 @@
     .bpk-segmented-control-v2__item-control {
       @include segmented-control.bpk-segmented-control-v2__item-control--surface-contrast;
     }
+
+    .bpk-segmented-control-v2__item-text {
+      @include segmented-control.bpk-segmented-control-v2__item-text--surface-contrast;
+    }
   }
 
   &--shadow {
@@ -83,8 +87,10 @@
     }
   }
 
+  // Use inset outline so it isn't clipped by the root's overflow: hidden.
+  // Applied to the item (grid cell) so it renders above sibling items.
   // stylelint-disable-next-line selector-pseudo-class-no-unknown
-  &:has(:focus-visible) .bpk-segmented-control-v2__item-control {
+  &:has(:focus-visible) {
     z-index: 1;
     outline: calc(tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
     outline-offset: calc(tokens.$bpk-one-pixel-rem * -2);
@@ -92,12 +98,11 @@
 }
 
 .bpk-segmented-control-v2__item-control {
-  padding: var(--bpk-segmented-control-padding-y, #{tokens.bpk-spacing-sm()})
-    var(--bpk-segmented-control-padding-x, #{tokens.bpk-spacing-md()});
-
   @include segmented-control.bpk-segmented-control-v2__item-control;
 }
 
 .bpk-segmented-control-v2__item-text {
+  padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-md();
+
   @include segmented-control.bpk-segmented-control-v2__item-text;
 }

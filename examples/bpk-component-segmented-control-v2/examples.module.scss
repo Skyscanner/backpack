@@ -17,6 +17,7 @@
  */
 
 @use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/utils';
 
 .bpk-component-segmented-control-stories__custom-button {
   min-width: 0;
@@ -51,22 +52,34 @@
 }
 
 .bpk-component-segmented-control-stories__complex {
-  --bpk-segmented-control-padding-x: #{tokens.bpk-spacing-base()};
-  --bpk-segmented-control-padding-y: #{tokens.bpk-spacing-md()};
-
-  text-align: start;
+  // stylelint-disable-next-line selector-attribute
+  [data-part='item-text'] {
+    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+    justify-content: flex-start;
+  }
 }
 
-.bpk-component-segmented-control-stories__info-btn {
-  display: inline-flex;
-  border: none;
-  background: none;
-  color: inherit;
-  cursor: pointer;
-  padding-block: 0;
-  padding-inline: 0 tokens.bpk-spacing-sm();
+.bpk-component-segmented-control-stories__sort-btn {
+  pointer-events: auto;
 
-  svg {
-    fill: currentcolor;
+  &:focus-visible {
+    outline: none;
+  }
+
+  // stylelint-disable-next-line selector-attribute
+  [data-state='checked'] & {
+    color: tokens.$bpk-text-on-dark-day;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-on-dark-day;
+    }
+
+    // stylelint-disable-next-line selector-max-compound-selectors
+    span {
+      background-image: linear-gradient(
+        tokens.$bpk-text-on-dark-day,
+        tokens.$bpk-text-on-dark-day
+      );
+    }
   }
 }

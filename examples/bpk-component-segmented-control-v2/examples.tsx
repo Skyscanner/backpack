@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-import { type MouseEvent, useState } from 'react';
+import { useState } from 'react';
 
-import BpkButton, {
-  BUTTON_TYPES,
-} from '../../packages/bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import ChevronDownIcon from '../../packages/bpk-component-icon/sm/chevron-down';
 import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
 import InformationCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
@@ -396,11 +394,6 @@ const flightSortItems = [
 const ComplexContentWithIcon = () => {
   const [selected, setSelected] = useState('best');
 
-  const handleInfoClick =
-    (label: string) => (e: MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation();
-    };
-
   return (
     <BpkProvider>
       <div
@@ -412,7 +405,6 @@ const ComplexContentWithIcon = () => {
           label="Sort flight itineraries"
           value={selected}
           onChange={setSelected}
-          shadow
         >
           {flightSortItems.map(
             ({ duration, label, price, showInfoIcon, value }) => (
@@ -422,16 +414,7 @@ const ComplexContentWithIcon = () => {
                   <BpkHStack gap={BpkSpacing.XS} align="center">
                     <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
                     {showInfoIcon && (
-                      <button
-                        type="button"
-                        className={getClassName(
-                          'bpk-component-segmented-control-stories__info-btn',
-                        )}
-                        onClick={handleInfoClick(label)}
-                        aria-label={`More info about ${label}`}
-                      >
-                        <InformationCircleIcon />
-                      </button>
+                      <InformationCircleIcon focusable="false" />
                     )}
                   </BpkHStack>
                   <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
@@ -448,15 +431,6 @@ const ComplexContentWithIcon = () => {
 const ComplexContentWithButton = () => {
   const [selected, setSelected] = useState('best');
 
-  const handleInfoClick =
-    (label: string) => (e: MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation();
-    };
-
-  const handleSortClick = (e: MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-  };
-
   return (
     <BpkProvider>
       <div
@@ -468,7 +442,6 @@ const ComplexContentWithButton = () => {
           label="Sort flight itineraries"
           value={selected}
           onChange={setSelected}
-          shadow
         >
           {flightSortItems.map(
             ({ duration, label, price, showInfoIcon, value }) => (
@@ -478,16 +451,7 @@ const ComplexContentWithButton = () => {
                   <BpkHStack gap={BpkSpacing.XS} align="center">
                     <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
                     {showInfoIcon && (
-                      <button
-                        type="button"
-                        className={getClassName(
-                          'bpk-component-segmented-control-stories__info-btn',
-                        )}
-                        onClick={handleInfoClick(label)}
-                        aria-label={`More info about ${label}`}
-                      >
-                        <InformationCircleIcon />
-                      </button>
+                      <InformationCircleIcon focusable="false" />
                     )}
                   </BpkHStack>
                   <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
@@ -498,10 +462,13 @@ const ComplexContentWithButton = () => {
           <BpkSegmentedControlV2.Item value="sort">
             <BpkButton
               type={BUTTON_TYPES.link}
-              onClick={handleSortClick}
+              className={getClassName(
+                'bpk-component-segmented-control-stories__sort-btn',
+              )}
+              onClick={() => setSelected('sort')}
             >
               Sort
-              <ChevronDownIcon />
+              <ChevronDownIcon focusable="false" />
             </BpkButton>
           </BpkSegmentedControlV2.Item>
         </BpkSegmentedControlV2.Root>

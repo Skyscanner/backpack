@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
+import type { KeyboardEvent, ReactElement } from 'react';
 import { Children, isValidElement } from 'react';
 
 import { SegmentGroup } from '@ark-ui/react/segment-group';
@@ -44,17 +44,6 @@ const getEnabledInputs = (group: HTMLElement): HTMLInputElement[] =>
       'input[type="radio"]:not(:disabled)',
     ),
   );
-
-const extractTextContent = (node: ReactNode): string => {
-  if (typeof node === 'string' || typeof node === 'number') return String(node);
-  if (Array.isArray(node)) return node.map(extractTextContent).join(' ').trim();
-  if (isValidElement(node)) {
-    const element = node as ReactElement<{ children?: ReactNode }>;
-    if (element.props.children)
-      return extractTextContent(element.props.children);
-  }
-  return '';
-};
 
 const wrapAround = (index: number, last: number, forward: boolean) =>
   // eslint-disable-next-line no-nested-ternary
@@ -138,32 +127,21 @@ const BpkSegmentedControlV2Root = ({
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
         const item = child as ReactElement<BpkSegmentedControlV2ItemProps>;
-        const { children: itemChildren } = item.props;
-        const accessibleName = extractTextContent(itemChildren);
         return (
           <SegmentGroup.Item
             key={item.props.value}
             value={item.props.value}
             className={getClassName('bpk-segmented-control-v2__item')}
           >
+            <SegmentGroup.ItemText
+              className={getClassName('bpk-segmented-control-v2__item-text')}
+            >
+              {item.props.children}
+            </SegmentGroup.ItemText>
             <SegmentGroup.ItemControl
               className={getClassName('bpk-segmented-control-v2__item-control')}
-            >
-              {isValidElement(itemChildren) ? (
-                itemChildren
-              ) : (
-                <SegmentGroup.ItemText
-                  className={getClassName(
-                    'bpk-segmented-control-v2__item-text',
-                  )}
-                >
-                  {itemChildren}
-                </SegmentGroup.ItemText>
-              )}
-            </SegmentGroup.ItemControl>
-            <SegmentGroup.ItemHiddenInput
-              aria-label={accessibleName || undefined}
             />
+            <SegmentGroup.ItemHiddenInput />
           </SegmentGroup.Item>
         );
       })}
