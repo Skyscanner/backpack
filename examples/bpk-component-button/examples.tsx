@@ -248,7 +248,7 @@ const LinkExample = (props: any) => (
       Button <RtlLargeLongArrowRightIcon />
     </BpkButton>
     &nbsp;
-    {/* iconOnly Link */}
+    {/* The iconOnly Link */}
     <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
       <RtlSmallLongArrowRightIcon />
     </BpkButton>
@@ -318,7 +318,7 @@ const LinkOnDarkExample = (props: any) => (
         Button <RtlLargeLongArrowRightIcon />
       </BpkButton>
       &nbsp;
-      {/* iconOnly LinkOnDark */}
+      {/* The iconOnly LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} iconOnly onClick={action('Link clicked')} aria-label="Icon link" {...props}>
         <RtlSmallLongArrowRightIcon />
       </BpkButton>
