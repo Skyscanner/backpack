@@ -20,7 +20,8 @@
 @use '../../../bpk-mixins/typography';
 @use '../../../bpk-mixins/utils';
 
-// Root container
+// Root container — rendered as <label> by Ark UI's CheckboxRoot.
+// Ark UI sets data-state="checked"/"unchecked" and data-disabled on this element.
 .bpk-checkbox-card-root {
   position: relative;
   display: block;
@@ -43,7 +44,7 @@
   box-sizing: border-box;
 
   // Hover state
-  &:not(&--disabled):not(&--checked) {
+  &:not([data-state='checked']):not([data-disabled]) {
     @include utils.bpk-hover {
       border-color: var(
         --bpk-checkbox-card-border-hover,
@@ -57,7 +58,7 @@
   }
 
   // Checked state
-  &--checked {
+  &[data-state='checked'] {
     border-color: var(--bpk-checkbox-card-border-checked, transparent);
     background-color: var(
       --bpk-checkbox-card-bg-checked,
@@ -67,7 +68,7 @@
   }
 
   // Disabled state
-  &--disabled {
+  &[data-disabled] {
     background-color: var(
       --bpk-checkbox-card-bg-disabled,
       #{tokens.$bpk-canvas-day}
@@ -172,7 +173,7 @@
 
   @include typography.bpk-text;
 
-  .bpk-checkbox-card-root--checked & {
+  .bpk-checkbox-card-root[data-state='checked'] & {
     color: inherit; // Use root color when checked
   }
 
@@ -221,7 +222,7 @@
   }
 
   // Checked state — show the indicator
-  .bpk-checkbox-card-root--checked & {
+  .bpk-checkbox-card-root[data-state='checked'] & {
     display: flex;
   }
 }

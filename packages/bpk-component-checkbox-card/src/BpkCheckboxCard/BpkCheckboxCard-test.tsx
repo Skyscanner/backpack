@@ -23,12 +23,21 @@ import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from '.
 
 import type { RootProps } from './BpkCheckboxCardRoot';
 
+// @zag-js/dom-query uses PointerEvent internally; jsdom doesn't provide it.
+beforeAll(() => {
+  window.PointerEvent = class PointerEvent extends MouseEvent {
+    constructor(type: string, params?: PointerEventInit) {
+      super(type, params);
+    }
+  } as typeof window.PointerEvent;
+});
+
 describe('BpkCheckboxCard (compound component)', () => {
   // Helper to render a minimal card
   const renderCard = (props: Partial<RootProps> = {}) =>
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}} {...props}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Select option</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
@@ -43,7 +52,7 @@ describe('BpkCheckboxCard (compound component)', () => {
   it('should render correctly when checked', () => {
     const { asFragment } = render(
       <BpkCheckboxCard.Root checked onCheckedChange={() => {}}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Select option</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
@@ -60,7 +69,7 @@ describe('BpkCheckboxCard (compound component)', () => {
   it('should render correctly with all content slots', () => {
     const { asFragment } = render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
           <BpkCheckboxCard.Description>Central location</BpkCheckboxCard.Description>
@@ -93,7 +102,7 @@ describe('BpkCheckboxCard (compound component)', () => {
   it('should render disabled and checked state correctly', () => {
     const { asFragment } = render(
       <BpkCheckboxCard.Root checked disabled onCheckedChange={() => {}}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Disabled selected</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
@@ -102,37 +111,33 @@ describe('BpkCheckboxCard (compound component)', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should have aria-checked="false" when unchecked', () => {
+  it('should be unchecked when checked=false', () => {
     renderCard({ checked: false });
-    const card = screen.getByRole('checkbox');
-    expect(card).toHaveAttribute('aria-checked', 'false');
+    expect(screen.getByRole('checkbox')).not.toBeChecked();
   });
 
-  it('should have aria-checked="true" when checked', () => {
+  it('should be checked when checked=true', () => {
     renderCard({ checked: true });
-    const card = screen.getByRole('checkbox');
-    expect(card).toHaveAttribute('aria-checked', 'true');
+    expect(screen.getByRole('checkbox')).toBeChecked();
   });
 
-  it('should have aria-disabled when disabled', () => {
+  it('should be disabled when disabled=true', () => {
     renderCard({ disabled: true });
-    const card = screen.getByRole('checkbox');
-    expect(card).toHaveAttribute('aria-disabled', 'true');
+    expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
   it('should call onCheckedChange when clicked', async () => {
     const onCheckedChange = jest.fn();
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={onCheckedChange}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Click me</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );
 
-    const card = screen.getByRole('checkbox');
-    await userEvent.click(card);
+    await userEvent.click(screen.getByRole('checkbox'));
 
     expect(onCheckedChange).toHaveBeenCalledTimes(1);
     expect(onCheckedChange).toHaveBeenCalledWith(true);
@@ -142,15 +147,14 @@ describe('BpkCheckboxCard (compound component)', () => {
     const onCheckedChange = jest.fn();
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={onCheckedChange} disabled>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Disabled</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );
 
-    const card = screen.getByRole('checkbox');
-    await userEvent.click(card);
+    await userEvent.click(screen.getByRole('checkbox'));
 
     expect(onCheckedChange).not.toHaveBeenCalled();
   });
@@ -159,34 +163,15 @@ describe('BpkCheckboxCard (compound component)', () => {
     const onCheckedChange = jest.fn();
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={onCheckedChange}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Keyboard test</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );
 
-    const card = screen.getByRole('checkbox');
-    card.focus();
+    screen.getByRole('checkbox').focus();
     await userEvent.keyboard(' ');
-
-    expect(onCheckedChange).toHaveBeenCalledWith(true);
-  });
-
-  it('should toggle when Enter key is pressed', async () => {
-    const onCheckedChange = jest.fn();
-    render(
-      <BpkCheckboxCard.Root checked={false} onCheckedChange={onCheckedChange}>
-        <BpkCheckboxCard.Control />
-        <BpkCheckboxCard.Content>
-          <BpkCheckboxCard.Label>Enter key test</BpkCheckboxCard.Label>
-        </BpkCheckboxCard.Content>
-      </BpkCheckboxCard.Root>,
-    );
-
-    const card = screen.getByRole('checkbox');
-    card.focus();
-    await userEvent.keyboard('{Enter}');
 
     expect(onCheckedChange).toHaveBeenCalledWith(true);
   });
@@ -194,52 +179,53 @@ describe('BpkCheckboxCard (compound component)', () => {
   it('should support uncontrolled mode with defaultChecked', async () => {
     render(
       <BpkCheckboxCard.Root defaultChecked={false}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Uncontrolled</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );
 
-    const card = screen.getByRole('checkbox');
-    expect(card).toHaveAttribute('aria-checked', 'false');
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).not.toBeChecked();
 
-    await userEvent.click(card);
-    expect(card).toHaveAttribute('aria-checked', 'true');
+    await userEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
   });
 
-  it('should pass name and value to hidden input when checked', () => {
+  it('should pass name and value to hidden input', () => {
     render(
       <BpkCheckboxCard.Root checked onCheckedChange={() => {}} name="hotel-option" value="city-centre">
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Form test</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );
 
-    const input = document.querySelector('input[type="hidden"]') as HTMLInputElement;
+    const input = screen.getByRole('checkbox') as HTMLInputElement;
     expect(input.name).toBe('hotel-option');
     expect(input.value).toBe('city-centre');
   });
 
-  it('should not render hidden input when unchecked', () => {
+  it('should always render the hidden input (Ark UI manages form state)', () => {
     render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}} name="hotel-option" value="city-centre">
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>Form test</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>
       </BpkCheckboxCard.Root>,
     );
 
-    expect(document.querySelector('input')).toBeNull();
+    expect(screen.getByRole('checkbox')).toBeInTheDocument();
+    expect(screen.getByRole('checkbox')).not.toBeChecked();
   });
 
   it('should render with extremely long label text', () => {
     const { asFragment } = render(
       <BpkCheckboxCard.Root checked={false} onCheckedChange={() => {}}>
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>
             This is an extremely long label that will definitely exceed the maximum line count and should be truncated

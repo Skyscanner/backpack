@@ -189,7 +189,7 @@ export function BpkCheckboxCardSimple({
       height={height}
       aria-label={ariaLabel}
     >
-      <BpkCheckboxCard.Control />
+      <BpkCheckboxCard.HiddenInput />
       {indicatorPlacement === 'start' && indicator}
       <BpkCheckboxCard.Content>
         <div className={getClassName('bpk-checkbox-card-simple__layout')}>

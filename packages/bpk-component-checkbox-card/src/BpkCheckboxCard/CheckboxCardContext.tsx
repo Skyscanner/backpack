@@ -21,16 +21,11 @@ import { createContext, useContext } from 'react';
 import type { CheckboxCardVariant, CheckboxCardRadius, CheckboxCardSize } from './common-types';
 
 /**
- * Context value for checkbox card components
- * Provides state and configuration to all child components
+ * Context value for checkbox card components.
+ * Holds only Backpack-specific props (variant, radius, size).
+ * Checkbox state (checked, disabled, etc.) is accessed via Ark UI's useCheckboxContext().
  */
 export type CheckboxCardContextValue = {
-  /** Whether the checkbox card is currently checked */
-  checked: boolean;
-
-  /** Whether the checkbox card is disabled */
-  disabled: boolean;
-
   /** Visual variant based on background context */
   variant: CheckboxCardVariant;
 
@@ -39,57 +34,22 @@ export type CheckboxCardContextValue = {
 
   /** Size variant for card density */
   size: CheckboxCardSize;
-
-  /** Form name attribute */
-  name?: string;
-
-  /** Form value attribute */
-  value?: string;
-
-  /** Callback when checked state changes */
-  onCheckedChange: (checked: boolean) => void;
-
-  /** Whether the checkbox is required */
-  required: boolean;
-
-  /** aria-label forwarded to the hidden input */
-  ariaLabel?: string;
-
-  /** aria-labelledby forwarded to the hidden input */
-  ariaLabelledby?: string;
-
-  /** aria-describedby forwarded to the hidden input */
-  ariaDescribedby?: string;
-
-  /** Unique ID for the label element */
-  labelId: string;
-
-  /** Unique ID for the description element */
-  descriptionId: string;
-
-  /** Unique ID for the control (input) element */
-  controlId: string;
 };
 
 /**
- * React Context for checkbox card state management
- * Allows sub-components to access parent state without prop drilling
+ * React Context for BPK-specific checkbox card configuration.
+ * Checkbox state is managed by Ark UI's CheckboxRoot and accessed via useCheckboxContext().
  */
 export const CheckboxCardContext = createContext<CheckboxCardContextValue | null>(null);
 
 /**
- * Hook to access checkbox card context
- * Must be used within a BpkCheckboxCard.Root component
+ * Hook to access BPK checkbox card context.
+ * Must be used within a BpkCheckboxCard.Root component.
  *
  * @throws Error if used outside of BpkCheckboxCard.Root
  * @returns {CheckboxCardContextValue} The checkbox card context value.
- *
- * @example
- * function MyComponent() {
- *   const { checked, onCheckedChange } = useCheckboxCardContext();
- *   return <button onClick={() => onCheckedChange(!checked)}>Toggle</button>;
- * }
  */
+
 export function useCheckboxCardContext(): CheckboxCardContextValue {
   const context = useContext(CheckboxCardContext);
 

@@ -18,6 +18,8 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
+import { CheckboxHiddenInput } from '@ark-ui/react/checkbox';
+
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -30,28 +32,19 @@ import STYLES from './BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// ─── Control ─────────────────────────────────────────────────────────────────
+// ─── HiddenInput ─────────────────────────────────────────────────────────────
 
 /**
- * BpkCheckboxCard.Control - Hidden input for form submission
+ * BpkCheckboxCard.HiddenInput - Accessible hidden checkbox input for form submission.
  *
- * Renders a hidden input that carries the form value when checked.
- * Only rendered when the card is checked, not disabled, and has a name.
- * Accessibility (role, aria-checked, keyboard) is handled by the Root div.
+ * Renders a visually hidden <input type="checkbox"> managed by Ark UI.
+ * Handles name, value, checked state, required, and disabled automatically.
+ * Must be placed inside BpkCheckboxCard.Root.
+ *
+ * @returns {JSX.Element} The hidden checkbox input element.
  */
-
-function Control() {
-  const { checked, disabled, name, value } = useCheckboxCardContext();
-
-  if (!checked || disabled || !name) return null;
-
-  return (
-    <input
-      type="hidden"
-      name={name}
-      value={value ?? 'on'}
-    />
-  );
+function HiddenInput() {
+  return <CheckboxHiddenInput />;
 }
 
 // ─── Content ─────────────────────────────────────────────────────────────────
@@ -97,18 +90,16 @@ export type LabelProps = {
  *
  * Displays the primary text label using BpkText.
  * Automatically truncates with ellipsis after the specified number of lines.
- * Wired to Root via aria-labelledby for accessibility.
+ * Accessibility is provided by the wrapping <label> element from Ark UI's CheckboxRoot.
  */
 
 function Label({ children, lineClamp = 2, textStyle = TEXT_STYLES.heading5 }: LabelProps) {
-  const { labelId } = useCheckboxCardContext();
-
   return (
     <div
       className={getClassName('bpk-checkbox-card-label')}
       style={{ '--bpk-label-line-clamp': lineClamp } as CSSProperties}
     >
-      <BpkText id={labelId} textStyle={textStyle} tagName="span">
+      <BpkText textStyle={textStyle} tagName="span">
         {children}
       </BpkText>
     </div>
@@ -131,18 +122,15 @@ export type DescriptionProps = {
  *
  * Displays secondary descriptive text using BpkText.
  * Automatically truncates with ellipsis after the specified number of lines.
- * Wired to Root via aria-describedby for accessibility.
  */
 
 function Description({ children, lineClamp = 3, textStyle = TEXT_STYLES.bodyDefault }: DescriptionProps) {
-  const { descriptionId } = useCheckboxCardContext();
-
   return (
     <div
       className={getClassName('bpk-checkbox-card-description')}
       style={{ '--bpk-description-line-clamp': lineClamp } as CSSProperties}
     >
-      <BpkText id={descriptionId} textStyle={textStyle} tagName="span">
+      <BpkText textStyle={textStyle} tagName="span">
         {children}
       </BpkText>
     </div>
@@ -158,7 +146,7 @@ export type IndicatorProps = Record<string, never>;
  *
  * Renders a circular checkbox indicator in the top-right corner of the card.
  * Empty circle when unchecked; filled with a checkmark when checked.
- * The visual state is driven entirely by the parent Root's CSS modifier classes.
+ * The visual state is driven by Ark UI's data-state attribute on the root <label>.
  */
 
 function Indicator(_props: IndicatorProps = {}) {
@@ -170,9 +158,12 @@ function Indicator(_props: IndicatorProps = {}) {
 /**
  * BpkCheckboxCard - Compound component for selectable cards.
  *
+ * Built on Ark UI's Checkbox primitive — the Root renders as a <label> element,
+ * providing native accessibility, keyboard navigation, and form integration.
+ *
  * @example Standard layout
  * <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
- *   <BpkCheckboxCard.Control />
+ *   <BpkCheckboxCard.HiddenInput />
  *   <BpkCheckboxCard.Content>
  *     <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
  *       <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
@@ -183,7 +174,7 @@ function Indicator(_props: IndicatorProps = {}) {
  *
  * @example With corner indicator
  * <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
- *   <BpkCheckboxCard.Control />
+ *   <BpkCheckboxCard.HiddenInput />
  *   <BpkCheckboxCard.Indicator />
  *   <BpkCheckboxCard.Content>
  *     <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
@@ -192,7 +183,7 @@ function Indicator(_props: IndicatorProps = {}) {
  */
 const BpkCheckboxCard = Object.assign(Root, {
   Root,
-  Control,
+  HiddenInput,
   Content,
   Indicator,
   Label,

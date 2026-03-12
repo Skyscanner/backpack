@@ -51,7 +51,7 @@ export const BasicExample = () => {
         width="9.375rem"
         height="9.375rem"
       >
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           {/* Empty content - no icon, label, or price */}
         </BpkCheckboxCard.Content>
@@ -65,7 +65,7 @@ export const BasicExample = () => {
         width="9.375rem"
         height="9.375rem"
       >
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           {/* Empty content - no icon, label, or price */}
         </BpkCheckboxCard.Content>
@@ -90,7 +90,7 @@ export const WithMultiContentExample = () => {
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
         width="9.375rem"
       >
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
             <LandmarkIconLg />
@@ -130,7 +130,7 @@ export const AllVariantsExample = () => {
           width="9.375rem"
           height="9.375rem"
         >
-          <BpkCheckboxCard.Control />
+          <BpkCheckboxCard.HiddenInput />
           <BpkCheckboxCard.Content>
             {/* Empty content - no icon, label, or price */}
           </BpkCheckboxCard.Content>
@@ -147,7 +147,7 @@ export const AllVariantsExample = () => {
           width="9.375rem"
           height="9.375rem"
         >
-          <BpkCheckboxCard.Control />
+          <BpkCheckboxCard.HiddenInput />
           <BpkCheckboxCard.Content>
             {/* Empty content - no icon, label, or price */}
           </BpkCheckboxCard.Content>
@@ -165,7 +165,7 @@ export const AllVariantsExample = () => {
             width="9.375rem"
             height="9.375rem"
           >
-            <BpkCheckboxCard.Control />
+            <BpkCheckboxCard.HiddenInput />
             <BpkCheckboxCard.Content>
               {/* Empty content - no icon, label, or price */}
             </BpkCheckboxCard.Content>
@@ -192,7 +192,7 @@ export const WithImageExample = () => {
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
         width="12.5rem"
       >
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
             <BpkImage
@@ -225,7 +225,7 @@ export const WithInlineLayoutExample = () => {
         onCheckedChange={setSelected}
         variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
       >
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkHStack gap="bpk-spacing-sm" align="center" width="100%">
             <LandmarkIconLg />
@@ -282,7 +282,7 @@ export const WithIndicatorExample = () => {
               disabled={disabled}
               width="8.75rem"
             >
-              <BpkCheckboxCard.Control />
+              <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Indicator />
               <BpkCheckboxCard.Content>
                 <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
@@ -329,7 +329,7 @@ export const WithSizesExample = () => {
             size={id}
             width="8.75rem"
           >
-            <BpkCheckboxCard.Control />
+            <BpkCheckboxCard.HiddenInput />
             <BpkCheckboxCard.Content>
               <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
                 <LandmarkIconLg />
@@ -374,7 +374,7 @@ export const WithCustomThemeExample = () => {
             onCheckedChange={setSelected1}
             variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
           >
-            <BpkCheckboxCard.Control />
+            <BpkCheckboxCard.HiddenInput />
             <BpkCheckboxCard.Content>
               <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
                 <LandmarkIconLg />
@@ -389,7 +389,7 @@ export const WithCustomThemeExample = () => {
             onCheckedChange={setSelected2}
             variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
           >
-            <BpkCheckboxCard.Control />
+            <BpkCheckboxCard.HiddenInput />
             <BpkCheckboxCard.Content>
               <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
                 <LandmarkIconLg />
@@ -504,7 +504,7 @@ export const WithImageGridExample = () => {
               variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
               width="10rem"
             >
-              <BpkCheckboxCard.Control />
+              <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Indicator />
               <BpkCheckboxCard.Content>
                 <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
@@ -556,7 +556,7 @@ export const WithMetadataExample = () => {
           onCheckedChange={() => toggle(id)}
           variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
         >
-          <BpkCheckboxCard.Control />
+          <BpkCheckboxCard.HiddenInput />
           <BpkCheckboxCard.Content>
             <BpkVStack gap="bpk-spacing-sm" align="start" width="100%">
               <BpkCheckboxCard.Label>{`${name} (${count})`}</BpkCheckboxCard.Label>

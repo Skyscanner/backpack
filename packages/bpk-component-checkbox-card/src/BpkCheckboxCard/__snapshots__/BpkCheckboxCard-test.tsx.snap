@@ -2,14 +2,24 @@
 
 exports[`BpkCheckboxCard (compound component) should render correctly when checked 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="true"
-    aria-describedby=":r4:"
-    aria-labelledby=":r3:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--checked"
-    role="checkbox"
-    tabindex="0"
+  <label
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::r1::input"
+    id="checkbox::r1:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r1::label"
+      checked=""
+      id="checkbox::r1::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -20,27 +30,36 @@ exports[`BpkCheckboxCard (compound component) should render correctly when check
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":r3:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render correctly when disabled 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":r7:"
-    aria-disabled="true"
-    aria-labelledby=":r6:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--disabled"
-    role="checkbox"
-    tabindex="-1"
+  <label
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    data-disabled=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r2::input"
+    id="checkbox::r2:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r2::label"
+      disabled=""
+      id="checkbox::r2::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -51,26 +70,34 @@ exports[`BpkCheckboxCard (compound component) should render correctly when disab
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":r6:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render correctly with all content slots 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":ra:"
-    aria-labelledby=":r9:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r3::input"
+    id="checkbox::r3:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r3::label"
+      id="checkbox::r3::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -81,7 +108,6 @@ exports[`BpkCheckboxCard (compound component) should render correctly with all c
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":r9:"
         >
           City Centre
         </span>
@@ -93,26 +119,34 @@ exports[`BpkCheckboxCard (compound component) should render correctly with all c
         <span
           class="bpk-text bpk-text--body-default"
           data-backpack-ds-component="Text"
-          id=":ra:"
         >
           Central location
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render correctly with minimal props 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":r1:"
-    aria-labelledby=":r0:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r0::input"
+    id="checkbox::r0:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r0::label"
+      id="checkbox::r0::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -123,27 +157,37 @@ exports[`BpkCheckboxCard (compound component) should render correctly with minim
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":r0:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render disabled and checked state correctly 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="true"
-    aria-describedby=":rp:"
-    aria-disabled="true"
-    aria-labelledby=":ro:"
-    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded bpk-checkbox-card-root--checked bpk-checkbox-card-root--disabled"
-    role="checkbox"
-    tabindex="-1"
+  <label
+    class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
+    data-disabled=""
+    data-part="root"
+    data-scope="checkbox"
+    data-state="checked"
+    dir="ltr"
+    for="checkbox::r8::input"
+    id="checkbox::r8:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r8::label"
+      checked=""
+      disabled=""
+      id="checkbox::r8::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -154,26 +198,34 @@ exports[`BpkCheckboxCard (compound component) should render disabled and checked
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":ro:"
         >
           Disabled selected
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render onCanvasContrast variant correctly 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":rg:"
-    aria-labelledby=":rf:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-contrast bpk-checkbox-card-root--radius-rounded"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r5::input"
+    id="checkbox::r5:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r5::label"
+      id="checkbox::r5::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -184,26 +236,34 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasContrast var
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":rf:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render onCanvasDefault variant correctly 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":rd:"
-    aria-labelledby=":rc:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r4::input"
+    id="checkbox::r4:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r4::label"
+      id="checkbox::r4::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -214,26 +274,34 @@ exports[`BpkCheckboxCard (compound component) should render onCanvasDefault vari
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":rc:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render onSurfaceContrast variant correctly 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":rj:"
-    aria-labelledby=":ri:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-surface-contrast bpk-checkbox-card-root--radius-rounded"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r6::input"
+    id="checkbox::r6:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r6::label"
+      id="checkbox::r6::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -244,26 +312,34 @@ exports[`BpkCheckboxCard (compound component) should render onSurfaceContrast va
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":ri:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render square radius correctly 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":rm:"
-    aria-labelledby=":rl:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-square"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::r7::input"
+    id="checkbox::r7:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::r7::label"
+      id="checkbox::r7::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -274,26 +350,34 @@ exports[`BpkCheckboxCard (compound component) should render square radius correc
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":rl:"
         >
           Select option
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`BpkCheckboxCard (compound component) should render with extremely long label text 1`] = `
 <DocumentFragment>
-  <div
-    aria-checked="false"
-    aria-describedby=":r1q:"
-    aria-labelledby=":r1p:"
+  <label
     class="bpk-checkbox-card-root bpk-checkbox-card-root--on-canvas-default bpk-checkbox-card-root--radius-rounded"
-    role="checkbox"
-    tabindex="0"
+    data-part="root"
+    data-scope="checkbox"
+    data-state="unchecked"
+    dir="ltr"
+    for="checkbox::ri::input"
+    id="checkbox::ri:"
   >
+    <input
+      aria-invalid="false"
+      aria-labelledby="checkbox::ri::label"
+      id="checkbox::ri::input"
+      style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
+      type="checkbox"
+      value="on"
+    />
     <div
       class="bpk-checkbox-card-content bpk-checkbox-card-content--size-md"
     >
@@ -304,12 +388,11 @@ exports[`BpkCheckboxCard (compound component) should render with extremely long 
         <span
           class="bpk-text bpk-text--heading-5"
           data-backpack-ds-component="Text"
-          id=":r1p:"
         >
           This is an extremely long label that will definitely exceed the maximum line count and should be truncated
         </span>
       </div>
     </div>
-  </div>
+  </label>
 </DocumentFragment>
 `;

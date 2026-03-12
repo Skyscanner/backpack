@@ -41,7 +41,7 @@ figma.connect(
         variant={variant}
         disabled={disabled}
       >
-        <BpkCheckboxCard.Control />
+        <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
         </BpkCheckboxCard.Content>

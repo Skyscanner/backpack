@@ -23,6 +23,15 @@ import userEvent from '@testing-library/user-event';
 
 import { BpkCheckboxCardSimple } from '../../index';
 
+// @zag-js/dom-query uses PointerEvent internally; jsdom doesn't provide it.
+beforeAll(() => {
+  window.PointerEvent = class PointerEvent extends MouseEvent {
+    constructor(type: string, params?: PointerEventInit) {
+      super(type, params);
+    }
+  } as typeof window.PointerEvent;
+});
+
 describe('BpkCheckboxCard form tests', () => {
   it('should work as a form component in a form', async () => {
     const Wrap = () => {
@@ -44,10 +53,10 @@ describe('BpkCheckboxCard form tests', () => {
     render(<Wrap />);
 
     const card = screen.getByRole('checkbox');
-    expect(card).toHaveAttribute('aria-checked', 'false');
+    expect(card).not.toBeChecked();
 
     await userEvent.click(card);
-    expect(card).toHaveAttribute('aria-checked', 'true');
+    expect(card).toBeChecked();
 
     const form = screen.getByTestId('form') as HTMLFormElement;
     const formData = new FormData(form);
@@ -85,16 +94,16 @@ describe('BpkCheckboxCard form tests', () => {
 
     const [opt1, opt2] = screen.getAllByRole('checkbox');
 
-    expect(opt1).toHaveAttribute('aria-checked', 'false');
-    expect(opt2).toHaveAttribute('aria-checked', 'false');
+    expect(opt1).not.toBeChecked();
+    expect(opt2).not.toBeChecked();
 
     await userEvent.click(opt1);
-    expect(opt1).toHaveAttribute('aria-checked', 'true');
-    expect(opt2).toHaveAttribute('aria-checked', 'false');
+    expect(opt1).toBeChecked();
+    expect(opt2).not.toBeChecked();
 
     await userEvent.click(opt2);
-    expect(opt1).toHaveAttribute('aria-checked', 'false');
-    expect(opt2).toHaveAttribute('aria-checked', 'true');
+    expect(opt1).not.toBeChecked();
+    expect(opt2).toBeChecked();
   });
 
   it('should support multi-selection pattern', async () => {
@@ -143,12 +152,12 @@ describe('BpkCheckboxCard form tests', () => {
     await userEvent.click(opt1);
     await userEvent.click(opt3);
 
-    expect(opt1).toHaveAttribute('aria-checked', 'true');
-    expect(opt2).toHaveAttribute('aria-checked', 'false');
-    expect(opt3).toHaveAttribute('aria-checked', 'true');
+    expect(opt1).toBeChecked();
+    expect(opt2).not.toBeChecked();
+    expect(opt3).toBeChecked();
 
     await userEvent.click(opt1);
-    expect(opt1).toHaveAttribute('aria-checked', 'false');
-    expect(opt3).toHaveAttribute('aria-checked', 'true');
+    expect(opt1).not.toBeChecked();
+    expect(opt3).toBeChecked();
   });
 });

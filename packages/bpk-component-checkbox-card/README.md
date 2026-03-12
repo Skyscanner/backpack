@@ -23,7 +23,7 @@ export default () => (
     onCheckedChange={(checked) => console.log(checked)}
     variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
   >
-    <BpkCheckboxCard.Control />
+    <BpkCheckboxCard.HiddenInput />
     <BpkCheckboxCard.Content>
       <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
       <BpkCheckboxCard.Description>0.5 km from centre</BpkCheckboxCard.Description>
