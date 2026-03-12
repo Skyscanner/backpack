@@ -75,13 +75,13 @@ export const BpkButtonV2 = ({
     ? <span className={underlinedClassName}>{children}</span>
     : children;
 
-  const leadingIconEl = leadingIcon ? (
+  const leadingIconEl = !iconOnly && leadingIcon ? (
     <span className={getCommonClassName('bpk-button__leading-icon')}>
       {leadingIcon}
     </span>
   ) : null;
 
-  const trailingIconEl = trailingIcon ? (
+  const trailingIconEl = !iconOnly && trailingIcon ? (
     <span className={getCommonClassName('bpk-button__trailing-icon')}>
       {trailingIcon}
     </span>

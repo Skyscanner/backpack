@@ -19,6 +19,7 @@
 @use '../../../bpk-mixins/buttons';
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/utils';
 
 .bpk-button {
   @include buttons.bpk-button;
@@ -51,9 +52,20 @@
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
+    --bpk-button-link-underline-size: 100%;
+
+    @include utils.bpk-hover {
+      --bpk-button-link-underline-size: 0%;
+    }
 
     &--implicit {
       @include typography.bpk-link--implicit;
+
+      --bpk-button-link-underline-size: 0%;
+
+      @include utils.bpk-hover {
+        --bpk-button-link-underline-size: 100%;
+      }
     }
 
     &--icon-only {
@@ -68,10 +80,27 @@
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
+    --bpk-button-link-underline-size: 100%;
+
+    @include utils.bpk-hover {
+      --bpk-button-link-underline-size: 0%;
+    }
 
     &--implicit {
       @include typography.bpk-link--implicit;
+
+      --bpk-button-link-underline-size: 0%;
+
+      @include utils.bpk-hover {
+        --bpk-button-link-underline-size: 100%;
+      }
     }
+  }
+
+  &--link &--link-underlined,
+  &--link-on-dark &--link-underlined {
+    background-size: var(--bpk-button-link-underline-size)
+      tokens.$bpk-border-size-sm;
   }
 
   &--link-underlined {

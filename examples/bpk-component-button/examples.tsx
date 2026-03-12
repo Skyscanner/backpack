@@ -25,6 +25,7 @@ import {
   withLargeButtonAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
+import LargeLightningIcon from '../../packages/bpk-component-icon/lg/lightning';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SmallLightningIcon from '../../packages/bpk-component-icon/sm/lightning';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
@@ -104,7 +105,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       &nbsp;
       <Wrapped
         size={SIZE_TYPES.large}
-        leadingIcon={<SmallLightningIcon />}
+        leadingIcon={<LargeLightningIcon />}
         onClick={action('Button clicked')}
         {...rest}
       >
@@ -113,7 +114,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       &nbsp;
       <Wrapped
         size={SIZE_TYPES.large}
-        leadingIcon={<SmallLightningIcon />}
+        leadingIcon={<LargeLightningIcon />}
         trailingIcon={<RtlLargeLongArrowRightIcon />}
         onClick={action('Button clicked')}
         {...rest}
@@ -255,12 +256,12 @@ const LinkExample = (props: any) => (
     </BpkButton>
     &nbsp;
     {/* Large Link with leading icon */}
-    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} leadingIcon={<LargeLightningIcon />} onClick={action('Link clicked')} {...props}>
       Button
     </BpkButton>
     &nbsp;
     {/* Large Link with leading and trailing icon */}
-    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+    <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.large} leadingIcon={<LargeLightningIcon />} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
       Button
     </BpkButton>
     &nbsp;
@@ -335,12 +336,12 @@ const LinkOnDarkExample = (props: any) => (
       </BpkButton>
       &nbsp;
       {/* Large LinkOnDark with leading icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} onClick={action('Link clicked')} {...props}>
+      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} leadingIcon={<LargeLightningIcon />} onClick={action('Link clicked')} {...props}>
         Button
       </BpkButton>
       &nbsp;
       {/* Large LinkOnDark with leading and trailing icon */}
-      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} leadingIcon={<SmallLightningIcon />} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
+      <BpkButton type={BUTTON_TYPES.linkOnDark} size={SIZE_TYPES.large} leadingIcon={<LargeLightningIcon />} trailingIcon={<RtlLargeLongArrowRightIcon />} onClick={action('Link clicked')} {...props}>
         Button
       </BpkButton>
       &nbsp;
@@ -409,9 +410,9 @@ const AnchorTagsExample = () => (
     <SecondaryExample href="#" />
     <SecondaryOnDarkExample href="#" />
     <DestructiveExample href="#" />
-    <FeaturedExample href="#" />
     <LinkExample href="#" />
     <LinkOnDarkExample href="#" />
+    <FeaturedExample href="#" />
   </>
 );
 
