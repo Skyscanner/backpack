@@ -25,11 +25,7 @@ import type { RootProps } from './BpkCheckboxCardRoot';
 
 // @zag-js/dom-query uses PointerEvent internally; jsdom doesn't provide it.
 beforeAll(() => {
-  window.PointerEvent = class PointerEvent extends MouseEvent {
-    constructor(type: string, params?: PointerEventInit) {
-      super(type, params);
-    }
-  } as typeof window.PointerEvent;
+  window.PointerEvent = class PointerEvent extends MouseEvent {} as typeof window.PointerEvent;
 });
 
 describe('BpkCheckboxCard (compound component)', () => {
