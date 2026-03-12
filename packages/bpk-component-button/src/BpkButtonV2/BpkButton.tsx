@@ -109,7 +109,6 @@ export const BpkButtonV2 = ({
         href={href}
         className={classNames}
         {...getDataComponentAttribute('Button')}
-        aria-busy={loading || undefined}
         onClick={onClick}
         target={target}
         rel={rel}
