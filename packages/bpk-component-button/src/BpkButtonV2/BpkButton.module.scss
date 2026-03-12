@@ -119,6 +119,11 @@
   &__loading-icon {
     position: absolute;
     display: inline-flex;
+
+    // Reset SVG display overrides (e.g. from link button) so the spinner SVG
+    // always renders as block and stays within its 16×16 container.
+    --bpk-button-svg-display: block;
+    --bpk-button-svg-vertical-align: baseline;
   }
 
   &__content--hidden {
