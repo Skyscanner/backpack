@@ -69,7 +69,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
       </Wrapped>
       &nbsp;
       <Wrapped loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
-        Loading
+        Button
       </Wrapped>
       &nbsp;
       <Wrapped onClick={action('Button clicked')} {...rest}>
@@ -94,7 +94,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
         onClick={action('THIS SHOULD NEVER HAPPEN')}
         {...rest}
       >
-        Loading
+        Button
       </Wrapped>
       &nbsp;
       <Wrapped
@@ -210,7 +210,7 @@ const LinkExample = (props: any) => (
     &nbsp;
     {/* Loading Link */}
     <BpkButton type={BUTTON_TYPES.link} loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
-      Loading
+      Button
     </BpkButton>
     &nbsp;
     {/* Link with icon */}
@@ -240,7 +240,7 @@ const LinkExample = (props: any) => (
     &nbsp;
     {/* Large Loading Link */}
     <BpkButton type={BUTTON_TYPES.link} loading size={SIZE_TYPES.large} onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
-      Loading
+      Button
     </BpkButton>
     &nbsp;
     {/* Large Link with icon */}
@@ -280,7 +280,7 @@ const LinkOnDarkExample = (props: any) => (
       &nbsp;
       {/* Loading LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
-        Loading
+        Button
       </BpkButton>
       &nbsp;
       {/* LinkOnDark with icon */}
@@ -310,7 +310,7 @@ const LinkOnDarkExample = (props: any) => (
       &nbsp;
       {/* Large Loading LinkOnDark */}
       <BpkButton type={BUTTON_TYPES.linkOnDark} loading size={SIZE_TYPES.large} onClick={action('THIS SHOULD NEVER HAPPEN')} {...props}>
-        Loading
+        Button
       </BpkButton>
       &nbsp;
       {/* Large LinkOnDark with icon */}
