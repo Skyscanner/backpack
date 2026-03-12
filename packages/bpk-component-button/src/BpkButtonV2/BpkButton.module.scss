@@ -52,20 +52,9 @@
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
-    --bpk-button-link-underline-size: 100%;
-
-    @include utils.bpk-hover {
-      --bpk-button-link-underline-size: 0%;
-    }
 
     &--implicit {
       @include typography.bpk-link--implicit;
-
-      --bpk-button-link-underline-size: 0%;
-
-      @include utils.bpk-hover {
-        --bpk-button-link-underline-size: 100%;
-      }
     }
 
     &--icon-only {
@@ -80,28 +69,34 @@
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
-    --bpk-button-link-underline-size: 100%;
-
-    @include utils.bpk-hover {
-      --bpk-button-link-underline-size: 0%;
-    }
 
     &--implicit {
       @include typography.bpk-link--implicit;
-
-      --bpk-button-link-underline-size: 0%;
-
-      @include utils.bpk-hover {
-        --bpk-button-link-underline-size: 100%;
-      }
     }
   }
 
-  &--link &--link-underlined,
-  &--link-on-dark &--link-underlined {
-    background-size: var(--bpk-button-link-underline-size)
-      tokens.$bpk-border-size-sm;
+  // When root button with icons is hovered, trigger underline animation on the content span.
+  // Without this, hovering the icon area doesn't trigger the underline animation
+  // because the span's own :hover only fires when hovering the text.
+  /* stylelint-disable selector-max-compound-selectors */
+  .bpk-no-touch-support
+    &--link#{&}--has-icon:hover:not(:active):not(:disabled)
+    &--link-underlined,
+  .bpk-no-touch-support
+    &--link-on-dark#{&}--has-icon:hover:not(:active):not(:disabled)
+    &--link-underlined {
+    background-size: 0 tokens.$bpk-border-size-sm;
   }
+
+  .bpk-no-touch-support
+    &--link#{&}--has-icon:hover:not(:active):not(:disabled)
+    &--link-underlined--implicit,
+  .bpk-no-touch-support
+    &--link-on-dark#{&}--has-icon:hover:not(:active):not(:disabled)
+    &--link-underlined--implicit--alternate {
+    background-size: 100% tokens.$bpk-border-size-sm;
+  }
+  /* stylelint-enable selector-max-compound-selectors */
 
   &--link-underlined {
     @include buttons.bpk-button--link-underlined;
