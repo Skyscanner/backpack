@@ -17,8 +17,32 @@
  */
 
 import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes, {
+  allBadgeThemeAttributes,
+  badgeThemeAttributes,
+  badgeNormalThemeAttributes,
+  badgeWarningThemeAttributes,
+  badgeSuccessThemeAttributes,
+  badgeCriticalThemeAttributes,
+  badgeInverseThemeAttributes,
+  badgeOutlineThemeAttributes,
+  badgeStrongThemeAttributes,
+  badgeBrandThemeAttributes,
+} from './src/themeAttributes';
 
 export type BpkBadgeProps = Props;
 export default component;
-export { BADGE_TYPES, themeAttributes };
+export {
+  BADGE_TYPES,
+  themeAttributes,
+  allBadgeThemeAttributes,
+  badgeThemeAttributes,
+  badgeNormalThemeAttributes,
+  badgeWarningThemeAttributes,
+  badgeSuccessThemeAttributes,
+  badgeCriticalThemeAttributes,
+  badgeInverseThemeAttributes,
+  badgeOutlineThemeAttributes,
+  badgeStrongThemeAttributes,
+  badgeBrandThemeAttributes,
+};
