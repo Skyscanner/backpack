@@ -17,7 +17,6 @@
  */
 
 @use '../../../bpk-mixins/buttons';
-@use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
 
 .bpk-button {
@@ -123,7 +122,7 @@
   }
 
   &__content--hidden {
-    visibility: hidden;
+    opacity: 0;
   }
 
   /* stylelint-disable selector-max-compound-selectors */
