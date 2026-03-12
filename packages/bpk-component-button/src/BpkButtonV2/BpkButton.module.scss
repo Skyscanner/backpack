@@ -75,9 +75,6 @@
     }
   }
 
-  // When root button with icons is hovered, trigger underline animation on the content span.
-  // Without this, hovering the icon area doesn't trigger the underline animation
-  // because the span's own :hover only fires when hovering the text.
   /* stylelint-disable selector-max-compound-selectors */
   .bpk-no-touch-support
     &--link#{&}--has-icon:hover:not(:active):not(:disabled)
