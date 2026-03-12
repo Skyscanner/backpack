@@ -1,7 +1,6 @@
 ---
 name: backpack-v42-migration
 description: Migrate a codebase from @skyscanner/backpack-web v41.x to v42.0. Handles BpkButtonV2 → BpkButton rename, deep import removal, and BpkAutosuggest legacy → V2 API migration. Use when upgrading Backpack to v42.
-allowed-tools: Bash, Glob, Grep, Read, Write, Edit, AskUserQuestion
 ---
 
 # Backpack Web v42.0 Migration
@@ -36,24 +35,20 @@ This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0.
 - The legacy `BpkAutosuggest` API is replaced by what was previously `BpkAutosuggestV2`.
 - The import path and name stay the same, but the **API/props are different**.
 - The component now **owns the input value** internally (uncontrolled pattern).
+- Core implementation switches from `react-autosuggest` to `downshift` + `@floating-ui/react`.
+- Desktop dropdown renders via `FloatingPortal` (outside the DOM tree, `fixed` positioning).
 
-**Key API changes:**
+**Key API changes (summary — see Phase 3 for full detail):**
 
 | Legacy API (v41) | V2 API (v42) |
 |---|---|
-| `inputProps={{ value, onChange: (e, { newValue }) => ... }}` | Remove external value control. Use `defaultValue` for initial value, `onInputValueChange={({ method, newValue }) => ...}` to subscribe to changes |
-| `onSuggestionsFetchRequested={({ value }) => ...}` (receives object) | `onSuggestionsFetchRequested={(value: string) => ...}` (receives string directly) |
-| `onSuggestionSelected={(event, { suggestion, suggestionValue }) => ...}` | `onSuggestionSelected={({ inputValue, suggestion }) => ...}` (no event param, `inputValue` replaces `suggestionValue`) |
-| `inputProps.inputRef` for ref access | Use `ref` prop directly on the component |
-| Suggestions render inside the component container | With `isDesktop={true}` (default), suggestions render via portal into `document.body` |
+| `inputProps={{ value, onChange: (e, { newValue }) => ... }}` | Remove value control. Use `defaultValue` + `onInputValueChange={({ method, newValue }) => ...}` |
+| `onSuggestionsFetchRequested={({ value }) => ...}` | `onSuggestionsFetchRequested={(value: string) => ...}` |
+| `onSuggestionSelected={(event, { suggestion, suggestionValue }) => ...}` | `onSuggestionSelected={({ inputValue, suggestion }) => ...}` |
+| `inputProps.inputRef` | `ref` prop directly on the component |
+| `containerProps`, `valid` (top-level) | Removed — see Phase 3 |
 
-**Critical architectural shift:** Legacy Autosuggest is a controlled input — the consumer manages `inputProps.value` and syncs state. V2 owns the value internally. Consumers:
-- Set initial value with `defaultValue` prop
-- React to changes via `onInputValueChange({ method, newValue })` callback
-- Track selections via `onSuggestionSelected({ inputValue, suggestion })` callback
-- Do NOT pass `value` or `onChange` via `inputProps` anymore
-
-**Autosuggest migration is complex and context-dependent.** Each component wrapping BpkAutosuggest manages state differently, so automated find-and-replace is insufficient. Each file needs careful analysis.
+**Autosuggest migration is complex and context-dependent.** Each file needs careful analysis.
 
 ## Execution Workflow
 
@@ -61,7 +56,7 @@ This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0.
 
 Scan the codebase to find all affected files. Run these searches:
 
-1. **BpkButtonV2 JSX usage** — this is the most accurate count of affected files:
+1. **BpkButtonV2 JSX usage** — most accurate count of affected files:
    ```
    Grep: <BpkButtonV2
    ```
@@ -92,9 +87,16 @@ Scan the codebase to find all affected files. Run these searches:
    Grep: BpkAutosuggestV2
    ```
 
+7. **Deep imports into other Backpack components** (not just button):
+   ```
+   Grep: from.*bpk-component-.*/src/
+   ```
+   Common example: `import type { InputProps } from '@skyscanner/backpack-web/bpk-component-input/src/common-types'`
+
 **IMPORTANT discovery notes:**
 - The JSX grep (`<BpkButtonV2`) gives the true file count. Import-line greps will undercount because multi-line imports split `BpkButtonV2` and `from '...'` across lines.
-- Expect a large gap between single-line import matches (~60) and JSX matches (~260). The difference is multi-line imports, not re-exports or local wrappers.
+- Expect a large gap between single-line import matches (~60) and JSX matches (~260). The difference is multi-line imports.
+- Not all files importing from `bpk-component-autosuggest` need API changes — files that only import `BpkAutosuggestSuggestion` are unaffected. Triage before counting.
 
 Present a summary table to the user:
 
@@ -139,63 +141,304 @@ The migration script should perform these steps **in order** for each file:
    - Multi-line: `import {\n  BpkButton,\n  BUTTON_TYPES,\n} from '...'` → `import BpkButton, {\n  BUTTON_TYPES,\n} from '...'`
 
 **Script gotchas:**
-- **Always use `--exclude-dir=node_modules`** when grepping for files, or target source directories specifically. Without this, `grep -rl` will hang scanning node_modules.
+- **Always use `--exclude-dir=node_modules`** when grepping for files. Without this, `grep -rl` will hang scanning node_modules.
 - `import type { ButtonType } from '...'` statements must NOT be converted to default imports — they stay as named type imports.
-- When a file already has `import BpkButton from '...'` (pre-existing correct import), skip it.
-
-**Important:** When a file already has an existing `import BpkButton from '...'` (the correct default import), and ALSO has `import { BpkButtonV2 } from '...'`, you need to consolidate into one import and rename all JSX references.
+- When a file already has `import BpkButton from '...'` AND `import { BpkButtonV2 } from '...'`, consolidate into one import and rename all JSX references.
 
 After completing all button files, run verification and report what was changed.
 
 ### Phase 3: Autosuggest Migration (High complexity)
 
-**IMPORTANT: Process one file at a time. Show the user the before/after for each component and ask for confirmation before moving to the next.**
+#### Architecture Differences
 
-For each file using BpkAutosuggest:
+| Concern | V1 (legacy) | V2 (v42 default) |
+|---|---|---|
+| Core library | `react-autosuggest` | `downshift` + `@floating-ui/react` |
+| Desktop dropdown | Inline DOM | **FloatingPortal** (outside DOM tree, `fixed` positioning) |
+| Input value | Externally controlled via `inputProps.value` | Internally managed by downshift state |
+| `ref` | None | `forwardRef` — passes `ref` to `renderInputComponent` |
+
+**IMPORTANT: Process one file at a time. Show the user the before/after for each component and ask for confirmation before moving to the next.** (Or offer batch mode after the first 1–2 files — see Lessons.)
+
+For each file, read it fully to understand state management, then apply the changes below.
+
+---
+
+#### Breaking Changes Reference
+
+**BC-1. `onSuggestionsFetchRequested` signature**
+
+```typescript
+// V1 — receives object with optional reason
+onSuggestionsFetchRequested({ value, reason }: { value: string; reason: string }) => void
+
+// V2 — receives string only
+onSuggestionsFetchRequested(value: string) => void
+```
+
+The `reason` field is gone. V2 only calls this for user input changes, not pre-load. Use the `onLoad` prop for pre-fetch on mount instead. If you used `reason` to set an `isPreFetch` flag, simplify:
+
+```typescript
+// Before
+const onSuggestionsFetchRequested = ({ reason, value }) => {
+  const isCurrentFetch = ['input-changed', 'input-focused'].includes(reason);
+  throttledFetch(value, !isCurrentFetch);
+};
+// After
+const onSuggestionsFetchRequested = (value: string) => {
+  throttledFetch(value, false);
+};
+```
+
+---
+
+**BC-2. `onSuggestionSelected` signature**
+
+```typescript
+// V1 — has event, suggestionIndex, sectionIndex, method
+onSuggestionSelected(event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => void
+
+// V2 — no event, no index; suggestionValue → inputValue
+onSuggestionSelected({ suggestion, inputValue }) => void
+```
+
+`suggestionIndex` is missing in V2. Recovery: pass `suggestions` array into your handler and use `findIndex`:
+
+```typescript
+clickItemIndex = suggestions.findIndex((s) => s === suggestion);
+```
+
+---
+
+**BC-3. `inputProps.value` is silently ignored**
+
+V2 manages input value internally. `inputProps.value` is extracted and discarded by downshift, which then passes its own internal `inputValue`.
+
+**Pattern for showing an expanded value after selection** (e.g., "Statue of Liberty, New York, USA"):
+
+Use `defaultValue` + React `key` tied to the selected suggestion. Changing the key triggers a remount with the new `defaultValue`:
+
+```tsx
+<BpkAutosuggest
+  key={`${selectedSuggestion?.entityId ?? 'no-selection'}-${selectedSuggestionValue}`}
+  defaultValue={shouldDisplayExpandedValue ? expandedValue : getInputValue()}
+  {...autosuggestProps}
+/>
+```
+
+Include both `entityId` **and** the suggestion value in the key — if only `entityId` is used, POI sub-items with the same `entityId` as the parent won't trigger a remount (see BC-11).
+
+---
+
+**BC-4. Removed props**
+
+| Removed prop | How to handle |
+|---|---|
+| `containerProps` | Remove entirely |
+| `valid` (top-level) | Remove from autosuggest; keep `valid` only inside `inputProps` if needed by the input component |
+| `onClear` (top-level) | Pass inside `inputProps` for the custom `renderInputComponent` |
+
+---
+
+**BC-5. `id` is now required**
+
+V2 uses `id` for `useCombobox` internals. Add it to autosuggest props if not already present:
+
+```typescript
+const commonProps = { id, suggestions, ... };
+```
+
+---
+
+**BC-6. `inputProps.onChange` / `inputProps.onBlur` V1 signature crash (frozen input)**
+
+**Symptom**: Input is completely frozen after migration — user cannot type or delete.
+
+**Root cause**: If your `onChange`/`onBlur` hooks use the `react-autosuggest` two-argument format, they will throw when V2 calls them with a single React event:
+
+```typescript
+// V1 expected signature — crashes in V2
+onChange(_event, { newValue }: { newValue: string }) => void
+onBlur(_event, { highlightedSuggestion }) => void
+```
+
+**Fix**: Add adapter functions before building `inputProps`:
+
+```typescript
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  onChange(event as any, { newValue: event.target.value });
+};
+const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+  onBlur(event as any, { highlightedSuggestion: null });
+};
+// Use handleChange / handleBlur in inputProps, not onChange / onBlur directly
+```
+
+`highlightedSuggestion: null` is safe — V2 handles blur auto-select internally.
+
+---
+
+**BC-7. `renderInputComponent` must forward `ref`**
+
+V2 passes `ref: setInputRef` to `renderInputComponent`. Without it, keyboard navigation, blur auto-select, and floating UI positioning break silently.
+
+```typescript
+const { inputRef, onBlur, onClear, onFocus, ref, value, ...rest } = inputProps;
+
+<input
+  {...rest}
+  value={value}
+  ref={(input) => {
+    if (input) {
+      currentRef.current = input;
+      if (typeof ref === 'function') ref(input);  // ← required for V2
+      inputRef?.(input);                           // ← project-specific callback ref
+    }
+  }}
+/>
+```
+
+---
+
+**BC-8. Theme: use `defaultTheme` as base**
+
+V2 exports `defaultTheme`. Always spread it first when customising:
+
+```typescript
+import { BpkAutosuggest, defaultTheme } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+
+// Desktop
+const desktopProps = { isDesktop: true, theme: defaultTheme, renderInputComponent };
+
+// Mobile — override specific keys
+const mobileProps = {
+  isDesktop: false,
+  alwaysRenderSuggestions: true,
+  theme: {
+    ...defaultTheme,
+    container: cls('autosuggest__container'),
+    suggestionsContainerOpen: cls('autosuggest__suggestions-container--open'),
+    suggestionsList: cls('autosuggest__suggestions-list'),
+    suggestion: cls('autosuggest__suggestion-item'),
+    suggestionHighlighted: cls('autosuggest__suggestion-item--highlighted'),
+  },
+};
+```
+
+---
+
+**BC-9. New props available in V2**
+
+| Prop | Type | Use case |
+|---|---|---|
+| `isDesktop` | `boolean` (default: `true`) | Controls FloatingPortal vs inline dropdown |
+| `onLoad` | `(inputValue) => void` | Pre-fetch on component mount |
+| `showClear` | `boolean` | Built-in clear button |
+| `ariaLabels` | `{ resultsList, label, clearButton }` | Unified aria labels |
+| `getA11yResultsMessage` | `(count) => string` | Screen reader results count |
+| `onInputValueChange` | `({ method, newValue }) => void` | Monitor internal value changes |
+| `enterKeyHint` | `EnterKeyHintType` | Mobile keyboard hint |
+
+---
+
+**BC-10. `getSuggestionValue` must return a string**
+
+Legacy code sometimes has `getSuggestionValue={(item) => item}` returning the full object. In V2, this value is displayed in the input after selection — it **must** be a string:
+
+```typescript
+// Before: getSuggestionValue={(hotel) => hotel}
+// After:  getSuggestionValue={(hotel) => hotel.value}
+```
+
+If the old `onChange` used `typeof newValue === 'string'` to distinguish typing from selection, split it into separate handlers (see Lessons: split combined onChange handlers).
+
+---
+
+**BC-11. POI sub-item selection doesn't update input**
+
+**Symptom**: Clicking a nested POI button leaves the input showing the parent suggestion name.
+
+**Root cause**: Downshift selects the parent `<li>` item and sets `inputValue` to the parent name. If the POI's `entityId` matches the parent's, the component `key` doesn't change and V2 never remounts with the POI name.
+
+**Fix**: Include suggestion value in the key (already shown in BC-3).
+
+---
+
+**BC-12. POI selection reverts to previous value (3-layer race condition)**
+
+**Symptom**: Clicking a POI sub-item momentarily shows the correct value then reverts.
+
+**Root cause — 3 compounding issues:**
+
+1. **Blur before click** (`focusInputOnSuggestionClick: false`): blur fires *before* click, so selection refs are null at blur time.
+2. **React 18 scheduler reversion**: blur's `setState` (lower priority) commits *after* click's `setState` (higher priority), overwriting the selection.
+3. **Second blur from V2 remount**: after `onSelected` changes the `key`, V2 unmounts the focused input, triggering a second blur. By then `justSelectedRef` has been consumed.
+
+**Fix** — in the consumer component:
+
+```typescript
+const justSelectedRef = useRef<Nullable<{ inputValue: string }>>(null);
+const selectionHandledRef = useRef(false); // guards against second blur from remount
+
+// In onSelected:
+justSelectedRef.current = { inputValue };
+selectionHandledRef.current = true;
+
+// In onInputFocus — reset both guards:
+selectionHandledRef.current = false;
+
+// In onInputBlur — defer ALL side-effects inside setTimeout:
+onInputBlur: (query, highlightedSuggestion) => {
+  const suggestionsAtBlur = suggestions;
+  setTimeout(() => {
+    onUpdateUserAction(USER_ACTIONS.ON_BLUR); // must also be inside setTimeout
+    if (!justSelectedRef.current && !selectionHandledRef.current) {
+      // Genuine blur, no selection: auto-fill with first suggestion
+      const autoFilled = suggestionsAtBlur[0] || {};
+      onUpdateSelectedSuggestion(autoFilled);
+    } else if (justSelectedRef.current) {
+      // First blur after selection: trigger pre-fetch
+      onFetch(justSelectedRef.current.inputValue, true);
+    }
+    // else: second blur from remount — skip
+    justSelectedRef.current = null;
+  }, 0);
+},
+```
+
+**Critical**: `onUpdateUserAction(ON_BLUR)` must be inside the `setTimeout` too. Running it synchronously triggers a render with the old `selectedSuggestion` value, causing a visible flash.
+
+---
+
+#### Per-File Migration Workflow
+
+For each autosuggest file:
 
 1. **Read the entire file** to understand:
-   - How `inputProps` is constructed (what value/onChange/onBlur it carries)
-   - How `onSuggestionsFetchRequested` is called (destructured `{ value }` vs direct string)
-   - How `onSuggestionSelected` is called (event + destructured object vs new signature)
-   - Whether there's external state management for the input value
-   - Whether the component is a wrapper that other components depend on
+   - How `inputProps` is constructed (`value`/`onChange`/`onBlur` sources)
+   - Whether `onSuggestionsFetchRequested` destructures `{ value }` vs receives string
+   - Whether `onSuggestionSelected` uses `event` or `suggestionValue`
+   - Whether the component is a shared wrapper used by many consumers
 
-2. **Classify the migration difficulty** for this specific file:
-   - **Simple**: Component uses BpkAutosuggest with minimal state management
-   - **Medium**: Component has controlled input with clear state mapping
-   - **Complex**: Component has intricate state management, multiple effects syncing value, or is a shared wrapper used by many consumers
+2. **Classify migration difficulty:**
+   - **Simple**: Minimal state management, no external value syncing
+   - **Medium**: Controlled input with clear state mapping
+   - **Complex**: Multi-effect state sync, Redux connect HOC, class component, blur-restore logic
 
-3. **Apply the migration:**
+3. **Apply changes:**
+   - Remove `value` from `inputProps`; add `defaultValue` if needed
+   - Convert `onChange(e, { newValue })` to `onInputValueChange={({ newValue }) => ...}`
+   - Fix `onSuggestionsFetchRequested` signature (BC-1)
+   - Fix `onSuggestionSelected` signature (BC-2)
+   - Move `inputProps.inputRef` → `ref` prop on component
+   - Remove `containerProps`, top-level `valid` (BC-4)
+   - Add `id` prop if missing (BC-5)
+   - Check for frozen input risk (BC-6)
+   - Check for `renderInputComponent` ref forwarding (BC-7)
 
-   a. **Remove controlled input pattern:**
-      - Remove `value` from `inputProps` (or the `inputProps` object entirely if only `value`/`onChange` remain)
-      - Add `defaultValue` prop if there's an initial value
-      - Convert `inputProps.onChange(e, { newValue })` handler to `onInputValueChange={({ method, newValue }) => ...}`
-      - Keep other inputProps that are still supported (e.g., `placeholder`, `id`, `name`, `clearButtonMode`, `clearButtonLabel`, `onClear`, `className`, `disabled`, `aria-*`)
+4. **Show the diff** and explain changes; get user confirmation.
 
-   b. **Fix `onSuggestionsFetchRequested`:**
-      - Change `({ value }) => ...` to `(value) => ...` (parameter is the string directly)
-      - If the handler destructures `value` from an object, unwrap it
-
-   c. **Fix `onSuggestionSelected`:**
-      - Remove the first `event` parameter
-      - Change `{ suggestion, suggestionValue }` to `{ inputValue, suggestion }`
-      - Update any references to `suggestionValue` → `inputValue`
-
-   d. **Fix `inputRef`:**
-      - Move `inputProps.inputRef` → `ref` prop on the BpkAutosuggest component
-
-   e. **Update related state management:**
-      - Remove `useState` for the input value if it was only used for the controlled pattern
-      - If value state was used elsewhere (e.g., to restore on blur), refactor to work with the uncontrolled pattern
-      - If the component had a `handleSearchChange` that set state + called onChange, simplify to just use `onInputValueChange`
-
-4. **Show the user the diff** and explain what changed and why.
-
-5. **Flag files that need manual review** — especially:
-   - Shared/wrapper components that other components import from
-   - Components with complex multi-effect state synchronisation
-   - Components that read the input value for purposes beyond passing it to BpkAutosuggest (e.g., debounced search, URL params)
+5. **Flag for manual review**: shared/wrapper components, complex multi-effect state, Redux-connected components, class components with `UNSAFE_componentWillReceiveProps`.
 
 ### Phase 4: Test Migration
 
@@ -205,15 +448,93 @@ After code changes, search for affected test files:
 Grep: BpkAutosuggest|BpkButtonV2|bpk-component-autosuggest|bpk-component-button/src/
 ```
 
-In test files:
-- Update any mocked imports
-- If tests query for suggestions inside a wrapper container, update to use `screen.getByRole('listbox')` or query `document.body` directly (V2 renders via portal with `isDesktop={true}`)
-- Update any `inputProps.value` assertions to use the new uncontrolled pattern
-- Update simulated onChange calls to match new callback signatures
+#### Button tests
+- Update any mocked imports from `BpkButtonV2` → `BpkButton`.
+- Snapshot tests will fail — run `npm test -- -u` to update.
+
+#### Autosuggest tests — JSDOM patterns
+
+**Mock `@floating-ui/react` for desktop tests**
+
+V2 renders suggestions inside `FloatingPortal` and uses `FloatingArrow` which crashes with `context: {}` in jsdom. Mock all four exports:
+
+```typescript
+import type { ReactNode } from 'react';
+
+jest.mock('@floating-ui/react', () => {
+  const actual = jest.requireActual('@floating-ui/react');
+  return {
+    ...actual,
+    FloatingPortal: ({ children }: { children: ReactNode }) => <>{children}</>,
+    FloatingArrow: () => null,
+    useFloating: () => ({
+      x: 0, y: 0, strategy: 'fixed',
+      refs: {
+        setReference: jest.fn(), setFloating: jest.fn(),
+        reference: { current: null }, floating: { current: null },
+      },
+      context: {}, floatingStyles: {}, middlewareData: {},
+      placement: 'bottom', isPositioned: true, update: jest.fn(),
+    }),
+    autoUpdate: () => () => {},
+  };
+});
+```
+
+**Use `fireEvent.click` (not `element.focus()`) to open the menu**
+
+V2's `onFocus: handleInputInteraction` is overridden by `...restInputProps` spreading the user's own `onFocus`. Only `onClick` is preserved and calls `openMenu()`:
+
+```typescript
+// ❌ Does NOT open the menu
+inputElement.focus();
+
+// ✅ Opens the menu
+fireEvent.click(inputElement);
+```
+
+Mobile tests are unaffected (`alwaysRenderSuggestions: true` renders without `isOpen`).
+
+**Assert expanded `defaultValue` on initial render, not after selection**
+
+After a suggestion click, downshift replaces `defaultValue` with `getSuggestionValue(suggestion)`. The expanded value only returns after a key-triggered remount:
+
+```typescript
+// ✅ Assert BEFORE interaction
+expect(inputElement).toHaveValue('Statue of Liberty, New York, USA');
+
+// ❌ Don't assert toHaveValue after clicking a suggestion
+```
+
+**Mobile axe: pass suggestions to avoid `aria-controls` violation**
+
+With `alwaysRenderSuggestions: true` and no suggestions, `aria-controls` points to a non-existent `<ul>`:
+
+```typescript
+// ❌ Fails axe
+render(<AutoSuggest {...defaultProps} />);
+// ✅
+render(<AutoSuggest {...defaultProps} suggestions={mockSuggestions} />);
+```
+
+**`type` and `name` are stripped from `inputProps` in `renderInputComponent` path**
+
+V2 destructures these before calling `getInputProps` — remove `type` and `name` attribute assertions for desktop tests using a custom `renderInputComponent`.
+
+**`onInputBlur` fires twice in `userEvent.type` + `fireEvent.blur` tests**
+
+```typescript
+// ❌ Fails — actually called twice in V2
+expect(defaultProps.onInputBlur).toHaveBeenCalledTimes(1);
+// ✅
+expect(defaultProps.onInputBlur).toHaveBeenCalledTimes(2);
+```
+
+**`UNSAFE_componentWillReceiveProps` tests** using `rerender` to change the `value` prop no longer work. Replace with `defaultValue` initial render tests.
 
 ### Phase 5: Verification
 
-1. **Run typecheck** in each affected package to catch type errors:
+1. **Run typecheck** in each affected package:
    ```bash
    cd packages/webapp && npm run typecheck
    cd packages/common && npm run typecheck
@@ -226,20 +547,18 @@ In test files:
 ### Phase 6: Capture Learnings & Contribute Back
 
 **MANDATORY: Do not end the session without completing this phase.** Run this phase whenever:
-- All migration work for a category is complete (even if other categories are skipped or deferred)
-- The user asks a wrap-up or review question (e.g., "anything worth contributing?", "what did we learn?")
-- The user signals they're done (e.g., "thanks", "that's all for now")
-- Phase 5 is skipped or deferred — do not use incomplete verification as a reason to skip Phase 6
+- All migration work for a category is complete (even if other categories are skipped)
+- The user asks a wrap-up or review question
+- The user signals they're done ("thanks", "that's all for now")
 
 Do not wait for the user to ask. Announce that you're reviewing learnings and proceed.
 
 #### Step 1: Identify new learnings
 
 Ask yourself:
-- Did any files require patterns not covered by the skill? (e.g., new import shapes, wrapper components, re-exports)
-- Did the migration script need adjustments for this codebase? (e.g., different source directories, monorepo structure)
-- Were there edge cases in autosuggest migration not documented? (e.g., new state management patterns, integration with other libraries)
-- Did any phase take longer than expected or produce unexpected results?
+- Did any files require patterns not covered by the skill?
+- Did the migration script need adjustments for this codebase?
+- Were there edge cases in autosuggest migration not documented?
 - Were there false positives or files that matched greps but didn't need changes?
 
 #### Step 2: Update the skill
@@ -265,8 +584,8 @@ Present the user with:
 This skill lives in this repo but is designed to help all Skyscanner codebases upgrade to Backpack v42.
 The learnings from this run could help other teams. Would you like to contribute them back?
 
-**How:** Open a PR to https://github.com/Skyscanner/backpack adding or updating the v42 migration guide
-with the new learnings from this run.
+**How:** Open a PR to https://github.com/Skyscanner/backpack adding or updating the v42
+migration guide with the new learnings from this run.
 
 I can help you:
 1. Draft the PR with the updated migration guidance
@@ -285,42 +604,48 @@ If the user agrees:
 - **Autosuggest migration cannot be fully automated.** The shift from controlled to uncontrolled input fundamentally changes how parent components manage state. Each wrapper needs individual analysis.
 - **Button migration is mechanical** and can be applied across all files safely via script.
 - **Preserve existing functionality.** The goal is API compatibility, not refactoring. Don't change business logic.
-- **BpkAutosuggestSuggestion** (the suggestion renderer sub-component) is NOT affected by this migration. Its API remains the same.
-- If a file imports from `bpk-component-autosuggest` but only uses `BpkAutosuggestSuggestion` (not the main Autosuggest component), it does NOT need API migration — only import path changes if applicable.
+- **`BpkAutosuggestSuggestion`** (the suggestion renderer sub-component) is NOT affected by this migration. Its API remains the same.
+- If a file imports from `bpk-component-autosuggest` but only uses `BpkAutosuggestSuggestion`, it does **NOT** need API migration.
+- Desktop dropdown uses `FloatingPortal` (renders outside the component's DOM subtree). This can affect z-index stacking and `overflow: hidden` scroll containers.
+- V2 auto-selects the highlighted suggestion on blur when `highlightFirstSuggestion: true` — test blur interactions carefully.
+- V2 previews arrow-key-highlighted suggestions in the input field (temporarily replaces typed text). This is new V2 behaviour with no V1 equivalent.
 
 ## Lessons from Prior Runs
 
-These are hard-won learnings from running the migration on a real codebase (~266 files):
-
 ### Multi-line imports are the majority
-~75% of BpkButtonV2 imports in this codebase are multi-line:
+~75% of BpkButtonV2 imports are multi-line:
 ```javascript
 import {
   BpkButtonV2,
   BUTTON_TYPES,
 } from '@skyscanner/backpack-web/bpk-component-button';
 ```
-Single-line grep patterns like `import.*BpkButtonV2.*from.*bpk-component-button` only match ~25% of files. Always use the JSX grep (`<BpkButtonV2`) as the source of truth for file counts.
+Single-line grep patterns only match ~25% of files. Always use the JSX grep (`<BpkButtonV2`) as the source of truth for file counts.
 
 ### Regex is unreliable for multi-line import rewriting
-A `String.replace` with `[\s\S]*?` regex for multi-line import blocks silently skips files. In testing, it caught only 46 out of 264 imports. The line-by-line parser approach (find `from '...'`, walk backwards to `import {`) is 100% reliable.
+`String.replace` with `[\s\S]*?` silently skips files — in testing it caught only 46 out of 264 imports. The line-by-line parser (find `from '...'`, walk backwards to `import {`) is 100% reliable.
 
 ### node_modules will hang your script
-Always use `--exclude-dir=node_modules` with grep, or target specific source directories (`packages/webapp/src`, `packages/common/src`, `packages/server/app`). Without this, `grep -rl` will hang indefinitely scanning the dependency tree.
+Always use `--exclude-dir=node_modules` with grep, or target specific source directories. Without this, `grep -rl` will hang indefinitely.
 
 ### Order of operations matters
-The correct order for the migration script is:
 1. Fix deep import **paths** first (while `BpkButtonV2` is still in the path string)
 2. Rename `BpkButtonV2` → `BpkButton` globally (simple string replace)
-3. Fix import **syntax** (named → default) — this step works on `BpkButton` after rename
-
-If you do step 3 before step 2, the regex/parser needs to look for `BpkButtonV2` specifically. If you do step 2 first, step 3 looks for `BpkButton` instead. Either order works, but be consistent.
+3. Fix import **syntax** (named → default)
 
 ### Type imports stay as named imports
-`import type { ButtonType } from '...'` must NOT be converted to a default import. The parser must skip lines starting with `import type`.
+`import type { ButtonType } from '...'` must NOT be converted to a default import.
+
+### Default import aliased as BpkButtonV2 is a distinct pattern
+Some files already use the correct default import but alias it:
+```javascript
+import BpkButtonV2, { BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+```
+Both import-line greps miss this entirely — only `<BpkButtonV2` JSX grep catches it. The script handles it correctly without changes (step 2's global rename fixes the alias; step 3 skips it because `BpkButton` isn't in the named imports list).
 
 ### Key-based re-mount is the core V2 pattern for programmatic resets
-V2's uncontrolled input has no `setValue()` API. To programmatically clear or reset the input (e.g., after selecting a chip in multi-select, clearing on blur, resetting after `clearOnChange`), use a key-based re-mount:
+V2's uncontrolled input has no `setValue()` API. To reset the input (after selection, clear, blur-restore):
+
 ```javascript
 const [autosuggestKey, setAutosuggestKey] = useState(0);
 const [currentDefault, setCurrentDefault] = useState(initialValue);
@@ -330,17 +655,15 @@ const resetAutosuggest = (newDefault) => {
   setAutosuggestKey((prev) => prev + 1);
 };
 
-// In JSX:
 <BpkAutosuggest key={autosuggestKey} defaultValue={currentDefault} ... />
 ```
-When `autosuggestKey` changes, React unmounts and remounts the component, picking up the new `currentDefault`. This pattern is needed in multi-select badge selectors, blur-restore wrappers, and clearOnChange components.
 
-**Companion pattern — `skipNextInputChange` ref:** When a selection handler calls `resetAutosuggest` AND also triggers a parent `onChange` that syncs back via a `useEffect`, you get a double re-mount. Prevent it with:
+**Companion pattern — `skipNextSyncRef`**: When selection handler calls `resetAutosuggest` AND triggers a parent `onChange` that syncs back via `useEffect`, you get a double re-mount:
 ```javascript
 const skipNextSyncRef = useRef(false);
 
 const handleSelection = (suggestion) => {
-  skipNextSyncRef.current = true; // prevent useEffect from re-mounting
+  skipNextSyncRef.current = true;
   onChange(suggestion);
   resetAutosuggest('');
 };
@@ -351,81 +674,42 @@ useEffect(() => {
 }, [valueFromProps]);
 ```
 
-### `getSuggestionValue` MUST return a string in V2
-Legacy code sometimes has `getSuggestionValue={(item) => item}` returning the full suggestion object. This "works" in v41 because the old `onChange(e, { newValue })` receives whatever `getSuggestionValue` returns, and handlers use `typeof newValue === 'string'` to distinguish typing from selection.
-
-In V2, `getSuggestionValue` determines what's displayed in the input after selection — it MUST return a string. Fix by extracting the display field:
-```javascript
-// Before: getSuggestionValue={(hotel) => hotel}
-// After:  getSuggestionValue={(hotel) => hotel.value}
-```
-Then split the combined `onChange` into separate handlers (see next lesson).
-
 ### Split combined onChange handlers into onInputValueChange + onSuggestionSelected
-Legacy pattern — a single `onChange` that handles both typing and selection:
+Legacy pattern — a single handler for both typing and selection:
 ```javascript
-// Legacy: combined handler
 selectChange = (e, { newValue }) => {
   if (typeof newValue === 'string') { /* typing */ }
   else if (newValue.value) { /* selection */ }
 };
 ```
-V2 separates these concerns:
+V2 separates these:
 ```javascript
-// V2: separate handlers
-handleInputChange = ({ newValue }) => { /* typing - always a string */ };
-handleSelected = ({ suggestion }) => { /* selection - full suggestion object */ };
+handleInputChange = ({ newValue }) => { /* typing — always a string */ };
+handleSelected = ({ suggestion }) => { /* selection — full suggestion object */ };
 ```
 The `typeof newValue` check is a reliable indicator that a handler needs splitting.
 
 ### Redux connect() HOC wrapping BpkAutosuggest is incompatible with V2
-Watch for this pattern:
 ```javascript
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(BpkAutosuggest);
 ```
-This passes `value`/`onChange` via Redux's `mergeProps` directly to BpkAutosuggest. Since V2 doesn't accept `value`/`onChange` via `inputProps`, this pattern fundamentally breaks. **Solution:** Convert to a functional component that uses `useSelector`/`useDispatch` and renders `<BpkAutosuggest>` with V2 props explicitly.
+This passes `value`/`onChange` via Redux's `mergeProps` directly to BpkAutosuggest. Since V2 doesn't accept these, it fundamentally breaks. **Solution**: Convert to a functional component using `useSelector`/`useDispatch` and render `<BpkAutosuggest>` with V2 props explicitly.
 
 ### Class components with UNSAFE_componentWillReceiveProps need full rewrites
-Class components commonly use `UNSAFE_componentWillReceiveProps` to sync input value from parent props — this has no V2 equivalent since `defaultValue` only applies on mount. The cleanest migration is converting to functional components with:
-- `useState` + `useEffect` replacing lifecycle methods
-- `useCallback`/`useRef` replacing instance methods
-- The key-based re-mount pattern replacing imperative value updates
+These components sync input value from parent props — there's no V2 equivalent since `defaultValue` only applies on mount. Convert to functional components with `useState`/`useEffect`/`useCallback`/`useRef` + the key-based re-mount pattern.
 
-For class components with minimal state, this is straightforward. For components with complex state (blur-restore, async initial values), expect significant refactoring.
+### Batch workflow for large autosuggest migrations
+Users may prefer batch mode over per-file confirmation. Viable, but:
+- Large autosuggest migrations can exceed the context window — batch in groups of ~8 files.
+- Show the first 1–2 files with full analysis, then ask if they want batch mode.
+- Provide a summary table of all changes at the end.
+
+### Discovery: not all autosuggest imports need API migration
+Files that only import `BpkAutosuggestSuggestion` don't need changes. Add a triage step after discovery: read each file's usage to filter the true migration list before counting.
 
 ### Deep imports extend beyond bpk-component-button
-Discovery should also check for deep imports into other Backpack components:
+Discovery should also check:
 ```
 Grep: from.*bpk-component-.*/src/
 ```
-Common example: `import type { InputProps } from '@skyscanner/backpack-web/bpk-component-input/src/common-types'` needs changing to `from '@skyscanner/backpack-web/bpk-component-input'`.
-
-### Test file updates after autosuggest migration
-Key patterns to watch for in test files:
-- **`UNSAFE_componentWillReceiveProps` tests** using `rerender` to change the `value` prop no longer work. Replace with `defaultValue` initial render tests.
-- **Snapshot tests** will fail — run `npm test -- -u` to update them.
-- **RTL `screen` queries work with V2's portal rendering.** Since `screen` queries `document.body` by default, suggestions rendered via portal are still findable with `screen.getByText()`.
-- **`fireEvent.change` and `userEvent.type`** continue to work for simulating typing in V2's uncontrolled input.
-
-### Default import aliased as BpkButtonV2 is a distinct pattern
-Some files already import from the public API but use `BpkButtonV2` as the **default import alias**:
-```javascript
-import BpkButtonV2, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
-```
-Both import-line greps (`import \{ BpkButtonV2 \}` and `^\s+BpkButtonV2,`) miss this pattern entirely — they're written for named imports. Only the JSX grep (`<BpkButtonV2`) catches files like this. This is the concrete reason why the skill says "use JSX grep as source of truth."
-
-The migration script handles this correctly without modification: step 2's global rename fixes the alias, and step 3's parser correctly skips it because `BpkButton` is not in the named imports list after the rename. No script change needed — just be aware during discovery that import-line counts will undercount these files.
-
-### Batch workflow and context window management
-The skill says "process one file at a time with user confirmation." In practice, users may prefer batch application: "apply all changes, I'll review at the end." This is viable and faster, but:
-- **Large autosuggest migrations can exceed the context window.** Break into batches of ~8 files.
-- Show the first 1-2 files with full analysis for user confidence, then ask if they want batch mode.
-- At the end, provide a summary table of all changes for review.
-
-### Discovery: not all autosuggest imports need API migration
-Not all files importing from `bpk-component-autosuggest` need API changes. Files that don't need changes include:
-- Files that only import `BpkAutosuggestSuggestion` (not the main component)
-- Files already using V2-compatible patterns
-- Files migrated in a prior Backpack upgrade
-
-Add a triage step after discovery: read each file's BpkAutosuggest usage to filter the true migration list before counting affected files.
+Common example: `import type { InputProps } from '@skyscanner/backpack-web/bpk-component-input/src/common-types'`
