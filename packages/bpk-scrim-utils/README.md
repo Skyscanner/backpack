@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { withScrim } from '@skyscanner/backpack-web/bpk-scrim-utils';
-import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 const Box = props => (
   <div ref={props.dialogRef}>
@@ -26,7 +26,7 @@ The `withScrimmedPortal` works with SSR, as well as CSR. On the server, it rende
 
 ```js
 import { withScrimmedPortal } from '@skyscanner/backpack-web/bpk-scrim-utils';
-import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 const Box = props => {
   const dialogRef = useRef(null);
