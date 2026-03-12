@@ -235,7 +235,7 @@ describe('BpkCardV2 Integration Tests', () => {
           const card = container.querySelector('[class*="bpk-card-v2"]');
 
           expect(card).toHaveClass(`bpk-card-v2--${variant}`);
-          expect(card).toHaveAttribute('data-bg-color', color);
+          expect(card).toHaveClass(`bpk-card-v2--${color}`);
         });
       });
     });

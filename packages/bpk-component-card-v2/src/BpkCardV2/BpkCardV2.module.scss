@@ -39,35 +39,35 @@
   }
 
   // Surface color variants
-  &[data-bg-color='surfaceDefault'] {
+  &--surfaceDefault {
     background-color: tokens.$bpk-surface-default-day;
   }
 
-  &[data-bg-color='surfaceElevated'] {
+  &--surfaceElevated {
     background-color: tokens.$bpk-surface-elevated-day;
   }
 
-  &[data-bg-color='surfaceTint'] {
+  &--surfaceTint {
     background-color: tokens.$bpk-surface-tint-day;
   }
 
-  &[data-bg-color='surfaceSubtle'] {
+  &--surfaceSubtle {
     background-color: tokens.$bpk-surface-subtle-day;
   }
 
-  &[data-bg-color='surfaceHero'] {
+  &--surfaceHero {
     background-color: tokens.$bpk-surface-hero-day;
   }
 
-  &[data-bg-color='surfaceContrast'] {
+  &--surfaceContrast {
     background-color: tokens.$bpk-surface-contrast-day;
   }
 
-  &[data-bg-color='surfaceLowContrast'] {
+  &--surfaceLowContrast {
     background-color: tokens.$bpk-surface-low-contrast-day;
   }
 
-  &[data-bg-color='surfaceHighlight'] {
+  &--surfaceHighlight {
     background-color: tokens.$bpk-surface-highlight-day;
   }
 }

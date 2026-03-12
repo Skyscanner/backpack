@@ -157,14 +157,14 @@ describe('BpkCardV2', () => {
     ] as const;
 
     surfaceColors.forEach((color) => {
-      it(`applies ${color} surface color as data attribute`, () => {
+      it(`applies ${color} surface color as BEM modifier class`, () => {
         const { container } = renderWithProvider(
           <BpkCardV2.Root bgColor={color}>Content</BpkCardV2.Root>,
         );
 
         const card = container.querySelector('[class*="bpk-card-v2"]');
 
-        expect(card).toHaveAttribute('data-bg-color', color);
+        expect(card).toHaveClass(`bpk-card-v2--${color}`);
       });
     });
 
@@ -175,7 +175,7 @@ describe('BpkCardV2', () => {
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
 
-      expect(card).toHaveAttribute('data-bg-color', 'surfaceDefault');
+      expect(card).toHaveClass('bpk-card-v2--surfaceDefault');
     });
   });
 
@@ -215,8 +215,8 @@ describe('BpkCardV2', () => {
       const ref = createRef<HTMLDivElement>();
       renderWithProvider(<BpkCardV2.Root ref={ref}>Content</BpkCardV2.Root>);
 
-      expect(ref.current?.dataset.bgColor).toBe('surfaceDefault');
       expect(ref.current?.className).toContain('bpk-card-v2');
+      expect(ref.current?.className).toContain('bpk-card-v2--surfaceDefault');
     });
   });
 

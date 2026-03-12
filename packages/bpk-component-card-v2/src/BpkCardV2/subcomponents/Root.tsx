@@ -62,8 +62,7 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
   ) => (
     <div
       ref={ref}
-      className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`)}
-      data-bg-color={bgColor}
+      className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`, `bpk-card-v2--${bgColor}`)}
       {...getDataComponentAttribute('CardV2')}
       {...rest}
     >

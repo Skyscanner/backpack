@@ -3,9 +3,8 @@
 exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--default"
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surfaceDefault"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceDefault"
   >
     <div
       class="css-m6xlmc"
@@ -32,9 +31,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
 exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--default"
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surfaceDefault"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceDefault"
   >
     <div
       class="css-m6xlmc"
@@ -88,9 +86,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
 exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--default"
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surfaceElevated"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceElevated"
   >
     <div
       class="css-1gldux5"
@@ -105,9 +102,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
 exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--default"
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surfaceDefault"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceDefault"
   >
     <div
       class="css-1gldux5"
@@ -122,9 +118,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
 exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--default"
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surfaceDefault"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceDefault"
   >
     <div
       class="css-fgs40z"
@@ -154,9 +149,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider
 exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--outlined"
+    class="bpk-card-v2 bpk-card-v2--outlined bpk-card-v2--surfaceDefault"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceDefault"
   >
     <div
       class="css-m6xlmc"
@@ -177,9 +171,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
 exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
 <div>
   <div
-    class="bpk-card-v2 bpk-card-v2--default"
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surfaceDefault"
     data-backpack-ds-component="CardV2"
-    data-bg-color="surfaceDefault"
   >
     <div
       class="css-1he6qm"
