@@ -33,8 +33,8 @@ import type { BpkCardV2FooterProps } from '../common-types';
  *
  * @example
  * <BpkCardV2.Footer justify="flex-end" gap={BpkSpacing.SM}>
- *   <button>Cancel</button>
- *   <button>Save</button>
+ *   <BpkButton>Cancel</BpkButton>
+ *   <BpkButton>Save</BpkButton>
  * </BpkCardV2.Footer>
  *
  * @returns {JSX.Element} Footer component

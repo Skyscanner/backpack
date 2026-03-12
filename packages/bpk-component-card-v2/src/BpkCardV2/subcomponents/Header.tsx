@@ -33,8 +33,8 @@ import type { BpkCardV2HeaderProps } from '../common-types';
  *
  * @example
  * <BpkCardV2.Header justify="space-between" align="center">
- *   <span>Title</span>
- *   <span>Action</span>
+ *   <BpkText>Title</BpkText>
+ *   <BpkText>Action</BpkText>
  * </BpkCardV2.Header>
  *
  * @returns {JSX.Element} Header component

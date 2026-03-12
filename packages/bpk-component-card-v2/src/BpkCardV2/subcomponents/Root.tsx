@@ -41,7 +41,8 @@ const getClassName = cssModules(STYLES);
  * </BpkCardV2.Root>
  *
  * @example
- * // Multi-column layout (70/30 on desktop, stacked on mobile)
+ * // Multi-column layout (70/30 on desktop, stacked on mobile).
+ * // The `auto` column in templateColumns reserves space for the Divider.
  * <BpkCardV2.Root bgColor="surfaceElevated">
  *   <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }}>
  *     <BpkCardV2.Section>Main content</BpkCardV2.Section>
@@ -62,9 +63,12 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
   ) => (
     <div
       ref={ref}
-      className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`, `bpk-card-v2--${bgColor}`)}
       {...getDataComponentAttribute('CardV2')}
       {...rest}
+      // className and style are placed after {...rest} so any values smuggled
+      // past the TypeScript Omit (e.g. via `as any`) are safely overwritten.
+      className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`, `bpk-card-v2--${bgColor}`)}
+      style={undefined}
     >
       {children}
     </div>
