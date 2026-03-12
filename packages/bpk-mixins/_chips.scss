@@ -44,7 +44,7 @@
   @include utils.bpk-themeable-property(
     border-radius,
     --bpk-chip-border-radius,
-    tokens.$bpk-border-radius-xs * 2
+    tokens.$bpk-border-radius-sm
   );
 
   &__leading-accessory-view {

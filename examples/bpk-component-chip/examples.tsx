@@ -20,6 +20,7 @@ import type { ReactNode} from 'react';
 import { useState } from 'react';
 
 import {
+  borderRadiusLg,
   corePrimaryDay,
   lineDay,
   statusDangerSpotDay,
@@ -321,7 +322,7 @@ const ThemedExample = () => (
     </BpkText>
     <BpkThemeProvider
       theme={{
-        chipBorderRadius: '1rem',
+        chipBorderRadius: borderRadiusLg,
         chipDefaultBorderColor: statusDangerSpotDay,
         chipDefaultHoverBackgroundColor: surfaceHighlightDay,
         chipDefaultHoverBorderColor: lineDay,
