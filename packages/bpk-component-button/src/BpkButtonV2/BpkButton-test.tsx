@@ -277,28 +277,28 @@ describe('BpkButton', () => {
       expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
     });
 
-    it('should use primary spinner for secondary type when loading=true', () => {
+    it('should use dark spinner for secondary type when loading=true', () => {
       const { container } = render(
         <BpkButton type={BUTTON_TYPES.secondary} loading>My button</BpkButton>,
       );
 
-      expect(container.querySelector('[class*="bpk-spinner--primary"]')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-spinner--dark"]')).toBeInTheDocument();
     });
 
-    it('should use primary spinner for destructive type when loading=true', () => {
+    it('should use dark spinner for destructive type when loading=true', () => {
       const { container } = render(
         <BpkButton type={BUTTON_TYPES.destructive} loading>My button</BpkButton>,
       );
 
-      expect(container.querySelector('[class*="bpk-spinner--primary"]')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-spinner--dark"]')).toBeInTheDocument();
     });
 
-    it('should use primary spinner for link type when loading=true', () => {
+    it('should use dark spinner for link type when loading=true', () => {
       const { container } = render(
         <BpkButton type={BUTTON_TYPES.link} loading>My button</BpkButton>,
       );
 
-      expect(container.querySelector('[class*="bpk-spinner--primary"]')).toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-spinner--dark"]')).toBeInTheDocument();
     });
 
     it('should use light spinner for featured type when loading=true', () => {
