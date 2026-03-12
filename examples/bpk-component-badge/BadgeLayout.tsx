@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../packages/bpk-react-utils';
 
@@ -27,28 +24,18 @@ import STYLES from './BpkBadgeLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  docked: ?string,
-  children: Node,
+type Props = {
+  docked?: string | null;
+  children: ReactNode;
 };
 
-const BadgeLayout = (props: Props) => {
-  const { children, docked } = props;
+const BadgeLayout = ({ children, docked = null }: Props) => {
   const classNames = getClassName(
     'bpk-badge-layout__container',
     docked && 'bpk-badge-layout__container--light',
   );
 
   return <div className={classNames}>{children}</div>;
-};
-
-BadgeLayout.propTypes = {
-  docked: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
-
-BadgeLayout.defaultProps = {
-  docked: null,
 };
 
 export default BadgeLayout;
