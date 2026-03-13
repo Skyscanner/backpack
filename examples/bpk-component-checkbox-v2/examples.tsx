@@ -27,11 +27,9 @@ import {
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 // @ts-ignore
-import BpkStarRating from '../../packages/bpk-component-star-rating';
 import BpkThemeProvider from '../../packages/bpk-theming';
 
-// @ts-ignore
-import hertzLogo from './logos.svg';
+import STYLES from './examples.module.scss';
 
 export const SimpleLabelExample = () => (
   <BpkCheckbox.Root>
@@ -166,16 +164,9 @@ export const ComposedHertzExample = () => (
       <BpkFlex direction="column" width="16rem">
         <BpkFlex justify="space-between" align="center">
           <BpkCheckbox.Label>Hertz</BpkCheckbox.Label>
-          <img src={hertzLogo} alt="Hertz" width={64} height={24} />
+          <div className={STYLES['bpk-hertz-logo-placeholder']} />
         </BpkFlex>
         <BpkCheckbox.Description>from £21</BpkCheckbox.Description>
-        <BpkStarRating
-          rating={3}
-          maxRating={3}
-          ratingLabel={(rating: number, maxRating: number) =>
-            `${rating} out of ${maxRating} stars`
-          }
-        />
       </BpkFlex>
       <BpkCheckbox.HiddenInput />
     </BpkCheckbox.Root>
