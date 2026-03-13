@@ -1,0 +1,110 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/utils';
+
+.bpk-chatbot-textarea-field {
+  &__container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    transition:
+      height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: height, padding, transform;
+
+    &--expanding {
+      align-items: flex-start;
+    }
+
+    &--overLimit {
+      padding-top: tokens.bpk-spacing-base();
+      align-items: flex-end;
+    }
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    align-items: center;
+    flex: 1;
+    cursor: text;
+    overflow: visible;
+
+    &--fifthLine {
+      padding-bottom: tokens.bpk-spacing-base();
+    }
+  }
+
+  &__label {
+    @include utils.bpk-visually-hidden;
+  }
+
+  &__textarea {
+    width: 100%;
+    height: tokens.bpk-spacing-lg();
+    min-height: tokens.bpk-spacing-lg();
+    max-height: 110 * tokens.$bpk-one-pixel-rem;
+    margin: 0;
+    padding: 0;
+    transition:
+      height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    outline: none;
+    background: transparent;
+    color: tokens.$bpk-text-primary-day;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: tokens.bpk-spacing-lg();
+    text-rendering: optimizelegibility;
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    caret-color: tokens.$bpk-core-accent-day;
+    overflow-wrap: break-word;
+    resize: none;
+    scrollbar-width: none;
+    word-wrap: break-word;
+
+    @include typography.bpk-body-default;
+
+    &::placeholder {
+      color: tokens.$bpk-text-secondary-day;
+      opacity: 1;
+    }
+
+    &:disabled {
+      color: tokens.$bpk-text-disabled-day;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
