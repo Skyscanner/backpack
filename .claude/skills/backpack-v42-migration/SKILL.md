@@ -1,6 +1,9 @@
 ---
 name: backpack-v42-migration
 description: Migrate a codebase from @skyscanner/backpack-web v41.x to v42.0. Handles BpkButtonV2 → BpkButton rename, deep import removal, and BpkAutosuggest legacy → V2 API migration. Use when upgrading Backpack to v42.
+metadata:
+  version: 1.0.0
+  date: 2026-03-13
 ---
 
 # Backpack Web v42.0 Migration
@@ -28,6 +31,7 @@ This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0.
 **Notes:**
 - Files that already use `import BpkButton from '@skyscanner/backpack-web/bpk-component-button'` are already compliant — no changes needed.
 - Named exports like `BUTTON_TYPES` and `SIZE_TYPES` remain available from the package root.
+- In v41, the default export already resolved to `BpkButtonV2`, so teams can migrate to the supported import pattern **before** adopting v42.
 
 ### 2. BpkAutosuggest — V2 becomes default
 
@@ -48,7 +52,13 @@ This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0.
 | `inputProps.inputRef` | `ref` prop directly on the component |
 | `containerProps`, `valid` (top-level) | Removed — see Phase 3 |
 
+**Two migration paths:**
+- **Using V2 already** (`BpkAutosuggestV2`) → rename to default import: `import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest'`
+- **Still on V1** → either migrate to V2 API (see Phase 3), or temporarily keep legacy behavior: `import { BpkAutosuggestLegacy } from '@skyscanner/backpack-web/bpk-component-autosuggest'`
+
 **Autosuggest migration is complex and context-dependent.** Each file needs careful analysis.
+
+> ⚠️ **Global Components dependency**: If your app consumes Global Components that include Autosuggest, you must upgrade **Backpack v42 + Global Components v16 together in the same PR**, on both server and client, to avoid runtime mismatch.
 
 ## Execution Workflow
 
@@ -176,7 +186,7 @@ onSuggestionsFetchRequested({ value, reason }: { value: string; reason: string }
 onSuggestionsFetchRequested(value: string) => void
 ```
 
-The `reason` field is gone. V2 only calls this for user input changes, not pre-load. Use the `onLoad` prop for pre-fetch on mount instead. If you used `reason` to set an `isPreFetch` flag, simplify:
+The `reason` field is gone. V2 only calls this for user input changes. If you used `reason` to distinguish pre-fetch from user-input, simplify — V2 already calls `onSuggestionsFetchRequested` on mount when `alwaysRenderSuggestions` is set or `inputValue` has a value. Note: `onLoad` is **not** a mount prefetch hook on desktop (it fires on click interaction); on mobile it fires on mount.
 
 ```typescript
 // Before
@@ -236,7 +246,7 @@ Include both `entityId` **and** the suggestion value in the key — if only `ent
 |---|---|
 | `containerProps` | Remove entirely |
 | `valid` (top-level) | Remove from autosuggest; keep `valid` only inside `inputProps` if needed by the input component |
-| `onClear` (top-level) | Pass inside `inputProps` for the custom `renderInputComponent` |
+| `onClear` (top-level) | V2 passes `onClear: clearSuggestions` directly to `renderInputComponent` — **do not** put your handler in `inputProps.onClear` as it will be overwritten. If you have clear side-effects (analytics, state resets), wrap them inside `renderInputComponent`'s own `onClear` prop handler instead |
 
 ---
 
@@ -305,7 +315,7 @@ const { inputRef, onBlur, onClear, onFocus, ref, value, ...rest } = inputProps;
 V2 exports `defaultTheme`. Always spread it first when customising:
 
 ```typescript
-import { BpkAutosuggest, defaultTheme } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkAutosuggest, { defaultTheme } from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
 // Desktop
 const desktopProps = { isDesktop: true, theme: defaultTheme, renderInputComponent };
@@ -450,7 +460,7 @@ Grep: BpkAutosuggest|BpkButtonV2|bpk-component-autosuggest|bpk-component-button/
 
 #### Button tests
 - Update any mocked imports from `BpkButtonV2` → `BpkButton`.
-- Snapshot tests will fail — run `npm test -- -u` to update.
+- Snapshot tests will fail — run `npm run jest:update` to update.
 
 #### Autosuggest tests — JSDOM patterns
 
