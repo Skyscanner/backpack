@@ -28,6 +28,7 @@ import {
   AllDismissibleChipsExample,
   RadioGroupChipsExample,
   AllIconChipsExample,
+  ThemedExample,
 } from './examples';
 
 export default {
@@ -46,6 +47,7 @@ export const AllIconOnlyTypes = AllIconChipsExample;
 export const AllDropdownTypes = AllDropdownChipsExample;
 export const AllDismissibleTypes = AllDismissibleChipsExample;
 export const RadioGroup = RadioGroupChipsExample;
+export const Themed = ThemedExample;
 export const VisualTest = AllTypesExample;
 export const VisualTestWithZoom = {
   render: VisualTest,

@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,17 +24,17 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node, 
-  className: ?string, 
-  wordBreak?: boolean
-};
+export interface BpkTableCellProps extends Omit<HTMLAttributes<HTMLTableCellElement>, 'className'> {
+  /** The content of the table */
+  children: ReactNode;
+  className?: string | null;
+  wordBreak?: boolean;
+}
 
-const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...rest }: Props) => {
+const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: BpkTableCellProps) => {
 
   const classes = [
     'bpk-table__cell',
-    'bpk-table__cell--head',
     wordBreak && 'bpk-table__cell--wordBreak',
     className,
   ];
@@ -45,16 +42,10 @@ const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...re
   const classNames = getClassName(...classes);
 
   return (
-    <th className={classNames} {...rest}>
+    <td className={classNames} {...rest}>
       {children}
-    </th>
+    </td>
   );
 };
 
-BpkTableHeadCell.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  wordBreak: PropTypes.bool,
-};
-
-export default BpkTableHeadCell;
+export default BpkTableCell;

@@ -16,29 +16,13 @@
  * limitations under the License.
  */
 
-import { BpkButtonV2 } from './src/BpkButtonV2/BpkButton';
+import type { ReactNode, HTMLAttributes } from 'react';
 
-export {
-  BUTTON_TYPES,
-  SIZE_TYPES,
-  type ButtonType,
-  type SizeType,
-  type Props,
-} from './src/BpkButtonV2/common-types';
+export interface BpkTableRowProps extends HTMLAttributes<HTMLTableRowElement> {
+  /** The content of the table */
+  children: ReactNode;
+}
 
-export {
-  buttonThemeAttributes,
-  primaryThemeAttributes,
-  primaryOnDarkThemeAttributes,
-  primaryOnLightThemeAttributes,
-  secondaryThemeAttributes,
-  secondaryOnDarkThemeAttributes,
-  featuredThemeAttributes,
-  destructiveThemeAttributes,
-  linkThemeAttributes,
-} from './src/themeAttributes';
+const BpkTableRow = (props: BpkTableRowProps) => <tr {...props} />;
 
-const BpkButton = BpkButtonV2;
-export default BpkButton;
-
-export { BpkButtonV2 };
+export default BpkTableRow;

@@ -16,21 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 
-import BpkTableRow from './BpkTableRow';
+import BpkTableHead from './BpkTableHead';
 
-describe('BpkTableRow', () => {
+describe('BpkTableHead', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
       <table>
-        <tbody>
-          <BpkTableRow>
-            <td aria-label="test" />
-          </BpkTableRow>
-        </tbody>
+        <BpkTableHead>
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -39,11 +38,11 @@ describe('BpkTableRow', () => {
   it('should render correctly with custom class', () => {
     const { asFragment } = render(
       <table>
-        <tbody>
-          <BpkTableRow className="my-custom-class">
-            <td aria-label="test" />
-          </BpkTableRow>
-        </tbody>
+        <BpkTableHead className="my-custom-class">
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -52,11 +51,11 @@ describe('BpkTableRow', () => {
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
       <table>
-        <tbody>
-          <BpkTableRow id="my-custom-id" data-foo="bar">
-            <td aria-label="test" />
-          </BpkTableRow>
-        </tbody>
+        <BpkTableHead id="my-custom-id" data-foo="bar">
+          <tr>
+            <th>Skyscanner</th>
+          </tr>
+        </BpkTableHead>
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();

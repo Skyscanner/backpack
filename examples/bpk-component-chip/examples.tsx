@@ -19,6 +19,15 @@
 import type { ReactNode} from 'react';
 import { useState } from 'react';
 
+import {
+  borderRadiusLg,
+  corePrimaryDay,
+  lineDay,
+  statusDangerSpotDay,
+  surfaceHighlightDay,
+  textOnDarkDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkSelectableChip, {
   type BpkSelectableChipProps,
   CHIP_TYPES,
@@ -30,6 +39,8 @@ import FaceHappyIconSm from '../../packages/bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../packages/bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../packages/bpk-theming';
 import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 
 import STYLES from './examples.module.scss';
@@ -304,6 +315,44 @@ const AllTypesExample = () => (
   </div>
 );
 
+const ThemedExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Custom theme override
+    </BpkText>
+    <BpkThemeProvider
+      theme={{
+        chipBorderRadius: borderRadiusLg,
+        chipDefaultBorderColor: statusDangerSpotDay,
+        chipDefaultHoverBackgroundColor: surfaceHighlightDay,
+        chipDefaultHoverBorderColor: lineDay,
+        chipDefaultActiveBorderColor: corePrimaryDay,
+        chipDefaultSelectedBackgroundColor: statusDangerSpotDay,
+        chipDefaultSelectedTextColor: textOnDarkDay,
+        chipDefaultSelectedHoverBackgroundColor: statusDangerSpotDay,
+        chipDefaultSelectedActiveBackgroundColor: statusDangerSpotDay,
+      }}
+      themeAttributes={[
+        'chipBorderRadius',
+        'chipDefaultBorderColor',
+        'chipDefaultHoverBackgroundColor',
+        'chipDefaultHoverBorderColor',
+        'chipDefaultActiveBorderColor',
+        'chipDefaultSelectedBackgroundColor',
+        'chipDefaultSelectedTextColor',
+        'chipDefaultSelectedHoverBackgroundColor',
+        'chipDefaultSelectedActiveBackgroundColor',
+      ]}
+    >
+      <StatefulSelectableChips type={CHIP_TYPES.default} />
+    </BpkThemeProvider>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Default theme (no override)
+    </BpkText>
+    <StatefulSelectableChips type={CHIP_TYPES.default} />
+  </div>
+);
+
 export {
   AllTypesExample,
   AllSelectableChipsExample,
@@ -311,4 +360,5 @@ export {
   AllDropdownChipsExample,
   AllDismissibleChipsExample,
   RadioGroupChipsExample,
+  ThemedExample,
 };

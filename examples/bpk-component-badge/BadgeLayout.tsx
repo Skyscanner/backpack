@@ -16,20 +16,26 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import BpkTable from './src/BpkTable';
-import BpkTableBody from './src/BpkTableBody';
-import BpkTableCell from './src/BpkTableCell';
-import BpkTableHead from './src/BpkTableHead';
-import BpkTableHeadCell from './src/BpkTableHeadCell';
-import BpkTableRow from './src/BpkTableRow';
+import { cssModules } from '../../packages/bpk-react-utils';
 
-export {
-  BpkTable,
-  BpkTableHead,
-  BpkTableBody,
-  BpkTableRow,
-  BpkTableCell,
-  BpkTableHeadCell,
+import STYLES from './BpkBadgeLayout.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+type Props = {
+  docked?: string | null;
+  children: ReactNode;
 };
+
+const BadgeLayout = ({ children, docked = null }: Props) => {
+  const classNames = getClassName(
+    'bpk-badge-layout__container',
+    docked && 'bpk-badge-layout__container--light',
+  );
+
+  return <div className={classNames}>{children}</div>;
+};
+
+export default BadgeLayout;

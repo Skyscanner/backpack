@@ -16,17 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode, HTMLAttributes } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+  /** The content of the table */
+  children: ReactNode;
+}
 
-type Props = { children: Node };
+const BpkTableBody = (props: BpkTableBodyProps) => <tbody {...props} />;
 
-const BpkTableRow = (props: Props) => <tr {...props} />;
-
-BpkTableRow.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default BpkTableRow;
+export default BpkTableBody;
