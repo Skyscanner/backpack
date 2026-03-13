@@ -34,6 +34,8 @@ updates:
     skyscanner:
       patterns:
         - "@skyscanner/*"
+      update-types:
+        - "version-update:semver-major"
   cooldown:
     default-days: 7
 - package-ecosystem: github-actions
