@@ -57,15 +57,19 @@ figma.connect(
         true: <LongArrowRightIcon />,
         false: undefined,
       }),
-      iconOnly: figma.boolean('Icon only')
+      iconOnly: figma.enum('Icon', {
+        "Icon only": true,
+      }),
+      loading: figma.boolean('Loading'),
     },
-    example: ({ iconOnly, isDisabled, label, leadingIcon, size, style, trailingIcon }) =>
+    example: ({ iconOnly, isDisabled, label, leadingIcon, loading, size, style, trailingIcon }) =>
       iconOnly ? (
         <BpkButton
           type={style}
           size={size}
           disabled={isDisabled}
           iconOnly
+          loading={loading}
           aria-label={label}
         >
           <LightningIcon />
@@ -77,6 +81,7 @@ figma.connect(
           disabled={isDisabled}
           leadingIcon={leadingIcon}
           trailingIcon={trailingIcon}
+          loading={loading}
         >
           {label}
         </BpkButton>

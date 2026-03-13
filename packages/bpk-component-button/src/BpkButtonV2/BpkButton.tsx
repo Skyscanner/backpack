@@ -15,15 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../../bpk-component-spinner';
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
-import type { Props } from './common-types';
+import type { ButtonType, Props } from './common-types';
 
 import COMMON_STYLES from './BpkButton.module.scss';
 
 const getCommonClassName = cssModules(COMMON_STYLES);
+
+const getSpinnerType = (buttonType: ButtonType) => {
+  switch (buttonType) {
+    case BUTTON_TYPES.secondary:
+    case BUTTON_TYPES.destructive:
+    case BUTTON_TYPES.link:
+    case BUTTON_TYPES.primaryOnDark:
+      return SPINNER_TYPES.dark;
+    default:
+      return SPINNER_TYPES.light;
+  }
+};
 
 // eslint-disable-next-line import/prefer-default-export
 export const BpkButtonV2 = ({
@@ -36,6 +49,7 @@ export const BpkButtonV2 = ({
   iconOnly = false,
   implicit = false,
   leadingIcon = null,
+  loading = false,
   onClick = () => {},
   rel: propRel = undefined,
   size = SIZE_TYPES.small,
@@ -44,9 +58,10 @@ export const BpkButtonV2 = ({
   type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
+  const isDisabled = disabled || loading;
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
   const alternate = type === BUTTON_TYPES.linkOnDark;
-  const shouldUnderline = isLinkType && !iconOnly && !disabled;
+  const shouldUnderline = isLinkType && !iconOnly && !isDisabled;
   const hasIcons = !!(leadingIcon || trailingIcon);
 
   const classNames = getCommonClassName(
@@ -55,6 +70,7 @@ export const BpkButtonV2 = ({
     iconOnly && 'bpk-button--icon-only',
     iconOnly && size === SIZE_TYPES.large && 'bpk-button--large-icon-only',
     `bpk-button--${type}`,
+    loading && 'bpk-button--loading',
     fullWidth && 'bpk-button--full-width',
     hasIcons && 'bpk-button--has-icon',
     isLinkType && iconOnly && 'bpk-button--link--icon-only',
@@ -71,7 +87,7 @@ export const BpkButtonV2 = ({
       )
     : null;
 
-  const content = underlinedClassName
+  const textContent = underlinedClassName
     ? <span className={underlinedClassName}>{children}</span>
     : children;
 
@@ -87,10 +103,31 @@ export const BpkButtonV2 = ({
     </span>
   ) : null;
 
+  const innerContent = (
+    <>
+      {leadingIconEl}
+      {textContent}
+      {trailingIconEl}
+    </>
+  );
+
+  const content = loading ? (
+    <div className={getCommonClassName('bpk-button__loading-container')}>
+      <span className={getCommonClassName('bpk-button__loading-icon')} aria-hidden="true">
+        {size === SIZE_TYPES.large
+          ? <BpkLargeSpinner type={getSpinnerType(type)} alignToButton />
+          : <BpkSpinner type={getSpinnerType(type)} alignToButton />}
+      </span>
+      <div className={getCommonClassName('bpk-button__content--hidden')}>
+        {innerContent}
+      </div>
+    </div>
+  ) : innerContent;
+
   const target = blank ? '_blank' : '';
   const rel = blank ? propRel || 'noopener noreferrer' : propRel;
 
-  if (!disabled && href) {
+  if (!isDisabled && href) {
     return (
       <a
         href={href}
@@ -101,9 +138,7 @@ export const BpkButtonV2 = ({
         rel={rel}
         {...rest}
       >
-        {leadingIconEl}
         {content}
-        {trailingIconEl}
       </a>
     );
   }
@@ -111,15 +146,14 @@ export const BpkButtonV2 = ({
   return (
     <button
       type={submit ? 'submit' : 'button'}
-      disabled={disabled}
+      disabled={isDisabled}
       className={classNames}
       {...getDataComponentAttribute('Button')}
+      aria-busy={loading || undefined}
       onClick={onClick}
       {...rest}
     >
-      {leadingIconEl}
       {content}
-      {trailingIconEl}
     </button>
   );
 };

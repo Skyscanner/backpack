@@ -167,6 +167,27 @@
     text-decoration: none;
   }
 
+  &__loading-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__loading-icon {
+    position: absolute;
+    display: inline-flex;
+
+    // Reset SVG display overrides (e.g. from link button) so the spinner SVG
+    // always renders as block and stays within its 16×16 container.
+    --bpk-button-svg-display: block;
+    --bpk-button-svg-vertical-align: baseline;
+  }
+
+  &__content--hidden {
+    opacity: 0;
+  }
+
   /* stylelint-disable selector-max-compound-selectors */
   span > svg {
     display: var(--bpk-button-svg-display, block);
