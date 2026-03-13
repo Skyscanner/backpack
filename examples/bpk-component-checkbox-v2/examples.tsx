@@ -26,7 +26,7 @@ import {
   BpkProvider,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
-// @ts-ignore
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
 
 import STYLES from './examples.module.scss';
