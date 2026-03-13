@@ -140,6 +140,7 @@ const SortControl = () => {
       onChange={setSelected}
       type={SEGMENT_TYPES_V2.CanvasDefault}
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="price">
         <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
         <BpkSegmentedControlV2.ItemControl />
@@ -165,15 +166,18 @@ const SortControl = () => {
 `ItemText` accepts any React children — icons, multi-line layouts, or custom components:
 
 ```tsx
-<BpkSegmentedControlV2.Item value="best">
-  <BpkSegmentedControlV2.ItemText>
-    <div>Best</div>
-    <div>£84</div>
-    <div>2h average</div>
-  </BpkSegmentedControlV2.ItemText>
-  <BpkSegmentedControlV2.ItemControl />
-  <BpkSegmentedControlV2.ItemHiddenInput />
-</BpkSegmentedControlV2.Item>
+<BpkSegmentedControlV2.Root label="Sort by" defaultValue="best">
+  <BpkSegmentedControlV2.Indicator />
+  <BpkSegmentedControlV2.Item value="best">
+    <BpkSegmentedControlV2.ItemText>
+      <div>Best</div>
+      <div>£84</div>
+      <div>2h average</div>
+    </BpkSegmentedControlV2.ItemText>
+    <BpkSegmentedControlV2.ItemControl />
+    <BpkSegmentedControlV2.ItemHiddenInput />
+  </BpkSegmentedControlV2.Item>
+</BpkSegmentedControlV2.Root>
 ```
 
 ### Icon-only items
@@ -183,15 +187,27 @@ Wrap icon-only items with `BpkVisuallyHidden` to satisfy WCAG 4.1.2:
 ```tsx
 import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
 import GridLayoutIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/grid-layout';
+import ListIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/list';
 
-<BpkSegmentedControlV2.Item value="grid">
-  <BpkSegmentedControlV2.ItemText>
-    <GridLayoutIcon />
-    <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
-  </BpkSegmentedControlV2.ItemText>
-  <BpkSegmentedControlV2.ItemControl />
-  <BpkSegmentedControlV2.ItemHiddenInput />
-</BpkSegmentedControlV2.Item>
+<BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
+  <BpkSegmentedControlV2.Indicator />
+  <BpkSegmentedControlV2.Item value="grid">
+    <BpkSegmentedControlV2.ItemText>
+      <GridLayoutIcon />
+      <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
+    </BpkSegmentedControlV2.ItemText>
+    <BpkSegmentedControlV2.ItemControl />
+    <BpkSegmentedControlV2.ItemHiddenInput />
+  </BpkSegmentedControlV2.Item>
+  <BpkSegmentedControlV2.Item value="list">
+    <BpkSegmentedControlV2.ItemText>
+      <ListIcon />
+      <BpkVisuallyHidden>List view</BpkVisuallyHidden>
+    </BpkSegmentedControlV2.ItemText>
+    <BpkSegmentedControlV2.ItemControl />
+    <BpkSegmentedControlV2.ItemHiddenInput />
+  </BpkSegmentedControlV2.Item>
+</BpkSegmentedControlV2.Root>
 ```
 
 ### Migrating from V1
@@ -207,7 +223,7 @@ import GridLayoutIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/grid-
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
-| `children` | `ReactNode` | — | One or more `BpkSegmentedControlV2.Item` elements |
+| `children` | `ReactNode` | — | `BpkSegmentedControlV2.Indicator` (recommended first) followed by one or more `BpkSegmentedControlV2.Item` elements |
 | `label` | `string` | — | Accessible group label (required for WCAG 4.1.2) |
 | `value` | `string` | — | Controlled selected value |
 | `defaultValue` | `string` | — | Uncontrolled initial value |
@@ -236,3 +252,7 @@ No props. Renders the visual selected-state indicator for the segment.
 ### BpkSegmentedControlV2.ItemHiddenInput
 
 No props. Renders the visually-hidden `<input type="radio">` required for keyboard interaction and form submission.
+
+### BpkSegmentedControlV2.Indicator
+
+No props. Renders the animated sliding highlight that tracks the selected segment. Place it as the **first child** of `BpkSegmentedControlV2.Root`, before any `Item` elements.

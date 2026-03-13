@@ -55,13 +55,6 @@ export type BpkSegmentedControlV2RootProps = {
    */
   shadow?: boolean;
   /**
-   * Controls whether arrow-key navigation automatically selects the focused item.
-   * 'automatic': selection follows focus immediately.
-   * 'manual': selection requires an explicit Space or Enter keypress.
-   * @default 'automatic'
-   */
-  activationMode?: 'automatic' | 'manual';
-  /**
    * Accessible label for the radiogroup. Always required to satisfy WCAG 4.1.2
    * (the role="radiogroup" element must have an accessible name).
    */

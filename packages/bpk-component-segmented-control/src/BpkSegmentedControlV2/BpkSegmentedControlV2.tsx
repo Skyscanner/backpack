@@ -16,14 +16,11 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent } from 'react';
-
 import { SegmentGroup } from '@ark-ui/react/segment-group';
 
 import {
   cssModules,
   getDataComponentAttribute,
-  isRTL,
 } from '../../../bpk-react-utils';
 
 import { SEGMENT_TYPES_V2 } from './common-types';
@@ -38,19 +35,7 @@ import STYLES from './BpkSegmentedControlV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const getEnabledInputs = (group: HTMLElement): HTMLInputElement[] =>
-  Array.from(
-    group.querySelectorAll<HTMLInputElement>(
-      'input[type="radio"]:not(:disabled)',
-    ),
-  );
-
-const wrapAround = (index: number, last: number, forward: boolean) =>
-  // eslint-disable-next-line no-nested-ternary
-  forward ? (index >= last ? 0 : index + 1) : index <= 0 ? last : index - 1;
-
 const BpkSegmentedControlV2Root = ({
-  activationMode = 'automatic',
   children,
   defaultValue,
   label,
@@ -65,48 +50,6 @@ const BpkSegmentedControlV2Root = ({
     shadow && 'bpk-segmented-control-v2--shadow',
   );
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    const inputs = getEnabledInputs(event.currentTarget);
-    const currentIndex = inputs.findIndex(
-      (inp) => inp === document.activeElement,
-    );
-    if (inputs.length === 0 || currentIndex === -1) return;
-
-    const lastIndex = inputs.length - 1;
-    const rtl = isRTL();
-    let newIndex: number;
-
-    switch (event.key) {
-      case 'ArrowRight':
-        newIndex = wrapAround(currentIndex, lastIndex, !rtl);
-        break;
-      case 'ArrowLeft':
-        newIndex = wrapAround(currentIndex, lastIndex, rtl);
-        break;
-      case 'Home':
-        newIndex = 0;
-        break;
-      case 'End':
-        newIndex = lastIndex;
-        break;
-      case ' ':
-      case 'Enter':
-        if (activationMode === 'manual') {
-          event.preventDefault();
-          inputs[currentIndex].click();
-        }
-        return;
-      default:
-        return;
-    }
-
-    event.preventDefault();
-    inputs[newIndex].focus();
-    if (activationMode !== 'manual') {
-      inputs[newIndex].click();
-    }
-  };
-
   return (
     <SegmentGroup.Root
       className={containerClass}
@@ -120,7 +63,6 @@ const BpkSegmentedControlV2Root = ({
           : undefined
       }
       orientation="horizontal"
-      onKeyDown={handleKeyDown}
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
       <SegmentGroup.Label>{label}</SegmentGroup.Label>
@@ -161,12 +103,19 @@ const BpkSegmentedControlV2ItemHiddenInput = () => (
   <SegmentGroup.ItemHiddenInput />
 );
 
+const BpkSegmentedControlV2Indicator = () => (
+  <SegmentGroup.Indicator
+    className={getClassName('bpk-segmented-control-v2__indicator')}
+  />
+);
+
 const BpkSegmentedControlV2 = {
   Root: BpkSegmentedControlV2Root,
   Item: BpkSegmentedControlV2Item,
   ItemText: BpkSegmentedControlV2ItemText,
   ItemControl: BpkSegmentedControlV2ItemControl,
   ItemHiddenInput: BpkSegmentedControlV2ItemHiddenInput,
+  Indicator: BpkSegmentedControlV2Indicator,
 };
 
 export default BpkSegmentedControlV2;
@@ -176,6 +125,7 @@ export {
   BpkSegmentedControlV2ItemText,
   BpkSegmentedControlV2ItemControl,
   BpkSegmentedControlV2ItemHiddenInput,
+  BpkSegmentedControlV2Indicator,
   SEGMENT_TYPES_V2,
 };
 export type {

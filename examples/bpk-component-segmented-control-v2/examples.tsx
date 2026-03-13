@@ -50,6 +50,7 @@ const DefaultCanvasDefault = () => {
       onChange={setSelected}
       type={SEGMENT_TYPES_V2.CanvasDefault}
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="price">
         <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
         <BpkSegmentedControlV2.ItemControl />
@@ -71,6 +72,7 @@ const DefaultCanvasDefault = () => {
 
 const UncontrolledDefaultValue = () => (
   <BpkSegmentedControlV2.Root label="View mode" defaultValue="grid">
+    <BpkSegmentedControlV2.Indicator />
     <BpkSegmentedControlV2.Item value="grid">
       <BpkSegmentedControlV2.ItemText>Grid</BpkSegmentedControlV2.ItemText>
       <BpkSegmentedControlV2.ItemControl />
@@ -98,6 +100,7 @@ const CanvasContrast = () => {
         onChange={setSelected}
         type={SEGMENT_TYPES_V2.CanvasContrast}
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="flights">
           <BpkSegmentedControlV2.ItemText>Flights</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -127,6 +130,7 @@ const SurfaceDefault = () => {
       onChange={setSelected}
       type={SEGMENT_TYPES_V2.SurfaceDefault}
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="one-way">
         <BpkSegmentedControlV2.ItemText>One way</BpkSegmentedControlV2.ItemText>
         <BpkSegmentedControlV2.ItemControl />
@@ -160,6 +164,7 @@ const SurfaceContrast = () => {
         onChange={setSelected}
         type={SEGMENT_TYPES_V2.SurfaceContrast}
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="economy">
           <BpkSegmentedControlV2.ItemText>Economy</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -189,6 +194,7 @@ const WithShadow = () => {
       onChange={setSelected}
       shadow
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="all">
         <BpkSegmentedControlV2.ItemText>All</BpkSegmentedControlV2.ItemText>
         <BpkSegmentedControlV2.ItemControl />
@@ -216,6 +222,7 @@ const WithIconAndText = () => {
       value={selected}
       onChange={setSelected}
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="grid">
         <BpkSegmentedControlV2.ItemText>
           <GridLayoutIcon />
@@ -244,6 +251,7 @@ const IconOnly = () => {
       value={selected}
       onChange={setSelected}
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="grid">
         <BpkSegmentedControlV2.ItemText>
           <GridLayoutIcon />
@@ -273,6 +281,7 @@ const RtlLayout = () => {
         value={selected}
         onChange={setSelected}
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="price">
           <BpkSegmentedControlV2.ItemText>السعر</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -301,6 +310,7 @@ const TwoItems = () => {
       value={selected}
       onChange={setSelected}
     >
+      <BpkSegmentedControlV2.Indicator />
       <BpkSegmentedControlV2.Item value="one-way">
         <BpkSegmentedControlV2.ItemText>One way</BpkSegmentedControlV2.ItemText>
         <BpkSegmentedControlV2.ItemControl />
@@ -324,6 +334,7 @@ const LongLabels = () => {
         value={selected}
         onChange={setSelected}
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="departure">
           <BpkSegmentedControlV2.ItemText>
             <span
@@ -370,6 +381,7 @@ const LongLabels = () => {
 
 const NoInitialSelection = () => (
   <BpkSegmentedControlV2.Root label="Select option">
+    <BpkSegmentedControlV2.Indicator />
     <BpkSegmentedControlV2.Item value="a">
       <BpkSegmentedControlV2.ItemText>Option A</BpkSegmentedControlV2.ItemText>
       <BpkSegmentedControlV2.ItemControl />
@@ -431,6 +443,7 @@ const ComplexTypeExample = ({
         type={type}
         shadow
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="best">
           <BpkSegmentedControlV2.ItemText>
             <ComplexItemContent label="Best" price="£84" duration="2h average" />
@@ -504,6 +517,7 @@ const ComplexContentWithIcon = () => {
           value={selected}
           onChange={setSelected}
         >
+          <BpkSegmentedControlV2.Indicator />
           {flightSortItems.map(
             ({ duration, label, price, showInfoIcon, value }) => (
               <BpkSegmentedControlV2.Item key={value} value={value}>
@@ -545,6 +559,7 @@ const ComplexContentWithButton = () => {
           value={selected}
           onChange={setSelected}
         >
+          <BpkSegmentedControlV2.Indicator />
           {flightSortItems.map(
             ({ duration, label, price, showInfoIcon, value }) => (
               <BpkSegmentedControlV2.Item key={value} value={value}>

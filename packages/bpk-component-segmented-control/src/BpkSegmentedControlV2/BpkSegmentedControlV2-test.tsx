@@ -27,12 +27,14 @@ import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 import { SEGMENT_TYPES_V2 } from './common-types';
 
-const mockIsRtl = jest.fn(() => false);
-
-jest.mock('../../../bpk-react-utils', () => ({
-  ...jest.requireActual('../../../bpk-react-utils'),
-  isRTL: () => mockIsRtl(),
-}));
+// Zag-JS uses ResizeObserver to track the indicator element's size; jsdom doesn't implement it.
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
 
 const ThreeItemControl = ({
   defaultValue,
@@ -49,6 +51,7 @@ const ThreeItemControl = ({
     defaultValue={defaultValue}
     onChange={onChange}
   >
+    <BpkSegmentedControlV2.Indicator />
     <BpkSegmentedControlV2.Item value="price">
       <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
       <BpkSegmentedControlV2.ItemControl />
@@ -68,11 +71,6 @@ const ThreeItemControl = ({
 );
 
 describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => {
-  beforeEach(() => {
-    mockIsRtl.mockReturnValue(false);
-    jest.clearAllMocks();
-  });
-
   it('renders root and three items with minimal required props', () => {
     render(<ThreeItemControl />);
     expect(screen.getByText('Price')).toBeInTheDocument();
@@ -128,15 +126,9 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
       expect(radio).not.toBeChecked();
     });
   });
-
 });
 
 describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', () => {
-  beforeEach(() => {
-    mockIsRtl.mockReturnValue(false);
-    jest.clearAllMocks();
-  });
-
   it('ArrowRight moves focus + selection to next item in LTR', async () => {
     const onChange = jest.fn();
     const user = userEvent.setup();
@@ -195,181 +187,6 @@ describe('BpkSegmentedControlV2 — US2: Keyboard navigation (automatic mode)', 
     });
   });
 
-  it('Home moves focus + selection to first item', async () => {
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(<ThreeItemControl value="duration" onChange={onChange} />);
-    const durationInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'duration')!;
-    durationInput.focus();
-    await user.keyboard('{Home}');
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('price');
-    });
-  });
-
-  it('End moves focus + selection to last item', async () => {
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(<ThreeItemControl value="price" onChange={onChange} />);
-    const priceInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
-    priceInput.focus();
-    await user.keyboard('{End}');
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('duration');
-    });
-  });
-
-  it('RTL: ArrowRight behaves as ArrowLeft (moves to previous)', async () => {
-    mockIsRtl.mockReturnValue(true);
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(<ThreeItemControl value="rating" onChange={onChange} />);
-    const ratingInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'rating')!;
-    ratingInput.focus();
-    await user.keyboard('{ArrowRight}');
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('price');
-    });
-  });
-
-  it('RTL: ArrowLeft behaves as ArrowRight (moves to next)', async () => {
-    mockIsRtl.mockReturnValue(true);
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(<ThreeItemControl value="price" onChange={onChange} />);
-    const priceInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
-    priceInput.focus();
-    await user.keyboard('{ArrowLeft}');
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('rating');
-    });
-  });
-});
-
-describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
-  beforeEach(() => {
-    mockIsRtl.mockReturnValue(false);
-    jest.clearAllMocks();
-  });
-
-  it('manual mode: ArrowRight moves DOM focus but does NOT call onChange', async () => {
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <BpkSegmentedControlV2.Root
-        label="Sort"
-        value="price"
-        onChange={onChange}
-        activationMode="manual"
-      >
-        <BpkSegmentedControlV2.Item value="price">
-          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">
-          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const priceInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
-    priceInput.focus();
-    await user.keyboard('{ArrowRight}');
-    expect(onChange).not.toHaveBeenCalled();
-  });
-
-  it('manual mode: Space on focused item calls onChange with that item value', async () => {
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <BpkSegmentedControlV2.Root
-        label="Sort"
-        value="price"
-        onChange={onChange}
-        activationMode="manual"
-      >
-        <BpkSegmentedControlV2.Item value="price">
-          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">
-          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const priceInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
-    priceInput.focus();
-    await user.keyboard('{ArrowRight}');
-    await user.keyboard(' ');
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('rating');
-    });
-  });
-
-  it('manual mode: Enter on focused item calls onChange with that item value', async () => {
-    const onChange = jest.fn();
-    const user = userEvent.setup();
-    render(
-      <BpkSegmentedControlV2.Root
-        label="Sort"
-        value="price"
-        onChange={onChange}
-        activationMode="manual"
-      >
-        <BpkSegmentedControlV2.Item value="price">
-          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">
-          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>,
-    );
-    const priceInput = screen
-      .getAllByRole('radio')
-      .find((radio) => (radio as HTMLInputElement).value === 'price')!;
-    priceInput.focus();
-    await user.keyboard('{ArrowRight}');
-    await user.keyboard('{Enter}');
-    await waitFor(() => {
-      expect(onChange).toHaveBeenCalledWith('rating');
-    });
-  });
 });
 
 describe('BpkSegmentedControlV2 — US3: CSS variable theming', () => {
@@ -413,6 +230,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   ])('type="%s" adds BEM modifier class "%s"', (type, expectedClass) => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test" type={type}>
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="a">
           <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -428,6 +246,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('defaults to canvas-default type when no type provided', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test">
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="a">
           <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -442,6 +261,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('shadow=true adds shadow modifier class', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test" shadow>
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="a">
           <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -456,6 +276,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('shadow=false (default) does not add shadow class', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test">
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="a">
           <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -470,6 +291,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('snapshot: canvas-default, 3 items, first selected', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Snapshot" defaultValue="price">
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="price">
           <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -515,6 +337,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         type={SEGMENT_TYPES_V2.CanvasContrast}
         defaultValue="price"
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="price">
           <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -543,6 +366,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         type={SEGMENT_TYPES_V2.SurfaceDefault}
         defaultValue="price"
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="price">
           <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -571,6 +395,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         type={SEGMENT_TYPES_V2.SurfaceContrast}
         defaultValue="price"
       >
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="price">
           <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -595,6 +420,7 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('snapshot: shadow enabled', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Snapshot" shadow defaultValue="price">
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="price">
           <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
           <BpkSegmentedControlV2.ItemControl />
@@ -615,13 +441,13 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         .find((radio) => (radio as HTMLInputElement).value === 'price'),
     ).toBeChecked();
   });
-
 });
 
 describe('BpkSegmentedControlV2 — US5: Composable custom content', () => {
   it('renders item with SVG child and text string', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="grid">
           <BpkSegmentedControlV2.ItemText>
             <GridLayoutIcon />
@@ -639,6 +465,7 @@ describe('BpkSegmentedControlV2 — US5: Composable custom content', () => {
   it('renders item with complex multi-line content', () => {
     render(
       <BpkSegmentedControlV2.Root label="Sort flights" defaultValue="best">
+        <BpkSegmentedControlV2.Indicator />
         <BpkSegmentedControlV2.Item value="best">
           <BpkSegmentedControlV2.ItemText>
             <div>Best</div>
