@@ -31,7 +31,6 @@ updates:
       patterns:
         - "jest*"
         - "@types/jest*"
-        - "jest-environment-*"
     skyscanner:
       patterns:
         - "@skyscanner/*"
