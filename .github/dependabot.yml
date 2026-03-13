@@ -12,8 +12,6 @@ updates:
   ignore:
     - dependency-name: '*'
       update-types: ['version-update:semver-patch']
-    - dependency-name: '@skyscanner/*'
-      update-types: ['version-update:semver-minor']
   allow:
     - dependency-type: "direct"
   groups:
@@ -33,8 +31,6 @@ updates:
       patterns:
         - "jest*"
         - "@types/jest*"
-      update-types:
-        - "major"
   cooldown:
     default-days: 7
 - package-ecosystem: github-actions
