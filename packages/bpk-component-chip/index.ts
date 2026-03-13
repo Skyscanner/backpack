@@ -23,7 +23,12 @@ import BpkSelectableChip, {
   type Props as SelectableProps,
 } from './src/BpkSelectableChip';
 import { CHIP_TYPES } from './src/commonTypes';
-import themeAttributes from './src/themeAttributes';
+import themeAttributes, {
+  chipBorderRadiusThemeAttributes,
+  chipDefaultThemeAttributes,
+  chipOnDarkThemeAttributes,
+  chipOnImageThemeAttributes,
+} from './src/themeAttributes';
 
 import type { CommonProps } from './src/commonTypes';
 
@@ -32,4 +37,14 @@ export type BpkDismissibleChipProps = CommonProps;
 export type BpkDropdownChipProps = CommonProps;
 
 export default BpkSelectableChip;
-export { BpkDismissibleChip, BpkDropdownChip, BpkIconChip, CHIP_TYPES, themeAttributes };
+export {
+  BpkDismissibleChip,
+  BpkDropdownChip,
+  BpkIconChip,
+  CHIP_TYPES,
+  themeAttributes,
+  chipBorderRadiusThemeAttributes,
+  chipDefaultThemeAttributes,
+  chipOnDarkThemeAttributes,
+  chipOnImageThemeAttributes,
+};
