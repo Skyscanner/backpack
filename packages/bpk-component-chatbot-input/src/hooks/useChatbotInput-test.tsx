@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { KeyboardEvent } from 'react';
+
 import { act, renderHook } from '@testing-library/react';
 
 import { CHATBOT_INPUT_TYPES, MAX_CHARACTERS } from '../constants';
@@ -182,7 +184,7 @@ describe('useChatbotInput', () => {
       const event = {
         key: 'Enter',
         preventDefault: jest.fn(),
-      } as unknown as React.KeyboardEvent;
+      } as unknown as KeyboardEvent;
 
       act(() => {
         result.current.inputProps.onKeyDown(event);
@@ -203,7 +205,7 @@ describe('useChatbotInput', () => {
         key: 'Enter',
         shiftKey: false,
         preventDefault: jest.fn(),
-      } as unknown as React.KeyboardEvent;
+      } as unknown as KeyboardEvent;
 
       act(() => {
         result.current.inputProps.onKeyDown(event);
@@ -224,7 +226,7 @@ describe('useChatbotInput', () => {
         key: 'Enter',
         shiftKey: true,
         preventDefault: jest.fn(),
-      } as unknown as React.KeyboardEvent;
+      } as unknown as KeyboardEvent;
 
       act(() => {
         result.current.inputProps.onKeyDown(event);
@@ -240,7 +242,7 @@ describe('useChatbotInput', () => {
       const event = {
         key: ' ',
         preventDefault: jest.fn(),
-      } as unknown as React.KeyboardEvent;
+      } as unknown as KeyboardEvent;
 
       act(() => {
         result.current.inputProps.onKeyDown(event);
@@ -291,6 +293,14 @@ describe('useChatbotInput', () => {
       );
 
       expect(result.current.sendButtonDisabled).toBe(false);
+
+      // Invoke the default no-op functions to ensure they are covered
+      act(() => {
+        result.current.inputProps.onInputClick();
+        result.current.inputProps.onKeyDown({
+          key: ' ',
+        } as KeyboardEvent);
+      });
     });
   });
 });

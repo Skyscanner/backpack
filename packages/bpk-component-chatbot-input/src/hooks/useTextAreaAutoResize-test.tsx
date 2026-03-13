@@ -225,6 +225,21 @@ describe('useTextAreaAutoResize', () => {
       expect(mockRequestAnimationFrame).toHaveBeenCalled();
     });
 
+    it('should not throw when scrollToBottom is called with null ref', () => {
+      const ref = { current: null };
+      const { result } = renderHook(() =>
+        useTextAreaAutoResize({ ref, value: '' }),
+      );
+
+      expect(() => {
+        act(() => {
+          result.current.scrollToBottom();
+        });
+      }).not.toThrow();
+
+      expect(mockRequestAnimationFrame).not.toHaveBeenCalled();
+    });
+
     it('should auto-scroll when appending text exceeds max height', () => {
       const ref = createRef();
       setTextAreaScrollHeight(MAX_INPUT_HEIGHT_PHASE_1);
