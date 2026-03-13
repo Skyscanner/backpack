@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+// Backward-compatible: original 8 selected-state attributes.
+// Do not modify — existing consumers depend on this exact list.
 export default [
   'chipDefaultSelectedBackgroundColor',
   'chipDefaultSelectedTextColor',
@@ -25,4 +27,42 @@ export default [
   'chipOnImageSelectedHoverBackgroundColor',
   'chipOnImageSelectedActiveBackgroundColor',
   'chipOnImageSelectedTextColor',
+];
+
+export const chipBorderRadiusThemeAttributes = ['chipBorderRadius'];
+
+export const chipDefaultThemeAttributes = [
+  'chipDefaultBackgroundColor',
+  'chipDefaultTextColor',
+  'chipDefaultBorderColor',
+  'chipDefaultHoverBackgroundColor',
+  'chipDefaultHoverBorderColor',
+  'chipDefaultActiveBorderColor',
+  'chipDefaultSelectedBackgroundColor',
+  'chipDefaultSelectedTextColor',
+  'chipDefaultSelectedHoverBackgroundColor',
+  'chipDefaultSelectedActiveBackgroundColor',
+];
+
+export const chipOnDarkThemeAttributes = [
+  'chipOnDarkBackgroundColor',
+  'chipOnDarkTextColor',
+  'chipOnDarkBorderColor',
+  'chipOnDarkHoverBorderColor',
+  'chipOnDarkActiveBorderColor',
+  'chipOnDarkSelectedBackgroundColor',
+  'chipOnDarkSelectedTextColor',
+  'chipOnDarkSelectedHoverBackgroundColor',
+  'chipOnDarkSelectedActiveBackgroundColor',
+];
+
+export const chipOnImageThemeAttributes = [
+  'chipOnImageBackgroundColor',
+  'chipOnImageTextColor',
+  'chipOnImageHoverBackgroundColor',
+  'chipOnImageActiveBackgroundColor',
+  'chipOnImageSelectedBackgroundColor',
+  'chipOnImageSelectedTextColor',
+  'chipOnImageSelectedHoverBackgroundColor',
+  'chipOnImageSelectedActiveBackgroundColor',
 ];
