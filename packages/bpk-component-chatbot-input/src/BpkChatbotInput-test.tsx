@@ -45,7 +45,7 @@ describe('BpkChatbotInput', () => {
   });
 
   describe('default type', () => {
-    it('renders input field', () => {
+    it('renders input field and send button', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
@@ -53,11 +53,17 @@ describe('BpkChatbotInput', () => {
         />,
       );
 
-      const input = screen.getByRole('textbox');
-      expect(input.tagName).toBe('INPUT');
+      expect(screen.getByRole('textbox').tagName).toBe('INPUT');
+      expect(
+        screen.getByTestId('bpk-chatbot-input-container'),
+      ).toBeInTheDocument();
+      expect(screen.getByTestId('bpk-chatbot-input-send')).toBeInTheDocument();
+      expect(
+        screen.queryByTestId('bpk-chatbot-input-loading'),
+      ).not.toBeInTheDocument();
     });
 
-    it('renders LoadingButton when isLoading', () => {
+    it('renders loading button when isLoading', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
@@ -69,30 +75,15 @@ describe('BpkChatbotInput', () => {
       expect(
         screen.getByTestId('bpk-chatbot-input-loading'),
       ).toBeInTheDocument();
-    });
 
-    it('renders container with correct test id', () => {
-      render(<BpkChatbotInput {...defaultProps} />);
       expect(
-        screen.getByTestId('bpk-chatbot-input-container'),
-      ).toBeInTheDocument();
+        screen.queryByTestId('bpk-chatbot-input-send'),
+      ).not.toBeInTheDocument();
     });
   });
 
   describe('composer type', () => {
-    it('renders textarea field', () => {
-      render(
-        <BpkChatbotInput
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-        />,
-      );
-
-      const textarea = screen.getByRole('textbox');
-      expect(textarea.tagName).toBe('TEXTAREA');
-    });
-
-    it('disables send button when input is empty', () => {
+    it('renders textarea field and disables send button when input is empty', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
@@ -101,8 +92,18 @@ describe('BpkChatbotInput', () => {
         />,
       );
 
-      const sendButton = screen.getByTestId('bpk-chatbot-input-send');
-      expect(sendButton).toBeDisabled();
+      expect(screen.getByRole('textbox').tagName).toBe('TEXTAREA');
+      expect(screen.getByTestId('bpk-chatbot-input-send')).toBeDisabled();
+    });
+
+    it('renders with composer type correctly', () => {
+      const { asFragment } = render(
+        <BpkChatbotInput
+          {...defaultProps}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
@@ -147,77 +148,43 @@ describe('BpkChatbotInput', () => {
     });
   });
 
-  describe('focus and blur', () => {
-    it('calls onInputFocus when input is focused', () => {
+  describe('common behaviours', () => {
+    it('calls onInputFocus and onInputBlur', () => {
       render(<BpkChatbotInput {...defaultProps} />);
       fireEvent.focus(screen.getByRole('textbox'));
       expect(defaultProps.onInputFocus).toHaveBeenCalled();
-    });
-
-    it('calls onInputBlur when input is blurred', () => {
-      render(<BpkChatbotInput {...defaultProps} />);
       fireEvent.blur(screen.getByRole('textbox'));
       expect(defaultProps.onInputBlur).toHaveBeenCalled();
     });
-  });
 
-  describe('common behaviours', () => {
     it('calls onInputChange when value changes', () => {
       render(<BpkChatbotInput {...defaultProps} />);
-
       fireEvent.change(screen.getByRole('textbox'), {
         target: { value: 'New message' },
       });
-
       expect(defaultProps.onInputChange).toHaveBeenCalledWith('New message');
     });
 
     it('calls onSubmit when send button is clicked with valid input', () => {
       render(<BpkChatbotInput {...defaultProps} inputValue="Test message" />);
-
       fireEvent.click(screen.getByRole('button'));
-
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
     it('disables input when isLoading is true', () => {
       render(<BpkChatbotInput {...defaultProps} isLoading />);
-
       expect(screen.getByRole('textbox')).toBeDisabled();
+      expect(
+        screen.getByTestId('bpk-chatbot-input-loading'),
+      ).toBeInTheDocument();
     });
 
-    it('renders with composer type correctly', () => {
-      const { asFragment } = render(
-        <BpkChatbotInput
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-        />,
-      );
-      expect(asFragment()).toMatchSnapshot();
-    });
-
-    it('stops propagation on container touchStart', () => {
+    it('stops propagation on container touch and key events', () => {
       render(<BpkChatbotInput {...defaultProps} />);
       const container = screen.getByTestId('bpk-chatbot-input-container');
       fireEvent.touchStart(container);
-      expect(container).toBeInTheDocument();
-    });
-
-    it('stops propagation on container keyDown', () => {
-      render(<BpkChatbotInput {...defaultProps} />);
-      const container = screen.getByTestId('bpk-chatbot-input-container');
       fireEvent.keyDown(container);
       expect(container).toBeInTheDocument();
-    });
-
-    it('renders SendButton (not LoadingButton) by default', () => {
-      render(<BpkChatbotInput {...defaultProps} />);
-      expect(
-        screen.getByTestId('bpk-chatbot-input-send'),
-      ).toBeInTheDocument();
-      expect(
-        screen.queryByTestId('bpk-chatbot-input-loading'),
-      ).not.toBeInTheDocument();
     });
   });
 });

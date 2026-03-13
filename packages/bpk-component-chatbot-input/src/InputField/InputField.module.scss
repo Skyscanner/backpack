@@ -27,7 +27,6 @@
   flex: 1;
   cursor: text;
   overflow: visible;
-  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   touch-action: manipulation;
 
   &__label {
@@ -47,7 +46,6 @@
     appearance: none;
     box-sizing: border-box;
     caret-color: tokens.$bpk-core-accent-day;
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     touch-action: manipulation;
 
     @include typography.bpk-footnote;

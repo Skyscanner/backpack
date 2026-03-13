@@ -19,7 +19,6 @@
 import type {
   KeyboardEvent,
   MouseEvent,
-  ReactElement,
   RefObject,
   TouchEvent,
 } from 'react';
@@ -27,7 +26,6 @@ import type {
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import InputField from './InputField/InputField';
-import LoadingButton from './LoadingButton/LoadingButton';
 import SendButton from './SendButton/SendButton';
 import TextAreaField from './TextAreaField/TextAreaField';
 import { CHATBOT_INPUT_TYPES, MAX_CHARACTERS } from './constants';
@@ -55,11 +53,9 @@ export type BpkChatbotInputProps = {
   maxCharacters?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
-  iconLoading?: ReactElement;
 };
 
 const BpkChatbotInput = ({
-  iconLoading,
   inputPlaceholder = '',
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,
   inputValue,
@@ -136,16 +132,14 @@ const BpkChatbotInput = ({
           {...inputProps}
         />
       )}
-      {isDefault && isLoading ? (
-        <LoadingButton ariaLabel={loadingAriaLabel} iconLoading={iconLoading} />
-      ) : (
-        <SendButton
-          inputType={inputType}
-          disabled={sendButtonDisabled}
-          onClick={handleSubmit}
-          ariaLabel={sendAriaLabel}
-        />
-      )}
+      <SendButton
+        isDefault={isDefault}
+        disabled={sendButtonDisabled}
+        isLoading={isDefault && isLoading}
+        loadingAriaLabel={loadingAriaLabel}
+        onClick={handleSubmit}
+        ariaLabel={sendAriaLabel}
+      />
     </div>
   );
 };

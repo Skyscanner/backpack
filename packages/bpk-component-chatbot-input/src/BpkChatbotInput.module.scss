@@ -33,7 +33,6 @@
     box-shadow: none;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-md();
-    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     touch-action: manipulation;
 
     &:hover {
@@ -74,7 +73,7 @@
 
     &--overLimit {
       padding: tokens.bpk-spacing-base();
-      transform: translateY(-(8 * tokens.$bpk-one-pixel-rem));
+      transform: translateY(-(tokens.bpk-spacing-sm()));
     }
 
     &--expanding {
