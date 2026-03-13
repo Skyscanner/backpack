@@ -31,13 +31,19 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Sort results by" defaultValue="price">
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -49,10 +55,14 @@ describe('BpkSegmentedControlV2 accessibility — US1', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Choose option">
         <BpkSegmentedControlV2.Item value="a">
-          Option A
+          <BpkSegmentedControlV2.ItemText>Option A</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="b">
-          Option B
+          <BpkSegmentedControlV2.ItemText>Option B</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -67,13 +77,19 @@ describe('BpkSegmentedControlV2 accessibility — US2', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Sort by" defaultValue="price">
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -98,13 +114,19 @@ describe('BpkSegmentedControlV2 accessibility — US2', () => {
         onChange={onChange}
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -127,12 +149,20 @@ describe('BpkSegmentedControlV2 accessibility — US5', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
         <BpkSegmentedControlV2.Item value="grid">
-          <GridLayoutIcon />
-          <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
+          <BpkSegmentedControlV2.ItemText>
+            <GridLayoutIcon />
+            <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="list">
-          <ListIcon />
-          <BpkVisuallyHidden>List view</BpkVisuallyHidden>
+          <BpkSegmentedControlV2.ItemText>
+            <ListIcon />
+            <BpkVisuallyHidden>List view</BpkVisuallyHidden>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -145,10 +175,18 @@ describe('BpkSegmentedControlV2 accessibility — US5', () => {
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
         <BpkSegmentedControlV2.Item value="grid">
           {/* No accessibilityLabel, no visible text — should fail axe */}
-          <GridLayoutIcon />
+          <BpkSegmentedControlV2.ItemText>
+            <GridLayoutIcon />
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="list">
-          <ListIcon />
+          <BpkSegmentedControlV2.ItemText>
+            <ListIcon />
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );

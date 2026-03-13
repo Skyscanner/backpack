@@ -23,7 +23,6 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
-import ListIcon from '../../../bpk-component-icon/sm/list';
 
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 import { SEGMENT_TYPES_V2 } from './common-types';
@@ -50,12 +49,20 @@ const ThreeItemControl = ({
     defaultValue={defaultValue}
     onChange={onChange}
   >
-    <BpkSegmentedControlV2.Item value="price">Price</BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="price">
+      <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
+    </BpkSegmentedControlV2.Item>
     <BpkSegmentedControlV2.Item value="rating">
-      Rating
+      <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
     </BpkSegmentedControlV2.Item>
     <BpkSegmentedControlV2.Item value="duration">
-      Duration
+      <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
     </BpkSegmentedControlV2.Item>
   </BpkSegmentedControlV2.Root>
 );
@@ -264,13 +271,19 @@ describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
         activationMode="manual"
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -293,13 +306,19 @@ describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
         activationMode="manual"
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -325,13 +344,19 @@ describe('BpkSegmentedControlV2 — US2: Manual activation mode', () => {
         activationMode="manual"
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -388,7 +413,11 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   ])('type="%s" adds BEM modifier class "%s"', (type, expectedClass) => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test" type={type}>
-        <BpkSegmentedControlV2.Item value="a">A</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="a">
+          <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const root = container.firstChild as HTMLElement;
@@ -399,7 +428,11 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('defaults to canvas-default type when no type provided', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test">
-        <BpkSegmentedControlV2.Item value="a">A</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="a">
+          <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const root = container.firstChild as HTMLElement;
@@ -409,7 +442,11 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('shadow=true adds shadow modifier class', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test" shadow>
-        <BpkSegmentedControlV2.Item value="a">A</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="a">
+          <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const root = container.firstChild as HTMLElement;
@@ -419,7 +456,11 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
   it('shadow=false (default) does not add shadow class', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Test">
-        <BpkSegmentedControlV2.Item value="a">A</BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="a">
+          <BpkSegmentedControlV2.ItemText>A</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
+        </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
     const root = container.firstChild as HTMLElement;
@@ -430,13 +471,19 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Snapshot" defaultValue="price">
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          Duration
+          <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -469,10 +516,14 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         defaultValue="price"
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -493,10 +544,14 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         defaultValue="price"
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -517,10 +572,14 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
         defaultValue="price"
       >
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -537,10 +596,14 @@ describe('BpkSegmentedControlV2 — US4: Style variants', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="Snapshot" shadow defaultValue="price">
         <BpkSegmentedControlV2.Item value="price">
-          Price
+          <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          Rating
+          <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -560,8 +623,12 @@ describe('BpkSegmentedControlV2 — US5: Composable custom content', () => {
     const { container } = render(
       <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
         <BpkSegmentedControlV2.Item value="grid">
-          <GridLayoutIcon />
-          Grid
+          <BpkSegmentedControlV2.ItemText>
+            <GridLayoutIcon />
+            Grid
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>,
     );
@@ -569,5 +636,31 @@ describe('BpkSegmentedControlV2 — US5: Composable custom content', () => {
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
-
+  it('renders item with complex multi-line content', () => {
+    render(
+      <BpkSegmentedControlV2.Root label="Sort flights" defaultValue="best">
+        <BpkSegmentedControlV2.Item value="best">
+          <BpkSegmentedControlV2.ItemText>
+            <div>Best</div>
+            <div>£84</div>
+            <div>2h average</div>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
+        </BpkSegmentedControlV2.Item>
+        <BpkSegmentedControlV2.Item value="cheapest">
+          <BpkSegmentedControlV2.ItemText>
+            <div>Cheapest</div>
+            <div>£34</div>
+            <div>9h average</div>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
+        </BpkSegmentedControlV2.Item>
+      </BpkSegmentedControlV2.Root>,
+    );
+    expect(screen.getByText('Best')).toBeInTheDocument();
+    expect(screen.getByText('£84')).toBeInTheDocument();
+    expect(screen.getByText('Cheapest')).toBeInTheDocument();
+  });
 });

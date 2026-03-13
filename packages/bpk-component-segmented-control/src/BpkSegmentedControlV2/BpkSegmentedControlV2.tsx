@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent, ReactElement } from 'react';
-import { Children, isValidElement } from 'react';
+import type { KeyboardEvent } from 'react';
 
 import { SegmentGroup } from '@ark-ui/react/segment-group';
 
@@ -31,6 +30,7 @@ import { SEGMENT_TYPES_V2 } from './common-types';
 
 import type {
   BpkSegmentedControlV2ItemProps,
+  BpkSegmentedControlV2ItemTextProps,
   BpkSegmentedControlV2RootProps,
 } from './common-types';
 
@@ -124,43 +124,62 @@ const BpkSegmentedControlV2Root = ({
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
       <SegmentGroup.Label>{label}</SegmentGroup.Label>
-      {Children.map(children, (child) => {
-        if (!isValidElement(child)) return null;
-        const item = child as ReactElement<BpkSegmentedControlV2ItemProps>;
-        return (
-          <SegmentGroup.Item
-            key={item.props.value}
-            value={item.props.value}
-            className={getClassName('bpk-segmented-control-v2__item')}
-          >
-            <SegmentGroup.ItemText
-              className={getClassName('bpk-segmented-control-v2__item-text')}
-            >
-              {item.props.children}
-            </SegmentGroup.ItemText>
-            <SegmentGroup.ItemControl
-              className={getClassName('bpk-segmented-control-v2__item-control')}
-            />
-            <SegmentGroup.ItemHiddenInput />
-          </SegmentGroup.Item>
-        );
-      })}
+      {children}
     </SegmentGroup.Root>
   );
 };
 
-const BpkSegmentedControlV2Item = (_props: BpkSegmentedControlV2ItemProps) =>
-  null;
+const BpkSegmentedControlV2Item = ({
+  children,
+  value,
+}: BpkSegmentedControlV2ItemProps) => (
+  <SegmentGroup.Item
+    value={value}
+    className={getClassName('bpk-segmented-control-v2__item')}
+  >
+    {children}
+  </SegmentGroup.Item>
+);
+
+const BpkSegmentedControlV2ItemText = ({
+  children,
+}: BpkSegmentedControlV2ItemTextProps) => (
+  <SegmentGroup.ItemText
+    className={getClassName('bpk-segmented-control-v2__item-text')}
+  >
+    {children}
+  </SegmentGroup.ItemText>
+);
+
+const BpkSegmentedControlV2ItemControl = () => (
+  <SegmentGroup.ItemControl
+    className={getClassName('bpk-segmented-control-v2__item-control')}
+  />
+);
+
+const BpkSegmentedControlV2ItemHiddenInput = () => (
+  <SegmentGroup.ItemHiddenInput />
+);
 
 const BpkSegmentedControlV2 = {
   Root: BpkSegmentedControlV2Root,
   Item: BpkSegmentedControlV2Item,
+  ItemText: BpkSegmentedControlV2ItemText,
+  ItemControl: BpkSegmentedControlV2ItemControl,
+  ItemHiddenInput: BpkSegmentedControlV2ItemHiddenInput,
 };
 
 export default BpkSegmentedControlV2;
 export {
   BpkSegmentedControlV2Root,
   BpkSegmentedControlV2Item,
+  BpkSegmentedControlV2ItemText,
+  BpkSegmentedControlV2ItemControl,
+  BpkSegmentedControlV2ItemHiddenInput,
   SEGMENT_TYPES_V2,
 };
-export type { BpkSegmentedControlV2RootProps, BpkSegmentedControlV2ItemProps };
+export type {
+  BpkSegmentedControlV2RootProps,
+  BpkSegmentedControlV2ItemProps,
+  BpkSegmentedControlV2ItemTextProps,
+};

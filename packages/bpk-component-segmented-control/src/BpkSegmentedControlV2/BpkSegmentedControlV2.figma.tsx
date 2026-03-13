@@ -38,8 +38,16 @@ figma.connect(BpkSegmentedControlV2.Root, 'https://www.figma.com/design/KXf2gHNL
       defaultValue="option1"
       label="Select option"
     >
-      <BpkSegmentedControlV2.Item value="option1">Option 1</BpkSegmentedControlV2.Item>
-      <BpkSegmentedControlV2.Item value="option2">Option 2</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="option1">
+        <BpkSegmentedControlV2.ItemText>Option 1</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="option2">
+        <BpkSegmentedControlV2.ItemText>Option 2</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
+      </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   ),
 });

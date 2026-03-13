@@ -30,5 +30,6 @@ export { default as BpkSegmentedControlV2, SEGMENT_TYPES_V2 } from './src/BpkSeg
 export type {
   BpkSegmentedControlV2RootProps,
   BpkSegmentedControlV2ItemProps,
+  BpkSegmentedControlV2ItemTextProps,
   SegmentTypesV2,
 } from './src/BpkSegmentedControlV2/common-types';

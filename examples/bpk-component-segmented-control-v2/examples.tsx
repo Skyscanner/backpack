@@ -51,13 +51,19 @@ const DefaultCanvasDefault = () => {
       type={SEGMENT_TYPES_V2.CanvasDefault}
     >
       <BpkSegmentedControlV2.Item value="price">
-        Price
+        <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="rating">
-        Rating
+        <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="duration">
-        Duration
+        <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
@@ -65,8 +71,16 @@ const DefaultCanvasDefault = () => {
 
 const UncontrolledDefaultValue = () => (
   <BpkSegmentedControlV2.Root label="View mode" defaultValue="grid">
-    <BpkSegmentedControlV2.Item value="grid">Grid</BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="list">List</BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="grid">
+      <BpkSegmentedControlV2.ItemText>Grid</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="list">
+      <BpkSegmentedControlV2.ItemText>List</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
+    </BpkSegmentedControlV2.Item>
   </BpkSegmentedControlV2.Root>
 );
 
@@ -85,13 +99,19 @@ const CanvasContrast = () => {
         type={SEGMENT_TYPES_V2.CanvasContrast}
       >
         <BpkSegmentedControlV2.Item value="flights">
-          Flights
+          <BpkSegmentedControlV2.ItemText>Flights</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="hotels">
-          Hotels
+          <BpkSegmentedControlV2.ItemText>Hotels</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="cars">
-          Cars
+          <BpkSegmentedControlV2.ItemText>Cars</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
@@ -108,13 +128,19 @@ const SurfaceDefault = () => {
       type={SEGMENT_TYPES_V2.SurfaceDefault}
     >
       <BpkSegmentedControlV2.Item value="one-way">
-        One way
+        <BpkSegmentedControlV2.ItemText>One way</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="return">
-        Return
+        <BpkSegmentedControlV2.ItemText>Return</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="multi-city">
-        Multi-city
+        <BpkSegmentedControlV2.ItemText>Multi-city</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
@@ -135,13 +161,19 @@ const SurfaceContrast = () => {
         type={SEGMENT_TYPES_V2.SurfaceContrast}
       >
         <BpkSegmentedControlV2.Item value="economy">
-          Economy
+          <BpkSegmentedControlV2.ItemText>Economy</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="business">
-          Business
+          <BpkSegmentedControlV2.ItemText>Business</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="first">
-          First
+          <BpkSegmentedControlV2.ItemText>First</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
@@ -157,12 +189,20 @@ const WithShadow = () => {
       onChange={setSelected}
       shadow
     >
-      <BpkSegmentedControlV2.Item value="all">All</BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="all">
+        <BpkSegmentedControlV2.ItemText>All</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
+      </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="direct">
-        Direct
+        <BpkSegmentedControlV2.ItemText>Direct</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="one-stop">
-        1 stop
+        <BpkSegmentedControlV2.ItemText>1 stop</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
@@ -177,12 +217,20 @@ const WithIconAndText = () => {
       onChange={setSelected}
     >
       <BpkSegmentedControlV2.Item value="grid">
-        <GridLayoutIcon />
-        Grid
+        <BpkSegmentedControlV2.ItemText>
+          <GridLayoutIcon />
+          Grid
+        </BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="list">
-        <ListIcon />
-        List
+        <BpkSegmentedControlV2.ItemText>
+          <ListIcon />
+          List
+        </BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
@@ -197,12 +245,20 @@ const IconOnly = () => {
       onChange={setSelected}
     >
       <BpkSegmentedControlV2.Item value="grid">
-        <GridLayoutIcon />
-        <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
+        <BpkSegmentedControlV2.ItemText>
+          <GridLayoutIcon />
+          <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
+        </BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="list">
-        <ListIcon />
-        <BpkVisuallyHidden>List view</BpkVisuallyHidden>
+        <BpkSegmentedControlV2.ItemText>
+          <ListIcon />
+          <BpkVisuallyHidden>List view</BpkVisuallyHidden>
+        </BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
@@ -218,13 +274,19 @@ const RtlLayout = () => {
         onChange={setSelected}
       >
         <BpkSegmentedControlV2.Item value="price">
-          السعر
+          <BpkSegmentedControlV2.ItemText>السعر</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="rating">
-          التقييم
+          <BpkSegmentedControlV2.ItemText>التقييم</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="duration">
-          المدة
+          <BpkSegmentedControlV2.ItemText>المدة</BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
@@ -240,10 +302,14 @@ const TwoItems = () => {
       onChange={setSelected}
     >
       <BpkSegmentedControlV2.Item value="one-way">
-        One way
+        <BpkSegmentedControlV2.ItemText>One way</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
       <BpkSegmentedControlV2.Item value="return">
-        Return
+        <BpkSegmentedControlV2.ItemText>Return</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
       </BpkSegmentedControlV2.Item>
     </BpkSegmentedControlV2.Root>
   );
@@ -259,31 +325,43 @@ const LongLabels = () => {
         onChange={setSelected}
       >
         <BpkSegmentedControlV2.Item value="departure">
-          <span
-            className={getClassName(
-              'bpk-component-segmented-control-stories__custom-button',
-            )}
-          >
-            Earliest departure time
-          </span>
+          <BpkSegmentedControlV2.ItemText>
+            <span
+              className={getClassName(
+                'bpk-component-segmented-control-stories__custom-button',
+              )}
+            >
+              Earliest departure time
+            </span>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="arrival">
-          <span
-            className={getClassName(
-              'bpk-component-segmented-control-stories__custom-button',
-            )}
-          >
-            Earliest arrival time
-          </span>
+          <BpkSegmentedControlV2.ItemText>
+            <span
+              className={getClassName(
+                'bpk-component-segmented-control-stories__custom-button',
+              )}
+            >
+              Earliest arrival time
+            </span>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="price">
-          <span
-            className={getClassName(
-              'bpk-component-segmented-control-stories__custom-button',
-            )}
-          >
-            Cheapest price available
-          </span>
+          <BpkSegmentedControlV2.ItemText>
+            <span
+              className={getClassName(
+                'bpk-component-segmented-control-stories__custom-button',
+              )}
+            >
+              Cheapest price available
+            </span>
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
@@ -292,8 +370,16 @@ const LongLabels = () => {
 
 const NoInitialSelection = () => (
   <BpkSegmentedControlV2.Root label="Select option">
-    <BpkSegmentedControlV2.Item value="a">Option A</BpkSegmentedControlV2.Item>
-    <BpkSegmentedControlV2.Item value="b">Option B</BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="a">
+      <BpkSegmentedControlV2.ItemText>Option A</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
+    </BpkSegmentedControlV2.Item>
+    <BpkSegmentedControlV2.Item value="b">
+      <BpkSegmentedControlV2.ItemText>Option B</BpkSegmentedControlV2.ItemText>
+      <BpkSegmentedControlV2.ItemControl />
+      <BpkSegmentedControlV2.ItemHiddenInput />
+    </BpkSegmentedControlV2.Item>
   </BpkSegmentedControlV2.Root>
 );
 
@@ -346,21 +432,33 @@ const ComplexTypeExample = ({
         shadow
       >
         <BpkSegmentedControlV2.Item value="best">
-          <ComplexItemContent label="Best" price="£84" duration="2h average" />
+          <BpkSegmentedControlV2.ItemText>
+            <ComplexItemContent label="Best" price="£84" duration="2h average" />
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="cheapest">
-          <ComplexItemContent
-            label="Cheapest"
-            price="£34"
-            duration="9h average"
-          />
+          <BpkSegmentedControlV2.ItemText>
+            <ComplexItemContent
+              label="Cheapest"
+              price="£34"
+              duration="9h average"
+            />
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
         <BpkSegmentedControlV2.Item value="fastest">
-          <ComplexItemContent
-            label="Fastest"
-            price="£90"
-            duration="1h average"
-          />
+          <BpkSegmentedControlV2.ItemText>
+            <ComplexItemContent
+              label="Fastest"
+              price="£90"
+              duration="1h average"
+            />
+          </BpkSegmentedControlV2.ItemText>
+          <BpkSegmentedControlV2.ItemControl />
+          <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
     </div>
@@ -409,16 +507,20 @@ const ComplexContentWithIcon = () => {
           {flightSortItems.map(
             ({ duration, label, price, showInfoIcon, value }) => (
               <BpkSegmentedControlV2.Item key={value} value={value}>
-                <BpkVStack gap={BpkSpacing.None} align="start">
-                  <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
-                  <BpkHStack gap={BpkSpacing.XS} align="center">
-                    <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
-                    {showInfoIcon && (
-                      <InformationCircleIcon focusable="false" />
-                    )}
-                  </BpkHStack>
-                  <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
-                </BpkVStack>
+                <BpkSegmentedControlV2.ItemText>
+                  <BpkVStack gap={BpkSpacing.None} align="start">
+                    <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+                    <BpkHStack gap={BpkSpacing.XS} align="center">
+                      <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
+                      {showInfoIcon && (
+                        <InformationCircleIcon focusable="false" />
+                      )}
+                    </BpkHStack>
+                    <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
+                  </BpkVStack>
+                </BpkSegmentedControlV2.ItemText>
+                <BpkSegmentedControlV2.ItemControl />
+                <BpkSegmentedControlV2.ItemHiddenInput />
               </BpkSegmentedControlV2.Item>
             ),
           )}
@@ -446,30 +548,38 @@ const ComplexContentWithButton = () => {
           {flightSortItems.map(
             ({ duration, label, price, showInfoIcon, value }) => (
               <BpkSegmentedControlV2.Item key={value} value={value}>
-                <BpkVStack gap={BpkSpacing.None} align="start">
-                  <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
-                  <BpkHStack gap={BpkSpacing.XS} align="center">
-                    <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
-                    {showInfoIcon && (
-                      <InformationCircleIcon focusable="false" />
-                    )}
-                  </BpkHStack>
-                  <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
-                </BpkVStack>
+                <BpkSegmentedControlV2.ItemText>
+                  <BpkVStack gap={BpkSpacing.None} align="start">
+                    <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+                    <BpkHStack gap={BpkSpacing.XS} align="center">
+                      <BpkText textStyle={TEXT_STYLES.heading5}>{price}</BpkText>
+                      {showInfoIcon && (
+                        <InformationCircleIcon focusable="false" />
+                      )}
+                    </BpkHStack>
+                    <BpkText textStyle={TEXT_STYLES.caption}>{duration}</BpkText>
+                  </BpkVStack>
+                </BpkSegmentedControlV2.ItemText>
+                <BpkSegmentedControlV2.ItemControl />
+                <BpkSegmentedControlV2.ItemHiddenInput />
               </BpkSegmentedControlV2.Item>
             ),
           )}
           <BpkSegmentedControlV2.Item value="sort">
-            <BpkButton
-              type={BUTTON_TYPES.link}
-              className={getClassName(
-                'bpk-component-segmented-control-stories__sort-btn',
-              )}
-              onClick={() => setSelected('sort')}
-            >
-              Sort
-              <ChevronDownIcon focusable="false" />
-            </BpkButton>
+            <BpkSegmentedControlV2.ItemText>
+              <BpkButton
+                type={BUTTON_TYPES.link}
+                className={getClassName(
+                  'bpk-component-segmented-control-stories__sort-btn',
+                )}
+                onClick={() => setSelected('sort')}
+              >
+                Sort
+                <ChevronDownIcon focusable="false" />
+              </BpkButton>
+            </BpkSegmentedControlV2.ItemText>
+            <BpkSegmentedControlV2.ItemControl />
+            <BpkSegmentedControlV2.ItemHiddenInput />
           </BpkSegmentedControlV2.Item>
         </BpkSegmentedControlV2.Root>
       </div>

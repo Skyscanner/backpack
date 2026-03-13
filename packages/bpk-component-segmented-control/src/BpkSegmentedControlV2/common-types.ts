@@ -29,7 +29,7 @@ export type SegmentTypesV2 = (typeof SEGMENT_TYPES_V2)[keyof typeof SEGMENT_TYPE
 
 export type BpkSegmentedControlV2RootProps = {
   /**
-   * One or more BpkSegmentedControlV2.Item elements.
+   * Slot content — one or more BpkSegmentedControlV2.Item elements.
    */
   children: ReactNode;
   /**
@@ -73,6 +73,13 @@ export type BpkSegmentedControlV2ItemProps = {
    * Unique identifier for this segment within the group.
    */
   value: string;
+  /**
+   * Slot content — typically ItemText + ItemControl + ItemHiddenInput.
+   */
+  children: ReactNode;
+};
+
+export type BpkSegmentedControlV2ItemTextProps = {
   /**
    * Visible content of the segment — text, icons, or a combination.
    */
