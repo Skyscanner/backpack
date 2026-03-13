@@ -366,3 +366,56 @@ If you heavily relied on `react-autosuggest` theme keys (e.g. `suggestionsContai
 
 ---
 
+## 7. AI-assisted migration with Claude
+
+The `backpack-v42-migration` Claude skill is available to help automate common migration patterns described in this guide. It covers the full v42 upgrade (BpkButton rename + Autosuggest v1→v2).
+
+### How to use
+
+In [Claude Code](https://github.com/anthropics/claude-code), either run the slash command directly:
+
+```
+/backpack-v42-migration
+```
+
+Once the skill loads and completes Phase 1 discovery, you can scope it to Autosuggest only:
+
+> "Only do the Autosuggest migration (Phase 3), skip Button and deep imports"
+
+Or describe the task in natural language and Claude will recognize and invoke the skill automatically. For example:
+
+> "Help me upgrade this repo from Backpack v41 to v42"
+
+To migrate Autosuggest only without running the full v42 upgrade:
+
+> "Use the backpack-v42-migration skill, only migrate BpkAutosuggest from V1 API to V2 API"
+
+Claude will read the file, classify the migration complexity, apply the changes, and explain each diff before writing. It handles patterns such as:
+
+- Migrating `BpkAutosuggestLegacy` imports to the default `BpkAutosuggest` import
+- Adapting `onSuggestionSelected` and `onSuggestionsFetchRequested` callback signatures
+- Converting `inputProps.value` / `inputProps.onChange` to the V2 uncontrolled pattern
+- Forwarding refs in custom `renderInputComponent`
+- Writing Jest/RTL tests for V2 (including `FloatingPortal`/`FloatingArrow` jsdom mocks)
+
+### Edge cases the skill can help with
+
+The skill has knowledge of the following non-obvious edge cases (see sections above for full context):
+
+| Edge case | What to look for |
+|---|---|
+| Frozen input after typing | `inputProps.onChange` using two-arg v1 signature — crashes silently in V2 |
+| POI selection not updating input | `key` prop must include both `entityId` and `selectedSuggestionValue` |
+| V2 ignoring `inputProps.value` | Use `defaultValue` + `key` pattern to reset input externally |
+| POI sub-item selection reverting | Use `selectionHandledRef` + defer all `onInputBlur` side-effects in `setTimeout` |
+| Test failures with portal | Query from `document.body` / `screen.*` instead of `container.*` |
+
+### Important: review all AI-generated changes
+
+> **Claude skills cannot guarantee 100% correct results.** The skill applies heuristics based on known migration patterns, but your codebase may have unique combinations of props, state management, or side effects that require manual review.
+>
+> Always:
+> 1. Read through the generated code before committing
+> 2. Cross-check against the API mapping table in [section 4](#4-api-mapping-table-v1--v2)
+> 3. Run your tests to verify behavior is preserved
+
