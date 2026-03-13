@@ -154,7 +154,11 @@
               "Slider.Root", // allowed for styling to be passed to radix-ui component
               "Slider.Track", // allowed for styling to be passed to radix-ui component
               "Slider.Range", // allowed for styling to be passed to radix-ui component
-              "Slider.Thumb" // allowed for styling to be passed to radix-ui component
+              "Slider.Thumb", // allowed for styling to be passed to radix-ui component
+              "Checkbox.Root", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Control", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Indicator", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Label" // allowed for styling to be passed to ark-ui component
             ]
           }
         ]
