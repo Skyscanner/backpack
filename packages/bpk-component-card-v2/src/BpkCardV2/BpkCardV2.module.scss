@@ -1,0 +1,114 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/utils';
+
+// Card container - base styles
+.bpk-card-v2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transition: box-shadow tokens.$bpk-duration-sm ease-in-out;
+  background-color: tokens.$bpk-surface-default-day;
+  overflow: hidden;
+
+  @include radii.bpk-border-radius-md;
+  @include shadows.bpk-box-shadow-sm;
+
+  @include utils.bpk-hover {
+    @include shadows.bpk-box-shadow-lg;
+  }
+
+  // Surface color variants
+  &--surfaceDefault {
+    background-color: tokens.$bpk-surface-default-day;
+  }
+
+  &--surfaceElevated {
+    background-color: tokens.$bpk-surface-elevated-day;
+  }
+
+  &--surfaceTint {
+    background-color: tokens.$bpk-surface-tint-day;
+  }
+
+  &--surfaceSubtle {
+    background-color: tokens.$bpk-surface-subtle-day;
+  }
+
+  &--surfaceHero {
+    background-color: tokens.$bpk-surface-hero-day;
+  }
+
+  &--surfaceContrast {
+    background-color: tokens.$bpk-surface-contrast-day;
+  }
+
+  &--surfaceLowContrast {
+    background-color: tokens.$bpk-surface-low-contrast-day;
+  }
+
+  &--surfaceHighlight {
+    background-color: tokens.$bpk-surface-highlight-day;
+  }
+}
+
+// Default variant - interactive card with pointer cursor
+.bpk-card-v2--default {
+  cursor: pointer;
+}
+
+// Outlined variant - replaces shadow with border
+.bpk-card-v2--outlined {
+  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  box-shadow: none;
+
+  @include utils.bpk-hover {
+    box-shadow: none;
+  }
+}
+
+// No elevation variant - no shadow, no border
+.bpk-card-v2--noElevation {
+  box-shadow: none;
+
+  @include utils.bpk-hover {
+    box-shadow: none;
+  }
+}
+
+// Divider between sections in multi-column layout
+// Horizontal on mobile, vertical on desktop
+.bpk-card-v2__divider {
+  // Mobile: horizontal divider
+  height: tokens.$bpk-border-size-sm;
+  margin: tokens.bpk-spacing-md() 0;
+  background-color: tokens.$bpk-line-day;
+
+  // Desktop: vertical divider
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    width: tokens.$bpk-border-size-sm;
+    height: auto;
+    margin: tokens.bpk-spacing-md() 0;
+    align-self: stretch;
+  }
+}
