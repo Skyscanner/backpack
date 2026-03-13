@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-export const buttonThemeAttributes = ['buttonFontSize'];
+export const buttonThemeAttributes = ['buttonFontSize', 'buttonBorderRadius'];
 
 export const primaryThemeAttributes = [
   'buttonPrimaryTextColor',
@@ -90,3 +90,5 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveHoverBackgroundColor',
   'buttonDestructiveActiveBackgroundColor',
 ];
+
+export const linkThemeAttributes = ['buttonLinkLoadingColor'];

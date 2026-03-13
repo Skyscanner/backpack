@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/buttons';
 @use '../../../bpk-mixins/typography';
 
@@ -28,14 +27,10 @@
   }
 
   &--icon-only {
-    border-radius: tokens.$bpk-button-border-radius;
-
     @include buttons.bpk-button--icon-only;
   }
 
   &--large-icon-only {
-    border-radius: tokens.$bpk-button-border-radius;
-
     @include buttons.bpk-button--large-icon-only;
   }
 
@@ -112,6 +107,27 @@
 
   &--full-width {
     @include buttons.bpk-button--full-width;
+  }
+
+  &__loading-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__loading-icon {
+    position: absolute;
+    display: inline-flex;
+
+    // Reset SVG display overrides (e.g. from link button) so the spinner SVG
+    // always renders as block and stays within its 16×16 container.
+    --bpk-button-svg-display: block;
+    --bpk-button-svg-vertical-align: baseline;
+  }
+
+  &__content--hidden {
+    opacity: 0;
   }
 
   /* stylelint-disable selector-max-compound-selectors */

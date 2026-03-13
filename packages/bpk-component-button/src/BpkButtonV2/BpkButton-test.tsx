@@ -16,112 +16,169 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { BpkButtonV2 as BpkButton } from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
 
-import type { ButtonType } from './common-types';
-
 describe('BpkButton', () => {
-  Object.keys(BUTTON_TYPES).forEach((buttonType) => {
+  Object.values(BUTTON_TYPES).forEach((buttonType) => {
     it(`should render correctly with type="${buttonType}"`, () => {
-      const { asFragment } = render(
-        <BpkButton type={buttonType as ButtonType}>
+      const { container } = render(
+        <BpkButton type={buttonType}>
           {buttonType} button
         </BpkButton>,
       );
-      expect(asFragment()).toMatchSnapshot();
+
+      const el = container.firstElementChild;
+      expect(el?.tagName).toBe('BUTTON');
+      expect(el).toHaveAttribute('type', 'button');
+      expect(el).toHaveAttribute('data-backpack-ds-component', 'Button');
+      expect(el).toHaveClass('bpk-button');
+      expect(el).toHaveClass(`bpk-button--${buttonType}`);
     });
   });
 
   it('should render correctly with a "href" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#">My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el).toHaveAttribute('href', '#');
+    expect(el).toHaveAttribute('target', '');
+    expect(el).toHaveAttribute('data-backpack-ds-component', 'Button');
+    expect(el).toHaveClass('bpk-button');
+    expect(el).toHaveClass('bpk-button--primary');
   });
 
   it('should render correctly with a "disabled" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton disabled>My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el).toBeDisabled();
+    expect(el).toHaveAttribute('type', 'button');
+    expect(el).toHaveClass('bpk-button');
+    expect(el).toHaveClass('bpk-button--primary');
   });
 
   it('should render correctly with large size', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton size={SIZE_TYPES.large}>My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el).toHaveClass('bpk-button');
+    expect(el).toHaveClass('bpk-button--large');
+    expect(el).toHaveClass('bpk-button--primary');
   });
 
   it('should render correctly with an "iconOnly" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton iconOnly>My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el).toHaveClass('bpk-button');
+    expect(el).toHaveClass('bpk-button--icon-only');
+    expect(el).toHaveClass('bpk-button--primary');
   });
 
   it('should render correctly a "large", "secondary" button', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton size={SIZE_TYPES.large} type={BUTTON_TYPES.secondary}>
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el).toHaveClass('bpk-button');
+    expect(el).toHaveClass('bpk-button--large');
+    expect(el).toHaveClass('bpk-button--secondary');
   });
 
   it('should respect the class names entered as a string', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton className="custom-class-1 custom-class-2">
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el).toHaveClass('bpk-button');
+    expect(el).toHaveClass('bpk-button--primary');
+    expect(el).toHaveClass('custom-class-1');
+    expect(el).toHaveClass('custom-class-2');
   });
 
   it('should add only bpk specific classes if className prop is set to empty string', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton className="">My button</BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el).toHaveAttribute('class', 'bpk-button bpk-button--primary');
   });
 
   it('should render correctly with "blank" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" blank>
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el).toHaveAttribute('href', '#');
+    expect(el).toHaveAttribute('target', '_blank');
+    expect(el).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
   it('should render correctly with "rel" attribute', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" rel="rel-attr">
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el).toHaveAttribute('href', '#');
+    expect(el).toHaveAttribute('rel', 'rel-attr');
+    expect(el).toHaveAttribute('target', '');
   });
 
   it('should render correctly with "blank" and "rel" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" blank rel="rel-overwrite">
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('A');
+    expect(el).toHaveAttribute('target', '_blank');
+    expect(el).toHaveAttribute('rel', 'rel-overwrite');
   });
 
   it('should render correctly with "disabled" and "href" attributes', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <BpkButton href="#" disabled>
         My button
       </BpkButton>,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    // disabled + href renders as <button disabled>, not <a>
+    const el = container.firstElementChild;
+    expect(el?.tagName).toBe('BUTTON');
+    expect(el).toBeDisabled();
   });
 
   it('should render with a class name if full width is added', () => {
@@ -131,9 +188,144 @@ describe('BpkButton', () => {
       </BpkButton>,
     );
 
-    expect(container?.firstElementChild?.classList?.contains('bpk-button--full-width')).toEqual(true);
+    const el = container.firstElementChild;
+    expect(el).toHaveClass('bpk-button--full-width');
   });
 
+
+  describe('loading prop', () => {
+    it('should render without spinner or aria-busy when loading=false', () => {
+      const { container } = render(
+        <BpkButton loading={false}>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).not.toBeInTheDocument();
+      expect(container.firstElementChild).not.toHaveAttribute('aria-busy');
+    });
+
+    it('should render spinner, disable interaction, and hide children when loading=true', () => {
+      const { container } = render(
+        <BpkButton loading>My button</BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+      expect(el).toBeDisabled();
+      expect(el).toHaveAttribute('aria-busy', 'true');
+
+      const hiddenDiv = container.querySelector('[class*="bpk-button__content--hidden"]');
+      expect(hiddenDiv).toBeInTheDocument();
+      expect(hiddenDiv).toHaveTextContent('My button');
+
+      // href is suppressed: renders as <button>, not <a>
+      const { container: hrefContainer } = render(
+        <BpkButton loading href="#">My button</BpkButton>,
+      );
+      expect(hrefContainer.firstElementChild?.tagName).toBe('BUTTON');
+      expect(hrefContainer.firstElementChild).toBeDisabled();
+    });
+
+    it('should render a LargeSpinner when loading=true with size=large', () => {
+      const { container } = render(
+        <BpkButton loading size={SIZE_TYPES.large}>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[data-backpack-ds-component="LargeSpinner"]')).toBeInTheDocument();
+    });
+
+    it('should not call onClick when loading=true', () => {
+      const mockOnClick = jest.fn();
+      const { container } = render(
+        <BpkButton loading onClick={mockOnClick}>My button</BpkButton>,
+      );
+
+      fireEvent.click(container.firstElementChild!);
+      expect(mockOnClick).not.toHaveBeenCalled();
+    });
+
+    it('should render spinner correctly when loading=true and iconOnly=true', () => {
+      const { container } = render(
+        <BpkButton loading iconOnly aria-label="Loading">
+          <span>Icon</span>
+        </BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+      expect(el).toBeDisabled();
+      expect(el).toHaveAttribute('aria-busy', 'true');
+    });
+
+    it('should render correctly when loading=true and fullWidth=true', () => {
+      const { container } = render(
+        <BpkButton loading fullWidth>My button</BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+      expect(el).toBeDisabled();
+      expect(el).toHaveClass('bpk-button--full-width');
+    });
+
+    it('should render as disabled when both loading=true and disabled=true', () => {
+      const { container } = render(
+        <BpkButton loading disabled>My button</BpkButton>,
+      );
+
+      const el = container.firstElementChild;
+      expect(el).toBeDisabled();
+      expect(container.querySelector('[data-backpack-ds-component="Spinner"]')).toBeInTheDocument();
+    });
+
+    it('should use dark spinner for secondary type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.secondary} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--dark"]')).toBeInTheDocument();
+    });
+
+    it('should use dark spinner for destructive type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.destructive} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--dark"]')).toBeInTheDocument();
+    });
+
+    it('should use dark spinner for link type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.link} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--dark"]')).toBeInTheDocument();
+    });
+
+    it('should use light spinner for featured type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.featured} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-spinner--light"]')).toBeInTheDocument();
+    });
+
+    it('should not render underline wrapper for link type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.link} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-button--link-underlined"]')).not.toBeInTheDocument();
+    });
+
+    it('should not render underline wrapper and should use light spinner for linkOnDark type when loading=true', () => {
+      const { container } = render(
+        <BpkButton type={BUTTON_TYPES.linkOnDark} loading>My button</BpkButton>,
+      );
+
+      expect(container.querySelector('[class*="bpk-button--link-underlined"]')).not.toBeInTheDocument();
+      expect(container.querySelector('[class*="bpk-spinner--light"]')).toBeInTheDocument();
+    });
+  });
 
   describe('link type buttons', () => {
     it('should render link type with underline span wrapper', () => {
@@ -143,7 +335,7 @@ describe('BpkButton', () => {
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
       expect(underlinedSpan).toBeInTheDocument();
-      expect(underlinedSpan?.textContent).toBe('Link button');
+      expect(underlinedSpan).toHaveTextContent('Link button');
     });
 
     it('should render linkOnDark type with underline span wrapper', () => {
@@ -152,7 +344,7 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link-on-dark')).toBe(true);
+      expect(button).toHaveClass('bpk-button--link-on-dark');
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
       expect(underlinedSpan).toBeInTheDocument();
@@ -166,7 +358,7 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(true);
+      expect(button).toHaveClass('bpk-button--link--implicit');
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined--implicit"]');
       expect(underlinedSpan).toBeInTheDocument();
@@ -180,7 +372,7 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link--implicit')).toBe(true);
+      expect(button).toHaveClass('bpk-button--link--implicit');
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined--implicit--alternate"]');
       expect(underlinedSpan).toBeInTheDocument();
@@ -194,8 +386,8 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--link')).toBe(true);
-      expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
+      expect(button).toHaveClass('bpk-button--link');
+      expect(button).toHaveClass('bpk-button--icon-only');
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
       expect(underlinedSpan).not.toBeInTheDocument();
@@ -232,7 +424,7 @@ describe('BpkButton', () => {
 
       const anchor = container.firstElementChild;
       expect(anchor?.tagName).toBe('A');
-      expect(anchor?.getAttribute('href')).toBe('#');
+      expect(anchor).toHaveAttribute('href', '#');
 
       const underlinedSpan = container.querySelector('[class*="bpk-button--link-underlined"]');
       expect(underlinedSpan).toBeInTheDocument();
@@ -246,7 +438,7 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
+      expect(button).toHaveClass('bpk-button--icon-only');
     });
 
     it('should render correctly with linkOnDark type and iconOnly', () => {
@@ -257,7 +449,7 @@ describe('BpkButton', () => {
       );
 
       const button = container.firstElementChild;
-      expect(button?.classList?.contains('bpk-button--icon-only')).toBe(true);
+      expect(button).toHaveClass('bpk-button--icon-only');
     });
   });
 });

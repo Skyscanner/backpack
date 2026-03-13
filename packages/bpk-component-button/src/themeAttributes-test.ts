@@ -25,11 +25,12 @@ import {
   secondaryOnDarkThemeAttributes,
   destructiveThemeAttributes,
   featuredThemeAttributes,
+  linkThemeAttributes,
 } from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
-    expect(buttonThemeAttributes).toEqual(['buttonFontSize']);
+    expect(buttonThemeAttributes).toEqual(['buttonFontSize', 'buttonBorderRadius']);
   });
 
   it('should export the correct primary theme attributes', () => {
@@ -117,5 +118,9 @@ describe('themeAttributes', () => {
       'buttonFeaturedHoverBackgroundColor',
       'buttonFeaturedActiveBackgroundColor',
     ]);
+  });
+
+  it('should export the correct link theme attributes', () => {
+    expect(linkThemeAttributes).toEqual(['buttonLinkLoadingColor']);
   });
 });
