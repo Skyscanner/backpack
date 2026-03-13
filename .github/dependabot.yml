@@ -1,7 +1,7 @@
 version: 2
 updates:
 - package-ecosystem: npm
-  directories: 
+  directories:
     - "/"
     - "/packages"
   schedule:
@@ -27,7 +27,14 @@ updates:
       patterns:
         - "@testing-library*"
         - "testing-library*"
+    jest:
+      patterns:
         - "jest*"
+        - "@types/jest*"
+        - "jest-environment-*"
+    skyscanner:
+      patterns:
+        - "@skyscanner/*"
   cooldown:
     default-days: 7
 - package-ecosystem: github-actions
