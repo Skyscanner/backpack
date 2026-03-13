@@ -17,10 +17,26 @@
  */
 
 @use '../../../bpk-mixins/buttons';
+@use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/utils';
 
 .bpk-button {
   @include buttons.bpk-button;
+
+  /* stylelint-disable selector-max-compound-selectors */
+  @media (hover: hover) {
+    &--link:hover:not(:active):not(:disabled) &--link-underlined,
+    &--link-on-dark:hover:not(:active):not(:disabled) &--link-underlined {
+      background-size: 0 tokens.$bpk-border-size-sm;
+    }
+
+    &--link:hover:not(:active):not(:disabled) &--link-underlined--implicit,
+    &--link-on-dark:hover:not(:active):not(:disabled)
+      &--link-underlined--implicit--alternate {
+      background-size: 100% tokens.$bpk-border-size-sm;
+    }
+  }
 
   &--large {
     @include buttons.bpk-button--large;
@@ -72,6 +88,7 @@
       @include typography.bpk-link--implicit;
     }
   }
+  /* stylelint-enable selector-max-compound-selectors */
 
   &--link-underlined {
     @include buttons.bpk-button--link-underlined;
@@ -107,6 +124,24 @@
 
   &--full-width {
     @include buttons.bpk-button--full-width;
+  }
+
+  &--has-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: tokens.bpk-spacing-md();
+  }
+
+  &--full-width#{&}--has-icon {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__leading-icon,
+  &__trailing-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    text-decoration: none;
   }
 
   &__loading-container {
