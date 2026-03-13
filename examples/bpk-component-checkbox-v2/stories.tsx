@@ -19,6 +19,7 @@
 import { BpkCheckboxV2 as BpkCheckbox } from '../../packages/bpk-component-checkbox';
 
 import {
+  ComposedHertzExample,
   DefaultCheckedExample,
   DisabledStatesExample,
   IndeterminateExample,
@@ -43,6 +44,7 @@ export const Disabled = DisabledStatesExample;
 export const Indeterminate = IndeterminateExample;
 export const Invalid = InvalidExample;
 export const Themed = ThemedExample;
+export const ComposedHertz = ComposedHertzExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
