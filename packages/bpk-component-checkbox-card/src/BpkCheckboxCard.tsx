@@ -20,6 +20,7 @@ import type { CSSProperties, ReactNode } from 'react';
 
 import { CheckboxHiddenInput } from '@ark-ui/react/checkbox';
 
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -147,7 +148,11 @@ export type IndicatorProps = Record<string, never>;
  */
 
 function Indicator(_props: IndicatorProps = {}) {
-  return <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden />;
+  return (
+    <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden>
+      <TickCircleIcon />
+    </div>
+  );
 }
 
 // ─── Compound Component ───────────────────────────────────────────────────────

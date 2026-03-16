@@ -47,6 +47,11 @@
   cursor: pointer;
   box-sizing: border-box;
 
+  // Focus state — shown when the hidden input inside is keyboard-focused
+  &:has(:focus-visible) {
+    @include utils.bpk-focus-indicator;
+  }
+
   // Hover state
   &:not([data-state='checked']):not([data-disabled]) {
     @include utils.bpk-hover {
@@ -188,39 +193,19 @@
   z-index: 1; // Ensure indicator renders above positioned children (e.g. BpkImage)
   width: calc(tokens.$bpk-one-pixel-rem * 20);
   height: calc(tokens.$bpk-one-pixel-rem * 20);
-  justify-content: center;
-  align-items: center;
-  border: tokens.$bpk-border-size-lg solid
-    var(
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: var(
       --bpk-checkbox-card-indicator-background-color,
       #{tokens.$bpk-core-accent-day}
     );
-  border-radius: 50%;
-  background-color: var(
-    --bpk-checkbox-card-indicator-background-color,
-    #{tokens.$bpk-core-accent-day}
-  );
-  box-sizing: border-box;
-  pointer-events: none;
-
-  // Check mark (CSS border trick)
-  &::after {
-    content: '';
-    display: block;
-    width: calc(tokens.$bpk-one-pixel-rem * 5);
-    height: calc(tokens.$bpk-one-pixel-rem * 9);
-    transform: rotate(45deg)
-      translate(
-        calc(tokens.$bpk-one-pixel-rem * -1),
-        calc(tokens.$bpk-one-pixel-rem * -2)
-      );
-    border: solid
-      var(--bpk-checkbox-card-indicator-text-color, #{tokens.$bpk-color-white});
-    border-width: 0 tokens.$bpk-border-size-lg tokens.$bpk-border-size-lg 0;
   }
 
   // Checked state — show the indicator
   .bpk-checkbox-card-root[data-state='checked'] & {
-    display: flex;
+    display: block;
   }
 }

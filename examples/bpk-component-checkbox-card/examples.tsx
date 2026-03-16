@@ -29,7 +29,7 @@ import BpkImage from '../../packages/bpk-component-image';
 import { BpkBox, BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice from '../../packages/bpk-component-price';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
 
@@ -93,14 +93,16 @@ export const WithMultiContentExample = () => {
           <BpkCheckboxCard.HiddenInput />
           <BpkCheckboxCard.Content>
             <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
-              <LandmarkIconLg />
+              <LandmarkIconLg fill={selected ? 'white' : undefined} />
               <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
                 <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
                 <BpkCheckboxCard.Description>
                   Central location with easy access to attractions
                 </BpkCheckboxCard.Description>
               </BpkVStack>
-              <BpkPrice price="£85" />
+              <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected ? TEXT_COLORS.textOnDark : undefined}>
+                £85
+              </BpkText>
             </BpkVStack>
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
@@ -203,7 +205,8 @@ export const WithImageExample = () => {
                 style={{ width: '100%' }}
               />
               <BpkCheckboxCard.Label>Economy</BpkCheckboxCard.Label>
-              <BpkPrice price="£74" leadingText="from" />
+              <BpkText textStyle={TEXT_STYLES.xs} tagName="span" color={selected ? TEXT_COLORS.textOnDark : undefined}>from</BpkText>
+              <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected ? TEXT_COLORS.textOnDark : undefined}>£74</BpkText>
             </BpkVStack>
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
@@ -230,7 +233,7 @@ export const WithInlineLayoutExample = () => {
         <BpkCheckboxCard.HiddenInput />
         <BpkCheckboxCard.Content>
           <BpkHStack gap="bpk-spacing-sm" align="center" width="100%">
-            <LandmarkIconLg />
+            <LandmarkIconLg fill={selected ? 'white' : undefined} />
             <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
           </BpkHStack>
         </BpkCheckboxCard.Content>
@@ -337,9 +340,9 @@ export const WithCustomThemeExample = () => {
               <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Content>
                 <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
-                  <LandmarkIconLg />
+                  <LandmarkIconLg fill={selected1 ? 'white' : undefined} />
                   <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-                  <BpkPrice price="£85" />
+                  <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected1 ? TEXT_COLORS.textOnDark : undefined}>£85</BpkText>
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
@@ -354,9 +357,9 @@ export const WithCustomThemeExample = () => {
               <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Content>
                 <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
-                  <LandmarkIconLg />
+                  <LandmarkIconLg fill={selected2 ? 'white' : undefined} />
                   <BpkCheckboxCard.Label>Waterfront</BpkCheckboxCard.Label>
-                  <BpkPrice price="£95" />
+                  <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected2 ? TEXT_COLORS.textOnDark : undefined}>£95</BpkText>
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
@@ -475,25 +478,32 @@ export const WithMetadataExample = () => {
 
   return (
     <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-md" wrap="wrap">
-      {neighbourhoods.map(({ avgPrice, count, id, name }) => (
-        <BpkCheckboxCard.Root
-          key={id}
-          checked={selected.includes(id)}
-          onCheckedChange={() => toggle(id)}
-          variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-        >
-          <BpkCheckboxCard.HiddenInput />
-          <BpkCheckboxCard.Content>
-            <BpkVStack gap="bpk-spacing-sm" align="start" width="100%">
-              <BpkCheckboxCard.Label>{`${name} (${count})`}</BpkCheckboxCard.Label>
-              <BpkHStack gap="bpk-spacing-sm" align="center">
-                <TrendDownIconLg style={{ color: statusSuccessSpotDay, width: '1rem', height: '1rem' }} />
-                <span style={{ color: statusSuccessSpotDay, fontSize: '0.75rem', fontWeight: 600 }}>{avgPrice} avg.</span>
-              </BpkHStack>
-            </BpkVStack>
-          </BpkCheckboxCard.Content>
-        </BpkCheckboxCard.Root>
-      ))}
+      {neighbourhoods.map(({ avgPrice, count, id, name }) => {
+        const isChecked = selected.includes(id);
+        // When checked the card background turns dark — switch to white for contrast.
+        // Consumers are responsible for adapting their own content colours to match.
+        const trendColor = isChecked ? colorWhite : statusSuccessSpotDay;
+
+        return (
+          <BpkCheckboxCard.Root
+            key={id}
+            checked={isChecked}
+            onCheckedChange={() => toggle(id)}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkVStack gap="bpk-spacing-sm" align="start" width="100%">
+                <BpkCheckboxCard.Label>{`${name} (${count})`}</BpkCheckboxCard.Label>
+                <BpkHStack gap="bpk-spacing-sm" align="center">
+                  <TrendDownIconLg fill={trendColor} style={{ width: '1rem', height: '1rem' }} />
+                  <BpkText textStyle={TEXT_STYLES.label2} tagName="span" color={isChecked ? TEXT_COLORS.textOnDark : undefined}>{avgPrice} avg.</BpkText>
+                </BpkHStack>
+              </BpkVStack>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        );
+      })}
     </BpkHStack>
   );
 };
