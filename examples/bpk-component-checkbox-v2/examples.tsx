@@ -115,7 +115,7 @@ export const DisabledStatesExample = () => (
 );
 
 export const IndeterminateExample = () => (
-  <BpkCheckbox.Root defaultChecked="indeterminate">
+  <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
     <BpkCheckbox.Control>
       <BpkCheckbox.Indicator />
     </BpkCheckbox.Control>
@@ -148,7 +148,7 @@ export const ThemedExample = () => (
           <BpkCheckbox.Label>Custom colour + border-radius — checked</BpkCheckbox.Label>
           <BpkCheckbox.HiddenInput />
         </BpkCheckbox.Root>
-        <BpkCheckbox.Root defaultChecked="indeterminate">
+        <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
           <BpkCheckbox.Control>
             <BpkCheckbox.Indicator />
           </BpkCheckbox.Control>
