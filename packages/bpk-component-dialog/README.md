@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import { Component } from 'react';
 import BpkDialog from '@skyscanner/backpack-web/bpk-component-dialog';
-import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 class App extends Component {
   constructor() {

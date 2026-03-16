@@ -26,6 +26,112 @@
 /// @group buttons
 ////
 
+// --- Private: pressed/hover colour declarations ---
+// These mixins centralise pressed/hover token references.
+// hover and loading can include the same mixin — token values
+// are defined exactly once.
+
+@mixin _bpk-button-primary-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-primary-hover-background-color,
+    tokens.$bpk-private-button-primary-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-primary-hover-text-color,
+    tokens.$bpk-text-on-dark-day
+  );
+}
+
+@mixin _bpk-button-primary-on-dark-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-primary-on-dark-hover-background-color,
+    tokens.$bpk-private-button-primary-on-dark-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-primary-on-dark-hover-text-color,
+    tokens.$bpk-text-on-light-day
+  );
+}
+
+@mixin _bpk-button-primary-on-light-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-primary-on-light-hover-background-color,
+    tokens.$bpk-private-button-primary-on-light-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-primary-on-light-hover-text-color,
+    tokens.$bpk-text-on-dark-night
+  );
+}
+
+@mixin _bpk-button-secondary-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-secondary-hover-background-color,
+    tokens.$bpk-private-button-secondary-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-secondary-hover-text-color,
+    tokens.$bpk-text-primary-day
+  );
+}
+
+@mixin _bpk-button-secondary-on-dark-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-secondary-on-dark-hover-background-color,
+    tokens.$bpk-private-button-secondary-on-dark-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-secondary-on-dark-hover-text-color,
+    tokens.$bpk-text-on-dark-day
+  );
+}
+
+@mixin _bpk-button-destructive-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-destructive-hover-background-color,
+    tokens.$bpk-private-button-destructive-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-destructive-hover-text-color,
+    tokens.$bpk-text-primary-inverse-day
+  );
+}
+
+@mixin _bpk-button-featured-hover {
+  @include utils.bpk-themeable-property(
+    background-color,
+    --bpk-button-featured-hover-background-color,
+    tokens.$bpk-private-button-featured-pressed-background-day
+  );
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-featured-hover-text-color,
+    tokens.$bpk-text-primary-inverse-day
+  );
+}
+
+@mixin _bpk-button-link-on-dark-hover {
+  @include utils.bpk-themeable-property(
+    color,
+    --bpk-button-link-on-dark-hover-text-color,
+    tokens.$bpk-private-button-link-on-dark-pressed-foreground-day
+  );
+}
+
+// --- End private mixins ---
+
 /// Standard button.
 ///
 /// @example scss
@@ -63,16 +169,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-primary-hover-text-color,
-      tokens.$bpk-text-on-dark-day
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-primary-hover-background-color,
-      tokens.$bpk-private-button-primary-pressed-background-day
-    );
+    @include _bpk-button-primary-hover;
   }
 
   &:active {
@@ -92,6 +189,11 @@
     background-color: tokens.$bpk-private-button-disabled-background-day;
     color: tokens.$bpk-text-disabled-day;
     cursor: not-allowed;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-primary-hover;
   }
 }
 
@@ -133,16 +235,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-primary-on-dark-hover-text-color,
-      tokens.$bpk-text-on-light-day
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-primary-on-dark-hover-background-color,
-      tokens.$bpk-private-button-primary-on-dark-pressed-background-day
-    );
+    @include _bpk-button-primary-on-dark-hover;
   }
 
   &:active {
@@ -161,6 +254,11 @@
   &:disabled {
     background-color: tokens.$bpk-private-button-primary-on-dark-disabled-background-day;
     color: tokens.$bpk-private-button-primary-on-dark-disabled-foreground-day;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-primary-on-dark-hover;
   }
 }
 
@@ -187,16 +285,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-primary-on-light-hover-text-color,
-      tokens.$bpk-text-on-dark-night
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-primary-on-light-hover-background-color,
-      tokens.$bpk-private-button-primary-on-light-pressed-background-day
-    );
+    @include _bpk-button-primary-on-light-hover;
   }
 
   &:active {
@@ -215,6 +304,11 @@
   &:disabled {
     background-color: tokens.$bpk-private-button-primary-on-light-disabled-background-day;
     color: tokens.$bpk-private-button-primary-on-light-disabled-foreground-day;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-primary-on-light-hover;
   }
 }
 
@@ -241,16 +335,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-secondary-hover-text-color,
-      tokens.$bpk-text-primary-day
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-secondary-hover-background-color,
-      tokens.$bpk-private-button-secondary-pressed-background-day
-    );
+    @include _bpk-button-secondary-hover;
   }
 
   &:active {
@@ -269,6 +354,11 @@
   &:disabled {
     background-color: tokens.$bpk-private-button-disabled-background-day;
     color: tokens.$bpk-text-disabled-day;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-secondary-hover;
   }
 }
 
@@ -295,16 +385,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-secondary-on-dark-hover-text-color,
-      tokens.$bpk-text-on-dark-day
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-secondary-on-dark-hover-background-color,
-      tokens.$bpk-private-button-secondary-on-dark-pressed-background-day
-    );
+    @include _bpk-button-secondary-on-dark-hover;
   }
 
   &:active {
@@ -323,6 +404,11 @@
   &:disabled {
     background-color: tokens.$bpk-private-button-secondary-on-dark-disabled-background-day;
     color: tokens.$bpk-private-button-secondary-on-dark-disabled-foreground-day;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-secondary-on-dark-hover;
   }
 }
 
@@ -351,16 +437,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-destructive-hover-text-color,
-      tokens.$bpk-text-primary-inverse-day
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-destructive-hover-background-color,
-      tokens.$bpk-private-button-destructive-pressed-background-day
-    );
+    @include _bpk-button-destructive-hover;
   }
 
   &:active {
@@ -379,6 +456,11 @@
   &:disabled {
     background-color: tokens.$bpk-private-button-disabled-background-day;
     color: tokens.$bpk-text-disabled-day;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-destructive-hover;
   }
 }
 
@@ -429,6 +511,18 @@
     text-decoration: none;
   }
 
+  // Loading state override: restore pressed appearance while disabled.
+  &.bpk-button--loading:disabled,
+  &.bpk-button--loading:disabled:active {
+    background: none;
+
+    @include utils.bpk-themeable-property(
+      color,
+      --bpk-button-link-loading-color,
+      tokens.$bpk-text-primary-day
+    );
+  }
+
   &-large {
     padding: $vertical-padding-large 0;
   }
@@ -437,7 +531,7 @@
 /// Link on dark button. Modifies the bpk-button & bpk-button--link lib.
 ///
 /// @require {mixin} bpk-button
-
+///
 /// @example scss
 ///   .selector {
 ///     @include bpk-button();
@@ -453,11 +547,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-link-on-dark-hover-text-color,
-      tokens.$bpk-private-button-link-on-dark-pressed-foreground-day
-    );
+    @include _bpk-button-link-on-dark-hover;
   }
 
   &:active {
@@ -483,6 +573,12 @@
       --bpk-button-link-on-dark-disabled-color,
       tokens.$bpk-private-button-link-on-dark-disabled-foreground-day
     );
+  }
+
+  // Loading state override: restore pressed/hover appearance while disabled.
+  &.bpk-button--loading:disabled,
+  &.bpk-button--loading:disabled:active {
+    @include _bpk-button-link-on-dark-hover;
   }
 }
 
@@ -584,16 +680,7 @@
   );
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-featured-hover-text-color,
-      tokens.$bpk-text-primary-inverse-day
-    );
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-button-featured-hover-background-color,
-      tokens.$bpk-private-button-featured-pressed-background-day
-    );
+    @include _bpk-button-featured-hover;
   }
 
   &:active {
@@ -612,6 +699,11 @@
   &:disabled {
     background-color: tokens.$bpk-private-button-disabled-background-day;
     color: tokens.$bpk-text-disabled-day;
+  }
+
+  // Loading state override: restore hover/pressed appearance while disabled.
+  &.bpk-button--loading:disabled {
+    @include _bpk-button-featured-hover;
   }
 }
 

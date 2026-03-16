@@ -96,7 +96,7 @@ VALIDATION:
 - [ ] T001 Create package directory `packages/bpk-component-[name]/`
 - [ ] T002 [P] Create `packages/bpk-component-[name]/index.ts` export file
 - [ ] T003 [P] Create `packages/bpk-component-[name]/README.md` stub (will be completed in Phase 5)
-- [ ] T004 [P] Create `packages/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkButton/`)
+- [ ] T004 [P] Create `packages/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkModal/`)
 - [ ] T005 [P] Create `packages/bpk-component-[name]/docs/` directory for assets
 
 ---
