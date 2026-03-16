@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { useState, Component } from 'react';
+import type { ReactNode } from 'react';
 
 import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, createCheckboxCardTheme } from '../../packages/bpk-component-checkbox-card';
+import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, createCheckboxCardTheme, useCheckboxCardContext } from '../../packages/bpk-component-checkbox-card';
 import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
 import CityIconLg from '../../packages/bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
@@ -456,6 +457,57 @@ export const WithCarVariantExample = () => {
     </BpkVStack>
   );
 };
+
+function VariantBadge() {
+  const { variant } = useCheckboxCardContext();
+
+  if (variant !== CHECKBOX_CARD_VARIANTS.onCanvasContrast) {
+    return null;
+  }
+
+  return (
+    <BpkText textStyle={TEXT_STYLES.xs} tagName="span">
+      Best value
+    </BpkText>
+  );
+}
+
+/**
+ * Demonstrates that useCheckboxCardContext throws when used outside Root.
+ * An ErrorBoundary catches the error and displays the message.
+ */
+class ErrorBoundary extends Component<{ children: ReactNode }, { error: string | null }> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { error: null };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { error: error.message };
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+          Caught error: {this.state.error}
+        </BpkText>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+export const WithContextOutsideRootExample = () => (
+  <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+      VariantBadge rendered outside Root — should show error:
+    </BpkText>
+    <ErrorBoundary>
+      <VariantBadge />
+    </ErrorBoundary>
+  </BpkVStack>
+);
 
 /**
  * Neighbourhood card example — compact location card with price trend,

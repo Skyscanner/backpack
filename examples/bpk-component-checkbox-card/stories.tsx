@@ -29,6 +29,7 @@ import {
   WithCustomThemeExample,
   WithMetadataExample,
   WithCarVariantExample,
+  WithContextOutsideRootExample,
 } from './examples';
 
 export default {
@@ -46,3 +47,4 @@ export const WithInlineLayout = WithInlineLayoutExample;
 export const WithCustomTheme = WithCustomThemeExample;
 export const WithMetadata = WithMetadataExample;
 export const WithCarVariant = WithCarVariantExample;
+export const WithContextOutsideRoot = WithContextOutsideRootExample;
