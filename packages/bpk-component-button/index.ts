@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkButton from './src/BpkButton/BpkButton';
+import BpkButton from './src/BpkButton';
 
 export {
   BUTTON_TYPES,
@@ -24,7 +24,7 @@ export {
   type ButtonType,
   type SizeType,
   type Props,
-} from './src/BpkButton/common-types';
+} from './src/common-types';
 
 export {
   buttonThemeAttributes,

@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../../bpk-component-spinner';
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
