@@ -208,10 +208,11 @@ Create V2 component if change requires:
 
 **V2 Component Structure**:
 ```
-packages/bpk-component-button/src/
+packages/bpk-component-modal/src/
 ├── BpkModal/           # V1 (current)
-│   └── BpkButton.tsx
+│   └── BpkModal.tsx
 └── BpkModalV2/         # V2 (future, experimental)
+    └── BpkModal.tsx
 ```
 
 **V2 Guidelines**:
