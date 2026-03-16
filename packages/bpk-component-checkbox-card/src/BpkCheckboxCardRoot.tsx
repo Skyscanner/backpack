@@ -21,6 +21,7 @@ import { useMemo } from 'react';
 
 import { CheckboxRoot } from '@ark-ui/react/checkbox';
 
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
@@ -174,6 +175,11 @@ export function Root({
             `bpk-checkbox-card-root--radius-${radius}`,
           )}
         >
+          {variant === CHECKBOX_CARD_VARIANTS.cars && (
+            <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden>
+              <TickCircleIcon />
+            </div>
+          )}
           {children}
         </label>
       </CheckboxRoot>

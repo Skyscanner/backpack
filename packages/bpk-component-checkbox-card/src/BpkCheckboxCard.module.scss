@@ -108,6 +108,17 @@
     --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
   }
 
+  &--cars {
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-hover-border-color: #{tokens.$bpk-text-primary-day};
+    --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-text-primary-day};
+    --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-text-primary-day};
+  }
+
   &--on-canvas-contrast {
     --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-contrast-day};
     --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-contrast-day};

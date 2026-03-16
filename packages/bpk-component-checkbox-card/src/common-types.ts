@@ -22,11 +22,14 @@
  * - onCanvasDefault: For use on default/white backgrounds (selected: dark blue #05203C)
  * - onCanvasContrast: For use on contrast/colored backgrounds (selected: dark blue #05203C)
  * - onSurfaceContrast: For use on contrast surfaces (selected: accent blue #0062E3)
+ * - cars: For use in cars product context — same styling as onCanvasDefault but with
+ *   the corner Indicator automatically rendered (no need to add <BpkCheckboxCard.Indicator />)
  */
 export const CHECKBOX_CARD_VARIANTS = {
   onCanvasDefault: 'on-canvas-default',
   onCanvasContrast: 'on-canvas-contrast',
   onSurfaceContrast: 'on-surface-contrast',
+  cars: 'cars',
 } as const;
 
 export type CheckboxCardVariant =

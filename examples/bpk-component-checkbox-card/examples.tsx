@@ -120,6 +120,7 @@ export const AllVariantsExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(false);
   const [selected3, setSelected3] = useState(false);
+  const [selected4, setSelected4] = useState(false);
 
   return (
     <BpkVStack gap="bpk-spacing-lg" padding="bpk-spacing-lg" align="start">
@@ -174,6 +175,23 @@ export const AllVariantsExample = () => {
             </BpkCheckboxCard.Root>
           </BpkBox>
         </div>
+      </BpkVStack>
+
+      {/* cars */}
+      <BpkVStack gap="bpk-spacing-md" align="start">
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>Cars</BpkText>
+        <BpkBox width="9.375rem" height="9.375rem">
+          <BpkCheckboxCard.Root
+            checked={selected4}
+            onCheckedChange={setSelected4}
+            variant={CHECKBOX_CARD_VARIANTS.cars}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              {/* Empty content - no icon, label, or price */}
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        </BpkBox>
       </BpkVStack>
     </BpkVStack>
   );
@@ -372,13 +390,12 @@ export const WithCustomThemeExample = () => {
 
 
 /**
- * Car type selection with border-only checked style.
- * Checked: background unchanged, black border, indicator shown.
- * Hover: background unchanged, black border, no indicator.
+ * Car variant example — white background with dark border when checked.
+ * The Indicator is automatically rendered by the cars variant.
  *
- * @returns {JSX.Element} Rendered car type selection with border checked style.
+ * @returns {JSX.Element} Rendered car variant example.
  */
-export const WithImageGridExample = () => {
+export const WithCarVariantExample = () => {
   const carTypes = [
     {
       id: 'small',
@@ -408,49 +425,34 @@ export const WithImageGridExample = () => {
     );
   };
 
-  // Checked: keep white bg, black border, dark text
-  // Hover:   keep white bg, black border (no indicator — indicator only appears when checked)
-  const theme = createCheckboxCardTheme({
-    checkboxCardCheckedBackgroundColor: colorWhite,
-    checkboxCardCheckedTextColor: textPrimaryDay,
-    checkboxCardCheckedBorderColor: textPrimaryDay,
-    checkboxCardHoverBackgroundColor: colorWhite,
-    checkboxCardHoverBorderColor: textPrimaryDay,
-    checkboxCardIndicatorBackgroundColor: textPrimaryDay,
-    checkboxCardIndicatorTextColor: colorWhite,
-  });
-
   return (
     <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type</BpkText>
-      <BpkThemeProvider theme={theme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
-        <BpkHStack gap="bpk-spacing-md" wrap="wrap">
-          {carTypes.map(({ id, label, price, src }) => (
-            <BpkBox key={id} width="10rem">
-              <BpkCheckboxCard.Root
-                checked={selected.includes(id)}
-                onCheckedChange={() => toggle(id)}
-                variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-              >
-                <BpkCheckboxCard.HiddenInput />
-                <BpkCheckboxCard.Indicator />
-                <BpkCheckboxCard.Content>
-                  <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
-                    <BpkImage
-                      src={src}
-                      altText={`${label} car`}
-                      aspectRatio={16 / 9}
-                      style={{ width: '100%' }}
-                    />
-                    <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                    <BpkCheckboxCard.Description>{price}</BpkCheckboxCard.Description>
-                  </BpkVStack>
-                </BpkCheckboxCard.Content>
-              </BpkCheckboxCard.Root>
-            </BpkBox>
-          ))}
-        </BpkHStack>
-      </BpkThemeProvider>
+      <BpkHStack gap="bpk-spacing-md" wrap="wrap">
+        {carTypes.map(({ id, label, price, src }) => (
+          <BpkBox key={id} width="10rem">
+            <BpkCheckboxCard.Root
+              checked={selected.includes(id)}
+              onCheckedChange={() => toggle(id)}
+              variant={CHECKBOX_CARD_VARIANTS.cars}
+            >
+              <BpkCheckboxCard.HiddenInput />
+              <BpkCheckboxCard.Content>
+                <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                  <BpkImage
+                    src={src}
+                    altText={`${label} car`}
+                    aspectRatio={16 / 9}
+                    style={{ width: '100%' }}
+                  />
+                  <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                  <BpkCheckboxCard.Description>{price}</BpkCheckboxCard.Description>
+                </BpkVStack>
+              </BpkCheckboxCard.Content>
+            </BpkCheckboxCard.Root>
+          </BpkBox>
+        ))}
+      </BpkHStack>
     </BpkVStack>
   );
 };

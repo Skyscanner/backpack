@@ -28,7 +28,7 @@ import {
   WithInlineLayoutExample,
   WithCustomThemeExample,
   WithMetadataExample,
-  WithImageGridExample,
+  WithCarVariantExample,
 } from './examples';
 
 export default {
@@ -45,4 +45,4 @@ export const WithIndicator = WithIndicatorExample;
 export const WithInlineLayout = WithInlineLayoutExample;
 export const WithCustomTheme = WithCustomThemeExample;
 export const WithMetadata = WithMetadataExample;
-export const WithImageGrid = WithImageGridExample;
+export const WithCarVariant = WithCarVariantExample;
