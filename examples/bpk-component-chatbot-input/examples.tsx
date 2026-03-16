@@ -61,12 +61,21 @@ export const DefaultExample = () => (
   </div>
 );
 
-export const DefaultLoadingExample = () => (
+export const DefaultPollingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.DEFAULT}
+      isPolling
+    />
+  </div>
+);
+
+export const DefaultSendingExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.DEFAULT}
+      isSending
       initialValue="Some message"
-      isLoading
     />
   </div>
 );

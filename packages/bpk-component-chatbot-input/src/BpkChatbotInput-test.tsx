@@ -63,12 +63,12 @@ describe('BpkChatbotInput', () => {
       ).not.toBeInTheDocument();
     });
 
-    it('renders loading button when isLoading', () => {
+    it('renders LoadingButton when isPolling', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
           inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-          isLoading
+          isPolling
         />,
       );
 
@@ -83,7 +83,19 @@ describe('BpkChatbotInput', () => {
   });
 
   describe('composer type', () => {
-    it('renders textarea field and disables send button when input is empty', () => {
+    it('renders textarea field', () => {
+      render(
+        <BpkChatbotInput
+          {...defaultProps}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+        />,
+      );
+
+      const textarea = screen.getByRole('textbox');
+      expect(textarea.tagName).toBe('TEXTAREA');
+    });
+
+    it('disables send button when input is empty', () => {
       render(
         <BpkChatbotInput
           {...defaultProps}
@@ -171,15 +183,26 @@ describe('BpkChatbotInput', () => {
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
-    it('disables input when isLoading is true', () => {
-      render(<BpkChatbotInput {...defaultProps} isLoading />);
+    it('disables input when isSending is true', () => {
+      render(<BpkChatbotInput {...defaultProps} isSending />);
+
       expect(screen.getByRole('textbox')).toBeDisabled();
       expect(
         screen.getByTestId('bpk-chatbot-input-loading'),
       ).toBeInTheDocument();
     });
 
-    it('stops propagation on container touch and key events', () => {
+    it('renders with composer type correctly', () => {
+      const { asFragment } = render(
+        <BpkChatbotInput
+          {...defaultProps}
+          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+        />,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('stops propagation on container touchStart', () => {
       render(<BpkChatbotInput {...defaultProps} />);
       const container = screen.getByTestId('bpk-chatbot-input-container');
       fireEvent.touchStart(container);

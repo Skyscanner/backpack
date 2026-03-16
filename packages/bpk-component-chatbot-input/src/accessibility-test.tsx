@@ -53,7 +53,7 @@ describe('BpkChatbotInput accessibility tests', () => {
 
   it('should not have accessibility issues when loading', async () => {
     const { container } = render(
-      <BpkChatbotInput {...defaultProps} isLoading />,
+      <BpkChatbotInput {...defaultProps} isPolling />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

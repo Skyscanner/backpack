@@ -39,7 +39,8 @@ export default () => (
 | onInputBlur      | func                               | true     | -                                |
 | onSubmit         | func                               | true     | -                                |
 | inputPlaceholder | string                             | false    | ''                               |
-| isLoading        | bool                               | false    | false                            |
+| isSending        | bool                               | false    | false                            |
+| isPolling        | bool                               | false    | false                            |
 | inputType        | oneOf(CHATBOT_INPUT_TYPES)         | false    | CHATBOT_INPUT_TYPES.DEFAULT      |
 | maxCharacters    | number                             | false    | 500                              |
 | onInputClick     | func                               | false    | () => {}                         |

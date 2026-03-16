@@ -16,12 +16,7 @@
  * limitations under the License.
  */
 
-import type {
-  KeyboardEvent,
-  MouseEvent,
-  RefObject,
-  TouchEvent,
-} from 'react';
+import type { KeyboardEvent, MouseEvent, RefObject, TouchEvent } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -48,7 +43,8 @@ export type BpkChatbotInputProps = {
   onInputBlur: () => void;
   onSubmit: () => void | Promise<void>;
   inputPlaceholder?: string;
-  isLoading?: boolean;
+  isSending?: boolean;
+  isPolling?: boolean;
   inputType?: ChatbotInputType;
   maxCharacters?: number;
   onInputClick?: () => void;
@@ -59,7 +55,8 @@ const BpkChatbotInput = ({
   inputPlaceholder = '',
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,
   inputValue,
-  isLoading = false,
+  isPolling = false,
+  isSending = false,
   loadingAriaLabel,
   maxCharacters = MAX_CHARACTERS,
   onInputBlur,
@@ -82,7 +79,8 @@ const BpkChatbotInput = ({
     inputPlaceholder,
     inputType,
     inputValue,
-    isLoading,
+    isPolling,
+    isSending,
     maxCharacters,
     onInputBlur,
     onInputChange,
@@ -133,12 +131,11 @@ const BpkChatbotInput = ({
         />
       )}
       <SendButton
-        isDefault={isDefault}
+        inputType={inputType}
         disabled={sendButtonDisabled}
-        isLoading={isDefault && isLoading}
-        loadingAriaLabel={loadingAriaLabel}
         onClick={handleSubmit}
-        ariaLabel={sendAriaLabel}
+        ariaLabel={isDefault && isPolling ? loadingAriaLabel : sendAriaLabel}
+        isLoading={!!(isDefault && isPolling)}
       />
     </div>
   );
