@@ -154,7 +154,12 @@
               "Slider.Root", // allowed for styling to be passed to radix-ui component
               "Slider.Track", // allowed for styling to be passed to radix-ui component
               "Slider.Range", // allowed for styling to be passed to radix-ui component
-              "Slider.Thumb" // allowed for styling to be passed to radix-ui component
+              "Slider.Thumb", // allowed for styling to be passed to radix-ui component
+              "SegmentGroup.Root", // allowed for styling to be passed to ark-ui component
+              "SegmentGroup.Indicator", // allowed for styling to be passed to ark-ui component
+              "SegmentGroup.Item", // allowed for styling to be passed to ark-ui component
+              "SegmentGroup.ItemControl", // allowed for styling to be passed to ark-ui component
+              "SegmentGroup.ItemText" // allowed for styling to be passed to ark-ui component
             ]
           }
         ]
