@@ -1,0 +1,142 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/buttons';
+@use '../../bpk-mixins/typography';
+
+.bpk-button {
+  @include buttons.bpk-button;
+
+  &--large {
+    @include buttons.bpk-button--large;
+  }
+
+  &--icon-only {
+    @include buttons.bpk-button--icon-only;
+  }
+
+  &--large-icon-only {
+    @include buttons.bpk-button--large-icon-only;
+  }
+
+  &--destructive {
+    @include buttons.bpk-button--secondary;
+    @include buttons.bpk-button--destructive;
+  }
+
+  &--featured {
+    @include buttons.bpk-button--featured;
+  }
+
+  &--link {
+    @include buttons.bpk-button--link;
+    @include typography.bpk-link;
+
+    // override SVG display for link buttons
+    --bpk-button-svg-display: inline-block;
+    --bpk-button-svg-vertical-align: middle;
+
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+
+    &--icon-only {
+      @include buttons.bpk-button--link-icon-only;
+    }
+  }
+
+  &--link-on-dark {
+    @include buttons.bpk-button--link-on-dark;
+    @include typography.bpk-link--alternate;
+
+    // override SVG display for link buttons
+    --bpk-button-svg-display: inline-block;
+    --bpk-button-svg-vertical-align: middle;
+
+    &--implicit {
+      @include typography.bpk-link--implicit;
+    }
+  }
+
+  &--link-underlined {
+    @include buttons.bpk-button--link-underlined;
+
+    &--implicit {
+      @include typography.bpk-link-underlined--implicit;
+    }
+
+    &--alternate {
+      @include typography.bpk-link-underlined--alternate;
+    }
+
+    &--implicit--alternate {
+      @include typography.bpk-link-underlined-implicit--alternate;
+    }
+  }
+
+  &--primary-on-dark {
+    @include buttons.bpk-button--primary-on-dark;
+  }
+
+  &--primary-on-light {
+    @include buttons.bpk-button--primary-on-light;
+  }
+
+  &--secondary {
+    @include buttons.bpk-button--secondary;
+  }
+
+  &--secondary-on-dark {
+    @include buttons.bpk-button--secondary-on-dark;
+  }
+
+  &--full-width {
+    @include buttons.bpk-button--full-width;
+  }
+
+  &__loading-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__loading-icon {
+    position: absolute;
+    display: inline-flex;
+
+    // Reset SVG display overrides (e.g. from link button) so the spinner SVG
+    // always renders as block and stays within its 16×16 container.
+    --bpk-button-svg-display: block;
+    --bpk-button-svg-vertical-align: baseline;
+  }
+
+  &__content--hidden {
+    opacity: 0;
+  }
+
+  /* stylelint-disable selector-max-compound-selectors */
+  span > svg {
+    display: var(--bpk-button-svg-display, block);
+    vertical-align: var(--bpk-button-svg-vertical-align, baseline);
+  }
+
+  svg {
+    fill: currentcolor;
+  }
+}

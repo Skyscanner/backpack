@@ -1,0 +1,85 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../packages/bpk-mixins/tokens';
+@use '../../packages/bpk-mixins/utils';
+
+.bpk-component-segmented-control-stories__custom-button {
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bpk-component-segmented-control-stories__canvas-default-wrapper {
+  padding: tokens.bpk-spacing-xl();
+  background-color: tokens.$bpk-canvas-day;
+}
+
+.bpk-component-segmented-control-stories__canvas-contrast-wrapper {
+  padding: tokens.bpk-spacing-xl();
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__surface-contrast-wrapper {
+  padding: tokens.bpk-spacing-xl();
+  background-color: tokens.$bpk-surface-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__canvas-contrast-demo {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__surface-contrast-demo {
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-surface-contrast-day;
+}
+
+.bpk-component-segmented-control-stories__complex {
+  // stylelint-disable-next-line selector-attribute
+  [data-part='item-text'] {
+    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+    justify-content: flex-start;
+  }
+}
+
+.bpk-component-segmented-control-stories__sort-btn {
+  pointer-events: auto;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  // stylelint-disable-next-line selector-attribute
+  [data-state='checked'] & {
+    color: tokens.$bpk-text-on-dark-day;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-on-dark-day;
+    }
+
+    // stylelint-disable-next-line selector-max-compound-selectors
+    span {
+      background-image: linear-gradient(
+        tokens.$bpk-text-on-dark-day,
+        tokens.$bpk-text-on-dark-day
+      );
+    }
+  }
+}

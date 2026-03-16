@@ -130,7 +130,7 @@ let instances = 0;
 
 class Autosuggest extends Component<
   Record<string, never>,
-  { value: string; suggestions: Office[] }
+  { suggestions: Office[] }
 > {
   constructor(props: Record<string, never>) {
     super(props);
@@ -138,21 +138,11 @@ class Autosuggest extends Component<
     instances += instances;
 
     this.state = {
-      value: '',
       suggestions: [],
     };
   }
 
-  onChange = (
-    _event: ChangeEvent<HTMLInputElement>,
-    { newValue }: { newValue: string },
-  ) => {
-    this.setState({
-      value: newValue,
-    });
-  };
-
-  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
+  onSuggestionsFetchRequested = (value: string) => {
     this.setState({
       suggestions: getSuggestions(value),
     });
@@ -165,14 +155,11 @@ class Autosuggest extends Component<
   };
 
   render() {
-    const { suggestions, value } = this.state;
+    const { suggestions } = this.state;
 
     const inputProps = {
-      id: 'carhire-search-controls-location-pick-up',
       name: 'my_autosuggest',
-      value,
       placeholder: 'Enter a destination name',
-      onChange: this.onChange,
     };
 
     return (
@@ -183,6 +170,15 @@ class Autosuggest extends Component<
         description="The final price will be adjusted based on your selection"
       >
         <BpkAutosuggest
+          id="carhire-search-controls-location-pick-up"
+          ariaLabels={{
+            label: 'Destination',
+            resultsList: 'Destination suggestions',
+            clearButton: 'Clear input',
+          }}
+          getA11yResultsMessage={(count: number) =>
+            `${count} result${count === 1 ? '' : 's'}`
+          }
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
