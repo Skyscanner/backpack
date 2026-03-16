@@ -484,9 +484,9 @@ const AnchorTagsExample = () => (
     <SecondaryExample href="#" />
     <SecondaryOnDarkExample href="#" />
     <DestructiveExample href="#" />
+    <FeaturedExample href="#" />
     <LinkExample />
     <LinkOnDarkExample />
-    <FeaturedExample href="#" />
   </>
 );
 
