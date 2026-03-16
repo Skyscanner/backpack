@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import BpkDrawer from '@skyscanner/backpack-web/bpk-component-drawer';
-import { BpkButton } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 import { useState } from 'react';
 
 function App() {
