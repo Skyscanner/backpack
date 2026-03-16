@@ -12,8 +12,13 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkSelectableChip, {
   BpkDismissibleChip,
   BpkDropdownChip,
-  BpkIconChip
+  BpkIconChip,
   CHIP_TYPES,
+  themeAttributes,
+  chipBorderRadiusThemeAttributes,
+  chipDefaultThemeAttributes,
+  chipOnDarkThemeAttributes,
+  chipOnImageThemeAttributes,
 } from '@skyscanner/backpack-web/bpk-component-chip';
 import BeachIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/beach';
 

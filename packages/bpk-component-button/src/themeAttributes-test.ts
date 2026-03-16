@@ -25,6 +25,7 @@ import {
   secondaryOnDarkThemeAttributes,
   destructiveThemeAttributes,
   featuredThemeAttributes,
+  linkThemeAttributes,
 } from './themeAttributes';
 
 describe('themeAttributes', () => {
@@ -117,5 +118,9 @@ describe('themeAttributes', () => {
       'buttonFeaturedHoverBackgroundColor',
       'buttonFeaturedActiveBackgroundColor',
     ]);
+  });
+
+  it('should export the correct link theme attributes', () => {
+    expect(linkThemeAttributes).toEqual(['buttonLinkLoadingColor']);
   });
 });

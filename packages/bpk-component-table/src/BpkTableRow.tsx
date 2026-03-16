@@ -16,20 +16,13 @@
  * limitations under the License.
  */
 
-import BpkSegmentedControl, {
-  useSegmentedControlPanels,
-  type Props as BpkSegmentControlProps,
-  type TabPanelProps,
-} from './src/BpkSegmentedControl';
+import type { ReactNode, HTMLAttributes } from 'react';
 
-export type { BpkSegmentControlProps, TabPanelProps };
-export { useSegmentedControlPanels };
-export default BpkSegmentedControl;
+export interface BpkTableRowProps extends HTMLAttributes<HTMLTableRowElement> {
+  /** The content of the table */
+  children: ReactNode;
+}
 
-export { default as BpkSegmentedControlV2, SEGMENT_TYPES_V2 } from './src/BpkSegmentedControlV2/BpkSegmentedControlV2';
-export type {
-  BpkSegmentedControlV2RootProps,
-  BpkSegmentedControlV2ItemProps,
-  BpkSegmentedControlV2ItemTextProps,
-  SegmentTypesV2,
-} from './src/BpkSegmentedControlV2/common-types';
+const BpkTableRow = (props: BpkTableRowProps) => <tr {...props} />;
+
+export default BpkTableRow;

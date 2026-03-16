@@ -20,6 +20,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkButton from './BpkButton';
+import { BUTTON_TYPES } from './common-types';
 
 describe('BpkButton accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues when used as a button', async () => {
@@ -32,5 +33,24 @@ describe('BpkButton accessibility tests', () => {
     const { container } = render(<BpkButton href="#">My button</BpkButton>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkButton loading state accessibility tests', () => {
+  Object.values(BUTTON_TYPES).forEach((buttonType) => {
+    it(`should not have programmatically-detectable accessibility issues when loading=true with type="${buttonType}"`, async () => {
+      const { container } = render(
+        <BpkButton type={buttonType} loading>
+          Loading
+        </BpkButton>,
+      );
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+  });
+
+  it('should have aria-busy="true" when loading', () => {
+    const { container } = render(<BpkButton loading>Loading</BpkButton>);
+    expect(container.firstElementChild).toHaveAttribute('aria-busy', 'true');
   });
 });

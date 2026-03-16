@@ -62,10 +62,11 @@ figma.connect(
       }),
       iconOnly: figma.enum('Icon', {
         "Icon only": true,
-      })
+      }),
+      loading: figma.boolean('Loading'),
     },
-    example: ({ iconOnly, isDisabled, label, leftContent, rightContent, size, style }) => (
-        <BpkButton type={style} size={size} disabled={isDisabled} iconOnly={iconOnly}>
+    example: ({ iconOnly, isDisabled, label, leftContent, loading, rightContent, size, style }) => (
+        <BpkButton type={style} size={size} disabled={isDisabled} iconOnly={iconOnly} loading={loading}>
           {leftContent}
           {label}
           {rightContent}
