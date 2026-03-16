@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkButtonV2, BUTTON_TYPES } from '../../packages/bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import {
   BpkBox,
   BpkSpacing,
@@ -78,10 +78,10 @@ export const VerticalContentBlocksExample = () => (
 export const HorizontalButtonsExample = () => (
   <Wrapper>
     <BpkHStack gap={BpkSpacing.MD}>
-      <BpkButtonV2 type={BUTTON_TYPES.primary}>Primary</BpkButtonV2>
-      <BpkButtonV2 type={BUTTON_TYPES.secondary}>Secondary</BpkButtonV2>
-      <BpkButtonV2 type={BUTTON_TYPES.link}>Link</BpkButtonV2>
-      <BpkButtonV2 type={BUTTON_TYPES.destructive}>Delete</BpkButtonV2>
+      <BpkButton type={BUTTON_TYPES.primary}>Primary</BpkButton>
+      <BpkButton type={BUTTON_TYPES.secondary}>Secondary</BpkButton>
+      <BpkButton type={BUTTON_TYPES.link}>Link</BpkButton>
+      <BpkButton type={BUTTON_TYPES.destructive}>Delete</BpkButton>
     </BpkHStack>
   </Wrapper>
 );
@@ -111,8 +111,8 @@ export const NestedStackExample = () => (
             description="Vertical stack with small gap and justify center"
           />
           <BpkHStack gap={BpkSpacing.SM}>
-            <BpkButtonV2 type={BUTTON_TYPES.secondary}>Horizontal stack with small gap</BpkButtonV2>
-            <BpkButtonV2 type={BUTTON_TYPES.secondary}>Horizontal stack with small gap</BpkButtonV2>
+            <BpkButton type={BUTTON_TYPES.secondary}>Horizontal stack with small gap</BpkButton>
+            <BpkButton type={BUTTON_TYPES.secondary}>Horizontal stack with small gap</BpkButton>
           </BpkHStack>
         </BpkVStack>
       </BpkHStack>

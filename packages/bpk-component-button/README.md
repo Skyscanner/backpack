@@ -70,15 +70,6 @@ import BpkButton, { linkThemeAttributes } from '@skyscanner/backpack-web/bpk-com
 ### Button Link
 The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
 
-## BpkButton (formerly BpkButtonV2)
-
-The legacy `BpkButton` component (V1) and all its variants (`BpkButtonPrimary`, `BpkButtonSecondary`, etc.) have been removed as of Backpack v41. The component previously known as `BpkButtonV2` is now simply `BpkButton`.
-
-Please import `BpkButton` directly:
-
-```js
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-```
 
 ## Props
 

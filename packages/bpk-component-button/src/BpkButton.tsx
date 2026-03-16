@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../../bpk-component-spinner';
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
@@ -38,8 +38,7 @@ const getSpinnerType = (buttonType: ButtonType) => {
   }
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const BpkButtonV2 = ({
+const BpkButton = ({
   blank = false,
   children,
   className = null,
@@ -157,3 +156,5 @@ export const BpkButtonV2 = ({
     </button>
   );
 };
+
+export default BpkButton;

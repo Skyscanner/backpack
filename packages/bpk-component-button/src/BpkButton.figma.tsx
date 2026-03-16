@@ -18,10 +18,10 @@
 
 import figma from '@figma/code-connect'
 
-import LightningIcon from '../../../bpk-component-icon/sm/lightning';
-import LongArrowRightIcon  from '../../../bpk-component-icon/sm/long-arrow-right';
+import LightningIcon from '../../bpk-component-icon/sm/lightning';
+import LongArrowRightIcon  from '../../bpk-component-icon/sm/long-arrow-right';
 
-import { BpkButtonV2 as BpkButton  } from "./BpkButton"
+import BpkButton from "./BpkButton"
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
 figma.connect(
