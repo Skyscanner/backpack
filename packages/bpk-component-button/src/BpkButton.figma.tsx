@@ -18,16 +18,11 @@
 
 import figma from '@figma/code-connect'
 
-import { withButtonAlignment } from "../../bpk-component-icon"
 import LightningIcon from '../../bpk-component-icon/sm/lightning';
 import LongArrowRightIcon  from '../../bpk-component-icon/sm/long-arrow-right';
 
 import BpkButton from "./BpkButton"
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
-
-
-const AlignedArrowIcon = withButtonAlignment(LongArrowRightIcon);
-const AlignedLightningIcon = withButtonAlignment(LightningIcon);
 
 figma.connect(
   BpkButton,
@@ -53,23 +48,42 @@ figma.connect(
       isDisabled: figma.enum('State', {
         "Disabled": true,
       }),
-      leftContent: figma.enum('Icon', {
-        "Left": <AlignedLightningIcon />
+      leadingIcon: figma.boolean('Leading icon', {
+        true: <LightningIcon />,
+        false: undefined,
       }),
       label: figma.textContent("Label"),
-      rightContent: figma.enum('Icon', {
-        "Right": <AlignedArrowIcon />
+      trailingIcon: figma.boolean('Trailing icon', {
+        true: <LongArrowRightIcon />,
+        false: undefined,
       }),
       iconOnly: figma.enum('Icon', {
         "Icon only": true,
       }),
       loading: figma.boolean('Loading'),
     },
-    example: ({ iconOnly, isDisabled, label, leftContent, loading, rightContent, size, style }) => (
-        <BpkButton type={style} size={size} disabled={isDisabled} iconOnly={iconOnly} loading={loading}>
-          {leftContent}
+    example: ({ iconOnly, isDisabled, label, leadingIcon, loading, size, style, trailingIcon }) =>
+      iconOnly ? (
+        <BpkButton
+          type={style}
+          size={size}
+          disabled={isDisabled}
+          iconOnly
+          loading={loading}
+          aria-label={label}
+        >
+          <LightningIcon />
+        </BpkButton>
+      ) : (
+        <BpkButton
+          type={style}
+          size={size}
+          disabled={isDisabled}
+          leadingIcon={leadingIcon}
+          trailingIcon={trailingIcon}
+          loading={loading}
+        >
           {label}
-          {rightContent}
         </BpkButton>
       )
   },
