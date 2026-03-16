@@ -94,6 +94,10 @@ Use `BpkThemeProvider` to customise fill colour and border-radius. Each property
 
 ```js
 import {
+  statusDangerSpotDay,
+  borderRadiusFull,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
   BpkCheckboxV2 as BpkCheckbox,
   checkboxSelectedColorThemeAttributes,
   checkboxBorderRadiusThemeAttributes,
@@ -102,7 +106,7 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
 
 // Theme colour only
 <BpkThemeProvider
-  theme={{ checkboxSelectedColor: '#8B1A1A' }}
+  theme={{ checkboxSelectedColor: statusDangerSpotDay }}
   themeAttributes={checkboxSelectedColorThemeAttributes}
 >
   <BpkCheckbox.Root defaultChecked>…</BpkCheckbox.Root>
@@ -110,12 +114,40 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
 
 // Theme colour + border-radius together
 <BpkThemeProvider
-  theme={{ checkboxSelectedColor: '#8B1A1A', checkboxBorderRadius: '50%' }}
+  theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
   themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
 >
   <BpkCheckbox.Root defaultChecked>…</BpkCheckbox.Root>
 </BpkThemeProvider>
 ```
+
+## Migrating from V1
+
+> ⚠️ **Breaking change: `valid` → `invalid`**
+>
+> V1 used `valid={false}` to indicate an invalid state. V2 **inverts this** — use `invalid` instead.
+>
+> ```jsx
+> // V1
+> <BpkCheckbox valid={false} label="Accept terms" />
+>
+> // V2 — invert the logic
+> <BpkCheckbox.Root invalid>
+>   <BpkCheckbox.Control><BpkCheckbox.Indicator /></BpkCheckbox.Control>
+>   <BpkCheckbox.Label>Accept terms</BpkCheckbox.Label>
+>   <BpkCheckbox.HiddenInput />
+> </BpkCheckbox.Root>
+> ```
+>
+> If you were reading `valid` from state, negate it:
+>
+> ```jsx
+> // V1
+> <BpkCheckbox valid={isValid} label="Accept terms" />
+>
+> // V2
+> <BpkCheckbox.Root invalid={!isValid}>…</BpkCheckbox.Root>
+> ```
 
 ## Slots
 

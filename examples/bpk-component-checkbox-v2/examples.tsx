@@ -17,6 +17,11 @@
  */
 
 import {
+  borderRadiusFull,
+  statusDangerSpotDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import {
   BpkCheckboxV2 as BpkCheckbox,
   checkboxBorderRadiusThemeAttributes,
   checkboxSelectedColorThemeAttributes,
@@ -132,7 +137,7 @@ export const InvalidExample = () => (
 export const ThemedExample = () => (
   <BpkProvider>
     <BpkThemeProvider
-      theme={{ checkboxSelectedColor: '#8B1A1A', checkboxBorderRadius: '50%' }}
+      theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
       themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
     >
       <BpkFlex gap={BpkSpacing.Base} direction="column">
