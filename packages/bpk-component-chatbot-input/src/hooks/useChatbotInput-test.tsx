@@ -44,6 +44,7 @@ describe('useChatbotInput', () => {
     onInputBlur: jest.fn(),
     onInputClick: mockOnInputClick,
     onKeyDown: jest.fn(),
+    placeholder: '',
     ...overrides,
   });
 
@@ -115,13 +116,20 @@ describe('useChatbotInput', () => {
   });
 
   describe('common behavior', () => {
-    it('should disable when isLoading', () => {
-      const { result } = renderUseChatbotInput({
-        isLoading: true,
+    it('should disable when isSending or isPolling', () => {
+      const { result: sendingResult } = renderUseChatbotInput({
+        isSending: true,
       });
 
-      expect(result.current.isDisabled).toBe(true);
-      expect(result.current.sendButtonDisabled).toBe(true);
+      expect(sendingResult.current.isDisabled).toBe(true);
+      expect(sendingResult.current.sendButtonDisabled).toBe(true);
+
+      const { result: pollingResult } = renderUseChatbotInput({
+        isPolling: true,
+      });
+
+      expect(pollingResult.current.isDisabled).toBe(true);
+      expect(pollingResult.current.sendButtonDisabled).toBe(true);
     });
 
     it('should handle over limit state', () => {
@@ -254,7 +262,7 @@ describe('useChatbotInput', () => {
     it('should return correct inputProps', () => {
       const { result } = renderUseChatbotInput({
         inputValue: 'Hello',
-        inputPlaceholder: 'Enter message',
+        placeholder: 'Enter message',
       });
 
       expect(result.current.inputProps.value).toBe('Hello');
@@ -289,6 +297,7 @@ describe('useChatbotInput', () => {
           onInputChange: jest.fn(),
           onInputFocus: jest.fn(),
           onInputBlur: jest.fn(),
+          placeholder: '',
         }),
       );
 

@@ -23,7 +23,7 @@ import { CHATBOT_INPUT_TYPES } from './constants';
 
 const defaultProps = {
   inputValue: '',
-  inputPlaceholder: 'Ask away',
+  placeholder: 'Ask away',
   loadingAriaLabel: 'Loading',
   sendAriaLabel: 'Send',
   onInputChange: jest.fn(),
@@ -187,9 +187,10 @@ describe('BpkChatbotInput', () => {
       render(<BpkChatbotInput {...defaultProps} isSending />);
 
       expect(screen.getByRole('textbox')).toBeDisabled();
+      expect(screen.getByTestId('bpk-chatbot-input-send')).toBeInTheDocument();
       expect(
-        screen.getByTestId('bpk-chatbot-input-loading'),
-      ).toBeInTheDocument();
+        screen.queryByTestId('bpk-chatbot-input-loading'),
+      ).not.toBeInTheDocument();
     });
 
     it('renders with composer type correctly', () => {

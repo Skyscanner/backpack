@@ -31,7 +31,7 @@ interface UseChatbotInputOptions {
   onInputFocus: () => void;
   onInputBlur: () => void;
   onSubmit: () => void | Promise<void>;
-  inputPlaceholder?: string;
+  placeholder: string;
   isSending?: boolean;
   isPolling?: boolean;
   inputType?: string;
@@ -53,7 +53,6 @@ interface UseChatbotInputReturn {
 }
 
 const useChatbotInput = ({
-  inputPlaceholder = '',
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,
   inputValue,
   isPolling = false,
@@ -65,6 +64,7 @@ const useChatbotInput = ({
   onInputFocus,
   onKeyDown = () => {},
   onSubmit,
+  placeholder,
 }: UseChatbotInputOptions): UseChatbotInputReturn => {
   const isDefault = inputType === CHATBOT_INPUT_TYPES.DEFAULT;
 
@@ -115,7 +115,7 @@ const useChatbotInput = ({
 
   const inputProps = {
     value: inputValue,
-    placeholder: inputPlaceholder,
+    placeholder,
     disabled: isDisabled,
     maxLength: maxCharacters,
     isOverLimit,

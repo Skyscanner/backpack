@@ -35,7 +35,6 @@ const AlignedArrowUpIcon = withButtonAlignment(ArrowUpIcon);
 
 export interface SendButtonProps {
   ariaLabel: string;
-  loadingAriaLabel?: string;
   isDefault?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
@@ -47,7 +46,6 @@ const SendButton = ({
   disabled = false,
   isDefault = true,
   isLoading = false,
-  loadingAriaLabel,
   onClick,
 }: SendButtonProps) => {
   const buttonType = isDefault
@@ -63,7 +61,7 @@ const SendButton = ({
       loading={isLoading}
       onClick={onClick}
       disabled={disabled}
-      aria-label={isLoading && loadingAriaLabel ? loadingAriaLabel : ariaLabel}
+      aria-label={ariaLabel}
       data-testid={isLoading ? 'bpk-chatbot-input-loading' : 'bpk-chatbot-input-send'}
     >
       <Icon />

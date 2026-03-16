@@ -18,7 +18,7 @@ export default () => (
     inputValue=""
     loadingAriaLabel="Loading"
     sendAriaLabel="Send"
-    inputPlaceholder="Ask away"
+    placeholder="Ask away"
     onInputChange={(value) => console.log(value)}
     onInputFocus={() => {}}
     onInputBlur={() => {}}
@@ -38,7 +38,7 @@ export default () => (
 | onInputFocus     | func                               | true     | -                                |
 | onInputBlur      | func                               | true     | -                                |
 | onSubmit         | func                               | true     | -                                |
-| inputPlaceholder | string                             | false    | ''                               |
+| placeholder      | string                             | true     | -                                |
 | isSending        | bool                               | false    | false                            |
 | isPolling        | bool                               | false    | false                            |
 | inputType        | oneOf(CHATBOT_INPUT_TYPES)         | false    | CHATBOT_INPUT_TYPES.DEFAULT      |

@@ -45,7 +45,7 @@ const ChatbotInputWithState = ({
       inputValue={inputValue}
       loadingAriaLabel={LOADING_ARIA_LABEL}
       sendAriaLabel={SEND_ARIA_LABEL}
-      inputPlaceholder={PLACEHOLDER}
+      placeholder={PLACEHOLDER}
       onInputChange={setInputValue}
       onInputFocus={() => {}}
       onInputBlur={() => {}}

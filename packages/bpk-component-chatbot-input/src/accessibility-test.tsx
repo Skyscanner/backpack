@@ -24,7 +24,7 @@ import { CHATBOT_INPUT_TYPES } from './constants';
 
 const defaultProps = {
   inputValue: '',
-  inputPlaceholder: 'Ask away',
+  placeholder: 'Ask away',
   loadingAriaLabel: 'Loading',
   sendAriaLabel: 'Send',
   onInputChange: jest.fn(),

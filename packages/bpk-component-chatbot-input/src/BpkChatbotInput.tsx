@@ -42,7 +42,7 @@ export type BpkChatbotInputProps = {
   onInputFocus: () => void;
   onInputBlur: () => void;
   onSubmit: () => void | Promise<void>;
-  inputPlaceholder?: string;
+  placeholder: string;
   isSending?: boolean;
   isPolling?: boolean;
   inputType?: ChatbotInputType;
@@ -52,7 +52,6 @@ export type BpkChatbotInputProps = {
 };
 
 const BpkChatbotInput = ({
-  inputPlaceholder = '',
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,
   inputValue,
   isPolling = false,
@@ -65,6 +64,7 @@ const BpkChatbotInput = ({
   onInputFocus,
   onKeyDown = () => {},
   onSubmit,
+  placeholder,
   sendAriaLabel,
 }: BpkChatbotInputProps) => {
   const {
@@ -76,7 +76,7 @@ const BpkChatbotInput = ({
     isOverLimit,
     sendButtonDisabled,
   } = useChatbotInput({
-    inputPlaceholder,
+    placeholder,
     inputType,
     inputValue,
     isPolling,
@@ -131,7 +131,7 @@ const BpkChatbotInput = ({
         />
       )}
       <SendButton
-        inputType={inputType}
+        isDefault={isDefault}
         disabled={sendButtonDisabled}
         onClick={handleSubmit}
         ariaLabel={isDefault && isPolling ? loadingAriaLabel : sendAriaLabel}
