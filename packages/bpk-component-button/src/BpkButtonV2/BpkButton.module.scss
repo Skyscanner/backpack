@@ -19,7 +19,6 @@
 @use '../../../bpk-mixins/buttons';
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
-@use '../../../bpk-mixins/utils';
 
 .bpk-button {
   @include buttons.bpk-button;
