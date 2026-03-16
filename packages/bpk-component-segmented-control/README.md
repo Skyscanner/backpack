@@ -115,3 +115,144 @@ This is especially important when:
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website]( https://www.skyscanner.design/latest/components/section-list/web-tP8t6vq8).
+
+---
+
+## BpkSegmentedControlV2 (experimental)
+
+A composable, accessible segmented control backed by [Ark-UI SegmentGroup](https://ark-ui.com/react/docs/components/segment-group). Each segment is composed from slot components — `Item`, `ItemText`, `ItemControl`, and `ItemHiddenInput` — giving full control over content structure. Theming is driven by CSS custom properties so VDL 2.0 adopters can override tokens at any wrapper level.
+
+### Basic usage
+
+```tsx
+import { useState } from 'react';
+import {
+  BpkSegmentedControlV2,
+  SEGMENT_TYPES_V2,
+} from '@skyscanner/backpack-web/bpk-component-segmented-control';
+
+const SortControl = () => {
+  const [selected, setSelected] = useState('price');
+  return (
+    <BpkSegmentedControlV2.Root
+      label="Sort results by"
+      value={selected}
+      onChange={setSelected}
+      type={SEGMENT_TYPES_V2.CanvasDefault}
+    >
+      <BpkSegmentedControlV2.Indicator />
+      <BpkSegmentedControlV2.Item value="price">
+        <BpkSegmentedControlV2.ItemText>Price</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="rating">
+        <BpkSegmentedControlV2.ItemText>Rating</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
+      </BpkSegmentedControlV2.Item>
+      <BpkSegmentedControlV2.Item value="duration">
+        <BpkSegmentedControlV2.ItemText>Duration</BpkSegmentedControlV2.ItemText>
+        <BpkSegmentedControlV2.ItemControl />
+        <BpkSegmentedControlV2.ItemHiddenInput />
+      </BpkSegmentedControlV2.Item>
+    </BpkSegmentedControlV2.Root>
+  );
+};
+```
+
+### Complex content
+
+`ItemText` accepts any React children — icons, multi-line layouts, or custom components:
+
+```tsx
+<BpkSegmentedControlV2.Root label="Sort by" defaultValue="best">
+  <BpkSegmentedControlV2.Indicator />
+  <BpkSegmentedControlV2.Item value="best">
+    <BpkSegmentedControlV2.ItemText>
+      <div>Best</div>
+      <div>£84</div>
+      <div>2h average</div>
+    </BpkSegmentedControlV2.ItemText>
+    <BpkSegmentedControlV2.ItemControl />
+    <BpkSegmentedControlV2.ItemHiddenInput />
+  </BpkSegmentedControlV2.Item>
+</BpkSegmentedControlV2.Root>
+```
+
+### Icon-only items
+
+Wrap icon-only items with `BpkVisuallyHidden` to satisfy WCAG 4.1.2:
+
+```tsx
+import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
+import GridLayoutIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/grid-layout';
+import ListIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/list';
+
+<BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
+  <BpkSegmentedControlV2.Indicator />
+  <BpkSegmentedControlV2.Item value="grid">
+    <BpkSegmentedControlV2.ItemText>
+      <GridLayoutIcon />
+      <BpkVisuallyHidden>Grid view</BpkVisuallyHidden>
+    </BpkSegmentedControlV2.ItemText>
+    <BpkSegmentedControlV2.ItemControl />
+    <BpkSegmentedControlV2.ItemHiddenInput />
+  </BpkSegmentedControlV2.Item>
+  <BpkSegmentedControlV2.Item value="list">
+    <BpkSegmentedControlV2.ItemText>
+      <ListIcon />
+      <BpkVisuallyHidden>List view</BpkVisuallyHidden>
+    </BpkSegmentedControlV2.ItemText>
+    <BpkSegmentedControlV2.ItemControl />
+    <BpkSegmentedControlV2.ItemHiddenInput />
+  </BpkSegmentedControlV2.Item>
+</BpkSegmentedControlV2.Root>
+```
+
+### Migrating from V1
+
+| V1 | V2 equivalent |
+|---|---|
+| `buttonContents={['Price', 'Rating']}` | Two `<BpkSegmentedControlV2.Item>` children with `ItemText` |
+| `selectedIndex={0}` | `value="price"` |
+| `onItemClick={(i) => fn(i)}` | `onChange={(v) => fn(v)}` |
+| `type={SEGMENT_TYPES.CanvasDefault}` | `type={SEGMENT_TYPES_V2.CanvasDefault}` |
+
+### BpkSegmentedControlV2.Root props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `children` | `ReactNode` | — | `BpkSegmentedControlV2.Indicator` (recommended first) followed by one or more `BpkSegmentedControlV2.Item` elements |
+| `label` | `string` | — | Accessible group label (required for WCAG 4.1.2) |
+| `value` | `string` | — | Controlled selected value |
+| `defaultValue` | `string` | — | Uncontrolled initial value |
+| `onChange` | `(value: string) => void` | — | Called when selection changes |
+| `type` | `SegmentTypesV2` | `'canvas-default'` | Visual style variant |
+| `shadow` | `boolean` | `false` | Adds a box shadow |
+| `activationMode` | `'automatic' \| 'manual'` | `'automatic'` | When to commit selection on keyboard navigation |
+
+### BpkSegmentedControlV2.Item props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `value` | `string` | — | Unique identifier for this segment |
+| `children` | `ReactNode` | — | Slot content — typically `ItemText` + `ItemControl` + `ItemHiddenInput` |
+
+### BpkSegmentedControlV2.ItemText props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `children` | `ReactNode` | — | Visible content — text, icons, or a combination |
+
+### BpkSegmentedControlV2.ItemControl
+
+No props. Renders the visual selected-state indicator for the segment.
+
+### BpkSegmentedControlV2.ItemHiddenInput
+
+No props. Renders the visually-hidden `<input type="radio">` required for keyboard interaction and form submission.
+
+### BpkSegmentedControlV2.Indicator
+
+No props. Renders the animated sliding highlight that tracks the selected segment. Place it as the **first child** of `BpkSegmentedControlV2.Root`, before any `Item` elements.
