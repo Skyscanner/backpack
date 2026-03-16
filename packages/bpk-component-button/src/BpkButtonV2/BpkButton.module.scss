@@ -24,7 +24,6 @@
 .bpk-button {
   @include buttons.bpk-button;
 
-  /* stylelint-disable selector-max-compound-selectors */
   @media (hover: hover) {
     &--link:hover:not(:active):not(:disabled) &--link-underlined,
     &--link-on-dark:hover:not(:active):not(:disabled) &--link-underlined {
@@ -88,7 +87,6 @@
       @include typography.bpk-link--implicit;
     }
   }
-  /* stylelint-enable selector-max-compound-selectors */
 
   &--link-underlined {
     @include buttons.bpk-button--link-underlined;
