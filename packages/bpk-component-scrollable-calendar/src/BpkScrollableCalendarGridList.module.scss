@@ -28,13 +28,4 @@ $calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
   overflow-x: hidden;
   box-sizing: border-box;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-
-  &__font-sentinel {
-    position: absolute;
-    visibility: hidden;
-    width: 1rem;
-    height: 1rem;
-    overflow: hidden;
-    pointer-events: none;
-  }
 }
