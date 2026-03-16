@@ -32,6 +32,13 @@ const LOADING_ARIA_LABEL = 'Loading';
 const SEND_ARIA_LABEL = 'Send';
 const PLACEHOLDER = 'Ask away';
 
+const sampleSentence =
+  'These are sample sentences to test the maximum character limit.';
+const targetLength = 501;
+const longText = sampleSentence
+  .repeat(Math.ceil(targetLength / sampleSentence.length))
+  .slice(0, targetLength);
+
 const ChatbotInputWithState = ({
   initialValue = '',
   ...props
@@ -80,6 +87,16 @@ export const DefaultSendingExample = () => (
   </div>
 );
 
+export const DefaultPollingOver500Example = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.DEFAULT}
+      isPolling
+      initialValue={longText}
+    />
+  </div>
+);
+
 export const ComposerExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
@@ -91,6 +108,15 @@ export const ComposerWithValueExample = () => (
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
       initialValue="I'd like to hire a car in Edinburgh for the weekend"
+    />
+  </div>
+);
+
+export const ComposerOver500Example = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+      initialValue={longText}
     />
   </div>
 );

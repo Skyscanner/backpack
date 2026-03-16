@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import {
-  BpkButtonV2,
+import BpkButton, {
   BUTTON_TYPES,
   SIZE_TYPES,
 } from '../../../bpk-component-button';
@@ -48,13 +47,11 @@ const SendButton = ({
   isLoading = false,
   onClick,
 }: SendButtonProps) => {
-  const buttonType = isDefault
-    ? BUTTON_TYPES.featured
-    : BUTTON_TYPES.primary;
+  const buttonType = isDefault ? BUTTON_TYPES.featured : BUTTON_TYPES.primary;
   const Icon = isDefault ? AlignedArrowRightIcon : AlignedArrowUpIcon;
 
   return (
-    <BpkButtonV2
+    <BpkButton
       type={buttonType}
       size={SIZE_TYPES.small}
       iconOnly
@@ -62,10 +59,12 @@ const SendButton = ({
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
-      data-testid={isLoading ? 'bpk-chatbot-input-loading' : 'bpk-chatbot-input-send'}
+      data-testid={
+        isLoading ? 'bpk-chatbot-input-loading' : 'bpk-chatbot-input-send'
+      }
     >
       <Icon />
-    </BpkButtonV2>
+    </BpkButton>
   );
 };
 

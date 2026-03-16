@@ -19,11 +19,13 @@
 import BpkChatbotInput from '../../packages/bpk-component-chatbot-input/src/BpkChatbotInput';
 
 import {
+  ComposerExample,
+  ComposerOver500Example,
+  ComposerWithValueExample,
   DefaultExample,
   DefaultPollingExample,
+  DefaultPollingOver500Example,
   DefaultSendingExample,
-  ComposerExample,
-  ComposerWithValueExample,
 } from './examples';
 
 export default {
@@ -36,6 +38,8 @@ export const DefaultPolling = DefaultPollingExample;
 export const DefaultSending = DefaultSendingExample;
 export const Composer = ComposerExample;
 export const ComposerWithValue = ComposerWithValueExample;
+export const DefaultPollingOver500 = DefaultPollingOver500Example;
+export const ComposerOver500 = ComposerOver500Example;
 
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = {
