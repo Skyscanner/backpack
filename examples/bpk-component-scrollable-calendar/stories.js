@@ -111,7 +111,7 @@ VisualTestRangeWithZoom.args = {
   zoomEnabled: true
 };
 
-// Font-scale height debug: 4 cases to isolate browser font-scale layout bug.
+// Font-scale height debug: 6 cases to isolate browser font-scale layout bug.
 // March 2020 (weekStartsOn=1) = 6 weeks; April 2020 = 5 weeks.
 // Scaled font = 11.2px (16px × 70%), simulating "Webpage text size: 70%" in Samsung Browser.
 export const FiveWeekDefaultFont = FiveWeekDefaultFontExample;

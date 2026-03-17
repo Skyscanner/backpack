@@ -369,7 +369,7 @@ const PastCalendarExample = () => (
 );
 
 // ─── Font-scale height debug stories ────────────────────────────────────────
-// These four cases help diagnose the Samsung Browser font-scale layout bug.
+// These six cases help diagnose the Samsung Browser font-scale layout bug.
 //
 // March 2020 (weekStartsOn=1): firstDayOffset=6, 31 days → 6 weeks
 // April 2020 (weekStartsOn=1): firstDayOffset=2, 30 days → 5 weeks
@@ -412,11 +412,7 @@ GridListFixedHeight.propTypes = {
   maxDate: PropTypes.instanceOf(Date).isRequired,
 };
 
-const FiveWeekDefaultFontExample = () => (
-  <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />
-);
-
-const FiveWeekScaledFontExample = () => {
+const useMockRootFontSize = (fontSize) => {
   useEffect(() => {
     const orig = window.getComputedStyle;
     window.getComputedStyle = (el, pseudo) => {
@@ -432,13 +428,21 @@ const FiveWeekScaledFontExample = () => {
       }
       return style;
     };
-    document.documentElement.style.fontSize = SCALED_FONT_SIZE;
+    document.documentElement.style.fontSize = fontSize;
 
     return () => {
       window.getComputedStyle = orig;
       document.documentElement.style.fontSize = '';
     };
-  }, []);
+  }, [fontSize]);
+};
+
+const FiveWeekDefaultFontExample = () => (
+  <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />
+);
+
+const FiveWeekScaledFontExample = () => {
+  useMockRootFontSize(SCALED_FONT_SIZE);
   return <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />;
 };
 
@@ -447,83 +451,20 @@ const SixWeekDefaultFontExample = () => (
 );
 
 const FiveWeekLargeFontExample = () => {
-  useEffect(() => {
-    const orig = window.getComputedStyle;
-    window.getComputedStyle = (el, pseudo) => {
-      const style = orig(el, pseudo);
-      if (el === document.documentElement) {
-        return new Proxy(style, {
-          get(target, prop) {
-            if (prop === 'fontSize') return '16px';
-            const val = target[prop];
-            return typeof val === 'function' ? val.bind(target) : val;
-          },
-        });
-      }
-      return style;
-    };
-    document.documentElement.style.fontSize = LARGE_FONT_SIZE;
-
-    return () => {
-      window.getComputedStyle = orig;
-      document.documentElement.style.fontSize = '';
-    };
-  }, []);
+  useMockRootFontSize(LARGE_FONT_SIZE);
   return <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />;
 };
 
 const SixWeekLargeFontExample = () => {
-  useEffect(() => {
-    const orig = window.getComputedStyle;
-    window.getComputedStyle = (el, pseudo) => {
-      const style = orig(el, pseudo);
-      if (el === document.documentElement) {
-        return new Proxy(style, {
-          get(target, prop) {
-            if (prop === 'fontSize') return '16px';
-            const val = target[prop];
-            return typeof val === 'function' ? val.bind(target) : val;
-          },
-        });
-      }
-      return style;
-    };
-    document.documentElement.style.fontSize = LARGE_FONT_SIZE;
-
-    return () => {
-      window.getComputedStyle = orig;
-      document.documentElement.style.fontSize = '';
-    };
-  }, []);
+  useMockRootFontSize(LARGE_FONT_SIZE);
   return <GridListFixedHeight minDate={SIX_WEEK_MONTH_START} maxDate={SIX_WEEK_MONTH_END} />;
 };
 
 const SixWeekScaledFontExample = () => {
-  // Simulate Samsung Browser: render at 24px but keep getComputedStyle returning 16px.
+  // Simulate Samsung Browser: render at SCALED_FONT_SIZE but keep getComputedStyle returning 16px.
   // This is the actual mechanism of the bug — the browser's font scaling bypasses
-  // getComputedStyle, so rootFontSize is stale while CSS renders 1rem as 24px.
-  useEffect(() => {
-    const orig = window.getComputedStyle;
-    window.getComputedStyle = (el, pseudo) => {
-      const style = orig(el, pseudo);
-      if (el === document.documentElement) {
-        return new Proxy(style, {
-          get(target, prop) {
-            if (prop === 'fontSize') return '16px'; // lie: pretend font is still 16px
-            const val = target[prop];
-            return typeof val === 'function' ? val.bind(target) : val;
-          },
-        });
-      }
-      return style;
-    };
-    document.documentElement.style.fontSize = SCALED_FONT_SIZE; // actually render at 11.2px
-
-    return () => {
-      window.getComputedStyle = orig;
-      document.documentElement.style.fontSize = '';
-    };
-  }, []);
+  // getComputedStyle, so rootFontSize is stale while CSS renders 1rem as the scaled size.
+  useMockRootFontSize(SCALED_FONT_SIZE);
   return <GridListFixedHeight minDate={SIX_WEEK_MONTH_START} maxDate={SIX_WEEK_MONTH_END} />;
 };
 
