@@ -19,6 +19,7 @@
 import type { ReactNode } from 'react';
 
 import type StackOptionKeys from './BpkStack.constant';
+import type { BpkBackgroundColor } from './backgroundColors';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
 import type {
@@ -28,6 +29,12 @@ import type {
   GridItemProps,
   StackProps,
 } from '@chakra-ui/react';
+
+/**
+ * Union of all valid BpkBox background color values.
+ * Derived from the BpkBackgroundColor runtime object — stays in sync automatically.
+ */
+export type BpkBoxBackgroundColor = typeof BpkBackgroundColor[keyof typeof BpkBackgroundColor];
 
 
 /**
@@ -196,11 +203,26 @@ type BoxEventProps = Pick<BoxProps,
   'onClick' | 'onFocus' | 'onBlur'
 >;
 
-export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
+export interface BpkBoxProps
+  extends Omit<BpkCommonLayoutProps, 'backgroundColor'>,
+    BpkBoxSpecificProps {
   children?: ReactNode;
   onClick?: BoxEventProps['onClick'];
   onFocus?: BoxEventProps['onFocus'];
   onBlur?: BoxEventProps['onBlur'];
+  /**
+   * Background color for the box.
+   *
+   * Must be a value from the `BpkBackgroundColor` object exported by this package.
+   * Covers all Day-mode surface and status tokens from @skyscanner/bpk-foundations-web.
+   * Chakra resolves the token to var(--bpk-colors-surface-default), which switches
+   * automatically between light and dark when data-theme changes.
+   *
+   * @example
+   * import { BpkBackgroundColor } from '@skyscanner/backpack-web/bpk-component-layout';
+   * <BpkBox backgroundColor={BpkBackgroundColor.surfaceDefaultDay} />
+   */
+  backgroundColor?: BpkBoxBackgroundColor;
 }
 
 /**

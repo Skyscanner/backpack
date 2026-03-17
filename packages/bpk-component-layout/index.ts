@@ -38,8 +38,11 @@ export type {
   BpkFlexSpecificProps,
   BpkGridSpecificProps,
   BpkGridItemSpecificProps,
+  BpkBoxBackgroundColor,
 } from './src/types';
 export type { BpkStackSpecificProps } from './src/types';
+
+export { BpkBackgroundColor } from './src/backgroundColors';
 
 // Export token types and utilities
 export type {

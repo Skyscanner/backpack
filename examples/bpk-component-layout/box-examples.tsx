@@ -17,11 +17,15 @@
  */
 
 import {
+  BpkBackgroundColor,
   BpkBox,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
 
 import Wrapper from './layout-wrapper';
+
+import type { BpkBoxBackgroundColor } from '../../packages/bpk-component-layout';
+
 
 import STYLES from './examples.module.scss';
 
@@ -183,6 +187,84 @@ export const GridExample = () => (
   </Wrapper>
 );
 
+type ColorSwatch = { label: string; value: BpkBoxBackgroundColor };
+
+const SURFACE_SWATCHES: ColorSwatch[] = [
+  { label: 'surfaceDefaultDay', value: BpkBackgroundColor.surfaceDefaultDay },
+  { label: 'surfaceElevatedDay', value: BpkBackgroundColor.surfaceElevatedDay },
+  { label: 'surfaceLowContrastDay', value: BpkBackgroundColor.surfaceLowContrastDay },
+  { label: 'surfaceSubtleDay', value: BpkBackgroundColor.surfaceSubtleDay },
+  { label: 'surfaceTintDay', value: BpkBackgroundColor.surfaceTintDay },
+  { label: 'surfaceHighlightDay', value: BpkBackgroundColor.surfaceHighlightDay },
+  { label: 'surfaceHeroDay', value: BpkBackgroundColor.surfaceHeroDay },
+  { label: 'surfaceContrastDay', value: BpkBackgroundColor.surfaceContrastDay },
+];
+
+const STATUS_SWATCHES: ColorSwatch[] = [
+  { label: 'statusSuccessFillDay', value: BpkBackgroundColor.statusSuccessFillDay },
+  { label: 'statusSuccessSpotDay', value: BpkBackgroundColor.statusSuccessSpotDay },
+  { label: 'statusDangerFillDay', value: BpkBackgroundColor.statusDangerFillDay },
+  { label: 'statusDangerSpotDay', value: BpkBackgroundColor.statusDangerSpotDay },
+  { label: 'statusWarningFillDay', value: BpkBackgroundColor.statusWarningFillDay },
+  { label: 'statusWarningSpotDay', value: BpkBackgroundColor.statusWarningSpotDay },
+];
+
+/**
+ * Surface color swatches – shows all surfaceColors tokens available for backgroundColor.
+ *
+ * @returns {JSX.Element} A grid of surface color swatches.
+ */
+export const SurfaceBackgroundColorExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.MD}>
+      <BpkBox
+        display="grid"
+        gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+        gap={BpkSpacing.SM}
+      >
+        {SURFACE_SWATCHES.map(({ label, value }) => (
+          <BpkBox
+            key={label}
+            backgroundColor={value}
+            padding={BpkSpacing.MD}
+            minHeight="5rem"
+          >
+            <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
+          </BpkBox>
+        ))}
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Status color swatches – shows all statusColors tokens available for backgroundColor.
+ *
+ * @returns {JSX.Element} A grid of status color swatches.
+ */
+export const StatusBackgroundColorExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.MD}>
+      <BpkBox
+        display="grid"
+        gridTemplateColumns="repeat(3, minmax(0, 1fr))"
+        gap={BpkSpacing.SM}
+      >
+        {STATUS_SWATCHES.map(({ label, value }) => (
+          <BpkBox
+            key={label}
+            backgroundColor={value}
+            padding={BpkSpacing.MD}
+            minHeight="5rem"
+          >
+            <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
+          </BpkBox>
+        ))}
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
 /**
  * Mixed visual regression example – used for Percy/visual tests.
  *
@@ -197,7 +279,7 @@ export const MixedExample = () => (
     <PositionExample />
     <FlexExample />
     <GridExample />
+    <SurfaceBackgroundColorExample />
+    <StatusBackgroundColorExample />
   </Wrapper>
 );
-
-

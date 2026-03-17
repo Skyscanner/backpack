@@ -118,6 +118,49 @@ const shadowMap: Record<string, string> = {
 };
 
 /**
+ * Converts a camelCase Day token key to a kebab-case semantic token name.
+ *
+ * @param {string} key - camelCase Day token key, e.g. "surfaceDefaultDay".
+ * @returns {string} kebab-case token name without the Day suffix, e.g. "surface-default".
+ *
+ * @example
+ * "surfaceDefaultDay"    → "surface-default"
+ * "statusSuccessFillDay" → "status-success-fill"
+ */
+function dayKeyToSemanticTokenName(key: string): string {
+  return key.replace(/Day$/, '').replace(/([A-Z])/g, (m) => `-${m.toLowerCase()}`);
+}
+
+/**
+ * Builds a Chakra UI semantic token map for a group of color tokens that have
+ * matching Day/Night pairs (e.g. surfaceDefaultDay / surfaceDefaultNight).
+ *
+ * The resulting tokens are registered under `semanticTokens.colors` so Chakra
+ * generates CSS custom properties that switch automatically when `data-theme`
+ * changes. With `cssVarsPrefix: 'bpk'` the variable name is:
+ *   --bpk-colors-surface-default
+ *
+ * @param {object} colors - A flat object of camelCase token keys to color values (both Day and Night keys).
+ * @returns {object} Chakra semantic token definitions keyed by kebab-case token name.
+ */
+function buildSemanticColorTokens(
+  colors: Record<string, string>,
+): Record<string, { value: { _light: string; _dark: string } }> {
+  const result: Record<string, { value: { _light: string; _dark: string } }> = {};
+  Object.keys(colors)
+    .filter((k) => k.endsWith('Day'))
+    .forEach((dayKey) => {
+      const nightKey = dayKey.replace(/Day$/, 'Night');
+      if (nightKey in colors) {
+        result[dayKeyToSemanticTokenName(dayKey)] = {
+          value: { _light: colors[dayKey], _dark: colors[nightKey] },
+        };
+      }
+    });
+  return result;
+}
+
+/**
  * Chakra expects raw width values (e.g. "48rem"), not full media queries.
  * The media query construction is handled internally by Chakra's system.
  *
@@ -211,6 +254,12 @@ export function createBpkConfig() {
     theme: {
       tokens: {
         spacing: spacingMap,
+      },
+      semanticTokens: {
+        colors: {
+          ...buildSemanticColorTokens(bpkTokens.surfaceColors),
+          ...buildSemanticColorTokens(bpkTokens.statusColors),
+        },
       },
       breakpoints: chakraBreakpoints,
     },

@@ -22,6 +22,7 @@ import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
+import { BpkBackgroundColor } from './backgroundColors';
 import { BpkSpacing } from './tokens';
 
 describe('BpkBox', () => {
@@ -63,6 +64,35 @@ describe('BpkBox', () => {
     expect(div).toBeInTheDocument();
     // We don't assert exact styles because Chakra generates classes & vars,
     // but we at least assert that the element rendered successfully.
+  });
+
+  describe('backgroundColor', () => {
+    it('renders with a surface color token', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox backgroundColor={BpkBackgroundColor.surfaceDefaultDay}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with a status color token', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox backgroundColor={BpkBackgroundColor.statusSuccessSpotDay}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders without backgroundColor when prop is omitted', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox>No background</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
   });
 
   it('supports basic interaction props: onClick, onFocus, onBlur', () => {
