@@ -21,6 +21,7 @@ import type { ReactNode } from 'react';
 
 import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import BpkButton from '../../packages/bpk-component-button';
 import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, createCheckboxCardTheme, useCheckboxCardContext } from '../../packages/bpk-component-checkbox-card';
 import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
 import CityIconLg from '../../packages/bpk-component-icon/lg/city';
@@ -462,9 +463,9 @@ export const WithCarVariantExample = () => {
           </BpkBox>
         ))}
       </BpkHStack>
-      <button type="button" onClick={() => setLoading((prev) => !prev)}>
-        {loading ? 'Simulate prices loaded' : 'Simulate loading'}
-      </button>
+      <BpkButton onClick={() => setLoading((prev) => !prev)}>
+        {loading ? 'Simulate loading' : 'Simulate prices loaded'}
+      </BpkButton>
     </BpkVStack>
   );
 };
