@@ -122,7 +122,6 @@ const useChatbotInput = ({
     value: inputValue,
     placeholder,
     disabled: isDisabled,
-    maxLength: maxCharacters,
     isOverLimit,
     onInputChange,
     onInputFocus: handleInputFocus,

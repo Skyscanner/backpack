@@ -47,6 +47,8 @@ window.ResizeObserver =
 describe('useTextAreaAutoResize', () => {
   let mockTextArea: any;
   let mockMeasureElement: HTMLTextAreaElement;
+  let originalRequestAnimationFrame: typeof global.requestAnimationFrame;
+  let originalGetComputedStyle: typeof global.getComputedStyle;
 
   const setMeasureScrollHeight = (height: number) => {
     Object.defineProperty(mockMeasureElement, 'scrollHeight', {
@@ -65,8 +67,11 @@ describe('useTextAreaAutoResize', () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
+    originalRequestAnimationFrame = global.requestAnimationFrame;
+    originalGetComputedStyle = global.getComputedStyle;
+
     global.requestAnimationFrame = mockRequestAnimationFrame;
-    globalThis.getComputedStyle = mockGetComputedStyle;
+    global.getComputedStyle = mockGetComputedStyle;
 
     mockGetComputedStyle.mockReturnValue({
       fontSize: '16px',
@@ -103,6 +108,8 @@ describe('useTextAreaAutoResize', () => {
   });
 
   afterEach(() => {
+    global.requestAnimationFrame = originalRequestAnimationFrame;
+    global.getComputedStyle = originalGetComputedStyle;
     jest.restoreAllMocks();
   });
 

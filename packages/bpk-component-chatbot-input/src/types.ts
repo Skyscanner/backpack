@@ -22,7 +22,6 @@ export interface BaseInputFieldProps {
   value: string;
   placeholder: string;
   disabled?: boolean;
-  maxLength?: number;
   isOverLimit?: boolean;
   dataTestId: string;
   onInputChange: (value: string) => void;

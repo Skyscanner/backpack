@@ -183,6 +183,32 @@ describe('useInputHandlers', () => {
       expect(mockOnInputClick).not.toHaveBeenCalled();
     });
 
+    it('should not focus or call onInputClick when element is disabled', () => {
+      mockInputElement.disabled = true;
+
+      const { result } = renderHook(() =>
+        useInputHandlers(mockRef, mockOnInputChange, mockOnInputClick),
+      );
+
+      const mockTouchStartEvent = {
+        stopPropagation: jest.fn(),
+        target: mockInputElement,
+      } as unknown as TouchEvent<HTMLInputElement>;
+
+      const mockTouchEndEvent = {
+        stopPropagation: jest.fn(),
+        preventDefault: jest.fn(),
+        target: mockInputElement,
+      } as unknown as TouchEvent<HTMLInputElement>;
+
+      result.current.handleTouchStart(mockTouchStartEvent);
+      result.current.handleTouchEnd(mockTouchEndEvent);
+
+      expect(mockTouchEndEvent.stopPropagation).toHaveBeenCalled();
+      expect(mockInputElement.focus).not.toHaveBeenCalled();
+      expect(mockOnInputClick).not.toHaveBeenCalled();
+    });
+
     it('should handle null ref safely', () => {
       const nullRef = { current: null };
 
@@ -207,8 +233,7 @@ describe('useInputHandlers', () => {
         result.current.handleTouchEnd(mockTouchEndEvent),
       ).not.toThrow();
       expect(mockTouchEndEvent.stopPropagation).toHaveBeenCalled();
-      expect(mockTouchEndEvent.preventDefault).toHaveBeenCalled();
-      expect(mockOnInputClick).toHaveBeenCalled();
+      expect(mockOnInputClick).not.toHaveBeenCalled();
     });
   });
 

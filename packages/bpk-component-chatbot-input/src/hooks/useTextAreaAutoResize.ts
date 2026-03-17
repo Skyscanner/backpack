@@ -54,6 +54,7 @@ const useTextAreaAutoResize = ({
   });
   const [containerWidth, setContainerWidth] = useState(0);
   const measureElementRef = useRef<HTMLTextAreaElement | null>(null);
+  const lineHeightRef = useRef<number>(LINE_HEIGHT);
   const previousValueRef = useRef<string>('');
   const shouldScrollRef = useRef<boolean>(false);
   const isInitialRenderRef = useRef<boolean>(true);
@@ -74,6 +75,10 @@ const useTextAreaAutoResize = ({
 
     const textarea = ref.current;
     const computedStyle = getComputedStyle(textarea);
+    const parsedLineHeight = parseFloat(computedStyle.lineHeight);
+    if (!Number.isNaN(parsedLineHeight) && parsedLineHeight > 0) {
+      lineHeightRef.current = parsedLineHeight;
+    }
     const tempTextarea = document.createElement('textarea');
     tempTextarea.style.position = 'absolute';
     tempTextarea.style.visibility = 'hidden';
@@ -118,7 +123,7 @@ const useTextAreaAutoResize = ({
     measureEl.value = value || ' ';
 
     const { scrollHeight } = measureEl;
-    const lines = Math.max(1, Math.ceil(scrollHeight / LINE_HEIGHT));
+    const lines = Math.max(1, Math.ceil(scrollHeight / lineHeightRef.current));
 
     const shouldReduceParentPadding = lines >= 5;
     const maxInputHeight = shouldReduceParentPadding

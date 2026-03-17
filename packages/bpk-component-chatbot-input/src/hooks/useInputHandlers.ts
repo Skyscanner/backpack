@@ -58,11 +58,16 @@ const useInputHandlers = <T extends HTMLInputElement | HTMLTextAreaElement>(
     (e: TouchEvent<T>) => {
       e.stopPropagation();
       if (touchStartTargetRef.current === e.target) {
-        e.preventDefault();
-        if (ref && typeof ref !== 'function' && ref.current) {
+        if (
+          ref &&
+          typeof ref !== 'function' &&
+          ref.current &&
+          !ref.current.disabled
+        ) {
+          e.preventDefault();
           ref.current.focus();
+          onInputClick();
         }
-        onInputClick();
       }
       touchStartTargetRef.current = null;
     },

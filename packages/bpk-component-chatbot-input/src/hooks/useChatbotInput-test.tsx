@@ -267,7 +267,6 @@ describe('useChatbotInput', () => {
 
       expect(result.current.inputProps.value).toBe('Hello');
       expect(result.current.inputProps.placeholder).toBe('Enter message');
-      expect(result.current.inputProps.maxLength).toBe(MAX_CHARACTERS);
       expect(result.current.inputProps.dataTestId).toBe(
         'bpk-chatbot-input-field',
       );
