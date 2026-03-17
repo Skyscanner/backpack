@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
 
 .bpk-chatbot-input {
   &--default {
@@ -25,9 +26,9 @@
       tokens.bpk-spacing-md() tokens.bpk-spacing-base();
     align-items: center;
     transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
-    border: 1.5 * tokens.$bpk-one-pixel-rem solid tokens.$bpk-panel-border-color;
+      border-color tokens.$bpk-duration-sm ease,
+      box-shadow tokens.$bpk-duration-sm ease;
+    border: 1.5 * tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
     border-radius: tokens.$bpk-border-radius-md;
     background: tokens.$bpk-surface-elevated-day;
     box-shadow: none;
@@ -35,7 +36,7 @@
     gap: tokens.bpk-spacing-md();
     touch-action: manipulation;
 
-    &:hover {
+    @include utils.bpk-hover {
       border-color: tokens.$bpk-core-accent-day;
     }
 
