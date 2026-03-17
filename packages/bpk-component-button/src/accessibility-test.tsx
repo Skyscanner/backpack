@@ -19,7 +19,7 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { BpkButtonV2 as BpkButton } from './BpkButton';
+import BpkButton from './BpkButton';
 import { BUTTON_TYPES } from './common-types';
 
 describe('BpkButton accessibility tests', () => {
@@ -31,6 +31,45 @@ describe('BpkButton accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues when used as a link', async () => {
     const { container } = render(<BpkButton href="#">My button</BpkButton>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with leadingIcon', async () => {
+    const { container } = render(
+      <BpkButton leadingIcon={<span aria-hidden="true">★</span>}>Search</BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with trailingIcon', async () => {
+    const { container } = render(
+      <BpkButton trailingIcon={<span aria-hidden="true">→</span>}>Next</BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with both icons', async () => {
+    const { container } = render(
+      <BpkButton
+        leadingIcon={<span aria-hidden="true">★</span>}
+        trailingIcon={<span aria-hidden="true">→</span>}
+      >
+        Go
+      </BpkButton>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with disabled button and leadingIcon', async () => {
+    const { container } = render(
+      <BpkButton disabled leadingIcon={<span aria-hidden="true">★</span>}>
+        Disabled
+      </BpkButton>,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

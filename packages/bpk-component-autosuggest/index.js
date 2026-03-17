@@ -18,9 +18,12 @@
 
 /* @flow strict */
 
-import BpkAutosuggest from './src/BpkAutosuggest';
+import BpkAutosuggestLegacy from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2, { defaultTheme } from './src/BpkAutosuggestV2/BpkAutosuggest';
 
+const BpkAutosuggest = BpkAutosuggestV2;
+
 export default BpkAutosuggest;
-export { BpkAutosuggestSuggestion, BpkAutosuggestV2, defaultTheme };
+
+export { BpkAutosuggestLegacy, BpkAutosuggestSuggestion, defaultTheme };

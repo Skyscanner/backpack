@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../../bpk-component-spinner';
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
@@ -38,8 +38,7 @@ const getSpinnerType = (buttonType: ButtonType) => {
   }
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const BpkButtonV2 = ({
+const BpkButton = ({
   blank = false,
   children,
   className = null,
@@ -48,11 +47,13 @@ export const BpkButtonV2 = ({
   href = null,
   iconOnly = false,
   implicit = false,
+  leadingIcon = null,
   loading = false,
   onClick = () => {},
   rel: propRel = undefined,
   size = SIZE_TYPES.small,
   submit = false,
+  trailingIcon = null,
   type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
@@ -60,6 +61,7 @@ export const BpkButtonV2 = ({
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
   const alternate = type === BUTTON_TYPES.linkOnDark;
   const shouldUnderline = isLinkType && !iconOnly && !isDisabled;
+  const hasIcons = !!(leadingIcon || trailingIcon);
 
   const classNames = getCommonClassName(
     'bpk-button',
@@ -69,6 +71,7 @@ export const BpkButtonV2 = ({
     `bpk-button--${type}`,
     loading && 'bpk-button--loading',
     fullWidth && 'bpk-button--full-width',
+    hasIcons && 'bpk-button--has-icon',
     isLinkType && iconOnly && 'bpk-button--link--icon-only',
     isLinkType && implicit && 'bpk-button--link--implicit',
     className,
@@ -83,9 +86,29 @@ export const BpkButtonV2 = ({
       )
     : null;
 
-  const innerContent = underlinedClassName
+  const textContent = underlinedClassName
     ? <span className={underlinedClassName}>{children}</span>
     : children;
+
+  const leadingIconEl = !iconOnly && leadingIcon ? (
+    <span className={getCommonClassName('bpk-button__leading-icon')}>
+      {leadingIcon}
+    </span>
+  ) : null;
+
+  const trailingIconEl = !iconOnly && trailingIcon ? (
+    <span className={getCommonClassName('bpk-button__trailing-icon')}>
+      {trailingIcon}
+    </span>
+  ) : null;
+
+  const innerContent = (
+    <>
+      {leadingIconEl}
+      {textContent}
+      {trailingIconEl}
+    </>
+  );
 
   const content = loading ? (
     <div className={getCommonClassName('bpk-button__loading-container')}>
@@ -133,3 +156,5 @@ export const BpkButtonV2 = ({
     </button>
   );
 };
+
+export default BpkButton;

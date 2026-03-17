@@ -18,7 +18,7 @@
 
 import { fireEvent, render } from '@testing-library/react';
 
-import { BpkButtonV2 as BpkButton } from './BpkButton';
+import BpkButton from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
 
 describe('BpkButton', () => {
@@ -192,6 +192,87 @@ describe('BpkButton', () => {
     expect(el).toHaveClass('bpk-button--full-width');
   });
 
+
+  describe('icon props', () => {
+    it('should render correctly with leadingIcon', () => {
+      const { container } = render(
+        <BpkButton leadingIcon={<span>icon</span>}>Label</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).toBeInTheDocument();
+      expect(container.querySelector('.bpk-button__trailing-icon')).not.toBeInTheDocument();
+    });
+
+    it('should render correctly with trailingIcon', () => {
+      const { container } = render(
+        <BpkButton trailingIcon={<span>→</span>}>Label</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__trailing-icon')).toBeInTheDocument();
+      expect(container.querySelector('.bpk-button__leading-icon')).not.toBeInTheDocument();
+    });
+
+    it('should render correctly with both leadingIcon and trailingIcon', () => {
+      const { container } = render(
+        <BpkButton leadingIcon={<span>icon</span>} trailingIcon={<span>→</span>}>Label</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).toBeInTheDocument();
+      expect(container.querySelector('.bpk-button__trailing-icon')).toBeInTheDocument();
+    });
+
+    it('should NOT apply bpk-button--has-icon class when no icon props provided', () => {
+      const { container } = render(
+        <BpkButton>Label</BpkButton>,
+      );
+      expect(container.firstElementChild).not.toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).not.toBeInTheDocument();
+      expect(container.querySelector('.bpk-button__trailing-icon')).not.toBeInTheDocument();
+    });
+
+    it('should render correctly with leadingIcon and large size', () => {
+      const { container } = render(
+        <BpkButton size={SIZE_TYPES.large} leadingIcon={<span>icon</span>}>Large</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el).toHaveClass('bpk-button--large');
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).toBeInTheDocument();
+    });
+
+    it('should render correctly with leadingIcon and fullWidth', () => {
+      const { container } = render(
+        <BpkButton fullWidth leadingIcon={<span>icon</span>}>Full width</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el).toHaveClass('bpk-button--full-width');
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).toBeInTheDocument();
+    });
+
+    it('should render correctly with leadingIcon and disabled', () => {
+      const { container } = render(
+        <BpkButton disabled leadingIcon={<span>icon</span>}>Disabled</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el).toBeDisabled();
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).toBeInTheDocument();
+    });
+
+    it('should render correctly with leadingIcon as anchor (href)', () => {
+      const { container } = render(
+        <BpkButton href="#" leadingIcon={<span>icon</span>}>Link button</BpkButton>,
+      );
+      const el = container.firstElementChild;
+      expect(el?.tagName).toBe('A');
+      expect(el).toHaveClass('bpk-button--has-icon');
+      expect(container.querySelector('.bpk-button__leading-icon')).toBeInTheDocument();
+    });
+  });
 
   describe('loading prop', () => {
     it('should render without spinner or aria-busy when loading=false', () => {

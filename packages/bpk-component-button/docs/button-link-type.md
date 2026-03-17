@@ -44,34 +44,56 @@ import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-
 
 ## With Icons
 
-### Text and Icon Together
+### Leading and Trailing Icons
 
-When combining text with an icon, place them as siblings. The component provides automatic spacing (8px gap) and vertical alignment.
+Use the `leadingIcon` and `trailingIcon` props to add icons before or after the button label. Icons are automatically aligned and spaced.
 
 ```jsx
 import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import SmallLightningIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/lightning';
 import SmallLongArrowRightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
 
-// Text with trailing icon - automatic 8px gap
-<BpkButton type={BUTTON_TYPES.link}>
-  Link Button <SmallLongArrowRightIcon />
+// Link with trailing icon
+<BpkButton type={BUTTON_TYPES.link} trailingIcon={<SmallLongArrowRightIcon />}>
+  Link Button
+</BpkButton>
+
+// Link with leading icon
+<BpkButton type={BUTTON_TYPES.link} leadingIcon={<SmallLightningIcon />}>
+  Link Button
+</BpkButton>
+
+// Link with both leading and trailing icons
+<BpkButton
+  type={BUTTON_TYPES.link}
+  leadingIcon={<SmallLightningIcon />}
+  trailingIcon={<SmallLongArrowRightIcon />}
+>
+  Link Button
 </BpkButton>
 ```
 
-### Icon Only
+### Text and Icon Together
 
-Use `iconOnly` prop for buttons containing only an icon. Always provide `aria-label` for accessibility.
+> **Deprecated:** Placing icons as children siblings is no longer recommended. Use the `leadingIcon` or `trailingIcon` props instead — they provide explicit, predictable icon slots with automatic alignment and spacing.
 
 ```jsx
-// Icon-only link (no underline applied)
-<BpkButton type={BUTTON_TYPES.link} iconOnly aria-label="Next">
-  <SmallLongArrowRightIcon />
+// ❌ Old approach — icon as children sibling
+<BpkButton type={BUTTON_TYPES.link}>
+  Link Button <SmallLongArrowRightIcon />
+</BpkButton>
+
+// ✅ New approach — use leadingIcon / trailingIcon props
+<BpkButton type={BUTTON_TYPES.link} trailingIcon={<SmallLongArrowRightIcon />}>
+  Link Button
 </BpkButton>
 ```
 
 ### Custom Text Styling with BpkText
 
-When wrapping text and icon inside `BpkText` or `<span>`, there is **no automatic spacing** between them. And to ensure proper vertical alignment, the icon should be wrapped with `withButtonAlignment`.
+> **Note:** If you only need an icon before or after the label, prefer using the `leadingIcon` or `trailingIcon` props instead — they handle alignment and spacing automatically without needing `withButtonAlignment`.
+
+When wrapping text and icon inside `BpkText` or `<span>`, there is **no automatic spacing** between them. To ensure proper vertical alignment, the icon should be wrapped with `withButtonAlignment`.
 
 ```jsx
 import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
@@ -96,34 +118,24 @@ const AlignedSmallLongArrowRightIcon = withButtonAlignment(
 </BpkButton>
 ```
 
-### Text and Icon as Siblings with Custom Styling
+### Icon Only
 
-When text (wrapped in `BpkText`) and icon are siblings, there is an **8px gap** between them by default, remove extra padding space eg `&nbsp;` or `className`.
+Use `iconOnly` prop for buttons containing only an icon. Always provide `aria-label` for accessibility.
 
 ```jsx
-// Text and icon as siblings - 8px gap applied
-<BpkButton type={BUTTON_TYPES.link}>
-  <BpkText textStyle={TEXT_STYLES.label1}>Button</BpkText>
+// Icon-only link (no underline applied)
+<BpkButton type={BUTTON_TYPES.link} iconOnly aria-label="Next">
   <SmallLongArrowRightIcon />
-</BpkButton>
-```
-
-**Note:** If you don't need custom text styling, the simpler approach is to use plain text without `BpkText` or `span`:
-
-```jsx
-// Simpler approach - no BpkText needed
-<BpkButton type={BUTTON_TYPES.link}>
-  Link Button <SmallLongArrowRightIcon />
 </BpkButton>
 ```
 
 ## Behavior Notes
 
-- **Underline**: Applied by default, both on text and icons
+- **Underline**: Applied by default to the label text
 - **Implicit mode**: Underline appears only on hover
 - **Icon-only mode**: No underline is applied
 - **Disabled state**: Underline is removed when button is disabled
-- **Spacing**: When text and icon are siblings, an 8px gap is automatically applied
+- **Spacing**: When `leadingIcon` or `trailingIcon` is used, an 8px gap is automatically applied between the icon and label
 
 ## Accessibility
 

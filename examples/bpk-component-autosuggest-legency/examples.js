@@ -20,7 +20,8 @@
 
 import { Component } from 'react';
 
-import BpkAutosuggest, {
+import {
+  BpkAutosuggestLegacy,
   BpkAutosuggestSuggestion,
 } from '../../packages/bpk-component-autosuggest';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
@@ -174,7 +175,7 @@ class AutosuggestExample extends Component<Props, State> {
     };
 
     return (
-      <BpkAutosuggest
+      <BpkAutosuggestLegacy
         alwaysRenderSuggestions={this.props.alwaysRenderSuggestions}
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

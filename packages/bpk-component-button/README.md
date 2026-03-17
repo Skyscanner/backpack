@@ -11,6 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
+import LightningIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/lightning';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
 
@@ -26,6 +27,8 @@ export default () => (
     <BpkButton type={BUTTON_TYPES.linkOnDark}>LinkOnDark</BpkButton>
     <BpkButton type={BUTTON_TYPES.primaryOnDark}>PrimaryOnDark</BpkButton>
     <BpkButton type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButton>
+    <BpkButton leadingIcon={<LightningIcon />}>With leading icon</BpkButton>
+    <BpkButton trailingIcon={<ArrowIcon />}>With trailing icon</BpkButton>
     <BpkButton iconOnly>
       <AlignedArrowIcon />
       <BpkVisuallyHidden>Search</BpkVisuallyHidden>
@@ -67,15 +70,6 @@ import BpkButton, { linkThemeAttributes } from '@skyscanner/backpack-web/bpk-com
 ### Button Link
 The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
 
-## BpkButton (formerly BpkButtonV2)
-
-The legacy `BpkButton` component (V1) and all its variants (`BpkButtonPrimary`, `BpkButtonSecondary`, etc.) have been removed as of Backpack v41. The component previously known as `BpkButtonV2` is now simply `BpkButton`.
-
-Please import `BpkButton` directly:
-
-```js
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-```
 
 ## Props
 
