@@ -419,9 +419,9 @@ export const WithCustomThemeExample = () => {
  */
 export const WithCarVariantExample = () => {
   const carTypes = [
-    { id: 'small', label: 'Small', price: '£35', src: 'https://logos.skyscnr.com/images/carhire/sippmaps/toyota_19aygoxplayhb2fb_s.png' },
-    { id: 'medium', label: 'Medium', price: '£52', src: '	https://logos.skyscnr.com/images/carhire/sippmaps/ford_19focusactivehb4b_s.png' },
-    { id: 'large', label: 'Large', price: '£78', src: 'https://logos.skyscnr.com/images/carhire/sippmaps/volvo_21v60inscrpnwg2fu_s.png' },
+    { id: 'small', label: 'Small', price: '£35', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'medium', label: 'Medium', price: '£52', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'large', label: 'Large', price: '£78', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
   ];
 
   const [loading, setLoading] = useState(true);
