@@ -85,13 +85,12 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   const estimatedMonthItemHeight = 
     (BASE_MONTH_ITEM_HEIGHT + 5 * rowHeight) * DEFAULT_ROOT_FONT_SIZE;
 
-  const getInitialRootFontSize = () =>
-    parseFloat(getComputedStyle(document.documentElement).fontSize) ||
-    DEFAULT_ROOT_FONT_SIZE;
-
   // The `react-window` API requires the height in pixels to be specified
   // To be able to scale text size, we use rem and then we get the root font size so that we can calculate the final value in px
-  const [rootFontSize, setRootFontSize] = useState(getInitialRootFontSize);
+  // Initialise to the default; the sentinel ResizeObserver corrects this to the true rendered
+  // value immediately on mount, so we never rely on getComputedStyle which can be stale under
+  // browser font scaling.
+  const [rootFontSize, setRootFontSize] = useState(DEFAULT_ROOT_FONT_SIZE);
 
   const months = useMemo(
     () => getMonthsArray(startDate, monthsCount),
