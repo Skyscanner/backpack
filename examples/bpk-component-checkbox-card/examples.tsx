@@ -71,6 +71,19 @@ export const BasicExample = () => {
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
       </BpkBox>
+
+      <BpkBox width="9.375rem" height="9.375rem">
+        <BpkCheckboxCard.Root
+          checked={false}
+          variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          disabled
+        >
+          <BpkCheckboxCard.HiddenInput />
+          <BpkCheckboxCard.Content>
+            {/* Empty content - no icon, label, or price */}
+          </BpkCheckboxCard.Content>
+        </BpkCheckboxCard.Root>
+      </BpkBox>
     </BpkHStack>
   );
 };
@@ -145,18 +158,20 @@ export const AllVariantsExample = () => {
       {/* onCanvasContrast */}
       <BpkVStack gap="bpk-spacing-md" align="start">
         <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Canvas Contrast</BpkText>
-        <BpkBox width="9.375rem" height="9.375rem">
-          <BpkCheckboxCard.Root
-            checked={selected2}
-            onCheckedChange={setSelected2}
-            variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}
-          >
-            <BpkCheckboxCard.HiddenInput />
-            <BpkCheckboxCard.Content>
-              {/* Empty content - no icon, label, or price */}
-            </BpkCheckboxCard.Content>
-          </BpkCheckboxCard.Root>
-        </BpkBox>
+        <div style={{ background: canvasContrastDay, padding: '1.5rem' }}>
+          <BpkBox width="9.375rem" height="9.375rem">
+            <BpkCheckboxCard.Root
+              checked={selected2}
+              onCheckedChange={setSelected2}
+              variant={CHECKBOX_CARD_VARIANTS.onCanvasContrast}
+            >
+              <BpkCheckboxCard.HiddenInput />
+              <BpkCheckboxCard.Content>
+                {/* Empty content - no icon, label, or price */}
+              </BpkCheckboxCard.Content>
+            </BpkCheckboxCard.Root>
+          </BpkBox>
+        </div>
       </BpkVStack>
 
       {/* onSurfaceContrast */}
@@ -396,29 +411,21 @@ export const WithCustomThemeExample = () => {
  *
  * @returns {JSX.Element} Rendered car variant example.
  */
+/**
+ * Car variant example — white background with dark border when checked.
+ * Includes a loading state toggle to simulate price data being fetched.
+ *
+ * @returns {JSX.Element} Rendered car variant example.
+ */
 export const WithCarVariantExample = () => {
   const carTypes = [
-    {
-      id: 'small',
-      label: 'Small',
-      price: 'from £35',
-      src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
-    },
-    {
-      id: 'medium',
-      label: 'Medium',
-      price: 'from £52',
-      src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
-    },
-    {
-      id: 'large',
-      label: 'Large',
-      price: 'from £78',
-      src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg',
-    },
+    { id: 'small', label: 'Small', price: '£35', src: 'https://logos.skyscnr.com/images/carhire/sippmaps/toyota_19aygoxplayhb2fb_s.png' },
+    { id: 'medium', label: 'Medium', price: '£52', src: '	https://logos.skyscnr.com/images/carhire/sippmaps/ford_19focusactivehb4b_s.png' },
+    { id: 'large', label: 'Large', price: '£78', src: 'https://logos.skyscnr.com/images/carhire/sippmaps/volvo_21v60inscrpnwg2fu_s.png' },
   ];
 
-  const [selected, setSelected] = useState<string[]>(['medium']);
+  const [loading, setLoading] = useState(true);
+  const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (id: string) => {
     setSelected((prev) =>
@@ -431,11 +438,12 @@ export const WithCarVariantExample = () => {
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type</BpkText>
       <BpkHStack gap="bpk-spacing-md" wrap="wrap">
         {carTypes.map(({ id, label, price, src }) => (
-          <BpkBox key={id} width="10rem">
+          <BpkBox key={id} width="7.25rem">
             <BpkCheckboxCard.Root
               checked={selected.includes(id)}
               onCheckedChange={() => toggle(id)}
               variant={CHECKBOX_CARD_VARIANTS.cars}
+              loading={loading}
             >
               <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Content>
@@ -443,17 +451,20 @@ export const WithCarVariantExample = () => {
                   <BpkImage
                     src={src}
                     altText={`${label} car`}
-                    aspectRatio={16 / 9}
+                    aspectRatio={100 / 66}
                     style={{ width: '100%' }}
                   />
                   <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                  <BpkCheckboxCard.Description>{price}</BpkCheckboxCard.Description>
+                  <BpkCheckboxCard.Price price={price} />
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
           </BpkBox>
         ))}
       </BpkHStack>
+      <button type="button" onClick={() => setLoading((prev) => !prev)}>
+        {loading ? 'Simulate prices loaded' : 'Simulate loading'}
+      </button>
     </BpkVStack>
   );
 };

@@ -21,6 +21,7 @@ import { useMemo } from 'react';
 
 import { CheckboxRoot } from '@ark-ui/react/checkbox';
 
+import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -32,6 +33,7 @@ import type { CheckboxCardVariant, CheckboxCardRadius } from './common-types';
 import STYLES from './BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
+const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
 export type RootProps = {
   /**
@@ -62,6 +64,13 @@ export type RootProps = {
    * @default false
    */
   disabled?: boolean;
+
+  /**
+   * Whether the card is in a loading state.
+   * Non-interactive (cursor not-allowed, clicks blocked) but not visually disabled.
+   * @default false
+   */
+  loading?: boolean;
 
   /**
    * Whether the checkbox is required.
@@ -141,6 +150,7 @@ export function Root({
   children,
   defaultChecked,
   disabled = false,
+  loading = false,
   name,
   onCheckedChange,
   radius = CHECKBOX_CARD_RADIUS.rounded,
@@ -149,8 +159,8 @@ export function Root({
   variant = CHECKBOX_CARD_VARIANTS.onCanvasDefault,
 }: RootProps) {
   const contextValue = useMemo(
-    () => ({ variant, radius }),
-    [variant, radius],
+    () => ({ variant, radius, loading }),
+    [variant, radius, loading],
   );
 
   return (
@@ -159,7 +169,7 @@ export function Root({
         checked={checked}
         defaultChecked={defaultChecked}
         onCheckedChange={(details) => onCheckedChange?.(details.checked as boolean)}
-        disabled={disabled}
+        disabled={disabled || loading}
         name={name}
         value={value}
         required={required}
@@ -169,6 +179,7 @@ export function Root({
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
           aria-describedby={ariaDescribedby}
+          data-loading={loading || undefined}
           className={getClassName(
             'bpk-checkbox-card-root',
             `bpk-checkbox-card-root--${variant}`,
@@ -177,7 +188,7 @@ export function Root({
         >
           {variant === CHECKBOX_CARD_VARIANTS.cars && (
             <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden>
-              <TickCircleIcon />
+              <AlignedTickCircleIcon />
             </div>
           )}
           {children}

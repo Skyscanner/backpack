@@ -20,17 +20,21 @@ import type { CSSProperties, ReactNode } from 'react';
 
 import { CheckboxHiddenInput } from '@ark-ui/react/checkbox';
 
+import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { BpkSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import { Root } from './BpkCheckboxCardRoot';
+import { useCheckboxCardContext } from './CheckboxCardContext';
 
 import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 
 import STYLES from './BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
+const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
 // ─── HiddenInput ─────────────────────────────────────────────────────────────
 
@@ -135,6 +139,44 @@ function Description({ children, lineClamp = 3, textStyle = TEXT_STYLES.bodyDefa
   );
 }
 
+// ─── Price (cars variant only) ────────────────────────────────────────────────
+
+export type PriceProps = {
+  /** Price string, e.g. "£35" */
+  price: string;
+  /** Leading text before the price, e.g. "from". @default "from" */
+  leadingText?: string;
+};
+
+/**
+ * BpkCheckboxCard.Price - Cars-specific price slot.
+ *
+ * Reads `loading` from context automatically:
+ * - loading=true  → shows "{leadingText}" + spinner
+ * - loading=false → shows "{leadingText} {price}" as secondary description text
+ *
+ * Intended for use with variant="cars" only.
+ */
+
+function Price({ leadingText = 'from', price }: PriceProps) {
+  const { loading } = useCheckboxCardContext();
+
+  return (
+    <div className={getClassName('bpk-checkbox-card-price')}>
+      <BpkText textStyle={TEXT_STYLES.footnote} tagName="span" color={TEXT_COLORS.textSecondary}>
+        {leadingText}
+      </BpkText>
+      {loading ? (
+        <BpkSpinner type={SPINNER_TYPES.primary} small />
+      ) : (
+        <BpkText textStyle={TEXT_STYLES.footnote} tagName="span" color={TEXT_COLORS.textSecondary}>
+          {price}
+        </BpkText>
+      )}
+    </div>
+  );
+}
+
 // ─── Indicator ───────────────────────────────────────────────────────────────
 
 export type IndicatorProps = Record<string, never>;
@@ -150,7 +192,7 @@ export type IndicatorProps = Record<string, never>;
 function Indicator(_props: IndicatorProps = {}) {
   return (
     <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden>
-      <TickCircleIcon />
+      <AlignedTickCircleIcon />
     </div>
   );
 }
@@ -190,6 +232,7 @@ const BpkCheckboxCard = Object.assign(Root, {
   Indicator,
   Label,
   Description,
+  Price,
 });
 
 export { BpkCheckboxCard };
@@ -199,6 +242,7 @@ export type { RootProps, RootProps as BpkCheckboxCardRootProps } from './BpkChec
 export type { ContentProps as BpkCheckboxCardContentProps };
 export type { LabelProps as BpkCheckboxCardLabelProps };
 export type { DescriptionProps as BpkCheckboxCardDescriptionProps };
+export type { PriceProps as BpkCheckboxCardPriceProps };
 
 export { useCheckboxCardContext } from './CheckboxCardContext';
 export type { CheckboxCardContextValue } from './CheckboxCardContext';

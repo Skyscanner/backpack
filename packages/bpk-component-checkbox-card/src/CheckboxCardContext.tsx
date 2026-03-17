@@ -31,6 +31,9 @@ export type CheckboxCardContextValue = {
 
   /** Border radius style */
   radius: CheckboxCardRadius;
+
+  /** Whether the card is in a loading state (non-interactive, cursor not-allowed) */
+  loading: boolean;
 };
 
 /**
