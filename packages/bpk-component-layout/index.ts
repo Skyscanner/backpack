@@ -41,6 +41,9 @@ export type {
 } from './src/types';
 export type { BpkStackSpecificProps } from './src/types';
 
+export { BACKGROUND_COLORS } from './src/backgroundColors';
+export type { BpkBoxBackgroundColor } from './src/backgroundColors';
+
 // Export token types and utilities
 export type {
   BpkSpacingToken,

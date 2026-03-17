@@ -28,6 +28,10 @@ import {
   PositionExample,
   FlexExample,
   GridExample,
+  SurfaceBackgroundColorExample,
+  StatusFillBackgroundColorExample,
+  CanvasBackgroundColorExample,
+  ColorExample,
 } from './box-examples';
 
 export default {
@@ -63,5 +67,9 @@ export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
 export const FlexViaBox = () => <FlexExample />;
 export const GridViaBox = () => <GridExample />;
+export const SurfaceBackgroundColor = () => <SurfaceBackgroundColorExample />;
+export const StatusFillBackgroundColor = () => <StatusFillBackgroundColorExample />;
+export const CanvasBackgroundColor = () => <CanvasBackgroundColorExample />;
+export const Color = () => <ColorExample />;
 
 

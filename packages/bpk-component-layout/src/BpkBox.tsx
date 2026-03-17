@@ -16,21 +16,42 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Box } from '@chakra-ui/react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return (
-    <Box {...getDataComponentAttribute('Box')} {...processedProps}>
-      {children}
-    </Box>
-  );
-};
+import STYLES from './BpkBox.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
+  ({ backgroundColor, children, color, ...props }, ref) => {
+    const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+    const combinedClass = getClassName(
+      backgroundColor ? `bpk-box--${backgroundColor}` : '',
+      // 'bpk-box' base class is required alongside the modifier to form a two-class
+      // compound selector (.bpk-box.bpk-box--text-*), matching BpkText's pattern and
+      // beating Chakra emotion's default color specificity.
+      color ? 'bpk-box' : '',
+      color ? `bpk-box--${color}` : '',
+    ) || undefined;
+
+    return (
+      // className is allowed here: combinedClass is an internal SCSS module class, not a consumer override.
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      <Box ref={ref} className={combinedClass} {...getDataComponentAttribute('Box')} {...processedProps}>
+        {children}
+      </Box>
+    );
+  },
+);
+
+BpkBox.displayName = 'BpkBox';
 
 export type { BpkBoxProps };

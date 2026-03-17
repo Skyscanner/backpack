@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { AriaAttributes, AriaRole } from 'react';
+
 import type {
   BpkSpacingValue,
   BpkSizeValue,
@@ -80,7 +82,7 @@ export interface BpkSpacingProps {
  * - BpkBox reintroduces a minimal set of events (onClick, onFocus, onBlur)
  *   on its own props type.
  */
-export interface BpkCommonLayoutProps extends BpkSpacingProps {
+export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   // Explicitly exclude className
   className?: never;
 
@@ -90,6 +92,17 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
   // Testing & automation attributes
   'data-testid'?: string;
   'data-cy'?: string;
+
+  // HTML attributes
+  id?: string;
+  role?: AriaRole;
+
+  // Structural layout
+  position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
+  zIndex?: number;
+  overflow?: 'visible' | 'hidden' | 'scroll' | 'auto';
+  overflowX?: 'visible' | 'hidden' | 'scroll' | 'auto';
+  overflowY?: 'visible' | 'hidden' | 'scroll' | 'auto';
 
   // Explicitly exclude color-related props to keep layout purely structural.
   // These props still exist on the underlying Chakra Box, so we mark them as

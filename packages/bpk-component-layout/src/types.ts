@@ -19,8 +19,10 @@
 import type { ReactNode } from 'react';
 
 import type StackOptionKeys from './BpkStack.constant';
+import type { BpkBoxBackgroundColor } from './backgroundColors';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
+import type { TEXT_COLORS } from '../../bpk-component-text';
 import type {
   BoxProps,
   FlexProps,
@@ -28,6 +30,8 @@ import type {
   GridItemProps,
   StackProps,
 } from '@chakra-ui/react';
+
+type TextColor = (typeof TEXT_COLORS)[keyof typeof TEXT_COLORS];
 
 
 /**
@@ -193,14 +197,23 @@ export interface BpkBoxSpecificProps
  * and reintroduces a minimal set of interaction props.
  */
 type BoxEventProps = Pick<BoxProps,
-  'onClick' | 'onFocus' | 'onBlur'
+  'onClick' | 'onFocus' | 'onBlur' | 'onKeyDown' | 'onKeyUp'
 >;
 
-export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
+export interface BpkBoxProps
+  extends Omit<BpkCommonLayoutProps, 'backgroundColor' | 'color'>,
+    BpkBoxSpecificProps {
   children?: ReactNode;
   onClick?: BoxEventProps['onClick'];
   onFocus?: BoxEventProps['onFocus'];
   onBlur?: BoxEventProps['onBlur'];
+  onKeyDown?: BoxEventProps['onKeyDown'];
+  onKeyUp?: BoxEventProps['onKeyUp'];
+  backgroundColor?: BpkBoxBackgroundColor;
+  color?: TextColor;
+  cursor?: 'auto' | 'default' | 'pointer' | 'not-allowed';
+  opacity?: number;
+  tabIndex?: number;
 }
 
 /**

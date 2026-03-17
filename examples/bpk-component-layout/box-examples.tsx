@@ -17,11 +17,15 @@
  */
 
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
+import { TEXT_COLORS } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
+
+import type { BpkBoxBackgroundColor } from '../../packages/bpk-component-layout';
 
 import STYLES from './examples.module.scss';
 
@@ -177,6 +181,111 @@ export const GridExample = () => (
           <span className={STYLES['bpk-layout-examples__outline']}>
             Grid cell {i}
           </span>
+        </BpkBox>
+      ))}
+    </BpkBox>
+  </Wrapper>
+);
+
+type ColorSwatch = { label: string; value: BpkBoxBackgroundColor };
+
+const SURFACE_SWATCHES: ColorSwatch[] = [
+  { label: 'surfaceDefault', value: BACKGROUND_COLORS.surfaceDefault },
+  { label: 'surfaceElevated', value: BACKGROUND_COLORS.surfaceElevated },
+  { label: 'surfaceLowContrast', value: BACKGROUND_COLORS.surfaceLowContrast },
+  { label: 'surfaceSubtle', value: BACKGROUND_COLORS.surfaceSubtle },
+  { label: 'surfaceTint', value: BACKGROUND_COLORS.surfaceTint },
+  { label: 'surfaceHighlight', value: BACKGROUND_COLORS.surfaceHighlight },
+  { label: 'surfaceHero', value: BACKGROUND_COLORS.surfaceHero },
+  { label: 'surfaceContrast', value: BACKGROUND_COLORS.surfaceContrast },
+];
+
+const STATUS_FILL_SWATCHES: ColorSwatch[] = [
+  { label: 'statusSuccessFill', value: BACKGROUND_COLORS.statusSuccessFill },
+  { label: 'statusDangerFill', value: BACKGROUND_COLORS.statusDangerFill },
+  { label: 'statusWarningFill', value: BACKGROUND_COLORS.statusWarningFill },
+];
+
+const CANVAS_SWATCHES: ColorSwatch[] = [
+  { label: 'canvas', value: BACKGROUND_COLORS.canvas },
+  { label: 'canvasContrast', value: BACKGROUND_COLORS.canvasContrast },
+];
+
+const SwatchGrid = ({ columns, swatches }: { columns: number; swatches: ColorSwatch[] }) => (
+  <BpkBox padding={BpkSpacing.MD}>
+    <BpkBox
+      display="grid"
+      gridTemplateColumns={`repeat(${columns}, minmax(0, 1fr))`}
+      gap={BpkSpacing.SM}
+    >
+      {swatches.map(({ label, value }) => (
+        <BpkBox
+          key={label}
+          backgroundColor={value}
+          padding={BpkSpacing.MD}
+          minHeight="5rem"
+        >
+          <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
+        </BpkBox>
+      ))}
+    </BpkBox>
+  </BpkBox>
+);
+
+/**
+ * Surface background color swatches – shows all surface tokens available for backgroundColor.
+ *
+ * @returns {JSX.Element} A grid of surface color swatches.
+ */
+export const SurfaceBackgroundColorExample = () => (
+  <Wrapper>
+    <SwatchGrid columns={4} swatches={SURFACE_SWATCHES} />
+  </Wrapper>
+);
+
+/**
+ * Status fill background color swatches – shows status fill tokens for backgroundColor.
+ *
+ * @returns {JSX.Element} A grid of status fill color swatches.
+ */
+export const StatusFillBackgroundColorExample = () => (
+  <Wrapper>
+    <SwatchGrid columns={3} swatches={STATUS_FILL_SWATCHES} />
+  </Wrapper>
+);
+
+/**
+ * Canvas background color swatches – shows canvas tokens for backgroundColor.
+ *
+ * @returns {JSX.Element} A grid of canvas color swatches.
+ */
+export const CanvasBackgroundColorExample = () => (
+  <Wrapper>
+    <SwatchGrid columns={2} swatches={CANVAS_SWATCHES} />
+  </Wrapper>
+);
+
+const TEXT_COLOR_SWATCHES = Object.entries(TEXT_COLORS).map(([label, value]) => ({
+  label,
+  value,
+}));
+
+/**
+ * Text color example – shows all TEXT_COLORS tokens available for the color prop.
+ *
+ * @returns {JSX.Element} A grid of text color swatches.
+ */
+export const ColorExample = () => (
+  <Wrapper>
+    <BpkBox
+      display="grid"
+      gridTemplateColumns="repeat(3, minmax(0, 1fr))"
+      gap={BpkSpacing.SM}
+      padding={BpkSpacing.MD}
+    >
+      {TEXT_COLOR_SWATCHES.map(({ label, value }) => (
+        <BpkBox key={label} color={value} padding={BpkSpacing.SM}>
+          <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
         </BpkBox>
       ))}
     </BpkBox>
