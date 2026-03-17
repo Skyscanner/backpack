@@ -1,647 +1,518 @@
 ---
 name: backpack-code-review-checklist
 description: |
-  Comprehensive code review checklist for Backpack design system components. Use when:
-  (1) Reviewing PRs for new or modified Backpack components, (2) Validating component
-  compliance with Constitution and design system rules, (3) Checking if component follows
-  Backpack conventions before merge, (4) Identifying violations in API design, token usage,
-  accessibility, or documentation. Covers Constitution principles (I-XIII), decisions/
-  guidelines, API encapsulation rules, private token restrictions, design approval workflow,
-  icon alignment helpers, hover mixin usage, token semantic correctness, and snapshot
-  currency. Essential for maintaining Backpack quality standards and catching non-obvious
-  violations like className props in new components, wrong icon alignment wrapper,
-  raw :hover instead of bpk-hover mixin, or cross-component private token usage.
+  Multi-agent code review for Backpack design system components. Launches parallel
+  specialist agents to independently audit changes, then scores each issue for confidence
+  to filter false positives. Use when: (1) Reviewing PRs for new or modified Backpack
+  components, (2) Validating component compliance with Constitution and design system rules,
+  (3) Checking if component follows Backpack conventions before merge. Covers Constitution
+  principles (I-XIII), decisions/guidelines, API encapsulation, token semantics, accessibility,
+  git history analysis, and bug detection.
 author: Claude Code
-version: 1.2.0
-date: 2026-03-03
+version: 2.0.0
+date: 2026-03-17
+changelog: |
+  v2.0.0: Rewrite as multi-agent orchestrator with parallel specialist agents and
+           confidence scoring. Added History Agent and Bug Scanner. Borrowed architecture
+           from anthropics/claude-plugins-official code-review plugin.
+  v1.2.0: Added investigation methods for CSS properties, package imports, token semantics
+  v1.1.0: Added snapshot currency checks
+  v1.0.0: Initial checklist
 ---
 
-# Backpack Code Review Checklist
+# Backpack Code Review — Multi-Agent Orchestrator
 
-## Problem
+## Overview
 
-Backpack components must adhere to strict quality standards defined across multiple documents
-(Constitution, decisions/, CODE_REVIEW_GUIDELINES.md). Reviewers need a systematic way to
-validate compliance and identify violations that may not be obvious from casual inspection.
+This skill reviews Backpack component PRs by dispatching **5 parallel specialist agents**,
+each focused on a narrow domain. A separate scoring pass filters false positives. Only
+issues with confidence >= 75 are included in the final output.
 
-## Context / Trigger Conditions
+## Execution Flow
 
-Use this skill when:
-- Reviewing a PR that adds or modifies a Backpack component
-- Performing a compliance audit on an existing component
-- User requests "review this component" or "check Backpack compliance"
-- Validating component before merge or release
-- Teaching someone Backpack review standards
+```
+Phase 0  Detect review mode (PR vs local)
+Phase 1  Gather context (diff, changed files, reference docs)
+Phase 2  Launch 5 specialist agents IN PARALLEL
+Phase 3  Score each issue independently (parallel scoring agents)
+Phase 4  Filter (>= 75), format, and output
+```
 
-**Common review scenarios:**
-- New component addition (e.g., `bpk-component-thinking`)
-- Component migration from external repos
-- API changes to existing components
-- Visual or styling updates
-- Accessibility improvements
+---
 
-## Solution
+## Phase 0: Detect Review Mode
 
-### Phase 0: Detect Review Mode
-
-**Before doing anything else**, check whether the user provided a GitHub PR URL.
+**Before doing anything else**, determine the review mode:
 
 - **PR mode**: user message contains a `github.com/.../pull/NNN` URL
   - Extract the PR number
-  - Run `gh pr view NNN --json headRefOid,files` to get the head commit SHA and changed files
-  - Proceed with review; at the end **post the review body as a PR comment** using:
-    ```bash
-    gh pr review NNN --comment --body "$(cat <<'EOF'
-    [review body here]
-    EOF
-    )"
-    ```
-  - Each issue in the output must link to the offending lines using the **GitHub permalink format**:
-    `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]`
+  - Run `gh pr view NNN --json headRefOid,files` to get head commit SHA and changed files
+  - At the end, **post the review as a PR comment** via `gh pr review NNN --comment --body ...`
+  - Link format: `https://github.com/Skyscanner/backpack/blob/[FULL_SHA]/[PATH]#L[START]-L[END]`
 
-- **Local mode**: no PR URL in the user message
-  - Review the current branch's uncommitted / committed changes locally (`git diff main...HEAD`)
-  - Output the review to the conversation only — **do not post to GitHub**
-  - Each issue in the output must cite the file using a **local VSCode-clickable link**:
-    `[FILE_PATH:LINE](FILE_PATH#LLINE)` (relative to repo root, e.g.
-    `[packages/bpk-component-thumb-button/src/BpkThumbButton.module.scss:29](packages/bpk-component-thumb-button/src/BpkThumbButton.module.scss#L29)`)
+- **Local mode**: no PR URL
+  - Use `git diff main...HEAD` to get changes
+  - Output review to conversation only — do NOT post to GitHub
+  - Link format: `[path/file.tsx:29](path/file.tsx#L29)`
 
-### Phase 1: Document Review Setup
+## Phase 1: Gather Context
 
-**Key reference documents (read these first):**
+Before launching agents, the orchestrator (you) must collect all shared context. Sub-agents
+**do NOT fetch the diff themselves** — the orchestrator fetches it once and injects it into
+each agent prompt. This ensures sub-agents work even in restricted tool environments.
 
-1. **Constitution** (`.specify/memory/constitution.md`):
-   - Core principles I-XIII
-   - Non-negotiable requirements
-   - Technology constraints
-
-2. **Decisions** (`decisions/` directory):
-   - `modern-sass-api.md` - Sass patterns
-   - `accessibility-tests.md` - Testing requirements
-   - `component-scss-filenames.md` - Naming
-   - `versioning-rules.md` - SemVer rules
-   - `deprecated-api.md` - Deprecation cycle
-   - Other relevant decisions
-
-3. **Guidelines**:
-   - `CODE_REVIEW_GUIDELINES.md` - Quality standards
-   - `CONTRIBUTING.md` - Workflow
-
-### Phase 2: Core Compliance Checks
-
-#### ✅ 1. Naming & File Conventions (Constitution II)
-
-**Check:**
-- [ ] Component files: PascalCase (e.g., `BpkThinking.tsx`)
-- [ ] Style files: Match component with `.module.scss` (e.g., `BpkThinking.module.scss`)
-- [ ] Test files: `*-test.tsx` and `accessibility-test.tsx`
-- [ ] Package names: `bpk-component-[name]` (kebab-case)
-- [ ] CSS classes: BEM with `bpk-` prefix (e.g., `bpk-thinking__bubble`)
-
-**Check:**
+**Step 1.1** — Get the diff and list of changed files:
 ```bash
-# Verify file naming
-ls packages/bpk-component-*/src/
+# PR mode
+gh pr diff NNN --repo Skyscanner/backpack
+gh pr view NNN --repo Skyscanner/backpack --json files,headRefOid,body
 
-# Check CSS class naming
-rg "className.*bpk-" packages/bpk-component-*/src/*.module.scss
+# Local mode
+git diff main...HEAD
+git diff main...HEAD --name-only
 ```
 
-#### ✅ 2. License Headers (Constitution II - NON-NEGOTIABLE)
+**Step 1.2** — Read reference documents (skim for relevant sections):
+- `.specify/memory/constitution.md` — Core principles I-XIII
+- `CODE_REVIEW_GUIDELINES.md` — Quality standards
+- `decisions/` — Relevant decision records (modern-sass-api.md, accessibility-tests.md, etc.)
 
-**Check:**
-- [ ] ALL source files have Apache 2.0 header (`.ts`, `.tsx`, `.scss`, `.js`)
-- [ ] Bash scripts have `#` comment format after shebang
+**Step 1.3** — Summarise what this PR does in 2-3 sentences.
 
-**Example header:**
-```typescript
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * ...
- */
+**Step 1.4** — For each specialist agent, embed into its prompt:
+- The PR summary (Step 1.3)
+- The full diff (or relevant file sections from the diff)
+- The list of changed files
+
+> **Why:** Sub-agents launched via the Agent tool run in a sandboxed context where Bash/GitHub
+> tool permissions may be restricted. The orchestrator must be the single point that fetches
+> external data; agents should only read local files or analyse context passed to them.
+
+## Phase 2: Launch 5 Specialist Agents in Parallel
+
+Launch all 5 agents in a **single message** using multiple Agent tool calls. Each agent
+receives: (a) the PR summary, (b) the list of changed files, (c) its domain-specific rules.
+
+Each agent MUST return a JSON array of issues:
+```json
+[
+  {
+    "title": "Brief issue title (max 10 words)",
+    "explanation": "What is wrong, why it matters, what to use instead",
+    "file": "packages/bpk-component-foo/src/BpkFoo.tsx",
+    "startLine": 42,
+    "endLine": 45,
+    "source": "constitution|sass-tokens|a11y-testing|history|bug-scan",
+    "rule": "Constitution XI — className restriction"
+  }
+]
 ```
 
-**Check:**
-```bash
-# Find files missing license headers
-rg -L "Copyright 2016 Skyscanner" packages/bpk-component-*/src/
-```
-
-#### ✅ 3. API Design & Encapsulation (Constitution XI - CRITICAL)
-
-**NEW COMPONENTS RULE (NON-NEGOTIABLE):**
-
-New components MUST restrict `className` and `style` props to prevent style overwriting.
-
-**Check:**
-```typescript
-// ❌ WRONG for new components
-type Props = {
-  content: string;
-} & ComponentPropsWithoutRef<'div'>; // Includes className
-
-// ✅ CORRECT for new components
-type Props = {
-  content: string;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>;
-```
-
-**Existing components:** May grandfather these props but discourage use.
-
-**Accessibility props:**
-- [ ] Required when needed (not optional)
-- [ ] Example: `accessibilityLabel: string` (not `accessibilityLabel?: string`)
-
-**Check in code:**
-```bash
-# Find components accepting className
-rg "className\?" packages/bpk-component-*/src/*.tsx
-
-# Find new components with className in props
-rg "ComponentPropsWithoutRef.*>" packages/bpk-component-*/src/*.tsx
-```
-
-#### ✅ 4. Modern Sass API (Constitution III - NON-NEGOTIABLE)
-
-**Check:**
-- [ ] Uses `@use` syntax, NEVER `@import`
-- [ ] Granular imports from `bpk-mixins` submodules
-- [ ] Namespace prefixes (e.g., `tokens.bpk-spacing-md()`)
-- [ ] CSS Modules (`.module.scss`)
-- [ ] All sizing in `rem`, not `px` or `em`
-
-**Correct pattern:**
-```scss
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
-
-.bpk-component {
-  padding: tokens.bpk-spacing-md(); // ✅ Token function
-  color: tokens.$bpk-color-white;    // ✅ Token variable
-}
-```
-
-**Check:**
-```bash
-# Find deprecated @import usage
-rg "@import" packages/bpk-component-*/src/*.scss
-
-# Find px units (should be rem)
-rg ":\s*\d+px" packages/bpk-component-*/src/*.scss
-
-# Find magic numbers (no token)
-rg ":\s*\d+\.?\d*rem;" packages/bpk-component-*/src/*.scss | grep -v "tokens\."
-```
-
-#### ✅ 4a. Investigation method: for any CSS property written directly, search bpk-mixins for an existing abstraction
-
-**Principle:** Backpack provides mixins in `bpk-mixins/` for common interactive and layout
-patterns. Writing raw CSS that looks correct may silently break cross-platform behaviour
-(e.g. hover on touch devices, inconsistent animation timing). When you see a CSS property
-written directly in a new component, treat it as a question mark, not a given.
-
-**How to investigate:**
-1. For each CSS property/selector written directly (`:hover`, `transition:`, `border-radius:`,
-   `z-index:`, `::before` pseudo-elements, etc.), grep `bpk-mixins/` to find if a mixin exists:
-   ```bash
-   rg "mixin bpk-" packages/bpk-mixins/ --include="*.scss" -l
-   cat packages/bpk-mixins/_utils.scss
-   ```
-2. Grep 2–3 similar existing components to see how they handle the same pattern:
-   ```bash
-   rg ":hover\|transition:\|border-radius:" packages/bpk-component-chip/src/
-   rg ":hover\|transition:\|border-radius:" packages/bpk-component-card-button/src/
-   ```
-3. If a mixin exists and the new component bypasses it, that is a violation — regardless
-   of whether the raw CSS value happens to produce the same visual result.
-
-**Known examples of this pattern (not exhaustive):**
-- `:hover` → should use `@include utils.bpk-hover { }` (gates behind `.bpk-no-touch-support`)
-- `transition: ... 0.2s` → `tokens.$bpk-duration-sm` token exists
-- `::before` touch-target expansion → `@include utils.bpk-touch-tappable` exists
-
-#### ✅ 4b. Investigation method: for any imported package helper, read its index to find the full API
-
-**Principle:** Backpack packages often export multiple variants of a helper (size-specific,
-context-specific, etc.). Code compiles fine with the wrong variant but produces incorrect
-visual or functional results. Never assume a package only exports what is currently imported.
-
-**How to investigate:**
-1. For each `import X from '../../bpk-component-Y'`, open the full export list:
-   ```bash
-   cat packages/bpk-component-Y/index.tsx
-   # or
-   cat packages/bpk-component-Y/index.ts
-   ```
-2. Look for other exports with similar names — especially size/variant suffixes
-   (`Large`, `Small`, `OnDark`, `V2`, etc.)
-3. Verify the imported variant matches the context: icon size, button size, theme, etc.
-
-**Known examples of this pattern (not exhaustive):**
-- `bpk-component-icon` exports both `withButtonAlignment` (for `sm/` icons) and
-  `withLargeButtonAlignment` (for `lg/` icons) — wrong choice compiles but misaligns
-- Icon path `sm/` vs `lg/` must match the alignment wrapper used
-
-#### ✅ 5. Token Usage (Constitution III)
-
-**Rules:**
-- [ ] All visual parameters use design tokens (no magic numbers)
-- [ ] Do NOT use `$bpk-private-*` tokens from other components
-- [ ] Token changes require separate PR to backpack-foundations
-- [ ] Token names match their **semantic meaning** — the token name must describe the UI state, not just produce the right colour value
-
-**Investigation method: for every token used, verify semantic intent matches usage context**
-
-A token value match is not enough. Ask: "Does the *name* of this token describe what this
-element *is* in this state?" Token categories encode semantic meaning:
-
-| Token prefix | Intended for |
-|---|---|
-| `$bpk-text-disabled-*` | Disabled / non-interactive elements |
-| `$bpk-text-secondary-*` | Active but de-emphasised interactive elements |
-| `$bpk-surface-hero-*` | Hero/prominent background areas |
-| `$bpk-status-danger-*` | Error / destructive states |
-| `$bpk-core-accent-*` | Selected / primary action states |
-
-How to check: for each token used in the new component, look up its definition in
-[backpack-foundations/base.common.js](https://github.com/Skyscanner/backpack-foundations/blob/main/packages/bpk-foundations-web/tokens/base.common.js)
-and read its comments/category. If the category doesn't match the UI state, it is wrong
-even if the hex value happens to match the design.
-
-```scss
-// ❌ WRONG: disabled token on an active, interactive element (name mismatch)
-color: tokens.$bpk-text-disabled-day;
-
-// ✅ CORRECT: secondary text for unselected-but-interactive state
-color: tokens.$bpk-text-secondary-day;
-```
-
-**Common violations:**
-
-```scss
-// ❌ WRONG: Using another component's private token
-background-color: tokens.$bpk-private-chip-on-dark-on-background-night;
-
-// ❌ WRONG: Magic number
-max-width: 17.5rem; // No token reference
-
-// ✅ CORRECT: Public token
-background-color: tokens.$bpk-surface-contrast-day;
-
-// ✅ CORRECT: Documented magic number with TODO
-max-width: 17.5rem; // TODO: Add to backpack-foundations (issue #XXX)
-```
-
-**Check:**
-```bash
-# Find private token usage across components
-rg "\$bpk-private-" packages/bpk-component-*/src/*.scss
-
-# Find hardcoded values
-rg ":\s*#[0-9a-fA-F]{3,6}" packages/bpk-component-*/src/*.scss
-rg ":\s*\d+\.?\d*rem" packages/bpk-component-*/src/*.scss | grep -v "tokens\."
-
-# Flag disabled token in non-disabled context (read surrounding code to judge)
-rg "text-disabled" packages/bpk-component-*/src/*.scss
-```
-
-#### ✅ 6. Accessibility (Constitution IV - NON-NEGOTIABLE)
-
-**Automated testing:**
-- [ ] `accessibility-test.tsx` file exists
-- [ ] Uses `jest-axe` for automated checks
-- [ ] Tests public interface (how component is actually used)
-- [ ] All tests pass
-
-**Manual testing requirements:**
-- [ ] Keyboard-only navigation works
-- [ ] Screen reader compatible
-- [ ] 200% text magnification works
-- [ ] 400% zoom without horizontal scroll
-- [ ] Color contrast meets WCAG AA
-- [ ] Touch targets ≥ 44x44px on mobile
-
-**Check:**
-```bash
-# Find components without accessibility tests
-find packages/bpk-component-*/src -name "accessibility-test.tsx" | wc -l
-
-# Run accessibility tests
-npm run jest -- accessibility-test
-```
-
-#### ✅ 7. TypeScript & Type Safety (Constitution V)
-
-**Check:**
-- [ ] All new code in TypeScript
-- [ ] Proper prop type interfaces
-- [ ] JSDoc comments for public APIs
-- [ ] `@deprecated` tags for deprecated APIs
-- [ ] Console warnings for deprecated prop usage
-
-**Example:**
-```typescript
-type MyCompProps = {
-  stableProp: string;
-  /** @deprecated deprecatedProp is deprecated. Use stableProp instead. */
-  deprecatedProp?: string; // Must be optional
-}
-```
-
-#### ✅ 8. Documentation (Constitution IX)
-
-**Check:**
-- [ ] README.md with usage examples
-- [ ] Storybook stories in `examples/` directory
-- [ ] JSDoc/TSDoc comments
-- [ ] Props documented
-- [ ] Accessibility guidelines included
-
-**Standards:**
-- [ ] British English for prose, US English for code
-- [ ] Sentence case for titles
-- [ ] Singular titles (e.g., "Bar chart" not "Bar charts")
-- [ ] Descriptions < 100 words
-
-#### ✅ 9. Design Approval (Constitution X - BLOCKING)
-
-**NON-NEGOTIABLE requirement:**
-
-All component changes MUST be design-approved before implementation.
-
-**Check:**
-- [ ] Design review completed OR Backpack designer approval
-- [ ] Figma designs exist with ALL states documented
-- [ ] Visual examples for each state (default, hover, focus, active, disabled, loading, error)
-- [ ] Responsive behavior specs (mobile, tablet, desktop)
-- [ ] Accessibility annotations in Figma
-
-**Missing design approval = BLOCKING ISSUE**
-
-**Check:**
-```bash
-# Look for design approval mention in PR description or commits
-# Contact #backpack Slack if unclear
-```
-
-#### ✅ 10. Testing Coverage (Constitution VIII)
-
-**Requirements:**
-- [ ] Branches: ≥70%
-- [ ] Functions/Lines/Statements: ≥75%
-- [ ] Unit tests (Jest + Testing Library)
-- [ ] Accessibility tests (jest-axe)
-- [ ] Visual regression tests (Percy via Storybook)
-- [ ] Snapshot tests
-
-**Snapshot currency (NON-OBVIOUS — commonly missed):**
-
-After ANY change to rendered output (prop added/removed, attribute removed, HTML structure changed),
-snapshots MUST be regenerated. Stale snapshots silently pass even if they contain attributes
-or markup that the component no longer produces. Always read the `.snap` file and verify it
-matches the current component output.
-
-```bash
-# Common signs of a stale snapshot:
-# - snap contains attributes no longer set (e.g. title="..." after aria-label was added)
-# - snap references class names that were renamed
-# - snap structure doesn't match current JSX
-```
-
-**Check:**
-```bash
-# Run with coverage
-npm run jest -- --coverage packages/bpk-component-[name]
-
-# Check coverage thresholds
-npm run jest -- --coverage --collectCoverageFrom='packages/bpk-component-[name]/src/**'
-
-# Update stale snapshots
-npm run jest -- --updateSnapshot packages/bpk-component-[name]
-```
-
-### Phase 3: Review Output Format
-
-The output format is a **flat numbered list**. No section headers, no priority emoji blocks,
-no compliance score. Each entry: one sentence for the issue title, then the explanation
-(what is wrong, why it matters, what to use instead, with a reference to a correct example
-in the codebase). Finish with a link to the offending lines — format depends on mode.
-
-**Template (shared structure for both modes):**
+If an agent finds no issues, it returns `[]`.
+
+---
+
+### Agent 1: Constitution & API Agent
+
+**Scope:** Naming conventions, license headers, API encapsulation (checks 1-3 from Constitution).
+
+**Prompt to give this agent:**
+
+> You are reviewing a Backpack design system PR. Your ONLY job is to check Constitution
+> compliance for naming, licensing, and API design. Return issues as JSON.
+>
+> **PR summary:** [INSERT]
+> **Changed files:** [INSERT LIST]
+> **Diff:** [INSERT FULL DIFF OR RELEVANT SECTIONS]
+>
+> Read each changed file, then check:
+>
+> **1. Naming & File Conventions (Constitution II)**
+> - Component files: PascalCase (`BpkFoo.tsx`)
+> - Style files: `.module.scss` matching component name
+> - Test files: `*-test.tsx` and `accessibility-test.tsx`
+> - Package names: `bpk-component-[name]` (kebab-case)
+> - CSS classes: BEM with `bpk-` prefix (`bpk-foo__element`)
+>
+> **2. License Headers (NON-NEGOTIABLE)**
+> - ALL `.ts`, `.tsx`, `.scss`, `.js` files must have Apache 2.0 header
+> - Must contain "Copyright 2016 Skyscanner Ltd"
+> - Check with: `grep -L "Copyright 2016 Skyscanner" [files]`
+>
+> **3. API Encapsulation (Constitution XI — CRITICAL)**
+> - NEW components MUST NOT accept `className` or `style` props
+> - Correct pattern: `Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>`
+> - Wrong pattern: bare `ComponentPropsWithoutRef<'div'>` which leaks className
+> - Existing components may grandfather className — check git log to determine if component is new
+> - Accessibility props (e.g. `accessibilityLabel`) must be REQUIRED, not optional
+>
+> **7. TypeScript (Constitution V)**
+> - All new code in TypeScript
+> - Proper prop type interfaces
+> - `@deprecated` tags for deprecated APIs
+>
+> **8. Documentation (Constitution IX)**
+> - README.md with usage examples
+> - Storybook stories in `examples/`
+> - British English for prose
+>
+> **9. Design Approval (Constitution X — BLOCKING)**
+> - Check PR description and commits for design approval evidence
+> - Missing design approval = blocking issue
+>
+> Only flag issues in **changed files**. Ignore pre-existing violations.
+> Return JSON array of issues. If none found, return `[]`.
+
+---
+
+### Agent 2: Sass & Token Agent
+
+**Scope:** Modern Sass API, token usage, mixin investigation, private token detection.
+
+**Prompt to give this agent:**
+
+> You are reviewing Backpack SCSS changes. Your ONLY job is to check Sass API and token
+> compliance. Return issues as JSON.
+>
+> **PR summary:** [INSERT]
+> **Changed files:** [INSERT LIST — only .scss files relevant]
+> **Diff (SCSS files only):** [INSERT RELEVANT DIFF SECTIONS]
+>
+> Read each changed SCSS file, then check:
+>
+> **Modern Sass API (Constitution III — NON-NEGOTIABLE)**
+> - Must use `@use` syntax, NEVER `@import`
+> - Granular imports: `@use '../../bpk-mixins/tokens'`, `@use '../../bpk-mixins/utils'`
+> - Namespace prefixes: `tokens.bpk-spacing-md()`, `tokens.$bpk-core-primary-day`
+> - CSS Modules (`.module.scss`)
+> - All sizing in `rem`, not `px` or `em`
+>
+> **Mixin investigation (CRITICAL):**
+> For EVERY CSS property written directly (`:hover`, `transition:`, `border-radius:`,
+> `z-index:`, `::before`, etc.):
+> 1. Search `packages/bpk-mixins/` for an existing mixin that abstracts this pattern
+> 2. Check 2-3 similar existing components to see how they handle the same pattern
+> 3. If a mixin exists and the new code bypasses it, flag it as a violation
+>
+> Known mixin mappings:
+> - `:hover` -> `@include utils.bpk-hover { }` (gates behind `.bpk-no-touch-support`)
+> - `transition: ... 0.2s` -> `tokens.$bpk-duration-sm` token
+> - `::before` touch-target -> `@include utils.bpk-touch-tappable`
+>
+> **Token Usage (Constitution III)**
+> - All visual params must use design tokens (no magic numbers)
+> - Do NOT use `$bpk-private-*` tokens from other components
+> - Verify token SEMANTIC meaning matches usage context, not just colour value:
+>   - `$bpk-text-disabled-*` = disabled/non-interactive elements only
+>   - `$bpk-text-secondary-*` = active but de-emphasised interactive elements
+>   - `$bpk-surface-hero-*` = hero/prominent background areas
+>   - `$bpk-status-danger-*` = error/destructive states
+>   - `$bpk-core-accent-*` = selected/primary action states
+>
+> **Package import investigation:**
+> For each `import X from '../../bpk-component-Y'`:
+> 1. Open `packages/bpk-component-Y/index.tsx` to see full export list
+> 2. Look for size/variant suffixes (Large, Small, OnDark, V2)
+> 3. Verify the imported variant matches context (icon size, button size, etc.)
+> - Known trap: `withButtonAlignment` (sm/ icons) vs `withLargeButtonAlignment` (lg/ icons)
+>
+> Only flag issues in **changed lines**. Ignore pre-existing violations.
+> Return JSON array of issues. If none found, return `[]`.
+
+---
+
+### Agent 3: Accessibility & Testing Agent
+
+**Scope:** Accessibility compliance, test coverage, snapshot currency.
+
+**Prompt to give this agent:**
+
+> You are reviewing Backpack accessibility and testing. Your ONLY job is to check a11y
+> and test compliance. Return issues as JSON.
+>
+> **PR summary:** [INSERT]
+> **Changed files:** [INSERT LIST]
+> **Diff (TSX/test files):** [INSERT RELEVANT DIFF SECTIONS]
+>
+> Read the changed files and related test files, then check:
+>
+> **Accessibility (Constitution IV — NON-NEGOTIABLE)**
+> - `accessibility-test.tsx` file must exist for any component
+> - Must use `jest-axe` for automated checks
+> - Tests must exercise the public interface
+> - Check for: keyboard navigation, ARIA labels, touch targets >= 44x44px
+> - Verify colour contrast considerations in SCSS
+>
+> **Testing Coverage (Constitution VIII)**
+> - Unit tests (Jest + Testing Library) exist for all new code
+> - Coverage thresholds: branches >= 70%, functions/lines/statements >= 75%
+> - Accessibility tests exist
+> - Storybook stories exist in `examples/` directory
+>
+> **Snapshot Currency (commonly missed):**
+> After ANY change to rendered output (prop added/removed, attribute changed, HTML structure
+> changed), snapshots MUST be regenerated. Check:
+> 1. Read the `.snap` file for this component
+> 2. Verify it matches the current component output
+> 3. Look for stale attributes (e.g. `title="..."` after `aria-label` was added)
+> 4. Look for class names that were renamed but not updated in snapshot
+>
+> Only flag issues in **changed files**. Ignore pre-existing violations.
+> Return JSON array of issues. If none found, return `[]`.
+
+---
+
+### Agent 4: History Agent
+
+**Scope:** Git blame, past PR comments, recurring patterns.
+
+**Prompt to give this agent:**
+
+> You are analysing the git history of files changed in a Backpack PR to find context-based
+> issues. Return issues as JSON.
+>
+> **PR summary:** [INSERT]
+> **Changed files:** [INSERT LIST]
+> **Diff:** [INSERT FULL DIFF]
+>
+> For each changed file:
+>
+> **1. Git blame analysis:**
+> ```bash
+> git blame [file] -- [changed line range]
+> git log --oneline -10 -- [file]
+> ```
+> - Understand the evolution of the modified code
+> - Check if recently reverted code is being reintroduced
+> - Identify hotspot files (frequent recent changes = higher scrutiny needed)
+>
+> **2. Past PR review comments:**
+> ```bash
+> # Find recent PRs that touched these files
+> gh pr list --state merged --limit 5 --search "[filename]"
+> # Read comments on those PRs
+> gh pr view [PR_NUMBER] --comments
+> ```
+> - Look for recurring review feedback on the same files
+> - Check if past review comments flagged the same patterns now being introduced
+> - If a past reviewer asked for a specific change, check if this PR follows that guidance
+>
+> **3. Revert detection:**
+> ```bash
+> git log --oneline --all --grep="revert" -- [file]
+> ```
+> - If this area of code was recently reverted, flag for extra caution
+>
+> Only report issues that are **directly relevant to the current PR's changes**.
+> Do not flag pre-existing issues that are unrelated to this PR.
+> Return JSON array of issues. If none found, return `[]`.
+
+---
+
+### Agent 5: Bug Scanner
+
+**Scope:** Shallow scan of the diff only, looking for obvious logic bugs.
+
+**Prompt to give this agent:**
+
+> You are scanning a Backpack PR diff for obvious bugs. Your ONLY job is to find logic
+> errors, not style issues. Return issues as JSON.
+>
+> **PR summary:** [INSERT]
+> **Changed files:** [INSERT LIST]
+> **Diff:** [INSERT FULL DIFF]
+>
+> Read the diff of each changed file. Focus ONLY on the changed lines. Look for:
+>
+> - Logic errors (wrong condition, off-by-one, missing null check)
+> - Missing event handler cleanup (addEventListener without removeEventListener)
+> - React-specific bugs (missing deps in useEffect, stale closures, key prop issues)
+> - Type mismatches that TypeScript might not catch (wrong enum variant, swapped args)
+> - Accessibility bugs (onClick without onKeyDown, missing role, wrong ARIA attribute)
+> - CSS bugs (z-index conflicts, missing overflow handling, RTL issues)
+>
+> **Do NOT flag:**
+> - Style issues or nitpicks
+> - Pre-existing issues not introduced in this PR
+> - Things a linter or type checker would catch
+> - General code quality opinions
+> - Missing tests (Agent 3 handles this)
+> - Token or Sass issues (Agent 2 handles this)
+>
+> Be conservative. Only flag things you are confident are actual bugs.
+> Return JSON array of issues. If none found, return `[]`.
+
+---
+
+## Phase 3: Confidence Scoring
+
+After all 5 agents return, collect every issue into a single list. Then launch **parallel
+scoring agents** — one per issue (or batch small groups if there are many).
+
+Each scoring agent receives:
+- The issue description
+- The relevant code snippet from the PR
+- The relevant Constitution/decision rule (if applicable)
+
+**Scoring prompt for each issue:**
+
+> Score this issue on a scale from 0-100 for confidence that it is a real, actionable issue:
+>
+> **Issue:** [TITLE + EXPLANATION]
+> **Code:** [RELEVANT SNIPPET]
+> **Rule reference:** [CONSTITUTION/DECISION SECTION, if any]
+>
+> Scoring rubric:
+> - **0**: False positive. Does not stand up to scrutiny, or is a pre-existing issue.
+> - **25**: Might be real but could be a false positive. If stylistic, not explicitly
+>   required by Constitution or decisions/.
+> - **50**: Real issue but minor. A nitpick or unlikely to matter in practice.
+> - **75**: Verified real issue. Constitution or decisions/ explicitly requires this.
+>   The PR's approach is insufficient. Will impact functionality or consistency.
+> - **100**: Certain. NON-NEGOTIABLE violation (license header, className leak in new
+>   component, missing accessibility test). Verified by reading the actual code.
+>
+> For Constitution/decision issues: verify the rule ACTUALLY says what the issue claims.
+> If you cannot find the rule, score 0.
+>
+> For bug issues: verify the bug can actually occur given the surrounding code context.
+>
+> For history issues: verify the past feedback is relevant to the current change.
+>
+> Return ONLY a JSON object: `{"score": NUMBER, "reasoning": "brief explanation"}`
+
+**False positive patterns to score 0:**
+- Pre-existing issues not introduced in this PR
+- Something that looks like a bug but isn't given context
+- Pedantic nitpicks a senior engineer wouldn't flag
+- Issues a linter/typechecker/compiler would catch
+- General quality opinions not backed by Constitution/decisions
+- Issues silenced by lint-ignore comments
+- Intentional functionality changes directly related to the PR's purpose
+- Grandfathered patterns in existing components (e.g. className in old components)
+
+## Phase 4: Filter, Format, and Output
+
+**Filter:** Remove all issues with score < 75.
+
+**If no issues remain:**
 
 ```markdown
 ### Code review
 
-Found N issues:
+No issues found. Checked for Constitution compliance, Sass/token usage, accessibility,
+bugs, and historical patterns across 5 independent review agents.
 
-1. [Concise issue title] — [explanation: what is wrong, why, what the correct approach is,
-   reference to where in the codebase the correct pattern is used]
+🤖 Generated with [Claude Code](https://claude.ai/code)
+```
 
-   [link to offending lines — see format rules below]
+**If issues remain, format as flat numbered list:**
 
-2. [Next issue] — [explanation]
+```markdown
+### Code review
+
+Found N issues (reviewed by 5 independent agents, filtered by confidence scoring):
+
+1. [Concise title] — [explanation: what is wrong, why it matters, what to use instead.
+   Reference correct pattern from codebase if one exists.] (source: [agent name], confidence: [score])
+
+   [link to offending lines — format depends on PR vs local mode]
+
+2. [Next issue] — [explanation] (source: [agent name], confidence: [score])
 
    [link]
-
-[repeat for all issues]
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
 **Link format rules:**
 
-- **PR mode** — GitHub permalink anchored to the PR's head commit SHA:
+- **PR mode** — GitHub permalink with full SHA:
   ```
   https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]
   ```
-  Get the SHA from `gh pr view NNN --json headRefOid -q .headRefOid`.
-
-  After generating the review body, post it to the PR:
+  After generating the body, post to PR:
   ```bash
   gh pr review NNN --comment --body "$(cat <<'EOF'
-  [full review body]
+  [review body]
   EOF
   )"
   ```
-  Then confirm to the user that the comment was posted.
 
-- **Local mode** — VSCode-clickable markdown link using the repo-relative path:
+- **Local mode** — VSCode-clickable link:
   ```markdown
-  [packages/bpk-component-foo/src/BpkFoo.module.scss:29](packages/bpk-component-foo/src/BpkFoo.module.scss#L29)
+  [packages/bpk-component-foo/src/BpkFoo.tsx:42](packages/bpk-component-foo/src/BpkFoo.tsx#L42)
   ```
-  For a range:
-  ```markdown
-  [packages/bpk-component-foo/src/BpkFoo.module.scss:29-31](packages/bpk-component-foo/src/BpkFoo.module.scss#L29-L31)
-  ```
-  Output the review to the conversation only — do **not** post to GitHub.
 
-**General output rules:**
-- Count real issues only — do not pad with style nits
-- Each title is at most ~10 words; the dash separates it from the explanation
-- The explanation must include: (a) what is wrong, (b) why it matters, (c) what to use instead
-- Always link to a correct precedent file in the repo when one exists
-- Do NOT include a "strengths" section, compliance score table, or required-actions checklist
+**Output rules:**
+- Count real issues only — do not pad with nits
+- Each title max ~10 words; dash separates from explanation
+- Explanation must include: (a) what is wrong, (b) why, (c) what to use instead
+- Link to a correct precedent in the repo when one exists
+- Do NOT include strengths section, compliance score table, or required-actions checklist
 
-## Verification
+---
 
-After completing review:
+## Reference: Domain Knowledge
 
-1. **All blocking issues identified** and documented
-2. **Specific fixes provided** for each violation
-3. **Constitution/decision references** cited
-4. **Priority classification** assigned to each issue
-5. **Compliance score** calculated
-
-**Self-check questions:**
-- Did I check for className/style props in new components?
-- Did I verify design approval exists?
-- Did I look for private token usage across components?
-- Did I check for license headers in ALL files?
-- Did I read the snapshot `.snap` file and verify it matches current component output?
-- Did I run the actual tests, not just look at code?
-- For every CSS property written directly in the new SCSS — did I grep `bpk-mixins/` to confirm no mixin exists for it?
-- For every package import — did I open that package's `index.tsx` to see the full API and confirm the right variant is used?
-- For every token used — did I verify the token *name* semantically matches the UI state (not just the colour value)?
-
-## Notes
+The following sections provide reference material for agents. They are NOT executed
+sequentially — they are embedded into agent prompts as needed.
 
 ### API Design: New vs Existing Components
 
 **New components (after Constitution ratification):**
 - MUST NOT accept `className` or `style` props
-- Strict enforcement to maintain visual consistency
+- Correct: `Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>`
 
 **Existing components (grandfathered):**
 - MAY keep `className`/`style` for backward compatibility
 - Discourage use in documentation
-- Consider deprecation in future major versions
 
 ### Token Hierarchy
 
 **Token Reference**: [backpack-foundations/base.common.js](https://github.com/Skyscanner/backpack-foundations/blob/main/packages/bpk-foundations-web/tokens/base.common.js)
 
-#### Token Categories
+| Category | Pattern | Example |
+|----------|---------|---------|
+| Core | `$bpk-core-*` | `$bpk-core-primary-day` |
+| Surface | `$bpk-surface-*` | `$bpk-surface-default-day` |
+| Text | `$bpk-text-*` | `$bpk-text-primary-day` |
+| Status | `$bpk-status-*` | `$bpk-status-danger-spot-day` |
+| Line | `$bpk-line-*` | `$bpk-line-day` |
+| Spacing | functions | `tokens.bpk-spacing-base()` |
+| Private | `$bpk-private-[component]-*` | DO NOT use cross-component |
 
-Backpack tokens are organized into semantic categories:
+### Color Value Matching
 
-1. **Core tokens** (`$bpk-core-*`): Foundational brand colors
-   - `$bpk-core-primary-day`, `$bpk-core-accent-day`, `$bpk-core-eco-day`
+Backpack tokens use RGB notation (`rgb(239, 243, 248)`). When matching Figma/design colours:
+1. Convert HEX to RGB
+2. Search in backpack-foundations `base.common.js`
+3. Use the matching token, not the raw value
 
-2. **Surface tokens** (`$bpk-surface-*`): Layout backgrounds
-   - `$bpk-surface-default-day`, `$bpk-surface-elevated-day`, `$bpk-surface-hero-day`
+### SemVer Impact Classification
 
-3. **Text tokens** (`$bpk-text-*`): Typography colors
-   - `$bpk-text-primary-day`, `$bpk-text-secondary-day`, `$bpk-text-on-dark-day`
-
-4. **Status tokens** (`$bpk-status-*`): Semantic states
-   - `$bpk-status-success-spot-day`, `$bpk-status-danger-spot-day`, `$bpk-status-warning-spot-day`
-
-5. **Line/Border tokens** (`$bpk-line-*`): Dividers and borders
-   - `$bpk-line-day`, `$bpk-line-on-dark-day`
-
-6. **Spacing tokens** (functions): Layout spacing
-   - `tokens.bpk-spacing-xs()`, `tokens.bpk-spacing-base()`, `tokens.bpk-spacing-xl()`
-
-7. **Typography tokens**: Font sizes, weights, line heights
-   - `tokens.$bpk-font-size-base`, `tokens.$bpk-line-height-base`
-
-#### Public vs Private Tokens
-
-1. **Public tokens**: Use freely across all components
-   - Pattern: `$bpk-core-*`, `$bpk-text-*`, `$bpk-surface-*`
-   - Example: `$bpk-core-primary-day`, `tokens.bpk-spacing-md()`
-
-2. **Private tokens**: Component-internal only, DO NOT use in other components
-   - Pattern: `$bpk-private-[component]-*`
-   - Example: `$bpk-private-chip-on-dark-on-background-night`, `$bpk-private-button-secondary-pressed-background-day`
-   - **Violation**: Using `$bpk-private-chip-*` in `bpk-thinking` component
-
-3. **Cross-component token needs**: Request new public token in backpack-foundations
-
-#### Color Value Matching (Important for Figma Integration)
-
-**Token color format**: All Backpack tokens use **RGB notation** (`rgb(239, 243, 248)`)
-
-**Common issue**: Figma MCP or manual color input provides colors in different formats:
-- Figma exports: HEX (`#EFF3F8`) or RGB objects (`{r: 239, g: 243, b: 248}`)
-- Designer handoff: HEX codes (`#054184`)
-- CSS: Various formats (HEX, RGB, RGBA, HSL)
-
-**Solution - Color Conversion Required**:
-
-When matching colors to tokens, you may need to convert formats:
-
-```javascript
-// HEX to RGB conversion
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-
-// Example: #054184 → rgb(5, 65, 132)
-// Then search tokens: grep "rgb(5, 65, 132)" base.common.js
-```
-
-**Workflow for color matching**:
-
-1. **Get color from Figma/design**: `#054184`
-2. **Convert to RGB**: `rgb(5, 65, 132)`
-3. **Search in backpack-foundations**:
-   ```bash
-   curl -s https://raw.githubusercontent.com/Skyscanner/backpack-foundations/main/packages/bpk-foundations-web/tokens/base.common.js | grep "rgb(5, 65, 132)"
-   ```
-4. **Find token**: `corePrimaryNight: 'rgb(5, 65, 132)'`
-5. **Use token**: `tokens.$bpk-core-primary-night`
-
-**If no match found**:
-- Check with design team if color is correct
-- Request new token in backpack-foundations PR
-- Document the requirement in component PR
-
-### Design Approval Workflow
-
-1. Reach out to #backpack Slack BEFORE starting work
-2. Get Figma designs with all states
-3. Implement matching designs exactly
-4. Visual regression tests will catch deviations
-
-### Common Traps
-
-- ❌ Assuming existing component patterns are correct (they may be grandfathered)
-- ❌ Copying private tokens from other components
-- ❌ Implementing first, seeking design approval later
-- ❌ Using px because "it's just one value"
-- ❌ Making `accessibilityLabel` optional "to be flexible"
-- ❌ Leaving snapshot files stale after removing/changing rendered attributes
-- ❌ Accepting that a CSS value looks right without checking if `bpk-mixins/` already abstracts it
-- ❌ Accepting that an import compiles without checking the full package API for a better-fitting variant
-- ❌ Accepting that a token produces the right colour without checking if the token name fits the UI state
-
-### SemVer Impact
-
-When reviewing changes, classify version impact:
-
-- **MAJOR**: Breaking API changes, visual changes, token changes, removal, new mandatory functionality
+- **MAJOR**: Breaking API changes, visual changes, token changes, removal
 - **MINOR**: New optional features, new components, deprecations
 - **PATCH**: Bug fixes, dependency updates, code quality
 
-Err on side of more breaking changes rather than fewer.
+### Common Traps
+
+- Assuming existing component patterns are correct (they may be grandfathered)
+- Copying private tokens from other components
+- Using px because "it's just one value"
+- Making `accessibilityLabel` optional "to be flexible"
+- Leaving snapshot files stale after changing rendered output
+- Accepting CSS values without checking if `bpk-mixins/` abstracts them
+- Accepting imports without checking the full package API for a better variant
+- Accepting token colour match without verifying the token name fits the UI state
 
 ## References
 
-- [Backpack Constitution](/.specify/memory/constitution.md) - Core principles
+- [Backpack Constitution](/.specify/memory/constitution.md)
 - [Modern Sass API Decision](/decisions/modern-sass-api.md)
 - [Accessibility Tests Decision](/decisions/accessibility-tests.md)
 - [Component SCSS Filenames Decision](/decisions/component-scss-filenames.md)
 - [Versioning Rules](/decisions/versioning-rules.md)
 - [Deprecated API](/decisions/deprecated-api.md)
 - [Code Review Guidelines](/CODE_REVIEW_GUIDELINES.md)
-- [Backpack Documentation](https://www.skyscanner.design/)
+- [Anthropic Code Review Plugin](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review) — Architecture inspiration
