@@ -17,10 +17,9 @@
  */
 
 import { forwardRef } from 'react';
-import type { RefObject } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
-import { useInputHandlers, useTextAreaAutoResize } from '../hooks';
+import { useInputHandlers } from '../hooks';
 
 import type { BaseInputFieldProps } from '../types';
 
@@ -28,11 +27,20 @@ import STYLES from './TextAreaField.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const TextAreaField = forwardRef<HTMLTextAreaElement, BaseInputFieldProps>(
+interface TextAreaFieldProps extends BaseInputFieldProps {
+  containerHeight: number;
+  textareaHeight: number;
+  shouldReduceParentPadding: boolean;
+  isExpanding: boolean;
+}
+
+const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
   (
     {
+      containerHeight,
       dataTestId,
       disabled = false,
+      isExpanding,
       isOverLimit = false,
       onInputBlur,
       onInputChange,
@@ -40,6 +48,8 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, BaseInputFieldProps>(
       onInputFocus,
       onKeyDown,
       placeholder,
+      shouldReduceParentPadding,
+      textareaHeight,
       value,
     },
     ref,
@@ -50,16 +60,6 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, BaseInputFieldProps>(
       handleTouchEnd,
       handleTouchStart,
     } = useInputHandlers(ref, onInputChange, onInputClick);
-
-    const {
-      containerHeight,
-      isExpanding,
-      shouldReduceParentPadding,
-      textareaHeight,
-    } = useTextAreaAutoResize({
-      ref: ref as RefObject<HTMLTextAreaElement>,
-      value,
-    });
 
     return (
       <div

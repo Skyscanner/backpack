@@ -21,24 +21,7 @@ import { useRef } from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import { useTextAreaAutoResize } from '../hooks';
-
 import TextAreaField from './TextAreaField';
-
-jest.mock('../hooks', () => ({
-  ...jest.requireActual('../hooks'),
-  useTextAreaAutoResize: jest.fn(),
-}));
-
-const mockAutoResize = useTextAreaAutoResize as jest.Mock;
-
-const defaultAutoResizeReturn = {
-  containerHeight: 56,
-  isExpanding: false,
-  shouldReduceParentPadding: false,
-  textareaHeight: 24,
-  scrollToBottom: jest.fn(),
-};
 
 const defaultProps = {
   value: '',
@@ -49,6 +32,10 @@ const defaultProps = {
   onInputBlur: jest.fn(),
   onInputClick: jest.fn(),
   onKeyDown: jest.fn(),
+  containerHeight: 56,
+  textareaHeight: 24,
+  shouldReduceParentPadding: false,
+  isExpanding: false,
 };
 
 const TestWrapper = (props: any) => {
@@ -59,7 +46,6 @@ const TestWrapper = (props: any) => {
 describe('TextAreaField', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    mockAutoResize.mockReturnValue(defaultAutoResizeReturn);
   });
 
   it('renders textarea field correctly', () => {
@@ -99,13 +85,9 @@ describe('TextAreaField', () => {
   });
 
   it('applies fifth-line class when shouldReduceParentPadding is true', () => {
-    mockAutoResize.mockReturnValue({
-      ...defaultAutoResizeReturn,
-      isExpanding: true,
-      shouldReduceParentPadding: true,
-    });
-
-    const { container } = render(<TestWrapper />);
+    const { container } = render(
+      <TestWrapper isExpanding shouldReduceParentPadding />,
+    );
 
     expect(container.firstChild).toBeInTheDocument();
   });

@@ -50,6 +50,9 @@ interface UseChatbotInputReturn {
   sendButtonDisabled: boolean;
   inputProps: BaseInputFieldProps;
   handleSubmit: () => void;
+  containerHeight: number;
+  textareaHeight: number;
+  shouldReduceParentPadding: boolean;
 }
 
 const useChatbotInput = ({
@@ -73,10 +76,12 @@ const useChatbotInput = ({
   const isOverLimit = inputValue.length > maxCharacters;
   const isDisabled = isSending || isPolling;
 
-  const { isExpanding } = useTextAreaAutoResize({
-    ref: inputRef as RefObject<HTMLTextAreaElement>,
-    value: inputValue,
-  });
+  const { containerHeight, isExpanding, shouldReduceParentPadding, textareaHeight } =
+    useTextAreaAutoResize({
+      ref: inputRef as RefObject<HTMLTextAreaElement>,
+      value: inputValue,
+      enabled: !isDefault,
+    });
 
   const handleSubmit = useCallback(() => {
     if (inputValue.trim() && !isSending && !isOverLimit) {
@@ -143,6 +148,9 @@ const useChatbotInput = ({
     sendButtonDisabled,
     inputProps,
     handleSubmit,
+    containerHeight,
+    textareaHeight,
+    shouldReduceParentPadding,
   };
 };
 

@@ -70,10 +70,7 @@ export const DefaultExample = () => (
 
 export const DefaultPollingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
-    <ChatbotInputWithState
-      inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-      isPolling
-    />
+    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} isPolling />
   </div>
 );
 
@@ -87,11 +84,10 @@ export const DefaultSendingExample = () => (
   </div>
 );
 
-export const DefaultPollingOver500Example = () => (
+export const DefaultOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-      isPolling
       initialValue={longText}
     />
   </div>
@@ -112,11 +108,30 @@ export const ComposerWithValueExample = () => (
   </div>
 );
 
+export const ComposerPollingExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+      isPolling
+      initialValue="I'd like to hire a car in Edinburgh for the weekend"
+    />
+  </div>
+);
+
 export const ComposerOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
       initialValue={longText}
     />
+  </div>
+);
+
+export const MixedExample = () => (
+  <div>
+    <DefaultExample />
+    <DefaultPollingExample />
+    <ComposerExample />
+    <ComposerWithValueExample />
   </div>
 );

@@ -19,12 +19,12 @@
 @use '../../packages/bpk-mixins/tokens';
 
 .bpk-chatbot-input-examples {
-  max-width: tokens.bpk-spacing-xxxxl() * 6;
+  max-width: tokens.bpk-spacing-xxxxl() * 4;
   padding: tokens.bpk-spacing-base();
 }
 
 .bpk-chatbot-input-examples--on-canvas {
-  max-width: tokens.bpk-spacing-xxxxl() * 6;
+  max-width: tokens.bpk-spacing-xxxxl() * 4;
   padding: tokens.bpk-spacing-base();
   background-color: tokens.$bpk-canvas-contrast-day;
 }

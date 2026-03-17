@@ -22,10 +22,12 @@ import {
   ComposerExample,
   ComposerOver500Example,
   ComposerWithValueExample,
+  ComposerPollingExample,
   DefaultExample,
   DefaultPollingExample,
-  DefaultPollingOver500Example,
+  DefaultOver500Example,
   DefaultSendingExample,
+  MixedExample,
 } from './examples';
 
 export default {
@@ -36,15 +38,15 @@ export default {
 export const Default = DefaultExample;
 export const DefaultPolling = DefaultPollingExample;
 export const DefaultSending = DefaultSendingExample;
+export const DefaultOver500 = DefaultOver500Example;
 export const Composer = ComposerExample;
 export const ComposerWithValue = ComposerWithValueExample;
-export const DefaultPollingOver500 = DefaultPollingOver500Example;
 export const ComposerOver500 = ComposerOver500Example;
-
-export const VisualTest = DefaultExample;
+export const ComposerPolling = ComposerPollingExample;
+export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
-  render: DefaultExample,
-  parameters: {
-    viewport: { defaultViewport: 'mobile' },
+  render: VisualTest,
+  args: {
+    zoomEnabled: true,
   },
 };

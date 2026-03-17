@@ -22,6 +22,7 @@ import type { RefObject } from 'react';
 interface UseTextAreaAutoResizeProps {
   ref: RefObject<HTMLTextAreaElement>;
   value: string;
+  enabled?: boolean;
 }
 
 interface UseTextAreaAutoResizeReturn {
@@ -41,6 +42,7 @@ export const MAX_CONTAINER_HEIGHT = 96;
 export const PARENT_PADDING_TOP = 16;
 
 const useTextAreaAutoResize = ({
+  enabled = true,
   ref,
   value,
 }: UseTextAreaAutoResizeProps): UseTextAreaAutoResizeReturn => {
@@ -50,6 +52,7 @@ const useTextAreaAutoResize = ({
     containerHeight: MIN_CONTAINER_HEIGHT,
     shouldReduceParentPadding: false,
   });
+  const [containerWidth, setContainerWidth] = useState(0);
   const measureElementRef = useRef<HTMLTextAreaElement | null>(null);
   const previousValueRef = useRef<string>('');
   const shouldScrollRef = useRef<boolean>(false);
@@ -65,7 +68,7 @@ const useTextAreaAutoResize = ({
   }, [ref]);
 
   useLayoutEffect(() => {
-    if (!ref?.current) {
+    if (!enabled || !ref?.current) {
       return undefined;
     }
 
@@ -89,16 +92,22 @@ const useTextAreaAutoResize = ({
     document.body.appendChild(tempTextarea);
     measureElementRef.current = tempTextarea;
 
+    const resizeObserver = new ResizeObserver((entries) => {
+      setContainerWidth(Math.round(entries[0].contentRect.width));
+    });
+    resizeObserver.observe(textarea);
+
     return () => {
       if (measureElementRef.current) {
         measureElementRef.current.remove();
         measureElementRef.current = null;
       }
+      resizeObserver.disconnect();
     };
-  }, [ref]);
+  }, [enabled, ref]);
 
   useLayoutEffect(() => {
-    if (!ref?.current || !measureElementRef.current) {
+    if (!enabled || !ref?.current || !measureElementRef.current) {
       return;
     }
 
@@ -156,7 +165,7 @@ const useTextAreaAutoResize = ({
     });
 
     previousValueRef.current = value;
-  }, [value, ref]);
+  }, [value, ref, enabled, containerWidth]);
 
   useLayoutEffect(() => {
     if (shouldScrollRef.current) {

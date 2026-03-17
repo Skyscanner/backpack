@@ -33,6 +33,14 @@ const defaultProps = {
   onSubmit: jest.fn(),
 };
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('BpkChatbotInput accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (default type)', async () => {
     const { container } = render(<BpkChatbotInput {...defaultProps} />);

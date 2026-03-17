@@ -36,6 +36,14 @@ const mockRequestAnimationFrame = jest.fn((callback) => {
 
 const mockGetComputedStyle = jest.fn();
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('useTextAreaAutoResize', () => {
   let mockTextArea: any;
   let mockMeasureElement: HTMLTextAreaElement;

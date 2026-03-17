@@ -68,6 +68,7 @@ const BpkChatbotInput = ({
   sendAriaLabel,
 }: BpkChatbotInputProps) => {
   const {
+    containerHeight,
     handleSubmit,
     inputProps,
     inputRef,
@@ -75,6 +76,8 @@ const BpkChatbotInput = ({
     isExpanding,
     isOverLimit,
     sendButtonDisabled,
+    shouldReduceParentPadding,
+    textareaHeight,
   } = useChatbotInput({
     placeholder,
     inputType,
@@ -127,6 +130,10 @@ const BpkChatbotInput = ({
       ) : (
         <TextAreaField
           ref={inputRef as RefObject<HTMLTextAreaElement>}
+          containerHeight={containerHeight}
+          textareaHeight={textareaHeight}
+          shouldReduceParentPadding={shouldReduceParentPadding}
+          isExpanding={isExpanding}
           {...inputProps}
         />
       )}

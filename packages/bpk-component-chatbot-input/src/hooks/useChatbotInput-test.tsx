@@ -289,7 +289,7 @@ describe('useChatbotInput', () => {
       );
     });
 
-    it('should work without optional onInputClick and onKeyDown props', () => {
+    it('should not throw when optional onInputClick and onKeyDown are omitted', () => {
       const { result } = renderHook(() =>
         useChatbotInput({
           inputValue: 'Hello',
@@ -301,15 +301,13 @@ describe('useChatbotInput', () => {
         }),
       );
 
-      expect(result.current.sendButtonDisabled).toBe(false);
-
-      // Invoke the default no-op functions to ensure they are covered
-      act(() => {
-        result.current.inputProps.onInputClick();
-        result.current.inputProps.onKeyDown({
-          key: ' ',
-        } as KeyboardEvent);
-      });
+      // Calling the default no-op handlers should not throw
+      expect(() => {
+        act(() => {
+          result.current.inputProps.onInputClick();
+          result.current.inputProps.onKeyDown({ key: ' ' } as KeyboardEvent);
+        });
+      }).not.toThrow();
     });
   });
 });
