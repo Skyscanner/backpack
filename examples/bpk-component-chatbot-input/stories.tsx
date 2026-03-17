@@ -28,6 +28,7 @@ import {
   DefaultOver500Example,
   DefaultSendingExample,
   MixedExample,
+  ThemedExample,
 } from './examples';
 
 export default {
@@ -43,6 +44,7 @@ export const Composer = ComposerExample;
 export const ComposerWithValue = ComposerWithValueExample;
 export const ComposerOver500 = ComposerOver500Example;
 export const ComposerPolling = ComposerPollingExample;
+export const Themed = ThemedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
   render: VisualTest,

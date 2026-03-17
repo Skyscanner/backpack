@@ -28,3 +28,12 @@
   padding: tokens.bpk-spacing-base();
   background-color: tokens.$bpk-canvas-contrast-day;
 }
+
+.bpk-chatbot-input-examples__section-label {
+  margin-top: tokens.bpk-spacing-lg();
+  margin-bottom: tokens.bpk-spacing-sm();
+
+  &--first {
+    margin-top: 0;
+  }
+}

@@ -29,21 +29,39 @@
       border-color tokens.$bpk-duration-sm ease,
       box-shadow tokens.$bpk-duration-sm ease;
     border: 1.5 * tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
-    border-radius: tokens.$bpk-border-radius-md;
     background: tokens.$bpk-surface-elevated-day;
     box-shadow: none;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-md();
     touch-action: manipulation;
 
+    @include utils.bpk-themeable-property(
+      border-radius,
+      --bpk-chatbot-input-border-radius,
+      tokens.$bpk-border-radius-md
+    );
+
     @include utils.bpk-hover {
-      border-color: tokens.$bpk-core-accent-day;
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-chatbot-input-focus-border-color,
+        tokens.$bpk-core-accent-day
+      );
     }
 
     &:focus-within {
-      border-color: tokens.$bpk-core-accent-day;
+      // box-shadow uses the same colour as border; the spread radius is computed at
+      // build time and cannot be passed through the mixin, so we duplicate the fallback.
       box-shadow: 0 0 0 0.5 * tokens.$bpk-one-pixel-rem
         tokens.$bpk-core-accent-day;
+      box-shadow: 0 0 0 0.5 * tokens.$bpk-one-pixel-rem
+        var(--bpk-chatbot-input-focus-border-color, tokens.$bpk-core-accent-day);
+
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-chatbot-input-focus-border-color,
+        tokens.$bpk-core-accent-day
+      );
     }
   }
 
@@ -57,11 +75,16 @@
       transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
-    border-radius: tokens.$bpk-border-radius-md;
     background: tokens.$bpk-surface-default-day;
     box-sizing: border-box;
     gap: tokens.bpk-spacing-base();
     will-change: transform, box-shadow;
+
+    @include utils.bpk-themeable-property(
+      border-radius,
+      --bpk-chatbot-input-border-radius,
+      tokens.$bpk-border-radius-md
+    );
 
     &:focus-within::after {
       position: absolute;

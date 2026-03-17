@@ -22,4 +22,5 @@ export type { BpkChatbotInputProps } from './src/BpkChatbotInput';
 export { CHATBOT_INPUT_TYPES } from './src/constants';
 export type { ChatbotInputType } from './src/constants';
 export { useChatbotInputManager } from './src/hooks';
+export { default as themeAttributes } from './src/themeAttributes';
 export default BpkChatbotInput;

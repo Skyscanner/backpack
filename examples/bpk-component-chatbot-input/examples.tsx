@@ -19,10 +19,19 @@
 import { useState } from 'react';
 import type { ComponentProps } from 'react';
 
+import {
+  borderRadiusLg,
+  corePrimaryDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkChatbotInput, {
   CHATBOT_INPUT_TYPES,
+  themeAttributes,
 } from '../../packages/bpk-component-chatbot-input';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../packages/bpk-theming';
 
 import STYLES from './examples.module.scss';
 
@@ -124,6 +133,49 @@ export const ComposerOver500Example = () => (
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
       initialValue={longText}
     />
+  </div>
+);
+
+export const ThemedExample = () => (
+  <div>
+    <BpkText
+      tagName="p"
+      textStyle={TEXT_STYLES.label1}
+      className={getClassName(
+        'bpk-chatbot-input-examples__section-label',
+        'bpk-chatbot-input-examples__section-label--first',
+      )}
+    >
+      With theme override (pill border-radius + navy focus colour)
+    </BpkText>
+    <BpkThemeProvider
+      theme={{
+        chatbotInputBorderRadius: borderRadiusLg,
+        chatbotInputFocusBorderColor: corePrimaryDay,
+      }}
+      themeAttributes={themeAttributes}
+    >
+      <div className={getClassName('bpk-chatbot-input-examples')}>
+        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} />
+      </div>
+      <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
+      </div>
+    </BpkThemeProvider>
+
+    <BpkText
+      tagName="p"
+      textStyle={TEXT_STYLES.label1}
+      className={getClassName('bpk-chatbot-input-examples__section-label')}
+    >
+      Default theme (no override)
+    </BpkText>
+    <div className={getClassName('bpk-chatbot-input-examples')}>
+      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} />
+    </div>
+    <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
+    </div>
   </div>
 );
 
