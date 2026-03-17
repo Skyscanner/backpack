@@ -11,6 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```js
 import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
+import LightningIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/lightning';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
 import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
 
@@ -26,6 +27,8 @@ export default () => (
     <BpkButton type={BUTTON_TYPES.linkOnDark}>LinkOnDark</BpkButton>
     <BpkButton type={BUTTON_TYPES.primaryOnDark}>PrimaryOnDark</BpkButton>
     <BpkButton type={BUTTON_TYPES.primaryOnLight}>PrimaryOnLight</BpkButton>
+    <BpkButton leadingIcon={<LightningIcon />}>With leading icon</BpkButton>
+    <BpkButton trailingIcon={<ArrowIcon />}>With trailing icon</BpkButton>
     <BpkButton iconOnly>
       <AlignedArrowIcon />
       <BpkVisuallyHidden>Search</BpkVisuallyHidden>

@@ -47,11 +47,13 @@ const BpkButton = ({
   href = null,
   iconOnly = false,
   implicit = false,
+  leadingIcon = null,
   loading = false,
   onClick = () => {},
   rel: propRel = undefined,
   size = SIZE_TYPES.small,
   submit = false,
+  trailingIcon = null,
   type = BUTTON_TYPES.primary,
   ...rest
 }: Props) => {
@@ -59,6 +61,7 @@ const BpkButton = ({
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
   const alternate = type === BUTTON_TYPES.linkOnDark;
   const shouldUnderline = isLinkType && !iconOnly && !isDisabled;
+  const hasIcons = !!(leadingIcon || trailingIcon);
 
   const classNames = getCommonClassName(
     'bpk-button',
@@ -68,6 +71,7 @@ const BpkButton = ({
     `bpk-button--${type}`,
     loading && 'bpk-button--loading',
     fullWidth && 'bpk-button--full-width',
+    hasIcons && 'bpk-button--has-icon',
     isLinkType && iconOnly && 'bpk-button--link--icon-only',
     isLinkType && implicit && 'bpk-button--link--implicit',
     className,
@@ -82,9 +86,29 @@ const BpkButton = ({
       )
     : null;
 
-  const innerContent = underlinedClassName
+  const textContent = underlinedClassName
     ? <span className={underlinedClassName}>{children}</span>
     : children;
+
+  const leadingIconEl = !iconOnly && leadingIcon ? (
+    <span className={getCommonClassName('bpk-button__leading-icon')}>
+      {leadingIcon}
+    </span>
+  ) : null;
+
+  const trailingIconEl = !iconOnly && trailingIcon ? (
+    <span className={getCommonClassName('bpk-button__trailing-icon')}>
+      {trailingIcon}
+    </span>
+  ) : null;
+
+  const innerContent = (
+    <>
+      {leadingIconEl}
+      {textContent}
+      {trailingIconEl}
+    </>
+  );
 
   const content = loading ? (
     <div className={getCommonClassName('bpk-button__loading-container')}>
