@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { SegmentGroup } from '@ark-ui/react/segment-group';
+import { SegmentGroup } from '@ark-ui/react';
 
 import {
   cssModules,

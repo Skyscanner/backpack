@@ -208,11 +208,11 @@ Create V2 component if change requires:
 
 **V2 Component Structure**:
 ```
-packages/bpk-component-button/src/
-├── BpkButton/           # V1 (current)
-│   └── BpkButton.tsx
-└── BpkButtonV2/         # V2 (future, experimental)
-    └── BpkButton.tsx
+packages/bpk-component-modal/src/
+├── BpkModal/           # V1 (current)
+│   └── BpkModal.tsx
+└── BpkModalV2/         # V2 (future, experimental)
+    └── BpkModal.tsx
 ```
 
 **V2 Guidelines**:
@@ -350,7 +350,7 @@ Experimental features MUST follow a controlled lifecycle to enable A/B testing w
 - Update API documentation to indicate experimental status
 
 **Major Changes** (new V2 component):
-- Create experimental V2 component following V2 naming: `Bpk[ComponentName]V2` (e.g., `BpkButtonV2`)
+- Create experimental V2 component following V2 naming: `Bpk[ComponentName]V2` (e.g., `BpkModalV2`)
 - Path: `packages/bpk-component-[name]/src/Bpk[Name]V2/`
 - If experiment succeeds: V1 deprecated, V2 becomes default in next MAJOR version
 - If experiment fails: V2 removed

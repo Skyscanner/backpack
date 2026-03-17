@@ -20,19 +20,19 @@ import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
 import { userEvent, within } from 'storybook/test';
 
-// @ts-ignore
-// BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkAutosuggest from '../../packages/bpk-component-autosuggest';
+// @ts-expect-error: BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
 // TODO: This will be removed once the file is migrated to TypeScript.
 import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
-import BpkAutosuggestV2 from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestV2/BpkAutosuggest';
 
 import AutosuggestExample from './examples';
 
 import type { StoryObj } from '@storybook/react';
 
 export default {
-  title: 'bpk-component-autosuggestV2',
-  component: BpkAutosuggestV2,
+  title: 'bpk-component-autosuggest',
+  component: BpkAutosuggest,
   subcomponents: {
     BpkAutosuggestSuggestion,
   },

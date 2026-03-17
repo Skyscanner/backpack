@@ -52,6 +52,8 @@ export type Props = {
   submit?: boolean;
   href?: string | null;
   blank?: boolean;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
   /** When true, shows a loading spinner and disables interaction. Layout is preserved. @default false */
   loading?: boolean;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
