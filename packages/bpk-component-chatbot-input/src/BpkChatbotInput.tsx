@@ -104,10 +104,7 @@ const BpkChatbotInput = ({
   );
 
   const handleContainerEvent = (
-    e:
-      | MouseEvent<HTMLDivElement>
-      | TouchEvent<HTMLDivElement>
-      | KeyboardEvent<HTMLDivElement>,
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
   ) => {
     e.stopPropagation();
   };
@@ -117,7 +114,6 @@ const BpkChatbotInput = ({
       className={containerClassName}
       onClick={handleContainerEvent}
       onTouchStart={handleContainerEvent}
-      onKeyDown={handleContainerEvent}
       role="presentation"
       data-testid="bpk-chatbot-input-container"
       {...getDataComponentAttribute('ChatbotInput')}

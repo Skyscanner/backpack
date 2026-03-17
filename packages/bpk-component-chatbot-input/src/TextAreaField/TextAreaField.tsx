@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 import { useInputHandlers } from '../hooks';
@@ -61,6 +61,8 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       handleTouchStart,
     } = useInputHandlers(ref, onInputChange, onInputClick);
 
+    const id = useId();
+
     return (
       <div
         className={getClassName('bpk-chatbot-textarea-field__container', {
@@ -77,14 +79,14 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
           )}
         >
           <label
-            htmlFor="bpk-chatbot-textarea"
+            htmlFor={id}
             className={getClassName('bpk-chatbot-textarea-field__label')}
           >
             {placeholder}
           </label>
           <textarea
             ref={ref}
-            id="bpk-chatbot-textarea"
+            id={id}
             className={getClassName('bpk-chatbot-textarea-field__textarea')}
             placeholder={placeholder}
             value={value}

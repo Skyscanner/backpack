@@ -192,6 +192,7 @@ describe('useChatbotInput', () => {
       const event = {
         key: 'Enter',
         preventDefault: jest.fn(),
+        stopPropagation: jest.fn(),
       } as unknown as KeyboardEvent;
 
       act(() => {
@@ -199,6 +200,7 @@ describe('useChatbotInput', () => {
       });
 
       expect(event.preventDefault).toHaveBeenCalled();
+      expect(event.stopPropagation).toHaveBeenCalled();
       expect(mockOnSubmit).toHaveBeenCalled();
     });
 
@@ -213,6 +215,7 @@ describe('useChatbotInput', () => {
         key: 'Enter',
         shiftKey: false,
         preventDefault: jest.fn(),
+        stopPropagation: jest.fn(),
       } as unknown as KeyboardEvent;
 
       act(() => {
@@ -220,6 +223,7 @@ describe('useChatbotInput', () => {
       });
 
       expect(event.preventDefault).toHaveBeenCalled();
+      expect(event.stopPropagation).toHaveBeenCalled();
       expect(mockOnSubmit).toHaveBeenCalled();
     });
 

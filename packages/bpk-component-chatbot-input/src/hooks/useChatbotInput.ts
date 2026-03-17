@@ -84,21 +84,23 @@ const useChatbotInput = ({
     });
 
   const handleSubmit = useCallback(() => {
-    if (inputValue.trim() && !isSending && !isOverLimit) {
+    if (inputValue.trim() && !isDisabled && !isOverLimit) {
       onSubmit();
     }
-  }, [inputValue, onSubmit, isSending, isOverLimit]);
+  }, [inputValue, onSubmit, isDisabled, isOverLimit]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
         if (isDefault) {
           e.preventDefault();
+          e.stopPropagation();
           handleSubmit();
           return;
         }
         if (!e.shiftKey && !isDefault) {
           e.preventDefault();
+          e.stopPropagation();
           handleSubmit();
           return;
         }

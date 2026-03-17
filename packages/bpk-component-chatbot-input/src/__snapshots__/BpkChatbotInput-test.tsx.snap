@@ -17,7 +17,7 @@ exports[`BpkChatbotInput common behaviours renders with composer type correctly 
       >
         <label
           class="bpk-chatbot-textarea-field__label"
-          for="bpk-chatbot-textarea"
+          for=":re:"
         >
           Ask away
         </label>
@@ -28,7 +28,7 @@ exports[`BpkChatbotInput common behaviours renders with composer type correctly 
           autocorrect="off"
           class="bpk-chatbot-textarea-field__textarea"
           data-testid="bpk-chatbot-textarea-field"
-          id="bpk-chatbot-textarea"
+          id=":re:"
           placeholder="Ask away"
           rows="1"
           spellcheck="true"
@@ -83,7 +83,7 @@ exports[`BpkChatbotInput composer type renders with composer type correctly 1`] 
       >
         <label
           class="bpk-chatbot-textarea-field__label"
-          for="bpk-chatbot-textarea"
+          for=":r5:"
         >
           Ask away
         </label>
@@ -94,7 +94,7 @@ exports[`BpkChatbotInput composer type renders with composer type correctly 1`] 
           autocorrect="off"
           class="bpk-chatbot-textarea-field__textarea"
           data-testid="bpk-chatbot-textarea-field"
-          id="bpk-chatbot-textarea"
+          id=":r5:"
           placeholder="Ask away"
           rows="1"
           spellcheck="true"
@@ -146,7 +146,7 @@ exports[`BpkChatbotInput should render correctly with default props 1`] = `
     >
       <label
         class="bpk-chatbot-input-field__label"
-        for="bpk-chatbot-input"
+        for=":r0:"
       >
         Ask away
       </label>
@@ -158,7 +158,7 @@ exports[`BpkChatbotInput should render correctly with default props 1`] = `
         class="bpk-chatbot-input-field__input"
         data-testid="bpk-chatbot-input-field"
         enterkeyhint="send"
-        id="bpk-chatbot-input"
+        id=":r0:"
         inputmode="text"
         placeholder="Ask away"
         spellcheck="true"

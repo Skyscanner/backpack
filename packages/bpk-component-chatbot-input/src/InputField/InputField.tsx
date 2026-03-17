@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
-import type { KeyboardEvent, MouseEvent, TouchEvent } from 'react';
+import { forwardRef, useId } from 'react';
+import type { MouseEvent, TouchEvent } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 import { useInputHandlers } from '../hooks';
@@ -50,11 +50,10 @@ const InputField = forwardRef<HTMLInputElement, BaseInputFieldProps>(
       handleTouchStart,
     } = useInputHandlers(ref, onInputChange, onInputClick);
 
+    const id = useId();
+
     const handleWrapperEvent = (
-      e:
-        | MouseEvent<HTMLDivElement>
-        | TouchEvent<HTMLDivElement>
-        | KeyboardEvent<HTMLDivElement>,
+      e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
     ) => {
       e.stopPropagation();
     };
@@ -64,18 +63,17 @@ const InputField = forwardRef<HTMLInputElement, BaseInputFieldProps>(
         className={getClassName('bpk-chatbot-input-field')}
         onClick={handleWrapperEvent}
         onTouchStart={handleWrapperEvent}
-        onKeyDown={handleWrapperEvent}
         role="presentation"
       >
         <label
-          htmlFor="bpk-chatbot-input"
+          htmlFor={id}
           className={getClassName('bpk-chatbot-input-field__label')}
         >
           {placeholder}
         </label>
         <input
           ref={ref}
-          id="bpk-chatbot-input"
+          id={id}
           type="text"
           className={getClassName('bpk-chatbot-input-field__input')}
           placeholder={placeholder}
