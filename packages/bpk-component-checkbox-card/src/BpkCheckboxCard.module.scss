@@ -52,8 +52,10 @@
     @include utils.bpk-focus-indicator;
   }
 
-  // Hover state
-  &:not([data-state='checked']):not([data-disabled]) {
+  // Hover state — applies to unchecked non-disabled cards, and also loading cards
+  // (loading cards show hover visual but are non-interactive via cursor: not-allowed)
+  &:not([data-state='checked']):not([data-disabled]),
+  &:not([data-state='checked'])[data-loading] {
     @include utils.bpk-hover {
       border-color: var(
         --bpk-checkbox-card-hover-border-color,
