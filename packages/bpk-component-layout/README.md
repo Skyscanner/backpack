@@ -1,25 +1,6 @@
 # bpk-component-layout
 
-> ## 🧪 Experimental Component
->
-> ### Why experimental?
->
-> The `bpk-component-layout` package introduces a new layout system for Backpack,
-> providing layout-only primitives (BpkBox, BpkFlex, BpkGrid, BpkStack, BpkVessel, BpkProvider)
-> built on modern layout APIs with Backpack design tokens.
->
-> This component is in active development and the API may change based on feedback
-> and real-world usage. Use with caution in production.
->
-> ### Help and feedback
->
-> As an experimental component, we want to hear about your experience.
->
-> For queries: @design-system-web-gf in #backpack
-> 
-> For design queries: @backpack-design in #backpack-design-chat
-> 
->`Backpack layout components and tokens.
+> Backpack layout components and tokens.
 
 ## Overview
 
@@ -218,6 +199,4 @@ Use these examples as a reference for how to compose layout props and tokens. As
 
 ## Props
 
-> **Note:** As an experimental component, these props are subject to change.
-
-Check out the full list of props on [Storybook](https://backpack.github.io/storybook-prs/4230/?path=/docs/bpk-component-layout--documentation).
+Check out the full list of props on [Storybook](https://backpack.github.io/storybook/?path=/docs/bpk-component-layout--documentation).

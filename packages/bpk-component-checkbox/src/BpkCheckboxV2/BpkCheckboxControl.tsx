@@ -16,25 +16,24 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+import type { ReactNode } from 'react';
 
-$calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
+import { Checkbox } from '@ark-ui/react';
 
-.bpk-scrollable-calendar-grid-list {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: $calendar-height;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+import { cssModules } from '../../../bpk-react-utils';
 
-  &__font-sentinel {
-    position: absolute;
-    visibility: hidden;
-    width: 1rem;
-    height: 1rem;
-    overflow: hidden;
-    pointer-events: none;
-  }
-}
+import STYLES from './BpkCheckbox.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type BpkCheckboxControlProps = {
+  children: ReactNode;
+};
+
+const BpkCheckboxControl = ({ children }: BpkCheckboxControlProps) => (
+  <Checkbox.Control className={getClassName('bpk-checkbox-v2__control')}>
+    {children}
+  </Checkbox.Control>
+);
+
+export default BpkCheckboxControl;
