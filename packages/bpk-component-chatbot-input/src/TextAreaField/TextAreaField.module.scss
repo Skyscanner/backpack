@@ -105,5 +105,15 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    &--with-shadow {
+      &::placeholder {
+        color: tokens.$bpk-text-primary-day;
+      }
+
+      &:focus::placeholder {
+        opacity: 0;
+      }
+    }
   }
 }

@@ -32,6 +32,7 @@ interface TextAreaFieldProps extends BaseInputFieldProps {
   textareaHeight: number;
   shouldReduceParentPadding: boolean;
   isExpanding: boolean;
+  isComposer: boolean;
 }
 
 const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
@@ -40,6 +41,7 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       containerHeight,
       dataTestId,
       disabled = false,
+      isComposer,
       isExpanding,
       isOverLimit = false,
       onInputBlur,
@@ -75,7 +77,7 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
           className={getClassName(
             'bpk-chatbot-textarea-field__field',
             shouldReduceParentPadding &&
-              STYLES['bpk-chatbot-textarea-field__field--fifthLine'],
+              'bpk-chatbot-textarea-field__field--fifthLine',
           )}
         >
           <label
@@ -87,7 +89,10 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
           <textarea
             ref={ref}
             id={id}
-            className={getClassName('bpk-chatbot-textarea-field__textarea')}
+            className={getClassName(
+              'bpk-chatbot-textarea-field__textarea',
+              isComposer && 'bpk-chatbot-textarea-field__textarea--with-shadow',
+            )}
             placeholder={placeholder}
             value={value}
             onChange={handleInputChange}

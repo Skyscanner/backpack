@@ -42,8 +42,19 @@ window.ResizeObserver =
   }));
 
 describe('BpkChatbotInput accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues (default type)', async () => {
+  it('should not have programmatically-detectable accessibility issues (cars type)', async () => {
     const { container } = render(<BpkChatbotInput {...defaultProps} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues (cars-composer type)', async () => {
+    const { container } = render(
+      <BpkChatbotInput
+        {...defaultProps}
+        inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
+      />,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

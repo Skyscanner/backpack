@@ -20,7 +20,7 @@
 @use '../../bpk-mixins/utils';
 
 .bpk-chatbot-input {
-  &--default {
+  &--cars {
     display: flex;
     padding: tokens.bpk-spacing-md() tokens.bpk-spacing-md()
       tokens.bpk-spacing-md() tokens.bpk-spacing-base();
@@ -42,6 +42,14 @@
     );
 
     @include utils.bpk-hover {
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-chatbot-input-focus-border-color,
+        tokens.$bpk-core-accent-day
+      );
+    }
+
+    &:active {
       @include utils.bpk-themeable-property(
         border-color,
         --bpk-chatbot-input-focus-border-color,
@@ -86,13 +94,18 @@
       tokens.$bpk-border-radius-md
     );
 
-    &:focus-within::after {
-      position: absolute;
-      content: '';
-      z-index: 1;
-      border-radius: tokens.$bpk-border-radius-md;
-      inset: -(tokens.$bpk-border-size-lg);
-      pointer-events: none;
+    &--with-shadow {
+      // textarea::placeholder {
+      //   color: tokens.$bpk-text-primary-day
+      // }
+
+      &:focus-within {
+        box-shadow: tokens.$bpk-box-shadow-xl;
+
+        // textarea:focus::placeholder {
+        //   opacity: 0;
+        // }
+      }
     }
 
     &--overLimit {

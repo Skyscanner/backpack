@@ -36,7 +36,7 @@ export type { BpkChatbotInputProps };
 const getClassName = cssModules(STYLES);
 
 const BpkChatbotInput = ({
-  inputType = CHATBOT_INPUT_TYPES.DEFAULT,
+  inputType = CHATBOT_INPUT_TYPES.CARS,
   inputValue,
   isPolling = false,
   isSending = false,
@@ -56,7 +56,7 @@ const BpkChatbotInput = ({
     handleSubmit,
     inputProps,
     inputRef,
-    isDefault,
+    isCars,
     isExpanding,
     isOverLimit,
     sendButtonDisabled,
@@ -77,14 +77,13 @@ const BpkChatbotInput = ({
     onSubmit,
   });
 
+  const isComposer = inputType === CHATBOT_INPUT_TYPES.COMPOSER;
+
   const containerClassName = getClassName(
-    isDefault ? 'bpk-chatbot-input--default' : 'bpk-chatbot-input--composer',
-    isOverLimit &&
-      !isDefault &&
-      STYLES['bpk-chatbot-input--composer--overLimit'],
-    isExpanding &&
-      !isDefault &&
-      STYLES['bpk-chatbot-input--composer--expanding'],
+    isCars ? 'bpk-chatbot-input--cars' : 'bpk-chatbot-input--composer',
+    isComposer && 'bpk-chatbot-input--composer--with-shadow',
+    isOverLimit && !isCars && 'bpk-chatbot-input--composer--overLimit',
+    isExpanding && !isCars && 'bpk-chatbot-input--composer--expanding',
   );
 
   const handleContainerEvent = (
@@ -102,7 +101,7 @@ const BpkChatbotInput = ({
       data-testid="bpk-chatbot-input-container"
       {...getDataComponentAttribute('ChatbotInput')}
     >
-      {isDefault ? (
+      {isCars ? (
         <InputField
           ref={inputRef as RefObject<HTMLInputElement>}
           {...inputProps}
@@ -114,15 +113,16 @@ const BpkChatbotInput = ({
           textareaHeight={textareaHeight}
           shouldReduceParentPadding={shouldReduceParentPadding}
           isExpanding={isExpanding}
+          isComposer={isComposer}
           {...inputProps}
         />
       )}
       <SendButton
-        isDefault={isDefault}
+        isCars={isCars}
         disabled={sendButtonDisabled}
         onClick={handleSubmit}
-        ariaLabel={isDefault && isPolling ? loadingAriaLabel : sendAriaLabel}
-        isLoading={!!(isDefault && isPolling)}
+        ariaLabel={isCars && isPolling ? loadingAriaLabel : sendAriaLabel}
+        isLoading={!!(isCars && isPolling)}
       />
     </div>
   );

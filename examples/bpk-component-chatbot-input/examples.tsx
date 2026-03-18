@@ -71,37 +71,6 @@ const ChatbotInputWithState = ({
   );
 };
 
-export const DefaultExample = () => (
-  <div className={getClassName('bpk-chatbot-input-examples')}>
-    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} />
-  </div>
-);
-
-export const DefaultPollingExample = () => (
-  <div className={getClassName('bpk-chatbot-input-examples')}>
-    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} isPolling />
-  </div>
-);
-
-export const DefaultSendingExample = () => (
-  <div className={getClassName('bpk-chatbot-input-examples')}>
-    <ChatbotInputWithState
-      inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-      isSending
-      initialValue="Some message"
-    />
-  </div>
-);
-
-export const DefaultOver500Example = () => (
-  <div className={getClassName('bpk-chatbot-input-examples')}>
-    <ChatbotInputWithState
-      inputType={CHATBOT_INPUT_TYPES.DEFAULT}
-      initialValue={longText}
-    />
-  </div>
-);
-
 export const ComposerExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
@@ -112,17 +81,17 @@ export const ComposerWithValueExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-      initialValue="I'd like to hire a car in Edinburgh for the weekend"
+      initialValue="Your message"
     />
   </div>
 );
 
-export const ComposerPollingExample = () => (
+export const ComposerSendingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-      isPolling
-      initialValue="I'd like to hire a car in Edinburgh for the weekend"
+      isSending
+      initialValue="Your message"
     />
   </div>
 );
@@ -131,6 +100,84 @@ export const ComposerOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+      initialValue={longText}
+    />
+  </div>
+);
+
+export const CarsExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS} />
+  </div>
+);
+
+export const CarsWithValueExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS}
+      initialValue="I'd like to hire a car in Edinburgh for the weekend"
+    />
+  </div>
+);
+
+export const CarsPollingExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS}
+      isPolling
+      initialValue={sampleSentence}
+    />
+  </div>
+);
+
+export const CarsSendingExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS}
+      isSending
+      initialValue="Some message"
+    />
+  </div>
+);
+
+export const CarsOver500Example = () => (
+  <div className={getClassName('bpk-chatbot-input-examples')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS}
+      initialValue={longText}
+    />
+  </div>
+);
+
+export const CarsComposerExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER} />
+  </div>
+);
+
+export const CarsComposerWithValueExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
+      initialValue="I'd like to hire a car in Edinburgh for the weekend"
+    />
+  </div>
+);
+
+export const CarsComposerPollingExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
+      isPolling
+      initialValue="I'd like to hire a car in Edinburgh for the weekend"
+    />
+  </div>
+);
+
+export const CarsComposerOver500Example = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
       initialValue={longText}
     />
   </div>
@@ -155,11 +202,23 @@ export const ThemedExample = () => (
       }}
       themeAttributes={themeAttributes}
     >
+      <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+        <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+          {CHATBOT_INPUT_TYPES.COMPOSER}
+        </BpkText>
+        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
+      </div>
       <div className={getClassName('bpk-chatbot-input-examples')}>
-        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} />
+        <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+          {CHATBOT_INPUT_TYPES.CARS}
+        </BpkText>
+        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS} />
       </div>
       <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
-        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
+        <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+          {CHATBOT_INPUT_TYPES.CARS_COMPOSER}
+        </BpkText>
+        <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER} />
       </div>
     </BpkThemeProvider>
 
@@ -170,20 +229,34 @@ export const ThemedExample = () => (
     >
       Default theme (no override)
     </BpkText>
+    <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+      <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+        {CHATBOT_INPUT_TYPES.COMPOSER}
+      </BpkText>
+      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
+    </div>
     <div className={getClassName('bpk-chatbot-input-examples')}>
-      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.DEFAULT} />
+      <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+        {CHATBOT_INPUT_TYPES.CARS}
+      </BpkText>
+      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS} />
     </div>
     <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
-      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
+      <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+        {CHATBOT_INPUT_TYPES.CARS_COMPOSER}
+      </BpkText>
+      <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER} />
     </div>
   </div>
 );
 
 export const MixedExample = () => (
   <div>
-    <DefaultExample />
-    <DefaultPollingExample />
     <ComposerExample />
     <ComposerWithValueExample />
+    <CarsExample />
+    <CarsPollingExample />
+    <CarsComposerExample />
+    <CarsComposerWithValueExample />
   </div>
 );

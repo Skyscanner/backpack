@@ -34,7 +34,7 @@ const AlignedArrowUpIcon = withButtonAlignment(ArrowUpIcon);
 
 export interface SendButtonProps {
   ariaLabel: string;
-  isDefault?: boolean;
+  isCars?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
   onClick: () => void;
@@ -43,12 +43,12 @@ export interface SendButtonProps {
 const SendButton = ({
   ariaLabel,
   disabled = false,
-  isDefault = true,
+  isCars = true,
   isLoading = false,
   onClick,
 }: SendButtonProps) => {
-  const buttonType = isDefault ? BUTTON_TYPES.featured : BUTTON_TYPES.primary;
-  const Icon = isDefault ? AlignedArrowRightIcon : AlignedArrowUpIcon;
+  const buttonType = isCars ? BUTTON_TYPES.featured : BUTTON_TYPES.primary;
+  const Icon = isCars ? AlignedArrowRightIcon : AlignedArrowUpIcon;
 
   return (
     <BpkButton

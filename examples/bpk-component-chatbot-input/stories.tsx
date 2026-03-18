@@ -19,14 +19,19 @@
 import BpkChatbotInput from '../../packages/bpk-component-chatbot-input/src/BpkChatbotInput';
 
 import {
+  CarsComposerExample,
+  CarsComposerOver500Example,
+  CarsComposerWithValueExample,
+  CarsComposerPollingExample,
+  CarsExample,
+  CarsPollingExample,
+  CarsOver500Example,
+  CarsSendingExample,
+  CarsWithValueExample,
   ComposerExample,
-  ComposerOver500Example,
   ComposerWithValueExample,
-  ComposerPollingExample,
-  DefaultExample,
-  DefaultPollingExample,
-  DefaultOver500Example,
-  DefaultSendingExample,
+  ComposerSendingExample,
+  ComposerOver500Example,
   MixedExample,
   ThemedExample,
 } from './examples';
@@ -36,14 +41,19 @@ export default {
   component: BpkChatbotInput,
 };
 
-export const Default = DefaultExample;
-export const DefaultPolling = DefaultPollingExample;
-export const DefaultSending = DefaultSendingExample;
-export const DefaultOver500 = DefaultOver500Example;
 export const Composer = ComposerExample;
 export const ComposerWithValue = ComposerWithValueExample;
+export const ComposerSending = ComposerSendingExample;
 export const ComposerOver500 = ComposerOver500Example;
-export const ComposerPolling = ComposerPollingExample;
+export const Cars = CarsExample;
+export const CarsWithValue = CarsWithValueExample;
+export const CarsPolling = CarsPollingExample;
+export const CarsSending = CarsSendingExample;
+export const CarsOver500 = CarsOver500Example;
+export const CarsComposer = CarsComposerExample;
+export const CarsComposerWithValue = CarsComposerWithValueExample;
+export const CarsComposerOver500 = CarsComposerOver500Example;
+export const CarsComposerPolling = CarsComposerPollingExample;
 export const Themed = ThemedExample;
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

@@ -19,7 +19,8 @@
 import type { KeyboardEvent } from 'react';
 
 export const CHATBOT_INPUT_TYPES = {
-  DEFAULT: 'default',
+  CARS: 'cars',
+  CARS_COMPOSER: 'cars-composer',
   COMPOSER: 'composer',
 } as const;
 

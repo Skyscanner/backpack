@@ -57,19 +57,19 @@ describe('useChatbotInput', () => {
     mockOnInputClick.mockClear();
   });
 
-  describe('default type', () => {
+  describe('cars type', () => {
     it('should enable send button when not focused and empty', () => {
       const { result } = renderUseChatbotInput({
-        inputType: CHATBOT_INPUT_TYPES.DEFAULT,
+        inputType: CHATBOT_INPUT_TYPES.CARS,
       });
 
-      expect(result.current.isDefault).toBe(true);
+      expect(result.current.isCars).toBe(true);
       expect(result.current.sendButtonDisabled).toBe(false);
     });
 
     it('should disable send button when focused but empty', () => {
       const { result } = renderUseChatbotInput({
-        inputType: CHATBOT_INPUT_TYPES.DEFAULT,
+        inputType: CHATBOT_INPUT_TYPES.CARS,
       });
 
       act(() => {
@@ -81,7 +81,7 @@ describe('useChatbotInput', () => {
 
     it('should enable send button when has valid text', () => {
       const { result } = renderUseChatbotInput({
-        inputType: CHATBOT_INPUT_TYPES.DEFAULT,
+        inputType: CHATBOT_INPUT_TYPES.CARS,
         inputValue: 'Hello',
       });
 
@@ -95,7 +95,7 @@ describe('useChatbotInput', () => {
         inputType: CHATBOT_INPUT_TYPES.COMPOSER,
       });
 
-      expect(emptyResult.current.isDefault).toBe(false);
+      expect(emptyResult.current.isCars).toBe(false);
       expect(emptyResult.current.sendButtonDisabled).toBe(true);
 
       const { result: whitespaceResult } = renderUseChatbotInput({
@@ -109,6 +109,95 @@ describe('useChatbotInput', () => {
     it('should enable send button when has valid text', () => {
       const { result } = renderUseChatbotInput({
         inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+        inputValue: 'Hello',
+      });
+
+      expect(result.current.sendButtonDisabled).toBe(false);
+    });
+
+    it('should use textarea field dataTestId', () => {
+      const { result } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+      });
+
+      expect(result.current.inputProps.dataTestId).toBe(
+        'bpk-chatbot-textarea-field',
+      );
+    });
+
+    it('should submit on Enter key', () => {
+      const { result } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+        inputValue: 'Hello',
+        onSubmit: mockOnSubmit,
+      });
+
+      const event = {
+        key: 'Enter',
+        shiftKey: false,
+        preventDefault: jest.fn(),
+        stopPropagation: jest.fn(),
+      } as unknown as KeyboardEvent;
+
+      act(() => {
+        result.current.inputProps.onKeyDown(event);
+      });
+
+      expect(event.preventDefault).toHaveBeenCalled();
+      expect(event.stopPropagation).toHaveBeenCalled();
+      expect(mockOnSubmit).toHaveBeenCalled();
+    });
+
+    it('should allow Shift+Enter for newline', () => {
+      const { result } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+        inputValue: 'Hello',
+        onSubmit: mockOnSubmit,
+      });
+
+      const event = {
+        key: 'Enter',
+        shiftKey: true,
+        preventDefault: jest.fn(),
+      } as unknown as KeyboardEvent;
+
+      act(() => {
+        result.current.inputProps.onKeyDown(event);
+      });
+
+      expect(event.preventDefault).not.toHaveBeenCalled();
+      expect(mockOnSubmit).not.toHaveBeenCalled();
+    });
+
+    it('isExpanding defaults to false', () => {
+      const { result } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+      });
+
+      expect(result.current.isExpanding).toBe(false);
+    });
+  });
+
+  describe('cars-composer type', () => {
+    it('should disable send button when empty or whitespace', () => {
+      const { result: emptyResult } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.CARS_COMPOSER,
+      });
+
+      expect(emptyResult.current.isCars).toBe(false);
+      expect(emptyResult.current.sendButtonDisabled).toBe(true);
+
+      const { result: whitespaceResult } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.CARS_COMPOSER,
+        inputValue: '   ',
+      });
+
+      expect(whitespaceResult.current.sendButtonDisabled).toBe(true);
+    });
+
+    it('should enable send button when has valid text', () => {
+      const { result } = renderUseChatbotInput({
+        inputType: CHATBOT_INPUT_TYPES.CARS_COMPOSER,
         inputValue: 'Hello',
       });
 
@@ -184,7 +273,7 @@ describe('useChatbotInput', () => {
       expect(result.current.isFocused).toBe(false);
     });
 
-    it('should handle Enter key to submit for default input type', () => {
+    it('should handle Enter key to submit for cars input type', () => {
       const { result } = renderUseChatbotInput({
         inputValue: 'Hello',
         onSubmit: mockOnSubmit,
@@ -205,9 +294,9 @@ describe('useChatbotInput', () => {
       expect(mockOnSubmit).toHaveBeenCalled();
     });
 
-    it('should handle Enter key to submit for composer input type (textarea)', () => {
+    it('should handle Enter key to submit for cars-composer input type (textarea)', () => {
       const { result } = renderUseChatbotInput({
-        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+        inputType: CHATBOT_INPUT_TYPES.CARS_COMPOSER,
         inputValue: 'Hello',
         onSubmit: mockOnSubmit,
       });
@@ -228,9 +317,9 @@ describe('useChatbotInput', () => {
       expect(mockOnSubmit).toHaveBeenCalled();
     });
 
-    it('should allow Shift+Enter key for newline in composer input type (textarea)', () => {
+    it('should allow Shift+Enter key for newline in cars-composer input type (textarea)', () => {
       const { result } = renderUseChatbotInput({
-        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+        inputType: CHATBOT_INPUT_TYPES.CARS_COMPOSER,
         inputValue: 'Hello',
         onSubmit: mockOnSubmit,
       });
@@ -283,9 +372,9 @@ describe('useChatbotInput', () => {
       expect(result.current.inputProps.placeholder).toBe('');
     });
 
-    it('should use composer dataTestId for composer input type', () => {
+    it('should use composer dataTestId for cars-composer input type', () => {
       const { result } = renderUseChatbotInput({
-        inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+        inputType: CHATBOT_INPUT_TYPES.CARS_COMPOSER,
       });
 
       expect(result.current.inputProps.dataTestId).toBe(

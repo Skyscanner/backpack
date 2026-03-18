@@ -47,7 +47,7 @@ interface UseChatbotInputReturn {
   isDisabled: boolean;
   isOverLimit: boolean;
   isExpanding: boolean;
-  isDefault: boolean;
+  isCars: boolean;
   sendButtonDisabled: boolean;
   inputProps: BaseInputFieldProps;
   handleSubmit: () => void;
@@ -57,7 +57,7 @@ interface UseChatbotInputReturn {
 }
 
 const useChatbotInput = ({
-  inputType = CHATBOT_INPUT_TYPES.DEFAULT,
+  inputType = CHATBOT_INPUT_TYPES.CARS,
   inputValue,
   isPolling = false,
   isSending = false,
@@ -70,7 +70,10 @@ const useChatbotInput = ({
   onSubmit,
   placeholder,
 }: UseChatbotInputOptions): UseChatbotInputReturn => {
-  const isDefault = inputType === CHATBOT_INPUT_TYPES.DEFAULT;
+  const isCars = inputType === CHATBOT_INPUT_TYPES.CARS;
+  const isMultiLine =
+    inputType === CHATBOT_INPUT_TYPES.CARS_COMPOSER ||
+    inputType === CHATBOT_INPUT_TYPES.COMPOSER;
 
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -81,7 +84,7 @@ const useChatbotInput = ({
     useTextAreaAutoResize({
       ref: inputRef as RefObject<HTMLTextAreaElement>,
       value: inputValue,
-      enabled: !isDefault,
+      enabled: isMultiLine,
     });
 
   const handleSubmit = useCallback(() => {
@@ -93,13 +96,13 @@ const useChatbotInput = ({
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
-        if (isDefault) {
+        if (!isMultiLine) {
           e.preventDefault();
           e.stopPropagation();
           handleSubmit();
           return;
         }
-        if (!e.shiftKey && !isDefault) {
+        if (!e.shiftKey) {
           e.preventDefault();
           e.stopPropagation();
           handleSubmit();
@@ -108,7 +111,7 @@ const useChatbotInput = ({
       }
       onKeyDown?.(e);
     },
-    [isDefault, handleSubmit, onKeyDown],
+    [isMultiLine, handleSubmit, onKeyDown],
   );
 
   const handleInputFocus = useCallback(() => {
@@ -131,12 +134,12 @@ const useChatbotInput = ({
     onInputBlur: handleInputBlur,
     onInputClick,
     onKeyDown: handleKeyDown,
-    dataTestId: isDefault
-      ? 'bpk-chatbot-input-field'
-      : 'bpk-chatbot-textarea-field',
+    dataTestId: isMultiLine
+      ? 'bpk-chatbot-textarea-field'
+      : 'bpk-chatbot-input-field',
   };
 
-  const sendButtonDisabled = isDefault
+  const sendButtonDisabled = isCars
     ? (isFocused && !inputValue.trim()) || isDisabled || isOverLimit
     : !inputValue.trim() || isDisabled || isOverLimit;
 
@@ -146,7 +149,7 @@ const useChatbotInput = ({
     isDisabled,
     isOverLimit,
     isExpanding,
-    isDefault,
+    isCars,
     sendButtonDisabled,
     inputProps,
     handleSubmit,
