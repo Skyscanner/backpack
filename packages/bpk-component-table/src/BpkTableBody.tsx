@@ -18,11 +18,32 @@
 
 import type { ReactNode, HTMLAttributes } from 'react';
 
-export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkTable.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export interface BpkTableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'> {
   /** The content of the table */
   children: ReactNode;
+  className?: string | null;
+  /** Applies alternating row background colours */
+  striped?: boolean;
 }
 
-const BpkTableBody = (props: BpkTableBodyProps) => <tbody {...props} />;
+const BpkTableBody = ({children, className = null, striped = false, ...rest}: BpkTableBodyProps) => {
+  const classNames = getClassName(
+    'bpk-table__body',
+    striped && 'bpk-table__body--striped',
+    className,
+  );
+
+  return (
+    <tbody className={classNames} {...rest}>
+      {children}
+    </tbody>
+  );
+};
 
 export default BpkTableBody;
