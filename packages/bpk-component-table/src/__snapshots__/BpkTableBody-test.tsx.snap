@@ -4,7 +4,7 @@ exports[`BpkTableBody should render correctly 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="bpk-table__body"
+      class=""
     >
       <tr />
     </tbody>
@@ -16,7 +16,7 @@ exports[`BpkTableBody should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="bpk-table__body"
+      class=""
       data-foo="bar"
       id="my-custom-id"
     >
@@ -30,7 +30,7 @@ exports[`BpkTableBody should render correctly with custom class 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="bpk-table__body my-custom-class"
+      class="my-custom-class"
     >
       <tr />
     </tbody>
@@ -42,7 +42,7 @@ exports[`BpkTableBody should render correctly with striped prop 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class="bpk-table__body bpk-table__body--striped"
+      class="bpk-table__body--striped"
     >
       <tr />
     </tbody>
