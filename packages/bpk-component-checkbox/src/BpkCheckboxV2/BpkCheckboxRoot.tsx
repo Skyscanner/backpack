@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Checkbox, type CheckboxCheckedChangeDetails } from '@ark-ui/react';
+import { Checkbox } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
@@ -61,7 +61,7 @@ const BpkCheckboxRoot = ({
     id={id}
     invalid={invalid}
     name={name}
-    onCheckedChange={(details: CheckboxCheckedChangeDetails) => onCheckedChange?.(details.checked)}
+    onCheckedChange={(details) => onCheckedChange?.(details.checked)}
     required={required}
     value={value}
     {...getDataComponentAttribute('CheckboxV2')}
