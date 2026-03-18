@@ -7,6 +7,10 @@ exports[`BpkCalendarScrollGridList should render correctly with a "dateModifiers
     data-backpack-ds-component="ScrollableCalendarGridList"
   >
     <div
+      aria-hidden="true"
+      class="bpk-scrollable-calendar-grid-list__font-sentinel"
+    />
+    <div
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
@@ -1371,6 +1375,10 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom "custom
     class="bpk-scrollable-calendar-grid-list"
     data-backpack-ds-component="ScrollableCalendarGridList"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-scrollable-calendar-grid-list__font-sentinel"
+    />
     <div
       style="overflow: visible; height: 0px; width: 0px;"
     >
@@ -2778,6 +2786,10 @@ exports[`BpkCalendarScrollGridList should render correctly with a custom date co
     data-backpack-ds-component="ScrollableCalendarGridList"
   >
     <div
+      aria-hidden="true"
+      class="bpk-scrollable-calendar-grid-list__font-sentinel"
+    />
+    <div
       style="overflow: visible; height: 0px; width: 0px;"
     >
       <div
@@ -3496,6 +3508,10 @@ exports[`BpkCalendarScrollGridList should render correctly with a different "wee
     class="bpk-scrollable-calendar-grid-list"
     data-backpack-ds-component="ScrollableCalendarGridList"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-scrollable-calendar-grid-list__font-sentinel"
+    />
     <div
       style="overflow: visible; height: 0px; width: 0px;"
     >
@@ -4943,6 +4959,10 @@ exports[`BpkCalendarScrollGridList should render correctly with no optional prop
     class="bpk-scrollable-calendar-grid-list"
     data-backpack-ds-component="ScrollableCalendarGridList"
   >
+    <div
+      aria-hidden="true"
+      class="bpk-scrollable-calendar-grid-list__font-sentinel"
+    />
     <div
       style="overflow: visible; height: 0px; width: 0px;"
     >
