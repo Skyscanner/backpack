@@ -544,15 +544,67 @@ expect(defaultProps.onInputBlur).toHaveBeenCalledTimes(2);
 
 ### Phase 5: Verification
 
-1. **Run typecheck** in each affected package:
-   ```bash
-   cd packages/webapp && npm run typecheck
-   cd packages/common && npm run typecheck
-   ```
+#### Step 1: Discover commands
 
-2. **Report** any remaining type errors for manual resolution.
+Before running anything, inspect project documentation to find the correct typecheck and test commands for this codebase. Check in order:
 
-3. **Suggest running tests** for affected modules (ask the user before running).
+1. `CLAUDE.md` / `AGENTS.md` — often lists exact commands and constraints (e.g. "run from package dir, not root", "confirm with user before running tests")
+2. `README.md` — project-level docs
+3. Each affected package's `package.json` `scripts` section — look for:
+   - **typecheck**: `typecheck`, `tsc`, `type-check`
+   - **tests**: `test`, `test:watch`, `test:ci`
+
+**Never assume commands.** Projects vary widely. Record the exact commands to use in subsequent steps.
+
+#### Step 2: Ask before running
+
+**Always ask the user before running typecheck or tests.** Some projects have this as an explicit rule. Even when not explicit, these can be slow or have infrastructure requirements. State which commands you plan to run and ask for confirmation.
+
+#### Step 3: Run typecheck
+
+Run typecheck in each affected package using the commands discovered in Step 1. Typecheck is fast and catches regressions before spending time on test runs:
+
+```bash
+# Example — use the actual command discovered for this project
+cd apps/webapp && npm run typecheck
+cd apps/common && npm run typecheck
+cd apps/server && npm run typecheck
+```
+
+Report any type errors. Fix type errors before proceeding to tests.
+
+#### Step 4: Run tests for affected modules
+
+Once typecheck is clean, run tests scoped to the changed modules using the commands discovered in Step 1. Avoid running the full test suite unless needed — it's slow and noisy:
+
+```bash
+# Example — use the actual command discovered for this project
+# Run tests for a specific file
+cd apps/webapp
+npm test -- src/path/to/Component.test.tsx
+
+# Run tests for a directory
+cd apps/webapp
+npm test -- src/modules/hotel-content/
+
+# Run all tests in a package (only when no narrow scope is practical)
+cd apps/webapp
+npm test
+```
+
+**For button migration**: focus on components that import `BpkButton` — snapshot tests will need updating after the rename. Run `jest --updateSnapshot` (or project equivalent) for those.
+
+**For autosuggest migration**: run test files alongside each migrated component. Watch for:
+- `FloatingPortal` crash in jsdom (mock `@floating-ui/react` — see Phase 4)
+- Snapshot mismatches from V2 rendering differences
+- Tests using `inputElement.focus()` that need to be changed to `fireEvent.click()` to open the menu
+
+#### Step 5: Report results
+
+Summarise:
+- Packages checked
+- Any failing tests
+- Snapshot updates applied (if any)
 
 ### Phase 6: Capture Learnings & Contribute Back
 
@@ -723,3 +775,82 @@ Discovery should also check:
 Grep: from.*bpk-component-.*/src/
 ```
 Common example: `import type { InputProps } from '@skyscanner/backpack-web/bpk-component-input/src/common-types'`
+
+### Deep imports migration: not all types are re-exported at component roots
+When migrating deep `src/` imports to public roots, many components only re-export a subset of their internal types. Classified by fix strategy:
+
+**Simple path-only replacement** (same import structure works at root):
+- `bpk-component-text/src/BpkText` → `bpk-component-text` (`BpkText` default, `TEXT_STYLES`, `TEXT_COLORS` named)
+- `bpk-component-badge/src/BpkBadge` → `bpk-component-badge` (`BpkBadge` default, `BADGE_TYPES` named)
+- `bpk-component-banner-alert/src/common-types` → `bpk-component-banner-alert` (`ALERT_TYPES` named)
+- `bpk-component-input/src/common-types` → `bpk-component-input` (`INPUT_TYPES`, `CLEAR_BUTTON_MODES` named)
+- `bpk-component-autosuggest/src/BpkAutosuggest` → `bpk-component-autosuggest` (`BpkAutosuggest` default)
+- `bpk-component-calendar/src/custom-proptypes` → `bpk-component-calendar` (`CALENDAR_SELECTION_TYPE` named)
+
+**Structure changes needed** (default at src, named at root):
+- `import BpkCalendarNav from '...calendar/src/BpkCalendarNav'` → `import { BpkCalendarNav } from '...calendar'`
+- `import SPINNER_TYPES from '...spinner/src/spinnerTypes'` → `import { SPINNER_TYPES } from '...spinner'`
+
+**Namespace extraction** (namespace at root, not individual function):
+- `import { format } from '...calendar/src/date-utils'` → `import { DateUtils } from '...calendar'` then `const { format } = DateUtils` after imports
+
+**Types NOT at root — derive locally**:
+- `Tag` from `bpk-component-text/src/BpkText` → inline: `type Tag = 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'`
+- `AlertTypeValue` from `bpk-component-banner-alert/src/common-types` or `bpk-component-info-banner/src/common-types` → `type AlertTypeValue = (typeof ALERT_TYPES)[keyof typeof ALERT_TYPES]`
+- `OnDismissHandler` from `bpk-component-banner-alert/src/common-types` → `type OnDismissHandler = (() => void) | null | undefined`
+- `BadgeType` from `bpk-component-badge/src/BpkBadge` → `type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES]`
+- `ColumnType` from `bpk-component-datatable/src/common-types` → derive via `ComponentProps<typeof BpkDataTable>['columns'][number]`
+
+**Renamed at root** (same values, new name):
+- `SEGMENT_TYPES` from `bpk-component-segmented-control/src/BpkSegmentedControl` → `import { SEGMENT_TYPES_V2 as SEGMENT_TYPES } from '...segmented-control'` (identical runtime values)
+
+### Simple path replacement script introduces out-of-order type declarations
+A script that does `content.replace(deepPath, rootPath)` may transform `import type { Foo }` lines into pointing to the root. But if `Foo` isn't exported at root, this creates a new TS error. After running the script, always verify with typecheck — the errors will surface the exact files needing the "derive locally" pattern.
+
+Also watch for type declarations that end up between `import` statements. Always place `type` declarations after all `import` lines.
+
+### BpkButton.loading expects boolean, not string
+The `loading` prop type is `boolean | undefined` on `BpkButton` in v42. A pre-existing pattern `loading={someBoolean.toString()}` will surface as a type error after migration. The fix is to drop `.toString()` and pass the boolean directly:
+
+```typescript
+// ❌ Before (masked bug in v41)
+<BpkButton loading={loading.toString()}>
+
+// ✅ After
+<BpkButton loading={loading}>
+```
+
+Check for this pattern in any file that passes `loading` as a prop to the migrated button. The typecheck step will catch it.
+
+### Class components can adopt V2 API without full functional rewrites
+
+The skill says "Class components with UNSAFE_componentWillReceiveProps need full rewrites." This is specifically about that lifecycle method — class components that don't use `UNSAFE_componentWillReceiveProps` can be migrated in place. Apply the key-based re-mount pattern using class state:
+
+```javascript
+// In class component state:
+state = { autosuggestKey: 0, searchValue: '' };
+
+// Reset the autosuggest programmatically:
+this.setState({ autosuggestKey: this.state.autosuggestKey + 1, searchValue: '' });
+
+// In render:
+<BpkAutosuggest
+  key={this.state.autosuggestKey}
+  defaultValue={this.state.searchValue}
+  onInputValueChange={({ newValue }) => this.setState({ searchValue: newValue })}
+  ...
+/>
+```
+
+Full conversion to functional component is only required when `UNSAFE_componentWillReceiveProps` is the primary mechanism for resetting input from parent props.
+
+### JSX-to-TSX conversion pairs well with autosuggest migration
+
+When autosuggest files are `.jsx`, migrating to V2 API benefits from converting to `.tsx` in the same commit. The migration requires understanding prop types for `onSuggestionsFetchRequested`, `onSuggestionSelected`, and `onInputValueChange`, and TypeScript type annotations make these explicit. If files are already `.jsx` and the migration is mechanical enough to do safely, co-locate the `.jsx → .tsx` conversion with the autosuggest migration.
+
+### Files with non-JSX BpkButtonV2 references are missed by the JSX grep
+Two categories slip through the `<BpkButtonV2` grep:
+1. Comments mentioning `BpkButtonV2` (e.g., JSDoc/inline docs)
+2. Jest mocks: `jest.mock('...', () => ({ BpkButtonV2: ... }))`
+
+After running the script, always do a final `grep -r "BpkButtonV2"` pass to catch stragglers.
