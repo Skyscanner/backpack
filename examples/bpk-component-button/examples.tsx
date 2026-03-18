@@ -32,11 +32,8 @@ import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-a
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
-import {
-  action,
-  BpkDarkExampleWrapper,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
 
 import STYLES from './BpkButtonStory.module.scss';
 
