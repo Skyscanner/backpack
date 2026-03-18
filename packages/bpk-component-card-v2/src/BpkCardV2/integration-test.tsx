@@ -25,6 +25,8 @@ import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
 
+const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
+
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
@@ -234,8 +236,8 @@ describe('BpkCardV2 Integration Tests', () => {
 
           const card = container.querySelector('[class*="bpk-card-v2"]');
 
-          expect(card).toHaveClass(`bpk-card-v2--${variant}`);
-          expect(card).toHaveClass(`bpk-card-v2--${color}`);
+          expect(card).toHaveClass(`bpk-card-v2--${toKebab(variant)}`);
+          expect(card).toHaveClass(`bpk-card-v2--${toKebab(color)}`);
         });
       });
     });

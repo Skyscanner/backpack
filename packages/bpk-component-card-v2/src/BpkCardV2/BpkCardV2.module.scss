@@ -39,35 +39,35 @@
   }
 
   // Surface color variants
-  &--surfaceDefault {
+  &--surface-default {
     background-color: tokens.$bpk-surface-default-day;
   }
 
-  &--surfaceElevated {
+  &--surface-elevated {
     background-color: tokens.$bpk-surface-elevated-day;
   }
 
-  &--surfaceTint {
+  &--surface-tint {
     background-color: tokens.$bpk-surface-tint-day;
   }
 
-  &--surfaceSubtle {
+  &--surface-subtle {
     background-color: tokens.$bpk-surface-subtle-day;
   }
 
-  &--surfaceHero {
+  &--surface-hero {
     background-color: tokens.$bpk-surface-hero-day;
   }
 
-  &--surfaceContrast {
+  &--surface-contrast {
     background-color: tokens.$bpk-surface-contrast-day;
   }
 
-  &--surfaceLowContrast {
+  &--surface-low-contrast {
     background-color: tokens.$bpk-surface-low-contrast-day;
   }
 
-  &--surfaceHighlight {
+  &--surface-highlight {
     background-color: tokens.$bpk-surface-highlight-day;
   }
 }
@@ -88,7 +88,7 @@
 }
 
 // No elevation variant - no shadow, no border
-.bpk-card-v2--noElevation {
+.bpk-card-v2--no-elevation {
   box-shadow: none;
 
   @include utils.bpk-hover {

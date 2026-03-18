@@ -40,6 +40,8 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const noop = () => {};
+
 const SURFACE_COLORS: BpkCardV2SurfaceColor[] = [
   'surfaceDefault',
   'surfaceElevated',
@@ -73,7 +75,7 @@ const DefaultExample = () => (
 
 const VariantsExample = () => (
   <div className={getClassName('bpk-card-v2-examples__canvas-contrast')}>
-    <div className={getClassName('bpk-card-v2-examples__grid')}>
+    <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
       {VARIANTS.map((variant) => (
         <div
           key={variant}
@@ -91,14 +93,14 @@ const VariantsExample = () => (
           </BpkCardV2.Root>
         </div>
       ))}
-    </div>
+    </BpkFlex>
   </div>
 );
 
 const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = ['surfaceHero', 'surfaceContrast'];
 
 const SurfaceColorsExample = () => (
-  <div className={getClassName('bpk-card-v2-examples__grid')}>
+  <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
     {SURFACE_COLORS.map((color) => {
       const textColor = DARK_SURFACE_COLORS.includes(color) ? TEXT_COLORS.textOnDark : undefined;
       return (
@@ -119,7 +121,7 @@ const SurfaceColorsExample = () => (
         </div>
       );
     })}
-  </div>
+  </BpkFlex>
 );
 
 const carouselImageUrls = [
@@ -173,7 +175,7 @@ const PackagesCardExample = () => (
               />
               <DealOption text='Skyland' />
             </BpkFlex>
-            <BpkButton onClick={() => alert('Book now')} fullWidth>Go to site</BpkButton>
+            <BpkButton onClick={noop} fullWidth>Go to site</BpkButton>
         </BpkCardV2.Section>
       </BpkCardV2.Body>
 
@@ -186,7 +188,7 @@ const PackagesCardExample = () => (
               <DealOption text="Meals not included  •  £1,858" />
             </BpkFlex>
             <div>
-              <BpkLink as='button' onClick={() => alert('Show deals')}>8 deals from £1,740</BpkLink>
+              <BpkLink as='button' onClick={noop}>8 deals from £1,740</BpkLink>
             </div>
           </BpkCardV2.Body>
         </BpkCardV2.Root>
@@ -197,7 +199,7 @@ const PackagesCardExample = () => (
 
 const AirlineLogo = () => (
   <div className={getClassName('bpk-card-v2-examples__airline-logo')}>
-    <BpkText textStyle={TEXT_STYLES.caption} tagName="span">Skyland</BpkText>
+    <BpkText textStyle={TEXT_STYLES.caption}>Skyland</BpkText>
   </div>
 );
 
@@ -221,17 +223,17 @@ const FlightLeg = ({
   <BpkGrid columns={4} templateColumns="1fr 1fr 1fr 1fr" gap={BpkSpacing.Base} align="center">
     <AirlineLogo />
     <BpkVStack alignItems="end" gap={BpkSpacing.None}>
-      <BpkText textStyle={TEXT_STYLES.heading3} tagName="span">{departureTime}</BpkText>
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="span" color={TEXT_COLORS.textSecondary}>{departureCode}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.heading3}>{departureTime}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary}>{departureCode}</BpkText>
     </BpkVStack>
     <BpkVStack gap={BpkSpacing.SM}>
-      <BpkText textStyle={TEXT_STYLES.footnote} tagName="span" color={TEXT_COLORS.textSecondary}>{duration}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textSecondary}>{duration}</BpkText>
       <BpkJourneyArrow />
-      <BpkText textStyle={TEXT_STYLES.footnote} tagName="span" color={TEXT_COLORS.textSuccess}>{stops}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textSuccess}>{stops}</BpkText>
     </BpkVStack>
     <BpkVStack alignItems="start" gap={BpkSpacing.None}>
-      <BpkText textStyle={TEXT_STYLES.heading3} tagName="span">{arrivalTime}</BpkText>
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="span" color={TEXT_COLORS.textSecondary}>{arrivalCode}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.heading3}>{arrivalTime}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary}>{arrivalCode}</BpkText>
     </BpkVStack>
   </BpkGrid>
 );
@@ -270,7 +272,7 @@ const FlightsCardExample = () => (
               align={ALIGNS.right}
             />
           </BpkFlex>
-          <BpkButton onClick={() => alert('Select flight')} fullWidth>
+          <BpkButton onClick={noop} fullWidth>
             Select
           </BpkButton>
         </BpkCardV2.Section>
@@ -322,7 +324,7 @@ const HotelCardExample = () => (
             />
             <BpkLink href="https://example.com" target="_blank">£3,360 total</BpkLink>
           </BpkFlex>
-          <BpkButton onClick={() => alert('Select hotel')} fullWidth>
+          <BpkButton onClick={noop} fullWidth>
             Go to site
           </BpkButton>
         </BpkCardV2.Section>
@@ -332,7 +334,7 @@ const HotelCardExample = () => (
 );  
 
 const CustomPaddingExample = () => (
-  <div className={getClassName('bpk-card-v2-examples__grid')}>
+  <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
     <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
       <BpkCardV2.Root variant="outlined">
         <BpkCardV2.Header padding={BpkSpacing.LG}>
@@ -370,7 +372,7 @@ const CustomPaddingExample = () => (
         </BpkCardV2.Body>
       </BpkCardV2.Root>
     </div>
-  </div>
+  </BpkFlex>
 );
 
 const AllExamples = () => (

@@ -19,7 +19,10 @@
 import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
+import resolveDirectionalPadding from './resolveDirectionalPadding';
+
 import type { BpkCardV2HeaderProps } from '../common-types';
+
 
 /**
  * Header subcomponent for BpkCardV2.
@@ -41,7 +44,6 @@ import type { BpkCardV2HeaderProps } from '../common-types';
  */
 const Header = ({
   children,
-  direction = 'row',
   padding,
   paddingBottom,
   paddingEnd,
@@ -50,12 +52,11 @@ const Header = ({
   ...rest
 }: BpkCardV2HeaderProps) => (
   <BpkFlex
-    direction={direction}
     padding={padding}
-    paddingTop={padding ? paddingTop : (paddingTop ?? BpkSpacing.Base)}
-    paddingStart={padding ? paddingStart : (paddingStart ?? BpkSpacing.Base)}
-    paddingEnd={padding ? paddingEnd : (paddingEnd ?? BpkSpacing.Base)}
-    paddingBottom={padding ? paddingBottom : (paddingBottom ?? BpkSpacing.None)}
+    paddingTop={resolveDirectionalPadding(padding, paddingTop, BpkSpacing.Base)}
+    paddingStart={resolveDirectionalPadding(padding, paddingStart, BpkSpacing.Base)}
+    paddingEnd={resolveDirectionalPadding(padding, paddingEnd, BpkSpacing.Base)}
+    paddingBottom={resolveDirectionalPadding(padding, paddingBottom, BpkSpacing.None)}
     {...getDataComponentAttribute('CardV2.Header')}
     {...rest}
   >

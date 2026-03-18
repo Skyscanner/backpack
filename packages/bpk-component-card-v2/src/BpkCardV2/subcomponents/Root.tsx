@@ -26,6 +26,8 @@ import STYLES from '../BpkCardV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
+
 /**
  * BpkCardV2.Root is the root container for the card component.
  *
@@ -67,7 +69,7 @@ const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
       {...rest}
       // className and style are placed after {...rest} so any values smuggled
       // past the TypeScript Omit (e.g. via `as any`) are safely overwritten.
-      className={getClassName('bpk-card-v2', `bpk-card-v2--${variant}`, `bpk-card-v2--${bgColor}`)}
+      className={getClassName('bpk-card-v2', `bpk-card-v2--${toKebab(variant)}`, `bpk-card-v2--${toKebab(bgColor)}`)}
       style={undefined}
     >
       {children}

@@ -25,6 +25,8 @@ import { BpkProvider, BpkSpacing } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
 
+const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
+
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
@@ -164,7 +166,7 @@ describe('BpkCardV2', () => {
 
         const card = container.querySelector('[class*="bpk-card-v2"]');
 
-        expect(card).toHaveClass(`bpk-card-v2--${color}`);
+        expect(card).toHaveClass(`bpk-card-v2--${toKebab(color)}`);
       });
     });
 
@@ -175,7 +177,7 @@ describe('BpkCardV2', () => {
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
 
-      expect(card).toHaveClass('bpk-card-v2--surfaceDefault');
+      expect(card).toHaveClass('bpk-card-v2--surface-default');
     });
   });
 
@@ -216,7 +218,7 @@ describe('BpkCardV2', () => {
       renderWithProvider(<BpkCardV2.Root ref={ref}>Content</BpkCardV2.Root>);
 
       expect(ref.current?.className).toContain('bpk-card-v2');
-      expect(ref.current?.className).toContain('bpk-card-v2--surfaceDefault');
+      expect(ref.current?.className).toContain('bpk-card-v2--surface-default');
     });
   });
 

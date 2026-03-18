@@ -27,19 +27,12 @@
     }
   }
 
-  &__grid {
-    display: flex;
-    padding-top: tokens.bpk-spacing-base();
-    flex-wrap: wrap;
-    gap: tokens.bpk-spacing-base();
-  }
-
   &__card-wrapper {
-    width: 20rem;
+    width: tokens.bpk-spacing-base() * 20;
   }
 
   &__wide-card-wrapper {
-    max-width: 65rem;
+    max-width: tokens.bpk-spacing-base() * 65;
   }
 
   &__deal-icon {
@@ -50,7 +43,7 @@
   }
 
   &__carousel-wrapper {
-    height: 13rem;
+    height: tokens.bpk-spacing-base() * 13;
     flex: 0 0 38%;
     border-radius: tokens.$bpk-border-radius-sm;
     overflow: hidden;
@@ -81,7 +74,7 @@
 
   &__placeholder {
     display: flex;
-    height: 13rem;
+    height: tokens.bpk-spacing-base() * 13;
     justify-content: center;
     align-items: center;
     border-radius: tokens.$bpk-border-radius-sm;

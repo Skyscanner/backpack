@@ -19,7 +19,10 @@
 import { BpkFlex, BpkSpacing } from '../../../../bpk-component-layout';
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
+import resolveDirectionalPadding from './resolveDirectionalPadding';
+
 import type { BpkCardV2FooterProps } from '../common-types';
+
 
 /**
  * Footer subcomponent for BpkCardV2.
@@ -41,7 +44,6 @@ import type { BpkCardV2FooterProps } from '../common-types';
  */
 const Footer = ({
   children,
-  direction = 'row',
   padding,
   paddingBottom,
   paddingEnd,
@@ -50,12 +52,11 @@ const Footer = ({
   ...rest
 }: BpkCardV2FooterProps) => (
   <BpkFlex
-    direction={direction}
     padding={padding}
-    paddingTop={padding ? paddingTop : (paddingTop ?? BpkSpacing.None)}
-    paddingStart={padding ? paddingStart : (paddingStart ?? BpkSpacing.Base)}
-    paddingEnd={padding ? paddingEnd : (paddingEnd ?? BpkSpacing.Base)}
-    paddingBottom={padding ? paddingBottom : (paddingBottom ?? BpkSpacing.Base)}
+    paddingTop={resolveDirectionalPadding(padding, paddingTop, BpkSpacing.None)}
+    paddingStart={resolveDirectionalPadding(padding, paddingStart, BpkSpacing.Base)}
+    paddingEnd={resolveDirectionalPadding(padding, paddingEnd, BpkSpacing.Base)}
+    paddingBottom={resolveDirectionalPadding(padding, paddingBottom, BpkSpacing.Base)}
     {...getDataComponentAttribute('CardV2.Footer')}
     {...rest}
   >
