@@ -57,7 +57,7 @@ interface UseChatbotInputReturn {
 }
 
 const useChatbotInput = ({
-  inputType = CHATBOT_INPUT_TYPES.CARS,
+  inputType = CHATBOT_INPUT_TYPES.COMPOSER,
   inputValue,
   isPolling = false,
   isSending = false,

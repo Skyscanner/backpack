@@ -201,43 +201,46 @@ exports[`BpkChatbotInput composer type renders with composer type correctly 1`] 
 exports[`BpkChatbotInput should render correctly with default props 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-chatbot-input--cars"
+    class="bpk-chatbot-input--composer bpk-chatbot-input--composer--with-shadow"
     data-backpack-ds-component="ChatbotInput"
     data-testid="bpk-chatbot-input-container"
     role="presentation"
   >
     <div
-      class="bpk-chatbot-input-field"
-      role="presentation"
+      class="bpk-chatbot-textarea-field__container"
+      style="height: 24px;"
     >
-      <label
-        class="bpk-chatbot-input-field__label"
-        for=":r0:"
+      <div
+        class="bpk-chatbot-textarea-field__field"
       >
-        Ask away
-      </label>
-      <input
-        aria-label="Ask away"
-        autocapitalize="sentences"
-        autocomplete="off"
-        autocorrect="off"
-        class="bpk-chatbot-input-field__input"
-        data-testid="bpk-chatbot-input-field"
-        enterkeyhint="send"
-        id=":r0:"
-        inputmode="text"
-        placeholder="Ask away"
-        spellcheck="true"
-        tabindex="0"
-        type="text"
-        value=""
-      />
+        <label
+          class="bpk-chatbot-textarea-field__label"
+          for=":r0:"
+        >
+          Ask away
+        </label>
+        <textarea
+          aria-label="Ask away"
+          autocapitalize="sentences"
+          autocomplete="off"
+          autocorrect="off"
+          class="bpk-chatbot-textarea-field__textarea bpk-chatbot-textarea-field__textarea--with-shadow"
+          data-testid="bpk-chatbot-textarea-field"
+          id=":r0:"
+          placeholder="Ask away"
+          rows="1"
+          spellcheck="true"
+          style="height: 24px; resize: none;"
+          tabindex="0"
+        />
+      </div>
     </div>
     <button
       aria-label="Send"
-      class="bpk-button bpk-button--icon-only bpk-button--featured"
+      class="bpk-button bpk-button--icon-only bpk-button--primary"
       data-backpack-ds-component="Button"
       data-testid="bpk-chatbot-input-send"
+      disabled=""
       type="button"
     >
       <span
@@ -245,7 +248,6 @@ exports[`BpkChatbotInput should render correctly with default props 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="bpk-icon--rtl-support"
           height="1rem"
           viewBox="0 0 24 24"
           width="1rem"
@@ -253,7 +255,7 @@ exports[`BpkChatbotInput should render correctly with default props 1`] = `
         >
           <path
             clip-rule="evenodd"
-            d="M3 12a1.5 1.5 0 0 0 1.5 1.5h11.379l-4.94 4.94a1.5 1.5 0 0 0 2.122 2.12l7.5-7.5a1.5 1.5 0 0 0 0-2.12l-7.5-7.5a1.5 1.5 0 0 0-2.122 2.12l4.94 4.94H4.5A1.5 1.5 0 0 0 3 12"
+            d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
           />
         </svg>
       </span>

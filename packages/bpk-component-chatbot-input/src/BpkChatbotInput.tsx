@@ -36,7 +36,7 @@ export type { BpkChatbotInputProps };
 const getClassName = cssModules(STYLES);
 
 const BpkChatbotInput = ({
-  inputType = CHATBOT_INPUT_TYPES.CARS,
+  inputType = CHATBOT_INPUT_TYPES.COMPOSER,
   inputValue,
   isPolling = false,
   isSending = false,

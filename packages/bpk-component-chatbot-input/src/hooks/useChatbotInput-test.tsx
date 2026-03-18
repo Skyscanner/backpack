@@ -362,7 +362,7 @@ describe('useChatbotInput', () => {
       expect(result.current.inputProps.value).toBe('Hello');
       expect(result.current.inputProps.placeholder).toBe('Enter message');
       expect(result.current.inputProps.dataTestId).toBe(
-        'bpk-chatbot-input-field',
+        'bpk-chatbot-textarea-field',
       );
     });
 

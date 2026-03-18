@@ -216,7 +216,7 @@ describe('BpkChatbotInput', () => {
   });
 
   describe('keyboard interactions', () => {
-    it('submits on Enter key in cars mode', () => {
+    it('submits on Enter key in default (composer) mode', () => {
       render(<BpkChatbotInput {...defaultProps} inputValue="Hello" />);
       fireEvent.keyDown(screen.getByRole('textbox'), { key: 'Enter' });
       expect(defaultProps.onSubmit).toHaveBeenCalled();

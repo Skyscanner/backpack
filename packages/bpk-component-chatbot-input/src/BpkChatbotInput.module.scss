@@ -95,16 +95,8 @@
     );
 
     &--with-shadow {
-      // textarea::placeholder {
-      //   color: tokens.$bpk-text-primary-day
-      // }
-
       &:focus-within {
         box-shadow: tokens.$bpk-box-shadow-xl;
-
-        // textarea:focus::placeholder {
-        //   opacity: 0;
-        // }
       }
     }
 
