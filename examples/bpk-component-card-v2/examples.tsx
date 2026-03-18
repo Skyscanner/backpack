@@ -21,7 +21,7 @@ import BpkButton from '../../packages/bpk-component-button';
 import { BpkCardV2 } from '../../packages/bpk-component-card';
 import BpkCarousel from '../../packages/bpk-component-carousel';
 import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
-import { BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
 import BpkLink from '../../packages/bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
@@ -56,7 +56,7 @@ const SURFACE_COLORS: BpkCardV2SurfaceColor[] = [
 const VARIANTS: BpkCardV2Variant[] = ['default', 'outlined', 'noElevation'];
 
 const DefaultExample = () => (
-  <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
+  <BpkBox width="20rem">
     <BpkCardV2.Root>
       <BpkCardV2.Header>
         <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
@@ -70,17 +70,14 @@ const DefaultExample = () => (
         <BpkText textStyle={TEXT_STYLES.caption}>Footer content</BpkText>
       </BpkCardV2.Footer>
     </BpkCardV2.Root>
-  </div>
+  </BpkBox>
 );
 
 const VariantsExample = () => (
   <div className={getClassName('bpk-card-v2-examples__canvas-contrast')}>
     <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
       {VARIANTS.map((variant) => (
-        <div
-          key={variant}
-          className={getClassName('bpk-card-v2-examples__card-wrapper')}
-        >
+        <BpkBox key={variant} width="20rem">
           <BpkCardV2.Root variant={variant}>
             <BpkCardV2.Header>
               <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
@@ -91,7 +88,7 @@ const VariantsExample = () => (
               <BpkText>Card with variant &quot;{variant}&quot;.</BpkText>
             </BpkCardV2.Body>
           </BpkCardV2.Root>
-        </div>
+        </BpkBox>
       ))}
     </BpkFlex>
   </div>
@@ -104,10 +101,7 @@ const SurfaceColorsExample = () => (
     {SURFACE_COLORS.map((color) => {
       const textColor = DARK_SURFACE_COLORS.includes(color) ? TEXT_COLORS.textOnDark : undefined;
       return (
-        <div
-          key={color}
-          className={getClassName('bpk-card-v2-examples__card-wrapper')}
-        >
+        <BpkBox key={color} width="20rem">
           <BpkCardV2.Root bgColor={color} variant="outlined">
             <BpkCardV2.Header>
               <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3" color={textColor}>
@@ -118,7 +112,7 @@ const SurfaceColorsExample = () => (
               <BpkText color={textColor}>Surface color example.</BpkText>
             </BpkCardV2.Body>
           </BpkCardV2.Root>
-        </div>
+        </BpkBox>
       );
     })}
   </BpkFlex>
@@ -131,13 +125,13 @@ const carouselImageUrls = [
   'https://content.skyscnr.com/m/51c4c9dd04c8dc95/original/Carousel-placeholder-1.jpg',
 ];
 const carouselImages = carouselImageUrls.map((url) => (
-  <div key={url} style={{ width: '100%', height: '100%' }}>
+  <BpkBox key={url} width="full" height="full">
     <img
       src={url}
       alt="hotel bedroom"
       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
     />
-  </div>
+  </BpkBox>
 ));
 
 const DealOption = ({ text }: { text: string }) => (
@@ -148,7 +142,7 @@ const DealOption = ({ text }: { text: string }) => (
 )
 
 const PackagesCardExample = () => (
-  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+  <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
       <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }} padding={BpkSpacing.None}>
         <BpkCardV2.Section padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
@@ -187,14 +181,14 @@ const PackagesCardExample = () => (
               <DealOption text="Meals not included  •  £1,757" />
               <DealOption text="Meals not included  •  £1,858" />
             </BpkFlex>
-            <div>
+            <BpkBox>
               <BpkLink as='button' onClick={noop}>8 deals from £1,740</BpkLink>
-            </div>
+            </BpkBox>
           </BpkCardV2.Body>
         </BpkCardV2.Root>
       </BpkCardV2.Footer>
     </BpkCardV2.Root>
-  </div>
+  </BpkBox>
 );
 
 const AirlineLogo = () => (
@@ -239,7 +233,7 @@ const FlightLeg = ({
 );
 
 const FlightsCardExample = () => (
-  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+  <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
       <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }} padding={BpkSpacing.None}>
         <BpkCardV2.Section gap={BpkSpacing.Base}>
@@ -278,11 +272,11 @@ const FlightsCardExample = () => (
         </BpkCardV2.Section>
       </BpkCardV2.Body>
     </BpkCardV2.Root>
-  </div>
+  </BpkBox>
 );
 
 const HotelCardExample = () => (
-  <div className={getClassName('bpk-card-v2-examples__wide-card-wrapper')}>
+  <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
       <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }} padding={BpkSpacing.None}>
         <BpkCardV2.Section padding={BpkSpacing.None}>
@@ -330,12 +324,12 @@ const HotelCardExample = () => (
         </BpkCardV2.Section>
       </BpkCardV2.Body>
     </BpkCardV2.Root>
-  </div>
-);  
+  </BpkBox>
+);
 
 const CustomPaddingExample = () => (
   <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
-    <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
+    <BpkBox width="20rem">
       <BpkCardV2.Root variant="outlined">
         <BpkCardV2.Header padding={BpkSpacing.LG}>
           <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">
@@ -349,8 +343,8 @@ const CustomPaddingExample = () => (
           <BpkText textStyle={TEXT_STYLES.caption}>No footer padding.</BpkText>
         </BpkCardV2.Footer>
       </BpkCardV2.Root>
-    </div>
-    <div className={getClassName('bpk-card-v2-examples__card-wrapper')}>
+    </BpkBox>
+    <BpkBox width="20rem">
       <BpkCardV2.Root variant="outlined">
         <BpkCardV2.Header
           paddingTop={BpkSpacing.SM}
@@ -371,49 +365,49 @@ const CustomPaddingExample = () => (
           <BpkText>Individual side padding.</BpkText>
         </BpkCardV2.Body>
       </BpkCardV2.Root>
-    </div>
+    </BpkBox>
   </BpkFlex>
 );
 
 const AllExamples = () => (
-  <div>
-    <div className={getClassName('bpk-card-v2-examples__section')}>
+  <BpkVStack>
+    <BpkBox paddingTop={BpkSpacing.LG}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Default
       </BpkText>
       <DefaultExample />
-    </div>
-    <div className={getClassName('bpk-card-v2-examples__section')}>
+    </BpkBox>
+    <BpkBox paddingTop={BpkSpacing.LG}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Variants
       </BpkText>
       <VariantsExample />
-    </div>
-    <div className={getClassName('bpk-card-v2-examples__section')}>
+    </BpkBox>
+    <BpkBox paddingTop={BpkSpacing.LG}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Surface Colors
       </BpkText>
       <SurfaceColorsExample />
-    </div>
-    <div className={getClassName('bpk-card-v2-examples__section')}>
+    </BpkBox>
+    <BpkBox paddingTop={BpkSpacing.LG}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Packages Card
       </BpkText>
       <PackagesCardExample />
-    </div>
-    <div className={getClassName('bpk-card-v2-examples__section')}>
+    </BpkBox>
+    <BpkBox paddingTop={BpkSpacing.LG}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Flights Card
       </BpkText>
       <FlightsCardExample />
-    </div>
-    <div className={getClassName('bpk-card-v2-examples__section')}>
+    </BpkBox>
+    <BpkBox paddingTop={BpkSpacing.LG} paddingBottom={BpkSpacing.XL}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Custom Padding
       </BpkText>
       <CustomPaddingExample />
-    </div>
-  </div>
+    </BpkBox>
+  </BpkVStack>
 );
 
 export {
