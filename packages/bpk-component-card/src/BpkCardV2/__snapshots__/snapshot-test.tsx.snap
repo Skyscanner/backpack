@@ -61,12 +61,18 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
         class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
       >
-        <h3>
+        <h3
+          class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
+        >
           Description
         </h3>
-        <p>
+        <span
+          class="bpk-text bpk-text--body-default"
+          data-backpack-ds-component="Text"
+        >
           Product details
-        </p>
+        </span>
       </div>
     </div>
     <div
@@ -74,6 +80,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       data-backpack-ds-component="CardV2.Footer"
     >
       <button
+        class="bpk-button bpk-button--primary"
+        data-backpack-ds-component="Button"
         type="button"
       >
         Add to cart

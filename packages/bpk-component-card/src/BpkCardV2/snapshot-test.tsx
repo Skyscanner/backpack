@@ -20,7 +20,9 @@ import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 
+import BpkButton from '../../../bpk-component-button';
 import { BpkProvider } from '../../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 
 import BpkCardV2 from './BpkCardV2';
 
@@ -101,12 +103,12 @@ describe('BpkCardV2 Snapshots', () => {
           </BpkCardV2.Section>
           <BpkCardV2.Divider />
           <BpkCardV2.Section>
-            <h3>Description</h3>
-            <p>Product details</p>
+            <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">Description</BpkText>
+            <BpkText>Product details</BpkText>
           </BpkCardV2.Section>
         </BpkCardV2.Body>
         <BpkCardV2.Footer>
-          <button type="button">Add to cart</button>
+          <BpkButton>Add to cart</BpkButton>
         </BpkCardV2.Footer>
       </BpkCardV2.Root>,
     );
