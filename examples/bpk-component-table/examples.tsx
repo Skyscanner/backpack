@@ -79,7 +79,7 @@ const WordBreakExample = () => (
     </BpkTableBody>
   </BpkTable>
 );
-const someClass = 'random-class';
+
 const StripedExample = () => (
   <BpkTable>
     <BpkTableHead>
@@ -89,7 +89,7 @@ const StripedExample = () => (
         <BpkTableHeadCell>Column 3</BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
-    <BpkTableBody striped className={someClass}>
+    <BpkTableBody striped >
       <BpkTableRow>
         <BpkTableCell>Entry 1</BpkTableCell>
         <BpkTableCell>Entry 2</BpkTableCell>

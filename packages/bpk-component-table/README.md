@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```js
+```tsx
 import {
   BpkTable,
   BpkTableHead,
@@ -50,7 +50,7 @@ export default () => (
 
 This component is written in TypeScript and provides its own type definitions. TypeScript users benefit from autocomplete and type checking:
 
-```typescript
+```tsx
 import {
   BpkTable,
   BpkTableHead,
@@ -79,7 +79,7 @@ By default the prop can be omitted.
 
 Optional prop on `BpkTableBody` that applies alternating row background colours. Even rows receive a highlighted background. Set `striped` to enable this behaviour.
 
-```js
+```tsx
 <BpkTableBody striped>
   <BpkTableRow>...</BpkTableRow>
   <BpkTableRow>...</BpkTableRow>
