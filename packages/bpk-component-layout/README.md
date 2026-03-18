@@ -199,4 +199,4 @@ Use these examples as a reference for how to compose layout props and tokens. As
 
 ## Props
 
-Check out the full list of props on [Storybook](https://backpack.github.io/storybook-prs/4230/?path=/docs/bpk-component-layout--documentation).
+Check out the full list of props on [Storybook](https://backpack.github.io/storybook/?path=/docs/bpk-component-layout--documentation).
