@@ -20,6 +20,7 @@
 @use '../../../bpk-mixins/radii';
 @use '../../../bpk-mixins/shadows';
 @use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/surfaces';
 @use '../../../bpk-mixins/utils';
 
 // Card container - base styles
@@ -33,42 +34,10 @@
 
   @include radii.bpk-border-radius-md;
   @include shadows.bpk-box-shadow-sm;
+  @include surfaces.bpk-surface-bg-colors;
 
   @include utils.bpk-hover {
     @include shadows.bpk-box-shadow-lg;
-  }
-
-  // Surface color variants
-  &--surface-default {
-    background-color: tokens.$bpk-surface-default-day;
-  }
-
-  &--surface-elevated {
-    background-color: tokens.$bpk-surface-elevated-day;
-  }
-
-  &--surface-tint {
-    background-color: tokens.$bpk-surface-tint-day;
-  }
-
-  &--surface-subtle {
-    background-color: tokens.$bpk-surface-subtle-day;
-  }
-
-  &--surface-hero {
-    background-color: tokens.$bpk-surface-hero-day;
-  }
-
-  &--surface-contrast {
-    background-color: tokens.$bpk-surface-contrast-day;
-  }
-
-  &--surface-low-contrast {
-    background-color: tokens.$bpk-surface-low-contrast-day;
-  }
-
-  &--surface-highlight {
-    background-color: tokens.$bpk-surface-highlight-day;
   }
 }
 
