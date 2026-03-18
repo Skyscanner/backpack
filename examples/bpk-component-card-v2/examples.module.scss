@@ -60,25 +60,9 @@
     color: tokens.$bpk-text-secondary-day;
   }
 
-  &__flight-line {
-    height: tokens.$bpk-border-size-sm;
-    flex: 1 1 auto;
-    background-color: tokens.$bpk-line-day;
-  }
-
   &__canvas-contrast {
     padding: tokens.bpk-spacing-base();
     border-radius: tokens.$bpk-border-radius-sm;
     background-color: tokens.$bpk-canvas-contrast-day;
-  }
-
-  &__placeholder {
-    display: flex;
-    height: tokens.bpk-spacing-base() * 13;
-    justify-content: center;
-    align-items: center;
-    border-radius: tokens.$bpk-border-radius-sm;
-    background-color: tokens.$bpk-surface-highlight-day;
-    color: tokens.$bpk-text-secondary-day;
   }
 }
