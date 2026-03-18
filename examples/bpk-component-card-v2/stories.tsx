@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
+import { BpkCardV2 } from '../../packages/bpk-component-card';
 import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {

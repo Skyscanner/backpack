@@ -18,7 +18,7 @@
 
 import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
 import BpkButton from '../../packages/bpk-component-button';
-import { BpkCardV2 } from '../../packages/bpk-component-card-v2';
+import { BpkCardV2 } from '../../packages/bpk-component-card';
 import BpkCarousel from '../../packages/bpk-component-carousel';
 import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
 import { BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
@@ -34,7 +34,7 @@ import { cssModules } from '../../packages/bpk-react-utils';
 import type {
   BpkCardV2SurfaceColor,
   BpkCardV2Variant,
-} from '../../packages/bpk-component-card-v2/src/BpkCardV2/common-types';
+} from '../../packages/bpk-component-card';
 
 import STYLES from './examples.module.scss';
 
