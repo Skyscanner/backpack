@@ -16,25 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+// The checkmark and indeterminate bar are rendered via CSS on BpkCheckboxControl
+// (bpk-checkbox__checkmark mixin + ::before pseudo-element), so this slot
+// component intentionally renders nothing.
+const BpkCheckboxIndicator = () => null;
 
-$calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
-
-.bpk-scrollable-calendar-grid-list {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: $calendar-height;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-
-  &__font-sentinel {
-    position: absolute;
-    visibility: hidden;
-    width: 1rem;
-    height: 1rem;
-    overflow: hidden;
-    pointer-events: none;
-  }
-}
+export default BpkCheckboxIndicator;

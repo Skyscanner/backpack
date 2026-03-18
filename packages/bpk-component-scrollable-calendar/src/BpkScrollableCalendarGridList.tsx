@@ -74,6 +74,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     ...rest
   } = props;
   const listRef = useRef(null);
+  const sentinelRef = useRef<HTMLDivElement>(null);
   const startDate = startOfDay(startOfMonth(minDate));
   const endDate = startOfDay(startOfMonth(rest.maxDate));
   const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
@@ -84,13 +85,12 @@ const BpkScrollableCalendarGridList = (props: Props) => {
   const estimatedMonthItemHeight = 
     (BASE_MONTH_ITEM_HEIGHT + 5 * rowHeight) * DEFAULT_ROOT_FONT_SIZE;
 
-  const getInitialRootFontSize = () =>
-    parseFloat(getComputedStyle(document.documentElement).fontSize) ||
-    DEFAULT_ROOT_FONT_SIZE;
-
   // The `react-window` API requires the height in pixels to be specified
   // To be able to scale text size, we use rem and then we get the root font size so that we can calculate the final value in px
-  const [rootFontSize, setRootFontSize] = useState(getInitialRootFontSize);
+  // Initialise to the default; the sentinel ResizeObserver corrects this to the true rendered
+  // value immediately on mount, so we never rely on getComputedStyle which can be stale under
+  // browser font scaling.
+  const [rootFontSize, setRootFontSize] = useState(DEFAULT_ROOT_FONT_SIZE);
 
   const months = useMemo(
     () => getMonthsArray(startDate, monthsCount),
@@ -116,11 +116,45 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     }
   }, [monthItemHeights]);
 
+  useEffect(() => {
+    // Some browsers apply font scaling at the rendering level without updating getComputedStyle.
+    // A sentinel element sized to 1rem lets us measure the true rendered px-per-rem directly,
+    // so that react-window item heights stay accurate regardless of browser font scaling.
+    const sentinel = sentinelRef.current;
+    if (!sentinel || typeof ResizeObserver === 'undefined') return undefined;
+
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (entry) {
+        const newRootFontSize = entry.contentRect.width || DEFAULT_ROOT_FONT_SIZE;
+        setRootFontSize(newRootFontSize);
+      }
+    });
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+
   const getHtmlElement = () =>
     typeof document !== 'undefined' ? document.querySelector('html') : {};
 
   const getItemSize = (index: number) =>
     monthItemHeights[index] || estimatedMonthItemHeight;
+
+  const calculateOffsetInPixels = (numberOfMonths: number) => {
+    // The `react-window` API requires the scroll offset to be provided in pixels.
+    // Here we use the pre-calculated item heights to find the correct pixel offset
+    let result = 0;
+    for (let i = 0; i < numberOfMonths; i += 1) {
+      result += getItemSize(i);
+    }
+    return result;
+  };
+
+  const date =
+    selectionConfiguration?.type === CALENDAR_SELECTION_TYPE.single
+      ? selectionConfiguration?.date
+      : selectionConfiguration?.startDate;
+  const selectedDate = focusedDate || date;
 
   const rowRenderer = ({ index, style }: { index: number; style: {} }) => (
     <div style={style}>
@@ -137,35 +171,13 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     </div>
   );
 
-  const calculateOffsetInPixels = (numberOfMonths: number) => {
-    // The `react-window` API requires the scroll offset to be provided in pixels.
-    // Here we use the pre-calculated item heights to find the correct pixel offset
-    let result = 0;
-    for (let i = 0; i < numberOfMonths; i += 1) {
-      result += getItemSize(i);
-    }
-    return result;
-  };
-
-  const onResize = () => {
-    const newRootFontSize =
-      parseFloat(getComputedStyle(document.documentElement).fontSize) ||
-      DEFAULT_ROOT_FONT_SIZE;
-    setRootFontSize(newRootFontSize);
-  };
-
-  const date =
-    selectionConfiguration?.type === CALENDAR_SELECTION_TYPE.single
-      ? selectionConfiguration?.date
-      : selectionConfiguration?.startDate;
-  const selectedDate = focusedDate || date;
-
   return (
     <div
       className={getClassName('bpk-scrollable-calendar-grid-list', className)} {...getDataComponentAttribute('ScrollableCalendarGridList')}
     >
+      {/* Hidden sentinel element sized to 1rem; ResizeObserver measures its width to get the true rendered px-per-rem */}
+      <div ref={sentinelRef} className={getClassName('bpk-scrollable-calendar-grid-list__font-sentinel')} aria-hidden="true" />
       <AutoSizer
-        onResize={onResize}
         defaultHeight={estimatedMonthItemHeight}
         defaultWidth={ESTIMATED_MONTH_ITEM_WIDTH}
       >

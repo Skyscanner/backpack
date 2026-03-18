@@ -76,6 +76,10 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
       data-backpack-ds-component="ScrollableCalendarGridList"
     >
       <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
+      <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
         <div
@@ -1510,6 +1514,10 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
       class="bpk-scrollable-calendar-grid-list"
       data-backpack-ds-component="ScrollableCalendarGridList"
     >
+      <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
       <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
@@ -2946,6 +2954,10 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
       data-backpack-ds-component="ScrollableCalendarGridList"
     >
       <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
+      <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
         <div
@@ -4380,6 +4392,10 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
       class="bpk-scrollable-calendar-grid-list"
       data-backpack-ds-component="ScrollableCalendarGridList"
     >
+      <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
       <div
         style="overflow: visible; height: 0px; width: 0px;"
       >

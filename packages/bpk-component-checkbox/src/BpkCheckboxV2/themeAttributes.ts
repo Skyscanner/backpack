@@ -16,25 +16,5 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-
-$calendar-height: 7 * (tokens.$bpk-calendar-day-size + tokens.bpk-spacing-lg());
-
-.bpk-scrollable-calendar-grid-list {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: $calendar-height;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-
-  &__font-sentinel {
-    position: absolute;
-    visibility: hidden;
-    width: 1rem;
-    height: 1rem;
-    overflow: hidden;
-    pointer-events: none;
-  }
-}
+export const checkboxSelectedColorThemeAttributes = ['checkboxSelectedColor'];
+export const checkboxBorderRadiusThemeAttributes = ['checkboxBorderRadius'];
