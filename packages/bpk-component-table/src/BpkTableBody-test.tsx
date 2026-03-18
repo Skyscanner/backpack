@@ -54,4 +54,15 @@ describe('BpkTableBody', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render correctly with striped prop', () => {
+    const { asFragment } = render(
+      <table>
+        <BpkTableBody striped>
+          <tr />
+        </BpkTableBody>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
