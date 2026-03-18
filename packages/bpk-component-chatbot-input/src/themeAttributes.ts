@@ -29,9 +29,9 @@
  *   </BpkThemeProvider>
  */
 const themeAttributes = [
-  /** Border radius for the input container. Applies to both default and composer modes. */
+  /** Border radius for the input container. Applies to both cars and composer modes. */
   'chatbotInputBorderRadius',
-  /** Border colour for hover and focus states. Only applies to the default (single-line) mode. */
+  /** Border colour for hover and focus states. Only applies to the cars (single-line) mode. */
   'chatbotInputFocusBorderColor',
 ];
 

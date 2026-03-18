@@ -24,7 +24,7 @@ import { MAX_CHARACTERS } from '../constants';
 
 import useTextAreaAutoResize from './useTextAreaAutoResize';
 
-import type { BaseInputFieldProps } from '../common-types';
+import type { BaseInputFieldProps, ChatbotInputType } from '../common-types';
 
 interface UseChatbotInputOptions {
   inputValue: string;
@@ -35,7 +35,7 @@ interface UseChatbotInputOptions {
   placeholder: string;
   isSending?: boolean;
   isPolling?: boolean;
-  inputType?: string;
+  inputType?: ChatbotInputType;
   maxCharacters?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;

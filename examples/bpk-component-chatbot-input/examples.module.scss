@@ -33,7 +33,7 @@
   margin-top: tokens.bpk-spacing-lg();
   margin-bottom: tokens.bpk-spacing-sm();
 
-  &--first {
+  &:first-child {
     margin-top: 0;
   }
 }

@@ -188,10 +188,7 @@ export const ThemedExample = () => (
     <BpkText
       tagName="p"
       textStyle={TEXT_STYLES.label1}
-      className={getClassName(
-        'bpk-chatbot-input-examples__section-label',
-        'bpk-chatbot-input-examples__section-label--first',
-      )}
+      className={getClassName('bpk-chatbot-input-examples__section-label')}
     >
       With theme override (pill border-radius + navy focus colour)
     </BpkText>

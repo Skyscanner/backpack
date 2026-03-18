@@ -41,7 +41,7 @@ export default () => (
 | placeholder      | string                             | true     | -                                |
 | isSending        | bool                               | false    | false                            |
 | isPolling        | bool                               | false    | false                            |
-| inputType        | oneOf(CHATBOT_INPUT_TYPES)         | false    | CHATBOT_INPUT_TYPES.CARS      |
+| inputType        | oneOf(CHATBOT_INPUT_TYPES)         | false    | CHATBOT_INPUT_TYPES.COMPOSER  |
 | maxCharacters    | number                             | false    | 500                              |
 | onInputClick     | func                               | false    | () => {}                         |
 | onKeyDown        | func                               | false    | () => {}                         |
