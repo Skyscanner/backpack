@@ -34,7 +34,6 @@ export interface BpkTableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionE
 
 const BpkTableBody = ({children, className = null, striped = false, ...rest}: BpkTableBodyProps) => {
   const classNames = getClassName(
-    'bpk-table__body',
     striped && 'bpk-table__body--striped',
     className,
   );
