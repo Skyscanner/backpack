@@ -74,3 +74,14 @@ Check out the full list of props on Skyscanner's [design system documentation we
 Optional prop to add css `word-break: break-word;`, this allows long words and URLs to wrap onto multiple lines within the cell rather than overflowing. This prop is available on both `BpkTableCell` and `BpkTableHeadCell`. Set `wordBreak={true}` to add this behaviour.
 
 By default the prop can be omitted.
+
+`striped` (boolean, default `false`)
+
+Optional prop on `BpkTableBody` that applies alternating row background colours. Even rows receive a highlighted background. Set `striped` to enable this behaviour.
+
+```js
+<BpkTableBody striped>
+  <BpkTableRow>...</BpkTableRow>
+  <BpkTableRow>...</BpkTableRow>
+</BpkTableBody>
+```
