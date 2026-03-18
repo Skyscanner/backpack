@@ -31,7 +31,7 @@ import STYLES from './BpkBox.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
-  ({ backgroundColor, children, color, ...props }, ref) => {
+  ({ backgroundColor, boxShadow, children, color, lineClamp, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
     const combinedClass = getClassName(
       backgroundColor ? `bpk-box--${backgroundColor}` : '',
@@ -42,10 +42,24 @@ export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
       color ? `bpk-box--${color}` : '',
     ) || undefined;
 
+    const lineClampProps = lineClamp != null ? {
+      display: '-webkit-box' as const,
+      WebkitLineClamp: lineClamp,
+      WebkitBoxOrient: 'vertical' as const,
+      overflow: 'hidden' as const,
+    } : {};
+
     return (
-      // className is allowed here: combinedClass is an internal SCSS module class, not a consumer override.
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <Box ref={ref} className={combinedClass} {...getDataComponentAttribute('Box')} {...processedProps}>
+      <Box
+        ref={ref}
+        // className is allowed here: combinedClass is an internal SCSS module class, not a consumer override.
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={combinedClass}
+        {...getDataComponentAttribute('Box')}
+        {...processedProps}
+        {...lineClampProps}
+        {...(boxShadow ? { boxShadow } : {})}
+      >
         {children}
       </Box>
     );

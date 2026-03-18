@@ -201,7 +201,7 @@ type BoxEventProps = Pick<BoxProps,
 >;
 
 export interface BpkBoxProps
-  extends Omit<BpkCommonLayoutProps, 'backgroundColor' | 'color'>,
+  extends Omit<BpkCommonLayoutProps, 'backgroundColor' | 'color' | 'boxShadow'>,
     BpkBoxSpecificProps {
   children?: ReactNode;
   onClick?: BoxEventProps['onClick'];
@@ -214,6 +214,8 @@ export interface BpkBoxProps
   cursor?: 'auto' | 'default' | 'pointer' | 'not-allowed';
   opacity?: number;
   tabIndex?: number;
+  boxShadow?: BoxProps['boxShadow'];
+  lineClamp?: number;
 }
 
 /**
