@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import type { BpkFlexProps } from '../../../../bpk-component-layout';
+
+type PaddingValue = BpkFlexProps['padding'];
+
 /**
  * Resolves a directional padding value for Header/Footer subcomponents.
  *
@@ -23,15 +27,15 @@
  * through as-is (BpkFlex handles shorthand + directional merging).
  * When no shorthand is set, the directional value falls back to a default.
  *
- * @param {string | undefined} padding - The shorthand padding prop value
- * @param {string | undefined} directional - The directional padding override
- * @param {string} fallback - The default value when no shorthand or directional is set
- * @returns {string | undefined} The resolved padding value
+ * @param {PaddingValue} padding - The shorthand padding prop value
+ * @param {PaddingValue} directional - The directional padding override
+ * @param {PaddingValue} fallback - The default value when no shorthand or directional is set
+ * @returns {PaddingValue} The resolved padding value
  */
 const resolveDirectionalPadding = (
-  padding: string | undefined,
-  directional: string | undefined,
-  fallback: string,
-) => (padding !== undefined ? directional : (directional ?? fallback));
+  padding: PaddingValue,
+  directional: PaddingValue,
+  fallback: PaddingValue,
+): PaddingValue => (padding !== undefined ? directional : (directional ?? fallback));
 
 export default resolveDirectionalPadding;
