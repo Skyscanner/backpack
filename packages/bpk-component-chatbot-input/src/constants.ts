@@ -16,12 +16,6 @@
  * limitations under the License.
  */
 
-export const CHATBOT_INPUT_TYPES = {
-  DEFAULT: 'default',
-  COMPOSER: 'composer',
-} as const;
-
-export type ChatbotInputType =
-  (typeof CHATBOT_INPUT_TYPES)[keyof typeof CHATBOT_INPUT_TYPES];
-
 export const MAX_CHARACTERS = 500;
+
+export default { MAX_CHARACTERS };

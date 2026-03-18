@@ -21,7 +21,7 @@ import { forwardRef, useId } from 'react';
 import { cssModules } from '../../../bpk-react-utils';
 import { useInputHandlers } from '../hooks';
 
-import type { BaseInputFieldProps } from '../types';
+import type { BaseInputFieldProps } from '../common-types';
 
 import STYLES from './TextAreaField.module.scss';
 

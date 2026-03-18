@@ -20,7 +20,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkChatbotInput from './BpkChatbotInput';
-import { CHATBOT_INPUT_TYPES } from './constants';
+import { CHATBOT_INPUT_TYPES } from './common-types';
 
 const defaultProps = {
   inputValue: '',

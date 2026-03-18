@@ -19,11 +19,12 @@
 import { useCallback, useRef, useState } from 'react';
 import type { KeyboardEvent, RefObject } from 'react';
 
-import { CHATBOT_INPUT_TYPES, MAX_CHARACTERS } from '../constants';
+import { CHATBOT_INPUT_TYPES } from '../common-types';
+import { MAX_CHARACTERS } from '../constants';
 
 import useTextAreaAutoResize from './useTextAreaAutoResize';
 
-import type { BaseInputFieldProps } from '../types';
+import type { BaseInputFieldProps } from '../common-types';
 
 interface UseChatbotInputOptions {
   inputValue: string;

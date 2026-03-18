@@ -22,7 +22,7 @@ import type { MouseEvent, TouchEvent } from 'react';
 import { cssModules } from '../../../bpk-react-utils';
 import { useInputHandlers } from '../hooks';
 
-import type { BaseInputFieldProps } from '../types';
+import type { BaseInputFieldProps } from '../common-types';
 
 import STYLES from './InputField.module.scss';
 

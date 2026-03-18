@@ -16,40 +16,24 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent, MouseEvent, RefObject, TouchEvent } from 'react';
+import type { MouseEvent, RefObject, TouchEvent } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import InputField from './InputField/InputField';
 import SendButton from './SendButton/SendButton';
 import TextAreaField from './TextAreaField/TextAreaField';
-import { CHATBOT_INPUT_TYPES, MAX_CHARACTERS } from './constants';
+import { CHATBOT_INPUT_TYPES } from './common-types';
+import { MAX_CHARACTERS } from './constants';
 import { useChatbotInput } from './hooks';
 
-import type { ChatbotInputType } from './constants';
+import type { BpkChatbotInputProps } from './common-types';
 
 import STYLES from './BpkChatbotInput.module.scss';
 
-const getClassName = cssModules(STYLES);
+export type { BpkChatbotInputProps };
 
-export type BpkChatbotInputProps = {
-  inputValue: string;
-  /** Accessible label for the loading state button (required for screen readers). */
-  loadingAriaLabel: string;
-  /** Accessible label for the send button (required for screen readers). */
-  sendAriaLabel: string;
-  onInputChange: (value: string) => void;
-  onInputFocus: () => void;
-  onInputBlur: () => void;
-  onSubmit: () => void | Promise<void>;
-  placeholder: string;
-  isSending?: boolean;
-  isPolling?: boolean;
-  inputType?: ChatbotInputType;
-  maxCharacters?: number;
-  onInputClick?: () => void;
-  onKeyDown?: (e: KeyboardEvent) => void;
-};
+const getClassName = cssModules(STYLES);
 
 const BpkChatbotInput = ({
   inputType = CHATBOT_INPUT_TYPES.DEFAULT,

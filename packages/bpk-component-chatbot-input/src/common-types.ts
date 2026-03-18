@@ -18,6 +18,33 @@
 
 import type { KeyboardEvent } from 'react';
 
+export const CHATBOT_INPUT_TYPES = {
+  DEFAULT: 'default',
+  COMPOSER: 'composer',
+} as const;
+
+export type ChatbotInputType =
+  (typeof CHATBOT_INPUT_TYPES)[keyof typeof CHATBOT_INPUT_TYPES];
+
+export type BpkChatbotInputProps = {
+  inputValue: string;
+  /** Accessible label for the loading state button (required for screen readers). */
+  loadingAriaLabel: string;
+  /** Accessible label for the send button (required for screen readers). */
+  sendAriaLabel: string;
+  onInputChange: (value: string) => void;
+  onInputFocus: () => void;
+  onInputBlur: () => void;
+  onSubmit: () => void | Promise<void>;
+  placeholder: string;
+  isSending?: boolean;
+  isPolling?: boolean;
+  inputType?: ChatbotInputType;
+  maxCharacters?: number;
+  onInputClick?: () => void;
+  onKeyDown?: (e: KeyboardEvent) => void;
+};
+
 export interface BaseInputFieldProps {
   value: string;
   placeholder: string;

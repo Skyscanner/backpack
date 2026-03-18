@@ -20,7 +20,8 @@ import type { KeyboardEvent } from 'react';
 
 import { act, renderHook } from '@testing-library/react';
 
-import { CHATBOT_INPUT_TYPES, MAX_CHARACTERS } from '../constants';
+import { CHATBOT_INPUT_TYPES } from '../common-types';
+import { MAX_CHARACTERS } from '../constants';
 
 import useChatbotInput from './useChatbotInput';
 
