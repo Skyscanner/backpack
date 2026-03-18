@@ -144,11 +144,13 @@ const DealOption = ({ text }: { text: string }) => (
 const PackagesCardExample = () => (
   <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
-      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }} padding={BpkSpacing.None}>
-        <BpkCardV2.Section padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
+      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }} padding={BpkSpacing.None}>
+        <BpkCardV2.Section padding={BpkSpacing.MD} gap={BpkSpacing.Base}>
           <div className={getClassName('bpk-card-v2-examples__carousel-wrapper')}>
             <BpkCarousel images={carouselImages} bottom={16}/>
           </div>
+        </BpkCardV2.Section>
+        <BpkCardV2.Section padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
           <BpkFlex direction="column" gap={BpkSpacing.SM} justify='top'>
             <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
               The Level at Melia Barcelona Sky
@@ -175,8 +177,8 @@ const PackagesCardExample = () => (
 
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
         <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
-          <BpkCardV2.Body templateColumns={{ base: '1fr', mobile: '1fr auto' }} justify="space-between" gap={BpkSpacing.MD}>
-            <BpkFlex gap={BpkSpacing.LG} direction={{ base: 'column', mobile: 'row' }}>
+          <BpkCardV2.Body templateColumns={{ base: '1fr', desktop: '1fr auto' }} justify="space-between" gap={BpkSpacing.MD}>
+            <BpkFlex gap={BpkSpacing.LG} direction={{ base: 'column', desktop: 'row' }}>
               <DealOption text="Cheapest • Meals not included  •  £1,740" />
               <DealOption text="Meals not included  •  £1,757" />
               <DealOption text="Meals not included  •  £1,858" />

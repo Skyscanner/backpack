@@ -28,7 +28,6 @@
 
   &__carousel-wrapper {
     height: tokens.bpk-spacing-base() * 13;
-    flex: 0 0 38%;
     border-radius: tokens.$bpk-border-radius-sm;
     overflow: hidden;
   }
