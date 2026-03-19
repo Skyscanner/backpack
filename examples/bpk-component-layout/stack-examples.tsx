@@ -27,14 +27,10 @@ import {
 
 import Wrapper from './layout-wrapper';
 
-import STYLES from './examples.module.scss';
-
 const Item = ({ label }: { label: string }) => (
-  <div className={STYLES['bpk-layout-examples__item']}>
-    <BpkBox padding={BpkSpacing.SM} minHeight="3rem">
-      <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
-    </BpkBox>
-  </div>
+  <BpkBox padding={BpkSpacing.SM} minHeight="3rem">
+    {label}
+  </BpkBox>
 );
 // Content block component using BpkBox
 const ContentBlock = ({
@@ -44,14 +40,12 @@ const ContentBlock = ({
   title: string;
   description: string;
 }) => (
-  <div className={STYLES['bpk-layout-examples__item']}>
-    <BpkBox padding={BpkSpacing.MD} minHeight="6rem">
-      <BpkVStack gap={BpkSpacing.SM}>
-        <BpkBox fontWeight="bold">{title}</BpkBox>
-        <BpkBox>{description}</BpkBox>
-      </BpkVStack>
-    </BpkBox>
-  </div>
+  <BpkBox padding={BpkSpacing.MD} minHeight="6rem">
+    <BpkVStack gap={BpkSpacing.SM}>
+      <BpkBox fontWeight="bold">{title}</BpkBox>
+      <BpkBox>{description}</BpkBox>
+    </BpkVStack>
+  </BpkBox>
 );
 
 // 1) Vertical stack of content blocks
@@ -71,18 +65,6 @@ export const VerticalContentBlocksExample = () => (
         description="Vertical stack with large gap"
       />
     </BpkVStack>
-  </Wrapper>
-);
-
-// 2) Horizontal stack of buttons
-export const HorizontalButtonsExample = () => (
-  <Wrapper>
-    <BpkHStack gap={BpkSpacing.MD}>
-      <BpkButton type={BUTTON_TYPES.primary}>Primary</BpkButton>
-      <BpkButton type={BUTTON_TYPES.secondary}>Secondary</BpkButton>
-      <BpkButton type={BUTTON_TYPES.link}>Link</BpkButton>
-      <BpkButton type={BUTTON_TYPES.destructive}>Delete</BpkButton>
-    </BpkHStack>
   </Wrapper>
 );
 

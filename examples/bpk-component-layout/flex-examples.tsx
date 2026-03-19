@@ -24,147 +24,77 @@ import {
 
 import Wrapper from './layout-wrapper';
 
-import STYLES from './examples.module.scss';
-
 export const BpkFlexExample = () => (
   <Wrapper>
-    <BpkFlex
-      direction="row"
-      justify="space-between"
-      align="center"
-      padding={BpkSpacing.MD}
-    >
-      {[1, 2, 3].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Flex item {i}
-          </span>
-        </BpkBox>
-      ))}
+    <BpkFlex gap={BpkSpacing.SM}>
+      <BpkBox height="2rem" width="100%" />
+      <BpkBox height="2rem" width="100%" />
+      <BpkBox height="2rem" width="100%" />
     </BpkFlex>
   </Wrapper>
 );
 
 export const BpkFlexDirectionExample = () => (
   <Wrapper>
-    <BpkFlex direction="column" gap={BpkSpacing.MD} padding={BpkSpacing.MD}>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Column item 1
-        </span>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.SM}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Column item 2
-        </span>
-      </BpkBox>
+    <BpkFlex gap={BpkSpacing.SM} direction="column">
+      <BpkBox height="2rem" width="100%" />
+      <BpkBox height="2rem" width="100%" />
+      <BpkBox height="2rem" width="100%" />
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexAlignExample = () => (
+  <Wrapper>
+    <BpkFlex gap={BpkSpacing.SM} align="center" height="10rem">
+      <BpkBox height="2rem" width="100%" />
+      <BpkBox height="4rem" width="100%" />
+      <BpkBox height="2rem" width="100%" />
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexJustifyExample = () => (
+  <Wrapper>
+      <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base} justify="flex-start">
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD}>flex-start</BpkBox>
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+      </BpkFlex>
+      <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base}  justify="center">
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD}>center</BpkBox>
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+      </BpkFlex>
+      <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base}  justify="flex-end">
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD}>flex-end</BpkBox>
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+      </BpkFlex>
+      <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base}  justify="space-between">
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD}>space-between</BpkBox>
+        <BpkBox width="8.5rem" padding={BpkSpacing.MD} />
+      </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexOrderExample = () => (
+  <Wrapper>
+    <BpkFlex gap={BpkSpacing.SM}>
+      <BpkBox order={3} width="100%" padding={BpkSpacing.MD}>1</BpkBox>
+      <BpkBox order={1} width="100%" padding={BpkSpacing.MD}>2</BpkBox>
+      <BpkBox order={2} width="100%" padding={BpkSpacing.MD}>3</BpkBox>
     </BpkFlex>
   </Wrapper>
 );
 
 export const BpkFlexWrapExample = () => (
   <Wrapper>
-    <BpkFlex
-      wrap="wrap"
-      gap={BpkSpacing.MD}
-      padding={BpkSpacing.MD}
-      width="100%"
-    >
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.MD} width="10rem">
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Wrap Item {i}
-          </span>
-        </BpkBox>
-      ))}
+    <BpkFlex wrap="wrap" gap={BpkSpacing.SM} width="20rem">
+      <BpkBox height="2rem" width="9rem" />
+      <BpkBox height="2rem" width="9rem" />
+      <BpkBox height="2rem" width="9rem" />
     </BpkFlex>
-  </Wrapper>
-);
-
-export const BpkFlexResponsiveExample = () => (
-  <Wrapper>
-    <BpkFlex
-      direction={{ mobile: 'column', tablet: 'row' }}
-      justify={{ mobile: 'flex-start', desktop: 'space-between' }}
-      gap={BpkSpacing.MD}
-      padding={BpkSpacing.MD}
-    >
-      {[1, 2, 3].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Responsive Item {i}
-          </span>
-        </BpkBox>
-      ))}
-    </BpkFlex>
-  </Wrapper>
-);
-
-export const BpkFlexItemExample = () => (
-  <Wrapper>
-    <BpkFlex gap={BpkSpacing.MD} padding={BpkSpacing.MD} width="100%">
-      <BpkFlex
-        grow={1}
-        padding={BpkSpacing.MD}
-        justify="center"
-        align="center"
-      >
-        <BpkBox padding={BpkSpacing.SM} width="100%">
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Grow: 1
-          </span>
-        </BpkBox>
-      </BpkFlex>
-      <BpkFlex
-        grow={2}
-        padding={BpkSpacing.MD}
-        justify="center"
-        align="center"
-      >
-        <BpkBox padding={BpkSpacing.SM} width="100%">
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Grow: 2
-          </span>
-        </BpkBox>
-      </BpkFlex>
-      <BpkFlex
-        basis="12.5rem"
-        shrink={0}
-        padding={BpkSpacing.MD}
-        justify="center"
-        align="center"
-      >
-        <BpkBox padding={BpkSpacing.SM} width="100%">
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Basis: 200px, Shrink: 0
-          </span>
-        </BpkBox>
-      </BpkFlex>
-    </BpkFlex>
-  </Wrapper>
-);
-
-export const BpkFlexInlineExample = () => (
-  <Wrapper>
-    <BpkBox padding={BpkSpacing.MD}>
-      <BpkFlex
-        inline
-        gap={BpkSpacing.SM}
-        padding={BpkSpacing.SM}
-      >
-        <BpkBox padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Inline Flex 1
-          </span>
-        </BpkBox>
-        <BpkBox padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Inline Flex 2
-          </span>
-        </BpkBox>
-      </BpkFlex>
-      {' '}
-      <span>Text adjacent to inline flex</span>
-    </BpkBox>
   </Wrapper>
 );

@@ -36,11 +36,11 @@ import {
   SpacingExample,
 } from './box-examples';
 import {
+  BpkFlexAlignExample,
   BpkFlexDirectionExample,
   BpkFlexExample,
-  BpkFlexInlineExample,
-  BpkFlexItemExample,
-  BpkFlexResponsiveExample,
+  BpkFlexJustifyExample,
+  BpkFlexOrderExample,
   BpkFlexWrapExample,
 } from './flex-examples';
 import {
@@ -51,7 +51,6 @@ import {
 } from './grid-examples';
 import {
   HStackExample,
-  HorizontalButtonsExample,
   NestedStackExample,
   ResponsiveDirectionExample,
   StackDefaultExample,
@@ -94,10 +93,10 @@ export const VisualTest = () => (
     {/* Flex examples */}
     <BpkFlexExample />
     <BpkFlexDirectionExample />
+    <BpkFlexAlignExample />
+    <BpkFlexJustifyExample />
+    <BpkFlexOrderExample />
     <BpkFlexWrapExample />
-    <BpkFlexResponsiveExample />
-    <BpkFlexItemExample />
-    <BpkFlexInlineExample />
 
     {/* Grid examples */}
     <BpkGridExample />
@@ -107,7 +106,6 @@ export const VisualTest = () => (
 
     {/* Stack examples */}
     <VerticalContentBlocksExample />
-    <HorizontalButtonsExample />
     <NestedStackExample />
     <StackDefaultExample />
     <StackHorizontalExample />

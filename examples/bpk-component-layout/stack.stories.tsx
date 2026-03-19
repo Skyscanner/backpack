@@ -27,7 +27,6 @@ import {
   VStackExample,
   VerticalContentBlocksExample,
   ResponsiveDirectionExample,
-  HorizontalButtonsExample,
   NestedStackExample,
 } from './stack-examples';
 
@@ -58,7 +57,6 @@ export default {
 };
 
 export const VerticalContentBlocks = () => <VerticalContentBlocksExample />;
-export const HorizontalButtons = () => <HorizontalButtonsExample />;
 export const NestedStack = () => <NestedStackExample />;
 export const StackDefault = () => <StackDefaultExample />;
 export const StackHorizontal = () => <StackHorizontalExample />;

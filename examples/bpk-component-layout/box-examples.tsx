@@ -23,8 +23,6 @@ import {
 
 import Wrapper from './layout-wrapper';
 
-import STYLES from './examples.module.scss';
-
 /**
  * Core layout example – demonstrates basic spacing usage.
  *
@@ -33,9 +31,7 @@ import STYLES from './examples.module.scss';
 export const SpacingExample = () => (
   <Wrapper>
     <BpkBox padding={BpkSpacing.MD} margin={BpkSpacing.MD}>
-      <span className={STYLES['bpk-layout-examples__outline']}>
-        Default box with padding and margin using Backpack spacing tokens.
-      </span>
+      Default box with padding and margin using Backpack spacing tokens.
     </BpkBox>
   </Wrapper>
 );
@@ -54,9 +50,7 @@ export const RtlSpacingExample = () => (
         paddingTop={BpkSpacing.MD}
         paddingBottom={BpkSpacing.Base}
       >
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Box using marginInline &amp; paddingInline in RTL context.
-        </span>
+        Box using marginInline &amp; paddingInline in RTL context.
       </BpkBox>
     </div>
   </Wrapper>
@@ -70,9 +64,7 @@ export const RtlSpacingExample = () => (
 export const SizeExample = () => (
   <Wrapper>
     <BpkBox width="50%" minHeight="6rem">
-      <span className={STYLES['bpk-layout-examples__outline']}>
-        Box with 50% width and 6rem minHeight.
-      </span>
+      Box with 50% width and 6rem minHeight.
     </BpkBox>
   </Wrapper>
 );
@@ -99,16 +91,8 @@ export const ResponsiveExample = () => (
         desktop: BpkSpacing.LG,
       }}
     >
-      <BpkBox>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Responsive item 1
-        </span>
-      </BpkBox>
-      <BpkBox>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Responsive item 2
-        </span>
-      </BpkBox>
+      <BpkBox>Responsive item 1</BpkBox>
+      <BpkBox>Responsive item 2</BpkBox>
     </BpkBox>
   </Wrapper>
 );
@@ -122,13 +106,9 @@ export const PositionExample = () => (
   <Wrapper>
     <BpkBox padding={BpkSpacing.MD}>
       <BpkBox position="relative" width="10rem" minHeight="6rem">
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Relative box (10rem x 6rem)
-        </span>
+        Relative box (10rem x 6rem)
         <BpkBox position="absolute" top="12rem" left="6rem">
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Positioned child (top/left from 12rem, 6rem)
-          </span>
+          Positioned child (top/left from 12rem, 6rem)
         </BpkBox>
       </BpkBox>
     </BpkBox>
@@ -150,9 +130,7 @@ export const FlexExample = () => (
     >
       {[1, 2, 3].map((i) => (
         <BpkBox key={i} padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Flex item {i}
-          </span>
+          Flex item {i}
         </BpkBox>
       ))}
     </BpkBox>
@@ -174,9 +152,7 @@ export const GridExample = () => (
     >
       {[1, 2, 3, 4, 5, 6].map((i) => (
         <BpkBox key={i} padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Grid cell {i}
-          </span>
+          Grid cell {i}
         </BpkBox>
       ))}
     </BpkBox>

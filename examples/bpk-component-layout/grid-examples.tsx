@@ -25,8 +25,6 @@ import {
 
 import Wrapper from './layout-wrapper';
 
-import STYLES from './examples.module.scss';
-
 export const BpkGridExample = () => (
   <Wrapper>
     <BpkGrid
@@ -36,9 +34,7 @@ export const BpkGridExample = () => (
     >
       {[1, 2, 3, 4, 5, 6].map((i) => (
         <BpkBox key={i} padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Grid cell {i}
-          </span>
+          Grid cell {i}
         </BpkBox>
       ))}
     </BpkGrid>
@@ -57,35 +53,25 @@ export const BpkGridSpanExample = () => (
         padding={BpkSpacing.MD}
       >
          <BpkBox width="100%" padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Box: Span 2 Columns
-          </span>
+          Box: Span 2 Columns
         </BpkBox>
       </BpkBox>
       <BpkBox padding={BpkSpacing.MD}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Cell 2
-        </span>
+        Cell 2
       </BpkBox>
       <BpkBox
         gridRow="span 2"
         padding={BpkSpacing.MD}
       >
         <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            Box: Span 2 Rows
-          </span>
+          Box: Span 2 Rows
         </BpkBox>
       </BpkBox>
       <BpkBox padding={BpkSpacing.MD}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Cell 4
-        </span>
+        Cell 4
       </BpkBox>
       <BpkBox padding={BpkSpacing.MD}>
-        <span className={STYLES['bpk-layout-examples__outline']}>
-          Cell 5
-        </span>
+        Cell 5
       </BpkBox>
     </BpkGrid>
   </Wrapper>
@@ -106,9 +92,7 @@ export const BpkGridWithItemExample = () => (
         padding={BpkSpacing.SM}
       >
          <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            rowSpan=2
-          </span>
+          rowSpan=2
         </BpkBox>
       </BpkGridItem>
       <BpkGridItem
@@ -116,9 +100,7 @@ export const BpkGridWithItemExample = () => (
         padding={BpkSpacing.SM}
       >
         <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            colSpan=2
-          </span>
+          colSpan=2
         </BpkBox>
       </BpkGridItem>
       <BpkGridItem
@@ -126,9 +108,7 @@ export const BpkGridWithItemExample = () => (
         padding={BpkSpacing.SM}
       >
         <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            colSpan=2
-          </span>
+          colSpan=2
         </BpkBox>
       </BpkGridItem>
 
@@ -137,9 +117,7 @@ export const BpkGridWithItemExample = () => (
         padding={BpkSpacing.SM}
       >
         <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          <span className={STYLES['bpk-layout-examples__outline']}>
-            colSpan=4
-          </span>
+          colSpan=4
         </BpkBox>
       </BpkGridItem>
     </BpkGrid>
@@ -164,9 +142,7 @@ export const BpkGridResponsiveExample = () => (
       {[1, 2, 3, 4].map((i) => (
         <BpkBox key={i} padding={BpkSpacing.SM}>
           <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-            <span className={STYLES['bpk-layout-examples__outline']}>
-              Responsive Col {i}
-            </span>
+            Responsive Col {i}
           </BpkBox>
         </BpkBox>
       ))}
