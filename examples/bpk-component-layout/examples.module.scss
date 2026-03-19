@@ -20,11 +20,11 @@
 @use '../../packages/bpk-mixins/typography';
 
 .bpk-layout-examples {
-  &__frame {
-    // Style direct children of layout components
-    > * {
-      border-radius: tokens.$bpk-border-radius-sm;
-      background-color: tokens.$bpk-surface-highlight-day;
-    }
+  &__outline {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background-color: tokens.$bpk-surface-highlight-day;
   }
 }
