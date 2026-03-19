@@ -49,7 +49,7 @@ describe('BpkModalV3 accessibility tests', () => {
 
   it('should not have accessibility issues with sheet variant open', async () => {
     const { container } = render(
-      <BpkModalV3.Root open onOpenChange={jest.fn()} variant="sheet">
+      <BpkModalV3.Root open onOpenChange={jest.fn()} type="sheet">
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
@@ -65,7 +65,7 @@ describe('BpkModalV3 accessibility tests', () => {
 
   it('should not have accessibility issues with full variant open', async () => {
     const { container } = render(
-      <BpkModalV3.Root open onOpenChange={jest.fn()} variant="full">
+      <BpkModalV3.Root open onOpenChange={jest.fn()} type="full">
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
           <BpkModalV3.Header>

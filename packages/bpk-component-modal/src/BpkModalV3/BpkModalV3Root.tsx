@@ -22,7 +22,7 @@ import { Dialog } from '@ark-ui/react/dialog';
 
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
-import type { BpkModalV3Variant } from './common-types';
+import type { BpkModalV3Type } from './common-types';
 
 import STYLES from './BpkModalV3.module.scss';
 
@@ -32,7 +32,7 @@ type BpkModalV3RootProps = {
   children: ReactNode;
   open: boolean;
   onOpenChange: (details: { open: boolean }) => void;
-  variant?: BpkModalV3Variant;
+  type?: BpkModalV3Type;
   lazyMount?: boolean;
   unmountOnExit?: boolean;
 };
@@ -42,8 +42,8 @@ const BpkModalV3Root = ({
   lazyMount,
   onOpenChange,
   open,
+  type = 'default',
   unmountOnExit,
-  variant = 'default',
 }: BpkModalV3RootProps) => (
   <Dialog.Root
     open={open}
@@ -54,9 +54,9 @@ const BpkModalV3Root = ({
     <div
       className={getClassName(
         'bpk-modal-v3',
-        `bpk-modal-v3--${variant}`,
+        `bpk-modal-v3--${type}`,
       )}
-      data-variant={variant}
+      data-type={type}
       {...getDataComponentAttribute('BpkModalV3')}
     >
       {children}

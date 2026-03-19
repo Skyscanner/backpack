@@ -81,7 +81,7 @@ const SheetExample = () => (
       <BpkModalV3.Root
         open={open}
         onOpenChange={onOpenChange}
-        variant="sheet"
+        type="sheet"
       >
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
@@ -111,7 +111,7 @@ const FullExample = () => (
       <BpkModalV3.Root
         open={open}
         onOpenChange={onOpenChange}
-        variant="full"
+        type="full"
       >
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
@@ -170,7 +170,7 @@ const SheetWithImageExample = () => (
       <BpkModalV3.Root
         open={open}
         onOpenChange={onOpenChange}
-        variant="sheet"
+        type="sheet"
       >
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>

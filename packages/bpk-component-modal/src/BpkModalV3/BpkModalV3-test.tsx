@@ -72,25 +72,25 @@ describe('BpkModalV3', () => {
   });
 
   describe('Root', () => {
-    it('should render wrapper div with default variant', () => {
+    it('should render wrapper div with default type', () => {
       const { container } = renderModal();
-      const wrapper = container.querySelector('[data-variant]');
-      expect(wrapper).toHaveAttribute('data-variant', 'default');
+      const wrapper = container.querySelector('[data-type]');
+      expect(wrapper).toHaveAttribute('data-type', 'default');
       expect(wrapper?.className).toContain('bpk-modal-v3');
       expect(wrapper?.className).toContain('bpk-modal-v3--default');
     });
 
-    it('should render wrapper div with sheet variant', () => {
-      const { container } = renderModal({ variant: 'sheet' });
-      const wrapper = container.querySelector('[data-variant]');
-      expect(wrapper).toHaveAttribute('data-variant', 'sheet');
+    it('should render wrapper div with sheet type', () => {
+      const { container } = renderModal({ type: 'sheet' });
+      const wrapper = container.querySelector('[data-type]');
+      expect(wrapper).toHaveAttribute('data-type', 'sheet');
       expect(wrapper?.className).toContain('bpk-modal-v3--sheet');
     });
 
-    it('should render wrapper div with full variant', () => {
-      const { container } = renderModal({ variant: 'full' });
-      const wrapper = container.querySelector('[data-variant]');
-      expect(wrapper).toHaveAttribute('data-variant', 'full');
+    it('should render wrapper div with full type', () => {
+      const { container } = renderModal({ type: 'full' });
+      const wrapper = container.querySelector('[data-type]');
+      expect(wrapper).toHaveAttribute('data-type', 'full');
       expect(wrapper?.className).toContain('bpk-modal-v3--full');
     });
 

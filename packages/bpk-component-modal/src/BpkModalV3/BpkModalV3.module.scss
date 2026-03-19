@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   background-color: tokens.$bpk-surface-elevated-day;
-  overflow-y: auto;
+  overflow: clip;
   pointer-events: auto;
 
   // Default variant — centered desktop dialog with fade+scale animation
@@ -184,6 +184,8 @@
   position: relative;
   display: flex;
   padding: tokens.bpk-spacing-lg();
+  // Reserve space for the absolutely-positioned close button (24px button + 8px gap)
+  padding-inline-end: tokens.bpk-spacing-lg() + tokens.bpk-spacing-lg() + tokens.bpk-spacing-sm();
   align-items: center;
   flex-shrink: 0;
   gap: tokens.bpk-spacing-sm();
@@ -193,13 +195,21 @@
   .bpk-modal-v3--full & {
     padding-bottom: tokens.bpk-spacing-base();
   }
+
+  // Title fills remaining width when inside header (row flex)
+  .bpk-modal-v3__title {
+    flex: 1;
+  }
 }
 
 // Title — semantic only, no typography
 
 .bpk-modal-v3__title {
   min-width: 0;
-  flex: 1;
+  margin: 0;
+  // Reset h2 browser defaults — typography is controlled by children (e.g. BpkText)
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 // Description

@@ -16,4 +16,4 @@
  * limitations under the License.
  */
 
-export type BpkModalV3Variant = 'default' | 'full' | 'sheet';
+export type BpkModalV3Type = 'default' | 'full' | 'sheet';
