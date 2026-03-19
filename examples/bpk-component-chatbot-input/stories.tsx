@@ -17,6 +17,7 @@
  */
 
 import BpkChatbotInput from '../../packages/bpk-component-chatbot-input/src/BpkChatbotInput';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
   CarsComposerExample,
@@ -39,6 +40,13 @@ import {
 export default {
   title: 'bpk-component-chatbot-input',
   component: BpkChatbotInput,
+  decorators: [
+    (Story: any) => (
+      <BpkProvider>
+        <Story />
+      </BpkProvider>
+    ),
+  ],
 };
 
 export const Composer = ComposerExample;

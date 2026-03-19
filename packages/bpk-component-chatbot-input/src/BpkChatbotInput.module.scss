@@ -21,10 +21,6 @@
 
 .bpk-chatbot-input {
   &--cars {
-    display: flex;
-    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-md()
-      tokens.bpk-spacing-md() tokens.bpk-spacing-base();
-    align-items: center;
     transition:
       border-color tokens.$bpk-duration-sm ease,
       box-shadow tokens.$bpk-duration-sm ease;
@@ -32,7 +28,6 @@
     background: tokens.$bpk-surface-elevated-day;
     box-shadow: none;
     box-sizing: border-box;
-    gap: tokens.bpk-spacing-md();
     touch-action: manipulation;
 
     @include utils.bpk-themeable-property(
@@ -75,17 +70,12 @@
 
   &--composer {
     position: relative;
-    display: flex;
-    padding: tokens.bpk-spacing-base();
-    align-items: center;
     transition:
-      padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     background: tokens.$bpk-surface-default-day;
     box-sizing: border-box;
-    gap: tokens.bpk-spacing-base();
     will-change: transform, box-shadow;
 
     @include utils.bpk-themeable-property(
@@ -101,12 +91,7 @@
     }
 
     &--overLimit {
-      padding: tokens.bpk-spacing-base();
       transform: translateY(-(tokens.bpk-spacing-sm()));
-    }
-
-    &--expanding {
-      align-items: flex-end;
     }
   }
 }

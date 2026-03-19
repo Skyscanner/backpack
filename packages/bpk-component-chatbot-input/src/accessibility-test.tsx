@@ -16,11 +16,18 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import { BpkProvider } from '../../bpk-component-layout';
+
 import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
+
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
 
 const defaultProps = {
   inputValue: '',
@@ -43,13 +50,13 @@ window.ResizeObserver =
 
 describe('BpkChatbotInput accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (composer type — default)', async () => {
-    const { container } = render(<BpkChatbotInput {...defaultProps} />);
+    const { container } = renderWithProvider(<BpkChatbotInput {...defaultProps} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have accessibility issues (cars type)', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkChatbotInput
         {...defaultProps}
         inputType={CHATBOT_INPUT_TYPES.CARS}
@@ -60,7 +67,7 @@ describe('BpkChatbotInput accessibility tests', () => {
   });
 
   it('should not have accessibility issues (cars-composer type)', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkChatbotInput
         {...defaultProps}
         inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
@@ -71,7 +78,7 @@ describe('BpkChatbotInput accessibility tests', () => {
   });
 
   it('should not have accessibility issues (composer type)', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkChatbotInput
         {...defaultProps}
         inputType={CHATBOT_INPUT_TYPES.COMPOSER}
@@ -82,7 +89,7 @@ describe('BpkChatbotInput accessibility tests', () => {
   });
 
   it('should not have accessibility issues when loading', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkChatbotInput {...defaultProps} isPolling />,
     );
     const results = await axe(container);

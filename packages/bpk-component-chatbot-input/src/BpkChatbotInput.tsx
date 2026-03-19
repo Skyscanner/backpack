@@ -18,6 +18,7 @@
 
 import type { MouseEvent, RefObject, TouchEvent } from 'react';
 
+import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import InputField from './InputField/InputField';
@@ -28,6 +29,7 @@ import { MAX_CHARACTERS } from './constants';
 import { useChatbotInput } from './hooks';
 
 import type { BpkChatbotInputProps } from './common-types';
+import type { BpkFlexProps } from '../../bpk-component-layout';
 
 import STYLES from './BpkChatbotInput.module.scss';
 
@@ -83,8 +85,22 @@ const BpkChatbotInput = ({
     isCars ? 'bpk-chatbot-input--cars' : 'bpk-chatbot-input--composer',
     isComposer && 'bpk-chatbot-input--composer--with-shadow',
     isOverLimit && !isCars && 'bpk-chatbot-input--composer--overLimit',
-    isExpanding && !isCars && 'bpk-chatbot-input--composer--expanding',
   );
+
+  const flexProps: Partial<BpkFlexProps> = isCars
+    ? {
+        align: 'center',
+        gap: BpkSpacing.MD,
+        paddingTop: BpkSpacing.MD,
+        paddingBottom: BpkSpacing.MD,
+        paddingEnd: BpkSpacing.MD,
+        paddingStart: BpkSpacing.Base,
+      }
+    : {
+        align: isExpanding ? 'flex-end' : 'center',
+        gap: BpkSpacing.Base,
+        padding: BpkSpacing.Base,
+      };
 
   const handleContainerEvent = (
     e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
@@ -101,29 +117,31 @@ const BpkChatbotInput = ({
       data-testid="bpk-chatbot-input-container"
       {...getDataComponentAttribute('ChatbotInput')}
     >
-      {isCars ? (
-        <InputField
-          ref={inputRef as RefObject<HTMLInputElement>}
-          {...inputProps}
+      <BpkFlex {...flexProps}>
+        {isCars ? (
+          <InputField
+            ref={inputRef as RefObject<HTMLInputElement>}
+            {...inputProps}
+          />
+        ) : (
+          <TextAreaField
+            ref={inputRef as RefObject<HTMLTextAreaElement>}
+            containerHeight={containerHeight}
+            textareaHeight={textareaHeight}
+            shouldReduceParentPadding={shouldReduceParentPadding}
+            isExpanding={isExpanding}
+            isComposer={isComposer}
+            {...inputProps}
+          />
+        )}
+        <SendButton
+          isCars={isCars}
+          disabled={sendButtonDisabled}
+          onClick={handleSubmit}
+          ariaLabel={isCars && isPolling ? loadingAriaLabel : sendAriaLabel}
+          isLoading={!!(isCars && isPolling)}
         />
-      ) : (
-        <TextAreaField
-          ref={inputRef as RefObject<HTMLTextAreaElement>}
-          containerHeight={containerHeight}
-          textareaHeight={textareaHeight}
-          shouldReduceParentPadding={shouldReduceParentPadding}
-          isExpanding={isExpanding}
-          isComposer={isComposer}
-          {...inputProps}
-        />
-      )}
-      <SendButton
-        isCars={isCars}
-        disabled={sendButtonDisabled}
-        onClick={handleSubmit}
-        ariaLabel={isCars && isPolling ? loadingAriaLabel : sendAriaLabel}
-        isLoading={!!(isCars && isPolling)}
-      />
+      </BpkFlex>
     </div>
   );
 };
