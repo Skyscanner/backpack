@@ -75,12 +75,14 @@ Optional prop to add css `word-break: break-word;`, this allows long words and U
 
 By default the prop can be omitted.
 
-`striped` (boolean, default `false`)
+`type` (TableBodyType, default `TABLE_BODY_TYPES.default`)
 
-Optional prop on `BpkTableBody` that applies alternating row background colours. Even rows receive a highlighted background. Set `striped` to enable this behaviour.
+Optional prop on `BpkTableBody` that controls the table body styling. Set `type={TABLE_BODY_TYPES.striped}` to apply alternating row background colours.
 
 ```tsx
-<BpkTableBody striped>
+import { BpkTableBody, TABLE_BODY_TYPES } from '@skyscanner/backpack-web/bpk-component-table';
+
+<BpkTableBody type={TABLE_BODY_TYPES.striped}>
   <BpkTableRow>...</BpkTableRow>
   <BpkTableRow>...</BpkTableRow>
 </BpkTableBody>

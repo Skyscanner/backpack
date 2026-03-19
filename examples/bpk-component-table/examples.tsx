@@ -24,6 +24,7 @@ import {
   BpkTableRow,
   BpkTableCell,
   BpkTableHeadCell,
+  TABLE_BODY_TYPES,
 } from '../../packages/bpk-component-table';
 
 const DefaultExample = () => (
@@ -89,7 +90,7 @@ const StripedExample = () => (
         <BpkTableHeadCell>Column 3</BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
-    <BpkTableBody striped >
+    <BpkTableBody type={TABLE_BODY_TYPES.striped}>
       <BpkTableRow>
         <BpkTableCell>Entry 1</BpkTableCell>
         <BpkTableCell>Entry 2</BpkTableCell>

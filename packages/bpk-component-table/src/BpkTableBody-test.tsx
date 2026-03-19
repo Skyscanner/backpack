@@ -19,7 +19,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkTableBody from './BpkTableBody';
+import BpkTableBody, { TABLE_BODY_TYPES } from './BpkTableBody';
 
 describe('BpkTableBody', () => {
   it('should render correctly', () => {
@@ -33,10 +33,10 @@ describe('BpkTableBody', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with striped prop', () => {
+  it('should render correctly with type="striped"', () => {
     const { asFragment } = render(
       <table>
-        <BpkTableBody striped>
+        <BpkTableBody type={TABLE_BODY_TYPES.striped}>
           <tr />
         </BpkTableBody>
       </table>,

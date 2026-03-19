@@ -24,15 +24,24 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const TABLE_BODY_TYPES = {
+  default: 'default',
+  striped: 'striped',
+} as const;
+
+type TableBodyType = (typeof TABLE_BODY_TYPES)[keyof typeof TABLE_BODY_TYPES];
+
 export interface BpkTableBodyProps {
   /** The content of the table */
   children: ReactNode;
-  /** Applies alternating row background colours */
-  striped?: boolean;
+  /** The type of table body styling */
+  type?: TableBodyType;
 }
 
-const BpkTableBody = ({children, striped = false, ...rest}: BpkTableBodyProps) => {
-  const classNames = striped ? getClassName('bpk-table__body--striped') : undefined;
+const BpkTableBody = ({children, type = TABLE_BODY_TYPES.default, ...rest}: BpkTableBodyProps) => {
+  const classNames = type === TABLE_BODY_TYPES.striped
+    ? getClassName('bpk-table__body--striped')
+    : undefined;
 
   return (
     <tbody {...rest} className={classNames}>

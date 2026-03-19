@@ -10,7 +10,7 @@ exports[`BpkTableBody should render correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkTableBody should render correctly with striped prop 1`] = `
+exports[`BpkTableBody should render correctly with type="striped" 1`] = `
 <DocumentFragment>
   <table>
     <tbody

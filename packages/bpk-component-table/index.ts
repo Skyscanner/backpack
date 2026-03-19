@@ -17,7 +17,7 @@
  */
 
 import BpkTable from './src/BpkTable';
-import BpkTableBody from './src/BpkTableBody';
+import BpkTableBody, { TABLE_BODY_TYPES } from './src/BpkTableBody';
 import BpkTableCell from './src/BpkTableCell';
 import BpkTableHead from './src/BpkTableHead';
 import BpkTableHeadCell from './src/BpkTableHeadCell';
@@ -37,4 +37,5 @@ export {
   BpkTableRow,
   BpkTableCell,
   BpkTableHeadCell,
+  TABLE_BODY_TYPES,
 };
