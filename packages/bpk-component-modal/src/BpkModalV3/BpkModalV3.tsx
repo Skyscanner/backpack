@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+import BpkModalV3Body from './BpkModalV3Body';
 import BpkModalV3CloseTrigger from './BpkModalV3CloseTrigger';
 import BpkModalV3Content from './BpkModalV3Content';
 import BpkModalV3Description from './BpkModalV3Description';
 import BpkModalV3Header from './BpkModalV3Header';
+import BpkModalV3HeroImage from './BpkModalV3HeroImage';
 import BpkModalV3Root from './BpkModalV3Root';
 import BpkModalV3Scrim from './BpkModalV3Scrim';
 import BpkModalV3Title from './BpkModalV3Title';
@@ -33,6 +35,8 @@ const BpkModalV3 = {
   Header: BpkModalV3Header,
   Title: BpkModalV3Title,
   Description: BpkModalV3Description,
+  Body: BpkModalV3Body,
+  HeroImage: BpkModalV3HeroImage,
   CloseTrigger: BpkModalV3CloseTrigger,
 };
 

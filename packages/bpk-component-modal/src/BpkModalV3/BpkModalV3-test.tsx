@@ -67,6 +67,8 @@ describe('BpkModalV3', () => {
       expect(BpkModalV3.Header).toBeDefined();
       expect(BpkModalV3.Title).toBeDefined();
       expect(BpkModalV3.Description).toBeDefined();
+      expect(BpkModalV3.Body).toBeDefined();
+      expect(BpkModalV3.HeroImage).toBeDefined();
       expect(BpkModalV3.CloseTrigger).toBeDefined();
     });
   });
@@ -165,6 +167,93 @@ describe('BpkModalV3', () => {
         </>,
       );
       expect(screen.getByText('A description')).toBeInTheDocument();
+    });
+  });
+
+  describe('Body', () => {
+    it('should render with BEM class', () => {
+      const { container } = renderModal(
+        {},
+        <>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>Title</BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <BpkModalV3.Body>
+            <p>Body content</p>
+          </BpkModalV3.Body>
+        </>,
+      );
+      const body = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3Body"]',
+      );
+      expect(body).toBeInTheDocument();
+      expect(body?.className).toContain('bpk-modal-v3__body');
+    });
+
+    it('should render children', () => {
+      renderModal(
+        {},
+        <>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>Title</BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <BpkModalV3.Body>
+            <p>Body content</p>
+          </BpkModalV3.Body>
+        </>,
+      );
+      expect(screen.getByText('Body content')).toBeInTheDocument();
+    });
+  });
+
+  describe('HeroImage', () => {
+    it('should render with BEM class and image', () => {
+      const { container } = renderModal(
+        {},
+        <>
+          <BpkModalV3.Title>Title</BpkModalV3.Title>
+          <BpkModalV3.HeroImage src="test.jpg" alt="Test image" />
+        </>,
+      );
+      const heroImage = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3HeroImage"]',
+      );
+      expect(heroImage).toBeInTheDocument();
+      expect(heroImage?.className).toContain('bpk-modal-v3__hero-image');
+
+      const img = heroImage?.querySelector('img');
+      expect(img).toHaveAttribute('src', 'test.jpg');
+      expect(img).toHaveAttribute('alt', 'Test image');
+      expect(img?.className).toContain('bpk-modal-v3__hero-image-img');
+    });
+
+    it('should apply fixed height when height prop is provided', () => {
+      const { container } = renderModal(
+        {},
+        <>
+          <BpkModalV3.Title>Title</BpkModalV3.Title>
+          <BpkModalV3.HeroImage src="test.jpg" alt="" height="12rem" />
+        </>,
+      );
+      const heroImage = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3HeroImage"]',
+      );
+      expect(heroImage).toHaveStyle({ height: '12rem', flex: 'none' });
+    });
+
+    it('should render children as overlays', () => {
+      renderModal(
+        {},
+        <>
+          <BpkModalV3.Title>Title</BpkModalV3.Title>
+          <BpkModalV3.HeroImage src="test.jpg" alt="">
+            <BpkModalV3.CloseTrigger label="Close" onImage />
+          </BpkModalV3.HeroImage>
+        </>,
+      );
+      expect(screen.getByLabelText('Close')).toBeInTheDocument();
     });
   });
 

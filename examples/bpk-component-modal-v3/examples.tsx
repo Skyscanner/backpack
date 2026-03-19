@@ -19,14 +19,17 @@
 import { useState } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
+import {
+  BpkBox,
+  BpkFlex,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../packages/bpk-component-layout';
 import { BpkModalV3 } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import { ArkLocaleProvider, cssModules } from '../../packages/bpk-react-utils';
-
-import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
+import { ArkLocaleProvider } from '../../packages/bpk-react-utils';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg';
@@ -45,10 +48,12 @@ const ModalContainer = ({
   const onOpenChange = (details: { open: boolean }) => setOpen(details.open);
 
   return (
-    <ArkLocaleProvider>
-      <BpkButton onClick={() => setOpen(true)}>{buttonLabel}</BpkButton>
-      {children({ open, onOpenChange })}
-    </ArkLocaleProvider>
+    <BpkProvider>
+      <ArkLocaleProvider>
+        <BpkButton onClick={() => setOpen(true)}>{buttonLabel}</BpkButton>
+        {children({ open, onOpenChange })}
+      </ArkLocaleProvider>
+    </BpkProvider>
   );
 };
 
@@ -77,12 +82,14 @@ const DefaultExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This is a default centred modal. It displays as a centred
-              dialog on desktop and becomes full-screen on mobile viewports.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is a default centred modal. It displays as a centred
+                dialog on desktop and becomes full-screen on mobile viewports.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -107,12 +114,14 @@ const SheetExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This is a sheet modal. It anchors to the bottom of the viewport
-              and spans the full width.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is a sheet modal. It anchors to the bottom of the viewport
+                and spans the full width.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -137,12 +146,14 @@ const FullExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This is a full-screen modal. It fills the entire viewport with
-              no border radius.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is a full-screen modal. It fills the entire viewport with
+                no border radius.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -165,12 +176,14 @@ const LongTitleExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This modal has a very long title to test how the header handles
-              text overflow alongside the close button.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This modal has a very long title to test how the header handles
+                text overflow alongside the close button.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -191,18 +204,19 @@ const OverflowingExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__scrollable')}>
-            {Array.from({ length: 5 }, (_, i) => (
-              <BpkText
-                key={i}
-                textStyle={TEXT_STYLES.bodyDefault}
-                tagName="p"
-                className={getClassName('bpk-modal-v3-examples__paragraph')}
-              >
-                {loremIpsum}
-              </BpkText>
-            ))}
-          </div>
+          <BpkModalV3.Body>
+            <BpkVStack gap={BpkSpacing.Base} padding={BpkSpacing.LG}>
+              {Array.from({ length: 5 }, (_, i) => (
+                <BpkText
+                  key={i}
+                  textStyle={TEXT_STYLES.bodyDefault}
+                  tagName="p"
+                >
+                  {loremIpsum}
+                </BpkText>
+              ))}
+            </BpkVStack>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -224,12 +238,14 @@ const MultipleModalsExample = () => (
               </BpkModalV3.Title>
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
-            <div className={getClassName('bpk-modal-v3-examples__body')}>
-              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                This is the first modal. Multiple modals can be rendered on
-                the same page.
-              </BpkText>
-            </div>
+            <BpkModalV3.Body>
+              <BpkBox padding={BpkSpacing.LG}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                  This is the first modal. Multiple modals can be rendered on
+                  the same page.
+                </BpkText>
+              </BpkBox>
+            </BpkModalV3.Body>
           </BpkModalV3.Content>
         </BpkModalV3.Root>
       )}
@@ -248,11 +264,13 @@ const MultipleModalsExample = () => (
               </BpkModalV3.Title>
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
-            <div className={getClassName('bpk-modal-v3-examples__body')}>
-              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                This is the second modal.
-              </BpkText>
-            </div>
+            <BpkModalV3.Body>
+              <BpkBox padding={BpkSpacing.LG}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                  This is the second modal.
+                </BpkText>
+              </BpkBox>
+            </BpkModalV3.Body>
           </BpkModalV3.Content>
         </BpkModalV3.Root>
       )}
@@ -271,43 +289,18 @@ const MultipleModalsExample = () => (
               </BpkModalV3.Title>
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
-            <div className={getClassName('bpk-modal-v3-examples__body')}>
-              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                This is the third modal.
-              </BpkText>
-            </div>
+            <BpkModalV3.Body>
+              <BpkBox padding={BpkSpacing.LG}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                  This is the third modal.
+                </BpkText>
+              </BpkBox>
+            </BpkModalV3.Body>
           </BpkModalV3.Content>
         </BpkModalV3.Root>
       )}
     </ModalContainer>
   </>
-);
-
-const ContrastExample = () => (
-  <ModalContainer>
-    {({ onOpenChange, open }) => (
-      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Scrim />
-        <BpkModalV3.Content>
-          <div className={getClassName('bpk-modal-v3-examples__contrast')}>
-            <BpkModalV3.Header>
-              <BpkModalV3.Title>
-                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
-                  Contrast modal
-                </BpkText>
-              </BpkModalV3.Title>
-              <BpkModalV3.CloseTrigger label="Close" />
-            </BpkModalV3.Header>
-            <div className={getClassName('bpk-modal-v3-examples__body')}>
-              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                This modal uses a contrast surface background.
-              </BpkText>
-            </div>
-          </div>
-        </BpkModalV3.Content>
-      </BpkModalV3.Root>
-    )}
-  </ModalContainer>
 );
 
 const DesktopWithImageExample = () => (
@@ -319,25 +312,22 @@ const DesktopWithImageExample = () => (
           <BpkModalV3.Title>
             <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
           </BpkModalV3.Title>
-          <div className={getClassName('bpk-modal-v3-examples__split')}>
-            <div className={getClassName('bpk-modal-v3-examples__split-content')}>
-              <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
-                Explore Edinburgh
-              </BpkText>
-              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                Discover the historic capital of Scotland with its stunning
-                architecture, rich culture, and vibrant festivals.
-              </BpkText>
-            </div>
-            <div className={getClassName('bpk-modal-v3-examples__split-image')}>
-              <img
-                src={IMAGE_SRC}
-                alt=""
-                className={getClassName('bpk-modal-v3-examples__image')}
-              />
+          <BpkFlex minHeight="20rem">
+            <BpkModalV3.Body>
+              <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
+                <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+                  Explore Edinburgh
+                </BpkText>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                  Discover the historic capital of Scotland with its stunning
+                  architecture, rich culture, and vibrant festivals.
+                </BpkText>
+              </BpkVStack>
+            </BpkModalV3.Body>
+            <BpkModalV3.HeroImage src={IMAGE_SRC} alt="">
               <BpkModalV3.CloseTrigger label="Close" onImage />
-            </div>
-          </div>
+            </BpkModalV3.HeroImage>
+          </BpkFlex>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -357,22 +347,19 @@ const SheetWithImageExample = () => (
           <BpkModalV3.Title>
             <BpkVisuallyHidden>Sheet image modal</BpkVisuallyHidden>
           </BpkModalV3.Title>
-          <div className={getClassName('bpk-modal-v3-examples__image-top')}>
-            <img
-              src={IMAGE_SRC}
-              alt=""
-              className={getClassName('bpk-modal-v3-examples__image')}
-            />
+          <BpkModalV3.HeroImage src={IMAGE_SRC} alt="" height="12rem">
             <BpkModalV3.CloseTrigger label="Close" onImage />
-          </div>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
-              Weekend getaway
-            </BpkText>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              Find the best deals for your next weekend trip.
-            </BpkText>
-          </div>
+          </BpkModalV3.HeroImage>
+          <BpkModalV3.Body>
+            <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+                Weekend getaway
+              </BpkText>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                Find the best deals for your next weekend trip.
+              </BpkText>
+            </BpkVStack>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -393,12 +380,14 @@ const SimpleHeadlineExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This modal uses a plain text title with label-1 typography in
-              the Header.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This modal uses a plain text title with label-1 typography in
+                the Header.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -419,13 +408,15 @@ const CustomHeadlineExample = () => (
             </BpkModalV3.Title>
             <BpkModalV3.CloseTrigger label="Close" />
           </BpkModalV3.Header>
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This modal demonstrates a custom headline with larger hero text.
-              The Title component is a semantic wrapper that allows any
-              typography styling.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This modal demonstrates a custom headline with larger hero text.
+                The Title component is a semantic wrapper that allows any
+                typography styling.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -447,13 +438,15 @@ const NoHeaderExample = () => (
             <BpkVisuallyHidden>Accessible dialog name</BpkVisuallyHidden>
           </BpkModalV3.Title>
           <BpkModalV3.CloseTrigger label="Close" />
-          <div className={getClassName('bpk-modal-v3-examples__body')}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This modal has no Header component. The CloseTrigger is placed
-              directly in Content, and BpkVisuallyHidden wraps the Title to
-              provide an accessible dialog name for screen readers.
-            </BpkText>
-          </div>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This modal has no Header component. The CloseTrigger is placed
+                directly in Content, and BpkVisuallyHidden wraps the Title to
+                provide an accessible dialog name for screen readers.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
         </BpkModalV3.Content>
       </BpkModalV3.Root>
     )}
@@ -467,7 +460,6 @@ export {
   LongTitleExample,
   OverflowingExample,
   MultipleModalsExample,
-  ContrastExample,
   DesktopWithImageExample,
   SheetWithImageExample,
   SimpleHeadlineExample,

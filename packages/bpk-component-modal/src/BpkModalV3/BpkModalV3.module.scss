@@ -224,6 +224,29 @@
   // No styles enforced — consumer controlled
 }
 
+// Body — scrollable content area below the header
+
+.bpk-modal-v3__body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+// Hero image — cover image container
+
+.bpk-modal-v3__hero-image {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.bpk-modal-v3__hero-image-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+}
+
 // Close trigger styles
 
 .bpk-modal-v3__close-trigger {

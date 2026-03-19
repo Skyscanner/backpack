@@ -25,7 +25,6 @@ import {
   LongTitleExample,
   OverflowingExample,
   MultipleModalsExample,
-  ContrastExample,
   DesktopWithImageExample,
   SheetWithImageExample,
   SimpleHeadlineExample,
@@ -44,7 +43,6 @@ export const Full = FullExample;
 export const LongTitle = LongTitleExample;
 export const Overflowing = OverflowingExample;
 export const MultipleModals = MultipleModalsExample;
-export const Contrast = ContrastExample;
 export const DesktopWithImage = DesktopWithImageExample;
 export const SheetWithImage = SheetWithImageExample;
 export const SimpleHeadline = SimpleHeadlineExample;
