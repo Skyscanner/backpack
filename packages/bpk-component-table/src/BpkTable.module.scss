@@ -25,7 +25,7 @@
   &__body {
     &--striped {
       tr:nth-child(even) {
-        background-color: tokens.$bpk-surface-low-contrast-day;
+        background-color: tokens.$bpk-canvas-contrast-day;
       }
     }
   }

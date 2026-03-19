@@ -24,22 +24,18 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface BpkTableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, 'className'> {
+export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   /** The content of the table */
   children: ReactNode;
-  className?: string | null;
   /** Applies alternating row background colours */
   striped?: boolean;
 }
 
-const BpkTableBody = ({children, className = null, striped = false, ...rest}: BpkTableBodyProps) => {
-  const classNames = getClassName(
-    striped && 'bpk-table__body--striped',
-    className,
-  );
+const BpkTableBody = ({children, striped = false, ...rest}: BpkTableBodyProps) => {
+  const classNames = striped ? getClassName('bpk-table__body--striped') : undefined;
 
   return (
-    <tbody className={classNames} {...rest}>
+    <tbody {...rest} className={classNames}>
       {children}
     </tbody>
   );
