@@ -30,18 +30,18 @@
 
   &__split-content {
     display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: tokens.bpk-spacing-sm();
     padding: tokens.bpk-spacing-lg();
+    flex-direction: column;
+    flex: 1;
+    gap: tokens.bpk-spacing-sm();
   }
 
   &__split-image {
     position: relative;
     flex: 1;
     background: tokens.$bpk-canvas-contrast-day;
-    border-start-end-radius: tokens.bpk-border-radius-lg();
-    border-end-end-radius: tokens.bpk-border-radius-lg();
+    border-end-end-radius: tokens.$bpk-border-radius-lg;
+    border-start-end-radius: tokens.$bpk-border-radius-lg;
   }
 
   &__image-top {

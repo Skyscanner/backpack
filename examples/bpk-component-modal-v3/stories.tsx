@@ -25,10 +25,10 @@ import {
   SimpleHeadlineExample,
   CustomHeadlineExample,
   NoHeaderExample,
-} from './BpkModalV3Examples';
+} from './examples';
 
 export default {
-  title: 'bpk-component-modal/BpkModalV3',
+  title: 'bpk-component-modal-v3',
 };
 
 export const Default = DefaultExample;

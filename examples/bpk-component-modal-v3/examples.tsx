@@ -24,21 +24,19 @@ import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './BpkModalV3Examples.module.scss';
+import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const ModalContainer = ({
   buttonLabel = 'Open modal',
   children,
-  variant,
 }: {
   buttonLabel?: string;
   children: (props: {
     open: boolean;
     onOpenChange: (details: { open: boolean }) => void;
   }) => React.ReactNode;
-  variant?: string;
 }) => {
   const [open, setOpen] = useState(false);
   const onOpenChange = (details: { open: boolean }) => setOpen(details.open);
@@ -53,7 +51,7 @@ const ModalContainer = ({
 
 const DefaultExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
@@ -67,7 +65,7 @@ const DefaultExample = () => (
           </BpkModalV3.Header>
           <div className={getClassName('bpk-modal-v3-examples__body')}>
             <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-              This is a default centered modal. It displays as a centered
+              This is a default centred modal. It displays as a centred
               dialog on desktop and becomes full-screen on mobile viewports.
             </BpkText>
           </div>
@@ -79,7 +77,7 @@ const DefaultExample = () => (
 
 const SheetExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root
         open={open}
         onOpenChange={onOpenChange}
@@ -109,7 +107,7 @@ const SheetExample = () => (
 
 const FullExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root
         open={open}
         onOpenChange={onOpenChange}
@@ -139,7 +137,7 @@ const FullExample = () => (
 
 const DesktopWithImageExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
@@ -168,7 +166,7 @@ const DesktopWithImageExample = () => (
 
 const SheetWithImageExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root
         open={open}
         onOpenChange={onOpenChange}
@@ -198,7 +196,7 @@ const SheetWithImageExample = () => (
 
 const SimpleHeadlineExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
@@ -224,7 +222,7 @@ const SimpleHeadlineExample = () => (
 
 const CustomHeadlineExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
@@ -251,7 +249,7 @@ const CustomHeadlineExample = () => (
 
 const NoHeaderExample = () => (
   <ModalContainer>
-    {({ open, onOpenChange }) => (
+    {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
         <BpkModalV3.Backdrop />
         <BpkModalV3.Content>
