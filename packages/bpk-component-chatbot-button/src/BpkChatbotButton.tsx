@@ -92,11 +92,13 @@ const BpkChatbotButton = ({
       return undefined;
     }
 
-    let rafId: number;
+    let rafId: number | null = null;
     let collapseTimerId: ReturnType<typeof setTimeout> | undefined;
 
     const cleanup = () => {
-      cancelAnimationFrame(rafId);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
       clearTimeout(collapseTimerId);
     };
 

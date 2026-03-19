@@ -86,11 +86,10 @@
     }
 
     &--hidden {
+      // position: absolute removes the label from the flex flow so the icon stays centered,
+      // while still allowing the opacity transition to be visible.
+      position: absolute;
       opacity: 0;
-
-      // position: absolute removes label from flex flow so the icon stays centered.
-      // opacity transition still fires visually while the element is position:absolute.
-      @include utils.bpk-visually-hidden;
     }
   }
 }

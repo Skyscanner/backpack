@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 
 import BpkChatbotButton from './BpkChatbotButton';
 
@@ -91,6 +91,127 @@ describe('BpkChatbotButton', () => {
     );
     fireEvent.click(screen.getByTestId('bpk-chatbot-button'));
     expect(mockOnClick).not.toHaveBeenCalled();
+  });
+
+  describe('isAnimate behaviour', () => {
+    beforeEach(() => {
+      jest.useFakeTimers();
+      jest
+        .spyOn(global, 'requestAnimationFrame')
+        .mockImplementation((cb: FrameRequestCallback) => {
+          cb(0);
+          return 0;
+        });
+    });
+
+    afterEach(() => {
+      jest.useRealTimers();
+      jest.restoreAllMocks();
+    });
+
+    it('should expand on the next animation frame when isAnimate becomes true', () => {
+      const { rerender } = render(
+        <BpkChatbotButton
+          label="Chat with AI"
+          isAnimate={false}
+          onClick={mockOnClick}
+        />,
+      );
+      const button = screen.getByTestId('bpk-chatbot-button');
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+
+      act(() => {
+        rerender(
+          <BpkChatbotButton
+            label="Chat with AI"
+            isAnimate
+            onClick={mockOnClick}
+          />,
+        );
+      });
+
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    it('should collapse after animationDuration when isAnimate is true', () => {
+      act(() => {
+        render(
+          <BpkChatbotButton
+            label="Chat with AI"
+            isAnimate
+            animationDuration={2000}
+            onClick={mockOnClick}
+          />,
+        );
+      });
+
+      const button = screen.getByTestId('bpk-chatbot-button');
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should collapse immediately when isAnimate toggles to false', () => {
+      const { rerender } = render(
+        <BpkChatbotButton
+          label="Chat with AI"
+          isAnimate
+          animationDuration={2000}
+          onClick={mockOnClick}
+        />,
+      );
+      const button = screen.getByTestId('bpk-chatbot-button');
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+
+      act(() => {
+        rerender(
+          <BpkChatbotButton
+            label="Chat with AI"
+            isAnimate={false}
+            animationDuration={2000}
+            onClick={mockOnClick}
+          />,
+        );
+      });
+
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should reset to collapsed when page becomes visible after being hidden', () => {
+      Object.defineProperty(document, 'visibilityState', {
+        configurable: true,
+        get: () => 'visible',
+      });
+
+      render(
+        <BpkChatbotButton label="Chat with AI" isAnimate onClick={mockOnClick} />,
+      );
+      const button = screen.getByTestId('bpk-chatbot-button');
+      expect(button).toHaveAttribute('aria-expanded', 'true');
+
+      // Simulate tab hidden then visible
+      Object.defineProperty(document, 'visibilityState', {
+        configurable: true,
+        get: () => 'hidden',
+      });
+      act(() => {
+        document.dispatchEvent(new Event('visibilitychange'));
+      });
+
+      Object.defineProperty(document, 'visibilityState', {
+        configurable: true,
+        get: () => 'visible',
+      });
+      act(() => {
+        document.dispatchEvent(new Event('visibilitychange'));
+      });
+
+      expect(button).toHaveAttribute('aria-expanded', 'false');
+    });
   });
 
   it('should prevent event bubbling on click', () => {
