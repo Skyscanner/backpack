@@ -16,22 +16,27 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import BpkCardV2 from './src/BpkCardV2/BpkCardV2';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
+export {
+  BpkCheckboxCard,
+  default,
+  CHECKBOX_CARD_VARIANTS,
+  CHECKBOX_CARD_RADIUS,
+  useCheckboxCardContext,
+} from './src/BpkCheckboxCard';
 
 export type {
-  BpkCardV2Props,
-  BpkCardV2HeaderProps,
-  BpkCardV2BodyProps,
-  BpkCardV2SectionProps,
-  BpkCardV2FooterProps,
-  BpkCardV2SurfaceColor,
-  BpkCardV2Variant,
-  BpkCardV2Namespace,
-} from './src/BpkCardV2/common-types';
+  BpkCheckboxCardRootProps,
+  BpkCheckboxCardContentProps,
+  BpkCheckboxCardLabelProps,
+  BpkCheckboxCardDescriptionProps,
+  CheckboxCardContextValue,
+  CheckboxCardVariant,
+  CheckboxCardRadius,
+  CheckboxCardChangeHandler,
+} from './src/BpkCheckboxCard';
 
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper, BpkCardV2 };
+export {
+  default as CHECKBOX_CARD_THEME_ATTRIBUTES,
+  createCheckboxCardTheme,
+} from './src/themeAttributes';
 
-export default BpkCard;
