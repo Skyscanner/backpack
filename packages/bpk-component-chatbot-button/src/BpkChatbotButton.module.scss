@@ -22,9 +22,9 @@
 @use '../../bpk-mixins/utils';
 
 .bpk-chatbot-button {
+  // Base button resets (subset of bpk-button, omitting display:inline-block
+  // so our inline-flex is not overridden by stylelint reordering @includes after properties)
   display: inline-flex;
-
-  // Override to square shape with token border-radius (from bpk-button base)
   width: calc(tokens.$bpk-one-pixel-rem * 48);
   height: calc(tokens.$bpk-one-pixel-rem * 48);
   padding: 0;
@@ -34,10 +34,19 @@
   transition:
     width tokens.$bpk-duration-base ease-in-out,
     min-width tokens.$bpk-duration-base ease-in-out;
+  border: 0;
+  cursor: pointer;
   overflow: hidden;
   gap: tokens.bpk-spacing-sm();
+  user-select: none;
 
-  @include buttons.bpk-button;
+  @include utils.bpk-themeable-property(
+    border-radius,
+    --bpk-button-border-radius,
+    tokens.$bpk-button-border-radius
+  );
+
+  // Featured colours, hover, active, disabled states
   @include buttons.bpk-button--featured;
 
   @media (prefers-reduced-motion: reduce) {
