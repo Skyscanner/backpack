@@ -65,6 +65,22 @@
   }
 }
 
+// Cars prompt variant - interactive card with background-color change on hover, no shadow
+.bpk-card-v2--cars-prompt {
+  box-shadow: none;
+  cursor: default;
+
+  @include utils.bpk-hover {
+    background-color: tokens.$bpk-surface-subtle-day;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: tokens.$bpk-surface-subtle-day;
+    box-shadow: none;
+  }
+}
+
 // Divider between sections in multi-column layout
 // Horizontal on mobile, vertical on desktop
 .bpk-card-v2__divider {

@@ -21,18 +21,28 @@ import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttribute
 import type { BpkBoxProps, BpkFlexProps, BpkGridProps } from '../../../bpk-component-layout';
 
 /** Surface color token options for BpkCardV2 background */
-export type BpkCardV2SurfaceColor =
-  | 'surfaceDefault'
-  | 'surfaceElevated'
-  | 'surfaceTint'
-  | 'surfaceSubtle'
-  | 'surfaceHero'
-  | 'surfaceContrast'
-  | 'surfaceLowContrast'
-  | 'surfaceHighlight';
+export const CARD_V2_SURFACE_COLORS = {
+  surfaceDefault: 'surfaceDefault',
+  surfaceElevated: 'surfaceElevated',
+  surfaceTint: 'surfaceTint',
+  surfaceSubtle: 'surfaceSubtle',
+  surfaceHero: 'surfaceHero',
+  surfaceContrast: 'surfaceContrast',
+  surfaceLowContrast: 'surfaceLowContrast',
+  surfaceHighlight: 'surfaceHighlight',
+} as const;
+
+export type BpkCardV2SurfaceColor = (typeof CARD_V2_SURFACE_COLORS)[keyof typeof CARD_V2_SURFACE_COLORS];
 
 /** Visual variant options for BpkCardV2 */
-export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
+export const CARD_V2_VARIANTS = {
+  default: 'default',
+  outlined: 'outlined',
+  noElevation: 'noElevation',
+  carsPrompt: 'carsPrompt',
+} as const;
+
+export type BpkCardV2Variant = (typeof CARD_V2_VARIANTS)[keyof typeof CARD_V2_VARIANTS];
 
 /**
  * BpkCardV2 root component props.
@@ -41,7 +51,7 @@ export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
  * Supports multiple surface colors, visual variants, and responsive multi-column layouts.
  *
  * @example
- * <BpkCardV2 variant="default" bgColor="surfaceDefault">
+ * <BpkCardV2 variant={CARD_V2_VARIANTS.default} bgColor={CARD_V2_SURFACE_COLORS.surfaceDefault}>
  *   <BpkCardV2.Header>Title</BpkCardV2.Header>
  *   <BpkCardV2.Body>Content</BpkCardV2.Body>
  *   <BpkCardV2.Footer>Footer</BpkCardV2.Footer>

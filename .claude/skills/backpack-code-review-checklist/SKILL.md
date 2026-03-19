@@ -7,13 +7,15 @@ description: |
   Backpack conventions before merge, (4) Identifying violations in API design, token usage,
   accessibility, or documentation. Covers Constitution principles (I-XIII), decisions/
   guidelines, API encapsulation rules, private token restrictions, design approval workflow,
-  icon alignment helpers, hover mixin usage, token semantic correctness, and snapshot
-  currency. Essential for maintaining Backpack quality standards and catching non-obvious
-  violations like className props in new components, wrong icon alignment wrapper,
-  raw :hover instead of bpk-hover mixin, or cross-component private token usage.
+  icon alignment helpers, hover mixin usage, token semantic correctness, snapshot
+  currency, and enum/variant prop typing conventions. Essential for maintaining Backpack
+  quality standards and catching non-obvious violations like className props in new
+  components, wrong icon alignment wrapper, raw :hover instead of bpk-hover mixin,
+  cross-component private token usage, or bare string union types that should be
+  expressed as `as const` constant objects.
 author: Claude Code
-version: 1.2.0
-date: 2026-03-03
+version: 1.3.0
+date: 2026-03-19
 ---
 
 # Backpack Code Review Checklist
@@ -342,6 +344,50 @@ npm run jest -- accessibility-test
 - [ ] JSDoc comments for public APIs
 - [ ] `@deprecated` tags for deprecated APIs
 - [ ] Console warnings for deprecated prop usage
+- [ ] Variant/enum props expressed as `as const` constant objects, NOT bare string union types
+
+**Enum/variant prop pattern (`as const` object + derived type) — REQUIRED for all new variant/enum props:**
+
+Bare string union types force consumers to memorise string literals and get no import-time
+constant to reference. Every variant or enum prop MUST be expressed as an exported `as const`
+object so consumers can write `type={BUTTON_TYPES.primary}` instead of `type="primary"`.
+
+Real-world example from `packages/bpk-component-button/src/common-types.tsx`:
+
+```typescript
+// ✅ CORRECT — exported constants let consumers avoid magic strings
+export const BUTTON_TYPES = {
+  primary: 'primary',
+  primaryOnDark: 'primary-on-dark',
+  secondary: 'secondary',
+  destructive: 'destructive',
+  // ...
+} as const;
+
+export const SIZE_TYPES = {
+  small: 'small',
+  large: 'large',
+} as const;
+
+export type ButtonType = (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
+export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
+
+// ❌ WRONG — bare union: consumers must memorise 'primary' | 'secondary' strings
+export type ButtonType = 'primary' | 'secondary' | 'destructive';
+```
+
+The constant must also be exported from the package `index.ts` so consumers can import it:
+```typescript
+// packages/bpk-component-foo/index.ts
+export { BUTTON_TYPES, SIZE_TYPES } from './src/common-types';
+```
+
+**Check:**
+```bash
+# Find bare string union types that are candidates for as-const objects
+# (look for export type with string literal unions)
+rg "export type Bpk\w+(Variant|Type|Size|Color|Mode)\s*=\s*'" packages/bpk-component-*/src/
+```
 
 **Example:**
 ```typescript
@@ -506,6 +552,7 @@ After completing review:
 - For every CSS property written directly in the new SCSS — did I grep `bpk-mixins/` to confirm no mixin exists for it?
 - For every package import — did I open that package's `index.tsx` to see the full API and confirm the right variant is used?
 - For every token used — did I verify the token *name* semantically matches the UI state (not just the colour value)?
+- For every variant/enum prop type — is it a bare string union that should instead be an `as const` constant object with a derived type? Is the constant exported from `index.ts`?
 
 ## Notes
 
@@ -624,6 +671,8 @@ function hexToRgb(hex) {
 - ❌ Accepting that a CSS value looks right without checking if `bpk-mixins/` already abstracts it
 - ❌ Accepting that an import compiles without checking the full package API for a better-fitting variant
 - ❌ Accepting that a token produces the right colour without checking if the token name fits the UI state
+- ❌ Defining variant/enum prop types as bare string unions (`'primary' | 'secondary' | 'destructive'`) instead of `as const` constant objects like `BUTTON_TYPES` — consumers lose autocomplete and must memorise string literals
+- ❌ Defining a constant object like `BUTTON_TYPES` but forgetting to export it from the package `index.ts`
 
 ### SemVer Impact
 

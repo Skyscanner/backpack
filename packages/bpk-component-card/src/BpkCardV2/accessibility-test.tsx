@@ -24,6 +24,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
+import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './common-types';
 
 expect.extend(toHaveNoViolations);
 
@@ -115,7 +116,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - outlined variant', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root variant="outlined" aria-label="Outlined card">
+        <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined} aria-label="Outlined card">
           <BpkCardV2.Body>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
@@ -127,7 +128,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - with different surface colors', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root bgColor="surfaceElevated" aria-label="Elevated card">
+        <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceElevated} aria-label="Elevated card">
           <BpkCardV2.Body>Content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
@@ -139,7 +140,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('has no accessibility violations - complex layout', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root variant="default" bgColor="surfaceDefault" aria-label="Complex card">
+        <BpkCardV2.Root variant={CARD_V2_VARIANTS.default} bgColor={CARD_V2_SURFACE_COLORS.surfaceDefault} aria-label="Complex card">
           <BpkCardV2.Header>Product Details</BpkCardV2.Header>
           <BpkCardV2.Body templateColumns="65fr auto 35fr">
             <BpkCardV2.Section>
@@ -179,7 +180,7 @@ describe('BpkCardV2 Accessibility', () => {
 
     it('maintains color contrast in outlined variant', async () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root variant="outlined">
+        <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined}>
           <BpkCardV2.Body>Text content</BpkCardV2.Body>
         </BpkCardV2.Root>,
       );
