@@ -19,6 +19,7 @@
 import {
   BpkBox,
   BpkSpacing,
+  BpkTextStyle,
 } from '../../packages/bpk-component-layout';
 
 import Wrapper from './layout-wrapper';
@@ -179,6 +180,49 @@ export const GridExample = () => (
           </span>
         </BpkBox>
       ))}
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * TextStyle example – demonstrates applying a Backpack text style token to a BpkBox.
+ *
+ * @returns {JSX.Element} Boxes with different text styles applied.
+ */
+export const TextStyleExample = () => (
+  <Wrapper>
+    <BpkBox textStyle={BpkTextStyle.Heading3} padding={BpkSpacing.MD}>
+      Heading 3 text style
+    </BpkBox>
+    <BpkBox textStyle={BpkTextStyle.BodyDefault} padding={BpkSpacing.MD}>
+      Body default text style
+    </BpkBox>
+    <BpkBox textStyle={BpkTextStyle.Caption} padding={BpkSpacing.MD}>
+      Caption text style
+    </BpkBox>
+    <BpkBox textStyle={BpkTextStyle.Label1} padding={BpkSpacing.MD}>
+      Label 1 (bold) text style
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Responsive TextStyle example – demonstrates text style changing across breakpoints.
+ *
+ * @returns {JSX.Element} A box whose text style scales up at larger viewports.
+ */
+export const ResponsiveTextStyleExample = () => (
+  <Wrapper>
+    <BpkBox
+      textStyle={{
+        base: BpkTextStyle.Sm,
+        mobile: BpkTextStyle.Base,
+        tablet: BpkTextStyle.Lg,
+        desktop: BpkTextStyle.Xl,
+      }}
+      padding={BpkSpacing.MD}
+    >
+      Resize the viewport – this text style changes at each breakpoint.
     </BpkBox>
   </Wrapper>
 );

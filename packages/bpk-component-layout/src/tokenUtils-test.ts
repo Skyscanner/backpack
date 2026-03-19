@@ -21,8 +21,9 @@ import {
   processBpkComponentProps,
   processBpkProps,
   processResponsiveProps,
+  processTextStyleProp,
 } from './tokenUtils';
-import { BpkSpacing } from './tokens';
+import { BpkSpacing, BpkTextStyle } from './tokens';
 
 describe('processBpkProps', () => {
   it('converts spacing tokens to rem values', () => {
@@ -196,5 +197,89 @@ describe('processBpkProps', () => {
     expect(result).toBe('bpk-spacing-unknown');
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
+  });
+});
+
+describe('processTextStyleProp', () => {
+  it('passes a valid text style token through unchanged', () => {
+    const result = processTextStyleProp(BpkTextStyle.BodyDefault);
+
+    expect(result).toBe('bpk-text-body-default');
+  });
+
+  it('passes all text style tokens through unchanged', () => {
+    expect(processTextStyleProp(BpkTextStyle.Xs)).toBe('bpk-text-xs');
+    expect(processTextStyleProp(BpkTextStyle.Heading3)).toBe('bpk-text-heading-3');
+    expect(processTextStyleProp(BpkTextStyle.Hero1)).toBe('bpk-text-hero-1');
+    expect(processTextStyleProp(BpkTextStyle.Editorial2)).toBe('bpk-text-editorial-2');
+  });
+
+  it('removes and warns on array-based responsive values', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processTextStyleProp([BpkTextStyle.Sm, BpkTextStyle.Lg] as any);
+
+    expect(result).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('maps Backpack breakpoint keys to Chakra keys for responsive textStyle objects', () => {
+    const result = processTextStyleProp({
+      base: BpkTextStyle.Sm,
+      mobile: BpkTextStyle.Base,
+      tablet: BpkTextStyle.Lg,
+    });
+
+    expect(result).toEqual({
+      base: 'bpk-text-sm',
+      md: 'bpk-text-base',
+      xl: 'bpk-text-lg',
+    });
+  });
+
+  it('warns and drops unknown breakpoint keys from responsive textStyle objects', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processTextStyleProp({
+      phablet: BpkTextStyle.Sm,
+      mobile: BpkTextStyle.Base,
+    } as any);
+
+    expect(result).toEqual({ md: 'bpk-text-base' });
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+});
+
+describe('processBpkProps (textStyle)', () => {
+  it('processes textStyle prop and passes it through', () => {
+    const result = processBpkProps({ textStyle: BpkTextStyle.Heading1 });
+
+    expect(result.textStyle).toBe('bpk-text-heading-1');
+  });
+
+  it('processes responsive textStyle with Backpack breakpoint keys', () => {
+    const result = processBpkProps({
+      textStyle: {
+        base: BpkTextStyle.Sm,
+        desktop: BpkTextStyle.Xl,
+      },
+    });
+
+    expect(result.textStyle).toEqual({
+      base: 'bpk-text-sm',
+      '2xl': 'bpk-text-xl',
+    });
+  });
+
+  it('does not interfere with spacing props when textStyle is provided', () => {
+    const result = processBpkProps({
+      padding: BpkSpacing.MD,
+      textStyle: BpkTextStyle.Label1,
+    });
+
+    expect(result.padding).toBe('.5rem');
+    expect(result.textStyle).toBe('bpk-text-label-1');
   });
 });

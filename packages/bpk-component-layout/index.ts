@@ -47,10 +47,12 @@ export type {
   BpkBreakpointToken,
   BpkSpacingValue,
   BpkBreakpointValue,
+  BpkTextStyleToken,
 } from './src/tokens';
 export {
   BpkSpacing,
   BpkBreakpoint,
+  BpkTextStyle,
   isValidSpacingValue,
   isPercentage,
 } from './src/tokens';

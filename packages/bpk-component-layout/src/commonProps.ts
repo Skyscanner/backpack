@@ -21,6 +21,7 @@ import type {
   BpkSizeValue,
   BpkPositionValue,
   BpkResponsiveValue,
+  BpkTextStyleToken,
 } from './tokens';
 
 /**
@@ -81,6 +82,10 @@ export interface BpkSpacingProps {
  *   on its own props type.
  */
 export interface BpkCommonLayoutProps extends BpkSpacingProps {
+  // Text style - applies typography (font size, weight, line-height) via the Chakra theme.
+  // Accepts Backpack text style tokens or a responsive object keyed by Backpack breakpoints.
+  textStyle?: BpkResponsiveValue<BpkTextStyleToken>;
+
   // Explicitly exclude className
   className?: never;
 

@@ -170,3 +170,47 @@ export function isValidPositionValue(value: string): boolean {
     isPercentage(value) // percentage values
   );
 }
+
+/**
+ * Backpack Text Style Tokens for Layout Components
+ *
+ * These mirror the semantic text styles available in BpkText, but are defined
+ * independently here to maintain a clear boundary between layout and text components.
+ * The values correspond to named textStyles registered in the Chakra theme.
+ */
+export const BpkTextStyle = {
+  Xs: 'bpk-text-xs',
+  Sm: 'bpk-text-sm',
+  Base: 'bpk-text-base',
+  Lg: 'bpk-text-lg',
+  Xl: 'bpk-text-xl',
+  Xxl: 'bpk-text-xxl',
+  Xxxl: 'bpk-text-xxxl',
+  Xxxxl: 'bpk-text-xxxxl',
+  Xxxxxl: 'bpk-text-xxxxxl',
+  Caption: 'bpk-text-caption',
+  Footnote: 'bpk-text-footnote',
+  Label1: 'bpk-text-label-1',
+  Label2: 'bpk-text-label-2',
+  Label3: 'bpk-text-label-3',
+  BodyDefault: 'bpk-text-body-default',
+  BodyLongform: 'bpk-text-body-longform',
+  Subheading: 'bpk-text-subheading',
+  Heading1: 'bpk-text-heading-1',
+  Heading2: 'bpk-text-heading-2',
+  Heading3: 'bpk-text-heading-3',
+  Heading4: 'bpk-text-heading-4',
+  Heading5: 'bpk-text-heading-5',
+  Hero1: 'bpk-text-hero-1',
+  Hero2: 'bpk-text-hero-2',
+  Hero3: 'bpk-text-hero-3',
+  Hero4: 'bpk-text-hero-4',
+  Hero5: 'bpk-text-hero-5',
+  Hero6: 'bpk-text-hero-6',
+  Editorial1: 'bpk-text-editorial-1',
+  Editorial2: 'bpk-text-editorial-2',
+  Editorial3: 'bpk-text-editorial-3',
+} as const;
+
+export type BpkTextStyleToken = typeof BpkTextStyle[keyof typeof BpkTextStyle];
+

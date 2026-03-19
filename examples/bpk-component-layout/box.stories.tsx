@@ -28,6 +28,8 @@ import {
   PositionExample,
   FlexExample,
   GridExample,
+  TextStyleExample,
+  ResponsiveTextStyleExample,
 } from './box-examples';
 
 export default {
@@ -63,5 +65,7 @@ export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
 export const FlexViaBox = () => <FlexExample />;
 export const GridViaBox = () => <GridExample />;
+export const TextStyle = () => <TextStyleExample />;
+export const ResponsiveTextStyle = () => <ResponsiveTextStyleExample />;
 
 

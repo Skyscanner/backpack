@@ -408,12 +408,25 @@ export function processSpacingProps<T extends Record<string, any>>(
 }
 
 /**
+ * Processes the textStyle prop, mapping Backpack breakpoint keys to Chakra keys.
+ * The token value passes through unchanged — type correctness is enforced by
+ * TypeScript via BpkTextStyleToken; no runtime validation is performed.
+ *
+ * @param {*} value - The textStyle value (token string or responsive object)
+ * @returns {*} Processed value with breakpoint keys mapped to Chakra keys.
+ */
+export function processTextStyleProp(value: any): any {
+  return processResponsiveStringProp(value, 'textStyle');
+}
+
+/**
  * Processes all props to convert Backpack tokens to Chakra UI format
  * Also explicitly removes className and style to prevent ad-hoc overrides
  *
  * Processing order:
  * 1. Remove className & style
  * 2. Process spacing props (includes position)
+ * 3. Process textStyle prop
  *
  * @param {T} props - Component props object
  * @returns {Record<string, any>} Processed props with tokens converted and disallowed props removed
@@ -441,7 +454,19 @@ export function processBpkProps<T extends Record<string, any>>(
   }
 
   // Process spacing props (includes position)
-  return processSpacingProps(cleanProps);
+  const withSpacing = processSpacingProps(cleanProps);
+
+  // Process textStyle prop
+  if ('textStyle' in withSpacing && withSpacing.textStyle !== undefined) {
+    const processed = processTextStyleProp(withSpacing.textStyle);
+    if (processed !== undefined) {
+      withSpacing.textStyle = processed;
+    } else {
+      delete withSpacing.textStyle;
+    }
+  }
+
+  return withSpacing;
 }
 
 /**

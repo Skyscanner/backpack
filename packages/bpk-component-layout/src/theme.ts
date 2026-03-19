@@ -117,6 +117,48 @@ const shadowMap: Record<string, string> = {
   'bpk-shadow-xl': bpkTokens.boxShadowXl,
 };
 
+const larkenFontStack =
+  'var(--bpk-larken-font-stack, "Larken", "Noto Sans Arabic", "Noto Serif Hebrew", "Noto Serif", "Noto Serif Devanagari", "Noto Serif Thai", "Noto Serif SC", "Noto Serif TC", "Noto Serif JP", "Noto Serif KR", sans-serif)';
+
+/**
+ * Maps Backpack text style tokens to CSS typography properties.
+ * Values are sourced from the compiled BpkText CSS and mirror the SCSS typography mixins.
+ * Defined independently from BpkText to maintain clear component boundaries.
+ */
+const textStyleMap: Record<string, { value: Record<string, string> }> = {
+  'bpk-text-xs':       { value: { fontSize: '.75rem',  lineHeight: '1rem',    fontWeight: '400' } },
+  'bpk-text-sm':       { value: { fontSize: '.875rem', lineHeight: '1.25rem', fontWeight: '400' } },
+  'bpk-text-base':     { value: { fontSize: '1rem',    lineHeight: '1.5rem',  fontWeight: '400' } },
+  'bpk-text-lg':       { value: { fontSize: '1.25rem', lineHeight: '1.75rem', fontWeight: '400' } },
+  'bpk-text-xl':       { value: { fontSize: '1.5rem',  lineHeight: '2rem',    fontWeight: '400' } },
+  'bpk-text-xxl':      { value: { fontSize: '2rem',    lineHeight: '2.5rem',  fontWeight: '700' } },
+  'bpk-text-xxxl':     { value: { fontSize: '2.5rem',  lineHeight: '3rem',    fontWeight: '700' } },
+  'bpk-text-xxxxl':    { value: { fontSize: '3rem',    lineHeight: '3.5rem',  fontWeight: '700', letterSpacing: '-0.02em' } },
+  'bpk-text-xxxxxl':   { value: { fontSize: '4rem',    lineHeight: '4rem',    fontWeight: '700', letterSpacing: '-0.02em' } },
+  'bpk-text-caption':  { value: { fontSize: '.75rem',  lineHeight: '1rem',    fontWeight: '400' } },
+  'bpk-text-footnote': { value: { fontSize: '.875rem', lineHeight: '1.25rem', fontWeight: '400' } },
+  'bpk-text-label-1':  { value: { fontSize: '1rem',    lineHeight: '1.5rem',  fontWeight: '700' } },
+  'bpk-text-label-2':  { value: { fontSize: '.875rem', lineHeight: '1.25rem', fontWeight: '700' } },
+  'bpk-text-label-3':  { value: { fontSize: '.75rem',  lineHeight: '1rem',    fontWeight: '700' } },
+  'bpk-text-body-default':  { value: { fontSize: '1rem',    lineHeight: '1.5rem',  fontWeight: '400' } },
+  'bpk-text-body-longform': { value: { fontSize: '1.25rem', lineHeight: '1.75rem', fontWeight: '400' } },
+  'bpk-text-subheading':    { value: { fontSize: '1.5rem',  lineHeight: '2rem',    fontWeight: '400' } },
+  'bpk-text-heading-1': { value: { fontSize: '2.5rem', lineHeight: '3rem',    fontWeight: '700' } },
+  'bpk-text-heading-2': { value: { fontSize: '2rem',   lineHeight: '2.5rem',  fontWeight: '700' } },
+  'bpk-text-heading-3': { value: { fontSize: '1.5rem', lineHeight: '1.75rem', fontWeight: '700' } },
+  'bpk-text-heading-4': { value: { fontSize: '1.25rem', lineHeight: '1.5rem', fontWeight: '700' } },
+  'bpk-text-heading-5': { value: { fontSize: '1rem',   lineHeight: '1.25rem', fontWeight: '700' } },
+  'bpk-text-hero-1': { value: { fontSize: '7.5rem',  lineHeight: '7.5rem',  fontWeight: '900', letterSpacing: '-0.04em' } },
+  'bpk-text-hero-2': { value: { fontSize: '6rem',    lineHeight: '6rem',    fontWeight: '900', letterSpacing: '-0.04em' } },
+  'bpk-text-hero-3': { value: { fontSize: '4.75rem', lineHeight: '4.75rem', fontWeight: '900', letterSpacing: '-0.04em' } },
+  'bpk-text-hero-4': { value: { fontSize: '4rem',    lineHeight: '4rem',    fontWeight: '900', letterSpacing: '-0.04em' } },
+  'bpk-text-hero-5': { value: { fontSize: '3rem',    lineHeight: '3rem',    fontWeight: '900', letterSpacing: '-0.04em' } },
+  'bpk-text-hero-6': { value: { fontSize: '2.5rem',  lineHeight: '2.5rem',  fontWeight: '900', letterSpacing: '-0.04em' } },
+  'bpk-text-editorial-1': { value: { fontFamily: larkenFontStack, fontSize: '3rem',    lineHeight: '3.5rem',  fontWeight: '300' } },
+  'bpk-text-editorial-2': { value: { fontFamily: larkenFontStack, fontSize: '2rem',    lineHeight: '2.5rem',  fontWeight: '300' } },
+  'bpk-text-editorial-3': { value: { fontFamily: larkenFontStack, fontSize: '1.25rem', lineHeight: '1.75rem', fontWeight: '400' } },
+};
+
 /**
  * Chakra expects raw width values (e.g. "48rem"), not full media queries.
  * The media query construction is handled internally by Chakra's system.
@@ -212,6 +254,7 @@ export function createBpkConfig() {
       tokens: {
         spacing: spacingMap,
       },
+      textStyles: textStyleMap,
       breakpoints: chakraBreakpoints,
     },
   });
