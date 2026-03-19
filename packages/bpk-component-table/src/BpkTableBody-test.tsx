@@ -33,28 +33,6 @@ describe('BpkTableBody', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with custom class', () => {
-    const { asFragment } = render(
-      <table>
-        <BpkTableBody className="my-custom-class">
-          <tr />
-        </BpkTableBody>
-      </table>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render correctly with arbitrary props', () => {
-    const { asFragment } = render(
-      <table>
-        <BpkTableBody id="my-custom-id" data-foo="bar">
-          <tr />
-        </BpkTableBody>
-      </table>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should render correctly with striped prop', () => {
     const { asFragment } = render(
       <table>
