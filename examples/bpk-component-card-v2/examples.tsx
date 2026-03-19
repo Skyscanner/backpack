@@ -18,7 +18,7 @@
 
 import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
 import BpkButton from '../../packages/bpk-component-button';
-import { BpkCardV2, CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from '../../packages/bpk-component-card';
+import { BpkCardV2, CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS, type BpkCardV2SurfaceColor } from '../../packages/bpk-component-card';
 import BpkCarousel from '../../packages/bpk-component-carousel';
 import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
 import { BpkBox, BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
@@ -80,7 +80,7 @@ const VariantsExample = () => (
   </div>
 );
 
-const DARK_SURFACE_COLORS = [CARD_V2_SURFACE_COLORS.surfaceHero, CARD_V2_SURFACE_COLORS.surfaceContrast];
+const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = [CARD_V2_SURFACE_COLORS.surfaceHero, CARD_V2_SURFACE_COLORS.surfaceContrast];
 
 const SurfaceColorsExample = () => (
   <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
@@ -389,7 +389,7 @@ const AllExamples = () => (
       </BpkText>
       <FlightsCardExample />
     </BpkBox>
-    <BpkBox paddingTop={BpkSpacing.LG}>
+    <BpkBox paddingTop={BpkSpacing.LG} paddingBottom={BpkSpacing.XL}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Custom Padding
       </BpkText>
