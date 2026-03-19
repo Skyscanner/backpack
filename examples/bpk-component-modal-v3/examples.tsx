@@ -22,7 +22,7 @@ import BpkButton from '../../packages/bpk-component-button';
 import { BpkModalV3 } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { ArkLocaleProvider, cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
@@ -45,10 +45,10 @@ const ModalContainer = ({
   const onOpenChange = (details: { open: boolean }) => setOpen(details.open);
 
   return (
-    <div>
+    <ArkLocaleProvider>
       <BpkButton onClick={() => setOpen(true)}>{buttonLabel}</BpkButton>
       {children({ open, onOpenChange })}
-    </div>
+    </ArkLocaleProvider>
   );
 };
 
