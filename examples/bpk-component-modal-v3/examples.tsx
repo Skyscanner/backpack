@@ -38,7 +38,7 @@ const ModalContainer = ({
     onOpenChange: (details: { open: boolean }) => void;
   }) => React.ReactNode;
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const onOpenChange = (details: { open: boolean }) => setOpen(details.open);
 
   return (
