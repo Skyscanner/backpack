@@ -19,6 +19,7 @@
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/breakpoints';
 @use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/utils';
 
 // Base wrapper — inert container for variant propagation via CSS ancestor selectors.
 // No transforms, filters, or will-change that would affect fixed positioning.
@@ -231,18 +232,26 @@
   align-items: center;
   flex-shrink: 0;
   border: none;
+  outline: none;
   background: transparent;
   color: tokens.$bpk-text-primary-day;
   cursor: pointer;
   inset-inline-end: tokens.bpk-spacing-lg();
 
-  // On-image variant — larger with circular scrim background
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+
+  // On-image variant — larger with translucent white background
   &--on-image {
+    top: tokens.bpk-spacing-base();
     width: 2.5rem; // 40px
     height: 2.5rem; // 40px
-    border-radius: 50%;
-    background: tokens.$bpk-scrim-day;
-    color: tokens.$bpk-text-on-dark-day;
+    padding: 0.75rem; // 12px
+    border-radius: tokens.$bpk-border-radius-lg;
+    background: rgb(255 255 255 / 50%);
+    color: tokens.$bpk-text-primary-day;
+    inset-inline-end: tokens.bpk-spacing-lg();
   }
 }
 
