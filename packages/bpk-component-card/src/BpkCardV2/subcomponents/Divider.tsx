@@ -16,22 +16,24 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import BpkCardV2 from './src/BpkCardV2/BpkCardV2';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-export type {
-  BpkCardV2Props,
-  BpkCardV2HeaderProps,
-  BpkCardV2BodyProps,
-  BpkCardV2SectionProps,
-  BpkCardV2FooterProps,
-  BpkCardV2SurfaceColor,
-  BpkCardV2Variant,
-  BpkCardV2Namespace,
-} from './src/BpkCardV2/common-types';
+import STYLES from '../BpkCardV2.module.scss';
 
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper, BpkCardV2 };
+const getClassName = cssModules(STYLES);
 
-export default BpkCard;
+/**
+ * Divider between Section children in multi-column layout.
+ *
+ * Renders as a horizontal line on mobile and a vertical line on desktop.
+ * Styled via SCSS for breakpoint handling.
+ *
+ * @returns {JSX.Element} Divider component
+ */
+const Divider = () => (
+  <div className={getClassName('bpk-card-v2__divider')} {...getDataComponentAttribute('CardV2.Divider')} />
+);
+
+Divider.displayName = 'BpkCardV2.Divider';
+
+export default Divider;
