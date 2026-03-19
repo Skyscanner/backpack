@@ -1,0 +1,264 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
+
+// Root container — rendered as <label> by Ark UI's CheckboxRoot.
+// Ark UI sets data-state="checked"/"unchecked" and data-disabled on this element.
+.bpk-checkbox-card-root {
+  position: relative;
+  display: block;
+  min-width: calc(tokens.$bpk-one-pixel-rem * 44); // Minimum touch target
+  height: 100%;
+  min-height: calc(tokens.$bpk-one-pixel-rem * 44);
+  transition:
+    background-color tokens.$bpk-duration-sm ease-in-out,
+    border-color tokens.$bpk-duration-sm ease-in-out,
+    color tokens.$bpk-duration-sm ease-in-out;
+  border: tokens.$bpk-border-size-sm solid
+    var(--bpk-checkbox-card-default-border-color, #{tokens.$bpk-line-day});
+
+  // CSS Variables for theming (with Backpack token fallbacks)
+  background-color: var(
+    --bpk-checkbox-card-default-background-color,
+    #{tokens.$bpk-canvas-day}
+  );
+  color: var(
+    --bpk-checkbox-card-default-text-color,
+    #{tokens.$bpk-text-primary-day}
+  );
+  cursor: pointer;
+  box-sizing: border-box;
+
+  // Focus state — shown when the hidden input inside is keyboard-focused
+  &:has(:focus-visible) {
+    @include utils.bpk-focus-indicator;
+  }
+
+  // Hover state — applies to unchecked non-disabled cards, and also loading cards
+  // (loading cards show hover visual but are non-interactive via cursor: not-allowed)
+  &:not([data-state='checked']):not([data-disabled]),
+  &:not([data-state='checked'])[data-loading] {
+    @include utils.bpk-hover {
+      border-color: var(
+        --bpk-checkbox-card-hover-border-color,
+        #{tokens.$bpk-line-day}
+      );
+      background-color: var(
+        --bpk-checkbox-card-hover-background-color,
+        #{tokens.$bpk-surface-low-contrast-day}
+      );
+    }
+  }
+
+  // Checked state
+  &[data-state='checked'] {
+    border-color: var(--bpk-checkbox-card-checked-border-color, transparent);
+    background-color: var(
+      --bpk-checkbox-card-checked-background-color,
+      #{tokens.$bpk-surface-contrast-day}
+    );
+    color: var(
+      --bpk-checkbox-card-checked-text-color,
+      #{tokens.$bpk-text-on-dark-day}
+    );
+  }
+
+  // Disabled state (excludes loading — loading blocks interaction but keeps full opacity)
+  &[data-disabled]:not([data-loading]) {
+    border-color: var(
+      --bpk-checkbox-card-disabled-border-color,
+      #{tokens.$bpk-line-day}
+    );
+    background-color: var(
+      --bpk-checkbox-card-disabled-background-color,
+      #{tokens.$bpk-canvas-contrast-day}
+    );
+    color: var(
+      --bpk-checkbox-card-disabled-text-color,
+      #{tokens.$bpk-text-disabled-day}
+    );
+    cursor: not-allowed;
+  }
+
+  // Loading state — non-interactive but visually unchanged
+  &[data-loading] {
+    cursor: not-allowed;
+  }
+
+  // Radius variants
+  &--radius-square {
+    border-radius: 0;
+  }
+
+  &--radius-rounded {
+    border-radius: tokens.$bpk-border-radius-md;
+  }
+
+  // Visual variants - override CSS variables
+  &--on-canvas-default {
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
+  }
+
+  &--cars {
+    // White background, border changes to primary color on hover/checked
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
+    --bpk-checkbox-card-disabled-border-color: transparent;
+
+    // Match BpkPanel border-radius used in car hire
+    &#{&}--radius-rounded {
+      border-radius: tokens.$bpk-border-radius-lg;
+    }
+
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-hover-border-color: #{tokens.$bpk-core-primary-day};
+    --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-core-primary-day};
+    --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
+
+    // Checked: outer shadow adds 1px to simulate 2px border without layout shift
+    &[data-state='checked'] {
+      box-shadow: 0 0 0 tokens.$bpk-border-size-sm tokens.$bpk-core-primary-day;
+    }
+  }
+
+  &--on-canvas-contrast {
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-default-border-color: transparent;
+    --bpk-checkbox-card-hover-border-color: #{tokens.$bpk-line-day};
+    --bpk-checkbox-card-disabled-background-color: #{tokens.$bpk-canvas-contrast-day};
+  }
+
+  &--on-surface-contrast {
+    --bpk-checkbox-card-default-background-color: #{tokens.$bpk-surface-tint-day};
+    --bpk-checkbox-card-default-text-color: #{tokens.$bpk-text-on-dark-day};
+    --bpk-checkbox-card-secondary-text-color: #{tokens.$bpk-text-on-dark-day};
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-surface-contrast-day};
+    --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-core-accent-day};
+    --bpk-checkbox-card-default-border-color: transparent;
+    --bpk-checkbox-card-hover-border-color: transparent;
+    --bpk-checkbox-card-disabled-border-color: transparent;
+  }
+}
+
+// Content container
+.bpk-checkbox-card-content {
+  width: 100%;
+  padding: tokens.bpk-spacing-md();
+}
+
+// Label slot
+.bpk-checkbox-card-label {
+  display: -webkit-box;
+  width: 100%;
+  color: inherit;
+  text-align: center;
+  overflow: hidden;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-box-orient: vertical;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-line-clamp: var(--bpk-label-line-clamp, 2);
+  line-clamp: var(--bpk-label-line-clamp, 2);
+
+  // Keep nested content centered without using !important.
+  > * {
+    text-align: inherit;
+  }
+}
+
+// Description slot
+.bpk-checkbox-card-description {
+  display: -webkit-box;
+  width: 100%;
+  color: var(
+    --bpk-checkbox-card-secondary-text-color,
+    #{tokens.$bpk-text-secondary-day}
+  );
+  text-align: center;
+  overflow: hidden;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-box-orient: vertical;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-line-clamp: var(--bpk-description-line-clamp, 3);
+  line-clamp: var(--bpk-description-line-clamp, 3);
+
+  @include typography.bpk-text;
+
+  .bpk-checkbox-card-root[data-state='checked'] & {
+    color: inherit; // Use root color when checked
+  }
+
+  // cars variant keeps secondary text color when checked (white background, no color flip)
+  .bpk-checkbox-card-root--cars[data-state='checked'] & {
+    color: var(
+      --bpk-checkbox-card-secondary-text-color,
+      #{tokens.$bpk-text-secondary-day}
+    );
+  }
+
+  // Keep nested content centered without using !important.
+  > * {
+    text-align: inherit;
+  }
+}
+
+// Price slot (cars variant) — loading state shows leading text + spinner inline
+.bpk-checkbox-card-price {
+  display: flex;
+  align-items: center;
+  gap: tokens.bpk-spacing-sm();
+}
+
+// Indicator - visual corner indicator (top-right)
+// Hidden when unchecked; appears with checkmark when checked.
+.bpk-checkbox-card-indicator {
+  position: absolute;
+  top: tokens.bpk-spacing-md();
+  right: tokens.bpk-spacing-md();
+  display: none; // Hidden by default
+  z-index: 1; // Ensure indicator renders above positioned children (e.g. BpkImage)
+  width: calc(tokens.$bpk-one-pixel-rem * 20);
+  height: calc(tokens.$bpk-one-pixel-rem * 20);
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: var(
+      --bpk-checkbox-card-indicator-background-color,
+      #{tokens.$bpk-core-accent-day}
+    );
+  }
+
+  // Checked state — show the indicator
+  .bpk-checkbox-card-root[data-state='checked'] & {
+    display: block;
+  }
+
+  // cars variant: 16px icon to match car hire design (position stays at bpk-spacing-md offset)
+  .bpk-checkbox-card-root--cars & {
+    width: tokens.bpk-spacing-base();
+    height: tokens.bpk-spacing-base();
+  }
+}
