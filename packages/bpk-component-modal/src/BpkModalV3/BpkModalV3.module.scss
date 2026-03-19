@@ -1,0 +1,271 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/shadows';
+
+// 5.1 — Base classes
+
+.bpk-modal-v3 {
+  // Wrapper div — inert container for variant propagation via CSS ancestor selectors.
+  // No transforms, filters, or will-change that would affect fixed positioning.
+}
+
+// 5.2 — Scrim/backdrop styles
+
+.bpk-modal-v3__backdrop {
+  position: fixed;
+  z-index: tokens.$bpk-zindex-modal;
+  background-color: tokens.$bpk-scrim-day;
+  inset: 0;
+
+  // Auto-hide backdrop for full variant
+  .bpk-modal-v3--full & {
+    display: none;
+  }
+}
+
+// 5.1 / 5.3–5.5 — Positioner and content
+
+.bpk-modal-v3__positioner {
+  position: fixed;
+  z-index: tokens.$bpk-zindex-modal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  pointer-events: none;
+
+  &[data-state='closed'] {
+    pointer-events: none;
+  }
+
+  // Sheet — anchor to bottom
+  .bpk-modal-v3--sheet & {
+    align-items: flex-end;
+  }
+
+  // Full — fill viewport
+  .bpk-modal-v3--full & {
+    align-items: stretch;
+  }
+}
+
+.bpk-modal-v3__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: tokens.$bpk-surface-elevated-day;
+  overflow-y: auto;
+  pointer-events: auto;
+
+  // 5.3 — Default variant desktop styles
+  .bpk-modal-v3--default & {
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: tokens.$bpk-border-radius-lg;
+
+    @include shadows.bpk-box-shadow-lg;
+  }
+
+  // 5.4 — Sheet variant styles
+  .bpk-modal-v3--sheet & {
+    width: 100%;
+    height: fit-content;
+    max-height: 100dvh;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+
+    @include shadows.bpk-box-shadow-lg;
+  }
+
+  // 5.5 — Full variant styles
+  .bpk-modal-v3--full & {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  // 5.6 — Responsive: default variant switches to full-screen below mobile breakpoint
+  .bpk-modal-v3--default & {
+    @include breakpoints.bpk-breakpoint-mobile {
+      max-width: none;
+      max-height: none;
+      height: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+// 5.7 — Header padding styles
+
+.bpk-modal-v3__header {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: tokens.bpk-spacing-sm();
+  padding: tokens.bpk-spacing-lg();
+
+  // Sheet and full variants: reduced bottom padding
+  .bpk-modal-v3--sheet &,
+  .bpk-modal-v3--full & {
+    padding-bottom: tokens.bpk-spacing-base();
+  }
+}
+
+// Title — semantic only, no typography
+
+.bpk-modal-v3__title {
+  flex: 1;
+  min-width: 0;
+}
+
+// Description
+
+.bpk-modal-v3__description {
+  // No styles enforced — consumer controlled
+}
+
+// 5.8 — Close trigger styles
+
+.bpk-modal-v3__close-trigger {
+  position: absolute;
+  top: tokens.bpk-spacing-lg();
+  inset-inline-end: tokens.bpk-spacing-lg();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: tokens.bpk-spacing-lg();
+  height: tokens.bpk-spacing-lg();
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: tokens.$bpk-text-primary-day;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  // On-image variant — larger with circular scrim background
+  &--on-image {
+    width: 2.5rem; // 40px
+    height: 2.5rem; // 40px
+    border-radius: 50%;
+    background: tokens.$bpk-scrim-day;
+    color: tokens.$bpk-text-on-dark-day;
+  }
+}
+
+// 5.9 — Open/close animations
+
+.bpk-modal-v3__backdrop {
+  opacity: 0;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
+
+  &[data-state='open'] {
+    opacity: 1;
+  }
+
+  &[data-state='closed'] {
+    opacity: 0;
+  }
+}
+
+// Default desktop — fade + scale
+.bpk-modal-v3--default .bpk-modal-v3__content {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity tokens.$bpk-duration-base ease-in-out,
+    transform tokens.$bpk-duration-base ease-in-out;
+
+  &[data-state='open'] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &[data-state='closed'] {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  // Default mobile — slide up instead
+  @include breakpoints.bpk-breakpoint-mobile {
+    transform: translateY(100%);
+
+    &[data-state='open'] {
+      transform: translateY(0);
+    }
+
+    &[data-state='closed'] {
+      transform: translateY(100%);
+    }
+  }
+}
+
+// Sheet — slide up from bottom
+.bpk-modal-v3--sheet .bpk-modal-v3__content {
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity tokens.$bpk-duration-base ease-in-out,
+    transform tokens.$bpk-duration-base ease-in-out;
+
+  &[data-state='open'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &[data-state='closed'] {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+// Full — slide up from bottom
+.bpk-modal-v3--full .bpk-modal-v3__content {
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity tokens.$bpk-duration-base ease-in-out,
+    transform tokens.$bpk-duration-base ease-in-out;
+
+  &[data-state='open'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &[data-state='closed'] {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+// Reduced motion — disable all animations
+@media (prefers-reduced-motion: reduce) {
+  .bpk-modal-v3__backdrop {
+    transition: none;
+  }
+
+  .bpk-modal-v3--default .bpk-modal-v3__content,
+  .bpk-modal-v3--sheet .bpk-modal-v3__content,
+  .bpk-modal-v3--full .bpk-modal-v3__content {
+    transition: none;
+  }
+}

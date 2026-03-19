@@ -16,24 +16,26 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+import {
+  DefaultExample,
+  SheetExample,
+  FullExample,
+  DesktopWithImageExample,
+  SheetWithImageExample,
+  SimpleHeadlineExample,
+  CustomHeadlineExample,
+  NoHeaderExample,
+} from './BpkModalV3Examples';
 
-import type { Props } from './src/BpkModal';
-
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
+export default {
+  title: 'bpk-component-modal/BpkModalV3',
 };
+
+export const Default = DefaultExample;
+export const Sheet = SheetExample;
+export const Full = FullExample;
+export const DesktopWithImage = DesktopWithImageExample;
+export const SheetWithImage = SheetWithImageExample;
+export const SimpleHeadline = SimpleHeadlineExample;
+export const CustomHeadline = CustomHeadlineExample;
+export const NoHeader = NoHeaderExample;

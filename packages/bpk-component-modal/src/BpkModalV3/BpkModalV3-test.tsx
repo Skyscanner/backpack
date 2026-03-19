@@ -1,0 +1,251 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
+import BpkModalV3 from './BpkModalV3';
+
+// ResizeObserver mock required for Ark UI / Zag.js
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
+const defaultProps = {
+  open: true,
+  onOpenChange: jest.fn(),
+};
+
+const renderModal = (
+  props: Partial<Parameters<typeof BpkModalV3.Root>[0]> = {},
+  children?: React.ReactNode,
+) =>
+  render(
+    <BpkModalV3.Root {...defaultProps} {...props}>
+      <BpkModalV3.Backdrop />
+      <BpkModalV3.Content>
+        {children || (
+          <>
+            <BpkModalV3.Header>
+              <BpkModalV3.Title>Test Title</BpkModalV3.Title>
+              <BpkModalV3.CloseTrigger label="Close" />
+            </BpkModalV3.Header>
+            <p>Content</p>
+          </>
+        )}
+      </BpkModalV3.Content>
+    </BpkModalV3.Root>,
+  );
+
+describe('BpkModalV3', () => {
+  describe('Namespace exports', () => {
+    it('should export all sub-components', () => {
+      expect(BpkModalV3.Root).toBeDefined();
+      expect(BpkModalV3.Trigger).toBeDefined();
+      expect(BpkModalV3.Backdrop).toBeDefined();
+      expect(BpkModalV3.Content).toBeDefined();
+      expect(BpkModalV3.Header).toBeDefined();
+      expect(BpkModalV3.Title).toBeDefined();
+      expect(BpkModalV3.Description).toBeDefined();
+      expect(BpkModalV3.CloseTrigger).toBeDefined();
+    });
+  });
+
+  describe('Root', () => {
+    it('should render wrapper div with default variant', () => {
+      const { container } = renderModal();
+      const wrapper = container.querySelector('[data-variant]');
+      expect(wrapper).toHaveAttribute('data-variant', 'default');
+      expect(wrapper?.className).toContain('bpk-modal-v3');
+      expect(wrapper?.className).toContain('bpk-modal-v3--default');
+    });
+
+    it('should render wrapper div with sheet variant', () => {
+      const { container } = renderModal({ variant: 'sheet' });
+      const wrapper = container.querySelector('[data-variant]');
+      expect(wrapper).toHaveAttribute('data-variant', 'sheet');
+      expect(wrapper?.className).toContain('bpk-modal-v3--sheet');
+    });
+
+    it('should render wrapper div with full variant', () => {
+      const { container } = renderModal({ variant: 'full' });
+      const wrapper = container.querySelector('[data-variant]');
+      expect(wrapper).toHaveAttribute('data-variant', 'full');
+      expect(wrapper?.className).toContain('bpk-modal-v3--full');
+    });
+
+    it('should have data-backpack-ds-component attribute', () => {
+      const { container } = renderModal();
+      const wrapper = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3"]',
+      );
+      expect(wrapper).toBeInTheDocument();
+    });
+  });
+
+  describe('Content', () => {
+    it('should render dialog content', () => {
+      renderModal();
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+    });
+
+    it('should have data-backpack-ds-component attribute', () => {
+      const { container } = renderModal();
+      const content = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3Content"]',
+      );
+      expect(content).toBeInTheDocument();
+    });
+  });
+
+  describe('Backdrop', () => {
+    it('should render with BEM class', () => {
+      const { container } = renderModal();
+      const backdrop = container.querySelector('[data-scope="dialog"][data-part="backdrop"]');
+      expect(backdrop?.className).toContain('bpk-modal-v3__backdrop');
+    });
+  });
+
+  describe('Header', () => {
+    it('should render as a flex container', () => {
+      const { container } = renderModal();
+      const header = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3Header"]',
+      );
+      expect(header).toBeInTheDocument();
+      expect(header?.className).toContain('bpk-modal-v3__header');
+    });
+  });
+
+  describe('Title', () => {
+    it('should render with semantic-only wrapper', () => {
+      renderModal();
+      expect(screen.getByText('Test Title')).toBeInTheDocument();
+    });
+
+    it('should have data-backpack-ds-component attribute', () => {
+      const { container } = renderModal();
+      const title = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3Title"]',
+      );
+      expect(title).toBeInTheDocument();
+    });
+  });
+
+  describe('Description', () => {
+    it('should render description text', () => {
+      renderModal(
+        {},
+        <>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>Title</BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <BpkModalV3.Description>A description</BpkModalV3.Description>
+        </>,
+      );
+      expect(screen.getByText('A description')).toBeInTheDocument();
+    });
+  });
+
+  describe('CloseTrigger', () => {
+    it('should render with accessible label', () => {
+      renderModal();
+      expect(screen.getByLabelText('Close')).toBeInTheDocument();
+    });
+
+    it('should render default style without onImage', () => {
+      const { container } = renderModal();
+      const closeTrigger = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3CloseTrigger"]',
+      );
+      expect(closeTrigger?.className).toContain('bpk-modal-v3__close-trigger');
+      expect(closeTrigger?.className).not.toContain(
+        'bpk-modal-v3__close-trigger--on-image',
+      );
+    });
+
+    it('should render onImage style', () => {
+      const { container } = render(
+        <BpkModalV3.Root {...defaultProps}>
+          <BpkModalV3.Content>
+            <BpkModalV3.CloseTrigger label="Close" onImage />
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      const closeTrigger = container.querySelector(
+        '[data-backpack-ds-component="BpkModalV3CloseTrigger"]',
+      );
+      expect(closeTrigger?.className).toContain(
+        'bpk-modal-v3__close-trigger--on-image',
+      );
+    });
+  });
+
+  describe('Trigger', () => {
+    it('should render trigger', () => {
+      render(
+        <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Trigger>
+            <button type="button">Open</button>
+          </BpkModalV3.Trigger>
+          <BpkModalV3.Content>
+            <p>Content</p>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(screen.getByText('Open')).toBeInTheDocument();
+    });
+
+    it('should support asChild', () => {
+      render(
+        <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Trigger asChild>
+            <button type="button">Open Modal</button>
+          </BpkModalV3.Trigger>
+          <BpkModalV3.Content>
+            <p>Content</p>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      const button = screen.getByText('Open Modal');
+      expect(button.tagName).toBe('BUTTON');
+    });
+  });
+
+  describe('Controlled open/close', () => {
+    it('should render content when open', () => {
+      renderModal({ open: true });
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+    });
+
+    it('should call onOpenChange when CloseTrigger is clicked', async () => {
+      const onOpenChange = jest.fn();
+      renderModal({ onOpenChange });
+      await userEvent.click(screen.getByLabelText('Close'));
+      expect(onOpenChange).toHaveBeenCalledWith(
+        expect.objectContaining({ open: false }),
+      );
+    });
+  });
+});

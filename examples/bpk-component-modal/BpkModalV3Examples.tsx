@@ -1,0 +1,289 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { useState } from 'react';
+
+import BpkButton from '../../packages/bpk-component-button';
+import { BpkModalV3 } from '../../packages/bpk-component-modal';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
+import { cssModules } from '../../packages/bpk-react-utils';
+
+import STYLES from './BpkModalV3Examples.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const ModalContainer = ({
+  buttonLabel = 'Open modal',
+  children,
+  variant,
+}: {
+  buttonLabel?: string;
+  children: (props: {
+    open: boolean;
+    onOpenChange: (details: { open: boolean }) => void;
+  }) => React.ReactNode;
+  variant?: string;
+}) => {
+  const [open, setOpen] = useState(false);
+  const onOpenChange = (details: { open: boolean }) => setOpen(details.open);
+
+  return (
+    <div>
+      <BpkButton onClick={() => setOpen(true)}>{buttonLabel}</BpkButton>
+      {children({ open, onOpenChange })}
+    </div>
+  );
+};
+
+const DefaultExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                Default modal
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This is a default centered modal. It displays as a centered
+              dialog on desktop and becomes full-screen on mobile viewports.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const SheetExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root
+        open={open}
+        onOpenChange={onOpenChange}
+        variant="sheet"
+      >
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                Sheet modal
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This is a sheet modal. It anchors to the bottom of the viewport
+              and spans the full width.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const FullExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root
+        open={open}
+        onOpenChange={onOpenChange}
+        variant="full"
+      >
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                Full screen modal
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This is a full-screen modal. It fills the entire viewport with
+              no border radius.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const DesktopWithImageExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Title>
+            <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
+          </BpkModalV3.Title>
+          <div className={getClassName('bpk-modal-v3-examples__split')}>
+            <div className={getClassName('bpk-modal-v3-examples__split-content')}>
+              <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+                Explore Edinburgh
+              </BpkText>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                Discover the historic capital of Scotland with its stunning
+                architecture, rich culture, and vibrant festivals.
+              </BpkText>
+            </div>
+            <div className={getClassName('bpk-modal-v3-examples__split-image')}>
+              <BpkModalV3.CloseTrigger label="Close" onImage />
+            </div>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const SheetWithImageExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root
+        open={open}
+        onOpenChange={onOpenChange}
+        variant="sheet"
+      >
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Title>
+            <BpkVisuallyHidden>Sheet image modal</BpkVisuallyHidden>
+          </BpkModalV3.Title>
+          <div className={getClassName('bpk-modal-v3-examples__image-top')}>
+            <BpkModalV3.CloseTrigger label="Close" onImage />
+          </div>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+              Weekend getaway
+            </BpkText>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              Find the best deals for your next weekend trip.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const SimpleHeadlineExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                Simple headline
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This modal uses a plain text title with label-1 typography in
+              the Header.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const CustomHeadlineExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.heading2} tagName="span">
+                Your dream trip awaits
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This modal demonstrates a custom headline with larger hero text.
+              The Title component is a semantic wrapper that allows any
+              typography styling.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const NoHeaderExample = () => (
+  <ModalContainer>
+    {({ open, onOpenChange }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          {/*
+            When no visible title is needed, use BpkVisuallyHidden to wrap the
+            Title. This provides an accessible dialog name for screen readers
+            without rendering a visible header.
+          */}
+          <BpkModalV3.Title>
+            <BpkVisuallyHidden>Accessible dialog name</BpkVisuallyHidden>
+          </BpkModalV3.Title>
+          <BpkModalV3.CloseTrigger label="Close" />
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This modal has no Header component. The CloseTrigger is placed
+              directly in Content, and BpkVisuallyHidden wraps the Title to
+              provide an accessible dialog name for screen readers.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+export {
+  DefaultExample,
+  SheetExample,
+  FullExample,
+  DesktopWithImageExample,
+  SheetWithImageExample,
+  SimpleHeadlineExample,
+  CustomHeadlineExample,
+  NoHeaderExample,
+};

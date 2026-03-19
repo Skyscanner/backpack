@@ -16,24 +16,19 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+import { Dialog } from '@ark-ui/react/dialog';
 
-import type { Props } from './src/BpkModal';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
-export type BpkModalProps = Props;
+import STYLES from './BpkModalV3.module.scss';
 
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
-};
+const getClassName = cssModules(STYLES);
+
+const BpkModalV3Backdrop = () => (
+  <Dialog.Backdrop
+    className={getClassName('bpk-modal-v3__backdrop')}
+    {...getDataComponentAttribute('BpkModalV3Backdrop')}
+  />
+);
+
+export default BpkModalV3Backdrop;

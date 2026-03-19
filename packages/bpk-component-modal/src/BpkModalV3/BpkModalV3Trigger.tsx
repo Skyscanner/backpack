@@ -16,24 +16,28 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+import type { ReactNode } from 'react';
 
-import type { Props } from './src/BpkModal';
+import { Dialog } from '@ark-ui/react/dialog';
 
-export type BpkModalProps = Props;
+import { getDataComponentAttribute } from '../../../bpk-react-utils';
 
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
+type BpkModalV3TriggerProps = {
+  children: ReactNode;
+  asChild?: boolean;
 };
+
+const BpkModalV3Trigger = ({
+  asChild,
+  children,
+}: BpkModalV3TriggerProps) => (
+  <Dialog.Trigger
+    asChild={asChild}
+    {...getDataComponentAttribute('BpkModalV3Trigger')}
+  >
+    {children}
+  </Dialog.Trigger>
+);
+
+export default BpkModalV3Trigger;
+export type { BpkModalV3TriggerProps };
