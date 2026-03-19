@@ -164,6 +164,11 @@
               "Checkbox.Control", // allowed for styling to be passed to ark-ui component
               "Checkbox.Indicator", // allowed for styling to be passed to ark-ui component
               "Checkbox.Label", // allowed for styling to be passed to ark-ui component
+              "Dialog.Backdrop", // allowed for styling to be passed to ark-ui component
+              "Dialog.CloseTrigger", // allowed for styling to be passed to ark-ui component
+              "Dialog.Content", // allowed for styling to be passed to ark-ui component
+              "Dialog.Description", // allowed for styling to be passed to ark-ui component
+              "Dialog.Positioner", // allowed for styling to be passed to ark-ui component
               "Dialog.Title" // allowed for styling to be passed to ark-ui component
             ]
           }
