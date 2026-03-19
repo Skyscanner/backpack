@@ -42,7 +42,7 @@ const BpkTableBody = ({children, className, type = TABLE_BODY_TYPES.default,  ..
   const classNames =  getClassName(type === TABLE_BODY_TYPES.striped && 'bpk-table__body--striped', className)
 
   return (
-    <tbody {...rest} className={classNames}>
+    <tbody {...rest} className={classNames || undefined} >
       {children}
     </tbody>
   );
