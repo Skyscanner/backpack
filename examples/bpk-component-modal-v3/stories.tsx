@@ -35,6 +35,11 @@ import {
 export default {
   title: 'bpk-component-modal-v3',
   component: BpkModalV3.Root,
+  argTypes: {
+    zoomEnabled: {
+      control: 'boolean',
+    },
+  },
 };
 
 export const Default = DefaultExample;
