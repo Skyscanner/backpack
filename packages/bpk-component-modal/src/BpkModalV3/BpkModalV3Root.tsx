@@ -33,23 +33,17 @@ type BpkModalV3RootProps = {
   open: boolean;
   onOpenChange: (details: { open: boolean }) => void;
   type?: BpkModalV3Type;
-  lazyMount?: boolean;
-  unmountOnExit?: boolean;
 };
 
 const BpkModalV3Root = ({
   children,
-  lazyMount,
   onOpenChange,
   open,
   type = 'default',
-  unmountOnExit,
 }: BpkModalV3RootProps) => (
   <Dialog.Root
     open={open}
     onOpenChange={onOpenChange}
-    lazyMount={lazyMount}
-    unmountOnExit={unmountOnExit}
   >
     <div
       className={getClassName(
