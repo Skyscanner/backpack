@@ -61,24 +61,24 @@ export const BpkFlexAlignExample = () => (
 export const BpkFlexJustifyExample = () => (
   <Wrapper>
     <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base} justify="flex-start">
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline}>flex-start</span></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline}>flex-start</span></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
     </BpkFlex>
     <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base} justify="center">
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline}>center</span></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline}>center</span></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
     </BpkFlex>
     <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base} justify="flex-end">
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline}>flex-end</span></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline}>flex-end</span></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
     </BpkFlex>
     <BpkFlex gap={BpkSpacing.SM} marginBottom={BpkSpacing.Base} justify="space-between">
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline}>space-between</span></BpkBox>
-      <BpkBox width="8.5rem" padding={BpkSpacing.MD}><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline}>space-between</span></BpkBox>
+      <BpkBox width="8.5rem"><span className={outline} /></BpkBox>
     </BpkFlex>
   </Wrapper>
 );
@@ -86,9 +86,9 @@ export const BpkFlexJustifyExample = () => (
 export const BpkFlexOrderExample = () => (
   <Wrapper>
     <BpkFlex gap={BpkSpacing.SM}>
-      <BpkBox order={3} width="100%" padding={BpkSpacing.MD}><span className={outline}>1</span></BpkBox>
-      <BpkBox order={1} width="100%" padding={BpkSpacing.MD}><span className={outline}>2</span></BpkBox>
-      <BpkBox order={2} width="100%" padding={BpkSpacing.MD}><span className={outline}>3</span></BpkBox>
+      <BpkBox order={3} width="100%"><span className={outline}>1</span></BpkBox>
+      <BpkBox order={1} width="100%"><span className={outline}>2</span></BpkBox>
+      <BpkBox order={2} width="100%"><span className={outline}>3</span></BpkBox>
     </BpkFlex>
   </Wrapper>
 );
