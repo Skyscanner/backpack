@@ -206,7 +206,7 @@ describe('BpkModalV3', () => {
     it('should render trigger', () => {
       render(
         <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
-          <BpkModalV3.Trigger>
+          <BpkModalV3.Trigger asChild>
             <button type="button">Open</button>
           </BpkModalV3.Trigger>
           <BpkModalV3.Content>
