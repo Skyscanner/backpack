@@ -23,6 +23,19 @@
     padding: tokens.bpk-spacing-lg();
   }
 
+  &__scrollable {
+    padding: tokens.bpk-spacing-lg();
+    overflow-y: auto;
+  }
+
+  &__paragraph {
+    margin-bottom: tokens.bpk-spacing-base();
+  }
+
+  &__contrast {
+    background-color: tokens.$bpk-canvas-contrast-day;
+  }
+
   &__split {
     display: flex;
     min-height: 20rem;
@@ -39,14 +52,18 @@
   &__split-image {
     position: relative;
     flex: 1;
-    background: tokens.$bpk-canvas-contrast-day;
-    border-end-end-radius: tokens.$bpk-border-radius-lg;
-    border-start-end-radius: tokens.$bpk-border-radius-lg;
   }
 
   &__image-top {
     position: relative;
     height: 12rem;
-    background: tokens.$bpk-canvas-contrast-day;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
   }
 }

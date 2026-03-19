@@ -28,6 +28,9 @@ import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const IMAGE_SRC =
+  'https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg';
+
 const ModalContainer = ({
   buttonLabel = 'Open modal',
   children,
@@ -48,6 +51,17 @@ const ModalContainer = ({
     </div>
   );
 };
+
+const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut egestas sit amet
+nisi nec ultrices. In efficitur justo ac tristique ultricies. Mauris luctus
+felis arcu, a porttitor turpis aliquet faucibus. Aenean nibh nulla, dictum
+sit amet efficitur cursus, molestie vitae enim. Aenean vel nunc purus.
+Vestibulum consectetur luctus eros ac bibendum. Donec pretium nunc mi, sed
+iaculis nibh aliquet in. Integer ut accumsan orci, non hendrerit nunc.
+Quisque ante enim, convallis lacinia arcu eu, tincidunt dignissim nunc.
+Nulla facilisi. Curabitur mattis sapien imperdiet, dignissim ligula id,
+maximus erat. Morbi sed eros vitae augue accumsan dictum sit amet eu lectus.
+Integer vitae consectetur libero, sed porttitor urna.`;
 
 const DefaultExample = () => (
   <ModalContainer>
@@ -135,6 +149,167 @@ const FullExample = () => (
   </ModalContainer>
 );
 
+const LongTitleExample = () => (
+  <ModalContainer>
+    {({ onOpenChange, open }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                We have to remember what&apos;s important in life: friends,
+                waffles, and work. Or waffles, friends, work. But work has to
+                come third.
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__body')}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This modal has a very long title to test how the header handles
+              text overflow alongside the close button.
+            </BpkText>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const OverflowingExample = () => (
+  <ModalContainer>
+    {({ onOpenChange, open }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                Overflowing content
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <div className={getClassName('bpk-modal-v3-examples__scrollable')}>
+            {Array.from({ length: 5 }, (_, i) => (
+              <BpkText
+                key={i}
+                textStyle={TEXT_STYLES.bodyDefault}
+                tagName="p"
+                className={getClassName('bpk-modal-v3-examples__paragraph')}
+              >
+                {loremIpsum}
+              </BpkText>
+            ))}
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
+const MultipleModalsExample = () => (
+  <>
+    <ModalContainer buttonLabel="Open modal 1">
+      {({ onOpenChange, open }) => (
+        <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+          <BpkModalV3.Backdrop />
+          <BpkModalV3.Content>
+            <BpkModalV3.Header>
+              <BpkModalV3.Title>
+                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                  Modal 1
+                </BpkText>
+              </BpkModalV3.Title>
+              <BpkModalV3.CloseTrigger label="Close" />
+            </BpkModalV3.Header>
+            <div className={getClassName('bpk-modal-v3-examples__body')}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is the first modal. Multiple modals can be rendered on
+                the same page.
+              </BpkText>
+            </div>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>
+      )}
+    </ModalContainer>
+    <br />
+    <ModalContainer buttonLabel="Open modal 2">
+      {({ onOpenChange, open }) => (
+        <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+          <BpkModalV3.Backdrop />
+          <BpkModalV3.Content>
+            <BpkModalV3.Header>
+              <BpkModalV3.Title>
+                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                  Modal 2
+                </BpkText>
+              </BpkModalV3.Title>
+              <BpkModalV3.CloseTrigger label="Close" />
+            </BpkModalV3.Header>
+            <div className={getClassName('bpk-modal-v3-examples__body')}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is the second modal.
+              </BpkText>
+            </div>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>
+      )}
+    </ModalContainer>
+    <br />
+    <ModalContainer buttonLabel="Open modal 3">
+      {({ onOpenChange, open }) => (
+        <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+          <BpkModalV3.Backdrop />
+          <BpkModalV3.Content>
+            <BpkModalV3.Header>
+              <BpkModalV3.Title>
+                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                  Modal 3
+                </BpkText>
+              </BpkModalV3.Title>
+              <BpkModalV3.CloseTrigger label="Close" />
+            </BpkModalV3.Header>
+            <div className={getClassName('bpk-modal-v3-examples__body')}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is the third modal.
+              </BpkText>
+            </div>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>
+      )}
+    </ModalContainer>
+  </>
+);
+
+const ContrastExample = () => (
+  <ModalContainer>
+    {({ onOpenChange, open }) => (
+      <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
+        <BpkModalV3.Backdrop />
+        <BpkModalV3.Content>
+          <div className={getClassName('bpk-modal-v3-examples__contrast')}>
+            <BpkModalV3.Header>
+              <BpkModalV3.Title>
+                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                  Contrast modal
+                </BpkText>
+              </BpkModalV3.Title>
+              <BpkModalV3.CloseTrigger label="Close" />
+            </BpkModalV3.Header>
+            <div className={getClassName('bpk-modal-v3-examples__body')}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This modal uses a contrast surface background.
+              </BpkText>
+            </div>
+          </div>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
 const DesktopWithImageExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
@@ -155,6 +330,11 @@ const DesktopWithImageExample = () => (
               </BpkText>
             </div>
             <div className={getClassName('bpk-modal-v3-examples__split-image')}>
+              <img
+                src={IMAGE_SRC}
+                alt=""
+                className={getClassName('bpk-modal-v3-examples__image')}
+              />
               <BpkModalV3.CloseTrigger label="Close" onImage />
             </div>
           </div>
@@ -178,6 +358,11 @@ const SheetWithImageExample = () => (
             <BpkVisuallyHidden>Sheet image modal</BpkVisuallyHidden>
           </BpkModalV3.Title>
           <div className={getClassName('bpk-modal-v3-examples__image-top')}>
+            <img
+              src={IMAGE_SRC}
+              alt=""
+              className={getClassName('bpk-modal-v3-examples__image')}
+            />
             <BpkModalV3.CloseTrigger label="Close" onImage />
           </div>
           <div className={getClassName('bpk-modal-v3-examples__body')}>
@@ -279,6 +464,10 @@ export {
   DefaultExample,
   SheetExample,
   FullExample,
+  LongTitleExample,
+  OverflowingExample,
+  MultipleModalsExample,
+  ContrastExample,
   DesktopWithImageExample,
   SheetWithImageExample,
   SimpleHeadlineExample,
