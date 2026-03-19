@@ -21,6 +21,7 @@ import { useState } from 'react';
 import BpkButton from '../../packages/bpk-component-button';
 import {
   BpkBox,
+  BpkBreakpoint,
   BpkFlex,
   BpkProvider,
   BpkSpacing,
@@ -303,7 +304,7 @@ const MultipleModalsExample = () => (
   </>
 );
 
-const DesktopWithImageExample = () => (
+const DefaultWithImageExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
@@ -312,7 +313,16 @@ const DesktopWithImageExample = () => (
           <BpkModalV3.Title>
             <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
           </BpkModalV3.Title>
-          <BpkFlex minHeight="20rem">
+          <BpkFlex
+            direction={{
+              base: 'column-reverse',
+              [BpkBreakpoint.SmallTablet]: 'row',
+            }}
+            minHeight={{
+              base: '100%',
+              [BpkBreakpoint.SmallTablet]: '20rem',
+            }}
+          >
             <BpkModalV3.Body>
               <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
@@ -460,7 +470,7 @@ export {
   LongTitleExample,
   OverflowingExample,
   MultipleModalsExample,
-  DesktopWithImageExample,
+  DefaultWithImageExample,
   SheetWithImageExample,
   SimpleHeadlineExample,
   CustomHeadlineExample,
