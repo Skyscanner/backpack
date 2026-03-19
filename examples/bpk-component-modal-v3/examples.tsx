@@ -440,20 +440,21 @@ const NoHeaderExample = () => (
         <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           {/*
-            When no visible title is needed, use BpkVisuallyHidden to wrap the
-            Title. This provides an accessible dialog name for screen readers
-            without rendering a visible header.
+            When no visible title is needed, use BpkVisuallyHidden inside the
+            Title. The Header still provides layout spacing for the close button.
           */}
-          <BpkModalV3.Title>
-            <BpkVisuallyHidden>Accessible dialog name</BpkVisuallyHidden>
-          </BpkModalV3.Title>
-          <BpkModalV3.CloseTrigger label="Close" />
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkVisuallyHidden>Accessible dialog name</BpkVisuallyHidden>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
           <BpkModalV3.Body>
             <BpkBox padding={BpkSpacing.LG}>
               <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                This modal has no Header component. The CloseTrigger is placed
-                directly in Content, and BpkVisuallyHidden wraps the Title to
-                provide an accessible dialog name for screen readers.
+                This modal has no visible title. BpkVisuallyHidden wraps the
+                Title text to provide an accessible dialog name for screen
+                readers while the Header handles close button layout.
               </BpkText>
             </BpkBox>
           </BpkModalV3.Body>
