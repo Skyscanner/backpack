@@ -24,11 +24,11 @@ import STYLES from './BpkModalV3.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkModalV3Backdrop = () => (
+const BpkModalV3Scrim = () => (
   <Dialog.Backdrop
-    className={getClassName('bpk-modal-v3__backdrop')}
-    {...getDataComponentAttribute('BpkModalV3Backdrop')}
+    className={getClassName('bpk-modal-v3__scrim')}
+    {...getDataComponentAttribute('BpkModalV3Scrim')}
   />
 );
 
-export default BpkModalV3Backdrop;
+export default BpkModalV3Scrim;

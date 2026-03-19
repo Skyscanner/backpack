@@ -28,9 +28,9 @@
   // Intentionally empty — used for BEM block and variant modifier classes
 }
 
-// Scrim/backdrop styles
+// Scrim styles
 
-.bpk-modal-v3__backdrop {
+.bpk-modal-v3__scrim {
   position: fixed;
   z-index: tokens.$bpk-zindex-modal;
   transition: opacity tokens.$bpk-duration-sm ease-in-out;
@@ -46,7 +46,7 @@
     opacity: 0;
   }
 
-  // Auto-hide backdrop for full variant
+  // Auto-hide scrim for full variant
   .bpk-modal-v3--full & {
     display: none;
   }
@@ -258,7 +258,7 @@
 // Reduced motion — disable all animations
 
 @media (prefers-reduced-motion: reduce) {
-  .bpk-modal-v3__backdrop {
+  .bpk-modal-v3__scrim {
     transition: none;
   }
 

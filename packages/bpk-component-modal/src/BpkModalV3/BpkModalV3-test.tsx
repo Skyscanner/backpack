@@ -42,7 +42,7 @@ const renderModal = (
 ) =>
   render(
     <BpkModalV3.Root {...defaultProps} {...props}>
-      <BpkModalV3.Backdrop />
+      <BpkModalV3.Scrim />
       <BpkModalV3.Content>
         {children || (
           <>
@@ -62,7 +62,7 @@ describe('BpkModalV3', () => {
     it('should export all sub-components', () => {
       expect(BpkModalV3.Root).toBeDefined();
       expect(BpkModalV3.Trigger).toBeDefined();
-      expect(BpkModalV3.Backdrop).toBeDefined();
+      expect(BpkModalV3.Scrim).toBeDefined();
       expect(BpkModalV3.Content).toBeDefined();
       expect(BpkModalV3.Header).toBeDefined();
       expect(BpkModalV3.Title).toBeDefined();
@@ -118,11 +118,11 @@ describe('BpkModalV3', () => {
     });
   });
 
-  describe('Backdrop', () => {
+  describe('Scrim', () => {
     it('should render with BEM class', () => {
       const { container } = renderModal();
-      const backdrop = container.querySelector('[data-scope="dialog"][data-part="backdrop"]');
-      expect(backdrop?.className).toContain('bpk-modal-v3__backdrop');
+      const scrim = container.querySelector('[data-scope="dialog"][data-part="backdrop"]');
+      expect(scrim?.className).toContain('bpk-modal-v3__scrim');
     });
   });
 

@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-import BpkModalV3Backdrop from './BpkModalV3Backdrop';
 import BpkModalV3CloseTrigger from './BpkModalV3CloseTrigger';
 import BpkModalV3Content from './BpkModalV3Content';
 import BpkModalV3Description from './BpkModalV3Description';
 import BpkModalV3Header from './BpkModalV3Header';
 import BpkModalV3Root from './BpkModalV3Root';
+import BpkModalV3Scrim from './BpkModalV3Scrim';
 import BpkModalV3Title from './BpkModalV3Title';
 import BpkModalV3Trigger from './BpkModalV3Trigger';
 
 const BpkModalV3 = {
   Root: BpkModalV3Root,
   Trigger: BpkModalV3Trigger,
-  Backdrop: BpkModalV3Backdrop,
+  Scrim: BpkModalV3Scrim,
   Content: BpkModalV3Content,
   Header: BpkModalV3Header,
   Title: BpkModalV3Title,

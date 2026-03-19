@@ -67,7 +67,7 @@ const DefaultExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -97,7 +97,7 @@ const SheetExample = () => (
         onOpenChange={onOpenChange}
         type="sheet"
       >
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -127,7 +127,7 @@ const FullExample = () => (
         onOpenChange={onOpenChange}
         type="full"
       >
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -153,7 +153,7 @@ const LongTitleExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -181,7 +181,7 @@ const OverflowingExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -214,7 +214,7 @@ const MultipleModalsExample = () => (
     <ModalContainer buttonLabel="Open modal 1">
       {({ onOpenChange, open }) => (
         <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-          <BpkModalV3.Backdrop />
+          <BpkModalV3.Scrim />
           <BpkModalV3.Content>
             <BpkModalV3.Header>
               <BpkModalV3.Title>
@@ -238,7 +238,7 @@ const MultipleModalsExample = () => (
     <ModalContainer buttonLabel="Open modal 2">
       {({ onOpenChange, open }) => (
         <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-          <BpkModalV3.Backdrop />
+          <BpkModalV3.Scrim />
           <BpkModalV3.Content>
             <BpkModalV3.Header>
               <BpkModalV3.Title>
@@ -261,7 +261,7 @@ const MultipleModalsExample = () => (
     <ModalContainer buttonLabel="Open modal 3">
       {({ onOpenChange, open }) => (
         <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-          <BpkModalV3.Backdrop />
+          <BpkModalV3.Scrim />
           <BpkModalV3.Content>
             <BpkModalV3.Header>
               <BpkModalV3.Title>
@@ -287,7 +287,7 @@ const ContrastExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <div className={getClassName('bpk-modal-v3-examples__contrast')}>
             <BpkModalV3.Header>
@@ -314,7 +314,7 @@ const DesktopWithImageExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Title>
             <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
@@ -352,7 +352,7 @@ const SheetWithImageExample = () => (
         onOpenChange={onOpenChange}
         type="sheet"
       >
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Title>
             <BpkVisuallyHidden>Sheet image modal</BpkVisuallyHidden>
@@ -383,7 +383,7 @@ const SimpleHeadlineExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -409,7 +409,7 @@ const CustomHeadlineExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>
@@ -436,7 +436,7 @@ const NoHeaderExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
       <BpkModalV3.Root open={open} onOpenChange={onOpenChange}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           {/*
             When no visible title is needed, use BpkVisuallyHidden to wrap the

@@ -34,7 +34,7 @@ describe('BpkModalV3 accessibility tests', () => {
   it('should not have accessibility issues with default variant open', async () => {
     const { container } = render(
       <BpkModalV3.Root open onOpenChange={jest.fn()}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>Default modal title</BpkModalV3.Title>
@@ -50,7 +50,7 @@ describe('BpkModalV3 accessibility tests', () => {
   it('should not have accessibility issues with sheet variant open', async () => {
     const { container } = render(
       <BpkModalV3.Root open onOpenChange={jest.fn()} type="sheet">
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>Sheet modal title</BpkModalV3.Title>
@@ -66,7 +66,7 @@ describe('BpkModalV3 accessibility tests', () => {
   it('should not have accessibility issues with full variant open', async () => {
     const { container } = render(
       <BpkModalV3.Root open onOpenChange={jest.fn()} type="full">
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>Full modal title</BpkModalV3.Title>
@@ -82,7 +82,7 @@ describe('BpkModalV3 accessibility tests', () => {
   it('should not have accessibility issues with Title and Description', async () => {
     const { container } = render(
       <BpkModalV3.Root open onOpenChange={jest.fn()}>
-        <BpkModalV3.Backdrop />
+        <BpkModalV3.Scrim />
         <BpkModalV3.Content>
           <BpkModalV3.Header>
             <BpkModalV3.Title>Modal with description</BpkModalV3.Title>
