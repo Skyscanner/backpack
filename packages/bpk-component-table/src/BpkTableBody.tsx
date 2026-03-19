@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode, HTMLAttributes } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -24,7 +24,7 @@ import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+export interface BpkTableBodyProps {
   /** The content of the table */
   children: ReactNode;
   /** Applies alternating row background colours */

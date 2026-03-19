@@ -3,9 +3,7 @@
 exports[`BpkTableBody should render correctly 1`] = `
 <DocumentFragment>
   <table>
-    <tbody
-      class=""
-    >
+    <tbody>
       <tr />
     </tbody>
   </table>
@@ -16,7 +14,6 @@ exports[`BpkTableBody should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
   <table>
     <tbody
-      class=""
       data-foo="bar"
       id="my-custom-id"
     >
@@ -29,9 +26,7 @@ exports[`BpkTableBody should render correctly with arbitrary props 1`] = `
 exports[`BpkTableBody should render correctly with custom class 1`] = `
 <DocumentFragment>
   <table>
-    <tbody
-      class="my-custom-class"
-    >
+    <tbody>
       <tr />
     </tbody>
   </table>
