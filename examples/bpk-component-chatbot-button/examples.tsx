@@ -19,7 +19,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
-import BpkChatbotButton from '../../packages/bpk-component-chatbot-button/src/BpkChatbotButton';
+import BpkChatbotButton from '../../packages/bpk-component-chatbot-button';
 import StarIcon from '../../packages/bpk-component-icon/lg/star';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 

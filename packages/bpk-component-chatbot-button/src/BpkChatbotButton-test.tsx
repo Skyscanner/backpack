@@ -59,6 +59,25 @@ describe('BpkChatbotButton', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should respond to controlled expanded prop changing', () => {
+    const { rerender } = render(
+      <BpkChatbotButton label="Chat with AI" expanded onClick={mockOnClick} />,
+    );
+    const button = screen.getByTestId('bpk-chatbot-button');
+    expect(button).toHaveAttribute('aria-expanded', 'true');
+    expect(button).not.toHaveAttribute('aria-label');
+
+    rerender(
+      <BpkChatbotButton
+        label="Chat with AI"
+        expanded={false}
+        onClick={mockOnClick}
+      />,
+    );
+    expect(button).toHaveAttribute('aria-expanded', 'false');
+    expect(button).toHaveAttribute('aria-label', 'Chat with AI');
+  });
+
   it('should use aria-label when collapsed', () => {
     render(
       <BpkChatbotButton label="Chat with AI" onClick={mockOnClick} />,

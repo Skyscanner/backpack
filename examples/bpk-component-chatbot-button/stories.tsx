@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkChatbotButton from '../../packages/bpk-component-chatbot-button/src/BpkChatbotButton';
+import BpkChatbotButton from '../../packages/bpk-component-chatbot-button';
 
 import {
   AnimatedExample,

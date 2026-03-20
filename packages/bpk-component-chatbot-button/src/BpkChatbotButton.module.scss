@@ -25,15 +25,16 @@
   // Base button resets (subset of bpk-button, omitting display:inline-block
   // so our inline-flex is not overridden by stylelint reordering @includes after properties)
   display: inline-flex;
-  width: calc(tokens.$bpk-one-pixel-rem * 48);
-  height: calc(tokens.$bpk-one-pixel-rem * 48);
+  width: tokens.$bpk-button-large-height;
+  height: tokens.$bpk-button-large-height;
   padding: 0;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   transition:
     width tokens.$bpk-duration-base ease-in-out,
-    min-width tokens.$bpk-duration-base ease-in-out;
+    min-width tokens.$bpk-duration-base ease-in-out,
+    padding tokens.$bpk-duration-base ease-in-out;
   border: 0;
   cursor: pointer;
   overflow: hidden;

@@ -42,6 +42,7 @@ export type BpkChatbotButtonProps = {
   isAnimate?: boolean;
   /** Duration in ms to stay expanded when isAnimate is true. Default: 2000 */
   animationDuration?: number;
+  /** Note: click events do not bubble — stopPropagation is called internally to prevent triggering parent click handlers. */
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 };
