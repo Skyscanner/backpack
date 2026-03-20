@@ -169,6 +169,7 @@
               "Dialog.Content", // allowed for styling to be passed to ark-ui component
               "Dialog.Description", // allowed for styling to be passed to ark-ui component
               "Dialog.Positioner", // allowed for styling to be passed to ark-ui component
+              "Dialog.Trigger", // allowed for styling to be passed to ark-ui component
               "Dialog.Title" // allowed for styling to be passed to ark-ui component
             ]
           }

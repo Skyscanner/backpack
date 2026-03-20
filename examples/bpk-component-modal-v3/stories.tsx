@@ -29,6 +29,7 @@ import {
   SheetWithImageExample,
   SimpleHeadlineExample,
   CustomHeadlineExample,
+  TriggerExample,
   NoHeaderExample,
 } from './examples';
 
@@ -52,4 +53,5 @@ export const DefaultWithImage = DefaultWithImageExample;
 export const SheetWithImage = SheetWithImageExample;
 export const SimpleHeadline = SimpleHeadlineExample;
 export const CustomHeadline = CustomHeadlineExample;
+export const Trigger = TriggerExample;
 export const NoHeader = NoHeaderExample;

@@ -433,6 +433,37 @@ const CustomHeadlineExample = () => (
   </ModalContainer>
 );
 
+const TriggerExample = () => (
+  <BpkProvider>
+    <ArkLocaleProvider>
+      <BpkModalV3.Root>
+        <BpkModalV3.Trigger asChild>
+          <BpkButton>Open modal</BpkButton>
+        </BpkModalV3.Trigger>
+        <BpkModalV3.Scrim />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>
+              <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                Trigger example
+              </BpkText>
+            </BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <BpkModalV3.Body>
+            <BpkBox padding={BpkSpacing.LG}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This modal uses BpkModalV3.Trigger with asChild to open
+                without any external state management.
+              </BpkText>
+            </BpkBox>
+          </BpkModalV3.Body>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>
+    </ArkLocaleProvider>
+  </BpkProvider>
+);
+
 const NoHeaderExample = () => (
   <ModalContainer>
     {({ onOpenChange, open }) => (
@@ -475,5 +506,6 @@ export {
   SheetWithImageExample,
   SimpleHeadlineExample,
   CustomHeadlineExample,
+  TriggerExample,
   NoHeaderExample,
 };
