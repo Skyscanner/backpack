@@ -22,7 +22,7 @@ import BpkDividedCard, { ORIENTATION } from './BpkDividedCard';
 
 figma.connect(
   BpkDividedCard,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22678%3A26157',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49338',
   {
     props: {
       orientation: figma.enum('Size', {

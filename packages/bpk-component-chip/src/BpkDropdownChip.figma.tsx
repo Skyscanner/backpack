@@ -24,7 +24,7 @@ import { CHIP_TYPES } from './commonTypes';
 
 figma.connect(
   BpkDropdownChip,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=6730%3A6807",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A52134",
   {
     variant: { Type: "Dropdown" },
     props: {

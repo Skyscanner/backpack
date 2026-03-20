@@ -25,13 +25,17 @@ figma.connect(
   'https://www.figma.com/design/ITvypOGdga42nM2ipBM4uk/Bpk-2.0?node-id=90-7627',
   {
     props: {
-      checked: figma.boolean('Checked'),
+      checked: figma.enum('State', {
+        'selected': true,
+      }),
       variant: figma.enum('Style', {
         'On Canvas Default': CHECKBOX_CARD_VARIANTS.onCanvasDefault,
         'On Canvas Contrast': CHECKBOX_CARD_VARIANTS.onCanvasContrast,
         'On Surface Contrast': CHECKBOX_CARD_VARIANTS.onSurfaceContrast,
       }),
-      disabled: figma.boolean('Disabled'),
+      disabled: figma.enum('State', {
+        'disabled': true,
+      }),
       label: figma.textContent('Label'),
     },
     example: ({ checked, disabled, label, variant }) => (
