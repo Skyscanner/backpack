@@ -40,7 +40,7 @@ const BpkModalV3CloseTrigger = ({
       onImage && 'bpk-modal-v3__close-trigger--on-image',
     )}
     aria-label={label}
-    {...getDataComponentAttribute('BpkModalV3CloseTrigger')}
+    {...getDataComponentAttribute('ModalV3CloseTrigger')}
   >
     <CloseIcon />
   </Dialog.CloseTrigger>

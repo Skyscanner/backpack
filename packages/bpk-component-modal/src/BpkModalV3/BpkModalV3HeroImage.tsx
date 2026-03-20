@@ -45,7 +45,7 @@ const BpkModalV3HeroImage = ({
     <div
       className={getClassName('bpk-modal-v3__hero-image')}
       style={style}
-      {...getDataComponentAttribute('BpkModalV3HeroImage')}
+      {...getDataComponentAttribute('ModalV3HeroImage')}
     >
       <img
         src={src}

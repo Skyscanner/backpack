@@ -28,7 +28,7 @@ type BpkModalV3DescriptionProps = {
 
 const BpkModalV3Description = ({ children }: BpkModalV3DescriptionProps) => (
   <Dialog.Description
-    {...getDataComponentAttribute('BpkModalV3Description')}
+    {...getDataComponentAttribute('ModalV3Description')}
   >
     {children}
   </Dialog.Description>

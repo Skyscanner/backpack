@@ -34,7 +34,7 @@ const BpkModalV3Content = ({ children }: BpkModalV3ContentProps) => (
   <Dialog.Positioner className={getClassName('bpk-modal-v3__positioner')}>
     <Dialog.Content
       className={getClassName('bpk-modal-v3__content')}
-      {...getDataComponentAttribute('BpkModalV3Content')}
+      {...getDataComponentAttribute('ModalV3Content')}
     >
       {children}
     </Dialog.Content>

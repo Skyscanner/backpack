@@ -33,7 +33,7 @@ const BpkModalV3Trigger = ({
 }: BpkModalV3TriggerProps) => (
   <Dialog.Trigger
     asChild={asChild}
-    {...getDataComponentAttribute('BpkModalV3Trigger')}
+    {...getDataComponentAttribute('ModalV3Trigger')}
   >
     {children}
   </Dialog.Trigger>

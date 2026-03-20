@@ -31,7 +31,7 @@ type BpkModalV3HeaderProps = {
 const BpkModalV3Header = ({ children }: BpkModalV3HeaderProps) => (
   <div
     className={getClassName('bpk-modal-v3__header')}
-    {...getDataComponentAttribute('BpkModalV3Header')}
+    {...getDataComponentAttribute('ModalV3Header')}
   >
     {children}
   </div>

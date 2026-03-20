@@ -51,7 +51,7 @@ const BpkModalV3Root = ({
         `bpk-modal-v3--${type}`,
       )}
       data-type={type}
-      {...getDataComponentAttribute('BpkModalV3')}
+      {...getDataComponentAttribute('ModalV3')}
     >
       {children}
     </div>

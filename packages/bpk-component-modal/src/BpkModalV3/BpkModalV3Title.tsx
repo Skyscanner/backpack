@@ -33,7 +33,7 @@ type BpkModalV3TitleProps = {
 const BpkModalV3Title = ({ children }: BpkModalV3TitleProps) => (
   <Dialog.Title
     className={getClassName('bpk-modal-v3__title')}
-    {...getDataComponentAttribute('BpkModalV3Title')}
+    {...getDataComponentAttribute('ModalV3Title')}
   >
     {children}
   </Dialog.Title>

@@ -27,7 +27,7 @@ const getClassName = cssModules(STYLES);
 const BpkModalV3Scrim = () => (
   <Dialog.Backdrop
     className={getClassName('bpk-modal-v3__scrim')}
-    {...getDataComponentAttribute('BpkModalV3Scrim')}
+    {...getDataComponentAttribute('ModalV3Scrim')}
   />
 );
 

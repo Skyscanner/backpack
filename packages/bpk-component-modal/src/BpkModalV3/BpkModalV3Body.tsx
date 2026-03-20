@@ -31,7 +31,7 @@ type BpkModalV3BodyProps = {
 const BpkModalV3Body = ({ children }: BpkModalV3BodyProps) => (
   <div
     className={getClassName('bpk-modal-v3__body')}
-    {...getDataComponentAttribute('BpkModalV3Body')}
+    {...getDataComponentAttribute('ModalV3Body')}
   >
     {children}
   </div>
