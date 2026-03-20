@@ -365,7 +365,7 @@ This guide should help AI agents understand the structure, patterns, and convent
 
 When replacing a hardcoded style value (hex color, px/rem spacing, border radius, box shadow, etc.) with a BPK token:
 
-1. **Check `docs/bpk-token-value-lookup.md`** — reverse lookup table mapping raw values → correct SCSS and TSX token names.
+1. **Check `.claude/rules/bpk-token-value-lookup.md`** — reverse lookup table mapping raw values → correct SCSS and TSX token names.
 2. **If not found there**, search `node_modules/@skyscanner/bpk-foundations-web/tokens/base.es6.d.ts` for the exact exported name.
 3. **NEVER invent, guess, or approximate a token name.** If you cannot confirm it exists in `base.es6.d.ts` or `base.default.scss`, use the hardcoded value as-is.
 
@@ -375,7 +375,7 @@ When replacing a hardcoded style value (hex color, px/rem spacing, border radius
 
 | Context | Pattern | Example |
 |---------|---------|---------|
-| SCSS | `tokens.$bpk-{semantic-name}-{day\|night}` | `tokens.$bpk-core-accent-day` |
+| SCSS | `tokens.$bpk-{semantic-name}-{day|night}` | `tokens.$bpk-core-accent-day` |
 | TSX import | camelCase, no `bpk-` prefix | `coreAccentDay` |
 
 ### Common mistakes
