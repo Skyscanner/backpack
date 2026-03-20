@@ -26,12 +26,17 @@ confidence threshold is configurable and defaults to 75.
 
 ```
 Phase 0  Detect review mode (PR vs local)
-Phase 1  Gather context (diff, changed files, history context, chunking)
+Phase 1  Gather context IN PARALLEL (diff/files, references, history)
 Phase 2  Launch 5 specialist agents IN PARALLEL
 Phase 3  Score each issue independently (parallel scoring agents)
 Phase 4  Filter (>= threshold), format, and output
 Phase 5  Orchestrator self-check (gates before final/autopost)
 ```
+
+**Parallel execution contract (Phases 1-3):**
+- For each parallel phase, dispatch all independent tasks in one turn/message.
+- Do not serially wait between independent tasks.
+- If runtime/tooling cannot parallelise, mark `parallel_degraded=true` in internal diagnostics.
 
 ---
 
@@ -60,7 +65,12 @@ Before launching agents, the orchestrator (you) must collect all shared context.
 **do NOT fetch the diff themselves** — the orchestrator fetches it once and injects it into
 each agent prompt. This ensures sub-agents work even in restricted tool environments.
 
-**Step 1.1** — Get the diff and list of changed files:
+Run Phase 1 tasks in parallel:
+- Workstream A: diff + changed files
+- Workstream B: reference docs
+- Workstream C: history context
+
+**Step 1.1A (parallel)** — Get the diff and list of changed files:
 ```bash
 # PR mode
 gh pr diff NNN --repo Skyscanner/backpack
@@ -71,19 +81,12 @@ git diff main...HEAD
 git diff main...HEAD --name-only
 ```
 
-**Step 1.2** — Read reference documents (skim for relevant sections):
+**Step 1.1B (parallel)** — Read reference documents (skim for relevant sections):
 - `.specify/memory/constitution.md` — Core principles I-XIII
 - `CODE_REVIEW_GUIDELINES.md` — Quality standards
 - `decisions/` — Relevant decision records (modern-sass-api.md, accessibility-tests.md, etc.)
 
-**Step 1.3** — Summarise what this PR does in 2-3 sentences.
-
-**Step 1.4** — For each specialist agent, embed into its prompt:
-- The PR summary (Step 1.3)
-- Relevant diff chunks (not always full diff)
-- The list of changed files
-
-**Step 1.5** — Build history context in the orchestrator (PR mode):
+**Step 1.1C (parallel)** — Build history context in the orchestrator (PR mode):
 ```bash
 # Changed-file git history
 git log --oneline -10 -- [file]
@@ -97,7 +100,15 @@ gh pr view [PR_NUMBER] --repo Skyscanner/backpack --comments
 - Summarise git history/blame/revert signals for each changed line range.
 - Inject all summaries into the History Agent prompt as `history_context`.
 
-**Step 1.6** — Diff chunking protocol (deterministic):
+**Step 1.2** — Join parallel workstreams and summarise what this PR does in 2-3 sentences.
+
+**Step 1.3** — For each specialist agent, embed into its prompt:
+- The PR summary (Step 1.2)
+- Relevant diff chunks (not always full diff)
+- The list of changed files
+- `history_context` generated in Step 1.1C
+
+**Step 1.4** — Diff chunking protocol (deterministic):
 - Split diff by file, then by hunks, then into chunks of at most 200 added/removed lines.
 - Cap context per agent with `MAX_CHUNKS_PER_AGENT` (default 40). If exceeded, prioritise:
   1) hunks with code changes over docs/changelog, 2) larger hunks, 3) high-risk file types.
@@ -117,6 +128,12 @@ gh pr view [PR_NUMBER] --repo Skyscanner/backpack --comments
 
 Launch all 5 agents in a **single message** using multiple Agent tool calls. Each agent
 receives: (a) the PR summary, (b) the list of changed files, (c) its domain-specific rules.
+
+Phase 2 parallel execution requirements:
+- Dispatch all 5 specialist agents in one turn.
+- Do not wait for Agent 1 before dispatching Agent 2-5.
+- If one agent fails, continue with others and apply retry policy from Phase 2A.
+- For very large code changes, Bug Scanner may be fan-out parallelised by chunk, then merged.
 
 Each agent MUST return a JSON array of issues:
 ```json
@@ -396,7 +413,12 @@ If an agent finds no issues, it returns `[]`.
 ## Phase 3: Confidence Scoring
 
 After all 5 agents return, collect every issue into a single list. Then launch **parallel
-scoring agents** — one per issue (or batch small groups if there are many).
+scoring agents** — exactly one scoring agent per issue.
+
+Phase 3 parallel execution requirements:
+- Dispatch all scoring calls in one turn.
+- Preserve issue index so each score maps back to one issue deterministically.
+- Do not use multi-issue batch scoring payloads.
 
 Each scoring agent receives:
 - The issue description
