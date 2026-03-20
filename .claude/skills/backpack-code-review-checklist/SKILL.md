@@ -5,10 +5,15 @@ description: |
   Runs 5 parallel specialist agents, then confidence-scores findings to reduce false positives.
   Use for PR review, Constitution compliance checks, and pre-merge validation.
 author: Claude Code
-version: 2.0.0
+version: 2.1.0
 date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only output, clarified Agent 1 scope/autopost no-partial-post behavior, moved History Agent to context-only execution, and surfaced confidence explanations for human-gated findings.
+  v2.1.0: Architecture overhaul — agents self-fetch data instead of orchestrator injection.
+    Removed diff chunking protocol and sandbox restrictions. Agents now have full tool access
+    (Bash, Read, Grep, Glob, gh CLI) enabling iterative investigation and true parallelism.
+    Added early-exit check for closed/draft/trivial PRs. Simplified Phase 1 to lightweight
+    metadata collection only. Retained all Backpack domain knowledge and confidence scoring.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only output, clarified Agent 1 scope/autopost no-partial-post behavior, and surfaced confidence explanations for human-gated findings.
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
@@ -25,115 +30,83 @@ confidence threshold is configurable and defaults to 75.
 ## Execution Flow
 
 ```
-Phase 0  Detect review mode (PR vs local)
-Phase 1  Gather context IN PARALLEL (diff/files, references, history)
-Phase 2  Launch 5 specialist agents IN PARALLEL
-Phase 3  Score each issue independently (parallel scoring agents)
+Phase 0  Detect review mode + early-exit check
+Phase 1  Lightweight metadata (PR number, SHA, file list, reference docs)
+Phase 2  Launch 5 specialist agents IN PARALLEL (agents self-fetch data)
+Phase 3  Confidence scoring (batch)
 Phase 4  Filter (>= threshold), format, and output
 Phase 5  Orchestrator self-check (gates before final/autopost)
 ```
 
-**Parallel execution contract (Phases 1-3):**
-- For each parallel phase, dispatch all independent tasks in one turn/message.
-- Do not serially wait between independent tasks.
-- If runtime/tooling cannot parallelise, mark `parallel_degraded=true` in internal diagnostics.
+**Key architecture decision:** Agents have full tool access (Bash, Read, Grep, Glob, `gh` CLI).
+Each agent fetches its own data (diff, files, history) independently. This enables true
+parallelism — all 5 agents start working immediately without waiting for a central data
+collection phase. The orchestrator's role is coordination and synthesis, not data fetching.
 
 ---
 
-## Phase 0: Detect Review Mode
+## Phase 0: Detect Review Mode + Early Exit
 
-**Before doing anything else**, determine the review mode:
+**Before doing anything else**, determine the review mode and check if review is needed.
+
+**Step 0.1** — Determine review mode:
 
 - **PR mode**: user message contains a `github.com/.../pull/NNN` URL
   - Extract the PR number
-  - Run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files` to get head commit SHA and changed files
+  - Run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files,state,isDraft,body`
   - Link format (use full 40-character SHA): `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
   - Autopost guardrail:
     - Default is **no autopost**. Print review to conversation first.
     - Post to PR only if user explicitly asks, or `BACKPACK_REVIEW_AUTOPOST=true`.
     - Findings with confidence 75-90 require human confirmation before posting.
-    - If any 75-90 finding exists, block posting of the entire batch (no partial posting).
 
 - **Local mode**: no PR URL
   - Use `git diff main...HEAD` to get changes
   - Output review to conversation only — do NOT post to GitHub
   - Link format: `[path/file.tsx:29](path/file.tsx#L29)`
 
-## Phase 1: Gather Context
+**Step 0.2** — Early exit check (PR mode only). Skip review if:
+- PR is closed or merged
+- PR is a draft
+- PR is trivial/automated (e.g. only changelog, only dependency bumps)
+- PR already has a code review comment from Claude
 
-Before launching agents, the orchestrator (you) must collect all shared context. Sub-agents
-**do NOT fetch the diff themselves** — the orchestrator fetches it once and injects it into
-each agent prompt. This ensures sub-agents work even in restricted tool environments.
+If any condition is met, inform the user and stop.
 
-Run Phase 1 tasks in parallel:
-- Workstream A: diff + changed files
-- Workstream B: reference docs
-- Workstream C: history context
+## Phase 1: Lightweight Metadata Collection
 
-**Step 1.1A (parallel)** — Get the diff and list of changed files:
-```bash
-# PR mode
-gh pr diff NNN --repo Skyscanner/backpack
-gh pr view NNN --repo Skyscanner/backpack --json files,headRefOid,body
+The orchestrator collects only **lightweight metadata** — not the diff itself. Agents will
+fetch their own data using their full tool access (Bash, Read, Grep, Glob, `gh` CLI).
 
-# Local mode
-git diff main...HEAD
-git diff main...HEAD --name-only
-```
+**Step 1.1** — Collect PR metadata (already done in Phase 0):
+- PR number, head commit SHA, list of changed file paths, PR body/description
 
-**Step 1.1B (parallel)** — Read reference documents (skim for relevant sections):
+**Step 1.2** — Read reference documents (skim for relevant sections):
 - `.specify/memory/constitution.md` — Core principles I-XIII
 - `CODE_REVIEW_GUIDELINES.md` — Quality standards
 - `decisions/` — Relevant decision records (modern-sass-api.md, accessibility-tests.md, etc.)
 
-**Step 1.1C (parallel)** — Build history context in the orchestrator (PR mode):
-```bash
-# Changed-file git history
-git log --oneline -10 -- [file]
-git log --oneline --all --grep="revert" -- [file]
+**Step 1.3** — Summarise what this PR does in 2-3 sentences based on file list and PR body.
 
-# Past PR comments touching similar files/components
-gh pr list --repo Skyscanner/backpack --state merged --limit 20 --search "[filename]"
-gh pr view [PR_NUMBER] --repo Skyscanner/backpack --comments
-```
-- Summarise recurring review feedback per file/component.
-- Summarise git history/blame/revert signals for each changed line range.
-- Inject all summaries into the History Agent prompt as `history_context`.
-
-**Step 1.2** — Join parallel workstreams and summarise what this PR does in 2-3 sentences.
-
-**Step 1.3** — For each specialist agent, embed into its prompt:
-- The PR summary (Step 1.2)
-- Relevant diff chunks (not always full diff)
-- The list of changed files
-- `history_context` generated in Step 1.1C
-
-**Step 1.4** — Diff chunking protocol (deterministic):
-- Split diff by file, then by hunks, then into chunks of at most 200 added/removed lines.
-- Cap context per agent with `MAX_CHUNKS_PER_AGENT` (default 40). If exceeded, prioritise:
-  1) hunks with code changes over docs/changelog, 2) larger hunks, 3) high-risk file types.
-- Route chunks by agent scope:
-  - Constitution/API: `.ts`, `.tsx`, `README.md`, `examples/**`
-  - Sass/Token: `.scss`
-  - A11y/Testing: `*-test.*`, `accessibility-test.*`, snapshots, stories/examples
-  - History: changed file list + changed line ranges + `history_context` (no direct GH calls)
-  - Bug Scanner: highest-risk code hunks across `.ts`, `.tsx`, `.js`
-- If truncation occurs, include `truncation_notice` listing omitted files/chunks in final output.
-
-> **Why:** Sub-agents launched via the Agent tool run in a sandboxed context where Bash/GitHub
-> tool permissions may be restricted. The orchestrator must be the single point that fetches
-> external data; agents should only read local files or analyse context passed to them.
+That's it. The orchestrator does NOT fetch the diff, does NOT build history context, and
+does NOT do any chunking. Each agent fetches exactly what it needs.
 
 ## Phase 2: Launch 5 Specialist Agents in Parallel
 
-Launch all 5 agents in a **single message** using multiple Agent tool calls. Each agent
-receives: (a) the PR summary, (b) the list of changed files, (c) its domain-specific rules.
+Launch all 5 agents in a **single message** using multiple Agent tool calls.
 
-Phase 2 parallel execution requirements:
-- Dispatch all 5 specialist agents in one turn.
-- Do not wait for Agent 1 before dispatching Agent 2-5.
-- If one agent fails, continue with others and apply retry policy from Phase 2A.
-- For very large code changes, Bug Scanner may be fan-out parallelised by chunk, then merged.
+Each agent receives from the orchestrator: (a) the PR number (or "local mode"), (b) the
+head commit SHA, (c) the list of changed file paths, (d) the PR summary from Phase 1,
+and (e) its domain-specific Backpack rules.
+
+**Each agent self-fetches its own data** using Bash, Read, Grep, Glob, and `gh` CLI.
+This means agents can do iterative investigation — reading additional files, checking
+mixin sources, examining package exports — without being limited to pre-injected context.
+
+Phase 2 requirements:
+- Dispatch all 5 specialist agents in one turn (single message, multiple Agent calls).
+- If one agent fails, continue with others.
+- Aggregate results: sort by file path, then startLine, then source.
 
 Each agent MUST return a JSON array of issues:
 ```json
@@ -156,15 +129,6 @@ Each agent MUST return a JSON array of issues:
 
 If an agent finds no issues, it returns `[]`.
 
-### Phase 2A: Parallel Failure Strategy (Deterministic)
-
-- Retry each failed sub-agent call up to 2 times with exponential backoff (1s, then 2s).
-- If still failing, continue with partial results and emit a diagnostic record:
-  - `{"source":"orchestrator","title":"Agent failure","agent":"NAME","error":"...","retries":2}`
-- Preserve deterministic ordering in aggregation:
-  1) sort by file path, 2) startLine, 3) source, 4) title.
-- Always include which agents were executed, retried, failed, and succeeded.
-
 ---
 
 ### Agent 1: Constitution & API Agent
@@ -178,11 +142,16 @@ If an agent finds no issues, it returns `[]`.
 > This agent intentionally covers API/TS/docs/design checks. Sass/token checks are handled
 > by Agent 2, and accessibility/testing checks are handled by Agent 3.
 >
-> **PR summary:** [INSERT]
+> **PR number:** [NUMBER] (repo: Skyscanner/backpack) — or "local mode" with `git diff main...HEAD`
+> **Head commit SHA:** [SHA]
 > **Changed files:** [INSERT LIST]
-> **Diff:** [INSERT FULL DIFF OR RELEVANT SECTIONS]
+> **PR summary:** [INSERT]
 >
-> Read each changed file, then check:
+> **Step 1: Fetch the diff for .ts, .tsx, README.md, and examples/ files.**
+> Use `gh pr diff [NUMBER] --repo Skyscanner/backpack` or `git diff main...HEAD` and
+> focus on files relevant to your scope. Read changed files directly with the Read tool.
+>
+> **Step 2: Check each changed file against these rules:**
 >
 > **Naming & File Conventions (Constitution II)**
 > - Component files: PascalCase (`BpkFoo.tsx`)
@@ -194,14 +163,13 @@ If an agent finds no issues, it returns `[]`.
 > **License Headers (NON-NEGOTIABLE)**
 > - ALL `.ts`, `.tsx`, `.scss`, `.js` files must have Apache 2.0 header
 > - Must contain "Copyright 2016 Skyscanner Ltd"
-> - For changed shell scripts, verify comment style is `#` comments after shebang
 > - Check with: `grep -L "Copyright 2016 Skyscanner" [files]`
 >
 > **API Encapsulation (Constitution XI — CRITICAL)**
 > - NEW components MUST NOT accept `className` or `style` props
 > - Correct pattern: `Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>`
 > - Wrong pattern: bare `ComponentPropsWithoutRef<'div'>` which leaks className
-> - Existing components may grandfather className — check git log to determine if component is new
+> - Existing components may grandfather className — use `git log` to determine if component is new
 > - Accessibility props (e.g. `accessibilityLabel`) must be REQUIRED, not optional
 >
 > **TypeScript (Constitution V)**
@@ -209,22 +177,15 @@ If an agent finds no issues, it returns `[]`.
 > - Proper prop type interfaces
 > - JSDoc/TSDoc comments for public APIs
 > - `@deprecated` tags for deprecated APIs
-> - Console warning path exists for deprecated prop usage where applicable
 >
 > **Documentation (Constitution IX)**
 > - README.md with usage examples
 > - Storybook stories in `examples/`
 > - British English for prose
 > - Public props documented with JSDoc/TSDoc
-> - Accessibility guidance included where relevant
-> - Docs style checks: sentence case titles, singular titles, concise descriptions (< 100 words)
 >
 > **Design Approval (Constitution X — BLOCKING)**
-> - Check PR description and commits for design approval evidence
-> - Validate evidence includes design review OR Backpack designer approval
-> - Verify Figma coverage for all core states (default/hover/focus/active/disabled/loading/error)
-> - Verify responsive behaviour is specified (mobile/tablet/desktop)
-> - Verify accessibility annotations exist in design artefacts
+> - Check PR description for design approval evidence
 > - Missing design approval = blocking issue
 >
 > Only flag issues in **changed files**. Ignore pre-existing violations.
@@ -241,11 +202,15 @@ If an agent finds no issues, it returns `[]`.
 > You are reviewing Backpack SCSS changes. Your ONLY job is to check Sass API and token
 > compliance. Return issues as JSON.
 >
+> **PR number:** [NUMBER] (repo: Skyscanner/backpack) — or "local mode"
+> **Head commit SHA:** [SHA]
+> **Changed files:** [INSERT LIST]
 > **PR summary:** [INSERT]
-> **Changed files:** [INSERT LIST — only .scss files relevant]
-> **Diff (SCSS files only):** [INSERT RELEVANT DIFF SECTIONS]
 >
-> Read each changed SCSS file, then check:
+> **Step 1: Fetch the diff and read changed .scss files.**
+> Use `gh pr diff` or `git diff main...HEAD`. Read the full content of each changed SCSS file.
+>
+> **Step 2: Check each changed SCSS file against these rules:**
 >
 > **Modern Sass API (Constitution III — NON-NEGOTIABLE)**
 > - Must use `@use` syntax, NEVER `@import`
@@ -254,14 +219,14 @@ If an agent finds no issues, it returns `[]`.
 > - CSS Modules (`.module.scss`)
 > - All sizing in `rem`, not `px` or `em`
 >
-> **Mixin investigation (CRITICAL):**
+> **Step 3: Mixin investigation (CRITICAL — use your tools):**
 > For EVERY CSS property written directly (`:hover`, `transition:`, `border-radius:`,
 > `z-index:`, `::before`, etc.):
-> 1. Search `packages/bpk-mixins/` for an existing mixin that abstracts this pattern
-> 2. Check 2-3 similar existing components to see how they handle the same pattern
+> 1. Grep `packages/bpk-mixins/` for an existing mixin that abstracts this pattern
+> 2. Read 2-3 similar existing components to see how they handle the same pattern
 > 3. If a mixin exists and the new code bypasses it, flag it as a violation
 >
-> Known mixin mappings:
+> Known mixin mappings (not exhaustive — always search):
 > - `:hover` -> `@include utils.bpk-hover { }` (gates behind `.bpk-no-touch-support`)
 > - `transition: ... 0.2s` -> `tokens.$bpk-duration-sm` token
 > - `::before` touch-target -> `@include utils.bpk-touch-tappable`
@@ -269,7 +234,6 @@ If an agent finds no issues, it returns `[]`.
 > **Token Usage (Constitution III)**
 > - All visual params must use design tokens (no magic numbers)
 > - Do NOT use `$bpk-private-*` tokens from other components
-> - Token additions/changes must be done in a separate backpack-foundations PR
 > - Verify token SEMANTIC meaning matches usage context, not just colour value:
 >   - `$bpk-text-disabled-*` = disabled/non-interactive elements only
 >   - `$bpk-text-secondary-*` = active but de-emphasised interactive elements
@@ -277,12 +241,11 @@ If an agent finds no issues, it returns `[]`.
 >   - `$bpk-status-danger-*` = error/destructive states
 >   - `$bpk-core-accent-*` = selected/primary action states
 >
-> **Package import investigation:**
+> **Step 4: Package import investigation:**
 > For each `import X from '../../bpk-component-Y'`:
-> 1. Open `packages/bpk-component-Y/index.tsx` to see full export list
+> 1. Read `packages/bpk-component-Y/index.tsx` to see full export list
 > 2. Look for size/variant suffixes (Large, Small, OnDark, V2)
-> 3. Verify the imported variant matches context (icon size, button size, etc.)
-> - Known trap: `withButtonAlignment` (sm/ icons) vs `withLargeButtonAlignment` (lg/ icons)
+> 3. Verify the imported variant matches context
 >
 > Only flag issues in **changed lines**. Ignore pre-existing violations.
 > Return JSON array of issues. If none found, return `[]`.
@@ -298,40 +261,32 @@ If an agent finds no issues, it returns `[]`.
 > You are reviewing Backpack accessibility and testing. Your ONLY job is to check a11y
 > and test compliance. Return issues as JSON.
 >
-> **PR summary:** [INSERT]
+> **PR number:** [NUMBER] (repo: Skyscanner/backpack) — or "local mode"
+> **Head commit SHA:** [SHA]
 > **Changed files:** [INSERT LIST]
-> **Diff (TSX/test files):** [INSERT RELEVANT DIFF SECTIONS]
+> **PR summary:** [INSERT]
 >
-> Read the changed files and related test files, then check:
+> **Step 1: Fetch the diff and read changed component + test files.**
+> Use `gh pr diff` or `git diff main...HEAD`. Read the full content of changed TSX and
+> test files. Also read related test files that may not be in the diff.
 >
-> **Accessibility (Constitution IV — NON-NEGOTIABLE)**
+> **Step 2: Check accessibility (Constitution IV — NON-NEGOTIABLE):**
 > - `accessibility-test.tsx` file must exist for any component
 > - Must use `jest-axe` for automated checks
 > - Tests must exercise the public interface
 > - Check for: keyboard navigation, ARIA labels, touch targets >= 44x44px
 > - Verify colour contrast considerations in SCSS
-> - Verify evidence for screen reader compatibility and keyboard-only usage
-> - Verify evidence for 200% text magnification support
-> - Verify evidence for 400% zoom without horizontal scrolling
 >
-> **Testing Coverage (Constitution VIII)**
+> **Step 3: Check testing coverage (Constitution VIII):**
 > - Unit tests (Jest + Testing Library) exist for all new code
 > - Coverage thresholds: branches >= 70%, functions/lines/statements >= 75%
-> - Accessibility tests exist
 > - Storybook stories exist in `examples/` directory
-> - Visual regression coverage exists (Percy/Storybook snapshots where applicable)
-> - Snapshot tests exist where component output is snapshot-tested
 >
-> **Snapshot Currency (commonly missed):**
-> After ANY change to rendered output (prop added/removed, attribute changed, HTML structure
-> changed), snapshots MUST be regenerated. Check:
+> **Step 4: Snapshot currency (commonly missed):**
+> After ANY change to rendered output, snapshots MUST be regenerated.
 > 1. Read the `.snap` file for this component
 > 2. Verify it matches the current component output
-> 3. Look for stale attributes (e.g. `title="..."` after `aria-label` was added)
-> 4. Look for class names that were renamed but not updated in snapshot
->
-> When tooling is available, run targeted tests (`npm run jest -- accessibility-test` and
-> component test suites). If tests cannot be run, call this out explicitly as verification risk.
+> 3. Look for stale attributes or class names
 >
 > Only flag issues in **changed files**. Ignore pre-existing violations.
 > Return JSON array of issues. If none found, return `[]`.
@@ -347,30 +302,33 @@ If an agent finds no issues, it returns `[]`.
 > You are analysing the git history of files changed in a Backpack PR to find context-based
 > issues. Return issues as JSON.
 >
-> **PR summary:** [INSERT]
+> **PR number:** [NUMBER] (repo: Skyscanner/backpack) — or "local mode"
+> **Head commit SHA:** [SHA]
 > **Changed files:** [INSERT LIST]
-> **Diff:** [INSERT FULL DIFF]
-> **History context from orchestrator:** [INSERT history_context]
+> **PR summary:** [INSERT]
 >
-> For each changed file:
+> **Step 1: Fetch the diff.**
+> Use `gh pr diff` or `git diff main...HEAD`.
 >
-> **1. Git history analysis (from `history_context`):**
-> - Understand the evolution of the modified code
+> **Step 2: For each changed file, investigate history using your tools:**
+> ```bash
+> git log --oneline -10 -- [file]
+> git log --oneline --all --grep="revert" -- [file]
+> gh pr list --repo Skyscanner/backpack --state merged --limit 10 --search "[filename]"
+> ```
+>
+> **Step 3: For the most relevant past PRs, check their review comments:**
+> ```bash
+> gh pr view [PAST_PR_NUMBER] --repo Skyscanner/backpack --comments
+> ```
+>
+> **Step 4: Analyse patterns:**
 > - Check if recently reverted code is being reintroduced
-> - Identify hotspot files (frequent recent changes = higher scrutiny needed)
->
-> **2. Past PR review comments (from orchestrator context):**
-> - Look for recurring review feedback on the same files
+> - Identify hotspot files (frequent recent changes = higher scrutiny)
 > - Check if past review comments flagged the same patterns now being introduced
-> - If a past reviewer asked for a specific change, check if this PR follows that guidance
-> - Do NOT call GitHub CLI directly in this agent; rely on injected `history_context`
 >
-> **3. Revert detection (from `history_context`):**
-> - If this area of code was recently reverted, flag for extra caution
->
-> Only report issues that are **directly relevant to the current PR's changes**.
-> Do not flag pre-existing issues that are unrelated to this PR.
-> Do NOT execute Bash/GitHub commands in this agent.
+> Only report issues **directly relevant to the current PR's changes**.
+> Do not flag pre-existing issues unrelated to this PR.
 > Return JSON array of issues. If none found, return `[]`.
 
 ---
@@ -384,12 +342,15 @@ If an agent finds no issues, it returns `[]`.
 > You are scanning a Backpack PR diff for obvious bugs. Your ONLY job is to find logic
 > errors, not style issues. Return issues as JSON.
 >
-> **PR summary:** [INSERT]
+> **PR number:** [NUMBER] (repo: Skyscanner/backpack) — or "local mode"
+> **Head commit SHA:** [SHA]
 > **Changed files:** [INSERT LIST]
-> **Diff:** [INSERT FULL DIFF]
+> **PR summary:** [INSERT]
 >
-> Read the diff of each changed file. Focus ONLY on the changed lines. Look for:
+> **Step 1: Fetch the diff.**
+> Use `gh pr diff` or `git diff main...HEAD`. Focus ONLY on the changed lines.
 >
+> **Step 2: Scan for bugs:**
 > - Logic errors (wrong condition, off-by-one, missing null check)
 > - Missing event handler cleanup (addEventListener without removeEventListener)
 > - React-specific bugs (missing deps in useEffect, stale closures, key prop issues)
@@ -560,40 +521,31 @@ Before finalising output, confirm all of the following:
 - Checked `className`/`style` leakage for new components
 - Verified design approval evidence is present and substantive
 - Checked private token misuse and token semantic-name correctness
-- Checked license headers on changed source files and changed shell scripts
+- Checked license headers on changed source files
 - Reviewed snapshot currency when rendered output changed
-- Ran targeted tests or explicitly documented why test execution was not possible
 - Performed mixin investigation for direct CSS properties
 - Performed package-export investigation for imported Backpack helpers
 - Verified token colour match AND semantic meaning
-- Included `truncation_notice` if any diff chunks were omitted
-- Included diagnostics for any failed/retried agents
+- Included diagnostics for any failed agents
 - Enforced autopost guardrails (`BACKPACK_REVIEW_AUTOPOST`, human gate for 75-90)
 
 ---
 
-## Privacy, Security, and Access Control
+## Privacy and Access Control
 
-- External model use:
-  - Sub-agent/scoring prompts are sent to the LLM endpoint configured by the runtime.
-  - Send only scoped context: PR summary, routed diff chunks, changed file list, and history summary.
 - Sensitive data handling:
-  - Never include secrets/tokens/credentials in prompts.
-  - Prefer changed-line snippets over full-file dumps.
-  - In sensitive repos, set `BACKPACK_REVIEW_LOCAL_ONLY=true` and skip external history fetching/autopost.
+  - Never include secrets/tokens/credentials in agent prompts or output.
+  - Agents read files from the local repo and call `gh` CLI — no external services beyond GitHub.
 - GitHub token scopes (minimum):
-  - Read review context: repository read access for PR diff/comments.
-  - Post review comments: pull request write permission (only when autopost is enabled).
-- Sandbox boundary:
-  - Only the orchestrator may call network/GitHub tools.
-  - Sub-agents must analyse injected context and local files only.
+  - Read: repository read access for PR diff/comments/history.
+  - Write: pull request comment permission (only when autopost is enabled).
 
 ---
 
 ## Reference: Domain Knowledge
 
-The following sections provide reference material for agents. They are NOT executed
-sequentially — they are embedded into agent prompts as needed.
+The following sections provide reference material. Agent prompts include the key rules
+inline; these sections provide additional detail for edge cases.
 
 ### API Design: New vs Existing Components
 
