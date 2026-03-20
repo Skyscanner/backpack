@@ -20,11 +20,7 @@ import type { ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react/dialog';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
-
-import STYLES from './BpkModalV3.module.scss';
-
-const getClassName = cssModules(STYLES);
+import { getDataComponentAttribute } from '../../../bpk-react-utils';
 
 type BpkModalV3DescriptionProps = {
   children: ReactNode;
@@ -32,7 +28,6 @@ type BpkModalV3DescriptionProps = {
 
 const BpkModalV3Description = ({ children }: BpkModalV3DescriptionProps) => (
   <Dialog.Description
-    className={getClassName('bpk-modal-v3__description')}
     {...getDataComponentAttribute('BpkModalV3Description')}
   >
     {children}

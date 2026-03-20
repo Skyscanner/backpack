@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
@@ -43,7 +44,7 @@ const ModalContainer = ({
   children: (props: {
     open: boolean;
     onOpenChange: (details: { open: boolean }) => void;
-  }) => React.ReactNode;
+  }) => ReactNode;
 }) => {
   const [open, setOpen] = useState(true);
   const onOpenChange = (details: { open: boolean }) => setOpen(details.open);

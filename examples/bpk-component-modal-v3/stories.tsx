@@ -55,3 +55,11 @@ export const SimpleHeadline = SimpleHeadlineExample;
 export const CustomHeadline = CustomHeadlineExample;
 export const Trigger = TriggerExample;
 export const NoHeader = NoHeaderExample;
+
+export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = {
+  render: DefaultExample,
+  args: {
+    zoomEnabled: true,
+  },
+};
