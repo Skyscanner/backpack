@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
@@ -26,8 +24,8 @@ import BpkAutosuggest from './BpkAutosuggest';
 const suggestions = ['Edinburgh', 'Glasgow', 'London'];
 const onSuggestionsFetchRequested = () => null;
 const onSuggestionsClearRequested = () => null;
-const getSuggestionValue = (suggestion) => suggestion;
-const renderSuggestion = (suggestion) => <span>{suggestion}</span>;
+const getSuggestionValue = (suggestion: string) => suggestion;
+const renderSuggestion = (suggestion: string) => <span>{suggestion}</span>;
 const inputProps = {
   id: 'origin',
   name: 'Origin',

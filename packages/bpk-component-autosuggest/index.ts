@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkAutosuggestLegacy from './src/BpkAutosuggest';
 import BpkAutosuggestSuggestion from './src/BpkAutosuggestSuggestion';
 import BpkAutosuggestV2, { defaultTheme } from './src/BpkAutosuggestV2/BpkAutosuggest';

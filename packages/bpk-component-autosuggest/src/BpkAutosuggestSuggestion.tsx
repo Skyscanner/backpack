@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ComponentType, HTMLAttributes, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,20 +24,25 @@ import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  value: Node,
-  indent: boolean,
-  className: ?string,
-  icon: Function,
-  subHeading: ?Node,
-  tertiaryLabel: ?string,
+type Props = HTMLAttributes<HTMLElement> & {
+  value: ReactNode;
+  subHeading?: ReactNode | null;
+  tertiaryLabel?: string | null;
+  icon?: ComponentType | null;
+  indent?: boolean;
+  className?: string | null;
 };
 
-const BpkAutosuggestSuggestion = (props: Props) => {
+const BpkAutosuggestSuggestion = ({
+  className,
+  icon: Icon,
+  indent = false,
+  subHeading,
+  tertiaryLabel,
+  value,
+  ...rest
+}: Props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
-  const { className, icon, indent, subHeading, tertiaryLabel, value, ...rest } =
-    props;
-  const Icon = icon;
 
   if (indent) {
     classNames.push(getClassName('bpk-autosuggest__suggestion--indent'));
@@ -50,9 +52,8 @@ const BpkAutosuggestSuggestion = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <section className={classNames.join(' ')} {...rest}>
-      {icon ? (
+      {Icon ? (
         <div className={getClassName('bpk-autosuggest__suggestion-icon')}>
           <Icon />
         </div>
@@ -87,23 +88,6 @@ const BpkAutosuggestSuggestion = (props: Props) => {
       </div>
     </section>
   );
-};
-
-BpkAutosuggestSuggestion.propTypes = {
-  value: PropTypes.node.isRequired,
-  subHeading: PropTypes.node,
-  tertiaryLabel: PropTypes.string,
-  icon: PropTypes.func,
-  indent: PropTypes.bool,
-  className: PropTypes.string,
-};
-
-BpkAutosuggestSuggestion.defaultProps = {
-  subHeading: null,
-  tertiaryLabel: null,
-  icon: null,
-  indent: false,
-  className: null,
 };
 
 export default BpkAutosuggestSuggestion;

@@ -18,12 +18,7 @@
 import { Component } from 'react';
 import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkAutosuggest from '../../packages/bpk-component-autosuggest';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-// BpkAutosuggestSuggestion is a Flow-based JS file without type declarations.
-// TODO: This will be removed once the file is migrated to TypeScript.
-import BpkAutosuggestSuggestion from '../../packages/bpk-component-autosuggest/src/BpkAutosuggestSuggestion';
+import BpkAutosuggest,{ BpkAutosuggestSuggestion } from '../../packages/bpk-component-autosuggest';
 import { withRtlSupport } from '../../packages/bpk-component-icon';
 import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 
