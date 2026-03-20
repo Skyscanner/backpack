@@ -271,7 +271,7 @@
     height: 2.5rem; // 40px
     padding: 0.75rem; // 12px
     border-radius: tokens.$bpk-border-radius-lg;
-    background: rgb(255, 255, 255, 0.5);
+    background-color: tokens.$bpk-line-on-dark-day;
     color: tokens.$bpk-text-primary-day;
     inset-inline-end: tokens.bpk-spacing-lg();
   }
