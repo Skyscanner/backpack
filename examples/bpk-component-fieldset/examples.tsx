@@ -21,7 +21,6 @@ import type { ChangeEvent, ReactElement } from 'react';
 
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from '../../packages/bpk-component-autosuggest';
 import BpkButton from '../../packages/bpk-component-button';
 import { format } from '../../packages/bpk-component-calendar/src/date-utils';
