@@ -22,7 +22,7 @@ A Trigger can be used to open the modal without the consumer needing to set up a
 <BpkModal.Root>
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
-  </BpkModalV3.Trigger>
+  </BpkModal.Trigger>
   /* content */
 </BpkModal.Root>
 ```
@@ -43,7 +43,7 @@ const [open, setOpen] = useState(true);
 <BpkModal.Root>
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
-  </BpkModalV3.Trigger>
+  </BpkModal.Trigger>
   <BpkModal.Scrim />
   <BpkModal.Content>
     <BpkModal.Header>
@@ -63,7 +63,7 @@ const [open, setOpen] = useState(true);
 <BpkModal.Root type="sheet">
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
-  </BpkModalV3.Trigger>
+  </BpkModal.Trigger>
   <BpkModal.Scrim />
   <BpkModal.Content>
     <BpkModal.Header>
@@ -83,7 +83,7 @@ const [open, setOpen] = useState(true);
 <BpkModal.Root type="full">
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
-  </BpkModalV3.Trigger>
+  </BpkModal.Trigger>
   <BpkModal.Scrim />
   <BpkModal.Content>
     <BpkModal.Header>
@@ -104,7 +104,7 @@ const [open, setOpen] = useState(true);
   <BpkModal.Root>
     <BpkModal.Trigger asChild>
       <BpkButton>Open modal</BpkButton>
-    </BpkModalV3.Trigger>
+    </BpkModal.Trigger>
     <BpkModal.Scrim />
     <BpkModal.Content>
       <BpkModal.Title>
@@ -140,23 +140,23 @@ const [open, setOpen] = useState(true);
   <BpkModal.Root>
     <BpkModal.Trigger asChild>
       <BpkButton>Open modal</BpkButton>
-    </BpkModalV3.Trigger>
+    </BpkModal.Trigger>
     <BpkModal.Scrim />
     <BpkModal.Content>
       <BpkModal.Title>
         <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
       </BpkModal.Title>
 
-      <BpkModalV3.HeroImage src={'/image.jpg'} alt="" height="12rem">
-        <BpkModalV3.CloseTrigger label="Close" onImage />
-      </BpkModalV3.HeroImage>
-      <BpkModalV3.Body>
+      <BpkModal.HeroImage src={'/image.jpg'} alt="" height="12rem">
+        <BpkModal.CloseTrigger label="Close" onImage />
+      </BpkModal.HeroImage>
+      <BpkModal.Body>
         <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
           <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
             Content below the image.
           </BpkText>
         </BpkVStack>
-      </BpkModalV3.Body>
+      </BpkModal.Body>
     </BpkModal.Content>
   </BpkModal.Root>
 </BpkProvider>
@@ -187,7 +187,7 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 
 | Type | Values |
 |---|---|
-| `BpkModalV3Type` | `'default'` \| `'sheet'` \| `'full'` |
+| `BpkModalType` | `'default'` \| `'sheet'` \| `'full'` |
 
 ## Slots
 
