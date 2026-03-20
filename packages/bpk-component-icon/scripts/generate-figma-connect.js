@@ -104,7 +104,7 @@ function groupComponentSets(components) {
 }
 
 function figmaUrl(nodeId) {
-  const encoded = nodeId.replace(':', '%3A');
+  const encoded = nodeId.replace(/:/g, '%3A');
   return `${FIGMA_BASE_URL}?node-id=${encoded}`;
 }
 
