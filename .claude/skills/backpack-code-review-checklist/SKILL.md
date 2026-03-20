@@ -93,7 +93,18 @@ does NOT do any chunking. Each agent fetches exactly what it needs.
 
 ## Phase 2: Launch 5 Specialist Agents in Parallel
 
-Launch all 5 agents in a **single message** using multiple Agent tool calls.
+**Agent pruning:** Based on the file list from Phase 1, determine which agents to launch.
+Not all agents are needed for every PR:
+
+| Agent | Launch when | Skip when |
+|-------|------------|-----------|
+| Agent 1 (Constitution & API) | Always | Never — applies to all PRs |
+| Agent 2 (Sass & Token) | Changed files include `.scss` | No `.scss` files in diff |
+| Agent 3 (A11y & Testing) | Always | Never — test coverage applies to all PRs |
+| Agent 4 (History) | Changed files exist on `main` (i.e. not all-new files) | All files are new (no history to check) |
+| Agent 5 (Bug Scanner) | Always | Never — bug scanning applies to all PRs |
+
+Launch the selected agents in a **single message** using multiple Agent tool calls.
 
 Each agent receives from the orchestrator: (a) the PR number (or "local mode"), (b) the
 head commit SHA, (c) the list of changed file paths, (d) the PR summary from Phase 1,
@@ -104,9 +115,13 @@ This means agents can do iterative investigation — reading additional files, c
 mixin sources, examining package exports — without being limited to pre-injected context.
 
 Phase 2 requirements:
-- Dispatch all 5 specialist agents in one turn (single message, multiple Agent calls).
-- If one agent fails, continue with others.
+- Dispatch specialist agents in one turn (single message, multiple Agent calls).
+- If one agent fails, record the failure and continue with others (see agent status below).
 - Aggregate results: sort by file path, then startLine, then source.
+- **Deduplication (before Phase 3):** If two issues share the same `file` AND overlapping
+  `startLine–endLine` ranges AND similar `title` (semantic match), merge them into one.
+  Keep the issue with the more specific `rule_id`; if equal, keep the one from the
+  higher-priority source (constitution > sass-tokens > a11y-testing > history > bug-scan).
 
 Each agent MUST return a JSON array of issues:
 ```json
@@ -169,7 +184,8 @@ If an agent finds no issues, it returns `[]`.
 > - NEW components MUST NOT accept `className` or `style` props
 > - Correct pattern: `Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>`
 > - Wrong pattern: bare `ComponentPropsWithoutRef<'div'>` which leaks className
-> - Existing components may grandfather className — use `git log` to determine if component is new
+> - Existing components may grandfather className. Determine if file is new:
+>   `git show main:[filepath]` — exit code 0 = existing (grandfathered), exit code 128 = new file (must enforce restriction)
 > - Accessibility props (e.g. `accessibilityLabel`) must be REQUIRED, not optional
 >
 > **TypeScript (Constitution V)**
@@ -184,9 +200,13 @@ If an agent finds no issues, it returns `[]`.
 > - British English for prose
 > - Public props documented with JSDoc/TSDoc
 >
-> **Design Approval (Constitution X — BLOCKING)**
-> - Check PR description for design approval evidence
-> - Missing design approval = blocking issue
+> **Design Approval (Constitution X — CONDITIONAL)**
+> - Only required when PR includes **visual changes**: `.scss` files, `.stories.tsx` files,
+>   new component directories, or Figma references in the description.
+> - Skip for: pure bug fixes, dependency bumps, snapshot-only updates, docs-only PRs,
+>   test-only changes, and refactors with no visual impact.
+> - When required: check PR description for design approval evidence.
+>   Missing design approval on a visual-change PR = blocking issue.
 >
 > Only flag issues in **changed files**. Ignore pre-existing violations.
 > Return JSON array of issues. If none found, return `[]`.
@@ -373,13 +393,15 @@ If an agent finds no issues, it returns `[]`.
 
 ## Phase 3: Confidence Scoring
 
-After all 5 agents return, collect every issue into a single list. Then launch **parallel
-scoring agents** — exactly one scoring agent per issue.
+After all 5 agents return, collect every issue into a single list.
 
-Phase 3 parallel execution requirements:
-- Dispatch all scoring calls in one turn.
+**Scoring dispatch policy:**
+- If `len(issues) <= 15`: launch **parallel scoring agents** — one per issue, all in one turn.
+- If `len(issues) > 15`: the orchestrator scores all issues directly in a single pass
+  (no sub-agents). Use the same scoring rubric below but process as a batch.
+
+Phase 3 requirements:
 - Preserve issue index so each score maps back to one issue deterministically.
-- Do not use multi-issue batch scoring payloads.
 
 Each scoring agent receives:
 - The issue description
@@ -410,7 +432,9 @@ Use confidence threshold:
 >   component, missing accessibility test). Verified by reading the actual code.
 >
 > For Constitution/decision issues: verify the rule ACTUALLY says what the issue claims.
-> If you cannot find the rule, score 0.
+> - If you cannot find the rule **verbatim**, score 0.
+> - If the rule exists but the violation requires interpretation (not explicitly stated), score 50 max.
+> - Score >= 75 **only** if you have read the exact rule text AND confirmed the changed code contradicts it.
 >
 > For bug issues: verify the bug can actually occur given the surrounding code context.
 >
@@ -440,13 +464,19 @@ Use confidence threshold:
 - Output **only** final `### Code review` block.
 - Do not display Phase-by-Phase diagnostics (raw issue tables, scoring tables, self-check details).
 
+**Agent status (always include):**
+
+After aggregation, record which agents returned successfully and which failed:
+- Successful: agent returned `[]` or a valid JSON array of issues.
+- Failed: agent threw an error, timed out, or returned malformed output.
+
 **If no issues remain:**
 
 ```markdown
 ### Code review
 
-No issues found. Checked for Constitution compliance, Sass/token usage, accessibility,
-bugs, and historical patterns across 5 independent review agents.
+No issues found. Checked by N/5 agents (Constitution, Sass, A11y, History, Bug Scanner).
+[If any agent failed: "Note: Agent N ([name]) failed — [brief reason]. Remaining agents completed successfully."]
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
@@ -456,7 +486,8 @@ bugs, and historical patterns across 5 independent review agents.
 ```markdown
 ### Code review
 
-Found N issues (reviewed by 5 independent agents, filtered by confidence scoring):
+Found N issues (reviewed by M/5 agents, filtered by confidence scoring):
+[If any agent failed: "Note: Agent N ([name]) failed — [brief reason]."]
 
 1. [Concise title] — [explanation: what is wrong, why it matters, what to use instead.
    Reference correct pattern from codebase if one exists.]
