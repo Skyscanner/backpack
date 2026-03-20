@@ -30,8 +30,8 @@ const getClassName = cssModules(STYLES);
 
 type BpkModalV3RootProps = {
   children: ReactNode;
-  open: boolean;
-  onOpenChange: (details: { open: boolean }) => void;
+  open?: boolean;
+  onOpenChange?: (details: { open: boolean }) => void;
   type?: BpkModalV3Type;
 };
 
@@ -42,8 +42,8 @@ const BpkModalV3Root = ({
   type = 'default',
 }: BpkModalV3RootProps) => (
   <Dialog.Root
-    open={open}
-    onOpenChange={onOpenChange}
+    {...(open !== undefined && { open })}
+    {...(onOpenChange !== undefined && { onOpenChange })}
   >
     <div
       className={getClassName(

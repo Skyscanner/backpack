@@ -337,4 +337,59 @@ describe('BpkModalV3', () => {
       );
     });
   });
+
+  describe('Uncontrolled with Trigger', () => {
+    it('should render without open or onOpenChange props', () => {
+      const { container } = render(
+        <BpkModalV3.Root>
+          <BpkModalV3.Trigger asChild>
+            <button type="button">Open</button>
+          </BpkModalV3.Trigger>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Uncontrolled</BpkModalV3.Title>
+            <p>Content</p>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(container.querySelector('[data-type="default"]')).toBeInTheDocument();
+      expect(screen.getByText('Open')).toBeInTheDocument();
+    });
+
+    it('should open when Trigger is clicked', async () => {
+      render(
+        <BpkModalV3.Root>
+          <BpkModalV3.Trigger asChild>
+            <button type="button">Open</button>
+          </BpkModalV3.Trigger>
+          <BpkModalV3.Scrim />
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Uncontrolled</BpkModalV3.Title>
+            <p>Dialog body</p>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+
+      await userEvent.click(screen.getByText('Open'));
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+      expect(screen.getByText('Dialog body')).toBeInTheDocument();
+    });
+
+    it('Trigger should set aria-haspopup and aria-expanded', () => {
+      render(
+        <BpkModalV3.Root>
+          <BpkModalV3.Trigger asChild>
+            <button type="button">Open</button>
+          </BpkModalV3.Trigger>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Title</BpkModalV3.Title>
+            <p>Content</p>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+
+      const trigger = screen.getByText('Open');
+      expect(trigger).toHaveAttribute('aria-haspopup', 'dialog');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+  });
 });
