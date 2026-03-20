@@ -1,23 +1,18 @@
 ---
 name: backpack-code-review-checklist
 description: |
-  Multi-agent code review for Backpack design system components. Launches parallel
-  specialist agents to independently audit changes, then scores each issue for confidence
-  to filter false positives. Use when: (1) Reviewing PRs for new or modified Backpack
-  components, (2) Validating component compliance with Constitution and design system rules,
-  (3) Checking if component follows Backpack conventions before merge. Covers Constitution
-  principles (I-XIII), decisions/guidelines, API encapsulation, token semantics, accessibility,
-  git history analysis, and bug detection.
+  Multi-agent review orchestrator for Backpack component PRs.
+  Runs 5 parallel specialist agents, then confidence-scores findings to reduce false positives.
+  Use for PR review, Constitution compliance checks, and pre-merge validation.
 author: Claude Code
-version: 2.0.0
-date: 2026-03-17
+version: 2.0.1
+date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrite as multi-agent orchestrator with parallel specialist agents and
-           confidence scoring. Added History Agent and Bug Scanner. Borrowed architecture
-           from anthropics/claude-plugins-official code-review plugin.
-  v1.2.0: Added investigation methods for CSS properties, package imports, token semantics
-  v1.1.0: Added snapshot currency checks
-  v1.0.0: Initial checklist
+  v2.0.1: Restored detailed Backpack review checks (TS/docs/design/a11y/testing) and added an orchestrator self-check gate.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner.
+  v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
+  v1.1.0: Added snapshot currency checks.
+  v1.0.0: Initial checklist.
 ---
 
 # Backpack Code Review — Multi-Agent Orchestrator
