@@ -26,7 +26,7 @@
  * a single .figma.tsx file that maps every icon to its Figma component.
  *
  * Usage:
- *   FIGMA_ACCESS_TOKEN=<token> node scripts/generate-figma-connect.js
+ *   FIGMA_ACCESS_TOKEN=<token> node packages/bpk-component-icon/scripts/generate-figma-connect.js
  *
  * The generated file is written to:
  *   packages/bpk-component-icon/BpkIcon.figma.tsx
@@ -155,11 +155,12 @@ function generateFile(iconSets, smIcons, lgIcons) {
     const pascal = kebabToPascal(e.name);
     const url = figmaUrl(e.nodeId);
 
+    const prop = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(e.variantProp)
+      ? e.variantProp
+      : JSON.stringify(e.variantProp);
+
     if (e.hasSm && e.hasLg) {
       // Both sizes exist — connect to component set with variant mapping
-      const prop = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(e.variantProp)
-        ? e.variantProp
-        : JSON.stringify(e.variantProp);
       connectCalls.push(`figma.connect(
   Sm${pascal}Icon,
   "${url}",
@@ -178,19 +179,21 @@ figma.connect(
   },
 )`);
     } else if (e.hasSm) {
+      const variantLine = prop ? `    variant: { ${prop}: "16" },\n` : '';
       connectCalls.push(`figma.connect(
   Sm${pascal}Icon,
   "${url}",
   {
-    example: () => <Sm${pascal}Icon />,
+${variantLine}    example: () => <Sm${pascal}Icon />,
   },
 )`);
     } else if (e.hasLg) {
+      const variantLine = prop ? `    variant: { ${prop}: "24" },\n` : '';
       connectCalls.push(`figma.connect(
   Lg${pascal}Icon,
   "${url}",
   {
-    example: () => <Lg${pascal}Icon />,
+${variantLine}    example: () => <Lg${pascal}Icon />,
   },
 )`);
     }

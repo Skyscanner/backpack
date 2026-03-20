@@ -3521,6 +3521,7 @@ figma.connect(
   SmNativeAndroidBackIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A168",
   {
+    variant: { Size: "16" },
     example: () => <SmNativeAndroidBackIcon />,
   },
 )
@@ -3529,6 +3530,7 @@ figma.connect(
   SmNativeAndroidCloseIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A169",
   {
+    variant: { Size: "16" },
     example: () => <SmNativeAndroidCloseIcon />,
   },
 )
@@ -3537,6 +3539,7 @@ figma.connect(
   SmNativeAndroidForwardIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A170",
   {
+    variant: { Size: "16" },
     example: () => <SmNativeAndroidForwardIcon />,
   },
 )
@@ -3545,6 +3548,7 @@ figma.connect(
   SmNativeIosCloseIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A171",
   {
+    variant: { Size: "16" },
     example: () => <SmNativeIosCloseIcon />,
   },
 )
