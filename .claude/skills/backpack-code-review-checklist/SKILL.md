@@ -5,11 +5,10 @@ description: |
   Runs 5 parallel specialist agents, then confidence-scores findings to reduce false positives.
   Use for PR review, Constitution compliance checks, and pre-merge validation.
 author: Claude Code
-version: 2.0.1
+version: 2.0.0
 date: 2026-03-20
 changelog: |
-  v2.0.1: Restored detailed Backpack review checks (TS/docs/design/a11y/testing) and added an orchestrator self-check gate.
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing) and added an orchestrator self-check gate.
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
