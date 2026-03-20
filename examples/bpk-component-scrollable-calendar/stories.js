@@ -39,6 +39,12 @@ import {
   RangeExample,
   SplitWeekRangeExample,
   DefaultExampleWithCustomHeight,
+  FiveWeekDefaultFontExample,
+  FiveWeekScaledFontExample,
+  FiveWeekLargeFontExample,
+  SixWeekDefaultFontExample,
+  SixWeekScaledFontExample,
+  SixWeekLargeFontExample,
 } from './examples';
 import { BpkScrollableCalendarMock } from './stories-utils';
 
@@ -104,4 +110,14 @@ export const VisualTestRangeWithZoom = VisualTestRange.bind({});
 VisualTestRangeWithZoom.args = {
   zoomEnabled: true
 };
+
+// Font-scale height debug: 6 cases to isolate browser font-scale layout bug.
+// March 2020 (weekStartsOn=1) = 6 weeks; April 2020 = 5 weeks.
+// Scaled font = 11.2px (16px × 70%), simulating "Webpage text size: 70%" in Samsung Browser.
+export const FiveWeekDefaultFont = FiveWeekDefaultFontExample;
+export const FiveWeekScaledFont = FiveWeekScaledFontExample;
+export const FiveWeekLargeFont = FiveWeekLargeFontExample;
+export const SixWeekDefaultFont = SixWeekDefaultFontExample;
+export const SixWeekScaledFont = SixWeekScaledFontExample;
+export const SixWeekLargeFont = SixWeekLargeFontExample;
 

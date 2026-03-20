@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Component, useEffect } from 'react';
 
 import { endOfMonth } from 'date-fns/endOfMonth';
 import { startOfMonth } from 'date-fns/startOfMonth';
@@ -366,6 +367,106 @@ const PastCalendarExample = () => (
   />
 );
 
+// ─── Font-scale height debug stories ────────────────────────────────────────
+// These six cases help diagnose the Samsung Browser font-scale layout bug.
+//
+// March 2020 (weekStartsOn=1): firstDayOffset=6, 31 days → 6 weeks
+// April 2020 (weekStartsOn=1): firstDayOffset=2, 30 days → 5 weeks
+//
+// Showing 2 months per case so that any height miscalculation causes visible
+// overlap or gap between months (easier to spot than a single-month cutoff).
+//
+// SCALED_FONT_SIZE simulates Samsung Browser "Webpage text size" at 70% (11.2px).
+// When browsers apply font scaling without updating getComputedStyle, rootFontSize
+// stays at 16px while CSS renders 1rem as 11.2px, causing height miscalculation.
+// The useEffect sets root font-size on mount and restores it on unmount so the
+// story does not bleed into other Storybook stories.
+
+const SCALED_FONT_SIZE = '11.2px'; // 16px × 70%
+const LARGE_FONT_SIZE = '24px';    // 16px × 150%
+
+const SIX_WEEK_MONTH_START = new Date(2020, 2, 1);   // March 2020 → 6 weeks
+const SIX_WEEK_MONTH_END   = new Date(2020, 3, 30);  // + April 2020
+
+const FIVE_WEEK_MONTH_START = new Date(2020, 3, 1);  // April 2020 → 5 weeks
+const FIVE_WEEK_MONTH_END   = new Date(2020, 4, 31); // + May 2020
+
+const GridListFixedHeight = ({ maxDate, minDate }) => (
+  <div style={{ height: '500px', display: 'flex' }}>
+    <BpkScrollableCalendarGridList
+      month={minDate}
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      onDateClick={action('Clicked day')}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      minDate={minDate}
+      maxDate={maxDate}
+    />
+  </div>
+);
+GridListFixedHeight.propTypes = {
+  minDate: PropTypes.instanceOf(Date).isRequired,
+  maxDate: PropTypes.instanceOf(Date).isRequired,
+};
+
+const useMockRootFontSize = (fontSize) => {
+  useEffect(() => {
+    const orig = window.getComputedStyle;
+    window.getComputedStyle = (el, pseudo) => {
+      const style = orig(el, pseudo);
+      if (el === document.documentElement) {
+        return new Proxy(style, {
+          get(target, prop) {
+            if (prop === 'fontSize') return '16px';
+            const val = target[prop];
+            return typeof val === 'function' ? val.bind(target) : val;
+          },
+        });
+      }
+      return style;
+    };
+    document.documentElement.style.fontSize = fontSize;
+
+    return () => {
+      window.getComputedStyle = orig;
+      document.documentElement.style.fontSize = '';
+    };
+  }, [fontSize]);
+};
+
+const FiveWeekDefaultFontExample = () => (
+  <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />
+);
+
+const FiveWeekScaledFontExample = () => {
+  useMockRootFontSize(SCALED_FONT_SIZE);
+  return <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />;
+};
+
+const SixWeekDefaultFontExample = () => (
+  <GridListFixedHeight minDate={SIX_WEEK_MONTH_START} maxDate={SIX_WEEK_MONTH_END} />
+);
+
+const FiveWeekLargeFontExample = () => {
+  useMockRootFontSize(LARGE_FONT_SIZE);
+  return <GridListFixedHeight minDate={FIVE_WEEK_MONTH_START} maxDate={FIVE_WEEK_MONTH_END} />;
+};
+
+const SixWeekLargeFontExample = () => {
+  useMockRootFontSize(LARGE_FONT_SIZE);
+  return <GridListFixedHeight minDate={SIX_WEEK_MONTH_START} maxDate={SIX_WEEK_MONTH_END} />;
+};
+
+const SixWeekScaledFontExample = () => {
+  // Simulate Samsung Browser: render at SCALED_FONT_SIZE but keep getComputedStyle returning 16px.
+  // This is the actual mechanism of the bug — the browser's font scaling bypasses
+  // getComputedStyle, so rootFontSize is stale while CSS renders 1rem as the scaled size.
+  useMockRootFontSize(SCALED_FONT_SIZE);
+  return <GridListFixedHeight minDate={SIX_WEEK_MONTH_START} maxDate={SIX_WEEK_MONTH_END} />;
+};
+
 export {
   DefaultExample,
   DefaultExampleWithCustomHeight,
@@ -385,4 +486,10 @@ export {
   ScrollableCalendarGridExample,
   ScrollableCalendarGridListExample,
   PastCalendarExample,
+  FiveWeekDefaultFontExample,
+  FiveWeekScaledFontExample,
+  FiveWeekLargeFontExample,
+  SixWeekDefaultFontExample,
+  SixWeekScaledFontExample,
+  SixWeekLargeFontExample,
 };
