@@ -16,30 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
+export const TABLE_BODY_TYPES = {
+  default: 'default',
+  striped: 'striped',
+} as const;
 
-.bpk-table {
-  @include typography.bpk-table;
-
-  &__body {
-    &--striped {
-      tr:nth-child(even) {
-        background-color: tokens.$bpk-canvas-contrast-day;
-      }
-    }
-  }
-
-  &__cell {
-    @include typography.bpk-table__cell;
-
-    &--head {
-      @include typography.bpk-table__cell--head;
-    }
-
-    &--wordBreak {
-      white-space: normal;
-      overflow-wrap: break-word;
-    }
-  }
-}
+export type TableBodyType = (typeof TABLE_BODY_TYPES)[keyof typeof TABLE_BODY_TYPES];
