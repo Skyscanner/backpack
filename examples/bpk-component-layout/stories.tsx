@@ -27,8 +27,6 @@ import {
 } from '../../packages/bpk-component-layout';
 
 import {
-  FlexExample,
-  GridExample,
   PositionExample,
   ResponsiveExample,
   RtlSpacingExample,
@@ -84,8 +82,6 @@ export const VisualTest = () => (
     <SizeExample />
     <ResponsiveExample />
     <PositionExample />
-    <FlexExample />
-    <GridExample />
 
     {/* Flex examples */}
     <BpkFlexExample />

@@ -116,50 +116,6 @@ export const PositionExample = () => (
 );
 
 /**
- * Flexbox example – demonstrates using BpkBox as a flex container.
- *
- * @returns {JSX.Element} A flex row with evenly spaced items.
- */
-export const FlexExample = () => (
-  <Wrapper>
-    <BpkBox
-      display="flex"
-      flexDirection="row"
-      justifyContent="space-between"
-      padding={BpkSpacing.MD}
-    >
-      {[1, 2, 3].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.SM}>
-          Flex item {i}
-        </BpkBox>
-      ))}
-    </BpkBox>
-  </Wrapper>
-);
-
-/**
- * Grid example – demonstrates using BpkBox as a grid container.
- *
- * @returns {JSX.Element} A simple three-column grid.
- */
-export const GridExample = () => (
-  <Wrapper>
-    <BpkBox
-      display="grid"
-      gridTemplateColumns="repeat(3, minmax(0, 1fr))"
-      gap={BpkSpacing.MD}
-      padding={BpkSpacing.MD}
-    >
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.SM}>
-          Grid cell {i}
-        </BpkBox>
-      ))}
-    </BpkBox>
-  </Wrapper>
-);
-
-/**
  * Mixed visual regression example – used for Percy/visual tests.
  *
  * @returns {JSX.Element} A wrapper containing all Box examples for visual regression.
@@ -171,8 +127,6 @@ export const MixedExample = () => (
     <SizeExample />
     <ResponsiveExample />
     <PositionExample />
-    <FlexExample />
-    <GridExample />
   </Wrapper>
 );
 
