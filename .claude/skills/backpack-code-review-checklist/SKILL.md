@@ -137,6 +137,7 @@ If an agent finds no issues, it returns `[]`.
 > **2. License Headers (NON-NEGOTIABLE)**
 > - ALL `.ts`, `.tsx`, `.scss`, `.js` files must have Apache 2.0 header
 > - Must contain "Copyright 2016 Skyscanner Ltd"
+> - For changed shell scripts, verify comment style is `#` comments after shebang
 > - Check with: `grep -L "Copyright 2016 Skyscanner" [files]`
 >
 > **3. API Encapsulation (Constitution XI — CRITICAL)**
@@ -149,15 +150,24 @@ If an agent finds no issues, it returns `[]`.
 > **7. TypeScript (Constitution V)**
 > - All new code in TypeScript
 > - Proper prop type interfaces
+> - JSDoc/TSDoc comments for public APIs
 > - `@deprecated` tags for deprecated APIs
+> - Console warning path exists for deprecated prop usage where applicable
 >
 > **8. Documentation (Constitution IX)**
 > - README.md with usage examples
 > - Storybook stories in `examples/`
 > - British English for prose
+> - Public props documented with JSDoc/TSDoc
+> - Accessibility guidance included where relevant
+> - Docs style checks: sentence case titles, singular titles, concise descriptions (< 100 words)
 >
 > **9. Design Approval (Constitution X — BLOCKING)**
 > - Check PR description and commits for design approval evidence
+> - Validate evidence includes design review OR Backpack designer approval
+> - Verify Figma coverage for all core states (default/hover/focus/active/disabled/loading/error)
+> - Verify responsive behaviour is specified (mobile/tablet/desktop)
+> - Verify accessibility annotations exist in design artefacts
 > - Missing design approval = blocking issue
 >
 > Only flag issues in **changed files**. Ignore pre-existing violations.
@@ -202,6 +212,7 @@ If an agent finds no issues, it returns `[]`.
 > **Token Usage (Constitution III)**
 > - All visual params must use design tokens (no magic numbers)
 > - Do NOT use `$bpk-private-*` tokens from other components
+> - Token additions/changes must be done in a separate backpack-foundations PR
 > - Verify token SEMANTIC meaning matches usage context, not just colour value:
 >   - `$bpk-text-disabled-*` = disabled/non-interactive elements only
 >   - `$bpk-text-secondary-*` = active but de-emphasised interactive elements
@@ -242,12 +253,17 @@ If an agent finds no issues, it returns `[]`.
 > - Tests must exercise the public interface
 > - Check for: keyboard navigation, ARIA labels, touch targets >= 44x44px
 > - Verify colour contrast considerations in SCSS
+> - Verify evidence for screen reader compatibility and keyboard-only usage
+> - Verify evidence for 200% text magnification support
+> - Verify evidence for 400% zoom without horizontal scrolling
 >
 > **Testing Coverage (Constitution VIII)**
 > - Unit tests (Jest + Testing Library) exist for all new code
 > - Coverage thresholds: branches >= 70%, functions/lines/statements >= 75%
 > - Accessibility tests exist
 > - Storybook stories exist in `examples/` directory
+> - Visual regression coverage exists (Percy/Storybook snapshots where applicable)
+> - Snapshot tests exist where component output is snapshot-tested
 >
 > **Snapshot Currency (commonly missed):**
 > After ANY change to rendered output (prop added/removed, attribute changed, HTML structure
@@ -256,6 +272,9 @@ If an agent finds no issues, it returns `[]`.
 > 2. Verify it matches the current component output
 > 3. Look for stale attributes (e.g. `title="..."` after `aria-label` was added)
 > 4. Look for class names that were renamed but not updated in snapshot
+>
+> When tooling is available, run targeted tests (`npm run jest -- accessibility-test` and
+> component test suites). If tests cannot be run, call this out explicitly as verification risk.
 >
 > Only flag issues in **changed files**. Ignore pre-existing violations.
 > Return JSON array of issues. If none found, return `[]`.
@@ -453,6 +472,21 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
 
 ---
 
+## Phase 5: Orchestrator Self-Check
+
+Before finalising output, confirm all of the following:
+- Checked `className`/`style` leakage for new components
+- Verified design approval evidence is present and substantive
+- Checked private token misuse and token semantic-name correctness
+- Checked license headers on changed source files and changed shell scripts
+- Reviewed snapshot currency when rendered output changed
+- Ran targeted tests or explicitly documented why test execution was not possible
+- Performed mixin investigation for direct CSS properties
+- Performed package-export investigation for imported Backpack helpers
+- Verified token colour match AND semantic meaning
+
+---
+
 ## Reference: Domain Knowledge
 
 The following sections provide reference material for agents. They are NOT executed
@@ -488,12 +522,22 @@ Backpack tokens use RGB notation (`rgb(239, 243, 248)`). When matching Figma/des
 1. Convert HEX to RGB
 2. Search in backpack-foundations `base.common.js`
 3. Use the matching token, not the raw value
+4. If no semantic token exists, flag need for a new foundations token rather than raw colour fallback
+
+### Design Approval Workflow
+
+1. Design review completed before implementation, or explicit Backpack designer approval
+2. Figma design artefacts cover all component states
+3. Responsive behaviour and accessibility notes are documented
+4. PR description links or references the approval evidence
 
 ### SemVer Impact Classification
 
-- **MAJOR**: Breaking API changes, visual changes, token changes, removal
+- **MAJOR**: Breaking API changes, visual changes, token changes, removal, new mandatory functionality
 - **MINOR**: New optional features, new components, deprecations
 - **PATCH**: Bug fixes, dependency updates, code quality
+
+Err on the side of classifying changes as more breaking rather than less.
 
 ### Common Traps
 
@@ -515,4 +559,5 @@ Backpack tokens use RGB notation (`rgb(239, 243, 248)`). When matching Figma/des
 - [Versioning Rules](/decisions/versioning-rules.md)
 - [Deprecated API](/decisions/deprecated-api.md)
 - [Code Review Guidelines](/CODE_REVIEW_GUIDELINES.md)
+- [Backpack Documentation](https://www.skyscanner.design/)
 - [Anthropic Code Review Plugin](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-review) — Architecture inspiration
