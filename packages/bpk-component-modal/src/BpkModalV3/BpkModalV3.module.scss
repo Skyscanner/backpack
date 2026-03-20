@@ -138,8 +138,8 @@
     max-height: 100dvh;
     transform: translateY(100%);
     transition:
-      opacity tokens.$bpk-duration-base ease-in-out,
-      transform tokens.$bpk-duration-base ease-in-out;
+      opacity tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1),
+      transform tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1);
     border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
     opacity: 0;
 
@@ -162,8 +162,8 @@
     height: 100%;
     transform: translateY(100%);
     transition:
-      opacity tokens.$bpk-duration-base ease-in-out,
-      transform tokens.$bpk-duration-base ease-in-out;
+      opacity tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1),
+      transform tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1);
     border-radius: 0;
     opacity: 0;
 
