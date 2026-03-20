@@ -325,7 +325,7 @@ const DefaultWithImageExample = () => (
             }}
           >
             <BpkModalV3.Body>
-              <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
+              <BpkVStack alignItems="start" gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
                   Explore Edinburgh
                 </BpkText>
