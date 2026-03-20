@@ -164,9 +164,9 @@ If an agent finds no issues, it returns `[]`.
 > **Changed files:** [INSERT LIST]
 > **PR summary:** [INSERT]
 >
-> **Step 1: Fetch the diff for files in your scope (scoped fetch).**
-> Use `gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.ts' '*.tsx' 'README.md' 'examples/'`
-> or `git diff main...HEAD -- '*.ts' '*.tsx' 'README.md' 'examples/'`.
+> **Step 1: Fetch the diff and read changed files.**
+> Use `gh pr diff [NUMBER] --repo Skyscanner/backpack` or `git diff main...HEAD`.
+> Focus on `.ts`, `.tsx`, `README.md`, and `examples/` files relevant to your scope.
 > Read changed files directly with the Read tool for deeper inspection.
 >
 > **Step 2: Check each changed file against these rules:**
@@ -230,9 +230,9 @@ If an agent finds no issues, it returns `[]`.
 > **Changed files:** [INSERT LIST]
 > **PR summary:** [INSERT]
 >
-> **Step 1: Fetch the diff for SCSS files only (scoped fetch).**
-> Use `gh pr diff [NUMBER] -- '*.scss'` or `git diff main...HEAD -- '*.scss'`.
-> Read the full content of each changed SCSS file with the Read tool.
+> **Step 1: Fetch the diff and read changed SCSS files.**
+> Use `gh pr diff [NUMBER]` or `git diff main...HEAD`. Focus on `.scss` files relevant
+> to your scope. Read the full content of each changed SCSS file with the Read tool.
 >
 > **Step 2: Check each changed SCSS file against these rules:**
 >
