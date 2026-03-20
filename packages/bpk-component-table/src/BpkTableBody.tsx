@@ -16,33 +16,43 @@
  * limitations under the License.
  */
 
-import type { ReactNode, HTMLAttributes  } from 'react';
+import type { ReactNode, HTMLAttributes } from 'react';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+
+import { TABLE_BODY_TYPES } from './common-types';
+
+import type { TableBodyType } from './common-types';
 
 import STYLES from './BpkTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const TABLE_BODY_TYPES = {
-  default: 'default',
-  striped: 'striped',
-} as const;
-
-type TableBodyType = (typeof TABLE_BODY_TYPES)[keyof typeof TABLE_BODY_TYPES];
-
-export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+export interface BpkTableBodyProps
+  extends HTMLAttributes<HTMLTableSectionElement> {
   /** The content of the table */
   children: ReactNode;
   /** The type of table body styling */
   type?: TableBodyType;
 }
 
-const BpkTableBody = ({children, className, type = TABLE_BODY_TYPES.default,  ...rest}: BpkTableBodyProps) => {
-  const classNames =  getClassName(type === TABLE_BODY_TYPES.striped && 'bpk-table__body--striped', className)
+const BpkTableBody = ({
+  children,
+  className,
+  type = TABLE_BODY_TYPES.default,
+  ...rest
+}: BpkTableBodyProps) => {
+  const classNames = getClassName(
+    type === TABLE_BODY_TYPES.striped && 'bpk-table__body--striped',
+    className,
+  );
 
   return (
-    <tbody {...rest} className={classNames || undefined} >
+    <tbody
+      {...rest}
+      className={classNames || undefined}
+      {...getDataComponentAttribute('TableBody')}
+    >
       {children}
     </tbody>
   );

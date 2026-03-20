@@ -25,7 +25,9 @@ export default () => (
         <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
-        <BpkTableHeadCell wordBreak={true}>Heading4wordBreakTrue</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak={true}>
+          Heading4wordBreakTrue
+        </BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
     <BpkTableBody>
@@ -80,10 +82,13 @@ By default the prop can be omitted.
 Optional prop on `BpkTableBody` that controls the table body styling. Set `type={TABLE_BODY_TYPES.striped}` to apply alternating row background colours.
 
 ```tsx
-import { BpkTableBody, TABLE_BODY_TYPES } from '@skyscanner/backpack-web/bpk-component-table';
+import {
+  BpkTableBody,
+  TABLE_BODY_TYPES,
+} from '@skyscanner/backpack-web/bpk-component-table';
 
 <BpkTableBody type={TABLE_BODY_TYPES.striped}>
   <BpkTableRow>...</BpkTableRow>
   <BpkTableRow>...</BpkTableRow>
-</BpkTableBody>
+</BpkTableBody>;
 ```

@@ -17,11 +17,12 @@
  */
 
 import BpkTable from './src/BpkTable';
-import BpkTableBody, { TABLE_BODY_TYPES } from './src/BpkTableBody';
+import BpkTableBody from './src/BpkTableBody';
 import BpkTableCell from './src/BpkTableCell';
 import BpkTableHead from './src/BpkTableHead';
 import BpkTableHeadCell from './src/BpkTableHeadCell';
 import BpkTableRow from './src/BpkTableRow';
+import { TABLE_BODY_TYPES } from './src/common-types';
 
 export type { BpkTableProps } from './src/BpkTable';
 export type { BpkTableHeadProps } from './src/BpkTableHead';
