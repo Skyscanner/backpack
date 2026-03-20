@@ -8,7 +8,7 @@ author: Claude Code
 version: 2.0.0
 date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only default output (phase details in debug mode), clarified Agent 1 scope/autopost no-partial-post behavior, moved History Agent to context-only execution, and surfaced confidence explanations for human-gated findings.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only output, clarified Agent 1 scope/autopost no-partial-post behavior, moved History Agent to context-only execution, and surfaced confidence explanations for human-gated findings.
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
@@ -454,9 +454,8 @@ Use confidence threshold:
 - Mark all issues with `threshold <= score < 90` as `requires_human_gate=true`
 
 **Visibility mode:**
-- Default (`BACKPACK_REVIEW_DEBUG=false`): output **only** final `### Code review` block.
-- Debug mode (`BACKPACK_REVIEW_DEBUG=true`) or explicit user request: include Phase-by-Phase
-  diagnostics (raw issue tables, scoring tables, self-check details).
+- Output **only** final `### Code review` block.
+- Do not display Phase-by-Phase diagnostics (raw issue tables, scoring tables, self-check details).
 
 **If no issues remain:**
 
@@ -490,8 +489,8 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
-In debug mode only, append metadata after each issue:
-`(source: [agent], confidence: [score], rule_id: [rule_id], human_gate: [yes/no], confidence_explanation: [text])`
+Internal metadata (`source`, `confidence`, `rule_id`, `human_gate`, `confidence_explanation`)
+may be used by the orchestrator for gating decisions, but should not be printed in final output.
 
 **Link format rules:**
 
@@ -527,7 +526,7 @@ In debug mode only, append metadata after each issue:
 - For `requires_human_gate=true` issues, include `Gate rationale: [confidence_explanation]`
 - Default output must be user-facing and authoritative: focus on issues and fixes, not review process internals
 - Do NOT include strengths section, compliance score table, or required-actions checklist
-- Do NOT print `Phase 0-5` headings or internal tables unless debug mode is enabled
+- Do NOT print `Phase 0-5` headings or internal tables
 
 ---
 
