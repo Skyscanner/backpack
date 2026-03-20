@@ -52,7 +52,7 @@
     cursor: text;
     overflow: visible;
 
-    &--fifthLine {
+    &--capped {
       padding-bottom: tokens.bpk-spacing-base();
     }
   }

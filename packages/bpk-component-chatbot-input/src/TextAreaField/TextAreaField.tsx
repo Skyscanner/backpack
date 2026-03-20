@@ -30,7 +30,7 @@ const getClassName = cssModules(STYLES);
 interface TextAreaFieldProps extends BaseInputFieldProps {
   containerHeight: number;
   textareaHeight: number;
-  shouldReduceParentPadding: boolean;
+  isCapped: boolean;
   isExpanding: boolean;
   isComposer: boolean;
 }
@@ -41,6 +41,7 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       containerHeight,
       dataTestId,
       disabled = false,
+      isCapped,
       isComposer,
       isExpanding,
       isOverLimit = false,
@@ -50,7 +51,6 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       onInputFocus,
       onKeyDown,
       placeholder,
-      shouldReduceParentPadding,
       textareaHeight,
       value,
     },
@@ -76,8 +76,8 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
         <div
           className={getClassName(
             'bpk-chatbot-textarea-field__field',
-            shouldReduceParentPadding &&
-              'bpk-chatbot-textarea-field__field--fifthLine',
+            isCapped &&
+              'bpk-chatbot-textarea-field__field--capped',
           )}
         >
           <label

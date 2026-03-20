@@ -29,7 +29,7 @@ jest.mock('./useTextAreaAutoResize', () => () => ({
   isExpanding: false,
   textareaHeight: 40,
   containerHeight: 56,
-  shouldReduceParentPadding: false,
+  isCapped: false,
   scrollToBottom: jest.fn(),
 }));
 

@@ -130,7 +130,7 @@ describe('useTextAreaAutoResize', () => {
       expect(result.current.isExpanding).toBe(false);
       expect(result.current.textareaHeight).toBe(MIN_INPUT_HEIGHT);
       expect(result.current.containerHeight).toBe(MIN_CONTAINER_HEIGHT);
-      expect(result.current.shouldReduceParentPadding).toBe(false);
+      expect(result.current.isCapped).toBe(false);
     });
   });
 
@@ -157,7 +157,7 @@ describe('useTextAreaAutoResize', () => {
 
       expect(result.current.isExpanding).toBe(true);
       expect(result.current.textareaHeight).toBe(LINE_HEIGHT * 3);
-      expect(result.current.shouldReduceParentPadding).toBe(false);
+      expect(result.current.isCapped).toBe(false);
     });
 
     it('should limit height at phase 1 (4 lines)', () => {
@@ -169,7 +169,7 @@ describe('useTextAreaAutoResize', () => {
       );
 
       expect(result.current.textareaHeight).toBe(MAX_INPUT_HEIGHT_PHASE_1);
-      expect(result.current.shouldReduceParentPadding).toBe(false);
+      expect(result.current.isCapped).toBe(false);
     });
 
     it('should switch to phase 2 for 5+ lines', () => {
@@ -185,7 +185,7 @@ describe('useTextAreaAutoResize', () => {
 
       expect(result.current.textareaHeight).toBe(MAX_INPUT_HEIGHT_PHASE_2);
       expect(result.current.containerHeight).toBe(MAX_CONTAINER_HEIGHT);
-      expect(result.current.shouldReduceParentPadding).toBe(true);
+      expect(result.current.isCapped).toBe(true);
     });
   });
 

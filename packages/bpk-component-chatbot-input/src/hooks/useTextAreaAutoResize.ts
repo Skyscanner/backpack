@@ -29,7 +29,7 @@ interface UseTextAreaAutoResizeReturn {
   isExpanding: boolean;
   textareaHeight: number;
   containerHeight: number;
-  shouldReduceParentPadding: boolean;
+  isCapped: boolean;
   scrollToBottom: () => void;
 }
 
@@ -50,7 +50,7 @@ const useTextAreaAutoResize = ({
     isExpanding: false,
     textareaHeight: MIN_INPUT_HEIGHT,
     containerHeight: MIN_CONTAINER_HEIGHT,
-    shouldReduceParentPadding: false,
+    isCapped: false,
   });
   const [containerWidth, setContainerWidth] = useState(0);
   const measureElementRef = useRef<HTMLTextAreaElement | null>(null);
@@ -125,8 +125,8 @@ const useTextAreaAutoResize = ({
     const { scrollHeight } = measureEl;
     const lines = Math.max(1, Math.ceil(scrollHeight / lineHeightRef.current));
 
-    const shouldReduceParentPadding = lines >= 5;
-    const maxInputHeight = shouldReduceParentPadding
+    const isCapped = lines >= 5;
+    const maxInputHeight = isCapped
       ? MAX_INPUT_HEIGHT_PHASE_2
       : MAX_INPUT_HEIGHT_PHASE_1;
 
@@ -135,7 +135,7 @@ const useTextAreaAutoResize = ({
       Math.min(scrollHeight, maxInputHeight),
     );
 
-    const extraSpace = shouldReduceParentPadding ? PARENT_PADDING_TOP : 0;
+    const extraSpace = isCapped ? PARENT_PADDING_TOP : 0;
     const targetContainerHeight = Math.max(
       MIN_CONTAINER_HEIGHT,
       Math.min(targetInputHeight - extraSpace, MAX_CONTAINER_HEIGHT),
@@ -144,7 +144,7 @@ const useTextAreaAutoResize = ({
     setDimensions((prev) => {
       const isContentAdded = value.length > previousValueRef.current.length;
       const isAppending = value.startsWith(previousValueRef.current);
-      const prevMaxHeight = prev.shouldReduceParentPadding
+      const prevMaxHeight = prev.isCapped
         ? MAX_INPUT_HEIGHT_PHASE_2
         : MAX_INPUT_HEIGHT_PHASE_1;
 
@@ -165,7 +165,7 @@ const useTextAreaAutoResize = ({
         isExpanding: lines > 1,
         textareaHeight: targetInputHeight,
         containerHeight: targetContainerHeight,
-        shouldReduceParentPadding,
+        isCapped,
       };
     });
 

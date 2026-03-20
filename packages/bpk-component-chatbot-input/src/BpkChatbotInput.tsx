@@ -58,11 +58,11 @@ const BpkChatbotInput = ({
     handleSubmit,
     inputProps,
     inputRef,
+    isCapped,
     isCars,
     isExpanding,
     isOverLimit,
     sendButtonDisabled,
-    shouldReduceParentPadding,
     textareaHeight,
   } = useChatbotInput({
     placeholder,
@@ -128,7 +128,7 @@ const BpkChatbotInput = ({
             ref={inputRef as RefObject<HTMLTextAreaElement>}
             containerHeight={containerHeight}
             textareaHeight={textareaHeight}
-            shouldReduceParentPadding={shouldReduceParentPadding}
+            isCapped={isCapped}
             isExpanding={isExpanding}
             isComposer={isComposer}
             {...inputProps}

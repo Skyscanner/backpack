@@ -34,7 +34,7 @@ const defaultProps = {
   onKeyDown: jest.fn(),
   containerHeight: 56,
   textareaHeight: 24,
-  shouldReduceParentPadding: false,
+  isCapped: false,
   isExpanding: false,
 };
 
@@ -84,9 +84,9 @@ describe('TextAreaField', () => {
     expect(screen.getByRole('textbox')).toBeDisabled();
   });
 
-  it('applies fifth-line class when shouldReduceParentPadding is true', () => {
+  it('applies capped class when isCapped is true', () => {
     const { container } = render(
-      <TestWrapper isExpanding shouldReduceParentPadding />,
+      <TestWrapper isExpanding isCapped />,
     );
 
     expect(container.firstChild).toBeInTheDocument();
