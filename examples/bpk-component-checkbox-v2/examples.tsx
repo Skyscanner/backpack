@@ -31,190 +31,165 @@ import {
   BpkProvider,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
-import { ArkLocaleProvider } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
 
 import STYLES from './examples.module.scss';
 
 export const SimpleLabelExample = () => (
-  <ArkLocaleProvider>
-    <BpkCheckbox.Root>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
-      <BpkCheckbox.Label>Send me deals</BpkCheckbox.Label>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
-  </ArkLocaleProvider>
+  <BpkCheckbox.Root>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>Send me deals</BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
 );
 
 export const TitleAndSubtitleExample = () => (
-  <ArkLocaleProvider>
-    <BpkProvider>
-      <BpkCheckbox.Root>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkFlex direction="column">
-          <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
-          <BpkCheckbox.Description>
-            We&apos;ll email you about price drops. Unsubscribe anytime.
-          </BpkCheckbox.Description>
-        </BpkFlex>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>
-    </BpkProvider>
-  </ArkLocaleProvider>
-);
-
-export const InlineLinkInLabelExample = () => (
-  <ArkLocaleProvider>
+  <BpkProvider>
     <BpkCheckbox.Root>
       <BpkCheckbox.Control>
         <BpkCheckbox.Indicator />
       </BpkCheckbox.Control>
-      <BpkCheckbox.Label>
-        I agree to the <a href="/terms">terms and conditions</a>
-      </BpkCheckbox.Label>
+      <BpkFlex direction="column">
+        <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
+        <BpkCheckbox.Description>
+          We&apos;ll email you about price drops. Unsubscribe anytime.
+        </BpkCheckbox.Description>
+      </BpkFlex>
       <BpkCheckbox.HiddenInput />
     </BpkCheckbox.Root>
-  </ArkLocaleProvider>
+  </BpkProvider>
+);
+
+export const InlineLinkInLabelExample = () => (
+  <BpkCheckbox.Root>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>
+      I agree to the <a href="/terms">terms and conditions</a>
+    </BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
 );
 
 export const DefaultCheckedExample = () => (
-  <ArkLocaleProvider>
+  <BpkCheckbox.Root defaultChecked>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>Already opted in</BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
+);
+
+export const DisabledExample = () => (
+  <BpkCheckbox.Root disabled>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>Unavailable option</BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
+);
+
+export const DisabledCheckedExample = () => (
+  <BpkCheckbox.Root disabled defaultChecked>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>Mandatory selection</BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
+);
+
+export const DisabledStatesExample = () => (
+  <BpkProvider>
+    <BpkFlex direction="column" gap={BpkSpacing.SM}>
+      <DisabledCheckedExample />
+      <DisabledExample />
+    </BpkFlex>
+  </BpkProvider>
+);
+
+export const IndeterminateExample = () => (
+  <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>Weekdays (some selected)</BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
+);
+
+export const InvalidExample = () => (
+  <BpkCheckbox.Root invalid>
+    <BpkCheckbox.Control>
+      <BpkCheckbox.Indicator />
+    </BpkCheckbox.Control>
+    <BpkCheckbox.Label>I agree to the terms</BpkCheckbox.Label>
+    <BpkCheckbox.HiddenInput />
+  </BpkCheckbox.Root>
+);
+
+export const ThemedExample = () => (
+  <BpkProvider>
+    <BpkThemeProvider
+      theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
+      themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
+    >
+      <BpkFlex gap={BpkSpacing.Base} direction="column">
+        <BpkCheckbox.Root defaultChecked>
+          <BpkCheckbox.Control>
+            <BpkCheckbox.Indicator />
+          </BpkCheckbox.Control>
+          <BpkCheckbox.Label>Custom colour + border-radius — checked</BpkCheckbox.Label>
+          <BpkCheckbox.HiddenInput />
+        </BpkCheckbox.Root>
+        <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
+          <BpkCheckbox.Control>
+            <BpkCheckbox.Indicator />
+          </BpkCheckbox.Control>
+          <BpkCheckbox.Label>Custom colour + border-radius — indeterminate</BpkCheckbox.Label>
+          <BpkCheckbox.HiddenInput />
+        </BpkCheckbox.Root>
+      </BpkFlex>
+    </BpkThemeProvider>
+  </BpkProvider>
+);
+
+export const ComposedHertzExample = () => (
+  <BpkProvider>
     <BpkCheckbox.Root defaultChecked>
       <BpkCheckbox.Control>
         <BpkCheckbox.Indicator />
       </BpkCheckbox.Control>
-      <BpkCheckbox.Label>Already opted in</BpkCheckbox.Label>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
-  </ArkLocaleProvider>
-);
-
-export const DisabledExample = () => (
-  <ArkLocaleProvider>
-    <BpkCheckbox.Root disabled>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
-      <BpkCheckbox.Label>Unavailable option</BpkCheckbox.Label>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
-  </ArkLocaleProvider>
-);
-
-export const DisabledCheckedExample = () => (
-  <ArkLocaleProvider>
-    <BpkCheckbox.Root disabled defaultChecked>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
-      <BpkCheckbox.Label>Mandatory selection</BpkCheckbox.Label>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
-  </ArkLocaleProvider>
-);
-
-export const DisabledStatesExample = () => (
-  <ArkLocaleProvider>
-    <BpkProvider>
-      <BpkFlex direction="column" gap={BpkSpacing.SM}>
-        <DisabledCheckedExample />
-        <DisabledExample />
+      <BpkFlex direction="column" width="16rem">
+        <BpkFlex justify="space-between" align="center">
+          <BpkCheckbox.Label>Hertz</BpkCheckbox.Label>
+          <div className={STYLES['bpk-hertz-logo-placeholder']} />
+        </BpkFlex>
+        <BpkCheckbox.Description>from £21</BpkCheckbox.Description>
       </BpkFlex>
-    </BpkProvider>
-  </ArkLocaleProvider>
-);
-
-export const IndeterminateExample = () => (
-  <ArkLocaleProvider>
-    <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
-      <BpkCheckbox.Label>Weekdays (some selected)</BpkCheckbox.Label>
       <BpkCheckbox.HiddenInput />
     </BpkCheckbox.Root>
-  </ArkLocaleProvider>
-);
-
-export const InvalidExample = () => (
-  <ArkLocaleProvider>
-    <BpkCheckbox.Root invalid>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
-      <BpkCheckbox.Label>I agree to the terms</BpkCheckbox.Label>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
-  </ArkLocaleProvider>
-);
-
-export const ThemedExample = () => (
-  <ArkLocaleProvider>
-    <BpkProvider>
-      <BpkThemeProvider
-        theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
-        themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
-      >
-        <BpkFlex gap={BpkSpacing.Base} direction="column">
-          <BpkCheckbox.Root defaultChecked>
-            <BpkCheckbox.Control>
-              <BpkCheckbox.Indicator />
-            </BpkCheckbox.Control>
-            <BpkCheckbox.Label>Custom colour + border-radius — checked</BpkCheckbox.Label>
-            <BpkCheckbox.HiddenInput />
-          </BpkCheckbox.Root>
-          <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
-            <BpkCheckbox.Control>
-              <BpkCheckbox.Indicator />
-            </BpkCheckbox.Control>
-            <BpkCheckbox.Label>Custom colour + border-radius — indeterminate</BpkCheckbox.Label>
-            <BpkCheckbox.HiddenInput />
-          </BpkCheckbox.Root>
-        </BpkFlex>
-      </BpkThemeProvider>
-    </BpkProvider>
-  </ArkLocaleProvider>
-);
-
-export const ComposedHertzExample = () => (
-  <ArkLocaleProvider>
-    <BpkProvider>
-      <BpkCheckbox.Root defaultChecked>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkFlex direction="column" width="16rem">
-          <BpkFlex justify="space-between" align="center">
-            <BpkCheckbox.Label>Hertz</BpkCheckbox.Label>
-            <div className={STYLES['bpk-hertz-logo-placeholder']} />
-          </BpkFlex>
-          <BpkCheckbox.Description>from £21</BpkCheckbox.Description>
-        </BpkFlex>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>
-    </BpkProvider>
-  </ArkLocaleProvider>
+  </BpkProvider>
 );
 
 export const MixedExample = () => (
-  <ArkLocaleProvider>
-    <BpkProvider>
-      <BpkFlex gap={BpkSpacing.Base} direction="column">
-        <SimpleLabelExample />
-        <TitleAndSubtitleExample />
-        <InlineLinkInLabelExample />
-        <DefaultCheckedExample />
-        <DisabledExample />
-        <DisabledCheckedExample />
-        <IndeterminateExample />
-        <InvalidExample />
-        <ThemedExample />
-      </BpkFlex>
-    </BpkProvider>
-  </ArkLocaleProvider>
+  <BpkProvider>
+    <BpkFlex gap={BpkSpacing.Base} direction="column">
+      <SimpleLabelExample />
+      <TitleAndSubtitleExample />
+      <InlineLinkInLabelExample />
+      <DefaultCheckedExample />
+      <DisabledExample />
+      <DisabledCheckedExample />
+      <IndeterminateExample />
+      <InvalidExample />
+      <ThemedExample />
+    </BpkFlex>
+  </BpkProvider>
 );
