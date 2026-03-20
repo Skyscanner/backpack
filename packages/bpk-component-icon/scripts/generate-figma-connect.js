@@ -108,17 +108,62 @@ function figmaUrl(nodeId) {
   return `${FIGMA_BASE_URL}?node-id=${encoded}`;
 }
 
+// Spelling aliases: Figma name → code name
+const SPELLING_ALIASES = {
+  centre: 'center',
+};
+
+/**
+ * Normalize a name by collapsing double-hyphens to single and applying
+ * spelling aliases, so we can fuzzy-match Figma names to code file names.
+ *
+ * @param {string} name - The icon name to normalize.
+ * @returns {string} The normalized name.
+ */
+function normalize(name) {
+  const collapsed = name.replace(/--/g, '-');
+  return collapsed
+    .split('-')
+    .map((part) => SPELLING_ALIASES[part] || part)
+    .join('-');
+}
+
+/**
+ * Find the matching code file name for a Figma icon name.
+ * Tries exact match first, then falls back to normalized matching.
+ *
+ * @param {string} figmaName - The icon name from Figma.
+ * @param {Set<string>} codeIcons - Set of icon file names from code.
+ * @returns {string|null} The matching code file name, or null if not found.
+ */
+function findCodeMatch(figmaName, codeIcons) {
+  if (codeIcons.has(figmaName)) return figmaName;
+
+  const normalizedFigma = normalize(figmaName);
+  for (const codeName of codeIcons) {
+    if (normalize(codeName) === normalizedFigma) return codeName;
+  }
+  return null;
+}
+
 function generateFile(iconSets, smIcons, lgIcons) {
   const entries = [];
 
   for (const [name, set] of Object.entries(iconSets).sort(([a], [b]) =>
     a.localeCompare(b),
   )) {
-    const hasSm = smIcons.has(name) && set.variants['16'];
-    const hasLg = lgIcons.has(name) && set.variants['24'];
+    const smMatch = set.variants['16'] ? findCodeMatch(name, smIcons) : null;
+    const lgMatch = set.variants['24'] ? findCodeMatch(name, lgIcons) : null;
 
-    if (hasSm || hasLg) {
-      entries.push({ name, nodeId: set.nodeId, hasSm, hasLg, variantProp: set.variantProp || 'Size' });
+    if (smMatch || lgMatch) {
+      entries.push({
+        name: smMatch || lgMatch,
+        figmaName: name,
+        nodeId: set.nodeId,
+        smFile: smMatch,
+        lgFile: lgMatch,
+        variantProp: set.variantProp || 'Size',
+      });
     }
   }
 
@@ -131,15 +176,16 @@ function generateFile(iconSets, smIcons, lgIcons) {
   // to satisfy eslint import/order rules
   const allImports = [];
   for (const e of entries) {
-    const pascal = kebabToPascal(e.name);
-    if (e.hasLg) {
+    if (e.lgFile) {
+      const pascal = kebabToPascal(e.lgFile);
       allImports.push(
-        `import Lg${pascal}Icon from './lg/${e.name}';`,
+        `import Lg${pascal}Icon from './lg/${e.lgFile}';`,
       );
     }
-    if (e.hasSm) {
+    if (e.smFile) {
+      const pascal = kebabToPascal(e.smFile);
       allImports.push(
-        `import Sm${pascal}Icon from './sm/${e.name}';`,
+        `import Sm${pascal}Icon from './sm/${e.smFile}';`,
       );
     }
   }
@@ -152,48 +198,50 @@ function generateFile(iconSets, smIcons, lgIcons) {
   // Build connect calls
   const connectCalls = [];
   for (const e of entries) {
-    const pascal = kebabToPascal(e.name);
     const url = figmaUrl(e.nodeId);
 
     const prop = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(e.variantProp)
       ? e.variantProp
       : JSON.stringify(e.variantProp);
 
-    if (e.hasSm && e.hasLg) {
-      // Both sizes exist — connect to component set with variant mapping
+    if (e.smFile && e.lgFile) {
+      const smPascal = kebabToPascal(e.smFile);
+      const lgPascal = kebabToPascal(e.lgFile);
       connectCalls.push(`figma.connect(
-  Sm${pascal}Icon,
+  Sm${smPascal}Icon,
   "${url}",
   {
     variant: { ${prop}: "16" },
-    example: () => <Sm${pascal}Icon />,
+    example: () => <Sm${smPascal}Icon />,
   },
 )
 
 figma.connect(
-  Lg${pascal}Icon,
+  Lg${lgPascal}Icon,
   "${url}",
   {
     variant: { ${prop}: "24" },
-    example: () => <Lg${pascal}Icon />,
+    example: () => <Lg${lgPascal}Icon />,
   },
 )`);
-    } else if (e.hasSm) {
+    } else if (e.smFile) {
+      const smPascal = kebabToPascal(e.smFile);
       const variantLine = prop ? `    variant: { ${prop}: "16" },\n` : '';
       connectCalls.push(`figma.connect(
-  Sm${pascal}Icon,
+  Sm${smPascal}Icon,
   "${url}",
   {
-${variantLine}    example: () => <Sm${pascal}Icon />,
+${variantLine}    example: () => <Sm${smPascal}Icon />,
   },
 )`);
-    } else if (e.hasLg) {
+    } else if (e.lgFile) {
+      const lgPascal = kebabToPascal(e.lgFile);
       const variantLine = prop ? `    variant: { ${prop}: "24" },\n` : '';
       connectCalls.push(`figma.connect(
-  Lg${pascal}Icon,
+  Lg${lgPascal}Icon,
   "${url}",
   {
-${variantLine}    example: () => <Lg${pascal}Icon />,
+${variantLine}    example: () => <Lg${lgPascal}Icon />,
   },
 )`);
     }

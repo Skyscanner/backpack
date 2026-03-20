@@ -70,6 +70,7 @@ import LgCarDoorIcon from './lg/car-door';
 import LgCarWashIcon from './lg/car-wash';
 import LgCarsIcon from './lg/cars';
 import LgCarsFlexibleIcon from './lg/cars-flexible';
+import LgCenterLocationIcon from './lg/center-location';
 import LgChartIcon from './lg/chart';
 import LgChauffeurIcon from './lg/chauffeur';
 import LgChevronDownIcon from './lg/chevron-down';
@@ -112,6 +113,9 @@ import LgExclamationIcon from './lg/exclamation';
 import LgExclamationCircleIcon from './lg/exclamation-circle';
 import LgExpandIcon from './lg/expand';
 import LgExploreIcon from './lg/explore';
+import LgFaceBlankIcon from './lg/face--blank';
+import LgFaceHappyIcon from './lg/face--happy';
+import LgFaceSadIcon from './lg/face--sad';
 import LgFaceIdIcon from './lg/face-id';
 import LgFaceMaskIcon from './lg/face-mask';
 import LgFamilyIcon from './lg/family';
@@ -210,6 +214,7 @@ import LgPolicyIcon from './lg/policy';
 import LgPowerplugIcon from './lg/powerplug';
 import LgPpeIcon from './lg/ppe';
 import LgPriceAlertsIcon from './lg/price-alerts';
+import LgPriceTagIcon from './lg/price-tag';
 import LgPrintIcon from './lg/print';
 import LgRecentSearchesIcon from './lg/recent-searches';
 import LgRedoIcon from './lg/redo';
@@ -266,6 +271,15 @@ import LgVirusIcon from './lg/virus';
 import LgWalkIcon from './lg/walk';
 import LgWalletIcon from './lg/wallet';
 import LgWeatherIcon from './lg/weather';
+import LgWeatherClearIcon from './lg/weather--clear';
+import LgWeatherCloudyIcon from './lg/weather--cloudy';
+import LgWeatherFogIcon from './lg/weather--fog';
+import LgWeatherPartlyCloudyIcon from './lg/weather--partly-cloudy';
+import LgWeatherRainIcon from './lg/weather--rain';
+import LgWeatherSnowIcon from './lg/weather--snow';
+import LgWeatherThunderstormIcon from './lg/weather--thunderstorm';
+import LgWeatherTornadoIcon from './lg/weather--tornado';
+import LgWeatherWindIcon from './lg/weather--wind';
 import LgWifiIcon from './lg/wifi';
 import LgWindowIcon from './lg/window';
 import LgWindowReduceIcon from './lg/window--reduce';
@@ -322,6 +336,7 @@ import SmCarDoorIcon from './sm/car-door';
 import SmCarWashIcon from './sm/car-wash';
 import SmCarsIcon from './sm/cars';
 import SmCarsFlexibleIcon from './sm/cars-flexible';
+import SmCenterLocationIcon from './sm/center-location';
 import SmChartIcon from './sm/chart';
 import SmChauffeurIcon from './sm/chauffeur';
 import SmChevronDownIcon from './sm/chevron-down';
@@ -364,6 +379,9 @@ import SmExclamationIcon from './sm/exclamation';
 import SmExclamationCircleIcon from './sm/exclamation-circle';
 import SmExpandIcon from './sm/expand';
 import SmExploreIcon from './sm/explore';
+import SmFaceBlankIcon from './sm/face--blank';
+import SmFaceHappyIcon from './sm/face--happy';
+import SmFaceSadIcon from './sm/face--sad';
 import SmFaceIdIcon from './sm/face-id';
 import SmFaceMaskIcon from './sm/face-mask';
 import SmFamilyIcon from './sm/family';
@@ -466,6 +484,7 @@ import SmPolicyIcon from './sm/policy';
 import SmPowerplugIcon from './sm/powerplug';
 import SmPpeIcon from './sm/ppe';
 import SmPriceAlertsIcon from './sm/price-alerts';
+import SmPriceTagIcon from './sm/price-tag';
 import SmPrintIcon from './sm/print';
 import SmRecentSearchesIcon from './sm/recent-searches';
 import SmRedoIcon from './sm/redo';
@@ -522,6 +541,15 @@ import SmVirusIcon from './sm/virus';
 import SmWalkIcon from './sm/walk';
 import SmWalletIcon from './sm/wallet';
 import SmWeatherIcon from './sm/weather';
+import SmWeatherClearIcon from './sm/weather--clear';
+import SmWeatherCloudyIcon from './sm/weather--cloudy';
+import SmWeatherFogIcon from './sm/weather--fog';
+import SmWeatherPartlyCloudyIcon from './sm/weather--partly-cloudy';
+import SmWeatherRainIcon from './sm/weather--rain';
+import SmWeatherSnowIcon from './sm/weather--snow';
+import SmWeatherThunderstormIcon from './sm/weather--thunderstorm';
+import SmWeatherTornadoIcon from './sm/weather--tornado';
+import SmWeatherWindIcon from './sm/weather--wind';
 import SmWifiIcon from './sm/wifi';
 import SmWindowIcon from './sm/window';
 import SmWindowReduceIcon from './sm/window--reduce';
@@ -1430,6 +1458,24 @@ figma.connect(
 )
 
 figma.connect(
+  SmCenterLocationIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6482%3A45",
+  {
+    variant: { Size: "16" },
+    example: () => <SmCenterLocationIcon />,
+  },
+)
+
+figma.connect(
+  LgCenterLocationIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6482%3A45",
+  {
+    variant: { Size: "24" },
+    example: () => <LgCenterLocationIcon />,
+  },
+)
+
+figma.connect(
   SmChartIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A45",
   {
@@ -2186,6 +2232,42 @@ figma.connect(
 )
 
 figma.connect(
+  SmFaceBlankIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A91",
+  {
+    variant: { Size: "16" },
+    example: () => <SmFaceBlankIcon />,
+  },
+)
+
+figma.connect(
+  LgFaceBlankIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A91",
+  {
+    variant: { Size: "24" },
+    example: () => <LgFaceBlankIcon />,
+  },
+)
+
+figma.connect(
+  SmFaceHappyIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A92",
+  {
+    variant: { Size: "16" },
+    example: () => <SmFaceHappyIcon />,
+  },
+)
+
+figma.connect(
+  LgFaceHappyIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A92",
+  {
+    variant: { Size: "24" },
+    example: () => <LgFaceHappyIcon />,
+  },
+)
+
+figma.connect(
   SmFaceIdIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A93",
   {
@@ -2218,6 +2300,24 @@ figma.connect(
   {
     variant: { Size: "24" },
     example: () => <LgFaceMaskIcon />,
+  },
+)
+
+figma.connect(
+  SmFaceSadIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A95",
+  {
+    variant: { Size: "16" },
+    example: () => <SmFaceSadIcon />,
+  },
+)
+
+figma.connect(
+  LgFaceSadIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A95",
+  {
+    variant: { Size: "24" },
+    example: () => <LgFaceSadIcon />,
   },
 )
 
@@ -3968,6 +4068,24 @@ figma.connect(
 )
 
 figma.connect(
+  SmPriceTagIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A194",
+  {
+    variant: { Size: "16" },
+    example: () => <SmPriceTagIcon />,
+  },
+)
+
+figma.connect(
+  LgPriceTagIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A194",
+  {
+    variant: { Size: "24" },
+    example: () => <LgPriceTagIcon />,
+  },
+)
+
+figma.connect(
   SmPriceAlertsIcon,
   "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A195",
   {
@@ -4990,6 +5108,168 @@ figma.connect(
   {
     variant: { Size: "24" },
     example: () => <LgWeatherIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherClearIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A248",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherClearIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherClearIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A248",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherClearIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherCloudyIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A249",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherCloudyIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherCloudyIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A249",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherCloudyIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherFogIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A250",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherFogIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherFogIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A250",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherFogIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherPartlyCloudyIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A251",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherPartlyCloudyIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherPartlyCloudyIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A251",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherPartlyCloudyIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherRainIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A252",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherRainIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherRainIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A252",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherRainIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherSnowIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A253",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherSnowIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherSnowIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A253",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherSnowIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherThunderstormIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A254",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherThunderstormIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherThunderstormIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A254",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherThunderstormIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherTornadoIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A255",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherTornadoIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherTornadoIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A255",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherTornadoIcon />,
+  },
+)
+
+figma.connect(
+  SmWeatherWindIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A256",
+  {
+    variant: { Size: "16" },
+    example: () => <SmWeatherWindIcon />,
+  },
+)
+
+figma.connect(
+  LgWeatherWindIcon,
+  "https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons?node-id=6033%3A256",
+  {
+    variant: { Size: "24" },
+    example: () => <LgWeatherWindIcon />,
   },
 )
 
