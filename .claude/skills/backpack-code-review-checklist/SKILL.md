@@ -8,7 +8,7 @@ author: Claude Code
 version: 2.0.0
 date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing) and added an orchestrator self-check gate.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, and privacy/access-control guidance.
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
@@ -19,17 +19,18 @@ changelog: |
 ## Overview
 
 This skill reviews Backpack component PRs by dispatching **5 parallel specialist agents**,
-each focused on a narrow domain. A separate scoring pass filters false positives. Only
-issues with confidence >= 75 are included in the final output.
+each focused on a narrow domain. A separate scoring pass filters false positives. The
+confidence threshold is configurable and defaults to 75.
 
 ## Execution Flow
 
 ```
 Phase 0  Detect review mode (PR vs local)
-Phase 1  Gather context (diff, changed files, reference docs)
+Phase 1  Gather context (diff, changed files, history context, chunking)
 Phase 2  Launch 5 specialist agents IN PARALLEL
 Phase 3  Score each issue independently (parallel scoring agents)
-Phase 4  Filter (>= 75), format, and output
+Phase 4  Filter (>= threshold), format, and output
+Phase 5  Orchestrator self-check (gates before final/autopost)
 ```
 
 ---
@@ -40,9 +41,12 @@ Phase 4  Filter (>= 75), format, and output
 
 - **PR mode**: user message contains a `github.com/.../pull/NNN` URL
   - Extract the PR number
-  - Run `gh pr view NNN --json headRefOid,files` to get head commit SHA and changed files
-  - At the end, **post the review as a PR comment** via `gh pr review NNN --comment --body ...`
-  - Link format: `https://github.com/Skyscanner/backpack/blob/[FULL_SHA]/[PATH]#L[START]-L[END]`
+  - Run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files` to get head commit SHA and changed files
+  - Link format (use full 40-character SHA): `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
+  - Autopost guardrail:
+    - Default is **no autopost**. Print review to conversation first.
+    - Post to PR only if user explicitly asks, or `BACKPACK_REVIEW_AUTOPOST=true`.
+    - Findings with confidence 75-90 require human confirmation before posting.
 
 - **Local mode**: no PR URL
   - Use `git diff main...HEAD` to get changes
@@ -75,8 +79,33 @@ git diff main...HEAD --name-only
 
 **Step 1.4** — For each specialist agent, embed into its prompt:
 - The PR summary (Step 1.3)
-- The full diff (or relevant file sections from the diff)
+- Relevant diff chunks (not always full diff)
 - The list of changed files
+
+**Step 1.5** — Build history context in the orchestrator (PR mode):
+```bash
+# Changed-file git history
+git log --oneline -10 -- [file]
+git log --oneline --all --grep="revert" -- [file]
+
+# Past PR comments touching similar files/components
+gh pr list --repo Skyscanner/backpack --state merged --limit 20 --search "[filename]"
+gh pr view [PR_NUMBER] --repo Skyscanner/backpack --comments
+```
+- Summarise recurring review feedback per file/component.
+- Inject this summary into the History Agent prompt as `history_context`.
+
+**Step 1.6** — Diff chunking protocol (deterministic):
+- Split diff by file, then by hunks, then into chunks of at most 200 added/removed lines.
+- Cap context per agent with `MAX_CHUNKS_PER_AGENT` (default 40). If exceeded, prioritise:
+  1) hunks with code changes over docs/changelog, 2) larger hunks, 3) high-risk file types.
+- Route chunks by agent scope:
+  - Constitution/API: `.ts`, `.tsx`, `README.md`, `examples/**`
+  - Sass/Token: `.scss`
+  - A11y/Testing: `*-test.*`, `accessibility-test.*`, snapshots, stories/examples
+  - History: changed file list + changed line ranges + `history_context` (no direct GH calls)
+  - Bug Scanner: highest-risk code hunks across `.ts`, `.tsx`, `.js`
+- If truncation occurs, include `truncation_notice` listing omitted files/chunks in final output.
 
 > **Why:** Sub-agents launched via the Agent tool run in a sandboxed context where Bash/GitHub
 > tool permissions may be restricted. The orchestrator must be the single point that fetches
@@ -97,12 +126,25 @@ Each agent MUST return a JSON array of issues:
     "startLine": 42,
     "endLine": 45,
     "source": "constitution|sass-tokens|a11y-testing|history|bug-scan",
-    "rule": "Constitution XI — className restriction"
+    "rule_id": "constitution.xi.classname-restriction",
+    "rule": "Constitution XI — className restriction",
+    "supporting_lines": [
+      { "file": "packages/bpk-component-foo/src/BpkFoo.tsx", "startLine": 42, "endLine": 45 }
+    ]
   }
 ]
 ```
 
 If an agent finds no issues, it returns `[]`.
+
+### Phase 2A: Parallel Failure Strategy (Deterministic)
+
+- Retry each failed sub-agent call up to 2 times with exponential backoff (1s, then 2s).
+- If still failing, continue with partial results and emit a diagnostic record:
+  - `{"source":"orchestrator","title":"Agent failure","agent":"NAME","error":"...","retries":2}`
+- Preserve deterministic ordering in aggregation:
+  1) sort by file path, 2) startLine, 3) source, 4) title.
+- Always include which agents were executed, retried, failed, and succeeded.
 
 ---
 
@@ -287,6 +329,7 @@ If an agent finds no issues, it returns `[]`.
 > **PR summary:** [INSERT]
 > **Changed files:** [INSERT LIST]
 > **Diff:** [INSERT FULL DIFF]
+> **History context from orchestrator:** [INSERT history_context]
 >
 > For each changed file:
 >
@@ -299,16 +342,11 @@ If an agent finds no issues, it returns `[]`.
 > - Check if recently reverted code is being reintroduced
 > - Identify hotspot files (frequent recent changes = higher scrutiny needed)
 >
-> **2. Past PR review comments:**
-> ```bash
-> # Find recent PRs that touched these files
-> gh pr list --state merged --limit 5 --search "[filename]"
-> # Read comments on those PRs
-> gh pr view [PR_NUMBER] --comments
-> ```
+> **2. Past PR review comments (from orchestrator context):**
 > - Look for recurring review feedback on the same files
 > - Check if past review comments flagged the same patterns now being introduced
 > - If a past reviewer asked for a specific change, check if this PR follows that guidance
+> - Do NOT call GitHub CLI directly in this agent; rely on injected `history_context`
 >
 > **3. Revert detection:**
 > ```bash
@@ -366,6 +404,10 @@ Each scoring agent receives:
 - The issue description
 - The relevant code snippet from the PR
 - The relevant Constitution/decision rule (if applicable)
+- The issue metadata (`rule_id`, `supporting_lines`)
+
+Use confidence threshold:
+- `BACKPACK_REVIEW_CONFIDENCE_THRESHOLD` (default `75`)
 
 **Scoring prompt for each issue:**
 
@@ -374,6 +416,7 @@ Each scoring agent receives:
 > **Issue:** [TITLE + EXPLANATION]
 > **Code:** [RELEVANT SNIPPET]
 > **Rule reference:** [CONSTITUTION/DECISION SECTION, if any]
+> **Issue metadata:** [RULE_ID + SUPPORTING_LINES]
 >
 > Scoring rubric:
 > - **0**: False positive. Does not stand up to scrutiny, or is a pre-existing issue.
@@ -392,7 +435,8 @@ Each scoring agent receives:
 >
 > For history issues: verify the past feedback is relevant to the current change.
 >
-> Return ONLY a JSON object: `{"score": NUMBER, "reasoning": "brief explanation"}`
+> Return ONLY a JSON object:
+> `{"score": NUMBER, "confidence_explanation": "brief explanation", "rule_id": "string", "supporting_lines": [{"file":"...","startLine":1,"endLine":2}]}`
 
 **False positive patterns to score 0:**
 - Pre-existing issues not introduced in this PR
@@ -406,7 +450,10 @@ Each scoring agent receives:
 
 ## Phase 4: Filter, Format, and Output
 
-**Filter:** Remove all issues with score < 75.
+**Filter:**
+- Let `threshold = BACKPACK_REVIEW_CONFIDENCE_THRESHOLD` (default 75)
+- Remove all issues with `score < threshold`
+- Mark all issues with `threshold <= score < 90` as `requires_human_gate=true`
 
 **If no issues remain:**
 
@@ -427,7 +474,7 @@ bugs, and historical patterns across 5 independent review agents.
 Found N issues (reviewed by 5 independent agents, filtered by confidence scoring):
 
 1. [Concise title] — [explanation: what is wrong, why it matters, what to use instead.
-   Reference correct pattern from codebase if one exists.] (source: [agent name], confidence: [score])
+   Reference correct pattern from codebase if one exists.] (source: [agent name], confidence: [score], rule_id: [rule_id], human_gate: [yes/no])
 
    [link to offending lines — format depends on PR vs local mode]
 
@@ -444,7 +491,13 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
   ```
   https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]
   ```
-  After generating the body, post to PR:
+  Autopost policy:
+  - Default: do not post automatically.
+  - Post only when user explicitly requests, or `BACKPACK_REVIEW_AUTOPOST=true`.
+  - If any issue has `requires_human_gate=true`, require explicit confirmation before posting.
+  - Recommended default for unattended posting: only include issues with `score >= 90`.
+
+  After passing guardrails, post to PR:
   ```bash
   gh pr review NNN --comment --body "$(cat <<'EOF'
   [review body]
@@ -478,6 +531,27 @@ Before finalising output, confirm all of the following:
 - Performed mixin investigation for direct CSS properties
 - Performed package-export investigation for imported Backpack helpers
 - Verified token colour match AND semantic meaning
+- Included `truncation_notice` if any diff chunks were omitted
+- Included diagnostics for any failed/retried agents
+- Enforced autopost guardrails (`BACKPACK_REVIEW_AUTOPOST`, human gate for 75-90)
+
+---
+
+## Privacy, Security, and Access Control
+
+- External model use:
+  - Sub-agent/scoring prompts are sent to the LLM endpoint configured by the runtime.
+  - Send only scoped context: PR summary, routed diff chunks, changed file list, and history summary.
+- Sensitive data handling:
+  - Never include secrets/tokens/credentials in prompts.
+  - Prefer changed-line snippets over full-file dumps.
+  - In sensitive repos, set `BACKPACK_REVIEW_LOCAL_ONLY=true` and skip external history fetching/autopost.
+- GitHub token scopes (minimum):
+  - Read review context: repository read access for PR diff/comments.
+  - Post review comments: pull request write permission (only when autopost is enabled).
+- Sandbox boundary:
+  - Only the orchestrator may call network/GitHub tools.
+  - Sub-agents must analyse injected context and local files only.
 
 ---
 
