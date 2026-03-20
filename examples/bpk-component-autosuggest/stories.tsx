@@ -20,7 +20,7 @@ import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
 import { userEvent, within } from 'storybook/test';
 
-import BpkAutosuggest,{ BpkAutosuggestSuggestion } from '../../packages/bpk-component-autosuggest';
+import BpkAutosuggest, { BpkAutosuggestSuggestion } from '../../packages/bpk-component-autosuggest';
 
 import AutosuggestExample from './examples';
 
