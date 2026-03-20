@@ -11,6 +11,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Design documentation](#design-documentation)
 * [Experimenting with Backpack components](#experimenting-with-backpack-components)
 * [How to](#how-to)
+* [Figma Code Connect](#figma-code-connect)
 
 ## Prerequisites
 
@@ -300,6 +301,30 @@ Releases are managed by the Backpack design system team. If you have contributed
 - Once released verify the artifacts are available
 
 </details>
+
+## Figma Code Connect
+
+Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. When `.figma.tsx` files are merged to `main`, a GitHub Actions workflow automatically publishes the mappings to Figma.
+
+### Icon mappings
+
+Icon Code Connect mappings are auto-generated from the Figma Icons file. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually.
+
+To regenerate the icon mappings:
+
+```sh
+FIGMA_ACCESS_TOKEN=<your-token> node packages/bpk-component-icon/scripts/generate-figma-connect.js
+```
+
+This fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes the mappings file.
+
+### Component mappings
+
+For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples.
+
+### Publishing
+
+The `sync-figma-code-connect` workflow (`.github/workflows/sync-figma-code-connect.yml`) runs on pushes to `main` when `packages/**/*.figma.tsx` files change. It requires the `FIGMA_TOKEN` secret to be configured in the repository.
 
 ## And finally..
 
