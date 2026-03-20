@@ -25,7 +25,7 @@ changelog: |
 
 This skill reviews Backpack component PRs by dispatching **5 parallel specialist agents**,
 each focused on a narrow domain. A separate scoring pass filters false positives. The
-confidence threshold is configurable and defaults to 75.
+confidence threshold is configurable (default 75, override via `/backpack-code-review-checklist threshold=80`).
 
 ## Execution Flow
 
@@ -58,7 +58,7 @@ collection phase. The orchestrator's role is coordination and synthesis, not dat
   - Autopost guardrail:
     - Default is **no autopost**. Print review to conversation first.
     - Post to PR only if user explicitly asks, or `BACKPACK_REVIEW_AUTOPOST=true`.
-    - Findings with confidence 75-90 require human confirmation before posting.
+    - Findings with confidence `threshold`–90 require human confirmation before posting.
 
 - **Local mode**: no PR URL
   - Use `git diff main...HEAD` to get changes
@@ -111,8 +111,10 @@ head commit SHA, (c) the list of changed file paths, (d) the PR summary from Pha
 and (e) its domain-specific Backpack rules.
 
 **Each agent self-fetches its own data** using Bash, Read, Grep, Glob, and `gh` CLI.
-This means agents can do iterative investigation — reading additional files, checking
-mixin sources, examining package exports — without being limited to pre-injected context.
+Agents should use **scoped fetches** — e.g. `gh pr diff [N] -- '*.scss'` instead of
+fetching the entire diff — to minimise redundant data across agents. Agents can do
+iterative investigation — reading additional files, checking mixin sources, examining
+package exports — without being limited to pre-injected context.
 
 Phase 2 requirements:
 - Dispatch specialist agents in one turn (single message, multiple Agent calls).
@@ -162,9 +164,10 @@ If an agent finds no issues, it returns `[]`.
 > **Changed files:** [INSERT LIST]
 > **PR summary:** [INSERT]
 >
-> **Step 1: Fetch the diff for .ts, .tsx, README.md, and examples/ files.**
-> Use `gh pr diff [NUMBER] --repo Skyscanner/backpack` or `git diff main...HEAD` and
-> focus on files relevant to your scope. Read changed files directly with the Read tool.
+> **Step 1: Fetch the diff for files in your scope (scoped fetch).**
+> Use `gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.ts' '*.tsx' 'README.md' 'examples/'`
+> or `git diff main...HEAD -- '*.ts' '*.tsx' 'README.md' 'examples/'`.
+> Read changed files directly with the Read tool for deeper inspection.
 >
 > **Step 2: Check each changed file against these rules:**
 >
@@ -227,8 +230,9 @@ If an agent finds no issues, it returns `[]`.
 > **Changed files:** [INSERT LIST]
 > **PR summary:** [INSERT]
 >
-> **Step 1: Fetch the diff and read changed .scss files.**
-> Use `gh pr diff` or `git diff main...HEAD`. Read the full content of each changed SCSS file.
+> **Step 1: Fetch the diff for SCSS files only (scoped fetch).**
+> Use `gh pr diff [NUMBER] -- '*.scss'` or `git diff main...HEAD -- '*.scss'`.
+> Read the full content of each changed SCSS file with the Read tool.
 >
 > **Step 2: Check each changed SCSS file against these rules:**
 >
@@ -240,8 +244,8 @@ If an agent finds no issues, it returns `[]`.
 > - All sizing in `rem`, not `px` or `em`
 >
 > **Step 3: Mixin investigation (CRITICAL — use your tools):**
-> For EVERY CSS property written directly (`:hover`, `transition:`, `border-radius:`,
-> `z-index:`, `::before`, etc.):
+> For these **known high-risk CSS patterns** (not every CSS property):
+> `:hover`, `transition`, `z-index`, `::before`/`::after` pseudo-elements
 > 1. Grep `packages/bpk-mixins/` for an existing mixin that abstracts this pattern
 > 2. Read 2-3 similar existing components to see how they handle the same pattern
 > 3. If a mixin exists and the new code bypasses it, flag it as a violation
@@ -409,8 +413,10 @@ Each scoring agent receives:
 - The relevant Constitution/decision rule (if applicable)
 - The issue metadata (`rule_id`, `supporting_lines`)
 
-Use confidence threshold:
-- `BACKPACK_REVIEW_CONFIDENCE_THRESHOLD` (default `75`)
+Confidence threshold:
+- Default: `75`
+- Override via inline argument: `/backpack-code-review-checklist threshold=80`
+- The orchestrator parses the user's invocation message for `threshold=N` and uses that value throughout.
 
 **Scoring prompt for each issue:**
 
@@ -456,7 +462,7 @@ Use confidence threshold:
 ## Phase 4: Filter, Format, and Output
 
 **Filter:**
-- Let `threshold = BACKPACK_REVIEW_CONFIDENCE_THRESHOLD` (default 75)
+- Let `threshold` = value from inline argument, or `75` if not specified
 - Remove all issues with `score < threshold`
 - Mark all issues with `threshold <= score < 90` as `requires_human_gate=true`
 
