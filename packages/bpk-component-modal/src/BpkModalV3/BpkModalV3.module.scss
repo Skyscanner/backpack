@@ -267,8 +267,8 @@
   // On-image variant — larger with translucent white background
   &--on-image {
     top: tokens.bpk-spacing-base();
-    width: 2.5rem; // 40px
-    height: 2.5rem; // 40px
+    width: tokens.bpk-spacing-xxl();
+    height: tokens.bpk-spacing-xxl();
     padding: 0.75rem; // 12px
     border-radius: tokens.$bpk-border-radius-lg;
     background-color: tokens.$bpk-line-on-dark-day;
