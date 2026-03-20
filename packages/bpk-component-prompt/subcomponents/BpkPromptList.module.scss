@@ -1,0 +1,85 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/breakpoints';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+
+// The outer flex-column wrapper is now BpkFlex; only scroll and list styles remain.
+
+.bpk-prompt-list {
+  &__scroll {
+    width: 100%;
+
+    // Negative margin lets the scroll container bleed to the edge of
+    // a parent with bpk-spacing-base() horizontal padding.
+    @include breakpoints.bpk-breakpoint-tablet {
+      margin-right: -(tokens.bpk-spacing-base());
+
+      @include utils.bpk-rtl {
+        margin-right: 0;
+        margin-left: -(tokens.bpk-spacing-base());
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include breakpoints.bpk-breakpoint-above-tablet {
+      display: flex;
+      gap: tokens.bpk-spacing-md();
+    }
+
+    // Horizontal scroll row on tablet and mobile.
+    // Item spacing is handled via &__item margins (not gap) so the last
+    // item's trailing margin acts as scroll end-padding.
+    @include breakpoints.bpk-breakpoint-tablet {
+      display: inline-flex;
+      flex-flow: row;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    @include breakpoints.bpk-breakpoint-tablet {
+      &:not(:last-child) {
+        margin-right: tokens.bpk-spacing-md();
+
+        @include utils.bpk-rtl {
+          margin-right: 0;
+          margin-left: tokens.bpk-spacing-md();
+        }
+      }
+
+      &:last-child {
+        // Trailing margin provides end-padding inside the scroll container.
+        margin-right: tokens.bpk-spacing-base();
+
+        @include utils.bpk-rtl {
+          margin-right: 0;
+          margin-left: tokens.bpk-spacing-base();
+        }
+      }
+    }
+  }
+}
