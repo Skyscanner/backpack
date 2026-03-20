@@ -8,7 +8,7 @@ author: Claude Code
 version: 2.0.0
 date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, and privacy/access-control guidance.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, and final-only default output (phase details in debug mode).
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
@@ -455,6 +455,11 @@ Use confidence threshold:
 - Remove all issues with `score < threshold`
 - Mark all issues with `threshold <= score < 90` as `requires_human_gate=true`
 
+**Visibility mode:**
+- Default (`BACKPACK_REVIEW_DEBUG=false`): output **only** final `### Code review` block.
+- Debug mode (`BACKPACK_REVIEW_DEBUG=true`) or explicit user request: include Phase-by-Phase
+  diagnostics (raw issue tables, scoring tables, self-check details).
+
 **If no issues remain:**
 
 ```markdown
@@ -516,10 +521,13 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
 - Explanation must include: (a) what is wrong, (b) why, (c) what to use instead
 - Link to a correct precedent in the repo when one exists
 - Do NOT include strengths section, compliance score table, or required-actions checklist
+- Do NOT print `Phase 0-5` headings or internal tables unless debug mode is enabled
 
 ---
 
-## Phase 5: Orchestrator Self-Check
+## Phase 5: Orchestrator Self-Check (Internal)
+
+This phase is internal by default. Do not print it in normal output mode.
 
 Before finalising output, confirm all of the following:
 - Checked `className`/`style` leakage for new components
