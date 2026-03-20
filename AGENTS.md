@@ -363,24 +363,4 @@ This guide should help AI agents understand the structure, patterns, and convent
 
 ## Token Lookup Workflow (MANDATORY)
 
-When replacing a hardcoded style value (hex color, px/rem spacing, border radius, box shadow, etc.) with a BPK token:
-
-1. **Check `.claude/rules/bpk-token-value-lookup.md`** — reverse lookup table mapping raw values → correct SCSS and TSX token names.
-2. **If not found there**, search `node_modules/@skyscanner/bpk-foundations-web/tokens/base.es6.d.ts` for the exact exported name.
-3. **NEVER invent, guess, or approximate a token name.** If you cannot confirm it exists in `base.es6.d.ts` or `base.default.scss`, use the hardcoded value as-is.
-
-> The ground truth for all valid token names is `base.es6.d.ts` (TSX) and `base.default.scss` (SCSS).
-
-### Naming convention recap
-
-| Context | Pattern | Example |
-|---------|---------|---------|
-| SCSS | `tokens.$bpk-{semantic-name}-{day|night}` | `tokens.$bpk-core-accent-day` |
-| TSX import | camelCase, no `bpk-` prefix | `coreAccentDay` |
-
-### Common mistakes
-
-- ❌ `tokens.$bpk-color-sky-blue` — does not exist; correct: `tokens.$bpk-core-accent-day`
-- ❌ `import { spacingBase }` — does not exist in base.es6; spacing is SCSS-only functions
-- ❌ `tokens.$bpk-spacing-base` — spacing is a **function**, not a variable: `tokens.bpk-spacing-base()`
-- ❌ `tokens.bpk-border-radius-md()` — border radius is a **variable**: `tokens.$bpk-border-radius-md`
+See `.claude/rules/bpk-token-value-lookup.md` for the lookup workflow, naming conventions, TSX usage pattern, and common mistakes.
