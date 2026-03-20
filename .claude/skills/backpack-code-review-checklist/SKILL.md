@@ -8,7 +8,7 @@ author: Claude Code
 version: 2.0.0
 date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only default output (phase details in debug mode), and clarified Agent 1 scope/autopost no-partial-post behavior.
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only default output (phase details in debug mode), clarified Agent 1 scope/autopost no-partial-post behavior, moved History Agent to context-only execution, and surfaced confidence explanations for human-gated findings.
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
@@ -94,7 +94,8 @@ gh pr list --repo Skyscanner/backpack --state merged --limit 20 --search "[filen
 gh pr view [PR_NUMBER] --repo Skyscanner/backpack --comments
 ```
 - Summarise recurring review feedback per file/component.
-- Inject this summary into the History Agent prompt as `history_context`.
+- Summarise git history/blame/revert signals for each changed line range.
+- Inject all summaries into the History Agent prompt as `history_context`.
 
 **Step 1.6** — Diff chunking protocol (deterministic):
 - Split diff by file, then by hunks, then into chunks of at most 200 added/removed lines.
@@ -336,11 +337,7 @@ If an agent finds no issues, it returns `[]`.
 >
 > For each changed file:
 >
-> **1. Git blame analysis:**
-> ```bash
-> git blame [file] -- [changed line range]
-> git log --oneline -10 -- [file]
-> ```
+> **1. Git history analysis (from `history_context`):**
 > - Understand the evolution of the modified code
 > - Check if recently reverted code is being reintroduced
 > - Identify hotspot files (frequent recent changes = higher scrutiny needed)
@@ -351,14 +348,12 @@ If an agent finds no issues, it returns `[]`.
 > - If a past reviewer asked for a specific change, check if this PR follows that guidance
 > - Do NOT call GitHub CLI directly in this agent; rely on injected `history_context`
 >
-> **3. Revert detection:**
-> ```bash
-> git log --oneline --all --grep="revert" -- [file]
-> ```
+> **3. Revert detection (from `history_context`):**
 > - If this area of code was recently reverted, flag for extra caution
 >
 > Only report issues that are **directly relevant to the current PR's changes**.
 > Do not flag pre-existing issues that are unrelated to this PR.
+> Do NOT execute Bash/GitHub commands in this agent.
 > Return JSON array of issues. If none found, return `[]`.
 
 ---
@@ -485,16 +480,18 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
    Reference correct pattern from codebase if one exists.]
 
    [link to offending lines — format depends on PR vs local mode]
+   [if human-gated] Gate rationale: [confidence_explanation]
 
 2. [Next issue] — [explanation]
 
    [link]
+   [if human-gated] Gate rationale: [confidence_explanation]
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
 In debug mode only, append metadata after each issue:
-`(source: [agent], confidence: [score], rule_id: [rule_id], human_gate: [yes/no])`
+`(source: [agent], confidence: [score], rule_id: [rule_id], human_gate: [yes/no], confidence_explanation: [text])`
 
 **Link format rules:**
 
@@ -527,6 +524,7 @@ In debug mode only, append metadata after each issue:
 - Each title max ~10 words; dash separates from explanation
 - Explanation must include: (a) what is wrong, (b) why, (c) what to use instead
 - Link to a correct precedent in the repo when one exists
+- For `requires_human_gate=true` issues, include `Gate rationale: [confidence_explanation]`
 - Default output must be user-facing and authoritative: focus on issues and fixes, not review process internals
 - Do NOT include strengths section, compliance score table, or required-actions checklist
 - Do NOT print `Phase 0-5` headings or internal tables unless debug mode is enabled
