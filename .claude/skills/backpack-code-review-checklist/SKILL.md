@@ -8,7 +8,7 @@ author: Claude Code
 version: 2.0.0
 date: 2026-03-20
 changelog: |
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, and final-only default output (phase details in debug mode).
+  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, deterministic chunking/retry strategy, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only default output (phase details in debug mode), and clarified Agent 1 scope/autopost no-partial-post behavior.
   v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
   v1.1.0: Added snapshot currency checks.
   v1.0.0: Initial checklist.
@@ -47,6 +47,7 @@ Phase 5  Orchestrator self-check (gates before final/autopost)
     - Default is **no autopost**. Print review to conversation first.
     - Post to PR only if user explicitly asks, or `BACKPACK_REVIEW_AUTOPOST=true`.
     - Findings with confidence 75-90 require human confirmation before posting.
+    - If any 75-90 finding exists, block posting of the entire batch (no partial posting).
 
 - **Local mode**: no PR URL
   - Use `git diff main...HEAD` to get changes
@@ -150,12 +151,14 @@ If an agent finds no issues, it returns `[]`.
 
 ### Agent 1: Constitution & API Agent
 
-**Scope:** Naming conventions, license headers, API encapsulation (checks 1-3 from Constitution).
+**Scope:** Naming, license, API encapsulation, TypeScript, documentation, and design approval checks.
 
 **Prompt to give this agent:**
 
 > You are reviewing a Backpack design system PR. Your ONLY job is to check Constitution
 > compliance for naming, licensing, and API design. Return issues as JSON.
+> This agent intentionally covers API/TS/docs/design checks. Sass/token checks are handled
+> by Agent 2, and accessibility/testing checks are handled by Agent 3.
 >
 > **PR summary:** [INSERT]
 > **Changed files:** [INSERT LIST]
@@ -163,34 +166,34 @@ If an agent finds no issues, it returns `[]`.
 >
 > Read each changed file, then check:
 >
-> **1. Naming & File Conventions (Constitution II)**
+> **Naming & File Conventions (Constitution II)**
 > - Component files: PascalCase (`BpkFoo.tsx`)
 > - Style files: `.module.scss` matching component name
 > - Test files: `*-test.tsx` and `accessibility-test.tsx`
 > - Package names: `bpk-component-[name]` (kebab-case)
 > - CSS classes: BEM with `bpk-` prefix (`bpk-foo__element`)
 >
-> **2. License Headers (NON-NEGOTIABLE)**
+> **License Headers (NON-NEGOTIABLE)**
 > - ALL `.ts`, `.tsx`, `.scss`, `.js` files must have Apache 2.0 header
 > - Must contain "Copyright 2016 Skyscanner Ltd"
 > - For changed shell scripts, verify comment style is `#` comments after shebang
 > - Check with: `grep -L "Copyright 2016 Skyscanner" [files]`
 >
-> **3. API Encapsulation (Constitution XI — CRITICAL)**
+> **API Encapsulation (Constitution XI — CRITICAL)**
 > - NEW components MUST NOT accept `className` or `style` props
 > - Correct pattern: `Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>`
 > - Wrong pattern: bare `ComponentPropsWithoutRef<'div'>` which leaks className
 > - Existing components may grandfather className — check git log to determine if component is new
 > - Accessibility props (e.g. `accessibilityLabel`) must be REQUIRED, not optional
 >
-> **7. TypeScript (Constitution V)**
+> **TypeScript (Constitution V)**
 > - All new code in TypeScript
 > - Proper prop type interfaces
 > - JSDoc/TSDoc comments for public APIs
 > - `@deprecated` tags for deprecated APIs
 > - Console warning path exists for deprecated prop usage where applicable
 >
-> **8. Documentation (Constitution IX)**
+> **Documentation (Constitution IX)**
 > - README.md with usage examples
 > - Storybook stories in `examples/`
 > - British English for prose
@@ -198,7 +201,7 @@ If an agent finds no issues, it returns `[]`.
 > - Accessibility guidance included where relevant
 > - Docs style checks: sentence case titles, singular titles, concise descriptions (< 100 words)
 >
-> **9. Design Approval (Constitution X — BLOCKING)**
+> **Design Approval (Constitution X — BLOCKING)**
 > - Check PR description and commits for design approval evidence
 > - Validate evidence includes design review OR Backpack designer approval
 > - Verify Figma coverage for all core states (default/hover/focus/active/disabled/loading/error)
@@ -479,16 +482,19 @@ bugs, and historical patterns across 5 independent review agents.
 Found N issues (reviewed by 5 independent agents, filtered by confidence scoring):
 
 1. [Concise title] — [explanation: what is wrong, why it matters, what to use instead.
-   Reference correct pattern from codebase if one exists.] (source: [agent name], confidence: [score], rule_id: [rule_id], human_gate: [yes/no])
+   Reference correct pattern from codebase if one exists.]
 
    [link to offending lines — format depends on PR vs local mode]
 
-2. [Next issue] — [explanation] (source: [agent name], confidence: [score])
+2. [Next issue] — [explanation]
 
    [link]
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
+
+In debug mode only, append metadata after each issue:
+`(source: [agent], confidence: [score], rule_id: [rule_id], human_gate: [yes/no])`
 
 **Link format rules:**
 
@@ -500,7 +506,8 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
   - Default: do not post automatically.
   - Post only when user explicitly requests, or `BACKPACK_REVIEW_AUTOPOST=true`.
   - If any issue has `requires_human_gate=true`, require explicit confirmation before posting.
-  - Recommended default for unattended posting: only include issues with `score >= 90`.
+  - Partial posting is not allowed when any issue is human-gated.
+  - After confirmation, post the full filtered result set (not a subset).
 
   After passing guardrails, post to PR:
   ```bash
@@ -520,6 +527,7 @@ Found N issues (reviewed by 5 independent agents, filtered by confidence scoring
 - Each title max ~10 words; dash separates from explanation
 - Explanation must include: (a) what is wrong, (b) why, (c) what to use instead
 - Link to a correct precedent in the repo when one exists
+- Default output must be user-facing and authoritative: focus on issues and fixes, not review process internals
 - Do NOT include strengths section, compliance score table, or required-actions checklist
 - Do NOT print `Phase 0-5` headings or internal tables unless debug mode is enabled
 
