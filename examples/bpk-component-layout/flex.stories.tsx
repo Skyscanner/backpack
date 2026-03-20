@@ -23,10 +23,10 @@ import { BpkFlex, BpkProvider } from '../../packages/bpk-component-layout';
 import {
   BpkFlexExample,
   BpkFlexDirectionExample,
+  BpkFlexAlignExample,
+  BpkFlexJustifyExample,
+  BpkFlexOrderExample,
   BpkFlexWrapExample,
-  BpkFlexResponsiveExample,
-  BpkFlexItemExample,
-  BpkFlexInlineExample,
 } from './flex-examples';
 
 export default {
@@ -57,7 +57,7 @@ export default {
 
 export const Default = BpkFlexExample;
 export const Direction = BpkFlexDirectionExample;
+export const Align = BpkFlexAlignExample;
+export const Justify = BpkFlexJustifyExample;
+export const Order = BpkFlexOrderExample;
 export const Wrap = BpkFlexWrapExample;
-export const Responsive = BpkFlexResponsiveExample;
-export const ItemProps = BpkFlexItemExample;
-export const Inline = BpkFlexInlineExample;

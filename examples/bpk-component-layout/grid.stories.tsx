@@ -23,8 +23,7 @@ import { BpkGrid, BpkProvider } from '../../packages/bpk-component-layout';
 import {
   BpkGridExample,
   BpkGridSpanExample,
-  BpkGridWithItemExample,
-  BpkGridResponsiveExample,
+  BpkGridBentoBoxExample,
 } from './grid-examples';
 
 export default {
@@ -55,5 +54,4 @@ export default {
 
 export const Default = BpkGridExample;
 export const Span = BpkGridSpanExample;
-export const WithItem = BpkGridWithItemExample;
-export const Responsive = BpkGridResponsiveExample;
+export const BentoBox = BpkGridBentoBoxExample;
