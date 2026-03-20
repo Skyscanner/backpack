@@ -25,127 +25,70 @@ import {
 
 import Wrapper from './layout-wrapper';
 
+import STYLES from './examples.module.scss';
+
+const outline = STYLES['bpk-layout-examples__outline'];
+
 export const BpkGridExample = () => (
   <Wrapper>
-    <BpkGrid
-      templateColumns="repeat(3, minmax(0, 1fr))"
-      gap={BpkSpacing.MD}
-      padding={BpkSpacing.MD}
-    >
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.SM}>
-          Grid cell {i}
-        </BpkBox>
-      ))}
+    <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.MD}>
+      <BpkBox height="6rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="6rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="6rem" width="100%"><span className={outline} /></BpkBox>
     </BpkGrid>
   </Wrapper>
 );
 
 export const BpkGridSpanExample = () => (
   <Wrapper>
-    <BpkGrid
-      templateColumns="repeat(3, 1fr)"
-      gap={BpkSpacing.MD}
-      padding={BpkSpacing.MD}
-    >
-      <BpkBox
-        gridColumn="span 2"
-        padding={BpkSpacing.MD}
-      >
-         <BpkBox width="100%" padding={BpkSpacing.SM}>
-          Box: Span 2 Columns
+    <BpkGrid templateColumns="repeat(4, 1fr)" gap={BpkSpacing.MD}>
+      <BpkGridItem colSpan={2}>
+        <BpkBox height="6rem">
+          <span className={outline} />
         </BpkBox>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.MD}>
-        Cell 2
-      </BpkBox>
-      <BpkBox
-        gridRow="span 2"
-        padding={BpkSpacing.MD}
-      >
-        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          Box: Span 2 Rows
+      </BpkGridItem>
+      <BpkGridItem colSpan={1}>
+        <BpkBox height="6rem">
+          <span className={outline} />
         </BpkBox>
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.MD}>
-        Cell 4
-      </BpkBox>
-      <BpkBox padding={BpkSpacing.MD}>
-        Cell 5
-      </BpkBox>
+      </BpkGridItem>
+      <BpkGridItem colSpan={1}>
+        <BpkBox height="6rem">
+          <span className={outline} />
+        </BpkBox>
+      </BpkGridItem>
     </BpkGrid>
   </Wrapper>
 );
 
-export const BpkGridWithItemExample = () => (
+export const BpkGridBentoBoxExample = () => (
   <Wrapper>
     <BpkGrid
       templateRows="repeat(2, 1fr)"
       templateColumns="repeat(5, 1fr)"
       gap={BpkSpacing.MD}
-      padding={BpkSpacing.MD}
-      minHeight="12.5rem"
     >
-      <BpkGridItem
-        rowSpan={2}
-        colSpan={1}
-        padding={BpkSpacing.SM}
-      >
-         <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          rowSpan=2
+      <BpkGridItem rowSpan={2} colSpan={1}>
+         <BpkBox width="100%" height="100%">
+          <span className={outline}>rowSpan=2</span>
         </BpkBox>
       </BpkGridItem>
-      <BpkGridItem
-        colSpan={2}
-        padding={BpkSpacing.SM}
-      >
-        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          colSpan=2
+      <BpkGridItem colSpan={2}>
+        <BpkBox width="100%" height="6rem">
+          <span className={outline}>colSpan=2</span>
         </BpkBox>
       </BpkGridItem>
-      <BpkGridItem
-        colSpan={2}
-        padding={BpkSpacing.SM}
-      >
-        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          colSpan=2
+      <BpkGridItem colSpan={2}>
+        <BpkBox width="100%" height="6rem">
+          <span className={outline}>colSpan=2</span>
         </BpkBox>
       </BpkGridItem>
 
-      <BpkGridItem
-        colSpan={4}
-        padding={BpkSpacing.SM}
-      >
-        <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-          colSpan=4
+      <BpkGridItem colSpan={4}>
+        <BpkBox width="100%" height="6rem">
+          <span className={outline}>colSpan=4</span>
         </BpkBox>
       </BpkGridItem>
-    </BpkGrid>
-  </Wrapper>
-);
-
-export const BpkGridResponsiveExample = () => (
-  <Wrapper>
-    <BpkGrid
-      templateColumns={{
-        mobile: 'repeat(1, 1fr)',
-        tablet: 'repeat(2, 1fr)',
-        desktop: 'repeat(4, 1fr)',
-      }}
-      gap={{
-        mobile: BpkSpacing.SM,
-        tablet: BpkSpacing.MD,
-        desktop: BpkSpacing.LG,
-      }}
-      padding={BpkSpacing.MD}
-    >
-      {[1, 2, 3, 4].map((i) => (
-        <BpkBox key={i} padding={BpkSpacing.SM}>
-          <BpkBox width="100%" height="100%" padding={BpkSpacing.SM}>
-            Responsive Col {i}
-          </BpkBox>
-        </BpkBox>
-      ))}
     </BpkGrid>
   </Wrapper>
 );

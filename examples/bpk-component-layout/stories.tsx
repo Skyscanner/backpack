@@ -45,9 +45,8 @@ import {
 } from './flex-examples';
 import {
   BpkGridExample,
-  BpkGridResponsiveExample,
   BpkGridSpanExample,
-  BpkGridWithItemExample,
+  BpkGridBentoBoxExample,
 } from './grid-examples';
 import {
   HStackExample,
@@ -101,8 +100,7 @@ export const VisualTest = () => (
     {/* Grid examples */}
     <BpkGridExample />
     <BpkGridSpanExample />
-    <BpkGridWithItemExample />
-    <BpkGridResponsiveExample />
+    <BpkGridBentoBoxExample />
 
     {/* Stack examples */}
     <VerticalContentBlocksExample />
