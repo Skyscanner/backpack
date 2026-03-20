@@ -99,7 +99,7 @@ describe('BpkModalV3', () => {
     it('should have data-backpack-ds-component attribute', () => {
       const { container } = renderModal();
       const wrapper = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3"]',
+        '[data-backpack-ds-component="ModalV3"]',
       );
       expect(wrapper).toBeInTheDocument();
     });
@@ -114,7 +114,7 @@ describe('BpkModalV3', () => {
     it('should have data-backpack-ds-component attribute', () => {
       const { container } = renderModal();
       const content = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3Content"]',
+        '[data-backpack-ds-component="ModalV3Content"]',
       );
       expect(content).toBeInTheDocument();
     });
@@ -132,7 +132,7 @@ describe('BpkModalV3', () => {
     it('should render as a flex container', () => {
       const { container } = renderModal();
       const header = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3Header"]',
+        '[data-backpack-ds-component="ModalV3Header"]',
       );
       expect(header).toBeInTheDocument();
       expect(header?.className).toContain('bpk-modal-v3__header');
@@ -148,7 +148,7 @@ describe('BpkModalV3', () => {
     it('should have data-backpack-ds-component attribute', () => {
       const { container } = renderModal();
       const title = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3Title"]',
+        '[data-backpack-ds-component="ModalV3Title"]',
       );
       expect(title).toBeInTheDocument();
     });
@@ -185,7 +185,7 @@ describe('BpkModalV3', () => {
         </>,
       );
       const body = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3Body"]',
+        '[data-backpack-ds-component="ModalV3Body"]',
       );
       expect(body).toBeInTheDocument();
       expect(body?.className).toContain('bpk-modal-v3__body');
@@ -218,7 +218,7 @@ describe('BpkModalV3', () => {
         </>,
       );
       const heroImage = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3HeroImage"]',
+        '[data-backpack-ds-component="ModalV3HeroImage"]',
       );
       expect(heroImage).toBeInTheDocument();
       expect(heroImage?.className).toContain('bpk-modal-v3__hero-image');
@@ -238,7 +238,7 @@ describe('BpkModalV3', () => {
         </>,
       );
       const heroImage = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3HeroImage"]',
+        '[data-backpack-ds-component="ModalV3HeroImage"]',
       );
       expect(heroImage).toHaveStyle({ height: '12rem', flex: 'none' });
     });
@@ -266,7 +266,7 @@ describe('BpkModalV3', () => {
     it('should render default style without onImage', () => {
       const { container } = renderModal();
       const closeTrigger = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3CloseTrigger"]',
+        '[data-backpack-ds-component="ModalV3CloseTrigger"]',
       );
       expect(closeTrigger?.className).toContain('bpk-modal-v3__close-trigger');
       expect(closeTrigger?.className).not.toContain(
@@ -283,7 +283,7 @@ describe('BpkModalV3', () => {
         </BpkModalV3.Root>,
       );
       const closeTrigger = container.querySelector(
-        '[data-backpack-ds-component="BpkModalV3CloseTrigger"]',
+        '[data-backpack-ds-component="ModalV3CloseTrigger"]',
       );
       expect(closeTrigger?.className).toContain(
         'bpk-modal-v3__close-trigger--on-image',
