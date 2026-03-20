@@ -90,15 +90,13 @@
     pointer-events: auto;
   }
 
-  // Default variant — centred desktop dialog with fade+scale animation
+  // Default variant — centred desktop dialog with scale animation (matches V2)
   .bpk-modal-v3--default & {
     width: 100%;
     max-width: 50rem; // 800px
     max-height: 90vh;
-    transform: scale(0.95);
-    transition:
-      opacity tokens.$bpk-duration-base ease-in-out,
-      transform tokens.$bpk-duration-base ease-in-out;
+    transform: scale(0.9);
+    transition: transform tokens.$bpk-duration-sm ease-in-out;
     border-radius: tokens.$bpk-border-radius-lg;
     opacity: 0;
 
@@ -128,7 +126,7 @@
     }
 
     &[data-state='closed'] {
-      transform: scale(0.95);
+      transform: scale(0.9);
       opacity: 0;
     }
   }
