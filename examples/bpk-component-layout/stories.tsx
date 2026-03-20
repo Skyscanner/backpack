@@ -49,13 +49,11 @@ import {
   BpkGridBentoBoxExample,
 } from './grid-examples';
 import {
-  HStackExample,
-  NestedStackExample,
-  ResponsiveDirectionExample,
-  StackDefaultExample,
-  StackHorizontalExample,
-  VStackExample,
-  VerticalContentBlocksExample,
+  BpkStackExample,
+  BpkStackDirectionExample,
+  BpkHStackExample,
+  BpkVStackExample,
+  BpkStackResponsiveExample,
 } from './stack-examples';
 import BpkVesselExample from './vessel-examples';
 
@@ -103,13 +101,11 @@ export const VisualTest = () => (
     <BpkGridBentoBoxExample />
 
     {/* Stack examples */}
-    <VerticalContentBlocksExample />
-    <NestedStackExample />
-    <StackDefaultExample />
-    <StackHorizontalExample />
-    <HStackExample />
-    <VStackExample />
-    <ResponsiveDirectionExample />
+    <BpkStackExample />
+    <BpkStackDirectionExample />
+    <BpkHStackExample />
+    <BpkVStackExample />
+    <BpkStackResponsiveExample />
 
     {/* Vessel examples */}
     <BpkVesselExample />

@@ -21,13 +21,11 @@ import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 import { BpkProvider, BpkStack } from '../../packages/bpk-component-layout';
 
 import {
-  StackDefaultExample,
-  StackHorizontalExample,
-  HStackExample,
-  VStackExample,
-  VerticalContentBlocksExample,
-  ResponsiveDirectionExample,
-  NestedStackExample,
+  BpkStackExample,
+  BpkStackDirectionExample,
+  BpkHStackExample,
+  BpkVStackExample,
+  BpkStackResponsiveExample,
 } from './stack-examples';
 
 export default {
@@ -56,11 +54,8 @@ export default {
   },
 };
 
-export const VerticalContentBlocks = () => <VerticalContentBlocksExample />;
-export const NestedStack = () => <NestedStackExample />;
-export const StackDefault = () => <StackDefaultExample />;
-export const StackHorizontal = () => <StackHorizontalExample />;
-export const StackH = () => <HStackExample />;
-export const StackV = () => <VStackExample />;
-export const StackResponsive = () => <ResponsiveDirectionExample />;
-
+export const Default = BpkStackExample;
+export const Direction = BpkStackDirectionExample;
+export const HStack = BpkHStackExample;
+export const VStack = BpkVStackExample;
+export const Responsive = BpkStackResponsiveExample;
