@@ -22,7 +22,7 @@ import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 figma.connect(
   BpkBadge,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=37974%3A344",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A5938",
   {
     props: {
       style: figma.enum('Style', {
