@@ -344,11 +344,12 @@ const DefaultWithImageExample = () => (
               <BpkModalV3.Body>
                 <BpkVStack alignItems="start" gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
                   <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
-                    Explore Edinburgh
+                    Default with image
                   </BpkText>
                   <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                    Discover the historic capital of Scotland with its stunning
-                    architecture, rich culture, and vibrant festivals.
+                    This default modal includes a HeroImage alongside body
+                    content. On desktop the image appears side by side with the
+                    body. On mobile it stacks above.
                   </BpkText>
                 </BpkVStack>
               </BpkModalV3.Body>
@@ -383,10 +384,11 @@ const SheetWithImageExample = () => (
             <BpkModalV3.Body>
               <BpkVStack alignItems="start" gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
-                  Weekend getaway
+                  Sheet with image
                 </BpkText>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                  Find the best deals for your next weekend trip.
+                  This sheet modal includes a HeroImage above the body content
+                  with the close button overlaid on the image.
                 </BpkText>
               </BpkVStack>
             </BpkModalV3.Body>
