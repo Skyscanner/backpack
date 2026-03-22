@@ -381,7 +381,7 @@ const SheetWithImageExample = () => (
               <BpkModalV3.CloseTrigger label="Close" onImage />
             </BpkModalV3.HeroImage>
             <BpkModalV3.Body>
-              <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
+              <BpkVStack alignItems="start" gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
                   Weekend getaway
                 </BpkText>
