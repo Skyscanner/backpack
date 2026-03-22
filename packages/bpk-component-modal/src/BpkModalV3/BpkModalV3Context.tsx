@@ -18,7 +18,7 @@
 
 import { createContext, useContext } from 'react';
 
-import type { BpkModalV3Type } from '../common-types';
+import type { BpkModalV3Type } from './common-types';
 
 const BpkModalV3Context = createContext<BpkModalV3Type>('default');
 
