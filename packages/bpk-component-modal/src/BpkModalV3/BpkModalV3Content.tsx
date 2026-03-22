@@ -22,6 +22,8 @@ import { Dialog } from '@ark-ui/react/dialog';
 
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
+import { useModalType } from './BpkModalV3Context';
+
 import STYLES from './BpkModalV3.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -30,16 +32,27 @@ type BpkModalV3ContentProps = {
   children: ReactNode;
 };
 
-const BpkModalV3Content = ({ children }: BpkModalV3ContentProps) => (
-  <Dialog.Positioner className={getClassName('bpk-modal-v3__positioner')}>
-    <Dialog.Content
-      className={getClassName('bpk-modal-v3__content')}
-      {...getDataComponentAttribute('ModalV3Content')}
+const BpkModalV3Content = ({ children }: BpkModalV3ContentProps) => {
+  const type = useModalType();
+  return (
+    <Dialog.Positioner
+      className={getClassName(
+        'bpk-modal-v3__positioner',
+        `bpk-modal-v3__positioner--${type}`,
+      )}
     >
-      {children}
-    </Dialog.Content>
-  </Dialog.Positioner>
-);
+      <Dialog.Content
+        className={getClassName(
+          'bpk-modal-v3__content',
+          `bpk-modal-v3__content--${type}`,
+        )}
+        {...getDataComponentAttribute('ModalV3Content')}
+      >
+        {children}
+      </Dialog.Content>
+    </Dialog.Positioner>
+  );
+};
 
 export default BpkModalV3Content;
 export type { BpkModalV3ContentProps };

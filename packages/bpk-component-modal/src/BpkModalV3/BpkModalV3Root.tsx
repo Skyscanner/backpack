@@ -20,13 +20,11 @@ import type { ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react/dialog';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { getDataComponentAttribute } from '../../../bpk-react-utils';
+
+import { ModalTypeProvider } from './BpkModalV3Context';
 
 import type { BpkModalV3Type } from './common-types';
-
-import STYLES from './BpkModalV3.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type BpkModalV3RootProps = {
   children: ReactNode;
@@ -45,16 +43,14 @@ const BpkModalV3Root = ({
     {...(open !== undefined && { open })}
     {...(onOpenChange !== undefined && { onOpenChange })}
   >
-    <div
-      className={getClassName(
-        'bpk-modal-v3',
-        `bpk-modal-v3--${type}`,
-      )}
-      data-type={type}
-      {...getDataComponentAttribute('ModalV3')}
-    >
-      {children}
-    </div>
+    <ModalTypeProvider value={type}>
+      <div
+        data-type={type}
+        {...getDataComponentAttribute('ModalV3')}
+      >
+        {children}
+      </div>
+    </ModalTypeProvider>
   </Dialog.Root>
 );
 

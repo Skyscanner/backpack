@@ -37,6 +37,22 @@ const [open, setOpen] = useState(true);
 </BpkModal.Root>
 ```
 
+### Portal
+
+Portal renders `Scrim` and `Content` into `document.body`, escaping any parent stacking contexts (`transform`, `filter`, `will-change`, `overflow: hidden`) or z-index conflicts. It is optional but recommended.
+
+```tsx
+<BpkModal.Root>
+  <BpkModal.Trigger asChild>
+    <BpkButton>Open modal</BpkButton>
+  </BpkModal.Trigger>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>...</BpkModal.Content>
+  </BpkModal.Portal>
+</BpkModal.Root>
+```
+
 ### Default modal
 
 ```tsx
@@ -44,16 +60,18 @@ const [open, setOpen] = useState(true);
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
-  <BpkModal.Scrim />
-  <BpkModal.Content>
-    <BpkModal.Header>
-      <BpkModal.Title>My modal</BpkModal.Title>
-      <BpkModal.CloseTrigger label="Close" />
-    </BpkModal.Header>
-    <BpkModal.Body>
-      <BpkText>Modal content goes here.</BpkText>
-    </BpkModal.Body>
-  </BpkModal.Content>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>
+      <BpkModal.Header>
+        <BpkModal.Title>My modal</BpkModal.Title>
+        <BpkModal.CloseTrigger label="Close" />
+      </BpkModal.Header>
+      <BpkModal.Body>
+        <BpkText>Modal content goes here.</BpkText>
+      </BpkModal.Body>
+    </BpkModal.Content>
+  </BpkModal.Portal>
 </BpkModal.Root>
 ```
 
@@ -64,16 +82,18 @@ const [open, setOpen] = useState(true);
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
-  <BpkModal.Scrim />
-  <BpkModal.Content>
-    <BpkModal.Header>
-      <BpkModal.Title>Sheet title</BpkModal.Title>
-      <BpkModal.CloseTrigger label="Close" />
-    </BpkModal.Header>
-    <BpkModal.Body>
-      <BpkText>Sheet content goes here.</BpkText>
-    </BpkModal.Body>
-  </BpkModal.Content>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>
+      <BpkModal.Header>
+        <BpkModal.Title>Sheet title</BpkModal.Title>
+        <BpkModal.CloseTrigger label="Close" />
+      </BpkModal.Header>
+      <BpkModal.Body>
+        <BpkText>Sheet content goes here.</BpkText>
+      </BpkModal.Body>
+    </BpkModal.Content>
+  </BpkModal.Portal>
 </BpkModal.Root>
 ```
 
@@ -84,16 +104,18 @@ const [open, setOpen] = useState(true);
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
-  <BpkModal.Scrim />
-  <BpkModal.Content>
-    <BpkModal.Header>
-      <BpkModal.Title>Full screen title</BpkModal.Title>
-      <BpkModal.CloseTrigger label="Close" />
-    </BpkModal.Header>
-    <BpkModal.Body>
-      <BpkText>Full screen content goes here.</BpkText>
-    </BpkModal.Body>
-  </BpkModal.Content>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>
+      <BpkModal.Header>
+        <BpkModal.Title>Full screen title</BpkModal.Title>
+        <BpkModal.CloseTrigger label="Close" />
+      </BpkModal.Header>
+      <BpkModal.Body>
+        <BpkText>Full screen content goes here.</BpkText>
+      </BpkModal.Body>
+    </BpkModal.Content>
+  </BpkModal.Portal>
 </BpkModal.Root>
 ```
 
@@ -105,30 +127,32 @@ const [open, setOpen] = useState(true);
     <BpkModal.Trigger asChild>
       <BpkButton>Open modal</BpkButton>
     </BpkModal.Trigger>
-    <BpkModal.Scrim />
-    <BpkModal.Content>
-      <BpkModal.Title>
-        <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
-      </BpkModal.Title>
+    <BpkModal.Portal>
+      <BpkModal.Scrim />
+      <BpkModal.Content>
+        <BpkModal.Title>
+          <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
+        </BpkModal.Title>
 
-      <BpkFlex
-        direction={{
-          base: 'column-reverse',
-          [BpkBreakpoint.SmallTablet]: 'row',
-        }}
-        minHeight={{
-          base: '100%',
-          [BpkBreakpoint.SmallTablet]: '20rem',
-        }}
-      >
-        <BpkModal.Body>
-          <BpkText>Content to the side of the image on large viewports, beneath the image on small viewports.</BpkText>
-        </BpkModal.Body>
-        <BpkModal.HeroImage src="/image.jpg" alt="">
-          <BpkModal.CloseTrigger label="Close" onImage />
-        </BpkModal.HeroImage>
-      </BpkFlex>
-    </BpkModal.Content>
+        <BpkFlex
+          direction={{
+            base: 'column-reverse',
+            [BpkBreakpoint.SmallTablet]: 'row',
+          }}
+          minHeight={{
+            base: '100%',
+            [BpkBreakpoint.SmallTablet]: '20rem',
+          }}
+        >
+          <BpkModal.Body>
+            <BpkText>Content to the side of the image on large viewports, beneath the image on small viewports.</BpkText>
+          </BpkModal.Body>
+          <BpkModal.HeroImage src="/image.jpg" alt="">
+            <BpkModal.CloseTrigger label="Close" onImage />
+          </BpkModal.HeroImage>
+        </BpkFlex>
+      </BpkModal.Content>
+    </BpkModal.Portal>
   </BpkModal.Root>
 </BpkProvider>
 ```
@@ -137,27 +161,29 @@ const [open, setOpen] = useState(true);
 
 ```tsx
 <BpkProvider>
-  <BpkModal.Root>
+  <BpkModal.Root type="sheet">
     <BpkModal.Trigger asChild>
       <BpkButton>Open modal</BpkButton>
     </BpkModal.Trigger>
-    <BpkModal.Scrim />
-    <BpkModal.Content>
-      <BpkModal.Title>
-        <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
-      </BpkModal.Title>
+    <BpkModal.Portal>
+      <BpkModal.Scrim />
+      <BpkModal.Content>
+        <BpkModal.Title>
+          <BpkVisuallyHidden>Image modal</BpkVisuallyHidden>
+        </BpkModal.Title>
 
-      <BpkModal.HeroImage src={'/image.jpg'} alt="" height="12rem">
-        <BpkModal.CloseTrigger label="Close" onImage />
-      </BpkModal.HeroImage>
-      <BpkModal.Body>
-        <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
-          <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
-            Content below the image.
-          </BpkText>
-        </BpkVStack>
-      </BpkModal.Body>
-    </BpkModal.Content>
+        <BpkModal.HeroImage src={'/image.jpg'} alt="" height="12rem">
+          <BpkModal.CloseTrigger label="Close" onImage />
+        </BpkModal.HeroImage>
+        <BpkModal.Body>
+          <BpkVStack gap={BpkSpacing.SM} padding={BpkSpacing.LG}>
+            <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+              Content below the image.
+            </BpkText>
+          </BpkVStack>
+        </BpkModal.Body>
+      </BpkModal.Content>
+    </BpkModal.Portal>
   </BpkModal.Root>
 </BpkProvider>
 ```
@@ -168,18 +194,20 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 
 ```tsx
 <BpkModal.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
-  <BpkModal.Scrim />
-  <BpkModal.Content>
-    <BpkModal.Header>
-      <BpkModal.Title>
-        <BpkVisuallyHidden>Accessible dialog name</BpkVisuallyHidden>
-      </BpkModal.Title>
-      <BpkModal.CloseTrigger label="Close" />
-    </BpkModal.Header>
-    <BpkModal.Body>
-      <BpkText>This modal has no visible title.</BpkText>
-    </BpkModal.Body>
-  </BpkModal.Content>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>
+      <BpkModal.Header>
+        <BpkModal.Title>
+          <BpkVisuallyHidden>Accessible dialog name</BpkVisuallyHidden>
+        </BpkModal.Title>
+        <BpkModal.CloseTrigger label="Close" />
+      </BpkModal.Header>
+      <BpkModal.Body>
+        <BpkText>This modal has no visible title.</BpkText>
+      </BpkModal.Body>
+    </BpkModal.Content>
+  </BpkModal.Portal>
 </BpkModal.Root>
 ```
 
@@ -195,6 +223,7 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 |---|---|---|---|
 | `Root` | `<div>` + Ark `Dialog.Root` | ✓ | Wrapper; accepts optional `open`, `onOpenChange` (for controlled usage), and `type` |
 | `Trigger` | Ark `Dialog.Trigger` | — | Optional trigger element; supports `asChild` |
+| `Portal` | Ark `Portal` | — | Optional; renders children into `document.body` to escape stacking context and z-index issues |
 | `Scrim` | Ark `Dialog.Backdrop` | ✓ | Semi-transparent overlay; clicking closes the modal |
 | `Content` | Ark `Dialog.Positioner` + `Dialog.Content` | ✓ | Positioned content container with focus management |
 | `Header` | `<div>` | — | Flex layout container for Title and CloseTrigger |

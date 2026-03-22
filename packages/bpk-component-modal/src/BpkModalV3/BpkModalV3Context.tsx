@@ -16,27 +16,11 @@
  * limitations under the License.
  */
 
-import { Dialog } from '@ark-ui/react/dialog';
+import { createContext, useContext } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import type { BpkModalV3Type } from './common-types';
 
-import { useModalType } from './BpkModalV3Context';
+const BpkModalV3Context = createContext<BpkModalV3Type>('default');
 
-import STYLES from './BpkModalV3.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-const BpkModalV3Scrim = () => {
-  const type = useModalType();
-  return (
-    <Dialog.Backdrop
-      className={getClassName(
-        'bpk-modal-v3__scrim',
-        type === 'full' && 'bpk-modal-v3__scrim--full',
-      )}
-      {...getDataComponentAttribute('ModalV3Scrim')}
-    />
-  );
-};
-
-export default BpkModalV3Scrim;
+export const useModalType = () => useContext(BpkModalV3Context);
+export const ModalTypeProvider = BpkModalV3Context.Provider;

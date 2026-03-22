@@ -62,6 +62,7 @@ describe('BpkModalV3', () => {
     it('should export all sub-components', () => {
       expect(BpkModalV3.Root).toBeDefined();
       expect(BpkModalV3.Trigger).toBeDefined();
+      expect(BpkModalV3.Portal).toBeDefined();
       expect(BpkModalV3.Scrim).toBeDefined();
       expect(BpkModalV3.Content).toBeDefined();
       expect(BpkModalV3.Header).toBeDefined();
@@ -78,22 +79,18 @@ describe('BpkModalV3', () => {
       const { container } = renderModal();
       const wrapper = container.querySelector('[data-type]');
       expect(wrapper).toHaveAttribute('data-type', 'default');
-      expect(wrapper?.className).toContain('bpk-modal-v3');
-      expect(wrapper?.className).toContain('bpk-modal-v3--default');
     });
 
     it('should render wrapper div with sheet type', () => {
       const { container } = renderModal({ type: 'sheet' });
       const wrapper = container.querySelector('[data-type]');
       expect(wrapper).toHaveAttribute('data-type', 'sheet');
-      expect(wrapper?.className).toContain('bpk-modal-v3--sheet');
     });
 
     it('should render wrapper div with full type', () => {
       const { container } = renderModal({ type: 'full' });
       const wrapper = container.querySelector('[data-type]');
       expect(wrapper).toHaveAttribute('data-type', 'full');
-      expect(wrapper?.className).toContain('bpk-modal-v3--full');
     });
 
     it('should have data-backpack-ds-component attribute', () => {
@@ -118,6 +115,14 @@ describe('BpkModalV3', () => {
       );
       expect(content).toBeInTheDocument();
     });
+
+    it('should apply variant modifier class from context', () => {
+      const { container } = renderModal({ type: 'sheet' });
+      const content = container.querySelector(
+        '[data-backpack-ds-component="ModalV3Content"]',
+      );
+      expect(content?.className).toContain('bpk-modal-v3__content--sheet');
+    });
   });
 
   describe('Scrim', () => {
@@ -136,6 +141,14 @@ describe('BpkModalV3', () => {
       );
       expect(header).toBeInTheDocument();
       expect(header?.className).toContain('bpk-modal-v3__header');
+    });
+
+    it('should apply variant modifier class from context', () => {
+      const { container } = renderModal({ type: 'sheet' });
+      const header = container.querySelector(
+        '[data-backpack-ds-component="ModalV3Header"]',
+      );
+      expect(header?.className).toContain('bpk-modal-v3__header--sheet');
     });
   });
 

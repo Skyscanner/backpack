@@ -16,27 +16,17 @@
  * limitations under the License.
  */
 
-import { Dialog } from '@ark-ui/react/dialog';
+import type { ReactNode } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { Portal } from '@ark-ui/react/portal';
 
-import { useModalType } from './BpkModalV3Context';
-
-import STYLES from './BpkModalV3.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-const BpkModalV3Scrim = () => {
-  const type = useModalType();
-  return (
-    <Dialog.Backdrop
-      className={getClassName(
-        'bpk-modal-v3__scrim',
-        type === 'full' && 'bpk-modal-v3__scrim--full',
-      )}
-      {...getDataComponentAttribute('ModalV3Scrim')}
-    />
-  );
+type BpkModalV3PortalProps = {
+  children: ReactNode;
 };
 
-export default BpkModalV3Scrim;
+const BpkModalV3Portal = ({ children }: BpkModalV3PortalProps) => (
+  <Portal>{children}</Portal>
+);
+
+export default BpkModalV3Portal;
+export type { BpkModalV3PortalProps };

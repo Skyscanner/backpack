@@ -22,6 +22,7 @@ import BpkModalV3Content from './BpkModalV3Content';
 import BpkModalV3Description from './BpkModalV3Description';
 import BpkModalV3Header from './BpkModalV3Header';
 import BpkModalV3HeroImage from './BpkModalV3HeroImage';
+import BpkModalV3Portal from './BpkModalV3Portal';
 import BpkModalV3Root from './BpkModalV3Root';
 import BpkModalV3Scrim from './BpkModalV3Scrim';
 import BpkModalV3Title from './BpkModalV3Title';
@@ -30,6 +31,7 @@ import BpkModalV3Trigger from './BpkModalV3Trigger';
 const BpkModalV3 = {
   Root: BpkModalV3Root,
   Trigger: BpkModalV3Trigger,
+  Portal: BpkModalV3Portal,
   Scrim: BpkModalV3Scrim,
   Content: BpkModalV3Content,
   Header: BpkModalV3Header,
