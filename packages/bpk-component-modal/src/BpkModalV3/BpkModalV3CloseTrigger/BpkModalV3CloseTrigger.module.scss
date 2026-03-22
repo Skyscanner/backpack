@@ -1,0 +1,54 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../../bpk-mixins/tokens';
+@use '../../../../bpk-mixins/utils';
+
+.bpk-modal-v3__close-trigger {
+  position: absolute;
+  top: tokens.bpk-spacing-lg();
+  display: flex;
+  width: tokens.bpk-spacing-lg();
+  height: tokens.bpk-spacing-lg();
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: tokens.$bpk-text-primary-day;
+  cursor: pointer;
+  inset-inline-end: tokens.bpk-spacing-lg();
+
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+
+  // On-image variant — larger with translucent white background
+  &--on-image {
+    top: tokens.bpk-spacing-base();
+    width: tokens.bpk-spacing-xxl();
+    height: tokens.bpk-spacing-xxl();
+    padding: 0.75rem; // 12px
+    border-radius: tokens.$bpk-border-radius-lg;
+    background-color: tokens.$bpk-line-on-dark-day;
+    color: tokens.$bpk-text-primary-day;
+    inset-inline-end: tokens.bpk-spacing-lg();
+  }
+}

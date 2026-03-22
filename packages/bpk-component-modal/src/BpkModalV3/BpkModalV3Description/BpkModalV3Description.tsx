@@ -16,11 +16,23 @@
  * limitations under the License.
  */
 
-import { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 
-import type { BpkModalV3Type } from '../common-types';
+import { Dialog } from '@ark-ui/react/dialog';
 
-const BpkModalV3Context = createContext<BpkModalV3Type>('default');
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-export const useModalType = () => useContext(BpkModalV3Context);
-export const ModalTypeProvider = BpkModalV3Context.Provider;
+type BpkModalV3DescriptionProps = {
+  children: ReactNode;
+};
+
+const BpkModalV3Description = ({ children }: BpkModalV3DescriptionProps) => (
+  <Dialog.Description
+    {...getDataComponentAttribute('ModalV3Description')}
+  >
+    {children}
+  </Dialog.Description>
+);
+
+export default BpkModalV3Description;
+export type { BpkModalV3DescriptionProps };

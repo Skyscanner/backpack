@@ -16,36 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/breakpoints';
-@use '../../../bpk-mixins/shadows';
-@use '../../../bpk-mixins/utils';
-
-// Scrim styles
-
-.bpk-modal-v3__scrim {
-  position: fixed;
-  z-index: tokens.$bpk-zindex-modal;
-  transition: opacity tokens.$bpk-duration-sm ease-in-out;
-  background-color: tokens.$bpk-scrim-day;
-  opacity: 0;
-  inset: 0;
-  pointer-events: none;
-
-  &[data-state='open'] {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  &[data-state='closed'] {
-    opacity: 0;
-  }
-
-  // Auto-hide scrim for full variant
-  &--full {
-    display: none;
-  }
-}
+@use '../../../../bpk-mixins/tokens';
+@use '../../../../bpk-mixins/breakpoints';
+@use '../../../../bpk-mixins/shadows';
 
 // Positioner
 
@@ -172,111 +145,7 @@
   }
 }
 
-// Header padding styles
-
-.bpk-modal-v3__header {
-  position: relative;
-  display: flex;
-  padding: tokens.bpk-spacing-lg();
-  align-items: center;
-  flex-shrink: 0;
-  gap: tokens.bpk-spacing-sm();
-
-  // Reserve space for the absolutely-positioned close button (24px button + 8px gap)
-  padding-inline-end: tokens.bpk-spacing-lg() + tokens.bpk-spacing-lg() +
-    tokens.bpk-spacing-sm();
-
-  // Sheet and full variants: reduced bottom padding
-  &--sheet,
-  &--full {
-    padding-bottom: tokens.bpk-spacing-base();
-  }
-
-  // Title fills remaining width when inside header (row flex)
-  .bpk-modal-v3__title {
-    flex: 1;
-  }
-}
-
-// Title — semantic only, no typography
-
-.bpk-modal-v3__title {
-  min-width: 0;
-  margin: 0;
-
-  // Reset Dialog.Title browser defaults — typography is controlled by children (e.g. BpkText)
-  /* stylelint-disable-next-line scale-unlimited/declaration-strict-value, backpack/use-typography-styles */
-  font-size: inherit;
-  /* stylelint-disable-next-line backpack/use-typography-styles */
-  font-weight: inherit;
-}
-
-// Body — scrollable content area below the header
-
-.bpk-modal-v3__body {
-  flex: 1;
-  overflow-y: auto;
-}
-
-// Hero image — cover image container
-
-.bpk-modal-v3__hero-image {
-  position: relative;
-  flex: 1;
-  overflow: hidden;
-}
-
-.bpk-modal-v3__hero-image-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  object-fit: cover;
-}
-
-// Close trigger styles
-
-.bpk-modal-v3__close-trigger {
-  position: absolute;
-  top: tokens.bpk-spacing-lg();
-  display: flex;
-  width: tokens.bpk-spacing-lg();
-  height: tokens.bpk-spacing-lg();
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: tokens.$bpk-text-primary-day;
-  cursor: pointer;
-  inset-inline-end: tokens.bpk-spacing-lg();
-
-  &:focus-visible {
-    @include utils.bpk-focus-indicator;
-  }
-
-  // On-image variant — larger with translucent white background
-  &--on-image {
-    top: tokens.bpk-spacing-base();
-    width: tokens.bpk-spacing-xxl();
-    height: tokens.bpk-spacing-xxl();
-    padding: 0.75rem; // 12px
-    border-radius: tokens.$bpk-border-radius-lg;
-    background-color: tokens.$bpk-line-on-dark-day;
-    color: tokens.$bpk-text-primary-day;
-    inset-inline-end: tokens.bpk-spacing-lg();
-  }
-}
-
-// Reduced motion — disable all animations
-
 @media (prefers-reduced-motion: reduce) {
-  .bpk-modal-v3__scrim {
-    transition: none;
-  }
-
   .bpk-modal-v3__content--default {
     transform: scale(1);
     transition: none;

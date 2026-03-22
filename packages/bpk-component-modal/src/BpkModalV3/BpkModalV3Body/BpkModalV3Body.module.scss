@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-import { createContext, useContext } from 'react';
-
-import type { BpkModalV3Type } from '../common-types';
-
-const BpkModalV3Context = createContext<BpkModalV3Type>('default');
-
-export const useModalType = () => useContext(BpkModalV3Context);
-export const ModalTypeProvider = BpkModalV3Context.Provider;
+.bpk-modal-v3__body {
+  flex: 1;
+  overflow-y: auto;
+}

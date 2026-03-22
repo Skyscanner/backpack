@@ -18,41 +18,31 @@
 
 import type { ReactNode } from 'react';
 
-import { Dialog } from '@ark-ui/react/dialog';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+import { useModalType } from '../BpkModalV3Context';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
-
-import { useModalType } from './BpkModalV3Context';
-
-import STYLES from './BpkModalV3.module.scss';
+import STYLES from './BpkModalV3Header.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkModalV3ContentProps = {
+type BpkModalV3HeaderProps = {
   children: ReactNode;
 };
 
-const BpkModalV3Content = ({ children }: BpkModalV3ContentProps) => {
+const BpkModalV3Header = ({ children }: BpkModalV3HeaderProps) => {
   const type = useModalType();
   return (
-    <Dialog.Positioner
+    <div
       className={getClassName(
-        'bpk-modal-v3__positioner',
-        `bpk-modal-v3__positioner--${type}`,
+        'bpk-modal-v3__header',
+        `bpk-modal-v3__header--${type}`,
       )}
+      {...getDataComponentAttribute('ModalV3Header')}
     >
-      <Dialog.Content
-        className={getClassName(
-          'bpk-modal-v3__content',
-          `bpk-modal-v3__content--${type}`,
-        )}
-        {...getDataComponentAttribute('ModalV3Content')}
-      >
-        {children}
-      </Dialog.Content>
-    </Dialog.Positioner>
+      {children}
+    </div>
   );
 };
 
-export default BpkModalV3Content;
-export type { BpkModalV3ContentProps };
+export default BpkModalV3Header;
+export type { BpkModalV3HeaderProps };

@@ -18,9 +18,9 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkModalV3.module.scss';
+import STYLES from './BpkModalV3HeroImage.module.scss';
 
 const getClassName = cssModules(STYLES);
 

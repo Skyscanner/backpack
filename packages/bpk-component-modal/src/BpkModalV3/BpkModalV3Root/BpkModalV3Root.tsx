@@ -20,11 +20,10 @@ import type { ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react/dialog';
 
-import { getDataComponentAttribute } from '../../../bpk-react-utils';
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
+import { ModalTypeProvider } from '../BpkModalV3Context';
 
-import { ModalTypeProvider } from './BpkModalV3Context';
-
-import type { BpkModalV3Type } from './common-types';
+import type { BpkModalV3Type } from '../common-types';
 
 type BpkModalV3RootProps = {
   children: ReactNode;

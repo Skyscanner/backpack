@@ -20,9 +20,9 @@ import type { ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react/dialog';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkModalV3.module.scss';
+import STYLES from './BpkModalV3Title.module.scss';
 
 const getClassName = cssModules(STYLES);
 

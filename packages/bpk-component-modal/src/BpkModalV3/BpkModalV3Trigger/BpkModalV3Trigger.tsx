@@ -18,32 +18,26 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { Dialog } from '@ark-ui/react/dialog';
 
-import { useModalType } from './BpkModalV3Context';
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 
-import STYLES from './BpkModalV3.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-type BpkModalV3HeaderProps = {
+type BpkModalV3TriggerProps = {
   children: ReactNode;
+  asChild?: boolean;
 };
 
-const BpkModalV3Header = ({ children }: BpkModalV3HeaderProps) => {
-  const type = useModalType();
-  return (
-    <div
-      className={getClassName(
-        'bpk-modal-v3__header',
-        `bpk-modal-v3__header--${type}`,
-      )}
-      {...getDataComponentAttribute('ModalV3Header')}
-    >
-      {children}
-    </div>
-  );
-};
+const BpkModalV3Trigger = ({
+  asChild,
+  children,
+}: BpkModalV3TriggerProps) => (
+  <Dialog.Trigger
+    asChild={asChild}
+    {...getDataComponentAttribute('ModalV3Trigger')}
+  >
+    {children}
+  </Dialog.Trigger>
+);
 
-export default BpkModalV3Header;
-export type { BpkModalV3HeaderProps };
+export default BpkModalV3Trigger;
+export type { BpkModalV3TriggerProps };

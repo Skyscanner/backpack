@@ -16,28 +16,34 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+@use '../../../../bpk-mixins/tokens';
 
-import { Dialog } from '@ark-ui/react/dialog';
+.bpk-modal-v3__scrim {
+  position: fixed;
+  z-index: tokens.$bpk-zindex-modal;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
+  background-color: tokens.$bpk-scrim-day;
+  opacity: 0;
+  inset: 0;
+  pointer-events: none;
 
-import { getDataComponentAttribute } from '../../../bpk-react-utils';
+  &[data-state='open'] {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-type BpkModalV3TriggerProps = {
-  children: ReactNode;
-  asChild?: boolean;
-};
+  &[data-state='closed'] {
+    opacity: 0;
+  }
 
-const BpkModalV3Trigger = ({
-  asChild,
-  children,
-}: BpkModalV3TriggerProps) => (
-  <Dialog.Trigger
-    asChild={asChild}
-    {...getDataComponentAttribute('ModalV3Trigger')}
-  >
-    {children}
-  </Dialog.Trigger>
-);
+  // Auto-hide scrim for full variant
+  &--full {
+    display: none;
+  }
+}
 
-export default BpkModalV3Trigger;
-export type { BpkModalV3TriggerProps };
+@media (prefers-reduced-motion: reduce) {
+  .bpk-modal-v3__scrim {
+    transition: none;
+  }
+}

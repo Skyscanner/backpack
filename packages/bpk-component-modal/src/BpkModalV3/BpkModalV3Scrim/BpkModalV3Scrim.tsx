@@ -18,33 +18,24 @@
 
 import { Dialog } from '@ark-ui/react/dialog';
 
-import CloseIcon from '../../../bpk-component-icon/sm/close';
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+import { useModalType } from '../BpkModalV3Context';
 
-import STYLES from './BpkModalV3.module.scss';
+import STYLES from './BpkModalV3Scrim.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkModalV3CloseTriggerProps = {
-  label: string;
-  onImage?: boolean;
+const BpkModalV3Scrim = () => {
+  const type = useModalType();
+  return (
+    <Dialog.Backdrop
+      className={getClassName(
+        'bpk-modal-v3__scrim',
+        type === 'full' && 'bpk-modal-v3__scrim--full',
+      )}
+      {...getDataComponentAttribute('ModalV3Scrim')}
+    />
+  );
 };
 
-const BpkModalV3CloseTrigger = ({
-  label,
-  onImage = false,
-}: BpkModalV3CloseTriggerProps) => (
-  <Dialog.CloseTrigger
-    className={getClassName(
-      'bpk-modal-v3__close-trigger',
-      onImage && 'bpk-modal-v3__close-trigger--on-image',
-    )}
-    aria-label={label}
-    {...getDataComponentAttribute('ModalV3CloseTrigger')}
-  >
-    <CloseIcon />
-  </Dialog.CloseTrigger>
-);
-
-export default BpkModalV3CloseTrigger;
-export type { BpkModalV3CloseTriggerProps };
+export default BpkModalV3Scrim;

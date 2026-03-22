@@ -16,23 +16,14 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+.bpk-modal-v3__title {
+  min-width: 0;
+  margin: 0;
+  flex: 1;
 
-import { Dialog } from '@ark-ui/react/dialog';
-
-import { getDataComponentAttribute } from '../../../bpk-react-utils';
-
-type BpkModalV3DescriptionProps = {
-  children: ReactNode;
-};
-
-const BpkModalV3Description = ({ children }: BpkModalV3DescriptionProps) => (
-  <Dialog.Description
-    {...getDataComponentAttribute('ModalV3Description')}
-  >
-    {children}
-  </Dialog.Description>
-);
-
-export default BpkModalV3Description;
-export type { BpkModalV3DescriptionProps };
+  // Reset Dialog.Title browser defaults — typography is controlled by children (e.g. BpkText)
+  /* stylelint-disable-next-line scale-unlimited/declaration-strict-value, backpack/use-typography-styles */
+  font-size: inherit;
+  /* stylelint-disable-next-line backpack/use-typography-styles */
+  font-weight: inherit;
+}

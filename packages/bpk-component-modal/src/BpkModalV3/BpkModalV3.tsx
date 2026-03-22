@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-import BpkModalV3Body from './BpkModalV3Body';
-import BpkModalV3CloseTrigger from './BpkModalV3CloseTrigger';
-import BpkModalV3Content from './BpkModalV3Content';
-import BpkModalV3Description from './BpkModalV3Description';
-import BpkModalV3Header from './BpkModalV3Header';
-import BpkModalV3HeroImage from './BpkModalV3HeroImage';
-import BpkModalV3Portal from './BpkModalV3Portal';
-import BpkModalV3Root from './BpkModalV3Root';
-import BpkModalV3Scrim from './BpkModalV3Scrim';
-import BpkModalV3Title from './BpkModalV3Title';
-import BpkModalV3Trigger from './BpkModalV3Trigger';
+import BpkModalV3Body from './BpkModalV3Body/BpkModalV3Body';
+import BpkModalV3CloseTrigger from './BpkModalV3CloseTrigger/BpkModalV3CloseTrigger';
+import BpkModalV3Content from './BpkModalV3Content/BpkModalV3Content';
+import BpkModalV3Description from './BpkModalV3Description/BpkModalV3Description';
+import BpkModalV3Header from './BpkModalV3Header/BpkModalV3Header';
+import BpkModalV3HeroImage from './BpkModalV3HeroImage/BpkModalV3HeroImage';
+import BpkModalV3Portal from './BpkModalV3Portal/BpkModalV3Portal';
+import BpkModalV3Root from './BpkModalV3Root/BpkModalV3Root';
+import BpkModalV3Scrim from './BpkModalV3Scrim/BpkModalV3Scrim';
+import BpkModalV3Title from './BpkModalV3Title/BpkModalV3Title';
+import BpkModalV3Trigger from './BpkModalV3Trigger/BpkModalV3Trigger';
 
 const BpkModalV3 = {
   Root: BpkModalV3Root,

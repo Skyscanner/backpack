@@ -16,26 +16,23 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+@use '../../../../bpk-mixins/tokens';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+.bpk-modal-v3__header {
+  position: relative;
+  display: flex;
+  padding: tokens.bpk-spacing-lg();
+  align-items: center;
+  flex-shrink: 0;
+  gap: tokens.bpk-spacing-sm();
 
-import STYLES from './BpkModalV3.module.scss';
+  // Reserve space for the absolutely-positioned close button (24px button + 8px gap)
+  padding-inline-end: tokens.bpk-spacing-lg() + tokens.bpk-spacing-lg() +
+    tokens.bpk-spacing-sm();
 
-const getClassName = cssModules(STYLES);
-
-type BpkModalV3BodyProps = {
-  children: ReactNode;
-};
-
-const BpkModalV3Body = ({ children }: BpkModalV3BodyProps) => (
-  <div
-    className={getClassName('bpk-modal-v3__body')}
-    {...getDataComponentAttribute('ModalV3Body')}
-  >
-    {children}
-  </div>
-);
-
-export default BpkModalV3Body;
-export type { BpkModalV3BodyProps };
+  // Sheet and full variants: reduced bottom padding
+  &--sheet,
+  &--full {
+    padding-bottom: tokens.bpk-spacing-base();
+  }
+}
