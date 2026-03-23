@@ -43,7 +43,7 @@ figma.connect(
       <BpkInteractiveStarRating
         getStarLabel={(rating: number, maxRating: number) => `${rating} out of ${maxRating} stars`}
         id="uniqueId"
-        onRatingSelect={(rating: number) => console.log(rating)}
+        onRatingSelect={(rating: number) => console.log(rating)} // eslint-disable-line no-console
         large={large}
         extraLarge={extraLarge}
         rating={initialRating}
