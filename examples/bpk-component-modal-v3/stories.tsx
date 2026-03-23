@@ -54,9 +54,9 @@ export const DefaultWithImage = DefaultWithImageExample;
 export const SheetWithImage = SheetWithImageExample;
 export const SimpleHeadline = SimpleHeadlineExample;
 export const CustomHeadline = CustomHeadlineExample;
-export const Trigger = TriggerExample;
 export const TwoColumn = TwoColumnExample;
 export const NoHeader = NoHeaderExample;
+export const Trigger = TriggerExample;
 
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = {

@@ -88,7 +88,7 @@ const DefaultExample = () => (
 
 
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This is a default centred modal. It displays as a centred
                   dialog on desktop and becomes full-screen on mobile viewports.
@@ -124,7 +124,7 @@ const SheetExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This is a sheet modal. It anchors to the bottom of the viewport
                   and spans the full width.
@@ -158,7 +158,7 @@ const FullExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This is a full-screen modal. It fills the entire viewport with
                   no border radius.
@@ -190,7 +190,7 @@ const LongTitleExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This modal has a very long title to test how the header handles
                   text overflow alongside the close button.
@@ -220,7 +220,7 @@ const OverflowingExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkVStack gap={BpkSpacing.Base} padding={BpkSpacing.LG}>
+              <BpkVStack gap={BpkSpacing.Base} paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 {Array.from({ length: 5 }, (_, i) => (
                   <BpkText
                     key={i}
@@ -256,7 +256,7 @@ const MultipleModalsExample = () => (
                 <BpkModalV3.CloseTrigger label="Close" />
               </BpkModalV3.Header>
               <BpkModalV3.Body>
-                <BpkBox padding={BpkSpacing.LG}>
+                <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                   <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                     This is the first modal. Multiple modals can be rendered on
                     the same page.
@@ -284,7 +284,7 @@ const MultipleModalsExample = () => (
                 <BpkModalV3.CloseTrigger label="Close" />
               </BpkModalV3.Header>
               <BpkModalV3.Body>
-                <BpkBox padding={BpkSpacing.LG}>
+                <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                   <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                     This is the second modal.
                   </BpkText>
@@ -311,7 +311,7 @@ const MultipleModalsExample = () => (
                 <BpkModalV3.CloseTrigger label="Close" />
               </BpkModalV3.Header>
               <BpkModalV3.Body>
-                <BpkBox padding={BpkSpacing.LG}>
+                <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                   <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                     This is the third modal.
                   </BpkText>
@@ -419,7 +419,7 @@ const SimpleHeadlineExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This modal uses a plain text title with label-1 typography in
                   the Header.
@@ -449,7 +449,7 @@ const CustomHeadlineExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This modal demonstrates a custom headline with larger hero text.
                   The Title component is a semantic wrapper that allows any
@@ -526,7 +526,7 @@ const NoHeaderExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This modal has no visible title. BpkVisuallyHidden wraps the
                   Title text to provide an accessible dialog name for screen
@@ -560,7 +560,7 @@ const TriggerExample = () => (
               <BpkModalV3.CloseTrigger label="Close" />
             </BpkModalV3.Header>
             <BpkModalV3.Body>
-              <BpkBox padding={BpkSpacing.LG}>
+              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
                 <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
                   This modal uses BpkModalV3.Trigger with asChild to open
                   without any external state management.
