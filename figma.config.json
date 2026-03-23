@@ -3,9 +3,8 @@
     "include": ["/**/*.{tsx,jsx}"],
     "label": "React",
     "importPaths": {
-      "packages/bpk-component-icon/sm/*": "@skyscanner/backpack-web/bpk-component-icon/sm",
-      "packages/bpk-component-icon/lg/*": "@skyscanner/backpack-web/bpk-component-icon/lg",
-      "packages/bpk-component-*/src/*": "@skyscanner/backpack-web/bpk-component-*"
+      "bpk-component-icon/sm/*": "@skyscanner/backpack-web/bpk-component-icon/sm/*",
+      "bpk-component-icon/lg/*": "@skyscanner/backpack-web/bpk-component-icon/lg/*"
     },
     "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=100-1682&p=f&t=dyMLItX3JduHpAEJ-0"
   }
