@@ -61,7 +61,8 @@ async function compile(sassPath) {
       ],
     });
   } catch (e) {
-    console.error(e) // eslint-disable-line no-console
+    console.error(e); // eslint-disable-line no-console
+    throw e;
   }
   const data = new Uint8Array(Buffer.from(`${licenseHeader}\n${result.css}`));
   const { dir, name } = path.parse(sassPath);
