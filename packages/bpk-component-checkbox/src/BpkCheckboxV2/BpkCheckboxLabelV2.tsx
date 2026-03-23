@@ -16,10 +16,24 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import { Checkbox } from '@ark-ui/react';
 
-// Renders Ark's visually hidden native <input type="checkbox">.
-// Include when the checkbox is inside a <form> for native form submission.
-const BpkCheckboxHiddenInput = () => <Checkbox.HiddenInput />;
+import { cssModules } from '../../../bpk-react-utils';
 
-export default BpkCheckboxHiddenInput;
+import STYLES from './BpkCheckboxV2.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type BpkCheckboxLabelV2Props = {
+  children: ReactNode;
+};
+
+const BpkCheckboxLabelV2 = ({ children }: BpkCheckboxLabelV2Props) => (
+  <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
+    {children}
+  </Checkbox.Label>
+);
+
+export default BpkCheckboxLabelV2;

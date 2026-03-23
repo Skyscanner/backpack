@@ -19,22 +19,22 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkCheckbox from './BpkCheckbox';
+import BpkCheckboxV2 from './BpkCheckboxV2';
 
-import type { BpkCheckboxRootProps } from './BpkCheckboxRoot';
+import type { BpkCheckboxRootV2Props } from './BpkCheckboxRootV2';
 
 
-const SimpleCheckbox = (props: Partial<BpkCheckboxRootProps> = {}) => (
-  <BpkCheckbox.Root {...props}>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>Accept terms</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+const SimpleCheckbox = (props: Partial<BpkCheckboxRootV2Props> = {}) => (
+  <BpkCheckboxV2.Root {...props}>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>Accept terms</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
-describe('BpkCheckbox', () => {
+describe('BpkCheckboxV2', () => {
   describe('Root', () => {
     it('should render correctly with default props', () => {
       const { asFragment } = render(<SimpleCheckbox />);
@@ -90,15 +90,15 @@ describe('BpkCheckbox', () => {
 
     it('should render inline link inside label', () => {
       render(
-        <BpkCheckbox.Root>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
-          <BpkCheckbox.Label>
+        <BpkCheckboxV2.Root>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>
             I agree to the <a href="/terms">terms</a>
-          </BpkCheckbox.Label>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>,
+          </BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>,
       );
       expect(screen.getByRole('link', { name: 'terms' })).toBeInTheDocument();
     });
@@ -107,18 +107,18 @@ describe('BpkCheckbox', () => {
   describe('Description', () => {
     it('should render description text', () => {
       render(
-        <BpkCheckbox.Root>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
+        <BpkCheckboxV2.Root>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
           <div>
-            <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
-            <BpkCheckbox.Description>
+            <BpkCheckboxV2.Label>Price alerts</BpkCheckboxV2.Label>
+            <BpkCheckboxV2.Description>
               We&apos;ll email you about price drops.
-            </BpkCheckbox.Description>
+            </BpkCheckboxV2.Description>
           </div>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>,
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>,
       );
       expect(
         screen.getByText("We'll email you about price drops."),
@@ -127,18 +127,18 @@ describe('BpkCheckbox', () => {
 
     it('should render snapshot with title and description', () => {
       const { asFragment } = render(
-        <BpkCheckbox.Root>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
+        <BpkCheckboxV2.Root>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
           <div>
-            <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
-            <BpkCheckbox.Description>
+            <BpkCheckboxV2.Label>Price alerts</BpkCheckboxV2.Label>
+            <BpkCheckboxV2.Description>
               We&apos;ll email you about price drops.
-            </BpkCheckbox.Description>
+            </BpkCheckboxV2.Description>
           </div>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>,
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>,
       );
       expect(asFragment()).toMatchSnapshot();
     });

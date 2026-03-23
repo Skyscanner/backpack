@@ -22,7 +22,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
-  BpkCheckboxV2 as BpkCheckbox,
+  BpkCheckboxV2,
   checkboxBorderRadiusThemeAttributes,
   checkboxSelectedColorThemeAttributes,
 } from '../../packages/bpk-component-checkbox';
@@ -37,72 +37,72 @@ import BpkThemeProvider from '../../packages/bpk-theming';
 import STYLES from './examples.module.scss';
 
 export const SimpleLabelExample = () => (
-  <BpkCheckbox.Root>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>Send me deals</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+  <BpkCheckboxV2.Root>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>Send me deals</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const TitleAndSubtitleExample = () => (
   <BpkProvider>
-    <BpkCheckbox.Root>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
+    <BpkCheckboxV2.Root>
+      <BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Indicator />
+      </BpkCheckboxV2.Control>
       <BpkFlex direction="column">
-        <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
-        <BpkCheckbox.Description>
+        <BpkCheckboxV2.Label>Price alerts</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.Description>
           We&apos;ll email you about price drops. Unsubscribe anytime.
-        </BpkCheckbox.Description>
+        </BpkCheckboxV2.Description>
       </BpkFlex>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
+      <BpkCheckboxV2.HiddenInput />
+    </BpkCheckboxV2.Root>
   </BpkProvider>
 );
 
 export const InlineLinkInLabelExample = () => (
-  <BpkCheckbox.Root>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>
+  <BpkCheckboxV2.Root>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>
       I agree to the <a href="/terms">terms and conditions</a>
-    </BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+    </BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const DefaultCheckedExample = () => (
-  <BpkCheckbox.Root defaultChecked>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>Already opted in</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+  <BpkCheckboxV2.Root defaultChecked>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>Already opted in</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const DisabledExample = () => (
-  <BpkCheckbox.Root disabled>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>Unavailable option</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+  <BpkCheckboxV2.Root disabled>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>Unavailable option</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const DisabledCheckedExample = () => (
-  <BpkCheckbox.Root disabled defaultChecked>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>Mandatory selection</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+  <BpkCheckboxV2.Root disabled defaultChecked>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>Mandatory selection</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const DisabledStatesExample = () => (
@@ -115,23 +115,23 @@ export const DisabledStatesExample = () => (
 );
 
 export const IndeterminateExample = () => (
-  <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>Weekdays (some selected)</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+  <BpkCheckboxV2.Root checked="indeterminate" onCheckedChange={() => {}}>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>Weekdays (some selected)</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const InvalidExample = () => (
-  <BpkCheckbox.Root invalid>
-    <BpkCheckbox.Control>
-      <BpkCheckbox.Indicator />
-    </BpkCheckbox.Control>
-    <BpkCheckbox.Label>I agree to the terms</BpkCheckbox.Label>
-    <BpkCheckbox.HiddenInput />
-  </BpkCheckbox.Root>
+  <BpkCheckboxV2.Root invalid>
+    <BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Indicator />
+    </BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Label>I agree to the terms</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.HiddenInput />
+  </BpkCheckboxV2.Root>
 );
 
 export const ThemedExample = () => (
@@ -141,20 +141,20 @@ export const ThemedExample = () => (
       themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
     >
       <BpkFlex gap={BpkSpacing.Base} direction="column">
-        <BpkCheckbox.Root defaultChecked>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
-          <BpkCheckbox.Label>Custom colour + border-radius — checked</BpkCheckbox.Label>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>
-        <BpkCheckbox.Root checked="indeterminate" onCheckedChange={() => {}}>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
-          <BpkCheckbox.Label>Custom colour + border-radius — indeterminate</BpkCheckbox.Label>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>
+        <BpkCheckboxV2.Root defaultChecked>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>Custom colour + border-radius — checked</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Root checked="indeterminate" onCheckedChange={() => {}}>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>Custom colour + border-radius — indeterminate</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
       </BpkFlex>
     </BpkThemeProvider>
   </BpkProvider>
@@ -162,19 +162,19 @@ export const ThemedExample = () => (
 
 export const ComposedHertzExample = () => (
   <BpkProvider>
-    <BpkCheckbox.Root defaultChecked>
-      <BpkCheckbox.Control>
-        <BpkCheckbox.Indicator />
-      </BpkCheckbox.Control>
+    <BpkCheckboxV2.Root defaultChecked>
+      <BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Indicator />
+      </BpkCheckboxV2.Control>
       <BpkFlex direction="column" width="16rem">
         <BpkFlex justify="space-between" align="center">
-          <BpkCheckbox.Label>Hertz</BpkCheckbox.Label>
+          <BpkCheckboxV2.Label>Hertz</BpkCheckboxV2.Label>
           <div className={STYLES['bpk-hertz-logo-placeholder']} />
         </BpkFlex>
-        <BpkCheckbox.Description>from £21</BpkCheckbox.Description>
+        <BpkCheckboxV2.Description>from £21</BpkCheckboxV2.Description>
       </BpkFlex>
-      <BpkCheckbox.HiddenInput />
-    </BpkCheckbox.Root>
+      <BpkCheckboxV2.HiddenInput />
+    </BpkCheckboxV2.Root>
   </BpkProvider>
 );
 

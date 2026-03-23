@@ -9,66 +9,66 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import { BpkCheckboxV2 as BpkCheckbox } from '@skyscanner/backpack-web/bpk-component-checkbox';
+import BpkCheckboxV2 from '@skyscanner/backpack-web/bpk-component-checkbox';
 ```
 
 ### Simple label
 
 ```jsx
-<BpkCheckbox.Root>
-  <BpkCheckbox.Control>
-    <BpkCheckbox.Indicator />
-  </BpkCheckbox.Control>
-  <BpkCheckbox.Label>Send me deals</BpkCheckbox.Label>
-  <BpkCheckbox.HiddenInput />
-</BpkCheckbox.Root>
+<BpkCheckboxV2.Root>
+  <BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Indicator />
+  </BpkCheckboxV2.Control>
+  <BpkCheckboxV2.Label>Send me deals</BpkCheckboxV2.Label>
+  <BpkCheckboxV2.HiddenInput />
+</BpkCheckboxV2.Root>
 ```
 
 ### Title + subtitle
 
 ```jsx
-<BpkCheckbox.Root>
-  <BpkCheckbox.Control>
-    <BpkCheckbox.Indicator />
-  </BpkCheckbox.Control>
+<BpkCheckboxV2.Root>
+  <BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Indicator />
+  </BpkCheckboxV2.Control>
   <div>
-    <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
-    <BpkCheckbox.Description>
+    <BpkCheckboxV2.Label>Price alerts</BpkCheckboxV2.Label>
+    <BpkCheckboxV2.Description>
       We'll email you about price drops. Unsubscribe anytime.
-    </BpkCheckbox.Description>
+    </BpkCheckboxV2.Description>
   </div>
-  <BpkCheckbox.HiddenInput />
-</BpkCheckbox.Root>
+  <BpkCheckboxV2.HiddenInput />
+</BpkCheckboxV2.Root>
 ```
 
 ### Inline link inside label
 
 ```jsx
-<BpkCheckbox.Root>
-  <BpkCheckbox.Control>
-    <BpkCheckbox.Indicator />
-  </BpkCheckbox.Control>
-  <BpkCheckbox.Label>
+<BpkCheckboxV2.Root>
+  <BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Indicator />
+  </BpkCheckboxV2.Control>
+  <BpkCheckboxV2.Label>
     I agree to the <a href="/terms">terms and conditions</a>
-  </BpkCheckbox.Label>
-  <BpkCheckbox.HiddenInput />
-</BpkCheckbox.Root>
+  </BpkCheckboxV2.Label>
+  <BpkCheckboxV2.HiddenInput />
+</BpkCheckboxV2.Root>
 ```
 
 ### States
 
 ```jsx
 // Pre-checked
-<BpkCheckbox.Root defaultChecked>…</BpkCheckbox.Root>
+<BpkCheckboxV2.Root defaultChecked>…</BpkCheckboxV2.Root>
 
 // Indeterminate
-<BpkCheckbox.Root defaultChecked="indeterminate">…</BpkCheckbox.Root>
+<BpkCheckboxV2.Root defaultChecked="indeterminate">…</BpkCheckboxV2.Root>
 
 // Disabled
-<BpkCheckbox.Root disabled>…</BpkCheckbox.Root>
+<BpkCheckboxV2.Root disabled>…</BpkCheckboxV2.Root>
 
 // Invalid
-<BpkCheckbox.Root invalid>…</BpkCheckbox.Root>
+<BpkCheckboxV2.Root invalid>…</BpkCheckboxV2.Root>
 ```
 
 ### Controlled usage
@@ -76,16 +76,16 @@ import { BpkCheckboxV2 as BpkCheckbox } from '@skyscanner/backpack-web/bpk-compo
 ```jsx
 const [checked, setChecked] = useState(false);
 
-<BpkCheckbox.Root
+<BpkCheckboxV2.Root
   checked={checked}
   onCheckedChange={(next) => setChecked(next)}
 >
-  <BpkCheckbox.Control>
-    <BpkCheckbox.Indicator />
-  </BpkCheckbox.Control>
-  <BpkCheckbox.Label>Controlled checkbox</BpkCheckbox.Label>
-  <BpkCheckbox.HiddenInput />
-</BpkCheckbox.Root>
+  <BpkCheckboxV2.Control>
+    <BpkCheckboxV2.Indicator />
+  </BpkCheckboxV2.Control>
+  <BpkCheckboxV2.Label>Controlled checkbox</BpkCheckboxV2.Label>
+  <BpkCheckboxV2.HiddenInput />
+</BpkCheckboxV2.Root>
 ```
 
 ## Theming
@@ -98,7 +98,7 @@ import {
   borderRadiusFull,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import {
-  BpkCheckboxV2 as BpkCheckbox,
+  BpkCheckboxV2,
   checkboxSelectedColorThemeAttributes,
   checkboxBorderRadiusThemeAttributes,
 } from '@skyscanner/backpack-web/bpk-component-checkbox';
@@ -109,7 +109,7 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
   theme={{ checkboxSelectedColor: statusDangerSpotDay }}
   themeAttributes={checkboxSelectedColorThemeAttributes}
 >
-  <BpkCheckbox.Root defaultChecked>…</BpkCheckbox.Root>
+  <BpkCheckboxV2.Root defaultChecked>…</BpkCheckboxV2.Root>
 </BpkThemeProvider>
 
 // Theme colour + border-radius together
@@ -117,7 +117,7 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
   theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
   themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
 >
-  <BpkCheckbox.Root defaultChecked>…</BpkCheckbox.Root>
+  <BpkCheckboxV2.Root defaultChecked>…</BpkCheckboxV2.Root>
 </BpkThemeProvider>
 ```
 
@@ -132,11 +132,11 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
 > <BpkCheckbox valid={false} label="Accept terms" />
 >
 > // V2 — invert the logic
-> <BpkCheckbox.Root invalid>
->   <BpkCheckbox.Control><BpkCheckbox.Indicator /></BpkCheckbox.Control>
->   <BpkCheckbox.Label>Accept terms</BpkCheckbox.Label>
->   <BpkCheckbox.HiddenInput />
-> </BpkCheckbox.Root>
+> <BpkCheckboxV2.Root invalid>
+>   <BpkCheckboxV2.Control><BpkCheckboxV2.Indicator /></BpkCheckboxV2.Control>
+>   <BpkCheckboxV2.Label>Accept terms</BpkCheckboxV2.Label>
+>   <BpkCheckboxV2.HiddenInput />
+> </BpkCheckboxV2.Root>
 > ```
 >
 > If you were reading `valid` from state, negate it:
@@ -146,7 +146,7 @@ import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
 > <BpkCheckbox valid={isValid} label="Accept terms" />
 >
 > // V2
-> <BpkCheckbox.Root invalid={!isValid}>…</BpkCheckbox.Root>
+> <BpkCheckboxV2.Root invalid={!isValid}>…</BpkCheckboxV2.Root>
 > ```
 
 ## Slots
