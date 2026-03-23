@@ -36,7 +36,7 @@ figma.connect(
         "Invalid": false,
         "Default": undefined,
       }),
-      children: figma.textContent("*"),
+      children: figma.textContent("Label"),
     },
     example: ({ children, disabled, required, valid }) => (
       <BpkLabel htmlFor="input-id" required={required} disabled={disabled} valid={valid}>
