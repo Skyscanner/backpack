@@ -22,7 +22,6 @@
 .bpk-card-list {
   display: flex;
   flex-direction: column;
-  overflow-y: clip;
   gap: tokens.bpk-spacing-lg();
 
   @include breakpoints.bpk-breakpoint-mobile {
@@ -31,6 +30,9 @@
 
   &--card-list {
     display: flex;
+    margin: calc(-1 * #{tokens.bpk-spacing-sm()});
+    padding: tokens.bpk-spacing-sm();
     flex-direction: column;
+    overflow: hidden;
   }
 }
