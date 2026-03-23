@@ -24,7 +24,7 @@ import BpkOverlay, { OVERLAY_TYPES } from './BpkOverlay';
 
 figma.connect(
   BpkOverlay,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=11552%3A10364',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A17397',
   {
     props: {
       style: figma.enum('Style', {

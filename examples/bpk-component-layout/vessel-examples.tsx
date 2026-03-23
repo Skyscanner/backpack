@@ -18,11 +18,8 @@
 
 import { BpkVessel } from '../../packages/bpk-component-layout';
 
-import STYLES from './examples.module.scss';
-
 const BpkVesselExample = () => (
   <BpkVessel
-    className={STYLES['bpk-layout-examples__outline']}
     style={{
       padding: '16px',
       transition: 'opacity 0.3s',

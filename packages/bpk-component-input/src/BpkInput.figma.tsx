@@ -22,7 +22,7 @@ import BpkInput from './BpkInput';
 
 figma.connect(
   BpkInput,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30459%3A44636',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A5030',
   {
     props: {
       large: figma.enum('Size', {

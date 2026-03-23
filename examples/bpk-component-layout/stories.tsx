@@ -27,8 +27,6 @@ import {
 } from '../../packages/bpk-component-layout';
 
 import {
-  FlexExample,
-  GridExample,
   PositionExample,
   ResponsiveExample,
   RtlSpacingExample,
@@ -36,28 +34,24 @@ import {
   SpacingExample,
 } from './box-examples';
 import {
+  BpkFlexAlignExample,
   BpkFlexDirectionExample,
   BpkFlexExample,
-  BpkFlexInlineExample,
-  BpkFlexItemExample,
-  BpkFlexResponsiveExample,
+  BpkFlexJustifyExample,
+  BpkFlexOrderExample,
   BpkFlexWrapExample,
 } from './flex-examples';
 import {
   BpkGridExample,
-  BpkGridResponsiveExample,
   BpkGridSpanExample,
-  BpkGridWithItemExample,
+  BpkGridBentoBoxExample,
 } from './grid-examples';
 import {
-  HStackExample,
-  HorizontalButtonsExample,
-  NestedStackExample,
-  ResponsiveDirectionExample,
-  StackDefaultExample,
-  StackHorizontalExample,
-  VStackExample,
-  VerticalContentBlocksExample,
+  BpkStackExample,
+  BpkStackDirectionExample,
+  BpkHStackExample,
+  BpkVStackExample,
+  BpkStackResponsiveExample,
 } from './stack-examples';
 import BpkVesselExample from './vessel-examples';
 
@@ -88,32 +82,26 @@ export const VisualTest = () => (
     <SizeExample />
     <ResponsiveExample />
     <PositionExample />
-    <FlexExample />
-    <GridExample />
 
     {/* Flex examples */}
     <BpkFlexExample />
     <BpkFlexDirectionExample />
+    <BpkFlexAlignExample />
+    <BpkFlexJustifyExample />
+    <BpkFlexOrderExample />
     <BpkFlexWrapExample />
-    <BpkFlexResponsiveExample />
-    <BpkFlexItemExample />
-    <BpkFlexInlineExample />
 
     {/* Grid examples */}
     <BpkGridExample />
     <BpkGridSpanExample />
-    <BpkGridWithItemExample />
-    <BpkGridResponsiveExample />
+    <BpkGridBentoBoxExample />
 
     {/* Stack examples */}
-    <VerticalContentBlocksExample />
-    <HorizontalButtonsExample />
-    <NestedStackExample />
-    <StackDefaultExample />
-    <StackHorizontalExample />
-    <HStackExample />
-    <VStackExample />
-    <ResponsiveDirectionExample />
+    <BpkStackExample />
+    <BpkStackDirectionExample />
+    <BpkHStackExample />
+    <BpkVStackExample />
+    <BpkStackResponsiveExample />
 
     {/* Vessel examples */}
     <BpkVesselExample />

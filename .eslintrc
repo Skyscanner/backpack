@@ -159,7 +159,11 @@
               "SegmentGroup.Indicator", // allowed for styling to be passed to ark-ui component
               "SegmentGroup.Item", // allowed for styling to be passed to ark-ui component
               "SegmentGroup.ItemControl", // allowed for styling to be passed to ark-ui component
-              "SegmentGroup.ItemText" // allowed for styling to be passed to ark-ui component
+              "SegmentGroup.ItemText", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Root", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Control", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Indicator", // allowed for styling to be passed to ark-ui component
+              "Checkbox.Label" // allowed for styling to be passed to ark-ui component
             ]
           }
         ]
