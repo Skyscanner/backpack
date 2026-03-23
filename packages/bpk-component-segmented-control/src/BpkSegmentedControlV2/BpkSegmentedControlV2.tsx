@@ -21,7 +21,7 @@ import { SegmentGroup, useSegmentGroup } from '@ark-ui/react';
 import {
   cssModules,
   getDataComponentAttribute,
-  getDocumentDir,
+  useDocumentDir,
 } from '../../../bpk-react-utils';
 
 import { SEGMENT_TYPES_V2 } from './common-types';
@@ -54,6 +54,8 @@ const BpkSegmentedControlV2Root = ({
   // Ark omits 'dir' from UseSegmentGroupProps but the Zag machine accepts it.
   // Since ...props is spread last in useSegmentGroup(), passing dir here overrides
   // the default from useLocaleContext() without needing LocaleProvider.
+  // useDocumentDir() is reactive — it re-renders when document.dir changes.
+  const dir = useDocumentDir();
   const machineProps = {
     value,
     defaultValue,
@@ -63,7 +65,7 @@ const BpkSegmentedControlV2Root = ({
         }
       : undefined,
     orientation: 'horizontal' as const,
-    dir: getDocumentDir(),
+    dir,
   };
   const api = useSegmentGroup(machineProps);
 

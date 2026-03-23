@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { useEffect, useState } from 'react';
+
 type Direction = 'ltr' | 'rtl';
 
 const ARK_LOCALE: Record<Direction, string> = {
@@ -31,6 +33,32 @@ const ARK_LOCALE: Record<Direction, string> = {
 export const getDocumentDir = (): Direction => {
   if (typeof document === 'undefined') return 'ltr';
   return document.documentElement.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
+};
+
+/**
+ * Reactive hook that returns the current document text direction.
+ * Subscribes to changes on document.documentElement[dir] via MutationObserver,
+ * so components re-render automatically when the page direction changes.
+ * SSR-safe: returns 'ltr' on the server.
+ * @returns {'ltr' | 'rtl'} The current document direction.
+ */
+export const useDocumentDir = (): Direction => {
+  const [dir, setDir] = useState<Direction>(getDocumentDir);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setDir(getDocumentDir());
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['dir'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return dir;
 };
 
 /**

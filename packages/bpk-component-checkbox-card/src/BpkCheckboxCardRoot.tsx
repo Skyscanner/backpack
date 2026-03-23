@@ -23,7 +23,7 @@ import { Checkbox, useCheckbox } from '@ark-ui/react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-import { cssModules, getDocumentDir } from '../../bpk-react-utils';
+import { cssModules, useDocumentDir } from '../../bpk-react-utils';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
 import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from './common-types';
@@ -166,6 +166,8 @@ export function Root({
   // Ark omits 'dir' from UseCheckboxProps but the Zag machine accepts it.
   // Since ...props is spread last in useCheckbox(), passing dir here overrides
   // the default from useLocaleContext() without needing LocaleProvider.
+  // useDocumentDir() is reactive — it re-renders when document.dir changes.
+  const dir = useDocumentDir();
   const machineProps = {
     checked,
     defaultChecked,
@@ -177,7 +179,7 @@ export function Root({
     name,
     value,
     required,
-    dir: getDocumentDir(),
+    dir,
   };
   const api = useCheckbox(machineProps);
 

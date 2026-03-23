@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 import { Checkbox, useCheckbox } from '@ark-ui/react';
 
-import { cssModules, getDataComponentAttribute, getDocumentDir } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute, useDocumentDir } from '../../../bpk-react-utils';
 
 import STYLES from './BpkCheckboxV2.module.scss';
 
@@ -56,6 +56,8 @@ const BpkCheckboxV2Root = ({
   // Ark omits 'dir' from UseCheckboxProps but the Zag machine accepts it.
   // Since ...props is spread last in useCheckbox(), passing dir here overrides
   // the default from useLocaleContext() without needing LocaleProvider.
+  // useDocumentDir() is reactive — it re-renders when document.dir changes.
+  const dir = useDocumentDir();
   const machineProps = {
     checked,
     defaultChecked,
@@ -71,7 +73,7 @@ const BpkCheckboxV2Root = ({
       : undefined,
     required,
     value,
-    dir: getDocumentDir(),
+    dir,
   };
   const api = useCheckbox(machineProps);
 

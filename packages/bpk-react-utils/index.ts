@@ -27,7 +27,7 @@ import {
   isDeviceIpad,
   isDeviceIos,
 } from './src/deviceDetection';
-import getArkLocale, { getDocumentDir } from './src/getArkLocale';
+import getArkLocale, { getDocumentDir, useDocumentDir } from './src/getArkLocale';
 import { getDataComponentAttribute } from './src/getDataComponentAttribute';
 import isRTL from './src/isRTL';
 import { setNativeValue } from './src/nativeEventHandler';
@@ -49,6 +49,7 @@ export {
   isRTL,
   getArkLocale,
   getDocumentDir,
+  useDocumentDir,
   BpkDialogWrapper,
   setNativeValue,
   getDataComponentAttribute,
@@ -67,6 +68,7 @@ export default {
   isRTL,
   getArkLocale,
   getDocumentDir,
+  useDocumentDir,
   BpkDialogWrapper,
   setNativeValue,
   getDataComponentAttribute,
