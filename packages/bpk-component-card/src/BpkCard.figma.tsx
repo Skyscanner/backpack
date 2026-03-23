@@ -22,7 +22,7 @@ import BpkCard from './BpkCard';
 
 figma.connect(
   BpkCard,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4395%3A2506',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49749',
   {
     example: () => <BpkCard>children</BpkCard>,
   },

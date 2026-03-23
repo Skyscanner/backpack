@@ -27,7 +27,7 @@ const Icon = withRtlSupport(AirportsIconSm);
 
 figma.connect(
   BpkPriceMarker,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=51528%3A105887',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A1778',
   {
     props: {
       status: figma.enum('State', {

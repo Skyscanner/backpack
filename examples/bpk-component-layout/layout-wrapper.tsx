@@ -20,11 +20,9 @@ import type { ReactNode } from 'react';
 
 import { BpkProvider } from '../../packages/bpk-component-layout';
 
-import STYLES from './examples.module.scss';
-
 const Wrapper = ({ children }: { children: ReactNode }) => (
   <BpkProvider>
-    <div className={STYLES['bpk-layout-examples__frame']}>{children}</div>
+    {children}
   </BpkProvider>
 );
 

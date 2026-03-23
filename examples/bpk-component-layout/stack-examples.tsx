@@ -16,178 +16,74 @@
  * limitations under the License.
  */
 
-import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import {
   BpkBox,
+  BpkHStack,
   BpkSpacing,
   BpkStack,
   BpkVStack,
-  BpkHStack,
 } from '../../packages/bpk-component-layout';
 
 import Wrapper from './layout-wrapper';
 
 import STYLES from './examples.module.scss';
 
-const Item = ({ label }: { label: string }) => (
-  <div className={STYLES['bpk-layout-examples__item']}>
-    <BpkBox padding={BpkSpacing.SM} minHeight="3rem">
-      <span className={STYLES['bpk-layout-examples__outline']}>{label}</span>
-    </BpkBox>
-  </div>
-);
-// Content block component using BpkBox
-const ContentBlock = ({
-  description,
-  title,
-}: {
-  title: string;
-  description: string;
-}) => (
-  <div className={STYLES['bpk-layout-examples__item']}>
-    <BpkBox padding={BpkSpacing.MD} minHeight="6rem">
-      <BpkVStack gap={BpkSpacing.SM}>
-        <BpkBox fontWeight="bold">{title}</BpkBox>
-        <BpkBox>{description}</BpkBox>
-      </BpkVStack>
-    </BpkBox>
-  </div>
-);
+const outline = STYLES['bpk-layout-examples__outline'];
 
-// 1) Vertical stack of content blocks
-export const VerticalContentBlocksExample = () => (
+export const BpkStackExample = () => (
   <Wrapper>
-    <BpkVStack gap={BpkSpacing.LG}>
-      <ContentBlock
-        title="Content Block 1"
-        description="Vertical stack with large gap"
-      />
-      <ContentBlock
-        title="Content Block 2"
-        description="Vertical stack with large gap"
-      />
-      <ContentBlock
-        title="Content Block 3"
-        description="Vertical stack with large gap"
-      />
-    </BpkVStack>
-  </Wrapper>
-);
-
-// 2) Horizontal stack of buttons
-export const HorizontalButtonsExample = () => (
-  <Wrapper>
-    <BpkHStack gap={BpkSpacing.MD}>
-      <BpkButton type={BUTTON_TYPES.primary}>Primary</BpkButton>
-      <BpkButton type={BUTTON_TYPES.secondary}>Secondary</BpkButton>
-      <BpkButton type={BUTTON_TYPES.link}>Link</BpkButton>
-      <BpkButton type={BUTTON_TYPES.destructive}>Delete</BpkButton>
-    </BpkHStack>
-  </Wrapper>
-);
-
-// 3) Nested Stack example
-export const NestedStackExample = () => (
-  <Wrapper>
-    <BpkVStack gap={BpkSpacing.LG}>
-      <ContentBlock
-        title="Main Section"
-        description="Vertical stack with large gap containing nested stacks"
-      />
-      <BpkHStack gap={BpkSpacing.MD} align="center">
-        <BpkVStack gap={BpkSpacing.SM} justify="center">
-          <ContentBlock
-            title="Nested Column 1"
-            description="Vertical stack with small gap and justify center"
-          />
-          <ContentBlock
-            title="Nested Column 1 - Item 2"
-            description="Vertical stack with small gap and justify center"
-          />
-        </BpkVStack>
-        <BpkVStack gap={BpkSpacing.SM} justify="center">
-          <ContentBlock
-            title="Nested Column 2"
-            description="Vertical stack with small gap and justify center"
-          />
-          <BpkHStack gap={BpkSpacing.SM}>
-            <BpkButton type={BUTTON_TYPES.secondary}>Horizontal stack with small gap</BpkButton>
-            <BpkButton type={BUTTON_TYPES.secondary}>Horizontal stack with small gap</BpkButton>
-          </BpkHStack>
-        </BpkVStack>
-      </BpkHStack>
-    </BpkVStack>
-  </Wrapper>
-);
-
-// 4) Default vertical stack
-export const StackDefaultExample = () => (
-  <Wrapper>
-    <BpkStack gap={BpkSpacing.LG}>
-      <Item label="Default Stack Item 1" />
-      <Item label="Default Stack Item 2" />
-      <Item label="Default Stack Item 3" />
+    <BpkStack gap={BpkSpacing.SM}>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
     </BpkStack>
   </Wrapper>
 );
 
-// 5) Horizontal stack (row)
-export const StackHorizontalExample = () => (
+export const BpkStackDirectionExample = () => (
   <Wrapper>
-    <BpkStack gap={BpkSpacing.MD} direction="row">
-      <Item label="Horizontal Item 1" />
-      <Item label="Horizontal Item 2" />
-      <Item label="Horizontal Item 3" />
+    <BpkStack gap={BpkSpacing.SM} direction="row">
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
     </BpkStack>
   </Wrapper>
 );
 
-// 6) HStack (row with center align)
-export const HStackExample = () => (
+export const BpkHStackExample = () => (
   <Wrapper>
     <BpkHStack gap={BpkSpacing.SM}>
-      <Item label="HStack Item 1" />
-      <Item label="HStack Item 2" />
-      <Item label="HStack Item 3" />
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
     </BpkHStack>
   </Wrapper>
 );
 
-// 7) VStack (column)
-export const VStackExample = () => (
+export const BpkVStackExample = () => (
   <Wrapper>
     <BpkVStack gap={BpkSpacing.SM}>
-      <Item label="VStack Item 1" />
-      <Item label="VStack Item 2" />
-      <Item label="VStack Item 3" />
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
     </BpkVStack>
   </Wrapper>
 );
 
-// 8) Responsive direction
-export const ResponsiveDirectionExample = () => (
+export const BpkStackResponsiveExample = () => (
   <Wrapper>
     <BpkStack
-      gap={{
-        "small-mobile": BpkSpacing.SM,
-        tablet: BpkSpacing.LG,
-        desktop: BpkSpacing.XL,
-      }}
-      width={{
-        "small-mobile": '100%',
-        tablet: '50%',
-        desktop: '25%',
-      }}
+      gap={BpkSpacing.SM}
       direction={{
-        "small-mobile": 'column',
+        'small-mobile': 'column',
         mobile: 'column',
         tablet: 'row',
         desktop: 'row',
       }}
     >
-      <Item label="Item 1 - vertically arranged in mobile, horizontally in tablet and above" />
-      <Item label="Item 2 - total width 100% on mobile, 50% on tablet, 25% on desktop" />
-      <Item label="Item 3 - small gap on mobile, large gap on tablet, xl on desktop" />
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+      <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
     </BpkStack>
   </Wrapper>
 );

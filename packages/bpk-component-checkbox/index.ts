@@ -17,10 +17,24 @@
  */
 
 import BpkCheckbox, { type Props as BpkCheckboxProps } from './src/BpkCheckbox';
+import BpkCheckboxV2 from './src/BpkCheckboxV2/BpkCheckbox';
+import {
+  checkboxSelectedColorThemeAttributes,
+  checkboxBorderRadiusThemeAttributes,
+} from './src/BpkCheckboxV2/themeAttributes';
 import themeAttributes from './src/themeAttributes';
 
 export type { BpkCheckboxProps };
+export type { BpkCheckboxRootProps, BpkCheckedState } from './src/BpkCheckboxV2/BpkCheckboxRoot';
+export type { BpkCheckboxControlProps } from './src/BpkCheckboxV2/BpkCheckboxControl';
+export type { BpkCheckboxLabelProps } from './src/BpkCheckboxV2/BpkCheckboxLabel';
+export type { BpkCheckboxDescriptionProps } from './src/BpkCheckboxV2/BpkCheckboxDescription';
 export default BpkCheckbox;
-export { themeAttributes };
+export {
+  themeAttributes,
+  checkboxSelectedColorThemeAttributes,
+  checkboxBorderRadiusThemeAttributes,
+  BpkCheckboxV2,
+};
 
 
