@@ -198,20 +198,20 @@ export const RtlCheckboxV2Example = () => (
   <BpkProvider>
     <div dir="rtl">
       <BpkFlex gap={BpkSpacing.Base} direction="column">
-        <BpkCheckbox.Root>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
-          <BpkCheckbox.Label>إرسال العروض</BpkCheckbox.Label>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>
-        <BpkCheckbox.Root defaultChecked>
-          <BpkCheckbox.Control>
-            <BpkCheckbox.Indicator />
-          </BpkCheckbox.Control>
-          <BpkCheckbox.Label>تنبيهات الأسعار</BpkCheckbox.Label>
-          <BpkCheckbox.HiddenInput />
-        </BpkCheckbox.Root>
+        <BpkCheckboxV2.Root>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>إرسال العروض</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Root defaultChecked>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>تنبيهات الأسعار</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
       </BpkFlex>
     </div>
   </BpkProvider>
