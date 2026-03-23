@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { MouseEvent } from 'react';
+
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
@@ -36,7 +38,7 @@ type Props = {
   direction: Direction;
   disabled?: boolean;
   onClick?: (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: MouseEvent<HTMLButtonElement>,
     newIndex: number,
     direction: Direction,
   ) => void;
