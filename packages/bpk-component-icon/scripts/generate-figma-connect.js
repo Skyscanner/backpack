@@ -179,13 +179,13 @@ function generateFile(iconSets, smIcons, lgIcons) {
     if (e.lgFile) {
       const pascal = kebabToPascal(e.lgFile);
       allImports.push(
-        `import Lg${pascal}Icon from './lg/${e.lgFile}';`,
+        `import BpkLarge${pascal}Icon from './lg/${e.lgFile}';`,
       );
     }
     if (e.smFile) {
       const pascal = kebabToPascal(e.smFile);
       allImports.push(
-        `import Sm${pascal}Icon from './sm/${e.smFile}';`,
+        `import BpkSmall${pascal}Icon from './sm/${e.smFile}';`,
       );
     }
   }
@@ -208,40 +208,40 @@ function generateFile(iconSets, smIcons, lgIcons) {
       const smPascal = kebabToPascal(e.smFile);
       const lgPascal = kebabToPascal(e.lgFile);
       connectCalls.push(`figma.connect(
-  Sm${smPascal}Icon,
+  BpkSmall${smPascal}Icon,
   "${url}",
   {
     variant: { ${prop}: "16" },
-    example: () => <Sm${smPascal}Icon />,
+    example: () => <BpkSmall${smPascal}Icon />,
   },
 )
 
 figma.connect(
-  Lg${lgPascal}Icon,
+  BpkLarge${lgPascal}Icon,
   "${url}",
   {
     variant: { ${prop}: "24" },
-    example: () => <Lg${lgPascal}Icon />,
+    example: () => <BpkLarge${lgPascal}Icon />,
   },
 )`);
     } else if (e.smFile) {
       const smPascal = kebabToPascal(e.smFile);
       const variantLine = prop ? `    variant: { ${prop}: "16" },\n` : '';
       connectCalls.push(`figma.connect(
-  Sm${smPascal}Icon,
+  BpkSmall${smPascal}Icon,
   "${url}",
   {
-${variantLine}    example: () => <Sm${smPascal}Icon />,
+${variantLine}    example: () => <BpkSmall${smPascal}Icon />,
   },
 )`);
     } else if (e.lgFile) {
       const lgPascal = kebabToPascal(e.lgFile);
       const variantLine = prop ? `    variant: { ${prop}: "24" },\n` : '';
       connectCalls.push(`figma.connect(
-  Lg${lgPascal}Icon,
+  BpkLarge${lgPascal}Icon,
   "${url}",
   {
-${variantLine}    example: () => <Lg${lgPascal}Icon />,
+${variantLine}    example: () => <BpkLarge${lgPascal}Icon />,
   },
 )`);
     }
