@@ -60,7 +60,9 @@ const BpkCheckboxV2Root = ({
     checked,
     defaultChecked,
     disabled,
-    id,
+    // Omit id when undefined so useCheckbox can use its own useId() fallback.
+    // Spreading id: undefined overrides the internally generated id.
+    ...(id !== undefined && { id }),
     invalid,
     name,
     onCheckedChange: onCheckedChange
