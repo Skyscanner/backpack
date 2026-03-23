@@ -16,9 +16,24 @@
  * limitations under the License.
  */
 
-// The checkmark and indeterminate bar are rendered via CSS on BpkCheckboxControl
-// (bpk-checkbox__checkmark mixin + ::before pseudo-element), so this slot
-// component intentionally renders nothing.
-const BpkCheckboxIndicator = () => null;
+import type { ReactNode } from 'react';
 
-export default BpkCheckboxIndicator;
+import { Checkbox } from '@ark-ui/react';
+
+import { cssModules } from '../../../bpk-react-utils';
+
+import STYLES from './BpkCheckboxV2.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type BpkCheckboxV2LabelProps = {
+  children: ReactNode;
+};
+
+const BpkCheckboxV2Label = ({ children }: BpkCheckboxV2LabelProps) => (
+  <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
+    {children}
+  </Checkbox.Label>
+);
+
+export default BpkCheckboxV2Label;

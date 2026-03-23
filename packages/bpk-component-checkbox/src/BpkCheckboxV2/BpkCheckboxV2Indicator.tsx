@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import { Checkbox } from '@ark-ui/react';
+// The checkmark and indeterminate bar are rendered via CSS on BpkCheckboxV2Control
+// (bpk-checkbox__checkmark mixin + ::before pseudo-element), so this slot
+// component intentionally renders nothing.
+const BpkCheckboxV2Indicator = () => null;
 
-// Renders Ark's visually hidden native <input type="checkbox">.
-// Include when the checkbox is inside a <form> for native form submission.
-const BpkCheckboxHiddenInput = () => <Checkbox.HiddenInput />;
-
-export default BpkCheckboxHiddenInput;
+export default BpkCheckboxV2Indicator;

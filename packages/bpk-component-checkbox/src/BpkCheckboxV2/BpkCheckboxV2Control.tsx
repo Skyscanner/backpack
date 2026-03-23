@@ -22,18 +22,18 @@ import { Checkbox } from '@ark-ui/react';
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from './BpkCheckbox.module.scss';
+import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxLabelProps = {
+export type BpkCheckboxV2ControlProps = {
   children: ReactNode;
 };
 
-const BpkCheckboxLabel = ({ children }: BpkCheckboxLabelProps) => (
-  <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
+const BpkCheckboxV2Control = ({ children }: BpkCheckboxV2ControlProps) => (
+  <Checkbox.Control className={getClassName('bpk-checkbox-v2__control')}>
     {children}
-  </Checkbox.Label>
+  </Checkbox.Control>
 );
 
-export default BpkCheckboxLabel;
+export default BpkCheckboxV2Control;

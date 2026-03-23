@@ -20,19 +20,19 @@ import type { ReactNode } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from './BpkCheckbox.module.scss';
+import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxDescriptionProps = {
+export type BpkCheckboxV2DescriptionProps = {
   children: ReactNode;
 };
 
 // Description renders as a <span> inside the Checkbox.Root <label>.
 // Being inside the <label> element means screen readers announce its text
 // as part of the checkbox's accessible name.
-const BpkCheckboxDescription = ({ children }: BpkCheckboxDescriptionProps) => (
+const BpkCheckboxV2Description = ({ children }: BpkCheckboxV2DescriptionProps) => (
   <span className={getClassName('bpk-checkbox-v2__description')}>{children}</span>
 );
 
-export default BpkCheckboxDescription;
+export default BpkCheckboxV2Description;
