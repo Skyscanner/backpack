@@ -306,21 +306,30 @@ Releases are managed by the Backpack design system team. If you have contributed
 
 Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. When `.figma.tsx` files are merged to `main`, a GitHub Actions workflow automatically publishes the mappings to Figma.
 
-### Icon mappings
+### Regenerating all Figma assets
 
-Icon Code Connect mappings are auto-generated from the Figma Icons file. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually.
-
-To regenerate the icon mappings:
+To regenerate both the `figma.config.json` import path mappings and the icon Code Connect mappings in one step:
 
 ```sh
-FIGMA_ACCESS_TOKEN=<your-token> node packages/bpk-component-icon/scripts/generate-figma-connect.js
+FIGMA_ACCESS_TOKEN=<your-token> npm run figma:generate
 ```
 
-This fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes the mappings file.
+This runs two scripts in sequence:
+
+1. `npm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
+2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/bpk-component-icon/BpkIcon.figma.tsx`
+
+### Import path configuration
+
+`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `npm run figma:generate-config` to update it after adding new components.
+
+### Icon mappings
+
+Icon Code Connect mappings are auto-generated. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
 
 ### Component mappings
 
-For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples.
+For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples. After adding a new `.figma.tsx` file, run `npm run figma:generate-config` to update the import path mappings.
 
 ### Publishing
 
