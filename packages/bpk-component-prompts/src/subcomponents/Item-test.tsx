@@ -18,39 +18,48 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { BpkProvider } from '../../bpk-component-layout';
+import { BpkProvider } from '../../../bpk-component-layout';
 
-import BpkPromptItem from './BpkPromptItem';
-import BpkPromptList from './BpkPromptList';
+import Item from './Item';
+import Root from './Root';
 
 const renderWithProvider = (ui: React.ReactElement) =>
   render(ui, { wrapper: BpkProvider });
 
-describe('BpkPromptItem', () => {
+describe('Item', () => {
   it('should render correctly', () => {
     const { asFragment } = renderWithProvider(
-      <BpkPromptList>
-        <BpkPromptItem id="test" text="What insurance do I need?" />
-      </BpkPromptList>,
+      <Root>
+        <Item id="test" text="What insurance do I need?" />
+      </Root>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render the prompt text', () => {
     renderWithProvider(
-      <BpkPromptList>
-        <BpkPromptItem id="test" text="What insurance do I need?" />
-      </BpkPromptList>,
+      <Root>
+        <Item id="test" text="What insurance do I need?" />
+      </Root>,
     );
     expect(screen.getByText('What insurance do I need?')).toBeInTheDocument();
+  });
+
+  it('should render with data-testid', () => {
+    renderWithProvider(
+      <Root>
+        <Item id="test" text="What insurance do I need?" />
+      </Root>,
+    );
+    expect(screen.getByTestId('bpk-prompt')).toBeInTheDocument();
   });
 
   it('should call onPromptClick from context when clicked', () => {
     const mockOnPromptClick = jest.fn();
     renderWithProvider(
-      <BpkPromptList onPromptClick={mockOnPromptClick}>
-        <BpkPromptItem id="insurance" text="What insurance do I need?" />
-      </BpkPromptList>,
+      <Root onPromptClick={mockOnPromptClick}>
+        <Item id="insurance" text="What insurance do I need?" />
+      </Root>,
     );
 
     fireEvent.click(
@@ -63,11 +72,40 @@ describe('BpkPromptItem', () => {
     );
   });
 
+  it('should call onPromptClick when Enter key is pressed', () => {
+    const mockOnPromptClick = jest.fn();
+    renderWithProvider(
+      <Root onPromptClick={mockOnPromptClick}>
+        <Item id="insurance" text="What insurance do I need?" />
+      </Root>,
+    );
+
+    fireEvent.keyDown(screen.getByTestId('bpk-prompt'), { key: 'Enter' });
+
+    expect(mockOnPromptClick).toHaveBeenCalledWith(
+      'insurance',
+      'What insurance do I need?',
+    );
+  });
+
+  it('should call onPromptClick when Space key is pressed', () => {
+    const mockOnPromptClick = jest.fn();
+    renderWithProvider(
+      <Root onPromptClick={mockOnPromptClick}>
+        <Item id="insurance" text="What insurance do I need?" />
+      </Root>,
+    );
+
+    fireEvent.keyDown(screen.getByTestId('bpk-prompt'), { key: ' ' });
+
+    expect(mockOnPromptClick).toHaveBeenCalledTimes(1);
+  });
+
   it('should not throw when no onPromptClick in context', () => {
     renderWithProvider(
-      <BpkPromptList>
-        <BpkPromptItem id="test" text="What insurance do I need?" />
-      </BpkPromptList>,
+      <Root>
+        <Item id="test" text="What insurance do I need?" />
+      </Root>,
     );
     expect(() => {
       fireEvent.click(screen.getByTestId('bpk-prompt'));

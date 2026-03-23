@@ -1,0 +1,112 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/utils';
+
+// List item wrapper
+.bpk-prompt-list__item {
+  display: flex;
+
+  @include breakpoints.bpk-breakpoint-tablet {
+    &:not(:last-child) {
+      margin-right: tokens.bpk-spacing-md();
+
+      @include utils.bpk-rtl {
+        margin-right: 0;
+        margin-left: tokens.bpk-spacing-md();
+      }
+    }
+
+    &:last-child {
+      // Trailing margin provides end-padding inside the scroll container.
+      margin-right: tokens.bpk-spacing-base();
+
+      @include utils.bpk-rtl {
+        margin-right: 0;
+        margin-left: tokens.bpk-spacing-base();
+      }
+    }
+  }
+}
+
+// Card content (BpkCardV2.Root provides background, border-radius, shadow and hover)
+.bpk-prompt__content {
+  padding: tokens.bpk-spacing-base();
+  text-align: left;
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  touch-action: manipulation;
+  user-select: none;
+
+  @include breakpoints.bpk-breakpoint-above-tablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include breakpoints.bpk-breakpoint-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
+  }
+
+  @include breakpoints.bpk-breakpoint-tablet-only {
+    min-width: 200 * tokens.$bpk-one-pixel-rem;
+    min-height: 118 * tokens.$bpk-one-pixel-rem;
+  }
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    min-width: 200 * tokens.$bpk-one-pixel-rem;
+    min-height: 118 * tokens.$bpk-one-pixel-rem;
+  }
+}
+
+.bpk-prompt__text-wrapper {
+  @include breakpoints.bpk-breakpoint-above-tablet {
+    margin-left: tokens.bpk-spacing-md();
+
+    @include utils.bpk-rtl {
+      margin-right: tokens.bpk-spacing-md();
+      margin-left: 0;
+    }
+  }
+
+  @include breakpoints.bpk-breakpoint-tablet {
+    display: flex;
+    width: 168 * tokens.$bpk-one-pixel-rem; // 200px - 32px (padding left/right)
+    margin-top: tokens.bpk-spacing-md();
+    align-items: flex-start;
+    flex-shrink: 0;
+
+    * {
+      width: 100%;
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      word-wrap: normal;
+    }
+  }
+}

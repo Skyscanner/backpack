@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/breakpoints';
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/utils';
 
-// The outer flex-column wrapper is now BpkFlex; only scroll and list styles remain.
+// The outer flex-column wrapper is BpkFlex; only scroll and list styles remain.
 
 .bpk-prompt-list {
   &__scroll {
@@ -49,37 +49,12 @@
     }
 
     // Horizontal scroll row on tablet and mobile.
-    // Item spacing is handled via &__item margins (not gap) so the last
+    // Item spacing is handled via Item margins (not gap) so the last
     // item's trailing margin acts as scroll end-padding.
     @include breakpoints.bpk-breakpoint-tablet {
       display: inline-flex;
       flex-flow: row;
       gap: 0;
-    }
-  }
-
-  &__item {
-    display: flex;
-
-    @include breakpoints.bpk-breakpoint-tablet {
-      &:not(:last-child) {
-        margin-right: tokens.bpk-spacing-md();
-
-        @include utils.bpk-rtl {
-          margin-right: 0;
-          margin-left: tokens.bpk-spacing-md();
-        }
-      }
-
-      &:last-child {
-        // Trailing margin provides end-padding inside the scroll container.
-        margin-right: tokens.bpk-spacing-base();
-
-        @include utils.bpk-rtl {
-          margin-right: 0;
-          margin-left: tokens.bpk-spacing-base();
-        }
-      }
     }
   }
 }

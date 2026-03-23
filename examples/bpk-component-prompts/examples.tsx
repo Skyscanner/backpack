@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import BpkPrompt from '../../packages/bpk-component-prompt/src/BpkPrompt';
-import BpkPrompts from '../../packages/bpk-component-prompt/src/BpkPrompts';
+import BpkPrompts from '../../packages/bpk-component-prompts/index';
 
 const defaultPrompts = [
   {
@@ -28,43 +27,36 @@ const defaultPrompts = [
   { id: 'third', text: 'Do I need to pay a deposit?' },
 ];
 
-export const DefaultPromptExample = () => (
-  <BpkPrompt.Root promptText="What insurance do I need?" />
-);
-
-export const PromptWithClickExample = () => (
-  <BpkPrompt.Root
-    promptText="What insurance do I need?"
-    onClick={(text) => {
-      // eslint-disable-next-line no-console
-      console.log('Prompt clicked:', text);
-    }}
-  />
-);
-
 export const DefaultPromptsExample = () => (
-  <BpkPrompts
-    prompts={defaultPrompts}
-    onPromptClick={(id, text) => {
-      // eslint-disable-next-line no-console
-      console.log('Prompt clicked:', id, text);
-    }}
-  />
-);
-
-export const PromptsWithScrollbarExample = () => (
-  <BpkPrompts prompts={defaultPrompts} showVisibleScrollbar />
-);
-
-export const CompoundExample = () => (
-  <BpkPrompt.List
+  <BpkPrompts.Root
     onPromptClick={(id, text) => {
       // eslint-disable-next-line no-console
       console.log('Prompt clicked:', id, text);
     }}
   >
     {defaultPrompts.map((p) => (
-      <BpkPrompt.Item key={p.id} id={p.id} text={p.text} />
+      <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
     ))}
-  </BpkPrompt.List>
+  </BpkPrompts.Root>
+);
+
+export const PromptsWithScrollbarExample = () => (
+  <BpkPrompts.Root showVisibleScrollbar>
+    {defaultPrompts.map((p) => (
+      <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
+    ))}
+  </BpkPrompts.Root>
+);
+
+export const CompoundExample = () => (
+  <BpkPrompts.Root
+    onPromptClick={(id, text) => {
+      // eslint-disable-next-line no-console
+      console.log('Prompt clicked:', id, text);
+    }}
+  >
+    {defaultPrompts.map((p) => (
+      <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
+    ))}
+  </BpkPrompts.Root>
 );

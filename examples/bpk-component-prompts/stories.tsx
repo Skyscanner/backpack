@@ -16,25 +16,23 @@
  * limitations under the License.
  */
 
-import BpkPrompt from '../../packages/bpk-component-prompt/src/BpkPrompt';
-import BpkPrompts from '../../packages/bpk-component-prompt/src/BpkPrompts';
+import type { ReactNode } from 'react';
+
+import { BpkProvider } from '../../packages/bpk-component-layout';
+import BpkPrompts from '../../packages/bpk-component-prompts/index';
 
 import {
   CompoundExample,
-  DefaultPromptExample,
   DefaultPromptsExample,
-  PromptWithClickExample,
   PromptsWithScrollbarExample,
 } from './examples';
 
 export default {
-  title: 'bpk-component-prompt',
-  component: BpkPrompt,
-  subcomponents: { BpkPrompts },
+  title: 'bpk-component-prompts',
+  component: BpkPrompts,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
 };
 
-export const Default = DefaultPromptExample;
-export const WithClick = PromptWithClickExample;
 export const Prompts = DefaultPromptsExample;
 export const PromptsWithScrollbar = PromptsWithScrollbarExample;
 export const Compound = CompoundExample;

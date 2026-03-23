@@ -20,9 +20,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import { BpkProvider } from '../../bpk-component-layout';
-
-import BpkPrompt from './BpkPrompt';
-import BpkPrompts from './BpkPrompts';
+import BpkPrompts from '../index';
 
 const renderWithProvider = (ui: React.ReactElement) =>
   render(ui, { wrapper: BpkProvider });
@@ -33,37 +31,26 @@ const defaultPrompts = [
   { id: 'third', text: 'Do I need to pay a deposit?' },
 ];
 
-describe('BpkPrompt accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = renderWithProvider(
-      <BpkPrompt.Root promptText="What insurance do I need?" />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  it('should not have accessibility issues with onClick handler', async () => {
-    const { container } = renderWithProvider(
-      <BpkPrompt.Root
-        promptText="What insurance do I need?"
-        onClick={jest.fn()}
-      />,
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-});
-
 describe('BpkPrompts accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = renderWithProvider(<BpkPrompts prompts={defaultPrompts} />);
+    const { container } = renderWithProvider(
+      <BpkPrompts.Root>
+        {defaultPrompts.map((p) => (
+          <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
+        ))}
+      </BpkPrompts.Root>,
+    );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have accessibility issues with onPromptClick handler', async () => {
     const { container } = renderWithProvider(
-      <BpkPrompts prompts={defaultPrompts} onPromptClick={jest.fn()} />,
+      <BpkPrompts.Root onPromptClick={jest.fn()}>
+        {defaultPrompts.map((p) => (
+          <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
+        ))}
+      </BpkPrompts.Root>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

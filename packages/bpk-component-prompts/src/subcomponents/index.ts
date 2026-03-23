@@ -16,14 +16,11 @@
  * limitations under the License.
  */
 
-export { default as BpkPromptRoot } from './BpkPromptRoot';
-export type { BpkPromptRootProps } from './BpkPromptRoot';
+export { default as Root } from './Root';
+export type { RootProps } from './Root';
 
-export { default as BpkPromptList } from './BpkPromptList';
-export type { BpkPromptListProps } from './BpkPromptList';
+export { default as Item } from './Item';
+export type { ItemProps } from './Item';
 
-export { default as BpkPromptItem } from './BpkPromptItem';
-export type { BpkPromptItemProps } from './BpkPromptItem';
-
-export { BpkPromptContext, useBpkPromptContext } from './BpkPromptContext';
-export type { BpkPromptContextValue } from './BpkPromptContext';
+export { PromptContext, usePromptContext } from './Context';
+export type { PromptContextValue } from './Context';

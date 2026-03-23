@@ -18,10 +18,10 @@
 
 import { createContext, useContext } from 'react';
 
-export type BpkPromptContextValue = {
+export type PromptContextValue = {
   onPromptClick?: (id: string, promptText: string) => void;
 };
 
-export const BpkPromptContext = createContext<BpkPromptContextValue>({});
+export const PromptContext = createContext<PromptContextValue>({});
 
-export const useBpkPromptContext = () => useContext(BpkPromptContext);
+export const usePromptContext = () => useContext(PromptContext);

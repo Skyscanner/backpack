@@ -18,10 +18,10 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { BpkProvider } from '../../bpk-component-layout';
+import { BpkProvider } from '../../../bpk-component-layout';
 
-import BpkPromptItem from './BpkPromptItem';
-import BpkPromptList from './BpkPromptList';
+import Item from './Item';
+import Root from './Root';
 
 const renderWithProvider = (ui: React.ReactElement) =>
   render(ui, { wrapper: BpkProvider });
@@ -32,25 +32,25 @@ const defaultPrompts = [
   { id: 'third', text: 'Do I need to pay a deposit?' },
 ];
 
-describe('BpkPromptList', () => {
+describe('Root', () => {
   it('should render correctly with default props', () => {
     const { asFragment } = renderWithProvider(
-      <BpkPromptList>
+      <Root>
         {defaultPrompts.map((p) => (
-          <BpkPromptItem key={p.id} id={p.id} text={p.text} />
+          <Item key={p.id} id={p.id} text={p.text} />
         ))}
-      </BpkPromptList>,
+      </Root>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render a list of prompts', () => {
     renderWithProvider(
-      <BpkPromptList>
+      <Root>
         {defaultPrompts.map((p) => (
-          <BpkPromptItem key={p.id} id={p.id} text={p.text} />
+          <Item key={p.id} id={p.id} text={p.text} />
         ))}
-      </BpkPromptList>,
+      </Root>,
     );
     const list = screen.getByRole('list', { name: /suggestions/i });
     expect(list).toBeInTheDocument();
@@ -59,11 +59,11 @@ describe('BpkPromptList', () => {
 
   it('should render with data-testid', () => {
     renderWithProvider(
-      <BpkPromptList>
+      <Root>
         {defaultPrompts.map((p) => (
-          <BpkPromptItem key={p.id} id={p.id} text={p.text} />
+          <Item key={p.id} id={p.id} text={p.text} />
         ))}
-      </BpkPromptList>,
+      </Root>,
     );
     expect(screen.getByTestId('bpk-prompts')).toBeInTheDocument();
   });
@@ -71,11 +71,11 @@ describe('BpkPromptList', () => {
   it('should call onPromptClick with id and promptText when a prompt is clicked', () => {
     const mockOnPromptClick = jest.fn();
     renderWithProvider(
-      <BpkPromptList onPromptClick={mockOnPromptClick}>
+      <Root onPromptClick={mockOnPromptClick}>
         {defaultPrompts.map((p) => (
-          <BpkPromptItem key={p.id} id={p.id} text={p.text} />
+          <Item key={p.id} id={p.id} text={p.text} />
         ))}
-      </BpkPromptList>,
+      </Root>,
     );
 
     fireEvent.click(
@@ -91,11 +91,11 @@ describe('BpkPromptList', () => {
 
   it('should render with showVisibleScrollbar', () => {
     const { asFragment } = renderWithProvider(
-      <BpkPromptList showVisibleScrollbar>
+      <Root showVisibleScrollbar>
         {defaultPrompts.map((p) => (
-          <BpkPromptItem key={p.id} id={p.id} text={p.text} />
+          <Item key={p.id} id={p.id} text={p.text} />
         ))}
-      </BpkPromptList>,
+      </Root>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

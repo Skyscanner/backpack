@@ -18,28 +18,28 @@
 
 import type { ReactNode } from 'react';
 
-import { BpkFlex } from '../../bpk-component-layout';
-import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { BpkFlex } from '../../../bpk-component-layout';
+import BpkMobileScrollContainer from '../../../bpk-component-mobile-scroll-container';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
-import { BpkPromptContext } from './BpkPromptContext';
+import { PromptContext } from './Context';
 
-import STYLES from './BpkPromptList.module.scss';
+import STYLES from './Root.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkPromptListProps = {
+export type RootProps = {
   children: ReactNode;
   onPromptClick?: (id: string, promptText: string) => void;
   showVisibleScrollbar?: boolean;
 };
 
-const BpkPromptList = ({
+const Root = ({
   children,
   onPromptClick,
   showVisibleScrollbar = false,
-}: BpkPromptListProps) => (
-  <BpkPromptContext.Provider value={{ onPromptClick }}>
+}: RootProps) => (
+  <PromptContext.Provider value={{ onPromptClick }}>
     <BpkFlex
       direction="column"
       role="presentation"
@@ -60,9 +60,9 @@ const BpkPromptList = ({
         </BpkMobileScrollContainer>
       </div>
     </BpkFlex>
-  </BpkPromptContext.Provider>
+  </PromptContext.Provider>
 );
 
-BpkPromptList.displayName = 'BpkPrompt.List';
+Root.displayName = 'BpkPrompts.Root';
 
-export default BpkPromptList;
+export default Root;

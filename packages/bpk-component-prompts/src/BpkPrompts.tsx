@@ -16,17 +16,15 @@
  * limitations under the License.
  */
 
-import BpkPrompt from './src/BpkPrompt';
+import Item from './subcomponents/Item';
+import Root from './subcomponents/Root';
 
-export type { BpkPromptRootProps } from './src/BpkPrompt';
-export type { BpkPromptListProps } from './src/BpkPrompt';
-export type { BpkPromptItemProps } from './src/BpkPrompt';
+export type { RootProps as BpkPromptsRootProps } from './subcomponents/Root';
+export type { ItemProps as BpkPromptsItemProps } from './subcomponents/Item';
 
-// Convenience wrapper — accepts a flat prompts[] array
-export { default as BpkPrompts } from './src/BpkPrompts';
-export type { BpkPromptsProps } from './src/BpkPrompts';
+const BpkPrompts = {
+  Root,
+  Item,
+};
 
-// Named subcomponent exports for direct use
-export { default as BpkPromptList } from './subcomponents/BpkPromptList';
-
-export default BpkPrompt;
+export default BpkPrompts;
