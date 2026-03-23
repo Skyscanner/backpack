@@ -26,22 +26,22 @@ import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckedStateV2 = boolean | 'indeterminate';
+export type BpkCheckboxV2CheckedState = boolean | 'indeterminate';
 
-export type BpkCheckboxRootV2Props = {
+export type BpkCheckboxV2RootProps = {
   children: ReactNode;
-  checked?: BpkCheckedStateV2;
-  defaultChecked?: BpkCheckedStateV2;
+  checked?: BpkCheckboxV2CheckedState;
+  defaultChecked?: BpkCheckboxV2CheckedState;
   disabled?: boolean;
   id?: string;
   invalid?: boolean;
   name?: string;
-  onCheckedChange?: (checked: BpkCheckedStateV2) => void;
+  onCheckedChange?: (checked: BpkCheckboxV2CheckedState) => void;
   required?: boolean;
   value?: string;
 };
 
-const BpkCheckboxRootV2 = ({
+const BpkCheckboxV2Root = ({
   checked,
   children,
   defaultChecked,
@@ -52,7 +52,7 @@ const BpkCheckboxRootV2 = ({
   onCheckedChange,
   required = false,
   value,
-}: BpkCheckboxRootV2Props) => (
+}: BpkCheckboxV2RootProps) => (
   <Checkbox.Root
     className={getClassName('bpk-checkbox-v2')}
     checked={checked}
@@ -70,4 +70,4 @@ const BpkCheckboxRootV2 = ({
   </Checkbox.Root>
 );
 
-export default BpkCheckboxRootV2;
+export default BpkCheckboxV2Root;

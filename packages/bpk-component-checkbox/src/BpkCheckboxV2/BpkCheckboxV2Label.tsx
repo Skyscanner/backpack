@@ -26,14 +26,14 @@ import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxControlV2Props = {
+export type BpkCheckboxV2LabelProps = {
   children: ReactNode;
 };
 
-const BpkCheckboxControlV2 = ({ children }: BpkCheckboxControlV2Props) => (
-  <Checkbox.Control className={getClassName('bpk-checkbox-v2__control')}>
+const BpkCheckboxV2Label = ({ children }: BpkCheckboxV2LabelProps) => (
+  <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
     {children}
-  </Checkbox.Control>
+  </Checkbox.Label>
 );
 
-export default BpkCheckboxControlV2;
+export default BpkCheckboxV2Label;

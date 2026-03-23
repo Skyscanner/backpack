@@ -21,10 +21,10 @@ import userEvent from '@testing-library/user-event';
 
 import BpkCheckboxV2 from './BpkCheckboxV2';
 
-import type { BpkCheckboxRootV2Props } from './BpkCheckboxRootV2';
+import type { BpkCheckboxV2RootProps } from './BpkCheckboxV2Root';
 
 
-const SimpleCheckbox = (props: Partial<BpkCheckboxRootV2Props> = {}) => (
+const SimpleCheckbox = (props: Partial<BpkCheckboxV2RootProps> = {}) => (
   <BpkCheckboxV2.Root {...props}>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />

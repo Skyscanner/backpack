@@ -16,20 +16,20 @@
  * limitations under the License.
  */
 
-import BpkCheckboxControlV2 from './BpkCheckboxControlV2';
-import BpkCheckboxDescriptionV2 from './BpkCheckboxDescriptionV2';
-import BpkCheckboxHiddenInputV2 from './BpkCheckboxHiddenInputV2';
-import BpkCheckboxIndicatorV2 from './BpkCheckboxIndicatorV2';
-import BpkCheckboxLabelV2 from './BpkCheckboxLabelV2';
-import BpkCheckboxRootV2 from './BpkCheckboxRootV2';
+import BpkCheckboxV2Control from './BpkCheckboxV2Control';
+import BpkCheckboxV2Description from './BpkCheckboxV2Description';
+import BpkCheckboxV2HiddenInput from './BpkCheckboxV2HiddenInput';
+import BpkCheckboxV2Indicator from './BpkCheckboxV2Indicator';
+import BpkCheckboxV2Label from './BpkCheckboxV2Label';
+import BpkCheckboxV2Root from './BpkCheckboxV2Root';
 
 const BpkCheckboxV2 = {
-  Root: BpkCheckboxRootV2,
-  Control: BpkCheckboxControlV2,
-  Indicator: BpkCheckboxIndicatorV2,
-  Label: BpkCheckboxLabelV2,
-  Description: BpkCheckboxDescriptionV2,
-  HiddenInput: BpkCheckboxHiddenInputV2,
+  Root: BpkCheckboxV2Root,
+  Control: BpkCheckboxV2Control,
+  Indicator: BpkCheckboxV2Indicator,
+  Label: BpkCheckboxV2Label,
+  Description: BpkCheckboxV2Description,
+  HiddenInput: BpkCheckboxV2HiddenInput,
 };
 
 export default BpkCheckboxV2;

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-// The checkmark and indeterminate bar are rendered via CSS on BpkCheckboxControlV2
+// The checkmark and indeterminate bar are rendered via CSS on BpkCheckboxV2Control
 // (bpk-checkbox__checkmark mixin + ::before pseudo-element), so this slot
 // component intentionally renders nothing.
-const BpkCheckboxIndicatorV2 = () => null;
+const BpkCheckboxV2Indicator = () => null;
 
-export default BpkCheckboxIndicatorV2;
+export default BpkCheckboxV2Indicator;

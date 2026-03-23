@@ -28,7 +28,7 @@ export {
   checkboxSelectedColorThemeAttributes,
   checkboxBorderRadiusThemeAttributes,
 } from './src/BpkCheckboxV2/themeAttributes';
-export type { BpkCheckboxRootV2Props, BpkCheckedStateV2 } from './src/BpkCheckboxV2/BpkCheckboxRootV2';
-export type { BpkCheckboxControlV2Props } from './src/BpkCheckboxV2/BpkCheckboxControlV2';
-export type { BpkCheckboxLabelV2Props } from './src/BpkCheckboxV2/BpkCheckboxLabelV2';
-export type { BpkCheckboxDescriptionV2Props } from './src/BpkCheckboxV2/BpkCheckboxDescriptionV2';
+export type { BpkCheckboxV2RootProps, BpkCheckboxV2CheckedState } from './src/BpkCheckboxV2/BpkCheckboxV2Root';
+export type { BpkCheckboxV2ControlProps } from './src/BpkCheckboxV2/BpkCheckboxV2Control';
+export type { BpkCheckboxV2LabelProps } from './src/BpkCheckboxV2/BpkCheckboxV2Label';
+export type { BpkCheckboxV2DescriptionProps } from './src/BpkCheckboxV2/BpkCheckboxV2Description';
