@@ -79,6 +79,13 @@
     background-color: tokens.$bpk-surface-subtle-day;
     box-shadow: none;
   }
+
+  &:focus-visible {
+    background-color: tokens.$bpk-surface-subtle-day;
+    box-shadow: none;
+
+    @include utils.bpk-focus-indicator;
+  }
 }
 
 // Divider between sections in multi-column layout

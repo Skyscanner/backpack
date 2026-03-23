@@ -138,6 +138,18 @@ describe('BpkCardV2 Accessibility', () => {
       expect(results).toHaveNoViolations();
     });
 
+    it('has no accessibility violations - carsPrompt variant', async () => {
+      const { container } = renderWithProvider(
+        <BpkCardV2.Root variant={CARD_V2_VARIANTS.carsPrompt} aria-label="Cars prompt card">
+          <BpkCardV2.Body>Content</BpkCardV2.Body>
+        </BpkCardV2.Root>,
+      );
+
+      const results = await axe(container);
+
+      expect(results).toHaveNoViolations();
+    });
+
     it('has no accessibility violations - complex layout', async () => {
       const { container } = renderWithProvider(
         <BpkCardV2.Root variant={CARD_V2_VARIANTS.default} bgColor={CARD_V2_SURFACE_COLORS.surfaceDefault} aria-label="Complex card">
