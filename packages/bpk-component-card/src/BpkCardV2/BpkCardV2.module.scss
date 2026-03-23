@@ -67,7 +67,7 @@
 
 // Cars prompt variant - interactive card with background-color change on hover, no shadow
 .bpk-card-v2--cars-prompt {
-  background-color: tokens.$bpk-surface-default-day;
+  background-color: tokens.$bpk-surface-low-contrast-day;
   box-shadow: none;
 
   @include utils.bpk-hover {
