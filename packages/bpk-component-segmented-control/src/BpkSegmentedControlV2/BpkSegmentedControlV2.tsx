@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import { SegmentGroup } from '@ark-ui/react';
+import { SegmentGroup, useSegmentGroup } from '@ark-ui/react';
 
 import {
   cssModules,
   getDataComponentAttribute,
+  getDocumentDir,
 } from '../../../bpk-react-utils';
 
 import { SEGMENT_TYPES_V2 } from './common-types';
@@ -50,24 +51,31 @@ const BpkSegmentedControlV2Root = ({
     shadow && 'bpk-segmented-control-v2--shadow',
   );
 
+  // Ark omits 'dir' from UseSegmentGroupProps but the Zag machine accepts it.
+  // Since ...props is spread last in useSegmentGroup(), passing dir here overrides
+  // the default from useLocaleContext() without needing LocaleProvider.
+  const machineProps = {
+    value,
+    defaultValue,
+    onValueChange: onChange
+      ? ({ value: selectedValue }: { value: string | null }) => {
+          if (selectedValue !== null) onChange(selectedValue);
+        }
+      : undefined,
+    orientation: 'horizontal' as const,
+    dir: getDocumentDir(),
+  };
+  const api = useSegmentGroup(machineProps);
+
   return (
-    <SegmentGroup.Root
+    <SegmentGroup.RootProvider
+      value={api}
       className={containerClass}
-      value={value}
-      defaultValue={defaultValue}
-      onValueChange={
-        onChange
-          ? ({ value: selectedValue }) => {
-              if (selectedValue !== null) onChange(selectedValue);
-            }
-          : undefined
-      }
-      orientation="horizontal"
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
       <SegmentGroup.Label>{label}</SegmentGroup.Label>
       {children}
-    </SegmentGroup.Root>
+    </SegmentGroup.RootProvider>
   );
 };
 

@@ -26,6 +26,7 @@ import {
   InlineLinkInLabelExample,
   InvalidExample,
   MixedExample,
+  RtlCheckboxV2Example,
   SimpleLabelExample,
   ThemedExample,
   TitleAndSubtitleExample,
@@ -45,6 +46,7 @@ export const Indeterminate = IndeterminateExample;
 export const Invalid = InvalidExample;
 export const Themed = ThemedExample;
 export const ComposedHertz = ComposedHertzExample;
+export const Rtl = { render: RtlCheckboxV2Example, name: 'RTL layout' };
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

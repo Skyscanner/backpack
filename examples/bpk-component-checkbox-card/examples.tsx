@@ -28,7 +28,7 @@ import CityIconLg from '../../packages/bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
 import TrendDownIconLg from '../../packages/bpk-component-icon/lg/trend--down';
 import BpkImage from '../../packages/bpk-component-image';
-import { BpkBox, BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
+import { BpkBox, BpkHStack, BpkVStack } from '../../packages/bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice from '../../packages/bpk-component-price';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
@@ -573,3 +573,40 @@ export const WithMetadataExample = () => {
     </BpkHStack>
   );
 };
+
+export const RtlCheckboxCardExample = () => {
+  const [selected1, setSelected1] = useState(false);
+  const [selected2, setSelected2] = useState(true);
+
+  return (
+    <div dir="rtl">
+      <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-base" wrap="wrap">
+        <BpkBox width="9.375rem" height="9.375rem">
+          <BpkCheckboxCard.Root
+            checked={selected1}
+            onCheckedChange={setSelected1}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>وسط المدينة</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        </BpkBox>
+        <BpkBox width="9.375rem" height="9.375rem">
+          <BpkCheckboxCard.Root
+            checked={selected2}
+            onCheckedChange={setSelected2}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>المطار</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        </BpkBox>
+      </BpkHStack>
+    </div>
+  );
+};
+

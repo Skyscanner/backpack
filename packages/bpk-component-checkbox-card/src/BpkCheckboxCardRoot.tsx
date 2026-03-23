@@ -19,11 +19,11 @@
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
-import { CheckboxRoot } from '@ark-ui/react';
+import { Checkbox, useCheckbox } from '@ark-ui/react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDocumentDir } from '../../bpk-react-utils';
 
 import { CheckboxCardContext } from './CheckboxCardContext';
 import { CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS } from './common-types';
@@ -163,18 +163,26 @@ export function Root({
     [variant, radius, loading],
   );
 
+  // Ark omits 'dir' from UseCheckboxProps but the Zag machine accepts it.
+  // Since ...props is spread last in useCheckbox(), passing dir here overrides
+  // the default from useLocaleContext() without needing LocaleProvider.
+  const machineProps = {
+    checked,
+    defaultChecked,
+    onCheckedChange: onCheckedChange
+      ? (details: { checked: boolean }) => onCheckedChange(details.checked)
+      : undefined,
+    disabled: disabled || loading,
+    name,
+    value,
+    required,
+    dir: getDocumentDir(),
+  };
+  const api = useCheckbox(machineProps);
+
   return (
     <CheckboxCardContext.Provider value={contextValue}>
-      <CheckboxRoot
-        checked={checked}
-        defaultChecked={defaultChecked}
-        onCheckedChange={(details) => onCheckedChange?.(details.checked as boolean)}
-        disabled={disabled || loading}
-        name={name}
-        value={value}
-        required={required}
-        asChild
-      >
+      <Checkbox.RootProvider value={api} asChild>
         <label
           aria-label={ariaLabel}
           aria-labelledby={ariaLabelledby}
@@ -193,7 +201,7 @@ export function Root({
           )}
           {children}
         </label>
-      </CheckboxRoot>
+      </Checkbox.RootProvider>
     </CheckboxCardContext.Provider>
   );
 }

@@ -18,9 +18,9 @@
 
 import type { ReactNode } from 'react';
 
-import { Checkbox } from '@ark-ui/react';
+import { Checkbox, useCheckbox } from '@ark-ui/react';
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute, getDocumentDir } from '../../../bpk-react-utils';
 
 import STYLES from './BpkCheckboxV2.module.scss';
 
@@ -52,22 +52,36 @@ const BpkCheckboxV2Root = ({
   onCheckedChange,
   required = false,
   value,
-}: BpkCheckboxV2RootProps) => (
-  <Checkbox.Root
-    className={getClassName('bpk-checkbox-v2')}
-    checked={checked}
-    defaultChecked={defaultChecked}
-    disabled={disabled}
-    id={id}
-    invalid={invalid}
-    name={name}
-    onCheckedChange={(details) => onCheckedChange?.(details.checked)}
-    required={required}
-    value={value}
-    {...getDataComponentAttribute('CheckboxV2')}
-  >
-    {children}
-  </Checkbox.Root>
-);
+}: BpkCheckboxV2RootProps) => {
+  // Ark omits 'dir' from UseCheckboxProps but the Zag machine accepts it.
+  // Since ...props is spread last in useCheckbox(), passing dir here overrides
+  // the default from useLocaleContext() without needing LocaleProvider.
+  const machineProps = {
+    checked,
+    defaultChecked,
+    disabled,
+    id,
+    invalid,
+    name,
+    onCheckedChange: onCheckedChange
+      ? (details: { checked: BpkCheckboxV2CheckedState }) =>
+          onCheckedChange(details.checked)
+      : undefined,
+    required,
+    value,
+    dir: getDocumentDir(),
+  };
+  const api = useCheckbox(machineProps);
+
+  return (
+    <Checkbox.RootProvider
+      value={api}
+      className={getClassName('bpk-checkbox-v2')}
+      {...getDataComponentAttribute('CheckboxV2')}
+    >
+      {children}
+    </Checkbox.RootProvider>
+  );
+};
 
 export default BpkCheckboxV2Root;
