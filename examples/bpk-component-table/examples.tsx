@@ -24,6 +24,7 @@ import {
   BpkTableRow,
   BpkTableCell,
   BpkTableHeadCell,
+  TABLE_BODY_TYPES,
 } from '../../packages/bpk-component-table';
 
 const DefaultExample = () => (
@@ -80,5 +81,39 @@ const WordBreakExample = () => (
   </BpkTable>
 );
 
+const StripedExample = () => (
+  <BpkTable>
+    <BpkTableHead>
+      <BpkTableRow>
+        <BpkTableHeadCell>Column 1</BpkTableHeadCell>
+        <BpkTableHeadCell>Column 2</BpkTableHeadCell>
+        <BpkTableHeadCell>Column 3</BpkTableHeadCell>
+      </BpkTableRow>
+    </BpkTableHead>
+    <BpkTableBody type={TABLE_BODY_TYPES.striped}>
+      <BpkTableRow>
+        <BpkTableCell>Entry 1</BpkTableCell>
+        <BpkTableCell>Entry 2</BpkTableCell>
+        <BpkTableCell>Entry 3</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell>Entry 4</BpkTableCell>
+        <BpkTableCell>Entry 5</BpkTableCell>
+        <BpkTableCell>Entry 6</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell>Entry 7</BpkTableCell>
+        <BpkTableCell>Entry 8</BpkTableCell>
+        <BpkTableCell>Entry 9</BpkTableCell>
+      </BpkTableRow>
+      <BpkTableRow>
+        <BpkTableCell>Entry 10</BpkTableCell>
+        <BpkTableCell>Entry 11</BpkTableCell>
+        <BpkTableCell>Entry 12</BpkTableCell>
+      </BpkTableRow>
+    </BpkTableBody>
+  </BpkTable>
+);
+
 export default DefaultExample;
-export { WordBreakExample };
+export { WordBreakExample, StripedExample };

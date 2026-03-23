@@ -26,8 +26,6 @@ import {
   SizeExample,
   ResponsiveExample,
   PositionExample,
-  FlexExample,
-  GridExample,
 } from './box-examples';
 
 export default {
@@ -61,7 +59,5 @@ export const RtlSpacing = () => <RtlSpacingExample />;
 export const Size = () => <SizeExample />;
 export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
-export const FlexViaBox = () => <FlexExample />;
-export const GridViaBox = () => <GridExample />;
 
 

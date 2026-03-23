@@ -29,12 +29,10 @@ figma.connect(BpkSegmentedControlV2.Root, 'https://www.figma.com/design/KXf2gHNL
       'Surface Default': SEGMENT_TYPES_V2.SurfaceDefault,
       'Surface Contrast': SEGMENT_TYPES_V2.SurfaceContrast,
     }),
-    shadow: figma.boolean('Shadow'),
   },
-  example: ({ shadow, type }) => (
+  example: ({ type }) => (
     <BpkSegmentedControlV2.Root
       type={type}
-      shadow={shadow}
       defaultValue="option1"
       label="Select option"
     >
