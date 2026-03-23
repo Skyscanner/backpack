@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type { CSSProperties } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import clamp from 'lodash/clamp';
@@ -161,7 +162,7 @@ const BpkPriceRange = ({
           '--low': calcPercentage(segments.low.percentage),
           '--high': calcPercentage(segments.high.percentage),
           '--prefilled-width': `${prefilledWidth}px`,
-        } as React.CSSProperties
+        } as CSSProperties
       }
       className={getClassName(
         'bpk-price-range',

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
@@ -254,7 +254,7 @@ export type VesselElement =
  */
 export type BpkVesselProps = {
   as?: VesselElement;
-} & React.HTMLAttributes<HTMLElement>;
+} & HTMLAttributes<HTMLElement>;
 
 /**
  * Component-specific props for BpkFlex

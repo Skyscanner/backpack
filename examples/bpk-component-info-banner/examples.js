@@ -195,7 +195,7 @@ const SuccessExpandableWithActionExample = () => (
   <BpkInfoBannerExpandableState
     message="Success alert"
     type={ALERT_TYPES.SUCCESS}
-    action={{title: "Sample Action", callback: () => alert('Hello from action')}}
+    action={{title: "Sample Action", callback: () => alert('Hello from action')}} // eslint-disable-line no-alert
     toggleButtonLabel="View more"
   >
     {longMessage}
