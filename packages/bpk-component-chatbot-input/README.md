@@ -26,22 +26,3 @@ export default () => (
   />
 );
 ```
-
-## Props
-
-| Property         | PropType                           | Required | Default Value                    |
-| ---------------- | ---------------------------------- | -------- | -------------------------------- |
-| inputValue       | string                             | true     | -                                |
-| loadingAriaLabel | string                             | true     | -                                |
-| sendAriaLabel    | string                             | true     | -                                |
-| onInputChange    | func                               | true     | -                                |
-| onInputFocus     | func                               | true     | -                                |
-| onInputBlur      | func                               | true     | -                                |
-| onSubmit         | func                               | true     | -                                |
-| placeholder      | string                             | true     | -                                |
-| isSending        | bool                               | false    | false                            |
-| isPolling        | bool                               | false    | false                            |
-| inputType        | oneOf(CHATBOT_INPUT_TYPES)         | false    | CHATBOT_INPUT_TYPES.COMPOSER  |
-| maxCharacters    | number                             | false    | 500                              |
-| onInputClick     | func                               | false    | () => {}                         |
-| onKeyDown        | func                               | false    | () => {}                         |
