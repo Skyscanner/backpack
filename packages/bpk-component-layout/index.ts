@@ -17,6 +17,7 @@
  */
 
 export { BpkProvider } from './src/BpkProvider';
+export { useDirection } from './src/BpkDirectionProvider';
 export { BpkBox } from './src/BpkBox';
 export { BpkVessel } from './src/BpkVessel';
 export { BpkFlex } from './src/BpkFlex';

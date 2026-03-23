@@ -573,3 +573,39 @@ export const WithMetadataExample = () => {
     </BpkHStack>
   );
 };
+
+export const RtlCheckboxCardExample = () => {
+  const [selected1, setSelected1] = useState(false);
+  const [selected2, setSelected2] = useState(true);
+
+  return (
+    <div dir="rtl">
+      <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-base" wrap="wrap">
+        <BpkBox width="9.375rem" height="9.375rem">
+          <BpkCheckboxCard.Root
+            checked={selected1}
+            onCheckedChange={setSelected1}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>وسط المدينة</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        </BpkBox>
+        <BpkBox width="9.375rem" height="9.375rem">
+          <BpkCheckboxCard.Root
+            checked={selected2}
+            onCheckedChange={setSelected2}
+            variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+          >
+            <BpkCheckboxCard.HiddenInput />
+            <BpkCheckboxCard.Content>
+              <BpkCheckboxCard.Label>المطار</BpkCheckboxCard.Label>
+            </BpkCheckboxCard.Content>
+          </BpkCheckboxCard.Root>
+        </BpkBox>
+      </BpkHStack>
+    </div>
+  );
+};

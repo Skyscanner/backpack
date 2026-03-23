@@ -30,6 +30,7 @@ import {
   WithMetadataExample,
   WithCarVariantExample,
   WithContextOutsideRootExample,
+  RtlCheckboxCardExample,
 } from './examples';
 
 export default {
@@ -48,3 +49,4 @@ export const WithCustomTheme = WithCustomThemeExample;
 export const WithMetadata = WithMetadataExample;
 export const WithCarVariant = WithCarVariantExample;
 export const WithContextOutsideRoot = WithContextOutsideRootExample;
+export const Rtl = { render: RtlCheckboxCardExample, name: 'RTL layout' };

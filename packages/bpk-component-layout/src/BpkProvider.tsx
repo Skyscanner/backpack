@@ -20,6 +20,7 @@ import type { ReactNode } from 'react';
 
 import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
 
+import BpkDirectionProvider from './BpkDirectionProvider';
 import { createBpkConfig } from './theme';
 
 export interface BpkProviderProps {
@@ -37,14 +38,19 @@ const { globalCss: _chakraGlobalCss, ...defaultConfigWithoutGlobalCss } =
 const bpkSystem = createSystem(defaultConfigWithoutGlobalCss, createBpkConfig());
 
 /**
- * BpkProvider - Provides Chakra UI context for Backpack layout components
+ * BpkProvider - Provides Chakra UI context and RTL direction for Backpack components.
  *
- * Chakra UI 3.0 requires the `value` prop to be set to a system object.
- * We create a custom system with Backpack tokens using createSystem.
+ * Wraps children with:
+ * - Chakra UI token system (layout tokens and theming)
+ * - BpkDirectionProvider (bridges document.dir to Ark UI's LocaleProvider)
+ *
+ * All Ark-based Backpack components require this provider to support RTL.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra context.
+ * @returns {JSX.Element} The provider wrapping its children with Chakra and direction context.
  */
 export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => (
-  <ChakraProvider value={bpkSystem}>{children}</ChakraProvider>
+  <ChakraProvider value={bpkSystem}>
+    <BpkDirectionProvider>{children}</BpkDirectionProvider>
+  </ChakraProvider>
 );
