@@ -30,6 +30,7 @@ import {
   SimpleHeadlineExample,
   CustomHeadlineExample,
   TriggerExample,
+  TwoColumnExample,
   NoHeaderExample,
 } from './examples';
 
@@ -54,6 +55,7 @@ export const SheetWithImage = SheetWithImageExample;
 export const SimpleHeadline = SimpleHeadlineExample;
 export const CustomHeadline = CustomHeadlineExample;
 export const Trigger = TriggerExample;
+export const TwoColumn = TwoColumnExample;
 export const NoHeader = NoHeaderExample;
 
 export const VisualTest = DefaultExample;
