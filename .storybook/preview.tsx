@@ -39,7 +39,7 @@ const preview: Preview = {
         root = document?.querySelector(':root');
         (root as HTMLElement).style.setProperty('font-size', fontSize);
       } catch(e) {
-        console.error(e);
+        console.error(e); // eslint-disable-line no-console
       }
       return (
         <div>
