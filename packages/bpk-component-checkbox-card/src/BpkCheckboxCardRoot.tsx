@@ -170,7 +170,8 @@ export function Root({
     checked,
     defaultChecked,
     onCheckedChange: onCheckedChange
-      ? (details: { checked: boolean }) => onCheckedChange(details.checked)
+      ? (details: { checked: boolean | 'indeterminate' }) =>
+          onCheckedChange(details.checked as boolean)
       : undefined,
     disabled: disabled || loading,
     name,
