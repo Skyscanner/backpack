@@ -1,6 +1,8 @@
 {
   "codeConnect": {
-    "include": ["/**/*.{tsx,jsx}"],
+    "include": [
+      "/**/*.{tsx,jsx}"
+    ],
     "label": "React",
     "importPaths": {
       "bpk-component-icon/sm/*": "@skyscanner/backpack-web/bpk-component-icon/sm/*",
