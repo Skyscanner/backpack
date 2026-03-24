@@ -16,24 +16,31 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { BpkProvider } from '../../bpk-component-layout';
 
 import BpkPrompts from './BpkPrompts';
 
-const renderWithProvider = (ui: React.ReactElement) =>
+const renderWithProvider = (ui: ReactElement) =>
   render(ui, { wrapper: BpkProvider });
 
 const defaultPrompts = [
-  { id: 'first', text: 'I need a small automatic car for 2 people with unlimited mileage' },
+  {
+    id: 'first',
+    text: 'I need a small automatic car for 2 people with unlimited mileage',
+  },
   { id: 'second', text: 'What insurance do I need?' },
   { id: 'third', text: 'Do I need to pay a deposit?' },
 ];
 
 describe('BpkPrompts', () => {
   it('should render correctly with default props', () => {
-    const { asFragment } = renderWithProvider(<BpkPrompts prompts={defaultPrompts} />);
+    const { asFragment } = renderWithProvider(
+      <BpkPrompts prompts={defaultPrompts} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 

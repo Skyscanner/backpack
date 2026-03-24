@@ -315,6 +315,27 @@ const HotelCardExample = () => (
   </BpkBox>
 );
 
+const DefaultWithBgColorsExample = () => (
+  <div className={getClassName('bpk-card-v2-examples__canvas-contrast')}>
+    <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
+      {SURFACE_COLORS.map((color) => (
+        <BpkBox key={color} width="20rem">
+          <BpkCardV2.Root variant={CARD_V2_VARIANTS.default} bgColor={color}>
+            <BpkCardV2.Header>
+              <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">
+                {color}
+              </BpkText>
+            </BpkCardV2.Header>
+            <BpkCardV2.Body>
+              <BpkText>Hover to see background change</BpkText>
+            </BpkCardV2.Body>
+          </BpkCardV2.Root>
+        </BpkBox>
+      ))}
+    </BpkFlex>
+  </div>
+);
+
 const CustomPaddingExample = () => (
   <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
     <BpkBox width="20rem">
@@ -379,6 +400,12 @@ const AllExamples = () => (
     </BpkBox>
     <BpkBox paddingTop={BpkSpacing.LG}>
       <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
+        Default with Background Colors
+      </BpkText>
+      <DefaultWithBgColorsExample />
+    </BpkBox>
+    <BpkBox paddingTop={BpkSpacing.LG}>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
         Packages Card
       </BpkText>
       <PackagesCardExample />
@@ -402,6 +429,7 @@ export {
   DefaultExample,
   VariantsExample,
   SurfaceColorsExample,
+  DefaultWithBgColorsExample,
   PackagesCardExample,
   FlightsCardExample,
   HotelCardExample,

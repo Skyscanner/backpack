@@ -30,11 +30,13 @@ const getClassName = cssModules(STYLES);
 
 export type RootProps = {
   children: ReactNode;
+  ariaLabel: string;
   onPromptClick?: (id: string, promptText: string) => void;
   showVisibleScrollbar?: boolean;
 };
 
 const Root = ({
+  ariaLabel,
   children,
   onPromptClick,
   showVisibleScrollbar = false,
@@ -46,19 +48,11 @@ const Root = ({
       {...getDataComponentAttribute('Prompts')}
       data-testid="bpk-prompts"
     >
-      {/*
-       * A plain div is used here because the scroll wrapper requires a negative
-       * margin for the tablet bleed effect, which BpkFlex/BpkBox do not support,
-       * and the forbid-component-props ESLint rule forbids className on React
-       * components.
-       */}
-      <div className={getClassName('bpk-prompt-list__scroll')}>
-        <BpkMobileScrollContainer showScrollbar={showVisibleScrollbar}>
-          <ul className={getClassName('bpk-prompt-list__list')} aria-label="Suggestions">
-            {children}
-          </ul>
-        </BpkMobileScrollContainer>
-      </div>
+      <BpkMobileScrollContainer showScrollbar={showVisibleScrollbar}>
+        <ul className={getClassName('bpk-prompt__list')} aria-label={ariaLabel}>
+          {children}
+        </ul>
+      </BpkMobileScrollContainer>
     </BpkFlex>
   </PromptContext.Provider>
 );

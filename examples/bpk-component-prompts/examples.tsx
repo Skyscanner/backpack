@@ -29,6 +29,7 @@ const defaultPrompts = [
 
 export const DefaultPromptsExample = () => (
   <BpkPrompts.Root
+    ariaLabel="Suggestions"
     onPromptClick={(id, text) => {
       // eslint-disable-next-line no-console
       console.log('Prompt clicked:', id, text);
@@ -41,7 +42,7 @@ export const DefaultPromptsExample = () => (
 );
 
 export const PromptsWithScrollbarExample = () => (
-  <BpkPrompts.Root showVisibleScrollbar>
+  <BpkPrompts.Root ariaLabel="Suggestions" showVisibleScrollbar>
     {defaultPrompts.map((p) => (
       <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
     ))}
@@ -50,6 +51,7 @@ export const PromptsWithScrollbarExample = () => (
 
 export const CompoundExample = () => (
   <BpkPrompts.Root
+    ariaLabel="Suggestions"
     onPromptClick={(id, text) => {
       // eslint-disable-next-line no-console
       console.log('Prompt clicked:', id, text);

@@ -66,6 +66,9 @@
 }
 
 // Cars prompt variant - interactive card with background-color change on hover, no shadow
+// bgColor prop is intentionally ignored for this variant.
+// background-color is fixed to surfaceDefault via CSS cascade order
+// (this rule is declared after the surface modifier classes).
 .bpk-card-v2--cars-prompt {
   background-color: tokens.$bpk-surface-low-contrast-day;
   box-shadow: none;

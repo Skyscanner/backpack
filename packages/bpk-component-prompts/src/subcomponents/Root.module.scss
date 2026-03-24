@@ -18,26 +18,8 @@
 
 @use '../../../bpk-mixins/breakpoints';
 @use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/utils';
 
-// The outer flex-column wrapper is BpkFlex; only scroll and list styles remain.
-
-.bpk-prompt-list {
-  &__scroll {
-    width: 100%;
-
-    // Negative margin lets the scroll container bleed to the edge of
-    // a parent with bpk-spacing-base() horizontal padding.
-    @include breakpoints.bpk-breakpoint-tablet {
-      margin-right: -(tokens.bpk-spacing-base());
-
-      @include utils.bpk-rtl {
-        margin-right: 0;
-        margin-left: -(tokens.bpk-spacing-base());
-      }
-    }
-  }
-
+.bpk-prompt {
   &__list {
     margin: 0;
     padding: 0;
@@ -52,9 +34,11 @@
     // Item spacing is handled via Item margins (not gap) so the last
     // item's trailing margin acts as scroll end-padding.
     @include breakpoints.bpk-breakpoint-tablet {
-      display: inline-flex;
-      flex-flow: row;
-      gap: 0;
+      display: grid;
+      grid-auto-columns: max-content;
+      grid-auto-flow: column;
+      align-items: stretch;
+      gap: tokens.bpk-spacing-md();
     }
   }
 }

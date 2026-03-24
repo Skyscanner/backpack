@@ -20,37 +20,9 @@
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/utils';
 
-// List item wrapper
-.bpk-prompt-list__item {
-  display: flex;
-
-  @include breakpoints.bpk-breakpoint-tablet {
-    &:not(:last-child) {
-      margin-right: tokens.bpk-spacing-md();
-
-      @include utils.bpk-rtl {
-        margin-right: 0;
-        margin-left: tokens.bpk-spacing-md();
-      }
-    }
-
-    &:last-child {
-      // Trailing margin provides end-padding inside the scroll container.
-      margin-right: tokens.bpk-spacing-base();
-
-      @include utils.bpk-rtl {
-        margin-right: 0;
-        margin-left: tokens.bpk-spacing-base();
-      }
-    }
-  }
-}
-
 // Card content (BpkCardV2.Root provides background, border-radius, shadow and hover)
 .bpk-prompt__content {
   padding: tokens.bpk-spacing-base();
-  text-align: left;
-  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   touch-action: manipulation;
   user-select: none;
 
@@ -65,11 +37,6 @@
     flex-direction: column;
     align-items: flex-start;
     flex: 1;
-    text-align: left;
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   @include breakpoints.bpk-breakpoint-tablet-only {
@@ -85,12 +52,7 @@
 
 .bpk-prompt__text-wrapper {
   @include breakpoints.bpk-breakpoint-above-tablet {
-    margin-left: tokens.bpk-spacing-md();
-
-    @include utils.bpk-rtl {
-      margin-right: tokens.bpk-spacing-md();
-      margin-left: 0;
-    }
+    margin-inline-start: tokens.bpk-spacing-md();
   }
 
   @include breakpoints.bpk-breakpoint-tablet {

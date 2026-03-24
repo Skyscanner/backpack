@@ -25,6 +25,7 @@ import {
   DefaultExample,
   VariantsExample,
   SurfaceColorsExample,
+  DefaultWithBgColorsExample,
   PackagesCardExample,
   FlightsCardExample,
   HotelCardExample,
@@ -40,6 +41,7 @@ export default {
 export const Default = DefaultExample;
 export const Variants = VariantsExample;
 export const SurfaceColors = SurfaceColorsExample;
+export const DefaultWithBgColors = DefaultWithBgColorsExample;
 export const PackagesCard = PackagesCardExample;
 export const FlightsCard = FlightsCardExample;
 export const HotelsCard = HotelCardExample;

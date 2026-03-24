@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { ReactElement } from 'react';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
@@ -23,7 +24,7 @@ import { BpkProvider } from '../../../bpk-component-layout';
 import Item from './Item';
 import Root from './Root';
 
-const renderWithProvider = (ui: React.ReactElement) =>
+const renderWithProvider = (ui: ReactElement) =>
   render(ui, { wrapper: BpkProvider });
 
 const defaultPrompts = [
@@ -35,7 +36,7 @@ const defaultPrompts = [
 describe('Root', () => {
   it('should render correctly with default props', () => {
     const { asFragment } = renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         {defaultPrompts.map((p) => (
           <Item key={p.id} id={p.id} text={p.text} />
         ))}
@@ -46,7 +47,7 @@ describe('Root', () => {
 
   it('should render a list of prompts', () => {
     renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         {defaultPrompts.map((p) => (
           <Item key={p.id} id={p.id} text={p.text} />
         ))}
@@ -59,7 +60,7 @@ describe('Root', () => {
 
   it('should render with data-testid', () => {
     renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         {defaultPrompts.map((p) => (
           <Item key={p.id} id={p.id} text={p.text} />
         ))}
@@ -71,7 +72,7 @@ describe('Root', () => {
   it('should call onPromptClick with id and promptText when a prompt is clicked', () => {
     const mockOnPromptClick = jest.fn();
     renderWithProvider(
-      <Root onPromptClick={mockOnPromptClick}>
+      <Root ariaLabel="Suggestions" onPromptClick={mockOnPromptClick}>
         {defaultPrompts.map((p) => (
           <Item key={p.id} id={p.id} text={p.text} />
         ))}
@@ -91,7 +92,7 @@ describe('Root', () => {
 
   it('should render with showVisibleScrollbar', () => {
     const { asFragment } = renderWithProvider(
-      <Root showVisibleScrollbar>
+      <Root ariaLabel="Suggestions" showVisibleScrollbar>
         {defaultPrompts.map((p) => (
           <Item key={p.id} id={p.id} text={p.text} />
         ))}

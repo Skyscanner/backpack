@@ -20,7 +20,7 @@ const prompts = [
 ];
 
 export const PromptsExample = () => (
-  <BpkPrompts.Root onPromptClick={(id, text) => console.log(id, text)}>
+  <BpkPrompts.Root ariaLabel="Suggestions" onPromptClick={(id, text) => console.log(id, text)}>
     {prompts.map((p) => (
       <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
     ))}

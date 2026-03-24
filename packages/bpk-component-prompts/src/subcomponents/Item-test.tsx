@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { ReactElement } from 'react';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
@@ -23,13 +24,13 @@ import { BpkProvider } from '../../../bpk-component-layout';
 import Item from './Item';
 import Root from './Root';
 
-const renderWithProvider = (ui: React.ReactElement) =>
+const renderWithProvider = (ui: ReactElement) =>
   render(ui, { wrapper: BpkProvider });
 
 describe('Item', () => {
   it('should render correctly', () => {
     const { asFragment } = renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         <Item id="test" text="What insurance do I need?" />
       </Root>,
     );
@@ -38,7 +39,7 @@ describe('Item', () => {
 
   it('should render the prompt text', () => {
     renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         <Item id="test" text="What insurance do I need?" />
       </Root>,
     );
@@ -47,7 +48,7 @@ describe('Item', () => {
 
   it('should render with data-testid', () => {
     renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         <Item id="test" text="What insurance do I need?" />
       </Root>,
     );
@@ -57,7 +58,7 @@ describe('Item', () => {
   it('should call onPromptClick from context when clicked', () => {
     const mockOnPromptClick = jest.fn();
     renderWithProvider(
-      <Root onPromptClick={mockOnPromptClick}>
+      <Root ariaLabel="Suggestions" onPromptClick={mockOnPromptClick}>
         <Item id="insurance" text="What insurance do I need?" />
       </Root>,
     );
@@ -75,7 +76,7 @@ describe('Item', () => {
   it('should call onPromptClick when Enter key is pressed', () => {
     const mockOnPromptClick = jest.fn();
     renderWithProvider(
-      <Root onPromptClick={mockOnPromptClick}>
+      <Root ariaLabel="Suggestions" onPromptClick={mockOnPromptClick}>
         <Item id="insurance" text="What insurance do I need?" />
       </Root>,
     );
@@ -91,7 +92,7 @@ describe('Item', () => {
   it('should call onPromptClick when Space key is pressed', () => {
     const mockOnPromptClick = jest.fn();
     renderWithProvider(
-      <Root onPromptClick={mockOnPromptClick}>
+      <Root ariaLabel="Suggestions" onPromptClick={mockOnPromptClick}>
         <Item id="insurance" text="What insurance do I need?" />
       </Root>,
     );
@@ -103,7 +104,7 @@ describe('Item', () => {
 
   it('should not throw when no onPromptClick in context', () => {
     renderWithProvider(
-      <Root>
+      <Root ariaLabel="Suggestions">
         <Item id="test" text="What insurance do I need?" />
       </Root>,
     );

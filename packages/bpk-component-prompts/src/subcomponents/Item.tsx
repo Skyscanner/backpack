@@ -19,13 +19,25 @@
 import { useCallback } from 'react';
 import type { KeyboardEvent } from 'react';
 
-import { coreAccentDay, iconSizeSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  coreAccentDay,
+  iconSizeSm,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkCardV2, CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from '../../../bpk-component-card';
+import BpkBreakpoint, { BREAKPOINTS } from '../../../bpk-component-breakpoint';
+import {
+  BpkCardV2,
+  CARD_V2_SURFACE_COLORS,
+  CARD_V2_VARIANTS,
+} from '../../../bpk-component-card';
 import { withAlignment } from '../../../bpk-component-icon';
 import SearchIcon from '../../../bpk-component-icon/sm/search';
+import { BpkSpacing } from '../../../bpk-component-layout';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import {
+  cssModules,
+  getDataComponentAttribute,
+} from '../../../bpk-react-utils';
 
 import { usePromptContext } from './Context';
 
@@ -58,7 +70,7 @@ const Item = ({ id, text }: ItemProps) => {
   );
 
   return (
-    <li className={getClassName('bpk-prompt-list__item')}>
+    <li key={`bpk-prompt-${id}`}>
       <BpkCardV2.Root
         role="button"
         tabIndex={0}
@@ -69,6 +81,7 @@ const Item = ({ id, text }: ItemProps) => {
         aria-label={text}
         {...getDataComponentAttribute('Prompt')}
         data-testid="bpk-prompt"
+        title={text}
       >
         {/*
          * Plain divs are used here because the content wrapper requires CSS-only
@@ -78,16 +91,25 @@ const Item = ({ id, text }: ItemProps) => {
          * components.
          */}
         <div className={getClassName('bpk-prompt__content')}>
-          <AlignedSearch fill={coreAccentDay} aria-hidden="true" />
-          <div className={getClassName('bpk-prompt__text-wrapper')}>
-            <BpkText
-              textStyle={TEXT_STYLES.sm}
-              tagName="span"
-              color={TEXT_COLORS.textPrimary}
-            >
-              {text}
-            </BpkText>
-          </div>
+          <BpkCardV2.Header padding={BpkSpacing.None}>
+            <AlignedSearch fill={coreAccentDay} aria-hidden="true" />
+          </BpkCardV2.Header>
+          <BpkCardV2.Footer padding={BpkSpacing.None}>
+            <div className={getClassName('bpk-prompt__text-wrapper')}>
+              <BpkBreakpoint query={BREAKPOINTS.ABOVE_TABLET}>
+                {(isDesktop: boolean) => (
+                  <BpkText
+                    textStyle={
+                      isDesktop ? TEXT_STYLES.bodyDefault : TEXT_STYLES.sm
+                    }
+                    color={TEXT_COLORS.textPrimary}
+                  >
+                    {text}
+                  </BpkText>
+                )}
+              </BpkBreakpoint>
+            </div>
+          </BpkCardV2.Footer>
         </div>
       </BpkCardV2.Root>
     </li>

@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import type { ReactElement } from 'react';
 
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -22,7 +23,7 @@ import { axe } from 'jest-axe';
 import { BpkProvider } from '../../bpk-component-layout';
 import BpkPrompts from '../index';
 
-const renderWithProvider = (ui: React.ReactElement) =>
+const renderWithProvider = (ui: ReactElement) =>
   render(ui, { wrapper: BpkProvider });
 
 const defaultPrompts = [
@@ -34,7 +35,7 @@ const defaultPrompts = [
 describe('BpkPrompts accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = renderWithProvider(
-      <BpkPrompts.Root>
+      <BpkPrompts.Root ariaLabel="Suggestions">
         {defaultPrompts.map((p) => (
           <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
         ))}
@@ -46,7 +47,7 @@ describe('BpkPrompts accessibility tests', () => {
 
   it('should not have accessibility issues with onPromptClick handler', async () => {
     const { container } = renderWithProvider(
-      <BpkPrompts.Root onPromptClick={jest.fn()}>
+      <BpkPrompts.Root ariaLabel="Suggestions" onPromptClick={jest.fn()}>
         {defaultPrompts.map((p) => (
           <BpkPrompts.Item key={p.id} id={p.id} text={p.text} />
         ))}
