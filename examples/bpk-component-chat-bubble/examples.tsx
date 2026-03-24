@@ -111,7 +111,8 @@ export const MixedExample = () => {
   return (
     <div className={getClassName('bpk-chat-bubble-examples')}>
       <BpkChatBubble type="bot">
-        {"Hey! I'm your car hire assistant. Feel free to ask me anything about renting a car, and I'll put my thinking cap on."}
+        Hey! I&apos;m your car hire assistant. Feel free to ask me anything
+        about renting a car, and I&apos;ll put my thinking cap on.
       </BpkChatBubble>
       <BpkChatBubble type="user">
         What should I do if I booked on the wrong date?
