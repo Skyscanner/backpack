@@ -8,15 +8,19 @@ author: Claude Code
 version: 2.1.0
 date: 2026-03-20
 changelog: |
-  v2.1.0: Architecture overhaul — agents self-fetch data instead of orchestrator injection.
+  - v2.1.0: Architecture overhaul — agents self-fetch data instead of orchestrator injection.
     Removed diff chunking protocol and sandbox restrictions. Agents now have full tool access
     (Bash, Read, Grep, Glob, gh CLI) enabling iterative investigation and true parallelism.
     Added early-exit check for closed/draft/trivial PRs. Simplified Phase 1 to lightweight
     metadata collection only. Retained all Backpack domain knowledge and confidence scoring.
-  v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing); added orchestrator self-check, configurable threshold, autopost guardrails, privacy/access-control guidance, final-only output, clarified Agent 1 scope/autopost no-partial-post behavior, and surfaced confidence explanations for human-gated findings.
-  v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
-  v1.1.0: Added snapshot currency checks.
-  v1.0.0: Initial checklist.
+  - v2.0.0: Rewrote as multi-agent orchestrator with confidence scoring; added History Agent
+    and Bug Scanner; retained detailed Backpack review checks (TS/docs/design/a11y/testing);
+    added orchestrator self-check, configurable threshold, autopost guardrails,
+    privacy/access-control guidance, final-only output, clarified Agent 1 scope/autopost
+    no-partial-post behavior, and surfaced confidence explanations for human-gated findings.
+  - v1.2.0: Added investigation methods for CSS properties, package imports, and token semantics.
+  - v1.1.0: Added snapshot currency checks.
+  - v1.0.0: Initial checklist.
 ---
 
 # Backpack Code Review — Multi-Agent Orchestrator
@@ -35,7 +39,7 @@ Phase 1  Lightweight metadata (PR number, SHA, file list, reference docs)
 Phase 2  Launch 5 specialist agents IN PARALLEL (agents self-fetch data)
 Phase 3  Confidence scoring (batch)
 Phase 4  Filter (>= threshold), format, and output
-Phase 5  Orchestrator self-check (gates before final/autopost)
+Phase 5  Autopost gate (internal)
 ```
 
 **Key architecture decision:** Agents have full tool access (Bash, Read, Grep, Glob, `gh` CLI).
@@ -622,14 +626,6 @@ Backpack tokens use RGB notation (`rgb(239, 243, 248)`). When matching Figma/des
 2. Figma design artefacts cover all component states
 3. Responsive behaviour and accessibility notes are documented
 4. PR description links or references the approval evidence
-
-### SemVer Impact Classification
-
-- **MAJOR**: Breaking API changes, visual changes, token changes, removal, new mandatory functionality
-- **MINOR**: New optional features, new components, deprecations
-- **PATCH**: Bug fixes, dependency updates, code quality
-
-Err on the side of classifying changes as more breaking rather than less.
 
 ### Common Traps
 
