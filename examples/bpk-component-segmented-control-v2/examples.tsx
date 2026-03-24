@@ -275,7 +275,6 @@ const IconOnly = () => {
 const RtlLayout = () => {
   const [selected, setSelected] = useState('price');
   return (
-    <div dir="rtl">
       <BpkSegmentedControlV2.Root
         label="ترتيب حسب"
         value={selected}
@@ -298,7 +297,6 @@ const RtlLayout = () => {
           <BpkSegmentedControlV2.ItemHiddenInput />
         </BpkSegmentedControlV2.Item>
       </BpkSegmentedControlV2.Root>
-    </div>
   );
 };
 

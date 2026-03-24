@@ -579,7 +579,6 @@ export const RtlCheckboxCardExample = () => {
   const [selected2, setSelected2] = useState(true);
 
   return (
-    <div dir="rtl">
       <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-base" wrap="wrap">
         <BpkBox width="9.375rem" height="9.375rem">
           <BpkCheckboxCard.Root
@@ -606,6 +605,5 @@ export const RtlCheckboxCardExample = () => {
           </BpkCheckboxCard.Root>
         </BpkBox>
       </BpkHStack>
-    </div>
   );
 };
