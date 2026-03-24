@@ -17,7 +17,9 @@
  */
 
 import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
+import { LocaleProvider } from '@ark-ui/react';
 import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
 
 import { createBpkConfig } from './theme';
@@ -36,15 +38,60 @@ const { globalCss: _chakraGlobalCss, ...defaultConfigWithoutGlobalCss } =
 
 const bpkSystem = createSystem(defaultConfigWithoutGlobalCss, createBpkConfig());
 
+type Direction = 'ltr' | 'rtl';
+
+// Maps DOM direction to a BCP 47 locale understood by Ark's isRTL() utility.
+// 'ar-SA' is the minimal RTL locale — Ark only uses it to derive dir='rtl'.
+const ARK_LOCALE: Record<Direction, string> = {
+  ltr: 'en-US',
+  rtl: 'ar-SA',
+};
+
+// SSR-safe: returns 'ltr' when document is unavailable (e.g. server-side rendering).
+const getDocumentDir = (): Direction =>
+  typeof document !== 'undefined' &&
+  document.documentElement.getAttribute('dir') === 'rtl'
+    ? 'rtl'
+    : 'ltr';
+
+// Reactive hook: subscribes to document.documentElement[dir] changes via MutationObserver.
+// Re-renders BpkProvider when direction is toggled (e.g. Storybook RTL toolbar, locale switcher).
+// SSR-safe: lazy useState initialiser is not called on the server; useEffect does not run on the server.
+const useDocumentDir = (): Direction => {
+  const [dir, setDir] = useState<Direction>(getDocumentDir);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => setDir(getDocumentDir()));
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['dir'],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  return dir;
+};
+
 /**
- * BpkProvider - Provides Chakra UI context for Backpack layout components
+ * BpkProvider - Provides context for Backpack layout and Ark-based components.
  *
- * Chakra UI 3.0 requires the `value` prop to be set to a system object.
- * We create a custom system with Backpack tokens using createSystem.
+ * Wraps children with:
+ * - Chakra UI system context (for layout components: BpkFlex, BpkGrid, etc.)
+ * - Ark UI LocaleProvider (for Ark-based components: BpkCheckboxV2, BpkSegmentedControlV2, etc.)
+ *
+ * RTL support: reads document direction reactively via MutationObserver and passes
+ * the appropriate locale to Ark's LocaleProvider. All Ark-based components in the
+ * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra context.
+ * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => (
-  <ChakraProvider value={bpkSystem}>{children}</ChakraProvider>
-);
+export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+  const dir = useDocumentDir();
+
+  return (
+    <ChakraProvider value={bpkSystem}>
+      <LocaleProvider locale={ARK_LOCALE[dir]}>{children}</LocaleProvider>
+    </ChakraProvider>
+  );
+};

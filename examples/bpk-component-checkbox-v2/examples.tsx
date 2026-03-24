@@ -193,3 +193,63 @@ export const MixedExample = () => (
     </BpkFlex>
   </BpkProvider>
 );
+
+/*
+ * RTL Spike Option 2 — Before (no BpkProvider)
+ *
+ * BpkCheckboxV2 rendered WITHOUT BpkProvider.
+ * Ark's LocaleProvider is absent, so the checkbox indicator position does NOT
+ * respond to the Storybook RTL toolbar toggle.
+ *
+ * To validate: toggle the Storybook direction (RTL toolbar or html[dir="rtl"]).
+ * Expected: indicator remains in its default LTR position — no Ark RTL layout.
+ */
+export const RtlOption2BeforeExample = () => (
+  <BpkFlex direction="column" gap={BpkSpacing.SM}>
+    <BpkCheckboxV2.Root defaultChecked>
+      <BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Indicator />
+      </BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Label>خيار محدد مسبقاً</BpkCheckboxV2.Label>
+      <BpkCheckboxV2.HiddenInput />
+    </BpkCheckboxV2.Root>
+    <BpkCheckboxV2.Root>
+      <BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Indicator />
+      </BpkCheckboxV2.Control>
+      <BpkCheckboxV2.Label>خيار غير محدد</BpkCheckboxV2.Label>
+      <BpkCheckboxV2.HiddenInput />
+    </BpkCheckboxV2.Root>
+  </BpkFlex>
+);
+
+/*
+ * RTL Spike Option 2 — After (with BpkProvider)
+ *
+ * BpkCheckboxV2 rendered INSIDE BpkProvider (Option 2 applied).
+ * BpkProvider's LocaleProvider derives direction from document.documentElement[dir]
+ * reactively, so toggling the Storybook RTL toolbar updates the Ark layout.
+ *
+ * To validate: toggle the Storybook direction (RTL toolbar or html[dir="rtl"]).
+ * Expected: indicator and label mirror to the correct RTL position without page reload.
+ */
+export const RtlOption2AfterExample = () => (
+  <BpkProvider>
+    <BpkFlex direction="column" gap={BpkSpacing.SM}>
+      <BpkCheckboxV2.Root defaultChecked>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>خيار محدد مسبقاً</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>
+      <BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>خيار غير محدد</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>
+    </BpkFlex>
+  </BpkProvider>
+);

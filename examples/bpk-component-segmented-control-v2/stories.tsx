@@ -33,6 +33,7 @@ import {
   WithIconAndText,
   IconOnly,
   RtlLayout,
+  RtlOption2MixedLiveToggle,
   TwoItems,
   LongLabels,
   NoInitialSelection,
@@ -133,3 +134,8 @@ export const ComplexContent = {
 };
 
 export const VisualTest = VisualExample;
+
+export const RtlOption2Mixed = {
+  render: RtlOption2MixedLiveToggle,
+  name: 'RTL Option 2 — Mixed live toggle (Ark + non-Ark)',
+};

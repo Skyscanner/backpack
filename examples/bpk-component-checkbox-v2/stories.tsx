@@ -26,6 +26,8 @@ import {
   InlineLinkInLabelExample,
   InvalidExample,
   MixedExample,
+  RtlOption2AfterExample,
+  RtlOption2BeforeExample,
   SimpleLabelExample,
   ThemedExample,
   TitleAndSubtitleExample,
@@ -52,4 +54,14 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const RtlOption2Before = {
+  render: RtlOption2BeforeExample,
+  name: 'RTL Option 2 — Before (no BpkProvider)',
+};
+
+export const RtlOption2After = {
+  render: RtlOption2AfterExample,
+  name: 'RTL Option 2 — After (with BpkProvider)',
 };

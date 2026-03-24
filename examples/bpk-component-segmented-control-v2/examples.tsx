@@ -19,6 +19,7 @@
 import { useState } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
+import { BpkCheckboxV2 } from '../../packages/bpk-component-checkbox';
 import ChevronDownIcon from '../../packages/bpk-component-icon/sm/chevron-down';
 import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
 import InformationCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
@@ -618,6 +619,67 @@ const VisualExample = () => (
   </BpkProvider>
 );
 
+/*
+ * RTL Spike Option 2 — Mixed live toggle (US3 + US4)
+ *
+ * Renders both Ark-based components (BpkSegmentedControlV2, BpkCheckboxV2)
+ * and a non-Ark component (BpkText) inside a single BpkProvider.
+ *
+ * BpkSegmentedControlV2 and BpkCheckboxV2 use Ark's LocaleProvider (via BpkProvider)
+ * for RTL layout. BpkText uses CSS [dir="rtl"] selectors for RTL text alignment.
+ *
+ * To validate: use the Storybook RTL toolbar toggle (sets html[dir="rtl"]).
+ * Expected: all three components update their layouts simultaneously without reload.
+ * - BpkSegmentedControlV2: indicator mirrors to the correct RTL position
+ * - BpkCheckboxV2: indicator appears on the right
+ * - BpkText: text aligns right (CSS-driven, not Ark context)
+ */
+const RtlOption2MixedLiveToggle = () => {
+  const [selected, setSelected] = useState('price');
+
+  return (
+    <BpkProvider>
+      <BpkVStack gap={BpkSpacing.Base}>
+        <BpkText textStyle={TEXT_STYLES.heading5}>
+          ترتيب النتائج
+        </BpkText>
+        <BpkSegmentedControlV2.Root
+          label="ترتيب حسب"
+          value={selected}
+          onChange={setSelected}
+        >
+          <BpkSegmentedControlV2.Indicator />
+          <BpkSegmentedControlV2.Item value="price">
+            <BpkSegmentedControlV2.ItemText>السعر</BpkSegmentedControlV2.ItemText>
+            <BpkSegmentedControlV2.ItemControl />
+            <BpkSegmentedControlV2.ItemHiddenInput />
+          </BpkSegmentedControlV2.Item>
+          <BpkSegmentedControlV2.Item value="rating">
+            <BpkSegmentedControlV2.ItemText>التقييم</BpkSegmentedControlV2.ItemText>
+            <BpkSegmentedControlV2.ItemControl />
+            <BpkSegmentedControlV2.ItemHiddenInput />
+          </BpkSegmentedControlV2.Item>
+          <BpkSegmentedControlV2.Item value="duration">
+            <BpkSegmentedControlV2.ItemText>المدة</BpkSegmentedControlV2.ItemText>
+            <BpkSegmentedControlV2.ItemControl />
+            <BpkSegmentedControlV2.ItemHiddenInput />
+          </BpkSegmentedControlV2.Item>
+        </BpkSegmentedControlV2.Root>
+        <BpkCheckboxV2.Root defaultChecked>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>تنبيهات الأسعار (مكوّن Ark)</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
+        <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+          نص عادي من BpkText — يستجيب لـ CSS فقط (غير Ark)
+        </BpkText>
+      </BpkVStack>
+    </BpkProvider>
+  );
+};
+
 export {
   ComplexContentWithButton,
   ComplexContentWithIcon,
@@ -631,6 +693,7 @@ export {
   WithIconAndText,
   IconOnly,
   RtlLayout,
+  RtlOption2MixedLiveToggle,
   TwoItems,
   LongLabels,
   NoInitialSelection,
