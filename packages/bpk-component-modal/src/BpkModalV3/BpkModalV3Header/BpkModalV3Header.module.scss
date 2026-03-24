@@ -19,16 +19,11 @@
 @use '../../../../bpk-mixins/tokens';
 
 .bpk-modal-v3__header {
-  position: relative;
   display: flex;
   padding: tokens.bpk-spacing-lg();
-  align-items: center;
+  align-items: flex-start;
   flex-shrink: 0;
   gap: tokens.bpk-spacing-sm();
-
-  // Reserve space for the absolutely-positioned close button (24px button + 8px gap)
-  padding-inline-end: tokens.bpk-spacing-lg() + tokens.bpk-spacing-lg() +
-    tokens.bpk-spacing-sm();
 
   // Sheet and full variants: reduced bottom padding
   &--sheet,

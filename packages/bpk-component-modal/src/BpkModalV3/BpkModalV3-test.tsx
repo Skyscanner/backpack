@@ -281,7 +281,7 @@ describe('BpkModalV3', () => {
       const closeTrigger = container.querySelector(
         '[data-backpack-ds-component="ModalV3CloseTrigger"]',
       );
-      expect(closeTrigger?.className).toContain('bpk-modal-v3__close-trigger');
+      expect(closeTrigger?.className).toContain('bpk-close-button');
       expect(closeTrigger?.className).not.toContain(
         'bpk-modal-v3__close-trigger--on-image',
       );
