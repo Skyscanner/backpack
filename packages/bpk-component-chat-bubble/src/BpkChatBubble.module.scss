@@ -244,9 +244,9 @@
     background: tokens.$bpk-core-primary-day;
     color: tokens.$bpk-text-on-dark-day;
     cursor: pointer;
+    gap: tokens.bpk-spacing-md();
 
     @include typography.bpk-body-default;
-    gap: tokens.bpk-spacing-md();
 
     &:disabled {
       cursor: not-allowed;
