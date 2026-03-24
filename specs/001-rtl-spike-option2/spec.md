@@ -88,6 +88,23 @@ When the page direction is toggled dynamically (e.g., via the Storybook RTL tool
 
 ---
 
+### User Story 4 — Mixed components respond correctly to a live direction toggle (Priority: P2)
+
+A developer has a page containing both Ark-based components (BpkCheckboxV2, BpkSegmentedControlV2) and non-Ark components (BpkTicket) inside a single `BpkProvider`. They switch the page direction at runtime (e.g., user selects an Arabic locale from a language picker). All components — both Ark-based and non-Ark — must update to their correct RTL or LTR layouts simultaneously, without a full page reload.
+
+**Why this priority**: This is the end-to-end validation of all three previous stories combined in a realistic real-world scenario. It confirms that the two RTL mechanisms (Ark locale + CSS `[dir]`) coexist and respond together.
+
+**Independent Test**: Render BpkCheckboxV2, BpkSegmentedControlV2, and BpkTicket in a single Storybook story inside `BpkProvider`. Toggle the Storybook RTL switch. Observe all three update correctly at the same time.
+
+**Acceptance Scenarios**:
+
+1. **Given** BpkCheckboxV2, BpkSegmentedControlV2, and BpkTicket are all rendered inside `BpkProvider` with `dir="ltr"`, **When** the page direction switches to `dir="rtl"`, **Then** all three components update their layouts to RTL simultaneously without remounting
+2. **Given** the same mixed story is in RTL, **When** the direction switches back to `dir="ltr"`, **Then** all three components return to their correct LTR layouts
+3. **Given** the same mixed story, **When** direction changes, **Then** BpkTicket's layout is driven by the CSS `[dir]` selector (not Ark locale) and BpkCheckboxV2's layout is driven by the Ark locale context — both reach the same visual result
+4. **Given** a user interacts with BpkCheckboxV2 (toggles its checked state) after a direction change, **When** the interaction occurs, **Then** the component responds correctly and no stale direction state is observed
+
+---
+
 ### Edge Cases
 
 - What happens when `BpkProvider` is nested — does the inner `LocaleProvider` conflict with the outer one?
@@ -143,6 +160,7 @@ This spike requires Storybook validation. The following stories MUST be created:
 | RTL Option 2 — Mixed (Ark + non-Ark) | BpkCheckboxV2 + BpkTicket in same `BpkProvider` | Confirm no regression |
 | RTL Option 2 — Modal | BpkModalV3 open state | Confirm modal RTL layout |
 | RTL Option 2 — Before / After | BpkCheckboxV2 without `BpkProvider` vs inside `BpkProvider` | Show the effect of Option 2 |
+| RTL Option 2 — Live toggle (mixed) | BpkCheckboxV2 + BpkSegmentedControlV2 + BpkTicket in one `BpkProvider` | End-to-end US4: both RTL mechanisms respond together |
 
 ### Concern 1: Compatibility with existing RTL patterns
 
