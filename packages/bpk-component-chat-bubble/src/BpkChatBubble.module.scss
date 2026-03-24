@@ -1,0 +1,265 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+
+@keyframes bpk-chat-bubble-entrance {
+  from {
+    transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bpk-chat-bubble-entrance-reduced {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+%bpk-chat-bubble-base {
+  width: fit-content;
+  max-width: tokens.$bpk-one-pixel-rem * 280;
+  padding: tokens.bpk-spacing-base();
+  background: tokens.$bpk-surface-default-day;
+  color: tokens.$bpk-text-primary-day;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+%bpk-chat-bubble-left {
+  align-self: flex-start;
+}
+
+%bpk-chat-bubble-right {
+  align-self: flex-end;
+}
+
+%bpk-chat-bubble-radius-all-lg {
+  border-radius: tokens.$bpk-border-radius-lg;
+}
+
+@mixin bpk-chat-bubble-corner($side, $tail-position) {
+  @if $side == 'left' {
+    @if $tail-position == 'top' {
+      border-top-left-radius: tokens.$bpk-border-radius-xs;
+
+      @include utils.bpk-rtl {
+        border-top-left-radius: tokens.$bpk-border-radius-lg;
+        border-top-right-radius: tokens.$bpk-border-radius-xs;
+      }
+    } @else if $tail-position == 'bottom' {
+      border-bottom-left-radius: tokens.$bpk-border-radius-xs;
+
+      @include utils.bpk-rtl {
+        border-bottom-left-radius: tokens.$bpk-border-radius-lg;
+        border-bottom-right-radius: tokens.$bpk-border-radius-xs;
+      }
+    } @else if $tail-position == 'both' {
+      border-top-left-radius: tokens.$bpk-border-radius-xs;
+      border-bottom-left-radius: tokens.$bpk-border-radius-xs;
+
+      @include utils.bpk-rtl {
+        border-top-left-radius: tokens.$bpk-border-radius-lg;
+        border-top-right-radius: tokens.$bpk-border-radius-xs;
+        border-bottom-left-radius: tokens.$bpk-border-radius-lg;
+        border-bottom-right-radius: tokens.$bpk-border-radius-xs;
+      }
+    }
+  } @else if $side == 'right' {
+    @if $tail-position == 'top' {
+      border-top-right-radius: tokens.$bpk-border-radius-xs;
+
+      @include utils.bpk-rtl {
+        border-top-left-radius: tokens.$bpk-border-radius-xs;
+        border-top-right-radius: tokens.$bpk-border-radius-lg;
+      }
+    } @else if $tail-position == 'bottom' {
+      border-bottom-right-radius: tokens.$bpk-border-radius-xs;
+
+      @include utils.bpk-rtl {
+        border-bottom-left-radius: tokens.$bpk-border-radius-xs;
+        border-bottom-right-radius: tokens.$bpk-border-radius-lg;
+      }
+    } @else if $tail-position == 'both' {
+      border-top-right-radius: tokens.$bpk-border-radius-xs;
+      border-bottom-right-radius: tokens.$bpk-border-radius-xs;
+
+      @include utils.bpk-rtl {
+        border-top-left-radius: tokens.$bpk-border-radius-xs;
+        border-top-right-radius: tokens.$bpk-border-radius-lg;
+        border-bottom-left-radius: tokens.$bpk-border-radius-xs;
+        border-bottom-right-radius: tokens.$bpk-border-radius-lg;
+      }
+    }
+  }
+}
+
+.bpk-chat-bubble {
+  @extend %bpk-chat-bubble-base;
+
+  @include utils.bpk-rtl {
+    direction: rtl;
+  }
+
+  &--animated {
+    transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
+    opacity: 0;
+    animation: bpk-chat-bubble-entrance 0.22s cubic-bezier(0.2, 0, 0, 1)
+      forwards;
+    animation-delay: var(--anim-delay, 0ms);
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: bpk-chat-bubble-entrance-reduced 0.2s ease-out forwards;
+    }
+  }
+
+  &--bot,
+  &--retry {
+    @extend %bpk-chat-bubble-left;
+    @extend %bpk-chat-bubble-radius-all-lg;
+
+    text-align: start;
+
+    @include utils.bpk-rtl {
+      text-align: end;
+    }
+  }
+
+  &--user {
+    @extend %bpk-chat-bubble-right;
+    @extend %bpk-chat-bubble-radius-all-lg;
+
+    background: tokens.$bpk-core-accent-day;
+    color: tokens.$bpk-text-on-dark-day;
+    text-align: end;
+
+    @include utils.bpk-rtl {
+      text-align: start;
+    }
+  }
+
+  &--suggestion {
+    @extend %bpk-chat-bubble-radius-all-lg;
+
+    width: fit-content;
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-core-accent-day;
+    background: transparent;
+    color: tokens.$bpk-core-accent-day;
+    text-align: end;
+    cursor: pointer;
+
+    @include bpk-chat-bubble-corner('right', 'bottom');
+
+    @include utils.bpk-rtl {
+      text-align: start;
+    }
+
+    &:hover {
+      transform: translateY(-(tokens.$bpk-one-pixel-rem));
+      box-shadow: 0 tokens.$bpk-border-size-lg (tokens.$bpk-one-pixel-rem * 4)
+        tokens.$bpk-text-secondary-day;
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 tokens.$bpk-one-pixel-rem (tokens.$bpk-one-pixel-rem * 2)
+        tokens.$bpk-text-secondary-day;
+    }
+  }
+
+  &--system-first {
+    @include bpk-chat-bubble-corner('left', 'bottom');
+  }
+
+  &--system-middle {
+    @include bpk-chat-bubble-corner('left', 'both');
+  }
+
+  &--system-last {
+    @include bpk-chat-bubble-corner('left', 'top');
+  }
+
+  &--user-first {
+    @include bpk-chat-bubble-corner('right', 'bottom');
+  }
+
+  &--user-middle {
+    @include bpk-chat-bubble-corner('right', 'both');
+  }
+
+  &--user-last {
+    @include bpk-chat-bubble-corner('right', 'top');
+  }
+
+  &__content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /* stylelint-disable-next-line selector-max-compound-selectors */
+    p + p {
+      margin-top: tokens.bpk-spacing-base();
+    }
+  }
+
+  &__retry {
+    margin-top: tokens.bpk-spacing-base();
+  }
+
+  &__retry-button {
+    display: inline-flex;
+    padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
+    align-items: center;
+    border: none;
+    border-radius: tokens.$bpk-border-radius-sm;
+    background: tokens.$bpk-core-primary-day;
+    color: tokens.$bpk-text-on-dark-day;
+    /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
+    font-size: inherit;
+    cursor: pointer;
+    gap: tokens.bpk-spacing-md();
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &__thumbs {
+    display: flex;
+    margin-top: tokens.bpk-spacing-md();
+    align-items: center;
+    gap: tokens.bpk-spacing-base();
+
+    > span {
+      margin-top: 0 !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+}
