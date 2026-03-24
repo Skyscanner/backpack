@@ -20,6 +20,8 @@
 @use '../../bpk-mixins/radii';
 @use '../../bpk-mixins/typography';
 
+$bpk-critical-background-day: #e70866;
+
 .bpk-info-banner {
   padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
   overflow: hidden;
@@ -75,6 +77,15 @@
 
   &__info-icon {
     fill: tokens.$bpk-text-secondary-day;
+  }
+
+  &__critical-icon {
+    fill: tokens.$bpk-text-on-dark-day;
+  }
+
+  &--critical {
+    background-color: $bpk-critical-background-day;
+    color: tokens.$bpk-text-on-dark-day;
   }
 
   &__toggle-button {

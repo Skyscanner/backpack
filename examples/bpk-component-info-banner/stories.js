@@ -32,6 +32,7 @@ import {
   SuccessWithReactRenderedMessageExample,
   WarningExample,
   ErrorExample,
+  CriticalExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
@@ -64,6 +65,7 @@ export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;
 export const Warning = WarningExample;
 export const Error = ErrorExample;
+export const Critical = CriticalExample;
 export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
 
 export const OnContrast = OnContrastExample;

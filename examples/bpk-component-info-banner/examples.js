@@ -174,6 +174,13 @@ const WarningExample = (props) => (
 const ErrorExample = (props) => (
   <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
+const CriticalExample = (props) => (
+  <BpkInfoBanner
+    message="Critical alert"
+    type={ALERT_TYPES.CRITICAL}
+    {...props}
+  />
+);
 const SuccessDismissableBehaviourExample = () => (
   <BpkInfoBannerDismissableState
     dismissButtonLabel="Dismiss"
@@ -306,6 +313,9 @@ const DocsDefaultExample = () => (
     <ErrorExample
       className={getClassName('bpk-info-banner-examples__component')}
     />
+    <CriticalExample
+      className={getClassName('bpk-info-banner-examples__component')}
+    />
   </>
 );
 
@@ -321,6 +331,7 @@ export {
   SuccessWithReactRenderedMessageExample,
   WarningExample,
   ErrorExample,
+  CriticalExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,

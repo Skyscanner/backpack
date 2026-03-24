@@ -30,6 +30,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
+import ExclamationCircleIcon from '../../bpk-component-icon/sm/exclamation-circle';
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import BpkLink from '../../bpk-component-link';
@@ -69,6 +70,7 @@ const getIconForType = (
     [ALERT_TYPES.WARNING]: getClassName('bpk-info-banner__warning-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-info-banner__error-icon'),
     [ALERT_TYPES.INFO]: getClassName('bpk-info-banner__info-icon'),
+    [ALERT_TYPES.CRITICAL]: getClassName('bpk-info-banner__critical-icon'),
   } as const;
   const className = classMap[type];
   const componentMap: {
@@ -78,6 +80,7 @@ const getIconForType = (
     [ALERT_TYPES.WARNING]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,
     [ALERT_TYPES.INFO]: InfoCircleIcon,
+    [ALERT_TYPES.CRITICAL]: ExclamationCircleIcon,
   } as const;
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
