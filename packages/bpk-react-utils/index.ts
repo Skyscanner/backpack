@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import ArkLocaleProvider from './src/ArkLocaleProvider';
 import { BpkDialogWrapper } from './src/BpkDialogWrapper/BpkDialogWrapper';
 import Portal from './src/Portal';
 import TransitionInitialMount from './src/TransitionInitialMount';
@@ -37,7 +36,6 @@ import wrapDisplayName from './src/wrapDisplayName';
 
 export type { SurfaceBgColor } from './src/surfaceColors';
 export {
-  ArkLocaleProvider,
   Portal,
   TransitionInitialMount,
   cssModules,
@@ -54,7 +52,6 @@ export {
   SURFACE_COLORS,
 };
 export default {
-  ArkLocaleProvider,
   Portal,
   TransitionInitialMount,
   cssModules,

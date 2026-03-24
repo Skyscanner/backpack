@@ -31,7 +31,6 @@ import {
 import { BpkModalV3 } from '../../packages/bpk-component-modal';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import { ArkLocaleProvider } from '../../packages/bpk-react-utils';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg';
@@ -51,10 +50,8 @@ const ModalContainer = ({
 
   return (
     <BpkProvider>
-      <ArkLocaleProvider>
         <BpkButton onClick={() => setOpen(true)}>{buttonLabel}</BpkButton>
         {children({ open, onOpenChange })}
-      </ArkLocaleProvider>
     </BpkProvider>
   );
 };
@@ -543,7 +540,6 @@ const NoHeaderExample = () => (
 
 const TriggerExample = () => (
   <BpkProvider>
-    <ArkLocaleProvider>
       <BpkModalV3.Root>
         <BpkModalV3.Trigger asChild>
           <BpkButton>Open modal</BpkButton>
@@ -570,7 +566,6 @@ const TriggerExample = () => (
           </BpkModalV3.Content>
         </BpkModalV3.Portal>
       </BpkModalV3.Root>
-    </ArkLocaleProvider>
   </BpkProvider>
 );
 
