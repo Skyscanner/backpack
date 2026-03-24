@@ -65,3 +65,19 @@ export const VisualTestWithZoom = {
     zoomEnabled: true,
   },
 };
+
+export const VisualTestSheet = SheetExample;
+export const VisualTestSheetWithZoom = {
+  render: SheetExample,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const VisualTestFull = FullExample;
+export const VisualTestFullWithZoom = {
+  render: FullExample,
+  args: {
+    zoomEnabled: true,
+  },
+};
