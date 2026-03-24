@@ -16,23 +16,24 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import BpkCardV2 from './src/BpkCardV2/BpkCardV2';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
+@use '../../packages/bpk-mixins/tokens';
 
-export type {
-  BpkCardV2Props,
-  BpkCardV2HeaderProps,
-  BpkCardV2BodyProps,
-  BpkCardV2SectionProps,
-  BpkCardV2FooterProps,
-  BpkCardV2SurfaceColor,
-  BpkCardV2Variant,
-  BpkCardV2Namespace,
-} from './src/BpkCardV2/common-types';
-export { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './src/BpkCardV2/common-types';
+.bpk-chatbot-input-examples {
+  max-width: tokens.bpk-spacing-xxxxl() * 4;
+  padding: tokens.bpk-spacing-base();
+}
 
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper, BpkCardV2 };
+.bpk-chatbot-input-examples--on-canvas {
+  max-width: tokens.bpk-spacing-xxxxl() * 4;
+  padding: tokens.bpk-spacing-base();
+  background-color: tokens.$bpk-canvas-contrast-day;
+}
 
-export default BpkCard;
+.bpk-chatbot-input-examples__section-label {
+  margin-top: tokens.bpk-spacing-lg();
+  margin-bottom: tokens.bpk-spacing-sm();
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

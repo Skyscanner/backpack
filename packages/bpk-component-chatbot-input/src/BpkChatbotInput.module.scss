@@ -1,0 +1,97 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+
+.bpk-chatbot-input {
+  &--cars {
+    transition:
+      border-color tokens.$bpk-duration-sm ease,
+      box-shadow tokens.$bpk-duration-sm ease;
+    border: 1.5 * tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
+    background: tokens.$bpk-surface-elevated-day;
+    box-shadow: none;
+    box-sizing: border-box;
+    touch-action: manipulation;
+
+    @include utils.bpk-themeable-property(
+      border-radius,
+      --bpk-chatbot-input-border-radius,
+      tokens.$bpk-border-radius-md
+    );
+
+    @include utils.bpk-hover {
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-chatbot-input-focus-border-color,
+        tokens.$bpk-core-accent-day
+      );
+    }
+
+    &:active {
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-chatbot-input-focus-border-color,
+        tokens.$bpk-core-accent-day
+      );
+    }
+
+    &:focus-within {
+      // box-shadow uses the same colour as border; the spread radius is computed at
+      // build time and cannot be passed through the mixin, so we duplicate the fallback.
+      box-shadow: 0 0 0 0.5 * tokens.$bpk-one-pixel-rem
+        tokens.$bpk-core-accent-day;
+      box-shadow: 0 0 0 0.5 * tokens.$bpk-one-pixel-rem
+        var(--bpk-chatbot-input-focus-border-color, tokens.$bpk-core-accent-day);
+
+      @include utils.bpk-themeable-property(
+        border-color,
+        --bpk-chatbot-input-focus-border-color,
+        tokens.$bpk-core-accent-day
+      );
+    }
+  }
+
+  &--composer {
+    position: relative;
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    background: tokens.$bpk-surface-default-day;
+    box-sizing: border-box;
+    will-change: transform, box-shadow;
+
+    @include utils.bpk-themeable-property(
+      border-radius,
+      --bpk-chatbot-input-border-radius,
+      tokens.$bpk-border-radius-md
+    );
+
+    &--with-shadow {
+      &:focus-within {
+        box-shadow: tokens.$bpk-box-shadow-xl;
+      }
+    }
+
+    &--overLimit {
+      transform: translateY(-(tokens.bpk-spacing-sm()));
+    }
+  }
+}

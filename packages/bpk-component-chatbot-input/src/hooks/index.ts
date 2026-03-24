@@ -16,23 +16,7 @@
  * limitations under the License.
  */
 
-import BpkCard from './src/BpkCard';
-import BpkCardV2 from './src/BpkCardV2/BpkCardV2';
-import BpkCardWrapper from './src/BpkCardWrapper';
-import BpkDividedCard, { ORIENTATION } from './src/BpkDividedCard';
-
-export type {
-  BpkCardV2Props,
-  BpkCardV2HeaderProps,
-  BpkCardV2BodyProps,
-  BpkCardV2SectionProps,
-  BpkCardV2FooterProps,
-  BpkCardV2SurfaceColor,
-  BpkCardV2Variant,
-  BpkCardV2Namespace,
-} from './src/BpkCardV2/common-types';
-export { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './src/BpkCardV2/common-types';
-
-export { ORIENTATION, BpkDividedCard, BpkCardWrapper, BpkCardV2 };
-
-export default BpkCard;
+export { default as useChatbotInput } from './useChatbotInput';
+export { default as useChatbotInputManager } from './useChatbotInputManager';
+export { default as useInputHandlers } from './useInputHandlers';
+export { default as useTextAreaAutoResize } from './useTextAreaAutoResize';

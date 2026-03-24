@@ -24,6 +24,7 @@ import { render, screen } from '@testing-library/react';
 import { BpkProvider, BpkSpacing } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
+import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './common-types';
 
 const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
 
@@ -147,16 +148,7 @@ describe('BpkCardV2', () => {
   });
 
   describe('Surface Colors', () => {
-    const surfaceColors = [
-      'surfaceDefault',
-      'surfaceElevated',
-      'surfaceTint',
-      'surfaceSubtle',
-      'surfaceHero',
-      'surfaceContrast',
-      'surfaceLowContrast',
-      'surfaceHighlight',
-    ] as const;
+    const surfaceColors = Object.values(CARD_V2_SURFACE_COLORS);
 
     surfaceColors.forEach((color) => {
       it(`applies ${color} surface color as BEM modifier class`, () => {
@@ -194,12 +186,22 @@ describe('BpkCardV2', () => {
 
     it('applies outlined variant class when specified', () => {
       const { container } = renderWithProvider(
-        <BpkCardV2.Root variant="outlined">Content</BpkCardV2.Root>,
+        <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined}>Content</BpkCardV2.Root>,
       );
 
       const card = container.querySelector('[class*="bpk-card-v2"]');
 
       expect(card).toHaveClass('bpk-card-v2--outlined');
+    });
+
+    it('applies carsPrompt variant class when specified', () => {
+      const { container } = renderWithProvider(
+        <BpkCardV2.Root variant={CARD_V2_VARIANTS.carsPrompt}>Content</BpkCardV2.Root>,
+      );
+
+      const card = container.querySelector('[class*="bpk-card-v2"]');
+
+      expect(card).toHaveClass('bpk-card-v2--cars-prompt');
     });
   });
 
