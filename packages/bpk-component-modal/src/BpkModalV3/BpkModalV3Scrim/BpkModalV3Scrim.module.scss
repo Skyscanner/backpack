@@ -16,24 +16,34 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+@use '../../../../bpk-mixins/tokens';
 
-import type { Props } from './src/BpkModal';
+.bpk-modal-v3__scrim {
+  position: fixed;
+  z-index: tokens.$bpk-zindex-modal;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
+  background-color: tokens.$bpk-scrim-day;
+  opacity: 0;
+  inset: 0;
+  pointer-events: none;
 
-export type BpkModalProps = Props;
+  &[data-state='open'] {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
-};
+  &[data-state='closed'] {
+    opacity: 0;
+  }
+
+  // Auto-hide scrim for full variant
+  &--full {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bpk-modal-v3__scrim {
+    transition: none;
+  }
+}

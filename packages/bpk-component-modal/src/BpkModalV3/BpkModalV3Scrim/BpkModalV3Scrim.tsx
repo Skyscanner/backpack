@@ -16,24 +16,26 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+import { Dialog } from '@ark-ui/react/dialog';
 
-import type { Props } from './src/BpkModal';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+import { useModalType } from '../BpkModalV3Context';
 
-export type BpkModalProps = Props;
+import STYLES from './BpkModalV3Scrim.module.scss';
 
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
+const getClassName = cssModules(STYLES);
+
+const BpkModalV3Scrim = () => {
+  const type = useModalType();
+  return (
+    <Dialog.Backdrop
+      className={getClassName(
+        'bpk-modal-v3__scrim',
+        type === 'full' && 'bpk-modal-v3__scrim--full',
+      )}
+      {...getDataComponentAttribute('ModalV3Scrim')}
+    />
+  );
 };
+
+export default BpkModalV3Scrim;

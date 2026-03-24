@@ -16,24 +16,11 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+import { createContext, useContext } from 'react';
 
-import type { Props } from './src/BpkModal';
+import type { BpkModalV3Type } from './common-types';
 
-export type BpkModalProps = Props;
+const BpkModalV3Context = createContext<BpkModalV3Type>('default');
 
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
-};
+export const useModalType = () => useContext(BpkModalV3Context);
+export const ModalTypeProvider = BpkModalV3Context.Provider;
