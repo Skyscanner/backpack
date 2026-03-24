@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
 @keyframes bpk-chat-bubble-entrance {
@@ -129,12 +130,13 @@
   &--animated {
     transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
     opacity: 0;
-    animation: bpk-chat-bubble-entrance 0.22s cubic-bezier(0.2, 0, 0, 1)
-      forwards;
+    animation: bpk-chat-bubble-entrance tokens.$bpk-duration-sm
+      cubic-bezier(0.2, 0, 0, 1) forwards;
     animation-delay: var(--anim-delay, 0ms);
 
     @media (prefers-reduced-motion: reduce) {
-      animation: bpk-chat-bubble-entrance-reduced 0.2s ease-out forwards;
+      animation: bpk-chat-bubble-entrance-reduced tokens.$bpk-duration-sm
+        ease-out forwards;
     }
   }
 
@@ -168,8 +170,8 @@
 
     width: fit-content;
     transition:
-      transform 0.2s ease-in-out,
-      box-shadow 0.2s ease-in-out;
+      transform tokens.$bpk-duration-sm ease-in-out,
+      box-shadow tokens.$bpk-duration-sm ease-in-out;
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-core-accent-day;
     background: transparent;
     color: tokens.$bpk-core-accent-day;
@@ -182,16 +184,16 @@
       text-align: start;
     }
 
-    &:hover {
+    @include utils.bpk-hover {
       transform: translateY(-(tokens.$bpk-one-pixel-rem));
       box-shadow: 0 tokens.$bpk-border-size-lg (tokens.$bpk-one-pixel-rem * 4)
-        tokens.$bpk-text-secondary-day;
+        tokens.$bpk-line-day;
     }
 
     &:active {
       transform: translateY(0);
       box-shadow: 0 tokens.$bpk-one-pixel-rem (tokens.$bpk-one-pixel-rem * 2)
-        tokens.$bpk-text-secondary-day;
+        tokens.$bpk-line-day;
     }
   }
 
@@ -241,9 +243,9 @@
     border-radius: tokens.$bpk-border-radius-sm;
     background: tokens.$bpk-core-primary-day;
     color: tokens.$bpk-text-on-dark-day;
-    /* stylelint-disable-next-line scale-unlimited/declaration-strict-value */
-    font-size: inherit;
     cursor: pointer;
+
+    @include typography.bpk-body-default;
     gap: tokens.bpk-spacing-md();
 
     &:disabled {

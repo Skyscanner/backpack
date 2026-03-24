@@ -71,18 +71,18 @@ const BpkChatBubble = ({
   onRetry,
   onSuggestionClick,
   retryDisabled = false,
-  retryLabel = 'Try again',
+  retryLabel,
   selectedFeedback = null,
   showFeedback = false,
-  suggestionAriaLabel = 'suggestion',
+  suggestionAriaLabel,
   systemPosition,
   type,
   userPosition,
 }: BpkChatBubbleProps) => {
-  const isBot = type === 'bot' || type === 'retry';
   const isUser = type === 'user';
   const isSuggestion = type === 'suggestion';
   const isRetry = type === 'retry';
+  const isBot = type === 'bot';
 
   const snapped = clampAndSnap(animationDelay);
   type CustomStyle = CSSProperties & Record<string, string | number>;
@@ -92,7 +92,7 @@ const BpkChatBubble = ({
     'bpk-chat-bubble',
     'bpk-chat-bubble--animated',
     isUser && 'bpk-chat-bubble--user',
-    isBot && !isRetry && 'bpk-chat-bubble--bot',
+    isBot && 'bpk-chat-bubble--bot',
     isRetry && 'bpk-chat-bubble--retry',
     isSuggestion && 'bpk-chat-bubble--suggestion',
     isUser && userPosition === 'first' && 'bpk-chat-bubble--user-first',
@@ -130,7 +130,6 @@ const BpkChatBubble = ({
   return (
     <div
       className={containerClassName}
-      role="presentation"
       style={inlineStyle}
       data-testid="bpk-chat-bubble"
       {...getDataComponentAttribute('ChatBubble')}
@@ -150,7 +149,7 @@ const BpkChatBubble = ({
           </div>
         )}
       </div>
-      {showFeedback && (
+      {showFeedback && isBot && (
         <div className={getClassName('bpk-chat-bubble__thumbs')}>
           <BpkThumbButton
             type="up"

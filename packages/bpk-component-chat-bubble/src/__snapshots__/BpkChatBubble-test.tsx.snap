@@ -6,7 +6,6 @@ exports[`BpkChatBubble should render bot bubble correctly 1`] = `
     class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--bot"
     data-backpack-ds-component="ChatBubble"
     data-testid="bpk-chat-bubble"
-    role="presentation"
     style="--anim-delay: 0ms;"
   >
     <div
@@ -24,7 +23,6 @@ exports[`BpkChatBubble should render bot bubble with feedback buttons when showF
     class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--bot"
     data-backpack-ds-component="ChatBubble"
     data-testid="bpk-chat-bubble"
-    role="presentation"
     style="--anim-delay: 0ms;"
   >
     <div
@@ -94,7 +92,6 @@ exports[`BpkChatBubble should render retry bubble correctly 1`] = `
     class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--retry"
     data-backpack-ds-component="ChatBubble"
     data-testid="bpk-chat-bubble"
-    role="presentation"
     style="--anim-delay: 0ms;"
   >
     <div
@@ -137,7 +134,6 @@ exports[`BpkChatBubble should render user bubble correctly 1`] = `
     class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--user"
     data-backpack-ds-component="ChatBubble"
     data-testid="bpk-chat-bubble"
-    role="presentation"
     style="--anim-delay: 0ms;"
   >
     <div

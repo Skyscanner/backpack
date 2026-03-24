@@ -256,6 +256,29 @@ describe('BpkChatBubble', () => {
     ).not.toBeInTheDocument();
   });
 
+  it('should not show feedback buttons on user bubble even when showFeedback is true', () => {
+    render(
+      <BpkChatBubble type="user" showFeedback>
+        User message
+      </BpkChatBubble>,
+    );
+    expect(
+      screen.queryByTestId('bpk-thumb-button-up'),
+    ).not.toBeInTheDocument();
+  });
+
+  it('should not show feedback buttons on retry bubble even when showFeedback is true', () => {
+    const onRetry = jest.fn();
+    render(
+      <BpkChatBubble type="retry" onRetry={onRetry} retryLabel="Try again" showFeedback>
+        Something went wrong.
+      </BpkChatBubble>,
+    );
+    expect(
+      screen.queryByTestId('bpk-thumb-button-up'),
+    ).not.toBeInTheDocument();
+  });
+
   it('should apply animationDelay as CSS custom property', () => {
     render(
       <BpkChatBubble type="bot" animationDelay={150}>
