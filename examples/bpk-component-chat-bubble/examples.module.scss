@@ -22,6 +22,6 @@
   display: flex;
   padding: tokens.bpk-spacing-base();
   flex-direction: column;
-  background-color: tokens.$bpk-canvas-day;
+  background-color: tokens.$bpk-canvas-contrast-day;
   gap: tokens.bpk-spacing-sm();
 }

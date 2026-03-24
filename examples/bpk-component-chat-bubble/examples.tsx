@@ -105,13 +105,48 @@ export const SequenceExample = () => (
   </div>
 );
 
-export const MixedExample = () => (
-  <div>
-    <UserBubbleExample />
-    <BotBubbleExample />
-    <RetryBubbleExample />
-    <SuggestionBubbleExample />
-    <BotBubbleWithFeedbackExample />
-    <SequenceExample />
-  </div>
-);
+export const MixedExample = () => {
+  const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
+
+  return (
+    <div className={getClassName('bpk-chat-bubble-examples')}>
+      <BpkChatBubble type="bot">
+        {"Hey! I'm your car hire assistant. Feel free to ask me anything about renting a car, and I'll put my thinking cap on."}
+      </BpkChatBubble>
+      <BpkChatBubble type="user">
+        What should I do if I booked on the wrong date?
+      </BpkChatBubble>
+      <BpkChatBubble type="retry" onRetry={() => {}} retryLabel="Try again">
+        Sorry, I couldn&apos;t connect. Please check your connection.
+      </BpkChatBubble>
+      <BpkChatBubble
+        type="suggestion"
+        onSuggestionClick={() => {}}
+        suggestionAriaLabel="What are the cheapest rental options?"
+      >
+        What are the cheapest rental options?
+      </BpkChatBubble>
+      <BpkChatBubble
+        type="bot"
+        showFeedback
+        selectedFeedback={selected}
+        onFeedbackClick={(type) => setSelected(type)}
+      >
+        You can modify your booking by calling the car hire company directly or
+        using their online portal.
+      </BpkChatBubble>
+      <BpkChatBubble type="bot" systemPosition="first" animationDelay={0}>
+        I can help with that!
+      </BpkChatBubble>
+      <BpkChatBubble type="bot" systemPosition="last" animationDelay={50}>
+        Here are the steps to modify your booking.
+      </BpkChatBubble>
+      <BpkChatBubble type="user" userPosition="first" animationDelay={100}>
+        Thanks, that helped!
+      </BpkChatBubble>
+      <BpkChatBubble type="user" userPosition="last" animationDelay={150}>
+        Got it sorted now.
+      </BpkChatBubble>
+    </div>
+  );
+};
