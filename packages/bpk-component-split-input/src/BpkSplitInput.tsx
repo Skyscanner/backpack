@@ -28,7 +28,7 @@ import STYLES from './BpkSplitInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-interface Props {
+export interface Props {
   type?: string | number;
   id: string;
   label: string;
