@@ -196,7 +196,6 @@ export const MixedExample = () => (
 
 export const RtlCheckboxV2Example = () => (
   <BpkProvider>
-    <div dir="rtl">
       <BpkFlex gap={BpkSpacing.Base} direction="column">
         <BpkCheckboxV2.Root>
           <BpkCheckboxV2.Control>
@@ -213,6 +212,5 @@ export const RtlCheckboxV2Example = () => (
           <BpkCheckboxV2.HiddenInput />
         </BpkCheckboxV2.Root>
       </BpkFlex>
-    </div>
   </BpkProvider>
 );
