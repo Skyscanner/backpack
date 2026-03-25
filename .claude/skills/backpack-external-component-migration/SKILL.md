@@ -662,7 +662,7 @@ npm test -- packages/bpk-component-[name] -u
 - [ ] TypeScript compiles without errors or warnings
 - [ ] No product-specific dependencies remain
 
-**Accessibility (WCAG 2.1 AA):**
+**Accessibility (WCAG 2.2 AA):**
 - [ ] Accessibility tests pass (jest-axe with 0 violations)
 - [ ] Decorative elements have `aria-hidden="true"`
 - [ ] Interactive elements have proper roles and labels
