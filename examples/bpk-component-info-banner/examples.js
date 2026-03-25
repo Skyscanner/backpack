@@ -209,6 +209,17 @@ const SuccessExpandableWithActionExample = () => (
   </BpkInfoBannerExpandableState>
 );
 
+const CriticalExpandableWithActionExample = () => (
+  <BpkInfoBannerExpandableState
+    message="Critical alert"
+    type={ALERT_TYPES.CRITICAL}
+    action={{title: "Sample Action", callback: () => alert('Hello from action')}} // eslint-disable-line no-alert
+    toggleButtonLabel="View more"
+  >
+    {longMessage}
+  </BpkInfoBannerExpandableState>
+);
+
 const SuccessAutomaticallyDismissedExample = () => (
   <BpkInfoBannerDismissableState
     hideAfter={5}
@@ -332,6 +343,7 @@ export {
   WarningExample,
   ErrorExample,
   CriticalExample,
+  CriticalExpandableWithActionExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
