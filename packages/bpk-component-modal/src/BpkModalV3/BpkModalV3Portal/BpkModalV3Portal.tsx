@@ -16,24 +16,17 @@
  * limitations under the License.
  */
 
-import BpkModal from './src/BpkModal';
-import { MODAL_STYLING } from './src/BpkModalInner';
-import { BpkModalV2 } from './src/BpkModalV2/BpkModal';
-import BpkModalV3 from './src/BpkModalV3/BpkModalV3';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { propTypes, defaultProps } from './src/legacy-prop-types';
-import themeAttributes from './src/themeAttributes';
+import type { ReactNode } from 'react';
 
-import type { Props } from './src/BpkModal';
+import { Portal } from '@ark-ui/react/portal';
 
-export type BpkModalProps = Props;
-
-export default BpkModal;
-export {
-  propTypes,
-  defaultProps,
-  themeAttributes,
-  BpkModalV2,
-  BpkModalV3,
-  MODAL_STYLING,
+type BpkModalV3PortalProps = {
+  children: ReactNode;
 };
+
+const BpkModalV3Portal = ({ children }: BpkModalV3PortalProps) => (
+  <Portal>{children}</Portal>
+);
+
+export default BpkModalV3Portal;
+export type { BpkModalV3PortalProps };

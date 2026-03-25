@@ -23,3 +23,11 @@ yarn.lock
 !packages/bpk-stylesheets/base.css
 /packages/bpk-stylesheets/normalize.scss
 .copilot-progress
+
+# Playwright
+.playwright-cli
+
+# OpenSpec - until Backpack officially endorses it
+.claude/commands/opsx
+.claude/skills/openspec-*
+openspec
