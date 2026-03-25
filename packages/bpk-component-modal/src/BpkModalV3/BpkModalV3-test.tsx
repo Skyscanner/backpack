@@ -93,6 +93,12 @@ describe('BpkModalV3', () => {
       expect(wrapper).toHaveAttribute('data-type', 'full');
     });
 
+    it('should render wrapper div with chatbot type', () => {
+      const { container } = renderModal({ type: 'chatbot' });
+      const wrapper = container.querySelector('[data-type]');
+      expect(wrapper).toHaveAttribute('data-type', 'chatbot');
+    });
+
     it('should have data-backpack-ds-component attribute', () => {
       const { container } = renderModal();
       const wrapper = container.querySelector(
@@ -122,6 +128,14 @@ describe('BpkModalV3', () => {
         '[data-backpack-ds-component="ModalV3Content"]',
       );
       expect(content?.className).toContain('bpk-modal-v3__content--sheet');
+    });
+
+    it('should apply chatbot modifier class from context', () => {
+      const { container } = renderModal({ type: 'chatbot' });
+      const content = container.querySelector(
+        '[data-backpack-ds-component="ModalV3Content"]',
+      );
+      expect(content?.className).toContain('bpk-modal-v3__content--chatbot');
     });
   });
 

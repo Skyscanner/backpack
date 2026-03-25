@@ -19,4 +19,9 @@
 .bpk-modal-v3__body {
   flex: 1;
   overflow-y: auto;
+
+  // Prevent scroll-chaining to the background page on mobile (all modal types).
+  // Without this, reaching the top/bottom of modal content on iOS causes the
+  // page behind the modal to scroll or triggers pull-to-refresh.
+  overscroll-behavior: contain;
 }

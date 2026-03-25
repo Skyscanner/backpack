@@ -79,6 +79,22 @@ describe('BpkModalV3 accessibility tests', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
+  it('should not have accessibility issues with chatbot variant open', async () => {
+    const { container } = render(
+      <BpkModalV3.Root open onOpenChange={jest.fn()} type="chatbot">
+        <BpkModalV3.Scrim />
+        <BpkModalV3.Content>
+          <BpkModalV3.Header>
+            <BpkModalV3.Title>Chatbot modal title</BpkModalV3.Title>
+            <BpkModalV3.CloseTrigger label="Close" />
+          </BpkModalV3.Header>
+          <p>Chatbot content</p>
+        </BpkModalV3.Content>
+      </BpkModalV3.Root>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it('should not have accessibility issues with Title and Description', async () => {
     const { container } = render(
       <BpkModalV3.Root open onOpenChange={jest.fn()}>
