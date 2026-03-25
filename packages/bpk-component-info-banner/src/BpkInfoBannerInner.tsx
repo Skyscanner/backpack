@@ -201,6 +201,7 @@ const BpkInfoBannerInner = ({
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}
+                onDark={type === ALERT_TYPES.CRITICAL}
               />
             </span>
           )}
@@ -214,6 +215,7 @@ const BpkInfoBannerInner = ({
           </div>
           {isExpandable && action && (
             <BpkLink
+              alternate={type === ALERT_TYPES.CRITICAL}
               onClick={action.callback}
               href="#"
             >

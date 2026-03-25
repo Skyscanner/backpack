@@ -34,6 +34,7 @@ import {
   ErrorExample,
   CriticalExample,
   CriticalExpandableWithActionExample,
+  CriticalDismissableBehaviourExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
@@ -68,6 +69,7 @@ export const Warning = WarningExample;
 export const Error = ErrorExample;
 export const Critical = CriticalExample;
 export const CriticalExpandableWithAction = CriticalExpandableWithActionExample;
+export const CriticalDismissableBehaviour = CriticalDismissableBehaviourExample;
 export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
 
 export const OnContrast = OnContrastExample;

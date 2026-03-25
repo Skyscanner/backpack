@@ -188,6 +188,14 @@ const SuccessDismissableBehaviourExample = () => (
     type={ALERT_TYPES.SUCCESS}
   />
 );
+
+const CriticalDismissableBehaviourExample = () => (
+  <BpkInfoBannerDismissableState
+    dismissButtonLabel="Dismiss"
+    message="Critical alert with dismiss option"
+    type={ALERT_TYPES.CRITICAL}
+  />
+);
 const SuccessExpandableBehaviourExample = () => (
   <BpkInfoBannerExpandableState
     message="Success alert with more information"
@@ -344,6 +352,7 @@ export {
   ErrorExample,
   CriticalExample,
   CriticalExpandableWithActionExample,
+  CriticalDismissableBehaviourExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
