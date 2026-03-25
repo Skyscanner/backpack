@@ -24,6 +24,7 @@ import userEvent from '@testing-library/user-event';
 import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCardV2 from './BpkCardV2';
+import { CARD_V2_SURFACE_COLORS } from './common-types';
 
 const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
 
@@ -197,7 +198,7 @@ describe('BpkCardV2 Integration Tests', () => {
             <BpkCardV2.Section>
               <div>
                 <h3>Main Section</h3>
-                <BpkCardV2.Root bgColor="surfaceElevated">
+                <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceElevated}>
                   <BpkCardV2.Body>Nested card</BpkCardV2.Body>
                 </BpkCardV2.Root>
               </div>

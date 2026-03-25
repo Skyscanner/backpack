@@ -31,6 +31,7 @@ export type {
   BpkCardV2Variant,
   BpkCardV2Namespace,
 } from './src/BpkCardV2/common-types';
+export { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './src/BpkCardV2/common-types';
 
 export { ORIENTATION, BpkDividedCard, BpkCardWrapper, BpkCardV2 };
 
