@@ -39,6 +39,7 @@ import {
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
+  CriticalCustomIconExample,
   DocsDefaultExample,
   OnContrastExample,
 } from './examples';
@@ -79,6 +80,7 @@ export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
 export const SuccessAutomaticallyDismissedAfter5Seconds =
   SuccessAutomaticallyDismissedExample;
 export const SuccessWithCustomIcon = SuccessCustomIconExample;
+export const CriticalWithCustomIcon = CriticalCustomIconExample;
 
 export const VisualTest = DocsDefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});

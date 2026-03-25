@@ -86,6 +86,10 @@
     color: tokens.$bpk-text-on-dark-day;
   }
 
+  &--critical &__message {
+    color: tokens.$bpk-text-on-dark-day;
+  }
+
   &--critical &__toggle-button {
     fill: tokens.$bpk-text-on-dark-day;
   }

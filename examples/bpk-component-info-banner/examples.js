@@ -243,6 +243,13 @@ const SuccessCustomIconExample = () => (
     icon={CurrencyIcon}
   />
 );
+const CriticalCustomIconExample = () => (
+  <BpkInfoBanner
+    message="Critical alert with custom icon"
+    type={ALERT_TYPES.CRITICAL}
+    icon={CurrencyIcon}
+  />
+);
 
 const OnContrastExample = (props) => (
   <div style={{ backgroundColor: canvasContrastDay, padding: cardPadding }}>
@@ -314,6 +321,18 @@ const OnContrastExample = (props) => (
     >
       {message}
     </BpkText>
+    <BpkInfoBanner
+      message="Critical alert on contrast"
+      type={ALERT_TYPES.CRITICAL}
+      style={STYLE_TYPES.ON_CONTRAST}
+      {...props}
+    />
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
   </div>
 );
 
@@ -357,6 +376,7 @@ export {
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
+  CriticalCustomIconExample,
   DocsDefaultExample,
   OnContrastExample,
 };
