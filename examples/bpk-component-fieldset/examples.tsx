@@ -38,7 +38,6 @@ import BpkFieldset, {
 import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../packages/bpk-component-select';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSplitInput from '../../packages/bpk-component-split-input';
 import BpkTextarea from '../../packages/bpk-component-textarea';
 import { cssModules } from '../../packages/bpk-react-utils';

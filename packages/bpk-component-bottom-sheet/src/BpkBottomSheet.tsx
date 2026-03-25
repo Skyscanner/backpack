@@ -19,7 +19,6 @@ import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
 import { useCallback, useState, isValidElement, cloneElement } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';

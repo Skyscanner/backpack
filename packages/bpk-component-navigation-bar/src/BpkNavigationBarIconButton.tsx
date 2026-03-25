@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-import type { ComponentType, MouseEvent, ReactNode } from 'react';
+import type { ComponentType, FunctionComponent, MouseEvent, ReactNode } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -45,9 +44,9 @@ const BpkNavigationBarIconButton = ({
     {...getDataComponentAttribute('NavigationBarIconButton')}
   >
     <BpkCloseButton
-      customIcon={icon}
+      customIcon={icon as FunctionComponent<any>}
       onDark={barStyle === BAR_STYLES.onDark}
-      {...rest}
+      {...(rest as any)}
     />
   </span>
 );

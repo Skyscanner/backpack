@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import { cssModules, Portal, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -73,7 +72,7 @@ const BpkDialog = ({
         {headerIcon && <div className={headerIconClassNames}>{headerIcon}</div>}
         {dismissible && (
           <span className={closeButtonClassNames}>
-            <BpkCloseButton label={closeLabel} onClick={onClose} />
+            <BpkCloseButton label={closeLabel} onClick={() => onClose?.()} />
           </span>
         )}
         {children}
