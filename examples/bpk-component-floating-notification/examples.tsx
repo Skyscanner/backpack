@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import BpkFloatingNotification from '../../packages/bpk-component-floating-notification';
+import BpkFloatingNotification, {
+  NOTIFICATION_TYPES,
+} from '../../packages/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
 
@@ -54,9 +56,18 @@ const VisualTestExample = () => (
   />
 );
 
+const CriticalExample = () => (
+  <BpkFloatingNotification
+    text="Critical notification"
+    type={NOTIFICATION_TYPES.critical}
+    hideAfter={8000}
+  />
+);
+
 export {
   CtaIconLongTextExample,
   CtaExample,
+  CriticalExample,
   DefaultExample,
   IconExample,
   VisualTestExample,

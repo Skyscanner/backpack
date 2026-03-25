@@ -21,6 +21,7 @@ import BpkFloatingNotification from '../../packages/bpk-component-floating-notif
 import {
   CtaIconLongTextExample,
   CtaExample,
+  CriticalExample,
   DefaultExample,
   IconExample,
   VisualTestExample,
@@ -35,6 +36,8 @@ export const Default = DefaultExample;
 export const WithIcon = IconExample;
 
 export const WithCta = CtaExample;
+
+export const Critical = CriticalExample;
 
 export const WithCtaIconAndLongText = CtaIconLongTextExample;
 

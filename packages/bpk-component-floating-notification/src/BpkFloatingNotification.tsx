@@ -30,6 +30,11 @@ import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export const NOTIFICATION_TYPES = {
+  default: 'default',
+  critical: 'critical',
+} as const;
+
 export type Props = {
   animateOnEnter?: boolean;
   animateOnExit?: boolean;
@@ -47,6 +52,7 @@ export type Props = {
    */
   onExit?: () => void;
   text: string;
+  type?: (typeof NOTIFICATION_TYPES)[keyof typeof NOTIFICATION_TYPES];
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -63,10 +69,16 @@ const BpkFloatingNotification = (props: Props) => {
     onClick,
     onExit,
     text,
+    type = NOTIFICATION_TYPES.default,
     ...rest
   } = props;
 
-  const classNames = getClassName('bpk-floating-notification', className);
+  const classNames = getClassName(
+    'bpk-floating-notification',
+    type === NOTIFICATION_TYPES.critical &&
+      'bpk-floating-notification--critical',
+    className,
+  );
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;

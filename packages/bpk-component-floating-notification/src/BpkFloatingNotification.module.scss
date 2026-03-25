@@ -19,6 +19,8 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/breakpoints';
 
+$bpk-critical-background-day: #e70866;
+
 .bpk-floating-notification {
   position: fixed;
   right: 0;
@@ -41,6 +43,10 @@
   @include breakpoints.bpk-breakpoint-mobile {
     max-width: 100%;
     padding: tokens.bpk-spacing-base();
+  }
+
+  &--critical {
+    background-color: $bpk-critical-background-day;
   }
 
   &--leave {
