@@ -66,7 +66,7 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 
 ## Phase 1 + Phase 1.5: Run in Parallel
 
-**Launch both steps simultaneously** — they are independent.
+**Launch both steps at the same time** — Phase 1 runs directly in the orchestrator (bash commands); Phase 1.5 is dispatched as a background subagent. They are independent and must not block each other.
 
 ### Phase 1: Metadata + Diff Pre-fetch
 
@@ -86,9 +86,9 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 gh pr diff [NUMBER] --repo Skyscanner/backpack   # PR mode
 git diff main...HEAD                              # local mode
 ```
-Slice into scoped sections to embed directly in each agent's prompt:
-- **SCSS slice** → Agent 2: `gh pr diff [N] --repo Skyscanner/backpack -- '*.scss'`
-- **TSX/TS slice** → Agents 1, 3, 5: filter lines for `.ts`/`.tsx` files
+Slice the fetched diff in memory — do NOT issue additional `gh pr diff` calls:
+- **SCSS slice** → Agent 2: filter to lines belonging to `*.scss` files
+- **TSX/TS slice** → Agents 1, 3, 5: filter to lines belonging to `*.ts`/`*.tsx` files
 - **Full diff** → Agents 4, 6
 
 Pass each slice as `[INSERT SCOPED DIFF]` in the agent's prompt. **Agents must not re-fetch the diff.**
@@ -106,9 +106,10 @@ Otherwise:
    ```
 3. For each PR, fetch comments:
    ```bash
-   gh pr view [N] --repo Skyscanner/backpack --json reviews,comments
+   gh pr view [N] --repo Skyscanner/backpack --json reviews,comments,reviewThreads
    ```
-4. Collect raw text from `reviews[].body` and `comments[].body`. Pass to Agent 6 as-is.
+4. Collect raw text from `reviews[].body`, `comments[].body`, and inline diff-thread comments
+   (`reviewThreads[].comments[].body`). Pass to Agent 6 as-is.
    If no comments found, omit Agent 6.
 
 ---
@@ -122,7 +123,7 @@ Otherwise:
 | Agent 1 (Constitution & API) | Always | Never |
 | Agent 2 (Sass & Token) | `.scss` files in diff | No `.scss` files |
 | Agent 3 (A11y & Testing) | Always | Never |
-| Agent 4 (History) | Files exist on `main` | All files are brand-new |
+| Agent 4 (History) | Files exist on `main` | >70% of changed files are brand-new |
 | Agent 5 (Bug Scanner) | Always | Never |
 | Agent 6 (Learned Patterns) | Phase 1.5 found comments | No historical comments |
 
@@ -190,8 +191,10 @@ in their JSON output (see Phase 2). No separate pass needed.
 
 ## Phase 4: Filter, Format, and Output
 
-**Filter:** use each issue's `confidence` field; remove issues with `confidence < threshold`;
-mark `threshold <= confidence < 90` as `requires_human_gate=true`.
+**Filter:** use each issue's `confidence` field; remove issues with `confidence < threshold`.
+Issues with `threshold <= confidence < 90` are human-gated — include them in output with
+a "Gate rationale" line showing `confidence_explanation`, and require explicit user
+confirmation before posting to GitHub.
 
 **Output only** the final `### Code review` block — no phase diagnostics, no tables.
 
@@ -231,16 +234,16 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
 
 ## Phase 5: Orchestrator Self-Check (Internal — do not print)
 
-- Checked `className`/`style` leakage for new components
-- Verified design approval evidence present and substantive
-- Checked private token misuse and token semantic-name correctness
-- Checked license headers on changed source files
-- Reviewed snapshot currency when rendered output changed
-- Performed mixin investigation for direct CSS properties
-- Performed package-export investigation for imported Backpack helpers
-- Verified token colour match AND semantic meaning
-- Included diagnostics for any failed agents
-- Enforced autopost guardrails
+- Check `className`/`style` leakage for new components
+- Verify design approval evidence is present and substantive
+- Check private token misuse and token semantic-name correctness
+- Check license headers on changed source files
+- Review snapshot currency when rendered output changed
+- Perform mixin investigation for direct CSS properties
+- Perform package-export investigation for imported Backpack helpers
+- Verify token colour match AND semantic meaning
+- Include diagnostics for any failed agents
+- Enforce autopost guardrails
 
 ---
 

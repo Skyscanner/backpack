@@ -53,13 +53,6 @@ Known mixin mappings (not exhaustive — always search):
   adjacent text, use `tokens.$bpk-spacing-icon-text` rather than size-based functions like
   `tokens.bpk-spacing-md()` even when the computed rem values are equal — semantic name wins
 
-## Step 4: Package import investigation
-
-For each `import X from '../../bpk-component-Y'`:
-1. Read `packages/bpk-component-Y/index.tsx` to see full export list
-2. Look for size/variant suffixes (Large, Small, OnDark, V2)
-3. Verify the imported variant matches context
-
 Only flag issues in **changed lines**. Ignore pre-existing violations.
 Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
 `"confidence_explanation"` fields. If none found, return `[]`.

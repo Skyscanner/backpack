@@ -86,6 +86,13 @@ Use the Read tool only when you need to inspect a specific file in full depth
 - When required: check PR description for design approval evidence.
   Missing design approval on a visual-change PR = blocking issue.
 
+### Package Import Investigation
+
+For each `import X from '../../bpk-component-Y'` in the changed files:
+1. Read `packages/bpk-component-Y/index.tsx` to see full export list
+2. Look for size/variant suffixes (Large, Small, OnDark, V2)
+3. Verify the imported variant matches context
+
 Only flag issues in **changed files**. Ignore pre-existing violations.
 Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
 `"confidence_explanation"` fields. If none found, return `[]`.

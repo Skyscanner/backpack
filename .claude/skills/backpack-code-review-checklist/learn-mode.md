@@ -22,8 +22,11 @@ For each PR, fetch review comments:
 ```bash
 gh pr view [NUMBER] \
   --repo Skyscanner/backpack \
-  --json reviews,comments
+  --json reviews,comments,reviewThreads
 ```
+
+Collect text from `reviews[].body`, `comments[].body`, and inline diff-thread comments
+(`reviewThreads[].comments[].body`).
 
 ## Step B — Cluster Recurring Comments
 
@@ -48,7 +51,7 @@ Launch a single analysis agent with all collected comment text:
 > [
 >   {
 >     "rule": "One-sentence rule statement",
->     "domain": "constitution|sass-tokens|a11y-testing|bug-scan|new",
+>     "domain": "constitution|sass-tokens|a11y-testing|history|bug-scan|new",
 >     "occurrences": 5,
 >     "examples": ["verbatim quote 1", "verbatim quote 2"],
 >     "confidence": "HIGH|MEDIUM|LOW"
