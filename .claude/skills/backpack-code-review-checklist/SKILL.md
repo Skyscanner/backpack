@@ -1,8 +1,12 @@
 ---
 name: backpack-code-review-checklist
 description: Self-improving multi-agent review orchestrator for Backpack component PRs. Runs 6 parallel specialist agents (including a learned-patterns agent that mines past PR comments), then confidence-scores findings. Use for PR review, Constitution compliance checks, and pre-merge validation. Run with "learn" to mine recent PRs and auto-update checklist rules.
-version: 3.0.2
+version: 3.0.3
 changelog: |
+  - v3.0.3: Fix blind spot — Phase 1 now fetches current PR's own inline review comments
+    and builds a RESOLVED_SET (issues already fixed in-PR) and RAISED_SET (still-open
+    discussions). Phase 4 drops RESOLVED_SET matches and annotates RAISED_SET matches,
+    preventing false positives on issues already caught and addressed by human reviewers.
   - v3.0.2: Performance optimisation — orchestrator pre-fetches diff once and slices per
     agent (eliminates 6× redundant gh pr diff calls); agents self-score (confidence field
     in JSON output, eliminating separate Phase 3 pass); Phase 1.5 runs parallel with
@@ -92,6 +96,24 @@ Slice the fetched diff in memory — do NOT issue additional `gh pr diff` calls:
 - **Full diff** → Agents 4, 6
 
 Pass each slice as `[INSERT SCOPED DIFF]` in the agent's prompt. **Agents must not re-fetch the diff.**
+
+**Inline review comment fetch (PR mode only — skip in local mode):**
+Fetch the current PR's own inline review comments (line-level diff threads):
+```bash
+gh api repos/Skyscanner/backpack/pulls/[NUMBER]/comments --paginate \
+  --jq '[.[] | {id:.id, path:.path, line:.line, body:.body, in_reply_to_id:.in_reply_to_id}]'
+```
+Group comments into threads by `in_reply_to_id` (top-level = no `in_reply_to_id`; replies share the root's `id`).
+
+Classify each thread into one of two sets:
+- **RESOLVED_SET**: thread has at least one reply containing a resolution signal — a commit URL
+  (`github.com/Skyscanner/backpack/pull/NNN/commits/` or `github.com/Skyscanner/backpack/commit/`),
+  or the words "Done", "Fixed", "Fixed in", "updated in", "addressed in", "resolved"
+  (case-insensitive). Record `{path, line, summary}` for each thread.
+- **RAISED_SET**: thread has a top-level comment but NO resolution signal in any reply.
+  Record `{path, line, summary}` for each thread.
+
+Store both sets for use in Phase 4.
 
 ### Phase 1.5: Mine Learned Patterns
 
@@ -191,10 +213,20 @@ in their JSON output (see Phase 2). No separate pass needed.
 
 ## Phase 4: Filter, Format, and Output
 
-**Filter:** use each issue's `confidence` field; remove issues with `confidence < threshold`.
+**Filter — step 1, confidence:** remove issues with `confidence < threshold`.
 Issues with `threshold <= confidence < 90` are human-gated — include them in output with
 a "Gate rationale" line showing `confidence_explanation`, and require explicit user
 confirmation before posting to GitHub.
+
+**Filter — step 2, RESOLVED_SET (PR mode only):** For each remaining issue, check whether
+it matches a RESOLVED_SET thread — same `file` (`path`) AND `line` falls within
+`startLine–endLine` of the issue. If it matches, **drop the issue entirely** (already
+caught and fixed by human reviewers in-PR). Do not report it.
+
+**Filter — step 3, RAISED_SET annotation (PR mode only):** For each remaining issue,
+check whether it matches a RAISED_SET thread (same `file`, overlapping line range).
+If it matches, **keep the issue** but prepend the label:
+`⚠️ Already raised in PR discussion — still open.`
 
 **Output only** the final `### Code review` block — no phase diagnostics, no tables.
 
