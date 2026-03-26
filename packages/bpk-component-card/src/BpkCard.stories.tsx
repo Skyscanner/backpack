@@ -151,7 +151,7 @@ export const WithHrefDividedCard = {
     <BpkDividedCard
       primaryContent={longMessage}
       secondaryContent={shortContent}
-      href="http://www.skyscanner.net/"
+      href="https://www.skyscanner.net/"
     />
   ),
 };

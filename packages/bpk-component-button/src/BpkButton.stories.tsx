@@ -56,7 +56,7 @@ type StoryProps = Omit<Parameters<typeof BpkButton>[0], 'children'> & {
   wrapped: typeof BpkButton;
 };
 
-const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
+const ButtonStory = ({ className = undefined, wrapped, ...rest }: StoryProps) => {
   const Wrapped = wrapped;
   return (
     <div
@@ -187,7 +187,7 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
   );
 };
 
-ButtonStory.defaultProps = { className: null };
+
 
 const PrimaryExample = (props: any) => (
   <ButtonStory wrapped={BpkButton} {...props} />

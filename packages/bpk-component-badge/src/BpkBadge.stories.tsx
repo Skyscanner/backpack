@@ -363,11 +363,11 @@ export const Centered = {
 };
 
 export const DockedRight = {
-  render: () => <DockedLeadingExample />,
+  render: () => <DockedTrailingExample />,
 };
 
 export const DockedLeft = {
-  render: () => <DockedTrailingExample />,
+  render: () => <DockedLeadingExample />,
 };
 
 export const ThemedCornerRadius = {
