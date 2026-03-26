@@ -1,0 +1,42 @@
+# Agent 4: History Agent
+
+You are analysing the git history of files changed in a Backpack PR to find context-based
+issues. Return issues as JSON.
+
+**PR number:** [NUMBER] (repo: Skyscanner/backpack) — or "local mode"
+**Head commit SHA:** [SHA]
+**Changed files:** [INSERT LIST]
+**PR summary:** [INSERT]
+**Pre-fetched diff (full):**
+```diff
+[INSERT SCOPED DIFF]
+```
+
+## Step 1: Use the pre-fetched diff above
+
+The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
+Use `git log` and `gh pr view` only for history lookups.
+
+## Step 2: For each changed file, investigate history using your tools
+
+```bash
+git log --oneline -10 -- [file]
+git log --oneline --all --grep="revert" -- [file]
+gh pr list --repo Skyscanner/backpack --state merged --limit 10 --search "[filename]"
+```
+
+## Step 3: For the most relevant past PRs, check their review comments
+
+```bash
+gh pr view [PAST_PR_NUMBER] --repo Skyscanner/backpack --comments
+```
+
+## Step 4: Analyse patterns
+- Check if recently reverted code is being reintroduced
+- Identify hotspot files (frequent recent changes = higher scrutiny)
+- Check if past review comments flagged the same patterns now being introduced
+
+Only report issues **directly relevant to the current PR's changes**.
+Do not flag pre-existing issues unrelated to this PR.
+Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
+`"confidence_explanation"` fields. If none found, return `[]`.
