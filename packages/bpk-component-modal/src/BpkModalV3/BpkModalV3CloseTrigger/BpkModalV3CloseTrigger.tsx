@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Dialog } from '@ark-ui/react/dialog';
+import { Dialog } from '@ark-ui/react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../../../bpk-component-close-button';
