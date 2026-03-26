@@ -17,6 +17,7 @@
  */
 
 
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import {
   withButtonAlignment,
@@ -30,12 +31,11 @@ import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-righ
 import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkButton.stories.module.scss';
 
@@ -491,78 +491,78 @@ const AnchorTagsExample = () => (
 const meta = {
   title: 'bpk-component-button',
   component: BpkButton,
-} satisfies Meta<typeof BpkButton>;
+} satisfies Meta;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const BpkButtonPrimary: Story = {
+
+export const BpkButtonPrimary = {
   render: () => <PrimaryExample />,
 };
 
-export const BpkButtonPrimaryOnDark: Story = {
+export const BpkButtonPrimaryOnDark = {
   render: () => <PrimaryOnDarkExample />,
 };
 
-export const BpkButtonPrimaryOnLight: Story = {
+export const BpkButtonPrimaryOnLight = {
   render: () => <PrimaryOnLightExample />,
 };
 
-export const BpkButtonSecondary: Story = {
+export const BpkButtonSecondary = {
   render: () => <SecondaryExample />,
 };
 
-export const BpkButtonSecondaryOnDark: Story = {
+export const BpkButtonSecondaryOnDark = {
   render: () => <SecondaryOnDarkExample />,
 };
 
-export const BpkButtonDestructive: Story = {
+export const BpkButtonDestructive = {
   render: () => <DestructiveExample />,
 };
 
-export const BpkButtonFeatured: Story = {
+export const BpkButtonFeatured = {
   render: () => <FeaturedExample />,
 };
 
-export const BpkButtonLinkButton: Story = {
+export const BpkButtonLinkButton = {
   render: () => <LinkExample />,
 };
 
-export const BpkButtonLinkOnDarkButton: Story = {
+export const BpkButtonLinkOnDarkButton = {
   render: () => <LinkOnDarkExample />,
 };
 
-export const BpkButtonLinks: Story = {
+export const BpkButtonLinks = {
   render: () => <LinksExamples />,
 };
 
-export const Mixture: Story = {
+export const Mixture = {
   render: () => <MixedExample />,
 };
 
-export const AnchorTags: Story = {
+export const AnchorTags = {
   render: () => <AnchorTagsExample />,
 };
 
-export const VisualTest: Story = {
+export const VisualTest = {
   render: () => <MixedExample />,
 };
 
-export const VisualTestWithZoom: Story = {
+export const VisualTestWithZoom = {
   render: () => <MixedExample />,
   args: {
     zoomEnabled: true,
   },
 };
 
-export const SubmitButton: Story = {
+export const SubmitButton = {
   render: () => <SubmitButtonExample />,
 };
 
-export const FullWidth: Story = {
+export const FullWidth = {
   render: () => <FullWidthExample />,
 };
 
-export const ThemedCornerRadius: Story = {
+export const ThemedCornerRadius = {
   render: () => <ThemedBorderRadiusExample />,
 };

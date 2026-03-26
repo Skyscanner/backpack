@@ -33,18 +33,18 @@ import {
   statusWarningSpotDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 
 import LAYOUT_STYLES from './BpkBadge.stories.module.scss';
 
@@ -321,76 +321,76 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-badge',
   component: BpkBadge,
-} satisfies Meta<typeof BpkBadge>;
+} satisfies Meta;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+
+export const Default = {
   render: () => <DefaultExample />,
 };
 
-export const Warning: Story = {
+export const Warning = {
   render: () => <WarningExample />,
 };
 
-export const Success: Story = {
+export const Success = {
   render: () => <SuccessExample />,
 };
 
-export const Critical: Story = {
+export const Critical = {
   render: () => <CriticalExample />,
 };
 
-export const Strong: Story = {
+export const Strong = {
   render: () => <StrongExample />,
 };
 
-export const Brand: Story = {
+export const Brand = {
   render: () => <BrandExample />,
 };
 
-export const Inverse: Story = {
+export const Inverse = {
   render: () => <InverseExample />,
 };
 
-export const Outline: Story = {
+export const Outline = {
   render: () => <OutlineExample />,
 };
 
-export const Centered: Story = {
+export const Centered = {
   render: () => <CenteredExample />,
 };
 
-export const DockedRight: Story = {
+export const DockedRight = {
   render: () => <DockedLeadingExample />,
 };
 
-export const DockedLeft: Story = {
+export const DockedLeft = {
   render: () => <DockedTrailingExample />,
 };
 
-export const ThemedCornerRadius: Story = {
+export const ThemedCornerRadius = {
   render: () => <ThemedCornerRadiusExample />,
 };
 
-export const ThemedBackgroundColor: Story = {
+export const ThemedBackgroundColor = {
   render: () => <ThemedBackgroundColorExample />,
 };
 
-export const ThemedIconColor: Story = {
+export const ThemedIconColor = {
   render: () => <ThemedIconColorExample />,
 };
 
-export const ThemedTypography: Story = {
+export const ThemedTypography = {
   render: () => <ThemedTypographyExample />,
 };
 
-export const VisualTest: Story = {
+export const VisualTest = {
   render: () => <MixedExample />,
 };
 
-export const VisualTestWithZoom: Story = {
+export const VisualTestWithZoom = {
   render: () => <MixedExample />,
   args: {
     zoomEnabled: true,

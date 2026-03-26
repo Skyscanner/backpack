@@ -31,7 +31,7 @@ import BpkCard from './BpkCard';
 import BpkCardWrapper from './BpkCardWrapper';
 import BpkDividedCard, { ORIENTATION } from './BpkDividedCard';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkCard.stories.module.scss';
 
@@ -78,12 +78,12 @@ const meta = {
     BpkDividedCard,
     BpkCardWrapper,
   },
-} satisfies Meta<typeof BpkCard>;
+} satisfies Meta;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+
+export const Default = {
   render: () => (
     <BpkCard onClick={() => window.open('https://www.skyscanner.net/')}>
       {shortContent}
@@ -91,13 +91,13 @@ export const Default: Story = {
   ),
 };
 
-export const WithHref: Story = {
+export const WithHref = {
   render: () => (
     <BpkCard href="https://skyscanner.net">{shortContent}</BpkCard>
   ),
 };
 
-export const WithoutPadding: Story = {
+export const WithoutPadding = {
   render: () => (
     <BpkCard
       padded={false}
@@ -108,7 +108,7 @@ export const WithoutPadding: Story = {
   ),
 };
 
-export const NonAtomic: Story = {
+export const NonAtomic = {
   render: () => (
     <BpkCard
       atomic={false}
@@ -119,7 +119,7 @@ export const NonAtomic: Story = {
   ),
 };
 
-export const NonAtomicWithHref: Story = {
+export const NonAtomicWithHref = {
   render: () => (
     <BpkCard atomic={false} href="https://www.skyscanner.net/">
       {longContent}
@@ -127,7 +127,7 @@ export const NonAtomicWithHref: Story = {
   ),
 };
 
-export const DefaultDividedCard: Story = {
+export const DefaultDividedCard = {
   render: () => (
     <BpkDividedCard
       primaryContent={longMessage}
@@ -136,7 +136,7 @@ export const DefaultDividedCard: Story = {
   ),
 };
 
-export const VerticalDividedCard: Story = {
+export const VerticalDividedCard = {
   render: () => (
     <BpkDividedCard
       primaryContent={longMessage}
@@ -146,7 +146,7 @@ export const VerticalDividedCard: Story = {
   ),
 };
 
-export const WithHrefDividedCard: Story = {
+export const WithHrefDividedCard = {
   render: () => (
     <BpkDividedCard
       primaryContent={longMessage}
@@ -156,7 +156,7 @@ export const WithHrefDividedCard: Story = {
   ),
 };
 
-export const NonElevatedDividedCard: Story = {
+export const NonElevatedDividedCard = {
   render: () => (
     <BpkDividedCard
       primaryContent={longMessage}
@@ -167,7 +167,7 @@ export const NonElevatedDividedCard: Story = {
   ),
 };
 
-export const CardWrapper: Story = {
+export const CardWrapper = {
   render: () => (
     <BpkCardWrapper
       backgroundColor={coreAccentDay}
@@ -184,7 +184,7 @@ export const CardWrapper: Story = {
   ),
 };
 
-export const DividedCardWrapper: Story = {
+export const DividedCardWrapper = {
   render: () => (
     <BpkCardWrapper
       backgroundColor={coreAccentDay}
@@ -200,7 +200,7 @@ export const DividedCardWrapper: Story = {
   ),
 };
 
-export const WithClassNameWrapper: Story = {
+export const WithClassNameWrapper = {
   render: () => (
     <BpkCardWrapper
       backgroundColor={surfaceHighlightDay}
@@ -219,7 +219,7 @@ export const WithClassNameWrapper: Story = {
   ),
 };
 
-export const VisualTest: Story = {
+export const VisualTest = {
   render: () => (
     <div>
       <BpkCard onClick={() => window.open('https://www.skyscanner.net/')}>
@@ -294,7 +294,7 @@ export const VisualTest: Story = {
   ),
 };
 
-export const VisualTestWithZoom: Story = {
+export const VisualTestWithZoom = {
   ...VisualTest,
   args: {
     zoomEnabled: true,
