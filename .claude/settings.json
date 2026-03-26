@@ -11,5 +11,35 @@
         ]
       }
     ]
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Tokenifying",
+      "Bpk-ifying",
+      "Pixel-wrangling",
+      "Palette-curating",
+      "BEM-nesting",
+      "Mixin-forwarding",
+      "Grid-snapping",
+      "Backpacking",
+      "Spacing-obsessing",
+      "SCSS-whispering",
+      "Breakpoint-juggling",
+      "Variant-applying",
+      "Contrast-squinting",
+      "RTL-flipping",
+      "Figma-syncing",
+      "Typography-scaling",
+      "Storybook-storying",
+      "Day-night-toggling",
+      "Border-rounding",
+      "Accessibility-checking",
+      "Token-herding",
+      "Component-composing",
+      "Whitespace-measuring",
+      "Theme-surfacing",
+      "Semicolon-debating"
+    ]
   }
 }
