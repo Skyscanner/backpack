@@ -54,7 +54,8 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 - **PR mode**: message contains a `github.com/.../pull/NNN` URL
   - Extract PR number; run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files,state,isDraft,body`
   - Link format: `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
-  - Autopost: default off. Post only when user explicitly asks or `BACKPACK_REVIEW_AUTOPOST=true`.
+  - **Autopost: ON by default in PR mode.** Uses the GitHub Reviews API to place **inline comments on diff lines**.
+    Override to skip posting: user says "don't post" / "local only" / `BACKPACK_REVIEW_AUTOPOST=false`.
     Issues with confidence 75–90 require human confirmation before posting.
 
 - **Local mode**: no PR URL
@@ -228,7 +229,13 @@ check whether it matches a RAISED_SET thread (same `file`, overlapping line rang
 If it matches, **keep the issue** but prepend the label:
 `⚠️ Already raised in PR discussion — still open.`
 
-**Output only** the final `### Code review` block — no phase diagnostics, no tables.
+**Output differs by mode:**
+
+---
+
+### Local mode output
+
+Print the `### Code review` block to the conversation. No GitHub posting.
 
 **If no issues:**
 ```markdown
@@ -249,18 +256,79 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
 
 1. [Title] *(recurring pattern)* — [explanation: what, why, fix. Link to codebase precedent if one exists.]
 
-   [link]
+   [path/file.tsx:42](path/file.tsx#L42)
    [if human-gated] Gate rationale: [confidence_explanation]
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
-**Output rules:**
-- `*(recurring pattern)*` suffix for `source: learned-patterns` issues
-- Explanation: (a) what is wrong, (b) why, (c) what to use instead
-- Links: PR mode = full SHA permalink; local mode = VSCode-clickable `[file:line](file#Lline)`
+---
+
+### PR mode output
+
+**Conversation:** Print the same `### Code review` block as local mode (for human review),
+but links use full SHA permalinks:
+`https://github.com/Skyscanner/backpack/blob/[SHA]/[PATH]#L[START]-L[END]`
+
+**Autopost: ON by default in PR mode.** Skip only when user says "don't post" / "local only" / `BACKPACK_REVIEW_AUTOPOST=false`.
+
+Post a single GitHub PR review using the Reviews API (NOT a plain PR comment).
+This places each issue as an **inline comment on the relevant diff line**, grouped under one review.
+
+```bash
+# Build the payload as a JSON file (required — --field cannot accept JSON arrays)
+cat > /tmp/bpk_review_[NUMBER].json << 'ENDJSON'
+{
+  "commit_id": "[SHA]",
+  "event": "COMMENT",
+  "body": "### Code review\n\nFound N issues (reviewed by M/6 agents).\n\n🤖 Generated with [Claude Code](https://claude.ai/code)",
+  "comments": [
+    {
+      "path": "packages/bpk-component-foo/src/BpkFoo.tsx",
+      "line": 45,
+      "start_line": 42,
+      "side": "RIGHT",
+      "body": "**[Title]** *(recurring pattern)*\n\n[explanation: what, why, fix]\n\n[if human-gated] Gate rationale: [confidence_explanation]"
+    }
+  ]
+}
+ENDJSON
+
+gh api repos/Skyscanner/backpack/pulls/[NUMBER]/reviews \
+  --method POST \
+  --input /tmp/bpk_review_[NUMBER].json \
+  --jq '{id: .id, state: .state, html_url: .html_url}'
+```
+
+**Inline comment body format** (per issue):
+```
+**[Title]** [*(recurring pattern)*]
+
+[explanation: (a) what is wrong, (b) why, (c) what to use instead]
+
+[if human-gated] ⚠️ Gate rationale: [confidence_explanation]
+[if RAISED_SET match] ⚠️ Already raised in PR discussion — still open.
+```
+
+**Line mapping rules:**
+- Single-line issue (`startLine == endLine`): set `"line": startLine`, omit `start_line`
+- Multi-line issue: set `"start_line": startLine, "line": endLine, "side": "RIGHT"`
+- If a line falls outside the PR diff (not a changed line), fall back to the nearest
+  changed line in the same file, or skip the inline comment and include that issue only
+  in the review body summary instead.
+
+**Human gate:** Issues with `threshold <= confidence < 90` require explicit user confirmation
+before the review is posted. Show the full preview (inline comments + review body) and ask
+"Post this review? (y/n)". Do not post any part of it until confirmed.
+
+**No partial posting:** Either post all issues as one review, or don't post at all.
+
+---
+
+**Shared output rules (both modes):**
+- `*(recurring pattern)*` label for `source: learned-patterns` issues
+- Explanation always covers: (a) what is wrong, (b) why, (c) what to use instead
 - No strengths section, compliance table, or required-actions checklist
-- Autopost: default off; human gate issues require explicit confirmation; no partial posting
 
 ---
 
@@ -270,7 +338,6 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
 - Verify design approval evidence is present and substantive
 - Check private token misuse and token semantic-name correctness
 - Check license headers on changed source files
-- Review snapshot currency when rendered output changed
 - Perform mixin investigation for direct CSS properties
 - Perform package-export investigation for imported Backpack helpers
 - Verify token colour match AND semantic meaning

@@ -15,26 +15,25 @@ and test compliance. Return issues as JSON.
 ## Step 1: Use the pre-fetched diff above
 
 The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
-Use the Read tool only when you need to inspect a specific test or component file in full depth.
+**Do NOT read files unless the diff itself gives you a specific question you cannot answer
+from the diff alone** (e.g. you see `aria-label={label}` in the diff and need to confirm
+what `label` resolves to in the component source). Each Read must be justified.
 
-## Step 2: Check accessibility (Constitution IV — NON-NEGOTIABLE)
-- `accessibility-test.tsx` file must exist for any component
-- Must use `jest-axe` for automated checks
-- Tests must exercise the public interface
-- Check for: keyboard navigation, ARIA labels, touch targets >= 44x44px
-- Verify colour contrast considerations in SCSS
+## Step 2: Check accessibility — diff-only analysis
 
-## Step 3: Check testing coverage (Constitution VIII)
-- Unit tests (Jest + Testing Library) exist for all new code
-- Coverage thresholds: branches >= 70%, functions/lines/statements >= 75%
-- Storybook stories exist in `examples/` directory
+From the diff lines only (do NOT read source files to hunt for issues):
+- Does any changed line introduce `aria-label=""`, `aria-label={undefined}`, or remove an aria attribute?
+- Does any changed JSX omit a required accessible name prop (`label`, `aria-label`, `alt`)?
+- Does any `onClick` handler lack a corresponding `onKeyDown` / `role`?
+- Are touch targets affected (padding/size token removed)?
 
-## Step 4: Snapshot currency (commonly missed)
+Only flag issues that are **visible in the changed lines**. Do not speculatively read component sources.
 
-After ANY change to rendered output, snapshots MUST be regenerated.
-1. Read the `.snap` file for this component
-2. Verify it matches the current component output
-3. Look for stale attributes or class names
+## Step 3: Check testing coverage — new code only
+
+Only flag if the diff adds **new JSX branches or new props** with no corresponding test in the diff.
+Do NOT check whether `accessibility-test.tsx` exists for every changed file — only flag if a new
+component directory is created in this PR with no test file at all.
 
 Only flag issues in **changed files**. Ignore pre-existing violations.
 Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
