@@ -42,6 +42,8 @@
     "lint:js:fix": "eslint . .storybook --ext .js,.jsx,.ts,.tsx --fix",
     "lint:scss": "stylelint 'packages/**/*.scss'",
     "lint:scss:fix": "stylelint 'packages/**/*.scss' --fix",
+    "lint:file:js": "eslint --fix",
+    "lint:file:scss": "stylelint --fix",
     "lint-staged": "lint-staged",
     "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
