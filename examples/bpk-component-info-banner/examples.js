@@ -221,7 +221,7 @@ const CriticalExpandableWithActionExample = () => (
   <BpkInfoBannerExpandableState
     message="Critical alert"
     type={ALERT_TYPES.CRITICAL}
-    action={{title: "Sample Action", callback: () => alert('Hello from action')}} // eslint-disable-line no-alert
+    action={{title: "Sample Action", callback: action('action clicked')}}
     toggleButtonLabel="View more"
   >
     {longMessage}
