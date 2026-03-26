@@ -16,21 +16,8 @@
  * limitations under the License.
  */
 
-const { Glob } = require('glob');
+@use '../../bpk-mixins/tokens';
 
-const { compile } = require('./style-compiler');
-
-const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
-
-const files = new Glob(DIR_GLOB, {});
-
-try {
-  for (const file of files) {
-    if (!file.includes('.stories.')) {
-      compile(file);
-    }
-  }
-} catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(err);
+.bpk-button-story-wrapper {
+  padding: tokens.bpk-spacing-sm() 0;
 }

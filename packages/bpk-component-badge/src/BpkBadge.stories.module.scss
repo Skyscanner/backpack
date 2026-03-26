@@ -16,21 +16,20 @@
  * limitations under the License.
  */
 
-const { Glob } = require('glob');
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/radii';
 
-const { compile } = require('./style-compiler');
+.bpk-badge-layout {
+  &__container {
+    position: relative;
+    display: flex;
+    min-height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-lg();
 
-const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
+    &--light {
+      background-color: tokens.$bpk-canvas-contrast-day;
 
-const files = new Glob(DIR_GLOB, {});
-
-try {
-  for (const file of files) {
-    if (!file.includes('.stories.')) {
-      compile(file);
+      @include radii.bpk-border-radius-xs;
     }
   }
-} catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(err);
 }

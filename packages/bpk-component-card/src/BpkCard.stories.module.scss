@@ -16,21 +16,19 @@
  * limitations under the License.
  */
 
-const { Glob } = require('glob');
+@use '../../bpk-mixins/tokens';
 
-const { compile } = require('./style-compiler');
-
-const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
-
-const files = new Glob(DIR_GLOB, {});
-
-try {
-  for (const file of files) {
-    if (!file.includes('.stories.')) {
-      compile(file);
-    }
+.bpk-card-examples {
+  &__header {
+    display: flex;
+    height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-md();
+    justify-content: space-between;
+    align-items: center;
+    color: tokens.$bpk-text-on-dark-day;
   }
-} catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(err);
+
+  &__wrapper {
+    width: tokens.bpk-spacing-md() * 41;
+  }
 }
