@@ -1,488 +1,392 @@
-# BpkButton Component Specification
+# BpkButton — Component Specification
 
-> This spec is detailed enough for a coding agent to recreate BpkButton from scratch.
-
-## Overview
-
-A polymorphic button component that renders as `<button>` or `<a>` depending on props. Supports 9 visual variants, 2 sizes, icons, loading state, full-width mode, and link-style underline behavior.
+> Platform-agnostic spec. Implementable in any framework (React, SwiftUI, Kotlin Compose, Vue, Flutter, etc.)
 
 ---
 
-## Props Interface
+## 1. Purpose
 
-```typescript
-import type { MouseEvent, ReactNode } from 'react';
-
-export const BUTTON_TYPES = {
-  primary: 'primary',
-  primaryOnDark: 'primary-on-dark',
-  primaryOnLight: 'primary-on-light',
-  secondary: 'secondary',
-  secondaryOnDark: 'secondary-on-dark',
-  destructive: 'destructive',
-  featured: 'featured',
-  link: 'link',
-  linkOnDark: 'link-on-dark',
-} as const;
-
-export const SIZE_TYPES = {
-  small: 'small',
-  large: 'large',
-} as const;
-
-export type ButtonType = (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
-export type SizeType = (typeof SIZE_TYPES)[keyof typeof SIZE_TYPES];
-
-export type Props = {
-  children: string | ReactNode;
-  type?: ButtonType;            // default: 'primary'
-  size?: SizeType;              // default: 'small'
-  className?: string | null;    // default: null
-  disabled?: boolean;           // default: false
-  fullWidth?: boolean;          // default: false
-  iconOnly?: boolean;           // default: false
-  implicit?: boolean;           // default: false (link underline behavior)
-  onClick?: (event: MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
-  rel?: string | undefined;
-  submit?: boolean;             // default: false
-  href?: string | null;         // default: null
-  blank?: boolean;              // default: false
-  leadingIcon?: ReactNode;      // default: null
-  trailingIcon?: ReactNode;     // default: null
-  loading?: boolean;            // default: false
-  [rest: string]: any;          // Inexact rest - all other props spread to root element
-};
-```
+A button component for triggering actions or navigating. Can behave as an action trigger (button) or a navigation element (link) depending on configuration.
 
 ---
 
-## Rendering Logic
+## 2. Anatomy
 
-### Element Selection
-
-The component renders as `<a>` or `<button>`:
-
-| Condition | Element | Attributes |
-|-----------|---------|------------|
-| `href` is truthy AND `isDisabled` is false | `<a>` | `href`, `target`, `rel`, `onClick`, `...rest` |
-| All other cases | `<button>` | `type="submit"` or `type="button"`, `disabled`, `aria-busy`, `onClick`, `...rest` |
-
-**Key rule**: `isDisabled = disabled || loading`. When disabled or loading, ALWAYS render `<button>` even if `href` is provided.
-
-### Data Attribute
-
-Both `<a>` and `<button>` receive: `data-backpack-ds-component="Button"` (via `getDataComponentAttribute('Button')` from `bpk-react-utils`).
-
-### Link Target & Rel
-
-```typescript
-const target = blank ? '_blank' : '';
-const rel = blank ? (propRel || 'noopener noreferrer') : propRel;
+```
+┌─────────────────────────────────────────────────┐
+│  [Leading Icon]   Label Text   [Trailing Icon]  │
+└─────────────────────────────────────────────────┘
 ```
 
-- `blank` sets `target="_blank"` and defaults `rel` to `"noopener noreferrer"`
-- Custom `rel` overrides the default even when `blank` is true
-- `<a>` does NOT receive `disabled`, `aria-busy`, or HTML `type` attributes
+| Slot | Required | Description |
+|------|----------|-------------|
+| **Label** | Yes (text or icon) | Primary content. String or child content. |
+| **Leading Icon** | No | Icon before the label. Hidden in icon-only mode. |
+| **Trailing Icon** | No | Icon after the label. Hidden in icon-only mode. |
 
-### Submit
-
-- `submit` prop: renders `type="submit"` on `<button>`, otherwise `type="button"`
-- Has no effect when rendering as `<a>`
+In **icon-only mode**, the label slot contains a single icon with no icon wrappers — the icon IS the content.
 
 ---
 
-## CSS Class Composition
+## 3. API (Framework-Agnostic)
 
-All classes use BEM with the `bpk-button` block. Classes are applied via `cssModules()` from `bpk-react-utils`.
+### Parameters
 
-### Root Element Classes
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `label` | String or Content | *required* | Button content (text, icon, or mixed) |
+| `variant` | Enum (see below) | `primary` | Visual style variant |
+| `size` | `small` \| `large` | `small` | Button size |
+| `disabled` | Boolean | `false` | Disables interaction and applies disabled styling |
+| `loading` | Boolean | `false` | Shows spinner, disables interaction, preserves layout |
+| `fullWidth` | Boolean | `false` | Stretches to fill container width |
+| `iconOnly` | Boolean | `false` | Renders as a square button with icon content only |
+| `implicit` | Boolean | `false` | Link variant underline behavior (see Link Variants) |
+| `href` | String? | `null` | When set (and not disabled), renders as navigation element |
+| `openInNewWindow` | Boolean | `false` | Opens href in new window/tab |
+| `leadingIcon` | Icon? | `null` | Icon placed before label |
+| `trailingIcon` | Icon? | `null` | Icon placed after label |
+| `accessibilityLabel` | String? | `null` | Required for `iconOnly` buttons. Screen reader label. |
+| `onPress` / `onClick` | Callback | no-op | Action callback |
 
-```typescript
-const classNames = getCommonClassName(
-  'bpk-button',                                           // always
-  size === 'large' && 'bpk-button--large',                // large size
-  iconOnly && 'bpk-button--icon-only',                    // icon-only mode
-  iconOnly && size === 'large' && 'bpk-button--large-icon-only',
-  `bpk-button--${type}`,                                  // variant (e.g. bpk-button--primary)
-  loading && 'bpk-button--loading',                       // loading state
-  fullWidth && 'bpk-button--full-width',                  // full width
-  hasIcons && 'bpk-button--has-icon',                     // any icon present
-  isLinkType && iconOnly && 'bpk-button--link--icon-only',
-  isLinkType && implicit && 'bpk-button--link--implicit',
-  className,                                              // consumer className
-);
-```
+### Variants
 
-### Internal Element Classes
-
-| Element | Class | When |
-|---------|-------|------|
-| Leading icon wrapper `<span>` | `bpk-button__leading-icon` | `leadingIcon` provided AND not `iconOnly` |
-| Trailing icon wrapper `<span>` | `bpk-button__trailing-icon` | `trailingIcon` provided AND not `iconOnly` |
-| Loading container `<div>` | `bpk-button__loading-container` | `loading` is true |
-| Spinner wrapper `<span>` | `bpk-button__loading-icon` | `loading` is true (has `aria-hidden="true"`) |
-| Hidden content `<div>` | `bpk-button__content--hidden` | `loading` is true (opacity: 0) |
-
-### Underline Classes (link types only)
-
-Applied to a `<span>` wrapping `children` text. Only rendered when `isLinkType && !iconOnly && !isDisabled`:
-
-| Condition | Class |
-|-----------|-------|
-| Default link | `bpk-button--link-underlined` |
-| Implicit, not alternate | `bpk-button--link-underlined--implicit` |
-| Alternate (linkOnDark), not implicit | `bpk-button--link-underlined--alternate` |
-| Both implicit and alternate | `bpk-button--link-underlined--implicit--alternate` |
+| Variant | Background | Foreground | Use Case |
+|---------|-----------|------------|----------|
+| `primary` | Brand primary color | White/on-dark text | Primary CTA |
+| `primaryOnDark` | Light surface | Dark text | Primary CTA on dark backgrounds |
+| `primaryOnLight` | Dark surface | Light text | Primary CTA on light backgrounds |
+| `secondary` | Subtle/muted fill | Primary text | Secondary actions |
+| `secondaryOnDark` | Semi-transparent light | Light text | Secondary on dark backgrounds |
+| `destructive` | Subtle fill (inherits secondary base) | Destructive red foreground | Delete, remove actions |
+| `featured` | Accent/feature color | White/inverse text | Promotional CTAs |
+| `link` | Transparent | Link-colored text with underline | Inline text-level actions |
+| `linkOnDark` | Transparent | Light link text with underline | Link on dark backgrounds |
 
 ---
 
-## HTML Output Structure
+## 4. Visual States
 
-### Standard Button
-```html
-<button type="button" class="bpk-button bpk-button--primary" data-backpack-ds-component="Button">
-  Button text
-</button>
-```
+Every variant must define appearance for all 6 states:
 
-### With Icons
-```html
-<button type="button" class="bpk-button bpk-button--primary bpk-button--has-icon" data-backpack-ds-component="Button">
-  <span class="bpk-button__leading-icon"><svg>...</svg></span>
-  Button text
-  <span class="bpk-button__trailing-icon"><svg>...</svg></span>
-</button>
-```
+| State | Trigger | Visual Change |
+|-------|---------|---------------|
+| **Default** | None | Base variant colors |
+| **Hover** | Cursor hover (pointer devices only) | Background darkens/shifts, may change text color |
+| **Active / Pressed** | Touch down or mouse down | Further background shift |
+| **Focused** | Keyboard focus | Focus ring (platform-appropriate) |
+| **Disabled** | `disabled=true` | 50% opacity, no interaction, cursor indicates non-interactive |
+| **Loading** | `loading=true` | Spinner overlaid, content invisible but layout preserved, uses hover/pressed background color |
+
+### State Priority
+
+`loading` implies `disabled`. Both block all interaction. Loading takes visual precedence (shows spinner + pressed colors rather than disabled opacity).
+
+---
+
+## 5. Sizing
+
+### Small (Default)
+
+| Property | Value | Token |
+|----------|-------|-------|
+| Typography | Label 2 (small label style) | `bpk-label-2` |
+| Horizontal padding | 16px (1rem) | `bpk-spacing-base` |
+| Vertical padding | 8px (0.5rem) | `bpk-spacing-sm` |
+| Border radius | Button radius | `bpk-button-border-radius` |
+| Min height | Determined by padding + typography | — |
+
+### Large
+
+| Property | Value | Token |
+|----------|-------|-------|
+| Typography | Label 1 (larger label style) | `bpk-label-1` |
+| Horizontal padding | Larger than small | Variant-specific |
+| Vertical padding | Larger than small | Variant-specific |
+| Border radius | Same as small | `bpk-button-border-radius` |
 
 ### Icon Only
-```html
-<button type="button" class="bpk-button bpk-button--primary bpk-button--icon-only" data-backpack-ds-component="Button">
-  <svg>...</svg>  <!-- children rendered directly, no icon wrappers -->
-</button>
-```
 
-### Loading State
-```html
-<button type="button" disabled class="bpk-button bpk-button--primary bpk-button--loading" aria-busy="true" data-backpack-ds-component="Button">
-  <div class="bpk-button__loading-container">
-    <span class="bpk-button__loading-icon" aria-hidden="true">
-      <BpkSpinner type="light" alignToButton />
-    </span>
-    <div class="bpk-button__content--hidden">
-      Button text
-    </div>
-  </div>
-</button>
-```
+Square button — equal width and height. Padding adjusted so the icon fills the square. No text padding.
 
-### Link Type
-```html
-<button type="button" class="bpk-button bpk-button--link" data-backpack-ds-component="Button">
-  <span class="bpk-button--link-underlined">Link text</span>
-</button>
-```
+- `iconOnly` + `small`: Small square
+- `iconOnly` + `large`: Large square
 
-### As Anchor
-```html
-<a href="/path" class="bpk-button bpk-button--primary" data-backpack-ds-component="Button" target="" rel="">
-  Link text
-</a>
-```
+### Full Width
+
+Stretches to 100% of container width. Content centered.
 
 ---
 
-## Loading State Behavior
+## 6. Icon Handling
 
-1. `isDisabled` becomes true (button is `disabled`, `aria-busy="true"`)
-2. Content wrapped in `bpk-button__loading-container` (position: relative, inline-flex, centered)
-3. Spinner absolutely positioned over content via `bpk-button__loading-icon`
-4. Original content hidden with `opacity: 0` (NOT `display: none`) to **preserve button dimensions**
-5. When `loading` + `href`, renders as `<button>` not `<a>`
-6. Link type underlines suppressed during loading
+### With Label (iconOnly = false)
 
-### Spinner Type Selection
+When `leadingIcon` or `trailingIcon` is set:
+- Layout switches to horizontal flex with centered alignment
+- Gap between icon and label: **20px (1.25rem)** (`bpk-spacing-md`)
+- Icons are non-shrinkable (flex-shrink: 0)
+- Icons do not receive underline decoration
+- Icons inherit the current text color (`currentColor` fill)
 
-```typescript
-const getSpinnerType = (buttonType: ButtonType) => {
-  switch (buttonType) {
-    case 'secondary':
-    case 'destructive':
-    case 'link':
-    case 'primary-on-dark':
-      return 'dark';    // dark spinner on light backgrounds
-    default:
-      return 'light';   // light spinner on dark backgrounds
-  }
-};
-```
+When `fullWidth` + icons: centered with flex justify-content: center.
 
-- Small size: `<BpkSpinner type={...} alignToButton />`
-- Large size: `<BpkLargeSpinner type={...} alignToButton />`
+### Icon Only Mode (iconOnly = true)
+
+- Icon wrappers are NOT rendered — icon is the direct content
+- Button rendered as a square
+- `accessibilityLabel` is **required** (no visible text for screen readers)
+- Link-type underlines suppressed
 
 ---
 
-## SCSS Architecture
+## 7. Loading State
 
-### Imports
+Loading replaces visible content with a spinner while preserving the button's dimensions.
 
-```scss
-@use '../../bpk-mixins/buttons';
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
-```
+### Behavior
 
-### Base Styles
+1. Button becomes non-interactive (disabled)
+2. Original content is **hidden but still in layout** (invisible, not removed) to prevent size changes
+3. Spinner centered on top of the hidden content
+4. Spinner is decorative (hidden from assistive technology)
+5. Button announces as "busy" to assistive technology
+6. Navigation behavior suppressed (even if href is set)
+7. Link underlines suppressed
 
-```scss
-.bpk-button {
-  @include buttons.bpk-button;  // Base button mixin from bpk-mixins
-}
-```
+### Spinner Color
 
-The `buttons.bpk-button` mixin provides: `bpk-label-2` typography, padding (`bpk-spacing-sm() 0` for link, `bpk-spacing-sm() tokens.bpk-spacing-base()` for others), border-radius (`$bpk-button-border-radius`), cursor, transitions, disabled styles (50% opacity, not-allowed cursor, no pointer-events).
+The spinner must contrast against the button's **loading/pressed background**:
 
-### Variant Mixins
+| Variant | Spinner Style |
+|---------|--------------|
+| `primary`, `primaryOnLight`, `featured` | Light spinner (white) |
+| `secondary`, `destructive`, `link`, `primaryOnDark` | Dark spinner |
+| `secondaryOnDark`, `linkOnDark` | Light spinner |
 
-| CSS Class | Mixin(s) | Notes |
-|-----------|----------|-------|
-| `--primary` | (default from base) | |
-| `--primary-on-dark` | `buttons.bpk-button--primary-on-dark` | |
-| `--primary-on-light` | `buttons.bpk-button--primary-on-light` | |
-| `--secondary` | `buttons.bpk-button--secondary` | |
-| `--secondary-on-dark` | `buttons.bpk-button--secondary-on-dark` | |
-| `--destructive` | `buttons.bpk-button--secondary` + `buttons.bpk-button--destructive` | **Inherits secondary base** |
-| `--featured` | `buttons.bpk-button--featured` | |
-| `--link` | `buttons.bpk-button--link` + `typography.bpk-link` | + SVG overrides |
-| `--link-on-dark` | `buttons.bpk-button--link-on-dark` + `typography.bpk-link--alternate` | + SVG overrides |
+### Spinner Size
 
-### Size Modifiers
-
-| CSS Class | Mixin | Details |
-|-----------|-------|---------|
-| `--large` | `buttons.bpk-button--large` | `bpk-label-1` typography, larger padding |
-| `--icon-only` | `buttons.bpk-button--icon-only` | Square button, no text padding |
-| `--large-icon-only` | `buttons.bpk-button--large-icon-only` | Large square button |
-| `--full-width` | `buttons.bpk-button--full-width` | `width: 100%` |
-
-### Icon Layout
-
-```scss
-&--has-icon {
-  display: inline-flex;
-  align-items: center;
-  gap: tokens.bpk-spacing-md();  // 1.25rem
-}
-
-&--full-width#{&}--has-icon {
-  display: flex;
-  justify-content: center;
-}
-
-&__leading-icon,
-&__trailing-icon {
-  display: inline-flex;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-```
-
-### Loading Layout
-
-```scss
-&__loading-container {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-&__loading-icon {
-  position: absolute;
-  display: inline-flex;
-  --bpk-button-svg-display: block;          // Reset link overrides
-  --bpk-button-svg-vertical-align: baseline;
-}
-
-&__content--hidden {
-  opacity: 0;  // Preserves dimensions
-}
-```
-
-### SVG Handling
-
-```scss
-span > svg {
-  display: var(--bpk-button-svg-display, block);
-  vertical-align: var(--bpk-button-svg-vertical-align, baseline);
-}
-
-svg {
-  fill: currentcolor;
-}
-```
-
-Link variants override: `--bpk-button-svg-display: inline-block; --bpk-button-svg-vertical-align: middle;`
-
-### Underline Animation (hover)
-
-```scss
-@media (hover: hover) {
-  // Default link: underline visible, hides on hover
-  &--link:hover:not(:active):not(:disabled) &--link-underlined {
-    background-size: 0 tokens.$bpk-border-size-sm;
-  }
-  // Implicit link: underline hidden, appears on hover
-  &--link:hover:not(:active):not(:disabled) &--link-underlined--implicit {
-    background-size: 100% tokens.$bpk-border-size-sm;
-  }
-}
-```
-
-Underlines are implemented via `background-image` gradient technique (from typography mixins), NOT `text-decoration`. The `background-size` animates between `0` and `100%` width.
+- `small` button → small spinner
+- `large` button → large spinner
 
 ---
 
-## CSS Custom Properties (Theming)
+## 8. Link Variants (link, linkOnDark)
 
-Each variant exposes CSS custom properties for theme overrides. Pattern:
+Link variants look like text links, not like typical buttons.
 
-```
---bpk-button-{variant}-text-color
---bpk-button-{variant}-background-color
---bpk-button-{variant}-hover-text-color
---bpk-button-{variant}-hover-background-color
---bpk-button-{variant}-active-text-color
---bpk-button-{variant}-active-background-color
-```
+### Visual Differences from Standard Buttons
 
-Fallback tokens follow the pattern: `$bpk-private-button-{variant}-{state}-{property}-day`
+- Transparent background (no fill)
+- Only vertical padding (no horizontal)
+- Text-colored foreground with underline decoration
+- Inline display (not inline-flex) unless icons are present
 
-Example for primary:
-```scss
---bpk-button-primary-text-color: $bpk-text-on-dark-day
---bpk-button-primary-background-color: $bpk-private-button-primary-normal-background-day
---bpk-button-primary-hover-background-color: $bpk-private-button-primary-pressed-background-day
-```
+### Underline Behavior
 
----
+Underlines use an animated technique (not text-decoration). On platforms without CSS, use the platform's native link underline.
 
-## Dependencies
+| Mode | Default State | Hover State |
+|------|--------------|-------------|
+| **Standard** (`implicit=false`) | Underline visible | Underline hides |
+| **Implicit** (`implicit=true`) | Underline hidden | Underline appears |
 
-| Package | Usage |
-|---------|-------|
-| `bpk-component-spinner` | `BpkSpinner`, `BpkLargeSpinner`, `SPINNER_TYPES` for loading state |
-| `bpk-react-utils` | `cssModules` (CSS module class name helper), `getDataComponentAttribute` |
-| `bpk-mixins/buttons` | All button SCSS mixins |
-| `bpk-mixins/tokens` | Design tokens |
-| `bpk-mixins/typography` | Link typography mixins |
+Underlines are **suppressed** when:
+- `iconOnly` is true
+- Button is disabled or loading
+
+### linkOnDark
+
+Same as `link` but with alternate colors for dark backgrounds. When combined with `implicit`, uses the alternate-implicit style.
 
 ---
 
-## Exports
+## 9. Navigation Behavior (href)
 
-```typescript
-// packages/bpk-component-button/index.ts
-export { default } from './src/BpkButton';
-export { BUTTON_TYPES, SIZE_TYPES } from './src/common-types';
-export type { ButtonType, SizeType, Props } from './src/common-types';
-```
+When `href` is provided and the button is NOT disabled/loading:
 
----
+- Renders as a navigation element (anchor, link, or platform equivalent)
+- Tapping/clicking navigates to the URL
+- `onPress`/`onClick` still fires before navigation
 
-## Accessibility Requirements
+When `openInNewWindow` is true:
+- Opens in new tab/window
+- On web: applies `rel="noopener noreferrer"` by default for security
+- Custom `rel` can override the default
 
-1. **`aria-busy="true"`** on `<button>` when `loading` is true (not on `<a>`)
-2. **`aria-hidden="true"`** on the spinner wrapper so screen readers ignore the visual spinner
-3. **`disabled`** attribute on `<button>` when `disabled` or `loading`
-4. **`iconOnly` buttons** must have an `aria-label` provided by the consumer
-5. **`rel="noopener noreferrer"`** auto-applied when `blank` is true (security)
-6. **Semantic elements**: native `<button>` and `<a>`, not `<div>` with `role="button"`
-7. **`type="button"`** default prevents accidental form submission
-8. Hidden content during loading keeps screen reader text accessible (opacity: 0, not display: none)
-
-### Accessibility Test Pattern
-
-```typescript
-import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
-import BpkButton from './BpkButton';
-
-it('should not have programmatically detectable accessibility issues', async () => {
-  const { container } = render(<BpkButton>Click me</BpkButton>);
-  const results = await axe(container);
-  expect(results).toHaveNoViolations();
-});
-```
+**Key rule**: When disabled or loading, navigation is suppressed and the component behaves as a standard disabled button regardless of href.
 
 ---
 
-## Test Coverage Requirements
+## 10. Disabled Behavior
 
-Tests must cover:
-
-### Element rendering
-- Renders `<button>` by default with `type="button"`
-- Renders `<a>` when `href` is provided and not disabled
-- Renders `<button>` when `href` + `disabled` (suppresses anchor)
-- Renders `<button>` when `href` + `loading` (suppresses anchor)
-- Applies `data-backpack-ds-component="Button"` on both elements
-
-### All 9 variants
-- Each variant applies correct class: `bpk-button--{variant}`
-
-### Size
-- Default (small): no `--large` class
-- Large: applies `bpk-button--large`
-
-### Icon handling
-- `leadingIcon` renders `bpk-button__leading-icon` wrapper
-- `trailingIcon` renders `bpk-button__trailing-icon` wrapper
-- Both together render both wrappers
-- `bpk-button--has-icon` applied when any icon present
-- Icon wrappers NOT rendered when `iconOnly` is true
-- Works with `fullWidth`, `disabled`, `href`
-
-### Loading state
-- Shows spinner, hides content with opacity
-- Button is `disabled` and has `aria-busy="true"`
-- No `onClick` fires when loading
-- Uses `BpkLargeSpinner` for `size="large"`
-- Correct spinner type per variant (dark for secondary/destructive/link/primaryOnDark, light for others)
-- No underline wrapper for link types when loading
-
-### Link types
-- Underline `<span>` wrapper rendered for link/linkOnDark
-- `implicit` prop adds implicit underline class
-- `linkOnDark` + `implicit` adds `--implicit--alternate` class
-- No underline for `iconOnly` or `disabled` link buttons
-
-### Blank & rel
-- `blank` sets `target="_blank"` and `rel="noopener noreferrer"`
-- Custom `rel` overrides default
-- `blank` + custom `rel` uses custom rel
-
-### className
-- Consumer `className` appended to class list
-- Empty string `className` doesn't add extra classes
+| Property | Value |
+|----------|-------|
+| Opacity | 50% |
+| Interaction | None (no tap, no hover, no focus) |
+| Cursor (web) | `not-allowed` |
+| Navigation | Suppressed (even if href is set) |
+| Pointer events (web) | None |
 
 ---
 
-## Figma Code Connect
+## 11. Color Specification Per Variant
 
-The component has a Figma mapping in `BpkButton.figma.tsx` that connects Figma component variants to code props.
+### primary
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-primary-normal-background-day` | `bpk-text-on-dark-day` |
+| Hover/Loading | `bpk-private-button-primary-pressed-background-day` | `bpk-text-on-dark-day` |
+| Active | `bpk-private-button-primary-pressed-background-day` | `bpk-text-on-dark-day` |
+
+### primaryOnDark
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-primary-on-dark-normal-background-day` | `bpk-text-on-light-day` |
+| Hover/Loading | `bpk-private-button-primary-on-dark-pressed-background-day` | `bpk-text-on-light-day` |
+| Active | `bpk-private-button-primary-on-dark-pressed-background-day` | `bpk-text-on-light-day` |
+
+### primaryOnLight
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-primary-on-light-normal-background-day` | `bpk-text-on-dark-night` |
+| Hover/Loading | `bpk-private-button-primary-on-light-pressed-background-day` | `bpk-text-on-dark-night` |
+| Active | `bpk-private-button-primary-on-light-pressed-background-day` | `bpk-text-on-dark-night` |
+
+### secondary
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-secondary-normal-background-day` | `bpk-text-primary-day` |
+| Hover/Loading | `bpk-private-button-secondary-pressed-background-day` | `bpk-text-primary-day` |
+| Active | `bpk-private-button-secondary-pressed-background-day` | `bpk-text-primary-day` |
+
+### secondaryOnDark
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-secondary-on-dark-normal-background-day` | `bpk-text-on-dark-day` |
+| Hover/Loading | `bpk-private-button-secondary-on-dark-pressed-background-day` | `bpk-text-on-dark-day` |
+| Active | `bpk-private-button-secondary-on-dark-pressed-background-day` | `bpk-text-on-dark-day` |
+
+### destructive
+
+Inherits the **secondary** button's base appearance, then overrides colors:
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-destructive-normal-background-day` | `bpk-private-button-destructive-normal-foreground-day` |
+| Hover/Loading | `bpk-private-button-destructive-pressed-background-day` | `bpk-text-primary-inverse-day` |
+| Active | `bpk-private-button-destructive-pressed-background-day` | `bpk-text-primary-inverse-day` |
+
+### featured
+
+| State | Background Token | Foreground Token |
+|-------|-----------------|-----------------|
+| Default | `bpk-private-button-featured-normal-background-day` | `bpk-text-primary-inverse-day` |
+| Hover/Loading | `bpk-private-button-featured-pressed-background-day` | `bpk-text-primary-inverse-day` |
+| Active | `bpk-private-button-featured-pressed-background-day` | `bpk-text-primary-inverse-day` |
+
+### link
+
+| State | Foreground Token | Notes |
+|-------|-----------------|-------|
+| Default | Platform link color | No background |
+| Hover | Platform link pressed color | Underline animates |
+| Active | Platform link pressed color | — |
+| Disabled | `bpk-text-disabled-day` | No underline |
+| Loading | `bpk-text-primary-day` | — |
+
+### linkOnDark
+
+| State | Foreground Token | Notes |
+|-------|-----------------|-------|
+| Default | `bpk-private-button-link-on-dark-normal-foreground-day` | No background |
+| Hover | `bpk-private-button-link-on-dark-pressed-foreground-day` | Underline animates |
+| Active | `bpk-private-button-link-on-dark-pressed-foreground-day` | — |
+| Disabled | `bpk-private-button-link-on-dark-disabled-foreground-day` | No underline |
 
 ---
 
-## File Structure
+## 12. Theming
 
+Each variant exposes overridable color properties. On web these are CSS custom properties; on native platforms, use the theme system's equivalent.
+
+Pattern per variant:
 ```
-packages/bpk-component-button/
-├── index.ts                          # Public exports
-└── src/
-    ├── BpkButton.tsx                 # Main component (161 lines)
-    ├── BpkButton.module.scss         # Styles (175 lines)
-    ├── BpkButton-test.tsx            # Unit tests (537 lines)
-    ├── BpkButton.figma.tsx           # Figma Code Connect mapping
-    ├── common-types.tsx              # Types, constants, Props interface
-    └── accessibility-test.tsx        # jest-axe tests
+{variant}-text-color
+{variant}-background-color
+{variant}-hover-text-color
+{variant}-hover-background-color
+{variant}-active-text-color
+{variant}-active-background-color
 ```
+
+Implementations should fall back to the design tokens listed in Section 11 when no theme override is provided.
+
+---
+
+## 13. Accessibility
+
+| Requirement | Details |
+|-------------|---------|
+| **Role** | Button role by default. Link/navigation role when href is active. |
+| **Label** | Text content serves as accessible label. `iconOnly` requires explicit `accessibilityLabel`. |
+| **Busy state** | Announce as "busy" when loading (e.g., `aria-busy` on web, accessibility trait on native). |
+| **Disabled state** | Announce as disabled/dimmed. Block all interaction. |
+| **Spinner** | Decorative only — hidden from assistive technology. |
+| **Focus** | Must be keyboard/switch-control focusable when not disabled. Platform-appropriate focus indicator. |
+| **Touch target** | Minimum 44x44pt touch target (WCAG 2.2 AA). |
+| **New window** | When `openInNewWindow=true`, indicate to user that a new window will open. |
+
+---
+
+## 14. Interaction Behavior
+
+| Input | Behavior |
+|-------|----------|
+| **Tap / Click** | Fire `onPress`/`onClick`. Navigate if href is set. |
+| **Keyboard Enter** | Same as tap. |
+| **Keyboard Space** | Same as tap (button role only, not link role). |
+| **Long press** | No special behavior (platform default). |
+| **Disabled tap** | No response. No callback fired. |
+| **Loading tap** | No response. No callback fired. |
+
+---
+
+## 15. Decision Log
+
+| Decision | Rationale |
+|----------|-----------|
+| Destructive inherits secondary base | Destructive uses the same shape/padding as secondary, just overrides colors. Reduces duplication. |
+| Loading preserves layout via invisible content | Prevents button from resizing when spinner appears, avoiding layout shifts. |
+| Loading uses pressed/hover colors, not disabled opacity | Gives visual feedback that something is happening, rather than looking broken. |
+| `iconOnly` suppresses icon wrappers | Icon IS the content — no leading/trailing distinction needed. |
+| Link underline via gradient, not text-decoration | Allows animated show/hide and precise positioning. Platform implementations may use native underline if animation isn't possible. |
+| `openInNewWindow` auto-applies security attributes (web) | Prevents reverse tabnapping (`rel="noopener noreferrer"`). |
+
+---
+
+## 16. Verification Checklist
+
+An implementation is complete when:
+
+- [ ] All 9 variants render with correct colors in all 6 states
+- [ ] Both sizes (small, large) render with correct typography and padding
+- [ ] `iconOnly` renders as square with correct sizing for both sizes
+- [ ] `fullWidth` stretches to container width
+- [ ] Leading and trailing icons render with correct spacing
+- [ ] Loading state shows spinner, preserves dimensions, blocks interaction
+- [ ] Correct spinner color per variant
+- [ ] Disabled state at 50% opacity, blocks all interaction
+- [ ] href renders as navigation element when not disabled/loading
+- [ ] `openInNewWindow` opens in new tab/window with security attributes
+- [ ] Link variants show/hide underline on hover (standard vs implicit)
+- [ ] `iconOnly` buttons accept and announce accessibility label
+- [ ] Loading buttons announce as busy to assistive technology
+- [ ] Keyboard navigation works (Enter, Space)
+- [ ] Touch target meets minimum 44x44pt
+- [ ] Theme overrides apply to all variant colors
