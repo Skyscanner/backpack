@@ -1,0 +1,100 @@
+BACKPACK STORYBOOK PATTERNS - Reference
+========================================
+
+This reference documents Storybook patterns used in the Backpack design system.
+
+VERSION: Storybook 10 with webpack5 compiler and Babel
+
+DIRECTORY STRUCTURE
+--------------------
+
+examples/
+  bpk-component-{name}/
+    examples.tsx    # Component example definitions
+    stories.tsx     # Storybook story configuration
+
+STORY FILE PATTERN (stories.tsx)
+---------------------------------
+
+import BpkComponent from '../../packages/bpk-component-{name}/src/BpkComponent';
+import {
+  DefaultExample,
+  LargeExample,
+  VisualTestExample,
+} from './examples';
+
+export default {
+  title: 'bpk-component-{name}',
+  component: BpkComponent,
+};
+
+export const Default = DefaultExample;
+export const Large = LargeExample;
+export const VisualTest = VisualTestExample;
+
+EXAMPLES FILE PATTERN (examples.tsx)
+--------------------------------------
+
+import BpkComponent from '../../packages/bpk-component-{name}/src/BpkComponent';
+
+const DefaultExample = () => (
+  <BpkComponent>Default content</BpkComponent>
+);
+
+const LargeExample = () => (
+  <BpkComponent size="large">Large content</BpkComponent>
+);
+
+// Visual test stories are captured by Percy for regression testing
+const VisualTestExample = () => (
+  <div>
+    <BpkComponent>Default</BpkComponent>
+    <BpkComponent size="large">Large</BpkComponent>
+    <BpkComponent variant="destructive">Destructive</BpkComponent>
+  </div>
+);
+
+export { DefaultExample, LargeExample, VisualTestExample };
+
+VISUAL TESTING (Percy)
+-----------------------
+
+Stories with names starting with "VisualTest" are captured by Percy
+for visual regression testing. These stories should:
+
+1. Show all visual variants in a single story
+2. Include different states (default, hover simulated via class, disabled)
+3. Use stable content (no random data or animations)
+4. Be deterministic (same render every time)
+
+Configuration: .percy.yml
+
+STORYBOOK CONFIGURATION
+-------------------------
+
+Location: .storybook/
+- main.ts: Story discovery pattern, addons, framework config
+- webpack.config.js: Custom webpack overrides for SCSS, aliases
+
+Addons:
+- @storybook/addon-a11y: Accessibility panel in Storybook UI
+- @storybook/addon-docs: Auto-generated documentation
+
+NAMING CONVENTIONS
+-------------------
+
+Story titles use the package name: 'bpk-component-button'
+Export names are descriptive: Default, WithIcon, Large, VisualTest
+
+IMPORT PATHS
+-------------
+
+Stories import from source (not dist):
+  import BpkButton from '../../packages/bpk-component-button/src/BpkButton';
+
+This enables hot module replacement during development.
+
+RUNNING STORYBOOK
+------------------
+
+npm run storybook    # Start development server

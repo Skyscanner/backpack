@@ -1,0 +1,105 @@
+BACKPACK TESTING PATTERNS - React Testing Library Reference
+============================================================
+
+This reference documents testing patterns used in the Backpack design system.
+
+DEPENDENCIES
+- jest (v30)
+- @testing-library/react
+- @testing-library/user-event
+- jest-axe
+
+BASIC COMPONENT RENDERING
+--------------------------
+
+import { render, screen } from '@testing-library/react';
+import BpkButton from './BpkButton';
+
+it('should render correctly', () => {
+  render(<BpkButton>Click me</BpkButton>);
+  expect(screen.getByRole('button')).toHaveTextContent('Click me');
+});
+
+TESTING PROPS
+-------------
+
+it('should apply size prop', () => {
+  const { container } = render(<BpkButton size="large">Large</BpkButton>);
+  expect(container.firstChild).toHaveClass('bpk-button--large');
+});
+
+it('should pass rest props', () => {
+  render(<BpkButton data-testid="my-button">Test</BpkButton>);
+  expect(screen.getByTestId('my-button')).toBeInTheDocument();
+});
+
+USER INTERACTIONS
+-----------------
+
+import userEvent from '@testing-library/user-event';
+
+it('should call onClick', async () => {
+  const onClick = jest.fn();
+  render(<BpkButton onClick={onClick}>Click</BpkButton>);
+  await userEvent.click(screen.getByRole('button'));
+  expect(onClick).toHaveBeenCalledTimes(1);
+});
+
+it('should not call onClick when disabled', async () => {
+  const onClick = jest.fn();
+  render(<BpkButton disabled onClick={onClick}>Click</BpkButton>);
+  await userEvent.click(screen.getByRole('button'));
+  expect(onClick).not.toHaveBeenCalled();
+});
+
+ACCESSIBILITY TESTING (jest-axe)
+---------------------------------
+
+File: accessibility-test.tsx (separate file per component)
+
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import BpkButton from './BpkButton';
+
+describe('BpkButton accessibility tests', () => {
+  it('should not have programmatically detectable accessibility issues', async () => {
+    const { container } = render(<BpkButton>Accessible</BpkButton>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+TESTING VARIANTS
+-----------------
+
+it.each(['primary', 'secondary', 'destructive'])('should render %s variant', (variant) => {
+  const { container } = render(<BpkButton variant={variant}>Test</BpkButton>);
+  expect(container.firstChild).toHaveClass(`bpk-button--${variant}`);
+});
+
+CSS MODULE HANDLING
+--------------------
+
+Jest is configured with a style stub (scripts/stubs/styleStub.js) that
+proxies CSS module class names. Use container queries or role-based
+queries rather than class name assertions where possible.
+
+SNAPSHOT TESTING
+-----------------
+
+Backpack generally prefers assertion-based tests over snapshots.
+When snapshots are used, they test the rendered output structure.
+
+COMMON QUERY PATTERNS
+----------------------
+
+Preferred (accessible):
+  screen.getByRole('button')
+  screen.getByRole('link')
+  screen.getByRole('textbox')
+  screen.getByLabelText('Email')
+  screen.getByText('Submit')
+
+Fallback:
+  screen.getByTestId('my-component')
+  container.querySelector('.bpk-component')
