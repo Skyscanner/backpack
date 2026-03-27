@@ -7,6 +7,7 @@ This directory contains specifications for Backpack components and features.
 | Document | Description |
 |----------|-------------|
 | [Accessibility Strategy](./accessibility-strategy.md) | WCAG compliance approach and testing strategy |
+| [BpkButton](./bpk-button.md) | Complete component spec — props, rendering, SCSS, tests, accessibility |
 
 ## Component Documentation
 
