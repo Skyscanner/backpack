@@ -19,14 +19,22 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
 
+import { iconSizeLg } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import { withAlignment } from '../../bpk-component-icon';
 import AiIcon from '../../bpk-component-icon/lg/ai';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkChatbotButton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const AlignedAiIcon = withAlignment(AiIcon, iconSizeLg, iconSizeLg);
+
 const DEFAULT_ANIMATION_DURATION = 2000;
+const COLLAPSE_DELAY = 250;
 
 export type BpkChatbotButtonProps = {
   /** Text shown when expanded; used as aria-label when collapsed */
@@ -58,6 +66,7 @@ const BpkChatbotButton = ({
 }: BpkChatbotButtonProps) => {
   const isControlled = expanded !== undefined;
   const [internalExpanded, setInternalExpanded] = useState(false);
+  const [showLabel, setShowLabel] = useState(false);
 
   const isPageVisibleRef = useRef(
     typeof document !== 'undefined' && document.visibilityState === 'visible',
@@ -75,6 +84,7 @@ const BpkChatbotButton = ({
 
       if (wasHidden && isPageVisibleRef.current) {
         setInternalExpanded(false);
+        setShowLabel(false);
       }
     };
 
@@ -89,28 +99,35 @@ const BpkChatbotButton = ({
     if (isControlled || !isAnimate) {
       if (!isControlled) {
         setInternalExpanded(false);
+        setShowLabel(false);
       }
       return undefined;
     }
 
     let rafId: number | null = null;
+    let hideTimerId: ReturnType<typeof setTimeout> | undefined;
     let collapseTimerId: ReturnType<typeof setTimeout> | undefined;
 
     const cleanup = () => {
       if (rafId !== null) {
         cancelAnimationFrame(rafId);
       }
+      clearTimeout(hideTimerId);
       clearTimeout(collapseTimerId);
     };
 
     if (isPageVisibleRef.current) {
       rafId = requestAnimationFrame(() => {
         setInternalExpanded(true);
+        setShowLabel(true);
       });
     }
 
-    collapseTimerId = setTimeout(() => {
-      setInternalExpanded(false);
+    hideTimerId = setTimeout(() => {
+      setShowLabel(false);
+      collapseTimerId = setTimeout(() => {
+        setInternalExpanded(false);
+      }, COLLAPSE_DELAY);
     }, animationDuration);
 
     return cleanup;
@@ -125,34 +142,43 @@ const BpkChatbotButton = ({
   );
 
   const isExpanded = isControlled ? expanded! : internalExpanded;
+  // In controlled mode the label is always visible when expanded; in uncontrolled mode
+  // showLabel drives the fade-out before the button collapses.
+  const labelVisible = isControlled || showLabel;
+
+  const iconEl = icon ?? <AlignedAiIcon aria-hidden />;
 
   return (
-    <button
-      type="button"
-      disabled={disabled}
-      aria-label={!isExpanded ? label : undefined}
-      aria-expanded={isExpanded}
-      data-testid="bpk-chatbot-button"
-      onClick={handleClick}
+    <span
       className={getClassName(
         'bpk-chatbot-button',
         isExpanded && 'bpk-chatbot-button--expanded',
       )}
-      {...getDataComponentAttribute('ChatbotButton')}
     >
-      <span className={getClassName('bpk-chatbot-button__icon')}>
-        {icon ?? <AiIcon fill="white" />}
-      </span>
-      <span
-        className={getClassName(
-          'bpk-chatbot-button__label',
-          !isExpanded && 'bpk-chatbot-button__label--hidden',
-        )}
-        aria-hidden={!isExpanded || undefined}
+      <BpkButton
+        type={BUTTON_TYPES.featured}
+        size={SIZE_TYPES.large}
+        iconOnly={!isExpanded}
+        disabled={disabled}
+        aria-label={!isExpanded ? label : undefined}
+        aria-expanded={isExpanded}
+        data-testid="bpk-chatbot-button"
+        onClick={handleClick}
+        leadingIcon={isExpanded ? iconEl : undefined}
+        {...getDataComponentAttribute('ChatbotButton')}
       >
-        {label}
-      </span>
-    </button>
+        {isExpanded ? (
+          <BpkText
+            textStyle={TEXT_STYLES.label1}
+            style={{ opacity: labelVisible ? 1 : 0 }}
+          >
+            {label}
+          </BpkText>
+        ) : (
+          iconEl
+        )}
+      </BpkButton>
+    </span>
   );
 };
 

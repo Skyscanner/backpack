@@ -16,81 +16,23 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/buttons';
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
 
 .bpk-chatbot-button {
-  // Base button resets (subset of bpk-button, omitting display:inline-block
-  // so our inline-flex is not overridden by stylelint reordering @includes after properties)
   display: inline-flex;
   width: tokens.$bpk-button-large-height;
-  height: tokens.$bpk-button-large-height;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
   transition:
     width tokens.$bpk-duration-base ease-in-out,
-    min-width tokens.$bpk-duration-base ease-in-out,
-    padding tokens.$bpk-duration-base ease-in-out;
-  border: 0;
-  cursor: pointer;
+    min-width tokens.$bpk-duration-base ease-in-out;
   overflow: hidden;
-  gap: tokens.bpk-spacing-sm();
-  user-select: none;
-
-  @include utils.bpk-themeable-property(
-    border-radius,
-    --bpk-button-border-radius,
-    tokens.$bpk-button-border-radius
-  );
-
-  // Featured colours, hover, active, disabled states
-  @include buttons.bpk-button--featured;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
 
-  // Suppress browser default focus ring on mouse click
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  // Keyboard focus indicator
-  &:focus-visible {
-    @include utils.bpk-focus-indicator;
-  }
-
   &--expanded {
     width: auto;
-    min-width: calc(tokens.$bpk-one-pixel-rem * 110);
-    padding: 0 tokens.bpk-spacing-md();
-  }
-
-  &__icon {
-    display: flex;
-    flex-shrink: 0;
-  }
-
-  &__label {
-    transition: opacity tokens.$bpk-duration-sm ease-in-out;
-    white-space: nowrap;
-    opacity: 1;
-
-    @include typography.bpk-label-1;
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-
-    &--hidden {
-      // position: absolute removes the label from the flex flow so the icon stays centered,
-      // while still allowing the opacity transition to be visible.
-      position: absolute;
-      opacity: 0;
-    }
+    min-width: tokens.$bpk-one-pixel-rem * 110;
   }
 }

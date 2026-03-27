@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import component from './src/BpkChatbotButton';
+import BpkChatbotButton from './src/BpkChatbotButton';
 
 export type { BpkChatbotButtonProps } from './src/BpkChatbotButton';
-export default component;
+export default BpkChatbotButton;

@@ -117,7 +117,7 @@ describe('BpkChatbotButton', () => {
       jest.useFakeTimers();
       jest
         .spyOn(global, 'requestAnimationFrame')
-        .mockImplementation((cb: FrameRequestCallback) => {
+        .mockImplementation((cb: Parameters<typeof requestAnimationFrame>[0]) => {
           cb(0);
           return 0;
         });
@@ -168,7 +168,7 @@ describe('BpkChatbotButton', () => {
       expect(button).toHaveAttribute('aria-expanded', 'true');
 
       act(() => {
-        jest.advanceTimersByTime(2000);
+        jest.advanceTimersByTime(2250); // animationDuration (2000) + COLLAPSE_DELAY (250)
       });
 
       expect(button).toHaveAttribute('aria-expanded', 'false');

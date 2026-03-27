@@ -28,11 +28,11 @@ export const DefaultExample = () => (
 );
 
 export const ExpandedExample = () => (
-  <BpkChatbotButton label="Chat with AI" expanded onClick={() => {}} />
+  <BpkChatbotButton label="Chat" expanded onClick={() => {}} />
 );
 
 export const DisabledExample = () => (
-  <BpkChatbotButton label="Chat with AI" disabled onClick={() => {}} />
+  <BpkChatbotButton label="Chat" disabled onClick={() => {}} />
 );
 
 const POLLING_DURATION_MS = 5000;
@@ -127,7 +127,7 @@ export const AnimatedExample = () => {
         }}
       >
         <BpkChatbotButton
-          label="Chat with AI"
+          label="Chat"
           isAnimate={isPolling}
           onClick={() => setChatOpen(true)}
         />

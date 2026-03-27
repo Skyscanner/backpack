@@ -2,134 +2,131 @@
 
 exports[`BpkChatbotButton should render correctly (collapsed by default) 1`] = `
 <DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-label="Chat with AI"
+  <span
     class="bpk-chatbot-button"
-    data-backpack-ds-component="ChatbotButton"
-    data-testid="bpk-chatbot-button"
-    type="button"
   >
-    <span
-      class="bpk-chatbot-button__icon"
+    <button
+      aria-expanded="false"
+      aria-label="Chat with AI"
+      class="bpk-button bpk-button--large bpk-button--icon-only bpk-button--large-icon-only bpk-button--featured"
+      data-backpack-ds-component="ChatbotButton"
+      data-testid="bpk-chatbot-button"
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        fill="white"
-        height="1.5rem"
-        viewBox="0 0 24 24"
-        width="1.5rem"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
       >
-        <path
-          d="M4.094 1.072c-.025-.096-.163-.096-.188 0-.214.824-.734 2.775-.896 2.938-.163.162-2.114.682-2.938.896-.096.025-.096.163 0 .188.824.214 2.775.734 2.938.896.162.163.682 2.114.896 2.938.025.096.163.096.188 0 .214-.824.734-2.775.896-2.938.163-.162 2.114-.682 2.938-.896.096-.025.096-.163 0-.188-.824-.214-2.775-.734-2.938-.896-.162-.163-.682-2.114-.896-2.938m9.475 2.256c.115-.437.747-.437.862 0 .638 2.42 1.797 6.668 2.185 7.056s4.635 1.547 7.056 2.185c.437.115.437.747 0 .862-2.42.638-6.668 1.797-7.056 2.185s-1.547 4.635-2.185 7.056c-.115.437-.747.437-.862 0-.638-2.42-1.797-6.668-2.185-7.056s-4.635-1.547-7.056-2.185c-.437-.115-.437-.747 0-.862 2.42-.638 6.668-1.797 7.056-2.185s1.547-4.635 2.185-7.056M6.953 18.036c.013-.048.081-.048.094 0 .107.412.367 1.387.448 1.469.082.081 1.057.341 1.47.448.047.013.047.081 0 .094-.413.107-1.388.367-1.47.448-.081.081-.341 1.057-.448 1.47-.013.047-.081.047-.094 0-.107-.413-.367-1.389-.448-1.47s-1.057-.341-1.47-.448c-.047-.013-.047-.081 0-.094.413-.107 1.388-.367 1.47-.448.081-.081.341-1.057.448-1.47Z"
-        />
-      </svg>
-    </span>
-    <span
-      aria-hidden="true"
-      class="bpk-chatbot-button__label bpk-chatbot-button__label--hidden"
-    >
-      Chat with AI
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.094 1.072c-.025-.096-.163-.096-.188 0-.214.824-.734 2.775-.896 2.938-.163.162-2.114.682-2.938.896-.096.025-.096.163 0 .188.824.214 2.775.734 2.938.896.162.163.682 2.114.896 2.938.025.096.163.096.188 0 .214-.824.734-2.775.896-2.938.163-.162 2.114-.682 2.938-.896.096-.025.096-.163 0-.188-.824-.214-2.775-.734-2.938-.896-.162-.163-.682-2.114-.896-2.938m9.475 2.256c.115-.437.747-.437.862 0 .638 2.42 1.797 6.668 2.185 7.056s4.635 1.547 7.056 2.185c.437.115.437.747 0 .862-2.42.638-6.668 1.797-7.056 2.185s-1.547 4.635-2.185 7.056c-.115.437-.747.437-.862 0-.638-2.42-1.797-6.668-2.185-7.056s-4.635-1.547-7.056-2.185c-.437-.115-.437-.747 0-.862 2.42-.638 6.668-1.797 7.056-2.185s1.547-4.635 2.185-7.056M6.953 18.036c.013-.048.081-.048.094 0 .107.412.367 1.387.448 1.469.082.081 1.057.341 1.47.448.047.013.047.081 0 .094-.413.107-1.388.367-1.47.448-.081.081-.341 1.057-.448 1.47-.013.047-.081.047-.094 0-.107-.413-.367-1.389-.448-1.47s-1.057-.341-1.47-.448c-.047-.013-.047-.081 0-.094.413-.107 1.388-.367 1.47-.448.081-.081.341-1.057.448-1.47Z"
+          />
+        </svg>
+      </span>
+    </button>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkChatbotButton should render correctly when disabled 1`] = `
 <DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-label="Chat with AI"
+  <span
     class="bpk-chatbot-button"
-    data-backpack-ds-component="ChatbotButton"
-    data-testid="bpk-chatbot-button"
-    disabled=""
-    type="button"
   >
-    <span
-      class="bpk-chatbot-button__icon"
+    <button
+      aria-expanded="false"
+      aria-label="Chat with AI"
+      class="bpk-button bpk-button--large bpk-button--icon-only bpk-button--large-icon-only bpk-button--featured"
+      data-backpack-ds-component="ChatbotButton"
+      data-testid="bpk-chatbot-button"
+      disabled=""
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        fill="white"
-        height="1.5rem"
-        viewBox="0 0 24 24"
-        width="1.5rem"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
       >
-        <path
-          d="M4.094 1.072c-.025-.096-.163-.096-.188 0-.214.824-.734 2.775-.896 2.938-.163.162-2.114.682-2.938.896-.096.025-.096.163 0 .188.824.214 2.775.734 2.938.896.162.163.682 2.114.896 2.938.025.096.163.096.188 0 .214-.824.734-2.775.896-2.938.163-.162 2.114-.682 2.938-.896.096-.025.096-.163 0-.188-.824-.214-2.775-.734-2.938-.896-.162-.163-.682-2.114-.896-2.938m9.475 2.256c.115-.437.747-.437.862 0 .638 2.42 1.797 6.668 2.185 7.056s4.635 1.547 7.056 2.185c.437.115.437.747 0 .862-2.42.638-6.668 1.797-7.056 2.185s-1.547 4.635-2.185 7.056c-.115.437-.747.437-.862 0-.638-2.42-1.797-6.668-2.185-7.056s-4.635-1.547-7.056-2.185c-.437-.115-.437-.747 0-.862 2.42-.638 6.668-1.797 7.056-2.185s1.547-4.635 2.185-7.056M6.953 18.036c.013-.048.081-.048.094 0 .107.412.367 1.387.448 1.469.082.081 1.057.341 1.47.448.047.013.047.081 0 .094-.413.107-1.388.367-1.47.448-.081.081-.341 1.057-.448 1.47-.013.047-.081.047-.094 0-.107-.413-.367-1.389-.448-1.47s-1.057-.341-1.47-.448c-.047-.013-.047-.081 0-.094.413-.107 1.388-.367 1.47-.448.081-.081.341-1.057.448-1.47Z"
-        />
-      </svg>
-    </span>
-    <span
-      aria-hidden="true"
-      class="bpk-chatbot-button__label bpk-chatbot-button__label--hidden"
-    >
-      Chat with AI
-    </span>
-  </button>
+        <svg
+          aria-hidden="true"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.094 1.072c-.025-.096-.163-.096-.188 0-.214.824-.734 2.775-.896 2.938-.163.162-2.114.682-2.938.896-.096.025-.096.163 0 .188.824.214 2.775.734 2.938.896.162.163.682 2.114.896 2.938.025.096.163.096.188 0 .214-.824.734-2.775.896-2.938.163-.162 2.114-.682 2.938-.896.096-.025.096-.163 0-.188-.824-.214-2.775-.734-2.938-.896-.162-.163-.682-2.114-.896-2.938m9.475 2.256c.115-.437.747-.437.862 0 .638 2.42 1.797 6.668 2.185 7.056s4.635 1.547 7.056 2.185c.437.115.437.747 0 .862-2.42.638-6.668 1.797-7.056 2.185s-1.547 4.635-2.185 7.056c-.115.437-.747.437-.862 0-.638-2.42-1.797-6.668-2.185-7.056s-4.635-1.547-7.056-2.185c-.437-.115-.437-.747 0-.862 2.42-.638 6.668-1.797 7.056-2.185s1.547-4.635 2.185-7.056M6.953 18.036c.013-.048.081-.048.094 0 .107.412.367 1.387.448 1.469.082.081 1.057.341 1.47.448.047.013.047.081 0 .094-.413.107-1.388.367-1.47.448-.081.081-.341 1.057-.448 1.47-.013.047-.081.047-.094 0-.107-.413-.367-1.389-.448-1.47s-1.057-.341-1.47-.448c-.047-.013-.047-.081 0-.094.413-.107 1.388-.367 1.47-.448.081-.081.341-1.057.448-1.47Z"
+          />
+        </svg>
+      </span>
+    </button>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkChatbotButton should render correctly when expanded 1`] = `
 <DocumentFragment>
-  <button
-    aria-expanded="true"
+  <span
     class="bpk-chatbot-button bpk-chatbot-button--expanded"
-    data-backpack-ds-component="ChatbotButton"
-    data-testid="bpk-chatbot-button"
-    type="button"
   >
-    <span
-      class="bpk-chatbot-button__icon"
+    <button
+      aria-expanded="true"
+      class="bpk-button bpk-button--large bpk-button--featured bpk-button--has-icon"
+      data-backpack-ds-component="ChatbotButton"
+      data-testid="bpk-chatbot-button"
+      type="button"
     >
-      <svg
-        aria-hidden="true"
-        fill="white"
-        height="1.5rem"
-        viewBox="0 0 24 24"
-        width="1.5rem"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="bpk-button__leading-icon"
       >
-        <path
-          d="M4.094 1.072c-.025-.096-.163-.096-.188 0-.214.824-.734 2.775-.896 2.938-.163.162-2.114.682-2.938.896-.096.025-.096.163 0 .188.824.214 2.775.734 2.938.896.162.163.682 2.114.896 2.938.025.096.163.096.188 0 .214-.824.734-2.775.896-2.938.163-.162 2.114-.682 2.938-.896.096-.025.096-.163 0-.188-.824-.214-2.775-.734-2.938-.896-.162-.163-.682-2.114-.896-2.938m9.475 2.256c.115-.437.747-.437.862 0 .638 2.42 1.797 6.668 2.185 7.056s4.635 1.547 7.056 2.185c.437.115.437.747 0 .862-2.42.638-6.668 1.797-7.056 2.185s-1.547 4.635-2.185 7.056c-.115.437-.747.437-.862 0-.638-2.42-1.797-6.668-2.185-7.056s-4.635-1.547-7.056-2.185c-.437-.115-.437-.747 0-.862 2.42-.638 6.668-1.797 7.056-2.185s1.547-4.635 2.185-7.056M6.953 18.036c.013-.048.081-.048.094 0 .107.412.367 1.387.448 1.469.082.081 1.057.341 1.47.448.047.013.047.081 0 .094-.413.107-1.388.367-1.47.448-.081.081-.341 1.057-.448 1.47-.013.047-.081.047-.094 0-.107-.413-.367-1.389-.448-1.47s-1.057-.341-1.47-.448c-.047-.013-.047-.081 0-.094.413-.107 1.388-.367 1.47-.448.081-.081.341-1.057.448-1.47Z"
-        />
-      </svg>
-    </span>
-    <span
-      class="bpk-chatbot-button__label"
-    >
-      Chat with AI
-    </span>
-  </button>
+        <span
+          style="line-height: 1.5rem; display: inline-block; margin-top: 0rem; vertical-align: top;"
+        >
+          <svg
+            aria-hidden="true"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+            width="1.5rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.094 1.072c-.025-.096-.163-.096-.188 0-.214.824-.734 2.775-.896 2.938-.163.162-2.114.682-2.938.896-.096.025-.096.163 0 .188.824.214 2.775.734 2.938.896.162.163.682 2.114.896 2.938.025.096.163.096.188 0 .214-.824.734-2.775.896-2.938.163-.162 2.114-.682 2.938-.896.096-.025.096-.163 0-.188-.824-.214-2.775-.734-2.938-.896-.162-.163-.682-2.114-.896-2.938m9.475 2.256c.115-.437.747-.437.862 0 .638 2.42 1.797 6.668 2.185 7.056s4.635 1.547 7.056 2.185c.437.115.437.747 0 .862-2.42.638-6.668 1.797-7.056 2.185s-1.547 4.635-2.185 7.056c-.115.437-.747.437-.862 0-.638-2.42-1.797-6.668-2.185-7.056s-4.635-1.547-7.056-2.185c-.437-.115-.437-.747 0-.862 2.42-.638 6.668-1.797 7.056-2.185s1.547-4.635 2.185-7.056M6.953 18.036c.013-.048.081-.048.094 0 .107.412.367 1.387.448 1.469.082.081 1.057.341 1.47.448.047.013.047.081 0 .094-.413.107-1.388.367-1.47.448-.081.081-.341 1.057-.448 1.47-.013.047-.081.047-.094 0-.107-.413-.367-1.389-.448-1.47s-1.057-.341-1.47-.448c-.047-.013-.047-.081 0-.094.413-.107 1.388-.367 1.47-.448.081-.081.341-1.057.448-1.47Z"
+            />
+          </svg>
+        </span>
+      </span>
+      <span
+        class="bpk-text bpk-text--label-1"
+        data-backpack-ds-component="Text"
+        style="opacity: 1;"
+      >
+        Chat with AI
+      </span>
+    </button>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`BpkChatbotButton should render correctly with a custom icon 1`] = `
 <DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-label="Chat with AI"
+  <span
     class="bpk-chatbot-button"
-    data-backpack-ds-component="ChatbotButton"
-    data-testid="bpk-chatbot-button"
-    type="button"
   >
-    <span
-      class="bpk-chatbot-button__icon"
+    <button
+      aria-expanded="false"
+      aria-label="Chat with AI"
+      class="bpk-button bpk-button--large bpk-button--icon-only bpk-button--large-icon-only bpk-button--featured"
+      data-backpack-ds-component="ChatbotButton"
+      data-testid="bpk-chatbot-button"
+      type="button"
     >
       <span>
         icon
       </span>
-    </span>
-    <span
-      aria-hidden="true"
-      class="bpk-chatbot-button__label bpk-chatbot-button__label--hidden"
-    >
-      Chat with AI
-    </span>
-  </button>
+    </button>
+  </span>
 </DocumentFragment>
 `;
