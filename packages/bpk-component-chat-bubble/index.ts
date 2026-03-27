@@ -16,12 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+import BpkChatBubble from './src/BpkChatBubble';
 
-.bpk-button-bubble-examples {
-  display: flex;
-  padding: tokens.bpk-spacing-base();
-  flex-direction: column;
-  background-color: tokens.$bpk-canvas-contrast-day;
-  gap: tokens.bpk-spacing-sm();
-}
+export type { BpkChatBubbleProps, ChatBubbleType, BubblePosition } from './src/BpkChatBubble';
+export default BpkChatBubble;

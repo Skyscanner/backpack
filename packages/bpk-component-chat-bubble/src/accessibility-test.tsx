@@ -19,12 +19,12 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkButtonBubble from './BpkButtonBubble';
+import BpkChatBubble from './BpkChatBubble';
 
-describe('BpkButtonBubble accessibility tests', () => {
+describe('BpkChatBubble accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues for user bubble', async () => {
     const { container } = render(
-      <BpkButtonBubble type="user">Hello there</BpkButtonBubble>,
+      <BpkChatBubble type="user">Hello there</BpkChatBubble>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -32,7 +32,7 @@ describe('BpkButtonBubble accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues for bot bubble', async () => {
     const { container } = render(
-      <BpkButtonBubble type="bot">How can I help?</BpkButtonBubble>,
+      <BpkChatBubble type="bot">How can I help?</BpkChatBubble>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -40,9 +40,9 @@ describe('BpkButtonBubble accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues for retry bubble', async () => {
     const { container } = render(
-      <BpkButtonBubble type="retry" onRetry={() => {}} retryLabel="Try again">
+      <BpkChatBubble type="retry" onRetry={() => {}} retryLabel="Try again">
         Something went wrong.
-      </BpkButtonBubble>,
+      </BpkChatBubble>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -50,13 +50,13 @@ describe('BpkButtonBubble accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues for suggestion bubble', async () => {
     const { container } = render(
-      <BpkButtonBubble
-        type="suggestion"
+      <BpkChatBubble
+        type="button"
         onSuggestionClick={() => {}}
         suggestionAriaLabel="Show me car hire options"
       >
         Show me options
-      </BpkButtonBubble>,
+      </BpkChatBubble>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -64,13 +64,13 @@ describe('BpkButtonBubble accessibility tests', () => {
 
   it('should not have programmatically-detectable accessibility issues with feedback buttons', async () => {
     const { container } = render(
-      <BpkButtonBubble
+      <BpkChatBubble
         type="bot"
         showFeedback
         onFeedbackClick={() => {}}
       >
         Here is some information
-      </BpkButtonBubble>,
+      </BpkChatBubble>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

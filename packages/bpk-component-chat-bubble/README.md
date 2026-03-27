@@ -1,4 +1,4 @@
-# bpk-component-button-bubble
+# bpk-component-chat-bubble
 
 > Backpack chat bubble component.
 
@@ -9,10 +9,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkButtonBubble from '@skyscanner/backpack-web/bpk-component-button-bubble';
+import BpkChatBubble from '@skyscanner/backpack-web/bpk-component-chat-bubble';
 
 export default () => (
-  <BpkButtonBubble type="bot">How can I help you today?</BpkButtonBubble>
+  <BpkChatBubble type="bot">How can I help you today?</BpkChatBubble>
 );
 ```
 
@@ -20,7 +20,7 @@ export default () => (
 
 | Property           | PropType                              | Required | Default Value |
 | ------------------ | ------------------------------------- | -------- | ------------- |
-| type               | 'user' \| 'bot' \| 'retry' \| 'suggestion' | true | - |
+| type               | 'user' \| 'bot' \| 'retry' \| 'button' | true | - |
 | children           | ReactNode                             | false    | -             |
 | systemPosition     | 'first' \| 'middle' \| 'last'        | false    | -             |
 | userPosition       | 'first' \| 'middle' \| 'last'        | false    | -             |
@@ -31,5 +31,5 @@ export default () => (
 | retryDisabled      | boolean                               | false    | false         |
 | retryLabel         | string                                | false    | 'Try again'   |
 | onSuggestionClick  | () => void                            | false    | -             |
-| suggestionAriaLabel | string                               | false    | 'suggestion'  |
+| suggestionAriaLabel | string                               | false    | 'button'  |
 | animationDelay     | number                                | false    | 0             |

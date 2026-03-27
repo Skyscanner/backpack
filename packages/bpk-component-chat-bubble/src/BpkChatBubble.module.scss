@@ -21,7 +21,7 @@
 @use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
-@keyframes bpk-button-bubble-entrance {
+@keyframes bpk-chat-bubble-entrance {
   from {
     transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
     opacity: 0;
@@ -33,7 +33,7 @@
   }
 }
 
-@keyframes bpk-button-bubble-entrance-reduced {
+@keyframes bpk-chat-bubble-entrance-reduced {
   from {
     opacity: 0;
   }
@@ -43,7 +43,7 @@
   }
 }
 
-%bpk-button-bubble-base {
+%bpk-chat-bubble-base {
   width: fit-content;
   max-width: tokens.$bpk-one-pixel-rem * 280;
   padding: tokens.bpk-spacing-base();
@@ -53,19 +53,19 @@
   word-wrap: break-word;
 }
 
-%bpk-button-bubble-left {
+%bpk-chat-bubble-left {
   align-self: flex-start;
 }
 
-%bpk-button-bubble-right {
+%bpk-chat-bubble-right {
   align-self: flex-end;
 }
 
-%bpk-button-bubble-radius-all-lg {
+%bpk-chat-bubble-radius-all-lg {
   border-radius: tokens.$bpk-border-radius-lg;
 }
 
-@mixin bpk-button-bubble-corner($side, $tail-position) {
+@mixin bpk-chat-bubble-corner($side, $tail-position) {
   @if $side == 'left' {
     @if $tail-position == 'top' {
       border-top-left-radius: tokens.$bpk-border-radius-xs;
@@ -121,8 +121,8 @@
   }
 }
 
-.bpk-button-bubble {
-  @extend %bpk-button-bubble-base;
+.bpk-chat-bubble {
+  @extend %bpk-chat-bubble-base;
 
   @include utils.bpk-rtl {
     direction: rtl;
@@ -131,20 +131,20 @@
   &--animated {
     transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
     opacity: 0;
-    animation: bpk-button-bubble-entrance tokens.$bpk-duration-sm
+    animation: bpk-chat-bubble-entrance tokens.$bpk-duration-sm
       cubic-bezier(0.2, 0, 0, 1) forwards;
     animation-delay: var(--anim-delay, 0ms);
 
     @media (prefers-reduced-motion: reduce) {
-      animation: bpk-button-bubble-entrance-reduced tokens.$bpk-duration-sm
+      animation: bpk-chat-bubble-entrance-reduced tokens.$bpk-duration-sm
         ease-out forwards;
     }
   }
 
   &--bot,
   &--retry {
-    @extend %bpk-button-bubble-left;
-    @extend %bpk-button-bubble-radius-all-lg;
+    @extend %bpk-chat-bubble-left;
+    @extend %bpk-chat-bubble-radius-all-lg;
 
     text-align: start;
 
@@ -154,8 +154,8 @@
   }
 
   &--user {
-    @extend %bpk-button-bubble-right;
-    @extend %bpk-button-bubble-radius-all-lg;
+    @extend %bpk-chat-bubble-right;
+    @extend %bpk-chat-bubble-radius-all-lg;
 
     background: tokens.$bpk-core-accent-day;
     color: tokens.$bpk-text-on-dark-day;
@@ -167,8 +167,8 @@
   }
 
   &--suggestion {
-    @extend %bpk-button-bubble-right;
-    @extend %bpk-button-bubble-radius-all-lg;
+    @extend %bpk-chat-bubble-right;
+    @extend %bpk-chat-bubble-radius-all-lg;
 
     width: fit-content;
     transition:
@@ -180,7 +180,7 @@
     text-align: end;
     cursor: pointer;
 
-    @include bpk-button-bubble-corner('right', 'bottom');
+    @include bpk-chat-bubble-corner('right', 'bottom');
 
     @include utils.bpk-rtl {
       text-align: start;
@@ -199,27 +199,27 @@
   }
 
   &--system-first {
-    @include bpk-button-bubble-corner('left', 'bottom');
+    @include bpk-chat-bubble-corner('left', 'bottom');
   }
 
   &--system-middle {
-    @include bpk-button-bubble-corner('left', 'both');
+    @include bpk-chat-bubble-corner('left', 'both');
   }
 
   &--system-last {
-    @include bpk-button-bubble-corner('left', 'top');
+    @include bpk-chat-bubble-corner('left', 'top');
   }
 
   &--user-first {
-    @include bpk-button-bubble-corner('right', 'bottom');
+    @include bpk-chat-bubble-corner('right', 'bottom');
   }
 
   &--user-middle {
-    @include bpk-button-bubble-corner('right', 'both');
+    @include bpk-chat-bubble-corner('right', 'both');
   }
 
   &--user-last {
-    @include bpk-button-bubble-corner('right', 'top');
+    @include bpk-chat-bubble-corner('right', 'top');
   }
 
   &__content {

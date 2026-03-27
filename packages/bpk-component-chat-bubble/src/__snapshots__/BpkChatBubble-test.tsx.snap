@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkButtonBubble should render bot bubble correctly 1`] = `
+exports[`BpkChatBubble should render bot bubble correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-button-bubble bpk-button-bubble--animated bpk-button-bubble--bot"
-    data-backpack-ds-component="ButtonBubble"
-    data-testid="bpk-button-bubble"
+    class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--bot"
+    data-backpack-ds-component="ChatBubble"
+    data-testid="bpk-chat-bubble"
     style="--anim-delay: 0ms;"
   >
     <div
-      class="bpk-button-bubble__content"
+      class="bpk-chat-bubble__content"
     >
       How can I help?
     </div>
@@ -17,21 +17,21 @@ exports[`BpkButtonBubble should render bot bubble correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkButtonBubble should render bot bubble with feedback buttons when showFeedback is true 1`] = `
+exports[`BpkChatBubble should render bot bubble with feedback buttons when showFeedback is true 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-button-bubble bpk-button-bubble--animated bpk-button-bubble--bot"
-    data-backpack-ds-component="ButtonBubble"
-    data-testid="bpk-button-bubble"
+    class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--bot"
+    data-backpack-ds-component="ChatBubble"
+    data-testid="bpk-chat-bubble"
     style="--anim-delay: 0ms;"
   >
     <div
-      class="bpk-button-bubble__content"
+      class="bpk-chat-bubble__content"
     >
       Here is some information
     </div>
     <div
-      class="bpk-button-bubble__thumbs"
+      class="bpk-chat-bubble__thumbs"
     >
       <button
         aria-label="Rate as useful"
@@ -86,23 +86,23 @@ exports[`BpkButtonBubble should render bot bubble with feedback buttons when sho
 </DocumentFragment>
 `;
 
-exports[`BpkButtonBubble should render retry bubble correctly 1`] = `
+exports[`BpkChatBubble should render retry bubble correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-button-bubble bpk-button-bubble--animated bpk-button-bubble--retry"
-    data-backpack-ds-component="ButtonBubble"
-    data-testid="bpk-button-bubble"
+    class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--retry"
+    data-backpack-ds-component="ChatBubble"
+    data-testid="bpk-chat-bubble"
     style="--anim-delay: 0ms;"
   >
     <div
-      class="bpk-button-bubble__content"
+      class="bpk-chat-bubble__content"
     >
       Something went wrong.
       <div
-        class="bpk-button-bubble__retry"
+        class="bpk-chat-bubble__retry"
       >
         <button
-          class="bpk-button bpk-button--primary bpk-button-bubble__retry-button"
+          class="bpk-button bpk-button--primary"
           data-backpack-ds-component="Button"
           type="button"
         >
@@ -111,7 +111,6 @@ exports[`BpkButtonBubble should render retry bubble correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="bpk-button-bubble__retry-icon"
               height="1rem"
               viewBox="0 0 24 24"
               width="1rem"
@@ -130,13 +129,13 @@ exports[`BpkButtonBubble should render retry bubble correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkButtonBubble should render suggestion bubble correctly 1`] = `
+exports[`BpkChatBubble should render suggestion bubble correctly 1`] = `
 <DocumentFragment>
   <button
     aria-label="suggestion bubble"
-    class="bpk-button-bubble bpk-button-bubble--animated bpk-button-bubble--suggestion"
-    data-backpack-ds-component="ButtonBubble"
-    data-testid="bpk-button-bubble-suggestion"
+    class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--button"
+    data-backpack-ds-component="ChatBubble"
+    data-testid="bpk-chat-bubble-suggestion"
     style="--anim-delay: 0ms;"
     type="button"
   >
@@ -145,16 +144,16 @@ exports[`BpkButtonBubble should render suggestion bubble correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkButtonBubble should render user bubble correctly 1`] = `
+exports[`BpkChatBubble should render user bubble correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-button-bubble bpk-button-bubble--animated bpk-button-bubble--user"
-    data-backpack-ds-component="ButtonBubble"
-    data-testid="bpk-button-bubble"
+    class="bpk-chat-bubble bpk-chat-bubble--animated bpk-chat-bubble--user"
+    data-backpack-ds-component="ChatBubble"
+    data-testid="bpk-chat-bubble"
     style="--anim-delay: 0ms;"
   >
     <div
-      class="bpk-button-bubble__content"
+      class="bpk-chat-bubble__content"
     >
       Hello there
     </div>
