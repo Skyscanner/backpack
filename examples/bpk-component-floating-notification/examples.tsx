@@ -64,10 +64,30 @@ const CriticalExample = () => (
   />
 );
 
+const CriticalWithIconExample = () => (
+  <BpkFloatingNotification
+    icon={BpkIconHeart}
+    text="Critical notification"
+    type={NOTIFICATION_TYPES.critical}
+    hideAfter={8000}
+  />
+);
+
+const CriticalWithCtaExample = () => (
+  <BpkFloatingNotification
+    ctaText="View"
+    text="Critical notification"
+    type={NOTIFICATION_TYPES.critical}
+    hideAfter={8000}
+  />
+);
+
 export {
   CtaIconLongTextExample,
   CtaExample,
   CriticalExample,
+  CriticalWithCtaExample,
+  CriticalWithIconExample,
   DefaultExample,
   IconExample,
   VisualTestExample,

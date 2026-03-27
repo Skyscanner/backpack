@@ -22,6 +22,8 @@ import {
   CtaIconLongTextExample,
   CtaExample,
   CriticalExample,
+  CriticalWithCtaExample,
+  CriticalWithIconExample,
   DefaultExample,
   IconExample,
   VisualTestExample,
@@ -38,6 +40,10 @@ export const WithIcon = IconExample;
 export const WithCta = CtaExample;
 
 export const Critical = CriticalExample;
+
+export const CriticalWithIcon = CriticalWithIconExample;
+
+export const CriticalWithCta = CriticalWithCtaExample;
 
 export const WithCtaIconAndLongText = CtaIconLongTextExample;
 
