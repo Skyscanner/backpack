@@ -11,7 +11,6 @@ exports[`BpkAiBlurb snapshots should render error state correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -53,7 +52,6 @@ exports[`BpkAiBlurb snapshots should render loading state correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -104,7 +102,6 @@ exports[`BpkAiBlurb snapshots should render post-vote state correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -151,7 +148,6 @@ exports[`BpkAiBlurb snapshots should render success state correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
