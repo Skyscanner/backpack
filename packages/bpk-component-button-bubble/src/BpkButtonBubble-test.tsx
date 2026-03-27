@@ -252,9 +252,9 @@ describe('BpkButtonBubble', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('should not show feedback buttons on user bubble even when showFeedback is true', () => {
+  it('should not show feedback buttons on user bubble', () => {
     render(
-      <BpkButtonBubble type="user" showFeedback>
+      <BpkButtonBubble type="user">
         User message
       </BpkButtonBubble>,
     );
@@ -263,10 +263,10 @@ describe('BpkButtonBubble', () => {
     ).not.toBeInTheDocument();
   });
 
-  it('should not show feedback buttons on retry bubble even when showFeedback is true', () => {
+  it('should not show feedback buttons on retry bubble', () => {
     const onRetry = jest.fn();
     render(
-      <BpkButtonBubble type="retry" onRetry={onRetry} retryLabel="Try again" showFeedback>
+      <BpkButtonBubble type="retry" onRetry={onRetry} retryLabel="Try again">
         Something went wrong.
       </BpkButtonBubble>,
     );
