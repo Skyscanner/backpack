@@ -21,6 +21,7 @@
       "bpk-component-card-button/src/*": "@skyscanner/backpack-web/bpk-component-card-button",
       "bpk-component-card-list/src/*": "@skyscanner/backpack-web/bpk-component-card-list",
       "bpk-component-carousel/src/*": "@skyscanner/backpack-web/bpk-component-carousel",
+      "bpk-component-chat-thought-bubble/src/*": "@skyscanner/backpack-web/bpk-component-chat-thought-bubble",
       "bpk-component-checkbox/src/*": "@skyscanner/backpack-web/bpk-component-checkbox",
       "bpk-component-checkbox-card/src/*": "@skyscanner/backpack-web/bpk-component-checkbox-card",
       "bpk-component-chip/src/*": "@skyscanner/backpack-web/bpk-component-chip",

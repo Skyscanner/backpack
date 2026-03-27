@@ -16,28 +16,17 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import figma from '@figma/code-connect';
 
-import { Dialog } from '@ark-ui/react';
+import BpkChatThoughtBubble from './BpkChatThoughtBubble';
 
-import { getDataComponentAttribute } from '../../../../bpk-react-utils';
-
-type BpkModalV3TriggerProps = {
-  children: ReactNode;
-  asChild?: boolean;
-};
-
-const BpkModalV3Trigger = ({
-  asChild,
-  children,
-}: BpkModalV3TriggerProps) => (
-  <Dialog.Trigger
-    asChild={asChild}
-    {...getDataComponentAttribute('ModalV3Trigger')}
-  >
-    {children}
-  </Dialog.Trigger>
+figma.connect(
+  BpkChatThoughtBubble,
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=14703%3A2864',
+  {
+    props: {
+      content: figma.textContent('Label'),
+    },
+    example: ({ content }) => <BpkChatThoughtBubble content={content} />,
+  },
 );
-
-export default BpkModalV3Trigger;
-export type { BpkModalV3TriggerProps };

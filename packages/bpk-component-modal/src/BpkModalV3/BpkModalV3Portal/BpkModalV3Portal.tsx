@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Portal } from '@ark-ui/react/portal';
+import { Portal } from '@ark-ui/react';
 
 type BpkModalV3PortalProps = {
   children: ReactNode;
