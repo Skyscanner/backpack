@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Dialog } from '@ark-ui/react/dialog';
+import { Dialog } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 import { useModalType } from '../BpkModalV3Context';
