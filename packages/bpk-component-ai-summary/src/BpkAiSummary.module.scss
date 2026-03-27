@@ -1,0 +1,118 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+
+.bpk-ai-summary {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.bpk-spacing-sm();
+
+  &__header {
+    display: flex;
+    align-items: center;
+    color: tokens.$bpk-text-secondary-day;
+    gap: tokens.bpk-spacing-sm();
+
+    // Apply secondary colour to the AI spark icon SVG
+    svg {
+      fill: currentcolor;
+    }
+  }
+
+  // No enforced styles on the summary slot — intentional.
+  // Backpack does not control typography or layout inside Summary, as a slot this will be added by the consumer.
+  &__summary {
+    display: block;
+  }
+
+  &__feedback {
+    display: flex;
+    align-items: center;
+    gap: tokens.bpk-spacing-sm();
+  }
+
+  &__feedback-thumb {
+    display: inline-flex;
+    padding: 0;
+    align-items: center;
+    border: none;
+    background: none;
+    color: tokens.$bpk-text-primary-day;
+    cursor: pointer;
+
+    svg {
+      fill: currentcolor;
+    }
+
+    &:hover {
+      color: tokens.$bpk-core-primary-day;
+
+      svg {
+        fill: currentcolor;
+      }
+    }
+
+    &:focus-visible {
+      border-radius: tokens.$bpk-border-radius-xs;
+      outline: tokens.$bpk-border-size-xl solid tokens.$bpk-core-primary-day;
+    }
+  }
+
+  &__ellipsis {
+    display: inline-flex;
+    vertical-align: bottom;
+    gap: 0.1em;
+    margin-inline-start: 0.1em;
+
+    &-dot {
+      display: inline-block;
+      width: 0.25em;
+      height: 0.25em;
+      border-radius: 50%;
+      background-color: currentcolor;
+      animation: bpk-ai-summary-ellipsis-dot 1.4s infinite ease-in-out both;
+
+      @media (prefers-reduced-motion: reduce) {
+        opacity: 1;
+        animation: none;
+      }
+
+      &--2 {
+        animation-delay: 0.2s;
+      }
+
+      &--3 {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+}
+
+@keyframes bpk-ai-summary-ellipsis-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
