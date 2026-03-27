@@ -18,7 +18,7 @@
 
 import { useState } from 'react';
 
-import BpkChatBubble from '../../packages/bpk-component-chat-bubble/src/BpkChatBubble';
+import BpkButtonBubble from '../../packages/bpk-component-button-bubble/src/BpkButtonBubble';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import type { ThumbsButtonType } from '../../packages/bpk-component-thumb-button';
@@ -28,42 +28,42 @@ import STYLES from './examples.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const UserBubbleExample = () => (
-  <div className={getClassName('bpk-chat-bubble-examples')}>
-    <BpkChatBubble type="user">
+  <div className={getClassName('bpk-button-bubble-examples')}>
+    <BpkButtonBubble type="user">
       What should I do if I booked on the wrong date?
-    </BpkChatBubble>
+    </BpkButtonBubble>
   </div>
 );
 
 export const BotBubbleExample = () => (
-  <div className={getClassName('bpk-chat-bubble-examples')}>
-    <BpkChatBubble type="bot">
+  <div className={getClassName('bpk-button-bubble-examples')}>
+    <BpkButtonBubble type="bot">
       {"Hey! I'm your car hire assistant. Feel free to ask me anything about renting a car, and I\u0027ll put my thinking cap on."}
-    </BpkChatBubble>
+    </BpkButtonBubble>
   </div>
 );
 
 export const RetryBubbleExample = () => (
-  <div className={getClassName('bpk-chat-bubble-examples')}>
-    <BpkChatBubble
+  <div className={getClassName('bpk-button-bubble-examples')}>
+    <BpkButtonBubble
       type="retry"
       onRetry={() => {}}
       retryLabel="Try again"
     >
       Sorry, I couldn&apos;t connect. Please check your connection.
-    </BpkChatBubble>
+    </BpkButtonBubble>
   </div>
 );
 
 export const SuggestionBubbleExample = () => (
-  <div className={getClassName('bpk-chat-bubble-examples')}>
-    <BpkChatBubble
+  <div className={getClassName('bpk-button-bubble-examples')}>
+    <BpkButtonBubble
       type="suggestion"
       onSuggestionClick={() => {}}
       suggestionAriaLabel="What are the cheapest rental options?"
     >
       What are the cheapest rental options?
-    </BpkChatBubble>
+    </BpkButtonBubble>
   </div>
 );
 
@@ -71,8 +71,8 @@ export const BotBubbleWithFeedbackExample = () => {
   const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
 
   return (
-    <div className={getClassName('bpk-chat-bubble-examples')}>
-      <BpkChatBubble
+    <div className={getClassName('bpk-button-bubble-examples')}>
+      <BpkButtonBubble
         type="bot"
         showFeedback
         selectedFeedback={selected}
@@ -80,28 +80,28 @@ export const BotBubbleWithFeedbackExample = () => {
       >
         You can modify your booking by calling the car hire company directly or
         using their online portal.
-      </BpkChatBubble>
+      </BpkButtonBubble>
     </div>
   );
 };
 
 export const SequenceExample = () => (
-  <div className={getClassName('bpk-chat-bubble-examples')}>
-    <BpkChatBubble type="bot" systemPosition="first" animationDelay={0}>
+  <div className={getClassName('bpk-button-bubble-examples')}>
+    <BpkButtonBubble type="bot" systemPosition="first" animationDelay={0}>
       I can help with that!
-    </BpkChatBubble>
-    <BpkChatBubble type="bot" systemPosition="middle" animationDelay={50}>
+    </BpkButtonBubble>
+    <BpkButtonBubble type="bot" systemPosition="middle" animationDelay={50}>
       Here are the steps to modify your booking:
-    </BpkChatBubble>
-    <BpkChatBubble type="bot" systemPosition="last" animationDelay={100}>
+    </BpkButtonBubble>
+    <BpkButtonBubble type="bot" systemPosition="last" animationDelay={100}>
       {"1. Log in to the website\n2. Find your booking\n3. Select 'Modify'"}
-    </BpkChatBubble>
-    <BpkChatBubble type="user" userPosition="first" animationDelay={200}>
+    </BpkButtonBubble>
+    <BpkButtonBubble type="user" userPosition="first" animationDelay={200}>
       Thanks, that helped!
-    </BpkChatBubble>
-    <BpkChatBubble type="user" userPosition="last" animationDelay={250}>
+    </BpkButtonBubble>
+    <BpkButtonBubble type="user" userPosition="last" animationDelay={250}>
       Got it sorted now.
-    </BpkChatBubble>
+    </BpkButtonBubble>
   </div>
 );
 
@@ -109,25 +109,25 @@ export const MixedExample = () => {
   const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
 
   return (
-    <div className={getClassName('bpk-chat-bubble-examples')}>
-      <BpkChatBubble type="bot">
+    <div className={getClassName('bpk-button-bubble-examples')}>
+      <BpkButtonBubble type="bot">
         Hey! I&apos;m your car hire assistant. Feel free to ask me anything
         about renting a car, and I&apos;ll put my thinking cap on.
-      </BpkChatBubble>
-      <BpkChatBubble type="user">
+      </BpkButtonBubble>
+      <BpkButtonBubble type="user">
         What should I do if I booked on the wrong date?
-      </BpkChatBubble>
-      <BpkChatBubble type="retry" onRetry={() => {}} retryLabel="Try again">
+      </BpkButtonBubble>
+      <BpkButtonBubble type="retry" onRetry={() => {}} retryLabel="Try again">
         Sorry, I couldn&apos;t connect. Please check your connection.
-      </BpkChatBubble>
-      <BpkChatBubble
+      </BpkButtonBubble>
+      <BpkButtonBubble
         type="suggestion"
         onSuggestionClick={() => {}}
         suggestionAriaLabel="What are the cheapest rental options?"
       >
         What are the cheapest rental options?
-      </BpkChatBubble>
-      <BpkChatBubble
+      </BpkButtonBubble>
+      <BpkButtonBubble
         type="bot"
         showFeedback
         selectedFeedback={selected}
@@ -135,19 +135,19 @@ export const MixedExample = () => {
       >
         You can modify your booking by calling the car hire company directly or
         using their online portal.
-      </BpkChatBubble>
-      <BpkChatBubble type="bot" systemPosition="first" animationDelay={0}>
+      </BpkButtonBubble>
+      <BpkButtonBubble type="bot" systemPosition="first" animationDelay={0}>
         I can help with that!
-      </BpkChatBubble>
-      <BpkChatBubble type="bot" systemPosition="last" animationDelay={50}>
+      </BpkButtonBubble>
+      <BpkButtonBubble type="bot" systemPosition="last" animationDelay={50}>
         Here are the steps to modify your booking.
-      </BpkChatBubble>
-      <BpkChatBubble type="user" userPosition="first" animationDelay={100}>
+      </BpkButtonBubble>
+      <BpkButtonBubble type="user" userPosition="first" animationDelay={100}>
         Thanks, that helped!
-      </BpkChatBubble>
-      <BpkChatBubble type="user" userPosition="last" animationDelay={150}>
+      </BpkButtonBubble>
+      <BpkButtonBubble type="user" userPosition="last" animationDelay={150}>
         Got it sorted now.
-      </BpkChatBubble>
+      </BpkButtonBubble>
     </div>
   );
 };

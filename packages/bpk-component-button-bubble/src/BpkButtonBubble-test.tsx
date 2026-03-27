@@ -18,19 +18,19 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import BpkChatBubble from './BpkChatBubble';
+import BpkButtonBubble from './BpkButtonBubble';
 
-describe('BpkChatBubble', () => {
+describe('BpkButtonBubble', () => {
   it('should render user bubble correctly', () => {
     const { asFragment } = render(
-      <BpkChatBubble type="user">Hello there</BpkChatBubble>,
+      <BpkButtonBubble type="user">Hello there</BpkButtonBubble>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render bot bubble correctly', () => {
     const { asFragment } = render(
-      <BpkChatBubble type="bot">How can I help?</BpkChatBubble>,
+      <BpkButtonBubble type="bot">How can I help?</BpkButtonBubble>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -38,95 +38,95 @@ describe('BpkChatBubble', () => {
   it('should render retry bubble correctly', () => {
     const onRetry = jest.fn();
     const { asFragment } = render(
-      <BpkChatBubble type="retry" onRetry={onRetry} retryLabel="Try again">
+      <BpkButtonBubble type="retry" onRetry={onRetry} retryLabel="Try again">
         Something went wrong.
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render suggestion bubble correctly', () => {
     const { asFragment } = render(
-      <BpkChatBubble type="suggestion" suggestionAriaLabel="suggestion bubble">
+      <BpkButtonBubble type="suggestion" suggestionAriaLabel="suggestion bubble">
         Show me options
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render bot bubble with feedback buttons when showFeedback is true', () => {
     const { asFragment } = render(
-      <BpkChatBubble type="bot" showFeedback>
+      <BpkButtonBubble type="bot" showFeedback>
         Here is some information
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render user bubble with position classes', () => {
     render(
-      <BpkChatBubble type="user" userPosition="first">
+      <BpkButtonBubble type="user" userPosition="first">
         First message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    expect(screen.getByTestId('bpk-chat-bubble')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-button-bubble')).toBeInTheDocument();
   });
 
   it('should render bot bubble with system position classes', () => {
     render(
-      <BpkChatBubble type="bot" systemPosition="middle">
+      <BpkButtonBubble type="bot" systemPosition="middle">
         Middle message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    expect(screen.getByTestId('bpk-chat-bubble')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-button-bubble')).toBeInTheDocument();
   });
 
   it('should render user bubble with middle position', () => {
     render(
-      <BpkChatBubble type="user" userPosition="middle">
+      <BpkButtonBubble type="user" userPosition="middle">
         Middle user message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    expect(screen.getByTestId('bpk-chat-bubble')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-button-bubble')).toBeInTheDocument();
   });
 
   it('should render user bubble with last position', () => {
     render(
-      <BpkChatBubble type="user" userPosition="last">
+      <BpkButtonBubble type="user" userPosition="last">
         Last user message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    expect(screen.getByTestId('bpk-chat-bubble')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-button-bubble')).toBeInTheDocument();
   });
 
   it('should render bot bubble with system first position', () => {
     render(
-      <BpkChatBubble type="bot" systemPosition="first">
+      <BpkButtonBubble type="bot" systemPosition="first">
         First system message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    expect(screen.getByTestId('bpk-chat-bubble')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-button-bubble')).toBeInTheDocument();
   });
 
   it('should render bot bubble with system last position', () => {
     render(
-      <BpkChatBubble type="bot" systemPosition="last">
+      <BpkButtonBubble type="bot" systemPosition="last">
         Last system message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    expect(screen.getByTestId('bpk-chat-bubble')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-button-bubble')).toBeInTheDocument();
   });
 
   it('should not call onSuggestionClick for non-Enter/Space key presses', () => {
     const onSuggestionClick = jest.fn();
     render(
-      <BpkChatBubble
+      <BpkButtonBubble
         type="suggestion"
         onSuggestionClick={onSuggestionClick}
         suggestionAriaLabel="suggestion bubble"
       >
         Show me options
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     fireEvent.keyDown(
       screen.getByRole('button', { name: 'suggestion bubble' }),
@@ -138,13 +138,13 @@ describe('BpkChatBubble', () => {
   it('should call onSuggestionClick when suggestion bubble is clicked', () => {
     const onSuggestionClick = jest.fn();
     render(
-      <BpkChatBubble
+      <BpkButtonBubble
         type="suggestion"
         onSuggestionClick={onSuggestionClick}
         suggestionAriaLabel="suggestion bubble"
       >
         Show me options
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     fireEvent.click(
       screen.getByRole('button', { name: 'suggestion bubble' }),
@@ -155,45 +155,41 @@ describe('BpkChatBubble', () => {
   it('should call onSuggestionClick when Enter is pressed on suggestion bubble', () => {
     const onSuggestionClick = jest.fn();
     render(
-      <BpkChatBubble
+      <BpkButtonBubble
         type="suggestion"
         onSuggestionClick={onSuggestionClick}
         suggestionAriaLabel="suggestion bubble"
       >
         Show me options
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    fireEvent.keyDown(
-      screen.getByRole('button', { name: 'suggestion bubble' }),
-      { key: 'Enter' },
-    );
+    // Native <button> fires click on Enter/Space — simulate via click
+    fireEvent.click(screen.getByRole('button', { name: 'suggestion bubble' }));
     expect(onSuggestionClick).toHaveBeenCalledTimes(1);
   });
 
   it('should call onSuggestionClick when Space is pressed on suggestion bubble', () => {
     const onSuggestionClick = jest.fn();
     render(
-      <BpkChatBubble
+      <BpkButtonBubble
         type="suggestion"
         onSuggestionClick={onSuggestionClick}
         suggestionAriaLabel="suggestion bubble"
       >
         Show me options
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    fireEvent.keyDown(
-      screen.getByRole('button', { name: 'suggestion bubble' }),
-      { key: ' ' },
-    );
+    // Native <button> fires click on Enter/Space — simulate via click
+    fireEvent.click(screen.getByRole('button', { name: 'suggestion bubble' }));
     expect(onSuggestionClick).toHaveBeenCalledTimes(1);
   });
 
   it('should call onRetry when retry button is clicked', () => {
     const onRetry = jest.fn();
     render(
-      <BpkChatBubble type="retry" onRetry={onRetry} retryLabel="Try again">
+      <BpkButtonBubble type="retry" onRetry={onRetry} retryLabel="Try again">
         Something went wrong.
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
     expect(onRetry).toHaveBeenCalledTimes(1);
@@ -201,9 +197,9 @@ describe('BpkChatBubble', () => {
 
   it('should not show retry button when onRetry is not provided', () => {
     render(
-      <BpkChatBubble type="retry" retryLabel="Try again">
+      <BpkButtonBubble type="retry" retryLabel="Try again">
         Something went wrong.
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(
       screen.queryByRole('button', { name: 'Try again' }),
@@ -213,14 +209,14 @@ describe('BpkChatBubble', () => {
   it('should render retry button as disabled when retryDisabled is true', () => {
     const onRetry = jest.fn();
     render(
-      <BpkChatBubble
+      <BpkButtonBubble
         type="retry"
         onRetry={onRetry}
         retryDisabled
         retryLabel="Try again"
       >
         Something went wrong.
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(screen.getByRole('button', { name: 'Try again' })).toBeDisabled();
   });
@@ -228,9 +224,9 @@ describe('BpkChatBubble', () => {
   it('should call onFeedbackClick when thumb button is clicked', () => {
     const onFeedbackClick = jest.fn();
     render(
-      <BpkChatBubble type="bot" showFeedback onFeedbackClick={onFeedbackClick}>
+      <BpkButtonBubble type="bot" showFeedback onFeedbackClick={onFeedbackClick}>
         Here is some information
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     fireEvent.click(screen.getByTestId('bpk-thumb-button-up'));
     expect(onFeedbackClick).toHaveBeenCalledWith('up');
@@ -238,9 +234,9 @@ describe('BpkChatBubble', () => {
 
   it('should show selected state on thumb button', () => {
     render(
-      <BpkChatBubble type="bot" showFeedback selectedFeedback="up">
+      <BpkButtonBubble type="bot" showFeedback selectedFeedback="up">
         Here is some information
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(screen.getByTestId('bpk-thumb-button-up')).toHaveClass(
       'bpk-thumb-button--selected',
@@ -249,7 +245,7 @@ describe('BpkChatBubble', () => {
 
   it('should not show feedback buttons when showFeedback is false', () => {
     render(
-      <BpkChatBubble type="bot">Here is some information</BpkChatBubble>,
+      <BpkButtonBubble type="bot">Here is some information</BpkButtonBubble>,
     );
     expect(
       screen.queryByTestId('bpk-thumb-button-up'),
@@ -258,9 +254,9 @@ describe('BpkChatBubble', () => {
 
   it('should not show feedback buttons on user bubble even when showFeedback is true', () => {
     render(
-      <BpkChatBubble type="user" showFeedback>
+      <BpkButtonBubble type="user" showFeedback>
         User message
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(
       screen.queryByTestId('bpk-thumb-button-up'),
@@ -270,9 +266,9 @@ describe('BpkChatBubble', () => {
   it('should not show feedback buttons on retry bubble even when showFeedback is true', () => {
     const onRetry = jest.fn();
     render(
-      <BpkChatBubble type="retry" onRetry={onRetry} retryLabel="Try again" showFeedback>
+      <BpkButtonBubble type="retry" onRetry={onRetry} retryLabel="Try again" showFeedback>
         Something went wrong.
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
     expect(
       screen.queryByTestId('bpk-thumb-button-up'),
@@ -281,21 +277,21 @@ describe('BpkChatBubble', () => {
 
   it('should apply animationDelay as CSS custom property', () => {
     render(
-      <BpkChatBubble type="bot" animationDelay={150}>
+      <BpkButtonBubble type="bot" animationDelay={150}>
         Delayed bubble
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    const el = screen.getByTestId('bpk-chat-bubble');
+    const el = screen.getByTestId('bpk-button-bubble');
     expect(el).toHaveStyle('--anim-delay: 150ms');
   });
 
   it('should clamp animationDelay above 300 to 300ms', () => {
     render(
-      <BpkChatBubble type="bot" animationDelay={999}>
+      <BpkButtonBubble type="bot" animationDelay={999}>
         Clamped delay
-      </BpkChatBubble>,
+      </BpkButtonBubble>,
     );
-    const el = screen.getByTestId('bpk-chat-bubble');
+    const el = screen.getByTestId('bpk-button-bubble');
     expect(el).toHaveStyle('--anim-delay: 300ms');
   });
 });

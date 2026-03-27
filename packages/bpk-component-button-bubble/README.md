@@ -1,4 +1,4 @@
-# bpk-component-chat-bubble
+# bpk-component-button-bubble
 
 > Backpack chat bubble component.
 
@@ -9,10 +9,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkChatBubble from '@skyscanner/backpack-web/bpk-component-chat-bubble';
+import BpkButtonBubble from '@skyscanner/backpack-web/bpk-component-button-bubble';
 
 export default () => (
-  <BpkChatBubble type="bot">How can I help you today?</BpkChatBubble>
+  <BpkButtonBubble type="bot">How can I help you today?</BpkButtonBubble>
 );
 ```
 

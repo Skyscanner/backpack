@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
+@use '../../bpk-mixins/shadows';
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
-@keyframes bpk-chat-bubble-entrance {
+@keyframes bpk-button-bubble-entrance {
   from {
     transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
     opacity: 0;
@@ -32,7 +33,7 @@
   }
 }
 
-@keyframes bpk-chat-bubble-entrance-reduced {
+@keyframes bpk-button-bubble-entrance-reduced {
   from {
     opacity: 0;
   }
@@ -42,7 +43,7 @@
   }
 }
 
-%bpk-chat-bubble-base {
+%bpk-button-bubble-base {
   width: fit-content;
   max-width: tokens.$bpk-one-pixel-rem * 280;
   padding: tokens.bpk-spacing-base();
@@ -52,19 +53,19 @@
   word-wrap: break-word;
 }
 
-%bpk-chat-bubble-left {
+%bpk-button-bubble-left {
   align-self: flex-start;
 }
 
-%bpk-chat-bubble-right {
+%bpk-button-bubble-right {
   align-self: flex-end;
 }
 
-%bpk-chat-bubble-radius-all-lg {
+%bpk-button-bubble-radius-all-lg {
   border-radius: tokens.$bpk-border-radius-lg;
 }
 
-@mixin bpk-chat-bubble-corner($side, $tail-position) {
+@mixin bpk-button-bubble-corner($side, $tail-position) {
   @if $side == 'left' {
     @if $tail-position == 'top' {
       border-top-left-radius: tokens.$bpk-border-radius-xs;
@@ -120,8 +121,8 @@
   }
 }
 
-.bpk-chat-bubble {
-  @extend %bpk-chat-bubble-base;
+.bpk-button-bubble {
+  @extend %bpk-button-bubble-base;
 
   @include utils.bpk-rtl {
     direction: rtl;
@@ -130,20 +131,20 @@
   &--animated {
     transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
     opacity: 0;
-    animation: bpk-chat-bubble-entrance tokens.$bpk-duration-sm
+    animation: bpk-button-bubble-entrance tokens.$bpk-duration-sm
       cubic-bezier(0.2, 0, 0, 1) forwards;
     animation-delay: var(--anim-delay, 0ms);
 
     @media (prefers-reduced-motion: reduce) {
-      animation: bpk-chat-bubble-entrance-reduced tokens.$bpk-duration-sm
+      animation: bpk-button-bubble-entrance-reduced tokens.$bpk-duration-sm
         ease-out forwards;
     }
   }
 
   &--bot,
   &--retry {
-    @extend %bpk-chat-bubble-left;
-    @extend %bpk-chat-bubble-radius-all-lg;
+    @extend %bpk-button-bubble-left;
+    @extend %bpk-button-bubble-radius-all-lg;
 
     text-align: start;
 
@@ -153,8 +154,8 @@
   }
 
   &--user {
-    @extend %bpk-chat-bubble-right;
-    @extend %bpk-chat-bubble-radius-all-lg;
+    @extend %bpk-button-bubble-right;
+    @extend %bpk-button-bubble-radius-all-lg;
 
     background: tokens.$bpk-core-accent-day;
     color: tokens.$bpk-text-on-dark-day;
@@ -166,7 +167,8 @@
   }
 
   &--suggestion {
-    @extend %bpk-chat-bubble-radius-all-lg;
+    @extend %bpk-button-bubble-right;
+    @extend %bpk-button-bubble-radius-all-lg;
 
     width: fit-content;
     transition:
@@ -178,7 +180,7 @@
     text-align: end;
     cursor: pointer;
 
-    @include bpk-chat-bubble-corner('right', 'bottom');
+    @include bpk-button-bubble-corner('right', 'bottom');
 
     @include utils.bpk-rtl {
       text-align: start;
@@ -186,39 +188,38 @@
 
     @include utils.bpk-hover {
       transform: translateY(-(tokens.$bpk-one-pixel-rem));
-      box-shadow: 0 tokens.$bpk-border-size-lg (tokens.$bpk-one-pixel-rem * 4)
-        tokens.$bpk-line-day;
+
+      @include shadows.bpk-box-shadow-sm;
     }
 
     &:active {
       transform: translateY(0);
-      box-shadow: 0 tokens.$bpk-one-pixel-rem (tokens.$bpk-one-pixel-rem * 2)
-        tokens.$bpk-line-day;
+      box-shadow: none;
     }
   }
 
   &--system-first {
-    @include bpk-chat-bubble-corner('left', 'bottom');
+    @include bpk-button-bubble-corner('left', 'bottom');
   }
 
   &--system-middle {
-    @include bpk-chat-bubble-corner('left', 'both');
+    @include bpk-button-bubble-corner('left', 'both');
   }
 
   &--system-last {
-    @include bpk-chat-bubble-corner('left', 'top');
+    @include bpk-button-bubble-corner('left', 'top');
   }
 
   &--user-first {
-    @include bpk-chat-bubble-corner('right', 'bottom');
+    @include bpk-button-bubble-corner('right', 'bottom');
   }
 
   &--user-middle {
-    @include bpk-chat-bubble-corner('right', 'both');
+    @include bpk-button-bubble-corner('right', 'both');
   }
 
   &--user-last {
-    @include bpk-chat-bubble-corner('right', 'top');
+    @include bpk-button-bubble-corner('right', 'top');
   }
 
   &__content {
@@ -237,6 +238,7 @@
 
   &__retry-button {
     display: inline-flex;
+    min-height: 2.75rem;
     padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
     align-items: center;
     border: none;

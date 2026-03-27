@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkChatBubble from '../../packages/bpk-component-chat-bubble/src/BpkChatBubble';
+import BpkButtonBubble from '../../packages/bpk-component-button-bubble/src/BpkButtonBubble';
 
 import {
   BotBubbleExample,
@@ -29,8 +29,8 @@ import {
 } from './examples';
 
 export default {
-  title: 'bpk-component-chat-bubble',
-  component: BpkChatBubble,
+  title: 'bpk-component-button-bubble',
+  component: BpkButtonBubble,
 };
 
 export const UserBubble = UserBubbleExample;
