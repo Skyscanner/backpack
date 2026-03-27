@@ -18,15 +18,20 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import { withAlignment } from '../../bpk-component-icon';
 import RedoSmIcon from '../../bpk-component-icon/sm/redo';
 import BpkThumbButton from '../../bpk-component-thumb-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { iconSizeSm, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 
 import STYLES from './BpkButtonBubble.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+const AlignedRedoIcon = withAlignment(RedoSmIcon, lineHeightBase, iconSizeSm);
 
 const clampAndSnap = (ms: number, max = 300): number => {
   const v = Math.min(ms, max);
@@ -143,15 +148,16 @@ const BpkButtonBubble = (props: BpkButtonBubbleProps) => {
         {children}
         {isRetry && onRetry && (
           <div className={getClassName('bpk-button-bubble__retry')}>
-            <button
-              type="button"
+            <BpkButton
+              type={BUTTON_TYPES.primary}
+              size={SIZE_TYPES.small}
               className={getClassName('bpk-button-bubble__retry-button')}
               onClick={onRetry}
               disabled={retryDisabled}
             >
-              <RedoSmIcon />
+              <AlignedRedoIcon className={getClassName('bpk-button-bubble__retry-icon')} />
               {retryLabel}
-            </button>
+            </BpkButton>
           </div>
         )}
       </div>

@@ -237,23 +237,7 @@
   }
 
   &__retry-button {
-    display: inline-flex;
-    min-height: 2.75rem;
-    padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-base();
-    align-items: center;
-    border: none;
-    border-radius: tokens.$bpk-border-radius-sm;
-    background: tokens.$bpk-core-primary-day;
-    color: tokens.$bpk-text-on-dark-day;
-    cursor: pointer;
     gap: tokens.bpk-spacing-md();
-
-    @include typography.bpk-body-default;
-
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
   }
 
   &__thumbs {
