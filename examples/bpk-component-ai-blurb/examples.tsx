@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import BpkAiSummary from '../../packages/bpk-component-ai-summary/src/BpkAiSummary';
+import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
@@ -27,59 +27,59 @@ const SUMMARY_TEXT =
   'The first EasyTerra deal offers the lowest price and better insurance coverage. The second EasyTerra deal has a higher price but offers a more spacious car type.';
 
 export const DefaultExample = () => (
-  <div className={getClassName('bpk-ai-summary-examples')}>
-    <BpkAiSummary.Root>
-      <BpkAiSummary.Header title="Summarized by AI" />
-      <BpkAiSummary.Summary>{SUMMARY_TEXT}</BpkAiSummary.Summary>
-      <BpkAiSummary.Feedback
+  <div className={getClassName('bpk-ai-blurb-examples')}>
+    <BpkAiBlurb.Root>
+      <BpkAiBlurb.Header title="Summarized by AI" />
+      <BpkAiBlurb.Summary>{SUMMARY_TEXT}</BpkAiBlurb.Summary>
+      <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
         onFeedback={(positive) =>
           console.log(`Feedback: ${positive ? 'positive' : 'negative'}`)
         }
       />
-    </BpkAiSummary.Root>
+    </BpkAiBlurb.Root>
   </div>
 );
 
 export const LoadingExample = () => (
-  <div className={getClassName('bpk-ai-summary-examples')}>
-    <BpkAiSummary.Root>
-      <BpkAiSummary.Header title="Summarized by AI" />
-      <BpkAiSummary.Summary>
+  <div className={getClassName('bpk-ai-blurb-examples')}>
+    <BpkAiBlurb.Root>
+      <BpkAiBlurb.Header title="Summarized by AI" />
+      <BpkAiBlurb.Summary>
         Comparing your shortlist
-        <BpkAiSummary.Ellipsis />
-      </BpkAiSummary.Summary>
-    </BpkAiSummary.Root>
+        <BpkAiBlurb.Ellipsis />
+      </BpkAiBlurb.Summary>
+    </BpkAiBlurb.Root>
   </div>
 );
 
 export const ErrorGeneralExample = () => (
-  <div className={getClassName('bpk-ai-summary-examples')}>
-    <BpkAiSummary.Root>
-      <BpkAiSummary.Header title="Summarized by AI" />
-      <BpkAiSummary.Summary>
+  <div className={getClassName('bpk-ai-blurb-examples')}>
+    <BpkAiBlurb.Root>
+      <BpkAiBlurb.Header title="Summarized by AI" />
+      <BpkAiBlurb.Summary>
         Couldn&apos;t load your summary.{' '}
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a href="#" onClick={(e) => e.preventDefault()}>
           Retry
         </a>
-      </BpkAiSummary.Summary>
-    </BpkAiSummary.Root>
+      </BpkAiBlurb.Summary>
+    </BpkAiBlurb.Root>
   </div>
 );
 
 export const ErrorRefreshLimitExample = () => (
-  <div className={getClassName('bpk-ai-summary-examples')}>
-    <BpkAiSummary.Root>
-      <BpkAiSummary.Header title="Summarized by AI" />
-      <BpkAiSummary.Summary>
+  <div className={getClassName('bpk-ai-blurb-examples')}>
+    <BpkAiBlurb.Root>
+      <BpkAiBlurb.Header title="Summarized by AI" />
+      <BpkAiBlurb.Summary>
         You&apos;ve reached the refresh limit. Please come back later.{' '}
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a href="#" onClick={(e) => e.preventDefault()}>
           Retry
         </a>
-      </BpkAiSummary.Summary>
-    </BpkAiSummary.Root>
+      </BpkAiBlurb.Summary>
+    </BpkAiBlurb.Root>
   </div>
 );

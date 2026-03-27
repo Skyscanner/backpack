@@ -1,4 +1,4 @@
-# bpk-component-ai-summary
+# bpk-component-ai-blurb
 
 > A composable component for displaying AI-generated summaries with a branded header, free-slot content area, loading ellipsis animation, and feedback mechanism.
 
@@ -9,61 +9,61 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkAiSummary from '@skyscanner/backpack-web/bpk-component-ai-summary';
+import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
 
 // Loading state
-<BpkAiSummary.Root>
-  <BpkAiSummary.Header title="Summarized by AI" />
-  <BpkAiSummary.Summary>
-    Comparing your shortlist<BpkAiSummary.Ellipsis />
-  </BpkAiSummary.Summary>
-</BpkAiSummary.Root>
+<BpkAiBlurb.Root>
+  <BpkAiBlurb.Header title="Summarized by AI" />
+  <BpkAiBlurb.Summary>
+    Comparing your shortlist<BpkAiBlurb.Ellipsis />
+  </BpkAiBlurb.Summary>
+</BpkAiBlurb.Root>
 
 // Success state with feedback
-<BpkAiSummary.Root>
-  <BpkAiSummary.Header title="Summarized by AI" />
-  <BpkAiSummary.Summary>{llmText}</BpkAiSummary.Summary>
-  <BpkAiSummary.Feedback
+<BpkAiBlurb.Root>
+  <BpkAiBlurb.Header title="Summarized by AI" />
+  <BpkAiBlurb.Summary>{llmText}</BpkAiBlurb.Summary>
+  <BpkAiBlurb.Feedback
     feedbackText="Was this helpful?"
     thankYouText="Thanks for your feedback!"
     onFeedback={(positive) => console.log(positive)}
   />
-</BpkAiSummary.Root>
+</BpkAiBlurb.Root>
 
 // Error state
-<BpkAiSummary.Root>
-  <BpkAiSummary.Header title="Summarized by AI" />
-  <BpkAiSummary.Summary>
+<BpkAiBlurb.Root>
+  <BpkAiBlurb.Header title="Summarized by AI" />
+  <BpkAiBlurb.Summary>
     Couldn't load your summary. <a onClick={retry}>Retry</a>
-  </BpkAiSummary.Summary>
-</BpkAiSummary.Root>
+  </BpkAiBlurb.Summary>
+</BpkAiBlurb.Root>
 ```
 
 ## Subcomponents
 
-### `BpkAiSummary.Root`
+### `BpkAiBlurb.Root`
 
 | Property | PropType  | Required | Default Value |
 | -------- | --------- | -------- | ------------- |
 | children | ReactNode | true     | -             |
 
-### `BpkAiSummary.Header`
+### `BpkAiBlurb.Header`
 
 | Property | PropType | Required | Default Value |
 | -------- | -------- | -------- | ------------- |
 | title    | string   | true     | -             |
 
-### `BpkAiSummary.Summary`
+### `BpkAiBlurb.Summary`
 
 | Property | PropType  | Required | Default Value |
 | -------- | --------- | -------- | ------------- |
 | children | ReactNode | true     | -             |
 
-### `BpkAiSummary.Ellipsis`
+### `BpkAiBlurb.Ellipsis`
 
 No props. Renders inline animated three-dot loading indicator. Use inside `Summary` at the end of loading text.
 
-### `BpkAiSummary.Feedback`
+### `BpkAiBlurb.Feedback`
 
 | Property     | PropType                        | Required | Default Value |
 | ------------ | ------------------------------- | -------- | ------------- |

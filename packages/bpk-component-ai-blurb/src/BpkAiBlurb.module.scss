@@ -19,7 +19,7 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
 
-.bpk-ai-summary {
+.bpk-ai-blurb {
   display: flex;
   flex-direction: column;
   gap: tokens.bpk-spacing-sm();
@@ -87,7 +87,7 @@
       height: 0.25em;
       border-radius: 50%;
       background-color: currentcolor;
-      animation: bpk-ai-summary-ellipsis-dot 1.4s infinite ease-in-out both;
+      animation: bpk-ai-blurb-ellipsis-dot 1.4s infinite ease-in-out both;
 
       @media (prefers-reduced-motion: reduce) {
         opacity: 1;
@@ -105,7 +105,7 @@
   }
 }
 
-@keyframes bpk-ai-summary-ellipsis-dot {
+@keyframes bpk-ai-blurb-ellipsis-dot {
   0%,
   80%,
   100% {

@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import BpkAiSummary from './src/BpkAiSummary';
+import BpkAiBlurb from './src/BpkAiBlurb';
 
 export type {
-  BpkAiSummaryRootProps,
-  BpkAiSummaryHeaderProps,
-  BpkAiSummarySummaryProps,
-  BpkAiSummaryFeedbackProps,
-  BpkAiSummaryNamespace,
+  BpkAiBlurbRootProps,
+  BpkAiBlurbHeaderProps,
+  BpkAiBlurbSummaryProps,
+  BpkAiBlurbFeedbackProps,
+  BpkAiBlurbNamespace,
 } from './src/common-types';
 
-export default BpkAiSummary;
+export default BpkAiBlurb;

@@ -18,7 +18,7 @@
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from '../BpkAiSummary.module.scss';
+import STYLES from '../BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -27,33 +27,33 @@ const getClassName = cssModules(STYLES);
  * Hidden from assistive technology — ensure surrounding text provides context.
  *
  * @example
- * <BpkAiSummary.Summary>
- *   Comparing your shortlist<BpkAiSummary.Ellipsis />
- * </BpkAiSummary.Summary>
+ * <BpkAiBlurb.Summary>
+ *   Comparing your shortlist<BpkAiBlurb.Ellipsis />
+ * </BpkAiBlurb.Summary>
  *
  * @returns {JSX.Element} Ellipsis component
  */
 const Ellipsis = () => (
   <span
-    className={getClassName('bpk-ai-summary__ellipsis')}
+    className={getClassName('bpk-ai-blurb__ellipsis')}
     aria-hidden="true"
   >
-    <span className={getClassName('bpk-ai-summary__ellipsis-dot')} />
+    <span className={getClassName('bpk-ai-blurb__ellipsis-dot')} />
     <span
       className={getClassName(
-        'bpk-ai-summary__ellipsis-dot',
-        'bpk-ai-summary__ellipsis-dot--2',
+        'bpk-ai-blurb__ellipsis-dot',
+        'bpk-ai-blurb__ellipsis-dot--2',
       )}
     />
     <span
       className={getClassName(
-        'bpk-ai-summary__ellipsis-dot',
-        'bpk-ai-summary__ellipsis-dot--3',
+        'bpk-ai-blurb__ellipsis-dot',
+        'bpk-ai-blurb__ellipsis-dot--3',
       )}
     />
   </span>
 );
 
-Ellipsis.displayName = 'BpkAiSummary.Ellipsis';
+Ellipsis.displayName = 'BpkAiBlurb.Ellipsis';
 
 export default Ellipsis;

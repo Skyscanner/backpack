@@ -20,20 +20,20 @@ import AiIcon from '../../../bpk-component-icon/sm/ai';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { BpkAiSummaryHeaderProps } from '../common-types';
+import type { BpkAiBlurbHeaderProps } from '../common-types';
 
-import STYLES from '../BpkAiSummary.module.scss';
+import STYLES from '../BpkAiBlurb.module.scss';
 
 
 const getClassName = cssModules(STYLES);
 
-const Header = ({ title }: BpkAiSummaryHeaderProps) => (
-  <div className={getClassName('bpk-ai-summary__header')}>
+const Header = ({ title }: BpkAiBlurbHeaderProps) => (
+  <div className={getClassName('bpk-ai-blurb__header')}>
     <AiIcon aria-hidden />
     <BpkText textStyle={TEXT_STYLES.caption}>{title}</BpkText>
   </div>
 );
 
-Header.displayName = 'BpkAiSummary.Header';
+Header.displayName = 'BpkAiBlurb.Header';
 
 export default Header;

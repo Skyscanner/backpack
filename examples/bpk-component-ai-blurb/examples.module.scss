@@ -18,7 +18,7 @@
 
 @use '../../packages/bpk-mixins/tokens';
 
-.bpk-ai-summary-examples {
+.bpk-ai-blurb-examples {
   max-width: 50rem; // 800px - matches Figma design width
   padding: tokens.bpk-spacing-base();
 }

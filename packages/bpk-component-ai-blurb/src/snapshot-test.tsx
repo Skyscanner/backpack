@@ -19,49 +19,49 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkAiSummary from './BpkAiSummary';
+import BpkAiBlurb from './BpkAiBlurb';
 
 const SUMMARY_TEXT =
   'The first EasyTerra deal offers the lowest price and better insurance coverage.';
 
-describe('BpkAiSummary snapshots', () => {
+describe('BpkAiBlurb snapshots', () => {
   it('should render loading state correctly', () => {
     const { asFragment } = render(
-      <BpkAiSummary.Root>
-        <BpkAiSummary.Header title="Summarized by AI" />
-        <BpkAiSummary.Summary>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>
           Comparing your shortlist
-          <BpkAiSummary.Ellipsis />
-        </BpkAiSummary.Summary>
-      </BpkAiSummary.Root>,
+          <BpkAiBlurb.Ellipsis />
+        </BpkAiBlurb.Summary>
+      </BpkAiBlurb.Root>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render success state correctly', () => {
     const { asFragment } = render(
-      <BpkAiSummary.Root>
-        <BpkAiSummary.Header title="Summarized by AI" />
-        <BpkAiSummary.Summary>{SUMMARY_TEXT}</BpkAiSummary.Summary>
-        <BpkAiSummary.Feedback
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>{SUMMARY_TEXT}</BpkAiBlurb.Summary>
+        <BpkAiBlurb.Feedback
           feedbackText="Was this helpful?"
           thankYouText="Thanks for your feedback!"
         />
-      </BpkAiSummary.Root>,
+      </BpkAiBlurb.Root>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render post-vote state correctly', async () => {
     const { asFragment, getByLabelText } = render(
-      <BpkAiSummary.Root>
-        <BpkAiSummary.Header title="Summarized by AI" />
-        <BpkAiSummary.Summary>{SUMMARY_TEXT}</BpkAiSummary.Summary>
-        <BpkAiSummary.Feedback
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>{SUMMARY_TEXT}</BpkAiBlurb.Summary>
+        <BpkAiBlurb.Feedback
           feedbackText="Was this helpful?"
           thankYouText="Thanks for your feedback!"
         />
-      </BpkAiSummary.Root>,
+      </BpkAiBlurb.Root>,
     );
     await userEvent.click(getByLabelText('Thumbs up'));
     expect(asFragment()).toMatchSnapshot();
@@ -69,13 +69,13 @@ describe('BpkAiSummary snapshots', () => {
 
   it('should render error state correctly', () => {
     const { asFragment } = render(
-      <BpkAiSummary.Root>
-        <BpkAiSummary.Header title="Summarized by AI" />
-        <BpkAiSummary.Summary>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>
           You&apos;ve reached the refresh limit. Please come back later.{' '}
           <a href="#retry">Retry</a>
-        </BpkAiSummary.Summary>
-      </BpkAiSummary.Root>,
+        </BpkAiBlurb.Summary>
+      </BpkAiBlurb.Root>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

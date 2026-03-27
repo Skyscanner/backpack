@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkAiSummary snapshots should render error state correctly 1`] = `
+exports[`BpkAiBlurb snapshots should render error state correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-ai-summary"
-    data-backpack-ds-component="AiSummary"
+    class="bpk-ai-blurb"
+    data-backpack-ds-component="AiBlurb"
   >
     <div
-      class="bpk-ai-summary__header"
+      class="bpk-ai-blurb__header"
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-summary__header-icon"
+        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -29,7 +29,7 @@ exports[`BpkAiSummary snapshots should render error state correctly 1`] = `
       </span>
     </div>
     <div
-      class="bpk-ai-summary__summary"
+      class="bpk-ai-blurb__summary"
     >
       You've reached the refresh limit. Please come back later. 
       <a
@@ -42,18 +42,18 @@ exports[`BpkAiSummary snapshots should render error state correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkAiSummary snapshots should render loading state correctly 1`] = `
+exports[`BpkAiBlurb snapshots should render loading state correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-ai-summary"
-    data-backpack-ds-component="AiSummary"
+    class="bpk-ai-blurb"
+    data-backpack-ds-component="AiBlurb"
   >
     <div
-      class="bpk-ai-summary__header"
+      class="bpk-ai-blurb__header"
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-summary__header-icon"
+        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -71,21 +71,21 @@ exports[`BpkAiSummary snapshots should render loading state correctly 1`] = `
       </span>
     </div>
     <div
-      class="bpk-ai-summary__summary"
+      class="bpk-ai-blurb__summary"
     >
       Comparing your shortlist
       <span
         aria-hidden="true"
-        class="bpk-ai-summary__ellipsis"
+        class="bpk-ai-blurb__ellipsis"
       >
         <span
-          class="bpk-ai-summary__ellipsis-dot"
+          class="bpk-ai-blurb__ellipsis-dot"
         />
         <span
-          class="bpk-ai-summary__ellipsis-dot bpk-ai-summary__ellipsis-dot--2"
+          class="bpk-ai-blurb__ellipsis-dot bpk-ai-blurb__ellipsis-dot--2"
         />
         <span
-          class="bpk-ai-summary__ellipsis-dot bpk-ai-summary__ellipsis-dot--3"
+          class="bpk-ai-blurb__ellipsis-dot bpk-ai-blurb__ellipsis-dot--3"
         />
       </span>
     </div>
@@ -93,18 +93,18 @@ exports[`BpkAiSummary snapshots should render loading state correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkAiSummary snapshots should render post-vote state correctly 1`] = `
+exports[`BpkAiBlurb snapshots should render post-vote state correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-ai-summary"
-    data-backpack-ds-component="AiSummary"
+    class="bpk-ai-blurb"
+    data-backpack-ds-component="AiBlurb"
   >
     <div
-      class="bpk-ai-summary__header"
+      class="bpk-ai-blurb__header"
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-summary__header-icon"
+        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -122,12 +122,12 @@ exports[`BpkAiSummary snapshots should render post-vote state correctly 1`] = `
       </span>
     </div>
     <div
-      class="bpk-ai-summary__summary"
+      class="bpk-ai-blurb__summary"
     >
       The first EasyTerra deal offers the lowest price and better insurance coverage.
     </div>
     <div
-      class="bpk-ai-summary__feedback"
+      class="bpk-ai-blurb__feedback"
     >
       <span
         class="bpk-text bpk-text--caption"
@@ -140,18 +140,18 @@ exports[`BpkAiSummary snapshots should render post-vote state correctly 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkAiSummary snapshots should render success state correctly 1`] = `
+exports[`BpkAiBlurb snapshots should render success state correctly 1`] = `
 <DocumentFragment>
   <div
-    class="bpk-ai-summary"
-    data-backpack-ds-component="AiSummary"
+    class="bpk-ai-blurb"
+    data-backpack-ds-component="AiBlurb"
   >
     <div
-      class="bpk-ai-summary__header"
+      class="bpk-ai-blurb__header"
     >
       <svg
         aria-hidden="true"
-        class="bpk-ai-summary__header-icon"
+        class="bpk-ai-blurb__header-icon"
         height="1rem"
         viewBox="0 0 24 24"
         width="1rem"
@@ -169,12 +169,12 @@ exports[`BpkAiSummary snapshots should render success state correctly 1`] = `
       </span>
     </div>
     <div
-      class="bpk-ai-summary__summary"
+      class="bpk-ai-blurb__summary"
     >
       The first EasyTerra deal offers the lowest price and better insurance coverage.
     </div>
     <div
-      class="bpk-ai-summary__feedback"
+      class="bpk-ai-blurb__feedback"
     >
       <span
         class="bpk-text bpk-text--caption"
@@ -184,7 +184,7 @@ exports[`BpkAiSummary snapshots should render success state correctly 1`] = `
       </span>
       <button
         aria-label="Thumbs up"
-        class="bpk-ai-summary__feedback-thumb"
+        class="bpk-ai-blurb__feedback-thumb"
         type="button"
       >
         <svg
@@ -201,7 +201,7 @@ exports[`BpkAiSummary snapshots should render success state correctly 1`] = `
       </button>
       <button
         aria-label="Thumbs down"
-        class="bpk-ai-summary__feedback-thumb"
+        class="bpk-ai-blurb__feedback-thumb"
         type="button"
       >
         <svg

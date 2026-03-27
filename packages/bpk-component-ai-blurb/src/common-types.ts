@@ -18,22 +18,22 @@
 
 import type { ReactNode } from 'react';
 
-export type BpkAiSummaryRootProps = {
+export type BpkAiBlurbRootProps = {
   /** Content to render inside the AI summary container */
   children: ReactNode;
 };
 
-export type BpkAiSummaryHeaderProps = {
+export type BpkAiBlurbHeaderProps = {
   /** Title string displayed next to the AI spark icon. Not translated by Backpack. */
   title: string;
 };
 
-export type BpkAiSummarySummaryProps = {
+export type BpkAiBlurbSummaryProps = {
   /** Free-slot content. Backpack enforces no typography or layout inside. */
   children: ReactNode;
 };
 
-export type BpkAiSummaryFeedbackProps = {
+export type BpkAiBlurbFeedbackProps = {
   /** Text displayed before a vote is cast. e.g. "Was this helpful?" — not translated by Backpack. */
   feedbackText: string;
   /** Text displayed after a vote is cast. e.g. "Thanks for your feedback!" — not translated by Backpack. */
@@ -45,10 +45,10 @@ export type BpkAiSummaryFeedbackProps = {
   onFeedback?: (positive: boolean) => void;
 };
 
-export type BpkAiSummaryNamespace = {
-  Root: { (props: BpkAiSummaryRootProps): ReactNode; displayName?: string };
-  Header: { (props: BpkAiSummaryHeaderProps): ReactNode; displayName?: string };
-  Summary: { (props: BpkAiSummarySummaryProps): ReactNode; displayName?: string };
+export type BpkAiBlurbNamespace = {
+  Root: { (props: BpkAiBlurbRootProps): ReactNode; displayName?: string };
+  Header: { (props: BpkAiBlurbHeaderProps): ReactNode; displayName?: string };
+  Summary: { (props: BpkAiBlurbSummaryProps): ReactNode; displayName?: string };
   Ellipsis: { (): ReactNode; displayName?: string };
-  Feedback: { (props: BpkAiSummaryFeedbackProps): ReactNode; displayName?: string };
+  Feedback: { (props: BpkAiBlurbFeedbackProps): ReactNode; displayName?: string };
 };

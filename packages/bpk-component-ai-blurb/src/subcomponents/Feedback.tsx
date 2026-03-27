@@ -23,9 +23,9 @@ import ThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { BpkAiSummaryFeedbackProps } from '../common-types';
+import type { BpkAiBlurbFeedbackProps } from '../common-types';
 
-import STYLES from '../BpkAiSummary.module.scss';
+import STYLES from '../BpkAiBlurb.module.scss';
 
 
 const getClassName = cssModules(STYLES);
@@ -34,7 +34,7 @@ const Feedback = ({
   feedbackText,
   onFeedback,
   thankYouText,
-}: BpkAiSummaryFeedbackProps) => {
+}: BpkAiBlurbFeedbackProps) => {
   const [hasVoted, setHasVoted] = useState(false);
 
   const handleVote = (positive: boolean) => {
@@ -44,18 +44,18 @@ const Feedback = ({
 
   if (hasVoted) {
     return (
-      <div className={getClassName('bpk-ai-summary__feedback')}>
+      <div className={getClassName('bpk-ai-blurb__feedback')}>
         <BpkText textStyle={TEXT_STYLES.caption}>{thankYouText}</BpkText>
       </div>
     );
   }
 
   return (
-    <div className={getClassName('bpk-ai-summary__feedback')}>
+    <div className={getClassName('bpk-ai-blurb__feedback')}>
       <BpkText textStyle={TEXT_STYLES.caption}>{feedbackText}</BpkText>
       <button
         type="button"
-        className={getClassName('bpk-ai-summary__feedback-thumb')}
+        className={getClassName('bpk-ai-blurb__feedback-thumb')}
         onClick={() => handleVote(true)}
         aria-label="Thumbs up"
       >
@@ -63,7 +63,7 @@ const Feedback = ({
       </button>
       <button
         type="button"
-        className={getClassName('bpk-ai-summary__feedback-thumb')}
+        className={getClassName('bpk-ai-blurb__feedback-thumb')}
         onClick={() => handleVote(false)}
         aria-label="Thumbs down"
       >
@@ -73,6 +73,6 @@ const Feedback = ({
   );
 };
 
-Feedback.displayName = 'BpkAiSummary.Feedback';
+Feedback.displayName = 'BpkAiBlurb.Feedback';
 
 export default Feedback;

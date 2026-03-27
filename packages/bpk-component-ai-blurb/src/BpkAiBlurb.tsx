@@ -22,35 +22,35 @@ import Header from './subcomponents/Header';
 import Root from './subcomponents/Root';
 import Summary from './subcomponents/Summary';
 
-import type { BpkAiSummaryNamespace } from './common-types';
+import type { BpkAiBlurbNamespace } from './common-types';
 
 /**
- * BpkAiSummary is a composable component for displaying AI-generated summaries.
+ * BpkAiBlurb is a composable component for displaying AI-generated summaries.
  *
  * Compose subcomponents to build each state:
  *
  * @example
  * // Loading state
- * <BpkAiSummary.Root>
- *   <BpkAiSummary.Header title="Summarized by AI" />
- *   <BpkAiSummary.Summary>
- *     Comparing your shortlist<BpkAiSummary.Ellipsis />
- *   </BpkAiSummary.Summary>
- * </BpkAiSummary.Root>
+ * <BpkAiBlurb.Root>
+ *   <BpkAiBlurb.Header title="Summarized by AI" />
+ *   <BpkAiBlurb.Summary>
+ *     Comparing your shortlist<BpkAiBlurb.Ellipsis />
+ *   </BpkAiBlurb.Summary>
+ * </BpkAiBlurb.Root>
  *
  * @example
  * // Success state with feedback
- * <BpkAiSummary.Root>
- *   <BpkAiSummary.Header title="Summarized by AI" />
- *   <BpkAiSummary.Summary>{llmText}</BpkAiSummary.Summary>
- *   <BpkAiSummary.Feedback
+ * <BpkAiBlurb.Root>
+ *   <BpkAiBlurb.Header title="Summarized by AI" />
+ *   <BpkAiBlurb.Summary>{llmText}</BpkAiBlurb.Summary>
+ *   <BpkAiBlurb.Feedback
  *     feedbackText="Was this helpful?"
  *     thankYouText="Thanks for your feedback!"
  *     onFeedback={(positive) => trackEvent(positive ? 'thumb_up' : 'thumb_down')}
  *   />
- * </BpkAiSummary.Root>
+ * </BpkAiBlurb.Root>
  */
-const BpkAiSummary: BpkAiSummaryNamespace = {
+const BpkAiBlurb: BpkAiBlurbNamespace = {
   Root,
   Header,
   Summary,
@@ -58,4 +58,4 @@ const BpkAiSummary: BpkAiSummaryNamespace = {
   Feedback,
 };
 
-export default BpkAiSummary;
+export default BpkAiBlurb;

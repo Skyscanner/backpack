@@ -20,15 +20,15 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
-import BpkAiSummary from './BpkAiSummary';
+import BpkAiBlurb from './BpkAiBlurb';
 
-describe('BpkAiSummary accessibility tests', () => {
+describe('BpkAiBlurb accessibility tests', () => {
   it('Ellipsis should be hidden from assistive technology', async () => {
     const { container } = render(
-      <BpkAiSummary.Summary>
+      <BpkAiBlurb.Summary>
         Comparing your shortlist
-        <BpkAiSummary.Ellipsis />
-      </BpkAiSummary.Summary>,
+        <BpkAiBlurb.Ellipsis />
+      </BpkAiBlurb.Summary>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -36,7 +36,7 @@ describe('BpkAiSummary accessibility tests', () => {
 
   it('Feedback thumb buttons should have accessible labels', async () => {
     const { container } = render(
-      <BpkAiSummary.Feedback
+      <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
       />,
@@ -47,7 +47,7 @@ describe('BpkAiSummary accessibility tests', () => {
 
   it('Feedback should have no violations after a vote is cast', async () => {
     const { container, getByLabelText } = render(
-      <BpkAiSummary.Feedback
+      <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
       />,
@@ -59,7 +59,7 @@ describe('BpkAiSummary accessibility tests', () => {
 
   it('Header should have no violations', async () => {
     const { container } = render(
-      <BpkAiSummary.Header title="Summarized by AI" />,
+      <BpkAiBlurb.Header title="Summarized by AI" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

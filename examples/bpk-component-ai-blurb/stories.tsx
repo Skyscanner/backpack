@@ -16,19 +16,29 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../../bpk-react-utils';
+import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
 
-import type { BpkAiSummarySummaryProps } from '../common-types';
+import {
+  DefaultExample,
+  ErrorGeneralExample,
+  ErrorRefreshLimitExample,
+  LoadingExample,
+} from './examples';
 
-import STYLES from '../BpkAiSummary.module.scss';
+export default {
+  title: 'bpk-component-ai-blurb',
+  component: BpkAiBlurb.Root,
+};
 
+export const Default = DefaultExample;
+export const Loading = LoadingExample;
+export const ErrorGeneral = ErrorGeneralExample;
+export const ErrorRefreshLimit = ErrorRefreshLimitExample;
 
-const getClassName = cssModules(STYLES);
-
-const Summary = ({ children }: BpkAiSummarySummaryProps) => (
-  <div className={getClassName('bpk-ai-summary__summary')}>{children}</div>
-);
-
-Summary.displayName = 'BpkAiSummary.Summary';
-
-export default Summary;
+export const VisualTest = DefaultExample;
+export const VisualTestWithZoom = {
+  render: DefaultExample,
+  args: {
+    zoomEnabled: true,
+  },
+};

@@ -16,23 +16,19 @@
  * limitations under the License.
  */
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules } from '../../../bpk-react-utils';
 
-import type { BpkAiSummaryRootProps } from '../common-types';
+import type { BpkAiBlurbSummaryProps } from '../common-types';
 
-import STYLES from '../BpkAiSummary.module.scss';
+import STYLES from '../BpkAiBlurb.module.scss';
+
 
 const getClassName = cssModules(STYLES);
 
-const Root = ({ children }: BpkAiSummaryRootProps) => (
-  <div
-    className={getClassName('bpk-ai-summary')}
-    {...getDataComponentAttribute('AiSummary')}
-  >
-    {children}
-  </div>
+const Summary = ({ children }: BpkAiBlurbSummaryProps) => (
+  <div className={getClassName('bpk-ai-blurb__summary')}>{children}</div>
 );
 
-Root.displayName = 'BpkAiSummary.Root';
+Summary.displayName = 'BpkAiBlurb.Summary';
 
-export default Root;
+export default Summary;
