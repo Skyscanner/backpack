@@ -34,6 +34,8 @@ const Feedback = ({
   feedbackText,
   onFeedback,
   thankYouText,
+  thumbsDownLabel,
+  thumbsUpLabel,
 }: BpkAiBlurbFeedbackProps) => {
   const [hasVoted, setHasVoted] = useState(false);
 
@@ -57,7 +59,7 @@ const Feedback = ({
         type="button"
         className={getClassName('bpk-ai-blurb__feedback-thumb')}
         onClick={() => handleVote(true)}
-        aria-label="Thumbs up"
+        aria-label={thumbsUpLabel}
       >
         <ThumbsUpIcon aria-hidden />
       </button>
@@ -65,7 +67,7 @@ const Feedback = ({
         type="button"
         className={getClassName('bpk-ai-blurb__feedback-thumb')}
         onClick={() => handleVote(false)}
-        aria-label="Thumbs down"
+        aria-label={thumbsDownLabel}
       >
         <ThumbsDownIcon aria-hidden />
       </button>

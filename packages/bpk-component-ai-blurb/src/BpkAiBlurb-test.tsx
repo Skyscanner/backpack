@@ -94,6 +94,8 @@ describe('BpkAiBlurb.Feedback', () => {
   const defaultProps = {
     feedbackText: 'Was this helpful?',
     thankYouText: 'Thanks for your feedback!',
+    thumbsUpLabel: 'Thumbs up',
+    thumbsDownLabel: 'Thumbs down',
   };
 
   it('should render feedback text and thumb buttons before a vote', () => {

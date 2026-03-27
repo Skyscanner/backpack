@@ -39,6 +39,8 @@ describe('BpkAiBlurb accessibility tests', () => {
       <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
+        thumbsUpLabel="Thumbs up"
+        thumbsDownLabel="Thumbs down"
       />,
     );
     const results = await axe(container);
@@ -50,6 +52,8 @@ describe('BpkAiBlurb accessibility tests', () => {
       <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
+        thumbsUpLabel="Thumbs up"
+        thumbsDownLabel="Thumbs down"
       />,
     );
     await userEvent.click(getByLabelText('Thumbs up'));

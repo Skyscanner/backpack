@@ -46,6 +46,8 @@ describe('BpkAiBlurb snapshots', () => {
         <BpkAiBlurb.Feedback
           feedbackText="Was this helpful?"
           thankYouText="Thanks for your feedback!"
+          thumbsUpLabel="Thumbs up"
+          thumbsDownLabel="Thumbs down"
         />
       </BpkAiBlurb.Root>,
     );
@@ -60,6 +62,8 @@ describe('BpkAiBlurb snapshots', () => {
         <BpkAiBlurb.Feedback
           feedbackText="Was this helpful?"
           thankYouText="Thanks for your feedback!"
+          thumbsUpLabel="Thumbs up"
+          thumbsDownLabel="Thumbs down"
         />
       </BpkAiBlurb.Root>,
     );

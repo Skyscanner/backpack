@@ -38,6 +38,10 @@ export type BpkAiBlurbFeedbackProps = {
   feedbackText: string;
   /** Text displayed after a vote is cast. e.g. "Thanks for your feedback!" — not translated by Backpack. */
   thankYouText: string;
+  /** Accessible label for the thumbs-up button. Not translated by Backpack. */
+  thumbsUpLabel: string;
+  /** Accessible label for the thumbs-down button. Not translated by Backpack. */
+  thumbsDownLabel: string;
   /**
    * Called when either thumb button is pressed.
    * `positive` is `true` for thumbs-up, `false` for thumbs-down.

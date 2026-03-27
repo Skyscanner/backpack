@@ -26,6 +26,8 @@ import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
   <BpkAiBlurb.Feedback
     feedbackText="Was this helpful?"
     thankYouText="Thanks for your feedback!"
+    thumbsUpLabel="Thumbs up"
+    thumbsDownLabel="Thumbs down"
     onFeedback={(positive) => console.log(positive)}
   />
 </BpkAiBlurb.Root>
@@ -67,6 +69,8 @@ No props. Renders inline animated three-dot loading indicator. Use inside `Summa
 
 | Property     | PropType                        | Required | Default Value |
 | ------------ | ------------------------------- | -------- | ------------- |
-| feedbackText | string                          | true     | -             |
-| thankYouText | string                          | true     | -             |
-| onFeedback   | (positive: boolean) => void     | false    | -             |
+| feedbackText   | string                        | true     | -             |
+| thankYouText   | string                        | true     | -             |
+| thumbsUpLabel  | string                        | true     | -             |
+| thumbsDownLabel | string                       | true     | -             |
+| onFeedback     | (positive: boolean) => void   | false    | -             |

@@ -34,6 +34,8 @@ export const DefaultExample = () => (
       <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
+        thumbsUpLabel="Thumbs up"
+        thumbsDownLabel="Thumbs down"
         onFeedback={(positive) =>
           console.log(`Feedback: ${positive ? 'positive' : 'negative'}`)
         }
