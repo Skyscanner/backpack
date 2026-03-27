@@ -405,3 +405,145 @@ These are sizing tokens in the Figma Dimensions collection with no standalone co
 | Heights/52 | 52px | Used for component sizing in Figma |
 | Heights/56 | 56px | Used for component sizing in Figma |
 | Heights/64 | 64px | Used for component sizing in Figma |
+
+---
+
+# Part 8: Themeable CSS Custom Properties
+
+The `bpk-themeable-property` mixin in `packages/bpk-mixins/_utils.scss` generates CSS custom properties (`--bpk-*`) with design token fallbacks. This section checks whether these CSS variable names align with Figma variable names.
+
+| Metric | Count |
+|--------|-------|
+| Total CSS custom properties | 63 |
+| Matched (name aligns with Figma) | 3 |
+| Naming differs (same concept, different name) | 26 |
+| No Figma equivalent | 28 |
+| Different values/semantics | 6 |
+
+### Links
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-link-color` | `tokens.$bpk-text-primary-day` | — | No Figma token for link theming |
+| `--bpk-link-hover-color` | `tokens.$bpk-text-primary-day` | — | No Figma token for link theming |
+| `--bpk-link-visited-color` | `tokens.$bpk-text-primary-day` | — | No Figma token for link theming |
+| `--bpk-link-active-color` | `tokens.$bpk-text-primary-day` | — | No Figma token for link theming |
+| `--bpk-link-alternate-color` | `tokens.$bpk-text-on-dark-day` | — | No Figma token for link theming |
+| `--bpk-link-alternate-hover-color` | `tokens.$bpk-text-on-dark-day` | — | No Figma token for link theming |
+| `--bpk-link-alternate-visited-color` | `tokens.$bpk-text-on-dark-day` | — | No Figma token for link theming |
+| `--bpk-link-alternate-active-color` | `tokens.$bpk-text-on-dark-day` | — | No Figma token for link theming |
+
+### Button (Primary)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-border-radius` | `tokens.$bpk-button-border-radius` | Component/Button/Dimension/Radius | Matched |
+| `--bpk-button-primary-text-color` | `tokens.$bpk-text-on-dark-day` | — | No direct Figma equivalent |
+| `--bpk-button-primary-background-color` | `tokens.$bpk-private-button-primary-normal-background-day` | Component/Button/Colour/fill-primary | Naming: 'primary-background' vs 'fill-primary' |
+| `--bpk-button-primary-hover-background-color` | `tokens.$bpk-private-button-primary-pressed-background-day` | — | Figma has no 'pressed-primary' (only pressed-primary-on-light) |
+| `--bpk-button-primary-hover-text-color` | `tokens.$bpk-text-on-dark-day` | — | No Figma equivalent |
+| `--bpk-button-primary-active-background-color` | `tokens.$bpk-private-button-primary-pressed-background-day` | — | Shares pressed token |
+
+### Button (Primary On Dark)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-primary-on-dark-background-color` | `tokens.$bpk-private-button-primary-on-dark-normal-background-day` | Component/Button/Colour/fill-primary-on-dark | Naming: omits 'normal' |
+| `--bpk-button-primary-on-dark-hover-background-color` | `tokens.$bpk-private-button-primary-on-dark-pressed-background-day` | Component/Button/Colour/fill-pressed-primary-on-dark | Naming: 'hover' vs 'pressed' |
+| `--bpk-button-primary-on-dark-text-color` | `tokens.$bpk-text-on-light-day` | — | No direct Figma equivalent |
+
+### Button (Primary On Light)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-primary-on-light-background-color` | `tokens.$bpk-private-button-primary-on-light-normal-background-day` | Component/Button/Colour/fill-primary-on-light | Naming: omits 'normal' |
+| `--bpk-button-primary-on-light-hover-background-color` | `tokens.$bpk-private-button-primary-on-light-pressed-background-day` | Component/Button/Colour/fill-pressed-primary-on-light | Naming: 'hover' vs 'pressed' |
+
+### Button (Secondary)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-secondary-background-color` | `tokens.$bpk-private-button-secondary-normal-background-day` | Component/Button/Colour/fill-secondary | Naming: omits 'normal' |
+| `--bpk-button-secondary-hover-background-color` | `tokens.$bpk-private-button-secondary-pressed-background-day` | Component/Button/Colour/fill-pressed-secondary | Naming: 'hover' vs 'pressed' |
+| `--bpk-button-secondary-text-color` | `tokens.$bpk-text-primary-day` | Component/Button/Colour/text-secondary | Naming: different semantics |
+
+### Button (Secondary On Dark)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-secondary-on-dark-background-color` | `tokens.$bpk-private-button-secondary-on-dark-normal-background-day` | Component/Button/Colour/fill-secondary-on-dark | Naming: omits 'normal' |
+| `--bpk-button-secondary-on-dark-hover-background-color` | `tokens.$bpk-private-button-secondary-on-dark-pressed-background-day` | Component/Button/Colour/fill-pressed-secondary-on-dark | Naming: 'hover' vs 'pressed' |
+| `--bpk-button-secondary-on-dark-text-color` | `tokens.$bpk-text-on-dark-day` | Component/Button/Colour/text-link-on-dark | Different naming entirely |
+
+### Button (Destructive)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-destructive-background-color` | `tokens.$bpk-private-button-destructive-normal-background-day` | Component/Button/Colour/fill-destructive | Naming: omits 'normal' |
+| `--bpk-button-destructive-hover-background-color` | `tokens.$bpk-private-button-destructive-pressed-background-day` | Component/Button/Colour/fill-pressed-destructive | Naming: 'hover' vs 'pressed' |
+| `--bpk-button-destructive-text-color` | `tokens.$bpk-private-button-destructive-normal-foreground-day` | Component/Button/Colour/text-disruptive | Naming: 'destructive' vs 'disruptive' |
+
+### Button (Featured)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-featured-background-color` | `tokens.$bpk-private-button-featured-normal-background-day` | Component/Button/Colour/fill-featured | Naming: omits 'normal' |
+| `--bpk-button-featured-hover-background-color` | `tokens.$bpk-private-button-featured-pressed-background-day` | Component/Button/Colour/fill-pressed-feature | Naming: 'featured' vs 'feature' |
+| `--bpk-button-featured-text-color` | `tokens.$bpk-text-primary-inverse-day` | Component/Button/Colour/text-feature | CSS var uses semantic token, Figma has dedicated |
+
+### Button (Link)
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-button-link-on-dark-text-color` | `tokens.$bpk-private-button-link-on-dark-normal-foreground-day` | Component/Button/Colour/text-link-on-dark | Naming: 'text-color' vs 'foreground' |
+| `--bpk-button-link-on-dark-hover-text-color` | `tokens.$bpk-private-button-link-on-dark-pressed-foreground-day` | — | No Figma equivalent for pressed link |
+| `--bpk-button-link-on-dark-disabled-color` | `tokens.$bpk-private-button-link-on-dark-disabled-foreground-day` | — | No Figma disabled link token |
+| `--bpk-button-link-loading-color` | `tokens.$bpk-text-primary-day` | — | No Figma loading state |
+
+### Badge
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-badge-border-radius` | `tokens.$bpk-border-radius-xs` | — | No Figma badge radius token |
+| `--bpk-badge-font-size` | `tokens.$bpk-font-size-sm` | Component/Badge/Typography/tmp-badge-label | Figma uses 'tmp' prefix |
+| `--bpk-badge-normal-background-color` | `tokens.$bpk-private-badge-background-normal-day` | Component/Badge/Colour/fill-default | Naming: 'normal' vs 'default' |
+| `--bpk-badge-normal-text-color` | `tokens.$bpk-text-primary-day` | — | No Figma text color token |
+| `--bpk-badge-warning-background-color` | `tokens.$bpk-private-badge-background-normal-day` | — | Reuses normal background |
+| `--bpk-badge-success-background-color` | `tokens.$bpk-private-badge-background-normal-day` | — | Reuses normal background |
+| `--bpk-badge-critical-background-color` | `tokens.$bpk-private-badge-background-normal-day` | — | Reuses normal background |
+| `--bpk-badge-inverse-background-color` | `tokens.$bpk-surface-default-day` | Component/Badge/Colour/fill-inverse | Different fallback tokens |
+| `--bpk-badge-outline-background-color` | `transparent` | Component/Badge/Colour/fill-outline | Both use transparent |
+| `--bpk-badge-strong-background-color` | `tokens.$bpk-core-primary-day` | — | No Figma 'strong' badge |
+| `--bpk-badge-brand-background-color` | `tokens.$bpk-core-accent-day` | — | No Figma 'brand' badge |
+
+### Chip
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-chip-border-radius` | `tokens.$bpk-border-radius-sm` | Component/Chip/Dimension/radius | Matched (both 8px) |
+| `--bpk-chip-default-background-color` | `transparent` | Component/Chip/Colour/fill-on-canvas-default | Different: transparent vs core-primary |
+| `--bpk-chip-default-text-color` | `tokens.$bpk-text-primary-day` | Component/Chip/Colour/text-on | Different naming |
+| `--bpk-chip-default-border-color` | `tokens.$bpk-line-day` | Component/Chip/Colour/stroke-off-canvas-default | Naming: 'border' vs 'stroke-off' |
+| `--bpk-chip-default-hover-border-color` | `tokens.$bpk-core-primary-day` | Component/Chip/Colour/stroke-hover-canvas-default | Naming: 'hover-border' vs 'stroke-hover' |
+| `--bpk-chip-default-selected-background-color` | `tokens.$bpk-core-primary-day` | Component/Chip/Colour/fill-on-canvas-default | Naming: 'selected' vs 'on' |
+| `--bpk-chip-default-selected-text-color` | `tokens.$bpk-text-on-dark-day` | Component/Chip/Colour/text-on | Both white on selected |
+| `--bpk-chip-on-dark-border-color` | `tokens.$bpk-line-on-dark-day` | Component/Chip/Colour/stroke-off-on-dark | Naming: 'border' vs 'stroke-off' |
+| `--bpk-chip-on-dark-hover-border-color` | `tokens.$bpk-surface-default-day` | Component/Chip/Colour/stroke-hover-on-dark | Naming: 'hover-border' vs 'stroke-hover' |
+| `--bpk-chip-on-dark-selected-background-color` | `tokens.$bpk-surface-default-day` | Component/Chip/Colour/fill-on-on-dark | Naming: 'selected' vs 'on' |
+| `--bpk-chip-on-image-background-color` | `tokens.$bpk-surface-default-day` | — | No direct Figma equivalent for on-image |
+| `--bpk-chip-on-image-hover-background-color` | `tokens.$bpk-canvas-contrast-day` | Component/Chip/Colour/fill-hover-on-image | Matched concept |
+
+### Forms
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-checkbox-checked-color` | `tokens.$bpk-core-accent-day` | — | No Figma form token |
+| `--bpk-radio-checked-color` | `tokens.$bpk-core-accent-day` | — | No Figma form token |
+| `--bpk-input-invalid-border-color` | `tokens.$bpk-form-validation-color` | — | No Figma form validation token |
+| `--bpk-form-validation-text-color` | `tokens.$bpk-form-validation-color` | — | No Figma form validation token |
+
+### Utils
+
+| CSS Variable | Fallback Token | Figma Variable | Notes |
+|-------------|----------------|----------------|-------|
+| `--bpk-primary-color` | `tokens.$bpk-color-sky-blue` | Core/Accent | Legacy CSS var, Figma uses Core/Accent |

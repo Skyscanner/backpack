@@ -88,7 +88,7 @@
 <span>Figma: Backpack Foundations — Components ("Backpack", "Dimensions", "Dynamic Type" collections)</span>
 </div>
 <div class="summary">
-<div class="stat-card"><div class="number">216</div><div class="label">Total Analysed</div></div>
+<div class="stat-card"><div class="number">279</div><div class="label">Total Analysed</div></div>
 <div class="stat-card matched"><div class="number">87</div><div class="label">Matched</div></div>
 <div class="stat-card warning"><div class="number">11</div><div class="label">Name Mismatch</div></div>
 <div class="stat-card mismatch"><div class="number">18</div><div class="label">Value Mismatch</div></div>
@@ -116,7 +116,7 @@
 <a href="#shadows">Shadows</a>
 <a href="#comp-dims">Component Dims</a>
 <a href="#heights">Heights</a>
-<a href="#code-only">Code Only</a>
+<a href="#themeable">Themeable CSS Vars</a><a href="#code-only">Code Only</a>
 <a href="#value-mismatches">Value Mismatches</a>
 </div>
 <div class="part-header" id="colors"><h2>Part 1: Color Tokens</h2>
@@ -886,5 +886,304 @@
 <tr class="mismatch"><td><strong>Component/Chip/Colour/stroke-off-on-dark</strong></td><td>Night</td><td><div class="color-cell"><span class="swatch" style="background:rgba(255, 255, 255, 0.2);border:1px solid rgba(0,0,0,0.15)" title="rgba(255, 255, 255, 0.2)"></span><code class="color-val">rgba(255, 255, 255, 0.2)</code></div></td><td><div class="color-cell"><span class="swatch" style="background:rgb(5, 65, 132);border:1px solid rgba(0,0,0,0.15)" title="rgb(5, 65, 132)"></span><code class="color-val">rgb(5, 65, 132)</code></div></td></tr>
 <tr class="mismatch"><td><strong>Component/Chip/Colour/fill-on-on-dark</strong></td><td>Night</td><td><div class="color-cell"><span class="swatch" style="background:rgb(19, 29, 43);border:1px solid rgba(0,0,0,0.15)" title="rgb(19, 29, 43)"></span><code class="color-val">rgb(19, 29, 43)</code></div></td><td><div class="color-cell"><span class="swatch" style="background:rgb(5, 65, 132);border:1px solid rgba(0,0,0,0.15)" title="rgb(5, 65, 132)"></span><code class="color-val">rgb(5, 65, 132)</code></div></td></tr>
 <tr class="mismatch"><td><strong>Component/Chip/Colour/text-icon-on-dismissible</strong></td><td>Day</td><td><div class="color-cell"><span class="swatch" style="background:rgba(255, 255, 255, 0.5);border:1px solid rgba(0,0,0,0.15)" title="rgba(255, 255, 255, 0.5)"></span><code class="color-val">rgba(255, 255, 255, 0.5)</code></div></td><td><div class="color-cell"><span class="swatch" style="background:rgb(98, 105, 113);border:1px solid rgba(0,0,0,0.15)" title="rgb(98, 105, 113)"></span><code class="color-val">rgb(98, 105, 113)</code></div></td></tr>
+</tbody></table>
+<div class="part-header" id="themeable"><h2>Part 8: Themeable CSS Custom Properties</h2>
+<p>The <code>bpk-themeable-property</code> mixin generates CSS custom properties (<code>--bpk-*</code>) with design token fallbacks. This checks if CSS variable names align with Figma variable names.</p></div>
+<div class="summary" style="grid-template-columns:repeat(4,1fr)">
+<div class="stat-card"><div class="number">63</div><div class="label">CSS Variables</div></div>
+<div class="stat-card matched"><div class="number">3</div><div class="label">Matched</div></div>
+<div class="stat-card warning"><div class="number">26</div><div class="label">Naming Differs</div></div>
+<div class="stat-card mismatch"><div class="number">28</div><div class="label">No Figma Equivalent</div></div>
+</div>
+<h3>Links</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="missing"><td><code>--bpk-link-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-hover-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-visited-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-active-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-alternate-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-alternate-hover-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-alternate-visited-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+<tr class="missing"><td><code>--bpk-link-alternate-active-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma token for link theming</span></td></tr>
+</tbody></table>
+<h3>Button (Primary)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>--bpk-button-border-radius</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-button-border-radius</code></td>
+<td><strong>Component/Button/Dimension/Radius</strong></td>
+<td><span class="badge badge-matched">Matched</span> <span class="note">Matched</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-primary-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No direct Figma equivalent</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-primary-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-primary</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;primary-background&#x27; vs &#x27;fill-primary&#x27;</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-primary-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-pressed-background-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">Figma has no &#x27;pressed-primary&#x27; (only pressed-primary-on-light)</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-primary-hover-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma equivalent</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-primary-active-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-pressed-background-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">Shares pressed token</span></td></tr>
+</tbody></table>
+<h3>Button (Primary On Dark)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-primary-on-dark-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-on-dark-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-primary-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: omits &#x27;normal&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-primary-on-dark-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-on-dark-pressed-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-pressed-primary-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover&#x27; vs &#x27;pressed&#x27;</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-primary-on-dark-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-light-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No direct Figma equivalent</span></td></tr>
+</tbody></table>
+<h3>Button (Primary On Light)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-primary-on-light-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-on-light-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-primary-on-light</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: omits &#x27;normal&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-primary-on-light-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-primary-on-light-pressed-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-pressed-primary-on-light</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover&#x27; vs &#x27;pressed&#x27;</span></td></tr>
+</tbody></table>
+<h3>Button (Secondary)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-secondary-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-secondary-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-secondary</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: omits &#x27;normal&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-secondary-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-secondary-pressed-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-pressed-secondary</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover&#x27; vs &#x27;pressed&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-secondary-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><strong>Component/Button/Colour/text-secondary</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: different semantics</span></td></tr>
+</tbody></table>
+<h3>Button (Secondary On Dark)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-secondary-on-dark-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-secondary-on-dark-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-secondary-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: omits &#x27;normal&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-secondary-on-dark-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-secondary-on-dark-pressed-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-pressed-secondary-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover&#x27; vs &#x27;pressed&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-secondary-on-dark-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><strong>Component/Button/Colour/text-link-on-dark</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Different naming entirely</span></td></tr>
+</tbody></table>
+<h3>Button (Destructive)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-destructive-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-destructive-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-destructive</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: omits &#x27;normal&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-destructive-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-destructive-pressed-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-pressed-destructive</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover&#x27; vs &#x27;pressed&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-destructive-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-destructive-normal-foreground-day</code></td>
+<td><strong>Component/Button/Colour/text-disruptive</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;destructive&#x27; vs &#x27;disruptive&#x27;</span></td></tr>
+</tbody></table>
+<h3>Button (Featured)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-featured-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-featured-normal-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-featured</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: omits &#x27;normal&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-button-featured-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-featured-pressed-background-day</code></td>
+<td><strong>Component/Button/Colour/fill-pressed-feature</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;featured&#x27; vs &#x27;feature&#x27;</span></td></tr>
+<tr><td><code>--bpk-button-featured-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-inverse-day</code></td>
+<td><strong>Component/Button/Colour/text-feature</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">CSS var uses semantic token, Figma has dedicated</span></td></tr>
+</tbody></table>
+<h3>Button (Link)</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="mismatch"><td><code>--bpk-button-link-on-dark-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-link-on-dark-normal-foreground-day</code></td>
+<td><strong>Component/Button/Colour/text-link-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;text-color&#x27; vs &#x27;foreground&#x27;</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-link-on-dark-hover-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-link-on-dark-pressed-foreground-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma equivalent for pressed link</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-link-on-dark-disabled-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-button-link-on-dark-disabled-foreground-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma disabled link token</span></td></tr>
+<tr class="missing"><td><code>--bpk-button-link-loading-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma loading state</span></td></tr>
+</tbody></table>
+<h3>Badge</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="missing"><td><code>--bpk-badge-border-radius</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-border-radius-xs</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma badge radius token</span></td></tr>
+<tr><td><code>--bpk-badge-font-size</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-font-size-sm</code></td>
+<td><strong>Component/Badge/Typography/tmp-badge-label</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Figma uses &#x27;tmp&#x27; prefix</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-badge-normal-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-badge-background-normal-day</code></td>
+<td><strong>Component/Badge/Colour/fill-default</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;normal&#x27; vs &#x27;default&#x27;</span></td></tr>
+<tr class="missing"><td><code>--bpk-badge-normal-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma text color token</span></td></tr>
+<tr class="missing"><td><code>--bpk-badge-warning-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-badge-background-normal-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">Reuses normal background</span></td></tr>
+<tr class="missing"><td><code>--bpk-badge-success-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-badge-background-normal-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">Reuses normal background</span></td></tr>
+<tr class="missing"><td><code>--bpk-badge-critical-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-private-badge-background-normal-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">Reuses normal background</span></td></tr>
+<tr><td><code>--bpk-badge-inverse-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-surface-default-day</code></td>
+<td><strong>Component/Badge/Colour/fill-inverse</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Different fallback tokens</span></td></tr>
+<tr><td><code>--bpk-badge-outline-background-color</code></td>
+<td><code style="font-size:0.6875rem">transparent</code></td>
+<td><strong>Component/Badge/Colour/fill-outline</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Both use transparent</span></td></tr>
+<tr class="missing"><td><code>--bpk-badge-strong-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-core-primary-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma &#x27;strong&#x27; badge</span></td></tr>
+<tr class="missing"><td><code>--bpk-badge-brand-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-core-accent-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma &#x27;brand&#x27; badge</span></td></tr>
+</tbody></table>
+<h3>Chip</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>--bpk-chip-border-radius</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-border-radius-sm</code></td>
+<td><strong>Component/Chip/Dimension/radius</strong></td>
+<td><span class="badge badge-matched">Matched</span> <span class="note">Matched (both 8px)</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-default-background-color</code></td>
+<td><code style="font-size:0.6875rem">transparent</code></td>
+<td><strong>Component/Chip/Colour/fill-on-canvas-default</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Different: transparent vs core-primary</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-default-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-primary-day</code></td>
+<td><strong>Component/Chip/Colour/text-on</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Different naming</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-default-border-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-line-day</code></td>
+<td><strong>Component/Chip/Colour/stroke-off-canvas-default</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;border&#x27; vs &#x27;stroke-off&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-default-hover-border-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-core-primary-day</code></td>
+<td><strong>Component/Chip/Colour/stroke-hover-canvas-default</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover-border&#x27; vs &#x27;stroke-hover&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-default-selected-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-core-primary-day</code></td>
+<td><strong>Component/Chip/Colour/fill-on-canvas-default</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;selected&#x27; vs &#x27;on&#x27;</span></td></tr>
+<tr><td><code>--bpk-chip-default-selected-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-text-on-dark-day</code></td>
+<td><strong>Component/Chip/Colour/text-on</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Both white on selected</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-on-dark-border-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-line-on-dark-day</code></td>
+<td><strong>Component/Chip/Colour/stroke-off-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;border&#x27; vs &#x27;stroke-off&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-on-dark-hover-border-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-surface-default-day</code></td>
+<td><strong>Component/Chip/Colour/stroke-hover-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;hover-border&#x27; vs &#x27;stroke-hover&#x27;</span></td></tr>
+<tr class="mismatch"><td><code>--bpk-chip-on-dark-selected-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-surface-default-day</code></td>
+<td><strong>Component/Chip/Colour/fill-on-on-dark</strong></td>
+<td><span class="badge badge-name-mismatch">Naming Differs</span> <span class="note">Naming: &#x27;selected&#x27; vs &#x27;on&#x27;</span></td></tr>
+<tr class="missing"><td><code>--bpk-chip-on-image-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-surface-default-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No direct Figma equivalent for on-image</span></td></tr>
+<tr><td><code>--bpk-chip-on-image-hover-background-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-canvas-contrast-day</code></td>
+<td><strong>Component/Chip/Colour/fill-hover-on-image</strong></td>
+<td><span class="badge badge-matched">Matched</span> <span class="note">Matched concept</span></td></tr>
+</tbody></table>
+<h3>Forms</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr class="missing"><td><code>--bpk-checkbox-checked-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-core-accent-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma form token</span></td></tr>
+<tr class="missing"><td><code>--bpk-radio-checked-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-core-accent-day</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma form token</span></td></tr>
+<tr class="missing"><td><code>--bpk-input-invalid-border-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-form-validation-color</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma form validation token</span></td></tr>
+<tr class="missing"><td><code>--bpk-form-validation-text-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-form-validation-color</code></td>
+<td><span style="color:#bdc4cb">—</span></td>
+<td><span class="badge badge-missing-in-figma">No Figma</span> <span class="note">No Figma form validation token</span></td></tr>
+</tbody></table>
+<h3>Utils</h3>
+<table><thead><tr><th>CSS Variable</th><th>Fallback Token</th><th>Figma Variable</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>--bpk-primary-color</code></td>
+<td><code style="font-size:0.6875rem">tokens.$bpk-color-sky-blue</code></td>
+<td><strong>Core/Accent</strong></td>
+<td><span class="badge badge-value-mismatch">Different</span> <span class="note">Legacy CSS var, Figma uses Core/Accent</span></td></tr>
 </tbody></table>
 </body></html>
