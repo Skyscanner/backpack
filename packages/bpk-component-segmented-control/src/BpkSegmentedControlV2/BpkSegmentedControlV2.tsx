@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { SegmentGroup } from '@ark-ui/react';
+import { SegmentGroup, useLocaleContext } from '@ark-ui/react';
 
 import {
   cssModules,
@@ -44,6 +44,7 @@ const BpkSegmentedControlV2Root = ({
   type = SEGMENT_TYPES_V2.CanvasDefault,
   value,
 }: BpkSegmentedControlV2RootProps) => {
+  const { dir } = useLocaleContext();
   const containerClass = getClassName(
     'bpk-segmented-control-v2',
     `bpk-segmented-control-v2--${type}`,
@@ -52,6 +53,7 @@ const BpkSegmentedControlV2Root = ({
 
   return (
     <SegmentGroup.Root
+      key={dir}
       className={containerClass}
       value={value}
       defaultValue={defaultValue}

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { BpkProvider } from '../../packages/bpk-component-layout';
 import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
@@ -32,8 +33,6 @@ import {
   WithShadow,
   WithIconAndText,
   IconOnly,
-  RtlLayout,
-  RtlOption2MixedLiveToggle,
   TwoItems,
   LongLabels,
   NoInitialSelection,
@@ -44,6 +43,7 @@ import {
 export default {
   title: 'bpk-component-segmented-control-v2',
   component: BpkSegmentedControlV2.Root,
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
   parameters: {
     a11y: { disable: false },
   },
@@ -89,10 +89,6 @@ export const IconOnlyText = {
   name: 'Icon-only',
 };
 
-export const Rtl = {
-  render: RtlLayout,
-  name: 'RTL layout',
-};
 
 export const TwoSegments = {
   render: TwoItems,
@@ -135,7 +131,3 @@ export const ComplexContent = {
 
 export const VisualTest = VisualExample;
 
-export const RtlOption2Mixed = {
-  render: RtlOption2MixedLiveToggle,
-  name: 'RTL Option 2 — Mixed live toggle (Ark + non-Ark)',
-};

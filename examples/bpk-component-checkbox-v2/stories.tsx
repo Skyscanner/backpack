@@ -17,6 +17,7 @@
  */
 
 import { BpkCheckboxV2 } from '../../packages/bpk-component-checkbox';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
   ComposedHertzExample,
@@ -26,8 +27,6 @@ import {
   InlineLinkInLabelExample,
   InvalidExample,
   MixedExample,
-  RtlOption2AfterExample,
-  RtlOption2BeforeExample,
   SimpleLabelExample,
   ThemedExample,
   TitleAndSubtitleExample,
@@ -36,6 +35,7 @@ import {
 export default {
   title: 'bpk-component-checkbox-v2',
   component: BpkCheckboxV2.Root,
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
 };
 
 export const SimpleLabel = SimpleLabelExample;
@@ -56,12 +56,3 @@ export const VisualTestWithZoom = {
   },
 };
 
-export const RtlOption2Before = {
-  render: RtlOption2BeforeExample,
-  name: 'RTL Option 2 — Before (no BpkProvider)',
-};
-
-export const RtlOption2After = {
-  render: RtlOption2AfterExample,
-  name: 'RTL Option 2 — After (with BpkProvider)',
-};
