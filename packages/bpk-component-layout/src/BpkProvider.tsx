@@ -56,7 +56,8 @@ const getDocumentDir = (): Direction =>
 
 // Reactive hook: subscribes to document.documentElement[dir] changes via MutationObserver.
 // Re-renders BpkProvider when direction is toggled (e.g. Storybook RTL toolbar, locale switcher).
-// SSR-safe: lazy useState initialiser is not called on the server; useEffect does not run on the server.
+// SSR-safe: lazy useState initialiser *is* called during SSR, but getDocumentDir guards `document`.
+//           useEffect does not run on the server.
 const useDocumentDir = (): Direction => {
   const [dir, setDir] = useState<Direction>(getDocumentDir);
 
