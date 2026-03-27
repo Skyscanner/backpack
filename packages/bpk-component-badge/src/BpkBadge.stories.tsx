@@ -33,13 +33,13 @@ import {
   statusWarningSpotDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';

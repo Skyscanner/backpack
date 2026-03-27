@@ -17,7 +17,7 @@
  */
 
 
-// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import {
   withButtonAlignment,
