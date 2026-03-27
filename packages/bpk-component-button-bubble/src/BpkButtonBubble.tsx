@@ -18,12 +18,13 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
+import { iconSizeSm, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
 import { withAlignment } from '../../bpk-component-icon';
 import RedoSmIcon from '../../bpk-component-icon/sm/redo';
 import BpkThumbButton from '../../bpk-component-thumb-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
-import { iconSizeSm, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 
@@ -151,11 +152,10 @@ const BpkButtonBubble = (props: BpkButtonBubbleProps) => {
             <BpkButton
               type={BUTTON_TYPES.primary}
               size={SIZE_TYPES.small}
-              className={getClassName('bpk-button-bubble__retry-button')}
               onClick={onRetry}
               disabled={retryDisabled}
             >
-              <AlignedRedoIcon className={getClassName('bpk-button-bubble__retry-icon')} />
+              <AlignedRedoIcon />
               {retryLabel}
             </BpkButton>
           </div>
