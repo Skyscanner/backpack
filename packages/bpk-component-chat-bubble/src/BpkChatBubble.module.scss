@@ -200,9 +200,9 @@
   }
 
   &--system-first {
-    @include bpk-chat-bubble-corner('left', 'bottom');
-
     text-align: left;
+
+    @include bpk-chat-bubble-corner('left', 'bottom');
 
     @include utils.bpk-rtl {
       text-align: right;
@@ -210,9 +210,9 @@
   }
 
   &--system-middle {
-    @include bpk-chat-bubble-corner('left', 'both');
-
     text-align: left;
+
+    @include bpk-chat-bubble-corner('left', 'both');
 
     @include utils.bpk-rtl {
       text-align: right;
@@ -220,9 +220,9 @@
   }
 
   &--system-last {
-    @include bpk-chat-bubble-corner('left', 'top');
-
     text-align: left;
+
+    @include bpk-chat-bubble-corner('left', 'top');
 
     @include utils.bpk-rtl {
       text-align: right;
@@ -230,9 +230,9 @@
   }
 
   &--user-first {
-    @include bpk-chat-bubble-corner('right', 'bottom');
-
     text-align: left;
+
+    @include bpk-chat-bubble-corner('right', 'bottom');
 
     @include utils.bpk-rtl {
       text-align: right;
@@ -240,9 +240,9 @@
   }
 
   &--user-middle {
-    @include bpk-chat-bubble-corner('right', 'both');
-
     text-align: left;
+
+    @include bpk-chat-bubble-corner('right', 'both');
 
     @include utils.bpk-rtl {
       text-align: right;
@@ -250,9 +250,9 @@
   }
 
   &--user-last {
-    @include bpk-chat-bubble-corner('right', 'top');
-
     text-align: left;
+
+    @include bpk-chat-bubble-corner('right', 'top');
 
     @include utils.bpk-rtl {
       text-align: right;
