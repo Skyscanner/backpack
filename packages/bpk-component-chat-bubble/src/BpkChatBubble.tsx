@@ -18,11 +18,9 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
-import { iconSizeSm, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
-import { withAlignment } from '../../bpk-component-icon';
 import RedoSmIcon from '../../bpk-component-icon/sm/redo';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkThumbButton from '../../bpk-component-thumb-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -31,8 +29,6 @@ import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 import STYLES from './BpkChatBubble.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-const AlignedRedoIcon = withAlignment(RedoSmIcon, lineHeightBase, iconSizeSm);
 
 const clampAndSnap = (ms: number, max = 300): number => {
   const v = Math.min(ms, max);
@@ -154,11 +150,9 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
               size={SIZE_TYPES.small}
               onClick={onRetry}
               disabled={retryDisabled}
+              leadingIcon={<RedoSmIcon />}
             >
-              <span className={getClassName('bpk-chat-bubble__retry-icon')}>
-                <AlignedRedoIcon />
-              </span>
-              {retryLabel}
+              <BpkText textStyle={TEXT_STYLES.label1}>{retryLabel}</BpkText>
             </BpkButton>
           </div>
         )}

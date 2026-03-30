@@ -201,14 +201,32 @@
 
   &--system-first {
     @include bpk-chat-bubble-corner('left', 'bottom');
+
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
   }
 
   &--system-middle {
     @include bpk-chat-bubble-corner('left', 'both');
+
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
   }
 
   &--system-last {
     @include bpk-chat-bubble-corner('left', 'top');
+
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
   }
 
   &--user-first {
@@ -253,14 +271,10 @@
 
   &__retry {
     margin-top: tokens.bpk-spacing-base();
-  }
 
-  &__retry-icon {
-    margin-right: tokens.bpk-spacing-md();
-
-    @include utils.bpk-rtl {
-      margin-right: 0;
-      margin-left: tokens.bpk-spacing-md();
+    /* stylelint-disable-next-line selector-max-compound-selectors */
+    button {
+      padding: 0 tokens.bpk-spacing-base();
     }
   }
 

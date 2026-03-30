@@ -102,30 +102,31 @@ exports[`BpkChatBubble should render retry bubble correctly 1`] = `
         class="bpk-chat-bubble__retry"
       >
         <button
-          class="bpk-button bpk-button--primary"
+          class="bpk-button bpk-button--primary bpk-button--has-icon"
           data-backpack-ds-component="Button"
           type="button"
         >
           <span
-            class="bpk-chat-bubble__retry-icon"
+            class="bpk-button__leading-icon"
           >
-            <span
-              style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                height="1rem"
-                viewBox="0 0 24 24"
-                width="1rem"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.94 1.94a1.5 1.5 0 0 1 2.12 0l6 6a1.5 1.5 0 0 1 0 2.12l-6 6a1.5 1.5 0 0 1-2.12-2.12l3.439-3.44H9a4.5 4.5 0 1 0 0 9h3a1.5 1.5 0 0 1 0 3H9a7.5 7.5 0 0 1 0-15h8.379l-3.44-3.44a1.5 1.5 0 0 1 0-2.12z"
-                />
-              </svg>
-            </span>
+              <path
+                d="M13.94 1.94a1.5 1.5 0 0 1 2.12 0l6 6a1.5 1.5 0 0 1 0 2.12l-6 6a1.5 1.5 0 0 1-2.12-2.12l3.439-3.44H9a4.5 4.5 0 1 0 0 9h3a1.5 1.5 0 0 1 0 3H9a7.5 7.5 0 0 1 0-15h8.379l-3.44-3.44a1.5 1.5 0 0 1 0-2.12z"
+              />
+            </svg>
           </span>
-          Try again
+          <span
+            class="bpk-text bpk-text--label-1"
+            data-backpack-ds-component="Text"
+          >
+            Try again
+          </span>
         </button>
       </div>
     </div>
