@@ -35,6 +35,8 @@ const useBodyLock = (isLocked: boolean) => {
     top: string;
     width: string;
     backgroundColor: string;
+    touchAction: string;
+    overscrollBehavior: string;
   } | null>(null);
 
   useEffect(() => {
@@ -52,6 +54,8 @@ const useBodyLock = (isLocked: boolean) => {
       top: body.style.top || '',
       width: body.style.width || '',
       backgroundColor: body.style.backgroundColor || '',
+      touchAction: body.style.touchAction || '',
+      overscrollBehavior: body.style.overscrollBehavior || '',
     };
 
     body.style.overflow = 'hidden';
@@ -69,13 +73,13 @@ const useBodyLock = (isLocked: boolean) => {
         body.style.position = saved.position;
         body.style.top = saved.top;
         body.style.width = saved.width;
-        body.style.touchAction = '';
-        body.style.overscrollBehavior = '';
+        body.style.touchAction = saved.touchAction;
+        body.style.overscrollBehavior = saved.overscrollBehavior;
         body.style.backgroundColor = saved.backgroundColor;
         savedBodyStylesRef.current = null;
-      }
 
-      window.scrollTo({ top: savedScrollYRef.current, behavior: 'instant' });
+        window.scrollTo(0, savedScrollYRef.current);
+      }
     };
   }, [isLocked]);
 };

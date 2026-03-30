@@ -112,13 +112,14 @@ describe('useBodyLock', () => {
 
       rerender({ locked: false });
 
-      expect(scrollToSpy).toHaveBeenCalledWith({ top: 200, behavior: 'instant' });
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 200);
       scrollToSpy.mockRestore();
     });
   });
 
   describe('on unmount while locked', () => {
     it('should restore body styles on unmount', () => {
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
       const { unmount } = renderHook(() => useBodyLock(true));
       expect(document.body.style.position).toBe('fixed');
 
@@ -126,6 +127,8 @@ describe('useBodyLock', () => {
 
       expect(document.body.style.position).toBe('');
       expect(document.body.style.overflow).toBe('');
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
+      scrollToSpy.mockRestore();
     });
   });
 });
