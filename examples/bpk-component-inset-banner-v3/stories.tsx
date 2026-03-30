@@ -1,0 +1,56 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import type { ReactNode } from 'react';
+
+import BpkInsetBannerV3 from '../../packages/bpk-component-inset-banner/src/BpkInsetBannerV3/BpkInsetBannerV3';
+import { BpkProvider } from '../../packages/bpk-component-layout';
+
+import {
+  HorizontalOnLight,
+  HorizontalOnDark,
+  HorizontalWithNoTrailingAccessory,
+  VerticalLayout,
+  ContentOnly,
+  WithPopover,
+  WithLeadingIconBadgeAndPopover,
+  WithLeadingIconBadgeSubtitleAndBottomSheet,
+  WithLeadingIconBadgeAndBottomSheet,
+  WithImage,
+  CustomTypography,
+} from './examples';
+
+export default {
+  title: 'bpk-component-inset-banner-v3',
+  component: BpkInsetBannerV3.Root,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+};
+
+export const DefaultHorizontalOnLight = HorizontalOnLight;
+export const DefaultHorizontalOnDark = HorizontalOnDark;
+export const HorizontalNoTrailingAccessory = HorizontalWithNoTrailingAccessory;
+export const DefaultVerticalLayout = VerticalLayout;
+export const DefaultContentOnly = ContentOnly;
+export const DefaultWithPopover = WithPopover;
+export const DefaultWithImage = WithImage;
+export const DefaultWithLeadingIconBadgeAndPopover = WithLeadingIconBadgeAndPopover;
+export const DefaultWithLeadingIconBadgeSubtitleAndBottomSheet = WithLeadingIconBadgeSubtitleAndBottomSheet;
+export const DefaultWithLeadingIconBadgeAndBottomSheet = WithLeadingIconBadgeAndBottomSheet;
+export const DefaultCustomTypography = CustomTypography;
+export const VisualTestLight = HorizontalOnLight;
+export const VisualTestDark = HorizontalOnDark;
