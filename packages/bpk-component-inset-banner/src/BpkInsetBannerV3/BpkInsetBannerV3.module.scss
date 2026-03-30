@@ -22,6 +22,7 @@
 .bpk-inset-banner-v3 {
   border-radius: tokens.$bpk-border-radius-sm;
   overflow: hidden;
+  container-type: inline-size;
 
   &--on-light {
     color: tokens.$bpk-text-on-light-day;
@@ -33,34 +34,63 @@
     fill: tokens.$bpk-text-on-dark-day;
   }
 
+  &__header {
+    display: grid;
+    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'leading content trailing';
+    align-items: center;
+    gap: tokens.bpk-spacing-base();
+
+    // Narrow: logo + sponsored on top row, content on second row
+    @container (max-width: 25rem) {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'leading trailing'
+        'content content';
+      gap: tokens.bpk-spacing-sm();
+    }
+
+    // Consumer overrides auto-responsive
+    &--horizontal {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: 'leading content trailing';
+      align-items: center;
+      gap: tokens.bpk-spacing-base();
+    }
+
+    &--vertical {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'leading trailing'
+        'content content';
+      gap: tokens.bpk-spacing-sm();
+    }
+  }
+
   &__leading-accessory {
     display: flex;
+    grid-area: leading;
     align-items: center;
-    flex-shrink: 0;
   }
 
   &__content {
     display: flex;
     min-width: 0;
+    grid-area: content;
     flex-direction: column;
-    flex: 1;
     word-wrap: break-word;
-  }
-
-  &__body {
-    padding: tokens.bpk-spacing-base();
-
-    &--bleed {
-      padding: 0;
-    }
   }
 
   &__trailing-accessory {
     display: flex;
+    grid-area: trailing;
     align-items: center;
-    flex-shrink: 0;
 
-    // Reset native button styles when rendered as interactive
+    @container (max-width: 25rem) {
+      align-self: flex-start;
+    }
+
     &--interactive {
       padding: 0;
       border: none;
@@ -68,9 +98,19 @@
       color: inherit;
       cursor: pointer;
 
+      @include utils.bpk-touch-tappable;
+
       &:focus-visible {
         @include utils.bpk-focus-indicator;
       }
+    }
+  }
+
+  &__body {
+    padding: tokens.bpk-spacing-base();
+
+    &--bleed {
+      padding: 0;
     }
   }
 }

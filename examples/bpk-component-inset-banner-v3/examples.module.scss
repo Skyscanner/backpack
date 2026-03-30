@@ -23,8 +23,8 @@
 // so this token-based CSS module is used instead.
 .bpk-inset-banner-v3-example__icon-badge {
   display: flex;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: tokens.$bpk-icon-size-xxl;
+  height: tokens.$bpk-icon-size-xxl;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;

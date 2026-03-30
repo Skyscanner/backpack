@@ -17,9 +17,8 @@
  */
 
 import { forwardRef } from 'react';
-import type { MouseEvent, ReactNode, Ref } from 'react';
+import type { ComponentPropsWithoutRef, MouseEvent, ReactNode, Ref } from 'react';
 
-import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import STYLES from './BpkInsetBannerV3.module.scss';
@@ -51,11 +50,13 @@ Body.displayName = 'BpkInsetBannerV3.Body';
 
 // ─── Root ────────────────────────────────────────────────────────────────────
 
-export type RootProps = {
+export type RootProps = Omit<
+  ComponentPropsWithoutRef<'div'>,
+  'className' | 'style' | 'children'
+> & {
   children: ReactNode;
   backgroundColor?: string;
   textVariant?: 'on-light' | 'on-dark';
-  [key: string]: unknown;
 };
 
 const Root = forwardRef<HTMLDivElement, RootProps>(
@@ -84,19 +85,17 @@ export type HeaderProps = {
   layout?: 'horizontal' | 'vertical';
 };
 
-const Header = ({ children, layout = 'horizontal' }: HeaderProps) => (
-  <BpkFlex
+const Header = ({ children, layout }: HeaderProps) => (
+  <div
     {...getDataComponentAttribute('InsetBannerV3.Header')}
-    direction={layout === 'horizontal' ? 'row' : 'column'}
-    align={layout === 'horizontal' ? 'center' : 'stretch'}
-    gap={layout === 'horizontal' ? BpkSpacing.Base : BpkSpacing.SM}
-    paddingTop={BpkSpacing.MD}
-    paddingBottom={BpkSpacing.MD}
-    paddingStart={BpkSpacing.Base}
-    paddingEnd={BpkSpacing.Base}
+    className={getClassName(
+      'bpk-inset-banner-v3__header',
+      layout === 'horizontal' && 'bpk-inset-banner-v3__header--horizontal',
+      layout === 'vertical' && 'bpk-inset-banner-v3__header--vertical',
+    )}
   >
     {children}
-  </BpkFlex>
+  </div>
 );
 
 Header.displayName = 'BpkInsetBannerV3.Header';
@@ -137,20 +136,30 @@ Content.displayName = 'BpkInsetBannerV3.Content';
 
 // ─── TrailingAccessory ───────────────────────────────────────────────────────
 
-export type TrailingAccessoryProps = {
+type InteractiveTrailingAccessoryProps = {
   children: ReactNode;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  'aria-label': string;
 };
 
-const TrailingAccessory = forwardRef<HTMLElement, TrailingAccessoryProps>(
-  ({ children, onClick }, ref) => {
-    const trailingClassName = getClassName('bpk-inset-banner-v3__trailing-accessory');
+type StaticTrailingAccessoryProps = {
+  children: ReactNode;
+  onClick?: never;
+};
 
-    if (onClick) {
+export type TrailingAccessoryProps =
+  | InteractiveTrailingAccessoryProps
+  | StaticTrailingAccessoryProps;
+
+const TrailingAccessory = forwardRef<HTMLElement, TrailingAccessoryProps>(
+  (props, ref) => {
+    if ('onClick' in props && props.onClick) {
+      const { 'aria-label': ariaLabel, children, onClick } = props as InteractiveTrailingAccessoryProps;
       return (
         <button
           ref={ref as Ref<HTMLButtonElement>}
           type="button"
+          aria-label={ariaLabel}
           {...getDataComponentAttribute('InsetBannerV3.TrailingAccessory')}
           className={getClassName('bpk-inset-banner-v3__trailing-accessory', 'bpk-inset-banner-v3__trailing-accessory--interactive')}
           onClick={onClick}
@@ -160,11 +169,12 @@ const TrailingAccessory = forwardRef<HTMLElement, TrailingAccessoryProps>(
       );
     }
 
+    const { children } = props;
     return (
       <div
         ref={ref as Ref<HTMLDivElement>}
         {...getDataComponentAttribute('InsetBannerV3.TrailingAccessory')}
-        className={trailingClassName}
+        className={getClassName('bpk-inset-banner-v3__trailing-accessory')}
       >
         {children}
       </div>

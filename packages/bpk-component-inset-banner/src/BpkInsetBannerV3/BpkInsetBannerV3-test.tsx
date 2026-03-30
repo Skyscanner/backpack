@@ -112,7 +112,7 @@ describe('BpkInsetBannerV3', () => {
 
     it('should have role="button" and tabIndex=0 when onClick is provided', () => {
       render(
-        <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()}>
+        <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()} aria-label="About this advert">
           <span>Info</span>
         </BpkInsetBannerV3.TrailingAccessory>,
       );
@@ -123,7 +123,7 @@ describe('BpkInsetBannerV3', () => {
     it('should call onClick when clicked', () => {
       const handleClick = jest.fn();
       render(
-        <BpkInsetBannerV3.TrailingAccessory onClick={handleClick}>
+        <BpkInsetBannerV3.TrailingAccessory onClick={handleClick} aria-label="About this advert">
           <span>Info</span>
         </BpkInsetBannerV3.TrailingAccessory>,
       );
@@ -133,12 +133,54 @@ describe('BpkInsetBannerV3', () => {
 
     it('should be keyboard accessible via native button behaviour', () => {
       render(
-        <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()}>
+        <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()} aria-label="About this advert">
           <span>Info</span>
         </BpkInsetBannerV3.TrailingAccessory>,
       );
       // Native <button> handles Enter/Space natively — just assert it is a button
       expect(screen.getByRole('button')).toBeInTheDocument();
+    });
+  });
+
+  describe('Header', () => {
+    it('should render children', () => {
+      render(
+        <BpkInsetBannerV3.Header>
+          <span>Header content</span>
+        </BpkInsetBannerV3.Header>,
+      );
+      expect(screen.getByText('Header content')).toBeInTheDocument();
+    });
+
+    it('should not apply layout modifier by default', () => {
+      const { container } = render(
+        <BpkInsetBannerV3.Header>
+          <span>Content</span>
+        </BpkInsetBannerV3.Header>,
+      );
+      const header = container.firstChild as HTMLElement;
+      expect(header.className).not.toMatch(/horizontal/);
+      expect(header.className).not.toMatch(/vertical/);
+    });
+
+    it('should apply horizontal layout modifier when layout="horizontal"', () => {
+      const { container } = render(
+        <BpkInsetBannerV3.Header layout="horizontal">
+          <span>Content</span>
+        </BpkInsetBannerV3.Header>,
+      );
+      const header = container.firstChild as HTMLElement;
+      expect(header.className).toMatch(/horizontal/);
+    });
+
+    it('should apply vertical layout modifier when layout="vertical"', () => {
+      const { container } = render(
+        <BpkInsetBannerV3.Header layout="vertical">
+          <span>Content</span>
+        </BpkInsetBannerV3.Header>,
+      );
+      const header = container.firstChild as HTMLElement;
+      expect(header.className).toMatch(/vertical/);
     });
   });
 
@@ -157,7 +199,7 @@ describe('BpkInsetBannerV3', () => {
             <p>Title text</p>
             <p>Subheadline text</p>
           </BpkInsetBannerV3.Content>
-          <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()}>
+          <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()} aria-label="About this advert">
             <span>Sponsored</span>
           </BpkInsetBannerV3.TrailingAccessory>
         </BpkInsetBannerV3.Root>,

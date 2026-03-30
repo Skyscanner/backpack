@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import BpkInsetBannerV3 from '../../packages/bpk-component-inset-banner/src/BpkInsetBannerV3/BpkInsetBannerV3';
+import { BpkInsetBannerV3 } from '../../packages/bpk-component-inset-banner';
 import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {

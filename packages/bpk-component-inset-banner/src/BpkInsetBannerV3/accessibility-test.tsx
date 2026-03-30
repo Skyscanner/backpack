@@ -41,6 +41,7 @@ describe('BpkInsetBannerV3 accessibility tests', () => {
         </BpkInsetBannerV3.Content>
         <BpkInsetBannerV3.TrailingAccessory
           onClick={() => {}}
+          aria-label="About this advert"
         >
           <span>Sponsored</span>
         </BpkInsetBannerV3.TrailingAccessory>

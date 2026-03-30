@@ -26,7 +26,7 @@ import { BpkInsetBannerV3 } from '@skyscanner/backpack-web/bpk-component-inset-b
       <BpkText textStyle={TEXT_STYLES.label2}>Title</BpkText>
       <BpkText textStyle={TEXT_STYLES.caption}>Subtitle</BpkText>
     </BpkInsetBannerV3.Content>
-    <BpkInsetBannerV3.TrailingAccessory onClick={handleClick}>
+    <BpkInsetBannerV3.TrailingAccessory onClick={handleClick} aria-label="About this advert">
       <InfoIcon />
     </BpkInsetBannerV3.TrailingAccessory>
   </BpkInsetBannerV3.Header>

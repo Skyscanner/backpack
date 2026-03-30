@@ -79,7 +79,7 @@ const BottomSheetContent = () => (
 );
 
 const SponsoredCta = ({ onClick }: { onClick: () => void }) => (
-  <BpkInsetBannerV3.TrailingAccessory onClick={onClick}>
+  <BpkInsetBannerV3.TrailingAccessory onClick={onClick} aria-label="About this advert">
     <BpkFlex direction="row" align="center" gap={BpkSpacing.MD}>
       <BpkText textStyle={TEXT_STYLES.caption}>Sponsored</BpkText>
       <InfoIcon />
@@ -427,7 +427,7 @@ const WithLeadingIconBadgeSubtitleAndBottomSheet = () => {
                 Get a lower price when you find out the supplier later.
               </BpkText>
             </BpkInsetBannerV3.Content>
-            <BpkInsetBannerV3.TrailingAccessory onClick={() => setSheetOpen(true)}>
+            <BpkInsetBannerV3.TrailingAccessory onClick={() => setSheetOpen(true)} aria-label="About this offer">
               <InfoIcon />
             </BpkInsetBannerV3.TrailingAccessory>
           </BpkInsetBannerV3.Header>
@@ -479,7 +479,7 @@ const WithLeadingIconBadgeAndBottomSheet = () => {
                 Get a lower price when you find out the supplier later
               </BpkText>
             </BpkInsetBannerV3.Content>
-            <BpkInsetBannerV3.TrailingAccessory onClick={() => setSheetOpen(true)}>
+            <BpkInsetBannerV3.TrailingAccessory onClick={() => setSheetOpen(true)} aria-label="About this offer">
               <InfoIcon />
             </BpkInsetBannerV3.TrailingAccessory>
           </BpkInsetBannerV3.Header>
