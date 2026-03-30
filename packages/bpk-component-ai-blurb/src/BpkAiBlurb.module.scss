@@ -22,7 +22,7 @@
 .bpk-ai-blurb {
   display: flex;
   flex-direction: column;
-  gap: tokens.bpk-spacing-sm();
+  gap: tokens.bpk-spacing-md();
 
   &__header {
     display: flex;
@@ -78,7 +78,7 @@
     display: inline-flex;
     vertical-align: baseline;
     gap: 0.1em;
-    margin-inline-start: 0.1em;
+    margin-inline-start: tokens.bpk-spacing-sm();
 
     &-dot {
       display: inline-block;
