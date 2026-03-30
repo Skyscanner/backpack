@@ -127,7 +127,7 @@ describe('useBodyLock', () => {
 
       expect(document.body.style.position).toBe('');
       expect(document.body.style.overflow).toBe('');
-      expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 200);
       scrollToSpy.mockRestore();
     });
   });
