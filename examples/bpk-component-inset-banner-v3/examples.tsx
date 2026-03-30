@@ -327,7 +327,7 @@ const WithPopover = () => (
           closeButtonIcon
           labelAsTitle
           target={
-            <BpkInsetBannerV3.TrailingAccessory>
+            <BpkInsetBannerV3.TrailingAccessory onClick={() => {}} aria-label="About this advert">
               <BpkFlex direction="row" align="center" gap={BpkSpacing.MD}>
                 <BpkText textStyle={TEXT_STYLES.caption}>Sponsored</BpkText>
                 <InfoIcon />
@@ -381,7 +381,7 @@ const WithLeadingIconBadgeAndPopover = () => (
               closeButtonIcon
               labelAsTitle
               target={
-                <BpkInsetBannerV3.TrailingAccessory>
+                <BpkInsetBannerV3.TrailingAccessory onClick={() => {}} aria-label="About this offer">
                   <InfoIcon />
                 </BpkInsetBannerV3.TrailingAccessory>
               }

@@ -136,13 +136,19 @@ Content.displayName = 'BpkInsetBannerV3.Content';
 
 // ─── TrailingAccessory ───────────────────────────────────────────────────────
 
-type InteractiveTrailingAccessoryProps = {
+type InteractiveTrailingAccessoryProps = Omit<
+  ComponentPropsWithoutRef<'button'>,
+  'className' | 'style' | 'children' | 'type' | 'onClick'
+> & {
   children: ReactNode;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
   'aria-label': string;
 };
 
-type StaticTrailingAccessoryProps = {
+type StaticTrailingAccessoryProps = Omit<
+  ComponentPropsWithoutRef<'div'>,
+  'className' | 'style' | 'children'
+> & {
   children: ReactNode;
   onClick?: never;
 };
@@ -151,15 +157,16 @@ export type TrailingAccessoryProps =
   | InteractiveTrailingAccessoryProps
   | StaticTrailingAccessoryProps;
 
-const TrailingAccessory = forwardRef<HTMLElement, TrailingAccessoryProps>(
+const TrailingAccessory = forwardRef<HTMLButtonElement | HTMLDivElement, TrailingAccessoryProps>(
   (props, ref) => {
     if ('onClick' in props && props.onClick) {
-      const { 'aria-label': ariaLabel, children, onClick } = props as InteractiveTrailingAccessoryProps;
+      const { 'aria-label': ariaLabel, children, onClick, ...rest } = props as InteractiveTrailingAccessoryProps;
       return (
         <button
           ref={ref as Ref<HTMLButtonElement>}
           type="button"
           aria-label={ariaLabel}
+          {...rest}
           {...getDataComponentAttribute('InsetBannerV3.TrailingAccessory')}
           className={getClassName('bpk-inset-banner-v3__trailing-accessory', 'bpk-inset-banner-v3__trailing-accessory--interactive')}
           onClick={onClick}
@@ -169,10 +176,11 @@ const TrailingAccessory = forwardRef<HTMLElement, TrailingAccessoryProps>(
       );
     }
 
-    const { children } = props;
+    const { children, ...rest } = props as StaticTrailingAccessoryProps;
     return (
       <div
         ref={ref as Ref<HTMLDivElement>}
+        {...rest}
         {...getDataComponentAttribute('InsetBannerV3.TrailingAccessory')}
         className={getClassName('bpk-inset-banner-v3__trailing-accessory')}
       >

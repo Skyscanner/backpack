@@ -29,22 +29,24 @@ describe('BpkInsetBannerV3 accessibility tests', () => {
         textVariant="on-dark"
         aria-label="Sponsored by Skyscanner"
       >
-        <BpkInsetBannerV3.LeadingAccessory>
-          <img
-            src="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
-            alt="Skyscanner"
-          />
-        </BpkInsetBannerV3.LeadingAccessory>
-        <BpkInsetBannerV3.Content>
-          <p>Lorem ipsum</p>
-          <p>Lorem ipsum dolor sit amet</p>
-        </BpkInsetBannerV3.Content>
-        <BpkInsetBannerV3.TrailingAccessory
-          onClick={() => {}}
-          aria-label="About this advert"
-        >
-          <span>Sponsored</span>
-        </BpkInsetBannerV3.TrailingAccessory>
+        <BpkInsetBannerV3.Header>
+          <BpkInsetBannerV3.LeadingAccessory>
+            <img
+              src="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
+              alt="Skyscanner"
+            />
+          </BpkInsetBannerV3.LeadingAccessory>
+          <BpkInsetBannerV3.Content>
+            <p>Lorem ipsum</p>
+            <p>Lorem ipsum dolor sit amet</p>
+          </BpkInsetBannerV3.Content>
+          <BpkInsetBannerV3.TrailingAccessory
+            onClick={() => {}}
+            aria-label="About this advert"
+          >
+            <span>Sponsored</span>
+          </BpkInsetBannerV3.TrailingAccessory>
+        </BpkInsetBannerV3.Header>
       </BpkInsetBannerV3.Root>,
     );
     const results = await axe(container);
@@ -58,12 +60,14 @@ describe('BpkInsetBannerV3 accessibility tests', () => {
         textVariant="on-light"
         aria-label="Banner"
       >
-        <BpkInsetBannerV3.Content>
-          <p>Content only</p>
-        </BpkInsetBannerV3.Content>
-        <BpkInsetBannerV3.TrailingAccessory>
-          <span>Static label</span>
-        </BpkInsetBannerV3.TrailingAccessory>
+        <BpkInsetBannerV3.Header>
+          <BpkInsetBannerV3.Content>
+            <p>Content only</p>
+          </BpkInsetBannerV3.Content>
+          <BpkInsetBannerV3.TrailingAccessory>
+            <span>Static label</span>
+          </BpkInsetBannerV3.TrailingAccessory>
+        </BpkInsetBannerV3.Header>
       </BpkInsetBannerV3.Root>,
     );
     const results = await axe(container);

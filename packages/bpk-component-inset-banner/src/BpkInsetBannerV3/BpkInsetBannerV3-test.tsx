@@ -110,7 +110,7 @@ describe('BpkInsetBannerV3', () => {
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
 
-    it('should have role="button" and tabIndex=0 when onClick is provided', () => {
+    it('should render as a button when onClick is provided', () => {
       render(
         <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()} aria-label="About this advert">
           <span>Info</span>
@@ -192,16 +192,18 @@ describe('BpkInsetBannerV3', () => {
           textVariant="on-light"
           aria-label="Sponsored by Skyscanner"
         >
-          <BpkInsetBannerV3.LeadingAccessory>
-            <img src="logo.png" alt="Skyscanner" />
-          </BpkInsetBannerV3.LeadingAccessory>
-          <BpkInsetBannerV3.Content>
-            <p>Title text</p>
-            <p>Subheadline text</p>
-          </BpkInsetBannerV3.Content>
-          <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()} aria-label="About this advert">
-            <span>Sponsored</span>
-          </BpkInsetBannerV3.TrailingAccessory>
+          <BpkInsetBannerV3.Header>
+            <BpkInsetBannerV3.LeadingAccessory>
+              <img src="logo.png" alt="Skyscanner" />
+            </BpkInsetBannerV3.LeadingAccessory>
+            <BpkInsetBannerV3.Content>
+              <p>Title text</p>
+              <p>Subheadline text</p>
+            </BpkInsetBannerV3.Content>
+            <BpkInsetBannerV3.TrailingAccessory onClick={jest.fn()} aria-label="About this advert">
+              <span>Sponsored</span>
+            </BpkInsetBannerV3.TrailingAccessory>
+          </BpkInsetBannerV3.Header>
         </BpkInsetBannerV3.Root>,
       );
 
