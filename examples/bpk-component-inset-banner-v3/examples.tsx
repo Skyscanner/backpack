@@ -415,7 +415,7 @@ const WithLeadingIconBadgeSubtitleAndBottomSheet = () => {
           textVariant="on-light"
           aria-label="Mystery supplier"
         >
-          <BpkInsetBannerV3.Header>
+          <BpkInsetBannerV3.Header layout="horizontal">
             <BpkInsetBannerV3.LeadingAccessory>
               <BpkVessel className={getClassName('bpk-inset-banner-v3-example__icon-badge')}>
                 <PriceTagIcon />
@@ -468,7 +468,7 @@ const WithLeadingIconBadgeAndBottomSheet = () => {
           textVariant="on-light"
           aria-label="Get a lower price when you find out the supplier later"
         >
-          <BpkInsetBannerV3.Header>
+          <BpkInsetBannerV3.Header layout="horizontal">
             <BpkInsetBannerV3.LeadingAccessory>
               <BpkVessel className={getClassName('bpk-inset-banner-v3-example__icon-badge')}>
                 <PriceTagIcon />

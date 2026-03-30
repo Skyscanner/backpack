@@ -49,14 +49,14 @@
         'leading trailing'
         'content content';
       gap: tokens.bpk-spacing-sm();
-    }
 
-    // Consumer overrides auto-responsive
-    &--horizontal {
-      grid-template-columns: auto 1fr auto;
-      grid-template-areas: 'leading content trailing';
-      align-items: center;
-      gap: tokens.bpk-spacing-base();
+      // Override: keep horizontal layout even at narrow widths
+      &--horizontal {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 'leading content trailing';
+        align-items: center;
+        gap: tokens.bpk-spacing-base();
+      }
     }
 
     &--vertical {
@@ -89,6 +89,11 @@
 
     @container (max-width: 25rem) {
       align-self: flex-start;
+    }
+
+    // When inside a forced-horizontal header, stay vertically centered
+    .bpk-inset-banner-v3__header--horizontal > & {
+      align-self: center;
     }
 
     &--interactive {
