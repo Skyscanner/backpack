@@ -136,6 +136,7 @@
     animation-delay: var(--anim-delay, 0ms);
 
     @media (prefers-reduced-motion: reduce) {
+      transform: translateY(0) scale(1);
       animation: bpk-chat-bubble-entrance-reduced tokens.$bpk-duration-sm
         ease-out forwards;
     }
@@ -146,10 +147,10 @@
     @extend %bpk-chat-bubble-left;
     @extend %bpk-chat-bubble-radius-all-lg;
 
-    text-align: start;
+    text-align: left;
 
     @include utils.bpk-rtl {
-      text-align: end;
+      text-align: right;
     }
   }
 
@@ -159,10 +160,10 @@
 
     background: tokens.$bpk-core-accent-day;
     color: tokens.$bpk-text-on-dark-day;
-    text-align: end;
+    text-align: right;
 
     @include utils.bpk-rtl {
-      text-align: start;
+      text-align: left;
     }
   }
 
@@ -177,13 +178,13 @@
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-core-accent-day;
     background: transparent;
     color: tokens.$bpk-core-accent-day;
-    text-align: end;
+    text-align: right;
     cursor: pointer;
 
     @include bpk-chat-bubble-corner('right', 'bottom');
 
     @include utils.bpk-rtl {
-      text-align: start;
+      text-align: left;
     }
 
     @include utils.bpk-hover {
@@ -245,9 +246,5 @@
     margin-top: tokens.bpk-spacing-md();
     align-items: center;
     gap: tokens.bpk-spacing-base();
-
-    > span {
-      margin-top: 0 !important; /* stylelint-disable-line declaration-no-important */
-    }
   }
 }
