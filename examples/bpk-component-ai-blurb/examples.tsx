@@ -17,89 +17,91 @@
  */
 
 import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
+import { BpkBox, BpkProvider, BpkSpacing } from '../../packages/bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
-
-import STYLES from './examples.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export const DefaultExample = () => (
-  <div className={getClassName('bpk-ai-blurb-examples')}>
-    <BpkAiBlurb.Root>
-      <BpkAiBlurb.Header title="Summarized by AI" />
-      <BpkAiBlurb.Summary>
-        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-          <strong>The first EasyTerra deal</strong> offers the lowest price and
-          better insurance coverage. The second EasyTerra deal has a higher price but
-          offers a more spacious car type.
-        </BpkText>
-      </BpkAiBlurb.Summary>
-      <BpkAiBlurb.Feedback
-        feedbackText="Was this helpful?"
-        thankYouText="Thanks for your feedback!"
-        thumbsUpLabel="Thumbs up"
-        thumbsDownLabel="Thumbs down"
-        onFeedback={(positive) =>
-          console.log(`Feedback: ${positive ? 'positive' : 'negative'}`)
-        }
-      />
-    </BpkAiBlurb.Root>
-  </div>
+  <BpkProvider>
+    <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>
+          <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+            <strong>The first EasyTerra deal</strong> offers the lowest price and better insurance coverage. The second EasyTerra deal has a higher price but offers a more spacious car type.
+          </BpkText>
+        </BpkAiBlurb.Summary>
+        <BpkAiBlurb.Feedback
+          feedbackText="Was this helpful?"
+          thankYouText="Thanks for your feedback!"
+          thumbsUpLabel="Thumbs up"
+          thumbsDownLabel="Thumbs down"
+          onFeedback={(positive) =>
+            console.log(`Feedback: ${positive ? 'positive' : 'negative'}`)
+          }
+        />
+      </BpkAiBlurb.Root>
+    </BpkBox>
+  </BpkProvider>
 );
 
 export const LoadingExample = () => (
-  <div className={getClassName('bpk-ai-blurb-examples')}>
-    <BpkAiBlurb.Root>
-      <BpkAiBlurb.Header title="Summarized by AI" />
-      <BpkAiBlurb.Summary>
-        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-          Comparing your shortlist
-          <BpkAiBlurb.Ellipsis />
-        </BpkText>
-      </BpkAiBlurb.Summary>
-    </BpkAiBlurb.Root>
-  </div>
+  <BpkProvider>
+    <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>
+          <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+            Comparing your shortlist
+            <BpkAiBlurb.Ellipsis />
+          </BpkText>
+        </BpkAiBlurb.Summary>
+      </BpkAiBlurb.Root>
+    </BpkBox>
+  </BpkProvider>
 );
 
 export const ErrorGeneralExample = () => (
-  <div className={getClassName('bpk-ai-blurb-examples')}>
-    <BpkAiBlurb.Root>
-      <BpkAiBlurb.Header title="Summarized by AI" />
-      <BpkAiBlurb.Summary>
-        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-          Couldn&apos;t load your summary.{' '}
-          <button
-            type="button"
-            // eslint-disable-next-line backpack/use-tokens
-            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'inherit', font: 'inherit', textDecoration: 'underline' }}
-            onClick={() => {}}
-          >
-            Retry
-          </button>
-        </BpkText>
-      </BpkAiBlurb.Summary>
-    </BpkAiBlurb.Root>
-  </div>
+  <BpkProvider>
+    <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>
+          <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+            Couldn&apos;t load your summary.{' '}
+            <button
+              type="button"
+              // eslint-disable-next-line backpack/use-tokens
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'inherit', font: 'inherit', textDecoration: 'underline' }}
+              onClick={() => {}}
+            >
+              Retry
+            </button>
+          </BpkText>
+        </BpkAiBlurb.Summary>
+      </BpkAiBlurb.Root>
+    </BpkBox>
+  </BpkProvider>
 );
 
 export const ErrorRefreshLimitExample = () => (
-  <div className={getClassName('bpk-ai-blurb-examples')}>
-    <BpkAiBlurb.Root>
-      <BpkAiBlurb.Header title="Summarized by AI" />
-      <BpkAiBlurb.Summary>
-        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-          You&apos;ve reached the refresh limit. Please come back later.{' '}
-          <button
-            type="button"
-            // eslint-disable-next-line backpack/use-tokens
-            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'inherit', font: 'inherit', textDecoration: 'underline' }}
-            onClick={() => {}}
-          >
-            Retry
-          </button>
-        </BpkText>
-      </BpkAiBlurb.Summary>
-    </BpkAiBlurb.Root>
-  </div>
+  <BpkProvider>
+    <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title="Summarized by AI" />
+        <BpkAiBlurb.Summary>
+          <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+            You&apos;ve reached the refresh limit. Please come back later.{' '}
+            <button
+              type="button"
+              // eslint-disable-next-line backpack/use-tokens
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'inherit', font: 'inherit', textDecoration: 'underline' }}
+              onClick={() => {}}
+            >
+              Retry
+            </button>
+          </BpkText>
+        </BpkAiBlurb.Summary>
+      </BpkAiBlurb.Root>
+    </BpkBox>
+  </BpkProvider>
 );

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import ThumbsDownIcon from '../../../bpk-component-icon/sm/thumbs-down';
 import ThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
@@ -38,11 +38,8 @@ const Feedback = ({
   thumbsUpLabel,
 }: BpkAiBlurbFeedbackProps) => {
   const [hasVoted, setHasVoted] = useState(false);
-  const hasVotedRef = useRef(false);
 
   const handleVote = (positive: boolean) => {
-    if (hasVotedRef.current) return;
-    hasVotedRef.current = true;
     setHasVoted(true);
     onFeedback?.(positive);
   };
@@ -63,6 +60,7 @@ const Feedback = ({
         className={getClassName('bpk-ai-blurb__feedback-thumb')}
         onClick={() => handleVote(true)}
         aria-label={thumbsUpLabel}
+        disabled={hasVoted}
       >
         <ThumbsUpIcon aria-hidden />
       </button>
@@ -71,6 +69,7 @@ const Feedback = ({
         className={getClassName('bpk-ai-blurb__feedback-thumb')}
         onClick={() => handleVote(false)}
         aria-label={thumbsDownLabel}
+        disabled={hasVoted}
       >
         <ThumbsDownIcon aria-hidden />
       </button>
