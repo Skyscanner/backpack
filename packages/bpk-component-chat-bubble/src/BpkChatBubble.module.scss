@@ -213,14 +213,32 @@
 
   &--user-first {
     @include bpk-chat-bubble-corner('right', 'bottom');
+
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
   }
 
   &--user-middle {
     @include bpk-chat-bubble-corner('right', 'both');
+
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
   }
 
   &--user-last {
     @include bpk-chat-bubble-corner('right', 'top');
+
+    text-align: left;
+
+    @include utils.bpk-rtl {
+      text-align: right;
+    }
   }
 
   &__content {
@@ -238,7 +256,16 @@
   }
 
   &__retry-button {
-    gap: tokens.bpk-spacing-md();
+    padding: 0 tokens.bpk-spacing-base();
+  }
+
+  &__retry-icon {
+    margin-right: tokens.bpk-spacing-md();
+
+    @include utils.bpk-rtl {
+      margin-right: 0;
+      margin-left: tokens.bpk-spacing-md();
+    }
   }
 
   &__thumbs {
