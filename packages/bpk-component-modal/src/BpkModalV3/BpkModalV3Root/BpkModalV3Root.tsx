@@ -18,7 +18,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 
-import { Dialog } from '@ark-ui/react/dialog';
+import { Dialog } from '@ark-ui/react';
 
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 import { ModalTypeProvider } from '../BpkModalV3Context';
