@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import ThumbsDownIcon from '../../../bpk-component-icon/sm/thumbs-down';
 import ThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
@@ -38,8 +38,11 @@ const Feedback = ({
   thumbsUpLabel,
 }: BpkAiBlurbFeedbackProps) => {
   const [hasVoted, setHasVoted] = useState(false);
+  const hasVotedRef = useRef(false);
 
   const handleVote = (positive: boolean) => {
+    if (hasVotedRef.current) return;
+    hasVotedRef.current = true;
     setHasVoted(true);
     onFeedback?.(positive);
   };

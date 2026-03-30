@@ -148,4 +148,11 @@ describe('BpkAiBlurb.Feedback', () => {
     expect(onFeedback).toHaveBeenCalledTimes(1);
     expect(screen.queryByLabelText('Thumbs up')).not.toBeInTheDocument();
   });
+
+  it('should fire onFeedback only once on rapid double-click', async () => {
+    const onFeedback = jest.fn();
+    render(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
+    await userEvent.dblClick(screen.getByLabelText('Thumbs up'));
+    expect(onFeedback).toHaveBeenCalledTimes(1);
+  });
 });
