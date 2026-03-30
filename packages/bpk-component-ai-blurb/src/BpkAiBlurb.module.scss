@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
 
 .bpk-ai-blurb {
   display: flex;
@@ -69,14 +70,13 @@
     }
 
     &:focus-visible {
-      border-radius: tokens.$bpk-border-radius-xs;
-      outline: tokens.$bpk-border-size-xl solid tokens.$bpk-core-primary-day;
+      @include utils.bpk-focus-indicator;
     }
   }
 
   &__ellipsis {
     display: inline-flex;
-    vertical-align: bottom;
+    vertical-align: middle;
     gap: 0.1em;
     margin-inline-start: 0.1em;
 

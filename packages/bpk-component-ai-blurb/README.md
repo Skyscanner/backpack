@@ -36,7 +36,7 @@ import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
 <BpkAiBlurb.Root>
   <BpkAiBlurb.Header title="Summarized by AI" />
   <BpkAiBlurb.Summary>
-    Couldn't load your summary. <a onClick={retry}>Retry</a>
+    Couldn't load your summary. <button type="button" onClick={retry}>Retry</button>
   </BpkAiBlurb.Summary>
 </BpkAiBlurb.Root>
 ```
