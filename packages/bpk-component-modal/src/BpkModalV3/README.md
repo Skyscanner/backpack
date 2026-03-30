@@ -119,6 +119,30 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 </BpkModal.Root>
 ```
 
+### Chatbot
+
+A full-viewport panel that slides in from the right (left in RTL). Intended for chatbot and conversational UI surfaces. Use alongside `BpkChatbotInput` for the input area.
+
+```tsx
+<BpkModal.Root type="chatbot">
+  <BpkModal.Trigger asChild>
+    <BpkButton>Open chatbot</BpkButton>
+  </BpkModal.Trigger>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>
+      <BpkModal.Header>
+        <BpkModal.Title>Chatbot</BpkModal.Title>
+        <BpkModal.CloseTrigger label="Close" />
+      </BpkModal.Header>
+      <BpkModal.Body>
+        <BpkText>Conversation content goes here.</BpkText>
+      </BpkModal.Body>
+    </BpkModal.Content>
+  </BpkModal.Portal>
+</BpkModal.Root>
+```
+
 ### Default: With hero image
 
 ```tsx
@@ -215,7 +239,7 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 
 | Type | Values |
 |---|---|
-| `BpkModalType` | `'default'` \| `'sheet'` \| `'full'` |
+| `BpkModalV3Type` | `'default'` \| `'sheet'` \| `'full'` \| `'chatbot'` |
 
 ## Slots
 
