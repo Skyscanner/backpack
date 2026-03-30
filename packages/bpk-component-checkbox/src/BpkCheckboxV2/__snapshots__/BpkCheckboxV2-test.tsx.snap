@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`BpkCheckbox Description should render snapshot with title and description 1`] = `
+exports[`BpkCheckboxV2 Description should render snapshot with title and description 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox-v2"
@@ -50,7 +50,7 @@ exports[`BpkCheckbox Description should render snapshot with title and descripti
 </DocumentFragment>
 `;
 
-exports[`BpkCheckbox Root should render correctly with default props 1`] = `
+exports[`BpkCheckboxV2 Root should render correctly with default props 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox-v2"
@@ -93,7 +93,7 @@ exports[`BpkCheckbox Root should render correctly with default props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkCheckbox Root should render in checked state 1`] = `
+exports[`BpkCheckboxV2 Root should render in checked state 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox-v2"
@@ -137,7 +137,7 @@ exports[`BpkCheckbox Root should render in checked state 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkCheckbox Root should render in disabled state 1`] = `
+exports[`BpkCheckboxV2 Root should render in disabled state 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox-v2"
@@ -184,7 +184,7 @@ exports[`BpkCheckbox Root should render in disabled state 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkCheckbox Root should render in indeterminate state 1`] = `
+exports[`BpkCheckboxV2 Root should render in indeterminate state 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox-v2"
@@ -227,7 +227,7 @@ exports[`BpkCheckbox Root should render in indeterminate state 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkCheckbox Root should render in invalid state 1`] = `
+exports[`BpkCheckboxV2 Root should render in invalid state 1`] = `
 <DocumentFragment>
   <label
     class="bpk-checkbox-v2"

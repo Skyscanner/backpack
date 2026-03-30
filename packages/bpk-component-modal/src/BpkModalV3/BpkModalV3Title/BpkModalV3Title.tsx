@@ -18,21 +18,26 @@
 
 import type { ReactNode } from 'react';
 
-import { cssModules } from '../../../bpk-react-utils';
+import { Dialog } from '@ark-ui/react';
 
-import STYLES from './BpkCheckbox.module.scss';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+
+import STYLES from './BpkModalV3Title.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxDescriptionProps = {
+type BpkModalV3TitleProps = {
   children: ReactNode;
 };
 
-// Description renders as a <span> inside the Checkbox.Root <label>.
-// Being inside the <label> element means screen readers announce its text
-// as part of the checkbox's accessible name.
-const BpkCheckboxDescription = ({ children }: BpkCheckboxDescriptionProps) => (
-  <span className={getClassName('bpk-checkbox-v2__description')}>{children}</span>
+const BpkModalV3Title = ({ children }: BpkModalV3TitleProps) => (
+  <Dialog.Title
+    className={getClassName('bpk-modal-v3__title')}
+    {...getDataComponentAttribute('ModalV3Title')}
+  >
+    {children}
+  </Dialog.Title>
 );
 
-export default BpkCheckboxDescription;
+export default BpkModalV3Title;
+export type { BpkModalV3TitleProps };

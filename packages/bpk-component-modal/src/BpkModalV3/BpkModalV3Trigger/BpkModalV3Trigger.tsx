@@ -16,10 +16,28 @@
  * limitations under the License.
  */
 
-import { Checkbox } from '@ark-ui/react';
+import type { ReactNode } from 'react';
 
-// Renders Ark's visually hidden native <input type="checkbox">.
-// Include when the checkbox is inside a <form> for native form submission.
-const BpkCheckboxHiddenInput = () => <Checkbox.HiddenInput />;
+import { Dialog } from '@ark-ui/react';
 
-export default BpkCheckboxHiddenInput;
+import { getDataComponentAttribute } from '../../../../bpk-react-utils';
+
+type BpkModalV3TriggerProps = {
+  children: ReactNode;
+  asChild?: boolean;
+};
+
+const BpkModalV3Trigger = ({
+  asChild,
+  children,
+}: BpkModalV3TriggerProps) => (
+  <Dialog.Trigger
+    asChild={asChild}
+    {...getDataComponentAttribute('ModalV3Trigger')}
+  >
+    {children}
+  </Dialog.Trigger>
+);
+
+export default BpkModalV3Trigger;
+export type { BpkModalV3TriggerProps };

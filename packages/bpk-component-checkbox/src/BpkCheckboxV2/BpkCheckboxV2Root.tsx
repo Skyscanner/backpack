@@ -22,26 +22,26 @@ import { Checkbox } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
-import STYLES from './BpkCheckbox.module.scss';
+import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckedState = boolean | 'indeterminate';
+export type BpkCheckboxV2CheckedState = boolean | 'indeterminate';
 
-export type BpkCheckboxRootProps = {
+export type BpkCheckboxV2RootProps = {
   children: ReactNode;
-  checked?: BpkCheckedState;
-  defaultChecked?: BpkCheckedState;
+  checked?: BpkCheckboxV2CheckedState;
+  defaultChecked?: BpkCheckboxV2CheckedState;
   disabled?: boolean;
   id?: string;
   invalid?: boolean;
   name?: string;
-  onCheckedChange?: (checked: BpkCheckedState) => void;
+  onCheckedChange?: (checked: BpkCheckboxV2CheckedState) => void;
   required?: boolean;
   value?: string;
 };
 
-const BpkCheckboxRoot = ({
+const BpkCheckboxV2Root = ({
   checked,
   children,
   defaultChecked,
@@ -52,7 +52,7 @@ const BpkCheckboxRoot = ({
   onCheckedChange,
   required = false,
   value,
-}: BpkCheckboxRootProps) => (
+}: BpkCheckboxV2RootProps) => (
   <Checkbox.Root
     className={getClassName('bpk-checkbox-v2')}
     checked={checked}
@@ -70,4 +70,4 @@ const BpkCheckboxRoot = ({
   </Checkbox.Root>
 );
 
-export default BpkCheckboxRoot;
+export default BpkCheckboxV2Root;

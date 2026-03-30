@@ -18,7 +18,7 @@
 
 import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
 import BpkButton from '../../packages/bpk-component-button';
-import { BpkCardV2 } from '../../packages/bpk-component-card';
+import { BpkCardV2, CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS, type BpkCardV2SurfaceColor } from '../../packages/bpk-component-card';
 import BpkCarousel from '../../packages/bpk-component-carousel';
 import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
 import { BpkBox, BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
@@ -31,29 +31,15 @@ import BpkStarRating from '../../packages/bpk-component-star-rating';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
-import type {
-  BpkCardV2SurfaceColor,
-  BpkCardV2Variant,
-} from '../../packages/bpk-component-card';
-
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const noop = () => {};
 
-const SURFACE_COLORS: BpkCardV2SurfaceColor[] = [
-  'surfaceDefault',
-  'surfaceElevated',
-  'surfaceTint',
-  'surfaceSubtle',
-  'surfaceHero',
-  'surfaceContrast',
-  'surfaceLowContrast',
-  'surfaceHighlight',
-];
+const SURFACE_COLORS = Object.values(CARD_V2_SURFACE_COLORS);
 
-const VARIANTS: BpkCardV2Variant[] = ['default', 'outlined', 'noElevation'];
+const VARIANTS = Object.values(CARD_V2_VARIANTS);
 
 const DefaultExample = () => (
   <BpkBox width="20rem">
@@ -94,7 +80,7 @@ const VariantsExample = () => (
   </div>
 );
 
-const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = ['surfaceHero', 'surfaceContrast'];
+const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = [CARD_V2_SURFACE_COLORS.surfaceHero, CARD_V2_SURFACE_COLORS.surfaceContrast];
 
 const SurfaceColorsExample = () => (
   <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
@@ -102,7 +88,7 @@ const SurfaceColorsExample = () => (
       const textColor = DARK_SURFACE_COLORS.includes(color) ? TEXT_COLORS.textOnDark : undefined;
       return (
         <BpkBox key={color} width="20rem">
-          <BpkCardV2.Root bgColor={color} variant="outlined">
+          <BpkCardV2.Root bgColor={color} variant={CARD_V2_VARIANTS.outlined}>
             <BpkCardV2.Header>
               <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3" color={textColor}>
                 {color}
@@ -176,7 +162,7 @@ const PackagesCardExample = () => (
       </BpkCardV2.Body>
 
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
-        <BpkCardV2.Root bgColor='surfaceLowContrast' variant='noElevation'>
+        <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceLowContrast} variant={CARD_V2_VARIANTS.noElevation}>
           <BpkCardV2.Body templateColumns={{ base: '1fr', desktop: '1fr auto' }} justify="space-between" gap={BpkSpacing.MD}>
             <BpkFlex gap={BpkSpacing.LG} direction={{ base: 'column', desktop: 'row' }}>
               <DealOption text="Cheapest • Meals not included  •  £1,740" />
@@ -332,7 +318,7 @@ const HotelCardExample = () => (
 const CustomPaddingExample = () => (
   <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
     <BpkBox width="20rem">
-      <BpkCardV2.Root variant="outlined">
+      <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined}>
         <BpkCardV2.Header padding={BpkSpacing.LG}>
           <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">
             Large padding
@@ -347,7 +333,7 @@ const CustomPaddingExample = () => (
       </BpkCardV2.Root>
     </BpkBox>
     <BpkBox width="20rem">
-      <BpkCardV2.Root variant="outlined">
+      <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined}>
         <BpkCardV2.Header
           paddingTop={BpkSpacing.SM}
           paddingBottom={BpkSpacing.SM}

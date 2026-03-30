@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { BpkCheckboxV2 as BpkCheckbox } from '../../packages/bpk-component-checkbox';
+import { BpkCheckboxV2 } from '../../packages/bpk-component-checkbox';
 
 import {
   ComposedHertzExample,
@@ -33,7 +33,7 @@ import {
 
 export default {
   title: 'bpk-component-checkbox-v2',
-  component: BpkCheckbox.Root,
+  component: BpkCheckboxV2.Root,
 };
 
 export const SimpleLabel = SimpleLabelExample;

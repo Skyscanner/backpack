@@ -1,0 +1,68 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/utils';
+@use '../../../bpk-mixins/breakpoints';
+
+.bpk-chatbot-input-field {
+  position: relative;
+  min-width: 0;
+  flex: 1;
+  cursor: text;
+  overflow: visible;
+  touch-action: manipulation;
+
+  &__label {
+    @include utils.bpk-visually-hidden;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: tokens.$bpk-text-primary-day;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    appearance: none;
+    box-sizing: border-box;
+    caret-color: tokens.$bpk-core-accent-day;
+    touch-action: manipulation;
+
+    @include typography.bpk-footnote;
+
+    @include breakpoints.bpk-breakpoint-mobile {
+      @include typography.bpk-text-base;
+    }
+
+    &::placeholder {
+      color: tokens.$bpk-text-secondary-day;
+      opacity: 1;
+    }
+
+    &:disabled {
+      color: tokens.$bpk-text-disabled-day;
+      cursor: not-allowed;
+      opacity: 1;
+    }
+  }
+}

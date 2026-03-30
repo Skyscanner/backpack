@@ -16,20 +16,21 @@
  * limitations under the License.
  */
 
-import BpkCheckboxControl from './BpkCheckboxControl';
-import BpkCheckboxDescription from './BpkCheckboxDescription';
-import BpkCheckboxHiddenInput from './BpkCheckboxHiddenInput';
-import BpkCheckboxIndicator from './BpkCheckboxIndicator';
-import BpkCheckboxLabel from './BpkCheckboxLabel';
-import BpkCheckboxRoot from './BpkCheckboxRoot';
+import figma from "@figma/code-connect"
 
-const BpkCheckbox = {
-  Root: BpkCheckboxRoot,
-  Control: BpkCheckboxControl,
-  Indicator: BpkCheckboxIndicator,
-  Label: BpkCheckboxLabel,
-  Description: BpkCheckboxDescription,
-  HiddenInput: BpkCheckboxHiddenInput,
-};
+import BpkFormValidation from "./BpkFormValidation";
 
-export default BpkCheckbox;
+figma.connect(
+  BpkFormValidation,
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A5121",
+  {
+    props: {
+      children: figma.textContent("*"),
+    },
+    example: ({ children }) => (
+      <BpkFormValidation id="form-validation" expanded>
+        {children}
+      </BpkFormValidation>
+    ),
+  },
+)

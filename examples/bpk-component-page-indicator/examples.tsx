@@ -82,8 +82,6 @@ const WithNavExample = () => (
   <PageIndicatorContainer totalIndicators={7} showNav />
 );
 
-const backgroundColor = '#003580';
-
 const WithNavOverImageSpacedExample = () => (
   <div
     style={{ width: imageWidth, height: imageHeight, backgroundColor: backgroundElevation03DarkColor }}

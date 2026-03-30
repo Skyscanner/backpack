@@ -18,22 +18,31 @@
 
 import type { ReactNode } from 'react';
 
-import { Checkbox } from '@ark-ui/react';
+import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+import { useModalType } from '../BpkModalV3Context';
 
-import { cssModules } from '../../../bpk-react-utils';
-
-import STYLES from './BpkCheckbox.module.scss';
+import STYLES from './BpkModalV3Header.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxControlProps = {
+type BpkModalV3HeaderProps = {
   children: ReactNode;
 };
 
-const BpkCheckboxControl = ({ children }: BpkCheckboxControlProps) => (
-  <Checkbox.Control className={getClassName('bpk-checkbox-v2__control')}>
-    {children}
-  </Checkbox.Control>
-);
+const BpkModalV3Header = ({ children }: BpkModalV3HeaderProps) => {
+  const type = useModalType();
+  return (
+    <div
+      className={getClassName(
+        'bpk-modal-v3__header',
+        `bpk-modal-v3__header--${type}`,
+      )}
+      {...getDataComponentAttribute('ModalV3Header')}
+    >
+      {children}
+    </div>
+  );
+};
 
-export default BpkCheckboxControl;
+export default BpkModalV3Header;
+export type { BpkModalV3HeaderProps };
