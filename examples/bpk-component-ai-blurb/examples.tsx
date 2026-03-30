@@ -17,20 +17,24 @@
  */
 
 import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const SUMMARY_TEXT =
-  'The first EasyTerra deal offers the lowest price and better insurance coverage. The second EasyTerra deal has a higher price but offers a more spacious car type.';
-
 export const DefaultExample = () => (
   <div className={getClassName('bpk-ai-blurb-examples')}>
     <BpkAiBlurb.Root>
       <BpkAiBlurb.Header title="Summarized by AI" />
-      <BpkAiBlurb.Summary>{SUMMARY_TEXT}</BpkAiBlurb.Summary>
+      <BpkAiBlurb.Summary>
+        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+          <strong>The first EasyTerra deal</strong> offers the lowest price and
+          better insurance coverage. The second EasyTerra deal has a higher price but
+          offers a more spacious car type.
+        </BpkText>
+      </BpkAiBlurb.Summary>
       <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
@@ -49,8 +53,10 @@ export const LoadingExample = () => (
     <BpkAiBlurb.Root>
       <BpkAiBlurb.Header title="Summarized by AI" />
       <BpkAiBlurb.Summary>
-        Comparing your shortlist
-        <BpkAiBlurb.Ellipsis />
+        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+          Comparing your shortlist
+          <BpkAiBlurb.Ellipsis />
+        </BpkText>
       </BpkAiBlurb.Summary>
     </BpkAiBlurb.Root>
   </div>
@@ -61,11 +67,17 @@ export const ErrorGeneralExample = () => (
     <BpkAiBlurb.Root>
       <BpkAiBlurb.Header title="Summarized by AI" />
       <BpkAiBlurb.Summary>
-        Couldn&apos;t load your summary.{' '}
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          Retry
-        </a>
+        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+          Couldn&apos;t load your summary.{' '}
+          <button
+            type="button"
+            // eslint-disable-next-line backpack/use-tokens
+            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'inherit', font: 'inherit', textDecoration: 'underline' }}
+            onClick={() => {}}
+          >
+            Retry
+          </button>
+        </BpkText>
       </BpkAiBlurb.Summary>
     </BpkAiBlurb.Root>
   </div>
@@ -76,11 +88,17 @@ export const ErrorRefreshLimitExample = () => (
     <BpkAiBlurb.Root>
       <BpkAiBlurb.Header title="Summarized by AI" />
       <BpkAiBlurb.Summary>
-        You&apos;ve reached the refresh limit. Please come back later.{' '}
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          Retry
-        </a>
+        <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+          You&apos;ve reached the refresh limit. Please come back later.{' '}
+          <button
+            type="button"
+            // eslint-disable-next-line backpack/use-tokens
+            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'inherit', font: 'inherit', textDecoration: 'underline' }}
+            onClick={() => {}}
+          >
+            Retry
+          </button>
+        </BpkText>
       </BpkAiBlurb.Summary>
     </BpkAiBlurb.Root>
   </div>
