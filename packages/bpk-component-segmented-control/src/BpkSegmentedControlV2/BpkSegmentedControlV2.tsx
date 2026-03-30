@@ -52,6 +52,13 @@ const BpkSegmentedControlV2Root = ({
   );
 
   return (
+    // key={dir} is required because Zag.js measures the indicator position via
+    // el.offsetLeft (a physical pixel value) and only re-syncs when `value` changes —
+    // it has no listener on locale/direction. When direction changes, LocaleProvider
+    // updates the locale context but Zag's internal indicatorRect stays stale, leaving
+    // the sliding indicator visually offset. Forcing a remount via key={dir} restarts
+    // the Zag machine, which re-measures offsetLeft in the new layout direction.
+    // See: decisions/rtl-ark-localeprovider.md — "Zag machine indicator pattern"
     <SegmentGroup.Root
       key={dir}
       className={containerClass}
