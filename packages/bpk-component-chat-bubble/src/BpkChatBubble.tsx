@@ -152,11 +152,12 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
             <BpkButton
               type={BUTTON_TYPES.primary}
               size={SIZE_TYPES.small}
-              className={getClassName('bpk-chat-bubble__retry-button')}
               onClick={onRetry}
               disabled={retryDisabled}
             >
-              <AlignedRedoIcon className={getClassName('bpk-chat-bubble__retry-icon')} />
+              <span className={getClassName('bpk-chat-bubble__retry-icon')}>
+                <AlignedRedoIcon />
+              </span>
               {retryLabel}
             </BpkButton>
           </div>
