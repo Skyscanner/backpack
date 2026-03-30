@@ -365,6 +365,59 @@ describe('BpkModalV3', () => {
     });
   });
 
+  describe('Body lock (chatbot type)', () => {
+    beforeEach(() => {
+      Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
+    });
+
+    afterEach(() => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.touchAction = '';
+      document.body.style.overscrollBehavior = '';
+      document.body.style.backgroundColor = '';
+    });
+
+    it('should lock body scroll when chatbot modal is open', () => {
+      renderModal({ type: 'chatbot', open: true });
+      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.position).toBe('fixed');
+      expect(document.body.style.top).toBe('-100px');
+      expect(document.body.style.width).toBe('100%');
+    });
+
+    it('should not lock body scroll for non-chatbot types', () => {
+      renderModal({ type: 'default', open: true });
+      expect(document.body.style.position).not.toBe('fixed');
+      expect(document.body.style.overflow).not.toBe('hidden');
+    });
+
+    it('should restore body styles when chatbot modal closes', () => {
+      const { rerender } = render(
+        <BpkModalV3.Root type="chatbot" open onOpenChange={jest.fn()}>
+          <BpkModalV3.Scrim />
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(document.body.style.position).toBe('fixed');
+
+      rerender(
+        <BpkModalV3.Root type="chatbot" open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Scrim />
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(document.body.style.position).toBe('');
+      expect(document.body.style.overflow).toBe('');
+    });
+  });
+
   describe('Uncontrolled with Trigger', () => {
     it('should render without open or onOpenChange props', () => {
       const { container } = render(

@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react/dialog';
 
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 import { ModalTypeProvider } from '../BpkModalV3Context';
+import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
 
-import type { BpkModalV3Type } from '../common-types';
+import useBodyLock from './useBodyLock';
+
 
 type BpkModalV3RootProps = {
   children: ReactNode;
@@ -36,22 +38,36 @@ const BpkModalV3Root = ({
   children,
   onOpenChange,
   open,
-  type = 'default',
-}: BpkModalV3RootProps) => (
-  <Dialog.Root
-    {...(open !== undefined && { open })}
-    {...(onOpenChange !== undefined && { onOpenChange })}
-  >
-    <ModalTypeProvider value={type}>
-      <div
-        data-type={type}
-        {...getDataComponentAttribute('ModalV3')}
-      >
-        {children}
-      </div>
-    </ModalTypeProvider>
-  </Dialog.Root>
-);
+  type = MODAL_V3_TYPES.default,
+}: BpkModalV3RootProps) => {
+  const [internalOpen, setInternalOpen] = useState(open ?? false);
+
+  useEffect(() => {
+    if (open !== undefined) {
+      setInternalOpen(open);
+    }
+  }, [open]);
+
+  useBodyLock(type === MODAL_V3_TYPES.chatbot && internalOpen);
+
+  const handleOpenChange = (details: { open: boolean }) => {
+    setInternalOpen(details.open);
+    onOpenChange?.(details);
+  };
+
+  return (
+    <Dialog.Root
+      {...(open !== undefined && { open })}
+      onOpenChange={handleOpenChange}
+    >
+      <ModalTypeProvider value={type}>
+        <div data-type={type} {...getDataComponentAttribute('ModalV3')}>
+          {children}
+        </div>
+      </ModalTypeProvider>
+    </Dialog.Root>
+  );
+};
 
 export default BpkModalV3Root;
 export type { BpkModalV3RootProps };

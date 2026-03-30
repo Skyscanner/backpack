@@ -123,6 +123,8 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 
 A full-viewport panel that slides in from the right (left in RTL). Intended for chatbot and conversational UI surfaces. Use alongside `BpkChatbotInput` for the input area.
 
+When open, this variant automatically locks body scroll (using `position: fixed`) to prevent background page scroll and iOS Safari bounce effects. Body styles are restored when the modal closes.
+
 ```tsx
 <BpkModal.Root type="chatbot">
   <BpkModal.Trigger asChild>
@@ -240,6 +242,16 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 | Type | Values |
 |---|---|
 | `BpkModalV3Type` | `'default'` \| `'sheet'` \| `'full'` \| `'chatbot'` |
+
+The `MODAL_V3_TYPES` constant is exported as a convenience reference for all valid type values:
+
+```tsx
+import { MODAL_V3_TYPES } from '@skyscanner/backpack-web/bpk-component-modal';
+
+<BpkModal.Root type={MODAL_V3_TYPES.chatbot}>
+  ...
+</BpkModal.Root>
+```
 
 ## Slots
 

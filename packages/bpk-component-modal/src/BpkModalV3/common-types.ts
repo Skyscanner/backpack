@@ -16,4 +16,11 @@
  * limitations under the License.
  */
 
-export type BpkModalV3Type = 'default' | 'full' | 'sheet' | 'chatbot';
+export const MODAL_V3_TYPES = {
+  default: 'default',
+  full: 'full',
+  sheet: 'sheet',
+  chatbot: 'chatbot',
+} as const;
+
+export type BpkModalV3Type = (typeof MODAL_V3_TYPES)[keyof typeof MODAL_V3_TYPES];
