@@ -50,8 +50,10 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
   const retryLabel = 'retryLabel' in props ? props.retryLabel : '';
   const onSuggestionClick =
     'onSuggestionClick' in props ? props.onSuggestionClick : undefined;
-  const suggestionAriaLabel =
-    'suggestionAriaLabel' in props ? props.suggestionAriaLabel : '';
+  const thumbsUpLabel =
+    'thumbsUpLabel' in props ? (props.thumbsUpLabel ?? 'Rate as useful') : 'Rate as useful';
+  const thumbsDownLabel =
+    'thumbsDownLabel' in props ? (props.thumbsDownLabel ?? 'Rate as not useful') : 'Rate as not useful';
   const isUser = type === 'user';
   const isSuggestion = type === 'button';
   const isRetry = type === 'retry';
@@ -84,7 +86,6 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
         className={containerClassName}
         style={inlineStyle}
         onClick={onSuggestionClick}
-        aria-label={suggestionAriaLabel}
         data-testid="bpk-chat-bubble-suggestion"
         {...getDataComponentAttribute('ChatBubble')}
       >
@@ -122,13 +123,13 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
             type="up"
             selected={selectedFeedback === 'up'}
             onClick={onFeedbackClick ?? (() => {})}
-            accessibilityLabel="Rate as useful"
+            accessibilityLabel={thumbsUpLabel}
           />
           <BpkThumbButton
             type="down"
             selected={selectedFeedback === 'down'}
             onClick={onFeedbackClick ?? (() => {})}
-            accessibilityLabel="Rate as not useful"
+            accessibilityLabel={thumbsDownLabel}
           />
         </div>
       )}

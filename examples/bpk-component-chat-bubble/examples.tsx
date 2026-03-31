@@ -72,8 +72,7 @@ export const ButtonBubbleExample = () => (
       <BpkChatBubble
         type="button"
         onSuggestionClick={() => {}}
-        suggestionAriaLabel="What are the cheapest rental options?"
-      >
+        >
         What are the cheapest rental options?
       </BpkChatBubble>
     </BpkStack>
@@ -141,8 +140,7 @@ export const MixedExample = () => {
         <BpkChatBubble
           type="button"
           onSuggestionClick={() => {}}
-          suggestionAriaLabel="What are the cheapest rental options?"
-        >
+            >
           What are the cheapest rental options?
         </BpkChatBubble>
         <BpkChatBubble

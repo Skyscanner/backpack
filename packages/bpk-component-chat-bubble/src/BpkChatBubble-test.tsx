@@ -56,13 +56,12 @@ describe('BpkChatBubble', () => {
 
   it('should render button bubble as interactive button', () => {
     render(
-      <BpkChatBubble type="button" suggestionAriaLabel="suggestion bubble">
+      <BpkChatBubble type="button">
         Show me options
       </BpkChatBubble>,
     );
-    const button = screen.getByRole('button', { name: 'suggestion bubble' });
+    const button = screen.getByRole('button', { name: 'Show me options' });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveTextContent('Show me options');
     expect(button).toHaveClass('bpk-chat-bubble--button');
   });
 
@@ -136,13 +135,12 @@ describe('BpkChatBubble', () => {
       <BpkChatBubble
         type="button"
         onSuggestionClick={onSuggestionClick}
-        suggestionAriaLabel="suggestion bubble"
       >
         Show me options
       </BpkChatBubble>,
     );
     fireEvent.keyDown(
-      screen.getByRole('button', { name: 'suggestion bubble' }),
+      screen.getByRole('button', { name: 'Show me options' }),
       { key: 'Tab' },
     );
     expect(onSuggestionClick).not.toHaveBeenCalled();
@@ -154,13 +152,12 @@ describe('BpkChatBubble', () => {
       <BpkChatBubble
         type="button"
         onSuggestionClick={onSuggestionClick}
-        suggestionAriaLabel="suggestion bubble"
       >
         Show me options
       </BpkChatBubble>,
     );
     fireEvent.click(
-      screen.getByRole('button', { name: 'suggestion bubble' }),
+      screen.getByRole('button', { name: 'Show me options' }),
     );
     expect(onSuggestionClick).toHaveBeenCalledTimes(1);
   });
@@ -171,13 +168,12 @@ describe('BpkChatBubble', () => {
       <BpkChatBubble
         type="button"
         onSuggestionClick={onSuggestionClick}
-        suggestionAriaLabel="suggestion bubble"
       >
         Show me options
       </BpkChatBubble>,
     );
     // Native <button> fires click on Enter/Space — simulate via click
-    fireEvent.click(screen.getByRole('button', { name: 'suggestion bubble' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show me options' }));
     expect(onSuggestionClick).toHaveBeenCalledTimes(1);
   });
 
@@ -187,13 +183,12 @@ describe('BpkChatBubble', () => {
       <BpkChatBubble
         type="button"
         onSuggestionClick={onSuggestionClick}
-        suggestionAriaLabel="suggestion bubble"
       >
         Show me options
       </BpkChatBubble>,
     );
     // Native <button> fires click on Enter/Space — simulate via click
-    fireEvent.click(screen.getByRole('button', { name: 'suggestion bubble' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show me options' }));
     expect(onSuggestionClick).toHaveBeenCalledTimes(1);
   });
 

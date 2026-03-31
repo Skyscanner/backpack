@@ -53,7 +53,6 @@ describe('BpkChatBubble accessibility tests', () => {
       <BpkChatBubble
         type="button"
         onSuggestionClick={() => {}}
-        suggestionAriaLabel="Show me car hire options"
       >
         Show me options
       </BpkChatBubble>,

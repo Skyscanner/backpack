@@ -60,6 +60,10 @@ export type BpkChatBubbleProps =
       selectedFeedback?: ThumbsButtonType | null;
       /** Called when a feedback thumb button is clicked */
       onFeedbackClick?: (type: ThumbsButtonType) => void;
+      /** Accessibility label for the thumbs up button (defaults to "Rate as useful") */
+      thumbsUpLabel?: string;
+      /** Accessibility label for the thumbs down button (defaults to "Rate as not useful") */
+      thumbsDownLabel?: string;
     })
   | (BaseBubbleProps & {
       type: 'retry';
@@ -72,8 +76,6 @@ export type BpkChatBubbleProps =
     })
   | (BaseBubbleProps & {
       type: 'button';
-      /** Accessibility label for the suggestion button */
-      suggestionAriaLabel: string;
       /** Called when the suggestion is clicked */
       onSuggestionClick?: () => void;
     });
