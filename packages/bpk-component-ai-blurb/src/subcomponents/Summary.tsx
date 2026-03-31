@@ -16,7 +16,13 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
+import BpkLink from '../../../bpk-component-link';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
+
+import Ellipsis from './Ellipsis';
 
 import type { BpkAiBlurbSummaryProps } from '../common-types';
 
@@ -24,9 +30,41 @@ import STYLES from '../BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Summary = ({ children }: BpkAiBlurbSummaryProps) => (
-  <div className={getClassName('bpk-ai-blurb__summary')}>{children}</div>
-);
+const Summary = (props: BpkAiBlurbSummaryProps) => {
+  const { state, text } = props;
+
+  let content: ReactNode;
+
+  if (state === 'default') {
+    const words = text.split(' ');
+    const boldWords = words.slice(0, 4).join(' ');
+    const restWords = words.slice(4).join(' ');
+
+    content = (
+      <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+        <BpkText tagName="span" textStyle={TEXT_STYLES.label3}>{boldWords}</BpkText>
+        {restWords ? ` ${restWords}` : null}
+      </BpkText>
+    );
+  } else if (state === 'thinking') {
+    content = (
+      <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+        {text}
+        <Ellipsis />
+      </BpkText>
+    );
+  } else {
+    const { linkHref, linkText } = props;
+    content = (
+      <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+        {text}{' '}
+        <BpkLink href={linkHref}>{linkText}</BpkLink>
+      </BpkText>
+    );
+  }
+
+  return <div className={getClassName('bpk-ai-blurb__summary')}>{content}</div>;
+};
 
 Summary.displayName = 'BpkAiBlurb.Summary';
 

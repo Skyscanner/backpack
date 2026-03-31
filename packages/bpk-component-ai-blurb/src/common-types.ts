@@ -28,10 +28,32 @@ export type BpkAiBlurbHeaderProps = {
   title: string;
 };
 
-export type BpkAiBlurbSummaryProps = {
-  /** Free-slot content. Backpack enforces no typography or layout inside. */
-  children: ReactNode;
+export type BpkAiBlurbSummaryDefaultProps = {
+  state: 'default';
+  /** Text to display. The first 4 words will be rendered bold automatically. */
+  text: string;
 };
+
+export type BpkAiBlurbSummaryThinkingProps = {
+  state: 'thinking';
+  /** Text to display, followed by an animated ellipsis. */
+  text: string;
+};
+
+export type BpkAiBlurbSummaryErrorProps = {
+  state: 'error';
+  /** Text to display before the link. */
+  text: string;
+  /** Text for the inline link. */
+  linkText: string;
+  /** href for the inline link. */
+  linkHref: string;
+};
+
+export type BpkAiBlurbSummaryProps =
+  | BpkAiBlurbSummaryDefaultProps
+  | BpkAiBlurbSummaryThinkingProps
+  | BpkAiBlurbSummaryErrorProps;
 
 export type BpkAiBlurbFeedbackProps = {
   /** Text displayed before a vote is cast. e.g. "Was this helpful?" — not translated by Backpack. */
