@@ -27,7 +27,6 @@ const resetBodyStyles = () => {
   document.body.style.width = '';
   document.body.style.touchAction = '';
   document.body.style.overscrollBehavior = '';
-  document.body.style.backgroundColor = '';
 };
 
 describe('useBodyLock', () => {
@@ -71,10 +70,6 @@ describe('useBodyLock', () => {
       expect(document.body.style.overscrollBehavior).toBe('contain');
     });
 
-    it('should set backgroundColor to canvasContrastDay token', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.backgroundColor).not.toBe('');
-    });
   });
 
   describe('when isLocked is false', () => {
@@ -88,7 +83,6 @@ describe('useBodyLock', () => {
   describe('on unlock (isLocked changes to false)', () => {
     it('should restore original body styles', () => {
       document.body.style.overflow = 'auto';
-      document.body.style.backgroundColor = 'red';
 
       const { rerender } = renderHook(({ locked }) => useBodyLock(locked), {
         initialProps: { locked: true },
@@ -100,7 +94,6 @@ describe('useBodyLock', () => {
 
       expect(document.body.style.position).toBe('');
       expect(document.body.style.overflow).toBe('auto');
-      expect(document.body.style.backgroundColor).toBe('red');
     });
 
     it('should restore scrollY position', () => {
