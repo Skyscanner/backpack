@@ -40,6 +40,10 @@
   &--full {
     display: none;
   }
+
+  &--chatbot {
+    transition-duration: tokens.$bpk-duration-base;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

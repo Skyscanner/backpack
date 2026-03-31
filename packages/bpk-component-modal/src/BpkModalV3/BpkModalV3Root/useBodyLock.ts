@@ -18,8 +18,6 @@
 
 import { useEffect, useRef } from 'react';
 
-import { canvasContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 /**
  * Locks body scroll when the modal is open, preventing background scroll and
  * iOS Safari bounce effects. Restores all body styles and scroll position on
@@ -34,7 +32,6 @@ const useBodyLock = (isLocked: boolean) => {
     position: string;
     top: string;
     width: string;
-    backgroundColor: string;
     touchAction: string;
     overscrollBehavior: string;
   } | null>(null);
@@ -53,7 +50,6 @@ const useBodyLock = (isLocked: boolean) => {
       position: body.style.position || '',
       top: body.style.top || '',
       width: body.style.width || '',
-      backgroundColor: body.style.backgroundColor || '',
       touchAction: body.style.touchAction || '',
       overscrollBehavior: body.style.overscrollBehavior || '',
     };
@@ -64,7 +60,6 @@ const useBodyLock = (isLocked: boolean) => {
     body.style.width = '100%';
     body.style.touchAction = 'none';
     body.style.overscrollBehavior = 'contain';
-    body.style.backgroundColor = canvasContrastDay;
 
     return () => {
       if (savedBodyStylesRef.current) {
@@ -75,7 +70,6 @@ const useBodyLock = (isLocked: boolean) => {
         body.style.width = saved.width;
         body.style.touchAction = saved.touchAction;
         body.style.overscrollBehavior = saved.overscrollBehavior;
-        body.style.backgroundColor = saved.backgroundColor;
         savedBodyStylesRef.current = null;
 
         window.scrollTo(0, savedScrollYRef.current);
