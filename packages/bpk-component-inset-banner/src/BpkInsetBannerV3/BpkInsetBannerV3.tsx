@@ -142,7 +142,7 @@ type InteractiveTrailingAccessoryProps = Omit<
 > & {
   children: ReactNode;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-  'aria-label': string;
+  'aria-label'?: string;
 };
 
 type StaticTrailingAccessoryProps = Omit<
