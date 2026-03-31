@@ -127,7 +127,7 @@ describe('BpkProvider - RTL support', () => {
     expect(getByTestId('locale').textContent).toBe('fr-FR');
   });
 
-  it('prefers html[lang] over direction-based fallback when both are set', () => {
+  it('uses html[lang] when its direction is consistent with html[dir]', () => {
     document.documentElement.setAttribute('dir', 'rtl');
     document.documentElement.setAttribute('lang', 'ar-EG');
 
@@ -138,6 +138,19 @@ describe('BpkProvider - RTL support', () => {
     );
 
     expect(getByTestId('locale').textContent).toBe('ar-EG');
+  });
+
+  it('ignores html[lang] and uses direction fallback when lang direction conflicts with html[dir]', () => {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'en-US');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('ar-SA');
   });
 
   it('updates locale when html[lang] attribute changes', async () => {

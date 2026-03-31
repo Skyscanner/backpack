@@ -48,20 +48,50 @@ const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
   rtl: 'ar-SA',
 };
 
-// SSR-safe: returns 'ltr' when document is unavailable (e.g. server-side rendering).
-const getDocumentDir = (): Direction =>
-  typeof document !== 'undefined' &&
-  document.documentElement.getAttribute('dir') === 'rtl'
+// Known RTL language subtags (ISO 639 codes). Used as fallback when
+// Intl.Locale.textInfo is unavailable (Node < 22, older browsers).
+const RTL_LANGUAGE_SUBTAGS = new Set([
+  'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
+]);
+
+// Returns the text direction implied by a BCP 47 locale string.
+// Uses Intl.Locale.textInfo when available (Chrome 99+, Safari 15.4+, Firefox 126+, Node 22+);
+// falls back to a known-RTL-subtag lookup.
+const getLangDir = (locale: string): Direction => {
+  try {
+    const dir = (new Intl.Locale(locale) as any).textInfo?.direction;
+    if (dir) return dir === 'rtl' ? 'rtl' : 'ltr';
+  } catch {
+    // Ignore invalid locale strings
+  }
+  return RTL_LANGUAGE_SUBTAGS.has(locale.split('-')[0].toLowerCase())
     ? 'rtl'
     : 'ltr';
+};
 
 // Resolves the locale to pass to Ark's LocaleProvider.
-// Priority: html[lang] > direction-based fallback.
+//
+// Priority rules:
+//   1. If html[dir] is explicitly set:
+//      - Use html[lang] only when its direction is consistent with html[dir].
+//      - Otherwise fall back to FALLBACK_LOCALE_BY_DIRECTION[dir].
+//      This prevents an LTR html[lang] (e.g. 'en' from a page template) from
+//      overriding an explicit html[dir]="rtl" signal (e.g. from a dev RTL toggle).
+//   2. If html[dir] is not set: use html[lang] if present, else 'en-US'.
+//
 // SSR-safe: returns 'en-US' when document is unavailable.
 const getArkLocale = (): string => {
   if (typeof document === 'undefined') return 'en-US';
+
+  const explicitDir = document.documentElement.getAttribute('dir');
   const lang = document.documentElement.getAttribute('lang');
-  return lang || FALLBACK_LOCALE_BY_DIRECTION[getDocumentDir()];
+
+  if (explicitDir === 'rtl' || explicitDir === 'ltr') {
+    if (lang && getLangDir(lang) === explicitDir) return lang;
+    return FALLBACK_LOCALE_BY_DIRECTION[explicitDir];
+  }
+
+  return lang || 'en-US';
 };
 
 // Reactive hook: subscribes to document.documentElement[dir] and [lang] changes
