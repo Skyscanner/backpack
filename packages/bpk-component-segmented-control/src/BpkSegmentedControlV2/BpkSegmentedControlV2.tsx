@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { useRef } from 'react';
+
 import { SegmentGroup, useLocaleContext } from '@ark-ui/react';
 
 import {
@@ -45,6 +47,10 @@ const BpkSegmentedControlV2Root = ({
   value,
 }: BpkSegmentedControlV2RootProps) => {
   const { dir } = useLocaleContext();
+  // Tracks the last user-selected value so it can be restored after a key={dir}
+  // remount. Without this, uncontrolled usage would reset to defaultValue on every
+  // direction change.
+  const lastValueRef = useRef(defaultValue);
   const containerClass = getClassName(
     'bpk-segmented-control-v2',
     `bpk-segmented-control-v2--${type}`,
@@ -63,14 +69,13 @@ const BpkSegmentedControlV2Root = ({
       key={dir}
       className={containerClass}
       value={value}
-      defaultValue={defaultValue}
-      onValueChange={
-        onChange
-          ? ({ value: selectedValue }) => {
-              if (selectedValue !== null) onChange(selectedValue);
-            }
-          : undefined
-      }
+      defaultValue={lastValueRef.current}
+      onValueChange={({ value: selectedValue }) => {
+        if (selectedValue !== null) {
+          lastValueRef.current = selectedValue;
+          if (onChange) onChange(selectedValue);
+        }
+      }}
       orientation="horizontal"
       {...getDataComponentAttribute('SegmentedControlV2')}
     >
