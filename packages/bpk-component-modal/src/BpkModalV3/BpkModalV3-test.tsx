@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -367,10 +367,12 @@ describe('BpkModalV3', () => {
 
   describe('Body lock (chatbot type)', () => {
     beforeEach(() => {
+      jest.useFakeTimers();
       Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
     });
 
     afterEach(() => {
+      jest.useRealTimers();
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.top = '';
@@ -413,6 +415,7 @@ describe('BpkModalV3', () => {
           </BpkModalV3.Content>
         </BpkModalV3.Root>,
       );
+      act(() => { jest.runAllTimers(); });
       expect(document.body.style.position).toBe('');
       expect(document.body.style.overflow).toBe('');
     });

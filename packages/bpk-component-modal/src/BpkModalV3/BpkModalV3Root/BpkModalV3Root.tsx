@@ -20,6 +20,8 @@ import { useEffect, useState, type ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react';
 
+import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { getDataComponentAttribute } from '../../../../bpk-react-utils';
 import { ModalTypeProvider } from '../BpkModalV3Context';
 import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
@@ -42,16 +44,25 @@ const BpkModalV3Root = ({
 }: BpkModalV3RootProps) => {
   const [internalOpen, setInternalOpen] = useState(open ?? false);
 
-  useEffect(() => {
-    if (open !== undefined) {
-      setInternalOpen(open);
-    }
-  }, [open]);
+  const isOpen = open ?? internalOpen;
 
-  useBodyLock(type === MODAL_V3_TYPES.chatbot && internalOpen);
+  const [bodyLockOpen, setBodyLockOpen] = useState(isOpen);
+  useEffect(() => {
+    if (isOpen) {
+      setBodyLockOpen(true);
+    } else {
+      const timer = setTimeout(() => setBodyLockOpen(false), parseInt(durationBase, 10));
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [isOpen]);
+
+  useBodyLock(type === MODAL_V3_TYPES.chatbot && bodyLockOpen);
 
   const handleOpenChange = (details: { open: boolean }) => {
-    setInternalOpen(details.open);
+    if (open === undefined) {
+      setInternalOpen(details.open);
+    }
     onOpenChange?.(details);
   };
 

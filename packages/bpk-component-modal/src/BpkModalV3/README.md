@@ -78,7 +78,7 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 ### Sheet
 
 ```tsx
-<BpkModal.Root type="sheet">
+<BpkModal.Root type={MODAL_V3_TYPES.sheet}>
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
@@ -100,7 +100,7 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 ### Full screen
 
 ```tsx
-<BpkModal.Root type="full">
+<BpkModal.Root type={MODAL_V3_TYPES.full}>
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
@@ -126,7 +126,7 @@ A full-viewport panel that slides in from the right (left in RTL). Intended for 
 When open, this variant automatically locks body scroll (using `position: fixed`) to prevent background page scroll and iOS Safari bounce effects. Body styles are restored when the modal closes.
 
 ```tsx
-<BpkModal.Root type="chatbot">
+<BpkModal.Root type={MODAL_V3_TYPES.chatbot}>
   <BpkModal.Trigger asChild>
     <BpkButton>Open chatbot</BpkButton>
   </BpkModal.Trigger>
@@ -187,7 +187,7 @@ When open, this variant automatically locks body scroll (using `position: fixed`
 
 ```tsx
 <BpkProvider>
-  <BpkModal.Root type="sheet">
+  <BpkModal.Root type={MODAL_V3_TYPES.sheet}>
     <BpkModal.Trigger asChild>
       <BpkButton>Open modal</BpkButton>
     </BpkModal.Trigger>
