@@ -18,7 +18,6 @@
 
 @use '../../bpk-mixins/shadows';
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
 @keyframes bpk-chat-bubble-entrance {
@@ -45,7 +44,7 @@
 
 %bpk-chat-bubble-base {
   width: fit-content;
-  max-width: tokens.$bpk-one-pixel-rem * 280;
+  max-width: tokens.bpk-spacing-md() * 35;
   padding: tokens.bpk-spacing-base();
   background: tokens.$bpk-surface-default-day;
   color: tokens.$bpk-text-primary-day;

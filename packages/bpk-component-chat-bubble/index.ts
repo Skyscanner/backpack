@@ -18,5 +18,6 @@
 
 import BpkChatBubble from './src/BpkChatBubble';
 
-export type { BpkChatBubbleProps, ChatBubbleType, BubblePosition } from './src/BpkChatBubble';
+export { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './src/common-types';
+export type { BpkChatBubbleProps, ChatBubbleType, BubblePosition } from './src/common-types';
 export default BpkChatBubble;

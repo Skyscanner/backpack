@@ -9,27 +9,54 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkChatBubble from '@skyscanner/backpack-web/bpk-component-chat-bubble';
+import BpkChatBubble, {
+  CHAT_BUBBLE_TYPE,
+} from '@skyscanner/backpack-web/bpk-component-chat-bubble';
 
 export default () => (
-  <BpkChatBubble type="bot">How can I help you today?</BpkChatBubble>
+  <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot}>
+    How can I help you today?
+  </BpkChatBubble>
 );
+```
+
+### Bot bubble with feedback
+
+```tsx
+<BpkChatBubble
+  type="bot"
+  showFeedback
+  selectedFeedback="up"
+  onFeedbackClick={(thumbType) => console.log(thumbType)}
+>
+  Here is some information for you.
+</BpkChatBubble>
+```
+
+### Retry bubble
+
+```tsx
+<BpkChatBubble
+  type="retry"
+  retryLabel="Try again"
+  onRetry={() => console.log('retry')}
+>
+  Something went wrong.
+</BpkChatBubble>
+```
+
+### Button bubble (suggestion)
+
+```tsx
+<BpkChatBubble
+  type="button"
+  suggestionAriaLabel="Show me options"
+  onSuggestionClick={() => console.log('clicked')}
+>
+  Show me options
+</BpkChatBubble>
 ```
 
 ## Props
 
-| Property           | PropType                              | Required | Default Value |
-| ------------------ | ------------------------------------- | -------- | ------------- |
-| type               | 'user' \| 'bot' \| 'retry' \| 'button' | true | - |
-| children           | ReactNode                             | false    | -             |
-| systemPosition     | 'first' \| 'middle' \| 'last'        | false    | -             |
-| userPosition       | 'first' \| 'middle' \| 'last'        | false    | -             |
-| showFeedback       | boolean                               | false    | false         |
-| selectedFeedback   | 'up' \| 'down' \| null               | false    | null          |
-| onFeedbackClick    | (type: ThumbsButtonType) => void      | false    | -             |
-| onRetry            | () => void                            | false    | -             |
-| retryDisabled      | boolean                               | false    | false         |
-| retryLabel         | string                                | false    | 'Try again'   |
-| onSuggestionClick  | () => void                            | false    | -             |
-| suggestionAriaLabel | string                               | false    | 'button'  |
-| animationDelay     | number                                | false    | 0             |
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/).

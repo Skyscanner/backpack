@@ -21,46 +21,59 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import BpkChatBubble from './BpkChatBubble';
 
 describe('BpkChatBubble', () => {
-  it('should render user bubble correctly', () => {
-    const { asFragment } = render(
+  it('should render user bubble with correct text and class', () => {
+    render(
       <BpkChatBubble type="user">Hello there</BpkChatBubble>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const bubble = screen.getByTestId('bpk-chat-bubble');
+    expect(bubble).toBeInTheDocument();
+    expect(bubble).toHaveTextContent('Hello there');
+    expect(bubble).toHaveClass('bpk-chat-bubble--user');
   });
 
-  it('should render bot bubble correctly', () => {
-    const { asFragment } = render(
+  it('should render bot bubble with correct text and class', () => {
+    render(
       <BpkChatBubble type="bot">How can I help?</BpkChatBubble>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const bubble = screen.getByTestId('bpk-chat-bubble');
+    expect(bubble).toBeInTheDocument();
+    expect(bubble).toHaveTextContent('How can I help?');
+    expect(bubble).toHaveClass('bpk-chat-bubble--bot');
   });
 
-  it('should render retry bubble correctly', () => {
+  it('should render retry bubble with retry button', () => {
     const onRetry = jest.fn();
-    const { asFragment } = render(
+    render(
       <BpkChatBubble type="retry" onRetry={onRetry} retryLabel="Try again">
         Something went wrong.
       </BpkChatBubble>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const bubble = screen.getByTestId('bpk-chat-bubble');
+    expect(bubble).toHaveTextContent('Something went wrong.');
+    expect(bubble).toHaveClass('bpk-chat-bubble--retry');
+    expect(screen.getByRole('button', { name: 'Try again' })).toBeInTheDocument();
   });
 
-  it('should render suggestion bubble correctly', () => {
-    const { asFragment } = render(
+  it('should render button bubble as interactive button', () => {
+    render(
       <BpkChatBubble type="button" suggestionAriaLabel="suggestion bubble">
         Show me options
       </BpkChatBubble>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const button = screen.getByRole('button', { name: 'suggestion bubble' });
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveTextContent('Show me options');
+    expect(button).toHaveClass('bpk-chat-bubble--button');
   });
 
   it('should render bot bubble with feedback buttons when showFeedback is true', () => {
-    const { asFragment } = render(
+    render(
       <BpkChatBubble type="bot" showFeedback>
         Here is some information
       </BpkChatBubble>,
     );
-    expect(asFragment()).toMatchSnapshot();
+    expect(screen.getByTestId('bpk-thumb-button-up')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-thumb-button-down')).toBeInTheDocument();
   });
 
   it('should render user bubble with position classes', () => {

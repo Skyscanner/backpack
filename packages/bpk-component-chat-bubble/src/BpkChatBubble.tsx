@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
 import RedoSmIcon from '../../bpk-component-icon/sm/redo';
@@ -24,58 +24,16 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkThumbButton from '../../bpk-component-thumb-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
+import type { BpkChatBubbleProps } from './common-types';
 
 import STYLES from './BpkChatBubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const clampAndSnap = (ms: number, max = 300): number => {
-  const v = Math.min(ms, max);
+const clampAndSnap = (ms: number, maxDelay = 300): number => {
+  const v = Math.min(ms, maxDelay);
   return Math.round(v / 50) * 50;
 };
-
-export type ChatBubbleType = 'user' | 'bot' | 'retry' | 'button';
-export type BubblePosition = 'first' | 'middle' | 'last';
-
-type BaseBubbleProps = {
-  /** Content to render inside the bubble */
-  children?: ReactNode;
-  /** Position within a sequence of same-sender bubbles, affects border-radius */
-  systemPosition?: BubblePosition;
-  /** Position within a sequence of user bubbles, affects border-radius */
-  userPosition?: BubblePosition;
-  /** Animation entrance delay in milliseconds (0–300, snapped to nearest 50ms) */
-  animationDelay?: number;
-};
-
-export type BpkChatBubbleProps =
-  | (BaseBubbleProps & { type: 'user' })
-  | (BaseBubbleProps & {
-      type: 'bot';
-      /** Show thumbs up/down feedback buttons */
-      showFeedback?: boolean;
-      /** Currently selected feedback type */
-      selectedFeedback?: ThumbsButtonType | null;
-      /** Called when a feedback thumb button is clicked */
-      onFeedbackClick?: (type: ThumbsButtonType) => void;
-    })
-  | (BaseBubbleProps & {
-      type: 'retry';
-      /** Label for the retry button */
-      retryLabel: string;
-      /** Called when retry button is clicked */
-      onRetry?: () => void;
-      /** Whether the retry button is disabled */
-      retryDisabled?: boolean;
-    })
-  | (BaseBubbleProps & {
-      type: 'button';
-      /** Accessibility label for the suggestion button */
-      suggestionAriaLabel: string;
-      /** Called when the suggestion is clicked */
-      onSuggestionClick?: () => void;
-    });
 
 const BpkChatBubble = (props: BpkChatBubbleProps) => {
   const { animationDelay = 0, children, systemPosition, type, userPosition } =
@@ -98,6 +56,7 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
   const isSuggestion = type === 'button';
   const isRetry = type === 'retry';
   const isBot = type === 'bot';
+  const isSystem = isBot || isRetry;
 
   const snapped = clampAndSnap(animationDelay);
   type CustomStyle = CSSProperties & Record<string, string | number>;
@@ -113,9 +72,9 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
     isUser && userPosition === 'first' && 'bpk-chat-bubble--user-first',
     isUser && userPosition === 'middle' && 'bpk-chat-bubble--user-middle',
     isUser && userPosition === 'last' && 'bpk-chat-bubble--user-last',
-    (isBot || isRetry) && systemPosition === 'first' && 'bpk-chat-bubble--system-first',
-    (isBot || isRetry) && systemPosition === 'middle' && 'bpk-chat-bubble--system-middle',
-    (isBot || isRetry) && systemPosition === 'last' && 'bpk-chat-bubble--system-last',
+    isSystem && systemPosition === 'first' && 'bpk-chat-bubble--system-first',
+    isSystem && systemPosition === 'middle' && 'bpk-chat-bubble--system-middle',
+    isSystem && systemPosition === 'last' && 'bpk-chat-bubble--system-last',
   );
 
   if (isSuggestion) {
