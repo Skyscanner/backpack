@@ -18,8 +18,8 @@
 
 import { useState } from 'react';
 
-import ThumbsDownIcon from '../../../bpk-component-icon/sm/thumbs-down';
-import ThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
+import BpkSmallThumbsDownIcon from '../../../bpk-component-icon/sm/thumbs-down';
+import BpkSmallThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -62,7 +62,7 @@ const Feedback = ({
         aria-label={thumbsUpLabel}
         disabled={hasVoted}
       >
-        <ThumbsUpIcon aria-hidden />
+        <BpkSmallThumbsUpIcon aria-hidden />
       </button>
       <button
         type="button"
@@ -71,7 +71,7 @@ const Feedback = ({
         aria-label={thumbsDownLabel}
         disabled={hasVoted}
       >
-        <ThumbsDownIcon aria-hidden />
+        <BpkSmallThumbsDownIcon aria-hidden />
       </button>
     </div>
   );

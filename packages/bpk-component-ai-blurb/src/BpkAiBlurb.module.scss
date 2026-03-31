@@ -55,6 +55,7 @@
     border: none;
     background: none;
     color: tokens.$bpk-text-primary-day;
+    font-size: tokens.$bpk-font-size-xs;
     cursor: pointer;
 
     svg {
@@ -62,11 +63,7 @@
     }
 
     &:hover {
-      color: tokens.$bpk-core-primary-day;
-
-      svg {
-        fill: currentcolor;
-      }
+      color: tokens.$bpk-text-secondary-day;
     }
 
     &:focus-visible {
