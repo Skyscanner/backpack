@@ -25,8 +25,6 @@ import STYLES from './BpkInsetBannerV3.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// ─── Body ────────────────────────────────────────────────────────────────────
-
 export type BodyProps = {
   children: ReactNode;
   bleed?: boolean;
@@ -47,8 +45,6 @@ const Body = ({ backgroundColor, bleed, children }: BodyProps) => (
 );
 
 Body.displayName = 'BpkInsetBannerV3.Body';
-
-// ─── Root ────────────────────────────────────────────────────────────────────
 
 export type RootProps = Omit<
   ComponentPropsWithoutRef<'div'>,
@@ -78,8 +74,6 @@ const Root = forwardRef<HTMLDivElement, RootProps>(
 
 Root.displayName = 'BpkInsetBannerV3.Root';
 
-// ─── Header ──────────────────────────────────────────────────────────────────
-
 export type HeaderProps = {
   children: ReactNode;
   layout?: 'horizontal' | 'vertical';
@@ -100,8 +94,6 @@ const Header = ({ children, layout }: HeaderProps) => (
 
 Header.displayName = 'BpkInsetBannerV3.Header';
 
-// ─── LeadingAccessory ────────────────────────────────────────────────────────
-
 export type LeadingAccessoryProps = {
   children: ReactNode;
 };
@@ -117,8 +109,6 @@ const LeadingAccessory = ({ children }: LeadingAccessoryProps) => (
 
 LeadingAccessory.displayName = 'BpkInsetBannerV3.LeadingAccessory';
 
-// ─── Content ─────────────────────────────────────────────────────────────────
-
 export type ContentProps = {
   children: ReactNode;
 };
@@ -133,8 +123,6 @@ const Content = ({ children }: ContentProps) => (
 );
 
 Content.displayName = 'BpkInsetBannerV3.Content';
-
-// ─── TrailingAccessory ───────────────────────────────────────────────────────
 
 type InteractiveTrailingAccessoryProps = Omit<
   ComponentPropsWithoutRef<'button'>,
@@ -191,8 +179,6 @@ const TrailingAccessory = forwardRef<HTMLButtonElement | HTMLDivElement, Trailin
 );
 
 TrailingAccessory.displayName = 'BpkInsetBannerV3.TrailingAccessory';
-
-// ─── Namespace export ─────────────────────────────────────────────────────────
 
 const BpkInsetBannerV3 = {
   Root,
