@@ -40,9 +40,10 @@ const bpkSystem = createSystem(defaultConfigWithoutGlobalCss, createBpkConfig())
 
 type Direction = 'ltr' | 'rtl';
 
-// Maps DOM direction to a BCP 47 locale understood by Ark's isRTL() utility.
+// Fallback locale mapping used when no explicit locale is available on the document.
+// Maps DOM direction to minimal BCP 47 locales understood by Ark's isRTL() utility.
 // 'ar-SA' is the minimal RTL locale — Ark only uses it to derive dir='rtl'.
-const ARK_LOCALE: Record<Direction, string> = {
+const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
   ltr: 'en-US',
   rtl: 'ar-SA',
 };
@@ -54,25 +55,35 @@ const getDocumentDir = (): Direction =>
     ? 'rtl'
     : 'ltr';
 
-// Reactive hook: subscribes to document.documentElement[dir] changes via MutationObserver.
-// Re-renders BpkProvider when direction is toggled (e.g. Storybook RTL toolbar, locale switcher).
-// SSR-safe: always initialises to 'ltr' so server and client agree on the first render,
-//           avoiding hydration mismatches. The real direction is read inside useEffect,
+// Resolves the locale to pass to Ark's LocaleProvider.
+// Priority: html[lang] > direction-based fallback.
+// SSR-safe: returns 'en-US' when document is unavailable.
+const getArkLocale = (): string => {
+  if (typeof document === 'undefined') return 'en-US';
+  const lang = document.documentElement.getAttribute('lang');
+  return lang || FALLBACK_LOCALE_BY_DIRECTION[getDocumentDir()];
+};
+
+// Reactive hook: subscribes to document.documentElement[dir] and [lang] changes
+// via MutationObserver. Re-renders BpkProvider when direction or locale is toggled
+// (e.g. Storybook RTL toolbar, runtime locale switcher).
+// SSR-safe: always initialises to 'en-US' so server and client agree on the first render,
+//           avoiding hydration mismatches. The real locale is read inside useEffect,
 //           which does not run on the server.
-const useDocumentDir = (): Direction => {
-  const [dir, setDir] = useState<Direction>('ltr');
+const useArkLocale = (): string => {
+  const [locale, setLocale] = useState<string>('en-US');
 
   useEffect(() => {
-    setDir(getDocumentDir());
-    const observer = new MutationObserver(() => setDir(getDocumentDir()));
+    setLocale(getArkLocale());
+    const observer = new MutationObserver(() => setLocale(getArkLocale()));
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['dir'],
+      attributeFilter: ['dir', 'lang'],
     });
     return () => observer.disconnect();
   }, []);
 
-  return dir;
+  return locale;
 };
 
 /**
@@ -90,11 +101,11 @@ const useDocumentDir = (): Direction => {
  * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
  */
 export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
-  const dir = useDocumentDir();
+  const locale = useArkLocale();
 
   return (
     <ChakraProvider value={bpkSystem}>
-      <LocaleProvider locale={ARK_LOCALE[dir]}>{children}</LocaleProvider>
+      <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
   );
 };

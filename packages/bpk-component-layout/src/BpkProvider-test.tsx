@@ -56,6 +56,7 @@ describe('BpkProvider', () => {
 describe('BpkProvider - RTL support', () => {
   afterEach(() => {
     document.documentElement.removeAttribute('dir');
+    document.documentElement.removeAttribute('lang');
   });
 
   it('passes en-US locale to Ark when document dir is ltr', () => {
@@ -109,6 +110,65 @@ describe('BpkProvider - RTL support', () => {
 
     await act(async () => {
       document.documentElement.setAttribute('dir', 'ltr');
+    });
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('passes html[lang] value to Ark when lang attribute is set', () => {
+    document.documentElement.setAttribute('lang', 'fr-FR');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('fr-FR');
+  });
+
+  it('prefers html[lang] over direction-based fallback when both are set', () => {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'ar-EG');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('ar-EG');
+  });
+
+  it('updates locale when html[lang] attribute changes', async () => {
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+
+    await act(async () => {
+      document.documentElement.setAttribute('lang', 'fr-FR');
+    });
+
+    expect(getByTestId('locale').textContent).toBe('fr-FR');
+  });
+
+  it('falls back to direction-based locale when html[lang] is removed', async () => {
+    document.documentElement.setAttribute('lang', 'fr-FR');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('fr-FR');
+
+    await act(async () => {
+      document.documentElement.removeAttribute('lang');
     });
 
     expect(getByTestId('locale').textContent).toBe('en-US');
