@@ -24,7 +24,6 @@ import type { BpkAiBlurbHeaderProps } from '../common-types';
 
 import STYLES from '../BpkAiBlurb.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
 const Header = ({ title }: BpkAiBlurbHeaderProps) => (

@@ -22,7 +22,6 @@ import type { BpkAiBlurbSummaryProps } from '../common-types';
 
 import STYLES from '../BpkAiBlurb.module.scss';
 
-
 const getClassName = cssModules(STYLES);
 
 const Summary = ({ children }: BpkAiBlurbSummaryProps) => (
