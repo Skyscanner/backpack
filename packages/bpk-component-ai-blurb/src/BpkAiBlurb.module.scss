@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
 .bpk-ai-blurb {
@@ -36,8 +37,6 @@
     }
   }
 
-  // No enforced styles on the summary slot — intentional.
-  // Backpack does not control typography or layout inside Summary, as a slot this will be added by the consumer.
   &__summary {
     display: block;
   }
@@ -55,8 +54,9 @@
     border: none;
     background: none;
     color: tokens.$bpk-text-primary-day;
-    font-size: tokens.$bpk-font-size-xs;
     cursor: pointer;
+
+    @include typography.bpk-text-xs;
 
     svg {
       fill: currentcolor;
@@ -72,18 +72,15 @@
   }
 
   &__ellipsis {
-    display: inline-flex;
+    display: inline;
     vertical-align: baseline;
-    gap: 0.1em;
     margin-inline-start: tokens.bpk-spacing-sm();
 
     &-dot {
-      display: inline-block;
-      width: 0.25em;
-      height: 0.25em;
-      border-radius: 50%;
-      background-color: currentcolor;
-      animation: bpk-ai-blurb-ellipsis-dot 1.4s infinite ease-in-out both;
+      display: inline;
+      opacity: 0;
+      vertical-align: baseline;
+      animation: bpk-ai-blurb-ellipsis-dot-1 1.2s infinite step-end;
 
       @media (prefers-reduced-motion: reduce) {
         opacity: 1;
@@ -91,24 +88,65 @@
       }
 
       &--2 {
-        animation-delay: tokens.$bpk-duration-sm;
+        animation-name: bpk-ai-blurb-ellipsis-dot-2;
       }
 
       &--3 {
-        animation-delay: 0.4s;
+        animation-name: bpk-ai-blurb-ellipsis-dot-3;
       }
     }
   }
 }
 
-@keyframes bpk-ai-blurb-ellipsis-dot {
-  0%,
-  80%,
-  100% {
-    opacity: 0.3;
+// Dot 1: visible from 0% → 75%, hidden 75% → 100%
+@keyframes bpk-ai-blurb-ellipsis-dot-1 {
+  0% {
+    opacity: 1;
   }
 
-  40% {
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Dot 2: hidden 0% → 25%, visible 25% → 75%, hidden 75% → 100%
+@keyframes bpk-ai-blurb-ellipsis-dot-2 {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
     opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Dot 3: hidden 0% → 50%, visible 50% → 75%, hidden 75% → 100%
+@keyframes bpk-ai-blurb-ellipsis-dot-3 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

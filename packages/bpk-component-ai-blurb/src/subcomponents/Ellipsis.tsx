@@ -38,19 +38,19 @@ const Ellipsis = () => (
     className={getClassName('bpk-ai-blurb__ellipsis')}
     aria-hidden="true"
   >
-    <span className={getClassName('bpk-ai-blurb__ellipsis-dot')} />
+    <span className={getClassName('bpk-ai-blurb__ellipsis-dot')}>.</span>
     <span
       className={getClassName(
         'bpk-ai-blurb__ellipsis-dot',
         'bpk-ai-blurb__ellipsis-dot--2',
       )}
-    />
+    >.</span>
     <span
       className={getClassName(
         'bpk-ai-blurb__ellipsis-dot',
         'bpk-ai-blurb__ellipsis-dot--3',
       )}
-    />
+    >.</span>
   </span>
 );
 
