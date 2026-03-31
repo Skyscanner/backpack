@@ -20,36 +20,40 @@ import { useState } from 'react';
 
 import BpkChatBubble from '../../packages/bpk-component-chat-bubble/src/BpkChatBubble';
 import {
-  BpkBox,
   BpkSpacing,
   BpkStack,
 } from '../../packages/bpk-component-layout';
+import { cssModules } from '../../packages/bpk-react-utils';
 
 import type { ThumbsButtonType } from '../../packages/bpk-component-thumb-button';
 
+import STYLES from './examples.module.scss';
+
+const getClassName = cssModules(STYLES);
+
 export const UserBubbleExample = () => (
-  <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+  <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type="user">
         What should I do if I booked on the wrong date?
       </BpkChatBubble>
     </BpkStack>
-  </BpkBox>
+  </div>
 );
 
 export const BotBubbleExample = () => (
-  <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+  <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type="bot">
         Hey! I&apos;m your car hire assistant. Feel free to ask me anything
         about renting a car, and I&apos;ll put my thinking cap on.
       </BpkChatBubble>
     </BpkStack>
-  </BpkBox>
+  </div>
 );
 
 export const RetryBubbleExample = () => (
-  <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+  <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble
         type="retry"
@@ -59,11 +63,11 @@ export const RetryBubbleExample = () => (
         Sorry, I couldn&apos;t connect. Please check your connection.
       </BpkChatBubble>
     </BpkStack>
-  </BpkBox>
+  </div>
 );
 
 export const ButtonBubbleExample = () => (
-  <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+  <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble
         type="button"
@@ -73,14 +77,14 @@ export const ButtonBubbleExample = () => (
         What are the cheapest rental options?
       </BpkChatBubble>
     </BpkStack>
-  </BpkBox>
+  </div>
 );
 
 export const BotBubbleWithFeedbackExample = () => {
   const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
 
   return (
-    <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+    <div className={getClassName('bpk-chat-bubble-examples')}>
       <BpkStack gap={BpkSpacing.SM}>
         <BpkChatBubble
           type="bot"
@@ -92,12 +96,12 @@ export const BotBubbleWithFeedbackExample = () => {
           using their online portal.
         </BpkChatBubble>
       </BpkStack>
-    </BpkBox>
+    </div>
   );
 };
 
 export const SequenceExample = () => (
-  <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+  <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type="bot" systemPosition="first" animationDelay={0}>
         I can help with that!
@@ -115,14 +119,14 @@ export const SequenceExample = () => (
         Got it sorted now.
       </BpkChatBubble>
     </BpkStack>
-  </BpkBox>
+  </div>
 );
 
 export const MixedExample = () => {
   const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
 
   return (
-    <BpkBox padding={BpkSpacing.Base} background="canvasContrastDay">
+    <div className={getClassName('bpk-chat-bubble-examples')}>
       <BpkStack gap={BpkSpacing.SM}>
         <BpkChatBubble type="bot">
           Hey! I&apos;m your car hire assistant. Feel free to ask me anything
@@ -163,6 +167,6 @@ export const MixedExample = () => {
           Got it sorted now.
         </BpkChatBubble>
       </BpkStack>
-    </BpkBox>
+    </div>
   );
 };
