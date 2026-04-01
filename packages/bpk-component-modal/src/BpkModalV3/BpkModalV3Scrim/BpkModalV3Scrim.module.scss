@@ -42,17 +42,47 @@
   }
 
   &--chatbot {
-    transition-delay: tokens.$bpk-duration-base;
-    transition-duration: tokens.$bpk-duration-sm;
+    // Use CSS animation instead of transition so Ark UI's presence
+    // machine detects the exit animation and keeps the scrim mounted
+    // until it completes (Ark only listens for animationend, not transitionend).
+    transition: none;
 
     &[data-state='open'] {
-      transition-delay: 0s;
+      animation: bpk-scrim-fade-in tokens.$bpk-duration-sm ease-in-out forwards;
     }
+
+    &[data-state='closed'] {
+      // Fade out over the same duration as the panel slide (durationBase = 400ms),
+      // no delay — scrim fades in parallel with the panel sliding off-screen.
+      // fill-mode: both ensures opacity starts at 1 (backwards) and stays at 0 (forwards).
+      animation: bpk-scrim-fade-out tokens.$bpk-duration-base ease-in-out both;
+    }
+  }
+}
+
+@keyframes bpk-scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bpk-scrim-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .bpk-modal-v3__scrim {
     transition: none;
+    animation: none;
   }
 }
