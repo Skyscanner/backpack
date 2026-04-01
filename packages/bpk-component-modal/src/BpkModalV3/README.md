@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import { BpkModalV3 as BpkModal } from '@skyscanner/backpack-web/bpk-component-modal';
+import { BpkModalV3 as BpkModal, MODAL_V3_TYPES } from '@skyscanner/backpack-web/bpk-component-modal';
 ```
 
 ### Trigger
