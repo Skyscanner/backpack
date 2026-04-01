@@ -21,8 +21,7 @@ import { useEffect, useState } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
-import BpkAriaLive from '../../bpk-component-aria-live';
-import { POLITENESS_SETTINGS } from '../../bpk-component-aria-live/src/BpkAriaLive';
+import BpkAriaLive, { ARIA_LIVE_POLITENESS_SETTINGS } from '../../bpk-component-aria-live';
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
@@ -123,8 +122,8 @@ const BpkFloatingNotification = (props: Props) => {
           aria-hidden
           politenessSetting={
             type === NOTIFICATION_TYPES.critical
-              ? POLITENESS_SETTINGS.assertive
-              : POLITENESS_SETTINGS.polite
+              ? ARIA_LIVE_POLITENESS_SETTINGS.assertive
+              : ARIA_LIVE_POLITENESS_SETTINGS.polite
           }
         >
           {text}
