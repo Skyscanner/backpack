@@ -23,22 +23,22 @@
 @keyframes bpk-chat-bubble-entrance {
   from {
     transform: translateY(tokens.$bpk-one-pixel-rem * 10) scale(0.98);
-    opacity: 0;
+    opacity: tokens.$bpk-modal-initial-opacity;
   }
 
   to {
     transform: translateY(0) scale(1);
-    opacity: 1;
+    opacity: tokens.$bpk-modal-opacity;
   }
 }
 
 @keyframes bpk-chat-bubble-entrance-reduced {
   from {
-    opacity: 0;
+    opacity: tokens.$bpk-modal-initial-opacity;
   }
 
   to {
-    opacity: 1;
+    opacity: tokens.$bpk-modal-opacity;
   }
 }
 
@@ -159,10 +159,10 @@
 
     background: tokens.$bpk-core-accent-day;
     color: tokens.$bpk-text-on-dark-day;
-    text-align: right;
+    text-align: left;
 
     @include utils.bpk-rtl {
-      text-align: left;
+      text-align: right;
     }
   }
 
@@ -177,13 +177,13 @@
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-core-accent-day;
     background: transparent;
     color: tokens.$bpk-core-accent-day;
-    text-align: right;
+    text-align: left;
     cursor: pointer;
 
     @include bpk-chat-bubble-corner('right', 'bottom');
 
     @include utils.bpk-rtl {
-      text-align: left;
+      text-align: right;
     }
 
     @include utils.bpk-hover {
@@ -229,39 +229,18 @@
   }
 
   &--user-first {
-    text-align: left;
-
     @include bpk-chat-bubble-corner('right', 'bottom');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &--user-middle {
-    text-align: left;
-
     @include bpk-chat-bubble-corner('right', 'both');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &--user-last {
-    text-align: left;
-
     @include bpk-chat-bubble-corner('right', 'top');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &__content {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-
     /* stylelint-disable-next-line selector-max-compound-selectors */
     p + p {
       margin-top: tokens.bpk-spacing-base();

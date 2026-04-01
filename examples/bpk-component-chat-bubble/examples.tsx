@@ -18,7 +18,7 @@
 
 import { useState } from 'react';
 
-import BpkChatBubble from '../../packages/bpk-component-chat-bubble/src/BpkChatBubble';
+import BpkChatBubble, { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from '../../packages/bpk-component-chat-bubble';
 import {
   BpkSpacing,
   BpkStack,
@@ -34,7 +34,7 @@ const getClassName = cssModules(STYLES);
 export const UserBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
-      <BpkChatBubble type="user">
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.user}>
         What should I do if I booked on the wrong date?
       </BpkChatBubble>
     </BpkStack>
@@ -44,7 +44,7 @@ export const UserBubbleExample = () => (
 export const BotBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
-      <BpkChatBubble type="bot">
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot}>
         Hey! I&apos;m your car hire assistant. Feel free to ask me anything
         about renting a car, and I&apos;ll put my thinking cap on.
       </BpkChatBubble>
@@ -56,7 +56,7 @@ export const RetryBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble
-        type="retry"
+        type={CHAT_BUBBLE_TYPE.retry}
         onRetry={() => {}}
         retryLabel="Try again"
       >
@@ -70,7 +70,7 @@ export const ButtonBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble
-        type="button"
+        type={CHAT_BUBBLE_TYPE.button}
         onSuggestionClick={() => {}}
         >
         What are the cheapest rental options?
@@ -86,7 +86,7 @@ export const BotBubbleWithFeedbackExample = () => {
     <div className={getClassName('bpk-chat-bubble-examples')}>
       <BpkStack gap={BpkSpacing.SM}>
         <BpkChatBubble
-          type="bot"
+          type={CHAT_BUBBLE_TYPE.bot}
           showFeedback
           selectedFeedback={selected}
           onFeedbackClick={(type) => setSelected(type)}
@@ -102,19 +102,19 @@ export const BotBubbleWithFeedbackExample = () => {
 export const SequenceExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
-      <BpkChatBubble type="bot" systemPosition="first" animationDelay={0}>
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot} systemPosition={CHAT_BUBBLE_POSITION.first} animationDelay={0}>
         I can help with that!
       </BpkChatBubble>
-      <BpkChatBubble type="bot" systemPosition="middle" animationDelay={50}>
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot} systemPosition={CHAT_BUBBLE_POSITION.middle} animationDelay={50}>
         Here are the steps to modify your booking:
       </BpkChatBubble>
-      <BpkChatBubble type="bot" systemPosition="last" animationDelay={100}>
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot} systemPosition={CHAT_BUBBLE_POSITION.last} animationDelay={100}>
         {"1. Log in to the website\n2. Find your booking\n3. Select 'Modify'"}
       </BpkChatBubble>
-      <BpkChatBubble type="user" userPosition="first" animationDelay={200}>
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.user} userPosition={CHAT_BUBBLE_POSITION.first} animationDelay={200}>
         Thanks, that helped!
       </BpkChatBubble>
-      <BpkChatBubble type="user" userPosition="last" animationDelay={250}>
+      <BpkChatBubble type={CHAT_BUBBLE_TYPE.user} userPosition={CHAT_BUBBLE_POSITION.last} animationDelay={250}>
         Got it sorted now.
       </BpkChatBubble>
     </BpkStack>
@@ -127,24 +127,24 @@ export const MixedExample = () => {
   return (
     <div className={getClassName('bpk-chat-bubble-examples')}>
       <BpkStack gap={BpkSpacing.SM}>
-        <BpkChatBubble type="bot">
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot}>
           Hey! I&apos;m your car hire assistant. Feel free to ask me anything
           about renting a car, and I&apos;ll put my thinking cap on.
         </BpkChatBubble>
-        <BpkChatBubble type="user">
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.user}>
           What should I do if I booked on the wrong date?
         </BpkChatBubble>
-        <BpkChatBubble type="retry" onRetry={() => {}} retryLabel="Try again">
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.retry} onRetry={() => {}} retryLabel="Try again">
           Sorry, I couldn&apos;t connect. Please check your connection.
         </BpkChatBubble>
         <BpkChatBubble
-          type="button"
+          type={CHAT_BUBBLE_TYPE.button}
           onSuggestionClick={() => {}}
             >
-          What are the cheapest rental options?
+          What are the cheapest options?
         </BpkChatBubble>
         <BpkChatBubble
-          type="bot"
+          type={CHAT_BUBBLE_TYPE.bot}
           showFeedback
           selectedFeedback={selected}
           onFeedbackClick={(type) => setSelected(type)}
@@ -152,16 +152,16 @@ export const MixedExample = () => {
           You can modify your booking by calling the car hire company directly or
           using their online portal.
         </BpkChatBubble>
-        <BpkChatBubble type="bot" systemPosition="first" animationDelay={0}>
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot} systemPosition={CHAT_BUBBLE_POSITION.first} animationDelay={0}>
           I can help with that!
         </BpkChatBubble>
-        <BpkChatBubble type="bot" systemPosition="last" animationDelay={50}>
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot} systemPosition={CHAT_BUBBLE_POSITION.last} animationDelay={50}>
           Here are the steps to modify your booking.
         </BpkChatBubble>
-        <BpkChatBubble type="user" userPosition="first" animationDelay={100}>
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.user} userPosition={CHAT_BUBBLE_POSITION.first} animationDelay={100}>
           Thanks, that helped!
         </BpkChatBubble>
-        <BpkChatBubble type="user" userPosition="last" animationDelay={150}>
+        <BpkChatBubble type={CHAT_BUBBLE_TYPE.user} userPosition={CHAT_BUBBLE_POSITION.last} animationDelay={150}>
           Got it sorted now.
         </BpkChatBubble>
       </BpkStack>

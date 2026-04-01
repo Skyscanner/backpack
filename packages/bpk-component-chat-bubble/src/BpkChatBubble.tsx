@@ -24,6 +24,8 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkThumbButton from '../../bpk-component-thumb-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
+import { CHAT_BUBBLE_TYPE } from './common-types';
+
 import type { BpkChatBubbleProps } from './common-types';
 
 import STYLES from './BpkChatBubble.module.scss';
@@ -36,8 +38,10 @@ const clampAndSnap = (ms: number, maxDelay = 300): number => {
 };
 
 const BpkChatBubble = (props: BpkChatBubbleProps) => {
-  const { animationDelay = 0, children, systemPosition, type, userPosition } =
-    props;
+  const { animationDelay = 0, children, type } = props;
+  const userPosition = 'userPosition' in props ? props.userPosition : undefined;
+  const systemPosition =
+    'systemPosition' in props ? props.systemPosition : undefined;
   const showFeedback =
     'showFeedback' in props ? (props.showFeedback ?? false) : false;
   const selectedFeedback =
@@ -54,10 +58,10 @@ const BpkChatBubble = (props: BpkChatBubbleProps) => {
     'thumbsUpLabel' in props ? (props.thumbsUpLabel ?? 'Rate as useful') : 'Rate as useful';
   const thumbsDownLabel =
     'thumbsDownLabel' in props ? (props.thumbsDownLabel ?? 'Rate as not useful') : 'Rate as not useful';
-  const isUser = type === 'user';
-  const isSuggestion = type === 'button';
-  const isRetry = type === 'retry';
-  const isBot = type === 'bot';
+  const isUser = type === CHAT_BUBBLE_TYPE.user;
+  const isSuggestion = type === CHAT_BUBBLE_TYPE.button;
+  const isRetry = type === CHAT_BUBBLE_TYPE.retry;
+  const isBot = type === CHAT_BUBBLE_TYPE.bot;
   const isSystem = isBot || isRetry;
 
   const snapped = clampAndSnap(animationDelay);

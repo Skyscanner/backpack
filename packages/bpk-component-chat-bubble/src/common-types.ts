@@ -42,18 +42,20 @@ export type BubblePosition =
 type BaseBubbleProps = {
   /** Content to render inside the bubble */
   children?: ReactNode;
-  /** Position within a sequence of same-sender bubbles, affects border-radius */
-  systemPosition?: BubblePosition;
-  /** Position within a sequence of user bubbles, affects border-radius */
-  userPosition?: BubblePosition;
   /** Animation entrance delay in milliseconds (0–300, snapped to nearest 50ms) */
   animationDelay?: number;
 };
 
 export type BpkChatBubbleProps =
-  | (BaseBubbleProps & { type: 'user' })
+  | (BaseBubbleProps & {
+      type: 'user';
+      /** Position within a sequence of user bubbles, affects border-radius */
+      userPosition?: BubblePosition;
+    })
   | (BaseBubbleProps & {
       type: 'bot';
+      /** Position within a sequence of same-sender bubbles, affects border-radius */
+      systemPosition?: BubblePosition;
       /** Show thumbs up/down feedback buttons */
       showFeedback?: boolean;
       /** Currently selected feedback type */
@@ -67,6 +69,8 @@ export type BpkChatBubbleProps =
     })
   | (BaseBubbleProps & {
       type: 'retry';
+      /** Position within a sequence of same-sender bubbles, affects border-radius */
+      systemPosition?: BubblePosition;
       /** Label for the retry button */
       retryLabel: string;
       /** Called when retry button is clicked */

@@ -50,7 +50,6 @@ export default () => (
 ```tsx
 <BpkChatBubble
   type="button"
-  suggestionAriaLabel="Show me options"
   onSuggestionClick={() => console.log('clicked')}
 >
   Show me options
