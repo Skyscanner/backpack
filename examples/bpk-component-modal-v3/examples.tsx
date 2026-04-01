@@ -538,6 +538,41 @@ const NoHeaderExample = () => (
   </ModalContainer>
 );
 
+const ChatbotExample = () => (
+  <ModalContainer>
+    {({ onOpenChange, open }) => (
+      <BpkModalV3.Root
+        open={open}
+        onOpenChange={onOpenChange}
+        type="chatbot"
+      >
+        <BpkModalV3.Portal>
+          <BpkModalV3.Scrim />
+          <BpkModalV3.Content>
+            <BpkModalV3.Header>
+              <BpkModalV3.Title>
+                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
+                  Chat assistant
+                </BpkText>
+              </BpkModalV3.Title>
+              <BpkModalV3.CloseTrigger label="Close" />
+            </BpkModalV3.Header>
+            <BpkModalV3.Body>
+              <BpkVStack gap={BpkSpacing.Base} padding={BpkSpacing.LG}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                  This is a chatbot modal. It slides in from the right side of
+                  the viewport and uses the contrast canvas background, making
+                  it suitable for chat or assistant interfaces.
+                </BpkText>
+              </BpkVStack>
+            </BpkModalV3.Body>
+          </BpkModalV3.Content>
+        </BpkModalV3.Portal>
+      </BpkModalV3.Root>
+    )}
+  </ModalContainer>
+);
+
 const TriggerExample = () => (
   <BpkProvider>
       <BpkModalV3.Root>
@@ -573,6 +608,7 @@ export {
   DefaultExample,
   SheetExample,
   FullExample,
+  ChatbotExample,
   LongTitleExample,
   OverflowingExample,
   MultipleModalsExample,

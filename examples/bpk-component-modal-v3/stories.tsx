@@ -22,6 +22,7 @@ import {
   DefaultExample,
   SheetExample,
   FullExample,
+  ChatbotExample,
   LongTitleExample,
   OverflowingExample,
   MultipleModalsExample,
@@ -47,6 +48,7 @@ export default {
 export const Default = DefaultExample;
 export const Sheet = SheetExample;
 export const Full = FullExample;
+export const Chatbot = ChatbotExample;
 export const LongTitle = LongTitleExample;
 export const Overflowing = OverflowingExample;
 export const MultipleModals = MultipleModalsExample;
@@ -77,6 +79,14 @@ export const VisualTestSheetWithZoom = {
 export const VisualTestFull = FullExample;
 export const VisualTestFullWithZoom = {
   render: FullExample,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const VisualTestChatbot = ChatbotExample;
+export const VisualTestChatbotWithZoom = {
+  render: ChatbotExample,
   args: {
     zoomEnabled: true,
   },

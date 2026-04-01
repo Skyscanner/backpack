@@ -16,12 +16,19 @@
  * limitations under the License.
  */
 
-.bpk-modal-v3__body {
-  flex: 1;
-  overflow-y: auto;
+@use '../../packages/bpk-mixins/tokens';
 
-  // Prevent scroll-chaining to the background page on mobile (all modal types).
-  // Without this, reaching the top/bottom of modal content on iOS causes the
-  // page behind the modal to scroll or triggers pull-to-refresh.
-  overscroll-behavior: contain;
+// Icon badge used in CarHire examples — colored rounded container for a BPK icon.
+// BpkBox does not support backgroundColor/borderRadius,
+// so this token-based CSS module is used instead.
+.bpk-inset-banner-v3-example__icon-badge {
+  display: flex;
+  width: tokens.$bpk-icon-size-xxl;
+  height: tokens.$bpk-icon-size-xxl;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: tokens.$bpk-border-radius-sm;
+  background-color: tokens.$bpk-core-primary-day;
+  fill: tokens.$bpk-text-on-dark-day;
 }

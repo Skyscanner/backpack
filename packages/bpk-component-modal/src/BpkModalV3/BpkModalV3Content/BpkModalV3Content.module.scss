@@ -19,6 +19,7 @@
 @use '../../../../bpk-mixins/tokens';
 @use '../../../../bpk-mixins/breakpoints';
 @use '../../../../bpk-mixins/shadows';
+@use '../../../../bpk-mixins/utils';
 
 // Positioner
 
@@ -38,6 +39,11 @@
 
   // Full — fill viewport
   &--full {
+    align-items: stretch;
+  }
+
+  // Chatbot — fill viewport (slides in from right)
+  &--chatbot {
     align-items: stretch;
   }
 }
@@ -143,6 +149,36 @@
       opacity: 0;
     }
   }
+
+  // Chatbot variant — fills viewport with slide-in-from-right animation
+  &--chatbot {
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1);
+    border-radius: 0;
+    background-color: tokens.$bpk-canvas-contrast-day;
+
+    @include utils.bpk-rtl {
+      transform: translateX(-100%);
+    }
+
+    &[data-state='open'] {
+      transform: translateX(0);
+
+      @include utils.bpk-rtl {
+        transform: translateX(0);
+      }
+    }
+
+    &[data-state='closed'] {
+      transform: translateX(100%);
+
+      @include utils.bpk-rtl {
+        transform: translateX(-100%);
+      }
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -161,5 +197,15 @@
     transform: translateY(0);
     transition: none;
     opacity: 1;
+  }
+
+  .bpk-modal-v3__content--chatbot {
+    transform: translateX(0);
+    transition: none;
+    opacity: 1;
+
+    @include utils.bpk-rtl {
+      transform: translateX(0);
+    }
   }
 }
