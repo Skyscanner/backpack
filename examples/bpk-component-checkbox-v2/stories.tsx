@@ -17,6 +17,7 @@
  */
 
 import { BpkCheckboxV2 } from '../../packages/bpk-component-checkbox';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
   ComposedHertzExample,
@@ -34,6 +35,7 @@ import {
 export default {
   title: 'bpk-component-checkbox-v2',
   component: BpkCheckboxV2.Root,
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
 };
 
 export const SimpleLabel = SimpleLabelExample;
@@ -53,3 +55,4 @@ export const VisualTestWithZoom = {
     zoomEnabled: true,
   },
 };
+
