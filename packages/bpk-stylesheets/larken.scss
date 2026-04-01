@@ -283,6 +283,7 @@ $bpk-fonts: (
 
 // Language-specific font stacks to prefer the right script-specific faces.
 // We use a CSS Variable to make this scalable across all components using Larken.
+
 [lang='ja-JP'],
 :lang(ja-JP) {
   --bpk-larken-font-stack:
@@ -296,5 +297,57 @@ $bpk-fonts: (
   --bpk-larken-font-stack:
     larken, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR',
     'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
+}
+
+[lang='zh-HK'],
+:lang(zh-HK) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
+}
+
+[lang='zh-CN'],
+:lang(zh-CN) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif SC', 'Noto Serif TC', 'Noto Serif JP', 'Noto Serif KR',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
+}
+
+[lang='ko-KR'],
+:lang(ko-KR) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif KR', 'Noto Serif JP', 'Noto Serif SC', 'Noto Serif TC',
+    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
+}
+
+[lang='th-TH'],
+:lang(th-TH) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif Thai', 'Noto Sans Arabic', 'Noto Serif Hebrew',
+    'Noto Serif', 'Noto Serif Devanagari', sans-serif;
+}
+
+[lang='hi-IN'],
+:lang(hi-IN) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif Devanagari', 'Noto Sans Arabic', 'Noto Serif Hebrew',
+    'Noto Serif', 'Noto Serif Thai', sans-serif;
+}
+
+[lang='ar'],
+:lang(ar) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
+    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
+}
+
+[lang='he'],
+:lang(he) {
+  --bpk-larken-font-stack:
+    larken, 'Noto Serif Hebrew', 'Noto Sans Arabic', 'Noto Serif',
     'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
 }

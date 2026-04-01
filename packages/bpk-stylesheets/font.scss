@@ -426,6 +426,10 @@ $bpk-fonts: (
   }
 }
 
+// Language-specific font stacks so only the correct non-Latin locale triggers
+// a download of its Noto Sans font. Each stack puts the locale's primary font
+// first, with related CJK faces as fallbacks, then system fonts.
+
 [lang='ja-JP'],
 :lang(ja-JP) {
   --bpk-base-font-stack:
@@ -441,6 +445,72 @@ $bpk-fonts: (
   --bpk-base-font-stack:
     'Skyscanner Relative', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP',
     'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='zh-HK'],
+:lang(zh-HK) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='zh-CN'],
+:lang(zh-CN) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='ko-KR'],
+:lang(ko-KR) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC',
+    'Noto Sans TC', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='th-TH'],
+:lang(th-TH) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans Thai', 'Noto Sans Arabic',
+    'Noto Sans Hebrew', 'Noto Sans', 'Noto Sans Devanagari', -apple-system,
+    blinkmacsystemfont, roboto, oxygen, ubuntu, cantarell, 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+[lang='hi-IN'],
+:lang(hi-IN) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans Devanagari', 'Noto Sans Arabic',
+    'Noto Sans Hebrew', 'Noto Sans', 'Noto Sans Thai', -apple-system,
+    blinkmacsystemfont, roboto, oxygen, ubuntu, cantarell, 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+[lang='ar'],
+:lang(ar) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='he'],
+:lang(he) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans Hebrew', 'Noto Sans Arabic', 'Noto Sans',
     'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
     roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
