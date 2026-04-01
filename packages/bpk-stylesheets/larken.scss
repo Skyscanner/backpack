@@ -293,13 +293,7 @@ $bpk-fonts: (
 }
 
 [lang='zh-TW'],
-:lang(zh-TW) {
-  --bpk-larken-font-stack:
-    larken, 'Noto Serif TC', 'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR',
-    'Noto Sans Arabic', 'Noto Serif Hebrew', 'Noto Serif',
-    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
-}
-
+:lang(zh-TW),
 [lang='zh-HK'],
 :lang(zh-HK) {
   --bpk-larken-font-stack:

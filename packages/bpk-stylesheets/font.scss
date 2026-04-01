@@ -426,9 +426,9 @@ $bpk-fonts: (
   }
 }
 
-// Language-specific font stacks so only the correct non-Latin locale triggers
-// a download of its Noto Sans font. Each stack puts the locale's primary font
-// first, with related CJK faces as fallbacks, then system fonts.
+// Language-specific font stacks applied to any element whose `lang` matches
+// the given locale. Each stack prefers the locale's primary Noto Sans face,
+// then related CJK and other non-Latin Noto families as fallbacks, then system fonts.
 
 [lang='ja-JP'],
 :lang(ja-JP) {
@@ -441,15 +441,7 @@ $bpk-fonts: (
 }
 
 [lang='zh-TW'],
-:lang(zh-TW) {
-  --bpk-base-font-stack:
-    'Skyscanner Relative', 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP',
-    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Hebrew', 'Noto Sans',
-    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
-    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-}
-
+:lang(zh-TW),
 [lang='zh-HK'],
 :lang(zh-HK) {
   --bpk-base-font-stack:

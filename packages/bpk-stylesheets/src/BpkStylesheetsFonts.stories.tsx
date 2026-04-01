@@ -26,7 +26,9 @@ const FONT_STYLES = { NORMAL: 'normal', ITALIC: 'italic' } as const;
 type FontType = (typeof FONT_TYPES)[keyof typeof FONT_TYPES];
 type FontStyle = (typeof FONT_STYLES)[keyof typeof FONT_STYLES];
 
-const LANGUAGE_SAMPLES = {
+type LanguageSample = { text: string; lang?: string };
+
+const LANGUAGE_SAMPLES: Record<string, LanguageSample> = {
   english: {
     text: 'The quick brown fox jumps over the lazy dog',
   },
@@ -132,7 +134,7 @@ const SkyscannerRelativeExample = () => (
             text={langSample.text}
             fontWeight={config.weight}
             fontStyle={config.style}
-            lang={(langSample as any).lang}
+            lang={langSample.lang}
             type={FONT_TYPES.SKYSCANNER}
           />
         ))}
@@ -154,7 +156,7 @@ const LarkenExample = () => (
             text={langSample.text}
             fontWeight={config.weight}
             fontStyle={config.style}
-            lang={(langSample as any).lang}
+            lang={langSample.lang}
             type={FONT_TYPES.LARKEN}
           />
         ))}
