@@ -16,21 +16,21 @@
  * limitations under the License.
  */
 
-import BpkButton, {
-  BUTTON_TYPES,
-} from '../../packages/bpk-component-button';
-import { withButtonAlignment } from '../../packages/bpk-component-icon';
-import CloseIcon from '../../packages/bpk-component-icon/sm/close';
-import EditIcon from '../../packages/bpk-component-icon/sm/edit';
-import HeartIcon from '../../packages/bpk-component-icon/sm/heart';
-import ShareIcon from '../../packages/bpk-component-icon/sm/share';
-import TrashIcon from '../../packages/bpk-component-icon/sm/trash';
-import BpkText from '../../packages/bpk-component-text/src/BpkText';
-import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import {
-  action,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../bpk-storybook-utils';
+
+import { action } from '../../../examples/bpk-storybook-utils';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import CloseIcon from '../../bpk-component-icon/sm/close';
+import EditIcon from '../../bpk-component-icon/sm/edit';
+import HeartIcon from '../../bpk-component-icon/sm/heart';
+import ShareIcon from '../../bpk-component-icon/sm/share';
+import TrashIcon from '../../bpk-component-icon/sm/trash';
+import BpkText from '../../bpk-component-text/src/BpkText';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
+import BpkVisuallyHidden from './BpkVisuallyHidden';
+
+import type { Meta } from '@storybook/react';
 
 const AlignedCloseIcon = withButtonAlignment(CloseIcon);
 const AlignedEditIcon = withButtonAlignment(EditIcon);
@@ -38,7 +38,7 @@ const AlignedHeartIcon = withButtonAlignment(HeartIcon);
 const AlignedShareIcon = withButtonAlignment(ShareIcon);
 const AlignedTrashIcon = withButtonAlignment(TrashIcon);
 
-export const IconOnlyButtonsWithVisuallyHiddenText = () => (
+const IconOnlyButtonsWithVisuallyHiddenText = () => (
   <div>
     <BpkButton
       iconOnly
@@ -87,7 +87,7 @@ export const IconOnlyButtonsWithVisuallyHiddenText = () => (
   </div>
 );
 
-export const BasicExample = () => (
+const BasicExample = () => (
   <div>
     <BpkText>
       This text is visible.{' '}
@@ -97,3 +97,18 @@ export const BasicExample = () => (
     <BpkText>Content that follows the hidden heading.</BpkText>
   </div>
 );
+
+const meta = {
+  title: 'bpk-component-visually-hidden',
+  component: BpkVisuallyHidden,
+} satisfies Meta;
+
+export default meta;
+
+export const IconOnlyButtons = {
+  render: () => <IconOnlyButtonsWithVisuallyHiddenText />,
+};
+
+export const Basic = {
+  render: () => <BasicExample />,
+};

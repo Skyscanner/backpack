@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import BpkBlockquote from '../../packages/bpk-component-blockquote';
+import BpkBlockquote from './BpkBlockquote';
+
+import type { Meta } from '@storybook/react';
+
 
 const textContent = `
 It's your world and we'll help you explore it.
@@ -28,6 +31,28 @@ const ExtraSpaceExample = () => (
   <BpkBlockquote extraSpace>{textContent}</BpkBlockquote>
 );
 
-export { DefaultExample, ExtraSpaceExample };
+const meta = {
+  title: 'bpk-component-blockquote',
+  component: BpkBlockquote,
+} satisfies Meta;
 
+export default meta;
 
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const ExampleWithAdditionalSpacingAboveAndBelow = {
+  render: () => <ExtraSpaceExample />,
+};
+
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DefaultExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

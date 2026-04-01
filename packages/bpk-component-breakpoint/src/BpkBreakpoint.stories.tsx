@@ -16,20 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import type { Node } from 'react';
 
-import BpkBreakpoint, {
-  BREAKPOINTS,
-} from '../../packages/bpk-component-breakpoint';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkBreakpoint.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const MediaQueryStatus = (props: { children: Node, isActive: boolean }) => {
+const MediaQueryStatus = (props: { children: ReactNode; isActive: boolean }) => {
   const { children, isActive } = props;
 
   const className = getClassName(
@@ -98,4 +98,13 @@ const DefaultExample = () => (
   </div>
 );
 
-export default DefaultExample;
+const meta = {
+  title: 'bpk-component-breakpoint',
+  component: BpkBreakpoint,
+} satisfies Meta;
+
+export default meta;
+
+export const Examples = {
+  render: () => <DefaultExample />,
+};

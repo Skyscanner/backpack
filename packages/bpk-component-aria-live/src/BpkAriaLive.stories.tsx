@@ -16,21 +16,26 @@
  * limitations under the License.
  */
 
+/* eslint-disable @skyscanner/rules/forbid-component-props */
 import { Component } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
 
-import BpkAriaLive, {
-  ARIA_LIVE_POLITENESS_SETTINGS,
-} from '../../packages/bpk-component-aria-live';
-import BpkChip from '../../packages/bpk-component-chip';
-import { BpkCode } from '../../packages/bpk-component-code';
-import BpkFieldset from '../../packages/bpk-component-fieldset';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../../packages/bpk-component-select';
-import BpkSwitch from '../../packages/bpk-component-switch';
-import { cssModules } from '../../packages/bpk-react-utils';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import STYLES from './examples.module.scss';
+
+import BpkChip from '../../bpk-component-chip';
+import { BpkCode } from '../../bpk-component-code';
+import BpkFieldset from '../../bpk-component-fieldset';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkSelect from '../../bpk-component-select';
+import BpkSwitch from '../../bpk-component-switch';
+import { cssModules } from '../../bpk-react-utils';
+
+import BpkAriaLive, { POLITENESS_SETTINGS as ARIA_LIVE_POLITENESS_SETTINGS } from './BpkAriaLive';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkAriaLive.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -43,7 +48,7 @@ type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const AriaLiveDemo = ({
+export const AriaLiveDemo = ({
   children,
   className = null,
   preamble = null,
@@ -254,4 +259,33 @@ class ChipsExample<CProps extends {}> extends Component<
   }
 }
 
-export { AriaLiveDemo, ChipsExample, SelectExample };
+const meta = {
+  title: 'bpk-component-aria-live',
+  component: BpkAriaLive,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgTypes exclude={['zoomEnabled']} />
+          <Markdown>
+            {`**Note:** \`aria-relevant\` and \`aria-atomic\` props can also be set.
+            \`aria-relevant\` determines what sort of changes should be read out. By default it is \`text\` but can be \`additions\`, \`removals\` or \`all\`. [Read more about \`aria-relevant\` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-relevant).
+            \`aria-atomic\` is a boolean which determines whether changes should be read out, or the whole region should be read out. [Read more about \`aria-atomic\` on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions#Use_Case:_Clock).
+            `}
+          </Markdown>
+        </>
+      )
+    }
+  }
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <ChipsExample />,
+};
+
+export const Visible = {
+  render: () => <SelectExample />,
+};

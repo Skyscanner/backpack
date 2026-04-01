@@ -28,6 +28,7 @@ import {
   textOnDarkDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { AriaLiveDemo } from '../../packages/bpk-component-aria-live/src/BpkAriaLive.stories';
 import BpkSelectableChip, {
   type BpkSelectableChipProps,
   CHIP_TYPES,
@@ -41,7 +42,6 @@ import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../packages/bpk-theming';
-import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 
 import STYLES from './examples.module.scss';
 

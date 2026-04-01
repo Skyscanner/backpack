@@ -16,35 +16,36 @@
  * limitations under the License.
  */
 
-import BpkCode from '../../packages/bpk-component-code/src/BpkCode';
-import BpkCodeBlock from '../../packages/bpk-component-code/src/BpkCodeBlock';
 
-import {
-  InlineExample,
-  InlineAlternateExample,
-  BlockExample,
-  BlockAlternateExample,
-  MixedExample,
-} from './examples';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action } from '../../../examples/bpk-storybook-utils';
 
-export default {
-  title: 'bpk-component-code',
-  component: BpkCode,
-  subcomponents: {
-    BpkCodeBlock
-  },
+import BpkCloseButton from './BpkCloseButton';
+
+import type { Meta } from '@storybook/react';
+
+const DefaultExample = () => (
+  <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
+);
+
+const meta = {
+  title: 'bpk-component-close-button',
+  component: BpkCloseButton,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
 };
 
-export const Inline = InlineExample;
-export const InlineAlternate = InlineAlternateExample;
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
 
-export const Block = BlockExample;
-export const BlockAlternate = BlockAlternateExample;
-
-export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
-  render: VisualTest,
+  render: () => <DefaultExample />,
   args: {
-    zoomEnabled: true
+    zoomEnabled: true,
   },
 };

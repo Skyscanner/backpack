@@ -24,19 +24,21 @@ import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton, { SIZE_TYPES } from '../../packages/bpk-component-button';
 import {
   withAlignment,
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import { sm, lg, xxxl } from '../../packages/bpk-component-icon/all';
-import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
-import SearchIcon from '../../packages/bpk-component-icon/lg/search';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+} from "..";
+import BpkButton, { SIZE_TYPES } from '../../bpk-component-button';
+import { BpkList, BpkListItem } from '../../bpk-component-list';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { sm, lg, xxxl } from '../all';
+import LargeLongArrowRightIcon from '../lg/long-arrow-right';
+import SearchIcon from '../lg/search';
+import SmallLongArrowRightIcon from '../sm/long-arrow-right';
+
+import type { Meta } from '@storybook/react';
 
 const AlignedBaseArrow = withAlignment(
   SmallLongArrowRightIcon,
@@ -155,16 +157,59 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  SmallIconsExample,
-  LargeIconsExample,
-  TripleExtraLargeIconsExample,
-  AlignToBaseTextExample,
-  AlignToLargeTextExample,
-  AlignSmallTextToIconExample,
-  AlignTextToIconExample,
-  AlignToButtonExample,
-  AlignToLargeButtonExample,
-  AlignToLargeButtonRTLExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-icon',
+} satisfies Meta;
+
+export default meta;
+
+export const SmallIcons = {
+  render: () => <SmallIconsExample />,
+};
+
+export const LargeIcons = {
+  render: () => <LargeIconsExample />,
+};
+
+export const TripleExtraLargeIcons = {
+  render: () => <TripleExtraLargeIconsExample />,
+};
+
+export const AlignToTextBase = {
+  render: () => <AlignToBaseTextExample />,
+};
+
+export const AlignToLargeText = {
+  render: () => <AlignToLargeTextExample />,
+};
+
+export const AlignSmallTextToIcon = {
+  render: () => <AlignSmallTextToIconExample />,
+};
+
+export const AlignTextToIcon = {
+  render: () => <AlignTextToIconExample />,
+};
+
+export const AlignToButton = {
+  render: () => <AlignToButtonExample />,
+};
+
+export const AlignToLargeButton = {
+  render: () => <AlignToLargeButtonExample />,
+};
+
+export const AlignToLargeButtonRtlSupport = {
+  render: () => <AlignToLargeButtonRTLExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
