@@ -16,23 +16,19 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/breakpoints';
+@use '../../packages/bpk-mixins/tokens';
 
-.bpk-card-list {
+// Icon badge used in CarHire examples — colored rounded container for a BPK icon.
+// BpkBox does not support backgroundColor/borderRadius,
+// so this token-based CSS module is used instead.
+.bpk-inset-banner-v3-example__icon-badge {
   display: flex;
-  flex-direction: column;
-  gap: tokens.bpk-spacing-lg();
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    gap: tokens.bpk-spacing-base();
-  }
-
-  &--card-list {
-    display: flex;
-    margin: calc(-1 * #{tokens.bpk-spacing-sm()});
-    padding: tokens.bpk-spacing-sm();
-    flex-direction: column;
-    overflow: hidden;
-  }
+  width: tokens.$bpk-icon-size-xxl;
+  height: tokens.$bpk-icon-size-xxl;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: tokens.$bpk-border-radius-sm;
+  background-color: tokens.$bpk-core-primary-day;
+  fill: tokens.$bpk-text-on-dark-day;
 }

@@ -272,35 +272,6 @@ const IconOnly = () => {
   );
 };
 
-const RtlLayout = () => {
-  const [selected, setSelected] = useState('price');
-  return (
-    <div dir="rtl">
-      <BpkSegmentedControlV2.Root
-        label="ترتيب حسب"
-        value={selected}
-        onChange={setSelected}
-      >
-        <BpkSegmentedControlV2.Indicator />
-        <BpkSegmentedControlV2.Item value="price">
-          <BpkSegmentedControlV2.ItemText>السعر</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="rating">
-          <BpkSegmentedControlV2.ItemText>التقييم</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-        <BpkSegmentedControlV2.Item value="duration">
-          <BpkSegmentedControlV2.ItemText>المدة</BpkSegmentedControlV2.ItemText>
-          <BpkSegmentedControlV2.ItemControl />
-          <BpkSegmentedControlV2.ItemHiddenInput />
-        </BpkSegmentedControlV2.Item>
-      </BpkSegmentedControlV2.Root>
-    </div>
-  );
-};
 
 const TwoItems = () => {
   const [selected, setSelected] = useState('one-way');
@@ -630,7 +601,6 @@ export {
   WithShadow,
   WithIconAndText,
   IconOnly,
-  RtlLayout,
   TwoItems,
   LongLabels,
   NoInitialSelection,
