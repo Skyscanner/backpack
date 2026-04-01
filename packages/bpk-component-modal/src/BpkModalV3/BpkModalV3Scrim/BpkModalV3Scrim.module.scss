@@ -42,7 +42,12 @@
   }
 
   &--chatbot {
-    transition-duration: tokens.$bpk-duration-base;
+    transition-delay: tokens.$bpk-duration-base;
+    transition-duration: tokens.$bpk-duration-sm;
+
+    &[data-state='open'] {
+      transition-delay: 0s;
+    }
   }
 }
 
