@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { forwardRef, type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -34,57 +34,67 @@ type Props = {
   selected?: boolean;
   spaceAround?: boolean;
   type?: keyof typeof HORIZONTAL_NAV_TYPES;
+  // Inexact rest. See decisions/flowfixme.md
   [rest: string]: any;
 };
 
-const BpkHorizontalNavItem = ({
-  children,
-  className = null,
-  disabled = false,
-  href = null,
-  selected = false,
-  spaceAround = false,
-  type = HORIZONTAL_NAV_TYPES.default,
-  ...rest
-}: Props) => {
-  const classNames = getClassName(
-    'bpk-horizontal-nav__item',
-    spaceAround && 'bpk-horizontal-nav__item--space-around',
-  );
-  const innerClassNames = getClassName(
-    'bpk-horizontal-nav__link',
-    `bpk-horizontal-nav__link--${type}`,
-    selected && `bpk-horizontal-nav__link--${type}-selected`,
-    disabled && `bpk-horizontal-nav__link--${type}-disabled`,
-    className,
-  );
+const BpkHorizontalNavItem = forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      children,
+      className = null,
+      disabled = false,
+      href = null,
+      selected = false,
+      spaceAround = false,
+      type = HORIZONTAL_NAV_TYPES.default,
+      ...rest
+    },
+    ref,
+  ) => {
+    const classNames = getClassName(
+      'bpk-horizontal-nav__item',
+      spaceAround && 'bpk-horizontal-nav__item--space-around',
+    );
+    const innerClassNames = getClassName(
+      'bpk-horizontal-nav__link',
+      `bpk-horizontal-nav__link--${type}`,
+      selected && `bpk-horizontal-nav__link--${type}-selected`,
+      disabled && `bpk-horizontal-nav__link--${type}-disabled`,
+      className,
+    );
 
-  const clickableElement = href ? (
-    <a
-      href={href}
-      className={innerClassNames}
-      aria-disabled={disabled}
-      role="tab"
-      aria-selected={selected ? 'true' : 'false'}
-      {...rest}
-    >
-      {children}
-    </a>
-  ) : (
-    <button
-      type="button"
-      className={innerClassNames}
-      disabled={disabled}
-      role="tab"
-      aria-selected={selected ? 'true' : 'false'}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
+    const clickableElement = href ? (
+      <a
+        href={href}
+        className={innerClassNames}
+        aria-disabled={disabled}
+        role="tab"
+        aria-selected={selected ? 'true' : 'false'}
+        {...rest}
+      >
+        {children}
+      </a>
+    ) : (
+      <button
+        type="button"
+        className={innerClassNames}
+        disabled={disabled}
+        role="tab"
+        aria-selected={selected ? 'true' : 'false'}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
 
-  return <div className={classNames}>{clickableElement}</div>;
-};
+    return (
+      <div ref={ref} className={classNames}>
+        {clickableElement}
+      </div>
+    );
+  },
+);
 
 const themeAttributes = [
   'horizontalNavLinkColor',

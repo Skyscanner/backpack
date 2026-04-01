@@ -97,9 +97,9 @@ describe('BpkHorizontalNav', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "ariaLabel" prop set to undefined', () => {
+  it('should render correctly with "ariaLabel" prop set to null', () => {
     const { asFragment } = render(
-      <BpkHorizontalNav ariaLabel={undefined}>
+      <BpkHorizontalNav ariaLabel={null}>
         My nav content.
       </BpkHorizontalNav>
     )

@@ -59,7 +59,7 @@ exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop 1`] = `
 </DocumentFragment>
 `;
 
-exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop set to undefined 1`] = `
+exports[`BpkHorizontalNav should render correctly with "ariaLabel" prop set to null 1`] = `
 <DocumentFragment>
   <div
     class="bpk-horizontal-nav bpk-horizontal-nav--show-default-underline"

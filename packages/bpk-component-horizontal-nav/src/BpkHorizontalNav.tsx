@@ -40,13 +40,14 @@ const HORIZONTAL_NAV_TYPES = {
 
 type Props = {
   children: ReactNode;
-  ariaLabel?: string;
+  ariaLabel?: string | null;
   autoScrollToSelected?: boolean;
   className?: string | null;
-  leadingScrollIndicatorClassName?: string;
+  leadingScrollIndicatorClassName?: string | null;
   showUnderline?: boolean;
-  trailingScrollIndicatorClassName?: string;
+  trailingScrollIndicatorClassName?: string | null;
   type?: keyof typeof HORIZONTAL_NAV_TYPES;
+  // Inexact rest. See decisions/flowfixme.md
   [rest: string]: any;
 };
 
@@ -58,18 +59,19 @@ const getPos = (ref: Element | null): DOMRect | null => {
 };
 
 const BpkHorizontalNav = ({
-  ariaLabel,
+  ariaLabel = null,
   autoScrollToSelected = false,
   children: rawChildren,
   className = null,
-  leadingScrollIndicatorClassName,
+  leadingScrollIndicatorClassName = null,
   showUnderline = true,
-  trailingScrollIndicatorClassName,
+  trailingScrollIndicatorClassName = null,
   type = HORIZONTAL_NAV_TYPES.default,
   ...rest
 }: Props) => {
   const scrollRef = useRef<Element | null>(null);
   const selectedItemRef = useRef<Element | null>(null);
+  const isMounted = useRef(false);
 
   const scrollSelectedIntoView = useCallback(
     (useSmoothScroll: boolean) => {
@@ -125,7 +127,11 @@ const BpkHorizontalNav = ({
   }, []);
 
   useEffect(() => {
-    scrollSelectedIntoView(true);
+    if (isMounted.current) {
+      scrollSelectedIntoView(true);
+    } else {
+      isMounted.current = true;
+    }
   });
 
   const classNames = getClassName(
@@ -167,10 +173,10 @@ const BpkHorizontalNav = ({
   return (
     <div className={classNames}>
       <BpkMobileScrollContainer
-        ariaLabel={ariaLabel}
+        ariaLabel={ariaLabel ?? undefined}
         innerContainerTagName="nav"
-        leadingIndicatorClassName={leadingScrollIndicatorClassName}
-        trailingIndicatorClassName={trailingScrollIndicatorClassName}
+        leadingIndicatorClassName={leadingScrollIndicatorClassName ?? undefined}
+        trailingIndicatorClassName={trailingScrollIndicatorClassName ?? undefined}
         scrollerRef={(ref: Element | null) => {
           scrollRef.current = ref;
         }}
