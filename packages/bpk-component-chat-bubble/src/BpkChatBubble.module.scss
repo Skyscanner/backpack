@@ -65,58 +65,24 @@
 }
 
 @mixin bpk-chat-bubble-corner($side, $tail-position) {
-  @if $side == 'left' {
-    @if $tail-position == 'top' {
-      border-top-left-radius: tokens.$bpk-border-radius-xs;
+  $xs: tokens.$bpk-border-radius-xs;
+  $start-corner: if(
+    $side == 'left',
+    border-start-start-radius,
+    border-start-end-radius
+  );
+  $end-corner: if(
+    $side == 'left',
+    border-end-start-radius,
+    border-end-end-radius
+  );
 
-      @include utils.bpk-rtl {
-        border-top-left-radius: tokens.$bpk-border-radius-lg;
-        border-top-right-radius: tokens.$bpk-border-radius-xs;
-      }
-    } @else if $tail-position == 'bottom' {
-      border-bottom-left-radius: tokens.$bpk-border-radius-xs;
+  @if $tail-position == 'top' or $tail-position == 'both' {
+    #{$start-corner}: $xs;
+  }
 
-      @include utils.bpk-rtl {
-        border-bottom-left-radius: tokens.$bpk-border-radius-lg;
-        border-bottom-right-radius: tokens.$bpk-border-radius-xs;
-      }
-    } @else if $tail-position == 'both' {
-      border-top-left-radius: tokens.$bpk-border-radius-xs;
-      border-bottom-left-radius: tokens.$bpk-border-radius-xs;
-
-      @include utils.bpk-rtl {
-        border-top-left-radius: tokens.$bpk-border-radius-lg;
-        border-top-right-radius: tokens.$bpk-border-radius-xs;
-        border-bottom-left-radius: tokens.$bpk-border-radius-lg;
-        border-bottom-right-radius: tokens.$bpk-border-radius-xs;
-      }
-    }
-  } @else if $side == 'right' {
-    @if $tail-position == 'top' {
-      border-top-right-radius: tokens.$bpk-border-radius-xs;
-
-      @include utils.bpk-rtl {
-        border-top-left-radius: tokens.$bpk-border-radius-xs;
-        border-top-right-radius: tokens.$bpk-border-radius-lg;
-      }
-    } @else if $tail-position == 'bottom' {
-      border-bottom-right-radius: tokens.$bpk-border-radius-xs;
-
-      @include utils.bpk-rtl {
-        border-bottom-left-radius: tokens.$bpk-border-radius-xs;
-        border-bottom-right-radius: tokens.$bpk-border-radius-lg;
-      }
-    } @else if $tail-position == 'both' {
-      border-top-right-radius: tokens.$bpk-border-radius-xs;
-      border-bottom-right-radius: tokens.$bpk-border-radius-xs;
-
-      @include utils.bpk-rtl {
-        border-top-left-radius: tokens.$bpk-border-radius-xs;
-        border-top-right-radius: tokens.$bpk-border-radius-lg;
-        border-bottom-left-radius: tokens.$bpk-border-radius-xs;
-        border-bottom-right-radius: tokens.$bpk-border-radius-lg;
-      }
-    }
+  @if $tail-position == 'bottom' or $tail-position == 'both' {
+    #{$end-corner}: $xs;
   }
 }
 
@@ -146,11 +112,7 @@
     @extend %bpk-chat-bubble-left;
     @extend %bpk-chat-bubble-radius-all-lg;
 
-    text-align: left;
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
+    text-align: start;
   }
 
   &--user {
@@ -159,11 +121,7 @@
 
     background: tokens.$bpk-core-accent-day;
     color: tokens.$bpk-text-on-dark-day;
-    text-align: left;
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
+    text-align: start;
   }
 
   &--button {
@@ -177,14 +135,10 @@
     border: tokens.$bpk-border-size-sm solid tokens.$bpk-core-accent-day;
     background: transparent;
     color: tokens.$bpk-core-accent-day;
-    text-align: left;
+    text-align: start;
     cursor: pointer;
 
     @include bpk-chat-bubble-corner('right', 'bottom');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
 
     @include utils.bpk-hover {
       transform: translateY(-(tokens.$bpk-one-pixel-rem));
@@ -199,33 +153,15 @@
   }
 
   &--system-first {
-    text-align: left;
-
     @include bpk-chat-bubble-corner('left', 'bottom');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &--system-middle {
-    text-align: left;
-
     @include bpk-chat-bubble-corner('left', 'both');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &--system-last {
-    text-align: left;
-
     @include bpk-chat-bubble-corner('left', 'top');
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &--user-first {
