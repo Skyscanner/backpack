@@ -35,7 +35,19 @@ export const UserBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type={CHAT_BUBBLE_TYPE.user}>
-        What should I do if I booked on the wrong date?
+        Default — all corners large
+      </BpkChatBubble>
+      <BpkChatBubble
+        type={CHAT_BUBBLE_TYPE.user}
+        userPosition={CHAT_BUBBLE_POSITION.first}
+      >
+        First — small corner bottom-right
+      </BpkChatBubble>
+      <BpkChatBubble
+        type={CHAT_BUBBLE_TYPE.user}
+        userPosition={CHAT_BUBBLE_POSITION.last}
+      >
+        Last — small corner top-right
       </BpkChatBubble>
     </BpkStack>
   </div>
@@ -45,8 +57,25 @@ export const BotBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot}>
-        Hey! I&apos;m your car hire assistant. Feel free to ask me anything
-        about renting a car, and I&apos;ll put my thinking cap on.
+        Default — all corners large
+      </BpkChatBubble>
+      <BpkChatBubble
+        type={CHAT_BUBBLE_TYPE.bot}
+        systemPosition={CHAT_BUBBLE_POSITION.first}
+      >
+        First — small corner bottom-left
+      </BpkChatBubble>
+      <BpkChatBubble
+        type={CHAT_BUBBLE_TYPE.bot}
+        systemPosition={CHAT_BUBBLE_POSITION.middle}
+      >
+        Middle — small corners top-left and bottom-left
+      </BpkChatBubble>
+      <BpkChatBubble
+        type={CHAT_BUBBLE_TYPE.bot}
+        systemPosition={CHAT_BUBBLE_POSITION.last}
+      >
+        Last — small corner top-left
       </BpkChatBubble>
     </BpkStack>
   </div>
@@ -73,7 +102,7 @@ export const ButtonBubbleExample = () => (
         type={CHAT_BUBBLE_TYPE.button}
         onSuggestionClick={() => {}}
         >
-        What are the cheapest rental options?
+        What are the cheapest options?
       </BpkChatBubble>
     </BpkStack>
   </div>

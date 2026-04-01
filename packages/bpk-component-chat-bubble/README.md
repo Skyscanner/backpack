@@ -24,7 +24,7 @@ export default () => (
 
 ```tsx
 <BpkChatBubble
-  type="bot"
+  type={CHAT_BUBBLE_TYPE.bot}
   showFeedback
   selectedFeedback="up"
   onFeedbackClick={(thumbType) => console.log(thumbType)}
@@ -37,7 +37,7 @@ export default () => (
 
 ```tsx
 <BpkChatBubble
-  type="retry"
+  type={CHAT_BUBBLE_TYPE.retry}
   retryLabel="Try again"
   onRetry={() => console.log('retry')}
 >
@@ -49,7 +49,7 @@ export default () => (
 
 ```tsx
 <BpkChatBubble
-  type="button"
+  type={CHAT_BUBBLE_TYPE.button}
   onSuggestionClick={() => console.log('clicked')}
 >
   Show me options
