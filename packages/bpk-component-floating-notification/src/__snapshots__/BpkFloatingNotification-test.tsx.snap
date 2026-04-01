@@ -89,7 +89,7 @@ exports[`BpkFloatingNotification should render correctly with critical type 1`] 
     </span>
     <div
       aria-hidden="true"
-      aria-live="polite"
+      aria-live="assertive"
       class="bpk-aria-live bpk-aria-live--invisible"
       data-backpack-ds-component="AriaLive"
     >
