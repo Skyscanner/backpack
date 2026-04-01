@@ -18,6 +18,7 @@
 
 import type { CSSProperties } from 'react';
 
+import { LocaleProvider } from '@ark-ui/react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
@@ -125,6 +126,38 @@ describe('BpkSegmentedControlV2 — US1: Basic composable segment group', () => 
     radioInputs.forEach((radio) => {
       expect(radio).not.toBeChecked();
     });
+  });
+
+  it('uncontrolled: selection is preserved after direction change', async () => {
+    const { rerender } = render(
+      <LocaleProvider locale="en-US">
+        <ThreeItemControl defaultValue="price" />
+      </LocaleProvider>,
+    );
+
+    // User changes selection to rating
+    fireEvent.click(screen.getByText('Rating'));
+    await waitFor(() => {
+      expect(
+        screen
+          .getAllByRole('radio')
+          .find((r) => (r as HTMLInputElement).value === 'rating'),
+      ).toBeChecked();
+    });
+
+    // Direction changes to RTL — triggers key={dir} remount inside BpkSegmentedControlV2Root
+    rerender(
+      <LocaleProvider locale="ar-SA">
+        <ThreeItemControl defaultValue="price" />
+      </LocaleProvider>,
+    );
+
+    // Selection should be restored from ref, not reset to defaultValue ("price")
+    expect(
+      screen
+        .getAllByRole('radio')
+        .find((r) => (r as HTMLInputElement).value === 'rating'),
+    ).toBeChecked();
   });
 });
 
