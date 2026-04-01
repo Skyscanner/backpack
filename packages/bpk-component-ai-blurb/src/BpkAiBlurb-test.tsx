@@ -61,18 +61,37 @@ describe('BpkAiBlurb.Header', () => {
 });
 
 describe('BpkAiBlurb.Summary', () => {
-  it('should render children', () => {
-    render(<BpkAiBlurb.Summary>Summary text</BpkAiBlurb.Summary>);
+  it('should render aiResponseText when state is aiResponse', () => {
+    render(<BpkAiBlurb.Summary state="aiResponse" aiResponseText="Summary text" />);
     expect(screen.getByText('Summary text')).toBeInTheDocument();
   });
 
-  it('should render mixed rich content', () => {
+  it('should render mixed rich content when state is aiResponse', () => {
     render(
-      <BpkAiBlurb.Summary>
-        <strong>Bold text</strong> and normal text
-      </BpkAiBlurb.Summary>,
+      <BpkAiBlurb.Summary
+        state="aiResponse"
+        aiResponseText={<><strong>Bold text</strong> and normal text</>}
+      />,
     );
     expect(screen.getByText('Bold text')).toBeInTheDocument();
+  });
+
+  it('should render thinkingText with ellipsis when state is thinking', () => {
+    render(<BpkAiBlurb.Summary state="thinking" thinkingText="Loading" />);
+    expect(screen.getByText('Loading')).toBeInTheDocument();
+  });
+
+  it('should render errorText and error link when state is error', () => {
+    render(
+      <BpkAiBlurb.Summary
+        state="error"
+        errorText="Something went wrong."
+        errorLinkText="Try again"
+        errorLinkHref="/retry"
+      />,
+    );
+    expect(screen.getByText('Something went wrong.')).toBeInTheDocument();
+    expect(screen.getByText('Try again')).toBeInTheDocument();
   });
 });
 

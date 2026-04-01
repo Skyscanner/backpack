@@ -25,10 +25,10 @@ import BpkAiBlurb from './BpkAiBlurb';
 describe('BpkAiBlurb accessibility tests', () => {
   it('Ellipsis should be hidden from assistive technology', async () => {
     const { container } = render(
-      <BpkAiBlurb.Summary>
-        Comparing your shortlist
-        <BpkAiBlurb.Ellipsis />
-      </BpkAiBlurb.Summary>,
+      <BpkAiBlurb.Summary
+        state="thinking"
+        thinkingText="Comparing your shortlist"
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
