@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-
-import BpkCode from './BpkCode';
-import BpkCodeBlock from './BpkCodeBlock';
-
-import type { Meta } from '@storybook/react';
+import { BpkCode, BpkCodeBlock } from '../../packages/bpk-component-code';
 
 const InlineExample = () => <BpkCode>npm install react --save</BpkCode>;
 const InlineAlternateExample = () => (
@@ -54,39 +50,10 @@ const MixedExample = () => (
   </div>
 );
 
-const meta = {
-  title: 'bpk-component-code',
-  component: BpkCode,
-  subcomponents: {
-    BpkCodeBlock,
-  },
-} satisfies Meta;
-
-export default meta;
-
-export const Inline = {
-  render: () => <InlineExample />,
-};
-
-export const InlineAlternate = {
-  render: () => <InlineAlternateExample />,
-};
-
-export const Block = {
-  render: () => <BlockExample />,
-};
-
-export const BlockAlternate = {
-  render: () => <BlockAlternateExample />,
-};
-
-export const VisualTest = {
-  render: () => <MixedExample />,
-};
-
-export const VisualTestWithZoom = {
-  render: () => <MixedExample />,
-  args: {
-    zoomEnabled: true,
-  },
+export {
+  InlineExample,
+  InlineAlternateExample,
+  BlockExample,
+  BlockAlternateExample,
+  MixedExample,
 };

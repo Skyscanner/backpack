@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-
-import BpkBreadcrumb from './BpkBreadcrumb';
-import BpkBreadcrumbItem from './BpkBreadcrumbItem';
-
-import type { Meta } from '@storybook/react';
+import BpkBreadcrumb, {
+  BpkBreadcrumbItem,
+} from '../../packages/bpk-component-breadcrumb';
 
 const DefaultExample = () => (
   <BpkBreadcrumb label="Default breadcrumb">
@@ -54,31 +52,4 @@ const ExtremeExample = () => (
   </BpkBreadcrumb>
 );
 
-const meta = {
-  title: 'bpk-component-breadcrumb',
-  component: BpkBreadcrumb,
-  subcomponents: {
-    BpkBreadcrumbItem,
-  },
-} satisfies Meta;
-
-export default meta;
-
-export const Default = {
-  render: () => <DefaultExample />,
-};
-
-export const Extreme = {
-  render: () => <ExtremeExample />,
-};
-
-export const VisualTest = {
-  render: () => <DefaultExample />,
-};
-
-export const VisualTestWithZoom = {
-  render: () => <DefaultExample />,
-  args: {
-    zoomEnabled: true,
-  },
-};
+export { DefaultExample, ExtremeExample };

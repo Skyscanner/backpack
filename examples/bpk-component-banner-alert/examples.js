@@ -21,7 +21,6 @@ import { Component } from 'react';
 
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { AriaLiveDemo } from '../../packages/bpk-component-aria-live/src/BpkAriaLive.stories';
 import BpkBannerAlert, {
   ALERT_TYPES,
   withBannerAlertState,
@@ -31,6 +30,7 @@ import BpkBannerAlert, {
 import BpkButton from '../../packages/bpk-component-button';
 import CurrencyIcon from '../../packages/bpk-component-icon/sm/currency';
 import { cssModules } from '../../packages/bpk-react-utils';
+import { AriaLiveDemo } from '../bpk-component-aria-live/examples';
 import { action } from '../bpk-storybook-utils';
 
 import STYLES from './examples.module.scss';

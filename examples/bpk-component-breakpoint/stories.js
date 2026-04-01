@@ -16,22 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
+import BpkBreakpoint from '../../packages/bpk-component-breakpoint/src/BpkBreakpoint';
 
-.bpk-breakpoints-demo {
-  border-radius: tokens.$bpk-border-radius-xs;
-  overflow: hidden;
+import DefaultExample from './examples';
 
-  &--active {
-    padding: tokens.bpk-spacing-lg();
-    color: tokens.$bpk-text-primary-inverse-day;
+export default {
+  title: 'bpk-component-breakpoint',
+  component: BpkBreakpoint,
+};
 
-    @include utils.bpk-apply-primary-color-to(background-color);
-  }
-
-  &--inactive {
-    padding: tokens.bpk-spacing-lg();
-    background-color: tokens.$bpk-surface-highlight-day;
-  }
-}
+export const Examples = DefaultExample;
