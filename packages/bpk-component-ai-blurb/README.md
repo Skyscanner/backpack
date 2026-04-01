@@ -1,6 +1,6 @@
 # bpk-component-ai-blurb
 
-> A composable component for displaying AI-generated summaries with a branded header, free-slot content area, loading ellipsis animation, and feedback mechanism.
+> A composable component for displaying AI-generated summaries with a branded header, state-driven content area, loading ellipsis animation, and feedback mechanism.
 
 ## Installation
 
@@ -10,19 +10,19 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```tsx
 import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
+import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
-// Loading state
+// AI response state with feedback
 <BpkAiBlurb.Root>
   <BpkAiBlurb.Header title="Summarized by AI" />
-  <BpkAiBlurb.Summary>
-    Comparing your shortlist<BpkAiBlurb.Ellipsis />
-  </BpkAiBlurb.Summary>
-</BpkAiBlurb.Root>
-
-// Success state with feedback
-<BpkAiBlurb.Root>
-  <BpkAiBlurb.Header title="Summarized by AI" />
-  <BpkAiBlurb.Summary>{llmText}</BpkAiBlurb.Summary>
+  <BpkAiBlurb.Summary
+    state="aiResponse"
+    aiResponseText={
+      <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+        {llmText}
+      </BpkText>
+    }
+  />
   <BpkAiBlurb.Feedback
     feedbackText="Was this helpful?"
     thankYouText="Thanks for your feedback!"
@@ -32,12 +32,24 @@ import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
   />
 </BpkAiBlurb.Root>
 
+// Thinking state
+<BpkAiBlurb.Root>
+  <BpkAiBlurb.Header title="Summarized by AI" />
+  <BpkAiBlurb.Summary
+    state="thinking"
+    thinkingText="Comparing your shortlist"
+  />
+</BpkAiBlurb.Root>
+
 // Error state
 <BpkAiBlurb.Root>
   <BpkAiBlurb.Header title="Summarized by AI" />
-  <BpkAiBlurb.Summary>
-    Couldn't load your summary. <button type="button" onClick={retry}>Retry</button>
-  </BpkAiBlurb.Summary>
+  <BpkAiBlurb.Summary
+    state="error"
+    errorText="Couldn't load your summary."
+    errorLinkText="Retry"
+    errorLinkHref="#"
+  />
 </BpkAiBlurb.Root>
 ```
 
@@ -57,20 +69,29 @@ import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
 
 ### `BpkAiBlurb.Summary`
 
-| Property | PropType  | Required | Default Value |
-| -------- | --------- | -------- | ------------- |
-| children | ReactNode | true     | -             |
+The `state` prop controls which content is displayed. Only pass the props relevant to the current state.
+
+| Property        | PropType  | Required | Default Value |
+| --------------- | --------- | -------- | ------------- |
+| state           | `'aiResponse'` \| `'thinking'` \| `'error'` | true | - |
+| aiResponseText  | ReactNode | When `state="aiResponse"` | - |
+| thinkingText    | string    | When `state="thinking"` | - |
+| errorText       | string    | When `state="error"` | - |
+| errorLinkText   | string    | When `state="error"` | - |
+| errorLinkHref   | string    | When `state="error"` | - |
+
+> **Note:** `aiResponseText` accepts a `ReactNode` — the component does not enforce any text formatting on the AI response. The consumer is responsible for applying Backpack typography (e.g. `BpkText` with `TEXT_STYLES.caption`). This is intentional: AI-generated text is non-deterministic and translations vary in length and structure, so formatting cannot be reliably applied from within the component.
 
 ### `BpkAiBlurb.Ellipsis`
 
-No props. Renders inline animated three-dot loading indicator. Use inside `Summary` at the end of loading text.
+No props. Renders an inline animated three-dot loading indicator. Used internally by `Summary` when `state="thinking"`.
 
 ### `BpkAiBlurb.Feedback`
 
-| Property     | PropType                        | Required | Default Value |
-| ------------ | ------------------------------- | -------- | ------------- |
-| feedbackText   | string                        | true     | -             |
-| thankYouText   | string                        | true     | -             |
-| thumbsUpLabel  | string                        | true     | -             |
-| thumbsDownLabel | string                       | true     | -             |
-| onFeedback     | (positive: boolean) => void   | false    | -             |
+| Property        | PropType                      | Required | Default Value |
+| --------------- | ----------------------------- | -------- | ------------- |
+| feedbackText    | string                        | true     | -             |
+| thankYouText    | string                        | true     | -             |
+| thumbsUpLabel   | string                        | true     | -             |
+| thumbsDownLabel | string                        | true     | -             |
+| onFeedback      | (positive: boolean) => void   | false    | -             |

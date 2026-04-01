@@ -19,7 +19,7 @@
 import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
 
 import {
-  DefaultExample,
+  AiResponseExample,
   ErrorGeneralExample,
   ErrorRefreshLimitExample,
   LoadingExample,
@@ -30,14 +30,14 @@ export default {
   component: BpkAiBlurb.Root,
 };
 
-export const Default = DefaultExample;
+export const AiResponse = AiResponseExample;
 export const Loading = LoadingExample;
 export const ErrorGeneral = ErrorGeneralExample;
 export const ErrorRefreshLimit = ErrorRefreshLimitExample;
 
-export const VisualTest = DefaultExample;
+export const VisualTest = AiResponseExample;
 export const VisualTestWithZoom = {
-  render: DefaultExample,
+  render: AiResponseExample,
   args: {
     zoomEnabled: true,
   },

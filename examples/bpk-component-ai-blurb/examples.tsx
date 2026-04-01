@@ -18,15 +18,20 @@
 
 import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
 import { BpkBox, BpkProvider, BpkSpacing } from '../../packages/bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
-export const DefaultExample = () => (
+export const AiResponseExample = () => (
   <BpkProvider>
     <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
       <BpkAiBlurb.Root>
         <BpkAiBlurb.Header title="Summarized by AI" />
         <BpkAiBlurb.Summary
-          state="default"
-          text="The first EasyTerra deal offers the lowest price and better insurance coverage. The second EasyTerra deal has a higher price but offers a more spacious car type."
+          state="aiResponse"
+          aiResponseText={
+            <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
+              <BpkText tagName="span" textStyle={TEXT_STYLES.label3}>The first EasyTerra deal</BpkText> offers the lowest price and better insurance coverage. The second EasyTerra deal has a higher price but offers a more spacious car type.
+            </BpkText>
+          }
         />
         <BpkAiBlurb.Feedback
           feedbackText="Was this helpful?"
@@ -49,7 +54,7 @@ export const LoadingExample = () => (
         <BpkAiBlurb.Header title="Summarized by AI" />
         <BpkAiBlurb.Summary
           state="thinking"
-          text="Comparing your shortlist"
+          thinkingText="Comparing your shortlist"
         />
       </BpkAiBlurb.Root>
     </BpkBox>
@@ -63,9 +68,9 @@ export const ErrorGeneralExample = () => (
         <BpkAiBlurb.Header title="Summarized by AI" />
         <BpkAiBlurb.Summary
           state="error"
-          text="Couldn't load your summary."
-          linkText="Retry"
-          linkHref="#"
+          errorText="Couldn't load your summary."
+          errorLinkText="Retry"
+          errorLinkHref="#"
         />
       </BpkAiBlurb.Root>
     </BpkBox>
@@ -79,9 +84,9 @@ export const ErrorRefreshLimitExample = () => (
         <BpkAiBlurb.Header title="Summarized by AI" />
         <BpkAiBlurb.Summary
           state="error"
-          text="You've reached the refresh limit. Please come back later."
-          linkText="Retry"
-          linkHref="#"
+          errorText="You've reached the refresh limit. Please come back later."
+          errorLinkText="Retry"
+          errorLinkHref="#"
         />
       </BpkAiBlurb.Root>
     </BpkBox>

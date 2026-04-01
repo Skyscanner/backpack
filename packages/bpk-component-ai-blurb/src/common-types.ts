@@ -28,32 +28,20 @@ export type BpkAiBlurbHeaderProps = {
   title: string;
 };
 
-export type BpkAiBlurbSummaryDefaultProps = {
-  state: 'default';
-  /** Text to display. The first 4 words will be rendered bold automatically. */
-  text: string;
+export type BpkAiBlurbSummaryProps = {
+  /** Controls which content is displayed. */
+  state: 'aiResponse' | 'thinking' | 'error';
+  /** AI response content. Consumer controls formatting. Displayed when state is 'aiResponse'. */
+  aiResponseText?: ReactNode;
+  /** Text displayed followed by an animated ellipsis. Displayed when state is 'thinking'. */
+  thinkingText?: string;
+  /** Text displayed before the error link. Displayed when state is 'error'. */
+  errorText?: string;
+  /** Text for the inline error link. Required when state is 'error'. */
+  errorLinkText?: string;
+  /** href for the inline error link. Required when state is 'error'. */
+  errorLinkHref?: string;
 };
-
-export type BpkAiBlurbSummaryThinkingProps = {
-  state: 'thinking';
-  /** Text to display, followed by an animated ellipsis. */
-  text: string;
-};
-
-export type BpkAiBlurbSummaryErrorProps = {
-  state: 'error';
-  /** Text to display before the link. */
-  text: string;
-  /** Text for the inline link. */
-  linkText: string;
-  /** href for the inline link. */
-  linkHref: string;
-};
-
-export type BpkAiBlurbSummaryProps =
-  | BpkAiBlurbSummaryDefaultProps
-  | BpkAiBlurbSummaryThinkingProps
-  | BpkAiBlurbSummaryErrorProps;
 
 export type BpkAiBlurbFeedbackProps = {
   /** Text displayed before a vote is cast. e.g. "Was this helpful?" — not translated by Backpack. */

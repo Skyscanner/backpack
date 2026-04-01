@@ -30,35 +30,24 @@ import STYLES from '../BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Summary = (props: BpkAiBlurbSummaryProps) => {
-  const { state, text } = props;
+const Summary = ({ aiResponseText, errorLinkHref, errorLinkText, errorText, state, thinkingText }: BpkAiBlurbSummaryProps) => {
 
   let content: ReactNode;
 
-  if (state === 'default') {
-    const words = text.split(' ');
-    const boldWords = words.slice(0, 4).join(' ');
-    const restWords = words.slice(4).join(' ');
-
-    content = (
-      <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-        <BpkText tagName="span" textStyle={TEXT_STYLES.label3}>{boldWords}</BpkText>
-        {restWords ? ` ${restWords}` : null}
-      </BpkText>
-    );
+  if (state === 'aiResponse') {
+    content = aiResponseText;
   } else if (state === 'thinking') {
     content = (
       <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-        {text}
+        {thinkingText}
         <Ellipsis />
       </BpkText>
     );
   } else {
-    const { linkHref, linkText } = props;
     content = (
       <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-        {text}{' '}
-        <BpkLink href={linkHref}>{linkText}</BpkLink>
+        {errorText}{' '}
+        <BpkLink href={errorLinkHref ?? null}>{errorLinkText}</BpkLink>
       </BpkText>
     );
   }
