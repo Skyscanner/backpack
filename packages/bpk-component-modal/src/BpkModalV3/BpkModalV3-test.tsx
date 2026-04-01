@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -93,6 +93,12 @@ describe('BpkModalV3', () => {
       expect(wrapper).toHaveAttribute('data-type', 'full');
     });
 
+    it('should render wrapper div with chatbot type', () => {
+      const { container } = renderModal({ type: 'chatbot' });
+      const wrapper = container.querySelector('[data-type]');
+      expect(wrapper).toHaveAttribute('data-type', 'chatbot');
+    });
+
     it('should have data-backpack-ds-component attribute', () => {
       const { container } = renderModal();
       const wrapper = container.querySelector(
@@ -122,6 +128,14 @@ describe('BpkModalV3', () => {
         '[data-backpack-ds-component="ModalV3Content"]',
       );
       expect(content?.className).toContain('bpk-modal-v3__content--sheet');
+    });
+
+    it('should apply chatbot modifier class from context', () => {
+      const { container } = renderModal({ type: 'chatbot' });
+      const content = container.querySelector(
+        '[data-backpack-ds-component="ModalV3Content"]',
+      );
+      expect(content?.className).toContain('bpk-modal-v3__content--chatbot');
     });
   });
 
@@ -348,6 +362,62 @@ describe('BpkModalV3', () => {
       expect(onOpenChange).toHaveBeenCalledWith(
         expect.objectContaining({ open: false }),
       );
+    });
+  });
+
+  describe('Body lock (chatbot type)', () => {
+    beforeEach(() => {
+      jest.useFakeTimers();
+      Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
+    });
+
+    afterEach(() => {
+      jest.useRealTimers();
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.touchAction = '';
+      document.body.style.overscrollBehavior = '';
+      document.body.style.backgroundColor = '';
+    });
+
+    it('should lock body scroll when chatbot modal is open', () => {
+      renderModal({ type: 'chatbot', open: true });
+      expect(document.body.style.overflow).toBe('hidden');
+      expect(document.body.style.position).toBe('fixed');
+      expect(document.body.style.top).toBe('-100px');
+      expect(document.body.style.width).toBe('100%');
+    });
+
+    it('should not lock body scroll for non-chatbot types', () => {
+      renderModal({ type: 'default', open: true });
+      expect(document.body.style.position).not.toBe('fixed');
+      expect(document.body.style.overflow).not.toBe('hidden');
+    });
+
+    it('should restore body styles when chatbot modal closes', () => {
+      const { rerender } = render(
+        <BpkModalV3.Root type="chatbot" open onOpenChange={jest.fn()}>
+          <BpkModalV3.Scrim />
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(document.body.style.position).toBe('fixed');
+
+      rerender(
+        <BpkModalV3.Root type="chatbot" open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Scrim />
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      act(() => { jest.runAllTimers(); });
+      expect(document.body.style.position).toBe('');
+      expect(document.body.style.overflow).toBe('');
     });
   });
 
