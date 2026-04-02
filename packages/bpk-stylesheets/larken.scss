@@ -347,23 +347,13 @@ $bpk-fonts: (
 }
 
 [lang='el-GR'],
-:lang(el-GR) {
-  --bpk-larken-font-stack:
-    larken, 'Noto Serif', 'Noto Sans Arabic', 'Noto Serif Hebrew',
-    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
-}
-
+:lang(el-GR),
 [lang='ru-RU'],
 :lang(ru-RU),
 [lang='uk-UA'],
 :lang(uk-UA),
 [lang='bg-BG'],
-:lang(bg-BG) {
-  --bpk-larken-font-stack:
-    larken, 'Noto Serif', 'Noto Sans Arabic', 'Noto Serif Hebrew',
-    'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
-}
-
+:lang(bg-BG),
 [lang='vi-VN'],
 :lang(vi-VN) {
   --bpk-larken-font-stack:

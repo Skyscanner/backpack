@@ -509,27 +509,13 @@ $bpk-fonts: (
 }
 
 [lang='el-GR'],
-:lang(el-GR) {
-  --bpk-base-font-stack:
-    'Skyscanner Relative', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew',
-    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
-    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-}
-
+:lang(el-GR),
 [lang='ru-RU'],
 :lang(ru-RU),
 [lang='uk-UA'],
 :lang(uk-UA),
 [lang='bg-BG'],
-:lang(bg-BG) {
-  --bpk-base-font-stack:
-    'Skyscanner Relative', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew',
-    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
-    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-}
-
+:lang(bg-BG),
 [lang='vi-VN'],
 :lang(vi-VN) {
   --bpk-base-font-stack:
