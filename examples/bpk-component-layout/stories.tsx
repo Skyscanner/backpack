@@ -27,11 +27,15 @@ import {
 } from '../../packages/bpk-component-layout';
 
 import {
+  InteractiveExample,
   PositionExample,
+  RefExample,
   ResponsiveExample,
+  ResponsiveTextStyleExample,
   RtlSpacingExample,
   SizeExample,
   SpacingExample,
+  TextStyleExample,
 } from './box-examples';
 import {
   BpkFlexAlignExample,
@@ -81,7 +85,11 @@ export const VisualTest = () => (
     <RtlSpacingExample />
     <SizeExample />
     <ResponsiveExample />
-    <PositionExample />
+    <div style={{ minHeight: '28rem' }}><PositionExample /></div>
+    <InteractiveExample />
+    <TextStyleExample />
+    <ResponsiveTextStyleExample />
+    <RefExample />
 
     {/* Flex examples */}
     <BpkFlexExample />

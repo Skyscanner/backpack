@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
+import type { AriaRole, MouseEventHandler } from 'react';
+
 import type {
   BpkSpacingValue,
   BpkSizeValue,
   BpkPositionValue,
   BpkResponsiveValue,
 } from './tokens';
+import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 
 /**
  * Common spacing-related props shared by all Backpack layout components
@@ -76,9 +79,9 @@ export interface BpkSpacingProps {
  * layout components purely structural.
  *
  * NOTE:
- * - Layout components other than BpkBox do not expose event handlers.
- * - BpkBox reintroduces a minimal set of events (onClick, onFocus, onBlur)
- *   on its own props type.
+ * - Layout components expose onClick, tabIndex and role to support interactive
+ *   container patterns (e.g. clickable cards, landmark regions).
+ * - BpkBox additionally exposes onFocus and onBlur on its own props type.
  */
 export interface BpkCommonLayoutProps extends BpkSpacingProps {
   // Explicitly exclude className
@@ -86,6 +89,14 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
 
   // Explicitly exclude style to avoid ad-hoc inline styling on layout primitives.
   style?: never;
+
+  // Interaction & accessibility props
+  tabIndex?: number;
+  role?: AriaRole;
+  onClick?: MouseEventHandler<HTMLElement>;
+
+  // Typography
+  textStyle?: BpkResponsiveValue<TextStyle>;
 
   // Testing & automation attributes
   'data-testid'?: string;

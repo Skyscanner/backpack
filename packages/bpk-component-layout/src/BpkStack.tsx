@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Stack, VStack, HStack } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
@@ -24,32 +26,38 @@ import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkStackProps } from './types';
 
-export const BpkStack = ({ children, ...props }: BpkStackProps) => {
+export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ children, ...props }, ref) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   return (
-    <Stack {...getDataComponentAttribute('Stack')} {...processedProps}>
+    <Stack ref={ref} {...getDataComponentAttribute('Stack')} {...processedProps}>
       {children}
     </Stack>
   );
-};
+});
 
-export const BpkHStack = ({ children, ...props }: BpkStackProps) => {
+BpkStack.displayName = 'BpkStack';
+
+export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ children, ...props }, ref) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   return (
-    <HStack {...getDataComponentAttribute('HStack')} {...processedProps}>
+    <HStack ref={ref} {...getDataComponentAttribute('HStack')} {...processedProps}>
       {children}
     </HStack>
   );
-};
+});
 
-export const BpkVStack = ({ children, ...props }: BpkStackProps) => {
+BpkHStack.displayName = 'BpkHStack';
+
+export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ children, ...props }, ref) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   return (
-    <VStack {...getDataComponentAttribute('VStack')} {...processedProps}>
+    <VStack ref={ref} {...getDataComponentAttribute('VStack')} {...processedProps}>
       {children}
     </VStack>
   );
-};
+});
+
+BpkVStack.displayName = 'BpkVStack';
 
 export type { BpkStackProps };
 

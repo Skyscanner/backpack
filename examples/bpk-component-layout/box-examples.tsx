@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+import { useRef, useState } from 'react';
+
+import BpkButton from '../../packages/bpk-component-button';
 import {
   BpkBox,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -105,8 +109,8 @@ export const ResponsiveExample = () => (
 export const PositionExample = () => (
   <Wrapper>
     <BpkBox padding={BpkSpacing.MD}>
-      <BpkBox position="relative" width="10rem" minHeight="6rem">
-        Relative box (10rem x 6rem)
+      <BpkBox position="relative" width="10rem" minHeight="16rem">
+        Relative box (10rem x 16rem)
         <BpkBox position="absolute" top="12rem" left="6rem">
           Positioned child (top/left from 12rem, 6rem)
         </BpkBox>
@@ -114,6 +118,96 @@ export const PositionExample = () => (
     </BpkBox>
   </Wrapper>
 );
+
+/**
+ * Interactive props example – demonstrates tabIndex, role, and onClick on BpkBox.
+ *
+ * @returns {JSX.Element} A clickable region using role, tabIndex, and onClick.
+ */
+export const InteractiveExample = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <Wrapper>
+      <BpkBox
+        padding={BpkSpacing.MD}
+        role="button"
+        tabIndex={0}
+        onClick={() => setCount((c) => c + 1)}
+      >
+        <BpkText>Clicked {count} times (role=&quot;button&quot;, tabIndex=0)</BpkText>
+      </BpkBox>
+    </Wrapper>
+  );
+};
+
+/**
+ * textStyle example – demonstrates applying BpkText typography styles via BpkBox.
+ *
+ * @returns {JSX.Element} Boxes with different textStyle values applied.
+ */
+export const TextStyleExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.SM} textStyle={TEXT_STYLES.heading3}>
+      Heading 3 text style on BpkBox
+    </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} textStyle={TEXT_STYLES.bodyDefault}>
+      Body default text style on BpkBox
+    </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} textStyle={TEXT_STYLES.caption}>
+      Caption text style on BpkBox
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Responsive textStyle example – demonstrates textStyle changing across breakpoints.
+ *
+ * @returns {JSX.Element} A box whose text style changes from caption to heading5 across breakpoints.
+ */
+export const ResponsiveTextStyleExample = () => (
+  <Wrapper>
+    <BpkBox
+      padding={BpkSpacing.MD}
+      textStyle={{
+        base: TEXT_STYLES.caption,
+        mobile: TEXT_STYLES.bodyDefault,
+        tablet: TEXT_STYLES.heading5,
+        desktop: TEXT_STYLES.heading3,
+      }}
+    >
+      Text style changes from caption → bodyDefault → heading5 → heading3 across breakpoints.
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Ref example – demonstrates forwarding a ref to the BpkBox DOM element.
+ *
+ * @returns {JSX.Element} A box with a button that reads DOM info via ref.
+ */
+export const RefExample = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [info, setInfo] = useState<string | null>(null);
+
+  const handleRead = () => {
+    if (ref.current) {
+      const { offsetHeight, offsetWidth, tagName } = ref.current;
+      setInfo(`tagName: ${tagName}, width: ${offsetWidth}px, height: ${offsetHeight}px`);
+    }
+  };
+
+  return (
+    <Wrapper>
+      <BpkBox ref={ref} padding={BpkSpacing.MD}>
+        <BpkText>BpkBox with forwarded ref</BpkText>
+      </BpkBox>
+      <BpkBox padding={BpkSpacing.SM}>
+        <BpkButton onClick={handleRead}>Read ref.current</BpkButton>
+        {info && <BpkText textStyle={TEXT_STYLES.footnote}>{info}</BpkText>}
+      </BpkBox>
+    </Wrapper>
+  );
+};
 
 /**
  * Mixed visual regression example – used for Percy/visual tests.
@@ -127,6 +221,8 @@ export const MixedExample = () => (
     <SizeExample />
     <ResponsiveExample />
     <PositionExample />
+    <InteractiveExample />
+    <TextStyleExample />
   </Wrapper>
 );
 

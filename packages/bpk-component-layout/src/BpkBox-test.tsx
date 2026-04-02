@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { createRef } from 'react';
+
 import { render, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
@@ -63,6 +65,52 @@ describe('BpkBox', () => {
     expect(div).toBeInTheDocument();
     // We don't assert exact styles because Chakra generates classes & vars,
     // but we at least assert that the element rendered successfully.
+  });
+
+  it('forwards ref to the underlying DOM element', () => {
+    const ref = createRef<HTMLDivElement>();
+    render(
+      <BpkProvider>
+        <BpkBox ref={ref}>Content</BpkBox>
+      </BpkProvider>,
+    );
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+  });
+
+  it('passes tabIndex to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox tabIndex={0}>Focusable</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveAttribute('tabindex', '0');
+  });
+
+  it('passes role to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox role="region">Region</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveAttribute('role', 'region');
+  });
+
+  it('renders when textStyle is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkBox textStyle="body-default">Styled text</BpkBox>
+      </BpkProvider>,
+    );
+    expect(getByText('Styled text')).toBeInTheDocument();
+  });
+
+  it('renders when textStyle is not provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkBox>No style</BpkBox>
+      </BpkProvider>,
+    );
+    expect(getByText('No style')).toBeInTheDocument();
   });
 
   it('supports basic interaction props: onClick, onFocus, onBlur', () => {

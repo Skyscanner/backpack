@@ -57,6 +57,8 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
 > = {
   BpkBox: {
     container: [
+      // Typography
+      'textStyle',
       // Display
       'display',
       // Flex container props
@@ -90,6 +92,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   // Note: BpkFlex maps its public API props to these Chakra keys.
   BpkFlex: {
     container: [
+      'textStyle',
       'flexDirection',
       'justifyContent',
       'alignItems',
@@ -104,6 +107,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   // Note: BpkGrid maps its public API props to these Chakra keys.
   BpkGrid: {
     container: [
+      'textStyle',
       'justifyContent',
       'alignItems',
       'gridTemplateColumns',
@@ -121,7 +125,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   },
   // Note: BpkStack uses Chakra Stack option prop names directly.
   BpkStack: {
-    container: StackOptionKeys as unknown as readonly string[],
+    container: ['textStyle', ...(StackOptionKeys as unknown as readonly string[])],
   },
 };
 

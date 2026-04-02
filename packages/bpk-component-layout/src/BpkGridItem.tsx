@@ -16,43 +16,45 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { GridItem } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkProps } from './tokenUtils';
+import { processBpkProps, normalizeResponsiveObject } from './tokenUtils';
 
 import type { BpkGridItemProps } from './types';
 
-export const BpkGridItem = ({
-  area,
-  children,
-  colEnd,
-  colSpan,
-  colStart,
-  rowEnd,
-  rowSpan,
-  rowStart,
-  ...props
-}: BpkGridItemProps) => {
-  const processedProps = processBpkProps(props);
+export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
+  ({ area, children, colEnd, colSpan, colStart, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
+    const processedProps = processBpkProps(props);
+    const normalizedTextStyle =
+      textStyle && typeof textStyle === 'object'
+        ? normalizeResponsiveObject(textStyle as Record<string, string>)
+        : textStyle;
 
-  return (
-    <GridItem
-      {...getDataComponentAttribute('GridItem')}
-      {...processedProps}
-      area={area}
-      colEnd={colEnd}
-      colStart={colStart}
-      colSpan={colSpan}
-      rowEnd={rowEnd}
-      rowStart={rowStart}
-      rowSpan={rowSpan}
-    >
-      {children}
-    </GridItem>
-  );
-};
+    return (
+      <GridItem
+        ref={ref}
+        {...getDataComponentAttribute('GridItem')}
+        {...processedProps}
+        area={area}
+        colEnd={colEnd}
+        colStart={colStart}
+        colSpan={colSpan}
+        rowEnd={rowEnd}
+        rowStart={rowStart}
+        rowSpan={rowSpan}
+        textStyle={normalizedTextStyle}
+      >
+        {children}
+      </GridItem>
+    );
+  },
+);
+
+BpkGridItem.displayName = 'BpkGridItem';
 
 export type { BpkGridItemProps };
 
