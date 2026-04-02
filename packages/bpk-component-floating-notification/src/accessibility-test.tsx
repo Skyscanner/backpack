@@ -21,7 +21,7 @@ import { axe } from 'jest-axe';
 
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 
-import BpkFloatingNotification from './BpkFloatingNotification';
+import BpkFloatingNotification, { NOTIFICATION_TYPES } from './BpkFloatingNotification';
 
 const props = {
   text: 'View',
@@ -61,6 +61,27 @@ describe('BpkFloatingNotification accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues with icon and cta', async () => {
     const { container } = render(
       <BpkFloatingNotification icon={BpkIconHeart} ctaText="View" {...props} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues with critical type', async () => {
+    const { container } = render(
+      <BpkFloatingNotification type={NOTIFICATION_TYPES.critical} {...props} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues with critical type, icon and cta', async () => {
+    const { container } = render(
+      <BpkFloatingNotification
+        type={NOTIFICATION_TYPES.critical}
+        icon={BpkIconHeart}
+        ctaText="View"
+        {...props}
+      />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
