@@ -21,6 +21,19 @@ export default () => (
 );
 ```
 
+### Critical
+
+```tsx
+import BpkInfoBanner, { ALERT_TYPES } from '@skyscanner/backpack-web/bpk-component-info-banner';
+
+export default () => (
+  <BpkInfoBanner
+    message="Critical alert."
+    type={ALERT_TYPES.CRITICAL}
+  />
+);
+```
+
 ### Dismissable
 
 ```tsx
