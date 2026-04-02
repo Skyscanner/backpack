@@ -74,6 +74,19 @@ describe('BpkGrid', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkGrid role="button" tabIndex={0} onKeyDown={handleKeyDown}>
+          Interactive
+        </BpkGrid>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
   it('renders when textStyle is provided', () => {
     const { getByText } = render(
       <BpkProvider>

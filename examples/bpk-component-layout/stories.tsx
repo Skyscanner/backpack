@@ -85,7 +85,7 @@ export const VisualTest = () => (
     <RtlSpacingExample />
     <SizeExample />
     <ResponsiveExample />
-    <div style={{ minHeight: '28rem' }}><PositionExample /></div>
+    <BpkBox minHeight="28rem"><PositionExample /></BpkBox>
     <InteractiveExample />
     <TextStyleExample />
     <ResponsiveTextStyleExample />

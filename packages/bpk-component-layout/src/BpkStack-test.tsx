@@ -88,6 +88,19 @@ describe('BpkStack', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkStack role="button" tabIndex={0} onKeyDown={handleKeyDown} gap={BpkSpacing.MD}>
+          <div>Interactive</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
   it('renders when textStyle is provided', () => {
     const { getByText } = render(
       <BpkProvider>

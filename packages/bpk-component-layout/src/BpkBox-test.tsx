@@ -142,4 +142,17 @@ describe('BpkBox', () => {
     fireEvent.blur(element);
     expect(handleBlur).toHaveBeenCalledTimes(1);
   });
+
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkBox role="button" tabIndex={0} onKeyDown={handleKeyDown}>
+          Interactive
+        </BpkBox>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
 });
