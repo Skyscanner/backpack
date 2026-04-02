@@ -191,7 +191,7 @@ export interface BpkBoxSpecificProps
  * Combines Box-specific props with Backpack common layout props.
  * onClick is inherited from BpkCommonLayoutProps.
  * onFocus and onBlur are reintroduced here as BpkBox-only interaction props.
- * textStyle applies BpkText typography classes and supports responsive values.
+ * textStyle maps to Chakra's `textStyle` theme prop for Backpack typography and supports responsive values.
  */
 type BoxEventProps = Pick<BoxProps, 'onFocus' | 'onBlur'>;
 

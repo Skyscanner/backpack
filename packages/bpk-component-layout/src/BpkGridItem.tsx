@@ -25,13 +25,14 @@ import { getDataComponentAttribute } from '../../bpk-react-utils';
 import { processBpkProps, normalizeResponsiveObject } from './tokenUtils';
 
 import type { BpkGridItemProps } from './types';
+import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 
 export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
   ({ area, children, colEnd, colSpan, colStart, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
     const processedProps = processBpkProps(props);
     const normalizedTextStyle =
       textStyle && typeof textStyle === 'object'
-        ? normalizeResponsiveObject(textStyle as Record<string, string>)
+        ? normalizeResponsiveObject<TextStyle>(textStyle as Record<string, TextStyle>)
         : textStyle;
 
     return (
