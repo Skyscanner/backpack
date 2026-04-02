@@ -41,6 +41,7 @@ describe('BpkAiBlurb.Root', () => {
     const { container } = render(<BpkAiBlurb.Root><span /></BpkAiBlurb.Root>);
     expect(container.firstChild).toHaveAttribute('data-backpack-ds-component', 'AiBlurb');
   });
+
 });
 
 describe('BpkAiBlurb.Header', () => {
@@ -130,6 +131,14 @@ describe('BpkAiBlurb.Feedback', () => {
     expect(screen.getByText('Thanks for your feedback!')).toBeInTheDocument();
     expect(screen.queryByLabelText('Thumbs up')).not.toBeInTheDocument();
     expect(screen.queryByLabelText('Thumbs down')).not.toBeInTheDocument();
+  });
+
+  it('should have an aria-live region that announces the thank-you text after voting', async () => {
+    const { container } = render(<BpkAiBlurb.Feedback {...defaultProps} />);
+    const liveRegion = container.querySelector('[aria-live="polite"]');
+    expect(liveRegion).toBeInTheDocument();
+    await userEvent.click(screen.getByLabelText('Thumbs up'));
+    expect(liveRegion).toHaveTextContent('Thanks for your feedback!');
   });
 
   it('should show thank-you text and hide thumbs after thumbs-down', async () => {
