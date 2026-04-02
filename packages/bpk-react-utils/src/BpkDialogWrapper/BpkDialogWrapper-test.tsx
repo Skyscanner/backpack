@@ -142,6 +142,35 @@ describe('BpkDialogWrapper', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+    it('should lock body scroll when dialog is open', () => {
+      render(
+        <BpkDialogWrapper {...props}>
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      expect(document.body.style.position).toEqual('fixed');
+      expect(document.body.style.width).toEqual('100%');
+      expect(document.body.style.overflowY).toEqual('hidden');
+    });
+    it('should restore body scroll styles when dialog is closed', () => {
+      const { rerender } = render(
+        <BpkDialogWrapper {...props} isOpen>
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      rerender(
+        <BpkDialogWrapper {...props} isOpen={false}>
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      expect(document.body.style.position).toEqual('');
+      expect(document.body.style.width).toEqual('');
+      expect(document.body.style.overflowY).toEqual('');
+      expect(document.body.style.top).toEqual('');
+    });
   })
 
   describe('dialog is not supported', () => {
@@ -248,16 +277,6 @@ describe('BpkDialogWrapper', () => {
         </BpkDialogWrapper>
       );
       expect(asFragment()).toMatchSnapshot();
-    });
-    it('should reset position and width when dialog is closed', () => {
-      render(
-        <BpkDialogWrapper {...props} isOpen={false}>
-          <div>Dialog content</div>
-        </BpkDialogWrapper>,
-      );
-
-      expect(document.body.style.position).toEqual('relative');
-      expect(document.body.style.width).toEqual('auto');
     });
   })
 })

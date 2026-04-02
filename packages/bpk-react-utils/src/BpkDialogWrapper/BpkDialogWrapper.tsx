@@ -56,20 +56,8 @@ interface CommonProps {
 export type Props = CommonProps &
   ({ ariaLabelledby: string } | { ariaLabel: string });
 
-type DialogProps = {
-  isDialogOpen: boolean;
-};
-
 // TODO: this check if the browser support the HTML dialog element. We can remove it once we drop support as a business for Safari 14
 const dialogSupported = typeof HTMLDialogElement === 'function';
-
-const setPageProperties = ({ isDialogOpen }: DialogProps) => {
-  document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-  if (!dialogSupported) {
-    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-    document.body.style.width = isDialogOpen ? '100%' : 'auto';
-  }
-};
 
 export const BpkDialogWrapper = ({
   children,
@@ -139,11 +127,23 @@ export const BpkDialogWrapper = ({
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
-  // Lock the scroll of the page when the dialog is open
+  // Lock body scroll while dialog is open and restore scroll position on close.
+  // Uses position:fixed on body to prevent mobile scroll-through and jitter.
   useEffect(() => {
-    setPageProperties({ isDialogOpen: isOpen });
+    if (!isOpen) return undefined;
+
+    const { scrollY } = window;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflowY = 'hidden';
+
     return () => {
-      setPageProperties({ isDialogOpen: false });
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+      window.scrollTo(0, scrollY);
     };
   }, [isOpen]);
 
