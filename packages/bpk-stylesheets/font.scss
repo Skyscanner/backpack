@@ -508,6 +508,37 @@ $bpk-fonts: (
     'Helvetica Neue', sans-serif;
 }
 
+[lang='el-GR'],
+:lang(el-GR) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='ru-RU'],
+:lang(ru-RU),
+[lang='uk-UA'],
+:lang(uk-UA),
+[lang='bg-BG'],
+:lang(bg-BG) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
+[lang='vi-VN'],
+:lang(vi-VN) {
+  --bpk-base-font-stack:
+    'Skyscanner Relative', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Hebrew',
+    'Noto Sans Devanagari', 'Noto Sans Thai', -apple-system, blinkmacsystemfont,
+    roboto, oxygen, ubuntu, cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+
 // Using :where([lang]) ensures that we trigger a re-evaluation of the font-stack
 // variable for any element with a lang attribute, but with ZERO specificity.
 // This means any component with its own class (like BpkBubble or Editorial text)

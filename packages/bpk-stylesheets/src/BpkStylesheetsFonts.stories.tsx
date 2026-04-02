@@ -34,6 +34,15 @@ const LANGUAGE_SAMPLES: Record<string, LanguageSample> = {
   },
   vietnamese: {
     text: 'Tiếng Việt là ngôn ngữ chính thức của Việt Nam. Xin chào và chúc mừng năm mới!',
+    lang: 'vi-VN',
+  },
+  greek: {
+    text: 'Η ελληνική γλώσσα είναι μία από τις αρχαιότερες γλώσσες του κόσμου. Γεια σας!',
+    lang: 'el-GR',
+  },
+  russian: {
+    text: 'Русский язык является одним из самых распространённых языков мира. Привет!',
+    lang: 'ru-RU',
   },
   arabic: {
     text: 'صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ',
