@@ -22,6 +22,7 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 
 import cssModules from '../cssModules';
 import { getDataComponentAttribute } from '../getDataComponentAttribute';
+import useBodyLock from '../useBodyLock';
 
 import STYLES from './BpkDialogWrapper.module.scss';
 
@@ -127,25 +128,7 @@ export const BpkDialogWrapper = ({
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
-  // Lock body scroll while dialog is open and restore scroll position on close.
-  // Uses position:fixed on body to prevent mobile scroll-through and jitter.
-  useEffect(() => {
-    if (!isOpen) return undefined;
-
-    const { scrollY } = window;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
-    document.body.style.overflowY = 'hidden';
-
-    return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflowY = '';
-      window.scrollTo(0, scrollY);
-    };
-  }, [isOpen]);
+  useBodyLock(isOpen);
 
   const aria = {
     ...('ariaLabelledby' in ariaProps

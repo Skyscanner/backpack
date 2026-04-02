@@ -151,9 +151,13 @@ describe('BpkDialogWrapper', () => {
 
       expect(document.body.style.position).toEqual('fixed');
       expect(document.body.style.width).toEqual('100%');
-      expect(document.body.style.overflowY).toEqual('hidden');
+      expect(document.body.style.overflow).toEqual('hidden');
+      expect(document.body.style.touchAction).toEqual('none');
+      expect(document.body.style.overscrollBehavior).toEqual('contain');
     });
     it('should restore body scroll styles when dialog is closed', () => {
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+
       const { rerender } = render(
         <BpkDialogWrapper {...props} isOpen>
           Dialog content
@@ -168,8 +172,11 @@ describe('BpkDialogWrapper', () => {
 
       expect(document.body.style.position).toEqual('');
       expect(document.body.style.width).toEqual('');
-      expect(document.body.style.overflowY).toEqual('');
+      expect(document.body.style.overflow).toEqual('');
       expect(document.body.style.top).toEqual('');
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
+
+      scrollToSpy.mockRestore();
     });
   })
 
