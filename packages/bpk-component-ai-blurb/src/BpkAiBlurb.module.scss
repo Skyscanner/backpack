@@ -41,6 +41,14 @@
     display: block;
   }
 
+  &__error {
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 tokens.bpk-spacing-sm();
+  }
+
   &__feedback {
     display: flex;
     align-items: center;

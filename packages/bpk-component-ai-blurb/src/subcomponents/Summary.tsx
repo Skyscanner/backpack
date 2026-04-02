@@ -45,10 +45,10 @@ const Summary = ({ aiResponseText, errorLinkHref, errorLinkText, errorText, stat
     );
   } else {
     content = (
-      <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
-        {errorText}{' '}
+      <div className={getClassName('bpk-ai-blurb__error')}>
+        <BpkText tagName="span" textStyle={TEXT_STYLES.caption}>{errorText}</BpkText>
         <BpkLink href={errorLinkHref ?? null}>{errorLinkText}</BpkLink>
-      </BpkText>
+      </div>
     );
   }
 
