@@ -49,10 +49,20 @@ porta varius ullamcorper. Sed laoreet libero mauris, non pretium lectus accumsan
 sapien, et dapibus mi aliquet non. Pellentesque auctor sagittis lectus vitae rhoncus. Fusce id enim porttitor, mattis
 ante in, vestibulum nulla.`;
 
-type Props = {};
+type Props = {
+  type?: string,
+};
 type State = {
   dismissed: boolean,
   updates: Array<string>,
+};
+
+const ALERT_TYPE_LABELS: { [key: string]: string } = {
+  [ALERT_TYPES.SUCCESS]: 'Success',
+  [ALERT_TYPES.WARNING]: 'Warning',
+  [ALERT_TYPES.ERROR]: 'Error',
+  [ALERT_TYPES.INFO]: 'Info',
+  [ALERT_TYPES.CRITICAL]: 'Critical',
 };
 
 class BpkInfoBannerDismissableState extends Component<Props, State> {
@@ -66,6 +76,8 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
   }
 
   render() {
+    const typeLabel = ALERT_TYPE_LABELS[this.props.type || ALERT_TYPES.INFO] || 'Info';
+
     return <>
       <BpkInfoBannerDismissable
         show={!this.state.dismissed}
@@ -73,7 +85,7 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
         onDismiss={() => {
           this.setState((prevState) => ({
             dismissed: true,
-            updates: [...prevState.updates, 'Success alert dismissed'],
+            updates: [...prevState.updates, `${typeLabel} alert dismissed`],
           }));
         }}
         message="Neutral alert with dismiss option"
@@ -85,7 +97,7 @@ class BpkInfoBannerDismissableState extends Component<Props, State> {
           onClick={() => {
             this.setState((prevState) => ({
               dismissed: false,
-              updates: [...prevState.updates, 'Success alert added'],
+              updates: [...prevState.updates, `${typeLabel} alert added`],
             }));
           }}
         >
@@ -174,11 +186,26 @@ const WarningExample = (props) => (
 const ErrorExample = (props) => (
   <BpkInfoBanner message="Error alert" type={ALERT_TYPES.ERROR} {...props} />
 );
+const CriticalExample = (props) => (
+  <BpkInfoBanner
+    message="Critical alert"
+    type={ALERT_TYPES.CRITICAL}
+    {...props}
+  />
+);
 const SuccessDismissableBehaviourExample = () => (
   <BpkInfoBannerDismissableState
     dismissButtonLabel="Dismiss"
     message="Success alert with dismiss option"
     type={ALERT_TYPES.SUCCESS}
+  />
+);
+
+const CriticalDismissableBehaviourExample = () => (
+  <BpkInfoBannerDismissableState
+    dismissButtonLabel="Dismiss"
+    message="Critical alert with dismiss option"
+    type={ALERT_TYPES.CRITICAL}
   />
 );
 const SuccessExpandableBehaviourExample = () => (
@@ -202,6 +229,17 @@ const SuccessExpandableWithActionExample = () => (
   </BpkInfoBannerExpandableState>
 );
 
+const CriticalExpandableWithActionExample = () => (
+  <BpkInfoBannerExpandableState
+    message="Critical alert"
+    type={ALERT_TYPES.CRITICAL}
+    action={{title: "Sample Action", callback: action('action clicked')}}
+    toggleButtonLabel="View more"
+  >
+    {longMessage}
+  </BpkInfoBannerExpandableState>
+);
+
 const SuccessAutomaticallyDismissedExample = () => (
   <BpkInfoBannerDismissableState
     hideAfter={5}
@@ -214,6 +252,13 @@ const SuccessCustomIconExample = () => (
   <BpkInfoBanner
     message="Success alert with custom icon"
     type={ALERT_TYPES.SUCCESS}
+    icon={CurrencyIcon}
+  />
+);
+const CriticalCustomIconExample = () => (
+  <BpkInfoBanner
+    message="Critical alert with custom icon"
+    type={ALERT_TYPES.CRITICAL}
     icon={CurrencyIcon}
   />
 );
@@ -288,6 +333,18 @@ const OnContrastExample = (props) => (
     >
       {message}
     </BpkText>
+    <BpkInfoBanner
+      message="Critical alert on contrast"
+      type={ALERT_TYPES.CRITICAL}
+      style={STYLE_TYPES.ON_CONTRAST}
+      {...props}
+    />
+    <BpkText
+      tagName="p"
+      className={getClassName('bpk-info-banner-examples__p')}
+    >
+      {message}
+    </BpkText>
   </div>
 );
 
@@ -306,6 +363,9 @@ const DocsDefaultExample = () => (
     <ErrorExample
       className={getClassName('bpk-info-banner-examples__component')}
     />
+    <CriticalExample
+      className={getClassName('bpk-info-banner-examples__component')}
+    />
   </>
 );
 
@@ -321,10 +381,14 @@ export {
   SuccessWithReactRenderedMessageExample,
   WarningExample,
   ErrorExample,
+  CriticalExample,
+  CriticalExpandableWithActionExample,
+  CriticalDismissableBehaviourExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
+  CriticalCustomIconExample,
   DocsDefaultExample,
   OnContrastExample,
 };

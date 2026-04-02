@@ -32,10 +32,14 @@ import {
   SuccessWithReactRenderedMessageExample,
   WarningExample,
   ErrorExample,
+  CriticalExample,
+  CriticalExpandableWithActionExample,
+  CriticalDismissableBehaviourExample,
   SuccessDismissableBehaviourExample,
   SuccessExpandableBehaviourExample,
   SuccessAutomaticallyDismissedExample,
   SuccessCustomIconExample,
+  CriticalCustomIconExample,
   DocsDefaultExample,
   OnContrastExample,
 } from './examples';
@@ -64,6 +68,9 @@ export const SuccessWithReactRenderedMessage =
   SuccessWithReactRenderedMessageExample;
 export const Warning = WarningExample;
 export const Error = ErrorExample;
+export const Critical = CriticalExample;
+export const CriticalExpandableWithAction = CriticalExpandableWithActionExample;
+export const CriticalDismissableBehaviour = CriticalDismissableBehaviourExample;
 export const SuccessDismissableBehaviour = SuccessDismissableBehaviourExample;
 
 export const OnContrast = OnContrastExample;
@@ -73,6 +80,7 @@ export const SuccessExpandableBehaviour = SuccessExpandableBehaviourExample;
 export const SuccessAutomaticallyDismissedAfter5Seconds =
   SuccessAutomaticallyDismissedExample;
 export const SuccessWithCustomIcon = SuccessCustomIconExample;
+export const CriticalWithCustomIcon = CriticalCustomIconExample;
 
 export const VisualTest = DocsDefaultExample;
 export const VisualTestWithZoom = VisualTest.bind({});

@@ -15,13 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkFloatingNotification, {
-  NOTIFICATION_TYPES,
-  type Props as BpkFloatingNotificationProps,
-} from './src/BpkFloatingNotification';
+import BpkChatBubble from './src/BpkChatBubble';
 
-export type { BpkFloatingNotificationProps };
-export { NOTIFICATION_TYPES };
-export default BpkFloatingNotification;
+export { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './src/common-types';
+export type { BpkChatBubbleProps, ChatBubbleType, BubblePosition } from './src/common-types';
+export default BpkChatBubble;
