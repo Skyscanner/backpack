@@ -17,6 +17,7 @@
  */
 
 const { execSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 
 // eslint-disable-next-line no-console
@@ -27,10 +28,10 @@ const cssFiles = execSync('find packages -name "*.css" | grep -v node_modules | 
   .split('\n')
   .filter((s) => s !== '');
 
-// eslint-disable-next-line array-callback-return
-cssFiles.map((cssFile) => {
+cssFiles.forEach((cssFile) => {
   const destDir = path.dirname(cssFile).replace(/^packages\//, 'dist/');
-  execSync(`cp ${cssFile} ${destDir}`);
+  fs.mkdirSync(destDir, { recursive: true });
+  fs.copyFileSync(cssFile, path.join(destDir, path.basename(cssFile)));
 });
 
 // eslint-disable-next-line no-console
