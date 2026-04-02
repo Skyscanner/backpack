@@ -28,5 +28,8 @@
       "Theme-surfacing",
       "Semicolon-debating"
     ]
+  },
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
   }
 }
