@@ -1,4 +1,4 @@
-# bpk-component-ai-blurb
+# bpk-component-ai-blurb (experimental)
 
 > A composable component for displaying AI-generated summaries with a branded header, state-driven content area, loading ellipsis animation, and feedback mechanism.
 
