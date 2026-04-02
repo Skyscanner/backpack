@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { AriaRole, MouseEventHandler } from 'react';
+import type { AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 import type {
   BpkSpacingValue,
@@ -94,6 +94,7 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
   tabIndex?: number;
   role?: AriaRole;
   onClick?: MouseEventHandler<HTMLElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLElement>;
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;

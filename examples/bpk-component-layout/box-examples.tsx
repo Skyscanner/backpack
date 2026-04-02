@@ -126,13 +126,17 @@ export const PositionExample = () => (
  */
 export const InteractiveExample = () => {
   const [count, setCount] = useState(0);
+  const increment = () => setCount((c) => c + 1);
   return (
     <Wrapper>
       <BpkBox
         padding={BpkSpacing.MD}
         role="button"
         tabIndex={0}
-        onClick={() => setCount((c) => c + 1)}
+        onClick={increment}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') increment();
+        }}
       >
         <BpkText>Clicked {count} times (role=&quot;button&quot;, tabIndex=0)</BpkText>
       </BpkBox>
