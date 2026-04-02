@@ -85,7 +85,7 @@ export const VisualTest = () => (
     <RtlSpacingExample />
     <SizeExample />
     <ResponsiveExample />
-    <BpkBox minHeight="28rem"><PositionExample /></BpkBox>
+    <BpkProvider><BpkBox minHeight="28rem"><PositionExample /></BpkBox></BpkProvider>
     <InteractiveExample />
     <TextStyleExample />
     <ResponsiveTextStyleExample />
