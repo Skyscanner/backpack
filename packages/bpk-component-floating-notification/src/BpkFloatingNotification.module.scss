@@ -48,10 +48,6 @@
     color: tokens.$bpk-text-primary-inverse-day;
   }
 
-  &--critical &__icon {
-    fill: tokens.$bpk-text-primary-inverse-day;
-  }
-
   &--leave {
     transform: translateY(0);
     opacity: 1;
@@ -82,7 +78,7 @@
     flex-shrink: 0;
     transform: translateY(tokens.bpk-spacing-sm());
     text-align: bottom;
-    fill: tokens.$bpk-text-on-dark-day;
+    fill: currentcolor;
   }
 
   &__text {
