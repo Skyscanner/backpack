@@ -18,12 +18,10 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
-import type { ChakraBreakpointKey } from './tokens';
-
-// Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
+import * as bpkTokens from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
+import type { ChakraBreakpointKey } from './tokens';
 
 // NOTE:
 // We intentionally do not use the raw breakpoint *values* from foundations here.
