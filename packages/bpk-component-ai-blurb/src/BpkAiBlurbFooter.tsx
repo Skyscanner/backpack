@@ -18,13 +18,10 @@
 
 import type { ReactNode } from 'react';
 
-import BpkButton from '../../bpk-component-button/src/BpkButton';
-import { BUTTON_TYPES } from '../../bpk-component-button/src/common-types';
 import { BpkCardV2 } from '../../bpk-component-card';
-import ThumbsDownIcon from '../../bpk-component-icon/sm/thumbs-down';
-import ThumbsUpIcon from '../../bpk-component-icon/sm/thumbs-up';
 import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import BpkThumbButton from '../../bpk-component-thumb-button/src/BpkThumbButton';
 
 import { useAiBlurbVariant } from './BpkAiBlurbVariant';
 import { AI_BLURB_VARIANTS } from './common-types';
@@ -47,12 +44,8 @@ const BpkAiBlurbFooter = ({ children, onThumbsDown, onThumbsUp }: BpkAiBlurbFoot
       <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textPrimary}>
         {children}
       </BpkText>
-      <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsUp} aria-label="Helpful">
-        <ThumbsUpIcon />
-      </BpkButton>
-      <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsDown} aria-label="Not helpful">
-        <ThumbsDownIcon />
-      </BpkButton>
+      <BpkThumbButton type="up" accessibilityLabel="Helpful" onClick={() => onThumbsUp?.()} />
+      <BpkThumbButton type="down" accessibilityLabel="Not helpful" onClick={() => onThumbsDown?.()} />
     </BpkCardV2.Footer>
   );
 };

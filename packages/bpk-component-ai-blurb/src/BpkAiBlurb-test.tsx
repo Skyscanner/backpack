@@ -23,14 +23,6 @@ import BpkAiBlurb from './BpkAiBlurb';
 import { useAiBlurbVariant } from './BpkAiBlurbVariant';
 import { AI_BLURB_VARIANTS } from './common-types';
 
-// Mock BpkButton to avoid bpk-component-spinner transitive dependency in Jest
-jest.mock('../../bpk-component-button/src/BpkButton', () => {
-  const BpkButton = ({ children, onClick, ...props }: any) => (
-    <button type="button" onClick={onClick} {...props}>{children}</button>
-  );
-  return { __esModule: true, default: BpkButton };
-});
-
 // Mock layout components that depend on @chakra-ui/react (not available in Jest)
 jest.mock('../../bpk-component-layout/src/BpkFlex', () => ({
   BpkFlex: ({ children, ...props }: any) => <div data-testid="mock-flex" {...props}>{children}</div>,
@@ -45,14 +37,16 @@ jest.mock('../../bpk-component-icon/sm/ai', () => {
   return { __esModule: true, default: AiIcon };
 });
 
-jest.mock('../../bpk-component-icon/sm/thumbs-up', () => {
-  const ThumbsUpIcon = () => <svg data-testid="thumbs-up-icon" />;
-  return { __esModule: true, default: ThumbsUpIcon };
-});
-
-jest.mock('../../bpk-component-icon/sm/thumbs-down', () => {
-  const ThumbsDownIcon = () => <svg data-testid="thumbs-down-icon" />;
-  return { __esModule: true, default: ThumbsDownIcon };
+jest.mock('../../bpk-component-thumb-button/src/BpkThumbButton', () => {
+  const BpkThumbButton = ({ accessibilityLabel, onClick, type }: any) => (
+    <button
+      type="button"
+      data-testid={`bpk-thumb-button-${type}`}
+      aria-label={accessibilityLabel}
+      onClick={() => onClick(type)}
+    />
+  );
+  return { __esModule: true, default: BpkThumbButton };
 });
 
 describe('BpkAiBlurb.Root', () => {
@@ -135,7 +129,7 @@ describe('BpkAiBlurb.Footer', () => {
     expect(screen.getByText('Was this helpful?')).toBeInTheDocument();
   });
 
-  it('should render thumbs up and thumbs down icons', () => {
+  it('should render thumbs up and thumbs down buttons', () => {
     render(
       <BpkAiBlurb.Root>
         <BpkAiBlurb.Footer onThumbsUp={() => {}} onThumbsDown={() => {}}>
@@ -143,8 +137,8 @@ describe('BpkAiBlurb.Footer', () => {
         </BpkAiBlurb.Footer>
       </BpkAiBlurb.Root>,
     );
-    expect(screen.getByTestId('thumbs-up-icon')).toBeInTheDocument();
-    expect(screen.getByTestId('thumbs-down-icon')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-thumb-button-up')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-thumb-button-down')).toBeInTheDocument();
   });
 
   it('should call onThumbsUp when thumbs up button is clicked', async () => {
@@ -185,8 +179,8 @@ describe('BpkAiBlurb composition', () => {
     expect(screen.getByText('Here is a summary of your trip.')).toBeInTheDocument();
     expect(screen.getByText('Was this helpful?')).toBeInTheDocument();
     expect(screen.getByTestId('ai-icon')).toBeInTheDocument();
-    expect(screen.getByTestId('thumbs-up-icon')).toBeInTheDocument();
-    expect(screen.getByTestId('thumbs-down-icon')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-thumb-button-up')).toBeInTheDocument();
+    expect(screen.getByTestId('bpk-thumb-button-down')).toBeInTheDocument();
   });
 
   it('should render thinking variant without footer', () => {
@@ -198,7 +192,7 @@ describe('BpkAiBlurb composition', () => {
     );
     expect(screen.getByText('Summarized by AI')).toBeInTheDocument();
     expect(screen.getByText('Loading...')).toBeInTheDocument();
-    expect(screen.queryByTestId('thumbs-up-icon')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bpk-thumb-button-up')).not.toBeInTheDocument();
   });
 
   it('should suppress footer even when explicitly included in thinking variant', () => {
@@ -212,8 +206,8 @@ describe('BpkAiBlurb composition', () => {
       </BpkAiBlurb.Root>,
     );
     expect(screen.queryByText('Was this helpful?')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('thumbs-up-icon')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('thumbs-down-icon')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bpk-thumb-button-up')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bpk-thumb-button-down')).not.toBeInTheDocument();
   });
 
   it('should propagate variant context correctly to children', () => {

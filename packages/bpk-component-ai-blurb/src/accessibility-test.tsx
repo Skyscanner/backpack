@@ -21,14 +21,6 @@ import { axe } from 'jest-axe';
 
 import BpkAiBlurb from './BpkAiBlurb';
 
-// Mock BpkButton to avoid bpk-component-spinner transitive dependency in Jest
-jest.mock('../../bpk-component-button/src/BpkButton', () => {
-  const BpkButton = ({ children, onClick, ...props }: any) => (
-    <button type="button" onClick={onClick} {...props}>{children}</button>
-  );
-  return { __esModule: true, default: BpkButton };
-});
-
 // Mock layout components that depend on @chakra-ui/react (not available in Jest)
 jest.mock('../../bpk-component-layout/src/BpkFlex', () => ({
   BpkFlex: ({ children, ...props }: any) => <div data-testid="mock-flex" {...props}>{children}</div>,
@@ -43,14 +35,16 @@ jest.mock('../../bpk-component-icon/sm/ai', () => {
   return { __esModule: true, default: AiIcon };
 });
 
-jest.mock('../../bpk-component-icon/sm/thumbs-up', () => {
-  const ThumbsUpIcon = () => <svg data-testid="thumbs-up-icon" aria-hidden="true" />;
-  return { __esModule: true, default: ThumbsUpIcon };
-});
-
-jest.mock('../../bpk-component-icon/sm/thumbs-down', () => {
-  const ThumbsDownIcon = () => <svg data-testid="thumbs-down-icon" aria-hidden="true" />;
-  return { __esModule: true, default: ThumbsDownIcon };
+jest.mock('../../bpk-component-thumb-button/src/BpkThumbButton', () => {
+  const BpkThumbButton = ({ accessibilityLabel, onClick, type }: any) => (
+    <button
+      type="button"
+      data-testid={`bpk-thumb-button-${type}`}
+      aria-label={accessibilityLabel}
+      onClick={() => onClick(type)}
+    />
+  );
+  return { __esModule: true, default: BpkThumbButton };
 });
 
 describe('BpkAiBlurb accessibility tests', () => {
