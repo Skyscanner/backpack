@@ -7,18 +7,21 @@ recurring patterns not covered by the static checklist. Return issues as JSON.
 **Head commit SHA:** [SHA]
 **Changed files:** [INSERT LIST]
 **PR summary:** [INSERT]
-**Pre-fetched diff (full):**
-```diff
-[INSERT SCOPED DIFF]
-```
 **Historical review comments (raw text from Phase 1.5):**
 ```
 [INSERT RAW COMMENT TEXT]
 ```
 
-## Step 1: Use the pre-fetched diff above
+## Step 1: Fetch the diff
 
-The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
+**PR mode:**
+```bash
+gh pr diff [NUMBER] --repo Skyscanner/backpack
+```
+**Local mode:**
+```bash
+git diff main...HEAD
+```
 
 ## Step 2: Cluster the historical comments into patterns
 

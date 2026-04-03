@@ -9,14 +9,16 @@ by Agent 2, and accessibility/testing checks are handled by Agent 3.
 **Head commit SHA:** [SHA]
 **Changed files:** [INSERT LIST]
 **PR summary:** [INSERT]
-**Pre-fetched diff (TSX/TS files only):**
-```diff
-[INSERT SCOPED DIFF]
+## Step 1: Fetch the diff
+
+**PR mode:**
+```bash
+gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.ts' '*.tsx'
 ```
-
-## Step 1: Use the pre-fetched diff above
-
-The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
+**Local mode:**
+```bash
+git diff main...HEAD -- '*.ts' '*.tsx'
+```
 Use the Read tool only when you need to inspect a specific file in full depth
 (e.g., to check license header of a file not fully shown in the diff).
 

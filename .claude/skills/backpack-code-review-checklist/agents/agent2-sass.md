@@ -7,14 +7,16 @@ compliance. Return issues as JSON.
 **Head commit SHA:** [SHA]
 **Changed files:** [INSERT LIST]
 **PR summary:** [INSERT]
-**Pre-fetched diff (SCSS files only):**
-```diff
-[INSERT SCOPED DIFF]
+## Step 1: Fetch the diff
+
+**PR mode:**
+```bash
+gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.scss'
 ```
-
-## Step 1: Use the pre-fetched diff above
-
-The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
+**Local mode:**
+```bash
+git diff main...HEAD -- '*.scss'
+```
 Use the Read tool only when you need to inspect a specific SCSS file in full depth.
 
 ## Step 2: Check each changed SCSS file against these rules

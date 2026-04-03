@@ -7,17 +7,19 @@ and test compliance. Return issues as JSON.
 **Head commit SHA:** [SHA]
 **Changed files:** [INSERT LIST]
 **PR summary:** [INSERT]
-**Pre-fetched diff (TSX/TS files only):**
-```diff
-[INSERT SCOPED DIFF]
+## Step 1: Fetch the diff
+
+**PR mode:**
+```bash
+gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.ts' '*.tsx'
 ```
-
-## Step 1: Use the pre-fetched diff above
-
-The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
-**Do NOT read files unless the diff itself gives you a specific question you cannot answer
-from the diff alone** (e.g. you see `aria-label={label}` in the diff and need to confirm
-what `label` resolves to in the component source). Each Read must be justified.
+**Local mode:**
+```bash
+git diff main...HEAD -- '*.ts' '*.tsx'
+```
+**Do NOT read source files speculatively** — only use the Read tool when the diff raises
+a specific question you cannot answer without seeing the full file (e.g. you see
+`aria-label={label}` and need to confirm what `label` resolves to). Each Read must be justified.
 
 ## Step 2: Check accessibility — diff-only analysis
 

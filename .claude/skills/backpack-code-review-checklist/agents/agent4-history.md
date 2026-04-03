@@ -7,15 +7,17 @@ issues. Return issues as JSON.
 **Head commit SHA:** [SHA]
 **Changed files:** [INSERT LIST]
 **PR summary:** [INSERT]
-**Pre-fetched diff (full):**
-```diff
-[INSERT SCOPED DIFF]
+## Step 1: Fetch the diff
+
+**PR mode:**
+```bash
+gh pr diff [NUMBER] --repo Skyscanner/backpack
 ```
-
-## Step 1: Use the pre-fetched diff above
-
-The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
-Use `git log` and `gh pr view` only for history lookups.
+**Local mode:**
+```bash
+git diff main...HEAD
+```
+Use `git log` and `gh pr view` for history lookups.
 
 ## Step 2: For each changed file, investigate history using your tools
 

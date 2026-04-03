@@ -3,9 +3,18 @@ name: backpack-code-review-checklist
 description: Self-improving multi-agent review orchestrator for Backpack component PRs. Runs 6 parallel specialist agents (including a learned-patterns agent that mines past PR comments), then confidence-scores findings. Use for PR review, Constitution compliance checks, and pre-merge validation. Run with "learn" to mine recent PRs and auto-update checklist rules.
 ---
 
-# Backpack Code Review — Multi-Agent Orchestrator (v3.0.4)
+# Backpack Code Review — Multi-Agent Orchestrator (v3.1.2)
 
 <!-- Changelog
+- v3.1.2: Phase 3 scoring agents now explicitly use model: haiku — scoring is a classification
+  task with a fixed rubric and no tool calls; Haiku is sufficient and ~12x cheaper than Sonnet.
+- v3.1.1: Add formal observations tier — issues with confidence 60–(threshold-1) surface in
+  conversation as "Below-threshold observations" (not blocking, never posted to GitHub).
+  Removes reliance on model self-initiative for below-threshold findings.
+- v3.1.0: Revert to v2.1 self-fetch architecture — agents fetch their own scoped diffs;
+  Phase 1.5 uses two-level parallelism (parallel component subagents + parallel PR view calls);
+  Agents 1–5 launch immediately after Phase 1 without waiting for Phase 1.5;
+  Agent 6 launches separately when Phase 1.5 completes.
 - v3.0.5: Restore independent Phase 3 scoring (removes agent self-scoring bias);
   Agent 5 now receives full diff to catch cross-file-type bugs (SCSS+TSX specificity conflicts);
   restore accessibility-test.tsx check for existing components (Constitution IV);
@@ -30,10 +39,11 @@ Threshold: default 75, override via `/backpack-code-review-checklist threshold=8
 
 ```
 Phase 0    Detect run mode — learn vs review; early-exit check (review only)
-Phase 1    Metadata + diff pre-fetch + slice per agent  ┐ run in
-Phase 1.5  Mine learned patterns (feeds Agent 6)        ┘ parallel
-Phase 2    Launch agents IN PARALLEL (agents use pre-fetched diff)
-Phase 3    Independent confidence scoring (parallel scoring agents or orchestrator batch)
+Phase 1    Metadata + RESOLVED/RAISED_SET  ┐ run in parallel; Phase 1.5
+Phase 1.5  Mine learned patterns           ┘ uses parallel component subagents internally
+Phase 2a   Launch Agents 1–5 immediately after Phase 1 (no wait for Phase 1.5)
+Phase 2b   Launch Agent 6 when Phase 1.5 completes (if applicable)
+Phase 3    Independent confidence scoring — after ALL agents finish
 Phase 4    Filter, format, and output
 Phase 5    Orchestrator self-check (internal)
 ```
@@ -81,18 +91,6 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 - Skim: `.specify/memory/constitution.md`, `CODE_REVIEW_GUIDELINES.md`, relevant `decisions/`
 - Summarise the PR in 2-3 sentences; pass as `[INSERT]` to all agents
 
-**Diff pre-fetch (critical for performance):** Fetch the full diff once:
-```bash
-gh pr diff [NUMBER] --repo Skyscanner/backpack   # PR mode
-git diff main...HEAD                              # local mode
-```
-Slice the fetched diff in memory — do NOT issue additional `gh pr diff` calls:
-- **SCSS slice** → Agent 2: filter to lines belonging to `*.scss` files
-- **TSX/TS slice** → Agents 1, 3, 5: filter to lines belonging to `*.ts`/`*.tsx` files
-- **Full diff** → Agents 4, 6
-
-Pass each slice as `[INSERT SCOPED DIFF]` in the agent's prompt. **Agents must not re-fetch the diff.**
-
 **Inline review comment fetch (PR mode only — skip in local mode):**
 Fetch the current PR's own inline review comments (line-level diff threads):
 ```bash
@@ -120,55 +118,58 @@ Store both sets for use in Phase 4.
 
 **Skip entirely** if >70% of changed files are brand-new (new files have no history to mine).
 
-Otherwise:
-1. Extract component names from changed paths (e.g. `packages/bpk-component-modal/` → `bpk-component-modal`)
-2. For each component (max 3), find its 5 most recently merged PRs:
-   ```bash
-   gh pr list --repo Skyscanner/backpack --state merged --limit 50 \
-     --search "[COMPONENT_NAME]" --json number,title,mergedAt | head -5
-   ```
-3. For each PR, fetch comments:
-   ```bash
-   gh pr view [N] --repo Skyscanner/backpack --json reviews,comments,reviewThreads
-   ```
-4. Collect raw text from `reviews[].body`, `comments[].body`, and inline diff-thread comments
-   (`reviewThreads[].comments[].body`). Pass to Agent 6 as-is.
-   If no comments found, omit Agent 6.
+Otherwise, run as a single background subagent using parallel tool calls internally — no nested subagents:
+
+**Step 1 — parallel `gh pr list` calls (one per component, all in one message):**
+Extract component names from changed paths (max 3). Issue all `gh pr list` calls simultaneously:
+```bash
+gh pr list --repo Skyscanner/backpack --state merged --limit 50 \
+  --search "[COMPONENT_NAME]" --json number,title,mergedAt | head -5
+```
+
+**Step 2 — parallel `gh pr view` calls (all PRs across all components, all in one message):**
+Collect every PR number returned from Step 1 (up to 15 total). Issue all `gh pr view` calls simultaneously:
+```bash
+gh pr view [N] --repo Skyscanner/backpack --json reviews,comments,reviewThreads
+```
+Collect raw text from `reviews[].body`, `comments[].body`, and `reviewThreads[].comments[].body`.
+
+Pass combined raw comment text to Agent 6 as `[INSERT RAW COMMENT TEXT]`.
+If no comments found, omit Agent 6.
 
 ---
 
 ## Phase 2: Launch Agents in Parallel
 
-**Agent pruning:**
+### Phase 2a — Launch Agents 1–5 immediately after Phase 1
 
-| Agent | Launch when | Skip when |
-|-------|------------|-----------|
-| Agent 1 (Constitution & API) | Always | Never |
-| Agent 2 (Sass & Token) | `.scss` files in diff | No `.scss` files |
-| Agent 3 (A11y & Testing) | Always | Never |
-| Agent 4 (History) | Files exist on `main` | >70% of changed files are brand-new |
-| Agent 5 (Bug Scanner) | Always | Never |
-| Agent 6 (Learned Patterns) | Phase 1.5 found comments | No historical comments |
+Do not wait for Phase 1.5. Dispatch in a single message as soon as Phase 1 is complete.
 
-**Dispatch all selected agents in a single message** using multiple Agent tool calls.
+| Agent | Prompt file | Launch when | Self-fetched scope |
+|-------|-------------|-------------|--------------------|
+| Agent 1 | `agents/agent1-constitution.md` | Always | TSX/TS |
+| Agent 2 | `agents/agent2-sass.md` | `.scss` files in changed list | SCSS |
+| Agent 3 | `agents/agent3-a11y.md` | Always | TSX/TS |
+| Agent 4 | `agents/agent4-history.md` | Files exist on `main` | Full diff |
+| Agent 5 | `agents/agent5-bugs.md` | Always | Full diff |
 
-For each agent, **read its prompt file** from `agents/` and fill in the template variables
-before dispatching:
+### Phase 2b — Launch Agent 6 when Phase 1.5 completes
 
-| Agent | Prompt file | Scoped diff to embed |
-|-------|-------------|----------------------|
-| Agent 1 | `agents/agent1-constitution.md` | TSX/TS slice |
-| Agent 2 | `agents/agent2-sass.md` | SCSS slice |
-| Agent 3 | `agents/agent3-a11y.md` | TSX/TS slice |
-| Agent 4 | `agents/agent4-history.md` | Full diff |
-| Agent 5 | `agents/agent5-bugs.md` | Full diff |
-| Agent 6 | `agents/agent6-learned.md` | Full diff + Phase 1.5 comments |
+| Agent | Prompt file | Launch when | Self-fetched scope |
+|-------|-------------|-------------|--------------------|
+| Agent 6 | `agents/agent6-learned.md` | Phase 1.5 found comments | Full diff |
 
-**Template variables to fill in for every agent:** `[NUMBER]`, `[SHA]`, `[INSERT LIST]`, `[INSERT]` (PR summary), `[INSERT SCOPED DIFF]`.
+If Phase 1.5 found no comments, skip Agent 6 entirely.
 
-**Agents use the pre-fetched diff embedded in their prompt.** They may still use the Read
-tool to inspect specific files for deeper context, but must NOT re-fetch the full diff via
-`gh pr diff` or `git diff`.
+---
+
+**Template variables to fill in for every agent:** `[NUMBER]`, `[SHA]`, `[INSERT LIST]`, `[INSERT]` (PR summary).
+Agent 6 additionally receives `[INSERT RAW COMMENT TEXT]` from Phase 1.5.
+
+**Each agent self-fetches its own scoped diff** using the commands documented in its prompt.
+Agents may also use the Read tool for deeper file inspection.
+
+**Wait for all running agents (1–5, and 6 if launched) to complete before starting Phase 3.**
 
 **Each agent returns a JSON array of issues (no confidence score — Phase 3 scores independently):**
 ```json
@@ -198,7 +199,7 @@ priority order: constitution > sass-tokens > a11y-testing > history > bug-scan >
 After all agents return and deduplication is done, collect every issue into a single list.
 
 **Scoring dispatch policy:**
-- If `len(issues) <= 15`: launch **parallel scoring agents** — one per issue, all in one message.
+- If `len(issues) <= 15`: launch **parallel scoring agents** — one per issue, all in one message, using `model: haiku`. Scoring is a classification task with an explicit rubric; it does not require tool calls or complex reasoning.
 - If `len(issues) > 15`: score all issues directly in a single pass (no sub-agents).
 
 **Each scoring agent (or the orchestrator in batch mode) receives:**
@@ -244,7 +245,11 @@ After all agents return and deduplication is done, collect every issue into a si
 
 ## Phase 4: Filter, Format, and Output
 
-**Filter — step 1, confidence:** remove issues with `confidence < threshold`.
+**Filter — step 1, confidence:** split issues into three buckets:
+- `confidence >= threshold` → **blocking issues** — go through steps 2–3 and into output
+- `60 <= confidence < threshold` → **observations** — skip steps 2–3; conversation-only, never posted to GitHub
+- `confidence < 60` → **drop** — false positive or noise
+
 Issues with `threshold <= confidence < 90` are human-gated — include them in output with
 a "Gate rationale" line showing `confidence_explanation`, and require explicit user
 confirmation before posting to GitHub.
@@ -268,7 +273,7 @@ thread `line` is `null`). If it matches, **keep the issue** but prepend the labe
 
 Print the `### Code review` block to the conversation. No GitHub posting.
 
-**If no issues:**
+**If no issues and no observations:**
 ```markdown
 ### Code review
 
@@ -278,7 +283,7 @@ No issues found. Checked by N/6 agents (Constitution, Sass, A11y, History, Bug S
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
-**If issues found:**
+**If issues found (with optional observations appended):**
 ```markdown
 ### Code review
 
@@ -290,6 +295,27 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
    [path/file.tsx:42](path/file.tsx#L42)
    [if human-gated] Gate rationale: [confidence_explanation]
 
+[if observations exist]
+Below-threshold observations (confidence 60–74, not blocking):
+
+- **[Title]** (score: N) — [one-line explanation: what, why]
+  [path/file.tsx:42](path/file.tsx#L42)
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+```
+
+**If no issues but observations exist:**
+```markdown
+### Code review
+
+No issues met the threshold. Checked by N/6 agents (Constitution, Sass, A11y, History, Bug Scanner, Learned Patterns).
+[Note any failed agents]
+
+Below-threshold observations (confidence 60–74, not blocking):
+
+- **[Title]** (score: N) — [one-line explanation: what, why]
+  [path/file.tsx:42](path/file.tsx#L42)
+
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
@@ -300,6 +326,8 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
 **Conversation:** Print the same `### Code review` block as local mode (for human review),
 but links use full SHA permalinks:
 `https://github.com/Skyscanner/backpack/blob/[SHA]/[PATH]#L[START]-L[END]`
+
+Observations (if any) appear in the conversation block only — they are **never included in the GitHub payload**.
 
 **Autopost: OFF by default in PR mode.** Post only when user explicitly says "post" / "post to GitHub" / `BACKPACK_REVIEW_AUTOPOST=true`.
 
