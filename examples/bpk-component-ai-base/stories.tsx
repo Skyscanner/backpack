@@ -16,23 +16,27 @@
  * limitations under the License.
  */
 
-import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
+import type { ReactNode } from 'react';
+
+import BpkAiBase from '../../packages/bpk-component-ai-base/src/BpkAiBase';
+import { BpkProvider } from '../../packages/bpk-component-layout';
 
 import {
-  CustomTextExample,
-  DefaultExample,
-  ThinkingExample,
+  AiCardExample,
+  CustomSurfaceExample,
+  NoFooterExample,
   VisualTestExample,
 } from './examples';
 
 export default {
-  title: 'bpk-component-ai-blurb',
-  component: BpkAiBlurb,
+  title: 'bpk-component-ai-base',
+  component: BpkAiBase,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
 };
 
-export const Default = DefaultExample;
-export const Thinking = ThinkingExample;
-export const CustomText = CustomTextExample;
+export const AiCard = AiCardExample;
+export const NoFooter = NoFooterExample;
+export const CustomSurface = CustomSurfaceExample;
 export const VisualTest = VisualTestExample;
 export const VisualTestWithZoom = {
   render: VisualTestExample,

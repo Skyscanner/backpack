@@ -22,7 +22,7 @@ import BpkAiBase from '../../bpk-component-ai-base/src/BpkAiBase';
 import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import { TEXT_COLORS } from '../../bpk-component-text/src/BpkText';
 
-import { BlurbStateProvider } from './BpkAiBlurbContext';
+import { AiBlurbStateProvider } from './BpkAiBlurbState';
 import { AI_BLURB_STATES } from './common-types';
 
 import type { AiBlurbState } from './common-types';
@@ -33,11 +33,11 @@ type BpkAiBlurbRootProps = {
 };
 
 const BpkAiBlurbRoot = ({ children, state = AI_BLURB_STATES.default }: BpkAiBlurbRootProps) => (
-  <BlurbStateProvider value={state}>
+  <AiBlurbStateProvider value={state}>
     <BpkAiBase.Root gap={BpkSpacing.MD} color={TEXT_COLORS.textSecondary}>
       {children}
     </BpkAiBase.Root>
-  </BlurbStateProvider>
+  </AiBlurbStateProvider>
 );
 
 export default BpkAiBlurbRoot;

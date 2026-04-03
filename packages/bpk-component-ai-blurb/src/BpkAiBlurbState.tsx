@@ -22,7 +22,7 @@ import { AI_BLURB_STATES } from './common-types';
 
 import type { AiBlurbState } from './common-types';
 
-const BlurbStateContext = createContext<AiBlurbState>(AI_BLURB_STATES.default);
+const AiBlurbStateContext = createContext<AiBlurbState>(AI_BLURB_STATES.default);
 
-export const BlurbStateProvider = BlurbStateContext.Provider;
-export const useBlurbState = () => useContext(BlurbStateContext);
+export const AiBlurbStateProvider = AiBlurbStateContext.Provider;
+export const useAiBlurbState = () => useContext(AiBlurbStateContext);

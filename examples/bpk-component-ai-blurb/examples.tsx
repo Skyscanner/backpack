@@ -23,8 +23,8 @@ export const DefaultExample = () => (
   <BpkAiBlurb.Root>
     <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
     <BpkAiBlurb.Content>
-      Your flight departs at 09:00 from Terminal 2. Check-in closes 45 minutes before departure.
-      Baggage allowance is one cabin bag up to 10 kg. No changes are permitted after booking.
+      The first EasyTerra deal offers the lowest price and better insurance coverage.
+      The second EasyTerra deal has a higher price but offers a more spacious car type.
     </BpkAiBlurb.Content>
     <BpkAiBlurb.Footer>Was this helpful?</BpkAiBlurb.Footer>
   </BpkAiBlurb.Root>
@@ -33,21 +33,7 @@ export const DefaultExample = () => (
 export const ThinkingExample = () => (
   <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
     <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
-    <BpkAiBlurb.Content>
-      Your flight departs at 09:00 from Terminal 2. Check-in closes 45 minutes before departure.
-      Baggage allowance is one cabin bag up to 10 kg. No changes are permitted after booking.
-    </BpkAiBlurb.Content>
-  </BpkAiBlurb.Root>
-);
-
-export const CustomTextExample = () => (
-  <BpkAiBlurb.Root>
-    <BpkAiBlurb.Header>Analyzed by AI</BpkAiBlurb.Header>
-    <BpkAiBlurb.Content>
-      Prices on this route are typically lower on Tuesdays and Wednesdays.
-      Booking 6–8 weeks in advance usually offers the best value.
-    </BpkAiBlurb.Content>
-    <BpkAiBlurb.Footer>Did this help?</BpkAiBlurb.Footer>
+    <BpkAiBlurb.Content>Comparing your shortlist...</BpkAiBlurb.Content>
   </BpkAiBlurb.Root>
 );
 

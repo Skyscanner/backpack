@@ -31,6 +31,7 @@ import STYLES from './BpkAiBase.module.scss';
 const getClassName = cssModules(STYLES);
 
 type BpkAiBaseRootProps = {
+  alignItems?: 'stretch' | 'flex-start' | 'center' | 'flex-end';
   children: ReactNode;
   backgroundColor?: SurfaceBgColor;
   color?: TextColor;
@@ -39,6 +40,7 @@ type BpkAiBaseRootProps = {
 };
 
 const BpkAiBaseRoot = ({
+  alignItems = 'stretch',
   backgroundColor = SURFACE_COLORS.surfaceDefault,
   children,
   color,
@@ -53,7 +55,7 @@ const BpkAiBaseRoot = ({
 
   return (
     <div className={classNames} {...getDataComponentAttribute('AiBase')}>
-      <BpkVStack gap={gap} padding={padding}>{children}</BpkVStack>
+      <BpkVStack alignItems={alignItems} gap={gap} padding={padding}>{children}</BpkVStack>
     </div>
   );
 };

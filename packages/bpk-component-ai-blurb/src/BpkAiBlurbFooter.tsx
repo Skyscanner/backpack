@@ -27,27 +27,38 @@ import { BpkFlex } from '../../bpk-component-layout/src/BpkFlex';
 import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 
+import { useAiBlurbState } from './BpkAiBlurbState';
+import { AI_BLURB_STATES } from './common-types';
+
 type BpkAiBlurbFooterProps = {
   children: ReactNode;
   onThumbsDown?: () => void;
   onThumbsUp?: () => void;
 };
 
-const BpkAiBlurbFooter = ({ children, onThumbsDown, onThumbsUp }: BpkAiBlurbFooterProps) => (
-  <BpkAiBase.Footer>
-    <BpkFlex inline direction="row" align="center" gap={BpkSpacing.SM}>
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textPrimary}>
-        {children}
-      </BpkText>
-      <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsUp} aria-label="Helpful">
-        <ThumbsUpIcon />
-      </BpkButton>
-      <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsDown} aria-label="Not helpful">
-        <ThumbsDownIcon />
-      </BpkButton>
-    </BpkFlex>
-  </BpkAiBase.Footer>
-);
+const BpkAiBlurbFooter = ({ children, onThumbsDown, onThumbsUp }: BpkAiBlurbFooterProps) => {
+  const state = useAiBlurbState();
+
+  if (state === AI_BLURB_STATES.thinking) {
+    return null;
+  }
+
+  return (
+    <BpkAiBase.Footer>
+      <BpkFlex inline direction="row" align="center" gap={BpkSpacing.SM}>
+        <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textPrimary}>
+          {children}
+        </BpkText>
+        <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsUp} aria-label="Helpful">
+          <ThumbsUpIcon />
+        </BpkButton>
+        <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsDown} aria-label="Not helpful">
+          <ThumbsDownIcon />
+        </BpkButton>
+      </BpkFlex>
+    </BpkAiBase.Footer>
+  );
+};
 
 export default BpkAiBlurbFooter;
 export type { BpkAiBlurbFooterProps };

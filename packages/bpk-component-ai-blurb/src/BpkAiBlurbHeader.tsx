@@ -29,7 +29,7 @@ type BpkAiBlurbHeaderProps = { children: ReactNode; };
 const BpkAiBlurbHeader = ({ children }: BpkAiBlurbHeaderProps) => (
   <BpkAiBase.Header>
     <BpkFlex inline direction="row" align="center" gap={BpkSpacing.SM}>
-      <AiIcon />
+      <AiIcon aria-hidden="true" fill="currentcolor" />
       <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary} tagName="span">
         {children}
       </BpkText>

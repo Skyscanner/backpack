@@ -20,7 +20,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkAiBlurb from './BpkAiBlurb';
-import { useBlurbState } from './BpkAiBlurbContext';
+import { useAiBlurbState } from './BpkAiBlurbState';
 import { AI_BLURB_STATES } from './common-types';
 
 // Mock BpkButton to avoid bpk-component-spinner transitive dependency in Jest
@@ -71,7 +71,7 @@ describe('BpkAiBlurb.Root', () => {
 
   it('should render with default state', () => {
     const StateConsumer = () => {
-      const state = useBlurbState();
+      const state = useAiBlurbState();
       return <span data-testid="state">{state}</span>;
     };
 
@@ -85,7 +85,7 @@ describe('BpkAiBlurb.Root', () => {
 
   it('should propagate thinking state via context', () => {
     const StateConsumer = () => {
-      const state = useBlurbState();
+      const state = useAiBlurbState();
       return <span data-testid="state">{state}</span>;
     };
 
@@ -205,9 +205,24 @@ describe('BpkAiBlurb composition', () => {
     expect(screen.queryByTestId('thumbs-up-icon')).not.toBeInTheDocument();
   });
 
+  it('should suppress footer even when explicitly included in thinking state', () => {
+    render(
+      <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
+        <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
+        <BpkAiBlurb.Content>Loading...</BpkAiBlurb.Content>
+        <BpkAiBlurb.Footer onThumbsUp={() => {}} onThumbsDown={() => {}}>
+          Was this helpful?
+        </BpkAiBlurb.Footer>
+      </BpkAiBlurb.Root>,
+    );
+    expect(screen.queryByText('Was this helpful?')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('thumbs-up-icon')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('thumbs-down-icon')).not.toBeInTheDocument();
+  });
+
   it('should propagate state context correctly to children', () => {
     const StateConsumer = () => {
-      const state = useBlurbState();
+      const state = useAiBlurbState();
       return <span data-testid="state-value">{state}</span>;
     };
 
