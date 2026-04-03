@@ -18,4 +18,5 @@
 
 import BpkCardList from './src/BpkCardList';
 
+export { LAYOUTS, ACCESSORY_DESKTOP_TYPES, ACCESSORY_MOBILE_TYPES } from './src/common-types';
 export default BpkCardList;
