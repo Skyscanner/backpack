@@ -22,18 +22,13 @@ import { GridItem } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkProps, normalizeResponsiveObject } from './tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridItemProps } from './types';
-import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 
 export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
   ({ area, children, colEnd, colSpan, colStart, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
-    const processedProps = processBpkProps(props);
-    const normalizedTextStyle =
-      textStyle && typeof textStyle === 'object'
-        ? normalizeResponsiveObject<TextStyle>(textStyle as Record<string, TextStyle>)
-        : textStyle;
+    const processedProps = processBpkComponentProps({ textStyle, ...props }, { component: 'BpkGridItem' });
 
     return (
       <GridItem
@@ -47,7 +42,6 @@ export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
         rowEnd={rowEnd}
         rowStart={rowStart}
         rowSpan={rowSpan}
-        textStyle={normalizedTextStyle}
       >
         {children}
       </GridItem>

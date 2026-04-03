@@ -28,7 +28,7 @@ import {
 
 import type { BpkBreakpointToken } from './tokens';
 
-export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkStack';
+export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkGridItem' | 'BpkStack';
 
 /**
  * Allowlisted, component-scoped prop groups that are eligible for Backpack responsive value
@@ -123,6 +123,9 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridRow',
     ],
   },
+  BpkGridItem: {
+    container: ['textStyle'],
+  },
   // Note: BpkStack uses Chakra Stack option prop names directly.
   BpkStack: {
     container: ['textStyle', ...(StackOptionKeys as unknown as readonly string[])],
@@ -145,6 +148,7 @@ export const BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT: Record<
     ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.container,
     ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.item ?? []),
   ],
+  BpkGridItem: [...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGridItem.container],
   BpkStack: [...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkStack.container],
 };
 
