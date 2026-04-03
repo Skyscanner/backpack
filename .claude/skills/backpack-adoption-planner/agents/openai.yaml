@@ -1,0 +1,36 @@
+name: backpack-adoption-planner
+version: 1.0.0
+description: >
+  Interactive planning workflow for Backpack design system adoption in a microsite
+  or product repo. Guides engineers from zero to a Jira-ready planning pack via
+  structured discovery, validation, breakdown, and estimation stages with explicit
+  review gates.
+author: Claude Code
+date: 2026-04-03
+
+capabilities:
+  - repo-analysis
+  - scope-discovery
+  - plan-generation
+  - epic-story-breakdown
+  - rough-estimation
+
+triggers:
+  - Starting Backpack adoption work in a new repo with no existing migration plan
+  - Scoping a Backpack adoption quarter or sprint
+  - Producing a Jira-ready planning pack for adoption coverage work
+
+workflow: interactive
+review_gates: true
+one_shot: false
+
+reference_files:
+  - references/pure-backpack-adoption-definition.md
+  - references/workflow.md
+  - references/input-contract.md
+  - references/output-contract.md
+  - references/breakdown-rules.md
+  - references/review-gates.md
+  - references/jira-output-format.md
+  - references/estimation-guidance.md
+  - references/final-delivery-template.md
