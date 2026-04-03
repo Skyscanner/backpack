@@ -54,9 +54,9 @@ jest.mock('../../bpk-component-icon/sm/thumbs-down', () => {
 });
 
 describe('BpkAiBlurb accessibility tests', () => {
-  it('default state should have no a11y issues', async () => {
+  it('default variant should have no a11y issues', async () => {
     const { container } = render(
-      <BpkAiBlurb.Root state="default">
+      <BpkAiBlurb.Root variant="default">
         <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
         <BpkAiBlurb.Content>Content text</BpkAiBlurb.Content>
         <BpkAiBlurb.Footer onThumbsUp={() => {}} onThumbsDown={() => {}}>
@@ -67,9 +67,9 @@ describe('BpkAiBlurb accessibility tests', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it('thinking state should have no a11y issues', async () => {
+  it('thinking variant should have no a11y issues', async () => {
     const { container } = render(
-      <BpkAiBlurb.Root state="thinking">
+      <BpkAiBlurb.Root variant="thinking">
         <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
         <BpkAiBlurb.Content>Loading content...</BpkAiBlurb.Content>
       </BpkAiBlurb.Root>,

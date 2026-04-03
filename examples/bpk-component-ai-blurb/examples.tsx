@@ -17,7 +17,7 @@
  */
 
 import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
-import { AI_BLURB_STATES } from '../../packages/bpk-component-ai-blurb/src/common-types';
+import { AI_BLURB_VARIANTS } from '../../packages/bpk-component-ai-blurb/src/common-types';
 
 export const DefaultExample = () => (
   <BpkAiBlurb.Root>
@@ -31,7 +31,7 @@ export const DefaultExample = () => (
 );
 
 export const ThinkingExample = () => (
-  <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
+  <BpkAiBlurb.Root variant={AI_BLURB_VARIANTS.thinking}>
     <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
     <BpkAiBlurb.Content>Comparing your shortlist...</BpkAiBlurb.Content>
   </BpkAiBlurb.Root>

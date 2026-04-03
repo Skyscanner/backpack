@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-export const AI_BLURB_STATES = {
+export const AI_BLURB_VARIANTS = {
   default: 'default',
   thinking: 'thinking',
 } as const;
 
-export type AiBlurbState = (typeof AI_BLURB_STATES)[keyof typeof AI_BLURB_STATES];
+export type AiBlurbVariant = (typeof AI_BLURB_VARIANTS)[keyof typeof AI_BLURB_VARIANTS];

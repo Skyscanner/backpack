@@ -17,8 +17,8 @@
  */
 
 export { default } from './src/BpkAiBlurb';
-export { AI_BLURB_STATES } from './src/common-types';
-export type { AiBlurbState } from './src/common-types';
+export { AI_BLURB_VARIANTS } from './src/common-types';
+export type { AiBlurbVariant } from './src/common-types';
 export type { BpkAiBlurbRootProps } from './src/BpkAiBlurbRoot';
 export type { BpkAiBlurbHeaderProps } from './src/BpkAiBlurbHeader';
 export type { BpkAiBlurbContentProps } from './src/BpkAiBlurbContent';

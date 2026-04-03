@@ -20,8 +20,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkAiBlurb from './BpkAiBlurb';
-import { useAiBlurbState } from './BpkAiBlurbState';
-import { AI_BLURB_STATES } from './common-types';
+import { useAiBlurbVariant } from './BpkAiBlurbVariant';
+import { AI_BLURB_VARIANTS } from './common-types';
 
 // Mock BpkButton to avoid bpk-component-spinner transitive dependency in Jest
 jest.mock('../../bpk-component-button/src/BpkButton', () => {
@@ -65,32 +65,32 @@ describe('BpkAiBlurb.Root', () => {
     expect(screen.getByText('Root content')).toBeInTheDocument();
   });
 
-  it('should render with default state', () => {
-    const StateConsumer = () => {
-      const state = useAiBlurbState();
-      return <span data-testid="state">{state}</span>;
+  it('should render with default variant', () => {
+    const VariantConsumer = () => {
+      const variant = useAiBlurbVariant();
+      return <span data-testid="variant">{variant}</span>;
     };
 
     render(
       <BpkAiBlurb.Root>
-        <StateConsumer />
+        <VariantConsumer />
       </BpkAiBlurb.Root>,
     );
-    expect(screen.getByTestId('state')).toHaveTextContent(AI_BLURB_STATES.default);
+    expect(screen.getByTestId('variant')).toHaveTextContent(AI_BLURB_VARIANTS.default);
   });
 
-  it('should propagate thinking state via context', () => {
-    const StateConsumer = () => {
-      const state = useAiBlurbState();
-      return <span data-testid="state">{state}</span>;
+  it('should propagate thinking variant via context', () => {
+    const VariantConsumer = () => {
+      const variant = useAiBlurbVariant();
+      return <span data-testid="variant">{variant}</span>;
     };
 
     render(
-      <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
-        <StateConsumer />
+      <BpkAiBlurb.Root variant={AI_BLURB_VARIANTS.thinking}>
+        <VariantConsumer />
       </BpkAiBlurb.Root>,
     );
-    expect(screen.getByTestId('state')).toHaveTextContent(AI_BLURB_STATES.thinking);
+    expect(screen.getByTestId('variant')).toHaveTextContent(AI_BLURB_VARIANTS.thinking);
   });
 });
 
@@ -171,9 +171,9 @@ describe('BpkAiBlurb.Footer', () => {
 });
 
 describe('BpkAiBlurb composition', () => {
-  it('should render all parts in full default state composition', () => {
+  it('should render all parts in full default variant composition', () => {
     render(
-      <BpkAiBlurb.Root state={AI_BLURB_STATES.default}>
+      <BpkAiBlurb.Root variant={AI_BLURB_VARIANTS.default}>
         <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
         <BpkAiBlurb.Content>Here is a summary of your trip.</BpkAiBlurb.Content>
         <BpkAiBlurb.Footer onThumbsUp={() => {}} onThumbsDown={() => {}}>
@@ -189,9 +189,9 @@ describe('BpkAiBlurb composition', () => {
     expect(screen.getByTestId('thumbs-down-icon')).toBeInTheDocument();
   });
 
-  it('should render thinking state without footer', () => {
+  it('should render thinking variant without footer', () => {
     render(
-      <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
+      <BpkAiBlurb.Root variant={AI_BLURB_VARIANTS.thinking}>
         <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
         <BpkAiBlurb.Content>Loading...</BpkAiBlurb.Content>
       </BpkAiBlurb.Root>,
@@ -201,9 +201,9 @@ describe('BpkAiBlurb composition', () => {
     expect(screen.queryByTestId('thumbs-up-icon')).not.toBeInTheDocument();
   });
 
-  it('should suppress footer even when explicitly included in thinking state', () => {
+  it('should suppress footer even when explicitly included in thinking variant', () => {
     render(
-      <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
+      <BpkAiBlurb.Root variant={AI_BLURB_VARIANTS.thinking}>
         <BpkAiBlurb.Header>Summarized by AI</BpkAiBlurb.Header>
         <BpkAiBlurb.Content>Loading...</BpkAiBlurb.Content>
         <BpkAiBlurb.Footer onThumbsUp={() => {}} onThumbsDown={() => {}}>
@@ -216,18 +216,18 @@ describe('BpkAiBlurb composition', () => {
     expect(screen.queryByTestId('thumbs-down-icon')).not.toBeInTheDocument();
   });
 
-  it('should propagate state context correctly to children', () => {
-    const StateConsumer = () => {
-      const state = useAiBlurbState();
-      return <span data-testid="state-value">{state}</span>;
+  it('should propagate variant context correctly to children', () => {
+    const VariantConsumer = () => {
+      const variant = useAiBlurbVariant();
+      return <span data-testid="variant-value">{variant}</span>;
     };
 
     render(
-      <BpkAiBlurb.Root state={AI_BLURB_STATES.thinking}>
+      <BpkAiBlurb.Root variant={AI_BLURB_VARIANTS.thinking}>
         <BpkAiBlurb.Header>AI Header</BpkAiBlurb.Header>
-        <StateConsumer />
+        <VariantConsumer />
       </BpkAiBlurb.Root>,
     );
-    expect(screen.getByTestId('state-value')).toHaveTextContent(AI_BLURB_STATES.thinking);
+    expect(screen.getByTestId('variant-value')).toHaveTextContent(AI_BLURB_VARIANTS.thinking);
   });
 });

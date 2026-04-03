@@ -26,8 +26,8 @@ import ThumbsUpIcon from '../../bpk-component-icon/sm/thumbs-up';
 import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 
-import { useAiBlurbState } from './BpkAiBlurbState';
-import { AI_BLURB_STATES } from './common-types';
+import { useAiBlurbVariant } from './BpkAiBlurbVariant';
+import { AI_BLURB_VARIANTS } from './common-types';
 
 type BpkAiBlurbFooterProps = {
   children: ReactNode;
@@ -36,9 +36,9 @@ type BpkAiBlurbFooterProps = {
 };
 
 const BpkAiBlurbFooter = ({ children, onThumbsDown, onThumbsUp }: BpkAiBlurbFooterProps) => {
-  const state = useAiBlurbState();
+  const variant = useAiBlurbVariant();
 
-  if (state === AI_BLURB_STATES.thinking) {
+  if (variant === AI_BLURB_VARIANTS.thinking) {
     return null;
   }
 

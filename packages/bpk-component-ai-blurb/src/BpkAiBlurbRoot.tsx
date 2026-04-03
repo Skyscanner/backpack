@@ -20,22 +20,22 @@ import type { ReactNode } from 'react';
 
 import { BpkCardV2, CARD_V2_VARIANTS } from '../../bpk-component-card';
 
-import { AiBlurbStateProvider } from './BpkAiBlurbState';
-import { AI_BLURB_STATES } from './common-types';
+import { AiBlurbVariantProvider } from './BpkAiBlurbVariant';
+import { AI_BLURB_VARIANTS } from './common-types';
 
-import type { AiBlurbState } from './common-types';
+import type { AiBlurbVariant } from './common-types';
 
 type BpkAiBlurbRootProps = {
   children: ReactNode;
-  state?: AiBlurbState;
+  variant?: AiBlurbVariant;
 };
 
-const BpkAiBlurbRoot = ({ children, state = AI_BLURB_STATES.default }: BpkAiBlurbRootProps) => (
-  <AiBlurbStateProvider value={state}>
+const BpkAiBlurbRoot = ({ children, variant = AI_BLURB_VARIANTS.default }: BpkAiBlurbRootProps) => (
+  <AiBlurbVariantProvider value={variant}>
     <BpkCardV2.Root variant={CARD_V2_VARIANTS.noElevation}>
       {children}
     </BpkCardV2.Root>
-  </AiBlurbStateProvider>
+  </AiBlurbVariantProvider>
 );
 
 export default BpkAiBlurbRoot;
