@@ -45,6 +45,7 @@
 
   &--critical {
     background-color: tokens.$bpk-status-danger-spot-day;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 
   &--leave {
@@ -77,7 +78,7 @@
     flex-shrink: 0;
     transform: translateY(tokens.bpk-spacing-sm());
     text-align: bottom;
-    fill: tokens.$bpk-text-on-dark-day;
+    fill: currentcolor;
   }
 
   &__text {
