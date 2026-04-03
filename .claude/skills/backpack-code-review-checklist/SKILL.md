@@ -3,9 +3,13 @@ name: backpack-code-review-checklist
 description: Self-improving multi-agent review orchestrator for Backpack component PRs. Runs 6 parallel specialist agents (including a learned-patterns agent that mines past PR comments), then confidence-scores findings. Use for PR review, Constitution compliance checks, and pre-merge validation. Run with "learn" to mine recent PRs and auto-update checklist rules.
 ---
 
-# Backpack Code Review — Multi-Agent Orchestrator (v3.1.2)
+# Backpack Code Review — Multi-Agent Orchestrator (v3.1.3)
 
 <!-- Changelog
+- v3.1.3: Fix Phase 1.5 broken gh command (reviewThreads is not a valid gh pr view JSON field —
+  replace with gh api REST calls); remove unconditional Phase 1.5 skip for all-new files —
+  new components are highest-risk for anti-patterns, widen mining scope instead;
+  Agent 6 now always launches when Phase 1.5 completes (not gated on comment count).
 - v3.1.2: Phase 3 scoring agents now explicitly use model: haiku — scoring is a classification
   task with a fixed rubric and no tool calls; Haiku is sufficient and ~12x cheaper than Sonnet.
 - v3.1.1: Add formal observations tier — issues with confidence 60–(threshold-1) surface in
@@ -40,7 +44,7 @@ Threshold: default 75, override via `/backpack-code-review-checklist threshold=8
 ```
 Phase 0    Detect run mode — learn vs review; early-exit check (review only)
 Phase 1    Metadata + RESOLVED/RAISED_SET  ┐ run in parallel; Phase 1.5
-Phase 1.5  Mine learned patterns           ┘ uses parallel component subagents internally
+Phase 1.5  Mine learned patterns           ┘ uses parallel tool calls internally, no nested subagents
 Phase 2a   Launch Agents 1–5 immediately after Phase 1 (no wait for Phase 1.5)
 Phase 2b   Launch Agent 6 when Phase 1.5 completes (if applicable)
 Phase 3    Independent confidence scoring — after ALL agents finish
@@ -78,7 +82,7 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 
 **Launch both steps at the same time** — Phase 1 runs directly in the orchestrator (bash commands); Phase 1.5 is dispatched as a background subagent. They are independent and must not block each other.
 
-### Phase 1: Metadata + Diff Pre-fetch
+### Phase 1: Metadata + Review Thread Collection
 
 - PR number, head commit SHA, changed file paths, PR body (already done in Phase 0)
 - **Read the full PR description** to extract motivation, design decisions, known trade-offs,
@@ -116,26 +120,39 @@ Store both sets for use in Phase 4.
 
 ### Phase 1.5: Mine Learned Patterns
 
-**Skip entirely** if >70% of changed files are brand-new (new files have no history to mine).
-
-Otherwise, run as a single background subagent using parallel tool calls internally — no nested subagents:
+Always run as a single background subagent using parallel tool calls internally — no nested subagents.
+When dispatching, pass the changed file list (newline-separated full paths) from Phase 0.
 
 **Step 1 — parallel `gh pr list` calls (one per component, all in one message):**
-Extract component names from changed paths (max 3). Issue all `gh pr list` calls simultaneously:
-```bash
-gh pr list --repo Skyscanner/backpack --state merged --limit 50 \
-  --search "[COMPONENT_NAME]" --json number,title,mergedAt | head -5
-```
+Extract component names from changed paths (max 3).
+- **Normal case** (≤70% brand-new files): search by component name — finds PRs for the same component:
+  ```bash
+  gh pr list --repo Skyscanner/backpack --state merged --limit 5 \
+    --search "[COMPONENT_NAME]" --json number,title,mergedAt
+  ```
+- **All-new-files case** (>70% brand-new): widen the query to recent PRs generally, because new component
+  authors are the highest-risk group for anti-patterns they haven't seen yet. Search a broader set:
+  ```bash
+  gh pr list --repo Skyscanner/backpack --state merged --limit 20 \
+    --search "bpk-component" --json number,title,mergedAt
+  ```
 
-**Step 2 — parallel `gh pr view` calls (all PRs across all components, all in one message):**
-Collect every PR number returned from Step 1 (up to 15 total). Issue all `gh pr view` calls simultaneously:
+**Step 2 — parallel `gh api` calls (all PRs across all components, all in one message):**
+Collect every PR number returned from Step 1 (up to 15 total). For each PR, issue two parallel calls — one for
+PR-level comments and one for inline diff comments — all in a single message:
 ```bash
-gh pr view [N] --repo Skyscanner/backpack --json reviews,comments,reviewThreads
+# PR-level (issue) comments — includes review summaries
+gh api repos/Skyscanner/backpack/issues/[N]/comments --paginate \
+  --jq '[.[].body]'
+
+# Inline diff comments — line-level review threads
+gh api repos/Skyscanner/backpack/pulls/[N]/comments --paginate \
+  --jq '[.[].body]'
 ```
-Collect raw text from `reviews[].body`, `comments[].body`, and `reviewThreads[].comments[].body`.
+Collect and concatenate all returned body strings into raw comment text.
 
 Pass combined raw comment text to Agent 6 as `[INSERT RAW COMMENT TEXT]`.
-If no comments found, omit Agent 6.
+Always launch Agent 6 when Phase 1.5 completes, even if few comments were found — Agent 6 handles empty input gracefully.
 
 ---
 
@@ -157,9 +174,9 @@ Do not wait for Phase 1.5. Dispatch in a single message as soon as Phase 1 is co
 
 | Agent | Prompt file | Launch when | Self-fetched scope |
 |-------|-------------|-------------|--------------------|
-| Agent 6 | `agents/agent6-learned.md` | Phase 1.5 found comments | Full diff |
+| Agent 6 | `agents/agent6-learned.md` | Always (after Phase 1.5) | Full diff |
 
-If Phase 1.5 found no comments, skip Agent 6 entirely.
+Always launch Agent 6 after Phase 1.5 completes. Agent 6 handles the case where no historical comments were found by returning `[]`.
 
 ---
 
@@ -200,7 +217,11 @@ After all agents return and deduplication is done, collect every issue into a si
 
 **Scoring dispatch policy:**
 - If `len(issues) <= 15`: launch **parallel scoring agents** — one per issue, all in one message, using `model: haiku`. Scoring is a classification task with an explicit rubric; it does not require tool calls or complex reasoning.
-- If `len(issues) > 15`: score all issues directly in a single pass (no sub-agents).
+- If `len(issues) > 15`: score all issues directly in a single orchestrator pass (no sub-agents).
+  Use the same scoring prompt below, but wrap all issues in one request:
+  > Score each issue 0–100 using the rubric below. Return a JSON array:
+  > `[{"index": 0, "score": N, "confidence_explanation": "...", "rule_id": "...", "supporting_lines": [...]}]`
+  > Issues: [LIST ALL ISSUES WITH TITLE, EXPLANATION, CODE SNIPPET, RULE REFERENCE]
 
 **Each scoring agent (or the orchestrator in batch mode) receives:**
 - The issue title + explanation
@@ -296,7 +317,7 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
    [if human-gated] Gate rationale: [confidence_explanation]
 
 [if observations exist]
-Below-threshold observations (confidence 60–74, not blocking):
+Below-threshold observations (confidence 60–(threshold-1), not blocking):
 
 - **[Title]** (score: N) — [one-line explanation: what, why]
   [path/file.tsx:42](path/file.tsx#L42)
@@ -311,7 +332,7 @@ Below-threshold observations (confidence 60–74, not blocking):
 No issues met the threshold. Checked by N/6 agents (Constitution, Sass, A11y, History, Bug Scanner, Learned Patterns).
 [Note any failed agents]
 
-Below-threshold observations (confidence 60–74, not blocking):
+Below-threshold observations (confidence 60–(threshold-1), not blocking):
 
 - **[Title]** (score: N) — [one-line explanation: what, why]
   [path/file.tsx:42](path/file.tsx#L42)

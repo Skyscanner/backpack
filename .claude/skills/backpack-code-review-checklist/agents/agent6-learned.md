@@ -25,7 +25,7 @@ git diff main...HEAD
 
 ## Step 2: Cluster the historical comments into patterns
 
-Group semantically similar comments. For each cluster with ≥ 2 occurrences:
+Group semantically similar comments. For each cluster with ≥ 3 occurrences:
 - Extract the rule being enforced (what reviewers were asking for)
 - Note whether it's component-specific or general
 

@@ -93,8 +93,9 @@ Ask the user:
 On confirmation, use the Edit tool to insert the approved rules into the relevant
 files in `agents/`.
 
-Also update the `version` field in `SKILL.md` frontmatter (patch increment) and prepend
-to the `changelog` field:
+Also update `SKILL.md`: increment the version number in the heading line
+(`# Backpack Code Review — Multi-Agent Orchestrator (vX.Y.Z)`) and prepend
+to the changelog comment block:
 ```
-  - v[NEW]: Learned [X] rules from [N] recent PRs (learn mode, [DATE]).
+- v[NEW]: Learned [X] rules from [N] recent PRs (learn mode, [DATE]).
 ```
