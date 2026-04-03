@@ -18,11 +18,11 @@
 
 import { createContext, useContext } from 'react';
 
-import { AI_BLURB_STATES } from './common-types';
+import { AI_BLURB_VARIANTS } from './common-types';
 
-import type { AiBlurbState } from './common-types';
+import type { AiBlurbVariant } from './common-types';
 
-const AiBlurbStateContext = createContext<AiBlurbState>(AI_BLURB_STATES.default);
+const AiBlurbVariantContext = createContext<AiBlurbVariant>(AI_BLURB_VARIANTS.default);
 
-export const AiBlurbStateProvider = AiBlurbStateContext.Provider;
-export const useAiBlurbState = () => useContext(AiBlurbStateContext);
+export const AiBlurbVariantProvider = AiBlurbVariantContext.Provider;
+export const useAiBlurbVariant = () => useContext(AiBlurbVariantContext);
