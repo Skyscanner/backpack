@@ -18,17 +18,18 @@
 
 import type { ReactNode } from 'react';
 
-import BpkAiBase from '../../bpk-component-ai-base/src/BpkAiBase';
+import { BpkCardV2 } from '../../bpk-component-card';
+import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 
 type BpkAiBlurbContentProps = { children: ReactNode; };
 
 const BpkAiBlurbContent = ({ children }: BpkAiBlurbContentProps) => (
-  <BpkAiBase.Content>
+  <BpkCardV2.Body padding={BpkSpacing.None} paddingTop={BpkSpacing.MD}>
     <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textPrimary}>
       {children}
     </BpkText>
-  </BpkAiBase.Content>
+  </BpkCardV2.Body>
 );
 
 export default BpkAiBlurbContent;

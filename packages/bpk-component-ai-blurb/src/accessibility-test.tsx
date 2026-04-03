@@ -30,16 +30,12 @@ jest.mock('../../bpk-component-button/src/BpkButton', () => {
 });
 
 // Mock layout components that depend on @chakra-ui/react (not available in Jest)
-jest.mock('../../bpk-component-layout/src/BpkStack', () => ({
-  BpkVStack: ({ children, ...props }: any) => <div data-testid="mock-vstack" {...props}>{children}</div>,
-}));
-
-jest.mock('../../bpk-component-layout/src/BpkBox', () => ({
-  BpkBox: ({ children, ...props }: any) => <div data-testid="mock-box" {...props}>{children}</div>,
-}));
-
 jest.mock('../../bpk-component-layout/src/BpkFlex', () => ({
   BpkFlex: ({ children, ...props }: any) => <div data-testid="mock-flex" {...props}>{children}</div>,
+}));
+
+jest.mock('../../bpk-component-layout/src/BpkGrid', () => ({
+  BpkGrid: ({ children, ...props }: any) => <div data-testid="mock-grid" {...props}>{children}</div>,
 }));
 
 jest.mock('../../bpk-component-icon/sm/ai', () => {

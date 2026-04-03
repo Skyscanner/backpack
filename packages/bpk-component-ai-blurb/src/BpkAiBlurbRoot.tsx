@@ -18,9 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import BpkAiBase from '../../bpk-component-ai-base/src/BpkAiBase';
-import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
-import { TEXT_COLORS } from '../../bpk-component-text/src/BpkText';
+import { BpkCardV2, CARD_V2_VARIANTS } from '../../bpk-component-card';
 
 import { AiBlurbStateProvider } from './BpkAiBlurbState';
 import { AI_BLURB_STATES } from './common-types';
@@ -34,9 +32,9 @@ type BpkAiBlurbRootProps = {
 
 const BpkAiBlurbRoot = ({ children, state = AI_BLURB_STATES.default }: BpkAiBlurbRootProps) => (
   <AiBlurbStateProvider value={state}>
-    <BpkAiBase.Root gap={BpkSpacing.MD} color={TEXT_COLORS.textSecondary}>
+    <BpkCardV2.Root variant={CARD_V2_VARIANTS.noElevation}>
       {children}
-    </BpkAiBase.Root>
+    </BpkCardV2.Root>
   </AiBlurbStateProvider>
 );
 

@@ -18,12 +18,11 @@
 
 import type { ReactNode } from 'react';
 
-import BpkAiBase from '../../bpk-component-ai-base/src/BpkAiBase';
 import BpkButton from '../../bpk-component-button/src/BpkButton';
 import { BUTTON_TYPES } from '../../bpk-component-button/src/common-types';
+import { BpkCardV2 } from '../../bpk-component-card';
 import ThumbsDownIcon from '../../bpk-component-icon/sm/thumbs-down';
 import ThumbsUpIcon from '../../bpk-component-icon/sm/thumbs-up';
-import { BpkFlex } from '../../bpk-component-layout/src/BpkFlex';
 import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 
@@ -44,19 +43,17 @@ const BpkAiBlurbFooter = ({ children, onThumbsDown, onThumbsUp }: BpkAiBlurbFoot
   }
 
   return (
-    <BpkAiBase.Footer>
-      <BpkFlex inline direction="row" align="center" gap={BpkSpacing.SM}>
-        <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textPrimary}>
-          {children}
-        </BpkText>
-        <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsUp} aria-label="Helpful">
-          <ThumbsUpIcon />
-        </BpkButton>
-        <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsDown} aria-label="Not helpful">
-          <ThumbsDownIcon />
-        </BpkButton>
-      </BpkFlex>
-    </BpkAiBase.Footer>
+    <BpkCardV2.Footer padding={BpkSpacing.None} paddingTop={BpkSpacing.MD} inline direction="row" align="center" gap={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textPrimary}>
+        {children}
+      </BpkText>
+      <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsUp} aria-label="Helpful">
+        <ThumbsUpIcon />
+      </BpkButton>
+      <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={onThumbsDown} aria-label="Not helpful">
+        <ThumbsDownIcon />
+      </BpkButton>
+    </BpkCardV2.Footer>
   );
 };
 

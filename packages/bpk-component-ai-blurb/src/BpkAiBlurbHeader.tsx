@@ -18,23 +18,22 @@
 
 import type { ReactNode } from 'react';
 
-import BpkAiBase from '../../bpk-component-ai-base/src/BpkAiBase';
+import { textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+import { BpkCardV2 } from '../../bpk-component-card';
 import AiIcon from '../../bpk-component-icon/sm/ai';
-import { BpkFlex } from '../../bpk-component-layout/src/BpkFlex';
 import { BpkSpacing } from '../../bpk-component-layout/src/tokens';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 
 type BpkAiBlurbHeaderProps = { children: ReactNode; };
 
 const BpkAiBlurbHeader = ({ children }: BpkAiBlurbHeaderProps) => (
-  <BpkAiBase.Header>
-    <BpkFlex inline direction="row" align="center" gap={BpkSpacing.SM}>
-      <AiIcon aria-hidden="true" fill="currentcolor" />
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary} tagName="span">
-        {children}
-      </BpkText>
-    </BpkFlex>
-  </BpkAiBase.Header>
+  <BpkCardV2.Header padding={BpkSpacing.None} inline direction="row" align="center" gap={BpkSpacing.SM}>
+    <AiIcon aria-hidden="true" fill={textSecondaryDay} />
+    <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary} tagName="span">
+      {children}
+    </BpkText>
+  </BpkCardV2.Header>
 );
 
 export default BpkAiBlurbHeader;
