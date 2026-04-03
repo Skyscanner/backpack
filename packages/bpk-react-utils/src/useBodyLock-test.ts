@@ -18,8 +18,6 @@
 
 import { renderHook } from '@testing-library/react';
 
-import useBodyLock from './useBodyLock';
-
 const resetBodyStyles = () => {
   document.body.style.overflow = '';
   document.body.style.position = '';
@@ -30,54 +28,34 @@ const resetBodyStyles = () => {
 };
 
 describe('useBodyLock', () => {
+  let useBodyLock: (isLocked: boolean) => void;
+
   beforeEach(() => {
     Object.defineProperty(window, 'scrollY', { value: 200, writable: true });
     resetBodyStyles();
+    jest.isolateModules(() => {
+      useBodyLock = jest.requireActual('./useBodyLock').default;
+    });
   });
 
   afterEach(() => {
     resetBodyStyles();
   });
 
-  describe('when isLocked is true', () => {
-    it('should set position fixed on body', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.position).toBe('fixed');
-    });
-
-    it('should set overflow hidden on body', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.overflow).toBe('hidden');
-    });
-
-    it('should set top to negative scrollY', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.top).toBe('-200px');
-    });
-
-    it('should set width to 100%', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.width).toBe('100%');
-    });
-
-    it('should set touchAction to none', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.touchAction).toBe('none');
-    });
-
-    it('should set overscrollBehavior to contain', () => {
-      renderHook(() => useBodyLock(true));
-      expect(document.body.style.overscrollBehavior).toBe('contain');
-    });
-
+  it('should apply all lock styles to body when isLocked is true', () => {
+    renderHook(() => useBodyLock(true));
+    expect(document.body.style.position).toBe('fixed');
+    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.top).toBe('-200px');
+    expect(document.body.style.width).toBe('100%');
+    expect(document.body.style.touchAction).toBe('none');
+    expect(document.body.style.overscrollBehavior).toBe('contain');
   });
 
-  describe('when isLocked is false', () => {
-    it('should not modify body styles', () => {
-      renderHook(() => useBodyLock(false));
-      expect(document.body.style.position).toBe('');
-      expect(document.body.style.overflow).toBe('');
-    });
+  it('should not modify body styles when isLocked is false', () => {
+    renderHook(() => useBodyLock(false));
+    expect(document.body.style.position).toBe('');
+    expect(document.body.style.overflow).toBe('');
   });
 
   describe('on unlock (isLocked changes to false)', () => {
@@ -122,6 +100,60 @@ describe('useBodyLock', () => {
       expect(document.body.style.overflow).toBe('');
       expect(scrollToSpy).toHaveBeenCalledWith(0, 200);
       scrollToSpy.mockRestore();
+    });
+  });
+
+  describe('concurrent callers (reference counting)', () => {
+    it('should keep body locked when inner dialog closes first (LIFO order)', () => {
+      const modal = renderHook(({ locked }) => useBodyLock(locked), {
+        initialProps: { locked: true },
+      });
+      const bottomSheet = renderHook(({ locked }) => useBodyLock(locked), {
+        initialProps: { locked: true },
+      });
+
+      expect(document.body.style.position).toBe('fixed');
+
+      bottomSheet.rerender({ locked: false });
+      expect(document.body.style.position).toBe('fixed');
+      expect(document.body.style.overflow).toBe('hidden');
+
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+      modal.rerender({ locked: false });
+      expect(document.body.style.position).toBe('');
+      expect(document.body.style.overflow).toBe('');
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 200);
+      scrollToSpy.mockRestore();
+    });
+
+    it('should restore original body styles, not the already-locked styles', () => {
+      document.body.style.overflow = 'auto';
+
+      const modal = renderHook(({ locked }) => useBodyLock(locked), {
+        initialProps: { locked: true },
+      });
+      expect(document.body.style.overflow).toBe('hidden');
+
+      const bottomSheet = renderHook(({ locked }) => useBodyLock(locked), {
+        initialProps: { locked: true },
+      });
+
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+      bottomSheet.rerender({ locked: false });
+      modal.rerender({ locked: false });
+
+      expect(document.body.style.overflow).toBe('auto');
+      scrollToSpy.mockRestore();
+    });
+
+    it('should handle unmount of inner dialog while outer is still active', () => {
+      renderHook(() => useBodyLock(true));
+      const bottomSheet = renderHook(() => useBodyLock(true));
+
+      bottomSheet.unmount();
+
+      expect(document.body.style.position).toBe('fixed');
+      expect(document.body.style.overflow).toBe('hidden');
     });
   });
 });

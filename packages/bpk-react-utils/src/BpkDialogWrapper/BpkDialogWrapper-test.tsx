@@ -174,6 +174,8 @@ describe('BpkDialogWrapper', () => {
       expect(document.body.style.width).toEqual('');
       expect(document.body.style.overflow).toEqual('');
       expect(document.body.style.top).toEqual('');
+      expect(document.body.style.touchAction).toEqual('');
+      expect(document.body.style.overscrollBehavior).toEqual('');
       expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
 
       scrollToSpy.mockRestore();
