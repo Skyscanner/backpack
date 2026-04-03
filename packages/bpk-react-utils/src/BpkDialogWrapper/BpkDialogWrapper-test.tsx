@@ -143,6 +143,8 @@ describe('BpkDialogWrapper', () => {
       expect(asFragment()).toMatchSnapshot();
     });
     it('should lock body scroll when dialog is open', () => {
+      Object.defineProperty(window, 'scrollY', { value: 200, configurable: true });
+
       render(
         <BpkDialogWrapper {...props}>
           Dialog content
@@ -152,6 +154,7 @@ describe('BpkDialogWrapper', () => {
       expect(document.body.style.position).toEqual('fixed');
       expect(document.body.style.width).toEqual('100%');
       expect(document.body.style.overflow).toEqual('hidden');
+      expect(document.body.style.top).toEqual('-200px');
       expect(document.body.style.touchAction).toEqual('none');
       expect(document.body.style.overscrollBehavior).toEqual('contain');
     });
