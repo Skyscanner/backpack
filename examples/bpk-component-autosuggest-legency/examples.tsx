@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
+import type { SyntheticEvent } from 'react';
 
 import {
   BpkAutosuggestLegacy,
@@ -29,7 +28,15 @@ import FlightIcon from '../../packages/bpk-component-icon/lg/flight';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
-const offices = [
+type Office = {
+  name: string;
+  code: string;
+  country: string;
+  tertiaryLabel: string;
+  indent?: boolean;
+};
+
+const offices: Office[] = [
   {
     name: 'Barcelona',
     code: 'BCN',
@@ -93,7 +100,7 @@ const offices = [
   },
 ];
 
-const dataHanzi = [
+const dataHanzi: Office[] = [
   {
     name: '深圳寶安國際 (Shenzhen)',
     code: 'SZX',
@@ -102,7 +109,7 @@ const dataHanzi = [
   },
 ];
 
-const getSuggestions = (value, hanzi) => {
+const getSuggestions = (value: string, hanzi: boolean): Office[] => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
@@ -115,20 +122,20 @@ const getSuggestions = (value, hanzi) => {
       );
 };
 
-const getSuggestionValue = (suggestion) =>
+const getSuggestionValue = (suggestion: Office) =>
   `${suggestion.name} (${suggestion.code})`;
 
 type State = {
-  value: string,
-  suggestions: Array<any>,
+  value: string;
+  suggestions: Office[];
 };
 
 type Props = {
-  hanzi: boolean,
-  includeIcon: boolean,
-  includeSubheading: boolean,
-  includeTertiaryLabel: boolean,
-  alwaysRenderSuggestions: boolean,
+  hanzi: boolean;
+  includeIcon: boolean;
+  includeSubheading: boolean;
+  includeTertiaryLabel: boolean;
+  alwaysRenderSuggestions: boolean;
 };
 
 class AutosuggestExample extends Component<Props, State> {
@@ -140,8 +147,8 @@ class AutosuggestExample extends Component<Props, State> {
     alwaysRenderSuggestions: false,
   };
 
-  constructor() {
-    super();
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
       value: '',
@@ -149,7 +156,7 @@ class AutosuggestExample extends Component<Props, State> {
     };
   }
 
-  onChange = (e: SyntheticEvent<any>, { newValue }: { newValue: string }) => {
+  onChange = (_e: SyntheticEvent, { newValue }: { newValue: string }) => {
     this.setState({
       value: newValue,
     });
@@ -159,6 +166,10 @@ class AutosuggestExample extends Component<Props, State> {
     this.setState({
       suggestions: getSuggestions(value, this.props.hanzi),
     });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({ suggestions: [] });
   };
 
   render() {
@@ -181,7 +192,7 @@ class AutosuggestExample extends Component<Props, State> {
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={(suggestion: Office) => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             indent={suggestion.indent}

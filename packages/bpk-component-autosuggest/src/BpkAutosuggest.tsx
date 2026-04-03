@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { InputHTMLAttributes, ReactElement } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import Autosuggest from 'react-autosuggest';
 
 import BpkInput from '../../bpk-component-input';
@@ -51,26 +52,28 @@ Autosuggest.defaultProps.theme = {
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
 
-type Props = {
-  ref: (?HTMLInputElement) => mixed,
-  inputRef: (?HTMLInputElement) => mixed,
-  autoComplete: string,
+type InputComponentProps = InputHTMLAttributes<HTMLInputElement> & {
+  ref: (element: HTMLInputElement | null) => void;
+  inputRef?: ((element: HTMLInputElement | null) => void) | null;
 };
-Autosuggest.defaultProps.renderInputComponent = (inputProps: Props) => {
+
+Autosuggest.defaultProps.renderInputComponent = (
+  inputProps: InputComponentProps,
+): ReactElement => {
   const { autoComplete = 'off', inputRef, ref, ...rest } = inputProps;
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
+     
     <BpkInput
-      inputRef={(element) => {
+      inputRef={(element: HTMLInputElement) => {
         ref(element);
 
         if (typeof inputRef === 'function') {
           inputRef(element);
         }
       }}
-      autoComplete={autoComplete}
-      {...rest}
+      autoComplete={autoComplete as string}
+      {...(rest as any)}
     />
   );
 };
