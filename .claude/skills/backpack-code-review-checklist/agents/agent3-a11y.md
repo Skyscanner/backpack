@@ -29,12 +29,24 @@ From the diff lines only (do NOT read source files to hunt for issues):
 
 Only flag issues that are **visible in the changed lines**. Do not speculatively read component sources.
 
-## Step 3: Check testing coverage — new code only
+## Step 3: Check testing coverage
 
-Only flag if the diff adds **new JSX branches or new props** with no corresponding test in the diff.
-Do NOT check whether `accessibility-test.tsx` exists for every changed file — only flag if a new
-component directory is created in this PR with no test file at all.
+**Constitution IV — accessibility test file (NON-NEGOTIABLE):**
+For each `packages/bpk-component-*/` directory that appears in the changed files list,
+verify that an `accessibility-test.tsx` exists in that directory:
+```bash
+gh api repos/Skyscanner/backpack/contents/packages/[COMPONENT_DIR] \
+  --jq '[.[].name] | map(select(. == "accessibility-test.tsx")) | length'
+```
+Flag if missing. This applies to both new and existing components — Phase 3 will score this at 100 (NON-NEGOTIABLE, Constitution IV).
+
+**New logic/branches:**
+Only flag if the diff adds new JSX branches or new props with no corresponding test in the diff.
+
+**Snapshot files (CI handles this):**
+Do NOT check `.snap` files for staleness — this is enforced by CI (`npm test` fails if
+snapshots are out of date). Only flag if you see a `.snap` file being deleted or a test
+being removed that would leave a stale snapshot unreachable.
 
 Only flag issues in **changed files**. Ignore pre-existing violations.
-Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
-`"confidence_explanation"` fields. If none found, return `[]`.
+Return JSON array of issues. Confidence scoring is handled by Phase 3 — do NOT include confidence fields.

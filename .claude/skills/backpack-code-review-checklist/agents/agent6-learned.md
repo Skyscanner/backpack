@@ -53,12 +53,10 @@ Same JSON array as other agents:
     "rule": "Recurring pattern from past PR reviews",
     "supporting_lines": [
       { "file": "...", "startLine": 42, "endLine": 45 }
-    ],
-    "confidence": 80,
-    "confidence_explanation": "Pattern appeared in 3 of 5 past PRs for this component; current PR reproduces the same structure."
+    ]
   }
 ]
 ```
 
-Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
-`"confidence_explanation"` fields. If no learned patterns apply to this PR, return `[]`.
+Return JSON array of issues. Confidence scoring is handled by Phase 3 — do NOT include
+confidence fields. If no learned patterns apply to this PR, return `[]`.

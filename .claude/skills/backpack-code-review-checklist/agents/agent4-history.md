@@ -38,5 +38,4 @@ gh pr view [PAST_PR_NUMBER] --repo Skyscanner/backpack --comments
 
 Only report issues **directly relevant to the current PR's changes**.
 Do not flag pre-existing issues unrelated to this PR.
-Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
-`"confidence_explanation"` fields. If none found, return `[]`.
+Return JSON array of issues. Confidence scoring is handled by Phase 3 — do NOT include confidence fields.

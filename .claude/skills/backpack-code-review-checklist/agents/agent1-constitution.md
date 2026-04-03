@@ -94,5 +94,4 @@ For each `import X from '../../bpk-component-Y'` in the changed files:
 3. Verify the imported variant matches context
 
 Only flag issues in **changed files**. Ignore pre-existing violations.
-Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
-`"confidence_explanation"` fields. If none found, return `[]`.
+Return JSON array of issues. Confidence scoring is handled by Phase 3 — do NOT include confidence fields.

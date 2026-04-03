@@ -7,15 +7,17 @@ errors, not style issues. Return issues as JSON.
 **Head commit SHA:** [SHA]
 **Changed files:** [INSERT LIST]
 **PR summary:** [INSERT]
-**Pre-fetched diff (TSX/TS files only):**
+**Pre-fetched diff (full diff — all file types):**
 ```diff
-[INSERT SCOPED DIFF]
+[INSERT FULL DIFF]
 ```
 
 ## Step 1: Use the pre-fetched diff above
 
 The diff is already provided. Do NOT run `gh pr diff` or `git diff` again.
-Focus ONLY on the changed lines shown above.
+Focus ONLY on the changed lines shown above. The full diff is provided so you can catch
+cross-file-type bugs (e.g. CSS specificity conflicts between SCSS and TSX, animation/state
+coupling, z-index issues that only appear when both sides are visible).
 
 ## Step 2: Scan for bugs
 - Logic errors (wrong condition, off-by-one, missing null check)
@@ -40,5 +42,5 @@ Focus ONLY on the changed lines shown above.
 - Token or Sass issues (Agent 2 handles this)
 
 Be conservative. Only flag things you are confident are actual bugs.
-Return JSON array of issues. Each issue must include `"confidence"` (0–100) and
-`"confidence_explanation"` fields. If none found, return `[]`.
+Return JSON array of issues. Confidence scoring is handled by Phase 3 — do NOT include
+`confidence` fields. If none found, return `[]`.

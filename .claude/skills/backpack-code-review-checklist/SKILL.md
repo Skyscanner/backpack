@@ -1,30 +1,26 @@
 ---
 name: backpack-code-review-checklist
 description: Self-improving multi-agent review orchestrator for Backpack component PRs. Runs 6 parallel specialist agents (including a learned-patterns agent that mines past PR comments), then confidence-scores findings. Use for PR review, Constitution compliance checks, and pre-merge validation. Run with "learn" to mine recent PRs and auto-update checklist rules.
-version: 3.0.3
-changelog: |
-  - v3.0.3: Fix blind spot — Phase 1 now fetches current PR's own inline review comments
-    and builds a RESOLVED_SET (issues already fixed in-PR) and RAISED_SET (still-open
-    discussions). Phase 4 drops RESOLVED_SET matches and annotates RAISED_SET matches,
-    preventing false positives on issues already caught and addressed by human reviewers.
-  - v3.0.2: Performance optimisation — orchestrator pre-fetches diff once and slices per
-    agent (eliminates 6× redundant gh pr diff calls); agents self-score (confidence field
-    in JSON output, eliminating separate Phase 3 pass); Phase 1.5 runs parallel with
-    Phase 1; Phase 1.5 skipped when >70% files are brand-new.
-  - v3.0.1: Learned 9 rules from 40 recent PRs (learn mode, 2026-03-26). Added to agent1:
-    semver label accuracy, versioned sub-component naming, variants via type prop, no build
-    artifacts, Ark-UI internal usage, unversioned src/ layout. Added to agent2: semantic
-    spacing token for icon-to-text. Added to agent5: Ark-UI keyboard state sync, icon
-    alignment helper size mismatch.
-  - v3.0.0: Restructured into multi-file layout. Agent prompts moved to agents/*.md,
-    Learn Mode to learn-mode.md, domain knowledge to domain-knowledge.md.
-    Added Phase 1.5 (PR comment mining) and Agent 6 (Learned Patterns).
-  - v2.1.0: Architecture overhaul — agents self-fetch data, full tool access, early-exit check.
-  - v2.0.0: Multi-agent orchestrator with confidence scoring, History Agent, Bug Scanner.
-  - v1.0.0: Initial checklist.
 ---
 
-# Backpack Code Review — Multi-Agent Orchestrator
+# Backpack Code Review — Multi-Agent Orchestrator (v3.0.4)
+
+<!-- Changelog
+- v3.0.5: Restore independent Phase 3 scoring (removes agent self-scoring bias);
+  Agent 5 now receives full diff to catch cross-file-type bugs (SCSS+TSX specificity conflicts);
+  restore accessibility-test.tsx check for existing components (Constitution IV);
+  fix .line null fallback to original_line in RESOLVED_SET/RAISED_SET matching.
+- v3.0.4: Revert autopost default to OFF (opt-in via "post" / BACKPACK_REVIEW_AUTOPOST=true);
+  remove early-exit on "PR already has Claude review" to allow re-review after author pushes fixes.
+- v3.0.3: Fix blind spot — Phase 1 now fetches current PR's own inline review comments
+  and builds a RESOLVED_SET/RAISED_SET; Phase 4 drops/annotates matches.
+- v3.0.2: Performance — orchestrator pre-fetches diff once, agents self-score, Phase 1.5 parallel.
+- v3.0.1: Learned 9 rules from 40 recent PRs.
+- v3.0.0: Multi-file layout, agents/*.md, learn-mode.md, Agent 6 (Learned Patterns).
+- v2.1.0: Agents self-fetch data, full tool access, early-exit check.
+- v2.0.0: Multi-agent orchestrator with confidence scoring.
+- v1.0.0: Initial checklist.
+-->
 
 Dispatches **6 parallel specialist agents**, each with its own prompt file in `agents/`.
 A confidence-scoring pass filters false positives.
@@ -36,8 +32,8 @@ Threshold: default 75, override via `/backpack-code-review-checklist threshold=8
 Phase 0    Detect run mode — learn vs review; early-exit check (review only)
 Phase 1    Metadata + diff pre-fetch + slice per agent  ┐ run in
 Phase 1.5  Mine learned patterns (feeds Agent 6)        ┘ parallel
-Phase 2    Launch agents IN PARALLEL (agents use pre-fetched diff; self-score)
-Phase 3    [eliminated — agents self-score inline]
+Phase 2    Launch agents IN PARALLEL (agents use pre-fetched diff)
+Phase 3    Independent confidence scoring (parallel scoring agents or orchestrator batch)
 Phase 4    Filter, format, and output
 Phase 5    Orchestrator self-check (internal)
 ```
@@ -54,8 +50,8 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 - **PR mode**: message contains a `github.com/.../pull/NNN` URL
   - Extract PR number; run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files,state,isDraft,body`
   - Link format: `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
-  - **Autopost: ON by default in PR mode.** Uses the GitHub Reviews API to place **inline comments on diff lines**.
-    Override to skip posting: user says "don't post" / "local only" / `BACKPACK_REVIEW_AUTOPOST=false`.
+  - **Autopost: OFF by default in PR mode.** Output to conversation only unless user explicitly says "post" / "post to GitHub" / `BACKPACK_REVIEW_AUTOPOST=true`.
+    When autopost is enabled, uses the GitHub Reviews API to place **inline comments on diff lines**.
     Issues with confidence 75–90 require human confirmation before posting.
 
 - **Local mode**: no PR URL
@@ -65,7 +61,6 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 **Step 0.2 — Early exit** (PR mode only). Skip review if:
 - PR is closed, merged, or draft
 - PR is trivial/automated (only changelog or dependency bumps)
-- PR already has a code review comment from Claude
 
 ---
 
@@ -102,8 +97,11 @@ Pass each slice as `[INSERT SCOPED DIFF]` in the agent's prompt. **Agents must n
 Fetch the current PR's own inline review comments (line-level diff threads):
 ```bash
 gh api repos/Skyscanner/backpack/pulls/[NUMBER]/comments --paginate \
-  --jq '[.[] | {id:.id, path:.path, line:.line, body:.body, in_reply_to_id:.in_reply_to_id}]'
+  --jq '[.[] | {id:.id, path:.path, line:(.line // .original_line), body:.body, in_reply_to_id:.in_reply_to_id}]'
 ```
+Note: `.line` is `null` for outdated comments (position became stale after a subsequent push).
+Fall back to `.original_line` so these threads are still captured in RESOLVED_SET/RAISED_SET.
+
 Group comments into threads by `in_reply_to_id` (top-level = no `in_reply_to_id`; replies share the root's `id`).
 
 Classify each thread into one of two sets:
@@ -111,6 +109,8 @@ Classify each thread into one of two sets:
   (`github.com/Skyscanner/backpack/pull/NNN/commits/` or `github.com/Skyscanner/backpack/commit/`),
   or the words "Done", "Fixed", "Fixed in", "updated in", "addressed in", "resolved"
   (case-insensitive). Record `{path, line, summary}` for each thread.
+  If `line` is still `null` after the fallback, record with `line: null` and match by `path` only
+  (skip line-range check) — still suppresses the false positive.
 - **RAISED_SET**: thread has a top-level comment but NO resolution signal in any reply.
   Record `{path, line, summary}` for each thread.
 
@@ -161,7 +161,7 @@ before dispatching:
 | Agent 2 | `agents/agent2-sass.md` | SCSS slice |
 | Agent 3 | `agents/agent3-a11y.md` | TSX/TS slice |
 | Agent 4 | `agents/agent4-history.md` | Full diff |
-| Agent 5 | `agents/agent5-bugs.md` | TSX/TS slice |
+| Agent 5 | `agents/agent5-bugs.md` | Full diff |
 | Agent 6 | `agents/agent6-learned.md` | Full diff + Phase 1.5 comments |
 
 **Template variables to fill in for every agent:** `[NUMBER]`, `[SHA]`, `[INSERT LIST]`, `[INSERT]` (PR summary), `[INSERT SCOPED DIFF]`.
@@ -170,7 +170,7 @@ before dispatching:
 tool to inspect specific files for deeper context, but must NOT re-fetch the full diff via
 `gh pr diff` or `git diff`.
 
-**Each agent returns a JSON array with inline confidence scores (no separate Phase 3):**
+**Each agent returns a JSON array of issues (no confidence score — Phase 3 scores independently):**
 ```json
 [
   {
@@ -182,22 +182,10 @@ tool to inspect specific files for deeper context, but must NOT re-fetch the ful
     "source": "constitution|sass-tokens|a11y-testing|history|bug-scan|learned-patterns",
     "rule_id": "constitution.xi.classname-restriction",
     "rule": "Constitution XI — className restriction",
-    "confidence": 85,
-    "confidence_explanation": "Constitution XI explicitly requires Omit<…,'className'|'style'>; new file confirmed via git show",
     "supporting_lines": [{ "file": "...", "startLine": 42, "endLine": 45 }]
   }
 ]
 ```
-
-**Confidence scoring rubric (agents must apply this when setting `confidence`):**
-- **0**: False positive or pre-existing issue
-- **25**: Might be real; stylistic, not explicitly required by Constitution/decisions
-- **50**: Real but minor nitpick
-- **75**: Verified — Constitution/decisions explicitly requires this, PR contradicts it
-- **100**: Certain — NON-NEGOTIABLE violation (license, className leak, missing a11y test)
-
-Score 0 for: pre-existing violations, context-dependent non-bugs, pedantic nitpicks,
-linter-catchable issues, quality opinions without rule backing, grandfathered className.
 
 **After aggregation — deduplication:** If two issues share the same `file` AND overlapping
 `startLine–endLine` AND similar `title`, merge into one. Keep the more specific `rule_id`;
@@ -205,10 +193,52 @@ priority order: constitution > sass-tokens > a11y-testing > history > bug-scan >
 
 ---
 
-## Phase 3: [Eliminated]
+## Phase 3: Confidence Scoring
 
-Confidence scoring is now inline — agents report `confidence` and `confidence_explanation`
-in their JSON output (see Phase 2). No separate pass needed.
+After all agents return and deduplication is done, collect every issue into a single list.
+
+**Scoring dispatch policy:**
+- If `len(issues) <= 15`: launch **parallel scoring agents** — one per issue, all in one message.
+- If `len(issues) > 15`: score all issues directly in a single pass (no sub-agents).
+
+**Each scoring agent (or the orchestrator in batch mode) receives:**
+- The issue title + explanation
+- The relevant code snippet from the diff
+- The relevant Constitution/decision rule text (if applicable)
+- The issue metadata (`rule_id`, `supporting_lines`)
+
+**Scoring prompt:**
+
+> Score this issue 0–100 for confidence that it is a real, actionable issue in this PR:
+>
+> **Issue:** [TITLE + EXPLANATION]
+> **Code:** [RELEVANT SNIPPET]
+> **Rule reference:** [CONSTITUTION/DECISION SECTION, if any]
+> **Metadata:** [RULE_ID + SUPPORTING_LINES]
+>
+> Rubric:
+> - **0**: False positive, or pre-existing issue not introduced by this PR
+> - **25**: Might be real; stylistic, not explicitly required by Constitution/decisions
+> - **50**: Real but minor nitpick; unlikely to matter in practice
+> - **75**: Verified — Constitution/decisions explicitly requires this; PR contradicts it
+> - **100**: Certain — NON-NEGOTIABLE violation (license header, className leak, missing a11y test)
+>
+> For Constitution issues: verify the rule **verbatim**. If you cannot find it, score 0.
+> If the rule exists but violation requires interpretation, score ≤ 50.
+> Score ≥ 75 only after reading the exact rule text AND confirming the changed code contradicts it.
+>
+> For bug issues: verify the bug can actually occur given the surrounding code context.
+> For history issues: verify the past feedback is relevant to the current change.
+>
+> Return ONLY: `{"score": NUMBER, "confidence_explanation": "brief explanation", "rule_id": "string", "supporting_lines": [{"file":"...","startLine":1,"endLine":2}]}`
+
+**False positive patterns — always score 0:**
+- Pre-existing issues not introduced in this PR
+- Something that looks like a bug but isn't, given context
+- Pedantic nitpicks a senior engineer wouldn't flag
+- Issues a linter/typechecker would catch
+
+**After scoring**, attach `confidence` and `confidence_explanation` to each issue.
 
 ---
 
@@ -220,13 +250,14 @@ a "Gate rationale" line showing `confidence_explanation`, and require explicit u
 confirmation before posting to GitHub.
 
 **Filter — step 2, RESOLVED_SET (PR mode only):** For each remaining issue, check whether
-it matches a RESOLVED_SET thread — same `file` (`path`) AND `line` falls within
-`startLine–endLine` of the issue. If it matches, **drop the issue entirely** (already
-caught and fixed by human reviewers in-PR). Do not report it.
+it matches a RESOLVED_SET thread — same `file` (`path`) AND (thread `line` falls within
+`startLine–endLine` of the issue, OR thread `line` is `null` — match by `path` only).
+If it matches, **drop the issue entirely** (already caught and fixed by human reviewers in-PR).
+Do not report it.
 
 **Filter — step 3, RAISED_SET annotation (PR mode only):** For each remaining issue,
-check whether it matches a RAISED_SET thread (same `file`, overlapping line range).
-If it matches, **keep the issue** but prepend the label:
+check whether it matches a RAISED_SET thread — same `file`, AND (overlapping line range OR
+thread `line` is `null`). If it matches, **keep the issue** but prepend the label:
 `⚠️ Already raised in PR discussion — still open.`
 
 **Output differs by mode:**
@@ -270,7 +301,7 @@ Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
 but links use full SHA permalinks:
 `https://github.com/Skyscanner/backpack/blob/[SHA]/[PATH]#L[START]-L[END]`
 
-**Autopost: ON by default in PR mode.** Skip only when user says "don't post" / "local only" / `BACKPACK_REVIEW_AUTOPOST=false`.
+**Autopost: OFF by default in PR mode.** Post only when user explicitly says "post" / "post to GitHub" / `BACKPACK_REVIEW_AUTOPOST=true`.
 
 Post a single GitHub PR review using the Reviews API (NOT a plain PR comment).
 This places each issue as an **inline comment on the relevant diff line**, grouped under one review.
