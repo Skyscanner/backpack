@@ -26,6 +26,10 @@ import {
   SizeExample,
   ResponsiveExample,
   PositionExample,
+  InteractiveExample,
+  TextStyleExample,
+  ResponsiveTextStyleExample,
+  RefExample,
 } from './box-examples';
 
 export default {
@@ -59,5 +63,9 @@ export const RtlSpacing = () => <RtlSpacingExample />;
 export const Size = () => <SizeExample />;
 export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
+export const Interactive = () => <InteractiveExample />;
+export const TextStyle = () => <TextStyleExample />;
+export const ResponsiveTextStyle = () => <ResponsiveTextStyleExample />;
+export const Ref = () => <RefExample />;
 
 

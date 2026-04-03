@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Box } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
@@ -24,13 +26,17 @@ import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return (
-    <Box {...getDataComponentAttribute('Box')} {...processedProps}>
-      {children}
-    </Box>
-  );
-};
+export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
+  ({ children, ...props }, ref) => {
+    const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+    return (
+      <Box ref={ref} {...getDataComponentAttribute('Box')} {...processedProps}>
+        {children}
+      </Box>
+    );
+  },
+);
+
+BpkBox.displayName = 'BpkBox';
 
 export type { BpkBoxProps };

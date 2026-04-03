@@ -16,50 +16,45 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Flex } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-import {
-  processBpkComponentProps,
-} from './tokenUtils';
+import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
 
-export const BpkFlex = ({
-  align,
-  basis,
-  children,
-  direction,
-  grow,
-  inline,
-  justify,
-  shrink,
-  wrap,
-  ...props
-}: BpkFlexProps) => {
-  const processedProps = processBpkComponentProps(props, {
-    component: 'BpkFlex',
-    responsiveProps: {
-      flexDirection: direction,
-      justifyContent: justify,
-      alignItems: align,
-      flexWrap: wrap,
-      flexGrow: grow,
-      flexShrink: shrink,
-      flexBasis: basis,
-    },
-  });
+export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
+  ({ align, basis, children, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
+    const processedProps = processBpkComponentProps(props, {
+      component: 'BpkFlex',
+      responsiveProps: {
+        textStyle,
+        flexDirection: direction,
+        justifyContent: justify,
+        alignItems: align,
+        flexWrap: wrap,
+        flexGrow: grow,
+        flexShrink: shrink,
+        flexBasis: basis,
+      },
+    });
 
-  return (
-    <Flex
-      {...getDataComponentAttribute('Flex')}
-      {...processedProps}
-      display={inline ? 'inline-flex' : undefined}
-    >
-      {children}
-    </Flex>
-  );
-};
+    return (
+      <Flex
+        ref={ref}
+        {...getDataComponentAttribute('Flex')}
+        {...processedProps}
+        display={inline ? 'inline-flex' : undefined}
+      >
+        {children}
+      </Flex>
+    );
+  },
+);
+
+BpkFlex.displayName = 'BpkFlex';
 
 export type { BpkFlexProps };
