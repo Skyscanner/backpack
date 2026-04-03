@@ -18,6 +18,7 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
+// Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
 import * as bpkTokens from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
