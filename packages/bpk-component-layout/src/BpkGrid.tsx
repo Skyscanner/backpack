@@ -18,7 +18,7 @@
 
 import { forwardRef } from 'react';
 
-import { Grid } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react/grid';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
