@@ -18,7 +18,7 @@
 
 import { forwardRef } from 'react';
 
-import { Stack, VStack, HStack } from '@chakra-ui/react/stack';
+import { Stack, VStack, HStack } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 

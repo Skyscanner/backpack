@@ -18,7 +18,7 @@
 
 import { forwardRef } from 'react';
 
-import { Flex } from '@chakra-ui/react/flex';
+import { Flex } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
