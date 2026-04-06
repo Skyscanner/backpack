@@ -44,6 +44,8 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0 tokens.bpk-spacing-sm();
+
+    @include typography.bpk-caption;
   }
 
   &__feedback-thumb {
