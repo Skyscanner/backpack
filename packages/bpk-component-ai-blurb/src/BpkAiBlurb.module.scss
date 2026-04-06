@@ -26,10 +26,7 @@
   gap: tokens.bpk-spacing-md();
 
   &__header {
-    display: flex;
-    align-items: center;
     color: tokens.$bpk-text-secondary-day;
-    gap: tokens.bpk-spacing-sm();
 
     // Apply secondary colour to the AI spark icon SVG
     svg {
@@ -47,12 +44,6 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: 0 tokens.bpk-spacing-sm();
-  }
-
-  &__feedback {
-    display: flex;
-    align-items: center;
-    gap: tokens.bpk-spacing-sm();
   }
 
   &__feedback-thumb {

@@ -16,10 +16,17 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { BpkProvider } from '../../bpk-component-layout';
+
 import BpkAiBlurb from './BpkAiBlurb';
+
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkAiBlurb displayNames', () => {
   it('should have correct displayName for each subcomponent', () => {
@@ -46,17 +53,17 @@ describe('BpkAiBlurb.Root', () => {
 
 describe('BpkAiBlurb.Header', () => {
   it('should render the title', () => {
-    render(<BpkAiBlurb.Header title="Summarized by AI" />);
+    renderWithProvider(<BpkAiBlurb.Header title="Summarized by AI" />);
     expect(screen.getByText('Summarized by AI')).toBeInTheDocument();
   });
 
   it('should render the AI icon', () => {
-    const { container } = render(<BpkAiBlurb.Header title="Summarized by AI" />);
+    const { container } = renderWithProvider(<BpkAiBlurb.Header title="Summarized by AI" />);
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
   it('should render any consumer-provided title string', () => {
-    render(<BpkAiBlurb.Header title="Résumé par IA" />);
+    renderWithProvider(<BpkAiBlurb.Header title="Résumé par IA" />);
     expect(screen.getByText('Résumé par IA')).toBeInTheDocument();
   });
 });
@@ -119,14 +126,14 @@ describe('BpkAiBlurb.Feedback', () => {
   };
 
   it('should render feedback text and thumb buttons before a vote', () => {
-    render(<BpkAiBlurb.Feedback {...defaultProps} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} />);
     expect(screen.getByText('Was this helpful?')).toBeInTheDocument();
     expect(screen.getByLabelText('Thumbs up')).toBeInTheDocument();
     expect(screen.getByLabelText('Thumbs down')).toBeInTheDocument();
   });
 
   it('should show thank-you text and hide thumbs after thumbs-up', async () => {
-    render(<BpkAiBlurb.Feedback {...defaultProps} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} />);
     await userEvent.click(screen.getByLabelText('Thumbs up'));
     expect(screen.getByText('Thanks for your feedback!')).toBeInTheDocument();
     expect(screen.queryByLabelText('Thumbs up')).not.toBeInTheDocument();
@@ -134,7 +141,7 @@ describe('BpkAiBlurb.Feedback', () => {
   });
 
   it('should have an aria-live region that announces the thank-you text after voting', async () => {
-    const { container } = render(<BpkAiBlurb.Feedback {...defaultProps} />);
+    const { container } = renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} />);
     const liveRegion = container.querySelector('[aria-live="polite"]');
     expect(liveRegion).toBeInTheDocument();
     await userEvent.click(screen.getByLabelText('Thumbs up'));
@@ -142,7 +149,7 @@ describe('BpkAiBlurb.Feedback', () => {
   });
 
   it('should show thank-you text and hide thumbs after thumbs-down', async () => {
-    render(<BpkAiBlurb.Feedback {...defaultProps} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} />);
     await userEvent.click(screen.getByLabelText('Thumbs down'));
     expect(screen.getByText('Thanks for your feedback!')).toBeInTheDocument();
     expect(screen.queryByLabelText('Thumbs up')).not.toBeInTheDocument();
@@ -150,20 +157,20 @@ describe('BpkAiBlurb.Feedback', () => {
 
   it('should call onFeedback with true when thumbs-up pressed', async () => {
     const onFeedback = jest.fn();
-    render(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
     await userEvent.click(screen.getByLabelText('Thumbs up'));
     expect(onFeedback).toHaveBeenCalledWith(true);
   });
 
   it('should call onFeedback with false when thumbs-down pressed', async () => {
     const onFeedback = jest.fn();
-    render(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
     await userEvent.click(screen.getByLabelText('Thumbs down'));
     expect(onFeedback).toHaveBeenCalledWith(false);
   });
 
   it('should not throw when onFeedback is not provided', async () => {
-    render(<BpkAiBlurb.Feedback {...defaultProps} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} />);
     await expect(
       userEvent.click(screen.getByLabelText('Thumbs up')),
     ).resolves.not.toThrow();
@@ -171,7 +178,7 @@ describe('BpkAiBlurb.Feedback', () => {
 
   it('should prevent re-voting after first vote', async () => {
     const onFeedback = jest.fn();
-    render(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
     await userEvent.click(screen.getByLabelText('Thumbs up'));
     expect(onFeedback).toHaveBeenCalledTimes(1);
     expect(screen.queryByLabelText('Thumbs up')).not.toBeInTheDocument();
@@ -179,7 +186,7 @@ describe('BpkAiBlurb.Feedback', () => {
 
   it('should fire onFeedback only once on rapid double-click', async () => {
     const onFeedback = jest.fn();
-    render(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
+    renderWithProvider(<BpkAiBlurb.Feedback {...defaultProps} onFeedback={onFeedback} />);
     await userEvent.dblClick(screen.getByLabelText('Thumbs up'));
     expect(onFeedback).toHaveBeenCalledTimes(1);
   });

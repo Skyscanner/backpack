@@ -17,6 +17,7 @@
  */
 
 import AiIcon from '../../../bpk-component-icon/sm/ai';
+import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -28,8 +29,10 @@ const getClassName = cssModules(STYLES);
 
 const Header = ({ title }: BpkAiBlurbHeaderProps) => (
   <div className={getClassName('bpk-ai-blurb__header')}>
-    <AiIcon aria-hidden />
-    <BpkText textStyle={TEXT_STYLES.caption}>{title}</BpkText>
+    <BpkFlex align="center" gap={BpkSpacing.SM}>
+      <AiIcon aria-hidden />
+      <BpkText textStyle={TEXT_STYLES.caption}>{title}</BpkText>
+    </BpkFlex>
   </div>
 );
 

@@ -21,6 +21,7 @@ import { useState } from 'react';
 import BpkAriaLive from '../../../bpk-component-aria-live';
 import BpkSmallThumbsDownIcon from '../../../bpk-component-icon/sm/thumbs-down';
 import BpkSmallThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
+import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -45,7 +46,7 @@ const Feedback = ({
   };
 
   return (
-    <div className={getClassName('bpk-ai-blurb__feedback')}>
+    <BpkFlex align="center" gap={BpkSpacing.SM}>
       {!hasVoted && (
         <>
           <BpkText textStyle={TEXT_STYLES.caption}>{feedbackText}</BpkText>
@@ -74,7 +75,7 @@ const Feedback = ({
           ''
         )}
       </BpkAriaLive>
-    </div>
+    </BpkFlex>
   );
 };
 

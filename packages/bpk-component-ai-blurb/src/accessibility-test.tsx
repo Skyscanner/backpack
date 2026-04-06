@@ -16,11 +16,18 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 
+import { BpkProvider } from '../../bpk-component-layout';
+
 import BpkAiBlurb from './BpkAiBlurb';
+
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkAiBlurb accessibility tests', () => {
   it('Ellipsis should be hidden from assistive technology', async () => {
@@ -35,7 +42,7 @@ describe('BpkAiBlurb accessibility tests', () => {
   });
 
   it('Feedback thumb buttons should have accessible labels', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
@@ -48,7 +55,7 @@ describe('BpkAiBlurb accessibility tests', () => {
   });
 
   it('Feedback should have no violations after a vote is cast', async () => {
-    const { container, getByLabelText } = render(
+    const { container, getByLabelText } = renderWithProvider(
       <BpkAiBlurb.Feedback
         feedbackText="Was this helpful?"
         thankYouText="Thanks for your feedback!"
@@ -62,7 +69,7 @@ describe('BpkAiBlurb accessibility tests', () => {
   });
 
   it('Header should have no violations', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <BpkAiBlurb.Header title="Summarized by AI" />,
     );
     const results = await axe(container);
