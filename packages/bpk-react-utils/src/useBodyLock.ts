@@ -16,63 +16,75 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
+
+interface SavedBodyState {
+  overflow: string;
+  position: string;
+  top: string;
+  width: string;
+  touchAction: string;
+  overscrollBehavior: string;
+}
+
+// Module-level shared state for reference counting across concurrent callers
+let lockCount = 0;
+let savedBodyStyles: SavedBodyState | null = null;
+let savedScrollY = 0;
 
 /**
  * Locks body scroll when the modal is open, preventing background scroll and
  * iOS Safari bounce effects. Restores all body styles and scroll position on
  * cleanup.
+ *
+ * Uses reference counting so multiple concurrent callers (e.g. Modal + BottomSheet)
+ * coordinate correctly: styles are locked on the first caller and only restored
+ * when the last caller unlocks.
+ *
  * @param {boolean} isLocked - Whether the body scroll should be locked.
  * @returns {void}
  */
 const useBodyLock = (isLocked: boolean) => {
-  const savedScrollYRef = useRef<number>(0);
-  const savedBodyStylesRef = useRef<{
-    overflow: string;
-    position: string;
-    top: string;
-    width: string;
-    touchAction: string;
-    overscrollBehavior: string;
-  } | null>(null);
-
   useEffect(() => {
     if (!isLocked) {
       return undefined;
     }
 
     const { body } = document;
-    const currentScrollY = window.scrollY;
-    savedScrollYRef.current = currentScrollY;
 
-    savedBodyStylesRef.current = {
-      overflow: body.style.overflow || '',
-      position: body.style.position || '',
-      top: body.style.top || '',
-      width: body.style.width || '',
-      touchAction: body.style.touchAction || '',
-      overscrollBehavior: body.style.overscrollBehavior || '',
-    };
+    if (lockCount === 0) {
+      savedScrollY = window.scrollY;
+      savedBodyStyles = {
+        overflow: body.style.overflow || '',
+        position: body.style.position || '',
+        top: body.style.top || '',
+        width: body.style.width || '',
+        touchAction: body.style.touchAction || '',
+        overscrollBehavior: body.style.overscrollBehavior || '',
+      };
 
-    body.style.overflow = 'hidden';
-    body.style.position = 'fixed';
-    body.style.top = `-${currentScrollY}px`;
-    body.style.width = '100%';
-    body.style.touchAction = 'none';
-    body.style.overscrollBehavior = 'contain';
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.top = `-${savedScrollY}px`;
+      body.style.width = '100%';
+      body.style.touchAction = 'none';
+      body.style.overscrollBehavior = 'contain';
+    }
+    lockCount += 1;
 
     return () => {
-      if (savedBodyStylesRef.current) {
-        const saved = savedBodyStylesRef.current;
+      lockCount -= 1;
+      if (lockCount === 0 && savedBodyStyles) {
+        const saved = savedBodyStyles;
         body.style.overflow = saved.overflow;
         body.style.position = saved.position;
         body.style.top = saved.top;
         body.style.width = saved.width;
         body.style.touchAction = saved.touchAction;
         body.style.overscrollBehavior = saved.overscrollBehavior;
-        savedBodyStylesRef.current = null;
+        savedBodyStyles = null;
 
-        window.scrollTo(0, savedScrollYRef.current);
+        window.scrollTo(0, savedScrollY);
       }
     };
   }, [isLocked]);
