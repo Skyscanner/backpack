@@ -159,6 +159,7 @@ describe('BpkDialogWrapper', () => {
       expect(document.body.style.overscrollBehavior).toEqual('contain');
     });
     it('should restore body scroll styles when dialog is closed', () => {
+      Object.defineProperty(window, 'scrollY', { value: 0, configurable: true });
       const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
 
       const { rerender } = render(
