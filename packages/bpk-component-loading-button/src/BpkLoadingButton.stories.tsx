@@ -189,6 +189,26 @@ const MixtureExample = () => (
   </div>
 );
 
+const AnchorTagsExample = () => (
+  <div>
+    <LoadingButtonStory href="#" wrapped={BpkLoadingButton} />
+    <LoadingButtonStory href="#" primaryOnLight wrapped={BpkLoadingButton} />
+    <BpkDarkExampleWrapper>
+      <LoadingButtonStory href="#" primaryOnDark wrapped={BpkLoadingButton} />
+    </BpkDarkExampleWrapper>
+    <LoadingButtonStory href="#" secondary wrapped={BpkLoadingButton} />
+    <BpkDarkExampleWrapper>
+      <LoadingButtonStory href="#" secondaryOnDark wrapped={BpkLoadingButton} />
+    </BpkDarkExampleWrapper>
+    <LoadingButtonStory href="#" destructive wrapped={BpkLoadingButton} />
+    <LoadingButtonStory href="#" link wrapped={BpkLoadingButton} />
+    <BpkDarkExampleWrapper>
+      <LoadingButtonStory href="#" linkOnDark wrapped={BpkLoadingButton} />
+    </BpkDarkExampleWrapper>
+    <LoadingButtonStory href="#" featured wrapped={BpkLoadingButton} />
+  </div>
+);
+
 const CustomIconExample = () => {
   const AlignedIconSm = withButtonAlignment(withRtlSupport(BaggageIconSm));
   const iconSm = <AlignedIconSm />;
@@ -338,6 +358,10 @@ export const Featured = {
 
 export const Mixture = {
   render: () => <MixtureExample />,
+};
+
+export const AnchorTags = {
+  render: () => <AnchorTagsExample />,
 };
 
 export const CustomIcon = {
