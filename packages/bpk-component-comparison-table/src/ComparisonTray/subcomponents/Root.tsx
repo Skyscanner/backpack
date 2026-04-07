@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import BpkButton, { BUTTON_TYPES } from '../../../../bpk-component-button';
 import { BpkCardV2, CARD_V2_SURFACE_COLORS } from '../../../../bpk-component-card';
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
@@ -31,12 +32,12 @@ const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 3;
 
 function Root({
-  compareLabel = 'Compare',
+  compareLabel,
   items,
   onCompare,
   onRemove,
 }: ComparisonTrayRootProps) {
-  const slots = Array.from({ length: MAX_ITEMS }, (_, i) => items[i] ?? null);
+  const displayItems = Array.from({ length: MAX_ITEMS }, (_, i) => items[i] ?? null);
 
   return (
     <div
@@ -46,7 +47,7 @@ function Root({
       <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}>
         <div className={getClassName('bpk-comparison-tray__content')}>
           <div className={getClassName('bpk-comparison-tray__items')}>
-            {slots.map((item, index) =>
+            {displayItems.map((item, index) =>
               item ? (
                 <Item key={item.id} item={item} onRemove={onRemove} />
               ) : (
@@ -58,7 +59,7 @@ function Root({
           <button
             type="button"
             className={getClassName('bpk-comparison-tray__compare-button')}
-            disabled={items.length < 2}
+            disabled={items.length <= 1}
             onClick={onCompare}
           >
             {compareLabel}

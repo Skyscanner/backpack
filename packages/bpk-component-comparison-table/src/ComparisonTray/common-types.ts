@@ -38,8 +38,8 @@ export type ComparisonTrayRootProps = {
   onRemove: (id: string) => void;
   /** Called when the Compare button is clicked. */
   onCompare: () => void;
-  /** Label for the Compare button. Defaults to "Compare". */
-  compareLabel?: string;
+  /** Label for the Compare button. */
+  compareLabel: string;
 };
 
 /** Props for ComparisonTray.Item — internal use only. */
