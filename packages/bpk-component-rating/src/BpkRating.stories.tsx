@@ -20,7 +20,8 @@
 import BpkStarRating from '../../bpk-component-star-rating';
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkRating, { RATING_SIZES, RATING_SCALES } from './BpkRating';
+import BpkRating from './BpkRating';
+import { RATING_SIZES, RATING_SCALES } from './common-types';
 
 import type { Meta } from '@storybook/react';
 
