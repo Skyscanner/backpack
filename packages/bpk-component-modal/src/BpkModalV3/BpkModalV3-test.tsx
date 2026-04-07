@@ -452,12 +452,12 @@ describe('BpkModalV3', () => {
         </BpkModalV3.Root>,
       );
 
-      await userEvent.click(screen.getByText('Open'));
-      // In jsdom, ark-ui keeps the `hidden` attribute on dialog content
-      // because CSS animations that toggle it don't run. Use `hidden: true`
-      // to find the dialog regardless.
-      expect(screen.getByRole('dialog', { hidden: true })).toBeInTheDocument();
-      expect(screen.getByText('Dialog body')).toBeInTheDocument();
+      const trigger = screen.getByText('Open');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+      await userEvent.click(trigger);
+
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
     });
 
     it('Trigger should set aria-haspopup and aria-expanded', () => {

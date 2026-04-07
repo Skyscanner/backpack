@@ -302,6 +302,7 @@ const DockedExample = () => (
           name="input_origin"
           value="Edinburgh"
           onChange={action('orign input changed')}
+          className={getClassName('bpk-forms__place')}
           dockedFirst
           large
         />
@@ -310,6 +311,7 @@ const DockedExample = () => (
           name="input_destination"
           value=""
           onChange={action('destination input changed')}
+          className={getClassName('bpk-forms__place')}
           dockedMiddle
           large
         />
@@ -318,6 +320,7 @@ const DockedExample = () => (
           name="input_outbound"
           value={new Date(2020, 3, 15).toLocaleDateString()}
           onChange={action('outbound date input changed')}
+          className={getClassName('bpk-forms__date')}
           dockedMiddle
           large
         />
@@ -326,6 +329,7 @@ const DockedExample = () => (
           name="input_inbound"
           value={new Date(2020, 3, 16).toLocaleDateString()}
           onChange={action('inbound date input changed')}
+          className={getClassName('bpk-forms__date')}
           dockedLast
           large
         />
@@ -354,6 +358,7 @@ const DockedExample = () => (
           name="input_hotels_destination"
           value=""
           onChange={action('hotels destination input changed')}
+          className={getClassName('bpk-forms__hotels-destination')}
           dockedFirst
           large
         />
@@ -362,6 +367,7 @@ const DockedExample = () => (
           name="input_checkin"
           value={new Date(2020, 3, 15).toLocaleDateString()}
           onChange={action('checkin date input changed')}
+          className={getClassName('bpk-forms__date')}
           dockedMiddle
           large
         />
@@ -370,6 +376,7 @@ const DockedExample = () => (
           name="input_checkout"
           value={new Date(2020, 3, 16).toLocaleDateString()}
           onChange={action('checkout date input changed')}
+          className={getClassName('bpk-forms__date')}
           dockedLast
           large
         />
