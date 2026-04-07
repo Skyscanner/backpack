@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
-import BpkLabel from '../../packages/bpk-component-label';
-import BpkTextarea from '../../packages/bpk-component-textarea';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../bpk-storybook-utils';
+
+import { action } from '../../../examples/bpk-storybook-utils';
+import BpkLabel from '../../bpk-component-label';
+// @ts-expect-error Untyped import
+
+import BpkTextarea from './BpkTextarea';
+
+import type { Meta } from '@storybook/react';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate repellat assumenda
 necessitatibus reiciendis, porro temporibus expedita excepturi! Nostrum pariatur odit porro, dolorem dignissimos
@@ -103,11 +107,40 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  PlaceholderExample,
-  DisabledExample,
-  InvalidExample,
-  LargeExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-textarea',
+  component: BpkTextarea,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Placeholder = {
+  render: () => <PlaceholderExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const Large = {
+  render: () => <LargeExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

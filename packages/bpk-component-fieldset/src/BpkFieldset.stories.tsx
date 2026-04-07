@@ -19,33 +19,35 @@
 import { cloneElement, Component } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
 
+
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
-  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../../packages/bpk-component-autosuggest';
-import BpkButton from '../../packages/bpk-component-button';
-import { format } from '../../packages/bpk-component-calendar/src/date-utils';
+  // @ts-expect-error Untyped import
+} from '../../bpk-component-autosuggest';
+import BpkButton from '../../bpk-component-button';
+import { format } from '../../bpk-component-calendar/src/date-utils';
 import {
   weekDays,
   formatMonth,
   formatDateFull,
-} from '../../packages/bpk-component-calendar/test-utils';
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import BpkDatepicker from '../../packages/bpk-component-datepicker';
-import BpkFieldset, {
-  type BpkFieldsetProps,
-} from '../../packages/bpk-component-fieldset';
-import BpkInput, { INPUT_TYPES } from '../../packages/bpk-component-input';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSelect from '../../packages/bpk-component-select';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkSplitInput from '../../packages/bpk-component-split-input';
-import BpkTextarea from '../../packages/bpk-component-textarea';
-import { cssModules } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../bpk-storybook-utils';
+} from '../../bpk-component-calendar/test-utils';
+import BpkCheckbox from '../../bpk-component-checkbox';
+import BpkDatepicker from '../../bpk-component-datepicker';
+import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
+// @ts-expect-error Untyped import
+import BpkSelect from '../../bpk-component-select';
+// @ts-expect-error Untyped import
+import BpkSplitInput from '../../bpk-component-split-input';
+import BpkTextarea from '../../bpk-component-textarea';
+import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import
 
-import STYLES from './examples.module.scss';
+import BpkFieldset, { type BpkFieldsetProps } from './BpkFieldset';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkFieldset.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -59,57 +61,16 @@ type Office = {
 };
 
 const offices: Office[] = [
-  {
-    name: 'Barcelona',
-    code: 'BCN',
-    country: 'Spain',
-  },
-  {
-    name: 'Beijing',
-    code: 'Any',
-    country: 'China',
-  },
-  {
-    name: 'Budapest',
-    code: 'BUD',
-    country: 'Hungary',
-  },
-  {
-    name: 'Edinburgh',
-    code: 'EDI',
-    country: 'United Kingdom',
-  },
-  {
-    name: 'Glasgow',
-    code: 'Any',
-    country: 'United Kingdom',
-    indent: true,
-  },
-  {
-    name: 'London',
-    code: 'Any',
-    country: 'United Kingdom',
-  },
-  {
-    name: 'Miami, FL',
-    code: 'Any',
-    country: 'United States',
-  },
-  {
-    name: "Shenzhen Bao'an International",
-    code: 'SZX',
-    country: 'China',
-  },
-  {
-    name: 'Singapore Changi',
-    code: 'SIN',
-    country: 'Singapore',
-  },
-  {
-    name: 'Sofia',
-    code: 'SOF',
-    country: 'Bulgaria',
-  },
+  { name: 'Barcelona', code: 'BCN', country: 'Spain' },
+  { name: 'Beijing', code: 'Any', country: 'China' },
+  { name: 'Budapest', code: 'BUD', country: 'Hungary' },
+  { name: 'Edinburgh', code: 'EDI', country: 'United Kingdom' },
+  { name: 'Glasgow', code: 'Any', country: 'United Kingdom', indent: true },
+  { name: 'London', code: 'Any', country: 'United Kingdom' },
+  { name: 'Miami, FL', code: 'Any', country: 'United States' },
+  { name: "Shenzhen Bao'an International", code: 'SZX', country: 'China' },
+  { name: 'Singapore Changi', code: 'SIN', country: 'Singapore' },
+  { name: 'Sofia', code: 'SOF', country: 'Bulgaria' },
 ];
 
 const getSuggestions = (value: string) => {
@@ -125,76 +86,6 @@ const getSuggestions = (value: string) => {
 
 const getSuggestionValue = (suggestion: { name: string; code: string }) =>
   `${suggestion.name} (${suggestion.code})`;
-
-let instances = 0;
-
-class Autosuggest extends Component<
-  Record<string, never>,
-  { suggestions: Office[] }
-> {
-  constructor(props: Record<string, never>) {
-    super(props);
-
-    instances += instances;
-
-    this.state = {
-      suggestions: [],
-    };
-  }
-
-  onSuggestionsFetchRequested = (value: string) => {
-    this.setState({
-      suggestions: getSuggestions(value),
-    });
-  };
-
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: [],
-    });
-  };
-
-  render() {
-    const { suggestions } = this.state;
-
-    const inputProps = {
-      name: 'my_autosuggest',
-      placeholder: 'Enter a destination name',
-    };
-
-    return (
-      <FieldsetContainer
-        label="Destination"
-        validationMessage="Please select a destination."
-        validStates={[true, false]}
-        description="The final price will be adjusted based on your selection"
-      >
-        <BpkAutosuggest
-          id="carhire-search-controls-location-pick-up"
-          ariaLabels={{
-            label: 'Destination',
-            resultsList: 'Destination suggestions',
-            clearButton: 'Clear input',
-          }}
-          getA11yResultsMessage={(count: number) =>
-            `${count} result${count === 1 ? '' : 's'}`
-          }
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={(suggestion: Office) => (
-            <BpkAutosuggestSuggestion
-              value={getSuggestionValue(suggestion)}
-              indent={suggestion.indent}
-            />
-          )}
-          inputProps={inputProps}
-        />
-      </FieldsetContainer>
-    );
-  }
-}
 
 type FieldsetContainerProps = {
   validStates: Array<boolean | null>;
@@ -319,6 +210,72 @@ class FieldsetContainer extends Component<
           </div>
         )}
       </div>
+    );
+  }
+}
+
+class Autosuggest extends Component<
+  Record<string, never>,
+  { suggestions: Office[] }
+> {
+  constructor(props: Record<string, never>) {
+    super(props);
+
+    this.state = {
+      suggestions: [],
+    };
+  }
+
+  onSuggestionsFetchRequested = (value: string) => {
+    this.setState({
+      suggestions: getSuggestions(value),
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: [],
+    });
+  };
+
+  render() {
+    const { suggestions } = this.state;
+
+    const inputProps = {
+      name: 'my_autosuggest',
+      placeholder: 'Enter a destination name',
+    };
+
+    return (
+      <FieldsetContainer
+        label="Destination"
+        validationMessage="Please select a destination."
+        validStates={[true, false]}
+        description="The final price will be adjusted based on your selection"
+      >
+        <BpkAutosuggest
+          id="carhire-search-controls-location-pick-up"
+          ariaLabels={{
+            label: 'Destination',
+            resultsList: 'Destination suggestions',
+            clearButton: 'Clear input',
+          }}
+          getA11yResultsMessage={(count: number) =>
+            `${count} result${count === 1 ? '' : 's'}`
+          }
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={(suggestion: Office) => (
+            <BpkAutosuggestSuggestion
+              value={getSuggestionValue(suggestion)}
+              indent={suggestion.indent}
+            />
+          )}
+          inputProps={inputProps}
+        />
+      </FieldsetContainer>
     );
   }
 }
@@ -518,16 +475,6 @@ const DisabledCheckboxExample = () => (
   </FieldsetContainer>
 );
 
-const MixedExample = () => (
-  <div>
-    <InputExample />
-    <SelectExample />
-    <CheckboxExample />
-    <TextareaExample />
-    <SplitInputExample />
-  </div>
-);
-
 const SplitInputExample = () => (
   <BpkSplitInput
     type={INPUT_TYPES.number}
@@ -540,21 +487,82 @@ const SplitInputExample = () => (
   />
 );
 
-export {
-  InputExample,
-  SelectExample,
-  CheckboxExample,
-  DatepickerExample,
-  TextareaExample,
-  AutosuggestExample,
-  RequiredInputExample,
-  RequiredSelectExample,
-  RequiredCheckboxExample,
-  DisabledInputExample,
-  DisabledSelectExample,
-  DisabledCheckboxExample,
-  MixedExample,
-  SplitInputExample,
+const MixedExample = () => (
+  <div>
+    <InputExample />
+    <SelectExample />
+    <CheckboxExample />
+    <TextareaExample />
+    <SplitInputExample />
+  </div>
+);
+
+const meta = {
+  title: 'bpk-component-fieldset',
+  component: BpkFieldset,
+} satisfies Meta;
+
+export default meta;
+
+export const Input = {
+  render: () => <InputExample />,
 };
 
+export const Select = {
+  render: () => <SelectExample />,
+};
 
+export const Checkbox = {
+  render: () => <CheckboxExample />,
+};
+
+export const Datepicker = {
+  render: () => <DatepickerExample />,
+};
+
+export const Textarea = {
+  render: () => <TextareaExample />,
+};
+
+export const AutosuggestStory = {
+  render: () => <AutosuggestExample />,
+};
+
+export const RequiredInput = {
+  render: () => <RequiredInputExample />,
+};
+
+export const RequiredSelect = {
+  render: () => <RequiredSelectExample />,
+};
+
+export const RequiredCheckbox = {
+  render: () => <RequiredCheckboxExample />,
+};
+
+export const DisabledInput = {
+  render: () => <DisabledInputExample />,
+};
+
+export const DisabledSelect = {
+  render: () => <DisabledSelectExample />,
+};
+
+export const DisabledCheckbox = {
+  render: () => <DisabledCheckboxExample />,
+};
+
+export const SplitInput = {
+  render: () => <SplitInputExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

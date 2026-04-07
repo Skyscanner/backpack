@@ -16,9 +16,13 @@
  * limitations under the License.
  */
 
-import BpkLabel from '../../packages/bpk-component-label';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+
+// @ts-expect-error Untyped import
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+
+import BpkLabel from './BpkLabel';
+
+import type { Meta } from '@storybook/react';
 
 const DefaultExample = () => <BpkLabel htmlFor="origin">Origin</BpkLabel>;
 
@@ -71,12 +75,44 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  RequiredExample,
-  InvalidExample,
-  DisabledExample,
-  InvalidRequiredExample,
-  WhiteExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-label',
+  component: BpkLabel,
+} satisfies Meta;
+
+export default meta;
+
+export const Example = {
+  render: () => <DefaultExample />,
+};
+
+export const Required = {
+  render: () => <RequiredExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledExample />,
+};
+
+export const InvalidRequired = {
+  render: () => <InvalidRequiredExample />,
+};
+
+export const White = {
+  render: () => <WhiteExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
