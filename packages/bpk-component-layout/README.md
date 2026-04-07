@@ -135,7 +135,9 @@ No other event handlers are exposed on layout components.
 
 ### Color and background color
 
-All layout components accept `color` and `backgroundColor` props. Both use CSS classes under the hood (not Chakra inline styles) so they correctly integrate with Backpack's theming system.
+`BpkBox`, `BpkFlex`, `BpkGrid`, `BpkGridItem`, `BpkStack`, `BpkHStack`, and `BpkVStack` all accept `color` and `backgroundColor` props. Both use CSS classes under the hood (not Chakra inline styles) so they correctly integrate with Backpack's theming system.
+
+> **Note:** `BpkVessel` is a migration hatch that forwards HTML attributes (`className`, `style`) and does **not** support tokenised `color` or `backgroundColor` props.
 
 **`color`** – accepts any value from `TEXT_COLORS` (re-exported from `bpk-component-text`):
 
