@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../../../examples/bpk-storybook-utils';
 import BpkLabel from '../../bpk-component-label';
-// @ts-expect-error Untyped import
 
 import BpkTextarea from './BpkTextarea';
 

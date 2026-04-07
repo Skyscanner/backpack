@@ -22,20 +22,21 @@ import { Component } from 'react';
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../../../examples/bpk-storybook-utils';
 import BpkBannerAlert, {
   ALERT_TYPES,
 } from '../../bpk-component-banner-alert';
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import
 
-import BpkInput, {
+import BpkInput from './BpkInput';
+import {
   propTypes as inputPropTypes,
   defaultProps as inputDefaultProps,
   INPUT_TYPES,
   CLEAR_BUTTON_MODES,
-} from './BpkInput';
+} from './common-types';
 
 import type { WithOpenEventsProps } from './withOpenEvents';
 import type { Meta } from '@storybook/react';
@@ -79,6 +80,7 @@ class ClearableInput extends Component<any, any> {
     const { initialValue, ...rest } = this.props;
 
     return (
+      // @ts-expect-error - ClearableInput is typed as Component<any> so rest spread doesn't satisfy required props
       <BpkInput
         {...rest}
         onChange={this.onChange}

@@ -20,6 +20,7 @@ import { cloneElement, Component } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
 
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from '../../../examples/bpk-storybook-utils';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
