@@ -32,14 +32,16 @@ export default function App({ children }) {
 
 ### BpkBox
 
-`BpkBox` is a layout container that exposes a **restricted, tokenised** prop API. It is intended for spacing, sizing and structural layout only – not for typography, colors, borders or complex interaction.
+`BpkBox` is a layout container that exposes a **restricted, tokenised** prop API. It supports spacing, sizing, structural layout, and Backpack color tokens.
 
 ```tsx
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkProvider,
   BpkSpacing,
 } from '@skyscanner/backpack-web/bpk-component-layout';
+import { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default function Example() {
   return (
@@ -49,6 +51,8 @@ export default function Example() {
         margin={BpkSpacing.MD}
         width="50%"
         minHeight="6rem"
+        color={TEXT_COLORS.textPrimary}
+        backgroundColor={BACKGROUND_COLORS.surfaceDefault}
         data-testid="layout-box"
       >
         Layout content
@@ -105,6 +109,8 @@ The layout API is intentionally limited and strongly typed. The main groups are:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
 - **Position** – `top`, `right`, `bottom`, `left`:
   - Values: rem strings (e.g. `'1rem'`) or percentages (e.g. `'50%'`).
+- **Color** – `color`: text color token from `TEXT_COLORS` (same set as `BpkText`).
+- **Background color** – `backgroundColor`: background color token from `BACKGROUND_COLORS`.
 - **Testing attributes** – `data-testid`, `data-cy` for automation and testing.
 
 In addition, `BpkBox` forwards through a set of **flexbox and grid layout props** from the underlying layout system, for example:
@@ -126,6 +132,38 @@ No other event handlers are exposed on layout components.
 - **`BpkFlex`**: A dedicated flex container primitive. Prefer this when you want a clear, ergonomic flex API (`direction/align/justify/wrap/...`) with Backpack responsive values.
 - **`BpkGrid` / `BpkGridItem`**: Dedicated grid primitives. Prefer these for grid layout composition; use `BpkGridItem` when you want explicit spans/placement.
 - **`BpkStack` / `BpkHStack` / `BpkVStack`**: Dedicated stack primitives. Prefer these when you want consistent tokenised gaps and the simplest stacking API.
+
+### Color and background color
+
+All layout components accept `color` and `backgroundColor` props. Both use CSS classes under the hood (not Chakra inline styles) so they correctly integrate with Backpack's theming system.
+
+**`color`** – accepts any value from `TEXT_COLORS` (re-exported from `bpk-component-text`):
+
+```tsx
+import { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+
+<BpkBox color={TEXT_COLORS.textPrimary}>...</BpkBox>
+<BpkFlex color={TEXT_COLORS.textOnDark}>...</BpkFlex>
+```
+
+**`backgroundColor`** – accepts any value from `BACKGROUND_COLORS`, which covers three categories (day mode):
+
+| Category | Tokens |
+|---|---|
+| Surface | `surfaceDefault`, `surfaceElevated`, `surfaceHero`, `surfaceContrast`, `surfaceHighlight`, `surfaceSubtle`, `surfaceLowContrast`, `surfaceTint` |
+| Canvas | `canvas`, `canvasContrast` |
+| Status fill | `statusSuccessFill`, `statusDangerFill`, `statusWarningFill` |
+
+```tsx
+import {
+  BACKGROUND_COLORS,
+  BpkBox,
+  BpkStack,
+} from '@skyscanner/backpack-web/bpk-component-layout';
+
+<BpkBox backgroundColor={BACKGROUND_COLORS.surfaceDefault}>...</BpkBox>
+<BpkStack backgroundColor={BACKGROUND_COLORS.statusSuccessFill}>...</BpkStack>
+```
 
 ### Responsive values
 
@@ -176,7 +214,7 @@ To keep layout predictable, performant and consistent with Backpack:
 - **No arbitrary class names** – `className` is not supported on layout components; use layout props and tokens instead. **Exception:** `BpkVessel` allows `className` as a migration hatch.
 - **No inline styles** – `style` is not supported on layout components to avoid ad‑hoc overrides of the design system. **Exception:** `BpkVessel` allows `style` as a migration hatch.
 - **No shorthand props** – Chakra shorthands such as `p`, `m`, `w`, `h`, `bg`, `rounded`, `shadow` are not exposed on Backpack layout components.
-- **No colors, borders, radii or shadows** – visual props such as `color`, `backgroundColor`, `borderColor`, `borderWidth`, `borderRadius`, `boxShadow` are not part of the layout surface.
+- **Tokenised colors only** – `color` and `backgroundColor` are supported but must use Backpack tokens (`TEXT_COLORS` / `BACKGROUND_COLORS`); raw CSS values and Chakra color props (`borderColor`, `borderWidth`, `borderRadius`, `boxShadow`) are not exposed.
 - **No composite border shorthands** – props like `border`, `borderX`, `borderInline`, `borderBlock` are not supported.
 - **No typography props** – font family/size/line height/etc. should come from dedicated text components, not from layout primitives.
 - **No transition/transform props** – layout components are purely structural; animations and transforms should live in higher‑level components.
@@ -194,6 +232,8 @@ This package includes Storybook examples under `examples/bpk-component-layout` s
 - Flexbox layout
 - Grid layout
 - Responsive layout using Backpack breakpoints
+- Color (`TEXT_COLORS`)
+- Surface, canvas and status fill background colors (`BACKGROUND_COLORS`)
 
 Use these examples as a reference for how to compose layout props and tokens. As new layout components (e.g. `BpkFlex`, `BpkGrid`, `BpkStack`) are added, they should follow the same prop and constraints model.
 

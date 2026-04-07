@@ -20,19 +20,33 @@ import { forwardRef } from 'react';
 
 import { GridItem } from '@chakra-ui/react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridItemProps } from './types';
 
+import STYLES from './BpkLayout.module.scss';
+
+
+const getClassName = cssModules(STYLES);
+
 export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
-  ({ area, children, colEnd, colSpan, colStart, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
+  ({ area, backgroundColor, children, colEnd, colSpan, colStart, color, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
     const processedProps = processBpkComponentProps({ textStyle, ...props }, { component: 'BpkGridItem' });
+    const classNames = (color || backgroundColor)
+      ? getClassName(
+          'bpk-layout',
+          color ? `bpk-layout--${color}` : '',
+          backgroundColor ? `bpk-layout--${backgroundColor}` : '',
+        )
+      : undefined;
 
     return (
       <GridItem
         ref={ref}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={classNames}
         {...getDataComponentAttribute('GridItem')}
         {...processedProps}
         area={area}

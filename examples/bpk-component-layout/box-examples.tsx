@@ -20,10 +20,11 @@ import { useRef, useState } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -212,6 +213,62 @@ export const RefExample = () => {
     </Wrapper>
   );
 };
+
+/**
+ * Color example – demonstrates all TEXT_COLORS on BpkBox.
+ * @returns {JSX.Element} Color example
+ */
+export const ColorExample = () => (
+  <Wrapper>
+    {Object.entries(TEXT_COLORS).map(([key, value]) => (
+      <BpkBox key={key} padding={BpkSpacing.SM} color={value}>
+        <BpkText>{key}: {value}</BpkText>
+      </BpkBox>
+    ))}
+  </Wrapper>
+);
+
+/**
+ * Surface background color example – demonstrates all surface BACKGROUND_COLORS on BpkBox.
+ * @returns {JSX.Element} Surface background color example
+ */
+export const SurfaceBackgroundColorExample = () => (
+  <Wrapper>
+    {(['surfaceDefault', 'surfaceElevated', 'surfaceHero', 'surfaceContrast', 'surfaceHighlight', 'surfaceSubtle', 'surfaceLowContrast', 'surfaceTint'] as const).map((key) => (
+      <BpkBox key={key} padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS[key]}>
+        <BpkText>{key}: {BACKGROUND_COLORS[key]}</BpkText>
+      </BpkBox>
+    ))}
+  </Wrapper>
+);
+
+/**
+ * Canvas background color example – demonstrates canvas BACKGROUND_COLORS on BpkBox.
+ * @returns {JSX.Element} Canvas background color example
+ */
+export const CanvasBackgroundColorExample = () => (
+  <Wrapper>
+    {(['canvas', 'canvasContrast'] as const).map((key) => (
+      <BpkBox key={key} padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS[key]}>
+        <BpkText>{key}: {BACKGROUND_COLORS[key]}</BpkText>
+      </BpkBox>
+    ))}
+  </Wrapper>
+);
+
+/**
+ * Status fill background color example – demonstrates status fill BACKGROUND_COLORS on BpkBox.
+ * @returns {JSX.Element} Status fill background color example
+ */
+export const StatusFillBackgroundColorExample = () => (
+  <Wrapper>
+    {(['statusSuccessFill', 'statusDangerFill', 'statusWarningFill'] as const).map((key) => (
+      <BpkBox key={key} padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS[key]}>
+        <BpkText>{key}: {BACKGROUND_COLORS[key]}</BpkText>
+      </BpkBox>
+    ))}
+  </Wrapper>
+);
 
 /**
  * Mixed visual regression example – used for Percy/visual tests.

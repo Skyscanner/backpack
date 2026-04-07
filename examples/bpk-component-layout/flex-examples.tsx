@@ -17,10 +17,12 @@
  */
 
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkFlex,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
+import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -99,6 +101,25 @@ export const BpkFlexWrapExample = () => (
       <BpkBox height="2rem" width="9rem"><span className={outline} /></BpkBox>
       <BpkBox height="2rem" width="9rem"><span className={outline} /></BpkBox>
       <BpkBox height="2rem" width="9rem"><span className={outline} /></BpkBox>
+    </BpkFlex>
+  </Wrapper>
+);
+
+export const BpkFlexColorExample = () => (
+  <Wrapper>
+    <BpkFlex direction="column" gap={BpkSpacing.SM}>
+      <BpkFlex padding={BpkSpacing.SM} color={TEXT_COLORS.textPrimary} backgroundColor={BACKGROUND_COLORS.surfaceDefault}>
+        <BpkText>surfaceDefault + textPrimary</BpkText>
+      </BpkFlex>
+      <BpkFlex padding={BpkSpacing.SM} color={TEXT_COLORS.textOnDark} backgroundColor={BACKGROUND_COLORS.surfaceHero}>
+        <BpkText>surfaceHero + textOnDark</BpkText>
+      </BpkFlex>
+      <BpkFlex padding={BpkSpacing.SM} color={TEXT_COLORS.textPrimary} backgroundColor={BACKGROUND_COLORS.canvas}>
+        <BpkText>canvas + textPrimary</BpkText>
+      </BpkFlex>
+      <BpkFlex padding={BpkSpacing.SM} color={TEXT_COLORS.textPrimary} backgroundColor={BACKGROUND_COLORS.statusSuccessFill}>
+        <BpkText>statusSuccessFill + textPrimary</BpkText>
+      </BpkFlex>
     </BpkFlex>
   </Wrapper>
 );

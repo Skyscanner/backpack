@@ -22,9 +22,13 @@ import { render, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkBox', () => {
   it('renders children content', () => {
@@ -154,5 +158,54 @@ describe('BpkBox', () => {
     );
     fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('applies color class when color prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox color={TEXT_COLORS.textPrimary}>Colored</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+  });
+
+  it('applies backgroundColor class for a surface color', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor={BACKGROUND_COLORS.surfaceDefault}>Surface</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-default');
+  });
+
+  it('applies backgroundColor class for a canvas color', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor={BACKGROUND_COLORS.canvas}>Canvas</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--canvas');
+  });
+
+  it('applies backgroundColor class for a status fill color', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor={BACKGROUND_COLORS.statusSuccessFill}>Success</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--status-success-fill');
+  });
+
+  it('applies both color and backgroundColor classes together', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox color={TEXT_COLORS.textOnDark} backgroundColor={BACKGROUND_COLORS.surfaceHero}>
+          Both
+        </BpkBox>
+      </BpkProvider>,
+    );
+    const div = container.querySelector('div');
+    expect(div).toHaveClass('bpk-layout--text-on-dark');
+    expect(div).toHaveClass('bpk-layout--surface-hero');
   });
 });

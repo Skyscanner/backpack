@@ -17,11 +17,13 @@
  */
 
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkGrid,
   BpkGridItem,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
+import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -88,6 +90,22 @@ export const BpkGridBentoBoxExample = () => (
         <BpkBox width="100%" height="6rem">
           <span className={outline}>colSpan=4</span>
         </BpkBox>
+      </BpkGridItem>
+    </BpkGrid>
+  </Wrapper>
+);
+
+export const BpkGridColorExample = () => (
+  <Wrapper>
+    <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.SM}>
+      <BpkGridItem backgroundColor={BACKGROUND_COLORS.surfaceDefault} padding={BpkSpacing.SM}>
+        <BpkText color={TEXT_COLORS.textPrimary}>surfaceDefault</BpkText>
+      </BpkGridItem>
+      <BpkGridItem backgroundColor={BACKGROUND_COLORS.canvasContrast} padding={BpkSpacing.SM}>
+        <BpkText color={TEXT_COLORS.textPrimary}>canvasContrast</BpkText>
+      </BpkGridItem>
+      <BpkGridItem backgroundColor={BACKGROUND_COLORS.statusWarningFill} padding={BpkSpacing.SM}>
+        <BpkText color={TEXT_COLORS.textPrimary}>statusWarningFill</BpkText>
       </BpkGridItem>
     </BpkGrid>
   </Wrapper>
