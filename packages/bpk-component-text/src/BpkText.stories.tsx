@@ -221,7 +221,8 @@ export const WithHeadingTags = {
   render: () => <WithHeadingTagsExample />,
 };
 
-export const Paragraph = {
+export const ParagraphStory = {
+  name: 'Paragraph',
   render: () => <ParagraphExample />,
 };
 
