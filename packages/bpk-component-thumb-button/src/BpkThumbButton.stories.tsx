@@ -23,15 +23,16 @@ import {
   BpkHStack,
   BpkProvider,
   BpkSpacing,
-} from '../../packages/bpk-component-layout';
-import BpkThumbButton from '../../packages/bpk-component-thumb-button/src/BpkThumbButton';
+} from '../../bpk-component-layout';
+
+import BpkThumbButton from './BpkThumbButton';
+
+import type { Meta } from '@storybook/react';
 
 const noop = () => {};
 
-export const InteractiveExample = () => {
-  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(
-    null,
-  );
+const InteractiveExample = () => {
+  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);
 
   return (
     <BpkProvider>
@@ -53,7 +54,7 @@ export const InteractiveExample = () => {
   );
 };
 
-export const MixedExample = () => (
+const MixedExample = () => (
   <BpkProvider>
     <BpkBox>
       <BpkHStack gap={BpkSpacing.Base}>
@@ -69,3 +70,25 @@ export const MixedExample = () => (
     </BpkBox>
   </BpkProvider>
 );
+
+const meta = {
+  title: 'bpk-component-thumb-button',
+  component: BpkThumbButton,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <InteractiveExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

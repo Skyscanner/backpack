@@ -16,49 +16,36 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import BaggageIconLg from '../../packages/bpk-component-icon/lg/baggage';
-import BaggageIconSm from '../../packages/bpk-component-icon/sm/baggage';
-import BpkLoadingButton, {
-  ICON_POSITION,
-} from '../../packages/bpk-component-loading-button';
-import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import { cssModules } from '../../packages/bpk-react-utils';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+} from '../../bpk-component-icon';
+import BaggageIconLg from '../../bpk-component-icon/lg/baggage';
+import BaggageIconSm from '../../bpk-component-icon/sm/baggage';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkLoadingButton.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {};
-
-type State = {
-  loading: boolean,
-};
-
-class InteractiveExample extends Component<Props, State> {
-  constructor(props) {
+class InteractiveExample extends Component<any, { loading: boolean }> {
+  constructor(props: any) {
     super(props);
-
-    this.state = {
-      loading: false,
-    };
+    this.state = { loading: false };
   }
 
   render() {
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <BpkLoadingButton
         onClick={() => {
           this.setState({ loading: true });
@@ -68,7 +55,9 @@ class InteractiveExample extends Component<Props, State> {
         }}
         loading={this.state.loading}
         {...this.props}
-      />
+      >
+        {this.props.children}
+      </BpkLoadingButton>
     );
   }
 }
@@ -78,8 +67,9 @@ const LoadingButtonStory = ({
   wrapped,
   ...rest
 }: {
-  className: ?string,
-  wrapped: Object,
+  className?: string | null;
+  wrapped: any;
+  [key: string]: any;
 }) => {
   const Wrapped = wrapped;
   return (
@@ -90,12 +80,10 @@ const LoadingButtonStory = ({
       ].join(' ')}
     >
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped
         iconPosition={ICON_POSITION.LEADING}
         onClick={action('Button leading icon clicked')}
@@ -104,76 +92,40 @@ const LoadingButtonStory = ({
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Loading
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped iconOnly onClick={action('Button iconOnly clicked')} {...rest}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        iconOnly
-        loading
-        onClick={action('THIS SHOULD NEVER HAPPEN')}
-        {...rest}
-      >
+      <Wrapped iconOnly loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <Wrapped large onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        iconPosition={ICON_POSITION.LEADING}
-        large
-        onClick={action('Button clicked')}
-        {...rest}
-      >
+      <Wrapped iconPosition={ICON_POSITION.LEADING} large onClick={action('Button clicked')} {...rest}>
         Button
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        large
-        loading
-        onClick={action('THIS SHOULD NEVER HAPPEN')}
-        {...rest}
-      >
+      <Wrapped large loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         Loading
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        iconOnly
-        large
-        onClick={action('THIS SHOULD NEVER HAPPEN')}
-        {...rest}
-      >
+      <Wrapped iconOnly large onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
       &nbsp;
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
-      <Wrapped
-        iconOnly
-        large
-        loading
-        onClick={action('THIS SHOULD NEVER HAPPEN')}
-        {...rest}
-      >
+      <Wrapped iconOnly large loading onClick={action('THIS SHOULD NEVER HAPPEN')} {...rest}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </Wrapped>
     </div>
   );
 };
-
-LoadingButtonStory.defaultProps = { className: null };
 
 const DocsPrimaryExample = () => (
   <div>
@@ -182,37 +134,47 @@ const DocsPrimaryExample = () => (
     <InteractiveExample large>Search</InteractiveExample>
   </div>
 );
+
 const PrimaryExample = () => <LoadingButtonStory wrapped={BpkLoadingButton} />;
+
 const PrimaryOnDarkExample = () => (
   <BpkDarkExampleWrapper>
     <LoadingButtonStory primaryOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
+
 const PrimaryOnLightExample = () => (
   <LoadingButtonStory primaryOnLight wrapped={BpkLoadingButton} />
 );
+
 const SecondaryExample = () => (
   <LoadingButtonStory secondary wrapped={BpkLoadingButton} />
 );
+
 const SecondaryOnDarkExample = () => (
   <BpkDarkExampleWrapper>
     <LoadingButtonStory secondaryOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
+
 const DestructiveExample = () => (
   <LoadingButtonStory destructive wrapped={BpkLoadingButton} />
 );
+
 const LinkButtonExample = () => (
   <LoadingButtonStory link wrapped={BpkLoadingButton} />
 );
+
 const LinkOnDarkButtonExample = () => (
   <BpkDarkExampleWrapper>
     <LoadingButtonStory linkOnDark wrapped={BpkLoadingButton} />
   </BpkDarkExampleWrapper>
 );
+
 const FeaturedExample = () => (
   <LoadingButtonStory featured wrapped={BpkLoadingButton} />
 );
+
 const MixtureExample = () => (
   <div>
     <PrimaryExample />
@@ -226,19 +188,27 @@ const MixtureExample = () => (
     <FeaturedExample />
   </div>
 );
+
 const AnchorTagsExample = () => (
   <div>
-    <PrimaryExample href="#" />
-    <PrimaryOnLightExample href="#" />
-    <PrimaryOnDarkExample href="#" />
-    <SecondaryExample href="#" />
-    <SecondaryOnDarkExample href="#" />
-    <DestructiveExample href="#" />
-    <LinkButtonExample href="#" />
-    <LinkOnDarkButtonExample href="#" />
-    <FeaturedExample href="#" />
+    <LoadingButtonStory href="#" wrapped={BpkLoadingButton} />
+    <LoadingButtonStory href="#" primaryOnLight wrapped={BpkLoadingButton} />
+    <BpkDarkExampleWrapper>
+      <LoadingButtonStory href="#" primaryOnDark wrapped={BpkLoadingButton} />
+    </BpkDarkExampleWrapper>
+    <LoadingButtonStory href="#" secondary wrapped={BpkLoadingButton} />
+    <BpkDarkExampleWrapper>
+      <LoadingButtonStory href="#" secondaryOnDark wrapped={BpkLoadingButton} />
+    </BpkDarkExampleWrapper>
+    <LoadingButtonStory href="#" destructive wrapped={BpkLoadingButton} />
+    <LoadingButtonStory href="#" link wrapped={BpkLoadingButton} />
+    <BpkDarkExampleWrapper>
+      <LoadingButtonStory href="#" linkOnDark wrapped={BpkLoadingButton} />
+    </BpkDarkExampleWrapper>
+    <LoadingButtonStory href="#" featured wrapped={BpkLoadingButton} />
   </div>
 );
+
 const CustomIconExample = () => {
   const AlignedIconSm = withButtonAlignment(withRtlSupport(BaggageIconSm));
   const iconSm = <AlignedIconSm />;
@@ -249,64 +219,34 @@ const CustomIconExample = () => {
       <BpkLoadingButton icon={iconSm} onClick={action('primary clicked')}>
         Button
       </BpkLoadingButton>
-      <BpkLoadingButton
-        disabled
-        iconDisabled={iconSm}
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
+      <BpkLoadingButton disabled iconDisabled={iconSm} onClick={action('THIS SHOULD NOT HAPPEN')}>
         Disabled
       </BpkLoadingButton>
-      <BpkLoadingButton
-        loading
-        iconLoading={iconSm}
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
+      <BpkLoadingButton loading iconLoading={iconSm} onClick={action('THIS SHOULD NOT HAPPEN')}>
         Loading
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton
-        iconOnly
-        icon={iconSm}
-        onClick={action('iconOnly clicked')}
-      >
+      <BpkLoadingButton iconOnly icon={iconSm} onClick={action('iconOnly clicked')}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton
-        large
-        icon={iconLg}
-        onClick={action('large primary clicked')}
-      >
+      <BpkLoadingButton large icon={iconLg} onClick={action('large primary clicked')}>
         Button
       </BpkLoadingButton>
-      <BpkLoadingButton
-        large
-        disabled
-        iconDisabled={iconLg}
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
+      <BpkLoadingButton large disabled iconDisabled={iconLg} onClick={action('THIS SHOULD NOT HAPPEN')}>
         Disabled
       </BpkLoadingButton>
-      <BpkLoadingButton
-        large
-        loading
-        iconLoading={iconLg}
-        onClick={action('THIS SHOULD NOT HAPPEN')}
-      >
+      <BpkLoadingButton large loading iconLoading={iconLg} onClick={action('THIS SHOULD NOT HAPPEN')}>
         Loading
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton
-        large
-        iconOnly
-        icon={iconLg}
-        onClick={action('large iconOnly clicked')}
-      >
+      <BpkLoadingButton large iconOnly icon={iconLg} onClick={action('large iconOnly clicked')}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
     </div>
   );
 };
+
 const VisualExample = () => (
   <div>
     <div>
@@ -322,12 +262,7 @@ const VisualExample = () => (
         Search
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton
-        large
-        iconOnly
-        loading
-        onClick={action('iconOnly clicked')}
-      >
+      <BpkLoadingButton large iconOnly loading onClick={action('iconOnly clicked')}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
     </div>
@@ -336,12 +271,7 @@ const VisualExample = () => (
         Search
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton
-        link
-        iconOnly
-        loading
-        onClick={action('iconOnly clicked')}
-      >
+      <BpkLoadingButton link iconOnly loading onClick={action('iconOnly clicked')}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
       &nbsp;
@@ -349,13 +279,7 @@ const VisualExample = () => (
         Search
       </BpkLoadingButton>
       &nbsp;
-      <BpkLoadingButton
-        link
-        large
-        iconOnly
-        loading
-        onClick={action('iconOnly clicked')}
-      >
+      <BpkLoadingButton link large iconOnly loading onClick={action('iconOnly clicked')}>
         <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>
     </div>
@@ -365,55 +289,96 @@ const VisualExample = () => (
           Search
         </BpkLoadingButton>
         &nbsp;
-        <BpkLoadingButton
-          linkOnDark
-          iconOnly
-          loading
-          onClick={action('iconOnly clicked')}
-        >
+        <BpkLoadingButton linkOnDark iconOnly loading onClick={action('iconOnly clicked')}>
           <BpkVisuallyHidden>Search</BpkVisuallyHidden>
         </BpkLoadingButton>
         &nbsp;
-        <BpkLoadingButton
-          linkOnDark
-          large
-          loading
-          onClick={action('button clicked')}
-        >
+        <BpkLoadingButton linkOnDark large loading onClick={action('button clicked')}>
           Search
         </BpkLoadingButton>
         &nbsp;
-        <BpkLoadingButton
-          linkOnDark
-          large
-          iconOnly
-          loading
-          onClick={action('iconOnly clicked')}
-        >
+        <BpkLoadingButton linkOnDark large iconOnly loading onClick={action('iconOnly clicked')}>
           <BpkVisuallyHidden>Search</BpkVisuallyHidden>
         </BpkLoadingButton>
       </BpkDarkExampleWrapper>
     </div>
   </div>
 );
+
 const SubmitExample = () => (
   <LoadingButtonStory submit wrapped={BpkLoadingButton} />
 );
 
-export {
-  DocsPrimaryExample,
-  PrimaryExample,
-  PrimaryOnDarkExample,
-  PrimaryOnLightExample,
-  SecondaryExample,
-  SecondaryOnDarkExample,
-  DestructiveExample,
-  LinkButtonExample,
-  LinkOnDarkButtonExample,
-  FeaturedExample,
-  MixtureExample,
-  AnchorTagsExample,
-  CustomIconExample,
-  VisualExample,
-  SubmitExample,
+const meta = {
+  title: 'bpk-component-loading-button',
+  component: BpkLoadingButton,
+} satisfies Meta;
+
+export default meta;
+
+export const DocsPrimary = {
+  render: () => <DocsPrimaryExample />,
+};
+
+export const Primary = {
+  render: () => <PrimaryExample />,
+};
+
+export const PrimaryOnDark = {
+  render: () => <PrimaryOnDarkExample />,
+};
+
+export const PrimaryOnLight = {
+  render: () => <PrimaryOnLightExample />,
+};
+
+export const Secondary = {
+  render: () => <SecondaryExample />,
+};
+
+export const SecondaryOnDark = {
+  render: () => <SecondaryOnDarkExample />,
+};
+
+export const Destructive = {
+  render: () => <DestructiveExample />,
+};
+
+export const LinkButton = {
+  render: () => <LinkButtonExample />,
+};
+
+export const LinkOnDarkButton = {
+  render: () => <LinkOnDarkButtonExample />,
+};
+
+export const Featured = {
+  render: () => <FeaturedExample />,
+};
+
+export const Mixture = {
+  render: () => <MixtureExample />,
+};
+
+export const AnchorTags = {
+  render: () => <AnchorTagsExample />,
+};
+
+export const CustomIcon = {
+  render: () => <CustomIconExample />,
+};
+
+export const Submit = {
+  render: () => <SubmitExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
