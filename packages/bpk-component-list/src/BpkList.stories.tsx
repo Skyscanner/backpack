@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkList from './BpkList';
+import BpkListItem from './BpkListItem';
 
-import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
+import type { Meta } from '@storybook/react';
 
 const UnorderedExample = () => (
   <BpkList>
@@ -51,4 +52,35 @@ const NestedExample = () => (
   </BpkList>
 );
 
-export { UnorderedExample, OrderedExample, NestedExample };
+const meta = {
+  title: 'bpk-component-list',
+  component: BpkList,
+  subcomponents: {
+    BpkListItem,
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const Unordered = {
+  render: () => <UnorderedExample />,
+};
+
+export const Ordered = {
+  render: () => <OrderedExample />,
+};
+
+export const Nested = {
+  render: () => <NestedExample />,
+};
+
+export const VisualTest = {
+  render: () => <NestedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <NestedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

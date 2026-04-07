@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import {
-  BpkDescriptionList,
-  BpkDescriptionTerm,
-  BpkDescriptionDetails,
-} from '../../packages/bpk-component-description-list';
+import BpkDescriptionList from './BpkDescriptionList';
+import BpkDescriptionTerm from './BpkDescriptionTerm';
+import BpkDescriptionDetails from './BpkDescriptionDetails';
+
+import type { Meta } from '@storybook/react';
 
 const DefaultExample = () => (
   <BpkDescriptionList>
@@ -44,4 +44,24 @@ const DefaultExample = () => (
   </BpkDescriptionList>
 );
 
-export default DefaultExample;
+const meta = {
+  title: 'bpk-component-description-list',
+  component: BpkDescriptionList,
+} satisfies Meta;
+
+export default meta;
+
+export const DescriptionList = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DefaultExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
