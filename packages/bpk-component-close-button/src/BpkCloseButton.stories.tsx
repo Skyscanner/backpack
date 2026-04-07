@@ -16,20 +16,34 @@
  * limitations under the License.
  */
 
-import BpkThumbButton from '../../packages/bpk-component-thumb-button/src/BpkThumbButton';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action } from '../../../examples/bpk-storybook-utils';
 
-import { InteractiveExample, MixedExample } from './examples';
+import BpkCloseButton from './BpkCloseButton';
 
-export default {
-  title: 'bpk-component-thumb-button',
-  component: BpkThumbButton,
+import type { Meta } from '@storybook/react';
+
+const DefaultExample = () => (
+  <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
+);
+
+const meta = {
+  title: 'bpk-component-close-button',
+  component: BpkCloseButton,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
 };
 
-export const Default = InteractiveExample;
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
 
-export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {
-  render: MixedExample,
+  render: () => <DefaultExample />,
   args: {
     zoomEnabled: true,
   },

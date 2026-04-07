@@ -24,17 +24,18 @@ import {
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import {
-  BpkAccordion,
-  withSingleItemAccordionState,
-  BpkAccordionItem,
-  withAccordionItemState,
-} from '../../packages/bpk-component-accordion';
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import { withAlignment } from '../../packages/bpk-component-icon';
-import StopsIcon from '../../packages/bpk-component-icon/sm/stops';
-import TimeIcon from '../../packages/bpk-component-icon/sm/time';
-import BpkText from '../../packages/bpk-component-text';
+import BpkCheckbox from '../../bpk-component-checkbox';
+import { withAlignment } from '../../bpk-component-icon';
+import StopsIcon from '../../bpk-component-icon/sm/stops';
+import TimeIcon from '../../bpk-component-icon/sm/time';
+import BpkText from '../../bpk-component-text';
+
+import BpkAccordion from './BpkAccordion';
+import BpkAccordionItem from './BpkAccordionItem';
+import withAccordionItemState from './withAccordionItemState';
+import withSingleItemAccordionState from './withSingleItemAccordionState';
+
+import type { Meta } from '@storybook/react';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
@@ -55,12 +56,7 @@ const StopsContent = () => (
       <BpkCheckbox name="1-stop" label="1 stop" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="2-plus-stops"
-        label="2+ stops"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="2-plus-stops" label="2+ stops" onChange={() => null} checked />
     </CheckboxWrapper>
   </form>
 );
@@ -68,44 +64,19 @@ const StopsContent = () => (
 const AirlinesContent = () => (
   <form>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="air-france"
-        label="Air France"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="air-france" label="Air France" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="alitalia"
-        label="Alitalia"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="alitalia" label="Alitalia" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="bmi-regional"
-        label="BMI regional"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="bmi-regional" label="BMI regional" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="british-airways"
-        label="British Airways"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="british-airways" label="British Airways" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="easyjet"
-        label="Easyjet"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="easyjet" label="Easyjet" onChange={() => null} checked />
     </CheckboxWrapper>
   </form>
 );
@@ -113,44 +84,19 @@ const AirlinesContent = () => (
 const AirportsContent = () => (
   <form>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="lcy"
-        label="London City"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="lcy" label="London City" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="LGW"
-        label="London Gatwick"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="LGW" label="London Gatwick" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="lhr"
-        label="London Heathrow"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="lhr" label="London Heathrow" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="ltn"
-        label="London Luton"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="ltn" label="London Luton" onChange={() => null} checked />
     </CheckboxWrapper>
     <CheckboxWrapper>
-      <BpkCheckbox
-        name="stn"
-        label="London Stansted"
-        onChange={() => null}
-        checked
-      />
+      <BpkCheckbox name="stn" label="London Stansted" onChange={() => null} checked />
     </CheckboxWrapper>
   </form>
 );
@@ -184,11 +130,7 @@ const SingleItemExampleInitiallyExpandedExample = () => (
     <BpkAccordionItem id="stops" title="Stops">
       <StopsContent />
     </BpkAccordionItem>
-    <BpkAccordionItem
-      id="departure-times"
-      title="Departure times"
-      initiallyExpanded
-    >
+    <BpkAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
       <AirlinesContent />
     </BpkAccordionItem>
     <BpkAccordionItem id="journey-duration" title="Journey duration">
@@ -202,18 +144,10 @@ const MultipleItemsOpenExample = () => (
     <StatefulAccordionItem id="stops" title="Stops" initiallyExpanded>
       <StopsContent />
     </StatefulAccordionItem>
-    <StatefulAccordionItem
-      id="departure-times"
-      title="Departure times"
-      initiallyExpanded
-    >
+    <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
       <AirlinesContent />
     </StatefulAccordionItem>
-    <StatefulAccordionItem
-      id="journey-duration"
-      title="Journey duration"
-      initiallyExpanded
-    >
+    <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
       <AirportsContent />
     </StatefulAccordionItem>
   </BpkAccordion>
@@ -224,18 +158,10 @@ const MultipleItemsOpenInitiallyExpandedExample = () => (
     <StatefulAccordionItem id="stops" title="Stops">
       <StopsContent />
     </StatefulAccordionItem>
-    <StatefulAccordionItem
-      id="departure-times"
-      title="Departure times"
-      initiallyExpanded
-    >
+    <StatefulAccordionItem id="departure-times" title="Departure times" initiallyExpanded>
       <AirlinesContent />
     </StatefulAccordionItem>
-    <StatefulAccordionItem
-      id="journey-duration"
-      title="Journey duration"
-      initiallyExpanded
-    >
+    <StatefulAccordionItem id="journey-duration" title="Journey duration" initiallyExpanded>
       <AirportsContent />
     </StatefulAccordionItem>
   </BpkAccordion>
@@ -271,21 +197,10 @@ const CustomTitleTextStyleExample = () => (
 
 const WithIconsExample = () => (
   <BpkAccordion>
-    <BpkAccordionItem
-      id="stops"
-      title="Stops"
-      tagName="h3"
-      expanded
-      icon={<AlignedStopsIcon fill={colorPanjin} />}
-    >
+    <BpkAccordionItem id="stops" title="Stops" tagName="h3" expanded icon={<AlignedStopsIcon fill={colorPanjin} />}>
       <StopsContent />
     </BpkAccordionItem>
-    <BpkAccordionItem
-      id="departure-times"
-      title="Departure times"
-      tagName="h2"
-      icon={<AlignedTimeIcon fill={colorMonteverde} />}
-    >
+    <BpkAccordionItem id="departure-times" title="Departure times" tagName="h2" icon={<AlignedTimeIcon fill={colorMonteverde} />}>
       <AirlinesContent />
     </BpkAccordionItem>
     <BpkAccordionItem id="journey-duration" title="Journey duration" expanded>
@@ -296,12 +211,7 @@ const WithIconsExample = () => (
 
 const WithBoldTitlesExample = () => (
   <SingleItemAccordion>
-    <BpkAccordionItem
-      id="stops"
-      title="Stops"
-      initiallyExpanded
-      textStyle="label-1"
-    >
+    <BpkAccordionItem id="stops" title="Stops" initiallyExpanded textStyle="label-1">
       <StopsContent />
     </BpkAccordionItem>
     <BpkAccordionItem id="airlines" title="Airlines" textStyle="heading-4">
@@ -316,12 +226,7 @@ const WithBoldTitlesExample = () => (
 const WithDarkBackgroundExample = () => (
   <div style={{ backgroundColor: surfaceContrastDay }}>
     <SingleItemAccordion onDark>
-      <BpkAccordionItem
-        id="stops"
-        title="Stops"
-        initiallyExpanded
-        textStyle="label-1"
-      >
+      <BpkAccordionItem id="stops" title="Stops" initiallyExpanded textStyle="label-1">
         <StopsContent />
       </BpkAccordionItem>
       <BpkAccordionItem id="airlines" title="Airlines" textStyle="heading-4">
@@ -339,16 +244,12 @@ const WithSeoContentOnDarkExample = () => (
     <SingleItemAccordion onDark>
       <BpkAccordionItem
         id="travel"
-        title="Join 100 million savvy travellers as you compare flights, hotels and cars from hundreds of providers. Here’s how."
+        title="Join 100 million savvy travellers as you compare flights, hotels and cars from hundreds of providers. Here's how."
         textStyle="heading-5"
       >
         <SeoTextContent />
       </BpkAccordionItem>
-      <BpkAccordionItem
-        id="travel-2"
-        title="Our international sites"
-        textStyle="heading-3"
-      >
+      <BpkAccordionItem id="travel-2" title="Our international sites" textStyle="heading-3">
         <SeoTextContent />
       </BpkAccordionItem>
     </SingleItemAccordion>
@@ -359,16 +260,12 @@ const WithSeoContentExample = () => (
   <SingleItemAccordion>
     <BpkAccordionItem
       id="travel"
-      title="Join 100 million savvy travellers as you compare flights, hotels and cars from hundreds of providers. Here’s how."
+      title="Join 100 million savvy travellers as you compare flights, hotels and cars from hundreds of providers. Here's how."
       textStyle="heading-5"
     >
       <SeoTextContent />
     </BpkAccordionItem>
-    <BpkAccordionItem
-      id="travel-2"
-      title="Our international sites"
-      textStyle="heading-3"
-    >
+    <BpkAccordionItem id="travel-2" title="Our international sites" textStyle="heading-3">
       <SeoTextContent />
     </BpkAccordionItem>
   </SingleItemAccordion>
@@ -404,18 +301,79 @@ const SingleItemExampleWithoutDividerOnDark = () => (
   </div>
 );
 
-export {
-  SingleItemExample,
-  SingleItemExampleInitiallyExpandedExample,
-  MultipleItemsOpenExample,
-  MultipleItemsOpenInitiallyExpandedExample,
-  CustomExample,
-  CustomTitleTextStyleExample,
-  WithIconsExample,
-  WithBoldTitlesExample,
-  WithDarkBackgroundExample,
-  WithSeoContentExample,
-  WithSeoContentOnDarkExample,
-  SingleItemExampleWithoutDivider,
-  SingleItemExampleWithoutDividerOnDark,
+const meta = {
+  title: 'bpk-component-accordion',
+  component: BpkAccordion,
+  subcomponents: {
+    BpkAccordionItem,
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const SingleItemOnly = {
+  render: () => <SingleItemExample />,
+};
+
+export const SingleItemOnlySecondItemInitiallyExpanded = {
+  render: () => <SingleItemExampleInitiallyExpandedExample />,
+};
+
+export const MultipleItemsOpen = {
+  render: () => <MultipleItemsOpenExample />,
+};
+
+export const MultipleItemsOpenSecondThirdItemsInitiallyExpanded = {
+  render: () => <MultipleItemsOpenInitiallyExpandedExample />,
+};
+
+export const Custom = {
+  render: () => <CustomExample />,
+};
+
+export const CustomTitleTextStyle = {
+  render: () => <CustomTitleTextStyleExample />,
+};
+
+export const WithIcons = {
+  render: () => <WithIconsExample />,
+};
+
+export const WithBoldTitles = {
+  render: () => <WithBoldTitlesExample />,
+};
+
+export const WithDarkBackground = {
+  render: () => <WithDarkBackgroundExample />,
+};
+
+export const WithContent = {
+  render: () => <WithSeoContentExample />,
+};
+
+export const WithSeoContentOnDark = {
+  render: () => <WithSeoContentOnDarkExample />,
+};
+
+export const WithoutDivider = {
+  render: () => <SingleItemExampleWithoutDivider />,
+};
+
+export const WithoutDividerOnDark = {
+  render: () => <SingleItemExampleWithoutDividerOnDark />,
+};
+
+export const VisualTest = {
+  render: () => <SingleItemExample />,
+};
+
+export const VisualTestOnDark = {
+  render: () => <WithDarkBackgroundExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <SingleItemExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
