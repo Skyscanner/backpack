@@ -16,21 +16,39 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkPagination from '../../packages/bpk-component-pagination';
+import BpkPagination from './BpkPagination';
 
-class PaginationContainer extends Component {
-  constructor(props) {
-    super();
+import type { Meta } from '@storybook/react';
+
+// @ts-expect-error Untyped import
+
+type PaginationContainerProps = {
+  selectedPageIndex?: number;
+  pageCount: number;
+  visibleRange?: number;
+};
+
+type PaginationContainerState = {
+  pageIndex: number;
+};
+
+class PaginationContainer extends Component<PaginationContainerProps, PaginationContainerState> {
+  static defaultProps = {
+    visibleRange: 3,
+    selectedPageIndex: 0,
+  };
+
+  constructor(props: PaginationContainerProps) {
+    super(props);
 
     this.state = {
-      pageIndex: props.selectedPageIndex,
+      pageIndex: props.selectedPageIndex || 0,
     };
   }
 
-  handleChange(pageIndex) {
+  handleChange(pageIndex: number) {
     this.setState({ pageIndex });
   }
 
@@ -42,14 +60,14 @@ class PaginationContainer extends Component {
         <BpkPagination
           pageCount={pageCount}
           selectedPageIndex={this.state.pageIndex}
-          onPageChange={(pageIndex) => {
+          onPageChange={(pageIndex: number) => {
             this.handleChange(pageIndex);
           }}
           previousLabel="previous"
           nextLabel="next"
           visibleRange={visibleRange}
           paginationLabel="Pagination Navigation"
-          pageLabel={(page, isSelected) =>
+          pageLabel={(page: number, isSelected: boolean) =>
             `Go to page ${page}${
               isSelected ? ', this is the current page' : ''
             }.`
@@ -59,16 +77,6 @@ class PaginationContainer extends Component {
     );
   }
 }
-PaginationContainer.propTypes = {
-  selectedPageIndex: PropTypes.number,
-  pageCount: PropTypes.number.isRequired,
-  visibleRange: PropTypes.number,
-};
-
-PaginationContainer.defaultProps = {
-  visibleRange: 3,
-  selectedPageIndex: 0,
-};
 
 const DefaultPaginationExample = () => <PaginationContainer pageCount={20} />;
 
@@ -88,11 +96,44 @@ const VisibleRangeExample = () => (
   <PaginationContainer pageCount={20} visibleRange={5} selectedPageIndex={6} />
 );
 
-export {
-  DefaultPaginationExample,
-  FivePagesPaginationExample,
-  LargePagesPaginationExample,
-  TwoPagesPaginationExample,
-  SinglePaginationExample,
-  VisibleRangeExample,
+const meta = {
+  title: 'bpk-component-pagination',
+  component: BpkPagination,
+} satisfies Meta;
+
+export default meta;
+
+export const PaginationDefault = {
+  render: () => <DefaultPaginationExample />,
+};
+
+export const Pagination5VisiblePages = {
+  render: () => <FivePagesPaginationExample />,
+};
+
+export const PaginationManyPages = {
+  render: () => <LargePagesPaginationExample />,
+};
+
+export const Pagination2Pages = {
+  render: () => <TwoPagesPaginationExample />,
+};
+
+export const PaginationSinglePage = {
+  render: () => <SinglePaginationExample />,
+};
+
+export const PaginationVisibleExample = {
+  render: () => <VisibleRangeExample />,
+};
+
+export const VisualTest = {
+  render: () => <DefaultPaginationExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DefaultPaginationExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

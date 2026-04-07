@@ -16,15 +16,8 @@
  * limitations under the License.
  */
 
-/* @flow strict */
 
-import BpkStarRating, {
-  BpkInteractiveStarRating,
-  BpkStar,
-  withInteractiveStarRatingState,
-  STAR_TYPES,
-  ROUNDING_TYPES,
-} from '../../packages/bpk-component-star-rating';
+import { action } from '../../../examples/bpk-storybook-utils';
 import {
   BpkTable,
   BpkTableBody,
@@ -32,14 +25,21 @@ import {
   BpkTableCell,
   BpkTableHead,
   BpkTableHeadCell,
-} from '../../packages/bpk-component-table';
-import { action } from '../bpk-storybook-utils';
+} from '../../bpk-component-table';
+// @ts-expect-error Untyped import
+// @ts-expect-error Untyped import
+import { BpkStar, STAR_TYPES, ROUNDING_TYPES, BpkInteractiveStarRating, withInteractiveStarRatingState } from '../index';
+
+// @ts-expect-error Untyped import
+import BpkStarRating from './BpkStarRating';
+
+import type { Meta } from '@storybook/react';
 
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
 );
-const StarRating = (props) => (
-  <BpkStarRating ratingLabel={(r, m) => `${r} out of ${m} stars`} {...props} />
+const StarRating = (props: { rating: number; large?: boolean; extraLarge?: boolean; rounding?: string }) => (
+  <BpkStarRating ratingLabel={(r: number, m: number) => `${r} out of ${m} stars`} {...props} />
 );
 
 const FullExample = () => (
@@ -177,7 +177,7 @@ const InteractiveExample = () => (
   <div>
     <InteractiveStarRating
       id="small-star-rating"
-      getStarLabel={(rating, maxRating) =>
+      getStarLabel={(rating: number, maxRating: number) =>
         `${rating} out of ${maxRating} stars`
       }
       onRatingSelect={action('rating selected')}
@@ -185,7 +185,7 @@ const InteractiveExample = () => (
     <br />
     <InteractiveStarRating
       id="large-star-rating"
-      getStarLabel={(rating, maxRating) =>
+      getStarLabel={(rating: number, maxRating: number) =>
         `${rating} out of ${maxRating} stars`
       }
       onRatingSelect={action('large rating selected')}
@@ -194,7 +194,7 @@ const InteractiveExample = () => (
     <br />
     <InteractiveStarRating
       id="extra-large-star-rating"
-      getStarLabel={(rating, maxRating) =>
+      getStarLabel={(rating: number, maxRating: number) =>
         `${rating} out of ${maxRating} stars`
       }
       onRatingSelect={action('extra large rating selected')}
@@ -216,16 +216,60 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  FullExample,
-  FullStarsExample,
-  EmptyStarsExample,
-  ThreeStarsExample,
-  ThreeAndAHalfStarsExample,
-  ThreePointThreeStarsExample,
-  ThreePointEightStarsExample,
-  ThreePointThreeStarsRoundedExample,
-  ThreePointEightStarsRoundedExample,
-  InteractiveExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-star-rating',
+  component: BpkStarRating,
+} satisfies Meta;
+
+export default meta;
+
+export const BpkStarExamples = {
+  render: () => <FullExample />,
+};
+
+export const FullStars = {
+  render: () => <FullStarsExample />,
+};
+
+export const EmptyStars = {
+  render: () => <EmptyStarsExample />,
+};
+
+export const ThreeStars = {
+  render: () => <ThreeStarsExample />,
+};
+
+export const ThreeAndAHalfStars = {
+  render: () => <ThreeAndAHalfStarsExample />,
+};
+
+export const ThreePointThreeStars = {
+  render: () => <ThreePointThreeStarsExample />,
+};
+
+export const ThreePointEightStars = {
+  render: () => <ThreePointEightStarsExample />,
+};
+
+export const ThreePointThreeStarsRounded = {
+  render: () => <ThreePointThreeStarsRoundedExample />,
+};
+
+export const ThreePointEightStarsRounded = {
+  render: () => <ThreePointEightStarsRoundedExample />,
+};
+
+export const Interactive = {
+  render: () => <InteractiveExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

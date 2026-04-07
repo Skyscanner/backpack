@@ -21,7 +21,10 @@ import type { ReactNode } from 'react';
 import BpkPriceRange, {
   type BpkPriceRangeProps,
   MARKER_DISPLAY_TYPES,
-} from '../../packages/bpk-component-price-range';
+} from './BpkPriceRange';
+
+import type { Meta } from '@storybook/react';
+
 
 const segments: BpkPriceRangeProps['segments'] = {
   low: {
@@ -75,18 +78,6 @@ const DotMarkerHighExample = () => (
   <Wrapper>
     <BpkPriceRange
       marker={{ price: '£300', percentage: 90, type: MARKER_DISPLAY_TYPES.DOT }}
-      segments={segments}
-    />
-  </Wrapper>
-);
-
-const BubbleMarkerDefaultTypeExample = () => (
-  <Wrapper isLarge>
-    <BpkPriceRange
-      marker={{
-        price: '£150',
-        percentage: 50,
-      }}
       segments={segments}
     />
   </Wrapper>
@@ -158,7 +149,6 @@ const MixedExample = () => (
     <DotMarkerHighExample />
 
     <h4>Use case 2: Bubble marker (boundaries shown)</h4>
-    <BubbleMarkerDefaultTypeExample />
     <BubbleMarkerLowExample />
     <BubbleMarkerMediumExample />
     <BubbleMarkerHighExample />
@@ -169,15 +159,52 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DotMarkerLowExample,
-  DotMarkerMediumExample,
-  DotMarkerHighExample,
-  BubbleMarkerDefaultTypeExample,
-  BubbleMarkerLowExample,
-  BubbleMarkerMediumExample,
-  BubbleMarkerHighExample,
-  BubbleMarkerVeryLargeExample,
-  NoMarkerExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-price-range',
+  component: BpkPriceRange,
+} satisfies Meta;
+
+export default meta;
+
+export const DotMarkerLow = {
+  render: () => <DotMarkerLowExample />,
+};
+
+export const DotMarkerMedium = {
+  render: () => <DotMarkerMediumExample />,
+};
+
+export const DotMarkerHigh = {
+  render: () => <DotMarkerHighExample />,
+};
+
+export const BubbleMarkerLow = {
+  render: () => <BubbleMarkerLowExample />,
+};
+
+export const BubbleMarkerMedium = {
+  render: () => <BubbleMarkerMediumExample />,
+};
+
+export const BubbleMarkerHigh = {
+  render: () => <BubbleMarkerHighExample />,
+};
+
+export const BubbleMarkerVeryLarge = {
+  render: () => <BubbleMarkerVeryLargeExample />,
+};
+
+export const NoMarker = {
+  render: () => <NoMarkerExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

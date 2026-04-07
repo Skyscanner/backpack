@@ -16,8 +16,13 @@
  * limitations under the License.
  */
 
-import NewWindowIcon from '../../packages/bpk-component-icon/sm/new-window';
-import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
+
+import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
+
+// @ts-expect-error Untyped import
+import BpkPrice, { SIZES, ALIGNS } from './BpkPrice';
+
+import type { Meta } from '@storybook/react';
 
 const XSmallExample = () => <BpkPrice size={SIZES.xsmall} price="£1,830" />;
 
@@ -358,47 +363,184 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  XSmallExample,
-  XSmallWithTrailingTextExample,
-  XSmallWithLeadingAndTrailingTextExample,
-  XSmallWithPreviousPriceExample,
-  XSmallWithPreviousPriceLeadingTextExample,
-  XSmallRightExample,
-  XSmallRightWithTrailingTextExample,
-  XSmallRightWithLeadingandTrailingTextExample,
-  SmallExample,
-  SmallWithTrailingTextExample,
-  SmallWithLeadingAndTrailingTextExample,
-  SmallWithPreviousPriceExample,
-  SmallWithPreviousPriceLeadingTextExample,
-  SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample,
-  SmallWithDataAttributeExample,
-  SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample,
-  SmallRightExample,
-  SmallRightWithTrailingTextExample,
-  SmallRightWithLeadingandTrailingTextExample,
-  SmallRightWithPreviousPriceExample,
-  SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
-  MediumExample,
-  MediumWithTrailingTextExample,
-  MediumWithLeadingAndTrailingTextExample,
-  MediumWithPreviousPriceExample,
-  MediumWithPreviousPriceLeadingTextExample,
-  MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample,
-  MediumWithPreviousPriceLeadingAndTrailingTextAndIconExample,
-  MediumWithDataAttributeExample,
-  MediumRightExample,
-  MediumRightWithTrailingTextExample,
-  MediumRightWithLeadingandTrailingTextExample,
-  MediumRightWithPreviousPriceExample,
-  MediumRightWithPreviousPriceLeadingAndTrailingTextAndIconExample,
-  LargeExample,
-  LargeWithTrailingTextExample,
-  LargeWithLeadingAndTrailingTextExample,
-  LargeWithPreviousPriceExample,
-  LargeWithPreviousPriceLeadingTextExample,
-  LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample,
-  LargeLongPriceExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-price',
+  component: BpkPrice,
+} satisfies Meta;
+
+export default meta;
+
+export const XSmall = {
+  render: () => <XSmallExample />,
+};
+
+export const XSmallWithTrailingText = {
+  render: () => <XSmallWithTrailingTextExample />,
+};
+
+export const XSmallWithLeadingAndTrailingText = {
+  render: () => <XSmallWithLeadingAndTrailingTextExample />,
+};
+
+export const XSmallWithPreviousPrice = {
+  render: () => <XSmallWithPreviousPriceExample />,
+};
+
+export const XSmallWithPreviousPriceLeadingText = {
+  render: () => <XSmallWithPreviousPriceLeadingTextExample />,
+};
+
+export const XSmallRight = {
+  render: () => <XSmallRightExample />,
+};
+
+export const XSmallRightWithTrailingText = {
+  render: () => <XSmallRightWithTrailingTextExample />,
+};
+
+export const XSmallRightWithLeadingandTrailingText = {
+  render: () => <XSmallRightWithLeadingandTrailingTextExample />,
+};
+
+export const Small = {
+  render: () => <SmallExample />,
+};
+
+export const SmallWithTrailingText = {
+  render: () => <SmallWithTrailingTextExample />,
+};
+
+export const SmallWithLeadingAndTrailingText = {
+  render: () => <SmallWithLeadingAndTrailingTextExample />,
+};
+
+export const SmallWithPreviousPrice = {
+  render: () => <SmallWithPreviousPriceExample />,
+};
+
+export const SmallWithPreviousPriceLeadingText = {
+  render: () => <SmallWithPreviousPriceLeadingTextExample />,
+};
+
+export const SmallWithPreviousPriceLeadingAndTrailingTextAndIcon = {
+  render: () => <SmallWithPreviousPriceLeadingAndTrailingTextAndIconExample />,
+};
+
+export const SmallWithDataAttribute = {
+  render: () => <SmallWithDataAttributeExample />,
+};
+
+export const SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttribute = {
+  render: () => <SmallWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample />,
+};
+
+export const SmallRight = {
+  render: () => <SmallRightExample />,
+};
+
+export const SmallRightWithTrailingText = {
+  render: () => <SmallRightWithTrailingTextExample />,
+};
+
+export const SmallRightWithLeadingandTrailingText = {
+  render: () => <SmallRightWithLeadingandTrailingTextExample />,
+};
+
+export const SmallRightWithPreviousPrice = {
+  render: () => <SmallRightWithPreviousPriceExample />,
+};
+
+export const SmallRightWithPreviousPriceLeadingAndTrailingTextAndIcon = {
+  render: () => <SmallRightWithPreviousPriceLeadingAndTrailingTextAndIconExample />,
+};
+
+export const Medium = {
+  render: () => <MediumExample />,
+};
+
+export const MediumWithTrailingText = {
+  render: () => <MediumWithTrailingTextExample />,
+};
+
+export const MediumWithLeadingAndTrailingText = {
+  render: () => <MediumWithLeadingAndTrailingTextExample />,
+};
+
+export const MediumWithPreviousPrice = {
+  render: () => <MediumWithPreviousPriceExample />,
+};
+
+export const MediumWithPreviousPriceLeadingText = {
+  render: () => <MediumWithPreviousPriceLeadingTextExample />,
+};
+
+export const MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttribute = {
+  render: () => <MediumWithPreviousPriceLeadingAndTrailingTextAndDataAttributeExample />,
+};
+
+export const MediumWithPreviousPriceLeadingAndTrailingTextAndIcon = {
+  render: () => <MediumWithPreviousPriceLeadingAndTrailingTextAndIconExample />,
+};
+
+export const MediumWithDataAttribute = {
+  render: () => <MediumWithDataAttributeExample />,
+};
+
+export const MediumRight = {
+  render: () => <MediumRightExample />,
+};
+
+export const MediumRightWithTrailingText = {
+  render: () => <MediumRightWithTrailingTextExample />,
+};
+
+export const MediumRightWithLeadingandTrailingText = {
+  render: () => <MediumRightWithLeadingandTrailingTextExample />,
+};
+
+export const MediumRightWithPreviousPrice = {
+  render: () => <MediumRightWithPreviousPriceExample />,
+};
+
+export const MediumRightWithPreviousPriceLeadingAndTrailingTextAndIcon = {
+  render: () => <MediumRightWithPreviousPriceLeadingAndTrailingTextAndIconExample />,
+};
+
+export const Large = {
+  render: () => <LargeExample />,
+};
+
+export const LargeWithTrailingText = {
+  render: () => <LargeWithTrailingTextExample />,
+};
+
+export const LargeWithLeadingAndTrailingText = {
+  render: () => <LargeWithLeadingAndTrailingTextExample />,
+};
+
+export const LargeWithPreviousPrice = {
+  render: () => <LargeWithPreviousPriceExample />,
+};
+
+export const LargeWithPreviousPriceLeadingText = {
+  render: () => <LargeWithPreviousPriceLeadingTextExample />,
+};
+
+export const LargeWithPreviousPriceLeadingAndTrailingTextAndIcon = {
+  render: () => <LargeWithPreviousPriceLeadingAndTrailingTextAndIconExample />,
+};
+
+export const LargeLongPrice = {
+  render: () => <LargeLongPriceExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

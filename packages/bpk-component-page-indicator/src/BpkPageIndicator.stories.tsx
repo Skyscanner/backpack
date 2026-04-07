@@ -20,15 +20,16 @@ import { useState } from 'react';
 
 import { backgroundElevation03DarkColor } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkBackgroundImage } from '../../packages/bpk-component-image';
-import BpkPageIndicator, {
-  VARIANT,
-} from '../../packages/bpk-component-page-indicator';
-import { cssModules } from '../../packages/bpk-react-utils';
 
-import type { BpkPageIndicatorProps } from '../../packages/bpk-component-page-indicator';
+import { BpkBackgroundImage } from '../../bpk-component-image';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
+
+import type { BpkPageIndicatorProps } from './BpkPageIndicator';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkPageIndicator.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -70,11 +71,12 @@ const OverImageExample = () => (
     }}
     src={image}
   >
-    <PageIndicatorContainer
-      totalIndicators={3}
-      variant={VARIANT.overImage}
-      className={getClassName('bpk-page-indicator-examples__container')}
-    />
+    <div className={getClassName('bpk-page-indicator-examples__container')}>
+      <PageIndicatorContainer
+        totalIndicators={3}
+        variant={VARIANT.overImage}
+      />
+    </div>
   </BpkBackgroundImage>
 );
 
@@ -115,11 +117,40 @@ const VisualTestExample = () => (
   </>
 );
 
-export {
-  DefaultExample,
-  ThreePagesExample,
-  OverImageExample,
-  WithNavExample,
-  WithNavOverImageSpacedExample,
-  VisualTestExample,
+const meta = {
+  title: 'bpk-component-page-indicator',
+  component: BpkPageIndicator,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const ThreePages = {
+  render: () => <ThreePagesExample />,
+};
+
+export const OverImage = {
+  render: () => <OverImageExample />,
+};
+
+export const WithNav = {
+  render: () => <WithNavExample />,
+};
+
+export const WithNavOverImageSpaced = {
+  render: () => <WithNavOverImageSpacedExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualTestExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

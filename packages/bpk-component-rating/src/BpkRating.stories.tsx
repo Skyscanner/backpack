@@ -15,16 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkRating, {
-  RATING_SIZES,
-  RATING_SCALES,
-} from '../../packages/bpk-component-rating';
-import BpkStarRating from '../../packages/bpk-component-star-rating';
-import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkStarRating from '../../bpk-component-star-rating';
+import { cssModules } from '../../bpk-react-utils';
+
+import BpkRating, { RATING_SIZES, RATING_SCALES } from './BpkRating';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkRating.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -360,12 +360,44 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  LargeSizeExample,
-  ShowScaleExample,
-  TitleOnlyExample,
-  SubtitleOnlyExample,
-  ZeroToTenScaleExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-rating',
+  component: BpkRating,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const LargeSizeRatings = {
+  render: () => <LargeSizeExample />,
+};
+
+export const ShowScaleRatings = {
+  render: () => <ShowScaleExample />,
+};
+
+export const TitleOnlyRatings = {
+  render: () => <TitleOnlyExample />,
+};
+
+export const SubtitleOnlyRatings = {
+  render: () => <SubtitleOnlyExample />,
+};
+
+export const ZeroToTenScaleRatings = {
+  render: () => <ZeroToTenScaleExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
