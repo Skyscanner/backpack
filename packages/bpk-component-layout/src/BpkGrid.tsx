@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Grid } from '@chakra-ui/react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
@@ -24,46 +26,41 @@ import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
-export const BpkGrid = ({
-  align,
-  autoColumns,
-  autoFlow,
-  autoRows,
-  children,
-  column,
-  inline,
-  justify,
-  row,
-  templateAreas,
-  templateColumns,
-  templateRows,
-  ...props
-}: BpkGridProps) => {
-  const processedProps = processBpkComponentProps(props, {
-    component: 'BpkGrid',
-    responsiveProps: {
-      justifyContent: justify,
-      alignItems: align,
-      gridTemplateColumns: templateColumns,
-      gridTemplateRows: templateRows,
-      gridTemplateAreas: templateAreas,
-      gridAutoFlow: autoFlow,
-      gridAutoRows: autoRows,
-      gridAutoColumns: autoColumns,
-      gridColumn: column,
-      gridRow: row,
-    },
-  });
+export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
+  (
+    { align, autoColumns, autoFlow, autoRows, children, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },
+    ref,
+  ) => {
+    const processedProps = processBpkComponentProps(props, {
+      component: 'BpkGrid',
+      responsiveProps: {
+        textStyle,
+        justifyContent: justify,
+        alignItems: align,
+        gridTemplateColumns: templateColumns,
+        gridTemplateRows: templateRows,
+        gridTemplateAreas: templateAreas,
+        gridAutoFlow: autoFlow,
+        gridAutoRows: autoRows,
+        gridAutoColumns: autoColumns,
+        gridColumn: column,
+        gridRow: row,
+      },
+    });
 
-  return (
-    <Grid
-      {...getDataComponentAttribute('Grid')}
-      {...processedProps}
-      display={inline ? 'inline-grid' : undefined}
-    >
-      {children}
-    </Grid>
-  );
-};
+    return (
+      <Grid
+        ref={ref}
+        {...getDataComponentAttribute('Grid')}
+        {...processedProps}
+        display={inline ? 'inline-grid' : undefined}
+      >
+        {children}
+      </Grid>
+    );
+  },
+);
+
+BpkGrid.displayName = 'BpkGrid';
 
 export type { BpkGridProps };

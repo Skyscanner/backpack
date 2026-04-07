@@ -78,26 +78,26 @@
   }
 
   &__critical-icon {
-    fill: tokens.$bpk-private-info-banner-on-contrast-day;
+    fill: tokens.$bpk-text-primary-inverse-day;
   }
 
   &--critical {
     background-color: tokens.$bpk-private-info-banner-error-day;
-    color: tokens.$bpk-private-info-banner-on-contrast-day;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 
   &--critical &__message {
-    color: tokens.$bpk-private-info-banner-on-contrast-day;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 
   &--critical &__toggle-button {
-    fill: tokens.$bpk-private-info-banner-on-contrast-day;
+    fill: tokens.$bpk-text-primary-inverse-day;
   }
 
   &--critical &__children-container,
   &--critical &__children-container--with-action,
   &--critical &__children-container--no-action {
-    color: tokens.$bpk-private-info-banner-on-contrast-day;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 
   &__toggle-button {

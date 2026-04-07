@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { createRef } from 'react';
+
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkFlex } from './BpkFlex';
@@ -53,6 +55,67 @@ describe('BpkFlex', () => {
     expect(container.firstChild).toHaveStyle('align-items: center');
     expect(container.firstChild).toHaveStyle('flex-wrap: wrap');
     expect(container.firstChild).toHaveStyle(`gap: .5rem`);
+  });
+
+  it('forwards ref to the underlying DOM element', () => {
+    const ref = createRef<HTMLDivElement>();
+    render(
+      <BpkProvider>
+        <BpkFlex ref={ref}>Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+  });
+
+  it('passes tabIndex to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex tabIndex={0}>Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.firstChild).toHaveAttribute('tabindex', '0');
+  });
+
+  it('passes role to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex role="list">Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'list');
+  });
+
+  it('calls onClick when clicked', () => {
+    const handleClick = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex onClick={handleClick}>Clickable</BpkFlex>
+      </BpkProvider>,
+    );
+    fireEvent.click(getByText('Clickable'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex role="button" tabIndex={0} onKeyDown={handleKeyDown}>
+          Interactive
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders when textStyle is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex textStyle="body-default">Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(getByText('Content')).toBeInTheDocument();
   });
 
   it('supports responsive direction', () => {

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkGridItem } from './BpkGridItem';
@@ -50,6 +50,15 @@ describe('BpkGridItem', () => {
     expect(container.firstChild).toHaveStyle('grid-row: span 3/span 3');
   });
 
+  it('renders when textStyle is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkGridItem textStyle="body-default">Item</BpkGridItem>
+      </BpkProvider>,
+    );
+    expect(getByText('Item')).toBeInTheDocument();
+  });
+
   it('supports Backpack spacing tokens', () => {
     const { container } = render(
       <BpkProvider>
@@ -58,5 +67,34 @@ describe('BpkGridItem', () => {
     );
 
     expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('supports interactive props: tabIndex, role, onClick', () => {
+    const handleClick = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkGridItem role="button" tabIndex={0} onClick={handleClick}>
+          Clickable
+        </BpkGridItem>
+      </BpkProvider>,
+    );
+    const element = getByText('Clickable');
+    expect(element).toHaveAttribute('role', 'button');
+    expect(element).toHaveAttribute('tabindex', '0');
+    fireEvent.click(element);
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkGridItem role="button" tabIndex={0} onKeyDown={handleKeyDown}>
+          Interactive
+        </BpkGridItem>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
   });
 });

@@ -18,12 +18,11 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
-import type { ChakraBreakpointKey } from './tokens';
-
 // Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
+import * as bpkTokens from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-const bpkTokens = require('@skyscanner/bpk-foundations-web/tokens/base.es6');
+import type { ChakraBreakpointKey } from './tokens';
 
 // NOTE:
 // We intentionally do not use the raw breakpoint *values* from foundations here.
@@ -194,6 +193,45 @@ export function getShadowValue(token: string): string | undefined {
   return shadowMap[token];
 }
 
+/**
+ * Maps Backpack text style tokens to Chakra UI textStyles.
+ * CSS property values are sourced from @skyscanner/bpk-foundations-web/tokens/base.es6.
+ * Each entry mirrors the corresponding SCSS mixin in bpk-mixins/_typography.scss.
+ */
+const textStylesMap: Record<string, { value: Record<string, string> }> = {
+  xs: { value: { fontSize: bpkTokens.fontSizeXs, lineHeight: bpkTokens.lineHeightXs, fontWeight: bpkTokens.fontWeightBook } },
+  sm: { value: { fontSize: bpkTokens.fontSizeSm, lineHeight: bpkTokens.lineHeightSm, fontWeight: bpkTokens.fontWeightBook } },
+  base: { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBase, fontWeight: bpkTokens.fontWeightBook } },
+  lg: { value: { fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
+  xl: { value: { fontSize: bpkTokens.fontSizeXl, lineHeight: bpkTokens.lineHeightXl, fontWeight: bpkTokens.fontWeightBook } },
+  xxl: { value: { fontSize: bpkTokens.fontSizeXxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightBold } },
+  xxxl: { value: { fontSize: bpkTokens.fontSizeXxxl, lineHeight: bpkTokens.lineHeightXxxl, fontWeight: bpkTokens.fontWeightBold } },
+  xxxxl: { value: { fontSize: bpkTokens.fontSizeXxxxl, lineHeight: bpkTokens.lineHeightXxxxl, fontWeight: bpkTokens.fontWeightBold, letterSpacing: bpkTokens.letterSpacingTight } },
+  xxxxxl: { value: { fontSize: bpkTokens.fontSizeXxxxxl, lineHeight: bpkTokens.lineHeightXxxxxl, fontWeight: bpkTokens.fontWeightBold, letterSpacing: bpkTokens.letterSpacingTight } },
+  caption: { value: { fontSize: bpkTokens.fontSizeXs, lineHeight: bpkTokens.lineHeightXs, fontWeight: bpkTokens.fontWeightBook } },
+  footnote: { value: { fontSize: bpkTokens.fontSizeSm, lineHeight: bpkTokens.lineHeightSm, fontWeight: bpkTokens.fontWeightBook } },
+  'label-1': { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBase, fontWeight: bpkTokens.fontWeightBold } },
+  'label-2': { value: { fontSize: bpkTokens.fontSizeSm, lineHeight: bpkTokens.lineHeightSm, fontWeight: bpkTokens.fontWeightBold } },
+  'label-3': { value: { fontSize: bpkTokens.fontSizeXs, lineHeight: bpkTokens.lineHeightXs, fontWeight: bpkTokens.fontWeightBold } },
+  'body-default': { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBase, fontWeight: bpkTokens.fontWeightBook } },
+  'body-longform': { value: { fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
+  subheading: { value: { fontSize: bpkTokens.fontSizeXl, lineHeight: bpkTokens.lineHeightXl, fontWeight: bpkTokens.fontWeightBook } },
+  'heading-1': { value: { fontSize: bpkTokens.fontSizeXxxl, lineHeight: bpkTokens.lineHeightXxxl, fontWeight: bpkTokens.fontWeightBold } },
+  'heading-2': { value: { fontSize: bpkTokens.fontSizeXxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightBold } },
+  'heading-3': { value: { fontSize: bpkTokens.fontSizeXl, lineHeight: bpkTokens.lineHeightXlTight, fontWeight: bpkTokens.fontWeightBold } },
+  'heading-4': { value: { fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLgTight, fontWeight: bpkTokens.fontWeightBold } },
+  'heading-5': { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBaseTight, fontWeight: bpkTokens.fontWeightBold } },
+  'hero-1': { value: { fontSize: bpkTokens.fontSize8Xl, lineHeight: bpkTokens.lineHeight8Xl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
+  'hero-2': { value: { fontSize: bpkTokens.fontSize7Xl, lineHeight: bpkTokens.lineHeight7Xl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
+  'hero-3': { value: { fontSize: bpkTokens.fontSize6Xl, lineHeight: bpkTokens.lineHeight6Xl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
+  'hero-4': { value: { fontSize: bpkTokens.fontSizeXxxxxl, lineHeight: bpkTokens.lineHeightXxxxxl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
+  'hero-5': { value: { fontSize: bpkTokens.fontSizeXxxxl, lineHeight: bpkTokens.lineHeightXxxl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
+  'hero-6': { value: { fontSize: bpkTokens.fontSizeXxxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
+  'editorial-1': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeXxxxl, lineHeight: bpkTokens.lineHeightXxxxl, fontWeight: bpkTokens.fontWeightLight } },
+  'editorial-2': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeXxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightLight } },
+  'editorial-3': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
+};
+
 export function createBpkConfig() {
   // Convert breakpoint map to Chakra UI format
   // Breakpoints in Chakra v3 are typically simple strings in the breakpoints object
@@ -212,6 +250,7 @@ export function createBpkConfig() {
       tokens: {
         spacing: spacingMap,
       },
+      textStyles: textStylesMap,
       breakpoints: chakraBreakpoints,
     },
   });
