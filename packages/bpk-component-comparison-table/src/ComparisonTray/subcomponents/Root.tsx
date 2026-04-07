@@ -56,14 +56,14 @@ function Root({
               ),
             )}
           </div>
-          <button
-            type="button"
-            className={getClassName('bpk-comparison-tray__compare-button')}
+          <BpkButton
+            type={BUTTON_TYPES.linkOnDark}
+            implicit
             disabled={items.length <= 1}
             onClick={onCompare}
           >
             {compareLabel}
-          </button>
+          </BpkButton>
         </div>
       </BpkCardV2.Root>
     </div>

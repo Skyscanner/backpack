@@ -107,28 +107,6 @@
   }
 }
 
-// Compare trigger button — Label 1 typography, white text, no chrome
-.bpk-comparison-tray__compare-button {
-  padding: 0;
-  border: none;
-  background: none;
-  color: tokens.$bpk-text-primary-inverse-day;
-  white-space: nowrap;
-  cursor: pointer;
-
-  @include typography.bpk-label-1;
-
-  &:disabled {
-    color: tokens.$bpk-text-disabled-on-dark-day;
-    cursor: default;
-    pointer-events: none;
-  }
-
-  &:focus-visible {
-    @include utils.bpk-focus-indicator;
-  }
-}
-
 // Empty slot — dashed border placeholder
 .bpk-comparison-tray__item-placeholder {
   width: 62 * tokens.$bpk-one-pixel-rem;
