@@ -33,7 +33,7 @@ export interface BpkProviderProps {
  *
  * Uses `defaultBaseConfig` (conditions + utilities only) instead of
  * `defaultConfig` to avoid bundling ~141KB of unused component recipes.
- * See: https://chakra-ui.com/docs/guides/bundle-optimization
+ * See: https://chakra-ui.com/guides/component-bundle-optimization
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
 
