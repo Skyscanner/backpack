@@ -24,16 +24,20 @@ import {
   corePrimaryDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import { BpkProvider } from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../bpk-theming';
+
 import BpkChatbotInput, {
   CHATBOT_INPUT_TYPES,
   themeAttributes,
-} from '../../packages/bpk-component-chatbot-input';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkThemeProvider from '../../packages/bpk-theming';
+} from './BpkChatbotInput';
 
-import STYLES from './examples.module.scss';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkChatbotInput.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -71,13 +75,13 @@ const ChatbotInputWithState = ({
   );
 };
 
-export const ComposerExample = () => (
+const ComposerExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.COMPOSER} />
   </div>
 );
 
-export const ComposerWithValueExample = () => (
+const ComposerWithValueExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
@@ -86,7 +90,7 @@ export const ComposerWithValueExample = () => (
   </div>
 );
 
-export const ComposerSendingExample = () => (
+const ComposerSendingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
@@ -96,7 +100,7 @@ export const ComposerSendingExample = () => (
   </div>
 );
 
-export const ComposerOver500Example = () => (
+const ComposerOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
@@ -105,13 +109,13 @@ export const ComposerOver500Example = () => (
   </div>
 );
 
-export const CarsExample = () => (
+const CarsExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS} />
   </div>
 );
 
-export const CarsWithValueExample = () => (
+const CarsWithValueExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS}
@@ -120,7 +124,7 @@ export const CarsWithValueExample = () => (
   </div>
 );
 
-export const CarsPollingExample = () => (
+const CarsPollingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS}
@@ -130,7 +134,7 @@ export const CarsPollingExample = () => (
   </div>
 );
 
-export const CarsSendingExample = () => (
+const CarsSendingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS}
@@ -140,7 +144,7 @@ export const CarsSendingExample = () => (
   </div>
 );
 
-export const CarsOver500Example = () => (
+const CarsOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS}
@@ -149,13 +153,13 @@ export const CarsOver500Example = () => (
   </div>
 );
 
-export const CarsComposerExample = () => (
+const CarsComposerExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER} />
   </div>
 );
 
-export const CarsComposerWithValueExample = () => (
+const CarsComposerWithValueExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
@@ -164,7 +168,7 @@ export const CarsComposerWithValueExample = () => (
   </div>
 );
 
-export const CarsComposerPollingExample = () => (
+const CarsComposerPollingExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
@@ -174,7 +178,7 @@ export const CarsComposerPollingExample = () => (
   </div>
 );
 
-export const CarsComposerOver500Example = () => (
+const CarsComposerOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
@@ -183,15 +187,13 @@ export const CarsComposerOver500Example = () => (
   </div>
 );
 
-export const ThemedExample = () => (
+const ThemedExample = () => (
   <div>
-    <BpkText
-      tagName="p"
-      textStyle={TEXT_STYLES.label1}
-      className={getClassName('bpk-chatbot-input-examples__section-label')}
-    >
-      With theme override (pill border-radius + navy focus colour)
-    </BpkText>
+    <div className={getClassName('bpk-chatbot-input-examples__section-label')}>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+        With theme override (pill border-radius + navy focus colour)
+      </BpkText>
+    </div>
     <BpkThemeProvider
       theme={{
         chatbotInputBorderRadius: borderRadiusLg,
@@ -219,13 +221,11 @@ export const ThemedExample = () => (
       </div>
     </BpkThemeProvider>
 
-    <BpkText
-      tagName="p"
-      textStyle={TEXT_STYLES.label1}
-      className={getClassName('bpk-chatbot-input-examples__section-label')}
-    >
-      Default theme (no override)
-    </BpkText>
+    <div className={getClassName('bpk-chatbot-input-examples__section-label')}>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+        Default theme (no override)
+      </BpkText>
+    </div>
     <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
       <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
         {CHATBOT_INPUT_TYPES.COMPOSER}
@@ -247,7 +247,7 @@ export const ThemedExample = () => (
   </div>
 );
 
-export const MixedExample = () => (
+const MixedExample = () => (
   <div>
     <ComposerExample />
     <ComposerWithValueExample />
@@ -257,3 +257,84 @@ export const MixedExample = () => (
     <CarsComposerWithValueExample />
   </div>
 );
+
+const meta = {
+  title: 'bpk-component-chatbot-input',
+  component: BpkChatbotInput,
+  decorators: [
+    (Story: any) => (
+      <BpkProvider>
+        <Story />
+      </BpkProvider>
+    ),
+  ],
+} satisfies Meta;
+
+export default meta;
+
+export const Composer = {
+  render: () => <ComposerExample />,
+};
+
+export const ComposerWithValue = {
+  render: () => <ComposerWithValueExample />,
+};
+
+export const ComposerSending = {
+  render: () => <ComposerSendingExample />,
+};
+
+export const ComposerOver500 = {
+  render: () => <ComposerOver500Example />,
+};
+
+export const Cars = {
+  render: () => <CarsExample />,
+};
+
+export const CarsWithValue = {
+  render: () => <CarsWithValueExample />,
+};
+
+export const CarsPolling = {
+  render: () => <CarsPollingExample />,
+};
+
+export const CarsSending = {
+  render: () => <CarsSendingExample />,
+};
+
+export const CarsOver500 = {
+  render: () => <CarsOver500Example />,
+};
+
+export const CarsComposer = {
+  render: () => <CarsComposerExample />,
+};
+
+export const CarsComposerWithValue = {
+  render: () => <CarsComposerWithValueExample />,
+};
+
+export const CarsComposerOver500 = {
+  render: () => <CarsComposerOver500Example />,
+};
+
+export const CarsComposerPolling = {
+  render: () => <CarsComposerPollingExample />,
+};
+
+export const Themed = {
+  render: () => <ThemedExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
