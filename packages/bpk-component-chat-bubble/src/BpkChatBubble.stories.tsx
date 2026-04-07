@@ -26,7 +26,8 @@ import {
 } from '../../bpk-component-layout';
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkChatBubble, { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './BpkChatBubble';
+import BpkChatBubble from './BpkChatBubble';
+import { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './common-types';
 
 import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 import type { Meta } from '@storybook/react';

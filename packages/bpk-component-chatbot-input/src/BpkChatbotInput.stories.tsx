@@ -30,10 +30,9 @@ import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
-import BpkChatbotInput, {
-  CHATBOT_INPUT_TYPES,
-  themeAttributes,
-} from './BpkChatbotInput';
+import BpkChatbotInput from './BpkChatbotInput';
+import { CHATBOT_INPUT_TYPES } from './common-types';
+import themeAttributes from './themeAttributes';
 
 import type { Meta } from '@storybook/react';
 
