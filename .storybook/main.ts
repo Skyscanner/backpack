@@ -20,6 +20,7 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: [
+    '../packages/*/src/**/*.stories.@(ts|tsx)',
     '../examples/**/{stories,*.stories}.@(ts|tsx|js|jsx)',
   ],
   addons: [

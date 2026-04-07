@@ -16,8 +16,20 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/radii';
 
-.bpk-button-story-wrapper {
-  padding: tokens.bpk-spacing-sm() 0;
+.bpk-badge-layout {
+  &__container {
+    position: relative;
+    display: flex;
+    min-height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-lg();
+
+    &--light {
+      background-color: tokens.$bpk-canvas-contrast-day;
+
+      @include radii.bpk-border-radius-xs;
+    }
+  }
 }

@@ -16,26 +16,28 @@
  * limitations under the License.
  */
 
-import BpkButton, {
-  BUTTON_TYPES,
-  SIZE_TYPES,
-} from '../../packages/bpk-component-button';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
   withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import LargeLightningIcon from '../../packages/bpk-component-icon/lg/lightning';
-import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
-import SmallLightningIcon from '../../packages/bpk-component-icon/sm/lightning';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import { cssModules } from '../../packages/bpk-react-utils';
+} from '../../bpk-component-icon';
+import LargeLightningIcon from '../../bpk-component-icon/lg/lightning';
+import LargeLongArrowRightIcon from '../../bpk-component-icon/lg/long-arrow-right';
+import SmallLightningIcon from '../../bpk-component-icon/sm/lightning';
+import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
+import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkThemeProvider from '../../packages/bpk-theming';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+import BpkThemeProvider from '../../bpk-theming';
 
-import STYLES from './BpkButtonStory.module.scss';
+import BpkButton from './BpkButton';
+import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkButton.stories.module.scss';
 
 const RtlSmallLongArrowRightIcon = withRtlSupport(SmallLongArrowRightIcon);
 const RtlLargeLongArrowRightIcon = withRtlSupport(LargeLongArrowRightIcon);
@@ -54,7 +56,7 @@ type StoryProps = Omit<Parameters<typeof BpkButton>[0], 'children'> & {
   wrapped: typeof BpkButton;
 };
 
-const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
+const ButtonStory = ({ className = undefined, wrapped, ...rest }: StoryProps) => {
   const Wrapped = wrapped;
   return (
     <div
@@ -185,7 +187,6 @@ const ButtonStory = ({ className, wrapped, ...rest }: StoryProps) => {
   );
 };
 
-ButtonStory.defaultProps = { className: null };
 
 
 const PrimaryExample = (props: any) => (
@@ -487,20 +488,81 @@ const AnchorTagsExample = () => (
   </>
 );
 
-export {
-  PrimaryExample,
-  PrimaryOnDarkExample,
-  PrimaryOnLightExample,
-  SecondaryExample,
-  SecondaryOnDarkExample,
-  DestructiveExample,
-  FeaturedExample,
-  LinkExample,
-  LinkOnDarkExample,
-  LinksExamples,
-  MixedExample,
-  AnchorTagsExample,
-  FullWidthExample,
-  SubmitButtonExample,
-  ThemedBorderRadiusExample,
+const meta = {
+  title: 'bpk-component-button',
+  component: BpkButton,
+} satisfies Meta;
+
+export default meta;
+
+
+export const BpkButtonPrimary = {
+  render: () => <PrimaryExample />,
+};
+
+export const BpkButtonPrimaryOnDark = {
+  render: () => <PrimaryOnDarkExample />,
+};
+
+export const BpkButtonPrimaryOnLight = {
+  render: () => <PrimaryOnLightExample />,
+};
+
+export const BpkButtonSecondary = {
+  render: () => <SecondaryExample />,
+};
+
+export const BpkButtonSecondaryOnDark = {
+  render: () => <SecondaryOnDarkExample />,
+};
+
+export const BpkButtonDestructive = {
+  render: () => <DestructiveExample />,
+};
+
+export const BpkButtonFeatured = {
+  render: () => <FeaturedExample />,
+};
+
+export const BpkButtonLinkButton = {
+  render: () => <LinkExample />,
+};
+
+export const BpkButtonLinkOnDarkButton = {
+  render: () => <LinkOnDarkExample />,
+};
+
+export const BpkButtonLinks = {
+  render: () => <LinksExamples />,
+};
+
+export const Mixture = {
+  render: () => <MixedExample />,
+};
+
+export const AnchorTags = {
+  render: () => <AnchorTagsExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const SubmitButton = {
+  render: () => <SubmitButtonExample />,
+};
+
+export const FullWidth = {
+  render: () => <FullWidthExample />,
+};
+
+export const ThemedCornerRadius = {
+  render: () => <ThemedBorderRadiusExample />,
 };

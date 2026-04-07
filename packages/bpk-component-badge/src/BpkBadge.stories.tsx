@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
 import {
   coreAccentDay,
   coreEcoDay,
@@ -31,16 +33,36 @@ import {
   statusWarningSpotDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkBadge, { BADGE_TYPES } from '../../packages/bpk-component-badge';
-import BpkSmallExclamationIcon from '../../packages/bpk-component-icon/sm/exclamation';
-import BpkSmallHelpCircleIcon from '../../packages/bpk-component-icon/sm/help-circle';
-import BpkSmallTickIcon from '../../packages/bpk-component-icon/sm/tick-circle';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkThemeProvider from '../../packages/bpk-theming';
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation';
+import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
+import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
+import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+import BpkThemeProvider from '../../bpk-theming';
 
-import BadgeLayout from './BadgeLayout';
+import BpkBadge, { BADGE_TYPES } from './BpkBadge';
+
+import type { Meta } from '@storybook/react';
+
+import LAYOUT_STYLES from './BpkBadge.stories.module.scss';
+
+const getClassName = cssModules(LAYOUT_STYLES);
+
+type BadgeLayoutProps = {
+  docked?: string | null;
+  children: ReactNode;
+};
+
+const BadgeLayout = ({ children, docked = null }: BadgeLayoutProps) => {
+  const classNames = getClassName(
+    'bpk-badge-layout__container',
+    docked && 'bpk-badge-layout__container--light',
+  );
+
+  return <div className={classNames}>{children}</div>;
+};
 
 const DefaultExample = () => (
   <BadgeLayout>
@@ -296,21 +318,81 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  WarningExample,
-  SuccessExample,
-  CriticalExample,
-  InverseExample,
-  OutlineExample,
-  StrongExample,
-  BrandExample,
-  CenteredExample,
-  DockedLeadingExample,
-  DockedTrailingExample,
-  MixedExample,
-  ThemedCornerRadiusExample,
-  ThemedBackgroundColorExample,
-  ThemedIconColorExample,
-  ThemedTypographyExample,
+const meta = {
+  title: 'bpk-component-badge',
+  component: BpkBadge,
+} satisfies Meta;
+
+export default meta;
+
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Warning = {
+  render: () => <WarningExample />,
+};
+
+export const Success = {
+  render: () => <SuccessExample />,
+};
+
+export const Critical = {
+  render: () => <CriticalExample />,
+};
+
+export const Strong = {
+  render: () => <StrongExample />,
+};
+
+export const Brand = {
+  render: () => <BrandExample />,
+};
+
+export const Inverse = {
+  render: () => <InverseExample />,
+};
+
+export const Outline = {
+  render: () => <OutlineExample />,
+};
+
+export const Centered = {
+  render: () => <CenteredExample />,
+};
+
+export const DockedRight = {
+  render: () => <DockedTrailingExample />,
+};
+
+export const DockedLeft = {
+  render: () => <DockedLeadingExample />,
+};
+
+export const ThemedCornerRadius = {
+  render: () => <ThemedCornerRadiusExample />,
+};
+
+export const ThemedBackgroundColor = {
+  render: () => <ThemedBackgroundColorExample />,
+};
+
+export const ThemedIconColor = {
+  render: () => <ThemedIconColorExample />,
+};
+
+export const ThemedTypography = {
+  render: () => <ThemedTypographyExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
