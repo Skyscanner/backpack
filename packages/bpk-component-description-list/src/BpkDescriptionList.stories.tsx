@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
+import BpkDescriptionDetails from './BpkDescriptionDetails';
 import BpkDescriptionList from './BpkDescriptionList';
 import BpkDescriptionTerm from './BpkDescriptionTerm';
-import BpkDescriptionDetails from './BpkDescriptionDetails';
 
 import type { Meta } from '@storybook/react';
 
