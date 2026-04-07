@@ -17,6 +17,7 @@
  */
 
 
+// @ts-expect-error Untyped import
 import { action } from '../../../examples/bpk-storybook-utils';
 import {
   BpkTable,
@@ -26,7 +27,6 @@ import {
   BpkTableHead,
   BpkTableHeadCell,
 } from '../../bpk-component-table';
-// @ts-expect-error Untyped import
 // @ts-expect-error Untyped import
 import { BpkStar, STAR_TYPES, ROUNDING_TYPES, BpkInteractiveStarRating, withInteractiveStarRatingState } from '../index';
 

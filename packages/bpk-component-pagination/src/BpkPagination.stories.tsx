@@ -18,11 +18,10 @@
 
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import
 import BpkPagination from './BpkPagination';
 
 import type { Meta } from '@storybook/react';
-
-// @ts-expect-error Untyped import
 
 type PaginationContainerProps = {
   selectedPageIndex?: number;

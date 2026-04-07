@@ -26,7 +26,7 @@ import { cssModules } from '../../bpk-react-utils';
 
 import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
 
-import type { BpkPageIndicatorProps } from './BpkPageIndicator';
+import type { Props as BpkPageIndicatorProps } from './BpkPageIndicator';
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkPageIndicator.stories.module.scss';

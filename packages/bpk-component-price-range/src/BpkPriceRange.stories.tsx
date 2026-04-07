@@ -20,8 +20,8 @@ import type { ReactNode } from 'react';
 
 import BpkPriceRange, {
   type BpkPriceRangeProps,
-  MARKER_DISPLAY_TYPES,
 } from './BpkPriceRange';
+import { MARKER_DISPLAY_TYPES } from './common-types';
 
 import type { Meta } from '@storybook/react';
 

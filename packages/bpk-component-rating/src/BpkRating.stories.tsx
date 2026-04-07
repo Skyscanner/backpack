@@ -17,6 +17,7 @@
  */
 
 
+// @ts-expect-error Untyped import
 import BpkStarRating from '../../bpk-component-star-rating';
 import { cssModules } from '../../bpk-react-utils';
 
