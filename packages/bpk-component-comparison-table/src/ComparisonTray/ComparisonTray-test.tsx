@@ -29,14 +29,13 @@ const ITEM_3: ComparisonItem = { id: '3', label: 'Avis', image: 'car3.png', imag
 const noop = () => {};
 
 describe('ComparisonTray slot logic', () => {
-  it('renders 0 items and 3 placeholders when items is empty', () => {
+  it('disables compare button and renders 0 items when items is empty', () => {
     render(
       <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} />,
     );
 
     expect(screen.queryAllByRole('button', { name: /remove/i })).toHaveLength(0);
-    // 3 placeholders rendered (aria-hidden, no role) — verify via data-testid not available
-    // We check via the compare button being disabled as a proxy
+    // Empty state: with no items selected the compare button should be disabled.
     expect(screen.getByRole('button', { name: 'Compare' })).toBeDisabled();
   });
 
