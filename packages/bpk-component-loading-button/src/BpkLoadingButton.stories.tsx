@@ -18,6 +18,7 @@
 
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import {
   withButtonAlignment,
@@ -28,7 +29,6 @@ import BaggageIconLg from '../../bpk-component-icon/lg/baggage';
 import BaggageIconSm from '../../bpk-component-icon/sm/baggage';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
@@ -55,7 +55,9 @@ class InteractiveExample extends Component<any, { loading: boolean }> {
         }}
         loading={this.state.loading}
         {...this.props}
-      />
+      >
+        {this.props.children}
+      </BpkLoadingButton>
     );
   }
 }
