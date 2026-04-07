@@ -20,15 +20,16 @@ import { Component } from 'react';
 
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import { withAlignment } from '../../bpk-component-icon';
 import AccountIcon from '../../bpk-component-icon/lg/account';
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import BpkNudger from './BpkNudger';
 
+import type { BUTTON_TYPES } from './common-types';
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkNudger.stories.module.scss';
@@ -38,12 +39,11 @@ const getClassName = cssModules(STYLES);
 const AlignedAccountIcon = withAlignment(AccountIcon, lineHeightBase, iconSizeLg);
 
 class NudgerContainer extends Component<
-  { id: string, buttonType: string },
+  { id: string, buttonType: keyof typeof BUTTON_TYPES },
   { value: number }
 > {
-  constructor() {
-    // @ts-expect-error Legacy code pattern
-    super();
+  constructor(props: { id: string, buttonType: keyof typeof BUTTON_TYPES }) {
+    super(props);
 
     this.state = {
       value: 0,

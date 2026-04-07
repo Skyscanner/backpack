@@ -30,9 +30,9 @@ const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-class GroupExample extends Component<{}, { value: string }> {
-  constructor() {
-    super();
+class GroupExample extends Component<{ valid?: boolean; white?: boolean }, { value: string }> {
+  constructor(props: { valid?: boolean; white?: boolean }) {
+    super(props);
     this.state = { value: 'Lagos' };
   }
 

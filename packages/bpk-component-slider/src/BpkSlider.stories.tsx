@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type React from 'react';
 import { Component } from 'react';
 
 import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
@@ -25,8 +25,16 @@ import BpkSlider from './BpkSlider';
 
 import type { Meta } from '@storybook/react';
 
-class SliderContainer extends Component<any, any> {
-  constructor(props: any) {
+type SliderContainerProps = {
+  time?: boolean;
+  min: number;
+  value: number | number[];
+  step?: number;
+  minDistance?: number;
+};
+
+class SliderContainer extends Component<SliderContainerProps, { value: number | number[] }> {
+  constructor(props: SliderContainerProps) {
     super(props);
 
     this.state = {
@@ -49,29 +57,30 @@ class SliderContainer extends Component<any, any> {
   render() {
     const min = this.props.min || 0;
     const time = !!this.props.time;
+    const { value } = this.state;
 
     return (
       <div>
-        {this.state.value.length
+        {Array.isArray(value)
           ? this.valueComponent(
-              this.state.value[0],
-              this.state.value[1],
+              value[0],
+              value[1],
               time && this.valueTimeFormatter,
             )
           : this.valueComponent(
               min,
-              this.state.value,
+              value,
               time && this.valueTimeFormatter,
             )}
         <BpkSlider
-          min={min}
           max={time ? 59 : 100}
           step={1}
           onChange={this.handleChange}
           {...this.props}
-          value={this.state.value}
+          min={min}
+          value={value}
           ariaLabel={['minimum', 'maximum']}
-          ariaValuetext={[this.state.value[0], this.state.value[1]]}
+          ariaValuetext={Array.isArray(value) ? [String(value[0]), String(value[1])] : [String(value), String(value)]}
           inputProps={[{name: 'min'}, {name: 'max'}]}
         />
         <br />
@@ -80,20 +89,7 @@ class SliderContainer extends Component<any, any> {
   }
 }
 
-SliderContainer.propTypes = {
-  time: PropTypes.bool,
-  min: PropTypes.number.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
-    PropTypes.number,
-  ]).isRequired,
-};
-
-SliderContainer.defaultProps = {
-  time: false,
-};
-
-const EnhancedSlider = updateOnDirectionChange(SliderContainer);
+const EnhancedSlider = updateOnDirectionChange(SliderContainer) as unknown as React.ComponentType<SliderContainerProps>;
 
 const SimpleSliderExample = () => <EnhancedSlider min={0} value={50} />;
 const TimeSliderExample = () => <EnhancedSlider time min={0} value={50} />;
