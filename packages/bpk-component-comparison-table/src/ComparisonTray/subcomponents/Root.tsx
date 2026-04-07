@@ -32,7 +32,7 @@ const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 3;
 
 function Root({
-  compareLabel,
+  compareLabel = 'Compare',
   items,
   onCompare,
   onRemove,

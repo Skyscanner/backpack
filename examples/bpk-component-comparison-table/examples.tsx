@@ -74,12 +74,12 @@ const InteractiveExample = () => {
   const isFull = items.length >= 3;
 
   return (
-    <BpkVStack spacing={BpkSpacing.Lg}>
+    <BpkVStack gap={BpkSpacing.LG}>
       <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
         Click the buttons below to add cars to the tray. Add at least 2 to enable Compare.
       </BpkText>
 
-      <BpkHStack spacing={BpkSpacing.Base}>
+      <BpkHStack gap={BpkSpacing.Base}>
         {SAMPLE_ITEMS.map((item) =>
           isAdded(item.id) ? (
             <BpkButton
