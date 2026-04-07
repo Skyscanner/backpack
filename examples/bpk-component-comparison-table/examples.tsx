@@ -44,6 +44,12 @@ const SAMPLE_ITEMS: ComparisonItem[] = [
     image: 'https://picsum.photos/seed/avis/120/60',
     imageAlt: 'Avis',
   },
+  {
+    id: 'enterprise',
+    label: 'Enterprise',
+    image: 'https://picsum.photos/seed/enterprise/120/60',
+    imageAlt: 'Enterprise',
+  },
 ];
 
 const InteractiveExample = () => {
