@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 import BpkPanel from '../../bpk-component-panel';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
 
 import BpkLink from './BpkLink';
 
@@ -200,12 +200,12 @@ const meta = {
     children: {
       control: 'text',
       description: 'The content of the link.',
-      type: { name: 'ReactNode', required: true },
+      type: { name: 'other', value: 'ReactNode', required: true },
     },
     href: {
       control: 'text',
       description: 'The URL the link points to (only when as="a").',
-      type: { name: 'string | null', required: true },
+      type: { name: 'other', value: 'string | null', required: true },
     },
     implicit: {
       control: 'boolean',
