@@ -16,23 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { withAlignment } from '../../packages/bpk-component-icon';
-import AccountIcon from '../../packages/bpk-component-icon/lg/account';
-import BpkLabel from '../../packages/bpk-component-label';
-import BpkNudger from '../../packages/bpk-component-nudger';
-import { cssModules } from '../../packages/bpk-react-utils';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import { withAlignment } from '../../bpk-component-icon';
+import AccountIcon from '../../bpk-component-icon/lg/account';
+import BpkLabel from '../../bpk-component-label';
+import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
-import STYLES from './BpkNudgerStory.module.scss';
+import BpkNudger from './BpkNudger';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkNudger.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -40,9 +39,10 @@ const AlignedAccountIcon = withAlignment(AccountIcon, lineHeightBase, iconSizeLg
 
 class NudgerContainer extends Component<
   { id: string, buttonType: string },
-  { value: number },
+  { value: number }
 > {
   constructor() {
+    // @ts-expect-error Legacy code pattern
     super();
 
     this.state = {
@@ -63,9 +63,11 @@ class NudgerContainer extends Component<
 
     return (
       <div>
-        <BpkLabel id="passenger-label" htmlFor={id} className={labelClassName}>
-          Number of passengers
-        </BpkLabel>
+        <div className={labelClassName}>
+          <BpkLabel id="passenger-label" htmlFor={id}>
+            Number of passengers
+          </BpkLabel>
+        </div>
         <BpkNudger
           aria-labelledby="passenger-label"
           id={id}
@@ -152,12 +154,44 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  WithLabelExample,
-  LowerBoundExample,
-  UpperBoundsExample,
-  StatefulExample,
-  OnDarkExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-nudger',
+  component: BpkNudger,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WithLabel = {
+  render: () => <WithLabelExample />,
+};
+
+export const LowerBounds = {
+  render: () => <LowerBoundExample />,
+};
+
+export const UpperBounds = {
+  render: () => <UpperBoundsExample />,
+};
+
+export const Stateful = {
+  render: () => <StatefulExample />,
+};
+
+export const OnDarkNudger = {
+  render: () => <OnDarkExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

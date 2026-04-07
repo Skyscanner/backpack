@@ -19,25 +19,28 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
-import BpkSlider from '../../packages/bpk-component-slider';
+import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 
-class SliderContainer extends Component {
-  constructor(props) {
-    super();
+import BpkSlider from './BpkSlider';
+
+import type { Meta } from '@storybook/react';
+
+class SliderContainer extends Component<any, any> {
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       value: props.value || 50,
     };
   }
 
-  handleChange = (value) => {
+  handleChange = (value: any) => {
     this.setState({ value });
   };
 
-  valueTimeFormatter = (value) => `12:${value.toString().padStart(2, '0')}pm`;
+  valueTimeFormatter = (value: number) => `12:${value.toString().padStart(2, '0')}pm`;
 
-  valueComponent = (min, max, formatter) => (
+  valueComponent = (min: any, max: any, formatter?: any) => (
     <p>
       {formatter ? formatter(min) : min} - {formatter ? formatter(max) : max}
     </p>
@@ -109,11 +112,40 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  SimpleSliderExample,
-  TimeSliderExample,
-  SimpleSliderWithStepsExample,
-  RangeSliderExample,
-  RangeSliderWithMinimumDistanceExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-slider',
+  component: BpkSlider,
+} satisfies Meta;
+
+export default meta;
+
+export const SimpleSlider = {
+  render: () => <SimpleSliderExample />,
+};
+
+export const TimeSlider = {
+  render: () => <TimeSliderExample />,
+};
+
+export const SimpleSliderWithSteps = {
+  render: () => <SimpleSliderWithStepsExample />,
+};
+
+export const RangeSlider = {
+  render: () => <RangeSliderExample />,
+};
+
+export const RangeSliderWithMinimumDistance = {
+  render: () => <RangeSliderWithMinimumDistanceExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

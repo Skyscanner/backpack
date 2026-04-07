@@ -19,9 +19,12 @@
 import { Component } from 'react';
 import type { ComponentProps } from 'react';
 
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+
+import BpkCheckbox from './BpkCheckbox';
+
+import type { Meta } from '@storybook/react';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
@@ -176,16 +179,52 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  IndeterminateExample,
-  InvalidExample,
-  MultilineExample,
-  WhiteExample,
-  DisabledExample,
-  RequiredExample,
-  SmallLabelExample,
-  SmallLabelRequiredExample,
-  SmallLabelInvalidExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-checkbox',
+  component: BpkCheckbox,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Indeterminate = {
+  render: () => <IndeterminateExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const Multiline = {
+  render: () => <MultilineExample />,
+};
+
+export const White = {
+  render: () => <WhiteExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledExample />,
+};
+
+export const Required = {
+  render: () => <RequiredExample />,
+};
+
+export const SmallLabel = {
+  render: () => <SmallLabelExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
