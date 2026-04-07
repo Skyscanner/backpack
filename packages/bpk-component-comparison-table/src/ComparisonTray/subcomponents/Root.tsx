@@ -39,31 +39,33 @@ function Root({
   const slots = Array.from({ length: MAX_ITEMS }, (_, i) => items[i] ?? null);
 
   return (
-    <BpkCardV2.Root
-      bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}
+    <div
       {...getDataComponentAttribute('ComparisonTray')}
+      className={getClassName('bpk-comparison-tray')}
     >
-      <div className={getClassName('bpk-comparison-tray__content')}>
-        <div className={getClassName('bpk-comparison-tray__items')}>
-          {slots.map((item, index) =>
-            item ? (
-              <Item key={item.id} item={item} onRemove={onRemove} />
-            ) : (
-              // eslint-disable-next-line react/no-array-index-key
-              <ItemPlaceholder key={`placeholder-${index}`} />
-            ),
-          )}
+      <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}>
+        <div className={getClassName('bpk-comparison-tray__content')}>
+          <div className={getClassName('bpk-comparison-tray__items')}>
+            {slots.map((item, index) =>
+              item ? (
+                <Item key={item.id} item={item} onRemove={onRemove} />
+              ) : (
+                // eslint-disable-next-line react/no-array-index-key
+                <ItemPlaceholder key={`placeholder-${index}`} />
+              ),
+            )}
+          </div>
+          <button
+            type="button"
+            className={getClassName('bpk-comparison-tray__compare-button')}
+            disabled={items.length < 2}
+            onClick={onCompare}
+          >
+            {compareLabel}
+          </button>
         </div>
-        <button
-          type="button"
-          className={getClassName('bpk-comparison-tray__compare-button')}
-          disabled={items.length < 2}
-          onClick={onCompare}
-        >
-          {compareLabel}
-        </button>
-      </div>
-    </BpkCardV2.Root>
+      </BpkCardV2.Root>
+    </div>
   );
 }
 
