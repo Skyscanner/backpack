@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { BpkCardV2, CARD_V2_SURFACE_COLORS } from '../../../../bpk-component-card';
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import Item from './Item';
@@ -30,7 +31,6 @@ const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 3;
 
 function Root({
-  className,
   compareLabel = 'Compare',
   items,
   onCompare,
@@ -39,31 +39,31 @@ function Root({
   const slots = Array.from({ length: MAX_ITEMS }, (_, i) => items[i] ?? null);
 
   return (
-    <div
+    <BpkCardV2.Root
+      bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}
       {...getDataComponentAttribute('ComparisonTray')}
-      className={[getClassName('bpk-comparison-tray'), className]
-        .filter(Boolean)
-        .join(' ')}
     >
-      <div className={getClassName('bpk-comparison-tray__items')}>
-        {slots.map((item, index) =>
-          item ? (
-            <Item key={item.id} item={item} onRemove={onRemove} />
-          ) : (
-            // eslint-disable-next-line react/no-array-index-key
-            <ItemPlaceholder key={`placeholder-${index}`} />
-          ),
-        )}
+      <div className={getClassName('bpk-comparison-tray__content')}>
+        <div className={getClassName('bpk-comparison-tray__items')}>
+          {slots.map((item, index) =>
+            item ? (
+              <Item key={item.id} item={item} onRemove={onRemove} />
+            ) : (
+              // eslint-disable-next-line react/no-array-index-key
+              <ItemPlaceholder key={`placeholder-${index}`} />
+            ),
+          )}
+        </div>
+        <button
+          type="button"
+          className={getClassName('bpk-comparison-tray__compare-button')}
+          disabled={items.length < 2}
+          onClick={onCompare}
+        >
+          {compareLabel}
+        </button>
       </div>
-      <button
-        type="button"
-        className={getClassName('bpk-comparison-tray__compare-button')}
-        disabled={items.length < 2}
-        onClick={onCompare}
-      >
-        {compareLabel}
-      </button>
-    </div>
+    </BpkCardV2.Root>
   );
 }
 

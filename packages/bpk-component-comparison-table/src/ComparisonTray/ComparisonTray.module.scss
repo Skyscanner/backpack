@@ -21,18 +21,14 @@
 @use '../../../bpk-mixins/radii';
 @use '../../../bpk-mixins/utils';
 
-// Tray container
-.bpk-comparison-tray {
+// Inner content row — BpkCardV2.Root handles bg, radius, shadow
+.bpk-comparison-tray__content {
   display: flex;
-  width: 355 * tokens.$bpk-one-pixel-rem;
   padding: tokens.$bpk-card-padding;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: tokens.$bpk-surface-contrast-day;
-  box-shadow: tokens.$bpk-box-shadow-sm;
-
-  @include radii.bpk-border-radius-md;
+  gap: tokens.bpk-spacing-base();
 }
 
 // Row of item slots — takes all available space, pushing Compare button right

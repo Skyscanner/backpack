@@ -40,8 +40,6 @@ export type ComparisonTrayRootProps = {
   onCompare: () => void;
   /** Label for the Compare button. Defaults to "Compare". */
   compareLabel?: string;
-  /** Optional additional className for the tray wrapper. */
-  className?: string;
 };
 
 /** Props for ComparisonTray.Item — internal use only. */
