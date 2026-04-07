@@ -69,14 +69,11 @@
   overflow: hidden;
 
   @include radii.bpk-border-radius-xs;
-}
 
-// Item image — covers the image container, cropped to fit
-.bpk-comparison-tray__item-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  // Ensure BpkImage's internal <img> covers the container without distortion
+  img {
+    object-fit: cover;
+  }
 }
 
 // Close button — 16×16, dark bg, white border, overlaps top-right corner

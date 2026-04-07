@@ -17,6 +17,7 @@
  */
 
 import CloseIcon from '../../../../bpk-component-icon/sm/close';
+import BpkImage from '../../../../bpk-component-image';
 import { cssModules } from '../../../../bpk-react-utils';
 
 import type { ComparisonTrayItemProps } from '../common-types';
@@ -29,10 +30,10 @@ function Item({ item, onRemove }: ComparisonTrayItemProps) {
   return (
     <div className={getClassName('bpk-comparison-tray__item')}>
       <div className={getClassName('bpk-comparison-tray__item-image-container')}>
-        <img
+        <BpkImage
           src={item.image}
-          alt={item.imageAlt ?? item.label}
-          className={getClassName('bpk-comparison-tray__item-image')}
+          altText={item.imageAlt ?? item.label}
+          aspectRatio={62 / 28}
         />
       </div>
       <button
