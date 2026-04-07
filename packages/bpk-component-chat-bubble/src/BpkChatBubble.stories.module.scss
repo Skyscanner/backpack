@@ -16,24 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
-.bpk-chat-thought-bubble-examples {
-  display: flex;
+.bpk-chat-bubble-examples {
   padding: tokens.bpk-spacing-base();
-
-  &__multiple {
-    display: flex;
-    padding: tokens.bpk-spacing-base();
-    flex-direction: column;
-    gap: tokens.bpk-spacing-lg();
-  }
-
-  &__mixed {
-    display: flex;
-    max-width: 37.5rem; // 600px
-    padding: tokens.bpk-spacing-base();
-    flex-direction: column;
-    gap: tokens.bpk-spacing-xl();
-  }
+  background-color: tokens.$bpk-canvas-contrast-day;
 }

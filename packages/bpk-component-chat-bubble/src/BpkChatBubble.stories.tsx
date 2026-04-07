@@ -17,21 +17,26 @@
  */
 
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 
-import BpkChatBubble, { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from '../../packages/bpk-component-chat-bubble';
 import {
   BpkSpacing,
   BpkStack,
-} from '../../packages/bpk-component-layout';
-import { cssModules } from '../../packages/bpk-react-utils';
+  BpkProvider,
+} from '../../bpk-component-layout';
+import { cssModules } from '../../bpk-react-utils';
 
-import type { ThumbsButtonType } from '../../packages/bpk-component-thumb-button';
+import BpkChatBubble from './BpkChatBubble';
+import { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './common-types';
 
-import STYLES from './examples.module.scss';
+import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkChatBubble.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const UserBubbleExample = () => (
+const UserBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type={CHAT_BUBBLE_TYPE.user}>
@@ -53,7 +58,7 @@ export const UserBubbleExample = () => (
   </div>
 );
 
-export const BotBubbleExample = () => (
+const BotBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot}>
@@ -81,7 +86,7 @@ export const BotBubbleExample = () => (
   </div>
 );
 
-export const RetryBubbleExample = () => (
+const RetryBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble
@@ -95,7 +100,7 @@ export const RetryBubbleExample = () => (
   </div>
 );
 
-export const ButtonBubbleExample = () => (
+const ButtonBubbleExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble
@@ -108,7 +113,7 @@ export const ButtonBubbleExample = () => (
   </div>
 );
 
-export const BotBubbleWithFeedbackExample = () => {
+const BotBubbleWithFeedbackExample = () => {
   const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
 
   return (
@@ -128,7 +133,7 @@ export const BotBubbleWithFeedbackExample = () => {
   );
 };
 
-export const SequenceExample = () => (
+const SequenceExample = () => (
   <div className={getClassName('bpk-chat-bubble-examples')}>
     <BpkStack gap={BpkSpacing.SM}>
       <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot} systemPosition={CHAT_BUBBLE_POSITION.first} animationDelay={0}>
@@ -150,7 +155,7 @@ export const SequenceExample = () => (
   </div>
 );
 
-export const MixedExample = () => {
+const MixedExample = () => {
   const [selected, setSelected] = useState<ThumbsButtonType | null>(null);
 
   return (
@@ -196,4 +201,51 @@ export const MixedExample = () => {
       </BpkStack>
     </div>
   );
+};
+
+const meta = {
+  title: 'bpk-component-chat-bubble',
+  component: BpkChatBubble,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+} satisfies Meta;
+
+export default meta;
+
+export const UserBubble = {
+  render: () => <UserBubbleExample />,
+};
+
+export const BotBubble = {
+  render: () => <BotBubbleExample />,
+};
+
+export const RetryBubble = {
+  render: () => <RetryBubbleExample />,
+};
+
+export const ButtonBubble = {
+  render: () => <ButtonBubbleExample />,
+};
+
+export const BotBubbleWithFeedback = {
+  render: () => <BotBubbleWithFeedbackExample />,
+};
+
+export const Sequence = {
+  render: () => <SequenceExample />,
+};
+
+export const Mixed = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
