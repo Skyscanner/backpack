@@ -1,0 +1,23 @@
+name: Version Consistency Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  version-check:
+    name: Version Consistency Check
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest-small
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Check Version Consistency
+        uses: Skyscanner/version-consistency-check@v1
+        with:
+          fail-on-inconsistency: true
