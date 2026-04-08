@@ -16,11 +16,18 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render, screen, fireEvent } from '@testing-library/react';
+
+import { BpkProvider } from '../../../bpk-component-layout';
 
 import ComparisonTray from './ComparisonTray';
 
 import type { ComparisonItem } from './common-types';
+
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
 
 const ITEM_1: ComparisonItem = { id: '1', label: 'VIP Cars', image: 'car1.png' };
 const ITEM_2: ComparisonItem = { id: '2', label: 'Hertz', image: 'car2.png' };
@@ -28,13 +35,14 @@ const ITEM_3: ComparisonItem = { id: '3', label: 'Avis', image: 'car3.png', imag
 
 const ARIA_LABEL = 'Comparison tray';
 const REMOVE_LABEL = 'Remove';
+const COMPARE_LABEL = 'Compare';
 
 const noop = () => {};
 
 describe('ComparisonTray items logic', () => {
   it('disables compare button and renders 0 items when items is empty', () => {
-    render(
-      <ComparisonTray.Root items={[]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
+    renderWithProvider(
+      <ComparisonTray.Root items={[]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} compareLabel={COMPARE_LABEL} />,
     );
 
     expect(screen.queryAllByRole('button', { name: /remove/i })).toHaveLength(0);
@@ -43,7 +51,7 @@ describe('ComparisonTray items logic', () => {
   });
 
   it('renders 1 item and 2 placeholders when items has 1 entry', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -52,7 +60,7 @@ describe('ComparisonTray items logic', () => {
   });
 
   it('renders 2 items and 1 placeholder when items has 2 entries', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -62,7 +70,7 @@ describe('ComparisonTray items logic', () => {
   });
 
   it('renders 3 items and 0 placeholders when items has 3 entries', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1, ITEM_2, ITEM_3]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -76,7 +84,7 @@ describe('ComparisonTray items logic', () => {
 describe('ComparisonTray remove action', () => {
   it('calls onRemove with the correct item id when close button is clicked', () => {
     const onRemove = jest.fn();
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={onRemove} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -88,7 +96,7 @@ describe('ComparisonTray remove action', () => {
 
   it('calls onRemove with the correct id for the second item', () => {
     const onRemove = jest.fn();
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={onRemove} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -100,7 +108,7 @@ describe('ComparisonTray remove action', () => {
 
 describe('ComparisonTray accessibility', () => {
   it('renders a region landmark with the provided aria-label', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -108,7 +116,7 @@ describe('ComparisonTray accessibility', () => {
   });
 
   it('renders a region landmark with custom aria-label', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1]} ariaLabel="Bandeja de comparación" onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -116,7 +124,7 @@ describe('ComparisonTray accessibility', () => {
   });
 
   it('composes removeLabel with the item label for the remove button', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -124,7 +132,7 @@ describe('ComparisonTray accessibility', () => {
   });
 
   it('uses a translated removeLabel', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel="Eliminar" />,
     );
 
@@ -134,32 +142,32 @@ describe('ComparisonTray accessibility', () => {
 
 describe('ComparisonTray Compare button', () => {
   it('is disabled when items is empty', () => {
-    render(
-      <ComparisonTray.Root items={[]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
+    renderWithProvider(
+      <ComparisonTray.Root items={[]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} compareLabel={COMPARE_LABEL} />,
     );
 
     expect(screen.getByRole('button', { name: 'Compare' })).toBeDisabled();
   });
 
   it('is disabled when items has 1 entry', () => {
-    render(
-      <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
+    renderWithProvider(
+      <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} compareLabel={COMPARE_LABEL} />,
     );
 
     expect(screen.getByRole('button', { name: 'Compare' })).toBeDisabled();
   });
 
   it('is enabled when items has 2 entries', () => {
-    render(
-      <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
+    renderWithProvider(
+      <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} compareLabel={COMPARE_LABEL} />,
     );
 
     expect(screen.getByRole('button', { name: 'Compare' })).not.toBeDisabled();
   });
 
   it('is enabled when items has 3 entries', () => {
-    render(
-      <ComparisonTray.Root items={[ITEM_1, ITEM_2, ITEM_3]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
+    renderWithProvider(
+      <ComparisonTray.Root items={[ITEM_1, ITEM_2, ITEM_3]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} compareLabel={COMPARE_LABEL} />,
     );
 
     expect(screen.getByRole('button', { name: 'Compare' })).not.toBeDisabled();
@@ -167,8 +175,8 @@ describe('ComparisonTray Compare button', () => {
 
   it('calls onCompare when the Compare button is clicked', () => {
     const onCompare = jest.fn();
-    render(
-      <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={onCompare} removeLabel={REMOVE_LABEL} />,
+    renderWithProvider(
+      <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={onCompare} removeLabel={REMOVE_LABEL} compareLabel={COMPARE_LABEL} />,
     );
 
     fireEvent.click(screen.getByRole('button', { name: 'Compare' }));
@@ -177,7 +185,7 @@ describe('ComparisonTray Compare button', () => {
   });
 
   it('displays custom compareLabel', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root
         items={[ITEM_1, ITEM_2]}
         ariaLabel={ARIA_LABEL}
@@ -190,19 +198,11 @@ describe('ComparisonTray Compare button', () => {
 
     expect(screen.getByRole('button', { name: 'Comparar' })).toBeInTheDocument();
   });
-
-  it('defaults compareLabel to "Compare"', () => {
-    render(
-      <ComparisonTray.Root items={[ITEM_1, ITEM_2]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
-    );
-
-    expect(screen.getByRole('button', { name: 'Compare' })).toBeInTheDocument();
-  });
 });
 
 describe('ComparisonTray image alt text', () => {
   it('defaults image alt to item label when imageAlt is not provided', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_1]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 
@@ -210,7 +210,7 @@ describe('ComparisonTray image alt text', () => {
   });
 
   it('uses imageAlt when provided', () => {
-    render(
+    renderWithProvider(
       <ComparisonTray.Root items={[ITEM_3]} ariaLabel={ARIA_LABEL} onRemove={noop} onCompare={noop} removeLabel={REMOVE_LABEL} />,
     );
 

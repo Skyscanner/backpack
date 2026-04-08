@@ -16,10 +16,17 @@
  * limitations under the License.
  */
 
+import type { ReactElement } from 'react';
+
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
+import { BpkProvider } from '../../../bpk-component-layout';
+
 import ComparisonTray from './ComparisonTray';
+
+const renderWithProvider = (ui: ReactElement) =>
+  render(<BpkProvider>{ui}</BpkProvider>);
 
 expect.extend(toHaveNoViolations);
 
@@ -27,15 +34,15 @@ const noop = () => {};
 
 describe('ComparisonTray accessibility', () => {
   it('has no accessibility violations with 0 items', async () => {
-    const { container } = render(
-      <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} ariaLabel="Comparison tray" removeLabel="Remove" />,
+    const { container } = renderWithProvider(
+      <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} ariaLabel="Comparison tray" removeLabel="Remove" compareLabel="Compare" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('has no accessibility violations with 2 items', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <ComparisonTray.Root
         items={[
           { id: '1', label: 'VIP Cars', image: 'car1.png' },
@@ -45,6 +52,7 @@ describe('ComparisonTray accessibility', () => {
         onCompare={noop}
         ariaLabel="Comparison tray"
         removeLabel="Remove"
+        compareLabel="Compare"
       />,
     );
     const results = await axe(container);
@@ -52,7 +60,7 @@ describe('ComparisonTray accessibility', () => {
   });
 
   it('has no accessibility violations with 3 items', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <ComparisonTray.Root
         items={[
           { id: '1', label: 'VIP Cars', image: 'car1.png' },
@@ -63,6 +71,7 @@ describe('ComparisonTray accessibility', () => {
         onCompare={noop}
         ariaLabel="Comparison tray"
         removeLabel="Remove"
+        compareLabel="Compare"
       />,
     );
     const results = await axe(container);
@@ -70,7 +79,7 @@ describe('ComparisonTray accessibility', () => {
   });
 
   it('has no accessibility violations with custom compareLabel', async () => {
-    const { container } = render(
+    const { container } = renderWithProvider(
       <ComparisonTray.Root
         items={[
           { id: '1', label: 'VIP Cars', image: 'car1.png' },
