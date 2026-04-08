@@ -31,9 +31,7 @@ import {
   ResponsiveTextStyleExample,
   RefExample,
   ColorExample,
-  SurfaceBackgroundColorExample,
-  CanvasBackgroundColorExample,
-  StatusFillBackgroundColorExample,
+  BackgroundColorExample,
 } from './box-examples';
 
 export default {
@@ -72,8 +70,6 @@ export const TextStyle = () => <TextStyleExample />;
 export const ResponsiveTextStyle = () => <ResponsiveTextStyleExample />;
 export const Ref = () => <RefExample />;
 export const Color = () => <ColorExample />;
-export const SurfaceBackgroundColor = () => <SurfaceBackgroundColorExample />;
-export const CanvasBackgroundColor = () => <CanvasBackgroundColorExample />;
-export const StatusFillBackgroundColor = () => <StatusFillBackgroundColorExample />;
+export const BackgroundColor = () => <BackgroundColorExample />;
 
 

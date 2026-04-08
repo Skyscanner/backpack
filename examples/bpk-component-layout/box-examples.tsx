@@ -24,7 +24,10 @@ import {
   BpkBox,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText, {
+  TEXT_COLORS,
+  TEXT_STYLES,
+} from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -139,7 +142,9 @@ export const InteractiveExample = () => {
           if (e.key === 'Enter' || e.key === ' ') increment();
         }}
       >
-        <BpkText>Clicked {count} times (role=&quot;button&quot;, tabIndex=0)</BpkText>
+        <BpkText>
+          Clicked {count} times (role=&quot;button&quot;, tabIndex=0)
+        </BpkText>
       </BpkBox>
     </Wrapper>
   );
@@ -180,7 +185,8 @@ export const ResponsiveTextStyleExample = () => (
         desktop: TEXT_STYLES.heading3,
       }}
     >
-      Text style changes from caption → bodyDefault → heading5 → heading3 across breakpoints.
+      Text style changes from caption → bodyDefault → heading5 → heading3 across
+      breakpoints.
     </BpkBox>
   </Wrapper>
 );
@@ -197,7 +203,9 @@ export const RefExample = () => {
   const handleRead = () => {
     if (ref.current) {
       const { offsetHeight, offsetWidth, tagName } = ref.current;
-      setInfo(`tagName: ${tagName}, width: ${offsetWidth}px, height: ${offsetHeight}px`);
+      setInfo(
+        `tagName: ${tagName}, width: ${offsetWidth}px, height: ${offsetHeight}px`,
+      );
     }
   };
 
@@ -222,51 +230,69 @@ export const ColorExample = () => (
   <Wrapper>
     {Object.entries(TEXT_COLORS).map(([key, value]) => (
       <BpkBox key={key} padding={BpkSpacing.SM} color={value}>
-        <BpkText>{key}: {value}</BpkText>
+        <BpkText>
+          {key}: {value}
+        </BpkText>
       </BpkBox>
     ))}
   </Wrapper>
 );
 
 /**
- * Surface background color example – demonstrates all surface BACKGROUND_COLORS on BpkBox.
- * @returns {JSX.Element} Surface background color example
+ * Background color example – demonstrates all BACKGROUND_COLORS categories on BpkBox:
+ * surface, canvas, status fill, and combined with color.
+ * @returns {JSX.Element} Background color example
  */
-export const SurfaceBackgroundColorExample = () => (
+export const BackgroundColorExample = () => (
   <Wrapper>
-    {(['surfaceDefault', 'surfaceElevated', 'surfaceHero', 'surfaceContrast', 'surfaceHighlight', 'surfaceSubtle', 'surfaceLowContrast', 'surfaceTint'] as const).map((key) => (
-      <BpkBox key={key} padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS[key]}>
-        <BpkText>{key}: {BACKGROUND_COLORS[key]}</BpkText>
+    {(
+      [
+        'surfaceDefault',
+        'surfaceElevated',
+        'surfaceHero',
+        'surfaceContrast',
+        'surfaceHighlight',
+        'surfaceSubtle',
+        'surfaceLowContrast',
+        'surfaceTint',
+        'canvas',
+        'canvasContrast',
+        'statusSuccessFill',
+        'statusDangerFill',
+        'statusWarningFill',
+      ] as const
+    ).map((key) => (
+      <BpkBox
+        key={key}
+        padding={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS[key]}
+      >
+        <BpkText>
+          {key}: {BACKGROUND_COLORS[key]}
+        </BpkText>
       </BpkBox>
     ))}
-  </Wrapper>
-);
-
-/**
- * Canvas background color example – demonstrates canvas BACKGROUND_COLORS on BpkBox.
- * @returns {JSX.Element} Canvas background color example
- */
-export const CanvasBackgroundColorExample = () => (
-  <Wrapper>
-    {(['canvas', 'canvasContrast'] as const).map((key) => (
-      <BpkBox key={key} padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS[key]}>
-        <BpkText>{key}: {BACKGROUND_COLORS[key]}</BpkText>
-      </BpkBox>
-    ))}
-  </Wrapper>
-);
-
-/**
- * Status fill background color example – demonstrates status fill BACKGROUND_COLORS on BpkBox.
- * @returns {JSX.Element} Status fill background color example
- */
-export const StatusFillBackgroundColorExample = () => (
-  <Wrapper>
-    {(['statusSuccessFill', 'statusDangerFill', 'statusWarningFill'] as const).map((key) => (
-      <BpkBox key={key} padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS[key]}>
-        <BpkText>{key}: {BACKGROUND_COLORS[key]}</BpkText>
-      </BpkBox>
-    ))}
+    <BpkBox
+      padding={BpkSpacing.MD}
+      color={TEXT_COLORS.textOnDark}
+      backgroundColor={BACKGROUND_COLORS.surfaceHero}
+    >
+      <BpkText>textOnDark on surfaceHero</BpkText>
+    </BpkBox>
+    <BpkBox
+      padding={BpkSpacing.MD}
+      color={TEXT_COLORS.textPrimary}
+      backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+    >
+      <BpkText>textPrimary on surfaceDefault</BpkText>
+    </BpkBox>
+    <BpkBox
+      padding={BpkSpacing.MD}
+      color={TEXT_COLORS.textSuccess}
+      backgroundColor={BACKGROUND_COLORS.statusSuccessFill}
+    >
+      <BpkText>textSuccess on statusSuccessFill</BpkText>
+    </BpkBox>
   </Wrapper>
 );
 
@@ -284,7 +310,6 @@ export const MixedExample = () => (
     <PositionExample />
     <InteractiveExample />
     <TextStyleExample />
+    <BackgroundColorExample />
   </Wrapper>
 );
-
-
