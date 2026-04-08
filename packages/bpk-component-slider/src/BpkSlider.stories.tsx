@@ -16,28 +16,39 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type React from 'react';
 import { Component } from 'react';
 
-import { updateOnDirectionChange } from '../../packages/bpk-component-rtl-toggle';
-import BpkSlider from '../../packages/bpk-component-slider';
+import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 
-class SliderContainer extends Component {
-  constructor(props) {
-    super();
+import BpkSlider from './BpkSlider';
+
+import type { Meta } from '@storybook/react';
+
+type SliderContainerProps = {
+  time?: boolean;
+  min: number;
+  value: number | number[];
+  step?: number;
+  minDistance?: number;
+};
+
+class SliderContainer extends Component<SliderContainerProps, { value: number | number[] }> {
+  constructor(props: SliderContainerProps) {
+    super(props);
 
     this.state = {
       value: props.value || 50,
     };
   }
 
-  handleChange = (value) => {
+  handleChange = (value: any) => {
     this.setState({ value });
   };
 
-  valueTimeFormatter = (value) => `12:${value.toString().padStart(2, '0')}pm`;
+  valueTimeFormatter = (value: number) => `12:${value.toString().padStart(2, '0')}pm`;
 
-  valueComponent = (min, max, formatter) => (
+  valueComponent = (min: any, max: any, formatter?: any) => (
     <p>
       {formatter ? formatter(min) : min} - {formatter ? formatter(max) : max}
     </p>
@@ -46,29 +57,30 @@ class SliderContainer extends Component {
   render() {
     const min = this.props.min || 0;
     const time = !!this.props.time;
+    const { value } = this.state;
 
     return (
       <div>
-        {this.state.value.length
+        {Array.isArray(value)
           ? this.valueComponent(
-              this.state.value[0],
-              this.state.value[1],
+              value[0],
+              value[1],
               time && this.valueTimeFormatter,
             )
           : this.valueComponent(
               min,
-              this.state.value,
+              value,
               time && this.valueTimeFormatter,
             )}
         <BpkSlider
-          min={min}
           max={time ? 59 : 100}
           step={1}
           onChange={this.handleChange}
           {...this.props}
-          value={this.state.value}
+          min={min}
+          value={value}
           ariaLabel={['minimum', 'maximum']}
-          ariaValuetext={[this.state.value[0], this.state.value[1]]}
+          ariaValuetext={Array.isArray(value) ? [String(value[0]), String(value[1])] : [String(value), String(value)]}
           inputProps={[{name: 'min'}, {name: 'max'}]}
         />
         <br />
@@ -77,20 +89,7 @@ class SliderContainer extends Component {
   }
 }
 
-SliderContainer.propTypes = {
-  time: PropTypes.bool,
-  min: PropTypes.number.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.number),
-    PropTypes.number,
-  ]).isRequired,
-};
-
-SliderContainer.defaultProps = {
-  time: false,
-};
-
-const EnhancedSlider = updateOnDirectionChange(SliderContainer);
+const EnhancedSlider = updateOnDirectionChange(SliderContainer) as unknown as React.ComponentType<SliderContainerProps>;
 
 const SimpleSliderExample = () => <EnhancedSlider min={0} value={50} />;
 const TimeSliderExample = () => <EnhancedSlider time min={0} value={50} />;
@@ -109,11 +108,40 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  SimpleSliderExample,
-  TimeSliderExample,
-  SimpleSliderWithStepsExample,
-  RangeSliderExample,
-  RangeSliderWithMinimumDistanceExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-slider',
+  component: BpkSlider,
+} satisfies Meta;
+
+export default meta;
+
+export const SimpleSlider = {
+  render: () => <SimpleSliderExample />,
+};
+
+export const TimeSlider = {
+  render: () => <TimeSliderExample />,
+};
+
+export const SimpleSliderWithSteps = {
+  render: () => <SimpleSliderWithStepsExample />,
+};
+
+export const RangeSlider = {
+  render: () => <RangeSliderExample />,
+};
+
+export const RangeSliderWithMinimumDistance = {
+  render: () => <RangeSliderWithMinimumDistanceExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

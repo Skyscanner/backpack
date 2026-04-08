@@ -21,26 +21,25 @@ import type { ReactNode } from 'react';
 
 import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../../packages/bpk-component-button';
-import { BpkCheckboxCard, CHECKBOX_CARD_THEME_ATTRIBUTES, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, createCheckboxCardTheme, useCheckboxCardContext } from '../../packages/bpk-component-checkbox-card';
-import AirportsIconLg from '../../packages/bpk-component-icon/lg/airports';
-import CityIconLg from '../../packages/bpk-component-icon/lg/city';
-import LandmarkIconLg from '../../packages/bpk-component-icon/lg/landmark';
-import TrendDownIconLg from '../../packages/bpk-component-icon/lg/trend--down';
-import BpkImage from '../../packages/bpk-component-image';
-import { BpkBox, BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
+import BpkButton from '../../bpk-component-button';
+import AirportsIconLg from '../../bpk-component-icon/lg/airports';
+import CityIconLg from '../../bpk-component-icon/lg/city';
+import LandmarkIconLg from '../../bpk-component-icon/lg/landmark';
+import TrendDownIconLg from '../../bpk-component-icon/lg/trend--down';
+import BpkImage from '../../bpk-component-image';
+import { BpkBox, BpkVStack, BpkHStack, BpkProvider } from '../../bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkPrice from '../../packages/bpk-component-price';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkPrice from '../../bpk-component-price';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkThemeProvider from '../../packages/bpk-theming';
+import BpkThemeProvider from '../../bpk-theming';
 
-/**
- * New Compound Component API - Basic Example
- *
- * @returns {JSX.Element} Rendered basic compound API example.
- */
-export const BasicExample = () => {
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, useCheckboxCardContext } from './BpkCheckboxCard';
+import CHECKBOX_CARD_THEME_ATTRIBUTES, { createCheckboxCardTheme } from './themeAttributes';
+
+import type { Meta } from '@storybook/react';
+
+const BasicExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(true);
 
@@ -89,12 +88,7 @@ export const BasicExample = () => {
   );
 };
 
-/**
- * New Compound Component API - With Multi Content
- *
- * @returns {JSX.Element} Rendered compound API example with multiple content slots.
- */
-export const WithMultiContentExample = () => {
+const WithMultiContentExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -126,12 +120,7 @@ export const WithMultiContentExample = () => {
   );
 };
 
-/**
- * New Compound Component API - All Variants
- *
- * @returns {JSX.Element} Rendered compound API examples for all variants.
- */
-export const AllVariantsExample = () => {
+const AllVariantsExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(false);
   const [selected3, setSelected3] = useState(false);
@@ -214,12 +203,7 @@ export const AllVariantsExample = () => {
   );
 };
 
-/**
- * New Compound Component API - With Image
- *
- * @returns {JSX.Element} Rendered compound API example with image content.
- */
-export const WithImageExample = () => {
+const WithImageExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -250,12 +234,7 @@ export const WithImageExample = () => {
   );
 };
 
-/**
- * New Compound Component API - With Inline Layout
- *
- * @returns {JSX.Element} Rendered compound API example with inline layout.
- */
-export const WithInlineLayoutExample = () => {
+const WithInlineLayoutExample = () => {
   const [selected, setSelected] = useState(false);
 
   return (
@@ -277,16 +256,7 @@ export const WithInlineLayoutExample = () => {
   );
 };
 
-/**
- * New Compound Component API - With Corner Indicator
- *
- * Demonstrates the corner indicator variant: a visual checkbox in the
- * top-right corner, ideal for image/icon-heavy cards where inline
- * checkbox placement would compete with the content.
- *
- * @returns {JSX.Element} Rendered compound API example with corner indicator.
- */
-export const WithIndicatorExample = () => {
+const WithIndicatorExample = () => {
   const options = [
     { id: 'city', label: 'City Centre', description: 'Best for sightseeing', icon: CityIconLg, price: '£85' },
     { id: 'landmark', label: 'Old Town', description: 'Best for culture', icon: LandmarkIconLg, price: '£78' },
@@ -342,12 +312,7 @@ export const WithIndicatorExample = () => {
   );
 };
 
-/**
- * New Compound Component API - With Custom Theme
- *
- * @returns {JSX.Element} Rendered compound API example with custom theme overrides.
- */
-export const WithCustomThemeExample = () => {
+const WithCustomThemeExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(true);
 
@@ -405,20 +370,7 @@ export const WithCustomThemeExample = () => {
   );
 };
 
-
-/**
- * Car variant example — white background with dark border when checked.
- * The Indicator is automatically rendered by the cars variant.
- *
- * @returns {JSX.Element} Rendered car variant example.
- */
-/**
- * Car variant example — white background with dark border when checked.
- * Includes a loading state toggle to simulate price data being fetched.
- *
- * @returns {JSX.Element} Rendered car variant example.
- */
-export const WithCarVariantExample = () => {
+const WithCarVariantExample = () => {
   const carTypes = [
     { id: 'small', label: 'Small', price: '£35', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
     { id: 'medium', label: 'Medium', price: '£52', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
@@ -484,10 +436,6 @@ function VariantBadge() {
   );
 }
 
-/**
- * Demonstrates that useCheckboxCardContext throws when used outside Root.
- * An ErrorBoundary catches the error and displays the message.
- */
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: string | null }> {
   constructor(props: { children: ReactNode }) {
     super(props);
@@ -510,7 +458,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: string |
   }
 }
 
-export const WithContextOutsideRootExample = () => (
+const WithContextOutsideRootExample = () => (
   <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
     <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
       VariantBadge rendered outside Root — should show error:
@@ -521,13 +469,7 @@ export const WithContextOutsideRootExample = () => (
   </BpkVStack>
 );
 
-/**
- * Neighbourhood card example — compact location card with price trend,
- * similar to a map overlay chip.
- *
- * @returns {JSX.Element} Rendered neighbourhood card examples.
- */
-export const WithMetadataExample = () => {
+const WithMetadataExample = () => {
   const neighbourhoods = [
     { id: 'westminster', name: 'City Of Westminster', count: 158, avgPrice: '£85', trend: 'down' as const },
     { id: 'shoreditch', name: 'Shoreditch', count: 94, avgPrice: '£72', trend: 'down' as const },
@@ -546,8 +488,6 @@ export const WithMetadataExample = () => {
     <BpkHStack padding="bpk-spacing-lg" gap="bpk-spacing-md" wrap="wrap">
       {neighbourhoods.map(({ avgPrice, count, id, name }) => {
         const isChecked = selected.includes(id);
-        // When checked the card background turns dark — switch to white for contrast.
-        // Consumers are responsible for adapting their own content colours to match.
         const trendColor = isChecked ? colorWhite : statusSuccessSpotDay;
 
         return (
@@ -572,4 +512,75 @@ export const WithMetadataExample = () => {
       })}
     </BpkHStack>
   );
+};
+
+const meta = {
+  title: 'bpk-component-checkbox-card',
+  component: BpkCheckboxCard,
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
+} satisfies Meta;
+
+export default meta;
+
+export const Basic = {
+  render: () => <BasicExample />,
+};
+
+export const WithMultiContent = {
+  render: () => <WithMultiContentExample />,
+};
+
+export const AllVariants = {
+  render: () => <AllVariantsExample />,
+};
+
+export const WithImage = {
+  render: () => <WithImageExample />,
+};
+
+export const WithIndicator = {
+  render: () => <WithIndicatorExample />,
+};
+
+export const WithInlineLayout = {
+  render: () => <WithInlineLayoutExample />,
+};
+
+export const WithCustomTheme = {
+  render: () => <WithCustomThemeExample />,
+};
+
+export const WithMetadata = {
+  render: () => <WithMetadataExample />,
+};
+
+export const WithCarVariant = {
+  render: () => <WithCarVariantExample />,
+};
+
+export const WithContextOutsideRoot = {
+  render: () => <WithContextOutsideRootExample />,
+};
+
+export const VisualTest = {
+  render: () => (
+    <>
+      <BasicExample />
+      <AllVariantsExample />
+      <WithMultiContentExample />
+    </>
+  ),
+};
+
+export const VisualTestWithZoom = {
+  render: () => (
+    <>
+      <BasicExample />
+      <AllVariantsExample />
+      <WithMultiContentExample />
+    </>
+  ),
+  args: {
+    zoomEnabled: true,
+  },
 };

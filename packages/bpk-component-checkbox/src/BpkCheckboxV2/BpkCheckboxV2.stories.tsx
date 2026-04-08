@@ -22,21 +22,24 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import {
-  BpkCheckboxV2,
-  checkboxBorderRadiusThemeAttributes,
-  checkboxSelectedColorThemeAttributes,
-} from '../../packages/bpk-component-checkbox';
-import {
   BpkFlex,
   BpkProvider,
   BpkSpacing,
-} from '../../packages/bpk-component-layout';
+} from '../../../bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkThemeProvider from '../../packages/bpk-theming';
+import BpkThemeProvider from '../../../bpk-theming';
 
-import STYLES from './examples.module.scss';
+import BpkCheckboxV2 from './BpkCheckboxV2';
+import {
+  checkboxBorderRadiusThemeAttributes,
+  checkboxSelectedColorThemeAttributes,
+} from './themeAttributes';
 
-export const SimpleLabelExample = () => (
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkCheckboxV2.stories.module.scss';
+
+const SimpleLabelExample = () => (
   <BpkCheckboxV2.Root>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -46,7 +49,7 @@ export const SimpleLabelExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const TitleAndSubtitleExample = () => (
+const TitleAndSubtitleExample = () => (
   <BpkProvider>
     <BpkCheckboxV2.Root>
       <BpkCheckboxV2.Control>
@@ -63,7 +66,7 @@ export const TitleAndSubtitleExample = () => (
   </BpkProvider>
 );
 
-export const InlineLinkInLabelExample = () => (
+const InlineLinkInLabelExample = () => (
   <BpkCheckboxV2.Root>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -75,7 +78,7 @@ export const InlineLinkInLabelExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const DefaultCheckedExample = () => (
+const DefaultCheckedExample = () => (
   <BpkCheckboxV2.Root defaultChecked>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -85,7 +88,7 @@ export const DefaultCheckedExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const DisabledExample = () => (
+const DisabledExample = () => (
   <BpkCheckboxV2.Root disabled>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -95,7 +98,7 @@ export const DisabledExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const DisabledCheckedExample = () => (
+const DisabledCheckedExample = () => (
   <BpkCheckboxV2.Root disabled defaultChecked>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -105,7 +108,7 @@ export const DisabledCheckedExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const DisabledStatesExample = () => (
+const DisabledStatesExample = () => (
   <BpkProvider>
     <BpkFlex direction="column" gap={BpkSpacing.SM}>
       <DisabledCheckedExample />
@@ -114,7 +117,7 @@ export const DisabledStatesExample = () => (
   </BpkProvider>
 );
 
-export const IndeterminateExample = () => (
+const IndeterminateExample = () => (
   <BpkCheckboxV2.Root checked="indeterminate" onCheckedChange={() => {}}>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -124,7 +127,7 @@ export const IndeterminateExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const InvalidExample = () => (
+const InvalidExample = () => (
   <BpkCheckboxV2.Root invalid>
     <BpkCheckboxV2.Control>
       <BpkCheckboxV2.Indicator />
@@ -134,7 +137,7 @@ export const InvalidExample = () => (
   </BpkCheckboxV2.Root>
 );
 
-export const ThemedExample = () => (
+const ThemedExample = () => (
   <BpkProvider>
     <BpkThemeProvider
       theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
@@ -160,7 +163,7 @@ export const ThemedExample = () => (
   </BpkProvider>
 );
 
-export const ComposedHertzExample = () => (
+const ComposedHertzExample = () => (
   <BpkProvider>
     <BpkCheckboxV2.Root defaultChecked>
       <BpkCheckboxV2.Control>
@@ -178,7 +181,7 @@ export const ComposedHertzExample = () => (
   </BpkProvider>
 );
 
-export const MixedExample = () => (
+const MixedExample = () => (
   <BpkProvider>
     <BpkFlex gap={BpkSpacing.Base} direction="column">
       <SimpleLabelExample />
@@ -193,3 +196,58 @@ export const MixedExample = () => (
     </BpkFlex>
   </BpkProvider>
 );
+
+const meta = {
+  title: 'bpk-component-checkbox-v2',
+  component: BpkCheckboxV2.Root,
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
+} satisfies Meta;
+
+export default meta;
+
+export const SimpleLabel = {
+  render: () => <SimpleLabelExample />,
+};
+
+export const TitleAndSubtitle = {
+  render: () => <TitleAndSubtitleExample />,
+};
+
+export const InlineLinkInLabel = {
+  render: () => <InlineLinkInLabelExample />,
+};
+
+export const DefaultChecked = {
+  render: () => <DefaultCheckedExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledStatesExample />,
+};
+
+export const Indeterminate = {
+  render: () => <IndeterminateExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const Themed = {
+  render: () => <ThemedExample />,
+};
+
+export const ComposedHertz = {
+  render: () => <ComposedHertzExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

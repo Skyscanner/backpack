@@ -16,23 +16,23 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
-import BpkRadio from '../../packages/bpk-component-radio';
-import {
-  action,
-  BpkDarkExampleWrapper,
-} from '../bpk-storybook-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkRadio from './BpkRadio';
+
+import type { Meta } from '@storybook/react';
 
 const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores doloremque, expedita
 quaerat temporibus ipsam, ut, ipsa, velit sed assumenda suscipit dolore quod similique delectus numquam neque!
 Nesciunt, voluptate, illo.`;
 
-class GroupExample extends Component<{}, { value: string }> {
-  constructor() {
-    super();
+class GroupExample extends Component<{ valid?: boolean; white?: boolean }, { value: string }> {
+  constructor(props: { valid?: boolean; white?: boolean }) {
+    super(props);
     this.state = { value: 'Lagos' };
   }
 
@@ -53,7 +53,7 @@ class GroupExample extends Component<{}, { value: string }> {
               id={city}
               name='group_example'
               label={city}
-              onChange={(event) => {
+              onChange={(event: any) => {
                 this.updateValue(event.target.value);
               }}
               value={city}
@@ -118,12 +118,44 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  MultilineExample,
-  InvalidExample,
-  WhiteExample,
-  DisabledCheckedExample,
-  DisabledUncheckedExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-radio',
+  component: BpkRadio,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const MultiLine = {
+  render: () => <MultilineExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const White = {
+  render: () => <WhiteExample />,
+};
+
+export const DisabledChecked = {
+  render: () => <DisabledCheckedExample />,
+};
+
+export const DisabledUnchecked = {
+  render: () => <DisabledUncheckedExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

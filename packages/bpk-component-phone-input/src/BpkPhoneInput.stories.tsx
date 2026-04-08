@@ -16,15 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
-import BpkFieldSet from '../../packages/bpk-component-fieldset';
-import BpkImage from '../../packages/bpk-component-image';
-import BpkPhoneInput from '../../packages/bpk-component-phone-input';
+import BpkFieldSet from '../../bpk-component-fieldset';
+import BpkImage from '../../bpk-component-image';
 
-const DIALING_CODE_TO_ID_MAP = {
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+import BpkPhoneInput from './BpkPhoneInput';
+
+import type { Meta } from '@storybook/react';
+
+const DIALING_CODE_TO_ID_MAP: Record<string, string> = {
   '1_us': 'us',
   '1_ca': 'ca',
   '44_uk': 'uk',
@@ -32,26 +35,26 @@ const DIALING_CODE_TO_ID_MAP = {
   '998_uz': 'uz',
 };
 
-const getFlag = (dialingCode) => {
+const getFlag = (dialingCode: string) => {
   const countryCode = DIALING_CODE_TO_ID_MAP[dialingCode];
   const url = `https://images.skyscnr.com/images/country/flag/header/${countryCode}.png`;
   return <BpkImage altText="Flag" aspectRatio={50 / 38} src={url} />;
 };
 
 type Props = {
-  large: boolean,
-  validationMessage: ?string,
-  validNumber: ?string,
-  description: ?string,
-  disabled: boolean,
-  dialingCodeMask: boolean,
-  required: ?boolean,
-  useLongLabels: boolean,
+  large?: boolean;
+  validationMessage?: string | null;
+  validNumber?: string | null;
+  description?: string | null;
+  disabled?: boolean;
+  dialingCodeMask?: boolean;
+  required?: boolean;
+  useLongLabels?: boolean;
 };
 
 class StoryContainer extends Component<
   Props,
-  { dialingCode: string, value: string },
+  { dialingCode: string; value: string }
 > {
   static defaultProps = {
     description: null,
@@ -69,11 +72,11 @@ class StoryContainer extends Component<
     this.state = { dialingCode: '44_uk', value: '' };
   }
 
-  onChange = (e: SyntheticInputEvent<HTMLElement>) => {
+  onChange = (e: any) => {
     this.setState({ value: e.target.value });
   };
 
-  onDialingCodeChange = (e: SyntheticInputEvent<HTMLElement>) => {
+  onDialingCodeChange = (e: any) => {
     this.setState({ dialingCode: e.target.value });
   };
 
@@ -100,6 +103,7 @@ class StoryContainer extends Component<
 
     return (
       <BpkFieldSet
+        label=""
         validationMessage={validationMessage}
         description={description}
         disabled={!!disabled}
@@ -169,13 +173,48 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  LargeExample,
-  WithValidationExample,
-  WithDialingCodeMaskExample,
-  DisabledExample,
-  RequiredExample,
-  DoubleLengthLabelExamples,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-phone-input',
+  component: BpkPhoneInput,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Large = {
+  render: () => <LargeExample />,
+};
+
+export const WithValidation = {
+  render: () => <WithValidationExample />,
+};
+
+export const WithDialingCodeMask = {
+  render: () => <WithDialingCodeMaskExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledExample />,
+};
+
+export const Required = {
+  render: () => <RequiredExample />,
+};
+
+export const DoubleLengthLabels = {
+  render: () => <DoubleLengthLabelExamples />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
