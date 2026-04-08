@@ -204,6 +204,18 @@ describe('processBpkProps', () => {
 
   it('maps Backpack breakpoint keys for position prop via processBpkComponentProps', () => {
     const result = processBpkComponentProps(
+      { position: { mobile: 'relative', tablet: 'sticky' } },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.position).toEqual({ md: 'relative', xl: 'sticky' });
+  });
+
+  it('passes base key through unchanged as a Chakra-native pass-through (not a Backpack breakpoint)', () => {
+    // `base` is not a Backpack breakpoint — it is a Chakra key passed through by
+    // normalizeResponsiveObject without remapping. This test documents that behaviour
+    // separately so it is not confused with Backpack breakpoint key mapping.
+    const result = processBpkComponentProps(
       { position: { base: 'relative', tablet: 'sticky' } },
       { component: 'BpkBox' },
     );

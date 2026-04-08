@@ -264,7 +264,7 @@ describe('BpkBox', () => {
     it('renders with a responsive position object', () => {
       const { container } = render(
         <BpkProvider>
-          <BpkBox position={{ base: 'relative', tablet: 'sticky' }}>
+          <BpkBox position={{ mobile: 'relative', tablet: 'sticky' }}>
             Responsive position
           </BpkBox>
         </BpkProvider>,

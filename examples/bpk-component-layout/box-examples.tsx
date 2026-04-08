@@ -299,6 +299,7 @@ export const ZIndexExample = () => (
         height="6rem"
         padding={BpkSpacing.SM}
         zIndex={1}
+        backgroundColor={BACKGROUND_COLORS.surfaceDefault}
       >
         z-index: 1 (behind)
       </BpkBox>
@@ -310,6 +311,7 @@ export const ZIndexExample = () => (
         height="6rem"
         padding={BpkSpacing.SM}
         zIndex={2}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
       >
         z-index: 2 (in front)
       </BpkBox>
