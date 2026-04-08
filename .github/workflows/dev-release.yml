@@ -1,6 +1,8 @@
 name: Dev Release
 
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
     inputs:
       pr_number:
@@ -20,6 +22,8 @@ defaults:
 env:
   CACHE_NAME: node-modules-cache
   PR_COMMENT_MARKER: "<!-- backpack-dev-release -->"
+  PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+  DRY_RUN: ${{ inputs.dry_run || false }}
 
 permissions: {}
 
@@ -43,13 +47,13 @@ jobs:
         id: validate
         uses: ./.github/actions/pr-security-validation
         with:
-          pr_number: ${{ inputs.pr_number }}
+          pr_number: ${{ env.PR_NUMBER }}
 
       - name: Add or update failure comment on PR
         if: failure()
         uses: ./.github/actions/upsert-pr-comment
         with:
-          pr_number: ${{ inputs.pr_number }}
+          pr_number: ${{ env.PR_NUMBER }}
           marker: ${{ env.PR_COMMENT_MARKER }}
           body: |
             ${{ env.PR_COMMENT_MARKER }}
@@ -105,7 +109,7 @@ jobs:
         run: npm run transpile
 
       - name: Publish dev release to npm
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ env.DRY_RUN != 'true' }}
         run: |
           cd dist
           npm version $DEV_VERSION --no-git-tag-version
@@ -136,7 +140,7 @@ jobs:
           DEV_VERSION: ${{ needs.DevRelease.outputs.dev_version }}
           PR_SHA: ${{ needs.SecurityCheck.outputs.pr_sha }}
           BUILD_RESULT: ${{ needs.DevRelease.result }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          DRY_RUN: ${{ env.DRY_RUN }}
           RUN_ID: ${{ github.run_id }}
           REPO: ${{ github.repository }}
           PR_COMMENT_MARKER: ${{ env.PR_COMMENT_MARKER }}
@@ -193,6 +197,6 @@ jobs:
       - name: Update PR comment with results
         uses: ./.github/actions/upsert-pr-comment
         with:
-          pr_number: ${{ inputs.pr_number }}
+          pr_number: ${{ env.PR_NUMBER }}
           marker: ${{ env.PR_COMMENT_MARKER }}
           body: ${{ steps.build-body.outputs.body }}
