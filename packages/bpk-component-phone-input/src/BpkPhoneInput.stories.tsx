@@ -103,6 +103,7 @@ class StoryContainer extends Component<
 
     return (
       <BpkFieldSet
+        label={phoneNumberLabel}
         validationMessage={validationMessage}
         description={description}
         disabled={!!disabled}
