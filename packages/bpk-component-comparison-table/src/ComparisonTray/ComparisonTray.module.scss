@@ -28,26 +28,7 @@
   max-width: 100%;
 }
 
-// Inner content row — BpkCardV2.Root handles bg, radius, shadow
-.bpk-comparison-tray__content {
-  display: flex;
-  padding: tokens.$bpk-card-padding;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: tokens.bpk-spacing-base();
-}
-
-// Row of item slots — takes all available space, pushing Compare button right
-.bpk-comparison-tray__items {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex: 1;
-  gap: 12 * tokens.$bpk-one-pixel-rem;
-}
-
-// Filled item slot wrapper — relative for close button positioning
+// Filled item — relative for close button positioning
 .bpk-comparison-tray__item {
   position: relative;
   width: 62 * tokens.$bpk-one-pixel-rem;
@@ -107,7 +88,7 @@
   }
 }
 
-// Empty slot — dashed border placeholder
+// Placeholder item — dashed border
 .bpk-comparison-tray__item-placeholder {
   width: 62 * tokens.$bpk-one-pixel-rem;
   height: 28 * tokens.$bpk-one-pixel-rem;

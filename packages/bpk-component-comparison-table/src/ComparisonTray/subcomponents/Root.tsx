@@ -18,6 +18,7 @@
 
 import BpkButton, { BUTTON_TYPES } from '../../../../bpk-component-button';
 import { BpkCardV2, CARD_V2_SURFACE_COLORS } from '../../../../bpk-component-card';
+import { BpkSpacing } from '../../../../bpk-component-layout';
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
 import Item from './Item';
@@ -32,7 +33,7 @@ const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 3;
 
 function Root({
-  compareLabel = 'Compare',
+  compareLabel,
   items,
   onCompare,
   onRemove,
@@ -45,8 +46,13 @@ function Root({
       className={getClassName('bpk-comparison-tray')}
     >
       <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}>
-        <div className={getClassName('bpk-comparison-tray__content')}>
-          <div className={getClassName('bpk-comparison-tray__items')}>
+        <BpkCardV2.Body templateColumns="1fr auto" align="center" gap={BpkSpacing.Base}>
+          <BpkCardV2.Section
+            flexDirection="row"
+            alignItems="center"
+            padding={BpkSpacing.None}
+            gap={BpkSpacing.Base}
+          >
             {displayItems.map((item, index) =>
               item ? (
                 <Item key={item.id} item={item} onRemove={onRemove} />
@@ -55,7 +61,7 @@ function Root({
                 <ItemPlaceholder key={`placeholder-${index}`} />
               ),
             )}
-          </div>
+          </BpkCardV2.Section>
           <BpkButton
             type={BUTTON_TYPES.linkOnDark}
             implicit
@@ -64,7 +70,7 @@ function Root({
           >
             {compareLabel}
           </BpkButton>
-        </div>
+        </BpkCardV2.Body>
       </BpkCardV2.Root>
     </div>
   );

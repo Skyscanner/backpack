@@ -28,7 +28,7 @@ const ITEM_3: ComparisonItem = { id: '3', label: 'Avis', image: 'car3.png', imag
 
 const noop = () => {};
 
-describe('ComparisonTray slot logic', () => {
+describe('ComparisonTray items logic', () => {
   it('disables compare button and renders 0 items when items is empty', () => {
     render(
       <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} />,
