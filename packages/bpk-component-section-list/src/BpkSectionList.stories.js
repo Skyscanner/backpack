@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { action } from '../../../examples/bpk-storybook-utils';
 
-import BpkSectionList, {
-  BpkSectionListSection,
-  BpkSectionListItem,
-} from '../../packages/bpk-component-section-list';
-import { action } from '../bpk-storybook-utils';
+import BpkSectionList from './BpkSectionList';
+import BpkSectionListItem from './BpkSectionListItem';
+import BpkSectionListSection from './BpkSectionListSection';
 
 const DefaultExample = () => (
   <BpkSectionList>
@@ -50,4 +48,28 @@ const DefaultExample = () => (
   </BpkSectionList>
 );
 
-export default DefaultExample;
+const meta = {
+  title: 'bpk-component-section-list',
+  component: BpkSectionList,
+  subcomponents: {
+    BpkSectionListSection,
+    BpkSectionListItem,
+  },
+};
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DefaultExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

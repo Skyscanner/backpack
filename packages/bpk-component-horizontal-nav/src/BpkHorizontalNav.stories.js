@@ -23,15 +23,14 @@ import {
   colorSkyGrayTint06,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkHorizontalNav, {
-  BpkHorizontalNavItem,
-  HORIZONTAL_NAV_TYPES,
-} from '../../packages/bpk-component-horizontal-nav';
-import BpkText from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
-import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import BpkText from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkHorizontalNav, { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
+import BpkHorizontalNavItem from './BpkHorizontalNavItem';
+
+import STYLES from './BpkHorizontalNav.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -208,17 +207,65 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  ScrollToSelectedExample,
-  NotUnderlinedExample,
-  LightAppearanceExample,
-  UsingCustomScrollColorsExample,
-  AnchorTagsExample,
-  ExtremeExample,
-  SpacedAroundExample,
-  DisabledItemExample,
-  SeparatorsExample,
-  InteractiveTabsExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-horizontal-nav',
+  component: BpkHorizontalNav,
+  subcomponents: { BpkHorizontalNavItem },
+};
+
+export default meta;
+
+export const Example = {
+  render: () => <DefaultExample />,
+};
+
+export const ScrollToSelectedElement = {
+  render: () => <ScrollToSelectedExample />,
+};
+
+export const NotUnderlined = {
+  render: () => <NotUnderlinedExample />,
+};
+
+export const LightAppearance = {
+  render: () => <LightAppearanceExample />,
+};
+
+export const UsingCustomScrollColors = {
+  render: () => <UsingCustomScrollColorsExample />,
+};
+
+export const AnchorTags = {
+  render: () => <AnchorTagsExample />,
+};
+
+export const Extreme = {
+  render: () => <ExtremeExample />,
+};
+
+export const SpaceAround = {
+  render: () => <SpacedAroundExample />,
+};
+
+export const DisabledItem = {
+  render: () => <DisabledItemExample />,
+};
+
+export const Separators = {
+  render: () => <SeparatorsExample />,
+};
+
+export const InteractiveTabs = {
+  render: () => <InteractiveTabsExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

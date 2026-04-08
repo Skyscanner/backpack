@@ -16,13 +16,17 @@
  * limitations under the License.
  */
 
-import BpkBreakpoint from '../../packages/bpk-component-breakpoint/src/BpkBreakpoint';
+import BpkGridToggle from './BpkGridToggle';
 
-import DefaultExample from './examples';
+const DefaultExample = () => <BpkGridToggle />;
 
-export default {
-  title: 'bpk-component-breakpoint',
-  component: BpkBreakpoint,
+const meta = {
+  title: 'bpk-component-grid-toggle',
+  component: BpkGridToggle,
 };
 
-export const Examples = DefaultExample;
+export default meta;
+
+export const Example = {
+  render: () => <DefaultExample />,
+};

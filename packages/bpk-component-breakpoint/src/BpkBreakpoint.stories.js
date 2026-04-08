@@ -16,22 +16,17 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import PropTypes from 'prop-types';
 
-import type { Node } from 'react';
+import { cssModules } from '../../bpk-react-utils';
 
-import BpkBreakpoint, {
-  BREAKPOINTS,
-} from '../../packages/bpk-component-breakpoint';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
 
-import STYLES from './examples.module.scss';
+import STYLES from './BpkBreakpoint.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const MediaQueryStatus = (props: { children: Node, isActive: boolean }) => {
-  const { children, isActive } = props;
-
+const MediaQueryStatus = ({ children, isActive }) => {
   const className = getClassName(
     isActive
       ? 'bpk-breakpoints-demo--active'
@@ -39,6 +34,11 @@ const MediaQueryStatus = (props: { children: Node, isActive: boolean }) => {
   );
 
   return <div className={className}>{children}</div>;
+};
+
+MediaQueryStatus.propTypes = {
+  children: PropTypes.node.isRequired,
+  isActive: PropTypes.bool.isRequired,
 };
 
 const DefaultExample = () => (
@@ -98,4 +98,13 @@ const DefaultExample = () => (
   </div>
 );
 
-export default DefaultExample;
+const meta = {
+  title: 'bpk-component-breakpoint',
+  component: BpkBreakpoint,
+};
+
+export default meta;
+
+export const Examples = {
+  render: () => <DefaultExample />,
+};

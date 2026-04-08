@@ -16,13 +16,15 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from '../../packages/bpk-component-grid-toggle';
+import BpkRtlToggle from './BpkRtlToggle';
 
-import DefaultExample from './examples';
-
-export default {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
+const meta = {
+  title: 'bpk-component-rtl-toggle',
+  component: BpkRtlToggle,
 };
 
-export const Example = DefaultExample;
+export default meta;
+
+export const Example = {
+  render: () => <BpkRtlToggle />,
+};

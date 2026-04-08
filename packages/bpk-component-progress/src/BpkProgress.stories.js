@@ -16,19 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { Component } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
-import BpkProgress from '../../packages/bpk-component-progress';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkProgress from './BpkProgress';
+
+import STYLES from './BpkProgress.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-class ProgressContainer extends Component<{}, { progress: number }> {
+class ProgressContainer extends Component {
   constructor() {
     super();
 
@@ -57,7 +56,6 @@ class ProgressContainer extends Component<{}, { progress: number }> {
         </BpkButton>
         &nbsp;
         <div className={getClassName('bpkdocs-progress-container__flex-grow')}>
-          {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
           <BpkProgress min={0} max={100} value={progress} {...this.props} />
         </div>
       </div>
@@ -65,7 +63,7 @@ class ProgressContainer extends Component<{}, { progress: number }> {
   }
 }
 
-class SteppedProgressContainer extends Component<{}, { progress: number }> {
+class SteppedProgressContainer extends Component {
   constructor() {
     super();
 
@@ -74,7 +72,7 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
     };
   }
 
-  setProgress = (progress: number) => {
+  setProgress = (progress) => {
     if (progress >= 1 && progress <= 5) {
       this.setState({ progress });
     }
@@ -83,7 +81,6 @@ class SteppedProgressContainer extends Component<{}, { progress: number }> {
   render() {
     return (
       <div>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkProgress
           min={0}
           max={5}
@@ -127,4 +124,32 @@ const MixedExample = () => (
   </div>
 );
 
-export { DefaultExample, SmallExample, SteppedExample, MixedExample };
+const meta = {
+  title: 'bpk-component-progress',
+  component: BpkProgress,
+};
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Small = {
+  render: () => <SmallExample />,
+};
+
+export const Stepped = {
+  render: () => <SteppedExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
-import BpkImage, {
-  BpkBackgroundImage,
-  withLazyLoading,
-  withLoadingBehavior,
-  BORDER_RADIUS_STYLES,
-} from '../../packages/bpk-component-image';
-import BpkMobileScrollContainer from '../../packages/bpk-component-mobile-scroll-container';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+
+import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+
+import BpkBackgroundImage from './BpkBackgroundImage';
+import BpkImage from './BpkImage';
+import BORDER_RADIUS_STYLES from './BpkImageBorderRadiusStyles';
+import withLazyLoading from './withLazyLoading';
+import withLoadingBehavior from './withLoadingBehavior';
 
 const image =
   'https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg';
@@ -171,15 +173,63 @@ const BackgroundImageWithLazyLoadingAndAnimationExample = () => (
   </FadingLazyLoadedBackgroundImage>
 );
 
-export {
-  DefaultExample,
-  RoundedCornersExample,
-  FullWidthExample,
-  UsingSrcSetExample,
-  WithAnimationExample,
-  WithLazyLoadingExample,
-  WithLazyLoadingAndAnimationExample,
-  WithinScrollDivExample,
-  BackgroundImageExample,
-  BackgroundImageWithLazyLoadingAndAnimationExample,
+const meta = {
+  title: 'bpk-component-image',
+  component: BpkImage,
+  subcomponents: { BpkBackgroundImage },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgTypes exclude={['zoomEnabled']} />
+          <Markdown>
+            {`**Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including \`srcSet\` are also supported.`}
+          </Markdown>
+        </>
+      )
+    },
+  },
+};
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WithBorderRadius = {
+  render: () => <RoundedCornersExample />,
+};
+
+export const FullWidth = {
+  render: () => <FullWidthExample />,
+};
+
+export const UsingSrcSet = {
+  render: () => <UsingSrcSetExample />,
+};
+
+export const WithAnimation = {
+  render: () => <WithAnimationExample />,
+};
+
+export const WithLazyLoading = {
+  render: () => <WithLazyLoadingExample />,
+};
+
+export const WithLazyLoadingAndAnimation = {
+  render: () => <WithLazyLoadingAndAnimationExample />,
+};
+
+export const WithinAScrollDiv = {
+  render: () => <WithinScrollDivExample />,
+};
+
+export const BackgroundImage = {
+  render: () => <BackgroundImageExample />,
+};
+
+export const BackgroundImageWithLazyLoadingAndAnimation = {
+  render: () => <BackgroundImageWithLazyLoadingAndAnimationExample />,
 };
