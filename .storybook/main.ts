@@ -41,7 +41,7 @@ const config: StorybookConfig = {
   },
   typescript: {
     reactDocgen: isCI ? 'react-docgen-typescript' : 'react-docgen',
-    ...(isCI && {
+    ...(isCI ? {
       reactDocgenTypescriptOptions: {
         shouldIncludePropTagMap: true,
         propFilter: (prop) => {
@@ -51,7 +51,7 @@ const config: StorybookConfig = {
           return !isHTMLElementProp
         },
       },
-    }),
+    } : {}),
   },
 };
 export default config;

@@ -29,8 +29,13 @@ const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
   // Enable filesystem caching to speed up subsequent Storybook startups
+  const existingCache =
+    config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
+      ? config.cache
+      : {};
   /* eslint-disable-next-line no-param-reassign */
   config.cache = {
+    ...existingCache,
     type: 'filesystem',
   };
 
