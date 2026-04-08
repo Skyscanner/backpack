@@ -103,7 +103,7 @@ class StoryContainer extends Component<
 
     return (
       <BpkFieldSet
-        isCheckbox
+        label=""
         validationMessage={validationMessage}
         description={description}
         disabled={!!disabled}
