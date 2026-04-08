@@ -110,7 +110,7 @@ The layout API is intentionally limited and strongly typed. The main groups are:
 - **Position keyword** – `position`:
   - Values: `'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'`. Supports responsive overrides.
 - **Position offsets** – `top`, `right`, `bottom`, `left`:
-  - Values: rem strings (e.g. `'1rem'`) or percentages (e.g. `'50%'`). Supports responsive overrides.
+  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), or bare `'0'` (no unit required). Supports responsive overrides.
 - **Overflow** – `overflow`, `overflowX`, `overflowY`:
   - Values: `'visible' | 'hidden' | 'scroll' | 'auto' | 'clip'`. All three support responsive overrides. Use `overflowX`/`overflowY` for per-axis control (e.g. `overflowX="hidden"` + `overflowY="auto"`).
 - **Stacking context** – `zIndex`:
