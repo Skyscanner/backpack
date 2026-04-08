@@ -18,7 +18,6 @@
 
 import { Component } from 'react';
 
-import BpkFieldSet from '../../bpk-component-fieldset';
 import BpkImage from '../../bpk-component-image';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -43,12 +42,9 @@ const getFlag = (dialingCode: string) => {
 
 type Props = {
   large?: boolean;
-  validationMessage?: string | null;
   validNumber?: string | null;
-  description?: string | null;
   disabled?: boolean;
   dialingCodeMask?: boolean;
-  required?: boolean;
   useLongLabels?: boolean;
 };
 
@@ -57,14 +53,11 @@ class StoryContainer extends Component<
   { dialingCode: string; value: string }
 > {
   static defaultProps = {
-    description: null,
     dialingCodeMask: false,
     disabled: false,
     large: false,
-    required: false,
     useLongLabels: false,
     validNumber: null,
-    validationMessage: null,
   };
 
   constructor(props: Props) {
@@ -82,14 +75,11 @@ class StoryContainer extends Component<
 
   render() {
     const {
-      description,
       dialingCodeMask,
       disabled,
       large,
-      required,
       useLongLabels,
       validNumber,
-      validationMessage,
     } = this.props;
     const { dialingCode, value } = this.state;
 
@@ -102,41 +92,33 @@ class StoryContainer extends Component<
     }
 
     return (
-      <BpkFieldSet
+      <BpkPhoneInput
+        id="phone-input-id"
+        name="Telephone input"
         label={phoneNumberLabel}
-        validationMessage={validationMessage}
-        description={description}
-        disabled={!!disabled}
-        required={!!required}
-      >
-        <BpkPhoneInput
-          id="phone-input-id"
-          name="Telephone input"
-          label={phoneNumberLabel}
-          disabled={disabled}
-          valid={value && validNumber ? validNumber === value : null}
-          large={large}
-          dialingCodeMask={dialingCodeMask}
-          onChange={this.onChange}
-          onDialingCodeChange={this.onDialingCodeChange}
-          value={value}
-          dialingCode={dialingCode}
-          dialingCodes={[
-            { code: '1_us', description: '+1 (US)', numberPrefix: '+1' },
-            { code: '1_ca', description: '+1 (CA)', numberPrefix: '+1' },
-            { code: '44_uk', description: '+44 (UK)', numberPrefix: '+44' },
-            { code: '55_br', description: '+55 (BR)', numberPrefix: '+55' },
-            { code: '998_uz', description: '+998 (UZ)', numberPrefix: '+998' },
-          ]}
-          dialingCodeProps={{
-            id: 'dialing-code',
-            name: 'Dialing code',
-            label: `${dialingCodeLabel}`,
-            'aria-label': 'Dialing code',
-            image: getFlag(dialingCode),
-          }}
-        />
-      </BpkFieldSet>
+        disabled={disabled}
+        valid={value && validNumber ? validNumber === value : null}
+        large={large}
+        dialingCodeMask={dialingCodeMask}
+        onChange={this.onChange}
+        onDialingCodeChange={this.onDialingCodeChange}
+        value={value}
+        dialingCode={dialingCode}
+        dialingCodes={[
+          { code: '1_us', description: '+1 (US)', numberPrefix: '+1' },
+          { code: '1_ca', description: '+1 (CA)', numberPrefix: '+1' },
+          { code: '44_uk', description: '+44 (UK)', numberPrefix: '+44' },
+          { code: '55_br', description: '+55 (BR)', numberPrefix: '+55' },
+          { code: '998_uz', description: '+998 (UZ)', numberPrefix: '+998' },
+        ]}
+        dialingCodeProps={{
+          id: 'dialing-code',
+          name: 'Dialing code',
+          label: `${dialingCodeLabel}`,
+          'aria-label': 'Dialing code',
+          image: getFlag(dialingCode),
+        }}
+      />
     );
   }
 }
@@ -146,18 +128,12 @@ const DefaultExample = () => <StoryContainer />;
 const LargeExample = () => <StoryContainer large />;
 
 const WithValidationExample = () => (
-  <StoryContainer
-    validationMessage="Please enter a valid phone number"
-    validNumber="0123456789"
-    description="Enter 0123456789"
-  />
+  <StoryContainer validNumber="0123456789" />
 );
 
 const WithDialingCodeMaskExample = () => <StoryContainer dialingCodeMask />;
 
 const DisabledExample = () => <StoryContainer disabled />;
-
-const RequiredExample = () => <StoryContainer required />;
 
 const DoubleLengthLabelExamples = () => <StoryContainer useLongLabels />;
 
@@ -168,7 +144,6 @@ const MixedExample = () => (
     <WithValidationExample />
     <WithDialingCodeMaskExample />
     <DisabledExample />
-    <RequiredExample />
     <DoubleLengthLabelExamples />
   </div>
 );
@@ -198,10 +173,6 @@ export const WithDialingCodeMask = {
 
 export const Disabled = {
   render: () => <DisabledExample />,
-};
-
-export const Required = {
-  render: () => <RequiredExample />,
 };
 
 export const DoubleLengthLabels = {
