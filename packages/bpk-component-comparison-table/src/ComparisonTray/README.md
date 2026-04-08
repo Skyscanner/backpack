@@ -13,6 +13,40 @@ import ComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-ta
 - **Manage the items array.** The tray is stateless — it renders whatever you pass to `items`.
 - **Cap the array at 3 items.** If you pass more than 3, only the first 3 will be shown. The rest are silently ignored.
 - **Prevent adding beyond the limit in your UI.** A common pattern is to disable the "Add to compare" buttons once 3 items are in the array.
+- **a11y - Manage focus after item removal.** When a remove button is clicked its DOM node is destroyed, causing focus to fall to `<body>`. Move focus explicitly in your `onRemove` handler. A common pattern is to focus the next item's remove button, falling back to the previous one:
+
+```tsx
+const trayRef = useRef<HTMLDivElement>(null);
+const pendingFocusIndexRef = useRef<number | null>(null);
+
+const removeItem = (id: string) => {
+  const removedIndex = items.findIndex((item) => item.id === id);
+  const remaining = items.filter((item) => item.id !== id);
+
+  if (remaining.length > 0) {
+    pendingFocusIndexRef.current = removedIndex < remaining.length ? removedIndex : removedIndex - 1;
+  }
+
+  setItems(remaining);
+};
+
+useEffect(() => {
+  if (pendingFocusIndexRef.current === null) return;
+
+  const idx = pendingFocusIndexRef.current;
+  pendingFocusIndexRef.current = null;
+
+  const removeButtons = trayRef.current?.querySelectorAll<HTMLButtonElement>(
+    'button[aria-label^="Remove"]',
+  );
+  removeButtons?.[idx]?.focus();
+}, [items]);
+
+// Wrap ComparisonTray.Root in a div with trayRef so the query is scoped
+<div ref={trayRef}>
+  <ComparisonTray.Root ... onRemove={removeItem} />
+</div>
+```
 ## Example
 
 ```tsx

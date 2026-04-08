@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
 import ComparisonTray from '../../packages/bpk-component-comparison-table';
@@ -54,16 +54,38 @@ const SAMPLE_ITEMS: ComparisonItem[] = [
 
 const InteractiveExample = () => {
   const [items, setItems] = useState<ComparisonItem[]>([]);
+  const trayRef = useRef<HTMLDivElement>(null);
+  const pendingFocusIndexRef = useRef<number | null>(null);
 
-  const addItem = (item: ComparisonItem) => {
-    if (items.length < 3 && !items.some((i) => i.id === item.id)) {
-      setItems((prev) => [...prev, item]);
+  const addItem = (newItem: ComparisonItem) => {
+    if (items.length < 3 && !items.some((existing) => existing.id === newItem.id)) {
+      setItems((prev) => [...prev, newItem]);
     }
   };
 
   const removeItem = (id: string) => {
-    setItems((prev) => prev.filter((i) => i.id !== id));
+    const removedIndex = items.findIndex((item) => item.id === id);
+    const remaining = items.filter((item) => item.id !== id);
+
+    if (remaining.length > 0) {
+      // Focus next item's remove button, or previous if the last item was removed
+      pendingFocusIndexRef.current = removedIndex < remaining.length ? removedIndex : removedIndex - 1;
+    }
+
+    setItems(remaining);
   };
+
+  useEffect(() => {
+    if (pendingFocusIndexRef.current === null) return;
+
+    const idx = pendingFocusIndexRef.current;
+    pendingFocusIndexRef.current = null;
+
+    const removeButtons = trayRef.current?.querySelectorAll<HTMLButtonElement>(
+      'button[aria-label^="Remove"]',
+    );
+    removeButtons?.[idx]?.focus();
+  }, [items]);
 
   const handleCompare = () => {
     // eslint-disable-next-line no-alert
@@ -102,16 +124,18 @@ const InteractiveExample = () => {
         )}
       </BpkHStack>
 
-      {items.length > 0 && (
-        <ComparisonTray.Root
-          items={items}
-          ariaLabel="Comparison tray"
-          compareLabel="Compare"
-          removeLabel="Remove"
-          onRemove={removeItem}
-          onCompare={handleCompare}
-        />
-      )}
+      <div ref={trayRef}>
+        {items.length > 0 && (
+          <ComparisonTray.Root
+            items={items}
+            ariaLabel="Comparison tray"
+            compareLabel="Compare"
+            removeLabel="Remove"
+            onRemove={removeItem}
+            onCompare={handleCompare}
+          />
+        )}
+      </div>
     </BpkVStack>
   );
 };
