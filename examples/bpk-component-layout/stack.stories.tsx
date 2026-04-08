@@ -27,6 +27,7 @@ import {
   BpkVStackExample,
   BpkStackResponsiveExample,
   BpkStackColorExample,
+  BpkStackLayoutPropsExample,
 } from './stack-examples';
 
 export default {
@@ -61,3 +62,4 @@ export const HStack = BpkHStackExample;
 export const VStack = BpkVStackExample;
 export const Responsive = BpkStackResponsiveExample;
 export const Color = BpkStackColorExample;
+export const LayoutProps = BpkStackLayoutPropsExample;

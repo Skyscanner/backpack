@@ -22,7 +22,7 @@ import {
   BpkFlex,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
-import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -102,6 +102,65 @@ export const BpkFlexWrapExample = () => (
       <BpkBox height="2rem" width="9rem"><span className={outline} /></BpkBox>
       <BpkBox height="2rem" width="9rem"><span className={outline} /></BpkBox>
     </BpkFlex>
+  </Wrapper>
+);
+
+/**
+ * Layout utilities example – demonstrates position, overflow, zIndex, and aria-* on BpkFlex.
+ *
+ * @returns {JSX.Element} A flex container that clips overflowing content and uses aria-label.
+ */
+export const BpkFlexLayoutPropsExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>overflow=&quot;hidden&quot; — clips overflowing flex items</BpkText>
+      <BpkFlex
+        direction="column"
+        gap={BpkSpacing.SM}
+        overflow="hidden"
+        width="12rem"
+        height="6rem"
+        padding={BpkSpacing.SM}
+        role="region"
+        aria-label="Clipping flex container"
+        marginTop={BpkSpacing.SM}
+      >
+        <BpkText>Item 1</BpkText>
+        <BpkText>Item 2</BpkText>
+        <BpkText>Item 3 — clipped</BpkText>
+        <BpkText>Item 4 — clipped</BpkText>
+      </BpkFlex>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>position=&quot;relative&quot; + zIndex — layered flex containers</BpkText>
+      <BpkFlex position="relative" width="14rem" height="5rem" marginTop={BpkSpacing.SM}>
+        <BpkFlex
+          position="absolute"
+          top="0rem"
+          left="0rem"
+          width="10rem"
+          height="3rem"
+          padding={BpkSpacing.SM}
+          zIndex={1}
+          backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+        >
+          <BpkText>z-index: 1</BpkText>
+        </BpkFlex>
+        <BpkFlex
+          position="absolute"
+          top="1rem"
+          left="2rem"
+          width="10rem"
+          height="3rem"
+          padding={BpkSpacing.SM}
+          zIndex={2}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>z-index: 2 (in front)</BpkText>
+        </BpkFlex>
+      </BpkFlex>
+    </BpkBox>
   </Wrapper>
 );
 
