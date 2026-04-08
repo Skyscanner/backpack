@@ -1,20 +1,51 @@
 # ComparisonTray
 
-A data-driven tray component for comparing up to 3 items. The consumer owns and manages the items state; `ComparisonTray.Root` is the only public API.
+A tray component for comparing up to 3 items. The consumer owns and manage the items state — `ComparisonTray.Root` only renders what it receives.
 
 ## Usage
 
 ```tsx
 import ComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
+```
 
-const [items, setItems] = useState([]);
+## Consumer responsibilities
 
-<ComparisonTray.Root
-  items={items}
-  onRemove={(id) => setItems((prev) => prev.filter((i) => i.id !== id))}
-  onCompare={() => navigate('/compare')}
-  compareLabel="Compare"
-/>
+- **Manage the items array.** The tray is stateless — it renders whatever you pass to `items`.
+- **Cap the array at 3 items.** If you pass more than 3, only the first 3 will be shown. The rest are silently ignored.
+- **Prevent adding beyond the limit in your UI.** A common pattern is to disable the "Add to compare" buttons once 3 items are in the array.
+## Example
+
+```tsx
+import ComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+
+const MAX_ITEMS = 3;
+
+const [items, setItems] = useState<ComparisonItem[]>([]);
+
+const handleAdd = (item: ComparisonItem) => {
+  setItems((prev) => [...prev, item]);
+};
+
+const handleRemove = (id: string) => {
+  setItems((prev) => prev.filter((i) => i.id !== id));
+};
+
+<>
+  <BpkButton
+    onClick={() => handleAdd({ id: '1', label: 'Flight A', image: '/img/a.jpg' })}
+    disabled={items.length >= MAX_ITEMS}
+  >
+    Add to compare
+  </BpkButton>
+
+  <ComparisonTray.Root
+    items={items}
+    onRemove={handleRemove}
+    onCompare={() => navigate('/compare')}
+    compareLabel="Compare"
+  />
+</>
 ```
 
 ## Props
@@ -26,7 +57,7 @@ const [items, setItems] = useState([]);
 | items        | `ComparisonItem[]`     | true     | -             |
 | onRemove     | `(id: string) => void` | true     | -             |
 | onCompare    | `() => void`           | true     | -             |
-| compareLabel | string                 | true     | -             |
+| compareLabel | string                 | false    | `'Compare'`   |
 
 The Compare button is disabled when fewer than 2 items are present.
 
@@ -39,4 +70,4 @@ The Compare button is disabled when fewer than 2 items are present.
 | image    | string   | true     | -             |
 | imageAlt | string   | false    | `label`       |
 
-> **Note:** `Item` and `ItemPlaceholder` are internal subcomponents exported for testing and extension purposes only — they are not part of the public API.
+> **Note:** `Item` and `ItemPlaceholder` are internal subcomponents exported for testing purposes only — they are not part of the public API.
