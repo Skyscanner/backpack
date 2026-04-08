@@ -28,12 +28,19 @@ const rootDir = path.resolve(__dirname, '../');
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
+  // Enable filesystem caching to speed up subsequent Storybook startups
+  /* eslint-disable-next-line no-param-reassign */
+  config.cache = {
+    type: 'filesystem',
+  };
+
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
     exclude: /node_modules\/(?!bpk-).*/,
     loader: 'babel-loader',
     options: {
+      cacheDirectory: true,
       presets: [['@babel/preset-env']],
     },
   });
@@ -41,6 +48,7 @@ module.exports = ({ config }) => {
     test: /\.(js|jsx)?$/,
     loader: 'babel-loader',
     options: {
+      cacheDirectory: true,
       plugins: ['babel-plugin-react-docgen'],
     },
   });
@@ -57,6 +65,7 @@ module.exports = ({ config }) => {
     include: /node_modules\/@skyscanner\/bpk-svgs.*/,
     loader: 'babel-loader',
     options: {
+      cacheDirectory: true,
       presets: [['@babel/preset-env']],
     },
   });
