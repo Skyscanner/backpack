@@ -15,21 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import BpkSkipLink from '../../packages/bpk-component-skip-link';
+
+import BpkSkipLink from './BpkSkipLink';
+
+import type { Meta } from '@storybook/react';
 
 const DefaultExample = () => (
   <BpkSkipLink
     style={{ position: 'absolute' }}
     href="#main"
     label="Skip to main content"
-  />
-);
-
-const DocsSiteExample = () => (
-  <BpkSkipLink
-    style={{ position: 'absolute' }}
-    href="#implementation"
-    label="Skip to implementation"
   />
 );
 
@@ -71,4 +66,17 @@ const RealisticExample = () => {
   )
 };
 
-export { DefaultExample, DocsSiteExample, RealisticExample };
+const meta = {
+  title: 'bpk-component-skip-link',
+  component: BpkSkipLink,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Realistic = {
+  render: () => <RealisticExample />,
+};

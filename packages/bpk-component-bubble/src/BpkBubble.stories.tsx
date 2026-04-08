@@ -16,11 +16,15 @@
  * limitations under the License.
  */
 
-import BpkBubble from '../../packages/bpk-component-bubble/src/BpkBubble';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkBubble from './BpkBubble';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkBubble.stories.module.scss';
+
 
 const getClassNames = cssModules(STYLES);
 
@@ -56,7 +60,6 @@ const WithLongLabelExample = () => (
   </div>
 );
 
-
 const VisualTestExample = () => (
   <div>
     <SimpleExample />
@@ -64,8 +67,28 @@ const VisualTestExample = () => (
   </div>
 );
 
-export {
-  SimpleExample,
-  WithLongLabelExample,
-  VisualTestExample,
+const meta = {
+  title: 'bpk-component-bubble',
+  component: BpkBubble,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <SimpleExample />,
+};
+
+export const LongLabel = {
+  render: () => <WithLongLabelExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualTestExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
