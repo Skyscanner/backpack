@@ -43,7 +43,7 @@ import BpkSplitInput from '../../bpk-component-split-input';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkFieldset, { type BpkFieldsetProps } from './BpkFieldset';
+import BpkFieldset, { type Props as BpkFieldsetProps } from './BpkFieldset';
 
 import type { Meta } from '@storybook/react';
 
