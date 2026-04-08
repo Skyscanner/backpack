@@ -18,26 +18,26 @@
 
 import { useState } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
-import ChevronDownIcon from '../../packages/bpk-component-icon/sm/chevron-down';
-import GridLayoutIcon from '../../packages/bpk-component-icon/sm/grid-layout';
-import InformationCircleIcon from '../../packages/bpk-component-icon/sm/information-circle';
-import ListIcon from '../../packages/bpk-component-icon/sm/list';
+import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
+import ChevronDownIcon from '../../../bpk-component-icon/sm/chevron-down';
+import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
+import InformationCircleIcon from '../../../bpk-component-icon/sm/information-circle';
+import ListIcon from '../../../bpk-component-icon/sm/list';
 import {
   BpkHStack,
   BpkProvider,
   BpkSpacing,
   BpkVStack,
-} from '../../packages/bpk-component-layout';
-import {
-  BpkSegmentedControlV2,
-  SEGMENT_TYPES_V2,
-} from '../../packages/bpk-component-segmented-control';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
-import { cssModules } from '../../packages/bpk-react-utils';
+} from '../../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
+import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkSegmentedControlV2, { SEGMENT_TYPES_V2 } from './BpkSegmentedControlV2';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from '../BpkSegmentedControlV2.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -271,7 +271,6 @@ const IconOnly = () => {
     </BpkSegmentedControlV2.Root>
   );
 };
-
 
 const TwoItems = () => {
   const [selected, setSelected] = useState('one-way');
@@ -589,20 +588,96 @@ const VisualExample = () => (
   </BpkProvider>
 );
 
-export {
-  ComplexContentWithButton,
-  ComplexContentWithIcon,
-  DefaultCanvasDefault,
-  UncontrolledDefaultValue,
-  ComplexTypeExample,
-  CanvasContrast,
-  SurfaceDefault,
-  SurfaceContrast,
-  WithShadow,
-  WithIconAndText,
-  IconOnly,
-  TwoItems,
-  LongLabels,
-  NoInitialSelection,
-  VisualExample,
+const meta = {
+  title: 'bpk-component-segmented-control-v2',
+  component: BpkSegmentedControlV2.Root,
+  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
+  parameters: {
+    a11y: { disable: false },
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: DefaultCanvasDefault,
+  name: 'Default (canvas-default, 3 items)',
+};
+
+export const UncontrolledUsage = {
+  render: UncontrolledDefaultValue,
+  name: 'Uncontrolled (defaultValue)',
+};
+
+export const TypeCanvasContrast = {
+  render: CanvasContrast,
+  name: 'Type — canvas-contrast',
+};
+
+export const TypeSurfaceDefault = {
+  render: SurfaceDefault,
+  name: 'Type — surface-default',
+};
+
+export const TypeSurfaceContrast = {
+  render: SurfaceContrast,
+  name: 'Type — surface-contrast',
+};
+
+export const Shadow = {
+  render: WithShadow,
+  name: 'With shadow',
+};
+
+export const IconAndText = {
+  render: WithIconAndText,
+  name: 'Icon + text content',
+};
+
+export const IconOnlyText = {
+  render: IconOnly,
+  name: 'Icon-only',
+};
+
+export const TwoSegments = {
+  render: TwoItems,
+  name: 'Edge case — 2 items',
+};
+
+export const LongLabelText = {
+  render: LongLabels,
+  name: 'Edge case — long label text (truncation)',
+};
+
+export const NoneSelected = {
+  render: NoInitialSelection,
+  name: 'Edge case — no initial selection',
+};
+
+export const ComplexContentIcon = {
+  render: ComplexContentWithIcon,
+  name: 'Complex content with icon',
+};
+
+export const ComplexContentButton = {
+  render: ComplexContentWithButton,
+  name: 'Complex content with button in slot',
+};
+
+export const ComplexContent = {
+  render: ComplexTypeExample,
+  name: 'Complex content',
+  args: {
+    type: SEGMENT_TYPES_V2.CanvasDefault,
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+      options: Object.values(SEGMENT_TYPES_V2),
+    },
+  },
+};
+
+export const VisualTest = {
+  render: () => <VisualExample />,
 };

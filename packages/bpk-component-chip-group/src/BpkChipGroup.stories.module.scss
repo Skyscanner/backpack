@@ -16,14 +16,30 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
-.bpk-navigation-tab-group-story {
-  padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-core-primary-day;
+.bpk-chip-group-examples {
+  &__fixed-width {
+    width: 300 * tokens.$bpk-one-pixel-rem;
+  }
+
+  &__contrast {
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-canvas-contrast-day;
+  }
+
+  &__dark {
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-contrast-day;
+  }
+
+  &__image {
+    padding: tokens.bpk-spacing-base();
+    background-image: url('https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg');
+  }
 
   &__mixed-container {
-    h3 {
+    h2 {
       margin-top: tokens.bpk-spacing-xl();
       margin-bottom: tokens.bpk-spacing-md();
     }

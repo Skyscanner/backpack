@@ -16,22 +16,39 @@
  * limitations under the License.
  */
 
-import BpkBadge from '../../packages/bpk-component-badge/src/BpkBadge';
-import BpkButton from '../../packages/bpk-component-button';
-import { BpkCardV2, CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS, type BpkCardV2SurfaceColor } from '../../packages/bpk-component-card';
-import BpkCarousel from '../../packages/bpk-component-carousel';
-import BpkJourneyArrow from '../../packages/bpk-component-journey-arrow';
-import { BpkBox, BpkFlex, BpkGrid, BpkHStack, BpkSpacing, BpkVStack } from '../../packages/bpk-component-layout';
-import BpkLink from '../../packages/bpk-component-link';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkPrice, { SIZES, ALIGNS } from '../../packages/bpk-component-price';
-import BpkRating from '../../packages/bpk-component-rating';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkStarRating from '../../packages/bpk-component-star-rating';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import type { ReactNode } from 'react';
 
-import STYLES from './examples.module.scss';
+import {
+  BpkCardV2,
+  CARD_V2_SURFACE_COLORS,
+  CARD_V2_VARIANTS,
+} from "..";
+import BpkBadge from '../../bpk-component-badge/src/BpkBadge';
+import BpkButton from '../../bpk-component-button';
+import BpkCarousel from '../../bpk-component-carousel';
+import BpkJourneyArrow from '../../bpk-component-journey-arrow';
+import {
+  BpkBox,
+  BpkFlex,
+  BpkGrid,
+  BpkHStack,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../bpk-component-layout';
+import BpkLink from '../../bpk-component-link';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkPrice, { SIZES, ALIGNS } from '../../bpk-component-price';
+import BpkRating from '../../bpk-component-rating';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkStarRating from '../../bpk-component-star-rating';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
+import type { BpkCardV2SurfaceColor } from "..";
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkCardV2.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -80,17 +97,26 @@ const VariantsExample = () => (
   </div>
 );
 
-const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = [CARD_V2_SURFACE_COLORS.surfaceHero, CARD_V2_SURFACE_COLORS.surfaceContrast];
+const DARK_SURFACE_COLORS: BpkCardV2SurfaceColor[] = [
+  CARD_V2_SURFACE_COLORS.surfaceHero,
+  CARD_V2_SURFACE_COLORS.surfaceContrast,
+];
 
 const SurfaceColorsExample = () => (
   <BpkFlex wrap="wrap" gap={BpkSpacing.Base} paddingTop={BpkSpacing.Base}>
     {SURFACE_COLORS.map((color) => {
-      const textColor = DARK_SURFACE_COLORS.includes(color) ? TEXT_COLORS.textOnDark : undefined;
+      const textColor = DARK_SURFACE_COLORS.includes(color)
+        ? TEXT_COLORS.textOnDark
+        : undefined;
       return (
         <BpkBox key={color} width="20rem">
           <BpkCardV2.Root bgColor={color} variant={CARD_V2_VARIANTS.outlined}>
             <BpkCardV2.Header>
-              <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3" color={textColor}>
+              <BpkText
+                textStyle={TEXT_STYLES.heading5}
+                tagName="h3"
+                color={textColor}
+              >
                 {color}
               </BpkText>
             </BpkCardV2.Header>
@@ -125,19 +151,26 @@ const DealOption = ({ text }: { text: string }) => (
     <div className={getClassName('bpk-card-v2-examples__deal-icon')} />
     <BpkText textStyle={TEXT_STYLES.footnote}>{text}</BpkText>
   </BpkFlex>
-)
+);
 
 const PackagesCardExample = () => (
   <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
-      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }} padding={BpkSpacing.None}>
+      <BpkCardV2.Body
+        templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }}
+        padding={BpkSpacing.None}
+      >
         <BpkCardV2.Section padding={BpkSpacing.MD} gap={BpkSpacing.Base}>
           <div className={getClassName('bpk-card-v2-examples__carousel-wrapper')}>
-            <BpkCarousel images={carouselImages} bottom={16}/>
+            <BpkCarousel images={carouselImages} bottom={16} />
           </div>
         </BpkCardV2.Section>
-        <BpkCardV2.Section padding={BpkSpacing.MD} flexDirection='row' gap={BpkSpacing.MD}>
-          <BpkFlex direction="column" gap={BpkSpacing.SM} justify='top'>
+        <BpkCardV2.Section
+          padding={BpkSpacing.MD}
+          flexDirection="row"
+          gap={BpkSpacing.MD}
+        >
+          <BpkFlex direction="column" gap={BpkSpacing.SM} justify="top">
             <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
               The Level at Melia Barcelona Sky
             </BpkText>
@@ -147,30 +180,48 @@ const PackagesCardExample = () => (
           </BpkFlex>
         </BpkCardV2.Section>
         <BpkCardV2.Divider />
-        <BpkCardV2.Section padding={BpkSpacing.MD} gap={BpkSpacing.LG} justifyContent='end'>
-            <BpkFlex direction='column' gap={BpkSpacing.MD}>
-              <BpkPrice
-                size={SIZES.Large}
-                leadingText="Half board"
-                price="£2,185"
-                trailingText="total"
-              />
-              <DealOption text='Skyland' />
-            </BpkFlex>
-            <BpkButton onClick={noop} fullWidth>Go to site</BpkButton>
+        <BpkCardV2.Section
+          padding={BpkSpacing.MD}
+          gap={BpkSpacing.LG}
+          justifyContent="end"
+        >
+          <BpkFlex direction="column" gap={BpkSpacing.MD}>
+            <BpkPrice
+              size={SIZES.Large}
+              leadingText="Half board"
+              price="£2,185"
+              trailingText="total"
+            />
+            <DealOption text="Skyland" />
+          </BpkFlex>
+          <BpkButton onClick={noop} fullWidth>
+            Go to site
+          </BpkButton>
         </BpkCardV2.Section>
       </BpkCardV2.Body>
 
       <BpkCardV2.Footer padding={BpkSpacing.MD} paddingTop={BpkSpacing.None}>
-        <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceLowContrast} variant={CARD_V2_VARIANTS.noElevation}>
-          <BpkCardV2.Body templateColumns={{ base: '1fr', desktop: '1fr auto' }} justify="space-between" gap={BpkSpacing.MD}>
-            <BpkFlex gap={BpkSpacing.LG} direction={{ base: 'column', desktop: 'row' }}>
+        <BpkCardV2.Root
+          bgColor={CARD_V2_SURFACE_COLORS.surfaceLowContrast}
+          variant={CARD_V2_VARIANTS.noElevation}
+        >
+          <BpkCardV2.Body
+            templateColumns={{ base: '1fr', desktop: '1fr auto' }}
+            justify="space-between"
+            gap={BpkSpacing.MD}
+          >
+            <BpkFlex
+              gap={BpkSpacing.LG}
+              direction={{ base: 'column', desktop: 'row' }}
+            >
               <DealOption text="Cheapest • Meals not included  •  £1,740" />
               <DealOption text="Meals not included  •  £1,757" />
               <DealOption text="Meals not included  •  £1,858" />
             </BpkFlex>
             <BpkBox>
-              <BpkLink as='button' onClick={noop}>8 deals from £1,740</BpkLink>
+              <BpkLink as="button" onClick={noop}>
+                8 deals from £1,740
+              </BpkLink>
             </BpkBox>
           </BpkCardV2.Body>
         </BpkCardV2.Root>
@@ -202,20 +253,42 @@ const FlightLeg = ({
   duration: string;
   stops: string;
 }) => (
-  <BpkGrid columns={4} templateColumns="1fr 1fr 1fr 1fr" gap={BpkSpacing.Base} align="center">
+  <BpkGrid
+    columns={4}
+    templateColumns="1fr 1fr 1fr 1fr"
+    gap={BpkSpacing.Base}
+    align="center"
+  >
     <AirlineLogo />
     <BpkVStack alignItems="end" gap={BpkSpacing.None}>
       <BpkText textStyle={TEXT_STYLES.heading3}>{departureTime}</BpkText>
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary}>{departureCode}</BpkText>
+      <BpkText
+        textStyle={TEXT_STYLES.bodyDefault}
+        color={TEXT_COLORS.textSecondary}
+      >
+        {departureCode}
+      </BpkText>
     </BpkVStack>
     <BpkVStack gap={BpkSpacing.SM}>
-      <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textSecondary}>{duration}</BpkText>
+      <BpkText
+        textStyle={TEXT_STYLES.footnote}
+        color={TEXT_COLORS.textSecondary}
+      >
+        {duration}
+      </BpkText>
       <BpkJourneyArrow />
-      <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textSuccess}>{stops}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textSuccess}>
+        {stops}
+      </BpkText>
     </BpkVStack>
     <BpkVStack alignItems="start" gap={BpkSpacing.None}>
       <BpkText textStyle={TEXT_STYLES.heading3}>{arrivalTime}</BpkText>
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} color={TEXT_COLORS.textSecondary}>{arrivalCode}</BpkText>
+      <BpkText
+        textStyle={TEXT_STYLES.bodyDefault}
+        color={TEXT_COLORS.textSecondary}
+      >
+        {arrivalCode}
+      </BpkText>
     </BpkVStack>
   </BpkGrid>
 );
@@ -223,7 +296,10 @@ const FlightLeg = ({
 const FlightsCardExample = () => (
   <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
-      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }} padding={BpkSpacing.None}>
+      <BpkCardV2.Body
+        templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }}
+        padding={BpkSpacing.None}
+      >
         <BpkCardV2.Section gap={BpkSpacing.Base}>
           <FlightLeg
             airlineName="Skyscanner Air"
@@ -266,19 +342,18 @@ const FlightsCardExample = () => (
 const HotelCardExample = () => (
   <BpkBox maxWidth="65rem">
     <BpkCardV2.Root>
-      <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }} padding={BpkSpacing.None}>
+      <BpkCardV2.Body
+        templateColumns={{ base: '1fr', tablet: '3fr 4fr auto 3fr' }}
+        padding={BpkSpacing.None}
+      >
         <BpkCardV2.Section padding={BpkSpacing.None}>
-          <BpkCarousel images={carouselImages} bottom={16}/>
+          <BpkCarousel images={carouselImages} bottom={16} />
         </BpkCardV2.Section>
         <BpkCardV2.Section gap={BpkSpacing.MD}>
           <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
             The Ritz-Carlton New York, Central Park
           </BpkText>
-          <BpkStarRating
-            rating={4}
-            maxRating={4}
-            ratingLabel="4 star hotel"
-          />
+          <BpkStarRating rating={4} maxRating={4} ratingLabel="4 star hotel" />
           <BpkText textStyle={TEXT_STYLES.footnote}>
             0.85 miles from Central Park
           </BpkText>
@@ -296,7 +371,12 @@ const HotelCardExample = () => (
         <BpkCardV2.Divider />
         <BpkCardV2.Section gap={BpkSpacing.Base} justifyContent="end">
           <BpkFlex direction="column" gap={BpkSpacing.SM}>
-            <BpkText textStyle={TEXT_STYLES.footnote} color={TEXT_COLORS.textError}>Our cheapest price</BpkText>
+            <BpkText
+              textStyle={TEXT_STYLES.footnote}
+              color={TEXT_COLORS.textError}
+            >
+              Our cheapest price
+            </BpkText>
             <BpkPrice
               size={SIZES.Large}
               previousPrice="£2,033"
@@ -304,7 +384,9 @@ const HotelCardExample = () => (
               price="£1,830"
               trailingText="a night"
             />
-            <BpkLink href="https://example.com" target="_blank">£3,360 total</BpkLink>
+            <BpkLink href="https://example.com" target="_blank">
+              £3,360 total
+            </BpkLink>
           </BpkFlex>
           <BpkButton onClick={noop} fullWidth>
             Go to site
@@ -398,13 +480,45 @@ const AllExamples = () => (
   </BpkVStack>
 );
 
-export {
-  DefaultExample,
-  VariantsExample,
-  SurfaceColorsExample,
-  PackagesCardExample,
-  FlightsCardExample,
-  HotelCardExample,
-  CustomPaddingExample,
-  AllExamples,
+const meta = {
+  title: 'bpk-component-card-v2',
+  component: BpkCardV2.Root,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Variants = {
+  render: () => <VariantsExample />,
+};
+
+export const SurfaceColors = {
+  render: () => <SurfaceColorsExample />,
+};
+
+export const PackagesCard = {
+  render: () => <PackagesCardExample />,
+};
+
+export const FlightsCard = {
+  render: () => <FlightsCardExample />,
+};
+
+export const HotelsCard = {
+  render: () => <HotelCardExample />,
+};
+
+export const VisualTest = {
+  render: () => <AllExamples />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <AllExamples />,
+  args: {
+    zoomEnabled: true,
+  },
 };

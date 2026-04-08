@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
-import BpkPanel, { PANEL_BG_COLORS } from '../../packages/bpk-component-panel';
-import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
+import BpkText, { TEXT_COLORS } from '../../bpk-component-text';
 
-import type { PanelBgColor } from '../../packages/bpk-component-panel';
+import BpkPanel, { PANEL_BG_COLORS } from './BpkPanel';
 
-import STYLES from './examples.module.scss';
+import type { PanelBgColor } from './BpkPanel';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkPanel.stories.module.scss';
 
 const textColorForBg = {
   [PANEL_BG_COLORS.surfaceDefault]: TEXT_COLORS.textPrimary,
@@ -39,7 +41,7 @@ const rowStyleForBg: Partial<Record<PanelBgColor, string>> = {
   [PANEL_BG_COLORS.surfaceTint]: 'bpk-panel-examples--row-gradient',
 };
 
-export const DefaultExample = () => (
+const DefaultExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     <BpkPanel>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -50,7 +52,7 @@ export const DefaultExample = () => (
   </div>
 );
 
-export const WithoutPaddingExample = () => (
+const WithoutPaddingExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     <BpkPanel padded={false}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -58,10 +60,10 @@ export const WithoutPaddingExample = () => (
       consectetur, dolor nec vulputate vehicula, ex metus mattis ante, non dictum
       mi ante eu arcu.
     </BpkPanel>
-  </div >
+  </div>
 );
 
-export const FullWidthExample = () => (
+const FullWidthExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     <BpkPanel fullWidth>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -72,7 +74,7 @@ export const FullWidthExample = () => (
   </div>
 );
 
-export const NoKeylineExample = () => (
+const NoKeylineExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     <BpkPanel keyline={false}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
@@ -83,7 +85,7 @@ export const NoKeylineExample = () => (
   </div>
 );
 
-export const BackgroundColorExample = () => (
+const BackgroundColorExample = () => (
   <div className={STYLES['bpk-panel-examples--wrapper']}>
     {Object.entries(PANEL_BG_COLORS).map(([key, value]) => (
       <div key={key} className={STYLES[rowStyleForBg[value] || 'bpk-panel-examples--row']}>
@@ -110,7 +112,7 @@ export const BackgroundColorExample = () => (
   </div>
 );
 
-export const MixedExample = () => (
+const MixedExample = () => (
   <div>
     <DefaultExample />
     <BackgroundColorExample />
@@ -119,3 +121,41 @@ export const MixedExample = () => (
     <NoKeylineExample />
   </div>
 );
+
+const meta = {
+  title: 'bpk-component-panel',
+  component: BpkPanel,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const BackgroundColors = {
+  render: () => <BackgroundColorExample />,
+};
+
+export const WithoutPadding = {
+  render: () => <WithoutPaddingExample />,
+};
+
+export const FullWidth = {
+  render: () => <FullWidthExample />,
+};
+
+export const NoKeyline = {
+  render: () => <NoKeylineExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
