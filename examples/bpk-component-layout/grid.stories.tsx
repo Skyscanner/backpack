@@ -24,6 +24,7 @@ import {
   BpkGridExample,
   BpkGridSpanExample,
   BpkGridBentoBoxExample,
+  BpkGridColorExample,
 } from './grid-examples';
 
 export default {
@@ -55,3 +56,4 @@ export default {
 export const Default = BpkGridExample;
 export const Span = BpkGridSpanExample;
 export const BentoBox = BpkGridBentoBoxExample;
+export const Color = BpkGridColorExample;

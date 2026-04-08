@@ -19,9 +19,13 @@
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkGridItem } from './BpkGridItem';
 import { BpkProvider } from './BpkProvider';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkGridItem', () => {
   it('renders its children', () => {
@@ -96,5 +100,23 @@ describe('BpkGridItem', () => {
     );
     fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('applies color class when color prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkGridItem color={TEXT_COLORS.textSecondary}>Colored</BpkGridItem>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--text-secondary');
+  });
+
+  it('applies backgroundColor class when backgroundColor prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkGridItem backgroundColor={BACKGROUND_COLORS.statusWarningFill}>Warning</BpkGridItem>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--status-warning-fill');
   });
 });

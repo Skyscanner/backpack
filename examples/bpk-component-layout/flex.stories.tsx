@@ -27,6 +27,7 @@ import {
   BpkFlexJustifyExample,
   BpkFlexOrderExample,
   BpkFlexWrapExample,
+  BpkFlexColorExample,
 } from './flex-examples';
 
 export default {
@@ -61,3 +62,4 @@ export const Align = BpkFlexAlignExample;
 export const Justify = BpkFlexJustifyExample;
 export const Order = BpkFlexOrderExample;
 export const Wrap = BpkFlexWrapExample;
+export const Color = BpkFlexColorExample;

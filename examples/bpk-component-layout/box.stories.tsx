@@ -30,6 +30,8 @@ import {
   TextStyleExample,
   ResponsiveTextStyleExample,
   RefExample,
+  ColorExample,
+  BackgroundColorExample,
 } from './box-examples';
 
 export default {
@@ -67,5 +69,7 @@ export const Interactive = () => <InteractiveExample />;
 export const TextStyle = () => <TextStyleExample />;
 export const ResponsiveTextStyle = () => <ResponsiveTextStyleExample />;
 export const Ref = () => <RefExample />;
+export const Color = () => <ColorExample />;
+export const BackgroundColor = () => <BackgroundColorExample />;
 
 

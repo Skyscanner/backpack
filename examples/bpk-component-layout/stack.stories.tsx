@@ -26,6 +26,7 @@ import {
   BpkHStackExample,
   BpkVStackExample,
   BpkStackResponsiveExample,
+  BpkStackColorExample,
 } from './stack-examples';
 
 export default {
@@ -59,3 +60,4 @@ export const Direction = BpkStackDirectionExample;
 export const HStack = BpkHStackExample;
 export const VStack = BpkVStackExample;
 export const Responsive = BpkStackResponsiveExample;
+export const Color = BpkStackColorExample;

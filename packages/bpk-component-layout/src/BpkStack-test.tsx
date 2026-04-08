@@ -22,9 +22,13 @@ import { render, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkProvider } from './BpkProvider';
 import { BpkStack, BpkHStack, BpkVStack } from './BpkStack';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkStack', () => {
   it('renders children content', () => {
@@ -192,6 +196,44 @@ describe('BpkStack', () => {
 
       const stack = container.firstChild;
       expect(stack).not.toHaveClass('forbidden-class');
+    });
+  });
+
+  describe('color and backgroundColor', () => {
+    it('applies color class to BpkStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack color={TEXT_COLORS.textPrimary}>Content</BpkStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+    });
+
+    it('applies backgroundColor class to BpkStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack backgroundColor={BACKGROUND_COLORS.surfaceElevated}>Content</BpkStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-elevated');
+    });
+
+    it('applies color class to BpkHStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkHStack color={TEXT_COLORS.textOnDark}>Content</BpkHStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--text-on-dark');
+    });
+
+    it('applies backgroundColor class to BpkVStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkVStack backgroundColor={BACKGROUND_COLORS.statusDangerFill}>Content</BpkVStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--status-danger-fill');
     });
   });
 });

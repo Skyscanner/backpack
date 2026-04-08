@@ -20,10 +20,14 @@ import { useRef, useState } from 'react';
 
 import BpkButton from '../../packages/bpk-component-button';
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkSpacing,
 } from '../../packages/bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import BpkText, {
+  TEXT_COLORS,
+  TEXT_STYLES,
+} from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -138,7 +142,9 @@ export const InteractiveExample = () => {
           if (e.key === 'Enter' || e.key === ' ') increment();
         }}
       >
-        <BpkText>Clicked {count} times (role=&quot;button&quot;, tabIndex=0)</BpkText>
+        <BpkText>
+          Clicked {count} times (role=&quot;button&quot;, tabIndex=0)
+        </BpkText>
       </BpkBox>
     </Wrapper>
   );
@@ -179,7 +185,8 @@ export const ResponsiveTextStyleExample = () => (
         desktop: TEXT_STYLES.heading3,
       }}
     >
-      Text style changes from caption → bodyDefault → heading5 → heading3 across breakpoints.
+      Text style changes from caption → bodyDefault → heading5 → heading3 across
+      breakpoints.
     </BpkBox>
   </Wrapper>
 );
@@ -196,7 +203,9 @@ export const RefExample = () => {
   const handleRead = () => {
     if (ref.current) {
       const { offsetHeight, offsetWidth, tagName } = ref.current;
-      setInfo(`tagName: ${tagName}, width: ${offsetWidth}px, height: ${offsetHeight}px`);
+      setInfo(
+        `tagName: ${tagName}, width: ${offsetWidth}px, height: ${offsetHeight}px`,
+      );
     }
   };
 
@@ -214,6 +223,80 @@ export const RefExample = () => {
 };
 
 /**
+ * Color example – demonstrates all TEXT_COLORS on BpkBox.
+ * @returns {JSX.Element} Color example
+ */
+export const ColorExample = () => (
+  <Wrapper>
+    {Object.entries(TEXT_COLORS).map(([key, value]) => (
+      <BpkBox key={key} padding={BpkSpacing.SM} color={value}>
+        <BpkText>
+          {key}: {value}
+        </BpkText>
+      </BpkBox>
+    ))}
+  </Wrapper>
+);
+
+/**
+ * Background color example – demonstrates all BACKGROUND_COLORS categories on BpkBox:
+ * surface, canvas, status fill, and combined with color.
+ * @returns {JSX.Element} Background color example
+ */
+export const BackgroundColorExample = () => (
+  <Wrapper>
+    {(
+      [
+        'surfaceDefault',
+        'surfaceElevated',
+        'surfaceHero',
+        'surfaceContrast',
+        'surfaceHighlight',
+        'surfaceSubtle',
+        'surfaceLowContrast',
+        'surfaceTint',
+        'canvas',
+        'canvasContrast',
+        'statusSuccessFill',
+        'statusDangerFill',
+        'statusWarningFill',
+      ] as const
+    ).map((key) => (
+      <BpkBox
+        key={key}
+        padding={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS[key]}
+      >
+        <BpkText>
+          {key}: {BACKGROUND_COLORS[key]}
+        </BpkText>
+      </BpkBox>
+    ))}
+    <BpkBox
+      padding={BpkSpacing.MD}
+      color={TEXT_COLORS.textOnDark}
+      backgroundColor={BACKGROUND_COLORS.surfaceHero}
+    >
+      <BpkText>textOnDark on surfaceHero</BpkText>
+    </BpkBox>
+    <BpkBox
+      padding={BpkSpacing.MD}
+      color={TEXT_COLORS.textPrimary}
+      backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+    >
+      <BpkText>textPrimary on surfaceDefault</BpkText>
+    </BpkBox>
+    <BpkBox
+      padding={BpkSpacing.MD}
+      color={TEXT_COLORS.textSuccess}
+      backgroundColor={BACKGROUND_COLORS.statusSuccessFill}
+    >
+      <BpkText>textSuccess on statusSuccessFill</BpkText>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
  * Mixed visual regression example – used for Percy/visual tests.
  *
  * @returns {JSX.Element} A wrapper containing all Box examples for visual regression.
@@ -227,7 +310,6 @@ export const MixedExample = () => (
     <PositionExample />
     <InteractiveExample />
     <TextStyleExample />
+    <BackgroundColorExample />
   </Wrapper>
 );
-
-

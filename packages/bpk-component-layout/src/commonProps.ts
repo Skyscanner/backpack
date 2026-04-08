@@ -18,13 +18,14 @@
 
 import type { AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
 
+import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
   BpkSpacingValue,
   BpkSizeValue,
   BpkPositionValue,
   BpkResponsiveValue,
 } from './tokens';
-import type { TextStyle } from '../../bpk-component-text/src/BpkText';
+import type { TextColor, TextStyle } from '../../bpk-component-text';
 
 /**
  * Common spacing-related props shared by all Backpack layout components
@@ -103,12 +104,15 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
   'data-testid'?: string;
   'data-cy'?: string;
 
-  // Explicitly exclude color-related props to keep layout purely structural.
-  // These props still exist on the underlying Chakra Box, so we mark them as
-  // never here to prevent them from leaking into public layout APIs.
-  color?: never;
+  // Text color — same tokens as BpkText
+  color?: TextColor;
+
+  // Background color — surface, canvas, and status fill tokens
+  backgroundColor?: BpkLayoutBackgroundColor;
+
+  // Explicitly exclude raw Chakra color-related props that are not part of
+  // the Backpack token API.
   background?: never;
-  backgroundColor?: never;
   borderColor?: never;
   borderTopColor?: never;
   borderRightColor?: never;

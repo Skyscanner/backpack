@@ -17,12 +17,14 @@
  */
 
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkHStack,
   BpkSpacing,
   BpkStack,
   BpkVStack,
 } from '../../packages/bpk-component-layout';
+import BpkText, { TEXT_COLORS } from '../../packages/bpk-component-text';
 
 import Wrapper from './layout-wrapper';
 
@@ -84,6 +86,19 @@ export const BpkStackResponsiveExample = () => (
       <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
       <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
       <BpkBox height="2rem" width="100%"><span className={outline} /></BpkBox>
+    </BpkStack>
+  </Wrapper>
+);
+
+export const BpkStackColorExample = () => (
+  <Wrapper>
+    <BpkStack gap={BpkSpacing.SM}>
+      <BpkStack padding={BpkSpacing.SM} color={TEXT_COLORS.textPrimary} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>surfaceElevated + textPrimary</BpkText>
+      </BpkStack>
+      <BpkStack padding={BpkSpacing.SM} color={TEXT_COLORS.textPrimary} backgroundColor={BACKGROUND_COLORS.statusDangerFill}>
+        <BpkText>statusDangerFill + textPrimary</BpkText>
+      </BpkStack>
     </BpkStack>
   </Wrapper>
 );
