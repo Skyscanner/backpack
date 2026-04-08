@@ -74,6 +74,11 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridAutoFlow',
       'gridAutoRows',
       'gridAutoColumns',
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
     ],
     item: [
       // Flex item props
@@ -97,6 +102,11 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'justifyContent',
       'alignItems',
       'flexWrap',
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
     ],
     item: [
       'flexGrow',
@@ -116,6 +126,11 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridAutoFlow',
       'gridAutoRows',
       'gridAutoColumns',
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
     ],
     item: [
       // Used when placing the grid itself within a parent grid.
@@ -124,11 +139,19 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
     ],
   },
   BpkGridItem: {
-    container: ['textStyle'],
+    container: ['textStyle', 'position', 'overflow', 'overflowX', 'overflowY'],
   },
   // Note: BpkStack uses Chakra Stack option prop names directly.
   BpkStack: {
-    container: ['textStyle', ...(StackOptionKeys as unknown as readonly string[])],
+    container: [
+      'textStyle',
+      ...(StackOptionKeys as unknown as readonly string[]),
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
+    ],
   },
 };
 

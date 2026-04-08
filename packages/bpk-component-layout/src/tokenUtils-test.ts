@@ -188,6 +188,50 @@ describe('processBpkProps', () => {
     warnSpy.mockRestore();
   });
 
+  it('maps Backpack breakpoint keys for position prop via processBpkComponentProps', () => {
+    const result = processBpkComponentProps(
+      { position: { base: 'relative', tablet: 'sticky' } },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.position).toEqual({ base: 'relative', xl: 'sticky' });
+  });
+
+  it('maps Backpack breakpoint keys for overflow prop via processBpkComponentProps', () => {
+    const result = processBpkComponentProps(
+      { overflow: { mobile: 'hidden', desktop: 'auto' } },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.overflow).toEqual({ md: 'hidden', '2xl': 'auto' });
+  });
+
+  it('maps Backpack breakpoint keys for overflowX and overflowY via processBpkComponentProps', () => {
+    const result = processBpkComponentProps(
+      {
+        overflowX: { tablet: 'clip' },
+        overflowY: { mobile: 'scroll', desktop: 'auto' },
+      },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.overflowX).toEqual({ xl: 'clip' });
+    expect(result.overflowY).toEqual({ md: 'scroll', '2xl': 'auto' });
+  });
+
+  it('rejects array-based responsive values for position and warns', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkComponentProps(
+      { position: ['relative', 'sticky'] as any },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.position).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
