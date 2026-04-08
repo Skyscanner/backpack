@@ -30,7 +30,7 @@ import type { ComparisonTrayNamespace } from './common-types';
  * @example
  * <ComparisonTray.Root
  *   items={items}
- *   onRemove={(id) => setItems(items.filter(i => i.id !== id))}
+ *   onRemove={(id) => setItems(items.filter(item => item.id !== id))}
  *   onCompare={() => navigate('/compare')}
  * />
  *

@@ -40,7 +40,7 @@ function Root({
   onRemove,
   removeLabel,
 }: ComparisonTrayRootProps) {
-  const displayItems = Array.from({ length: MAX_ITEMS }, (_, i) => items[i] ?? null);
+  const displayItems = Array.from({ length: MAX_ITEMS }, (_value, index) => items[index] ?? null);
 
   return (
     <div
