@@ -66,12 +66,12 @@
 
 @mixin bpk-chat-bubble-corner($side, $tail-position) {
   $xs: tokens.$bpk-border-radius-xs;
-  $start-corner: border-start-start-radius;
-  $end-corner: border-end-start-radius;
+  $start-corner: border-start-end-radius;
+  $end-corner: border-end-end-radius;
 
-  @if $side != 'left' {
-    $start-corner: border-start-end-radius;
-    $end-corner: border-end-end-radius;
+  @if $side == 'left' {
+    $start-corner: border-start-start-radius;
+    $end-corner: border-end-start-radius;
   }
 
   @if $tail-position == 'top' or $tail-position == 'both' {
