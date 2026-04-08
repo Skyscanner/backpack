@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import type React from 'react';
-import { Component } from 'react';
+import { Component, type ComponentType } from 'react';
 
 import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 
@@ -89,7 +88,7 @@ class SliderContainer extends Component<SliderContainerProps, { value: number | 
   }
 }
 
-const EnhancedSlider = updateOnDirectionChange(SliderContainer) as unknown as React.ComponentType<SliderContainerProps>;
+const EnhancedSlider = updateOnDirectionChange(SliderContainer) as unknown as ComponentType<SliderContainerProps>;
 
 const SimpleSliderExample = () => <EnhancedSlider min={0} value={50} />;
 const TimeSliderExample = () => <EnhancedSlider time min={0} value={50} />;
