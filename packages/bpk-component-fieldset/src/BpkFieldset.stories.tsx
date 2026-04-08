@@ -42,7 +42,6 @@ import BpkSelect from '../../bpk-component-select';
 import BpkSplitInput from '../../bpk-component-split-input';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import
 
 import BpkFieldset, { type BpkFieldsetProps } from './BpkFieldset';
 
