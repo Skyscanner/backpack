@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../packages/bpk-component-text';
-import { withDefaultProps , cssModules } from '../../packages/bpk-react-utils';
+import { withDefaultProps, cssModules } from '../../bpk-react-utils';
 
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from './BpkText';
 
-import STYLES from './examples.module.scss';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkText.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -184,9 +186,11 @@ const ColorPropExample = () => (
       </BpkText>
     </div>
 
-    <BpkText tagName="p" className={getClassName('bpk-stories-text_success')} color={TEXT_COLORS.textSecondary} >
-      Text with color prop textSecondary with self className override
-    </BpkText>
+    <div className={getClassName('bpk-stories-text_success')}>
+      <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
+        Text with color prop textSecondary with self className override
+      </BpkText>
+    </div>
 
   </div>
 );
@@ -202,16 +206,61 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  WithHeadingTagsExample,
-  ParagraphExample,
-  WithDefaultPropsExample,
-  HeadingStylesExample,
-  HeroStylesExample,
-  BodyStylesExample,
-  LabelStylesExample,
-  LarkenStylesExample,
-  ColorPropExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-text',
+  component: BpkText,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WithHeadingTags = {
+  render: () => <WithHeadingTagsExample />,
+};
+
+export const ParagraphStory = {
+  name: 'Paragraph',
+  render: () => <ParagraphExample />,
+};
+
+export const UsingWithDefaultProps = {
+  render: () => <WithDefaultPropsExample />,
+};
+
+export const HeroStyles = {
+  render: () => <HeroStylesExample />,
+};
+
+export const HeadingStyles = {
+  render: () => <HeadingStylesExample />,
+};
+
+export const BodyStyles = {
+  render: () => <BodyStylesExample />,
+};
+
+export const LabelStyles = {
+  render: () => <LabelStylesExample />,
+};
+
+export const LarkenStyles = {
+  render: () => <LarkenStylesExample />,
+};
+
+export const ColorProp = {
+  render: () => <ColorPropExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

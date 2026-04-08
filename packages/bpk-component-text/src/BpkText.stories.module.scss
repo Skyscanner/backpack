@@ -16,23 +16,10 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
-.bpk-link-example {
-  &__section {
-    display: flex;
-    flex-direction: column;
-    gap: tokens.bpk-spacing-lg();
-  }
-
-  &__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: tokens.bpk-spacing-md();
-  }
-
-  &__card-description {
-    margin-top: tokens.bpk-spacing-sm();
-    margin-bottom: tokens.bpk-spacing-sm();
+.bpk-stories-text {
+  &_success {
+    color: tokens.$bpk-text-success-day;
   }
 }
