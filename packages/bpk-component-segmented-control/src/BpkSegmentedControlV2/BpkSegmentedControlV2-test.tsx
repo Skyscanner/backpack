@@ -18,7 +18,7 @@
 
 import type { CSSProperties } from 'react';
 
-import { LocaleProvider } from '@ark-ui/react';
+import { LocaleProvider } from '@ark-ui/react/locale';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';

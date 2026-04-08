@@ -18,7 +18,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 
-import { Dialog } from '@ark-ui/react';
+import { Dialog } from '@ark-ui/react/dialog';
 
 import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 

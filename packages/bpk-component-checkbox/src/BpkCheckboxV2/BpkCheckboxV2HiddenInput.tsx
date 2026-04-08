@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Checkbox } from '@ark-ui/react';
+import { Checkbox } from '@ark-ui/react/checkbox';
 
 // Renders Ark's visually hidden native <input type="checkbox">.
 // Include when the checkbox is inside a <form> for native form submission.

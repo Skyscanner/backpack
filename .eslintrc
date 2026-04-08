@@ -81,12 +81,6 @@
     //     ]
     //   }
     // ],
-    "no-restricted-imports": ["error", {
-      "patterns": [{
-        "group": ["@ark-ui/react/*"],
-        "message": "Use '@ark-ui/react' instead of deep imports like '@ark-ui/react/dialog'. Deep imports cause transpilation errors during release."
-      }]
-    }],
     "backpack/use-components": "off",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",

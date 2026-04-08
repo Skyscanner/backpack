@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useLocaleContext } from '@ark-ui/react';
+import { useLocaleContext } from '@ark-ui/react/locale';
 import { act, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 

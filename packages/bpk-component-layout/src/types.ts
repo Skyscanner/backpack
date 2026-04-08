@@ -21,13 +21,10 @@ import type { HTMLAttributes, ReactNode } from 'react';
 import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
-import type {
-  BoxProps,
-  FlexProps,
-  GridProps,
-  GridItemProps,
-  StackProps,
-} from '@chakra-ui/react';
+import type { BoxProps } from '@chakra-ui/react/box';
+import type { FlexProps } from '@chakra-ui/react/flex';
+import type { GridProps, GridItemProps } from '@chakra-ui/react/grid';
+import type { StackProps } from '@chakra-ui/react/stack';
 
 
 /**

@@ -18,7 +18,7 @@
 
 import type { CSSProperties, ReactNode } from 'react';
 
-import { CheckboxHiddenInput } from '@ark-ui/react';
+import { CheckboxHiddenInput } from '@ark-ui/react/checkbox';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
