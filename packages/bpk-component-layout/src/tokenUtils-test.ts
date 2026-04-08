@@ -246,6 +246,38 @@ describe('processBpkProps', () => {
     warnSpy.mockRestore();
   });
 
+  it('does not drop position/overflow when responsiveProps is provided (BpkFlex/BpkGrid bug fix)', () => {
+    // Regression: when `responsiveProps` is passed (e.g. BpkFlex maps direction→flexDirection),
+    // allowlisted props that come in via ...props (position, overflow, etc.) must NOT be silently
+    // dropped. They should be picked up from `processed` and routed through the responsive pipeline.
+    const result = processBpkComponentProps(
+      { position: 'relative', overflow: 'hidden' },
+      {
+        component: 'BpkFlex',
+        responsiveProps: { flexDirection: 'column' },
+      },
+    );
+
+    expect(result.position).toBe('relative');
+    expect(result.overflow).toBe('hidden');
+    expect(result.flexDirection).toBe('column');
+  });
+
+  it('also preserves responsive position/overflow objects when responsiveProps is provided', () => {
+    const result = processBpkComponentProps(
+      { position: { mobile: 'relative', tablet: 'sticky' }, overflow: 'hidden' },
+      {
+        component: 'BpkFlex',
+        responsiveProps: { flexDirection: 'row' },
+      },
+    );
+
+    // Breakpoint keys should be normalised
+    expect(result.position).toEqual({ md: 'relative', xl: 'sticky' });
+    expect(result.overflow).toBe('hidden');
+    expect(result.flexDirection).toBe('row');
+  });
+
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 

@@ -225,9 +225,14 @@ export function processBpkComponentProps<T extends Record<string, any>>(
   const processed = processBpkProps(props);
 
   const allowlist = BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT[options.component];
+  // When responsiveProps is provided (e.g. BpkFlex maps direction→flexDirection),
+  // merge it with any allowlisted props already in `processed` (e.g. position/overflow
+  // that come in via ...props and are NOT included in responsiveProps).
+  // responsiveProps takes precedence so that explicit prop-name mappings always win.
+  const processedAllowlisted = filterToAllowlist(processed, allowlist);
   const responsiveSource = options.responsiveProps
-    ? filterToAllowlist(options.responsiveProps, allowlist)
-    : filterToAllowlist(processed, allowlist);
+    ? { ...processedAllowlisted, ...filterToAllowlist(options.responsiveProps, allowlist) }
+    : processedAllowlisted;
 
   if (Object.keys(responsiveSource).length === 0) {
     return processed;
