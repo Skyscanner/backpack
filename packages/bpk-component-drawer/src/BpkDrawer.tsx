@@ -38,7 +38,7 @@ export type Props = {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  title: string,
+  title: ReactNode,
   getApplicationElement: () => HTMLElement | null,
   width?: string,
   renderTarget?: null | HTMLElement | (() => null | HTMLElement),
