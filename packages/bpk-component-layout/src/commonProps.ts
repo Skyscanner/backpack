@@ -74,9 +74,6 @@ export interface BpkSpacingProps {
   right?: BpkResponsiveValue<BpkPositionValue>;
   bottom?: BpkResponsiveValue<BpkPositionValue>;
   left?: BpkResponsiveValue<BpkPositionValue>;
-
-  // CSS `position` keyword (static | relative | absolute | fixed | sticky)
-  position?: BpkResponsiveValue<BpkPositionKeyword>;
 }
 
 /**
@@ -106,6 +103,9 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;
+
+  // CSS `position` keyword (static | relative | absolute | fixed | sticky)
+  position?: BpkResponsiveValue<BpkPositionKeyword>;
 
   // Overflow & stacking context
   overflow?: BpkResponsiveValue<BpkOverflowValue>;
