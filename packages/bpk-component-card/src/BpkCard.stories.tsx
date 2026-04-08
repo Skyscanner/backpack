@@ -213,7 +213,6 @@ export const WithClassNameWrapper = {
         </BpkCard>
       }
       header={headerContent}
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
       className={getClassName('bpk-card-examples__wrapper')}
     />
   ),
@@ -287,7 +286,6 @@ export const VisualTest = {
           </BpkCard>
         }
         header={headerContent}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={getClassName('bpk-card-examples__wrapper')}
       />
     </div>
