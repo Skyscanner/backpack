@@ -28,7 +28,7 @@ const noop = () => {};
 describe('ComparisonTray accessibility', () => {
   it('has no accessibility violations with 0 items', async () => {
     const { container } = render(
-      <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} />,
+      <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} ariaLabel="Comparison tray" removeLabel="Remove" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -43,6 +43,8 @@ describe('ComparisonTray accessibility', () => {
         ]}
         onRemove={noop}
         onCompare={noop}
+        ariaLabel="Comparison tray"
+        removeLabel="Remove"
       />,
     );
     const results = await axe(container);
@@ -59,6 +61,8 @@ describe('ComparisonTray accessibility', () => {
         ]}
         onRemove={noop}
         onCompare={noop}
+        ariaLabel="Comparison tray"
+        removeLabel="Remove"
       />,
     );
     const results = await axe(container);
@@ -75,6 +79,8 @@ describe('ComparisonTray accessibility', () => {
         onRemove={noop}
         onCompare={noop}
         compareLabel="Comparar"
+        ariaLabel="Comparison tray"
+        removeLabel="Remove"
       />,
     );
     const results = await axe(container);
