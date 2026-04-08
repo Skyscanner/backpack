@@ -41,6 +41,8 @@ const handleRemove = (id: string) => {
 
   <ComparisonTray.Root
     items={items}
+    ariaLabel="Comparison tray"
+    removeLabel="Remove"
     onRemove={handleRemove}
     onCompare={() => navigate('/compare')}
     compareLabel="Compare"
@@ -52,12 +54,14 @@ const handleRemove = (id: string) => {
 
 ### `ComparisonTray.Root`
 
-| Property     | PropType               | Required | Default Value |
-| ------------ | ---------------------- | -------- | ------------- |
-| items        | `ComparisonItem[]`     | true     | -             |
-| onRemove     | `(id: string) => void` | true     | -             |
-| onCompare    | `() => void`           | true     | -             |
-| compareLabel | string                 | false    | `'Compare'`   |
+| Property       | PropType                          | Required | Default Value            |
+| -------------- | --------------------------------- | -------- | ------------------------ |
+| items          | `ComparisonItem[]`                | true     | -                        |
+| onRemove       | `(id: string) => void`            | true     | -                        |
+| onCompare      | `() => void`                      | true     | -                        |
+| ariaLabel      | string                            | true     | -                        |
+| compareLabel   | string                            | false    | `'Compare'`              |
+| removeLabel    | string                            | true     | -                        |
 
 The Compare button is disabled when fewer than 2 items are present.
 

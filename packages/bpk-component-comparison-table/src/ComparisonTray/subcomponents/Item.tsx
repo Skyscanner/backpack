@@ -26,7 +26,7 @@ import STYLES from '../ComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function Item({ item, onRemove }: ComparisonTrayItemProps) {
+function Item({ item, onRemove, removeLabel }: ComparisonTrayItemProps) {
   return (
     <div className={getClassName('bpk-comparison-tray__item')}>
       <div className={getClassName('bpk-comparison-tray__item-image-container')}>
@@ -39,7 +39,7 @@ function Item({ item, onRemove }: ComparisonTrayItemProps) {
       <button
         type="button"
         className={getClassName('bpk-comparison-tray__item-close')}
-        aria-label={`Remove ${item.label}`}
+        aria-label={removeLabel}
         onClick={() => onRemove(item.id)}
       >
         <CloseIcon />

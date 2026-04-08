@@ -33,10 +33,12 @@ const getClassName = cssModules(STYLES);
 const MAX_ITEMS = 3;
 
 function Root({
+  ariaLabel,
   compareLabel,
   items,
   onCompare,
   onRemove,
+  removeLabel,
 }: ComparisonTrayRootProps) {
   const displayItems = Array.from({ length: MAX_ITEMS }, (_, i) => items[i] ?? null);
 
@@ -45,7 +47,11 @@ function Root({
       {...getDataComponentAttribute('ComparisonTray')}
       className={getClassName('bpk-comparison-tray')}
     >
-      <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}>
+      <BpkCardV2.Root
+        bgColor={CARD_V2_SURFACE_COLORS.surfaceContrast}
+        role="region"
+        aria-label={ariaLabel}
+      >
         <BpkCardV2.Body templateColumns="1fr auto" align="center" gap={BpkSpacing.Base}>
           <BpkCardV2.Section
             flexDirection="row"
@@ -55,7 +61,7 @@ function Root({
           >
             {displayItems.map((item, index) =>
               item ? (
-                <Item key={item.id} item={item} onRemove={onRemove} />
+                <Item key={item.id} item={item} onRemove={onRemove} removeLabel={`${removeLabel} ${item.label}`} />
               ) : (
                 // eslint-disable-next-line react/no-array-index-key
                 <ItemPlaceholder key={`placeholder-${index}`} />

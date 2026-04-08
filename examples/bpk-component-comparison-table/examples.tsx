@@ -105,7 +105,9 @@ const InteractiveExample = () => {
       {items.length > 0 && (
         <ComparisonTray.Root
           items={items}
+          ariaLabel="Comparison tray"
           compareLabel="Compare"
+          removeLabel="Remove"
           onRemove={removeItem}
           onCompare={handleCompare}
         />

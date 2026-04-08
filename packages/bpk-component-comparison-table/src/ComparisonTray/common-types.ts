@@ -40,12 +40,17 @@ export type ComparisonTrayRootProps = {
   onCompare: () => void;
   /** Label for the Compare button. Defaults to "Compare". */
   compareLabel?: string;
+  /** Accessible label for the tray region. */
+  ariaLabel: string;
+  /** Accessible label for the remove button (e.g. "Remove"). Composed with the item label internally. */
+  removeLabel: string;
 };
 
 /** Props for ComparisonTray.Item — internal use only. */
 export type ComparisonTrayItemProps = {
   item: ComparisonItem;
   onRemove: (id: string) => void;
+  removeLabel: string;
 };
 
 /** Namespace type covering all ComparisonTray subcomponents. */
