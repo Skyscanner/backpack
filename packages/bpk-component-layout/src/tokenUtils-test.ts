@@ -57,6 +57,20 @@ describe('processBpkProps', () => {
     expect(result.paddingEnd).toBe('1.5rem');
   });
 
+  it('allows bare "0" for position offset props', () => {
+    const result = processBpkProps({
+      top: '0',
+      left: '0',
+      right: '50%',
+      bottom: '1rem',
+    });
+
+    expect(result.top).toBe('0');
+    expect(result.left).toBe('0');
+    expect(result.right).toBe('50%');
+    expect(result.bottom).toBe('1rem');
+  });
+
   it('validates and passes through size props (rem and percentages)', () => {
     const result = processBpkProps({
       width: '10rem',

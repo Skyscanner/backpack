@@ -87,12 +87,14 @@ export type BpkSizeValue =
   | 'fit-content';
 
 /**
- * Helper type for position props that can use rem or percentages.
- * We intentionally do not allow semantic values like 'auto' here.
+ * Helper type for position props that can use rem, percentages, or bare zero.
+ * CSS allows `0` without a unit; `'0'` is therefore an explicit allowed value.
+ * We intentionally do not allow other semantic values like 'auto' here.
  */
 export type BpkPositionValue =
   | `${number}rem`
-  | `${number}%`;
+  | `${number}%`
+  | '0';
 
 /**
  * CSS `position` property keyword values.
@@ -192,6 +194,7 @@ export function isValidSizeValue(value: string): boolean {
  */
 export function isValidPositionValue(value: string): boolean {
   return (
+    value === '0' || // bare zero — valid CSS without a unit
     /^-?\d+(\.\d+)?rem$/.test(value) || // rem values
     isPercentage(value) // percentage values
   );

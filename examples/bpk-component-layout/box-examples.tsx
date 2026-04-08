@@ -293,8 +293,8 @@ export const ZIndexExample = () => (
     <BpkBox position="relative" width="16rem" height="8rem">
       <BpkBox
         position="absolute"
-        top="0rem"
-        left="0rem"
+        top="0"
+        left="0"
         width="10rem"
         height="6rem"
         padding={BpkSpacing.SM}

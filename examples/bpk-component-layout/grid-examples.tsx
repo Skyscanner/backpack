@@ -128,8 +128,8 @@ export const BpkGridLayoutPropsExample = () => (
         <BpkGridItem>
           <BpkBox
             position="absolute"
-            top="0rem"
-            left="0rem"
+            top="0"
+            left="0"
             width="10rem"
             height="3rem"
             padding={BpkSpacing.SM}

@@ -120,8 +120,8 @@ export const BpkStackLayoutPropsExample = () => (
       <BpkStack position="relative" width="14rem" height="5rem" marginTop={BpkSpacing.SM} gap={BpkSpacing.SM}>
         <BpkStack
           position="absolute"
-          top="0rem"
-          left="0rem"
+          top="0"
+          left="0"
           width="10rem"
           height="3rem"
           padding={BpkSpacing.SM}
