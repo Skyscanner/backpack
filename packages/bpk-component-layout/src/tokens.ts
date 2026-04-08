@@ -95,6 +95,32 @@ export type BpkPositionValue =
   | `${number}%`;
 
 /**
+ * CSS `position` property keyword values.
+ */
+export type BpkPositionKeyword =
+  | 'static'
+  | 'relative'
+  | 'absolute'
+  | 'fixed'
+  | 'sticky';
+
+/**
+ * CSS `overflow` property keyword values.
+ */
+export type BpkOverflowValue =
+  | 'visible'
+  | 'hidden'
+  | 'scroll'
+  | 'auto'
+  | 'clip';
+
+/**
+ * CSS `z-index` values. Numeric values only; 'auto' is also permitted.
+ * Avoid magic numbers — prefer a shared z-index scale in your app.
+ */
+export type BpkZIndexValue = number | 'auto';
+
+/**
  * Helper type for flex-basis prop that can use rem, percentages or semantic values.
  * Excludes 'px' values to enforce design system constraints.
  */

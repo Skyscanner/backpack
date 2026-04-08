@@ -192,6 +192,132 @@ export const ResponsiveTextStyleExample = () => (
 );
 
 /**
+ * Overflow example – demonstrates the overflow prop with common keyword values.
+ *
+ * @returns {JSX.Element} Boxes with overflow hidden and auto to clip or scroll content.
+ */
+export const OverflowExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>overflow=&quot;hidden&quot; — clips on both axes</BpkText>
+      <BpkBox
+        overflow="hidden"
+        width="12rem"
+        height="4rem"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+      >
+        This text is intentionally longer than the box so the overflow clipping
+        behaviour is clearly visible to reviewers.
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>overflow=&quot;auto&quot; — scrolls when content overflows</BpkText>
+      <BpkBox
+        overflow="auto"
+        width="12rem"
+        height="4rem"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+      >
+        This text is intentionally longer than the box so the overflow scrollbar
+        behaviour is clearly visible to reviewers.
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>overflowX=&quot;hidden&quot; + overflowY=&quot;auto&quot; — per-axis control</BpkText>
+      <BpkBox
+        overflowX="hidden"
+        overflowY="auto"
+        width="12rem"
+        height="4rem"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+      >
+        Horizontal overflow is clipped; vertical overflow scrolls independently.
+        This demonstrates independent per-axis overflow control.
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * Accessibility example – demonstrates id and aria-* props on BpkBox.
+ *
+ * @returns {JSX.Element} A landmark region using id, aria-label, and aria-labelledby.
+ */
+export const AccessibilityExample = () => (
+  <Wrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>aria-label on a landmark region</BpkText>
+      <BpkBox
+        role="region"
+        aria-label="Flight search results"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+      >
+        This box is a landmark region labelled via aria-label.
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>id + aria-labelledby cross-reference</BpkText>
+      <BpkBox
+        id="results-heading"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        marginBottom={BpkSpacing.SM}
+      >
+        <BpkText textStyle={TEXT_STYLES.heading5}>Results (id=&quot;results-heading&quot;)</BpkText>
+      </BpkBox>
+      <BpkBox
+        role="region"
+        aria-labelledby="results-heading"
+        padding={BpkSpacing.SM}
+      >
+        This region is labelled by the element with id=&quot;results-heading&quot; via aria-labelledby.
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
+ * ZIndex example – demonstrates the zIndex prop with layered boxes.
+ *
+ * @returns {JSX.Element} Two overlapping boxes where the higher z-index sits on top.
+ */
+export const ZIndexExample = () => (
+  <Wrapper>
+    <BpkBox position="relative" width="16rem" height="8rem">
+      <BpkBox
+        position="absolute"
+        top="0rem"
+        left="0rem"
+        width="10rem"
+        height="6rem"
+        padding={BpkSpacing.SM}
+        zIndex={1}
+      >
+        z-index: 1 (behind)
+      </BpkBox>
+      <BpkBox
+        position="absolute"
+        top="1rem"
+        left="2rem"
+        width="10rem"
+        height="6rem"
+        padding={BpkSpacing.SM}
+        zIndex={2}
+      >
+        z-index: 2 (in front)
+      </BpkBox>
+    </BpkBox>
+  </Wrapper>
+);
+
+/**
  * Ref example – demonstrates forwarding a ref to the BpkBox DOM element.
  *
  * @returns {JSX.Element} A box with a button that reads DOM info via ref.
@@ -308,6 +434,9 @@ export const MixedExample = () => (
     <SizeExample />
     <ResponsiveExample />
     <PositionExample />
+    <OverflowExample />
+    <ZIndexExample />
+    <AccessibilityExample />
     <InteractiveExample />
     <TextStyleExample />
     <BackgroundColorExample />

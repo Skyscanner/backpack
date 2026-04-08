@@ -208,4 +208,160 @@ describe('BpkBox', () => {
     expect(div).toHaveClass('bpk-layout--text-on-dark');
     expect(div).toHaveClass('bpk-layout--surface-hero');
   });
+
+  describe('id prop', () => {
+    it('forwards id to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox id="my-region">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('#my-region')).toBeInTheDocument();
+    });
+  });
+
+  describe('aria-* props', () => {
+    it('forwards aria-label to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox role="region" aria-label="Main content">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('aria-label', 'Main content');
+    });
+
+    it('forwards aria-labelledby to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox aria-labelledby="heading-id">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('aria-labelledby', 'heading-id');
+    });
+
+    it('forwards aria-hidden to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox aria-hidden>Decorative</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('aria-hidden', 'true');
+    });
+  });
+
+  describe('position prop', () => {
+    it.each(['static', 'relative', 'absolute', 'fixed', 'sticky'] as const)(
+      'renders with position="%s"',
+      (positionValue) => {
+        const { getByText } = render(
+          <BpkProvider>
+            <BpkBox position={positionValue}>Positioned</BpkBox>
+          </BpkProvider>,
+        );
+        expect(getByText('Positioned')).toBeInTheDocument();
+      },
+    );
+
+    it('renders with a responsive position object', () => {
+      const { getByText } = render(
+        <BpkProvider>
+          <BpkBox position={{ base: 'relative', tablet: 'sticky' }}>
+            Responsive position
+          </BpkBox>
+        </BpkProvider>,
+      );
+      expect(getByText('Responsive position')).toBeInTheDocument();
+    });
+  });
+
+  describe('overflow prop', () => {
+    it.each(['visible', 'hidden', 'scroll', 'auto', 'clip'] as const)(
+      'renders with overflow="%s"',
+      (overflowValue) => {
+        const { getByText } = render(
+          <BpkProvider>
+            <BpkBox overflow={overflowValue}>Overflow content</BpkBox>
+          </BpkProvider>,
+        );
+        expect(getByText('Overflow content')).toBeInTheDocument();
+      },
+    );
+
+    it('renders with a responsive overflow object', () => {
+      const { getByText } = render(
+        <BpkProvider>
+          <BpkBox overflow={{ base: 'hidden', tablet: 'auto' }}>
+            Responsive overflow
+          </BpkBox>
+        </BpkProvider>,
+      );
+      expect(getByText('Responsive overflow')).toBeInTheDocument();
+    });
+  });
+
+  describe('overflowX / overflowY props', () => {
+    it.each(['visible', 'hidden', 'scroll', 'auto', 'clip'] as const)(
+      'renders with overflowX="%s"',
+      (value) => {
+        const { getByText } = render(
+          <BpkProvider>
+            <BpkBox overflowX={value}>OverflowX content</BpkBox>
+          </BpkProvider>,
+        );
+        expect(getByText('OverflowX content')).toBeInTheDocument();
+      },
+    );
+
+    it.each(['visible', 'hidden', 'scroll', 'auto', 'clip'] as const)(
+      'renders with overflowY="%s"',
+      (value) => {
+        const { getByText } = render(
+          <BpkProvider>
+            <BpkBox overflowY={value}>OverflowY content</BpkBox>
+          </BpkProvider>,
+        );
+        expect(getByText('OverflowY content')).toBeInTheDocument();
+      },
+    );
+
+    it('renders with overflowX and overflowY combined', () => {
+      const { getByText } = render(
+        <BpkProvider>
+          <BpkBox overflowX="hidden" overflowY="auto">Combined overflow</BpkBox>
+        </BpkProvider>,
+      );
+      expect(getByText('Combined overflow')).toBeInTheDocument();
+    });
+
+    it('renders with responsive overflowX', () => {
+      const { getByText } = render(
+        <BpkProvider>
+          <BpkBox overflowX={{ base: 'hidden', tablet: 'auto' }}>
+            Responsive overflowX
+          </BpkBox>
+        </BpkProvider>,
+      );
+      expect(getByText('Responsive overflowX')).toBeInTheDocument();
+    });
+  });
+
+  describe('zIndex prop', () => {
+    it('renders with a numeric zIndex', () => {
+      const { getByText } = render(
+        <BpkProvider>
+          <BpkBox zIndex={10}>Z-index 10</BpkBox>
+        </BpkProvider>,
+      );
+      expect(getByText('Z-index 10')).toBeInTheDocument();
+    });
+
+    it('renders with zIndex="auto"', () => {
+      const { getByText } = render(
+        <BpkProvider>
+          <BpkBox zIndex="auto">Z-index auto</BpkBox>
+        </BpkProvider>,
+      );
+      expect(getByText('Z-index auto')).toBeInTheDocument();
+    });
+  });
 });

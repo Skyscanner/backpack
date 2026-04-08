@@ -26,6 +26,9 @@ import {
   SizeExample,
   ResponsiveExample,
   PositionExample,
+  OverflowExample,
+  ZIndexExample,
+  AccessibilityExample,
   InteractiveExample,
   TextStyleExample,
   ResponsiveTextStyleExample,
@@ -65,6 +68,9 @@ export const RtlSpacing = () => <RtlSpacingExample />;
 export const Size = () => <SizeExample />;
 export const Responsive = () => <ResponsiveExample />;
 export const Position = () => <PositionExample />;
+export const Overflow = () => <OverflowExample />;
+export const ZIndex = () => <ZIndexExample />;
+export const Accessibility = () => <AccessibilityExample />;
 export const Interactive = () => <InteractiveExample />;
 export const TextStyle = () => <TextStyleExample />;
 export const ResponsiveTextStyle = () => <ResponsiveTextStyleExample />;
