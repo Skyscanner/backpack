@@ -57,7 +57,7 @@ function Root({
             flexDirection="row"
             alignItems="center"
             padding={BpkSpacing.None}
-            gap={BpkSpacing.Base}
+            gap={BpkSpacing.MD}
           >
             {displayItems.map((item, index) =>
               item ? (

@@ -13,6 +13,7 @@ import ComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-ta
 - **Manage the items array.** The tray is stateless — it renders whatever you pass to `items`.
 - **Cap the array at 3 items.** If you pass more than 3, only the first 3 will be shown. The rest are silently ignored.
 - **Prevent adding beyond the limit in your UI.** A common pattern is to disable the "Add to compare" buttons once 3 items are in the array.
+- **Control positioning.** The tray has no built-in positioning. The component is designed to be displayed at the bottom of the screen.
 - **a11y - Manage focus after item removal.** When a remove button is clicked its DOM node is destroyed, causing focus to fall to `<body>`. Move focus explicitly in your `onRemove` handler. A common pattern is to focus the next item's remove button, falling back to the previous one:
 
 ```tsx
