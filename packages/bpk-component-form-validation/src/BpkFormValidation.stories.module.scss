@@ -16,31 +16,25 @@
  * limitations under the License.
  */
 
-import BpkTextarea from '../../packages/bpk-component-textarea/src/BpkTextarea';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/breakpoints';
 
-import {
-  DefaultExample,
-  PlaceholderExample,
-  DisabledExample,
-  InvalidExample,
-  LargeExample,
-  MixedExample,
-} from './examples';
+.bpkdocs-forms-page {
+  &__viewport-alert {
+    display: none;
 
-export default {
-  title: 'bpk-component-textarea',
-  component: BpkTextarea,
-};
-
-export const Default = DefaultExample;
-export const Placeholder = PlaceholderExample;
-export const Disabled = DisabledExample;
-export const Invalid = InvalidExample;
-export const Large = LargeExample;
-export const VisualTest = MixedExample;
-export const VisualTestWithZoom = {
-  render: VisualTest,
-  args: {
-    zoomEnabled: true
+    @include breakpoints.bpk-breakpoint-tablet {
+      display: block;
+    }
   }
-};
+
+  &__form {
+    margin-bottom: tokens.bpk-spacing-base();
+
+    &--desktop-only {
+      @include breakpoints.bpk-breakpoint-tablet {
+        display: none;
+      }
+    }
+  }
+}

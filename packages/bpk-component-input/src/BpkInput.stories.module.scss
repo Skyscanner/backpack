@@ -16,30 +16,43 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
-@use '../../packages/bpk-mixins/utils';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/breakpoints';
 
-.bpk-fieldsets {
-  &__container {
-    display: block;
-  }
+.bpk-forms {
+  &__viewport-alert {
+    display: none;
 
-  &__fieldset {
-    margin-right: tokens.bpk-spacing-sm();
-    flex: 1;
-
-    @include utils.bpk-rtl {
-      margin-right: 0;
-      margin-left: tokens.bpk-spacing-sm();
+    @include breakpoints.bpk-breakpoint-tablet {
+      display: block;
     }
   }
 
-  &__toggle {
-    margin-top: 1rem;
-    text-align: right;
+  &__form {
+    margin-bottom: tokens.bpk-spacing-md();
 
-    @include utils.bpk-rtl {
-      text-align: left;
+    &--desktop-only {
+      @include breakpoints.bpk-breakpoint-tablet {
+        display: none;
+      }
     }
+  }
+
+  &__place {
+    display: inline-block;
+    width: 32%;
+    vertical-align: bottom;
+  }
+
+  &__date {
+    display: inline-block;
+    width: 18%;
+    vertical-align: bottom;
+  }
+
+  &__hotels-destination {
+    display: inline-block;
+    width: 48%;
+    vertical-align: bottom;
   }
 }

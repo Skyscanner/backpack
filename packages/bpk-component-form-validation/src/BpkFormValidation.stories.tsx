@@ -16,26 +16,31 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
-import BpkCheckbox from '../../packages/bpk-component-checkbox';
-import BpkFormValidation from '../../packages/bpk-component-form-validation';
-import BpkInput from '../../packages/bpk-component-input';
-import BpkSelect from '../../packages/bpk-component-select';
-import BpkTextarea from '../../packages/bpk-component-textarea';
-import { cssModules } from '../../packages/bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkButton from '../../bpk-component-button';
+import BpkCheckbox from '../../bpk-component-checkbox';
+import BpkInput from '../../bpk-component-input';
+// @ts-expect-error Untyped import
+import BpkSelect from '../../bpk-component-select';
+import BpkTextarea from '../../bpk-component-textarea';
+import { cssModules } from '../../bpk-react-utils';
+
+// @ts-expect-error Untyped import
+import BpkFormValidation from './BpkFormValidation';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkFormValidation.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const formClassName = getClassName('bpkdocs-forms-page__form');
 
-class FormValidationContainer extends Component {
-  constructor() {
-    super();
+class FormValidationContainer extends Component<any, any> {
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       expanded: true,
@@ -43,7 +48,7 @@ class FormValidationContainer extends Component {
   }
 
   toggleExpanded = () => {
-    this.setState((prevState) => ({
+    this.setState((prevState: any) => ({
       expanded: !prevState.expanded,
     }));
   };
@@ -60,8 +65,8 @@ class FormValidationContainer extends Component {
   }
 }
 
-class InputContainer extends Component {
-  constructor(props) {
+class InputContainer extends Component<any, any> {
+  constructor(props: any) {
     super(props);
 
     const valueProp = props.FormComponent === BpkCheckbox ? 'checked' : 'value';
@@ -74,17 +79,17 @@ class InputContainer extends Component {
   render() {
     const { FormComponent, ...rest } = this.props;
 
-    let overrideProps = {};
+    let overrideProps: any = {};
 
     if (FormComponent === BpkCheckbox) {
       overrideProps = {
         checked: this.state.value,
-        onChange: (e) => this.setState({ value: e.target.checked }),
+        onChange: (e: any) => this.setState({ value: e.target.checked }),
       };
     } else {
       overrideProps = {
         value: this.state.value,
-        onChange: (e) => this.setState({ value: e.target.value }),
+        onChange: (e: any) => this.setState({ value: e.target.value }),
       };
       if (FormComponent === BpkInput) {
         overrideProps.onClear = () => this.setState({ value: '' });
@@ -93,10 +98,6 @@ class InputContainer extends Component {
     return <FormComponent {...rest} {...overrideProps} />;
   }
 }
-
-InputContainer.propTypes = {
-  FormComponent: PropTypes.elementType.isRequired,
-};
 
 const DefaultExample = () => (
   <FormValidationContainer id="my-validation-message">
@@ -168,4 +169,28 @@ const FormsExample = () => (
   </div>
 );
 
-export { DefaultExample, FormsExample };
+const meta = {
+  title: 'bpk-component-form-validation',
+  component: BpkFormValidation,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WithForms = {
+  render: () => <FormsExample />,
+};
+
+export const VisualTest = {
+  render: () => <FormsExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <FormsExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

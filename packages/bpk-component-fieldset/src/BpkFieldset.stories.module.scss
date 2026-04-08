@@ -16,25 +16,30 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
-@use '../../packages/bpk-mixins/breakpoints';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
 
-.bpkdocs-forms-page {
-  &__viewport-alert {
-    display: none;
+.bpk-fieldsets {
+  &__container {
+    display: block;
+  }
 
-    @include breakpoints.bpk-breakpoint-tablet {
-      display: block;
+  &__fieldset {
+    margin-right: tokens.bpk-spacing-sm();
+    flex: 1;
+
+    @include utils.bpk-rtl {
+      margin-right: 0;
+      margin-left: tokens.bpk-spacing-sm();
     }
   }
 
-  &__form {
-    margin-bottom: tokens.bpk-spacing-base();
+  &__toggle {
+    margin-top: 1rem;
+    text-align: right;
 
-    &--desktop-only {
-      @include breakpoints.bpk-breakpoint-tablet {
-        display: none;
-      }
+    @include utils.bpk-rtl {
+      text-align: left;
     }
   }
 }

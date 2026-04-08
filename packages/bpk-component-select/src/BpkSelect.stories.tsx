@@ -16,19 +16,24 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import BpkSelect from '../../packages/bpk-component-select';
-import { action } from '../bpk-storybook-utils';
 
-class StatefulBpkSelect extends Component {
-  constructor() {
-    super();
+// @ts-expect-error Untyped import
+import { action } from '../../../examples/bpk-storybook-utils';
+
+// @ts-expect-error Untyped import
+import BpkSelect from './BpkSelect';
+
+import type { Meta } from '@storybook/react';
+
+class StatefulBpkSelect extends Component<any, any> {
+  constructor(props: any) {
+    super(props);
     this.state = { value: 'oranges' };
   }
 
-  onChange = (value) => {
+  onChange = (value: string) => {
     action(`BpkSelect changed. New value: ${value}`);
     this.setState({ value });
   };
@@ -39,7 +44,7 @@ class StatefulBpkSelect extends Component {
         id="destination"
         name="destination"
         value={this.state.value}
-        onChange={(event) => {
+        onChange={(event: any) => {
           this.onChange(event.target.value);
         }}
         {...this.props}
@@ -55,7 +60,7 @@ class StatefulBpkSelect extends Component {
   }
 }
 
-const getFlagUriFromCountryCode = (countryCode) =>
+const getFlagUriFromCountryCode = (countryCode: string) =>
   `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
 
 const countries = [
@@ -69,8 +74,9 @@ const countries = [
   { key: 7, id: 'IT', name: 'Italy', disabled: false },
   { key: 8, id: 'US', name: 'USA', disabled: true },
 ];
-class SelectWithImage extends Component {
-  constructor(props) {
+
+class SelectWithImage extends Component<any, any> {
+  constructor(props: any) {
     super(props);
     this.state = {
       selected: 'IT',
@@ -79,8 +85,8 @@ class SelectWithImage extends Component {
 
   getItemByValue = () => {
     const { options } = this.props;
-    return (val) => {
-      const items = options.filter((o) => o.id === val);
+    return (val: string) => {
+      const items = options.filter((o: any) => o.id === val);
       if (!items.length) throw new Error('Item does not exists');
       return items[0];
     };
@@ -88,7 +94,7 @@ class SelectWithImage extends Component {
 
   getItem = this.getItemByValue();
 
-  handleChange = (e) => {
+  handleChange = (e: any) => {
     const item = this.getItem(e.target.value);
 
     this.setState({
@@ -96,7 +102,7 @@ class SelectWithImage extends Component {
     });
   };
 
-  image = (id) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
+  image = (id: string) => <img alt="Flag" src={getFlagUriFromCountryCode(id)} />;
 
   render() {
     const { options, ...rest } = this.props;
@@ -107,7 +113,7 @@ class SelectWithImage extends Component {
         image={this.image(this.getItem(this.state.selected).id)}
         onChange={this.handleChange}
       >
-        {options.map((o) => (
+        {options.map((o: any) => (
           <option key={o.id} disabled={o.disabled && 'disabled'} value={o.id}>
             {o.name}
           </option>
@@ -116,12 +122,6 @@ class SelectWithImage extends Component {
     );
   }
 }
-
-SelectWithImage.propTypes = {
-  // The following will go away with the move to TS
-  // eslint-disable-next-line react/forbid-prop-types
-  options: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
 
 const DefaultExample = () => <StatefulBpkSelect />;
 
@@ -260,17 +260,64 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  InvalidExample,
-  InvalidWithImageExample,
-  DisabledExample,
-  LargeExample,
-  DockedExample,
-  DockedWithImagesExample,
-  ManuallyDockedExample,
-  ManuallyDockedWithImagesExample,
-  WithImageExample,
-  WithImageLargeExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-select',
+  component: BpkSelect,
+} satisfies Meta;
+
+export default meta;
+
+export const Example = {
+  render: () => <DefaultExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const InvalidWithImage = {
+  render: () => <InvalidWithImageExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledExample />,
+};
+
+export const Large = {
+  render: () => <LargeExample />,
+};
+
+export const Docked = {
+  render: () => <DockedExample />,
+};
+
+export const DockedWithImages = {
+  render: () => <DockedWithImagesExample />,
+};
+
+export const ManuallyDocked = {
+  render: () => <ManuallyDockedExample />,
+};
+
+export const ManuallyDockedWithImages = {
+  render: () => <ManuallyDockedWithImagesExample />,
+};
+
+export const WithImage = {
+  render: () => <WithImageExample />,
+};
+
+export const WithImageLarge = {
+  render: () => <WithImageLargeExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

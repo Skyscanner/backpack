@@ -19,26 +19,37 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action } from '../../../examples/bpk-storybook-utils';
 import BpkBannerAlert, {
   ALERT_TYPES,
-} from '../../packages/bpk-component-banner-alert';
-import BpkInput, {
+} from '../../bpk-component-banner-alert';
+import BpkLabel from '../../bpk-component-label';
+import { cssModules } from '../../bpk-react-utils';
+
+import BpkInput from './BpkInput';
+import {
   propTypes as inputPropTypes,
   defaultProps as inputDefaultProps,
   INPUT_TYPES,
   CLEAR_BUTTON_MODES,
-} from '../../packages/bpk-component-input';
-import BpkLabel from '../../packages/bpk-component-label';
-import { cssModules } from '../../packages/bpk-react-utils';
-import { action } from '../bpk-storybook-utils';
+} from './common-types';
 
-import STYLES from './examples.module.scss';
+import type { WithOpenEventsProps } from './withOpenEvents';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkInput.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const { value: valueProp, ...propTypes } = inputPropTypes;
 
-class ClearableInput extends Component {
+const WithOpenEventsMock = (props: WithOpenEventsProps) => <div />;
+
+class ClearableInput extends Component<any, any> {
   static propTypes = {
     ...propTypes,
     initialValue: PropTypes.string.isRequired,
@@ -48,7 +59,7 @@ class ClearableInput extends Component {
     ...inputDefaultProps,
   };
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -56,7 +67,7 @@ class ClearableInput extends Component {
     };
   }
 
-  onChange = (e) => {
+  onChange = (e: any) => {
     this.setState({ value: e.target.value });
   };
 
@@ -69,6 +80,7 @@ class ClearableInput extends Component {
     const { initialValue, ...rest } = this.props;
 
     return (
+      // @ts-expect-error - ClearableInput is typed as Component<any> so rest spread doesn't satisfy required props
       <BpkInput
         {...rest}
         onChange={this.onChange}
@@ -271,30 +283,18 @@ const DockedExample = () => (
       )}
     >
       <div>
-        <BpkLabel
-          htmlFor="input_origin"
-          className={getClassName('bpk-forms__place')}
-        >
-          From
-        </BpkLabel>
-        <BpkLabel
-          htmlFor="input_destination"
-          className={getClassName('bpk-forms__place')}
-        >
-          To
-        </BpkLabel>
-        <BpkLabel
-          htmlFor="input_outbound"
-          className={getClassName('bpk-forms__date')}
-        >
-          Departure date
-        </BpkLabel>
-        <BpkLabel
-          htmlFor="input_inbound"
-          className={getClassName('bpk-forms__date')}
-        >
-          Return date
-        </BpkLabel>
+        <div className={getClassName('bpk-forms__place')}>
+          <BpkLabel htmlFor="input_origin">From</BpkLabel>
+        </div>
+        <div className={getClassName('bpk-forms__place')}>
+          <BpkLabel htmlFor="input_destination">To</BpkLabel>
+        </div>
+        <div className={getClassName('bpk-forms__date')}>
+          <BpkLabel htmlFor="input_outbound">Departure date</BpkLabel>
+        </div>
+        <div className={getClassName('bpk-forms__date')}>
+          <BpkLabel htmlFor="input_inbound">Return date</BpkLabel>
+        </div>
       </div>
       <div>
         <BpkInput
@@ -342,24 +342,15 @@ const DockedExample = () => (
       )}
     >
       <div>
-        <BpkLabel
-          htmlFor="input_hotels_destination"
-          className={getClassName('bpk-forms__hotels-destination')}
-        >
-          Destination or hotel name
-        </BpkLabel>
-        <BpkLabel
-          htmlFor="input_checkin"
-          className={getClassName('bpk-forms__date')}
-        >
-          Check-in
-        </BpkLabel>
-        <BpkLabel
-          htmlFor="input_checkout"
-          className={getClassName('bpk-forms__date')}
-        >
-          Check-out
-        </BpkLabel>
+        <div className={getClassName('bpk-forms__hotels-destination')}>
+          <BpkLabel htmlFor="input_hotels_destination">Destination or hotel name</BpkLabel>
+        </div>
+        <div className={getClassName('bpk-forms__date')}>
+          <BpkLabel htmlFor="input_checkin">Check-in</BpkLabel>
+        </div>
+        <div className={getClassName('bpk-forms__date')}>
+          <BpkLabel htmlFor="input_checkout">Check-out</BpkLabel>
+        </div>
       </div>
       <div>
         <BpkInput
@@ -459,19 +450,90 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  TextExample,
-  PlaceholderExample,
-  ValidExample,
-  InvalidExample,
-  DisabledExample,
-  ClearableExample,
-  EmailInputExample,
-  NumberInputExample,
-  PasswordInputExample,
-  TelephoneInputExample,
-  LargeInputExample,
-  DockedExample,
-  ManuallyDockedExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-input',
+  component: BpkInput,
+  subcomponents: {
+    withOpenEvents: WithOpenEventsMock,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgTypes exclude={['zoomEnabled']} />
+          <Markdown>
+            {
+            `**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`
+            }
+          </Markdown>
+        </>
+      )
+    },
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const TextValue = {
+  render: () => <TextExample />,
+};
+
+export const Placeholder = {
+  render: () => <PlaceholderExample />,
+};
+
+export const Valid = {
+  render: () => <ValidExample />,
+};
+
+export const Invalid = {
+  render: () => <InvalidExample />,
+};
+
+export const Disabled = {
+  render: () => <DisabledExample />,
+};
+
+export const Clearable = {
+  render: () => <ClearableExample />,
+};
+
+export const Email = {
+  render: () => <EmailInputExample />,
+};
+
+export const Number = {
+  render: () => <NumberInputExample />,
+};
+
+export const Password = {
+  render: () => <PasswordInputExample />,
+};
+
+export const Telephone = {
+  render: () => <TelephoneInputExample />,
+};
+
+export const Large = {
+  render: () => <LargeInputExample />,
+};
+
+export const Docked = {
+  render: () => <DockedExample />,
+};
+
+export const ManuallyDocked = {
+  render: () => <ManuallyDockedExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
