@@ -27,8 +27,8 @@ import BpkBannerAlert, {
   BpkBannerAlertExpandable,
   withBannerAlertState,
 } from '..';
-import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import { action } from '../../../examples/bpk-storybook-utils';
+import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import BpkButton from '../../bpk-component-button';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 import { cssModules } from '../../bpk-react-utils';
