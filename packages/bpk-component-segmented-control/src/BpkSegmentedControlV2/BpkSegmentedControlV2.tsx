@@ -18,8 +18,7 @@
 
 import { useRef } from 'react';
 
-import { useLocaleContext } from '@ark-ui/react/locale';
-import { SegmentGroup } from '@ark-ui/react/segment-group';
+import { SegmentGroup, useLocaleContext } from '@ark-ui/react';
 
 import {
   cssModules,

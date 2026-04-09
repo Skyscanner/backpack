@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { defineConfig } from '@chakra-ui/react/styled-system';
+import { defineConfig } from '@chakra-ui/react';
 
 // Named imports from Backpack foundations — only the tokens actually used.
 // This enables tree-shaking of the full foundations module.

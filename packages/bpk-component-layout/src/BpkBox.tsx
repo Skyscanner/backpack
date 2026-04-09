@@ -18,7 +18,7 @@
 
 import { forwardRef } from 'react';
 
-import { Box } from '@chakra-ui/react/box';
+import { Box } from '@chakra-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 

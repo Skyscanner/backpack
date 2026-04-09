@@ -19,7 +19,7 @@
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
-import { CheckboxRoot } from '@ark-ui/react/checkbox';
+import { CheckboxRoot } from '@ark-ui/react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';

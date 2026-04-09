@@ -19,8 +19,8 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
-import { LocaleProvider } from '@ark-ui/react/locale';
-import { ChakraProvider, createSystem } from '@chakra-ui/react/styled-system';
+import { LocaleProvider } from '@ark-ui/react';
+import { ChakraProvider, createSystem } from '@chakra-ui/react';
 
 import { createBpkConfig } from './theme';
 
