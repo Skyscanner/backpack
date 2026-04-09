@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
 .bpk-thumb-button {
@@ -59,5 +60,21 @@
   &__icon {
     display: flex;
     fill: currentcolor;
+  }
+
+  &--small {
+    width: auto;
+    height: auto;
+    color: tokens.$bpk-text-primary-day;
+
+    @include typography.bpk-text-xs;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-secondary-day;
+    }
+
+    &::before {
+      content: none;
+    }
   }
 }

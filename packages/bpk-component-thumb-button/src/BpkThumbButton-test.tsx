@@ -115,4 +115,23 @@ describe('BpkThumbButton', () => {
     expect(screen.getByLabelText(label)).toBeInTheDocument();
   });
 
+  it('should apply small modifier class when size is small', () => {
+    render(
+      <BpkThumbButton
+        accessibilityLabel="Thumbs up"
+        type="up"
+        onClick={mockOnClick}
+        size="small"
+      />,
+    );
+    expect(screen.getByTestId('bpk-thumb-button-up')).toHaveClass('bpk-thumb-button--small');
+  });
+
+  it('should not apply small modifier class by default', () => {
+    render(
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" onClick={mockOnClick} />,
+    );
+    expect(screen.getByTestId('bpk-thumb-button-up')).not.toHaveClass('bpk-thumb-button--small');
+  });
+
 });

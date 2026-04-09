@@ -18,7 +18,7 @@
 
 import BpkThumbButton from '../../packages/bpk-component-thumb-button/src/BpkThumbButton';
 
-import { InteractiveExample, MixedExample } from './examples';
+import { InteractiveExample, MixedExample, SmallExample } from './examples';
 
 export default {
   title: 'bpk-component-thumb-button',
@@ -26,6 +26,8 @@ export default {
 };
 
 export const Default = InteractiveExample;
+
+export const Small = SmallExample;
 
 export const VisualTest = MixedExample;
 export const VisualTestWithZoom = {

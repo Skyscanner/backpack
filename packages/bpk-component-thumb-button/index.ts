@@ -18,5 +18,5 @@
 
 import BpkThumbButton from './src/BpkThumbButton';
 
-export type { BpkThumbButtonProps, ThumbsButtonType } from './src/BpkThumbButton';
+export type { BpkThumbButtonProps, ThumbsButtonType, ThumbsButtonSize } from './src/BpkThumbButton';
 export default BpkThumbButton;

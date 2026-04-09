@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-import type { MouseEvent } from 'react';
+import type { ComponentType, MouseEvent } from 'react';
 
-import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
-import ThumbsUpIcon from '../../bpk-component-icon/lg/thumbs-up';
+import ThumbsDownIconLg from '../../bpk-component-icon/lg/thumbs-down';
+import ThumbsUpIconLg from '../../bpk-component-icon/lg/thumbs-up';
+import ThumbsDownIconSm from '../../bpk-component-icon/sm/thumbs-down';
+import ThumbsUpIconSm from '../../bpk-component-icon/sm/thumbs-up';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkThumbButton.module.scss';
@@ -28,6 +30,7 @@ const getClassName = cssModules(STYLES);
 
 
 export type ThumbsButtonType = 'up' | 'down';
+export type ThumbsButtonSize = 'default' | 'small';
 
 export type BpkThumbButtonProps = {
   /**
@@ -43,6 +46,10 @@ export type BpkThumbButtonProps = {
    */
   selected?: boolean;
   /**
+   * Size variant. 'small' uses sm icons with no fixed dimensions, matching inline text use cases.
+   */
+  size?: ThumbsButtonSize;
+  /**
    * Type of thumb icon to display.
    */
   type: ThumbsButtonType;
@@ -52,13 +59,19 @@ const BpkThumbButton = ({
   accessibilityLabel,
   onClick,
   selected = false,
+  size = 'default',
   type,
 }: BpkThumbButtonProps) => {
-  const Icon = type === 'up' ? ThumbsUpIcon : ThumbsDownIcon;
+  const icons: Record<ThumbsButtonSize, Record<ThumbsButtonType, ComponentType>> = {
+    small: { up: ThumbsUpIconSm, down: ThumbsDownIconSm },
+    default: { up: ThumbsUpIconLg, down: ThumbsDownIconLg },
+  };
+  const Icon = icons[size][type];
 
   const classNames = getClassName(
     'bpk-thumb-button',
     selected && 'bpk-thumb-button--selected',
+    size === 'small' && 'bpk-thumb-button--small',
   );
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {

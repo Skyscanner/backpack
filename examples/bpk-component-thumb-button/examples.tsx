@@ -66,6 +66,41 @@ export const MixedExample = () => (
         <BpkThumbButton accessibilityLabel="Thumbs up" type="up" selected onClick={noop} />
         <BpkThumbButton accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
       </BpkHStack>
+      <BpkHStack gap={BpkSpacing.Base}>
+        <span>Small:</span>
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" size="small" onClick={noop} />
+      </BpkHStack>
+      <BpkHStack gap={BpkSpacing.Base}>
+        <span>Small selected:</span>
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" selected onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" size="small" selected onClick={noop} />
+      </BpkHStack>
     </BpkBox>
   </BpkProvider>
 );
+
+export const SmallExample = () => {
+  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);
+
+  return (
+    <BpkProvider>
+      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+        <BpkThumbButton
+          accessibilityLabel="Rate as helpful"
+          type="up"
+          size="small"
+          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
+          selected={selectedThumb === 'up'}
+        />
+        <BpkThumbButton
+          accessibilityLabel="Rate as not helpful"
+          type="down"
+          size="small"
+          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
+          selected={selectedThumb === 'down'}
+        />
+      </BpkHStack>
+    </BpkProvider>
+  );
+};
