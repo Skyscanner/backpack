@@ -28,7 +28,7 @@ import {
   textOnDarkDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { AriaLiveDemo } from '../../packages/bpk-component-aria-live/src/BpkAriaLive.stories';
+import AriaLiveDemo from '../../packages/bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import BpkSelectableChip, {
   type BpkSelectableChipProps,
   CHIP_TYPES,

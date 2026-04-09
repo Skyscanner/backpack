@@ -21,7 +21,7 @@ import { Component } from 'react';
 
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { AriaLiveDemo } from '../../packages/bpk-component-aria-live/src/BpkAriaLive.stories';
+import AriaLiveDemo from '../../packages/bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import BpkBannerAlert, {
   ALERT_TYPES,
   withBannerAlertState,

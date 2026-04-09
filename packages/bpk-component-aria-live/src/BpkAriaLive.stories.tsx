@@ -17,11 +17,10 @@
  */
 
 import { Component } from 'react';
-import type { ChangeEvent, ReactElement } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import { ARIA_LIVE_POLITENESS_SETTINGS } from '..';
 import BpkChip from '../../bpk-component-chip';
 import { BpkCode } from '../../bpk-component-code';
 import BpkFieldset from '../../bpk-component-fieldset';
@@ -31,52 +30,13 @@ import BpkSwitch from '../../bpk-component-switch';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkAriaLive from './BpkAriaLive';
+import AriaLiveDemo from './BpkAriaLive.story-helpers';
 
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkAriaLive.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
-
-type AriaLiveDemoProps = {
-  preamble?: ReactElement | null;
-  children: ReactElement;
-  className?: string | null;
-  style?: {};
-  visible?: Boolean;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-
-export const AriaLiveDemo = ({
-  children,
-  className = null,
-  preamble = null,
-  style = undefined,
-  visible = false,
-  ...rest
-}: AriaLiveDemoProps) => (
-  <div
-    className={getClassName('bpk-storybook-aria-live-demo', className)}
-    style={style}
-  >
-    <p>
-      <strong>ARIA live region:</strong>
-    </p>
-    <p>
-      {visible
-        ? 'This content is relevant to everyone, not just assistive technologies, so it is permanently visible.'
-        : 'This would usually be visually hidden, and only visible to assistive technologies. It is visible here for demo purposes.'}
-    </p>
-    {preamble}
-    <BpkAriaLive
-      {...rest}
-      visible
-      politenessSetting={ARIA_LIVE_POLITENESS_SETTINGS.assertive}
-    >
-      {children}
-    </BpkAriaLive>
-  </div>
-);
 
 class SelectExample<SProps extends {}> extends Component<
   SProps,

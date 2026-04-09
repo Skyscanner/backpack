@@ -19,7 +19,7 @@
 import BpkExtraLargeSpinner from './BpkExtraLargeSpinner';
 import BpkLargeSpinner from './BpkLargeSpinner';
 import BpkSpinner from './BpkSpinner';
-import SpinnerLayout from './SpinnerLayout';
+import SpinnerLayout from './SpinnerLayout.story-helpers';
 import SPINNER_TYPES from './spinnerTypes';
 
 import type { Meta } from '@storybook/react';

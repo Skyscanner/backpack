@@ -10,6 +10,12 @@ stories.tsx
 *.stories.jsx
 *.stories.ts
 *.stories.tsx
+*.story-helpers.js
+*.story-helpers.jsx
+*.story-helpers.ts
+*.story-helpers.tsx
+*.story-helpers.module.scss
+*.story-helpers.module.css
 *.stories.module.scss
 *.stories.module.css
 __snapshots__
