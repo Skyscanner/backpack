@@ -22,7 +22,9 @@ BpkBlurbHeader.tsx
 BpkCheckboxV2Root.tsx
 ```
 
-Because internal names are already fully qualified, an explicit `displayName` is not required. If one is needed (e.g. when using `forwardRef` or HOCs, which produce anonymous components), use the short API form:
+**`displayName`:** not required when using full internal names. This is a deliberate choice: some older composable components (e.g. `BpkCardV2`, `BpkInsetBannerV3`) used short internal names and set `displayName` on every sub-component — the full-name approach avoids that overhead.
+
+If a `displayName` is needed (e.g. when using `forwardRef` or HOCs, which produce anonymous components), use the short API form:
 
 ```ts
 const BpkBlurbHeader = forwardRef<HTMLDivElement, BpkBlurbHeaderProps>((props, ref) => ...);
@@ -79,8 +81,13 @@ Avoid deep nesting unless the component's complexity requires it.
 
 The short exported API (`BpkBlurb.Header`) aligns with Ark UI and modern composable patterns, and is consistent with newer Backpack components such as `BpkCheckboxV2`. Using the full name internally (`BpkBlurbHeader.tsx`) keeps files explicit and easy to search without ambiguity.
 
+Full internal names were chosen over the short-name + `displayName` pattern (used in `BpkCardV2` and `BpkInsetBannerV3`) for three reasons:
+- **No boilerplate**: every sub-component file in the short-name pattern requires an explicit `displayName` assignment, which is repetitive and easy to forget.
+- **Better searchability**: `BpkCheckboxV2Root` is unambiguous across the whole codebase; `Root.tsx` matches many unrelated files.
+- **Consistency**: full internal names match the convention already established by `BpkCheckboxV2`, which is the most recent composable component.
+
 A single SCSS file is preferred for simple components to avoid over-engineering. Splitting is available when complexity warrants it.
 
 ## Anything else
 
-This convention applies to new composable components going forward. Existing components should be aligned opportunistically when files are changed for other reasons.
+This convention applies to new composable components going forward. Existing components that use the short-name + `displayName` pattern (e.g. `BpkCardV2`, `BpkInsetBannerV3`) should be aligned opportunistically when files are changed for other reasons.
