@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import BpkFloatingNotification, {
-  NOTIFICATION_TYPES,
-} from '../../packages/bpk-component-floating-notification';
-import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
-import BpkIconInformationCircle from '../../packages/bpk-component-icon/sm/information-circle';
+import BpkIconHeart from '../../bpk-component-icon/sm/heart';
+import BpkIconInformationCircle from '../../bpk-component-icon/sm/information-circle';
+
+import BpkFloatingNotification, { NOTIFICATION_TYPES } from './BpkFloatingNotification';
+
+import type { Meta } from '@storybook/react';
 
 const DefaultExample = () => (
   <BpkFloatingNotification text="Saved" hideAfter={8000} />
@@ -82,13 +83,48 @@ const CriticalWithCtaExample = () => (
   />
 );
 
-export {
-  CtaIconLongTextExample,
-  CtaExample,
-  CriticalExample,
-  CriticalWithCtaExample,
-  CriticalWithIconExample,
-  DefaultExample,
-  IconExample,
-  VisualTestExample,
+const meta = {
+  title: 'bpk-component-floating-notification',
+  component: BpkFloatingNotification,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WithIcon = {
+  render: () => <IconExample />,
+};
+
+export const WithCta = {
+  render: () => <CtaExample />,
+};
+
+export const Critical = {
+  render: () => <CriticalExample />,
+};
+
+export const CriticalWithIcon = {
+  render: () => <CriticalWithIconExample />,
+};
+
+export const CriticalWithCta = {
+  render: () => <CriticalWithCtaExample />,
+};
+
+export const WithCtaIconAndLongText = {
+  render: () => <CtaIconLongTextExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualTestExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
