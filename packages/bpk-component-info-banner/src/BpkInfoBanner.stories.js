@@ -32,7 +32,7 @@ import BpkInfoBanner, {
   STYLE_TYPES,
   withBannerAlertState,
 } from '..';
-import { AriaLiveDemo } from '../../../examples/bpk-component-aria-live/examples';
+import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import { action } from '../../../examples/bpk-storybook-utils';
 import BpkButton from '../../bpk-component-button';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
