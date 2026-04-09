@@ -15,32 +15,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
-import PropTypes from 'prop-types';
 
-import BpkImage from '../../packages/bpk-component-image';
-import BpkOverlay, {
-  OVERLAY_TYPES,
-} from '../../packages/bpk-component-overlay';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BpkImage from '../../bpk-component-image';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkOverlay, { OVERLAY_TYPES } from './BpkOverlay';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkOverlay.stories.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/1c8c6338a92a7a94/original/matt-hardy-6ArTTluciuA-unsplash.jpg';
 const HEAVY_IMG_SRC =
   'https://content.skyscnr.com/m/2af45124245b6759/original/SOCIAL9.png';
 
-const getClassName = cssModules(STYLES);
-
-const OverlayName = ({ overlayType }) => (
+const OverlayName = ({ overlayType }: { overlayType: string }) => (
   <BpkText textStyle={TEXT_STYLES.xl}>{overlayType}</BpkText>
 );
-
-OverlayName.propTypes = {
-  overlayType: PropTypes.objectOf(PropTypes.string),
-};
 
 const SolidExamples = () => (
   <div className={getClassName('bpk-overlay-stories')}>
@@ -276,14 +271,52 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  SolidExamples,
-  TopExamples,
-  BottomExamples,
-  LeftExamples,
-  RightExamples,
-  VignetteExample,
-  HeavyOverlayExamples,
-  WithForegroundContentExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-overlay',
+  component: BpkOverlay,
+} satisfies Meta;
+
+export default meta;
+
+export const Solid = {
+  render: () => <SolidExamples />,
+};
+
+export const Top = {
+  render: () => <TopExamples />,
+};
+
+export const Bottom = {
+  render: () => <BottomExamples />,
+};
+
+export const Left = {
+  render: () => <LeftExamples />,
+};
+
+export const Right = {
+  render: () => <RightExamples />,
+};
+
+export const Vignette = {
+  render: () => <VignetteExample />,
+};
+
+export const HeavyOverlays = {
+  render: () => <HeavyOverlayExamples />,
+};
+
+export const WithForegroundContent = {
+  render: () => <WithForegroundContentExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

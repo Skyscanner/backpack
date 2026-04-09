@@ -15,19 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { withRtlSupport } from '../../packages/bpk-component-icon';
-import Car from '../../packages/bpk-component-icon/sm/cars';
-import Explore from '../../packages/bpk-component-icon/sm/explore';
-import Flight from '../../packages/bpk-component-icon/sm/flight';
-import Hotel from '../../packages/bpk-component-icon/sm/hotels';
-import BpkNavigationTabGroup from '../../packages/bpk-component-navigation-tab-group';
-import { NAVIGATION_TAB_GROUP_TYPES } from '../../packages/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
 
-import type { BpkNavigationTabGroupProps } from '../../packages/bpk-component-navigation-tab-group';
+import { withRtlSupport } from '../../bpk-component-icon';
+import Car from '../../bpk-component-icon/sm/cars';
+import Explore from '../../bpk-component-icon/sm/explore';
+import Flight from '../../bpk-component-icon/sm/flight';
+import Hotel from '../../bpk-component-icon/sm/hotels';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkNavigationTabGroup, {
+  NAVIGATION_TAB_GROUP_TYPES,
+  type Props as BpkNavigationTabGroupProps,
+} from './BpkNavigationTabGroup';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkNavigationTabGroup.stories.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
@@ -47,10 +51,10 @@ const tabs: BpkNavigationTabGroupProps['tabs'] = [
 ];
 
 const tabsWithIcon: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-cy':'flight-feature', 'data-analytics':'flights' },
-  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-cy':'hotel-feature', 'data-analytics':'hotels' },
-  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-cy':'carhire-feature', 'data-analytics':'car hire' },
-  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-cy':'explore-feature', 'data-analytics':'explore' },
+  { id: 'air', text: 'Flights', href: '/', icon: flightIcons, 'data-cy': 'flight-feature', 'data-analytics': 'flights' },
+  { id: 'hotel', text: 'Hotels', href: '/hotel', icon: hotelIcons, 'data-cy': 'hotel-feature', 'data-analytics': 'hotels' },
+  { id: 'car', text: 'Car hire', href: '/carhire', icon: carIcons, 'data-cy': 'carhire-feature', 'data-analytics': 'car hire' },
+  { id: 'explore', text: 'Explore', href: '/Explore', icon: exploreIcons, 'data-cy': 'explore-feature', 'data-analytics': 'explore' },
 ];
 
 const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
@@ -61,10 +65,10 @@ const tabsNoHref: BpkNavigationTabGroupProps['tabs'] = [
 ];
 
 const tabsOnlyText: BpkNavigationTabGroupProps['tabs'] = [
-  { id: 'air', text: 'Flights'},
+  { id: 'air', text: 'Flights' },
   { id: 'hotel', text: 'Hotels' },
-  { id: 'carhire', text: 'Car hire'},
-  { id: 'explore', text: 'Explore'},
+  { id: 'carhire', text: 'Car hire' },
+  { id: 'explore', text: 'Explore' },
 ];
 
 const tabsWithBlankTarget: BpkNavigationTabGroupProps['tabs'] = [
@@ -110,6 +114,7 @@ const SimpleCanvasDefault = () => (
     />
   </div>
 );
+
 // With Icon Navigation Tab Group
 const WithIconSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
@@ -141,15 +146,15 @@ const WithIconCanvasDefaultForExample = () => (
 // Tabs No Href SurfaceContrast Navigation Tab Group
 const TabsNoHrefSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
-  <BpkNavigationTabGroup
-    id='navExample'
-    tabs={tabsNoHref}
-    onItemClick={() => {}}
-    selectedIndex={0}
-    type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
-    ariaLabel="Navigation tabs"
-  />
-</div>
+    <BpkNavigationTabGroup
+      id='navExample'
+      tabs={tabsNoHref}
+      onItemClick={() => {}}
+      selectedIndex={0}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+    />
+  </div>
 );
 
 // Tabs No Href CanvasDefault Navigation Tab Group
@@ -169,15 +174,15 @@ const TabsNoHrefCanvasDefaultForExample = () => (
 // Tabs Only Text SurfaceContrast Navigation Tab Group
 const TabsOnlyTextSurfaceContrastForExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story')}>
-  <BpkNavigationTabGroup
-    id='navExample'
-    tabs={tabsOnlyText}
-    onItemClick={() => {}}
-    selectedIndex={0}
-    type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
-    ariaLabel="Navigation tabs"
-  />
-</div>
+    <BpkNavigationTabGroup
+      id='navExample'
+      tabs={tabsOnlyText}
+      onItemClick={() => {}}
+      selectedIndex={0}
+      type={NAVIGATION_TAB_GROUP_TYPES.SurfaceContrast}
+      ariaLabel="Navigation tabs"
+    />
+  </div>
 );
 
 // Tabs Only Text CanvasDefault Navigation Tab Group
@@ -222,7 +227,6 @@ const TabsWithBubble = () => (
   </div>
 );
 
-
 const VisualTestExample = () => (
   <div className={getClassNames('bpk-navigation-tab-group-story__mixed-container')}>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
@@ -265,16 +269,60 @@ const VisualTestExample = () => (
   </div>
 );
 
-export {
-  SimpleSurfaceContrast,
-  SimpleCanvasDefault,
-  WithIconSurfaceContrastForExample,
-  WithIconCanvasDefaultForExample,
-  TabsNoHrefSurfaceContrastForExample,
-  TabsNoHrefCanvasDefaultForExample,
-  TabsOnlyTextSurfaceContrastForExample,
-  TabsOnlyTextCanvasDefaultForExample,
-  TabsWithBlankTarget,
-  TabsWithBubble,
-  VisualTestExample,
+const meta = {
+  title: 'bpk-component-navigation-tab-group',
+  component: BpkNavigationTabGroup,
+} satisfies Meta;
+
+export default meta;
+
+export const SurfaceContrast = {
+  render: () => <SimpleSurfaceContrast />,
+};
+
+export const TabsNoHrefSurfaceContrast = {
+  render: () => <TabsNoHrefSurfaceContrastForExample />,
+};
+
+export const TabsNoHrefCanvasDefault = {
+  render: () => <TabsNoHrefCanvasDefaultForExample />,
+};
+
+export const CanvasDefault = {
+  render: () => <SimpleCanvasDefault />,
+};
+
+export const WithIconSurfaceContrast = {
+  render: () => <WithIconSurfaceContrastForExample />,
+};
+
+export const WithIconCanvasDefault = {
+  render: () => <WithIconCanvasDefaultForExample />,
+};
+
+export const OnlyTextSurfaceContrast = {
+  render: () => <TabsOnlyTextSurfaceContrastForExample />,
+};
+
+export const OnlyTextCanvasDefault = {
+  render: () => <TabsOnlyTextCanvasDefaultForExample />,
+};
+
+export const WithBlankTarget = {
+  render: () => <TabsWithBlankTarget />,
+};
+
+export const WithNewBubble = {
+  render: () => <TabsWithBubble />,
+};
+
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualTestExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

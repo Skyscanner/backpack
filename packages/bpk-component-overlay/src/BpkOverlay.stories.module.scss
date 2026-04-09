@@ -16,36 +16,30 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
-.bpk-chip-examples {
-  &__container {
-    padding-top: tokens.bpk-spacing-lg();
+.bpk-overlay-stories {
+  display: flex;
+  justify-content: space-around;
 
-    &:last-child {
-      padding-bottom: tokens.bpk-spacing-xl();
-    }
-  }
-
-  &__chip {
-    margin-right: tokens.bpk-spacing-md();
-  }
-
-  &__on-dark {
-    margin-top: tokens.bpk-spacing-lg();
+  &__overlay-story {
+    display: flex;
+    width: 100%;
     padding: tokens.bpk-spacing-base();
-    background-color: tokens.$bpk-core-primary-day;
+    flex-direction: column;
+    align-items: center;
   }
 
-  &__default {
-    margin-top: tokens.bpk-spacing-lg();
-    padding: tokens.bpk-spacing-base();
-    background-color: tokens.$bpk-surface-default-day;
+  &__overlay--name {
+    padding-top: tokens.bpk-spacing-base();
+    color: tokens.$bpk-text-primary-day;
   }
 
-  &__on-image {
-    margin-top: tokens.bpk-spacing-lg();
-    padding: tokens.bpk-spacing-base();
-    background-color: tokens.$bpk-surface-highlight-day;
+  &__foreground {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 }

@@ -17,29 +17,35 @@
  */
 
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 
-import { canvasContrastDay, surfaceSubtleDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  canvasContrastDay,
+  surfaceSubtleDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkBottomSheet, {
   PADDING_TYPE,
-} from '../../packages/bpk-component-bottom-sheet/src/BpkBottomSheet';
-import InfoIcon from '../../packages/bpk-component-icon/sm/information-circle';
-import PriceTagIcon from '../../packages/bpk-component-icon/sm/price-tag';
-import BpkImage from '../../packages/bpk-component-image/src/BpkImage';
-import { BpkInsetBannerV3 } from '../../packages/bpk-component-inset-banner';
+} from '../../bpk-component-bottom-sheet/src/BpkBottomSheet';
+import InfoIcon from '../../bpk-component-icon/sm/information-circle';
+import PriceTagIcon from '../../bpk-component-icon/sm/price-tag';
+import BpkImage from '../../bpk-component-image/src/BpkImage';
 import {
   BpkBox,
   BpkFlex,
+  BpkProvider,
   BpkSpacing,
   BpkVessel,
-} from '../../packages/bpk-component-layout';
-import BpkPopover from '../../packages/bpk-component-popover/src/BpkPopover';
-import BpkText, {
-  TEXT_STYLES,
-} from '../../packages/bpk-component-text/src/BpkText';
-import { cssModules } from '../../packages/bpk-react-utils';
+} from '../../bpk-component-layout';
+import BpkPopover from '../../bpk-component-popover/src/BpkPopover';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkInsetBannerV3 from './BpkInsetBannerV3/BpkInsetBannerV3';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkInsetBannerV3.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -590,16 +596,62 @@ const CustomTypography = () => (
   </BpkInsetBannerV3.Root>
 );
 
-export {
-  HorizontalOnLight,
-  HorizontalOnDark,
-  HorizontalWithNoTrailingAccessory,
-  VerticalLayout,
-  ContentOnly,
-  WithPopover,
-  WithLeadingIconBadgeAndPopover,
-  WithLeadingIconBadgeSubtitleAndBottomSheet,
-  WithLeadingIconBadgeAndBottomSheet,
-  WithImage,
-  CustomTypography,
+const meta = {
+  title: 'bpk-component-inset-banner-v3',
+  component: BpkInsetBannerV3.Root,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+} satisfies Meta;
+
+export default meta;
+
+export const DefaultHorizontalOnLight = {
+  render: () => <HorizontalOnLight />,
+};
+
+export const DefaultHorizontalOnDark = {
+  render: () => <HorizontalOnDark />,
+};
+
+export const HorizontalNoTrailingAccessory = {
+  render: () => <HorizontalWithNoTrailingAccessory />,
+};
+
+export const DefaultVerticalLayout = {
+  render: () => <VerticalLayout />,
+};
+
+export const DefaultContentOnly = {
+  render: () => <ContentOnly />,
+};
+
+export const DefaultWithPopover = {
+  render: () => <WithPopover />,
+};
+
+export const DefaultWithImage = {
+  render: () => <WithImage />,
+};
+
+export const DefaultWithLeadingIconBadgeAndPopover = {
+  render: () => <WithLeadingIconBadgeAndPopover />,
+};
+
+export const DefaultWithLeadingIconBadgeSubtitleAndBottomSheet = {
+  render: () => <WithLeadingIconBadgeSubtitleAndBottomSheet />,
+};
+
+export const DefaultWithLeadingIconBadgeAndBottomSheet = {
+  render: () => <WithLeadingIconBadgeAndBottomSheet />,
+};
+
+export const DefaultCustomTypography = {
+  render: () => <CustomTypography />,
+};
+
+export const VisualTestLight = {
+  render: () => <HorizontalOnLight />,
+};
+
+export const VisualTestDark = {
+  render: () => <HorizontalOnDark />,
 };
