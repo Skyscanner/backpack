@@ -16,18 +16,18 @@
  * limitations under the License.
  */
 
-import AiIcon from '../../../bpk-component-icon/sm/ai';
-import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import AiIcon from '../../bpk-component-icon/sm/ai';
+import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import type { BpkAiBlurbHeaderProps } from '../common-types';
+import type { BpkAiBlurbHeaderProps } from './common-types';
 
-import STYLES from '../BpkAiBlurb.module.scss';
+import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Header = ({ title }: BpkAiBlurbHeaderProps) => (
+const BpkAiBlurbHeader = ({ title }: BpkAiBlurbHeaderProps) => (
   <div className={getClassName('bpk-ai-blurb__header')}>
     <BpkFlex align="center" gap={BpkSpacing.SM}>
       <AiIcon aria-hidden />
@@ -36,6 +36,4 @@ const Header = ({ title }: BpkAiBlurbHeaderProps) => (
   </div>
 );
 
-Header.displayName = 'BpkAiBlurb.Header';
-
-export default Header;
+export default BpkAiBlurbHeader;

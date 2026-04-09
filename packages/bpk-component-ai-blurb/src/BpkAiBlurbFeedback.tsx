@@ -18,20 +18,20 @@
 
 import { useState } from 'react';
 
-import BpkAriaLive from '../../../bpk-component-aria-live';
-import BpkSmallThumbsDownIcon from '../../../bpk-component-icon/sm/thumbs-down';
-import BpkSmallThumbsUpIcon from '../../../bpk-component-icon/sm/thumbs-up';
-import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkAriaLive from '../../bpk-component-aria-live';
+import BpkSmallThumbsDownIcon from '../../bpk-component-icon/sm/thumbs-down';
+import BpkSmallThumbsUpIcon from '../../bpk-component-icon/sm/thumbs-up';
+import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import type { BpkAiBlurbFeedbackProps } from '../common-types';
+import type { BpkAiBlurbFeedbackProps } from './common-types';
 
-import STYLES from '../BpkAiBlurb.module.scss';
+import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Feedback = ({
+const BpkAiBlurbFeedback = ({
   feedbackText,
   onFeedback,
   thankYouText,
@@ -79,6 +79,4 @@ const Feedback = ({
   );
 };
 
-Feedback.displayName = 'BpkAiBlurb.Feedback';
-
-export default Feedback;
+export default BpkAiBlurbFeedback;

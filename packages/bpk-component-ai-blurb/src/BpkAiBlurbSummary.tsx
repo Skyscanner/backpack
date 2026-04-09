@@ -18,19 +18,19 @@
 
 import type { ReactNode } from 'react';
 
-import BpkLink from '../../../bpk-component-link';
-import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkLink from '../../bpk-component-link';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import Ellipsis from './Ellipsis';
+import BpkAiBlurbEllipsis from './BpkAiBlurbEllipsis';
 
-import type { BpkAiBlurbSummaryProps } from '../common-types';
+import type { BpkAiBlurbSummaryProps } from './common-types';
 
-import STYLES from '../BpkAiBlurb.module.scss';
+import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Summary = ({ aiResponseText, errorLinkHref, errorLinkText, errorText, state, thinkingText }: BpkAiBlurbSummaryProps) => {
+const BpkAiBlurbSummary = ({ aiResponseText, errorLinkHref, errorLinkText, errorText, state, thinkingText }: BpkAiBlurbSummaryProps) => {
 
   let content: ReactNode;
 
@@ -40,7 +40,7 @@ const Summary = ({ aiResponseText, errorLinkHref, errorLinkText, errorText, stat
     content = (
       <BpkText tagName="p" textStyle={TEXT_STYLES.caption}>
         {thinkingText}
-        <Ellipsis />
+        <BpkAiBlurbEllipsis />
       </BpkText>
     );
   } else {
@@ -55,6 +55,4 @@ const Summary = ({ aiResponseText, errorLinkHref, errorLinkText, errorText, stat
   return <div className={getClassName('bpk-ai-blurb__summary')}>{content}</div>;
 };
 
-Summary.displayName = 'BpkAiBlurb.Summary';
-
-export default Summary;
+export default BpkAiBlurbSummary;

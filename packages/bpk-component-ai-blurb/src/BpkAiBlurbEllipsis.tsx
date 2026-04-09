@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from '../BpkAiBlurb.module.scss';
+import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -33,7 +33,7 @@ const getClassName = cssModules(STYLES);
  *
  * @returns {JSX.Element} Ellipsis component
  */
-const Ellipsis = () => (
+const BpkAiBlurbEllipsis = () => (
   <span
     className={getClassName('bpk-ai-blurb__ellipsis')}
     aria-hidden="true"
@@ -54,6 +54,4 @@ const Ellipsis = () => (
   </span>
 );
 
-Ellipsis.displayName = 'BpkAiBlurb.Ellipsis';
-
-export default Ellipsis;
+export default BpkAiBlurbEllipsis;

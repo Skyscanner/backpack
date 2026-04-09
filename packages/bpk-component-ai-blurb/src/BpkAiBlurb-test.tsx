@@ -28,16 +28,6 @@ import BpkAiBlurb from './BpkAiBlurb';
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
-describe('BpkAiBlurb displayNames', () => {
-  it('should have correct displayName for each subcomponent', () => {
-    expect(BpkAiBlurb.Root.displayName).toBe('BpkAiBlurb.Root');
-    expect(BpkAiBlurb.Header.displayName).toBe('BpkAiBlurb.Header');
-    expect(BpkAiBlurb.Summary.displayName).toBe('BpkAiBlurb.Summary');
-    expect(BpkAiBlurb.Ellipsis.displayName).toBe('BpkAiBlurb.Ellipsis');
-    expect(BpkAiBlurb.Feedback.displayName).toBe('BpkAiBlurb.Feedback');
-  });
-});
-
 describe('BpkAiBlurb.Root', () => {
   it('should render children', () => {
     render(<BpkAiBlurb.Root><span>content</span></BpkAiBlurb.Root>);

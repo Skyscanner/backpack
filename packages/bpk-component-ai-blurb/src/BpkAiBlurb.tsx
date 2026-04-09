@@ -16,11 +16,11 @@
  * limitations under the License.
  */
 
-import Ellipsis from './subcomponents/Ellipsis';
-import Feedback from './subcomponents/Feedback';
-import Header from './subcomponents/Header';
-import Root from './subcomponents/Root';
-import Summary from './subcomponents/Summary';
+import BpkAiBlurbEllipsis from './BpkAiBlurbEllipsis';
+import BpkAiBlurbFeedback from './BpkAiBlurbFeedback';
+import BpkAiBlurbHeader from './BpkAiBlurbHeader';
+import BpkAiBlurbRoot from './BpkAiBlurbRoot';
+import BpkAiBlurbSummary from './BpkAiBlurbSummary';
 
 import type { BpkAiBlurbNamespace } from './common-types';
 
@@ -51,11 +51,11 @@ import type { BpkAiBlurbNamespace } from './common-types';
  * </BpkAiBlurb.Root>
  */
 const BpkAiBlurb: BpkAiBlurbNamespace = {
-  Root,
-  Header,
-  Summary,
-  Ellipsis,
-  Feedback,
+  Root: BpkAiBlurbRoot,
+  Header: BpkAiBlurbHeader,
+  Summary: BpkAiBlurbSummary,
+  Ellipsis: BpkAiBlurbEllipsis,
+  Feedback: BpkAiBlurbFeedback,
 };
 
 export default BpkAiBlurb;

@@ -16,15 +16,15 @@
  * limitations under the License.
  */
 
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import type { BpkAiBlurbRootProps } from '../common-types';
+import type { BpkAiBlurbRootProps } from './common-types';
 
-import STYLES from '../BpkAiBlurb.module.scss';
+import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const Root = ({ children }: BpkAiBlurbRootProps) => (
+const BpkAiBlurbRoot = ({ children }: BpkAiBlurbRootProps) => (
   <div
     className={getClassName('bpk-ai-blurb')}
     {...getDataComponentAttribute('AiBlurb')}
@@ -33,6 +33,4 @@ const Root = ({ children }: BpkAiBlurbRootProps) => (
   </div>
 );
 
-Root.displayName = 'BpkAiBlurb.Root';
-
-export default Root;
+export default BpkAiBlurbRoot;
