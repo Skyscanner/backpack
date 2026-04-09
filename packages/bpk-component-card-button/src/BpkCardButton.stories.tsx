@@ -17,18 +17,16 @@
  */
 import { useState } from 'react';
 
-import {
-  BpkSaveButton,
-  STYLE_TYPES,
-  SIZE_TYPES,
-} from '../../packages/bpk-component-card-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+
+import BpkSaveButton, { STYLE_TYPES, SIZE_TYPES } from './BpkSaveButton';
 
 import type {
   SizeType,
   StyleType,
-} from '../../packages/bpk-component-card-button/src/BpkSaveButton';
+} from './BpkSaveButton';
+import type { Meta } from '@storybook/react';
 
 type Props = {
   checked?: boolean;
@@ -36,6 +34,7 @@ type Props = {
   style?: StyleType;
   asyncWithError?: boolean;
 };
+
 const SaveButtonContainer = ({
   asyncWithError = false,
   checked = false,
@@ -67,6 +66,7 @@ const SaveButtonContainer = ({
     />
   );
 };
+
 const DefaultExample = () => <SaveButtonContainer />;
 
 const ContainedExample = () => (
@@ -124,15 +124,56 @@ const VisualTestExample = () => (
   </>
 );
 
-export {
-  DefaultExample,
-  ContainedExample,
-  OnDarkExample,
-  CheckedExample,
-  SmallDefaultExample,
-  SmallContainedExample,
-  SmallOnDarkExample,
-  VisualTestExample,
-  SmallCheckedExample,
-  AsyncWithErrorCheckedExample,
+const meta = {
+  title: 'bpk-component-card-button',
+  component: BpkSaveButton,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Contained = {
+  render: () => <ContainedExample />,
+};
+
+export const OnDark = {
+  render: () => <OnDarkExample />,
+};
+
+export const Checked = {
+  render: () => <CheckedExample />,
+};
+
+export const AsyncWithErrorChecked = {
+  render: () => <AsyncWithErrorCheckedExample />,
+};
+
+export const SmallDefault = {
+  render: () => <SmallDefaultExample />,
+};
+
+export const SmallContained = {
+  render: () => <SmallContainedExample />,
+};
+
+export const SmallOnDark = {
+  render: () => <SmallOnDarkExample />,
+};
+
+export const SmallChecked = {
+  render: () => <SmallCheckedExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualTestExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

@@ -15,14 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+
 import BpkSnippet, {
   BODY_STYLE,
   DESKTOP_LAYOUT,
   IMAGE_ORIENTATION,
-} from '../../packages/bpk-component-snippet';
-import BpkText, {
-  TEXT_STYLES,
-} from '../../packages/bpk-component-text/src/BpkText';
+} from './BpkSnippet';
+
+import type { Meta } from '@storybook/react';
 
 const props = {
   src: 'https://content.skyscnr.com/m/f427e62297cce49/original/edinburgh-view-from-calton-hill.jpg',
@@ -80,9 +84,54 @@ const MobilePortraitExample = () => (
   <BpkSnippet {...props} imageOrientation={IMAGE_ORIENTATION.portrait} />
 );
 
-export {
-  DesktopExample,
-  MobileLandscapeExample,
-  MobileSquareExample,
-  MobilePortraitExample,
+const meta = {
+  title: 'bpk-component-snippet',
+  component: BpkSnippet,
+} satisfies Meta;
+
+export default meta;
+
+export const Desktop = {
+  render: () => <DesktopExample />,
+};
+
+export const MobileLandscape = {
+  render: () => <MobileLandscapeExample />,
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+  },
+};
+
+export const MobileSquare = {
+  render: () => <MobileSquareExample />,
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+  },
+};
+
+export const MobilePortrait = {
+  render: () => <MobilePortraitExample />,
+  parameters: {
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+      defaultViewport: 'iphone6',
+    },
+  },
+};
+
+export const VisualTest = {
+  render: () => <DesktopExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DesktopExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
-@use '../../packages/bpk-mixins/borders';
-@use '../../packages/bpk-mixins/radii';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/borders';
+@use '../../bpk-mixins/radii';
 
 .bpk-storybook-aria-live-demo {
   padding: tokens.bpk-spacing-base();

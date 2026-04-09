@@ -16,11 +16,22 @@
  * limitations under the License.
  */
 
-import BpkThemeToggle from '../../packages/bpk-component-theme-toggle/src/BpkThemeToggle';
+@use '../../bpk-mixins/tokens';
 
-export default {
-  title: 'bpk-component-theme-toggle',
-  component: BpkThemeToggle,
-};
+.bpk-content {
+  display: flex;
+  justify-content: center;
 
-export const Example = () => <BpkThemeToggle />;
+  &__container {
+    position: relative;
+    display: inline-block;
+
+    &__bubble-wrapper {
+      position: absolute;
+      top: -1rem;
+      right: tokens.$bpk-one-pixel-rem * -3; // align the arrow to the tab's right edge
+      display: block;
+      transform: translateX(50%); // shift bubble outward as it grows
+    }
+  }
+}
