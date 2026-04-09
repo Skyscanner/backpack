@@ -17,7 +17,7 @@
  */
 
 import StackOptionKeys from './BpkStack.constant';
-import { getSpacingValue } from './theme';
+import { getSpacingValue } from './spacingMap';
 import {
   BpkBreakpointToChakraKey,
   isValidSpacingValue,

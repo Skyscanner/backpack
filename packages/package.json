@@ -17,6 +17,7 @@
     "url": "https://github.com/Skyscanner/backpack/issues"
   },
   "homepage": "https://github.com/Skyscanner/backpack#readme",
+  "sideEffects": false,
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
