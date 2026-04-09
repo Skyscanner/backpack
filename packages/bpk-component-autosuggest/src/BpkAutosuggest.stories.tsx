@@ -21,11 +21,10 @@ import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
 import { userEvent, within } from 'storybook/test';
 
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { withRtlSupport } from '../../bpk-component-icon';
 import FlightIcon from '../../bpk-component-icon/lg/flight';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 // eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import BpkAutosuggest from './BpkAutosuggest';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
