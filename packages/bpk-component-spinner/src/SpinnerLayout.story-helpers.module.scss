@@ -16,18 +16,22 @@
  * limitations under the License.
  */
 
-import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden/src/BpkVisuallyHidden';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/radii';
 
-import {
-  BasicExample,
-  IconOnlyButtonsWithVisuallyHiddenText,
-} from './examples';
+.bpk-spinner-layout {
+  display: flex;
+  flex-direction: column;
 
-export default {
-  title: 'bpk-component-visually-hidden',
-  component: BpkVisuallyHidden,
-};
+  &__spinner {
+    display: flex;
+    padding: tokens.bpk-spacing-lg();
+    justify-content: center;
 
-export const IconOnlyButtons = () => <IconOnlyButtonsWithVisuallyHiddenText />;
+    &--light {
+      background-color: tokens.$bpk-surface-contrast-day;
 
-export const Basic = () => <BasicExample />;
+      @include radii.bpk-border-radius-xs;
+    }
+  }
+}

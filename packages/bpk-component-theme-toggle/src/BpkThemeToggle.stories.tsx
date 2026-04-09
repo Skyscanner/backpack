@@ -16,14 +16,17 @@
  * limitations under the License.
  */
 
-import BpkSkipLink from '../../packages/bpk-component-skip-link/src/BpkSkipLink';
+import BpkThemeToggle from './BpkThemeToggle';
 
-import { DefaultExample, RealisticExample } from './examples';
+import type { Meta } from '@storybook/react';
 
-export default {
-  title: 'bpk-component-skip-link',
-  component: BpkSkipLink,
+const meta = {
+  title: 'bpk-component-theme-toggle',
+  component: BpkThemeToggle,
+} satisfies Meta;
+
+export default meta;
+
+export const Example = {
+  render: () => <BpkThemeToggle />,
 };
-
-export const Default = DefaultExample;
-export const Realistic = RealisticExample;

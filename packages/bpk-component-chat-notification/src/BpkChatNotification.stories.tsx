@@ -16,21 +16,53 @@
  * limitations under the License.
  */
 
-import BpkChatNotification from '../../packages/bpk-component-chat-notification/src/BpkChatNotification';
+import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 
-import { DefaultExample, WithIconExample, VisualTestExample } from './examples';
+import BpkChatNotification from './BpkChatNotification';
 
-export default {
+import type { Meta } from '@storybook/react';
+
+const TEXT = 'Thanks for your feedback!';
+
+const DefaultExample = () => (
+  <BpkChatNotification text={TEXT} />
+);
+
+const WithIconExample = () => (
+  <BpkChatNotification
+    text={TEXT}
+    icon={TickCircleIcon}
+  />
+);
+
+const VisualTestExample = () => (
+  <BpkChatNotification
+    text={TEXT}
+    icon={TickCircleIcon}
+  />
+);
+
+const meta = {
   title: 'bpk-component-chat-notification',
   component: BpkChatNotification,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
 };
 
-export const Default = DefaultExample;
-export const WithIcon = WithIconExample;
+export const WithIcon = {
+  render: () => <WithIconExample />,
+};
 
-export const VisualTest = VisualTestExample;
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
 export const VisualTestWithZoom = {
-  render: VisualTestExample,
+  render: () => <VisualTestExample />,
   args: {
     zoomEnabled: true,
   },

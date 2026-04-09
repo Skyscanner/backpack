@@ -16,16 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkExtraLargeSpinner from './BpkExtraLargeSpinner';
+import BpkLargeSpinner from './BpkLargeSpinner';
+import BpkSpinner from './BpkSpinner';
+import SpinnerLayout from './SpinnerLayout.story-helpers';
+import SPINNER_TYPES from './spinnerTypes';
 
-import {
-  BpkSpinner,
-  BpkLargeSpinner,
-  BpkExtraLargeSpinner,
-  SPINNER_TYPES,
-} from '../../packages/bpk-component-spinner';
-
-import SpinnerLayout from './SpinnerLayout';
+import type { Meta } from '@storybook/react';
 
 const SmallExample = () => (
   <SpinnerLayout>
@@ -51,4 +48,25 @@ const ExtraLargeExample = () => (
   </SpinnerLayout>
 );
 
-export { SmallExample, LargeExample, ExtraLargeExample };
+const meta = {
+  title: 'bpk-component-spinner',
+  component: BpkSpinner,
+  subcomponents: {
+    BpkLargeSpinner,
+    BpkExtraLargeSpinner,
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const Small = {
+  render: () => <SmallExample />,
+};
+
+export const Large = {
+  render: () => <LargeExample />,
+};
+
+export const ExtraLarge = {
+  render: () => <ExtraLargeExample />,
+};

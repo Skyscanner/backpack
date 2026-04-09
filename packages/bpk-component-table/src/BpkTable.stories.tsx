@@ -16,16 +16,15 @@
  * limitations under the License.
  */
 
+import BpkTable from './BpkTable';
+import BpkTableBody from './BpkTableBody';
+import BpkTableCell from './BpkTableCell';
+import BpkTableHead from './BpkTableHead';
+import BpkTableHeadCell from './BpkTableHeadCell';
+import BpkTableRow from './BpkTableRow';
+import { TABLE_BODY_TYPES } from './common-types';
 
-import {
-  BpkTable,
-  BpkTableHead,
-  BpkTableBody,
-  BpkTableRow,
-  BpkTableCell,
-  BpkTableHeadCell,
-  TABLE_BODY_TYPES,
-} from '../../packages/bpk-component-table';
+import type { Meta } from '@storybook/react';
 
 const DefaultExample = () => (
   <BpkTable>
@@ -115,5 +114,28 @@ const StripedExample = () => (
   </BpkTable>
 );
 
-export default DefaultExample;
-export { WordBreakExample, StripedExample };
+const meta = {
+  title: 'bpk-component-table',
+  component: BpkTable,
+  subcomponents: {
+    BpkTableHead,
+    BpkTableBody,
+    BpkTableRow,
+    BpkTableHeadCell,
+    BpkTableCell,
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WordBreak = {
+  render: () => <WordBreakExample />,
+};
+
+export const Striped = {
+  render: () => <StripedExample />,
+};
