@@ -28,6 +28,7 @@ import {
   AlignToLargeButtonExample,
   AlignToLargeButtonRTLExample,
   MixedExample,
+  WithColorAndSizeExample,
 } from './examples';
 
 export default {
@@ -59,3 +60,5 @@ export const VisualTestWithZoom = VisualTest.bind({});
 VisualTestWithZoom.args = {
   zoomEnabled: true
 };
+
+export const WithColorAndSize = WithColorAndSizeExample;

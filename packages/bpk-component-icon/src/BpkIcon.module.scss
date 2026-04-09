@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/icons';
+@use '../../bpk-mixins/tokens';
 
 .bpk-icon {
   &--align-to-button {
@@ -29,5 +30,60 @@
 
   &--rtl-support {
     @include icons.bpk-icon--rtl-support;
+  }
+
+  // Color variants — applied to the <svg> element; fill is inherited by <path>
+  &--color-primary {
+    fill: tokens.$bpk-text-primary-day;
+  }
+
+  &--color-secondary {
+    fill: tokens.$bpk-text-secondary-day;
+  }
+
+  &--color-disabled {
+    fill: tokens.$bpk-text-disabled-day;
+  }
+
+  &--color-on-dark {
+    fill: tokens.$bpk-text-on-dark-day;
+  }
+
+  &--color-accent {
+    fill: tokens.$bpk-core-accent-day;
+  }
+
+  &--color-error {
+    fill: tokens.$bpk-text-error-day;
+  }
+
+  &--color-success {
+    fill: tokens.$bpk-text-success-day;
+  }
+
+  // Size variants — override the SVG presentation attributes width/height
+  &--size-sm {
+    width: tokens.$bpk-icon-size-sm;
+    height: tokens.$bpk-icon-size-sm;
+  }
+
+  &--size-lg {
+    width: tokens.$bpk-icon-size-lg;
+    height: tokens.$bpk-icon-size-lg;
+  }
+
+  &--size-xl {
+    width: tokens.$bpk-icon-size-xl;
+    height: tokens.$bpk-icon-size-xl;
+  }
+
+  &--size-xxl {
+    width: tokens.$bpk-icon-size-xxl;
+    height: tokens.$bpk-icon-size-xxl;
+  }
+
+  &--size-xxxl {
+    width: tokens.$bpk-icon-size-xxxl;
+    height: tokens.$bpk-icon-size-xxxl;
   }
 }

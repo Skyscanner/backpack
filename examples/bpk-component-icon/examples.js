@@ -24,10 +24,12 @@ import {
   lineHeightSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+
 import BpkButton, { SIZE_TYPES } from '../../packages/bpk-component-button';
 import {
   withAlignment,
   withButtonAlignment,
+  withColorAndSize,
   withLargeButtonAlignment,
   withRtlSupport,
 } from '../../packages/bpk-component-icon';
@@ -35,6 +37,7 @@ import { sm, lg, xxxl } from '../../packages/bpk-component-icon/all';
 import LargeLongArrowRightIcon from '../../packages/bpk-component-icon/lg/long-arrow-right';
 import SearchIcon from '../../packages/bpk-component-icon/lg/search';
 import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
+import StarIcon from '../../packages/bpk-component-icon/sm/star';
 import { BpkList, BpkListItem } from '../../packages/bpk-component-list';
 import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
@@ -155,6 +158,34 @@ const MixedExample = () => (
   </div>
 );
 
+const COLORS = ['primary', 'secondary', 'disabled', 'onDark', 'accent', 'error', 'success'];
+const SIZES = ['sm', 'lg', 'xl', 'xxl', 'xxxl'];
+
+const ColoredStarIcon = withColorAndSize(StarIcon);
+
+const WithColorAndSizeExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">Colors</BpkText>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'center', marginBottom: '24px' }}>
+      {COLORS.map((color) => (
+        <div key={color} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: color === 'onDark' ? '#000' : 'transparent', padding: '8px', borderRadius: '4px' }}>
+          <ColoredStarIcon color={color} size="lg" />
+          <BpkText textStyle={TEXT_STYLES.caption} style={{ color: color === 'onDark' ? '#fff' : 'inherit' }}>{color}</BpkText>
+        </div>
+      ))}
+    </div>
+    <BpkText textStyle={TEXT_STYLES.heading5} tagName="h3">Sizes</BpkText>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'flex-end' }}>
+      {SIZES.map((size) => (
+        <div key={size} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+          <ColoredStarIcon color="primary" size={size} />
+          <BpkText textStyle={TEXT_STYLES.caption}>{size}</BpkText>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 export {
   SmallIconsExample,
   LargeIconsExample,
@@ -167,4 +198,5 @@ export {
   AlignToLargeButtonExample,
   AlignToLargeButtonRTLExample,
   MixedExample,
+  WithColorAndSizeExample,
 };

@@ -25,6 +25,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import withAlignment from './src/withAlignment';
+import withColorAndSize from './src/withColorAndSize';
 import withDescription from './src/withDescription';
 import withRtlSupport from './src/withRtlSupport';
 
@@ -37,10 +38,13 @@ function withLargeButtonAlignment(WrappedComponent: ComponentType<any>) {
   return withAlignment(WrappedComponent, privateButtonLineHeight, iconSizeLg);
 }
 
+export type { BpkIconColor, BpkIconSize } from './src/withColorAndSize';
+
 export {
   withButtonAlignment,
   withLargeButtonAlignment,
   withAlignment,
+  withColorAndSize,
   withRtlSupport,
   withDescription,
 };
