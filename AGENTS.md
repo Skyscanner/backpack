@@ -341,13 +341,11 @@ Check the `decisions/` directory for architectural decisions and guidelines:
 ```
 packages/bpk-component-example/
 ├── src/
-│   ├── BpkExample.tsx           # Main component
-│   ├── BpkExample.module.scss   # Styles
-│   └── BpkExample.test.tsx      # Tests
-├── README.md                    # Component documentation
-examples/bpk-component-example/
-│   ├── examples.tsx             # Storybook examples
-│   └── stories.tsx              # Storybook stories
+│   ├── BpkExample.tsx              # Main component
+│   ├── BpkExample.module.scss      # Styles
+│   ├── BpkExample.test.tsx         # Tests
+│   └── BpkExample.stories.tsx      # Storybook stories (colocated)
+├── README.md                       # Component documentation
 ```
 
 ### Import Patterns
