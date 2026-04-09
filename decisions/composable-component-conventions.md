@@ -6,7 +6,7 @@ Exported sub-component API uses short names (`BpkBlurb.Header`); internal files 
 
 ## Decision
 
-### Subcomponent naming
+### Sub-component naming
 
 **Exported API (public):** use the short form.
 
@@ -48,27 +48,29 @@ Start with a single file and split only when the file becomes large, sub-compone
 
 ### Folder structure
 
-Prefer a flat structure inside the component package. When using a single shared SCSS file:
+A flat structure is recommended by default inside the component package. When using a single shared SCSS file:
 
 ```
-bpk-component-blurb/src/
+bpk-component-blurb/
   index.ts
-  BpkBlurb.tsx
-  BpkBlurbHeader.tsx
-  BpkBlurbFooter.tsx
-  BpkBlurb.module.scss
+  src/
+    BpkBlurb.tsx
+    BpkBlurbHeader.tsx
+    BpkBlurbFooter.tsx
+    BpkBlurb.module.scss
 ```
 
 When SCSS is split per sub-component:
 
 ```
-bpk-component-blurb/src/
+bpk-component-blurb/
   index.ts
-  BpkBlurb.tsx
-  BpkBlurbHeader.tsx
-  BpkBlurbHeader.module.scss
-  BpkBlurbFooter.tsx
-  BpkBlurbFooter.module.scss
+  src/
+    BpkBlurb.tsx
+    BpkBlurbHeader.tsx
+    BpkBlurbHeader.module.scss
+    BpkBlurbFooter.tsx
+    BpkBlurbFooter.module.scss
 ```
 
 Avoid deep nesting unless the component's complexity requires it.
