@@ -21,14 +21,13 @@ import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
 
 import { userEvent, within } from 'storybook/test';
 
-import { withRtlSupport } from '../../bpk-component-icon';
-import FlightIcon from '../../bpk-component-icon/lg/flight';
 
+import { withRtlSupport } from '../../../bpk-component-icon';
+import FlightIcon from '../../../bpk-component-icon/lg/flight';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+import BpkAutosuggestSuggestion from '../BpkAutosuggestSuggestion';
+
 import BpkAutosuggest from './BpkAutosuggest';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkAutosuggestSuggestion from './BpkAutosuggestSuggestion';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
