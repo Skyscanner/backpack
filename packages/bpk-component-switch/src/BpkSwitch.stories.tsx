@@ -16,11 +16,15 @@
  * limitations under the License.
  */
 
-import BpkSwitch from '../../packages/bpk-component-switch';
+import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+
+import BpkSwitch from './BpkSwitch';
+
+import type { Meta } from '@storybook/react';
 
 type Props = {
-  checked?: boolean,
-  [rest: string]: any
+  checked?: boolean;
+  [rest: string]: any;
 };
 
 const DefaultExample = ({ ...rest }: Props) => (
@@ -31,9 +35,8 @@ const SmallExample = ({ ...rest }: Props) => (
   <BpkSwitch small {...rest} ariaLabel="Activate Backpack" />
 );
 
-// Putting the switch in a container which we know is too small to contain the label and the switch
-const ReducedSpaceExample =  ({ ...rest }: Props) => (
-  <div style={{ width: "4rem" }}>
+const ReducedSpaceExample = ({ ...rest }: Props) => (
+  <div style={{ width: '4rem' }}>
     <BpkSwitch {...rest} ariaLabel="Activate Backpack" />
     <BpkSwitch {...rest} ariaLabel="Activate Backpack" small />
   </div>
@@ -50,5 +53,47 @@ const MixedExample = () => (
   </div>
 );
 
+const meta = {
+  title: 'bpk-component-switch',
+  component: BpkSwitch,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgTypes exclude={['zoomEnabled']} />
+          <Markdown>
+            {
+              `This component uses a hidden [\`input type=checkbox\`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox), so it supports all the same properties as it (for example \`checked\`).`
+            }
+          </Markdown>
+        </>
+      ),
+    },
+  },
+} satisfies Meta;
 
-export { DefaultExample, SmallExample, MixedExample, ReducedSpaceExample };
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Small = {
+  render: () => <SmallExample />,
+};
+
+export const ReducedSpace = {
+  render: () => <ReducedSpaceExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

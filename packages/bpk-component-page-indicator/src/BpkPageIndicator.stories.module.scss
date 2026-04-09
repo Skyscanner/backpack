@@ -15,9 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@use '../../bpk-mixins/tokens';
 
-@use '../../packages/bpk-mixins/tokens';
-
-.bpk-loading-button-example-wrapper {
-  padding: tokens.bpk-spacing-sm() 0;
+.bpk-page-indicator-examples {
+  &__container {
+    display: flex;
+    width: 100%;
+    height: 80 * tokens.$bpk-one-pixel-rem;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }

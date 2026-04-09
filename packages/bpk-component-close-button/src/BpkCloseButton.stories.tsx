@@ -16,13 +16,35 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { action } from '../../../examples/bpk-storybook-utils';
 
-import BpkCloseButton from '../../packages/bpk-component-close-button';
-import { action } from '../bpk-storybook-utils';
+import BpkCloseButton from './BpkCloseButton';
+
+import type { Meta } from '@storybook/react';
 
 const DefaultExample = () => (
   <BpkCloseButton label="Close" onClick={action('Close button clicked')} />
 );
 
-export default DefaultExample;
+const meta = {
+  title: 'bpk-component-close-button',
+  component: BpkCloseButton,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DefaultExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

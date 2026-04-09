@@ -23,15 +23,16 @@ import {
   BpkHStack,
   BpkProvider,
   BpkSpacing,
-} from '../../packages/bpk-component-layout';
-import BpkThumbButton from '../../packages/bpk-component-thumb-button/src/BpkThumbButton';
+} from '../../bpk-component-layout';
+
+import BpkThumbButton from './BpkThumbButton';
+
+import type { Meta } from '@storybook/react';
 
 const noop = () => {};
 
-export const InteractiveExample = () => {
-  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(
-    null,
-  );
+const InteractiveExample = () => {
+  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);
 
   return (
     <BpkProvider>
@@ -53,7 +54,32 @@ export const InteractiveExample = () => {
   );
 };
 
-export const MixedExample = () => (
+const SmallExample = () => {
+  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);
+
+  return (
+    <BpkProvider>
+      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
+        <BpkThumbButton
+          accessibilityLabel="Rate as helpful"
+          type="up"
+          size="small"
+          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
+          selected={selectedThumb === 'up'}
+        />
+        <BpkThumbButton
+          accessibilityLabel="Rate as not helpful"
+          type="down"
+          size="small"
+          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
+          selected={selectedThumb === 'down'}
+        />
+      </BpkHStack>
+    </BpkProvider>
+  );
+};
+
+const MixedExample = () => (
   <BpkProvider>
     <BpkBox>
       <BpkHStack gap={BpkSpacing.Base}>
@@ -80,27 +106,28 @@ export const MixedExample = () => (
   </BpkProvider>
 );
 
-export const SmallExample = () => {
-  const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);
+const meta = {
+  title: 'bpk-component-thumb-button',
+  component: BpkThumbButton,
+} satisfies Meta;
 
-  return (
-    <BpkProvider>
-      <BpkHStack gap={BpkSpacing.Base} alignItems="center">
-        <BpkThumbButton
-          accessibilityLabel="Rate as helpful"
-          type="up"
-          size="small"
-          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
-          selected={selectedThumb === 'up'}
-        />
-        <BpkThumbButton
-          accessibilityLabel="Rate as not helpful"
-          type="down"
-          size="small"
-          onClick={(type) => setSelectedThumb(type === selectedThumb ? null : type)}
-          selected={selectedThumb === 'down'}
-        />
-      </BpkHStack>
-    </BpkProvider>
-  );
+export default meta;
+
+export const Default = {
+  render: () => <InteractiveExample />,
+};
+
+export const Small = {
+  render: () => <SmallExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

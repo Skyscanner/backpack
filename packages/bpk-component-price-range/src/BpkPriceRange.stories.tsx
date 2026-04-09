@@ -20,8 +20,11 @@ import type { ReactNode } from 'react';
 
 import BpkPriceRange, {
   type BpkPriceRangeProps,
-  MARKER_DISPLAY_TYPES,
-} from '../../packages/bpk-component-price-range';
+} from './BpkPriceRange';
+import { MARKER_DISPLAY_TYPES } from './common-types';
+
+import type { Meta } from '@storybook/react';
+
 
 const segments: BpkPriceRangeProps['segments'] = {
   low: {
@@ -169,15 +172,52 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DotMarkerLowExample,
-  DotMarkerMediumExample,
-  DotMarkerHighExample,
-  BubbleMarkerDefaultTypeExample,
-  BubbleMarkerLowExample,
-  BubbleMarkerMediumExample,
-  BubbleMarkerHighExample,
-  BubbleMarkerVeryLargeExample,
-  NoMarkerExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-price-range',
+  component: BpkPriceRange,
+} satisfies Meta;
+
+export default meta;
+
+export const DotMarkerLow = {
+  render: () => <DotMarkerLowExample />,
+};
+
+export const DotMarkerMedium = {
+  render: () => <DotMarkerMediumExample />,
+};
+
+export const DotMarkerHigh = {
+  render: () => <DotMarkerHighExample />,
+};
+
+export const BubbleMarkerLow = {
+  render: () => <BubbleMarkerLowExample />,
+};
+
+export const BubbleMarkerMedium = {
+  render: () => <BubbleMarkerMediumExample />,
+};
+
+export const BubbleMarkerHigh = {
+  render: () => <BubbleMarkerHighExample />,
+};
+
+export const BubbleMarkerVeryLarge = {
+  render: () => <BubbleMarkerVeryLargeExample />,
+};
+
+export const NoMarker = {
+  render: () => <NoMarkerExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
