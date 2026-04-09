@@ -20,7 +20,6 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react/locale';
-import { defaultBaseConfig } from '@chakra-ui/react/preset-base';
 import { ChakraProvider, createSystem } from '@chakra-ui/react/styled-system';
 
 import { createBpkConfig } from './theme';
@@ -30,13 +29,17 @@ export interface BpkProviderProps {
 }
 
 /**
- * Creates a Chakra UI system with Backpack token mappings.
+ * Creates a Chakra UI system with only the Backpack config.
  *
- * Uses `defaultBaseConfig` (conditions + utilities only) instead of
- * `defaultConfig` to avoid bundling ~141KB of unused component recipes.
- * See: https://chakra-ui.com/guides/component-bundle-optimization
+ * We intentionally omit `defaultBaseConfig` (~36KB of conditions & utility
+ * shorthands) and `defaultConfig` (~141KB of component recipes). Backpack
+ * layout components pre-resolve all tokens to raw CSS values before passing
+ * them to Chakra, so the utility transform layer is unused. Standard CSS
+ * properties still pass through via Chakra's `isCssProperty` check, and
+ * responsive objects work because breakpoint conditions are derived from
+ * `theme.breakpoints` in our config.
  */
-const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
+const bpkSystem = createSystem(createBpkConfig());
 
 type Direction = 'ltr' | 'rtl';
 
