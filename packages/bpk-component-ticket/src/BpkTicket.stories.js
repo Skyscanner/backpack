@@ -16,20 +16,19 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import PropTypes from 'prop-types';
 
-import BpkButton from '../../packages/bpk-component-button';
+import BpkButton from '../../bpk-component-button';
 import {
   withButtonAlignment,
   withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import ArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import BpkTicket from '../../packages/bpk-component-ticket';
-import { cssModules } from '../../packages/bpk-react-utils';
+} from '../../bpk-component-icon';
+import ArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkTicket from './BpkTicket';
+
+import STYLES from './BpkTicket.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -180,13 +179,48 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  VerticalExample,
-  WithoutPaddingExample,
-  WithoutPaddingVerticalExample,
-  WithoutPaddingImageExample,
-  WithHrefExample,
-  DayViewExample,
-  MixedExample,
+const meta = {
+  title: 'bpk-component-ticket',
+  component: BpkTicket,
+};
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Vertical = {
+  render: () => <VerticalExample />,
+};
+
+export const WithoutPadding = {
+  render: () => <WithoutPaddingExample />,
+};
+
+export const WithoutPaddingAndInVertical = {
+  render: () => <WithoutPaddingVerticalExample />,
+};
+
+export const WithoutPaddingAndWithAnImage = {
+  render: () => <WithoutPaddingImageExample />,
+};
+
+export const WithAHrefProp = {
+  render: () => <WithHrefExample />,
+};
+
+export const DayView = {
+  render: () => <DayViewExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2022 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,27 @@
  * limitations under the License.
  */
 
-import BpkCarousel from '../../packages/bpk-component-carousel'
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/scroll-indicators';
 
-import { DefaultExample, WithNavDesktopExample, MixedExample} from './example'
+$custom-color: tokens.$bpk-status-success-fill-day;
 
-export default {
-  title: 'bpk-component-carousel',
-  component: BpkCarousel,
-};
+.bpk-horizontal-nav-custom-scrollers {
+  background: $custom-color;
 
+  &--leading {
+    @include scroll-indicators.bpk-scroll-indicator-left($custom-color);
+  }
 
-export const Default = DefaultExample;
-export const WithNavDesktop = WithNavDesktopExample;
+  &--trailing {
+    @include scroll-indicators.bpk-scroll-indicator-right($custom-color);
+  }
+}
 
-export const VisualTest = MixedExample;
-export const VisualTestWithZoom = VisualTest.bind({});
-VisualTestWithZoom.args = {
-  zoomEnabled: true
-};
+.bpk-horizontal-nav-stories {
+  &__narrow-container {
+    width: 10rem;
+    height: 10rem;
+    border-right: 0.1rem lightgray solid;
+  }
+}
