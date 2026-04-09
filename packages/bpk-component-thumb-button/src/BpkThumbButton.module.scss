@@ -76,5 +76,13 @@
     &::before {
       content: none;
     }
+
+    &.bpk-thumb-button--selected {
+      color: tokens.$bpk-core-accent-day;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-core-accent-day;
+      }
+    }
   }
 }
