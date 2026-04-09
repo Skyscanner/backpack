@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`withColorAndSize should merge with an existing className 1`] = `
+<DocumentFragment>
+  <svg
+    class="custom-class bpk-icon--color-error"
+  />
+</DocumentFragment>
+`;
+
+exports[`withColorAndSize should render correctly with both color and size 1`] = `
+<DocumentFragment>
+  <svg
+    class="bpk-icon--color-success bpk-icon--size-xl"
+  />
+</DocumentFragment>
+`;
+
+exports[`withColorAndSize should render correctly with color="primary" 1`] = `
+<DocumentFragment>
+  <svg
+    class="bpk-icon--color-primary"
+  />
+</DocumentFragment>
+`;
+
+exports[`withColorAndSize should render correctly with no props 1`] = `
+<DocumentFragment>
+  <svg />
+</DocumentFragment>
+`;
+
+exports[`withColorAndSize should render correctly with size="lg" 1`] = `
+<DocumentFragment>
+  <svg
+    class="bpk-icon--size-lg"
+  />
+</DocumentFragment>
+`;
