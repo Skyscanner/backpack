@@ -37,6 +37,10 @@ module.exports = ({ config }) => {
   config.cache = {
     ...existingCache,
     type: 'filesystem',
+    buildDependencies: {
+      ...existingCache.buildDependencies,
+      storybookConfig: [path.resolve(__dirname, 'main.ts')],
+    },
   };
 
   config.plugins.push(new MiniCssExtractPlugin());
