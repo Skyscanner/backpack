@@ -16,32 +16,36 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
-.bpk-chip-group-examples {
-  &__fixed-width {
-    width: 300 * tokens.$bpk-one-pixel-rem;
-  }
+.bpk-chip-examples {
+  &__container {
+    padding-top: tokens.bpk-spacing-lg();
 
-  &__contrast {
-    padding: tokens.bpk-spacing-base();
-    background-color: tokens.$bpk-canvas-contrast-day;
-  }
-
-  &__dark {
-    padding: tokens.bpk-spacing-base();
-    background-color: tokens.$bpk-surface-contrast-day;
-  }
-
-  &__image {
-    padding: tokens.bpk-spacing-base();
-    background-image: url('https://content.skyscnr.com/96508dbac15a2895b0147dc7e7f9ad30/canadian-rockies-canada.jpg');
-  }
-
-  &__mixed-container {
-    h2 {
-      margin-top: tokens.bpk-spacing-xl();
-      margin-bottom: tokens.bpk-spacing-md();
+    &:last-child {
+      padding-bottom: tokens.bpk-spacing-xl();
     }
+  }
+
+  &__chip {
+    margin-right: tokens.bpk-spacing-md();
+  }
+
+  &__on-dark {
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-core-primary-day;
+  }
+
+  &__default {
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-default-day;
+  }
+
+  &__on-image {
+    margin-top: tokens.bpk-spacing-lg();
+    padding: tokens.bpk-spacing-base();
+    background-color: tokens.$bpk-surface-highlight-day;
   }
 }

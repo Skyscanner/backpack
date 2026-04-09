@@ -23,16 +23,16 @@ import {
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkSegmentedControl, {
-  useSegmentedControlPanels,
-} from '../../packages/bpk-component-segmented-control';
-import { SEGMENT_TYPES } from '../../packages/bpk-component-segmented-control/src/BpkSegmentedControl';
-import BpkText from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import BpkText from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkSegmentedControl, { SEGMENT_TYPES, useSegmentedControlPanels } from './BpkSegmentedControl';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkSegmentedControl.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -355,22 +355,84 @@ const WithConditionalPanelsExample = () => {
   );
 };
 
-export {
-  SimpleDefault,
-  SimpleCanvasContrast,
-  SimpleSurfaceDefault,
-  SimpleSurfaceContrast,
-  CustomSurfaceContrast,
-  CustomSurfaceDefault,
-  CustomCanvasContrast,
-  CustomCanvasDefault,
-  CustomSurfaceDefaultNoShadow,
-  ComplexSurfaceContrast,
-  ComplexSurfaceDefault,
-  ComplexCanvasContrast,
-  ComplexCanvasDefault,
-  ComplexSurfaceDefaultNoShadow,
-  VisualExample,
-  WithHookControlledPanelsExample,
-  WithConditionalPanelsExample,
+const meta = {
+  title: 'bpk-component-segmented-control',
+  component: BpkSegmentedControl,
+} satisfies Meta;
+
+export default meta;
+
+export const SimpleTwoSegmentsCanvasDefault = {
+  render: () => <SimpleDefault />,
+};
+
+export const SimpleThreeSegmentsCanvasContrast = {
+  render: () => <SimpleCanvasContrast />,
+};
+
+export const SimpleFourSegmentsSurfaceDefault = {
+  render: () => <SimpleSurfaceDefault />,
+};
+
+export const SimpleFourSegmentsSurfaceContrast = {
+  render: () => <SimpleSurfaceContrast />,
+};
+
+export const CustomThreeSegmentsSurfaceContrast = {
+  render: () => <CustomSurfaceContrast />,
+};
+
+export const CustomThreeSegmentsSurfaceDefault = {
+  render: () => <CustomSurfaceDefault />,
+};
+
+export const CustomThreeSegmentsCanvasContrast = {
+  render: () => <CustomCanvasContrast />,
+};
+
+export const CustomThreeSegmentsCanvasDefault = {
+  render: () => <CustomCanvasDefault />,
+};
+
+export const CustomThreeSegmentsSurfaceDefaultNoShadow = {
+  render: () => <CustomSurfaceDefaultNoShadow />,
+};
+
+export const ComplexThreeSegmentsSurfaceContrast = {
+  render: () => <ComplexSurfaceContrast />,
+};
+
+export const ComplexThreeSegmentsSurfaceDefault = {
+  render: () => <ComplexSurfaceDefault />,
+};
+
+export const ComplexThreeSegmentsCanvasContrast = {
+  render: () => <ComplexCanvasContrast />,
+};
+
+export const ComplexThreeSegmentsCanvasDefault = {
+  render: () => <ComplexCanvasDefault />,
+};
+
+export const ComplexThreeSegmentsSurfaceDefaultNoShadow = {
+  render: () => <ComplexSurfaceDefaultNoShadow />,
+};
+
+export const WithHookControlledPanels = {
+  render: () => <WithHookControlledPanelsExample />,
+};
+
+export const WithConditionalPanels = {
+  render: () => <WithConditionalPanelsExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };

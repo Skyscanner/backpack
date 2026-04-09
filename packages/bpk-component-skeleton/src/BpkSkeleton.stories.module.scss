@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
 @mixin flex-column {
   display: flex;

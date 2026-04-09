@@ -16,15 +16,16 @@
  * limitations under the License.
  */
 
-import BpkButton from '../../packages/bpk-component-button';
-import { withButtonAlignment } from '../../packages/bpk-component-icon/index';
-import SmallLongArrowRightIcon from '../../packages/bpk-component-icon/sm/long-arrow-right';
-import BpkSectionHeader, {
-  SECTION_TYPES,
-} from '../../packages/bpk-component-section-header';
-import { cssModules } from '../../packages/bpk-react-utils';
+import BpkButton from '../../bpk-component-button';
+import { withButtonAlignment } from '../../bpk-component-icon/index';
+import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkSectionHeader.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -88,12 +89,44 @@ const MixedExample = () => (
   </div>
 );
 
-export {
-  DefaultExample,
-  WithDescriptionExample,
-  WithButtonExample,
-  FullExample,
-  MobileExample,
-  MixedExample,
-  WithOnDarkExample,
+const meta = {
+  title: 'bpk-component-section-header',
+  component: BpkSectionHeader,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const WithDescription = {
+  render: () => <WithDescriptionExample />,
+};
+
+export const WithButton = {
+  render: () => <WithButtonExample />,
+};
+
+export const FullProps = {
+  render: () => <FullExample />,
+};
+
+export const ForMobile = {
+  render: () => <MobileExample />,
+};
+
+export const WithOnDark = {
+  render: () => <WithOnDarkExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
