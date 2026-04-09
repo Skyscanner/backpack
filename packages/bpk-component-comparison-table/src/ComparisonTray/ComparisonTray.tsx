@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import Item from './subcomponents/Item';
-import ItemPlaceholder from './subcomponents/ItemPlaceholder';
-import Root from './subcomponents/Root';
+import ComparisonTrayItem from './ComparisonTrayItem';
+import ComparisonTrayItemPlaceholder from './ComparisonTrayItemPlaceholder';
+import ComparisonTrayRoot from './ComparisonTrayRoot';
 
 import type { ComparisonTrayNamespace } from './common-types';
 
@@ -38,9 +38,9 @@ import type { ComparisonTrayNamespace } from './common-types';
  * testing and extension purposes only.
  */
 const ComparisonTray: ComparisonTrayNamespace = {
-  Root,
-  Item,
-  ItemPlaceholder,
+  Root: ComparisonTrayRoot,
+  Item: ComparisonTrayItem,
+  ItemPlaceholder: ComparisonTrayItemPlaceholder,
 };
 
 export default ComparisonTray;

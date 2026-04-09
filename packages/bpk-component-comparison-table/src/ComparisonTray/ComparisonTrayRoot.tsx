@@ -16,23 +16,23 @@
  * limitations under the License.
  */
 
-import BpkButton, { BUTTON_TYPES } from '../../../../bpk-component-button';
-import { BpkCardV2, CARD_V2_SURFACE_COLORS } from '../../../../bpk-component-card';
-import { BpkSpacing } from '../../../../bpk-component-layout';
-import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
+import { BpkCardV2, CARD_V2_SURFACE_COLORS } from '../../../bpk-component-card';
+import { BpkSpacing } from '../../../bpk-component-layout';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
-import Item from './Item';
-import ItemPlaceholder from './ItemPlaceholder';
+import ComparisonTrayItem from './ComparisonTrayItem';
+import ComparisonTrayItemPlaceholder from './ComparisonTrayItemPlaceholder';
 
-import type { ComparisonTrayRootProps } from '../common-types';
+import type { ComparisonTrayRootProps } from './common-types';
 
-import STYLES from '../ComparisonTray.module.scss';
+import STYLES from './ComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const MAX_ITEMS = 3;
 
-function Root({
+function ComparisonTrayRoot({
   ariaLabel,
   compareLabel,
   items,
@@ -61,10 +61,10 @@ function Root({
           >
             {displayItems.map((item, index) =>
               item ? (
-                <Item key={item.id} item={item} onRemove={onRemove} removeLabel={`${removeLabel} ${item.label}`} />
+                <ComparisonTrayItem key={item.id} item={item} onRemove={onRemove} removeLabel={`${removeLabel} ${item.label}`} />
               ) : (
                 // eslint-disable-next-line react/no-array-index-key
-                <ItemPlaceholder key={`placeholder-${index}`} />
+                <ComparisonTrayItemPlaceholder key={`placeholder-${index}`} />
               ),
             )}
           </BpkCardV2.Section>
@@ -82,6 +82,4 @@ function Root({
   );
 }
 
-Root.displayName = 'ComparisonTray.Root';
-
-export default Root;
+export default ComparisonTrayRoot;

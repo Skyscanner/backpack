@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import { cssModules } from '../../../../bpk-react-utils';
+import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from '../ComparisonTray.module.scss';
+import STYLES from './ComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function ItemPlaceholder() {
+function ComparisonTrayItemPlaceholder() {
   return (
     <div
       className={getClassName('bpk-comparison-tray__item-placeholder')}
@@ -31,6 +31,4 @@ function ItemPlaceholder() {
   );
 }
 
-ItemPlaceholder.displayName = 'ComparisonTray.ItemPlaceholder';
-
-export default ItemPlaceholder;
+export default ComparisonTrayItemPlaceholder;

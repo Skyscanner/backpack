@@ -16,17 +16,17 @@
  * limitations under the License.
  */
 
-import CloseIcon from '../../../../bpk-component-icon/sm/close';
-import BpkImage from '../../../../bpk-component-image';
-import { cssModules } from '../../../../bpk-react-utils';
+import CloseIcon from '../../../bpk-component-icon/sm/close';
+import BpkImage from '../../../bpk-component-image';
+import { cssModules } from '../../../bpk-react-utils';
 
-import type { ComparisonTrayItemProps } from '../common-types';
+import type { ComparisonTrayItemProps } from './common-types';
 
-import STYLES from '../ComparisonTray.module.scss';
+import STYLES from './ComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function Item({ item, onRemove, removeLabel }: ComparisonTrayItemProps) {
+function ComparisonTrayItem({ item, onRemove, removeLabel }: ComparisonTrayItemProps) {
   return (
     <div className={getClassName('bpk-comparison-tray__item')}>
       <div className={getClassName('bpk-comparison-tray__item-image-container')}>
@@ -48,6 +48,4 @@ function Item({ item, onRemove, removeLabel }: ComparisonTrayItemProps) {
   );
 }
 
-Item.displayName = 'ComparisonTray.Item';
-
-export default Item;
+export default ComparisonTrayItem;

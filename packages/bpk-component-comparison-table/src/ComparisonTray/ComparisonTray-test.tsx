@@ -217,17 +217,3 @@ describe('ComparisonTray image alt text', () => {
     expect(screen.getByAltText('Avis logo')).toBeInTheDocument();
   });
 });
-
-describe('ComparisonTray displayName', () => {
-  it('Root has correct displayName', () => {
-    expect(ComparisonTray.Root.displayName).toBe('ComparisonTray.Root');
-  });
-
-  it('Item has correct displayName', () => {
-    expect(ComparisonTray.Item.displayName).toBe('ComparisonTray.Item');
-  });
-
-  it('ItemPlaceholder has correct displayName', () => {
-    expect(ComparisonTray.ItemPlaceholder.displayName).toBe('ComparisonTray.ItemPlaceholder');
-  });
-});
