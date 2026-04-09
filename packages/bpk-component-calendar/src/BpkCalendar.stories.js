@@ -25,7 +25,7 @@ import {
   BpkCalendarNav,
   BpkCalendarDate,
 } from '..';
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkText from '../../bpk-component-text';
 
 import CalendarContainer, { MonthViewCalendar } from './BpkCalendar.stories-components';

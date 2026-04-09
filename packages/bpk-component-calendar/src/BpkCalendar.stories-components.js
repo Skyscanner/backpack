@@ -39,7 +39,7 @@ import BpkCalendar, {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
 } from '..';
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkButton from '../../bpk-component-button';
 import {
   withButtonAlignment,

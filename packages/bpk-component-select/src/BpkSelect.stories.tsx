@@ -20,7 +20,7 @@ import { Component } from 'react';
 
 
 // @ts-expect-error Untyped import
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 
 // @ts-expect-error Untyped import
 import BpkSelect from './BpkSelect';

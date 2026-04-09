@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkButton from '../../bpk-component-button';
 import { BpkList, BpkListItem } from '../../bpk-component-list';
 import {

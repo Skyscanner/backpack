@@ -19,7 +19,7 @@
 import {
   action,
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-} from '../../../examples/bpk-storybook-utils';
+} from '../../../.storybook/bpk-storybook-utils';
 import BpkButton, {
   BUTTON_TYPES,
 } from '../../bpk-component-button';

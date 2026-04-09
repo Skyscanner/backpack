@@ -19,7 +19,7 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
+import BpkButton from '../../../bpk-component-button';
 import {
   BpkBox,
   BpkBreakpoint,
@@ -27,10 +27,14 @@ import {
   BpkProvider,
   BpkSpacing,
   BpkVStack,
-} from '../../packages/bpk-component-layout';
-import { BpkModalV3, MODAL_V3_TYPES } from '../../packages/bpk-component-modal';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import BpkVisuallyHidden from '../../packages/bpk-component-visually-hidden';
+} from '../../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
+
+import BpkModalV3 from './BpkModalV3';
+import { MODAL_V3_TYPES } from './common-types';
+
+import type { Meta } from '@storybook/react';
 
 const IMAGE_SRC =
   'https://content.skyscnr.com/m/7470cf6a4ee49c26/original/Carousel-placeholder-4.jpg';
@@ -687,20 +691,118 @@ const LogoExample = () => (
   </ModalContainer>
 );
 
-export {
-  DefaultExample,
-  SheetExample,
-  FullExample,
-  ChatbotExample,
-  LongTitleExample,
-  OverflowingExample,
-  MultipleModalsExample,
-  DefaultWithImageExample,
-  SheetWithImageExample,
-  SimpleHeadlineExample,
-  CustomHeadlineExample,
-  TwoColumnExample,
-  NoHeaderExample,
-  TriggerExample,
-  LogoExample,
+const meta = {
+  title: 'bpk-component-modal-v3',
+  component: BpkModalV3.Root,
+  argTypes: {
+    zoomEnabled: {
+      control: 'boolean',
+    },
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Sheet = {
+  render: () => <SheetExample />,
+};
+
+export const Full = {
+  render: () => <FullExample />,
+};
+
+export const Chatbot = {
+  render: () => <ChatbotExample />,
+};
+
+export const LongTitle = {
+  render: () => <LongTitleExample />,
+};
+
+export const Overflowing = {
+  render: () => <OverflowingExample />,
+};
+
+export const MultipleModals = {
+  render: () => <MultipleModalsExample />,
+};
+
+export const DefaultWithImage = {
+  render: () => <DefaultWithImageExample />,
+};
+
+export const SheetWithImage = {
+  render: () => <SheetWithImageExample />,
+};
+
+export const SimpleHeadline = {
+  render: () => <SimpleHeadlineExample />,
+};
+
+export const CustomHeadline = {
+  render: () => <CustomHeadlineExample />,
+};
+
+export const TwoColumn = {
+  render: () => <TwoColumnExample />,
+};
+
+export const NoHeader = {
+  render: () => <NoHeaderExample />,
+};
+
+export const Trigger = {
+  render: () => <TriggerExample />,
+};
+
+export const Logo = {
+  render: () => <LogoExample />,
+};
+
+export const VisualTest = {
+  render: () => <DefaultExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <DefaultExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const VisualTestSheet = {
+  render: () => <SheetExample />,
+};
+
+export const VisualTestSheetWithZoom = {
+  render: () => <SheetExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const VisualTestFull = {
+  render: () => <FullExample />,
+};
+
+export const VisualTestFullWithZoom = {
+  render: () => <FullExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
+
+export const VisualTestChatbot = {
+  render: () => <ChatbotExample />,
+};
+
+export const VisualTestChatbotWithZoom = {
+  render: () => <ChatbotExample />,
+  args: {
+    zoomEnabled: true,
+  },
 };
