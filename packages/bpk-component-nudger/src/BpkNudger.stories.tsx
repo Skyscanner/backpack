@@ -21,7 +21,7 @@ import { Component } from 'react';
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 import { withAlignment } from '../../bpk-component-icon';
 import AccountIcon from '../../bpk-component-icon/lg/account';
 import BpkLabel from '../../bpk-component-label';

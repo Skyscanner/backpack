@@ -27,7 +27,7 @@ import BpkMap, {
   withGoogleMapsScript,
   BpkPriceMarkerButton,
 } from "..";
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import { withRtlSupport } from '../../bpk-component-icon';
 import AirportsIconSm from '../../bpk-component-icon/sm/airports';
 import FoodIconSm from '../../bpk-component-icon/sm/food';

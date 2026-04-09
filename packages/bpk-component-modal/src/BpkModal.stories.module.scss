@@ -16,8 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../packages/bpk-mixins/tokens';
+@use '../../../bpk-mixins/tokens';
 
-.bpk-dialog-paragraph {
+.bpk-modal-paragraph {
   margin-bottom: tokens.bpk-spacing-md();
+}
+
+.bpk-modal__leading-button {
+  color: tokens.$bpk-text-link-day;
+  fill: tokens.$bpk-text-link-day;
+
+  :hover {
+    color: tokens.$bpk-text-secondary-day;
+    fill: tokens.$bpk-text-secondary-day;
+  }
 }

@@ -18,14 +18,17 @@
 
 import { Children, useState } from 'react';
 
-import BpkButton from '../../packages/bpk-component-button';
-import { BpkModalV2, MODAL_STYLING } from '../../packages/bpk-component-modal';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+import BpkButton from '../../../bpk-component-button';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
+import { MODAL_STYLING } from '../BpkModalInner';
 
-import type { Props as BpkModalProps } from '../../packages/bpk-component-modal/src/BpkModalV2/BpkModal';
+import { BpkModalV2 } from './BpkModal';
 
-import STYLES from './examples.module.scss';
+import type { Props as BpkModalProps } from './BpkModal';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkModalV2.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -118,8 +121,8 @@ const ModalContainer = (
   );
 };
 
-const DefaultExample = (initiallyOpen: boolean) => (
-  <ModalContainer title="Modal Title" initiallyOpen={initiallyOpen}>
+const DefaultExample = () => (
+  <ModalContainer title="Modal Title" initiallyOpen>
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
       anything you want in here.
@@ -127,20 +130,20 @@ const DefaultExample = (initiallyOpen: boolean) => (
   </ModalContainer>
 );
 
-const ContrastExample = (initiallyOpen: boolean) => (
+const ContrastExample = () => (
   <ModalContainer
     title="Modal title"
     modalStyle={MODAL_STYLING.surfaceContrast}
-    initiallyOpen={initiallyOpen}
+    initiallyOpen
   >
     This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const LongTitleExample = (initiallyOpen: boolean) => (
+const LongTitleExample = () => (
   <ModalContainer
     title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
-    initiallyOpen={initiallyOpen}
+    initiallyOpen
   >
     <Paragraph>
       This is a default modal using the HTML dialog element. You can put
@@ -149,8 +152,8 @@ const LongTitleExample = (initiallyOpen: boolean) => (
   </ModalContainer>
 );
 
-const HeaderNoTitleExample = (initiallyOpen: boolean) => (
-  <ModalContainer initiallyOpen={initiallyOpen}>
+const HeaderNoTitleExample = () => (
+  <ModalContainer initiallyOpen>
     <Paragraph>
       This is a modal using the HTML dialog element without a header. You can
       put anything you want in here.
@@ -158,102 +161,94 @@ const HeaderNoTitleExample = (initiallyOpen: boolean) => (
   </ModalContainer>
 );
 
-const OverflowingExample = (initiallyOpen: boolean) => (
-  <ModalContainer title="Modal Title" initiallyOpen={initiallyOpen}>
+const OverflowingExample = () => (
+  <ModalContainer title="Modal Title" initiallyOpen>
     {' '}
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
-const OverflowingNoTitleExample = (initiallyOpen: boolean) => (
-  <ModalContainer initiallyOpen={initiallyOpen}>
+const OverflowingNoTitleExample = () => (
+  <ModalContainer initiallyOpen>
     <Paragraph>{Children.toArray(content)}</Paragraph>
   </ModalContainer>
 );
 
-const WideExample = (initiallyOpen: boolean) => (
-  <ModalContainer title="Modal title" wide initiallyOpen={initiallyOpen}>
+const WideExample = () => (
+  <ModalContainer title="Modal title" wide initiallyOpen>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WideNoTitleExample = (initiallyOpen: boolean) => (
-  <ModalContainer wide initiallyOpen={initiallyOpen}>
+const WideNoTitleExample = () => (
+  <ModalContainer wide initiallyOpen>
     This is a wide modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoPaddingExample = (initiallyOpen: boolean) => (
-  <ModalContainer title="Modal title" padded initiallyOpen={initiallyOpen}>
+const NoPaddingExample = () => (
+  <ModalContainer title="Modal title" padded initiallyOpen>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoPaddingNoTitleExample = (initiallyOpen: boolean) => (
-  <ModalContainer padded initiallyOpen={initiallyOpen}>
+const NoPaddingNoTitleExample = () => (
+  <ModalContainer padded initiallyOpen>
     This is a modal without padding. You can put anything you want in here.
   </ModalContainer>
 );
 
-const FullScreenOnDesktopExample = (initiallyOpen: boolean) => (
-  <ModalContainer
-    title="Modal title"
-    fullScreenOnDesktop
-    initiallyOpen={initiallyOpen}
-  >
+const FullScreenOnDesktopExample = () => (
+  <ModalContainer title="Modal title" fullScreenOnDesktop initiallyOpen>
     This is a full screen modal for desktop. You can put anything you want in
     here.
   </ModalContainer>
 );
 
-const FullScreenOnDesktopNoTitleExample = (initiallyOpen: boolean) => (
-  <ModalContainer fullScreenOnDesktop initiallyOpen={initiallyOpen}>
+const FullScreenOnDesktopNoTitleExample = () => (
+  <ModalContainer fullScreenOnDesktop initiallyOpen>
     This is a full screen modal for mobile without title. You can put anything
     you want in here.
   </ModalContainer>
 );
 
-const NoFullScreenOnMobileExample = (initiallyOpen: boolean) => (
-  <ModalContainer
-    title="Modal title"
-    noFullScreenOnMobile
-    initiallyOpen={initiallyOpen}
-  >
+const NoFullScreenOnMobileExample = () => (
+  <ModalContainer title="Modal title" noFullScreenOnMobile initiallyOpen>
     This is a no full screen modal for mobile. You can put anything you want in
     here.
   </ModalContainer>
 );
 
-const NoFullScreenOnMobileNoTitleExample = (initiallyOpen: boolean) => (
-  <ModalContainer noFullScreenOnMobile initiallyOpen={initiallyOpen}>
+const NoFullScreenOnMobileNoTitleExample = () => (
+  <ModalContainer noFullScreenOnMobile initiallyOpen>
     This is a no full screen modal for mobile without title. You can put
     anything you want in here.
   </ModalContainer>
 );
 
-const NoHeaderExample = (initiallyOpen: boolean) => (
-  <ModalContainer showHeader={false} initiallyOpen={initiallyOpen}>
+const NoHeaderExample = () => (
+  <ModalContainer showHeader={false} initiallyOpen>
     This is a modal without header. You can put anything you want in here.
   </ModalContainer>
 );
 
-const MultipleModalsExample = (initiallyOpen: boolean) => (
+const MultipleModalsExample = () => (
   <>
-    <ModalContainer title="Modal Title 1" initiallyOpen={initiallyOpen}>
+    <ModalContainer title="Modal Title 1" initiallyOpen>
       <Paragraph>
         Modal 1: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 2" initiallyOpen={initiallyOpen}>
+    <ModalContainer title="Modal Title 2" initiallyOpen>
       <Paragraph>
         Modal 2: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
       </Paragraph>
     </ModalContainer>
     <br />
-    <ModalContainer title="Modal Title 3" initiallyOpen={initiallyOpen}>
+    <ModalContainer title="Modal Title 3" initiallyOpen>
       <Paragraph>
         Modal 3: This is a default modal using the HTML dialog element. You can
         put anything you want in here.
@@ -262,21 +257,133 @@ const MultipleModalsExample = (initiallyOpen: boolean) => (
   </>
 );
 
-export {
-  DefaultExample,
-  LongTitleExample,
-  HeaderNoTitleExample,
-  OverflowingExample,
-  OverflowingNoTitleExample,
-  WideExample,
-  WideNoTitleExample,
-  NoPaddingExample,
-  NoPaddingNoTitleExample,
-  FullScreenOnDesktopExample,
-  FullScreenOnDesktopNoTitleExample,
-  NoFullScreenOnMobileExample,
-  NoFullScreenOnMobileNoTitleExample,
-  NoHeaderExample,
-  MultipleModalsExample,
-  ContrastExample,
+const meta = {
+  title: 'bpk-component-modal-v2',
+  component: BpkModalV2,
+} satisfies Meta<typeof BpkModalV2>;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const LongTitle = {
+  render: () => <LongTitleExample />,
+};
+
+export const NoTitle = {
+  render: () => <HeaderNoTitleExample />,
+};
+
+export const Overflowing = {
+  render: () => <OverflowingExample />,
+};
+
+export const OverflowingNoTitle = {
+  render: () => <OverflowingNoTitleExample />,
+};
+
+export const Wide = {
+  render: () => <WideExample />,
+};
+
+export const WideNoTitle = {
+  render: () => <WideNoTitleExample />,
+};
+
+export const NoPadding = {
+  render: () => <NoPaddingExample />,
+};
+
+export const NoPaddingNoTitle = {
+  render: () => <NoPaddingNoTitleExample />,
+};
+
+export const FullScreenOnDesktop = {
+  render: () => <FullScreenOnDesktopExample />,
+};
+
+export const FullScreenOnDesktopNoTitle = {
+  render: () => <FullScreenOnDesktopNoTitleExample />,
+};
+
+export const NoFullScreenOnMobile = {
+  render: () => <NoFullScreenOnMobileExample />,
+};
+
+export const NoFullScreenOnMobileNoTitle = {
+  render: () => <NoFullScreenOnMobileNoTitleExample />,
+};
+
+export const NoHeader = {
+  render: () => <NoHeaderExample />,
+};
+
+export const MultipleModals = {
+  render: () => <MultipleModalsExample />,
+};
+
+export const Contrast = {
+  render: () => <ContrastExample />,
+};
+
+// Due to how iframes work we can pass a local url to load the stories above.
+// Attempted to use a Custom Iframe component with a react portal and ref to
+// render components but it didn't have the desired effect.
+const VisualWrapper = ({
+  id,
+  zoomEnabled = false,
+}: {
+  id: string;
+  zoomEnabled?: boolean;
+}) => (
+  <div style={{ height: '640px', width: '100%' }}>
+    <iframe
+      title={`Embedded Storybook ${id}`}
+      src={`/iframe.html?id=${id}&viewMode=story&args=zoomEnabled:${zoomEnabled}`}
+      aria-label="Embedded Storybook"
+      referrerPolicy="origin"
+      style={{ height: '100%', width: '100%', border: 0 }}
+    />
+  </div>
+);
+
+// Note that these stories won't work when published to https://backpack.github.io/storybook/
+// due to the publicPath containing `/storybook` and the iframe src not including it.
+export const VisualTestDefault = {
+  render: () => (
+    <>
+      <VisualWrapper id="bpk-component-modal-v2--default" />
+      <VisualWrapper id="bpk-component-modal-v2--contrast" />
+      <VisualWrapper id="bpk-component-modal-v2--long-title" />
+      <VisualWrapper id="bpk-component-modal-v2--no-title" />
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+};
+
+export const VisualTestDefaultWithZoom = {
+  render: () => (
+    <>
+      <VisualWrapper id="bpk-component-modal-v2--default" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--contrast" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--long-title" zoomEnabled />
+      <VisualWrapper id="bpk-component-modal-v2--no-title" zoomEnabled />
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+  args: {
+    zoomEnabled: true,
+  },
 };

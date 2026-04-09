@@ -21,7 +21,7 @@ import type { ChangeEvent, ReactElement } from 'react';
 
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
   // @ts-expect-error Untyped import

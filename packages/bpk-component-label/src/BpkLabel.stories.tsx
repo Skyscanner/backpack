@@ -18,7 +18,7 @@
 
 
 // @ts-expect-error Untyped import
-import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 
 import BpkLabel from './BpkLabel';
 

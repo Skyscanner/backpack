@@ -16,27 +16,31 @@
  * limitations under the License.
  */
 import { Children, useState } from 'react';
+import type { ComponentProps } from 'react';
 
 import {
   lineHeightBase,
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../../packages/bpk-component-button';
+import BpkButton from '../../bpk-component-button';
 import {
   withAlignment,
   withRtlSupport,
-} from '../../packages/bpk-component-icon';
-import ArrowIcon from '../../packages/bpk-component-icon/sm/long-arrow-left';
-import BpkModal, {
-  MODAL_STYLING,
-  type BpkModalProps,
-} from '../../packages/bpk-component-modal';
-import { BpkNavigationBarButtonLink } from '../../packages/bpk-component-navigation-bar';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules, withDefaultProps } from '../../packages/bpk-react-utils';
+} from '../../bpk-component-icon';
+import ArrowIcon from '../../bpk-component-icon/sm/long-arrow-left';
+import { BpkNavigationBarButtonLink } from '../../bpk-component-navigation-bar';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules, withDefaultProps } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+
+import BpkModal from './BpkModal';
+import { MODAL_STYLING } from './BpkModalInner';
+
+import type { Props as BpkModalProps } from './BpkModal';
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkModal.stories.module.scss';
 
 const ArrowIconWithRtl = withAlignment(
   withRtlSupport(ArrowIcon),
@@ -106,11 +110,12 @@ const content = [
     pulvinar erat dignissim vitae.
   </Paragraph>,
 ];
+
 type ContainerProps = {
   title?: string;
   buttonLabel?: string;
   id?: string;
-  wrapperProps?: Object;
+  wrapperProps?: ComponentProps<'div'>;
   isOpen?: boolean;
 } & Omit<BpkModalProps, 'getApplicationElement' | 'id' | 'isOpen'>;
 
@@ -142,106 +147,101 @@ const ModalContainer = (props: ContainerProps) => {
   );
 };
 
-const DefaultExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen}>
+const DefaultExample = () => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const ContrastExample = (isOpen: boolean) => (
+const ContrastExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     modalStyle={MODAL_STYLING.surfaceContrast}
-    isOpen={isOpen}
+    isOpen
   >
     This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WideExample = (isOpen: boolean) => (
-  <ModalContainer
-    title="Modal title"
-    closeLabel="Close modal"
-    isOpen={isOpen}
-    wide
-  >
+const WideExample = () => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen wide>
     This is a wide modal.
   </ModalContainer>
 );
 
-const OverflowingExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen={isOpen}>
+const OverflowingExample = () => (
+  <ModalContainer title="Modal title" closeLabel="Close modal" isOpen>
     {Children.toArray(content)}
   </ModalContainer>
 );
 
-const CloseButtonTextExample = (isOpen: boolean) => (
-  <ModalContainer title="Modal title" closeText="Done" isOpen={isOpen}>
+const CloseButtonTextExample = () => (
+  <ModalContainer title="Modal title" closeText="Done" isOpen>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const ContrastWithCloseButtonTextExample = (isOpen: boolean) => (
+const ContrastWithCloseButtonTextExample = () => (
   <ModalContainer
     title="Modal title"
     modalStyle={MODAL_STYLING.surfaceContrast}
-    isOpen={isOpen}
+    isOpen
     closeText="Done"
   >
     This is a contrast modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const LongTitleExample = (isOpen: boolean) => (
+const LongTitleExample = () => (
   <ModalContainer
     title="We have to remember what's important in life: friends, waffles, and work. Or waffles, friends, work. But work has to come third."
     closeText="Done"
-    isOpen={isOpen}
+    isOpen
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NotFullScreenOnMobileExample = (isOpen: boolean) => (
+const NotFullScreenOnMobileExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     fullScreenOnMobile={false}
-    isOpen={isOpen}
+    isOpen
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const FullScreenExample = (isOpen: boolean) => (
+const FullScreenExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     fullScreen
-    isOpen={isOpen}
+    isOpen
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const FullScreenOverflowingExample = (isOpen: boolean) => (
+const FullScreenOverflowingExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     fullScreen
-    isOpen={isOpen}
+    isOpen
   >
     {Children.toArray(content)}
   </ModalContainer>
 );
 
-const NestedExample = (isOpen: boolean) => (
+const NestedExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     fullScreen
-    isOpen={isOpen}
+    isOpen
   >
     This is a full-screen modal. You can put anything you want in here,
     including other modals!
@@ -251,7 +251,7 @@ const NestedExample = (isOpen: boolean) => (
       wrapperProps={{ id: 'inner-modal-container' }}
       buttonLabel="Open another modal from this modal"
       id="inner-modal"
-      isOpen={isOpen}
+      isOpen
       renderTarget={() => document.getElementById('inner-modal-container')}
     >
       This is a default modal. You can put anything you want in here.
@@ -259,24 +259,24 @@ const NestedExample = (isOpen: boolean) => (
   </ModalContainer>
 );
 
-const NoHeaderExample = (isOpen: boolean) => (
-  <ModalContainer ariaLabel="Modal title" showHeader={false} isOpen={isOpen}>
+const NoHeaderExample = () => (
+  <ModalContainer ariaLabel="Modal title" showHeader={false} isOpen>
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const NoPaddingExample = (isOpen: boolean) => (
+const NoPaddingExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
     padded={false}
-    isOpen={isOpen}
+    isOpen
   >
     This is a default modal. You can put anything you want in here.
   </ModalContainer>
 );
 
-const WithAccessoryViewExample = (isOpen: boolean) => (
+const WithAccessoryViewExample = () => (
   <ModalContainer
     title="Modal title"
     closeLabel="Close modal"
@@ -293,26 +293,126 @@ const WithAccessoryViewExample = (isOpen: boolean) => (
         </div>
       </BpkNavigationBarButtonLink>
     }
-    isOpen={isOpen}
+    isOpen
   >
     The left hand button is intentally not functional. You can put anything you
     want in here.
   </ModalContainer>
 );
 
-export {
-  DefaultExample,
-  WideExample,
-  OverflowingExample,
-  CloseButtonTextExample,
-  LongTitleExample,
-  NotFullScreenOnMobileExample,
-  FullScreenExample,
-  FullScreenOverflowingExample,
-  NestedExample,
-  NoHeaderExample,
-  NoPaddingExample,
-  WithAccessoryViewExample,
-  ContrastExample,
-  ContrastWithCloseButtonTextExample,
+const meta = {
+  title: 'bpk-component-modal',
+  component: BpkModal,
+} satisfies Meta<typeof BpkModal>;
+
+export default meta;
+
+export const Default = {
+  render: () => <DefaultExample />,
+};
+
+export const Wide = {
+  render: () => <WideExample />,
+};
+
+export const Overflowing = {
+  render: () => <OverflowingExample />,
+};
+
+export const CloseButtonText = {
+  render: () => <CloseButtonTextExample />,
+};
+
+export const LongTitle = {
+  render: () => <LongTitleExample />,
+};
+
+export const NotFullScreenOnMobile = {
+  render: () => <NotFullScreenOnMobileExample />,
+};
+
+export const FullScreen = {
+  render: () => <FullScreenExample />,
+};
+
+export const FullScreenOverflowing = {
+  render: () => <FullScreenOverflowingExample />,
+};
+
+export const Nested = {
+  render: () => <NestedExample />,
+};
+
+export const NoHeader = {
+  render: () => <NoHeaderExample />,
+};
+
+export const NoPadding = {
+  render: () => <NoPaddingExample />,
+};
+
+export const WithAccessoryView = {
+  render: () => <WithAccessoryViewExample />,
+};
+
+export const Contrast = {
+  render: () => <ContrastExample />,
+};
+
+export const ContrastWithCloseButtonText = {
+  render: () => <ContrastWithCloseButtonTextExample />,
+};
+
+// Due to how iframes work we can pass a local url to load the stories above.
+// Attempted to use a Custom Iframe component with a react portal and ref to
+// render components but it didn't have the desired effect.
+const visualWrapper = (id: string, zoomEnabled: boolean = false) => (
+  <div style={{ height: '640px', width: '100%' }}>
+    <iframe
+      title={`Embedded Storybook ${id}`}
+      src={`/iframe.html?id=${id}&viewMode=story&args=zoomEnabled:${zoomEnabled}`}
+      aria-label="Embedded Storybook"
+      referrerPolicy="origin"
+      style={{ height: '100%', width: '100%', border: 0 }}
+    />
+  </div>
+);
+
+// Note that these stories won't work when published to https://backpack.github.io/storybook/
+// due to the publicPath containing `/storybook` and the iframe src not including it.
+export const VisualTestDefault = {
+  render: () => (
+    <>
+      {visualWrapper('bpk-component-modal--default')}
+      {visualWrapper('bpk-component-modal--contrast')}
+      {visualWrapper('bpk-component-modal--long-title')}
+      {visualWrapper('bpk-component-modal--with-accessory-view')}
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+};
+
+export const VisualTestDefaultWithZoom = {
+  render: () => (
+    <>
+      {visualWrapper('bpk-component-modal--default', true)}
+      {visualWrapper('bpk-component-modal--contrast', true)}
+      {visualWrapper('bpk-component-modal--long-title', true)}
+      {visualWrapper('bpk-component-modal--with-accessory-view', true)}
+    </>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
+  args: {
+    zoomEnabled: true,
+  },
 };

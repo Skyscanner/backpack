@@ -23,7 +23,7 @@ import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkBannerAlert, {
   ALERT_TYPES,
 } from '../../bpk-component-banner-alert';
