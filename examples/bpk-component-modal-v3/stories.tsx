@@ -33,6 +33,7 @@ import {
   TriggerExample,
   TwoColumnExample,
   NoHeaderExample,
+  LogoExample,
 } from './examples';
 
 export default {
@@ -59,6 +60,7 @@ export const CustomHeadline = CustomHeadlineExample;
 export const TwoColumn = TwoColumnExample;
 export const NoHeader = NoHeaderExample;
 export const Trigger = TriggerExample;
+export const Logo = LogoExample;
 
 export const VisualTest = DefaultExample;
 export const VisualTestWithZoom = {
