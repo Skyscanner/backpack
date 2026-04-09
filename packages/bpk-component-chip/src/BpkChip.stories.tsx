@@ -28,7 +28,7 @@ import {
   textOnDarkDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { AriaLiveDemo } from '../../../examples/bpk-component-aria-live/examples';
+import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import FaceHappyIconSm from '../../bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
