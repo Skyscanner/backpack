@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentType, MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import ThumbsDownIconLg from '../../bpk-component-icon/lg/thumbs-down';
 import ThumbsUpIconLg from '../../bpk-component-icon/lg/thumbs-up';
@@ -62,7 +62,8 @@ const BpkThumbButton = ({
   size = 'default',
   type,
 }: BpkThumbButtonProps) => {
-  const icons: Record<ThumbsButtonSize, Record<ThumbsButtonType, ComponentType>> = {
+
+  const icons = {
     small: { up: ThumbsUpIconSm, down: ThumbsDownIconSm },
     default: { up: ThumbsUpIconLg, down: ThumbsDownIconLg },
   };

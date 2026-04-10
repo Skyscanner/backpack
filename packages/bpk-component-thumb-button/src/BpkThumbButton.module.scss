@@ -49,6 +49,10 @@
     transition: none;
   }
 
+  &:active {
+    color: tokens.$bpk-text-secondary-day;
+  }
+
   &--selected {
     color: tokens.$bpk-core-accent-day;
 
