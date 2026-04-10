@@ -79,6 +79,7 @@
 
 @mixin bpk-focus-indicator-v2-desktop-reset {
   outline-offset: 0;
+  outline-style: auto;
   outline-width: initial;
   box-shadow: none;
 }
