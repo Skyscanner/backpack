@@ -19,7 +19,7 @@
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import { BACKGROUND_COLORS, BpkBox, BpkGrid, BpkGridItem, BpkProvider, BpkSpacing } from '..';
-import BpkText, { TEXT_COLORS } from '../../bpk-component-text';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -93,6 +93,62 @@ const BpkGridBentoBoxExample = () => (
   </LayoutWrapper>
 );
 
+const BpkGridLayoutPropsExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>overflow=&quot;hidden&quot; — clips rows that exceed the fixed height</BpkText>
+      <BpkGrid
+        templateColumns="repeat(3, 1fr)"
+        gap={BpkSpacing.SM}
+        overflow="hidden"
+        height="8rem"
+        role="region"
+        aria-label="Clipping grid container"
+        marginTop={BpkSpacing.SM}
+      >
+        <BpkBox height="3rem"><span className={outline}>Row 1</span></BpkBox>
+        <BpkBox height="3rem"><span className={outline}>Row 1</span></BpkBox>
+        <BpkBox height="3rem"><span className={outline}>Row 1</span></BpkBox>
+        <BpkBox height="3rem"><span className={outline}>Row 2 — clipped</span></BpkBox>
+        <BpkBox height="3rem"><span className={outline}>Row 2 — clipped</span></BpkBox>
+        <BpkBox height="3rem"><span className={outline}>Row 2 — clipped</span></BpkBox>
+      </BpkGrid>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>position=&quot;relative&quot; + zIndex — layered grid containers</BpkText>
+      <BpkGrid position="relative" width="14rem" height="5rem" marginTop={BpkSpacing.SM} templateColumns="1fr">
+        <BpkGridItem>
+          <BpkBox
+            position="absolute"
+            top="0"
+            left="0"
+            width="10rem"
+            height="3rem"
+            padding={BpkSpacing.SM}
+            zIndex={1}
+            backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+          >
+            <BpkText>z-index: 1</BpkText>
+          </BpkBox>
+          <BpkBox
+            position="absolute"
+            top="1rem"
+            left="2rem"
+            width="10rem"
+            height="3rem"
+            padding={BpkSpacing.SM}
+            zIndex={2}
+            backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          >
+            <BpkText>z-index: 2 (in front)</BpkText>
+          </BpkBox>
+        </BpkGridItem>
+      </BpkGrid>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
 const BpkGridColorExample = () => (
   <LayoutWrapper>
     <BpkGrid templateColumns="repeat(3, 1fr)" gap={BpkSpacing.SM}>
@@ -151,4 +207,8 @@ export const BentoBox = {
 
 export const Color = {
   render: () => <BpkGridColorExample />,
+};
+
+export const LayoutProps = {
+  render: () => <BpkGridLayoutPropsExample />,
 };

@@ -19,7 +19,7 @@
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import { BACKGROUND_COLORS, BpkBox, BpkHStack, BpkProvider, BpkSpacing, BpkStack, BpkVStack } from '..';
-import BpkText, { TEXT_COLORS } from '../../bpk-component-text';
+import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -87,6 +87,60 @@ const BpkStackResponsiveExample = () => (
   </LayoutWrapper>
 );
 
+const BpkStackLayoutPropsExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>overflow=&quot;hidden&quot; — clips stacked items beyond fixed height</BpkText>
+      <BpkStack
+        gap={BpkSpacing.SM}
+        overflow="hidden"
+        height="6rem"
+        padding={BpkSpacing.SM}
+        role="region"
+        aria-label="Clipping stack container"
+        marginTop={BpkSpacing.SM}
+      >
+        <BpkBox height="2rem" width="100%"><span className={outline}>Item 1</span></BpkBox>
+        <BpkBox height="2rem" width="100%"><span className={outline}>Item 2</span></BpkBox>
+        <BpkBox height="2rem" width="100%"><span className={outline}>Item 3 — clipped</span></BpkBox>
+        <BpkBox height="2rem" width="100%"><span className={outline}>Item 4 — clipped</span></BpkBox>
+      </BpkStack>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>position=&quot;relative&quot; + zIndex — layered stack containers</BpkText>
+      <BpkStack position="relative" width="14rem" height="5rem" marginTop={BpkSpacing.SM} gap={BpkSpacing.SM}>
+        <BpkStack
+          position="absolute"
+          top="0"
+          left="0"
+          width="10rem"
+          height="3rem"
+          padding={BpkSpacing.SM}
+          zIndex={1}
+          gap={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+        >
+          <BpkText>z-index: 1</BpkText>
+        </BpkStack>
+        <BpkStack
+          position="absolute"
+          top="1rem"
+          left="2rem"
+          width="10rem"
+          height="3rem"
+          padding={BpkSpacing.SM}
+          zIndex={2}
+          gap={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>z-index: 2 (in front)</BpkText>
+        </BpkStack>
+      </BpkStack>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
 const BpkStackColorExample = () => (
   <LayoutWrapper>
     <BpkStack gap={BpkSpacing.SM}>
@@ -150,4 +204,8 @@ export const Responsive = {
 
 export const Color = {
   render: () => <BpkStackColorExample />,
+};
+
+export const LayoutProps = {
+  render: () => <BpkStackLayoutPropsExample />,
 };

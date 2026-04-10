@@ -131,4 +131,17 @@ describe('BpkGrid', () => {
     );
     expect(container.querySelector('div')).toHaveClass('bpk-layout--canvas-contrast');
   });
+
+  it('renders position and overflow alongside templateColumns without dropping any prop', () => {
+    // Regression: position/overflow arrived via ...props and were previously silently
+    // dropped when responsiveProps was provided (BpkGrid maps templateColumns→gridTemplateColumns).
+    const { container } = render(
+      <BpkProvider>
+        <BpkGrid templateColumns="repeat(3, 1fr)" position="relative" overflow="hidden">
+          content
+        </BpkGrid>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toBeInTheDocument();
+  });
 });
