@@ -16,16 +16,21 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../../packages/bpk-component-button';
-import ComparisonTray from '../../packages/bpk-component-comparison-table';
-import { BpkSpacing, BpkVStack, BpkHStack } from '../../packages/bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
 
-import type { ComparisonItem } from '../../packages/bpk-component-comparison-table';
 
-const SAMPLE_ITEMS: ComparisonItem[] = [
+import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
+import { BpkBox, BpkProvider, BpkSpacing, BpkVStack, BpkHStack } from '../../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
+
+import BpkComparisonTray from './BpkComparisonTray';
+
+import type { BpkComparisonItem } from './common-types';
+import type { Meta } from '@storybook/react';
+
+const SAMPLE_ITEMS: BpkComparisonItem[] = [
   {
     id: 'vip-cars',
     label: 'VIP Cars',
@@ -53,11 +58,10 @@ const SAMPLE_ITEMS: ComparisonItem[] = [
 ];
 
 const InteractiveExample = () => {
-  const [items, setItems] = useState<ComparisonItem[]>([]);
-  const trayRef = useRef<HTMLDivElement>(null);
+  const [items, setItems] = useState<BpkComparisonItem[]>([]);
   const pendingFocusIndexRef = useRef<number | null>(null);
 
-  const addItem = (newItem: ComparisonItem) => {
+  const addItem = (newItem: BpkComparisonItem) => {
     if (items.length < 3 && !items.some((existing) => existing.id === newItem.id)) {
       setItems((prev) => [...prev, newItem]);
     }
@@ -68,7 +72,6 @@ const InteractiveExample = () => {
     const remaining = items.filter((item) => item.id !== id);
 
     if (remaining.length > 0) {
-      // Focus next item's remove button, or previous if the last item was removed
       pendingFocusIndexRef.current = removedIndex < remaining.length ? removedIndex : removedIndex - 1;
     }
 
@@ -81,7 +84,8 @@ const InteractiveExample = () => {
     const idx = pendingFocusIndexRef.current;
     pendingFocusIndexRef.current = null;
 
-    const removeButtons = trayRef.current?.querySelectorAll<HTMLButtonElement>(
+    const tray = document.querySelector('[data-backpack-ds-component="ComparisonTray"]');
+    const removeButtons = tray?.querySelectorAll<HTMLButtonElement>(
       'button[aria-label^="Remove"]',
     );
     removeButtons?.[idx]?.focus();
@@ -97,48 +101,61 @@ const InteractiveExample = () => {
 
   return (
     <BpkVStack gap={BpkSpacing.LG}>
-      <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
-        Click the buttons below to add cars to the tray. Add at least 2 to enable Compare.
-      </BpkText>
+        <BpkText tagName="p" textStyle={TEXT_STYLES.bodyDefault}>
+          Click the buttons below to add cars to the tray. Add at least 2 to enable Compare.
+        </BpkText>
 
-      <BpkHStack gap={BpkSpacing.Base}>
-        {SAMPLE_ITEMS.map((item) =>
-          isAdded(item.id) ? (
-            <BpkButton
-              key={item.id}
-              type={BUTTON_TYPES.destructive}
-              onClick={() => removeItem(item.id)}
-            >
-              Remove {item.label}
-            </BpkButton>
-          ) : (
-            <BpkButton
-              key={item.id}
-              type={BUTTON_TYPES.secondary}
-              disabled={isFull}
-              onClick={() => addItem(item)}
-            >
-              Add {item.label}
-            </BpkButton>
-          ),
-        )}
-      </BpkHStack>
+        <BpkHStack gap={BpkSpacing.Base}>
+          {SAMPLE_ITEMS.map((item) =>
+            isAdded(item.id) ? (
+              <BpkButton
+                key={item.id}
+                type={BUTTON_TYPES.destructive}
+                onClick={() => removeItem(item.id)}
+              >
+                Remove {item.label}
+              </BpkButton>
+            ) : (
+              <BpkButton
+                key={item.id}
+                type={BUTTON_TYPES.secondary}
+                disabled={isFull}
+                onClick={() => addItem(item)}
+              >
+                Add {item.label}
+              </BpkButton>
+            ),
+          )}
+        </BpkHStack>
 
-      <div ref={trayRef}>
-        {items.length > 0 && (
-          <ComparisonTray.Root
-            items={items}
-            ariaLabel="Comparison tray"
-            compareLabel="Compare"
-            removeLabel="Remove"
-            onRemove={removeItem}
-            onCompare={handleCompare}
-          />
-        )}
-      </div>
-    </BpkVStack>
+        <BpkBox>
+          {items.length > 0 && (
+            <BpkComparisonTray.Root
+              items={items}
+              ariaLabel="Comparison tray"
+              compareLabel="Compare"
+              removeLabel="Remove"
+              onRemove={removeItem}
+              onCompare={handleCompare}
+            />
+          )}
+        </BpkBox>
+      </BpkVStack>
   );
 };
 
-export default InteractiveExample;
-export { InteractiveExample };
+const meta = {
+  title: 'bpk-component-comparison-table',
+  component: BpkComparisonTray.Root,
+  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+} satisfies Meta;
+
+export default meta;
+
+export const ComparisonTrayExample = {
+  render: () => <InteractiveExample />,
+};
+
+export const VisualTest = {
+  render: () => <InteractiveExample />,
+};
