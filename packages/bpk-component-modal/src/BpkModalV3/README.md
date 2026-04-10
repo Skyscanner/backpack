@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import { BpkModalV3 as BpkModal } from '@skyscanner/backpack-web/bpk-component-modal';
+import { BpkModalV3 as BpkModal, MODAL_V3_TYPES } from '@skyscanner/backpack-web/bpk-component-modal';
 ```
 
 ### Trigger
@@ -78,7 +78,7 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 ### Sheet
 
 ```tsx
-<BpkModal.Root type="sheet">
+<BpkModal.Root type={MODAL_V3_TYPES.sheet}>
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
@@ -100,7 +100,7 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 ### Full screen
 
 ```tsx
-<BpkModal.Root type="full">
+<BpkModal.Root type={MODAL_V3_TYPES.full}>
   <BpkModal.Trigger asChild>
     <BpkButton>Open modal</BpkButton>
   </BpkModal.Trigger>
@@ -113,6 +113,32 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
       </BpkModal.Header>
       <BpkModal.Body>
         <BpkText>Full screen content goes here.</BpkText>
+      </BpkModal.Body>
+    </BpkModal.Content>
+  </BpkModal.Portal>
+</BpkModal.Root>
+```
+
+### Chatbot
+
+A full-viewport panel that slides in from the right (left in RTL). Intended for chatbot and conversational UI surfaces. Use alongside `BpkChatbotInput` for the input area.
+
+When open, this variant automatically locks body scroll (using `position: fixed`) to prevent background page scroll and iOS Safari bounce effects. Body styles are restored when the modal closes.
+
+```tsx
+<BpkModal.Root type={MODAL_V3_TYPES.chatbot}>
+  <BpkModal.Trigger asChild>
+    <BpkButton>Open chatbot</BpkButton>
+  </BpkModal.Trigger>
+  <BpkModal.Portal>
+    <BpkModal.Scrim />
+    <BpkModal.Content>
+      <BpkModal.Header>
+        <BpkModal.Title>Chatbot</BpkModal.Title>
+        <BpkModal.CloseTrigger label="Close" />
+      </BpkModal.Header>
+      <BpkModal.Body>
+        <BpkText>Conversation content goes here.</BpkText>
       </BpkModal.Body>
     </BpkModal.Content>
   </BpkModal.Portal>
@@ -161,7 +187,7 @@ Portal renders `Scrim` and `Content` into `document.body`, escaping any parent s
 
 ```tsx
 <BpkProvider>
-  <BpkModal.Root type="sheet">
+  <BpkModal.Root type={MODAL_V3_TYPES.sheet}>
     <BpkModal.Trigger asChild>
       <BpkButton>Open modal</BpkButton>
     </BpkModal.Trigger>
@@ -215,7 +241,17 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 
 | Type | Values |
 |---|---|
-| `BpkModalType` | `'default'` \| `'sheet'` \| `'full'` |
+| `BpkModalV3Type` | `'default'` \| `'sheet'` \| `'full'` \| `'chatbot'` |
+
+The `MODAL_V3_TYPES` constant is exported as a convenience reference for all valid type values:
+
+```tsx
+import { MODAL_V3_TYPES } from '@skyscanner/backpack-web/bpk-component-modal';
+
+<BpkModal.Root type={MODAL_V3_TYPES.chatbot}>
+  ...
+</BpkModal.Root>
+```
 
 ## Slots
 

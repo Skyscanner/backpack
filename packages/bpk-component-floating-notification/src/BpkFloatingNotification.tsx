@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
-import BpkAriaLive from '../../bpk-component-aria-live';
+import BpkAriaLive, { ARIA_LIVE_POLITENESS_SETTINGS } from '../../bpk-component-aria-live';
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
@@ -29,6 +29,11 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 import STYLES from './BpkFloatingNotification.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+export const NOTIFICATION_TYPES = {
+  default: 'default',
+  critical: 'critical',
+} as const;
 
 export type Props = {
   animateOnEnter?: boolean;
@@ -47,6 +52,7 @@ export type Props = {
    */
   onExit?: () => void;
   text: string;
+  type?: (typeof NOTIFICATION_TYPES)[keyof typeof NOTIFICATION_TYPES];
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -63,10 +69,16 @@ const BpkFloatingNotification = (props: Props) => {
     onClick,
     onExit,
     text,
+    type = NOTIFICATION_TYPES.default,
     ...rest
   } = props;
 
-  const classNames = getClassName('bpk-floating-notification', className);
+  const classNames = getClassName(
+    'bpk-floating-notification',
+    type === NOTIFICATION_TYPES.critical &&
+      'bpk-floating-notification--critical',
+    className,
+  );
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
@@ -106,7 +118,16 @@ const BpkFloatingNotification = (props: Props) => {
             {text}
           </BpkText>
         </span>
-        <BpkAriaLive aria-hidden>{text}</BpkAriaLive>
+        <BpkAriaLive
+          aria-hidden
+          politenessSetting={
+            type === NOTIFICATION_TYPES.critical
+              ? ARIA_LIVE_POLITENESS_SETTINGS.assertive
+              : ARIA_LIVE_POLITENESS_SETTINGS.polite
+          }
+        >
+          {text}
+        </BpkAriaLive>
         {ctaText && (
           <div className={getClassName('bpk-floating-notification__cta')}>
             <BpkButton type={BUTTON_TYPES.linkOnDark} implicit onClick={onClick}>

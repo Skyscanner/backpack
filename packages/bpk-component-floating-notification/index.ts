@@ -18,8 +18,10 @@
 /* @flow strict */
 
 import BpkFloatingNotification, {
+  NOTIFICATION_TYPES,
   type Props as BpkFloatingNotificationProps,
 } from './src/BpkFloatingNotification';
 
 export type { BpkFloatingNotificationProps };
+export { NOTIFICATION_TYPES };
 export default BpkFloatingNotification;

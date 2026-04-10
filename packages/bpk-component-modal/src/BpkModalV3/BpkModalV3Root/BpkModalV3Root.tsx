@@ -16,14 +16,16 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 import { Dialog } from '@ark-ui/react';
 
-import { getDataComponentAttribute } from '../../../../bpk-react-utils';
-import { ModalTypeProvider } from '../BpkModalV3Context';
+import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import type { BpkModalV3Type } from '../common-types';
+import { getDataComponentAttribute, useBodyLock } from '../../../../bpk-react-utils';
+import { ModalTypeProvider } from '../BpkModalV3Context';
+import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
+
 
 type BpkModalV3RootProps = {
   children: ReactNode;
@@ -36,22 +38,45 @@ const BpkModalV3Root = ({
   children,
   onOpenChange,
   open,
-  type = 'default',
-}: BpkModalV3RootProps) => (
-  <Dialog.Root
-    {...(open !== undefined && { open })}
-    {...(onOpenChange !== undefined && { onOpenChange })}
-  >
-    <ModalTypeProvider value={type}>
-      <div
-        data-type={type}
-        {...getDataComponentAttribute('ModalV3')}
-      >
-        {children}
-      </div>
-    </ModalTypeProvider>
-  </Dialog.Root>
-);
+  type = MODAL_V3_TYPES.default,
+}: BpkModalV3RootProps) => {
+  const [internalOpen, setInternalOpen] = useState(open ?? false);
+
+  const isOpen = open ?? internalOpen;
+
+  const [bodyLockOpen, setBodyLockOpen] = useState(isOpen);
+  useEffect(() => {
+    if (isOpen) {
+      setBodyLockOpen(true);
+    } else {
+      const timer = setTimeout(() => setBodyLockOpen(false), parseInt(durationBase, 10));
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [isOpen]);
+
+  useBodyLock(type === MODAL_V3_TYPES.chatbot && bodyLockOpen);
+
+  const handleOpenChange = (details: { open: boolean }) => {
+    if (open === undefined) {
+      setInternalOpen(details.open);
+    }
+    onOpenChange?.(details);
+  };
+
+  return (
+    <Dialog.Root
+      {...(open !== undefined && { open })}
+      onOpenChange={handleOpenChange}
+    >
+      <ModalTypeProvider value={type}>
+        <div data-type={type} {...getDataComponentAttribute('ModalV3')}>
+          {children}
+        </div>
+      </ModalTypeProvider>
+    </Dialog.Root>
+  );
+};
 
 export default BpkModalV3Root;
 export type { BpkModalV3RootProps };

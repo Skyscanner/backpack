@@ -18,7 +18,10 @@
 
 import { Dialog } from '@ark-ui/react';
 
-import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
+import {
+  cssModules,
+  getDataComponentAttribute,
+} from '../../../../bpk-react-utils';
 import { useModalType } from '../BpkModalV3Context';
 
 import STYLES from './BpkModalV3Scrim.module.scss';
@@ -32,6 +35,7 @@ const BpkModalV3Scrim = () => {
       className={getClassName(
         'bpk-modal-v3__scrim',
         type === 'full' && 'bpk-modal-v3__scrim--full',
+        type === 'chatbot' && 'bpk-modal-v3__scrim--chatbot',
       )}
       {...getDataComponentAttribute('ModalV3Scrim')}
     />

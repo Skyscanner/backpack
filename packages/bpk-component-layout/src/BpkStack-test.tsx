@@ -16,13 +16,19 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { createRef } from 'react';
+
+import { render, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkProvider } from './BpkProvider';
 import { BpkStack, BpkHStack, BpkVStack } from './BpkStack';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkStack', () => {
   it('renders children content', () => {
@@ -37,6 +43,77 @@ describe('BpkStack', () => {
 
     expect(getByText('Child 1')).toBeInTheDocument();
     expect(getByText('Child 2')).toBeInTheDocument();
+  });
+
+  it('forwards ref to the underlying DOM element', () => {
+    const ref = createRef<HTMLDivElement>();
+    render(
+      <BpkProvider>
+        <BpkStack ref={ref} gap={BpkSpacing.MD}>
+          <div>Child</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+  });
+
+  it('passes tabIndex to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkStack tabIndex={0} gap={BpkSpacing.MD}>
+          <div>Child</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    expect(container.firstChild).toHaveAttribute('tabindex', '0');
+  });
+
+  it('passes role to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkStack role="list" gap={BpkSpacing.MD}>
+          <div>Child</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'list');
+  });
+
+  it('calls onClick when clicked', () => {
+    const handleClick = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkStack onClick={handleClick} gap={BpkSpacing.MD}>
+          <div>Clickable</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    fireEvent.click(getByText('Clickable'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkStack role="button" tabIndex={0} onKeyDown={handleKeyDown} gap={BpkSpacing.MD}>
+          <div>Interactive</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders when textStyle is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkStack textStyle="body-default" gap={BpkSpacing.MD}>
+          <div>Child</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    expect(getByText('Child')).toBeInTheDocument();
   });
 
   describe('BpkHStack', () => {
@@ -119,6 +196,44 @@ describe('BpkStack', () => {
 
       const stack = container.firstChild;
       expect(stack).not.toHaveClass('forbidden-class');
+    });
+  });
+
+  describe('color and backgroundColor', () => {
+    it('applies color class to BpkStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack color={TEXT_COLORS.textPrimary}>Content</BpkStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+    });
+
+    it('applies backgroundColor class to BpkStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack backgroundColor={BACKGROUND_COLORS.surfaceElevated}>Content</BpkStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-elevated');
+    });
+
+    it('applies color class to BpkHStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkHStack color={TEXT_COLORS.textOnDark}>Content</BpkHStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--text-on-dark');
+    });
+
+    it('applies backgroundColor class to BpkVStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkVStack backgroundColor={BACKGROUND_COLORS.statusDangerFill}>Content</BpkVStack>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveClass('bpk-layout--status-danger-fill');
     });
   });
 });

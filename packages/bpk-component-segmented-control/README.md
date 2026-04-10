@@ -122,6 +122,8 @@ Check out the full list of props on Skyscanner's [design system documentation we
 
 A composable, accessible segmented control backed by [Ark-UI SegmentGroup](https://ark-ui.com/react/docs/components/segment-group). Each segment is composed from slot components — `Item`, `ItemText`, `ItemControl`, and `ItemHiddenInput` — giving full control over content structure. Theming is driven by CSS custom properties so VDL 2.0 adopters can override tokens at any wrapper level.
 
+> **RTL support:** `BpkSegmentedControlV2` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
+
 ### Basic usage
 
 ```tsx
