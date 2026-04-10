@@ -23,7 +23,14 @@ import { BpkFlex, BpkHStack, BpkSpacing } from '../../bpk-component-layout';
 </BpkHStack>
 ```
 
-Spacing values must use `BpkSpacing` tokens (`BpkSpacing.None`, `BpkSpacing.SM`, `BpkSpacing.Base`, `BpkSpacing.MD`, `BpkSpacing.LG`, `BpkSpacing.XL`, `BpkSpacing.XXL`).
+Spacing values must use `BpkSpacing` tokens (`BpkSpacing.None`, `BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.Base`, `BpkSpacing.MD`, `BpkSpacing.LG`, `BpkSpacing.XL`, `BpkSpacing.XXL`).
+
+`BpkProvider` must wrap any layout components for token resolution to work:
+
+```tsx
+import { BpkProvider } from '../../bpk-component-layout';
+<BpkProvider>{children}</BpkProvider>
+```
 
 ## When NOT to use
 
