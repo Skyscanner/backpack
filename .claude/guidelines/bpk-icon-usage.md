@@ -35,6 +35,11 @@ The ESLint rule `forbid-component-props` blocks `className` on React components.
   <AlignedIcon />
 </span>
 
+// ✅ Correct — fill prop with a token value
+import { textPrimaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
+<BpkSmallFlightIcon fill={textPrimaryDay} />
+
 // ❌ Wrong — className on a React component
 <AlignedIcon className={getClassName('bpk-my-component__icon')} />
 ```

@@ -1,6 +1,6 @@
 # BPK Layout Components Rules
 
-`bpk-component-layout` provides layout primitives: `BpkFlex`, `BpkHStack` / `BpkVStack` / `BpkStack`, `BpkGrid` / `BpkGridItem`, `BpkBox`.
+`bpk-component-layout` provides layout primitives: `BpkFlex`, `BpkHStack` / `BpkVStack` / `BpkStack`, `BpkGrid` / `BpkGridItem`, `BpkBox`, `BpkVessel`.
 
 **Before writing `display: flex`, `display: grid`, or a structural `<div>` in TSX, check if one of these covers the use case.**
 
@@ -47,3 +47,4 @@ When a container needs **both layout and visual styling on the same element**, u
 | Evenly-spaced vertical items | `BpkVStack` |
 | CSS grid | `BpkGrid` + `BpkGridItem` |
 | Generic structural box | `BpkBox` |
+| Legacy migration (needs `className`/`style`) | `BpkVessel` ⚠️ temporary — see "BpkVessel" section in `packages/bpk-component-layout/README.md` |

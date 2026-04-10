@@ -21,7 +21,7 @@ Strip `$bpk-` prefix, camelCase the result:
 ## Lookup workflow
 
 When replacing a hardcoded style value with a BPK token:
-1. Search `node_modules/@skyscanner/bpk-foundations-web/tokens/base.default.scss` (SCSS) or `base.es6.d.ts` (TSX) for the value.
+1. Search `node_modules/@skyscanner/bpk-foundations-web/tokens/base.default.scss` (SCSS) or `base.es6.d.ts` (TSX/JSX) for the value.
 2. If no token matches the exact value, leave the hardcoded value as-is.
 3. **NEVER invent, approximate, or guess a token name.**
 
@@ -41,7 +41,7 @@ export declare const coreColors = { coreAccentDay, ... };
 
 ---
 
-## TSX usage pattern
+## TSX/JSX usage pattern
 
 ```typescript
 import { coreAccentDay, textPrimaryDay, borderRadiusSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';

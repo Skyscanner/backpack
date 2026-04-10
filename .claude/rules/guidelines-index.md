@@ -1,6 +1,6 @@
 # Backpack Guidelines Index
 
-Applies only when modifying `.ts`, `.tsx`, `.js`, `.scss`, or `.css` files. Read the relevant guideline file **only when the trigger condition applies**. Skip if you already know the correct pattern.
+Applies only when modifying `.ts`, `.tsx`, `.js`, `.jsx`, `.scss`, or `.css` files. Read the relevant guideline file **only when the trigger condition applies**. Skip if you already know the correct pattern.
 
 | Trigger | Read this file |
 |---------|---------------|
