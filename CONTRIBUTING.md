@@ -79,9 +79,9 @@ npm start
 > |---|---|---|
 > | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
 > | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |
-> | Webpack cache | filesystem (`storybook-local`) | memory only (not persisted) |
+> | Webpack cache | filesystem (`storybook-local`) | webpack default (no override) |
 >
-> Local builds use a named filesystem cache partition (`storybook-local`), so switching between local and CI modes does not produce stale-cache warnings. CI uses an in-memory cache since each job starts from a clean environment and a filesystem cache would be discarded anyway.
+> Local builds use a named filesystem cache partition (`storybook-local`), so switching between local and CI modes does not produce stale-cache warnings. CI does not override the webpack cache and relies on webpack's default behaviour.
 >
 > If you see `[webpack.cache.PackFileCacheStrategy] Restoring failed` warnings, clear the cache and restart:
 > ```sh

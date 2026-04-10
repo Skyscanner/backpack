@@ -29,21 +29,18 @@ const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
   // Locally, enable a named filesystem cache partition ('storybook-local') to
-  // speed up subsequent Storybook startups.  In CI each job starts from a clean
-  // environment so a persistent filesystem cache would be written and immediately
-  // discarded — use a plain memory cache instead to avoid carrying over any
-  // filesystem-only cache options (e.g. buildDependencies, name) that could
-  // cause webpack schema-validation errors when type is 'memory'.
-  // Using separate strategies also prevents stale module-resolution entries
-  // (PackFileCacheStrategy restore warnings) when switching between local and CI.
-  const existingCache =
-    config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
-      ? config.cache
-      : {};
-  /* eslint-disable-next-line no-param-reassign */
-  config.cache = process.env.CI
-    ? { type: 'memory' }
-    : { ...existingCache, type: 'filesystem', name: 'storybook-local' };
+  // speed up subsequent Storybook startups. This prevents stale module-resolution
+  // entries (PackFileCacheStrategy restore warnings) when switching between local
+  // and CI Storybook modes. CI does not override the cache — it relies on
+  // webpack's default behaviour for the build environment.
+  if (!process.env.CI) {
+    const existingCache =
+      config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
+        ? config.cache
+        : {};
+    /* eslint-disable-next-line no-param-reassign */
+    config.cache = { ...existingCache, type: 'filesystem', name: 'storybook-local' };
+  }
 
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
