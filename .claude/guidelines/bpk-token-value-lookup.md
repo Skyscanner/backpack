@@ -21,9 +21,10 @@ Strip `$bpk-` prefix, camelCase the result:
 ## Lookup workflow
 
 When replacing a hardcoded style value with a BPK token:
-1. Search `node_modules/@skyscanner/bpk-foundations-web/tokens/base.default.scss` (SCSS) or `base.es6.d.ts` (TSX/JSX) for the value.
-2. If no token matches the exact value, leave the hardcoded value as-is.
-3. **NEVER invent, approximate, or guess a token name.**
+1. Use Grep (not Read the whole file) to search `node_modules/@skyscanner/bpk-foundations-web/tokens/base.default.scss` (SCSS) or `base.es6.d.ts` (TSX/JSX) for the value.
+2. If multiple tokens match, present all matches to the user and ask them to choose. Never pick one silently.
+3. If no token matches the exact value, leave the hardcoded value as-is.
+4. **NEVER invent, approximate, or guess a token name.**
 
 ## How to look up a token
 
