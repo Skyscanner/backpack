@@ -26,7 +26,7 @@ import BpkStarRating from './BpkStarRating';
  */
 figma.connect(
   BpkStarRating,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4405%3A2',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A49089',
   {
     props: {
       large: figma.enum('Size', {
@@ -65,7 +65,7 @@ figma.connect(
  */
 figma.connect(
   BpkStarRating,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=12346%3A12561',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A49171',
   {
     props: {
       large: figma.enum('Size', {

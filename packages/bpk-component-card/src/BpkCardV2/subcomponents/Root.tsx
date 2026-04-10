@@ -19,8 +19,7 @@
 import { forwardRef } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
-
-import type { BpkCardV2Props } from '../common-types';
+import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS, type BpkCardV2Props } from '../common-types';
 
 import STYLES from '../BpkCardV2.module.scss';
 
@@ -45,7 +44,7 @@ const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)
  * @example
  * // Multi-column layout (70/30 on desktop, stacked on mobile).
  * // The `auto` column in templateColumns reserves space for the Divider.
- * <BpkCardV2.Root bgColor="surfaceElevated">
+ * <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceElevated}>
  *   <BpkCardV2.Body templateColumns={{ base: '1fr', tablet: '7fr auto 3fr' }}>
  *     <BpkCardV2.Section>Main content</BpkCardV2.Section>
  *     <BpkCardV2.Divider />
@@ -56,9 +55,9 @@ const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)
 const Root = forwardRef<HTMLDivElement, BpkCardV2Props>(
   (
     {
-      bgColor = 'surfaceDefault',
+      bgColor = CARD_V2_SURFACE_COLORS.surfaceDefault,
       children,
-      variant = 'default',
+      variant = CARD_V2_VARIANTS.default,
       ...rest
     },
     ref,

@@ -1,0 +1,121 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/utils';
+
+.bpk-inset-banner-v3 {
+  border-radius: tokens.$bpk-border-radius-sm;
+  overflow: hidden;
+  container-type: inline-size;
+
+  &--on-light {
+    color: tokens.$bpk-text-on-light-day;
+    fill: tokens.$bpk-text-on-light-day;
+  }
+
+  &--on-dark {
+    color: tokens.$bpk-text-on-dark-day;
+    fill: tokens.$bpk-text-on-dark-day;
+  }
+
+  &__header {
+    display: grid;
+    padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'leading content trailing';
+    align-items: center;
+    gap: tokens.bpk-spacing-base();
+
+    // Narrow: logo + sponsored on top row, content on second row
+    @container (max-width: 25rem) {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'leading trailing'
+        'content content';
+      gap: tokens.bpk-spacing-sm();
+
+      // Override: keep horizontal layout even at narrow widths
+      &--horizontal {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 'leading content trailing';
+        align-items: center;
+        gap: tokens.bpk-spacing-base();
+      }
+    }
+
+    &--vertical {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'leading trailing'
+        'content content';
+      gap: tokens.bpk-spacing-sm();
+    }
+  }
+
+  &__leading-accessory {
+    display: flex;
+    grid-area: leading;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    min-width: 0;
+    grid-area: content;
+    flex-direction: column;
+    word-wrap: break-word;
+  }
+
+  &__trailing-accessory {
+    display: flex;
+    grid-area: trailing;
+    align-items: center;
+
+    @container (max-width: 25rem) {
+      align-self: flex-start;
+    }
+
+    // When inside a forced-horizontal header, stay vertically centered
+    .bpk-inset-banner-v3__header--horizontal > & {
+      align-self: center;
+    }
+
+    &--interactive {
+      padding: 0;
+      border: none;
+      background: none;
+      color: inherit;
+      cursor: pointer;
+
+      @include utils.bpk-touch-tappable;
+
+      &:focus-visible {
+        @include utils.bpk-focus-indicator;
+      }
+    }
+  }
+
+  &__body {
+    padding: tokens.bpk-spacing-base();
+
+    &--bleed {
+      padding: 0;
+    }
+  }
+}

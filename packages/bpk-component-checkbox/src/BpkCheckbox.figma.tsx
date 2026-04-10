@@ -22,26 +22,16 @@ import BpkCheckbox from './BpkCheckbox';
 
 figma.connect(
   BpkCheckbox,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30442%3A60450',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A4777',
   {
     props: {
-      state: figma.enum('State', {
-        Disabled: true,
-      }),
-      style: figma.enum('Style', {
-        Default: false,
-        'On dark': true,
-      }),
       label: figma.textContent('Option'),
-      onChange: () => {},
     },
-    example: ({ label, onChange, state, style }) => (
+    example: ({ label }) => (
       <BpkCheckbox
         name={label}
         label={label}
-        onChange={onChange}
-        white={style}
-        disabled={state}
+        onChange={() => {}}
       />
     ),
   },

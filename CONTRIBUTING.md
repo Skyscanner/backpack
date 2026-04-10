@@ -11,6 +11,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Design documentation](#design-documentation)
 * [Experimenting with Backpack components](#experimenting-with-backpack-components)
 * [How to](#how-to)
+* [Figma Code Connect](#figma-code-connect)
 
 ## Prerequisites
 
@@ -122,7 +123,7 @@ If you want to add a new component:
 1. Use `bpk-component-boilerplate` to create a new skeleton React component
 2. Our components where possible are written as function components, familiarise yourself using [React component guidelines](https://react.dev/reference/react/Component) for more guidance
     - **For new components we restrict the use of `className` and `style` props to avoid allowing overwriting the component's styles and to ensure consistency across our product.**
-3. Create stories - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
+3. Create stories - stories are colocated with the component source code at `packages/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
@@ -300,6 +301,39 @@ Releases are managed by the Backpack design system team. If you have contributed
 - Once released verify the artifacts are available
 
 </details>
+
+## Figma Code Connect
+
+Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. When `.figma.tsx` files are merged to `main`, a GitHub Actions workflow automatically publishes the mappings to Figma.
+
+### Regenerating all Figma assets
+
+To regenerate both the `figma.config.json` import path mappings and the icon Code Connect mappings in one step:
+
+```sh
+FIGMA_ACCESS_TOKEN=<your-token> npm run figma:generate
+```
+
+This runs two scripts in sequence:
+
+1. `npm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
+2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/bpk-component-icon/BpkIcon.figma.tsx`
+
+### Import path configuration
+
+`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `npm run figma:generate-config` to update it after adding new components.
+
+### Icon mappings
+
+Icon Code Connect mappings are auto-generated. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
+
+### Component mappings
+
+For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples. After adding a new `.figma.tsx` file, run `npm run figma:generate-config` to update the import path mappings.
+
+### Publishing
+
+The `sync-figma-code-connect` workflow (`.github/workflows/sync-figma-code-connect.yml`) runs on pushes to `main` when `packages/**/*.figma.tsx` files change. It requires the `FIGMA_TOKEN` secret to be configured in the repository.
 
 ## And finally..
 

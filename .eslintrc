@@ -81,6 +81,12 @@
     //     ]
     //   }
     // ],
+    "no-restricted-imports": ["error", {
+      "patterns": [{
+        "group": ["@ark-ui/react/*"],
+        "message": "Use '@ark-ui/react' instead of deep imports like '@ark-ui/react/dialog'. Deep imports cause transpilation errors during release."
+      }]
+    }],
     "backpack/use-components": "off",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
@@ -163,7 +169,14 @@
               "Checkbox.Root", // allowed for styling to be passed to ark-ui component
               "Checkbox.Control", // allowed for styling to be passed to ark-ui component
               "Checkbox.Indicator", // allowed for styling to be passed to ark-ui component
-              "Checkbox.Label" // allowed for styling to be passed to ark-ui component
+              "Checkbox.Label", // allowed for styling to be passed to ark-ui component
+              "Dialog.Backdrop", // allowed for styling to be passed to ark-ui component
+              "Dialog.CloseTrigger", // allowed for styling to be passed to ark-ui component
+              "Dialog.Content", // allowed for styling to be passed to ark-ui component
+              "Dialog.Description", // allowed for styling to be passed to ark-ui component
+              "Dialog.Positioner", // allowed for styling to be passed to ark-ui component
+              "Dialog.Trigger", // allowed for styling to be passed to ark-ui component
+              "Dialog.Title" // allowed for styling to be passed to ark-ui component
             ]
           }
         ]
@@ -172,7 +185,7 @@
   },
   "overrides": [
     {
-      "files": ["*test*", "*examples*"],
+      "files": ["*test*", "*examples*", "*stories*"],
       "rules": {
         "@skyscanner/rules/forbid-component-props": ["off"]
       }

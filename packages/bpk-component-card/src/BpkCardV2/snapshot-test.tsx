@@ -25,6 +25,7 @@ import { BpkProvider } from '../../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 
 import BpkCardV2 from './BpkCardV2';
+import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './common-types';
 
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
@@ -74,7 +75,7 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - outlined variant', () => {
     const { container } = renderWithProvider(
-      <BpkCardV2.Root variant="outlined">
+      <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined}>
         <BpkCardV2.Header>Outlined Card</BpkCardV2.Header>
         <BpkCardV2.Body>Content with border instead of shadow</BpkCardV2.Body>
       </BpkCardV2.Root>,
@@ -85,7 +86,7 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - elevated surface color', () => {
     const { container } = renderWithProvider(
-      <BpkCardV2.Root bgColor="surfaceElevated">
+      <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceElevated}>
         <BpkCardV2.Body>Elevated background surface</BpkCardV2.Body>
       </BpkCardV2.Root>,
     );
@@ -95,7 +96,7 @@ describe('BpkCardV2 Snapshots', () => {
 
   it('matches snapshot - complex layout with all sections', () => {
     const { container } = renderWithProvider(
-      <BpkCardV2.Root variant="default" bgColor="surfaceDefault">
+      <BpkCardV2.Root variant={CARD_V2_VARIANTS.default} bgColor={CARD_V2_SURFACE_COLORS.surfaceDefault}>
         <BpkCardV2.Header>Product</BpkCardV2.Header>
         <BpkCardV2.Body templateColumns="65fr auto 35fr">
           <BpkCardV2.Section>
