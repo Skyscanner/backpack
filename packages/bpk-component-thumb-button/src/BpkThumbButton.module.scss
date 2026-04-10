@@ -66,19 +66,11 @@
     fill: currentcolor;
   }
 
-  &--small {
-    width: auto;
-    height: auto;
+  &--color-primary {
     color: tokens.$bpk-text-primary-day;
-
-    @include typography.bpk-text-xs;
 
     @include utils.bpk-hover {
       color: tokens.$bpk-text-secondary-day;
-    }
-
-    &::before {
-      content: none;
     }
 
     &.bpk-thumb-button--selected {
@@ -87,6 +79,17 @@
       @include utils.bpk-hover {
         color: tokens.$bpk-core-accent-day;
       }
+    }
+  }
+
+  &--small {
+    width: auto;
+    height: auto;
+
+    @include typography.bpk-text-xs;
+
+    &::before {
+      content: none;
     }
   }
 }

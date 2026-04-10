@@ -134,4 +134,19 @@ describe('BpkThumbButton', () => {
     expect(screen.getByTestId('bpk-thumb-button-up')).not.toHaveClass('bpk-thumb-button--small');
   });
 
+  it('should apply color-primary class when iconColor is primary', () => {
+    render(
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" onClick={mockOnClick} iconColor="primary" />,
+    );
+    expect(screen.getByTestId('bpk-thumb-button-up')).toHaveClass('bpk-thumb-button--color-primary');
+  });
+
+  it('should not apply color-primary class when iconColor is default', () => {
+    render(
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" onClick={mockOnClick} iconColor="default" />,
+    );
+    expect(screen.getByTestId('bpk-thumb-button-up')).not.toHaveClass('bpk-thumb-button--color-primary');
+  });
+
+
 });

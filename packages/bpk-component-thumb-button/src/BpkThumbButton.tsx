@@ -31,12 +31,17 @@ const getClassName = cssModules(STYLES);
 
 export type ThumbsButtonType = 'up' | 'down';
 export type ThumbsButtonSize = 'default' | 'small';
+export type ThumbsButtonColor = 'default' | 'primary';
 
 export type BpkThumbButtonProps = {
   /**
    * Accessibility label for screen readers (REQUIRED).
    */
   accessibilityLabel: string;
+  /**
+   * Icon color variant. 'primary' uses the primary text color, 'default' uses the disabled text color (grayish).
+   */
+  iconColor?: ThumbsButtonColor;
   /**
    * Click handler callback.
    */
@@ -57,6 +62,7 @@ export type BpkThumbButtonProps = {
 
 const BpkThumbButton = ({
   accessibilityLabel,
+  iconColor = 'default',
   onClick,
   selected = false,
   size = 'default',
@@ -73,6 +79,7 @@ const BpkThumbButton = ({
     'bpk-thumb-button',
     selected && 'bpk-thumb-button--selected',
     size === 'small' && 'bpk-thumb-button--small',
+    iconColor === 'primary' && 'bpk-thumb-button--color-primary',
   );
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {

@@ -93,6 +93,16 @@ const MixedExample = () => (
         <BpkThumbButton accessibilityLabel="Thumbs down" type="down" selected onClick={noop} />
       </BpkHStack>
       <BpkHStack gap={BpkSpacing.Base}>
+        <span>Primary color:</span>
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" iconColor="primary" onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" iconColor="primary" onClick={noop} />
+      </BpkHStack>
+      <BpkHStack gap={BpkSpacing.Base}>
+        <span>Primary color selected:</span>
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" iconColor="primary" selected onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" iconColor="primary" selected onClick={noop} />
+      </BpkHStack>
+      <BpkHStack gap={BpkSpacing.Base}>
         <span>Small:</span>
         <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" onClick={noop} />
         <BpkThumbButton accessibilityLabel="Thumbs down" type="down" size="small" onClick={noop} />
@@ -101,6 +111,11 @@ const MixedExample = () => (
         <span>Small selected:</span>
         <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" selected onClick={noop} />
         <BpkThumbButton accessibilityLabel="Thumbs down" type="down" size="small" selected onClick={noop} />
+      </BpkHStack>
+      <BpkHStack gap={BpkSpacing.Base}>
+        <span>Small primary color:</span>
+        <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" iconColor="primary" onClick={noop} />
+        <BpkThumbButton accessibilityLabel="Thumbs down" type="down" size="small" iconColor="primary" onClick={noop} />
       </BpkHStack>
     </BpkBox>
   </BpkProvider>
