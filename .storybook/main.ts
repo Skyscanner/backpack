@@ -18,9 +18,13 @@
 
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
+// Use the faster react-docgen locally; switch to react-docgen-typescript in CI
+// for full TypeScript prop inference in Storybook Docs.
+const isCI = !!process.env.CI;
+
 const config: StorybookConfig = {
   stories: [
-    '../examples/**/{stories,*.stories}.@(ts|tsx|js|jsx)',
+    '../packages/*/src/**/*.stories.@(ts|tsx|js|jsx)',
   ],
   addons: [
     '@storybook/addon-a11y',
@@ -35,16 +39,25 @@ const config: StorybookConfig = {
     defaultName: 'Documentation'
   },
   typescript: {
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      shouldIncludePropTagMap: true,
-      propFilter: (prop) => {
-        const isHTMLElementProp =
-            prop.parent?.fileName.includes("node_modules") ?? false
+    reactDocgen: isCI ? 'react-docgen-typescript' : 'react-docgen',
+    ...(isCI ? {
+      reactDocgenTypescriptOptions: {
+        shouldIncludePropTagMap: true,
+        propFilter: (prop) => {
+          const isHTMLElementProp =
+              prop.parent?.fileName.includes("node_modules") ?? false
+          // Best-effort build-time filter for `?: never` props. The argTypesEnhancer
+          // in preview.tsx provides the runtime guarantee for production static builds
+          // where webpack module optimisations may bypass this filter.
+          // With strictNullChecks (strict: true), `?: never` resolves to
+          // `never | undefined = undefined`, so the type name is 'undefined'.
+          // Without strictNullChecks the type name is 'never'. Handle both.
+          const isNeverProp = prop.type?.name === 'never' || prop.type?.name === 'undefined'
 
-        return !isHTMLElementProp
+          return !isHTMLElementProp && !isNeverProp
+        },
       },
-    },
+    } : {}),
   },
 };
 export default config;

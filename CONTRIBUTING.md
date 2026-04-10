@@ -73,6 +73,21 @@ npm run build
 npm start
 ```
 
+> **Local vs CI Storybook**
+>
+> | | Local (`npm start`) | CI build (`npm run storybook:dist`) |
+> |---|---|---|
+> | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
+> | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |
+> | Webpack cache | filesystem (`storybook-local`) | webpack default (no override) |
+>
+> Local builds use a named filesystem cache partition (`storybook-local`), so switching between local and CI modes does not produce stale-cache warnings. CI does not override the webpack cache and relies on webpack's default behaviour.
+>
+> If you see `[webpack.cache.PackFileCacheStrategy] Restoring failed` warnings, clear the cache and restart:
+> ```sh
+> rm -rf node_modules/.cache && npm start
+> ```
+
 ## Write your code
 
 Before you start writing code, we recommend familiarising yourself with the engineering conventions and squad decisions which are kept in the [decisions folder](/decisions). You should also check out the start guidance at [skyscanner.design](https://www.skyscanner.design/latest/getting-started/about-backpack-pN209Wjo)
@@ -123,7 +138,7 @@ If you want to add a new component:
 1. Use `bpk-component-boilerplate` to create a new skeleton React component
 2. Our components where possible are written as function components, familiarise yourself using [React component guidelines](https://react.dev/reference/react/Component) for more guidance
     - **For new components we restrict the use of `className` and `style` props to avoid allowing overwriting the component's styles and to ensure consistency across our product.**
-3. Create stories - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
+3. Create stories - stories are colocated with the component source code at `packages/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`

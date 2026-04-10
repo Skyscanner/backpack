@@ -26,7 +26,9 @@ const files = new Glob(DIR_GLOB, {});
 
 try {
   for (const file of files) {
-    compile(file);
+    if (!file.includes('.stories.')) {
+      compile(file);
+    }
   }
 } catch (err) {
   // eslint-disable-next-line no-console

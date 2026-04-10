@@ -142,6 +142,48 @@ describe('BpkDialogWrapper', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+    it('should lock body scroll when dialog is open', () => {
+      Object.defineProperty(window, 'scrollY', { value: 200, configurable: true });
+
+      render(
+        <BpkDialogWrapper {...props}>
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      expect(document.body.style.position).toEqual('fixed');
+      expect(document.body.style.width).toEqual('100%');
+      expect(document.body.style.overflow).toEqual('hidden');
+      expect(document.body.style.top).toEqual('-200px');
+      expect(document.body.style.touchAction).toEqual('none');
+      expect(document.body.style.overscrollBehavior).toEqual('contain');
+    });
+    it('should restore body scroll styles when dialog is closed', () => {
+      Object.defineProperty(window, 'scrollY', { value: 0, configurable: true });
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation(() => {});
+
+      const { rerender } = render(
+        <BpkDialogWrapper {...props} isOpen>
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      rerender(
+        <BpkDialogWrapper {...props} isOpen={false}>
+          Dialog content
+        </BpkDialogWrapper>
+      );
+
+      expect(document.body.style.position).toEqual('');
+      expect(document.body.style.width).toEqual('');
+      expect(document.body.style.overflow).toEqual('');
+      expect(document.body.style.top).toEqual('');
+      expect(document.body.style.touchAction).toEqual('');
+      expect(document.body.style.overscrollBehavior).toEqual('');
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
+
+      scrollToSpy.mockRestore();
+    });
   })
 
   describe('dialog is not supported', () => {
@@ -248,16 +290,6 @@ describe('BpkDialogWrapper', () => {
         </BpkDialogWrapper>
       );
       expect(asFragment()).toMatchSnapshot();
-    });
-    it('should reset position and width when dialog is closed', () => {
-      render(
-        <BpkDialogWrapper {...props} isOpen={false}>
-          <div>Dialog content</div>
-        </BpkDialogWrapper>,
-      );
-
-      expect(document.body.style.position).toEqual('relative');
-      expect(document.body.style.width).toEqual('auto');
     });
   })
 })

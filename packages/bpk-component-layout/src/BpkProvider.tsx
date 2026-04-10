@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
+import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
 
 import { createBpkConfig } from './theme';
 
@@ -29,14 +29,13 @@ export interface BpkProviderProps {
 }
 
 /**
- * Creates a Chakra UI system with Backpack token mappings
- * Chakra UI 3.0 uses `createSystem` with `defaultConfig` and custom config
+ * Creates a Chakra UI system with Backpack token mappings.
+ *
+ * Uses `defaultBaseConfig` (conditions + utilities only) instead of
+ * `defaultConfig` to avoid bundling ~141KB of unused component recipes.
+ * See: https://chakra-ui.com/guides/component-bundle-optimization
  */
-// Remove Chakra's global CSS to prevent style conflicts with Backpack components
-const { globalCss: _chakraGlobalCss, ...defaultConfigWithoutGlobalCss } =
-  defaultConfig;
-
-const bpkSystem = createSystem(defaultConfigWithoutGlobalCss, createBpkConfig());
+const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
 
 type Direction = 'ltr' | 'rtl';
 
