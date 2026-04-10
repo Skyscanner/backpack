@@ -11,6 +11,7 @@
 /packages/bpk-component-spinner/src/spinners
 /packages/bpk-component-flare/src/__generated__
 !/packages/bpk-component-icon/src
+!/packages/bpk-component-icon/scripts
 node_modules
 npm-debug.*
 yarn.lock
@@ -22,3 +23,11 @@ yarn.lock
 !packages/bpk-stylesheets/base.css
 /packages/bpk-stylesheets/normalize.scss
 .copilot-progress
+
+# Playwright
+.playwright-cli
+
+# OpenSpec - until Backpack officially endorses it
+.claude/commands/opsx
+.claude/skills/openspec-*
+openspec

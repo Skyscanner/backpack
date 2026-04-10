@@ -23,7 +23,7 @@ import BpkAccordionItem from './BpkAccordionItem';
 
 figma.connect(
   BpkAccordion,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=26748%3A30215',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10855%3A4631',
   {
     props: {
       divider: figma.boolean('Top divider?'),

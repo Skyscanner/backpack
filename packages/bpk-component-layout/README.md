@@ -32,14 +32,16 @@ export default function App({ children }) {
 
 ### BpkBox
 
-`BpkBox` is a layout container that exposes a **restricted, tokenised** prop API. It is intended for spacing, sizing and structural layout only – not for typography, colors, borders or complex interaction.
+`BpkBox` is a layout container that exposes a **restricted, tokenised** prop API. It supports spacing, sizing, structural layout, and Backpack color tokens.
 
 ```tsx
 import {
+  BACKGROUND_COLORS,
   BpkBox,
   BpkProvider,
   BpkSpacing,
 } from '@skyscanner/backpack-web/bpk-component-layout';
+import { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default function Example() {
   return (
@@ -49,6 +51,8 @@ export default function Example() {
         margin={BpkSpacing.MD}
         width="50%"
         minHeight="6rem"
+        color={TEXT_COLORS.textPrimary}
+        backgroundColor={BACKGROUND_COLORS.surfaceDefault}
         data-testid="layout-box"
       >
         Layout content
@@ -103,8 +107,21 @@ The layout API is intentionally limited and strongly typed. The main groups are:
   - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …) or percentages (e.g. `'50%'`).
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
-- **Position** – `top`, `right`, `bottom`, `left`:
-  - Values: rem strings (e.g. `'1rem'`) or percentages (e.g. `'50%'`).
+- **Position keyword** – `position`:
+  - Values: `'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'`. Supports responsive overrides.
+- **Position offsets** – `top`, `right`, `bottom`, `left`:
+  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), or bare `'0'` (no unit required). Supports responsive overrides.
+- **Overflow** – `overflow`, `overflowX`, `overflowY`:
+  - Values: `'visible' | 'hidden' | 'scroll' | 'auto' | 'clip'`. All three support responsive overrides. Use `overflowX`/`overflowY` for per-axis control (e.g. `overflowX="hidden"` + `overflowY="auto"`).
+- **Stacking context** – `zIndex`:
+  - Values: any `number` or `'auto'`. Not responsive (z-index is not breakpoint-dependent).
+- **Accessibility** – `id`, `role`, `tabIndex`, and all `aria-*` attributes:
+  - `id?: string` – for `aria-labelledby`/`aria-describedby` cross-references and anchor navigation.
+  - `role?: AriaRole` – ARIA landmark/widget role.
+  - `tabIndex?: number` – makes the element focusable.
+  - All React `aria-*` props (`aria-label`, `aria-labelledby`, `aria-hidden`, `aria-expanded`, etc.) are supported via `React.AriaAttributes`.
+- **Color** – `color`: text color token from `TEXT_COLORS` (same set as `BpkText`).
+- **Background color** – `backgroundColor`: background color token from `BACKGROUND_COLORS`.
 - **Testing attributes** – `data-testid`, `data-cy` for automation and testing.
 
 In addition, `BpkBox` forwards through a set of **flexbox and grid layout props** from the underlying layout system, for example:
@@ -112,9 +129,12 @@ In addition, `BpkBox` forwards through a set of **flexbox and grid layout props*
 - `display="flex"`, `flexDirection`, `justifyContent`, `alignItems`, `flexWrap`
 - `display="grid"`, `gridTemplateColumns`, `gridTemplateRows`, `gap`
 
-In addition, `BpkBox` re‑introduces a **minimal interaction surface**:
+In addition, `BpkBox` re‑introduces a **minimal interaction and accessibility surface**:
 
-- `onClick`, `onFocus`, `onBlur`
+- `onClick`, `onFocus`, `onBlur` – event handlers for interactive container patterns.
+- `tabIndex`, `role` – make containers focusable and assign ARIA roles (e.g. `role="region"`, `role="button"`).
+- `id` – useful for `aria-labelledby`/`aria-describedby` cross-references.
+- All `aria-*` props – forwarded directly to the DOM element for full ARIA attribute support.
 
 No other event handlers are exposed on layout components.
 
@@ -126,6 +146,40 @@ No other event handlers are exposed on layout components.
 - **`BpkFlex`**: A dedicated flex container primitive. Prefer this when you want a clear, ergonomic flex API (`direction/align/justify/wrap/...`) with Backpack responsive values.
 - **`BpkGrid` / `BpkGridItem`**: Dedicated grid primitives. Prefer these for grid layout composition; use `BpkGridItem` when you want explicit spans/placement.
 - **`BpkStack` / `BpkHStack` / `BpkVStack`**: Dedicated stack primitives. Prefer these when you want consistent tokenised gaps and the simplest stacking API.
+
+### Color and background color
+
+`BpkBox`, `BpkFlex`, `BpkGrid`, `BpkGridItem`, `BpkStack`, `BpkHStack`, and `BpkVStack` all accept `color` and `backgroundColor` props. Both use CSS classes under the hood (not Chakra inline styles) so they correctly integrate with Backpack's theming system.
+
+> **Note:** `BpkVessel` is a migration hatch that forwards HTML attributes (`className`, `style`) and does **not** support tokenised `color` or `backgroundColor` props.
+
+**`color`** – accepts any value from `TEXT_COLORS` (re-exported from `bpk-component-text`):
+
+```tsx
+import { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+
+<BpkBox color={TEXT_COLORS.textPrimary}>...</BpkBox>
+<BpkFlex color={TEXT_COLORS.textOnDark}>...</BpkFlex>
+```
+
+**`backgroundColor`** – accepts any value from `BACKGROUND_COLORS`, which covers three categories (day mode):
+
+| Category | Tokens |
+|---|---|
+| Surface | `surfaceDefault`, `surfaceElevated`, `surfaceHero`, `surfaceContrast`, `surfaceHighlight`, `surfaceSubtle`, `surfaceLowContrast`, `surfaceTint` |
+| Canvas | `canvas`, `canvasContrast` |
+| Status fill | `statusSuccessFill`, `statusDangerFill`, `statusWarningFill` |
+
+```tsx
+import {
+  BACKGROUND_COLORS,
+  BpkBox,
+  BpkStack,
+} from '@skyscanner/backpack-web/bpk-component-layout';
+
+<BpkBox backgroundColor={BACKGROUND_COLORS.surfaceDefault}>...</BpkBox>
+<BpkStack backgroundColor={BACKGROUND_COLORS.statusSuccessFill}>...</BpkStack>
+```
 
 ### Responsive values
 
@@ -165,8 +219,9 @@ Under the hood these keys are mapped to Chakra’s breakpoint keys (`base`, `sm`
 In particular:
 
 - **`BpkBox`** supports Backpack responsive values for:
-  - **Spacing/size/position** props (tokenised): `padding`, `margin`, `gap`, `width/height`, `top/right/bottom/left`, etc.
+  - **Spacing/size/position** props (tokenised): `padding`, `margin`, `gap`, `width/height`, `top/right/bottom/left`, `position`, `overflow`, `overflowX`, `overflowY`, etc.
   - **Key structural layout props**: `display`, flex container/item props, and grid container props (via Backpack breakpoint keys).
+  - **Not responsive**: `zIndex` (stacking context is not breakpoint-dependent), `id`, `aria-*` attributes.
 - **`BpkGridItem`** placement props like `colSpan/rowSpan` are currently scalar (non-responsive) and should be extended only when needed.
 
 ## Constraints and design principles
@@ -176,7 +231,7 @@ To keep layout predictable, performant and consistent with Backpack:
 - **No arbitrary class names** – `className` is not supported on layout components; use layout props and tokens instead. **Exception:** `BpkVessel` allows `className` as a migration hatch.
 - **No inline styles** – `style` is not supported on layout components to avoid ad‑hoc overrides of the design system. **Exception:** `BpkVessel` allows `style` as a migration hatch.
 - **No shorthand props** – Chakra shorthands such as `p`, `m`, `w`, `h`, `bg`, `rounded`, `shadow` are not exposed on Backpack layout components.
-- **No colors, borders, radii or shadows** – visual props such as `color`, `backgroundColor`, `borderColor`, `borderWidth`, `borderRadius`, `boxShadow` are not part of the layout surface.
+- **Tokenised colors only** – `color` and `backgroundColor` are supported but must use Backpack tokens (`TEXT_COLORS` / `BACKGROUND_COLORS`); raw CSS values and Chakra color props (`borderColor`, `borderWidth`, `borderRadius`, `boxShadow`) are not exposed.
 - **No composite border shorthands** – props like `border`, `borderX`, `borderInline`, `borderBlock` are not supported.
 - **No typography props** – font family/size/line height/etc. should come from dedicated text components, not from layout primitives.
 - **No transition/transform props** – layout components are purely structural; animations and transforms should live in higher‑level components.
@@ -190,10 +245,15 @@ This package includes Storybook examples under `examples/bpk-component-layout` s
 - Basic spacing
 - RTL‑friendly spacing (`marginInline`, `paddingInline`)
 - Size props
-- Position props
+- Position keyword (`position`) and offset props (`top/right/bottom/left`)
+- Overflow props (`overflow`, `overflowX`, `overflowY`)
+- Stacking context (`zIndex`)
+- Accessibility props (`id`, `aria-label`, `aria-labelledby`)
 - Flexbox layout
 - Grid layout
 - Responsive layout using Backpack breakpoints
+- Color (`TEXT_COLORS`)
+- Surface, canvas and status fill background colors (`BACKGROUND_COLORS`)
 
 Use these examples as a reference for how to compose layout props and tokens. As new layout components (e.g. `BpkFlex`, `BpkGrid`, `BpkStack`) are added, they should follow the same prop and constraints model.
 

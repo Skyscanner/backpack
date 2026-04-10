@@ -22,6 +22,7 @@ export const ALERT_TYPES = {
   WARNING: 'warning',
   ERROR: 'error',
   INFO: 'info',
+  CRITICAL: 'critical',
 } as const;
 
 export const STYLE_TYPES = {

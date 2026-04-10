@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ReactElement, ReactNode } from 'react';
 
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';

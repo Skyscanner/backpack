@@ -17,6 +17,8 @@
  */
 
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 // eslint-disable-next-line no-console
 console.log('Copying CSS files...');
@@ -26,19 +28,10 @@ const cssFiles = execSync('find packages -name "*.css" | grep -v node_modules | 
   .split('\n')
   .filter((s) => s !== '');
 
-// eslint-disable-next-line array-callback-return
-cssFiles.map((cssFile) => {
-  let component;
-  const paths = cssFile.split('packages/');
-  const componentPath = paths[1].split('/');
-
-  // V2 components are nested inside a folder
-  if (paths[1].match(/\/Bpk.*\//) || paths[1].match(/__generated__/)){
-    component = `${componentPath[0]}/${componentPath[1]}/${componentPath[2]}`;
-  } else {
-    component = `${componentPath[0]}/${componentPath[1]}`;
-  }
-  execSync(`cp ${cssFile} dist/${component}`);
+cssFiles.forEach((cssFile) => {
+  const destDir = path.dirname(cssFile).replace(/^packages\//, 'dist/');
+  fs.mkdirSync(destDir, { recursive: true });
+  fs.copyFileSync(cssFile, path.join(destDir, path.basename(cssFile)));
 });
 
 // eslint-disable-next-line no-console

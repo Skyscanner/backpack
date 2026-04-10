@@ -21,18 +21,33 @@ import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttribute
 import type { BpkBoxProps, BpkFlexProps, BpkGridProps } from '../../../bpk-component-layout';
 
 /** Surface color token options for BpkCardV2 background */
-export type BpkCardV2SurfaceColor =
-  | 'surfaceDefault'
-  | 'surfaceElevated'
-  | 'surfaceTint'
-  | 'surfaceSubtle'
-  | 'surfaceHero'
-  | 'surfaceContrast'
-  | 'surfaceLowContrast'
-  | 'surfaceHighlight';
+export const CARD_V2_SURFACE_COLORS = {
+  surfaceDefault: 'surfaceDefault',
+  surfaceElevated: 'surfaceElevated',
+  surfaceTint: 'surfaceTint',
+  surfaceSubtle: 'surfaceSubtle',
+  surfaceHero: 'surfaceHero',
+  surfaceContrast: 'surfaceContrast',
+  surfaceLowContrast: 'surfaceLowContrast',
+  surfaceHighlight: 'surfaceHighlight',
+} as const;
+
+export type BpkCardV2SurfaceColor = (typeof CARD_V2_SURFACE_COLORS)[keyof typeof CARD_V2_SURFACE_COLORS];
 
 /** Visual variant options for BpkCardV2 */
-export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
+export const CARD_V2_VARIANTS = {
+  default: 'default',
+  outlined: 'outlined',
+  noElevation: 'noElevation',
+  carsPrompt: 'carsPrompt',
+} as const;
+
+export type BpkCardV2Variant = (typeof CARD_V2_VARIANTS)[keyof typeof CARD_V2_VARIANTS];
+
+type BpkCardV2BaseProps = Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'style'> & {
+  /** Card content - use Header, Body, Footer subcomponents */
+  children: ReactNode;
+};
 
 /**
  * BpkCardV2 root component props.
@@ -40,23 +55,29 @@ export type BpkCardV2Variant = 'default' | 'outlined' | 'noElevation';
  * Composable card component with explicit Header/Body/Footer subcomponents.
  * Supports multiple surface colors, visual variants, and responsive multi-column layouts.
  *
+ * Note: `bgColor` is not supported for the `carsPrompt` variant — its background is fixed
+ * by design and cannot be customised.
+ *
  * @example
- * <BpkCardV2 variant="default" bgColor="surfaceDefault">
+ * <BpkCardV2 variant={CARD_V2_VARIANTS.default} bgColor={CARD_V2_SURFACE_COLORS.surfaceDefault}>
  *   <BpkCardV2.Header>Title</BpkCardV2.Header>
  *   <BpkCardV2.Body>Content</BpkCardV2.Body>
  *   <BpkCardV2.Footer>Footer</BpkCardV2.Footer>
  * </BpkCardV2>
  */
-export type BpkCardV2Props = Omit<HTMLAttributes<HTMLDivElement>, 'className' | 'style'> & {
-  /** Visual variant controlling styling treatment (shadow/border) */
-  variant?: BpkCardV2Variant;
-
-  /** Background surface color token (default: surfaceDefault) */
-  bgColor?: BpkCardV2SurfaceColor;
-
-  /** Card content - use Header, Body, Footer subcomponents */
-  children: ReactNode;
-};
+export type BpkCardV2Props = BpkCardV2BaseProps & (
+  | {
+      /** Visual variant controlling styling treatment (shadow/border) */
+      variant?: Exclude<BpkCardV2Variant, 'carsPrompt'>;
+      /** Background surface color token (default: surfaceDefault) */
+      bgColor?: BpkCardV2SurfaceColor;
+    }
+  | {
+      /** Cars prompt variant — bgColor is fixed and cannot be set */
+      variant: 'carsPrompt';
+      bgColor?: never;
+    }
+);
 
 /**
  * BpkCardV2.Header component props.
