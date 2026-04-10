@@ -33,11 +33,15 @@ module.exports = ({ config }) => {
     config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
       ? config.cache
       : {};
+  // In CI each job starts from a clean environment so a persistent filesystem
+  // cache would be written and immediately discarded — use memory cache instead.
+  // Locally, use a named filesystem partition ('storybook-local') so that
+  // switching between local and CI=true runs does not leave stale entries that
+  // cause PackFileCacheStrategy restore warnings.
   /* eslint-disable-next-line no-param-reassign */
-  config.cache = {
-    ...existingCache,
-    type: 'filesystem',
-  };
+  config.cache = process.env.CI
+    ? { ...existingCache, type: 'memory' }
+    : { ...existingCache, type: 'filesystem', name: 'storybook-local' };
 
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({

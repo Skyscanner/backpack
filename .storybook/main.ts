@@ -46,8 +46,11 @@ const config: StorybookConfig = {
         propFilter: (prop) => {
           const isHTMLElementProp =
               prop.parent?.fileName.includes("node_modules") ?? false
+          // Hide props explicitly typed as `never` — these are intentionally
+          // disallowed at the TypeScript level and should not appear in docs.
+          const isNeverProp = prop.type?.name === 'never'
 
-          return !isHTMLElementProp
+          return !isHTMLElementProp && !isNeverProp
         },
       },
     } : {}),

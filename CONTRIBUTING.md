@@ -73,6 +73,21 @@ npm run build
 npm start
 ```
 
+> **Local vs CI Storybook**
+>
+> | | Local (`npm start`) | CI (`CI=true npm run storybook`) |
+> |---|---|---|
+> | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
+> | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |
+> | Webpack cache | filesystem (`storybook-local`) | memory only (not persisted) |
+>
+> Local builds use a named filesystem cache partition (`storybook-local`), so switching between local and CI modes does not produce stale-cache warnings. CI uses an in-memory cache since each job starts from a clean environment and a filesystem cache would be discarded anyway.
+>
+> If you see `[webpack.cache.PackFileCacheStrategy] Restoring failed` warnings, clear the cache and restart:
+> ```sh
+> rm -rf node_modules/.cache && npm start
+> ```
+
 ## Write your code
 
 Before you start writing code, we recommend familiarising yourself with the engineering conventions and squad decisions which are kept in the [decisions folder](/decisions). You should also check out the start guidance at [skyscanner.design](https://www.skyscanner.design/latest/getting-started/about-backpack-pN209Wjo)
