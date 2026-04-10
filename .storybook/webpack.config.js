@@ -28,16 +28,19 @@ const rootDir = path.resolve(__dirname, '../');
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
-  // Enable filesystem caching to speed up subsequent Storybook startups
-  const existingCache =
-    config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
-      ? config.cache
-      : {};
-  /* eslint-disable-next-line no-param-reassign */
-  config.cache = {
-    ...existingCache,
-    type: 'filesystem',
-  };
+  // Locally, enable a named filesystem cache partition ('storybook-local') to
+  // speed up subsequent Storybook startups. This prevents stale module-resolution
+  // entries (PackFileCacheStrategy restore warnings) when switching between local
+  // and CI Storybook modes. CI does not override the cache — it relies on
+  // webpack's default behaviour for the build environment.
+  if (!process.env.CI) {
+    const existingCache =
+      config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
+        ? config.cache
+        : {};
+    /* eslint-disable-next-line no-param-reassign */
+    config.cache = { ...existingCache, type: 'filesystem', name: 'storybook-local' };
+  }
 
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
