@@ -20,13 +20,13 @@ import CloseIcon from '../../../bpk-component-icon/sm/close';
 import BpkImage from '../../../bpk-component-image';
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { ComparisonTrayItemProps } from './common-types';
+import type { BpkComparisonTrayItemProps } from './common-types';
 
-import STYLES from './ComparisonTray.module.scss';
+import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function ComparisonTrayItem({ item, onRemove, removeLabel }: ComparisonTrayItemProps) {
+function BpkComparisonTrayItem({ item, onRemove, removeLabel }: BpkComparisonTrayItemProps) {
   return (
     <div className={getClassName('bpk-comparison-tray__item')}>
       <div className={getClassName('bpk-comparison-tray__item-image-container')}>
@@ -48,4 +48,4 @@ function ComparisonTrayItem({ item, onRemove, removeLabel }: ComparisonTrayItemP
   );
 }
 
-export default ComparisonTrayItem;
+export default BpkComparisonTrayItem;

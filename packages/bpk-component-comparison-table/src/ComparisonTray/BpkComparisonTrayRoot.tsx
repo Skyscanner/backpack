@@ -21,25 +21,25 @@ import { BpkCardV2, CARD_V2_SURFACE_COLORS } from '../../../bpk-component-card';
 import { BpkSpacing } from '../../../bpk-component-layout';
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
-import ComparisonTrayItem from './ComparisonTrayItem';
-import ComparisonTrayItemPlaceholder from './ComparisonTrayItemPlaceholder';
+import BpkComparisonTrayItem from './BpkComparisonTrayItem';
+import BpkComparisonTrayItemPlaceholder from './BpkComparisonTrayItemPlaceholder';
 
-import type { ComparisonTrayRootProps } from './common-types';
+import type { BpkComparisonTrayRootProps } from './common-types';
 
-import STYLES from './ComparisonTray.module.scss';
+import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 const MAX_ITEMS = 3;
 
-function ComparisonTrayRoot({
+function BpkComparisonTrayRoot({
   ariaLabel,
   compareLabel,
   items,
   onCompare,
   onRemove,
   removeLabel,
-}: ComparisonTrayRootProps) {
+}: BpkComparisonTrayRootProps) {
   const displayItems = Array.from({ length: MAX_ITEMS }, (_value, index) => items[index] ?? null);
 
   return (
@@ -61,10 +61,10 @@ function ComparisonTrayRoot({
           >
             {displayItems.map((item, index) =>
               item ? (
-                <ComparisonTrayItem key={item.id} item={item} onRemove={onRemove} removeLabel={`${removeLabel} ${item.label}`} />
+                <BpkComparisonTrayItem key={item.id} item={item} onRemove={onRemove} removeLabel={`${removeLabel} ${item.label}`} />
               ) : (
                 // eslint-disable-next-line react/no-array-index-key
-                <ComparisonTrayItemPlaceholder key={`placeholder-${index}`} />
+                <BpkComparisonTrayItemPlaceholder key={`placeholder-${index}`} />
               ),
             )}
           </BpkCardV2.Section>
@@ -82,4 +82,4 @@ function ComparisonTrayRoot({
   );
 }
 
-export default ComparisonTrayRoot;
+export default BpkComparisonTrayRoot;

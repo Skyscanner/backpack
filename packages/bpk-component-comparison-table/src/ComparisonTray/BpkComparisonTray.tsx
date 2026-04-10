@@ -16,19 +16,19 @@
  * limitations under the License.
  */
 
-import ComparisonTrayItem from './ComparisonTrayItem';
-import ComparisonTrayItemPlaceholder from './ComparisonTrayItemPlaceholder';
-import ComparisonTrayRoot from './ComparisonTrayRoot';
+import BpkComparisonTrayItem from './BpkComparisonTrayItem';
+import BpkComparisonTrayItemPlaceholder from './BpkComparisonTrayItemPlaceholder';
+import BpkComparisonTrayRoot from './BpkComparisonTrayRoot';
 
-import type { ComparisonTrayNamespace } from './common-types';
+import type { BpkComparisonTrayNamespace } from './common-types';
 
 /**
- * ComparisonTray is a data-driven tray component for comparing up to 3 items.
+ * BpkComparisonTray is a data-driven tray component for comparing up to 3 items.
  *
  * Consumer usage — only `Root` is the public API:
  *
  * @example
- * <ComparisonTray.Root
+ * <BpkComparisonTray.Root
  *   items={items}
  *   onRemove={(id) => setItems(items.filter(item => item.id !== id))}
  *   onCompare={() => navigate('/compare')}
@@ -37,10 +37,10 @@ import type { ComparisonTrayNamespace } from './common-types';
  * `Item` and `ItemPlaceholder` are internal rendering primitives exported for
  * testing and extension purposes only.
  */
-const ComparisonTray: ComparisonTrayNamespace = {
-  Root: ComparisonTrayRoot,
-  Item: ComparisonTrayItem,
-  ItemPlaceholder: ComparisonTrayItemPlaceholder,
+const BpkComparisonTray: BpkComparisonTrayNamespace = {
+  Root: BpkComparisonTrayRoot,
+  Item: BpkComparisonTrayItem,
+  ItemPlaceholder: BpkComparisonTrayItemPlaceholder,
 };
 
-export default ComparisonTray;
+export default BpkComparisonTray;

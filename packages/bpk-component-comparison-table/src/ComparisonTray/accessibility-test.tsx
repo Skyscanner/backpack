@@ -23,7 +23,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 
 import { BpkProvider } from '../../../bpk-component-layout';
 
-import ComparisonTray from './ComparisonTray';
+import BpkComparisonTray from './BpkComparisonTray';
 
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
@@ -35,7 +35,7 @@ const noop = () => {};
 describe('ComparisonTray accessibility', () => {
   it('has no accessibility violations with 0 items', async () => {
     const { container } = renderWithProvider(
-      <ComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} ariaLabel="Comparison tray" removeLabel="Remove" compareLabel="Compare" />,
+      <BpkComparisonTray.Root items={[]} onRemove={noop} onCompare={noop} ariaLabel="Comparison tray" removeLabel="Remove" compareLabel="Compare" />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -43,7 +43,7 @@ describe('ComparisonTray accessibility', () => {
 
   it('has no accessibility violations with 2 items', async () => {
     const { container } = renderWithProvider(
-      <ComparisonTray.Root
+      <BpkComparisonTray.Root
         items={[
           { id: '1', label: 'VIP Cars', image: 'car1.png' },
           { id: '2', label: 'Hertz', image: 'car2.png' },
@@ -61,7 +61,7 @@ describe('ComparisonTray accessibility', () => {
 
   it('has no accessibility violations with 3 items', async () => {
     const { container } = renderWithProvider(
-      <ComparisonTray.Root
+      <BpkComparisonTray.Root
         items={[
           { id: '1', label: 'VIP Cars', image: 'car1.png' },
           { id: '2', label: 'Hertz', image: 'car2.png' },
@@ -80,7 +80,7 @@ describe('ComparisonTray accessibility', () => {
 
   it('has no accessibility violations with custom compareLabel', async () => {
     const { container } = renderWithProvider(
-      <ComparisonTray.Root
+      <BpkComparisonTray.Root
         items={[
           { id: '1', label: 'VIP Cars', image: 'car1.png' },
           { id: '2', label: 'Hertz', image: 'car2.png' },

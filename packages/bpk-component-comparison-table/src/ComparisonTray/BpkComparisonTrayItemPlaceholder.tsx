@@ -18,11 +18,11 @@
 
 import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from './ComparisonTray.module.scss';
+import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function ComparisonTrayItemPlaceholder() {
+function BpkComparisonTrayItemPlaceholder() {
   return (
     <div
       className={getClassName('bpk-comparison-tray__item-placeholder')}
@@ -31,4 +31,4 @@ function ComparisonTrayItemPlaceholder() {
   );
 }
 
-export default ComparisonTrayItemPlaceholder;
+export default BpkComparisonTrayItemPlaceholder;

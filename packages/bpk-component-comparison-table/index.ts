@@ -16,13 +16,13 @@
  * limitations under the License.
  */
 
-import ComparisonTray from './src/ComparisonTray/ComparisonTray';
+import BpkComparisonTray from './src/ComparisonTray/BpkComparisonTray';
 
 export type {
-  ComparisonItem,
-  ComparisonTrayRootProps,
-  ComparisonTrayItemProps,
-  ComparisonTrayNamespace,
+  BpkComparisonItem,
+  BpkComparisonTrayRootProps,
+  BpkComparisonTrayItemProps,
+  BpkComparisonTrayNamespace,
 } from './src/ComparisonTray/common-types';
 
-export default ComparisonTray;
+export default BpkComparisonTray;
