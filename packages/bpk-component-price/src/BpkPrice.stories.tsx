@@ -20,7 +20,9 @@
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 
 // @ts-expect-error Untyped import
-import BpkPrice, { SIZES, ALIGNS } from './BpkPrice';
+import BpkPrice from './BpkPrice';
+// @ts-expect-error Untyped import
+import { SIZES, ALIGNS } from './common-types';
 
 import type { Meta } from '@storybook/react';
 
