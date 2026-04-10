@@ -46,8 +46,9 @@ const config: StorybookConfig = {
         propFilter: (prop) => {
           const isHTMLElementProp =
               prop.parent?.fileName.includes("node_modules") ?? false
-          // Hide props explicitly typed as `never` — these are intentionally
-          // disallowed at the TypeScript level and should not appear in docs.
+          // Best-effort build-time filter for `?: never` props. The argTypesEnhancer
+          // in preview.tsx provides the runtime guarantee for production static builds
+          // where webpack module optimisations may bypass this filter.
           // With strictNullChecks (strict: true), `?: never` resolves to
           // `never | undefined = undefined`, so the type name is 'undefined'.
           // Without strictNullChecks the type name is 'never'. Handle both.
