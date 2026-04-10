@@ -28,19 +28,21 @@ const rootDir = path.resolve(__dirname, '../');
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
-  // Enable filesystem caching to speed up subsequent Storybook startups
+  // Locally, enable a named filesystem cache partition ('storybook-local') to
+  // speed up subsequent Storybook startups.  In CI each job starts from a clean
+  // environment so a persistent filesystem cache would be written and immediately
+  // discarded — use a plain memory cache instead to avoid carrying over any
+  // filesystem-only cache options (e.g. buildDependencies, name) that could
+  // cause webpack schema-validation errors when type is 'memory'.
+  // Using separate strategies also prevents stale module-resolution entries
+  // (PackFileCacheStrategy restore warnings) when switching between local and CI.
   const existingCache =
     config.cache && typeof config.cache === 'object' && !Array.isArray(config.cache)
       ? config.cache
       : {};
-  // In CI each job starts from a clean environment so a persistent filesystem
-  // cache would be written and immediately discarded — use memory cache instead.
-  // Locally, use a named filesystem partition ('storybook-local') so that
-  // switching between local and CI=true runs does not leave stale entries that
-  // cause PackFileCacheStrategy restore warnings.
   /* eslint-disable-next-line no-param-reassign */
   config.cache = process.env.CI
-    ? { ...existingCache, type: 'memory' }
+    ? { type: 'memory' }
     : { ...existingCache, type: 'filesystem', name: 'storybook-local' };
 
   config.plugins.push(new MiniCssExtractPlugin());

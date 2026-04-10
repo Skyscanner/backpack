@@ -75,7 +75,7 @@ npm start
 
 > **Local vs CI Storybook**
 >
-> | | Local (`npm start`) | CI (`CI=true npm run storybook`) |
+> | | Local (`npm start`) | CI build (`npm run storybook:dist`) |
 > |---|---|---|
 > | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
 > | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |
