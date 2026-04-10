@@ -1,0 +1,153 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
+
+.bpk-ai-blurb {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.bpk-spacing-md();
+
+  &__header {
+    color: tokens.$bpk-text-secondary-day;
+
+    // Apply secondary colour to the AI spark icon SVG
+    svg {
+      fill: currentcolor;
+    }
+  }
+
+  &__summary {
+    display: block;
+  }
+
+  &__error {
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 tokens.bpk-spacing-sm();
+
+    @include typography.bpk-caption;
+  }
+
+  &__feedback-thumb {
+    display: inline-flex;
+    padding: 0;
+    align-items: center;
+    border: none;
+    background: none;
+    color: tokens.$bpk-text-primary-day;
+    cursor: pointer;
+
+    @include typography.bpk-text-xs;
+
+    svg {
+      fill: currentcolor;
+    }
+
+    &:hover {
+      color: tokens.$bpk-text-secondary-day;
+    }
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
+  }
+
+  &__ellipsis {
+    display: inline;
+    vertical-align: baseline;
+    margin-inline-start: tokens.bpk-spacing-sm();
+
+    &-dot {
+      display: inline;
+      opacity: 0;
+      vertical-align: baseline;
+      animation: bpk-ai-blurb-ellipsis-dot-1 1.2s infinite step-end;
+
+      @media (prefers-reduced-motion: reduce) {
+        opacity: 1;
+        animation: none;
+      }
+
+      &--2 {
+        animation-name: bpk-ai-blurb-ellipsis-dot-2;
+      }
+
+      &--3 {
+        animation-name: bpk-ai-blurb-ellipsis-dot-3;
+      }
+    }
+  }
+}
+
+// Dot 1: visible from 0% → 75%, hidden 75% → 100%
+@keyframes bpk-ai-blurb-ellipsis-dot-1 {
+  0% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Dot 2: hidden 0% → 25%, visible 25% → 75%, hidden 75% → 100%
+@keyframes bpk-ai-blurb-ellipsis-dot-2 {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Dot 3: hidden 0% → 50%, visible 50% → 75%, hidden 75% → 100%
+@keyframes bpk-ai-blurb-ellipsis-dot-3 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
