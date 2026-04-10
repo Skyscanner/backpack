@@ -25,10 +25,15 @@ import STYLES from './BpkSelect.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'className'> & {
+export type Props = Omit<
+  SelectHTMLAttributes<HTMLSelectElement>,
+  'className' | 'disabled' | 'value'
+> & {
   id: string;
   name: string;
+  value?: string;
   className?: string | null;
+  disabled?: boolean;
   docked?: boolean;
   dockedFirst?: boolean;
   dockedLast?: boolean;
