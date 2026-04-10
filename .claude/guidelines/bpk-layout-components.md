@@ -27,7 +27,7 @@ Spacing values must use `BpkSpacing` tokens (`BpkSpacing.None`, `BpkSpacing.SM`,
 
 ## When NOT to use
 
-Layout components explicitly block visual props. Do NOT use them when the element also needs:
+Layout components block both visual props and arbitrary overrides. `className` and `style` are **not supported** (exception: `BpkVessel`). Do NOT use them when the element also needs:
 
 - `background-color` — `backgroundColor?: never`
 - `border` / `border-radius` — `border?: never`, `borderRadius?: never`
