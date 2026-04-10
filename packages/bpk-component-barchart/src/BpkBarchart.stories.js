@@ -28,12 +28,11 @@ import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps, wrapDisplayName } from '../../bpk-react-utils';
 
-import BpkBarchart, {
-  BpkChartGridLines,
-  BpkChartAxis,
-  BpkChartMargin,
-} from './BpkBarchart';
+import BpkBarchart from './BpkBarchart';
 import data from './BpkBarchart.stories.data.json';
+import BpkChartAxis from './BpkChartAxis';
+import BpkChartGridLines from './BpkChartGridLines';
+import BpkChartMargin from './BpkChartMargin';
 import {
   ORIENTATION_X,
   ORIENTATION_Y,

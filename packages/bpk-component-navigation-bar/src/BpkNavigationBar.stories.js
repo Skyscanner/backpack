@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import { withRtlSupport } from '../../bpk-component-icon';
 import CloseIcon from '../../bpk-component-icon/sm/close';
 import ArrowIcon from '../../bpk-component-icon/sm/long-arrow-left';

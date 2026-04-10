@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import { Component, Children } from 'react';
 
 
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkButton from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';

@@ -107,8 +107,19 @@ The layout API is intentionally limited and strongly typed. The main groups are:
   - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …) or percentages (e.g. `'50%'`).
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
-- **Position** – `top`, `right`, `bottom`, `left`:
-  - Values: rem strings (e.g. `'1rem'`) or percentages (e.g. `'50%'`).
+- **Position keyword** – `position`:
+  - Values: `'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'`. Supports responsive overrides.
+- **Position offsets** – `top`, `right`, `bottom`, `left`:
+  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), or bare `'0'` (no unit required). Supports responsive overrides.
+- **Overflow** – `overflow`, `overflowX`, `overflowY`:
+  - Values: `'visible' | 'hidden' | 'scroll' | 'auto' | 'clip'`. All three support responsive overrides. Use `overflowX`/`overflowY` for per-axis control (e.g. `overflowX="hidden"` + `overflowY="auto"`).
+- **Stacking context** – `zIndex`:
+  - Values: any `number` or `'auto'`. Not responsive (z-index is not breakpoint-dependent).
+- **Accessibility** – `id`, `role`, `tabIndex`, and all `aria-*` attributes:
+  - `id?: string` – for `aria-labelledby`/`aria-describedby` cross-references and anchor navigation.
+  - `role?: AriaRole` – ARIA landmark/widget role.
+  - `tabIndex?: number` – makes the element focusable.
+  - All React `aria-*` props (`aria-label`, `aria-labelledby`, `aria-hidden`, `aria-expanded`, etc.) are supported via `React.AriaAttributes`.
 - **Color** – `color`: text color token from `TEXT_COLORS` (same set as `BpkText`).
 - **Background color** – `backgroundColor`: background color token from `BACKGROUND_COLORS`.
 - **Testing attributes** – `data-testid`, `data-cy` for automation and testing.
@@ -118,9 +129,12 @@ In addition, `BpkBox` forwards through a set of **flexbox and grid layout props*
 - `display="flex"`, `flexDirection`, `justifyContent`, `alignItems`, `flexWrap`
 - `display="grid"`, `gridTemplateColumns`, `gridTemplateRows`, `gap`
 
-In addition, `BpkBox` re‑introduces a **minimal interaction surface**:
+In addition, `BpkBox` re‑introduces a **minimal interaction and accessibility surface**:
 
-- `onClick`, `onFocus`, `onBlur`
+- `onClick`, `onFocus`, `onBlur` – event handlers for interactive container patterns.
+- `tabIndex`, `role` – make containers focusable and assign ARIA roles (e.g. `role="region"`, `role="button"`).
+- `id` – useful for `aria-labelledby`/`aria-describedby` cross-references.
+- All `aria-*` props – forwarded directly to the DOM element for full ARIA attribute support.
 
 No other event handlers are exposed on layout components.
 
@@ -205,8 +219,9 @@ Under the hood these keys are mapped to Chakra’s breakpoint keys (`base`, `sm`
 In particular:
 
 - **`BpkBox`** supports Backpack responsive values for:
-  - **Spacing/size/position** props (tokenised): `padding`, `margin`, `gap`, `width/height`, `top/right/bottom/left`, etc.
+  - **Spacing/size/position** props (tokenised): `padding`, `margin`, `gap`, `width/height`, `top/right/bottom/left`, `position`, `overflow`, `overflowX`, `overflowY`, etc.
   - **Key structural layout props**: `display`, flex container/item props, and grid container props (via Backpack breakpoint keys).
+  - **Not responsive**: `zIndex` (stacking context is not breakpoint-dependent), `id`, `aria-*` attributes.
 - **`BpkGridItem`** placement props like `colSpan/rowSpan` are currently scalar (non-responsive) and should be extended only when needed.
 
 ## Constraints and design principles
@@ -230,7 +245,10 @@ This package includes Storybook examples under `examples/bpk-component-layout` s
 - Basic spacing
 - RTL‑friendly spacing (`marginInline`, `paddingInline`)
 - Size props
-- Position props
+- Position keyword (`position`) and offset props (`top/right/bottom/left`)
+- Overflow props (`overflow`, `overflowX`, `overflowY`)
+- Stacking context (`zIndex`)
+- Accessibility props (`id`, `aria-label`, `aria-labelledby`)
 - Flexbox layout
 - Grid layout
 - Responsive layout using Backpack breakpoints

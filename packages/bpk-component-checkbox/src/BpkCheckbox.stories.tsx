@@ -20,7 +20,7 @@ import { Component } from 'react';
 import type { ComponentProps } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 
 import BpkCheckbox from './BpkCheckbox';
 

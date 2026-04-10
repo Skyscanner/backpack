@@ -18,7 +18,7 @@
 import { useState } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 
 import BpkSaveButton, { STYLE_TYPES, SIZE_TYPES } from './BpkSaveButton';
 

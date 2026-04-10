@@ -28,7 +28,7 @@ import {
   colorSkyGray,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 import {
   BpkCalendarNav,
   BpkCalendarGridHeader,

@@ -16,13 +16,16 @@
  * limitations under the License.
  */
 
-import type { AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { AriaAttributes, AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
   BpkSpacingValue,
   BpkSizeValue,
   BpkPositionValue,
+  BpkPositionKeyword,
+  BpkOverflowValue,
+  BpkZIndexValue,
   BpkResponsiveValue,
 } from './tokens';
 import type { TextColor, TextStyle } from '../../bpk-component-text';
@@ -84,7 +87,7 @@ export interface BpkSpacingProps {
  *   container patterns (e.g. clickable cards, landmark regions).
  * - BpkBox additionally exposes onFocus and onBlur on its own props type.
  */
-export interface BpkCommonLayoutProps extends BpkSpacingProps {
+export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   // Explicitly exclude className
   className?: never;
 
@@ -92,6 +95,7 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
   style?: never;
 
   // Interaction & accessibility props
+  id?: string;
   tabIndex?: number;
   role?: AriaRole;
   onClick?: MouseEventHandler<HTMLElement>;
@@ -99,6 +103,15 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps {
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;
+
+  // CSS `position` keyword (static | relative | absolute | fixed | sticky)
+  position?: BpkResponsiveValue<BpkPositionKeyword>;
+
+  // Overflow & stacking context
+  overflow?: BpkResponsiveValue<BpkOverflowValue>;
+  overflowX?: BpkResponsiveValue<BpkOverflowValue>;
+  overflowY?: BpkResponsiveValue<BpkOverflowValue>;
+  zIndex?: BpkZIndexValue;
 
   // Testing & automation attributes
   'data-testid'?: string;

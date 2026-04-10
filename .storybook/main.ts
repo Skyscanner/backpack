@@ -25,7 +25,6 @@ const isCI = !!process.env.CI;
 const config: StorybookConfig = {
   stories: [
     '../packages/*/src/**/*.stories.@(ts|tsx|js|jsx)',
-    '../examples/**/{stories,*.stories}.@(ts|tsx|js|jsx)',
   ],
   addons: [
     '@storybook/addon-a11y',
@@ -47,8 +46,15 @@ const config: StorybookConfig = {
         propFilter: (prop) => {
           const isHTMLElementProp =
               prop.parent?.fileName.includes("node_modules") ?? false
+          // Best-effort build-time filter for `?: never` props. The argTypesEnhancer
+          // in preview.tsx provides the runtime guarantee for production static builds
+          // where webpack module optimisations may bypass this filter.
+          // With strictNullChecks (strict: true), `?: never` resolves to
+          // `never | undefined = undefined`, so the type name is 'undefined'.
+          // Without strictNullChecks the type name is 'never'. Handle both.
+          const isNeverProp = prop.type?.name === 'never' || prop.type?.name === 'undefined'
 
-          return !isHTMLElementProp
+          return !isHTMLElementProp && !isNeverProp
         },
       },
     } : {}),

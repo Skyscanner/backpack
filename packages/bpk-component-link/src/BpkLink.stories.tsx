@@ -17,7 +17,7 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../../../examples/bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 import BpkPanel from '../../bpk-component-panel';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';

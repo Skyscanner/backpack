@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { action } from '../../../examples/bpk-storybook-utils';
+import { action } from '../../../.storybook/bpk-storybook-utils';
 
 import BpkSectionList from './BpkSectionList';
 import BpkSectionListItem from './BpkSectionListItem';

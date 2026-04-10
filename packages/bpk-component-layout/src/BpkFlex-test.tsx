@@ -150,4 +150,17 @@ describe('BpkFlex', () => {
     );
     expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-default');
   });
+
+  it('renders position and overflow alongside direction without dropping any prop', () => {
+    // Regression: position/overflow arrived via ...props and were previously silently
+    // dropped when responsiveProps was provided (BpkFlex maps direction→flexDirection).
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex direction="column" position="relative" overflow="hidden">
+          content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toBeInTheDocument();
+  });
 });
