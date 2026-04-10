@@ -33,19 +33,19 @@ import type { BpkAiBlurbNamespace } from './common-types';
  * // Loading state
  * <BpkAiBlurb.Root>
  *   <BpkAiBlurb.Header title="Summarized by AI" />
- *   <BpkAiBlurb.Summary>
- *     Comparing your shortlist<BpkAiBlurb.Ellipsis />
- *   </BpkAiBlurb.Summary>
+ *   <BpkAiBlurb.Summary state="thinking" thinkingText="Comparing your shortlist" />
  * </BpkAiBlurb.Root>
  *
  * @example
  * // Success state with feedback
  * <BpkAiBlurb.Root>
  *   <BpkAiBlurb.Header title="Summarized by AI" />
- *   <BpkAiBlurb.Summary>{llmText}</BpkAiBlurb.Summary>
+ *   <BpkAiBlurb.Summary state="aiResponse" aiResponseText={llmText} />
  *   <BpkAiBlurb.Feedback
  *     feedbackText="Was this helpful?"
  *     thankYouText="Thanks for your feedback!"
+ *     thumbsUpLabel="Thumbs up"
+ *     thumbsDownLabel="Thumbs down"
  *     onFeedback={(positive) => trackEvent(positive ? 'thumb_up' : 'thumb_down')}
  *   />
  * </BpkAiBlurb.Root>

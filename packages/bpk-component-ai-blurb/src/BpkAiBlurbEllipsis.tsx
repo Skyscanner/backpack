@@ -22,17 +22,8 @@ import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-/**
- * Animated three-dot ellipsis for inline use at the end of loading text.
- * Hidden from assistive technology — ensure surrounding text provides context.
- *
- * @example
- * <BpkAiBlurb.Summary>
- *   Comparing your shortlist<BpkAiBlurb.Ellipsis />
- * </BpkAiBlurb.Summary>
- *
- * @returns {JSX.Element} Ellipsis component
- */
+// Animated three-dot ellipsis for inline use at the end of loading text.
+// Hidden from assistive technology — ensure surrounding text provides context.
 const BpkAiBlurbEllipsis = () => (
   <span
     className={getClassName('bpk-ai-blurb__ellipsis')}
