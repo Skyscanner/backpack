@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-import BpkAiBlurb from '../../packages/bpk-component-ai-blurb/src/BpkAiBlurb';
-import { BpkBox, BpkProvider, BpkSpacing } from '../../packages/bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
+import { BpkBox, BpkProvider, BpkSpacing } from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
-export const AiResponseExample = () => (
+import BpkAiBlurb from './BpkAiBlurb';
+
+import type { Meta } from '@storybook/react';
+
+const AiResponseExample = () => (
   <BpkProvider>
     <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
       <BpkAiBlurb.Root>
@@ -47,7 +50,7 @@ export const AiResponseExample = () => (
   </BpkProvider>
 );
 
-export const LoadingExample = () => (
+const LoadingExample = () => (
   <BpkProvider>
     <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
       <BpkAiBlurb.Root>
@@ -61,7 +64,7 @@ export const LoadingExample = () => (
   </BpkProvider>
 );
 
-export const ErrorGeneralExample = () => (
+const ErrorGeneralExample = () => (
   <BpkProvider>
     <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
       <BpkAiBlurb.Root>
@@ -77,7 +80,7 @@ export const ErrorGeneralExample = () => (
   </BpkProvider>
 );
 
-export const ErrorRefreshLimitExample = () => (
+const ErrorRefreshLimitExample = () => (
   <BpkProvider>
     <BpkBox maxWidth="50rem" padding={BpkSpacing.Base}>
       <BpkAiBlurb.Root>
@@ -92,3 +95,37 @@ export const ErrorRefreshLimitExample = () => (
     </BpkBox>
   </BpkProvider>
 );
+
+const meta = {
+  title: 'bpk-component-ai-blurb',
+  component: BpkAiBlurb.Root,
+} satisfies Meta;
+
+export default meta;
+
+export const AiResponse = {
+  render: () => <AiResponseExample />,
+};
+
+export const Loading = {
+  render: () => <LoadingExample />,
+};
+
+export const ErrorGeneral = {
+  render: () => <ErrorGeneralExample />,
+};
+
+export const ErrorRefreshLimit = {
+  render: () => <ErrorRefreshLimitExample />,
+};
+
+export const VisualTest = {
+  render: () => <AiResponseExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <AiResponseExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};
