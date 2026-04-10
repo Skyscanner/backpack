@@ -48,7 +48,10 @@ const config: StorybookConfig = {
               prop.parent?.fileName.includes("node_modules") ?? false
           // Hide props explicitly typed as `never` — these are intentionally
           // disallowed at the TypeScript level and should not appear in docs.
-          const isNeverProp = prop.type?.name === 'never'
+          // With strictNullChecks (strict: true), `?: never` resolves to
+          // `never | undefined = undefined`, so the type name is 'undefined'.
+          // Without strictNullChecks the type name is 'never'. Handle both.
+          const isNeverProp = prop.type?.name === 'never' || prop.type?.name === 'undefined'
 
           return !isHTMLElementProp && !isNeverProp
         },
