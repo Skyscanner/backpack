@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import type { Config } from 'jest';
-
-const config: Config = {
+/** @type {import('jest').Config} */
+module.exports = {
   coverageReporters: ['text'],
   coverageThreshold: {
     global: {
@@ -43,5 +42,3 @@ const config: Config = {
   ],
   verbose: true,
 };
-
-export default config;

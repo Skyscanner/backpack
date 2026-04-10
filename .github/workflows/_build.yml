@@ -47,9 +47,9 @@ jobs:
         id: nx-cache
         with:
           path: .nx/cache
-          key: ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-${{ github.ref }}-${{ github.sha }}
+          key: ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}-${{ github.sha }}
           restore-keys: |
-            ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-${{ github.ref }}-
+            ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}-
             ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-
 
       - name: Setup logs directory

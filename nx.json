@@ -1,7 +1,15 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*"],
+    "default": [
+      "{projectRoot}/**/*",
+      "!{projectRoot}/dist/**",
+      "!{projectRoot}/dist-storybook/**",
+      "!{projectRoot}/dist-sassdoc/**",
+      "!{projectRoot}/storybook-static/**",
+      "!{projectRoot}/coverage/**",
+      "!{projectRoot}/.nx/**"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/*-test.*",
@@ -16,7 +24,9 @@
     ],
     "jsTs": [
       "{projectRoot}/**/*.{js,jsx,ts,tsx}",
-      "!{projectRoot}/dist/**"
+      "!{projectRoot}/dist/**",
+      "!{projectRoot}/dist-storybook/**",
+      "!{projectRoot}/storybook-static/**"
     ]
   },
   "targetDefaults": {
@@ -73,7 +83,8 @@
       "cache": true,
       "inputs": [
         "{projectRoot}/packages/**/*.{ts,tsx,js,jsx,scss}",
-        "{projectRoot}/jest.config.ts",
+        "{projectRoot}/packages/**/*.snap",
+        "{projectRoot}/jest.config.js",
         "{projectRoot}/babel.config.js",
         "{projectRoot}/scripts/jest/**",
         "{projectRoot}/scripts/stubs/**"
@@ -83,7 +94,8 @@
       "cache": true,
       "inputs": [
         "{projectRoot}/packages/**/*.{ts,tsx,js,jsx}",
-        "{projectRoot}/jest.config.ts",
+        "{projectRoot}/packages/**/*.snap",
+        "{projectRoot}/jest.config.js",
         "{projectRoot}/babel.config.js",
         "{projectRoot}/scripts/jest/**",
         "{projectRoot}/scripts/stubs/**"
