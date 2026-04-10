@@ -1,0 +1,195 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*-test.*",
+      "!{projectRoot}/**/*-Test.*",
+      "!{projectRoot}/**/*.stories.*",
+      "!{projectRoot}/**/*.figma.tsx",
+      "!{projectRoot}/**/*.snap"
+    ],
+    "scss": [
+      "{projectRoot}/packages/**/*.scss",
+      "{projectRoot}/packages/bpk-mixins/**/*"
+    ],
+    "jsTs": [
+      "{projectRoot}/**/*.{js,jsx,ts,tsx}",
+      "!{projectRoot}/dist/**"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "cache": false
+    },
+    "build:copy-normal_css": {
+      "cache": false
+    },
+    "build:gulp": {
+      "cache": false
+    },
+    "build:sass": {
+      "cache": false
+    },
+    "build:stylesheets": {
+      "cache": false
+    },
+    "lint": {
+      "cache": true,
+      "inputs": [
+        "jsTs",
+        "scss",
+        "{projectRoot}/.eslintrc"
+      ]
+    },
+    "lint:js": {
+      "cache": true,
+      "inputs": [
+        "jsTs",
+        "{projectRoot}/.eslintrc"
+      ]
+    },
+    "lint:js:fix": {
+      "cache": false
+    },
+    "lint:scss": {
+      "cache": true,
+      "inputs": ["scss"]
+    },
+    "lint:scss:fix": {
+      "cache": false
+    },
+    "typecheck": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/**/*.{ts,tsx}",
+        "{projectRoot}/examples/**/*.{ts,tsx}",
+        "{projectRoot}/@types/**",
+        "{projectRoot}/tsconfig.json"
+      ]
+    },
+    "jest": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/**/*.{ts,tsx,js,jsx,scss}",
+        "{projectRoot}/jest.config.ts",
+        "{projectRoot}/babel.config.js",
+        "{projectRoot}/scripts/jest/**",
+        "{projectRoot}/scripts/stubs/**"
+      ]
+    },
+    "jest:accessibility": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/**/*.{ts,tsx,js,jsx}",
+        "{projectRoot}/jest.config.ts",
+        "{projectRoot}/babel.config.js",
+        "{projectRoot}/scripts/jest/**",
+        "{projectRoot}/scripts/stubs/**"
+      ]
+    },
+    "check-bpk-dependencies": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/**/package.json",
+        "{projectRoot}/package.json"
+      ]
+    },
+    "check-react-versions": {
+      "cache": true,
+      "inputs": ["{projectRoot}/package.json"]
+    },
+    "transpile": {
+      "cache": true,
+      "inputs": [
+        "production",
+        "{projectRoot}/babel.config.js",
+        "{projectRoot}/tsconfig.declaration.json",
+        "{projectRoot}/scripts/transpilation/**"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:clean": {
+      "cache": false
+    },
+    "transpile:js": {
+      "cache": true,
+      "inputs": [
+        "production",
+        "{projectRoot}/babel.config.js"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:dts": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/**/*.{ts,tsx}",
+        "{projectRoot}/tsconfig.declaration.json"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:imports": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/scripts/transpilation/transform-js-scss-css-imports.js",
+        "{projectRoot}/dist/**/*.js"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:copy-css": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/**/*.css",
+        "{projectRoot}/scripts/transpilation/copy-css.js"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:copy-utils": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/packages/bpk-mixins/**",
+        "{projectRoot}/packages/bpk-stylesheets/**",
+        "{projectRoot}/scripts/transpilation/copy-utils.js"
+      ],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:copy-package-json": {
+      "cache": true,
+      "inputs": ["{projectRoot}/packages/package.json"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "transpile:copy-readme": {
+      "cache": true,
+      "inputs": ["{projectRoot}/packages/README.md"],
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "build-storybook": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{projectRoot}/.storybook/**",
+        "{projectRoot}/packages/**"
+      ],
+      "outputs": ["{projectRoot}/dist-storybook"]
+    },
+    "storybook:dist": {
+      "cache": true,
+      "outputs": ["{projectRoot}/dist-storybook"]
+    }
+  },
+  "analytics": false,
+  "plugins": [
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "serveStorybookTargetName": "serve:storybook",
+        "buildStorybookTargetName": "build-storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ]
+}

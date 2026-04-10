@@ -1,0 +1,10 @@
+# Documentation and non-code files that should not trigger Nx affected
+*.md
+decisions/
+.github/
+.husky/
+.vscode/
+LICENSE
+CODEOWNERS
+.percy.yml
+.release-drafter.yml

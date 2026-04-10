@@ -15,6 +15,7 @@ defaults:
 env:
   CACHE_NAME: node-modules-cache
   BUILD_CACHE_NAME: build-cache
+  NX_CACHE_NAME: nx-cache
 
 permissions: {}
 
@@ -65,6 +66,16 @@ jobs:
             node_modules/
             packages/node_modules/
           key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
+      - name: Restore Nx cache
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        id: nx-cache
+        with:
+          path: .nx/cache
+          key: ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-${{ github.ref }}-
+            ${{ env.NX_CACHE_NAME }}-${{ runner.os }}-
 
       - name: Upload dist-storybook to Cache
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3

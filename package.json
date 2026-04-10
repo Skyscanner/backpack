@@ -46,10 +46,11 @@
     "postinstall": "(cd packages && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
-    "storybook": "storybook dev -p 9001",
-    "storybook:dist": "storybook build -c .storybook -o dist-storybook",
+    "storybook": "nx serve:storybook -p 9001",
+    "storybook:dist": "nx build-storybook -c .storybook -o dist-storybook",
     "sassdoc": "sassdoc {packages/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
+    "verify": "nx run-many -t lint:js lint:scss typecheck check-react-versions check-bpk-dependencies jest",
     "typecheck": "tsc",
     "prepare": "husky",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
@@ -73,35 +74,6 @@
       "stylelint"
     ]
   },
-  "jest": {
-    "coverageReporters": [
-      "text"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 70,
-        "functions": 75,
-        "lines": 75,
-        "statements": 75
-      }
-    },
-    "moduleNameMapper": {
-      "^.+\\.scss$": "<rootDir>/scripts/stubs/styleStub.js",
-      "^.+\\.(svg|png)$": "<rootDir>/scripts/stubs/fileStub.js",
-      "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
-      "@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
-      "^react($|/.+)": "<rootDir>/node_modules/react$1"
-    },
-    "setupFilesAfterEnv": [
-      "<rootDir>/scripts/jest/setup.js"
-    ],
-    "testEnvironment": "jsdom",
-    "testRegex": "packages/.*-test\\.[jt]sx?$",
-    "transformIgnorePatterns": [
-      "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
-    ],
-    "verbose": true
-  },
   "browserslist": [
     "Chrome >= 109",
     "Edge >= 142",
@@ -121,6 +93,10 @@
     "@babel/preset-typescript": "^7.28.5",
     "@babel/register": "^7.28.3",
     "@figma/code-connect": "^1.4.3",
+    "@nx/jest": "22.6.4",
+    "@nx/storybook": "22.6.4",
+    "@nx/web": "22.6.4",
+    "@nx/webpack": "22.6.4",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^9.1.0",
     "@skyscanner/bpk-foundations-web": "^24.4.0",
@@ -168,6 +144,7 @@
     "lodash": "^4.17.23",
     "mini-css-extract-plugin": "^2.9.0",
     "npm-run-all": "^4.1.5",
+    "nx": "22.6.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^8.2.0",
     "prop-types": "^15.7.2",
@@ -184,9 +161,12 @@
     "ts-migrate": "^0.1.35",
     "typescript": "^5.9.2",
     "webpack": "^5.103.0",
+    "webpack-cli": "^5.1.4",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
     "braces": "3.0.3"
-  }
+  },
+  "nx": {},
+  "dependencies": {}
 }

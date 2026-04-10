@@ -31,3 +31,13 @@ yarn.lock
 .claude/commands/opsx
 .claude/skills/openspec-*
 openspec
+
+
+
+.nx/cache
+.nx/workspace-data
+
+storybook-static
+.nx/polygraph
+.claude/worktrees
+.claude/settings.local.json
