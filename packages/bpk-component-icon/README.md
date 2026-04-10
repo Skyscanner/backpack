@@ -8,31 +8,33 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Basic usage
 
+### Setting icon colour
+
+Use the `fill` prop to set the icon colour directly. This is the recommended approach over using `className` with custom SCSS.
+
 ```js
+import { textColors, coreColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 import BpkLargeAccessibilityIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/accessibility';
 
-import './icons.scss';
-
 export default () => (
   <div>
-    <BpkSmallFlightIcon className="abc-icon__flight" />
-    <BpkLargeAccessibilityIcon className="abc-icon__a11y" />
+    <BpkSmallFlightIcon fill={textColors.textPrimaryDay} />
+    <BpkLargeAccessibilityIcon fill={coreColors.corePrimaryDay} />
   </div>
 );
 ```
 
-*`icons.scss`:*
-```scss
-@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
+You can also use `currentColor` to inherit the colour from the parent element's `color` property:
 
-.abc-icon__flight {
-  fill: currentColor; // see https://css-tricks.com/currentcolor/
-}
+```js
+import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 
-.abc-icon__a11y {
-  fill: $bpk-color-sky-blue;
-}
+export default () => (
+  <span style={{ color: '#0770e3' }}>
+    <BpkSmallFlightIcon fill="currentColor" />
+  </span>
+);
 ```
 
 ### Aligning to BpkButton components
@@ -61,14 +63,13 @@ export default () => (
 ### RTL support
 
 ```js
+import { textColors } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
-
-import './icons.scss';
 
 const RtlSupportedBpkSmallFlightIcon = withRtlSupport(BpkSmallFlightIcon);
 
 export default () => (
-  <RtlSupportedBpkSmallFlightIcon className="abc-icon__flight" />
+  <RtlSupportedBpkSmallFlightIcon fill={textColors.textPrimaryDay} />
 );
 ```
