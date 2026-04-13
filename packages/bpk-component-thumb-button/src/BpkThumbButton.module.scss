@@ -59,6 +59,10 @@
     @include utils.bpk-hover {
       color: tokens.$bpk-core-accent-day;
     }
+
+    &:active {
+      color: tokens.$bpk-core-accent-day;
+    }
   }
 
   &__icon {

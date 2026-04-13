@@ -52,6 +52,7 @@ export type BpkThumbButtonProps = {
   selected?: boolean;
   /**
    * Size variant. 'small' uses sm icons with no fixed dimensions, matching inline text use cases.
+   * Note: 'small' disables the 48px touch target pseudo-element — do not use on touch-primary surfaces.
    */
   size?: ThumbsButtonSize;
   /**

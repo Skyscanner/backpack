@@ -38,6 +38,8 @@ export default () => {
 
 Use `size="small"` for inline use cases where the button sits alongside text (e.g. a feedback row). This uses `sm` icons and no fixed dimensions to align with caption-sized text.
 
+> **Note:** The small variant disables the 48px touch target pseudo-element (`bpk-touch-tappable`) that the default size uses to meet WCAG 2.1 minimum 44×44px. This is intentional to prevent targets overlapping adjacent buttons in inline layouts. Do not use `size="small"` on touch-primary surfaces where tap target size is critical.
+
 ```tsx
 <BpkThumbButton
   type="up"
