@@ -1,11 +1,11 @@
 # ComparisonTray
 
-A tray component for comparing up to 3 items. The consumer owns and manage the items state — `ComparisonTray.Root` only renders what it receives.
+A tray component for comparing up to 3 items. The consumer owns and manage the items state — `BpkComparisonTray.Root` only renders what it receives.
 
 ## Usage
 
 ```tsx
-import ComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import BpkComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
@@ -43,15 +43,15 @@ useEffect(() => {
   removeButtons?.[idx]?.focus();
 }, [items]);
 
-// Wrap ComparisonTray.Root in a div with trayRef so the query is scoped
+// Wrap BpkComparisonTray.Root in a div with trayRef so the query is scoped
 <div ref={trayRef}>
-  <ComparisonTray.Root ... onRemove={removeItem} />
+  <BpkComparisonTray.Root ... onRemove={removeItem} />
 </div>
 ```
 ## Example
 
 ```tsx
-import ComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import BpkComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 
 const MAX_ITEMS = 3;
@@ -74,7 +74,7 @@ const handleRemove = (id: string) => {
     Add to compare
   </BpkButton>
 
-  <ComparisonTray.Root
+  <BpkComparisonTray.Root
     items={items}
     ariaLabel="Comparison tray"
     removeLabel="Remove"
@@ -87,7 +87,7 @@ const handleRemove = (id: string) => {
 
 ## Props
 
-### `ComparisonTray.Root`
+### `BpkComparisonTray.Root`
 
 | Property       | PropType                          | Required | Default Value            |
 | -------------- | --------------------------------- | -------- | ------------------------ |
@@ -95,7 +95,7 @@ const handleRemove = (id: string) => {
 | onRemove       | `(id: string) => void`            | true     | -                        |
 | onCompare      | `() => void`                      | true     | -                        |
 | ariaLabel      | string                            | true     | -                        |
-| compareLabel   | string                            | false    | `'Compare'`              |
+| compareLabel   | string                            | true     | -                        |
 | removeLabel    | string                            | true     | -                        |
 
 The Compare button is disabled when fewer than 2 items are present.
