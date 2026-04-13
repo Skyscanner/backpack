@@ -21,6 +21,11 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss",
+    "bpk-stylesheets/**"
+  ],
   "dependencies": {
     "@ark-ui/react": "^5.34.1",
     "@chakra-ui/react": "^3.33.0",
