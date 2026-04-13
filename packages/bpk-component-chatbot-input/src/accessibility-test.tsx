@@ -50,14 +50,14 @@ window.ResizeObserver =
 
 describe('BpkChatbotInput accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (composer type — default)', async () => {
-    const { container } = renderWithProvider(<BpkChatbotInput {...defaultProps} />);
+    const { container } = renderWithProvider(<BpkChatbotInput.Input {...defaultProps} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have accessibility issues (cars type)', async () => {
     const { container } = renderWithProvider(
-      <BpkChatbotInput
+      <BpkChatbotInput.Input
         {...defaultProps}
         inputType={CHATBOT_INPUT_TYPES.CARS}
       />,
@@ -68,7 +68,7 @@ describe('BpkChatbotInput accessibility tests', () => {
 
   it('should not have accessibility issues (cars-composer type)', async () => {
     const { container } = renderWithProvider(
-      <BpkChatbotInput
+      <BpkChatbotInput.Input
         {...defaultProps}
         inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
       />,
@@ -79,7 +79,7 @@ describe('BpkChatbotInput accessibility tests', () => {
 
   it('should not have accessibility issues (composer type)', async () => {
     const { container } = renderWithProvider(
-      <BpkChatbotInput
+      <BpkChatbotInput.Input
         {...defaultProps}
         inputType={CHATBOT_INPUT_TYPES.COMPOSER}
       />,
@@ -90,7 +90,7 @@ describe('BpkChatbotInput accessibility tests', () => {
 
   it('should not have accessibility issues when loading', async () => {
     const { container } = renderWithProvider(
-      <BpkChatbotInput {...defaultProps} isPolling />,
+      <BpkChatbotInput.Input {...defaultProps} isPolling />,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

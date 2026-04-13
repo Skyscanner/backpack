@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
+
+import type { BpkStackProps } from '../../bpk-component-layout';
 
 export const CHATBOT_INPUT_TYPES = {
   CARS: 'cars',
@@ -27,7 +29,7 @@ export const CHATBOT_INPUT_TYPES = {
 export type ChatbotInputType =
   (typeof CHATBOT_INPUT_TYPES)[keyof typeof CHATBOT_INPUT_TYPES];
 
-export type BpkChatbotInputProps = {
+export type BpkChatbotInputInputProps = {
   inputValue: string;
   /** Accessible label for the loading state button (required for screen readers). */
   loadingAriaLabel: string;
@@ -44,6 +46,19 @@ export type BpkChatbotInputProps = {
   maxCharacters?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
+};
+
+export type BpkChatbotInputRootProps = BpkStackProps & {
+  inputType?: ChatbotInputType;
+  isOverLimit?: boolean;
+};
+
+export type BpkChatbotInputToolbarProps = BpkStackProps;
+
+export type BpkChatbotInputNamespace = {
+  Root: (props: BpkChatbotInputRootProps) => ReactNode;
+  Input: (props: BpkChatbotInputInputProps) => ReactNode;
+  Toolbar: (props: BpkChatbotInputToolbarProps) => ReactNode;
 };
 
 export interface BaseInputFieldProps {

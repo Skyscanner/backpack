@@ -24,8 +24,13 @@ import {
   corePrimaryDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { BpkProvider } from '../../bpk-component-layout';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
+import SmallFilterIcon from '../../bpk-component-icon/sm/filter';
+import SmallPlusIcon from '../../bpk-component-icon/sm/plus';
+import SmallSettingsIcon from '../../bpk-component-icon/sm/settings';
+import { BpkProvider, BpkSpacing } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
@@ -54,23 +59,25 @@ const longText = sampleSentence
 const ChatbotInputWithState = ({
   initialValue = '',
   ...props
-}: Partial<ComponentProps<typeof BpkChatbotInput>> & {
+}: Partial<ComponentProps<typeof BpkChatbotInput.Input>> & {
   initialValue?: string;
 }) => {
   const [inputValue, setInputValue] = useState(initialValue);
 
   return (
-    <BpkChatbotInput
-      inputValue={inputValue}
-      loadingAriaLabel={LOADING_ARIA_LABEL}
-      sendAriaLabel={SEND_ARIA_LABEL}
-      placeholder={PLACEHOLDER}
-      onInputChange={setInputValue}
-      onInputFocus={() => {}}
-      onInputBlur={() => {}}
-      onSubmit={() => {}}
-      {...props}
-    />
+    <BpkChatbotInput.Root inputType={props.inputType}>
+      <BpkChatbotInput.Input
+        inputValue={inputValue}
+        loadingAriaLabel={LOADING_ARIA_LABEL}
+        sendAriaLabel={SEND_ARIA_LABEL}
+        placeholder={PLACEHOLDER}
+        onInputChange={setInputValue}
+        onInputFocus={() => {}}
+        onInputBlur={() => {}}
+        onSubmit={() => {}}
+        {...props}
+      />
+    </BpkChatbotInput.Root>
   );
 };
 
@@ -257,9 +264,43 @@ const MixedExample = () => (
   </div>
 );
 
+const WithToolbarExample = () => {
+  const [inputValue, setInputValue] = useState('');
+
+  return (
+    <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+      <BpkChatbotInput.Root>
+        <BpkChatbotInput.Input
+          inputValue={inputValue}
+          loadingAriaLabel={LOADING_ARIA_LABEL}
+          sendAriaLabel={SEND_ARIA_LABEL}
+          placeholder={PLACEHOLDER}
+          onInputChange={setInputValue}
+          onInputFocus={() => {}}
+          onInputBlur={() => {}}
+          onSubmit={() => {}}
+        />
+        <BpkChatbotInput.Toolbar>
+          <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={() => {}}>
+            <SmallPlusIcon />
+            <BpkVisuallyHidden>Add</BpkVisuallyHidden>
+          </BpkButton>
+          <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={() => {}}>
+            <SmallFilterIcon />
+            <BpkVisuallyHidden>Filter</BpkVisuallyHidden>
+          </BpkButton>
+          <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={() => {}}>
+            <SmallSettingsIcon />
+            <BpkVisuallyHidden>Settings</BpkVisuallyHidden>
+          </BpkButton>
+        </BpkChatbotInput.Toolbar>
+      </BpkChatbotInput.Root>
+    </div>
+  );
+};
+
 const meta = {
   title: 'bpk-component-chatbot-input',
-  component: BpkChatbotInput,
   decorators: [
     (Story: any) => (
       <BpkProvider>
@@ -336,4 +377,8 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const WithToolbar = {
+  render: () => <WithToolbarExample />,
 };
