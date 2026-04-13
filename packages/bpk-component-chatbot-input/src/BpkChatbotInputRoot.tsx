@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
+import { useMemo } from 'react';
 import type { MouseEvent, TouchEvent } from 'react';
 
 import { BpkVStack, BpkSpacing } from '../../bpk-component-layout';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
+import { BpkChatbotInputContext } from './BpkChatbotInputContext';
 import { CHATBOT_INPUT_TYPES } from './common-types';
 
 import type { BpkChatbotInputRootProps } from './common-types';
@@ -38,6 +40,8 @@ const BpkChatbotInputRoot = ({
 }: BpkChatbotInputRootProps) => {
   const isCars = inputType === CHATBOT_INPUT_TYPES.CARS;
   const isComposer = inputType === CHATBOT_INPUT_TYPES.COMPOSER;
+
+  const contextValue = useMemo(() => ({ inputType }), [inputType]);
 
   const containerClassName = getClassName(
     isCars ? 'bpk-chatbot-input--cars' : 'bpk-chatbot-input--composer',
@@ -62,24 +66,26 @@ const BpkChatbotInputRoot = ({
   };
 
   return (
-    <div
-      className={containerClassName}
-      onClick={handleContainerEvent}
-      onTouchStart={handleContainerEvent}
-      role="presentation"
-      data-testid="bpk-chatbot-input-container"
-      {...getDataComponentAttribute('ChatbotInput')}
-    >
-      <BpkVStack
-        align={align}
-        gap={gap}
-        width="100%"
-        {...paddingProps}
-        {...rest}
+    <BpkChatbotInputContext.Provider value={contextValue}>
+      <div
+        className={containerClassName}
+        onClick={handleContainerEvent}
+        onTouchStart={handleContainerEvent}
+        role="presentation"
+        data-testid="bpk-chatbot-input-container"
+        {...getDataComponentAttribute('ChatbotInput')}
       >
-        {children}
-      </BpkVStack>
-    </div>
+        <BpkVStack
+          align={align}
+          gap={gap}
+          width="100%"
+          {...paddingProps}
+          {...rest}
+        >
+          {children}
+        </BpkVStack>
+      </div>
+    </BpkChatbotInputContext.Provider>
   );
 };
 

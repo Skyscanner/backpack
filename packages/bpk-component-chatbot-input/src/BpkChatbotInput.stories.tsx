@@ -58,14 +58,16 @@ const longText = sampleSentence
 
 const ChatbotInputWithState = ({
   initialValue = '',
+  inputType,
   ...props
 }: Partial<ComponentProps<typeof BpkChatbotInput.Input>> & {
   initialValue?: string;
+  inputType?: ComponentProps<typeof BpkChatbotInput.Root>['inputType'];
 }) => {
   const [inputValue, setInputValue] = useState(initialValue);
 
   return (
-    <BpkChatbotInput.Root inputType={props.inputType}>
+    <BpkChatbotInput.Root inputType={inputType}>
       <BpkChatbotInput.Input
         inputValue={inputValue}
         loadingAriaLabel={LOADING_ARIA_LABEL}

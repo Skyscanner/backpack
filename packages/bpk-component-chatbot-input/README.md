@@ -74,7 +74,6 @@ import BpkChatbotInput, {
 export default () => (
   <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS}>
     <BpkChatbotInput.Input
-      inputType={CHATBOT_INPUT_TYPES.CARS}
       inputValue=""
       loadingAriaLabel="Loading"
       sendAriaLabel="Send"

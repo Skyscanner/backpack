@@ -3,63 +3,75 @@
 exports[`BpkChatbotInput cars-composer type renders with cars-composer type correctly 1`] = `
 <DocumentFragment>
   <div
-    class="css-tdl7nf"
-    data-backpack-ds-component="ChatbotInput.Input"
+    class="bpk-chatbot-input--composer"
+    data-backpack-ds-component="ChatbotInput"
+    data-testid="bpk-chatbot-input-container"
+    role="presentation"
   >
     <div
-      class="bpk-chatbot-textarea-field__container"
-      style="height: 24px;"
+      class="chakra-stack css-vnomi0"
+      data-backpack-ds-component="VStack"
     >
       <div
-        class="bpk-chatbot-textarea-field__field"
+        class="css-tdl7nf"
+        data-backpack-ds-component="ChatbotInput.Input"
       >
-        <label
-          class="bpk-chatbot-textarea-field__label"
-          for=":rc:"
+        <div
+          class="bpk-chatbot-textarea-field__container"
+          style="height: 24px;"
         >
-          Ask away
-        </label>
-        <textarea
-          aria-label="Ask away"
-          autocapitalize="sentences"
-          autocomplete="off"
-          autocorrect="off"
-          class="bpk-chatbot-textarea-field__textarea"
-          data-testid="bpk-chatbot-textarea-field"
-          id=":rc:"
-          placeholder="Ask away"
-          rows="1"
-          spellcheck="true"
-          style="height: 24px; resize: none;"
-          tabindex="0"
-        />
+          <div
+            class="bpk-chatbot-textarea-field__field"
+          >
+            <label
+              class="bpk-chatbot-textarea-field__label"
+              for=":rc:"
+            >
+              Ask away
+            </label>
+            <textarea
+              aria-label="Ask away"
+              autocapitalize="sentences"
+              autocomplete="off"
+              autocorrect="off"
+              class="bpk-chatbot-textarea-field__textarea"
+              data-testid="bpk-chatbot-textarea-field"
+              id=":rc:"
+              placeholder="Ask away"
+              rows="1"
+              spellcheck="true"
+              style="height: 24px; resize: none;"
+              tabindex="0"
+            />
+          </div>
+        </div>
+        <button
+          aria-label="Send"
+          class="bpk-button bpk-button--icon-only bpk-button--primary"
+          data-backpack-ds-component="Button"
+          data-testid="bpk-chatbot-input-send"
+          disabled=""
+          type="button"
+        >
+          <span
+            style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
-    <button
-      aria-label="Send"
-      class="bpk-button bpk-button--icon-only bpk-button--primary"
-      data-backpack-ds-component="Button"
-      data-testid="bpk-chatbot-input-send"
-      disabled=""
-      type="button"
-    >
-      <span
-        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-      >
-        <svg
-          aria-hidden="true"
-          height="1rem"
-          viewBox="0 0 24 24"
-          width="1rem"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
-          />
-        </svg>
-      </span>
-    </button>
   </div>
 </DocumentFragment>
 `;
@@ -67,63 +79,75 @@ exports[`BpkChatbotInput cars-composer type renders with cars-composer type corr
 exports[`BpkChatbotInput common behaviours renders with cars-composer type correctly 1`] = `
 <DocumentFragment>
   <div
-    class="css-tdl7nf"
-    data-backpack-ds-component="ChatbotInput.Input"
+    class="bpk-chatbot-input--composer"
+    data-backpack-ds-component="ChatbotInput"
+    data-testid="bpk-chatbot-input-container"
+    role="presentation"
   >
     <div
-      class="bpk-chatbot-textarea-field__container"
-      style="height: 24px;"
+      class="chakra-stack css-vnomi0"
+      data-backpack-ds-component="VStack"
     >
       <div
-        class="bpk-chatbot-textarea-field__field"
+        class="css-tdl7nf"
+        data-backpack-ds-component="ChatbotInput.Input"
       >
-        <label
-          class="bpk-chatbot-textarea-field__label"
-          for=":rl:"
+        <div
+          class="bpk-chatbot-textarea-field__container"
+          style="height: 24px;"
         >
-          Ask away
-        </label>
-        <textarea
-          aria-label="Ask away"
-          autocapitalize="sentences"
-          autocomplete="off"
-          autocorrect="off"
-          class="bpk-chatbot-textarea-field__textarea"
-          data-testid="bpk-chatbot-textarea-field"
-          id=":rl:"
-          placeholder="Ask away"
-          rows="1"
-          spellcheck="true"
-          style="height: 24px; resize: none;"
-          tabindex="0"
-        />
+          <div
+            class="bpk-chatbot-textarea-field__field"
+          >
+            <label
+              class="bpk-chatbot-textarea-field__label"
+              for=":rl:"
+            >
+              Ask away
+            </label>
+            <textarea
+              aria-label="Ask away"
+              autocapitalize="sentences"
+              autocomplete="off"
+              autocorrect="off"
+              class="bpk-chatbot-textarea-field__textarea"
+              data-testid="bpk-chatbot-textarea-field"
+              id=":rl:"
+              placeholder="Ask away"
+              rows="1"
+              spellcheck="true"
+              style="height: 24px; resize: none;"
+              tabindex="0"
+            />
+          </div>
+        </div>
+        <button
+          aria-label="Send"
+          class="bpk-button bpk-button--icon-only bpk-button--primary"
+          data-backpack-ds-component="Button"
+          data-testid="bpk-chatbot-input-send"
+          disabled=""
+          type="button"
+        >
+          <span
+            style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
-    <button
-      aria-label="Send"
-      class="bpk-button bpk-button--icon-only bpk-button--primary"
-      data-backpack-ds-component="Button"
-      data-testid="bpk-chatbot-input-send"
-      disabled=""
-      type="button"
-    >
-      <span
-        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-      >
-        <svg
-          aria-hidden="true"
-          height="1rem"
-          viewBox="0 0 24 24"
-          width="1rem"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
-          />
-        </svg>
-      </span>
-    </button>
   </div>
 </DocumentFragment>
 `;
@@ -131,63 +155,75 @@ exports[`BpkChatbotInput common behaviours renders with cars-composer type corre
 exports[`BpkChatbotInput composer type renders with composer type correctly 1`] = `
 <DocumentFragment>
   <div
-    class="css-tdl7nf"
-    data-backpack-ds-component="ChatbotInput.Input"
+    class="bpk-chatbot-input--composer bpk-chatbot-input--composer--with-shadow"
+    data-backpack-ds-component="ChatbotInput"
+    data-testid="bpk-chatbot-input-container"
+    role="presentation"
   >
     <div
-      class="bpk-chatbot-textarea-field__container"
-      style="height: 24px;"
+      class="chakra-stack css-vnomi0"
+      data-backpack-ds-component="VStack"
     >
       <div
-        class="bpk-chatbot-textarea-field__field"
+        class="css-tdl7nf"
+        data-backpack-ds-component="ChatbotInput.Input"
       >
-        <label
-          class="bpk-chatbot-textarea-field__label"
-          for=":r9:"
+        <div
+          class="bpk-chatbot-textarea-field__container"
+          style="height: 24px;"
         >
-          Ask away
-        </label>
-        <textarea
-          aria-label="Ask away"
-          autocapitalize="sentences"
-          autocomplete="off"
-          autocorrect="off"
-          class="bpk-chatbot-textarea-field__textarea bpk-chatbot-textarea-field__textarea--with-shadow"
-          data-testid="bpk-chatbot-textarea-field"
-          id=":r9:"
-          placeholder="Ask away"
-          rows="1"
-          spellcheck="true"
-          style="height: 24px; resize: none;"
-          tabindex="0"
-        />
+          <div
+            class="bpk-chatbot-textarea-field__field"
+          >
+            <label
+              class="bpk-chatbot-textarea-field__label"
+              for=":r9:"
+            >
+              Ask away
+            </label>
+            <textarea
+              aria-label="Ask away"
+              autocapitalize="sentences"
+              autocomplete="off"
+              autocorrect="off"
+              class="bpk-chatbot-textarea-field__textarea bpk-chatbot-textarea-field__textarea--with-shadow"
+              data-testid="bpk-chatbot-textarea-field"
+              id=":r9:"
+              placeholder="Ask away"
+              rows="1"
+              spellcheck="true"
+              style="height: 24px; resize: none;"
+              tabindex="0"
+            />
+          </div>
+        </div>
+        <button
+          aria-label="Send"
+          class="bpk-button bpk-button--icon-only bpk-button--primary"
+          data-backpack-ds-component="Button"
+          data-testid="bpk-chatbot-input-send"
+          disabled=""
+          type="button"
+        >
+          <span
+            style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
-    <button
-      aria-label="Send"
-      class="bpk-button bpk-button--icon-only bpk-button--primary"
-      data-backpack-ds-component="Button"
-      data-testid="bpk-chatbot-input-send"
-      disabled=""
-      type="button"
-    >
-      <span
-        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-      >
-        <svg
-          aria-hidden="true"
-          height="1rem"
-          viewBox="0 0 24 24"
-          width="1rem"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
-          />
-        </svg>
-      </span>
-    </button>
   </div>
 </DocumentFragment>
 `;
@@ -195,63 +231,75 @@ exports[`BpkChatbotInput composer type renders with composer type correctly 1`] 
 exports[`BpkChatbotInput should render correctly with default props 1`] = `
 <DocumentFragment>
   <div
-    class="css-tdl7nf"
-    data-backpack-ds-component="ChatbotInput.Input"
+    class="bpk-chatbot-input--composer bpk-chatbot-input--composer--with-shadow"
+    data-backpack-ds-component="ChatbotInput"
+    data-testid="bpk-chatbot-input-container"
+    role="presentation"
   >
     <div
-      class="bpk-chatbot-textarea-field__container"
-      style="height: 24px;"
+      class="chakra-stack css-vnomi0"
+      data-backpack-ds-component="VStack"
     >
       <div
-        class="bpk-chatbot-textarea-field__field"
+        class="css-tdl7nf"
+        data-backpack-ds-component="ChatbotInput.Input"
       >
-        <label
-          class="bpk-chatbot-textarea-field__label"
-          for=":r0:"
+        <div
+          class="bpk-chatbot-textarea-field__container"
+          style="height: 24px;"
         >
-          Ask away
-        </label>
-        <textarea
-          aria-label="Ask away"
-          autocapitalize="sentences"
-          autocomplete="off"
-          autocorrect="off"
-          class="bpk-chatbot-textarea-field__textarea bpk-chatbot-textarea-field__textarea--with-shadow"
-          data-testid="bpk-chatbot-textarea-field"
-          id=":r0:"
-          placeholder="Ask away"
-          rows="1"
-          spellcheck="true"
-          style="height: 24px; resize: none;"
-          tabindex="0"
-        />
+          <div
+            class="bpk-chatbot-textarea-field__field"
+          >
+            <label
+              class="bpk-chatbot-textarea-field__label"
+              for=":r0:"
+            >
+              Ask away
+            </label>
+            <textarea
+              aria-label="Ask away"
+              autocapitalize="sentences"
+              autocomplete="off"
+              autocorrect="off"
+              class="bpk-chatbot-textarea-field__textarea bpk-chatbot-textarea-field__textarea--with-shadow"
+              data-testid="bpk-chatbot-textarea-field"
+              id=":r0:"
+              placeholder="Ask away"
+              rows="1"
+              spellcheck="true"
+              style="height: 24px; resize: none;"
+              tabindex="0"
+            />
+          </div>
+        </div>
+        <button
+          aria-label="Send"
+          class="bpk-button bpk-button--icon-only bpk-button--primary"
+          data-backpack-ds-component="Button"
+          data-testid="bpk-chatbot-input-send"
+          disabled=""
+          type="button"
+        >
+          <span
+            style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
+          >
+            <svg
+              aria-hidden="true"
+              height="1rem"
+              viewBox="0 0 24 24"
+              width="1rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
-    <button
-      aria-label="Send"
-      class="bpk-button bpk-button--icon-only bpk-button--primary"
-      data-backpack-ds-component="Button"
-      data-testid="bpk-chatbot-input-send"
-      disabled=""
-      type="button"
-    >
-      <span
-        style="line-height: 1rem; display: inline-block; margin-top: 0.25rem; vertical-align: top;"
-      >
-        <svg
-          aria-hidden="true"
-          height="1rem"
-          viewBox="0 0 24 24"
-          width="1rem"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M12 21a1.5 1.5 0 0 1-1.5-1.5V8.121l-4.94 4.94a1.5 1.5 0 0 1-2.12-2.122l7.5-7.5a1.5 1.5 0 0 1 2.12 0l7.5 7.5a1.5 1.5 0 0 1-2.12 2.122L13.5 8.12V19.5A1.5 1.5 0 0 1 12 21"
-          />
-        </svg>
-      </span>
-    </button>
   </div>
 </DocumentFragment>
 `;

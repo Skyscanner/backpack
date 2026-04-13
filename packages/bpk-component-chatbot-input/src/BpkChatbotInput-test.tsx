@@ -55,7 +55,11 @@ describe('BpkChatbotInput', () => {
   });
 
   it('should render correctly with default props', () => {
-    const { asFragment } = renderWithProvider(<BpkChatbotInput.Input {...defaultProps} />);
+    const { asFragment } = renderWithProvider(
+      <BpkChatbotInput.Root>
+        <BpkChatbotInput.Input {...defaultProps} />
+      </BpkChatbotInput.Root>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -63,10 +67,7 @@ describe('BpkChatbotInput', () => {
     it('renders input field and send button', () => {
       renderWithProvider(
         <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS}>
-          <BpkChatbotInput.Input
-            {...defaultProps}
-            inputType={CHATBOT_INPUT_TYPES.CARS}
-          />
+          <BpkChatbotInput.Input {...defaultProps} />
         </BpkChatbotInput.Root>,
       );
 
@@ -82,11 +83,9 @@ describe('BpkChatbotInput', () => {
 
     it('renders LoadingButton when isPolling', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS}
-          isPolling
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS}>
+          <BpkChatbotInput.Input {...defaultProps} isPolling />
+        </BpkChatbotInput.Root>,
       );
 
       expect(
@@ -102,10 +101,9 @@ describe('BpkChatbotInput', () => {
   describe('composer type', () => {
     it('renders textarea field', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
       );
 
       expect(screen.getByRole('textbox').tagName).toBe('TEXTAREA');
@@ -113,11 +111,9 @@ describe('BpkChatbotInput', () => {
 
     it('disables send button when input is empty', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-          inputValue=""
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="" />
+        </BpkChatbotInput.Root>,
       );
 
       expect(screen.getByTestId('bpk-chatbot-input-send')).toBeDisabled();
@@ -125,11 +121,9 @@ describe('BpkChatbotInput', () => {
 
     it('enables send button when input has text', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-          inputValue="Hello"
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
       );
 
       expect(screen.getByTestId('bpk-chatbot-input-send')).not.toBeDisabled();
@@ -137,11 +131,9 @@ describe('BpkChatbotInput', () => {
 
     it('does not render loading button when isPolling', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-          isPolling
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} isPolling />
+        </BpkChatbotInput.Root>,
       );
 
       expect(
@@ -151,11 +143,9 @@ describe('BpkChatbotInput', () => {
 
     it('submits on Enter key', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-          inputValue="Hello"
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
       );
       fireEvent.keyDown(screen.getByRole('textbox'), { key: 'Enter' });
       expect(defaultProps.onSubmit).toHaveBeenCalled();
@@ -163,11 +153,9 @@ describe('BpkChatbotInput', () => {
 
     it('does not submit on Shift+Enter', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-          inputValue="Hello"
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
       );
       fireEvent.keyDown(screen.getByRole('textbox'), {
         key: 'Enter',
@@ -178,10 +166,9 @@ describe('BpkChatbotInput', () => {
 
     it('renders with composer type correctly', () => {
       const { asFragment } = renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.COMPOSER}
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -190,10 +177,9 @@ describe('BpkChatbotInput', () => {
   describe('cars-composer type', () => {
     it('renders textarea field', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
       );
 
       const textarea = screen.getByRole('textbox');
@@ -202,11 +188,9 @@ describe('BpkChatbotInput', () => {
 
     it('disables send button when input is empty', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
-          inputValue=""
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="" />
+        </BpkChatbotInput.Root>,
       );
 
       expect(screen.getByRole('textbox').tagName).toBe('TEXTAREA');
@@ -215,10 +199,9 @@ describe('BpkChatbotInput', () => {
 
     it('renders with cars-composer type correctly', () => {
       const { asFragment } = renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -226,18 +209,20 @@ describe('BpkChatbotInput', () => {
 
   describe('keyboard interactions', () => {
     it('submits on Enter key in default (composer) mode', () => {
-      renderWithProvider(<BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />);
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
+      );
       fireEvent.keyDown(screen.getByRole('textbox'), { key: 'Enter' });
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
     it('submits on Enter key in cars-composer mode', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
-          inputValue="Hello"
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
       );
       fireEvent.keyDown(screen.getByRole('textbox'), { key: 'Enter' });
       expect(defaultProps.onSubmit).toHaveBeenCalled();
@@ -245,11 +230,9 @@ describe('BpkChatbotInput', () => {
 
     it('does not submit on Shift+Enter in cars-composer mode', () => {
       renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
-          inputValue="Hello"
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
       );
       fireEvent.keyDown(screen.getByRole('textbox'), {
         key: 'Enter',
@@ -259,7 +242,11 @@ describe('BpkChatbotInput', () => {
     });
 
     it('calls onKeyDown for non-Enter keys', () => {
-      renderWithProvider(<BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />);
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
+      );
       fireEvent.keyDown(screen.getByRole('textbox'), { key: 'a' });
       expect(defaultProps.onKeyDown).toHaveBeenCalled();
     });
@@ -267,7 +254,11 @@ describe('BpkChatbotInput', () => {
 
   describe('common behaviours', () => {
     it('calls onInputFocus and onInputBlur', () => {
-      renderWithProvider(<BpkChatbotInput.Input {...defaultProps} />);
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
+      );
       fireEvent.focus(screen.getByRole('textbox'));
       expect(defaultProps.onInputFocus).toHaveBeenCalled();
       fireEvent.blur(screen.getByRole('textbox'));
@@ -275,7 +266,11 @@ describe('BpkChatbotInput', () => {
     });
 
     it('calls onInputChange when value changes', () => {
-      renderWithProvider(<BpkChatbotInput.Input {...defaultProps} />);
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
+      );
       fireEvent.change(screen.getByRole('textbox'), {
         target: { value: 'New message' },
       });
@@ -283,13 +278,21 @@ describe('BpkChatbotInput', () => {
     });
 
     it('calls onSubmit when send button is clicked with valid input', () => {
-      renderWithProvider(<BpkChatbotInput.Input {...defaultProps} inputValue="Test message" />);
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Test message" />
+        </BpkChatbotInput.Root>,
+      );
       fireEvent.click(screen.getByRole('button'));
       expect(defaultProps.onSubmit).toHaveBeenCalled();
     });
 
     it('disables input when isSending is true', () => {
-      renderWithProvider(<BpkChatbotInput.Input {...defaultProps} isSending />);
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} isSending />
+        </BpkChatbotInput.Root>,
+      );
 
       expect(screen.getByRole('textbox')).toBeDisabled();
       expect(screen.getByTestId('bpk-chatbot-input-send')).toBeInTheDocument();
@@ -300,10 +303,9 @@ describe('BpkChatbotInput', () => {
 
     it('renders with cars-composer type correctly', () => {
       const { asFragment } = renderWithProvider(
-        <BpkChatbotInput.Input
-          {...defaultProps}
-          inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}
-        />,
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} />
+        </BpkChatbotInput.Root>,
       );
       expect(asFragment()).toMatchSnapshot();
     });

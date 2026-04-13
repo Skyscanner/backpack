@@ -21,6 +21,7 @@ import type { RefObject } from 'react';
 import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
+import { useChatbotInputContext } from './BpkChatbotInputContext';
 import InputField from './InputField/InputField';
 import SendButton from './SendButton/SendButton';
 import TextAreaField from './TextAreaField/TextAreaField';
@@ -32,7 +33,6 @@ import type { BpkChatbotInputInputProps } from './common-types';
 import type { BpkFlexProps } from '../../bpk-component-layout';
 
 const BpkChatbotInputInput = ({
-  inputType = CHATBOT_INPUT_TYPES.COMPOSER,
   inputValue,
   isPolling = false,
   isSending = false,
@@ -47,6 +47,8 @@ const BpkChatbotInputInput = ({
   placeholder,
   sendAriaLabel,
 }: BpkChatbotInputInputProps) => {
+  const { inputType } = useChatbotInputContext();
+
   const {
     containerHeight,
     handleSubmit,

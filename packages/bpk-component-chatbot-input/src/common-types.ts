@@ -42,7 +42,6 @@ export type BpkChatbotInputInputProps = {
   placeholder: string;
   isSending?: boolean;
   isPolling?: boolean;
-  inputType?: ChatbotInputType;
   maxCharacters?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
