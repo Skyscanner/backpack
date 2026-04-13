@@ -20,6 +20,7 @@
 @use '../../../bpk-mixins/typography';
 @use '../../../bpk-mixins/breakpoints';
 @use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
 @use '../../../bpk-mixins/utils';
 
 // Outer wrapper — default width with responsive fallback
@@ -73,8 +74,10 @@
   border-radius: 50%;
   background-color: tokens.$bpk-text-primary-day;
   color: tokens.$bpk-text-primary-inverse-day;
-  box-shadow: tokens.$bpk-box-shadow-lg;
   cursor: pointer;
+
+  @include utils.bpk-touch-tappable;
+  @include shadows.bpk-box-shadow-lg;
 
   svg {
     width: 8 * tokens.$bpk-one-pixel-rem;
