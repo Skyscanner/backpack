@@ -19,11 +19,9 @@
 import type { ComponentType } from 'react';
 
 import { render } from '@testing-library/react';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import focusScope from 'a11y-focus-scope';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import focusStore from 'a11y-focus-store';
 
+import focusScope from './focusScope';
+import focusStore from './focusStore';
 import {
   fixBody,
   lockScroll,
@@ -34,14 +32,20 @@ import {
 } from './scroll-utils';
 import withScrim from './withScrim';
 
-jest.mock('a11y-focus-scope', () => ({
-  scopeFocus: jest.fn(),
-  unscopeFocus: jest.fn(),
+jest.mock('./focusScope', () => ({
+  __esModule: true,
+  default: {
+    scopeFocus: jest.fn(),
+    unscopeFocus: jest.fn(),
+  },
 }));
 
-jest.mock('a11y-focus-store', () => ({
-  storeFocus: jest.fn(),
-  restoreFocus: jest.fn(),
+jest.mock('./focusStore', () => ({
+  __esModule: true,
+  default: {
+    storeFocus: jest.fn(),
+    restoreFocus: jest.fn(),
+  },
 }));
 
 jest.mock('./scroll-utils', () => ({
