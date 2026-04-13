@@ -23,7 +23,14 @@ let teardownFn: (() => void) | null = null;
 function init(element: HTMLElement): () => void {
   function focus() {
     const firstTabbable = tabbable(element)[0];
-    (firstTabbable || element).focus();
+    if (firstTabbable) {
+      firstTabbable.focus();
+    } else {
+      if (!element.hasAttribute('tabindex')) {
+        element.setAttribute('tabindex', '-1');
+      }
+      element.focus();
+    }
   }
 
   function onFocusIn(event: FocusEvent) {

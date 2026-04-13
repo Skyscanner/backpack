@@ -28,11 +28,17 @@ const focusStore = {
   },
 
   restoreFocus() {
-    if (!storedFocusElement) return;
+    if (
+      !storedFocusElement ||
+      typeof (storedFocusElement as HTMLElement).focus !== 'function'
+    ) {
+      storedFocusElement = null;
+      return;
+    }
     try {
       (storedFocusElement as HTMLElement).focus();
     } catch {
-      // Element may no longer be in the DOM
+      // Element may have been detached from the DOM
     }
     storedFocusElement = null;
   },
