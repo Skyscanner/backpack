@@ -28,7 +28,7 @@ import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import SmallFilterIcon from '../../bpk-component-icon/sm/filter';
 import SmallPlusIcon from '../../bpk-component-icon/sm/plus';
 import SmallSettingsIcon from '../../bpk-component-icon/sm/settings';
-import { BpkProvider, BpkSpacing } from '../../bpk-component-layout';
+import { BpkProvider } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';

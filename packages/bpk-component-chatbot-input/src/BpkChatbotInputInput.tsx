@@ -55,7 +55,6 @@ const BpkChatbotInputInput = ({
     isCapped,
     isCars,
     isExpanding,
-    isOverLimit,
     sendButtonDisabled,
     textareaHeight,
   } = useChatbotInput({

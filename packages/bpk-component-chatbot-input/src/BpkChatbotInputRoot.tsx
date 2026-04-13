@@ -34,7 +34,6 @@ const BpkChatbotInputRoot = ({
   children,
   gap = BpkSpacing.Base,
   inputType = CHATBOT_INPUT_TYPES.COMPOSER,
-  isOverLimit = false,
   ...rest
 }: BpkChatbotInputRootProps) => {
   const isCars = inputType === CHATBOT_INPUT_TYPES.CARS;
@@ -43,8 +42,18 @@ const BpkChatbotInputRoot = ({
   const containerClassName = getClassName(
     isCars ? 'bpk-chatbot-input--cars' : 'bpk-chatbot-input--composer',
     isComposer && 'bpk-chatbot-input--composer--with-shadow',
-    isOverLimit && !isCars && 'bpk-chatbot-input--composer--overLimit',
   );
+
+  const paddingProps = isCars
+    ? {
+        paddingTop: BpkSpacing.MD,
+        paddingBottom: BpkSpacing.MD,
+        paddingEnd: BpkSpacing.MD,
+        paddingStart: BpkSpacing.Base,
+      }
+    : {
+        padding: BpkSpacing.Base,
+      };
 
   const handleContainerEvent = (
     e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
@@ -65,7 +74,7 @@ const BpkChatbotInputRoot = ({
         align={align}
         gap={gap}
         width="100%"
-        padding={BpkSpacing.Base}
+        {...paddingProps}
         {...rest}
       >
         {children}

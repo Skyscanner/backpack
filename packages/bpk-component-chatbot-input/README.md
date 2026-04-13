@@ -34,6 +34,9 @@ export default () => (
 ```tsx
 import BpkChatbotInput from '@skyscanner/backpack-web/bpk-component-chatbot-input';
 import BpkButton, { BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import SmallPlusIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/plus';
+import SmallFilterIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/filter';
+import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
 
 export default () => (
   <BpkChatbotInput.Root>

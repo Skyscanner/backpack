@@ -50,7 +50,6 @@ export type BpkChatbotInputInputProps = {
 
 export type BpkChatbotInputRootProps = BpkStackProps & {
   inputType?: ChatbotInputType;
-  isOverLimit?: boolean;
 };
 
 export type BpkChatbotInputToolbarProps = BpkStackProps;
