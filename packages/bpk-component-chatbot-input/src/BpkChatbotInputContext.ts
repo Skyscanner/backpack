@@ -24,11 +24,15 @@ import type { ChatbotInputType } from './common-types';
 
 type BpkChatbotInputContextValue = {
   inputType: ChatbotInputType;
+  isOverLimit: boolean;
+  setIsOverLimit: (value: boolean) => void;
 };
 
 export const BpkChatbotInputContext =
   createContext<BpkChatbotInputContextValue>({
     inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+    isOverLimit: false,
+    setIsOverLimit: () => {},
   });
 
 export const useChatbotInputContext = () => useContext(BpkChatbotInputContext);

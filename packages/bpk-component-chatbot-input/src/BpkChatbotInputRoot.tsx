@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import type { MouseEvent, TouchEvent } from 'react';
 
 import { BpkVStack, BpkSpacing } from '../../bpk-component-layout';
@@ -41,11 +41,20 @@ const BpkChatbotInputRoot = ({
   const isCars = inputType === CHATBOT_INPUT_TYPES.CARS;
   const isComposer = inputType === CHATBOT_INPUT_TYPES.COMPOSER;
 
-  const contextValue = useMemo(() => ({ inputType }), [inputType]);
+  const [isOverLimit, setIsOverLimit] = useState(false);
+  const stableSetIsOverLimit = useCallback((value: boolean) => {
+    setIsOverLimit(value);
+  }, []);
+
+  const contextValue = useMemo(
+    () => ({ inputType, isOverLimit, setIsOverLimit: stableSetIsOverLimit }),
+    [inputType, isOverLimit, stableSetIsOverLimit],
+  );
 
   const containerClassName = getClassName(
     isCars ? 'bpk-chatbot-input--cars' : 'bpk-chatbot-input--composer',
     isComposer && 'bpk-chatbot-input--composer--with-shadow',
+    isOverLimit && !isCars && 'bpk-chatbot-input--composer--overLimit',
   );
 
   const paddingProps = isCars

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
 import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
@@ -38,6 +39,7 @@ const BpkChatbotInputInput = ({
   isSending = false,
   loadingAriaLabel,
   maxCharacters = MAX_CHARACTERS,
+  maxLines,
   onInputBlur,
   onInputChange,
   onInputClick = () => {},
@@ -47,7 +49,7 @@ const BpkChatbotInputInput = ({
   placeholder,
   sendAriaLabel,
 }: BpkChatbotInputInputProps) => {
-  const { inputType } = useChatbotInputContext();
+  const { inputType, setIsOverLimit } = useChatbotInputContext();
 
   const {
     containerHeight,
@@ -57,6 +59,7 @@ const BpkChatbotInputInput = ({
     isCapped,
     isCars,
     isExpanding,
+    isOverLimit,
     sendButtonDisabled,
     textareaHeight,
   } = useChatbotInput({
@@ -66,6 +69,7 @@ const BpkChatbotInputInput = ({
     isPolling,
     isSending,
     maxCharacters,
+    maxLines,
     onInputBlur,
     onInputChange,
     onInputClick,
@@ -73,6 +77,10 @@ const BpkChatbotInputInput = ({
     onKeyDown,
     onSubmit,
   });
+
+  useEffect(() => {
+    setIsOverLimit(isOverLimit);
+  }, [isOverLimit, setIsOverLimit]);
 
   const isComposer = inputType === CHATBOT_INPUT_TYPES.COMPOSER;
 
@@ -101,6 +109,7 @@ const BpkChatbotInputInput = ({
           isCapped={isCapped}
           isExpanding={isExpanding}
           isComposer={isComposer}
+          maxLines={maxLines}
           {...inputProps}
         />
       )}

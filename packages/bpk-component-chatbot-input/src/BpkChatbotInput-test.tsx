@@ -18,12 +18,13 @@
 
 import type { ReactElement } from 'react';
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 import { BpkProvider } from '../../bpk-component-layout';
 
 import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
+import { MAX_CHARACTERS } from './constants';
 
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
@@ -308,6 +309,31 @@ describe('BpkChatbotInput', () => {
         </BpkChatbotInput.Root>,
       );
       expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('applies overLimit class on container when input exceeds max characters', async () => {
+      const longText = 'a'.repeat(MAX_CHARACTERS + 1);
+      renderWithProvider(
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue={longText} />
+        </BpkChatbotInput.Root>,
+      );
+
+      const container = screen.getByTestId('bpk-chatbot-input-container');
+      await waitFor(() => {
+        expect(container.className).toContain('overLimit');
+      });
+    });
+
+    it('does not apply overLimit class when input is within limit', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="short text" />
+        </BpkChatbotInput.Root>,
+      );
+
+      const container = screen.getByTestId('bpk-chatbot-input-container');
+      expect(container.className).not.toContain('overLimit');
     });
 
     it('stops propagation on container touchStart', () => {
