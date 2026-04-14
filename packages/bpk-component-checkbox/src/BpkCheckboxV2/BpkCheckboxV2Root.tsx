@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { Checkbox } from '@ark-ui/react';
+import { Checkbox } from '@ark-ui/react/checkbox';
 
 import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 

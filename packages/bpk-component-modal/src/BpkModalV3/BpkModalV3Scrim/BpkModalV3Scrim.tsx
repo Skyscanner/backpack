@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Dialog } from '@ark-ui/react';
+import { Dialog } from '@ark-ui/react/dialog';
 
 import {
   cssModules,
