@@ -22,7 +22,6 @@ import { Component } from 'react';
 import BpkButton from '../../bpk-component-button';
 import BpkCheckbox from '../../bpk-component-checkbox';
 import BpkInput from '../../bpk-component-input';
-// @ts-expect-error Untyped import
 import BpkSelect from '../../bpk-component-select';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';

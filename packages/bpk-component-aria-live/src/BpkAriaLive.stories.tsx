@@ -24,7 +24,6 @@ import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 import BpkChip from '../../bpk-component-chip';
 import { BpkCode } from '../../bpk-component-code';
 import BpkFieldset from '../../bpk-component-fieldset';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import BpkSwitch from '../../bpk-component-switch';
 import { cssModules } from '../../bpk-react-utils';

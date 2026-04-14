@@ -20,7 +20,6 @@ import { render } from '@testing-library/react';
 
 import BpkCheckbox from '../../bpk-component-checkbox';
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 
 import BpkFieldset from './BpkFieldset';

@@ -36,7 +36,6 @@ import {
 import BpkCheckbox from '../../bpk-component-checkbox';
 import BpkDatepicker from '../../bpk-component-datepicker';
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
-// @ts-expect-error Untyped import
 import BpkSelect from '../../bpk-component-select';
 // @ts-expect-error Untyped import
 import BpkSplitInput from '../../bpk-component-split-input';
