@@ -19,17 +19,11 @@
 import { useState } from 'react';
 
 import BpkAriaLive from '../../bpk-component-aria-live';
-import BpkSmallThumbsDownIcon from '../../bpk-component-icon/sm/thumbs-down';
-import BpkSmallThumbsUpIcon from '../../bpk-component-icon/sm/thumbs-up';
 import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { cssModules } from '../../bpk-react-utils';
+import BpkThumbButton from '../../bpk-component-thumb-button';
 
 import type { BpkAiBlurbFeedbackProps } from './common-types';
-
-import STYLES from './BpkAiBlurb.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkAiBlurbFeedback = ({
   feedbackText,
@@ -50,22 +44,20 @@ const BpkAiBlurbFeedback = ({
       {!hasVoted && (
         <>
           <BpkText textStyle={TEXT_STYLES.caption}>{feedbackText}</BpkText>
-          <button
-            type="button"
-            className={getClassName('bpk-ai-blurb__feedback-thumb')}
+          <BpkThumbButton
+            type="up"
+            size="small"
+            iconColor="primary"
+            accessibilityLabel={thumbsUpLabel}
             onClick={() => handleVote(true)}
-            aria-label={thumbsUpLabel}
-          >
-            <BpkSmallThumbsUpIcon aria-hidden />
-          </button>
-          <button
-            type="button"
-            className={getClassName('bpk-ai-blurb__feedback-thumb')}
+          />
+          <BpkThumbButton
+            type="down"
+            size="small"
+            iconColor="primary"
+            accessibilityLabel={thumbsDownLabel}
             onClick={() => handleVote(false)}
-            aria-label={thumbsDownLabel}
-          >
-            <BpkSmallThumbsDownIcon aria-hidden />
-          </button>
+          />
         </>
       )}
       <BpkAriaLive visible={hasVoted}>
