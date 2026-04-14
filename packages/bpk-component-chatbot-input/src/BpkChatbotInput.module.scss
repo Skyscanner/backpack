@@ -24,8 +24,8 @@
     transition:
       border-color tokens.$bpk-duration-sm ease,
       box-shadow tokens.$bpk-duration-sm ease;
-    border: 1.5 * tokens.$bpk-one-pixel-rem solid var(--bpk-line);
-    background: var(--bpk-surface-elevated);
+    border: 1.5 * tokens.$bpk-one-pixel-rem solid tokens.$bpk-line-day;
+    background: tokens.$bpk-surface-elevated-day;
     box-shadow: none;
     box-sizing: border-box;
     touch-action: manipulation;
