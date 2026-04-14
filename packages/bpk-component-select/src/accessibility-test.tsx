@@ -44,4 +44,46 @@ describe('BpkSelect accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have accessibility issues when invalid', async () => {
+    const { container } = render(
+      <div>
+        <label htmlFor="fruits">Fruits</label>
+        <BpkSelect
+          id="fruits"
+          name="fruits"
+          value="oranges"
+          onChange={() => null}
+          valid={false}
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+        </BpkSelect>
+      </div>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with image', async () => {
+    const { container } = render(
+      <div>
+        <label htmlFor="fruits">Fruits</label>
+        <BpkSelect
+          id="fruits"
+          name="fruits"
+          value="oranges"
+          onChange={() => null}
+          image={<img alt="flag" src="https://example.com/flag.png" />}
+        >
+          <option value="apples">Apples</option>
+          <option value="oranges">Oranges</option>
+          <option value="pears">Pears</option>
+        </BpkSelect>
+      </div>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });
