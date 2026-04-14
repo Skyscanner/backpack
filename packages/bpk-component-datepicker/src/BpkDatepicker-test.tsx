@@ -32,17 +32,6 @@ import BpkDatepicker from './BpkDatepicker';
 
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
-jest.mock('@popperjs/core', () => {
-  const PopperJS = jest.requireActual('@popperjs/core');
-  return {
-    __esModule: true,
-    ...PopperJS,
-    createPopper: jest.fn(() => ({
-      update: jest.fn(),
-      destroy: jest.fn(),
-    })),
-  };
-});
 
 const formatDate = (date: Date) => format(date, 'dd/MM/yyyy');
 
