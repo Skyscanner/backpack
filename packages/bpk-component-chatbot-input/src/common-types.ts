@@ -43,6 +43,8 @@ export type BpkChatbotInputInputProps = {
   isSending?: boolean;
   isPolling?: boolean;
   maxCharacters?: number;
+  /** Maximum number of visible lines before the textarea scrolls. Defaults to 4 (expanding to 5 when content exceeds 4 lines). Only applies to multiline input types. */
+  maxLines?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
 };

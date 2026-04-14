@@ -277,6 +277,7 @@ const WithToolbarExample = () => {
           loadingAriaLabel={LOADING_ARIA_LABEL}
           sendAriaLabel={SEND_ARIA_LABEL}
           placeholder={PLACEHOLDER}
+          maxLines={15}
           onInputChange={setInputValue}
           onInputFocus={() => {}}
           onInputBlur={() => {}}
