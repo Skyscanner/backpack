@@ -20,7 +20,8 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import { defaultBaseConfig } from '@chakra-ui/react/preset-base';
+import { ChakraProvider, createSystem } from '@chakra-ui/react/styled-system';
 
 import { createBpkConfig } from './theme';
 

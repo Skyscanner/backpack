@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { defineConfig } from '@chakra-ui/react';
+import { defineConfig } from '@chakra-ui/react/styled-system';
 
 // Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
