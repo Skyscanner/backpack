@@ -226,7 +226,7 @@ describe('BpkScrim', () => {
       expect(unlockScroll).toHaveBeenCalled();
       expect(restoreScroll).not.toHaveBeenCalled();
       expect(unfixBody).not.toHaveBeenCalled();
-      expect(focusStore.storeFocus).toHaveBeenCalled();
+      expect(focusStore.restoreFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
       expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');
     });

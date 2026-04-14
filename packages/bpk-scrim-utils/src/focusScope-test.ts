@@ -68,6 +68,17 @@ describe('focusScope', () => {
     expect(document.activeElement).toBe(container);
   });
 
+  it('should not recapture focus when focus stays inside the scoped element', () => {
+    const innerButton = document.createElement('button');
+    container.appendChild(innerButton);
+    focusScope.scopeFocus(container);
+
+    innerButton.focus();
+    innerButton.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+
+    expect(document.activeElement).toBe(innerButton);
+  });
+
   it('should stop capturing focus after unscopeFocus', () => {
     focusScope.scopeFocus(container);
     focusScope.unscopeFocus();
