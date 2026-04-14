@@ -1,0 +1,108 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/utils';
+
+// Outer wrapper — default width with responsive fallback
+.bpk-comparison-tray {
+  width: 355 * tokens.$bpk-one-pixel-rem;
+  max-width: 100%;
+}
+
+// Filled item — relative for close button positioning
+.bpk-comparison-tray__item {
+  position: relative;
+  width: 62 * tokens.$bpk-one-pixel-rem;
+  height: 28 * tokens.$bpk-one-pixel-rem;
+  flex-shrink: 0;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+// Inner image container — clips image to rounded corners without clipping the close button
+.bpk-comparison-tray__item-image-container {
+  width: 100%;
+  height: 100%;
+  background-color: tokens.$bpk-canvas-contrast-day;
+  overflow: hidden;
+
+  @include radii.bpk-border-radius-xs;
+
+  // Ensure BpkImage's internal <img> covers the container without distortion
+  img {
+    object-fit: cover;
+  }
+}
+
+// Close button — 16×16, dark bg, white border, overlaps top-right corner
+.bpk-comparison-tray__item-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: 16 * tokens.$bpk-one-pixel-rem;
+  height: 16 * tokens.$bpk-one-pixel-rem;
+  justify-content: center;
+  align-items: center;
+  transform: translate(50%, -50%);
+  border: 2 * tokens.$bpk-one-pixel-rem solid
+    tokens.$bpk-text-primary-inverse-day;
+  border-radius: 50%;
+  background-color: tokens.$bpk-text-primary-day;
+  color: tokens.$bpk-text-primary-inverse-day;
+  cursor: pointer;
+
+  @include utils.bpk-touch-tappable;
+  @include shadows.bpk-box-shadow-lg;
+
+  svg {
+    width: 8 * tokens.$bpk-one-pixel-rem;
+    height: 8 * tokens.$bpk-one-pixel-rem;
+    flex-shrink: 0;
+    fill: tokens.$bpk-text-primary-inverse-day;
+  }
+
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}
+
+// Placeholder item — dashed border
+.bpk-comparison-tray__item-placeholder {
+  width: 62 * tokens.$bpk-one-pixel-rem;
+  height: 28 * tokens.$bpk-one-pixel-rem;
+  flex-shrink: 0;
+  border: tokens.$bpk-one-pixel-rem dashed tokens.$bpk-line-day;
+
+  @include radii.bpk-border-radius-xs;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
+}
