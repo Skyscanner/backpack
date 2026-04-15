@@ -41,10 +41,66 @@ $breakpoints: (
 );
 $bp-order: ('sm', 'md', 'lg', 'xl', '2xl');
 
-// Builds a mobile-first fallback chain:
+// All responsive (css-property, var-name) pairs supported by .bpk-responsive.
+// Keeping this as a single list means all properties share the same 5 @media
+// blocks instead of generating 5 blocks per property (50 props × 5 = 250 blocks).
+$responsive-props: (
+  // Spacing
+  ('padding', 'padding'),
+  ('padding-top', 'padding-top'),
+  ('padding-right', 'padding-right'),
+  ('padding-bottom', 'padding-bottom'),
+  ('padding-left', 'padding-left'),
+  ('padding-inline-start', 'padding-start'),
+  ('padding-inline-end', 'padding-end'),
+  ('padding-inline', 'padding-inline'),
+  ('margin', 'margin'),
+  ('margin-top', 'margin-top'),
+  ('margin-right', 'margin-right'),
+  ('margin-bottom', 'margin-bottom'),
+  ('margin-left', 'margin-left'),
+  ('margin-inline-start', 'margin-start'),
+  ('margin-inline-end', 'margin-end'),
+  ('margin-inline', 'margin-inline'),
+  ('gap', 'gap'),
+  ('row-gap', 'row-gap'),
+  ('column-gap', 'column-gap'),
+  // Size
+  ('width', 'width'),
+  ('height', 'height'),
+  ('min-width', 'min-width'),
+  ('min-height', 'min-height'),
+  ('max-width', 'max-width'),
+  ('max-height', 'max-height'),
+  // Display & position
+  ('display', 'display'),
+  ('position', 'position'),
+  ('overflow', 'overflow'),
+  ('overflow-x', 'overflow-x'),
+  ('overflow-y', 'overflow-y'),
+  // Flex container
+  ('flex-direction', 'flex-direction'),
+  ('flex-wrap', 'flex-wrap'),
+  ('justify-content', 'justify-content'),
+  ('align-items', 'align-items'),
+  ('align-content', 'align-content'),
+  // Flex item (only align-self is commonly responsive)
+  ('flex', 'flex'),
+  ('align-self', 'align-self'),
+  // Grid container
+  ('grid-template-columns', 'grid-template-columns'),
+  ('grid-template-rows', 'grid-template-rows'),
+  // Grid item
+  ('grid-column', 'grid-column'),
+  ('grid-row', 'grid-row'),
+  // Typography (from textStyle expansion)
+  ('font-size', 'font-size'),
+  ('line-height', 'line-height'),
+  ('font-weight', 'font-weight')
+);
+
+// Builds a mobile-first fallback chain for a given var-name up to a breakpoint index:
 //   var(--bpk-X-md, var(--bpk-X-sm, var(--bpk-X)))
-// At each breakpoint the chain tries the current bp first, then falls back
-// through all smaller breakpoints down to the base value.
 @function fallback-chain($var-name, $up-to-index) {
   $result: var(--bpk-#{$var-name});
 
@@ -56,101 +112,28 @@ $bp-order: ('sm', 'md', 'lg', 'xl', '2xl');
   @return $result;
 }
 
-// Generates responsive declarations for a single CSS property.
-// The base value is read from --bpk-{var-name}, and each breakpoint
-// overrides with --bpk-{var-name}-{bp} if set.
-@mixin responsive-prop($css-prop, $var-name) {
-  #{$css-prop}: var(--bpk-#{$var-name});
-
-  @each $bp, $min-width in $breakpoints {
-    $index: list.index($bp-order, $bp);
-
-    @media (min-width: #{$min-width}) {
-      #{$css-prop}: fallback-chain($var-name, $index);
-    }
-  }
-}
-
 // ============================================================
-// Responsive class — applied only when responsive props are set
+// Responsive class — applied only when responsive props are set.
+// Uses 5 @media blocks (one per breakpoint) rather than one per
+// property to keep compiled CSS compact.
 // ============================================================
 .bpk-responsive {
-  // --- Spacing ---
-  @include responsive-prop('padding', 'padding');
-  @include responsive-prop('padding-top', 'padding-top');
-  @include responsive-prop('padding-right', 'padding-right');
-  @include responsive-prop('padding-bottom', 'padding-bottom');
-  @include responsive-prop('padding-left', 'padding-left');
-  @include responsive-prop('padding-inline-start', 'padding-start');
-  @include responsive-prop('padding-inline-end', 'padding-end');
-  @include responsive-prop('padding-inline', 'padding-inline');
-  @include responsive-prop('margin', 'margin');
-  @include responsive-prop('margin-top', 'margin-top');
-  @include responsive-prop('margin-right', 'margin-right');
-  @include responsive-prop('margin-bottom', 'margin-bottom');
-  @include responsive-prop('margin-left', 'margin-left');
-  @include responsive-prop('margin-inline-start', 'margin-start');
-  @include responsive-prop('margin-inline-end', 'margin-end');
-  @include responsive-prop('margin-inline', 'margin-inline');
-  @include responsive-prop('gap', 'gap');
-  @include responsive-prop('row-gap', 'row-gap');
-  @include responsive-prop('column-gap', 'column-gap');
+  // Base values — no media query needed.
+  @each $css-prop, $var-name in $responsive-props {
+    #{$css-prop}: var(--bpk-#{$var-name});
+  }
 
-  // --- Size ---
-  @include responsive-prop('width', 'width');
-  @include responsive-prop('height', 'height');
-  @include responsive-prop('min-width', 'min-width');
-  @include responsive-prop('min-height', 'min-height');
-  @include responsive-prop('max-width', 'max-width');
-  @include responsive-prop('max-height', 'max-height');
+  // Per-breakpoint overrides. One @media block per breakpoint containing
+  // all properties, rather than 50 separate blocks per property.
+  @each $bp, $min-width in $breakpoints {
+    $bp-index: list.index($bp-order, $bp);
 
-  // --- Position offsets ---
-  @include responsive-prop('top', 'top');
-  @include responsive-prop('right', 'right');
-  @include responsive-prop('bottom', 'bottom');
-  @include responsive-prop('left', 'left');
-
-  // --- Display & position ---
-  @include responsive-prop('display', 'display');
-  @include responsive-prop('position', 'position');
-  @include responsive-prop('overflow', 'overflow');
-  @include responsive-prop('overflow-x', 'overflow-x');
-  @include responsive-prop('overflow-y', 'overflow-y');
-
-  // --- Flex container ---
-  @include responsive-prop('flex-direction', 'flex-direction');
-  @include responsive-prop('flex-wrap', 'flex-wrap');
-  @include responsive-prop('justify-content', 'justify-content');
-  @include responsive-prop('align-items', 'align-items');
-  @include responsive-prop('align-content', 'align-content');
-
-  // --- Flex item ---
-  @include responsive-prop('flex', 'flex');
-  @include responsive-prop('flex-grow', 'flex-grow');
-  @include responsive-prop('flex-shrink', 'flex-shrink');
-  @include responsive-prop('flex-basis', 'flex-basis');
-  @include responsive-prop('order', 'order');
-  @include responsive-prop('align-self', 'align-self');
-  @include responsive-prop('justify-self', 'justify-self');
-
-  // --- Grid container ---
-  @include responsive-prop('grid-template-columns', 'grid-template-columns');
-  @include responsive-prop('grid-template-rows', 'grid-template-rows');
-  @include responsive-prop('grid-template-areas', 'grid-template-areas');
-  @include responsive-prop('grid-auto-flow', 'grid-auto-flow');
-  @include responsive-prop('grid-auto-rows', 'grid-auto-rows');
-  @include responsive-prop('grid-auto-columns', 'grid-auto-columns');
-
-  // --- Grid item ---
-  @include responsive-prop('grid-column', 'grid-column');
-  @include responsive-prop('grid-row', 'grid-row');
-
-  // --- Typography (from textStyle expansion) ---
-  @include responsive-prop('font-size', 'font-size');
-  @include responsive-prop('line-height', 'line-height');
-  @include responsive-prop('font-weight', 'font-weight');
-  @include responsive-prop('letter-spacing', 'letter-spacing');
-  @include responsive-prop('font-family', 'font-family');
+    @media (min-width: #{$min-width}) {
+      @each $css-prop, $var-name in $responsive-props {
+        #{$css-prop}: fallback-chain($var-name, $bp-index);
+      }
+    }
+  }
 }
 
 // ============================================================

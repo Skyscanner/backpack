@@ -136,6 +136,36 @@ function isPassthroughProp(key: string): boolean {
 }
 
 /**
+ * Props that map to CSS properties but are NOT part of the CSS custom property
+ * responsive system. They always produce inline styles, even when passed as
+ * responsive objects (only the 'base' value is used in that case).
+ *
+ * These props were excluded from BpkLayoutResponsive.module.scss because they
+ * are rarely — if ever — varied across breakpoints in practice.
+ */
+const STATIC_ONLY_PROPS = new Set([
+  // Position offsets
+  'top',
+  'right',
+  'bottom',
+  'left',
+  // Flex item details
+  'flexGrow',
+  'flexShrink',
+  'flexBasis',
+  'order',
+  'justifySelf',
+  // Grid internals
+  'gridAutoFlow',
+  'gridAutoRows',
+  'gridAutoColumns',
+  'gridTemplateAreas',
+  // Typography details (font-family and letter-spacing are unlikely to change per breakpoint)
+  'letterSpacing',
+  'fontFamily',
+]);
+
+/**
  * Props that are handled separately by components (not style, not passthrough).
  * These are stripped from the style output and handled in the component layer.
  */
@@ -190,8 +220,8 @@ export function buildLayoutOutput(
 
     const cssVarName = PROP_TO_CSS_VAR[key];
 
-    // Responsive object → CSS custom properties
-    if (cssVarName && typeof value === 'object' && !Array.isArray(value)) {
+    // Responsive object → CSS custom properties (only for responsive-capable props)
+    if (cssVarName && !STATIC_ONLY_PROPS.has(key) && typeof value === 'object' && !Array.isArray(value)) {
       hasResponsive = true;
       Object.entries(value as Record<string, string>).forEach(([bp, bpValue]) => {
         if (bp === 'base') {
@@ -203,11 +233,15 @@ export function buildLayoutOutput(
       return;
     }
 
-    // Scalar value → inline style
+    // Scalar value → inline style (also handles static-only props that received a responsive object)
     if (cssVarName) {
-      // Map to correct CSS property name (handles aliases like paddingStart → paddingInlineStart)
       const cssPropName = PROP_TO_CSS_PROPERTY[key] || key;
-      (style as any)[cssPropName] = String(value);
+      // For static-only props that received a responsive object, use the base value
+      const finalValue =
+        typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, string>).base : value;
+      if (finalValue !== undefined) {
+        (style as any)[cssPropName] = String(finalValue);
+      }
       return;
     }
 
