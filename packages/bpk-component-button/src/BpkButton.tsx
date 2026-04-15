@@ -15,12 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { usePropOverrides } from '../../bpk-component-layout';
 import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
-import type { ButtonType, Props } from './common-types';
+import type { ButtonType, SizeType, Props } from './common-types';
 
 import COMMON_STYLES from './BpkButton.module.scss';
 
@@ -51,12 +52,24 @@ const BpkButton = ({
   loading = false,
   onClick = () => {},
   rel: propRel = undefined,
-  size = SIZE_TYPES.small,
+  size: sizeProp,
   submit = false,
   trailingIcon = null,
-  type = BUTTON_TYPES.primary,
+  type: typeProp,
   ...rest
 }: Props) => {
+  const overrides = usePropOverrides('BpkButton');
+
+  const type: ButtonType =
+    typeProp !== undefined
+      ? typeProp
+      : (overrides?.type?.[BUTTON_TYPES.primary] as ButtonType | undefined) ?? BUTTON_TYPES.primary;
+
+  const size: SizeType =
+    sizeProp !== undefined
+      ? sizeProp
+      : (overrides?.size?.[SIZE_TYPES.small] as SizeType | undefined) ?? SIZE_TYPES.small;
+
   const isDisabled = disabled || loading;
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
   const alternate = type === BUTTON_TYPES.linkOnDark;

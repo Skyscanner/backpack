@@ -19,13 +19,18 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
+
 import { LocaleProvider } from '@ark-ui/react';
 import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
 
+import { BpkPropOverridesProvider } from './BpkPropOverridesContext';
 import { createBpkConfig } from './theme';
+
+import type { PropOverridesConfig } from './BpkPropOverridesContext';
 
 export interface BpkProviderProps {
   children: ReactNode;
+  propOverrides?: PropOverridesConfig;
 }
 
 /**
@@ -129,12 +134,20 @@ const useArkLocale = (): string => {
  * @param {BpkProviderProps} props - The provider props.
  * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children, propOverrides }: BpkProviderProps) => {
   const locale = useArkLocale();
 
-  return (
+  const inner = (
     <ChakraProvider value={bpkSystem}>
       <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
+  );
+
+  if (!propOverrides) return inner;
+
+  return (
+    <BpkPropOverridesProvider value={propOverrides}>
+      {inner}
+    </BpkPropOverridesProvider>
   );
 };

@@ -30,13 +30,15 @@ import {
   BpkVessel,
   BpkVStack,
 } from '..';
-import BpkButton from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
+import BpkSelectableChip from '../../bpk-component-chip/src/BpkSelectableChip';
 import BpkText, {
   TEXT_STYLES,
 } from '../../bpk-component-text';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
+import type { PropOverridesConfig } from '..';
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkLayout.stories.module.scss';
@@ -441,6 +443,112 @@ const VisualTest = () => (
   </>
 );
 
+const OVERRIDE_PRESETS: Record<string, PropOverridesConfig> = {
+  'None (default)': {},
+  'Button: primary → secondary': {
+    BpkButton: { type: { primary: 'secondary' } },
+  },
+  'Button: primary → destructive': {
+    BpkButton: { type: { primary: 'destructive' } },
+  },
+  'Button: small → large': {
+    BpkButton: { size: { small: 'large' } },
+  },
+  'Chip: default → on-dark': {
+    BpkSelectableChip: { type: { default: 'on-dark' } },
+  },
+  'Combined: button + chip': {
+    BpkButton: { type: { primary: 'featured' }, size: { small: 'large' } },
+    BpkSelectableChip: { type: { default: 'on-image' } },
+  },
+};
+
+const PropOverridesExample = () => {
+  const [presetKey, setPresetKey] = useState<string>('None (default)');
+  const config = OVERRIDE_PRESETS[presetKey];
+
+  return (
+    <div style={{ padding: '1rem', maxWidth: 600 }}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="h2">
+        Prop Overrides / Variant Swap
+      </BpkText>
+      <p style={{ margin: '0.5rem 0 1rem' }}>
+        Select a preset to swap component variants globally via BpkProvider.
+        Explicit props always win over overrides.
+      </p>
+
+      <label htmlFor="preset-select" style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.25rem' }}>
+        Override preset:
+      </label>
+      <select
+        id="preset-select"
+        value={presetKey}
+        onChange={(e) => setPresetKey(e.target.value)}
+        style={{ marginBottom: '1.5rem', padding: '0.25rem' }}
+      >
+        {Object.keys(OVERRIDE_PRESETS).map((key) => (
+          <option key={key} value={key}>{key}</option>
+        ))}
+      </select>
+
+      <BpkProvider propOverrides={Object.keys(config).length > 0 ? config : undefined}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div>
+            <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
+              BpkButton (no explicit type — uses override)
+            </BpkText>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+              <BpkButton onClick={() => {}}>Default button</BpkButton>
+            </div>
+          </div>
+
+          <div>
+            <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
+              BpkButton (explicit type=&quot;featured&quot; — unaffected)
+            </BpkText>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+              <BpkButton type={BUTTON_TYPES.featured} onClick={() => {}}>
+                Featured (explicit)
+              </BpkButton>
+            </div>
+          </div>
+
+          <div>
+            <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
+              BpkButton — all variants for reference
+            </BpkText>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+              <BpkButton type={BUTTON_TYPES.primary} onClick={() => {}}>Primary</BpkButton>
+              <BpkButton type={BUTTON_TYPES.secondary} onClick={() => {}}>Secondary</BpkButton>
+              <BpkButton type={BUTTON_TYPES.destructive} onClick={() => {}}>Destructive</BpkButton>
+              <BpkButton type={BUTTON_TYPES.featured} onClick={() => {}}>Featured</BpkButton>
+              <BpkButton type={BUTTON_TYPES.link} onClick={() => {}}>Link</BpkButton>
+            </div>
+          </div>
+
+          <div>
+            <BpkText textStyle={TEXT_STYLES.heading4} tagName="h3">
+              BpkSelectableChip (no explicit type — uses override)
+            </BpkText>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+              <BpkSelectableChip accessibilityLabel="Chip" onClick={() => {}}>
+                Default chip
+              </BpkSelectableChip>
+            </div>
+          </div>
+        </div>
+      </BpkProvider>
+
+      <details style={{ marginTop: '1.5rem' }}>
+        <summary style={{ cursor: 'pointer', fontWeight: 'bold' }}>Config (JSON)</summary>
+        <pre style={{ background: '#f5f5f5', padding: '0.5rem', fontSize: '0.8rem' }}>
+          {JSON.stringify(config, null, 2)}
+        </pre>
+      </details>
+    </div>
+  );
+};
+
 const meta = {
   title: 'bpk-component-layout',
   component: BpkProvider,
@@ -469,4 +577,8 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const PropOverrides = {
+  render: () => <PropOverridesExample />,
 };

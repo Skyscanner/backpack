@@ -18,6 +18,7 @@
 
 import type { ReactNode } from 'react';
 
+import { usePropOverrides } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -45,9 +46,16 @@ const BpkSelectableChip = ({
   role = 'checkbox',
   selected = false,
   trailingAccessoryView = null,
-  type = CHIP_TYPES.default,
+  type: typeProp,
   ...rest
 }: Props) => {
+  const overrides = usePropOverrides('BpkSelectableChip');
+
+  const type =
+    typeProp !== undefined
+      ? typeProp
+      : (overrides?.type?.[CHIP_TYPES.default] as typeof CHIP_TYPES[keyof typeof CHIP_TYPES] | undefined) ?? CHIP_TYPES.default;
+
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
