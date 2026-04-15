@@ -155,9 +155,14 @@ const useTextAreaAutoResize = ({
     setDimensions((prev) => {
       const isContentAdded = value.length > previousValueRef.current.length;
       const isAppending = value.startsWith(previousValueRef.current);
-      const prevMaxHeight = prev.isCapped
-        ? MAX_INPUT_HEIGHT_PHASE_2
-        : MAX_INPUT_HEIGHT_PHASE_1;
+      let prevMaxHeight;
+      if (hasCustomMaxLines) {
+        prevMaxHeight = lineHeightRef.current * maxLines;
+      } else {
+        prevMaxHeight = prev.isCapped
+          ? MAX_INPUT_HEIGHT_PHASE_2
+          : MAX_INPUT_HEIGHT_PHASE_1;
+      }
 
       const isInitialRender = isInitialRenderRef.current;
       const shouldScroll =

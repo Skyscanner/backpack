@@ -9,9 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkChatbotInput, {
-  CHATBOT_INPUT_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-chatbot-input';
+import BpkChatbotInput from '@skyscanner/backpack-web/bpk-component-chatbot-input';
 
 export default () => (
   <BpkChatbotInput.Root>
@@ -60,29 +58,6 @@ export default () => (
         <BpkVisuallyHidden>Filter</BpkVisuallyHidden>
       </BpkButton>
     </BpkChatbotInput.Toolbar>
-  </BpkChatbotInput.Root>
-);
-```
-
-### Cars type
-
-```tsx
-import BpkChatbotInput, {
-  CHATBOT_INPUT_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-chatbot-input';
-
-export default () => (
-  <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS}>
-    <BpkChatbotInput.Input
-      inputValue=""
-      loadingAriaLabel="Loading"
-      sendAriaLabel="Send"
-      placeholder="Ask away"
-      onInputChange={(value) => console.log(value)}
-      onInputFocus={() => {}}
-      onInputBlur={() => {}}
-      onSubmit={() => {}}
-    />
   </BpkChatbotInput.Root>
 );
 ```
