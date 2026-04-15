@@ -56,6 +56,7 @@ const AlignedArrowRightIcon = withButtonAlignment(
 const LOADING_ARIA_LABEL = 'Loading';
 const SEND_ARIA_LABEL = 'Send';
 const PLACEHOLDER = 'Ask away';
+const onSubmitAction = (value: string) => action(`Submit: "${value}"`)();
 
 const renderCarsSendButton: ComponentProps<typeof BpkChatbotInput.Input>['renderSendButton'] = ({
   ariaLabel,
@@ -103,7 +104,7 @@ const ChatbotInputWithState = ({
         onInputChange={setInputValue}
         onInputFocus={() => {}}
         onInputBlur={() => {}}
-        onSubmit={() => {}}
+        onSubmit={() => onSubmitAction(inputValue)}
         {...props}
       />
     </BpkChatbotInput.Root>
@@ -315,7 +316,7 @@ const WithToolbarExample = () => {
           onInputChange={setInputValue}
           onInputFocus={() => {}}
           onInputBlur={() => {}}
-          onSubmit={() => {}}
+          onSubmit={() => onSubmitAction(inputValue)}
         />
         <BpkChatbotInput.Toolbar>
           <BpkButton type={BUTTON_TYPES.link} iconOnly onClick={() => {}}>
@@ -352,7 +353,7 @@ const WithCustomSendButtonExample = () => {
           onInputChange={setInputValue}
           onInputFocus={() => {}}
           onInputBlur={() => {}}
-          onSubmit={action('Custom send button clicked')}
+          onSubmit={() => onSubmitAction(inputValue)}
           renderSendButton={({ ariaLabel, disabled, loading, onClick }) => (
             <BpkButton
               type={BUTTON_TYPES.featured}
