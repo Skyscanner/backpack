@@ -18,11 +18,11 @@
 
 import { forwardRef } from 'react';
 
-import { GridItem } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkComponentProps } from './tokenUtils';
+import { resolveTextStyle } from './theme';
+import { processBpkComponentProps, splitProps } from './tokenUtils';
+import { useBreakpoint, resolveAllResponsive } from './useBreakpoint';
 
 import type { BpkGridItemProps } from './types';
 
@@ -33,7 +33,29 @@ const getClassName = cssModules(STYLES);
 
 export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
   ({ area, backgroundColor, children, colEnd, colSpan, colStart, color, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
+    const bp = useBreakpoint();
     const processedProps = processBpkComponentProps({ textStyle, ...props }, { component: 'BpkGridItem' });
+    const { htmlProps, styleProps } = splitProps(processedProps);
+    const resolvedStyle = resolveAllResponsive(styleProps, bp);
+
+    const resolvedTextStyleName = resolvedStyle.textStyle;
+    delete resolvedStyle.textStyle;
+    if (resolvedTextStyleName) {
+      const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
+      if (textStyleCSS) {
+        Object.assign(resolvedStyle, textStyleCSS);
+      }
+    }
+
+    // Map grid item placement props to CSS properties
+    if (area) resolvedStyle.gridArea = area;
+    if (colSpan) resolvedStyle.gridColumn = `span ${colSpan}/span ${colSpan}`;
+    if (colStart) resolvedStyle.gridColumnStart = colStart;
+    if (colEnd) resolvedStyle.gridColumnEnd = colEnd;
+    if (rowSpan) resolvedStyle.gridRow = `span ${rowSpan}/span ${rowSpan}`;
+    if (rowStart) resolvedStyle.gridRowStart = rowStart;
+    if (rowEnd) resolvedStyle.gridRowEnd = rowEnd;
+
     const classNames = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
@@ -43,22 +65,15 @@ export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
       : undefined;
 
     return (
-      <GridItem
+      <div
         ref={ref}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={classNames}
+        style={Object.keys(resolvedStyle).length > 0 ? resolvedStyle : undefined}
         {...getDataComponentAttribute('GridItem')}
-        {...processedProps}
-        area={area}
-        colEnd={colEnd}
-        colStart={colStart}
-        colSpan={colSpan}
-        rowEnd={rowEnd}
-        rowStart={rowStart}
-        rowSpan={rowSpan}
+        {...htmlProps}
       >
         {children}
-      </GridItem>
+      </div>
     );
   },
 );
@@ -66,4 +81,3 @@ export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
 BpkGridItem.displayName = 'BpkGridItem';
 
 export type { BpkGridItemProps };
-

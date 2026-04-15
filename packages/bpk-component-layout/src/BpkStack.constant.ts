@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-// these options align with Chakra's StackOption excluding separator
+// Stack layout option keys that map to flex properties.
 // TODO: add separator to Stack
 const StackOptionKeys = [
   'align',

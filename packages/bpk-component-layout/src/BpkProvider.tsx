@@ -20,22 +20,10 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
-
-import { createBpkConfig } from './theme';
 
 export interface BpkProviderProps {
   children: ReactNode;
 }
-
-/**
- * Creates a Chakra UI system with Backpack token mappings.
- *
- * Uses `defaultBaseConfig` (conditions + utilities only) instead of
- * `defaultConfig` to avoid bundling ~141KB of unused component recipes.
- * See: https://chakra-ui.com/guides/component-bundle-optimization
- */
-const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
 
 type Direction = 'ltr' | 'rtl';
 
@@ -118,23 +106,18 @@ const useArkLocale = (): string => {
 /**
  * BpkProvider - Provides context for Backpack layout and Ark-based components.
  *
- * Wraps children with:
- * - Chakra UI system context (for layout components: BpkFlex, BpkGrid, etc.)
- * - Ark UI LocaleProvider (for Ark-based components: BpkCheckboxV2, BpkSegmentedControlV2, etc.)
- *
- * RTL support: reads document direction reactively via MutationObserver and passes
+ * Wraps children with Ark UI LocaleProvider for RTL support.
+ * Reads document direction reactively via MutationObserver and passes
  * the appropriate locale to Ark's LocaleProvider. All Ark-based components in the
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {object} The provider wrapping its children with Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children }: BpkProviderProps) => {
   const locale = useArkLocale();
 
   return (
-    <ChakraProvider value={bpkSystem}>
-      <LocaleProvider locale={locale}>{children}</LocaleProvider>
-    </ChakraProvider>
+    <LocaleProvider locale={locale}>{children}</LocaleProvider>
   );
 };

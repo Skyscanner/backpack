@@ -18,11 +18,11 @@
 
 import { forwardRef } from 'react';
 
-import { Grid } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkComponentProps } from './tokenUtils';
+import { resolveTextStyle } from './theme';
+import { processBpkComponentProps, splitProps } from './tokenUtils';
+import { useBreakpoint, resolveAllResponsive } from './useBreakpoint';
 
 import type { BpkGridProps } from './types';
 
@@ -36,6 +36,7 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
     { align, autoColumns, autoFlow, autoRows, backgroundColor, children, color, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },
     ref,
   ) => {
+    const bp = useBreakpoint();
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkGrid',
       responsiveProps: {
@@ -52,6 +53,20 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         gridRow: row,
       },
     });
+    const { htmlProps, styleProps } = splitProps(processedProps);
+    const resolvedStyle = resolveAllResponsive(styleProps, bp);
+
+    const resolvedTextStyleName = resolvedStyle.textStyle;
+    delete resolvedStyle.textStyle;
+    if (resolvedTextStyleName) {
+      const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
+      if (textStyleCSS) {
+        Object.assign(resolvedStyle, textStyleCSS);
+      }
+    }
+
+    resolvedStyle.display = inline ? 'inline-grid' : 'grid';
+
     const classNames = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
@@ -61,16 +76,15 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
       : undefined;
 
     return (
-      <Grid
+      <div
         ref={ref}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={classNames}
+        style={resolvedStyle}
         {...getDataComponentAttribute('Grid')}
-        {...processedProps}
-        display={inline ? 'inline-grid' : undefined}
+        {...htmlProps}
       >
         {children}
-      </Grid>
+      </div>
     );
   },
 );

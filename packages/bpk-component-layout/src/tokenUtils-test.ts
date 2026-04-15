@@ -17,7 +17,7 @@
  */
 
 import {
-  convertBpkSpacingToChakra,
+  convertBpkSpacingToCSS,
   processBpkComponentProps,
   processBpkProps,
   processResponsiveProps,
@@ -127,7 +127,7 @@ describe('processBpkProps', () => {
     warnSpy.mockRestore();
   });
 
-  it('converts Backpack breakpoint keys to Chakra keys for responsive objects', () => {
+  it('converts Backpack breakpoint keys to style keys for responsive objects', () => {
     const result = processBpkProps({
       padding: {
         mobile: BpkSpacing.SM,
@@ -160,7 +160,7 @@ describe('processBpkProps', () => {
 
     const result = processBpkComponentProps(
       {
-        // Chakra array syntax is intentionally not supported in the public API.
+        // Array syntax is intentionally not supported in the public API.
         display: ['flex', 'grid'],
       } as any,
       { component: 'BpkBox' },
@@ -281,7 +281,7 @@ describe('processBpkProps', () => {
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
-    const result = convertBpkSpacingToChakra('bpk-spacing-unknown');
+    const result = convertBpkSpacingToCSS('bpk-spacing-unknown');
 
     expect(result).toBe('bpk-spacing-unknown');
     expect(warnSpy).toHaveBeenCalled();

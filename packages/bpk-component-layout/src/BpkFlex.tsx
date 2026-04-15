@@ -18,11 +18,11 @@
 
 import { forwardRef } from 'react';
 
-import { Flex } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkComponentProps } from './tokenUtils';
+import { resolveTextStyle } from './theme';
+import { processBpkComponentProps, splitProps } from './tokenUtils';
+import { useBreakpoint, resolveAllResponsive } from './useBreakpoint';
 
 import type { BpkFlexProps } from './types';
 
@@ -33,6 +33,7 @@ const getClassName = cssModules(STYLES);
 
 export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
   ({ align, backgroundColor, basis, children, color, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
+    const bp = useBreakpoint();
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkFlex',
       responsiveProps: {
@@ -46,6 +47,22 @@ export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
         flexBasis: basis,
       },
     });
+    const { htmlProps, styleProps } = splitProps(processedProps);
+    const resolvedStyle = resolveAllResponsive(styleProps, bp);
+
+    // Handle textStyle separately — it was passed through the responsive pipeline
+    // but needs to be resolved to actual CSS properties.
+    const resolvedTextStyleName = resolvedStyle.textStyle;
+    delete resolvedStyle.textStyle;
+    if (resolvedTextStyleName) {
+      const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
+      if (textStyleCSS) {
+        Object.assign(resolvedStyle, textStyleCSS);
+      }
+    }
+
+    resolvedStyle.display = inline ? 'inline-flex' : 'flex';
+
     const classNames = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
@@ -55,16 +72,15 @@ export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
       : undefined;
 
     return (
-      <Flex
+      <div
         ref={ref}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={classNames}
+        style={resolvedStyle}
         {...getDataComponentAttribute('Flex')}
-        {...processedProps}
-        display={inline ? 'inline-flex' : undefined}
+        {...htmlProps}
       >
         {children}
-      </Flex>
+      </div>
     );
   },
 );

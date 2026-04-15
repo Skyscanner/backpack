@@ -16,13 +16,9 @@
  * limitations under the License.
  */
 
-import { defineConfig } from '@chakra-ui/react';
-
 // Import tokens from Backpack foundations
 // Note: Some tokens may not be in TypeScript definitions but exist at runtime
 import * as bpkTokens from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
-import type { ChakraBreakpointKey } from './tokens';
 
 // NOTE:
 // We intentionally do not use the raw breakpoint *values* from foundations here.
@@ -58,10 +54,10 @@ const spacingXl = '2rem';
 const spacingXxl = '2.5rem';
 
 /**
- * Backpack Theme Configuration for Chakra UI
+ * Backpack Token Configuration
  *
- * This theme maps Backpack design tokens from @skyscanner/bpk-foundations-web
- * to Chakra UI's theme structure.
+ * Maps Backpack design tokens from @skyscanner/bpk-foundations-web
+ * to CSS values for use by layout components.
  */
 
 /**
@@ -114,28 +110,6 @@ const shadowMap: Record<string, string> = {
   'bpk-shadow-sm': bpkTokens.boxShadowSm,
   'bpk-shadow-lg': bpkTokens.boxShadowLg,
   'bpk-shadow-xl': bpkTokens.boxShadowXl,
-};
-
-/**
- * Chakra expects raw width values (e.g. "48rem"), not full media queries.
- * The media query construction is handled internally by Chakra's system.
- *
- * We align Backpack breakpoint tokens to Chakra's keys like this:
- * - base: 0 (implicit)
- * - sm: small-mobile (>= 320px)
- * - md: mobile (>= 360px)
- * - lg: small-tablet (>= 513px)
- * - xl: tablet (>= 769px)
- * - 2xl: desktop (>= 1025px)
- */
-// TODO: CLOV-1021 - will add breakpoint boundary tokens to Backpack Foundations package and use them here after we ship the PoC
-const breakpointMap: Record<ChakraBreakpointKey, string> = {
-  base: '0rem',
-  sm: '20rem', // 320px
-  md: '22.5rem', // 360px
-  lg: '32.0625rem', // 513px
-  xl: '48.0625rem', // 769px
-  '2xl': '64.0625rem', // 1025px
 };
 
 /**
@@ -194,8 +168,8 @@ export function getShadowValue(token: string): string | undefined {
 }
 
 /**
- * Maps Backpack text style tokens to Chakra UI textStyles.
- * CSS property values are sourced from @skyscanner/bpk-foundations-web/tokens/base.es6.
+ * Maps Backpack text style names to CSS property values.
+ * Sourced from @skyscanner/bpk-foundations-web/tokens/base.es6.
  * Each entry mirrors the corresponding SCSS mixin in bpk-mixins/_typography.scss.
  */
 const textStylesMap: Record<string, { value: Record<string, string> }> = {
@@ -232,26 +206,12 @@ const textStylesMap: Record<string, { value: Record<string, string> }> = {
   'editorial-3': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
 };
 
-export function createBpkConfig() {
-  // Convert breakpoint map to Chakra UI format
-  // Breakpoints in Chakra v3 are typically simple strings in the breakpoints object
-  const chakraBreakpoints: Record<string, string> = {};
-  Object.entries(breakpointMap).forEach(([token, value]) => {
-    chakraBreakpoints[token] = value;
-  });
-
-  return defineConfig({
-    // Disable Chakra's preflight (CSS reset) so it does not override Backpack's
-    // global font styles, in particular the `-webkit-font-smoothing: antialiased`
-    // setting applied by Backpack.
-    preflight: false,
-    cssVarsPrefix: 'bpk',
-    theme: {
-      tokens: {
-        spacing: spacingMap,
-      },
-      textStyles: textStylesMap,
-      breakpoints: chakraBreakpoints,
-    },
-  });
+/**
+ * Resolves a text style name to its CSS properties.
+ *
+ * @param {string} name - Text style name (e.g. 'heading-1', 'body-default').
+ * @returns {Record<string, string> | undefined} CSS properties for the text style, or undefined.
+ */
+export function resolveTextStyle(name: string): Record<string, string> | undefined {
+  return textStylesMap[name]?.value;
 }

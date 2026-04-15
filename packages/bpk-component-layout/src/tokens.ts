@@ -19,7 +19,7 @@
 /**
  * Backpack Design Tokens for Layout Components
  *
- * This file provides token mappings from Backpack design tokens to Chakra UI theme.
+ * This file provides token mappings from Backpack design tokens to the layout system.
  * All tokens are sourced from @skyscanner/bpk-foundations-web
  */
 
@@ -55,10 +55,10 @@ export const BpkBreakpoint = {
 
 export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint];
 
-export type ChakraBreakpointKey = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+export type StyleBreakpointKey = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
-export const BpkBreakpointToChakraKey: Record<BpkBreakpointToken, ChakraBreakpointKey> = {
-  // Keep this mapping in sync with the breakpoints configured in `theme.ts`.
+export const BpkBreakpointToStyleKey: Record<BpkBreakpointToken, StyleBreakpointKey> = {
+  // Keep this mapping in sync with the breakpoints in `useBreakpoint.ts`.
   // `base` is reserved for "default value" and is not a breakpoint token.
   'small-mobile': 'sm',
   mobile: 'md',

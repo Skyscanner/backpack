@@ -18,11 +18,11 @@
 
 import { forwardRef } from 'react';
 
-import { Box } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkComponentProps } from './tokenUtils';
+import { resolveTextStyle } from './theme';
+import { processBpkComponentProps, splitProps } from './tokenUtils';
+import { useBreakpoint, resolveAllResponsive, resolveResponsive } from './useBreakpoint';
 
 import type { BpkBoxProps } from './types';
 
@@ -32,8 +32,22 @@ import STYLES from './BpkLayout.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
-  ({ backgroundColor, children, color, ...props }, ref) => {
+  ({ backgroundColor, children, color, textStyle, ...props }, ref) => {
+    const bp = useBreakpoint();
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+    const { htmlProps, styleProps } = splitProps(processedProps);
+    const resolvedStyle = resolveAllResponsive(styleProps, bp);
+
+    if (textStyle) {
+      const resolvedTextStyleName = resolveResponsive(textStyle, bp);
+      if (resolvedTextStyleName) {
+        const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
+        if (textStyleCSS) {
+          Object.assign(resolvedStyle, textStyleCSS);
+        }
+      }
+    }
+
     const classNames = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
@@ -41,11 +55,17 @@ export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
           backgroundColor ? `bpk-layout--${backgroundColor}` : '',
         )
       : undefined;
+
     return (
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <Box ref={ref} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
+      <div
+        ref={ref}
+        className={classNames}
+        style={Object.keys(resolvedStyle).length > 0 ? resolvedStyle : undefined}
+        {...getDataComponentAttribute('Box')}
+        {...htmlProps}
+      >
         {children}
-      </Box>
+      </div>
     );
   },
 );

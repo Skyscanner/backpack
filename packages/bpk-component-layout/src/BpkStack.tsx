@@ -18,12 +18,13 @@
 
 import { forwardRef } from 'react';
 
-import { Stack, VStack, HStack } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { processBpkComponentProps } from './tokenUtils';
+import { resolveTextStyle } from './theme';
+import { processBpkComponentProps, splitProps } from './tokenUtils';
+import { useBreakpoint, resolveAllResponsive } from './useBreakpoint';
 
+import type { StyleBreakpointKey } from './tokens';
 import type { BpkStackProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
@@ -31,8 +32,47 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
+function useStackProps(
+  props: Omit<BpkStackProps, 'backgroundColor' | 'children' | 'color'>,
+  defaultDirection: string,
+  bp: StyleBreakpointKey,
+) {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
+
+  // Map Stack option keys to CSS flex property names before splitting.
+  // These come out of processBpkComponentProps with their original names
+  // and need to be renamed so splitProps recognises them as CSS properties.
+  const { align, direction, justify, wrap: flexWrap, ...rest } = processedProps;
+  const mapped: Record<string, any> = { ...rest };
+  if (direction !== undefined) mapped.flexDirection = direction;
+  if (align !== undefined) mapped.alignItems = align;
+  if (justify !== undefined) mapped.justifyContent = justify;
+  if (flexWrap !== undefined) mapped.flexWrap = flexWrap;
+
+  const { htmlProps, styleProps } = splitProps(mapped);
+  const resolvedStyle = resolveAllResponsive(styleProps, bp);
+
+  // Resolve textStyle
+  const resolvedTextStyleName = resolvedStyle.textStyle;
+  delete resolvedStyle.textStyle;
+  if (resolvedTextStyleName) {
+    const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
+    if (textStyleCSS) {
+      Object.assign(resolvedStyle, textStyleCSS);
+    }
+  }
+
+  resolvedStyle.display = 'flex';
+  if (!resolvedStyle.flexDirection) {
+    resolvedStyle.flexDirection = defaultDirection;
+  }
+
+  return { resolvedStyle, htmlProps };
+}
+
+export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
+  const bp = useBreakpoint();
+  const { htmlProps, resolvedStyle } = useStackProps(props, 'column', bp);
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -41,17 +81,18 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundC
       )
     : undefined;
   return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Stack ref={ref} className={classNames} {...getDataComponentAttribute('Stack')} {...processedProps}>
+    <div ref={ref} className={classNames} style={resolvedStyle} {...getDataComponentAttribute('Stack')} {...htmlProps}>
       {children}
-    </Stack>
+    </div>
   );
 });
 
 BpkStack.displayName = 'BpkStack';
 
 export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
+  const bp = useBreakpoint();
+  const { htmlProps, resolvedStyle } = useStackProps(props, 'row', bp);
+  if (!resolvedStyle.alignItems) resolvedStyle.alignItems = 'center';
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -60,17 +101,18 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ background
       )
     : undefined;
   return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <HStack ref={ref} className={classNames} {...getDataComponentAttribute('HStack')} {...processedProps}>
+    <div ref={ref} className={classNames} style={resolvedStyle} {...getDataComponentAttribute('HStack')} {...htmlProps}>
       {children}
-    </HStack>
+    </div>
   );
 });
 
 BpkHStack.displayName = 'BpkHStack';
 
 export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
+  const bp = useBreakpoint();
+  const { htmlProps, resolvedStyle } = useStackProps(props, 'column', bp);
+  if (!resolvedStyle.alignItems) resolvedStyle.alignItems = 'center';
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -79,14 +121,12 @@ export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ background
       )
     : undefined;
   return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <VStack ref={ref} className={classNames} {...getDataComponentAttribute('VStack')} {...processedProps}>
+    <div ref={ref} className={classNames} style={resolvedStyle} {...getDataComponentAttribute('VStack')} {...htmlProps}>
       {children}
-    </VStack>
+    </div>
   );
 });
 
 BpkVStack.displayName = 'BpkVStack';
 
 export type { BpkStackProps };
-

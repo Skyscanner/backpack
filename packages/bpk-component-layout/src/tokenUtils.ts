@@ -19,7 +19,7 @@
 import StackOptionKeys from './BpkStack.constant';
 import { getSpacingValue } from './theme';
 import {
-  BpkBreakpointToChakraKey,
+  BpkBreakpointToStyleKey,
   isValidSpacingValue,
   isValidSizeValue,
   isValidPositionValue,
@@ -32,7 +32,7 @@ export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkGrid
 
 /**
  * Allowlisted, component-scoped prop groups that are eligible for Backpack responsive value
- * processing (Backpack breakpoint keys -> Chakra breakpoint keys).
+ * processing (Backpack breakpoint keys -> style breakpoint keys).
  *
  * NOTE:
  * - Spacing/size/position props are processed separately via `processBpkProps` and therefore
@@ -94,7 +94,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridRow',
     ],
   },
-  // Note: BpkFlex maps its public API props to these Chakra keys.
+  // Note: BpkFlex maps its public API props to these CSS property names.
   BpkFlex: {
     container: [
       'textStyle',
@@ -114,7 +114,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'flexBasis',
     ],
   },
-  // Note: BpkGrid maps its public API props to these Chakra keys.
+  // Note: BpkGrid maps its public API props to these CSS property names.
   BpkGrid: {
     container: [
       'textStyle',
@@ -141,7 +141,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   BpkGridItem: {
     container: ['textStyle', 'position', 'overflow', 'overflowX', 'overflowY'],
   },
-  // Note: BpkStack uses Chakra Stack option prop names directly.
+  // Note: BpkStack uses Stack option prop names directly.
   BpkStack: {
     container: [
       'textStyle',
@@ -216,7 +216,7 @@ function filterToAllowlist(
  *
  * @param {T} props - The component props to process.
  * @param {ProcessBpkComponentPropsOptions} options - Component processing options (allowlist group + mapping).
- * @returns {Record<string, any>} The processed props ready to pass to Chakra primitives.
+ * @returns {Record<string, any>} The processed props ready to pass to layout elements.
  */
 export function processBpkComponentProps<T extends Record<string, any>>(
   props: T,
@@ -263,13 +263,13 @@ export function processBpkComponentProps<T extends Record<string, any>>(
 }
 
 /**
- * Converts Backpack spacing token to Chakra UI compatible value
- * Returns the actual spacing value from the theme, not a token path
+ * Converts Backpack spacing token to a CSS-compatible value.
+ * Returns the actual spacing value from the token map.
  *
  * @param {string} value - Backpack spacing token (e.g., 'bpk-spacing-base') or percentage
  * @returns {string} The actual spacing value in rem or the percentage string
  */
-export function convertBpkSpacingToChakra(value: string): string {
+export function convertBpkSpacingToCSS(value: string): string {
   if (isPercentage(value)) {
     return value; // Percentages pass through
   }
@@ -307,9 +307,9 @@ export function normalizeResponsiveObject<T>(value: Record<string, T>): Record<s
       return;
     }
 
-    const chakraKey = BpkBreakpointToChakraKey[key as BpkBreakpointToken];
-    if (chakraKey) {
-      normalized[chakraKey] = val;
+    const styleKey = BpkBreakpointToStyleKey[key as BpkBreakpointToken];
+    if (styleKey) {
+      normalized[styleKey] = val;
     } else if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
       console.warn(
@@ -375,7 +375,7 @@ export function processResponsiveValue(
 }
 
 /**
- * Validates and converts spacing props for Chakra UI
+ * Validates and converts spacing props for CSS
  * Handles all spacing-related properties including padding, margin, gap, size, border radius and position
  *
  * @param {T} props - Component props object
@@ -413,7 +413,7 @@ export function processSpacingProps<T extends Record<string, any>>(
       if (isSizeProp || isPositionProp) {
         converter = (v: string) => v;
       } else {
-        converter = convertBpkSpacingToChakra;
+        converter = convertBpkSpacingToCSS;
       }
 
       let validator: (v: string) => boolean;
@@ -444,7 +444,7 @@ export function processSpacingProps<T extends Record<string, any>>(
 }
 
 /**
- * Processes all props to convert Backpack tokens to Chakra UI format
+ * Processes all props to convert Backpack tokens to CSS format
  * Also explicitly removes className and style to prevent ad-hoc overrides
  *
  * Processing order:
@@ -500,7 +500,7 @@ export function processResponsiveStringProp(value: any, propName: string): any {
 /**
  * Processes a collection of responsive props.
  * @param {Record<string, any>} props - Object containing prop values.
- * @param {Record<string, string>} propNameMap - Map of prop name to CSS/Chakra property name (for error messages and mapping).
+ * @param {Record<string, string>} propNameMap - Map of prop name to CSS property name (for error messages and mapping).
  * @returns {Record<string, any>} Processed props object.
  */
 export function processResponsiveProps(
@@ -518,4 +518,61 @@ export function processResponsiveProps(
     }
   });
   return processed;
+}
+
+/**
+ * CSS style property names that should be applied via the `style` prop
+ * rather than forwarded as HTML attributes.
+ */
+const CSS_STYLE_KEYS = new Set([
+  // Spacing
+  'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+  'paddingStart', 'paddingEnd', 'paddingInline',
+  'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+  'marginStart', 'marginEnd', 'marginInline',
+  'gap', 'spacing', 'rowGap', 'columnGap',
+  // Size
+  'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
+  // Position
+  'top', 'right', 'bottom', 'left', 'position', 'zIndex',
+  // Overflow
+  'overflow', 'overflowX', 'overflowY',
+  // Display & layout
+  'display',
+  // Flex
+  'flexDirection', 'flexWrap', 'justifyContent', 'alignItems', 'alignContent',
+  'flex', 'flexGrow', 'flexShrink', 'flexBasis', 'order', 'alignSelf', 'justifySelf',
+  // Grid
+  'gridTemplateColumns', 'gridTemplateRows', 'gridTemplateAreas',
+  'gridAutoFlow', 'gridAutoRows', 'gridAutoColumns',
+  'gridColumn', 'gridRow', 'gridArea',
+  'gridColumnStart', 'gridColumnEnd', 'gridRowStart', 'gridRowEnd',
+  // Typography (resolved separately via resolveTextStyle)
+  'textStyle',
+]);
+
+/**
+ * Splits processed props into CSS style properties and HTML pass-through attributes.
+ * CSS properties go to the `style` prop; HTML attributes (id, role, aria-*, data-*,
+ * tabIndex, event handlers) go directly on the element.
+ *
+ * @param {Record<string, any>} props - The processed props to split.
+ * @returns {object} An object with `styleProps` and `htmlProps`.
+ */
+export function splitProps(
+  props: Record<string, any>,
+): { styleProps: Record<string, any>; htmlProps: Record<string, any> } {
+  const styleProps: Record<string, any> = {};
+  const htmlProps: Record<string, any> = {};
+
+  Object.keys(props).forEach((key) => {
+    if (props[key] === undefined) return;
+    if (CSS_STYLE_KEYS.has(key)) {
+      styleProps[key] = props[key];
+    } else {
+      htmlProps[key] = props[key];
+    }
+  });
+
+  return { styleProps, htmlProps };
 }
