@@ -18,75 +18,111 @@
 
 import { forwardRef } from 'react';
 
-import { Stack, VStack, HStack } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
+import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkStackProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
+import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
+const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
-export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  const classNames = (color || backgroundColor)
+export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, backgroundColor, children, color, direction, justify, wrap, ...props }, ref) => {
+  const processedProps = processBpkComponentProps(props, {
+    component: 'BpkStack',
+    responsiveProps: {
+      alignItems: align,
+      justifyContent: justify,
+      flexWrap: wrap,
+      flexDirection: direction,
+    },
+  });
+  const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+  const colorClasses = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
         color ? `bpk-layout--${color}` : '',
         backgroundColor ? `bpk-layout--${backgroundColor}` : '',
       )
     : undefined;
+  const responsiveClass = hasResponsive
+    ? getResponsiveClassName('bpk-responsive')
+    : undefined;
+  const className = [getResponsiveClassName('bpk-layout-vstack'), colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
   return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Stack ref={ref} className={classNames} {...getDataComponentAttribute('Stack')} {...processedProps}>
+    <div ref={ref} className={className} style={style} {...getDataComponentAttribute('Stack')} {...passthrough}>
       {children}
-    </Stack>
+    </div>
   );
 });
 
 BpkStack.displayName = 'BpkStack';
 
-export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  const classNames = (color || backgroundColor)
+export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'center', backgroundColor, children, color, direction = 'row', justify, wrap, ...props }, ref) => {
+  const processedProps = processBpkComponentProps(props, {
+    component: 'BpkStack',
+    responsiveProps: {
+      alignItems: align,
+      justifyContent: justify,
+      flexWrap: wrap,
+      flexDirection: direction,
+    },
+  });
+  const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+  const colorClasses = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
         color ? `bpk-layout--${color}` : '',
         backgroundColor ? `bpk-layout--${backgroundColor}` : '',
       )
     : undefined;
+  const responsiveClass = hasResponsive
+    ? getResponsiveClassName('bpk-responsive')
+    : undefined;
+  const className = [getResponsiveClassName('bpk-layout-hstack'), colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
   return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <HStack ref={ref} className={classNames} {...getDataComponentAttribute('HStack')} {...processedProps}>
+    <div ref={ref} className={className} style={style} {...getDataComponentAttribute('HStack')} {...passthrough}>
       {children}
-    </HStack>
+    </div>
   );
 });
 
 BpkHStack.displayName = 'BpkHStack';
 
-export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
-  const classNames = (color || backgroundColor)
+export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'center', backgroundColor, children, color, direction = 'column', justify, wrap, ...props }, ref) => {
+  const processedProps = processBpkComponentProps(props, {
+    component: 'BpkStack',
+    responsiveProps: {
+      alignItems: align,
+      justifyContent: justify,
+      flexWrap: wrap,
+      flexDirection: direction,
+    },
+  });
+  const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+  const colorClasses = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
         color ? `bpk-layout--${color}` : '',
         backgroundColor ? `bpk-layout--${backgroundColor}` : '',
       )
     : undefined;
+  const responsiveClass = hasResponsive
+    ? getResponsiveClassName('bpk-responsive')
+    : undefined;
+  const className = [getResponsiveClassName('bpk-layout-vstack'), colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
   return (
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <VStack ref={ref} className={classNames} {...getDataComponentAttribute('VStack')} {...processedProps}>
+    <div ref={ref} className={className} style={style} {...getDataComponentAttribute('VStack')} {...passthrough}>
       {children}
-    </VStack>
+    </div>
   );
 });
 
 BpkVStack.displayName = 'BpkVStack';
 
 export type { BpkStackProps };
-

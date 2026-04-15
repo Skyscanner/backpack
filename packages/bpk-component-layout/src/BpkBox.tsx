@@ -18,34 +18,49 @@
 
 import { forwardRef } from 'react';
 
-import { Box } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
+import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
+import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
+const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
 export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
   ({ backgroundColor, children, color, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-    const classNames = (color || backgroundColor)
+    const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+
+    const colorClasses = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
           color ? `bpk-layout--${color}` : '',
           backgroundColor ? `bpk-layout--${backgroundColor}` : '',
         )
       : undefined;
+
+    const responsiveClass = hasResponsive
+      ? getResponsiveClassName('bpk-responsive')
+      : undefined;
+
+    const className = [colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
+
     return (
-      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <Box ref={ref} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
+      <div
+        ref={ref}
+        className={className}
+        style={style}
+        {...getDataComponentAttribute('Box')}
+        {...passthrough}
+      >
         {children}
-      </Box>
+      </div>
     );
   },
 );

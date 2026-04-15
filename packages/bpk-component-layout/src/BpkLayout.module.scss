@@ -59,7 +59,6 @@ $layout-surface-bg-colors: (
 );
 
 // Shared base class applied to all BpkLayout components when color/backgroundColor is set.
-// Compound selectors beat Chakra emotion specificity, matching the BpkText approach.
 .bpk-layout {
   // Text color modifiers
   @each $color-name, $color-value in $layout-text-colors {

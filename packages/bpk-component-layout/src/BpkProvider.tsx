@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import type React from 'react';
 import type { ReactNode } from 'react';
 
 import { BpkArkProvider } from './BpkArkProvider';
@@ -26,19 +27,16 @@ export interface BpkProviderProps {
 }
 
 /**
- * BpkProvider - Provides context for both Backpack layout and Ark-based components.
+ * BpkProvider - Provides context for Ark-based components.
  *
- * This is a convenience wrapper that composes:
- * - BpkLayoutProvider (Chakra UI system for layout components: BpkFlex, BpkGrid, etc.)
- * - BpkArkProvider (Ark UI locale for Ark-based components: BpkCheckboxV2, BpkSegmentedControlV2, etc.)
- *
- * If you only use layout components and want a smaller bundle, use BpkLayoutProvider
- * directly instead — it does not pull in @ark-ui/react.
+ * Layout components (BpkBox, BpkFlex, BpkGrid, BpkStack) no longer require a
+ * provider. This wrapper still sets up BpkArkProvider (Ark UI locale) for
+ * Ark-based components (BpkCheckboxV2, BpkSegmentedControlV2, etc.).
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {React.JSX.Element} The provider wrapping its children with Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => (
+export const BpkProvider = ({ children }: BpkProviderProps): React.JSX.Element => (
   <BpkLayoutProvider>
     <BpkArkProvider>{children}</BpkArkProvider>
   </BpkLayoutProvider>

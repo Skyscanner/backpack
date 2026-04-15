@@ -16,189 +16,97 @@
  * limitations under the License.
  */
 
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
-import type StackOptionKeys from './BpkStack.constant';
+
 import type { BpkCommonLayoutProps } from './commonProps';
 import type { BpkSpacingValue, BpkResponsiveValue, BpkBasisValue } from './tokens';
-import type {
-  BoxProps,
-  FlexProps,
-  GridProps,
-  GridItemProps,
-  StackProps,
-} from '@chakra-ui/react';
-
-
-/**
- * Layout-level event props that should not be exposed on layout components.
- * onClick is handled via BpkCommonLayoutProps; onFocus/onBlur are reintroduced
- * on BpkBoxProps only.
- */
-type LayoutEventProps =
-  | 'onMouseEnter'
-  | 'onMouseLeave'
-  | 'onMouseOver'
-  | 'onMouseOut'
-  | 'onMouseDown'
-  | 'onMouseUp'
-  | 'onFocus'
-  | 'onBlur'
-  | 'onKeyDown'
-  | 'onKeyUp'
-  | 'onKeyPress';
-
-/**
- * Shorthand props from the underlying layout system that we do NOT expose on
- * Backpack layout components. These mostly mirror longer-form spacing,
- * sizing and visual props that we already model explicitly via
- * BpkCommonLayoutProps and BpkFlexGridProps.
- */
-type DisallowedShorthandProps =
-  // Spacing shorthands
-  | 'p'
-  | 'pt'
-  | 'pr'
-  | 'pb'
-  | 'pl'
-  | 'px'
-  | 'py'
-  | 'm'
-  | 'mt'
-  | 'mr'
-  | 'mb'
-  | 'ml'
-  | 'mx'
-  | 'my'
-  // Size shorthands
-  | 'w'
-  | 'h'
-  | 'minW'
-  | 'maxW'
-  | 'minH'
-  | 'maxH'
-  // Visual shorthands that map to props we have intentionally excluded
-  | 'bg'
-  | 'rounded'
-  | 'shadow';
 
 /**
  * Flexbox & grid layout props that we explicitly support on Backpack layout
- * components. These are a curated subset of the underlying Box flex/grid API
- * that are useful for structural layout.
+ * components. These are a curated subset of CSS flex/grid properties
+ * useful for structural layout.
  */
 export interface BpkFlexGridProps {
   // Flex layout props
-  display?: BoxProps['display'];
-  flexDirection?: BoxProps['flexDirection'];
-  flexWrap?: BoxProps['flexWrap'];
-  justifyContent?: BoxProps['justifyContent'];
-  alignItems?: BoxProps['alignItems'];
-  alignContent?: BoxProps['alignContent'];
+  display?: BpkResponsiveValue<CSSProperties['display']>;
+  flexDirection?: BpkResponsiveValue<CSSProperties['flexDirection']>;
+  flexWrap?: BpkResponsiveValue<CSSProperties['flexWrap']>;
+  justifyContent?: BpkResponsiveValue<CSSProperties['justifyContent']>;
+  alignItems?: BpkResponsiveValue<CSSProperties['alignItems']>;
+  alignContent?: BpkResponsiveValue<CSSProperties['alignContent']>;
 
-  flex?: BoxProps['flex'];
-  flexGrow?: BoxProps['flexGrow'];
-  flexShrink?: BoxProps['flexShrink'];
-  flexBasis?: BoxProps['flexBasis'];
-  order?: BoxProps['order'];
-  alignSelf?: BoxProps['alignSelf'];
-  justifySelf?: BoxProps['justifySelf'];
+  flex?: BpkResponsiveValue<CSSProperties['flex']>;
+  flexGrow?: BpkResponsiveValue<CSSProperties['flexGrow']>;
+  flexShrink?: BpkResponsiveValue<CSSProperties['flexShrink']>;
+  flexBasis?: BpkResponsiveValue<CSSProperties['flexBasis']>;
+  order?: BpkResponsiveValue<CSSProperties['order']>;
+  alignSelf?: BpkResponsiveValue<CSSProperties['alignSelf']>;
+  justifySelf?: BpkResponsiveValue<CSSProperties['justifySelf']>;
 
   // Grid layout props
-  gridTemplateColumns?: BoxProps['gridTemplateColumns'];
-  gridTemplateRows?: BoxProps['gridTemplateRows'];
-  gridTemplateAreas?: BoxProps['gridTemplateAreas'];
-  gridAutoFlow?: BoxProps['gridAutoFlow'];
-  gridAutoRows?: BoxProps['gridAutoRows'];
-  gridAutoColumns?: BoxProps['gridAutoColumns'];
-  rowGap?: BoxProps['rowGap'];
-  columnGap?: BoxProps['columnGap'];
+  gridTemplateColumns?: BpkResponsiveValue<CSSProperties['gridTemplateColumns']>;
+  gridTemplateRows?: BpkResponsiveValue<CSSProperties['gridTemplateRows']>;
+  gridTemplateAreas?: BpkResponsiveValue<CSSProperties['gridTemplateAreas']>;
+  gridAutoFlow?: BpkResponsiveValue<CSSProperties['gridAutoFlow']>;
+  gridAutoRows?: BpkResponsiveValue<CSSProperties['gridAutoRows']>;
+  gridAutoColumns?: BpkResponsiveValue<CSSProperties['gridAutoColumns']>;
+  rowGap?: BpkResponsiveValue<BpkSpacingValue>;
+  columnGap?: BpkResponsiveValue<BpkSpacingValue>;
 }
 
 export type FlexGridPropKeys = keyof BpkFlexGridProps;
 
 /**
- * Curated subset of Box layout props that support Backpack responsive values.
- *
- * NOTE:
- * - These are structural layout props (flex/grid/display) that we want to allow
- *   on `BpkBox`, but using Backpack breakpoint keys rather than Chakra's
- *   array syntax or Chakra breakpoint keys.
- * - Spacing/size/position props are handled separately via `BpkCommonLayoutProps`.
+ * Curated subset of layout props that support Backpack responsive values.
+ * These are structural layout props (flex/grid/display) allowed on `BpkBox`.
  */
 type BpkBoxResponsiveLayoutProps = {
   // Display
-  display?: BpkResponsiveValue<BoxProps['display']>;
+  display?: BpkResponsiveValue<CSSProperties['display']>;
 
   // Flex container props
-  flexDirection?: BpkResponsiveValue<BoxProps['flexDirection']>;
-  flexWrap?: BpkResponsiveValue<BoxProps['flexWrap']>;
-  justifyContent?: BpkResponsiveValue<BoxProps['justifyContent']>;
-  alignItems?: BpkResponsiveValue<BoxProps['alignItems']>;
-  alignContent?: BpkResponsiveValue<BoxProps['alignContent']>;
+  flexDirection?: BpkResponsiveValue<CSSProperties['flexDirection']>;
+  flexWrap?: BpkResponsiveValue<CSSProperties['flexWrap']>;
+  justifyContent?: BpkResponsiveValue<CSSProperties['justifyContent']>;
+  alignItems?: BpkResponsiveValue<CSSProperties['alignItems']>;
+  alignContent?: BpkResponsiveValue<CSSProperties['alignContent']>;
 
   // Flex item props
-  flex?: BpkResponsiveValue<BoxProps['flex']>;
-  flexGrow?: BpkResponsiveValue<BoxProps['flexGrow']>;
-  flexShrink?: BpkResponsiveValue<BoxProps['flexShrink']>;
-  flexBasis?: BpkResponsiveValue<BoxProps['flexBasis']>;
-  order?: BpkResponsiveValue<BoxProps['order']>;
-  alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
-  justifySelf?: BpkResponsiveValue<BoxProps['justifySelf']>;
+  flex?: BpkResponsiveValue<CSSProperties['flex']>;
+  flexGrow?: BpkResponsiveValue<CSSProperties['flexGrow']>;
+  flexShrink?: BpkResponsiveValue<CSSProperties['flexShrink']>;
+  flexBasis?: BpkResponsiveValue<CSSProperties['flexBasis']>;
+  order?: BpkResponsiveValue<CSSProperties['order']>;
+  alignSelf?: BpkResponsiveValue<CSSProperties['alignSelf']>;
+  justifySelf?: BpkResponsiveValue<CSSProperties['justifySelf']>;
 
   // Grid container props
-  gridTemplateColumns?: BpkResponsiveValue<BoxProps['gridTemplateColumns']>;
-  gridTemplateRows?: BpkResponsiveValue<BoxProps['gridTemplateRows']>;
-  gridTemplateAreas?: BpkResponsiveValue<BoxProps['gridTemplateAreas']>;
-  gridAutoFlow?: BpkResponsiveValue<BoxProps['gridAutoFlow']>;
-  gridAutoRows?: BpkResponsiveValue<BoxProps['gridAutoRows']>;
-  gridAutoColumns?: BpkResponsiveValue<BoxProps['gridAutoColumns']>;
+  gridTemplateColumns?: BpkResponsiveValue<CSSProperties['gridTemplateColumns']>;
+  gridTemplateRows?: BpkResponsiveValue<CSSProperties['gridTemplateRows']>;
+  gridTemplateAreas?: BpkResponsiveValue<CSSProperties['gridTemplateAreas']>;
+  gridAutoFlow?: BpkResponsiveValue<CSSProperties['gridAutoFlow']>;
+  gridAutoRows?: BpkResponsiveValue<CSSProperties['gridAutoRows']>;
+  gridAutoColumns?: BpkResponsiveValue<CSSProperties['gridAutoColumns']>;
 
-  // Grid item placement props (useful on Box when composing grids)
-  gridColumn?: BpkResponsiveValue<BoxProps['gridColumn']>;
-  gridRow?: BpkResponsiveValue<BoxProps['gridRow']>;
+  // Grid item placement props
+  gridColumn?: BpkResponsiveValue<CSSProperties['gridColumn']>;
+  gridRow?: BpkResponsiveValue<CSSProperties['gridRow']>;
 };
-
-type BpkBoxResponsiveLayoutPropKeys = keyof BpkBoxResponsiveLayoutProps;
-
-/**
- * Base type that removes common layout props, reserved props (className,
- * children) and all layout-level event props from Chakra UI props.
- *
- * These will be replaced with Backpack-specific types.
- */
-export type RemoveCommonProps<T> = Omit<
-  T,
-  | keyof BpkCommonLayoutProps
-  | 'className'
-  | 'children'
-  | LayoutEventProps
-  | FlexGridPropKeys
-  | DisallowedShorthandProps
->;
 
 /**
  * Component-specific props for BpkBox
- * Includes all Box props except those in BpkCommonLayoutProps
  */
-export interface BpkBoxSpecificProps
-  extends Omit<RemoveCommonProps<BoxProps>, BpkBoxResponsiveLayoutPropKeys>,
-    BpkBoxResponsiveLayoutProps,
-    Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {}
+export interface BpkBoxSpecificProps extends BpkBoxResponsiveLayoutProps, BpkFlexGridProps {}
 
 /**
  * Props for BpkBox component
  * Combines Box-specific props with Backpack common layout props.
- * onClick is inherited from BpkCommonLayoutProps.
- * onFocus and onBlur are reintroduced here as BpkBox-only interaction props.
- * textStyle maps to Chakra's `textStyle` theme prop for Backpack typography and supports responsive values.
  */
-type BoxEventProps = Pick<BoxProps, 'onFocus' | 'onBlur'>;
-
 export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   children?: ReactNode;
-  onFocus?: BoxEventProps['onFocus'];
-  onBlur?: BoxEventProps['onBlur'];
+  onFocus?: HTMLAttributes<HTMLDivElement>['onFocus'];
+  onBlur?: HTMLAttributes<HTMLDivElement>['onBlur'];
 }
 
 /**
@@ -220,35 +128,6 @@ export type VesselElement =
  *
  * BpkVessel is a "migration hatch" that renders an HTML element
  * and accepts all standard HTML attributes for maximum migration flexibility.
- *
- * Accepts all React.HTMLAttributes including:
- * - Styling: className, style
- * - Testing: data-testid, data-cy, data-*
- * - Accessibility: aria-*, role, tabIndex
- * - Basic HTML: id, title, dir, lang, hidden, etc.
- * - All standard DOM events: onClick, onChange, onFocus, etc.
- *
- * @example
- * ```tsx
- * <BpkVessel
- *   className="legacy-wrapper"
- *   style={{ padding: '16px', transition: 'opacity 0.3s' }}
- *   data-testid="migration-wrapper"
- *   onClick={handleClick}
- * >
- *   Content
- * </BpkVessel>
- *
- * <BpkVessel
- *   as="section"
- *   className="legacy-section"
- *   aria-label="Main content"
- *   role="region"
- *   dir="rtl"
- * >
- *   Section Content
- * </BpkVessel>
- * ```
  */
 export type BpkVesselProps = {
   as?: VesselElement;
@@ -256,15 +135,14 @@ export type BpkVesselProps = {
 
 /**
  * Component-specific props for BpkFlex
- * Includes all Flex props except those in BpkCommonLayoutProps
  */
-export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
-  direction?: BpkResponsiveValue<FlexProps['flexDirection']>;
-  justify?: BpkResponsiveValue<FlexProps['justifyContent']>;
-  align?: BpkResponsiveValue<FlexProps['alignItems']>;
-  wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
-  grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
-  shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
+export interface BpkFlexSpecificProps {
+  direction?: BpkResponsiveValue<CSSProperties['flexDirection']>;
+  justify?: BpkResponsiveValue<CSSProperties['justifyContent']>;
+  align?: BpkResponsiveValue<CSSProperties['alignItems']>;
+  wrap?: BpkResponsiveValue<CSSProperties['flexWrap']>;
+  grow?: BpkResponsiveValue<CSSProperties['flexGrow']>;
+  shrink?: BpkResponsiveValue<CSSProperties['flexShrink']>;
   basis?: BpkResponsiveValue<BpkBasisValue>;
   inline?: boolean;
 }
@@ -279,21 +157,20 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
 
 /**
  * Component-specific props for BpkGrid
- * Includes all Grid props except those in BpkCommonLayoutProps
  */
-export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
-  justify?: BpkResponsiveValue<GridProps['justifyContent']>;
-  align?: BpkResponsiveValue<GridProps['alignItems']>;
-  templateColumns?: BpkResponsiveValue<GridProps['gridTemplateColumns']>;
-  templateRows?: BpkResponsiveValue<GridProps['gridTemplateRows']>;
-  templateAreas?: BpkResponsiveValue<GridProps['gridTemplateAreas']>;
-  autoFlow?: BpkResponsiveValue<GridProps['gridAutoFlow']>;
-  autoRows?: BpkResponsiveValue<GridProps['gridAutoRows']>;
-  autoColumns?: BpkResponsiveValue<GridProps['gridAutoColumns']>;
+export interface BpkGridSpecificProps {
+  justify?: BpkResponsiveValue<CSSProperties['justifyContent']>;
+  align?: BpkResponsiveValue<CSSProperties['alignItems']>;
+  templateColumns?: BpkResponsiveValue<CSSProperties['gridTemplateColumns']>;
+  templateRows?: BpkResponsiveValue<CSSProperties['gridTemplateRows']>;
+  templateAreas?: BpkResponsiveValue<CSSProperties['gridTemplateAreas']>;
+  autoFlow?: BpkResponsiveValue<CSSProperties['gridAutoFlow']>;
+  autoRows?: BpkResponsiveValue<CSSProperties['gridAutoRows']>;
+  autoColumns?: BpkResponsiveValue<CSSProperties['gridAutoColumns']>;
   rowGap?: BpkResponsiveValue<BpkSpacingValue>;
   columnGap?: BpkResponsiveValue<BpkSpacingValue>;
-  column?: BpkResponsiveValue<GridProps['gridColumn']>;
-  row?: BpkResponsiveValue<GridProps['gridRow']>;
+  column?: BpkResponsiveValue<CSSProperties['gridColumn']>;
+  row?: BpkResponsiveValue<CSSProperties['gridRow']>;
   inline?: boolean;
 }
 
@@ -307,16 +184,15 @@ export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps
 
 /**
  * Component-specific props for BpkGridItem
- * Includes all GridItem props except those in BpkCommonLayoutProps
  */
-export interface BpkGridItemSpecificProps extends RemoveCommonProps<GridItemProps> {
-  area?: GridItemProps['area'];
-  colEnd?: GridItemProps['colEnd'];
-  colStart?: GridItemProps['colStart'];
-  colSpan?: GridItemProps['colSpan'];
-  rowEnd?: GridItemProps['rowEnd'];
-  rowStart?: GridItemProps['rowStart'];
-  rowSpan?: GridItemProps['rowSpan'];
+export interface BpkGridItemSpecificProps {
+  area?: CSSProperties['gridArea'];
+  colEnd?: number;
+  colStart?: number;
+  colSpan?: number;
+  rowEnd?: number;
+  rowStart?: number;
+  rowSpan?: number;
 }
 
 /**
@@ -327,27 +203,23 @@ export interface BpkGridItemProps extends BpkCommonLayoutProps, BpkGridItemSpeci
   children?: ReactNode;
 }
 
-// ---- Stack (moved from BpkStack.types.ts) ----
-type StackOptionKeysType = typeof StackOptionKeys[number];
-
+// ---- Stack ----
 /**
- * Overrides StackOptions to support BpkResponsiveValue
+ * Stack-specific option props using the public API names.
+ * These map to CSS-standard names internally:
+ *   align → alignItems, justify → justifyContent, wrap → flexWrap, direction → flexDirection
  */
 type BpkStackOptions = {
-  [K in StackOptionKeysType]?: K extends keyof StackProps
-    ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
-    : never;
+  align?: BpkResponsiveValue<CSSProperties['alignItems']> | CSSProperties['alignItems'];
+  justify?: BpkResponsiveValue<CSSProperties['justifyContent']> | CSSProperties['justifyContent'];
+  wrap?: BpkResponsiveValue<CSSProperties['flexWrap']> | CSSProperties['flexWrap'];
+  direction?: BpkResponsiveValue<CSSProperties['flexDirection']> | CSSProperties['flexDirection'];
 };
 
 /**
  * Component-specific props for BpkStack
- * Includes all Stack props except those in BpkCommonLayoutProps
- * Overrides StackOptions to support BpkResponsiveValue
  */
-export interface BpkStackSpecificProps
-  extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
-    BpkStackOptions,
-    BpkFlexGridProps {}
+export interface BpkStackSpecificProps extends BpkStackOptions, BpkFlexGridProps {}
 
 /**
  * Props for BpkStack component

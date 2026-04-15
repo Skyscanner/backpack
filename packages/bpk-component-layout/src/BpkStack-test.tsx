@@ -127,7 +127,7 @@ describe('BpkStack', () => {
         </BpkProvider>,
       );
 
-      // Chakra's HStack uses direction="row" and aligns items "center" by default
+      // BpkHStack defaults to direction="row" and align="center"
       const stack = container.firstChild;
       expect(stack).toHaveStyle('flex-direction: row');
       expect(stack).toHaveStyle('align-items: center');
@@ -145,7 +145,7 @@ describe('BpkStack', () => {
         </BpkProvider>,
       );
 
-      // Chakra's VStack uses direction="column" and aligns items "center" by default
+      // BpkVStack defaults to direction="column" and align="center"
       const stack = container.firstChild;
       expect(stack).toHaveStyle('flex-direction: column');
       expect(stack).toHaveStyle('align-items: center');

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import StackOptionKeys from './BpkStack.constant';
+
 import { expandTextStyleProps } from './resolveTextStyle';
 import { getSpacingValue } from './theme';
 import {
@@ -138,10 +138,15 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   BpkGridItem: {
     container: ['position', 'overflow', 'overflowX', 'overflowY'],
   },
-  // Note: BpkStack uses Chakra Stack option prop names directly.
+  // BpkStack maps public API names (align, justify, wrap, direction) to CSS-standard
+  // names (alignItems, justifyContent, flexWrap, flexDirection) via responsiveProps.
+  // The allowlist must use the CSS-standard names since that's what arrives here.
   BpkStack: {
     container: [
-      ...(StackOptionKeys as unknown as readonly string[]),
+      'alignItems',
+      'justifyContent',
+      'flexWrap',
+      'flexDirection',
       // Position keyword and overflow (from BpkCommonLayoutProps)
       'position',
       'overflow',

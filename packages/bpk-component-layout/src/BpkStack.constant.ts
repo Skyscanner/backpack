@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-// these options align with Chakra's StackOption excluding separator
-// TODO: add separator to Stack
+// Public API prop names for BpkStack/BpkHStack/BpkVStack.
+// These are the consumer-facing names; the components map them to CSS-standard
+// names (alignItems, justifyContent, flexWrap, flexDirection) internally.
 const StackOptionKeys = [
   'align',
   'justify',

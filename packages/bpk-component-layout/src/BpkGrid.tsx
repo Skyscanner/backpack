@@ -18,18 +18,19 @@
 
 import { forwardRef } from 'react';
 
-import { Grid } from '@chakra-ui/react';
-
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
+import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
+import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
+const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
 export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
   (
@@ -52,7 +53,14 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         gridRow: row,
       },
     });
-    const classNames = (color || backgroundColor)
+    const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+
+    // If inline, override display via inline style
+    if (inline) {
+      (style as any).display = 'inline-grid';
+    }
+
+    const colorClasses = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
           color ? `bpk-layout--${color}` : '',
@@ -60,17 +68,26 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         )
       : undefined;
 
+    const baseClass = !inline
+      ? getResponsiveClassName('bpk-layout-grid')
+      : getResponsiveClassName('bpk-layout-inline-grid');
+
+    const responsiveClass = hasResponsive
+      ? getResponsiveClassName('bpk-responsive')
+      : undefined;
+
+    const className = [baseClass, colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
+
     return (
-      <Grid
+      <div
         ref={ref}
-        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-        className={classNames}
+        className={className}
+        style={style}
         {...getDataComponentAttribute('Grid')}
-        {...processedProps}
-        display={inline ? 'inline-grid' : undefined}
+        {...passthrough}
       >
         {children}
-      </Grid>
+      </div>
     );
   },
 );

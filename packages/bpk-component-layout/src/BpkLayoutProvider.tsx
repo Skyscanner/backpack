@@ -16,41 +16,28 @@
  * limitations under the License.
  */
 
+import type React from 'react';
 import type { ReactNode } from 'react';
-
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
-
-import { createBpkConfig } from './theme';
 
 export interface BpkLayoutProviderProps {
   children: ReactNode;
 }
 
 /**
- * Creates a Chakra UI system with Backpack token mappings.
+ * BpkLayoutProvider - Kept for backwards compatibility.
  *
- * Uses `defaultBaseConfig` (conditions + utilities only) instead of
- * `defaultConfig` to avoid bundling ~141KB of unused component recipes.
- * See: https://chakra-ui.com/guides/component-bundle-optimization
- */
-const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
-
-/**
- * BpkLayoutProvider - Provides context for Backpack layout components only.
+ * Layout components (BpkBox, BpkFlex, BpkGrid, BpkStack, etc.) no longer
+ * require a provider. They use CSS Modules and inline styles directly.
  *
- * Wraps children with the Chakra UI system context configured with Backpack
- * tokens (spacing, breakpoints). This is the minimal provider needed by
- * layout primitives (BpkBox, BpkFlex, BpkGrid, BpkStack, etc.).
+ * This component is a passthrough that simply renders its children.
+ * It can be safely removed from your app, but keeping it is harmless.
  *
- * Use this instead of BpkProvider when you only need layout components and
- * want to avoid bundling Ark UI (used by BpkCheckboxV2, BpkSegmentedControlV2,
- * and other Ark-based components).
- *
- * @param {BpkLayoutProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra context.
+ * @deprecated No provider is needed for layout components.
+ * @returns {ReactNode} The children as-is.
  */
 export const BpkLayoutProvider = ({
   children,
-}: BpkLayoutProviderProps): JSX.Element => (
-  <ChakraProvider value={bpkSystem}>{children}</ChakraProvider>
+}: BpkLayoutProviderProps): React.JSX.Element => (
+   
+  <>{children}</>
 );

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { defineConfig } from '@chakra-ui/react';
-
 // Import only the tokens needed for border/radius/shadow utilities.
 // Typography tokens have been moved to resolveTextStyle.ts where textStyle is
 // resolved inline, avoiding the need to bundle the full text style map in the
@@ -40,16 +38,14 @@ import {
   boxShadowXl,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import type { ChakraBreakpointKey } from './tokens';
-
 // NOTE:
 // We intentionally do not use the raw breakpoint *values* from foundations here.
 // Foundations exports breakpoint values such as `breakpointMobile = "32rem"` which
 // are used primarily for max-width queries (e.g. `(max-width: 32rem)`).
 //
 // Backpack layout responsive values in this package are mobile-first and behave
-// like Chakra breakpoints (min-width thresholds). To align with Backpack’s
-// intended breakpoint ranges we define lower-bound (min-width) thresholds:
+// as min-width thresholds. To align with Backpack’s intended breakpoint ranges
+// we define lower-bound (min-width) thresholds:
 //
 // - small-mobile: 320px+
 // - mobile: 360px+
@@ -134,27 +130,8 @@ const shadowMap: Record<string, string> = {
   'bpk-shadow-xl': boxShadowXl,
 };
 
-/**
- * Chakra expects raw width values (e.g. "48rem"), not full media queries.
- * The media query construction is handled internally by Chakra's system.
- *
- * We align Backpack breakpoint tokens to Chakra's keys like this:
- * - base: 0 (implicit)
- * - sm: small-mobile (>= 320px)
- * - md: mobile (>= 360px)
- * - lg: small-tablet (>= 513px)
- * - xl: tablet (>= 769px)
- * - 2xl: desktop (>= 1025px)
- */
-// TODO: CLOV-1021 - will add breakpoint boundary tokens to Backpack Foundations package and use them here after we ship the PoC
-const breakpointMap: Record<ChakraBreakpointKey, string> = {
-  base: '0rem',
-  sm: '20rem', // 320px
-  md: '22.5rem', // 360px
-  lg: '32.0625rem', // 513px
-  xl: '48.0625rem', // 769px
-  '2xl': '64.0625rem', // 1025px
-};
+// Breakpoint min-width values are now defined in BpkLayoutResponsive.module.scss
+// and used via CSS custom properties. No runtime breakpoint map is needed.
 
 /**
  * Exports spacing map for use in tokenUtils
@@ -211,30 +188,3 @@ export function getShadowValue(token: string): string | undefined {
   return shadowMap[token];
 }
 
-export function createBpkConfig() {
-  // Convert breakpoint map to Chakra UI format
-  // Breakpoints in Chakra v3 are typically simple strings in the breakpoints object
-  const chakraBreakpoints: Record<string, string> = {};
-  Object.entries(breakpointMap).forEach(([token, value]) => {
-    chakraBreakpoints[token] = value;
-  });
-
-  // textStyles have been removed from the Chakra config to reduce bundle size.
-  // Text style resolution is now handled inline by resolveTextStyle.ts via
-  // expandTextStyleProps(), which expands textStyle tokens into concrete CSS
-  // properties at prop-processing time. This means layout-only consumers that
-  // never use textStyle pay nothing for the typography map.
-  return defineConfig({
-    // Disable Chakra's preflight (CSS reset) so it does not override Backpack's
-    // global font styles, in particular the `-webkit-font-smoothing: antialiased`
-    // setting applied by Backpack.
-    preflight: false,
-    cssVarsPrefix: 'bpk',
-    theme: {
-      tokens: {
-        spacing: spacingMap,
-      },
-      breakpoints: chakraBreakpoints,
-    },
-  });
-}
