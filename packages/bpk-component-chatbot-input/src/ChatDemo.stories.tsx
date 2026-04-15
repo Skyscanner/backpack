@@ -19,10 +19,16 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkChatBubble from '../../bpk-component-chat-bubble/src/BpkChatBubble';
 import { CHAT_BUBBLE_TYPE } from '../../bpk-component-chat-bubble/src/common-types';
 import BpkChatNotification from '../../bpk-component-chat-notification/src/BpkChatNotification';
 import BpkChatThoughtBubble from '../../bpk-component-chat-thought-bubble/src/BpkChatThoughtBubble';
+import BpkMultiSelectChipGroup, {
+  CHIP_GROUP_TYPES,
+  CHIP_COMPONENT,
+} from '../../bpk-component-chip-group';
+import SmallPlusIcon from '../../bpk-component-icon/sm/plus';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import {
   BpkBox,
@@ -34,6 +40,7 @@ import {
   BACKGROUND_COLORS,
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 
 import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
@@ -333,4 +340,258 @@ export default meta;
 
 export const InteractiveChat = {
   render: () => <ChatDemoExample />,
+};
+
+const FAKE_FILES = [
+  'boarding-pass.pdf',
+  'hotel-confirmation.png',
+  'itinerary.docx',
+];
+
+const ChatWithAttachmentsExample = () => {
+  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
+  const [inputValue, setInputValue] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [attachments, setAttachments] = useState<string[]>([]);
+  const [feedbackState, setFeedbackState] = useState<
+    Record<number, ThumbsButtonType | null>
+  >({});
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const nextId = useRef(10);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const addAttachment = () => {
+    if (attachments.length >= 3) return;
+    const available = FAKE_FILES.filter((f) => !attachments.includes(f));
+    if (available.length === 0) return;
+    setAttachments((prev) => [...prev, available[0]]);
+  };
+
+  const removeAttachment = (filename: string) => {
+    setAttachments((prev) => prev.filter((f) => f !== filename));
+  };
+
+  const addBotResponse = (userText: string) => {
+    const response = getResponse(userText);
+
+    const thinkingId = nextId.current;
+    nextId.current += 1;
+    setMessages((prev) => [
+      ...prev,
+      { id: thinkingId, type: 'thinking', text: response.thinking },
+    ]);
+
+    setTimeout(() => {
+      setMessages((prev) => {
+        const withoutThinking = prev.filter((m) => m.id !== thinkingId);
+        const newMessages: Message[] = response.replies.map((reply, i) => {
+          const msgId = nextId.current;
+          nextId.current += 1;
+
+          let position: Message['position'];
+          if (response.replies.length > 1) {
+            if (i === 0) {
+              position = 'first';
+            } else if (i === response.replies.length - 1) {
+              position = 'last';
+            } else {
+              position = 'middle';
+            }
+          }
+
+          return {
+            id: msgId,
+            type: 'bot' as const,
+            text: reply,
+            position,
+            showFeedback: i === response.replies.length - 1,
+          };
+        });
+        return [...withoutThinking, ...newMessages];
+      });
+      setIsSending(false);
+    }, 1500);
+  };
+
+  const handleSubmit = (text?: string) => {
+    const messageText = text || inputValue;
+    if (!messageText.trim()) return;
+
+    const userMsgId = nextId.current;
+    nextId.current += 1;
+    setMessages((prev) => [
+      ...prev.filter((m) => m.type !== 'suggestions'),
+      { id: userMsgId, type: 'user', text: messageText },
+    ]);
+    setInputValue('');
+    setAttachments([]);
+    setIsSending(true);
+
+    addBotResponse(messageText);
+  };
+
+  const handleFeedback = (messageId: number, type: ThumbsButtonType) => {
+    setFeedbackState((prev) => ({ ...prev, [messageId]: type }));
+    const notifId = nextId.current;
+    nextId.current += 1;
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: notifId,
+        type: 'notification',
+        text: 'Thanks for your feedback!',
+      },
+    ]);
+
+    setTimeout(() => {
+      setMessages((prev) => prev.filter((m) => m.id !== notifId));
+    }, 3000);
+  };
+
+  const renderMessage = (message: Message): ReactNode => {
+    switch (message.type) {
+      case 'user':
+        return (
+          <BpkChatBubble
+            key={message.id}
+            type={CHAT_BUBBLE_TYPE.user}
+            userPosition={message.position}
+          >
+            {message.text}
+          </BpkChatBubble>
+        );
+
+      case 'bot':
+        return (
+          <BpkChatBubble
+            key={message.id}
+            type={CHAT_BUBBLE_TYPE.bot}
+            systemPosition={message.position}
+            showFeedback={message.showFeedback}
+            selectedFeedback={feedbackState[message.id] ?? null}
+            onFeedbackClick={(type) => handleFeedback(message.id, type)}
+          >
+            {message.text}
+          </BpkChatBubble>
+        );
+
+      case 'thinking':
+        return (
+          <BpkChatThoughtBubble key={message.id} content={message.text} />
+        );
+
+      case 'notification':
+        return (
+          <BpkFlex key={message.id} justify="center" padding={BpkSpacing.SM}>
+            <BpkChatNotification text={message.text} icon={TickCircleIcon} />
+          </BpkFlex>
+        );
+
+      case 'suggestions':
+        return (
+          <BpkVStack key={message.id} align="flex-end" gap={BpkSpacing.SM}>
+            {message.suggestions?.map((suggestion) => (
+              <BpkChatBubble
+                key={suggestion}
+                type={CHAT_BUBBLE_TYPE.button}
+                onSuggestionClick={() => handleSubmit(suggestion)}
+              >
+                {suggestion}
+              </BpkChatBubble>
+            ))}
+          </BpkVStack>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <BpkFlex
+      direction="column"
+      maxWidth="24rem"
+      height="44rem"
+      overflow="hidden"
+      backgroundColor={BACKGROUND_COLORS.canvasContrast}
+    >
+      <BpkFlex
+        align="center"
+        justify="center"
+        padding={BpkSpacing.Base}
+        backgroundColor={BACKGROUND_COLORS.canvas}
+        shrink={0}
+      >
+        <BpkText textStyle={TEXT_STYLES.label1}>New chat</BpkText>
+      </BpkFlex>
+
+      <BpkBox
+        padding={BpkSpacing.Base}
+        flexGrow={1}
+        flexShrink={1}
+        flexBasis="0"
+        minHeight="0rem"
+        overflowY="auto"
+      >
+        <BpkStack gap={BpkSpacing.SM}>
+          {messages.map(renderMessage)}
+        </BpkStack>
+        <div ref={messagesEndRef} />
+      </BpkBox>
+
+      <BpkBox padding={BpkSpacing.Base} flexShrink={0}>
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          {attachments.length > 0 && (
+            <BpkBox width="100%" overflow="hidden">
+              <BpkMultiSelectChipGroup
+                type={CHIP_GROUP_TYPES.rail}
+                ariaLabel="Attached files"
+                leadingNudgerLabel="Scroll left"
+                trailingNudgerLabel="Scroll right"
+                chips={attachments.map((filename) => ({
+                  text: filename,
+                  component: CHIP_COMPONENT.dismissible,
+                  accessibilityLabel: `Remove ${filename}`,
+                  onClick: () => removeAttachment(filename),
+                }))}
+              />
+            </BpkBox>
+          )}
+          <BpkChatbotInput.Input
+            inputValue={inputValue}
+            loadingAriaLabel="Sending message"
+            sendAriaLabel="Send message"
+            placeholder="Your message"
+            onInputChange={setInputValue}
+            onInputFocus={() => {}}
+            onInputBlur={() => {}}
+            onSubmit={() => handleSubmit()}
+            isSending={isSending}
+          />
+          <BpkChatbotInput.Toolbar>
+            <BpkButton
+              type={BUTTON_TYPES.link}
+              iconOnly
+              onClick={addAttachment}
+              disabled={attachments.length >= 3}
+            >
+              <SmallPlusIcon />
+              <BpkVisuallyHidden>Add attachment</BpkVisuallyHidden>
+            </BpkButton>
+          </BpkChatbotInput.Toolbar>
+        </BpkChatbotInput.Root>
+      </BpkBox>
+    </BpkFlex>
+  );
+};
+
+export const InteractiveChatWithAttachments = {
+  render: () => <ChatWithAttachmentsExample />,
 };
