@@ -21,7 +21,7 @@ import { useSyncExternalStore } from 'react';
 import type { StyleBreakpointKey } from './tokens';
 
 // Ordered from smallest to largest (min-width values).
-// Must stay in sync with the breakpointMap in theme.ts.
+// Must stay in sync with BpkBreakpointToStyleKey in tokens.ts.
 const BREAKPOINTS: Array<{ key: StyleBreakpointKey; query: string }> = [
   { key: 'sm', query: '(min-width: 20rem)' },      // 320px
   { key: 'md', query: '(min-width: 22.5rem)' },     // 360px
@@ -108,8 +108,12 @@ export function useBreakpoint(): StyleBreakpointKey {
  * @param {StyleBreakpointKey} activeBreakpoint - The currently active breakpoint.
  * @returns {T | undefined} The resolved value, or undefined.
  *
+ * Note: this helper expects already-normalised style breakpoint keys (base/sm/md/lg/xl/2xl).
+ * Backpack breakpoint tokens (mobile/tablet/desktop) must be normalised via
+ * processBpkComponentProps before reaching this function.
+ *
  * @example
- * resolveResponsive({ base: '1rem', tablet: '2rem' }, 'xl') // '2rem'
+ * resolveResponsive({ base: '1rem', xl: '2rem' }, 'xl') // '2rem'
  * resolveResponsive('static-value', 'xl') // 'static-value'
  */
 export function resolveResponsive<T>(

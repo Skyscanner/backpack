@@ -521,6 +521,18 @@ export function processResponsiveProps(
 }
 
 /**
+ * Maps Chakra-style logical property names to standard CSS logical properties.
+ * `paddingStart`/`paddingEnd` and `marginStart`/`marginEnd` are not valid
+ * React `style` keys — they must be renamed before applying inline styles.
+ */
+const LOGICAL_PROP_MAP: Record<string, string> = {
+  paddingStart: 'paddingInlineStart',
+  paddingEnd: 'paddingInlineEnd',
+  marginStart: 'marginInlineStart',
+  marginEnd: 'marginInlineEnd',
+};
+
+/**
  * CSS style property names that should be applied via the `style` prop
  * rather than forwarded as HTML attributes.
  */
@@ -528,8 +540,10 @@ const CSS_STYLE_KEYS = new Set([
   // Spacing
   'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
   'paddingStart', 'paddingEnd', 'paddingInline',
+  'paddingInlineStart', 'paddingInlineEnd',
   'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
   'marginStart', 'marginEnd', 'marginInline',
+  'marginInlineStart', 'marginInlineEnd',
   'gap', 'spacing', 'rowGap', 'columnGap',
   // Size
   'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
@@ -568,7 +582,9 @@ export function splitProps(
   Object.keys(props).forEach((key) => {
     if (props[key] === undefined) return;
     if (CSS_STYLE_KEYS.has(key)) {
-      styleProps[key] = props[key];
+      // Remap Chakra-style logical props to standard CSS logical properties
+      const cssKey = LOGICAL_PROP_MAP[key] || key;
+      styleProps[cssKey] = props[key];
     } else {
       htmlProps[key] = props[key];
     }

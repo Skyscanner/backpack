@@ -112,7 +112,7 @@ const useArkLocale = (): string => {
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {object} The provider wrapping its children with Ark context.
+ * @returns {React.ReactElement} The provider wrapping its children with Ark context.
  */
 export const BpkProvider = ({ children }: BpkProviderProps) => {
   const locale = useArkLocale();

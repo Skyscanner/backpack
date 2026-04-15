@@ -22,7 +22,7 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { resolveTextStyle } from './theme';
 import { processBpkComponentProps, splitProps } from './tokenUtils';
-import { useBreakpoint, resolveAllResponsive, resolveResponsive } from './useBreakpoint';
+import { useBreakpoint, resolveAllResponsive } from './useBreakpoint';
 
 import type { BpkBoxProps } from './types';
 
@@ -34,17 +34,18 @@ const getClassName = cssModules(STYLES);
 export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
   ({ backgroundColor, children, color, textStyle, ...props }, ref) => {
     const bp = useBreakpoint();
-    const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+    // Route textStyle through processBpkComponentProps so Backpack breakpoint
+    // tokens (mobile/tablet/desktop) get normalised to style keys (md/xl/2xl).
+    const processedProps = processBpkComponentProps({ textStyle, ...props }, { component: 'BpkBox' });
     const { htmlProps, styleProps } = splitProps(processedProps);
     const resolvedStyle = resolveAllResponsive(styleProps, bp);
 
-    if (textStyle) {
-      const resolvedTextStyleName = resolveResponsive(textStyle, bp);
-      if (resolvedTextStyleName) {
-        const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
-        if (textStyleCSS) {
-          Object.assign(resolvedStyle, textStyleCSS);
-        }
+    const resolvedTextStyleName = resolvedStyle.textStyle;
+    delete resolvedStyle.textStyle;
+    if (resolvedTextStyleName) {
+      const textStyleCSS = resolveTextStyle(resolvedTextStyleName as string);
+      if (textStyleCSS) {
+        Object.assign(resolvedStyle, textStyleCSS);
       }
     }
 
