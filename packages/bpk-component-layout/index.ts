@@ -60,7 +60,7 @@ export { BACKGROUND_COLORS } from './src/backgroundColors';
 export type { BpkLayoutBackgroundColor } from './src/backgroundColors';
 
 // Export prop overrides context
-export { usePropOverrides } from './src/BpkPropOverridesContext';
+export { usePropOverrides, getValidatedPropOverride } from './src/BpkPropOverridesContext';
 export type {
   PropOverridesConfig,
   ComponentOverrides,

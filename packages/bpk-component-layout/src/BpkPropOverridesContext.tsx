@@ -22,13 +22,18 @@ import { createContext, useContext } from 'react';
  * Maps old prop values to new prop values for a single prop.
  * e.g. { primary: 'secondary' } means "swap primary for secondary"
  */
-export type PropOverrideMap = Record<string, string>;
+export type PropOverrideMap<TValue extends string = string> = Partial<
+  Record<TValue, TValue>
+>;
 
 /**
  * Maps prop names to their override maps for a single component.
  * e.g. { type: { primary: 'secondary' }, size: { small: 'large' } }
  */
-export type ComponentOverrides = Record<string, PropOverrideMap>;
+export type ComponentOverrides<
+  TPropName extends string = string,
+  TValue extends string = string,
+> = Partial<Record<TPropName, PropOverrideMap<TValue>>>;
 
 /**
  * Maps component names to their prop overrides.
@@ -37,6 +42,39 @@ export type ComponentOverrides = Record<string, PropOverrideMap>;
 export type PropOverridesConfig = Record<string, ComponentOverrides>;
 
 const BpkPropOverridesContext = createContext<PropOverridesConfig | null>(null);
+
+/**
+ * Safely resolves an override value only when both the current value and
+ * the configured replacement are present in the allowed set.
+ *
+ * @param {Object} overrideMap - The map of old values to new values.
+ * @param {string} value - The current prop value to look up.
+ * @param {Array} allowedValues - The allowed set of values for the prop.
+ * @returns {string} The validated replacement value, or null if none applies.
+ */
+export const getValidatedPropOverride = <TValue extends string>(
+  overrideMap: PropOverrideMap<TValue> | null | undefined,
+  value: string,
+  allowedValues: readonly TValue[],
+): TValue | null => {
+  if (!overrideMap) {
+    return null;
+  }
+
+  const allowedValueSet = new Set<string>(allowedValues);
+
+  if (!allowedValueSet.has(value)) {
+    return null;
+  }
+
+  const overriddenValue = overrideMap[value as TValue];
+
+  if (!overriddenValue || !allowedValueSet.has(overriddenValue)) {
+    return null;
+  }
+
+  return overriddenValue;
+};
 
 /**
  * Returns the override config for a specific component, or null if

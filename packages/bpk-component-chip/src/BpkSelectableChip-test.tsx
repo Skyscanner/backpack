@@ -18,6 +18,8 @@
 
 import { render } from '@testing-library/react';
 
+import { BpkProvider } from '../../bpk-component-layout';
+
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
 
@@ -109,5 +111,64 @@ describe('BpkSelectableChip', () => {
   it('should render correctly with a "className" attribute', () => {
     const { asFragment } = render(<TestChip className="custom-class" />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  describe('propOverrides via BpkProvider', () => {
+    it('should swap default type when override is configured', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkSelectableChip: { type: { default: 'on-dark' } } }}>
+          <BpkSelectableChip onClick={() => null} accessibilityLabel="Toggle">
+            Toggle me
+          </BpkSelectableChip>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="SelectableChip"]');
+      expect(el).toHaveClass('bpk-chip--on-dark');
+      expect(el).not.toHaveClass('bpk-chip--default');
+    });
+
+    it('should not override when type is explicitly provided', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkSelectableChip: { type: { default: 'on-dark' } } }}>
+          <BpkSelectableChip
+            type={CHIP_TYPES.default}
+            onClick={() => null}
+            accessibilityLabel="Toggle"
+          >
+            Toggle me
+          </BpkSelectableChip>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="SelectableChip"]');
+      expect(el).toHaveClass('bpk-chip--default');
+    });
+
+    it('should ignore invalid override values', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkSelectableChip: { type: { default: 'bogus' } } }}>
+          <BpkSelectableChip onClick={() => null} accessibilityLabel="Toggle">
+            Toggle me
+          </BpkSelectableChip>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="SelectableChip"]');
+      expect(el).toHaveClass('bpk-chip--default');
+    });
+
+    it('should use defaults when no overrides are configured', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkSelectableChip onClick={() => null} accessibilityLabel="Toggle">
+            Toggle me
+          </BpkSelectableChip>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="SelectableChip"]');
+      expect(el).toHaveClass('bpk-chip--default');
+    });
   });
 });

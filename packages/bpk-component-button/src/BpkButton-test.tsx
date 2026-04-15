@@ -18,6 +18,8 @@
 
 import { fireEvent, render } from '@testing-library/react';
 
+import { BpkProvider } from '../../bpk-component-layout';
+
 import BpkButton from './BpkButton';
 import { SIZE_TYPES, BUTTON_TYPES } from './common-types';
 
@@ -531,6 +533,75 @@ describe('BpkButton', () => {
 
       const button = container.firstElementChild;
       expect(button).toHaveClass('bpk-button--icon-only');
+    });
+  });
+
+  describe('propOverrides via BpkProvider', () => {
+    it('should swap default type when override is configured', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkButton: { type: { primary: 'secondary' } } }}>
+          <BpkButton>My button</BpkButton>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="Button"]');
+      expect(el).toHaveClass('bpk-button--secondary');
+      expect(el).not.toHaveClass('bpk-button--primary');
+    });
+
+    it('should not override when type is explicitly provided', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkButton: { type: { primary: 'secondary' } } }}>
+          <BpkButton type={BUTTON_TYPES.primary}>My button</BpkButton>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="Button"]');
+      expect(el).toHaveClass('bpk-button--primary');
+    });
+
+    it('should swap default size when override is configured', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkButton: { size: { small: 'large' } } }}>
+          <BpkButton>My button</BpkButton>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="Button"]');
+      expect(el).toHaveClass('bpk-button--large');
+    });
+
+    it('should not override size when explicitly provided', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkButton: { size: { small: 'large' } } }}>
+          <BpkButton size={SIZE_TYPES.small}>My button</BpkButton>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="Button"]');
+      expect(el).not.toHaveClass('bpk-button--large');
+    });
+
+    it('should ignore invalid override values', () => {
+      const { container } = render(
+        <BpkProvider propOverrides={{ BpkButton: { type: { primary: 'bogus' } } }}>
+          <BpkButton>My button</BpkButton>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="Button"]');
+      expect(el).toHaveClass('bpk-button--primary');
+    });
+
+    it('should use defaults when no overrides are configured', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkButton>My button</BpkButton>
+        </BpkProvider>,
+      );
+
+      const el = container.querySelector('[data-backpack-ds-component="Button"]');
+      expect(el).toHaveClass('bpk-button--primary');
     });
   });
 });

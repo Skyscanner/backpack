@@ -31,7 +31,7 @@ import {
   BpkVStack,
 } from '..';
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import BpkSelectableChip from '../../bpk-component-chip/src/BpkSelectableChip';
+import BpkSelectableChip from '../../bpk-component-chip';
 import BpkText, {
   TEXT_STYLES,
 } from '../../bpk-component-text';

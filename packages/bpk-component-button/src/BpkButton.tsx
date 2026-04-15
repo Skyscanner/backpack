@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { usePropOverrides } from '../../bpk-component-layout';
+import { usePropOverrides, getValidatedPropOverride } from '../../bpk-component-layout';
 import { BpkSpinner, BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -60,15 +60,16 @@ const BpkButton = ({
 }: Props) => {
   const overrides = usePropOverrides('BpkButton');
 
-  const type: ButtonType =
-    typeProp !== undefined
-      ? typeProp
-      : (overrides?.type?.[BUTTON_TYPES.primary] as ButtonType | undefined) ?? BUTTON_TYPES.primary;
+  const allowedButtonTypes: readonly ButtonType[] = Object.values(BUTTON_TYPES);
+  const allowedSizeTypes: readonly SizeType[] = Object.values(SIZE_TYPES);
 
-  const size: SizeType =
-    sizeProp !== undefined
-      ? sizeProp
-      : (overrides?.size?.[SIZE_TYPES.small] as SizeType | undefined) ?? SIZE_TYPES.small;
+  const type = typeProp
+    ?? getValidatedPropOverride<ButtonType>(overrides?.type, BUTTON_TYPES.primary, allowedButtonTypes)
+    ?? BUTTON_TYPES.primary;
+
+  const size = sizeProp
+    ?? getValidatedPropOverride<SizeType>(overrides?.size, SIZE_TYPES.small, allowedSizeTypes)
+    ?? SIZE_TYPES.small;
 
   const isDisabled = disabled || loading;
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
