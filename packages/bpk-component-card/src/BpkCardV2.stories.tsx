@@ -254,7 +254,6 @@ const FlightLeg = ({
   stops: string;
 }) => (
   <BpkGrid
-    columns={4}
     templateColumns="1fr 1fr 1fr 1fr"
     gap={BpkSpacing.Base}
     align="center"
