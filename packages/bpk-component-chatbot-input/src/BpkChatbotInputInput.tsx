@@ -19,12 +19,14 @@
 import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import { withButtonAlignment } from '../../bpk-component-icon';
+import ArrowUpIcon from '../../bpk-component-icon/sm/long-arrow-up';
 import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { useChatbotInputContext } from './BpkChatbotInputContext';
 import InputField from './InputField/InputField';
-import SendButton from './SendButton/SendButton';
 import TextAreaField from './TextAreaField/TextAreaField';
 import { CHATBOT_INPUT_TYPES } from './common-types';
 import { MAX_CHARACTERS } from './constants';
@@ -32,6 +34,8 @@ import { useChatbotInput } from './hooks';
 
 import type { BpkChatbotInputInputProps } from './common-types';
 import type { BpkFlexProps } from '../../bpk-component-layout';
+
+const AlignedArrowUpIcon = withButtonAlignment(ArrowUpIcon);
 
 const BpkChatbotInputInput = ({
   inputValue,
@@ -120,11 +124,17 @@ const BpkChatbotInputInput = ({
         loading: !!(isCars && isPolling),
         ariaLabel: isCars && isPolling ? loadingAriaLabel : sendAriaLabel,
       }) : (
-        <SendButton
-          disabled={sendButtonDisabled}
+        <BpkButton
+          type={BUTTON_TYPES.primary}
+          size={SIZE_TYPES.small}
+          iconOnly
           onClick={handleSubmit}
-          ariaLabel={sendAriaLabel}
-        />
+          disabled={sendButtonDisabled}
+          aria-label={sendAriaLabel}
+          data-testid="bpk-chatbot-input-send"
+        >
+          <AlignedArrowUpIcon />
+        </BpkButton>
       )}
     </BpkFlex>
   );
