@@ -17,18 +17,27 @@
  */
 
 import { Component } from 'react';
-
+import type { ChangeEvent } from 'react';
 
 // @ts-expect-error Untyped import
 import { action } from '../../../.storybook/bpk-storybook-utils';
 
-// @ts-expect-error Untyped import
 import BpkSelect from './BpkSelect';
 
 import type { Meta } from '@storybook/react';
 
-class StatefulBpkSelect extends Component<any, any> {
-  constructor(props: any) {
+type Country = {
+  key: number;
+  id: string;
+  name: string;
+  disabled: boolean;
+};
+
+class StatefulBpkSelect extends Component<
+  Record<string, any>,
+  { value: string }
+> {
+  constructor(props: Record<string, any>) {
     super(props);
     this.state = { value: 'oranges' };
   }
@@ -44,7 +53,7 @@ class StatefulBpkSelect extends Component<any, any> {
         id="destination"
         name="destination"
         value={this.state.value}
-        onChange={(event: any) => {
+        onChange={(event: ChangeEvent<HTMLSelectElement>) => {
           this.onChange(event.target.value);
         }}
         {...this.props}
@@ -63,7 +72,7 @@ class StatefulBpkSelect extends Component<any, any> {
 const getFlagUriFromCountryCode = (countryCode: string) =>
   `https://images.skyscnr.com/images/country/flag/header/${countryCode.toLowerCase()}.png`;
 
-const countries = [
+const countries: Country[] = [
   { key: 0, id: 'AT', name: 'Austria', disabled: false },
   { key: 1, id: 'BR', name: 'Brazil', disabled: false },
   { key: 2, id: 'CN', name: 'China', disabled: false },
@@ -75,8 +84,18 @@ const countries = [
   { key: 8, id: 'US', name: 'USA', disabled: true },
 ];
 
-class SelectWithImage extends Component<any, any> {
-  constructor(props: any) {
+type SelectWithImageProps = {
+  id: string;
+  name: string;
+  options: Country[];
+  [rest: string]: any;
+};
+
+class SelectWithImage extends Component<
+  SelectWithImageProps,
+  { selected: string }
+> {
+  constructor(props: SelectWithImageProps) {
     super(props);
     this.state = {
       selected: 'IT',
@@ -86,15 +105,15 @@ class SelectWithImage extends Component<any, any> {
   getItemByValue = () => {
     const { options } = this.props;
     return (val: string) => {
-      const items = options.filter((o: any) => o.id === val);
-      if (!items.length) throw new Error('Item does not exists');
+      const items = options.filter((o) => o.id === val);
+      if (!items.length) throw new Error('Item does not exist');
       return items[0];
     };
   };
 
   getItem = this.getItemByValue();
 
-  handleChange = (e: any) => {
+  handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const item = this.getItem(e.target.value);
 
     this.setState({
@@ -113,8 +132,8 @@ class SelectWithImage extends Component<any, any> {
         image={this.image(this.getItem(this.state.selected).id)}
         onChange={this.handleChange}
       >
-        {options.map((o: any) => (
-          <option key={o.id} disabled={o.disabled && 'disabled'} value={o.id}>
+        {options.map((o) => (
+          <option key={o.id} disabled={o.disabled} value={o.id}>
             {o.name}
           </option>
         ))}

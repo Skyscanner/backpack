@@ -16,7 +16,13 @@
  * limitations under the License.
  */
 
-import BpkThumbButton from './src/BpkThumbButton';
+import BpkComparisonTray from './src/BpkComparisonTray/BpkComparisonTray';
 
-export type { BpkThumbButtonProps, ThumbsButtonType, ThumbsButtonSize, ThumbsButtonColor } from './src/BpkThumbButton';
-export default BpkThumbButton;
+export type {
+  BpkComparisonItem,
+  BpkComparisonTrayRootProps,
+  BpkComparisonTrayItemProps,
+  BpkComparisonTrayNamespace,
+} from './src/BpkComparisonTray/common-types';
+
+export default BpkComparisonTray;

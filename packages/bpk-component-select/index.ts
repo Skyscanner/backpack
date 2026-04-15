@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import BpkThumbButton from './src/BpkThumbButton';
+import BpkSelect, { type Props } from './src/BpkSelect';
+import themeAttributes from './src/themeAttributes';
 
-export type { BpkThumbButtonProps, ThumbsButtonType, ThumbsButtonSize, ThumbsButtonColor } from './src/BpkThumbButton';
-export default BpkThumbButton;
+export type BpkSelectProps = Props;
+
+export default BpkSelect;
+export { themeAttributes };

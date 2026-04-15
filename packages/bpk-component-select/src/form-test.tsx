@@ -42,19 +42,25 @@ describe('BpkSelect form test', () => {
       </form>,
     );
 
-    const select = screen.getByTestId('myselect');
-    const option = screen.getByTestId('select-option');
+    const select = screen.getByTestId('myselect') as HTMLSelectElement;
+    const option = screen.getByTestId('select-option') as HTMLOptionElement;
 
     expect(select.options.selectedIndex).toEqual(0);
 
-    expect(screen.getByText('Apples').selected).toBeTruthy();
+    expect(
+      (screen.getByText('Apples') as HTMLOptionElement).selected,
+    ).toBeTruthy();
 
     await userEvent.selectOptions(select, option);
 
     expect(option.selected).toBeTruthy();
-    expect(screen.getByText('Apples').selected).toBeFalsy();
+    expect(
+      (screen.getByText('Apples') as HTMLOptionElement).selected,
+    ).toBeFalsy();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(
+      screen.getByTestId('form') as HTMLFormElement,
+    );
 
     expect(Object.fromEntries(formData.entries())).toEqual({
       fruits: 'oranges',
@@ -63,41 +69,53 @@ describe('BpkSelect form test', () => {
 
   it('should emit change event on option selection that calls formValidation', async () => {
     const formValidation = jest.fn();
-  
-    render(<form data-testid="form">
-      <BpkSelect
-        id="fruits"
-        name="fruits"
-        defaultValue="apples"
-        data-testid="myselect"
-      >
-        <option value="apples">Apples</option>
-        <option data-testid="select-option" value="oranges">
-          Oranges
-        </option>
-        <option value="pears">Pears</option>
-        <option value="tomatoes">Tomatoes</option>
-      </BpkSelect>
-      <button type="submit">Submit</button>
-    </form>);
+
+    render(
+      <form data-testid="form">
+        <BpkSelect
+          id="fruits"
+          name="fruits"
+          defaultValue="apples"
+          data-testid="myselect"
+        >
+          <option value="apples">Apples</option>
+          <option data-testid="select-option" value="oranges">
+            Oranges
+          </option>
+          <option value="pears">Pears</option>
+          <option value="tomatoes">Tomatoes</option>
+        </BpkSelect>
+        <button type="submit">Submit</button>
+      </form>,
+    );
     document.addEventListener('change', formValidation);
 
-    const select = screen.getByTestId('myselect');
+    const select = screen.getByTestId('myselect') as HTMLSelectElement;
 
     expect(select.options.selectedIndex).toEqual(0);
-    expect(screen.getByText('Apples').selected).toBeTruthy();
+    expect(
+      (screen.getByText('Apples') as HTMLOptionElement).selected,
+    ).toBeTruthy();
 
     await userEvent.selectOptions(select, 'oranges');
 
-    expect(screen.getByText('Apples').selected).toBeFalsy();
-    expect(screen.getByText('Oranges').selected).toBeTruthy();
+    expect(
+      (screen.getByText('Apples') as HTMLOptionElement).selected,
+    ).toBeFalsy();
+    expect(
+      (screen.getByText('Oranges') as HTMLOptionElement).selected,
+    ).toBeTruthy();
 
     expect(formValidation).toHaveBeenCalledTimes(1);
 
     await userEvent.selectOptions(select, 'pears');
 
-    expect(screen.getByText('Oranges').selected).toBeFalsy();
-    expect(screen.getByText('Pears').selected).toBeTruthy();
+    expect(
+      (screen.getByText('Oranges') as HTMLOptionElement).selected,
+    ).toBeFalsy();
+    expect(
+      (screen.getByText('Pears') as HTMLOptionElement).selected,
+    ).toBeTruthy();
     expect(formValidation).toHaveBeenCalledTimes(2);
   });
 });

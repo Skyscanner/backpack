@@ -15,12 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkSelect, { type Props } from './src/BpkSelect';
-import themeAttributes from './src/themeAttributes';
+import { cssModules } from '../../../bpk-react-utils';
 
-export type BpkSelectProps = Props;
+import STYLES from './BpkComparisonTray.module.scss';
 
-export default BpkSelect;
-export { themeAttributes };
+const getClassName = cssModules(STYLES);
+
+function BpkComparisonTrayItemPlaceholder() {
+  return (
+    <div
+      className={getClassName('bpk-comparison-tray__item-placeholder')}
+      aria-hidden="true"
+    />
+  );
+}
+
+export default BpkComparisonTrayItemPlaceholder;
