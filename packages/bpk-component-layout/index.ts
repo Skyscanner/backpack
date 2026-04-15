@@ -17,6 +17,8 @@
  */
 
 export { BpkProvider } from './src/BpkProvider';
+export { BpkLayoutProvider } from './src/BpkLayoutProvider';
+export { BpkArkProvider } from './src/BpkArkProvider';
 export { BpkBox } from './src/BpkBox';
 export { BpkVessel } from './src/BpkVessel';
 export { BpkFlex } from './src/BpkFlex';
@@ -24,6 +26,8 @@ export { BpkGrid } from './src/BpkGrid';
 export { BpkGridItem } from './src/BpkGridItem';
 
 export type { BpkProviderProps } from './src/BpkProvider';
+export type { BpkLayoutProviderProps } from './src/BpkLayoutProvider';
+export type { BpkArkProviderProps } from './src/BpkArkProvider';
 export type { BpkBoxProps } from './src/BpkBox';
 export type { BpkVesselProps } from './src/BpkVessel';
 export type { BpkFlexProps } from './src/BpkFlex';

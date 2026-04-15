@@ -18,9 +18,26 @@ Under the hood, this package is implemented as a **facade over a layout system**
 
 ## Usage
 
-### BpkProvider
+### Providers
 
-`BpkProvider` must wrap any layout components so that they can resolve Backpack tokens correctly:
+#### BpkLayoutProvider (layout-only)
+
+If you only use layout components (`BpkBox`, `BpkFlex`, `BpkGrid`, `BpkStack`, etc.), use `BpkLayoutProvider` for the smallest bundle — it does **not** pull in `@ark-ui/react`:
+
+```tsx
+import {
+  BpkLayoutProvider,
+  BpkFlex,
+} from '@skyscanner/backpack-web/bpk-component-layout';
+
+export default function App({ children }) {
+  return <BpkLayoutProvider>{children}</BpkLayoutProvider>;
+}
+```
+
+#### BpkProvider (layout + Ark-based components)
+
+If you also use Ark-based Backpack components (`BpkCheckboxV2`, `BpkSegmentedControlV2`, etc.), use `BpkProvider` which composes `BpkLayoutProvider` + `BpkArkProvider`:
 
 ```tsx
 import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';
@@ -29,6 +46,10 @@ export default function App({ children }) {
   return <BpkProvider>{children}</BpkProvider>;
 }
 ```
+
+#### BpkArkProvider (Ark locale only)
+
+`BpkArkProvider` provides Ark UI locale context with reactive RTL support. It is included automatically when using `BpkProvider`. You only need it directly in advanced scenarios where you want Ark locale context without the Chakra layout system.
 
 ### BpkBox
 
@@ -140,7 +161,9 @@ No other event handlers are exposed on layout components.
 
 ## Component roles
 
-- **`BpkProvider`**: Provides the runtime layout system (tokens + breakpoints) for all layout primitives. Wrap your app (or Storybook) with it.
+- **`BpkLayoutProvider`**: Provides the Chakra layout system (spacing tokens + breakpoints) for layout primitives. Use this when you only need layout components — it does not bundle `@ark-ui/react`.
+- **`BpkProvider`**: Composes `BpkLayoutProvider` + `BpkArkProvider`. Use this when you also use Ark-based Backpack components (e.g. `BpkCheckboxV2`, `BpkSegmentedControlV2`).
+- **`BpkArkProvider`**: Provides Ark UI locale context with reactive RTL support. Included automatically by `BpkProvider`.
 - **`BpkBox`**: The base structural primitive. Use it for spacing/sizing/positioning and for composing simple flex/grid layouts via `display` + related props.
 - **`BpkVessel`**: A migration hatch primitive. Use it **temporarily** during migration when you need to maintain className/style props. Plan to migrate to `BpkBox` once legacy styling is removed.
 - **`BpkFlex`**: A dedicated flex container primitive. Prefer this when you want a clear, ergonomic flex API (`direction/align/justify/wrap/...`) with Backpack responsive values.
