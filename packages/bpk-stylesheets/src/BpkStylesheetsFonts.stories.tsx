@@ -26,24 +26,39 @@ const FONT_STYLES = { NORMAL: 'normal', ITALIC: 'italic' } as const;
 type FontType = (typeof FONT_TYPES)[keyof typeof FONT_TYPES];
 type FontStyle = (typeof FONT_STYLES)[keyof typeof FONT_STYLES];
 
-const LANGUAGE_SAMPLES = {
+type LanguageSample = { text: string; lang?: string };
+
+const LANGUAGE_SAMPLES: Record<string, LanguageSample> = {
   english: {
     text: 'The quick brown fox jumps over the lazy dog',
   },
   vietnamese: {
     text: 'Tiếng Việt là ngôn ngữ chính thức của Việt Nam. Xin chào và chúc mừng năm mới!',
+    lang: 'vi-VN',
+  },
+  greek: {
+    text: 'Η ελληνική γλώσσα είναι μία από τις αρχαιότερες γλώσσες του κόσμου. Γεια σας!',
+    lang: 'el-GR',
+  },
+  russian: {
+    text: 'Русский язык является одним из самых распространённых языков мира. Привет!',
+    lang: 'ru-RU',
   },
   arabic: {
     text: 'صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ',
+    lang: 'ar',
   },
   hebrew: {
     text: 'עברית היא שפה רשמית במדינת ישראל. שלום וברכות לשנה החדשה!',
+    lang: 'he',
   },
   thai: {
     text: 'ภาษาไทยเป็นภาษาราชการของประเทศไทย สวัสดีและสุขสันต์วันปีใหม่',
+    lang: 'th-TH',
   },
   hindi: {
     text: 'हिन्दी भारत की राजभाषा है। नमस्ते और नववर्ष की शुभकामनाएं।',
+    lang: 'hi-IN',
   },
   japanese: {
     text: '日本語は日本の公用語です。こんにちは、そして明けましておめでとうございます。',
@@ -51,6 +66,7 @@ const LANGUAGE_SAMPLES = {
   },
   korean: {
     text: '한국어는 대한민국의 공용어입니다. 안녕하세요 그리고 새해 복 많이 받으세요.',
+    lang: 'ko-KR',
   },
   simplifiedChinese: {
     text: '简体中文是中华人民共和国的官方语言。你好，然后新年快乐。',
@@ -59,6 +75,10 @@ const LANGUAGE_SAMPLES = {
   traditionalChinese: {
     text: '繁體中文，你好，然後新年快樂。',
     lang: 'zh-TW',
+  },
+  traditionalChineseHK: {
+    text: '繁體中文（香港），你好，然後新年快樂。',
+    lang: 'zh-HK',
   },
 };
 
@@ -123,7 +143,7 @@ const SkyscannerRelativeExample = () => (
             text={langSample.text}
             fontWeight={config.weight}
             fontStyle={config.style}
-            lang={(langSample as any).lang}
+            lang={langSample.lang}
             type={FONT_TYPES.SKYSCANNER}
           />
         ))}
@@ -145,7 +165,7 @@ const LarkenExample = () => (
             text={langSample.text}
             fontWeight={config.weight}
             fontStyle={config.style}
-            lang={(langSample as any).lang}
+            lang={langSample.lang}
             type={FONT_TYPES.LARKEN}
           />
         ))}

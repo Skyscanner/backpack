@@ -86,7 +86,7 @@
 
     &--with-shadow {
       &:focus-within {
-        box-shadow: tokens.$bpk-box-shadow-xl;
+        box-shadow: tokens.$bpk-box-shadow-lg;
       }
     }
 

@@ -16,17 +16,24 @@
  * limitations under the License.
  */
 
-import BpkChatbotInput from './src/BpkChatbotInput';
+import { BpkHStack, BpkSpacing } from '../../bpk-component-layout';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-export type {
-  BpkChatbotInputInputProps,
-  BpkChatbotInputNamespace,
-  BpkChatbotInputRootProps,
-  BpkChatbotInputToolbarProps,
-  ChatbotInputType,
-  SendButtonRenderProps,
-} from './src/common-types';
-export { CHATBOT_INPUT_TYPES } from './src/common-types';
-export { useChatbotInputManager } from './src/hooks';
-export { default as themeAttributes } from './src/themeAttributes';
-export default BpkChatbotInput;
+import type { BpkChatbotInputToolbarProps } from './common-types';
+
+const BpkChatbotInputToolbar = ({
+  children,
+  gap = BpkSpacing.Base,
+  ...rest
+}: BpkChatbotInputToolbarProps) => (
+  <BpkHStack
+    gap={gap}
+    width="100%"
+    {...getDataComponentAttribute('ChatbotInput.Toolbar')}
+    {...rest}
+  >
+    {children}
+  </BpkHStack>
+);
+
+export default BpkChatbotInputToolbar;
