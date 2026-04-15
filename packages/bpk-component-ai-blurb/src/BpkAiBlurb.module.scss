@@ -18,7 +18,6 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
 
 .bpk-ai-blurb {
   display: flex;
@@ -46,30 +45,6 @@
     gap: 0 tokens.bpk-spacing-sm();
 
     @include typography.bpk-caption;
-  }
-
-  &__feedback-thumb {
-    display: inline-flex;
-    padding: 0;
-    align-items: center;
-    border: none;
-    background: none;
-    color: tokens.$bpk-text-primary-day;
-    cursor: pointer;
-
-    @include typography.bpk-text-xs;
-
-    svg {
-      fill: currentcolor;
-    }
-
-    &:hover {
-      color: tokens.$bpk-text-secondary-day;
-    }
-
-    &:focus-visible {
-      @include utils.bpk-focus-indicator;
-    }
   }
 
   &__ellipsis {
