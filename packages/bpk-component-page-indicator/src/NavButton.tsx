@@ -19,7 +19,7 @@
 import type { MouseEvent } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
+import { withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 
@@ -45,10 +45,8 @@ type Props = {
   type?: ButtonType;
 };
 
-const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(LeftArrowIcon));
-const AlignedRightArrowIcon = withButtonAlignment(
-  withRtlSupport(RightArrowIcon),
-);
+const RtlLeftArrowIcon = withRtlSupport(LeftArrowIcon);
+const RtlRightArrowIcon = withRtlSupport(RightArrowIcon);
 
 const NavButton = ({
   ariaLabel,
@@ -72,9 +70,9 @@ const NavButton = ({
     disabled={disabled}
   >
     {direction === DIRECTIONS.PREV ? (
-      <AlignedLeftArrowIcon />
+      <RtlLeftArrowIcon />
     ) : (
-      <AlignedRightArrowIcon />
+      <RtlRightArrowIcon />
     )}
   </BpkButton>
 );
