@@ -18,9 +18,63 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
-// Import tokens from Backpack foundations
-// Note: Some tokens may not be in TypeScript definitions but exist at runtime
-import * as bpkTokens from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+// Import only the tokens we actually use from Backpack foundations
+import {
+  // Border sizes
+  borderSizeSm,
+  borderSizeLg,
+  borderSizeXl,
+  // Border radii
+  borderRadiusXs,
+  borderRadiusSm,
+  borderRadiusMd,
+  borderRadiusLg,
+  borderRadiusXl,
+  borderRadiusFull,
+  // Box shadows
+  boxShadowSm,
+  boxShadowLg,
+  boxShadowXl,
+  // Font sizes
+  fontSizeXs,
+  fontSizeSm,
+  fontSizeBase,
+  fontSizeLg,
+  fontSizeXl,
+  fontSizeXxl,
+  fontSizeXxxl,
+  fontSizeXxxxl,
+  fontSizeXxxxxl,
+  fontSize6Xl,
+  fontSize7Xl,
+  fontSize8Xl,
+  // Line heights
+  lineHeightXs,
+  lineHeightSm,
+  lineHeightBase,
+  lineHeightBaseTight,
+  lineHeightLg,
+  lineHeightLgTight,
+  lineHeightXl,
+  lineHeightXlTight,
+  lineHeightXxl,
+  lineHeightXxxl,
+  lineHeightXxxxl,
+  lineHeightXxxxxl,
+  lineHeight6Xl,
+  lineHeight7Xl,
+  lineHeight8Xl,
+  // Font weights
+  fontWeightLight,
+  fontWeightBook,
+  fontWeightBold,
+  fontWeightBlack,
+  // Letter spacing
+  letterSpacingTight,
+  letterSpacingHero,
+  // Font family
+  fontFamilyLarken,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import type { ChakraBreakpointKey } from './tokens';
 
@@ -87,9 +141,9 @@ const spacingMap: Record<string, { value: string }> = {
  * These come directly from @skyscanner/bpk-foundations-web
  */
 const borderSizeMap: Record<string, string> = {
-  'bpk-border-size-sm': bpkTokens.borderSizeSm,
-  'bpk-border-size-lg': bpkTokens.borderSizeLg,
-  'bpk-border-size-xl': bpkTokens.borderSizeXl,
+  'bpk-border-size-sm': borderSizeSm,
+  'bpk-border-size-lg': borderSizeLg,
+  'bpk-border-size-xl': borderSizeXl,
 };
 
 /**
@@ -98,12 +152,12 @@ const borderSizeMap: Record<string, string> = {
  */
 const borderRadiusMap: Record<string, string> = {
   'bpk-border-radius-none': '0',
-  'bpk-border-radius-xs': bpkTokens.borderRadiusXs,
-  'bpk-border-radius-sm': bpkTokens.borderRadiusSm,
-  'bpk-border-radius-md': bpkTokens.borderRadiusMd,
-  'bpk-border-radius-lg': bpkTokens.borderRadiusLg,
-  'bpk-border-radius-xl': bpkTokens.borderRadiusXl,
-  'bpk-border-radius-full': bpkTokens.borderRadiusFull,
+  'bpk-border-radius-xs': borderRadiusXs,
+  'bpk-border-radius-sm': borderRadiusSm,
+  'bpk-border-radius-md': borderRadiusMd,
+  'bpk-border-radius-lg': borderRadiusLg,
+  'bpk-border-radius-xl': borderRadiusXl,
+  'bpk-border-radius-full': borderRadiusFull,
 };
 
 /**
@@ -111,9 +165,9 @@ const borderRadiusMap: Record<string, string> = {
  * These come directly from @skyscanner/bpk-foundations-web
  */
 const shadowMap: Record<string, string> = {
-  'bpk-shadow-sm': bpkTokens.boxShadowSm,
-  'bpk-shadow-lg': bpkTokens.boxShadowLg,
-  'bpk-shadow-xl': bpkTokens.boxShadowXl,
+  'bpk-shadow-sm': boxShadowSm,
+  'bpk-shadow-lg': boxShadowLg,
+  'bpk-shadow-xl': boxShadowXl,
 };
 
 /**
@@ -199,37 +253,37 @@ export function getShadowValue(token: string): string | undefined {
  * Each entry mirrors the corresponding SCSS mixin in bpk-mixins/_typography.scss.
  */
 const textStylesMap: Record<string, { value: Record<string, string> }> = {
-  xs: { value: { fontSize: bpkTokens.fontSizeXs, lineHeight: bpkTokens.lineHeightXs, fontWeight: bpkTokens.fontWeightBook } },
-  sm: { value: { fontSize: bpkTokens.fontSizeSm, lineHeight: bpkTokens.lineHeightSm, fontWeight: bpkTokens.fontWeightBook } },
-  base: { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBase, fontWeight: bpkTokens.fontWeightBook } },
-  lg: { value: { fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
-  xl: { value: { fontSize: bpkTokens.fontSizeXl, lineHeight: bpkTokens.lineHeightXl, fontWeight: bpkTokens.fontWeightBook } },
-  xxl: { value: { fontSize: bpkTokens.fontSizeXxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightBold } },
-  xxxl: { value: { fontSize: bpkTokens.fontSizeXxxl, lineHeight: bpkTokens.lineHeightXxxl, fontWeight: bpkTokens.fontWeightBold } },
-  xxxxl: { value: { fontSize: bpkTokens.fontSizeXxxxl, lineHeight: bpkTokens.lineHeightXxxxl, fontWeight: bpkTokens.fontWeightBold, letterSpacing: bpkTokens.letterSpacingTight } },
-  xxxxxl: { value: { fontSize: bpkTokens.fontSizeXxxxxl, lineHeight: bpkTokens.lineHeightXxxxxl, fontWeight: bpkTokens.fontWeightBold, letterSpacing: bpkTokens.letterSpacingTight } },
-  caption: { value: { fontSize: bpkTokens.fontSizeXs, lineHeight: bpkTokens.lineHeightXs, fontWeight: bpkTokens.fontWeightBook } },
-  footnote: { value: { fontSize: bpkTokens.fontSizeSm, lineHeight: bpkTokens.lineHeightSm, fontWeight: bpkTokens.fontWeightBook } },
-  'label-1': { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBase, fontWeight: bpkTokens.fontWeightBold } },
-  'label-2': { value: { fontSize: bpkTokens.fontSizeSm, lineHeight: bpkTokens.lineHeightSm, fontWeight: bpkTokens.fontWeightBold } },
-  'label-3': { value: { fontSize: bpkTokens.fontSizeXs, lineHeight: bpkTokens.lineHeightXs, fontWeight: bpkTokens.fontWeightBold } },
-  'body-default': { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBase, fontWeight: bpkTokens.fontWeightBook } },
-  'body-longform': { value: { fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
-  subheading: { value: { fontSize: bpkTokens.fontSizeXl, lineHeight: bpkTokens.lineHeightXl, fontWeight: bpkTokens.fontWeightBook } },
-  'heading-1': { value: { fontSize: bpkTokens.fontSizeXxxl, lineHeight: bpkTokens.lineHeightXxxl, fontWeight: bpkTokens.fontWeightBold } },
-  'heading-2': { value: { fontSize: bpkTokens.fontSizeXxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightBold } },
-  'heading-3': { value: { fontSize: bpkTokens.fontSizeXl, lineHeight: bpkTokens.lineHeightXlTight, fontWeight: bpkTokens.fontWeightBold } },
-  'heading-4': { value: { fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLgTight, fontWeight: bpkTokens.fontWeightBold } },
-  'heading-5': { value: { fontSize: bpkTokens.fontSizeBase, lineHeight: bpkTokens.lineHeightBaseTight, fontWeight: bpkTokens.fontWeightBold } },
-  'hero-1': { value: { fontSize: bpkTokens.fontSize8Xl, lineHeight: bpkTokens.lineHeight8Xl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
-  'hero-2': { value: { fontSize: bpkTokens.fontSize7Xl, lineHeight: bpkTokens.lineHeight7Xl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
-  'hero-3': { value: { fontSize: bpkTokens.fontSize6Xl, lineHeight: bpkTokens.lineHeight6Xl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
-  'hero-4': { value: { fontSize: bpkTokens.fontSizeXxxxxl, lineHeight: bpkTokens.lineHeightXxxxxl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
-  'hero-5': { value: { fontSize: bpkTokens.fontSizeXxxxl, lineHeight: bpkTokens.lineHeightXxxl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
-  'hero-6': { value: { fontSize: bpkTokens.fontSizeXxxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightBlack, letterSpacing: bpkTokens.letterSpacingHero } },
-  'editorial-1': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeXxxxl, lineHeight: bpkTokens.lineHeightXxxxl, fontWeight: bpkTokens.fontWeightLight } },
-  'editorial-2': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeXxl, lineHeight: bpkTokens.lineHeightXxl, fontWeight: bpkTokens.fontWeightLight } },
-  'editorial-3': { value: { fontFamily: `var(--bpk-larken-font-stack, ${bpkTokens.fontFamilyLarken})`, fontSize: bpkTokens.fontSizeLg, lineHeight: bpkTokens.lineHeightLg, fontWeight: bpkTokens.fontWeightBook } },
+  xs: { value: { fontSize: fontSizeXs, lineHeight: lineHeightXs, fontWeight: fontWeightBook } },
+  sm: { value: { fontSize: fontSizeSm, lineHeight: lineHeightSm, fontWeight: fontWeightBook } },
+  base: { value: { fontSize: fontSizeBase, lineHeight: lineHeightBase, fontWeight: fontWeightBook } },
+  lg: { value: { fontSize: fontSizeLg, lineHeight: lineHeightLg, fontWeight: fontWeightBook } },
+  xl: { value: { fontSize: fontSizeXl, lineHeight: lineHeightXl, fontWeight: fontWeightBook } },
+  xxl: { value: { fontSize: fontSizeXxl, lineHeight: lineHeightXxl, fontWeight: fontWeightBold } },
+  xxxl: { value: { fontSize: fontSizeXxxl, lineHeight: lineHeightXxxl, fontWeight: fontWeightBold } },
+  xxxxl: { value: { fontSize: fontSizeXxxxl, lineHeight: lineHeightXxxxl, fontWeight: fontWeightBold, letterSpacing: letterSpacingTight } },
+  xxxxxl: { value: { fontSize: fontSizeXxxxxl, lineHeight: lineHeightXxxxxl, fontWeight: fontWeightBold, letterSpacing: letterSpacingTight } },
+  caption: { value: { fontSize: fontSizeXs, lineHeight: lineHeightXs, fontWeight: fontWeightBook } },
+  footnote: { value: { fontSize: fontSizeSm, lineHeight: lineHeightSm, fontWeight: fontWeightBook } },
+  'label-1': { value: { fontSize: fontSizeBase, lineHeight: lineHeightBase, fontWeight: fontWeightBold } },
+  'label-2': { value: { fontSize: fontSizeSm, lineHeight: lineHeightSm, fontWeight: fontWeightBold } },
+  'label-3': { value: { fontSize: fontSizeXs, lineHeight: lineHeightXs, fontWeight: fontWeightBold } },
+  'body-default': { value: { fontSize: fontSizeBase, lineHeight: lineHeightBase, fontWeight: fontWeightBook } },
+  'body-longform': { value: { fontSize: fontSizeLg, lineHeight: lineHeightLg, fontWeight: fontWeightBook } },
+  subheading: { value: { fontSize: fontSizeXl, lineHeight: lineHeightXl, fontWeight: fontWeightBook } },
+  'heading-1': { value: { fontSize: fontSizeXxxl, lineHeight: lineHeightXxxl, fontWeight: fontWeightBold } },
+  'heading-2': { value: { fontSize: fontSizeXxl, lineHeight: lineHeightXxl, fontWeight: fontWeightBold } },
+  'heading-3': { value: { fontSize: fontSizeXl, lineHeight: lineHeightXlTight, fontWeight: fontWeightBold } },
+  'heading-4': { value: { fontSize: fontSizeLg, lineHeight: lineHeightLgTight, fontWeight: fontWeightBold } },
+  'heading-5': { value: { fontSize: fontSizeBase, lineHeight: lineHeightBaseTight, fontWeight: fontWeightBold } },
+  'hero-1': { value: { fontSize: fontSize8Xl, lineHeight: lineHeight8Xl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
+  'hero-2': { value: { fontSize: fontSize7Xl, lineHeight: lineHeight7Xl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
+  'hero-3': { value: { fontSize: fontSize6Xl, lineHeight: lineHeight6Xl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
+  'hero-4': { value: { fontSize: fontSizeXxxxxl, lineHeight: lineHeightXxxxxl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
+  'hero-5': { value: { fontSize: fontSizeXxxxl, lineHeight: lineHeightXxxl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
+  'hero-6': { value: { fontSize: fontSizeXxxl, lineHeight: lineHeightXxl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
+  'editorial-1': { value: { fontFamily: `var(--bpk-larken-font-stack, ${fontFamilyLarken})`, fontSize: fontSizeXxxxl, lineHeight: lineHeightXxxxl, fontWeight: fontWeightLight } },
+  'editorial-2': { value: { fontFamily: `var(--bpk-larken-font-stack, ${fontFamilyLarken})`, fontSize: fontSizeXxl, lineHeight: lineHeightXxl, fontWeight: fontWeightLight } },
+  'editorial-3': { value: { fontFamily: `var(--bpk-larken-font-stack, ${fontFamilyLarken})`, fontSize: fontSizeLg, lineHeight: lineHeightLg, fontWeight: fontWeightBook } },
 };
 
 export function createBpkConfig() {
