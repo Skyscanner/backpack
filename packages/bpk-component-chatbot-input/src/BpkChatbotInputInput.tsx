@@ -121,8 +121,8 @@ const BpkChatbotInputInput = ({
       {renderSendButton ? renderSendButton({
         disabled: sendButtonDisabled,
         onClick: handleSubmit,
-        loading: !!(isCars && isPolling),
-        ariaLabel: isCars && isPolling ? loadingAriaLabel : sendAriaLabel,
+        loading: isPolling,
+        ariaLabel: isPolling ? loadingAriaLabel : sendAriaLabel,
       }) : (
         <BpkButton
           type={BUTTON_TYPES.primary}
@@ -130,7 +130,8 @@ const BpkChatbotInputInput = ({
           iconOnly
           onClick={handleSubmit}
           disabled={sendButtonDisabled}
-          aria-label={sendAriaLabel}
+          loading={isPolling}
+          aria-label={isPolling ? loadingAriaLabel : sendAriaLabel}
           data-testid="bpk-chatbot-input-send"
         >
           <AlignedArrowUpIcon />

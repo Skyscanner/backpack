@@ -18,7 +18,7 @@
 
 import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
 
-import type { Props as BpkButtonProps } from '../../bpk-component-button/src/common-types';
+import type { Props as BpkButtonProps } from '../../bpk-component-button';
 import type { BpkStackProps } from '../../bpk-component-layout';
 
 export const CHATBOT_INPUT_TYPES = {

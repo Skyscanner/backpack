@@ -21,6 +21,8 @@ import type { ReactElement } from 'react';
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import SmallFilterIcon from '../../bpk-component-icon/sm/filter';
 import { BpkProvider } from '../../bpk-component-layout';
 
 import BpkChatbotInput from './BpkChatbotInput';
@@ -93,6 +95,21 @@ describe('BpkChatbotInput accessibility tests', () => {
     const { container } = renderWithProvider(
       <BpkChatbotInput.Root>
         <BpkChatbotInput.Input {...defaultProps} isPolling />
+      </BpkChatbotInput.Root>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues (with toolbar)', async () => {
+    const { container } = renderWithProvider(
+      <BpkChatbotInput.Root>
+        <BpkChatbotInput.Input {...defaultProps} />
+        <BpkChatbotInput.Toolbar>
+          <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.small} iconOnly aria-label="Filter">
+            <SmallFilterIcon />
+          </BpkButton>
+        </BpkChatbotInput.Toolbar>
       </BpkChatbotInput.Root>,
     );
     const results = await axe(container);

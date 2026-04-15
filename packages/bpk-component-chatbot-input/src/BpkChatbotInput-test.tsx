@@ -20,6 +20,8 @@ import type { ReactElement } from 'react';
 
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import SmallFilterIcon from '../../bpk-component-icon/sm/filter';
 import { BpkProvider } from '../../bpk-component-layout';
 
 import BpkChatbotInput from './BpkChatbotInput';
@@ -346,6 +348,40 @@ describe('BpkChatbotInput', () => {
       fireEvent.touchStart(container);
       fireEvent.keyDown(container);
       expect(container).toBeInTheDocument();
+    });
+  });
+
+  describe('Toolbar', () => {
+    it('renders children', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} />
+          <BpkChatbotInput.Toolbar>
+            <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.small} iconOnly aria-label="Filter">
+              <SmallFilterIcon />
+            </BpkButton>
+          </BpkChatbotInput.Toolbar>
+        </BpkChatbotInput.Root>,
+      );
+      expect(screen.getByRole('button', { name: 'Filter' })).toBeInTheDocument();
+    });
+
+    it('renders multiple children', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} />
+          <BpkChatbotInput.Toolbar>
+            <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.small} iconOnly aria-label="Filter">
+              <SmallFilterIcon />
+            </BpkButton>
+            <BpkButton type={BUTTON_TYPES.link} size={SIZE_TYPES.small} iconOnly aria-label="Search">
+              <SmallFilterIcon />
+            </BpkButton>
+          </BpkChatbotInput.Toolbar>
+        </BpkChatbotInput.Root>,
+      );
+      expect(screen.getByRole('button', { name: 'Filter' })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Search' })).toBeInTheDocument();
     });
   });
 
