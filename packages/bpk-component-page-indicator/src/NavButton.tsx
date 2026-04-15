@@ -69,11 +69,13 @@ const NavButton = ({
     aria-label={ariaLabel}
     disabled={disabled}
   >
-    {direction === DIRECTIONS.PREV ? (
-      <RtlLeftArrowIcon />
-    ) : (
-      <RtlRightArrowIcon />
-    )}
+    <span>
+      {direction === DIRECTIONS.PREV ? (
+        <RtlLeftArrowIcon />
+      ) : (
+        <RtlRightArrowIcon />
+      )}
+    </span>
   </BpkButton>
 );
 
