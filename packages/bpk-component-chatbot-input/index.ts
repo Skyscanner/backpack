@@ -24,6 +24,7 @@ export type {
   BpkChatbotInputRootProps,
   BpkChatbotInputToolbarProps,
   ChatbotInputType,
+  SendButtonRenderProps,
 } from './src/common-types';
 export { CHATBOT_INPUT_TYPES } from './src/common-types';
 export { useChatbotInputManager } from './src/hooks';

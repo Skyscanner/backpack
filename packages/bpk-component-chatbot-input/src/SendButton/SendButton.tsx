@@ -20,52 +20,33 @@ import BpkButton, {
   BUTTON_TYPES,
   SIZE_TYPES,
 } from '../../../bpk-component-button';
-import {
-  withRtlSupport,
-  withButtonAlignment,
-} from '../../../bpk-component-icon';
-import ArrowRightIcon from '../../../bpk-component-icon/sm/long-arrow-right';
+import { withButtonAlignment } from '../../../bpk-component-icon';
 import ArrowUpIcon from '../../../bpk-component-icon/sm/long-arrow-up';
 
-const AlignedArrowRightIcon = withButtonAlignment(
-  withRtlSupport(ArrowRightIcon),
-);
 const AlignedArrowUpIcon = withButtonAlignment(ArrowUpIcon);
 
 export interface SendButtonProps {
   ariaLabel: string;
-  isCars?: boolean;
   disabled?: boolean;
-  isLoading?: boolean;
   onClick: () => void;
 }
 
 const SendButton = ({
   ariaLabel,
   disabled = false,
-  isCars = true,
-  isLoading = false,
   onClick,
-}: SendButtonProps) => {
-  const buttonType = isCars ? BUTTON_TYPES.featured : BUTTON_TYPES.primary;
-  const Icon = isCars ? AlignedArrowRightIcon : AlignedArrowUpIcon;
-
-  return (
-    <BpkButton
-      type={buttonType}
-      size={SIZE_TYPES.small}
-      iconOnly
-      loading={isLoading}
-      onClick={onClick}
-      disabled={disabled}
-      aria-label={ariaLabel}
-      data-testid={
-        isLoading ? 'bpk-chatbot-input-loading' : 'bpk-chatbot-input-send'
-      }
-    >
-      <Icon />
-    </BpkButton>
-  );
-};
+}: SendButtonProps) => (
+  <BpkButton
+    type={BUTTON_TYPES.primary}
+    size={SIZE_TYPES.small}
+    iconOnly
+    onClick={onClick}
+    disabled={disabled}
+    aria-label={ariaLabel}
+    data-testid="bpk-chatbot-input-send"
+  >
+    <AlignedArrowUpIcon />
+  </BpkButton>
+);
 
 export default SendButton;

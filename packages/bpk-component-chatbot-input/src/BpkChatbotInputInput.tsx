@@ -47,6 +47,7 @@ const BpkChatbotInputInput = ({
   onKeyDown = () => {},
   onSubmit,
   placeholder,
+  renderSendButton,
   sendAriaLabel,
 }: BpkChatbotInputInputProps) => {
   const { inputType, setIsOverLimit } = useChatbotInputContext();
@@ -113,13 +114,18 @@ const BpkChatbotInputInput = ({
           {...inputProps}
         />
       )}
-      <SendButton
-        isCars={isCars}
-        disabled={sendButtonDisabled}
-        onClick={handleSubmit}
-        ariaLabel={isCars && isPolling ? loadingAriaLabel : sendAriaLabel}
-        isLoading={!!(isCars && isPolling)}
-      />
+      {renderSendButton ? renderSendButton({
+        disabled: sendButtonDisabled,
+        onClick: handleSubmit,
+        loading: !!(isCars && isPolling),
+        ariaLabel: isCars && isPolling ? loadingAriaLabel : sendAriaLabel,
+      }) : (
+        <SendButton
+          disabled={sendButtonDisabled}
+          onClick={handleSubmit}
+          ariaLabel={sendAriaLabel}
+        />
+      )}
     </BpkFlex>
   );
 };

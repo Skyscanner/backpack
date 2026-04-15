@@ -77,25 +77,25 @@ describe('BpkChatbotInput', () => {
         screen.getByTestId('bpk-chatbot-input-container'),
       ).toBeInTheDocument();
       expect(screen.getByTestId('bpk-chatbot-input-send')).toBeInTheDocument();
-      expect(
-        screen.queryByTestId('bpk-chatbot-input-loading'),
-      ).not.toBeInTheDocument();
     });
 
-    it('renders LoadingButton when isPolling', () => {
+    it('passes loading=true to renderSendButton when isPolling', () => {
+      const renderSendButton = jest.fn().mockReturnValue(
+        <button type="button" data-testid="custom-send">Send</button>,
+      );
       renderWithProvider(
         <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.CARS}>
-          <BpkChatbotInput.Input {...defaultProps} isPolling />
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            isPolling
+            renderSendButton={renderSendButton}
+          />
         </BpkChatbotInput.Root>,
       );
 
-      expect(
-        screen.getByTestId('bpk-chatbot-input-loading'),
-      ).toBeInTheDocument();
-
-      expect(
-        screen.queryByTestId('bpk-chatbot-input-send'),
-      ).not.toBeInTheDocument();
+      expect(renderSendButton).toHaveBeenCalledWith(
+        expect.objectContaining({ loading: true }),
+      );
     });
   });
 
@@ -346,6 +346,87 @@ describe('BpkChatbotInput', () => {
       fireEvent.touchStart(container);
       fireEvent.keyDown(container);
       expect(container).toBeInTheDocument();
+    });
+  });
+
+  describe('renderSendButton', () => {
+    it('renders the consumer-supplied button when renderSendButton is provided', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            inputValue="Hello"
+            renderSendButton={(props) => (
+              <button type="button" data-testid="custom-send" onClick={props.onClick} disabled={props.disabled}>
+                Custom
+              </button>
+            )}
+          />
+        </BpkChatbotInput.Root>,
+      );
+      expect(screen.getByTestId('custom-send')).toBeInTheDocument();
+      expect(screen.queryByTestId('bpk-chatbot-input-send')).not.toBeInTheDocument();
+    });
+
+    it('passes disabled=true when input is empty', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            inputValue=""
+            renderSendButton={(props) => (
+              <button type="button" data-testid="custom-send" disabled={props.disabled}>
+                Send
+              </button>
+            )}
+          />
+        </BpkChatbotInput.Root>,
+      );
+      expect(screen.getByTestId('custom-send')).toBeDisabled();
+    });
+
+    it('passes disabled=false when input has text', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            inputValue="Hello"
+            renderSendButton={(props) => (
+              <button type="button" data-testid="custom-send" disabled={props.disabled}>
+                Send
+              </button>
+            )}
+          />
+        </BpkChatbotInput.Root>,
+      );
+      expect(screen.getByTestId('custom-send')).not.toBeDisabled();
+    });
+
+    it('calls onSubmit when custom button onClick is invoked', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            inputValue="Hello"
+            renderSendButton={(props) => (
+              <button type="button" data-testid="custom-send" onClick={props.onClick}>
+                Send
+              </button>
+            )}
+          />
+        </BpkChatbotInput.Root>,
+      );
+      fireEvent.click(screen.getByTestId('custom-send'));
+      expect(defaultProps.onSubmit).toHaveBeenCalled();
+    });
+
+    it('renders the default send button when renderSendButton is not provided', () => {
+      renderWithProvider(
+        <BpkChatbotInput.Root>
+          <BpkChatbotInput.Input {...defaultProps} inputValue="Hello" />
+        </BpkChatbotInput.Root>,
+      );
+      expect(screen.getByTestId('bpk-chatbot-input-send')).toBeInTheDocument();
     });
   });
 });
