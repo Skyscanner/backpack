@@ -16,17 +16,23 @@
  * limitations under the License.
  */
 
-import BpkChatbotInput from './src/BpkChatbotInput';
+import { createContext, useContext } from 'react';
 
-export type {
-  BpkChatbotInputInputProps,
-  BpkChatbotInputNamespace,
-  BpkChatbotInputRootProps,
-  BpkChatbotInputToolbarProps,
-  ChatbotInputType,
-  SendButtonRenderProps,
-} from './src/common-types';
-export { CHATBOT_INPUT_TYPES } from './src/common-types';
-export { useChatbotInputManager } from './src/hooks';
-export { default as themeAttributes } from './src/themeAttributes';
-export default BpkChatbotInput;
+import { CHATBOT_INPUT_TYPES } from './common-types';
+
+import type { ChatbotInputType } from './common-types';
+
+type BpkChatbotInputContextValue = {
+  inputType: ChatbotInputType;
+  isOverLimit: boolean;
+  setIsOverLimit: (value: boolean) => void;
+};
+
+export const BpkChatbotInputContext =
+  createContext<BpkChatbotInputContextValue>({
+    inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+    isOverLimit: false,
+    setIsOverLimit: () => {},
+  });
+
+export const useChatbotInputContext = () => useContext(BpkChatbotInputContext);
