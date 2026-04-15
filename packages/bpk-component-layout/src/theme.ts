@@ -18,7 +18,10 @@
 
 import { defineConfig } from '@chakra-ui/react';
 
-// Import only the tokens we actually use from Backpack foundations
+// Import only the tokens needed for border/radius/shadow utilities.
+// Typography tokens have been moved to resolveTextStyle.ts where textStyle is
+// resolved inline, avoiding the need to bundle the full text style map in the
+// Chakra theme config.
 import {
   // Border sizes
   borderSizeSm,
@@ -35,45 +38,6 @@ import {
   boxShadowSm,
   boxShadowLg,
   boxShadowXl,
-  // Font sizes
-  fontSizeXs,
-  fontSizeSm,
-  fontSizeBase,
-  fontSizeLg,
-  fontSizeXl,
-  fontSizeXxl,
-  fontSizeXxxl,
-  fontSizeXxxxl,
-  fontSizeXxxxxl,
-  fontSize6Xl,
-  fontSize7Xl,
-  fontSize8Xl,
-  // Line heights
-  lineHeightXs,
-  lineHeightSm,
-  lineHeightBase,
-  lineHeightBaseTight,
-  lineHeightLg,
-  lineHeightLgTight,
-  lineHeightXl,
-  lineHeightXlTight,
-  lineHeightXxl,
-  lineHeightXxxl,
-  lineHeightXxxxl,
-  lineHeightXxxxxl,
-  lineHeight6Xl,
-  lineHeight7Xl,
-  lineHeight8Xl,
-  // Font weights
-  fontWeightLight,
-  fontWeightBook,
-  fontWeightBold,
-  fontWeightBlack,
-  // Letter spacing
-  letterSpacingTight,
-  letterSpacingHero,
-  // Font family
-  fontFamilyLarken,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import type { ChakraBreakpointKey } from './tokens';
@@ -247,45 +211,6 @@ export function getShadowValue(token: string): string | undefined {
   return shadowMap[token];
 }
 
-/**
- * Maps Backpack text style tokens to Chakra UI textStyles.
- * CSS property values are sourced from @skyscanner/bpk-foundations-web/tokens/base.es6.
- * Each entry mirrors the corresponding SCSS mixin in bpk-mixins/_typography.scss.
- */
-const textStylesMap: Record<string, { value: Record<string, string> }> = {
-  xs: { value: { fontSize: fontSizeXs, lineHeight: lineHeightXs, fontWeight: fontWeightBook } },
-  sm: { value: { fontSize: fontSizeSm, lineHeight: lineHeightSm, fontWeight: fontWeightBook } },
-  base: { value: { fontSize: fontSizeBase, lineHeight: lineHeightBase, fontWeight: fontWeightBook } },
-  lg: { value: { fontSize: fontSizeLg, lineHeight: lineHeightLg, fontWeight: fontWeightBook } },
-  xl: { value: { fontSize: fontSizeXl, lineHeight: lineHeightXl, fontWeight: fontWeightBook } },
-  xxl: { value: { fontSize: fontSizeXxl, lineHeight: lineHeightXxl, fontWeight: fontWeightBold } },
-  xxxl: { value: { fontSize: fontSizeXxxl, lineHeight: lineHeightXxxl, fontWeight: fontWeightBold } },
-  xxxxl: { value: { fontSize: fontSizeXxxxl, lineHeight: lineHeightXxxxl, fontWeight: fontWeightBold, letterSpacing: letterSpacingTight } },
-  xxxxxl: { value: { fontSize: fontSizeXxxxxl, lineHeight: lineHeightXxxxxl, fontWeight: fontWeightBold, letterSpacing: letterSpacingTight } },
-  caption: { value: { fontSize: fontSizeXs, lineHeight: lineHeightXs, fontWeight: fontWeightBook } },
-  footnote: { value: { fontSize: fontSizeSm, lineHeight: lineHeightSm, fontWeight: fontWeightBook } },
-  'label-1': { value: { fontSize: fontSizeBase, lineHeight: lineHeightBase, fontWeight: fontWeightBold } },
-  'label-2': { value: { fontSize: fontSizeSm, lineHeight: lineHeightSm, fontWeight: fontWeightBold } },
-  'label-3': { value: { fontSize: fontSizeXs, lineHeight: lineHeightXs, fontWeight: fontWeightBold } },
-  'body-default': { value: { fontSize: fontSizeBase, lineHeight: lineHeightBase, fontWeight: fontWeightBook } },
-  'body-longform': { value: { fontSize: fontSizeLg, lineHeight: lineHeightLg, fontWeight: fontWeightBook } },
-  subheading: { value: { fontSize: fontSizeXl, lineHeight: lineHeightXl, fontWeight: fontWeightBook } },
-  'heading-1': { value: { fontSize: fontSizeXxxl, lineHeight: lineHeightXxxl, fontWeight: fontWeightBold } },
-  'heading-2': { value: { fontSize: fontSizeXxl, lineHeight: lineHeightXxl, fontWeight: fontWeightBold } },
-  'heading-3': { value: { fontSize: fontSizeXl, lineHeight: lineHeightXlTight, fontWeight: fontWeightBold } },
-  'heading-4': { value: { fontSize: fontSizeLg, lineHeight: lineHeightLgTight, fontWeight: fontWeightBold } },
-  'heading-5': { value: { fontSize: fontSizeBase, lineHeight: lineHeightBaseTight, fontWeight: fontWeightBold } },
-  'hero-1': { value: { fontSize: fontSize8Xl, lineHeight: lineHeight8Xl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
-  'hero-2': { value: { fontSize: fontSize7Xl, lineHeight: lineHeight7Xl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
-  'hero-3': { value: { fontSize: fontSize6Xl, lineHeight: lineHeight6Xl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
-  'hero-4': { value: { fontSize: fontSizeXxxxxl, lineHeight: lineHeightXxxxxl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
-  'hero-5': { value: { fontSize: fontSizeXxxxl, lineHeight: lineHeightXxxl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
-  'hero-6': { value: { fontSize: fontSizeXxxl, lineHeight: lineHeightXxl, fontWeight: fontWeightBlack, letterSpacing: letterSpacingHero } },
-  'editorial-1': { value: { fontFamily: `var(--bpk-larken-font-stack, ${fontFamilyLarken})`, fontSize: fontSizeXxxxl, lineHeight: lineHeightXxxxl, fontWeight: fontWeightLight } },
-  'editorial-2': { value: { fontFamily: `var(--bpk-larken-font-stack, ${fontFamilyLarken})`, fontSize: fontSizeXxl, lineHeight: lineHeightXxl, fontWeight: fontWeightLight } },
-  'editorial-3': { value: { fontFamily: `var(--bpk-larken-font-stack, ${fontFamilyLarken})`, fontSize: fontSizeLg, lineHeight: lineHeightLg, fontWeight: fontWeightBook } },
-};
-
 export function createBpkConfig() {
   // Convert breakpoint map to Chakra UI format
   // Breakpoints in Chakra v3 are typically simple strings in the breakpoints object
@@ -294,6 +219,11 @@ export function createBpkConfig() {
     chakraBreakpoints[token] = value;
   });
 
+  // textStyles have been removed from the Chakra config to reduce bundle size.
+  // Text style resolution is now handled inline by resolveTextStyle.ts via
+  // expandTextStyleProps(), which expands textStyle tokens into concrete CSS
+  // properties at prop-processing time. This means layout-only consumers that
+  // never use textStyle pay nothing for the typography map.
   return defineConfig({
     // Disable Chakra's preflight (CSS reset) so it does not override Backpack's
     // global font styles, in particular the `-webkit-font-smoothing: antialiased`
@@ -304,7 +234,6 @@ export function createBpkConfig() {
       tokens: {
         spacing: spacingMap,
       },
-      textStyles: textStylesMap,
       breakpoints: chakraBreakpoints,
     },
   });

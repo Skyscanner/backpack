@@ -17,6 +17,7 @@
  */
 
 import StackOptionKeys from './BpkStack.constant';
+import { expandTextStyleProps } from './resolveTextStyle';
 import { getSpacingValue } from './theme';
 import {
   BpkBreakpointToChakraKey,
@@ -57,8 +58,6 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
 > = {
   BpkBox: {
     container: [
-      // Typography
-      'textStyle',
       // Display
       'display',
       // Flex container props
@@ -97,7 +96,6 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   // Note: BpkFlex maps its public API props to these Chakra keys.
   BpkFlex: {
     container: [
-      'textStyle',
       'flexDirection',
       'justifyContent',
       'alignItems',
@@ -117,7 +115,6 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   // Note: BpkGrid maps its public API props to these Chakra keys.
   BpkGrid: {
     container: [
-      'textStyle',
       'justifyContent',
       'alignItems',
       'gridTemplateColumns',
@@ -139,12 +136,11 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
     ],
   },
   BpkGridItem: {
-    container: ['textStyle', 'position', 'overflow', 'overflowX', 'overflowY'],
+    container: ['position', 'overflow', 'overflowX', 'overflowY'],
   },
   // Note: BpkStack uses Chakra Stack option prop names directly.
   BpkStack: {
     container: [
-      'textStyle',
       ...(StackOptionKeys as unknown as readonly string[]),
       // Position keyword and overflow (from BpkCommonLayoutProps)
       'position',
@@ -224,18 +220,31 @@ export function processBpkComponentProps<T extends Record<string, any>>(
 ): Record<string, any> {
   const processed = processBpkProps(props);
 
+  // --- textStyle inline resolution ---
+  // textStyle is no longer part of the Chakra theme config. Instead we resolve
+  // it here into concrete CSS properties (fontSize, lineHeight, fontWeight, etc.).
+  // The value may come from:
+  //   - responsiveProps (BpkFlex, BpkGrid explicitly pass it)
+  //   - processed props (BpkBox, BpkStack pass it via ...props)
+  const textStyleValue = options.responsiveProps?.textStyle ?? processed.textStyle;
+  delete processed.textStyle;
+  // Strip textStyle from responsiveProps without mutating the original object.
+  const { textStyle: _ts, ...cleanResponsiveProps } = options.responsiveProps ?? {};
+  const expandedTextStyle = expandTextStyleProps(textStyleValue);
+
   const allowlist = BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT[options.component];
   // When responsiveProps is provided (e.g. BpkFlex maps direction→flexDirection),
   // merge it with any allowlisted props already in `processed` (e.g. position/overflow
   // that come in via ...props and are NOT included in responsiveProps).
   // responsiveProps takes precedence so that explicit prop-name mappings always win.
   const processedAllowlisted = filterToAllowlist(processed, allowlist);
-  const responsiveSource = options.responsiveProps
-    ? { ...processedAllowlisted, ...filterToAllowlist(options.responsiveProps, allowlist) }
+  const hasResponsiveProps = Object.keys(cleanResponsiveProps).length > 0;
+  const responsiveSource = hasResponsiveProps
+    ? { ...processedAllowlisted, ...filterToAllowlist(cleanResponsiveProps, allowlist) }
     : processedAllowlisted;
 
   if (Object.keys(responsiveSource).length === 0) {
-    return processed;
+    return { ...processed, ...expandedTextStyle };
   }
 
   // Ensure allowlisted layout props do NOT fall through unprocessed (e.g. array responsive values).
@@ -259,7 +268,9 @@ export function processBpkComponentProps<T extends Record<string, any>>(
     }
   });
 
-  return { ...cleanedProcessed, ...responsiveProcessed };
+  // Expanded textStyle props are applied last so they don't get overridden by
+  // the responsive pipeline, but explicit CSS props from the user take precedence.
+  return { ...expandedTextStyle, ...cleanedProcessed, ...responsiveProcessed };
 }
 
 /**
