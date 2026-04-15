@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
@@ -121,7 +121,7 @@ const INITIAL_MESSAGES: Message[] = [
   },
 ];
 
-const ChatDemoExample = () => {
+const useChatDemo = () => {
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
   const [inputValue, setInputValue] = useState('');
   const [isSending, setIsSending] = useState(false);
@@ -131,15 +131,11 @@ const ChatDemoExample = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const nextId = useRef(10);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   useEffect(() => {
-    scrollToBottom();
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const addBotResponse = (userText: string) => {
+  const addBotResponse = useCallback((userText: string) => {
     const response = getResponse(userText);
 
     const thinkingId = nextId.current;
@@ -179,167 +175,192 @@ const ChatDemoExample = () => {
       });
       setIsSending(false);
     }, 1500);
+  }, []);
+
+  const handleSubmit = useCallback(
+    (text?: string) => {
+      const messageText = text || inputValue;
+      if (!messageText.trim()) return;
+
+      const userMsgId = nextId.current;
+      nextId.current += 1;
+      setMessages((prev) => [
+        ...prev.filter((m) => m.type !== 'suggestions'),
+        { id: userMsgId, type: 'user', text: messageText },
+      ]);
+      setInputValue('');
+      setIsSending(true);
+
+      addBotResponse(messageText);
+    },
+    [inputValue, addBotResponse],
+  );
+
+  const handleFeedback = useCallback(
+    (messageId: number, type: ThumbsButtonType) => {
+      setFeedbackState((prev) => ({ ...prev, [messageId]: type }));
+      const notifId = nextId.current;
+      nextId.current += 1;
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: notifId,
+          type: 'notification',
+          text: 'Thanks for your feedback!',
+        },
+      ]);
+
+      setTimeout(() => {
+        setMessages((prev) => prev.filter((m) => m.id !== notifId));
+      }, 3000);
+    },
+    [],
+  );
+
+  const renderMessage = useCallback(
+    (message: Message): ReactNode => {
+      switch (message.type) {
+        case 'user':
+          return (
+            <BpkChatBubble
+              key={message.id}
+              type={CHAT_BUBBLE_TYPE.user}
+              userPosition={message.position}
+            >
+              {message.text}
+            </BpkChatBubble>
+          );
+
+        case 'bot':
+          return (
+            <BpkChatBubble
+              key={message.id}
+              type={CHAT_BUBBLE_TYPE.bot}
+              systemPosition={message.position}
+              showFeedback={message.showFeedback}
+              selectedFeedback={feedbackState[message.id] ?? null}
+              onFeedbackClick={(type) => handleFeedback(message.id, type)}
+            >
+              {message.text}
+            </BpkChatBubble>
+          );
+
+        case 'thinking':
+          return (
+            <BpkChatThoughtBubble key={message.id} content={message.text} />
+          );
+
+        case 'notification':
+          return (
+            <BpkFlex key={message.id} justify="center" padding={BpkSpacing.SM}>
+              <BpkChatNotification text={message.text} icon={TickCircleIcon} />
+            </BpkFlex>
+          );
+
+        case 'suggestions':
+          return (
+            <BpkVStack key={message.id} align="flex-end" gap={BpkSpacing.SM}>
+              {message.suggestions?.map((suggestion) => (
+                <BpkChatBubble
+                  key={suggestion}
+                  type={CHAT_BUBBLE_TYPE.button}
+                  onSuggestionClick={() => handleSubmit(suggestion)}
+                >
+                  {suggestion}
+                </BpkChatBubble>
+              ))}
+            </BpkVStack>
+          );
+
+        default:
+          return null;
+      }
+    },
+    [feedbackState, handleFeedback, handleSubmit],
+  );
+
+  return {
+    messages,
+    inputValue,
+    isSending,
+    messagesEndRef,
+    setInputValue,
+    handleSubmit,
+    renderMessage,
   };
+};
 
-  const handleSubmit = (text?: string) => {
-    const messageText = text || inputValue;
-    if (!messageText.trim()) return;
+const ChatShell = ({
+  inputSection,
+  messages,
+  messagesEndRef,
+  renderMessage,
+}: {
+  inputSection: ReactNode;
+  messages: Message[];
+  messagesEndRef: React.RefObject<HTMLDivElement>;
+  renderMessage: (message: Message) => ReactNode;
+}) => (
+  <BpkFlex
+    direction="column"
+    maxWidth="24rem"
+    height="44rem"
+    overflow="hidden"
+    backgroundColor={BACKGROUND_COLORS.canvasContrast}
+  >
+    <BpkFlex
+      align="center"
+      justify="center"
+      padding={BpkSpacing.Base}
+      backgroundColor={BACKGROUND_COLORS.canvas}
+      shrink={0}
+    >
+      <BpkText textStyle={TEXT_STYLES.label1}>New chat</BpkText>
+    </BpkFlex>
 
-    const userMsgId = nextId.current;
-    nextId.current += 1;
-    setMessages((prev) => [
-      ...prev.filter((m) => m.type !== 'suggestions'),
-      { id: userMsgId, type: 'user', text: messageText },
-    ]);
-    setInputValue('');
-    setIsSending(true);
+    <BpkBox
+      padding={BpkSpacing.Base}
+      flexGrow={1}
+      flexShrink={1}
+      flexBasis="0"
+      minHeight="0rem"
+      overflowY="auto"
+    >
+      <BpkStack gap={BpkSpacing.SM}>{messages.map(renderMessage)}</BpkStack>
+      <div ref={messagesEndRef} />
+    </BpkBox>
 
-    addBotResponse(messageText);
-  };
+    <BpkBox padding={BpkSpacing.Base} flexShrink={0}>
+      {inputSection}
+    </BpkBox>
+  </BpkFlex>
+);
 
-  const handleFeedback = (messageId: number, type: ThumbsButtonType) => {
-    setFeedbackState((prev) => ({ ...prev, [messageId]: type }));
-    const notifId = nextId.current;
-    nextId.current += 1;
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: notifId,
-        type: 'notification',
-        text: 'Thanks for your feedback!',
-      },
-    ]);
-
-    setTimeout(() => {
-      setMessages((prev) => prev.filter((m) => m.id !== notifId));
-    }, 3000);
-  };
-
-  const renderMessage = (message: Message): ReactNode => {
-    switch (message.type) {
-      case 'user':
-        return (
-          <BpkChatBubble
-            key={message.id}
-            type={CHAT_BUBBLE_TYPE.user}
-            userPosition={message.position}
-          >
-            {message.text}
-          </BpkChatBubble>
-        );
-
-      case 'bot':
-        return (
-          <BpkChatBubble
-            key={message.id}
-            type={CHAT_BUBBLE_TYPE.bot}
-            systemPosition={message.position}
-            showFeedback={message.showFeedback}
-            selectedFeedback={feedbackState[message.id] ?? null}
-            onFeedbackClick={(type) => handleFeedback(message.id, type)}
-          >
-            {message.text}
-          </BpkChatBubble>
-        );
-
-      case 'thinking':
-        return (
-          <BpkChatThoughtBubble key={message.id} content={message.text} />
-        );
-
-      case 'notification':
-        return (
-          <BpkFlex key={message.id} justify="center" padding={BpkSpacing.SM}>
-            <BpkChatNotification text={message.text} icon={TickCircleIcon} />
-          </BpkFlex>
-        );
-
-      case 'suggestions':
-        return (
-          <BpkVStack key={message.id} align="flex-end" gap={BpkSpacing.SM}>
-            {message.suggestions?.map((suggestion) => (
-              <BpkChatBubble
-                key={suggestion}
-                type={CHAT_BUBBLE_TYPE.button}
-                onSuggestionClick={() => handleSubmit(suggestion)}
-              >
-                {suggestion}
-              </BpkChatBubble>
-            ))}
-          </BpkVStack>
-        );
-
-      default:
-        return null;
-    }
-  };
+const ChatDemoExample = () => {
+  const chat = useChatDemo();
 
   return (
-    <BpkFlex
-      direction="column"
-      maxWidth="24rem"
-      height="44rem"
-      overflow="hidden"
-      backgroundColor={BACKGROUND_COLORS.canvasContrast}
-    >
-      <BpkFlex
-        align="center"
-        justify="center"
-        padding={BpkSpacing.Base}
-        backgroundColor={BACKGROUND_COLORS.canvas}
-        shrink={0}
-      >
-        <BpkText textStyle={TEXT_STYLES.label1}>New chat</BpkText>
-      </BpkFlex>
-
-      <BpkBox
-        padding={BpkSpacing.Base}
-        flexGrow={1}
-        flexShrink={1}
-        flexBasis="0"
-        minHeight="0rem"
-        overflowY="auto"
-      >
-        <BpkStack gap={BpkSpacing.SM}>
-          {messages.map(renderMessage)}
-        </BpkStack>
-        <div ref={messagesEndRef} />
-      </BpkBox>
-
-      <BpkBox padding={BpkSpacing.Base} flexShrink={0}>
+    <ChatShell
+      messages={chat.messages}
+      messagesEndRef={chat.messagesEndRef}
+      renderMessage={chat.renderMessage}
+      inputSection={
         <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
           <BpkChatbotInput.Input
-            inputValue={inputValue}
+            inputValue={chat.inputValue}
             loadingAriaLabel="Sending message"
             sendAriaLabel="Send message"
             placeholder="Your message"
-            onInputChange={setInputValue}
+            onInputChange={chat.setInputValue}
             onInputFocus={() => {}}
             onInputBlur={() => {}}
-            onSubmit={() => handleSubmit()}
-            isSending={isSending}
+            onSubmit={() => chat.handleSubmit()}
+            isSending={chat.isSending}
           />
         </BpkChatbotInput.Root>
-      </BpkBox>
-    </BpkFlex>
+      }
+    />
   );
-};
-
-const meta = {
-  title: 'Chat Demo',
-  decorators: [
-    (Story: any) => (
-      <BpkProvider>
-        <Story />
-      </BpkProvider>
-    ),
-  ],
-} satisfies Meta;
-
-export default meta;
-
-export const InteractiveChat = {
-  render: () => <ChatDemoExample />,
 };
 
 const FAKE_FILES = [
@@ -349,23 +370,8 @@ const FAKE_FILES = [
 ];
 
 const ChatWithAttachmentsExample = () => {
-  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
-  const [inputValue, setInputValue] = useState('');
-  const [isSending, setIsSending] = useState(false);
+  const chat = useChatDemo();
   const [attachments, setAttachments] = useState<string[]>([]);
-  const [feedbackState, setFeedbackState] = useState<
-    Record<number, ThumbsButtonType | null>
-  >({});
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const nextId = useRef(10);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
 
   const addAttachment = () => {
     if (attachments.length >= 3) return;
@@ -378,175 +384,17 @@ const ChatWithAttachmentsExample = () => {
     setAttachments((prev) => prev.filter((f) => f !== filename));
   };
 
-  const addBotResponse = (userText: string) => {
-    const response = getResponse(userText);
-
-    const thinkingId = nextId.current;
-    nextId.current += 1;
-    setMessages((prev) => [
-      ...prev,
-      { id: thinkingId, type: 'thinking', text: response.thinking },
-    ]);
-
-    setTimeout(() => {
-      setMessages((prev) => {
-        const withoutThinking = prev.filter((m) => m.id !== thinkingId);
-        const newMessages: Message[] = response.replies.map((reply, i) => {
-          const msgId = nextId.current;
-          nextId.current += 1;
-
-          let position: Message['position'];
-          if (response.replies.length > 1) {
-            if (i === 0) {
-              position = 'first';
-            } else if (i === response.replies.length - 1) {
-              position = 'last';
-            } else {
-              position = 'middle';
-            }
-          }
-
-          return {
-            id: msgId,
-            type: 'bot' as const,
-            text: reply,
-            position,
-            showFeedback: i === response.replies.length - 1,
-          };
-        });
-        return [...withoutThinking, ...newMessages];
-      });
-      setIsSending(false);
-    }, 1500);
-  };
-
-  const handleSubmit = (text?: string) => {
-    const messageText = text || inputValue;
-    if (!messageText.trim()) return;
-
-    const userMsgId = nextId.current;
-    nextId.current += 1;
-    setMessages((prev) => [
-      ...prev.filter((m) => m.type !== 'suggestions'),
-      { id: userMsgId, type: 'user', text: messageText },
-    ]);
-    setInputValue('');
+  const handleSubmit = () => {
+    chat.handleSubmit();
     setAttachments([]);
-    setIsSending(true);
-
-    addBotResponse(messageText);
-  };
-
-  const handleFeedback = (messageId: number, type: ThumbsButtonType) => {
-    setFeedbackState((prev) => ({ ...prev, [messageId]: type }));
-    const notifId = nextId.current;
-    nextId.current += 1;
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: notifId,
-        type: 'notification',
-        text: 'Thanks for your feedback!',
-      },
-    ]);
-
-    setTimeout(() => {
-      setMessages((prev) => prev.filter((m) => m.id !== notifId));
-    }, 3000);
-  };
-
-  const renderMessage = (message: Message): ReactNode => {
-    switch (message.type) {
-      case 'user':
-        return (
-          <BpkChatBubble
-            key={message.id}
-            type={CHAT_BUBBLE_TYPE.user}
-            userPosition={message.position}
-          >
-            {message.text}
-          </BpkChatBubble>
-        );
-
-      case 'bot':
-        return (
-          <BpkChatBubble
-            key={message.id}
-            type={CHAT_BUBBLE_TYPE.bot}
-            systemPosition={message.position}
-            showFeedback={message.showFeedback}
-            selectedFeedback={feedbackState[message.id] ?? null}
-            onFeedbackClick={(type) => handleFeedback(message.id, type)}
-          >
-            {message.text}
-          </BpkChatBubble>
-        );
-
-      case 'thinking':
-        return (
-          <BpkChatThoughtBubble key={message.id} content={message.text} />
-        );
-
-      case 'notification':
-        return (
-          <BpkFlex key={message.id} justify="center" padding={BpkSpacing.SM}>
-            <BpkChatNotification text={message.text} icon={TickCircleIcon} />
-          </BpkFlex>
-        );
-
-      case 'suggestions':
-        return (
-          <BpkVStack key={message.id} align="flex-end" gap={BpkSpacing.SM}>
-            {message.suggestions?.map((suggestion) => (
-              <BpkChatBubble
-                key={suggestion}
-                type={CHAT_BUBBLE_TYPE.button}
-                onSuggestionClick={() => handleSubmit(suggestion)}
-              >
-                {suggestion}
-              </BpkChatBubble>
-            ))}
-          </BpkVStack>
-        );
-
-      default:
-        return null;
-    }
   };
 
   return (
-    <BpkFlex
-      direction="column"
-      maxWidth="24rem"
-      height="44rem"
-      overflow="hidden"
-      backgroundColor={BACKGROUND_COLORS.canvasContrast}
-    >
-      <BpkFlex
-        align="center"
-        justify="center"
-        padding={BpkSpacing.Base}
-        backgroundColor={BACKGROUND_COLORS.canvas}
-        shrink={0}
-      >
-        <BpkText textStyle={TEXT_STYLES.label1}>New chat</BpkText>
-      </BpkFlex>
-
-      <BpkBox
-        padding={BpkSpacing.Base}
-        flexGrow={1}
-        flexShrink={1}
-        flexBasis="0"
-        minHeight="0rem"
-        overflowY="auto"
-      >
-        <BpkStack gap={BpkSpacing.SM}>
-          {messages.map(renderMessage)}
-        </BpkStack>
-        <div ref={messagesEndRef} />
-      </BpkBox>
-
-      <BpkBox padding={BpkSpacing.Base} flexShrink={0}>
+    <ChatShell
+      messages={chat.messages}
+      messagesEndRef={chat.messagesEndRef}
+      renderMessage={chat.renderMessage}
+      inputSection={
         <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
           {attachments.length > 0 && (
             <BpkBox width="100%" overflow="hidden">
@@ -565,15 +413,15 @@ const ChatWithAttachmentsExample = () => {
             </BpkBox>
           )}
           <BpkChatbotInput.Input
-            inputValue={inputValue}
+            inputValue={chat.inputValue}
             loadingAriaLabel="Sending message"
             sendAriaLabel="Send message"
             placeholder="Your message"
-            onInputChange={setInputValue}
+            onInputChange={chat.setInputValue}
             onInputFocus={() => {}}
             onInputBlur={() => {}}
-            onSubmit={() => handleSubmit()}
-            isSending={isSending}
+            onSubmit={handleSubmit}
+            isSending={chat.isSending}
           />
           <BpkChatbotInput.Toolbar>
             <BpkButton
@@ -587,9 +435,26 @@ const ChatWithAttachmentsExample = () => {
             </BpkButton>
           </BpkChatbotInput.Toolbar>
         </BpkChatbotInput.Root>
-      </BpkBox>
-    </BpkFlex>
+      }
+    />
   );
+};
+
+const meta = {
+  title: 'Chat Demo',
+  decorators: [
+    (Story: any) => (
+      <BpkProvider>
+        <Story />
+      </BpkProvider>
+    ),
+  ],
+} satisfies Meta;
+
+export default meta;
+
+export const InteractiveChat = {
+  render: () => <ChatDemoExample />,
 };
 
 export const InteractiveChatWithAttachments = {
