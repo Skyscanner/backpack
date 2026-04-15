@@ -290,7 +290,7 @@ const ChatDemoExample = () => {
         flexGrow={1}
         flexShrink={1}
         flexBasis="0"
-        minHeight="0"
+        minHeight="0rem"
         overflowY="auto"
       >
         <BpkStack gap={BpkSpacing.SM}>
