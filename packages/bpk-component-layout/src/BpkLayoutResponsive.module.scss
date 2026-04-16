@@ -63,6 +63,8 @@ $responsive-props: (
   ('margin-inline-end', 'margin-end'),
   ('margin-inline', 'margin-inline'),
   ('gap', 'gap'),
+  ('row-gap', 'row-gap'),
+  ('column-gap', 'column-gap'),
   // Size
   ('width', 'width'),
   ('height', 'height'),
@@ -81,8 +83,16 @@ $responsive-props: (
   ('flex-wrap', 'flex-wrap'),
   ('justify-content', 'justify-content'),
   ('align-items', 'align-items'),
+  ('align-content', 'align-content'),
+  // Flex item (only align-self is commonly responsive)
+  ('flex', 'flex'),
+  ('align-self', 'align-self'),
   // Grid container
   ('grid-template-columns', 'grid-template-columns'),
+  ('grid-template-rows', 'grid-template-rows'),
+  // Grid item
+  ('grid-column', 'grid-column'),
+  ('grid-row', 'grid-row'),
   // Typography (from textStyle expansion)
   ('font-size', 'font-size'),
   ('line-height', 'line-height'),
