@@ -9,12 +9,14 @@ exports[`BpkChatbotInput cars-composer type renders with cars-composer type corr
     role="presentation"
   >
     <div
-      class="chakra-stack css-vnomi0"
+      class="bpk-layout-vstack"
       data-backpack-ds-component="VStack"
+      style="gap: 1rem; width: 100%; padding: 1rem; align-items: flex-start; flex-direction: column;"
     >
       <div
-        class="css-tdl7nf"
+        class="bpk-layout-flex"
         data-backpack-ds-component="ChatbotInput.Input"
+        style="width: 100%; gap: 1rem; align-items: center;"
       >
         <div
           class="bpk-chatbot-textarea-field__container"
@@ -85,12 +87,14 @@ exports[`BpkChatbotInput common behaviours renders with cars-composer type corre
     role="presentation"
   >
     <div
-      class="chakra-stack css-vnomi0"
+      class="bpk-layout-vstack"
       data-backpack-ds-component="VStack"
+      style="gap: 1rem; width: 100%; padding: 1rem; align-items: flex-start; flex-direction: column;"
     >
       <div
-        class="css-tdl7nf"
+        class="bpk-layout-flex"
         data-backpack-ds-component="ChatbotInput.Input"
+        style="width: 100%; gap: 1rem; align-items: center;"
       >
         <div
           class="bpk-chatbot-textarea-field__container"
@@ -161,12 +165,14 @@ exports[`BpkChatbotInput composer type renders with composer type correctly 1`] 
     role="presentation"
   >
     <div
-      class="chakra-stack css-vnomi0"
+      class="bpk-layout-vstack"
       data-backpack-ds-component="VStack"
+      style="gap: 1rem; width: 100%; padding: 1rem; align-items: flex-start; flex-direction: column;"
     >
       <div
-        class="css-tdl7nf"
+        class="bpk-layout-flex"
         data-backpack-ds-component="ChatbotInput.Input"
+        style="width: 100%; gap: 1rem; align-items: center;"
       >
         <div
           class="bpk-chatbot-textarea-field__container"
@@ -237,12 +243,14 @@ exports[`BpkChatbotInput should render correctly with default props 1`] = `
     role="presentation"
   >
     <div
-      class="chakra-stack css-vnomi0"
+      class="bpk-layout-vstack"
       data-backpack-ds-component="VStack"
+      style="gap: 1rem; width: 100%; padding: 1rem; align-items: flex-start; flex-direction: column;"
     >
       <div
-        class="css-tdl7nf"
+        class="bpk-layout-flex"
         data-backpack-ds-component="ChatbotInput.Input"
+        style="width: 100%; gap: 1rem; align-items: center;"
       >
         <div
           class="bpk-chatbot-textarea-field__container"
