@@ -145,7 +145,7 @@ const InteractiveExample = () => {
 };
 
 const meta = {
-  title: 'bpk-component-comparison-table',
+  title: 'bpk-component-comparison-table/BpkComparisonTray',
   component: BpkComparisonTray.Root,
   decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
 } satisfies Meta;
