@@ -70,9 +70,9 @@
     }
 
     &--wrap {
+      text-overflow: unset;
       white-space: normal;
       overflow: visible;
-      text-overflow: unset;
     }
   }
 
