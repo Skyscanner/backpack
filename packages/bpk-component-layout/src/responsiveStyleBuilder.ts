@@ -92,6 +92,14 @@ const PROP_TO_CSS_VAR: Record<string, string> = {
   fontWeight: 'font-weight',
   letterSpacing: 'letter-spacing',
   fontFamily: 'font-family',
+  textAlign: 'text-align',
+  whiteSpace: 'white-space',
+  // Visual
+  cursor: 'cursor',
+  opacity: 'opacity',
+  visibility: 'visibility',
+  pointerEvents: 'pointer-events',
+  userSelect: 'user-select',
 };
 
 /**
@@ -163,6 +171,13 @@ const STATIC_ONLY_PROPS = new Set([
   // Typography details (font-family and letter-spacing are unlikely to change per breakpoint)
   'letterSpacing',
   'fontFamily',
+  'whiteSpace',
+  // Visual props unlikely to change per breakpoint
+  'cursor',
+  'opacity',
+  'visibility',
+  'pointerEvents',
+  'userSelect',
 ]);
 
 /**

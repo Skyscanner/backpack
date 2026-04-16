@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { AriaAttributes, AriaRole, CSSProperties, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
@@ -159,6 +159,17 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   borderBlock?: never;
   borderX?: never;
   borderY?: never;
+
+  // Text layout
+  textAlign?: BpkResponsiveValue<CSSProperties['textAlign']>;
+  whiteSpace?: CSSProperties['whiteSpace'];
+
+  // Visual / interaction
+  cursor?: CSSProperties['cursor'];
+  opacity?: CSSProperties['opacity'];
+  visibility?: CSSProperties['visibility'];
+  pointerEvents?: CSSProperties['pointerEvents'];
+  userSelect?: CSSProperties['userSelect'];
 
   // Explicitly exclude transition & transform related props for performance reasons
   transition?: never;
