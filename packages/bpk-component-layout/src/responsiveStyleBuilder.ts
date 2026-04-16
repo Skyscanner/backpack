@@ -192,6 +192,12 @@ const COMPONENT_HANDLED_KEYS = new Set([
   'zIndex',
 ]);
 
+/**
+ * Breakpoint order (must match $breakpoints map in BpkLayoutResponsive.module.scss).
+ * Used by the fill-forward algorithm so every CSS slot gets a value.
+ */
+const BP_ORDER: ReadonlyArray<string> = ['sm', 'md', 'lg', 'xl', '2xl'];
+
 export type LayoutStyleOutput = {
   /** Inline styles + CSS custom properties for responsive values */
   style: CSSProperties & Record<string, string>;
@@ -238,13 +244,23 @@ export function buildLayoutOutput(
     // Responsive object → CSS custom properties (only for responsive-capable props)
     if (cssVarName && !STATIC_ONLY_PROPS.has(key) && typeof value === 'object' && !Array.isArray(value)) {
       hasResponsive = true;
-      Object.entries(value as Record<string, string>).forEach(([bp, bpValue]) => {
-        if (bp === 'base') {
-          style[`--bpk-${cssVarName}`] = String(bpValue);
-        } else {
-          style[`--bpk-${cssVarName}-${bp}`] = String(bpValue);
+      const responsive = value as Record<string, string>;
+
+      // Fill-forward: propagate each specified value to all subsequent unspecified
+      // breakpoints. This allows the CSS to use var(--bpk-X-bp) with no fallback
+      // chain — each slot is guaranteed to hold the correct cascaded value.
+      let carry: string | undefined = responsive.base !== undefined ? String(responsive.base) : undefined;
+      if (carry !== undefined) {
+        style[`--bpk-${cssVarName}`] = carry;
+      }
+      for (const bp of BP_ORDER) {
+        if (responsive[bp] !== undefined) {
+          carry = String(responsive[bp]);
         }
-      });
+        if (carry !== undefined) {
+          style[`--bpk-${cssVarName}-${bp}`] = carry;
+        }
+      }
       return;
     }
 

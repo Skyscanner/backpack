@@ -17,13 +17,12 @@
  */
 
 // Mobile-first responsive system using CSS custom properties.
-// Components set custom properties on elements (e.g. --bpk-padding-md: .5rem)
-// and this stylesheet reads them at each breakpoint via cascading fallbacks.
+// The JS layer (responsiveStyleBuilder.ts) fills-forward all breakpoint slots,
+// so this stylesheet can read each slot directly without fallback chains.
 // When a custom property is not set on an element, var() with no fallback
 // resolves to CSS "guaranteed-invalid", causing the declaration to be
 // discarded. This means props not set by the consumer have zero effect.
 
-@use 'sass:list';
 @use 'sass:map';
 
 // Breakpoint min-widths (mobile-first, ascending order).
@@ -39,7 +38,6 @@ $breakpoints: (
   // 769px — tablet
   '2xl': 64.0625rem, // 1025px — desktop
 );
-$bp-order: ('sm', 'md', 'lg', 'xl', '2xl');
 
 // All responsive (css-property, var-name) pairs supported by .bpk-responsive.
 // Keeping this as a single list means all properties share the same 5 @media
@@ -99,23 +97,17 @@ $responsive-props: (
   ('font-weight', 'font-weight')
 );
 
-// Builds a mobile-first fallback chain for a given var-name up to a breakpoint index:
-//   var(--bpk-X-md, var(--bpk-X-sm, var(--bpk-X)))
-@function fallback-chain($var-name, $up-to-index) {
-  $result: var(--bpk-#{$var-name});
-
-  @for $i from 1 through $up-to-index {
-    $bp: list.nth($bp-order, $i);
-    $result: var(--bpk-#{$var-name}-#{$bp}, #{$result});
-  }
-
-  @return $result;
-}
-
 // ============================================================
 // Responsive class — applied only when responsive props are set.
 // Uses 5 @media blocks (one per breakpoint) rather than one per
 // property to keep compiled CSS compact.
+//
+// No fallback chains are needed here because the JS layer
+// (responsiveStyleBuilder.ts) fills-forward all breakpoint slots:
+// if the user sets { base: '1rem', tablet: '2rem' }, JS emits
+// --bpk-X: 1rem; --bpk-X-sm: 1rem; --bpk-X-md: 1rem;
+// --bpk-X-lg: 1rem; --bpk-X-xl: 2rem; --bpk-X-2xl: 2rem.
+// Each media block therefore only needs to read its own slot.
 // ============================================================
 .bpk-responsive {
   // Base values — no media query needed.
@@ -124,13 +116,11 @@ $responsive-props: (
   }
 
   // Per-breakpoint overrides. One @media block per breakpoint containing
-  // all properties, rather than 50 separate blocks per property.
+  // all properties, rather than one block per property.
   @each $bp, $min-width in $breakpoints {
-    $bp-index: list.index($bp-order, $bp);
-
     @media (min-width: #{$min-width}) {
       @each $css-prop, $var-name in $responsive-props {
-        #{$css-prop}: fallback-chain($var-name, $bp-index);
+        #{$css-prop}: var(--bpk-#{$var-name}-#{$bp});
       }
     }
   }
