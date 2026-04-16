@@ -18,7 +18,12 @@
 
 import type { CSSProperties } from 'react';
 
-/** camelCase → kebab-case (e.g. `paddingTop` → `padding-top`) */
+/**
+ * Converts a camelCase string to kebab-case.
+ *
+ * @param {string} s - camelCase input (e.g. `paddingTop`)
+ * @returns {string} kebab-case output (e.g. `padding-top`)
+ */
 const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
 
 /** Props whose CSS var name differs from simple camelCase → kebab-case */
@@ -60,7 +65,12 @@ const STYLE_PROPS = new Set([
   'cursor', 'opacity', 'visibility', 'pointerEvents', 'userSelect',
 ]);
 
-/** Returns the CSS custom property base name for a style prop, or undefined if not a style prop. */
+/**
+ * Returns the CSS custom property base name for a style prop.
+ *
+ * @param {string} prop - camelCase prop name (e.g. `paddingTop`)
+ * @returns {string | undefined} kebab-case CSS var base name, or undefined if not a style prop
+ */
 function getCssVarName(prop: string): string | undefined {
   if (!STYLE_PROPS.has(prop)) return undefined;
   return toKebab(CSS_VAR_ALIASES[prop] ?? prop);
@@ -160,7 +170,7 @@ const COMPONENT_HANDLED_KEYS = new Set([
  * Breakpoint order (must match $breakpoints map in BpkLayoutResponsive.module.scss).
  * Used by the fill-forward algorithm so every CSS slot gets a value.
  */
-const BP_ORDER: ReadonlyArray<string> = ['sm', 'md', 'lg', 'xl', '2xl'];
+const BP_ORDER: readonly string[] = ['sm', 'md', 'lg', 'xl', '2xl'];
 
 export type LayoutStyleOutput = {
   /** Inline styles + CSS custom properties for responsive values */
