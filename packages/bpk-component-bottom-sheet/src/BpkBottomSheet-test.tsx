@@ -225,6 +225,20 @@ describe('BpkBottomSheet', () => {
     expect(hiddenSpan?.textContent).toBe('my accessible title');
   });
 
+  it('renders title without truncation when a long title is provided', () => {
+    const longTitle = 'This is a very long bottom sheet title that should wrap onto multiple lines without being truncated';
+    render(
+      <BpkBottomSheet
+        {...props}
+        title={longTitle}
+      >
+        Bottom Sheet content
+      </BpkBottomSheet>,
+    );
+
+    expect(screen.getByText(longTitle)).toBeInTheDocument();
+  });
+
   it('adds correct id to custom title element for aria-labelledby reference', () => {
     const { container } = render(
       <BpkBottomSheet

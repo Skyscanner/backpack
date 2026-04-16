@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import BpkNavigationBar, { BAR_STYLES } from './BpkNavigationBar';
 import BpkNavigationIconButton from './BpkNavigationBarIconButton';
@@ -120,5 +120,17 @@ describe('BpkNavigationBar', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should apply the wrap modifier class to the title when wrapTitle is set', () => {
+    render(<BpkNavigationBar id="test" title="test" wrapTitle />);
+
+    expect(screen.getByText('test').parentElement).toHaveClass('bpk-navigation-bar__title--wrap');
+  });
+
+  it('should not apply the wrap modifier class to the title by default', () => {
+    render(<BpkNavigationBar id="test" title="test" />);
+
+    expect(screen.getByText('test').parentElement).not.toHaveClass('bpk-navigation-bar__title--wrap');
   });
 });

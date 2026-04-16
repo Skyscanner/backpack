@@ -68,6 +68,12 @@
     &--on-dark {
       color: tokens.$bpk-text-primary-inverse-day;
     }
+
+    &--wrap {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
   }
 
   &__title-container {
