@@ -18,89 +18,53 @@
 
 import type { CSSProperties } from 'react';
 
-/**
- * Maps camelCase JS prop names to kebab-case CSS custom property base names.
- * Only props listed here can participate in the responsive system.
- */
-const PROP_TO_CSS_VAR: Record<string, string> = {
-  // Spacing
-  padding: 'padding',
-  paddingTop: 'padding-top',
-  paddingRight: 'padding-right',
-  paddingBottom: 'padding-bottom',
-  paddingLeft: 'padding-left',
-  paddingStart: 'padding-start',
-  paddingEnd: 'padding-end',
-  paddingInline: 'padding-inline',
-  margin: 'margin',
-  marginTop: 'margin-top',
-  marginRight: 'margin-right',
-  marginBottom: 'margin-bottom',
-  marginLeft: 'margin-left',
-  marginStart: 'margin-start',
-  marginEnd: 'margin-end',
-  marginInline: 'margin-inline',
-  gap: 'gap',
+/** camelCase → kebab-case (e.g. `paddingTop` → `padding-top`) */
+const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
+
+/** Props whose CSS var name differs from simple camelCase → kebab-case */
+const CSS_VAR_ALIASES: Record<string, string> = {
   spacing: 'gap', // Chakra Stack alias
-  rowGap: 'row-gap',
-  columnGap: 'column-gap',
-  // Size
-  width: 'width',
-  height: 'height',
-  minWidth: 'min-width',
-  minHeight: 'min-height',
-  maxWidth: 'max-width',
-  maxHeight: 'max-height',
-  // Position offsets
-  top: 'top',
-  right: 'right',
-  bottom: 'bottom',
-  left: 'left',
-  // Display & position
-  display: 'display',
-  position: 'position',
-  overflow: 'overflow',
-  overflowX: 'overflow-x',
-  overflowY: 'overflow-y',
-  // Flex container
-  flexDirection: 'flex-direction',
-  flexWrap: 'flex-wrap',
-  justifyContent: 'justify-content',
-  alignItems: 'align-items',
-  alignContent: 'align-content',
-  // Flex item
-  flex: 'flex',
-  flexGrow: 'flex-grow',
-  flexShrink: 'flex-shrink',
-  flexBasis: 'flex-basis',
-  order: 'order',
-  alignSelf: 'align-self',
-  justifySelf: 'justify-self',
-  // Grid container
-  gridTemplateColumns: 'grid-template-columns',
-  gridTemplateRows: 'grid-template-rows',
-  gridTemplateAreas: 'grid-template-areas',
-  gridAutoFlow: 'grid-auto-flow',
-  gridAutoRows: 'grid-auto-rows',
-  gridAutoColumns: 'grid-auto-columns',
-  // Grid item
-  gridColumn: 'grid-column',
-  gridRow: 'grid-row',
-  // Typography (from textStyle expansion)
-  fontSize: 'font-size',
-  lineHeight: 'line-height',
-  fontWeight: 'font-weight',
-  letterSpacing: 'letter-spacing',
-  fontFamily: 'font-family',
-  textAlign: 'text-align',
-  whiteSpace: 'white-space',
-  // Visual
-  cursor: 'cursor',
-  opacity: 'opacity',
-  visibility: 'visibility',
-  pointerEvents: 'pointer-events',
-  userSelect: 'user-select',
 };
+
+/**
+ * All style props that participate in the CSS custom property system.
+ * The CSS var name is derived automatically via camelCase → kebab-case,
+ * except for aliases listed in CSS_VAR_ALIASES above.
+ */
+const STYLE_PROPS = new Set([
+  // Spacing
+  'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
+  'paddingStart', 'paddingEnd', 'paddingInline',
+  'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+  'marginStart', 'marginEnd', 'marginInline',
+  'gap', 'spacing', 'rowGap', 'columnGap',
+  // Size
+  'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
+  // Position offsets
+  'top', 'right', 'bottom', 'left',
+  // Display & position
+  'display', 'position', 'overflow', 'overflowX', 'overflowY',
+  // Flex container
+  'flexDirection', 'flexWrap', 'justifyContent', 'alignItems', 'alignContent',
+  // Flex item
+  'flex', 'flexGrow', 'flexShrink', 'flexBasis', 'order', 'alignSelf', 'justifySelf',
+  // Grid container
+  'gridTemplateColumns', 'gridTemplateRows', 'gridTemplateAreas',
+  'gridAutoFlow', 'gridAutoRows', 'gridAutoColumns',
+  // Grid item
+  'gridColumn', 'gridRow',
+  // Typography
+  'fontSize', 'lineHeight', 'fontWeight', 'letterSpacing', 'fontFamily',
+  'textAlign', 'whiteSpace',
+  // Visual
+  'cursor', 'opacity', 'visibility', 'pointerEvents', 'userSelect',
+]);
+
+/** Returns the CSS custom property base name for a style prop, or undefined if not a style prop. */
+function getCssVarName(prop: string): string | undefined {
+  if (!STYLE_PROPS.has(prop)) return undefined;
+  return toKebab(CSS_VAR_ALIASES[prop] ?? prop);
+}
 
 /**
  * Maps camelCase JS prop names to their CSS property equivalents.
@@ -239,7 +203,7 @@ export function buildLayoutOutput(
     // Component-handled props are skipped (handled by the component)
     if (COMPONENT_HANDLED_KEYS.has(key)) return;
 
-    const cssVarName = PROP_TO_CSS_VAR[key];
+    const cssVarName = getCssVarName(key);
 
     // Responsive object → CSS custom properties (only for responsive-capable props)
     if (cssVarName && !STATIC_ONLY_PROPS.has(key) && typeof value === 'object' && !Array.isArray(value)) {
