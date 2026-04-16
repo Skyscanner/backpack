@@ -157,18 +157,28 @@ const STATIC_ONLY_PROPS = new Set([
   'right',
   'bottom',
   'left',
-  // Flex item details
+  // Flex item details (rarely varied per breakpoint)
+  'flex',
   'flexGrow',
   'flexShrink',
   'flexBasis',
   'order',
+  'alignSelf',
   'justifySelf',
-  // Grid internals
+  // Flex container details (rarely varied per breakpoint)
+  'alignContent',
+  // Grid internals (rarely varied per breakpoint)
+  'rowGap',
+  'columnGap',
+  'gridTemplateRows',
+  'gridColumn',
+  'gridRow',
   'gridAutoFlow',
   'gridAutoRows',
   'gridAutoColumns',
   'gridTemplateAreas',
-  // Typography details (font-family and letter-spacing are unlikely to change per breakpoint)
+  // Typography details (font-family, letter-spacing, and text-align are unlikely to change per breakpoint)
+  'textAlign',
   'letterSpacing',
   'fontFamily',
   'whiteSpace',
