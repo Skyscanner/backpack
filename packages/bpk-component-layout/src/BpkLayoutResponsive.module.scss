@@ -27,12 +27,10 @@
 @use 'sass:map';
 
 // Breakpoint min-widths (mobile-first, ascending order).
-// These must match the values in theme.ts breakpointMap.
-// Using 3 breakpoints (md/xl/2xl) to keep compiled CSS compact.
-// sm (320px) and lg (513px) are intentionally omitted.
-// 3 breakpoints only (mobile/tablet/desktop).
-// BpkBreakpoint.SmallMobile and BpkBreakpoint.SmallTablet are remapped to
-// 'md' and 'xl' in tokenUtils.ts, so no separate sm/lg vars are emitted.
+// Only 3 @media blocks are generated (md/xl/2xl). sm and lg are intentionally
+// absent from $breakpoints to avoid extra @media blocks, but remain in
+// $bp-order so BpkBreakpoint.SmallMobile/SmallTablet values still reach the
+// browser via the fallback chains (activating at the next active breakpoint).
 $breakpoints: (
   'md': 22.5rem,
   // 360px — mobile
@@ -40,35 +38,76 @@ $breakpoints: (
   // 769px — tablet
   '2xl': 64.0625rem, // 1025px — desktop
 );
-$bp-order: ('md', 'xl', '2xl');
+$bp-order: ('sm', 'md', 'lg', 'xl', '2xl');
 
 // All responsive (css-property, var-name) pairs supported by .bpk-responsive.
-// Keeping this as a single list means all properties share the same 5 @media
-// blocks instead of generating 5 blocks per property (50 props × 5 = 250 blocks).
-// Responsive props supported by .bpk-responsive.
-// Only the most commonly varied props are included — this directly controls
-// compiled CSS size. Other props are always static (STATIC_ONLY_PROPS in
-// responsiveStyleBuilder.ts).
+// Every prop exposed as BpkResponsiveValue<> in the public TypeScript API must
+// appear here. Removing a prop from this list would silently break responsive
+// behaviour for consumers using that prop as a responsive object.
+// Keeping this as a single list means all properties share the same 3 @media
+// blocks instead of generating 3 blocks per property (48 props × 3 = 144 blocks).
 $responsive-props: (
   // Spacing
   ('padding', 'padding'),
+  ('padding-top', 'padding-top'),
+  ('padding-right', 'padding-right'),
+  ('padding-bottom', 'padding-bottom'),
+  ('padding-left', 'padding-left'),
   ('padding-inline-start', 'padding-start'),
   ('padding-inline-end', 'padding-end'),
+  ('padding-inline', 'padding-inline'),
   ('margin', 'margin'),
+  ('margin-top', 'margin-top'),
+  ('margin-right', 'margin-right'),
+  ('margin-bottom', 'margin-bottom'),
+  ('margin-left', 'margin-left'),
   ('margin-inline-start', 'margin-start'),
   ('margin-inline-end', 'margin-end'),
+  ('margin-inline', 'margin-inline'),
   ('gap', 'gap'),
+  ('row-gap', 'row-gap'),
+  ('column-gap', 'column-gap'),
   // Size
   ('width', 'width'),
+  ('height', 'height'),
+  ('min-width', 'min-width'),
+  ('min-height', 'min-height'),
   ('max-width', 'max-width'),
-  // Display (show/hide at breakpoints)
+  ('max-height', 'max-height'),
+  // Position offsets
+  ('top', 'top'),
+  ('right', 'right'),
+  ('bottom', 'bottom'),
+  ('left', 'left'),
+  // Display & position
   ('display', 'display'),
+  ('position', 'position'),
+  ('overflow', 'overflow'),
+  ('overflow-x', 'overflow-x'),
+  ('overflow-y', 'overflow-y'),
   // Flex container
   ('flex-direction', 'flex-direction'),
+  ('flex-wrap', 'flex-wrap'),
   ('justify-content', 'justify-content'),
   ('align-items', 'align-items'),
+  ('align-content', 'align-content'),
+  // Flex item
+  ('flex', 'flex'),
+  ('flex-grow', 'flex-grow'),
+  ('flex-shrink', 'flex-shrink'),
+  ('flex-basis', 'flex-basis'),
+  ('order', 'order'),
+  ('align-self', 'align-self'),
+  ('justify-self', 'justify-self'),
   // Grid container
   ('grid-template-columns', 'grid-template-columns'),
+  ('grid-template-rows', 'grid-template-rows'),
+  ('grid-auto-flow', 'grid-auto-flow'),
+  ('grid-auto-rows', 'grid-auto-rows'),
+  ('grid-auto-columns', 'grid-auto-columns'),
+  // Grid item
+  ('grid-column', 'grid-column'),
+  ('grid-row', 'grid-row'),
   // Typography (from textStyle expansion)
   ('font-size', 'font-size'),
   ('line-height', 'line-height'),

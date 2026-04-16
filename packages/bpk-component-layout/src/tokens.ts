@@ -55,17 +55,18 @@ export const BpkBreakpoint = {
 
 export type BpkBreakpointToken = typeof BpkBreakpoint[keyof typeof BpkBreakpoint];
 
-// The responsive system uses 3 CSS breakpoints: md (360px), xl (769px), 2xl (1025px).
-// SmallMobile and SmallTablet collapse to the nearest supported breakpoint.
-export type CssBreakpointKey = 'base' | 'md' | 'xl' | '2xl';
+export type CssBreakpointKey = 'base' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 export const BpkBreakpointToChakraKey: Record<BpkBreakpointToken, CssBreakpointKey> = {
+  // Keep this mapping in sync with the breakpoints configured in `theme.ts`.
   // `base` is reserved for "default value" and is not a breakpoint token.
-  'small-mobile': 'md',  // 320px → collapses to mobile (360px)
-  mobile: 'md',           // 360px
-  'small-tablet': 'xl',  // 513px → collapses to tablet (769px)
-  tablet: 'xl',           // 769px
-  desktop: '2xl',         // 1025px
+  // sm and lg have no dedicated @media blocks but appear in fallback chains;
+  // their values activate at the next active breakpoint (md=360px, xl=769px).
+  'small-mobile': 'sm',
+  mobile: 'md',
+  'small-tablet': 'lg',
+  tablet: 'xl',
+  desktop: '2xl',
 };
 
 /**

@@ -136,63 +136,21 @@ function isPassthroughProp(key: string): boolean {
 }
 
 /**
- * Props removed from the responsive CSS system to reduce compiled CSS size.
- * They are always applied as static inline styles (base value only).
- * See $responsive-props in BpkLayoutResponsive.module.scss for the full list.
+ * Props that map to CSS properties but are NOT part of the CSS custom property
+ * responsive system. They always produce inline styles, even when passed as
+ * responsive objects (only the 'base' value is used in that case).
+ *
+ * These props are NOT in $responsive-props in BpkLayoutResponsive.module.scss.
+ * Any prop that IS in the public TypeScript API as BpkResponsiveValue<> must
+ * NOT appear here — otherwise responsive objects would silently break.
  */
 const STATIC_ONLY_PROPS = new Set([
-  // Position offsets
-  'top',
-  'right',
-  'bottom',
-  'left',
-  // Rarely-responsive size props
-  'height',
-  'minWidth',
-  'minHeight',
-  'maxHeight',
-  // Rarely-responsive spacing
-  'paddingInline',
-  'marginInline',
-  'rowGap',
-  'columnGap',
-  // Flex item details
-  'flex',
-  'flexGrow',
-  'flexShrink',
-  'flexBasis',
-  'flexWrap',
-  'order',
-  'alignSelf',
-  'alignContent',
-  'justifySelf',
-  // Grid internals
-  'gridColumn',
-  'gridRow',
-  'gridAutoFlow',
-  'gridAutoRows',
-  'gridAutoColumns',
-  'gridTemplateRows',
+  // gridTemplateAreas: rarely responsive, and the value (quoted strings)
+  // cannot safely be expressed as a CSS custom property.
   'gridTemplateAreas',
-  // Physical direction props (use logical padding-start/end instead)
-  'paddingTop',
-  'paddingRight',
-  'paddingBottom',
-  'paddingLeft',
-  'marginTop',
-  'marginRight',
-  'marginBottom',
-  'marginLeft',
-  'marginStart',
-  'marginEnd',
-  // Typography details
+  // Typography details — not typically varied across breakpoints
   'letterSpacing',
   'fontFamily',
-  // Position
-  'overflow',
-  'overflowX',
-  'overflowY',
-  'position',
 ]);
 
 /**
