@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { SURFACE_COLORS } from '../../bpk-react-utils/src/surfaceColors';
+import { SURFACE_COLORS } from '../../bpk-react-utils';
 
 // Canvas colors (day mode only)
 const CANVAS_COLORS = {

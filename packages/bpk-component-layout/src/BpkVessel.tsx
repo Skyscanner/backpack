@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { getDataComponentAttribute } from '../../bpk-react-utils/src/getDataComponentAttribute';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { BpkVesselProps } from './types';
 

@@ -7,23 +7,20 @@ exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-flex"
+      class="css-jay209"
       data-backpack-ds-component="CardV2.Header"
-      style="padding-top: 1rem; padding-inline-start: 1rem; padding-inline-end: 1rem; padding-bottom: 0px;"
     >
       Card Title
     </div>
     <div
-      class="bpk-layout-grid"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 1fr;"
     >
       Card content goes here
     </div>
     <div
-      class="bpk-layout-flex"
+      class="css-1tj5csu"
       data-backpack-ds-component="CardV2.Footer"
-      style="padding-top: 0px; padding-inline-start: 1rem; padding-inline-end: 1rem; padding-bottom: 1rem;"
     >
       Card footer
     </div>
@@ -38,20 +35,18 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-flex"
+      class="css-jay209"
       data-backpack-ds-component="CardV2.Header"
-      style="padding-top: 1rem; padding-inline-start: 1rem; padding-inline-end: 1rem; padding-bottom: 0px;"
     >
       Product
     </div>
     <div
-      class="bpk-layout-grid"
+      class="css-1un1jtv"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 65fr auto 35fr;"
     >
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         <img
           alt="Product"
@@ -63,8 +58,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         <h3
           class="bpk-text bpk-text--heading-4"
@@ -81,9 +76,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections
       </div>
     </div>
     <div
-      class="bpk-layout-flex"
+      class="css-1tj5csu"
       data-backpack-ds-component="CardV2.Footer"
-      style="padding-top: 0px; padding-inline-start: 1rem; padding-inline-end: 1rem; padding-bottom: 1rem;"
     >
       <button
         class="bpk-button bpk-button--primary"
@@ -104,9 +98,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-grid"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 1fr;"
     >
       Elevated background surface
     </div>
@@ -121,9 +114,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-grid"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 1fr;"
     >
       Minimal card with just body
     </div>
@@ -138,13 +130,12 @@ exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-grid"
+      class="css-fgs40z"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 7fr auto 3fr;"
     >
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         Main content area (70%)
       </div>
@@ -153,8 +144,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         Sidebar area (30%)
       </div>
@@ -170,16 +161,14 @@ exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-flex"
+      class="css-jay209"
       data-backpack-ds-component="CardV2.Header"
-      style="padding-top: 1rem; padding-inline-start: 1rem; padding-inline-end: 1rem; padding-bottom: 0px;"
     >
       Outlined Card
     </div>
     <div
-      class="bpk-layout-grid"
+      class="css-1gldux5"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 1fr;"
     >
       Content with border instead of shadow
     </div>
@@ -194,13 +183,12 @@ exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
     data-backpack-ds-component="CardV2"
   >
     <div
-      class="bpk-layout-grid"
+      class="css-1he6qm"
       data-backpack-ds-component="CardV2.Body"
-      style="padding: 1rem; grid-template-columns: 1fr auto 2fr auto 1fr;"
     >
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         Left
       </div>
@@ -209,8 +197,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         Center
       </div>
@@ -219,8 +207,8 @@ exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
         data-backpack-ds-component="CardV2.Divider"
       />
       <div
+        class="css-592ccz"
         data-backpack-ds-component="CardV2.Section"
-        style="padding: 1rem; display: flex; flex-direction: column;"
       >
         Right
       </div>

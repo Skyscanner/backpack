@@ -140,15 +140,27 @@ function isPassthroughProp(key: string): boolean {
  * responsive system. They always produce inline styles, even when passed as
  * responsive objects (only the 'base' value is used in that case).
  *
- * These props are NOT in $responsive-props in BpkLayoutResponsive.module.scss.
- * Any prop that IS in the public TypeScript API as BpkResponsiveValue<> must
- * NOT appear here — otherwise responsive objects would silently break.
+ * These props were excluded from BpkLayoutResponsive.module.scss because they
+ * are rarely — if ever — varied across breakpoints in practice.
  */
 const STATIC_ONLY_PROPS = new Set([
-  // gridTemplateAreas: rarely responsive, and the value (quoted strings)
-  // cannot safely be expressed as a CSS custom property.
+  // Position offsets
+  'top',
+  'right',
+  'bottom',
+  'left',
+  // Flex item details
+  'flexGrow',
+  'flexShrink',
+  'flexBasis',
+  'order',
+  'justifySelf',
+  // Grid internals
+  'gridAutoFlow',
+  'gridAutoRows',
+  'gridAutoColumns',
   'gridTemplateAreas',
-  // Typography details — not typically varied across breakpoints
+  // Typography details (font-family and letter-spacing are unlikely to change per breakpoint)
   'letterSpacing',
   'fontFamily',
 ]);
