@@ -20,14 +20,14 @@ import { useLocaleContext } from '@ark-ui/react';
 import { act, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { BpkArkProvider } from './BpkArkProvider';
+import { BpkProvider } from './BpkProvider';
 
 const LocaleReader = () => {
   const { locale } = useLocaleContext();
   return <span data-testid="locale">{locale}</span>;
 };
 
-describe('BpkArkProvider', () => {
+describe('BpkProvider', () => {
   afterEach(() => {
     document.documentElement.removeAttribute('dir');
     document.documentElement.removeAttribute('lang');
@@ -35,9 +35,9 @@ describe('BpkArkProvider', () => {
 
   it('renders children without crashing', () => {
     const { getByText } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <div>Ark child</div>
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByText('Ark child')).toBeInTheDocument();
@@ -45,9 +45,9 @@ describe('BpkArkProvider', () => {
 
   it('passes en-US locale to Ark when document dir is ltr', () => {
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('en-US');
@@ -57,9 +57,9 @@ describe('BpkArkProvider', () => {
     document.documentElement.setAttribute('dir', 'rtl');
 
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('ar-SA');
@@ -67,9 +67,9 @@ describe('BpkArkProvider', () => {
 
   it('updates locale to ar-SA when dir attribute changes to rtl', async () => {
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('en-US');
@@ -85,9 +85,9 @@ describe('BpkArkProvider', () => {
     document.documentElement.setAttribute('dir', 'rtl');
 
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('ar-SA');
@@ -103,9 +103,9 @@ describe('BpkArkProvider', () => {
     document.documentElement.setAttribute('lang', 'fr-FR');
 
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('fr-FR');
@@ -116,9 +116,9 @@ describe('BpkArkProvider', () => {
     document.documentElement.setAttribute('lang', 'ar-EG');
 
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('ar-EG');
@@ -129,9 +129,9 @@ describe('BpkArkProvider', () => {
     document.documentElement.setAttribute('lang', 'en-US');
 
     const { getByTestId } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <LocaleReader />
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     expect(getByTestId('locale').textContent).toBe('ar-SA');
@@ -141,9 +141,9 @@ describe('BpkArkProvider', () => {
     const disconnectSpy = jest.spyOn(MutationObserver.prototype, 'disconnect');
 
     const { unmount } = render(
-      <BpkArkProvider>
+      <BpkProvider>
         <div>child</div>
-      </BpkArkProvider>,
+      </BpkProvider>,
     );
 
     unmount();

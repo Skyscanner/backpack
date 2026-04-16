@@ -16,28 +16,79 @@
  * limitations under the License.
  */
 
-import type React from 'react';
 import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
-import { BpkArkProvider } from './BpkArkProvider';
-import { BpkLayoutProvider } from './BpkLayoutProvider';
+import { LocaleProvider } from '@ark-ui/react';
 
 export interface BpkProviderProps {
   children: ReactNode;
 }
 
+type Direction = 'ltr' | 'rtl';
+
+const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
+  ltr: 'en-US',
+  rtl: 'ar-SA',
+};
+
+const RTL_LANGUAGE_SUBTAGS = new Set([
+  'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
+]);
+
+const getLangDir = (locale: string): Direction => {
+  try {
+    const dir = (new Intl.Locale(locale) as any).textInfo?.direction;
+    if (dir) return dir === 'rtl' ? 'rtl' : 'ltr';
+  } catch {
+    // Ignore invalid locale strings
+  }
+  return RTL_LANGUAGE_SUBTAGS.has(locale.split('-')[0].toLowerCase())
+    ? 'rtl'
+    : 'ltr';
+};
+
+const getArkLocale = (): string => {
+  if (typeof document === 'undefined') return 'en-US';
+
+  const explicitDir = document.documentElement.getAttribute('dir');
+  const lang = document.documentElement.getAttribute('lang');
+
+  if (explicitDir === 'rtl' || explicitDir === 'ltr') {
+    if (lang && getLangDir(lang) === explicitDir) return lang;
+    return FALLBACK_LOCALE_BY_DIRECTION[explicitDir];
+  }
+
+  return lang || 'en-US';
+};
+
+const useArkLocale = (): string => {
+  const [locale, setLocale] = useState<string>('en-US');
+
+  useEffect(() => {
+    setLocale(getArkLocale());
+    const observer = new MutationObserver(() => setLocale(getArkLocale()));
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['dir', 'lang'],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  return locale;
+};
+
 /**
- * BpkProvider - Provides context for Ark-based components.
+ * BpkProvider - Required root provider for Backpack components.
  *
- * Layout components (BpkBox, BpkFlex, BpkGrid, BpkStack) no longer require a
- * provider. This wrapper still sets up BpkArkProvider (Ark UI locale) for
- * Ark-based components (BpkCheckboxV2, BpkSegmentedControlV2, etc.).
+ * Sets up locale context for Ark-based components (BpkCheckboxV2,
+ * BpkSegmentedControlV2, etc.), reactively tracking document direction
+ * (html[dir]) and language (html[lang]) for correct RTL rendering.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {React.JSX.Element} The provider wrapping its children with Ark context.
+ * @returns {JSX.Element} The provider wrapping its children.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): React.JSX.Element => (
-  <BpkLayoutProvider>
-    <BpkArkProvider>{children}</BpkArkProvider>
-  </BpkLayoutProvider>
-);
+export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+  const locale = useArkLocale();
+  return <LocaleProvider locale={locale}>{children}</LocaleProvider>;
+};
