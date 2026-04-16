@@ -22,17 +22,17 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
+import useCurrentBreakpoint from './useCurrentBreakpoint';
 
 import type { BpkStackProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
-import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
-const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
 export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, backgroundColor, children, color, direction, justify, wrap, ...props }, ref) => {
+  const currentBreakpoint = useCurrentBreakpoint();
   const processedProps = processBpkComponentProps(props, {
     component: 'BpkStack',
     responsiveProps: {
@@ -42,18 +42,20 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, back
       flexDirection: direction,
     },
   });
-  const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
-  const colorClasses = (color || backgroundColor)
+  const { passthrough, style } = buildLayoutOutput(processedProps, currentBreakpoint);
+
+  // Default: flex + column
+  if (!style.display) style.display = 'flex';
+  if (!style.flexDirection) style.flexDirection = 'column';
+
+  const className = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
         color ? `bpk-layout--${color}` : '',
         backgroundColor ? `bpk-layout--${backgroundColor}` : '',
       )
     : undefined;
-  const responsiveClass = hasResponsive
-    ? getResponsiveClassName('bpk-responsive')
-    : undefined;
-  const className = [getResponsiveClassName('bpk-layout-vstack'), colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
+
   return (
     <div ref={ref} className={className} style={style} {...getDataComponentAttribute('Stack')} {...passthrough}>
       {children}
@@ -64,6 +66,7 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, back
 BpkStack.displayName = 'BpkStack';
 
 export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'center', backgroundColor, children, color, direction = 'row', justify, wrap, ...props }, ref) => {
+  const currentBreakpoint = useCurrentBreakpoint();
   const processedProps = processBpkComponentProps(props, {
     component: 'BpkStack',
     responsiveProps: {
@@ -73,18 +76,20 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'c
       flexDirection: direction,
     },
   });
-  const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
-  const colorClasses = (color || backgroundColor)
+  const { passthrough, style } = buildLayoutOutput(processedProps, currentBreakpoint);
+
+  // Default: flex + row
+  if (!style.display) style.display = 'flex';
+  if (!style.flexDirection) style.flexDirection = 'row';
+
+  const className = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
         color ? `bpk-layout--${color}` : '',
         backgroundColor ? `bpk-layout--${backgroundColor}` : '',
       )
     : undefined;
-  const responsiveClass = hasResponsive
-    ? getResponsiveClassName('bpk-responsive')
-    : undefined;
-  const className = [getResponsiveClassName('bpk-layout-hstack'), colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
+
   return (
     <div ref={ref} className={className} style={style} {...getDataComponentAttribute('HStack')} {...passthrough}>
       {children}
@@ -95,6 +100,7 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'c
 BpkHStack.displayName = 'BpkHStack';
 
 export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'center', backgroundColor, children, color, direction = 'column', justify, wrap, ...props }, ref) => {
+  const currentBreakpoint = useCurrentBreakpoint();
   const processedProps = processBpkComponentProps(props, {
     component: 'BpkStack',
     responsiveProps: {
@@ -104,18 +110,20 @@ export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align = 'c
       flexDirection: direction,
     },
   });
-  const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
-  const colorClasses = (color || backgroundColor)
+  const { passthrough, style } = buildLayoutOutput(processedProps, currentBreakpoint);
+
+  // Default: flex + column
+  if (!style.display) style.display = 'flex';
+  if (!style.flexDirection) style.flexDirection = 'column';
+
+  const className = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
         color ? `bpk-layout--${color}` : '',
         backgroundColor ? `bpk-layout--${backgroundColor}` : '',
       )
     : undefined;
-  const responsiveClass = hasResponsive
-    ? getResponsiveClassName('bpk-responsive')
-    : undefined;
-  const className = [getResponsiveClassName('bpk-layout-vstack'), colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
+
   return (
     <div ref={ref} className={className} style={style} {...getDataComponentAttribute('VStack')} {...passthrough}>
       {children}

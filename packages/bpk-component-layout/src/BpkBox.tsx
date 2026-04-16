@@ -22,34 +22,28 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
+import useCurrentBreakpoint from './useCurrentBreakpoint';
 
 import type { BpkBoxProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
-import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
-const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
 export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
   ({ backgroundColor, children, color, ...props }, ref) => {
+    const currentBreakpoint = useCurrentBreakpoint();
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-    const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+    const { passthrough, style } = buildLayoutOutput(processedProps, currentBreakpoint);
 
-    const colorClasses = (color || backgroundColor)
+    const className = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
           color ? `bpk-layout--${color}` : '',
           backgroundColor ? `bpk-layout--${backgroundColor}` : '',
         )
       : undefined;
-
-    const responsiveClass = hasResponsive
-      ? getResponsiveClassName('bpk-responsive')
-      : undefined;
-
-    const className = [colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
 
     return (
       <div

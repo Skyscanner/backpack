@@ -22,21 +22,21 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
+import useCurrentBreakpoint from './useCurrentBreakpoint';
 
 import type { BpkGridProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
-import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
-const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
 export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
   (
     { align, autoColumns, autoFlow, autoRows, backgroundColor, children, color, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },
     ref,
   ) => {
+    const currentBreakpoint = useCurrentBreakpoint();
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkGrid',
       responsiveProps: {
@@ -53,30 +53,22 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         gridRow: row,
       },
     });
-    const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+    const { passthrough, style } = buildLayoutOutput(processedProps, currentBreakpoint);
 
-    // If inline, override display via inline style
-    if (inline) {
-      (style as any).display = 'inline-grid';
+    // Set default display if not already set by a user-provided display prop
+    if (!style.display) {
+      style.display = inline ? 'inline-grid' : 'grid';
+    } else if (inline) {
+      style.display = 'inline-grid';
     }
 
-    const colorClasses = (color || backgroundColor)
+    const className = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
           color ? `bpk-layout--${color}` : '',
           backgroundColor ? `bpk-layout--${backgroundColor}` : '',
         )
       : undefined;
-
-    const baseClass = !inline
-      ? getResponsiveClassName('bpk-layout-grid')
-      : getResponsiveClassName('bpk-layout-inline-grid');
-
-    const responsiveClass = hasResponsive
-      ? getResponsiveClassName('bpk-responsive')
-      : undefined;
-
-    const className = [baseClass, colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
 
     return (
       <div

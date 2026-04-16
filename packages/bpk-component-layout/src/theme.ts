@@ -130,8 +130,8 @@ const shadowMap: Record<string, string> = {
   'bpk-shadow-xl': boxShadowXl,
 };
 
-// Breakpoint min-width values are now defined in BpkLayoutResponsive.module.scss
-// and used via CSS custom properties. No runtime breakpoint map is needed.
+// Breakpoint min-width values are defined in useCurrentBreakpoint.ts
+// and used via matchMedia listeners. No runtime breakpoint map is needed.
 
 /**
  * Exports spacing map for use in tokenUtils

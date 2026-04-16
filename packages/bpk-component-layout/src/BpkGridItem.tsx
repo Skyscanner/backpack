@@ -22,20 +22,20 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
+import useCurrentBreakpoint from './useCurrentBreakpoint';
 
 import type { BpkGridItemProps } from './types';
 
 import STYLES from './BpkLayout.module.scss';
-import RESPONSIVE_STYLES from './BpkLayoutResponsive.module.scss';
 
 
 const getClassName = cssModules(STYLES);
-const getResponsiveClassName = cssModules(RESPONSIVE_STYLES);
 
 export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
   ({ area, backgroundColor, children, colEnd, colSpan, colStart, color, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
+    const currentBreakpoint = useCurrentBreakpoint();
     const processedProps = processBpkComponentProps({ textStyle, ...props }, { component: 'BpkGridItem' });
-    const { hasResponsive, passthrough, style } = buildLayoutOutput(processedProps);
+    const { passthrough, style } = buildLayoutOutput(processedProps, currentBreakpoint);
 
     // Apply grid item placement props as inline styles
     if (area != null) (style as any).gridArea = area;
@@ -47,19 +47,13 @@ export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
     if (rowStart != null) (style as any).gridRowStart = String(rowStart);
     if (rowEnd != null) (style as any).gridRowEnd = String(rowEnd);
 
-    const colorClasses = (color || backgroundColor)
+    const className = (color || backgroundColor)
       ? getClassName(
           'bpk-layout',
           color ? `bpk-layout--${color}` : '',
           backgroundColor ? `bpk-layout--${backgroundColor}` : '',
         )
       : undefined;
-
-    const responsiveClass = hasResponsive
-      ? getResponsiveClassName('bpk-responsive')
-      : undefined;
-
-    const className = [colorClasses, responsiveClass].filter(Boolean).join(' ') || undefined;
 
     return (
       <div

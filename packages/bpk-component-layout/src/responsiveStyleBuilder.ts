@@ -19,22 +19,9 @@
 import type { CSSProperties } from 'react';
 
 /**
- * Converts a camelCase string to kebab-case.
- *
- * @param {string} s - camelCase input (e.g. `paddingTop`)
- * @returns {string} kebab-case output (e.g. `padding-top`)
- */
-const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
-
-/** Props whose CSS var name differs from simple camelCase → kebab-case */
-const CSS_VAR_ALIASES: Record<string, string> = {
-  spacing: 'gap', // Chakra Stack alias
-};
-
-/**
- * All style props that participate in the CSS custom property system.
- * The CSS var name is derived automatically via camelCase → kebab-case,
- * except for aliases listed in CSS_VAR_ALIASES above.
+ * All style props that participate in the layout system.
+ * These are recognised as CSS-settable properties and will be
+ * placed into the inline `style` object.
  */
 const STYLE_PROPS = new Set([
   // Spacing
@@ -66,19 +53,8 @@ const STYLE_PROPS = new Set([
 ]);
 
 /**
- * Returns the CSS custom property base name for a style prop.
- *
- * @param {string} prop - camelCase prop name (e.g. `paddingTop`)
- * @returns {string | undefined} kebab-case CSS var base name, or undefined if not a style prop
- */
-function getCssVarName(prop: string): string | undefined {
-  if (!STYLE_PROPS.has(prop)) return undefined;
-  return toKebab(CSS_VAR_ALIASES[prop] ?? prop);
-}
-
-/**
  * Maps camelCase JS prop names to their CSS property equivalents.
- * Used for setting inline styles on static (non-responsive) props.
+ * Used for setting inline styles on props whose JS name differs from CSS.
  */
 const PROP_TO_CSS_PROPERTY: Record<string, string> = {
   paddingStart: 'paddingInlineStart',
@@ -118,43 +94,6 @@ function isPassthroughProp(key: string): boolean {
 }
 
 /**
- * Props that map to CSS properties but are NOT part of the CSS custom property
- * responsive system. They always produce inline styles, even when passed as
- * responsive objects (only the 'base' value is used in that case).
- *
- * These props were excluded from BpkLayoutResponsive.module.scss because they
- * are rarely — if ever — varied across breakpoints in practice.
- */
-const STATIC_ONLY_PROPS = new Set([
-  // Position offsets
-  'top',
-  'right',
-  'bottom',
-  'left',
-  // Flex item details
-  'flexGrow',
-  'flexShrink',
-  'flexBasis',
-  'order',
-  'justifySelf',
-  // Grid internals
-  'gridAutoFlow',
-  'gridAutoRows',
-  'gridAutoColumns',
-  'gridTemplateAreas',
-  // Typography details (font-family and letter-spacing are unlikely to change per breakpoint)
-  'letterSpacing',
-  'fontFamily',
-  'whiteSpace',
-  // Visual props unlikely to change per breakpoint
-  'cursor',
-  'opacity',
-  'visibility',
-  'pointerEvents',
-  'userSelect',
-]);
-
-/**
  * Props that are handled separately by components (not style, not passthrough).
  * These are stripped from the style output and handled in the component layer.
  */
@@ -167,16 +106,42 @@ const COMPONENT_HANDLED_KEYS = new Set([
 ]);
 
 /**
- * Breakpoint order (must match $breakpoints map in BpkLayoutResponsive.module.scss).
- * Used by the fill-forward algorithm so every CSS slot gets a value.
+ * Breakpoint order (ascending, mobile-first).
+ * Used by the fill-forward resolution to determine which value applies
+ * at the current breakpoint.
  */
 const BP_ORDER: readonly string[] = ['sm', 'md', 'lg', 'xl', '2xl'];
 
+/**
+ * Resolves a responsive value object to the effective value for a given breakpoint.
+ * Uses fill-forward: the most recently specified value at or below the current
+ * breakpoint wins.
+ *
+ * @param {Record<string, string>} responsive - Object keyed by breakpoint (base, sm, md, lg, xl, 2xl)
+ * @param {string} currentBp - The currently active breakpoint key
+ * @returns {string | undefined} The resolved value, or undefined if no value applies
+ */
+function resolveResponsive(
+  responsive: Record<string, string>,
+  currentBp: string,
+): string | undefined {
+  let result: string | undefined = responsive.base !== undefined
+    ? String(responsive.base)
+    : undefined;
+
+  for (const bp of BP_ORDER) {
+    if (responsive[bp] !== undefined) {
+      result = String(responsive[bp]);
+    }
+    if (bp === currentBp) break;
+  }
+
+  return result;
+}
+
 export type LayoutStyleOutput = {
-  /** Inline styles + CSS custom properties for responsive values */
+  /** Inline styles (all values resolved for the current breakpoint) */
   style: CSSProperties & Record<string, string>;
-  /** Whether any responsive CSS custom properties were emitted */
-  hasResponsive: boolean;
   /** Non-style props to spread on the DOM element */
   passthrough: Record<string, any>;
 };
@@ -185,21 +150,22 @@ export type LayoutStyleOutput = {
  * Converts processed layout props into an output suitable for a plain DOM element.
  *
  * - Scalar values → inline `style` properties
- * - Responsive objects (keyed by Chakra breakpoint keys like `md`, `xl`) →
- *   CSS custom properties (`--bpk-{prop}-{bp}`) read by BpkLayoutResponsive.module.scss
+ * - Responsive objects → resolved to the current breakpoint's value via fill-forward,
+ *   then set as inline `style` properties
  * - Non-style props (id, role, aria-*, data-*, event handlers) → `passthrough`
  *
  * @param {Record<string, any>} processedProps - Props after token conversion and validation
  *   by `processBpkComponentProps`. Values are already resolved to CSS values (e.g. '.5rem').
  *   Responsive values are objects keyed by Chakra breakpoint keys (base, sm, md, lg, xl, 2xl).
- * @returns {LayoutStyleOutput} Style, responsive flag, and passthrough props.
+ * @param {string} currentBreakpoint - The currently active breakpoint key from useCurrentBreakpoint
+ * @returns {LayoutStyleOutput} Style and passthrough props.
  */
 export function buildLayoutOutput(
   processedProps: Record<string, any>,
+  currentBreakpoint: string,
 ): LayoutStyleOutput {
   const style: Record<string, string> = {};
   const passthrough: Record<string, any> = {};
-  let hasResponsive = false;
 
   Object.entries(processedProps).forEach(([key, value]) => {
     if (value === undefined || value === null) return;
@@ -213,46 +179,29 @@ export function buildLayoutOutput(
     // Component-handled props are skipped (handled by the component)
     if (COMPONENT_HANDLED_KEYS.has(key)) return;
 
-    const cssVarName = getCssVarName(key);
+    // Not a known style prop — pass through
+    if (!STYLE_PROPS.has(key)) {
+      passthrough[key] = value;
+      return;
+    }
 
-    // Responsive object → CSS custom properties (only for responsive-capable props)
-    if (cssVarName && !STATIC_ONLY_PROPS.has(key) && typeof value === 'object' && !Array.isArray(value)) {
-      hasResponsive = true;
-      const responsive = value as Record<string, string>;
+    const cssPropName = PROP_TO_CSS_PROPERTY[key] || key;
 
-      // Fill-forward: propagate each specified value to all subsequent unspecified
-      // breakpoints. This allows the CSS to use var(--bpk-X-bp) with no fallback
-      // chain — each slot is guaranteed to hold the correct cascaded value.
-      let carry: string | undefined = responsive.base !== undefined ? String(responsive.base) : undefined;
-      if (carry !== undefined) {
-        style[`--bpk-${cssVarName}`] = carry;
-      }
-      for (const bp of BP_ORDER) {
-        if (responsive[bp] !== undefined) {
-          carry = String(responsive[bp]);
-        }
-        if (carry !== undefined) {
-          style[`--bpk-${cssVarName}-${bp}`] = carry;
-        }
+    // Responsive object → resolve to current breakpoint value
+    if (typeof value === 'object' && !Array.isArray(value)) {
+      const resolved = resolveResponsive(
+        value as Record<string, string>,
+        currentBreakpoint,
+      );
+      if (resolved !== undefined) {
+        (style as any)[cssPropName] = resolved;
       }
       return;
     }
 
-    // Scalar value → inline style (also handles static-only props that received a responsive object)
-    if (cssVarName) {
-      const cssPropName = PROP_TO_CSS_PROPERTY[key] || key;
-      // For static-only props that received a responsive object, use the base value
-      const finalValue =
-        typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, string>).base : value;
-      if (finalValue !== undefined) {
-        (style as any)[cssPropName] = String(finalValue);
-      }
-      return;
-    }
-
-    // Unknown prop — pass through to DOM (could be a data attribute we didn't list)
-    passthrough[key] = value;
+    // Scalar value → inline style
+    (style as any)[cssPropName] = String(value);
   });
 
-  return { style: style as CSSProperties & Record<string, string>, hasResponsive, passthrough };
+  return { style: style as CSSProperties & Record<string, string>, passthrough };
 }
