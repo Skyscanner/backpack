@@ -18,7 +18,8 @@
 
 import { forwardRef } from 'react';
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import cssModules from '../../bpk-react-utils/src/cssModules';
+import { getDataComponentAttribute } from '../../bpk-react-utils/src/getDataComponentAttribute';
 
 import { buildLayoutOutput } from './responsiveStyleBuilder';
 import { processBpkComponentProps } from './tokenUtils';
