@@ -16,23 +16,28 @@
  * limitations under the License.
  */
 
-import BpkCompareModal from './src/BpkCompareModal/BpkCompareModal';
-import BpkComparisonTray from './src/BpkComparisonTray/BpkComparisonTray';
+import { BpkModalV3 } from '../../../bpk-component-modal';
 
-export type {
-  BpkComparisonItem,
-  BpkComparisonTrayRootProps,
-  BpkComparisonTrayItemProps,
-  BpkComparisonTrayNamespace,
-} from './src/BpkComparisonTray/common-types';
+import type { BpkCompareModalRootProps } from './common-types';
 
-export type {
-  BpkCompareRow,
-  BpkCompareColumnData,
-  BpkCompareModalRootProps,
-  BpkCompareModalTranslations,
-  BpkCompareModalNamespace,
-} from './src/BpkCompareModal/common-types';
+function BpkCompareModalRoot({ children, isOpen, onClose }: BpkCompareModalRootProps) {
+  return (
+    <BpkModalV3.Root
+      open={isOpen}
+      onOpenChange={(details) => {
+        if (!details.open) {
+          onClose();
+        }
+      }}
+    >
+      <BpkModalV3.Portal>
+        <BpkModalV3.Scrim />
+        <BpkModalV3.Content>
+          {children}
+        </BpkModalV3.Content>
+      </BpkModalV3.Portal>
+    </BpkModalV3.Root>
+  );
+}
 
-export { BpkCompareModal };
-export default BpkComparisonTray;
+export default BpkCompareModalRoot;
