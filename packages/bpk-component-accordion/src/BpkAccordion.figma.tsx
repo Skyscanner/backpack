@@ -16,27 +16,20 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect";
+import figma from '@figma/code-connect';
 
 import BpkAccordion from './BpkAccordion';
-import BpkAccordionItem from './BpkAccordionItem';
 
 figma.connect(
   BpkAccordion,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10855%3A4631',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15011%3A6144',
   {
     props: {
-      divider: figma.boolean('Top divider?'),
-      onDark: figma.enum('Style', {
-        'On Dark': true,
-      }),
-      body: figma.string('Body'),
+      children: figma.children('List'),
     },
-    example: ({ body, divider, onDark }) => (
-      <BpkAccordion divider={divider} onDark={onDark}>
-        <BpkAccordionItem id="accordion-item" title="accordion-item">
-          {body}
-        </BpkAccordionItem>
+    example: ({ children }) => (
+      <BpkAccordion>
+        {children}
       </BpkAccordion>
     ),
   },
