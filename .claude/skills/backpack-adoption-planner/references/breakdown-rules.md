@@ -46,8 +46,20 @@ More efficient to migrate the pattern once than to repeat it page by page.
 
 ### Mixing strategies
 
-Strategies can be combined. For example: Foundation-first for shared wrappers (Strategy A),
-then page-by-page for per-page patterns (Strategy B). Name the hybrid explicitly.
+Strategies can be combined. Always name the hybrid explicitly so the team knows what
+they are following.
+
+#### Named example — Foundation-first + Page-by-page
+
+**Use when:** Shared layout wrappers exist AND pages have independent per-page patterns
+that can be migrated one at a time after the foundation is stable.
+
+**Structure:**
+1. Epic 0: Foundation (shared wrappers, token alignment, Backpack version upgrade if needed)
+2. One epic per page or feature group (can run in parallel once Epic 0 ships)
+3. Optional: Cleanup / coverage verification epic
+
+**Named as:** "Foundation-first + Page-by-page"
 
 ---
 

@@ -27,30 +27,38 @@ Additive `className` for spacing/layout in a wrapper context is borderline — s
 ### 5. No `style={{}}` on Backpack components
 Inline style on a Backpack component to adjust its appearance or spacing is non-pure.
 
-### 6. No manual token arithmetic
-Computed values like `tokens.bpk-spacing-sm() * 1.5` or `calc(var(--bpk-spacing-base) + 4px)`
-are non-pure. Use layout primitive props (`gap`, `padding`) with standard Backpack spacing values.
+### 6. No arithmetic on Backpack token values
+Computed values that perform arithmetic on Backpack tokens are non-pure —
+e.g. `tokens.bpk-spacing-sm() * 1.5` or `calc(var(--bpk-spacing-base) + 4px)`.
+Use layout primitive props (`gap`, `padding`) with standard Backpack spacing values instead.
+Pure layout calculations that do not involve Backpack tokens (e.g. `calc(100% - 1px)`) are acceptable.
 
 ### 7. No Backpack version pinning or forked component imports
 Importing from a local fork or a pinned pre-release Backpack version to work around missing
 functionality is non-pure.
 
+### 8. No use of deprecated or superseded Backpack components
+Where a newer version of a component exists and is the recommended API (e.g. `BpkCardV2`
+supersedes `BpkCard`), use of the older version is an adoption target even if no CSS override
+is present. Classify as **Outdated**, not Non-pure, and record the migration target.
+
 ---
 
 ## Non-compliant patterns
 
-The following are always non-pure:
+The following are always non-pure or outdated:
 
-| Pattern | Why |
-|---|---|
-| `.some-wrapper .bpk-button { color: red }` | Overrides internal Backpack styles |
-| `<BpkCard className={styles.myOverride} />` where override changes visual | Bypasses component contract |
-| `<div style={{ marginTop: '12px' }}>` wrapping a Backpack component | Manual token arithmetic equivalent |
-| `!important` in any stylesheet targeting Backpack components | Forces specificity override |
-| Custom layout grid built with `display: grid` instead of `BpkGrid` | Non-primitive layout |
-| Hardcoded `#1e1e1e` or `rgba(...)` colors where a token exists | Bypasses token system |
-| `calc(tokens.bpk-spacing-base() - 2px)` | Token arithmetic |
-| Wrapping a `BpkButton` in a `<div>` to adjust its size | Layout workaround |
+| Pattern | Classification | Why |
+|---|---|---|
+| `.some-wrapper .bpk-button { color: red }` | Non-pure | Overrides internal Backpack styles |
+| `<BpkCard className={styles.myOverride} />` where override changes visual | Non-pure | Bypasses component contract |
+| `<div style={{ marginTop: '12px' }}>` wrapping a Backpack component | Non-pure | Manual spacing instead of layout primitive |
+| `!important` in any stylesheet targeting Backpack components | Non-pure | Forces specificity override |
+| Custom layout grid built with `display: grid` instead of `BpkGrid` | Non-pure | Non-primitive layout |
+| Hardcoded `#1e1e1e` or `rgba(...)` colors where a token exists | Non-pure | Bypasses token system |
+| `calc(tokens.bpk-spacing-base() - 2px)` | Non-pure | Arithmetic on token value |
+| Wrapping a `BpkButton` in a `<div>` to adjust its size | Non-pure | Layout workaround |
+| `<BpkCard>` where `BpkCardV2` is the recommended API | Outdated | Superseded component |
 
 ---
 
@@ -66,6 +74,18 @@ These require engineer review — do not auto-classify:
 | `data-testid` on a Backpack component | Acceptable | Not a visual override |
 | Local CSS variable declaration adjacent to Backpack use | Borderline | Only pure if the variable is not consumed by a Backpack component |
 | Component written before relevant Backpack primitive existed | Review needed | May qualify for planned exemption with explicit justification |
+
+---
+
+## Finding classification reference
+
+| Classification | Meaning | Next action |
+|---|---|---|
+| Non-pure | Not using Backpack primitives, or overriding them | Migrate to Backpack primitive |
+| Outdated | Using Backpack but deprecated or superseded version | Migrate to latest version per component inventory map |
+| Borderline | May or may not require migration — engineer decision needed | Discuss with engineer at Gate 2 |
+| Unclear | Cannot be classified without more context | Flag for engineer review |
+| Pure | Latest Backpack, no overrides | No action needed |
 
 ---
 
@@ -93,7 +113,7 @@ Engineer decision needed: apply project rule (borderline-pure) or default rule (
 ### Pure — compliant
 
 ```tsx
-// Layout via primitives, no overrides
+// Layout via primitives, no overrides, latest component version
 <BpkSectionLayout>
   <BpkStack gap={BpkSpacing.Md}>
     <BpkText tagName="h2" textStyle={TEXT_STYLES.heading3}>Title</BpkText>
@@ -135,6 +155,19 @@ Engineer decision needed: apply project rule (borderline-pure) or default rule (
   <BpkText>Label</BpkText>
   <BpkButton>Action</BpkButton>
 </div>
+```
+
+---
+
+### Outdated — superseded component
+
+```tsx
+// BpkCard is superseded by BpkCardV2
+// Classification: Outdated
+// Migration target: BpkCardV2
+<BpkCard>
+  <BpkText>Content</BpkText>
+</BpkCard>
 ```
 
 ---

@@ -113,3 +113,31 @@ Instead, write:
 ```
 Estimate: BLOCKED — pending [decision / primitive / design input]
 ```
+
+---
+
+## When repo file access is unavailable
+
+If the target repo cannot be scanned directly (e.g. remote repo, access restrictions,
+or codebase not available locally):
+
+1. Do not produce story-level estimates from memory or inference.
+2. Add a scope discovery spike to Epic 0:
+
+```
+Story: Scope discovery spike
+Size: S–M (~1–2 days)
+Goal: Scan the target repo, identify non-pure patterns, and produce revised story estimates.
+Output: Updated scope findings and story estimates for remaining work.
+```
+
+3. Mark all epic estimates as Low confidence until the spike is complete.
+4. Record this in the estimation assumptions:
+
+```
+ASSUMPTION: Repo not directly scanned. All estimates are Low confidence
+until the scope discovery spike completes. Estimates may change significantly.
+```
+
+Story S/M/L sizing without file access is unreliable — treat any pre-spike estimates
+as placeholders only.

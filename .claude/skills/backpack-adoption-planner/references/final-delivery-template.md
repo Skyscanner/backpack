@@ -6,7 +6,25 @@ Remove sections that are not applicable — do not leave blank sections.
 
 ---
 
-```markdown
+<!-- TL;DR section — include when creating in Confluence (Mode B). Remove for inline delivery (Mode A). -->
+
+## TL;DR
+
+**What this is:** Backpack adoption plan for [Repo name]
+
+**Scope:**
+- [Key page or area 1]
+- [Key page or area 2]
+- [Shared layout / wrappers if applicable]
+
+**Total effort:** [N sprints] | **Confidence:** [High / Medium / Low]
+
+**Top risk:** [One sentence — e.g. "BpkSectionLayout requires v43 which is not yet installed"]
+
+**First action:** [What to start with — e.g. "Epic 0: Backpack version upgrade"]
+
+---
+
 # Backpack Adoption Planning Pack
 ## [Repo name] — [Date]
 
@@ -33,13 +51,14 @@ Remove sections that are not applicable — do not leave blank sections.
 
 ## 2. Validated Migration Scope
 
-### Non-pure findings
+### Finding records
 
-| Component / Page | Pattern | Classification | Epic |
-|---|---|---|---|
-| [file or component name] | [e.g. inline flex layout] | Non-pure | Epic 1 |
-| [file or component name] | [e.g. className override on BpkCard] | Non-pure | Epic 2 |
-| [file or component name] | [e.g. semantic wrapper — no layout impact] | Borderline / Accepted | — |
+| Component / File | Pattern | Classification | Migration Target | Rationale | Epic |
+|---|---|---|---|---|---|
+| [file or component name] | [e.g. inline flex layout] | Non-pure | BpkStack | Raw layout — no Backpack primitive used | Epic 1 |
+| [file or component name] | [e.g. className override on BpkCard] | Non-pure | — | Bypasses component contract | Epic 2 |
+| [file or component name] | [e.g. BpkCard usage] | Outdated | BpkCardV2 | BpkCardV2 is the recommended API | Epic 2 |
+| [file or component name] | [e.g. semantic wrapper — no layout impact] | Borderline / Accepted | — | Engineer confirmed no layout influence | — |
 
 ### Borderline items and decisions
 
@@ -57,12 +76,18 @@ Remove sections that are not applicable — do not leave blank sections.
 
 ## 3. Dependency Map
 
-```
-[Epic 0: Foundation] ──▶ [Epic 1: Homepage layout] ──▶ [Epic 3: PDP layout]
-                      └──▶ [Epic 2: Card patterns]
+| Epic | Blocked by | Enables |
+|---|---|---|
+| Epic 0 — Foundation | — | Epic 1, Epic 2 |
+| Epic 1 — [Title] | Epic 0 | Epic 3 |
+| Epic 2 — [Title] | Epic 0 | — |
+| Epic 3 — [Title] | Epic 1 | — |
 
-[External: BpkSectionLayout v43 release] ──▶ [Epic 1]
-```
+**External dependencies:**
+
+| Dependency | Affects | Status |
+|---|---|---|
+| [e.g. BpkSectionLayout v43 release] | Epic 1 | [Open / Resolved] |
 
 ---
 
@@ -151,21 +176,7 @@ Stories:
 
 ---
 
-## 8. Jira-Ready Draft
-
-> Load these into Jira and review before sprint planning. These are drafts — not final.
-
-### Epic 0 — [Title]
-[Copy epic template block from jira-output-format.md]
-
-### Story 0.1 — [Story title]
-[Copy story template block from jira-output-format.md]
-
-[Repeat for all epics and stories]
-
----
-
-## 9. Execution-Ready Baseline
+## 8. Execution-Ready Baseline
 
 **Start with:** [Epic 0 / Story 0.1 — why this first]
 
@@ -181,4 +192,3 @@ Stories:
 - [ ] [Decision 2]
 
 **Recommended first sprint focus:** [Epic 0, Stories 0.1–0.3]
-```

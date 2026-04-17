@@ -32,7 +32,7 @@ Dependencies:
 - Blocked by: [Epic name or external dependency, if any]
 - Enables: [Epic name(s) that can start after this ships, if any]
 
-Rough estimate: [L / XL / 2-sprint / 3-sprint — use estimation-guidance.md for sizing]
+Rough estimate: [1 sprint / 2 sprints / 3 sprints — use estimation-guidance.md for sizing]
 Confidence: [High / Medium / Low]
 ```
 
@@ -68,7 +68,7 @@ Rough size: [S = ~1 day / M = 2–3 days / L = 4–5 days]
 | **Description** | Goal + scope in/out + definition of done |
 | **Epic link** | Assign each story to its parent epic |
 | **Labels** | `backpack-adoption`, `pure-backpack` (add project-specific labels as needed) |
-| **Story points** | Use team's own scale. If not established, use S/M/L and convert later |
+| **Story points** | Use team's own scale. If not established, use S/M/L and convert later. **Epics are sized in sprints, not S/M/L.** |
 | **Priority** | Default to Medium unless a blocker warrants High |
 | **Component** | Add the Jira project component if available |
 
@@ -102,7 +102,7 @@ Dependencies:
 - Blocked by: Epic 0 — Backpack version upgrade to ≥43.x (BpkSectionLayout requires v43)
 - Enables: Epic 3 — PDP layout migration
 
-Rough estimate: L (2 sprints)
+Rough estimate: 2 sprints
 Confidence: Medium — BpkSectionLayout API needs final review
 ```
 
@@ -129,6 +129,25 @@ Out of scope:
 Depends on: None (standalone)
 Rough size: S (~1 day)
 ```
+
+---
+
+## Ticket metadata (Step 9.0)
+
+Before creating any ticket, collect the following from the engineer.
+Apply these values consistently to all tickets in the session.
+
+| Field | Required | Default if skipped |
+|---|---|---|
+| Project key | Yes | Must be provided — no default |
+| Labels | No | `backpack-adoption` |
+| Team | No | Omitted from ticket |
+| Component | No | Omitted from ticket |
+| Priority | No | Medium |
+| Fix version | No | Omitted from ticket |
+
+If the engineer wants different values on specific tickets, they should update those in Jira
+after creation.
 
 ---
 

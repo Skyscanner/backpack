@@ -2,49 +2,50 @@
 
 ## Principle
 
-The skill must stop at each review gate and wait for explicit engineer confirmation before continuing.
+Hard review gates require explicit engineer confirmation before continuing.
 Do not auto-advance. Do not summarise a gate and proceed in the same message.
+
+Gate 1 is a **soft gate** — present the summary and continue unless the engineer corrects
+something. It does not require an explicit "yes, continue" from the engineer.
 
 ---
 
-## Gate 1 — After Stage 1 (Intake)
+## Gate 1 — After Stage 1 (Intake) — SOFT
 
-**When:** After completing scope framing.
+**Type:** Soft gate — present and continue.
+
+**When:** After completing scope framing and building the Backpack component inventory.
 
 **What to present:**
 - Planning objective (one sentence)
 - Scope boundary (in / out)
 - Success criteria
 - Working assumptions
+- Installed Backpack version
+- Component inventory highlights (key deprecated components found, version gap if any)
 - Missing information list
 
-**What to ask:**
+**What to say:**
 ```
-Here is my understanding of the planning objective and scope:
+Here is my understanding of the planning objective, scope, and Backpack inventory:
 
 [Present Stage 1 outputs]
 
-Before I start analysing the repo:
-1. Is the scope boundary correct? Anything to add or remove?
-2. Are the success criteria right?
-3. Any assumptions I should correct?
-4. Anything critical I should know before I start?
-
-Reply to confirm or correct, and I'll begin scope discovery.
+I'll proceed with scope discovery unless you want to correct anything above.
 ```
 
-**Engineer confirms:** Scope boundary, success criteria, assumptions.
-**Engineer corrects:** Anything misunderstood about goals, scope, or constraints.
+**Continue if:** Engineer does not respond, or confirms with no corrections.
+**Pause if:** Engineer provides a correction — apply it and re-present before continuing.
 
 ---
 
-## Gate 2 — After Stage 2 (Scope Discovery)
+## Gate 2 — After Stage 2 (Scope Discovery) — HARD STOP
 
 **When:** After generating the page map, adoption findings, and draft migration scope.
 
 **What to present:**
 - Page map (routes / entry points)
-- Candidate adoption findings with classification
+- Candidate adoption findings with Finding Records (classification + rationale)
 - Draft migration scope
 - Draft migration plan hypothesis
 
@@ -57,7 +58,7 @@ Here is what I found in the repo:
 Before I validate this scope:
 1. Are there any findings you'd remove (false positives)?
 2. Are there areas I missed that should be in scope?
-3. Do the borderline items look right, or should any be reclassified?
+3. Do the borderline or outdated items look right, or should any be reclassified?
 4. Does the proposed sequencing make sense given your context?
 
 Reply with corrections, and I'll validate and refine the scope.
@@ -68,7 +69,7 @@ Reply with corrections, and I'll validate and refine the scope.
 
 ---
 
-## Gate 3 — After Stage 3 (Scope Validation)
+## Gate 3 — After Stage 3 (Scope Validation) — HARD STOP
 
 **When:** After validating the draft scope, mapping dependencies, and identifying blockers.
 
@@ -76,7 +77,7 @@ Reply with corrections, and I'll validate and refine the scope.
 - Validated migration scope (clean list)
 - Unclear items needing engineer decision
 - Dependency map
-- Blockers (hard stops)
+- Blockers (hard stops — including any Backpack version upgrade requirement)
 - Risks (soft concerns)
 
 **What to ask:**
@@ -99,7 +100,7 @@ Confirm or correct, and I'll propose a breakdown strategy.
 
 ---
 
-## Gate 4 — After Stage 4 (Breakdown Strategy)
+## Gate 4 — After Stage 4 (Breakdown Strategy) — HARD STOP
 
 **When:** After proposing the breakdown strategy and work classification.
 
@@ -115,7 +116,8 @@ Here is the proposed breakdown strategy:
 
 Before I build the epics:
 1. Does this strategy fit how your team works?
-2. Is the foundation-first sequencing correct, or should anything start in parallel?
+2. Does the proposed sequencing match your delivery constraints?
+   Are there items that should start earlier, later, or run in parallel?
 3. Any enabler/blocker work I missed?
 
 Confirm or correct, and I'll build the epic plan.
@@ -123,7 +125,7 @@ Confirm or correct, and I'll build the epic plan.
 
 ---
 
-## Gate 5 — After Stage 5 (Epic Planning)
+## Gate 5 — After Stage 5 (Epic Planning) — HARD STOP with intra-stage loop
 
 **When:** After drafting epics with scope and dependencies.
 
@@ -142,14 +144,17 @@ Before I break these into stories and estimate:
 1. Are the epic groupings right?
 2. Any epics that are too large or should be merged?
 3. Any scope issues — things in the wrong epic?
-4. Epic dependencies look correct?
+4. Do the epic dependencies look correct?
 
 Confirm or correct, and I'll build stories and estimate.
 ```
 
+**If the engineer requests changes:** Route back to Stage 5 step 1 with corrections
+(refined groupings, merged/split epics). Do not proceed to Stage 6 until the plan is confirmed.
+
 ---
 
-## Gate 6 — After Stage 6 (Story Breakdown and Estimation)
+## Gate 6 — After Stage 6 (Story Breakdown and Estimation) — HARD STOP with typed rollback
 
 **When:** After drafting stories, sizing, and confidence level.
 
@@ -165,14 +170,54 @@ Here is the full planning draft with stories and estimates:
 
 [Present Stage 6 outputs]
 
-Final review before I produce the delivery pack:
+Final review before I produce the plan document:
 1. Any stories that seem too large or too small?
 2. Anything missing from the breakdown?
 3. Confidence level and assumptions — do these reflect your context?
-4. Any corrections before I generate the final output?
+4. Any corrections before I generate the plan document?
 
-Reply with any final corrections, and I'll produce the delivery pack.
+Reply with any corrections.
 ```
+
+**Applying corrections — Minor/Major split:**
+
+**Minor correction** — apply inline, proceed to Stage 7:
+- Wording changes to story titles or descriptions
+- Story size adjustments (e.g. S → M)
+- Risk or assumption additions/removals
+- Confidence level rationale updates
+
+**Major correction** — route back to the appropriate stage:
+
+| Correction type | Rollback target |
+|---|---|
+| Scope gap or misclassification found | Stage 3 |
+| Epic needs to be merged, split, or regrouped | Stage 5 (step 1) |
+| Breakdown strategy needs to change | Stage 4 |
+| Significant discovery area missed in the repo | Stage 2 |
+
+---
+
+## Gate 7 — After Stage 8 (Plan Document) — DECISION GATE
+
+**Type:** Decision gate — not an approval gate.
+
+**When:** After the plan document has been delivered.
+
+**What to ask:**
+```
+The plan document is ready.
+
+Do you want to create Jira tickets now, or review the plan with your team first?
+
+- "create now" — I'll collect Jira metadata and create tickets.
+- "review first" — I'll close the session. You can return to create tickets after your review.
+```
+
+**If "create now":** Proceed to Stage 9.
+**If "review first":** End the session. Inform the engineer that Stage 9 can be triggered
+in a new session by providing the plan document (or Confluence page URL) and requesting
+Jira ticket creation.
 
 ---
 
@@ -182,6 +227,6 @@ If the engineer replies with a vague "looks good" or "continue":
 - Accept it and proceed.
 - Note "Engineer confirmed [gate name] with no corrections" in the output.
 
-If the engineer does not respond to a specific question within the gate:
+If the engineer does not respond to a specific question within a hard gate:
 - Do not proceed until they respond to at least the scope/boundary question.
 - Clarifying questions about optional details (e.g. Jira project key) can be skipped if not answered.

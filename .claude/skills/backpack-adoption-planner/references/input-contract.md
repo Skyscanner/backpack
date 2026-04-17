@@ -19,15 +19,15 @@ These improve plan quality if available. If not provided, proceed with documente
 | Input | Description | Default assumption if missing |
 |---|---|---|
 | Specific pages or routes in scope | Which pages or sections to include | Assume full repo scope |
-| Current Backpack version in use | Which version of `@skyscanner/backpack-web` is installed | Discover from `package.json` |
+| Current Backpack version in use | Which version of `@skyscanner/backpack-web` is installed | Discover from target microsite's `package.json` in Stage 1 |
 | Team size | Number of engineers working on adoption | Assume 1–2 engineers |
 | Sprint cadence | Sprint length in weeks | Assume 2-week sprints |
 | Existing component inventory | Known list of custom components | Discover from repo scan |
 | Known blockers | Missing Backpack primitives, design gaps | Assume none until discovery |
 | Project-specific adoption rules | Engineer-defined overrides to the default Pure Backpack definition | Use default definition |
-| Previous adoption attempts | Prior work, removed patterns, or known dead ends | Assume none |
+| Previous adoption attempts | Prior work, removed patterns, or known dead ends | Ask the engineer directly — do not assume none. If prior attempts exist, read them before Stage 2 to avoid repeating known dead ends. |
 | Hard deadline or target quarter | Delivery constraint | Assume no deadline |
-| Jira project key | For generating Jira-ready output | Ask before Stage 8 |
+| Jira project key | For generating Jira-ready output in Stage 9 | Ask at Decision Gate 7 (before Stage 9 begins) |
 
 ---
 
@@ -53,17 +53,28 @@ Example assumption statement:
 ASSUMPTION: Team size assumed to be 1–2 engineers. If larger, estimates may compress.
 ASSUMPTION: No hard deadline. Sequencing prioritises foundation work first.
 ASSUMPTION: Using default Pure Backpack definition — no project-specific overrides provided.
+ASSUMPTION: No previous adoption attempts reported. If any exist, they were not provided.
 ```
+
+---
+
+## Inputs discovered automatically in Stage 1
+
+The following optional inputs are discovered automatically and do not need to be asked:
+
+| Input | How discovered |
+|---|---|
+| Installed Backpack version | Read from target microsite's `package.json` |
+| Component inventory (deprecated / V2 components) | Scanned from Backpack repo `packages/bpk-component-*/` |
+| Version gap (upgrade needed) | Cross-reference of installed version vs component inventory |
 
 ---
 
 ## Partial input handling
 
 The skill can start with partial inputs and refine as discovery proceeds. Some inputs
-become available naturally during Stage 2 (e.g. current Backpack version from `package.json`).
-
-When an optional input is discovered during the workflow, update the working assumptions
-and note the discovery in the stage output.
+become available naturally during Stage 1 and Stage 2. When an optional input is discovered
+during the workflow, update the working assumptions and note the discovery in the stage output.
 
 ---
 
@@ -76,3 +87,19 @@ If the engineer provides project-specific rules:
    before classifying any components.
 4. Get engineer confirmation on which rule takes precedence.
 5. Record all overrides in the planning output's assumptions section.
+
+---
+
+## Jira metadata (Stage 9)
+
+Collected at Step 9.0 before any Jira ticket is created.
+Do not ask for these earlier — they are not needed until the plan document is ready.
+
+| Field | Required | Default if skipped |
+|---|---|---|
+| Project key | Yes | Must be provided — no default |
+| Labels | No | backpack-adoption |
+| Team | No | Omitted from ticket |
+| Component | No | Omitted from ticket |
+| Priority | No | Medium |
+| Fix version | No | Omitted from ticket |
