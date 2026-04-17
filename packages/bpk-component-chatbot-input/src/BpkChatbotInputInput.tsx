@@ -37,6 +37,9 @@ import type { BpkFlexProps } from '../../bpk-component-layout';
 
 const AlignedArrowUpIcon = withButtonAlignment(ArrowUpIcon);
 
+// BpkChatbotInputInput renders the text entry area of a chatbot input, supporting both a
+// single-line input field and a multi-line textarea. It handles character-limit tracking,
+// send-button rendering, and loading/polling states.
 const BpkChatbotInputInput = ({
   inputValue,
   isPolling = false,

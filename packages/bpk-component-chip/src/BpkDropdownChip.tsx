@@ -29,6 +29,9 @@ import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
 
+// BpkDropdownChip is a variant of BpkSelectableChip that displays a chevron-down icon as a
+// trailing accessory, signalling that tapping the chip will open a dropdown or popover for
+// further selection.
 const BpkDropdownChip = ({
   disabled = false,
   leadingAccessoryView = null,

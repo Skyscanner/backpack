@@ -38,6 +38,9 @@ type Props = {
   }>,
 };
 
+// BpkContentCards renders a titled collection of BpkContentCard items in a responsive
+// grid layout. When only one card is provided it uses a horizontal layout; multiple cards
+// use a vertical layout. Returns null if the cards array is empty.
 const BpkContentCards = ({ cards, heading }: Props) => {
   if (cards.length === 0) {
     return null;

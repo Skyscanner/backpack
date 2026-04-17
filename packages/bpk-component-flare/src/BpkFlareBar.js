@@ -26,6 +26,8 @@ import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// Renders the decorative flare pointer bar used at the base of a BpkContentBubble.
+// The pointer SVG is generated from a design asset and creates a visual "speech bubble" tail effect.
 const BpkFlareBar = ({
   className = null,
   svgClassName = null,

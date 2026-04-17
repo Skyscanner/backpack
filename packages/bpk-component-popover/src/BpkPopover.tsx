@@ -80,9 +80,7 @@ const bindEventSource = (
 
 type CloseButtonProps =
   | {
-      /**
-       * @deprecated close button text is deprecated. Instead, please use `closeButtonIcon`, or you may opt not to render a close button at all.
-       */
+      // @deprecated close button text is deprecated. Instead, please use `closeButtonIcon`, or you may opt not to render a close button at all.
       closeButtonText: string;
     }
   | {
@@ -115,6 +113,8 @@ export type Props = CloseButtonProps & {
   [rest: string]: any;
 };
 
+// A floating popover that appears anchored to a target element and displays contextual information or actions.
+// It supports hover and click triggers, an optional close button, an action link, directional placement, and an animated arrow.
 const BpkPopover = ({
   actionText,
   children,

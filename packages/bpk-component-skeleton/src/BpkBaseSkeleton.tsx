@@ -29,6 +29,8 @@ type Props = {
   styleObj?: CUSTOM_SIZE_TYPE;
 };
 
+// The base building block for skeleton loading placeholders.
+// It renders a single animated div whose shape and size are controlled by a skeleton style class and an optional inline style object.
 const BpkBaseSkeleton = ({
   skeletonStyle,
   styleObj = undefined,

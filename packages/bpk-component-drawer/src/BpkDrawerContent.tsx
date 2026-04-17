@@ -52,6 +52,9 @@ type Props = {
   mobileModalDisplay?: boolean,
 };
 
+// BpkDrawerContent renders the inner panel of a BpkDrawer, including the title bar, close
+// controls, and scrollable content area. It manages the slide-in/out CSS transition and
+// exposes a ref callback so parent components can track the panel DOM node.
 const BpkDrawerContent = ({
   children,
   className,

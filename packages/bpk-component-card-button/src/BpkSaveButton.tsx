@@ -62,6 +62,8 @@ const AlignedHeartOutlineIcon = BpkHeartOutlineIcon;
 const AlignedHeartIconSm = BpkHeartIconSm;
 const AlignedHeartOutlineIconSm = BpkHeartOutlineIconSm;
 
+// A togglable heart-shaped save/bookmark button intended for use within card components.
+// Supports default and small sizes as well as default, contained, and on-dark style variants.
 const BpkSaveButton = ({
   accessibilityLabel,
   checked,

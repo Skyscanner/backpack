@@ -31,6 +31,9 @@ import STYLES from './BpkChatbotInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkChatbotInputRoot is the outermost container for a chatbot input. It provides the shared
+// context (input type, over-limit state) consumed by child sub-components, and applies the
+// appropriate layout and styling for composer or cars input variants.
 const BpkChatbotInputRoot = ({
   align = 'flex-start',
   children,

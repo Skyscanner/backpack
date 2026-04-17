@@ -55,15 +55,11 @@ const getClassName = cssModules(STYLES);
 const strokeWidth = 1;
 
 export type Props = {
-  /**
-   * Tooltips are invisible to assistive technologies such as screen readers.
-   * To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
-   * The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
-   */
+  // Tooltips are invisible to assistive technologies such as screen readers.
+  // To improve accessibility, `ariaLabel` is required to describe the content of the tooltip to assistive technologies.
+  // The label will be used on the `target` element, so any existing `aria-label` attached to `target` will be overridden.
   ariaLabel: string;
-  /**
-   * "target" should be a DOM element.
-   */
+  // "target" should be a DOM element.
   target: ReactElement<any>;
   id: string;
   children: ReactNode | string;
@@ -93,6 +89,8 @@ const hasTouchSupport = () =>
     ('ontouchstart' in window || navigator.maxTouchPoints > 0)
   );
 
+// A floating tooltip that appears on hover or focus to provide supplementary information about a target element.
+// It uses Floating UI for smart placement with an animated arrow, and hides itself on touch devices by default.
 const BpkTooltip = ({
   ariaLabel,
   children,

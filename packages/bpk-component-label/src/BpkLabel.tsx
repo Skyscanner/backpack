@@ -33,6 +33,9 @@ export type Props = {
   white?: boolean;
 } & ComponentPropsWithoutRef<'label'>;
 
+// BpkLabel renders an accessible HTML `<label>` element styled to Backpack conventions. It
+// supports disabled, invalid, required, and white-on-dark visual states, and automatically
+// appends an asterisk when the field is required and enabled.
 const BpkLabel = ({
   children,
   className,

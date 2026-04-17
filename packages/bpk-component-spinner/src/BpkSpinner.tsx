@@ -35,6 +35,8 @@ type Props = {
   [rest: string]: any;
 };
 
+// A small loading spinner used to indicate an ongoing operation.
+// It supports dark, light, and on-dark colour variants, and can optionally align itself to a standard button for inline use.
 const BpkSpinner = ({
   alignToButton = false,
   className = null,

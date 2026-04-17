@@ -31,6 +31,8 @@ type Props = {
   };
 } & BpkPriceMarkerButtonProps;
 
+// A map marker that displays a price label at a specific geographic position.
+// It wraps BpkBasicMapMarker and BpkPriceMarkerButton to show interactive, status-aware price callouts on a map.
 const BpkPriceMarker = (props: Props) => {
   const {
     accessibilityLabel,

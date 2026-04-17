@@ -43,10 +43,8 @@ import {
 import type { SelectionConfiguration } from './custom-proptypes';
 
 export type Props = {
-  /**
-   * If set to true (default), it sets a fixed width on the calendar container. This is necessary to support transitions and to create the right size for the Datepicker component.
-   * If set to false, the calendar is of fluid width and will take up the space of its parent container.
-   */
+  // If set to true (default), it sets a fixed width on the calendar container. This is necessary to support transitions and to create the right size for the Datepicker component.
+  // If set to false, the calendar is of fluid width and will take up the space of its parent container.
   fixedWidth?: boolean;
   maxDate?: Date;
   minDate?: Date;
@@ -57,19 +55,13 @@ export type Props = {
         { month, source }: { month: Date; source: string },
       ) => void)
     | null;
-  /**
-   * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
-   */
+  // An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
   selectionConfiguration?: SelectionConfiguration;
-  /**
-   * Sets the date that is focused initially, this prop has no effect if `selectionConfiguration` is specified in which case the date specified in this prop is focused. If no selected date is set and `initiallyFocusedDate` is not set the focused date is the `minDate`(defaults to today if it has not been explicitly set).
-   */
+  // Sets the date that is focused initially, this prop has no effect if `selectionConfiguration` is specified in which case the date specified in this prop is focused. If no selected date is set and `initiallyFocusedDate` is not set the focused date is the `minDate`(defaults to today if it has not been explicitly set).
   initiallyFocusedDate?: Date | null;
   markToday?: boolean;
   markOutsideDays?: boolean;
-  /**
-   * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
-   */
+  // Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
   customRowHeight?: number;
 };
 
@@ -90,12 +82,10 @@ type State = {
   focusedDate: Date;
 };
 
-/**
- * Updates the current focused date
- * @param {Object} prevProps previous input properties
- * @param {Object} currentProps current input properties when component changes
- * @returns {Boolean} if the selected date has changed
- */
+// Updates the current focused date
+// @param {Object} prevProps previous input properties
+// @param {Object} currentProps current input properties when component changes
+// @returns {Boolean} if the selected date has changed
 const focusedDateHasChanged = <T extends {}>(
   prevProps: CalendarProps<T>,
   currentProps: CalendarProps<T>,
@@ -127,14 +117,12 @@ const focusedDateHasChanged = <T extends {}>(
   return !isSameDay(rawCurrentSelectedDate, rawPrevSelectedDate);
 };
 
-/**
- * Determines the focused date on the calendar
- * @param {Date} rawSelectedDate the raw date provided to the calendar to be selected
- * @param {Date} initiallyFocusedDate inital date that was selected
- * @param {Date} minDate min available date to be selectable in the calendar
- * @param {Date} maxDate max available date to be selectable in the calendar
- * @returns {Date} which date to be focused on the calendar when it loads
- */
+// Determines the focused date on the calendar
+// @param {Date} rawSelectedDate the raw date provided to the calendar to be selected
+// @param {Date} initiallyFocusedDate inital date that was selected
+// @param {Date} minDate min available date to be selectable in the calendar
+// @param {Date} maxDate max available date to be selectable in the calendar
+// @returns {Date} which date to be focused on the calendar when it loads
 const determineFocusedDate = (
   rawSelectedDate: Date | null,
   initiallyFocusedDate: Date | null,
@@ -152,11 +140,9 @@ const determineFocusedDate = (
   return minDate;
 };
 
-/**
- * Function that based on the configuration will return a single date or start and end date.
- * @param {Object} selectionConfig - The configuration of calendar to be used
- * @returns {Array} An array or single of multiple dates
- */
+// Function that based on the configuration will return a single date or start and end date.
+// @param {Object} selectionConfig - The configuration of calendar to be used
+// @returns {Array} An array or single of multiple dates
 const getRawSelectedDate = (selectionConfig: SelectionConfiguration) => {
   let rawDate = [];
 
@@ -176,6 +162,8 @@ const getRawSelectedDate = (selectionConfig: SelectionConfiguration) => {
 };
 
 const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
+  // A higher-order component that adds stateful date selection, keyboard navigation, and month navigation to any calendar grid component.
+  // Manages focused date, selected dates, and month transitions, injecting the derived props into the wrapped Calendar component.
   class BpkCalendarContainer extends Component<CalendarProps<P>, State> {
     static defaultProps = {
       fixedWidth: true,

@@ -22,8 +22,8 @@ import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-// Animated three-dot ellipsis for inline use at the end of loading text.
-// Hidden from assistive technology — ensure surrounding text provides context.
+// An animated three-dot ellipsis indicator used within the AI blurb loading state.
+// The dots are hidden from assistive technology so surrounding text must supply context.
 const BpkAiBlurbEllipsis = () => (
   <span
     className={getClassName('bpk-ai-blurb__ellipsis')}

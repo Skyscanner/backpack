@@ -22,6 +22,9 @@ import BpkInfoBannerInner from './BpkInfoBannerInner';
 
 import type { CommonProps } from './common-types';
 
+// BpkInfoBanner is the standard informational banner used to surface contextual messages
+// to the user. It supports animated entrance and exit transitions and delegates rendering
+// to BpkInfoBannerInner.
 const BpkInfoBanner = ({
   animateOnEnter = false,
   animateOnLeave = false,

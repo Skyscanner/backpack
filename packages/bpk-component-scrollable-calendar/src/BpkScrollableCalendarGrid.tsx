@@ -35,6 +35,8 @@ type Props = Partial<BpkCalendarGridProps> & {
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
   formatMonth: (date: Date) => ReactNode | string;
 };
+// A calendar grid for a single month rendered within a scrollable calendar layout.
+// It displays the month heading above the date grid and suppresses dates outside the current month.
 const BpkScrollableCalendarGrid = ({
   className,
   formatMonth,

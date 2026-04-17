@@ -45,10 +45,8 @@ type MarkerPriceRangePosition = PriceRangePosition & {
 export type BpkPriceRangeProps = {
   min?: number;
   max?: number;
-  /**
-   * @deprecated Use `marker.type` with `MARKER_DISPLAY_TYPES.DOT` instead to hide boundary prices.
-   * This prop will be removed in a future major release.
-   */
+  // @deprecated Use `marker.type` with `MARKER_DISPLAY_TYPES.DOT` instead to hide boundary prices.
+  // This prop will be removed in a future major release.
   showPriceIndicator?: boolean;
   marker?: MarkerPriceRangePosition;
   segments: {
@@ -73,6 +71,8 @@ const getShouldShowPriceOnBoundaries = (
   }
 };
 
+// A visual price-range bar that shows low, mid, and high price segments on a horizontal scale.
+// It renders price markers at boundary and marker positions, supporting both bubble and dot display types.
 const BpkPriceRange = ({
   marker,
   max = 100,

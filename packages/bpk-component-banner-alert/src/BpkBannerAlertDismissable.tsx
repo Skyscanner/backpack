@@ -27,6 +27,8 @@ export type Props = CommonProps & {
   onDismiss?: OnDismissHandler;
 };
 
+// A banner alert variant that includes a close button allowing users to dismiss the notification.
+// Delegates rendering to BpkBannerAlertInner with the dismissable configuration.
 const BpkBannerAlertDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkBannerAlertInner
     configuration={CONFIGURATION.DISMISSABLE}

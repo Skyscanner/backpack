@@ -31,6 +31,8 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// A CSS grid layout primitive that renders a grid container element.
+// Built on Chakra UI's Grid and supports Backpack spacing tokens, template columns/rows, and gap props.
 export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
   (
     { align, autoColumns, autoFlow, autoRows, backgroundColor, children, color, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },

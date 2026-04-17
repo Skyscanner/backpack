@@ -47,6 +47,8 @@ type Props = {};
 
 type InteractionEvents = KeyboardEvent | MouseEvent<HTMLButtonElement> | TouchEvent;
 
+// A development utility component that toggles the page's text direction between LTR and RTL.
+// It responds to both click and keyboard interactions and dispatches a direction-change event so other components can react.
 class BpkRtlToggle extends Component<Props, State> {
   constructor(props: Props) {
     super(props);

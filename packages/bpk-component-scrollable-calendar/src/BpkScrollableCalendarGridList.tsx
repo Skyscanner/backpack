@@ -58,12 +58,11 @@ type Props = Partial<BpkCalendarGridProps> & {
   focusedDate?: Date | null;
   selectionConfiguration?: SelectionConfiguration;
   className?: string | null;
-  /**
-   * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
-   */
+  // Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
   customRowHeight?: number;
 };
 
+// Renders a vertically scrollable list of monthly calendar grids using react-window for virtualised rendering. Automatically scrolls to the selected date on mount and supports keyboard-based date navigation.
 const BpkScrollableCalendarGridList = (props: Props) => {
   const {
     className = null,

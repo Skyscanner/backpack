@@ -37,6 +37,8 @@ const getClassName = cssModules(STYLES);
 const DEFAULT_ITEMS_DESKTOP = 3;
 const DEFAULT_ITEMS_MOBILE = 2;
 
+// A section component that displays a titled, optionally chip-filtered collection of cards in grid, stack, or rail layouts.
+// Adapts between desktop and mobile layouts and supports expand/collapse and CTA button accessories.
 const BpkCardList = (props: CardListProps) => {
   const {
     accessibilityLabels,

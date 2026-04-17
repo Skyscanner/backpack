@@ -145,6 +145,8 @@ export const defaultTheme = {
 
 const strokeWidth = 0.0625;
 
+// BpkAutosuggest is a combobox input component that displays a floating suggestion list as the user types.
+// It is built on Downshift for accessibility and @floating-ui/react for positioning, and integrates with BpkInput for consistent styling.
 const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
   (
     {

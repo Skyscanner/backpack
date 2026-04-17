@@ -31,6 +31,8 @@ type BpkModalV3ContentProps = {
   children: ReactNode;
 };
 
+// BpkModalV3Content positions and sizes the modal dialog panel using Ark UI's Dialog.Positioner and Dialog.Content.
+// It reads the modal type from context to apply the correct positioning and sizing variant classes.
 const BpkModalV3Content = ({ children }: BpkModalV3ContentProps) => {
   const type = useModalType();
   return (

@@ -37,6 +37,9 @@ const getClassName = cssModules(STYLES);
 
 type BpkDismissibleChipProps = Omit<Props, 'disabled' | 'selected'>;
 
+// BpkDismissibleChip is a variant of BpkSelectableChip pre-configured to always appear
+// selected and to display a close-circle icon as a trailing accessory. It is used to
+// represent removable filter or tag selections.
 const BpkDismissibleChip = ({
   className,
   leadingAccessoryView = null,

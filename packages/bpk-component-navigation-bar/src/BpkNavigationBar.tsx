@@ -49,6 +49,8 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// A navigation bar that displays a title with optional leading and trailing action buttons.
+// Supports sticky positioning, on-dark styling, and customisable title text styles.
 const BpkNavigationBar = (props: Props) => {
   const {
     barStyle = BAR_STYLES.default,

@@ -33,6 +33,9 @@ export type Props = {
   title?: string;
 };
 
+// BpkList renders either an ordered or unordered list styled to Backpack conventions. It
+// supports ARIA label and labelledby attributes for accessibility and accepts an optional
+// title attribute on the list element.
 const BpkList = ({
   ariaLabel,
   ariaLabelledby,

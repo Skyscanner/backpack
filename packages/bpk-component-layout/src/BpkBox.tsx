@@ -31,6 +31,8 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// A general-purpose layout primitive that renders a styled container element.
+// Built on Chakra UI's Box and supports Backpack spacing, colour, and border tokens via style props.
 export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
   ({ backgroundColor, children, color, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });

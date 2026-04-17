@@ -24,6 +24,8 @@ import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// The root container for the AI blurb composable component system.
+// Wraps all BpkAiBlurb sub-components (Header, Summary, Feedback, Ellipsis) in a styled div.
 const BpkAiBlurbRoot = ({ children }: BpkAiBlurbRootProps) => (
   <div
     className={getClassName('bpk-ai-blurb')}

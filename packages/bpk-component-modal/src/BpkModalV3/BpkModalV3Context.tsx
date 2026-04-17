@@ -20,6 +20,8 @@ import { createContext, useContext } from 'react';
 
 import type { BpkModalV3Type } from './common-types';
 
+// BpkModalV3Context is a React context that stores the current modal type (e.g. 'default', 'full', 'chatbot').
+// Use the exported useModalType hook to read it and ModalTypeProvider to supply it from BpkModalV3Root.
 const BpkModalV3Context = createContext<BpkModalV3Type>('default');
 
 export const useModalType = () => useContext(BpkModalV3Context);

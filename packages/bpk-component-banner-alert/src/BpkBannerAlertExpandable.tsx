@@ -31,6 +31,8 @@ export type Props = CommonProps & {
   onExpandToggle?: OnExpandToggleHandler;
 };
 
+// A banner alert variant that can be expanded or collapsed to reveal additional detail.
+// Delegates rendering to BpkBannerAlertInner with the expandable configuration.
 const BpkBannerAlertExpandable = ({
   children,
   expanded = false,

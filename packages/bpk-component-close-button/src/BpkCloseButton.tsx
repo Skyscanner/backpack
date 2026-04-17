@@ -33,6 +33,9 @@ type Props = {
   onDark?: Boolean;
 };
 
+// BpkCloseButton renders an accessible icon button used to dismiss or close a UI element,
+// such as a modal, banner, or popover. It supports an optional custom icon and an on-dark
+// colour variant.
 const BpkCloseButton = ({
   className = null,
   customIcon = null,

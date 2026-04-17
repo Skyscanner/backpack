@@ -31,6 +31,8 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// A grid item primitive for positioning children within a BpkGrid.
+// Built on Chakra UI's GridItem and supports column/row span and start/end placement props.
 export const BpkGridItem = forwardRef<HTMLDivElement, BpkGridItemProps>(
   ({ area, backgroundColor, children, colEnd, colSpan, colStart, color, rowEnd, rowSpan, rowStart, textStyle, ...props }, ref) => {
     const processedProps = processBpkComponentProps({ textStyle, ...props }, { component: 'BpkGridItem' });

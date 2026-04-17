@@ -34,6 +34,8 @@ export type Props = {
   [rest: string]: any, // Inexact rest. See decisions/inexact-rest.md
 };
 
+// An icon-based action button intended for use within a BpkNavigationBar.
+// It renders a close-style button with a custom icon, adapting its appearance to match the bar's default or on-dark style.
 const BpkNavigationBarIconButton = ({
   barStyle = BAR_STYLES.default,
   className,

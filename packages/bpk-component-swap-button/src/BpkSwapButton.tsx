@@ -37,6 +37,8 @@ export type Props = {
   ariaLabel: string,
   swapButtonStyle?: SwapButtonStyle,
 }
+// A circular button used to swap two values, such as origin and destination in a search form.
+// It animates a 180-degree rotation on each click to provide visual feedback that the values have been swapped.
 const BpkSwapButton = ( props: Props ) => {
   const { ariaLabel, onClick, swapButtonStyle = SWAPBUTTON_STYLES.surfaceContrast } = props;
 

@@ -39,6 +39,8 @@ type Props = {
   type?: SectionType;
 };
 
+// A section heading block that combines a title, an optional description, and an optional action button.
+// Supports default and on-dark colour variants to suit different surface backgrounds.
 const BpkSectionHeader = ({
   button,
   description,

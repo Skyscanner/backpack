@@ -29,6 +29,8 @@ type ImageProps = {
   image: ReactNode;
   index: number;
 };
+// A single slide wrapper within a BpkCarouselContainer, rendering one image with its list-item role and index data attribute.
+// Forwards a ref to the underlying div so the parent container can measure scroll position.
 const BpkCarouselImage = forwardRef<HTMLDivElement, ImageProps>(({ image, index }, ref) => (
   <div
     className={getClassName('bpk-carousel-image')}

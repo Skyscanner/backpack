@@ -29,6 +29,8 @@ export type Props = {
   className?: string | null;
 };
 
+// BpkListItem renders a single `<li>` element styled to Backpack conventions for use
+// inside a BpkList component.
 const BpkListItem = ({ children, className = null }: Props) => {
   const classNames = getClassName('bpk-list__item', className);
 

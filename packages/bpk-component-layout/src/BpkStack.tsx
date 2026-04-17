@@ -31,6 +31,8 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// A stack layout primitive that arranges children along a single axis with consistent spacing.
+// Built on Chakra UI's Stack and supports Backpack spacing tokens.
 export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
@@ -50,6 +52,8 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundC
 
 BpkStack.displayName = 'BpkStack';
 
+// A horizontal stack layout primitive that arranges children in a row with consistent spacing.
+// Shorthand for BpkStack with horizontal direction.
 export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
@@ -69,6 +73,8 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ background
 
 BpkHStack.displayName = 'BpkHStack';
 
+// A vertical stack layout primitive that arranges children in a column with consistent spacing.
+// Shorthand for BpkStack with vertical direction.
 export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
   const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)

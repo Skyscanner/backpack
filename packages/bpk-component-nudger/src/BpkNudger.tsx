@@ -33,6 +33,8 @@ import STYLES from './BpkNudger.module.scss';
 const getClassName = cssModules(STYLES);
 const compareValues = (a: number, b: number): number => a - b;
 
+// A numeric stepper input that lets users increment or decrement a value using plus and minus buttons.
+// It supports configurable min/max bounds, step size, an optional label, and an icon for additional context.
 const BpkNudger = ({
   buttonType = 'secondary',
   className = null,

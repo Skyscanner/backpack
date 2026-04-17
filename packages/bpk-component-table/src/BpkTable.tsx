@@ -30,6 +30,7 @@ export interface BpkTableProps extends Omit<HTMLAttributes<HTMLTableElement>, 'c
   className?: string | null;
 }
 
+// Renders a styled `<table>` element with Backpack design system styling. Supports an alternate colour variant for use on contrasting backgrounds.
 const BpkTable = ({children, className = null, ...rest}: BpkTableProps) => {
 
   const classNames = getClassName('bpk-table', className);

@@ -34,21 +34,15 @@ import STYLES from './BpkCalendarGridHeader.module.scss';
 const getClassName = cssModules(STYLES);
 
 type Props = DefaultProps & {
-  /**
-   * An array of objects describing the days of the week
-   */
+  // An array of objects describing the days of the week
   daysOfWeek: DaysOfWeek;
-  /**
-   * First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
-   */
+  // First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 };
 
 type DefaultProps = {
   className?: string | null;
-  /**
-   * Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
-   */
+  // Key to be used to pick the desired weekDay format from the `daysOfWeek` object, for example: `nameAbbr` or `nameNarrow`.
   weekDayKey?: WeekDayKey;
 };
 
@@ -76,6 +70,8 @@ const WeekDayComponent = ({
   </Element>
 );
 
+// Renders the row of day-of-week column headers above a calendar grid.
+// Accepts a daysOfWeek array and a weekStartsOn value to produce correctly ordered, localised header cells.
 class BpkCalendarGridHeader extends PureComponent<Props> {
   static defaultProps = {
     className: null,

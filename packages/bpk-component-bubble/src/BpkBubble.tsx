@@ -28,6 +28,8 @@ export type Props = {
   children: string;
 };
 
+// A small speech-bubble callout component for surfacing short contextual text, such as a price or label.
+// Includes a decorative arrow and applies on-dark text styling.
 const BpkBubble = ({ children }: Props) => (
   <span className={getClassName('bpk-bubble')} {...getDataComponentAttribute('Bubble')}>
     <BpkText textStyle={TEXT_STYLES.label3} tagName="span" color={TEXT_COLORS.textOnDark}>

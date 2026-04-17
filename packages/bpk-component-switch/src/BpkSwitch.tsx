@@ -29,6 +29,8 @@ export type Props = {
   [rest: string]: any;
 };
 
+// A toggle switch control that wraps a checkbox input with a styled visual track and thumb.
+// It supports a small size variant and exposes an accessible aria-label for screen readers.
 const BpkSwitch = ({
   ariaLabel,
   className = null,

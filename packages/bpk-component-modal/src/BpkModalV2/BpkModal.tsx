@@ -117,6 +117,7 @@ const setPageProperties = ({ isDialogOpen }: DialogProps) => {
   }
 };
 
+// BpkModalV2 is a modal dialog built on the Ark UI Dialog primitive. It supports customisable width, full-screen mobile display, and optional close-on-scrim-click behaviour.
 export const BpkModalV2 = (props: Props) => {
   const {
     ariaLabelledby,

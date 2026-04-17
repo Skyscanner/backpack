@@ -24,12 +24,11 @@ import STYLES from './BpkChatThoughtBubble.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type BpkChatThoughtBubbleProps = {
-  /**
-   * The content to display in the thinking bubble.
-   */
+  // The content to display in the thinking bubble.
   content: string;
 };
 
+// Renders an animated thinking indicator within a chat interface, showing a series of pulsing dots to signal that a response is being generated.
 const BpkChatThoughtBubble = ({ content }: BpkChatThoughtBubbleProps) => (
     <div
       className={getClassName('bpk-chat-thought-bubble')}

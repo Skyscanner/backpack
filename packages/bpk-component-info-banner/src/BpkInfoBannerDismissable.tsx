@@ -27,6 +27,9 @@ export type Props = CommonProps & {
   onDismiss?: OnDismissHandler;
 };
 
+// BpkInfoBannerDismissable is an info banner variant that includes a close button so users
+// can permanently dismiss the message. It delegates to BpkInfoBannerInner with the
+// DISMISSABLE configuration.
 const BpkInfoBannerDismissable = ({ onDismiss = null, ...rest }: Props) => (
   <BpkInfoBannerInner
     configuration={CONFIGURATION.DISMISSABLE}

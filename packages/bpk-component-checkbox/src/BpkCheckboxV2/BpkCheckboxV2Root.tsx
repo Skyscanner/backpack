@@ -41,6 +41,8 @@ export type BpkCheckboxV2RootProps = {
   value?: string;
 };
 
+// BpkCheckboxV2Root is the root container for the BpkCheckboxV2 compound component, built on Ark UI's Checkbox.Root.
+// It manages checked state (controlled or uncontrolled), supports indeterminate, disabled, required, and invalid states, and renders a wrapping label element for accessibility.
 const BpkCheckboxV2Root = ({
   checked,
   children,

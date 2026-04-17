@@ -33,6 +33,8 @@ type Props = {
   header: ReactNode;
 };
 
+// A layout wrapper that combines a coloured header area with a card content area.
+// Passes an elevated=false context to its child BpkCard so the card renders without shadow when used inside the wrapper.
 const BpkCardWrapper = ({
   backgroundColor,
   card,

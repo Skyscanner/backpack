@@ -36,6 +36,7 @@ export interface BpkTableBodyProps
   type?: TableBodyType;
 }
 
+// Renders a styled `<tbody>` element for use inside a BpkTable.
 const BpkTableBody = ({
   children,
   className,

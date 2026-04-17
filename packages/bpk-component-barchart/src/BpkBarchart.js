@@ -99,6 +99,8 @@ type State = {
   height: number,
 };
 
+// A responsive SVG bar chart component that uses D3 scales to render data as a series of vertical bars.
+// Supports axes, grid lines, outlier clamping, interactive bar callbacks, and an accessible data table fallback.
 class BpkBarchart extends Component<Props, State> {
   xScale: typeof scaleBand;
 

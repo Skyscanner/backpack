@@ -41,6 +41,8 @@ type Props = {
   onClick: ?(event: SyntheticEvent<>) => void,
 };
 
+// Renders a single item within a BpkSectionListSection, optionally as a link or a clickable element.
+// Displays a chevron icon when the item is interactive, with RTL support.
 const BpkSectionListItem = (props: Props) => {
   const { blank, children, className, href, onClick, ...rest } = props;
   const classNames = [

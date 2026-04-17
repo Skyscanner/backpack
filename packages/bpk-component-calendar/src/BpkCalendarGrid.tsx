@@ -57,15 +57,11 @@ type DefaultProps = {
   minDate: Date;
   onDateClick: () => void;
   onDateKeyDown: () => void;
-  /**
-   * A function to format a human-readable month, for example: "January 2018":
-   * If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
-   */
+  // A function to format a human-readable month, for example: "January 2018":
+  // If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
   formatMonth: (month: Date) => string;
   preventKeyboardFocus: boolean;
-  /**
-   * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
-   */
+  // An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
   selectionConfiguration: SelectionConfiguration;
   ignoreOutsideDate: boolean;
   dateProps: {};
@@ -73,14 +69,10 @@ type DefaultProps = {
 
 export type Props = DefaultProps & {
   DateComponent: ElementType;
-  /**
-   * A function to format a full, human-readable date, for example: "Monday, 8th January 2018".
-   */
+  // A function to format a full, human-readable date, for example: "Monday, 8th January 2018".
   formatDateFull: (date: Date) => Date | string;
   month: Date;
-  /**
-   * First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
-   */
+  // First day of the week. 0 = Sunday, 1 = Monday, ..., 6 = Saturday.
   weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 };
 
@@ -93,9 +85,9 @@ export type DateProps = {
 type State = {
   calendarMonthWeeks: DateProps[][];
 };
-/*
-  BpkCalendarGrid - the grid representing a whole month
-*/
+
+// Renders a full calendar month as a grid of week rows.
+// Computes the calendar data for the given month and passes each week to BpkCalendarWeek for rendering.
 class BpkCalendarGrid extends Component<Props, State> {
   static defaultProps: DefaultProps = {
     className: null,

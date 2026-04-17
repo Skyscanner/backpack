@@ -44,6 +44,10 @@ export type Props = Omit<
   wrapperClassName?: string | null;
 };
 
+// Styled select dropdown component.
+// Renders a `<select>` element with support for validation states, docked
+// layouts, and an optional leading image. When an `image` is provided,
+// the select is wrapped in a container div.
 const BpkSelect = ({
   className = null,
   disabled = false,

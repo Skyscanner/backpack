@@ -22,6 +22,8 @@ import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkComparisonTrayItemPlaceholder renders an empty, visually hidden placeholder slot in the comparison tray.
+// It fills vacant positions in the tray when fewer than the maximum number of items are selected.
 function BpkComparisonTrayItemPlaceholder() {
   return (
     <div

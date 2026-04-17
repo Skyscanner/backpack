@@ -23,6 +23,8 @@ import BpkCheckboxV2Indicator from './BpkCheckboxV2Indicator';
 import BpkCheckboxV2Label from './BpkCheckboxV2Label';
 import BpkCheckboxV2Root from './BpkCheckboxV2Root';
 
+// BpkCheckboxV2 is a composable namespace for building accessible checkbox UIs using the Ark UI Checkbox primitive.
+// Compose Root, Control, Indicator, Label, Description, and HiddenInput sub-components to construct the desired checkbox layout.
 const BpkCheckboxV2 = {
   Root: BpkCheckboxV2Root,
   Control: BpkCheckboxV2Control,

@@ -33,6 +33,8 @@ type Props = {
   type: MarkerType;
 };
 
+// A price label marker used within the price-range component to indicate a price point on a scale.
+// It renders a styled bubble with a downward arrow whose appearance is determined by its marker type.
 const BpkPriceMarker = (
   { priceLabel, type }: Props,
   ref: ForwardedRef<HTMLDivElement>,

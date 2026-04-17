@@ -38,6 +38,10 @@ const getSpinnerType = (buttonType: ButtonType) => {
   }
 };
 
+// Backpack button component.
+// Renders a `<button>` by default, or an `<a>` when `href` is provided.
+// When `disabled` or `loading`, always renders as a `<button>` regardless
+// of `href`. Supports leading/trailing icons and a loading spinner.
 const BpkButton = ({
   blank = false,
   children,

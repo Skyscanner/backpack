@@ -44,6 +44,8 @@ export type Props = {
   children: ReactNode;
 };
 
+// Renders content that is visually hidden but remains accessible to screen readers and other assistive technologies.
+// The wrapping element tag can be customised to match the required semantic HTML structure.
 const BpkVisuallyHidden = ({
   as: Element = 'span',
   children,

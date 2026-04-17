@@ -43,6 +43,9 @@ export type BpkBackgroundImageProps = {
   imageStyle?: CSSProperties;
 };
 
+// BpkBackgroundImage renders an image as a CSS background within a container that
+// preserves the image's aspect ratio. It shows a spinner while the image is loading and
+// fades the image in once it has loaded.
 class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   trackImg?: HTMLImageElement | null;
 

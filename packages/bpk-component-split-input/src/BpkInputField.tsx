@@ -37,6 +37,8 @@ type DefaultProps = {
   [key: string]: any;
 }
 
+// A single character input field used as one cell within a BpkSplitInput component.
+// It automatically gains focus when its index is the active cell and visually labels itself for accessibility.
 class BpkInputField extends PureComponent<Props> {
   static defaultProps = {
     value: '',

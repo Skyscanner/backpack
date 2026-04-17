@@ -25,7 +25,9 @@ type Props = Partial<BpkCalendarDateProps> & {
   isOutside?: boolean;
   [rest: string]: any;
 };
-const BpkScrollableCalendarDate = ({isOutside = false, ...rest}: Props) => 
+// A calendar date cell for use within a scrollable calendar grid.
+// Renders a BpkCalendarDate for dates within the displayed month and returns null for dates outside it, keeping the grid focused on the current month.
+const BpkScrollableCalendarDate = ({isOutside = false, ...rest}: Props) =>
     // Returning null when isOutside is true ensures only focused month displays in grid
      !isOutside ? <BpkCalendarDate {...rest} /> : null
 

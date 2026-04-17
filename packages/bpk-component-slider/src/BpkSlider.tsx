@@ -61,6 +61,8 @@ export type Props = {
   [rest: string]: any;
 };
 
+// A range slider built on Radix UI that supports both single-thumb and dual-thumb (range) modes.
+// It handles RTL inversion, exposes onChange and onAfterChange callbacks, and forwards accessible labels to each thumb.
 const BpkSlider = ({
   ariaLabel,
   ariaValuetext,
@@ -276,15 +278,12 @@ const BubbleInput = forwardRef(
       return () => {};
     }, [thumbRef, ref, value]);
 
-    /**
-     * We purposefully do not use `type="hidden"` here otherwise forms that
-     * wrap it will not be able to access its value via the FormData API.
-     *
-     * We purposefully do not add the `value` attribute here to allow the value
-     * to be set programatically and bubble to any parent form `onChange` event.
-     * Adding the `value` will cause React to consider the programatic
-     * dispatch a duplicate and it will get swallowed.
-     */
+    // We purposefully do not use `type="hidden"` here otherwise forms that
+    // wrap it will not be able to access its value via the FormData API.
+    // We purposefully do not add the `value` attribute here to allow the value
+    // to be set programatically and bubble to any parent form `onChange` event.
+    // Adding the `value` will cause React to consider the programatic
+    // dispatch a duplicate and it will get swallowed.
     return (
       <input
         style={{ display: 'none' }}

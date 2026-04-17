@@ -31,6 +31,9 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// BpkCodeBlock renders a multi-line block of code inside a styled `<pre><code>` element.
+// It is intended for displaying larger code samples and supports an alternate colour scheme
+// for use on contrasting backgrounds.
 const BpkCodeBlock = ({
   alternate = false,
   children,

@@ -59,6 +59,8 @@ const buildMetaData = (schemaMetaData: SchemaMetaDataItem[]): string => {
   });
 };
 
+// A navigation breadcrumb component that renders an ordered list of links representing the current page hierarchy.
+// Optionally injects JSON-LD structured data for improved SEO via the schemaMetaData prop.
 class BpkBreadcrumb extends Component<Props> {
   metaData?: string;
 

@@ -38,6 +38,9 @@ type Props = {
   layout: CardLayout,
 };
 
+// BpkContentCard renders a single linked card containing an image, headline, and
+// description. It supports horizontal and vertical layout orientations and opens its
+// link in a new tab.
 const BpkContentCard = ({ card, layout }: Props) => (
   <a
     className={getClassName(

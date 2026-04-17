@@ -23,6 +23,7 @@ export interface BpkTableRowProps extends HTMLAttributes<HTMLTableRowElement> {
   children: ReactNode;
 }
 
+// Renders a styled `<tr>` element for use inside a BpkTableHead or BpkTableBody.
 const BpkTableRow = (props: BpkTableRowProps) => <tr {...props} />;
 
 export default BpkTableRow;

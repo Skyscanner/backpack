@@ -33,6 +33,8 @@ interface BpkTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   large?: boolean;
 }
 
+// A styled multi-line text input that extends the native textarea element.
+// It supports valid and invalid visual states, a large size variant, and passes all standard textarea attributes through to the underlying element.
 const BpkTextarea: FC<BpkTextareaProps> = ({
   className,
   large = false,

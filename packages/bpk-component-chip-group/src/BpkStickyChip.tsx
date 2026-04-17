@@ -34,6 +34,9 @@ import STYLES from './BpkStickyChip.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkStickyChip is a selectable chip that stays fixed at the leading edge of a horizontally
+// scrolling chip group. Its label fades out when the scroll container is not at the start,
+// providing a visual cue that more chips are available to the right.
 const BpkStickyChip = ({
   chipStyle,
   scrollContainerRef,

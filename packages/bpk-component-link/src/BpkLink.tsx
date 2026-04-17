@@ -31,12 +31,10 @@ import STYLES from './BpkLink.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-/**
- * Processes anchor-specific props and returns the transformed props.
- * Handles href, blank (target="_blank"), and rel attributes.
- * @param {Object} props - The props to process.
- * @returns {Object} The transformed anchor props.
- */
+// Processes anchor-specific props and returns the transformed props.
+// Handles href, blank (target="_blank"), and rel attributes.
+// @param {Object} props - The props to process.
+// @returns {Object} The transformed anchor props.
 const processAnchorProps = (
   props: Record<string, unknown>,
 ): Record<string, unknown> => {
@@ -50,12 +48,10 @@ const processAnchorProps = (
   };
 };
 
-/**
- * Processes button-specific props and returns the transformed props.
- * Ensures button has type="button" by default to prevent form submission.
- * @param {Object} props - The props to process.
- * @returns {Object} The transformed button props.
- */
+// Processes button-specific props and returns the transformed props.
+// Ensures button has type="button" by default to prevent form submission.
+// @param {Object} props - The props to process.
+// @returns {Object} The transformed button props.
 const processButtonProps = (
   props: Record<string, unknown>,
 ): Record<string, unknown> => ({
@@ -129,6 +125,9 @@ const BpkLinkInner = <E extends LinkAs = 'a'>(
   );
 };
 
+// BpkLink is a polymorphic link component that can render as an anchor, button, or any
+// custom element. It supports implicit (no underline) and alternate colour variants and
+// correctly handles anchor-specific props such as target and rel.
 // A polymorphic link component that can render as different HTML elements.
 const BpkLink = forwardRef(BpkLinkInner) as PolymorphicComponent;
 

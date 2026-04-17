@@ -76,6 +76,8 @@ type Props = {
   mapOptionStyles: ?Array<MapOptionStyle>,
 };
 
+// Renders a Google Maps instance using @react-google-maps/api with Backpack styling defaults.
+// Supports custom map options, markers, and overlays via children.
 const BpkMap = (props: Props) => {
   const {
     bounds,

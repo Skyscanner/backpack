@@ -33,6 +33,8 @@ import STYLES from './BpkInsetBannerSponsored.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkInsetBannerSponsored renders a sponsored inset banner with optional image, logo, title, subheadline, and call-to-action.
+// It supports on-light and on-dark variants and includes an ad-info bottom sheet triggered by the info icon.
 const BpkInsetBannerSponsored = ({
   accessibilityLabel,
   adInfoA11yLabel = '',

@@ -29,6 +29,8 @@ type BpkModalV3HeaderProps = {
   children: ReactNode;
 };
 
+// BpkModalV3Header is the header bar of the modal, applying type-specific layout classes based on the modal type from context.
+// Place BpkModalV3Title, BpkModalV3CloseTrigger, and other header elements inside it.
 const BpkModalV3Header = ({ children }: BpkModalV3HeaderProps) => {
   const type = useModalType();
   return (

@@ -86,6 +86,9 @@ type LoadingProps = {
   iconLoading?: ReactElement<any>,
 } & ButtonProps;
 
+// BpkLoadingButton is a BpkButton variant that switches to a spinner icon while an async
+// action is in progress. It supports leading or trailing icon positions and automatically
+// replaces the icon with the appropriate spinner when the loading prop is true.
 const BpkLoadingButton = (props: LoadingProps) => {
   const {
     children,

@@ -25,6 +25,8 @@ type Props = {
   children: Node,
 };
 
+// Top-level container for a section-based list, rendered as a semantic section element.
+// Intended to wrap one or more BpkSectionListSection components.
 const BpkSectionList = (props: Props) => {
   const { children, ...rest } = props;
 

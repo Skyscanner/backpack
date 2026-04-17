@@ -31,6 +31,8 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// A flexbox layout primitive that renders a flex container element.
+// Built on Chakra UI's Flex and supports Backpack spacing tokens, alignment, and direction props.
 export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
   ({ align, backgroundColor, basis, children, color, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, {

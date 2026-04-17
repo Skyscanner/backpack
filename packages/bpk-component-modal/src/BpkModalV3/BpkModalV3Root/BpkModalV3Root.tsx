@@ -34,6 +34,8 @@ type BpkModalV3RootProps = {
   type?: BpkModalV3Type;
 };
 
+// BpkModalV3Root is the state-management root of the modal, built on Ark UI's Dialog.Root.
+// It supports controlled and uncontrolled open state, locks the body scroll for chatbot-type modals, and provides the modal type to all child components via context.
 const BpkModalV3Root = ({
   children,
   onOpenChange,

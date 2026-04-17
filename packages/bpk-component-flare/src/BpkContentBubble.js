@@ -27,6 +27,8 @@ import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// Renders a styled content bubble with an optional flare pointer, rounded corners, and customisable content area.
+// Combines BpkFlareBar with a content wrapper and supports both plain and rounded visual variants.
   const BpkContentBubble = ({
     className = null,
     content = null,

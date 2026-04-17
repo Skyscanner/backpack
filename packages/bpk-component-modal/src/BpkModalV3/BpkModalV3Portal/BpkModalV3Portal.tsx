@@ -24,6 +24,8 @@ type BpkModalV3PortalProps = {
   children: ReactNode;
 };
 
+// BpkModalV3Portal renders its children into a portal outside the normal DOM hierarchy using Ark UI's Portal primitive.
+// Use it to wrap BpkModalV3Scrim and BpkModalV3Content so they are appended to the document body.
 const BpkModalV3Portal = ({ children }: BpkModalV3PortalProps) => (
   <Portal>{children}</Portal>
 );

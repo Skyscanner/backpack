@@ -46,15 +46,14 @@ export type Props = Partial<ModalDialogProps> & {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what
-   * the root element of your application is by returning its DOM node via this prop
-   * This is to "hide" your application from screen readers whilst the modal is open.
-   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
-   */
+  // Because this component uses a modal on mobile viewports, you need to let it know what
+  // the root element of your application is by returning its DOM node via this prop
+  // This is to "hide" your application from screen readers whilst the modal is open.
+  // The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
   getApplicationElement: () => HTMLElement | null;
 };
 
+// BpkModal renders an accessible modal dialog via a Portal with a scrim overlay. It adapts to mobile viewports on iPhone/iPad and supports an optional full-screen display mode.
 const BpkModal = ({
   accessoryView = null,
   className = null,
