@@ -200,6 +200,7 @@ const BpkBottomSheet = ({
             title={titleWithId}
             titleTextStyle={TEXT_STYLES.label1}
             titleTagName={hasTitle ? 'h2' : 'span'}
+            wrapTitle
             className={getClassName('bpk-bottom-sheet--header')}
             leadingButton={
               <BpkCloseButton label={closeLabel} onClick={handleClose} />
