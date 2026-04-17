@@ -18,19 +18,27 @@
 
 import figma from '@figma/code-connect';
 
-import BpkAccordion from './BpkAccordion';
+import BpkSegmentedControl, { SEGMENT_TYPES } from './BpkSegmentedControl';
 
 figma.connect(
-  BpkAccordion,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15011%3A6144',
+  BpkSegmentedControl,
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A36313',
   {
     props: {
-      children: figma.slot('List'),
+      type: figma.enum('Style', {
+        'Canvas Default': SEGMENT_TYPES.CanvasDefault,
+        'Canvas Contrast': SEGMENT_TYPES.CanvasContrast,
+        'Surface Default': SEGMENT_TYPES.SurfaceDefault,
+        'Surface Contrast': SEGMENT_TYPES.SurfaceContrast,
+      }),
     },
-    example: ({ children }) => (
-      <BpkAccordion>
-        {children}
-      </BpkAccordion>
+    example: ({ type }) => (
+      <BpkSegmentedControl
+        type={type}
+        buttonContents={['Option 1', 'Option 2', 'Option 3']}
+        selectedIndex={0}
+        onItemClick={() => {}}
+      />
     ),
   },
 );

@@ -18,12 +18,28 @@
 
 import figma from '@figma/code-connect';
 
-import BpkPanel from './BpkPanel';
+import BpkChatbotInput from './BpkChatbotInput';
 
 figma.connect(
-  BpkPanel,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49752',
+  BpkChatbotInput.Root,
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=14703%3A2902',
   {
-    example: () => <BpkPanel />,
+    props: {
+      placeholder: figma.textContent('Your message'),
+    },
+    example: ({ placeholder }) => (
+      <BpkChatbotInput.Root>
+        <BpkChatbotInput.Input
+          inputValue=""
+          placeholder={placeholder}
+          onInputChange={() => {}}
+          onInputFocus={() => {}}
+          onInputBlur={() => {}}
+          onSubmit={() => {}}
+          sendAriaLabel="Send message"
+          loadingAriaLabel="Sending message"
+        />
+      </BpkChatbotInput.Root>
+    ),
   },
 );

@@ -18,19 +18,23 @@
 
 import figma from '@figma/code-connect';
 
-import BpkAccordion from './BpkAccordion';
+import BpkAccordionItem from './BpkAccordionItem';
 
 figma.connect(
-  BpkAccordion,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15011%3A6144',
+  BpkAccordionItem,
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15011%3A6079',
   {
     props: {
-      children: figma.slot('List'),
+      title: figma.textContent('Title'),
+      textStyle: figma.enum('Size', {
+        'Heading 3': 'heading-3',
+        'Heading 5': 'heading-5',
+      }),
     },
-    example: ({ children }) => (
-      <BpkAccordion>
-        {children}
-      </BpkAccordion>
+    example: ({ textStyle, title }) => (
+      <BpkAccordionItem id="accordion-item" title={title} textStyle={textStyle}>
+        Content goes here
+      </BpkAccordionItem>
     ),
   },
 );
