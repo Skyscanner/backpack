@@ -19,8 +19,24 @@ Browse `packages/bpk-component-icon/lg/` (24×24) and `packages/bpk-component-ic
 
 ```typescript
 import ArrowUpIcon from '../../bpk-component-icon/lg/arrow-up';
+```
 
-// When the icon sits inside a button or next to text, wrap with withButtonAlignment
+### Icons inside `BpkButton`
+
+Use the `leadingIcon` or `trailingIcon` props — they handle alignment automatically via `inline-flex + gap`. Do **not** use `withButtonAlignment` inside a `BpkButton`.
+
+```tsx
+import BpkButton from '../../bpk-component-button';
+import SmallLightningIcon from '../../bpk-component-icon/sm/lightning';
+
+<BpkButton leadingIcon={<SmallLightningIcon />}>Submit</BpkButton>
+```
+
+### Icons next to text outside a button
+
+Wrap with `withButtonAlignment` when the icon sits inline with text but is **not** inside a `BpkButton`:
+
+```typescript
 import { withButtonAlignment } from '../../bpk-component-icon';
 const AlignedIcon = withButtonAlignment(ArrowUpIcon);
 ```

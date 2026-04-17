@@ -23,10 +23,10 @@ cat packages/bpk-component-{name}/index.ts
 | `<a>` | `BpkLink` | `import BpkLink from '../../bpk-component-link'` |
 | `<label>` | `BpkLabel` | `import BpkLabel from '../../bpk-component-label'` |
 | `<p>`, `<span>`, `<h1>`–`<h5>` | `BpkText` | `import BpkText, { TEXT_STYLES } from '../../bpk-component-text'` |
-| `<svg>` icon | BPK Icon | see `.claude/rules/bpk-icon-usage.md` |
+| `<svg>` icon | BPK Icon | see `.claude/guidelines/bpk-icon-usage.md` |
 | `<ul>` / `<ol>` + `<li>` | `BpkList` + `BpkListItem` | `import { BpkList, BpkListItem } from '../../bpk-component-list'` |
 | card / content surface | `BpkCard` | `import BpkCard from '../../bpk-component-card'` |
-| layout `<div>` | layout component | see `.claude/rules/bpk-layout-components.md` |
+| layout `<div>` | layout component | see `.claude/guidelines/bpk-layout-components.md` |
 
 After finding a candidate, read its `index.ts` to confirm the API before using it.
 
