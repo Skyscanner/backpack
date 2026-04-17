@@ -43,7 +43,54 @@ first draft is correct.
 | How to estimate and express confidence | [references/estimation-guidance.md](references/estimation-guidance.md) |
 | Final delivery pack template | [references/final-delivery-template.md](references/final-delivery-template.md) |
 
-## How to run
+## How to start (for engineers)
+
+### Invoke the skill
+
+Type `/backpack-adoption-planner` in Claude Code to start. Claude will ask for the two required inputs:
+1. The repo name or local path of the target microsite
+2. Your adoption goal
+
+**Minimal starting prompt:**
+```
+/backpack-adoption-planner
+```
+
+Claude will ask for what it needs. You do not need to prepare anything in advance.
+
+**Or, include the context upfront to skip the questions:**
+```
+/backpack-adoption-planner
+
+Repo: carhire-homepage
+Goal: Migrate all layout patterns on the homepage and results page to Backpack primitives.
+       Reach full Pure Backpack coverage on those two pages.
+```
+
+**If you have a specific page scope or known constraints, add them:**
+```
+/backpack-adoption-planner
+
+Repo: flights-web (local path: ~/workspace/flights-web)
+Goal: Reach 80% Pure Backpack coverage on the search results page.
+Pages in scope: /results only — not the homepage or booking flow.
+Known blocker: BpkCardV2 requires @skyscanner/backpack-web v44, currently on v43.
+```
+
+### What happens after you start
+
+1. Claude reads your repo and builds a Backpack component inventory.
+2. It presents a scope summary — correct anything that looks wrong.
+3. It scans the repo and shows all findings. You review and confirm.
+4. It validates scope, proposes a breakdown strategy, and builds epics and stories.
+5. After your final review, it delivers a plan document (inline or to Confluence).
+6. Optional: create Jira tickets from the plan.
+
+The whole workflow is gated — Claude stops at each key decision point and waits for your input before continuing.
+
+---
+
+## How to run (Claude execution reference)
 
 ### Step 1 — Collect inputs and build Backpack inventory
 

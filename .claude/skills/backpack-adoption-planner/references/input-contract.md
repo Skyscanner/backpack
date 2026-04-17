@@ -20,9 +20,6 @@ These improve plan quality if available. If not provided, proceed with documente
 |---|---|---|
 | Specific pages or routes in scope | Which pages or sections to include | Assume full repo scope |
 | Current Backpack version in use | Which version of `@skyscanner/backpack-web` is installed | Discover from target microsite's `package.json` in Stage 1 |
-| Team size | Number of engineers working on adoption | Assume 1–2 engineers |
-| Sprint cadence | Sprint length in weeks | Assume 2-week sprints |
-| Existing component inventory | Known list of custom components | Discover from repo scan |
 | Known blockers | Missing Backpack primitives, design gaps | Assume none until discovery |
 | Project-specific adoption rules | Engineer-defined overrides to the default Pure Backpack definition | Use default definition |
 | Previous adoption attempts | Prior work, removed patterns, or known dead ends | Ask the engineer directly — do not assume none. If prior attempts exist, read them before Stage 2 to avoid repeating known dead ends. |
@@ -50,7 +47,6 @@ Document the assumption, proceed, and make the assumption visible in outputs.
 
 Example assumption statement:
 ```
-ASSUMPTION: Team size assumed to be 1–2 engineers. If larger, estimates may compress.
 ASSUMPTION: No hard deadline. Sequencing prioritises foundation work first.
 ASSUMPTION: Using default Pure Backpack definition — no project-specific overrides provided.
 ASSUMPTION: No previous adoption attempts reported. If any exist, they were not provided.

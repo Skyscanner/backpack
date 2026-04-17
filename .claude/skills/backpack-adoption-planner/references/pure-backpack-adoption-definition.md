@@ -33,11 +33,7 @@ e.g. `tokens.bpk-spacing-sm() * 1.5` or `calc(var(--bpk-spacing-base) + 4px)`.
 Use layout primitive props (`gap`, `padding`) with standard Backpack spacing values instead.
 Pure layout calculations that do not involve Backpack tokens (e.g. `calc(100% - 1px)`) are acceptable.
 
-### 7. No Backpack version pinning or forked component imports
-Importing from a local fork or a pinned pre-release Backpack version to work around missing
-functionality is non-pure.
-
-### 8. No use of deprecated or superseded Backpack components
+### 7. No use of deprecated or superseded Backpack components
 Where a newer version of a component exists and is the recommended API (e.g. `BpkCardV2`
 supersedes `BpkCard`), use of the older version is an adoption target even if no CSS override
 is present. Classify as **Outdated**, not Non-pure, and record the migration target.
@@ -114,12 +110,12 @@ Engineer decision needed: apply project rule (borderline-pure) or default rule (
 
 ```tsx
 // Layout via primitives, no overrides, latest component version
-<BpkSectionLayout>
+<BpkProvider>
   <BpkStack gap={BpkSpacing.Md}>
     <BpkText tagName="h2" textStyle={TEXT_STYLES.heading3}>Title</BpkText>
     <BpkButton onClick={handleClick}>Book</BpkButton>
   </BpkStack>
-</BpkSectionLayout>
+</BpkProvider>
 ```
 
 ```scss
