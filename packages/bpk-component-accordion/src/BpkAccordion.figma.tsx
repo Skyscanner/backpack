@@ -25,7 +25,7 @@ figma.connect(
   'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15011%3A6144',
   {
     props: {
-      children: figma.children('List'),
+      children: figma.slot('List'),
     },
     example: ({ children }) => (
       <BpkAccordion>
