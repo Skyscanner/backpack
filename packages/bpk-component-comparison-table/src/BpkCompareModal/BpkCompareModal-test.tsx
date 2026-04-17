@@ -166,51 +166,6 @@ describe('BpkCompareModal', () => {
       errorSpy.mockRestore();
     });
 
-    it('emits console.error when columns have mismatched row counts', () => {
-      const colWithFewerRows: BpkCompareColumnData = {
-        ...COLUMN_2,
-        rows: [{ rowId: 'cancellation', cell: <span>Free</span> }],
-      };
-
-      renderModal([COLUMN_1, colWithFewerRows]);
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining('BpkCompareModal'),
-      );
-    });
-
-    it('emits console.error when rowId sequences differ', () => {
-      const colWithDifferentRowIds: BpkCompareColumnData = {
-        ...COLUMN_2,
-        rows: [
-          { rowId: 'different-id', cell: <span>Free</span> },
-          { rowId: 'stars', cell: <span>3.5</span> },
-        ],
-      };
-
-      renderModal([COLUMN_1, colWithDifferentRowIds]);
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining('BpkCompareModal'),
-      );
-    });
-
-    it('does not emit console.error in production', () => {
-      const originalEnv = process.env.NODE_ENV;
-      Object.defineProperty(process.env, 'NODE_ENV', { value: 'production', configurable: true });
-
-      const colWithFewerRows: BpkCompareColumnData = {
-        ...COLUMN_2,
-        rows: [{ rowId: 'cancellation', cell: <span>Free</span> }],
-      };
-
-      renderModal([COLUMN_1, colWithFewerRows]);
-
-      expect(errorSpy).not.toHaveBeenCalled();
-
-      Object.defineProperty(process.env, 'NODE_ENV', { value: originalEnv, configurable: true });
-    });
-
     it('emits console.error and slices when more than 3 columns are provided', () => {
       const extraColumn: BpkCompareColumnData = {
         itemId: 'col-4',

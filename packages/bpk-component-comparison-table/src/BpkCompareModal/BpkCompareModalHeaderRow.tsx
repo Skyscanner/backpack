@@ -22,8 +22,8 @@ import {
   BpkTableRow,
 } from '../../../bpk-component-table';
 
+import BpkCompareModalColumnHeader from './BpkCompareModalColumnHeader';
 import BpkCompareModalColumnPlaceholder from './BpkCompareModalColumnPlaceholder';
-import BpkCompareModalItemHeader from './BpkCompareModalItemHeader';
 
 import type {
   BpkCompareModalTranslations,
@@ -52,11 +52,10 @@ function BpkCompareModalHeaderRow({
       <BpkTableRow>
         {displayColumns.map((column, index) => (
           <BpkTableHeadCell
-             
             key={column ? column.itemId : `placeholder-${index}`}
           >
             {column ? (
-              <BpkCompareModalItemHeader
+              <BpkCompareModalColumnHeader
                 header={column.header}
                 imageSrc={column.imageSrc}
                 imageAlt={column.imageAlt}

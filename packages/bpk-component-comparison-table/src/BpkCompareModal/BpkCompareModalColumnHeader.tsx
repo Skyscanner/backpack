@@ -24,7 +24,7 @@ import type { BpkCompareColumnData } from './common-types';
 
 import STYLES from './BpkCompareModal.module.scss';
 
-type BpkCompareModalItemHeaderProps = Pick<
+type BpkCompareModalColumnHeaderProps = Pick<
   BpkCompareColumnData,
   'imageSrc' | 'imageAlt' | 'header' | 'itemId' | 'bestTag' | 'removeA11yLabel'
 > & {
@@ -36,7 +36,7 @@ type BpkCompareModalItemHeaderProps = Pick<
 
 const getClassName = cssModules(STYLES);
 
-function BpkCompareModalItemHeader({
+function BpkCompareModalColumnHeader({
   bestTag = false,
   bestTagLabel,
   fadedRatio = 0,
@@ -47,7 +47,7 @@ function BpkCompareModalItemHeader({
   onRemove,
   removeA11yLabel,
   removeLabel,
-}: BpkCompareModalItemHeaderProps) {
+}: BpkCompareModalColumnHeaderProps) {
   const contentOpacity = 1 - fadedRatio;
   const visibleRatio = 1 - fadedRatio;
   // Snap space closed only once the element is already invisible (fadedRatio === 1).
@@ -97,4 +97,4 @@ function BpkCompareModalItemHeader({
   );
 }
 
-export default BpkCompareModalItemHeader;
+export default BpkCompareModalColumnHeader;
