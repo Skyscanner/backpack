@@ -70,7 +70,12 @@ figma.connect(
     example: () => (
       <BpkAiBlurb.Root>
         <BpkAiBlurb.Header title="Summarized by AI" />
-        <BpkAiBlurb.Summary state="error" errorText="Something went wrong" />
+        <BpkAiBlurb.Summary
+          state="error"
+          errorText="Something went wrong"
+          errorLinkText="Try again"
+          errorLinkHref="#"
+        />
       </BpkAiBlurb.Root>
     ),
   },
