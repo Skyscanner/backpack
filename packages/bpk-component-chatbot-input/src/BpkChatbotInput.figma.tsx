@@ -30,11 +30,14 @@ figma.connect(
     example: ({ placeholder }) => (
       <BpkChatbotInput.Root>
         <BpkChatbotInput.Input
-          id="chatbot-input"
-          name="chatbot-input"
+          inputValue=""
           placeholder={placeholder}
-          onChange={() => {}}
+          onInputChange={() => {}}
+          onInputFocus={() => {}}
+          onInputBlur={() => {}}
           onSubmit={() => {}}
+          sendAriaLabel="Send message"
+          loadingAriaLabel="Sending message"
         />
       </BpkChatbotInput.Root>
     ),
