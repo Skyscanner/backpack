@@ -10,8 +10,9 @@ A component or section qualifies as **Pure Backpack** when it meets ALL of the f
 
 ### 1. No raw HTML layout elements
 All layout structure is handled by Backpack layout primitives (e.g. `BpkBox`, `BpkStack`, `BpkGrid`,
-`BpkSectionLayout`). Raw `<div>`, `<section>`, `<main>` used only for semantic HTML purposes, not
-for layout wiring.
+`BpkSectionLayout`). Unstyled semantic HTML elements such as `<main>`, `<section>`, and `<article>`
+may be used for document structure, but raw `<div>` wrappers are considered layout wiring unless
+there is a clearly non-layout reason for them.
 
 ### 2. No CSS overrides of Backpack component styles
 No CSS rules that target internal Backpack class names (e.g. `.bpk-button`, `.bpk-card__header`).

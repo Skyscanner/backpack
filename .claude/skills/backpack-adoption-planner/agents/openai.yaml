@@ -1,5 +1,5 @@
 name: backpack-adoption-planner
-version: 1.0.0
+version: 2.0.0
 description: >
   Interactive planning workflow for Backpack design system adoption in a microsite
   or product repo. Guides engineers from zero to a Jira-ready planning pack via

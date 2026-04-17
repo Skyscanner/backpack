@@ -22,7 +22,7 @@ These improve plan quality if available. If not provided, proceed with documente
 | Current Backpack version in use | Which version of `@skyscanner/backpack-web` is installed | Discover from target microsite's `package.json` in Stage 1 |
 | Known blockers | Missing Backpack primitives, design gaps | Assume none until discovery |
 | Project-specific adoption rules | Engineer-defined overrides to the default Pure Backpack definition | Use default definition |
-| Previous adoption attempts | Prior work, removed patterns, or known dead ends | Ask the engineer directly — do not assume none. If prior attempts exist, read them before Stage 2 to avoid repeating known dead ends. |
+| Previous adoption attempts | Prior work, removed patterns, or known dead ends | Assume none reported. Ask explicitly before Stage 2 — do not skip this question. If attempts exist, read them before Stage 2 to avoid repeating known dead ends. |
 | Hard deadline or target quarter | Delivery constraint | Assume no deadline |
 | Jira project key | For generating Jira-ready output in Stage 9 | Ask at Decision Gate 7 (before Stage 9 begins) |
 

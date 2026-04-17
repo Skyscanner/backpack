@@ -2,7 +2,7 @@
 
 ## Overview
 
-9 stages. Each stage has a clear purpose, defined outputs, and a review gate where applicable.
+8 stages (+ optional Stage 9 for Jira ticket creation). Each stage has a clear purpose, defined outputs, and a review gate where applicable.
 Never auto-advance past a hard review gate. Gate 1 is a soft gate — present and continue.
 
 ---
@@ -268,6 +268,7 @@ Apply corrections using the Minor/Major split:
 
 **Outputs:**
 - Consolidated planning draft (all artifacts assembled)
+- Finding records completeness check (all epic fields back-filled, no required section missing)
 
 **No review gate** — assembly step only. Proceed directly to Stage 8.
 
