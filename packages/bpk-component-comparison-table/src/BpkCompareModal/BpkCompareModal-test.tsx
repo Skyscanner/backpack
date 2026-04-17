@@ -25,8 +25,6 @@ import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCompareModal from './BpkCompareModal';
 
-import type { BpkCompareColumnData } from './common-types';
-
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
@@ -43,31 +41,9 @@ beforeAll(() => {
 const noop = () => {};
 
 const BASE_ROWS = [
-  { rowId: 'cancellation', cell: <span>Free cancellation</span> },
-  { rowId: 'stars', cell: <span>3.5 stars</span> },
+  <span key="cancellation">Free cancellation</span>,
+  <span key="stars">3.5 stars</span>,
 ];
-
-const COLUMN_1: BpkCompareColumnData = {
-  itemId: 'col-1',
-  header: <div>Column 1 header</div>,
-  rows: BASE_ROWS,
-  removeA11yLabel: 'Remove column 1',
-  bestTag: true,
-};
-
-const COLUMN_2: BpkCompareColumnData = {
-  itemId: 'col-2',
-  header: <div>Column 2 header</div>,
-  rows: BASE_ROWS,
-  removeA11yLabel: 'Remove column 2',
-};
-
-const COLUMN_3: BpkCompareColumnData = {
-  itemId: 'col-3',
-  header: <div>Column 3 header</div>,
-  rows: BASE_ROWS,
-  removeA11yLabel: 'Remove column 3',
-};
 
 const TRANSLATIONS = {
   closeLabel: 'Close',
@@ -77,16 +53,64 @@ const TRANSLATIONS = {
   addMoreLinkText: 'Add more',
 };
 
-const renderModal = (columns: BpkCompareColumnData[], overrides: { onRemove?: (id: string) => void; onAddMoreClick?: () => void } = {}) =>
+type ColumnDef = {
+  itemId: string;
+  header: ReactElement;
+  rows: ReactElement[];
+  removeA11yLabel: string;
+  bestTag?: boolean;
+  onRemove?: () => void;
+};
+
+const COLUMN_1: ColumnDef = {
+  itemId: 'col-1',
+  header: <div>Column 1 header</div>,
+  rows: BASE_ROWS,
+  removeA11yLabel: 'Remove column 1',
+  bestTag: true,
+};
+
+const COLUMN_2: ColumnDef = {
+  itemId: 'col-2',
+  header: <div>Column 2 header</div>,
+  rows: BASE_ROWS,
+  removeA11yLabel: 'Remove column 2',
+};
+
+const COLUMN_3: ColumnDef = {
+  itemId: 'col-3',
+  header: <div>Column 3 header</div>,
+  rows: BASE_ROWS,
+  removeA11yLabel: 'Remove column 3',
+};
+
+const renderModal = (
+  columns: ColumnDef[],
+  overrides: { onAddMoreClick?: () => void } = {},
+) =>
   renderWithProvider(
     <BpkCompareModal.Root isOpen onClose={noop}>
       <BpkCompareModal.Header translations={TRANSLATIONS} />
       <BpkCompareModal.Content
-        columns={columns}
-        onRemove={overrides.onRemove ?? noop}
         onAddMoreClick={overrides.onAddMoreClick ?? noop}
         translations={TRANSLATIONS}
-      />
+      >
+        {columns.map((column) => (
+          <BpkCompareModal.Column
+            key={column.itemId}
+            itemId={column.itemId}
+            onRemove={column.onRemove ?? noop}
+            removeA11yLabel={column.removeA11yLabel}
+          >
+            <BpkCompareModal.ColumnHeader
+              bestTag={column.bestTag}
+            >
+              {column.header}
+            </BpkCompareModal.ColumnHeader>
+            <BpkCompareModal.Rows rows={column.rows} />
+          </BpkCompareModal.Column>
+        ))}
+      </BpkCompareModal.Content>
     </BpkCompareModal.Root>,
   );
 
@@ -117,16 +141,30 @@ describe('BpkCompareModal', () => {
     });
   });
 
+  describe('row rendering', () => {
+    it('renders row cells in the table body', () => {
+      renderModal([COLUMN_1]);
+
+      expect(screen.getByText('Free cancellation')).toBeInTheDocument();
+      expect(screen.getByText('3.5 stars')).toBeInTheDocument();
+    });
+  });
+
   describe('onRemove callback', () => {
-    it('fires onRemove with the correct itemId when Remove is clicked', () => {
-      const onRemove = jest.fn();
-      renderModal([COLUMN_1, COLUMN_2], { onRemove });
+    it('fires onRemove when Remove is clicked for the correct column', () => {
+      const onRemoveCol1 = jest.fn();
+      const onRemoveCol2 = jest.fn();
+
+      renderModal([
+        { ...COLUMN_1, onRemove: onRemoveCol1 },
+        { ...COLUMN_2, onRemove: onRemoveCol2 },
+      ]);
 
       fireEvent.click(screen.getByLabelText('Remove column 1'));
-      expect(onRemove).toHaveBeenCalledWith('col-1');
+      expect(onRemoveCol1).toHaveBeenCalledTimes(1);
 
       fireEvent.click(screen.getByLabelText('Remove column 2'));
-      expect(onRemove).toHaveBeenCalledWith('col-2');
+      expect(onRemoveCol2).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -155,7 +193,7 @@ describe('BpkCompareModal', () => {
     });
   });
 
-  describe('row alignment validation', () => {
+  describe('max columns validation', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     beforeEach(() => {
@@ -166,60 +204,13 @@ describe('BpkCompareModal', () => {
       errorSpy.mockRestore();
     });
 
-    it('emits console.error when columns have mismatched row counts', () => {
-      const colWithFewerRows: BpkCompareColumnData = {
-        ...COLUMN_2,
-        rows: [{ rowId: 'cancellation', cell: <span>Free</span> }],
-      };
-
-      renderModal([COLUMN_1, colWithFewerRows]);
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining('BpkCompareModal'),
-      );
-    });
-
-    it('emits console.error when rowId sequences differ', () => {
-      const colWithDifferentRowIds: BpkCompareColumnData = {
-        ...COLUMN_2,
-        rows: [
-          { rowId: 'different-id', cell: <span>Free</span> },
-          { rowId: 'stars', cell: <span>3.5</span> },
-        ],
-      };
-
-      renderModal([COLUMN_1, colWithDifferentRowIds]);
-
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining('BpkCompareModal'),
-      );
-    });
-
-    it('does not emit console.error in production', () => {
-      const originalEnv = process.env.NODE_ENV;
-      Object.defineProperty(process.env, 'NODE_ENV', { value: 'production', configurable: true });
-
-      const colWithFewerRows: BpkCompareColumnData = {
-        ...COLUMN_2,
-        rows: [{ rowId: 'cancellation', cell: <span>Free</span> }],
-      };
-
-      renderModal([COLUMN_1, colWithFewerRows]);
-
-      expect(errorSpy).not.toHaveBeenCalled();
-
-      Object.defineProperty(process.env, 'NODE_ENV', { value: originalEnv, configurable: true });
-    });
-
     it('emits console.error and slices when more than 3 columns are provided', () => {
-      const extraColumn: BpkCompareColumnData = {
-        itemId: 'col-4',
-        header: <div>Extra column</div>,
-        rows: BASE_ROWS,
-        removeA11yLabel: 'Remove extra',
-      };
-
-      renderModal([COLUMN_1, COLUMN_2, COLUMN_3, extraColumn]);
+      renderModal([
+        COLUMN_1,
+        COLUMN_2,
+        COLUMN_3,
+        { itemId: 'col-4', header: <div>Extra column</div>, rows: BASE_ROWS, removeA11yLabel: 'Remove extra' },
+      ]);
 
       expect(errorSpy).toHaveBeenCalledWith(
         expect.stringContaining('maximum is 3'),
@@ -240,12 +231,18 @@ describe('BpkCompareModal', () => {
       renderWithProvider(
         <BpkCompareModal.Root isOpen onClose={onClose}>
           <BpkCompareModal.Header translations={TRANSLATIONS} />
-          <BpkCompareModal.Content
-            columns={[COLUMN_1]}
-            onRemove={noop}
-            onAddMoreClick={noop}
-            translations={TRANSLATIONS}
-          />
+          <BpkCompareModal.Content onAddMoreClick={noop} translations={TRANSLATIONS}>
+            <BpkCompareModal.Column
+              itemId="col-1"
+              onRemove={noop}
+              removeA11yLabel="Remove column 1"
+            >
+              <BpkCompareModal.ColumnHeader>
+              <div>Column 1 header</div>
+            </BpkCompareModal.ColumnHeader>
+              <BpkCompareModal.Rows rows={BASE_ROWS} />
+            </BpkCompareModal.Column>
+          </BpkCompareModal.Content>
         </BpkCompareModal.Root>,
       );
 

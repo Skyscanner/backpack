@@ -27,9 +27,12 @@ export type {
 } from './src/BpkComparisonTray/common-types';
 
 export type {
-  BpkCompareRow,
-  BpkCompareColumnData,
   BpkCompareModalRootProps,
+  BpkCompareModalHeaderProps,
+  BpkCompareModalContentProps,
+  BpkCompareModalColumnProps,
+  BpkCompareModalColumnHeaderProps,
+  BpkCompareModalRowsProps,
   BpkCompareModalTranslations,
   BpkCompareModalNamespace,
 } from './src/BpkCompareModal/common-types';

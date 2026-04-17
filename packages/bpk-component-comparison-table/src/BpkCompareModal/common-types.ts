@@ -18,32 +18,6 @@
 
 import type { ReactNode } from 'react';
 
-/** A single row entry within a comparison column. */
-export type BpkCompareRow = {
-  /** Stable unique identifier used to align rows across columns. */
-  rowId: string;
-  /** Cell content — consumer-controlled ReactNode. */
-  cell: ReactNode;
-};
-
-/** Data for one filled comparison column. */
-export type BpkCompareColumnData = {
-  /** Stable unique identifier used for removal callbacks. */
-  itemId: string;
-  /** When true, renders a BpkBadge type=brand overlaying the top-left of the image area. */
-  bestTag?: boolean;
-  /** Image src for the header image area. */
-  imageSrc?: string;
-  /** Alt text for the header image. */
-  imageAlt?: string;
-  /** Consumer-owned slot rendered below the image area (name, description, price, CTA...). */
-  header: ReactNode;
-  /** Row data — must match rowId sequences across all columns. */
-  rows: BpkCompareRow[];
-  /** Accessible label for the Remove button (e.g. "Remove rentalcars.com deal"). */
-  removeA11yLabel: string;
-};
-
 /** All strings required by BpkCompareModal. */
 export type BpkCompareModalTranslations = {
   /** Accessible label for the modal close button. */
@@ -79,13 +53,48 @@ export type BpkCompareModalHeaderProps = {
 
 /** Props for BpkCompareModal.Content — modal body with the comparison table. */
 export type BpkCompareModalContentProps = {
-  /** 1–3 filled columns. Component pads to 3 with placeholder cells automatically. */
-  columns: BpkCompareColumnData[];
-  /** Called when a Remove button is clicked, with the column's itemId. */
-  onRemove: (itemId: string) => void;
+  /** 1–3 BpkCompareModal.Column sub-components. Component pads to 3 with placeholder cells automatically. */
+  children: ReactNode;
   /** Called when the Add more link in a placeholder column is clicked. */
   onAddMoreClick: () => void;
   translations: BpkCompareModalTranslations;
+};
+
+/**
+ * Props for BpkCompareModal.Column — container for one comparison item.
+ * Holds BpkCompareModal.ColumnHeader and BpkCompareModal.Rows as children.
+ * Returns null — Content introspects its children to build the table structure.
+ */
+export type BpkCompareModalColumnProps = {
+  /** Stable unique identifier for this column. */
+  itemId: string;
+  /** Called when the Remove button for this column is clicked. */
+  onRemove: () => void;
+  /** Accessible label for the Remove button (e.g. "Remove rentalcars.com deal"). */
+  removeA11yLabel: string;
+  /** BpkCompareModal.ColumnHeader and BpkCompareModal.Rows. */
+  children: ReactNode;
+};
+
+/** Props for BpkCompareModal.ColumnHeader — visual header for one comparison column. */
+export type BpkCompareModalColumnHeaderProps = {
+  /** Consumer-owned content rendered below the image (name, description, price, CTA...). */
+  children?: ReactNode;
+  /** Image src for the header image area. */
+  imageSrc?: string;
+  /** Alt text for the header image. */
+  imageAlt?: string;
+  /** When true, renders a BpkBadge type=brand overlaying the image. */
+  bestTag?: boolean;
+};
+
+/** Props for BpkCompareModal.Rows — cell data for one comparison column. */
+export type BpkCompareModalRowsProps = {
+  /**
+   * Array of cell content in display order. Must have the same length across all columns.
+   * BpkTable handles visual row alignment natively — positional order is what matters.
+   */
+  rows: ReactNode[];
 };
 
 /** Namespace type covering all BpkCompareModal subcomponents. */
@@ -93,4 +102,7 @@ export type BpkCompareModalNamespace = {
   Root: (props: BpkCompareModalRootProps) => ReactNode;
   Header: (props: BpkCompareModalHeaderProps) => ReactNode;
   Content: (props: BpkCompareModalContentProps) => ReactNode;
+  Column: (props: BpkCompareModalColumnProps) => ReactNode;
+  ColumnHeader: (props: BpkCompareModalColumnHeaderProps) => ReactNode;
+  Rows: (props: BpkCompareModalRowsProps) => ReactNode;
 };

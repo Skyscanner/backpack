@@ -20,42 +20,41 @@ import BpkBadge, { BADGE_TYPES } from '../../../bpk-component-badge';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { BpkCompareColumnData } from './common-types';
+import { useCompareModalColumn, useCompareModalContent } from './BpkCompareModalContext';
+
+import type { BpkCompareModalColumnHeaderProps } from './common-types';
 
 import STYLES from './BpkCompareModal.module.scss';
 
-type BpkCompareModalItemHeaderProps = Pick<
-  BpkCompareColumnData,
-  'imageSrc' | 'imageAlt' | 'header' | 'itemId' | 'bestTag' | 'removeA11yLabel'
-> & {
-  removeLabel: string;
-  bestTagLabel: string;
-  onRemove: (itemId: string) => void;
-  fadedRatio?: number;
-};
-
 const getClassName = cssModules(STYLES);
 
-function BpkCompareModalItemHeader({
+// Must match SCSS: bpk-compare-modal__header-image-area height (5.1875rem) and bpk-spacing-base (1rem).
+// Re-exported so BpkCompareModalContent can use the height as its scroll fade threshold.
+export const IMAGE_AREA_HEIGHT_PX = 83;
+export const IMAGE_AREA_MARGIN_PX = 16;
+
+/**
+ * BpkCompareModalColumnHeader — visual header for one comparison column:
+ * image area, bestTag badge, consumer header slot, and remove button.
+ *
+ * Consumer props: children, imageSrc, imageAlt, bestTag.
+ * Rendering props (fadedRatio, removeLabel, bestTagLabel, onRemove, removeA11yLabel)
+ * are read from context — set up automatically by Content and Column.
+ *
+ * @returns {JSX.Element} The column header visual.
+ */
+function BpkCompareModalColumnHeader({
   bestTag = false,
-  bestTagLabel,
-  fadedRatio = 0,
-  header,
+  children,
   imageAlt = '',
   imageSrc,
-  itemId,
-  onRemove,
-  removeA11yLabel,
-  removeLabel,
-}: BpkCompareModalItemHeaderProps) {
+}: BpkCompareModalColumnHeaderProps) {
+  const { bestTagLabel, fadedRatio, removeLabel } = useCompareModalContent();
+  const { onRemove, removeA11yLabel } = useCompareModalColumn();
+
   const contentOpacity = 1 - fadedRatio;
   const visibleRatio = 1 - fadedRatio;
-  // Snap space closed only once the element is already invisible (fadedRatio === 1).
-  // The snap is not visible because opacity is already 0 at that point.
   const isHidden = fadedRatio >= 1;
-  // Image area dimensions — must match the SCSS values so the inline shrink is pixel-perfect.
-  const IMAGE_HEIGHT_PX = 83;       // bpk-compare-modal__header-image-area height (5.1875rem)
-  const IMAGE_MARGIN_PX = 16;       // bpk-spacing-base = 1rem
 
   return (
     <div className={getClassName('bpk-compare-modal__header-content')}>
@@ -63,8 +62,8 @@ function BpkCompareModalItemHeader({
         className={getClassName('bpk-compare-modal__header-image-area')}
         style={{
           opacity: contentOpacity,
-          height: `${IMAGE_HEIGHT_PX * visibleRatio}px`,
-          marginBottom: `${IMAGE_MARGIN_PX * visibleRatio}px`,
+          height: `${IMAGE_AREA_HEIGHT_PX * visibleRatio}px`,
+          marginBottom: `${IMAGE_AREA_MARGIN_PX * visibleRatio}px`,
         }}
       >
         {imageSrc && <img src={imageSrc} alt={imageAlt} />}
@@ -75,7 +74,7 @@ function BpkCompareModalItemHeader({
         )}
       </div>
 
-      {header}
+      {children}
 
       <div
         className={getClassName(
@@ -87,7 +86,7 @@ function BpkCompareModalItemHeader({
         <BpkButton
           type={BUTTON_TYPES.link}
           size={SIZE_TYPES.small}
-          onClick={() => onRemove(itemId)}
+          onClick={onRemove}
           aria-label={removeA11yLabel}
         >
           {removeLabel}
@@ -97,4 +96,4 @@ function BpkCompareModalItemHeader({
   );
 }
 
-export default BpkCompareModalItemHeader;
+export default BpkCompareModalColumnHeader;

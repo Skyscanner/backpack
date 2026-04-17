@@ -6,27 +6,35 @@ A modal-based table component for comparing up to 3 items side by side. The cons
 
 ```tsx
 import BpkCompareModal from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareModalColumnProps, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
 
-- **Manage the columns array.** The table is stateless — it renders whatever you pass to `columns`.
-- **Cap the array at 3 columns.** If you pass more than 3, only the first 3 are rendered.
-- **Ensure rowId sequences match across all columns.** Every column must declare the same `rowId` values in the same order. `rowId` is the shared key that aligns rows across columns — think of it as the row label (e.g. `'cancellation'`, `'rating'`). A console error is logged in development when mismatches are detected.
+- **Map your data to `BpkCompareModal.Column` sub-components.** The table is stateless — it renders whatever columns you pass inside `BpkCompareModal.Content`.
+- **Cap at 3 columns.** If you pass more than 3, only the first 3 are rendered.
+- **Keep row arrays the same length across all columns.** Rows are aligned positionally — index 0 in every column lands in the same table row. BpkTable handles visual alignment natively.
 - **Control open/close state.** Pass `isOpen` and call `setIsOpen(false)` inside `onClose`.
-- **Handle removal.** When `onRemove(itemId)` fires, remove that item from your columns array. If fewer than 2 items remain you should also close the modal.
+- **Handle removal per column.** Pass an `onRemove` callback to each `BpkCompareModal.Column`. If fewer than 2 items remain you should also close the modal.
 - **Compose BpkAiBlurb when needed.** Pass a `BpkAiBlurb.Root` as children of `BpkCompareModal.Header`. The component does not render AI content automatically — you own the composition.
+
+## What the component owns
+
+- Table layout and row alignment across columns
+- Scroll detection and column header fade animation
+- Remove button rendering and visibility
+- Placeholder columns (auto-padded to 3)
+- bestTag badge rendering
 
 ## Example
 
 ```tsx
 import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
 import BpkCompareModal from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 
 const [isOpen, setIsOpen] = useState(false);
-const [columns, setColumns] = useState<BpkCompareColumnData[]>([
+const [items, setItems] = useState([
   {
     itemId: 'deal-1',
     bestTag: true,
@@ -34,8 +42,8 @@ const [columns, setColumns] = useState<BpkCompareColumnData[]>([
     imageAlt: 'Citroen C1',
     header: <MyHeader name="rentalcars.com" price="£71" />,
     rows: [
-      { rowId: 'cancellation', cell: <span>Free cancellation</span> },
-      { rowId: 'rating', cell: <span>4.5 — Excellent</span> },
+      <span key="cancellation">Free cancellation</span>,
+      <span key="rating">4.5 — Excellent</span>,
     ],
     removeA11yLabel: 'Remove rentalcars.com deal',
   },
@@ -45,20 +53,20 @@ const [columns, setColumns] = useState<BpkCompareColumnData[]>([
     imageAlt: 'Citroen C1',
     header: <MyHeader name="Hertz" price="£85" />,
     rows: [
-      { rowId: 'cancellation', cell: <span>No free cancellation</span> },
-      { rowId: 'rating', cell: <span>3.8 — Good</span> },
+      <span key="cancellation">No free cancellation</span>,
+      <span key="rating">3.8 — Good</span>,
     ],
     removeA11yLabel: 'Remove Hertz deal',
   },
 ]);
 
 const handleRemove = (itemId: string) => {
-  const remaining = columns.filter((col) => col.itemId !== itemId);
-  setColumns(remaining);
+  const remaining = items.filter((item) => item.itemId !== itemId);
+  setItems(remaining);
   if (remaining.length < 2) setIsOpen(false);
 };
 
-const translations = {
+const translations: BpkCompareModalTranslations = {
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
@@ -67,10 +75,7 @@ const translations = {
 };
 
 <BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-  <BpkCompareModal.Header
-    title="Compare cars"
-    translations={translations}
-  >
+  <BpkCompareModal.Header title="Compare cars" translations={translations}>
     <BpkAiBlurb.Root>
       <BpkAiBlurb.Header title="Summarized by AI" />
       <BpkAiBlurb.Summary state="aiResponse" aiResponseText={<p>Rentalcars.com offers the best value.</p>} />
@@ -83,29 +88,25 @@ const translations = {
       />
     </BpkAiBlurb.Root>
   </BpkCompareModal.Header>
-  <BpkCompareModal.Content
-    columns={columns}
-    onRemove={handleRemove}
-    onAddMoreClick={() => setIsOpen(false)}
-    translations={translations}
-  />
-</BpkCompareModal.Root>
-```
-
-If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
-
-```tsx
-<BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-  <BpkCompareModal.Header
-    title="Compare cars"
-    translations={translations}
-  />
-  <BpkCompareModal.Content
-    columns={columns}
-    onRemove={handleRemove}
-    onAddMoreClick={() => setIsOpen(false)}
-    translations={translations}
-  />
+  <BpkCompareModal.Content onAddMoreClick={() => setIsOpen(false)} translations={translations}>
+    {items.map((item) => (
+      <BpkCompareModal.Column
+        key={item.itemId}
+        itemId={item.itemId}
+        onRemove={() => handleRemove(item.itemId)}
+        removeA11yLabel={item.removeA11yLabel}
+      >
+        <BpkCompareModal.ColumnHeader
+          imageSrc={item.imageSrc}
+          imageAlt={item.imageAlt}
+          bestTag={item.bestTag}
+        >
+          {item.header}
+        </BpkCompareModal.ColumnHeader>
+        <BpkCompareModal.Rows rows={item.rows} />
+      </BpkCompareModal.Column>
+    ))}
+  </BpkCompareModal.Content>
 </BpkCompareModal.Root>
 ```
 
@@ -113,28 +114,51 @@ If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
 
 ### `BpkCompareModal.Root`
 
-| Property | PropType    | Required | Default Value |
-| -------- | ----------- | -------- | ------------- |
-| isOpen   | boolean     | true     | -             |
-| onClose  | `() => void` | true    | -             |
-| children | ReactNode   | true     | -             |
+| Property | PropType     | Required | Default Value |
+| -------- | ------------ | -------- | ------------- |
+| isOpen   | boolean      | true     | -             |
+| onClose  | `() => void` | true     | -             |
+| children | ReactNode    | true     | -             |
 
 ### `BpkCompareModal.Header`
 
-| Property     | PropType                        | Required | Default Value |
-| ------------ | ------------------------------- | -------- | ------------- |
-| translations | `BpkCompareModalTranslations`   | true     | -             |
-| title        | string                          | false    | -             |
-| children     | ReactNode                       | false    | -             |
+| Property     | PropType                      | Required | Default Value |
+| ------------ | ----------------------------- | -------- | ------------- |
+| translations | `BpkCompareModalTranslations` | true     | -             |
+| title        | string                        | false    | -             |
+| children     | ReactNode                     | false    | -             |
 
 ### `BpkCompareModal.Content`
 
-| Property       | PropType                        | Required | Default Value |
-| -------------- | ------------------------------- | -------- | ------------- |
-| columns        | `BpkCompareColumnData[]`        | true     | -             |
-| onRemove       | `(itemId: string) => void`      | true     | -             |
-| onAddMoreClick | `() => void`                    | true     | -             |
-| translations   | `BpkCompareModalTranslations`   | true     | -             |
+| Property       | PropType                      | Required | Default Value |
+| -------------- | ----------------------------- | -------- | ------------- |
+| children       | ReactNode                     | true     | -             |
+| onAddMoreClick | `() => void`                  | true     | -             |
+| translations   | `BpkCompareModalTranslations` | true     | -             |
+
+### `BpkCompareModal.Column`
+
+| Property        | PropType      | Required | Default Value |
+| --------------- | ------------- | -------- | ------------- |
+| itemId          | string        | true     | -             |
+| onRemove        | `() => void`  | true     | -             |
+| removeA11yLabel | string        | true     | -             |
+| children        | ReactNode     | true     | -             |
+
+### `BpkCompareModal.ColumnHeader`
+
+| Property  | PropType  | Required | Default Value |
+| --------- | --------- | -------- | ------------- |
+| children  | ReactNode | false    | -             |
+| imageSrc  | string    | false    | -             |
+| imageAlt  | string    | false    | -             |
+| bestTag   | boolean   | false    | `false`       |
+
+### `BpkCompareModal.Rows`
+
+| Property | PropType      | Required | Default Value |
+| -------- | ------------- | -------- | ------------- |
+| rows     | `ReactNode[]` | true     | -             |
 
 ### `BpkCompareModalTranslations`
 
@@ -146,38 +170,30 @@ If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
 | addMoreDescription | string   | true     | -             |
 | addMoreLinkText    | string   | true     | -             |
 
-### `BpkCompareColumnData`
+## Row alignment
 
-| Property        | PropType        | Required | Default Value |
-| --------------- | --------------- | -------- | ------------- |
-| itemId          | string          | true     | -             |
-| rows            | `BpkCompareRow[]`  | true     | -             |
-| header          | ReactNode       | true     | -             |
-| removeA11yLabel | string          | true     | -             |
-| imageSrc        | string          | false    | -             |
-| imageAlt        | string          | false    | -             |
-| bestTag         | boolean         | false    | `false`       |
-
-### `BpkCompareRow`
-
-| Property | PropType  | Required | Default Value |
-| -------- | --------- | -------- | ------------- |
-| rowId    | string    | true     | -             |
-| cell     | ReactNode | true     | -             |
-
-`rowId` is the shared key that links the same attribute across all columns. Every column must contain the same `rowId` values in the same order. The component derives the table's row structure from the first column's `rowId` list, so a mismatch will cause rows to misalign.
+Rows are aligned positionally — the ReactNode at index 0 in every column lands in the same `<tr>`. BpkTable handles the visual alignment natively. All columns must contain the same number of rows.
 
 A common pattern is to define a helper that always produces rows in a fixed order:
 
 ```tsx
-const makeRows = (cancellation: string, rating: string): BpkCompareColumnData['rows'] => [
-  { rowId: 'cancellation', cell: <span>{cancellation}</span> },
-  { rowId: 'rating',       cell: <span>{rating}</span> },
+const makeRows = (cancellation: string, rating: string): ReactNode[] => [
+  <span key="cancellation">{cancellation}</span>,
+  <span key="rating">{rating}</span>,
 ];
 
-// Then use it consistently across all columns:
-const columns: BpkCompareColumnData[] = [
-  { itemId: 'deal-1', rows: makeRows('Free cancellation', '4.5 — Excellent'), ... },
-  { itemId: 'deal-2', rows: makeRows('No free cancellation', '3.8 — Good'), ... },
-];
+// Use it consistently across all columns:
+{items.map((item) => (
+  <BpkCompareModal.Column
+    key={item.itemId}
+    itemId={item.itemId}
+    onRemove={() => handleRemove(item.itemId)}
+    removeA11yLabel={item.removeA11yLabel}
+  >
+    <BpkCompareModal.ColumnHeader>
+      {item.header}
+    </BpkCompareModal.ColumnHeader>
+    <BpkCompareModal.Rows rows={makeRows(item.cancellation, item.rating)} />
+  </BpkCompareModal.Column>
+))}
 ```

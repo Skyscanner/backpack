@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
@@ -24,8 +24,6 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCompareModal from './BpkCompareModal';
-
-import type { BpkCompareColumnData } from './common-types';
 
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
@@ -44,25 +42,10 @@ beforeAll(() => {
 
 const noop = () => {};
 
-const BASE_ROWS = [
-  { rowId: 'cancellation', cell: <span>Free cancellation</span> },
-  { rowId: 'stars', cell: <span>3.5 stars</span> },
+const BASE_ROWS: ReactNode[] = [
+  <span key="cancellation">Free cancellation</span>,
+  <span key="stars">3.5 stars</span>,
 ];
-
-const COLUMN_1: BpkCompareColumnData = {
-  itemId: 'col-1',
-  header: <div>Column 1</div>,
-  rows: BASE_ROWS,
-  removeA11yLabel: 'Remove column 1',
-  bestTag: true,
-};
-
-const COLUMN_2: BpkCompareColumnData = {
-  itemId: 'col-2',
-  header: <div>Column 2</div>,
-  rows: BASE_ROWS,
-  removeA11yLabel: 'Remove column 2',
-};
 
 const TRANSLATIONS = {
   closeLabel: 'Close comparison',
@@ -72,16 +55,50 @@ const TRANSLATIONS = {
   addMoreLinkText: 'Add more',
 };
 
-const renderModal = (columns: BpkCompareColumnData[], title?: string) =>
+type ColumnDef = {
+  itemId: string;
+  header: ReactElement;
+  rows: ReactNode[];
+  removeA11yLabel: string;
+  bestTag?: boolean;
+};
+
+const COLUMN_1: ColumnDef = {
+  itemId: 'col-1',
+  header: <div>Column 1</div>,
+  rows: BASE_ROWS,
+  removeA11yLabel: 'Remove column 1',
+  bestTag: true,
+};
+
+const COLUMN_2: ColumnDef = {
+  itemId: 'col-2',
+  header: <div>Column 2</div>,
+  rows: BASE_ROWS,
+  removeA11yLabel: 'Remove column 2',
+};
+
+const renderModal = (columns: ColumnDef[], title?: string) =>
   renderWithProvider(
     <BpkCompareModal.Root isOpen onClose={noop}>
       <BpkCompareModal.Header title={title} translations={TRANSLATIONS} />
-      <BpkCompareModal.Content
-        columns={columns}
-        onRemove={noop}
-        onAddMoreClick={noop}
-        translations={TRANSLATIONS}
-      />
+      <BpkCompareModal.Content onAddMoreClick={noop} translations={TRANSLATIONS}>
+        {columns.map((column) => (
+          <BpkCompareModal.Column
+            key={column.itemId}
+            itemId={column.itemId}
+            onRemove={noop}
+            removeA11yLabel={column.removeA11yLabel}
+          >
+            <BpkCompareModal.ColumnHeader
+              bestTag={column.bestTag}
+            >
+              {column.header}
+            </BpkCompareModal.ColumnHeader>
+            <BpkCompareModal.Rows rows={column.rows} />
+          </BpkCompareModal.Column>
+        ))}
+      </BpkCompareModal.Content>
     </BpkCompareModal.Root>,
   );
 
@@ -99,7 +116,7 @@ describe('BpkCompareModal accessibility', () => {
   });
 
   it('has no accessibility violations with 3 columns and no placeholder', async () => {
-    const COLUMN_3: BpkCompareColumnData = {
+    const COLUMN_3: ColumnDef = {
       itemId: 'col-3',
       header: <div>Column 3</div>,
       rows: BASE_ROWS,

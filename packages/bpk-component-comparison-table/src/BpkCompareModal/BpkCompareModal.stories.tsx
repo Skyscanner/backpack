@@ -29,7 +29,6 @@ import BpkComparisonTray from '../BpkComparisonTray/BpkComparisonTray';
 
 import BpkCompareModal from './BpkCompareModal';
 
-import type { BpkCompareColumnData } from './common-types';
 import type { BpkComparisonItem } from '../BpkComparisonTray/common-types';
 import type { Meta } from '@storybook/react';
 
@@ -37,20 +36,20 @@ import type { Meta } from '@storybook/react';
 
 type AiState = 'thinking' | 'aiResponse';
 
-const makeRows = (cancellation: string, stars: string, rating: string, included: string): BpkCompareColumnData['rows'] => [
-  { rowId: 'cancellation', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{cancellation}</BpkText> },
-  { rowId: 'stars', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{stars}</BpkText> },
-  { rowId: 'rating', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{rating}</BpkText> },
-  { rowId: 'included', cell: <BpkText textStyle={TEXT_STYLES.footnote}>✓ {included}</BpkText> },
-  { rowId: 'fuel', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Full to full</BpkText> },
-  { rowId: 'mileage', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Unlimited mileage</BpkText> },
-  { rowId: 'doors', cell: <BpkText textStyle={TEXT_STYLES.footnote}>5 doors</BpkText> },
-  { rowId: 'transmission', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Manual</BpkText> },
-  { rowId: 'age', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Min. age 21</BpkText> },
-  { rowId: 'deposit', cell: <BpkText textStyle={TEXT_STYLES.footnote}>£200 deposit</BpkText> },
-  { rowId: 'insurance', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Third party</BpkText> },
-  { rowId: 'pickup', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Airport pickup</BpkText> },
-  { rowId: 'extra', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Placeholder</BpkText> },
+const makeRows = (cancellation: string, stars: string, rating: string, included: string): ReactNode[] => [
+  <BpkText key="cancellation" textStyle={TEXT_STYLES.footnote}>{cancellation}</BpkText>,
+  <BpkText key="stars" textStyle={TEXT_STYLES.footnote}>{stars}</BpkText>,
+  <BpkText key="rating" textStyle={TEXT_STYLES.footnote}>{rating}</BpkText>,
+  <BpkText key="included" textStyle={TEXT_STYLES.footnote}>✓ {included}</BpkText>,
+  <BpkText key="fuel" textStyle={TEXT_STYLES.footnote}>Full to full</BpkText>,
+  <BpkText key="mileage" textStyle={TEXT_STYLES.footnote}>Unlimited mileage</BpkText>,
+  <BpkText key="doors" textStyle={TEXT_STYLES.footnote}>5 doors</BpkText>,
+  <BpkText key="transmission" textStyle={TEXT_STYLES.footnote}>Manual</BpkText>,
+  <BpkText key="age" textStyle={TEXT_STYLES.footnote}>Min. age 21</BpkText>,
+  <BpkText key="deposit" textStyle={TEXT_STYLES.footnote}>£200 deposit</BpkText>,
+  <BpkText key="insurance" textStyle={TEXT_STYLES.footnote}>Third party</BpkText>,
+  <BpkText key="pickup" textStyle={TEXT_STYLES.footnote}>Airport pickup</BpkText>,
+  <BpkText key="extra" textStyle={TEXT_STYLES.footnote}>Placeholder</BpkText>,
 ];
 
 const makeHeader = (name: string, description: string, price: string) => (
@@ -97,15 +96,25 @@ const TRANSLATIONS = {
   addMoreLinkText: 'Add more',
 };
 
-// ─── Standalone modal story ───────────────────────────────────────────────────
+// ─── Column data ──────────────────────────────────────────────────────────────
 
-const INITIAL_TABLE_COLUMNS: BpkCompareColumnData[] = [
+type ColumnData = {
+  itemId: string;
+  bestTag?: boolean;
+  imageSrc: string;
+  imageAlt: string;
+  headerContent: ReactNode;
+  rows: ReactNode[];
+  removeA11yLabel: string;
+};
+
+const INITIAL_COLUMNS: ColumnData[] = [
   {
     itemId: 'rentalcars-1',
     bestTag: true,
     imageSrc: 'https://picsum.photos/seed/rentalcars1/240/83',
     imageAlt: 'Citroen C1',
-    header: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
+    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
     rows: makeRows('Free cancellation', '3.5 / 5', '4.5 — Excellent', 'Free cancellation'),
     removeA11yLabel: 'Remove rentalcars.com deal',
   },
@@ -113,19 +122,69 @@ const INITIAL_TABLE_COLUMNS: BpkCompareColumnData[] = [
     itemId: 'rentalcars-2',
     imageSrc: 'https://picsum.photos/seed/rentalcars2/240/83',
     imageAlt: 'Citroen C1',
-    header: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
+    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
     rows: makeRows('No free cancellation', '4 / 5', '3.8 — Good', 'GPS included'),
     removeA11yLabel: 'Remove second rentalcars.com deal',
   },
 ];
 
+// ─── Shared modal content ─────────────────────────────────────────────────────
+
+type ModalContentProps = {
+  columns: ColumnData[];
+  onRemove: (itemId: string) => void;
+  onAddMoreClick: () => void;
+  aiState: AiState;
+};
+
+const ModalContent = ({ aiState, columns, onAddMoreClick, onRemove }: ModalContentProps) => (
+  <>
+    <BpkCompareModal.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
+      <BpkAiBlurb.Root>
+        <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
+        <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
+        {aiState === 'aiResponse' && (
+          <BpkAiBlurb.Feedback
+            feedbackText={AI_BLURB_TRANSLATIONS.aiBlurbFeedbackText}
+            thankYouText={AI_BLURB_TRANSLATIONS.aiBlurbThankYouText}
+            thumbsUpLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsUpLabel}
+            thumbsDownLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsDownLabel}
+            onFeedback={() => {}}
+          />
+        )}
+      </BpkAiBlurb.Root>
+    </BpkCompareModal.Header>
+    <BpkCompareModal.Content onAddMoreClick={onAddMoreClick} translations={TRANSLATIONS}>
+      {columns.map((column) => (
+        <BpkCompareModal.Column
+          key={column.itemId}
+          itemId={column.itemId}
+          onRemove={() => onRemove(column.itemId)}
+          removeA11yLabel={column.removeA11yLabel}
+        >
+          <BpkCompareModal.ColumnHeader
+            imageSrc={column.imageSrc}
+            imageAlt={column.imageAlt}
+            bestTag={column.bestTag}
+          >
+            {column.headerContent}
+          </BpkCompareModal.ColumnHeader>
+          <BpkCompareModal.Rows rows={column.rows} />
+        </BpkCompareModal.Column>
+      ))}
+    </BpkCompareModal.Content>
+  </>
+);
+
+// ─── Standalone modal story ───────────────────────────────────────────────────
+
 const StandaloneExample = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [columns, setColumns] = useState<BpkCompareColumnData[]>(INITIAL_TABLE_COLUMNS);
+  const [columns, setColumns] = useState<ColumnData[]>(INITIAL_COLUMNS);
   const [aiState, setAiState] = useState<AiState>('aiResponse');
 
   const handleRemove = (itemId: string) => {
-    setColumns((prev) => prev.filter((col) => col.itemId !== itemId));
+    setColumns((prev) => prev.filter((column) => column.itemId !== itemId));
   };
 
   return (
@@ -136,38 +195,23 @@ const StandaloneExample = () => {
 
       <BpkHStack gap={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.footnote}>AI blurb state:</BpkText>
-        {(['thinking', 'aiResponse'] as AiState[]).map((s) => (
+        {(['thinking', 'aiResponse'] as AiState[]).map((aiStateOption) => (
           <BpkButton
-            key={s}
-            type={aiState === s ? BUTTON_TYPES.primary : BUTTON_TYPES.secondary}
-            onClick={() => setAiState(s)}
+            key={aiStateOption}
+            type={aiState === aiStateOption ? BUTTON_TYPES.primary : BUTTON_TYPES.secondary}
+            onClick={() => setAiState(aiStateOption)}
           >
-            {s}
+            {aiStateOption}
           </BpkButton>
         ))}
       </BpkHStack>
 
       <BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkCompareModal.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
-          <BpkAiBlurb.Root>
-            <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
-            <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
-            {aiState === 'aiResponse' && (
-              <BpkAiBlurb.Feedback
-                feedbackText={AI_BLURB_TRANSLATIONS.aiBlurbFeedbackText}
-                thankYouText={AI_BLURB_TRANSLATIONS.aiBlurbThankYouText}
-                thumbsUpLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsUpLabel}
-                thumbsDownLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsDownLabel}
-                onFeedback={() => {}}
-              />
-            )}
-          </BpkAiBlurb.Root>
-        </BpkCompareModal.Header>
-        <BpkCompareModal.Content
+        <ModalContent
           columns={columns}
           onRemove={handleRemove}
           onAddMoreClick={() => setIsOpen(false)}
-          translations={TRANSLATIONS}
+          aiState={aiState}
         />
       </BpkCompareModal.Root>
     </BpkVStack>
@@ -183,7 +227,6 @@ const SAMPLE_ITEMS: BpkComparisonItem[] = [
   { id: 'enterprise', label: 'Enterprise', image: 'https://picsum.photos/seed/enterprise/120/60', imageAlt: 'Enterprise' },
 ];
 
-// Per-item row data (mirrors what a real consumer would derive from their API).
 const ITEM_ROWS: Record<string, { cancellation: string; stars: string; rating: string; included: string; price: string }> = {
   'vip-cars':   { cancellation: 'Free cancellation', stars: '3.5 / 5', rating: '4.5 — Excellent', included: 'Free cancellation', price: '£71' },
   hertz:        { cancellation: 'No free cancellation', stars: '4 / 5', rating: '3.8 — Good', included: 'GPS included', price: '£85' },
@@ -191,14 +234,14 @@ const ITEM_ROWS: Record<string, { cancellation: string; stars: string; rating: s
   enterprise:   { cancellation: 'No free cancellation', stars: '3 / 5', rating: '3.5 — Average', included: 'Unlimited mileage', price: '£68' },
 };
 
-const itemToColumn = (item: BpkComparisonItem, index: number): BpkCompareColumnData => {
+const itemToColumn = (item: BpkComparisonItem, index: number): ColumnData => {
   const data = ITEM_ROWS[item.id] ?? { cancellation: '—', stars: '—', rating: '—', included: '—', price: '—' };
   return {
     itemId: item.id,
     bestTag: index === 0,
     imageSrc: `https://picsum.photos/seed/${item.id}/240/83`,
     imageAlt: item.imageAlt ?? item.label,
-    header: makeHeader(item.label, 'Citroen C1 o similar economy', data.price),
+    headerContent: makeHeader(item.label, 'Citroen C1 o similar economy', data.price),
     rows: makeRows(data.cancellation, data.stars, data.rating, data.included),
     removeA11yLabel: `Remove ${item.label}`,
   };
@@ -212,7 +255,6 @@ const CombinedExample = () => {
 
   const columns = items.map(itemToColumn);
 
-  // Auto-close modal when fewer than 2 items remain.
   useEffect(() => {
     if (isModalOpen && items.length < 2) {
       setIsModalOpen(false);
@@ -236,11 +278,11 @@ const CombinedExample = () => {
 
   useEffect(() => {
     if (pendingFocusIndexRef.current === null) return;
-    const idx = pendingFocusIndexRef.current;
+    const focusIndex = pendingFocusIndexRef.current;
     pendingFocusIndexRef.current = null;
     const tray = document.querySelector('[data-backpack-ds-component="ComparisonTray"]');
     const removeButtons = tray?.querySelectorAll<HTMLButtonElement>('button[aria-label^="Remove"]');
-    removeButtons?.[idx]?.focus();
+    removeButtons?.[focusIndex]?.focus();
   }, [items]);
 
   const isAdded = (id: string) => items.some((i) => i.id === id);
@@ -254,13 +296,13 @@ const CombinedExample = () => {
 
       <BpkHStack gap={BpkSpacing.Base}>
         <BpkText textStyle={TEXT_STYLES.footnote}>AI blurb state:</BpkText>
-        {(['thinking', 'aiResponse'] as AiState[]).map((s) => (
+        {(['thinking', 'aiResponse'] as AiState[]).map((aiStateOption) => (
           <BpkButton
-            key={s}
-            type={aiState === s ? BUTTON_TYPES.primary : BUTTON_TYPES.secondary}
-            onClick={() => setAiState(s)}
+            key={aiStateOption}
+            type={aiState === aiStateOption ? BUTTON_TYPES.primary : BUTTON_TYPES.secondary}
+            onClick={() => setAiState(aiStateOption)}
           >
-            {s}
+            {aiStateOption}
           </BpkButton>
         ))}
       </BpkHStack>
@@ -293,26 +335,11 @@ const CombinedExample = () => {
       </BpkBox>
 
       <BpkCompareModal.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkCompareModal.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
-          <BpkAiBlurb.Root>
-            <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
-            <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
-            {aiState === 'aiResponse' && (
-              <BpkAiBlurb.Feedback
-                feedbackText={AI_BLURB_TRANSLATIONS.aiBlurbFeedbackText}
-                thankYouText={AI_BLURB_TRANSLATIONS.aiBlurbThankYouText}
-                thumbsUpLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsUpLabel}
-                thumbsDownLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsDownLabel}
-                onFeedback={() => {}}
-              />
-            )}
-          </BpkAiBlurb.Root>
-        </BpkCompareModal.Header>
-        <BpkCompareModal.Content
+        <ModalContent
           columns={columns}
           onRemove={removeItem}
           onAddMoreClick={() => setIsModalOpen(false)}
-          translations={TRANSLATIONS}
+          aiState={aiState}
         />
       </BpkCompareModal.Root>
     </BpkVStack>

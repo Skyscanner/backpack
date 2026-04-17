@@ -16,34 +16,58 @@
  * limitations under the License.
  */
 
+import BpkCompareModalColumn from './BpkCompareModalColumn';
+import BpkCompareModalColumnHeader from './BpkCompareModalColumnHeader';
 import BpkCompareModalContent from './BpkCompareModalContent';
 import BpkCompareModalHeader from './BpkCompareModalHeader';
 import BpkCompareModalRoot from './BpkCompareModalRoot';
+import BpkCompareModalRows from './BpkCompareModalRows';
 
 import type { BpkCompareModalNamespace } from './common-types';
 
 /**
  * BpkCompareModal — side-by-side comparison modal.
  *
- * Public API: BpkCompareModal.Root + BpkCompareModal.Header + BpkCompareModal.Content
+ * Public API: Root · Header · Content · Column · ColumnHeader · Rows
+ *
+ * Component owns: table layout, scroll animation, column header animations,
+ * remove button, placeholder columns, row alignment.
+ *
+ * Consumer owns: mapping data to Column sub-components, cell content,
+ * header slot content, onRemove and onAddMoreClick callbacks.
  *
  * @example
  * <BpkCompareModal.Root isOpen={isOpen} onClose={() => setOpen(false)}>
- *   <BpkCompareModal.Header title="Compare cars" translations={{ closeLabel: 'Close' }}>
+ *   <BpkCompareModal.Header title="Compare cars" translations={translations}>
  *     <BpkAiBlurb.Root>...</BpkAiBlurb.Root>
  *   </BpkCompareModal.Header>
- *   <BpkCompareModal.Content
- *     columns={columns}
- *     onRemove={(itemId) => handleRemove(itemId)}
- *     onAddMoreClick={() => setOpen(false)}
- *     translations={{ removeLabel: 'Remove', bestTagLabel: 'Best', addMoreDescription: '...', addMoreLinkText: 'Add more' }}
- *   />
+ *   <BpkCompareModal.Content onAddMoreClick={() => setOpen(false)} translations={translations}>
+ *     {columns.map((column) => (
+ *       <BpkCompareModal.Column
+ *         key={column.itemId}
+ *         itemId={column.itemId}
+ *         onRemove={() => handleRemove(column.itemId)}
+ *         removeA11yLabel={column.removeA11yLabel}
+ *       >
+ *         <BpkCompareModal.ColumnHeader
+ *           imageSrc={column.imageSrc}
+ *           imageAlt={column.imageAlt}
+ *           bestTag={column.bestTag}
+ *           header={column.header}
+ *         />
+ *         <BpkCompareModal.Rows rows={column.rows} />
+ *       </BpkCompareModal.Column>
+ *     ))}
+ *   </BpkCompareModal.Content>
  * </BpkCompareModal.Root>
  */
 const BpkCompareModal: BpkCompareModalNamespace = {
   Root: BpkCompareModalRoot,
   Header: BpkCompareModalHeader,
   Content: BpkCompareModalContent,
+  Column: BpkCompareModalColumn,
+  ColumnHeader: BpkCompareModalColumnHeader,
+  Rows: BpkCompareModalRows,
 };
 
 export default BpkCompareModal;
