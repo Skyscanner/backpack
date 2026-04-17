@@ -22,7 +22,7 @@ import BpkCardV2 from './BpkCardV2/BpkCardV2';
 import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './BpkCardV2/common-types';
 
 figma.connect(
-  BpkCardV2.Root,
+  BpkCardV2,
   'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15086%3A15207',
   {
     props: {
@@ -42,7 +42,7 @@ figma.connect(
     },
     example: ({ bgColor, children, variant }) => (
       <BpkCardV2.Root bgColor={bgColor} variant={variant}>
-        {children}
+        <BpkCardV2.Body>{children}</BpkCardV2.Body>
       </BpkCardV2.Root>
     ),
   },
