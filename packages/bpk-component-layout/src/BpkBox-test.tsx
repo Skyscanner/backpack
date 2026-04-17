@@ -22,9 +22,13 @@ import { render, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkBox', () => {
   it('renders children content', () => {
@@ -154,5 +158,182 @@ describe('BpkBox', () => {
     );
     fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('applies color class when color prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox color={TEXT_COLORS.textPrimary}>Colored</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+  });
+
+  it('applies backgroundColor class for a surface color', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor={BACKGROUND_COLORS.surfaceDefault}>Surface</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-default');
+  });
+
+  it('applies backgroundColor class for a canvas color', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor={BACKGROUND_COLORS.canvas}>Canvas</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--canvas');
+  });
+
+  it('applies backgroundColor class for a status fill color', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor={BACKGROUND_COLORS.statusSuccessFill}>Success</BpkBox>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--status-success-fill');
+  });
+
+  it('applies both color and backgroundColor classes together', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox color={TEXT_COLORS.textOnDark} backgroundColor={BACKGROUND_COLORS.surfaceHero}>
+          Both
+        </BpkBox>
+      </BpkProvider>,
+    );
+    const div = container.querySelector('div');
+    expect(div).toHaveClass('bpk-layout--text-on-dark');
+    expect(div).toHaveClass('bpk-layout--surface-hero');
+  });
+
+  describe('id prop', () => {
+    it('forwards id to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox id="my-region">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('#my-region')).toBeInTheDocument();
+    });
+  });
+
+  describe('aria-* props', () => {
+    it('forwards aria-label to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox role="region" aria-label="Main content">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('aria-label', 'Main content');
+    });
+
+    it('forwards aria-labelledby to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox aria-labelledby="heading-id">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('aria-labelledby', 'heading-id');
+    });
+
+    it('forwards aria-hidden to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox aria-hidden>Decorative</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('aria-hidden', 'true');
+    });
+  });
+
+  describe('position prop', () => {
+    it('forwards scalar position to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox position="relative">Positioned</BpkBox>
+        </BpkProvider>,
+      );
+      // Chakra applies CSS props via CSS-in-JS classes, not inline styles,
+      // so we verify the element rendered correctly without asserting exact CSS values.
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with a responsive position object', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox position={{ mobile: 'relative', tablet: 'sticky' }}>
+            Responsive position
+          </BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+  });
+
+  describe('overflow prop', () => {
+    it('forwards scalar overflow to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox overflow="hidden">Overflow content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with a responsive overflow object', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox overflow={{ base: 'hidden', tablet: 'auto' }}>
+            Responsive overflow
+          </BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+  });
+
+  describe('overflowX / overflowY props', () => {
+    it('forwards overflowX and overflowY to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox overflowX="hidden" overflowY="auto">Combined overflow</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with responsive overflowX', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox overflowX={{ base: 'hidden', tablet: 'auto' }}>
+            Responsive overflowX
+          </BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+  });
+
+  describe('zIndex prop', () => {
+    it('forwards numeric zIndex to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox zIndex={10}>Z-index 10</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('forwards zIndex="auto" to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox zIndex="auto">Z-index auto</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
   });
 });

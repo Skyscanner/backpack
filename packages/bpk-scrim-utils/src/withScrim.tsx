@@ -19,11 +19,6 @@
 import type { ComponentType } from 'react';
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import focusScope from 'a11y-focus-scope';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import focusStore from 'a11y-focus-store';
-
 import {
   cssModules,
   isDeviceIpad,
@@ -32,6 +27,8 @@ import {
 } from '../../bpk-react-utils';
 
 import BpkScrim from './BpkScrim';
+import focusScope from './focusScope';
+import focusStore from './focusStore';
 import {
   fixBody,
   lockScroll,

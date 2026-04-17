@@ -29,7 +29,11 @@
 /// @access private
 
 @mixin _bpk-scroll-indicator($gradient-color, $direction: 'left') {
-  $gradient-direction: if($direction == 'left', 90deg, 270deg);
+  $gradient-direction: 90deg;
+
+  @if $direction != 'left' {
+    $gradient-direction: 270deg;
+  }
 
   position: absolute;
   top: 0;

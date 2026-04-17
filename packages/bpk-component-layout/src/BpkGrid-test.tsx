@@ -21,9 +21,13 @@ import { createRef } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkGrid } from './BpkGrid';
 import { BpkProvider } from './BpkProvider';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkGrid', () => {
   it('renders children content', () => {
@@ -108,5 +112,36 @@ describe('BpkGrid', () => {
     expect(container.firstChild).toHaveStyle('justify-content: center');
     expect(container.firstChild).toHaveStyle('align-items: center');
     expect(container.firstChild).toHaveStyle('gap: .5rem');
+  });
+
+  it('applies color class when color prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkGrid color={TEXT_COLORS.textPrimary}>Colored</BpkGrid>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+  });
+
+  it('applies backgroundColor class when backgroundColor prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkGrid backgroundColor={BACKGROUND_COLORS.canvasContrast}>Canvas</BpkGrid>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--canvas-contrast');
+  });
+
+  it('renders position and overflow alongside templateColumns without dropping any prop', () => {
+    // Regression: position/overflow arrived via ...props and were previously silently
+    // dropped when responsiveProps was provided (BpkGrid maps templateColumns→gridTemplateColumns).
+    const { container } = render(
+      <BpkProvider>
+        <BpkGrid templateColumns="repeat(3, 1fr)" position="relative" overflow="hidden">
+          content
+        </BpkGrid>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toBeInTheDocument();
   });
 });

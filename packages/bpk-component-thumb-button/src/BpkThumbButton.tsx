@@ -18,8 +18,10 @@
 
 import type { MouseEvent } from 'react';
 
-import ThumbsDownIcon from '../../bpk-component-icon/lg/thumbs-down';
-import ThumbsUpIcon from '../../bpk-component-icon/lg/thumbs-up';
+import ThumbsDownIconLg from '../../bpk-component-icon/lg/thumbs-down';
+import ThumbsUpIconLg from '../../bpk-component-icon/lg/thumbs-up';
+import ThumbsDownIconSm from '../../bpk-component-icon/sm/thumbs-down';
+import ThumbsUpIconSm from '../../bpk-component-icon/sm/thumbs-up';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkThumbButton.module.scss';
@@ -28,12 +30,18 @@ const getClassName = cssModules(STYLES);
 
 
 export type ThumbsButtonType = 'up' | 'down';
+export type ThumbsButtonSize = 'default' | 'small';
+export type ThumbsButtonColor = 'default' | 'primary';
 
 export type BpkThumbButtonProps = {
   /**
    * Accessibility label for screen readers (REQUIRED).
    */
   accessibilityLabel: string;
+  /**
+   * Icon color variant. 'primary' uses the primary text color, 'default' uses the disabled text color (grayish).
+   */
+  iconColor?: ThumbsButtonColor;
   /**
    * Click handler callback.
    */
@@ -43,6 +51,11 @@ export type BpkThumbButtonProps = {
    */
   selected?: boolean;
   /**
+   * Size variant. 'small' uses sm icons with no fixed dimensions, matching inline text use cases.
+   * Note: 'small' disables the 48px touch target pseudo-element — do not use on touch-primary surfaces.
+   */
+  size?: ThumbsButtonSize;
+  /**
    * Type of thumb icon to display.
    */
   type: ThumbsButtonType;
@@ -50,15 +63,24 @@ export type BpkThumbButtonProps = {
 
 const BpkThumbButton = ({
   accessibilityLabel,
+  iconColor = 'default',
   onClick,
   selected = false,
+  size = 'default',
   type,
 }: BpkThumbButtonProps) => {
-  const Icon = type === 'up' ? ThumbsUpIcon : ThumbsDownIcon;
+
+  const icons = {
+    small: { up: ThumbsUpIconSm, down: ThumbsDownIconSm },
+    default: { up: ThumbsUpIconLg, down: ThumbsDownIconLg },
+  };
+  const Icon = icons[size][type];
 
   const classNames = getClassName(
     'bpk-thumb-button',
     selected && 'bpk-thumb-button--selected',
+    size === 'small' && 'bpk-thumb-button--small',
+    iconColor === 'primary' && 'bpk-thumb-button--color-primary',
   );
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {

@@ -21,9 +21,13 @@ import { createRef } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import { TEXT_COLORS } from '../../bpk-component-text';
+
 import { BpkFlex } from './BpkFlex';
 import { BpkProvider } from './BpkProvider';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkFlex', () => {
   it('renders children content', () => {
@@ -127,5 +131,36 @@ describe('BpkFlex', () => {
       </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('applies color class when color prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex color={TEXT_COLORS.textPrimary}>Colored</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+  });
+
+  it('applies backgroundColor class when backgroundColor prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex backgroundColor={BACKGROUND_COLORS.surfaceDefault}>Surface</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-default');
+  });
+
+  it('renders position and overflow alongside direction without dropping any prop', () => {
+    // Regression: position/overflow arrived via ...props and were previously silently
+    // dropped when responsiveProps was provided (BpkFlex maps direction→flexDirection).
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex direction="column" position="relative" overflow="hidden">
+          content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toBeInTheDocument();
   });
 });

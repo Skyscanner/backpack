@@ -18,9 +18,15 @@
 
 import BpkChatbotInput from './src/BpkChatbotInput';
 
-export type { BpkChatbotInputProps } from './src/common-types';
+export type {
+  BpkChatbotInputInputProps,
+  BpkChatbotInputNamespace,
+  BpkChatbotInputRootProps,
+  BpkChatbotInputToolbarProps,
+  ChatbotInputType,
+  SendButtonRenderProps,
+} from './src/common-types';
 export { CHATBOT_INPUT_TYPES } from './src/common-types';
-export type { ChatbotInputType } from './src/common-types';
 export { useChatbotInputManager } from './src/hooks';
 export { default as themeAttributes } from './src/themeAttributes';
 export default BpkChatbotInput;

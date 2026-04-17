@@ -20,15 +20,20 @@ import { forwardRef } from 'react';
 
 import { Grid } from '@chakra-ui/react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
+import STYLES from './BpkLayout.module.scss';
+
+
+const getClassName = cssModules(STYLES);
+
 export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
   (
-    { align, autoColumns, autoFlow, autoRows, children, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },
+    { align, autoColumns, autoFlow, autoRows, backgroundColor, children, color, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },
     ref,
   ) => {
     const processedProps = processBpkComponentProps(props, {
@@ -47,10 +52,19 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         gridRow: row,
       },
     });
+    const classNames = (color || backgroundColor)
+      ? getClassName(
+          'bpk-layout',
+          color ? `bpk-layout--${color}` : '',
+          backgroundColor ? `bpk-layout--${backgroundColor}` : '',
+        )
+      : undefined;
 
     return (
       <Grid
         ref={ref}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={classNames}
         {...getDataComponentAttribute('Grid')}
         {...processedProps}
         display={inline ? 'inline-grid' : undefined}

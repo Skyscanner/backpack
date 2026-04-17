@@ -341,13 +341,11 @@ Check the `decisions/` directory for architectural decisions and guidelines:
 ```
 packages/bpk-component-example/
 ├── src/
-│   ├── BpkExample.tsx           # Main component
-│   ├── BpkExample.module.scss   # Styles
-│   └── BpkExample.test.tsx      # Tests
-├── README.md                    # Component documentation
-examples/bpk-component-example/
-│   ├── examples.tsx             # Storybook examples
-│   └── stories.tsx              # Storybook stories
+│   ├── BpkExample.tsx              # Main component
+│   ├── BpkExample.module.scss      # Styles
+│   ├── BpkExample.test.tsx         # Tests
+│   └── BpkExample.stories.tsx      # Storybook stories (colocated)
+├── README.md                       # Component documentation
 ```
 
 ### Import Patterns
@@ -360,3 +358,19 @@ import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
 ```
 
 This guide should help AI agents understand the structure, patterns, and conventions used in the Backpack Design System codebase.
+
+## Component Reuse (MANDATORY)
+
+See `.claude/guidelines/bpk-component-reuse.md` for the full rule, search instructions, component mapping table, and BpkButton / BpkText API reference.
+
+## Layout Components (MANDATORY)
+
+See `.claude/guidelines/bpk-layout-components.md` for when to use `BpkFlex` / `BpkStack` / `BpkGrid` and when to fall back to SCSS.
+
+## Token Lookup Workflow (MANDATORY)
+
+See `.claude/guidelines/bpk-token-value-lookup.md` for the lookup workflow, naming conventions, TSX usage pattern, and common mistakes.
+
+## Icon Usage Rules (MANDATORY)
+
+See `.claude/guidelines/bpk-icon-usage.md` for icon import pattern, `withButtonAlignment` usage, className restrictions, and size guidance.

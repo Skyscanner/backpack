@@ -22,11 +22,9 @@ import { Dialog } from '@ark-ui/react';
 
 import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { getDataComponentAttribute } from '../../../../bpk-react-utils';
+import { getDataComponentAttribute, useBodyLock } from '../../../../bpk-react-utils';
 import { ModalTypeProvider } from '../BpkModalV3Context';
 import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
-
-import useBodyLock from './useBodyLock';
 
 
 type BpkModalV3RootProps = {

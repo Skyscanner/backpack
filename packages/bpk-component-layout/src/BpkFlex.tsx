@@ -20,14 +20,19 @@ import { forwardRef } from 'react';
 
 import { Flex } from '@chakra-ui/react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkFlexProps } from './types';
 
+import STYLES from './BpkLayout.module.scss';
+
+
+const getClassName = cssModules(STYLES);
+
 export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
-  ({ align, basis, children, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
+  ({ align, backgroundColor, basis, children, color, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkFlex',
       responsiveProps: {
@@ -41,10 +46,19 @@ export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
         flexBasis: basis,
       },
     });
+    const classNames = (color || backgroundColor)
+      ? getClassName(
+          'bpk-layout',
+          color ? `bpk-layout--${color}` : '',
+          backgroundColor ? `bpk-layout--${backgroundColor}` : '',
+        )
+      : undefined;
 
     return (
       <Flex
         ref={ref}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={classNames}
         {...getDataComponentAttribute('Flex')}
         {...processedProps}
         display={inline ? 'inline-flex' : undefined}
