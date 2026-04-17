@@ -38,6 +38,8 @@ export type Props = {
   title: ReactNode;
   titleTextStyle?: TextStyle;
   titleTagName?: Tag;
+  /** When true, prevents the title from being truncated with an ellipsis and allows it to wrap onto multiple lines.
+   * Note: this prop only applies when `title` is a string; ReactNode titles are not truncated and wrap naturally. */
   wrapTitle?: boolean;
   className?: string;
   leadingButton?: ReactElement | null;
