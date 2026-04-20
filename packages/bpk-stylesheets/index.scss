@@ -51,7 +51,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-:focus-visible {
+// normalize.css 4.x ships `button:-moz-focusring { outline: 1px dotted ButtonText }`
+// at specificity 0-1-1, which beats a bare `:focus-visible` rule (0-1-0) in Firefox
+// (`:-moz-focusring` matches wherever `:focus-visible` would). Adding button-typed
+// `:focus-visible` selectors at matching specificity lets Backpack's ring win by
+// source order, restoring WCAG-compliant focus visibility on `<button>` elements.
+:focus-visible,
+button:focus-visible,
+[type='button']:focus-visible,
+[type='reset']:focus-visible,
+[type='submit']:focus-visible {
   @include utils.bpk-focus-indicator;
 }
 
