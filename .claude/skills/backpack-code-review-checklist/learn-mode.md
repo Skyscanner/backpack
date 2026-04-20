@@ -20,13 +20,16 @@ If `--component COMP` is specified, filter to PRs touching `packages/bpk-compone
 
 For each PR, fetch review comments:
 ```bash
-gh pr view [NUMBER] \
-  --repo Skyscanner/backpack \
-  --json reviews,comments,reviewThreads
+# PR-level comments (includes review summaries)
+gh api repos/Skyscanner/backpack/issues/[NUMBER]/comments --paginate \
+  --jq '[.[].body]'
+
+# Inline diff comments (line-level review threads)
+gh api repos/Skyscanner/backpack/pulls/[NUMBER]/comments --paginate \
+  --jq '[.[].body]'
 ```
 
-Collect text from `reviews[].body`, `comments[].body`, and inline diff-thread comments
-(`reviewThreads[].comments[].body`).
+Collect text from both endpoints above.
 
 ## Step B — Cluster Recurring Comments
 
