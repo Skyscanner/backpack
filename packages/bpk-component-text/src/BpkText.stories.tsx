@@ -18,7 +18,7 @@
 
 import { withDefaultProps, cssModules } from '../../bpk-react-utils';
 
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from './BpkText';
+import BpkText, { TEXT_ALIGN, TEXT_COLORS, TEXT_STYLES } from './BpkText';
 
 import type { Meta } from '@storybook/react';
 
@@ -248,6 +248,21 @@ export const LabelStyles = {
 
 export const LarkenStyles = {
   render: () => <LarkenStylesExample />,
+};
+
+const TextAlignExample = () => (
+  <div>
+    {Object.values(TEXT_ALIGN).map((align) => (
+      <BpkText key={align} tagName="p" textAlign={align}>
+        textAlign=&quot;{align}&quot; — The quick brown fox jumps over the lazy
+        dog
+      </BpkText>
+    ))}
+  </div>
+);
+
+export const TextAlignProp = {
+  render: () => <TextAlignExample />,
 };
 
 export const ColorProp = {
