@@ -37,7 +37,7 @@ const getClassName = cssModules(STYLES);
 
 const MAX_COLUMNS = 3;
 // Matches the image area height (5.1875rem × 16px). Opacity goes from 1 → 0
-// as the user scrolls 0 → 83 px, giving a parallax fade identical to carhire.
+// as the user scrolls 0 → 83 px, giving a smooth parallax fade.
 const IMAGE_FADE_THRESHOLD_PX = 83;
 
 function BpkCompareModalContent({
@@ -55,13 +55,10 @@ function BpkCompareModalContent({
     );
   }
 
-  // Pads columns with nulls and slices to MAX_COLUMNS (3), so there are always exactly 3 entries.
-  // So if you pass 2 columns: columns = [colA, colB]
-  // displayColumns = [colA, colB, null]
-  // The null slots are where the "Add more" placeholder renders. The point is that the table always has 3 equal-width columns — real items fill the first places, placeholders fill the rest. Without this, 2 real columns would stretch to fill the full width, which would look wrong.
+  // Pad with nulls so the table always renders exactly MAX_COLUMNS slots.
   const displayColumns = [...columns, null, null, null].slice(0, MAX_COLUMNS);
 
-  // Use row IDs from the first filled column (all must match after validation).
+  // Use row IDs from the first filled column.
   const rowIds = columns[0]?.rows.map((row) => row.rowId) ?? [];
 
   useEffect(() => {

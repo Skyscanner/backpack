@@ -13,7 +13,7 @@ import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscan
 
 - **Manage the columns array.** The table is stateless — it renders whatever you pass to `columns`.
 - **Cap the array at 3 columns.** If you pass more than 3, only the first 3 are rendered.
-- **Ensure rowId sequences match across all columns.** Every column must declare the same `rowId` values in the same order. `rowId` is the shared key that aligns rows across columns — think of it as the row label (e.g. `'cancellation'`, `'rating'`). A console error is logged in development when mismatches are detected.
+- **Ensure rowId sequences match across all columns.** Every column must declare the same `rowId` values in the same order. `rowId` is the shared key that aligns rows across columns — think of it as the row label (e.g. `'cancellation'`, `'rating'`). Mismatches will cause rows to misalign.
 - **Control open/close state.** Pass `isOpen` and call `setIsOpen(false)` inside `onClose`.
 - **Handle removal.** When `onRemove(itemId)` fires, remove that item from your columns array. If fewer than 2 items remain you should also close the modal.
 - **Compose BpkAiBlurb when needed.** Pass a `BpkAiBlurb.Root` as children of `BpkCompareModal.Header`. The component does not render AI content automatically — you own the composition.

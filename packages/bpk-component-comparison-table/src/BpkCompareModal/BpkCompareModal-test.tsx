@@ -155,7 +155,7 @@ describe('BpkCompareModal', () => {
     });
   });
 
-  describe('row alignment validation', () => {
+  describe('column count validation', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
     beforeEach(() => {
