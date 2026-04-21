@@ -214,9 +214,9 @@ const CombinedExample = () => {
 
   const columns = items.map(itemToColumn);
 
-  // Auto-close modal when fewer than 2 items remain.
+  // Auto-close modal when no items remain.
   useEffect(() => {
-    if (isModalOpen && items.length < 2) {
+    if (isModalOpen && items.length === 0) {
       setIsModalOpen(false);
     }
   }, [items, isModalOpen]);
