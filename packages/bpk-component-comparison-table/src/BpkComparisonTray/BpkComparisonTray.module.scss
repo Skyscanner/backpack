@@ -60,7 +60,12 @@
 
 // Close button — 16×16, dark bg, white border, overlaps top-right corner
 .bpk-comparison-tray__item-close {
+  /* stylelint-disable order/order, order/properties-order */
+  // bpk-touch-tappable sets position: relative — position: absolute must come after to override it
+  @include utils.bpk-touch-tappable;
+
   position: absolute;
+  /* stylelint-enable order/order, order/properties-order */
   top: 0;
   right: 0;
   display: flex;
@@ -76,7 +81,6 @@
   color: tokens.$bpk-text-primary-inverse-day;
   cursor: pointer;
 
-  @include utils.bpk-touch-tappable;
   @include shadows.bpk-box-shadow-lg;
 
   svg {

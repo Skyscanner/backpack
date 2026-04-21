@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import BpkCompareModal from './src/BpkCompareModal/BpkCompareModal';
 import BpkComparisonTray from './src/BpkComparisonTray/BpkComparisonTray';
 
 export type {
@@ -25,4 +26,16 @@ export type {
   BpkComparisonTrayNamespace,
 } from './src/BpkComparisonTray/common-types';
 
+export type {
+  BpkCompareModalRootProps,
+  BpkCompareModalHeaderProps,
+  BpkCompareModalContentProps,
+  BpkCompareModalColumnProps,
+  BpkCompareModalColumnHeaderProps,
+  BpkCompareModalRowsProps,
+  BpkCompareModalTranslations,
+  BpkCompareModalNamespace,
+} from './src/BpkCompareModal/common-types';
+
+export { BpkCompareModal };
 export default BpkComparisonTray;
