@@ -53,13 +53,13 @@ function BpkCompareModalColumnPlaceholder({
           {addMoreDescription}
         </BpkText>
       </div>
-        <BpkButton
-          type={BUTTON_TYPES.link}
-          size={SIZE_TYPES.small}
-          onClick={onAddMoreClick}
-        >
-          {addMoreLinkText}
-        </BpkButton>
+      <BpkButton
+        type={BUTTON_TYPES.link}
+        size={SIZE_TYPES.small}
+        onClick={onAddMoreClick}
+      >
+        {addMoreLinkText}
+      </BpkButton>
     </BpkFlex>
   );
 }

@@ -5,7 +5,7 @@ A modal-based table component for comparing up to 3 items side by side. The cons
 ## Usage
 
 ```tsx
-import BpkCompareModal from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import { BpkCompareModal } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
@@ -22,7 +22,7 @@ import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscan
 
 ```tsx
 import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
-import BpkCompareModal from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import { BpkCompareModal } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 
 const [isOpen, setIsOpen] = useState(false);

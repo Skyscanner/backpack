@@ -28,15 +28,23 @@ import type { BpkCompareModalNamespace } from './common-types';
  * Public API: BpkCompareModal.Root + BpkCompareModal.Header + BpkCompareModal.Content
  *
  * @example
+ * const translations = {
+ *   closeLabel: 'Close',
+ *   removeLabel: 'Remove',
+ *   bestTagLabel: 'Best',
+ *   addMoreDescription: '...',
+ *   addMoreLinkText: 'Add more',
+ * };
+ *
  * <BpkCompareModal.Root isOpen={isOpen} onClose={() => setOpen(false)}>
- *   <BpkCompareModal.Header title="Compare cars" translations={{ closeLabel: 'Close' }}>
+ *   <BpkCompareModal.Header title="Compare cars" translations={translations}>
  *     <BpkAiBlurb.Root>...</BpkAiBlurb.Root>
  *   </BpkCompareModal.Header>
  *   <BpkCompareModal.Content
  *     columns={columns}
  *     onRemove={(itemId) => handleRemove(itemId)}
  *     onAddMoreClick={() => setOpen(false)}
- *     translations={{ removeLabel: 'Remove', bestTagLabel: 'Best', addMoreDescription: '...', addMoreLinkText: 'Add more' }}
+ *     translations={translations}
  *   />
  * </BpkCompareModal.Root>
  */

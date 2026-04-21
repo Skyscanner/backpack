@@ -9,8 +9,9 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkComparisonTray from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import BpkCompareModal from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import BpkComparisonTray, {
+  BpkCompareModal,
+} from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Components
