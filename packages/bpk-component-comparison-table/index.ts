@@ -34,5 +34,4 @@ export type {
   BpkCompareModalNamespace,
 } from './src/BpkCompareModal/common-types';
 
-export { BpkCompareModal };
-export default BpkComparisonTray;
+export { BpkCompareModal, BpkComparisonTray };
