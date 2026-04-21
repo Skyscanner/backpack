@@ -35,12 +35,10 @@ type BpkCompareModalHeaderRowProps = {
   onRemove: (itemId: string) => void;
   onAddMoreClick: () => void;
   translations: BpkCompareModalTranslations;
-  fadedRatio: number;
 };
 
 function BpkCompareModalHeaderRow({
   displayColumns,
-  fadedRatio,
   onAddMoreClick,
   onRemove,
   translations,
@@ -65,7 +63,6 @@ function BpkCompareModalHeaderRow({
                 onRemove={onRemove}
                 bestTag={column.bestTag}
                 bestTagLabel={bestTagLabel}
-                fadedRatio={fadedRatio}
               />
             ) : (
               <BpkCompareModalColumnPlaceholder

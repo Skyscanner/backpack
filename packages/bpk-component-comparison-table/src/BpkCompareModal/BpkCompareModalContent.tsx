@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import {
   BpkTable,
@@ -46,10 +46,7 @@ function BpkCompareModalContent({
   onRemove,
   translations,
 }: BpkCompareModalContentProps) {
-  const [scrollTop, setScrollTop] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const fadedRatio = Math.min(scrollTop / IMAGE_FADE_THRESHOLD_PX, 1);
 
   if (process.env.NODE_ENV !== 'production' && columns.length > MAX_COLUMNS) {
     // eslint-disable-next-line no-console
@@ -72,15 +69,12 @@ function BpkCompareModalContent({
     if (!container) return undefined;
 
     const handleScroll = () => {
-      const currentScrollTop = container.scrollTop;
-      setScrollTop(currentScrollTop);
+      const { scrollTop } = container;
       // During the animation phase, push tbody down by the scroll amount so rows
       // appear locked in place. Once the animation completes the offset is capped
       // and normal scrolling resumes from that point.
-      container.style.setProperty(
-        '--bpk-rows-offset',
-        `${Math.min(currentScrollTop, IMAGE_FADE_THRESHOLD_PX)}px`,
-      );
+      container.style.setProperty('--bpk-rows-offset', `${Math.min(scrollTop, IMAGE_FADE_THRESHOLD_PX)}px`);
+      container.style.setProperty('--bpk-image-opacity', `${1 - Math.min(scrollTop / IMAGE_FADE_THRESHOLD_PX, 1)}`);
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
@@ -98,7 +92,6 @@ function BpkCompareModalContent({
           onRemove={onRemove}
           onAddMoreClick={onAddMoreClick}
           translations={translations}
-          fadedRatio={fadedRatio}
         />
 
         <BpkTableBody type={TABLE_BODY_TYPES.striped}>

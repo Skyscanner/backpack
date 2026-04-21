@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import type { CSSProperties } from 'react';
-
 import BpkBadge, { BADGE_TYPES } from '../../../bpk-component-badge';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
@@ -33,7 +31,6 @@ type BpkCompareModalColumnHeaderProps = Pick<
   removeLabel: string;
   bestTagLabel: string;
   onRemove: (itemId: string) => void;
-  fadedRatio?: number;
 };
 
 const getClassName = cssModules(STYLES);
@@ -41,7 +38,6 @@ const getClassName = cssModules(STYLES);
 function BpkCompareModalColumnHeader({
   bestTag = false,
   bestTagLabel,
-  fadedRatio = 0,
   header,
   imageAlt = '',
   imageSrc,
@@ -53,7 +49,6 @@ function BpkCompareModalColumnHeader({
   return (
     <div
       className={getClassName('bpk-compare-modal__header-content')}
-      style={{ '--bpk-image-opacity': 1 - fadedRatio } as CSSProperties & Record<string, number>}
     >
       <div className={getClassName('bpk-compare-modal__header-image-wrapper')}>
         <div
