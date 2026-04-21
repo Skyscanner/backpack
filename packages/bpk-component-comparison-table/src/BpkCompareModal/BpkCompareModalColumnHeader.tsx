@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { CSSProperties } from 'react';
+
 import BpkBadge, { BADGE_TYPES } from '../../../bpk-component-badge';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
@@ -48,26 +50,17 @@ function BpkCompareModalColumnHeader({
   removeA11yLabel,
   removeLabel,
 }: BpkCompareModalColumnHeaderProps) {
-  const contentOpacity = 1 - fadedRatio;
-  const visibleRatio = 1 - fadedRatio;
-  // Snap space closed only once the element is already invisible (fadedRatio === 1).
-  // The snap is not visible because opacity is already 0 at that point.
-  const isHidden = fadedRatio >= 1;
-  // Image area dimensions — must match the SCSS values so the inline shrink is pixel-perfect.
-  const IMAGE_HEIGHT_PX = 83;       // bpk-compare-modal__header-image-area height (5.1875rem)
-  const IMAGE_MARGIN_PX = 16;       // bpk-spacing-base = 1rem
-
   return (
-    <div className={getClassName('bpk-compare-modal__header-content')}>
-      <div
-        className={getClassName('bpk-compare-modal__header-image-area')}
-        style={{
-          opacity: contentOpacity,
-          height: `${IMAGE_HEIGHT_PX * visibleRatio}px`,
-          marginBottom: `${IMAGE_MARGIN_PX * visibleRatio}px`,
-        }}
-      >
-        {imageSrc && <img src={imageSrc} alt={imageAlt} />}
+    <div
+      className={getClassName('bpk-compare-modal__header-content')}
+      style={{ '--bpk-image-opacity': 1 - fadedRatio } as CSSProperties & Record<string, number>}
+    >
+      <div className={getClassName('bpk-compare-modal__header-image-wrapper')}>
+        <div
+          className={getClassName('bpk-compare-modal__header-image-area')}
+        >
+          {imageSrc && <img src={imageSrc} alt={imageAlt} />}
+        </div>
         {bestTag && (
           <span className={getClassName('bpk-compare-modal__best-tag')}>
             <BpkBadge type={BADGE_TYPES.brand}>{bestTagLabel}</BpkBadge>
@@ -75,15 +68,11 @@ function BpkCompareModalColumnHeader({
         )}
       </div>
 
-      {header}
+      <div className={getClassName('bpk-compare-modal__header-id-section')}>
+        {header}
+      </div>
 
-      <div
-        className={getClassName(
-          'bpk-compare-modal__remove-button',
-          isHidden && 'bpk-compare-modal__remove-button--hidden',
-        )}
-        style={{ opacity: contentOpacity }}
-      >
+      <div className={getClassName('bpk-compare-modal__remove-button')}>
         <BpkButton
           type={BUTTON_TYPES.link}
           size={SIZE_TYPES.small}

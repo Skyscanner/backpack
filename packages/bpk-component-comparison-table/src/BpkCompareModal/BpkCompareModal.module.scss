@@ -18,37 +18,47 @@
 
 @use '../../../bpk-mixins/tokens';
 @use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/breakpoints';
 
 // ─── Scroll container ────────────────────────────────────────────────────────
 
 .bpk-compare-modal__scroll-container {
   min-height: 0;
-
-  // flex: 1 fills the remaining modal height (Dialog.Content is a flex column).
-  // min-height: 0 is required — without it a flex item cannot shrink below its
-  // content size, so overflow never triggers and the container never scrolls.
   flex: 1;
   overflow-x: auto;
   overflow-y: auto;
-
-  // Prevent scroll-chaining to the background page on mobile.
   overscroll-behavior: contain;
 
-  // Enforce minimum readable column width so horizontal scroll appears
-  // before columns become unusable on narrow viewports.
-  th,
-  td {
-    min-width: 11.25rem; // 180px
+  // Rows lock in place during the header collapse animation, then scroll normally.
+  // --bpk-rows-offset is capped at the animation threshold by JS.
+  tbody {
+    transform: translateY(var(--bpk-rows-offset, 0));
   }
 
-  th:not(:last-child),
+  // On small screens a min-width is enforced instead so horizontal scroll kicks in before columns become too narrow to read.
+  th,
+  td {
+    @include breakpoints.bpk-breakpoint-small-tablet {
+      min-width: 180 * tokens.$bpk-one-pixel-rem;
+    }
+  }
+
   td:not(:last-child) {
     border-right: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
   }
 
-  // border-collapse: collapse (set by BpkTable) breaks position: sticky on thead
-  // in Chrome and Safari. Override to separate + border-spacing: 0 to keep the
-  // same visual appearance.
+  th:not(:last-child) {
+    &::after {
+      position: absolute;
+      top: tokens.bpk-spacing-base();
+      right: 0;
+      bottom: 0;
+      content: '';
+      width: tokens.$bpk-border-size-sm;
+      background-color: tokens.$bpk-line-day;
+    }
+  }
+
   table {
     border-collapse: separate;
     border-spacing: 0;
@@ -62,34 +72,31 @@
   top: 0;
   z-index: 1;
   padding: 0;
-
-  // Override the BpkTableHeadCell default background (canvas-contrast).
-  // The header row must be white so only the body rows get the alternating colour.
   background-color: tokens.$bpk-canvas-day;
   vertical-align: top;
 }
 
 .bpk-compare-modal__header-content {
   display: flex;
-  padding-top: 0;
+  padding-top: tokens.bpk-spacing-base();
   padding-right: tokens.bpk-spacing-base();
 
-  // Bottom padding lives here (constant) so it never animates and never causes
-  // a "phantom space" artefact as the remove button collapses.
+  // padding-bottom is constant so it never collapses alongside the animated children.
   padding-bottom: tokens.bpk-spacing-base();
   padding-left: tokens.bpk-spacing-base();
   flex-direction: column;
-
-  // No gap — spacing lives on the collapsible children so it animates with them.
 }
 
-// Image area — contains the car image and the BestTag badge overlay.
-// Opacity is driven by inline JS style (parallax scroll) — no CSS transition here.
-.bpk-compare-modal__header-image-area {
+// Image wrapper — fades out via --bpk-image-opacity (set by JS on the parent element).
+.bpk-compare-modal__header-image-wrapper {
   position: relative;
+  margin-bottom: tokens.bpk-spacing-base();
+  opacity: var(--bpk-image-opacity, 1);
+}
+
+.bpk-compare-modal__header-image-area {
   display: flex;
   height: 5.1875rem; // ~83px
-  margin-bottom: tokens.bpk-spacing-base();
   justify-content: center;
   align-items: center;
   border-radius: tokens.$bpk-border-radius-xs;
@@ -103,37 +110,28 @@
   }
 }
 
-// Space collapses instantly once opacity has already reached 0 (not visible).
-.bpk-compare-modal__header-image-area--hidden {
-  height: 0;
-  margin-bottom: 0;
+// ID section — slides up over the fading image.
+// Negative margin-top collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
+.bpk-compare-modal__header-id-section {
+  margin-top: calc(
+    (5.1875rem + tokens.bpk-spacing-base()) * (var(--bpk-image-opacity, 1) - 1)
+  );
 }
 
-// BestTag badge — absolute inside the image area, top-left corner.
 .bpk-compare-modal__best-tag {
   position: absolute;
-  top: tokens.bpk-spacing-md();
-  left: tokens.bpk-spacing-md();
+  top: 0;
   z-index: 1;
+  transform: translateY(-50%);
 }
 
-// Opacity is driven by inline JS style (parallax scroll) — no CSS transition here.
+// Remove button — fades and collapses its layout space so rows slide up over it.
 .bpk-compare-modal__remove-button {
-  max-height: 5rem; // enough for padding-top + button height
-  margin-top: tokens.bpk-spacing-base();
-  padding-top: tokens.bpk-spacing-md();
-  padding-right: 0;
-
-  // No padding-bottom — lives on header-content wrapper instead.
-  padding-left: 0;
+  max-height: calc(5rem * var(--bpk-image-opacity, 1));
+  margin-top: calc(tokens.bpk-spacing-base() * var(--bpk-image-opacity, 1));
+  padding-top: calc(tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1));
+  opacity: var(--bpk-image-opacity, 1);
   overflow: hidden;
-}
-
-// Space collapses instantly once opacity has already reached 0 (not visible).
-.bpk-compare-modal__remove-button--hidden {
-  max-height: 0;
-  margin-top: 0;
-  padding-top: 0;
 }
 
 // ─── Placeholder column header ───────────────────────────────────────────────
@@ -143,7 +141,7 @@
   white-space: pre-wrap;
 }
 
-// ─── Placeholder body cells — no background, always white ───────────────────
+// ─── Placeholder body cells ──────────────────────────────────────────────────
 
 .bpk-compare-modal__placeholder-cell {
   background-color: tokens.$bpk-canvas-day;
@@ -152,8 +150,7 @@
 // ─── AI blurb wrapper ────────────────────────────────────────────────────────
 
 .bpk-compare-modal__ai-blurb-wrapper {
-  padding-top: 0;
   padding-right: tokens.bpk-spacing-base();
-  padding-bottom: tokens.bpk-spacing-lg();
+  padding-bottom: tokens.bpk-spacing-md();
   padding-left: tokens.bpk-spacing-base();
 }

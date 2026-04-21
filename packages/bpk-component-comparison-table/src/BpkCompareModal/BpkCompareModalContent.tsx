@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   BpkTable,
@@ -67,16 +67,25 @@ function BpkCompareModalContent({
   // Use row IDs from the first filled column (all must match after validation).
   const rowIds = columns[0]?.rows.map((row) => row.rowId) ?? [];
 
-  const handleScroll = useCallback(() => {
-    setScrollTop(scrollContainerRef.current?.scrollTop ?? 0);
-  }, []);
-
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return undefined;
+
+    const handleScroll = () => {
+      const currentScrollTop = container.scrollTop;
+      setScrollTop(currentScrollTop);
+      // During the animation phase, push tbody down by the scroll amount so rows
+      // appear locked in place. Once the animation completes the offset is capped
+      // and normal scrolling resumes from that point.
+      container.style.setProperty(
+        '--bpk-rows-offset',
+        `${Math.min(currentScrollTop, IMAGE_FADE_THRESHOLD_PX)}px`,
+      );
+    };
+
     container.addEventListener('scroll', handleScroll, { passive: true });
     return () => container.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+  }, []);
 
   return (
     <div
