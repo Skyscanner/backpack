@@ -21,7 +21,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import BpkAiBlurb from '../../../bpk-component-ai-blurb';
 import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
-import { BpkBox, BpkProvider, BpkSpacing, BpkVStack, BpkHStack } from '../../../bpk-component-layout';
+import { BpkProvider, BpkSpacing, BpkVStack, BpkHStack } from '../../../bpk-component-layout';
 // @ts-ignore - bpk-component-price has no TypeScript declarations
 import BpkPrice, { SIZES as PRICE_SIZES, ALIGNS as PRICE_ALIGNS } from '../../../bpk-component-price';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
@@ -281,18 +281,16 @@ const CombinedExample = () => {
         )}
       </BpkHStack>
 
-      <BpkBox>
-        {items.length > 0 && (
-          <BpkComparisonTray.Root
-            items={items}
-            ariaLabel="Comparison tray"
-            compareLabel="Compare"
-            removeLabel="Remove"
-            onRemove={removeItem}
-            onCompare={() => setIsModalOpen(true)}
-          />
-        )}
-      </BpkBox>
+      {items.length > 0 && (
+        <BpkComparisonTray.Root
+          items={items}
+          ariaLabel="Comparison tray"
+          compareLabel="Compare"
+          removeLabel="Remove"
+          onRemove={removeItem}
+          onCompare={() => setIsModalOpen(true)}
+        />
+      )}
 
       <BpkCompareModal.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <BpkCompareModal.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>

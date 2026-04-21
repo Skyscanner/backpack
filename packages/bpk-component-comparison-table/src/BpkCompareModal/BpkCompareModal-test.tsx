@@ -18,7 +18,7 @@
 
 import type { ReactElement } from 'react';
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { BpkProvider } from '../../../bpk-component-layout';
@@ -118,25 +118,25 @@ describe('BpkCompareModal', () => {
   });
 
   describe('onRemove callback', () => {
-    it('fires onRemove with the correct itemId when Remove is clicked', () => {
+    it('fires onRemove with the correct itemId when Remove is clicked', async () => {
       const onRemove = jest.fn();
       renderModal([COLUMN_1, COLUMN_2], { onRemove });
 
-      fireEvent.click(screen.getByLabelText('Remove column 1'));
+      await userEvent.click(screen.getByLabelText('Remove column 1'));
       expect(onRemove).toHaveBeenCalledWith('col-1');
 
-      fireEvent.click(screen.getByLabelText('Remove column 2'));
+      await userEvent.click(screen.getByLabelText('Remove column 2'));
       expect(onRemove).toHaveBeenCalledWith('col-2');
     });
   });
 
   describe('onAddMoreClick callback', () => {
-    it('fires onAddMoreClick when the Add more button is clicked', () => {
+    it('fires onAddMoreClick when the Add more button is clicked', async () => {
       const onAddMoreClick = jest.fn();
       renderModal([COLUMN_1], { onAddMoreClick });
 
       const addMoreButtons = screen.getAllByText('Add more');
-      fireEvent.click(addMoreButtons[0]);
+      await userEvent.click(addMoreButtons[0]);
       expect(onAddMoreClick).toHaveBeenCalledTimes(1);
     });
   });

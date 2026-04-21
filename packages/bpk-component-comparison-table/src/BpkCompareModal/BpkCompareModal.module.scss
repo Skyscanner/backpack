@@ -25,8 +25,7 @@
 .bpk-compare-modal__scroll-container {
   min-height: 0;
   flex: 1;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow: auto;
   overscroll-behavior: contain;
 
   // Rows lock in place during the header collapse animation, then scroll normally.
@@ -78,12 +77,7 @@
 
 .bpk-compare-modal__header-content {
   display: flex;
-  padding-top: tokens.bpk-spacing-base();
-  padding-right: tokens.bpk-spacing-base();
-
-  // padding-bottom is constant so it never collapses alongside the animated children.
-  padding-bottom: tokens.bpk-spacing-base();
-  padding-left: tokens.bpk-spacing-base();
+  padding: tokens.bpk-spacing-base();
   flex-direction: column;
 }
 
