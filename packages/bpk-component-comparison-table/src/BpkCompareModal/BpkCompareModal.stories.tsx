@@ -54,17 +54,19 @@ const makeRows = (cancellation: string, stars: string, rating: string, included:
 ];
 
 const makeHeader = (name: string, description: string, price: string) => (
-  <BpkVStack gap={BpkSpacing.None}>
-    <BpkText textStyle={TEXT_STYLES.label1}>{name}</BpkText>
-    <BpkText textStyle={TEXT_STYLES.caption}>{description}</BpkText>
-    <BpkVStack gap={BpkSpacing.SM}>
+  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+    <BpkVStack gap={BpkSpacing.None} alignItems="flex-start">
+      <BpkText textStyle={TEXT_STYLES.label1}>{name}</BpkText>
+      <BpkText textStyle={TEXT_STYLES.caption}>{description}</BpkText>
+    </BpkVStack>
+    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start" width="100%">
       <BpkPrice
         price={price}
         size={PRICE_SIZES.small}
         align={PRICE_ALIGNS.left}
         trailingText="total"
       />
-      <BpkButton type={BUTTON_TYPES.primary} size="small">Go to site</BpkButton>
+      <BpkButton type={BUTTON_TYPES.primary} size="small" fullWidth>Go to site</BpkButton>
     </BpkVStack>
   </BpkVStack>
 );
