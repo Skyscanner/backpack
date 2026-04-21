@@ -128,8 +128,7 @@
 // Remove button — fades and collapses its layout space so rows slide up over it.
 .bpk-compare-modal__remove-button {
   max-height: calc(5rem * var(--bpk-image-opacity, 1));
-  margin-top: calc(tokens.bpk-spacing-base() * var(--bpk-image-opacity, 1));
-  padding-top: calc(tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1));
+  margin-top: calc(tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1));
   opacity: var(--bpk-image-opacity, 1);
   overflow: hidden;
 }

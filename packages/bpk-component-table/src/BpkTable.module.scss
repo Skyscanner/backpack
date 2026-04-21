@@ -24,7 +24,7 @@
 
   &__body {
     &--striped {
-      tr:nth-child(even) {
+      tr:nth-child(odd) {
         background-color: tokens.$bpk-canvas-contrast-day;
       }
     }
