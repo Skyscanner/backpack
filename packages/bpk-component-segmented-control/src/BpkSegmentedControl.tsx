@@ -80,6 +80,7 @@ const getContainerAriaProps = (providedId?: string, label?: string) => {
   }
 
   if (label) {
+    props.role = 'group'
     props['aria-label'] = label;
   }
 
