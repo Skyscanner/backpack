@@ -25,7 +25,7 @@ import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCompareModal from './BpkCompareModal';
 
-import type { BpkCompareColumnData } from './common-types';
+import type { BpkCompareColumn } from './common-types';
 
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
@@ -47,24 +47,24 @@ const BASE_ROWS = [
   { rowId: 'stars', cell: <span>3.5 stars</span> },
 ];
 
-const COLUMN_1: BpkCompareColumnData = {
+const COLUMN_1: BpkCompareColumn = {
   itemId: 'col-1',
-  header: <div>Column 1 header</div>,
+  headerContent: <div>Column 1 header</div>,
   rows: BASE_ROWS,
   removeA11yLabel: 'Remove column 1',
   bestTag: true,
 };
 
-const COLUMN_2: BpkCompareColumnData = {
+const COLUMN_2: BpkCompareColumn = {
   itemId: 'col-2',
-  header: <div>Column 2 header</div>,
+  headerContent: <div>Column 2 header</div>,
   rows: BASE_ROWS,
   removeA11yLabel: 'Remove column 2',
 };
 
-const COLUMN_3: BpkCompareColumnData = {
+const COLUMN_3: BpkCompareColumn = {
   itemId: 'col-3',
-  header: <div>Column 3 header</div>,
+  headerContent: <div>Column 3 header</div>,
   rows: BASE_ROWS,
   removeA11yLabel: 'Remove column 3',
 };
@@ -77,7 +77,7 @@ const TRANSLATIONS = {
   addMoreLinkText: 'Add more',
 };
 
-const renderModal = (columns: BpkCompareColumnData[], overrides: { onRemove?: (id: string) => void; onAddMoreClick?: () => void } = {}) =>
+const renderModal = (columns: BpkCompareColumn[], overrides: { onRemove?: (id: string) => void; onAddMoreClick?: () => void } = {}) =>
   renderWithProvider(
     <BpkCompareModal.Root isOpen onClose={noop}>
       <BpkCompareModal.Header translations={TRANSLATIONS} />
@@ -167,9 +167,9 @@ describe('BpkCompareModal', () => {
     });
 
     it('emits console.error and slices when more than 3 columns are provided', () => {
-      const extraColumn: BpkCompareColumnData = {
+      const extraColumn: BpkCompareColumn = {
         itemId: 'col-4',
-        header: <div>Extra column</div>,
+        headerContent: <div>Extra column</div>,
         rows: BASE_ROWS,
         removeA11yLabel: 'Remove extra',
       };

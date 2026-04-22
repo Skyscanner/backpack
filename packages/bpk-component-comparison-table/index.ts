@@ -28,7 +28,7 @@ export type {
 
 export type {
   BpkCompareRow,
-  BpkCompareColumnData,
+  BpkCompareColumn,
   BpkCompareModalRootProps,
   BpkCompareModalTranslations,
   BpkCompareModalNamespace,

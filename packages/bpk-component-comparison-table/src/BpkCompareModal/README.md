@@ -6,7 +6,7 @@ A modal-based table component for comparing up to 3 items side by side. The cons
 
 ```tsx
 import { BpkCompareModal } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
@@ -23,16 +23,16 @@ import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscan
 ```tsx
 import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
 import { BpkCompareModal } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumnData, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 
 const [isOpen, setIsOpen] = useState(false);
-const [columns, setColumns] = useState<BpkCompareColumnData[]>([
+const [columns, setColumns] = useState<BpkCompareColumn[]>([
   {
     itemId: 'deal-1',
     bestTag: true,
     imageSrc: '/img/deal-1.jpg',
     imageAlt: 'Citroen C1',
-    header: <MyHeader name="rentalcars.com" price="£71" />,
+    headerContent: <MyHeader name="rentalcars.com" price="£71" />,
     rows: [
       { rowId: 'cancellation', cell: <span>Free cancellation</span> },
       { rowId: 'rating', cell: <span>4.5 — Excellent</span> },
@@ -43,7 +43,7 @@ const [columns, setColumns] = useState<BpkCompareColumnData[]>([
     itemId: 'deal-2',
     imageSrc: '/img/deal-2.jpg',
     imageAlt: 'Citroen C1',
-    header: <MyHeader name="Hertz" price="£85" />,
+    headerContent: <MyHeader name="Hertz" price="£85" />,
     rows: [
       { rowId: 'cancellation', cell: <span>No free cancellation</span> },
       { rowId: 'rating', cell: <span>3.8 — Good</span> },
@@ -131,7 +131,7 @@ If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
 
 | Property       | PropType                        | Required | Default Value |
 | -------------- | ------------------------------- | -------- | ------------- |
-| columns        | `BpkCompareColumnData[]`        | true     | -             |
+| columns        | `BpkCompareColumn[]`        | true     | -             |
 | onRemove       | `(itemId: string) => void`      | true     | -             |
 | onAddMoreClick | `() => void`                    | true     | -             |
 | translations   | `BpkCompareModalTranslations`   | true     | -             |
@@ -146,13 +146,13 @@ If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
 | addMoreDescription | string   | true     | -             |
 | addMoreLinkText    | string   | true     | -             |
 
-### `BpkCompareColumnData`
+### `BpkCompareColumn`
 
 | Property        | PropType        | Required | Default Value |
 | --------------- | --------------- | -------- | ------------- |
 | itemId          | string          | true     | -             |
 | rows            | `BpkCompareRow[]`  | true     | -             |
-| header          | ReactNode       | true     | -             |
+| headerContent   | ReactNode       | true     | -             |
 | removeA11yLabel | string          | true     | -             |
 | imageSrc        | string          | false    | -             |
 | imageAlt        | string          | false    | -             |
@@ -170,13 +170,13 @@ If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
 A common pattern is to define a helper that always produces rows in a fixed order:
 
 ```tsx
-const makeRows = (cancellation: string, rating: string): BpkCompareColumnData['rows'] => [
+const makeRows = (cancellation: string, rating: string): BpkCompareColumn['rows'] => [
   { rowId: 'cancellation', cell: <span>{cancellation}</span> },
   { rowId: 'rating',       cell: <span>{rating}</span> },
 ];
 
 // Then use it consistently across all columns:
-const columns: BpkCompareColumnData[] = [
+const columns: BpkCompareColumn[] = [
   { itemId: 'deal-1', rows: makeRows('Free cancellation', '4.5 — Excellent'), ... },
   { itemId: 'deal-2', rows: makeRows('No free cancellation', '3.8 — Good'), ... },
 ];

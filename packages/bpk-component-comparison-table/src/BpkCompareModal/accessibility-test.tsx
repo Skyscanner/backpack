@@ -25,7 +25,7 @@ import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkCompareModal from './BpkCompareModal';
 
-import type { BpkCompareColumnData } from './common-types';
+import type { BpkCompareColumn } from './common-types';
 
 const renderWithProvider = (ui: ReactElement) =>
   render(<BpkProvider>{ui}</BpkProvider>);
@@ -49,17 +49,17 @@ const BASE_ROWS = [
   { rowId: 'stars', cell: <span>3.5 stars</span> },
 ];
 
-const COLUMN_1: BpkCompareColumnData = {
+const COLUMN_1: BpkCompareColumn = {
   itemId: 'col-1',
-  header: <div>Column 1</div>,
+  headerContent: <div>Column 1</div>,
   rows: BASE_ROWS,
   removeA11yLabel: 'Remove column 1',
   bestTag: true,
 };
 
-const COLUMN_2: BpkCompareColumnData = {
+const COLUMN_2: BpkCompareColumn = {
   itemId: 'col-2',
-  header: <div>Column 2</div>,
+  headerContent: <div>Column 2</div>,
   rows: BASE_ROWS,
   removeA11yLabel: 'Remove column 2',
 };
@@ -72,7 +72,7 @@ const TRANSLATIONS = {
   addMoreLinkText: 'Add more',
 };
 
-const renderModal = (columns: BpkCompareColumnData[], title?: string) =>
+const renderModal = (columns: BpkCompareColumn[], title?: string) =>
   renderWithProvider(
     <BpkCompareModal.Root isOpen onClose={noop}>
       <BpkCompareModal.Header title={title} translations={TRANSLATIONS} />
@@ -99,9 +99,9 @@ describe('BpkCompareModal accessibility', () => {
   });
 
   it('has no accessibility violations with 3 columns and no placeholder', async () => {
-    const COLUMN_3: BpkCompareColumnData = {
+    const COLUMN_3: BpkCompareColumn = {
       itemId: 'col-3',
-      header: <div>Column 3</div>,
+      headerContent: <div>Column 3</div>,
       rows: BASE_ROWS,
       removeA11yLabel: 'Remove column 3',
     };

@@ -27,7 +27,7 @@ export type BpkCompareRow = {
 };
 
 /** Data for one filled comparison column. */
-export type BpkCompareColumnData = {
+export type BpkCompareColumn = {
   /** Stable unique identifier used for removal callbacks. */
   itemId: string;
   /** When true, renders a BpkBadge type=brand overlaying the top-left of the image area. */
@@ -37,7 +37,7 @@ export type BpkCompareColumnData = {
   /** Alt text for the header image. */
   imageAlt?: string;
   /** Consumer-owned slot rendered below the image area (name, description, price, CTA...). */
-  header: ReactNode;
+  headerContent: ReactNode;
   /** Row data — must match rowId sequences across all columns. */
   rows: BpkCompareRow[];
   /** Accessible label for the Remove button (e.g. "Remove rentalcars.com deal"). */
@@ -80,7 +80,7 @@ export type BpkCompareModalHeaderProps = {
 /** Props for BpkCompareModal.Content — modal body with the comparison table. */
 export type BpkCompareModalContentProps = {
   /** 1–3 filled columns. Component pads to 3 with placeholder cells automatically. */
-  columns: BpkCompareColumnData[];
+  columns: BpkCompareColumn[];
   /** Called when a Remove button is clicked, with the column's itemId. */
   onRemove: (itemId: string) => void;
   /** Called when the Add more link in a placeholder column is clicked. */

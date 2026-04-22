@@ -20,13 +20,13 @@ import BpkBadge, { BADGE_TYPES } from '../../../bpk-component-badge';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 
-import type { BpkCompareColumnData } from './common-types';
+import type { BpkCompareColumn } from './common-types';
 
 import STYLES from './BpkCompareModal.module.scss';
 
 type BpkCompareModalColumnHeaderProps = Pick<
-  BpkCompareColumnData,
-  'imageSrc' | 'imageAlt' | 'header' | 'itemId' | 'bestTag' | 'removeA11yLabel'
+  BpkCompareColumn,
+  'imageSrc' | 'imageAlt' | 'headerContent' | 'itemId' | 'bestTag' | 'removeA11yLabel'
 > & {
   removeLabel: string;
   bestTagLabel: string;
@@ -38,7 +38,7 @@ const getClassName = cssModules(STYLES);
 function BpkCompareModalColumnHeader({
   bestTag = false,
   bestTagLabel,
-  header,
+  headerContent,
   imageAlt = '',
   imageSrc,
   itemId,
@@ -64,7 +64,7 @@ function BpkCompareModalColumnHeader({
       </div>
 
       <div className={getClassName('bpk-compare-modal__header-id-section')}>
-        {header}
+        {headerContent}
       </div>
 
       <div className={getClassName('bpk-compare-modal__remove-button')}>

@@ -27,11 +27,11 @@ import BpkCompareModalColumnPlaceholder from './BpkCompareModalColumnPlaceholder
 
 import type {
   BpkCompareModalTranslations,
-  BpkCompareColumnData,
+  BpkCompareColumn,
 } from './common-types';
 
 type BpkCompareModalHeaderRowProps = {
-  displayColumns: Array<BpkCompareColumnData | null>;
+  displayColumns: Array<BpkCompareColumn | null>;
   onRemove: (itemId: string) => void;
   onAddMoreClick: () => void;
   translations: BpkCompareModalTranslations;
@@ -54,7 +54,7 @@ function BpkCompareModalHeaderRow({
           >
             {column ? (
               <BpkCompareModalColumnHeader
-                header={column.header}
+                headerContent={column.headerContent}
                 imageSrc={column.imageSrc}
                 imageAlt={column.imageAlt}
                 itemId={column.itemId}

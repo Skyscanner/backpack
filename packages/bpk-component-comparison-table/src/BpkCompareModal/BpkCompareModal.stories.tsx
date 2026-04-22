@@ -29,7 +29,7 @@ import BpkComparisonTray from '../BpkComparisonTray/BpkComparisonTray';
 
 import BpkCompareModal from './BpkCompareModal';
 
-import type { BpkCompareColumnData } from './common-types';
+import type { BpkCompareColumn } from './common-types';
 import type { BpkComparisonItem } from '../BpkComparisonTray/common-types';
 import type { Meta } from '@storybook/react';
 
@@ -37,7 +37,7 @@ import type { Meta } from '@storybook/react';
 
 type AiState = 'thinking' | 'aiResponse';
 
-const makeRows = (cancellation: string, stars: string, rating: string, included: string): BpkCompareColumnData['rows'] => [
+const makeRows = (cancellation: string, stars: string, rating: string, included: string): BpkCompareColumn['rows'] => [
   { rowId: 'cancellation', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{cancellation}</BpkText> },
   { rowId: 'stars', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{stars}</BpkText> },
   { rowId: 'rating', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{rating}</BpkText> },
@@ -101,13 +101,13 @@ const TRANSLATIONS = {
 
 // ─── Standalone modal story ───────────────────────────────────────────────────
 
-const INITIAL_TABLE_COLUMNS: BpkCompareColumnData[] = [
+const INITIAL_TABLE_COLUMNS: BpkCompareColumn[] = [
   {
     itemId: 'rentalcars-1',
     bestTag: true,
     imageSrc: 'https://picsum.photos/seed/rentalcars1/240/83',
     imageAlt: 'Citroen C1',
-    header: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
+    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
     rows: makeRows('Free cancellation', '3.5 / 5', '4.5 — Excellent', 'Free cancellation'),
     removeA11yLabel: 'Remove rentalcars.com deal',
   },
@@ -115,7 +115,7 @@ const INITIAL_TABLE_COLUMNS: BpkCompareColumnData[] = [
     itemId: 'rentalcars-2',
     imageSrc: 'https://picsum.photos/seed/rentalcars2/240/83',
     imageAlt: 'Citroen C1',
-    header: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
+    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
     rows: makeRows('No free cancellation', '4 / 5', '3.8 — Good', 'GPS included'),
     removeA11yLabel: 'Remove second rentalcars.com deal',
   },
@@ -123,7 +123,7 @@ const INITIAL_TABLE_COLUMNS: BpkCompareColumnData[] = [
 
 const StandaloneExample = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [columns, setColumns] = useState<BpkCompareColumnData[]>(INITIAL_TABLE_COLUMNS);
+  const [columns, setColumns] = useState<BpkCompareColumn[]>(INITIAL_TABLE_COLUMNS);
   const [aiState, setAiState] = useState<AiState>('aiResponse');
 
   const handleRemove = (itemId: string) => {
@@ -193,14 +193,14 @@ const ITEM_ROWS: Record<string, { cancellation: string; stars: string; rating: s
   enterprise:   { cancellation: 'No free cancellation', stars: '3 / 5', rating: '3.5 — Average', included: 'Unlimited mileage', price: '£68' },
 };
 
-const itemToColumn = (item: BpkComparisonItem, index: number): BpkCompareColumnData => {
+const itemToColumn = (item: BpkComparisonItem, index: number): BpkCompareColumn => {
   const data = ITEM_ROWS[item.id] ?? { cancellation: '—', stars: '—', rating: '—', included: '—', price: '—' };
   return {
     itemId: item.id,
     bestTag: index === 0,
     imageSrc: `https://picsum.photos/seed/${item.id}/240/83`,
     imageAlt: item.imageAlt ?? item.label,
-    header: makeHeader(item.label, 'Citroen C1 o similar economy', data.price),
+    headerContent: makeHeader(item.label, 'Citroen C1 o similar economy', data.price),
     rows: makeRows(data.cancellation, data.stars, data.rating, data.included),
     removeA11yLabel: `Remove ${item.label}`,
   };
