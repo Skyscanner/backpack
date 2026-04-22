@@ -66,13 +66,13 @@
 
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: calc(-8 * #{tokens.$bpk-one-pixel-rem});
   display: flex;
   width: 16 * tokens.$bpk-one-pixel-rem;
   height: 16 * tokens.$bpk-one-pixel-rem;
   justify-content: center;
   align-items: center;
-  transform: translate(50%, -50%);
+  transform: translateY(-50%);
   border: 2 * tokens.$bpk-one-pixel-rem solid
     tokens.$bpk-text-primary-inverse-day;
   border-radius: 50%;

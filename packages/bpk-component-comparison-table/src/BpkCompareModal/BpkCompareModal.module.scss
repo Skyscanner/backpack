@@ -43,18 +43,18 @@
   }
 
   td:not(:last-child) {
-    border-right: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-inline-end: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
   }
 
   th:not(:last-child) {
     &::after {
       position: absolute;
       top: tokens.bpk-spacing-base();
-      right: 0;
       bottom: 0;
       content: '';
       width: tokens.$bpk-border-size-sm;
       background-color: tokens.$bpk-line-day;
+      inset-inline-end: 0;
     }
   }
 
@@ -143,7 +143,6 @@
 // ─── AI blurb wrapper ────────────────────────────────────────────────────────
 
 .bpk-compare-modal__ai-blurb-wrapper {
-  padding-right: tokens.bpk-spacing-base();
   padding-bottom: tokens.bpk-spacing-md();
-  padding-left: tokens.bpk-spacing-base();
+  padding-inline: tokens.bpk-spacing-base();
 }
