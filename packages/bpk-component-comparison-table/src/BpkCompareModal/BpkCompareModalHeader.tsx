@@ -33,7 +33,7 @@ function BpkCompareModalHeader({ children, title, translations }: BpkCompareModa
         <BpkModalV3.CloseTrigger label={translations.closeLabel} />
       </BpkModalV3.Header>
       {children && (
-        <div className={getClassName('bpk-compare-modal__ai-blurb-wrapper')}>
+        <div className={getClassName('bpk-compare-modal__header-slot')}>
           {children}
         </div>
       )}

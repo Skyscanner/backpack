@@ -54,14 +54,9 @@ function BpkCompareModalHeaderRow({
           >
             {column ? (
               <BpkCompareModalColumnHeader
-                headerContent={column.headerContent}
-                imageSrc={column.imageSrc}
-                imageAlt={column.imageAlt}
-                itemId={column.itemId}
+                {...column}
                 removeLabel={removeLabel}
-                removeA11yLabel={column.removeA11yLabel}
                 onRemove={onRemove}
-                bestTag={column.bestTag}
                 bestTagLabel={bestTagLabel}
               />
             ) : (

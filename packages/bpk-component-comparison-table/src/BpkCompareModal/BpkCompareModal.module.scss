@@ -88,9 +88,11 @@
   opacity: var(--bpk-image-opacity, 1);
 }
 
+$image-area-height: 83 * tokens.$bpk-one-pixel-rem;
+
 .bpk-compare-modal__header-image-area {
   display: flex;
-  height: 5.1875rem; // ~83px
+  height: $image-area-height;
   justify-content: center;
   align-items: center;
   border-radius: tokens.$bpk-border-radius-xs;
@@ -108,7 +110,8 @@
 // Negative margin-top collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
 .bpk-compare-modal__header-id-section {
   margin-top: calc(
-    (5.1875rem + tokens.bpk-spacing-base()) * (var(--bpk-image-opacity, 1) - 1)
+    ($image-area-height + tokens.bpk-spacing-base()) *
+      (var(--bpk-image-opacity, 1) - 1)
   );
 }
 
@@ -124,7 +127,8 @@
   max-height: calc(5rem * var(--bpk-image-opacity, 1));
   margin-top: calc(tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1));
   opacity: var(--bpk-image-opacity, 1);
-  overflow: hidden;
+  overflow: clip;
+  overflow-clip-margin: tokens.bpk-spacing-sm();
 }
 
 // ─── Placeholder column header ───────────────────────────────────────────────
@@ -140,9 +144,9 @@
   background-color: tokens.$bpk-canvas-day;
 }
 
-// ─── AI blurb wrapper ────────────────────────────────────────────────────────
+// ─── Header slot ─────────────────────────────────────────────────────────────
 
-.bpk-compare-modal__ai-blurb-wrapper {
+.bpk-compare-modal__header-slot {
   padding-bottom: tokens.bpk-spacing-md();
   padding-inline: tokens.bpk-spacing-base();
 }
