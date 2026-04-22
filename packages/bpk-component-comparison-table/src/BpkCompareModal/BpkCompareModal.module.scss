@@ -20,6 +20,8 @@
 @use '../../../bpk-mixins/typography';
 @use '../../../bpk-mixins/breakpoints';
 
+$image-area-height: 83 * tokens.$bpk-one-pixel-rem;
+
 // ─── Scroll container ────────────────────────────────────────────────────────
 
 .bpk-compare-modal__scroll-container {
@@ -29,7 +31,7 @@
   overscroll-behavior: contain;
 
   // Rows lock in place during the header collapse animation, then scroll normally.
-  // --bpk-rows-offset is capped at the animation threshold by JS.
+  // --bpk-rows-offset is fixed at the animation threshold by JS.
   tbody {
     transform: translateY(var(--bpk-rows-offset, 0));
   }
@@ -87,8 +89,6 @@
   margin-bottom: tokens.bpk-spacing-base();
   opacity: var(--bpk-image-opacity, 1);
 }
-
-$image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 .bpk-compare-modal__header-image-area {
   display: flex;

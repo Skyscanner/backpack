@@ -36,8 +36,8 @@ import STYLES from './BpkCompareModal.module.scss';
 const getClassName = cssModules(STYLES);
 
 const MAX_COLUMNS = 3;
-// Matches the image area height (5.1875rem × 16px). Opacity goes from 1 → 0
-// as the user scrolls 0 → 83 px, giving a smooth parallax fade.
+
+// Matches the image area height (5.1875rem × 16px). Opacity goes from 1 → 0 as the user scrolls 0 → 83 px, giving a smooth parallax fade.
 const IMAGE_FADE_THRESHOLD_PX = 83;
 
 function BpkCompareModalContent({
@@ -48,18 +48,18 @@ function BpkCompareModalContent({
 }: BpkCompareModalContentProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  if (process.env.NODE_ENV !== 'production' && columns.length > MAX_COLUMNS) {
-    // eslint-disable-next-line no-console
-    console.error(
-      `BpkCompareModal: received ${columns.length} columns but the maximum is 3. Extra columns will be ignored.`,
-    );
-  }
-
   // Pad with nulls so the table always renders exactly MAX_COLUMNS slots.
   const displayColumns = [...columns, null, null, null].slice(0, MAX_COLUMNS);
 
-  // Use row IDs from the first filled column.
   const rowIds = columns[0]?.rows.map((row) => row.rowId) ?? [];
+
+  // Pre-index cells by itemId → rowId for O(1) lookup during render.
+  const cellsByItemAndRow = new Map(
+    columns.map((column) => [
+      column.itemId,
+      new Map(column.rows.map((row) => [row.rowId, row.cell])),
+    ])
+  );
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -67,9 +67,8 @@ function BpkCompareModalContent({
 
     const handleScroll = () => {
       const { scrollTop } = container;
-      // During the animation phase, push tbody down by the scroll amount so rows
-      // appear locked in place. Once the animation completes the offset is capped
-      // and normal scrolling resumes from that point.
+      // During the animation phase, push tbody down by the scroll amount so rows appear locked in place.
+      // Once the fade-out completes the offset is fixed at the threshold and normal scrolling resumes.
       container.style.setProperty('--bpk-rows-offset', `${Math.min(scrollTop, IMAGE_FADE_THRESHOLD_PX)}px`);
       container.style.setProperty('--bpk-image-opacity', `${1 - Math.min(scrollTop / IMAGE_FADE_THRESHOLD_PX, 1)}`);
     };
@@ -92,18 +91,16 @@ function BpkCompareModalContent({
         />
 
         <BpkTableBody type={TABLE_BODY_TYPES.striped}>
-          {/* Iterates rowIds (shared across all columns) and renders one BpkTableRow per attribute.
-              For each row, maps displayColumns to render either the matching cell from that column's
-              row data, or null for placeholder columns. */}
           {rowIds.map((rowId) => (
             <BpkTableRow key={rowId}>
-              {displayColumns.map((col, index) => (
+              {displayColumns.map((column, index) => (
                 <BpkTableCell
-                  key={col ? `${rowId}-${col.itemId}` : `${rowId}-placeholder-${index}`}
-                  {...(!col && { className: getClassName('bpk-compare-modal__placeholder-cell') })}
+                  key={column ? `${rowId}-${column.itemId}` : `${rowId}-placeholder-${index}`}
+                  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+                  className={column ? undefined : getClassName('bpk-compare-modal__placeholder-cell')}
                 >
-                  {col
-                    ? col.rows.find((row) => row.rowId === rowId)?.cell
+                  {column
+                    ? cellsByItemAndRow.get(column.itemId)?.get(rowId) ?? null
                     : null}
                 </BpkTableCell>
               ))}
