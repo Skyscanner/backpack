@@ -17,7 +17,6 @@
  */
 
 @use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/typography';
 @use '../../../bpk-mixins/breakpoints';
 
 $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
