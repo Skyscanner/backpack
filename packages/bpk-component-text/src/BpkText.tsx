@@ -58,6 +58,15 @@ export const TEXT_STYLES = {
   editorial3: 'editorial-3',
 } as const;
 
+export const TEXT_ALIGN = {
+  start: 'start',
+  end: 'end',
+  left: 'left',
+  right: 'right',
+  center: 'center',
+  justify: 'justify',
+} as const;
+
 export const TEXT_COLORS = {
   textDisabled: 'text-disabled',
   textDisabledOnDark: 'text-disabled-on-dark',
@@ -72,6 +81,7 @@ export const TEXT_COLORS = {
   textSuccess: 'text-success',
 } as const;
 
+export type TextAlign = (typeof TEXT_ALIGN)[keyof typeof TEXT_ALIGN];
 export type TextColor = (typeof TEXT_COLORS)[keyof typeof TEXT_COLORS];
 export type TextStyle = (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 export type Tag =
@@ -91,6 +101,7 @@ type Props = {
   tagName?: Tag;
   className?: string | null;
   color?: TextColor | null;
+  textAlign?: TextAlign | null;
   id?: string;
   [rest: string]: any;
 };
@@ -100,6 +111,7 @@ const BpkText = ({
   className = null,
   color = null,
   tagName: TagName = 'span',
+  textAlign = null,
   textStyle = TEXT_STYLES.bodyDefault,
   ...rest
 }: Props) => {
@@ -107,6 +119,7 @@ const BpkText = ({
     'bpk-text',
     `bpk-text--${textStyle}`,
     color ? `bpk-text--${color}` : '',
+    textAlign ? `bpk-text--align-${textAlign}` : '',
     className,
   );
 

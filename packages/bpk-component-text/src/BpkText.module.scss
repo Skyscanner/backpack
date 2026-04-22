@@ -165,4 +165,12 @@ $text-colors: (
       color: $color-value;
     }
   }
+
+  $text-aligns: 'start', 'end', 'left', 'right', 'center', 'justify';
+
+  @each $align in $text-aligns {
+    &--align-#{$align} {
+      text-align: #{$align};
+    }
+  }
 }
