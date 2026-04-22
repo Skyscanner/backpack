@@ -166,7 +166,7 @@ $text-colors: (
     }
   }
 
-  $text-aligns: 'start', 'end', 'left', 'right', 'center', 'justify';
+  $text-aligns: 'start', 'end', 'center', 'justify';
 
   @each $align in $text-aligns {
     &--align-#{$align} {

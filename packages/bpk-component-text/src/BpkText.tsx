@@ -61,8 +61,6 @@ export const TEXT_STYLES = {
 export const TEXT_ALIGN = {
   start: 'start',
   end: 'end',
-  left: 'left',
-  right: 'right',
   center: 'center',
   justify: 'justify',
 } as const;
