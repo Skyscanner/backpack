@@ -44,8 +44,8 @@ export type BpkCompareColumn = {
   removeA11yLabel: string;
 };
 
-/** All strings required by BpkCompareModal. */
-export type BpkCompareModalTranslations = {
+/** All strings required by BpkComparisonTable. */
+export type BpkComparisonTableTranslations = {
   /** Accessible label for the modal close button. */
   closeLabel: string;
   /** Visible label for the Remove button in each column header. */
@@ -58,39 +58,39 @@ export type BpkCompareModalTranslations = {
   addMoreLinkText: string;
 };
 
-/** Props for BpkCompareModal.Root — modal shell only. */
-export type BpkCompareModalRootProps = {
+/** Props for BpkComparisonTable.Root — modal shell only. */
+export type BpkComparisonTableRootProps = {
   /** Controls whether the modal is open. */
   isOpen: boolean;
   /** Called when the modal close trigger is activated or Escape is pressed. */
   onClose: () => void;
-  /** BpkCompareModal.Header and BpkCompareModal.Content. */
+  /** BpkComparisonTable.Header and BpkComparisonTable.Content. */
   children: ReactNode;
 };
 
-/** Props for BpkCompareModal.Header — modal header + optional AiBlurb slot. */
-export type BpkCompareModalHeaderProps = {
+/** Props for BpkComparisonTable.Header — modal header + optional AiBlurb slot. */
+export type BpkComparisonTableHeaderProps = {
   /** Optional modal title rendered via BpkModalV3.Title. */
   title?: string;
-  translations: BpkCompareModalTranslations;
+  translations: BpkComparisonTableTranslations;
   /** Optional slot for AI blurb or any content below the title/close row. */
   children?: ReactNode;
 };
 
-/** Props for BpkCompareModal.Content — modal body with the comparison table. */
-export type BpkCompareModalContentProps = {
+/** Props for BpkComparisonTable.Content — modal body with the comparison table. */
+export type BpkComparisonTableContentProps = {
   /** 1–3 filled columns. Component pads to 3 with placeholder cells automatically. */
   columns: BpkCompareColumn[];
   /** Called when a Remove button is clicked, with the column's itemId. */
   onRemove: (itemId: string) => void;
   /** Called when the Add more link in a placeholder column is clicked. */
   onAddMoreClick: () => void;
-  translations: BpkCompareModalTranslations;
+  translations: BpkComparisonTableTranslations;
 };
 
-/** Namespace type covering all BpkCompareModal subcomponents. */
-export type BpkCompareModalNamespace = {
-  Root: (props: BpkCompareModalRootProps) => ReactNode;
-  Header: (props: BpkCompareModalHeaderProps) => ReactNode;
-  Content: (props: BpkCompareModalContentProps) => ReactNode;
+/** Namespace type covering all BpkComparisonTable subcomponents. */
+export type BpkComparisonTableNamespace = {
+  Root: (props: BpkComparisonTableRootProps) => ReactNode;
+  Header: (props: BpkComparisonTableHeaderProps) => ReactNode;
+  Content: (props: BpkComparisonTableContentProps) => ReactNode;
 };

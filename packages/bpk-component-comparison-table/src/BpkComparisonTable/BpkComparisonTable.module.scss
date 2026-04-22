@@ -23,7 +23,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 // ─── Scroll container ────────────────────────────────────────────────────────
 
-.bpk-compare-modal__scroll-container {
+.bpk-comparison-table__scroll-container {
   min-height: 0;
   flex: 1;
   overflow: auto;
@@ -67,7 +67,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 // ─── Sticky column headers ────────────────────────────────────────────────────
 
-.bpk-compare-modal__scroll-container th {
+.bpk-comparison-table__scroll-container th {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -76,20 +76,20 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   vertical-align: top;
 }
 
-.bpk-compare-modal__header-content {
+.bpk-comparison-table__header-content {
   display: flex;
   padding: tokens.bpk-spacing-base();
   flex-direction: column;
 }
 
 // Image wrapper — fades out via --bpk-image-opacity (set by JS on the parent element).
-.bpk-compare-modal__header-image-wrapper {
+.bpk-comparison-table__header-image-wrapper {
   position: relative;
   margin-bottom: tokens.bpk-spacing-base();
   opacity: var(--bpk-image-opacity, 1);
 }
 
-.bpk-compare-modal__header-image-area {
+.bpk-comparison-table__header-image-area {
   display: flex;
   height: $image-area-height;
   justify-content: center;
@@ -107,14 +107,14 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 // ID section — slides up over the fading image.
 // Negative margin-top collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
-.bpk-compare-modal__header-id-section {
+.bpk-comparison-table__header-id-section {
   margin-top: calc(
     ($image-area-height + tokens.bpk-spacing-base()) *
       (var(--bpk-image-opacity, 1) - 1)
   );
 }
 
-.bpk-compare-modal__best-tag {
+.bpk-comparison-table__best-tag {
   position: absolute;
   top: 0;
   z-index: 1;
@@ -122,7 +122,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 }
 
 // Remove button — fades and collapses its layout space so rows slide up over it.
-.bpk-compare-modal__remove-button {
+.bpk-comparison-table__remove-button {
   max-height: calc(5rem * var(--bpk-image-opacity, 1));
   margin-top: calc(tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1));
   opacity: var(--bpk-image-opacity, 1);
@@ -132,20 +132,20 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 // ─── Placeholder column header ───────────────────────────────────────────────
 
-.bpk-compare-modal__placeholder-text {
+.bpk-comparison-table__placeholder-text {
   text-align: center;
   white-space: pre-wrap;
 }
 
 // ─── Placeholder body cells ──────────────────────────────────────────────────
 
-.bpk-compare-modal__placeholder-cell {
+.bpk-comparison-table__placeholder-cell {
   background-color: tokens.$bpk-canvas-day;
 }
 
 // ─── Header slot ─────────────────────────────────────────────────────────────
 
-.bpk-compare-modal__header-slot {
+.bpk-comparison-table__header-slot {
   padding-bottom: tokens.bpk-spacing-md();
   padding-inline: tokens.bpk-spacing-base();
 }

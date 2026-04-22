@@ -16,30 +16,30 @@
  * limitations under the License.
  */
 
-import BpkCompareModalContent from './BpkCompareModalContent';
-import BpkCompareModalHeader from './BpkCompareModalHeader';
-import BpkCompareModalRoot from './BpkCompareModalRoot';
+import BpkComparisonTableContent from './BpkComparisonTableContent';
+import BpkComparisonTableHeader from './BpkComparisonTableHeader';
+import BpkComparisonTableRoot from './BpkComparisonTableRoot';
 
-import type { BpkCompareModalNamespace } from './common-types';
+import type { BpkComparisonTableNamespace } from './common-types';
 
 /**
- * BpkCompareModal — side-by-side comparison modal.
+ * BpkComparisonTable — side-by-side comparison modal.
  *
  * @example
- * <BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
- *   <BpkCompareModal.Header title="Compare cars" translations={translations} />
- *   <BpkCompareModal.Content
+ * <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+ *   <BpkComparisonTable.Header title="Compare cars" translations={translations} />
+ *   <BpkComparisonTable.Content
  *     columns={columns}
  *     onRemove={(itemId) => handleRemove(itemId)}
  *     onAddMoreClick={() => setIsOpen(false)}
  *     translations={translations}
  *   />
- * </BpkCompareModal.Root>
+ * </BpkComparisonTable.Root>
  */
-const BpkCompareModal: BpkCompareModalNamespace = {
-  Root: BpkCompareModalRoot,
-  Header: BpkCompareModalHeader,
-  Content: BpkCompareModalContent,
+const BpkComparisonTable: BpkComparisonTableNamespace = {
+  Root: BpkComparisonTableRoot,
+  Header: BpkComparisonTableHeader,
+  Content: BpkComparisonTableContent,
 };
 
-export default BpkCompareModal;
+export default BpkComparisonTable;

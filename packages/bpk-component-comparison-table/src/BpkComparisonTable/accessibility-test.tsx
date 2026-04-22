@@ -23,7 +23,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 
 import { BpkProvider } from '../../../bpk-component-layout';
 
-import BpkCompareModal from './BpkCompareModal';
+import BpkComparisonTable from './BpkComparisonTable';
 
 import type { BpkCompareColumn } from './common-types';
 
@@ -74,18 +74,18 @@ const TRANSLATIONS = {
 
 const renderModal = (columns: BpkCompareColumn[], title?: string) =>
   renderWithProvider(
-    <BpkCompareModal.Root isOpen onClose={noop}>
-      <BpkCompareModal.Header title={title} translations={TRANSLATIONS} />
-      <BpkCompareModal.Content
+    <BpkComparisonTable.Root isOpen onClose={noop}>
+      <BpkComparisonTable.Header title={title} translations={TRANSLATIONS} />
+      <BpkComparisonTable.Content
         columns={columns}
         onRemove={noop}
         onAddMoreClick={noop}
         translations={TRANSLATIONS}
       />
-    </BpkCompareModal.Root>,
+    </BpkComparisonTable.Root>,
   );
 
-describe('BpkCompareModal accessibility', () => {
+describe('BpkComparisonTable accessibility', () => {
   it('has no accessibility violations with 1 column and 2 placeholders', async () => {
     const { container } = renderModal([COLUMN_1]);
     const results = await axe(container);

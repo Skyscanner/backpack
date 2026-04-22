@@ -27,7 +27,7 @@ import BpkPrice, { SIZES as PRICE_SIZES, ALIGNS as PRICE_ALIGNS } from '../../..
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkComparisonTray from '../BpkComparisonTray/BpkComparisonTray';
 
-import BpkCompareModal from './BpkCompareModal';
+import BpkComparisonTable from './BpkComparisonTable';
 
 import type { BpkCompareColumn } from './common-types';
 import type { BpkComparisonItem } from '../BpkComparisonTray/common-types';
@@ -149,8 +149,8 @@ const StandaloneExample = () => {
         ))}
       </BpkHStack>
 
-      <BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkCompareModal.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
+      <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -164,14 +164,14 @@ const StandaloneExample = () => {
               />
             )}
           </BpkAiBlurb.Root>
-        </BpkCompareModal.Header>
-        <BpkCompareModal.Content
+        </BpkComparisonTable.Header>
+        <BpkComparisonTable.Content
           columns={columns}
           onRemove={handleRemove}
           onAddMoreClick={() => setIsOpen(false)}
           translations={TRANSLATIONS}
         />
-      </BpkCompareModal.Root>
+      </BpkComparisonTable.Root>
     </BpkVStack>
   );
 };
@@ -292,8 +292,8 @@ const CombinedExample = () => {
         />
       )}
 
-      <BpkCompareModal.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkCompareModal.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
+      <BpkComparisonTable.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -307,14 +307,14 @@ const CombinedExample = () => {
               />
             )}
           </BpkAiBlurb.Root>
-        </BpkCompareModal.Header>
-        <BpkCompareModal.Content
+        </BpkComparisonTable.Header>
+        <BpkComparisonTable.Content
           columns={columns}
           onRemove={removeItem}
           onAddMoreClick={() => setIsModalOpen(false)}
           translations={TRANSLATIONS}
         />
-      </BpkCompareModal.Root>
+      </BpkComparisonTable.Root>
     </BpkVStack>
   );
 };
@@ -323,18 +323,18 @@ const CombinedExample = () => {
 
 const meta = {
   title: 'bpk-component-comparison-table',
-  component: BpkCompareModal.Root,
+  component: BpkComparisonTable.Root,
   decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
 } satisfies Meta;
 
 export default meta;
 
 export const CompareModalExample = {
-  name: 'BpkCompareModal',
+  name: 'BpkComparisonTable',
   render: () => <StandaloneExample />,
 };
 
 export const CompareModalWithTray = {
-  name: 'BpkCompareModal + BpkComparisonTray',
+  name: 'BpkComparisonTable + BpkComparisonTray',
   render: () => <CombinedExample />,
 };

@@ -23,7 +23,7 @@ import userEvent from '@testing-library/user-event';
 
 import { BpkProvider } from '../../../bpk-component-layout';
 
-import BpkCompareModal from './BpkCompareModal';
+import BpkComparisonTable from './BpkComparisonTable';
 
 import type { BpkCompareColumn } from './common-types';
 
@@ -79,18 +79,18 @@ const TRANSLATIONS = {
 
 const renderModal = (columns: BpkCompareColumn[], overrides: { onRemove?: (id: string) => void; onAddMoreClick?: () => void } = {}) =>
   renderWithProvider(
-    <BpkCompareModal.Root isOpen onClose={noop}>
-      <BpkCompareModal.Header translations={TRANSLATIONS} />
-      <BpkCompareModal.Content
+    <BpkComparisonTable.Root isOpen onClose={noop}>
+      <BpkComparisonTable.Header translations={TRANSLATIONS} />
+      <BpkComparisonTable.Content
         columns={columns}
         onRemove={overrides.onRemove ?? noop}
         onAddMoreClick={overrides.onAddMoreClick ?? noop}
         translations={TRANSLATIONS}
       />
-    </BpkCompareModal.Root>,
+    </BpkComparisonTable.Root>,
   );
 
-describe('BpkCompareModal', () => {
+describe('BpkComparisonTable', () => {
   describe('column rendering', () => {
     it('renders 1 filled column and 2 placeholders when 1 column provided', () => {
       renderModal([COLUMN_1]);
@@ -189,17 +189,17 @@ describe('BpkCompareModal', () => {
   describe('header children slot', () => {
     it('renders children passed to Header', () => {
       renderWithProvider(
-        <BpkCompareModal.Root isOpen onClose={noop}>
-          <BpkCompareModal.Header translations={TRANSLATIONS}>
+        <BpkComparisonTable.Root isOpen onClose={noop}>
+          <BpkComparisonTable.Header translations={TRANSLATIONS}>
             <div>AI summary content</div>
-          </BpkCompareModal.Header>
-          <BpkCompareModal.Content
+          </BpkComparisonTable.Header>
+          <BpkComparisonTable.Content
             columns={[COLUMN_1]}
             onRemove={noop}
             onAddMoreClick={noop}
             translations={TRANSLATIONS}
           />
-        </BpkCompareModal.Root>,
+        </BpkComparisonTable.Root>,
       );
 
       expect(screen.getByText('AI summary content')).toBeInTheDocument();
@@ -216,15 +216,15 @@ describe('BpkCompareModal', () => {
     it('fires onClose when the close trigger is activated', async () => {
       const onClose = jest.fn();
       renderWithProvider(
-        <BpkCompareModal.Root isOpen onClose={onClose}>
-          <BpkCompareModal.Header translations={TRANSLATIONS} />
-          <BpkCompareModal.Content
+        <BpkComparisonTable.Root isOpen onClose={onClose}>
+          <BpkComparisonTable.Header translations={TRANSLATIONS} />
+          <BpkComparisonTable.Content
             columns={[COLUMN_1]}
             onRemove={noop}
             onAddMoreClick={noop}
             translations={TRANSLATIONS}
           />
-        </BpkCompareModal.Root>,
+        </BpkComparisonTable.Root>,
       );
 
       await userEvent.click(screen.getByLabelText('Close'));

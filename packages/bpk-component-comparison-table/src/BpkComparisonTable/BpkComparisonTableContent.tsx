@@ -27,11 +27,11 @@ import {
 } from '../../../bpk-component-table';
 import { cssModules } from '../../../bpk-react-utils';
 
-import BpkCompareModalHeaderRow from './BpkCompareModalHeaderRow';
+import BpkComparisonTableHeaderRow from './BpkComparisonTableHeaderRow';
 
-import type { BpkCompareModalContentProps } from './common-types';
+import type { BpkComparisonTableContentProps } from './common-types';
 
-import STYLES from './BpkCompareModal.module.scss';
+import STYLES from './BpkComparisonTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -40,12 +40,12 @@ const MAX_COLUMNS = 3;
 // Matches the image area height (5.1875rem × 16px). Opacity goes from 1 → 0 as the user scrolls 0 → 83 px, giving a smooth parallax fade.
 const IMAGE_FADE_THRESHOLD_PX = 83;
 
-function BpkCompareModalContent({
+function BpkComparisonTableContent({
   columns,
   onAddMoreClick,
   onRemove,
   translations,
-}: BpkCompareModalContentProps) {
+}: BpkComparisonTableContentProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Pad with nulls so the table always renders exactly MAX_COLUMNS slots.
@@ -80,10 +80,10 @@ function BpkCompareModalContent({
   return (
     <div
       ref={scrollContainerRef}
-      className={getClassName('bpk-compare-modal__scroll-container')}
+      className={getClassName('bpk-comparison-table__scroll-container')}
     >
       <BpkTable>
-        <BpkCompareModalHeaderRow
+        <BpkComparisonTableHeaderRow
           displayColumns={displayColumns}
           onRemove={onRemove}
           onAddMoreClick={onAddMoreClick}
@@ -97,7 +97,7 @@ function BpkCompareModalContent({
                 <BpkTableCell
                   key={column ? `${rowId}-${column.itemId}` : `${rowId}-placeholder-${index}`}
                   // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                  className={column ? undefined : getClassName('bpk-compare-modal__placeholder-cell')}
+                  className={column ? undefined : getClassName('bpk-comparison-table__placeholder-cell')}
                 >
                   {column
                     ? cellsByItemAndRow.get(column.itemId)?.get(rowId) ?? null
@@ -112,4 +112,4 @@ function BpkCompareModalContent({
   );
 }
 
-export default BpkCompareModalContent;
+export default BpkComparisonTableContent;

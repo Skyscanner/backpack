@@ -17,28 +17,27 @@
  */
 
 import { BpkModalV3 } from '../../../bpk-component-modal';
-import { cssModules } from '../../../bpk-react-utils';
 
-import type { BpkCompareModalHeaderProps } from './common-types';
+import type { BpkComparisonTableRootProps } from './common-types';
 
-import STYLES from './BpkCompareModal.module.scss';
-
-const getClassName = cssModules(STYLES);
-
-function BpkCompareModalHeader({ children, title, translations }: BpkCompareModalHeaderProps) {
+function BpkComparisonTableRoot({ children, isOpen, onClose }: BpkComparisonTableRootProps) {
   return (
-    <>
-      <BpkModalV3.Header>
-        {title && <BpkModalV3.Title>{title}</BpkModalV3.Title>}
-        <BpkModalV3.CloseTrigger label={translations.closeLabel} />
-      </BpkModalV3.Header>
-      {children && (
-        <div className={getClassName('bpk-compare-modal__header-slot')}>
+    <BpkModalV3.Root
+      open={isOpen}
+      onOpenChange={(details) => {
+        if (!details.open) {
+          onClose();
+        }
+      }}
+    >
+      <BpkModalV3.Portal>
+        <BpkModalV3.Scrim />
+        <BpkModalV3.Content>
           {children}
-        </div>
-      )}
-    </>
+        </BpkModalV3.Content>
+      </BpkModalV3.Portal>
+    </BpkModalV3.Root>
   );
 }
 
-export default BpkCompareModalHeader;
+export default BpkComparisonTableRoot;

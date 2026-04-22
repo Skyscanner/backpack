@@ -21,21 +21,21 @@ import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from './BpkCompareModal.module.scss';
+import STYLES from './BpkComparisonTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkCompareModalColumnPlaceholderProps = {
+type BpkComparisonTableColumnPlaceholderProps = {
   addMoreDescription: string;
   addMoreLinkText: string;
   onAddMoreClick: () => void;
 };
 
-function BpkCompareModalColumnPlaceholder({
+function BpkComparisonTableColumnPlaceholder({
   addMoreDescription,
   addMoreLinkText,
   onAddMoreClick,
-}: BpkCompareModalColumnPlaceholderProps) {
+}: BpkComparisonTableColumnPlaceholderProps) {
   return (
     <BpkFlex
       direction="column"
@@ -44,7 +44,7 @@ function BpkCompareModalColumnPlaceholder({
       paddingTop={BpkSpacing.LG}
       paddingInline={BpkSpacing.XL}
     >
-      <div className={getClassName('bpk-compare-modal__placeholder-text')}>
+      <div className={getClassName('bpk-comparison-table__placeholder-text')}>
         <BpkText
           tagName="p"
           textStyle={TEXT_STYLES.bodyDefault}
@@ -64,4 +64,4 @@ function BpkCompareModalColumnPlaceholder({
   );
 }
 
-export default BpkCompareModalColumnPlaceholder;
+export default BpkComparisonTableColumnPlaceholder;

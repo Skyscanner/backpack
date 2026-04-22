@@ -1,12 +1,12 @@
-# BpkCompareModal
+# BpkComparisonTable
 
 A modal-based table component for comparing up to 3 items side by side. The consumer owns the columns state and controls the open/close state.
 
 ## Usage
 
 ```tsx
-import { BpkCompareModal } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumn, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import { BpkComparisonTable } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkComparisonTableTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
@@ -16,14 +16,14 @@ import type { BpkCompareColumn, BpkCompareModalTranslations } from '@skyscanner/
 - **Ensure rowId sequences match across all columns.** Every column must declare the same `rowId` values in the same order. `rowId` is the shared key that aligns rows across columns — think of it as the row label (e.g. `'cancellation'`, `'rating'`). Mismatches will cause rows to misalign.
 - **Control open/close state.** Pass `isOpen` and call `setIsOpen(false)` inside `onClose`.
 - **Handle removal.** When `onRemove(itemId)` fires, remove that item from your columns array. If fewer than 2 items remain you should also close the modal.
-- **Compose BpkAiBlurb when needed.** Pass a `BpkAiBlurb.Root` as children of `BpkCompareModal.Header`. The component does not render AI content automatically — you own the composition.
+- **Compose BpkAiBlurb when needed.** Pass a `BpkAiBlurb.Root` as children of `BpkComparisonTable.Header`. The component does not render AI content automatically — you own the composition.
 
 ## Example
 
 ```tsx
 import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
-import { BpkCompareModal } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumn, BpkCompareModalTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import { BpkComparisonTable } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkComparisonTableTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 
 const [isOpen, setIsOpen] = useState(false);
 const [columns, setColumns] = useState<BpkCompareColumn[]>([
@@ -58,7 +58,7 @@ const handleRemove = (itemId: string) => {
   if (remaining.length < 2) setIsOpen(false);
 };
 
-const translations: BpkCompareModalTranslations = {
+const translations: BpkComparisonTableTranslations = {
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
@@ -66,8 +66,8 @@ const translations: BpkCompareModalTranslations = {
   addMoreLinkText: 'Add more',
 };
 
-<BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-  <BpkCompareModal.Header
+<BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  <BpkComparisonTable.Header
     title="Compare cars"
     translations={translations}
   >
@@ -82,36 +82,36 @@ const translations: BpkCompareModalTranslations = {
         onFeedback={(positive) => trackEvent(positive ? 'thumb_up' : 'thumb_down')}
       />
     </BpkAiBlurb.Root>
-  </BpkCompareModal.Header>
-  <BpkCompareModal.Content
+  </BpkComparisonTable.Header>
+  <BpkComparisonTable.Content
     columns={columns}
     onRemove={handleRemove}
     onAddMoreClick={() => setIsOpen(false)}
     translations={translations}
   />
-</BpkCompareModal.Root>
+</BpkComparisonTable.Root>
 ```
 
-If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
+If you don't need the AI blurb, omit the children from `BpkComparisonTable.Header`:
 
 ```tsx
-<BpkCompareModal.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-  <BpkCompareModal.Header
+<BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  <BpkComparisonTable.Header
     title="Compare cars"
     translations={translations}
   />
-  <BpkCompareModal.Content
+  <BpkComparisonTable.Content
     columns={columns}
     onRemove={handleRemove}
     onAddMoreClick={() => setIsOpen(false)}
     translations={translations}
   />
-</BpkCompareModal.Root>
+</BpkComparisonTable.Root>
 ```
 
 ## Props
 
-### `BpkCompareModal.Root`
+### `BpkComparisonTable.Root`
 
 | Property | PropType    | Required | Default Value |
 | -------- | ----------- | -------- | ------------- |
@@ -119,24 +119,24 @@ If you don't need the AI blurb, omit the children from `BpkCompareModal.Header`:
 | onClose  | `() => void` | true    | -             |
 | children | ReactNode   | true     | -             |
 
-### `BpkCompareModal.Header`
+### `BpkComparisonTable.Header`
 
 | Property     | PropType                        | Required | Default Value |
 | ------------ | ------------------------------- | -------- | ------------- |
-| translations | `BpkCompareModalTranslations`   | true     | -             |
+| translations | `BpkComparisonTableTranslations`   | true     | -             |
 | title        | string                          | false    | -             |
 | children     | ReactNode                       | false    | -             |
 
-### `BpkCompareModal.Content`
+### `BpkComparisonTable.Content`
 
 | Property       | PropType                        | Required | Default Value |
 | -------------- | ------------------------------- | -------- | ------------- |
 | columns        | `BpkCompareColumn[]`        | true     | -             |
 | onRemove       | `(itemId: string) => void`      | true     | -             |
 | onAddMoreClick | `() => void`                    | true     | -             |
-| translations   | `BpkCompareModalTranslations`   | true     | -             |
+| translations   | `BpkComparisonTableTranslations`   | true     | -             |
 
-### `BpkCompareModalTranslations`
+### `BpkComparisonTableTranslations`
 
 | Property           | PropType | Required | Default Value |
 | ------------------ | -------- | -------- | ------------- |

@@ -22,9 +22,9 @@ import { cssModules } from '../../../bpk-react-utils';
 
 import type { BpkCompareColumn } from './common-types';
 
-import STYLES from './BpkCompareModal.module.scss';
+import STYLES from './BpkComparisonTable.module.scss';
 
-type BpkCompareModalColumnHeaderProps = Pick<
+type BpkComparisonTableColumnHeaderProps = Pick<
   BpkCompareColumn,
   'imageSrc' | 'imageAlt' | 'headerContent' | 'itemId' | 'bestTag' | 'removeA11yLabel'
 > & {
@@ -35,7 +35,7 @@ type BpkCompareModalColumnHeaderProps = Pick<
 
 const getClassName = cssModules(STYLES);
 
-function BpkCompareModalColumnHeader({
+function BpkComparisonTableColumnHeader({
   bestTag = false,
   bestTagLabel,
   headerContent,
@@ -45,29 +45,29 @@ function BpkCompareModalColumnHeader({
   onRemove,
   removeA11yLabel,
   removeLabel,
-}: BpkCompareModalColumnHeaderProps) {
+}: BpkComparisonTableColumnHeaderProps) {
   return (
     <div
-      className={getClassName('bpk-compare-modal__header-content')}
+      className={getClassName('bpk-comparison-table__header-content')}
     >
-      <div className={getClassName('bpk-compare-modal__header-image-wrapper')}>
+      <div className={getClassName('bpk-comparison-table__header-image-wrapper')}>
         <div
-          className={getClassName('bpk-compare-modal__header-image-area')}
+          className={getClassName('bpk-comparison-table__header-image-area')}
         >
           {imageSrc && <img src={imageSrc} alt={imageAlt} />}
         </div>
         {bestTag && (
-          <span className={getClassName('bpk-compare-modal__best-tag')}>
+          <span className={getClassName('bpk-comparison-table__best-tag')}>
             <BpkBadge type={BADGE_TYPES.brand}>{bestTagLabel}</BpkBadge>
           </span>
         )}
       </div>
 
-      <div className={getClassName('bpk-compare-modal__header-id-section')}>
+      <div className={getClassName('bpk-comparison-table__header-id-section')}>
         {headerContent}
       </div>
 
-      <div className={getClassName('bpk-compare-modal__remove-button')}>
+      <div className={getClassName('bpk-comparison-table__remove-button')}>
         <BpkButton
           type={BUTTON_TYPES.link}
           size={SIZE_TYPES.small}
@@ -81,4 +81,4 @@ function BpkCompareModalColumnHeader({
   );
 }
 
-export default BpkCompareModalColumnHeader;
+export default BpkComparisonTableColumnHeader;
