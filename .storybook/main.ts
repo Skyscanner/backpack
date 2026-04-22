@@ -29,6 +29,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
+    '@storybook/addon-themes',
     '@storybook/addon-webpack5-compiler-babel'
   ],
   framework: {

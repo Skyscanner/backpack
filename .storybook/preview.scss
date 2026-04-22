@@ -1,0 +1,12 @@
+/*
+ * Storybook-only canvas styling. Backed by the CSS variables defined in
+ * packages/bpk-stylesheets/index.scss, so the preview body reacts to the
+ * [data-theme] toolbar toggle from @storybook/addon-themes.
+ */
+:global {
+  html,
+  body {
+    background-color: var(--bpk-canvas-default);
+    color: var(--bpk-text-primary);
+  }
+}

@@ -17,10 +17,12 @@
  */
 
 import { ArgTypes, Title } from '@storybook/addon-docs/blocks';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 import '../packages/bpk-stylesheets';
 import '../packages/bpk-stylesheets/font';
 import '../packages/bpk-stylesheets/larken';
+import './preview.scss';
 
 import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 
@@ -45,6 +47,12 @@ const preview: Preview = {
   ],
 
   decorators: [
+    withThemeByDataAttribute({
+      themes: { light: 'light', dark: 'dark' },
+      defaultTheme: 'light',
+      attributeName: 'data-theme',
+      parentSelector: 'html',
+    }),
     (story, { args }) => {
       let root;
       /**
