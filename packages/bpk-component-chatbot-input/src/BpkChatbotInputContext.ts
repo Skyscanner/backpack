@@ -16,14 +16,23 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+import { createContext, useContext } from 'react';
 
-import BpkPanel from './BpkPanel';
+import { CHATBOT_INPUT_TYPES } from './common-types';
 
-figma.connect(
-  BpkPanel,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49752',
-  {
-    example: () => <BpkPanel />,
-  },
-);
+import type { ChatbotInputType } from './common-types';
+
+type BpkChatbotInputContextValue = {
+  inputType: ChatbotInputType;
+  isOverLimit: boolean;
+  setIsOverLimit: (value: boolean) => void;
+};
+
+export const BpkChatbotInputContext =
+  createContext<BpkChatbotInputContextValue>({
+    inputType: CHATBOT_INPUT_TYPES.COMPOSER,
+    isOverLimit: false,
+    setIsOverLimit: () => {},
+  });
+
+export const useChatbotInputContext = () => useContext(BpkChatbotInputContext);

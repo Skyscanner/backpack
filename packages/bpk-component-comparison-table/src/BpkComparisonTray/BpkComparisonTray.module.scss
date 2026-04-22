@@ -27,6 +27,12 @@
 .bpk-comparison-tray {
   width: 355 * tokens.$bpk-one-pixel-rem;
   max-width: 100%;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
 }
 
 // Filled item — relative for close button positioning
@@ -35,12 +41,6 @@
   width: 62 * tokens.$bpk-one-pixel-rem;
   height: 28 * tokens.$bpk-one-pixel-rem;
   flex-shrink: 0;
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    width: auto;
-    min-width: 0;
-    flex: 1;
-  }
 }
 
 // Inner image container — clips image to rounded corners without clipping the close button
@@ -59,7 +59,11 @@
 }
 
 // Close button — 16×16, dark bg, white border, overlaps top-right corner
+/* stylelint-disable order/order, order/properties-order */
 .bpk-comparison-tray__item-close {
+  // bpk-touch-tappable sets position: relative — position: absolute must come after to override it
+  @include utils.bpk-touch-tappable;
+
   position: absolute;
   top: 0;
   right: 0;
@@ -76,7 +80,6 @@
   color: tokens.$bpk-text-primary-inverse-day;
   cursor: pointer;
 
-  @include utils.bpk-touch-tappable;
   @include shadows.bpk-box-shadow-lg;
 
   svg {
@@ -90,6 +93,7 @@
     @include utils.bpk-focus-indicator;
   }
 }
+/* stylelint-enable order/order, order/properties-order */
 
 // Placeholder item — dashed border
 .bpk-comparison-tray__item-placeholder {
@@ -99,10 +103,4 @@
   border: tokens.$bpk-one-pixel-rem dashed tokens.$bpk-line-day;
 
   @include radii.bpk-border-radius-xs;
-
-  @include breakpoints.bpk-breakpoint-mobile {
-    width: auto;
-    min-width: 0;
-    flex: 1;
-  }
 }

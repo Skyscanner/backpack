@@ -18,24 +18,29 @@
 
 import figma from '@figma/code-connect';
 
-import BpkDividedCard, { ORIENTATION } from './BpkDividedCard';
+import BpkChatBubble from './BpkChatBubble';
+import { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './common-types';
 
 figma.connect(
-  BpkDividedCard,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49338',
+  BpkChatBubble,
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=14703%3A2848',
   {
     props: {
-      orientation: figma.enum('Size', {
-        Desktop: ORIENTATION.horizontal,
-        Mobile: ORIENTATION.vertical,
+      type: figma.enum('Type', {
+        System: CHAT_BUBBLE_TYPE.bot,
+        User: CHAT_BUBBLE_TYPE.user,
       }),
+      position: figma.enum('State', {
+        Top: CHAT_BUBBLE_POSITION.first,
+        Middle: CHAT_BUBBLE_POSITION.middle,
+        Bottom: CHAT_BUBBLE_POSITION.last,
+      }),
+      content: figma.textContent('chat text'),
     },
-    example: ({ orientation }) => (
-      <BpkDividedCard
-        orientation={orientation}
-        primaryContent="Primary content"
-        secondaryContent="Secondary content"
-      />
+    example: ({ content, position, type }) => (
+      <BpkChatBubble type={type} systemPosition={position}>
+        {content}
+      </BpkChatBubble>
     ),
   },
 );

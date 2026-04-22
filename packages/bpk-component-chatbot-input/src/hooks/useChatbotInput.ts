@@ -37,6 +37,7 @@ interface UseChatbotInputOptions {
   isPolling?: boolean;
   inputType?: ChatbotInputType;
   maxCharacters?: number;
+  maxLines?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
 }
@@ -62,6 +63,7 @@ const useChatbotInput = ({
   isPolling = false,
   isSending = false,
   maxCharacters = MAX_CHARACTERS,
+  maxLines,
   onInputBlur,
   onInputChange,
   onInputClick = () => {},
@@ -85,6 +87,7 @@ const useChatbotInput = ({
       ref: inputRef as RefObject<HTMLTextAreaElement>,
       value: inputValue,
       enabled: isMultiLine,
+      maxLines,
     });
 
   const handleSubmit = useCallback(() => {

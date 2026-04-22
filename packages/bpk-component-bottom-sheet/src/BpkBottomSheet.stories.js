@@ -186,7 +186,7 @@ const EscapeCloseExample = () => (
 
 const OverflowingExample = () => (
   <BottomSheetContainer
-    title="Bottom Sheet title"
+    title="Bottom Sheet title which is very very very very long. Can break into several lines"
     closeLabel="Close Bottom Sheet"
   >
     <>{Children.toArray(content)}</>
@@ -195,7 +195,7 @@ const OverflowingExample = () => (
 
 const LongHeaderTextExample = () => (
   <BottomSheetContainer
-    title="Bottom Sheet title which is long"
+    title="Bottom Sheet title which is very very very very long. Can break into several lines"
     closeLabel="Close Bottom Sheet"
   >
     This is a default bottom sheet. You can put anything you want in here.
@@ -204,7 +204,7 @@ const LongHeaderTextExample = () => (
 
 const LongHeaderTextWithActionButtonExample = () => (
   <BottomSheetContainer
-    title="Bottom Sheet title which is long"
+    title="Bottom Sheet title which is very very very very long. Can break into several lines"
     closeLabel="Close Bottom Sheet"
     actionText="Action"
     onAction={action('Action clicked')}

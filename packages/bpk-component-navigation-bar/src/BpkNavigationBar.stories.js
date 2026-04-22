@@ -92,6 +92,30 @@ const LongTitleTextExample = () => (
   </div>
 );
 
+const LongTitleTextWrappingExample = () => (
+  <div className={getClassNames('bpk-navigation-bar-story')}>
+    <BpkNavigationBar
+      id="test"
+      title="Backpack navigation bar with a very long title that wraps onto multiple lines"
+      wrapTitle
+      leadingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('back clicked')}
+          icon={ArrowIconWithRtl}
+          label="back"
+        />
+      }
+      trailingButton={
+        <BpkNavigationBarIconButton
+          onClick={action('close clicked')}
+          icon={CloseIcon}
+          label="close"
+        />
+      }
+    />
+  </div>
+);
+
 const CustomTitleExample = () => (
   <div className={getClassNames('bpk-navigation-bar-story')}>
     <BpkNavigationBar
@@ -317,6 +341,10 @@ export const Default = {
 
 export const LongTitleText = {
   render: () => <LongTitleTextExample />,
+};
+
+export const LongTitleTextWrapping = {
+  render: () => <LongTitleTextWrappingExample />,
 };
 
 export const CustomTitle = {
