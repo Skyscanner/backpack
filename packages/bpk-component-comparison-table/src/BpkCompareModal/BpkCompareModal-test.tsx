@@ -156,17 +156,7 @@ describe('BpkCompareModal', () => {
   });
 
   describe('column count validation', () => {
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-
-    beforeEach(() => {
-      errorSpy.mockClear();
-    });
-
-    afterAll(() => {
-      errorSpy.mockRestore();
-    });
-
-    it('emits console.error and slices when more than 3 columns are provided', () => {
+    it('silently ignores columns beyond 3', () => {
       const extraColumn: BpkCompareColumn = {
         itemId: 'col-4',
         headerContent: <div>Extra column</div>,
@@ -176,20 +166,53 @@ describe('BpkCompareModal', () => {
 
       renderModal([COLUMN_1, COLUMN_2, COLUMN_3, extraColumn]);
 
-      expect(errorSpy).toHaveBeenCalledWith(
-        expect.stringContaining('maximum is 3'),
-      );
       expect(screen.queryByText('Extra column')).not.toBeInTheDocument();
     });
   });
 
-  describe('modal open/close', () => {
-    it('renders content when isOpen=true', () => {
-      renderModal([COLUMN_1]);
+  describe('row rendering', () => {
+    it('renders a table row for each rowId across all columns', () => {
+      renderModal([COLUMN_1, COLUMN_2]);
 
-      expect(screen.getByText('Column 1 header')).toBeInTheDocument();
+      expect(screen.getAllByText('Free cancellation')).toHaveLength(2);
+      expect(screen.getAllByText('3.5 stars')).toHaveLength(2);
     });
 
+    it('renders 3 placeholder cells and no body rows when columns is empty', () => {
+      renderModal([]);
+
+      expect(screen.getAllByText('Add more')).toHaveLength(3);
+      expect(screen.queryByRole('cell')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('header children slot', () => {
+    it('renders children passed to Header', () => {
+      renderWithProvider(
+        <BpkCompareModal.Root isOpen onClose={noop}>
+          <BpkCompareModal.Header translations={TRANSLATIONS}>
+            <div>AI summary content</div>
+          </BpkCompareModal.Header>
+          <BpkCompareModal.Content
+            columns={[COLUMN_1]}
+            onRemove={noop}
+            onAddMoreClick={noop}
+            translations={TRANSLATIONS}
+          />
+        </BpkCompareModal.Root>,
+      );
+
+      expect(screen.getByText('AI summary content')).toBeInTheDocument();
+    });
+
+    it('does not render the header slot wrapper when no children are passed', () => {
+      renderModal([COLUMN_1]);
+
+      expect(screen.queryByText('AI summary content')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('modal open/close', () => {
     it('fires onClose when the close trigger is activated', async () => {
       const onClose = jest.fn();
       renderWithProvider(

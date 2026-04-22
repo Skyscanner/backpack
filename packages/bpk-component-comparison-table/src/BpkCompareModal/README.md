@@ -53,12 +53,12 @@ const [columns, setColumns] = useState<BpkCompareColumn[]>([
 ]);
 
 const handleRemove = (itemId: string) => {
-  const remaining = columns.filter((col) => col.itemId !== itemId);
+  const remaining = columns.filter((column) => column.itemId !== itemId);
   setColumns(remaining);
   if (remaining.length < 2) setIsOpen(false);
 };
 
-const translations = {
+const translations: BpkCompareModalTranslations = {
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',

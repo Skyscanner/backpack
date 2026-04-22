@@ -127,7 +127,7 @@ const StandaloneExample = () => {
   const [aiState, setAiState] = useState<AiState>('aiResponse');
 
   const handleRemove = (itemId: string) => {
-    setColumns((prev) => prev.filter((col) => col.itemId !== itemId));
+    setColumns((prev) => prev.filter((column) => column.itemId !== itemId));
   };
 
   return (
