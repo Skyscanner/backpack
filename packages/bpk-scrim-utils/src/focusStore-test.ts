@@ -79,6 +79,16 @@ describe('focusStore', () => {
     expect(document.activeElement).not.toBe(button);
   });
 
+  it('should call focus with preventScroll:true to avoid overriding scroll restoration', () => {
+    button.focus();
+    focusStore.storeFocus();
+
+    const focusSpy = jest.spyOn(button, 'focus');
+    focusStore.restoreFocus();
+    expect(focusSpy).toHaveBeenCalledWith({ preventScroll: true });
+    focusSpy.mockRestore();
+  });
+
   it('should handle element without focus method gracefully', () => {
     // Simulate a non-HTMLElement activeElement
     const fakeElement = { nodeName: 'fake' } as unknown as Element;

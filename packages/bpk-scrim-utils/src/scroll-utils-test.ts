@@ -38,7 +38,7 @@ describe('scroll-utils', () => {
 
   beforeEach(() => {
     resetBodyStyles();
-    // reset the module-level scrollOffset by restoring scroll at 0
+    // reset the module-level scrollOffset to 0 before each test
     Object.defineProperty(window, 'pageYOffset', {
       configurable: true,
       value: 0,
@@ -107,7 +107,7 @@ describe('scroll-utils', () => {
   });
 
   describe('unlockScroll', () => {
-    it('clears overflow, padding-right, touch-action and overscroll-behavior', () => {
+    it('clears overflow and padding-right, restores touch-action and overscroll-behavior to pre-lock values', () => {
       lockScroll();
       unlockScroll();
 
@@ -115,6 +115,17 @@ describe('scroll-utils', () => {
       expect(document.body.style.paddingRight).toBe('');
       expect(document.body.style.touchAction).toBe('');
       expect(document.body.style.overscrollBehavior).toBe('');
+    });
+
+    it('restores host-app inline touch-action and overscroll-behavior after unlock', () => {
+      document.body.style.touchAction = 'manipulation';
+      document.body.style.overscrollBehavior = 'none';
+
+      lockScroll();
+      unlockScroll();
+
+      expect(document.body.style.touchAction).toBe('manipulation');
+      expect(document.body.style.overscrollBehavior).toBe('none');
     });
   });
 });

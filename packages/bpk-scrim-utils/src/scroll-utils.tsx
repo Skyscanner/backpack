@@ -17,6 +17,8 @@
  */
 
 let scrollOffset = 0;
+let previousTouchAction = '';
+let previousOverscrollBehavior = '';
 
 const getWindow = () => (typeof window !== 'undefined' ? window : null);
 
@@ -105,6 +107,9 @@ export const lockScroll = () => {
 
   const paddingRight = getScrollBarWidth();
 
+  previousTouchAction = body.style.touchAction;
+  previousOverscrollBehavior = body.style.overscrollBehavior;
+
   body.style.overflow = 'hidden';
   body.style.paddingRight = paddingRight;
   // On iOS, `overflow: hidden` alone does not prevent touch-scroll or rubber-band
@@ -123,6 +128,6 @@ export const unlockScroll = () => {
 
   body.style.overflow = '';
   body.style.paddingRight = '';
-  body.style.touchAction = '';
-  body.style.overscrollBehavior = '';
+  body.style.touchAction = previousTouchAction;
+  body.style.overscrollBehavior = previousOverscrollBehavior;
 };

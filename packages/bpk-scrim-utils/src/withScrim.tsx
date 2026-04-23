@@ -86,7 +86,7 @@ const withScrim = <P extends object>(
 
       /**
        * iPhones & iPads need to have a fixed body and scrolling stored to prevent some iOS
-       * specific issues occuring. iOS Safari does not prevent scrolling on the underlying
+       * specific issues occurring. iOS Safari does not prevent scrolling on the underlying
        * content — without these fixes users can scroll below a modal or dialog that uses
        * withScrim. See: https://markus.oberlehner.net/blog/simple-solution-to-prevent-body-scrolling-on-ios/
        *
