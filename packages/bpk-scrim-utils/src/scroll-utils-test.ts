@@ -19,10 +19,12 @@
 import {
   fixBody,
   lockScroll,
+  lockTouchAction,
   restoreScroll,
   storeScroll,
   unfixBody,
   unlockScroll,
+  unlockTouchAction,
 } from './scroll-utils';
 
 describe('scroll-utils', () => {
@@ -97,35 +99,58 @@ describe('scroll-utils', () => {
   });
 
   describe('lockScroll', () => {
-    it('sets overflow, touch-action and overscroll-behavior on the body', () => {
+    it('sets overflow and overscroll-behavior on the body, without touching touch-action', () => {
       lockScroll();
 
       expect(document.body.style.overflow).toBe('hidden');
-      expect(document.body.style.touchAction).toBe('none');
       expect(document.body.style.overscrollBehavior).toBe('contain');
+      expect(document.body.style.touchAction).toBe('');
     });
   });
 
   describe('unlockScroll', () => {
-    it('clears overflow and padding-right, restores touch-action and overscroll-behavior to pre-lock values', () => {
+    it('clears overflow and padding-right, restores overscroll-behavior to pre-lock value', () => {
       lockScroll();
       unlockScroll();
 
       expect(document.body.style.overflow).toBe('');
       expect(document.body.style.paddingRight).toBe('');
-      expect(document.body.style.touchAction).toBe('');
       expect(document.body.style.overscrollBehavior).toBe('');
     });
 
-    it('restores host-app inline touch-action and overscroll-behavior after unlock', () => {
-      document.body.style.touchAction = 'manipulation';
+    it('restores host-app inline overscroll-behavior after unlock', () => {
       document.body.style.overscrollBehavior = 'none';
 
       lockScroll();
       unlockScroll();
 
-      expect(document.body.style.touchAction).toBe('manipulation');
       expect(document.body.style.overscrollBehavior).toBe('none');
+    });
+  });
+
+  describe('lockTouchAction', () => {
+    it('sets touch-action to none on the body', () => {
+      lockTouchAction();
+
+      expect(document.body.style.touchAction).toBe('none');
+    });
+  });
+
+  describe('unlockTouchAction', () => {
+    it('restores touch-action to the pre-lock value (empty when unset)', () => {
+      lockTouchAction();
+      unlockTouchAction();
+
+      expect(document.body.style.touchAction).toBe('');
+    });
+
+    it('restores host-app inline touch-action after unlock', () => {
+      document.body.style.touchAction = 'manipulation';
+
+      lockTouchAction();
+      unlockTouchAction();
+
+      expect(document.body.style.touchAction).toBe('manipulation');
     });
   });
 });

@@ -25,10 +25,12 @@ import focusStore from './focusStore';
 import {
   fixBody,
   lockScroll,
+  lockTouchAction,
   restoreScroll,
   storeScroll,
   unfixBody,
   unlockScroll,
+  unlockTouchAction,
 } from './scroll-utils';
 import withScrim from './withScrim';
 
@@ -50,9 +52,11 @@ jest.mock('./focusStore', () => ({
 
 jest.mock('./scroll-utils', () => ({
   lockScroll: jest.fn(),
+  lockTouchAction: jest.fn(),
   restoreScroll: jest.fn(),
   storeScroll: jest.fn(),
   unlockScroll: jest.fn(),
+  unlockTouchAction: jest.fn(),
   fixBody: jest.fn(),
   unfixBody: jest.fn(),
 }));
@@ -141,6 +145,7 @@ describe('BpkScrim', () => {
       expect(storeScroll).toHaveBeenCalled();
       expect(lockScroll).toHaveBeenCalled();
       expect(fixBody).toHaveBeenCalled();
+      expect(lockTouchAction).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(mockSetAttribute).toHaveBeenCalledWith('aria-hidden', 'true');
     });
@@ -184,6 +189,7 @@ describe('BpkScrim', () => {
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(storeScroll).not.toHaveBeenCalled();
       expect(fixBody).not.toHaveBeenCalled();
+      expect(lockTouchAction).not.toHaveBeenCalled();
       expect(mockSetAttribute).toHaveBeenCalledWith('aria-hidden', 'true');
     });
   });
@@ -216,6 +222,7 @@ describe('BpkScrim', () => {
       expect(unlockScroll).toHaveBeenCalled();
       expect(unfixBody).toHaveBeenCalled();
       expect(restoreScroll).toHaveBeenCalled();
+      expect(unlockTouchAction).toHaveBeenCalled();
       expect(focusStore.restoreFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
       expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');
@@ -260,6 +267,7 @@ describe('BpkScrim', () => {
       expect(unlockScroll).toHaveBeenCalled();
       expect(restoreScroll).not.toHaveBeenCalled();
       expect(unfixBody).not.toHaveBeenCalled();
+      expect(unlockTouchAction).not.toHaveBeenCalled();
       expect(focusStore.restoreFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
       expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');

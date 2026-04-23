@@ -32,10 +32,12 @@ import focusStore from './focusStore';
 import {
   fixBody,
   lockScroll,
+  lockTouchAction,
   restoreScroll,
   storeScroll,
   unfixBody,
   unlockScroll,
+  unlockTouchAction,
 } from './scroll-utils';
 
 import STYLES from './bpk-scrim-content.module.scss';
@@ -101,6 +103,7 @@ const withScrim = <P extends object>(
       if (isIphone || isIpad) {
         storeScroll();
         fixBody();
+        lockTouchAction();
       }
       lockScroll();
 
@@ -122,6 +125,7 @@ const withScrim = <P extends object>(
         // prevents a second visual jump on close.
         unfixBody();
         restoreScroll();
+        unlockTouchAction();
       }
       unlockScroll();
 

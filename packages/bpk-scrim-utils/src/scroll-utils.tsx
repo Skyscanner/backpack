@@ -98,6 +98,12 @@ export const unfixBody = () => {
   body.style.width = '';
 };
 
+// Locks background scroll on the body. Safe to call on all platforms.
+//
+// Sets `overflow: hidden` to prevent the page behind a modal from scrolling,
+// compensates for the hidden scrollbar with `padding-right`, and applies
+// `overscroll-behavior: contain` to stop scroll chaining from modal content to
+// the viewport. None of these block user touch gestures.
 export const lockScroll = () => {
   const body = getBodyElement();
 
@@ -107,15 +113,10 @@ export const lockScroll = () => {
 
   const paddingRight = getScrollBarWidth();
 
-  previousTouchAction = body.style.touchAction;
   previousOverscrollBehavior = body.style.overscrollBehavior;
 
   body.style.overflow = 'hidden';
   body.style.paddingRight = paddingRight;
-  // On iOS, `overflow: hidden` alone does not prevent touch-scroll or rubber-band
-  // overscroll on the body. `touch-action: none` blocks scroll gestures and
-  // `overscroll-behavior: contain` stops overscroll chaining to the viewport.
-  body.style.touchAction = 'none';
   body.style.overscrollBehavior = 'contain';
 };
 
@@ -128,6 +129,33 @@ export const unlockScroll = () => {
 
   body.style.overflow = '';
   body.style.paddingRight = '';
-  body.style.touchAction = previousTouchAction;
   body.style.overscrollBehavior = previousOverscrollBehavior;
+};
+
+// Blocks touch gestures on the body via `touch-action: none`. iOS-only.
+//
+// On iOS Safari, `overflow: hidden` alone does not stop touch-scroll or
+// rubber-band overscroll on the body — `touch-action: none` is needed. Do NOT
+// call this on non-iOS platforms: `touch-action` combines with descendants'
+// effective touch-action, so setting `none` on body blocks touch scrolling in
+// any modal content that doesn't explicitly declare its own `touch-action`.
+export const lockTouchAction = () => {
+  const body = getBodyElement();
+
+  if (!body) {
+    return;
+  }
+
+  previousTouchAction = body.style.touchAction;
+  body.style.touchAction = 'none';
+};
+
+export const unlockTouchAction = () => {
+  const body = getBodyElement();
+
+  if (!body) {
+    return;
+  }
+
+  body.style.touchAction = previousTouchAction;
 };
