@@ -123,16 +123,6 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   overflow-clip-margin: tokens.bpk-spacing-sm();
 }
 
-.bpk-comparison-table__placeholder-text {
-  text-align: center;
-  white-space: pre-wrap;
-}
-
 .bpk-comparison-table__placeholder-cell {
   background-color: tokens.$bpk-canvas-day;
-}
-
-.bpk-comparison-table__header-slot {
-  padding-block-end: tokens.bpk-spacing-md();
-  padding-inline: tokens.bpk-spacing-base();
 }

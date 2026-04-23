@@ -57,6 +57,7 @@ const handleRemove = (itemId: string) => {
 };
 
 const strings: BpkComparisonTableStrings = {
+  accessibleLabel: 'Compare deals',
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
@@ -138,6 +139,7 @@ If you don't need the AI Blurb, omit the children from `BpkComparisonTable.Heade
 
 | Property           | PropType | Required | Default Value |
 | ------------------ | -------- | -------- | ------------- |
+| accessibleLabel    | string   | true     | -             |
 | closeLabel         | string   | true     | -             |
 | removeLabel        | string   | true     | -             |
 | bestTagLabel       | string   | true     | -             |

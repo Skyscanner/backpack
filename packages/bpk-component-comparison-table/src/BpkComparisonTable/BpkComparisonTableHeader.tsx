@@ -16,25 +16,24 @@
  * limitations under the License.
  */
 
+import { BpkBox, BpkSpacing } from '../../../bpk-component-layout';
 import { BpkModalV3 } from '../../../bpk-component-modal';
-import { cssModules } from '../../../bpk-react-utils';
+import  BpkVisuallyHidden  from '../../../bpk-component-visually-hidden';
 
 import type { BpkComparisonTableHeaderProps } from './common-types';
-
-import STYLES from './BpkComparisonTable.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 const BpkComparisonTableHeader = ({ children, strings, title }: BpkComparisonTableHeaderProps) => (
   <>
     <BpkModalV3.Header>
-      {title && <BpkModalV3.Title>{title}</BpkModalV3.Title>}
+      <BpkModalV3.Title>
+        {title ?? <BpkVisuallyHidden>{strings.accessibleLabel}</BpkVisuallyHidden>}
+      </BpkModalV3.Title>
       <BpkModalV3.CloseTrigger label={strings.closeLabel} />
     </BpkModalV3.Header>
     {children && (
-      <div className={getClassName('bpk-comparison-table__header-slot')}>
+      <BpkBox paddingBottom={BpkSpacing.MD} paddingInline={BpkSpacing.Base}>
         {children}
-      </div>
+      </BpkBox>
     )}
   </>
 );

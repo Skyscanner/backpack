@@ -43,17 +43,14 @@ const BpkComparisonTableColumnHeaderPlaceholder = ({
     paddingTop={BpkSpacing.LG}
     paddingInline={BpkSpacing.XL}
   >
-    <div className={getClassName('bpk-comparison-table__placeholder-text')}>
-      <BpkText
-        textAlign="center"
-        tagName="p"
-        textStyle={TEXT_STYLES.bodyDefault}
-        color={TEXT_COLORS.textSecondary}
-      >
-
+  <BpkText
+    textAlign="center"
+    tagName="p"
+    textStyle={TEXT_STYLES.bodyDefault}
+    color={TEXT_COLORS.textSecondary}
+    >
     {addMoreDescription}
   </BpkText>
-  </div>
   <BpkButton
     type={BUTTON_TYPES.link}
     size={SIZE_TYPES.small}

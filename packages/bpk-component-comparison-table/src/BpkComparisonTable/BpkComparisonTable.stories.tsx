@@ -92,6 +92,7 @@ const AI_BLURB_STRINGS = {
 };
 
 const STRINGS = {
+  accessibleLabel: 'Compare deals',
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
@@ -150,7 +151,7 @@ const StandaloneExample = () => {
       </BpkHStack>
 
       <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
+        <BpkComparisonTable.Header strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -294,7 +295,7 @@ const CombinedExample = () => {
       )}
 
       <BpkComparisonTable.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
+        <BpkComparisonTable.Header strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />

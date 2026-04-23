@@ -65,6 +65,7 @@ const COLUMN_2: BpkCompareColumn = {
 };
 
 const TRANSLATIONS = {
+  accessibleLabel: 'Compare deals',
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',

@@ -46,6 +46,8 @@ export type BpkCompareColumn = {
 
 /** All strings required by BpkComparisonTable. */
 export type BpkComparisonTableStrings = {
+  /** Accessible dialog name, used via BpkVisuallyHidden when no visible title is provided. */
+  accessibleLabel: string;
   /** Accessible label for the modal close button. */
   closeLabel: string;
   /** Visible label for the Remove button in each column header. */

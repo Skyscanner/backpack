@@ -70,6 +70,7 @@ const COLUMN_3: BpkCompareColumn = {
 };
 
 const TRANSLATIONS = {
+  accessibleLabel: 'Compare deals',
   closeLabel: 'Close',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
