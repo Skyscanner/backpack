@@ -182,8 +182,26 @@ if (misplacedStories.length) {
 // Warn on newly-introduced physical properties in component module SCSS —
 // scoped to added diff lines so existing violations don't block unrelated PRs.
 // When the codebase is migrated, replace this with `stylelint-use-logical`.
-const physicalPropertyPattern =
-  /^\s*(left|right|margin-left|margin-right|padding-left|padding-right|border-left|border-right|border-top-left-radius|border-top-right-radius|border-bottom-left-radius|border-bottom-right-radius)\s*:/;
+const physicalPropertyPattern = new RegExp(
+  '^\\s*(' +
+    // Inset (position offsets)
+    'top|right|bottom|left|' +
+    // Size
+    'width|height|min-width|min-height|max-width|max-height|' +
+    // Margin
+    'margin-top|margin-right|margin-bottom|margin-left|' +
+    // Padding
+    'padding-top|padding-right|padding-bottom|padding-left|' +
+    // Border (shorthands and per-side)
+    'border-top|border-right|border-bottom|border-left|' +
+    'border-top-width|border-right-width|border-bottom-width|border-left-width|' +
+    'border-top-style|border-right-style|border-bottom-style|border-left-style|' +
+    'border-top-color|border-right-color|border-bottom-color|border-left-color|' +
+    // Border radius corners
+    'border-top-left-radius|border-top-right-radius|' +
+    'border-bottom-left-radius|border-bottom-right-radius' +
+    ')\\s*:',
+);
 const physicalValuePattern = /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/;
 
 const scssChanged = fileChanges.filter((filePath) =>
