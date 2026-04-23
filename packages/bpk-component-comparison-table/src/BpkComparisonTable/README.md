@@ -15,7 +15,7 @@ import type { BpkCompareColumn, BpkComparisonTableTranslations } from '@skyscann
 - **Cap the array at 3 columns.** If you pass more than 3, only the first 3 are rendered.
 - **Ensure rowId sequences match across all columns.** Every column must declare the same `rowId` values in the same order. `rowId` is the shared key that aligns rows across columns — think of it as the row label (e.g. `'cancellation'`, `'rating'`). Mismatches will cause rows to misalign.
 - **Control open/close state.** Pass `isOpen` and call `setIsOpen(false)` inside `onClose`.
-- **Handle removal.** When `onRemove(itemId)` fires, remove that item from your columns array. If fewer than 2 items remain you should also close the modal.
+- **Handle removal.** When `onRemove(itemId)` fires, remove that item from your columns array. If fewer than 1 item remains you should also close the modal.
 - **Compose BpkAiBlurb when needed.** Pass a `BpkAiBlurb.Root` as children of `BpkComparisonTable.Header`. The component does not render AI content automatically — you own the composition.
 
 ## Example
@@ -53,9 +53,7 @@ const [columns, setColumns] = useState<BpkCompareColumn[]>([
 ]);
 
 const handleRemove = (itemId: string) => {
-  const remaining = columns.filter((column) => column.itemId !== itemId);
-  setColumns(remaining);
-  if (remaining.length < 2) setIsOpen(false);
+  setColumns((prev) => prev.filter((column) => column.itemId !== itemId));
 };
 
 const translations: BpkComparisonTableTranslations = {
@@ -92,7 +90,7 @@ const translations: BpkComparisonTableTranslations = {
 </BpkComparisonTable.Root>
 ```
 
-If you don't need the AI blurb, omit the children from `BpkComparisonTable.Header`:
+If you don't need the AI Blurb, omit the children from `BpkComparisonTable.Header`:
 
 ```tsx
 <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>

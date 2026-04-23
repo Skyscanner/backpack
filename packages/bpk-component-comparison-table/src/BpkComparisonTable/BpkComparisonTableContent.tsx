@@ -96,6 +96,7 @@ function BpkComparisonTableContent({
               {displayColumns.map((column, index) => (
                 <BpkTableCell
                   key={column ? `${rowId}-${column.itemId}` : `${rowId}-placeholder-${index}`}
+                  // Placeholder need a distinct background colour not available via BpkTableCell props
                   // eslint-disable-next-line @skyscanner/rules/forbid-component-props
                   className={column ? undefined : getClassName('bpk-comparison-table__placeholder-cell')}
                 >

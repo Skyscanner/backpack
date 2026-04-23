@@ -236,6 +236,7 @@ const CombinedExample = () => {
     setItems(remaining);
   };
 
+  // Story-only: DOM query is a pragmatic way for focus restoration since BpkComparisonTray doesn't expose refs for individual items. In a real integration the consumer would handle focus management in whatever way suits their service.
   useEffect(() => {
     if (pendingFocusIndexRef.current === null) return;
     const idx = pendingFocusIndexRef.current;
