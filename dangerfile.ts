@@ -204,38 +204,35 @@ const physicalPropertyPattern = new RegExp(
 );
 const physicalValuePattern = /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/;
 
-const scssChanged = fileChanges.filter((filePath) =>
+// Scan only newly-created SCSS files — modified files would flag pre-existing
+// violations across the ~92 non-migrated components. Once the codebase is
+// cleaned up, replace this rule with stylelint-use-logical at error severity.
+const scssCreated = createdFiles.filter((filePath) =>
   filePath.match(/^packages\/bpk-component-[^/]+\/src\/.+\.module\.scss$/),
 );
 
-// Danger awaits the default export, so async checks must go through it.
-export default async () => {
-  const results = await Promise.all(
-    scssChanged.map((filePath) =>
-      danger.git
-        .diffForFile(filePath)
-        .then((diff) => {
-          const offending = (diff?.added ?? '')
-            .split('\n')
-            .filter(
-              (line) =>
-                physicalPropertyPattern.test(line) ||
-                physicalValuePattern.test(line),
-            );
-          return offending.length
-            ? `- \`${filePath}\`:\n\`\`\`\n${offending.join('\n')}\n\`\`\``
-            : null;
-        })
-        .catch(() => null),
-    ),
+const physicalHits = scssCreated
+  .map((filePath) => {
+    if (!fs.existsSync(filePath)) return null;
+    const offending = fs
+      .readFileSync(filePath, 'utf8')
+      .split('\n')
+      .filter(
+        (line) =>
+          physicalPropertyPattern.test(line) ||
+          physicalValuePattern.test(line),
+      );
+    return offending.length
+      ? `- \`${filePath}\`:\n\`\`\`\n${offending.join('\n')}\n\`\`\``
+      : null;
+  })
+  .filter((r): r is string => r !== null);
+
+if (physicalHits.length) {
+  warn(
+    `Physical CSS properties are not RTL-safe. Prefer logical equivalents (inset-inline-*, margin-inline-*, padding-inline-*, border-inline-*, border-start-start-radius, text-align: start/end). Offending lines:\n${physicalHits.join('\n')}`,
   );
-  const physicalHits = results.filter((r): r is string => r !== null);
-  if (physicalHits.length) {
-    warn(
-      `Physical CSS properties are not RTL-safe. Prefer logical equivalents (inset-inline-*, margin-inline-*, padding-inline-*, border-inline-*, border-start-start-radius, text-align: start/end). Offending additions:\n${physicalHits.join('\n')}`,
-    );
-  }
-};
+}
 
 const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
 const invalidReactChild = ["Functions are not valid as a React child"];
