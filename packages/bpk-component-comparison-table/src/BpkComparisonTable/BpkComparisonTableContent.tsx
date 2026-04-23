@@ -53,6 +53,18 @@ function BpkComparisonTableContent({
 
   const rowIds = columns[0]?.rows.map((row) => row.rowId) ?? [];
 
+  // Dev-mode guard: warn if not all columns share the same rowId sequence.
+  if (process.env.NODE_ENV !== 'production' && columns.length > 1) {
+    const rowIdsByColumn = columns.map((column) => column.rows.map((row) => row.rowId).join(','));
+    const allMatch = rowIdsByColumn.every((ids) => ids === rowIdsByColumn[0]);
+    if (!allMatch) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        '[BpkComparisonTable] Not all columns share the same rowId sequence. Rows may misalign.',
+      );
+    }
+  }
+
   // Pre-index cells by itemId → rowId for O(1) lookup during render.
   const cellsByItemAndRow = new Map(
     columns.map((column) => [
