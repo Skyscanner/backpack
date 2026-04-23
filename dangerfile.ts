@@ -122,6 +122,100 @@ if (nonModuleCssFiles.length) {
   );
 }
 
+// New component packages must include a README.md (convention: all 95 existing
+// component packages ship one). See CODE_REVIEW_GUIDELINES.md.
+const newComponentPackages = Array.from(
+  new Set(
+    createdFiles
+      .map((f) => f.match(/^(packages\/bpk-component-[^/]+)\//))
+      .filter((m): m is RegExpMatchArray => m !== null)
+      .map((m) => m[1]),
+  ),
+).filter((pkg) => createdFiles.includes(`${pkg}/package.json`));
+
+const packagesMissingReadme = newComponentPackages.filter(
+  (pkg) => !fs.existsSync(`${pkg}/README.md`),
+);
+
+if (packagesMissingReadme.length) {
+  fail(
+    `New component packages must include a README.md. Missing for: ${packagesMissingReadme.join(
+      ', ',
+    )}`,
+  );
+}
+
+// New component packages must include an accessibility test. See
+// decisions/accessibility-tests.md. Detects any `accessibility-test.*` file in src/.
+const packagesMissingA11yTest = newComponentPackages.filter((pkg) => {
+  const srcDir = `${pkg}/src`;
+  if (!fs.existsSync(srcDir)) return true;
+  return !fs
+    .readdirSync(srcDir)
+    .some((name) => /^accessibility-test\.(t|j)sx?$/.test(name));
+});
+
+if (packagesMissingA11yTest.length) {
+  fail(
+    `New component packages must include an accessibility test (src/accessibility-test.tsx using jest-axe). Missing for: ${packagesMissingA11yTest.join(
+      ', ',
+    )}`,
+  );
+}
+
+// Stories must be colocated with source, not placed under examples/. See
+// decisions/colocated-stories.md.
+const storiesInExamples = fileChanges.filter((filePath) =>
+  filePath.match(/^packages\/bpk-component-[^/]+\/examples\/.*\.stories\.(t|j)sx?$/),
+);
+
+if (storiesInExamples.length) {
+  fail(
+    `Stories must be colocated with the component source (packages/bpk-component-*/src/*.stories.tsx), not under examples/. Please move: ${storiesInExamples.join(
+      ', ',
+    )}`,
+  );
+}
+
+// Physical CSS properties break RTL. See decisions/rtl-ark-localeprovider.md.
+// Warn on newly-introduced physical properties in component module SCSS —
+// scoped to added diff lines so existing violations don't block unrelated PRs.
+// When the codebase is migrated, replace this with `stylelint-use-logical`.
+const physicalPropertyPattern =
+  /^\s*(left|right|margin-left|margin-right|padding-left|padding-right|border-left|border-right|border-top-left-radius|border-top-right-radius|border-bottom-left-radius|border-bottom-right-radius)\s*:/;
+const physicalValuePattern = /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/;
+
+const scssChanged = fileChanges.filter((filePath) =>
+  filePath.match(/^packages\/bpk-component-[^/]+\/src\/.+\.module\.scss$/),
+);
+
+Promise.all(
+  scssChanged.map((filePath) =>
+    danger.git
+      .diffForFile(filePath)
+      .then((diff) => {
+        const offending = (diff?.added ?? '')
+          .split('\n')
+          .filter(
+            (line) =>
+              physicalPropertyPattern.test(line) ||
+              physicalValuePattern.test(line),
+          );
+        return offending.length
+          ? `- \`${filePath}\`:\n\`\`\`\n${offending.join('\n')}\n\`\`\``
+          : null;
+      })
+      .catch(() => null),
+  ),
+).then((results) => {
+  const physicalHits = results.filter((r): r is string => r !== null);
+  if (physicalHits.length) {
+    warn(
+      `Physical CSS properties are not RTL-safe. Prefer logical equivalents (inset-inline-*, margin-inline-*, padding-inline-*, border-inline-*, border-start-start-radius, text-align: start/end). Offending additions:\n${physicalHits.join('\n')}`,
+    );
+  }
+});
+
 const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
 const invalidReactChild = ["Functions are not valid as a React child"];
 const invalidFormField = ["You provided .* to a form field without"];
