@@ -20,24 +20,22 @@ import { BpkModalV3 } from '../../../bpk-component-modal';
 
 import type { BpkComparisonTableRootProps } from './common-types';
 
-function BpkComparisonTableRoot({ children, isOpen, onClose }: BpkComparisonTableRootProps) {
-  return (
-    <BpkModalV3.Root
-      open={isOpen}
-      onOpenChange={(details) => {
-        if (!details.open) {
-          onClose();
-        }
-      }}
-    >
-      <BpkModalV3.Portal>
-        <BpkModalV3.Scrim />
-        <BpkModalV3.Content>
-          {children}
-        </BpkModalV3.Content>
-      </BpkModalV3.Portal>
-    </BpkModalV3.Root>
-  );
-}
+const BpkComparisonTableRoot = ({ children, isOpen, onClose }: BpkComparisonTableRootProps) => (
+  <BpkModalV3.Root
+    open={isOpen}
+    onOpenChange={(details) => {
+      if (!details.open) {
+        onClose();
+      }
+    }}
+  >
+    <BpkModalV3.Portal>
+      <BpkModalV3.Scrim />
+      <BpkModalV3.Content>
+        {children}
+      </BpkModalV3.Content>
+    </BpkModalV3.Portal>
+  </BpkModalV3.Root>
+);
 
 export default BpkComparisonTableRoot;

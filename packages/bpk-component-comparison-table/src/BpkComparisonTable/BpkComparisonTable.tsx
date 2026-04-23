@@ -27,12 +27,12 @@ import type { BpkComparisonTableNamespace } from './common-types';
  *
  * @example
  * <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
- *   <BpkComparisonTable.Header title="Compare cars" translations={translations} />
+ *   <BpkComparisonTable.Header title="Compare cars" strings={strings} />
  *   <BpkComparisonTable.Content
  *     columns={columns}
  *     onRemove={(itemId) => handleRemove(itemId)}
  *     onAddMoreClick={() => setIsOpen(false)}
- *     translations={translations}
+ *     strings={strings}
  *   />
  * </BpkComparisonTable.Root>
  */

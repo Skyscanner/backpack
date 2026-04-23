@@ -75,12 +75,12 @@ const TRANSLATIONS = {
 const renderModal = (columns: BpkCompareColumn[], title?: string) =>
   renderWithProvider(
     <BpkComparisonTable.Root isOpen onClose={noop}>
-      <BpkComparisonTable.Header title={title} translations={TRANSLATIONS} />
+      <BpkComparisonTable.Header title={title} strings={TRANSLATIONS} />
       <BpkComparisonTable.Content
         columns={columns}
         onRemove={noop}
         onAddMoreClick={noop}
-        translations={TRANSLATIONS}
+        strings={TRANSLATIONS}
       />
     </BpkComparisonTable.Root>,
   );

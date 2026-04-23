@@ -25,43 +25,43 @@ import STYLES from './BpkComparisonTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type BpkComparisonTableColumnPlaceholderProps = {
+type BpkComparisonTableColumnHeaderPlaceholderProps = {
   addMoreDescription: string;
   addMoreLinkText: string;
   onAddMoreClick: () => void;
 };
 
-function BpkComparisonTableColumnPlaceholder({
+const BpkComparisonTableColumnHeaderPlaceholder = ({
   addMoreDescription,
   addMoreLinkText,
   onAddMoreClick,
-}: BpkComparisonTableColumnPlaceholderProps) {
-  return (
-    <BpkFlex
-      direction="column"
-      align="center"
-      gap={BpkSpacing.MD}
-      paddingTop={BpkSpacing.LG}
-      paddingInline={BpkSpacing.XL}
-    >
-      <div className={getClassName('bpk-comparison-table__placeholder-text')}>
-        <BpkText
-          tagName="p"
-          textStyle={TEXT_STYLES.bodyDefault}
-          color={TEXT_COLORS.textSecondary}
-        >
-          {addMoreDescription}
-        </BpkText>
-      </div>
-      <BpkButton
-        type={BUTTON_TYPES.link}
-        size={SIZE_TYPES.small}
-        onClick={onAddMoreClick}
+}: BpkComparisonTableColumnHeaderPlaceholderProps) => (
+  <BpkFlex
+    direction="column"
+    align="center"
+    gap={BpkSpacing.MD}
+    paddingTop={BpkSpacing.LG}
+    paddingInline={BpkSpacing.XL}
+  >
+    <div className={getClassName('bpk-comparison-table__placeholder-text')}>
+      <BpkText
+        textAlign="center"
+        tagName="p"
+        textStyle={TEXT_STYLES.bodyDefault}
+        color={TEXT_COLORS.textSecondary}
       >
-        {addMoreLinkText}
-      </BpkButton>
-    </BpkFlex>
-  );
-}
 
-export default BpkComparisonTableColumnPlaceholder;
+    {addMoreDescription}
+  </BpkText>
+  </div>
+  <BpkButton
+    type={BUTTON_TYPES.link}
+    size={SIZE_TYPES.small}
+    onClick={onAddMoreClick}
+  >
+      {addMoreLinkText}
+    </BpkButton>
+  </BpkFlex>
+);
+
+export default BpkComparisonTableColumnHeaderPlaceholder;

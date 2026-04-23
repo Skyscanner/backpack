@@ -45,7 +45,7 @@ export type BpkCompareColumn = {
 };
 
 /** All strings required by BpkComparisonTable. */
-export type BpkComparisonTableTranslations = {
+export type BpkComparisonTableStrings = {
   /** Accessible label for the modal close button. */
   closeLabel: string;
   /** Visible label for the Remove button in each column header. */
@@ -72,7 +72,7 @@ export type BpkComparisonTableRootProps = {
 export type BpkComparisonTableHeaderProps = {
   /** Optional modal title rendered via BpkModalV3.Title. */
   title?: string;
-  translations: BpkComparisonTableTranslations;
+  strings: BpkComparisonTableStrings;
   /** Optional slot for AI blurb or any content below the title/close row. */
   children?: ReactNode;
 };
@@ -85,7 +85,7 @@ export type BpkComparisonTableContentProps = {
   onRemove: (itemId: string) => void;
   /** Called when the Add more link in a placeholder column is clicked. */
   onAddMoreClick: () => void;
-  translations: BpkComparisonTableTranslations;
+  strings: BpkComparisonTableStrings;
 };
 
 /** Namespace type covering all BpkComparisonTable subcomponents. */

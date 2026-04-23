@@ -35,7 +35,7 @@ type BpkComparisonTableColumnHeaderProps = Pick<
 
 const getClassName = cssModules(STYLES);
 
-function BpkComparisonTableColumnHeader({
+const BpkComparisonTableColumnHeader = ({
   bestTag = false,
   bestTagLabel,
   headerContent,
@@ -45,40 +45,38 @@ function BpkComparisonTableColumnHeader({
   onRemove,
   removeA11yLabel,
   removeLabel,
-}: BpkComparisonTableColumnHeaderProps) {
-  return (
-    <div
-      className={getClassName('bpk-comparison-table__header-content')}
-    >
-      <div className={getClassName('bpk-comparison-table__header-image-wrapper')}>
-        <div
-          className={getClassName('bpk-comparison-table__header-image-area')}
-        >
-          {imageSrc && <img src={imageSrc} alt={imageAlt} />}
-        </div>
-        {bestTag && (
-          <span className={getClassName('bpk-comparison-table__best-tag')}>
-            <BpkBadge type={BADGE_TYPES.brand}>{bestTagLabel}</BpkBadge>
-          </span>
-        )}
+}: BpkComparisonTableColumnHeaderProps) => (
+  <div
+    className={getClassName('bpk-comparison-table__header-content')}
+  >
+    <div className={getClassName('bpk-comparison-table__header-image-wrapper')}>
+      <div
+        className={getClassName('bpk-comparison-table__header-image-area')}
+      >
+        {imageSrc && <img src={imageSrc} alt={imageAlt} />}
       </div>
-
-      <div className={getClassName('bpk-comparison-table__header-id-section')}>
-        {headerContent}
-      </div>
-
-      <div className={getClassName('bpk-comparison-table__remove-button')}>
-        <BpkButton
-          type={BUTTON_TYPES.link}
-          size={SIZE_TYPES.small}
-          onClick={() => onRemove(itemId)}
-          aria-label={removeA11yLabel}
-        >
-          {removeLabel}
-        </BpkButton>
-      </div>
+      {bestTag && (
+        <span className={getClassName('bpk-comparison-table__best-tag')}>
+          <BpkBadge type={BADGE_TYPES.brand}>{bestTagLabel}</BpkBadge>
+        </span>
+      )}
     </div>
-  );
-}
+
+    <div className={getClassName('bpk-comparison-table__header-id-section')}>
+      {headerContent}
+    </div>
+
+    <div className={getClassName('bpk-comparison-table__remove-button')}>
+      <BpkButton
+        type={BUTTON_TYPES.link}
+        size={SIZE_TYPES.small}
+        onClick={() => onRemove(itemId)}
+        aria-label={removeA11yLabel}
+      >
+        {removeLabel}
+      </BpkButton>
+    </div>
+  </div>
+);
 
 export default BpkComparisonTableColumnHeader;

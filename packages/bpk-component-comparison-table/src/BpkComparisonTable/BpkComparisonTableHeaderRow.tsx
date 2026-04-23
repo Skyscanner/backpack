@@ -23,10 +23,10 @@ import {
 } from '../../../bpk-component-table';
 
 import BpkComparisonTableColumnHeader from './BpkComparisonTableColumnHeader';
-import BpkComparisonTableColumnPlaceholder from './BpkComparisonTableColumnPlaceholder';
+import BpkComparisonTableColumnHeaderPlaceholder from './BpkComparisonTableColumnHeaderPlaceholder';
 
 import type {
-  BpkComparisonTableTranslations,
+  BpkComparisonTableStrings,
   BpkCompareColumn,
 } from './common-types';
 
@@ -34,16 +34,16 @@ type BpkComparisonTableHeaderRowProps = {
   displayColumns: Array<BpkCompareColumn | null>;
   onRemove: (itemId: string) => void;
   onAddMoreClick: () => void;
-  translations: BpkComparisonTableTranslations;
+  strings: BpkComparisonTableStrings;
 };
 
-function BpkComparisonTableHeaderRow({
+const BpkComparisonTableHeaderRow = ({
   displayColumns,
   onAddMoreClick,
   onRemove,
-  translations,
-}: BpkComparisonTableHeaderRowProps) {
-  const { addMoreDescription, addMoreLinkText, bestTagLabel, removeLabel } = translations;
+  strings,
+}: BpkComparisonTableHeaderRowProps) => {
+  const { addMoreDescription, addMoreLinkText, bestTagLabel, removeLabel } = strings;
 
   return (
     <BpkTableHead>
@@ -60,7 +60,7 @@ function BpkComparisonTableHeaderRow({
                 bestTagLabel={bestTagLabel}
               />
             ) : (
-              <BpkComparisonTableColumnPlaceholder
+              <BpkComparisonTableColumnHeaderPlaceholder
                 addMoreDescription={addMoreDescription}
                 addMoreLinkText={addMoreLinkText}
                 onAddMoreClick={onAddMoreClick}
@@ -71,6 +71,6 @@ function BpkComparisonTableHeaderRow({
       </BpkTableRow>
     </BpkTableHead>
   );
-}
+};
 
 export default BpkComparisonTableHeaderRow;

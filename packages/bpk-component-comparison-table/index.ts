@@ -30,8 +30,10 @@ export type {
   BpkCompareRow,
   BpkCompareColumn,
   BpkComparisonTableRootProps,
-  BpkComparisonTableTranslations,
+  BpkComparisonTableStrings,
   BpkComparisonTableNamespace,
 } from './src/BpkComparisonTable/common-types';
 
-export { BpkComparisonTable, BpkComparisonTray };
+export { BpkComparisonTray };
+
+export default BpkComparisonTable;

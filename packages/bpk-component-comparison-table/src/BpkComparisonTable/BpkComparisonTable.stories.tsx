@@ -83,7 +83,7 @@ const makeAiBlurbSummaryState = (aiState: AiState) =>
         ),
       } as const);
 
-const AI_BLURB_TRANSLATIONS = {
+const AI_BLURB_STRINGS = {
   aiBlurbHeadingLabel: 'Summarized by AI',
   aiBlurbFeedbackText: 'Was this helpful?',
   aiBlurbThankYouText: 'Thanks for your feedback!',
@@ -91,7 +91,7 @@ const AI_BLURB_TRANSLATIONS = {
   aiBlurbThumbsDownLabel: 'Thumbs down',
 };
 
-const TRANSLATIONS = {
+const STRINGS = {
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
@@ -150,16 +150,16 @@ const StandaloneExample = () => {
       </BpkHStack>
 
       <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkComparisonTable.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
-            <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
+            <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
             {aiState === 'aiResponse' && (
               <BpkAiBlurb.Feedback
-                feedbackText={AI_BLURB_TRANSLATIONS.aiBlurbFeedbackText}
-                thankYouText={AI_BLURB_TRANSLATIONS.aiBlurbThankYouText}
-                thumbsUpLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsUpLabel}
-                thumbsDownLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsDownLabel}
+                feedbackText={AI_BLURB_STRINGS.aiBlurbFeedbackText}
+                thankYouText={AI_BLURB_STRINGS.aiBlurbThankYouText}
+                thumbsUpLabel={AI_BLURB_STRINGS.aiBlurbThumbsUpLabel}
+                thumbsDownLabel={AI_BLURB_STRINGS.aiBlurbThumbsDownLabel}
                 onFeedback={() => {}}
               />
             )}
@@ -169,7 +169,7 @@ const StandaloneExample = () => {
           columns={columns}
           onRemove={handleRemove}
           onAddMoreClick={() => setIsOpen(false)}
-          translations={TRANSLATIONS}
+          strings={STRINGS}
         />
       </BpkComparisonTable.Root>
     </BpkVStack>
@@ -294,16 +294,16 @@ const CombinedExample = () => {
       )}
 
       <BpkComparisonTable.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkComparisonTable.Header title="Modal Headline (Optional)" translations={TRANSLATIONS}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
-            <BpkAiBlurb.Header title={AI_BLURB_TRANSLATIONS.aiBlurbHeadingLabel} />
+            <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
             {aiState === 'aiResponse' && (
               <BpkAiBlurb.Feedback
-                feedbackText={AI_BLURB_TRANSLATIONS.aiBlurbFeedbackText}
-                thankYouText={AI_BLURB_TRANSLATIONS.aiBlurbThankYouText}
-                thumbsUpLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsUpLabel}
-                thumbsDownLabel={AI_BLURB_TRANSLATIONS.aiBlurbThumbsDownLabel}
+                feedbackText={AI_BLURB_STRINGS.aiBlurbFeedbackText}
+                thankYouText={AI_BLURB_STRINGS.aiBlurbThankYouText}
+                thumbsUpLabel={AI_BLURB_STRINGS.aiBlurbThumbsUpLabel}
+                thumbsDownLabel={AI_BLURB_STRINGS.aiBlurbThumbsDownLabel}
                 onFeedback={() => {}}
               />
             )}
@@ -313,7 +313,7 @@ const CombinedExample = () => {
           columns={columns}
           onRemove={removeItem}
           onAddMoreClick={() => setIsModalOpen(false)}
-          translations={TRANSLATIONS}
+          strings={STRINGS}
         />
       </BpkComparisonTable.Root>
     </BpkVStack>

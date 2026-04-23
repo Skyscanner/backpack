@@ -40,12 +40,12 @@ const MAX_COLUMNS = 3;
 // Matches the image area height (5.1875rem × 16px). Opacity goes from 1 → 0 as the user scrolls 0 → 83 px, giving a smooth parallax fade.
 const IMAGE_FADE_THRESHOLD_PX = 83;
 
-function BpkComparisonTableContent({
+const BpkComparisonTableContent = ({
   columns,
   onAddMoreClick,
   onRemove,
-  translations,
-}: BpkComparisonTableContentProps) {
+  strings,
+}: BpkComparisonTableContentProps) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Pad with nulls so the table always renders exactly MAX_COLUMNS slots.
@@ -99,7 +99,7 @@ function BpkComparisonTableContent({
           displayColumns={displayColumns}
           onRemove={onRemove}
           onAddMoreClick={onAddMoreClick}
-          translations={translations}
+          strings={strings}
         />
 
         <BpkTableBody type={TABLE_BODY_TYPES.striped}>
@@ -123,6 +123,6 @@ function BpkComparisonTableContent({
       </BpkTable>
     </div>
   );
-}
+};
 
 export default BpkComparisonTableContent;

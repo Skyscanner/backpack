@@ -6,7 +6,7 @@ A modal-based table component for comparing up to 3 items side by side. The cons
 
 ```tsx
 import { BpkComparisonTable } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumn, BpkComparisonTableTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
@@ -23,7 +23,7 @@ import type { BpkCompareColumn, BpkComparisonTableTranslations } from '@skyscann
 ```tsx
 import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
 import { BpkComparisonTable } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumn, BpkComparisonTableTranslations } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner/backpack-web/bpk-component-comparison-table';
 
 const [isOpen, setIsOpen] = useState(false);
 const [columns, setColumns] = useState<BpkCompareColumn[]>([
@@ -56,7 +56,7 @@ const handleRemove = (itemId: string) => {
   setColumns((prev) => prev.filter((column) => column.itemId !== itemId));
 };
 
-const translations: BpkComparisonTableTranslations = {
+const strings: BpkComparisonTableStrings = {
   closeLabel: 'Close comparison',
   removeLabel: 'Remove',
   bestTagLabel: 'Best',
@@ -67,7 +67,7 @@ const translations: BpkComparisonTableTranslations = {
 <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
   <BpkComparisonTable.Header
     title="Compare cars"
-    translations={translations}
+    strings={strings}
   >
     <BpkAiBlurb.Root>
       <BpkAiBlurb.Header title="Summarized by AI" />
@@ -85,7 +85,7 @@ const translations: BpkComparisonTableTranslations = {
     columns={columns}
     onRemove={handleRemove}
     onAddMoreClick={() => setIsOpen(false)}
-    translations={translations}
+    strings={strings}
   />
 </BpkComparisonTable.Root>
 ```
@@ -96,13 +96,13 @@ If you don't need the AI Blurb, omit the children from `BpkComparisonTable.Heade
 <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
   <BpkComparisonTable.Header
     title="Compare cars"
-    translations={translations}
+    strings={strings}
   />
   <BpkComparisonTable.Content
     columns={columns}
     onRemove={handleRemove}
     onAddMoreClick={() => setIsOpen(false)}
-    translations={translations}
+    strings={strings}
   />
 </BpkComparisonTable.Root>
 ```
@@ -121,7 +121,7 @@ If you don't need the AI Blurb, omit the children from `BpkComparisonTable.Heade
 
 | Property     | PropType                        | Required | Default Value |
 | ------------ | ------------------------------- | -------- | ------------- |
-| translations | `BpkComparisonTableTranslations`   | true     | -             |
+| strings | `BpkComparisonTableStrings`   | true     | -             |
 | title        | string                          | false    | -             |
 | children     | ReactNode                       | false    | -             |
 
@@ -132,9 +132,9 @@ If you don't need the AI Blurb, omit the children from `BpkComparisonTable.Heade
 | columns        | `BpkCompareColumn[]`        | true     | -             |
 | onRemove       | `(itemId: string) => void`      | true     | -             |
 | onAddMoreClick | `() => void`                    | true     | -             |
-| translations   | `BpkComparisonTableTranslations`   | true     | -             |
+| strings   | `BpkComparisonTableStrings`   | true     | -             |
 
-### `BpkComparisonTableTranslations`
+### `BpkComparisonTableStrings`
 
 | Property           | PropType | Required | Default Value |
 | ------------------ | -------- | -------- | ------------- |

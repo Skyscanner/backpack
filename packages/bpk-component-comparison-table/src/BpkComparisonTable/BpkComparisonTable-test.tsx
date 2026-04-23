@@ -80,12 +80,12 @@ const TRANSLATIONS = {
 const renderModal = (columns: BpkCompareColumn[], overrides: { onRemove?: (id: string) => void; onAddMoreClick?: () => void } = {}) =>
   renderWithProvider(
     <BpkComparisonTable.Root isOpen onClose={noop}>
-      <BpkComparisonTable.Header translations={TRANSLATIONS} />
+      <BpkComparisonTable.Header strings={TRANSLATIONS} />
       <BpkComparisonTable.Content
         columns={columns}
         onRemove={overrides.onRemove ?? noop}
         onAddMoreClick={overrides.onAddMoreClick ?? noop}
-        translations={TRANSLATIONS}
+        strings={TRANSLATIONS}
       />
     </BpkComparisonTable.Root>,
   );
@@ -190,14 +190,14 @@ describe('BpkComparisonTable', () => {
     it('renders children passed to Header', () => {
       renderWithProvider(
         <BpkComparisonTable.Root isOpen onClose={noop}>
-          <BpkComparisonTable.Header translations={TRANSLATIONS}>
+          <BpkComparisonTable.Header strings={TRANSLATIONS}>
             <div>AI summary content</div>
           </BpkComparisonTable.Header>
           <BpkComparisonTable.Content
             columns={[COLUMN_1]}
             onRemove={noop}
             onAddMoreClick={noop}
-            translations={TRANSLATIONS}
+            strings={TRANSLATIONS}
           />
         </BpkComparisonTable.Root>,
       );
@@ -217,12 +217,12 @@ describe('BpkComparisonTable', () => {
       const onClose = jest.fn();
       renderWithProvider(
         <BpkComparisonTable.Root isOpen onClose={onClose}>
-          <BpkComparisonTable.Header translations={TRANSLATIONS} />
+          <BpkComparisonTable.Header strings={TRANSLATIONS} />
           <BpkComparisonTable.Content
             columns={[COLUMN_1]}
             onRemove={noop}
             onAddMoreClick={noop}
-            translations={TRANSLATIONS}
+            strings={TRANSLATIONS}
           />
         </BpkComparisonTable.Root>,
       );

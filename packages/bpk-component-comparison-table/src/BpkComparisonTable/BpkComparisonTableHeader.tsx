@@ -25,20 +25,18 @@ import STYLES from './BpkComparisonTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function BpkComparisonTableHeader({ children, title, translations }: BpkComparisonTableHeaderProps) {
-  return (
-    <>
-      <BpkModalV3.Header>
-        {title && <BpkModalV3.Title>{title}</BpkModalV3.Title>}
-        <BpkModalV3.CloseTrigger label={translations.closeLabel} />
-      </BpkModalV3.Header>
-      {children && (
-        <div className={getClassName('bpk-comparison-table__header-slot')}>
-          {children}
-        </div>
-      )}
-    </>
-  );
-}
+const BpkComparisonTableHeader = ({ children, strings, title }: BpkComparisonTableHeaderProps) => (
+  <>
+    <BpkModalV3.Header>
+      {title && <BpkModalV3.Title>{title}</BpkModalV3.Title>}
+      <BpkModalV3.CloseTrigger label={strings.closeLabel} />
+    </BpkModalV3.Header>
+    {children && (
+      <div className={getClassName('bpk-comparison-table__header-slot')}>
+        {children}
+      </div>
+    )}
+  </>
+);
 
 export default BpkComparisonTableHeader;
