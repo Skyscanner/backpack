@@ -122,6 +122,118 @@ if (nonModuleCssFiles.length) {
   );
 }
 
+// New component packages must include a README.md (convention: all 95 existing
+// component packages ship one). See CODE_REVIEW_GUIDELINES.md.
+const newComponentPackages = Array.from(
+  new Set(
+    createdFiles
+      .map((f) => f.match(/^(packages\/bpk-component-[^/]+)\//))
+      .filter((m): m is RegExpMatchArray => m !== null)
+      .map((m) => m[1]),
+  ),
+).filter((pkg) => createdFiles.includes(`${pkg}/package.json`));
+
+const packagesMissingReadme = newComponentPackages.filter(
+  (pkg) => !fs.existsSync(`${pkg}/README.md`),
+);
+
+if (packagesMissingReadme.length) {
+  fail(
+    `New component packages must include a README.md. Missing for: ${packagesMissingReadme.join(
+      ', ',
+    )}`,
+  );
+}
+
+// New component packages must include an accessibility test. See
+// decisions/accessibility-tests.md. Detects any `accessibility-test.*` file in src/.
+const packagesMissingA11yTest = newComponentPackages.filter((pkg) => {
+  const srcDir = `${pkg}/src`;
+  if (!fs.existsSync(srcDir)) return true;
+  return !fs
+    .readdirSync(srcDir)
+    .some((name) => /^accessibility-test\.(t|j)sx?$/.test(name));
+});
+
+if (packagesMissingA11yTest.length) {
+  fail(
+    `New component packages must include an accessibility test (src/accessibility-test.tsx using jest-axe). Missing for: ${packagesMissingA11yTest.join(
+      ', ',
+    )}`,
+  );
+}
+
+// Inside bpk-component-* packages, story files must live alongside the
+// component source under src/. See decisions/colocated-stories.md.
+const misplacedStories = fileChanges.filter((filePath) => {
+  const match = filePath.match(/^packages\/bpk-component-[^/]+\/(.+)\.stories\.(t|j)sx?$/);
+  return match !== null && !match[1].startsWith('src/');
+});
+
+if (misplacedStories.length) {
+  fail(
+    `Stories inside bpk-component-* packages must be colocated with the component source under src/. Please move: ${misplacedStories.join(
+      ', ',
+    )}`,
+  );
+}
+
+// Physical CSS properties break RTL. See decisions/rtl-ark-localeprovider.md.
+// Warn on newly-introduced physical properties in component module SCSS —
+// scoped to added diff lines so existing violations don't block unrelated PRs.
+// When the codebase is migrated, replace this with `stylelint-use-logical`.
+const physicalPropertyPattern = new RegExp(
+  '^\\s*(' +
+    // Inset (position offsets)
+    'top|right|bottom|left|' +
+    // Size
+    'width|height|min-width|min-height|max-width|max-height|' +
+    // Margin
+    'margin-top|margin-right|margin-bottom|margin-left|' +
+    // Padding
+    'padding-top|padding-right|padding-bottom|padding-left|' +
+    // Border (shorthands and per-side)
+    'border-top|border-right|border-bottom|border-left|' +
+    'border-top-width|border-right-width|border-bottom-width|border-left-width|' +
+    'border-top-style|border-right-style|border-bottom-style|border-left-style|' +
+    'border-top-color|border-right-color|border-bottom-color|border-left-color|' +
+    // Border radius corners
+    'border-top-left-radius|border-top-right-radius|' +
+    'border-bottom-left-radius|border-bottom-right-radius' +
+    ')\\s*:',
+);
+const physicalValuePattern = /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/;
+
+// Scan only newly-created SCSS files — modified files would flag pre-existing
+// violations across the ~92 non-migrated components. Once the codebase is
+// cleaned up, replace this rule with stylelint-use-logical at error severity.
+const scssCreated = createdFiles.filter((filePath) =>
+  filePath.match(/^packages\/bpk-component-[^/]+\/src\/.+\.module\.scss$/),
+);
+
+const physicalHits = scssCreated
+  .map((filePath) => {
+    if (!fs.existsSync(filePath)) return null;
+    const offending = fs
+      .readFileSync(filePath, 'utf8')
+      .split('\n')
+      .filter(
+        (line) =>
+          physicalPropertyPattern.test(line) ||
+          physicalValuePattern.test(line),
+      );
+    return offending.length
+      ? `- \`${filePath}\`:\n\`\`\`\n${offending.join('\n')}\n\`\`\``
+      : null;
+  })
+  .filter((r): r is string => r !== null);
+
+if (physicalHits.length) {
+  warn(
+    `Physical CSS properties are not RTL-safe. Prefer logical equivalents (inset-inline-*, margin-inline-*, padding-inline-*, border-inline-*, border-start-start-radius, text-align: start/end). Offending lines:\n${physicalHits.join('\n')}`,
+  );
+}
+
 const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
 const invalidReactChild = ["Functions are not valid as a React child"];
 const invalidFormField = ["You provided .* to a form field without"];
