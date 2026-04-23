@@ -163,15 +163,16 @@ if (packagesMissingA11yTest.length) {
   );
 }
 
-// Stories must be colocated with source, not placed under examples/. See
-// decisions/colocated-stories.md.
-const storiesInExamples = fileChanges.filter((filePath) =>
-  filePath.match(/^packages\/bpk-component-[^/]+\/examples\/.*\.stories\.(t|j)sx?$/),
-);
+// Inside bpk-component-* packages, story files must live alongside the
+// component source under src/. See decisions/colocated-stories.md.
+const misplacedStories = fileChanges.filter((filePath) => {
+  const match = filePath.match(/^packages\/bpk-component-[^/]+\/(.+)\.stories\.(t|j)sx?$/);
+  return match !== null && !match[1].startsWith('src/');
+});
 
-if (storiesInExamples.length) {
+if (misplacedStories.length) {
   fail(
-    `Stories must be colocated with the component source (packages/bpk-component-*/src/*.stories.tsx), not under examples/. Please move: ${storiesInExamples.join(
+    `Stories inside bpk-component-* packages must be colocated with the component source under src/. Please move: ${misplacedStories.join(
       ', ',
     )}`,
   );
