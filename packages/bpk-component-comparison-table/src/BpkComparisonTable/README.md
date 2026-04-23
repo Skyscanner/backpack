@@ -1,4 +1,4 @@
-# BpkComparisonTable
+# BpkComparisonTable (experimental) 
 
 A modal-based table component for comparing up to 3 items side by side. The consumer owns the columns state and controls the open/close state.
 
