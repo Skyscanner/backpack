@@ -202,6 +202,60 @@ describe('BpkAutosuggest', () => {
       await typeAndWait(user);
       expect(screen.getAllByRole('option')[0]).toHaveClass('highlighted');
     });
+
+    it('auto-selects the first suggestion on blur (no interaction)', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalledWith({
+          inputValue: 'London',
+          suggestion: suggestions[0],
+        });
+      });
+    });
+
+    it('does not auto-select a hovered-but-not-clicked suggestion on blur', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      await user.hover(screen.getAllByRole('option')[1]);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalled();
+      });
+      // The hovered item (Paris) must NOT be auto-selected on blur.
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[1] }),
+      );
+      // The first-highlighted item (London) is the correct auto-select target.
+      expect(props.onSuggestionSelected).toHaveBeenCalledWith({
+        inputValue: 'London',
+        suggestion: suggestions[0],
+      });
+    });
+
+    it('preserves the keyboard-highlighted suggestion on blur when the user then hovers a different item', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      await user.keyboard('{ArrowDown}');
+      await user.hover(screen.getAllByRole('option')[0]);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalledWith({
+          inputValue: 'Paris',
+          suggestion: suggestions[1],
+        });
+      });
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[0] }),
+      );
+    });
   });
 
   describe('onSuggestionHighlighted', () => {
