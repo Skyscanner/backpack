@@ -23,9 +23,9 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 // ─── Scroll container ────────────────────────────────────────────────────────
 
 .bpk-comparison-table__scroll-container {
-  min-height: 0;
   flex: 1;
   overflow: auto;
+  min-block-size: 0;
   overscroll-behavior: contain;
 
   // Rows lock in place during the header collapse animation, then scroll normally.
@@ -41,20 +41,21 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   th:not(:last-child) {
     &::after {
       position: absolute;
-      top: tokens.bpk-spacing-base();
-      bottom: 0;
       content: '';
-      width: tokens.$bpk-border-size-sm;
       background-color: tokens.$bpk-line-day;
+      inline-size: tokens.$bpk-border-size-sm;
+      inset-block-end: 0;
+      inset-block-start: tokens.bpk-spacing-base();
       inset-inline-end: 0;
     }
   }
 
   table {
-    // min-width ensures horizontal scroll kicks in before columns become too narrow to read (e.g. inside a modal on small screens).
-    min-width: 3 * 180 * tokens.$bpk-one-pixel-rem;
     border-collapse: separate;
     border-spacing: 0;
+
+    // min-width ensures horizontal scroll kicks in before columns become too narrow to read (e.g. inside a modal on small screens).
+    min-inline-size: 3 * 180 * tokens.$bpk-one-pixel-rem;
   }
 }
 
@@ -62,11 +63,11 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 .bpk-comparison-table__scroll-container th {
   position: sticky;
-  top: 0;
   z-index: 1;
   padding: 0;
   background-color: tokens.$bpk-canvas-day;
   vertical-align: top;
+  inset-block-start: 0;
 }
 
 .bpk-comparison-table__header-content {
@@ -78,30 +79,30 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 // Image wrapper — fades out via --bpk-image-opacity (set by JS on the parent element).
 .bpk-comparison-table__header-image-wrapper {
   position: relative;
-  margin-bottom: tokens.bpk-spacing-base();
   opacity: var(--bpk-image-opacity, 1);
+  margin-block-end: tokens.bpk-spacing-base();
 }
 
 .bpk-comparison-table__header-image-area {
   display: flex;
-  height: $image-area-height;
   justify-content: center;
   align-items: center;
   border-radius: tokens.$bpk-border-radius-xs;
   background-color: tokens.$bpk-surface-highlight-day;
   overflow: hidden;
+  block-size: $image-area-height;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-block-size: 100%;
+    max-inline-size: 100%;
     object-fit: contain;
   }
 }
 
 // ID section — slides up over the fading image.
-// Negative margin-top collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
+// Negative margin-block-start collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
 .bpk-comparison-table__header-id-section {
-  margin-top: calc(
+  margin-block-start: calc(
     ($image-area-height + tokens.bpk-spacing-base()) *
       (var(--bpk-image-opacity, 1) - 1)
   );
@@ -109,17 +110,19 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 .bpk-comparison-table__best-tag {
   position: absolute;
-  top: 0;
   z-index: 1;
   transform: translateY(-50%);
+  inset-block-start: 0;
 }
 
 // Remove button — fades and collapses its layout space so rows slide up over it.
 .bpk-comparison-table__remove-button {
-  max-height: calc(5rem * var(--bpk-image-opacity, 1));
-  margin-top: calc(tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1));
   opacity: var(--bpk-image-opacity, 1);
   overflow: clip;
+  margin-block-start: calc(
+    tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1)
+  );
+  max-block-size: calc(5rem * var(--bpk-image-opacity, 1));
   overflow-clip-margin: tokens.bpk-spacing-sm();
 }
 
@@ -139,6 +142,6 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 // ─── Header slot ─────────────────────────────────────────────────────────────
 
 .bpk-comparison-table__header-slot {
-  padding-bottom: tokens.bpk-spacing-md();
+  padding-block-end: tokens.bpk-spacing-md();
   padding-inline: tokens.bpk-spacing-base();
 }
