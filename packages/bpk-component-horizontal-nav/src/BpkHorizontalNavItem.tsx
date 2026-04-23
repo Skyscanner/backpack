@@ -15,11 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import { Component } from 'react';
-import type { Node } from 'react';
+import { forwardRef, type ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -29,32 +26,32 @@ import STYLES from './BpkHorizontalNavItem.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type Props = {
-  children: Node,
-  disabled: boolean,
-  selected: boolean,
-  spaceAround: boolean,
-  type: $Keys<typeof HORIZONTAL_NAV_TYPES>,
-  className: ?string,
-  href: ?string,
+type Props = {
+  children: ReactNode;
+  className?: string | null;
+  disabled?: boolean;
+  href?: string | null;
+  selected?: boolean;
+  spaceAround?: boolean;
+  type?: keyof typeof HORIZONTAL_NAV_TYPES;
+  // Inexact rest. See decisions/flowfixme.md
+  [rest: string]: any;
 };
 
-// In order to be able to access refs on the HorizontalNavItems, they need to be a fully defined
-// React Component class.
-// eslint-disable-next-line react/prefer-stateless-function
-class BpkHorizontalNavItem extends Component<Props> {
-  render() {
-    const {
+const BpkHorizontalNavItem = forwardRef<HTMLDivElement, Props>(
+  (
+    {
       children,
-      className,
-      disabled,
-      href,
-      selected,
-      spaceAround,
-      type,
+      className = null,
+      disabled = false,
+      href = null,
+      selected = false,
+      spaceAround = false,
+      type = HORIZONTAL_NAV_TYPES.default,
       ...rest
-    } = this.props;
-
+    },
+    ref,
+  ) => {
     const classNames = getClassName(
       'bpk-horizontal-nav__item',
       spaceAround && 'bpk-horizontal-nav__item--space-around',
@@ -68,7 +65,6 @@ class BpkHorizontalNavItem extends Component<Props> {
     );
 
     const clickableElement = href ? (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         className={innerClassNames}
@@ -80,7 +76,6 @@ class BpkHorizontalNavItem extends Component<Props> {
         {children}
       </a>
     ) : (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <button
         type="button"
         className={innerClassNames}
@@ -93,36 +88,13 @@ class BpkHorizontalNavItem extends Component<Props> {
       </button>
     );
 
-    return <div className={classNames}>{clickableElement}</div>;
-  }
-}
-
-BpkHorizontalNavItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  /**
-   * **Note:**
-   * "disabled" and "selected" are mutually exclusive for true values, i.e. only one of them can be true for a given nav item.
-   */
-  disabled: PropTypes.bool,
-  href: PropTypes.string,
-  /**
-   * **Note:**
-   * "disabled" and "selected" are mutually exclusive for true values, i.e. only one of them can be true for a given nav item.
-   */
-  selected: PropTypes.bool,
-  spaceAround: PropTypes.bool,
-  type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
-};
-
-BpkHorizontalNavItem.defaultProps = {
-  className: null,
-  disabled: false,
-  href: null,
-  selected: false,
-  spaceAround: false,
-  type: HORIZONTAL_NAV_TYPES.default,
-};
+    return (
+      <div ref={ref} className={classNames}>
+        {clickableElement}
+      </div>
+    );
+  },
+);
 
 const themeAttributes = [
   'horizontalNavLinkColor',
@@ -132,6 +104,6 @@ const themeAttributes = [
   'horizontalNavBarSelectedColor',
 ];
 
+export type { Props };
 export { themeAttributes };
-
 export default BpkHorizontalNavItem;
