@@ -237,6 +237,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     ): Partial<UseComboboxState<any>> {
       const { changes, type } = actionAndChanges;
 
+      // Intercept InputBlur before the alwaysRenderSuggestions early-return
+      if (type === useCombobox.stateChangeTypes.InputBlur) {
+        const keepOpen = Boolean(alwaysRenderSuggestions && hasSuggestions);
+        return {
+          ...changes,
+          isOpen: keepOpen,
+          highlightedIndex: -1,
+          selectedItem: state.selectedItem,
+          inputValue: state.inputValue,
+        };
+      }
+
       const shouldForceKeepOpen =
         alwaysRenderSuggestions && hasSuggestions && changes.isOpen === false;
 
@@ -259,17 +271,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
             ...changes,
             isOpen: state.isOpen,
             highlightedIndex: targetHighlightedIndex ?? -1,
-          };
-        }
-        case useCombobox.stateChangeTypes.InputBlur: {
-          // Prevent Downshift's built-in blur auto-select, which uses the live
-          // highlightedIndex and would commit a mouse-hovered suggestion.
-          return {
-            ...changes,
-            isOpen: false,
-            highlightedIndex: -1,
-            selectedItem: state.selectedItem,
-            inputValue: state.inputValue,
           };
         }
         default: {

@@ -292,6 +292,25 @@ describe('BpkAutosuggest', () => {
 
       expect(screen.getAllByRole('option')).toHaveLength(suggestions.length);
     });
+
+    it('does not auto-select a hovered-but-not-clicked suggestion on blur when alwaysRenderSuggestions is true', async () => {
+      const props = setup({
+        alwaysRenderSuggestions: true,
+        highlightFirstSuggestion: true,
+      });
+
+      const input = screen.getByRole('combobox');
+      await user.click(input);
+      await user.hover(screen.getAllByRole('option')[1]);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalled();
+      });
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[1] }),
+      );
+    });
   });
 
   describe('multiSection and renderSectionTitle', () => {
