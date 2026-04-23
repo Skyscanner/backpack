@@ -52,8 +52,8 @@
   }
 
   &__chip {
-    margin-right: tokens.bpk-spacing-base();
     margin-bottom: tokens.bpk-spacing-base();
+    margin-inline-end: tokens.bpk-spacing-base();
   }
 
   &__aria-live {
