@@ -17,7 +17,6 @@
  */
 
 @use '../../../bpk-mixins/tokens';
-@use '../../../bpk-mixins/breakpoints';
 
 $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
@@ -33,14 +32,6 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   // --bpk-rows-offset is fixed at the animation threshold by JS.
   tbody {
     transform: translateY(var(--bpk-rows-offset, 0));
-  }
-
-  // On small screens a min-width is enforced instead so horizontal scroll kicks in before columns become too narrow to read.
-  th,
-  td {
-    @include breakpoints.bpk-breakpoint-small-tablet {
-      min-width: 180 * tokens.$bpk-one-pixel-rem;
-    }
   }
 
   td:not(:last-child) {
@@ -60,6 +51,8 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   }
 
   table {
+    // min-width ensures horizontal scroll kicks in before columns become too narrow to read (e.g. inside a modal on small screens).
+    min-width: 3 * 180 * tokens.$bpk-one-pixel-rem;
     border-collapse: separate;
     border-spacing: 0;
   }
