@@ -1,0 +1,7 @@
+{
+  "name": "@skyscanner/bpk-component-smoke-test",
+  "version": "0.0.0",
+  "description": "Dummy package used to smoke-test the Danger rules. Not for publish.",
+  "private": true,
+  "main": "src/BpkSmokeTest.tsx"
+}
