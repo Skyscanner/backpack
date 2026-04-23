@@ -77,6 +77,10 @@ export const fixBody = () => {
     return;
   }
 
+  // Set top before position:fixed so the browser doesn't jump to scrollY=0.
+  // scrollOffset is captured by storeScroll() immediately before this call.
+  body.style.top = `-${scrollOffset}px`;
+  body.style.width = '100%';
   body.style.position = 'fixed';
 };
 
@@ -88,6 +92,8 @@ export const unfixBody = () => {
   }
 
   body.style.position = '';
+  body.style.top = '';
+  body.style.width = '';
 };
 
 export const lockScroll = () => {
@@ -101,6 +107,11 @@ export const lockScroll = () => {
 
   body.style.overflow = 'hidden';
   body.style.paddingRight = paddingRight;
+  // On iOS, `overflow: hidden` alone does not prevent touch-scroll or rubber-band
+  // overscroll on the body. `touch-action: none` blocks scroll gestures and
+  // `overscroll-behavior: contain` stops overscroll chaining to the viewport.
+  body.style.touchAction = 'none';
+  body.style.overscrollBehavior = 'contain';
 };
 
 export const unlockScroll = () => {
@@ -112,4 +123,6 @@ export const unlockScroll = () => {
 
   body.style.overflow = '';
   body.style.paddingRight = '';
+  body.style.touchAction = '';
+  body.style.overscrollBehavior = '';
 };
