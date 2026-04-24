@@ -36,31 +36,25 @@
 
 @mixin bpk-badge {
   display: inline-flex;
-  padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-md();
+  padding: var(--bpk-badge-padding-y, #{tokens.bpk-spacing-sm()})
+    var(--bpk-badge-padding-x, #{tokens.bpk-spacing-md()});
   align-items: center;
-
-  @include utils.bpk-themeable-property(
-    border-radius,
+  border-radius: var(
     --bpk-badge-border-radius,
-    tokens.$bpk-border-radius-xs
+    #{tokens.$bpk-border-radius-xs}
   );
+  background-color: var(
+    --bpk-badge-background-color,
+    #{tokens.$bpk-private-badge-background-normal-day}
+  );
+  color: var(--bpk-badge-text-color, #{tokens.$bpk-text-primary-day});
+  font-size: var(--bpk-badge-font-size, #{tokens.$bpk-font-size-sm});
+  font-weight: var(--bpk-badge-font-weight, #{tokens.$bpk-font-weight-book});
+  line-height: var(--bpk-badge-line-height, #{tokens.$bpk-line-height-sm});
+  fill: var(--bpk-badge-icon-color, #{tokens.$bpk-text-primary-day});
+
   @include typography.bpk-text;
   @include typography.bpk-footnote;
-  @include utils.bpk-themeable-property(
-    font-size,
-    --bpk-badge-font-size,
-    tokens.$bpk-font-size-sm
-  );
-  @include utils.bpk-themeable-property(
-    font-weight,
-    --bpk-badge-font-weight,
-    tokens.$bpk-font-weight-book
-  );
-  @include utils.bpk-themeable-property(
-    line-height,
-    --bpk-badge-line-height,
-    tokens.$bpk-line-height-sm
-  );
 }
 
 /// Centered badge. Modifies the bpk-badge mixin.
@@ -140,20 +134,17 @@
 ///   }
 
 @mixin bpk-badge--normal {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-normal-background-color,
-    tokens.$bpk-private-badge-background-normal-day
+    #{tokens.$bpk-private-badge-background-normal-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-normal-text-color,
-    tokens.$bpk-text-primary-day
+    #{tokens.$bpk-text-primary-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-normal-icon-color,
-    tokens.$bpk-text-primary-day
+    #{tokens.$bpk-text-primary-day}
   );
 }
 
@@ -168,20 +159,17 @@
 ///   }
 
 @mixin bpk-badge--warning {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-warning-background-color,
-    tokens.$bpk-private-badge-background-normal-day
+    #{tokens.$bpk-private-badge-background-normal-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-warning-text-color,
-    tokens.$bpk-text-on-light-day
+    #{tokens.$bpk-text-on-light-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-warning-icon-color,
-    tokens.$bpk-status-warning-spot-day
+    #{tokens.$bpk-status-warning-spot-day}
   );
 }
 
@@ -196,20 +184,17 @@
 ///   }
 
 @mixin bpk-badge--success {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-success-background-color,
-    tokens.$bpk-private-badge-background-normal-day
+    #{tokens.$bpk-private-badge-background-normal-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-success-text-color,
-    tokens.$bpk-text-on-light-day
+    #{tokens.$bpk-text-on-light-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-success-icon-color,
-    tokens.$bpk-status-success-spot-day
+    #{tokens.$bpk-status-success-spot-day}
   );
 }
 
@@ -224,20 +209,17 @@
 ///   }
 
 @mixin bpk-badge--critical {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-critical-background-color,
-    tokens.$bpk-private-badge-background-normal-day
+    #{tokens.$bpk-private-badge-background-normal-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-critical-text-color,
-    tokens.$bpk-text-on-light-day
+    #{tokens.$bpk-text-on-light-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-critical-icon-color,
-    tokens.$bpk-status-danger-spot-day
+    #{tokens.$bpk-status-danger-spot-day}
   );
 }
 
@@ -252,20 +234,17 @@
 ///   }
 
 @mixin bpk-badge--inverse {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-inverse-background-color,
-    tokens.$bpk-surface-default-day
+    #{tokens.$bpk-surface-default-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-inverse-text-color,
-    tokens.$bpk-text-primary-day
+    #{tokens.$bpk-text-primary-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-inverse-icon-color,
-    tokens.$bpk-text-primary-day
+    #{tokens.$bpk-text-primary-day}
   );
 }
 
@@ -284,26 +263,20 @@
   // This means badgeOutlineTextColor controls both the text and the visible border simultaneously.
   // There is no separate badgeOutlineBorderColor attribute by design — if independent colours are
   // ever needed, a dedicated CSS variable and theme attribute should be introduced at that point.
-  box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
-    tokens.$bpk-text-on-dark-day;
-  box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
-    var(--bpk-badge-outline-text-color, tokens.$bpk-text-on-dark-day);
-
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-outline-background-color,
     transparent
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-outline-text-color,
-    tokens.$bpk-text-on-dark-day
+    #{tokens.$bpk-text-on-dark-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-outline-icon-color,
-    tokens.$bpk-text-on-dark-day
+    #{tokens.$bpk-text-on-dark-day}
   );
+
+  box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm var(--bpk-badge-text-color);
 }
 
 /// Strong badge. Modifies the bpk-badge mixin.
@@ -317,20 +290,17 @@
 ///   }
 
 @mixin bpk-badge--strong {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-strong-background-color,
-    tokens.$bpk-core-primary-day
+    #{tokens.$bpk-core-primary-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-strong-text-color,
-    tokens.$bpk-text-on-dark-day
+    #{tokens.$bpk-text-on-dark-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-strong-icon-color,
-    tokens.$bpk-text-on-dark-day
+    #{tokens.$bpk-text-on-dark-day}
   );
 }
 
@@ -345,19 +315,16 @@
 ///   }
 
 @mixin bpk-badge--brand {
-  @include utils.bpk-themeable-property(
-    background-color,
+  --bpk-badge-background-color: var(
     --bpk-badge-brand-background-color,
-    tokens.$bpk-core-accent-day
+    #{tokens.$bpk-core-accent-day}
   );
-  @include utils.bpk-themeable-property(
-    color,
+  --bpk-badge-text-color: var(
     --bpk-badge-brand-text-color,
-    tokens.$bpk-text-primary-inverse-day
+    #{tokens.$bpk-text-primary-inverse-day}
   );
-  @include utils.bpk-themeable-property(
-    fill,
+  --bpk-badge-icon-color: var(
     --bpk-badge-brand-icon-color,
-    tokens.$bpk-text-primary-inverse-day
+    #{tokens.$bpk-text-primary-inverse-day}
   );
 }
