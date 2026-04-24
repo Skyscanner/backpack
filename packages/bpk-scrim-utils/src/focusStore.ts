@@ -70,7 +70,7 @@ const focusStore = {
       return;
     }
     try {
-      (storedFocusElement as HTMLElement).focus();
+      (storedFocusElement as HTMLElement).focus({ preventScroll: true });
     } catch {
       // Element may have been detached from the DOM
     }

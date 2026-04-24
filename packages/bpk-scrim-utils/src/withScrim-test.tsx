@@ -25,10 +25,12 @@ import focusStore from './focusStore';
 import {
   fixBody,
   lockScroll,
+  lockTouchAction,
   restoreScroll,
   storeScroll,
   unfixBody,
   unlockScroll,
+  unlockTouchAction,
 } from './scroll-utils';
 import withScrim from './withScrim';
 
@@ -50,9 +52,11 @@ jest.mock('./focusStore', () => ({
 
 jest.mock('./scroll-utils', () => ({
   lockScroll: jest.fn(),
+  lockTouchAction: jest.fn(),
   restoreScroll: jest.fn(),
   storeScroll: jest.fn(),
   unlockScroll: jest.fn(),
+  unlockTouchAction: jest.fn(),
   fixBody: jest.fn(),
   unfixBody: jest.fn(),
 }));
@@ -122,11 +126,6 @@ describe('BpkScrim', () => {
     beforeEach(() => {
       TestComponent = () => <div>TestComponent</div>;
       Component = withScrim(TestComponent);
-      jest.useFakeTimers();
-    });
-
-    afterEach(() => {
-      jest.useRealTimers();
     });
 
     it('should mount correctly when is iPhone', () => {
@@ -143,12 +142,33 @@ describe('BpkScrim', () => {
           isIphone
         />,
       );
-      jest.runAllTimers();
       expect(storeScroll).toHaveBeenCalled();
       expect(lockScroll).toHaveBeenCalled();
       expect(fixBody).toHaveBeenCalled();
+      expect(lockTouchAction).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(mockSetAttribute).toHaveBeenCalledWith('aria-hidden', 'true');
+    });
+
+    it('should call storeScroll and fixBody synchronously before lockScroll on iPhone', () => {
+      render(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn(() => ({
+            style: {},
+            setAttribute: jest.fn(),
+            removeAttribute: jest.fn(),
+          }))}
+          isIphone
+        />,
+      );
+      const storeScrollOrder = (storeScroll as jest.Mock).mock
+        .invocationCallOrder[0];
+      const fixBodyOrder = (fixBody as jest.Mock).mock.invocationCallOrder[0];
+      const lockScrollOrder = (lockScroll as jest.Mock).mock
+        .invocationCallOrder[0];
+      expect(storeScrollOrder).toBeLessThan(fixBodyOrder);
+      expect(fixBodyOrder).toBeLessThan(lockScrollOrder);
     });
 
     it('should mount correctly when is not iPhone', () => {
@@ -165,11 +185,11 @@ describe('BpkScrim', () => {
           isIphone={false}
         />,
       );
-      jest.runAllTimers();
       expect(lockScroll).toHaveBeenCalled();
       expect(focusStore.storeFocus).toHaveBeenCalled();
       expect(storeScroll).not.toHaveBeenCalled();
       expect(fixBody).not.toHaveBeenCalled();
+      expect(lockTouchAction).not.toHaveBeenCalled();
       expect(mockSetAttribute).toHaveBeenCalledWith('aria-hidden', 'true');
     });
   });
@@ -183,7 +203,7 @@ describe('BpkScrim', () => {
       Component = withScrim(TestComponent);
     });
 
-    it('should unmount correctly when is iPhone', async () => {
+    it('should unmount correctly when is iPhone', () => {
       const mockSetAttribute = jest.fn();
       const mockRemoveAttribute = jest.fn();
       const { unmount } = render(
@@ -201,11 +221,32 @@ describe('BpkScrim', () => {
 
       expect(unlockScroll).toHaveBeenCalled();
       expect(unfixBody).toHaveBeenCalled();
+      expect(restoreScroll).toHaveBeenCalled();
+      expect(unlockTouchAction).toHaveBeenCalled();
       expect(focusStore.restoreFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
       expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');
-      await new Promise((resolve) => setTimeout(resolve, 0));
-      expect(restoreScroll).toHaveBeenCalled();
+    });
+
+    it('should call unfixBody before restoreScroll on iPhone unmount', () => {
+      const { unmount } = render(
+        <Component
+          onClose={jest.fn()}
+          getApplicationElement={jest.fn(() => ({
+            style: {},
+            setAttribute: jest.fn(),
+            removeAttribute: jest.fn(),
+          }))}
+          isIphone
+        />,
+      );
+      unmount();
+
+      const unfixBodyOrder = (unfixBody as jest.Mock).mock
+        .invocationCallOrder[0];
+      const restoreScrollOrder = (restoreScroll as jest.Mock).mock
+        .invocationCallOrder[0];
+      expect(unfixBodyOrder).toBeLessThan(restoreScrollOrder);
     });
 
     it('should unmount correctly when is not iPhone', () => {
@@ -226,6 +267,7 @@ describe('BpkScrim', () => {
       expect(unlockScroll).toHaveBeenCalled();
       expect(restoreScroll).not.toHaveBeenCalled();
       expect(unfixBody).not.toHaveBeenCalled();
+      expect(unlockTouchAction).not.toHaveBeenCalled();
       expect(focusStore.restoreFocus).toHaveBeenCalled();
       expect(focusScope.unscopeFocus).toHaveBeenCalled();
       expect(mockRemoveAttribute).toHaveBeenCalledWith('aria-hidden');
