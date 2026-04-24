@@ -40,7 +40,6 @@ describe('scroll-utils', () => {
 
   beforeEach(() => {
     resetBodyStyles();
-    // reset the module-level scrollOffset to 0 before each test
     Object.defineProperty(window, 'pageYOffset', {
       configurable: true,
       value: 0,
@@ -79,6 +78,8 @@ describe('scroll-utils', () => {
       expect(document.body.style.top).toBe('-250px');
       expect(document.body.style.width).toBe('100%');
       expect(document.body.style.position).toBe('fixed');
+
+      unfixBody();
     });
   });
 
@@ -105,6 +106,8 @@ describe('scroll-utils', () => {
       expect(document.body.style.overflow).toBe('hidden');
       expect(document.body.style.overscrollBehavior).toBe('contain');
       expect(document.body.style.touchAction).toBe('');
+
+      unlockScroll();
     });
   });
 
@@ -133,6 +136,8 @@ describe('scroll-utils', () => {
       lockTouchAction();
 
       expect(document.body.style.touchAction).toBe('none');
+
+      unlockTouchAction();
     });
   });
 
@@ -151,6 +156,95 @@ describe('scroll-utils', () => {
       unlockTouchAction();
 
       expect(document.body.style.touchAction).toBe('manipulation');
+    });
+  });
+
+  // Regression tests for nested scrims (e.g. the Nested story in
+  // BpkModal.stories.tsx). Module-level state must be reference-counted so the
+  // inner scrim does not clobber the outer scrim's saved "pre-lock" value.
+  describe('nested locks', () => {
+    it('restores host touch-action only after the outermost unlockTouchAction', () => {
+      document.body.style.touchAction = 'manipulation';
+
+      lockTouchAction(); // outer scrim mounts
+      lockTouchAction(); // inner scrim mounts
+
+      unlockTouchAction(); // inner scrim unmounts — body still needs to be locked
+      expect(document.body.style.touchAction).toBe('none');
+
+      unlockTouchAction(); // outer scrim unmounts — now restore
+      expect(document.body.style.touchAction).toBe('manipulation');
+    });
+
+    it('restores host overscroll-behavior only after the outermost unlockScroll', () => {
+      document.body.style.overscrollBehavior = 'none';
+
+      lockScroll();
+      lockScroll();
+
+      unlockScroll();
+      expect(document.body.style.overscrollBehavior).toBe('contain');
+
+      unlockScroll();
+      expect(document.body.style.overscrollBehavior).toBe('none');
+    });
+
+    it('preserves the outer scroll offset when a nested scrim calls storeScroll', () => {
+      Object.defineProperty(window, 'pageYOffset', {
+        configurable: true,
+        value: 500,
+      });
+      storeScroll();
+      fixBody(); // outer scrim: body now position:fixed at top:-500
+
+      // Inner scrim: pageYOffset reads 0 while body is fixed. storeScroll
+      // must NOT overwrite the saved 500.
+      Object.defineProperty(window, 'pageYOffset', {
+        configurable: true,
+        value: 0,
+      });
+      storeScroll();
+      fixBody();
+
+      unfixBody(); // inner unmount
+      unfixBody(); // outer unmount
+
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation();
+      restoreScroll();
+      expect(scrollToSpy).toHaveBeenCalledWith(0, 500);
+      scrollToSpy.mockRestore();
+    });
+
+    it('keeps the body fixed until the outermost unfixBody', () => {
+      Object.defineProperty(window, 'pageYOffset', {
+        configurable: true,
+        value: 300,
+      });
+      storeScroll();
+
+      fixBody();
+      fixBody();
+
+      unfixBody();
+      expect(document.body.style.position).toBe('fixed');
+      expect(document.body.style.top).toBe('-300px');
+
+      unfixBody();
+      expect(document.body.style.position).toBe('');
+      expect(document.body.style.top).toBe('');
+    });
+
+    it('extra unlock calls are no-ops and do not corrupt future locks', () => {
+      unlockScroll();
+      unlockTouchAction();
+      unfixBody();
+
+      // After an unbalanced unlock, the next lock must still capture and apply.
+      document.body.style.touchAction = 'pan-y';
+      lockTouchAction();
+      expect(document.body.style.touchAction).toBe('none');
+      unlockTouchAction();
+      expect(document.body.style.touchAction).toBe('pan-y');
     });
   });
 });
