@@ -24,6 +24,7 @@ const isCI = !!process.env.CI;
 
 const config: StorybookConfig = {
   stories: [
+    '../packages/*/src/**/*.mdx',
     '../packages/*/src/**/*.stories.@(ts|tsx|js|jsx)',
   ],
   addons: [

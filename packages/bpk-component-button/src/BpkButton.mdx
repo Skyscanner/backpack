@@ -1,0 +1,162 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+
+import * as BpkButtonStories from './BpkButton.stories';
+
+<Meta of={BpkButtonStories} />
+
+# BpkButton
+
+`BpkButton` is Backpack's core button component. Use it to trigger an action,
+submit a form, or navigate when an `href` is supplied.
+
+## Usage
+
+```tsx
+import BpkButton, {
+  BUTTON_TYPES,
+  SIZE_TYPES,
+} from '@skyscanner/backpack-web/bpk-component-button';
+
+<BpkButton onClick={handleClick}>Primary</BpkButton>
+<BpkButton type={BUTTON_TYPES.secondary} size={SIZE_TYPES.large}>
+  Secondary
+</BpkButton>
+```
+
+## Types
+
+### Primary
+
+The default button. Use for the most important action on a page.
+
+<Canvas of={BpkButtonStories.BpkButtonPrimary} />
+
+### Primary on dark
+
+<Canvas of={BpkButtonStories.BpkButtonPrimaryOnDark} />
+
+### Primary on light
+
+<Canvas of={BpkButtonStories.BpkButtonPrimaryOnLight} />
+
+### Secondary
+
+Use alongside a primary button when offering an alternative action.
+
+<Canvas of={BpkButtonStories.BpkButtonSecondary} />
+
+### Secondary on dark
+
+<Canvas of={BpkButtonStories.BpkButtonSecondaryOnDark} />
+
+### Destructive
+
+Use for actions that delete or are otherwise irreversible.
+
+<Canvas of={BpkButtonStories.BpkButtonDestructive} />
+
+### Featured
+
+Use sparingly to highlight an exceptional call to action.
+
+<Canvas of={BpkButtonStories.BpkButtonFeatured} />
+
+### Link
+
+Renders as a button but styled as a link. Supports an `implicit` variant that
+hides the underline until hover/focus.
+
+<Canvas of={BpkButtonStories.BpkButtonLinkButton} />
+
+### Link on dark
+
+<Canvas of={BpkButtonStories.BpkButtonLinkOnDarkButton} />
+
+## Variants
+
+### Full width
+
+<Canvas of={BpkButtonStories.FullWidth} />
+
+### Submit
+
+Sets the underlying `<button type="submit">` for use inside forms.
+
+<Canvas of={BpkButtonStories.SubmitButton} />
+
+### Themed corner radius
+
+Border radius can be overridden per brand via `BpkThemeProvider`.
+
+<Canvas of={BpkButtonStories.ThemedCornerRadius} />
+
+## Loading state
+
+Pass `loading` to show a spinner and prevent interaction while an async
+operation is in progress. The button's dimensions are preserved so layout does
+not shift. When `loading` is `true` the button is rendered as `disabled` and
+`aria-busy="true"` is added.
+
+```tsx
+<BpkButton loading>Submit</BpkButton>
+<BpkButton loading iconOnly aria-label="Loading">
+  <AlignedArrowIcon />
+</BpkButton>
+```
+
+The loading colour for `link`-type buttons is exposed as the CSS custom
+property `--bpk-button-link-loading-color` and can be themed via
+`BpkThemeProvider`:
+
+```tsx
+import BpkButton, {
+  linkThemeAttributes,
+} from '@skyscanner/backpack-web/bpk-component-button';
+
+<BpkThemeProvider
+  theme={{ buttonLinkLoadingColor: '#yourColor' }}
+  themeAttributes={linkThemeAttributes}
+>
+  <BpkButton type={BUTTON_TYPES.link} loading>
+    Submit
+  </BpkButton>
+</BpkThemeProvider>;
+```
+
+## Icons
+
+Use `leadingIcon` / `trailingIcon` for buttons with both text and an icon. For
+icon-only buttons, pass `iconOnly` and an accessible label (`aria-label` or
+`BpkVisuallyHidden`). Wrap icons in `withButtonAlignment` /
+`withLargeButtonAlignment` and `withRtlSupport` as appropriate.
+
+```tsx
+import {
+  withButtonAlignment,
+  withRtlSupport,
+} from '@skyscanner/backpack-web/bpk-component-icon';
+import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
+
+const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
+
+<BpkButton iconOnly aria-label="Next">
+  <AlignedArrowIcon />
+</BpkButton>;
+```
+
+## As an anchor
+
+When an `href` is provided, `BpkButton` renders an `<a>` tag. Use `blank` to
+open in a new tab (adds `rel="noopener noreferrer"` by default).
+
+<Canvas of={BpkButtonStories.AnchorTags} />
+
+## Props
+
+<Controls />
+
+## Related
+
+- [Button link type](../docs/button-link-type.md)
+- Full prop reference on the
+  [design system documentation website](https://www.skyscanner.design/latest/components/button/web-eI5EFTLO#section-button-props-48).
