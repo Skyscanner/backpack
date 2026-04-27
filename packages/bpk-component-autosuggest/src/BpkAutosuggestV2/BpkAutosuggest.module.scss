@@ -80,19 +80,14 @@
     padding: tokens.bpk-spacing-base();
 
     &--indent {
-      padding-left: tokens.bpk-spacing-xl();
+      padding-inline-start: tokens.bpk-spacing-xl();
     }
 
     &-icon {
       display: table-cell;
-      margin-right: tokens.bpk-spacing-md();
       vertical-align: top;
       fill: tokens.$bpk-text-secondary-day;
-
-      @include utils.bpk-rtl {
-        margin-right: 0;
-        margin-left: tokens.bpk-spacing-md();
-      }
+      margin-inline-end: tokens.bpk-spacing-md();
     }
 
     &-content {
