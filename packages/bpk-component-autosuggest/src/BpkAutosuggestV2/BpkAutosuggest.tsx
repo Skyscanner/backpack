@@ -718,8 +718,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
 
         if (highlightedSuggestion) {
-          // Use setTimeout to ensure selectItem runs after the blur event completes
+          // Use setTimeout to ensure selectItem runs after the blur event completes.
           setTimeout(() => {
+            if (committedSelectionRef.current) {
+              return;
+            }
             selectItem(highlightedSuggestion);
           }, 0);
         }

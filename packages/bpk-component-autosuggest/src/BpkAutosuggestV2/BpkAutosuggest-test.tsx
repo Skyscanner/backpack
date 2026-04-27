@@ -238,6 +238,26 @@ describe('BpkAutosuggest', () => {
       });
     });
 
+    it('keeps the clicked suggestion when user clicks a non-first item with highlightFirstSuggestion on', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      // Click the second suggestion (not the first-highlighted one).
+      await user.click(screen.getAllByRole('option')[1]);
+
+      // Allow the blur setTimeout to flush; the clicked item must remain committed.
+      await waitFor(() => {
+        expect(screen.getByRole('combobox')).toHaveValue('Paris');
+      });
+      expect(props.onSuggestionSelected).toHaveBeenLastCalledWith({
+        inputValue: 'Paris',
+        suggestion: suggestions[1],
+      });
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[0] }),
+      );
+    });
+
     it('preserves the keyboard-highlighted suggestion on blur when the user then hovers a different item', async () => {
       const props = setup({ highlightFirstSuggestion: true });
 
