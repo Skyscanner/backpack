@@ -31,6 +31,8 @@ import STYLES from './BpkCarousel.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// An image carousel component with page indicator dots and optional previous/next navigation buttons on desktop.
+// Tracks the currently visible image via scroll position and supports an optional change callback.
 const BpkCarousel = ({
   accessibilityLabels = {},
   bottom,

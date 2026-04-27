@@ -29,6 +29,8 @@ export type Props = {
   extraSpace?: boolean;
 };
 
+// A styled blockquote component for displaying quoted text with Backpack design system styling.
+// Supports an optional extra-spacing modifier for increased vertical separation.
 const BpkBlockquote = ({ children, extraSpace = false }: Props) => {
   const classNames = [getClassName('bpk-blockquote')];
   if (extraSpace) {

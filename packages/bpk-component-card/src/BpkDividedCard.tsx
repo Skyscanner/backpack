@@ -42,6 +42,8 @@ export type Props = {
   [rest: string]: any;
 };
 
+// A card component split into two distinct content areas by a divider.
+// Supports horizontal (side-by-side) and vertical (stacked) orientations and can optionally render as a link.
 const BpkDividedCard = ({
   href = null,
   isElevated = true,

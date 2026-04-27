@@ -101,6 +101,8 @@ type Props = {
   tickEvery: number,
 };
 
+// Renders an SVG axis (X or Y) for BpkBarchart with configurable tick values, frequency, and an optional axis label.
+// Layout and text positioning are calculated automatically based on chart dimensions, margins, and orientation.
 const BpkChartAxis = (props: Props) => {
   const {
     height,

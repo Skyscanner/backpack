@@ -71,6 +71,8 @@ type Props = {
   onBarFocus: ?(e: SyntheticEvent<any>, Object) => mixed,
 };
 
+// Renders the collection of bar elements for a BpkBarchart by mapping data points to their x/y positions using D3 scales.
+// Supports custom bar components, selection highlighting, outlier markers, and click/hover/focus event callbacks.
 const BpkBarchartBars = (props: Props) => {
   const {
     BarComponent,

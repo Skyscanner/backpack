@@ -41,6 +41,8 @@ export type Props = {
 };
 
 
+// A surface container that groups related content with an optional keyline border and padding.
+// It supports different background colours, full-width layout, and can be used as a card-like section within a page.
 const BpkPanel = ({
   bgColor = PANEL_BG_COLORS.surfaceDefault,
   children,

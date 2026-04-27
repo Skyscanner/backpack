@@ -37,6 +37,8 @@ type Props = {
   valid: ?boolean,
 };
 
+// Renders a styled radio button input with an associated label.
+// Supports disabled, invalid, and white-on-dark variants.
 const BpkRadio = ({
   ariaLabel = null,
   className = null,

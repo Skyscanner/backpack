@@ -38,15 +38,11 @@ const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
 // ─── HiddenInput ─────────────────────────────────────────────────────────────
 
-/**
- * BpkCheckboxCard.HiddenInput - Accessible hidden checkbox input for form submission.
- *
- * Renders a visually hidden <input type="checkbox"> managed by Ark UI.
- * Handles name, value, checked state, required, and disabled automatically.
- * Must be placed inside BpkCheckboxCard.Root.
- *
- * @returns {JSX.Element} The hidden checkbox input element.
- */
+// BpkCheckboxCard.HiddenInput - Accessible hidden checkbox input for form submission.
+// Renders a visually hidden <input type="checkbox"> managed by Ark UI.
+// Handles name, value, checked state, required, and disabled automatically.
+// Must be placed inside BpkCheckboxCard.Root.
+// @returns {JSX.Element} The hidden checkbox input element.
 function HiddenInput() {
   return <CheckboxHiddenInput />;
 }
@@ -54,19 +50,14 @@ function HiddenInput() {
 // ─── Content ─────────────────────────────────────────────────────────────────
 
 export type ContentProps = {
-  /**
-   * Child components (slots, Stack layout primitives, etc.)
-   * Optional - can be empty for minimal card displays
-   */
+  // Child components (slots, Stack layout primitives, etc.)
+  // Optional - can be empty for minimal card displays
   children?: ReactNode;
 };
 
-/**
- * BpkCheckboxCard.Content - Main content container
- *
- * Provides a simple wrapper container for organising checkbox card content.
- * Use BpkVStack / BpkHStack for layout control inside Content.
- */
+// BpkCheckboxCard.Content - Main content container
+// Provides a simple wrapper container for organising checkbox card content.
+// Use BpkVStack / BpkHStack for layout control inside Content.
 
 function Content({ children }: ContentProps) {
   return (
@@ -87,13 +78,10 @@ export type LabelProps = {
   lineClamp?: number;
 };
 
-/**
- * BpkCheckboxCard.Label - Primary label slot component
- *
- * Displays the primary text label using BpkText.
- * Automatically truncates with ellipsis after the specified number of lines.
- * Accessibility is provided by the wrapping <label> element from Ark UI's CheckboxRoot.
- */
+// BpkCheckboxCard.Label - Primary label slot component
+// Displays the primary text label using BpkText.
+// Automatically truncates with ellipsis after the specified number of lines.
+// Accessibility is provided by the wrapping <label> element from Ark UI's CheckboxRoot.
 
 function Label({ children, lineClamp = 2, textStyle = TEXT_STYLES.heading5 }: LabelProps) {
   return (
@@ -119,12 +107,9 @@ export type DescriptionProps = {
   lineClamp?: number;
 };
 
-/**
- * BpkCheckboxCard.Description - Secondary description slot component
- *
- * Displays secondary descriptive text using BpkText.
- * Automatically truncates with ellipsis after the specified number of lines.
- */
+// BpkCheckboxCard.Description - Secondary description slot component
+// Displays secondary descriptive text using BpkText.
+// Automatically truncates with ellipsis after the specified number of lines.
 
 function Description({ children, lineClamp = 3, textStyle = TEXT_STYLES.bodyDefault }: DescriptionProps) {
   return (
@@ -148,15 +133,11 @@ export type PriceProps = {
   leadingText?: string;
 };
 
-/**
- * BpkCheckboxCard.Price - Cars-specific price slot.
- *
- * Reads `loading` from context automatically:
- * - loading=true  → shows "{leadingText}" + spinner
- * - loading=false → shows "{leadingText} {price}" as secondary description text
- *
- * Intended for use with variant="cars" only.
- */
+// BpkCheckboxCard.Price - Cars-specific price slot.
+// Reads `loading` from context automatically:
+// - loading=true  → shows "{leadingText}" + spinner
+// - loading=false → shows "{leadingText} {price}" as secondary description text
+// Intended for use with variant="cars" only.
 
 function Price({ leadingText = 'from', price }: PriceProps) {
   const { loading } = useCheckboxCardContext();
@@ -181,13 +162,10 @@ function Price({ leadingText = 'from', price }: PriceProps) {
 
 export type IndicatorProps = Record<string, never>;
 
-/**
- * BpkCheckboxCard.Indicator - Visual corner indicator
- *
- * Renders a circular checkbox indicator in the top-right corner of the card.
- * Empty circle when unchecked; filled with a checkmark when checked.
- * The visual state is driven by Ark UI's data-state attribute on the root <label>.
- */
+// BpkCheckboxCard.Indicator - Visual corner indicator
+// Renders a circular checkbox indicator in the top-right corner of the card.
+// Empty circle when unchecked; filled with a checkmark when checked.
+// The visual state is driven by Ark UI's data-state attribute on the root <label>.
 
 function Indicator(_props: IndicatorProps = {}) {
   return (
@@ -199,32 +177,29 @@ function Indicator(_props: IndicatorProps = {}) {
 
 // ─── Compound Component ───────────────────────────────────────────────────────
 
-/**
- * BpkCheckboxCard - Compound component for selectable cards.
- *
- * Built on Ark UI's Checkbox primitive — the Root renders as a <label> element,
- * providing native accessibility, keyboard navigation, and form integration.
- *
- * @example Standard layout
- * <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
- *   <BpkCheckboxCard.HiddenInput />
- *   <BpkCheckboxCard.Content>
- *     <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
- *       <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
- *       <BpkPrice price="£85" />
- *     </BpkVStack>
- *   </BpkCheckboxCard.Content>
- * </BpkCheckboxCard.Root>
- *
- * @example With corner indicator
- * <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
- *   <BpkCheckboxCard.HiddenInput />
- *   <BpkCheckboxCard.Indicator />
- *   <BpkCheckboxCard.Content>
- *     <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
- *   </BpkCheckboxCard.Content>
- * </BpkCheckboxCard.Root>
- */
+// BpkCheckboxCard is a compound component for building selectable card UIs with checkbox
+// semantics. It exposes Root, HiddenInput, Content, Indicator, Label, Description, and Price
+// sub-components that compose together to form accessible, form-compatible checkbox cards.
+// Built on Ark UI's Checkbox primitive — the Root renders as a <label> element,
+// providing native accessibility, keyboard navigation, and form integration.
+// @example Standard layout
+// <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
+// <BpkCheckboxCard.HiddenInput />
+// <BpkCheckboxCard.Content>
+// <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
+// <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+// <BpkPrice price="£85" />
+// </BpkVStack>
+// </BpkCheckboxCard.Content>
+// </BpkCheckboxCard.Root>
+// @example With corner indicator
+// <BpkCheckboxCard.Root checked={selected} onCheckedChange={setSelected}>
+// <BpkCheckboxCard.HiddenInput />
+// <BpkCheckboxCard.Indicator />
+// <BpkCheckboxCard.Content>
+// <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
+// </BpkCheckboxCard.Content>
+// </BpkCheckboxCard.Root>
 const BpkCheckboxCard = Object.assign(Root, {
   Root,
   HiddenInput,

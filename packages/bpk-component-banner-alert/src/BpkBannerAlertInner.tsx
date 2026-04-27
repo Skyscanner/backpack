@@ -123,6 +123,8 @@ type Props = CommonProps & {
   onDismiss?: OnDismissHandler;
 };
 
+// The internal implementation shared by all banner alert variants (default, dismissable, and expandable).
+// Renders the alert icon, message, and optional toggle or dismiss controls based on the active configuration.
 const BpkBannerAlertInner = ({
   animateOnEnter = false,
   animateOnLeave = false,

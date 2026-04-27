@@ -29,6 +29,7 @@ type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// Renders a styled `<dl>` element that serves as a container for key-value pairs using BpkDescriptionTerm and BpkDescriptionDetails.
 export default ({ children, className, ...rest }: Props) => (
   <dl
     className={[getClassName('bpk-description-list'), className]

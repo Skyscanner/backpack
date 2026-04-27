@@ -42,6 +42,8 @@ export type Props = {
   status?: Status;
 };
 
+// The interactive button element rendered inside a price map marker.
+// It displays a price label with an optional icon and supports unselected, selected, and previously-selected visual states.
 const BpkPriceMarkerButton = ({
   buttonProps = {},
   className = null,

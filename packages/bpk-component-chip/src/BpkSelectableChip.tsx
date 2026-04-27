@@ -35,6 +35,9 @@ export interface Props extends CommonProps {
   trailingAccessoryView?: ReactNode;
 }
 
+// BpkSelectableChip is the foundational chip component used to represent a selectable
+// filter or tag. It supports optional leading and trailing accessory views, disabled and
+// selected states, and multiple visual types (default, on-dark, on-image).
 const BpkSelectableChip = ({
   accessibilityLabel,
   children,

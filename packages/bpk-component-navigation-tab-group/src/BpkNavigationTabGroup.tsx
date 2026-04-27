@@ -99,6 +99,8 @@ const TabWrap = ({ children, onClick, selected, tab, type }: TabWrapProps) => {
   );
 };
 
+// A group of navigation tabs rendered as a labelled nav element with a tablist role.
+// Each tab can be rendered as a button or an anchor link and supports icon badges, selection state, and two visual style variants.
 const BpkNavigationTabGroup = ({
   ariaLabel,
   id,

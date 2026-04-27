@@ -37,6 +37,8 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
+// Displays an animated validation message for form fields, expanding and collapsing based on the expanded prop.
+// Includes an exclamation icon and adjusts its layout when used alongside a checkbox.
 const BpkFormValidation = ({
   children,
   className = null,

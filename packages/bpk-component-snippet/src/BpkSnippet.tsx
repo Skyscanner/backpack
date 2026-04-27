@@ -107,6 +107,8 @@ const getImageAspectRatio = (
   return imageAspectRatio;
 };
 
+// A marketing snippet component that combines an image, headline, subheading, body text, and an optional call-to-action button.
+// It adapts its layout between vertical, image-left, and image-right arrangements based on the desktop layout prop and current breakpoint.
 const BpkSnippet = ({
   altText,
   bodyStyle = BODY_STYLE.bodyDefault,

@@ -34,6 +34,9 @@ export type BpkIconChipProps = {
   leadingAccessoryView: ReactNode;
 } & Omit<Props, 'trailingAccessoryView' | 'leadingAccessoryView' | 'children'>;
 
+// BpkIconChip is a compact chip variant that displays only a leading icon, with no label text
+// or trailing accessory. It is useful for representing filter or action states in space-
+// constrained layouts.
 const BpkIconChip = (props: BpkIconChipProps) => (
   <BpkSelectableChip
     {...getDataComponentAttribute('IconChip')}

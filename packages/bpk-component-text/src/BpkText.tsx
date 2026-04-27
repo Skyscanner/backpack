@@ -104,6 +104,9 @@ type Props = {
   [rest: string]: any;
 };
 
+// Renders styled text using Backpack typography tokens.
+// Defaults to a `<span>` with `bodyDefault` style. Use `tagName` to control
+// the rendered HTML element and `textStyle` to apply different typography scales.
 const BpkText = ({
   children,
   className = null,

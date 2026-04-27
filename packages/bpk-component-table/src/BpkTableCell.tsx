@@ -31,6 +31,7 @@ export interface BpkTableCellProps extends Omit<HTMLAttributes<HTMLTableCellElem
   wordBreak?: boolean;
 }
 
+// Renders a styled `<td>` element for use inside a BpkTableRow.
 const BpkTableCell = ({children, className = null, wordBreak = false, ...rest}: BpkTableCellProps) => {
 
   const classes = [

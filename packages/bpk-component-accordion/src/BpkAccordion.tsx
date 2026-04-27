@@ -37,6 +37,8 @@ export const BpkAccordionContext = createContext({
   divider: true,
 });
 
+// A container component that groups one or more BpkAccordionItem components.
+// Provides shared context for dark-mode and divider display, and wraps its children in a styled div.
 const BpkAccordion = (props: BpkAccordionProps) => {
   const {
     children,

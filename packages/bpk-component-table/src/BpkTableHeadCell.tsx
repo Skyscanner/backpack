@@ -31,6 +31,7 @@ export interface BpkTableHeadCellProps extends Omit<HTMLAttributes<HTMLTableCell
   wordBreak?: boolean;
 }
 
+// Renders a styled `<th>` element for use inside a BpkTableHead row. Supports an alternate colour variant.
 const BpkTableHeadCell = ({ children, className = null, wordBreak = false, ...rest }: BpkTableHeadCellProps) => {
 
   const classes = [

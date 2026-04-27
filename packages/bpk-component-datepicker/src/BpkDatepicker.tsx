@@ -63,21 +63,17 @@ type Props = {
   formatMonth: (date: Date) => string;
   id: string;
   title: string;
-  /**
-   * Because this component uses a modal on mobile viewports, you need to let it know what
-   * the root element of your application is by returning its DOM node via this prop
-   * This is to "hide" your application from screen readers whilst the datepicker is open.
-   * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
-   */
+  // Because this component uses a modal on mobile viewports, you need to let it know what
+  // the root element of your application is by returning its DOM node via this prop
+  // This is to "hide" your application from screen readers whilst the datepicker is open.
+  // The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
   getApplicationElement: () => HTMLElement | null;
   nextMonthLabel: string;
   previousMonthLabel: string;
   weekStartsOn: number;
   // Optional
   calendarComponent: ReactComponent;
-  /**
-   * By default BpkInput. If passed, it should be a DOM node with a ref attached to it.
-   */
+  // By default BpkInput. If passed, it should be a DOM node with a ref attached to it.
   inputComponent: ReactElement | null;
   dateModifiers?: {};
   fixedWidth?: boolean;
@@ -108,6 +104,9 @@ type State = {
   isOpen: boolean;
 };
 
+// BpkDatepicker combines a text input with a calendar to let users pick a date or a date
+// range. On mobile viewports it opens the calendar inside a BpkModal; on wider viewports it
+// uses a BpkPopover anchored to the input field.
 class BpkDatepicker extends Component<Props, State> {
   inputRef: (ref:HTMLInputElement) => void;
 
@@ -182,12 +181,10 @@ class BpkDatepicker extends Component<Props, State> {
     }
   };
 
-  /**
-   * Gets the correct label for the input field to be supplied to the aria-label
-   * @param {Object} selectionConfiguration current selection configuration
-   * @param {Function} formatDateFull function supplied to format date
-   * @returns {String} date string
-   */
+  // Gets the correct label for the input field to be supplied to the aria-label
+  // @param {Object} selectionConfiguration current selection configuration
+  // @param {Function} formatDateFull function supplied to format date
+  // @returns {String} date string
   getLabel = (
     selectionConfiguration: SelectionConfiguration,
     formatDateFull: (date: Date) => string,
@@ -211,12 +208,10 @@ class BpkDatepicker extends Component<Props, State> {
     return '';
   };
 
-  /**
-   * Gets the correct value for the input field
-   * @param {Object} selectionConfiguration current selection configuration
-   * @param {Function} formatDate function supplied to format date
-   * @returns {String} date value
-   */
+  // Gets the correct value for the input field
+  // @param {Object} selectionConfiguration current selection configuration
+  // @param {Function} formatDate function supplied to format date
+  // @returns {String} date value
   getValue = (
     selectionConfiguration: SelectionConfiguration,
     formatDate: (date: Date) => string,

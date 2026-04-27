@@ -35,6 +35,11 @@ type State = {
 const getClassName = cssModules(STYLES);
 
 const ClearButtonIcon = withButtonAlignment(ClearIcon);
+// Text input component with support for validation states, docked layouts,
+// and an optional clear button.
+// When `clearButtonMode` is `'whileEditing'` or `'always'`, the input is
+// wrapped in a container with a clear button that appears when the field
+// has a value.
 class BpkInput extends Component<Props, State> {
   static defaultProps = defaultProps;
 

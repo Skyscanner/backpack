@@ -30,6 +30,8 @@ export type BpkCheckboxV2ControlProps = {
   children: ReactNode;
 };
 
+// BpkCheckboxV2Control is the visual control area of the checkbox, wrapping Ark UI's Checkbox.Control.
+// It applies the Backpack checkbox styling and renders any slotted children such as BpkCheckboxV2Indicator.
 const BpkCheckboxV2Control = ({ children }: BpkCheckboxV2ControlProps) => (
   <Checkbox.Control className={getClassName('bpk-checkbox-v2__control')}>
     {children}

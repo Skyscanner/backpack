@@ -28,9 +28,8 @@ export type BpkCheckboxV2DescriptionProps = {
   children: ReactNode;
 };
 
-// Description renders as a <span> inside the Checkbox.Root <label>.
-// Being inside the <label> element means screen readers announce its text
-// as part of the checkbox's accessible name.
+// BpkCheckboxV2Description renders supplementary descriptive text below the checkbox label.
+// It is rendered as a span inside the Checkbox.Root label so screen readers include it in the accessible name.
 const BpkCheckboxV2Description = ({ children }: BpkCheckboxV2DescriptionProps) => (
   <span className={getClassName('bpk-checkbox-v2__description')}>{children}</span>
 );

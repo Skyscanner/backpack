@@ -16,9 +16,8 @@
  * limitations under the License.
  */
 
-// The checkmark and indeterminate bar are rendered via CSS on BpkCheckboxV2Control
-// (bpk-checkbox__checkmark mixin + ::before pseudo-element), so this slot
-// component intentionally renders nothing.
+// BpkCheckboxV2Indicator is a placeholder slot component that renders nothing.
+// The checkmark and indeterminate visuals are drawn entirely via CSS pseudo-elements on BpkCheckboxV2Control.
 const BpkCheckboxV2Indicator = () => null;
 
 export default BpkCheckboxV2Indicator;

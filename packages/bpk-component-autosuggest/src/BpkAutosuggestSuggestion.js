@@ -36,6 +36,8 @@ type Props = {
   tertiaryLabel: ?string,
 };
 
+// Renders a single suggestion item within a BpkAutosuggest dropdown.
+// Supports an optional icon, subheading, tertiary label, and indentation for nested suggestions.
 const BpkAutosuggestSuggestion = (props: Props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
   const { className, icon, indent, subHeading, tertiaryLabel, value, ...rest } =

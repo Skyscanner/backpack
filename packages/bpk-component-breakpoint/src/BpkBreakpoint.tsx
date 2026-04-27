@@ -36,9 +36,7 @@ const BREAKPOINTS = {
   DESKTOP_ONLY: breakpoints.breakpointQueryDesktopOnly,
 } as const;
 type Props = {
-  /**
-   * The content to render when the breakpoint matches.
-   */
+  // The content to render when the breakpoint matches.
   children: ReactNode | ((matches: boolean) => ReactNode | null);
   query: string | (typeof BREAKPOINTS)[keyof typeof BREAKPOINTS];
   legacy?: boolean;
@@ -57,17 +55,17 @@ const useLegacyWarning = (query: string, legacy: boolean, isClient: boolean) =>
     }
   }, [isClient, legacy, query]);
 
+// A utility component that conditionally renders children based on a CSS media query or predefined Backpack breakpoint.
+// Children can be a React node or a render-prop function that receives a boolean indicating whether the query matches.
 const BpkBreakpoint = ({
   children,
   legacy = false,
   matchSSR,
   query,
 }: Props) => {
-  /**
-   * The useEffect and useState combination forces BpkBreakpoint to re-render.
-   * Consumers of BpkBreakpoint have become reliant on this behaviour particularly when using BpkBreakpoint within a SSR'd application.
-   * This shouldn't be removed without a breaking change & understanding how to migrate consumers away from this reliance.
-   */
+  // The useEffect and useState combination forces BpkBreakpoint to re-render.
+  // Consumers of BpkBreakpoint have become reliant on this behaviour particularly when using BpkBreakpoint within a SSR'd application.
+  // This shouldn't be removed without a breaking change & understanding how to migrate consumers away from this reliance.
   const [, updateState] = useState({});
   useEffect(() => {
     updateState({}); // force re-render when on client

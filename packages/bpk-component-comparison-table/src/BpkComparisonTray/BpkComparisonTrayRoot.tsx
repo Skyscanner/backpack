@@ -32,6 +32,8 @@ const getClassName = cssModules(STYLES);
 
 const MAX_ITEMS = 3;
 
+// BpkComparisonTrayRoot is the primary component for the comparison tray, rendering up to three item slots alongside a compare action button.
+// It pads any unfilled slots with BpkComparisonTrayItemPlaceholder and is the only public API of the BpkComparisonTray namespace.
 function BpkComparisonTrayRoot({
   ariaLabel,
   compareLabel,

@@ -30,6 +30,8 @@ type BpkModalV3TitleProps = {
   children: ReactNode;
 };
 
+// BpkModalV3Title renders the accessible title of the modal dialog using Ark UI's Dialog.Title.
+// Screen readers announce it as the dialog's label when the modal opens.
 const BpkModalV3Title = ({ children }: BpkModalV3TitleProps) => (
   <Dialog.Title
     className={getClassName('bpk-modal-v3__title')}

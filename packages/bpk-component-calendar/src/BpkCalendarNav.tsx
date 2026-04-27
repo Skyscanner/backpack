@@ -48,10 +48,8 @@ type MonthChangeEvent =
 
 type Props = {
   changeMonthLabel: string;
-  /**
-   * A function to format a human-readable month, for example: "January 2018":
-   * If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
-   */
+  // A function to format a human-readable month, for example: "January 2018":
+  // If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
   formatMonth: (month: Date) => string;
   id: string;
   maxDate: Date;
@@ -91,6 +89,8 @@ const changeMonth =
     }
   };
 
+// The navigation bar displayed above a calendar grid, providing previous/next arrow buttons and a month/year dropdown select.
+// Announces month changes to screen readers via an aria-live region.
 const BpkCalendarNav = ({
   changeMonthLabel,
   disabled = false,

@@ -78,6 +78,8 @@ type State = {
   months: Date[];
 };
 
+// Wraps a calendar grid with a CSS slide transition when the displayed month changes.
+// Maintains three adjacent month grids (previous, current, next) to enable smooth forward and backward navigation.
 class BpkCalendarGridTransition extends Component<Props, State> {
   isTransitionEndSupported: boolean;
 

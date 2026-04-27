@@ -30,6 +30,7 @@ import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// Renders the body of an AI blurb in one of three states: a thinking/loading state with an animated ellipsis, an AI response, or an error message with a retry link.
 const BpkAiBlurbSummary = (props: BpkAiBlurbSummaryProps) => {
 
   let content: ReactNode;

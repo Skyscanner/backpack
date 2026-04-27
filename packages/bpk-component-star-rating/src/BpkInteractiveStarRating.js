@@ -53,6 +53,8 @@ type Props = {
   rating: number,
 };
 
+// Renders a row of interactive star buttons that users can click or hover to select a rating.
+// Manages hover state and fires callbacks for rating selection and hover events.
 const BpkInteractiveStarRating = ({
   className = null,
   extraLarge = false,

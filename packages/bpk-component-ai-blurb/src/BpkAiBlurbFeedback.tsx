@@ -25,6 +25,8 @@ import BpkThumbButton from '../../bpk-component-thumb-button';
 
 import type { BpkAiBlurbFeedbackProps } from './common-types';
 
+// A thumbs-up/thumbs-down feedback widget displayed beneath an AI-generated blurb.
+// Once the user votes, the thumb buttons are replaced with a thank-you message.
 const BpkAiBlurbFeedback = ({
   feedbackText,
   onFeedback,

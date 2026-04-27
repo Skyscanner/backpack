@@ -30,6 +30,8 @@ type Props = {
   position: LatLong,
 };
 
+// Wraps the Google Maps OverlayView component to position arbitrary React children at a given latitude/longitude on the map.
+// Accepts a position prop using Backpack's LatLong format and forwards remaining props to the underlying overlay.
 const BpkOverlayView = (props: Props) => {
   const { children, position, ...rest } = props;
   return (

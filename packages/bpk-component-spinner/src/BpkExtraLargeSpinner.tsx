@@ -34,6 +34,8 @@ type Props = {
   [rest: string]: any;
 };
 
+// An extra-large loading spinner used to indicate an ongoing background operation.
+// It renders an animated SVG icon at the largest available size and supports dark, light, and on-dark colour variants.
 const BpkExtraLargeSpinner = ({
   className = null,
   type = SPINNER_TYPES.dark,

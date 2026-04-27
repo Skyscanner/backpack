@@ -21,6 +21,9 @@ import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { BpkChatbotInputToolbarProps } from './common-types';
 
+// BpkChatbotInputToolbar renders a horizontal row of action controls beneath the chatbot
+// input field, such as attachment buttons or other contextual actions. It uses BpkHStack to
+// lay out its children with consistent spacing.
 const BpkChatbotInputToolbar = ({
   children,
   gap = BpkSpacing.Base,

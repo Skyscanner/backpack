@@ -28,6 +28,8 @@ type BpkModalV3BodyProps = {
   children: ReactNode;
 };
 
+// BpkModalV3Body is the main content area of the modal, providing a scrollable region for arbitrary children.
+// Place it inside BpkModalV3Content to wrap the modal's primary content.
 const BpkModalV3Body = ({ children }: BpkModalV3BodyProps) => (
   <div
     className={getClassName('bpk-modal-v3__body')}

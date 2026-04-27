@@ -27,6 +27,9 @@ import STYLES from './BpkDialogInner.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkDialogInner renders the animated inner content region of a BpkDialog, including an
+// optional flare decoration at the top edge. It sets the correct ARIA dialog role and
+// applies an entrance transition when the dialog first mounts.
 const BpkDialogInner = (props: Props) => {
   const {
     ariaLabel,

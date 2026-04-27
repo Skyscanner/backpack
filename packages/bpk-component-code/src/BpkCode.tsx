@@ -31,6 +31,8 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// BpkCode renders a short inline code snippet using a styled HTML `<code>` element. It
+// supports an alternate colour scheme for use on dark or highlighted backgrounds.
 const BpkCode = ({
   alternate = false,
   children,

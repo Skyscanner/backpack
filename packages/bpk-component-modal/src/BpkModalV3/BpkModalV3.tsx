@@ -28,6 +28,8 @@ import BpkModalV3Scrim from './BpkModalV3Scrim/BpkModalV3Scrim';
 import BpkModalV3Title from './BpkModalV3Title/BpkModalV3Title';
 import BpkModalV3Trigger from './BpkModalV3Trigger/BpkModalV3Trigger';
 
+// BpkModalV3 is a composable namespace for building accessible modal dialogs using the Ark UI Dialog primitive.
+// Compose Root, Trigger, Portal, Scrim, Content, Header, Title, Description, Body, HeroImage, and CloseTrigger sub-components to construct the desired modal layout.
 const BpkModalV3 = {
   Root: BpkModalV3Root,
   Trigger: BpkModalV3Trigger,

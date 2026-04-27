@@ -30,6 +30,8 @@ export type BpkCheckboxV2LabelProps = {
   children: ReactNode;
 };
 
+// BpkCheckboxV2Label renders the visible text label for the checkbox using Ark UI's Checkbox.Label.
+// Place it inside BpkCheckboxV2Root alongside BpkCheckboxV2Control to form a complete checkbox UI.
 const BpkCheckboxV2Label = ({ children }: BpkCheckboxV2LabelProps) => (
   <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
     {children}

@@ -22,17 +22,16 @@ import BpkChatbotInputToolbar from './BpkChatbotInputToolbar';
 
 import type { BpkChatbotInputNamespace } from './common-types';
 
-/**
- * BpkChatbotInput is a composable chatbot input namespace for Backpack.
- *
- * @example
- * <BpkChatbotInput.Root>
- *   <BpkChatbotInput.Input {...inputProps} />
- *   <BpkChatbotInput.Toolbar>
- *     <BpkButton type={BUTTON_TYPES.link}>Attach</BpkButton>
- *   </BpkChatbotInput.Toolbar>
- * </BpkChatbotInput.Root>
- */
+// BpkChatbotInput is a composable namespace for building chatbot input UIs. It groups the Root
+// container, text Input, and action Toolbar sub-components so consumers can assemble them in a
+// consistent, accessible layout.
+// @example
+// <BpkChatbotInput.Root>
+// <BpkChatbotInput.Input {...inputProps} />
+// <BpkChatbotInput.Toolbar>
+// <BpkButton type={BUTTON_TYPES.link}>Attach</BpkButton>
+// </BpkChatbotInput.Toolbar>
+// </BpkChatbotInput.Root>
 const BpkChatbotInput: BpkChatbotInputNamespace = {
   Root: BpkChatbotInputRoot,
   Input: BpkChatbotInputInput,

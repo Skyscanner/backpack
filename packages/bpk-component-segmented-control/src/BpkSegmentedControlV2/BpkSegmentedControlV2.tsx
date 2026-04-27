@@ -123,6 +123,8 @@ const BpkSegmentedControlV2Indicator = () => (
   />
 );
 
+// BpkSegmentedControlV2 is a composable namespace for building segmented control UIs using the Ark UI SegmentGroup primitive.
+// Compose Root, Item, ItemText, ItemControl, ItemHiddenInput, and Indicator sub-components to construct the desired segmented control.
 const BpkSegmentedControlV2 = {
   Root: BpkSegmentedControlV2Root,
   Item: BpkSegmentedControlV2Item,

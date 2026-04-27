@@ -82,6 +82,8 @@ const defaultProps = {
   getValueText: null,
 }
 
+// A progress bar component that renders an accessible div with role progressbar and an animated fill.
+// Supports stepped markers, a small size variant, and optional callbacks for completion and transition end events.
 class BpkProgress extends Component<Props> {
   componentDidUpdate(previousProps: Props) {
     const { max, value } = this.props;

@@ -32,6 +32,9 @@ export type Props = CommonProps & {
   action?: ExpandableBannerAction;
 };
 
+// BpkInfoBannerExpandable is an info banner variant that can be toggled to reveal additional
+// detail content. It renders a chevron toggle button and animates the extra content into
+// view using BpkAnimateHeight.
 const BpkInfoBannerExpandable = ({
   action = null,
   children,

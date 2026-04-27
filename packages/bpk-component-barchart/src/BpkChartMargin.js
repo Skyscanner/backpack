@@ -31,6 +31,8 @@ type Props = {
   },
 };
 
+// Wraps chart children in an SVG g element translated by the provided margin offsets.
+// Used internally to apply consistent chart margins within BpkBarchart.
 const BpkChartMargin = (props: Props) => {
   const { children, margin, ...rest } = props;
 

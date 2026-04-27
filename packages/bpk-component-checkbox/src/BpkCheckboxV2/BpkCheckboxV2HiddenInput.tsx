@@ -18,8 +18,8 @@
 
 import { Checkbox } from '@ark-ui/react';
 
-// Renders Ark's visually hidden native <input type="checkbox">.
-// Include when the checkbox is inside a <form> for native form submission.
+// BpkCheckboxV2HiddenInput renders a visually hidden native checkbox input managed by Ark UI.
+// Include it inside BpkCheckboxV2Root when the checkbox must participate in form submission.
 const BpkCheckboxV2HiddenInput = () => <Checkbox.HiddenInput />;
 
 export default BpkCheckboxV2HiddenInput;

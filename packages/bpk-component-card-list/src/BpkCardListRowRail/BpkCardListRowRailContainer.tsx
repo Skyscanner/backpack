@@ -29,6 +29,8 @@ import STYLES from './BpkCardListRowRailContainer.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkCardListRowRailContainer is the outer container for the row-rail card list layout, combining BpkCardListCarousel with optional page indicator and button accessories.
+// It manages the current page index and calculates pagination from the number of children and the initially shown card count.
 const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
   const {
     accessibilityLabels,

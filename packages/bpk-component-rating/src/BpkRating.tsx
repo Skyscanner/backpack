@@ -57,6 +57,8 @@ type Props = {
   [rest: string]: any
 };
 
+// Displays a numeric rating value alongside an optional title, subtitle, and scale label.
+// Supports both 0–5 and 0–10 rating scales and multiple size variants.
 const BpkRating = ({
   ariaLabel,
   className,

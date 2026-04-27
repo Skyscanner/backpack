@@ -32,6 +32,7 @@ export type BpkChatNotificationProps = {
   icon?: FunctionComponent;
 };
 
+// Renders a notification prompt within a chat interface, displaying a message with an optional action button and close control.
 const BpkChatNotification = ({
   icon: Icon,
   text,

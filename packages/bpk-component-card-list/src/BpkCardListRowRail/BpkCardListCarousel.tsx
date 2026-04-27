@@ -47,6 +47,8 @@ const getClassName = cssModules(STYLES);
 
 const PAGINATION_INDICATOR_MAX_SHOWN_COUNT = 5;
 
+// BpkCardListCarousel renders a horizontally scrollable carousel of cards with pagination indicators and previous/next navigation.
+// It uses an intersection observer to track which cards are in view and supports both mobile and desktop layouts.
 const BpkCardListCarousel = (props: CardListCarouselProps) => {
   const {
     carouselLabel = (initiallyShownCards: number, childrenLength: number) =>

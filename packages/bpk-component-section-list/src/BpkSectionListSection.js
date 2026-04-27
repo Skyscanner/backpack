@@ -34,6 +34,8 @@ type Props = {
   headerText: ?string,
 };
 
+// Renders a titled section within a BpkSectionList, wrapping its children in a ul with each item in a li.
+// An optional headerText is displayed above the list using the label1 text style.
 const BpkSectionListSection = (props: Props) => {
   const { children, headerText, ...rest } = props;
 

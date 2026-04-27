@@ -27,6 +27,8 @@ import STYLES from './BpkAiBlurb.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// The header section of an AI blurb, displaying an AI icon alongside a title label.
+// Intended to identify the content as AI-generated to the user.
 const BpkAiBlurbHeader = ({ title }: BpkAiBlurbHeaderProps) => (
   <div className={getClassName('bpk-ai-blurb__header')}>
     <BpkFlex align="center" gap={BpkSpacing.SM}>

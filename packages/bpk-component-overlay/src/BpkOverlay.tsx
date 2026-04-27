@@ -71,9 +71,7 @@ const overlayTypeClassSuffixes = {
 export type OverlayType = (typeof OVERLAY_TYPES)[keyof typeof OVERLAY_TYPES];
 
 type BpkOverlayProps = {
-  /**
-   * **Required:** The content to be rendered within the overlay.
-   */
+  // **Required:** The content to be rendered within the overlay.
   children: ReactNode;
   className?: string;
 };
@@ -83,6 +81,8 @@ export type Props = BpkOverlayProps & ComponentProps<'div'> & {
   foregroundContent?: ReactNode;
 };
 
+// An overlay component that applies a configurable colour gradient or vignette on top of background content.
+// It supports directional, solid, and vignette overlay types at low, medium, and high intensities, and can render optional foreground content above the overlay.
 const BpkOverlay = (props: Props) => {
   const {
     children,

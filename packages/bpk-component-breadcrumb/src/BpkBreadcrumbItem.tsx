@@ -39,6 +39,8 @@ export type Props = {
 
 const RtlSupportedArrowRight = withRtlSupport(ArrowRight);
 
+// A single item within a BpkBreadcrumb navigation trail.
+// Renders as a plain text label when active (current page) or as a link with a directional arrow separator when inactive.
 const BpkBreadcrumbItem = (props: Props) => {
   const { active = false, children, className, href, linkProps, ...rest } = props;
 

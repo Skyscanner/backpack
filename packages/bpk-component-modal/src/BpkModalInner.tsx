@@ -47,9 +47,7 @@ export type Props = {
   closeLabel?: string;
   closeText?: string | null;
   modalStyle?: ModalStyle;
-  /**
-   * The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
-   */
+  // The accessory view allows for icons and actions to be placed in front of the main title inside the modal header. To be used with `BpkNavigationBarButtonLink`
   accessoryView?: ReactNode;
   ariaLabel?: string // optional aria label for scenario when header is disabled
 };
@@ -60,6 +58,8 @@ export const MODAL_STYLING = {
 };
 export type ModalStyle = (typeof MODAL_STYLING)[keyof typeof MODAL_STYLING];
 
+// The inner content and layout component of a modal dialog.
+// It renders the modal's header (with optional title, close button, and accessory view), body content, and handles full-screen and padded variants.
 const BpkModalInner = ({
   accessoryView = null,
   ariaLabel,

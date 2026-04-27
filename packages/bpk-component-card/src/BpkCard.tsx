@@ -36,6 +36,8 @@ type Props = {
   [rest: string]: any;
 };
 
+// A flexible surface component for grouping related content in a card layout.
+// Can be rendered as a plain container or as an interactive link/button, with optional padding and elevation styles.
 const BpkCard = ({
   atomic = true,
   blank = false,

@@ -33,6 +33,8 @@ const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
   }
 };
 
+// Renders a pagination control with previous/next nudger buttons and a numbered page list.
+// Calls onPageChange with the new page index when the user navigates, clamped to valid page bounds.
 const BpkPagination = (props) => {
   const classNames = [getClassName('bpk-pagination')];
   const {

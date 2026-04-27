@@ -45,6 +45,8 @@ type Props = {
   tickEvery: number,
 };
 
+// Renders horizontal or vertical grid lines across the chart area based on the provided scale and orientation.
+// Intended for internal use within BpkBarchart.
 const BpkChartGridLines = (props: Props) => {
   const {
     height,

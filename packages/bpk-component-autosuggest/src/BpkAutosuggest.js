@@ -35,6 +35,8 @@ const getClassName = cssModules(STYLES);
   Further reading about Refs: https://facebook.github.io/react/docs/refs-and-the-dom.html
  */
 
+// Legacy BpkAutosuggest wrapper that customises react-autosuggest with Backpack-styled defaults.
+// @deprecated Prefer BpkAutosuggestV2 for new implementations.
 Autosuggest.defaultProps.theme = {
   container: getClassName('bpk-autosuggest__container'),
   containerOpen: getClassName('bpk-autosuggest__container--open'),

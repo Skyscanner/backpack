@@ -25,6 +25,8 @@ const getClassName = cssModules(STYLES);
 export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
+// A minimal boilerplate component intended as a starting template for new Backpack components.
+// Renders a placeholder div with standard styling and data attributes.
 const BpkBoilerplate = ({ ...rest }: Props) => {
 
   // eslint-disable-next-line no-param-reassign

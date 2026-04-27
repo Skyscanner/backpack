@@ -24,6 +24,9 @@ export type SingleSelectProps = {
   selectedIndex?: number;
 } & MultiSelectProps;
 
+// BpkSingleSelectChipGroup renders a chip group that enforces single selection. It wraps
+// BpkMultiSelectChipGroup with radio-group semantics, ensuring only the chip at the given
+// selectedIndex is marked as selected.
 const BpkSingleSelectChipGroup = ({ chips, onItemClick, selectedIndex, ...rest }: SingleSelectProps) => {
   const chipsWithSelection = chips.map((chip, index) => chip && ({
     ...chip,

@@ -55,6 +55,8 @@ export type Props = {
   showNav?: boolean;
 };
 
+// A page indicator that shows the current position within a sequence of pages using a row of dots.
+// It optionally renders previous and next navigation buttons and supports default and over-image visual variants.
 const BpkPageIndicator = ({
   className = undefined,
   currentIndex,
@@ -66,11 +68,9 @@ const BpkPageIndicator = ({
   totalIndicators,
   variant = VARIANT.default
 }: Props) => {
-  /**
-   * This validation is used to avoid an a11y issue when onClick isn't available.
-   * In this case, we can set aria-hidden = true to let screen reader skip reading page indicator dots.
-   * and render the dot as div rather than button to align with aria-hidden = true.
-   */
+  // This validation is used to avoid an a11y issue when onClick isn't available.
+  // In this case, we can set aria-hidden = true to let screen reader skip reading page indicator dots.
+  // and render the dot as div rather than button to align with aria-hidden = true.
   const isInteractive = !!onClick;
 
   type CustomCSSProperties = CSSProperties & {

@@ -47,6 +47,8 @@ type State = {
   selectedTheme: string;
 };
 
+// A development utility component that provides a dropdown for switching between custom Backpack themes.
+// Selecting a theme dispatches a theme-change event on the document so that themed components can update their appearance accordingly.
 class BpkThemeToggle extends Component<Props, State> {
   constructor(props: Props) {
     super(props);

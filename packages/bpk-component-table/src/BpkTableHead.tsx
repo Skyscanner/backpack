@@ -23,6 +23,7 @@ export interface BpkTableHeadProps extends HTMLAttributes<HTMLTableSectionElemen
   children: ReactNode;
 }
 
+// Renders a styled `<thead>` element for use inside a BpkTable.
 const BpkTableHead = (props: BpkTableHeadProps) => <thead {...props} />;
 
 export default BpkTableHead;

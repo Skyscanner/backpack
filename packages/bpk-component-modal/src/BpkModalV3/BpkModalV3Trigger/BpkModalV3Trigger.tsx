@@ -27,6 +27,8 @@ type BpkModalV3TriggerProps = {
   asChild?: boolean;
 };
 
+// BpkModalV3Trigger wraps Ark UI's Dialog.Trigger and renders its children as the element that opens the modal.
+// Pass asChild to merge the trigger props onto an existing element rather than wrapping it in an extra node.
 const BpkModalV3Trigger = ({
   asChild,
   children,

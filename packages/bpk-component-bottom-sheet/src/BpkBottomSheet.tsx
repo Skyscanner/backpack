@@ -106,6 +106,8 @@ const getContentStyles = (paddingStyles: PaddingStyles): string => {
   return getClassName(...classNames);
 };
 
+// A modal sheet that slides up from the bottom of the screen, typically used for contextual actions or supplementary content.
+// Supports optional title, action link, configurable padding sides, and close-on-scrim/escape-key behaviours.
 const BpkBottomSheet = ({
   actionText = '',
   children,

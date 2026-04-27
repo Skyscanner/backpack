@@ -70,6 +70,8 @@ const getDefaultTextStyle = (size: $Values<typeof SIZES>) => {
   return TEXT_STYLES.xs;
 };
 
+// Renders a formatted price display with optional leading text, previous price strikethrough, and trailing text.
+// Supports multiple size variants and alignment options.
 const BpkPrice = ({
   align = ALIGNS.left,
   className = null,

@@ -41,6 +41,8 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// An accessible live region that announces dynamic content changes to screen readers.
+// Supports configurable politeness settings (off, polite, assertive) and can be rendered visually hidden or visible.
 const BpkAriaLive = ({
   className = null,
   politenessSetting = POLITENESS_SETTINGS.polite,

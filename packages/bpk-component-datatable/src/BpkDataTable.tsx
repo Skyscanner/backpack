@@ -37,6 +37,9 @@ const KEYCODES = {
   SPACEBAR: 32,
 };
 
+// BpkDataTable renders a sortable, scrollable data table from a columns definition and an
+// array of row data. It supports custom row heights, row click handlers, controlled and
+// uncontrolled sort state, and keyboard-accessible column sorting.
 const BpkDataTable = (props: BpkDataTableProps) => {
   const {
     className = null,
@@ -84,9 +87,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
     headerClassName,
   );
 
-  /**
-   * Call createColumnsSchema to modify the columns data to match the API expected by the hooks of the react-table library.
-   */
+  // Call createColumnsSchema to modify the columns data to match the API expected by the hooks of the react-table library.
   const columns = useMemo(() => createColumnsSchema(columnsData), [columnsData]);
 
   const data = useMemo(() => rowsData, [rowsData]);

@@ -25,6 +25,8 @@ const GRADIENT_ATTRIBUTES = {
   y2: 1,
 };
 
+// Renders the SVG defs block for the barchart, defining a gradient and mask used to fade bar edges.
+// Intended for internal use within BpkBarchart.
 const BpkBarchartDefs = () => (
   <defs>
     <linearGradient id="bpk-barchart__def-gradient" {...GRADIENT_ATTRIBUTES}>

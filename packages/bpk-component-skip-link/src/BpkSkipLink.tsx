@@ -35,6 +35,8 @@ export type Props = NativeAnchorProps & {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// An accessible skip navigation link that allows keyboard users to bypass repeated content and jump directly to a target section.
+// The link is visually hidden until it receives focus, ensuring it does not affect the visual layout for pointer users.
 const BpkSkipLink = ({
   className = null,
   href,

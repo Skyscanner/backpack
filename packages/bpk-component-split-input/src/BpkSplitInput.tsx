@@ -45,6 +45,8 @@ interface State {
   inputValue: string[] | number[];
 }
 
+// A split input that renders a row of individual character cells, commonly used for PIN or OTP entry.
+// It manages focus movement between cells automatically as the user types, pastes, or deletes characters.
 class BpkSplitInput extends Component<Props, State> {
   static defaultProps = {
     type: INPUT_TYPES.number,

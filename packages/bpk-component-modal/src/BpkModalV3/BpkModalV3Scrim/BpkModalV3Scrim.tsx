@@ -28,6 +28,8 @@ import STYLES from './BpkModalV3Scrim.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkModalV3Scrim renders the backdrop overlay behind the modal using Ark UI's Dialog.Backdrop.
+// It applies type-specific styling (full or chatbot variants) based on the modal type from context.
 const BpkModalV3Scrim = () => {
   const type = useModalType();
   return (

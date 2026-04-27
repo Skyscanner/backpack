@@ -25,6 +25,8 @@ import {
 import BpkscrollableCalendarDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
 
+// A scrollable calendar component composed by wrapping a calendar grid list with calendar state management.
+// Provides date selection, range picking, and keyboard navigation out of the box.
 export default withCalendarState(
   composeCalendar(
     null,

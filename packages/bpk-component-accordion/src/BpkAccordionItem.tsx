@@ -46,6 +46,8 @@ export type BpkAccordionItemProps = {
   textStyle?: (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];
 };
 
+// An individual collapsible section within a BpkAccordion.
+// Renders a clickable title row with an optional icon and animates the reveal of its child content when expanded.
 const BpkAccordionItem = (props: BpkAccordionItemProps) => {
   const { divider, onDark } = useContext(BpkAccordionContext);
   const itemClassNames = [getClassName('bpk-accordion__item')];

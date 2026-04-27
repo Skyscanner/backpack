@@ -28,6 +28,8 @@ const getClassName = cssModules(STYLES);
 
 const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
 
+// A development utility component that toggles a visual layout grid overlay on a target container.
+// The grid can be toggled via the on-screen link or the keyboard shortcut Ctrl+Cmd+G.
 class BpkGridToggle extends Component {
   constructor(props) {
     super(props);

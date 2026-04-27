@@ -26,6 +26,8 @@ import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkComparisonTrayItem renders a single item slot in the comparison tray, displaying a thumbnail image and a close button.
+// It is an internal rendering primitive; use BpkComparisonTray.Root as the public API.
 function BpkComparisonTrayItem({ item, onRemove, removeLabel }: BpkComparisonTrayItemProps) {
   return (
     <div className={getClassName('bpk-comparison-tray__item')}>

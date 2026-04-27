@@ -86,6 +86,8 @@ type State = {
   scrollIndicatorClassName: string | null;
 };
 
+// A horizontally scrollable container designed for mobile viewports.
+// It automatically shows leading and trailing scroll indicators when content overflows, and hides native scrollbars to keep the UI clean.
 class BpkMobileScrollContainer extends Component<Props, State> {
   debouncedResize: DebouncedFunc<() => void>;
 

@@ -37,6 +37,8 @@ const clampAndSnap = (ms: number, maxDelay = 300): number => {
   return Math.round(v / 50) * 50;
 };
 
+// A conversational message bubble supporting both user and system message types.
+// System bubbles may include optional thumbs feedback controls, a retry button, and animated entrance with configurable delay.
 const BpkChatBubble = (props: BpkChatBubbleProps) => {
   const { animationDelay = 0, children, type } = props;
   const userPosition = 'userPosition' in props ? props.userPosition : undefined;

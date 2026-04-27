@@ -46,9 +46,7 @@ export type Props = {
   tagline?: string | null;
   headline: string;
   subheading?: string | null;
-  /**
-   * An object that groups together all the sponsor related properties. This should only be provided if the graphic promo is sponsored, in which case all of the object's properties are required.
-   */
+  // An object that groups together all the sponsor related properties. This should only be provided if the graphic promo is sponsored, in which case all of the object's properties are required.
   sponsor?: {
     label: string;
     logo: string;
@@ -59,10 +57,8 @@ export type Props = {
   invertVertically?: boolean;
   textAlign: (typeof TEXT_ALIGN)[keyof typeof TEXT_ALIGN];
   style?: {};
-  /**
-   * Optional link href. If provided, the component will render as an anchor tag <a> instead of a <div>.
-   * This improves semantic HTML and SEO.
-   */
+  // Optional link href. If provided, the component will render as an anchor tag <a> instead of a <div>.
+  // This improves semantic HTML and SEO.
   href?: string | null;
 };
 
@@ -135,6 +131,9 @@ const Wrapper = ({
   );
 };
 
+// BpkGraphicPromo is a full-bleed promotional banner that combines a background image with
+// an overlay of headline, subheading, optional tagline, and a call-to-action button. It
+// supports sponsored content, configurable text alignment, and optional sponsor branding.
 const BpkGraphicPromo = ({
   buttonText,
   className = null,

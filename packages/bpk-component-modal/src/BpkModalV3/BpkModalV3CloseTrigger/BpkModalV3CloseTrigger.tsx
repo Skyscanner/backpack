@@ -32,6 +32,8 @@ type BpkModalV3CloseTriggerProps = {
   onImage?: boolean;
 };
 
+// BpkModalV3CloseTrigger renders a button that closes the modal when activated.
+// When onImage is true it renders a bare icon button suitable for placement over a hero image; otherwise it renders a standard BpkCloseButton.
 const BpkModalV3CloseTrigger = ({
   label,
   onImage = false,

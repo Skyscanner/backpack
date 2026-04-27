@@ -62,6 +62,9 @@ export type Props = {
   variant?: (typeof VARIANT)[keyof typeof VARIANT];
 };
 
+// BpkInsetBanner renders a compact branded banner, typically used to surface partner or
+// sponsored content. It supports a logo, title, subheadline, body text, and an optional
+// call-to-action button with a popover explanation.
 const BpkInsetBanner = ({
   accessibilityLabel,
   backgroundColor = surfaceHighlightDay,

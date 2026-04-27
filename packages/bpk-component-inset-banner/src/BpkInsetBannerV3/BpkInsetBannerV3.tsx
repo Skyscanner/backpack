@@ -180,6 +180,8 @@ const TrailingAccessory = forwardRef<HTMLButtonElement | HTMLDivElement, Trailin
 
 TrailingAccessory.displayName = 'BpkInsetBannerV3.TrailingAccessory';
 
+// BpkInsetBannerV3 is a composable namespace for building inset banner UIs with flexible layout sub-components.
+// Compose Root, Header, LeadingAccessory, Content, Body, and TrailingAccessory to construct the desired banner structure.
 const BpkInsetBannerV3 = {
   Root,
   Header,

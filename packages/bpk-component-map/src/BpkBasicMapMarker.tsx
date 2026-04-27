@@ -36,6 +36,8 @@ const getPixelPositionOffset = (width: number, height: number) => ({
   y: -height,
 });
 
+// A basic map marker that positions arbitrary content at a given latitude/longitude on a map.
+// The marker is anchored at the bottom-centre of its content, making it suitable for pin-style overlays.
 const BpkBasicMapMarker = (props: Props) => {
   const { children, position, ...rest } = props;
 

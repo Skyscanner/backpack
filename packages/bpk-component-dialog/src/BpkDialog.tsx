@@ -29,6 +29,9 @@ import STYLES from './BpkDialog.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkDialog renders an accessible modal dialog via a Portal. It supports an optional header
+// icon, a dismissible close button, and an animated inner content area, and uses a scrim
+// overlay to focus user attention on the dialog content.
 const BpkDialog = ({
   children,
   closeLabel = '',

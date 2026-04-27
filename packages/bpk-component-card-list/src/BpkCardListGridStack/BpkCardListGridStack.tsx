@@ -30,6 +30,8 @@ import STYLES from './BpkCardListGridStack.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// BpkCardListGridStack renders a card list in a grid or stack layout with optional expand and button accessories.
+// It supports collapsing the list to an initial number of visible cards and revealing the rest on demand.
 const BpkCardListGridStack = (props: CardListGridStackProps) => {
   const {
     accessory,

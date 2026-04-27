@@ -55,6 +55,9 @@ export type Props = {
   containerClassName?: string,
 };
 
+// BpkDrawer renders a slide-in panel overlaid on the page via a Portal, used to present
+// supplementary content without fully navigating away. It adapts its behaviour on iPhone
+// and iPad devices and supports optional modal display on mobile viewports.
 const BpkDrawer = ({
   children,
   className = undefined,

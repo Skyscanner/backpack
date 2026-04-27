@@ -57,6 +57,8 @@ export type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// A small label used to highlight status, counts, or categorical information.
+// Supports multiple visual types (warning, success, critical, brand, etc.) and optional docked positioning.
 const BpkBadge = ({
   centered = false,
   className = null,

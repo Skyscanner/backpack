@@ -63,12 +63,10 @@ function or(total: boolean, bool: boolean) {
   return total || bool;
 }
 
-/**
- * Determines if the current date is selected
- * @param {Date} date the current date from the calendar
- * @param {Object} selectionConfiguration the current selection configuration
- * @returns {Boolean} true is selected and false if not
- */
+// Determines if the current date is selected
+// @param {Date} date the current date from the calendar
+// @param {Object} selectionConfiguration the current selection configuration
+// @returns {Boolean} true is selected and false if not
 function getSelectedDate(
   date: Date,
   selectionConfiguration: SelectionConfiguration,
@@ -99,15 +97,13 @@ function getSelectedDate(
   return false;
 }
 
-/**
- * Gets the correct selection type for the current date
- * @param {Date} date the current date of the calendar
- * @param {Object} selectionConfiguration the current selection configuration
- * @param {Date} month the current month of the calendar
- * @param {Number} weekStartsOn index of the first day of the week
- * @param {Boolean} ignoreOutsideDate ignore date outside current month
- * @returns {String} selection type to be passed to the date
- */
+// Gets the correct selection type for the current date
+// @param {Date} date the current date of the calendar
+// @param {Object} selectionConfiguration the current selection configuration
+// @param {Date} month the current month of the calendar
+// @param {Number} weekStartsOn index of the first day of the week
+// @param {Boolean} ignoreOutsideDate ignore date outside current month
+// @returns {String} selection type to be passed to the date
 function getSelectionType(
   date: Date,
   selectionConfiguration: SelectionConfiguration,
@@ -179,12 +175,10 @@ function getSelectionType(
   return SELECTION_TYPES.none;
 }
 
-/**
- * Handles changing selected date when in single mode
- * @param {Object} props current props
- * @param {Object} nextProps next props as the component is updating
- * @returns {Boolean} based on if the date has changed
- */
+// Handles changing selected date when in single mode
+// @param {Object} props current props
+// @param {Object} nextProps next props as the component is updating
+// @returns {Boolean} based on if the date has changed
 const singleDateHandler = (props: Props, nextProps: Props) => {
   const currentSelectConfig =
     props.selectionConfiguration as SelectionConfigurationSingle;
@@ -207,12 +201,10 @@ const singleDateHandler = (props: Props, nextProps: Props) => {
   return false;
 };
 
-/**
- * Handles changing selected date when in range mode
- * @param {Object} props current props
- * @param {Object} nextProps next props as the component is updating
- * @returns {Boolean} based on if the date has changed
- */
+// Handles changing selected date when in range mode
+// @param {Object} props current props
+// @param {Object} nextProps next props as the component is updating
+// @returns {Boolean} based on if the date has changed
 const rangeDateHandler = (props: Props, nextProps: Props) => {
   const { endDate, startDate } =
     props.selectionConfiguration as SelectionConfigurationRange;
@@ -256,9 +248,8 @@ type DefaultProps = {
   selectionConfiguration?: SelectionConfiguration;
 };
 
-/*
-  BpkCalendarWeek - table row containing a week full of DateContainer components
-*/
+// Renders a single week row within a calendar grid, mapping each day in the week to a BpkCalendarDate cell.
+// Computes selection, blocked, outside-month, and row-position states for each date before passing them to the DateComponent.
 class BpkCalendarWeek extends Component<Props> {
   static defaultProps: DefaultProps = {
     dateProps: {},

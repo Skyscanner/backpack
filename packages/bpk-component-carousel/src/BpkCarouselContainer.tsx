@@ -37,6 +37,8 @@ type Props = {
   onImageChanged: OnImageChangedHandler
 };
 
+// The inner scrollable container for a BpkCarousel, rendering each image as a BpkCarouselImage slide.
+// Uses IntersectionObserver to detect which image is currently in view and to implement infinite-loop cycling on mobile.
 const BpkScrollContainer = memo(({ images, imagesRef, onImageChanged, onVisible }: Props) => {
   const [root, setRoot] = useState<HTMLElement | null>(null);
   const observeImageChange = useIntersectionObserver(onVisible, {

@@ -254,6 +254,9 @@ const WrapChipGroup = ({
   />
 );
 
+// BpkMultiSelectChipGroup renders a group of chips that supports multiple selections. It
+// handles both rail (horizontally scrollable with nudger buttons) and wrap layout types,
+// and exposes an accessible fieldset with appropriate ARIA roles.
 const BpkMultiSelectChipGroup = (props: MultiSelectProps) => (
   <div className={getClassName('bpk-chip-group-container')} {...getDataComponentAttribute('MultiSelectChipGroup')}>
     {props.type === CHIP_GROUP_TYPES.rail ? (

@@ -31,6 +31,8 @@ type BpkModalV3HeroImageProps = {
   children?: ReactNode;
 };
 
+// BpkModalV3HeroImage renders a full-width hero image at the top of the modal content panel.
+// An optional children slot lets you overlay elements such as BpkModalV3CloseTrigger on top of the image.
 const BpkModalV3HeroImage = ({
   alt,
   children,

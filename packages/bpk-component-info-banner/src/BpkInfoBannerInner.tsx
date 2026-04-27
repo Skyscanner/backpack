@@ -115,6 +115,9 @@ type Props = CommonProps & {
   onDismiss?: OnDismissHandler;
 };
 
+// BpkInfoBannerInner is the shared internal implementation powering BpkInfoBanner,
+// BpkInfoBannerDismissable, and BpkInfoBannerExpandable. It handles the banner layout,
+// alert type icons, dismiss and expand toggle interactions, and animated show/hide behaviour.
 const BpkInfoBannerInner = ({
   action = null,
   animateOnEnter = false,

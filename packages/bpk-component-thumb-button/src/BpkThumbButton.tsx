@@ -34,33 +34,22 @@ export type ThumbsButtonSize = 'default' | 'small';
 export type ThumbsButtonColor = 'default' | 'primary';
 
 export type BpkThumbButtonProps = {
-  /**
-   * Accessibility label for screen readers (REQUIRED).
-   */
+  // Accessibility label for screen readers (REQUIRED).
   accessibilityLabel: string;
-  /**
-   * Icon color variant. 'primary' uses the primary text color, 'default' uses the disabled text color (grayish).
-   */
+  // Icon color variant. 'primary' uses the primary text color, 'default' uses the disabled text color (grayish).
   iconColor?: ThumbsButtonColor;
-  /**
-   * Click handler callback.
-   */
+  // Click handler callback.
   onClick: (type: ThumbsButtonType) => void;
-  /**
-   * Whether the thumb is in selected state.
-   */
+  // Whether the thumb is in selected state.
   selected?: boolean;
-  /**
-   * Size variant. 'small' uses sm icons with no fixed dimensions, matching inline text use cases.
-   * Note: 'small' disables the 48px touch target pseudo-element — do not use on touch-primary surfaces.
-   */
+  // Size variant. 'small' uses sm icons with no fixed dimensions, matching inline text use cases.
+  // Note: 'small' disables the 48px touch target pseudo-element — do not use on touch-primary surfaces.
   size?: ThumbsButtonSize;
-  /**
-   * Type of thumb icon to display.
-   */
+  // Type of thumb icon to display.
   type: ThumbsButtonType;
 };
 
+// A circular icon button with thumbs-up and thumbs-down variants, used for binary feedback interactions such as rating or approval.
 const BpkThumbButton = ({
   accessibilityLabel,
   iconColor = 'default',

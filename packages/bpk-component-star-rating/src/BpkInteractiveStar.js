@@ -38,6 +38,8 @@ type Props = {
   selected: boolean,
 };
 
+// Renders a single interactive star button used within BpkInteractiveStarRating.
+// Handles click and mouse-enter events and visually reflects the selected and hover states.
 const BpkInteractiveStar = ({
   label,
   name,

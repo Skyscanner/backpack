@@ -29,6 +29,7 @@ type Props = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// Renders a styled `<dd>` element for use inside a BpkDescriptionList, representing the value in a key-value pair.
 export default ({ children, className, ...rest }: Props) => (
   <dd
     className={[getClassName('bpk-description-list__details'), className]

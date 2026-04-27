@@ -26,6 +26,8 @@ type BpkModalV3DescriptionProps = {
   children: ReactNode;
 };
 
+// BpkModalV3Description renders the accessible description text for the modal dialog using Ark UI's Dialog.Description.
+// Screen readers announce it as the dialog's description when the modal opens.
 const BpkModalV3Description = ({ children }: BpkModalV3DescriptionProps) => (
   <Dialog.Description
     {...getDataComponentAttribute('ModalV3Description')}

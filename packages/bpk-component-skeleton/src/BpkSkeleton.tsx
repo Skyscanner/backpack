@@ -28,6 +28,8 @@ import STYLES from './BpkSkeleton.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+// A skeleton loading placeholder that represents content before it has loaded.
+// It derives the correct shape, size, and background style from the provided type and variant props, then delegates rendering to BpkBaseSkeleton.
 const BpkSkeleton = (props: ComponentProps) => {
   const { backgroundStyle = BACKGROUND_STYLE.default, size = SIZE_TYPES.default, type } = props;
 

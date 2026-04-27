@@ -86,9 +86,7 @@ class Image extends Component<ImageProps> {
 type BpkImageProps = {
   altText: string;
   src: string;
-  /**
-   * Note: The `aspectRatio` prop should be calculated as `width/height` of the original src image. It is used by the component to preserve space on screen while the image loads.
-   */
+  // Note: The `aspectRatio` prop should be calculated as `width/height` of the original src image. It is used by the component to preserve space on screen while the image loads.
   aspectRatio: number;
   inView?: boolean;
   loading?: boolean;
@@ -100,6 +98,9 @@ type BpkImageProps = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+// BpkImage renders a responsive image that preserves the source aspect ratio by reserving
+// the appropriate vertical space before the image loads. It shows a spinner during loading
+// and fades the image in once it has finished loading.
 class BpkImage extends Component<BpkImageProps> {
   placeholder?: HTMLElement | null;
 
