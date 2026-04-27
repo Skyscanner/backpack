@@ -39,6 +39,10 @@ $arrow-size: tokens.bpk-spacing-lg();
     transition: opacity tokens.$bpk-duration-xs ease-in-out;
   }
 
+  &--container {
+    outline: none;
+  }
+
   &--appear {
     opacity: 0;
   }
