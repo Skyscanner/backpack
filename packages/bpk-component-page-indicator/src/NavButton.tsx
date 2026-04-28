@@ -18,7 +18,7 @@
 
 import type { MouseEvent } from 'react';
 
-import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { withLargeButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
@@ -67,7 +67,6 @@ const NavButton = ({
     <BpkButton
       iconOnly
       type={type}
-      size={SIZE_TYPES.large}
       onClick={(e) => {
         if (direction === DIRECTIONS.PREV) {
           onClick(e, currentIndex - 1, direction);
