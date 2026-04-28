@@ -63,10 +63,13 @@ const NavButton = ({
   type = BUTTON_TYPES.link,
   variant,
 }: Props) => {
+  const isCarousel = variant === 'carousel';
   const button = (
     <BpkButton
       iconOnly
       type={type}
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={isCarousel ? getClassName('bpk-page-indicator__nav-carousel-button') : undefined}
       onClick={(e) => {
         if (direction === DIRECTIONS.PREV) {
           onClick(e, currentIndex - 1, direction);
@@ -85,7 +88,7 @@ const NavButton = ({
     </BpkButton>
   );
 
-  if (variant === 'carousel') {
+  if (isCarousel) {
     return (
       <span className={getClassName('bpk-page-indicator__nav-carousel')}>
         {button}

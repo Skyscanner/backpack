@@ -122,4 +122,10 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     --bpk-button-secondary-on-dark-hover-text-color: #{tokens.$bpk-text-primary-day};
     --bpk-button-secondary-on-dark-active-text-color: #{tokens.$bpk-text-primary-day};
   }
+
+  &__nav-carousel-button {
+    width: tokens.bpk-spacing-xxl();
+    min-height: tokens.bpk-spacing-xxl();
+    padding: tokens.bpk-spacing-md();
+  }
 }
