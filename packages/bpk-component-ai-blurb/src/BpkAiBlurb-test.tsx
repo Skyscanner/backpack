@@ -102,7 +102,7 @@ describe('BpkAiBlurb.Summary', () => {
         onErrorClick={onErrorClick}
       />,
     );
-    screen.getByRole('button', { name: 'Try again' }).click();
+    await userEvent.click(screen.getByRole('button', { name: 'Try again' }));
     expect(onErrorClick).toHaveBeenCalledTimes(1);
   });
 });
