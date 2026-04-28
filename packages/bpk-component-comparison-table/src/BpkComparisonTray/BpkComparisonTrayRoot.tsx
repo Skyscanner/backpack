@@ -32,14 +32,14 @@ const getClassName = cssModules(STYLES);
 
 const MAX_ITEMS = 3;
 
-function BpkComparisonTrayRoot({
+const BpkComparisonTrayRoot = ({
   ariaLabel,
   compareLabel,
   items,
   onCompare,
   onRemove,
   removeLabel,
-}: BpkComparisonTrayRootProps) {
+}: BpkComparisonTrayRootProps) => {
   const displayItems = Array.from({ length: MAX_ITEMS }, (_value, index) => items[index] ?? null);
 
   return (
@@ -81,6 +81,6 @@ function BpkComparisonTrayRoot({
       </BpkCardV2.Root>
     </div>
   );
-}
+};
 
 export default BpkComparisonTrayRoot;
