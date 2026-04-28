@@ -105,14 +105,14 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
 
   &__nav-carousel {
     --bpk-button-border-radius: 50%;
-    --bpk-button-secondary-on-dark-background-color: #{rgb(255, 255, 255, 0.5)};
-    --bpk-button-secondary-on-dark-hover-background-color: #{rgb(
+    --bpk-button-secondary-on-dark-background-color: #{rgba(255, 255, 255, 0.5)};
+    --bpk-button-secondary-on-dark-hover-background-color: #{rgba(
         255,
         255,
         255,
         0.8
       )};
-    --bpk-button-secondary-on-dark-active-background-color: #{rgb(
+    --bpk-button-secondary-on-dark-active-background-color: #{rgba(
         255,
         255,
         255,

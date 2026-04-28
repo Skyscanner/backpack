@@ -103,26 +103,39 @@ const ThreePagesWithNavExample = () => (
   <PageIndicatorContainer totalIndicators={3} showNav />
 );
 
-const CarouselExample = () => (
-  <BpkBackgroundImage
-    aspectRatio={imageWidth / imageHeight}
-    style={{ width: imageWidth, height: imageHeight }}
-    imageStyle={{
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundPosition: '50% 50%',
-    }}
-    src={image}
-  >
-    <div className={getClassName('bpk-page-indicator-examples__container')}>
-      <PageIndicatorContainer
-        totalIndicators={5}
-        variant={VARIANT.carousel}
-        showNav
-      />
-    </div>
-  </BpkBackgroundImage>
-);
+const CarouselExample = () => {
+  const totalIndicators = 5;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  return (
+    <BpkBackgroundImage
+      aspectRatio={imageWidth / imageHeight}
+      style={{ width: imageWidth, height: imageHeight }}
+      imageStyle={{
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: '50% 50%',
+      }}
+      src={image}
+    >
+      <div className={getClassName('bpk-page-indicator-examples__container')}>
+        <BpkPageIndicator
+          currentIndex={currentIndex}
+          totalIndicators={totalIndicators}
+          variant={VARIANT.carousel}
+          showNav
+          indicatorLabel="Go to slide"
+          prevNavLabel="Previous slide"
+          nextNavLabel="Next slide"
+          onClick={(_e, index) => {
+            const wrapped = (index + totalIndicators) % totalIndicators;
+            setCurrentIndex(wrapped);
+          }}
+        />
+      </div>
+    </BpkBackgroundImage>
+  );
+};
 
 const VisualTestExample = () => (
   <>

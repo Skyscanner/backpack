@@ -22,6 +22,9 @@ import { BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
+import { VARIANT } from './common-types';
+
+import type { Variant } from './common-types';
 
 import STYLES from './BpkPageIndicator.module.scss';
 
@@ -30,14 +33,9 @@ const getClassName = cssModules(STYLES);
 const DISPLAYED_TOTAL = 5;
 const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 
-export const VARIANT = {
-  default: 'default',
-  overImage: 'overImage',
-  overImageSpaced: 'overImageSpaced',
-  carousel: 'carousel',
-} as const;
+export { VARIANT };
+export type { Variant };
 
-type Variant = (typeof VARIANT)[keyof typeof VARIANT];
 type Direction = (typeof DIRECTIONS)[keyof typeof DIRECTIONS];
 
 export type Props = {

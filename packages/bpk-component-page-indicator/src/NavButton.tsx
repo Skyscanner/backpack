@@ -24,6 +24,10 @@ import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 import { cssModules } from '../../bpk-react-utils';
 
+import { VARIANT } from './common-types';
+
+import type { Variant } from './common-types';
+
 import STYLES from './BpkPageIndicator.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -48,7 +52,7 @@ type Props = {
     direction: Direction,
   ) => void;
   type?: ButtonType;
-  variant?: string;
+  variant?: Variant;
 };
 
 const AlignedLeftArrowIcon = withLargeButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -63,7 +67,7 @@ const NavButton = ({
   type = BUTTON_TYPES.link,
   variant,
 }: Props) => {
-  const isCarousel = variant === 'carousel';
+  const isCarousel = variant === VARIANT.carousel;
   const button = (
     <BpkButton
       iconOnly
