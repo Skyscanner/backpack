@@ -73,7 +73,7 @@ const ErrorGeneralExample = () => (
           state="error"
           errorText="Couldn't load your summary."
           errorLinkText="Retry"
-          errorLinkHref="#"
+          onErrorClick={() => {}}
         />
       </BpkAiBlurb.Root>
     </BpkBox>
@@ -89,7 +89,7 @@ const ErrorRefreshLimitExample = () => (
           state="error"
           errorText="You've reached the refresh limit. Please come back later."
           errorLinkText="Retry"
-          errorLinkHref="#"
+          onErrorClick={() => {}}
         />
       </BpkAiBlurb.Root>
     </BpkBox>

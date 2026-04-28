@@ -48,7 +48,7 @@ import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-tex
     state="error"
     errorText="Couldn't load your summary."
     errorLinkText="Retry"
-    errorLinkHref="#"
+    onErrorClick={() => retryFetchSummary()}
   />
 </BpkAiBlurb.Root>
 ```
@@ -78,7 +78,7 @@ The `state` prop controls which content is displayed. Only pass the props releva
 | thinkingText    | string    | When `state="thinking"` | - |
 | errorText       | string    | When `state="error"` | - |
 | errorLinkText   | string    | When `state="error"` | - |
-| errorLinkHref   | string    | When `state="error"` | - |
+| onErrorClick    | `() => void` | When `state="error"` | - |
 
 > **Note:** `aiResponseText` accepts a `ReactNode` — the component does not enforce any text formatting on the AI response. The consumer is responsible for applying Backpack typography (e.g. `BpkText` with `TEXT_STYLES.caption`). This is intentional: AI-generated text is non-deterministic and translations vary in length and structure, so formatting cannot be reliably applied from within the component.
 

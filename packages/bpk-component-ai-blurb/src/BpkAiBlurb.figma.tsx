@@ -74,7 +74,7 @@ figma.connect(
           state="error"
           errorText="Something went wrong"
           errorLinkText="Try again"
-          errorLinkHref="#"
+          onErrorClick={() => {}}
         />
       </BpkAiBlurb.Root>
     ),
