@@ -35,12 +35,15 @@
   }
 }
 
-// Filled item — relative for close button positioning
+// Filled item — relative for close button positioning.
+// Shrinks on narrow trays so the Compare button stays visible; aspect-ratio
+// keeps height in step with width so BpkImage's wrapper matches the item.
 .bpk-comparison-tray__item {
   position: relative;
   width: 62 * tokens.$bpk-one-pixel-rem;
-  height: 28 * tokens.$bpk-one-pixel-rem;
-  flex-shrink: 0;
+  min-width: 0;
+  flex-shrink: 1;
+  aspect-ratio: 62 / 28;
 }
 
 // Inner image container — clips image to rounded corners without clipping the close button
@@ -52,9 +55,10 @@
 
   @include radii.bpk-border-radius-xs;
 
-  // Ensure BpkImage's internal <img> covers the container without distortion
+  // Fit images into the slot without cropping.
   img {
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
@@ -95,12 +99,14 @@
 }
 /* stylelint-enable order/order, order/properties-order */
 
-// Placeholder item — dashed border
+// Placeholder item — dashed border. Shrinks alongside filled items so the
+// layout stays balanced when the tray is narrow.
 .bpk-comparison-tray__item-placeholder {
   width: 62 * tokens.$bpk-one-pixel-rem;
-  height: 28 * tokens.$bpk-one-pixel-rem;
-  flex-shrink: 0;
+  min-width: 0;
+  flex-shrink: 1;
   border: tokens.$bpk-one-pixel-rem dashed tokens.$bpk-line-day;
+  aspect-ratio: 62 / 28;
 
   @include radii.bpk-border-radius-xs;
 }

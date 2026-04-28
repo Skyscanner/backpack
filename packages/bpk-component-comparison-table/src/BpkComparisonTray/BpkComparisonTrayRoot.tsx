@@ -58,6 +58,7 @@ function BpkComparisonTrayRoot({
             alignItems="center"
             padding={BpkSpacing.None}
             gap={BpkSpacing.MD}
+            minWidth="0rem"
           >
             {displayItems.map((item, index) =>
               item ? (
