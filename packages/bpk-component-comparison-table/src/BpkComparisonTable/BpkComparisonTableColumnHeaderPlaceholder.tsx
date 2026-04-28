@@ -19,11 +19,7 @@
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import { BpkFlex, BpkSpacing } from '../../../bpk-component-layout';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../../bpk-component-text';
-import { cssModules } from '../../../bpk-react-utils';
 
-import STYLES from './BpkComparisonTable.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 type BpkComparisonTableColumnHeaderPlaceholderProps = {
   addMoreDescription: string;
@@ -43,19 +39,19 @@ const BpkComparisonTableColumnHeaderPlaceholder = ({
     paddingTop={BpkSpacing.LG}
     paddingInline={BpkSpacing.XL}
   >
-  <BpkText
-    textAlign="center"
-    tagName="p"
-    textStyle={TEXT_STYLES.bodyDefault}
-    color={TEXT_COLORS.textSecondary}
+    <BpkText
+      textAlign="center"
+      tagName="p"
+      textStyle={TEXT_STYLES.bodyDefault}
+      color={TEXT_COLORS.textSecondary}
     >
-    {addMoreDescription}
-  </BpkText>
-  <BpkButton
-    type={BUTTON_TYPES.link}
-    size={SIZE_TYPES.small}
-    onClick={onAddMoreClick}
-  >
+      {addMoreDescription}
+    </BpkText>
+    <BpkButton
+      type={BUTTON_TYPES.link}
+      size={SIZE_TYPES.small}
+      onClick={onAddMoreClick}
+    >
       {addMoreLinkText}
     </BpkButton>
   </BpkFlex>
