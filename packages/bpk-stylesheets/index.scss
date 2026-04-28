@@ -19,6 +19,7 @@
 @use '../bpk-mixins/tokens';
 @use '../bpk-mixins/utils';
 @use './normalize';
+@use './variables';
 
 // stylelint-disable-next-line selector-max-type
 html {

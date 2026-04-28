@@ -164,7 +164,7 @@
   );
   @include utils.bpk-themeable-property(
     background-color,
-    --bpk-button-primary-background-color,
+    --bpk-component-button-colour-bg-primary,
     tokens.$bpk-private-button-primary-normal-background-day
   );
 
