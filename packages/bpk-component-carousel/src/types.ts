@@ -18,6 +18,8 @@
 
 import type { ReactNode } from "react";
 
+import type { VARIANT } from '../../bpk-component-page-indicator';
+
 export type OnImageChangedHandler = ((shownImageIndex: number) => void) | null | undefined;
 
 export type AccessibilityLabels = {
@@ -25,6 +27,8 @@ export type AccessibilityLabels = {
   prevNavLabel?: string;
   nextNavLabel?: string;
 };
+
+export type PageIndicatorVariant = typeof VARIANT.overImageSpaced | typeof VARIANT.carousel;
 
 export type Props = {
   images: ReactNode[]
@@ -35,4 +39,5 @@ export type Props = {
   */
   bottom?: number;
   accessibilityLabels?: AccessibilityLabels;
+  pageIndicatorVariant?: PageIndicatorVariant;
 };
