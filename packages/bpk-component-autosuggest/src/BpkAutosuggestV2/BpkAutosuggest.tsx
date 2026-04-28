@@ -57,6 +57,12 @@ import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const inputClickStateChangeType = (
+  useCombobox.stateChangeTypes as typeof useCombobox.stateChangeTypes & {
+    InputClick?: UseComboboxStateChangeOptions<any>['type'];
+  }
+).InputClick;
+
 export type BpkAutoSuggestTheme = {
   container?: string;
   containerOpen?: string;
@@ -261,29 +267,38 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       const isMenuOpening = changes.isOpen === true && state.isOpen === false;
 
+      if (inputClickStateChangeType && type === inputClickStateChangeType) {
+        const targetHighlightedIndex = getTargetHighlightedIndex(
+          state.highlightedIndex,
+          isMenuOpening,
+        );
+        return {
+          ...changes,
+          isOpen: state.isOpen,
+          highlightedIndex: targetHighlightedIndex ?? -1,
+        };
+      }
+
       switch (type) {
-        case useCombobox.stateChangeTypes.InputClick: {
-          const targetHighlightedIndex = getTargetHighlightedIndex(
-            state.highlightedIndex,
-            isMenuOpening,
-          );
-          return {
-            ...changes,
-            isOpen: state.isOpen,
-            highlightedIndex: targetHighlightedIndex ?? -1,
-          };
-        }
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
           const isArrowKeyNavigation =
             type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
             type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
+          const isArrowDownFromVisualFirst =
+            type === useCombobox.stateChangeTypes.InputKeyDownArrowDown &&
+            highlightFirstSuggestion &&
+            state.highlightedIndex === -1 &&
+            changes.highlightedIndex === 0 &&
+            flattenedSuggestions.length > 0;
 
-          const targetHighlightedIndex = getTargetHighlightedIndex(
-            changes.highlightedIndex,
-            isMenuOpening,
-            isArrowKeyNavigation,
-          );
+          const targetHighlightedIndex = isArrowDownFromVisualFirst
+            ? Math.min(1, flattenedSuggestions.length - 1)
+            : getTargetHighlightedIndex(
+                changes.highlightedIndex,
+                isMenuOpening,
+                isArrowKeyNavigation,
+              );
           return {
             ...changes,
             isOpen: forceOpen ? true : changes.isOpen,
@@ -683,6 +698,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       );
 
       const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+        const savedIndexOnBlur = savedHighlightedIndexRef.current;
+
         // Call Downshift's onBlur first
         downshiftOnBlur?.(e);
         // Call original onBlur if provided
@@ -697,7 +714,7 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
 
         // Auto-select the highlighted suggestion on blur using the saved index
-        const savedIndex = savedHighlightedIndexRef.current;
+        const savedIndex = savedIndexOnBlur;
         let highlightedSuggestion: any = null;
 
         if (
