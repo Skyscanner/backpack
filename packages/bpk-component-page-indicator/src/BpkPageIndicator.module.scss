@@ -83,7 +83,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     }
 
     &--overImage,
-    &--overImageSpaced {
+    &--overImageSpaced,
+    &--carousel {
       background-color: tokens.$bpk-line-on-dark-day;
     }
 
@@ -94,10 +95,31 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
       }
 
       &-overImage,
-      &-overImageSpaced {
+      &-overImageSpaced,
+      &-carousel {
         background-color: tokens.$bpk-text-on-dark-day;
         pointer-events: none;
       }
     }
+  }
+
+  &__nav-carousel {
+    --bpk-button-border-radius: 50%;
+    --bpk-button-secondary-on-dark-background-color: #{rgb(255, 255, 255, 0.5)};
+    --bpk-button-secondary-on-dark-hover-background-color: #{rgb(
+        255,
+        255,
+        255,
+        0.8
+      )};
+    --bpk-button-secondary-on-dark-active-background-color: #{rgb(
+        255,
+        255,
+        255,
+        0.8
+      )};
+    --bpk-button-secondary-on-dark-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-button-secondary-on-dark-hover-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-button-secondary-on-dark-active-text-color: #{tokens.$bpk-text-primary-day};
   }
 }

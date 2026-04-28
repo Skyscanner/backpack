@@ -103,6 +103,27 @@ const ThreePagesWithNavExample = () => (
   <PageIndicatorContainer totalIndicators={3} showNav />
 );
 
+const CarouselExample = () => (
+  <BpkBackgroundImage
+    aspectRatio={imageWidth / imageHeight}
+    style={{ width: imageWidth, height: imageHeight }}
+    imageStyle={{
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: '50% 50%',
+    }}
+    src={image}
+  >
+    <div className={getClassName('bpk-page-indicator-examples__container')}>
+      <PageIndicatorContainer
+        totalIndicators={5}
+        variant={VARIANT.carousel}
+        showNav
+      />
+    </div>
+  </BpkBackgroundImage>
+);
+
 const VisualTestExample = () => (
   <>
     <DefaultExample />
@@ -111,6 +132,7 @@ const VisualTestExample = () => (
     <WithNavExample />
     <WithNavOverImageSpacedExample />
     <ThreePagesWithNavExample />
+    <CarouselExample />
     <div style={{ width: '50%' }}>
       <WithNavExample />
     </div>
@@ -142,6 +164,10 @@ export const WithNav = {
 
 export const WithNavOverImageSpaced = {
   render: () => <WithNavOverImageSpacedExample />,
+};
+
+export const Carousel = {
+  render: () => <CarouselExample />,
 };
 
 export const VisualTest = {

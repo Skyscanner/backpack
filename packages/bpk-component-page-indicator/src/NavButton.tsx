@@ -18,10 +18,15 @@
 
 import type { MouseEvent } from 'react';
 
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
 import { withLargeButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkPageIndicator.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export const DIRECTIONS = {
   PREV: 'PREV',
@@ -43,6 +48,7 @@ type Props = {
     direction: Direction,
   ) => void;
   type?: ButtonType;
+  variant?: string;
 };
 
 const AlignedLeftArrowIcon = withLargeButtonAlignment(withRtlSupport(LeftArrowIcon));
@@ -55,26 +61,40 @@ const NavButton = ({
   disabled = false,
   onClick = () => {},
   type = BUTTON_TYPES.link,
-}: Props) => (
-  <BpkButton
-    iconOnly
-    type={type}
-    onClick={(e) => {
-      if (direction === DIRECTIONS.PREV) {
-        onClick(e, currentIndex - 1, direction);
-      } else {
-        onClick(e, currentIndex + 1, direction);
-      }
-    }}
-    aria-label={ariaLabel}
-    disabled={disabled}
-  >
-    {direction === DIRECTIONS.PREV ? (
-      <AlignedLeftArrowIcon />
-    ) : (
-      <AlignedRightArrowIcon />
-    )}
-  </BpkButton>
-);
+  variant,
+}: Props) => {
+  const button = (
+    <BpkButton
+      iconOnly
+      type={type}
+      size={SIZE_TYPES.large}
+      onClick={(e) => {
+        if (direction === DIRECTIONS.PREV) {
+          onClick(e, currentIndex - 1, direction);
+        } else {
+          onClick(e, currentIndex + 1, direction);
+        }
+      }}
+      aria-label={ariaLabel}
+      disabled={disabled}
+    >
+      {direction === DIRECTIONS.PREV ? (
+        <AlignedLeftArrowIcon />
+      ) : (
+        <AlignedRightArrowIcon />
+      )}
+    </BpkButton>
+  );
+
+  if (variant === 'carousel') {
+    return (
+      <span className={getClassName('bpk-page-indicator__nav-carousel')}>
+        {button}
+      </span>
+    );
+  }
+
+  return button;
+};
 
 export default NavButton;
