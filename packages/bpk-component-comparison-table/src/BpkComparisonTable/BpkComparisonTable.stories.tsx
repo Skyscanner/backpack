@@ -160,7 +160,7 @@ const StandaloneExample = () => {
       </BpkHStack>
 
       <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkComparisonTable.Header strings={STRINGS}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -304,7 +304,7 @@ const CombinedExample = () => {
       )}
 
       <BpkComparisonTable.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkComparisonTable.Header strings={STRINGS}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
