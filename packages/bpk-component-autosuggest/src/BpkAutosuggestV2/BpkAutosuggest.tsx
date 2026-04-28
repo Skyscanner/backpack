@@ -54,6 +54,12 @@ import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const inputClickStateChangeType = (
+  useCombobox.stateChangeTypes as typeof useCombobox.stateChangeTypes & {
+    InputClick?: UseComboboxStateChangeOptions<any>['type'];
+  }
+).InputClick;
+
 export type BpkAutoSuggestTheme = {
   container?: string;
   containerOpen?: string;
@@ -246,18 +252,19 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
       const isMenuOpening = changes.isOpen === true && state.isOpen === false;
 
+      if (inputClickStateChangeType && type === inputClickStateChangeType) {
+        const targetHighlightedIndex = getTargetHighlightedIndex(
+          state.highlightedIndex,
+          isMenuOpening,
+        );
+        return {
+          ...changes,
+          isOpen: state.isOpen,
+          highlightedIndex: targetHighlightedIndex ?? -1,
+        };
+      }
+
       switch (type) {
-        case useCombobox.stateChangeTypes.InputClick: {
-          const targetHighlightedIndex = getTargetHighlightedIndex(
-            state.highlightedIndex,
-            isMenuOpening,
-          );
-          return {
-            ...changes,
-            isOpen: state.isOpen,
-            highlightedIndex: targetHighlightedIndex ?? -1,
-          };
-        }
         default: {
           const forceOpen = !isDesktop && !!changes.inputValue;
           const isArrowKeyNavigation =
