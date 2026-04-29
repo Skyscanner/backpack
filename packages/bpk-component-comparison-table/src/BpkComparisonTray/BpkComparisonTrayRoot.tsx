@@ -52,13 +52,12 @@ const BpkComparisonTrayRoot = ({
         role="region"
         aria-label={ariaLabel}
       >
-        <BpkCardV2.Body templateColumns="1fr auto" align="center" gap={BpkSpacing.Base}>
+        <BpkCardV2.Body templateColumns="minmax(0, 1fr) auto" align="center" gap={BpkSpacing.Base}>
           <BpkCardV2.Section
             flexDirection="row"
             alignItems="center"
             padding={BpkSpacing.None}
             gap={BpkSpacing.MD}
-            minWidth="0rem"
           >
             {displayItems.map((item, index) =>
               item ? (
