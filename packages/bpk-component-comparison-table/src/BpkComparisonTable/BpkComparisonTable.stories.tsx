@@ -125,7 +125,7 @@ const INITIAL_TABLE_COLUMNS: BpkCompareColumn[] = [
     itemId: 'rentalcars-2',
     imageSrc: CAR_IMAGES[1],
     imageAlt: 'Ford Fiesta',
-    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
+    headerContent: makeHeader('rentalcars.com', 'Ford Fiesta o similar economy', '£71'),
     rows: makeRows('No free cancellation', '4 / 5', '3.8 — Good', 'GPS included'),
     removeA11yLabel: 'Remove second rentalcars.com deal',
   },

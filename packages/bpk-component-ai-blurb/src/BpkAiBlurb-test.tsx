@@ -84,7 +84,7 @@ describe('BpkAiBlurb.Summary', () => {
       <BpkAiBlurb.Summary
         state="error"
         errorText="Something went wrong."
-        errorLinkText="Try again"
+        errorActionText="Try again"
         onErrorClick={() => {}}
       />,
     );
@@ -98,7 +98,7 @@ describe('BpkAiBlurb.Summary', () => {
       <BpkAiBlurb.Summary
         state="error"
         errorText="Something went wrong."
-        errorLinkText="Try again"
+        errorActionText="Try again"
         onErrorClick={onErrorClick}
       />,
     );

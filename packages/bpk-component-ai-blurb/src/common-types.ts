@@ -47,7 +47,7 @@ export type BpkAiBlurbSummaryProps =
       /** Text displayed before the error action. */
       errorText: string;
       /** Text for the inline error action. */
-      errorLinkText: string;
+      errorActionText: string;
       /** Called when the inline error action is clicked (e.g. to retry). */
       onErrorClick: () => void;
     };
