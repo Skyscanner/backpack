@@ -7,6 +7,8 @@ on:
         description: 'Optional Figma file key override (defaults to the FIGMA_FILE_KEY repo secret).'
         required: false
 
+permissions: {}
+
 jobs:
   sync-figma-variables:
     runs-on: ubuntu-latest
@@ -22,7 +24,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Install dependencies
-        run: npm install --ignore-scripts
+        run: npm ci
 
       - name: Run sync
         env:

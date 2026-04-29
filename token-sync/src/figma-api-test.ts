@@ -30,7 +30,7 @@ describe('FigmaApi', () => {
   });
 
   describe('getLocalVariables', () => {
-    const fetchSpy = jest.spyOn(globalThis, 'fetch');
+    const fetchSpy = jest.spyOn(global, 'fetch');
 
     afterEach(() => {
       fetchSpy.mockReset();

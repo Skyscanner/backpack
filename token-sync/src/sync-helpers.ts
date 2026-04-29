@@ -1,3 +1,21 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import process from 'node:process';
 
 import { FigmaApiError, type LocalVariableCollection } from './figma-api';
@@ -5,8 +23,11 @@ import { FigmaApiError, type LocalVariableCollection } from './figma-api';
 export const TARGET_COLLECTION_NAMES = ['Primitives', 'Backpack'] as const;
 
 export function isCI(): boolean {
+  // Most CIs set GITHUB_ACTIONS / CI to the string "true", but some use "1" or
+  // another truthy value. Treat any non-empty trimmed value as CI.
   return (
-    process.env.GITHUB_ACTIONS === 'true' || process.env.CI === 'true'
+    (process.env.GITHUB_ACTIONS?.trim() ?? '') !== '' ||
+    (process.env.CI?.trim() ?? '') !== ''
   );
 }
 
@@ -34,12 +55,10 @@ export interface LocalTargetFilterResult {
   availableLocalNames: string[];
 }
 
-/**
- * Keep only collections that are (a) defined locally in this file (not subscribed
- * back from a Library as `remote: true`) and (b) whose names are in `targetNames`.
- * Returns the match plus `missingNames` (targets with no local match) and
- * `availableLocalNames` (every local collection name, for error messaging).
- */
+// Keep only collections that are (a) defined locally in this file (not subscribed
+// back from a Library as `remote: true`) and (b) whose names are in `targetNames`.
+// Returns the match plus `missingNames` (targets with no local match) and
+// `availableLocalNames` (every local collection name, for error messaging).
 export function filterLocalTargets(
   allCollections: LocalVariableCollection[],
   targetNames: readonly string[],
@@ -56,11 +75,9 @@ export function filterLocalTargets(
   return { matched, missingNames, availableLocalNames };
 }
 
-/**
- * Turn any thrown value into a single user-facing error string. Keeps the
- * CI-vs-local hint consistent via `credentialLocation`. Pure — no logging,
- * no `process.exit` — so the caller (sync.ts) decides how to surface it.
- */
+// Turn any thrown value into a single user-facing error string. Keeps the
+// CI-vs-local hint consistent via `credentialLocation`. Pure — no logging,
+// no `process.exit` — so the caller (sync.ts) decides how to surface it.
 export function formatFatalError(error: unknown): string {
   if (error instanceof FigmaApiError) {
     if (error.status === 403 || error.status === 401) {

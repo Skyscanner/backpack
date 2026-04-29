@@ -25,10 +25,8 @@ import {
   requireEnv,
 } from './sync-helpers';
 
-/**
- * The real shape has many required fields we don't care about for filter logic.
- * Cast through `unknown` to keep the test data minimal.
- */
+// The real shape has many required fields we don't care about for filter logic.
+// Cast through `unknown` to keep the test data minimal.
 function makeCollection(
   name: string,
   remote = false,
@@ -49,7 +47,11 @@ describe('isCI / credentialLocation', () => {
     process.env = originalEnv;
   });
 
-  it('isCI returns false by default, true when GITHUB_ACTIONS or CI is "true"', () => {
+  it('isCI returns false by default, true for any non-empty GITHUB_ACTIONS / CI value', () => {
+    expect(isCI()).toBe(false);
+
+    // Empty string should still be treated as "not CI".
+    process.env.CI = '';
     expect(isCI()).toBe(false);
 
     process.env.GITHUB_ACTIONS = 'true';
@@ -57,6 +59,10 @@ describe('isCI / credentialLocation', () => {
 
     delete process.env.GITHUB_ACTIONS;
     process.env.CI = 'true';
+    expect(isCI()).toBe(true);
+
+    // Other truthy values some CI providers use.
+    process.env.CI = '1';
     expect(isCI()).toBe(true);
   });
 
