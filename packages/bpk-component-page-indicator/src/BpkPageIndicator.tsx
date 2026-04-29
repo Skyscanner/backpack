@@ -96,6 +96,7 @@ const BpkPageIndicator = ({
         className={getClassName(
           'bpk-page-indicator',
           showNav && 'bpk-page-indicator__showNav',
+          variant === VARIANT.carousel && 'bpk-page-indicator--carousel',
         )} {...getDataComponentAttribute('PageIndicator')}
       >
         {showNav && (

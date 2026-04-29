@@ -124,8 +124,12 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
   }
 
   &__nav-carousel-button {
-    width: tokens.bpk-spacing-xxl();
-    min-height: tokens.bpk-spacing-xxl();
+    width: tokens.bpk-spacing-xl();
+    min-height: tokens.bpk-spacing-xl();
     padding: tokens.bpk-spacing-md();
+  }
+
+  &--carousel {
+    padding: tokens.bpk-spacing-base();
   }
 }
