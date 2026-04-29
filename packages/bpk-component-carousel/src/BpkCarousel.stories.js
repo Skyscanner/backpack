@@ -58,6 +58,7 @@ const WithCarouselPageIndicatorExample = () => (
     <BpkCarousel
       images={imagesList}
       pageIndicatorVariant={VARIANT.carousel}
+      bottom={16}
     />
   </div>
 );

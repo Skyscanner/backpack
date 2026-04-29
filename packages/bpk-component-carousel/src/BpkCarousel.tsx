@@ -69,10 +69,7 @@ const BpkCarousel = ({
         onImageChanged={onImageChanged}
       />
       <div
-        className={getClassName(
-          'bpk-carousel__page-indicator-over-image',
-          pageIndicatorVariant === VARIANT.carousel && 'bpk-carousel__page-indicator-over-image--carousel',
-        )}
+        className={getClassName('bpk-carousel__page-indicator-over-image')}
         style={bottom ? {
           bottom
         } : undefined}
