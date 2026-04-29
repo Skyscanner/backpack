@@ -19,7 +19,7 @@
 import type { MouseEvent } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withButtonAlignment, withLargeButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
+import { withLargeButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
 import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
 import SmallLeftArrowIcon from '../../bpk-component-icon/sm/chevron-left';
@@ -59,8 +59,8 @@ type Props = {
 
 const AlignedLeftArrowIcon = withLargeButtonAlignment(withRtlSupport(LeftArrowIcon));
 const AlignedRightArrowIcon = withLargeButtonAlignment(withRtlSupport(RightArrowIcon));
-const AlignedSmallLeftArrowIcon = withButtonAlignment(withRtlSupport(SmallLeftArrowIcon));
-const AlignedSmallRightArrowIcon = withButtonAlignment(withRtlSupport(SmallRightArrowIcon));
+const RtlSmallLeftArrowIcon = withRtlSupport(SmallLeftArrowIcon);
+const RtlSmallRightArrowIcon = withRtlSupport(SmallRightArrowIcon);
 
 const NavButton = ({
   ariaLabel,
@@ -72,8 +72,8 @@ const NavButton = ({
   variant,
 }: Props) => {
   const isCarousel = variant === VARIANT.carousel;
-  const PrevIcon = isCarousel ? AlignedSmallLeftArrowIcon : AlignedLeftArrowIcon;
-  const NextIcon = isCarousel ? AlignedSmallRightArrowIcon : AlignedRightArrowIcon;
+  const PrevIcon = isCarousel ? RtlSmallLeftArrowIcon : AlignedLeftArrowIcon;
+  const NextIcon = isCarousel ? RtlSmallRightArrowIcon : AlignedRightArrowIcon;
   const button = (
     <BpkButton
       iconOnly
