@@ -26,26 +26,24 @@ import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function BpkComparisonTrayItem({ item, onRemove, removeLabel }: BpkComparisonTrayItemProps) {
-  return (
-    <div className={getClassName('bpk-comparison-tray__item')}>
-      <div className={getClassName('bpk-comparison-tray__item-image-container')}>
-        <BpkImage
-          src={item.image}
-          altText={item.imageAlt ?? item.label}
-          aspectRatio={62 / 28}
-        />
-      </div>
-      <button
-        type="button"
-        className={getClassName('bpk-comparison-tray__item-close')}
-        aria-label={removeLabel}
-        onClick={() => onRemove(item.id)}
-      >
-        <CloseIcon />
-      </button>
+const BpkComparisonTrayItem = ({ item, onRemove, removeLabel }: BpkComparisonTrayItemProps) => (
+  <div className={getClassName('bpk-comparison-tray__item')}>
+    <div className={getClassName('bpk-comparison-tray__item-image-container')}>
+      <BpkImage
+        src={item.image}
+        altText={item.imageAlt ?? item.label}
+        aspectRatio={62 / 28}
+      />
     </div>
-  );
-}
+    <button
+      type="button"
+      className={getClassName('bpk-comparison-tray__item-close')}
+      aria-label={removeLabel}
+      onClick={() => onRemove(item.id)}
+    >
+      <CloseIcon />
+    </button>
+  </div>
+);
 
 export default BpkComparisonTrayItem;

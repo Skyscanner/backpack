@@ -44,12 +44,12 @@ export type BpkAiBlurbSummaryProps =
   | {
       /** Controls which content is displayed. */
       state: 'error';
-      /** Text displayed before the error link. */
+      /** Text displayed before the error action. */
       errorText: string;
-      /** Text for the inline error link. */
-      errorLinkText: string;
-      /** href for the inline error link. */
-      errorLinkHref: string;
+      /** Text for the inline error action. */
+      errorActionText: string;
+      /** Called when the inline error action is clicked (e.g. to retry). */
+      onErrorClick: () => void;
     };
 
 export type BpkAiBlurbFeedbackProps = {

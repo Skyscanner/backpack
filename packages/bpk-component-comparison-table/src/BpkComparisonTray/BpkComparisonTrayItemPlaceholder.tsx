@@ -22,13 +22,11 @@ import STYLES from './BpkComparisonTray.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-function BpkComparisonTrayItemPlaceholder() {
-  return (
-    <div
-      className={getClassName('bpk-comparison-tray__item-placeholder')}
-      aria-hidden="true"
-    />
-  );
-}
+const BpkComparisonTrayItemPlaceholder = () => (
+  <div
+    className={getClassName('bpk-comparison-tray__item-placeholder')}
+    aria-hidden="true"
+  />
+);
 
 export default BpkComparisonTrayItemPlaceholder;

@@ -47,7 +47,7 @@ const BpkAiBlurbSummary = (props: BpkAiBlurbSummaryProps) => {
     content = (
       <div className={getClassName('bpk-ai-blurb__error')}>
         <BpkText tagName="span" textStyle={TEXT_STYLES.caption}>{props.errorText}</BpkText>
-        <BpkLink href={props.errorLinkHref}>{props.errorLinkText}</BpkLink>
+        <BpkLink as="button" onClick={props.onErrorClick}>{props.errorActionText}</BpkLink>
       </div>
     );
   }

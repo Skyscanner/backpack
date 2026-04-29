@@ -84,12 +84,26 @@ describe('BpkAiBlurb.Summary', () => {
       <BpkAiBlurb.Summary
         state="error"
         errorText="Something went wrong."
-        errorLinkText="Try again"
-        errorLinkHref="/retry"
+        errorActionText="Try again"
+        onErrorClick={() => {}}
       />,
     );
     expect(screen.getByText('Something went wrong.')).toBeInTheDocument();
     expect(screen.getByText('Try again')).toBeInTheDocument();
+  });
+
+  it('should call onErrorClick when the error link is clicked', async () => {
+    const onErrorClick = jest.fn();
+    render(
+      <BpkAiBlurb.Summary
+        state="error"
+        errorText="Something went wrong."
+        errorActionText="Try again"
+        onErrorClick={onErrorClick}
+      />,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Try again' }));
+    expect(onErrorClick).toHaveBeenCalledTimes(1);
   });
 });
 

@@ -18,7 +18,7 @@
 
 import { BpkBox, BpkSpacing } from '../../../bpk-component-layout';
 import { BpkModalV3 } from '../../../bpk-component-modal';
-import  BpkVisuallyHidden  from '../../../bpk-component-visually-hidden';
+import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
 
 import type { BpkComparisonTableHeaderProps } from './common-types';
 

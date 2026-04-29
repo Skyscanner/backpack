@@ -32,14 +32,14 @@ const getClassName = cssModules(STYLES);
 
 const MAX_ITEMS = 3;
 
-function BpkComparisonTrayRoot({
+const BpkComparisonTrayRoot = ({
   ariaLabel,
   compareLabel,
   items,
   onCompare,
   onRemove,
   removeLabel,
-}: BpkComparisonTrayRootProps) {
+}: BpkComparisonTrayRootProps) => {
   const displayItems = Array.from({ length: MAX_ITEMS }, (_value, index) => items[index] ?? null);
 
   return (
@@ -52,7 +52,7 @@ function BpkComparisonTrayRoot({
         role="region"
         aria-label={ariaLabel}
       >
-        <BpkCardV2.Body templateColumns="1fr auto" align="center" gap={BpkSpacing.Base}>
+        <BpkCardV2.Body templateColumns="minmax(0, 1fr) auto" align="center" gap={BpkSpacing.Base}>
           <BpkCardV2.Section
             flexDirection="row"
             alignItems="center"
@@ -80,6 +80,6 @@ function BpkComparisonTrayRoot({
       </BpkCardV2.Root>
     </div>
   );
-}
+};
 
 export default BpkComparisonTrayRoot;

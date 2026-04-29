@@ -102,11 +102,20 @@ const STRINGS = {
 
 // ─── Standalone modal story ───────────────────────────────────────────────────
 
+const CAR_IMAGE_BASE = 'https://logos.skyscnr.com/images/carhire/sippmaps/';
+
+const CAR_IMAGES = [
+  `${CAR_IMAGE_BASE}14942_cc2400_032_N1.png`,
+  `${CAR_IMAGE_BASE}43518_cc2400_032_FRD.png`,
+  `${CAR_IMAGE_BASE}53101_cc2400_032_695.png`,
+  `${CAR_IMAGE_BASE}13070_cc2400_032_YZ.png`,
+];
+
 const INITIAL_TABLE_COLUMNS: BpkCompareColumn[] = [
   {
     itemId: 'rentalcars-1',
     bestTag: true,
-    imageSrc: 'https://picsum.photos/seed/rentalcars1/240/83',
+    imageSrc: CAR_IMAGES[0],
     imageAlt: 'Citroen C1',
     headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
     rows: makeRows('Free cancellation', '3.5 / 5', '4.5 — Excellent', 'Free cancellation'),
@@ -114,9 +123,9 @@ const INITIAL_TABLE_COLUMNS: BpkCompareColumn[] = [
   },
   {
     itemId: 'rentalcars-2',
-    imageSrc: 'https://picsum.photos/seed/rentalcars2/240/83',
-    imageAlt: 'Citroen C1',
-    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
+    imageSrc: CAR_IMAGES[1],
+    imageAlt: 'Ford Fiesta',
+    headerContent: makeHeader('rentalcars.com', 'Ford Fiesta o similar economy', '£71'),
     rows: makeRows('No free cancellation', '4 / 5', '3.8 — Good', 'GPS included'),
     removeA11yLabel: 'Remove second rentalcars.com deal',
   },
@@ -151,7 +160,7 @@ const StandaloneExample = () => {
       </BpkHStack>
 
       <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkComparisonTable.Header strings={STRINGS}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -180,18 +189,18 @@ const StandaloneExample = () => {
 // ─── Combined tray + modal story ─────────────────────────────────────────────
 
 const SAMPLE_ITEMS: BpkComparisonItem[] = [
-  { id: 'vip-cars', label: 'VIP Cars', image: 'https://picsum.photos/seed/vipcars/120/60', imageAlt: 'VIP Cars' },
-  { id: 'hertz', label: 'Hertz', image: 'https://picsum.photos/seed/hertz/120/60', imageAlt: 'Hertz' },
-  { id: 'avis', label: 'Avis', image: 'https://picsum.photos/seed/avis/120/60', imageAlt: 'Avis' },
-  { id: 'enterprise', label: 'Enterprise', image: 'https://picsum.photos/seed/enterprise/120/60', imageAlt: 'Enterprise' },
+  { id: 'hertz', label: 'Hertz', image: CAR_IMAGES[0], imageAlt: 'Hertz' },
+  { id: 'avis', label: 'Avis', image: CAR_IMAGES[1], imageAlt: 'Avis' },
+  { id: 'budget', label: 'Budget', image: CAR_IMAGES[2], imageAlt: 'Budget' },
+  { id: 'europcar', label: 'Europcar', image: CAR_IMAGES[3], imageAlt: 'Europcar' },
 ];
 
 // Per-item row data (mirrors what a real consumer would derive from their API).
 const ITEM_ROWS: Record<string, { cancellation: string; stars: string; rating: string; included: string; price: string }> = {
-  'vip-cars':   { cancellation: 'Free cancellation', stars: '3.5 / 5', rating: '4.5 — Excellent', included: 'Free cancellation', price: '£71' },
-  hertz:        { cancellation: 'No free cancellation', stars: '4 / 5', rating: '3.8 — Good', included: 'GPS included', price: '£85' },
-  avis:         { cancellation: 'Free cancellation', stars: '4.5 / 5', rating: '4.2 — Great', included: 'Child seat', price: '£79' },
-  enterprise:   { cancellation: 'No free cancellation', stars: '3 / 5', rating: '3.5 — Average', included: 'Unlimited mileage', price: '£68' },
+  hertz:     { cancellation: 'Free cancellation',    stars: '3.5 / 5', rating: '4.5 — Excellent', included: 'Free cancellation', price: '£71' },
+  avis:      { cancellation: 'No free cancellation', stars: '4 / 5',   rating: '3.8 — Good',      included: 'GPS included',      price: '£85' },
+  budget:    { cancellation: 'Free cancellation',    stars: '4.5 / 5', rating: '4.2 — Great',     included: 'Child seat',        price: '£79' },
+  europcar:  { cancellation: 'No free cancellation', stars: '3 / 5',   rating: '3.5 — Average',   included: 'Unlimited mileage', price: '£68' },
 };
 
 const itemToColumn = (item: BpkComparisonItem, index: number): BpkCompareColumn => {
@@ -199,7 +208,7 @@ const itemToColumn = (item: BpkComparisonItem, index: number): BpkCompareColumn 
   return {
     itemId: item.id,
     bestTag: index === 0,
-    imageSrc: `https://picsum.photos/seed/${item.id}/240/83`,
+    imageSrc: item.image,
     imageAlt: item.imageAlt ?? item.label,
     headerContent: makeHeader(item.label, 'Citroen C1 o similar economy', data.price),
     rows: makeRows(data.cancellation, data.stars, data.rating, data.included),
@@ -295,7 +304,7 @@ const CombinedExample = () => {
       )}
 
       <BpkComparisonTable.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkComparisonTable.Header strings={STRINGS}>
+        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />

@@ -73,8 +73,8 @@ figma.connect(
         <BpkAiBlurb.Summary
           state="error"
           errorText="Something went wrong"
-          errorLinkText="Try again"
-          errorLinkHref="#"
+          errorActionText="Try again"
+          onErrorClick={() => {}}
         />
       </BpkAiBlurb.Root>
     ),
