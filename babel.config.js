@@ -54,10 +54,7 @@ module.exports = {
           },
         ],
         'inline-react-svg',
-        [
-          '@babel/plugin-transform-runtime',
-          { useESModules: true, version: '^7.28.3' },
-        ],
+        ['@babel/plugin-transform-runtime', { useESModules: true }],
       ],
       ignore: [
         (fileName) =>
