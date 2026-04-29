@@ -33,9 +33,7 @@ const imagesList = imageUrls.map((url) => (
   </div>
 ));
 
-const DefaultExample = () => <BpkCarousel images={imagesList} bottom={16} />;
-
-const WithNavDesktopExample = () => (
+const DefaultExample = () => (
   <div
     style={{
       maxWidth: '800px',
@@ -67,8 +65,6 @@ const MixedExample = () => (
   <div>
     <DefaultExample />
     <br />
-    <WithNavDesktopExample />
-    <br />
     <WithCarouselPageIndicatorExample />
   </div>
 );
@@ -82,10 +78,6 @@ export default meta;
 
 export const Default = {
   render: () => <DefaultExample />,
-};
-
-export const WithNavDesktop = {
-  render: () => <WithNavDesktopExample />,
 };
 
 export const WithCarouselPageIndicator = {
