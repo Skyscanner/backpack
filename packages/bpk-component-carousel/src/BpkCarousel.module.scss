@@ -35,4 +35,8 @@
     justify-content: center;
     overflow: clip;
   }
+
+  &__page-indicator-over-image--carousel {
+    bottom: tokens.bpk-spacing-base();
+  }
 }

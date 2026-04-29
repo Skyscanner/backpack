@@ -132,8 +132,4 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     justify-content: center;
     align-items: center;
   }
-
-  &--carousel {
-    padding: tokens.bpk-spacing-base();
-  }
 }
