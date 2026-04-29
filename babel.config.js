@@ -28,10 +28,10 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        targets: {
-          node: 'current',
-        },
+        // `targets` intentionally omitted so preset-env picks up the
+        // root `browserslist` field (modern evergreen matrix).
         modules: false,
+        bugfixes: true,
       },
     ],
     // the option { runtime: 'automatic' } is passed to enable the new JSX transform where React is imported automatically
@@ -54,6 +54,10 @@ module.exports = {
           },
         ],
         'inline-react-svg',
+        [
+          '@babel/plugin-transform-runtime',
+          { useESModules: true, version: '^7.28.3' },
+        ],
       ],
       ignore: [
         (fileName) =>
