@@ -33,14 +33,10 @@ import {
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 loadDotenv({ path: path.resolve(scriptDir, '../.env') });
 
-function sortByName<T extends { name: string }>(items: T[]): T[] {
-  return [...items].sort((left, right) => left.name.localeCompare(right.name));
-}
-
 function logCollections(collections: LocalVariableCollection[]) {
   console.log(`Found ${collections.length} variable collection(s):`);
-  for (const collection of sortByName(collections)) {
-    const modeNames = sortByName(collection.modes).map((mode) => mode.name);
+  for (const collection of collections) {
+    const modeNames = collection.modes.map((mode) => mode.name);
     console.log(`- ${collection.name}`);
     console.log(`    modes: ${modeNames.join(', ') || '(none)'}`);
   }

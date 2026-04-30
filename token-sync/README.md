@@ -41,7 +41,7 @@ From the repo root:
 
 ```bash
 npm install
-npm run sync-figma-variables
+npm run sync
 ```
 
 Expected output (shape; counts may differ):

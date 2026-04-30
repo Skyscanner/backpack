@@ -77,7 +77,7 @@ export function filterLocalTargets(
 
 // Turn any thrown value into a single user-facing error string. Keeps the
 // CI-vs-local hint consistent via `credentialLocation`. Pure — no logging,
-// no `process.exit` — so the caller (sync.ts) decides how to surface it.
+// no `process.exit` — so the caller (index.ts) decides how to surface it.
 export function formatFatalError(error: unknown): string {
   if (error instanceof FigmaApiError) {
     if (error.status === 403 || error.status === 401) {
