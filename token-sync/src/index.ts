@@ -45,6 +45,10 @@ async function main() {
     fileKey,
     targetNames: TARGET_COLLECTION_NAMES,
     outputDir,
+    // Skip rather than abort on cross-library aliases that can't be resolved
+    // against the local payload. The summary lists each skip so a designer
+    // can fix the broken reference in Figma.
+    skipUnresolvedAliases: true,
   });
 
   for (const line of formatBuildSummary(result)) {

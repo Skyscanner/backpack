@@ -34,15 +34,18 @@ import {
   semanticCanvasDefault,
   semanticCycleA,
   semanticSurface,
-} from './dtcg-fixtures';
+} from './__fixtures__/figma-variable';
 import {
   AliasCycleError,
+  DtcgPathCollisionError,
+  MissingModeValueError,
   UnresolvedAliasError,
   addGroupTypes,
   buildDtcgTreeForMode,
   buildLocalVariablesByKey,
   buildPreservedReferenceKeys,
   classifyCollections,
+  describeInvalidVariableName,
   figmaColorToCss,
   inferDtcgType,
   isAliasValue,
@@ -54,8 +57,8 @@ import {
   stripRedundantTypes,
 } from './dtcg-transformer';
 
-import type { DtcgTree, ResolveContext } from './dtcg-types';
 import type { LocalVariable } from './figma-api';
+import type { DtcgTree, ResolveContext } from './types';
 
 
 function makeContext(
@@ -157,6 +160,47 @@ describe('inferDtcgType', () => {
       inferDtcgType(fakeVariable({ resolvedType: 'FLOAT', scopes: ['GAP'] })),
     ).toBe('dimension');
   });
+
+  it('maps FLOAT with OPACITY or LINE_HEIGHT scope to number (not dimension)', () => {
+    expect(
+      inferDtcgType(
+        fakeVariable({ resolvedType: 'FLOAT', scopes: ['OPACITY'] }),
+      ),
+    ).toBe('number');
+    expect(
+      inferDtcgType(
+        fakeVariable({ resolvedType: 'FLOAT', scopes: ['LINE_HEIGHT'] }),
+      ),
+    ).toBe('number');
+  });
+
+  it('recognises common pixel-dimension scopes explicitly', () => {
+    const dimensionScopes = [
+      'CORNER_RADIUS',
+      'FONT_SIZE',
+      'PARAGRAPH_SPACING',
+      'STROKE_FLOAT',
+      'WIDTH_HEIGHT',
+    ] as unknown as LocalVariable['scopes'];
+    for (const scope of dimensionScopes) {
+      expect(
+        inferDtcgType(
+          fakeVariable({ resolvedType: 'FLOAT', scopes: [scope] }),
+        ),
+      ).toBe('dimension');
+    }
+  });
+
+  it('falls back to dimension for ALL_SCOPES / empty / unknown FLOAT scopes', () => {
+    expect(
+      inferDtcgType(
+        fakeVariable({ resolvedType: 'FLOAT', scopes: ['ALL_SCOPES'] }),
+      ),
+    ).toBe('dimension');
+    expect(
+      inferDtcgType(fakeVariable({ resolvedType: 'FLOAT', scopes: [] })),
+    ).toBe('dimension');
+  });
 });
 
 describe('normalizeLiteralValue', () => {
@@ -167,6 +211,8 @@ describe('normalizeLiteralValue', () => {
   it('appends px to numbers for dimension type, otherwise keeps them numeric', () => {
     expect(normalizeLiteralValue(8, 'dimension')).toBe('8px');
     expect(normalizeLiteralValue(400, 'fontWeight')).toBe(400);
+    expect(normalizeLiteralValue(0.5, 'number')).toBe(0.5);
+    expect(normalizeLiteralValue(1.5, 'number')).toBe(1.5);
   });
 
   it('passes strings and booleans through unchanged', () => {
@@ -177,6 +223,14 @@ describe('normalizeLiteralValue', () => {
   it('throws for unsupported shapes', () => {
     expect(() => normalizeLiteralValue({ foo: 1 }, 'color')).toThrow(
       /Unsupported literal value/,
+    );
+  });
+
+  it('throws on NaN or Infinity (JSON.stringify would silently emit null)', () => {
+    expect(() => normalizeLiteralValue(NaN, 'dimension')).toThrow(/Non-finite/);
+    expect(() => normalizeLiteralValue(Infinity, 'number')).toThrow(/Non-finite/);
+    expect(() => normalizeLiteralValue(-Infinity, 'fontWeight')).toThrow(
+      /Non-finite/,
     );
   });
 });
@@ -296,15 +350,30 @@ describe('resolveVariableValue', () => {
     );
   });
 
-  it('throws when the variable has no value for the requested mode', () => {
+  it('throws MissingModeValueError when the variable has no value for the requested mode', () => {
     const context = makeContext();
     const emptyModes = {
       ...primitiveColourPink,
       valuesByMode: {},
     } as LocalVariable;
     expect(() => resolveVariableValue(emptyModes, 'Hex', context)).toThrow(
-      /no value for mode "Hex"/,
+      MissingModeValueError,
     );
+  });
+});
+
+describe('describeInvalidVariableName', () => {
+  it('accepts well-formed slash paths', () => {
+    expect(describeInvalidVariableName('Colour/Pink')).toBeUndefined();
+    expect(describeInvalidVariableName('single')).toBeUndefined();
+  });
+
+  it('rejects empty, slash-only, or malformed names', () => {
+    expect(describeInvalidVariableName('')).toMatch(/empty/);
+    expect(describeInvalidVariableName('/')).toMatch(/empty path segment/);
+    expect(describeInvalidVariableName('/Pink')).toMatch(/empty path segment/);
+    expect(describeInvalidVariableName('Pink/')).toMatch(/empty path segment/);
+    expect(describeInvalidVariableName('A//B')).toMatch(/empty path segment/);
   });
 });
 
@@ -328,6 +397,28 @@ describe('setTokenAtPath', () => {
     const tree: DtcgTree = { Colour: 'oops' as unknown as DtcgTree };
     setTokenAtPath(tree, 'Colour/Pink', { $value: '#ff0', $type: 'color' });
     expect(tree).toEqual({ Colour: { Pink: { $value: '#ff0', $type: 'color' } } });
+  });
+
+  it('throws DtcgPathCollisionError when a prefix is already a leaf token', () => {
+    const tree: DtcgTree = {};
+    setTokenAtPath(tree, 'Colour/Brand', { $value: '#f00', $type: 'color' });
+    expect(() =>
+      setTokenAtPath(tree, 'Colour/Brand/Pink', {
+        $value: '#ff0',
+        $type: 'color',
+      }),
+    ).toThrow(DtcgPathCollisionError);
+  });
+
+  it('throws DtcgPathCollisionError when the leaf position already holds a group', () => {
+    const tree: DtcgTree = {};
+    setTokenAtPath(tree, 'Colour/Brand/Pink', {
+      $value: '#ff0',
+      $type: 'color',
+    });
+    expect(() =>
+      setTokenAtPath(tree, 'Colour/Brand', { $value: '#f00', $type: 'color' }),
+    ).toThrow(DtcgPathCollisionError);
   });
 });
 
@@ -425,6 +516,7 @@ describe('buildDtcgTreeForMode', () => {
       preservedAliasCount: 0,
       inlinedAliasCount: 0,
       skippedVariableCount: 0,
+      skippedVariables: [],
     });
   });
 
@@ -497,7 +589,183 @@ describe('buildDtcgTreeForMode', () => {
       { skipUnresolvedAliases: true },
     );
     expect(output.stats.skippedVariableCount).toBe(1);
+    expect(output.stats.skippedVariables).toEqual([
+      {
+        variableName: 'Broken/Missing',
+        variableId: 'v-sem-broken',
+        variableKey: 'k-sem-broken',
+        reason: 'unresolved-alias',
+        unresolvedAliasId: 'v-does-not-exist',
+      },
+    ]);
     expect(output.tree).toEqual({});
+  });
+
+  it('skips missing-mode-value variables when skipUnresolvedAliases is enabled', () => {
+    // Inline fixture: a variable that has no value for Day mode.
+    const noDay = {
+      id: 'v-no-day',
+      key: 'k-no-day',
+      name: 'Opacity/Hover',
+      variableCollectionId: BACKPACK_COLLECTION_ID,
+      resolvedType: 'FLOAT',
+      valuesByMode: { [BACKPACK_MODE_NIGHT]: 0.8 },
+      scopes: ['OPACITY'],
+      remote: false,
+    } as unknown as LocalVariable;
+    const context = makeContext();
+    const output = buildDtcgTreeForMode(
+      { collection: backpackCollection, role: 'semantic' },
+      'Day',
+      [noDay],
+      context,
+      { skipUnresolvedAliases: true },
+    );
+    expect(output.tree).toEqual({});
+    expect(output.stats.skippedVariableCount).toBe(1);
+    expect(output.stats.skippedVariables[0]).toMatchObject({
+      reason: 'missing-mode-value',
+      variableName: 'Opacity/Hover',
+      missingModeName: 'Day',
+    });
+  });
+
+  it('propagates missing-mode-value errors by default', () => {
+    const noDay = {
+      id: 'v-no-day',
+      key: 'k-no-day',
+      name: 'Opacity/Hover',
+      variableCollectionId: BACKPACK_COLLECTION_ID,
+      resolvedType: 'FLOAT',
+      valuesByMode: { [BACKPACK_MODE_NIGHT]: 0.8 },
+      scopes: ['OPACITY'],
+      remote: false,
+    } as unknown as LocalVariable;
+    const context = makeContext();
+    expect(() =>
+      buildDtcgTreeForMode(
+        { collection: backpackCollection, role: 'semantic' },
+        'Day',
+        [noDay],
+        context,
+      ),
+    ).toThrow(MissingModeValueError);
+  });
+
+  it('skips invalid-name variables when skipUnresolvedAliases is enabled', () => {
+    const bad = {
+      ...primitiveColourPink,
+      id: 'v-bad-name',
+      key: 'k-bad-name',
+      name: 'Colour//Pink',
+    } as LocalVariable;
+    const context = makeContext();
+    const output = buildDtcgTreeForMode(
+      { collection: primitivesCollection, role: 'primitive' },
+      'Hex',
+      [bad],
+      context,
+      { skipUnresolvedAliases: true },
+    );
+    expect(output.tree).toEqual({});
+    expect(output.stats.skippedVariableCount).toBe(1);
+    expect(output.stats.skippedVariables[0]).toMatchObject({
+      reason: 'invalid-name',
+      variableName: 'Colour//Pink',
+    });
+  });
+
+  it('propagates invalid-name errors by default', () => {
+    const bad = {
+      ...primitiveColourPink,
+      name: '/Pink',
+    } as LocalVariable;
+    const context = makeContext();
+    expect(() =>
+      buildDtcgTreeForMode(
+        { collection: primitivesCollection, role: 'primitive' },
+        'Hex',
+        [bad],
+        context,
+      ),
+    ).toThrow(/Invalid variable name/);
+  });
+
+  it('skips path-collision variables and emits the colliding name', () => {
+    const parent = {
+      id: 'v-collide-parent',
+      key: 'k-collide-parent',
+      name: 'Colour/Brand',
+      variableCollectionId: PRIMITIVES_COLLECTION_ID,
+      resolvedType: 'COLOR',
+      valuesByMode: {
+        [PRIMITIVES_MODE_HEX]: { r: 1, g: 0, b: 0, a: 1 },
+      },
+      scopes: ['ALL_SCOPES'],
+      remote: false,
+    } as unknown as LocalVariable;
+    const child = {
+      ...parent,
+      id: 'v-collide-child',
+      key: 'k-collide-child',
+      name: 'Colour/Brand/Pink',
+      valuesByMode: {
+        [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 },
+      },
+    } as unknown as LocalVariable;
+    const context = makeContext();
+    const output = buildDtcgTreeForMode(
+      { collection: primitivesCollection, role: 'primitive' },
+      'Hex',
+      [parent, child],
+      context,
+      { skipUnresolvedAliases: true },
+    );
+    // Parent writes first (sorted alphabetically: "Colour/Brand" < "Colour/Brand/Pink");
+    // child then collides and is skipped.
+    expect(output.stats.skippedVariableCount).toBe(1);
+    expect(output.stats.skippedVariables[0]).toMatchObject({
+      reason: 'path-collision',
+      variableName: 'Colour/Brand/Pink',
+      collidingVariableName: 'Colour/Brand',
+    });
+    // The written parent is still present and well-formed.
+    expect(output.tree).toEqual({
+      Colour: {
+        $type: 'color',
+        Brand: { $value: '#ff0000' },
+      },
+    });
+  });
+
+  it('propagates path-collision errors by default', () => {
+    const parent = {
+      id: 'v-collide-parent',
+      key: 'k-collide-parent',
+      name: 'Colour/Brand',
+      variableCollectionId: PRIMITIVES_COLLECTION_ID,
+      resolvedType: 'COLOR',
+      valuesByMode: {
+        [PRIMITIVES_MODE_HEX]: { r: 1, g: 0, b: 0, a: 1 },
+      },
+      scopes: ['ALL_SCOPES'],
+      remote: false,
+    } as unknown as LocalVariable;
+    const child = {
+      ...parent,
+      id: 'v-collide-child',
+      key: 'k-collide-child',
+      name: 'Colour/Brand/Pink',
+    } as unknown as LocalVariable;
+    const context = makeContext();
+    expect(() =>
+      buildDtcgTreeForMode(
+        { collection: primitivesCollection, role: 'primitive' },
+        'Hex',
+        [parent, child],
+        context,
+      ),
+    ).toThrow(DtcgPathCollisionError);
   });
 
   it('propagates unresolved alias errors by default', () => {

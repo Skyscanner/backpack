@@ -1,0 +1,640 @@
+{
+  "Canvas": {
+    "Contrast": {
+      "$value": "{Neutral.Grey 10}"
+    },
+    "Default": {
+      "$value": "{Neutral.White}"
+    },
+    "$type": "color"
+  },
+  "Component": {
+    "Badge": {
+      "Colour": {
+        "bg-default": {
+          "$value": "{Neutral.Grey 10}"
+        },
+        "bg-inverse": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-outline": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "bg-subtle": {
+          "$value": "{Neutral.Grey 10}"
+        },
+        "stroke-outline": {
+          "$value": "{Neutral.White}"
+        },
+        "$type": "color"
+      },
+      "Dimension": {
+        "padding-horizontal-default": {
+          "$value": "{Spacing.md}"
+        },
+        "padding-horizontal-subtle": {
+          "$value": "{Spacing.md}"
+        },
+        "$type": "dimension"
+      },
+      "Typography": {
+        "tmp-badge-label": {
+          "$value": "14px"
+        },
+        "tmp-badge-line-height": {
+          "$value": "0px"
+        },
+        "$type": "dimension"
+      }
+    },
+    "Button": {
+      "Colour": {
+        "bg-destructive": {
+          "$value": "{Neutral.Grey 20}"
+        },
+        "bg-destructive-pressed": {
+          "$value": "{Colour.Berry}"
+        },
+        "bg-disabled": {
+          "$value": "{Neutral.Grey 20}"
+        },
+        "bg-feature-pressed": {
+          "$value": "{Colour.Sky Blue 85}"
+        },
+        "bg-featured": {
+          "$value": "{Colour.Sky Blue}"
+        },
+        "bg-footer": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "bg-footer-pressed": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "bg-primary": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "bg-primaryOnDark": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-primaryOnDark-pressed": {
+          "$value": "{Neutral.Grey 30}"
+        },
+        "bg-primaryOnLight": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-primaryOnLight-pressed": {
+          "$value": "{Colour.Dark Sky 85}"
+        },
+        "bg-secondary": {
+          "$value": "{Neutral.Grey 20}"
+        },
+        "bg-secondary-pressed": {
+          "$value": "{Neutral.Grey 30}"
+        },
+        "bg-secondaryOnContrast": {
+          "$value": "{Neutral.Grey 20}"
+        },
+        "bg-secondaryOnContrast-pressed": {
+          "$value": "{Neutral.Grey 30}"
+        },
+        "bg-secondaryOnDark": {
+          "$value": "{Alpha.White Alpha 10}"
+        },
+        "bg-secondaryOnDark-disabled": {
+          "$value": "{Neutral.Dark Grey 00}"
+        },
+        "bg-secondaryOnDark-pressed": {
+          "$value": "{Colour.Midnight Sky}"
+        },
+        "text-disruptive": {
+          "$value": "{Colour.Berry}"
+        },
+        "text-feature": {
+          "$value": "{Neutral.White}"
+        },
+        "text-footer": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "text-linkOnDark": {
+          "$value": "{Neutral.White}"
+        },
+        "text-secondary": {
+          "$value": "{Neutral.Charcoal}"
+        },
+        "$type": "color"
+      },
+      "Dimension": {
+        "min-height-default": {
+          "$value": "{Heights.36}"
+        },
+        "min-height-large": {
+          "$value": "48px"
+        },
+        "min-weight-large": {
+          "$value": "48px"
+        },
+        "padding-horizontal-default": {
+          "$value": "16px"
+        },
+        "padding-horizontal-large": {
+          "$value": "16px"
+        },
+        "Radius": {
+          "$value": "{Radius.sm}"
+        },
+        "$type": "dimension"
+      },
+      "Typography": {
+        "tmp-default-label": {
+          "$value": "16px"
+        },
+        "$type": "dimension"
+      }
+    },
+    "Card Button": {
+      "contained-fill": {
+        "$value": "{Alpha.White Alpha 80}"
+      },
+      "$type": "color"
+    },
+    "Chip-group-filter": {
+      "Colour": {
+        "bg-icon-hover-on-image": {
+          "$value": "{Neutral.Grey 10}"
+        },
+        "bg-icon-off-on-image": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-icon-on-default": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "bg-icon-on-on-dark": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-icon-on-on-image": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "stroke-icon-hover-default": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "stroke-icon-hover-on-dark": {
+          "$value": "{Neutral.White}"
+        },
+        "stroke-icon-off-default": {
+          "$value": "{Neutral.Grey 30}"
+        },
+        "stroke-icon-off-on-dark": {
+          "$value": "{Alpha.White Alpha 50}"
+        },
+        "$type": "color"
+      },
+      "Dimensions": {
+        "min-height": {
+          "$value": "{Heights.36}"
+        },
+        "$type": "dimension"
+      }
+    },
+    "Chip": {
+      "Colour": {
+        "bg-default-dismissible-hover": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "bg-default-on": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "bg-disabled": {
+          "$value": "{Neutral.Grey 20}"
+        },
+        "bg-onContrast-hover": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-onContrast-on": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "bg-onDark-dismissible-hover": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-onDark-hover": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-onDark-off": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "bg-onDark-on": {
+          "$value": "{Neutral.White}"
+        },
+        "bg-onImage-dismissible-hover": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "bg-onImage-on": {
+          "$value": "{Neutral.Grey 10}"
+        },
+        "border-default-dismissible-hover": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "border-default-hover": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "border-default-off": {
+          "$value": "{Neutral.Grey 30}"
+        },
+        "border-onContrast-off": {
+          "$value": "{Neutral.White}"
+        },
+        "border-onContrast-on": {
+          "$value": "{Colour.Dark Sky}"
+        },
+        "border-onDark-disimissible-hover": {
+          "$value": "{Neutral.White}"
+        },
+        "border-onDark-hover": {
+          "$value": "{Neutral.White}"
+        },
+        "border-onDark-off": {
+          "$value": "{Alpha.White Alpha 50}"
+        },
+        "stroke-Off-on-canvas-contrast (new)": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "text-default-dismissible-hover": {
+          "$value": "{Neutral.White}"
+        },
+        "text-dismissible-on-icon": {
+          "$value": "{Alpha.White Alpha 50}"
+        },
+        "text-on": {
+          "$value": "{Neutral.White}"
+        },
+        "text-on image": {
+          "$value": "{Neutral.White}"
+        },
+        "text-on-image-dismissible-icon": {
+          "$value": "{Neutral.Grey 40}"
+        },
+        "text-onDark": {
+          "$value": "{Neutral.Charcoal}"
+        },
+        "text-onDark-dismisisble-hover": {
+          "$value": "{Neutral.Charcoal}"
+        },
+        "text-onDark-dismisisble-icon": {
+          "$value": "{Neutral.Grey 40}"
+        },
+        "$type": "color"
+      },
+      "Dimension": {
+        "min-height-width": {
+          "$value": "{Heights.32}"
+        },
+        "radius": {
+          "$value": "{Radius.sm}"
+        },
+        "$type": "dimension"
+      }
+    },
+    "Date Selector": {
+      "cheapest-month-highlight": {
+        "$value": "{Colour.Dark Sky 85}"
+      },
+      "flexible-date-card": {
+        "$value": "{Neutral.Grey 10}"
+      },
+      "$type": "color"
+    },
+    "Dimension": {
+      "padding-veritcal": {
+        "$value": "0px"
+      },
+      "$type": "dimension"
+    },
+    "Info Banner": {
+      "default": {
+        "$value": "{Neutral.Grey 10}"
+      },
+      "on-contrast": {
+        "$value": "{Neutral.White}"
+      },
+      "$type": "color"
+    },
+    "iOS Tab-bar-fill": {
+      "$value": "{Alpha.White Alpha 80}",
+      "$type": "color"
+    },
+    "Map": {
+      "cluster-pin": {
+        "$value": "{Colour.Dark Sky}"
+      },
+      "cluster-pin-previous-selection": {
+        "$value": "{Colour.Baby Blue 40}"
+      },
+      "marker-viewed": {
+        "$value": "{Alpha.White Alpha 80}"
+      },
+      "poi-pin": {
+        "$value": "{Colour.Purple}"
+      },
+      "previous-selection": {
+        "$value": "{Colour.Baby Blue 20}"
+      },
+      "$type": "color"
+    },
+    "Navigation Tabs": {
+      "hover": {
+        "$value": "{Colour.Dark Sky 85}"
+      },
+      "outline": {
+        "$value": "{Alpha.White Alpha 20}"
+      },
+      "selected": {
+        "$value": "{Colour.Sky Blue 85}"
+      },
+      "$type": "color"
+    },
+    "Rating Bar": {
+      "Default": {
+        "$value": "{Neutral.Grey 20}"
+      },
+      "On Contrast": {
+        "$value": "{Neutral.White}"
+      },
+      "$type": "color"
+    },
+    "Segmented Control": {
+      "canvas-default": {
+        "$value": "{Neutral.Grey 10}"
+      },
+      "surface-contrast": {
+        "$value": "{Alpha.White Alpha 10}"
+      },
+      "surface-contrast-on": {
+        "$value": "{Colour.Sky Blue 85}"
+      },
+      "$type": "color"
+    },
+    "Shadow": {
+      "Large": {
+        "blur": {
+          "$value": "14px",
+          "$type": "dimension"
+        },
+        "color": {
+          "$value": "{Alpha.Charcoal Alpha 25}",
+          "$type": "color"
+        },
+        "position-x": {
+          "$value": "0px",
+          "$type": "dimension"
+        },
+        "position-y": {
+          "$value": "4px",
+          "$type": "dimension"
+        },
+        "spread": {
+          "$value": "0px",
+          "$type": "dimension"
+        }
+      },
+      "Small": {
+        "blur": {
+          "$value": "3px",
+          "$type": "dimension"
+        },
+        "color": {
+          "$value": "{Alpha.Charcoal Alpha 25}",
+          "$type": "color"
+        },
+        "position-x": {
+          "$value": "0px",
+          "$type": "dimension"
+        },
+        "position-y": {
+          "$value": "1px",
+          "$type": "dimension"
+        },
+        "spread": {
+          "$value": "0px",
+          "$type": "dimension"
+        }
+      },
+      "XL": {
+        "blur": {
+          "$value": "50px",
+          "$type": "dimension"
+        },
+        "color": {
+          "$value": "{Alpha.Charcoal Alpha 25}",
+          "$type": "color"
+        },
+        "position-x": {
+          "$value": "0px",
+          "$type": "dimension"
+        },
+        "position-y": {
+          "$value": "12px",
+          "$type": "dimension"
+        },
+        "spread": {
+          "$value": "0px",
+          "$type": "dimension"
+        }
+      }
+    },
+    "Skeleton": {
+      "on-dark": {
+        "$value": "{Alpha.White Alpha 10}"
+      },
+      "$type": "color"
+    },
+    "Switch": {
+      "android-switch-default-disabled": {
+        "$value": "{Alpha.Black Alpha 20}"
+      },
+      "android-switch-knob-disabled": {
+        "$value": "{Alpha.White Alpha 50}"
+      },
+      "android-switch-on-contrast-fill-disabled": {
+        "$value": "{Alpha.White Alpha 10}"
+      },
+      "android-switch-on-contrast-off": {
+        "$value": "{Alpha.White Alpha 80}"
+      },
+      "ios-switch-default-off": {
+        "$value": "{Neutral.Grey 40}"
+      },
+      "ios-switch-disabled": {
+        "$value": "{Neutral.Grey 20}"
+      },
+      "ios-switch-on-contrast-off": {
+        "$value": "{Alpha.White Alpha 20}"
+      },
+      "$type": "color"
+    },
+    "Trip Advisor": {
+      "$value": "#00aa6c",
+      "$type": "color"
+    }
+  },
+  "Core": {
+    "Accent": {
+      "$value": "{Colour.Sky Blue}"
+    },
+    "Eco": {
+      "$value": "{Colour.Eco Green}"
+    },
+    "Primary": {
+      "$value": "{Colour.Dark Sky}"
+    },
+    "$type": "color"
+  },
+  "Other": {
+    "Line": {
+      "$value": "{Neutral.Grey 30}"
+    },
+    "Line On Dark": {
+      "$value": "{Alpha.White Alpha 50}"
+    },
+    "Overlay": {
+      "$value": "{Alpha.Black Alpha 20}"
+    },
+    "Scrim": {
+      "$value": "{Alpha.Black Alpha 70}"
+    },
+    "Shadow": {
+      "$value": "{Alpha.Charcoal Alpha 25}"
+    },
+    "$type": "color"
+  },
+  "Status": {
+    "Danger Fill": {
+      "$value": "{Colour.Muted Pink}"
+    },
+    "Danger Spot": {
+      "$value": "{Colour.Berry}"
+    },
+    "Success Fill": {
+      "$value": "{Colour.Muted Green}"
+    },
+    "Success Spot": {
+      "$value": "{Colour.Green}"
+    },
+    "Warning Fill": {
+      "$value": "{Colour.Muted Yellow}"
+    },
+    "Warning Spot": {
+      "$value": "{Colour.Amber}"
+    },
+    "$type": "color"
+  },
+  "Surface": {
+    "🚧 Promo": {
+      "$value": "{Colour.Sky Blue}"
+    },
+    "Contrast": {
+      "$value": "{Colour.Dark Sky}"
+    },
+    "Default": {
+      "$value": "{Neutral.White}"
+    },
+    "Elevated": {
+      "$value": "{Neutral.White}"
+    },
+    "Hero": {
+      "$value": "{Colour.Sky Blue}"
+    },
+    "Highlight": {
+      "$value": "{Neutral.Grey 20}"
+    },
+    "Low Contrast": {
+      "$value": "{Neutral.Grey 05}"
+    },
+    "Subtle": {
+      "$value": "{Colour.Baby Blue}"
+    },
+    "Tint": {
+      "$value": "{Alpha.White Alpha 10}"
+    },
+    "$type": "color"
+  },
+  "Text": {
+    "💀 DEPRECATED Link": {
+      "$value": "{Colour.Sky Blue}"
+    },
+    "🚧 Hero": {
+      "$value": "{Colour.Sky Blue}"
+    },
+    "Disabled": {
+      "$value": "{Alpha.Black Alpha 20}"
+    },
+    "Disabled on Dark": {
+      "$value": "{Alpha.White Alpha 50}"
+    },
+    "Error": {
+      "$value": "{Colour.Berry}"
+    },
+    "Inverse": {
+      "$value": "{Neutral.White}"
+    },
+    "On Dark": {
+      "$value": "{Neutral.White}"
+    },
+    "On Light": {
+      "$value": "{Neutral.Charcoal}"
+    },
+    "Primary": {
+      "$value": "{Neutral.Charcoal}"
+    },
+    "Secondary": {
+      "$value": "{Neutral.Grey 40}"
+    },
+    "Success": {
+      "$value": "{Colour.Green}"
+    },
+    "$type": "color"
+  },
+  "Typography": {
+    "Family": {
+      "Sans Serif": {
+        "$value": "Skyscanner Relative"
+      },
+      "Serif": {
+        "$value": "Larken"
+      },
+      "$type": "fontFamily"
+    },
+    "Kerning": {
+      "Default": {
+        "$value": "0px"
+      },
+      "Loose": {
+        "$value": "0px"
+      },
+      "Tight": {
+        "$value": "0px"
+      },
+      "$type": "dimension"
+    },
+    "Style": {
+      "Body": {
+        "$value": 400,
+        "$type": "fontWeight"
+      },
+      "Headline": {
+        "$value": 700,
+        "$type": "fontWeight"
+      },
+      "Hero": {
+        "$value": 900,
+        "$type": "fontWeight"
+      },
+      "Label": {
+        "$value": "700px",
+        "$type": "dimension"
+      },
+      "Subhead": {
+        "$value": "300px",
+        "$type": "dimension"
+      }
+    }
+  }
+}

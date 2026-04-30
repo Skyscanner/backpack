@@ -17,19 +17,92 @@
  */
 
 import { mkdir, rm, writeFile } from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
+import process from 'node:process';
 
 import type {
   DtcgManifest,
   DtcgManifestFileRecord,
   DtcgModeOutput,
-} from './dtcg-types';
+} from './types';
 
 export function slugify(name: string): string {
   return name
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
+}
+
+// Guard against filenames that would silently collide or land at `.json`
+// (empty slug). Both forms would otherwise let one mode's output overwrite
+// another on disk.
+export function assertUniqueFileNames(manifest: DtcgManifest): void {
+  const owners = new Map<string, DtcgManifestFileRecord>();
+  for (const file of manifest.files) {
+    const baseName = file.fileName.replace(/\.json$/, '');
+    if (baseName === '' || baseName === '.') {
+      throw new Error(
+        `DTCG output for ${file.collectionName} / ${file.modeName} slugged to an empty ` +
+          `filename. Rename the collection/mode so it contains at least one a-z0-9 character.`,
+      );
+    }
+    const existing = owners.get(file.fileName);
+    if (existing) {
+      throw new Error(
+        `DTCG output filename collision: both "${existing.collectionName} / ${existing.modeName}" and ` +
+          `"${file.collectionName} / ${file.modeName}" resolve to "${file.fileName}". ` +
+          `Rename one of the collections or modes in Figma to disambiguate.`,
+      );
+    }
+    owners.set(file.fileName, file);
+  }
+}
+
+// Refuse to run `rm -rf` on paths that are almost certainly wrong —
+// filesystem roots, the user's home, the current working directory or any of
+// its ancestors. The default output dir sits inside the repo so this only
+// bites if someone explicitly overrides `DTCG_OUTPUT_DIR`.
+export function assertSafeOutputDir(outputDir: string): void {
+  if (!outputDir || !outputDir.trim()) {
+    throw new Error('DTCG output directory is empty.');
+  }
+  const absolute = path.resolve(outputDir);
+  const normalized = path.normalize(absolute);
+
+  // Root of a filesystem: posix "/", windows "C:\". path.parse(root).root
+  // equals the input when the path is a root.
+  if (path.parse(normalized).root === normalized) {
+    throw new Error(
+      `Refusing to use filesystem root "${normalized}" as the DTCG output directory.`,
+    );
+  }
+
+  const homeDir = os.homedir();
+  if (homeDir && normalized === path.normalize(homeDir)) {
+    throw new Error(
+      `Refusing to use the user home directory "${normalized}" as the DTCG output directory.`,
+    );
+  }
+
+  const cwd = path.normalize(process.cwd());
+  if (normalized === cwd) {
+    throw new Error(
+      `Refusing to use the current working directory "${normalized}" as the DTCG output directory.`,
+    );
+  }
+  const relativeFromOutput = path.relative(normalized, cwd);
+  // cwd sits *inside* outputDir → outputDir is an ancestor of cwd. `rm -rf`
+  // on an ancestor would wipe the project itself.
+  if (
+    relativeFromOutput &&
+    !relativeFromOutput.startsWith('..') &&
+    !path.isAbsolute(relativeFromOutput)
+  ) {
+    throw new Error(
+      `Refusing to use an ancestor of the current working directory ("${normalized}") as the DTCG output directory.`,
+    );
+  }
 }
 
 // Derive the output filename for one mode. Single-mode collections drop the
@@ -48,8 +121,12 @@ export function dtcgFileNameFor(
 
 // Build the manifest records in the same order as the outputs so callers
 // control determinism. Pure — useful for unit tests.
+//
+// The Figma file key is deliberately NOT included: this directory is
+// committed to the open-source repo, and the key identifies the private
+// source file. Downstream stages (style-dictionary etc.) only read the
+// token files, not the manifest.
 export function buildManifest(
-  fileKey: string,
   outputs: DtcgModeOutput[],
   modeCounts: ReadonlyMap<string, number>,
   generatedAt: string = new Date().toISOString(),
@@ -74,8 +151,6 @@ export function buildManifest(
   });
 
   return {
-    fileKey,
-    sourceFileUrl: `https://www.figma.com/design/${fileKey}`,
     generatedAt,
     files,
   };
@@ -104,21 +179,20 @@ export function stringifyDtcg(value: unknown): string {
 // Write outputs + manifest to `outputDir`. Clears the directory first so
 // stale files from a previous run are not left behind. Returns the manifest.
 export async function writeDtcgFiles(
-  fileKey: string,
   outputs: DtcgModeOutput[],
   outputDir: string,
   now: () => Date = () => new Date(),
 ): Promise<DtcgManifest> {
-  await rm(outputDir, { force: true, recursive: true });
-  await mkdir(outputDir, { recursive: true });
+  // Guard the destructive `rm` below against obviously-wrong output dirs,
+  // and fail fast on filename collisions so we never silently overwrite.
+  assertSafeOutputDir(outputDir);
 
   const modeCounts = countModesPerCollection(outputs);
-  const manifest = buildManifest(
-    fileKey,
-    outputs,
-    modeCounts,
-    now().toISOString(),
-  );
+  const manifest = buildManifest(outputs, modeCounts, now().toISOString());
+  assertUniqueFileNames(manifest);
+
+  await rm(outputDir, { force: true, recursive: true });
+  await mkdir(outputDir, { recursive: true });
 
   // Issue all token-file writes in parallel — they're independent siblings
   // under `outputDir`. Awaiting in-loop would serialize them needlessly.
