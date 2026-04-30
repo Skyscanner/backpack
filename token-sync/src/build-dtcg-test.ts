@@ -23,12 +23,12 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
+import { buildFixtureResponse } from './__fixtures__/figma-variable';
 import {
   buildDtcg,
   buildDtcgOutputs,
   formatBuildSummary,
 } from './build-dtcg';
-import { buildFixtureResponse } from './dtcg-fixtures';
 import { TARGET_COLLECTION_NAMES } from './sync-helpers';
 
 import type { BuildDtcgResult } from './build-dtcg';
@@ -131,7 +131,6 @@ describe('buildDtcg (full pipeline with injected api)', () => {
     expect(result.outputDir).toBe(tempDir);
     expect(result.classified).toHaveLength(2);
     expect(result.outputs).toHaveLength(3);
-    expect(result.manifest.fileKey).toBe('file-123');
     expect(result.manifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
     expect(result.manifest.files.map((f) => f.fileName).sort()).toEqual([
       'backpack.day.json',
@@ -166,13 +165,12 @@ describe('formatBuildSummary', () => {
             preservedAliasCount: 5,
             inlinedAliasCount: 2,
             skippedVariableCount: 0,
+            skippedVariables: [],
           },
         },
       ],
       missingNames: [],
       manifest: {
-        fileKey: 'file-123',
-        sourceFileUrl: 'https://www.figma.com/design/file-123',
         generatedAt: '2026-04-29T12:00:00.000Z',
         files: [
           {
@@ -202,7 +200,7 @@ describe('formatBuildSummary', () => {
     ]);
   });
 
-  it('reports skipped variables when present', () => {
+  it('reports skipped variables grouped by missing alias id', () => {
     const lines = formatBuildSummary(
       fakeResult({
         outputs: [
@@ -216,6 +214,51 @@ describe('formatBuildSummary', () => {
               preservedAliasCount: 5,
               inlinedAliasCount: 2,
               skippedVariableCount: 2,
+              skippedVariables: [
+                {
+                  variableName: 'Component/Button/bg-default',
+                  variableId: 'VariableID:1234:5678',
+                  variableKey: 'source-key-1',
+                  reason: 'unresolved-alias',
+                  unresolvedAliasId: 'VariableID:1111:2222',
+                },
+                {
+                  variableName: 'Component/Button/bg-default',
+                  variableId: 'VariableID:1234:5678',
+                  variableKey: 'source-key-1',
+                  reason: 'unresolved-alias',
+                  unresolvedAliasId: 'VariableID:1111:2222',
+                },
+                {
+                  variableName: 'Component/Chip/bg-active',
+                  variableId: 'VariableID:9876:5432',
+                  variableKey: 'source-key-2',
+                  reason: 'unresolved-alias',
+                  unresolvedAliasId: 'VariableID:3333:4444',
+                  unresolvedAt: 'Component/Chip/internal',
+                },
+              ],
+            },
+          },
+          {
+            collectionName: 'Backpack',
+            modeName: 'Night',
+            role: 'semantic',
+            tree: {},
+            stats: {
+              tokenCount: 8,
+              preservedAliasCount: 5,
+              inlinedAliasCount: 2,
+              skippedVariableCount: 1,
+              skippedVariables: [
+                {
+                  variableName: 'Component/Button/bg-default',
+                  variableId: 'VariableID:1234:5678',
+                  variableKey: 'source-key-1',
+                  reason: 'unresolved-alias',
+                  unresolvedAliasId: 'VariableID:1111:2222',
+                },
+              ],
             },
           },
         ],
@@ -224,12 +267,70 @@ describe('formatBuildSummary', () => {
     expect(lines).toContain(
       '- Backpack / Day: 8 tokens (5 preserved, 2 inlined, 2 skipped)',
     );
+    expect(lines).toContain(
+      'Skipped 3 variable instance(s) due to unresolved aliases across 2 missing target variable(s) (likely cross-library or deleted references):',
+    );
+    expect(lines).toContain(
+      '  - missing VariableID:1111:2222 ← [Backpack] Component/Button/bg-default (modes: Day, Night)',
+    );
+    expect(lines).toContain(
+      '  - missing VariableID:3333:4444 ← [Backpack] Component/Chip/bg-active (modes: Day)',
+    );
   });
 
   it('includes a warning when target collections are missing', () => {
     const lines = formatBuildSummary(fakeResult({ missingNames: ['VDL'] }));
     expect(lines.some((line) => line.includes('Warning') && line.includes('VDL'))).toBe(
       true,
+    );
+  });
+
+  it('groups skipped variables by reason with separate sections', () => {
+    const lines = formatBuildSummary(
+      fakeResult({
+        outputs: [
+          {
+            collectionName: 'Backpack',
+            modeName: 'Day',
+            role: 'semantic',
+            tree: {},
+            stats: {
+              tokenCount: 0,
+              preservedAliasCount: 0,
+              inlinedAliasCount: 0,
+              skippedVariableCount: 2,
+              skippedVariables: [
+                {
+                  variableName: 'Opacity/Hover',
+                  variableId: 'v-opacity-hover',
+                  variableKey: 'k-opacity-hover',
+                  reason: 'missing-mode-value',
+                  missingModeName: 'Day',
+                },
+                {
+                  variableName: 'Colour/Brand/Pink',
+                  variableId: 'v-brand-pink',
+                  variableKey: 'k-brand-pink',
+                  reason: 'path-collision',
+                  collidingVariableName: 'Colour/Brand',
+                },
+              ],
+            },
+          },
+        ],
+      }),
+    );
+    expect(lines).toContain(
+      'Skipped 1 variable instance(s) with no value assigned for the requested mode:',
+    );
+    expect(lines).toContain(
+      '  - missing value for mode "Day" ← [Backpack] Opacity/Hover (modes: Day)',
+    );
+    expect(lines).toContain(
+      "Skipped 1 variable instance(s) due to DTCG path collisions with another variable's name:",
+    );
+    expect(lines).toContain(
+      '  - collides with "Colour/Brand" ← [Backpack] Colour/Brand/Pink (modes: Day)',
     );
   });
 });

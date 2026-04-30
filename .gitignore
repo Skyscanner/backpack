@@ -32,6 +32,3 @@ yarn.lock
 .claude/skills/openspec-*
 openspec
 
-# token-sync build output — regenerated on demand from Figma
-/token-sync/tokens
-

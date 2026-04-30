@@ -59,8 +59,10 @@ export class FigmaApi {
     if (!fileKey || !fileKey.trim()) {
       throw new Error('FigmaApi: fileKey is required');
     }
+    // Figma file keys are alphanumeric in practice; encode anyway so a value
+    // with stray whitespace or special characters can't break the URL.
     return this.request<GetLocalVariablesResponse>(
-      `/files/${fileKey}/variables/local`,
+      `/files/${encodeURIComponent(fileKey)}/variables/local`,
     );
   }
 

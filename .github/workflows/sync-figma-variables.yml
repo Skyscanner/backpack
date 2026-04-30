@@ -32,4 +32,4 @@ jobs:
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
-        run: npm run build:dtcg
+        run: npm run sync

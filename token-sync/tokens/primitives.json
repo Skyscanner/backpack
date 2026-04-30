@@ -1,0 +1,336 @@
+{
+  "Alpha": {
+    "Black Alpha 20": {
+      "$value": "rgba(0, 0, 0, 0.2)"
+    },
+    "Black Alpha 50": {
+      "$value": "rgba(0, 0, 0, 0.5)"
+    },
+    "Black Alpha 70": {
+      "$value": "rgba(0, 0, 0, 0.7)"
+    },
+    "Black Alpha 80": {
+      "$value": "rgba(0, 0, 0, 0.8)"
+    },
+    "Charcoal Alpha 25": {
+      "$value": "rgba(22, 22, 22, 0.25)"
+    },
+    "Transparent": {
+      "$value": "rgba(255, 255, 255, 0)"
+    },
+    "White Alpha 10": {
+      "$value": "rgba(255, 255, 255, 0.1)"
+    },
+    "White Alpha 20": {
+      "$value": "rgba(255, 255, 255, 0.2)"
+    },
+    "White Alpha 50": {
+      "$value": "rgba(255, 255, 255, 0.5)"
+    },
+    "White Alpha 80": {
+      "$value": "rgba(255, 255, 255, 0.8)"
+    },
+    "$type": "color"
+  },
+  "Colour": {
+    "Amber": {
+      "$value": "#f55d42"
+    },
+    "Baby Blue": {
+      "$value": "#e3f0ff"
+    },
+    "Baby Blue 20": {
+      "$value": "#cfe4ff"
+    },
+    "Baby Blue 30": {
+      "$value": "#b4d7ff"
+    },
+    "Baby Blue 40": {
+      "$value": "#94c3ff"
+    },
+    "Berry": {
+      "$value": "#e70866"
+    },
+    "Berry 75": {
+      "$value": "#c80456"
+    },
+    "Brand": {
+      "Blue Bright": {
+        "$value": "#a1eeff"
+      },
+      "Blue Muted": {
+        "$value": "#d9f8ff"
+      },
+      "Green Bright": {
+        "$value": "#93ffde"
+      },
+      "Orange": {
+        "$value": "#ff7b59"
+      },
+      "Pink": {
+        "$value": "#ffa3e5"
+      },
+      "Yellow": {
+        "$value": "#feeb87"
+      }
+    },
+    "Bright Berry": {
+      "$value": "#ff649c"
+    },
+    "Bright Blue": {
+      "$value": "#84e9ff"
+    },
+    "Bright Blue 20": {
+      "$value": "#d1f7ff"
+    },
+    "Bright Green": {
+      "$value": "#62f1c6"
+    },
+    "Bright Green 20": {
+      "$value": "#b1ffe7"
+    },
+    "Bright Green 30": {
+      "$value": "#93ffde"
+    },
+    "Bright Pink": {
+      "$value": "#ffcadd"
+    },
+    "Bright Yellow": {
+      "$value": "#fbf1bb"
+    },
+    "Dark Blue 100": {
+      "$value": "#002b4b"
+    },
+    "Dark Sky": {
+      "$value": "#05203c"
+    },
+    "Dark Sky 85": {
+      "$value": "#154679"
+    },
+    "Eco Green": {
+      "$value": "#0fa1a9"
+    },
+    "Green": {
+      "$value": "#0c838a"
+    },
+    "Light Blue": {
+      "$value": "#a1eeff"
+    },
+    "Midnight Sky": {
+      "$value": "#04182d"
+    },
+    "Muted Blue": {
+      "$value": "#d9f8ff"
+    },
+    "Muted Green": {
+      "$value": "#d4fff2"
+    },
+    "Muted Pink": {
+      "$value": "#ffe9f9"
+    },
+    "Muted Yellow": {
+      "$value": "#fff7cf"
+    },
+    "Orange": {
+      "$value": "#ff7b59"
+    },
+    "Pink": {
+      "$value": "#ffa3e5"
+    },
+    "Purple": {
+      "$value": "#8e47ba"
+    },
+    "Sky Blue": {
+      "$value": "#0062e3"
+    },
+    "Sky Blue 85": {
+      "$value": "#024daf"
+    },
+    "Twilight": {
+      "$value": "#054184"
+    },
+    "Twilight 85": {
+      "$value": "#024daf"
+    },
+    "Yellow": {
+      "$value": "#feeb87"
+    },
+    "$type": "color"
+  },
+  "Heights": {
+    "20": {
+      "$value": "20px"
+    },
+    "24": {
+      "$value": "24px"
+    },
+    "32": {
+      "$value": "32px"
+    },
+    "36": {
+      "$value": "36px"
+    },
+    "40": {
+      "$value": "40px"
+    },
+    "44": {
+      "$value": "44px"
+    },
+    "48": {
+      "$value": "48px"
+    },
+    "52": {
+      "$value": "52px"
+    },
+    "56": {
+      "$value": "56px"
+    },
+    "64": {
+      "$value": "64px"
+    },
+    "base": {
+      "$value": "16px"
+    },
+    "$type": "dimension"
+  },
+  "Neutral": {
+    "Charcoal": {
+      "$value": "#161616"
+    },
+    "Dark Grey 00": {
+      "$value": "#0b121d"
+    },
+    "Dark Grey 10": {
+      "$value": "#010913"
+    },
+    "Dark Grey 20": {
+      "$value": "#131d2b"
+    },
+    "Dark Grey 25": {
+      "$value": "#243346"
+    },
+    "Dark Grey 30": {
+      "$value": "#44505f"
+    },
+    "Dark Grey 40": {
+      "$value": "#bdc4cb"
+    },
+    "Grey 05": {
+      "$value": "#f7f9fb"
+    },
+    "Grey 10": {
+      "$value": "#eff3f8"
+    },
+    "Grey 20": {
+      "$value": "#e0e4e9"
+    },
+    "Grey 30": {
+      "$value": "#c1c7cf"
+    },
+    "Grey 40": {
+      "$value": "#626971"
+    },
+    "Night": {
+      "Night Berry": {
+        "$value": "#ff649c"
+      },
+      "Night Blue": {
+        "$value": "#84e9ff"
+      },
+      "Night Green Fill": {
+        "$value": "#b1ffe7"
+      },
+      "Night Green Spot": {
+        "$value": "#62f1c6"
+      },
+      "Night Grey 10": {
+        "$value": "#010913"
+      },
+      "Night Grey 20": {
+        "$value": "#131d2b"
+      },
+      "Night Grey 25": {
+        "$value": "#243346"
+      },
+      "Night Grey 30": {
+        "$value": "#44505f"
+      },
+      "Night Grey 40": {
+        "$value": "#bdc4cb"
+      },
+      "Night Pink": {
+        "$value": "#ffcadd"
+      },
+      "Night Sky": {
+        "$value": "#054184"
+      },
+      "Night Yellow Fill": {
+        "$value": "#fbf1bb"
+      }
+    },
+    "White": {
+      "$value": "#ffffff"
+    },
+    "$type": "color"
+  },
+  "Radius": {
+    "full": {
+      "$value": "100px"
+    },
+    "lg": {
+      "$value": "24px"
+    },
+    "md": {
+      "$value": "12px"
+    },
+    "nav-tabs": {
+      "$value": "18px"
+    },
+    "None": {
+      "$value": "0px"
+    },
+    "sm": {
+      "$value": "8px"
+    },
+    "xs": {
+      "$value": "4px"
+    },
+    "$type": "dimension"
+  },
+  "Spacing": {
+    "base": {
+      "$value": "16px"
+    },
+    "lg": {
+      "$value": "24px"
+    },
+    "md": {
+      "$value": "8px"
+    },
+    "none": {
+      "$value": "0px"
+    },
+    "sm": {
+      "$value": "4px"
+    },
+    "xl": {
+      "$value": "32px"
+    },
+    "xs": {
+      "$value": "2px"
+    },
+    "xxl": {
+      "$value": "40px"
+    },
+    "xxs": {
+      "$value": "1px"
+    },
+    "xxxl": {
+      "$value": "64px"
+    },
+    "xxxxl": {
+      "$value": "96px"
+    },
+    "$type": "dimension"
+  }
+}

@@ -42,7 +42,7 @@ From the repo root:
 
 ```bash
 npm install
-npm run build:dtcg
+npm run sync
 ```
 
 > Future: a `build:style-dictionary` script will consume these DTCG files and
@@ -62,14 +62,15 @@ Wrote 3 DTCG file(s) to /…/token-sync/tokens.
 Done.
 ```
 
-Files written under `token-sync/tokens/` (git-ignored):
+Files written under `token-sync/tokens/` (checked into the repo — diffing the
+output gives a clear view of what a Figma change produced):
 
 ```
 tokens/
 ├─ primitives.json       # single-mode primitive tokens (literal values)
 ├─ backpack.day.json     # semantic tokens, day mode
 ├─ backpack.night.json   # semantic tokens, night mode
-└─ manifest.json         # metadata: fileKey, generatedAt, per-file stats
+└─ manifest.json         # metadata: generatedAt, per-file stats
 ```
 
 Errors (missing env / bad token / wrong file key) exit with a hint that points to the right
@@ -105,8 +106,6 @@ as additional steps inside the same workflow. It reads the two repo secrets from
 
 ```jsonc
 {
-  "fileKey": "…",
-  "sourceFileUrl": "https://www.figma.com/design/…",
   "generatedAt": "2026-04-29T12:00:00.000Z",
   "files": [
     {
