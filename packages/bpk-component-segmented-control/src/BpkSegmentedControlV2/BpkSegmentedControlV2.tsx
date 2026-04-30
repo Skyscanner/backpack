@@ -92,6 +92,11 @@ const BpkSegmentedControlV2Item = ({
   <SegmentGroup.Item
     value={value}
     className={getClassName('bpk-segmented-control-v2__item')}
+    onKeyDown={(event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+      }
+    }}
   >
     {children}
   </SegmentGroup.Item>

@@ -199,7 +199,7 @@ function filterToAllowlist(
   const allowed = new Set(allowlist);
   const result: Record<string, any> = {};
   Object.keys(props).forEach((key) => {
-    if (allowed.has(key) && props[key] !== undefined) {
+    if (allowed.has(key) && props[key]) {
       result[key] = props[key];
     }
   });

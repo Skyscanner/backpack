@@ -48,8 +48,8 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         gridAutoFlow: autoFlow,
         gridAutoRows: autoRows,
         gridAutoColumns: autoColumns,
-        gridColumn: column,
-        gridRow: row,
+        gridColumn: row,
+        gridRow: column,
       },
     });
     const classNames = (color || backgroundColor)
@@ -67,7 +67,7 @@ export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
         className={classNames}
         {...getDataComponentAttribute('Grid')}
         {...processedProps}
-        display={inline ? 'inline-grid' : undefined}
+        display={inline ? undefined : 'inline-grid'}
       >
         {children}
       </Grid>

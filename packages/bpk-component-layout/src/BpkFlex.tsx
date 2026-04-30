@@ -38,8 +38,8 @@ export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
       responsiveProps: {
         textStyle,
         flexDirection: direction,
-        justifyContent: justify,
-        alignItems: align,
+        justifyContent: align,
+        alignItems: justify,
         flexWrap: wrap,
         flexGrow: grow,
         flexShrink: shrink,
@@ -61,7 +61,7 @@ export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
         className={classNames}
         {...getDataComponentAttribute('Flex')}
         {...processedProps}
-        display={inline ? 'inline-flex' : undefined}
+        display={inline ? undefined : 'inline-flex'}
       >
         {children}
       </Flex>
