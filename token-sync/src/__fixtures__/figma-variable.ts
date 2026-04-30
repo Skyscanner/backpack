@@ -65,8 +65,7 @@ export const BACKPACK_MODE_NIGHT = 'mode-night';
 export const PRIMITIVES_COLLECTION_ID = 'c-primitives';
 export const BACKPACK_COLLECTION_ID = 'c-backpack';
 
-// Keys ---------------------------------------------------------------------
-
+// Keys
 export const KEY_COLOUR_PINK = 'k-colour-pink';
 export const KEY_COLOUR_BERRY = 'k-colour-berry';
 export const KEY_SPACING_MD = 'k-spacing-md';
@@ -78,8 +77,7 @@ export const KEY_SEM_CYCLE_A = 'k-sem-cycle-a';
 export const KEY_SEM_CYCLE_B = 'k-sem-cycle-b';
 export const KEY_SEM_BROKEN = 'k-sem-broken';
 
-// Collections --------------------------------------------------------------
-
+// Collections
 export const primitivesCollection: LocalVariableCollection = makeCollection({
   id: PRIMITIVES_COLLECTION_ID,
   key: 'col-primitives',
@@ -101,8 +99,7 @@ export const backpackCollection: LocalVariableCollection = makeCollection({
   remote: false,
 });
 
-// Variables -----------------------------------------------------------------
-
+// Variables
 export const primitiveColourPink: LocalVariable = makeVariable({
   id: 'v-colour-pink',
   key: KEY_COLOUR_PINK,

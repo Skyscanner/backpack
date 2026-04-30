@@ -23,7 +23,7 @@ import type {
 
 // DTCG token types we emit. Narrower than the full DTCG spec — only the types
 // Backpack's Figma variables actually produce today.
-export type DtcgTokenType =
+export type DTCGTokenType =
   | 'boolean'
   | 'color'
   | 'dimension'
@@ -33,18 +33,18 @@ export type DtcgTokenType =
 
 // Scalar value assigned to $value. DTCG also allows objects for composite
 // types (e.g. typography) but Backpack variables only emit primitives.
-export type DtcgScalar = boolean | number | string;
+export type DTCGScalar = boolean | number | string;
 
-export interface DtcgToken {
-  $value: DtcgScalar;
-  $type?: DtcgTokenType;
+export interface DTCGToken {
+  $value: DTCGScalar;
+  $type?: DTCGTokenType;
 }
 
 // Recursive DTCG group: a node is either a token (has $value) or another group
 // of named children. $type on a group applies to descendants without their own.
-export type DtcgTree = {
-  $type?: DtcgTokenType;
-  [segment: string]: DtcgToken | DtcgTree | DtcgTokenType | undefined;
+export type DTCGTree = {
+  $type?: DTCGTokenType;
+  [segment: string]: DTCGToken | DTCGTree | DTCGTokenType | undefined;
 };
 
 // Collection role drives output naming and alias preservation semantics:
@@ -58,7 +58,7 @@ export interface ClassifiedCollection {
   role: CollectionRole;
 }
 
-export interface DtcgModeOutputStats {
+export interface DTCGModeOutputStats {
   // Number of tokens written into the tree for this mode (excludes skipped).
   tokenCount: number;
   // Aliases preserved as `{...}` references to another selected collection.
@@ -69,15 +69,15 @@ export interface DtcgModeOutputStats {
   skippedVariableCount: number;
 }
 
-export interface DtcgModeOutput {
+export interface DTCGModeOutput {
   collectionName: string;
   modeName: string;
   role: CollectionRole;
-  tree: DtcgTree;
-  stats: DtcgModeOutputStats;
+  tree: DTCGTree;
+  stats: DTCGModeOutputStats;
 }
 
-export interface DtcgManifestFileRecord {
+export interface DTCGManifestFileRecord {
   fileName: string;
   collectionName: string;
   modeName: string;
@@ -88,11 +88,11 @@ export interface DtcgManifestFileRecord {
   skippedVariableCount: number;
 }
 
-export interface DtcgManifest {
+export interface DTCGManifest {
   fileKey: string;
   sourceFileUrl: string;
   generatedAt: string;
-  files: DtcgManifestFileRecord[];
+  files: DTCGManifestFileRecord[];
 }
 
 // Minimal alias / color shapes used internally; the `@figma/rest-api-spec`
@@ -119,7 +119,7 @@ export interface ResolveContext {
 }
 
 export interface ResolveValueResult {
-  value: DtcgScalar;
+  value: DTCGScalar;
   // Set when the result is a `{...}` reference preserving an alias target.
   preservedAliasTo?: string;
   // Set when the original variable was an alias and we inlined its literal.
