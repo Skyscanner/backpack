@@ -22,6 +22,9 @@ import { BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import NavButton, { DIRECTIONS } from './NavButton';
+import { VARIANT } from './common-types';
+
+import type { Variant } from './common-types';
 
 import STYLES from './BpkPageIndicator.module.scss';
 
@@ -30,13 +33,9 @@ const getClassName = cssModules(STYLES);
 const DISPLAYED_TOTAL = 5;
 const START_SCROLL_INDEX = Math.floor(DISPLAYED_TOTAL / 2);
 
-export const VARIANT = {
-  default: 'default',
-  overImage: 'overImage',
-  overImageSpaced: 'overImageSpaced'
-} as const;
+export { VARIANT };
+export type { Variant };
 
-type Variant = (typeof VARIANT)[keyof typeof VARIANT];
 type Direction = (typeof DIRECTIONS)[keyof typeof DIRECTIONS];
 
 export type Props = {
@@ -89,7 +88,7 @@ const BpkPageIndicator = ({
 
   return (
     <div
-      className={variant === VARIANT.overImageSpaced ? getClassName('bpk-page-indicator-fullWidth__container') : className}
+      className={variant === VARIANT.overImageSpaced || variant === VARIANT.carousel ? getClassName('bpk-page-indicator-fullWidth__container') : className}
       aria-hidden={isInteractive ? 'false' : 'true'}
       data-testid="indicator-container"
     >
@@ -103,10 +102,11 @@ const BpkPageIndicator = ({
           <NavButton
             currentIndex={currentIndex}
             onClick={onClick}
-            disabled={variant === VARIANT.overImageSpaced ? totalIndicators <= 1 : currentIndex === 0 || totalIndicators <= 1}
+            disabled={variant === VARIANT.overImageSpaced || variant === VARIANT.carousel ? totalIndicators <= 1 : currentIndex === 0 || totalIndicators <= 1}
             direction={DIRECTIONS.PREV}
             ariaLabel={prevNavLabel}
-            type={variant === VARIANT.overImageSpaced ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
+            variant={variant}
+            type={variant === VARIANT.overImageSpaced || variant === VARIANT.carousel ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
           />
         )}
         <div className={getClassName('bpk-page-indicator__container')}>
@@ -151,10 +151,11 @@ const BpkPageIndicator = ({
           <NavButton
             currentIndex={currentIndex}
             onClick={onClick}
-            disabled={variant === VARIANT.overImageSpaced ? totalIndicators <= 1 : currentIndex === totalIndicators - 1 || totalIndicators <= 1 }
+            disabled={variant === VARIANT.overImageSpaced || variant === VARIANT.carousel ? totalIndicators <= 1 : currentIndex === totalIndicators - 1 || totalIndicators <= 1 }
             ariaLabel={nextNavLabel}
             direction={DIRECTIONS.NEXT}
-            type={variant === VARIANT.overImageSpaced ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
+            variant={variant}
+            type={variant === VARIANT.overImageSpaced || variant === VARIANT.carousel ? BUTTON_TYPES.secondaryOnDark : BUTTON_TYPES.link}
           />
         )}
       </div>

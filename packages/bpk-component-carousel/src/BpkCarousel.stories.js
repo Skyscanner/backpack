@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { VARIANT } from '../../bpk-component-page-indicator';
+
 import BpkCarousel from './BpkCarousel';
 
 const imageUrls = [
@@ -31,9 +33,7 @@ const imagesList = imageUrls.map((url) => (
   </div>
 ));
 
-const DefaultExample = () => <BpkCarousel images={imagesList} bottom={16} />;
-
-const WithNavDesktopExample = () => (
+const DefaultExample = () => (
   <div
     style={{
       maxWidth: '800px',
@@ -45,11 +45,27 @@ const WithNavDesktopExample = () => (
   </div>
 );
 
+const WithCarouselPageIndicatorExample = () => (
+  <div
+    style={{
+      maxWidth: '800px',
+      width: '100%',
+      margin: 'auto',
+    }}
+  >
+    <BpkCarousel
+      images={imagesList}
+      pageIndicatorVariant={VARIANT.carousel}
+      bottom={16}
+    />
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
     <br />
-    <WithNavDesktopExample />
+    <WithCarouselPageIndicatorExample />
   </div>
 );
 
@@ -64,8 +80,8 @@ export const Default = {
   render: () => <DefaultExample />,
 };
 
-export const WithNavDesktop = {
-  render: () => <WithNavDesktopExample />,
+export const WithCarouselPageIndicator = {
+  render: () => <WithCarouselPageIndicatorExample />,
 };
 
 export const VisualTest = {

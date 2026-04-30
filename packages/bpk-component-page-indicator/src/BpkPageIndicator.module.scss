@@ -83,7 +83,8 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     }
 
     &--overImage,
-    &--overImageSpaced {
+    &--overImageSpaced,
+    &--carousel {
       background-color: tokens.$bpk-line-on-dark-day;
     }
 
@@ -94,10 +95,31 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
       }
 
       &-overImage,
-      &-overImageSpaced {
+      &-overImageSpaced,
+      &-carousel {
         background-color: tokens.$bpk-text-on-dark-day;
         pointer-events: none;
       }
     }
+  }
+
+  &__nav-carousel {
+    --bpk-button-border-radius: 50%;
+    --bpk-button-secondary-on-dark-background-color: #{tokens.$bpk-private-page-indicator-button-carousel-normal-background-day};
+    --bpk-button-secondary-on-dark-hover-background-color: #{tokens.$bpk-private-page-indicator-button-carousel-pressed-background-day};
+    --bpk-button-secondary-on-dark-active-background-color: #{tokens.$bpk-private-page-indicator-button-carousel-pressed-background-day};
+    --bpk-button-secondary-on-dark-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-button-secondary-on-dark-hover-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-button-secondary-on-dark-active-text-color: #{tokens.$bpk-text-primary-day};
+  }
+
+  &__nav-carousel-button {
+    display: inline-flex;
+    width: tokens.bpk-spacing-xl();
+    height: tokens.bpk-spacing-xl();
+    min-height: tokens.bpk-spacing-xl();
+    padding: 0;
+    justify-content: center;
+    align-items: center;
   }
 }
