@@ -69,6 +69,21 @@ describe('FigmaApi', () => {
       );
     });
 
+    it('URL-encodes the fileKey so stray special characters cannot break the URL', async () => {
+      fetchSpy.mockResolvedValue(
+        new Response(
+          JSON.stringify({ status: 200, error: false, meta: { variables: {}, variableCollections: {} } }),
+          { status: 200 },
+        ),
+      );
+      const api = new FigmaApi('valid-token');
+      await api.getLocalVariables('weird key/with?stuff');
+      expect(fetchSpy).toHaveBeenCalledWith(
+        'https://api.figma.com/v1/files/weird%20key%2Fwith%3Fstuff/variables/local',
+        expect.any(Object),
+      );
+    });
+
     it('throws FigmaApiError carrying status, endpoint and body on non-2xx', async () => {
       fetchSpy.mockResolvedValue(new Response('forbidden', { status: 403 }));
       const api = new FigmaApi('bad-token');
