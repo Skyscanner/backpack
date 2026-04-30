@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 
 import { config as loadDotenv } from 'dotenv';
 
-import { buildDtcg, formatBuildSummary } from './build-dtcg';
+import { buildDTCG, formatBuildSummary } from './build-dtcg';
 import {
   TARGET_COLLECTION_NAMES,
   formatFatalError,
@@ -40,7 +40,7 @@ async function main() {
   const outputDir = process.env.DTCG_OUTPUT_DIR?.trim() || DEFAULT_OUTPUT_DIR;
 
   console.log('Fetching variable collections from file...');
-  const result = await buildDtcg({
+  const result = await buildDTCG({
     token,
     fileKey,
     targetNames: TARGET_COLLECTION_NAMES,

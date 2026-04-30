@@ -25,18 +25,18 @@ import path from 'node:path';
 
 import { buildFixtureResponse } from './__fixtures__/figma-variable';
 import {
-  buildDtcg,
-  buildDtcgOutputs,
+  buildDTCG,
+  buildDTCGOutputs,
   formatBuildSummary,
 } from './build-dtcg';
 import { TARGET_COLLECTION_NAMES } from './sync-helpers';
 
-import type { BuildDtcgResult } from './build-dtcg';
+import type { BuildDTCGResult } from './build-dtcg';
 
-describe('buildDtcgOutputs (end-to-end on fixtures)', () => {
+describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
   it('produces one DTCG output per (collection, mode), classified and with alias stats', () => {
     const response = buildFixtureResponse();
-    const { classified, outputs } = buildDtcgOutputs(
+    const { classified, outputs } = buildDTCGOutputs(
       response,
       TARGET_COLLECTION_NAMES,
     );
@@ -97,13 +97,13 @@ describe('buildDtcgOutputs (end-to-end on fixtures)', () => {
 
   it('throws when no target collection is present locally', () => {
     const response = buildFixtureResponse();
-    expect(() => buildDtcgOutputs(response, ['DoesNotExist'])).toThrow(
+    expect(() => buildDTCGOutputs(response, ['DoesNotExist'])).toThrow(
       /None of the target collections/,
     );
   });
 });
 
-describe('buildDtcg (full pipeline with injected api)', () => {
+describe('buildDTCG (full pipeline with injected api)', () => {
   let tempDir: string;
 
   beforeEach(async () => {
@@ -114,11 +114,11 @@ describe('buildDtcg (full pipeline with injected api)', () => {
     await rm(tempDir, { force: true, recursive: true });
   });
 
-  it('runs fetch → transform → write and returns a complete BuildDtcgResult', async () => {
+  it('runs fetch → transform → write and returns a complete BuildDTCGResult', async () => {
     const response = buildFixtureResponse();
     const fakeApi = { getLocalVariables: jest.fn().mockResolvedValue(response) };
 
-    const result = await buildDtcg({
+    const result = await buildDTCG({
       token: 'unused',
       fileKey: 'file-123',
       targetNames: TARGET_COLLECTION_NAMES,
@@ -142,15 +142,15 @@ describe('buildDtcg (full pipeline with injected api)', () => {
 
 describe('formatBuildSummary', () => {
   // Minimal fake — we only exercise the formatter, not the writer.
-  function fakeResult(overrides: Partial<BuildDtcgResult> = {}): BuildDtcgResult {
-    const base: BuildDtcgResult = {
+  function fakeResult(overrides: Partial<BuildDTCGResult> = {}): BuildDTCGResult {
+    const base: BuildDTCGResult = {
       classified: [
         {
-          collection: { name: 'Backpack' } as BuildDtcgResult['classified'][number]['collection'],
+          collection: { name: 'Backpack' } as BuildDTCGResult['classified'][number]['collection'],
           role: 'semantic',
         },
         {
-          collection: { name: 'Primitives' } as BuildDtcgResult['classified'][number]['collection'],
+          collection: { name: 'Primitives' } as BuildDTCGResult['classified'][number]['collection'],
           role: 'primitive',
         },
       ],

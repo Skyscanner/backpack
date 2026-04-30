@@ -26,9 +26,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Stage 1: Figma variables → DTCG JSON files. A follow-up stage will
-      # consume these files to emit platform outputs (CSS vars, SCSS, etc).
-      - name: Build DTCG tokens
+      - name: Run sync
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}

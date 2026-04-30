@@ -29,17 +29,17 @@ import {
   assertUniqueFileNames,
   buildManifest,
   countModesPerCollection,
-  dtcgFileNameFor,
+  DTCGFileNameFor,
   slugify,
-  stringifyDtcg,
-  writeDtcgFiles,
+  stringifyDTCG,
+  writeDTCGFiles,
 } from './dtcg-writer';
 
-import type { DtcgManifest, DtcgModeOutput } from './types';
+import type { DTCGManifest, DTCGModeOutput } from './types';
 
 const fixedNow = () => new Date('2026-04-29T12:00:00.000Z');
 
-function primitiveOutput(overrides: Partial<DtcgModeOutput> = {}): DtcgModeOutput {
+function primitiveOutput(overrides: Partial<DTCGModeOutput> = {}): DTCGModeOutput {
   return {
     collectionName: 'Primitives',
     modeName: 'Hex',
@@ -63,8 +63,8 @@ function primitiveOutput(overrides: Partial<DtcgModeOutput> = {}): DtcgModeOutpu
 
 function backpackOutput(
   modeName: 'Day' | 'Night',
-  overrides: Partial<DtcgModeOutput> = {},
-): DtcgModeOutput {
+  overrides: Partial<DTCGModeOutput> = {},
+): DTCGModeOutput {
   return {
     collectionName: 'Backpack',
     modeName,
@@ -101,14 +101,14 @@ describe('slugify', () => {
   });
 });
 
-describe('dtcgFileNameFor', () => {
+describe('DTCGFileNameFor', () => {
   it('omits the mode segment for single-mode collections', () => {
-    expect(dtcgFileNameFor('Primitives', 'Hex', false)).toBe('primitives.json');
+    expect(DTCGFileNameFor('Primitives', 'Hex', false)).toBe('primitives.json');
   });
 
   it('includes the mode segment for multi-mode collections', () => {
-    expect(dtcgFileNameFor('Backpack', 'Day', true)).toBe('backpack.day.json');
-    expect(dtcgFileNameFor('Backpack', 'Night', true)).toBe(
+    expect(DTCGFileNameFor('Backpack', 'Day', true)).toBe('backpack.day.json');
+    expect(DTCGFileNameFor('Backpack', 'Night', true)).toBe(
       'backpack.night.json',
     );
   });
@@ -257,13 +257,13 @@ describe('assertSafeOutputDir', () => {
   });
 });
 
-describe('stringifyDtcg', () => {
+describe('stringifyDTCG', () => {
   it('emits stable, newline-terminated 2-space JSON', () => {
-    expect(stringifyDtcg({ b: 2, a: 1 })).toBe('{\n  "b": 2,\n  "a": 1\n}\n');
+    expect(stringifyDTCG({ b: 2, a: 1 })).toBe('{\n  "b": 2,\n  "a": 1\n}\n');
   });
 });
 
-describe('writeDtcgFiles', () => {
+describe('writeDTCGFiles', () => {
   let tempDir: string;
 
   beforeEach(async () => {
@@ -283,7 +283,7 @@ describe('writeDtcgFiles', () => {
       backpackOutput('Day'),
       backpackOutput('Night'),
     ];
-    const manifest = await writeDtcgFiles(outputs, tempDir, fixedNow);
+    const manifest = await writeDTCGFiles(outputs, tempDir, fixedNow);
 
     const entries = (await readdir(tempDir)).sort();
     expect(entries).toEqual([
@@ -295,7 +295,7 @@ describe('writeDtcgFiles', () => {
 
     const manifestOnDisk = JSON.parse(
       await readFile(path.join(tempDir, 'manifest.json'), 'utf8'),
-    ) as DtcgManifest;
+    ) as DTCGManifest;
     expect(manifestOnDisk).toEqual(manifest);
     expect(manifestOnDisk.files.map((f) => f.fileName).sort()).toEqual([
       'backpack.day.json',
@@ -313,8 +313,8 @@ describe('writeDtcgFiles', () => {
     const outputs = [primitiveOutput()];
     const secondDir = await mkdtemp(path.join(os.tmpdir(), 'token-sync-writer-'));
 
-    await writeDtcgFiles(outputs, tempDir, fixedNow);
-    await writeDtcgFiles(outputs, secondDir, fixedNow);
+    await writeDTCGFiles(outputs, tempDir, fixedNow);
+    await writeDTCGFiles(outputs, secondDir, fixedNow);
 
     const firstContent = await readFile(path.join(tempDir, 'primitives.json'));
     const secondContent = await readFile(path.join(secondDir, 'primitives.json'));

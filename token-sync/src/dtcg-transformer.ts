@@ -20,11 +20,11 @@ import type { LocalVariable, LocalVariableCollection } from './figma-api';
 import type {
   ClassifiedCollection,
   CollectionRole,
-  DtcgModeOutput,
-  DtcgScalar,
-  DtcgToken,
-  DtcgTokenType,
-  DtcgTree,
+  DTCGModeOutput,
+  DTCGScalar,
+  DTCGToken,
+  DTCGTokenType,
+  DTCGTree,
   FigmaRGBA,
   FigmaVariableAlias,
   ResolveContext,
@@ -39,60 +39,62 @@ export const COLLECTION_ROLES: Record<string, CollectionRole> = {
   Backpack: 'semantic',
 };
 
-export class UnresolvedAliasError extends Error {
-  // The Figma alias id that resolveAliasTarget couldn't find.
-  readonly aliasId: string;
+export type DTCGTransformErrorReason =
+  | 'unresolved-alias'
+  | 'alias-cycle'
+  | 'missing-mode-value'
+  | 'path-collision';
 
-  // The variable where the resolution actually broke. For a single-hop alias
-  // this is the same as the outer iterated variable; for a chain like
-  // X → M → Y (missing), this is M.
+export interface DTCGTransformErrorDetails {
+  aliasId?: string;
+  variableName: string;
+  modeName?: string;
+  collidingVariableName?: string;
+}
+
+export class DTCGTransformError extends Error {
+  readonly reason: DTCGTransformErrorReason;
+
+  readonly aliasId?: string;
+
   readonly variableName: string;
 
-  constructor(aliasId: string, variableName: string) {
-    super(`Could not resolve alias target "${aliasId}" for "${variableName}"`);
-    this.name = 'UnresolvedAliasError';
-    this.aliasId = aliasId;
-    this.variableName = variableName;
+  readonly modeName?: string;
+
+  readonly collidingVariableName?: string;
+
+  constructor(
+    reason: DTCGTransformErrorReason,
+    details: DTCGTransformErrorDetails,
+  ) {
+    super(buildTransformErrorMessage(reason, details));
+    this.name = 'DTCGTransformError';
+    this.reason = reason;
+    this.aliasId = details.aliasId;
+    this.variableName = details.variableName;
+    this.modeName = details.modeName;
+    this.collidingVariableName = details.collidingVariableName;
   }
 }
 
-export class AliasCycleError extends Error {
-  constructor(variableName: string) {
-    super(`Alias cycle detected while resolving "${variableName}"`);
-    this.name = 'AliasCycleError';
-  }
-}
-
-export class MissingModeValueError extends Error {
-  readonly variableName: string;
-
-  readonly modeName: string;
-
-  constructor(variableName: string, modeName: string) {
-    super(`Variable "${variableName}" has no value for mode "${modeName}"`);
-    this.name = 'MissingModeValueError';
-    this.variableName = variableName;
-    this.modeName = modeName;
-  }
-}
-
-// Raised when two Figma variables disagree on whether a path segment is a
-// group or a leaf — e.g. both "Color/Brand" (leaf) and "Color/Brand/Pink"
-// (leaf under a group) exist. Writing the second silently into the first
-// would produce a malformed DTCG node, so we surface the conflict instead.
-export class DtcgPathCollisionError extends Error {
-  readonly variableName: string;
-
-  readonly collidingVariableName: string;
-
-  constructor(variableName: string, collidingVariableName: string) {
-    super(
-      `DTCG path collision: cannot place "${variableName}" because "${collidingVariableName}" ` +
-        `already occupies part of the same path.`,
-    );
-    this.name = 'DtcgPathCollisionError';
-    this.variableName = variableName;
-    this.collidingVariableName = collidingVariableName;
+function buildTransformErrorMessage(
+  reason: DTCGTransformErrorReason,
+  details: DTCGTransformErrorDetails,
+): string {
+  switch (reason) {
+    case 'unresolved-alias':
+      return `Could not resolve alias target "${details.aliasId}" for "${details.variableName}"`;
+    case 'alias-cycle':
+      return `Alias cycle detected while resolving "${details.variableName}"`;
+    case 'missing-mode-value':
+      return `Variable "${details.variableName}" has no value for mode "${details.modeName}"`;
+    case 'path-collision':
+      return (
+        `DTCG path collision: cannot place "${details.variableName}" because ` +
+        `"${details.collidingVariableName}" already occupies part of the same path.`
+      );
+    default:
+      return `DTCG transform error for "${details.variableName}"`;
   }
 }
 
@@ -151,7 +153,7 @@ export function figmaColorToCss(value: FigmaRGBA): string {
 // converting it to "1.5px" is always wrong.
 const NUMBER_FLOAT_SCOPES: readonly string[] = ['OPACITY', 'LINE_HEIGHT'];
 
-export function inferDtcgType(variable: LocalVariable): DtcgTokenType {
+export function inferDTCGType(variable: LocalVariable): DTCGTokenType {
   switch (variable.resolvedType) {
     case 'COLOR':
       return 'color';
@@ -176,12 +178,12 @@ export function inferDtcgType(variable: LocalVariable): DtcgTokenType {
   }
 }
 
-// Normalize a Figma literal value to a DTCG scalar. `dtcgType` controls
+// Normalize a Figma literal value to a DTCG scalar. `tokenType` controls
 // dimension suffixing and lets colours be written as strings.
 export function normalizeLiteralValue(
   value: unknown,
-  dtcgType: DtcgTokenType,
-): DtcgScalar {
+  tokenType: DTCGTokenType,
+): DTCGScalar {
   if (isColorValue(value)) {
     return figmaColorToCss(value);
   }
@@ -190,16 +192,16 @@ export function normalizeLiteralValue(
     // produce broken downstream tokens. Fail loudly instead.
     if (!Number.isFinite(value)) {
       throw new Error(
-        `Non-finite numeric value for DTCG token type "${dtcgType}": ${String(value)}`,
+        `Non-finite numeric value for DTCG token type "${tokenType}": ${String(value)}`,
       );
     }
-    return dtcgType === 'dimension' ? `${value}px` : value;
+    return tokenType === 'dimension' ? `${value}px` : value;
   }
   if (typeof value === 'string' || typeof value === 'boolean') {
     return value;
   }
   throw new Error(
-    `Unsupported literal value for DTCG token type "${dtcgType}": ${JSON.stringify(value)}`,
+    `Unsupported literal value for DTCG token type "${tokenType}": ${JSON.stringify(value)}`,
   );
 }
 
@@ -287,18 +289,24 @@ export function resolveVariableValue(
   const modeId = getCollectionModeId(collection, sourceModeName);
   const rawValue = variable.valuesByMode[modeId];
   if (rawValue === undefined) {
-    throw new MissingModeValueError(variable.name, sourceModeName);
+    throw new DTCGTransformError('missing-mode-value', {
+      variableName: variable.name,
+      modeName: sourceModeName,
+    });
   }
 
-  const dtcgType = inferDtcgType(variable);
+  const tokenType = inferDTCGType(variable);
 
   if (!isAliasValue(rawValue)) {
-    return { value: normalizeLiteralValue(rawValue, dtcgType) };
+    return { value: normalizeLiteralValue(rawValue, tokenType) };
   }
 
   const target = resolveAliasTarget(rawValue.id, context);
   if (!target) {
-    throw new UnresolvedAliasError(rawValue.id, variable.name);
+    throw new DTCGTransformError('unresolved-alias', {
+      aliasId: rawValue.id,
+      variableName: variable.name,
+    });
   }
 
   const targetPath = target.name.replace(/\//g, '.');
@@ -311,7 +319,9 @@ export function resolveVariableValue(
 
   const seenKey = `${variable.key}:${sourceModeName}`;
   if (seen.has(seenKey)) {
-    throw new AliasCycleError(variable.name);
+    throw new DTCGTransformError('alias-cycle', {
+      variableName: variable.name,
+    });
   }
   const nextSeen = new Set(seen);
   nextSeen.add(seenKey);
@@ -346,10 +356,10 @@ export function describeInvalidVariableName(
 // Track, per tree, which variable name first claimed each path. Used by
 // setTokenAtPath to report both sides of a collision (the new variable and
 // the already-written one).
-const PATH_OWNERS = new WeakMap<DtcgTree, Map<string, string>>();
+const PATH_OWNERS = new WeakMap<DTCGTree, Map<string, string>>();
 
 function recordPathOwner(
-  tree: DtcgTree,
+  tree: DTCGTree,
   pathKey: string,
   variableName: string,
 ): void {
@@ -361,7 +371,7 @@ function recordPathOwner(
   owners.set(pathKey, variableName);
 }
 
-function ownerOf(tree: DtcgTree, pathKey: string): string | undefined {
+function ownerOf(tree: DTCGTree, pathKey: string): string | undefined {
   return PATH_OWNERS.get(tree)?.get(pathKey);
 }
 
@@ -369,7 +379,7 @@ function ownerOf(tree: DtcgTree, pathKey: string): string | undefined {
 // name a concrete variable when a leaf collision hits a group that was
 // created implicitly (no owner was recorded at the exact prefix path).
 function findOwnerBelow(
-  tree: DtcgTree,
+  tree: DTCGTree,
   node: Record<string, unknown>,
   nodePath: string,
 ): string | undefined {
@@ -379,19 +389,20 @@ function findOwnerBelow(
   while (queue.length > 0) {
     const [current, currentPath] = queue.shift()!;
     for (const [segmentKey, value] of Object.entries(current)) {
-      if (segmentKey === '$type') continue;
-      const childPath = `${currentPath}/${segmentKey}`;
-      const maybeOwner = owners.get(childPath);
-      if (maybeOwner) return maybeOwner;
-      if (value && typeof value === 'object' && !Array.isArray(value)) {
-        queue.push([value as Record<string, unknown>, childPath]);
+      if (segmentKey !== '$type') {
+        const childPath = `${currentPath}/${segmentKey}`;
+        const maybeOwner = owners.get(childPath);
+        if (maybeOwner) return maybeOwner;
+        if (value && typeof value === 'object' && !Array.isArray(value)) {
+          queue.push([value as Record<string, unknown>, childPath]);
+        }
       }
     }
   }
   return undefined;
 }
 
-function isTokenNode(value: unknown): value is DtcgToken {
+function isTokenNode(value: unknown): value is DTCGToken {
   return (
     typeof value === 'object' &&
     value !== null &&
@@ -403,15 +414,16 @@ function isTokenNode(value: unknown): value is DtcgToken {
 // Set `token` at the nested path derived from a Figma variable name like
 // "Colour/Brand/Pink" — each slash becomes a nested group.
 //
-// Throws `DtcgPathCollisionError` when a prefix of the path is already a
+// Throws `DTCGTransformError` with reason `path-collision` when a prefix of
+// the path is already a
 // written token (e.g. "Color/Brand" exists, adding "Color/Brand/Pink"), or
 // when the leaf position is already a non-empty group (e.g. "Color/Brand/Pink"
 // exists, adding "Color/Brand"). The caller decides whether to treat that as
 // fatal or to skip the colliding variable.
 export function setTokenAtPath(
-  tree: DtcgTree,
+  tree: DTCGTree,
   variableName: string,
-  token: DtcgToken,
+  token: DTCGToken,
 ): void {
   const segments = variableName.split('/');
   let current = tree as Record<string, unknown>;
@@ -441,7 +453,10 @@ export function setTokenAtPath(
             ownerOf(tree, prefixPath) ??
             findOwnerBelow(tree, existingRecord, prefixPath) ??
             '<existing group>';
-          throw new DtcgPathCollisionError(variableName, collider);
+          throw new DTCGTransformError('path-collision', {
+            variableName,
+            collidingVariableName: collider,
+          });
         }
       }
       current[segment] = token;
@@ -454,7 +469,10 @@ export function setTokenAtPath(
     // descending into it would produce a node with both $value and children.
     if (isTokenNode(existing)) {
       const collider = ownerOf(tree, prefixPath) ?? '<unknown>';
-      throw new DtcgPathCollisionError(variableName, collider);
+      throw new DTCGTransformError('path-collision', {
+        variableName,
+        collidingVariableName: collider,
+      });
     }
     if (!existing || typeof existing !== 'object' || Array.isArray(existing)) {
       current[segment] = {};
@@ -465,12 +483,12 @@ export function setTokenAtPath(
 
 // Walk the variable list and assign a group-level $type when every descendant
 // of that group shares a single DTCG type. Reduces verbosity in output files.
-export function addGroupTypes(tree: DtcgTree, variables: LocalVariable[]): void {
-  const groupTypes = new Map<string, Set<DtcgTokenType>>();
+export function addGroupTypes(tree: DTCGTree, variables: LocalVariable[]): void {
+  const groupTypes = new Map<string, Set<DTCGTokenType>>();
 
   for (const variable of variables) {
     const segments = variable.name.split('/');
-    const tokenType = inferDtcgType(variable);
+    const tokenType = inferDTCGType(variable);
     for (let depth = 1; depth < segments.length; depth += 1) {
       const groupPath = segments.slice(0, depth).join('/');
       const existing = groupTypes.get(groupPath);
@@ -510,13 +528,13 @@ export function addGroupTypes(tree: DtcgTree, variables: LocalVariable[]): void 
 // $type — keeps the output compact without losing information.
 export function stripRedundantTypes(
   node: unknown,
-  inheritedType?: DtcgTokenType,
+  inheritedType?: DTCGTokenType,
 ): void {
   if (!node || typeof node !== 'object' || Array.isArray(node)) return;
 
   const record = node as Record<string, unknown>;
   const ownType =
-    typeof record.$type === 'string' ? (record.$type as DtcgTokenType) : undefined;
+    typeof record.$type === 'string' ? (record.$type as DTCGTokenType) : undefined;
   const isLeaf = '$value' in record;
 
   if (ownType && inheritedType && ownType === inheritedType) {
@@ -524,7 +542,7 @@ export function stripRedundantTypes(
   }
 
   const nextInheritedType =
-    (record.$type as DtcgTokenType | undefined) ?? inheritedType;
+    (record.$type as DTCGTokenType | undefined) ?? inheritedType;
   if (isLeaf) return;
 
   for (const [segmentKey, value] of Object.entries(record)) {
@@ -538,14 +556,14 @@ export function stripRedundantTypes(
 
 // Build the nested DTCG tree for one (collection, mode). Records which
 // variables were skipped so callers can decide whether to treat that as fatal.
-export function buildDtcgTreeForMode(
+export function buildDTCGTreeForMode(
   classifiedCollection: ClassifiedCollection,
   modeName: string,
   collectionVariables: LocalVariable[],
   context: ResolveContext,
   options: { skipUnresolvedAliases?: boolean } = {},
-): DtcgModeOutput {
-  const tree: DtcgTree = {};
+): DTCGModeOutput {
+  const tree: DTCGTree = {};
   let preservedAliasCount = 0;
   let inlinedAliasCount = 0;
   const skippedVariables: SkippedVariableRecord[] = [];
@@ -556,6 +574,8 @@ export function buildDtcgTreeForMode(
   );
 
   for (const variable of sorted) {
+    let shouldWriteVariable = true;
+
     // Reject names that would produce empty tree segments (leading/trailing
     // slash, consecutive slashes, or "/"). These can't be represented as a
     // DTCG path so skip rather than silently write a node at key "".
@@ -569,83 +589,91 @@ export function buildDtcgTreeForMode(
           reason: 'invalid-name',
           invalidNameReason,
         });
-        continue;
+        shouldWriteVariable = false;
+      } else {
+        throw new Error(
+          `Invalid variable name "${variable.name}": ${invalidNameReason}`,
+        );
       }
-      throw new Error(
-        `Invalid variable name "${variable.name}": ${invalidNameReason}`,
-      );
     }
 
     let resolved: ResolveValueResult | undefined;
-    try {
-      resolved = resolveVariableValue(variable, modeName, context);
-    } catch (error: unknown) {
-      if (
-        options.skipUnresolvedAliases &&
-        error instanceof UnresolvedAliasError
-      ) {
-        skippedVariables.push({
-          variableName: variable.name,
-          variableId: variable.id,
-          variableKey: variable.key,
-          reason: 'unresolved-alias',
-          unresolvedAliasId: error.aliasId,
-          // When the chain broke at a different variable (X → M → missing),
-          // remember M so the diagnostic can point at it.
-          ...(error.variableName !== variable.name
-            ? { unresolvedAt: error.variableName }
-            : {}),
-        });
-        continue;
+    if (shouldWriteVariable) {
+      try {
+        resolved = resolveVariableValue(variable, modeName, context);
+      } catch (error: unknown) {
+        if (
+          options.skipUnresolvedAliases &&
+          error instanceof DTCGTransformError &&
+          error.reason === 'unresolved-alias'
+        ) {
+          skippedVariables.push({
+            variableName: variable.name,
+            variableId: variable.id,
+            variableKey: variable.key,
+            reason: 'unresolved-alias',
+            unresolvedAliasId: error.aliasId,
+            // When the chain broke at a different variable (X → M → missing),
+            // remember M so the diagnostic can point at it.
+            ...(error.variableName !== variable.name
+              ? { unresolvedAt: error.variableName }
+              : {}),
+          });
+          shouldWriteVariable = false;
+        } else if (
+          options.skipUnresolvedAliases &&
+          error instanceof DTCGTransformError &&
+          error.reason === 'missing-mode-value'
+        ) {
+          skippedVariables.push({
+            variableName: variable.name,
+            variableId: variable.id,
+            variableKey: variable.key,
+            reason: 'missing-mode-value',
+            missingModeName: error.modeName,
+          });
+          shouldWriteVariable = false;
+        } else {
+          throw error;
+        }
       }
-      if (
-        options.skipUnresolvedAliases &&
-        error instanceof MissingModeValueError
-      ) {
-        skippedVariables.push({
-          variableName: variable.name,
-          variableId: variable.id,
-          variableKey: variable.key,
-          reason: 'missing-mode-value',
-          missingModeName: error.modeName,
-        });
-        continue;
-      }
-      throw error;
     }
 
-    if (!resolved) {
-      // Defensive: resolveVariableValue either returns a result or throws.
-      continue;
-    }
-    if (resolved.preservedAliasTo) preservedAliasCount += 1;
-    if (resolved.inlinedFrom) inlinedAliasCount += 1;
+    if (shouldWriteVariable && resolved) {
+      if (resolved.preservedAliasTo) preservedAliasCount += 1;
+      if (resolved.inlinedFrom) inlinedAliasCount += 1;
 
-    try {
-      setTokenAtPath(tree, variable.name, {
-        $value: resolved.value,
-        $type: inferDtcgType(variable),
-      });
-    } catch (error: unknown) {
-      if (
-        options.skipUnresolvedAliases &&
-        error instanceof DtcgPathCollisionError
-      ) {
-        skippedVariables.push({
-          variableName: variable.name,
-          variableId: variable.id,
-          variableKey: variable.key,
-          reason: 'path-collision',
-          collidingVariableName: error.collidingVariableName,
+      try {
+        setTokenAtPath(tree, variable.name, {
+          $value: resolved.value,
+          $type: inferDTCGType(variable),
         });
-        // Undo the alias counters we bumped for a write that didn't land.
-        if (resolved.preservedAliasTo) preservedAliasCount -= 1;
-        if (resolved.inlinedFrom) inlinedAliasCount -= 1;
-        continue;
+      } catch (error: unknown) {
+        if (
+          options.skipUnresolvedAliases &&
+          error instanceof DTCGTransformError &&
+          error.reason === 'path-collision'
+        ) {
+          skippedVariables.push({
+            variableName: variable.name,
+            variableId: variable.id,
+            variableKey: variable.key,
+            reason: 'path-collision',
+            collidingVariableName: error.collidingVariableName,
+          });
+          // Undo the alias counters we bumped for a write that didn't land.
+          if (resolved.preservedAliasTo) preservedAliasCount -= 1;
+          if (resolved.inlinedFrom) inlinedAliasCount -= 1;
+          shouldWriteVariable = false;
+        } else {
+          throw error;
+        }
       }
-      throw error;
+
+      if (shouldWriteVariable) {
+        writtenVariables.push(variable);
+      }
     }
-    writtenVariables.push(variable);
   }
 
   addGroupTypes(tree, writtenVariables);

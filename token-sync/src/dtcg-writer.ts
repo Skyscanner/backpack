@@ -22,9 +22,9 @@ import path from 'node:path';
 import process from 'node:process';
 
 import type {
-  DtcgManifest,
-  DtcgManifestFileRecord,
-  DtcgModeOutput,
+  DTCGManifest,
+  DTCGManifestFileRecord,
+  DTCGModeOutput,
 } from './types';
 
 export function slugify(name: string): string {
@@ -37,8 +37,8 @@ export function slugify(name: string): string {
 // Guard against filenames that would silently collide or land at `.json`
 // (empty slug). Both forms would otherwise let one mode's output overwrite
 // another on disk.
-export function assertUniqueFileNames(manifest: DtcgManifest): void {
-  const owners = new Map<string, DtcgManifestFileRecord>();
+export function assertUniqueFileNames(manifest: DTCGManifest): void {
+  const owners = new Map<string, DTCGManifestFileRecord>();
   for (const file of manifest.files) {
     const baseName = file.fileName.replace(/\.json$/, '');
     if (baseName === '' || baseName === '.') {
@@ -108,7 +108,7 @@ export function assertSafeOutputDir(outputDir: string): void {
 // Derive the output filename for one mode. Single-mode collections drop the
 // mode segment so the filename stays short and matches the ticket's expected
 // layout (e.g. `primitives.json`, `backpack.day.json`).
-export function dtcgFileNameFor(
+export function DTCGFileNameFor(
   collectionName: string,
   modeName: string,
   isMultiMode: boolean,
@@ -127,15 +127,15 @@ export function dtcgFileNameFor(
 // source file. Downstream stages (style-dictionary etc.) only read the
 // token files, not the manifest.
 export function buildManifest(
-  outputs: DtcgModeOutput[],
+  outputs: DTCGModeOutput[],
   modeCounts: ReadonlyMap<string, number>,
   generatedAt: string = new Date().toISOString(),
-): DtcgManifest {
-  const files: DtcgManifestFileRecord[] = outputs.map((output) => {
+): DTCGManifest {
+  const files: DTCGManifestFileRecord[] = outputs.map((output) => {
     const modesForCollection = modeCounts.get(output.collectionName) ?? 1;
     const isMultiMode = modesForCollection > 1;
     return {
-      fileName: dtcgFileNameFor(
+      fileName: DTCGFileNameFor(
         output.collectionName,
         output.modeName,
         isMultiMode,
@@ -160,7 +160,7 @@ export function buildManifest(
 // mode-suffixed filename. Separate from buildManifest so tests can inject
 // arbitrary counts.
 export function countModesPerCollection(
-  outputs: DtcgModeOutput[],
+  outputs: DTCGModeOutput[],
 ): Map<string, number> {
   const counts = new Map<string, number>();
   for (const output of outputs) {
@@ -172,17 +172,17 @@ export function countModesPerCollection(
 // Stable JSON output: 2-space indent, trailing newline. Kept as a single
 // helper so every file we write has the same whitespace conventions — this
 // is what makes `git diff` noise-free across runs.
-export function stringifyDtcg(value: unknown): string {
+export function stringifyDTCG(value: unknown): string {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
 // Write outputs + manifest to `outputDir`. Clears the directory first so
 // stale files from a previous run are not left behind. Returns the manifest.
-export async function writeDtcgFiles(
-  outputs: DtcgModeOutput[],
+export async function writeDTCGFiles(
+  outputs: DTCGModeOutput[],
   outputDir: string,
   now: () => Date = () => new Date(),
-): Promise<DtcgManifest> {
+): Promise<DTCGManifest> {
   // Guard the destructive `rm` below against obviously-wrong output dirs,
   // and fail fast on filename collisions so we never silently overwrite.
   assertSafeOutputDir(outputDir);
@@ -200,14 +200,14 @@ export async function writeDtcgFiles(
     outputs.map((output, index) =>
       writeFile(
         path.join(outputDir, manifest.files[index].fileName),
-        stringifyDtcg(output.tree),
+        stringifyDTCG(output.tree),
         'utf8',
       ),
     ),
   );
 
   const manifestPath = path.join(outputDir, 'manifest.json');
-  await writeFile(manifestPath, stringifyDtcg(manifest), 'utf8');
+  await writeFile(manifestPath, stringifyDTCG(manifest), 'utf8');
 
   return manifest;
 }
