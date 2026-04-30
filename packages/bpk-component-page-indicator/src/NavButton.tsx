@@ -19,9 +19,7 @@
 import type { MouseEvent } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withLargeButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
-import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
-import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
+import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import SmallLeftArrowIcon from '../../bpk-component-icon/sm/chevron-left';
 import SmallRightArrowIcon from '../../bpk-component-icon/sm/chevron-right';
 import { cssModules } from '../../bpk-react-utils';
@@ -57,8 +55,8 @@ type Props = {
   variant?: Variant;
 };
 
-const AlignedLeftArrowIcon = withLargeButtonAlignment(withRtlSupport(LeftArrowIcon));
-const AlignedRightArrowIcon = withLargeButtonAlignment(withRtlSupport(RightArrowIcon));
+const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(SmallLeftArrowIcon));
+const AlignedRightArrowIcon = withButtonAlignment(withRtlSupport(SmallRightArrowIcon));
 const RtlSmallLeftArrowIcon = withRtlSupport(SmallLeftArrowIcon);
 const RtlSmallRightArrowIcon = withRtlSupport(SmallRightArrowIcon);
 
