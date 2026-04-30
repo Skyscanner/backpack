@@ -41,7 +41,7 @@ const DefaultExample = () => (
       margin: 'auto',
     }}
   >
-    <BpkCarousel images={imagesList} bottom={16} />
+    <BpkCarousel images={imagesList} bottom={16} showPageIndicatorNav />
   </div>
 );
 
@@ -57,6 +57,7 @@ const WithCarouselPageIndicatorExample = () => (
       images={imagesList}
       pageIndicatorVariant={VARIANT.carousel}
       bottom={16}
+      showPageIndicatorNav
     />
   </div>
 );
