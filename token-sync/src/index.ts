@@ -22,10 +22,9 @@ import { fileURLToPath } from 'node:url';
 
 import { config as loadDotenv } from 'dotenv';
 
-import { FigmaApi, type LocalVariableCollection } from './figma-api';
+import { buildDTCG, formatBuildSummary } from './build-dtcg';
 import {
   TARGET_COLLECTION_NAMES,
-  filterLocalTargets,
   formatFatalError,
   requireEnv,
 } from './sync-helpers';
@@ -33,44 +32,28 @@ import {
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 loadDotenv({ path: path.resolve(scriptDir, '../.env') });
 
-function logCollections(collections: LocalVariableCollection[]) {
-  console.log(`Found ${collections.length} variable collection(s):`);
-  for (const collection of collections) {
-    const modeNames = collection.modes.map((mode) => mode.name);
-    console.log(`- ${collection.name}`);
-    console.log(`    modes: ${modeNames.join(', ') || '(none)'}`);
-  }
-}
+const DEFAULT_OUTPUT_DIR = path.resolve(scriptDir, '../tokens');
 
 async function main() {
   const token = requireEnv('FIGMA_VARIABLES_SYNC_TOKEN');
   const fileKey = requireEnv('FIGMA_FILE_KEY');
-
-  const api = new FigmaApi(token);
+  const outputDir = process.env.DTCG_OUTPUT_DIR?.trim() || DEFAULT_OUTPUT_DIR;
 
   console.log('Fetching variable collections from file...');
-  const response = await api.getLocalVariables(fileKey);
+  const result = await buildDTCG({
+    token,
+    fileKey,
+    targetNames: TARGET_COLLECTION_NAMES,
+    outputDir,
+    // Skip rather than abort on cross-library aliases that can't be resolved
+    // against the local payload. The summary lists each skip so a designer
+    // can fix the broken reference in Figma.
+    skipUnresolvedAliases: true,
+  });
 
-  const allCollections = Object.values(response.meta.variableCollections);
-  const { availableLocalNames, matched, missingNames } = filterLocalTargets(
-    allCollections,
-    TARGET_COLLECTION_NAMES,
-  );
-
-  if (matched.length === 0) {
-    throw new Error(
-      `None of the target collections [${TARGET_COLLECTION_NAMES.join(', ')}] were found as local collections in the file. ` +
-        `Available local collections: ${availableLocalNames.join(', ') || '(none)'}.`,
-    );
+  for (const line of formatBuildSummary(result)) {
+    console.log(line);
   }
-
-  if (missingNames.length > 0) {
-    console.warn(
-      `Warning: these target collections were not found as local collections and will be skipped: ${missingNames.join(', ')}.`,
-    );
-  }
-
-  logCollections(matched);
   console.log('Done.');
 }
 
