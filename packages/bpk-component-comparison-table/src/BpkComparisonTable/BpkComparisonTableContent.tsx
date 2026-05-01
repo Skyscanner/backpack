@@ -18,6 +18,7 @@
 
 import { useEffect, useRef } from 'react';
 
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import {
   BpkTable,
   BpkTableBody,
@@ -97,12 +98,36 @@ const BpkComparisonTableContent = ({
       <BpkTable>
         <BpkComparisonTableHeaderRow
           displayColumns={displayColumns}
-          onRemove={onRemove}
           onAddMoreClick={onAddMoreClick}
           strings={strings}
         />
 
         <BpkTableBody type={TABLE_BODY_TYPES.striped}>
+          {/* Remove-button row — fades and collapses in place so data rows below slide up into its space. */}
+          <BpkTableRow>
+            {displayColumns.map((column, index) => (
+              <BpkTableCell
+                key={column ? `remove-${column.itemId}` : `remove-placeholder-${index}`}
+                // Zero padding needed for row collapse animation — no BpkTableCell prop.
+                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+                className={getClassName('bpk-comparison-table__remove-cell')}
+              >
+                {column && (
+                  <div className={getClassName('bpk-comparison-table__remove-cell-inner')}>
+                    <BpkButton
+                      type={BUTTON_TYPES.link}
+                      size={SIZE_TYPES.small}
+                      onClick={() => onRemove(column.itemId)}
+                      aria-label={column.removeA11yLabel}
+                    >
+                      {strings.removeLabel}
+                    </BpkButton>
+                  </div>
+                )}
+              </BpkTableCell>
+            ))}
+          </BpkTableRow>
+
           {rowIds.map((rowId) => (
             <BpkTableRow key={rowId}>
               {displayColumns.map((column, index) => (
