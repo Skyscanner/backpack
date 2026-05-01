@@ -103,7 +103,8 @@ const BpkComparisonTableContent = ({
         />
 
         <BpkTableBody type={TABLE_BODY_TYPES.striped}>
-          {/* Remove-button row — fades and collapses in place so data rows below slide up into its space. */}
+          {/* Remove-button row — only when there's at least one real column to remove. Fades and collapses in place so data rows below slide up into its space. */}
+          {columns.length > 0 && (
           <BpkTableRow>
             {displayColumns.map((column, index) => (
               <BpkTableCell
@@ -127,6 +128,7 @@ const BpkComparisonTableContent = ({
               </BpkTableCell>
             ))}
           </BpkTableRow>
+          )}
 
           {rowIds.map((rowId) => (
             <BpkTableRow key={rowId}>

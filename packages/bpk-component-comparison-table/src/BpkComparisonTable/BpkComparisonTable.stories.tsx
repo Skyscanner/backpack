@@ -159,7 +159,16 @@ const StandaloneExample = () => {
         ))}
       </BpkHStack>
 
-      <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <BpkComparisonTable.Root
+        isOpen={isOpen}
+        onClose={() => {
+          // eslint-disable-next-line no-console
+          console.log('[BpkComparisonTable] onClose fired');
+          setIsOpen(false);
+        }}
+        // eslint-disable-next-line no-console
+        onOpen={() => console.log('[BpkComparisonTable] onOpen fired')}
+      >
         <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
