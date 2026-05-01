@@ -32,7 +32,6 @@ import type {
 
 type BpkComparisonTableHeaderRowProps = {
   displayColumns: Array<BpkCompareColumn | null>;
-  onRemove: (itemId: string) => void;
   onAddMoreClick: () => void;
   strings: BpkComparisonTableStrings;
 };
@@ -40,10 +39,9 @@ type BpkComparisonTableHeaderRowProps = {
 const BpkComparisonTableHeaderRow = ({
   displayColumns,
   onAddMoreClick,
-  onRemove,
   strings,
 }: BpkComparisonTableHeaderRowProps) => {
-  const { addMoreDescription, addMoreLinkText, bestTagLabel, removeLabel } = strings;
+  const { addMoreDescription, addMoreLinkText, bestTagLabel } = strings;
 
   return (
     <BpkTableHead>
@@ -55,8 +53,6 @@ const BpkComparisonTableHeaderRow = ({
             {column ? (
               <BpkComparisonTableColumnHeader
                 {...column}
-                removeLabel={removeLabel}
-                onRemove={onRemove}
                 bestTagLabel={bestTagLabel}
               />
             ) : (

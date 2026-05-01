@@ -16,26 +16,36 @@
  * limitations under the License.
  */
 
+import { useEffect } from 'react';
+
 import { BpkModalV3 } from '../../../bpk-component-modal';
 
 import type { BpkComparisonTableRootProps } from './common-types';
 
-const BpkComparisonTableRoot = ({ children, isOpen, onClose }: BpkComparisonTableRootProps) => (
-  <BpkModalV3.Root
-    open={isOpen}
-    onOpenChange={(details) => {
-      if (!details.open) {
-        onClose();
-      }
-    }}
-  >
-    <BpkModalV3.Portal>
-      <BpkModalV3.Scrim />
-      <BpkModalV3.Content>
-        {children}
-      </BpkModalV3.Content>
-    </BpkModalV3.Portal>
-  </BpkModalV3.Root>
-);
+const BpkComparisonTableRoot = ({ children, isOpen, onClose, onOpen }: BpkComparisonTableRootProps) => {
+  useEffect(() => {
+    if (isOpen) {
+      onOpen?.();
+    }
+  }, [isOpen, onOpen]);
+
+  return (
+    <BpkModalV3.Root
+      open={isOpen}
+      onOpenChange={(details) => {
+        if (!details.open) {
+          onClose();
+        }
+      }}
+    >
+      <BpkModalV3.Portal>
+        <BpkModalV3.Scrim />
+        <BpkModalV3.Content>
+          {children}
+        </BpkModalV3.Content>
+      </BpkModalV3.Portal>
+    </BpkModalV3.Root>
+  );
+};
 
 export default BpkComparisonTableRoot;

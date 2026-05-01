@@ -112,14 +112,21 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   inset-block-start: 0;
 }
 
-// Remove button — fades and collapses its layout space so rows slide up over it.
-.bpk-comparison-table__remove-button {
+// Remove-button row — lives in the first tbody row. Fades and collapses its own
+// height in place (like the old in-header remove button), so data rows below
+// slide up into the vacated space as the user scrolls.
+// Zero the default BpkTableCell 16px padding so the row can fully collapse;
+// the inner wrapper below controls the actual spacing.
+.bpk-comparison-table__remove-cell {
+  padding: 0;
+}
+
+.bpk-comparison-table__remove-cell-inner {
+  padding: 0 tokens.bpk-spacing-base()
+    calc(tokens.bpk-spacing-sm() * var(--bpk-image-opacity, 1));
   opacity: var(--bpk-image-opacity, 1);
   overflow: clip;
-  margin-block-start: calc(
-    tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1)
-  );
-  max-block-size: calc(5rem * var(--bpk-image-opacity, 1));
+  max-block-size: calc(3rem * var(--bpk-image-opacity, 1));
   overflow-clip-margin: tokens.bpk-spacing-sm();
 }
 
