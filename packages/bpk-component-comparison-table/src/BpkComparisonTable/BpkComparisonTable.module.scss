@@ -52,6 +52,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   table {
     border-collapse: separate;
     border-spacing: 0;
+    box-shadow: none;
 
     // min-width ensures horizontal scroll kicks in before columns become too narrow to read (e.g. inside a modal on small screens).
     min-inline-size: 3 * 180 * tokens.$bpk-one-pixel-rem;
