@@ -61,7 +61,7 @@ type TabWrapProps = {
   tab: TabWrapItem;
   type: NavigationTabGroupTypes;
   selected: boolean;
-  children: ReactElement;
+  children: ReactElement<any>;
   onClick: (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
 };
 

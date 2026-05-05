@@ -28,7 +28,7 @@ import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
 import { MAX_CHARACTERS } from './constants';
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 const defaultProps = {

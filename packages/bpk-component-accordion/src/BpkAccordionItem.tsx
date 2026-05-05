@@ -40,7 +40,7 @@ export type BpkAccordionItemProps = {
   className?: string;
   expanded?: boolean;
   initiallyExpanded?: boolean;
-  icon?: ReactElement;
+  icon?: ReactElement<any>;
   onClick?: () => void;
   tagName?: 'span' | 'p' | 'text' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   textStyle?: (typeof TEXT_STYLES)[keyof typeof TEXT_STYLES];

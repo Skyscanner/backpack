@@ -17,7 +17,7 @@
  */
 
 import { Component } from 'react';
-import type { ReactElement, InputHTMLAttributes, LegacyRef } from 'react';
+import type { ReactElement, InputHTMLAttributes, Ref } from 'react';
 
 import { userEvent, within } from 'storybook/test';
 
@@ -179,10 +179,10 @@ type Props = {
   multiSection: boolean;
   renderInputComponent?: (
     inputProps: InputHTMLAttributes<HTMLInputElement> & {
-      ref?: LegacyRef<HTMLInputElement>;
+      ref?: Ref<HTMLInputElement>;
     },
-  ) => ReactElement;
-  renderSectionTitle: (section: Section) => ReactElement | null;
+  ) => ReactElement<any>;
+  renderSectionTitle: (section: Section) => ReactElement<any> | null;
   getSectionSuggestions: (section: Section) => Suggestion[];
 };
 
@@ -322,7 +322,7 @@ export const HighlightFistSuggestion: Story = {
 
 // --- Multi-section example ---
 
-const renderSectionTitle = (section: { title: string }): ReactElement => (
+const renderSectionTitle = (section: { title: string }): ReactElement<any> => (
   <div style={{ padding: '16px 16px 0 16px' }}>{section.title}</div>
 );
 
@@ -375,7 +375,7 @@ export const SmallInput: Story = {
 
 const renderCustomInput = (
   inputProps: InputHTMLAttributes<HTMLInputElement> & {
-    ref?: LegacyRef<HTMLInputElement>;
+    ref?: Ref<HTMLInputElement>;
   },
 ) => (
   <div

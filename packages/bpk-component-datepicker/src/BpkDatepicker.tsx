@@ -78,7 +78,7 @@ type Props = {
   /**
    * By default BpkInput. If passed, it should be a DOM node with a ref attached to it.
    */
-  inputComponent: ReactElement | null;
+  inputComponent: ReactElement<any> | null;
   dateModifiers?: {};
   fixedWidth?: boolean;
   inputProps?: {};

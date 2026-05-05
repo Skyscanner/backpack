@@ -27,7 +27,7 @@ import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkCardV2 from './BpkCardV2';
 import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './common-types';
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkCardV2 Snapshots', () => {
