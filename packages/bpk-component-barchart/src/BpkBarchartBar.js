@@ -61,15 +61,15 @@ type Props = {
 
 const BpkBarchartBar = (props: Props) => {
   const {
-    className,
+    className = null,
     height,
     label,
-    onClick,
-    onFocus,
-    onHover,
-    outlier,
-    padding,
-    selected,
+    onClick = null,
+    onFocus = null,
+    onHover = null,
+    outlier = false,
+    padding = 0,
+    selected = false,
     width,
     x,
     y,
@@ -140,16 +140,6 @@ BpkBarchartBar.propTypes = {
   outlier: PropTypes.bool,
   padding: PropTypes.number,
   selected: PropTypes.bool,
-};
-
-BpkBarchartBar.defaultProps = {
-  className: null,
-  onClick: null,
-  onHover: null,
-  onFocus: null,
-  outlier: false,
-  padding: 0,
-  selected: false,
 };
 
 export default BpkBarchartBar;

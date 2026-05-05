@@ -19,16 +19,12 @@
 import PropTypes from 'prop-types';
 
 const BpkPaginationBreak = (props) => {
-  const { breakLabel } = props;
+  const { breakLabel = '...' } = props;
   return <div>{breakLabel}</div>;
 };
 
 BpkPaginationBreak.propTypes = {
   breakLabel: PropTypes.string,
-};
-
-BpkPaginationBreak.defaultProps = {
-  breakLabel: '...',
 };
 
 export default BpkPaginationBreak;

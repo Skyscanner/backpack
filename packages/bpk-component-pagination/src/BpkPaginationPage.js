@@ -26,7 +26,7 @@ const getClassName = cssModules(STYLES);
 
 const BpkPaginationPage = (props) => {
   const classNames = [getClassName('bpk-pagination-page')];
-  const { isSelected, onSelect, page, pageLabel } = props;
+  const { isSelected = false, onSelect, page, pageLabel } = props;
 
   if (!isSelected) {
     // reverse class type so we can always load `buttons.bpk-button` as a base style for overridding.
@@ -51,10 +51,6 @@ BpkPaginationPage.propTypes = {
   onSelect: PropTypes.func.isRequired,
   pageLabel: PropTypes.func.isRequired,
   isSelected: PropTypes.bool,
-};
-
-BpkPaginationPage.defaultProps = {
-  isSelected: false,
 };
 
 export default BpkPaginationPage;

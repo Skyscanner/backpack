@@ -76,15 +76,15 @@ const BpkBarchartBars = (props: Props) => {
     BarComponent,
     data,
     getBarLabel,
-    getBarSelection,
+    getBarSelection = () => false,
     height,
-    innerPadding,
+    innerPadding = 0.35,
     margin,
     maxYValue,
-    onBarClick,
-    onBarFocus,
-    onBarHover,
-    outerPadding,
+    onBarClick = null,
+    onBarFocus = null,
+    onBarHover = null,
+    outerPadding = 0.35,
     xScale,
     xScaleDataKey,
     yScale,
@@ -152,15 +152,6 @@ BpkBarchartBars.propTypes = {
   onBarClick: PropTypes.func,
   onBarHover: PropTypes.func,
   onBarFocus: PropTypes.func,
-};
-
-BpkBarchartBars.defaultProps = {
-  outerPadding: 0.35,
-  innerPadding: 0.35,
-  onBarClick: null,
-  onBarHover: null,
-  onBarFocus: null,
-  getBarSelection: () => false,
 };
 
 export default BpkBarchartBars;

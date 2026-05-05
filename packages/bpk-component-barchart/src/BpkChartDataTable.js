@@ -37,7 +37,7 @@ type Props = {
 };
 
 const BpkChartDataTable = (props: Props) => {
-  const { data, xAxisLabel, xScaleDataKey, yAxisLabel, yScaleDataKey } = props;
+  const { data = null, xAxisLabel, xScaleDataKey, yAxisLabel, yScaleDataKey } = props;
   const rows = data.map((point, i) => {
     const key = `chart-data-table-row-${i}`;
 
@@ -68,10 +68,6 @@ BpkChartDataTable.propTypes = {
   yScaleDataKey: PropTypes.string.isRequired,
   xAxisLabel: PropTypes.string.isRequired,
   yAxisLabel: PropTypes.string.isRequired,
-};
-
-BpkChartDataTable.defaultProps = {
-  data: null,
 };
 
 export default BpkChartDataTable;

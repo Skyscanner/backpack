@@ -97,7 +97,8 @@ const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
 const AlignedHeartIconSm = withRtlSupport(HeartIconSm);
 
 const StoryMap = (props) => {
-  const { children, language, ...rest } = props;
+  // eslint-disable-next-line no-unused-vars
+  const { children = null, language = '', ...rest } = props;
   return (
     <div style={{ height: '400px' }}>
       {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
@@ -111,11 +112,6 @@ const StoryMap = (props) => {
 StoryMap.propTypes = {
   children: PropTypes.node,
   language: PropTypes.string,
-};
-
-StoryMap.defaultProps = {
-  children: null,
-  language: '',
 };
 
 const venues = [

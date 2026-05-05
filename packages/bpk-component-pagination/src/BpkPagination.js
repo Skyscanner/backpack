@@ -36,15 +36,15 @@ const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
 const BpkPagination = (props) => {
   const classNames = [getClassName('bpk-pagination')];
   const {
-    className,
+    className = null,
     nextLabel,
-    onPageChange,
+    onPageChange = null,
     pageCount,
     pageLabel,
     paginationLabel,
     previousLabel,
     selectedPageIndex,
-    visibleRange,
+    visibleRange = 3,
     ...rest
   } = props;
 
@@ -91,12 +91,6 @@ BpkPagination.propTypes = {
   pageLabel: PropTypes.func.isRequired,
   visibleRange: PropTypes.number,
   className: PropTypes.string,
-};
-
-BpkPagination.defaultProps = {
-  onPageChange: null,
-  visibleRange: 3,
-  className: null,
 };
 
 export default BpkPagination;
