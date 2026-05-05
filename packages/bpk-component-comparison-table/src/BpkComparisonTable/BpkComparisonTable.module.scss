@@ -112,11 +112,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   inset-block-start: 0;
 }
 
-// Remove-button row — lives in the first tbody row. Fades and collapses its own
-// height in place (like the old in-header remove button), so data rows below
-// slide up into the vacated space as the user scrolls.
-// Zero the default BpkTableCell 16px padding so the row can fully collapse;
-// the inner wrapper below controls the actual spacing.
+// Remove-button row - Fades and collapses its own height in place, so data rows below slide up into the vacated space as the user scrolls. Zero the default BpkTableCell 16px padding so the row can fully collapse; the inner wrapper below controls the actual spacing.
 .bpk-comparison-table__remove-cell {
   padding: 0;
 }

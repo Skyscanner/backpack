@@ -23,8 +23,7 @@ import { BpkModalV3 } from '../../../bpk-component-modal';
 import type { BpkComparisonTableRootProps } from './common-types';
 
 const BpkComparisonTableRoot = ({ children, isOpen, onClose, onOpen }: BpkComparisonTableRootProps) => {
-  // Hold onOpen in a ref so inline callbacks (new identity each render) don't
-  // re-trigger the effect and double-fire while the modal stays open.
+  // Hold onOpen in a ref so inline callbacks (new identity each render) don't re-trigger the effect and double-fire while the modal stays open.
   const onOpenRef = useRef(onOpen);
   onOpenRef.current = onOpen;
 
