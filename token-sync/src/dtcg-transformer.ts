@@ -215,7 +215,8 @@ export function classifyCollections(
 ): ClassifiedCollection[] {
   const classified: ClassifiedCollection[] = [];
   for (const collection of collections) {
-    const role = COLLECTION_ROLES[collection.name];
+    const role =
+      COLLECTION_ROLES[collection.name as keyof typeof COLLECTION_ROLES];
     if (!role) {
       throw new Error(
         `Unknown target collection "${collection.name}". Expected one of: ${Object.keys(
