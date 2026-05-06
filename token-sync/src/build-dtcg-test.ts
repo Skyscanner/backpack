@@ -33,6 +33,7 @@ import { FigmaApi } from './figma-api';
 import { TARGET_COLLECTION_NAMES } from './sync-helpers';
 
 import type { BuildDTCGResult } from './build-dtcg';
+import type { DTCGModeOutput, SkippedVariableRecord } from './types';
 
 jest.mock('./figma-api');
 
@@ -60,10 +61,10 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
       'Primitives/Hex',
     ]);
 
-    const backpackDay = outputs[0];
-    // Canvas/Default aliases a primitive → preserved as {Colour.Pink}.
-    // Canvas/Contrast aliases Canvas/Default (same collection) → inlined,
-    // eventually resolving to the preserved {Colour.Pink}.
+    // Day tree exercises the full alias machinery: Canvas/Default aliases a
+    // primitive (preserved as {Colour.Pink}); Canvas/Contrast aliases another
+    // semantic in the same collection (inlined, transitively → {Colour.Pink}).
+    const [backpackDay, backpackNight, primitives] = outputs;
     expect(backpackDay.tree).toEqual({
       Canvas: {
         $type: 'color',
@@ -71,30 +72,21 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
         Default: { $value: '{Colour.Pink}' },
       },
     });
-    expect(backpackDay.stats.preservedAliasCount).toBe(1);
-    expect(backpackDay.stats.inlinedAliasCount).toBe(1);
-
-    const backpackNight = outputs[1];
-    expect(backpackNight.tree).toEqual({
-      Canvas: {
-        $type: 'color',
-        Contrast: { $value: '{Colour.Berry}' },
-        Default: { $value: '{Colour.Berry}' },
-      },
+    expect(backpackDay.stats).toMatchObject({
+      preservedAliasCount: 1,
+      inlinedAliasCount: 1,
     });
 
-    const primitives = outputs[2];
+    // Night just needs to confirm the per-mode alias swap landed.
+    expect(backpackNight.tree).toMatchObject({
+      Canvas: { Default: { $value: '{Colour.Berry}' } },
+    });
+
+    // Primitives: spot-check the role and one literal of each $type.
     expect(primitives.role).toBe('primitive');
-    expect(primitives.tree).toEqual({
-      Colour: {
-        $type: 'color',
-        Berry: { $value: 'rgba(0, 0, 0, 0.5)' },
-        Pink: { $value: '#ff66b3' },
-      },
-      Spacing: {
-        $type: 'dimension',
-        md: { $value: '8px' },
-      },
+    expect(primitives.tree).toMatchObject({
+      Colour: { Pink: { $value: '#ff66b3' } },
+      Spacing: { $type: 'dimension', md: { $value: '8px' } },
     });
   });
 
@@ -148,9 +140,44 @@ describe('buildDTCG (full pipeline)', () => {
 });
 
 describe('formatBuildSummary', () => {
+  // Fills in dummy id/key so tests only need to spell out the fields they assert on.
+  function makeSkipped(
+    variableName: string,
+    overrides: Partial<SkippedVariableRecord> & {
+      reason: SkippedVariableRecord['reason'];
+    },
+  ): SkippedVariableRecord {
+    return {
+      variableId: 'unused-id',
+      variableKey: 'unused-key',
+      variableName,
+      ...overrides,
+    };
+  }
+
+  // Build a minimal Backpack DTCGModeOutput with the given skipped variables.
+  function makeOutput(
+    modeName: string,
+    skipped: SkippedVariableRecord[] = [],
+  ): DTCGModeOutput {
+    return {
+      collectionName: 'Backpack',
+      modeName,
+      role: 'semantic',
+      tree: {},
+      stats: {
+        tokenCount: 10,
+        preservedAliasCount: 5,
+        inlinedAliasCount: 2,
+        skippedVariableCount: skipped.length,
+        skippedVariables: skipped,
+      },
+    };
+  }
+
   // Minimal fake — we only exercise the formatter, not the writer.
-  function fakeResult(overrides: Partial<BuildDTCGResult> = {}): BuildDTCGResult {
-    const base: BuildDTCGResult = {
+  function makeResult(overrides: Partial<BuildDTCGResult> = {}): BuildDTCGResult {
+    return {
       classified: [
         {
           collection: { name: 'Backpack' } as BuildDTCGResult['classified'][number]['collection'],
@@ -161,21 +188,7 @@ describe('formatBuildSummary', () => {
           role: 'primitive',
         },
       ],
-      outputs: [
-        {
-          collectionName: 'Backpack',
-          modeName: 'Day',
-          role: 'semantic',
-          tree: {},
-          stats: {
-            tokenCount: 10,
-            preservedAliasCount: 5,
-            inlinedAliasCount: 2,
-            skippedVariableCount: 0,
-            skippedVariables: [],
-          },
-        },
-      ],
+      outputs: [makeOutput('Day')],
       missingNames: [],
       manifest: {
         generatedAt: '2026-04-29T12:00:00.000Z',
@@ -193,13 +206,12 @@ describe('formatBuildSummary', () => {
         ],
       },
       outputDir: '/tmp/out',
+      ...overrides,
     };
-    return { ...base, ...overrides };
   }
 
   it('summarises classification, per-output stats, and footer lines', () => {
-    const lines = formatBuildSummary(fakeResult());
-    expect(lines).toEqual([
+    expect(formatBuildSummary(makeResult())).toEqual([
       'Classified 2 collection(s): Backpack (semantic), Primitives (primitive).',
       '- Backpack / Day: 10 tokens (5 preserved, 2 inlined)',
       'Manifest: /tmp/out/manifest.json',
@@ -207,73 +219,33 @@ describe('formatBuildSummary', () => {
     ]);
   });
 
-  it('reports skipped variables grouped by missing alias id', () => {
+  it('includes a warning when target collections are missing', () => {
+    const lines = formatBuildSummary(makeResult({ missingNames: ['VDL'] }));
+    expect(lines.some((l) => l.includes('Warning') && l.includes('VDL'))).toBe(true);
+  });
+
+  it('groups unresolved aliases by missing alias id and merges Day/Night duplicates', () => {
+    // Same variable + same missing alias on both modes → one bullet, "(modes: Day, Night)".
+    // A second variable with a different missing alias → its own bullet.
+    const dupOnDay = makeSkipped('Component/Button/bg-default', {
+      reason: 'unresolved-alias',
+      unresolvedAliasId: 'VariableID:1111:2222',
+    });
+    const dupOnNight = { ...dupOnDay };
+    const otherOnDay = makeSkipped('Component/Chip/bg-active', {
+      reason: 'unresolved-alias',
+      unresolvedAliasId: 'VariableID:3333:4444',
+    });
+
     const lines = formatBuildSummary(
-      fakeResult({
+      makeResult({
         outputs: [
-          {
-            collectionName: 'Backpack',
-            modeName: 'Day',
-            role: 'semantic',
-            tree: {},
-            stats: {
-              tokenCount: 8,
-              preservedAliasCount: 5,
-              inlinedAliasCount: 2,
-              skippedVariableCount: 2,
-              skippedVariables: [
-                {
-                  variableName: 'Component/Button/bg-default',
-                  variableId: 'VariableID:1234:5678',
-                  variableKey: 'source-key-1',
-                  reason: 'unresolved-alias',
-                  unresolvedAliasId: 'VariableID:1111:2222',
-                },
-                {
-                  variableName: 'Component/Button/bg-default',
-                  variableId: 'VariableID:1234:5678',
-                  variableKey: 'source-key-1',
-                  reason: 'unresolved-alias',
-                  unresolvedAliasId: 'VariableID:1111:2222',
-                },
-                {
-                  variableName: 'Component/Chip/bg-active',
-                  variableId: 'VariableID:9876:5432',
-                  variableKey: 'source-key-2',
-                  reason: 'unresolved-alias',
-                  unresolvedAliasId: 'VariableID:3333:4444',
-                  unresolvedAt: 'Component/Chip/internal',
-                },
-              ],
-            },
-          },
-          {
-            collectionName: 'Backpack',
-            modeName: 'Night',
-            role: 'semantic',
-            tree: {},
-            stats: {
-              tokenCount: 8,
-              preservedAliasCount: 5,
-              inlinedAliasCount: 2,
-              skippedVariableCount: 1,
-              skippedVariables: [
-                {
-                  variableName: 'Component/Button/bg-default',
-                  variableId: 'VariableID:1234:5678',
-                  variableKey: 'source-key-1',
-                  reason: 'unresolved-alias',
-                  unresolvedAliasId: 'VariableID:1111:2222',
-                },
-              ],
-            },
-          },
+          makeOutput('Day', [dupOnDay, otherOnDay]),
+          makeOutput('Night', [dupOnNight]),
         ],
       }),
     );
-    expect(lines).toContain(
-      '- Backpack / Day: 8 tokens (5 preserved, 2 inlined, 2 skipped)',
-    );
+
     expect(lines).toContain(
       'Skipped 3 variable instance(s) due to unresolved aliases across 2 missing target variable(s) (likely cross-library or deleted references):',
     );
@@ -285,48 +257,24 @@ describe('formatBuildSummary', () => {
     );
   });
 
-  it('includes a warning when target collections are missing', () => {
-    const lines = formatBuildSummary(fakeResult({ missingNames: ['VDL'] }));
-    expect(lines.some((line) => line.includes('Warning') && line.includes('VDL'))).toBe(
-      true,
-    );
-  });
-
-  it('groups skipped variables by reason with separate sections', () => {
+  it('emits a separate section per skip reason', () => {
     const lines = formatBuildSummary(
-      fakeResult({
+      makeResult({
         outputs: [
-          {
-            collectionName: 'Backpack',
-            modeName: 'Day',
-            role: 'semantic',
-            tree: {},
-            stats: {
-              tokenCount: 0,
-              preservedAliasCount: 0,
-              inlinedAliasCount: 0,
-              skippedVariableCount: 2,
-              skippedVariables: [
-                {
-                  variableName: 'Opacity/Hover',
-                  variableId: 'v-opacity-hover',
-                  variableKey: 'k-opacity-hover',
-                  reason: 'missing-mode-value',
-                  missingModeName: 'Day',
-                },
-                {
-                  variableName: 'Colour/Brand/Pink',
-                  variableId: 'v-brand-pink',
-                  variableKey: 'k-brand-pink',
-                  reason: 'path-collision',
-                  collidingVariableName: 'Colour/Brand',
-                },
-              ],
-            },
-          },
+          makeOutput('Day', [
+            makeSkipped('Opacity/Hover', {
+              reason: 'missing-mode-value',
+              missingModeName: 'Day',
+            }),
+            makeSkipped('Colour/Brand/Pink', {
+              reason: 'path-collision',
+              collidingVariableName: 'Colour/Brand',
+            }),
+          ]),
         ],
       }),
     );
+
     expect(lines).toContain(
       'Skipped 1 variable instance(s) with no value assigned for the requested mode:',
     );

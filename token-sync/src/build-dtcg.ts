@@ -163,6 +163,9 @@ type SkippedByKey = Map<
   { collectionName: string; variableName: string; modes: Set<string> }
 >;
 
+// Accumulates a skipped variable into a two-level map: bucketKey (e.g. an
+// unresolved alias ID) → variable identity → set of affected modes.
+// Repeated calls for the same variable across modes merge into one entry.
 function addToGroup(
   groupMap: Map<string, SkippedByKey>,
   bucketKey: string,
@@ -179,6 +182,8 @@ function addToGroup(
   references.get(referenceKey)!.modes.add(modeName);
 }
 
+// Formats a SkippedByKey entry as a human-readable string, e.g.
+// "[Backpack] Canvas/Default (modes: Day, Night)"
 function renderReferences(references: SkippedByKey): string {
   return sortBy(Array.from(references.values()), (r) => r.variableName)
     .map(({ collectionName, modes, variableName }) => {
@@ -198,61 +203,20 @@ function countInstances(groups: Map<string, SkippedByKey>): number {
   return total;
 }
 
-function pushSkippedSection(
+// Group all skipped variables in `outputs` by reason and append one section
+// per non-empty reason to `lines`. Each section gets its own header + bullet
+// list. Day/Night duplicates collapse into a single entry with mode labels
+// so the CLI stays legible when multiple failure modes hit one sync.
+function appendSkippedSections(
   lines: string[],
-  groups: Map<string, SkippedByKey>,
-  header: (count: number, groupCount: number) => string,
-  itemLabel: (key: string) => string,
+  outputs: DTCGModeOutput[],
 ): void {
-  if (groups.size === 0) return;
-  lines.push(header(countInstances(groups), groups.size));
-  groups.forEach((refs, key) =>
-    lines.push(`  - ${itemLabel(key)} ← ${renderReferences(refs)}`),
-  );
-}
-
-// Pure formatter — returns the lines a CLI should print. Kept here (not in
-// index.ts) so the summary format is unit-testable and lives next to the
-// data shape it describes.
-export function formatBuildSummary(result: BuildDTCGResult): string[] {
-  const lines: string[] = [];
-
-  lines.push(
-    `Classified ${result.classified.length} collection(s): ${result.classified
-      .map(({ collection, role }) => `${collection.name} (${role})`)
-      .join(', ')}.`,
-  );
-
-  for (const output of result.outputs) {
-    const {
-      inlinedAliasCount,
-      preservedAliasCount,
-      skippedVariableCount,
-      tokenCount,
-    } = output.stats;
-    const skippedLabel =
-      skippedVariableCount > 0 ? `, ${skippedVariableCount} skipped` : '';
-    lines.push(
-      `- ${output.collectionName} / ${output.modeName}: ${tokenCount} tokens ` +
-        `(${preservedAliasCount} preserved, ${inlinedAliasCount} inlined${skippedLabel})`,
-    );
-  }
-
-  if (result.missingNames.length > 0) {
-    lines.push(
-      `Warning: these target collections were not found as local collections and will be skipped: ${result.missingNames.join(', ')}.`,
-    );
-  }
-
-  // Group skipped variables by reason. Each reason gets its own short section
-  // so the CLI stays legible even when multiple failure modes hit one sync.
-  // Day/Night duplicates collapse into a single entry with mode labels.
   const unresolvedGroups = new Map<string, SkippedByKey>();
   const missingModeGroups = new Map<string, SkippedByKey>();
   const pathCollisionGroups = new Map<string, SkippedByKey>();
   const invalidNameGroups = new Map<string, SkippedByKey>();
 
-  for (const output of result.outputs) {
+  for (const output of outputs) {
     for (const skipped of output.stats.skippedVariables) {
       switch (skipped.reason) {
         case SKIPPED_VARIABLE_REASONS.unresolvedAlias:
@@ -299,35 +263,85 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
     }
   }
 
-  pushSkippedSection(
-    lines,
-    unresolvedGroups,
-    (count, groupCount) =>
-      `Skipped ${count} variable instance(s) due to unresolved aliases across ${groupCount} missing target variable(s) (likely cross-library or deleted references):`,
-    (missingAliasId) => `missing ${missingAliasId}`,
-  );
-  pushSkippedSection(
-    lines,
-    missingModeGroups,
-    (count) =>
-      `Skipped ${count} variable instance(s) with no value assigned for the requested mode:`,
-    (missingMode) => `missing value for mode "${missingMode}"`,
-  );
-  pushSkippedSection(
-    lines,
-    pathCollisionGroups,
-    (count) =>
-      `Skipped ${count} variable instance(s) due to DTCG path collisions with another variable's name:`,
-    (collidingWith) => `collides with "${collidingWith}"`,
-  );
-  pushSkippedSection(
-    lines,
-    invalidNameGroups,
-    (count) =>
-      `Skipped ${count} variable instance(s) whose name cannot be placed in a DTCG tree:`,
-    (reason) => reason,
+  const sections: Array<{
+    groups: Map<string, SkippedByKey>;
+    header: (count: number, groupCount: number) => string;
+    itemLabel: (key: string) => string;
+  }> = [
+    {
+      groups: unresolvedGroups,
+      header: (count, groupCount) =>
+        `Skipped ${count} variable instance(s) due to unresolved aliases across ${groupCount} missing target variable(s) (likely cross-library or deleted references):`,
+      itemLabel: (missingAliasId) => `missing ${missingAliasId}`,
+    },
+    {
+      groups: missingModeGroups,
+      header: (count) =>
+        `Skipped ${count} variable instance(s) with no value assigned for the requested mode:`,
+      itemLabel: (missingMode) => `missing value for mode "${missingMode}"`,
+    },
+    {
+      groups: pathCollisionGroups,
+      header: (count) =>
+        `Skipped ${count} variable instance(s) due to DTCG path collisions with another variable's name:`,
+      itemLabel: (collidingWith) => `collides with "${collidingWith}"`,
+    },
+    {
+      groups: invalidNameGroups,
+      header: (count) =>
+        `Skipped ${count} variable instance(s) whose name cannot be placed in a DTCG tree:`,
+      itemLabel: (reason) => reason,
+    },
+  ];
+
+  for (const { groups, header, itemLabel } of sections) {
+    if (groups.size > 0) {
+      lines.push(header(countInstances(groups), groups.size));
+      groups.forEach((refs, key) =>
+        lines.push(`  - ${itemLabel(key)} ← ${renderReferences(refs)}`),
+      );
+    }
+  }
+}
+
+// Pure formatter — returns the lines a CLI should print.
+export function formatBuildSummary(result: BuildDTCGResult): string[] {
+  const lines: string[] = [];
+
+  // 1. Classified collections overview
+  lines.push(
+    `Classified ${result.classified.length} collection(s): ${result.classified
+      .map(({ collection, role }) => `${collection.name} (${role})`)
+      .join(', ')}.`,
   );
 
+  // 2. Per-output token stats
+  for (const output of result.outputs) {
+    const {
+      inlinedAliasCount,
+      preservedAliasCount,
+      skippedVariableCount,
+      tokenCount,
+    } = output.stats;
+    const skippedLabel =
+      skippedVariableCount > 0 ? `, ${skippedVariableCount} skipped` : '';
+    lines.push(
+      `- ${output.collectionName} / ${output.modeName}: ${tokenCount} tokens ` +
+        `(${preservedAliasCount} preserved, ${inlinedAliasCount} inlined${skippedLabel})`,
+    );
+  }
+
+  // 3. Warning for missing target collections
+  if (result.missingNames.length > 0) {
+    lines.push(
+      `Warning: these target collections were not found as local collections and will be skipped: ${result.missingNames.join(', ')}.`,
+    );
+  }
+
+  // 4. Skipped variables grouped by reason
+  appendSkippedSections(lines, result.outputs);
+
+  // 5. Manifest path + total file count
   lines.push(`Manifest: ${path.join(result.outputDir, 'manifest.json')}`);
   lines.push(
     `Wrote ${result.manifest.files.length} DTCG file(s) to ${result.outputDir}.`,

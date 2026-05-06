@@ -274,6 +274,9 @@
     "$type": "color"
   },
   "Radius": {
+    "None": {
+      "$value": "0px"
+    },
     "full": {
       "$value": "100px"
     },
@@ -285,9 +288,6 @@
     },
     "nav-tabs": {
       "$value": "18px"
-    },
-    "None": {
-      "$value": "0px"
     },
     "sm": {
       "$value": "8px"

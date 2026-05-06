@@ -1,8 +1,6 @@
 # token-sync
 
-Fetches Figma variables from the Backpack Foundations & Components file and
-writes deterministic [DTCG](https://design-tokens.github.io/community-group/format/)
-JSON files under `token-sync/tokens/`.
+Two-stage pipeline: Figma variables → DTCG JSON → CSS custom properties.
 
 > Requires a Figma **Enterprise** org.
 
@@ -17,30 +15,32 @@ FIGMA_FILE_KEY=<Backpack Foundations & Components file key>
 
 In CI, set the same two values as repository secrets.
 
-## Run
+## Stage 1 — Figma → DTCG
 
-From the repo root:
+Fetches the `Primitives` and `Backpack` collections from the Figma Variables
+REST API and writes deterministic
+[DTCG](https://design-tokens.github.io/community-group/format/) JSON files to
+`token-sync/tokens/`.
 
 ```bash
-npm install
 npm run sync
 ```
 
-This writes:
+Output:
 
 ```text
 token-sync/tokens/
-├─ primitives.json
-├─ backpack.day.json
-├─ backpack.night.json
-└─ manifest.json
+├─ primitives.json      # raw colour/spacing/… literals
+├─ backpack.day.json    # semantic tokens, Day mode
+├─ backpack.night.json  # semantic tokens, Night mode
+└─ manifest.json        # metadata: counts, roles, generatedAt
 ```
 
-## Behavior
+Cross-collection aliases are preserved as DTCG references (e.g.
+`{Colour.Pink}`); same-collection aliases are inlined to their final literal
+value. Unresolved aliases are skipped and reported in the console summary.
 
-- Reads `/variables/local` from the Figma Variables REST API.
-- Transforms only the `Primitives` and `Backpack` collections.
-- Preserves cross-collection aliases as DTCG references like `{Colour.Pink}`.
-- Inlines same-collection aliases to their final literal values.
-- Skips unresolved aliases and reports them in the console summary.
-- Produces stable output: sorted input, stable filenames, stable JSON formatting.
+## Stage 2 — DTCG → CSS
+
+_Coming next: style-dictionary transforms the DTCG files above into CSS custom
+properties._

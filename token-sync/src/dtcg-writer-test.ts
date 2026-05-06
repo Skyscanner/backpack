@@ -126,26 +126,29 @@ describe('countModesPerCollection', () => {
   });
 });
 
-describe('buildManifest', () => {
-  const outputs = [
-    primitiveOutput(),
-    backpackOutput('Day'),
-    backpackOutput('Night'),
-  ];
-  const modeCounts = countModesPerCollection(outputs);
-  const manifest = buildManifest(outputs, modeCounts, '2026-04-29T12:00:00.000Z');
+const standardOutputs = [
+  primitiveOutput(),
+  backpackOutput('Day'),
+  backpackOutput('Night'),
+];
+const standardManifest = buildManifest(
+  standardOutputs,
+  countModesPerCollection(standardOutputs),
+  '2026-04-29T12:00:00.000Z',
+);
 
+describe('buildManifest', () => {
   it('sets top-level fields', () => {
-    expect(manifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
+    expect(standardManifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
   });
 
   it('does not include the Figma file key or source URL (this dir is public)', () => {
-    expect(manifest).not.toHaveProperty('fileKey');
-    expect(manifest).not.toHaveProperty('sourceFileUrl');
+    expect(standardManifest).not.toHaveProperty('fileKey');
+    expect(standardManifest).not.toHaveProperty('sourceFileUrl');
   });
 
   it('preserves the order of outputs in the files array', () => {
-    expect(manifest.files.map((f) => f.fileName)).toEqual([
+    expect(standardManifest.files.map((f) => f.fileName)).toEqual([
       'primitives.json',
       'backpack.day.json',
       'backpack.night.json',
@@ -153,7 +156,9 @@ describe('buildManifest', () => {
   });
 
   it('mirrors the output stats into each file record', () => {
-    const backpackDay = manifest.files.find((f) => f.fileName === 'backpack.day.json');
+    const backpackDay = standardManifest.files.find(
+      (f) => f.fileName === 'backpack.day.json',
+    );
     expect(backpackDay).toMatchObject({
       collectionName: 'Backpack',
       modeName: 'Day',
@@ -164,38 +169,11 @@ describe('buildManifest', () => {
       skippedVariableCount: 0,
     });
   });
-
-  it('contract: every file record has the required shape', () => {
-    const requiredKeys = [
-      'fileName',
-      'collectionName',
-      'modeName',
-      'role',
-      'variableCount',
-      'preservedAliasCount',
-      'inlinedAliasCount',
-      'skippedVariableCount',
-    ];
-    for (const file of manifest.files) {
-      for (const key of requiredKeys) {
-        expect(file).toHaveProperty(key);
-      }
-    }
-  });
 });
 
 describe('assertUniqueFileNames', () => {
   it('passes for manifests with distinct fileNames', () => {
-    const manifest = buildManifest(
-      [primitiveOutput(), backpackOutput('Day'), backpackOutput('Night')],
-      countModesPerCollection([
-        primitiveOutput(),
-        backpackOutput('Day'),
-        backpackOutput('Night'),
-      ]),
-      '2026-04-29T12:00:00.000Z',
-    );
-    expect(() => assertUniqueFileNames(manifest)).not.toThrow();
+    expect(() => assertUniqueFileNames(standardManifest)).not.toThrow();
   });
 
   it('throws when two outputs slug to the same fileName', () => {

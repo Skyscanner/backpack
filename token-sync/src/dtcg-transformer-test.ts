@@ -54,7 +54,7 @@ import {
 } from './dtcg-transformer';
 
 import type { LocalVariable } from './figma-api';
-import type { DTCGTree, ResolveContext } from './types';
+import type { DTCGTree, ResolveContext, SkippedVariableRecord } from './types';
 
 
 function makeContext(
@@ -119,83 +119,34 @@ describe('figmaColorToCss', () => {
 
 describe('inferDTCGType', () => {
   function fakeVariable(partial: Partial<LocalVariable>): LocalVariable {
-    return {
-      scopes: [],
-      ...partial,
-    } as unknown as LocalVariable;
+    return { scopes: [], ...partial } as unknown as LocalVariable;
   }
 
-  it('maps COLOR to color', () => {
-    expect(inferDTCGType(fakeVariable({ resolvedType: 'COLOR' }))).toBe('color');
-  });
-
-  it('maps BOOLEAN to boolean', () => {
-    expect(inferDTCGType(fakeVariable({ resolvedType: 'BOOLEAN' }))).toBe(
-      'boolean',
-    );
-  });
-
-  it('maps STRING to fontFamily when FONT_FAMILY is in scope', () => {
+  it.each<[LocalVariable['resolvedType'], string[], string]>([
+    ['COLOR', [], 'color'],
+    ['BOOLEAN', [], 'boolean'],
+    ['STRING', ['FONT_FAMILY'], 'fontFamily'],
+    ['STRING', [], 'string'],
+    ['FLOAT', ['FONT_STYLE'], 'fontWeight'],
+    ['FLOAT', ['OPACITY'], 'number'],
+    ['FLOAT', ['LINE_HEIGHT'], 'number'],
+    ['FLOAT', ['CORNER_RADIUS'], 'dimension'],
+    ['FLOAT', ['FONT_SIZE'], 'dimension'],
+    ['FLOAT', ['PARAGRAPH_SPACING'], 'dimension'],
+    ['FLOAT', ['STROKE_FLOAT'], 'dimension'],
+    ['FLOAT', ['WIDTH_HEIGHT'], 'dimension'],
+    ['FLOAT', ['GAP'], 'dimension'],
+    ['FLOAT', ['ALL_SCOPES'], 'dimension'],
+    ['FLOAT', [], 'dimension'],
+  ])('maps %s with scopes %j to %s', (resolvedType, scopes, expected) => {
     expect(
       inferDTCGType(
-        fakeVariable({ resolvedType: 'STRING', scopes: ['FONT_FAMILY'] }),
+        fakeVariable({
+          resolvedType,
+          scopes: scopes as unknown as LocalVariable['scopes'],
+        }),
       ),
-    ).toBe('fontFamily');
-    expect(
-      inferDTCGType(fakeVariable({ resolvedType: 'STRING', scopes: [] })),
-    ).toBe('string');
-  });
-
-  it('maps FLOAT to fontWeight when FONT_STYLE is in scope, else dimension', () => {
-    expect(
-      inferDTCGType(
-        fakeVariable({ resolvedType: 'FLOAT', scopes: ['FONT_STYLE'] }),
-      ),
-    ).toBe('fontWeight');
-    expect(
-      inferDTCGType(fakeVariable({ resolvedType: 'FLOAT', scopes: ['GAP'] })),
-    ).toBe('dimension');
-  });
-
-  it('maps FLOAT with OPACITY or LINE_HEIGHT scope to number (not dimension)', () => {
-    expect(
-      inferDTCGType(
-        fakeVariable({ resolvedType: 'FLOAT', scopes: ['OPACITY'] }),
-      ),
-    ).toBe('number');
-    expect(
-      inferDTCGType(
-        fakeVariable({ resolvedType: 'FLOAT', scopes: ['LINE_HEIGHT'] }),
-      ),
-    ).toBe('number');
-  });
-
-  it('recognises common pixel-dimension scopes explicitly', () => {
-    const dimensionScopes = [
-      'CORNER_RADIUS',
-      'FONT_SIZE',
-      'PARAGRAPH_SPACING',
-      'STROKE_FLOAT',
-      'WIDTH_HEIGHT',
-    ] as unknown as LocalVariable['scopes'];
-    for (const scope of dimensionScopes) {
-      expect(
-        inferDTCGType(
-          fakeVariable({ resolvedType: 'FLOAT', scopes: [scope] }),
-        ),
-      ).toBe('dimension');
-    }
-  });
-
-  it('falls back to dimension for ALL_SCOPES / empty / unknown FLOAT scopes', () => {
-    expect(
-      inferDTCGType(
-        fakeVariable({ resolvedType: 'FLOAT', scopes: ['ALL_SCOPES'] }),
-      ),
-    ).toBe('dimension');
-    expect(
-      inferDTCGType(fakeVariable({ resolvedType: 'FLOAT', scopes: [] })),
-    ).toBe('dimension');
+    ).toBe(expected);
   });
 });
 
@@ -253,7 +204,7 @@ describe('classifyCollections', () => {
 describe('resolveAliasTarget', () => {
   it('returns the variable by canonical id when present', () => {
     const context = makeContext();
-    expect(resolveAliasTarget('v-colour-pink', context)?.name).toBe(
+    expect(resolveAliasTarget('variable-colour-pink', context)?.name).toBe(
       'Colour/Pink',
     );
   });
@@ -266,7 +217,7 @@ describe('resolveAliasTarget', () => {
 
   it('returns undefined when neither id nor key resolves', () => {
     const context = makeContext();
-    expect(resolveAliasTarget('v-missing', context)).toBeUndefined();
+    expect(resolveAliasTarget('variable-missing', context)).toBeUndefined();
   });
 });
 
@@ -308,7 +259,7 @@ describe('resolveVariableValue', () => {
       localCollectionsById: response.meta.variableCollections,
       preservedReferenceKeys: new Set(),
     };
-    const broken = response.meta.variables['v-sem-broken'];
+    const broken = response.meta.variables['variable-semantic-broken'];
     expect(() => resolveVariableValue(broken, 'Day', context)).toThrow(
       DTCGTransformError,
     );
@@ -455,7 +406,7 @@ describe('buildPreservedReferenceKeys', () => {
     expect(keysForBackpack.has(KEY_COLOUR_PINK)).toBe(true);
     expect(keysForBackpack.has(KEY_COLOUR_BERRY)).toBe(true);
     // Backpack keys should not preserve themselves.
-    expect(keysForBackpack.has('k-sem-canvas-default')).toBe(false);
+    expect(keysForBackpack.has('key-semantic-canvas-default')).toBe(false);
   });
 
   it('returns an empty set when there is only one collection', () => {
@@ -548,49 +499,52 @@ describe('buildDTCGTreeForMode', () => {
     });
   });
 
-  it('handles unresolved aliases: skips when skipUnresolvedAliases is enabled, throws by default', () => {
-    const response = buildFixtureResponse({ includeBroken: true });
-    const context: ResolveContext = {
-      localVariablesById: response.meta.variables,
-      localVariablesByKey: buildLocalVariablesByKey(response.meta.variables),
-      localCollectionsById: response.meta.variableCollections,
-      preservedReferenceKeys: new Set(),
-    };
-    const broken = response.meta.variables['v-sem-broken'];
+  // Each case must skip with `skipUnresolvedAliases: true` and throw without it.
+  // Setup is per-case; the assertions are shared.
+  function expectSkipOrThrow(
+    classified: Parameters<typeof buildDTCGTreeForMode>[0],
+    modeName: string,
+    variables: LocalVariable[],
+    context: ResolveContext,
+    expectedSkip: Partial<SkippedVariableRecord>,
+    thrownMatcher: unknown = DTCGTransformError,
+  ): void {
+    const output = buildDTCGTreeForMode(classified, modeName, variables, context, {
+      skipUnresolvedAliases: true,
+    });
+    expect(output.stats.skippedVariableCount).toBe(1);
+    expect(output.stats.skippedVariables[0]).toMatchObject(expectedSkip);
 
-    const output = buildDTCGTreeForMode(
+    expect(() =>
+      buildDTCGTreeForMode(classified, modeName, variables, context),
+    ).toThrow(thrownMatcher as never);
+  }
+
+  it('skips or throws on unresolved aliases', () => {
+    const response = buildFixtureResponse({ includeBroken: true });
+    const broken = response.meta.variables['variable-semantic-broken'];
+    expectSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
       'Day',
       [broken],
-      context,
-      { skipUnresolvedAliases: true },
-    );
-    expect(output.stats.skippedVariableCount).toBe(1);
-    expect(output.stats.skippedVariables).toEqual([
       {
-        variableName: 'Broken/Missing',
-        variableId: 'v-sem-broken',
-        variableKey: 'k-sem-broken',
-        reason: 'unresolved-alias',
-        unresolvedAliasId: 'v-does-not-exist',
+        localVariablesById: response.meta.variables,
+        localVariablesByKey: buildLocalVariablesByKey(response.meta.variables),
+        localCollectionsById: response.meta.variableCollections,
+        preservedReferenceKeys: new Set(),
       },
-    ]);
-    expect(output.tree).toEqual({});
-
-    expect(() =>
-      buildDTCGTreeForMode(
-        { collection: backpackCollection, role: 'semantic' },
-        'Day',
-        [broken],
-        context,
-      ),
-    ).toThrow(DTCGTransformError);
+      {
+        reason: 'unresolved-alias',
+        variableName: 'Broken/Missing',
+        unresolvedAliasId: 'variable-does-not-exist',
+      },
+    );
   });
 
-  it('handles missing-mode-value: skips when skipUnresolvedAliases is enabled, throws by default', () => {
+  it('skips or throws on missing-mode-value', () => {
     const noDay = {
-      id: 'v-no-day',
-      key: 'k-no-day',
+      id: 'variable-no-day',
+      key: 'key-no-day',
       name: 'Opacity/Hover',
       variableCollectionId: BACKPACK_COLLECTION_ID,
       resolvedType: 'FLOAT',
@@ -598,70 +552,40 @@ describe('buildDTCGTreeForMode', () => {
       scopes: ['OPACITY'],
       remote: false,
     } as unknown as LocalVariable;
-    const context = makeContext();
-
-    const output = buildDTCGTreeForMode(
+    expectSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
       'Day',
       [noDay],
-      context,
-      { skipUnresolvedAliases: true },
+      makeContext(),
+      {
+        reason: 'missing-mode-value',
+        variableName: 'Opacity/Hover',
+        missingModeName: 'Day',
+      },
     );
-    expect(output.tree).toEqual({});
-    expect(output.stats.skippedVariableCount).toBe(1);
-    expect(output.stats.skippedVariables[0]).toMatchObject({
-      reason: 'missing-mode-value',
-      variableName: 'Opacity/Hover',
-      missingModeName: 'Day',
-    });
-
-    expect(() =>
-      buildDTCGTreeForMode(
-        { collection: backpackCollection, role: 'semantic' },
-        'Day',
-        [noDay],
-        context,
-      ),
-    ).toThrow(DTCGTransformError);
   });
 
-  it('handles invalid-name: skips when skipUnresolvedAliases is enabled, throws by default', () => {
+  it('skips or throws on invalid variable name', () => {
     const bad = {
       ...primitiveColourPink,
-      id: 'v-bad-name',
-      key: 'k-bad-name',
+      id: 'variable-bad-name',
+      key: 'key-bad-name',
       name: 'Colour//Pink',
     } as LocalVariable;
-    const context = makeContext();
-
-    const output = buildDTCGTreeForMode(
+    expectSkipOrThrow(
       { collection: primitivesCollection, role: 'primitive' },
       'Hex',
       [bad],
-      context,
-      { skipUnresolvedAliases: true },
+      makeContext(),
+      { reason: 'invalid-name', variableName: 'Colour//Pink' },
+      /Invalid variable name/,
     );
-    expect(output.tree).toEqual({});
-    expect(output.stats.skippedVariableCount).toBe(1);
-    expect(output.stats.skippedVariables[0]).toMatchObject({
-      reason: 'invalid-name',
-      variableName: 'Colour//Pink',
-    });
-
-    expect(() =>
-      buildDTCGTreeForMode(
-        { collection: primitivesCollection, role: 'primitive' },
-        'Hex',
-        [bad],
-        context,
-      ),
-    ).toThrow(/Invalid variable name/);
   });
 
-  it('handles path-collision: skips when skipUnresolvedAliases is enabled, throws by default', () => {
+  it('skips or throws on path collision', () => {
     const parent = {
-      id: 'v-collide-parent',
-      key: 'k-collide-parent',
+      id: 'variable-collide-parent',
+      key: 'key-collide-parent',
       name: 'Colour/Brand',
       variableCollectionId: PRIMITIVES_COLLECTION_ID,
       resolvedType: 'COLOR',
@@ -671,37 +595,23 @@ describe('buildDTCGTreeForMode', () => {
     } as unknown as LocalVariable;
     const child = {
       ...parent,
-      id: 'v-collide-child',
-      key: 'k-collide-child',
+      id: 'variable-collide-child',
+      key: 'key-collide-child',
       name: 'Colour/Brand/Pink',
       valuesByMode: { [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 } },
     } as unknown as LocalVariable;
-    const context = makeContext();
-
     // Parent writes first (sorted: "Colour/Brand" < "Colour/Brand/Pink"); child collides.
-    const output = buildDTCGTreeForMode(
+    expectSkipOrThrow(
       { collection: primitivesCollection, role: 'primitive' },
       'Hex',
       [parent, child],
-      context,
-      { skipUnresolvedAliases: true },
+      makeContext(),
+      {
+        reason: 'path-collision',
+        variableName: 'Colour/Brand/Pink',
+        collidingVariableName: 'Colour/Brand',
+      },
     );
-    expect(output.stats.skippedVariableCount).toBe(1);
-    expect(output.stats.skippedVariables[0]).toMatchObject({
-      reason: 'path-collision',
-      variableName: 'Colour/Brand/Pink',
-      collidingVariableName: 'Colour/Brand',
-    });
-    expect(output.tree).toEqual({ Colour: { $type: 'color', Brand: { $value: '#ff0000' } } });
-
-    expect(() =>
-      buildDTCGTreeForMode(
-        { collection: primitivesCollection, role: 'primitive' },
-        'Hex',
-        [parent, child],
-        context,
-      ),
-    ).toThrow(DTCGTransformError);
   });
 
   it('produces output that is independent of input ordering', () => {

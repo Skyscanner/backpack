@@ -62,25 +62,25 @@ export const PRIMITIVES_MODE_HEX = 'mode-hex';
 export const BACKPACK_MODE_DAY = 'mode-day';
 export const BACKPACK_MODE_NIGHT = 'mode-night';
 
-export const PRIMITIVES_COLLECTION_ID = 'c-primitives';
-export const BACKPACK_COLLECTION_ID = 'c-backpack';
+export const PRIMITIVES_COLLECTION_ID = 'collection-primitives';
+export const BACKPACK_COLLECTION_ID = 'collection-backpack';
 
 // Keys
-export const KEY_COLOUR_PINK = 'k-colour-pink';
-export const KEY_COLOUR_BERRY = 'k-colour-berry';
-export const KEY_SPACING_MD = 'k-spacing-md';
-export const KEY_SEM_CANVAS_DEFAULT = 'k-sem-canvas-default';
-export const KEY_SEM_CANVAS_CONTRAST = 'k-sem-canvas-contrast';
-export const KEY_SEM_SURFACE = 'k-sem-surface';
-export const KEY_SEM_INTERNAL_SHORTCUT = 'k-sem-internal-shortcut';
-export const KEY_SEM_CYCLE_A = 'k-sem-cycle-a';
-export const KEY_SEM_CYCLE_B = 'k-sem-cycle-b';
-export const KEY_SEM_BROKEN = 'k-sem-broken';
+export const KEY_COLOUR_PINK = 'key-colour-pink';
+export const KEY_COLOUR_BERRY = 'key-colour-berry';
+export const KEY_SPACING_MD = 'key-spacing-medium';
+export const KEY_SEM_CANVAS_DEFAULT = 'key-semantic-canvas-default';
+export const KEY_SEM_CANVAS_CONTRAST = 'key-semantic-canvas-contrast';
+export const KEY_SEM_SURFACE = 'key-semantic-surface';
+export const KEY_SEM_INTERNAL_SHORTCUT = 'key-semantic-internal-shortcut';
+export const KEY_SEM_CYCLE_A = 'key-semantic-cycle-a';
+export const KEY_SEM_CYCLE_B = 'key-semantic-cycle-b';
+export const KEY_SEM_BROKEN = 'key-semantic-broken';
 
 // Collections
 export const primitivesCollection: LocalVariableCollection = makeCollection({
   id: PRIMITIVES_COLLECTION_ID,
-  key: 'col-primitives',
+  key: 'collection-key-primitives',
   name: 'Primitives',
   modes: [{ modeId: PRIMITIVES_MODE_HEX, name: 'Hex' }],
   defaultModeId: PRIMITIVES_MODE_HEX,
@@ -89,7 +89,7 @@ export const primitivesCollection: LocalVariableCollection = makeCollection({
 
 export const backpackCollection: LocalVariableCollection = makeCollection({
   id: BACKPACK_COLLECTION_ID,
-  key: 'col-backpack',
+  key: 'collection-key-backpack',
   name: 'Backpack',
   modes: [
     { modeId: BACKPACK_MODE_DAY, name: 'Day' },
@@ -101,7 +101,7 @@ export const backpackCollection: LocalVariableCollection = makeCollection({
 
 // Variables
 export const primitiveColourPink: LocalVariable = makeVariable({
-  id: 'v-colour-pink',
+  id: 'variable-colour-pink',
   key: KEY_COLOUR_PINK,
   name: 'Colour/Pink',
   variableCollectionId: PRIMITIVES_COLLECTION_ID,
@@ -115,7 +115,7 @@ export const primitiveColourPink: LocalVariable = makeVariable({
 });
 
 export const primitiveColourBerry: LocalVariable = makeVariable({
-  id: 'v-colour-berry',
+  id: 'variable-colour-berry',
   key: KEY_COLOUR_BERRY,
   name: 'Colour/Berry',
   variableCollectionId: PRIMITIVES_COLLECTION_ID,
@@ -129,7 +129,7 @@ export const primitiveColourBerry: LocalVariable = makeVariable({
 });
 
 export const primitiveSpacingMd: LocalVariable = makeVariable({
-  id: 'v-spacing-md',
+  id: 'variable-spacing-medium',
   key: KEY_SPACING_MD,
   name: 'Spacing/md',
   variableCollectionId: PRIMITIVES_COLLECTION_ID,
@@ -142,14 +142,14 @@ export const primitiveSpacingMd: LocalVariable = makeVariable({
 // Semantic token aliasing a primitive in another collection —
 // should be preserved as `{Colour.Pink}` on Day, `{Colour.Berry}` on Night.
 export const semanticCanvasDefault: LocalVariable = makeVariable({
-  id: 'v-sem-canvas-default',
+  id: 'variable-semantic-canvas-default',
   key: KEY_SEM_CANVAS_DEFAULT,
   name: 'Canvas/Default',
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'v-colour-pink' },
-    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'v-colour-berry' },
+    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'variable-colour-pink' },
+    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-colour-berry' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -159,14 +159,14 @@ export const semanticCanvasDefault: LocalVariable = makeVariable({
 // should be inlined. Chains through `canvas-default` → `colour-pink` to
 // exercise nested alias resolution.
 export const semanticCanvasContrast: LocalVariable = makeVariable({
-  id: 'v-sem-canvas-contrast',
+  id: 'variable-semantic-canvas-contrast',
   key: KEY_SEM_CANVAS_CONTRAST,
   name: 'Canvas/Contrast',
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'v-sem-canvas-default' },
-    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'v-sem-canvas-default' },
+    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-canvas-default' },
+    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-canvas-default' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -175,7 +175,7 @@ export const semanticCanvasContrast: LocalVariable = makeVariable({
 // Semantic token aliasing a primitive via a subscribed-id id form
 // ("VariableID:<key>/<sub>") — exercises resolveAliasTarget's key fallback.
 export const semanticSurface: LocalVariable = makeVariable({
-  id: 'v-sem-surface',
+  id: 'variable-semantic-surface',
   key: KEY_SEM_SURFACE,
   name: 'Surface/Default',
   variableCollectionId: BACKPACK_COLLECTION_ID,
@@ -196,28 +196,28 @@ export const semanticSurface: LocalVariable = makeVariable({
 
 // Cycle pair: a → b, b → a. Either direction should throw.
 export const semanticCycleA: LocalVariable = makeVariable({
-  id: 'v-sem-cycle-a',
+  id: 'variable-semantic-cycle-a',
   key: KEY_SEM_CYCLE_A,
   name: 'Cycle/A',
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'v-sem-cycle-b' },
-    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'v-sem-cycle-b' },
+    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-b' },
+    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-b' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
 });
 
 export const semanticCycleB: LocalVariable = makeVariable({
-  id: 'v-sem-cycle-b',
+  id: 'variable-semantic-cycle-b',
   key: KEY_SEM_CYCLE_B,
   name: 'Cycle/B',
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'v-sem-cycle-a' },
-    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'v-sem-cycle-a' },
+    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-a' },
+    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-a' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -225,14 +225,14 @@ export const semanticCycleB: LocalVariable = makeVariable({
 
 // Semantic token whose alias target does not exist in the local variable set.
 export const semanticBroken: LocalVariable = makeVariable({
-  id: 'v-sem-broken',
+  id: 'variable-semantic-broken',
   key: KEY_SEM_BROKEN,
   name: 'Broken/Missing',
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'v-does-not-exist' },
-    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'v-does-not-exist' },
+    [BACKPACK_MODE_DAY]: { type: 'VARIABLE_ALIAS', id: 'variable-does-not-exist' },
+    [BACKPACK_MODE_NIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-does-not-exist' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,

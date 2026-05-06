@@ -124,6 +124,9 @@
         "$type": "color"
       },
       "Dimension": {
+        "Radius": {
+          "$value": "{Radius.sm}"
+        },
         "min-height-default": {
           "$value": "{Heights.36}"
         },
@@ -138,9 +141,6 @@
         },
         "padding-horizontal-large": {
           "$value": "16px"
-        },
-        "Radius": {
-          "$value": "{Radius.sm}"
         },
         "$type": "dimension"
       },
@@ -326,10 +326,6 @@
       },
       "$type": "color"
     },
-    "iOS Tab-bar-fill": {
-      "$value": "{Alpha.White Alpha 80}",
-      "$type": "color"
-    },
     "Map": {
       "cluster-pin": {
         "$value": "{Colour.Dark Sky}"
@@ -482,6 +478,10 @@
     "Trip Advisor": {
       "$value": "#00aa6c",
       "$type": "color"
+    },
+    "iOS Tab-bar-fill": {
+      "$value": "{Alpha.White Alpha 80}",
+      "$type": "color"
     }
   },
   "Core": {
@@ -536,9 +536,6 @@
     "$type": "color"
   },
   "Surface": {
-    "🚧 Promo": {
-      "$value": "{Colour.Sky Blue}"
-    },
     "Contrast": {
       "$value": "{Colour.Dark Sky}"
     },
@@ -563,15 +560,12 @@
     "Tint": {
       "$value": "{Alpha.White Alpha 10}"
     },
+    "🚧 Promo": {
+      "$value": "{Colour.Sky Blue}"
+    },
     "$type": "color"
   },
   "Text": {
-    "💀 DEPRECATED Link": {
-      "$value": "{Colour.Sky Blue}"
-    },
-    "🚧 Hero": {
-      "$value": "{Colour.Sky Blue}"
-    },
     "Disabled": {
       "$value": "{Alpha.Black Alpha 20}"
     },
@@ -598,6 +592,12 @@
     },
     "Success": {
       "$value": "{Colour.Green}"
+    },
+    "💀 DEPRECATED Link": {
+      "$value": "{Colour.Sky Blue}"
+    },
+    "🚧 Hero": {
+      "$value": "{Colour.Sky Blue}"
     },
     "$type": "color"
   },
