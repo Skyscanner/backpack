@@ -100,6 +100,9 @@ jobs:
       - name: Override React to 19.2.5
         run: npm install --no-save react@19.2.5 react-dom@19.2.5 @types/react@19 @types/react-dom@19
 
+      - name: Generate component code (icons, flare, spinners)
+        run: npm run build:gulp
+
       - name: Run typecheck (React 19)
         run: npm run typecheck
 
