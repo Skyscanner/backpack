@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-30T09:55:08.263Z",
+  "generatedAt": "2026-05-06T08:14:44.383Z",
   "files": [
     {
       "fileName": "backpack.day.json",
       "collectionName": "Backpack",
       "modeName": "Day",
       "role": "semantic",
-      "variableCount": 170,
-      "preservedAliasCount": 109,
+      "variableCount": 172,
+      "preservedAliasCount": 111,
       "inlinedAliasCount": 36,
       "skippedVariableCount": 4
     },
@@ -16,8 +16,8 @@
       "collectionName": "Backpack",
       "modeName": "Night",
       "role": "semantic",
-      "variableCount": 170,
-      "preservedAliasCount": 112,
+      "variableCount": 172,
+      "preservedAliasCount": 114,
       "inlinedAliasCount": 33,
       "skippedVariableCount": 4
     },

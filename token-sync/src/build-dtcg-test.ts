@@ -29,9 +29,12 @@ import {
   buildDTCGOutputs,
   formatBuildSummary,
 } from './build-dtcg';
+import { FigmaApi } from './figma-api';
 import { TARGET_COLLECTION_NAMES } from './sync-helpers';
 
 import type { BuildDTCGResult } from './build-dtcg';
+
+jest.mock('./figma-api');
 
 describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
   it('produces one DTCG output per (collection, mode), classified and with alias stats', () => {
@@ -103,11 +106,16 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
   });
 });
 
-describe('buildDTCG (full pipeline with injected api)', () => {
+describe('buildDTCG (full pipeline)', () => {
   let tempDir: string;
+  let mockGetLocalVariables: jest.Mock;
 
   beforeEach(async () => {
     tempDir = await mkdtemp(path.join(os.tmpdir(), 'token-sync-build-'));
+    mockGetLocalVariables = jest.fn();
+    (FigmaApi as jest.Mock).mockImplementation(() => ({
+      getLocalVariables: mockGetLocalVariables,
+    }));
   });
 
   afterEach(async () => {
@@ -116,18 +124,17 @@ describe('buildDTCG (full pipeline with injected api)', () => {
 
   it('runs fetch → transform → write and returns a complete BuildDTCGResult', async () => {
     const response = buildFixtureResponse();
-    const fakeApi = { getLocalVariables: jest.fn().mockResolvedValue(response) };
+    mockGetLocalVariables.mockResolvedValue(response);
 
     const result = await buildDTCG({
-      token: 'unused',
+      token: 'test-token',
       fileKey: 'file-123',
       targetNames: TARGET_COLLECTION_NAMES,
       outputDir: tempDir,
-      api: fakeApi,
       now: () => new Date('2026-04-29T12:00:00.000Z'),
     });
 
-    expect(fakeApi.getLocalVariables).toHaveBeenCalledWith('file-123');
+    expect(mockGetLocalVariables).toHaveBeenCalledWith('file-123');
     expect(result.outputDir).toBe(tempDir);
     expect(result.classified).toHaveLength(2);
     expect(result.outputs).toHaveLength(3);

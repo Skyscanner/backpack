@@ -236,7 +236,7 @@ describe('assertSafeOutputDir', () => {
   });
 
   it('rejects the filesystem root', () => {
-    const root = path.parse(process.cwd()).root;
+    const {root} = path.parse(process.cwd());
     expect(() => assertSafeOutputDir(root)).toThrow(/filesystem root/);
   });
 

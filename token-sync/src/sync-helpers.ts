@@ -50,7 +50,7 @@ export function requireEnv(name: string): string {
 }
 
 export interface LocalTargetFilterResult {
-  matched: LocalVariableCollection[];
+  matchedCollections: LocalVariableCollection[];
   missingNames: string[];
   availableLocalNames: string[];
 }
@@ -63,16 +63,12 @@ export function filterLocalTargets(
   allCollections: LocalVariableCollection[],
   targetNames: readonly string[],
 ): LocalTargetFilterResult {
-  const matched = allCollections.filter(
-    (collection) =>
-      !collection.remote && targetNames.includes(collection.name),
-  );
-  const foundNames = new Set(matched.map((collection) => collection.name));
+  const localCollections = allCollections.filter((collection) => !collection.remote);
+  const matchedCollections = localCollections.filter((collection) => targetNames.includes(collection.name));
+  const foundNames = new Set(matchedCollections.map((collection) => collection.name));
   const missingNames = targetNames.filter((name) => !foundNames.has(name));
-  const availableLocalNames = allCollections
-    .filter((collection) => !collection.remote)
-    .map((collection) => collection.name);
-  return { matched, missingNames, availableLocalNames };
+  const availableLocalNames = localCollections.map((collection) => collection.name);
+  return { matchedCollections, missingNames, availableLocalNames };
 }
 
 // Turn any thrown value into a single user-facing error string. Keeps the

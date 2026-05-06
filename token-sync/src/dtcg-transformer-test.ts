@@ -18,7 +18,6 @@
 
 import {
   BACKPACK_COLLECTION_ID,
-  BACKPACK_MODE_DAY,
   BACKPACK_MODE_NIGHT,
   KEY_COLOUR_BERRY,
   KEY_COLOUR_PINK,
@@ -272,33 +271,19 @@ describe('resolveAliasTarget', () => {
 });
 
 describe('resolveVariableValue', () => {
-  it('returns the literal value for a non-alias variable', () => {
+  it('returns the correct literal value for non-alias variables', () => {
     const context = makeContext();
-    const result = resolveVariableValue(
-      primitiveColourPink,
-      'Hex',
-      context,
-    );
-    expect(result).toEqual({ value: '#ff66b3' });
-  });
-
-  it('normalizes dimension literals with px', () => {
-    const context = makeContext();
-    const result = resolveVariableValue(primitiveSpacingMd, 'Hex', context);
-    expect(result).toEqual({ value: '8px' });
+    expect(resolveVariableValue(primitiveColourPink, 'Hex', context)).toEqual({ value: '#ff66b3' });
+    expect(resolveVariableValue(primitiveSpacingMd, 'Hex', context)).toEqual({ value: '8px' });
   });
 
   it('preserves aliases as {Group.Token} references when the target key is preserved', () => {
-    const context = makeContext({ preservedKeys: new Set([KEY_COLOUR_PINK]) });
-    const result = resolveVariableValue(
-      semanticCanvasDefault,
-      'Day',
-      context,
-    );
-    expect(result).toEqual({
+    const context = makeContext({ preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]) });
+    expect(resolveVariableValue(semanticCanvasDefault, 'Day', context)).toEqual({
       value: '{Colour.Pink}',
       preservedAliasTo: 'Colour.Pink',
     });
+    expect(resolveVariableValue(semanticCanvasDefault, 'Night', context).value).toBe('{Colour.Berry}');
   });
 
   it('inlines aliases to same-collection variables', () => {
@@ -399,26 +384,17 @@ describe('setTokenAtPath', () => {
     expect(tree).toEqual({ Colour: { Pink: { $value: '#ff0', $type: 'color' } } });
   });
 
-  it('throws a path-collision DTCGTransformError when a prefix is already a leaf token', () => {
-    const tree: DTCGTree = {};
-    setTokenAtPath(tree, 'Colour/Brand', { $value: '#f00', $type: 'color' });
-    expect(() =>
-      setTokenAtPath(tree, 'Colour/Brand/Pink', {
-        $value: '#ff0',
-        $type: 'color',
-      }),
-    ).toThrow(DTCGTransformError);
-  });
+  it('throws a path-collision DTCGTransformError in both collision directions', () => {
+    const token = { $value: '#f00', $type: 'color' } as const;
+    const child = { $value: '#ff0', $type: 'color' } as const;
 
-  it('throws a path-collision DTCGTransformError when the leaf position already holds a group', () => {
-    const tree: DTCGTree = {};
-    setTokenAtPath(tree, 'Colour/Brand/Pink', {
-      $value: '#ff0',
-      $type: 'color',
-    });
-    expect(() =>
-      setTokenAtPath(tree, 'Colour/Brand', { $value: '#f00', $type: 'color' }),
-    ).toThrow(DTCGTransformError);
+    const tree1: DTCGTree = {};
+    setTokenAtPath(tree1, 'Colour/Brand', token);
+    expect(() => setTokenAtPath(tree1, 'Colour/Brand/Pink', child)).toThrow(DTCGTransformError);
+
+    const tree2: DTCGTree = {};
+    setTokenAtPath(tree2, 'Colour/Brand/Pink', child);
+    expect(() => setTokenAtPath(tree2, 'Colour/Brand', token)).toThrow(DTCGTransformError);
   });
 });
 
@@ -572,7 +548,7 @@ describe('buildDTCGTreeForMode', () => {
     });
   });
 
-  it('skips unresolved aliases when skipUnresolvedAliases is enabled', () => {
+  it('handles unresolved aliases: skips when skipUnresolvedAliases is enabled, throws by default', () => {
     const response = buildFixtureResponse({ includeBroken: true });
     const context: ResolveContext = {
       localVariablesById: response.meta.variables,
@@ -581,6 +557,7 @@ describe('buildDTCGTreeForMode', () => {
       preservedReferenceKeys: new Set(),
     };
     const broken = response.meta.variables['v-sem-broken'];
+
     const output = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
       'Day',
@@ -599,10 +576,18 @@ describe('buildDTCGTreeForMode', () => {
       },
     ]);
     expect(output.tree).toEqual({});
+
+    expect(() =>
+      buildDTCGTreeForMode(
+        { collection: backpackCollection, role: 'semantic' },
+        'Day',
+        [broken],
+        context,
+      ),
+    ).toThrow(DTCGTransformError);
   });
 
-  it('skips missing-mode-value variables when skipUnresolvedAliases is enabled', () => {
-    // Inline fixture: a variable that has no value for Day mode.
+  it('handles missing-mode-value: skips when skipUnresolvedAliases is enabled, throws by default', () => {
     const noDay = {
       id: 'v-no-day',
       key: 'k-no-day',
@@ -614,6 +599,7 @@ describe('buildDTCGTreeForMode', () => {
       remote: false,
     } as unknown as LocalVariable;
     const context = makeContext();
+
     const output = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
       'Day',
@@ -628,20 +614,7 @@ describe('buildDTCGTreeForMode', () => {
       variableName: 'Opacity/Hover',
       missingModeName: 'Day',
     });
-  });
 
-  it('propagates missing-mode-value errors by default', () => {
-    const noDay = {
-      id: 'v-no-day',
-      key: 'k-no-day',
-      name: 'Opacity/Hover',
-      variableCollectionId: BACKPACK_COLLECTION_ID,
-      resolvedType: 'FLOAT',
-      valuesByMode: { [BACKPACK_MODE_NIGHT]: 0.8 },
-      scopes: ['OPACITY'],
-      remote: false,
-    } as unknown as LocalVariable;
-    const context = makeContext();
     expect(() =>
       buildDTCGTreeForMode(
         { collection: backpackCollection, role: 'semantic' },
@@ -652,7 +625,7 @@ describe('buildDTCGTreeForMode', () => {
     ).toThrow(DTCGTransformError);
   });
 
-  it('skips invalid-name variables when skipUnresolvedAliases is enabled', () => {
+  it('handles invalid-name: skips when skipUnresolvedAliases is enabled, throws by default', () => {
     const bad = {
       ...primitiveColourPink,
       id: 'v-bad-name',
@@ -660,6 +633,7 @@ describe('buildDTCGTreeForMode', () => {
       name: 'Colour//Pink',
     } as LocalVariable;
     const context = makeContext();
+
     const output = buildDTCGTreeForMode(
       { collection: primitivesCollection, role: 'primitive' },
       'Hex',
@@ -673,14 +647,7 @@ describe('buildDTCGTreeForMode', () => {
       reason: 'invalid-name',
       variableName: 'Colour//Pink',
     });
-  });
 
-  it('propagates invalid-name errors by default', () => {
-    const bad = {
-      ...primitiveColourPink,
-      name: '/Pink',
-    } as LocalVariable;
-    const context = makeContext();
     expect(() =>
       buildDTCGTreeForMode(
         { collection: primitivesCollection, role: 'primitive' },
@@ -691,16 +658,14 @@ describe('buildDTCGTreeForMode', () => {
     ).toThrow(/Invalid variable name/);
   });
 
-  it('skips path-collision variables and emits the colliding name', () => {
+  it('handles path-collision: skips when skipUnresolvedAliases is enabled, throws by default', () => {
     const parent = {
       id: 'v-collide-parent',
       key: 'k-collide-parent',
       name: 'Colour/Brand',
       variableCollectionId: PRIMITIVES_COLLECTION_ID,
       resolvedType: 'COLOR',
-      valuesByMode: {
-        [PRIMITIVES_MODE_HEX]: { r: 1, g: 0, b: 0, a: 1 },
-      },
+      valuesByMode: { [PRIMITIVES_MODE_HEX]: { r: 1, g: 0, b: 0, a: 1 } },
       scopes: ['ALL_SCOPES'],
       remote: false,
     } as unknown as LocalVariable;
@@ -709,11 +674,11 @@ describe('buildDTCGTreeForMode', () => {
       id: 'v-collide-child',
       key: 'k-collide-child',
       name: 'Colour/Brand/Pink',
-      valuesByMode: {
-        [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 },
-      },
+      valuesByMode: { [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 } },
     } as unknown as LocalVariable;
     const context = makeContext();
+
+    // Parent writes first (sorted: "Colour/Brand" < "Colour/Brand/Pink"); child collides.
     const output = buildDTCGTreeForMode(
       { collection: primitivesCollection, role: 'primitive' },
       'Hex',
@@ -721,67 +686,19 @@ describe('buildDTCGTreeForMode', () => {
       context,
       { skipUnresolvedAliases: true },
     );
-    // Parent writes first (sorted alphabetically: "Colour/Brand" < "Colour/Brand/Pink");
-    // child then collides and is skipped.
     expect(output.stats.skippedVariableCount).toBe(1);
     expect(output.stats.skippedVariables[0]).toMatchObject({
       reason: 'path-collision',
       variableName: 'Colour/Brand/Pink',
       collidingVariableName: 'Colour/Brand',
     });
-    // The written parent is still present and well-formed.
-    expect(output.tree).toEqual({
-      Colour: {
-        $type: 'color',
-        Brand: { $value: '#ff0000' },
-      },
-    });
-  });
+    expect(output.tree).toEqual({ Colour: { $type: 'color', Brand: { $value: '#ff0000' } } });
 
-  it('propagates path-collision errors by default', () => {
-    const parent = {
-      id: 'v-collide-parent',
-      key: 'k-collide-parent',
-      name: 'Colour/Brand',
-      variableCollectionId: PRIMITIVES_COLLECTION_ID,
-      resolvedType: 'COLOR',
-      valuesByMode: {
-        [PRIMITIVES_MODE_HEX]: { r: 1, g: 0, b: 0, a: 1 },
-      },
-      scopes: ['ALL_SCOPES'],
-      remote: false,
-    } as unknown as LocalVariable;
-    const child = {
-      ...parent,
-      id: 'v-collide-child',
-      key: 'k-collide-child',
-      name: 'Colour/Brand/Pink',
-    } as unknown as LocalVariable;
-    const context = makeContext();
     expect(() =>
       buildDTCGTreeForMode(
         { collection: primitivesCollection, role: 'primitive' },
         'Hex',
         [parent, child],
-        context,
-      ),
-    ).toThrow(DTCGTransformError);
-  });
-
-  it('propagates unresolved alias errors by default', () => {
-    const response = buildFixtureResponse({ includeBroken: true });
-    const context: ResolveContext = {
-      localVariablesById: response.meta.variables,
-      localVariablesByKey: buildLocalVariablesByKey(response.meta.variables),
-      localCollectionsById: response.meta.variableCollections,
-      preservedReferenceKeys: new Set(),
-    };
-    const broken = response.meta.variables['v-sem-broken'];
-    expect(() =>
-      buildDTCGTreeForMode(
-        { collection: backpackCollection, role: 'semantic' },
-        'Day',
-        [broken],
         context,
       ),
     ).toThrow(DTCGTransformError);
@@ -805,22 +722,3 @@ describe('buildDTCGTreeForMode', () => {
   });
 });
 
-describe('mode selection through valuesByMode keys', () => {
-  it('uses the collection mode name to look up the right value', () => {
-    const context = makeContext({
-      preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]),
-    });
-    // Day mode references pink; Night references berry.
-    expect(
-      resolveVariableValue(semanticCanvasDefault, 'Day', context).value,
-    ).toBe('{Colour.Pink}');
-    expect(
-      resolveVariableValue(semanticCanvasDefault, 'Night', context).value,
-    ).toBe('{Colour.Berry}');
-
-    // Confirm the raw mode ids exist as expected.
-    expect(semanticCanvasDefault.valuesByMode[BACKPACK_MODE_DAY]).toBeDefined();
-    expect(semanticCanvasDefault.valuesByMode[BACKPACK_MODE_NIGHT]).toBeDefined();
-    expect(primitiveColourPink.valuesByMode[PRIMITIVES_MODE_HEX]).toBeDefined();
-  });
-});

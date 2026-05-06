@@ -157,6 +157,15 @@
       },
       "$type": "color"
     },
+    "Carousel-trigger": {
+      "bg-default": {
+        "$value": "{Alpha.White Alpha 50}"
+      },
+      "bg-default-hover": {
+        "$value": "{Alpha.White Alpha 80}"
+      },
+      "$type": "color"
+    },
     "Chip-group-filter": {
       "Colour": {
         "bg-icon-hover-on-image": {
@@ -616,25 +625,21 @@
     },
     "Style": {
       "Body": {
-        "$value": 400,
-        "$type": "fontWeight"
+        "$value": 400
       },
       "Headline": {
-        "$value": 700,
-        "$type": "fontWeight"
+        "$value": 700
       },
       "Hero": {
-        "$value": 900,
-        "$type": "fontWeight"
+        "$value": 900
       },
       "Label": {
-        "$value": "700px",
-        "$type": "dimension"
+        "$value": 700
       },
       "Subhead": {
-        "$value": "300px",
-        "$type": "dimension"
-      }
+        "$value": 300
+      },
+      "$type": "fontWeight"
     }
   }
 }

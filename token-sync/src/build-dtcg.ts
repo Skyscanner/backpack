@@ -32,10 +32,10 @@ import { writeDTCGFiles } from './dtcg-writer';
 import {
   FigmaApi,
   type GetLocalVariablesResponse,
-  type LocalVariable,
   type LocalVariableCollection,
 } from './figma-api';
 import { filterLocalTargets } from './sync-helpers';
+import { SKIPPED_VARIABLE_REASONS } from './types';
 
 import type {
   ClassifiedCollection,
@@ -48,16 +48,6 @@ function sortByName<T extends { name: string }>(items: T[]): T[] {
   return [...items].sort((left, right) => left.name.localeCompare(right.name));
 }
 
-function collectVariablesForCollection(
-  variables: Record<string, LocalVariable>,
-  collectionId: string,
-): LocalVariable[] {
-  return Object.values(variables).filter(
-    (variable) =>
-      !variable.remote && variable.variableCollectionId === collectionId,
-  );
-}
-
 export interface BuildDTCGOutputsResult {
   classified: ClassifiedCollection[];
   outputs: DTCGModeOutput[];
@@ -65,7 +55,6 @@ export interface BuildDTCGOutputsResult {
 }
 
 // Pure end-to-end transform: filter targets, classify, build per-mode trees.
-// Exposed for tests and anyone wanting the outputs without writing files.
 export function buildDTCGOutputs(
   response: GetLocalVariablesResponse,
   targetNames: readonly string[],
@@ -73,31 +62,28 @@ export function buildDTCGOutputs(
 ): BuildDTCGOutputsResult {
   const localVariables = response.meta.variables;
   const localCollectionsById = response.meta.variableCollections;
-  const allCollections = Object.values(
-    localCollectionsById,
-  ) as LocalVariableCollection[];
+  const allCollections: LocalVariableCollection[] = Object.values(localCollectionsById);
 
-  const { availableLocalNames, matched, missingNames } = filterLocalTargets(
+  const { availableLocalNames, matchedCollections, missingNames } = filterLocalTargets(
     allCollections,
     targetNames,
   );
 
-  if (matched.length === 0) {
+  if (matchedCollections.length === 0) {
     throw new Error(
       `None of the target collections [${targetNames.join(', ')}] were found as local collections in the file. ` +
         `Available local collections: ${availableLocalNames.join(', ') || '(none)'}.`,
     );
   }
 
-  const classified = classifyCollections(sortByName(matched));
+  const classified = classifyCollections(sortByName(matchedCollections));
   const localVariablesByKey = buildLocalVariablesByKey(localVariables);
 
   const outputs: DTCGModeOutput[] = [];
   for (const classifiedCollection of classified) {
     const { collection } = classifiedCollection;
-    const collectionVariables = collectVariablesForCollection(
-      localVariables,
-      collection.id,
+    const collectionVariables = Object.values(localVariables).filter(
+      (variable) => variable.variableCollectionId === collection.id,
     );
     const preservedReferenceKeys = buildPreservedReferenceKeys(
       classified,
@@ -113,9 +99,7 @@ export function buildDTCGOutputs(
     // Sort modes by name so the manifest + summary ordering is stable even
     // if a designer reorders modes in Figma. Filenames are mode-named so
     // the on-disk layout doesn't change either way.
-    const sortedModes = [...collection.modes].sort((left, right) =>
-      left.name.localeCompare(right.name),
-    );
+    const sortedModes = sortByName(collection.modes);
     for (const mode of sortedModes) {
       outputs.push(
         buildDTCGTreeForMode(
@@ -137,8 +121,6 @@ export interface BuildDTCGOptions {
   fileKey: string;
   targetNames: readonly string[];
   outputDir: string;
-  // Injectable for tests.
-  api?: Pick<FigmaApi, 'getLocalVariables'>;
   skipUnresolvedAliases?: boolean;
   now?: () => Date;
 }
@@ -151,12 +133,11 @@ export interface BuildDTCGResult {
   outputDir: string;
 }
 
-// Full build stage: fetch → transform → write DTCG files + manifest. Accepts
-// an injectable api so tests can drive the pipeline without hitting the network.
+// Full build stage: fetch → transform → write DTCG files + manifest.
 export async function buildDTCG(
   options: BuildDTCGOptions,
 ): Promise<BuildDTCGResult> {
-  const api = options.api ?? new FigmaApi(options.token);
+  const api = new FigmaApi(options.token);
   const response = await api.getLocalVariables(options.fileKey);
 
   const { classified, missingNames, outputs } = buildDTCGOutputs(
@@ -192,17 +173,13 @@ function addToGroup(
   variableName: string,
   modeName: string,
 ): void {
-  const references = groupMap.get(bucketKey) ?? (new Map() as SkippedByKey);
+  if (!groupMap.has(bucketKey)) groupMap.set(bucketKey, new Map());
+  const references = groupMap.get(bucketKey)!;
   const referenceKey = `${collectionName}  ${variableName}`;
-  const reference =
-    references.get(referenceKey) ?? {
-      collectionName,
-      variableName,
-      modes: new Set<string>(),
-    };
-  reference.modes.add(modeName);
-  references.set(referenceKey, reference);
-  groupMap.set(bucketKey, references);
+  if (!references.has(referenceKey)) {
+    references.set(referenceKey, { collectionName, variableName, modes: new Set() });
+  }
+  references.get(referenceKey)!.modes.add(modeName);
 }
 
 function renderReferences(references: SkippedByKey): string {
@@ -223,6 +200,19 @@ function countInstances(groups: Map<string, SkippedByKey>): number {
     });
   });
   return total;
+}
+
+function pushSkippedSection(
+  lines: string[],
+  groups: Map<string, SkippedByKey>,
+  header: (count: number, groupCount: number) => string,
+  itemLabel: (key: string) => string,
+): void {
+  if (groups.size === 0) return;
+  lines.push(header(countInstances(groups), groups.size));
+  groups.forEach((refs, key) =>
+    lines.push(`  - ${itemLabel(key)} ← ${renderReferences(refs)}`),
+  );
 }
 
 // Pure formatter — returns the lines a CLI should print. Kept here (not in
@@ -269,7 +259,7 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
   for (const output of result.outputs) {
     for (const skipped of output.stats.skippedVariables) {
       switch (skipped.reason) {
-        case 'unresolved-alias':
+        case SKIPPED_VARIABLE_REASONS.unresolvedAlias:
           if (skipped.unresolvedAliasId) {
             addToGroup(
               unresolvedGroups,
@@ -280,7 +270,7 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
             );
           }
           break;
-        case 'missing-mode-value':
+        case SKIPPED_VARIABLE_REASONS.missingModeValue:
           addToGroup(
             missingModeGroups,
             skipped.missingModeName ?? '(unknown mode)',
@@ -289,7 +279,7 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
             output.modeName,
           );
           break;
-        case 'path-collision':
+        case SKIPPED_VARIABLE_REASONS.pathCollision:
           addToGroup(
             pathCollisionGroups,
             skipped.collidingVariableName ?? '(unknown variable)',
@@ -298,7 +288,7 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
             output.modeName,
           );
           break;
-        case 'invalid-name':
+        case SKIPPED_VARIABLE_REASONS.invalidName:
           addToGroup(
             invalidNameGroups,
             skipped.invalidNameReason ?? '(invalid name)',
@@ -313,48 +303,34 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
     }
   }
 
-  if (unresolvedGroups.size > 0) {
-    const count = countInstances(unresolvedGroups);
-    lines.push(
-      `Skipped ${count} variable instance(s) due to unresolved aliases across ${unresolvedGroups.size} missing target variable(s) (likely cross-library or deleted references):`,
-    );
-    unresolvedGroups.forEach((references, missingAliasId) => {
-      lines.push(
-        `  - missing ${missingAliasId} ← ${renderReferences(references)}`,
-      );
-    });
-  }
-  if (missingModeGroups.size > 0) {
-    const count = countInstances(missingModeGroups);
-    lines.push(
+  pushSkippedSection(
+    lines,
+    unresolvedGroups,
+    (count, groupCount) =>
+      `Skipped ${count} variable instance(s) due to unresolved aliases across ${groupCount} missing target variable(s) (likely cross-library or deleted references):`,
+    (missingAliasId) => `missing ${missingAliasId}`,
+  );
+  pushSkippedSection(
+    lines,
+    missingModeGroups,
+    (count) =>
       `Skipped ${count} variable instance(s) with no value assigned for the requested mode:`,
-    );
-    missingModeGroups.forEach((references, missingMode) => {
-      lines.push(
-        `  - missing value for mode "${missingMode}" ← ${renderReferences(references)}`,
-      );
-    });
-  }
-  if (pathCollisionGroups.size > 0) {
-    const count = countInstances(pathCollisionGroups);
-    lines.push(
+    (missingMode) => `missing value for mode "${missingMode}"`,
+  );
+  pushSkippedSection(
+    lines,
+    pathCollisionGroups,
+    (count) =>
       `Skipped ${count} variable instance(s) due to DTCG path collisions with another variable's name:`,
-    );
-    pathCollisionGroups.forEach((references, collidingWith) => {
-      lines.push(
-        `  - collides with "${collidingWith}" ← ${renderReferences(references)}`,
-      );
-    });
-  }
-  if (invalidNameGroups.size > 0) {
-    const count = countInstances(invalidNameGroups);
-    lines.push(
+    (collidingWith) => `collides with "${collidingWith}"`,
+  );
+  pushSkippedSection(
+    lines,
+    invalidNameGroups,
+    (count) =>
       `Skipped ${count} variable instance(s) whose name cannot be placed in a DTCG tree:`,
-    );
-    invalidNameGroups.forEach((references, reason) => {
-      lines.push(`  - ${reason} ← ${renderReferences(references)}`);
-    });
-  }
+    (reason) => reason,
+  );
 
   lines.push(`Manifest: ${path.join(result.outputDir, 'manifest.json')}`);
   lines.push(

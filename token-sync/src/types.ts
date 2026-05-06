@@ -63,11 +63,15 @@ export interface ClassifiedCollection {
 
 // Reason tag on a skipped variable. Each reason has a dedicated cause field
 // in `SkippedVariableRecord` so downstream logging can group by reason.
+export const SKIPPED_VARIABLE_REASONS = {
+  unresolvedAlias: 'unresolved-alias',
+  missingModeValue: 'missing-mode-value',
+  pathCollision: 'path-collision',
+  invalidName: 'invalid-name',
+} as const;
+
 export type SkippedVariableReason =
-  | 'unresolved-alias'
-  | 'missing-mode-value'
-  | 'path-collision'
-  | 'invalid-name';
+  (typeof SKIPPED_VARIABLE_REASONS)[keyof typeof SKIPPED_VARIABLE_REASONS];
 
 // Diagnostic record for a variable that was skipped while building the tree.
 // Surfaced in logs so designers can find and fix the offending source data.
