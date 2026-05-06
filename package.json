@@ -149,7 +149,6 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-react-docgen": "^4.2.1",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "codemod": "1.9.1",
     "core-js": "^3.47.0",
     "css-loader": "^7.1.2",
     "d3-scale": "^4.0.2",
@@ -183,7 +182,6 @@
     "storybook": "^10.3.3",
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
-    "types-react-codemod": "3.5.3",
     "typescript": "^5.9.2",
     "webpack": "^5.103.0",
     "wrapper-webpack-plugin": "^2.2.2"
