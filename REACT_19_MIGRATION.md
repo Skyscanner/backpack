@@ -16,7 +16,7 @@ This repo is **Repo 1 of 5** in the Skyscanner shared-library React 19 pre-relea
 The original baseline overstated several categories. Re-audit confirmed:
 
 - Lerna-style monorepo, published from `packages/package.json`
-- React peerDep: `17.0.2 - 18.3.1` (must widen to `^17.0.2 || ^18.3.1 || ^19.2.5`)
+- React peerDep: `17.0.2 - 18.3.1` → narrowed-and-shifted to `18.3.1 - 19.2.5` (We shouldn't have any consumers below 18)
 - `static defaultProps` / `defaultProps =`: **84 files** (manual sweep, no codemod)
 - `forwardRef`: 14 files (none combined with `defaultProps`)
 - `prop-types` imports: **67 files** (mostly `.js`; manual conversion — see runbook insight below)
@@ -43,6 +43,10 @@ We are skipping the bundled recipe. The four mechanical sub-codemods (`replace-a
 
 The `prop-types` and `defaultProps` migrations are being done with a custom jscodeshift transform tailored to backpack, preserving license headers and faithful types.
 
+### Runbook insight: peerDep range narrowed instead of widened
+
+Our intention is to **drop React 17 support** as part of this PR, to `18.3.1 - 19.2.5`. React 17 is unsupported upstream, no consumer is still on it, and dropping it shrinks the test/CI matrix surface.
+
 ## Recipe summary — adapted for this repo
 
 1. Pin `codemod` + `types-react-codemod` as devDeps with `--save-exact` (no `npx`/`pnpm dlx` — Skyscanner Security stance).
@@ -53,7 +57,7 @@ The `prop-types` and `defaultProps` migrations are being done with a custom jsco
 6. Apply custom jscodeshift transform for the 67 prop-types + 84 defaultProps files (preserves license headers; faithful types).
 7. Manual review of any edge cases the transform missed.
 8. `forwardRef` ref-callback implicit-return scan (14 files).
-9. Widen `peerDependencies` in `packages/package.json` to `^17.0.2 || ^18.3.1 || ^19.2.5`.
+9. Update `peerDependencies` in `packages/package.json` to `18.3.1 - 19.2.5` (drops React 17, adds 19; range syntax matching the existing peerDep style).
 10. Add CI matrix entry running tests against React 19.2.5.
 11. Uninstall codemod packages.
 12. Coordinate version bump with the Backpack team.
