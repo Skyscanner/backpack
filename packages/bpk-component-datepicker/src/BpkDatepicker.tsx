@@ -17,7 +17,7 @@
  */
 
 import { createRef, Component } from 'react';
-import type { ReactElement, RefObject } from 'react';
+import type { ReactElement, Ref } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 import {
@@ -113,7 +113,7 @@ class BpkDatepicker extends Component<Props, State> {
 
   elementRef?: HTMLInputElement;
 
-  focusRef?: RefObject<HTMLInputElement>;
+  focusRef?: Ref<HTMLDivElement>;
 
   static defaultProps = {
     calendarComponent: DefaultCalendar,

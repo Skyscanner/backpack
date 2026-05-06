@@ -298,7 +298,7 @@ const ChatShell = ({
 }: {
   inputSection: ReactNode;
   messages: Message[];
-  messagesEndRef: React.RefObject<HTMLDivElement>;
+  messagesEndRef: React.Ref<HTMLDivElement>;
   renderMessage: (message: Message) => ReactNode;
 }) => (
   <BpkFlex
