@@ -22,6 +22,16 @@ import { FigmaApiError, type LocalVariableCollection } from './figma-api';
 
 export const TARGET_COLLECTION_NAMES = ['Primitives', 'Backpack'] as const;
 
+export function sortBy<T>(items: T[], key: (item: T) => string): T[] {
+  return [...items].sort((a, b) => {
+    const ka = key(a);
+    const kb = key(b);
+    if (ka < kb) return -1;
+    if (ka > kb) return 1;
+    return 0;
+  });
+}
+
 export function isCI(): boolean {
   // Most CIs set GITHUB_ACTIONS / CI to the string "true", but some use "1" or
   // another truthy value. Treat any non-empty trimmed value as CI.

@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { sortBy } from './sync-helpers';
 import { SKIPPED_VARIABLE_REASONS } from './types';
 
 import type { LocalVariable, LocalVariableCollection } from './figma-api';
@@ -569,9 +570,7 @@ export function buildDTCGTreeForMode(
   const skippedVariables: SkippedVariableRecord[] = [];
   const writtenVariables: LocalVariable[] = [];
 
-  const sorted = [...collectionVariables].sort((left, right) =>
-    left.name.localeCompare(right.name),
-  );
+  const sorted = sortBy(collectionVariables, (v) => v.name);
 
   // Extracted so each failure path can return early without a mutable flag.
   // Captures tree, counters, and output arrays from the enclosing scope.

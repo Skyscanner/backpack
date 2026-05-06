@@ -34,7 +34,7 @@ import {
   type GetLocalVariablesResponse,
   type LocalVariableCollection,
 } from './figma-api';
-import { filterLocalTargets } from './sync-helpers';
+import { filterLocalTargets, sortBy } from './sync-helpers';
 import { SKIPPED_VARIABLE_REASONS } from './types';
 
 import type {
@@ -44,9 +44,6 @@ import type {
   ResolveContext,
 } from './types';
 
-function sortByName<T extends { name: string }>(items: T[]): T[] {
-  return [...items].sort((left, right) => left.name.localeCompare(right.name));
-}
 
 export interface BuildDTCGOutputsResult {
   classified: ClassifiedCollection[];
@@ -76,7 +73,7 @@ export function buildDTCGOutputs(
     );
   }
 
-  const classified = classifyCollections(sortByName(matchedCollections));
+  const classified = classifyCollections(sortBy(matchedCollections, (c) => c.name));
   const localVariablesByKey = buildLocalVariablesByKey(localVariables);
 
   const outputs: DTCGModeOutput[] = [];
@@ -99,7 +96,7 @@ export function buildDTCGOutputs(
     // Sort modes by name so the manifest + summary ordering is stable even
     // if a designer reorders modes in Figma. Filenames are mode-named so
     // the on-disk layout doesn't change either way.
-    const sortedModes = sortByName(collection.modes);
+    const sortedModes = sortBy(collection.modes, (m) => m.name);
     for (const mode of sortedModes) {
       outputs.push(
         buildDTCGTreeForMode(
@@ -183,8 +180,7 @@ function addToGroup(
 }
 
 function renderReferences(references: SkippedByKey): string {
-  return Array.from(references.values())
-    .sort((left, right) => left.variableName.localeCompare(right.variableName))
+  return sortBy(Array.from(references.values()), (r) => r.variableName)
     .map(({ collectionName, modes, variableName }) => {
       const modeLabel = Array.from(modes).sort().join(', ');
       return `[${collectionName}] ${variableName} (modes: ${modeLabel})`;
