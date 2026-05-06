@@ -69,6 +69,6 @@ npm uninstall codemod types-react-codemod
 ## Future home
 
 This transform should ultimately move to
-`/Users/SimonWard/Documents/Code/web-migration-scripts/migrations/2026-05-react-19/transforms/`
+`web-migration-scripts/migrations/2026-05-react-19/transforms/`
 once that migration directory is set up. Kept locally for now to give
 LOOM-2442 reviewers a clear lineage of how the diff was generated.

@@ -1,8 +1,6 @@
 # React 19 Migration — `@skyscanner/backpack-web`
 
-This repo is **Repo 1 of 5** in the Skyscanner shared-library React 19 pre-release codemod pass.
-
-**Master plan**: [`/Users/SimonWard/Documents/Code/legal-pages/REACT_19_SHARED_LIBRARY_MIGRATION.md`](../legal-pages/REACT_19_SHARED_LIBRARY_MIGRATION.md) — see the **`Repo 1 — @skyscanner/backpack-web`** section.
+(This repo is **Repo 1 of 5** in the Skyscanner shared-library React 19 pre-release codemod pass.)
 
 ## What this thread should do
 
@@ -73,8 +71,3 @@ The current PR establishes the scaffolding (peerDep range, CI matrix, codemod to
 - **Track and fix the React19 CI matrix failures** — typecheck has 8 known errors (the deferred sub-transforms above plus a missing `@types/prop-types`), and jest has 326 suite failures (mostly transitive deps still using removed React 18 internals like `ReactCurrentDispatcher`). Once green, flip the matrix from `continue-on-error: true` to required.
 - **Move the custom transform to `web-migration-scripts/migrations/2026-05-react-19/transforms/`** when that migration directory is set up.
 
-## Reference docs
-
-- [`/Users/SimonWard/Documents/Code/legal-pages/REACT_19_UPGRADE_GUIDE.md`](../legal-pages/REACT_19_UPGRADE_GUIDE.md) — codemod commands, manual migration patterns, troubleshooting
-- [`/Users/SimonWard/Documents/Code/legal-pages/REACT_19_MIGRATION_REQUIREMENTS.md`](../legal-pages/REACT_19_MIGRATION_REQUIREMENTS.md) — peer-dep audit and breaking-changes inventory
-- `/Users/SimonWard/Documents/Code/web-migration-scripts/migrations/2024-04-react-18_3_1/` — structural template for the migration directory we'll build at `2026-05-react-19/`
