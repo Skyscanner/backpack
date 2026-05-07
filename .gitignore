@@ -30,4 +30,5 @@ yarn.lock
 # OpenSpec - until Backpack officially endorses it
 .claude/commands/opsx
 .claude/skills/openspec-*
+.claude/settings.local.json
 openspec
