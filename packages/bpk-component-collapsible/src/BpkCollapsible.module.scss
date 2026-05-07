@@ -19,7 +19,9 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/utils';
 
-$collapsible-duration: 200ms;
+// Matches BpkAccordion (200ms via AnimateHeight). Sourced from the
+// foundations duration scale rather than hardcoded so the two stay in sync.
+$collapsible-duration: tokens.$bpk-duration-sm;
 
 // Root — invisible container; consumers control its surface (e.g. inside BpkCard).
 .bpk-collapsible {

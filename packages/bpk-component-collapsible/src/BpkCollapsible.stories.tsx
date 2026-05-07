@@ -18,16 +18,15 @@
 
 import { useState } from 'react';
 
-import { surfaceContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 import { BpkCardV2 } from '../../bpk-component-card';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import AirportsIcon from '../../bpk-component-icon/sm/airports';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import {
-  BpkFlex,
+  BpkBox,
   BpkProvider,
   BpkSpacing,
+  BpkVStack,
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 
@@ -38,6 +37,9 @@ import type { Meta } from '@storybook/react';
 const ChevronIcon = withButtonAlignment(ChevronDownIcon);
 const LeadingIcon = withButtonAlignment(AirportsIcon);
 
+// Trigger contents stay as <span>s + inline flex styling because <button>
+// elements only allow phrasing content — Bpk layout components render <div>s
+// which would be invalid HTML inside a <button>.
 const triggerRowStyle = {
   alignItems: 'center',
   display: 'flex',
@@ -45,8 +47,6 @@ const triggerRowStyle = {
   width: '100%',
 };
 const titleStyle = { flexGrow: 1 };
-const contentPaddingStyle = { paddingTop: '0.5rem' };
-const showMoreContainerStyle = { width: '20rem' };
 
 const Basic = () => (
   <BpkCollapsible.Root>
@@ -61,11 +61,11 @@ const Basic = () => (
       </span>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
-      <div style={contentPaddingStyle}>
+      <BpkBox paddingTop={BpkSpacing.SM}>
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>
           Hidden contents revealed when the trigger is activated.
         </BpkText>
-      </div>
+      </BpkBox>
     </BpkCollapsible.Content>
   </BpkCollapsible.Root>
 );
@@ -85,22 +85,20 @@ const WithIconAndLabel = () => (
       </span>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
-      <div style={contentPaddingStyle}>
+      <BpkBox paddingTop={BpkSpacing.SM}>
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>
           Description text inside the collapsible.
         </BpkText>
-      </div>
+      </BpkBox>
     </BpkCollapsible.Content>
   </BpkCollapsible.Root>
 );
 
-const onContrastWrapperStyle = {
-  background: surfaceContrastDay,
-  borderRadius: '0.5rem',
-  padding: '1rem',
-};
 const OnContrast = () => (
-  <div style={onContrastWrapperStyle}>
+  // BpkBox does not expose borderRadius (intentional — see BpkLayout
+  // commonProps). The contrasting surface itself is provided via
+  // backgroundColor="surface-contrast".
+  <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
     <BpkCollapsible.Root variant="onContrast" defaultOpen>
       <BpkCollapsible.Trigger>
         <span style={triggerRowStyle}>
@@ -115,14 +113,14 @@ const OnContrast = () => (
         </span>
       </BpkCollapsible.Trigger>
       <BpkCollapsible.Content>
-        <div style={contentPaddingStyle}>
+        <BpkBox paddingTop={BpkSpacing.SM}>
           <BpkText textStyle={TEXT_STYLES.bodyDefault}>
             Contents in the on-contrast variant.
           </BpkText>
-        </div>
+        </BpkBox>
       </BpkCollapsible.Content>
     </BpkCollapsible.Root>
-  </div>
+  </BpkBox>
 );
 
 const InsideCard = () => (
@@ -141,11 +139,11 @@ const InsideCard = () => (
           </span>
         </BpkCollapsible.Trigger>
         <BpkCollapsible.Content>
-          <div style={contentPaddingStyle}>
+          <BpkBox paddingTop={BpkSpacing.SM}>
             <BpkText textStyle={TEXT_STYLES.bodyDefault}>
               Drops inside BpkCardV2 without imposing extra padding or borders.
             </BpkText>
-          </div>
+          </BpkBox>
         </BpkCollapsible.Content>
       </BpkCollapsible.Root>
     </BpkCardV2.Body>
@@ -155,7 +153,7 @@ const InsideCard = () => (
 const Controlled = () => {
   const [open, setOpen] = useState(false);
   return (
-    <BpkFlex direction="column" gap={BpkSpacing.SM}>
+    <BpkVStack gap={BpkSpacing.SM}>
       <button type="button" onClick={() => setOpen((value) => !value)}>
         External toggle ({open ? 'open' : 'closed'})
       </button>
@@ -174,14 +172,14 @@ const Controlled = () => {
           </span>
         </BpkCollapsible.Trigger>
         <BpkCollapsible.Content>
-          <div style={contentPaddingStyle}>
+          <BpkBox paddingTop={BpkSpacing.SM}>
             <BpkText textStyle={TEXT_STYLES.bodyDefault}>
               Open state mirrored to a button outside the collapsible.
             </BpkText>
-          </div>
+          </BpkBox>
         </BpkCollapsible.Content>
       </BpkCollapsible.Root>
-    </BpkFlex>
+    </BpkVStack>
   );
 };
 
@@ -198,17 +196,17 @@ const LazyMount = () => (
       </span>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
-      <div style={contentPaddingStyle}>
+      <BpkBox paddingTop={BpkSpacing.SM}>
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>
           Children are mounted only when the section is expanded.
         </BpkText>
-      </div>
+      </BpkBox>
     </BpkCollapsible.Content>
   </BpkCollapsible.Root>
 );
 
 const ShowMore = () => (
-  <div style={showMoreContainerStyle}>
+  <BpkBox width="20rem">
     <BpkCollapsible.Root collapsedHeight="3rem">
       <BpkCollapsible.Content>
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>
@@ -223,7 +221,7 @@ const ShowMore = () => (
         <BpkText textStyle={TEXT_STYLES.label2}>Show more</BpkText>
       </BpkCollapsible.Trigger>
     </BpkCollapsible.Root>
-  </div>
+  </BpkBox>
 );
 
 const LongContent = () => (
@@ -239,7 +237,7 @@ const LongContent = () => (
       </span>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
-      <div style={contentPaddingStyle}>
+      <BpkVStack paddingTop={BpkSpacing.SM} gap={BpkSpacing.SM}>
         {Array.from({ length: 6 }, (_, index) => (
           <BpkText
             key={`paragraph-${index}`}
@@ -250,19 +248,19 @@ const LongContent = () => (
             expand/collapse animation works smoothly with substantial content.
           </BpkText>
         ))}
-      </div>
+      </BpkVStack>
     </BpkCollapsible.Content>
   </BpkCollapsible.Root>
 );
 
 const VisualTest = () => (
-  <BpkFlex direction="column" gap={BpkSpacing.Base}>
+  <BpkVStack gap={BpkSpacing.Base}>
     <Basic />
     <WithIconAndLabel />
     <InsideCard />
     <ShowMore />
     <LongContent />
-  </BpkFlex>
+  </BpkVStack>
 );
 
 const meta = {
