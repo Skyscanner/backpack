@@ -29,31 +29,18 @@ const getClassName = cssModules(STYLES);
 
 export type BpkCollapsibleIndicatorProps = {
   children: ReactNode;
-  className?: string;
 };
 
 const BpkCollapsibleIndicator = forwardRef(
-  (
-    { children, className }: BpkCollapsibleIndicatorProps,
-    ref: Ref<HTMLDivElement>,
-  ) => {
-    const indicatorClassName = [
-      getClassName('bpk-collapsible__indicator'),
-      className,
-    ]
-      .filter(Boolean)
-      .join(' ');
-
-    return (
-      <Collapsible.Indicator
-        ref={ref}
-        className={indicatorClassName}
-        aria-hidden
-      >
-        {children}
-      </Collapsible.Indicator>
-    );
-  },
+  ({ children }: BpkCollapsibleIndicatorProps, ref: Ref<HTMLDivElement>) => (
+    <Collapsible.Indicator
+      ref={ref}
+      className={getClassName('bpk-collapsible__indicator')}
+      aria-hidden
+    >
+      {children}
+    </Collapsible.Indicator>
+  ),
 );
 
 BpkCollapsibleIndicator.displayName = 'BpkCollapsibleIndicator';

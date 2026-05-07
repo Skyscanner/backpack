@@ -29,7 +29,6 @@ const getClassName = cssModules(STYLES);
 
 export type BpkCollapsibleTriggerProps = {
   children: ReactNode;
-  className?: string;
 };
 
 // Applies the native HTML `disabled` attribute to the underlying <button> so
@@ -37,23 +36,13 @@ export type BpkCollapsibleTriggerProps = {
 // assistive tech. Ark/Zag only emit `data-disabled`, which would otherwise
 // leave the button tabbable and announced as enabled.
 const BpkCollapsibleTrigger = forwardRef(
-  (
-    { children, className }: BpkCollapsibleTriggerProps,
-    ref: Ref<HTMLButtonElement>,
-  ) => {
+  ({ children }: BpkCollapsibleTriggerProps, ref: Ref<HTMLButtonElement>) => {
     const { disabled } = useCollapsibleContext();
-
-    const triggerClassName = [
-      getClassName('bpk-collapsible__trigger'),
-      className,
-    ]
-      .filter(Boolean)
-      .join(' ');
 
     return (
       <Collapsible.Trigger
         ref={ref}
-        className={triggerClassName}
+        className={getClassName('bpk-collapsible__trigger')}
         disabled={disabled}
       >
         {children}

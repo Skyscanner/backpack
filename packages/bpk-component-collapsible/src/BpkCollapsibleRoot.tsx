@@ -37,7 +37,6 @@ export type BpkCollapsibleOpenChangeDetails = { open: boolean };
 
 export type BpkCollapsibleRootProps = {
   children: ReactNode;
-  className?: string;
   collapsedHeight?: string | number;
   defaultOpen?: boolean;
   disabled?: boolean;
@@ -52,7 +51,6 @@ export type BpkCollapsibleRootProps = {
 
 const BpkCollapsibleRoot = ({
   children,
-  className,
   collapsedHeight,
   defaultOpen,
   disabled = false,
@@ -65,12 +63,10 @@ const BpkCollapsibleRoot = ({
   variant = 'default',
 }: BpkCollapsibleRootProps) => {
   const variantModifier = variant === 'onContrast' ? 'on-contrast' : 'default';
-  const rootClassName = [
-    getClassName('bpk-collapsible', `bpk-collapsible--${variantModifier}`),
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const rootClassName = getClassName(
+    'bpk-collapsible',
+    `bpk-collapsible--${variantModifier}`,
+  );
 
   const contextValue = useMemo(() => ({ variant }), [variant]);
 

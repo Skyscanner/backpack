@@ -29,29 +29,19 @@ const getClassName = cssModules(STYLES);
 
 export type BpkCollapsibleContentProps = {
   children: ReactNode;
-  className?: string;
 };
 
 const BpkCollapsibleContent = forwardRef(
-  (
-    { children, className }: BpkCollapsibleContentProps,
-    ref: Ref<HTMLDivElement>,
-  ) => {
-    const contentClassName = [
-      getClassName('bpk-collapsible__content'),
-      className,
-    ]
-      .filter(Boolean)
-      .join(' ');
-
-    return (
-      <Collapsible.Content ref={ref} className={contentClassName}>
-        <div className={getClassName('bpk-collapsible__content-inner')}>
-          {children}
-        </div>
-      </Collapsible.Content>
-    );
-  },
+  ({ children }: BpkCollapsibleContentProps, ref: Ref<HTMLDivElement>) => (
+    <Collapsible.Content
+      ref={ref}
+      className={getClassName('bpk-collapsible__content')}
+    >
+      <div className={getClassName('bpk-collapsible__content-inner')}>
+        {children}
+      </div>
+    </Collapsible.Content>
+  ),
 );
 
 BpkCollapsibleContent.displayName = 'BpkCollapsibleContent';

@@ -61,11 +61,16 @@ const Example = () => (
 | `unmountOnExit`  | `boolean`                                     | —           | Unmount the content when closed.                                           |
 | `collapsedHeight`| `string \| number`                            | —           | Height of the content when collapsed (enables a "show more" pattern).      |
 | `ids`            | `Partial<{ root; trigger; content }>`         | —           | Custom element ids.                                                        |
-| `className`      | `string`                                      | —           | Additional class on the root.                                              |
+
+> `BpkCollapsible` does not accept `className` or `style` on any of its parts.
+> Backpack manages the surface, spacing, focus, and animation styling itself —
+> overriding from outside would break the design system contract. If you need
+> a wrapper or surrounding layout, use `BpkBox`/`BpkFlex`/`BpkVStack` around
+> `BpkCollapsible.Root`.
 
 ### `BpkCollapsible.Trigger`, `Indicator`, `Content`
 
-Each accepts `children` and an optional `className`. Refs forward to the underlying DOM nodes.
+Each accepts `children`. Refs forward to the underlying DOM nodes.
 
 ## Accessibility
 
