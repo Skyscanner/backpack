@@ -1,0 +1,125 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+
+$collapsible-duration: 200ms;
+
+// Root — invisible container; consumers control its surface (e.g. inside BpkCard).
+.bpk-collapsible {
+  display: block;
+}
+
+.bpk-collapsible--default {
+  color: tokens.$bpk-text-primary-day;
+}
+
+.bpk-collapsible--on-contrast {
+  color: tokens.$bpk-text-on-dark-day;
+}
+
+// Trigger — clickable header row. Renders as a real <button> via Ark.
+.bpk-collapsible__trigger {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+  appearance: none;
+
+  // Native <button>:disabled — Ark only emits data-disabled, but we forward
+  // the disabled prop to the underlying button in BpkCollapsibleTrigger.tsx.
+  &:disabled,
+  &[data-disabled] {
+    cursor: not-allowed;
+  }
+
+  // Zag does not emit `data-focus-visible` for the collapsible trigger, so we
+  // rely on the standard CSS pseudo-class.
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}
+
+// Indicator — chevron wrapper. Rotates when open.
+.bpk-collapsible__indicator {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform $collapsible-duration ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &[data-state='open'] {
+    transform: rotate(180deg);
+  }
+}
+
+// Content — animated expandable region. Ark exposes --height as a CSS var.
+.bpk-collapsible__content {
+  overflow: hidden;
+
+  @media (prefers-reduced-motion: reduce) {
+    &[data-state='open'],
+    &[data-state='closed'] {
+      animation: none;
+    }
+  }
+
+  &[data-state='open'] {
+    animation: bpk-collapsible-expand $collapsible-duration ease;
+  }
+
+  &[data-state='closed'] {
+    animation: bpk-collapsible-collapse $collapsible-duration ease;
+  }
+}
+
+.bpk-collapsible__content-inner {
+  display: block;
+}
+
+// Animations interpolate between --collapsed-height (set by Ark when the
+// collapsedHeight prop is supplied — falls back to 0px otherwise) and --height
+// (the measured size). This keeps the "show more" pattern smooth instead of
+// flashing through a fully collapsed state.
+@keyframes bpk-collapsible-expand {
+  from {
+    height: var(--collapsed-height, 0);
+  }
+
+  to {
+    height: var(--height);
+  }
+}
+
+@keyframes bpk-collapsible-collapse {
+  from {
+    height: var(--height);
+  }
+
+  to {
+    height: var(--collapsed-height, 0);
+  }
+}
