@@ -34,8 +34,7 @@ type Props = {
   selected?: boolean;
   spaceAround?: boolean;
   type?: keyof typeof HORIZONTAL_NAV_TYPES;
-  // Inexact rest. See decisions/flowfixme.md
-  [rest: string]: any;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkHorizontalNavItem = forwardRef<HTMLDivElement, Props>(

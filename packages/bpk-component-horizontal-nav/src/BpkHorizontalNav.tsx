@@ -47,8 +47,7 @@ type Props = {
   showUnderline?: boolean;
   trailingScrollIndicatorClassName?: string | null;
   type?: keyof typeof HORIZONTAL_NAV_TYPES;
-  // Inexact rest. See decisions/flowfixme.md
-  [rest: string]: any;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const getPos = (ref: Element | null): DOMRect | null => {
