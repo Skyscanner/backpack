@@ -66,7 +66,7 @@ export type BpkComparisonTableRootProps = {
   isOpen: boolean;
   /** Called when the modal close trigger is activated or Escape is pressed. */
   onClose: () => void;
-  /** Optional — called once per open, when `isOpen` transitions from false to true. Useful for analytics, logging, or fetching data on open. */
+  /** Optional — called each time the modal opens: on mount if `isOpen` is `true`, and whenever `isOpen` transitions from `false` to `true`. Useful for analytics, logging, or fetching data on open. */
   onOpen?: () => void;
   /** BpkComparisonTable.Header and BpkComparisonTable.Content. */
   children: ReactNode;
