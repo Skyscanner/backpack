@@ -19,9 +19,18 @@
 import type { MouseEvent } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
-import { withLargeButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
-import LeftArrowIcon from '../../bpk-component-icon/lg/chevron-left';
-import RightArrowIcon from '../../bpk-component-icon/lg/chevron-right';
+import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
+import SmallLeftArrowIcon from '../../bpk-component-icon/sm/chevron-left';
+import SmallRightArrowIcon from '../../bpk-component-icon/sm/chevron-right';
+import { cssModules } from '../../bpk-react-utils';
+
+import { VARIANT } from './common-types';
+
+import type { Variant } from './common-types';
+
+import STYLES from './BpkPageIndicator.module.scss';
+
+const getClassName = cssModules(STYLES);
 
 export const DIRECTIONS = {
   PREV: 'PREV',
@@ -43,10 +52,13 @@ type Props = {
     direction: Direction,
   ) => void;
   type?: ButtonType;
+  variant?: Variant;
 };
 
-const AlignedLeftArrowIcon = withLargeButtonAlignment(withRtlSupport(LeftArrowIcon));
-const AlignedRightArrowIcon = withLargeButtonAlignment(withRtlSupport(RightArrowIcon));
+const AlignedLeftArrowIcon = withButtonAlignment(withRtlSupport(SmallLeftArrowIcon));
+const AlignedRightArrowIcon = withButtonAlignment(withRtlSupport(SmallRightArrowIcon));
+const RtlSmallLeftArrowIcon = withRtlSupport(SmallLeftArrowIcon);
+const RtlSmallRightArrowIcon = withRtlSupport(SmallRightArrowIcon);
 
 const NavButton = ({
   ariaLabel,
@@ -55,26 +67,44 @@ const NavButton = ({
   disabled = false,
   onClick = () => {},
   type = BUTTON_TYPES.link,
-}: Props) => (
-  <BpkButton
-    iconOnly
-    type={type}
-    onClick={(e) => {
-      if (direction === DIRECTIONS.PREV) {
-        onClick(e, currentIndex - 1, direction);
-      } else {
-        onClick(e, currentIndex + 1, direction);
-      }
-    }}
-    aria-label={ariaLabel}
-    disabled={disabled}
-  >
-    {direction === DIRECTIONS.PREV ? (
-      <AlignedLeftArrowIcon />
-    ) : (
-      <AlignedRightArrowIcon />
-    )}
-  </BpkButton>
-);
+  variant,
+}: Props) => {
+  const isCarousel = variant === VARIANT.carousel;
+  const PrevIcon = isCarousel ? RtlSmallLeftArrowIcon : AlignedLeftArrowIcon;
+  const NextIcon = isCarousel ? RtlSmallRightArrowIcon : AlignedRightArrowIcon;
+  const button = (
+    <BpkButton
+      iconOnly
+      type={type}
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      className={isCarousel ? getClassName('bpk-page-indicator__nav-carousel-button') : undefined}
+      onClick={(e) => {
+        if (direction === DIRECTIONS.PREV) {
+          onClick(e, currentIndex - 1, direction);
+        } else {
+          onClick(e, currentIndex + 1, direction);
+        }
+      }}
+      aria-label={ariaLabel}
+      disabled={disabled}
+    >
+      {direction === DIRECTIONS.PREV ? (
+        <PrevIcon />
+      ) : (
+        <NextIcon />
+      )}
+    </BpkButton>
+  );
+
+  if (isCarousel) {
+    return (
+      <span className={getClassName('bpk-page-indicator__nav-carousel')}>
+        {button}
+      </span>
+    );
+  }
+
+  return button;
+};
 
 export default NavButton;

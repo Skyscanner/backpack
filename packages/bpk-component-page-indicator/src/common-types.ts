@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2022 Skyscanner Ltd
+ * Copyright 2016 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,24 +16,11 @@
  * limitations under the License.
  */
 
-.bpk-carousel-image {
-  display: inline-flex;
-  width: 100%;
-  min-width: 0;
-  height: 100%;
-  min-height: 0;
-  justify-content: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+export const VARIANT = {
+  default: 'default',
+  overImage: 'overImage',
+  overImageSpaced: 'overImageSpaced',
+  carousel: 'carousel',
+} as const;
 
-  /* helps with flickering when cycle scroll */
-  /* stylelint-disable-next-line order/properties-order */
-  isolation: isolate;
-
-  img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: initial;
-  }
-}
+export type Variant = (typeof VARIANT)[keyof typeof VARIANT];

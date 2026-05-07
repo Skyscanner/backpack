@@ -1,0 +1,33 @@
+name: Sync Figma variables
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_key:
+        description: 'Optional Figma file key override (defaults to the FIGMA_FILE_KEY repo secret).'
+        required: false
+
+permissions: {}
+
+jobs:
+  sync-figma-variables:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run sync
+        env:
+          FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
+          FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
+        run: npm run sync
