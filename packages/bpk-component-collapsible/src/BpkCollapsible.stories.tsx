@@ -19,7 +19,6 @@
 import { useState } from 'react';
 
 import { BpkCardV2 } from '../../bpk-component-card';
-import { withButtonAlignment } from '../../bpk-component-icon';
 import AirportsIcon from '../../bpk-component-icon/sm/airports';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import {
@@ -34,8 +33,12 @@ import BpkCollapsible from './BpkCollapsible';
 
 import type { Meta } from '@storybook/react';
 
-const ChevronIcon = withButtonAlignment(ChevronDownIcon);
-const LeadingIcon = withButtonAlignment(AirportsIcon);
+// Icons are used as flex items inside the trigger row, not inline text. Skip
+// withButtonAlignment — its margin-top is calculated for inline alignment with
+// a button's line-height and visually offsets icons when combined with
+// `align-items: center` in a flex container.
+const ChevronIcon = ChevronDownIcon;
+const LeadingIcon = AirportsIcon;
 
 // Trigger contents stay as <span>s + inline flex styling because <button>
 // elements only allow phrasing content — Bpk layout components render <div>s
@@ -244,7 +247,11 @@ const LongContent = () => (
       </span>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
-      <BpkVStack paddingTop={BpkSpacing.SM} gap={BpkSpacing.SM}>
+      <BpkVStack
+        paddingTop={BpkSpacing.SM}
+        gap={BpkSpacing.SM}
+        alignItems="flex-start"
+      >
         {Array.from({ length: 6 }, (_, index) => (
           <BpkText
             key={`paragraph-${index}`}

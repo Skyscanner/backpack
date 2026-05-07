@@ -22,27 +22,27 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```tsx
 import BpkCollapsible from '@skyscanner/backpack-web/bpk-component-collapsible';
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
-import { withButtonAlignment } from '@skyscanner/backpack-web/bpk-component-icon';
 import ChevronDownIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/chevron-down';
 import AirportsIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/airports';
-
-const ChevronIcon = withButtonAlignment(ChevronDownIcon);
-const LeadingIcon = withButtonAlignment(AirportsIcon);
 
 const Example = () => (
   <BpkCollapsible.Root defaultOpen={false}>
     <BpkCollapsible.Trigger>
-      <LeadingIcon />
+      <AirportsIcon />
       <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
       <BpkText textStyle={TEXT_STYLES.label2}>Label</BpkText>
       <BpkCollapsible.Indicator>
-        <ChevronIcon />
+        <ChevronDownIcon />
       </BpkCollapsible.Indicator>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>Contents go here.</BpkCollapsible.Content>
   </BpkCollapsible.Root>
 );
 ```
+
+> Use raw icons (no `withButtonAlignment`) when composing the trigger row. The
+> trigger uses `display: flex` with `align-items: center`, so the HOC's
+> inline-text margin offsets the icon visually.
 
 ## Props
 
