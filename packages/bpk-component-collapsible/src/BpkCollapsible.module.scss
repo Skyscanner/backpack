@@ -28,9 +28,12 @@ $collapsible-duration: tokens.$bpk-duration-sm;
 // parent lays out children. Without this, a flex/grid parent (e.g. BpkVStack,
 // BpkCardV2.Body) would size the root to the wider of trigger/content, causing
 // the wrapper to visibly shrink and grow as the content expands or collapses.
+// `min-width: 0` lets the root shrink below its content's intrinsic min-width
+// so that flex/grid children honour the parent's width instead of overflowing it.
 .bpk-collapsible {
   display: block;
   width: 100%;
+  min-width: 0;
 }
 
 .bpk-collapsible--default {

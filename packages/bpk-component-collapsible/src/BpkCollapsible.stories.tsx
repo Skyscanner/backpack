@@ -124,30 +124,37 @@ const OnContrast = () => (
 );
 
 const InsideCard = () => (
-  <BpkCardV2.Root>
-    <BpkCardV2.Body>
-      <BpkCollapsible.Root>
-        <BpkCollapsible.Trigger>
-          <span style={triggerRowStyle}>
-            <LeadingIcon />
-            <span style={titleStyle}>
-              <BpkText textStyle={TEXT_STYLES.heading5}>Card title</BpkText>
+  // BpkCardV2.Root has no intrinsic width, so the card resizes to fit its
+  // tallest/widest child. Constraining the wrapper width keeps the card a
+  // stable size as the collapsible expands, matching how cards are used in
+  // product layouts.
+  <BpkBox width="25rem">
+    <BpkCardV2.Root>
+      <BpkCardV2.Body>
+        <BpkCollapsible.Root>
+          <BpkCollapsible.Trigger>
+            <span style={triggerRowStyle}>
+              <LeadingIcon />
+              <span style={titleStyle}>
+                <BpkText textStyle={TEXT_STYLES.heading5}>Card title</BpkText>
+              </span>
+              <BpkCollapsible.Indicator>
+                <ChevronIcon />
+              </BpkCollapsible.Indicator>
             </span>
-            <BpkCollapsible.Indicator>
-              <ChevronIcon />
-            </BpkCollapsible.Indicator>
-          </span>
-        </BpkCollapsible.Trigger>
-        <BpkCollapsible.Content>
-          <BpkBox paddingTop={BpkSpacing.SM}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
-              Drops inside BpkCardV2 without imposing extra padding or borders.
-            </BpkText>
-          </BpkBox>
-        </BpkCollapsible.Content>
-      </BpkCollapsible.Root>
-    </BpkCardV2.Body>
-  </BpkCardV2.Root>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Drops inside BpkCardV2 without imposing extra padding or
+                borders.
+              </BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </BpkCollapsible.Root>
+      </BpkCardV2.Body>
+    </BpkCardV2.Root>
+  </BpkBox>
 );
 
 const Controlled = () => {
