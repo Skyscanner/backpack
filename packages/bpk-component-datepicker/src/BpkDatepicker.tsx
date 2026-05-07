@@ -27,6 +27,9 @@ import {
   BpkCalendarDate,
   withCalendarState,
   CALENDAR_SELECTION_TYPE,
+  DEFAULT_MARK_TODAY,
+  DEFAULT_MAX_DATE,
+  DEFAULT_MIN_DATE,
   DateUtils,
   BpkCalendarNav,
 } from '../../bpk-component-calendar';
@@ -70,15 +73,15 @@ type Props = {
    * The "pagewrap" element id is a convention we use internally at Skyscanner. In most cases it should "just work".
    */
   getApplicationElement: () => HTMLElement | null;
-  nextMonthLabel: string;
-  previousMonthLabel: string;
   weekStartsOn: number;
   // Optional
-  calendarComponent: ReactComponent;
+  nextMonthLabel?: string | null;
+  previousMonthLabel?: string | null;
+  calendarComponent?: ReactComponent;
   /**
    * By default BpkInput. If passed, it should be a DOM node with a ref attached to it.
    */
-  inputComponent: ReactElement<any> | null;
+  inputComponent?: ReactElement<any> | null;
   dateModifiers?: {};
   fixedWidth?: boolean;
   inputProps?: {};
@@ -108,6 +111,11 @@ type State = {
   isOpen: boolean;
 };
 
+const DEFAULT_SELECTION_CONFIGURATION: SelectionConfiguration = {
+  type: CALENDAR_SELECTION_TYPE.single,
+  date: null,
+};
+
 class BpkDatepicker extends Component<Props, State> {
   inputRef: (ref:HTMLInputElement) => void;
 
@@ -115,36 +123,13 @@ class BpkDatepicker extends Component<Props, State> {
 
   focusRef?: Ref<HTMLDivElement>;
 
-  static defaultProps = {
-    calendarComponent: DefaultCalendar,
-    inputComponent: null,
-    dateModifiers: {},
-    inputProps: {},
-    fixedWidth: true,
-    markOutsideDays: true,
-    markToday: DefaultCalendar.defaultProps.markToday,
-    maxDate: DefaultCalendar.defaultProps.maxDate,
-    minDate: DefaultCalendar.defaultProps.minDate,
-    nextMonthLabel: null,
-    onDateSelect: null,
-    onOpenChange: null,
-    onMonthChange: null,
-    previousMonthLabel: null,
-    selectionConfiguration: {
-      type: CALENDAR_SELECTION_TYPE.single,
-      date: null,
-    },
-    initiallyFocusedDate: null,
-    renderTarget: null,
-    isOpen: false,
-    valid: null,
-  };
-
   constructor(props: Props) {
     super(props);
 
+    const { isOpen = false } = props;
+
     this.state = {
-      isOpen: props.isOpen!,
+      isOpen,
     };
     this.focusRef = createRef();
     this.inputRef = (ref) => {
@@ -165,20 +150,22 @@ class BpkDatepicker extends Component<Props, State> {
   }
 
   onOpen = () => {
+    const { onOpenChange = null } = this.props;
     this.setState({
       isOpen: true,
     });
-    if (this.props.onOpenChange) {
-      this.props.onOpenChange(true);
+    if (onOpenChange) {
+      onOpenChange(true);
     }
   };
 
   onClose = () => {
+    const { onOpenChange = null } = this.props;
     this.setState({
       isOpen: false,
     });
-    if (this.props.onOpenChange) {
-      this.props.onOpenChange(false);
+    if (onOpenChange) {
+      onOpenChange(false);
     }
   };
 
@@ -241,14 +228,18 @@ class BpkDatepicker extends Component<Props, State> {
   };
 
   handleDateSelect = (startDate: Date, endDate: Date | null = null) => {
-    const { maxDate, minDate, onClose, onDateSelect, selectionConfiguration } =
-      this.props;
+    const {
+      maxDate = DEFAULT_MAX_DATE,
+      minDate = DEFAULT_MIN_DATE,
+      onClose,
+      onDateSelect = null,
+      selectionConfiguration = DEFAULT_SELECTION_CONFIGURATION,
+    } = this.props;
 
     // When the calendar is a single date we always want to close it when a date is selected
     // or if its a range calendar we only want to close the calendar when a range is selected.
     // If a custom onClose function is provided then we don't want to run the internal version.
     if (
-      selectionConfiguration &&
       (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.single ||
         (selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
           endDate)) &&
@@ -260,17 +251,16 @@ class BpkDatepicker extends Component<Props, State> {
     if (onDateSelect) {
       const newStartDate = DateUtils.dateToBoundaries(
         startDate,
-        DateUtils.startOfDay(minDate!),
-        DateUtils.startOfDay(maxDate!),
+        DateUtils.startOfDay(minDate),
+        DateUtils.startOfDay(maxDate),
       );
       const newEndDate = DateUtils.dateToBoundaries(
         endDate,
-        DateUtils.startOfDay(minDate!),
-        DateUtils.startOfDay(maxDate!),
+        DateUtils.startOfDay(minDate),
+        DateUtils.startOfDay(maxDate),
       );
 
       if (
-        selectionConfiguration &&
         selectionConfiguration.type === CALENDAR_SELECTION_TYPE.range &&
         selectionConfiguration.startDate &&
         !selectionConfiguration.endDate &&
@@ -288,34 +278,35 @@ class BpkDatepicker extends Component<Props, State> {
 
   render() {
     const {
-      calendarComponent: Calendar,
+      calendarComponent,
       changeMonthLabel,
       closeButtonText,
-      dateModifiers,
+      dateModifiers = {},
       daysOfWeek,
-      fixedWidth,
+      fixedWidth = true,
       formatDate,
       formatDateFull,
       formatMonth,
       getApplicationElement,
       id,
-      initiallyFocusedDate,
-      inputComponent,
-      inputProps,
-      markOutsideDays,
-      markToday,
-      maxDate,
-      minDate,
-      nextMonthLabel,
-      onMonthChange,
-      previousMonthLabel,
-      renderTarget,
-      selectionConfiguration,
+      initiallyFocusedDate = null,
+      inputComponent = null,
+      inputProps = {},
+      markOutsideDays = true,
+      markToday = DEFAULT_MARK_TODAY,
+      maxDate = DEFAULT_MAX_DATE,
+      minDate = DEFAULT_MIN_DATE,
+      nextMonthLabel = null,
+      onMonthChange = null,
+      previousMonthLabel = null,
+      renderTarget = null,
+      selectionConfiguration = DEFAULT_SELECTION_CONFIGURATION,
       title,
       valid,
       weekStartsOn,
       ...rest
     } = this.props;
+    const Calendar: ReactComponent = calendarComponent || (DefaultCalendar as unknown as ReactComponent);
 
     // The following props are not used in render
     delete rest.onDateSelect;
@@ -328,10 +319,10 @@ class BpkDatepicker extends Component<Props, State> {
           inputRef={this.inputRef}
           id={id}
           name={`${id}_input`}
-          value={this.getValue(selectionConfiguration!, formatDate)}
+          value={this.getValue(selectionConfiguration, formatDate)}
           aria-live="polite"
           aria-atomic="true"
-          aria-label={this.getLabel(selectionConfiguration!, formatDateFull)}
+          aria-label={this.getLabel(selectionConfiguration, formatDateFull)}
           onChange={() => null}
           onOpen={this.onOpen}
           isOpen={this.state.isOpen}
