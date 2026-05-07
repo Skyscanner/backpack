@@ -75,8 +75,9 @@ class BpkHorizontalNav extends Component<Props> {
   }
 
   scrollSelectedIntoView = (useSmoothScroll: boolean) => {
+    const { autoScrollToSelected = false } = this.props;
     if (
-      !this.props.autoScrollToSelected ||
+      !autoScrollToSelected ||
       !this.scrollRef ||
       !this.selectedItemRef
     ) {
@@ -125,14 +126,14 @@ class BpkHorizontalNav extends Component<Props> {
 
   render() {
     const {
-      ariaLabel,
-      autoScrollToSelected,
+      ariaLabel = null,
+      autoScrollToSelected = false,
       children: rawChildren,
-      className,
-      leadingScrollIndicatorClassName,
-      showUnderline,
-      trailingScrollIndicatorClassName,
-      type,
+      className = null,
+      leadingScrollIndicatorClassName = null,
+      showUnderline = true,
+      trailingScrollIndicatorClassName = null,
+      type = HORIZONTAL_NAV_TYPES.default,
       ...rest
     } = this.props;
 
@@ -208,16 +209,6 @@ BpkHorizontalNav.propTypes = {
   trailingScrollIndicatorClassName: PropTypes.string,
   type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
 }
-
-BpkHorizontalNav.defaultProps = {
-  ariaLabel: null,
-  autoScrollToSelected: false,
-  className: null,
-  leadingScrollIndicatorClassName: null,
-  showUnderline: true,
-  trailingScrollIndicatorClassName: null,
-  type: HORIZONTAL_NAV_TYPES.default,
-};
 
 export default BpkHorizontalNav;
 export { HORIZONTAL_NAV_TYPES };

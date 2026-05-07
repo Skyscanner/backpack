@@ -46,31 +46,23 @@ export type BpkBackgroundImageProps = {
 class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   trackImg?: HTMLImageElement | null;
 
-  static defaultProps = {
-    className: '',
-    inView: true,
-    loading: false,
-    onLoad: null,
-    onError: null,
-    style: {},
-    imageStyle: {},
-  };
-
   constructor(props: BpkBackgroundImageProps) {
     super(props);
     this.trackImg = null;
   }
 
   componentDidMount() {
-    if (this.props.inView) {
+    const { inView = true } = this.props;
+    if (inView) {
       this.startImageLoad();
     }
   }
 
   componentDidUpdate(prevProps: BpkBackgroundImageProps) {
-    const { inView, src } = this.props;
+    const { inView = true, src } = this.props;
+    const { inView: prevInView = true } = prevProps;
 
-    if (prevProps.src !== src || (inView && !prevProps.inView)) {
+    if (prevProps.src !== src || (inView && !prevInView)) {
       this.startImageLoad();
     }
   }
@@ -103,8 +95,15 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   };
 
   render() {
-    const { children, className, imageStyle, inView, loading, src, style } =
-      this.props;
+    const {
+      children,
+      className = '',
+      imageStyle = {},
+      inView = true,
+      loading = false,
+      src,
+      style = {},
+    } = this.props;
 
     const calculatedAspectRatio = this.getAspectRatio();
     const aspectRatioPc = `${100 / calculatedAspectRatio}%`;

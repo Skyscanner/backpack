@@ -46,12 +46,12 @@ class BpkHorizontalNavItem extends Component<Props> {
   render() {
     const {
       children,
-      className,
-      disabled,
-      href,
-      selected,
-      spaceAround,
-      type,
+      className = null,
+      disabled = false,
+      href = null,
+      selected = false,
+      spaceAround = false,
+      type = HORIZONTAL_NAV_TYPES.default,
       ...rest
     } = this.props;
 
@@ -113,15 +113,6 @@ BpkHorizontalNavItem.propTypes = {
   selected: PropTypes.bool,
   spaceAround: PropTypes.bool,
   type: PropTypes.oneOf(Object.keys(HORIZONTAL_NAV_TYPES)),
-};
-
-BpkHorizontalNavItem.defaultProps = {
-  className: null,
-  disabled: false,
-  href: null,
-  selected: false,
-  spaceAround: false,
-  type: HORIZONTAL_NAV_TYPES.default,
 };
 
 const themeAttributes = [

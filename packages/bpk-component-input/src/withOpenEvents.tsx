@@ -31,6 +31,10 @@ const KEYCODES = {
   SPACEBAR: 'Space',
 } as const;
 
+const HAS_TOUCH_SUPPORT = !!(
+  typeof window !== 'undefined' && 'ontouchstart' in window
+);
+
 export type WithOpenEventsProps = {
   /**
    * It is important you pass the `isOpen` prop, as it is necessary to work around an IE bug.
@@ -95,22 +99,6 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
 
     focusCanOpen: boolean;
 
-    static defaultProps = {
-      // Custom props
-      isOpen: false,
-      hasTouchSupport: !!(
-        typeof window !== 'undefined' && 'ontouchstart' in window
-      ),
-      onOpen: null,
-      // Input props
-      onClick: null,
-      onFocus: null,
-      onBlur: null,
-      onTouchEnd: null,
-      onKeyDown: null,
-      onKeyUp: null,
-    };
-
     constructor(props: P & WithOpenEventsProps & InputProps) {
       super(props);
 
@@ -150,7 +138,7 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
     render(): ReactElement<any> {
       const {
         className,
-        hasTouchSupport,
+        hasTouchSupport = HAS_TOUCH_SUPPORT,
         isOpen,
         onBlur,
         onClick,
