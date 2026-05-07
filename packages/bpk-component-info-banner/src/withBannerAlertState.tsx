@@ -48,22 +48,11 @@ const withBannerAlertState = <P extends BpkInfoBannerProps>(
 
     hideIntervalId?: ReturnType<typeof setTimeout> | null;
 
-    static defaultProps = {
-      onDismiss: null,
-      onExpandToggle: null,
-      onHide: null,
-      expanded: false,
-      show: true,
-      hideAfter: null,
-      animateOnLeave: false,
-      children: null,
-    };
-
     constructor(props: P & WithBannerAlertStateProps) {
       super(props);
 
       this.state = {
-        expanded: props.expanded,
+        expanded: props.expanded ?? false,
         show: true,
       };
 
@@ -120,8 +109,8 @@ const withBannerAlertState = <P extends BpkInfoBannerProps>(
 
     render() {
       const {
-        animateOnLeave,
-        children,
+        animateOnLeave = false,
+        children = null,
         expanded,
         hideAfter,
         onDismiss,
