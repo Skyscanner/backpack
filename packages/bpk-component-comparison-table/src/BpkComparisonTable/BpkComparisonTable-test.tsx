@@ -231,5 +231,53 @@ describe('BpkComparisonTable', () => {
       await userEvent.click(screen.getByLabelText('Close'));
       expect(onClose).toHaveBeenCalledTimes(1);
     });
+
+    it('fires onOpen when isOpen transitions from false to true', async () => {
+      const onOpen = jest.fn();
+      const renderTree = (isOpen: boolean) => (
+        <BpkProvider>
+          <BpkComparisonTable.Root isOpen={isOpen} onClose={noop} onOpen={onOpen}>
+            <BpkComparisonTable.Header strings={TRANSLATIONS} />
+            <BpkComparisonTable.Content
+              columns={[COLUMN_1]}
+              onRemove={noop}
+              onAddMoreClick={noop}
+              strings={TRANSLATIONS}
+            />
+          </BpkComparisonTable.Root>
+        </BpkProvider>
+      );
+
+      const { rerender } = render(renderTree(false));
+      expect(onOpen).not.toHaveBeenCalled();
+
+      rerender(renderTree(true));
+      expect(onOpen).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not re-fire onOpen when its identity changes while isOpen stays true', async () => {
+      const onOpen = jest.fn();
+      const renderTree = (isOpen: boolean) => (
+        <BpkProvider>
+          {/* New onOpen identity on every render — simulates an inline callback in the consumer. */}
+          <BpkComparisonTable.Root isOpen={isOpen} onClose={noop} onOpen={() => onOpen()}>
+            <BpkComparisonTable.Header strings={TRANSLATIONS} />
+            <BpkComparisonTable.Content
+              columns={[COLUMN_1]}
+              onRemove={noop}
+              onAddMoreClick={noop}
+              strings={TRANSLATIONS}
+            />
+          </BpkComparisonTable.Root>
+        </BpkProvider>
+      );
+
+      const { rerender } = render(renderTree(true));
+      expect(onOpen).toHaveBeenCalledTimes(1);
+
+      rerender(renderTree(true));
+      rerender(renderTree(true));
+      expect(onOpen).toHaveBeenCalledTimes(1);
+    });
   });
 });

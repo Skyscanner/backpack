@@ -33,6 +33,11 @@
     min-width: 0;
     flex: 1;
   }
+
+  button {
+    min-height: 0;
+    padding-block: 0;
+  }
 }
 
 // Filled item — relative for close button positioning.
