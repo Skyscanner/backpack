@@ -41,9 +41,16 @@ const HORIZONTAL_NAV_TYPES = {
 type Props = {
   children: ReactNode;
   ariaLabel?: string | null;
+  /**
+   * Ensures that the selected item is within view when loaded on narrow-screened devices.
+   */
   autoScrollToSelected?: boolean;
   className?: string | null;
   leadingScrollIndicatorClassName?: string | null;
+  /**
+   * When set to "false", the bottom border on the component isn't included. This refers
+   * to the underline on the whole "BpkHorizontalNav", not the line that appears under the selected item.
+   */
   showUnderline?: boolean;
   trailingScrollIndicatorClassName?: string | null;
   type?: keyof typeof HORIZONTAL_NAV_TYPES;
@@ -142,16 +149,12 @@ const BpkHorizontalNav = ({
 
   if (autoScrollToSelected || type === HORIZONTAL_NAV_TYPES.light) {
     children = Children.map(rawChildren, (child) => {
+      const isElement =
+        typeof child === 'object' && child !== null && 'props' in child;
       const childProps: { type?: string } = {};
       let childRef: ((ref: HTMLDivElement | null) => void) | undefined;
       if (autoScrollToSelected) {
-        if (
-          child &&
-          typeof child === 'object' &&
-          'props' in child &&
-          child.props &&
-          (child.props as any).selected
-        ) {
+        if (isElement && (child.props as any).selected) {
           childRef = (ref) => {
             selectedItemRef.current = ref;
           };
@@ -162,7 +165,7 @@ const BpkHorizontalNav = ({
         childProps.type = HORIZONTAL_NAV_TYPES.light;
       }
 
-      return child && typeof child === 'object' && 'props' in child ? (
+      return isElement ? (
         <div ref={childRef}>{cloneElement(child as ReactElement, childProps)}</div>
       ) : null;
     });

@@ -29,8 +29,16 @@ const getClassName = cssModules(STYLES);
 type Props = {
   children: ReactNode;
   className?: string | null;
+  /**
+   * **Note:**
+   * "disabled" and "selected" are mutually exclusive for true values, i.e. only one of them can be true for a given nav item.
+   */
   disabled?: boolean;
   href?: string | null;
+  /**
+   * **Note:**
+   * "disabled" and "selected" are mutually exclusive for true values, i.e. only one of them can be true for a given nav item.
+   */
   selected?: boolean;
   spaceAround?: boolean;
   type?: keyof typeof HORIZONTAL_NAV_TYPES;
