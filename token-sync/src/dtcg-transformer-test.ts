@@ -54,7 +54,7 @@ import {
 } from './dtcg-transformer';
 
 import type { LocalVariable } from './figma-api';
-import type { DTCGTree, ResolveContext, SkippedVariableRecord } from './types';
+import type { DTCGTree, ResolveContext } from './types';
 
 
 function makeContext(
@@ -500,30 +500,30 @@ describe('buildDTCGTreeForMode', () => {
   });
 
   // Each case must skip with `skipUnresolvedAliases: true` and throw without it.
-  // Setup is per-case; the assertions are shared.
-  function expectSkipOrThrow(
+  // Returns the recorded skip + a thunk that re-runs without the option, so
+  // each `it` block does its own assertions (lint can see them, and the test
+  // body documents what's being verified).
+  function setupSkipOrThrow(
     classified: Parameters<typeof buildDTCGTreeForMode>[0],
     modeName: string,
     variables: LocalVariable[],
     context: ResolveContext,
-    expectedSkip: Partial<SkippedVariableRecord>,
-    thrownMatcher: unknown = DTCGTransformError,
-  ): void {
+  ) {
     const output = buildDTCGTreeForMode(classified, modeName, variables, context, {
       skipUnresolvedAliases: true,
     });
-    expect(output.stats.skippedVariableCount).toBe(1);
-    expect(output.stats.skippedVariables[0]).toMatchObject(expectedSkip);
-
-    expect(() =>
-      buildDTCGTreeForMode(classified, modeName, variables, context),
-    ).toThrow(thrownMatcher as never);
+    return {
+      skipped: output.stats.skippedVariables[0],
+      skippedCount: output.stats.skippedVariableCount,
+      throwingCall: () =>
+        buildDTCGTreeForMode(classified, modeName, variables, context),
+    };
   }
 
   it('skips or throws on unresolved aliases', () => {
     const response = buildFixtureResponse({ includeBroken: true });
     const broken = response.meta.variables['variable-semantic-broken'];
-    expectSkipOrThrow(
+    const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
       'Day',
       [broken],
@@ -533,12 +533,14 @@ describe('buildDTCGTreeForMode', () => {
         localCollectionsById: response.meta.variableCollections,
         preservedReferenceKeys: new Set(),
       },
-      {
-        reason: 'unresolved-alias',
-        variableName: 'Broken/Missing',
-        unresolvedAliasId: 'variable-does-not-exist',
-      },
     );
+    expect(skippedCount).toBe(1);
+    expect(skipped).toMatchObject({
+      reason: 'unresolved-alias',
+      variableName: 'Broken/Missing',
+      unresolvedAliasId: 'variable-does-not-exist',
+    });
+    expect(throwingCall).toThrow(DTCGTransformError);
   });
 
   it('skips or throws on missing-mode-value', () => {
@@ -552,17 +554,19 @@ describe('buildDTCGTreeForMode', () => {
       scopes: ['OPACITY'],
       remote: false,
     } as unknown as LocalVariable;
-    expectSkipOrThrow(
+    const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
       'Day',
       [noDay],
       makeContext(),
-      {
-        reason: 'missing-mode-value',
-        variableName: 'Opacity/Hover',
-        missingModeName: 'Day',
-      },
     );
+    expect(skippedCount).toBe(1);
+    expect(skipped).toMatchObject({
+      reason: 'missing-mode-value',
+      variableName: 'Opacity/Hover',
+      missingModeName: 'Day',
+    });
+    expect(throwingCall).toThrow(DTCGTransformError);
   });
 
   it('skips or throws on invalid variable name', () => {
@@ -572,14 +576,18 @@ describe('buildDTCGTreeForMode', () => {
       key: 'key-bad-name',
       name: 'Colour//Pink',
     } as LocalVariable;
-    expectSkipOrThrow(
+    const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: primitivesCollection, role: 'primitive' },
       'Hex',
       [bad],
       makeContext(),
-      { reason: 'invalid-name', variableName: 'Colour//Pink' },
-      /Invalid variable name/,
     );
+    expect(skippedCount).toBe(1);
+    expect(skipped).toMatchObject({
+      reason: 'invalid-name',
+      variableName: 'Colour//Pink',
+    });
+    expect(throwingCall).toThrow(/Invalid variable name/);
   });
 
   it('skips or throws on path collision', () => {
@@ -601,17 +609,19 @@ describe('buildDTCGTreeForMode', () => {
       valuesByMode: { [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 } },
     } as unknown as LocalVariable;
     // Parent writes first (sorted: "Colour/Brand" < "Colour/Brand/Pink"); child collides.
-    expectSkipOrThrow(
+    const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: primitivesCollection, role: 'primitive' },
       'Hex',
       [parent, child],
       makeContext(),
-      {
-        reason: 'path-collision',
-        variableName: 'Colour/Brand/Pink',
-        collidingVariableName: 'Colour/Brand',
-      },
     );
+    expect(skippedCount).toBe(1);
+    expect(skipped).toMatchObject({
+      reason: 'path-collision',
+      variableName: 'Colour/Brand/Pink',
+      collidingVariableName: 'Colour/Brand',
+    });
+    expect(throwingCall).toThrow(DTCGTransformError);
   });
 
   it('produces output that is independent of input ordering', () => {
