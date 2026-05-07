@@ -185,7 +185,7 @@
   },
   "overrides": [
     {
-      "files": ["*test*", "*examples*"],
+      "files": ["*test*", "*examples*", "*stories*"],
       "rules": {
         "@skyscanner/rules/forbid-component-props": ["off"]
       }

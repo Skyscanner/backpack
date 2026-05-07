@@ -202,6 +202,80 @@ describe('BpkAutosuggest', () => {
       await typeAndWait(user);
       expect(screen.getAllByRole('option')[0]).toHaveClass('highlighted');
     });
+
+    it('auto-selects the first suggestion on blur (no interaction)', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalledWith({
+          inputValue: 'London',
+          suggestion: suggestions[0],
+        });
+      });
+    });
+
+    it('does not auto-select a hovered-but-not-clicked suggestion on blur', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      await user.hover(screen.getAllByRole('option')[1]);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalled();
+      });
+      // The hovered item (Paris) must NOT be auto-selected on blur.
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[1] }),
+      );
+      // The first-highlighted item (London) is the correct auto-select target.
+      expect(props.onSuggestionSelected).toHaveBeenCalledWith({
+        inputValue: 'London',
+        suggestion: suggestions[0],
+      });
+    });
+
+    it('keeps the clicked suggestion when user clicks a non-first item with highlightFirstSuggestion on', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      // Click the second suggestion (not the first-highlighted one).
+      await user.click(screen.getAllByRole('option')[1]);
+
+      // Allow the blur setTimeout to flush; the clicked item must remain committed.
+      await waitFor(() => {
+        expect(screen.getByRole('combobox')).toHaveValue('Paris');
+      });
+      expect(props.onSuggestionSelected).toHaveBeenLastCalledWith({
+        inputValue: 'Paris',
+        suggestion: suggestions[1],
+      });
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[0] }),
+      );
+    });
+
+    it('preserves the keyboard-highlighted suggestion on blur when the user then hovers a different item', async () => {
+      const props = setup({ highlightFirstSuggestion: true });
+
+      await typeAndWait(user);
+      await user.keyboard('{ArrowDown}');
+      await user.hover(screen.getAllByRole('option')[0]);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalledWith({
+          inputValue: 'Paris',
+          suggestion: suggestions[1],
+        });
+      });
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[0] }),
+      );
+    });
   });
 
   describe('onSuggestionHighlighted', () => {
@@ -237,6 +311,25 @@ describe('BpkAutosuggest', () => {
       setup({ alwaysRenderSuggestions: true });
 
       expect(screen.getAllByRole('option')).toHaveLength(suggestions.length);
+    });
+
+    it('does not auto-select a hovered-but-not-clicked suggestion on blur when alwaysRenderSuggestions is true', async () => {
+      const props = setup({
+        alwaysRenderSuggestions: true,
+        highlightFirstSuggestion: true,
+      });
+
+      const input = screen.getByRole('combobox');
+      await user.click(input);
+      await user.hover(screen.getAllByRole('option')[1]);
+      await user.tab();
+
+      await waitFor(() => {
+        expect(props.onSuggestionSelected).toHaveBeenCalled();
+      });
+      expect(props.onSuggestionSelected).not.toHaveBeenCalledWith(
+        expect.objectContaining({ suggestion: suggestions[1] }),
+      );
     });
   });
 

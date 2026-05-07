@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
-import type { KeyboardEvent } from 'react';
+import type { KeyboardEvent, ReactElement, ReactNode } from 'react';
+
+import type { Props as BpkButtonProps } from '../../bpk-component-button';
+import type { BpkStackProps } from '../../bpk-component-layout';
 
 export const CHATBOT_INPUT_TYPES = {
   CARS: 'cars',
@@ -27,7 +30,14 @@ export const CHATBOT_INPUT_TYPES = {
 export type ChatbotInputType =
   (typeof CHATBOT_INPUT_TYPES)[keyof typeof CHATBOT_INPUT_TYPES];
 
-export type BpkChatbotInputProps = {
+export type SendButtonRenderProps = {
+  disabled: boolean;
+  onClick: () => void;
+  loading: boolean;
+  ariaLabel: string;
+};
+
+export type BpkChatbotInputInputProps = {
   inputValue: string;
   /** Accessible label for the loading state button (required for screen readers). */
   loadingAriaLabel: string;
@@ -40,10 +50,25 @@ export type BpkChatbotInputProps = {
   placeholder: string;
   isSending?: boolean;
   isPolling?: boolean;
-  inputType?: ChatbotInputType;
   maxCharacters?: number;
+  /** Maximum number of visible lines before the textarea scrolls. Defaults to 4 (expanding to 5 when content exceeds 4 lines). Only applies to multiline input types. */
+  maxLines?: number;
   onInputClick?: () => void;
   onKeyDown?: (e: KeyboardEvent) => void;
+  /** Optional render prop for customising the send button. The consumer should return a BpkButton with the supplied props. When omitted, the default send button is used. */
+  renderSendButton?: (props: SendButtonRenderProps) => ReactElement<BpkButtonProps>;
+};
+
+export type BpkChatbotInputRootProps = BpkStackProps & {
+  inputType?: ChatbotInputType;
+};
+
+export type BpkChatbotInputToolbarProps = BpkStackProps;
+
+export type BpkChatbotInputNamespace = {
+  Root: (props: BpkChatbotInputRootProps) => ReactNode;
+  Input: (props: BpkChatbotInputInputProps) => ReactNode;
+  Toolbar: (props: BpkChatbotInputToolbarProps) => ReactNode;
 };
 
 export interface BaseInputFieldProps {

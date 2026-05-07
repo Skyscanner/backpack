@@ -18,12 +18,32 @@
 
 import figma from '@figma/code-connect';
 
-import BpkCard from './BpkCard';
+import BpkCardV2 from './BpkCardV2/BpkCardV2';
+import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './BpkCardV2/common-types';
 
 figma.connect(
-  BpkCard,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49749',
+  BpkCardV2,
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15086%3A15207',
   {
-    example: () => <BpkCard>children</BpkCard>,
+    props: {
+      bgColor: figma.enum('Style', {
+        'Surface default': CARD_V2_SURFACE_COLORS.surfaceDefault,
+        'Surface low contrast': CARD_V2_SURFACE_COLORS.surfaceLowContrast,
+        'Surface elevated': CARD_V2_SURFACE_COLORS.surfaceElevated,
+        'Surface tint': CARD_V2_SURFACE_COLORS.surfaceTint,
+        'Surface subtle': CARD_V2_SURFACE_COLORS.surfaceSubtle,
+        'Surface contrast': CARD_V2_SURFACE_COLORS.surfaceContrast,
+      }),
+      variant: figma.enum('Style', {
+        'Panel • Keyline': CARD_V2_VARIANTS.outlined,
+        'Panel • No keyline': CARD_V2_VARIANTS.noElevation,
+      }),
+      children: figma.slot('Contents'),
+    },
+    example: ({ bgColor, children, variant }) => (
+      <BpkCardV2.Root bgColor={bgColor} variant={variant}>
+        <BpkCardV2.Body>{children}</BpkCardV2.Body>
+      </BpkCardV2.Root>
+    ),
   },
 );

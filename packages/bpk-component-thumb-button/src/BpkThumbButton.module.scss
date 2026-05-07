@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
 .bpk-thumb-button {
@@ -48,10 +49,18 @@
     transition: none;
   }
 
+  &:active {
+    color: tokens.$bpk-text-secondary-day;
+  }
+
   &--selected {
     color: tokens.$bpk-core-accent-day;
 
     @include utils.bpk-hover {
+      color: tokens.$bpk-core-accent-day;
+    }
+
+    &:active {
       color: tokens.$bpk-core-accent-day;
     }
   }
@@ -59,5 +68,32 @@
   &__icon {
     display: flex;
     fill: currentcolor;
+  }
+
+  &--color-primary {
+    color: tokens.$bpk-text-primary-day;
+
+    @include utils.bpk-hover {
+      color: tokens.$bpk-text-secondary-day;
+    }
+
+    &.bpk-thumb-button--selected {
+      color: tokens.$bpk-core-accent-day;
+
+      @include utils.bpk-hover {
+        color: tokens.$bpk-core-accent-day;
+      }
+    }
+  }
+
+  &--small {
+    width: auto;
+    height: auto;
+
+    @include typography.bpk-text-xs;
+
+    &::before {
+      content: none;
+    }
   }
 }

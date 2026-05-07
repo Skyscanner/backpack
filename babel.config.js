@@ -60,6 +60,7 @@ module.exports = {
           !!(
             fileName.includes('-test') ||
             fileName.includes('-Test') ||
+            fileName.includes('.stories') ||
             /\/node_modules\//.test(fileName) ||
             fileName.includes('.d.ts') ||
             fileName.includes('.figma.tsx')

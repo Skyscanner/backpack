@@ -16,134 +16,27 @@
  * limitations under the License.
  */
 
-import type { MouseEvent, RefObject, TouchEvent } from 'react';
+import BpkChatbotInputInput from './BpkChatbotInputInput';
+import BpkChatbotInputRoot from './BpkChatbotInputRoot';
+import BpkChatbotInputToolbar from './BpkChatbotInputToolbar';
 
-import { BpkFlex, BpkSpacing } from '../../bpk-component-layout';
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import type { BpkChatbotInputNamespace } from './common-types';
 
-import InputField from './InputField/InputField';
-import SendButton from './SendButton/SendButton';
-import TextAreaField from './TextAreaField/TextAreaField';
-import { CHATBOT_INPUT_TYPES } from './common-types';
-import { MAX_CHARACTERS } from './constants';
-import { useChatbotInput } from './hooks';
-
-import type { BpkChatbotInputProps } from './common-types';
-import type { BpkFlexProps } from '../../bpk-component-layout';
-
-import STYLES from './BpkChatbotInput.module.scss';
-
-export type { BpkChatbotInputProps };
-
-const getClassName = cssModules(STYLES);
-
-const BpkChatbotInput = ({
-  inputType = CHATBOT_INPUT_TYPES.COMPOSER,
-  inputValue,
-  isPolling = false,
-  isSending = false,
-  loadingAriaLabel,
-  maxCharacters = MAX_CHARACTERS,
-  onInputBlur,
-  onInputChange,
-  onInputClick = () => {},
-  onInputFocus,
-  onKeyDown = () => {},
-  onSubmit,
-  placeholder,
-  sendAriaLabel,
-}: BpkChatbotInputProps) => {
-  const {
-    containerHeight,
-    handleSubmit,
-    inputProps,
-    inputRef,
-    isCapped,
-    isCars,
-    isExpanding,
-    isOverLimit,
-    sendButtonDisabled,
-    textareaHeight,
-  } = useChatbotInput({
-    placeholder,
-    inputType,
-    inputValue,
-    isPolling,
-    isSending,
-    maxCharacters,
-    onInputBlur,
-    onInputChange,
-    onInputClick,
-    onInputFocus,
-    onKeyDown,
-    onSubmit,
-  });
-
-  const isComposer = inputType === CHATBOT_INPUT_TYPES.COMPOSER;
-
-  const containerClassName = getClassName(
-    isCars ? 'bpk-chatbot-input--cars' : 'bpk-chatbot-input--composer',
-    isComposer && 'bpk-chatbot-input--composer--with-shadow',
-    isOverLimit && !isCars && 'bpk-chatbot-input--composer--overLimit',
-  );
-
-  const flexProps: Partial<BpkFlexProps> = isCars
-    ? {
-        align: 'center',
-        gap: BpkSpacing.MD,
-        paddingTop: BpkSpacing.MD,
-        paddingBottom: BpkSpacing.MD,
-        paddingEnd: BpkSpacing.MD,
-        paddingStart: BpkSpacing.Base,
-      }
-    : {
-        align: isExpanding ? 'flex-end' : 'center',
-        gap: BpkSpacing.Base,
-        padding: BpkSpacing.Base,
-      };
-
-  const handleContainerEvent = (
-    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
-  ) => {
-    e.stopPropagation();
-  };
-
-  return (
-    <div
-      className={containerClassName}
-      onClick={handleContainerEvent}
-      onTouchStart={handleContainerEvent}
-      role="presentation"
-      data-testid="bpk-chatbot-input-container"
-      {...getDataComponentAttribute('ChatbotInput')}
-    >
-      <BpkFlex {...flexProps}>
-        {isCars ? (
-          <InputField
-            ref={inputRef as RefObject<HTMLInputElement>}
-            {...inputProps}
-          />
-        ) : (
-          <TextAreaField
-            ref={inputRef as RefObject<HTMLTextAreaElement>}
-            containerHeight={containerHeight}
-            textareaHeight={textareaHeight}
-            isCapped={isCapped}
-            isExpanding={isExpanding}
-            isComposer={isComposer}
-            {...inputProps}
-          />
-        )}
-        <SendButton
-          isCars={isCars}
-          disabled={sendButtonDisabled}
-          onClick={handleSubmit}
-          ariaLabel={isCars && isPolling ? loadingAriaLabel : sendAriaLabel}
-          isLoading={!!(isCars && isPolling)}
-        />
-      </BpkFlex>
-    </div>
-  );
+/**
+ * BpkChatbotInput is a composable chatbot input namespace for Backpack.
+ *
+ * @example
+ * <BpkChatbotInput.Root>
+ *   <BpkChatbotInput.Input {...inputProps} />
+ *   <BpkChatbotInput.Toolbar>
+ *     <BpkButton type={BUTTON_TYPES.link}>Attach</BpkButton>
+ *   </BpkChatbotInput.Toolbar>
+ * </BpkChatbotInput.Root>
+ */
+const BpkChatbotInput: BpkChatbotInputNamespace = {
+  Root: BpkChatbotInputRoot,
+  Input: BpkChatbotInputInput,
+  Toolbar: BpkChatbotInputToolbar,
 };
 
 export default BpkChatbotInput;

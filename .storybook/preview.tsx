@@ -27,6 +27,23 @@ import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
+  argTypesEnhancers: [
+    // Hide props intentionally typed as `?: never` — these are disallowed at the TypeScript
+    // level and should not appear in Storybook docs. With strictNullChecks (strict: true),
+    // `?: never` resolves to `never | undefined = undefined`, which react-docgen-typescript
+    // reports as type name 'undefined'. After SBType conversion, this becomes
+    // { name: 'other', value: 'undefined' }. Without strictNullChecks the value is 'never'.
+    // This client-side filter guarantees removal in both dev and production static builds.
+    (context) => Object.fromEntries(
+      Object.entries(context.argTypes).filter(([, argType]) => {
+        const { type } = argType;
+        // type can be a SBType object or a scalar name string (e.g. 'string' shorthand)
+        if (!type || typeof type === 'string' || type.name !== 'other') return true;
+        return type.value !== 'undefined' && type.value !== 'never';
+      })
+    ),
+  ],
+
   decorators: [
     (story, { args }) => {
       let root;

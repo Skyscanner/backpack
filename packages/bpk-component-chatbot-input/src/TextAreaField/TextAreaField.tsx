@@ -33,6 +33,7 @@ interface TextAreaFieldProps extends BaseInputFieldProps {
   isCapped: boolean;
   isExpanding: boolean;
   isComposer: boolean;
+  maxLines?: number;
 }
 
 const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
@@ -45,6 +46,7 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
       isComposer,
       isExpanding,
       isOverLimit = false,
+      maxLines,
       onInputBlur,
       onInputChange,
       onInputClick,
@@ -111,7 +113,11 @@ const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
             tabIndex={0}
             data-testid={dataTestId}
             rows={1}
-            style={{ height: `${textareaHeight}px`, resize: 'none' }}
+            style={{
+              height: `${textareaHeight}px`,
+              resize: 'none',
+              ...(maxLines !== undefined && { maxHeight: `${textareaHeight}px` }),
+            }}
           />
         </div>
       </div>

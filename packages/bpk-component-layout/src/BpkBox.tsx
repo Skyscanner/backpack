@@ -16,21 +16,40 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Box } from '@chakra-ui/react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkBoxProps } from './types';
 
-export const BpkBox = ({ children, ...props }: BpkBoxProps) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
-  return (
-    <Box {...getDataComponentAttribute('Box')} {...processedProps}>
-      {children}
-    </Box>
-  );
-};
+import STYLES from './BpkLayout.module.scss';
+
+
+const getClassName = cssModules(STYLES);
+
+export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
+  ({ backgroundColor, children, color, ...props }, ref) => {
+    const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
+    const classNames = (color || backgroundColor)
+      ? getClassName(
+          'bpk-layout',
+          color ? `bpk-layout--${color}` : '',
+          backgroundColor ? `bpk-layout--${backgroundColor}` : '',
+        )
+      : undefined;
+    return (
+      // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+      <Box ref={ref} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
+        {children}
+      </Box>
+    );
+  },
+);
+
+BpkBox.displayName = 'BpkBox';
 
 export type { BpkBoxProps };

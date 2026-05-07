@@ -34,13 +34,43 @@ export default () => {
 };
 ```
 
+### Small size
+
+Use `size="small"` for inline use cases where the button sits alongside text (e.g. a feedback row). This uses `sm` icons and no fixed dimensions to align with caption-sized text.
+
+> **Note:** The small variant disables the 48px touch target pseudo-element (`bpk-touch-tappable`) that the default size uses to meet WCAG 2.1 minimum 44×44px. This is intentional to prevent targets overlapping adjacent buttons in inline layouts. Do not use `size="small"` on touch-primary surfaces where tap target size is critical.
+
+```tsx
+<BpkThumbButton
+  type="up"
+  size="small"
+  accessibilityLabel="Rate as helpful"
+  onClick={handleVote}
+/>
+```
+
+### Icon colour
+
+Use `iconColor="primary"` to render the icon in the primary text colour (darker). The default is a lighter grayish colour.
+
+```tsx
+<BpkThumbButton
+  type="up"
+  iconColor="primary"
+  accessibilityLabel="Rate as helpful"
+  onClick={handleVote}
+/>
+```
+
 ## Props
 
-| Property           | PropType                   | Required | Default Value |
-| ------------------ | -------------------------- | -------- | ------------- |
-| accessibilityLabel | string                     | true     | -             |
-| type               | 'up' \| 'down'             | true     | -             |
+| Property           | PropType                         | Required | Default Value |
+| ------------------ | -------------------------------- | -------- | ------------- |
+| accessibilityLabel | string                           | true     | -             |
+| type               | 'up' \| 'down'                   | true     | -             |
 | onClick            | (type: ThumbsButtonType) => void | true     | -             |
-| selected           | boolean                    | false    | false         |
+| iconColor          | 'default' \| 'primary'           | false    | 'default'     |
+| selected           | boolean                          | false    | false         |
+| size               | 'default' \| 'small'             | false    | 'default'     |
 
 **Note:** Click events do not bubble — `BpkThumbButton` calls `stopPropagation()` internally to prevent accidental triggering of parent click handlers when used inside interactive containers (e.g. cards).

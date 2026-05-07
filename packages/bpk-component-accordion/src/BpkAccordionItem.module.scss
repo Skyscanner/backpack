@@ -19,7 +19,6 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/borders';
 @use '../../bpk-mixins/margins';
-@use '../../bpk-mixins/utils';
 
 .bpk-accordion {
   &__item--with-divider {
@@ -40,13 +39,9 @@
     border: 0;
     background-color: transparent;
     color: tokens.$bpk-text-primary-day;
-    text-align: left;
+    text-align: start;
     cursor: pointer;
     appearance: none;
-
-    @include utils.bpk-rtl {
-      text-align: right;
-    }
   }
 
   &__flex-container {

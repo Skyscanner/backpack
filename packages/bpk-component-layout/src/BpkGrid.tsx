@@ -16,54 +16,65 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
+
 import { Grid } from '@chakra-ui/react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { processBpkComponentProps } from './tokenUtils';
 
 import type { BpkGridProps } from './types';
 
-export const BpkGrid = ({
-  align,
-  autoColumns,
-  autoFlow,
-  autoRows,
-  children,
-  column,
-  inline,
-  justify,
-  row,
-  templateAreas,
-  templateColumns,
-  templateRows,
-  ...props
-}: BpkGridProps) => {
-  const processedProps = processBpkComponentProps(props, {
-    component: 'BpkGrid',
-    responsiveProps: {
-      justifyContent: justify,
-      alignItems: align,
-      gridTemplateColumns: templateColumns,
-      gridTemplateRows: templateRows,
-      gridTemplateAreas: templateAreas,
-      gridAutoFlow: autoFlow,
-      gridAutoRows: autoRows,
-      gridAutoColumns: autoColumns,
-      gridColumn: column,
-      gridRow: row,
-    },
-  });
+import STYLES from './BpkLayout.module.scss';
 
-  return (
-    <Grid
-      {...getDataComponentAttribute('Grid')}
-      {...processedProps}
-      display={inline ? 'inline-grid' : undefined}
-    >
-      {children}
-    </Grid>
-  );
-};
+
+const getClassName = cssModules(STYLES);
+
+export const BpkGrid = forwardRef<HTMLDivElement, BpkGridProps>(
+  (
+    { align, autoColumns, autoFlow, autoRows, backgroundColor, children, color, column, inline, justify, row, templateAreas, templateColumns, templateRows, textStyle, ...props },
+    ref,
+  ) => {
+    const processedProps = processBpkComponentProps(props, {
+      component: 'BpkGrid',
+      responsiveProps: {
+        textStyle,
+        justifyContent: justify,
+        alignItems: align,
+        gridTemplateColumns: templateColumns,
+        gridTemplateRows: templateRows,
+        gridTemplateAreas: templateAreas,
+        gridAutoFlow: autoFlow,
+        gridAutoRows: autoRows,
+        gridAutoColumns: autoColumns,
+        gridColumn: column,
+        gridRow: row,
+      },
+    });
+    const classNames = (color || backgroundColor)
+      ? getClassName(
+          'bpk-layout',
+          color ? `bpk-layout--${color}` : '',
+          backgroundColor ? `bpk-layout--${backgroundColor}` : '',
+        )
+      : undefined;
+
+    return (
+      <Grid
+        ref={ref}
+        // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+        className={classNames}
+        {...getDataComponentAttribute('Grid')}
+        {...processedProps}
+        display={inline ? 'inline-grid' : undefined}
+      >
+        {children}
+      </Grid>
+    );
+  },
+);
+
+BpkGrid.displayName = 'BpkGrid';
 
 export type { BpkGridProps };

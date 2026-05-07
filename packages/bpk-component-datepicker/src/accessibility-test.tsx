@@ -28,16 +28,6 @@ import {
 } from '../../bpk-component-calendar/test-utils';
 // mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
-jest.mock('@popperjs/core', () => {
-  const originalModule = jest.requireActual('@popperjs/core');
-  return {
-    ...originalModule,
-    createPopper: jest.fn(() => ({
-      update: jest.fn(),
-      destroy: jest.fn(),
-    })),
-  };
-});
 
 // eslint-disable-next-line import/first
 import BpkDatepicker from './BpkDatepicker';

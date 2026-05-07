@@ -45,4 +45,28 @@ describe('BpkThumbButton accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have accessibility issues with size="small"', async () => {
+    const { container } = render(
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" onClick={jest.fn()} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with iconColor="primary"', async () => {
+    const { container } = render(
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" iconColor="primary" onClick={jest.fn()} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have accessibility issues with size="small" and iconColor="primary"', async () => {
+    const { container } = render(
+      <BpkThumbButton accessibilityLabel="Thumbs up" type="up" size="small" iconColor="primary" onClick={jest.fn()} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

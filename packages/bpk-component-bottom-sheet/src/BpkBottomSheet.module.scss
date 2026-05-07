@@ -41,7 +41,6 @@
   width: 100%;
   max-width: tokens.$bpk-modal-max-width;
   margin: auto;
-  transform: scale(1);
   transition:
     opacity tokens.$bpk-duration-sm ease-in-out,
     transform tokens.$bpk-duration-sm ease-in-out;

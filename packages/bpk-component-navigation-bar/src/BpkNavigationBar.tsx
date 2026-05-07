@@ -38,6 +38,9 @@ export type Props = {
   title: ReactNode;
   titleTextStyle?: TextStyle;
   titleTagName?: Tag;
+  /** When true, prevents the title from being truncated with an ellipsis and allows it to wrap onto multiple lines.
+   * Note: this prop only applies when `title` is a string; ReactNode titles are not truncated and wrap naturally. */
+  wrapTitle?: boolean;
   className?: string;
   leadingButton?: ReactElement | null;
   trailingButton?: ReactElement | null;
@@ -57,6 +60,7 @@ const BpkNavigationBar = (props: Props) => {
     titleTagName = "span",
     titleTextStyle = TEXT_STYLES.heading5,
     trailingButton,
+    wrapTitle = false,
     ...rest
   } = props;
 
@@ -91,6 +95,7 @@ const BpkNavigationBar = (props: Props) => {
         <span className={getClassNames(
           'bpk-navigation-bar__title',
           `bpk-navigation-bar__title--${barStyle}`,
+          wrapTitle && 'bpk-navigation-bar__title--wrap',
         )}>
           <BpkText
             id={titleId}

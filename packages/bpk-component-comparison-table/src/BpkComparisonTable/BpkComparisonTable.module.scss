@@ -1,0 +1,128 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+
+// SYNC: keep in sync with IMAGE_FADE_THRESHOLD_PX in BpkComparisonTableContent.tsx
+$image-area-height: 83 * tokens.$bpk-one-pixel-rem;
+
+.bpk-comparison-table__scroll-container {
+  flex: 1;
+  overflow: auto;
+  min-block-size: 0;
+  overscroll-behavior: contain;
+
+  // Rows lock in place during the header collapse animation, then scroll normally.
+  // --bpk-rows-offset is fixed at the animation threshold by JS.
+  tbody {
+    transform: translateY(var(--bpk-rows-offset, 0));
+  }
+
+  td:not(:last-child) {
+    border-inline-end: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  }
+
+  th:not(:last-child) {
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: tokens.$bpk-line-day;
+      inline-size: tokens.$bpk-border-size-sm;
+      inset-block-end: 0;
+      inset-block-start: tokens.bpk-spacing-base();
+      inset-inline-end: 0;
+    }
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+    // min-width ensures horizontal scroll kicks in before columns become too narrow to read (e.g. inside a modal on small screens).
+    min-inline-size: 3 * 180 * tokens.$bpk-one-pixel-rem;
+  }
+}
+
+.bpk-comparison-table__scroll-container th {
+  position: sticky;
+  z-index: 1;
+  padding: 0;
+  background-color: tokens.$bpk-canvas-day;
+  vertical-align: top;
+  inset-block-start: 0;
+}
+
+.bpk-comparison-table__header-content {
+  display: flex;
+  padding: tokens.bpk-spacing-base();
+  flex-direction: column;
+}
+
+// Image wrapper — fades out via --bpk-image-opacity (set by JS on the parent element).
+.bpk-comparison-table__header-image-wrapper {
+  position: relative;
+  opacity: var(--bpk-image-opacity, 1);
+  margin-block-end: tokens.bpk-spacing-base();
+}
+
+.bpk-comparison-table__header-image-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: tokens.$bpk-border-radius-xs;
+  background-color: tokens.$bpk-surface-highlight-day;
+  overflow: hidden;
+  block-size: $image-area-height;
+
+  img {
+    max-block-size: 100%;
+    max-inline-size: 100%;
+    object-fit: contain;
+  }
+}
+
+// ID section — slides up over the fading image.
+// Negative margin-block-start collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
+.bpk-comparison-table__header-id-section {
+  margin-block-start: calc(
+    ($image-area-height + tokens.bpk-spacing-base()) *
+      (var(--bpk-image-opacity, 1) - 1)
+  );
+}
+
+.bpk-comparison-table__best-tag {
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+  inset-block-start: 0;
+}
+
+// Remove button — fades and collapses its layout space so rows slide up over it.
+.bpk-comparison-table__remove-button {
+  opacity: var(--bpk-image-opacity, 1);
+  overflow: clip;
+  margin-block-start: calc(
+    tokens.bpk-spacing-md() * var(--bpk-image-opacity, 1)
+  );
+  max-block-size: calc(5rem * var(--bpk-image-opacity, 1));
+  overflow-clip-margin: tokens.bpk-spacing-sm();
+}
+
+.bpk-comparison-table__placeholder-cell {
+  background-color: tokens.$bpk-canvas-day;
+}

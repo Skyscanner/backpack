@@ -23,6 +23,7 @@ interface UseTextAreaAutoResizeProps {
   ref: RefObject<HTMLTextAreaElement>;
   value: string;
   enabled?: boolean;
+  maxLines?: number;
 }
 
 interface UseTextAreaAutoResizeReturn {
@@ -43,6 +44,7 @@ export const PARENT_PADDING_TOP = 16;
 
 const useTextAreaAutoResize = ({
   enabled = true,
+  maxLines,
   ref,
   value,
 }: UseTextAreaAutoResizeProps): UseTextAreaAutoResizeReturn => {
@@ -125,28 +127,42 @@ const useTextAreaAutoResize = ({
     const { scrollHeight } = measureEl;
     const lines = Math.max(1, Math.ceil(scrollHeight / lineHeightRef.current));
 
-    const isCapped = lines >= 5;
-    const maxInputHeight = isCapped
-      ? MAX_INPUT_HEIGHT_PHASE_2
-      : MAX_INPUT_HEIGHT_PHASE_1;
+    const hasCustomMaxLines = maxLines !== undefined;
+    const isCapped = hasCustomMaxLines
+      ? lines >= maxLines
+      : lines >= 5;
+    let maxInputHeight;
+    if (hasCustomMaxLines) {
+      maxInputHeight = lineHeightRef.current * maxLines;
+    } else {
+      maxInputHeight = isCapped ? MAX_INPUT_HEIGHT_PHASE_2 : MAX_INPUT_HEIGHT_PHASE_1;
+    }
 
     const targetInputHeight = Math.max(
       MIN_INPUT_HEIGHT,
       Math.min(scrollHeight, maxInputHeight),
     );
 
-    const extraSpace = isCapped ? PARENT_PADDING_TOP : 0;
+    const customMaxContainerHeight = hasCustomMaxLines
+      ? lineHeightRef.current * maxLines
+      : MAX_CONTAINER_HEIGHT;
+    const extraSpace = isCapped && !hasCustomMaxLines ? PARENT_PADDING_TOP : 0;
     const targetContainerHeight = Math.max(
       MIN_CONTAINER_HEIGHT,
-      Math.min(targetInputHeight - extraSpace, MAX_CONTAINER_HEIGHT),
+      Math.min(targetInputHeight - extraSpace, customMaxContainerHeight),
     );
 
     setDimensions((prev) => {
       const isContentAdded = value.length > previousValueRef.current.length;
       const isAppending = value.startsWith(previousValueRef.current);
-      const prevMaxHeight = prev.isCapped
-        ? MAX_INPUT_HEIGHT_PHASE_2
-        : MAX_INPUT_HEIGHT_PHASE_1;
+      let prevMaxHeight;
+      if (hasCustomMaxLines) {
+        prevMaxHeight = lineHeightRef.current * maxLines;
+      } else {
+        prevMaxHeight = prev.isCapped
+          ? MAX_INPUT_HEIGHT_PHASE_2
+          : MAX_INPUT_HEIGHT_PHASE_1;
+      }
 
       const isInitialRender = isInitialRenderRef.current;
       const shouldScroll =
@@ -170,7 +186,7 @@ const useTextAreaAutoResize = ({
     });
 
     previousValueRef.current = value;
-  }, [value, ref, enabled, containerWidth]);
+  }, [value, ref, enabled, containerWidth, maxLines]);
 
   useLayoutEffect(() => {
     if (shouldScrollRef.current) {

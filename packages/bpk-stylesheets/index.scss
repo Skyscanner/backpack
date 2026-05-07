@@ -51,7 +51,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-:focus-visible {
+// normalize.css 4.x ships Firefox `:-moz-focusring` rules for both `button` and
+// button-like input controls. These have mixed specificity: `button:-moz-focusring`
+// is 0-1-1, while `[type='button'|'reset'|'submit']:-moz-focusring` is 0-2-0, and
+// both beat a bare `:focus-visible` rule (0-1-0) in Firefox. Adding matching
+// button/control `:focus-visible` selectors lets Backpack's ring win by source
+// order, restoring WCAG-compliant focus visibility on those controls.
+:focus-visible,
+button:focus-visible,
+[type='button']:focus-visible,
+[type='reset']:focus-visible,
+[type='submit']:focus-visible {
   @include utils.bpk-focus-indicator;
 }
 

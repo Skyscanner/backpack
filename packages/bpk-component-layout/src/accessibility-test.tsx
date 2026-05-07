@@ -103,4 +103,24 @@ describe('bpk-component-layout accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('BpkBox used as interactive button should not have detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox
+          role="button"
+          tabIndex={0}
+          aria-label="Clickable card"
+          onClick={() => {}}
+          onKeyDown={() => {}}
+          padding={BpkSpacing.MD}
+        >
+          Card content
+        </BpkBox>
+      </BpkProvider>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

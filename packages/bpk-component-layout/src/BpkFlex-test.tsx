@@ -16,12 +16,18 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { createRef } from 'react';
+
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
+
+import { TEXT_COLORS } from '../../bpk-component-text';
 
 import { BpkFlex } from './BpkFlex';
 import { BpkProvider } from './BpkProvider';
+import { BACKGROUND_COLORS } from './backgroundColors';
 import { BpkSpacing } from './tokens';
+
 
 describe('BpkFlex', () => {
   it('renders children content', () => {
@@ -55,6 +61,67 @@ describe('BpkFlex', () => {
     expect(container.firstChild).toHaveStyle(`gap: .5rem`);
   });
 
+  it('forwards ref to the underlying DOM element', () => {
+    const ref = createRef<HTMLDivElement>();
+    render(
+      <BpkProvider>
+        <BpkFlex ref={ref}>Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
+  });
+
+  it('passes tabIndex to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex tabIndex={0}>Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.firstChild).toHaveAttribute('tabindex', '0');
+  });
+
+  it('passes role to the DOM element', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex role="list">Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.firstChild).toHaveAttribute('role', 'list');
+  });
+
+  it('calls onClick when clicked', () => {
+    const handleClick = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex onClick={handleClick}>Clickable</BpkFlex>
+      </BpkProvider>,
+    );
+    fireEvent.click(getByText('Clickable'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onKeyDown when a key is pressed', () => {
+    const handleKeyDown = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex role="button" tabIndex={0} onKeyDown={handleKeyDown}>
+          Interactive
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
+    expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders when textStyle is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex textStyle="body-default">Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(getByText('Content')).toBeInTheDocument();
+  });
+
   it('supports responsive direction', () => {
     const { container } = render(
       <BpkProvider>
@@ -64,5 +131,36 @@ describe('BpkFlex', () => {
       </BpkProvider>,
     );
     expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('applies color class when color prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex color={TEXT_COLORS.textPrimary}>Colored</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--text-primary');
+  });
+
+  it('applies backgroundColor class when backgroundColor prop is set', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex backgroundColor={BACKGROUND_COLORS.surfaceDefault}>Surface</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toHaveClass('bpk-layout--surface-default');
+  });
+
+  it('renders position and overflow alongside direction without dropping any prop', () => {
+    // Regression: position/overflow arrived via ...props and were previously silently
+    // dropped when responsiveProps was provided (BpkFlex maps direction→flexDirection).
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex direction="column" position="relative" overflow="hidden">
+          content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    expect(container.querySelector('div')).toBeInTheDocument();
   });
 });
