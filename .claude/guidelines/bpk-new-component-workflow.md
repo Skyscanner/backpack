@@ -65,6 +65,61 @@ Run `npx stylelint 'packages/bpk-component-<name>/**/*.scss' --fix` before recom
 
 For animated primitives (Collapsible, Dialog, Popover) Ark exposes `data-state="open" | "closed" | "closing"`. Tests that toggle open → closed in quick succession can race with the closing animation in jsdom. Prefer asserting via `onOpenChange` callback firing, or use `defaultOpen` to test the closed-from-open path separately.
 
+For exit animations, target **both `closing` and `closed`** in your CSS — Ark passes through `closing` while the animation runs and lands on `closed` once it finishes. Targeting only `closed` skips the visible animation:
+
+```scss
+&[data-state='closing'],
+&[data-state='closed'] {
+  animation: bpk-collapse $duration ease;
+}
+```
+
+## 8. Reapply native HTML attributes when Ark only emits `data-*` ones
+
+Zag (the state machine behind Ark UI) is intentionally style-system-agnostic. For some primitives — `Collapsible.Trigger`, for example — it only sets `data-disabled` / `data-state` and does **not** emit the native `disabled` / `aria-disabled` attribute. The button stays tabbable and is announced as enabled even though clicks are no-op'd.
+
+Bpk wrappers must reapply the native attribute. The pattern is to read state from Ark's hook and forward it explicitly:
+
+```tsx
+import { Collapsible, useCollapsibleContext } from '@ark-ui/react';
+
+const BpkCollapsibleTrigger = (...) => {
+  const { disabled } = useCollapsibleContext();
+  return <Collapsible.Trigger disabled={disabled} ... />;
+};
+```
+
+The same applies to `:focus-visible` — Zag does not always expose `data-focus-visible` (it does for some primitives, not for `Collapsible.Trigger`). Default to the standard CSS pseudo-class for focus styling:
+
+```scss
+.bpk-foo__trigger:focus-visible {
+  @include utils.bpk-focus-indicator;
+}
+```
+
+## 9. Bpk components do not accept `className` or `style` from consumers
+
+Backpack components own their surface, focus, animation, RTL, and accessibility behaviour. Allowing consumers to pass `className` or `style` would let them silently break those guarantees. **Do not declare `className?: string` or `style?: CSSProperties` in your prop types.** The internal `className` you forward to Ark/Chakra/Radix primitives is fine — that's what the ESLint allowlist in §1 covers.
+
+If a consumer needs to position or constrain the component, they wrap it in `BpkBox` / `BpkFlex` / `BpkVStack` (see `bpk-layout-components.md`). State this explicitly in the component README so reviewers don't push back asking for the prop.
+
+The single exception is `BpkVessel`, which is the legacy migration escape hatch and accepts `className` / `style` deliberately.
+
+## 10. Stylelint auto-converts physical CSS properties to logical ones
+
+The repo enforces RTL-safe CSS via stylelint. When you write physical sizing properties they are auto-converted on `--fix`:
+
+- `width` → `inline-size`
+- `height` → `block-size`
+- `min-width` → `min-inline-size`
+- `min-height` → `min-block-size`
+- `padding-left` / `padding-right` → `padding-inline-start` / `padding-inline-end`
+- `margin-left` / `margin-right` → `margin-inline-start` / `margin-inline-end`
+- `text-align: left` / `right` → `text-align: start` / `end`
+- `border-left` / `border-right` → `border-inline-start` / `border-inline-end`
+
+You can write the physical form on first pass; `npx stylelint --fix` will rewrite it. Don't fight the conversion by manually re-writing logical → physical — it will be reverted on the next lint run and breaks RTL.
+
 ## When drafting the spec issue (not the implementation)
 
 If you're writing the GitHub issue for a future component, lock these in before opening it — they are cheap at spec time and expensive at implementation time:
@@ -74,6 +129,7 @@ If you're writing the GitHub issue for a future component, lock these in before 
 - **Package layout decision** must be explicit: new package (`packages/bpk-component-foo/`) vs. nested under an existing v1 (`packages/bpk-component-bar/src/BpkBarV2/`).
 - **Variants list** should describe each variant's surface/text token mapping, not just hex values from Figma — so the implementer doesn't have to round-trip through `bpk-token-value-lookup.md`.
 - **Animation contract** should name the Ark/Zag CSS variables to bind to (e.g. `--height` on `Collapsible.Content`) so the implementer knows whether to use keyframes, transitions, or AnimateHeight.
+- **Do not propose `className` or `style` props on Bpk parts** — Backpack owns the styling. If consumers need to wrap the component in a layout, they use `BpkBox`/`BpkFlex` etc. around it. See §9.
 
 ## Checklist when scaffolding a new component package
 
@@ -84,8 +140,7 @@ packages/bpk-component-<name>/
 └── src/
     ├── Bpk<Name>.tsx                # compound export object (if applicable)
     ├── Bpk<Name>Root.tsx            # one file per part
-    ├── Bpk<Name>.module.scss
-    ├── Bpk<Name>.module.css         # COMPILED — see step 2
+    ├── Bpk<Name>.module.scss        # source — sibling .module.css is gitignored, see step 2
     ├── Bpk<Name>-test.tsx
     ├── accessibility-test.tsx       # jest-axe
     └── Bpk<Name>.stories.tsx
