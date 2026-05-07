@@ -24,8 +24,13 @@
 $collapsible-duration: tokens.$bpk-duration-sm;
 
 // Root — invisible container; consumers control its surface (e.g. inside BpkCard).
+// `width: 100%` guarantees the collapsible fills its parent regardless of how the
+// parent lays out children. Without this, a flex/grid parent (e.g. BpkVStack,
+// BpkCardV2.Body) would size the root to the wider of trigger/content, causing
+// the wrapper to visibly shrink and grow as the content expands or collapses.
 .bpk-collapsible {
   display: block;
+  width: 100%;
 }
 
 .bpk-collapsible--default {
