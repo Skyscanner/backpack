@@ -70,10 +70,10 @@ Each accepts `children` and an optional `className`. Refs forward to the underly
 ## Accessibility
 
 - `aria-expanded`, `aria-controls`, and `role="region"` wiring is provided by Ark.
-- Collapsed content is marked `inert`, so interactive descendants are excluded from the tab order.
+- When the collapsible is fully closed, Ark hides the content with the native `hidden` attribute. When `collapsedHeight` keeps closed content mounted for a "show more" pattern, Ark keeps the section present and manages interactive descendants so they stay out of the tab order while closed.
 - The chevron `Indicator` is `aria-hidden`.
 - Backpack's focus indicator is applied to the trigger when focused via keyboard.
 
 ## Animation
 
-The expand/collapse animation is driven by Ark's `data-state="open|closed"` attribute and the `--height` CSS variable Ark exposes on `Content`. The indicator rotates `0° → 180°`. Animation is disabled when `prefers-reduced-motion: reduce` is set.
+The expand/collapse animation is driven by Ark's `data-state` attribute and the `--height` / `--collapsed-height` CSS variables Ark exposes on `Content`. `open` maps to the expand animation, while `closed` and `closing` are both treated as collapsing states. The indicator rotates `0° → 180°`. Animation is disabled when `prefers-reduced-motion: reduce` is set.

@@ -24,16 +24,17 @@
 $collapsible-duration: tokens.$bpk-duration-sm;
 
 // Root — invisible container; consumers control its surface (e.g. inside BpkCard).
-// `width: 100%` guarantees the collapsible fills its parent regardless of how the
+// `inline-size: 100%` guarantees the collapsible fills its parent regardless of how the
 // parent lays out children. Without this, a flex/grid parent (e.g. BpkVStack,
 // BpkCardV2.Body) would size the root to the wider of trigger/content, causing
 // the wrapper to visibly shrink and grow as the content expands or collapses.
-// `min-width: 0` lets the root shrink below its content's intrinsic min-width
+// `min-inline-size: 0` lets the root shrink below its content's intrinsic
+// min-width
 // so that flex/grid children honour the parent's width instead of overflowing it.
 .bpk-collapsible {
   display: block;
-  width: 100%;
-  min-width: 0;
+  inline-size: 100%;
+  min-inline-size: 0;
 }
 
 .bpk-collapsible--default {
@@ -47,7 +48,6 @@ $collapsible-duration: tokens.$bpk-duration-sm;
 // Trigger — clickable header row. Renders as a real <button> via Ark.
 .bpk-collapsible__trigger {
   display: flex;
-  width: 100%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -55,6 +55,7 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   text-align: start;
   cursor: pointer;
   appearance: none;
+  inline-size: 100%;
 
   // Native <button>:disabled — Ark only emits data-disabled, but we forward
   // the disabled prop to the underlying button in BpkCollapsibleTrigger.tsx.
@@ -92,6 +93,7 @@ $collapsible-duration: tokens.$bpk-duration-sm;
 
   @media (prefers-reduced-motion: reduce) {
     &[data-state='open'],
+    &[data-state='closing'],
     &[data-state='closed'] {
       animation: none;
     }
@@ -101,6 +103,7 @@ $collapsible-duration: tokens.$bpk-duration-sm;
     animation: bpk-collapsible-expand $collapsible-duration ease;
   }
 
+  &[data-state='closing'],
   &[data-state='closed'] {
     animation: bpk-collapsible-collapse $collapsible-duration ease;
   }
@@ -116,20 +119,20 @@ $collapsible-duration: tokens.$bpk-duration-sm;
 // flashing through a fully collapsed state.
 @keyframes bpk-collapsible-expand {
   from {
-    height: var(--collapsed-height, 0);
+    block-size: var(--collapsed-height, 0);
   }
 
   to {
-    height: var(--height);
+    block-size: var(--height);
   }
 }
 
 @keyframes bpk-collapsible-collapse {
   from {
-    height: var(--height);
+    block-size: var(--height);
   }
 
   to {
-    height: var(--collapsed-height, 0);
+    block-size: var(--collapsed-height, 0);
   }
 }

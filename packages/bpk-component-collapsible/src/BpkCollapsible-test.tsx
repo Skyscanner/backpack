@@ -35,23 +35,50 @@ const SimpleCollapsible = (props: Partial<BpkCollapsibleRootProps> = {}) => (
   </BpkCollapsible.Root>
 );
 
+const getRenderedParts = () => {
+  const trigger = screen.getByRole('button', { name: /toggle/i });
+  const root = trigger.closest('[data-part="root"]') as HTMLElement;
+  const content = document.getElementById(
+    trigger.getAttribute('aria-controls') as string,
+  ) as HTMLElement;
+
+  return { root, trigger, content };
+};
+
 describe('BpkCollapsible', () => {
   describe('Root', () => {
-    it('renders correctly when closed by default', () => {
-      const { asFragment } = render(<SimpleCollapsible />);
-      expect(asFragment()).toMatchSnapshot();
+    it('renders the default closed state', () => {
+      render(<SimpleCollapsible />);
+
+      const { content, root, trigger } = getRenderedParts();
+
+      expect(root).toHaveClass(
+        'bpk-collapsible',
+        'bpk-collapsible--default',
+      );
+      expect(root).toHaveAttribute('data-state', 'closed');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(content).toHaveAttribute('data-state', 'closed');
+      expect(content).toHaveAttribute('hidden');
     });
 
-    it('renders correctly when open by default', () => {
-      const { asFragment } = render(<SimpleCollapsible defaultOpen />);
-      expect(asFragment()).toMatchSnapshot();
+    it('renders the default open state', () => {
+      render(<SimpleCollapsible defaultOpen />);
+
+      const { content, root, trigger } = getRenderedParts();
+
+      expect(root).toHaveAttribute('data-state', 'open');
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      expect(content).not.toHaveAttribute('hidden');
+      expect(screen.getByText('Hidden content')).toBeInTheDocument();
     });
 
     it('renders the onContrast variant', () => {
-      const { asFragment } = render(
-        <SimpleCollapsible variant="onContrast" />,
-      );
-      expect(asFragment()).toMatchSnapshot();
+      render(<SimpleCollapsible variant="onContrast" />);
+
+      const { root } = getRenderedParts();
+
+      expect(root).toHaveClass('bpk-collapsible--on-contrast');
     });
 
     it('has the data-backpack-ds-component attribute', () => {
@@ -191,6 +218,23 @@ describe('BpkCollapsible', () => {
       );
 
       expect(screen.queryByText('Lazy body')).not.toBeInTheDocument();
+    });
+
+    it('keeps closed content mounted when collapsedHeight is set', () => {
+      render(
+        <BpkCollapsible.Root collapsedHeight="3rem">
+          <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <button type="button">Inner action</button>
+          </BpkCollapsible.Content>
+        </BpkCollapsible.Root>,
+      );
+
+      const { content } = getRenderedParts();
+
+      expect(content).toHaveAttribute('data-has-collapsed-size');
+      expect(content).not.toHaveAttribute('hidden');
+      expect(screen.getByRole('button', { name: /inner action/i })).toBeInTheDocument();
     });
   });
 });
