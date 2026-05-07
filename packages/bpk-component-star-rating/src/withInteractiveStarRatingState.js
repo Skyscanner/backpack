@@ -28,7 +28,7 @@ const withInteractiveStarRatingState = (
   InteractiveStarRating: ComponentType<any>,
 ) => {
   type Props = {
-    onRatingSelect: (number, Function) => mixed,
+    onRatingSelect?: (number, Function) => mixed,
   };
 
   type State = {
@@ -39,10 +39,6 @@ const withInteractiveStarRatingState = (
   class EnhancedComponent extends Component<Props, State> {
     static propTypes = {
       onRatingSelect: PropTypes.func,
-    };
-
-    static defaultProps = {
-      onRatingSelect: () => null,
     };
 
     constructor() {
