@@ -102,18 +102,18 @@ const BpkHorizontalNav = ({
       }
 
       const scrollAdjustment = selectedItemPos.left - scrollPos.left;
+      const targetScrollLeft = scrollRef.current.scrollLeft + scrollAdjustment;
       if (
-        scrollRef.current &&
         scrollRef.current.scroll &&
         typeof scrollRef.current.scroll === 'function' &&
         useSmoothScroll
       ) {
         scrollRef.current.scroll({
-          left: scrollAdjustment,
+          left: targetScrollLeft,
           behavior: 'smooth',
         });
-      } else if (scrollRef.current) {
-        scrollRef.current.scrollLeft = scrollAdjustment;
+      } else {
+        scrollRef.current.scrollLeft = targetScrollLeft;
       }
     },
     [autoScrollToSelected],
