@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 
+import { textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+
 import { BpkCardV2 } from '../../bpk-component-card';
 import AirportsIcon from '../../bpk-component-icon/sm/airports';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
@@ -28,10 +30,13 @@ import {
   BpkVStack,
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
 
 import BpkCollapsible from './BpkCollapsible';
 
 import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkCollapsible.stories.module.scss';
 
 // Icons are used as flex items inside the trigger row, not inline text. Skip
 // withButtonAlignment — its margin-top is calculated for inline alignment with
@@ -39,23 +44,18 @@ import type { Meta } from '@storybook/react';
 // `align-items: center` in a flex container.
 const ChevronIcon = ChevronDownIcon;
 const LeadingIcon = AirportsIcon;
+const getClassName = cssModules(STYLES);
+const SHOW_MORE_COLLAPSED_HEIGHT = '3.5rem';
 
 // Trigger contents stay as <span>s + inline flex styling because <button>
 // elements only allow phrasing content — Bpk layout components render <div>s
 // which would be invalid HTML inside a <button>.
-const triggerRowStyle = {
-  alignItems: 'center',
-  display: 'flex',
-  gap: '0.5rem',
-  width: '100%',
-};
-const titleStyle = { flexGrow: 1 };
 
 const Basic = () => (
   <BpkCollapsible.Root>
     <BpkCollapsible.Trigger>
-      <span style={triggerRowStyle}>
-        <span style={titleStyle}>
+      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
         </span>
         <BpkCollapsible.Indicator>
@@ -76,9 +76,9 @@ const Basic = () => (
 const WithIconAndLabel = () => (
   <BpkCollapsible.Root defaultOpen>
     <BpkCollapsible.Trigger>
-      <span style={triggerRowStyle}>
+      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
         <LeadingIcon />
-        <span style={titleStyle}>
+        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
         </span>
         <BpkText textStyle={TEXT_STYLES.label2}>Label</BpkText>
@@ -104,8 +104,8 @@ const OnContrast = () => (
   <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
     <BpkCollapsible.Root variant="onContrast" defaultOpen>
       <BpkCollapsible.Trigger>
-        <span style={triggerRowStyle}>
-          <span style={titleStyle}>
+        <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+          <span className={getClassName('bpk-collapsible-story__trigger-title')}>
             <BpkText textStyle={TEXT_STYLES.heading5}>
               Title on contrast
             </BpkText>
@@ -126,6 +126,33 @@ const OnContrast = () => (
   </BpkBox>
 );
 
+const OnContrastWithLeadingIcon = () => (
+  <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
+    <BpkCollapsible.Root variant="onContrast" defaultOpen>
+      <BpkCollapsible.Trigger>
+        <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+          <LeadingIcon fill={textOnDarkDay} />
+          <span className={getClassName('bpk-collapsible-story__trigger-title')}>
+            <BpkText textStyle={TEXT_STYLES.heading5}>
+              Leading icon on contrast
+            </BpkText>
+          </span>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
+        </span>
+      </BpkCollapsible.Trigger>
+      <BpkCollapsible.Content>
+        <BpkBox paddingTop={BpkSpacing.SM}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+            Leading accessories on contrast need an explicit on-dark fill.
+          </BpkText>
+        </BpkBox>
+      </BpkCollapsible.Content>
+    </BpkCollapsible.Root>
+  </BpkBox>
+);
+
 const InsideCard = () => (
   // BpkCardV2.Root has no intrinsic width, so the card resizes to fit its
   // tallest/widest child. Constraining the wrapper width keeps the card a
@@ -136,9 +163,9 @@ const InsideCard = () => (
       <BpkCardV2.Body>
         <BpkCollapsible.Root>
           <BpkCollapsible.Trigger>
-            <span style={triggerRowStyle}>
+            <span className={getClassName('bpk-collapsible-story__trigger-row')}>
               <LeadingIcon />
-              <span style={titleStyle}>
+              <span className={getClassName('bpk-collapsible-story__trigger-title')}>
                 <BpkText textStyle={TEXT_STYLES.heading5}>Card title</BpkText>
               </span>
               <BpkCollapsible.Indicator>
@@ -172,8 +199,8 @@ const Controlled = () => {
         onOpenChange={({ open: nextOpen }) => setOpen(nextOpen)}
       >
         <BpkCollapsible.Trigger>
-          <span style={triggerRowStyle}>
-            <span style={titleStyle}>
+          <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+            <span className={getClassName('bpk-collapsible-story__trigger-title')}>
               <BpkText textStyle={TEXT_STYLES.heading5}>Controlled</BpkText>
             </span>
             <BpkCollapsible.Indicator>
@@ -196,8 +223,8 @@ const Controlled = () => {
 const LazyMount = () => (
   <BpkCollapsible.Root lazyMount unmountOnExit>
     <BpkCollapsible.Trigger>
-      <span style={triggerRowStyle}>
-        <span style={titleStyle}>
+      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Lazy mount</BpkText>
         </span>
         <BpkCollapsible.Indicator>
@@ -217,15 +244,17 @@ const LazyMount = () => (
 
 const ShowMore = () => (
   <BpkBox width="20rem">
-    <BpkCollapsible.Root collapsedHeight="3rem">
+    <BpkCollapsible.Root collapsedHeight={SHOW_MORE_COLLAPSED_HEIGHT}>
       <BpkCollapsible.Content>
-        <BpkText textStyle={TEXT_STYLES.bodyDefault}>
-          {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.`}
-        </BpkText>
+        <div className={getClassName('bpk-collapsible-story__show-more-copy')}>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.`}
+          </BpkText>
+        </div>
       </BpkCollapsible.Content>
       <BpkCollapsible.Trigger>
         <BpkText textStyle={TEXT_STYLES.label2}>Show more</BpkText>
@@ -237,8 +266,8 @@ const ShowMore = () => (
 const LongContent = () => (
   <BpkCollapsible.Root defaultOpen>
     <BpkCollapsible.Trigger>
-      <span style={triggerRowStyle}>
-        <span style={titleStyle}>
+      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
           <BpkText textStyle={TEXT_STYLES.heading5}>Long content</BpkText>
         </span>
         <BpkCollapsible.Indicator>
@@ -267,11 +296,59 @@ const LongContent = () => (
   </BpkCollapsible.Root>
 );
 
+const Disabled = () => (
+  <BpkVStack gap={BpkSpacing.Base}>
+    <BpkCollapsible.Root disabled>
+      <BpkCollapsible.Trigger>
+        <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+          <span
+            className={getClassName('bpk-collapsible-story__trigger-title')}
+          >
+            <BpkText textStyle={TEXT_STYLES.heading5}>Disabled</BpkText>
+          </span>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
+        </span>
+      </BpkCollapsible.Trigger>
+      <BpkCollapsible.Content>Hidden while disabled</BpkCollapsible.Content>
+    </BpkCollapsible.Root>
+
+    <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
+      <BpkCollapsible.Root variant="onContrast" defaultOpen disabled>
+        <BpkCollapsible.Trigger>
+          <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+            <span
+              className={getClassName('bpk-collapsible-story__trigger-title')}
+            >
+              <BpkText textStyle={TEXT_STYLES.heading5}>
+                Disabled on contrast
+              </BpkText>
+            </span>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </span>
+        </BpkCollapsible.Trigger>
+        <BpkCollapsible.Content>
+          <BpkBox paddingTop={BpkSpacing.SM}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Visible content uses the disabled on-dark color token.
+            </BpkText>
+          </BpkBox>
+        </BpkCollapsible.Content>
+      </BpkCollapsible.Root>
+    </BpkBox>
+  </BpkVStack>
+);
+
 const VisualTest = () => (
   <BpkVStack gap={BpkSpacing.Base}>
     <Basic />
     <WithIconAndLabel />
+    <OnContrastWithLeadingIcon />
     <InsideCard />
+    <Disabled />
     <ShowMore />
     <LongContent />
   </BpkVStack>
@@ -294,9 +371,13 @@ export default meta;
 export const Default = { render: () => <Basic /> };
 export const WithIconLabelAndChevron = { render: () => <WithIconAndLabel /> };
 export const OnContrastVariant = { render: () => <OnContrast /> };
+export const OnContrastWithLeadingIconStory = {
+  render: () => <OnContrastWithLeadingIcon />,
+};
 export const NestedInCard = { render: () => <InsideCard /> };
 export const ControlledMode = { render: () => <Controlled /> };
 export const LazyMountUnmountOnExit = { render: () => <LazyMount /> };
+export const DisabledState = { render: () => <Disabled /> };
 export const CollapsedHeightShowMore = { render: () => <ShowMore /> };
 export const LongContentExample = { render: () => <LongContent /> };
 export const VisualTestComposite = { render: () => <VisualTest /> };

@@ -16,16 +16,11 @@
  * limitations under the License.
  */
 
-import { useMemo } from 'react';
 import type { ReactNode } from 'react';
 
 import { Collapsible } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
-
-import { BpkCollapsibleContext } from './BpkCollapsibleContext';
-
-import type { BpkCollapsibleVariant } from './BpkCollapsibleContext';
 
 import STYLES from './BpkCollapsible.module.scss';
 
@@ -34,6 +29,7 @@ const getClassName = cssModules(STYLES);
 type ElementIds = Partial<{ root: string; trigger: string; content: string }>;
 
 export type BpkCollapsibleOpenChangeDetails = { open: boolean };
+export type BpkCollapsibleVariant = 'default' | 'onContrast';
 
 export type BpkCollapsibleRootProps = {
   children: ReactNode;
@@ -68,26 +64,22 @@ const BpkCollapsibleRoot = ({
     `bpk-collapsible--${variantModifier}`,
   );
 
-  const contextValue = useMemo(() => ({ variant }), [variant]);
-
   return (
-    <BpkCollapsibleContext.Provider value={contextValue}>
-      <Collapsible.Root
-        className={rootClassName}
-        collapsedHeight={collapsedHeight}
-        defaultOpen={defaultOpen}
-        disabled={disabled}
-        ids={ids}
-        lazyMount={lazyMount}
-        onExitComplete={onExitComplete}
-        onOpenChange={onOpenChange}
-        open={open}
-        unmountOnExit={unmountOnExit}
-        {...getDataComponentAttribute('Collapsible')}
-      >
-        {children}
-      </Collapsible.Root>
-    </BpkCollapsibleContext.Provider>
+    <Collapsible.Root
+      className={rootClassName}
+      collapsedHeight={collapsedHeight}
+      defaultOpen={defaultOpen}
+      disabled={disabled}
+      ids={ids}
+      lazyMount={lazyMount}
+      onExitComplete={onExitComplete}
+      onOpenChange={onOpenChange}
+      open={open}
+      unmountOnExit={unmountOnExit}
+      {...getDataComponentAttribute('Collapsible')}
+    >
+      {children}
+    </Collapsible.Root>
   );
 };
 

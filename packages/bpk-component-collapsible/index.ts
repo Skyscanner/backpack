@@ -23,8 +23,8 @@ export default BpkCollapsible;
 export type {
   BpkCollapsibleRootProps,
   BpkCollapsibleOpenChangeDetails,
+  BpkCollapsibleVariant,
 } from './src/BpkCollapsibleRoot';
 export type { BpkCollapsibleTriggerProps } from './src/BpkCollapsibleTrigger';
 export type { BpkCollapsibleIndicatorProps } from './src/BpkCollapsibleIndicator';
 export type { BpkCollapsibleContentProps } from './src/BpkCollapsibleContent';
-export type { BpkCollapsibleVariant } from './src/BpkCollapsibleContext';

@@ -43,6 +43,11 @@ $collapsible-duration: tokens.$bpk-duration-sm;
 
 .bpk-collapsible--on-contrast {
   color: tokens.$bpk-text-on-dark-day;
+
+  .bpk-collapsible__trigger:disabled,
+  .bpk-collapsible__content[data-disabled] {
+    color: tokens.$bpk-text-disabled-on-dark-day;
+  }
 }
 
 // Trigger — clickable header row. Renders as a real <button> via Ark.
@@ -64,6 +69,10 @@ $collapsible-duration: tokens.$bpk-duration-sm;
     cursor: not-allowed;
   }
 
+  &:disabled {
+    color: tokens.$bpk-text-disabled-day;
+  }
+
   // Zag does not emit `data-focus-visible` for the collapsible trigger, so we
   // rely on the standard CSS pseudo-class.
   &:focus-visible {
@@ -77,9 +86,14 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   justify-content: center;
   align-items: center;
   transition: transform $collapsible-duration ease;
+  color: inherit;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
+  }
+
+  svg {
+    fill: currentcolor;
   }
 
   &[data-state='open'] {
@@ -97,6 +111,10 @@ $collapsible-duration: tokens.$bpk-duration-sm;
     &[data-state='closed'] {
       animation: none;
     }
+  }
+
+  &[data-disabled] {
+    color: tokens.$bpk-text-disabled-day;
   }
 
   &[data-state='open'] {

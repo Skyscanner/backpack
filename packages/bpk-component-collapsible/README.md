@@ -67,6 +67,11 @@ const Example = () => (
 > overriding from outside would break the design system contract. If you need
 > a wrapper or surrounding layout, use `BpkBox`/`BpkFlex`/`BpkVStack` around
 > `BpkCollapsible.Root`.
+>
+> `collapsedHeight` is intentionally low-level. When partially revealing copy,
+> choose a value that matches the typography you are rendering and leaves
+> enough buffer for locale-dependent wrapping so the collapse edge does not cut
+> through glyphs.
 
 ### `BpkCollapsible.Trigger`, `Indicator`, `Content`
 

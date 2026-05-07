@@ -19,6 +19,8 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
+import { BpkBox, BpkProvider, BpkSpacing } from '../../bpk-component-layout';
+
 import BpkCollapsible from './BpkCollapsible';
 
 describe('BpkCollapsible accessibility tests', () => {
@@ -54,6 +56,23 @@ describe('BpkCollapsible accessibility tests', () => {
         <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
         <BpkCollapsible.Content>Body</BpkCollapsible.Content>
       </BpkCollapsible.Root>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it('has no a11y violations in the onContrast variant', async () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
+          <BpkCollapsible.Root variant="onContrast" defaultOpen>
+            <BpkCollapsible.Trigger>
+              Toggle
+              <BpkCollapsible.Indicator>v</BpkCollapsible.Indicator>
+            </BpkCollapsible.Trigger>
+            <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+          </BpkCollapsible.Root>
+        </BpkBox>
+      </BpkProvider>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });

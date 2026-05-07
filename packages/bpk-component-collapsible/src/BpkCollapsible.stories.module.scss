@@ -16,12 +16,20 @@
  * limitations under the License.
  */
 
-import { createContext } from 'react';
+@use '../../bpk-mixins/tokens';
 
-export type BpkCollapsibleVariant = 'default' | 'onContrast';
+.bpk-collapsible-story__trigger-row {
+  display: flex;
+  align-items: center;
+  gap: tokens.bpk-spacing-sm();
+  inline-size: 100%;
+}
 
-export const BpkCollapsibleContext = createContext<{
-  variant: BpkCollapsibleVariant;
-}>({
-  variant: 'default',
-});
+.bpk-collapsible-story__trigger-title {
+  flex-grow: 1;
+  min-inline-size: 0;
+}
+
+.bpk-collapsible-story__show-more-copy {
+  padding-block-end: tokens.bpk-spacing-sm();
+}
