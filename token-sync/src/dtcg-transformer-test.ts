@@ -56,7 +56,6 @@ import {
 import type { LocalVariable } from './figma-api';
 import type { DTCGTree, ResolveContext } from './types';
 
-
 function makeContext(
   options: {
     includeCycle?: boolean;
@@ -111,9 +110,9 @@ describe('figmaColorToCss', () => {
   });
 
   it('trims alpha to three decimal places', () => {
-    expect(
-      figmaColorToCss({ r: 0, g: 0, b: 0, a: 0.123456789 }),
-    ).toBe('rgba(0, 0, 0, 0.123)');
+    expect(figmaColorToCss({ r: 0, g: 0, b: 0, a: 0.123456789 })).toBe(
+      'rgba(0, 0, 0, 0.123)',
+    );
   });
 });
 
@@ -152,7 +151,9 @@ describe('inferDTCGType', () => {
 
 describe('normalizeLiteralValue', () => {
   it('converts colour objects via figmaColorToCss', () => {
-    expect(normalizeLiteralValue({ r: 0, g: 0, b: 0 }, 'color')).toBe('#000000');
+    expect(normalizeLiteralValue({ r: 0, g: 0, b: 0 }, 'color')).toBe(
+      '#000000',
+    );
   });
 
   it('appends px to numbers for dimension type, otherwise keeps them numeric', () => {
@@ -175,7 +176,9 @@ describe('normalizeLiteralValue', () => {
 
   it('throws on NaN or Infinity (JSON.stringify would silently emit null)', () => {
     expect(() => normalizeLiteralValue(NaN, 'dimension')).toThrow(/Non-finite/);
-    expect(() => normalizeLiteralValue(Infinity, 'number')).toThrow(/Non-finite/);
+    expect(() => normalizeLiteralValue(Infinity, 'number')).toThrow(
+      /Non-finite/,
+    );
     expect(() => normalizeLiteralValue(-Infinity, 'fontWeight')).toThrow(
       /Non-finite/,
     );
@@ -196,8 +199,9 @@ describe('classifyCollections', () => {
 
   it('throws on an unknown collection name', () => {
     const bogus = { ...primitivesCollection, name: 'VDL' };
-    expect(() => classifyCollections([bogus as typeof primitivesCollection]))
-      .toThrow(/Unknown target collection "VDL"/);
+    expect(() =>
+      classifyCollections([bogus as typeof primitivesCollection]),
+    ).toThrow(/Unknown target collection "VDL"/);
   });
 });
 
@@ -224,17 +228,27 @@ describe('resolveAliasTarget', () => {
 describe('resolveVariableValue', () => {
   it('returns the correct literal value for non-alias variables', () => {
     const context = makeContext();
-    expect(resolveVariableValue(primitiveColourPink, 'Hex', context)).toEqual({ value: '#ff66b3' });
-    expect(resolveVariableValue(primitiveSpacingMd, 'Hex', context)).toEqual({ value: '8px' });
+    expect(resolveVariableValue(primitiveColourPink, 'Hex', context)).toEqual({
+      value: '#ff66b3',
+    });
+    expect(resolveVariableValue(primitiveSpacingMd, 'Hex', context)).toEqual({
+      value: '8px',
+    });
   });
 
   it('preserves aliases as {Group.Token} references when the target key is preserved', () => {
-    const context = makeContext({ preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]) });
-    expect(resolveVariableValue(semanticCanvasDefault, 'Day', context)).toEqual({
-      value: '{Colour.Pink}',
-      preservedAliasTo: 'Colour.Pink',
+    const context = makeContext({
+      preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]),
     });
-    expect(resolveVariableValue(semanticCanvasDefault, 'Night', context).value).toBe('{Colour.Berry}');
+    expect(resolveVariableValue(semanticCanvasDefault, 'Day', context)).toEqual(
+      {
+        value: '{Colour.Pink}',
+        preservedAliasTo: 'Colour.Pink',
+      },
+    );
+    expect(
+      resolveVariableValue(semanticCanvasDefault, 'Night', context).value,
+    ).toBe('{Colour.Berry}');
   });
 
   it('inlines aliases to same-collection variables', () => {
@@ -242,11 +256,7 @@ describe('resolveVariableValue', () => {
     // Canvas/Contrast -> Canvas/Default -> primitive Colour/Pink (preserved).
     // Since the intermediate target is NOT preserved, we walk through it;
     // the terminal target IS preserved, so we end on a {Colour.Pink} ref.
-    const result = resolveVariableValue(
-      semanticCanvasContrast,
-      'Day',
-      context,
-    );
+    const result = resolveVariableValue(semanticCanvasContrast, 'Day', context);
     expect(result.value).toBe('{Colour.Pink}');
     expect(result.inlinedFrom).toBe('Canvas.Default');
   });
@@ -273,17 +283,20 @@ describe('resolveVariableValue', () => {
     expect(() => resolveVariableValue(semanticCycleA, 'Day', context)).toThrow(
       DTCGTransformError,
     );
+    expect(() => resolveVariableValue(semanticCycleA, 'Day', context)).toThrow(
+      /Alias cycle detected/,
+    );
   });
 
   it('throws when the collection is missing', () => {
     const context = makeContext();
-    const orphan = {
+    const detachedVariable = {
       ...primitiveColourPink,
-      variableCollectionId: 'ghost',
+      variableCollectionId: 'nonexistent-collection',
     } as LocalVariable;
-    expect(() => resolveVariableValue(orphan, 'Hex', context)).toThrow(
-      /Missing local collection/,
-    );
+    expect(() =>
+      resolveVariableValue(detachedVariable, 'Hex', context),
+    ).toThrow(/Missing local collection/);
   });
 
   it('throws a missing-mode-value DTCGTransformError when the variable has no value for the requested mode', () => {
@@ -294,6 +307,9 @@ describe('resolveVariableValue', () => {
     } as LocalVariable;
     expect(() => resolveVariableValue(emptyModes, 'Hex', context)).toThrow(
       DTCGTransformError,
+    );
+    expect(() => resolveVariableValue(emptyModes, 'Hex', context)).toThrow(
+      /has no value for mode/,
     );
   });
 });
@@ -332,7 +348,9 @@ describe('setTokenAtPath', () => {
   it('replaces non-object segments in the middle of a path', () => {
     const tree: DTCGTree = { Colour: 'oops' as unknown as DTCGTree };
     setTokenAtPath(tree, 'Colour/Pink', { $value: '#ff0', $type: 'color' });
-    expect(tree).toEqual({ Colour: { Pink: { $value: '#ff0', $type: 'color' } } });
+    expect(tree).toEqual({
+      Colour: { Pink: { $value: '#ff0', $type: 'color' } },
+    });
   });
 
   it('throws a path-collision DTCGTransformError in both collision directions', () => {
@@ -341,11 +359,14 @@ describe('setTokenAtPath', () => {
 
     const tree1: DTCGTree = {};
     setTokenAtPath(tree1, 'Colour/Brand', token);
-    expect(() => setTokenAtPath(tree1, 'Colour/Brand/Pink', child)).toThrow(DTCGTransformError);
-
+    expect(() => setTokenAtPath(tree1, 'Colour/Brand/Pink', child)).toThrow(
+      /DTCG path collision/,
+    );
     const tree2: DTCGTree = {};
     setTokenAtPath(tree2, 'Colour/Brand/Pink', child);
-    expect(() => setTokenAtPath(tree2, 'Colour/Brand', token)).toThrow(DTCGTransformError);
+    expect(() => setTokenAtPath(tree2, 'Colour/Brand', token)).toThrow(
+      /DTCG path collision/,
+    );
   });
 });
 
@@ -509,9 +530,15 @@ describe('buildDTCGTreeForMode', () => {
     variables: LocalVariable[],
     context: ResolveContext,
   ) {
-    const output = buildDTCGTreeForMode(classified, modeName, variables, context, {
-      skipUnresolvedAliases: true,
-    });
+    const output = buildDTCGTreeForMode(
+      classified,
+      modeName,
+      variables,
+      context,
+      {
+        skipUnresolvedAliases: true,
+      },
+    );
     return {
       skipped: output.stats.skippedVariables[0],
       skippedCount: output.stats.skippedVariableCount,
@@ -641,4 +668,3 @@ describe('buildDTCGTreeForMode', () => {
     expect(JSON.stringify(first.tree)).toBe(JSON.stringify(second.tree));
   });
 });
-
