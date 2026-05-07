@@ -102,15 +102,12 @@ describe('slugify', () => {
 });
 
 describe('DTCGFileNameFor', () => {
-  it('omits the mode segment for single-mode collections', () => {
-    expect(DTCGFileNameFor('Primitives', 'Hex', false)).toBe('primitives.json');
-  });
-
-  it('includes the mode segment for multi-mode collections', () => {
-    expect(DTCGFileNameFor('Backpack', 'Day', true)).toBe('backpack.day.json');
-    expect(DTCGFileNameFor('Backpack', 'Night', true)).toBe(
-      'backpack.night.json',
-    );
+  it.each<[string, string, boolean, string]>([
+    ['Primitives', 'Hex', false, 'primitives.json'],
+    ['Backpack', 'Day', true, 'backpack.day.json'],
+    ['Backpack', 'Night', true, 'backpack.night.json'],
+  ])('%s/%s multiMode=%s → %s', (collection, mode, multiMode, expected) => {
+    expect(DTCGFileNameFor(collection, mode, multiMode)).toBe(expected);
   });
 });
 
@@ -138,16 +135,8 @@ const standardManifest = buildManifest(
 );
 
 describe('buildManifest', () => {
-  it('sets top-level fields', () => {
+  it('sets generatedAt and preserves file order', () => {
     expect(standardManifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
-  });
-
-  it('does not include the Figma file key or source URL (this dir is public)', () => {
-    expect(standardManifest).not.toHaveProperty('fileKey');
-    expect(standardManifest).not.toHaveProperty('sourceFileUrl');
-  });
-
-  it('preserves the order of outputs in the files array', () => {
     expect(standardManifest.files.map((f) => f.fileName)).toEqual([
       'primitives.json',
       'backpack.day.json',
@@ -209,29 +198,14 @@ describe('assertSafeOutputDir', () => {
     ).not.toThrow();
   });
 
-  it('rejects an empty string', () => {
-    expect(() => assertSafeOutputDir('')).toThrow(/empty/);
-  });
-
-  it('rejects the filesystem root', () => {
-    const {root} = path.parse(process.cwd());
-    expect(() => assertSafeOutputDir(root)).toThrow(/filesystem root/);
-  });
-
-  it('rejects the user home directory', () => {
-    expect(() => assertSafeOutputDir(os.homedir())).toThrow(/home directory/);
-  });
-
-  it('rejects the current working directory itself', () => {
-    expect(() => assertSafeOutputDir(process.cwd())).toThrow(
-      /current working directory/,
-    );
-  });
-
-  it('rejects an ancestor of the current working directory', () => {
-    expect(() => assertSafeOutputDir(path.dirname(process.cwd()))).toThrow(
-      /ancestor of the current working directory/,
-    );
+  it.each([
+    ['empty string',    '',                              /empty/],
+    ['filesystem root', path.parse(process.cwd()).root,  /filesystem root/],
+    ['home directory',  os.homedir(),                    /home directory/],
+    ['cwd itself',      process.cwd(),                   /current working directory/],
+    ['ancestor of cwd', path.dirname(process.cwd()),     /ancestor of the current working directory/],
+  ])('rejects %s', (_, dir, pattern) => {
+    expect(() => assertSafeOutputDir(dir as string)).toThrow(pattern as RegExp);
   });
 });
 

@@ -120,12 +120,7 @@ export function DTCGFileNameFor(
 }
 
 // Build the manifest records in the same order as the outputs so callers
-// control determinism. Pure — useful for unit tests.
-//
-// The Figma file key is deliberately NOT included: this directory is
-// committed to the open-source repo, and the key identifies the private
-// source file. Downstream stages (style-dictionary etc.) only read the
-// token files, not the manifest.
+// control determinism.
 export function buildManifest(
   outputs: DTCGModeOutput[],
   modeCounts: ReadonlyMap<string, number>,
@@ -157,8 +152,7 @@ export function buildManifest(
 }
 
 // Count modes per collection to decide whether to use the short or the
-// mode-suffixed filename. Separate from buildManifest so tests can inject
-// arbitrary counts.
+// mode-suffixed filename.
 export function countModesPerCollection(
   outputs: DTCGModeOutput[],
 ): Map<string, number> {
