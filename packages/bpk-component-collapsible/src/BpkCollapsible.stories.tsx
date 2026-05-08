@@ -33,6 +33,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCollapsible from './BpkCollapsible';
+import useBpkCollapsible from './useBpkCollapsible';
 
 import type { Meta } from '@storybook/react';
 
@@ -342,6 +343,63 @@ const Disabled = () => (
   </BpkVStack>
 );
 
+const RootProviderWithStateMachine = () => {
+  const collapsible = useBpkCollapsible();
+  const { disabled, open, setOpen, visible } = collapsible;
+
+  return (
+    <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+      <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start">
+        <BpkText textStyle={TEXT_STYLES.label1}>State machine values</BpkText>
+        <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="pre">
+          {JSON.stringify({ open, visible, disabled }, null, 2)}
+        </BpkText>
+      </BpkVStack>
+
+      <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start">
+        <BpkText textStyle={TEXT_STYLES.label1}>External controls</BpkText>
+        <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+          These buttons drive the same machine instance via the hook API.
+        </BpkText>
+        <BpkBox>
+          <button type="button" onClick={() => setOpen(true)}>
+            Open
+          </button>{' '}
+          <button type="button" onClick={() => setOpen(false)}>
+            Close
+          </button>{' '}
+          <button type="button" onClick={() => setOpen(!open)}>
+            Toggle
+          </button>
+        </BpkBox>
+      </BpkVStack>
+
+      <BpkCollapsible.RootProvider value={collapsible}>
+        <BpkCollapsible.Trigger>
+          <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+            <span className={getClassName('bpk-collapsible-story__trigger-title')}>
+              <BpkText textStyle={TEXT_STYLES.heading5}>
+                RootProvider with hook
+              </BpkText>
+            </span>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </span>
+        </BpkCollapsible.Trigger>
+        <BpkCollapsible.Content>
+          <BpkBox paddingTop={BpkSpacing.SM}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Consumers own the machine via useBpkCollapsible and pass it to
+              RootProvider, exposing open, visible, disabled, and setOpen.
+            </BpkText>
+          </BpkBox>
+        </BpkCollapsible.Content>
+      </BpkCollapsible.RootProvider>
+    </BpkVStack>
+  );
+};
+
 const VisualTest = () => (
   <BpkVStack gap={BpkSpacing.Base}>
     <Basic />
@@ -376,6 +434,9 @@ export const OnContrastWithLeadingIconStory = {
 };
 export const NestedInCard = { render: () => <InsideCard /> };
 export const ControlledMode = { render: () => <Controlled /> };
+export const RootProviderWithUseBpkCollapsible = {
+  render: () => <RootProviderWithStateMachine />,
+};
 export const LazyMountUnmountOnExit = { render: () => <LazyMount /> };
 export const DisabledState = { render: () => <Disabled /> };
 export const CollapsedHeightShowMore = { render: () => <ShowMore /> };

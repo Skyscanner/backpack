@@ -22,6 +22,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkCollapsible from './BpkCollapsible';
+import useBpkCollapsible from './useBpkCollapsible';
 
 import type { BpkCollapsibleRootProps } from './BpkCollapsibleRoot';
 
@@ -205,6 +206,73 @@ describe('BpkCollapsible', () => {
       const { container } = render(<SimpleCollapsible />);
       const indicator = container.querySelector('[aria-hidden="true"]');
       expect(indicator).toBeInTheDocument();
+    });
+  });
+
+  describe('RootProvider with useBpkCollapsible', () => {
+    const ProviderHarness = ({
+      onOpen,
+    }: { onOpen?: () => void } = {}) => {
+      const collapsible = useBpkCollapsible({
+        onOpenChange: ({ open }) => {
+          if (open && onOpen) onOpen();
+        },
+      });
+      return (
+        <>
+          <button
+            type="button"
+            onClick={() => collapsible.setOpen(true)}
+          >
+            Open externally
+          </button>
+          <BpkCollapsible.RootProvider value={collapsible}>
+            <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+            <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+          </BpkCollapsible.RootProvider>
+        </>
+      );
+    };
+
+    it('applies the bpk-collapsible className and data attribute', () => {
+      const { container } = render(<ProviderHarness />);
+      const root = container.querySelector(
+        '[data-backpack-ds-component]',
+      ) as HTMLElement;
+
+      expect(root).toHaveClass('bpk-collapsible', 'bpk-collapsible--default');
+    });
+
+    it('applies the onContrast variant', () => {
+      const Harness = () => {
+        const collapsible = useBpkCollapsible();
+        return (
+          <BpkCollapsible.RootProvider value={collapsible} variant="onContrast">
+            <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+            <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+          </BpkCollapsible.RootProvider>
+        );
+      };
+      const { container } = render(<Harness />);
+      const root = container.firstChild as HTMLElement;
+
+      expect(root).toHaveClass('bpk-collapsible--on-contrast');
+    });
+
+    it('opens via the hook setOpen API', async () => {
+      const user = userEvent.setup();
+      const onOpen = jest.fn();
+      render(<ProviderHarness onOpen={onOpen} />);
+
+      const trigger = screen.getByRole('button', { name: /toggle/i });
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+      await user.click(
+        screen.getByRole('button', { name: /open externally/i }),
+      );
+
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      expect(onOpen).toHaveBeenCalled();
     });
   });
 

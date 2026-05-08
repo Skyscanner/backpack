@@ -18,6 +18,8 @@
 
 import BpkCollapsible from './src/BpkCollapsible';
 
+export { default as useBpkCollapsible } from './src/useBpkCollapsible';
+
 export default BpkCollapsible;
 
 export type {
@@ -25,6 +27,11 @@ export type {
   BpkCollapsibleOpenChangeDetails,
   BpkCollapsibleVariant,
 } from './src/BpkCollapsibleRoot';
+export type { BpkCollapsibleRootProviderProps } from './src/BpkCollapsibleRootProvider';
 export type { BpkCollapsibleTriggerProps } from './src/BpkCollapsibleTrigger';
 export type { BpkCollapsibleIndicatorProps } from './src/BpkCollapsibleIndicator';
 export type { BpkCollapsibleContentProps } from './src/BpkCollapsibleContent';
+export type {
+  BpkUseCollapsibleProps,
+  BpkUseCollapsibleReturn,
+} from './src/useBpkCollapsible';

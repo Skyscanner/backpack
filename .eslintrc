@@ -171,6 +171,7 @@
               "Checkbox.Indicator", // allowed for styling to be passed to ark-ui component
               "Checkbox.Label", // allowed for styling to be passed to ark-ui component
               "Collapsible.Root", // allowed for styling to be passed to ark-ui component
+              "Collapsible.RootProvider", // allowed for styling to be passed to ark-ui component
               "Collapsible.Trigger", // allowed for styling to be passed to ark-ui component
               "Collapsible.Indicator", // allowed for styling to be passed to ark-ui component
               "Collapsible.Content", // allowed for styling to be passed to ark-ui component

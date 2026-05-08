@@ -16,18 +16,15 @@
  * limitations under the License.
  */
 
-import BpkCollapsibleContent from './BpkCollapsibleContent';
-import BpkCollapsibleIndicator from './BpkCollapsibleIndicator';
-import BpkCollapsibleRoot from './BpkCollapsibleRoot';
-import BpkCollapsibleRootProvider from './BpkCollapsibleRootProvider';
-import BpkCollapsibleTrigger from './BpkCollapsibleTrigger';
+import { useCollapsible } from '@ark-ui/react';
 
-const BpkCollapsible = {
-  Root: BpkCollapsibleRoot,
-  RootProvider: BpkCollapsibleRootProvider,
-  Trigger: BpkCollapsibleTrigger,
-  Indicator: BpkCollapsibleIndicator,
-  Content: BpkCollapsibleContent,
-};
+import type { UseCollapsibleProps, UseCollapsibleReturn } from '@ark-ui/react';
 
-export default BpkCollapsible;
+export type BpkUseCollapsibleProps = UseCollapsibleProps;
+export type BpkUseCollapsibleReturn = UseCollapsibleReturn;
+
+const useBpkCollapsible = (
+  props?: BpkUseCollapsibleProps,
+): BpkUseCollapsibleReturn => useCollapsible(props);
+
+export default useBpkCollapsible;
