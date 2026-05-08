@@ -178,5 +178,9 @@ jobs:
 
       - name: Draft release notes
         uses: release-drafter/release-drafter@563bf132657a13ded0b01fcb723c5a58cdd824e2 # v7.2.1
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        # release-drafter v7 no longer reads the GITHUB_TOKEN env var; the
+        # token must be passed via the `token` input or it falls back to the
+        # default `github.token`, which lacks the GitHub App permissions we
+        # rely on for drafting releases.
+        with:
+          token: ${{ steps.app-token.outputs.token }}
