@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```js
+```tsx
 import {
   BpkTable,
   BpkTableHead,
@@ -25,7 +25,9 @@ export default () => (
         <BpkTableHeadCell>Heading 1</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 2</BpkTableHeadCell>
         <BpkTableHeadCell>Heading 3</BpkTableHeadCell>
-        <BpkTableHeadCell wordBreak={true}>Heading4wordBreakTrue</BpkTableHeadCell>
+        <BpkTableHeadCell wordBreak={true}>
+          Heading4wordBreakTrue
+        </BpkTableHeadCell>
       </BpkTableRow>
     </BpkTableHead>
     <BpkTableBody>
@@ -50,7 +52,7 @@ export default () => (
 
 This component is written in TypeScript and provides its own type definitions. TypeScript users benefit from autocomplete and type checking:
 
-```typescript
+```tsx
 import {
   BpkTable,
   BpkTableHead,
@@ -74,3 +76,19 @@ Check out the full list of props on Skyscanner's [design system documentation we
 Optional prop to add css `word-break: break-word;`, this allows long words and URLs to wrap onto multiple lines within the cell rather than overflowing. This prop is available on both `BpkTableCell` and `BpkTableHeadCell`. Set `wordBreak={true}` to add this behaviour.
 
 By default the prop can be omitted.
+
+`type` (TableBodyType, default `TABLE_BODY_TYPES.default`)
+
+Optional prop on `BpkTableBody` that controls the table body styling. Set `type={TABLE_BODY_TYPES.striped}` to apply alternating row background colours.
+
+```tsx
+import {
+  BpkTableBody,
+  TABLE_BODY_TYPES,
+} from '@skyscanner/backpack-web/bpk-component-table';
+
+<BpkTableBody type={TABLE_BODY_TYPES.striped}>
+  <BpkTableRow>...</BpkTableRow>
+  <BpkTableRow>...</BpkTableRow>
+</BpkTableBody>;
+```

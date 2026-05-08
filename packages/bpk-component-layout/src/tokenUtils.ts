@@ -28,7 +28,7 @@ import {
 
 import type { BpkBreakpointToken } from './tokens';
 
-export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkStack';
+export type BpkLayoutComponentName = 'BpkBox' | 'BpkFlex' | 'BpkGrid' | 'BpkGridItem' | 'BpkStack';
 
 /**
  * Allowlisted, component-scoped prop groups that are eligible for Backpack responsive value
@@ -57,6 +57,8 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
 > = {
   BpkBox: {
     container: [
+      // Typography
+      'textStyle',
       // Display
       'display',
       // Flex container props
@@ -72,6 +74,11 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridAutoFlow',
       'gridAutoRows',
       'gridAutoColumns',
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
     ],
     item: [
       // Flex item props
@@ -90,10 +97,16 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   // Note: BpkFlex maps its public API props to these Chakra keys.
   BpkFlex: {
     container: [
+      'textStyle',
       'flexDirection',
       'justifyContent',
       'alignItems',
       'flexWrap',
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
     ],
     item: [
       'flexGrow',
@@ -104,6 +117,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   // Note: BpkGrid maps its public API props to these Chakra keys.
   BpkGrid: {
     container: [
+      'textStyle',
       'justifyContent',
       'alignItems',
       'gridTemplateColumns',
@@ -112,6 +126,11 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridAutoFlow',
       'gridAutoRows',
       'gridAutoColumns',
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
     ],
     item: [
       // Used when placing the grid itself within a parent grid.
@@ -119,9 +138,20 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'gridRow',
     ],
   },
+  BpkGridItem: {
+    container: ['textStyle', 'position', 'overflow', 'overflowX', 'overflowY'],
+  },
   // Note: BpkStack uses Chakra Stack option prop names directly.
   BpkStack: {
-    container: StackOptionKeys as unknown as readonly string[],
+    container: [
+      'textStyle',
+      ...(StackOptionKeys as unknown as readonly string[]),
+      // Position keyword and overflow (from BpkCommonLayoutProps)
+      'position',
+      'overflow',
+      'overflowX',
+      'overflowY',
+    ],
   },
 };
 
@@ -141,6 +171,7 @@ export const BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT: Record<
     ...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.container,
     ...(BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGrid.item ?? []),
   ],
+  BpkGridItem: [...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkGridItem.container],
   BpkStack: [...BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT.BpkStack.container],
 };
 
@@ -194,9 +225,14 @@ export function processBpkComponentProps<T extends Record<string, any>>(
   const processed = processBpkProps(props);
 
   const allowlist = BPK_RESPONSIVE_PROP_KEYS_BY_COMPONENT[options.component];
+  // When responsiveProps is provided (e.g. BpkFlex maps direction→flexDirection),
+  // merge it with any allowlisted props already in `processed` (e.g. position/overflow
+  // that come in via ...props and are NOT included in responsiveProps).
+  // responsiveProps takes precedence so that explicit prop-name mappings always win.
+  const processedAllowlisted = filterToAllowlist(processed, allowlist);
   const responsiveSource = options.responsiveProps
-    ? filterToAllowlist(options.responsiveProps, allowlist)
-    : filterToAllowlist(processed, allowlist);
+    ? { ...processedAllowlisted, ...filterToAllowlist(options.responsiveProps, allowlist) }
+    : processedAllowlisted;
 
   if (Object.keys(responsiveSource).length === 0) {
     return processed;

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { JSX } from 'react';
+
 import type { ComponentProps } from './common-types';
 
 declare const BpkSkeleton: (props: ComponentProps) => JSX.Element;

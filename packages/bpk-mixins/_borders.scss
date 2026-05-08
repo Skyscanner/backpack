@@ -37,7 +37,11 @@
 /// @access private
 
 @mixin _bpk-border-top($size, $color, $inset) {
-  $offset-y: if($inset == inset, $size, -#{$size});
+  $offset-y: $size;
+
+  @if $inset != inset {
+    $offset-y: -#{$size};
+  }
 
   box-shadow: 0 $offset-y 0 0 $color #{$inset};
 }
@@ -47,7 +51,11 @@
 /// @access private
 
 @mixin bpk-border-right($size, $color, $inset) {
-  $offset-x: if($inset == inset, -#{$size}, $size);
+  $offset-x: -#{$size};
+
+  @if $inset != inset {
+    $offset-x: $size;
+  }
 
   box-shadow: $offset-x 0 0 0 $color #{$inset};
 }
@@ -57,7 +65,11 @@
 /// @access private
 
 @mixin _bpk-border-bottom($size, $color, $inset) {
-  $offset-y: if($inset == inset, -#{$size}, $size);
+  $offset-y: -#{$size};
+
+  @if $inset != inset {
+    $offset-y: $size;
+  }
 
   box-shadow: 0 $offset-y 0 0 $color #{$inset};
 }
@@ -67,7 +79,11 @@
 /// @access private
 
 @mixin bpk-border-left($size, $color, $inset) {
-  $offset-x: if($inset == inset, $size, -#{$size});
+  $offset-x: $size;
+
+  @if $inset != inset {
+    $offset-x: -#{$size};
+  }
 
   box-shadow: $offset-x 0 0 0 $color #{$inset};
 }

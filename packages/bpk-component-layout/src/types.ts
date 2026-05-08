@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import type StackOptionKeys from './BpkStack.constant';
 import type { BpkCommonLayoutProps } from './commonProps';
@@ -31,12 +31,11 @@ import type {
 
 
 /**
- * Layout-level event props that should not be exposed on layout components
- * by default. BpkBox will reintroduce a minimal subset (onClick, onFocus,
- * onBlur) explicitly on its own props type.
+ * Layout-level event props that should not be exposed on layout components.
+ * onClick is handled via BpkCommonLayoutProps; onFocus/onBlur are reintroduced
+ * on BpkBoxProps only.
  */
 type LayoutEventProps =
-  | 'onClick'
   | 'onMouseEnter'
   | 'onMouseLeave'
   | 'onMouseOver'
@@ -189,16 +188,15 @@ export interface BpkBoxSpecificProps
 
 /**
  * Props for BpkBox component
- * Combines Box-specific props with Backpack common layout props
- * and reintroduces a minimal set of interaction props.
+ * Combines Box-specific props with Backpack common layout props.
+ * onClick is inherited from BpkCommonLayoutProps.
+ * onFocus and onBlur are reintroduced here as BpkBox-only interaction props.
+ * textStyle maps to Chakra's `textStyle` theme prop for Backpack typography and supports responsive values.
  */
-type BoxEventProps = Pick<BoxProps,
-  'onClick' | 'onFocus' | 'onBlur'
->;
+type BoxEventProps = Pick<BoxProps, 'onFocus' | 'onBlur'>;
 
 export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   children?: ReactNode;
-  onClick?: BoxEventProps['onClick'];
   onFocus?: BoxEventProps['onFocus'];
   onBlur?: BoxEventProps['onBlur'];
 }
@@ -254,7 +252,7 @@ export type VesselElement =
  */
 export type BpkVesselProps = {
   as?: VesselElement;
-} & React.HTMLAttributes<HTMLElement>;
+} & HTMLAttributes<HTMLElement>;
 
 /**
  * Component-specific props for BpkFlex

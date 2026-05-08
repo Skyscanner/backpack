@@ -43,7 +43,10 @@ import { useCombobox } from 'downshift';
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkInput from '../../../bpk-component-input';
-import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
+import {
+  cssModules,
+  getDataComponentAttribute,
+} from '../../../bpk-react-utils';
 
 import type {
   UseComboboxState,
@@ -234,6 +237,18 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
     ): Partial<UseComboboxState<any>> {
       const { changes, type } = actionAndChanges;
 
+      // Intercept InputBlur before the alwaysRenderSuggestions early-return
+      if (type === useCombobox.stateChangeTypes.InputBlur) {
+        const keepOpen = Boolean(alwaysRenderSuggestions && hasSuggestions);
+        return {
+          ...changes,
+          isOpen: keepOpen,
+          highlightedIndex: -1,
+          selectedItem: state.selectedItem,
+          inputValue: state.inputValue,
+        };
+      }
+
       const shouldForceKeepOpen =
         alwaysRenderSuggestions && hasSuggestions && changes.isOpen === false;
 
@@ -272,7 +287,8 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
           return {
             ...changes,
             isOpen: forceOpen ? true : changes.isOpen,
-            highlightedIndex: targetHighlightedIndex ?? changes.highlightedIndex,
+            highlightedIndex:
+              targetHighlightedIndex ?? changes.highlightedIndex,
           };
         }
       }
@@ -347,6 +363,14 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
 
         onSuggestionHighlighted?.({ suggestion: currentSuggestion });
 
+        // Only arm auto-select-on-blur for non-mouse-driven highlight changes.
+        if (
+          type !== useCombobox.stateChangeTypes.ItemMouseMove &&
+          type !== useCombobox.stateChangeTypes.MenuMouseLeave
+        ) {
+          savedHighlightedIndexRef.current = newIndex ?? null;
+        }
+
         const isArrowKey =
           type === useCombobox.stateChangeTypes.InputKeyDownArrowDown ||
           type === useCombobox.stateChangeTypes.InputKeyDownArrowUp;
@@ -418,8 +442,6 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
       if (highlightedIndex === previousHighlightedIndexRef.current) return;
 
       previousHighlightedIndexRef.current = highlightedIndex;
-      // Save highlighted index to allow auto-selection on blur
-      savedHighlightedIndexRef.current = highlightedIndex;
 
       const currentSuggestion =
         highlightedIndex != null && highlightedIndex >= 0
@@ -544,7 +566,9 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         return (
           <li
             key={suggestionKey}
-            aria-labelledby={sectionId && itemId ? `${sectionId} ${itemId}` : undefined}
+            aria-labelledby={
+              sectionId && itemId ? `${sectionId} ${itemId}` : undefined
+            }
             {...getItemProps({
               item: suggestion,
               index: globalIndex,
@@ -694,8 +718,11 @@ const BpkAutosuggest = forwardRef<HTMLInputElement, BpkAutoSuggestProps<any>>(
         }
 
         if (highlightedSuggestion) {
-          // Use setTimeout to ensure selectItem runs after the blur event completes
+          // Use setTimeout to ensure selectItem runs after the blur event completes.
           setTimeout(() => {
+            if (committedSelectionRef.current) {
+              return;
+            }
             selectItem(highlightedSuggestion);
           }, 0);
         }

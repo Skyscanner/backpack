@@ -19,7 +19,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import BpkPageIndicator from './BpkPageIndicator';
+import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
 
 import type { Props } from './BpkPageIndicator';
 
@@ -54,5 +54,17 @@ describe('BpkPageIndicator', () => {
 
     expect(screen.getByLabelText('Previous slide')).toBeTruthy();
     expect(screen.getByLabelText('Next slide')).toBeTruthy();
+  });
+
+  it('renders the carousel variant with enabled nav at the bounds and a full-width container', () => {
+    render(
+      <BpkPageIndicator {...props} variant={VARIANT.carousel} showNav />,
+    );
+
+    expect(screen.getByLabelText('Previous slide')).toBeEnabled();
+    expect(screen.getByLabelText('Next slide')).toBeEnabled();
+    expect(
+      document.querySelector('.bpk-page-indicator-fullWidth__container'),
+    ).toBeTruthy();
   });
 });

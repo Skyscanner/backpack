@@ -72,3 +72,11 @@ class App extends Component {
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/modal/web-T4Oa73RC#section-props-82).
+
+---
+
+## BpkModalV3 (experimental)
+
+A composable modal built on [Ark UI](https://ark-ui.com/). Usage is split across slot components: `Root`, `Trigger`, `Backdrop`, `Positioner`, `Content`, `Header`, `Body`, and `CloseTrigger`.
+
+> **RTL support:** `BpkModalV3` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.

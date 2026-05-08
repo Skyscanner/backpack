@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentPropsWithoutRef, ElementType, ReactNode, Ref } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, JSX, ReactNode, Ref } from 'react';
 
 /**
  * Polymorphic component types following Chakra UI pattern.

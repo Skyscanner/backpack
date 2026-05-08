@@ -17,5 +17,12 @@
  */
 
 import BpkCardList from './src/BpkCardList';
+import {
+  LAYOUTS,
+  ACCESSORY_DESKTOP_TYPES,
+  ACCESSORY_MOBILE_TYPES,
+} from './src/common-types';
 
 export default BpkCardList;
+export { LAYOUTS, ACCESSORY_DESKTOP_TYPES, ACCESSORY_MOBILE_TYPES };
+export type { LayoutDesktop, LayoutMobile } from './src/common-types';

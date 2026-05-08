@@ -1,647 +1,444 @@
 ---
 name: backpack-code-review-checklist
-description: |
-  Comprehensive code review checklist for Backpack design system components. Use when:
-  (1) Reviewing PRs for new or modified Backpack components, (2) Validating component
-  compliance with Constitution and design system rules, (3) Checking if component follows
-  Backpack conventions before merge, (4) Identifying violations in API design, token usage,
-  accessibility, or documentation. Covers Constitution principles (I-XIII), decisions/
-  guidelines, API encapsulation rules, private token restrictions, design approval workflow,
-  icon alignment helpers, hover mixin usage, token semantic correctness, and snapshot
-  currency. Essential for maintaining Backpack quality standards and catching non-obvious
-  violations like className props in new components, wrong icon alignment wrapper,
-  raw :hover instead of bpk-hover mixin, or cross-component private token usage.
-author: Claude Code
-version: 1.2.0
-date: 2026-03-03
+description: Self-improving multi-agent review orchestrator for Backpack component PRs. Runs 6 parallel specialist agents (including a learned-patterns agent that mines past PR comments), then confidence-scores findings. Use for PR review, Constitution compliance checks, and pre-merge validation. Run with "learn" to mine recent PRs and auto-update checklist rules.
 ---
 
-# Backpack Code Review Checklist
+# Backpack Code Review — Multi-Agent Orchestrator (v3.1.3)
 
-## Problem
+<!-- Changelog
+- v3.1.3: Fix Phase 1.5 broken gh command (reviewThreads is not a valid gh pr view JSON field —
+  replace with gh api REST calls); remove unconditional Phase 1.5 skip for all-new files —
+  new components are highest-risk for anti-patterns, widen mining scope instead;
+  Agent 6 now always launches when Phase 1.5 completes (not gated on comment count).
+- v3.1.2: Phase 3 scoring agents now explicitly use model: haiku — scoring is a classification
+  task with a fixed rubric and no tool calls; Haiku is sufficient and ~12x cheaper than Sonnet.
+- v3.1.1: Add formal observations tier — issues with confidence 60–(threshold-1) surface in
+  conversation as "Below-threshold observations" (not blocking, never posted to GitHub).
+  Removes reliance on model self-initiative for below-threshold findings.
+- v3.1.0: Revert to v2.1 self-fetch architecture — agents fetch their own scoped diffs;
+  Phase 1.5 uses two-level parallelism (parallel component subagents + parallel PR view calls);
+  Agents 1–5 launch immediately after Phase 1 without waiting for Phase 1.5;
+  Agent 6 launches separately when Phase 1.5 completes.
+- v3.0.5: Restore independent Phase 3 scoring (removes agent self-scoring bias);
+  Agent 5 now receives full diff to catch cross-file-type bugs (SCSS+TSX specificity conflicts);
+  restore accessibility-test.tsx check for existing components (Constitution IV);
+  fix .line null fallback to original_line in RESOLVED_SET/RAISED_SET matching.
+- v3.0.4: Revert autopost default to OFF (opt-in via "post" / BACKPACK_REVIEW_AUTOPOST=true);
+  remove early-exit on "PR already has Claude review" to allow re-review after author pushes fixes.
+- v3.0.3: Fix blind spot — Phase 1 now fetches current PR's own inline review comments
+  and builds a RESOLVED_SET/RAISED_SET; Phase 4 drops/annotates matches.
+- v3.0.2: Performance — orchestrator pre-fetches diff once, agents self-score, Phase 1.5 parallel.
+- v3.0.1: Learned 9 rules from 40 recent PRs.
+- v3.0.0: Multi-file layout, agents/*.md, learn-mode.md, Agent 6 (Learned Patterns).
+- v2.1.0: Agents self-fetch data, full tool access, early-exit check.
+- v2.0.0: Multi-agent orchestrator with confidence scoring.
+- v1.0.0: Initial checklist.
+-->
 
-Backpack components must adhere to strict quality standards defined across multiple documents
-(Constitution, decisions/, CODE_REVIEW_GUIDELINES.md). Reviewers need a systematic way to
-validate compliance and identify violations that may not be obvious from casual inspection.
+Dispatches **6 parallel specialist agents**, each with its own prompt file in `agents/`.
+A confidence-scoring pass filters false positives.
+Threshold: default 75, override via `/backpack-code-review-checklist threshold=80`.
 
-## Context / Trigger Conditions
+## Execution Flow
 
-Use this skill when:
-- Reviewing a PR that adds or modifies a Backpack component
-- Performing a compliance audit on an existing component
-- User requests "review this component" or "check Backpack compliance"
-- Validating component before merge or release
-- Teaching someone Backpack review standards
+```
+Phase 0    Detect run mode — learn vs review; early-exit check (review only)
+Phase 1    Metadata + RESOLVED/RAISED_SET  ┐ run in parallel; Phase 1.5
+Phase 1.5  Mine learned patterns           ┘ uses parallel tool calls internally, no nested subagents
+Phase 2a   Launch Agents 1–5 immediately after Phase 1 (no wait for Phase 1.5)
+Phase 2b   Launch Agent 6 when Phase 1.5 completes (if applicable)
+Phase 3    Independent confidence scoring — after ALL agents finish
+Phase 4    Filter, format, and output
+Phase 5    Orchestrator self-check (internal)
+```
 
-**Common review scenarios:**
-- New component addition (e.g., `bpk-component-thinking`)
-- Component migration from external repos
-- API changes to existing components
-- Visual or styling updates
-- Accessibility improvements
+---
 
-## Solution
+## Phase 0: Detect Run Mode + Early Exit
 
-### Phase 0: Detect Review Mode
+**Step 0.0 — Detect Learn Mode:**
+If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 
-**Before doing anything else**, check whether the user provided a GitHub PR URL.
+**Step 0.1 — Determine review mode:**
 
-- **PR mode**: user message contains a `github.com/.../pull/NNN` URL
-  - Extract the PR number
-  - Run `gh pr view NNN --json headRefOid,files` to get the head commit SHA and changed files
-  - Proceed with review; at the end **post the review body as a PR comment** using:
-    ```bash
-    gh pr review NNN --comment --body "$(cat <<'EOF'
-    [review body here]
-    EOF
-    )"
-    ```
-  - Each issue in the output must link to the offending lines using the **GitHub permalink format**:
-    `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]`
+- **PR mode**: message contains a `github.com/.../pull/NNN` URL
+  - Extract PR number; run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files,state,isDraft,body`
+  - Link format: `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
+  - **Autopost: OFF by default in PR mode.** Output to conversation only unless user explicitly says "post" / "post to GitHub" / `BACKPACK_REVIEW_AUTOPOST=true`.
+    When autopost is enabled, uses the GitHub Reviews API to place **inline comments on diff lines**.
+    Issues with confidence 75–90 require human confirmation before posting.
 
-- **Local mode**: no PR URL in the user message
-  - Review the current branch's uncommitted / committed changes locally (`git diff main...HEAD`)
-  - Output the review to the conversation only — **do not post to GitHub**
-  - Each issue in the output must cite the file using a **local VSCode-clickable link**:
-    `[FILE_PATH:LINE](FILE_PATH#LLINE)` (relative to repo root, e.g.
-    `[packages/bpk-component-thumb-button/src/BpkThumbButton.module.scss:29](packages/bpk-component-thumb-button/src/BpkThumbButton.module.scss#L29)`)
+- **Local mode**: no PR URL
+  - Use `git diff main...HEAD`; output to conversation only, no GitHub posting
+  - Link format: `[path/file.tsx:29](path/file.tsx#L29)`
 
-### Phase 1: Document Review Setup
+**Step 0.2 — Early exit** (PR mode only). Skip review if:
+- PR is closed, merged, or draft
+- PR is trivial/automated (only changelog or dependency bumps)
 
-**Key reference documents (read these first):**
+---
 
-1. **Constitution** (`.specify/memory/constitution.md`):
-   - Core principles I-XIII
-   - Non-negotiable requirements
-   - Technology constraints
+## Phase 1 + Phase 1.5: Run in Parallel
 
-2. **Decisions** (`decisions/` directory):
-   - `modern-sass-api.md` - Sass patterns
-   - `accessibility-tests.md` - Testing requirements
-   - `component-scss-filenames.md` - Naming
-   - `versioning-rules.md` - SemVer rules
-   - `deprecated-api.md` - Deprecation cycle
-   - Other relevant decisions
+**Launch both steps at the same time** — Phase 1 runs directly in the orchestrator (bash commands); Phase 1.5 is dispatched as a background subagent. They are independent and must not block each other.
 
-3. **Guidelines**:
-   - `CODE_REVIEW_GUIDELINES.md` - Quality standards
-   - `CONTRIBUTING.md` - Workflow
+### Phase 1: Metadata + Review Thread Collection
 
-### Phase 2: Core Compliance Checks
+- PR number, head commit SHA, changed file paths, PR body (already done in Phase 0)
+- **Read the full PR description** to extract motivation, design decisions, known trade-offs,
+  and any reviewer notes. In local mode, first check for an open PR on the current branch:
+  ```bash
+  gh pr list --repo Skyscanner/backpack --head $(git branch --show-current) --json number,body,state
+  ```
+  If a PR exists, read its description. If not, fall back to commit messages:
+  `git log main...HEAD --format='%s%n%b'`
+- Skim: `.specify/memory/constitution.md`, `CODE_REVIEW_GUIDELINES.md`, relevant `decisions/`
+- Summarise the PR in 2-3 sentences; pass as `[INSERT]` to all agents
 
-#### ✅ 1. Naming & File Conventions (Constitution II)
-
-**Check:**
-- [ ] Component files: PascalCase (e.g., `BpkThinking.tsx`)
-- [ ] Style files: Match component with `.module.scss` (e.g., `BpkThinking.module.scss`)
-- [ ] Test files: `*-test.tsx` and `accessibility-test.tsx`
-- [ ] Package names: `bpk-component-[name]` (kebab-case)
-- [ ] CSS classes: BEM with `bpk-` prefix (e.g., `bpk-thinking__bubble`)
-
-**Check:**
+**Inline review comment fetch (PR mode only — skip in local mode):**
+Fetch the current PR's own inline review comments (line-level diff threads):
 ```bash
-# Verify file naming
-ls packages/bpk-component-*/src/
-
-# Check CSS class naming
-rg "className.*bpk-" packages/bpk-component-*/src/*.module.scss
+gh api repos/Skyscanner/backpack/pulls/[NUMBER]/comments --paginate \
+  --jq '[.[] | {id:.id, path:.path, line:(.line // .original_line), body:.body, in_reply_to_id:.in_reply_to_id}]'
 ```
+Note: `.line` is `null` for outdated comments (position became stale after a subsequent push).
+Fall back to `.original_line` so these threads are still captured in RESOLVED_SET/RAISED_SET.
 
-#### ✅ 2. License Headers (Constitution II - NON-NEGOTIABLE)
+Group comments into threads by `in_reply_to_id` (top-level = no `in_reply_to_id`; replies share the root's `id`).
 
-**Check:**
-- [ ] ALL source files have Apache 2.0 header (`.ts`, `.tsx`, `.scss`, `.js`)
-- [ ] Bash scripts have `#` comment format after shebang
+Classify each thread into one of two sets:
+- **RESOLVED_SET**: thread has at least one reply containing a resolution signal — a commit URL
+  (`github.com/Skyscanner/backpack/pull/NNN/commits/` or `github.com/Skyscanner/backpack/commit/`),
+  or the words "Done", "Fixed", "Fixed in", "updated in", "addressed in", "resolved"
+  (case-insensitive). Record `{path, line, summary}` for each thread.
+  If `line` is still `null` after the fallback, record with `line: null` and match by `path` only
+  (skip line-range check) — still suppresses the false positive.
+- **RAISED_SET**: thread has a top-level comment but NO resolution signal in any reply.
+  Record `{path, line, summary}` for each thread.
 
-**Example header:**
-```typescript
-/*
- * Backpack - Skyscanner's Design System
- *
- * Copyright 2016 Skyscanner Ltd
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * ...
- */
-```
+Store both sets for use in Phase 4.
 
-**Check:**
+### Phase 1.5: Mine Learned Patterns
+
+Always run as a single background subagent using parallel tool calls internally — no nested subagents.
+When dispatching, pass the changed file list (newline-separated full paths) from Phase 0.
+
+**Step 1 — parallel `gh pr list` calls (one per component, all in one message):**
+Extract component names from changed paths (max 3).
+- **Normal case** (≤70% brand-new files): search by component name — finds PRs for the same component:
+  ```bash
+  gh pr list --repo Skyscanner/backpack --state merged --limit 5 \
+    --search "[COMPONENT_NAME]" --json number,title,mergedAt
+  ```
+- **All-new-files case** (>70% brand-new): widen the query to recent PRs generally, because new component
+  authors are the highest-risk group for anti-patterns they haven't seen yet. Search a broader set:
+  ```bash
+  gh pr list --repo Skyscanner/backpack --state merged --limit 20 \
+    --search "bpk-component" --json number,title,mergedAt
+  ```
+
+**Step 2 — parallel `gh api` calls (all PRs across all components, all in one message):**
+Collect every PR number returned from Step 1 (up to 15 total). For each PR, issue two parallel calls — one for
+PR-level comments and one for inline diff comments — all in a single message:
 ```bash
-# Find files missing license headers
-rg -L "Copyright 2016 Skyscanner" packages/bpk-component-*/src/
+# PR-level (issue) comments — includes review summaries
+gh api repos/Skyscanner/backpack/issues/[N]/comments --paginate \
+  --jq '[.[].body]'
+
+# Inline diff comments — line-level review threads
+gh api repos/Skyscanner/backpack/pulls/[N]/comments --paginate \
+  --jq '[.[].body]'
+```
+Collect and concatenate all returned body strings into raw comment text.
+
+Pass combined raw comment text to Agent 6 as `[INSERT RAW COMMENT TEXT]`.
+Always launch Agent 6 when Phase 1.5 completes, even if few comments were found — Agent 6 handles empty input gracefully.
+
+---
+
+## Phase 2: Launch Agents in Parallel
+
+### Phase 2a — Launch Agents 1–5 immediately after Phase 1
+
+Do not wait for Phase 1.5. Dispatch in a single message as soon as Phase 1 is complete.
+
+| Agent | Prompt file | Launch when | Self-fetched scope |
+|-------|-------------|-------------|--------------------|
+| Agent 1 | `agents/agent1-constitution.md` | Always | TSX/TS |
+| Agent 2 | `agents/agent2-sass.md` | `.scss` files in changed list | SCSS |
+| Agent 3 | `agents/agent3-a11y.md` | Always | TSX/TS |
+| Agent 4 | `agents/agent4-history.md` | Files exist on `main` | Full diff |
+| Agent 5 | `agents/agent5-bugs.md` | Always | Full diff |
+
+### Phase 2b — Launch Agent 6 when Phase 1.5 completes
+
+| Agent | Prompt file | Launch when | Self-fetched scope |
+|-------|-------------|-------------|--------------------|
+| Agent 6 | `agents/agent6-learned.md` | Always (after Phase 1.5) | Full diff |
+
+Always launch Agent 6 after Phase 1.5 completes. Agent 6 handles the case where no historical comments were found by returning `[]`.
+
+---
+
+**Template variables to fill in for every agent:** `[NUMBER]`, `[SHA]`, `[INSERT LIST]`, `[INSERT]` (PR summary).
+Agent 6 additionally receives `[INSERT RAW COMMENT TEXT]` from Phase 1.5.
+
+**Each agent self-fetches its own scoped diff** using the commands documented in its prompt.
+Agents may also use the Read tool for deeper file inspection.
+
+**Wait for all running agents (1–5, and 6 if launched) to complete before starting Phase 3.**
+
+**Each agent returns a JSON array of issues (no confidence score — Phase 3 scores independently):**
+```json
+[
+  {
+    "title": "Brief issue title (max 10 words)",
+    "explanation": "What is wrong, why it matters, what to use instead",
+    "file": "packages/bpk-component-foo/src/BpkFoo.tsx",
+    "startLine": 42,
+    "endLine": 45,
+    "source": "constitution|sass-tokens|a11y-testing|history|bug-scan|learned-patterns",
+    "rule_id": "constitution.xi.classname-restriction",
+    "rule": "Constitution XI — className restriction",
+    "supporting_lines": [{ "file": "...", "startLine": 42, "endLine": 45 }]
+  }
+]
 ```
 
-#### ✅ 3. API Design & Encapsulation (Constitution XI - CRITICAL)
-
-**NEW COMPONENTS RULE (NON-NEGOTIABLE):**
-
-New components MUST restrict `className` and `style` props to prevent style overwriting.
-
-**Check:**
-```typescript
-// ❌ WRONG for new components
-type Props = {
-  content: string;
-} & ComponentPropsWithoutRef<'div'>; // Includes className
-
-// ✅ CORRECT for new components
-type Props = {
-  content: string;
-} & Omit<ComponentPropsWithoutRef<'div'>, 'children' | 'className' | 'style'>;
-```
-
-**Existing components:** May grandfather these props but discourage use.
-
-**Accessibility props:**
-- [ ] Required when needed (not optional)
-- [ ] Example: `accessibilityLabel: string` (not `accessibilityLabel?: string`)
-
-**Check in code:**
-```bash
-# Find components accepting className
-rg "className\?" packages/bpk-component-*/src/*.tsx
-
-# Find new components with className in props
-rg "ComponentPropsWithoutRef.*>" packages/bpk-component-*/src/*.tsx
-```
-
-#### ✅ 4. Modern Sass API (Constitution III - NON-NEGOTIABLE)
-
-**Check:**
-- [ ] Uses `@use` syntax, NEVER `@import`
-- [ ] Granular imports from `bpk-mixins` submodules
-- [ ] Namespace prefixes (e.g., `tokens.bpk-spacing-md()`)
-- [ ] CSS Modules (`.module.scss`)
-- [ ] All sizing in `rem`, not `px` or `em`
-
-**Correct pattern:**
-```scss
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
-
-.bpk-component {
-  padding: tokens.bpk-spacing-md(); // ✅ Token function
-  color: tokens.$bpk-color-white;    // ✅ Token variable
-}
-```
-
-**Check:**
-```bash
-# Find deprecated @import usage
-rg "@import" packages/bpk-component-*/src/*.scss
-
-# Find px units (should be rem)
-rg ":\s*\d+px" packages/bpk-component-*/src/*.scss
-
-# Find magic numbers (no token)
-rg ":\s*\d+\.?\d*rem;" packages/bpk-component-*/src/*.scss | grep -v "tokens\."
-```
-
-#### ✅ 4a. Investigation method: for any CSS property written directly, search bpk-mixins for an existing abstraction
-
-**Principle:** Backpack provides mixins in `bpk-mixins/` for common interactive and layout
-patterns. Writing raw CSS that looks correct may silently break cross-platform behaviour
-(e.g. hover on touch devices, inconsistent animation timing). When you see a CSS property
-written directly in a new component, treat it as a question mark, not a given.
-
-**How to investigate:**
-1. For each CSS property/selector written directly (`:hover`, `transition:`, `border-radius:`,
-   `z-index:`, `::before` pseudo-elements, etc.), grep `bpk-mixins/` to find if a mixin exists:
-   ```bash
-   rg "mixin bpk-" packages/bpk-mixins/ --include="*.scss" -l
-   cat packages/bpk-mixins/_utils.scss
-   ```
-2. Grep 2–3 similar existing components to see how they handle the same pattern:
-   ```bash
-   rg ":hover\|transition:\|border-radius:" packages/bpk-component-chip/src/
-   rg ":hover\|transition:\|border-radius:" packages/bpk-component-card-button/src/
-   ```
-3. If a mixin exists and the new component bypasses it, that is a violation — regardless
-   of whether the raw CSS value happens to produce the same visual result.
-
-**Known examples of this pattern (not exhaustive):**
-- `:hover` → should use `@include utils.bpk-hover { }` (gates behind `.bpk-no-touch-support`)
-- `transition: ... 0.2s` → `tokens.$bpk-duration-sm` token exists
-- `::before` touch-target expansion → `@include utils.bpk-touch-tappable` exists
-
-#### ✅ 4b. Investigation method: for any imported package helper, read its index to find the full API
-
-**Principle:** Backpack packages often export multiple variants of a helper (size-specific,
-context-specific, etc.). Code compiles fine with the wrong variant but produces incorrect
-visual or functional results. Never assume a package only exports what is currently imported.
-
-**How to investigate:**
-1. For each `import X from '../../bpk-component-Y'`, open the full export list:
-   ```bash
-   cat packages/bpk-component-Y/index.tsx
-   # or
-   cat packages/bpk-component-Y/index.ts
-   ```
-2. Look for other exports with similar names — especially size/variant suffixes
-   (`Large`, `Small`, `OnDark`, `V2`, etc.)
-3. Verify the imported variant matches the context: icon size, button size, theme, etc.
-
-**Known examples of this pattern (not exhaustive):**
-- `bpk-component-icon` exports both `withButtonAlignment` (for `sm/` icons) and
-  `withLargeButtonAlignment` (for `lg/` icons) — wrong choice compiles but misaligns
-- Icon path `sm/` vs `lg/` must match the alignment wrapper used
-
-#### ✅ 5. Token Usage (Constitution III)
-
-**Rules:**
-- [ ] All visual parameters use design tokens (no magic numbers)
-- [ ] Do NOT use `$bpk-private-*` tokens from other components
-- [ ] Token changes require separate PR to backpack-foundations
-- [ ] Token names match their **semantic meaning** — the token name must describe the UI state, not just produce the right colour value
-
-**Investigation method: for every token used, verify semantic intent matches usage context**
-
-A token value match is not enough. Ask: "Does the *name* of this token describe what this
-element *is* in this state?" Token categories encode semantic meaning:
-
-| Token prefix | Intended for |
-|---|---|
-| `$bpk-text-disabled-*` | Disabled / non-interactive elements |
-| `$bpk-text-secondary-*` | Active but de-emphasised interactive elements |
-| `$bpk-surface-hero-*` | Hero/prominent background areas |
-| `$bpk-status-danger-*` | Error / destructive states |
-| `$bpk-core-accent-*` | Selected / primary action states |
-
-How to check: for each token used in the new component, look up its definition in
-[backpack-foundations/base.common.js](https://github.com/Skyscanner/backpack-foundations/blob/main/packages/bpk-foundations-web/tokens/base.common.js)
-and read its comments/category. If the category doesn't match the UI state, it is wrong
-even if the hex value happens to match the design.
-
-```scss
-// ❌ WRONG: disabled token on an active, interactive element (name mismatch)
-color: tokens.$bpk-text-disabled-day;
-
-// ✅ CORRECT: secondary text for unselected-but-interactive state
-color: tokens.$bpk-text-secondary-day;
-```
-
-**Common violations:**
-
-```scss
-// ❌ WRONG: Using another component's private token
-background-color: tokens.$bpk-private-chip-on-dark-on-background-night;
-
-// ❌ WRONG: Magic number
-max-width: 17.5rem; // No token reference
-
-// ✅ CORRECT: Public token
-background-color: tokens.$bpk-surface-contrast-day;
-
-// ✅ CORRECT: Documented magic number with TODO
-max-width: 17.5rem; // TODO: Add to backpack-foundations (issue #XXX)
-```
-
-**Check:**
-```bash
-# Find private token usage across components
-rg "\$bpk-private-" packages/bpk-component-*/src/*.scss
-
-# Find hardcoded values
-rg ":\s*#[0-9a-fA-F]{3,6}" packages/bpk-component-*/src/*.scss
-rg ":\s*\d+\.?\d*rem" packages/bpk-component-*/src/*.scss | grep -v "tokens\."
-
-# Flag disabled token in non-disabled context (read surrounding code to judge)
-rg "text-disabled" packages/bpk-component-*/src/*.scss
-```
-
-#### ✅ 6. Accessibility (Constitution IV - NON-NEGOTIABLE)
-
-**Automated testing:**
-- [ ] `accessibility-test.tsx` file exists
-- [ ] Uses `jest-axe` for automated checks
-- [ ] Tests public interface (how component is actually used)
-- [ ] All tests pass
-
-**Manual testing requirements:**
-- [ ] Keyboard-only navigation works
-- [ ] Screen reader compatible
-- [ ] 200% text magnification works
-- [ ] 400% zoom without horizontal scroll
-- [ ] Color contrast meets WCAG AA
-- [ ] Touch targets ≥ 44x44px on mobile
-
-**Check:**
-```bash
-# Find components without accessibility tests
-find packages/bpk-component-*/src -name "accessibility-test.tsx" | wc -l
-
-# Run accessibility tests
-npm run jest -- accessibility-test
-```
-
-#### ✅ 7. TypeScript & Type Safety (Constitution V)
-
-**Check:**
-- [ ] All new code in TypeScript
-- [ ] Proper prop type interfaces
-- [ ] JSDoc comments for public APIs
-- [ ] `@deprecated` tags for deprecated APIs
-- [ ] Console warnings for deprecated prop usage
-
-**Example:**
-```typescript
-type MyCompProps = {
-  stableProp: string;
-  /** @deprecated deprecatedProp is deprecated. Use stableProp instead. */
-  deprecatedProp?: string; // Must be optional
-}
-```
-
-#### ✅ 8. Documentation (Constitution IX)
-
-**Check:**
-- [ ] README.md with usage examples
-- [ ] Storybook stories in `examples/` directory
-- [ ] JSDoc/TSDoc comments
-- [ ] Props documented
-- [ ] Accessibility guidelines included
-
-**Standards:**
-- [ ] British English for prose, US English for code
-- [ ] Sentence case for titles
-- [ ] Singular titles (e.g., "Bar chart" not "Bar charts")
-- [ ] Descriptions < 100 words
-
-#### ✅ 9. Design Approval (Constitution X - BLOCKING)
-
-**NON-NEGOTIABLE requirement:**
-
-All component changes MUST be design-approved before implementation.
-
-**Check:**
-- [ ] Design review completed OR Backpack designer approval
-- [ ] Figma designs exist with ALL states documented
-- [ ] Visual examples for each state (default, hover, focus, active, disabled, loading, error)
-- [ ] Responsive behavior specs (mobile, tablet, desktop)
-- [ ] Accessibility annotations in Figma
-
-**Missing design approval = BLOCKING ISSUE**
-
-**Check:**
-```bash
-# Look for design approval mention in PR description or commits
-# Contact #backpack Slack if unclear
-```
-
-#### ✅ 10. Testing Coverage (Constitution VIII)
-
-**Requirements:**
-- [ ] Branches: ≥70%
-- [ ] Functions/Lines/Statements: ≥75%
-- [ ] Unit tests (Jest + Testing Library)
-- [ ] Accessibility tests (jest-axe)
-- [ ] Visual regression tests (Percy via Storybook)
-- [ ] Snapshot tests
-
-**Snapshot currency (NON-OBVIOUS — commonly missed):**
-
-After ANY change to rendered output (prop added/removed, attribute removed, HTML structure changed),
-snapshots MUST be regenerated. Stale snapshots silently pass even if they contain attributes
-or markup that the component no longer produces. Always read the `.snap` file and verify it
-matches the current component output.
-
-```bash
-# Common signs of a stale snapshot:
-# - snap contains attributes no longer set (e.g. title="..." after aria-label was added)
-# - snap references class names that were renamed
-# - snap structure doesn't match current JSX
-```
-
-**Check:**
-```bash
-# Run with coverage
-npm run jest -- --coverage packages/bpk-component-[name]
-
-# Check coverage thresholds
-npm run jest -- --coverage --collectCoverageFrom='packages/bpk-component-[name]/src/**'
-
-# Update stale snapshots
-npm run jest -- --updateSnapshot packages/bpk-component-[name]
-```
-
-### Phase 3: Review Output Format
-
-The output format is a **flat numbered list**. No section headers, no priority emoji blocks,
-no compliance score. Each entry: one sentence for the issue title, then the explanation
-(what is wrong, why it matters, what to use instead, with a reference to a correct example
-in the codebase). Finish with a link to the offending lines — format depends on mode.
-
-**Template (shared structure for both modes):**
-
+**After aggregation — deduplication:** If two issues share the same `file` AND overlapping
+`startLine–endLine` AND similar `title`, merge into one. Keep the more specific `rule_id`;
+priority order: constitution > sass-tokens > a11y-testing > history > bug-scan > learned-patterns.
+
+---
+
+## Phase 3: Confidence Scoring
+
+After all agents return and deduplication is done, collect every issue into a single list.
+
+**Scoring dispatch policy:**
+- If `len(issues) <= 15`: launch **parallel scoring agents** — one per issue, all in one message, using `model: haiku`. Scoring is a classification task with an explicit rubric; it does not require tool calls or complex reasoning.
+- If `len(issues) > 15`: score all issues directly in a single orchestrator pass (no sub-agents).
+  Use the same scoring prompt below, but wrap all issues in one request:
+  > Score each issue 0–100 using the rubric below. Return a JSON array:
+  > `[{"index": 0, "score": N, "confidence_explanation": "...", "rule_id": "...", "supporting_lines": [...]}]`
+  > Issues: [LIST ALL ISSUES WITH TITLE, EXPLANATION, CODE SNIPPET, RULE REFERENCE]
+
+**Each scoring agent (or the orchestrator in batch mode) receives:**
+- The issue title + explanation
+- The relevant code snippet from the diff
+- The relevant Constitution/decision rule text (if applicable)
+- The issue metadata (`rule_id`, `supporting_lines`)
+
+**Scoring prompt:**
+
+> Score this issue 0–100 for confidence that it is a real, actionable issue in this PR:
+>
+> **Issue:** [TITLE + EXPLANATION]
+> **Code:** [RELEVANT SNIPPET]
+> **Rule reference:** [CONSTITUTION/DECISION SECTION, if any]
+> **Metadata:** [RULE_ID + SUPPORTING_LINES]
+>
+> Rubric:
+> - **0**: False positive, or pre-existing issue not introduced by this PR
+> - **25**: Might be real; stylistic, not explicitly required by Constitution/decisions
+> - **50**: Real but minor nitpick; unlikely to matter in practice
+> - **75**: Verified — Constitution/decisions explicitly requires this; PR contradicts it
+> - **100**: Certain — NON-NEGOTIABLE violation (license header, className leak, missing a11y test)
+>
+> For Constitution issues: verify the rule **verbatim**. If you cannot find it, score 0.
+> If the rule exists but violation requires interpretation, score ≤ 50.
+> Score ≥ 75 only after reading the exact rule text AND confirming the changed code contradicts it.
+>
+> For bug issues: verify the bug can actually occur given the surrounding code context.
+> For history issues: verify the past feedback is relevant to the current change.
+>
+> Return ONLY: `{"score": NUMBER, "confidence_explanation": "brief explanation", "rule_id": "string", "supporting_lines": [{"file":"...","startLine":1,"endLine":2}]}`
+
+**False positive patterns — always score 0:**
+- Pre-existing issues not introduced in this PR
+- Something that looks like a bug but isn't, given context
+- Pedantic nitpicks a senior engineer wouldn't flag
+- Issues a linter/typechecker would catch
+
+**After scoring**, attach `confidence` and `confidence_explanation` to each issue.
+
+---
+
+## Phase 4: Filter, Format, and Output
+
+**Filter — step 1, confidence:** split issues into three buckets:
+- `confidence >= threshold` → **blocking issues** — go through steps 2–3 and into output
+- `60 <= confidence < threshold` → **observations** — skip steps 2–3; conversation-only, never posted to GitHub
+- `confidence < 60` → **drop** — false positive or noise
+
+Issues with `threshold <= confidence < 90` are human-gated — include them in output with
+a "Gate rationale" line showing `confidence_explanation`, and require explicit user
+confirmation before posting to GitHub.
+
+**Filter — step 2, RESOLVED_SET (PR mode only):** For each remaining issue, check whether
+it matches a RESOLVED_SET thread — same `file` (`path`) AND (thread `line` falls within
+`startLine–endLine` of the issue, OR thread `line` is `null` — match by `path` only).
+If it matches, **drop the issue entirely** (already caught and fixed by human reviewers in-PR).
+Do not report it.
+
+**Filter — step 3, RAISED_SET annotation (PR mode only):** For each remaining issue,
+check whether it matches a RAISED_SET thread — same `file`, AND (overlapping line range OR
+thread `line` is `null`). If it matches, **keep the issue** but prepend the label:
+`⚠️ Already raised in PR discussion — still open.`
+
+**Output differs by mode:**
+
+---
+
+### Local mode output
+
+Print the `### Code review` block to the conversation. No GitHub posting.
+
+**If no issues and no observations:**
 ```markdown
 ### Code review
 
-Found N issues:
-
-1. [Concise issue title] — [explanation: what is wrong, why, what the correct approach is,
-   reference to where in the codebase the correct pattern is used]
-
-   [link to offending lines — see format rules below]
-
-2. [Next issue] — [explanation]
-
-   [link]
-
-[repeat for all issues]
+No issues found. Checked by N/6 agents (Constitution, Sass, A11y, History, Bug Scanner, Learned Patterns).
+[Note any failed agents]
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
-**Link format rules:**
+**If issues found (with optional observations appended):**
+```markdown
+### Code review
 
-- **PR mode** — GitHub permalink anchored to the PR's head commit SHA:
-  ```
-  https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[FILE_PATH]#L[START]-L[END]
-  ```
-  Get the SHA from `gh pr view NNN --json headRefOid -q .headRefOid`.
+Found N issues (reviewed by M/6 agents, filtered by confidence scoring):
+[Note any failed agents]
 
-  After generating the review body, post it to the PR:
-  ```bash
-  gh pr review NNN --comment --body "$(cat <<'EOF'
-  [full review body]
-  EOF
-  )"
-  ```
-  Then confirm to the user that the comment was posted.
+1. [Title] *(recurring pattern)* — [explanation: what, why, fix. Link to codebase precedent if one exists.]
 
-- **Local mode** — VSCode-clickable markdown link using the repo-relative path:
-  ```markdown
-  [packages/bpk-component-foo/src/BpkFoo.module.scss:29](packages/bpk-component-foo/src/BpkFoo.module.scss#L29)
-  ```
-  For a range:
-  ```markdown
-  [packages/bpk-component-foo/src/BpkFoo.module.scss:29-31](packages/bpk-component-foo/src/BpkFoo.module.scss#L29-L31)
-  ```
-  Output the review to the conversation only — do **not** post to GitHub.
+   [path/file.tsx:42](path/file.tsx#L42)
+   [if human-gated] Gate rationale: [confidence_explanation]
 
-**General output rules:**
-- Count real issues only — do not pad with style nits
-- Each title is at most ~10 words; the dash separates it from the explanation
-- The explanation must include: (a) what is wrong, (b) why it matters, (c) what to use instead
-- Always link to a correct precedent file in the repo when one exists
-- Do NOT include a "strengths" section, compliance score table, or required-actions checklist
+[if observations exist]
+Below-threshold observations (confidence 60–(threshold-1), not blocking):
 
-## Verification
+- **[Title]** (score: N) — [one-line explanation: what, why]
+  [path/file.tsx:42](path/file.tsx#L42)
 
-After completing review:
-
-1. **All blocking issues identified** and documented
-2. **Specific fixes provided** for each violation
-3. **Constitution/decision references** cited
-4. **Priority classification** assigned to each issue
-5. **Compliance score** calculated
-
-**Self-check questions:**
-- Did I check for className/style props in new components?
-- Did I verify design approval exists?
-- Did I look for private token usage across components?
-- Did I check for license headers in ALL files?
-- Did I read the snapshot `.snap` file and verify it matches current component output?
-- Did I run the actual tests, not just look at code?
-- For every CSS property written directly in the new SCSS — did I grep `bpk-mixins/` to confirm no mixin exists for it?
-- For every package import — did I open that package's `index.tsx` to see the full API and confirm the right variant is used?
-- For every token used — did I verify the token *name* semantically matches the UI state (not just the colour value)?
-
-## Notes
-
-### API Design: New vs Existing Components
-
-**New components (after Constitution ratification):**
-- MUST NOT accept `className` or `style` props
-- Strict enforcement to maintain visual consistency
-
-**Existing components (grandfathered):**
-- MAY keep `className`/`style` for backward compatibility
-- Discourage use in documentation
-- Consider deprecation in future major versions
-
-### Token Hierarchy
-
-**Token Reference**: [backpack-foundations/base.common.js](https://github.com/Skyscanner/backpack-foundations/blob/main/packages/bpk-foundations-web/tokens/base.common.js)
-
-#### Token Categories
-
-Backpack tokens are organized into semantic categories:
-
-1. **Core tokens** (`$bpk-core-*`): Foundational brand colors
-   - `$bpk-core-primary-day`, `$bpk-core-accent-day`, `$bpk-core-eco-day`
-
-2. **Surface tokens** (`$bpk-surface-*`): Layout backgrounds
-   - `$bpk-surface-default-day`, `$bpk-surface-elevated-day`, `$bpk-surface-hero-day`
-
-3. **Text tokens** (`$bpk-text-*`): Typography colors
-   - `$bpk-text-primary-day`, `$bpk-text-secondary-day`, `$bpk-text-on-dark-day`
-
-4. **Status tokens** (`$bpk-status-*`): Semantic states
-   - `$bpk-status-success-spot-day`, `$bpk-status-danger-spot-day`, `$bpk-status-warning-spot-day`
-
-5. **Line/Border tokens** (`$bpk-line-*`): Dividers and borders
-   - `$bpk-line-day`, `$bpk-line-on-dark-day`
-
-6. **Spacing tokens** (functions): Layout spacing
-   - `tokens.bpk-spacing-xs()`, `tokens.bpk-spacing-base()`, `tokens.bpk-spacing-xl()`
-
-7. **Typography tokens**: Font sizes, weights, line heights
-   - `tokens.$bpk-font-size-base`, `tokens.$bpk-line-height-base`
-
-#### Public vs Private Tokens
-
-1. **Public tokens**: Use freely across all components
-   - Pattern: `$bpk-core-*`, `$bpk-text-*`, `$bpk-surface-*`
-   - Example: `$bpk-core-primary-day`, `tokens.bpk-spacing-md()`
-
-2. **Private tokens**: Component-internal only, DO NOT use in other components
-   - Pattern: `$bpk-private-[component]-*`
-   - Example: `$bpk-private-chip-on-dark-on-background-night`, `$bpk-private-button-secondary-pressed-background-day`
-   - **Violation**: Using `$bpk-private-chip-*` in `bpk-thinking` component
-
-3. **Cross-component token needs**: Request new public token in backpack-foundations
-
-#### Color Value Matching (Important for Figma Integration)
-
-**Token color format**: All Backpack tokens use **RGB notation** (`rgb(239, 243, 248)`)
-
-**Common issue**: Figma MCP or manual color input provides colors in different formats:
-- Figma exports: HEX (`#EFF3F8`) or RGB objects (`{r: 239, g: 243, b: 248}`)
-- Designer handoff: HEX codes (`#054184`)
-- CSS: Various formats (HEX, RGB, RGBA, HSL)
-
-**Solution - Color Conversion Required**:
-
-When matching colors to tokens, you may need to convert formats:
-
-```javascript
-// HEX to RGB conversion
-function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-
-// Example: #054184 → rgb(5, 65, 132)
-// Then search tokens: grep "rgb(5, 65, 132)" base.common.js
+🤖 Generated with [Claude Code](https://claude.ai/code)
 ```
 
-**Workflow for color matching**:
+**If no issues but observations exist:**
+```markdown
+### Code review
 
-1. **Get color from Figma/design**: `#054184`
-2. **Convert to RGB**: `rgb(5, 65, 132)`
-3. **Search in backpack-foundations**:
-   ```bash
-   curl -s https://raw.githubusercontent.com/Skyscanner/backpack-foundations/main/packages/bpk-foundations-web/tokens/base.common.js | grep "rgb(5, 65, 132)"
-   ```
-4. **Find token**: `corePrimaryNight: 'rgb(5, 65, 132)'`
-5. **Use token**: `tokens.$bpk-core-primary-night`
+No issues met the threshold. Checked by N/6 agents (Constitution, Sass, A11y, History, Bug Scanner, Learned Patterns).
+[Note any failed agents]
 
-**If no match found**:
-- Check with design team if color is correct
-- Request new token in backpack-foundations PR
-- Document the requirement in component PR
+Below-threshold observations (confidence 60–(threshold-1), not blocking):
 
-### Design Approval Workflow
+- **[Title]** (score: N) — [one-line explanation: what, why]
+  [path/file.tsx:42](path/file.tsx#L42)
 
-1. Reach out to #backpack Slack BEFORE starting work
-2. Get Figma designs with all states
-3. Implement matching designs exactly
-4. Visual regression tests will catch deviations
+🤖 Generated with [Claude Code](https://claude.ai/code)
+```
 
-### Common Traps
+---
 
-- ❌ Assuming existing component patterns are correct (they may be grandfathered)
-- ❌ Copying private tokens from other components
-- ❌ Implementing first, seeking design approval later
-- ❌ Using px because "it's just one value"
-- ❌ Making `accessibilityLabel` optional "to be flexible"
-- ❌ Leaving snapshot files stale after removing/changing rendered attributes
-- ❌ Accepting that a CSS value looks right without checking if `bpk-mixins/` already abstracts it
-- ❌ Accepting that an import compiles without checking the full package API for a better-fitting variant
-- ❌ Accepting that a token produces the right colour without checking if the token name fits the UI state
+### PR mode output
 
-### SemVer Impact
+**Conversation:** Print the same `### Code review` block as local mode (for human review),
+but links use full SHA permalinks:
+`https://github.com/Skyscanner/backpack/blob/[SHA]/[PATH]#L[START]-L[END]`
 
-When reviewing changes, classify version impact:
+Observations (if any) appear in the conversation block only — they are **never included in the GitHub payload**.
 
-- **MAJOR**: Breaking API changes, visual changes, token changes, removal, new mandatory functionality
-- **MINOR**: New optional features, new components, deprecations
-- **PATCH**: Bug fixes, dependency updates, code quality
+**Autopost: OFF by default in PR mode.** Post only when user explicitly says "post" / "post to GitHub" / `BACKPACK_REVIEW_AUTOPOST=true`.
 
-Err on side of more breaking changes rather than fewer.
+Post a single GitHub PR review using the Reviews API (NOT a plain PR comment).
+This places each issue as an **inline comment on the relevant diff line**, grouped under one review.
+
+```bash
+# Build the payload as a JSON file (required — --field cannot accept JSON arrays)
+cat > /tmp/bpk_review_[NUMBER].json << 'ENDJSON'
+{
+  "commit_id": "[SHA]",
+  "event": "COMMENT",
+  "body": "### Code review\n\nFound N issues (reviewed by M/6 agents).\n\n🤖 Generated with [Claude Code](https://claude.ai/code)",
+  "comments": [
+    {
+      "path": "packages/bpk-component-foo/src/BpkFoo.tsx",
+      "line": 45,
+      "start_line": 42,
+      "side": "RIGHT",
+      "body": "**[Title]** *(recurring pattern)*\n\n[explanation: what, why, fix]\n\n[if human-gated] Gate rationale: [confidence_explanation]"
+    }
+  ]
+}
+ENDJSON
+
+gh api repos/Skyscanner/backpack/pulls/[NUMBER]/reviews \
+  --method POST \
+  --input /tmp/bpk_review_[NUMBER].json \
+  --jq '{id: .id, state: .state, html_url: .html_url}'
+```
+
+**Inline comment body format** (per issue):
+```
+**[Title]** [*(recurring pattern)*]
+
+[explanation: (a) what is wrong, (b) why, (c) what to use instead]
+
+[if human-gated] ⚠️ Gate rationale: [confidence_explanation]
+[if RAISED_SET match] ⚠️ Already raised in PR discussion — still open.
+```
+
+**Line mapping rules:**
+- Single-line issue (`startLine == endLine`): set `"line": startLine`, omit `start_line`
+- Multi-line issue: set `"start_line": startLine, "line": endLine, "side": "RIGHT"`
+- If a line falls outside the PR diff (not a changed line), fall back to the nearest
+  changed line in the same file, or skip the inline comment and include that issue only
+  in the review body summary instead.
+
+**Human gate:** Issues with `threshold <= confidence < 90` require explicit user confirmation
+before the review is posted. Show the full preview (inline comments + review body) and ask
+"Post this review? (y/n)". Do not post any part of it until confirmed.
+
+**No partial posting:** Either post all issues as one review, or don't post at all.
+
+---
+
+**Shared output rules (both modes):**
+- `*(recurring pattern)*` label for `source: learned-patterns` issues
+- Explanation always covers: (a) what is wrong, (b) why, (c) what to use instead
+- No strengths section, compliance table, or required-actions checklist
+
+---
+
+## Phase 5: Orchestrator Self-Check (Internal — do not print)
+
+- Check `className`/`style` leakage for new components
+- Verify design approval evidence is present and substantive
+- Check private token misuse and token semantic-name correctness
+- Check license headers on changed source files
+- Perform mixin investigation for direct CSS properties
+- Perform package-export investigation for imported Backpack helpers
+- Verify token colour match AND semantic meaning
+- Include diagnostics for any failed agents
+- Enforce autopost guardrails
+
+---
+
+## Privacy and Access Control
+
+- Never include secrets/tokens/credentials in agent prompts or output
+- Agents use only local repo files and `gh` CLI — no external services beyond GitHub
+- GitHub token scopes: read (diff/comments/history); write (PR comments, autopost only)
+
+---
 
 ## References
 
-- [Backpack Constitution](/.specify/memory/constitution.md) - Core principles
-- [Modern Sass API Decision](/decisions/modern-sass-api.md)
-- [Accessibility Tests Decision](/decisions/accessibility-tests.md)
-- [Component SCSS Filenames Decision](/decisions/component-scss-filenames.md)
-- [Versioning Rules](/decisions/versioning-rules.md)
-- [Deprecated API](/decisions/deprecated-api.md)
+- [Backpack Constitution](/.specify/memory/constitution.md)
 - [Code Review Guidelines](/CODE_REVIEW_GUIDELINES.md)
-- [Backpack Documentation](https://www.skyscanner.design/)
+- [decisions/](/decisions/) — Sass API, accessibility tests, versioning, deprecated API
+- [domain-knowledge.md](domain-knowledge.md) — Token hierarchy, colour matching, common traps
+- [learn-mode.md](learn-mode.md) — Self-improvement workflow
+- [agents/](agents/) — Individual agent prompts

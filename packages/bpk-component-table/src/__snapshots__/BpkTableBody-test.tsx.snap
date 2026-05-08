@@ -3,7 +3,9 @@
 exports[`BpkTableBody should render correctly 1`] = `
 <DocumentFragment>
   <table>
-    <tbody>
+    <tbody
+      data-backpack-ds-component="TableBody"
+    >
       <tr />
     </tbody>
   </table>
@@ -14,6 +16,7 @@ exports[`BpkTableBody should render correctly with arbitrary props 1`] = `
 <DocumentFragment>
   <table>
     <tbody
+      data-backpack-ds-component="TableBody"
       data-foo="bar"
       id="my-custom-id"
     >
@@ -28,6 +31,20 @@ exports[`BpkTableBody should render correctly with custom class 1`] = `
   <table>
     <tbody
       class="my-custom-class"
+      data-backpack-ds-component="TableBody"
+    >
+      <tr />
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`BpkTableBody should render correctly with type="striped" 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody
+      class="bpk-table__body--striped"
+      data-backpack-ds-component="TableBody"
     >
       <tr />
     </tbody>

@@ -57,6 +57,20 @@ describe('processBpkProps', () => {
     expect(result.paddingEnd).toBe('1.5rem');
   });
 
+  it('allows bare "0" for position offset props', () => {
+    const result = processBpkProps({
+      top: '0',
+      left: '0',
+      right: '50%',
+      bottom: '1rem',
+    });
+
+    expect(result.top).toBe('0');
+    expect(result.left).toBe('0');
+    expect(result.right).toBe('50%');
+    expect(result.bottom).toBe('1rem');
+  });
+
   it('validates and passes through size props (rem and percentages)', () => {
     const result = processBpkProps({
       width: '10rem',
@@ -186,6 +200,82 @@ describe('processBpkProps', () => {
     });
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
+  });
+
+  it('maps Backpack breakpoint keys for position prop via processBpkComponentProps', () => {
+    const result = processBpkComponentProps(
+      { position: { mobile: 'relative', tablet: 'sticky' } },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.position).toEqual({ md: 'relative', xl: 'sticky' });
+  });
+
+  it('maps Backpack breakpoint keys for overflow prop via processBpkComponentProps', () => {
+    const result = processBpkComponentProps(
+      { overflow: { mobile: 'hidden', desktop: 'auto' } },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.overflow).toEqual({ md: 'hidden', '2xl': 'auto' });
+  });
+
+  it('maps Backpack breakpoint keys for overflowX and overflowY via processBpkComponentProps', () => {
+    const result = processBpkComponentProps(
+      {
+        overflowX: { tablet: 'clip' },
+        overflowY: { mobile: 'scroll', desktop: 'auto' },
+      },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.overflowX).toEqual({ xl: 'clip' });
+    expect(result.overflowY).toEqual({ md: 'scroll', '2xl': 'auto' });
+  });
+
+  it('rejects array-based responsive values for position and warns', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkComponentProps(
+      { position: ['relative', 'sticky'] as any },
+      { component: 'BpkBox' },
+    );
+
+    expect(result.position).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('does not drop position/overflow when responsiveProps is provided (BpkFlex/BpkGrid bug fix)', () => {
+    // Regression: when `responsiveProps` is passed (e.g. BpkFlex maps direction→flexDirection),
+    // allowlisted props that come in via ...props (position, overflow, etc.) must NOT be silently
+    // dropped. They should be picked up from `processed` and routed through the responsive pipeline.
+    const result = processBpkComponentProps(
+      { position: 'relative', overflow: 'hidden' },
+      {
+        component: 'BpkFlex',
+        responsiveProps: { flexDirection: 'column' },
+      },
+    );
+
+    expect(result.position).toBe('relative');
+    expect(result.overflow).toBe('hidden');
+    expect(result.flexDirection).toBe('column');
+  });
+
+  it('also preserves responsive position/overflow objects when responsiveProps is provided', () => {
+    const result = processBpkComponentProps(
+      { position: { mobile: 'relative', tablet: 'sticky' }, overflow: 'hidden' },
+      {
+        component: 'BpkFlex',
+        responsiveProps: { flexDirection: 'row' },
+      },
+    );
+
+    // Breakpoint keys should be normalised
+    expect(result.position).toEqual({ md: 'relative', xl: 'sticky' });
+    expect(result.overflow).toBe('hidden');
+    expect(result.flexDirection).toBe('row');
   });
 
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {

@@ -18,11 +18,44 @@
 
 import type { ReactNode, HTMLAttributes } from 'react';
 
-export interface BpkTableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+
+import { TABLE_BODY_TYPES } from './common-types';
+
+import type { TableBodyType } from './common-types';
+
+import STYLES from './BpkTable.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export interface BpkTableBodyProps
+  extends HTMLAttributes<HTMLTableSectionElement> {
   /** The content of the table */
   children: ReactNode;
+  /** The type of table body styling */
+  type?: TableBodyType;
 }
 
-const BpkTableBody = (props: BpkTableBodyProps) => <tbody {...props} />;
+const BpkTableBody = ({
+  children,
+  className,
+  type = TABLE_BODY_TYPES.default,
+  ...rest
+}: BpkTableBodyProps) => {
+  const classNames = getClassName(
+    type === TABLE_BODY_TYPES.striped && 'bpk-table__body--striped',
+    className,
+  );
+
+  return (
+    <tbody
+      {...rest}
+      className={classNames || undefined}
+      {...getDataComponentAttribute('TableBody')}
+    >
+      {children}
+    </tbody>
+  );
+};
 
 export default BpkTableBody;

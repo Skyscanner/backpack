@@ -21,7 +21,7 @@ import BpkLink from './BpkLink';
 
 figma.connect(
   BpkLink,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=54170%3A57',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10885%3A9743',
   {
     props: {
       implicit: figma.enum('Type', {

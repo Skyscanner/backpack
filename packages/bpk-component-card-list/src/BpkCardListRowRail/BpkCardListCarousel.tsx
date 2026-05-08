@@ -215,13 +215,13 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         const isPageStart = index % initiallyShownCards === 0;
 
+        const cardKey = `carousel-card-${index.toString()}`;
         const commonProps = {
           className: getClassName(
             `bpk-card-list-row-rail__${layout}__card`,
             isPageStart && 'bpk-card-list-row-rail__card--page-start',
           ),
           style: shownNumberStyle,
-          key: `carousel-card-${index.toString()}`,
           role: 'group',
         };
 
@@ -231,6 +231,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
         if (!shouldRenderCard) {
           return (
             <div
+              key={cardKey}
               {...commonProps}
               ref={cardRefFns[index]}
               style={{
@@ -252,6 +253,7 @@ const BpkCardListCarousel = (props: CardListCarouselProps) => {
 
         return (
           <div
+            key={cardKey}
             {...commonProps}
             ref={cardRefFns[index]}
             aria-label={slideLabel(index, childrenLength)}

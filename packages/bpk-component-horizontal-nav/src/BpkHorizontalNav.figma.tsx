@@ -23,7 +23,7 @@ import BpkHorizontalNavItem from './BpkHorizontalNavItem';
 
 figma.connect(
   BpkHorizontalNav,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=27880%3A31440',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A3878',
   {
     props: {
       showUnderline: figma.boolean('Line'),

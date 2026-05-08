@@ -17,24 +17,18 @@
  */
 
 import BpkCheckbox, { type Props as BpkCheckboxProps } from './src/BpkCheckbox';
-import BpkCheckboxV2 from './src/BpkCheckboxV2/BpkCheckbox';
-import {
+import themeAttributes from './src/themeAttributes';
+
+export default BpkCheckbox;
+export type { BpkCheckboxProps };
+export { themeAttributes };
+
+export { default as BpkCheckboxV2 } from './src/BpkCheckboxV2/BpkCheckboxV2';
+export {
   checkboxSelectedColorThemeAttributes,
   checkboxBorderRadiusThemeAttributes,
 } from './src/BpkCheckboxV2/themeAttributes';
-import themeAttributes from './src/themeAttributes';
-
-export type { BpkCheckboxProps };
-export type { BpkCheckboxRootProps, BpkCheckedState } from './src/BpkCheckboxV2/BpkCheckboxRoot';
-export type { BpkCheckboxControlProps } from './src/BpkCheckboxV2/BpkCheckboxControl';
-export type { BpkCheckboxLabelProps } from './src/BpkCheckboxV2/BpkCheckboxLabel';
-export type { BpkCheckboxDescriptionProps } from './src/BpkCheckboxV2/BpkCheckboxDescription';
-export default BpkCheckbox;
-export {
-  themeAttributes,
-  checkboxSelectedColorThemeAttributes,
-  checkboxBorderRadiusThemeAttributes,
-  BpkCheckboxV2,
-};
-
-
+export type { BpkCheckboxV2RootProps, BpkCheckboxV2CheckedState } from './src/BpkCheckboxV2/BpkCheckboxV2Root';
+export type { BpkCheckboxV2ControlProps } from './src/BpkCheckboxV2/BpkCheckboxV2Control';
+export type { BpkCheckboxV2LabelProps } from './src/BpkCheckboxV2/BpkCheckboxV2Label';
+export type { BpkCheckboxV2DescriptionProps } from './src/BpkCheckboxV2/BpkCheckboxV2Description';

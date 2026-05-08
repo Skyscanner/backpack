@@ -37,7 +37,7 @@ type Props = {
   onCloseAnimationComplete: () => void,
   onClose: () => void
   id: string,
-  title: string,
+  title: ReactNode,
   width?: string,
   className?: string | null,
   contentClassName?: string,

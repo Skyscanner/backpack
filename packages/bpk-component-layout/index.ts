@@ -54,3 +54,7 @@ export {
   isValidSpacingValue,
   isPercentage,
 } from './src/tokens';
+
+// Export color constants and types
+export { BACKGROUND_COLORS } from './src/backgroundColors';
+export type { BpkLayoutBackgroundColor } from './src/backgroundColors';

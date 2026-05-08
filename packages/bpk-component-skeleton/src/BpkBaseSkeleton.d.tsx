@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { JSX } from 'react';
+
 type Props = {
   skeletonStyle: string;
   styleObj?: {

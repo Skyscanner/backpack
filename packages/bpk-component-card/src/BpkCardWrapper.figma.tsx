@@ -24,7 +24,7 @@ import BpkCardWrapper from './BpkCardWrapper';
 
 figma.connect(
   BpkCardWrapper,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22618%3A28743',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A49736',
   {
     example: () => (
       <BpkCardWrapper

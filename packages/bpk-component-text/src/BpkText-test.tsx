@@ -22,7 +22,7 @@ import '@testing-library/jest-dom';
 
 import { textSuccessDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkText, { TEXT_COLORS } from './BpkText';
+import BpkText, { TEXT_ALIGN, TEXT_COLORS } from './BpkText';
 
 import type { Tag, TextStyle } from './BpkText';
 
@@ -99,6 +99,24 @@ describe('BpkText', () => {
       expect(getByText(text)).toHaveClass(`bpk-text bpk-text--${textStyle}`);
     });
   });
+  describe('textAlign prop', () => {
+    it('should not add an align class when textAlign is not provided', () => {
+      const { getByText } = render(<BpkText>{text}</BpkText>);
+
+      expect(getByText(text).className).not.toContain('bpk-text--align-');
+    });
+
+    Object.values(TEXT_ALIGN).forEach((alignValue) => {
+      it(`should render correctly with textAlign="${alignValue}"`, () => {
+        const { getByText } = render(
+          <BpkText textAlign={alignValue}>{text}</BpkText>,
+        );
+
+        expect(getByText(text)).toHaveClass(`bpk-text--align-${alignValue}`);
+      });
+    });
+  });
+
   describe('text color prop', () => {
     it('should render correctly with prop color is token textSecondary', () => {
       const { getByText } = render(

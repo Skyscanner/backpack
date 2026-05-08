@@ -26,8 +26,9 @@ import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
 
 figma.connect(
   BpkButton,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=2965%3A0",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A8677",
   {
+    variant: { Icon: "Icon only" },
     props: {
       style: figma.enum('Style', {
         "Primary": BUTTON_TYPES.primary,
@@ -39,8 +40,7 @@ figma.connect(
         "Destructive": BUTTON_TYPES.destructive,
         "Link": BUTTON_TYPES.link,
         "Link on dark": BUTTON_TYPES.linkOnDark,
-        }
-      ),
+      }),
       size: figma.enum('Size', {
         "Default": SIZE_TYPES.small,
         "Large": SIZE_TYPES.large,
@@ -48,43 +48,150 @@ figma.connect(
       isDisabled: figma.enum('State', {
         "Disabled": true,
       }),
-      leadingIcon: figma.boolean('Leading icon', {
-        true: <LightningIcon />,
-        false: undefined,
+      isLoading: figma.enum('State', {
+        "Loading": true,
       }),
       label: figma.textContent("Label"),
-      trailingIcon: figma.boolean('Trailing icon', {
-        true: <LongArrowRightIcon />,
-        false: undefined,
-      }),
-      iconOnly: figma.enum('Icon', {
-        "Icon only": true,
-      }),
-      loading: figma.boolean('Loading'),
     },
-    example: ({ iconOnly, isDisabled, label, leadingIcon, loading, size, style, trailingIcon }) =>
-      iconOnly ? (
-        <BpkButton
-          type={style}
-          size={size}
-          disabled={isDisabled}
-          iconOnly
-          loading={loading}
-          aria-label={label}
-        >
-          <LightningIcon />
-        </BpkButton>
-      ) : (
-        <BpkButton
-          type={style}
-          size={size}
-          disabled={isDisabled}
-          leadingIcon={leadingIcon}
-          trailingIcon={trailingIcon}
-          loading={loading}
-        >
-          {label}
-        </BpkButton>
-      )
+    example: ({ isDisabled, isLoading, label, size, style }) => (
+      <BpkButton
+        type={style}
+        size={size}
+        disabled={isDisabled}
+        iconOnly
+        loading={isLoading}
+        aria-label={label}
+      >
+        <LightningIcon />
+      </BpkButton>
+    ),
+  },
+)
+
+figma.connect(
+  BpkButton,
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A8677",
+  {
+    variant: { Icon: "Left" },
+    props: {
+      style: figma.enum('Style', {
+        "Primary": BUTTON_TYPES.primary,
+        "Secondary": BUTTON_TYPES.secondary,
+        "Featured": BUTTON_TYPES.featured,
+        "Primary on light": BUTTON_TYPES.primaryOnLight,
+        "Primary on dark": BUTTON_TYPES.primaryOnDark,
+        "Secondary on dark": BUTTON_TYPES.secondaryOnDark,
+        "Destructive": BUTTON_TYPES.destructive,
+        "Link": BUTTON_TYPES.link,
+        "Link on dark": BUTTON_TYPES.linkOnDark,
+      }),
+      size: figma.enum('Size', {
+        "Default": SIZE_TYPES.small,
+        "Large": SIZE_TYPES.large,
+      }),
+      isDisabled: figma.enum('State', {
+        "Disabled": true,
+      }),
+      isLoading: figma.enum('State', {
+        "Loading": true,
+      }),
+      label: figma.textContent("Label"),
+    },
+    example: ({ isDisabled, isLoading, label, size, style }) => (
+      <BpkButton
+        type={style}
+        size={size}
+        disabled={isDisabled}
+        leadingIcon={LightningIcon}
+        loading={isLoading}
+      >
+        {label}
+      </BpkButton>
+    ),
+  },
+)
+
+figma.connect(
+  BpkButton,
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A8677",
+  {
+    variant: { Icon: "Right" },
+    props: {
+      style: figma.enum('Style', {
+        "Primary": BUTTON_TYPES.primary,
+        "Secondary": BUTTON_TYPES.secondary,
+        "Featured": BUTTON_TYPES.featured,
+        "Primary on light": BUTTON_TYPES.primaryOnLight,
+        "Primary on dark": BUTTON_TYPES.primaryOnDark,
+        "Secondary on dark": BUTTON_TYPES.secondaryOnDark,
+        "Destructive": BUTTON_TYPES.destructive,
+        "Link": BUTTON_TYPES.link,
+        "Link on dark": BUTTON_TYPES.linkOnDark,
+      }),
+      size: figma.enum('Size', {
+        "Default": SIZE_TYPES.small,
+        "Large": SIZE_TYPES.large,
+      }),
+      isDisabled: figma.enum('State', {
+        "Disabled": true,
+      }),
+      isLoading: figma.enum('State', {
+        "Loading": true,
+      }),
+      label: figma.textContent("Label"),
+    },
+    example: ({ isDisabled, isLoading, label, size, style }) => (
+      <BpkButton
+        type={style}
+        size={size}
+        disabled={isDisabled}
+        trailingIcon={LongArrowRightIcon}
+        loading={isLoading}
+      >
+        {label}
+      </BpkButton>
+    ),
+  },
+)
+
+figma.connect(
+  BpkButton,
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A8677",
+  {
+    variant: { Icon: "None" },
+    props: {
+      style: figma.enum('Style', {
+        "Primary": BUTTON_TYPES.primary,
+        "Secondary": BUTTON_TYPES.secondary,
+        "Featured": BUTTON_TYPES.featured,
+        "Primary on light": BUTTON_TYPES.primaryOnLight,
+        "Primary on dark": BUTTON_TYPES.primaryOnDark,
+        "Secondary on dark": BUTTON_TYPES.secondaryOnDark,
+        "Destructive": BUTTON_TYPES.destructive,
+        "Link": BUTTON_TYPES.link,
+        "Link on dark": BUTTON_TYPES.linkOnDark,
+      }),
+      size: figma.enum('Size', {
+        "Default": SIZE_TYPES.small,
+        "Large": SIZE_TYPES.large,
+      }),
+      isDisabled: figma.enum('State', {
+        "Disabled": true,
+      }),
+      isLoading: figma.enum('State', {
+        "Loading": true,
+      }),
+      label: figma.textContent("Label"),
+    },
+    example: ({ isDisabled, isLoading, label, size, style }) => (
+      <BpkButton
+        type={style}
+        size={size}
+        disabled={isDisabled}
+        loading={isLoading}
+      >
+        {label}
+      </BpkButton>
+    ),
   },
 )

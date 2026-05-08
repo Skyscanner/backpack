@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-
 import { render } from '@testing-library/react';
 
 import BpkTableBody from './BpkTableBody';
+import { TABLE_BODY_TYPES } from './common-types';
 
 describe('BpkTableBody', () => {
   it('should render correctly', () => {
@@ -53,5 +53,42 @@ describe('BpkTableBody', () => {
       </table>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with type="striped"', () => {
+    const { asFragment } = render(
+      <table>
+        <BpkTableBody type={TABLE_BODY_TYPES.striped}>
+          <tr />
+        </BpkTableBody>
+      </table>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should apply striped class when type is striped', () => {
+    const { container } = render(
+      <table>
+        <BpkTableBody type={TABLE_BODY_TYPES.striped}>
+          <tr />
+        </BpkTableBody>
+      </table>,
+    );
+    expect(container.querySelector('tbody')).toHaveClass(
+      'bpk-table__body--striped',
+    );
+  });
+
+  it('should not apply striped class when type is default', () => {
+    const { container } = render(
+      <table>
+        <BpkTableBody type={TABLE_BODY_TYPES.default}>
+          <tr />
+        </BpkTableBody>
+      </table>,
+    );
+    expect(container.querySelector('tbody')).not.toHaveClass(
+      'bpk-table__body--striped',
+    );
   });
 });

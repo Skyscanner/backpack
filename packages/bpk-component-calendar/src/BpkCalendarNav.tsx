@@ -25,7 +25,6 @@ import {
 import BpkAriaLive from '../../bpk-component-aria-live';
 import ArrowLeftIcon from '../../bpk-component-icon/lg/arrow-left';
 import ArrowRightIcon from '../../bpk-component-icon/lg/arrow-right';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkSelect from '../../bpk-component-select';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -44,7 +43,7 @@ import STYLES from './BpkCalendarNav.module.scss';
 const getClassName = cssModules(STYLES);
 
 type MonthChangeEvent =
-  | ChangeEvent<HTMLInputElement>
+  | ChangeEvent<HTMLSelectElement>
   | MouseEvent<HTMLButtonElement>;
 
 type Props = {
@@ -158,7 +157,7 @@ const BpkCalendarNav = ({
             name="months"
             value={formatIsoMonth(baseMonth)}
             disabled={disabled}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            onChange={(event: ChangeEvent<HTMLSelectElement>) => {
               event.persist();
               onMonthChange(event, {
                 month: parseIsoDate(event.target.value),

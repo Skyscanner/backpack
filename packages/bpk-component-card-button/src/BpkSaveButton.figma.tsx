@@ -22,7 +22,7 @@ import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from "./BpkSaveButton"
 
 figma.connect(
   BpkSaveButton,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=22719%3A26190",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A50640",
   {
     props: {
       size: figma.enum("Size", {

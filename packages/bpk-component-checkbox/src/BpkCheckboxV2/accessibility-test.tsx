@@ -19,116 +19,116 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkCheckbox from './BpkCheckbox';
+import BpkCheckboxV2 from './BpkCheckboxV2';
 
-describe('BpkCheckbox accessibility tests', () => {
+describe('BpkCheckboxV2 accessibility tests', () => {
   it('should not have accessibility issues with simple label', async () => {
     const { container } = render(
-      <BpkCheckbox.Root>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>Accept terms</BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+      <BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>Accept terms</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues with title and description', async () => {
     const { container } = render(
-      <BpkCheckbox.Root>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
+      <BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
         <div>
-          <BpkCheckbox.Label>Price alerts</BpkCheckbox.Label>
-          <BpkCheckbox.Description>
+          <BpkCheckboxV2.Label>Price alerts</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.Description>
             We&apos;ll email you about price drops. Unsubscribe anytime.
-          </BpkCheckbox.Description>
+          </BpkCheckboxV2.Description>
         </div>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues when checked', async () => {
     const { container } = render(
-      <BpkCheckbox.Root defaultChecked>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>Send me deals</BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+      <BpkCheckboxV2.Root defaultChecked>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>Send me deals</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues when disabled', async () => {
     const { container } = render(
-      <BpkCheckbox.Root disabled>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>Disabled option</BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+      <BpkCheckboxV2.Root disabled>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>Disabled option</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues when disabled and checked', async () => {
     const { container } = render(
-      <BpkCheckbox.Root disabled defaultChecked>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>Disabled and checked</BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+      <BpkCheckboxV2.Root disabled defaultChecked>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>Disabled and checked</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues when indeterminate', async () => {
     const { container } = render(
-      <BpkCheckbox.Root defaultChecked="indeterminate">
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>Weekdays</BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+      <BpkCheckboxV2.Root defaultChecked="indeterminate">
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>Weekdays</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues when invalid', async () => {
     const { container } = render(
-      <BpkCheckbox.Root invalid>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>I agree to the terms</BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+      <BpkCheckboxV2.Root invalid>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>I agree to the terms</BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 
   it('should not have accessibility issues with inline link in label', async () => {
     const { container } = render(
-      <BpkCheckbox.Root>
-        <BpkCheckbox.Control>
-          <BpkCheckbox.Indicator />
-        </BpkCheckbox.Control>
-        <BpkCheckbox.Label>
+      <BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Indicator />
+        </BpkCheckboxV2.Control>
+        <BpkCheckboxV2.Label>
           I agree to the <a href="/terms">terms and conditions</a>
-        </BpkCheckbox.Label>
-        <BpkCheckbox.HiddenInput />
-      </BpkCheckbox.Root>,
+        </BpkCheckboxV2.Label>
+        <BpkCheckboxV2.HiddenInput />
+      </BpkCheckboxV2.Root>,
     );
     expect(await axe(container)).toHaveNoViolations();
   });

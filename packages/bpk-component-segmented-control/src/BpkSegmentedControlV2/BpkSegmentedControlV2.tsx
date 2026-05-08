@@ -16,7 +16,9 @@
  * limitations under the License.
  */
 
-import { SegmentGroup } from '@ark-ui/react';
+import { useRef } from 'react';
+
+import { SegmentGroup, useLocaleContext } from '@ark-ui/react';
 
 import {
   cssModules,
@@ -44,6 +46,11 @@ const BpkSegmentedControlV2Root = ({
   type = SEGMENT_TYPES_V2.CanvasDefault,
   value,
 }: BpkSegmentedControlV2RootProps) => {
+  const { dir } = useLocaleContext();
+  // Tracks the last user-selected value so it can be restored after a key={dir}
+  // remount. Without this, uncontrolled usage would reset to defaultValue on every
+  // direction change.
+  const lastValueRef = useRef(defaultValue);
   const containerClass = getClassName(
     'bpk-segmented-control-v2',
     `bpk-segmented-control-v2--${type}`,
@@ -51,17 +58,24 @@ const BpkSegmentedControlV2Root = ({
   );
 
   return (
+    // key={dir} is required because Zag.js measures the indicator position via
+    // el.offsetLeft (a physical pixel value) and only re-syncs when `value` changes —
+    // it has no listener on locale/direction. When direction changes, LocaleProvider
+    // updates the locale context but Zag's internal indicatorRect stays stale, leaving
+    // the sliding indicator visually offset. Forcing a remount via key={dir} restarts
+    // the Zag machine, which re-measures offsetLeft in the new layout direction.
+    // See: decisions/rtl-ark-localeprovider.md — "Zag machine indicator pattern"
     <SegmentGroup.Root
+      key={dir}
       className={containerClass}
       value={value}
-      defaultValue={defaultValue}
-      onValueChange={
-        onChange
-          ? ({ value: selectedValue }) => {
-              if (selectedValue !== null) onChange(selectedValue);
-            }
-          : undefined
-      }
+      defaultValue={lastValueRef.current}
+      onValueChange={({ value: selectedValue }) => {
+        if (selectedValue !== null) {
+          lastValueRef.current = selectedValue;
+          if (onChange) onChange(selectedValue);
+        }
+      }}
       orientation="horizontal"
       {...getDataComponentAttribute('SegmentedControlV2')}
     >

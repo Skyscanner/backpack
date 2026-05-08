@@ -41,7 +41,7 @@ const imageList = [
 
 figma.connect(
   BpkCarousel,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=27887%3A32585',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A50288',
   {
     example: () => <BpkCarousel images={imageList} />,
   },

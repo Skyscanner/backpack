@@ -1,0 +1,117 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/typography';
+@use '../../../bpk-mixins/breakpoints';
+@use '../../../bpk-mixins/radii';
+@use '../../../bpk-mixins/shadows';
+@use '../../../bpk-mixins/utils';
+
+// Outer wrapper — default width with responsive fallback
+.bpk-comparison-tray {
+  width: 355 * tokens.$bpk-one-pixel-rem;
+  max-width: 100%;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+  }
+
+  button {
+    min-height: 0;
+    padding-block: 0;
+  }
+}
+
+// Filled item — relative for close button positioning.
+// Shrinks on narrow trays so the Compare button stays visible; aspect-ratio
+// keeps height in step with width so BpkImage's wrapper matches the item.
+.bpk-comparison-tray__item {
+  position: relative;
+  width: 62 * tokens.$bpk-one-pixel-rem;
+  min-width: 0;
+  flex-shrink: 1;
+  aspect-ratio: 62 / 28;
+}
+
+// Inner image container — clips image to rounded corners without clipping the close button
+.bpk-comparison-tray__item-image-container {
+  width: 100%;
+  height: 100%;
+  background-color: tokens.$bpk-canvas-contrast-day;
+  overflow: hidden;
+
+  @include radii.bpk-border-radius-xs;
+
+  // Fit images into the slot without cropping.
+  img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// Close button — 16×16, dark bg, white border, overlaps top-right corner
+/* stylelint-disable order/order, order/properties-order */
+.bpk-comparison-tray__item-close {
+  // bpk-touch-tappable sets position: relative — position: absolute must come after to override it
+  @include utils.bpk-touch-tappable;
+
+  position: absolute;
+  top: 0;
+  inset-inline-end: calc(-8 * #{tokens.$bpk-one-pixel-rem});
+  display: flex;
+  width: 16 * tokens.$bpk-one-pixel-rem;
+  height: 16 * tokens.$bpk-one-pixel-rem;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  border: 2 * tokens.$bpk-one-pixel-rem solid
+    tokens.$bpk-text-primary-inverse-day;
+  border-radius: 50%;
+  background-color: tokens.$bpk-text-primary-day;
+  color: tokens.$bpk-text-primary-inverse-day;
+  cursor: pointer;
+
+  @include shadows.bpk-box-shadow-lg;
+
+  svg {
+    width: 8 * tokens.$bpk-one-pixel-rem;
+    height: 8 * tokens.$bpk-one-pixel-rem;
+    flex-shrink: 0;
+    fill: tokens.$bpk-text-primary-inverse-day;
+  }
+
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}
+/* stylelint-enable order/order, order/properties-order */
+
+// Placeholder item — dashed border. Shrinks alongside filled items so the
+// layout stays balanced when the tray is narrow.
+.bpk-comparison-tray__item-placeholder {
+  width: 62 * tokens.$bpk-one-pixel-rem;
+  min-width: 0;
+  flex-shrink: 1;
+  border: tokens.$bpk-one-pixel-rem dashed tokens.$bpk-line-day;
+  aspect-ratio: 62 / 28;
+
+  @include radii.bpk-border-radius-xs;
+}
