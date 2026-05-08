@@ -183,7 +183,7 @@ function addToGroup(
 }
 
 // Formats a SkippedByKey entry as a human-readable string, e.g.
-// "[Backpack] Canvas/Default (modes: Day, Night)"
+// "[Backpack] Canvas/Default (modes: Light, Dark)"
 function renderReferences(references: SkippedByKey): string {
   return sortBy(Array.from(references.values()), (r) => r.variableName)
     .map(({ collectionName, modes, variableName }) => {
@@ -205,7 +205,7 @@ function countInstances(groups: Map<string, SkippedByKey>): number {
 
 // Group all skipped variables in `outputs` by reason and append one section
 // per non-empty reason to `lines`. Each section gets its own header + bullet
-// list. Day/Night duplicates collapse into a single entry with mode labels
+// list. Light/Dark duplicates collapse into a single entry with mode labels
 // so the CLI stays legible when multiple failure modes hit one sync.
 function appendSkippedSections(
   lines: string[],
@@ -312,7 +312,7 @@ function appendAmbiguousFloatSection(
   lines: string[],
   outputs: DTCGModeOutput[],
 ): void {
-  // Same name can appear once per mode (Day/Night). Collapse so the CLI
+  // Same name can appear once per mode (Light/Dark). Collapse so the CLI
   // shows one bullet per variable with the modes it was seen in.
   const groups = new Map<string, SkippedByKey>();
   for (const output of outputs) {

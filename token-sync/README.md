@@ -55,8 +55,8 @@ Output:
 ```text
 token-sync/tokens/
 ├─ primitives.json      # raw colour/spacing/… literals
-├─ backpack.day.json    # semantic tokens, Day mode
-├─ backpack.night.json  # semantic tokens, Night mode
+├─ backpack.light.json  # semantic tokens, Light mode
+├─ backpack.dark.json   # semantic tokens, Dark mode
 └─ manifest.json        # metadata: counts, roles, generatedAt
 ```
 

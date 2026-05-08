@@ -56,29 +56,29 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
     // 1 primitives + 2 backpack modes
     expect(outputs).toHaveLength(3);
     expect(outputs.map((o) => `${o.collectionName}/${o.modeName}`)).toEqual([
-      'Backpack/Day',
-      'Backpack/Night',
+      'Backpack/Dark',
+      'Backpack/Light',
       'Primitives/Hex',
     ]);
 
-    // Day tree exercises the full alias machinery: Canvas/Default aliases a
+    // Light tree exercises the full alias machinery: Canvas/Default aliases a
     // primitive (preserved as {Colour.Pink}); Canvas/Contrast aliases another
     // semantic in the same collection (inlined, transitively → {Colour.Pink}).
-    const [backpackDay, backpackNight, primitives] = outputs;
-    expect(backpackDay.tree).toEqual({
+    const [backpackDark, backpackLight, primitives] = outputs;
+    expect(backpackLight.tree).toEqual({
       Canvas: {
         $type: 'color',
         Contrast: { $value: '{Colour.Pink}' },
         Default: { $value: '{Colour.Pink}' },
       },
     });
-    expect(backpackDay.stats).toMatchObject({
+    expect(backpackLight.stats).toMatchObject({
       preservedAliasCount: 1,
       inlinedAliasCount: 1,
     });
 
-    // Night just needs to confirm the per-mode alias swap landed.
-    expect(backpackNight.tree).toMatchObject({
+    // Dark just needs to confirm the per-mode alias swap landed.
+    expect(backpackDark.tree).toMatchObject({
       Canvas: { Default: { $value: '{Colour.Berry}' } },
     });
 
@@ -132,8 +132,8 @@ describe('buildDTCG (full pipeline)', () => {
     expect(result.outputs).toHaveLength(3);
     expect(result.manifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
     expect(result.manifest.files.map((f) => f.fileName).sort()).toEqual([
-      'backpack.day.json',
-      'backpack.night.json',
+      'backpack.dark.json',
+      'backpack.light.json',
       'primitives.json',
     ]);
   });
@@ -189,15 +189,15 @@ describe('formatBuildSummary', () => {
           role: 'primitive',
         },
       ],
-      outputs: [makeOutput('Day')],
+      outputs: [makeOutput('Light')],
       missingNames: [],
       manifest: {
         generatedAt: '2026-04-29T12:00:00.000Z',
         files: [
           {
-            fileName: 'backpack.day.json',
+            fileName: 'backpack.light.json',
             collectionName: 'Backpack',
-            modeName: 'Day',
+            modeName: 'Light',
             role: 'semantic',
             variableCount: 10,
             preservedAliasCount: 5,
@@ -214,7 +214,7 @@ describe('formatBuildSummary', () => {
   it('summarises classification, per-output stats, and footer lines', () => {
     expect(formatBuildSummary(makeResult())).toEqual([
       'Classified 2 collection(s): Backpack (semantic), Primitives (primitive).',
-      '- Backpack / Day: 10 tokens (5 preserved, 2 inlined)',
+      '- Backpack / Light: 10 tokens (5 preserved, 2 inlined)',
       'Manifest: /tmp/out/manifest.json',
       'Wrote 1 DTCG file(s) to /tmp/out.',
     ]);
@@ -225,15 +225,15 @@ describe('formatBuildSummary', () => {
     expect(lines.some((l) => l.includes('Warning') && l.includes('VDL'))).toBe(true);
   });
 
-  it('groups unresolved aliases by missing alias id and merges Day/Night duplicates', () => {
-    // Same variable + same missing alias on both modes → one bullet, "(modes: Day, Night)".
+  it('groups unresolved aliases by missing alias id and merges Light/Dark duplicates', () => {
+    // Same variable + same missing alias on both modes → one bullet, "(modes: Dark, Light)".
     // A second variable with a different missing alias → its own bullet.
-    const dupOnDay = makeSkipped('Component/Button/bg-default', {
+    const dupOnLight = makeSkipped('Component/Button/bg-default', {
       reason: 'unresolved-alias',
       unresolvedAliasId: 'VariableID:1111:2222',
     });
-    const dupOnNight = { ...dupOnDay };
-    const otherOnDay = makeSkipped('Component/Chip/bg-active', {
+    const dupOnDark = { ...dupOnLight };
+    const otherOnLight = makeSkipped('Component/Chip/bg-active', {
       reason: 'unresolved-alias',
       unresolvedAliasId: 'VariableID:3333:4444',
     });
@@ -241,8 +241,8 @@ describe('formatBuildSummary', () => {
     const lines = formatBuildSummary(
       makeResult({
         outputs: [
-          makeOutput('Day', [dupOnDay, otherOnDay]),
-          makeOutput('Night', [dupOnNight]),
+          makeOutput('Light', [dupOnLight, otherOnLight]),
+          makeOutput('Dark', [dupOnDark]),
         ],
       }),
     );
@@ -251,10 +251,10 @@ describe('formatBuildSummary', () => {
       'Skipped 3 variable instance(s) due to unresolved aliases across 2 missing target variable(s) (likely cross-library or deleted references):',
     );
     expect(lines).toContain(
-      '  - missing VariableID:1111:2222 ← [Backpack] Component/Button/bg-default (modes: Day, Night)',
+      '  - missing VariableID:1111:2222 ← [Backpack] Component/Button/bg-default (modes: Dark, Light)',
     );
     expect(lines).toContain(
-      '  - missing VariableID:3333:4444 ← [Backpack] Component/Chip/bg-active (modes: Day)',
+      '  - missing VariableID:3333:4444 ← [Backpack] Component/Chip/bg-active (modes: Light)',
     );
   });
 
@@ -262,10 +262,10 @@ describe('formatBuildSummary', () => {
     const lines = formatBuildSummary(
       makeResult({
         outputs: [
-          makeOutput('Day', [
+          makeOutput('Light', [
             makeSkipped('Opacity/Hover', {
               reason: 'missing-mode-value',
-              missingModeName: 'Day',
+              missingModeName: 'Light',
             }),
             makeSkipped('Colour/Brand/Pink', {
               reason: 'path-collision',
@@ -280,19 +280,19 @@ describe('formatBuildSummary', () => {
       'Skipped 1 variable instance(s) with no value assigned for the requested mode:',
     );
     expect(lines).toContain(
-      '  - missing value for mode "Day" ← [Backpack] Opacity/Hover (modes: Day)',
+      '  - missing value for mode "Light" ← [Backpack] Opacity/Hover (modes: Light)',
     );
     expect(lines).toContain(
       "Skipped 1 variable instance(s) due to DTCG path collisions with another variable's name:",
     );
     expect(lines).toContain(
-      '  - collides with "Colour/Brand" ← [Backpack] Colour/Brand/Pink (modes: Day)',
+      '  - collides with "Colour/Brand" ← [Backpack] Colour/Brand/Pink (modes: Light)',
     );
   });
 
-  it('warns about FLOAT variables with unconstrained scopes and merges Day/Night duplicates', () => {
-    const dayOutput = makeOutput('Day');
-    dayOutput.stats.ambiguousFloatVariables = [
+  it('warns about FLOAT variables with unconstrained scopes and merges Light/Dark duplicates', () => {
+    const lightOutput = makeOutput('Light');
+    lightOutput.stats.ambiguousFloatVariables = [
       {
         variableName: 'Typography/Style/Label',
         variableId: 'v1',
@@ -301,8 +301,8 @@ describe('formatBuildSummary', () => {
         inferredType: 'dimension',
       },
     ];
-    const nightOutput = makeOutput('Night');
-    nightOutput.stats.ambiguousFloatVariables = [
+    const darkOutput = makeOutput('Dark');
+    darkOutput.stats.ambiguousFloatVariables = [
       {
         variableName: 'Typography/Style/Label',
         variableId: 'v1',
@@ -319,7 +319,7 @@ describe('formatBuildSummary', () => {
       },
     ];
     const lines = formatBuildSummary(
-      makeResult({ outputs: [dayOutput, nightOutput] }),
+      makeResult({ outputs: [lightOutput, darkOutput] }),
     );
 
     expect(
@@ -330,10 +330,10 @@ describe('formatBuildSummary', () => {
       ),
     ).toBe(true);
     expect(lines).toContain(
-      '  - scope=[ALL_SCOPES] ← [Backpack] Typography/Style/Label (modes: Day, Night)',
+      '  - scope=[ALL_SCOPES] ← [Backpack] Typography/Style/Label (modes: Dark, Light)',
     );
     expect(lines).toContain(
-      '  - scope=[(none)] ← [Backpack] Typography/Style/Subhead (modes: Night)',
+      '  - scope=[(none)] ← [Backpack] Typography/Style/Subhead (modes: Dark)',
     );
   });
 });

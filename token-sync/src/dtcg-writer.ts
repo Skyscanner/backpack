@@ -107,7 +107,7 @@ export function assertSafeOutputDir(outputDir: string): void {
 
 // Derive the output filename for one mode. Single-mode collections drop the
 // mode segment so the filename stays short and matches the ticket's expected
-// layout (e.g. `primitives.json`, `backpack.day.json`).
+// layout (e.g. `primitives.json`, `backpack.light.json`).
 export function DTCGFileNameFor(
   collectionName: string,
   modeName: string,

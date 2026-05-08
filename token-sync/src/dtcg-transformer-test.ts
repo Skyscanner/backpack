@@ -18,7 +18,7 @@
 
 import {
   BACKPACK_COLLECTION_ID,
-  BACKPACK_MODE_NIGHT,
+  BACKPACK_MODE_DARK,
   KEY_COLOUR_BERRY,
   KEY_COLOUR_PINK,
   PRIMITIVES_COLLECTION_ID,
@@ -254,14 +254,14 @@ describe('resolveVariableValue', () => {
     const context = makeContext({
       preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]),
     });
-    expect(resolveVariableValue(semanticCanvasDefault, 'Day', context)).toEqual(
+    expect(resolveVariableValue(semanticCanvasDefault, 'Light', context)).toEqual(
       {
         value: '{Colour.Pink}',
         preservedAliasTo: 'Colour.Pink',
       },
     );
     expect(
-      resolveVariableValue(semanticCanvasDefault, 'Night', context).value,
+      resolveVariableValue(semanticCanvasDefault, 'Dark', context).value,
     ).toBe('{Colour.Berry}');
   });
 
@@ -270,7 +270,7 @@ describe('resolveVariableValue', () => {
     // Canvas/Contrast -> Canvas/Default -> primitive Colour/Pink (preserved).
     // Since the intermediate target is NOT preserved, we walk through it;
     // the terminal target IS preserved, so we end on a {Colour.Pink} ref.
-    const result = resolveVariableValue(semanticCanvasContrast, 'Day', context);
+    const result = resolveVariableValue(semanticCanvasContrast, 'Light', context);
     expect(result.value).toBe('{Colour.Pink}');
     expect(result.inlinedFrom).toBe('Canvas.Default');
   });
@@ -284,20 +284,20 @@ describe('resolveVariableValue', () => {
       preservedReferenceKeys: new Set(),
     };
     const broken = response.meta.variables['variable-semantic-broken'];
-    expect(() => resolveVariableValue(broken, 'Day', context)).toThrow(
+    expect(() => resolveVariableValue(broken, 'Light', context)).toThrow(
       DTCGTransformError,
     );
-    expect(() => resolveVariableValue(broken, 'Day', context)).toThrow(
+    expect(() => resolveVariableValue(broken, 'Light', context)).toThrow(
       /Could not resolve alias target/,
     );
   });
 
   it('throws an alias-cycle DTCGTransformError when variables alias each other', () => {
     const context = makeContext({ includeCycle: true });
-    expect(() => resolveVariableValue(semanticCycleA, 'Day', context)).toThrow(
+    expect(() => resolveVariableValue(semanticCycleA, 'Light', context)).toThrow(
       DTCGTransformError,
     );
-    expect(() => resolveVariableValue(semanticCycleA, 'Day', context)).toThrow(
+    expect(() => resolveVariableValue(semanticCycleA, 'Light', context)).toThrow(
       /Alias cycle detected/,
     );
   });
@@ -520,28 +520,28 @@ describe('buildDTCGTreeForMode', () => {
     const context = makeContext({
       preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]),
     });
-    const dayOutput = buildDTCGTreeForMode(
+    const lightOutput = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
-      'Day',
+      'Light',
       [semanticCanvasDefault],
       context,
     );
-    expect(dayOutput.tree).toEqual({
+    expect(lightOutput.tree).toEqual({
       Canvas: {
         $type: 'color',
         Default: { $value: '{Colour.Pink}' },
       },
     });
-    expect(dayOutput.stats.preservedAliasCount).toBe(1);
-    expect(dayOutput.stats.inlinedAliasCount).toBe(0);
+    expect(lightOutput.stats.preservedAliasCount).toBe(1);
+    expect(lightOutput.stats.inlinedAliasCount).toBe(0);
 
-    const nightOutput = buildDTCGTreeForMode(
+    const darkOutput = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
-      'Night',
+      'Dark',
       [semanticCanvasDefault],
       context,
     );
-    expect(nightOutput.tree).toEqual({
+    expect(darkOutput.tree).toEqual({
       Canvas: {
         $type: 'color',
         Default: { $value: '{Colour.Berry}' },
@@ -556,7 +556,7 @@ describe('buildDTCGTreeForMode', () => {
     });
     const output = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
-      'Day',
+      'Light',
       [semanticSurface],
       context,
     );
@@ -600,7 +600,7 @@ describe('buildDTCGTreeForMode', () => {
     const broken = response.meta.variables['variable-semantic-broken'];
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
-      'Day',
+      'Light',
       [broken],
       {
         localVariablesById: response.meta.variables,
@@ -619,27 +619,27 @@ describe('buildDTCGTreeForMode', () => {
   });
 
   it('skips or throws on missing-mode-value', () => {
-    const noDay = {
-      id: 'variable-no-day',
-      key: 'key-no-day',
+    const noLight = {
+      id: 'variable-no-light',
+      key: 'key-no-light',
       name: 'Opacity/Hover',
       variableCollectionId: BACKPACK_COLLECTION_ID,
       resolvedType: 'FLOAT',
-      valuesByMode: { [BACKPACK_MODE_NIGHT]: 0.8 },
+      valuesByMode: { [BACKPACK_MODE_DARK]: 0.8 },
       scopes: ['OPACITY'],
       remote: false,
     } as unknown as LocalVariable;
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
-      'Day',
-      [noDay],
+      'Light',
+      [noLight],
       makeContext(),
     );
     expect(skippedCount).toBe(1);
     expect(skipped).toMatchObject({
       reason: 'missing-mode-value',
       variableName: 'Opacity/Hover',
-      missingModeName: 'Day',
+      missingModeName: 'Light',
     });
     expect(throwingCall).toThrow(DTCGTransformError);
   });
