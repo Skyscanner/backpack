@@ -15,18 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkHorizontalNav, {
-  HORIZONTAL_NAV_TYPES,
-  type Props as NavProps,
-} from './src/BpkHorizontalNav';
-import BpkHorizontalNavItem, {
-  type Props as ItemProps,
-  themeAttributes,
-} from './src/BpkHorizontalNavItem';
+import BpkCollapsibleContent from './BpkCollapsibleContent';
+import BpkCollapsibleIndicator from './BpkCollapsibleIndicator';
+import BpkCollapsibleRoot from './BpkCollapsibleRoot';
+import BpkCollapsibleRootProvider from './BpkCollapsibleRootProvider';
+import BpkCollapsibleTrigger from './BpkCollapsibleTrigger';
 
-export type BpkHorizontalNavProps = NavProps;
-export type BpkHorizontalNavItemProps = ItemProps;
-export { HORIZONTAL_NAV_TYPES, BpkHorizontalNavItem, themeAttributes };
-export default BpkHorizontalNav;
+const BpkCollapsible = {
+  Root: BpkCollapsibleRoot,
+  RootProvider: BpkCollapsibleRootProvider,
+  Trigger: BpkCollapsibleTrigger,
+  Indicator: BpkCollapsibleIndicator,
+  Content: BpkCollapsibleContent,
+};
+
+export default BpkCollapsible;

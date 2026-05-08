@@ -17,7 +17,6 @@
  */
 
 import BpkBadge, { BADGE_TYPES } from '../../../bpk-component-badge';
-import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
 import { cssModules } from '../../../bpk-react-utils';
 
 import type { BpkCompareColumn } from './common-types';
@@ -26,11 +25,9 @@ import STYLES from './BpkComparisonTable.module.scss';
 
 type BpkComparisonTableColumnHeaderProps = Pick<
   BpkCompareColumn,
-  'imageSrc' | 'imageAlt' | 'headerContent' | 'itemId' | 'bestTag' | 'removeA11yLabel'
+  'imageSrc' | 'imageAlt' | 'headerContent' | 'bestTag'
 > & {
-  removeLabel: string;
   bestTagLabel: string;
-  onRemove: (itemId: string) => void;
 };
 
 const getClassName = cssModules(STYLES);
@@ -41,10 +38,6 @@ const BpkComparisonTableColumnHeader = ({
   headerContent,
   imageAlt = '',
   imageSrc,
-  itemId,
-  onRemove,
-  removeA11yLabel,
-  removeLabel,
 }: BpkComparisonTableColumnHeaderProps) => (
   <div
     className={getClassName('bpk-comparison-table__header-content')}
@@ -64,17 +57,6 @@ const BpkComparisonTableColumnHeader = ({
 
     <div className={getClassName('bpk-comparison-table__header-id-section')}>
       {headerContent}
-    </div>
-
-    <div className={getClassName('bpk-comparison-table__remove-button')}>
-      <BpkButton
-        type={BUTTON_TYPES.link}
-        size={SIZE_TYPES.small}
-        onClick={() => onRemove(itemId)}
-        aria-label={removeA11yLabel}
-      >
-        {removeLabel}
-      </BpkButton>
     </div>
   </div>
 );

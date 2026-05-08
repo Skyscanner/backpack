@@ -1,0 +1,339 @@
+/**
+ * @jest-environment node
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { mkdtemp, rm } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+
+import { buildFixtureResponse } from './__fixtures__/figma-variable';
+import {
+  buildDTCG,
+  buildDTCGOutputs,
+  formatBuildSummary,
+} from './build-dtcg';
+import { FigmaApi } from './figma-api';
+import { TARGET_COLLECTION_NAMES } from './sync-helpers';
+
+import type { BuildDTCGResult } from './build-dtcg';
+import type { DTCGModeOutput, SkippedVariableRecord } from './types';
+
+jest.mock('./figma-api');
+
+describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
+  it('produces one DTCG output per (collection, mode), classified and with alias stats', () => {
+    const response = buildFixtureResponse();
+    const { classified, outputs } = buildDTCGOutputs(
+      response,
+      TARGET_COLLECTION_NAMES,
+    );
+
+    expect(classified).toEqual([
+      { collection: expect.objectContaining({ name: 'Backpack' }), role: 'semantic' },
+      {
+        collection: expect.objectContaining({ name: 'Primitives' }),
+        role: 'primitive',
+      },
+    ]);
+
+    // 1 primitives + 2 backpack modes
+    expect(outputs).toHaveLength(3);
+    expect(outputs.map((o) => `${o.collectionName}/${o.modeName}`)).toEqual([
+      'Backpack/Day',
+      'Backpack/Night',
+      'Primitives/Hex',
+    ]);
+
+    // Day tree exercises the full alias machinery: Canvas/Default aliases a
+    // primitive (preserved as {Colour.Pink}); Canvas/Contrast aliases another
+    // semantic in the same collection (inlined, transitively → {Colour.Pink}).
+    const [backpackDay, backpackNight, primitives] = outputs;
+    expect(backpackDay.tree).toEqual({
+      Canvas: {
+        $type: 'color',
+        Contrast: { $value: '{Colour.Pink}' },
+        Default: { $value: '{Colour.Pink}' },
+      },
+    });
+    expect(backpackDay.stats).toMatchObject({
+      preservedAliasCount: 1,
+      inlinedAliasCount: 1,
+    });
+
+    // Night just needs to confirm the per-mode alias swap landed.
+    expect(backpackNight.tree).toMatchObject({
+      Canvas: { Default: { $value: '{Colour.Berry}' } },
+    });
+
+    // Primitives: spot-check the role and one literal of each $type.
+    expect(primitives.role).toBe('primitive');
+    expect(primitives.tree).toMatchObject({
+      Colour: { Pink: { $value: '#ff66b3' } },
+      Spacing: { $type: 'dimension', md: { $value: '8px' } },
+    });
+  });
+
+  it('throws when no target collection is present locally', () => {
+    const response = buildFixtureResponse();
+    expect(() => buildDTCGOutputs(response, ['DoesNotExist'])).toThrow(
+      /None of the target collections/,
+    );
+  });
+});
+
+describe('buildDTCG (full pipeline)', () => {
+  let tempDir: string;
+  let mockGetLocalVariables: jest.Mock;
+
+  beforeEach(async () => {
+    tempDir = await mkdtemp(path.join(os.tmpdir(), 'token-sync-build-'));
+    mockGetLocalVariables = jest.fn();
+    (FigmaApi as jest.Mock).mockImplementation(() => ({
+      getLocalVariables: mockGetLocalVariables,
+    }));
+  });
+
+  afterEach(async () => {
+    await rm(tempDir, { force: true, recursive: true });
+  });
+
+  it('runs fetch → transform → write and returns a complete BuildDTCGResult', async () => {
+    const response = buildFixtureResponse();
+    mockGetLocalVariables.mockResolvedValue(response);
+
+    const result = await buildDTCG({
+      token: 'test-token',
+      fileKey: 'file-123',
+      targetNames: TARGET_COLLECTION_NAMES,
+      outputDir: tempDir,
+      now: () => new Date('2026-04-29T12:00:00.000Z'),
+    });
+
+    expect(mockGetLocalVariables).toHaveBeenCalledWith('file-123');
+    expect(result.outputDir).toBe(tempDir);
+    expect(result.classified).toHaveLength(2);
+    expect(result.outputs).toHaveLength(3);
+    expect(result.manifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
+    expect(result.manifest.files.map((f) => f.fileName).sort()).toEqual([
+      'backpack.day.json',
+      'backpack.night.json',
+      'primitives.json',
+    ]);
+  });
+});
+
+describe('formatBuildSummary', () => {
+  // Fills in dummy id/key so tests only need to spell out the fields they assert on.
+  function makeSkipped(
+    variableName: string,
+    overrides: Partial<SkippedVariableRecord> & {
+      reason: SkippedVariableRecord['reason'];
+    },
+  ): SkippedVariableRecord {
+    return {
+      variableId: 'unused-id',
+      variableKey: 'unused-key',
+      variableName,
+      ...overrides,
+    };
+  }
+
+  // Build a minimal Backpack DTCGModeOutput with the given skipped variables.
+  function makeOutput(
+    modeName: string,
+    skipped: SkippedVariableRecord[] = [],
+  ): DTCGModeOutput {
+    return {
+      collectionName: 'Backpack',
+      modeName,
+      role: 'semantic',
+      tree: {},
+      stats: {
+        tokenCount: 10,
+        preservedAliasCount: 5,
+        inlinedAliasCount: 2,
+        skippedVariableCount: skipped.length,
+        skippedVariables: skipped,
+        ambiguousFloatVariables: [],
+      },
+    };
+  }
+
+  // Minimal fake — we only exercise the formatter, not the writer.
+  function makeResult(overrides: Partial<BuildDTCGResult> = {}): BuildDTCGResult {
+    return {
+      classified: [
+        {
+          collection: { name: 'Backpack' } as BuildDTCGResult['classified'][number]['collection'],
+          role: 'semantic',
+        },
+        {
+          collection: { name: 'Primitives' } as BuildDTCGResult['classified'][number]['collection'],
+          role: 'primitive',
+        },
+      ],
+      outputs: [makeOutput('Day')],
+      missingNames: [],
+      manifest: {
+        generatedAt: '2026-04-29T12:00:00.000Z',
+        files: [
+          {
+            fileName: 'backpack.day.json',
+            collectionName: 'Backpack',
+            modeName: 'Day',
+            role: 'semantic',
+            variableCount: 10,
+            preservedAliasCount: 5,
+            inlinedAliasCount: 2,
+            skippedVariableCount: 0,
+          },
+        ],
+      },
+      outputDir: '/tmp/out',
+      ...overrides,
+    };
+  }
+
+  it('summarises classification, per-output stats, and footer lines', () => {
+    expect(formatBuildSummary(makeResult())).toEqual([
+      'Classified 2 collection(s): Backpack (semantic), Primitives (primitive).',
+      '- Backpack / Day: 10 tokens (5 preserved, 2 inlined)',
+      'Manifest: /tmp/out/manifest.json',
+      'Wrote 1 DTCG file(s) to /tmp/out.',
+    ]);
+  });
+
+  it('includes a warning when target collections are missing', () => {
+    const lines = formatBuildSummary(makeResult({ missingNames: ['VDL'] }));
+    expect(lines.some((l) => l.includes('Warning') && l.includes('VDL'))).toBe(true);
+  });
+
+  it('groups unresolved aliases by missing alias id and merges Day/Night duplicates', () => {
+    // Same variable + same missing alias on both modes → one bullet, "(modes: Day, Night)".
+    // A second variable with a different missing alias → its own bullet.
+    const dupOnDay = makeSkipped('Component/Button/bg-default', {
+      reason: 'unresolved-alias',
+      unresolvedAliasId: 'VariableID:1111:2222',
+    });
+    const dupOnNight = { ...dupOnDay };
+    const otherOnDay = makeSkipped('Component/Chip/bg-active', {
+      reason: 'unresolved-alias',
+      unresolvedAliasId: 'VariableID:3333:4444',
+    });
+
+    const lines = formatBuildSummary(
+      makeResult({
+        outputs: [
+          makeOutput('Day', [dupOnDay, otherOnDay]),
+          makeOutput('Night', [dupOnNight]),
+        ],
+      }),
+    );
+
+    expect(lines).toContain(
+      'Skipped 3 variable instance(s) due to unresolved aliases across 2 missing target variable(s) (likely cross-library or deleted references):',
+    );
+    expect(lines).toContain(
+      '  - missing VariableID:1111:2222 ← [Backpack] Component/Button/bg-default (modes: Day, Night)',
+    );
+    expect(lines).toContain(
+      '  - missing VariableID:3333:4444 ← [Backpack] Component/Chip/bg-active (modes: Day)',
+    );
+  });
+
+  it('emits a separate section per skip reason', () => {
+    const lines = formatBuildSummary(
+      makeResult({
+        outputs: [
+          makeOutput('Day', [
+            makeSkipped('Opacity/Hover', {
+              reason: 'missing-mode-value',
+              missingModeName: 'Day',
+            }),
+            makeSkipped('Colour/Brand/Pink', {
+              reason: 'path-collision',
+              collidingVariableName: 'Colour/Brand',
+            }),
+          ]),
+        ],
+      }),
+    );
+
+    expect(lines).toContain(
+      'Skipped 1 variable instance(s) with no value assigned for the requested mode:',
+    );
+    expect(lines).toContain(
+      '  - missing value for mode "Day" ← [Backpack] Opacity/Hover (modes: Day)',
+    );
+    expect(lines).toContain(
+      "Skipped 1 variable instance(s) due to DTCG path collisions with another variable's name:",
+    );
+    expect(lines).toContain(
+      '  - collides with "Colour/Brand" ← [Backpack] Colour/Brand/Pink (modes: Day)',
+    );
+  });
+
+  it('warns about FLOAT variables with unconstrained scopes and merges Day/Night duplicates', () => {
+    const dayOutput = makeOutput('Day');
+    dayOutput.stats.ambiguousFloatVariables = [
+      {
+        variableName: 'Typography/Style/Label',
+        variableId: 'v1',
+        variableKey: 'k1',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+    ];
+    const nightOutput = makeOutput('Night');
+    nightOutput.stats.ambiguousFloatVariables = [
+      {
+        variableName: 'Typography/Style/Label',
+        variableId: 'v1',
+        variableKey: 'k1',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+      {
+        variableName: 'Typography/Style/Subhead',
+        variableId: 'v2',
+        variableKey: 'k2',
+        scopes: [],
+        inferredType: 'dimension',
+      },
+    ];
+    const lines = formatBuildSummary(
+      makeResult({ outputs: [dayOutput, nightOutput] }),
+    );
+
+    expect(
+      lines.some(
+        (l) =>
+          l.startsWith('Warning: 3 FLOAT variable instance(s)') &&
+          l.includes('typed as "dimension"'),
+      ),
+    ).toBe(true);
+    expect(lines).toContain(
+      '  - scope=[ALL_SCOPES] ← [Backpack] Typography/Style/Label (modes: Day, Night)',
+    );
+    expect(lines).toContain(
+      '  - scope=[(none)] ← [Backpack] Typography/Style/Subhead (modes: Night)',
+    );
+  });
+});

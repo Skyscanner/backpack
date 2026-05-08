@@ -8,5 +8,6 @@ Applies only when modifying `.ts`, `.tsx`, `.js`, `.jsx`, `.scss`, or `.css` fil
 | Adding a new layout container, unsure if a Bpk layout component covers it | `.claude/guidelines/bpk-layout-components.md` |
 | Need to look up a token name (unsure of spelling or existence) | `.claude/guidelines/bpk-token-value-lookup.md` |
 | Writing a new UI element, unsure if an existing Bpk component covers it | `.claude/guidelines/bpk-component-reuse.md` |
+| Scaffolding a new component package, wrapping an Ark UI primitive, or creating a new `*.module.scss` file | `.claude/guidelines/bpk-new-component-workflow.md` |
 
 Read the file with the Read tool before proceeding with the relevant change.
