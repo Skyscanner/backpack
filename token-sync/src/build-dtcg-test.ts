@@ -113,13 +113,9 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
       modeNameMap: { Light: 'LightSky', Dark: 'DarkSky' },
     });
 
-    const renamed = outputs
-      .filter((o) => o.collectionName === 'Backpack')
-      .map((o) => ({ modeName: o.modeName, canvasDefault: o.tree.Canvas?.Default?.$value }));
-
-    expect(renamed).toEqual([
-      { modeName: 'DarkSky', canvasDefault: '{Colour.Berry}' },
-      { modeName: 'LightSky', canvasDefault: '{Colour.Pink}' },
+    expect(outputs.filter((o) => o.collectionName === 'Backpack')).toMatchObject([
+      { modeName: 'DarkSky', tree: { Canvas: { Default: { $value: '{Colour.Berry}' } } } },
+      { modeName: 'LightSky', tree: { Canvas: { Default: { $value: '{Colour.Pink}' } } } },
     ]);
   });
 });
