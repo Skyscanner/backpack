@@ -451,6 +451,17 @@
       },
       "$type": "color"
     },
+    "Speech Bubble": {
+      "Colour": {
+        "bg-contrast": {
+          "$value": "{Neutral.Grey 10}"
+        },
+        "bg-default": {
+          "$value": "{Neutral.White}"
+        }
+      },
+      "$type": "color"
+    },
     "Switch": {
       "android-switch-default-disabled": {
         "$value": "{Alpha.Black Alpha 20}"
@@ -600,6 +611,10 @@
       "$value": "{Colour.Sky Blue}"
     },
     "$type": "color"
+  },
+  "Title?": {
+    "$value": true,
+    "$type": "boolean"
   },
   "Typography": {
     "Family": {
