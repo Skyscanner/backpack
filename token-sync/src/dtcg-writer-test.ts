@@ -25,6 +25,11 @@ import path from 'node:path';
 import process from 'node:process';
 
 import {
+  BACKPACK_MODE_DARK,
+  BACKPACK_MODE_LIGHT,
+  PRIMITIVES_MODE_HEX,
+} from './__fixtures__/figma-variable';
+import {
   assertSafeOutputDir,
   assertUniqueFileNames,
   buildManifest,
@@ -42,7 +47,7 @@ const fixedNow = () => new Date('2026-04-29T12:00:00.000Z');
 function primitiveOutput(overrides: Partial<DTCGModeOutput> = {}): DTCGModeOutput {
   return {
     collectionName: 'Primitives',
-    modeName: 'Hex',
+    modeName: PRIMITIVES_MODE_HEX,
     role: 'primitive',
     tree: {
       Colour: {
@@ -63,7 +68,7 @@ function primitiveOutput(overrides: Partial<DTCGModeOutput> = {}): DTCGModeOutpu
 }
 
 function backpackOutput(
-  modeName: 'Day' | 'Night',
+  modeName: typeof BACKPACK_MODE_LIGHT | typeof BACKPACK_MODE_DARK,
   overrides: Partial<DTCGModeOutput> = {},
 ): DTCGModeOutput {
   return {
@@ -74,7 +79,7 @@ function backpackOutput(
       Canvas: {
         $type: 'color',
         Default: {
-          $value: modeName === 'Day' ? '{Colour.Pink}' : '{Colour.Berry}',
+          $value: modeName === BACKPACK_MODE_LIGHT ? '{Colour.Pink}' : '{Colour.Berry}',
         },
       },
     },
@@ -105,9 +110,9 @@ describe('slugify', () => {
 
 describe('DTCGFileNameFor', () => {
   it.each<[string, string, boolean, string]>([
-    ['Primitives', 'Hex', false, 'primitives.json'],
-    ['Backpack', 'Day', true, 'backpack.day.json'],
-    ['Backpack', 'Night', true, 'backpack.night.json'],
+    ['Primitives', PRIMITIVES_MODE_HEX, false, 'primitives.json'],
+    ['Backpack', BACKPACK_MODE_LIGHT, true, 'backpack.light.json'],
+    ['Backpack', BACKPACK_MODE_DARK, true, 'backpack.dark.json'],
   ])('%s/%s multiMode=%s → %s', (collection, mode, multiMode, expected) => {
     expect(DTCGFileNameFor(collection, mode, multiMode)).toBe(expected);
   });
@@ -117,8 +122,8 @@ describe('countModesPerCollection', () => {
   it('sums modes per collection name', () => {
     const counts = countModesPerCollection([
       primitiveOutput(),
-      backpackOutput('Day'),
-      backpackOutput('Night'),
+      backpackOutput(BACKPACK_MODE_LIGHT),
+      backpackOutput(BACKPACK_MODE_DARK),
     ]);
     expect(counts.get('Primitives')).toBe(1);
     expect(counts.get('Backpack')).toBe(2);
@@ -127,8 +132,8 @@ describe('countModesPerCollection', () => {
 
 const standardOutputs = [
   primitiveOutput(),
-  backpackOutput('Day'),
-  backpackOutput('Night'),
+  backpackOutput(BACKPACK_MODE_LIGHT),
+  backpackOutput(BACKPACK_MODE_DARK),
 ];
 const standardManifest = buildManifest(
   standardOutputs,
@@ -141,18 +146,18 @@ describe('buildManifest', () => {
     expect(standardManifest.generatedAt).toBe('2026-04-29T12:00:00.000Z');
     expect(standardManifest.files.map((f) => f.fileName)).toEqual([
       'primitives.json',
-      'backpack.day.json',
-      'backpack.night.json',
+      'backpack.light.json',
+      'backpack.dark.json',
     ]);
   });
 
   it('mirrors the output stats into each file record', () => {
-    const backpackDay = standardManifest.files.find(
-      (f) => f.fileName === 'backpack.day.json',
+    const backpackLight = standardManifest.files.find(
+      (f) => f.fileName === 'backpack.light.json',
     );
-    expect(backpackDay).toMatchObject({
+    expect(backpackLight).toMatchObject({
       collectionName: 'Backpack',
-      modeName: 'Day',
+      modeName: 'Light',
       role: 'semantic',
       variableCount: 1,
       preservedAliasCount: 1,
@@ -234,15 +239,15 @@ describe('writeDTCGFiles', () => {
 
     const outputs = [
       primitiveOutput(),
-      backpackOutput('Day'),
-      backpackOutput('Night'),
+      backpackOutput(BACKPACK_MODE_LIGHT),
+      backpackOutput(BACKPACK_MODE_DARK),
     ];
     const manifest = await writeDTCGFiles(outputs, tempDir, fixedNow);
 
     const entries = (await readdir(tempDir)).sort();
     expect(entries).toEqual([
-      'backpack.day.json',
-      'backpack.night.json',
+      'backpack.dark.json',
+      'backpack.light.json',
       'manifest.json',
       'primitives.json',
     ]);
@@ -252,8 +257,8 @@ describe('writeDTCGFiles', () => {
     ) as DTCGManifest;
     expect(manifestOnDisk).toEqual(manifest);
     expect(manifestOnDisk.files.map((f) => f.fileName).sort()).toEqual([
-      'backpack.day.json',
-      'backpack.night.json',
+      'backpack.dark.json',
+      'backpack.light.json',
       'primitives.json',
     ]);
 

@@ -55,7 +55,7 @@ export interface BuildDTCGOutputsResult {
 export function buildDTCGOutputs(
   response: GetLocalVariablesResponse,
   targetNames: readonly string[],
-  options: { skipUnresolvedAliases?: boolean } = {},
+  options: { skipUnresolvedAliases?: boolean; modeNameMap?: Record<string, string> } = {},
 ): BuildDTCGOutputsResult {
   const localVariables = response.meta.variables;
   const localCollectionsById = response.meta.variableCollections;
@@ -98,15 +98,21 @@ export function buildDTCGOutputs(
     // the on-disk layout doesn't change either way.
     const sortedModes = sortBy(collection.modes, (m) => m.name);
     for (const mode of sortedModes) {
-      outputs.push(
-        buildDTCGTreeForMode(
-          classifiedCollection,
-          mode.name,
-          collectionVariables,
-          context,
-          options,
-        ),
+      // Pass the original Figma mode name to the transformer — it uses it to
+      // look up `valuesByMode` via getCollectionModeId. Rename only the
+      // output, which drives filenames, manifest, and CLI output.
+      const output = buildDTCGTreeForMode(
+        classifiedCollection,
+        mode.name,
+        collectionVariables,
+        context,
+        options,
       );
+      const outputModeName = options.modeNameMap?.[mode.name] ?? mode.name;
+      if (outputModeName !== mode.name) {
+        output.modeName = outputModeName;
+      }
+      outputs.push(output);
     }
   }
 
@@ -119,6 +125,7 @@ export interface BuildDTCGOptions {
   targetNames: readonly string[];
   outputDir: string;
   skipUnresolvedAliases?: boolean;
+  modeNameMap?: Record<string, string>;
   now?: () => Date;
 }
 
@@ -140,7 +147,7 @@ export async function buildDTCG(
   const { classified, missingNames, outputs } = buildDTCGOutputs(
     response,
     options.targetNames,
-    { skipUnresolvedAliases: options.skipUnresolvedAliases },
+    { skipUnresolvedAliases: options.skipUnresolvedAliases, modeNameMap: options.modeNameMap },
   );
 
   const manifest = await writeDTCGFiles(
@@ -183,7 +190,7 @@ function addToGroup(
 }
 
 // Formats a SkippedByKey entry as a human-readable string, e.g.
-// "[Backpack] Canvas/Default (modes: Day, Night)"
+// "[Backpack] Canvas/Default (modes: Light, Dark)"
 function renderReferences(references: SkippedByKey): string {
   return sortBy(Array.from(references.values()), (r) => r.variableName)
     .map(({ collectionName, modes, variableName }) => {
@@ -205,7 +212,7 @@ function countInstances(groups: Map<string, SkippedByKey>): number {
 
 // Group all skipped variables in `outputs` by reason and append one section
 // per non-empty reason to `lines`. Each section gets its own header + bullet
-// list. Day/Night duplicates collapse into a single entry with mode labels
+// list. Light/Dark duplicates collapse into a single entry with mode labels
 // so the CLI stays legible when multiple failure modes hit one sync.
 function appendSkippedSections(
   lines: string[],
@@ -312,7 +319,7 @@ function appendAmbiguousFloatSection(
   lines: string[],
   outputs: DTCGModeOutput[],
 ): void {
-  // Same name can appear once per mode (Day/Night). Collapse so the CLI
+  // Same name can appear once per mode (Light/Dark). Collapse so the CLI
   // shows one bullet per variable with the modes it was seen in.
   const groups = new Map<string, SkippedByKey>();
   for (const output of outputs) {
