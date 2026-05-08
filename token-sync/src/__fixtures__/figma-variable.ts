@@ -59,8 +59,8 @@ function makeVariable(variable: PartialVariable): LocalVariable {
 }
 
 export const PRIMITIVES_MODE_HEX = 'mode-hex';
-export const BACKPACK_MODE_LIGHT = 'mode-light';
-export const BACKPACK_MODE_DARK = 'mode-dark';
+export const BACKPACK_MODE_LIGHT = 'Light';
+export const BACKPACK_MODE_DARK = 'Dark';
 
 export const PRIMITIVES_COLLECTION_ID = 'collection-primitives';
 export const BACKPACK_COLLECTION_ID = 'collection-backpack';

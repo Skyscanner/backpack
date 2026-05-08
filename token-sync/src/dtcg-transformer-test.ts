@@ -19,6 +19,7 @@
 import {
   BACKPACK_COLLECTION_ID,
   BACKPACK_MODE_DARK,
+  BACKPACK_MODE_LIGHT,
   KEY_COLOUR_BERRY,
   KEY_COLOUR_PINK,
   PRIMITIVES_COLLECTION_ID,
@@ -254,14 +255,14 @@ describe('resolveVariableValue', () => {
     const context = makeContext({
       preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]),
     });
-    expect(resolveVariableValue(semanticCanvasDefault, 'Light', context)).toEqual(
+    expect(resolveVariableValue(semanticCanvasDefault, BACKPACK_MODE_LIGHT, context)).toEqual(
       {
         value: '{Colour.Pink}',
         preservedAliasTo: 'Colour.Pink',
       },
     );
     expect(
-      resolveVariableValue(semanticCanvasDefault, 'Dark', context).value,
+      resolveVariableValue(semanticCanvasDefault, BACKPACK_MODE_DARK, context).value,
     ).toBe('{Colour.Berry}');
   });
 
@@ -270,7 +271,7 @@ describe('resolveVariableValue', () => {
     // Canvas/Contrast -> Canvas/Default -> primitive Colour/Pink (preserved).
     // Since the intermediate target is NOT preserved, we walk through it;
     // the terminal target IS preserved, so we end on a {Colour.Pink} ref.
-    const result = resolveVariableValue(semanticCanvasContrast, 'Light', context);
+    const result = resolveVariableValue(semanticCanvasContrast, BACKPACK_MODE_LIGHT, context);
     expect(result.value).toBe('{Colour.Pink}');
     expect(result.inlinedFrom).toBe('Canvas.Default');
   });
@@ -284,20 +285,20 @@ describe('resolveVariableValue', () => {
       preservedReferenceKeys: new Set(),
     };
     const broken = response.meta.variables['variable-semantic-broken'];
-    expect(() => resolveVariableValue(broken, 'Light', context)).toThrow(
+    expect(() => resolveVariableValue(broken, BACKPACK_MODE_LIGHT, context)).toThrow(
       DTCGTransformError,
     );
-    expect(() => resolveVariableValue(broken, 'Light', context)).toThrow(
+    expect(() => resolveVariableValue(broken, BACKPACK_MODE_LIGHT, context)).toThrow(
       /Could not resolve alias target/,
     );
   });
 
   it('throws an alias-cycle DTCGTransformError when variables alias each other', () => {
     const context = makeContext({ includeCycle: true });
-    expect(() => resolveVariableValue(semanticCycleA, 'Light', context)).toThrow(
+    expect(() => resolveVariableValue(semanticCycleA, BACKPACK_MODE_LIGHT, context)).toThrow(
       DTCGTransformError,
     );
-    expect(() => resolveVariableValue(semanticCycleA, 'Light', context)).toThrow(
+    expect(() => resolveVariableValue(semanticCycleA, BACKPACK_MODE_LIGHT, context)).toThrow(
       /Alias cycle detected/,
     );
   });
@@ -522,7 +523,7 @@ describe('buildDTCGTreeForMode', () => {
     });
     const lightOutput = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
-      'Light',
+      BACKPACK_MODE_LIGHT,
       [semanticCanvasDefault],
       context,
     );
@@ -537,7 +538,7 @@ describe('buildDTCGTreeForMode', () => {
 
     const darkOutput = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
-      'Dark',
+      BACKPACK_MODE_DARK,
       [semanticCanvasDefault],
       context,
     );
@@ -556,7 +557,7 @@ describe('buildDTCGTreeForMode', () => {
     });
     const output = buildDTCGTreeForMode(
       { collection: backpackCollection, role: 'semantic' },
-      'Light',
+      BACKPACK_MODE_LIGHT,
       [semanticSurface],
       context,
     );
@@ -600,7 +601,7 @@ describe('buildDTCGTreeForMode', () => {
     const broken = response.meta.variables['variable-semantic-broken'];
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
-      'Light',
+      BACKPACK_MODE_LIGHT,
       [broken],
       {
         localVariablesById: response.meta.variables,
@@ -631,7 +632,7 @@ describe('buildDTCGTreeForMode', () => {
     } as unknown as LocalVariable;
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: backpackCollection, role: 'semantic' },
-      'Light',
+      BACKPACK_MODE_LIGHT,
       [noLight],
       makeContext(),
     );
@@ -639,7 +640,7 @@ describe('buildDTCGTreeForMode', () => {
     expect(skipped).toMatchObject({
       reason: 'missing-mode-value',
       variableName: 'Opacity/Hover',
-      missingModeName: 'Light',
+      missingModeName: BACKPACK_MODE_LIGHT,
     });
     expect(throwingCall).toThrow(DTCGTransformError);
   });

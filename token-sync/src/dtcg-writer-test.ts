@@ -25,6 +25,10 @@ import path from 'node:path';
 import process from 'node:process';
 
 import {
+  BACKPACK_MODE_DARK,
+  BACKPACK_MODE_LIGHT,
+} from './__fixtures__/figma-variable';
+import {
   assertSafeOutputDir,
   assertUniqueFileNames,
   buildManifest,
@@ -63,7 +67,7 @@ function primitiveOutput(overrides: Partial<DTCGModeOutput> = {}): DTCGModeOutpu
 }
 
 function backpackOutput(
-  modeName: 'Light' | 'Dark',
+  modeName: typeof BACKPACK_MODE_LIGHT | typeof BACKPACK_MODE_DARK,
   overrides: Partial<DTCGModeOutput> = {},
 ): DTCGModeOutput {
   return {
@@ -74,7 +78,7 @@ function backpackOutput(
       Canvas: {
         $type: 'color',
         Default: {
-          $value: modeName === 'Light' ? '{Colour.Pink}' : '{Colour.Berry}',
+          $value: modeName === BACKPACK_MODE_LIGHT ? '{Colour.Pink}' : '{Colour.Berry}',
         },
       },
     },
@@ -106,8 +110,8 @@ describe('slugify', () => {
 describe('DTCGFileNameFor', () => {
   it.each<[string, string, boolean, string]>([
     ['Primitives', 'Hex', false, 'primitives.json'],
-    ['Backpack', 'Light', true, 'backpack.light.json'],
-    ['Backpack', 'Dark', true, 'backpack.dark.json'],
+    ['Backpack', BACKPACK_MODE_LIGHT, true, 'backpack.light.json'],
+    ['Backpack', BACKPACK_MODE_DARK, true, 'backpack.dark.json'],
   ])('%s/%s multiMode=%s → %s', (collection, mode, multiMode, expected) => {
     expect(DTCGFileNameFor(collection, mode, multiMode)).toBe(expected);
   });
@@ -117,8 +121,8 @@ describe('countModesPerCollection', () => {
   it('sums modes per collection name', () => {
     const counts = countModesPerCollection([
       primitiveOutput(),
-      backpackOutput('Light'),
-      backpackOutput('Dark'),
+      backpackOutput(BACKPACK_MODE_LIGHT),
+      backpackOutput(BACKPACK_MODE_DARK),
     ]);
     expect(counts.get('Primitives')).toBe(1);
     expect(counts.get('Backpack')).toBe(2);
@@ -127,8 +131,8 @@ describe('countModesPerCollection', () => {
 
 const standardOutputs = [
   primitiveOutput(),
-  backpackOutput('Light'),
-  backpackOutput('Dark'),
+  backpackOutput(BACKPACK_MODE_LIGHT),
+  backpackOutput(BACKPACK_MODE_DARK),
 ];
 const standardManifest = buildManifest(
   standardOutputs,
@@ -234,8 +238,8 @@ describe('writeDTCGFiles', () => {
 
     const outputs = [
       primitiveOutput(),
-      backpackOutput('Light'),
-      backpackOutput('Dark'),
+      backpackOutput(BACKPACK_MODE_LIGHT),
+      backpackOutput(BACKPACK_MODE_DARK),
     ];
     const manifest = await writeDTCGFiles(outputs, tempDir, fixedNow);
 

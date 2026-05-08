@@ -23,7 +23,11 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 
-import { buildFixtureResponse } from './__fixtures__/figma-variable';
+import {
+  BACKPACK_MODE_DARK,
+  BACKPACK_MODE_LIGHT,
+  buildFixtureResponse,
+} from './__fixtures__/figma-variable';
 import {
   buildDTCG,
   buildDTCGOutputs,
@@ -189,7 +193,7 @@ describe('formatBuildSummary', () => {
           role: 'primitive',
         },
       ],
-      outputs: [makeOutput('Light')],
+      outputs: [makeOutput(BACKPACK_MODE_LIGHT)],
       missingNames: [],
       manifest: {
         generatedAt: '2026-04-29T12:00:00.000Z',
@@ -197,7 +201,7 @@ describe('formatBuildSummary', () => {
           {
             fileName: 'backpack.light.json',
             collectionName: 'Backpack',
-            modeName: 'Light',
+            modeName: BACKPACK_MODE_LIGHT,
             role: 'semantic',
             variableCount: 10,
             preservedAliasCount: 5,
@@ -241,8 +245,8 @@ describe('formatBuildSummary', () => {
     const lines = formatBuildSummary(
       makeResult({
         outputs: [
-          makeOutput('Light', [dupOnLight, otherOnLight]),
-          makeOutput('Dark', [dupOnDark]),
+          makeOutput(BACKPACK_MODE_LIGHT, [dupOnLight, otherOnLight]),
+          makeOutput(BACKPACK_MODE_DARK, [dupOnDark]),
         ],
       }),
     );
@@ -262,7 +266,7 @@ describe('formatBuildSummary', () => {
     const lines = formatBuildSummary(
       makeResult({
         outputs: [
-          makeOutput('Light', [
+          makeOutput(BACKPACK_MODE_LIGHT, [
             makeSkipped('Opacity/Hover', {
               reason: 'missing-mode-value',
               missingModeName: 'Light',
@@ -291,7 +295,7 @@ describe('formatBuildSummary', () => {
   });
 
   it('warns about FLOAT variables with unconstrained scopes and merges Light/Dark duplicates', () => {
-    const lightOutput = makeOutput('Light');
+    const lightOutput = makeOutput(BACKPACK_MODE_LIGHT);
     lightOutput.stats.ambiguousFloatVariables = [
       {
         variableName: 'Typography/Style/Label',
@@ -301,7 +305,7 @@ describe('formatBuildSummary', () => {
         inferredType: 'dimension',
       },
     ];
-    const darkOutput = makeOutput('Dark');
+    const darkOutput = makeOutput(BACKPACK_MODE_DARK);
     darkOutput.stats.ambiguousFloatVariables = [
       {
         variableName: 'Typography/Style/Label',
