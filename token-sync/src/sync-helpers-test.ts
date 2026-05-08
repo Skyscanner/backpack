@@ -116,7 +116,7 @@ describe('filterLocalTargets', () => {
       ['Backpack', 'Primitives'],
     );
 
-    expect(result.matched).toEqual([backpackLocal, primitives]);
+    expect(result.matchedCollections).toEqual([backpackLocal, primitives]);
     expect(result.missingNames).toEqual([]);
     expect(result.availableLocalNames).toEqual([
       'Backpack',
@@ -131,7 +131,7 @@ describe('filterLocalTargets', () => {
       ['Backpack', 'Primitives'],
     );
 
-    expect(result.matched).toEqual([primitives]);
+    expect(result.matchedCollections).toEqual([primitives]);
     expect(result.missingNames).toEqual(['Backpack']);
     expect(result.availableLocalNames).toEqual(['Primitives']);
   });
@@ -142,7 +142,7 @@ describe('filterLocalTargets', () => {
       ['Backpack', 'Primitives'],
     );
 
-    expect(result.matched).toEqual([]);
+    expect(result.matchedCollections).toEqual([]);
     expect(result.missingNames).toEqual(['Backpack', 'Primitives']);
     expect(result.availableLocalNames).toEqual(['VDL']);
   });
