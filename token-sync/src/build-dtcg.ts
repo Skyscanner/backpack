@@ -55,7 +55,7 @@ export interface BuildDTCGOutputsResult {
 export function buildDTCGOutputs(
   response: GetLocalVariablesResponse,
   targetNames: readonly string[],
-  options: { skipUnresolvedAliases?: boolean } = {},
+  options: { skipUnresolvedAliases?: boolean; modeNameMap?: Record<string, string> } = {},
 ): BuildDTCGOutputsResult {
   const localVariables = response.meta.variables;
   const localCollectionsById = response.meta.variableCollections;
@@ -98,10 +98,11 @@ export function buildDTCGOutputs(
     // the on-disk layout doesn't change either way.
     const sortedModes = sortBy(collection.modes, (m) => m.name);
     for (const mode of sortedModes) {
+      const outputModeName = options.modeNameMap?.[mode.name] ?? mode.name;
       outputs.push(
         buildDTCGTreeForMode(
           classifiedCollection,
-          mode.name,
+          outputModeName,
           collectionVariables,
           context,
           options,
@@ -119,6 +120,7 @@ export interface BuildDTCGOptions {
   targetNames: readonly string[];
   outputDir: string;
   skipUnresolvedAliases?: boolean;
+  modeNameMap?: Record<string, string>;
   now?: () => Date;
 }
 
@@ -140,7 +142,7 @@ export async function buildDTCG(
   const { classified, missingNames, outputs } = buildDTCGOutputs(
     response,
     options.targetNames,
-    { skipUnresolvedAliases: options.skipUnresolvedAliases },
+    { skipUnresolvedAliases: options.skipUnresolvedAliases, modeNameMap: options.modeNameMap },
   );
 
   const manifest = await writeDTCGFiles(

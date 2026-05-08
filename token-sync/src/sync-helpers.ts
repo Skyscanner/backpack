@@ -22,6 +22,13 @@ import { FigmaApiError, type LocalVariableCollection } from './figma-api';
 
 export const TARGET_COLLECTION_NAMES = ['Primitives', 'Backpack'] as const;
 
+// Maps Figma mode names to the output names used in DTCG filenames and the
+// manifest. Figma uses "Day"/"Night"; we publish as "Light"/"Dark".
+export const MODE_NAME_OVERRIDES: Record<string, string> = {
+  Day: 'Light',
+  Night: 'Dark',
+};
+
 export function sortBy<T>(items: T[], key: (item: T) => string): T[] {
   return [...items].sort((a, b) => {
     const ka = key(a);
