@@ -58,9 +58,16 @@ function makeVariable(variable: PartialVariable): LocalVariable {
   return variable as unknown as LocalVariable;
 }
 
+// Mode names (the human-readable label visible in Figma).
 export const PRIMITIVES_MODE_HEX = 'Hex';
 export const BACKPACK_MODE_LIGHT = 'Light';
 export const BACKPACK_MODE_DARK = 'Dark';
+
+// Mode ids (opaque in real Figma — keep them distinct from names so the
+// fixture exercises the same shape the production API returns).
+export const PRIMITIVES_MODE_HEX_ID = 'mode-hex';
+export const BACKPACK_MODE_LIGHT_ID = 'mode-light';
+export const BACKPACK_MODE_DARK_ID = 'mode-dark';
 
 export const PRIMITIVES_COLLECTION_ID = 'collection-primitives';
 export const BACKPACK_COLLECTION_ID = 'collection-backpack';
@@ -82,8 +89,8 @@ export const primitivesCollection: LocalVariableCollection = makeCollection({
   id: PRIMITIVES_COLLECTION_ID,
   key: 'collection-key-primitives',
   name: 'Primitives',
-  modes: [{ modeId: PRIMITIVES_MODE_HEX, name: PRIMITIVES_MODE_HEX }],
-  defaultModeId: PRIMITIVES_MODE_HEX,
+  modes: [{ modeId: PRIMITIVES_MODE_HEX_ID, name: PRIMITIVES_MODE_HEX }],
+  defaultModeId: PRIMITIVES_MODE_HEX_ID,
   remote: false,
 });
 
@@ -92,10 +99,10 @@ export const backpackCollection: LocalVariableCollection = makeCollection({
   key: 'collection-key-backpack',
   name: 'Backpack',
   modes: [
-    { modeId: BACKPACK_MODE_LIGHT, name: 'Light' },
-    { modeId: BACKPACK_MODE_DARK, name: 'Dark' },
+    { modeId: BACKPACK_MODE_LIGHT_ID, name: BACKPACK_MODE_LIGHT },
+    { modeId: BACKPACK_MODE_DARK_ID, name: BACKPACK_MODE_DARK },
   ],
-  defaultModeId: BACKPACK_MODE_LIGHT,
+  defaultModeId: BACKPACK_MODE_LIGHT_ID,
   remote: false,
 });
 
@@ -108,7 +115,7 @@ export const primitiveColourPink: LocalVariable = makeVariable({
   resolvedType: 'COLOR',
   // Opaque RGBA → hex output
   valuesByMode: {
-    [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 },
+    [PRIMITIVES_MODE_HEX_ID]: { r: 1, g: 0.4, b: 0.7, a: 1 },
   },
   scopes: ['ALL_SCOPES'],
   remote: false,
@@ -122,7 +129,7 @@ export const primitiveColourBerry: LocalVariable = makeVariable({
   resolvedType: 'COLOR',
   // Transparent RGBA → rgba() output
   valuesByMode: {
-    [PRIMITIVES_MODE_HEX]: { r: 0, g: 0, b: 0, a: 0.5 },
+    [PRIMITIVES_MODE_HEX_ID]: { r: 0, g: 0, b: 0, a: 0.5 },
   },
   scopes: ['ALL_SCOPES'],
   remote: false,
@@ -134,7 +141,7 @@ export const primitiveSpacingMd: LocalVariable = makeVariable({
   name: 'Spacing/md',
   variableCollectionId: PRIMITIVES_COLLECTION_ID,
   resolvedType: 'FLOAT',
-  valuesByMode: { [PRIMITIVES_MODE_HEX]: 8 },
+  valuesByMode: { [PRIMITIVES_MODE_HEX_ID]: 8 },
   scopes: ['GAP'],
   remote: false,
 });
@@ -148,8 +155,8 @@ export const semanticCanvasDefault: LocalVariable = makeVariable({
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_LIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-colour-pink' },
-    [BACKPACK_MODE_DARK]: { type: 'VARIABLE_ALIAS', id: 'variable-colour-berry' },
+    [BACKPACK_MODE_LIGHT_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-colour-pink' },
+    [BACKPACK_MODE_DARK_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-colour-berry' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -165,8 +172,8 @@ export const semanticCanvasContrast: LocalVariable = makeVariable({
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_LIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-canvas-default' },
-    [BACKPACK_MODE_DARK]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-canvas-default' },
+    [BACKPACK_MODE_LIGHT_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-canvas-default' },
+    [BACKPACK_MODE_DARK_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-canvas-default' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -181,11 +188,11 @@ export const semanticSurface: LocalVariable = makeVariable({
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_LIGHT]: {
+    [BACKPACK_MODE_LIGHT_ID]: {
       type: 'VARIABLE_ALIAS',
       id: `VariableID:${KEY_COLOUR_PINK}/abc123`,
     },
-    [BACKPACK_MODE_DARK]: {
+    [BACKPACK_MODE_DARK_ID]: {
       type: 'VARIABLE_ALIAS',
       id: `VariableID:${KEY_COLOUR_BERRY}/abc123`,
     },
@@ -202,8 +209,8 @@ export const semanticCycleA: LocalVariable = makeVariable({
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_LIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-b' },
-    [BACKPACK_MODE_DARK]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-b' },
+    [BACKPACK_MODE_LIGHT_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-b' },
+    [BACKPACK_MODE_DARK_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-b' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -216,8 +223,8 @@ export const semanticCycleB: LocalVariable = makeVariable({
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_LIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-a' },
-    [BACKPACK_MODE_DARK]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-a' },
+    [BACKPACK_MODE_LIGHT_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-a' },
+    [BACKPACK_MODE_DARK_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-semantic-cycle-a' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,
@@ -231,8 +238,8 @@ export const semanticBroken: LocalVariable = makeVariable({
   variableCollectionId: BACKPACK_COLLECTION_ID,
   resolvedType: 'COLOR',
   valuesByMode: {
-    [BACKPACK_MODE_LIGHT]: { type: 'VARIABLE_ALIAS', id: 'variable-does-not-exist' },
-    [BACKPACK_MODE_DARK]: { type: 'VARIABLE_ALIAS', id: 'variable-does-not-exist' },
+    [BACKPACK_MODE_LIGHT_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-does-not-exist' },
+    [BACKPACK_MODE_DARK_ID]: { type: 'VARIABLE_ALIAS', id: 'variable-does-not-exist' },
   },
   scopes: ['ALL_FILLS'],
   remote: false,

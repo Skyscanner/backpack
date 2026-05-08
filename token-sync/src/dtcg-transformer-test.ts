@@ -19,11 +19,13 @@
 import {
   BACKPACK_COLLECTION_ID,
   BACKPACK_MODE_DARK,
+  BACKPACK_MODE_DARK_ID,
   BACKPACK_MODE_LIGHT,
   KEY_COLOUR_BERRY,
   KEY_COLOUR_PINK,
   PRIMITIVES_COLLECTION_ID,
   PRIMITIVES_MODE_HEX,
+  PRIMITIVES_MODE_HEX_ID,
   backpackCollection,
   buildFixtureResponse,
   primitiveColourBerry,
@@ -491,7 +493,7 @@ describe('buildDTCGTreeForMode', () => {
       name: 'Typography/Weight/Bold',
       variableCollectionId: PRIMITIVES_COLLECTION_ID,
       resolvedType: 'FLOAT',
-      valuesByMode: { [PRIMITIVES_MODE_HEX]: 700 },
+      valuesByMode: { [PRIMITIVES_MODE_HEX_ID]: 700 },
       // Designer left scopes unconstrained — type inference falls through to
       // `dimension` and the value gets a misleading "px" suffix.
       scopes: ['ALL_SCOPES'],
@@ -626,7 +628,7 @@ describe('buildDTCGTreeForMode', () => {
       name: 'Opacity/Hover',
       variableCollectionId: BACKPACK_COLLECTION_ID,
       resolvedType: 'FLOAT',
-      valuesByMode: { [BACKPACK_MODE_DARK]: 0.8 },
+      valuesByMode: { [BACKPACK_MODE_DARK_ID]: 0.8 },
       scopes: ['OPACITY'],
       remote: false,
     } as unknown as LocalVariable;
@@ -673,7 +675,7 @@ describe('buildDTCGTreeForMode', () => {
       name: 'Colour/Brand',
       variableCollectionId: PRIMITIVES_COLLECTION_ID,
       resolvedType: 'COLOR',
-      valuesByMode: { [PRIMITIVES_MODE_HEX]: { r: 1, g: 0, b: 0, a: 1 } },
+      valuesByMode: { [PRIMITIVES_MODE_HEX_ID]: { r: 1, g: 0, b: 0, a: 1 } },
       scopes: ['ALL_SCOPES'],
       remote: false,
     } as unknown as LocalVariable;
@@ -682,7 +684,7 @@ describe('buildDTCGTreeForMode', () => {
       id: 'variable-collide-child',
       key: 'key-collide-child',
       name: 'Colour/Brand/Pink',
-      valuesByMode: { [PRIMITIVES_MODE_HEX]: { r: 1, g: 0.4, b: 0.7, a: 1 } },
+      valuesByMode: { [PRIMITIVES_MODE_HEX_ID]: { r: 1, g: 0.4, b: 0.7, a: 1 } },
     } as unknown as LocalVariable;
     // Parent writes first (sorted: "Colour/Brand" < "Colour/Brand/Pink"); child collides.
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(

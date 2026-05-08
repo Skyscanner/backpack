@@ -100,6 +100,28 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
       /None of the target collections/,
     );
   });
+
+  // Regression: the mapping must rename only the OUTPUT mode (so filenames
+  // and the manifest reflect the published name). Value resolution still
+  // needs the original Figma mode name to find the modeId in valuesByMode.
+  // If the mapped name leaked into resolution, getCollectionModeId would
+  // miss and fall back to defaultModeId, collapsing all modes to the
+  // default's values — which is exactly what happened in the first cut.
+  it('renames output mode names without collapsing per-mode values', () => {
+    const response = buildFixtureResponse();
+    const { outputs } = buildDTCGOutputs(response, TARGET_COLLECTION_NAMES, {
+      modeNameMap: { Light: 'LightSky', Dark: 'DarkSky' },
+    });
+
+    const renamed = outputs
+      .filter((o) => o.collectionName === 'Backpack')
+      .map((o) => ({ modeName: o.modeName, canvasDefault: o.tree.Canvas?.Default?.$value }));
+
+    expect(renamed).toEqual([
+      { modeName: 'DarkSky', canvasDefault: '{Colour.Berry}' },
+      { modeName: 'LightSky', canvasDefault: '{Colour.Pink}' },
+    ]);
+  });
 });
 
 describe('buildDTCG (full pipeline)', () => {
