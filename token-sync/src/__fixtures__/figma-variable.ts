@@ -58,7 +58,7 @@ function makeVariable(variable: PartialVariable): LocalVariable {
   return variable as unknown as LocalVariable;
 }
 
-export const PRIMITIVES_MODE_HEX = 'mode-hex';
+export const PRIMITIVES_MODE_HEX = 'Hex';
 export const BACKPACK_MODE_LIGHT = 'Light';
 export const BACKPACK_MODE_DARK = 'Dark';
 
@@ -82,7 +82,7 @@ export const primitivesCollection: LocalVariableCollection = makeCollection({
   id: PRIMITIVES_COLLECTION_ID,
   key: 'collection-key-primitives',
   name: 'Primitives',
-  modes: [{ modeId: PRIMITIVES_MODE_HEX, name: 'Hex' }],
+  modes: [{ modeId: PRIMITIVES_MODE_HEX, name: PRIMITIVES_MODE_HEX }],
   defaultModeId: PRIMITIVES_MODE_HEX,
   remote: false,
 });

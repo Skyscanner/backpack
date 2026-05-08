@@ -243,10 +243,10 @@ describe('resolveAliasTarget', () => {
 describe('resolveVariableValue', () => {
   it('returns the correct literal value for non-alias variables', () => {
     const context = makeContext();
-    expect(resolveVariableValue(primitiveColourPink, 'Hex', context)).toEqual({
+    expect(resolveVariableValue(primitiveColourPink, PRIMITIVES_MODE_HEX, context)).toEqual({
       value: '#ff66b3',
     });
-    expect(resolveVariableValue(primitiveSpacingMd, 'Hex', context)).toEqual({
+    expect(resolveVariableValue(primitiveSpacingMd, PRIMITIVES_MODE_HEX, context)).toEqual({
       value: '8px',
     });
   });
@@ -310,7 +310,7 @@ describe('resolveVariableValue', () => {
       variableCollectionId: 'nonexistent-collection',
     } as LocalVariable;
     expect(() =>
-      resolveVariableValue(detachedVariable, 'Hex', context),
+      resolveVariableValue(detachedVariable, PRIMITIVES_MODE_HEX, context),
     ).toThrow(/Missing local collection/);
   });
 
@@ -320,10 +320,10 @@ describe('resolveVariableValue', () => {
       ...primitiveColourPink,
       valuesByMode: {},
     } as LocalVariable;
-    expect(() => resolveVariableValue(emptyModes, 'Hex', context)).toThrow(
+    expect(() => resolveVariableValue(emptyModes, PRIMITIVES_MODE_HEX, context)).toThrow(
       DTCGTransformError,
     );
-    expect(() => resolveVariableValue(emptyModes, 'Hex', context)).toThrow(
+    expect(() => resolveVariableValue(emptyModes, PRIMITIVES_MODE_HEX, context)).toThrow(
       /has no value for mode/,
     );
   });
@@ -463,7 +463,7 @@ describe('buildDTCGTreeForMode', () => {
     const context = makeContext();
     const output = buildDTCGTreeForMode(
       { collection: primitivesCollection, role: 'primitive' },
-      'Hex',
+      PRIMITIVES_MODE_HEX,
       [primitiveColourPink, primitiveColourBerry],
       context,
     );
@@ -500,7 +500,7 @@ describe('buildDTCGTreeForMode', () => {
     const context = makeContext();
     const output = buildDTCGTreeForMode(
       { collection: primitivesCollection, role: 'primitive' },
-      'Hex',
+      PRIMITIVES_MODE_HEX,
       [ambiguousWeight, primitiveSpacingMd],
       context,
     );
@@ -654,7 +654,7 @@ describe('buildDTCGTreeForMode', () => {
     } as LocalVariable;
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: primitivesCollection, role: 'primitive' },
-      'Hex',
+      PRIMITIVES_MODE_HEX,
       [bad],
       makeContext(),
     );
@@ -687,7 +687,7 @@ describe('buildDTCGTreeForMode', () => {
     // Parent writes first (sorted: "Colour/Brand" < "Colour/Brand/Pink"); child collides.
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(
       { collection: primitivesCollection, role: 'primitive' },
-      'Hex',
+      PRIMITIVES_MODE_HEX,
       [parent, child],
       makeContext(),
     );
@@ -704,13 +704,13 @@ describe('buildDTCGTreeForMode', () => {
     const context = makeContext();
     const first = buildDTCGTreeForMode(
       { collection: primitivesCollection, role: 'primitive' },
-      'Hex',
+      PRIMITIVES_MODE_HEX,
       [primitiveColourPink, primitiveColourBerry, primitiveSpacingMd],
       context,
     );
     const second = buildDTCGTreeForMode(
       { collection: primitivesCollection, role: 'primitive' },
-      'Hex',
+      PRIMITIVES_MODE_HEX,
       [primitiveSpacingMd, primitiveColourBerry, primitiveColourPink],
       context,
     );

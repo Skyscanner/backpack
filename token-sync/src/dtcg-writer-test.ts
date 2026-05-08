@@ -27,6 +27,7 @@ import process from 'node:process';
 import {
   BACKPACK_MODE_DARK,
   BACKPACK_MODE_LIGHT,
+  PRIMITIVES_MODE_HEX,
 } from './__fixtures__/figma-variable';
 import {
   assertSafeOutputDir,
@@ -46,7 +47,7 @@ const fixedNow = () => new Date('2026-04-29T12:00:00.000Z');
 function primitiveOutput(overrides: Partial<DTCGModeOutput> = {}): DTCGModeOutput {
   return {
     collectionName: 'Primitives',
-    modeName: 'Hex',
+    modeName: PRIMITIVES_MODE_HEX,
     role: 'primitive',
     tree: {
       Colour: {
@@ -109,7 +110,7 @@ describe('slugify', () => {
 
 describe('DTCGFileNameFor', () => {
   it.each<[string, string, boolean, string]>([
-    ['Primitives', 'Hex', false, 'primitives.json'],
+    ['Primitives', PRIMITIVES_MODE_HEX, false, 'primitives.json'],
     ['Backpack', BACKPACK_MODE_LIGHT, true, 'backpack.light.json'],
     ['Backpack', BACKPACK_MODE_DARK, true, 'backpack.dark.json'],
   ])('%s/%s multiMode=%s → %s', (collection, mode, multiMode, expected) => {
