@@ -98,16 +98,21 @@ export function buildDTCGOutputs(
     // the on-disk layout doesn't change either way.
     const sortedModes = sortBy(collection.modes, (m) => m.name);
     for (const mode of sortedModes) {
-      const outputModeName = options.modeNameMap?.[mode.name] ?? mode.name;
-      outputs.push(
-        buildDTCGTreeForMode(
-          classifiedCollection,
-          outputModeName,
-          collectionVariables,
-          context,
-          options,
-        ),
+      // Pass the original Figma mode name to the transformer — it uses it to
+      // look up `valuesByMode` via getCollectionModeId. Rename only the
+      // output, which drives filenames, manifest, and CLI output.
+      const output = buildDTCGTreeForMode(
+        classifiedCollection,
+        mode.name,
+        collectionVariables,
+        context,
+        options,
       );
+      const outputModeName = options.modeNameMap?.[mode.name] ?? mode.name;
+      if (outputModeName !== mode.name) {
+        output.modeName = outputModeName;
+      }
+      outputs.push(output);
     }
   }
 

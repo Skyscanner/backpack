@@ -1,10 +1,10 @@
 {
   "Canvas": {
     "Contrast": {
-      "$value": "{Neutral.Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}"
     },
     "Default": {
-      "$value": "{Neutral.White}"
+      "$value": "{Neutral.Dark Grey 10}"
     },
     "$type": "color"
   },
@@ -12,16 +12,16 @@
     "Badge": {
       "Colour": {
         "bg-default": {
-          "$value": "{Neutral.Grey 10}"
+          "$value": "{Neutral.Dark Grey 25}"
         },
         "bg-inverse": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 25}"
         },
         "bg-outline": {
           "$value": "{Alpha.Transparent}"
         },
         "bg-subtle": {
-          "$value": "{Neutral.Grey 10}"
+          "$value": "{Neutral.Dark Grey 25}"
         },
         "stroke-outline": {
           "$value": "{Neutral.White}"
@@ -53,16 +53,16 @@
           "$value": "{Neutral.Grey 20}"
         },
         "bg-destructive-pressed": {
-          "$value": "{Colour.Berry}"
+          "$value": "{Colour.Bright Berry}"
         },
         "bg-disabled": {
-          "$value": "{Neutral.Grey 20}"
+          "$value": "{Neutral.Dark Grey 00}"
         },
         "bg-feature-pressed": {
-          "$value": "{Colour.Sky Blue 85}"
+          "$value": "{Colour.Bright Blue 20}"
         },
         "bg-featured": {
-          "$value": "{Colour.Sky Blue}"
+          "$value": "{Colour.Bright Blue 20}"
         },
         "bg-footer": {
           "$value": "{Alpha.Transparent}"
@@ -71,7 +71,7 @@
           "$value": "{Alpha.Transparent}"
         },
         "bg-primary": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Sky Blue 85}"
         },
         "bg-primaryOnDark": {
           "$value": "{Neutral.White}"
@@ -83,19 +83,19 @@
           "$value": "{Neutral.White}"
         },
         "bg-primaryOnLight-pressed": {
-          "$value": "{Colour.Dark Sky 85}"
+          "$value": "{Colour.Dark Blue 100}"
         },
         "bg-secondary": {
-          "$value": "{Neutral.Grey 20}"
+          "$value": "{Neutral.Dark Grey 25}"
         },
         "bg-secondary-pressed": {
-          "$value": "{Neutral.Grey 30}"
+          "$value": "{Neutral.Dark Grey 10}"
         },
         "bg-secondaryOnContrast": {
-          "$value": "{Neutral.Grey 20}"
+          "$value": "{Neutral.Dark Grey 25}"
         },
         "bg-secondaryOnContrast-pressed": {
-          "$value": "{Neutral.Grey 30}"
+          "$value": "{Neutral.Dark Grey 10}"
         },
         "bg-secondaryOnDark": {
           "$value": "{Alpha.White Alpha 10}"
@@ -104,13 +104,13 @@
           "$value": "{Neutral.Dark Grey 00}"
         },
         "bg-secondaryOnDark-pressed": {
-          "$value": "{Colour.Midnight Sky}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "text-disruptive": {
-          "$value": "{Colour.Berry}"
+          "$value": "{Colour.Bright Berry}"
         },
         "text-feature": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 10}"
         },
         "text-footer": {
           "$value": "{Alpha.Transparent}"
@@ -119,7 +119,7 @@
           "$value": "{Neutral.White}"
         },
         "text-secondary": {
-          "$value": "{Neutral.Charcoal}"
+          "$value": "{Neutral.White}"
         },
         "$type": "color"
       },
@@ -137,10 +137,10 @@
           "$value": "48px"
         },
         "padding-horizontal-default": {
-          "$value": "16px"
+          "$value": "{Spacing.base}"
         },
         "padding-horizontal-large": {
-          "$value": "16px"
+          "$value": "{Spacing.base}"
         },
         "$type": "dimension"
       },
@@ -153,7 +153,7 @@
     },
     "Card Button": {
       "contained-fill": {
-        "$value": "{Alpha.White Alpha 80}"
+        "$value": "{Alpha.White Alpha 10}"
       },
       "$type": "color"
     },
@@ -169,31 +169,31 @@
     "Chip-group-filter": {
       "Colour": {
         "bg-icon-hover-on-image": {
-          "$value": "{Neutral.Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}"
         },
         "bg-icon-off-on-image": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "bg-icon-on-default": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "bg-icon-on-on-dark": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "bg-icon-on-on-image": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "stroke-icon-hover-default": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "stroke-icon-hover-on-dark": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "stroke-icon-off-default": {
-          "$value": "{Neutral.Grey 30}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "stroke-icon-off-on-dark": {
-          "$value": "{Alpha.White Alpha 50}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "$type": "color"
       },
@@ -207,61 +207,61 @@
     "Chip": {
       "Colour": {
         "bg-default-dismissible-hover": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "bg-default-on": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "bg-disabled": {
-          "$value": "{Neutral.Grey 20}"
+          "$value": "{Neutral.Dark Grey 00}"
         },
         "bg-onContrast-hover": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "bg-onContrast-on": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "bg-onDark-dismissible-hover": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "bg-onDark-hover": {
-          "$value": "{Neutral.White}"
+          "$value": "{Alpha.Transparent}"
         },
         "bg-onDark-off": {
           "$value": "{Alpha.Transparent}"
         },
         "bg-onDark-on": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "bg-onImage-dismissible-hover": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "bg-onImage-on": {
-          "$value": "{Neutral.Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}"
         },
         "border-default-dismissible-hover": {
           "$value": "{Alpha.Transparent}"
         },
         "border-default-hover": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Colour.Twilight}"
         },
         "border-default-off": {
-          "$value": "{Neutral.Grey 30}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "border-onContrast-off": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "border-onContrast-on": {
-          "$value": "{Colour.Dark Sky}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "border-onDark-disimissible-hover": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "border-onDark-hover": {
           "$value": "{Neutral.White}"
         },
         "border-onDark-off": {
-          "$value": "{Alpha.White Alpha 50}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "stroke-Off-on-canvas-contrast (new)": {
           "$value": "{Alpha.Transparent}"
@@ -279,16 +279,16 @@
           "$value": "{Neutral.White}"
         },
         "text-on-image-dismissible-icon": {
-          "$value": "{Neutral.Grey 40}"
+          "$value": "{Neutral.Dark Grey 40}"
         },
         "text-onDark": {
-          "$value": "{Neutral.Charcoal}"
+          "$value": "{Neutral.White}"
         },
         "text-onDark-dismisisble-hover": {
-          "$value": "{Neutral.Charcoal}"
+          "$value": "{Neutral.White}"
         },
         "text-onDark-dismisisble-icon": {
-          "$value": "{Neutral.Grey 40}"
+          "$value": "{Neutral.Dark Grey 40}"
         },
         "$type": "color"
       },
@@ -304,10 +304,10 @@
     },
     "Date Selector": {
       "cheapest-month-highlight": {
-        "$value": "{Colour.Dark Sky 85}"
+        "$value": "{Neutral.White}"
       },
       "flexible-date-card": {
-        "$value": "{Neutral.Grey 10}"
+        "$value": "{Neutral.Dark Grey 25}"
       },
       "$type": "color"
     },
@@ -319,22 +319,22 @@
     },
     "Info Banner": {
       "default": {
-        "$value": "{Neutral.Grey 10}"
+        "$value": "{Neutral.Dark Grey 20}"
       },
       "on-contrast": {
-        "$value": "{Neutral.White}"
+        "$value": "{Neutral.Dark Grey 20}"
       },
       "$type": "color"
     },
     "Map": {
       "cluster-pin": {
-        "$value": "{Colour.Dark Sky}"
+        "$value": "{Neutral.White}"
       },
       "cluster-pin-previous-selection": {
         "$value": "{Colour.Baby Blue 40}"
       },
       "marker-viewed": {
-        "$value": "{Alpha.White Alpha 80}"
+        "$value": "{Alpha.Black Alpha 80}"
       },
       "poi-pin": {
         "$value": "{Colour.Purple}"
@@ -346,34 +346,34 @@
     },
     "Navigation Tabs": {
       "hover": {
-        "$value": "{Colour.Dark Sky 85}"
+        "$value": "{Colour.Dark Blue 100}"
       },
       "outline": {
         "$value": "{Alpha.White Alpha 20}"
       },
       "selected": {
-        "$value": "{Colour.Sky Blue 85}"
+        "$value": "{Colour.Twilight}"
       },
       "$type": "color"
     },
     "Rating Bar": {
       "Default": {
-        "$value": "{Neutral.Grey 20}"
+        "$value": "{Neutral.Dark Grey 25}"
       },
       "On Contrast": {
-        "$value": "{Neutral.White}"
+        "$value": "{Neutral.Dark Grey 25}"
       },
       "$type": "color"
     },
     "Segmented Control": {
       "canvas-default": {
-        "$value": "{Neutral.Grey 10}"
+        "$value": "{Neutral.Dark Grey 20}"
       },
       "surface-contrast": {
-        "$value": "{Alpha.White Alpha 10}"
+        "$value": "{Neutral.Dark Grey 20}"
       },
       "surface-contrast-on": {
-        "$value": "{Colour.Sky Blue 85}"
+        "$value": "{Colour.Twilight}"
       },
       "$type": "color"
     },
@@ -447,27 +447,27 @@
     },
     "Skeleton": {
       "on-dark": {
-        "$value": "{Alpha.White Alpha 10}"
+        "$value": "{Neutral.Dark Grey 25}"
       },
       "$type": "color"
     },
     "Speech Bubble": {
       "Colour": {
         "bg-contrast": {
-          "$value": "{Neutral.Grey 10}"
+          "$value": "{Neutral.Dark Grey 20}"
         },
         "bg-default": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.Dark Grey 20}"
         }
       },
       "$type": "color"
     },
     "Switch": {
       "android-switch-default-disabled": {
-        "$value": "{Alpha.Black Alpha 20}"
+        "$value": "{Alpha.White Alpha 10}"
       },
       "android-switch-knob-disabled": {
-        "$value": "{Alpha.White Alpha 50}"
+        "$value": "{Alpha.White Alpha 20}"
       },
       "android-switch-on-contrast-fill-disabled": {
         "$value": "{Alpha.White Alpha 10}"
@@ -476,7 +476,7 @@
         "$value": "{Alpha.White Alpha 80}"
       },
       "ios-switch-default-off": {
-        "$value": "{Neutral.Grey 40}"
+        "$value": "{Alpha.White Alpha 20}"
       },
       "ios-switch-disabled": {
         "$value": "{Neutral.Grey 20}"
@@ -487,35 +487,35 @@
       "$type": "color"
     },
     "Trip Advisor": {
-      "$value": "#00aa6c",
+      "$value": "#9ce6c0",
       "$type": "color"
     },
     "iOS Tab-bar-fill": {
-      "$value": "{Alpha.White Alpha 80}",
+      "$value": "{Neutral.Dark Grey 25}",
       "$type": "color"
     }
   },
   "Core": {
     "Accent": {
-      "$value": "{Colour.Sky Blue}"
+      "$value": "{Colour.Bright Blue}"
     },
     "Eco": {
       "$value": "{Colour.Eco Green}"
     },
     "Primary": {
-      "$value": "{Colour.Dark Sky}"
+      "$value": "{Colour.Twilight}"
     },
     "$type": "color"
   },
   "Other": {
     "Line": {
-      "$value": "{Neutral.Grey 30}"
+      "$value": "{Alpha.White Alpha 20}"
     },
     "Line On Dark": {
-      "$value": "{Alpha.White Alpha 50}"
+      "$value": "{Alpha.White Alpha 20}"
     },
     "Overlay": {
-      "$value": "{Alpha.Black Alpha 20}"
+      "$value": "{Alpha.White Alpha 80}"
     },
     "Scrim": {
       "$value": "{Alpha.Black Alpha 70}"
@@ -527,88 +527,88 @@
   },
   "Status": {
     "Danger Fill": {
-      "$value": "{Colour.Muted Pink}"
+      "$value": "{Colour.Bright Pink}"
     },
     "Danger Spot": {
-      "$value": "{Colour.Berry}"
+      "$value": "{Colour.Bright Berry}"
     },
     "Success Fill": {
-      "$value": "{Colour.Muted Green}"
+      "$value": "{Colour.Bright Green 20}"
     },
     "Success Spot": {
-      "$value": "{Colour.Green}"
+      "$value": "{Colour.Bright Green}"
     },
     "Warning Fill": {
-      "$value": "{Colour.Muted Yellow}"
+      "$value": "{Colour.Bright Yellow}"
     },
     "Warning Spot": {
-      "$value": "{Colour.Amber}"
+      "$value": "{Colour.Yellow}"
     },
     "$type": "color"
   },
   "Surface": {
     "Contrast": {
-      "$value": "{Colour.Dark Sky}"
+      "$value": "{Neutral.Dark Grey 10}"
     },
     "Default": {
-      "$value": "{Neutral.White}"
+      "$value": "{Neutral.Dark Grey 20}"
     },
     "Elevated": {
-      "$value": "{Neutral.White}"
+      "$value": "{Neutral.Dark Grey 25}"
     },
     "Hero": {
-      "$value": "{Colour.Sky Blue}"
+      "$value": "{Neutral.Dark Grey 10}"
     },
     "Highlight": {
-      "$value": "{Neutral.Grey 20}"
+      "$value": "{Neutral.Dark Grey 25}"
     },
     "Low Contrast": {
-      "$value": "{Neutral.Grey 05}"
+      "$value": "{Neutral.Dark Grey 25}"
     },
     "Subtle": {
-      "$value": "{Colour.Baby Blue}"
+      "$value": "{Neutral.Dark Grey 25}"
     },
     "Tint": {
       "$value": "{Alpha.White Alpha 10}"
     },
     "🚧 Promo": {
-      "$value": "{Colour.Sky Blue}"
+      "$value": "{Neutral.Dark Grey 25}"
     },
     "$type": "color"
   },
   "Text": {
     "Disabled": {
-      "$value": "{Alpha.Black Alpha 20}"
+      "$value": "{Alpha.White Alpha 20}"
     },
     "Disabled on Dark": {
       "$value": "{Alpha.White Alpha 50}"
     },
     "Error": {
-      "$value": "{Colour.Berry}"
+      "$value": "{Colour.Bright Berry}"
     },
     "Inverse": {
-      "$value": "{Neutral.White}"
+      "$value": "{Neutral.Dark Grey 10}"
     },
     "On Dark": {
       "$value": "{Neutral.White}"
     },
     "On Light": {
-      "$value": "{Neutral.Charcoal}"
+      "$value": "{Neutral.Dark Grey 10}"
     },
     "Primary": {
-      "$value": "{Neutral.Charcoal}"
+      "$value": "{Neutral.White}"
     },
     "Secondary": {
-      "$value": "{Neutral.Grey 40}"
+      "$value": "{Neutral.Dark Grey 40}"
     },
     "Success": {
-      "$value": "{Colour.Green}"
+      "$value": "{Colour.Bright Green}"
     },
     "💀 DEPRECATED Link": {
-      "$value": "{Colour.Sky Blue}"
+      "$value": "{Colour.Bright Blue}"
     },
     "🚧 Hero": {
-      "$value": "{Colour.Sky Blue}"
+      "$value": "{Neutral.Night.Night Grey 10}"
     },
     "$type": "color"
   },

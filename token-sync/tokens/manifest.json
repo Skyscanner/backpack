@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T07:39:47.889Z",
+  "generatedAt": "2026-05-08T08:12:33.041Z",
   "files": [
     {
       "fileName": "backpack.light.json",
@@ -17,8 +17,8 @@
       "modeName": "Dark",
       "role": "semantic",
       "variableCount": 175,
-      "preservedAliasCount": 113,
-      "inlinedAliasCount": 36,
+      "preservedAliasCount": 116,
+      "inlinedAliasCount": 33,
       "skippedVariableCount": 4
     },
     {
