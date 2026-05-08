@@ -193,6 +193,74 @@ const InsideCard = () => (
   </BpkBox>
 );
 
+const NestedInsideCard = () => (
+  // Same width-constraint as InsideCard: BpkCardV2.Root has no intrinsic
+  // width, so the wrapper sets a stable size for both expand states.
+  <BpkBox width="25rem">
+    <BpkCardV2.Root>
+      <BpkCardV2.Body>
+        <BpkCollapsible.Root defaultOpen>
+          <BpkCollapsible.Trigger>
+            <span className={getClassName('bpk-collapsible-story__trigger-row')}>
+              <LeadingIcon />
+              <span
+                className={getClassName('bpk-collapsible-story__trigger-title')}
+              >
+                <BpkText textStyle={TEXT_STYLES.heading5}>Filters</BpkText>
+              </span>
+              <BpkCollapsible.Indicator>
+                <ChevronIcon />
+              </BpkCollapsible.Indicator>
+            </span>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkVStack
+              paddingTop={BpkSpacing.SM}
+              gap={BpkSpacing.SM}
+              alignItems="flex-start"
+            >
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                Outer collapsible content. Use it for the main section copy.
+              </BpkText>
+              <BpkCollapsible.Root>
+                <BpkCollapsible.Trigger>
+                  <span
+                    className={getClassName(
+                      'bpk-collapsible-story__trigger-row',
+                    )}
+                  >
+                    <span
+                      className={getClassName(
+                        'bpk-collapsible-story__trigger-title',
+                      )}
+                    >
+                      <BpkText textStyle={TEXT_STYLES.label1}>
+                        Advanced filters
+                      </BpkText>
+                    </span>
+                    <BpkCollapsible.Indicator>
+                      <ChevronIcon />
+                    </BpkCollapsible.Indicator>
+                  </span>
+                </BpkCollapsible.Trigger>
+                <BpkCollapsible.Content>
+                  <BpkBox paddingTop={BpkSpacing.SM}>
+                    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+                      Inner collapsible content. Each level keeps its own open
+                      state, so toggling the inner section does not affect the
+                      outer one.
+                    </BpkText>
+                  </BpkBox>
+                </BpkCollapsible.Content>
+              </BpkCollapsible.Root>
+            </BpkVStack>
+          </BpkCollapsible.Content>
+        </BpkCollapsible.Root>
+      </BpkCardV2.Body>
+    </BpkCardV2.Root>
+  </BpkBox>
+);
+
 const Controlled = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -448,6 +516,9 @@ export const OnContrastWithLeadingIconStory = {
   render: () => <OnContrastWithLeadingIcon />,
 };
 export const NestedInCard = { render: () => <InsideCard /> };
+export const NestedCollapsibleInCard = {
+  render: () => <NestedInsideCard />,
+};
 export const ControlledMode = { render: () => <Controlled /> };
 export const RootProviderWithUseBpkCollapsible = {
   render: () => <RootProviderWithStateMachine />,
