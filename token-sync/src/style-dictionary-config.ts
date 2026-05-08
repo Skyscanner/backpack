@@ -83,10 +83,7 @@ function kebabSegment(segment: string): string {
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
     .replace(/[\s_]+/g, '-')
     .toLowerCase()
-    // Replace any run of CSS-unsafe characters with a single dash. The `u`
-    // flag makes the regex iterate by Unicode code point so a multi-code-
-    // unit emoji (e.g. surrogate pair) becomes one run, not two.
-    .replace(/[^a-z0-9-]+/gu, '-')
+    .replace(/[^a-z0-9-]+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 }
@@ -170,11 +167,11 @@ export function findCssNameCollisions(
   walk(tree, []);
 
   const collisions: CssNameCollision[] = [];
-  for (const [name, sources] of seen) {
+  seen.forEach((sources, name) => {
     if (sources.length > 1) {
       collisions.push({ name, sources: sources.slice().sort() });
     }
-  }
+  });
   return collisions;
 }
 
@@ -204,7 +201,7 @@ export function formatCssNameCollisions(
   }
   return (
     `Found ${total} CSS variable name collision(s) after stripping leading ` +
-    `${[...STRIPPED_TOP_LEVEL_SEGMENTS].join(', ')} segment(s):\n` +
+    `${Array.from(STRIPPED_TOP_LEVEL_SEGMENTS).join(', ')} segment(s):\n` +
     `${lines.join('\n')}\n` +
     `Two or more DTCG tokens map to the same CSS custom property. Rename ` +
     `one of the colliding sources in Figma, or extend STRIPPED_TOP_LEVEL_SEGMENTS ` +
@@ -268,12 +265,12 @@ export function findAsymmetricSemanticTokens(
   const darkPaths = new Set(collectTokenPaths(darkTree));
   const lightOnly: string[] = [];
   const darkOnly: string[] = [];
-  for (const tokenPath of lightPaths) {
+  lightPaths.forEach((tokenPath) => {
     if (!darkPaths.has(tokenPath)) lightOnly.push(tokenPath);
-  }
-  for (const tokenPath of darkPaths) {
+  });
+  darkPaths.forEach((tokenPath) => {
     if (!lightPaths.has(tokenPath)) darkOnly.push(tokenPath);
-  }
+  });
   return { lightOnly: lightOnly.sort(), darkOnly: darkOnly.sort() };
 }
 

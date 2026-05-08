@@ -43,15 +43,9 @@ import type {
   DimensionViolation,
 } from './style-dictionary-config';
 
-// Custom name transform: drops the leading `Component` group from the path
-// so `Component.Badge.Colour.bg-default` emits as `--bpk-badge-colour-bg-default`
-// instead of `--bpk-component-badge-colour-bg-default`. The Component prefix
-// comes from Figma's organisational hierarchy and carries no information
-// downstream consumers need.
-//
-// Registered once at module load. SD's registry is a module-scoped singleton
-// so re-importing this file (e.g. across jest workers) is safe — the same
-// name is overwritten with the same implementation.
+// Drops the leading `Component` group so `Component.Badge.Colour.bg-default`
+// emits as `--bpk-badge-…` not `--bpk-component-badge-…`.
+// SD's registry is module-scoped, so re-importing is safe.
 const BPK_NAME_TRANSFORM = 'name/bpk-kebab';
 StyleDictionary.registerTransform({
   name: BPK_NAME_TRANSFORM,
