@@ -278,4 +278,39 @@ describe('writeDTCGFiles', () => {
 
     await rm(secondDir, { force: true, recursive: true });
   });
+
+  it('leaves the previous output intact and cleans up staging when a write fails', async () => {
+    // Seed `tempDir` with a previous successful run.
+    await writeDTCGFiles([primitiveOutput()], tempDir, fixedNow);
+    const before = (await readdir(tempDir)).sort();
+    const previousPrimitives = await readFile(
+      path.join(tempDir, 'primitives.json'),
+      'utf8',
+    );
+
+    // A circular tree makes `JSON.stringify` throw inside the staging write,
+    // exercising the catch path without monkey-patching node:fs.
+    const broken = primitiveOutput();
+    const cycle: Record<string, unknown> = {};
+    cycle.self = cycle;
+    broken.tree = cycle as DTCGModeOutput['tree'];
+
+    await expect(
+      writeDTCGFiles([broken], tempDir, fixedNow),
+    ).rejects.toThrow();
+
+    // outputDir is byte-identical to the previous run.
+    const after = (await readdir(tempDir)).sort();
+    expect(after).toEqual(before);
+    expect(
+      await readFile(path.join(tempDir, 'primitives.json'), 'utf8'),
+    ).toBe(previousPrimitives);
+
+    // No staging dir is left behind alongside outputDir.
+    const parentEntries = await readdir(path.dirname(tempDir));
+    const stagingLeftovers = parentEntries.filter((entry) =>
+      entry.startsWith(`${path.basename(tempDir)}.staging-`),
+    );
+    expect(stagingLeftovers).toEqual([]);
+  });
 });

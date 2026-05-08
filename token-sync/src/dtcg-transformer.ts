@@ -617,9 +617,6 @@ export function buildDTCGTreeForMode(
       throw error;
     }
 
-    if (resolved.preservedAliasTo) preservedAliasCount += 1;
-    if (resolved.inlinedFrom) inlinedAliasCount += 1;
-
     try {
       setTokenAtPath(tree, variable.name, {
         $value: resolved.value,
@@ -632,14 +629,15 @@ export function buildDTCGTreeForMode(
         error.reason === TRANSFORM_ERROR_REASONS.pathCollision
       ) {
         skippedVariables.push({ ...baseRecord, reason: SKIPPED_VARIABLE_REASONS.pathCollision, collidingVariableName: error.collidingVariableName });
-        // Undo the alias counters we bumped for a write that didn't land.
-        if (resolved.preservedAliasTo) preservedAliasCount -= 1;
-        if (resolved.inlinedFrom) inlinedAliasCount -= 1;
         return;
       }
       throw error;
     }
 
+    // Only commit stats after the write lands so a later collision can't
+    // leave the counters out of sync with the tree.
+    if (resolved.preservedAliasTo) preservedAliasCount += 1;
+    if (resolved.inlinedFrom) inlinedAliasCount += 1;
     writtenVariables.push(variable);
   };
 

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, rename, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import process from 'node:process';
@@ -170,8 +170,9 @@ export function stringifyDTCG(value: unknown): string {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
-// Write outputs + manifest to `outputDir`. Clears the directory first so
-// stale files from a previous run are not left behind. Returns the manifest.
+// Write outputs + manifest to `outputDir`. Stages the new tree in a sibling
+// directory and swaps it into place at the end so a mid-write failure leaves
+// the existing `outputDir` untouched.
 export async function writeDTCGFiles(
   outputs: DTCGModeOutput[],
   outputDir: string,
@@ -185,23 +186,47 @@ export async function writeDTCGFiles(
   const manifest = buildManifest(outputs, modeCounts, now().toISOString());
   assertUniqueFileNames(manifest);
 
-  await rm(outputDir, { force: true, recursive: true });
-  await mkdir(outputDir, { recursive: true });
+  // Stage in a sibling directory so any failure during writing leaves the
+  // existing `outputDir` (which is committed to git) untouched. The swap at
+  // the end is the only step that mutates `outputDir`.
+  const stagingDir = `${outputDir}.staging-${process.pid}-${Date.now()}`;
+  assertSafeOutputDir(stagingDir);
 
-  // Issue all token-file writes in parallel — they're independent siblings
-  // under `outputDir`. Awaiting in-loop would serialize them needlessly.
-  await Promise.all(
-    outputs.map((output, index) =>
-      writeFile(
-        path.join(outputDir, manifest.files[index].fileName),
-        stringifyDTCG(output.tree),
-        'utf8',
+  try {
+    // Pre-clean any leftover staging dir from a previous crashed run.
+    await rm(stagingDir, { force: true, recursive: true });
+    await mkdir(stagingDir, { recursive: true });
+
+    // Issue all token-file writes in parallel — they're independent siblings
+    // under `stagingDir`. Awaiting in-loop would serialize them needlessly.
+    await Promise.all(
+      outputs.map((output, index) =>
+        writeFile(
+          path.join(stagingDir, manifest.files[index].fileName),
+          stringifyDTCG(output.tree),
+          'utf8',
+        ),
       ),
-    ),
-  );
+    );
 
-  const manifestPath = path.join(outputDir, 'manifest.json');
-  await writeFile(manifestPath, stringifyDTCG(manifest), 'utf8');
+    await writeFile(
+      path.join(stagingDir, 'manifest.json'),
+      stringifyDTCG(manifest),
+      'utf8',
+    );
+
+    // Swap into place. `rename` over a non-empty directory isn't supported,
+    // so remove the old tree first; the window between rm and rename is
+    // narrow, and on failure the staging dir is preserved on disk for
+    // manual recovery.
+    await rm(outputDir, { force: true, recursive: true });
+    await rename(stagingDir, outputDir);
+  } catch (error) {
+    // Drop the half-written staging dir. `outputDir` itself is either
+    // untouched (failure before rm) or fully written (failure after rename).
+    await rm(stagingDir, { force: true, recursive: true });
+    throw error;
+  }
 
   return manifest;
 }
