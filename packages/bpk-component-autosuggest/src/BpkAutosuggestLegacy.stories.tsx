@@ -165,7 +165,7 @@ class AutosuggestExample extends Component<Props, State> {
     });
   };
 
-  onSuggestionsFetchRequested = ({ value }) => {
+  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
     this.setState({
       suggestions: getSuggestions(value, this.props.hanzi),
     });
@@ -263,7 +263,7 @@ export const SmallInput = {
 
 export const VisualTest = {
   render: () => <AutosuggestExample alwaysRenderSuggestions />,
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
 
     const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field
