@@ -403,6 +403,10 @@ export const ComposerOver500 = {
   render: () => <ComposerOver500Example />,
 };
 
+export const WithToolbar = {
+  render: () => <WithToolbarExample />,
+};
+
 export const Cars = {
   render: () => <CarsExample />,
 };
@@ -452,10 +456,6 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-export const WithToolbar = {
-  render: () => <WithToolbarExample />,
 };
 
 export const WithCustomSendButton = {
