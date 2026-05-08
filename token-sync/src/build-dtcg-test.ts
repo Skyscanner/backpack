@@ -37,7 +37,7 @@ import { FigmaApi } from './figma-api';
 import { TARGET_COLLECTION_NAMES } from './sync-helpers';
 
 import type { BuildDTCGResult } from './build-dtcg';
-import type { DTCGModeOutput, SkippedVariableRecord } from './types';
+import type { DTCGModeOutput, DTCGToken, DTCGTree, SkippedVariableRecord } from './types';
 
 jest.mock('./figma-api');
 
@@ -115,7 +115,7 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
 
     const renamed = outputs
       .filter((o) => o.collectionName === 'Backpack')
-      .map((o) => ({ modeName: o.modeName, canvasDefault: o.tree.Canvas?.Default?.$value }));
+      .map((o) => ({ modeName: o.modeName, canvasDefault: ((o.tree.Canvas as DTCGTree)?.Default as DTCGToken | undefined)?.$value }));
 
     expect(renamed).toEqual([
       { modeName: 'DarkSky', canvasDefault: '{Colour.Berry}' },
