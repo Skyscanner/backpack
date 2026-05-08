@@ -47,7 +47,7 @@ From the repo root:
 
 ```bash
 npm install
-npm run sync
+npm run tokens:fetch
 ```
 
 Output:
@@ -81,5 +81,46 @@ place depending on whether you're running locally or in CI.
 
 ## Stage 2 — DTCG → CSS
 
-_Coming next: style-dictionary transforms the DTCG files above into CSS custom
-properties._
+[Style Dictionary](https://styledictionary.com/) v5 reads the DTCG files above
+and emits two CSS files — one per theme — to `token-sync/css/`.
+
+From the repo root, **after** running Stage 1:
+
+```bash
+npm run tokens:build-css
+```
+
+Output:
+
+```text
+token-sync/css/
+├─ theme-backpack-light.css     # :root                    { --bpk-…: <light value>; }
+└─ theme-backpack-dark.css      # :root[data-theme="dark"] { --bpk-…: <dark value>;  }
+```
+
+Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
+
+### Things worth knowing
+
+- **Light / Dark symmetry is enforced.** Every token must exist in both modes;
+  any that are missing from one mode will abort the build. Fix it in Figma by adding the missing path to the other mode.
+- **`Component` prefix is stripped.** `Component.Badge.Colour.bg-default`
+  becomes `--bpk-badge-colour-bg-default`. If stripping would cause two tokens
+  to collide on the same CSS variable name, the build refuses and tells you
+  which ones to rename in Figma.
+- **Non-`px` dimensions abort the build.** Every `$type: dimension` value must
+  be `Xpx` (e.g. `"16px"`) or a DTCG alias; other units or bare numbers are
+  rejected so they can't be silently miscalculated during `px → rem` conversion.
+- **The CSS lives outside `token-sync/tokens/`** so Stage 1's directory wipe
+  doesn't clobber it.
+
+### Overriding paths
+
+`DTCG_OUTPUT_DIR` and `CSS_OUTPUT_DIR` can be set to absolute paths if the
+default layout doesn't suit your build pipeline.
+
+### Combined sync + build
+
+```bash
+npm run tokens:sync
+```
