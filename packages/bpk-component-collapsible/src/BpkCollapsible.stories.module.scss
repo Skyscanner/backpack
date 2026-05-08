@@ -18,18 +18,6 @@
 
 @use '../../bpk-mixins/tokens';
 
-.bpk-collapsible-story__trigger-row {
-  display: flex;
-  align-items: center;
-  gap: tokens.bpk-spacing-sm();
-  inline-size: 100%;
-}
-
-.bpk-collapsible-story__trigger-title {
-  flex-grow: 1;
-  min-inline-size: 0;
-}
-
 .bpk-collapsible-story__show-more-copy {
   padding-block-end: tokens.bpk-spacing-sm();
 }

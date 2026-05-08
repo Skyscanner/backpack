@@ -19,18 +19,16 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/utils';
 
-// Matches BpkAccordion (200ms via AnimateHeight). Sourced from the
-// foundations duration scale rather than hardcoded so the two stay in sync.
+// Matches BpkAccordion (200ms via AnimateHeight). Sourced from foundations
+// rather than hardcoded so the two stay in sync.
 $collapsible-duration: tokens.$bpk-duration-sm;
 
-// Root — invisible container; consumers control its surface (e.g. inside BpkCard).
-// `inline-size: 100%` guarantees the collapsible fills its parent regardless of how the
-// parent lays out children. Without this, a flex/grid parent (e.g. BpkVStack,
-// BpkCardV2.Body) would size the root to the wider of trigger/content, causing
-// the wrapper to visibly shrink and grow as the content expands or collapses.
+// `inline-size: 100%` stops a flex/grid parent (e.g. BpkVStack, BpkCardV2.Body)
+// from sizing the root to the wider of trigger/content, which would make the
+// wrapper visibly shrink and grow as the content expands or collapses.
 // `min-inline-size: 0` lets the root shrink below its content's intrinsic
-// min-width
-// so that flex/grid children honour the parent's width instead of overflowing it.
+// min-width so flex/grid children honour the parent's width instead of
+// overflowing it.
 .bpk-collapsible {
   display: block;
   inline-size: 100%;
@@ -50,16 +48,21 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   }
 }
 
-// Trigger — clickable header row. Renders as a real <button> via Ark.
+// Trigger is the flex row itself — leading accessories cluster on the start
+// with `gap`, the Indicator pulls to the end via `margin-inline-start: auto`,
+// and consumers drop content directly without a wrapper span (which would
+// break HTML5 phrasing-content rules inside <button>).
 .bpk-collapsible__trigger {
   display: flex;
   padding: 0;
+  align-items: center;
   border: 0;
   background: transparent;
   color: inherit;
   text-align: start;
   cursor: pointer;
   appearance: none;
+  gap: tokens.bpk-spacing-sm();
   inline-size: 100%;
 
   // Native <button>:disabled — Ark only emits data-disabled, but we forward
@@ -80,13 +83,16 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   }
 }
 
-// Indicator — chevron wrapper. Rotates when open.
+// `margin-inline-start: auto` parks the indicator at the end of the trigger
+// flex row so leading children keep their natural `gap` spacing without a
+// wrapper.
 .bpk-collapsible__indicator {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   transition: transform $collapsible-duration ease;
   color: inherit;
+  margin-inline-start: auto;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -101,7 +107,7 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   }
 }
 
-// Content — animated expandable region. Ark exposes --height as a CSS var.
+// Ark exposes --height as a CSS var; the keyframes below interpolate against it.
 .bpk-collapsible__content {
   overflow: hidden;
 

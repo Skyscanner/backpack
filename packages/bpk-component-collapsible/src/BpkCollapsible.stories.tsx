@@ -42,7 +42,7 @@ import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkCollapsible.stories.module.scss';
 
-// Icons are used as flex items inside the trigger row, not inline text. Skip
+// Icons sit inline as flex children of the trigger button. Skip
 // withButtonAlignment — its margin-top is calculated for inline alignment with
 // a button's line-height and visually offsets icons when combined with
 // `align-items: center` in a flex container.
@@ -51,23 +51,21 @@ const LeadingIcon = AirportsIcon;
 const getClassName = cssModules(STYLES);
 const SHOW_MORE_COLLAPSED_HEIGHT = '3.5rem';
 
-// Trigger contents stay as <span>s with a SCSS-driven flex row instead of
-// BpkFlex / BpkHStack. BpkCollapsible.Trigger renders a <button>, and HTML5
-// only allows phrasing content inside a button — Bpk layout components render
-// <div>s, which browsers will silently reparent out of the button. See
+// BpkCollapsible.Trigger is itself the flex row (display: flex / align-items:
+// center / gap / inline-size: 100%) and BpkCollapsible.Indicator pulls itself
+// to the end via auto margin, so contents drop in directly. Don't wrap them
+// in BpkFlex / BpkHStack: the Trigger renders a <button> and HTML5 only
+// allows phrasing content inside it; Bpk layout components render <div>s,
+// which browsers silently reparent. See
 // .claude/guidelines/bpk-layout-components.md ("Inside a <button> element").
 
 const Basic = () => (
   <BpkCollapsible.Root>
     <BpkCollapsible.Trigger>
-      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-          <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
-        </span>
-        <BpkCollapsible.Indicator>
-          <ChevronIcon />
-        </BpkCollapsible.Indicator>
-      </span>
+      <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
+      <BpkCollapsible.Indicator>
+        <ChevronIcon />
+      </BpkCollapsible.Indicator>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
       <BpkBox paddingTop={BpkSpacing.SM}>
@@ -82,16 +80,12 @@ const Basic = () => (
 const WithIconAndLabel = () => (
   <BpkCollapsible.Root defaultOpen>
     <BpkCollapsible.Trigger>
-      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-        <LeadingIcon />
-        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-          <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
-        </span>
-        <BpkText textStyle={TEXT_STYLES.label2}>Label</BpkText>
-        <BpkCollapsible.Indicator>
-          <ChevronIcon />
-        </BpkCollapsible.Indicator>
-      </span>
+      <LeadingIcon />
+      <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
+      <BpkText textStyle={TEXT_STYLES.label2}>Label</BpkText>
+      <BpkCollapsible.Indicator>
+        <ChevronIcon />
+      </BpkCollapsible.Indicator>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
       <BpkBox paddingTop={BpkSpacing.SM}>
@@ -110,16 +104,10 @@ const OnContrast = () => (
   <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
     <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast} defaultOpen>
       <BpkCollapsible.Trigger>
-        <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-          <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-            <BpkText textStyle={TEXT_STYLES.heading5}>
-              Title on contrast
-            </BpkText>
-          </span>
-          <BpkCollapsible.Indicator>
-            <ChevronIcon />
-          </BpkCollapsible.Indicator>
-        </span>
+        <BpkText textStyle={TEXT_STYLES.heading5}>Title on contrast</BpkText>
+        <BpkCollapsible.Indicator>
+          <ChevronIcon />
+        </BpkCollapsible.Indicator>
       </BpkCollapsible.Trigger>
       <BpkCollapsible.Content>
         <BpkBox paddingTop={BpkSpacing.SM}>
@@ -136,17 +124,13 @@ const OnContrastWithLeadingIcon = () => (
   <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
     <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast} defaultOpen>
       <BpkCollapsible.Trigger>
-        <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-          <LeadingIcon fill={textOnDarkDay} />
-          <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-            <BpkText textStyle={TEXT_STYLES.heading5}>
-              Leading icon on contrast
-            </BpkText>
-          </span>
-          <BpkCollapsible.Indicator>
-            <ChevronIcon />
-          </BpkCollapsible.Indicator>
-        </span>
+        <LeadingIcon fill={textOnDarkDay} />
+        <BpkText textStyle={TEXT_STYLES.heading5}>
+          Leading icon on contrast
+        </BpkText>
+        <BpkCollapsible.Indicator>
+          <ChevronIcon />
+        </BpkCollapsible.Indicator>
       </BpkCollapsible.Trigger>
       <BpkCollapsible.Content>
         <BpkBox paddingTop={BpkSpacing.SM}>
@@ -169,15 +153,11 @@ const InsideCard = () => (
       <BpkCardV2.Body>
         <BpkCollapsible.Root>
           <BpkCollapsible.Trigger>
-            <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-              <LeadingIcon />
-              <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-                <BpkText textStyle={TEXT_STYLES.heading5}>Card title</BpkText>
-              </span>
-              <BpkCollapsible.Indicator>
-                <ChevronIcon />
-              </BpkCollapsible.Indicator>
-            </span>
+            <LeadingIcon />
+            <BpkText textStyle={TEXT_STYLES.heading5}>Card title</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
           </BpkCollapsible.Trigger>
           <BpkCollapsible.Content>
             <BpkBox paddingTop={BpkSpacing.SM}>
@@ -201,17 +181,11 @@ const NestedInsideCard = () => (
       <BpkCardV2.Body>
         <BpkCollapsible.Root defaultOpen>
           <BpkCollapsible.Trigger>
-            <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-              <LeadingIcon />
-              <span
-                className={getClassName('bpk-collapsible-story__trigger-title')}
-              >
-                <BpkText textStyle={TEXT_STYLES.heading5}>Filters</BpkText>
-              </span>
-              <BpkCollapsible.Indicator>
-                <ChevronIcon />
-              </BpkCollapsible.Indicator>
-            </span>
+            <LeadingIcon />
+            <BpkText textStyle={TEXT_STYLES.heading5}>Filters</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
           </BpkCollapsible.Trigger>
           <BpkCollapsible.Content>
             <BpkVStack
@@ -224,24 +198,12 @@ const NestedInsideCard = () => (
               </BpkText>
               <BpkCollapsible.Root>
                 <BpkCollapsible.Trigger>
-                  <span
-                    className={getClassName(
-                      'bpk-collapsible-story__trigger-row',
-                    )}
-                  >
-                    <span
-                      className={getClassName(
-                        'bpk-collapsible-story__trigger-title',
-                      )}
-                    >
-                      <BpkText textStyle={TEXT_STYLES.label1}>
-                        Advanced filters
-                      </BpkText>
-                    </span>
-                    <BpkCollapsible.Indicator>
-                      <ChevronIcon />
-                    </BpkCollapsible.Indicator>
-                  </span>
+                  <BpkText textStyle={TEXT_STYLES.label1}>
+                    Advanced filters
+                  </BpkText>
+                  <BpkCollapsible.Indicator>
+                    <ChevronIcon />
+                  </BpkCollapsible.Indicator>
                 </BpkCollapsible.Trigger>
                 <BpkCollapsible.Content>
                   <BpkBox paddingTop={BpkSpacing.SM}>
@@ -276,14 +238,10 @@ const Controlled = () => {
         onOpenChange={({ open: nextOpen }) => setOpen(nextOpen)}
       >
         <BpkCollapsible.Trigger>
-          <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-            <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-              <BpkText textStyle={TEXT_STYLES.heading5}>Controlled</BpkText>
-            </span>
-            <BpkCollapsible.Indicator>
-              <ChevronIcon />
-            </BpkCollapsible.Indicator>
-          </span>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Controlled</BpkText>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
         </BpkCollapsible.Trigger>
         <BpkCollapsible.Content>
           <BpkBox paddingTop={BpkSpacing.SM}>
@@ -300,14 +258,10 @@ const Controlled = () => {
 const LazyMount = () => (
   <BpkCollapsible.Root lazyMount unmountOnExit>
     <BpkCollapsible.Trigger>
-      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-          <BpkText textStyle={TEXT_STYLES.heading5}>Lazy mount</BpkText>
-        </span>
-        <BpkCollapsible.Indicator>
-          <ChevronIcon />
-        </BpkCollapsible.Indicator>
-      </span>
+      <BpkText textStyle={TEXT_STYLES.heading5}>Lazy mount</BpkText>
+      <BpkCollapsible.Indicator>
+        <ChevronIcon />
+      </BpkCollapsible.Indicator>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
       <BpkBox paddingTop={BpkSpacing.SM}>
@@ -343,14 +297,10 @@ const ShowMore = () => (
 const LongContent = () => (
   <BpkCollapsible.Root defaultOpen>
     <BpkCollapsible.Trigger>
-      <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-        <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-          <BpkText textStyle={TEXT_STYLES.heading5}>Long content</BpkText>
-        </span>
-        <BpkCollapsible.Indicator>
-          <ChevronIcon />
-        </BpkCollapsible.Indicator>
-      </span>
+      <BpkText textStyle={TEXT_STYLES.heading5}>Long content</BpkText>
+      <BpkCollapsible.Indicator>
+        <ChevronIcon />
+      </BpkCollapsible.Indicator>
     </BpkCollapsible.Trigger>
     <BpkCollapsible.Content>
       <BpkVStack
@@ -377,35 +327,27 @@ const Disabled = () => (
   <BpkVStack gap={BpkSpacing.Base}>
     <BpkCollapsible.Root disabled>
       <BpkCollapsible.Trigger>
-        <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-          <span
-            className={getClassName('bpk-collapsible-story__trigger-title')}
-          >
-            <BpkText textStyle={TEXT_STYLES.heading5}>Disabled</BpkText>
-          </span>
-          <BpkCollapsible.Indicator>
-            <ChevronIcon />
-          </BpkCollapsible.Indicator>
-        </span>
+        <BpkText textStyle={TEXT_STYLES.heading5}>Disabled</BpkText>
+        <BpkCollapsible.Indicator>
+          <ChevronIcon />
+        </BpkCollapsible.Indicator>
       </BpkCollapsible.Trigger>
       <BpkCollapsible.Content>Hidden while disabled</BpkCollapsible.Content>
     </BpkCollapsible.Root>
 
     <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
-      <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast} defaultOpen disabled>
+      <BpkCollapsible.Root
+        variant={COLLAPSIBLE_VARIANTS.onContrast}
+        defaultOpen
+        disabled
+      >
         <BpkCollapsible.Trigger>
-          <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-            <span
-              className={getClassName('bpk-collapsible-story__trigger-title')}
-            >
-              <BpkText textStyle={TEXT_STYLES.heading5}>
-                Disabled on contrast
-              </BpkText>
-            </span>
-            <BpkCollapsible.Indicator>
-              <ChevronIcon />
-            </BpkCollapsible.Indicator>
-          </span>
+          <BpkText textStyle={TEXT_STYLES.heading5}>
+            Disabled on contrast
+          </BpkText>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
         </BpkCollapsible.Trigger>
         <BpkCollapsible.Content>
           <BpkBox paddingTop={BpkSpacing.SM}>
@@ -459,16 +401,12 @@ const RootProviderWithStateMachine = () => {
 
       <BpkCollapsible.RootProvider value={collapsible}>
         <BpkCollapsible.Trigger>
-          <span className={getClassName('bpk-collapsible-story__trigger-row')}>
-            <span className={getClassName('bpk-collapsible-story__trigger-title')}>
-              <BpkText textStyle={TEXT_STYLES.heading5}>
-                RootProvider with hook
-              </BpkText>
-            </span>
-            <BpkCollapsible.Indicator>
-              <ChevronIcon />
-            </BpkCollapsible.Indicator>
-          </span>
+          <BpkText textStyle={TEXT_STYLES.heading5}>
+            RootProvider with hook
+          </BpkText>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
         </BpkCollapsible.Trigger>
         <BpkCollapsible.Content>
           <BpkBox paddingTop={BpkSpacing.SM}>
