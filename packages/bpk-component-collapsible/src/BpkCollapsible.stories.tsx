@@ -20,11 +20,13 @@ import { useState } from 'react';
 
 import { textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { BpkCardV2 } from '../../bpk-component-card';
 import AirportsIcon from '../../bpk-component-icon/sm/airports';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import {
   BpkBox,
+  BpkHStack,
   BpkProvider,
   BpkSpacing,
   BpkVStack,
@@ -194,10 +196,13 @@ const InsideCard = () => (
 const Controlled = () => {
   const [open, setOpen] = useState(false);
   return (
-    <BpkVStack gap={BpkSpacing.SM}>
-      <button type="button" onClick={() => setOpen((value) => !value)}>
+    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start">
+      <BpkButton
+        type={BUTTON_TYPES.secondary}
+        onClick={() => setOpen((value) => !value)}
+      >
         External toggle ({open ? 'open' : 'closed'})
-      </button>
+      </BpkButton>
       <BpkCollapsible.Root
         open={open}
         onOpenChange={({ open: nextOpen }) => setOpen(nextOpen)}
@@ -362,17 +367,26 @@ const RootProviderWithStateMachine = () => {
         <BpkText textStyle={TEXT_STYLES.bodyDefault}>
           These buttons drive the same machine instance via the hook API.
         </BpkText>
-        <BpkBox>
-          <button type="button" onClick={() => setOpen(true)}>
+        <BpkHStack gap={BpkSpacing.SM}>
+          <BpkButton
+            type={BUTTON_TYPES.secondary}
+            onClick={() => setOpen(true)}
+          >
             Open
-          </button>{' '}
-          <button type="button" onClick={() => setOpen(false)}>
+          </BpkButton>
+          <BpkButton
+            type={BUTTON_TYPES.secondary}
+            onClick={() => setOpen(false)}
+          >
             Close
-          </button>{' '}
-          <button type="button" onClick={() => setOpen(!open)}>
+          </BpkButton>
+          <BpkButton
+            type={BUTTON_TYPES.secondary}
+            onClick={() => setOpen(!open)}
+          >
             Toggle
-          </button>
-        </BpkBox>
+          </BpkButton>
+        </BpkHStack>
       </BpkVStack>
 
       <BpkCollapsible.RootProvider value={collapsible}>
