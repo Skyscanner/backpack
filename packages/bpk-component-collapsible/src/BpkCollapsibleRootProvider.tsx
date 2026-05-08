@@ -20,14 +20,12 @@ import type { ReactNode } from 'react';
 
 import { Collapsible } from '@ark-ui/react';
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-import type { BpkCollapsibleVariant } from './BpkCollapsibleRoot';
+import { COLLAPSIBLE_VARIANTS, getRootClassName } from './common-types';
+
+import type { BpkCollapsibleVariant } from './common-types';
 import type { BpkUseCollapsibleReturn } from './useBpkCollapsible';
-
-import STYLES from './BpkCollapsible.module.scss';
-
-const getClassName = cssModules(STYLES);
 
 export type BpkCollapsibleRootProviderProps = {
   children: ReactNode;
@@ -38,23 +36,15 @@ export type BpkCollapsibleRootProviderProps = {
 const BpkCollapsibleRootProvider = ({
   children,
   value,
-  variant = 'default',
-}: BpkCollapsibleRootProviderProps) => {
-  const variantModifier = variant === 'onContrast' ? 'on-contrast' : 'default';
-  const rootClassName = getClassName(
-    'bpk-collapsible',
-    `bpk-collapsible--${variantModifier}`,
-  );
-
-  return (
-    <Collapsible.RootProvider
-      className={rootClassName}
-      value={value}
-      {...getDataComponentAttribute('Collapsible')}
-    >
-      {children}
-    </Collapsible.RootProvider>
-  );
-};
+  variant = COLLAPSIBLE_VARIANTS.default,
+}: BpkCollapsibleRootProviderProps) => (
+  <Collapsible.RootProvider
+    className={getRootClassName(variant)}
+    value={value}
+    {...getDataComponentAttribute('Collapsible')}
+  >
+    {children}
+  </Collapsible.RootProvider>
+);
 
 export default BpkCollapsibleRootProvider;

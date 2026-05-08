@@ -19,14 +19,15 @@
 import BpkCollapsible from './src/BpkCollapsible';
 
 export { default as useBpkCollapsible } from './src/useBpkCollapsible';
+export { COLLAPSIBLE_VARIANTS } from './src/common-types';
 
 export default BpkCollapsible;
 
 export type {
-  BpkCollapsibleRootProps,
   BpkCollapsibleOpenChangeDetails,
   BpkCollapsibleVariant,
-} from './src/BpkCollapsibleRoot';
+} from './src/common-types';
+export type { BpkCollapsibleRootProps } from './src/BpkCollapsibleRoot';
 export type { BpkCollapsibleRootProviderProps } from './src/BpkCollapsibleRootProvider';
 export type { BpkCollapsibleTriggerProps } from './src/BpkCollapsibleTrigger';
 export type { BpkCollapsibleIndicatorProps } from './src/BpkCollapsibleIndicator';

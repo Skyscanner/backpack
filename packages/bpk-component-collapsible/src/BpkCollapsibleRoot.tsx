@@ -20,16 +20,16 @@ import type { ReactNode } from 'react';
 
 import { Collapsible } from '@ark-ui/react';
 
-import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-import STYLES from './BpkCollapsible.module.scss';
+import { COLLAPSIBLE_VARIANTS, getRootClassName } from './common-types';
 
-const getClassName = cssModules(STYLES);
+import type {
+  BpkCollapsibleOpenChangeDetails,
+  BpkCollapsibleVariant,
+} from './common-types';
 
 type ElementIds = Partial<{ root: string; trigger: string; content: string }>;
-
-export type BpkCollapsibleOpenChangeDetails = { open: boolean };
-export type BpkCollapsibleVariant = 'default' | 'onContrast';
 
 export type BpkCollapsibleRootProps = {
   children: ReactNode;
@@ -56,31 +56,23 @@ const BpkCollapsibleRoot = ({
   onOpenChange,
   open,
   unmountOnExit,
-  variant = 'default',
-}: BpkCollapsibleRootProps) => {
-  const variantModifier = variant === 'onContrast' ? 'on-contrast' : 'default';
-  const rootClassName = getClassName(
-    'bpk-collapsible',
-    `bpk-collapsible--${variantModifier}`,
-  );
-
-  return (
-    <Collapsible.Root
-      className={rootClassName}
-      collapsedHeight={collapsedHeight}
-      defaultOpen={defaultOpen}
-      disabled={disabled}
-      ids={ids}
-      lazyMount={lazyMount}
-      onExitComplete={onExitComplete}
-      onOpenChange={onOpenChange}
-      open={open}
-      unmountOnExit={unmountOnExit}
-      {...getDataComponentAttribute('Collapsible')}
-    >
-      {children}
-    </Collapsible.Root>
-  );
-};
+  variant = COLLAPSIBLE_VARIANTS.default,
+}: BpkCollapsibleRootProps) => (
+  <Collapsible.Root
+    className={getRootClassName(variant)}
+    collapsedHeight={collapsedHeight}
+    defaultOpen={defaultOpen}
+    disabled={disabled}
+    ids={ids}
+    lazyMount={lazyMount}
+    onExitComplete={onExitComplete}
+    onOpenChange={onOpenChange}
+    open={open}
+    unmountOnExit={unmountOnExit}
+    {...getDataComponentAttribute('Collapsible')}
+  >
+    {children}
+  </Collapsible.Root>
+);
 
 export default BpkCollapsibleRoot;

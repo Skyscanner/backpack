@@ -33,6 +33,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkCollapsible from './BpkCollapsible';
+import { COLLAPSIBLE_VARIANTS } from './common-types';
 import useBpkCollapsible from './useBpkCollapsible';
 
 import type { Meta } from '@storybook/react';
@@ -48,9 +49,11 @@ const LeadingIcon = AirportsIcon;
 const getClassName = cssModules(STYLES);
 const SHOW_MORE_COLLAPSED_HEIGHT = '3.5rem';
 
-// Trigger contents stay as <span>s + inline flex styling because <button>
-// elements only allow phrasing content — Bpk layout components render <div>s
-// which would be invalid HTML inside a <button>.
+// Trigger contents stay as <span>s with a SCSS-driven flex row instead of
+// BpkFlex / BpkHStack. BpkCollapsible.Trigger renders a <button>, and HTML5
+// only allows phrasing content inside a button — Bpk layout components render
+// <div>s, which browsers will silently reparent out of the button. See
+// .claude/guidelines/bpk-layout-components.md ("Inside a <button> element").
 
 const Basic = () => (
   <BpkCollapsible.Root>
@@ -103,7 +106,7 @@ const OnContrast = () => (
   // commonProps). The contrasting surface itself is provided via
   // backgroundColor="surface-contrast".
   <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
-    <BpkCollapsible.Root variant="onContrast" defaultOpen>
+    <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast} defaultOpen>
       <BpkCollapsible.Trigger>
         <span className={getClassName('bpk-collapsible-story__trigger-row')}>
           <span className={getClassName('bpk-collapsible-story__trigger-title')}>
@@ -129,7 +132,7 @@ const OnContrast = () => (
 
 const OnContrastWithLeadingIcon = () => (
   <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
-    <BpkCollapsible.Root variant="onContrast" defaultOpen>
+    <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast} defaultOpen>
       <BpkCollapsible.Trigger>
         <span className={getClassName('bpk-collapsible-story__trigger-row')}>
           <LeadingIcon fill={textOnDarkDay} />
@@ -316,7 +319,7 @@ const Disabled = () => (
     </BpkCollapsible.Root>
 
     <BpkBox backgroundColor="surface-contrast" padding={BpkSpacing.Base}>
-      <BpkCollapsible.Root variant="onContrast" defaultOpen disabled>
+      <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast} defaultOpen disabled>
         <BpkCollapsible.Trigger>
           <span className={getClassName('bpk-collapsible-story__trigger-row')}>
             <span
@@ -351,9 +354,7 @@ const RootProviderWithStateMachine = () => {
     <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
       <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start">
         <BpkText textStyle={TEXT_STYLES.label1}>State machine values</BpkText>
-        <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="pre">
-          {JSON.stringify({ open, visible, disabled }, null, 2)}
-        </BpkText>
+        <pre>{JSON.stringify({ open, visible, disabled }, null, 2)}</pre>
       </BpkVStack>
 
       <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start">
