@@ -63,7 +63,6 @@ Autosuggest.defaultProps.renderInputComponent = (
   const { autoComplete = 'off', inputRef, ref, ...rest } = inputProps;
 
   return (
-     
     <BpkInput
       inputRef={(element: HTMLInputElement) => {
         ref(element);

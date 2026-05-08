@@ -18,7 +18,6 @@
 
 import figma from '@figma/code-connect';
 
- 
 import BpkAutosuggest from './BpkAutosuggest';
 
 figma.connect(

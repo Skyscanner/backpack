@@ -24,7 +24,7 @@ import STYLES from './BpkAutosuggest.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = HTMLAttributes<HTMLElement> & {
+type Props = Omit<HTMLAttributes<HTMLElement>, 'className'> & {
   value: ReactNode;
   subHeading?: ReactNode | null;
   tertiaryLabel?: string | null;
