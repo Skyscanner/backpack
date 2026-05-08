@@ -73,27 +73,19 @@ const propTypes = {
   tabIndex: PropTypes.number,
 };
 
-const defaultProps = {
-  className: null,
-  stepped: false,
-  small: false,
-  onComplete: () => null,
-  onCompleteTransitionEnd: () => null,
-  getValueText: null,
-}
-
 class BpkProgress extends Component<Props> {
   componentDidUpdate(previousProps: Props) {
-    const { max, value } = this.props;
-    if (
-      value >= max &&
-      value !== previousProps.value &&
-      this.props.onComplete
-    ) {
-      this.props.onComplete();
+    const {
+      max,
+      onComplete = () => null,
+      onCompleteTransitionEnd,
+      value,
+    } = this.props;
+    if (value >= max && value !== previousProps.value) {
+      onComplete();
 
-      if (!isTransitionEndSupported() && this.props.onCompleteTransitionEnd) {
-        this.props.onCompleteTransitionEnd();
+      if (!isTransitionEndSupported() && onCompleteTransitionEnd) {
+        onCompleteTransitionEnd();
       }
     }
   }
@@ -107,12 +99,12 @@ class BpkProgress extends Component<Props> {
 
   render() {
     const {
-      className,
-      getValueText,
+      className = null,
+      getValueText = null,
       max,
       min,
-      small,
-      stepped,
+      small = false,
+      stepped = false,
       value,
       ...rest
     } = this.props;
@@ -160,10 +152,6 @@ class BpkProgress extends Component<Props> {
 
 BpkProgress.propTypes = {
   ...propTypes,
-}
-
-BpkProgress.defaultProps = {
-  ...defaultProps,
 }
 
 export default BpkProgress;
