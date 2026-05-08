@@ -45,6 +45,7 @@ import {
   inferDTCGType,
   isAliasValue,
   isColorValue,
+  isUnconstrainedFloatScope,
   normalizeLiteralValue,
   DTCGTransformError,
   resolveAliasTarget,
@@ -146,6 +147,19 @@ describe('inferDTCGType', () => {
         }),
       ),
     ).toBe(expected);
+  });
+});
+
+describe('isUnconstrainedFloatScope', () => {
+  it.each<[string[], boolean]>([
+    [[], true],
+    [['ALL_SCOPES'], true],
+    [['ALL_SCOPES', 'ALL_SCOPES'], true],
+    [['FONT_STYLE'], false],
+    [['ALL_SCOPES', 'FONT_STYLE'], false],
+    [['GAP'], false],
+  ])('treats %j as unconstrained=%s', (scopes, expected) => {
+    expect(isUnconstrainedFloatScope(scopes)).toBe(expected);
   });
 });
 
@@ -465,7 +479,41 @@ describe('buildDTCGTreeForMode', () => {
       inlinedAliasCount: 0,
       skippedVariableCount: 0,
       skippedVariables: [],
+      ambiguousFloatVariables: [],
     });
+  });
+
+  it('flags FLOAT variables with unconstrained Figma scope as ambiguous', () => {
+    const ambiguousWeight = {
+      id: 'variable-weight-bold',
+      key: 'key-weight-bold',
+      name: 'Typography/Weight/Bold',
+      variableCollectionId: PRIMITIVES_COLLECTION_ID,
+      resolvedType: 'FLOAT',
+      valuesByMode: { [PRIMITIVES_MODE_HEX]: 700 },
+      // Designer left scopes unconstrained — type inference falls through to
+      // `dimension` and the value gets a misleading "px" suffix.
+      scopes: ['ALL_SCOPES'],
+      remote: false,
+    } as unknown as LocalVariable;
+    const context = makeContext();
+    const output = buildDTCGTreeForMode(
+      { collection: primitivesCollection, role: 'primitive' },
+      'Hex',
+      [ambiguousWeight, primitiveSpacingMd],
+      context,
+    );
+    // primitiveSpacingMd has scope `['GAP']` — should not be flagged.
+    expect(output.stats.ambiguousFloatVariables).toEqual([
+      {
+        variableName: 'Typography/Weight/Bold',
+        variableId: 'variable-weight-bold',
+        variableKey: 'key-weight-bold',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+    ]);
+    expect(output.stats.tokenCount).toBe(2);
   });
 
   it('preserves cross-collection aliases as {ref} and counts them', () => {

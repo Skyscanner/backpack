@@ -56,6 +56,7 @@ function primitiveOutput(overrides: Partial<DTCGModeOutput> = {}): DTCGModeOutpu
       inlinedAliasCount: 0,
       skippedVariableCount: 0,
       skippedVariables: [],
+      ambiguousFloatVariables: [],
     },
     ...overrides,
   };
@@ -83,6 +84,7 @@ function backpackOutput(
       inlinedAliasCount: 0,
       skippedVariableCount: 0,
       skippedVariables: [],
+      ambiguousFloatVariables: [],
     },
     ...overrides,
   };

@@ -304,6 +304,43 @@ function appendSkippedSections(
   }
 }
 
+// Surfaces FLOAT variables whose Figma scope was unconstrained (empty or
+// only `ALL_SCOPES`) so type inference fell back to `dimension`. The token
+// is still written, but the type may be wrong (e.g. font-weight serialized
+// as "700px"). Designer should tighten the scope in Figma.
+function appendAmbiguousFloatSection(
+  lines: string[],
+  outputs: DTCGModeOutput[],
+): void {
+  // Same name can appear once per mode (Day/Night). Collapse so the CLI
+  // shows one bullet per variable with the modes it was seen in.
+  const groups = new Map<string, SkippedByKey>();
+  for (const output of outputs) {
+    for (const ambiguous of output.stats.ambiguousFloatVariables) {
+      const scopeLabel =
+        ambiguous.scopes.length === 0 ? '(none)' : ambiguous.scopes.join(', ');
+      addToGroup(
+        groups,
+        scopeLabel,
+        output.collectionName,
+        ambiguous.variableName,
+        output.modeName,
+      );
+    }
+  }
+  if (groups.size === 0) return;
+
+  lines.push(
+    `Warning: ${countInstances(
+      groups,
+    )} FLOAT variable instance(s) had an unconstrained scope and were typed as "dimension". ` +
+      `If any of these aren't dimensions (e.g. font weights), tighten the scope in Figma:`,
+  );
+  groups.forEach((refs, scopeLabel) =>
+    lines.push(`  - scope=[${scopeLabel}] ← ${renderReferences(refs)}`),
+  );
+}
+
 // Pure formatter — returns the lines a CLI should print.
 export function formatBuildSummary(result: BuildDTCGResult): string[] {
   const lines: string[] = [];
@@ -341,7 +378,10 @@ export function formatBuildSummary(result: BuildDTCGResult): string[] {
   // 4. Skipped variables grouped by reason
   appendSkippedSections(lines, result.outputs);
 
-  // 5. Manifest path + total file count
+  // 5. FLOAT variables whose scope was unconstrained — fixable in Figma.
+  appendAmbiguousFloatSection(lines, result.outputs);
+
+  // 6. Manifest path + total file count
   lines.push(`Manifest: ${path.join(result.outputDir, 'manifest.json')}`);
   lines.push(
     `Wrote ${result.manifest.files.length} DTCG file(s) to ${result.outputDir}.`,

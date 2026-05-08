@@ -171,6 +171,7 @@ describe('formatBuildSummary', () => {
         inlinedAliasCount: 2,
         skippedVariableCount: skipped.length,
         skippedVariables: skipped,
+        ambiguousFloatVariables: [],
       },
     };
   }
@@ -286,6 +287,53 @@ describe('formatBuildSummary', () => {
     );
     expect(lines).toContain(
       '  - collides with "Colour/Brand" ← [Backpack] Colour/Brand/Pink (modes: Day)',
+    );
+  });
+
+  it('warns about FLOAT variables with unconstrained scopes and merges Day/Night duplicates', () => {
+    const dayOutput = makeOutput('Day');
+    dayOutput.stats.ambiguousFloatVariables = [
+      {
+        variableName: 'Typography/Style/Label',
+        variableId: 'v1',
+        variableKey: 'k1',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+    ];
+    const nightOutput = makeOutput('Night');
+    nightOutput.stats.ambiguousFloatVariables = [
+      {
+        variableName: 'Typography/Style/Label',
+        variableId: 'v1',
+        variableKey: 'k1',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+      {
+        variableName: 'Typography/Style/Subhead',
+        variableId: 'v2',
+        variableKey: 'k2',
+        scopes: [],
+        inferredType: 'dimension',
+      },
+    ];
+    const lines = formatBuildSummary(
+      makeResult({ outputs: [dayOutput, nightOutput] }),
+    );
+
+    expect(
+      lines.some(
+        (l) =>
+          l.startsWith('Warning: 3 FLOAT variable instance(s)') &&
+          l.includes('typed as "dimension"'),
+      ),
+    ).toBe(true);
+    expect(lines).toContain(
+      '  - scope=[ALL_SCOPES] ← [Backpack] Typography/Style/Label (modes: Day, Night)',
+    );
+    expect(lines).toContain(
+      '  - scope=[(none)] ← [Backpack] Typography/Style/Subhead (modes: Night)',
     );
   });
 });

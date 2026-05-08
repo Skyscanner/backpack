@@ -21,6 +21,7 @@ import { SKIPPED_VARIABLE_REASONS } from './types';
 
 import type { LocalVariable, LocalVariableCollection } from './figma-api';
 import type {
+  AmbiguousFloatRecord,
   ClassifiedCollection,
   CollectionRole,
   DTCGModeOutput,
@@ -157,6 +158,17 @@ export function figmaColorToCss(value: FigmaRGBA): string {
 // OPACITY is 0..1; LINE_HEIGHT is commonly a multiplier (1.5) in Figma and
 // converting it to "1.5px" is always wrong.
 const NUMBER_FLOAT_SCOPES: readonly string[] = ['OPACITY', 'LINE_HEIGHT'];
+
+// A FLOAT variable's scope is "unconstrained" when Figma reports either no
+// scopes or only the catch-all `ALL_SCOPES`. Inference has nothing specific
+// to lock onto, so we fall through to `dimension` — which is silently wrong
+// for e.g. font-weight variables a designer forgot to scope as `FONT_STYLE`.
+// Use this to flag those cases for a designer review without affecting the
+// inference result itself.
+export function isUnconstrainedFloatScope(scopes: readonly string[]): boolean {
+  if (scopes.length === 0) return true;
+  return scopes.every((scope) => scope === 'ALL_SCOPES');
+}
 
 export function inferDTCGType(variable: LocalVariable): DTCGTokenType {
   switch (variable.resolvedType) {
@@ -568,6 +580,7 @@ export function buildDTCGTreeForMode(
   let preservedAliasCount = 0;
   let inlinedAliasCount = 0;
   const skippedVariables: SkippedVariableRecord[] = [];
+  const ambiguousFloatVariables: AmbiguousFloatRecord[] = [];
   const writtenVariables: LocalVariable[] = [];
 
   const sorted = sortBy(collectionVariables, (v) => v.name);
@@ -617,10 +630,11 @@ export function buildDTCGTreeForMode(
       throw error;
     }
 
+    const tokenType = inferDTCGType(variable);
     try {
       setTokenAtPath(tree, variable.name, {
         $value: resolved.value,
-        $type: inferDTCGType(variable),
+        $type: tokenType,
       });
     } catch (error: unknown) {
       if (
@@ -638,6 +652,23 @@ export function buildDTCGTreeForMode(
     // leave the counters out of sync with the tree.
     if (resolved.preservedAliasTo) preservedAliasCount += 1;
     if (resolved.inlinedFrom) inlinedAliasCount += 1;
+
+    // Flag FLOAT variables that fell through to `dimension` because the
+    // designer left the scope unconstrained. The token still ships, but the
+    // designer should tighten the scope (e.g. `FONT_STYLE` for font weights)
+    // so the inferred type matches intent.
+    if (
+      variable.resolvedType === 'FLOAT' &&
+      tokenType === 'dimension' &&
+      isUnconstrainedFloatScope(variable.scopes)
+    ) {
+      ambiguousFloatVariables.push({
+        ...baseRecord,
+        scopes: [...variable.scopes],
+        inferredType: tokenType,
+      });
+    }
+
     writtenVariables.push(variable);
   };
 
@@ -659,6 +690,7 @@ export function buildDTCGTreeForMode(
       inlinedAliasCount,
       skippedVariableCount: skippedVariables.length,
       skippedVariables,
+      ambiguousFloatVariables,
     },
   };
 }

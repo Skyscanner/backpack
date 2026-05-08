@@ -104,6 +104,21 @@ export interface SkippedVariableRecord {
   invalidNameReason?: string;
 }
 
+// FLOAT variables whose Figma scope was unconstrained (empty or only
+// `ALL_SCOPES`), so type inference fell back to `dimension`. The token IS
+// written, but the type is suspect — e.g. a font-weight FLOAT with no
+// `FONT_STYLE` scope ends up as `"700px"`. Surfaced for designers to fix.
+export interface AmbiguousFloatRecord {
+  variableName: string;
+  variableId: string;
+  variableKey: string;
+  // The scopes Figma reported on the variable (often `[]` or `['ALL_SCOPES']`).
+  scopes: readonly string[];
+  // The type we ended up using (currently always `'dimension'`, but kept
+  // explicit so future inference rules stay self-documenting).
+  inferredType: string;
+}
+
 export interface DTCGModeOutputStats {
   // Number of tokens written into the tree for this mode (excludes skipped).
   tokenCount: number;
@@ -116,6 +131,10 @@ export interface DTCGModeOutputStats {
   // Per-variable detail for the skipped count above. Empty when nothing
   // was skipped, or when the caller left `skipUnresolvedAliases` off.
   skippedVariables: SkippedVariableRecord[];
+  // FLOAT variables whose type inference fell back to `dimension` because
+  // their Figma scope was unconstrained. These are warnings, not skips —
+  // the token is still written.
+  ambiguousFloatVariables: AmbiguousFloatRecord[];
 }
 
 export interface DTCGModeOutput {
