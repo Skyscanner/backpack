@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { access, mkdir, readFile, rename, rm } from 'node:fs/promises';
+import { access, mkdir, readdir, readFile, rename, rm } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 
@@ -27,6 +27,7 @@ import { assertSafeOutputDir } from './dtcg-writer';
 import {
   BACKPACK_DARK_FILE,
   BACKPACK_LIGHT_FILE,
+  PRIMITIVES_FILE,
   REQUIRED_INPUT_FILES,
   buildStyleDictionaryConfigs,
   findAsymmetricSemanticTokens,
@@ -57,18 +58,10 @@ StyleDictionary.registerTransform({
     ),
 });
 
-// Take the default `css` transform group from the running SD version and
-// swap `size/rem` for `size/pxToRem` so dimension values like `"16px"` emit
-// as `1rem` instead of `16rem`. Reading from SD at runtime — instead of
-// hard-coding the list — means we automatically pick up any transforms SD
-// adds to the group in future versions, and rely on the typed enum
-// (`sdTransforms.sizeRem`) so a SD rename surfaces at compile time rather
-// than silently failing the swap.
-//
-// Exposed for unit testing. Asserts the swap actually happened so a SD
-// upgrade that drops `size/rem` from the group can't pass through unnoticed.
+// Take SD's default `css` transform group and swap `size/rem` → `size/pxToRem`
+// and `name/kebab` → our `name/bpk-kebab`.
 export function buildCssTransforms(): readonly string[] {
-  const cssGroup = StyleDictionary.hooks.transformGroups.css;
+  const cssGroup = StyleDictionary.hooks.transformGroups?.css;
   if (!cssGroup) {
     throw new Error(
       'Style Dictionary "css" transform group is not registered. ' +
@@ -113,9 +106,9 @@ export interface BuildCSSResult {
   outputs: string[];
 }
 
-// Verify each Stage 1 file is present on disk. SD would otherwise throw a
-// less actionable error mid-build. Doing it up-front lets us point the user
-// at the exact missing file and the `npm run tokens:fetch` command that creates them.
+// Verify primitives + at least one semantic token file exists before SD runs.
+// Semantic token files (backpack.*.json) are auto-discovered, so new themes
+// require no code changes — just add the file via Stage 1 sync.
 async function assertInputsExist(tokensDir: string): Promise<void> {
   const missing: string[] = [];
   await Promise.all(
@@ -128,24 +121,43 @@ async function assertInputsExist(tokensDir: string): Promise<void> {
       }
     }),
   );
-  if (missing.length > 0) {
+
+  let semanticFiles: string[] = [];
+  try {
+    const entries = await readdir(tokensDir);
+    semanticFiles = entries.filter((f) => f.startsWith('backpack.') && f.endsWith('.json'));
+  } catch {
+    // readdir fails if tokensDir doesn't exist; let the primitives check surface it.
+  }
+
+  if (missing.length > 0 || semanticFiles.length === 0) {
+    const allMissing = [...missing];
+    if (semanticFiles.length === 0) {
+      allMissing.push(path.join(tokensDir, BACKPACK_LIGHT_FILE));
+      allMissing.push(path.join(tokensDir, BACKPACK_DARK_FILE));
+    }
     throw new Error(
-      `Missing Stage 1 DTCG file(s):\n  ${missing.join(
+      `Missing Stage 1 DTCG file(s):\n  ${allMissing.join(
         '\n  ',
       )}\nRun \`npm run tokens:fetch\` to (re)generate them before building CSS.`,
     );
   }
 }
 
-// Parse every input file once and run all the structural checks Stage 2
-// cares about: dimension values must be `Xpx` (or a DTCG alias) so the
-// px→rem transform can handle them, and no two tokens may collapse to the
-// same CSS variable name after `Component` stripping. Doing both walks off
-// a single parse keeps the I/O cost down and lets a bad input file surface
-// every issue it has at once instead of one per build attempt.
-async function assertInputsAreBuildable(tokensDir: string): Promise<void> {
+// Run all Stage 2 structural checks (dimension units, CSS name collisions,
+// semantic token symmetry) off a single parse. Returns the discovered semantic
+// file names for later use in SD config building.
+async function assertInputsAreBuildable(
+  tokensDir: string,
+): Promise<{ semanticFileNames: string[] }> {
+  const entries = await readdir(tokensDir);
+  const semanticFileNames = entries
+    .filter((f) => f.startsWith('backpack.') && f.endsWith('.json'))
+    .sort();
+
+  const fileNames = [...REQUIRED_INPUT_FILES, ...semanticFileNames];
   const parsedFiles = await Promise.all(
-    REQUIRED_INPUT_FILES.map(async (fileName) => {
+    fileNames.map(async (fileName) => {
       const filePath = path.join(tokensDir, fileName);
       const raw = await readFile(filePath, 'utf8');
       try {
@@ -173,9 +185,6 @@ async function assertInputsAreBuildable(tokensDir: string): Promise<void> {
     }
   }
 
-  // Surface dimension issues first — they're more common and likely to be
-  // the real source of any name collisions (e.g. a typo also restructuring
-  // the tree). Throwing here aborts the build before SD touches the buildDir.
   if (dimensionViolations.length > 0) {
     throw new Error(formatDimensionViolations(dimensionViolations));
   }
@@ -183,35 +192,31 @@ async function assertInputsAreBuildable(tokensDir: string): Promise<void> {
     throw new Error(formatCssNameCollisions(collisionsByFile));
   }
 
-  // Light / Dark must declare the same set of semantic token paths. A token
-  // present in only one mode would either silently inherit the other mode's
-  // value via CSS cascade (Light-only) or fail open with `unset` in default
-  // mode (Dark-only) — both indistinguishable from "designer forgot to
-  // define the other side", so we refuse to build either way.
-  const lightParsed = parsedFiles.find(
-    (parsed) => path.basename(parsed.filePath) === BACKPACK_LIGHT_FILE,
+  // All semantic token files must declare the same set of semantic token paths.
+  const semanticParsed = parsedFiles.filter(
+    ({ filePath }) => !filePath.endsWith(PRIMITIVES_FILE),
   );
-  const darkParsed = parsedFiles.find(
-    (parsed) => path.basename(parsed.filePath) === BACKPACK_DARK_FILE,
-  );
-  // Both files are guaranteed to exist by `assertInputsExist` — guard
-  // anyway so a future refactor of REQUIRED_INPUT_FILES doesn't break this
-  // check silently.
-  if (lightParsed && darkParsed) {
-    const asymmetry = findAsymmetricSemanticTokens(
-      lightParsed.tree,
-      darkParsed.tree,
-    );
+  for (let i = 0; i < semanticParsed.length - 1; i += 1) {
+    const file1 = semanticParsed[i];
+    const file2 = semanticParsed[i + 1];
+    const asymmetry = findAsymmetricSemanticTokens(file1.tree, file2.tree);
     if (asymmetry.lightOnly.length > 0 || asymmetry.darkOnly.length > 0) {
-      throw new Error(formatAsymmetricSemanticTokens(asymmetry));
+      const name1 = path.basename(file1.filePath);
+      const name2 = path.basename(file2.filePath);
+      const message = formatAsymmetricSemanticTokens(asymmetry);
+      throw new Error(
+        message
+          .replace(`Missing in ${BACKPACK_DARK_FILE}`, `Missing in ${name2}`)
+          .replace(`Missing in ${BACKPACK_LIGHT_FILE}`, `Missing in ${name1}`),
+      );
     }
   }
+
+  return { semanticFileNames };
 }
 
-// Run the light + dark Style Dictionary builds. Returns the absolute paths of
-// the generated CSS files. The function is intentionally side-effect-light
-// outside the file system: no logging, no process.exit. The CLI wrapper in
-// `index-css.ts` (or wherever it ends up) is in charge of presentation.
+// Run the SD builds for all discovered semantic token themes (light, dark, etc).
+// No logging / no process.exit — the CLI wrapper (build-css-cli.ts) handles presentation.
 export async function runBuildCSS({
   buildDir,
   tokensDir,
@@ -225,16 +230,11 @@ export async function runBuildCSS({
     throw new Error(`buildDir must be absolute, got "${buildDir}".`);
   }
 
-  // Reuse the same safety net as Stage 1: refuses fs root, $HOME, cwd, and
-  // ancestors of cwd. Cheap insurance against an environment variable typo.
   assertSafeOutputDir(buildDir);
 
   await assertInputsExist(tokensDir);
-  await assertInputsAreBuildable(tokensDir);
+  const { semanticFileNames } = await assertInputsAreBuildable(tokensDir);
 
-  // Stage in a sibling directory so any SD failure leaves the existing
-  // `buildDir` (committed to git) untouched. The rename at the end is the
-  // only step that mutates `buildDir`.
   const resolvedBuildDir = path.resolve(buildDir);
   const stagingDir = `${resolvedBuildDir}.staging-${process.pid}-${Date.now()}`;
   const backupDir = `${resolvedBuildDir}.backup-${process.pid}-${Date.now()}`;
@@ -246,6 +246,7 @@ export async function runBuildCSS({
     tokensDir,
     buildDir: stagingDir,
     cssTransforms,
+    semanticFileNames,
   });
   const outputs: string[] = [];
 
@@ -253,10 +254,8 @@ export async function runBuildCSS({
     await rm(stagingDir, { force: true, recursive: true });
     await mkdir(stagingDir, { recursive: true });
 
-    // Run sequentially: SD's `buildAllPlatforms` mutates internal state on the
-    // instance, and parallelism here would offer no measurable speedup for two
-    // small theme builds while making any failure logs interleave. Reduce
-    // serializes the awaits without tripping the no-await-in-loop rule.
+    // Run sequentially via reduce (avoids no-await-in-loop). See PR thread
+    // on why parallelism here offers no real speedup.
     await configs.reduce<Promise<void>>(async (prev, { config }) => {
       await prev;
       const sd = new StyleDictionary(config);
@@ -269,16 +268,14 @@ export async function runBuildCSS({
       }
     }, Promise.resolve());
 
-    // Swap staging into place. Move the existing resolvedBuildDir aside first
-    // so a failed rename(staging → resolvedBuildDir) can be rolled back,
-    // instead of leaving the previous committed CSS deleted.
+    // Swap staging into place: backup → swap → cleanup, with rollback on
+    // a failed swap. See PR thread for the failure-mode analysis.
     let backupCreated = false;
     try {
       await rename(resolvedBuildDir, backupDir);
       backupCreated = true;
     } catch (error: unknown) {
-      // First run (or external cleanup) — resolvedBuildDir doesn't exist yet,
-      // which is fine. Anything else is a real failure.
+      // First run — resolvedBuildDir doesn't exist yet; any other code is real.
       if ((error as Error & { code?: string }).code !== 'ENOENT') throw error;
     }
 
@@ -286,10 +283,9 @@ export async function runBuildCSS({
       await rename(stagingDir, resolvedBuildDir);
     } catch (renameError) {
       if (backupCreated) {
-        await rename(backupDir, resolvedBuildDir).catch(() => {
-          // Restoring the backup also failed — surface the original error
-          // and leave both dirs on disk for manual recovery.
-        });
+        // If restore also fails, surface the original error and leave both
+        // dirs on disk for manual recovery.
+        await rename(backupDir, resolvedBuildDir).catch(() => {});
       }
       throw renameError;
     }

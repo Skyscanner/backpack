@@ -59,25 +59,8 @@ export const STRIPPED_TOP_LEVEL_SEGMENTS: ReadonlySet<string> = new Set([
   'component',
 ]);
 
-// Kebab one path segment. Mirrors the rules SD's `name/kebab` applies to
-// our actual data, plus a sanitisation pass that keeps the output a valid
-// CSS identifier no matter what the designer typed in Figma:
-//   "Grey 10"             → "grey-10"        (whitespace → dash, lowercased)
-//   "bg-default"          → "bg-default"     (existing dashes preserved)
-//   "borderRadius"        → "border-radius"  (camelCase boundary inserted)
-//   "stroke (new)"        → "stroke-new"     (parens treated as separators)
-//   "Card [draft]"        → "card-draft"     (brackets too)
-//   "🎨 colour"           → "colour"         (non-ASCII / emoji dropped)
-//   "!important"          → "important"      (any other punctuation too)
-//
-// The CSS spec restricts custom-property identifiers to letters, digits,
-// `-`, `_`, escaped chars, and non-ASCII Unicode. We narrow further to
-// `[a-z0-9-]` because anything else (parens, brackets, emoji, …) would
-// either need escaping or fail to parse. Sanitising silently — rather
-// than hard-failing — means designer annotations like `(new)`, `(WIP)`,
-// `[draft]` flow through as readable name suffixes (`-new`, `-wip`,
-// `-draft`) without breaking the build. Real collisions surfaced by the
-// rewrite are caught by `findCssNameCollisions` downstream.
+// Kebab one path segment, sanitising to `[a-z0-9-]` so designer annotations
+// (parens, brackets, emoji) flow through without breaking the build.
 function kebabSegment(segment: string): string {
   return segment
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
@@ -88,19 +71,9 @@ function kebabSegment(segment: string): string {
     .replace(/^-|-$/g, '');
 }
 
-// Strip then kebab-case, returning the final CSS variable name body (i.e.
-// without the leading `--` from `var()`). Pure — no SD, no I/O.
-//
-// `prefix`, when given, is treated as an additional first segment after
-// stripping; SD's built-in `name/kebab` works the same way (it joins
-// `[prefix, ...token.path]` then kebabs). Strip is applied to `path` only,
-// so a `prefix` of `bpk` does NOT match the strip set even if it ever
-// happens to be `'component'`.
-//
-// The strip refuses to leave a token nameless: if the entire path is the
-// single stripped segment (`['Component']`), we keep it intact. Defensive
-// — Backpack doesn't author such tokens today, but a refactor that flattens
-// `Component.Foo` up to `Component` shouldn't silently produce `--bpk-`.
+// Strip leading `Component` segment (per STRIPPED_TOP_LEVEL_SEGMENTS), then
+// kebab-case. `prefix` is prepended after stripping. Refuses to leave a token
+// nameless when the whole path is a single stripped segment.
 export function kebabBpkName(
   tokenPath: readonly string[],
   prefix?: string,
@@ -242,21 +215,9 @@ export interface SemanticTokenAsymmetry {
   darkOnly: string[];
 }
 
-// Compare the leaf token paths of the two semantic files and return the
-// symmetric difference. Backpack's contract is that every semantic token
-// must exist in both themes — designers express "two themes share a value"
-// via a DTCG alias (`{Group.Token}` in both files) rather than by leaving
-// one side blank. Asymmetry would otherwise mean either:
-//   - the Light stylesheet declares a `--bpk-…` the Dark stylesheet doesn't
-//     override (so toggling to Dark silently keeps the Light value), or
-//   - the Dark stylesheet declares one missing from Light (so default-theme
-//     consumers get an `unset` `var()` that fails open).
-// Both look identical to "designer forgot to set the other theme" — we
-// can't tell intent from data, so we refuse to build and let the designer
-// disambiguate by adding the missing key (with an alias if the value really
-// should be shared).
-//
-// Pure: no I/O, no SD. Caller passes the parsed JSON for both files.
+// Symmetric difference of leaf token paths between Light and Dark files.
+// Every semantic token must exist in both themes — see contract notes in
+// the PR thread. Pure: caller passes parsed JSON.
 export function findAsymmetricSemanticTokens(
   lightTree: unknown,
   darkTree: unknown,
@@ -298,16 +259,8 @@ export function formatAsymmetricSemanticTokens(
   );
 }
 
-// Recognised forms for a `$type: dimension` value:
-//
-//   "16px", "1.5px", "-1px", "0px"   ← literal Xpx (with optional sign / decimal)
-//   "{Group.Token}"                   ← DTCG alias (resolved later by SD)
-//
-// Anything else (e.g. `"16em"`, `"50%"`, `"1rem"`, bare numbers) would be
-// silently mishandled by SD's `size/pxToRem` transform — it strips the `px`
-// suffix and divides by `BASE_PX_FONT_SIZE`, so a non-px input either fails
-// the strip and emits a wrong unit, or is divided as a number when the
-// designer meant something else. We catch those at build time instead.
+// Accepted dimension forms: literal `Xpx` (signed/decimal allowed) or a
+// DTCG alias `{Group.Token}`. See PR thread for size/pxToRem rationale.
 const VALID_PX_LITERAL = /^-?\d+(\.\d+)?px$/;
 const DTCG_ALIAS = /^\{.+\}$/;
 
@@ -419,27 +372,21 @@ export function makeBackpackTokenFilter(
 }
 
 interface BuildConfigOptions {
-  // Absolute path to the directory containing the DTCG `*.json` files written
-  // by Stage 1. Resolved by the caller so this module stays cwd-agnostic.
   tokensDir: string;
-  // Absolute path the CSS output should land in. Created if missing.
   buildDir: string;
-  // Ordered list of SD transform names applied to every token. Caller is
-  // responsible for assembling this from SD's runtime (so we follow SD
-  // upgrades automatically and stay typed against `transforms` enum), then
-  // passing it in. Keeping it as a parameter — instead of importing SD here
-  // — lets this module remain SD-runtime-free, which matters because SD v5
-  // is ESM-only and pulling it in here would force every consumer (including
-  // jest unit tests under the project's CJS babel config) to transform a
-  // long chain of nested ESM dependencies (chalk, change-case, …).
   cssTransforms: readonly string[];
+  // Semantic token file names (e.g. ['backpack.light.json', 'backpack.dark.json']).
+  // If omitted, auto-discovered by reading tokensDir. Pass explicitly to avoid I/O
+  // in unit tests or when the caller already has the list.
+  semanticFileNames?: string[];
 }
 
 // Builds the array of named (name, config) pairs the runner iterates over.
-// Pure function: no I/O, no SD instantiation — keeps it cheap to unit-test.
+// If semanticFileNames is omitted, reads tokensDir to auto-discover them.
 export function buildStyleDictionaryConfigs({
   buildDir,
   cssTransforms,
+  semanticFileNames,
   tokensDir,
 }: BuildConfigOptions): Array<{ name: string; config: Config }> {
   // Trailing slash is required: SD's `buildPath` is concatenated raw with the
@@ -453,71 +400,54 @@ export function buildStyleDictionaryConfigs({
     buildPath,
   };
 
-  return [
-    {
-      name: 'web-light',
-      config: {
-        // Both files are loaded so `{Group.Token}` aliases in the Backpack
-        // file resolve into Primitive literals during build. Only the
-        // Backpack file is emitted (see filter below).
-        source: [
-          path.join(tokensDir, PRIMITIVES_FILE),
-          path.join(tokensDir, BACKPACK_LIGHT_FILE),
-        ],
-        platforms: {
-          css: {
-            ...sharedPlatformOptions,
-            files: [
-              {
-                destination: LIGHT_OUTPUT_FILE,
-                format: 'css/variables',
-                filter: makeBackpackTokenFilter(BACKPACK_LIGHT_FILE),
-                options: {
-                  selector: LIGHT_SELECTOR,
-                  // Disable SD's outputReferences for now: light and dark live
-                  // in different stylesheets, so a `var(--neutral-grey-10)`
-                  // reference in the dark file would point at a primitive
-                  // that no longer exists in the output. Keep values inline.
-                  outputReferences: false,
-                },
+  // If not provided by caller, default to known light/dark for backwards compat.
+  const filesToBuild = semanticFileNames ?? [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE];
+
+  return filesToBuild.map((semanticFile, idx) => ({
+    name: `web-theme-${idx}`,
+    config: {
+      // Primitives + semantic tokens for alias resolution. Only the semantic
+      // file is emitted (see filter below).
+      source: [
+        path.join(tokensDir, PRIMITIVES_FILE),
+        path.join(tokensDir, semanticFile),
+      ],
+      platforms: {
+        css: {
+          ...sharedPlatformOptions,
+          files: [
+            {
+              destination: outputFileForSemanticFile(semanticFile),
+              format: 'css/variables',
+              filter: makeBackpackTokenFilter(semanticFile),
+              options: {
+                selector: selectorForSemanticFile(semanticFile),
+                outputReferences: false,
               },
-            ],
-          },
+            },
+          ],
         },
       },
     },
-    {
-      name: 'web-dark',
-      config: {
-        source: [
-          path.join(tokensDir, PRIMITIVES_FILE),
-          path.join(tokensDir, BACKPACK_DARK_FILE),
-        ],
-        platforms: {
-          css: {
-            ...sharedPlatformOptions,
-            files: [
-              {
-                destination: DARK_OUTPUT_FILE,
-                format: 'css/variables',
-                filter: makeBackpackTokenFilter(BACKPACK_DARK_FILE),
-                options: {
-                  selector: DARK_SELECTOR,
-                  outputReferences: false,
-                },
-              },
-            ],
-          },
-        },
-      },
-    },
-  ];
+  }));
 }
 
-// Convenience export for callers that want to iterate the input filenames
-// (e.g. existence checks before invoking SD). Order is irrelevant.
-export const REQUIRED_INPUT_FILES = [
-  PRIMITIVES_FILE,
-  BACKPACK_LIGHT_FILE,
-  BACKPACK_DARK_FILE,
-] as const;
+// Map semantic file names to their output CSS file and selector.
+function outputFileForSemanticFile(semanticFile: string): string {
+  if (semanticFile === BACKPACK_LIGHT_FILE) return LIGHT_OUTPUT_FILE;
+  if (semanticFile === BACKPACK_DARK_FILE) return DARK_OUTPUT_FILE;
+  const match = semanticFile.match(/^backpack\.(.+)\.json$/);
+  return match ? `theme-backpack-${match[1]}.css` : semanticFile.replace('.json', '.css');
+}
+
+function selectorForSemanticFile(semanticFile: string): string {
+  if (semanticFile === BACKPACK_LIGHT_FILE) return LIGHT_SELECTOR;
+  if (semanticFile === BACKPACK_DARK_FILE) return DARK_SELECTOR;
+  const match = semanticFile.match(/^backpack\.(.+)\.json$/);
+  return match ? `:root[data-theme="${match[1]}"]` : ':root';
+}
+
+// Primitives are always required. Semantic token files (backpack.*.json) are
+// discovered dynamically from the tokens directory — adding a new theme just
+// requires a new file, no code changes.
+export const REQUIRED_INPUT_FILES = [PRIMITIVES_FILE] as const;

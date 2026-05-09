@@ -80,19 +80,30 @@ describe('style-dictionary-config', () => {
   describe('buildStyleDictionaryConfigs', () => {
     const tokensDir = '/repo/token-sync/tokens';
     const buildDir = '/repo/token-sync/tokens/css';
-    // Stub list — the real list is computed at runtime from SD in
-    // `build-css.ts`. We only verify the config wires it through verbatim,
-    // not the contents (those are SD's concern, exercised by the e2e test).
     const cssTransforms = ['attribute/cti', 'name/kebab', 'size/pxToRem'];
     const baseOpts = { tokensDir, buildDir, cssTransforms };
 
-    it('produces two named configs, light then dark', () => {
-      const configs = buildStyleDictionaryConfigs(baseOpts);
-      expect(configs.map((c) => c.name)).toEqual(['web-light', 'web-dark']);
+    it('produces configs for each semantic file in order', () => {
+      const configs = buildStyleDictionaryConfigs({
+        ...baseOpts,
+        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
+      });
+      expect(configs).toHaveLength(2);
+      // Names are assigned by index: web-theme-0, web-theme-1, etc.
+      expect(configs.map((c) => c.name)).toEqual(['web-theme-0', 'web-theme-1']);
     });
 
-    it('uses the spec-matching selectors and filenames', () => {
-      const [light, dark] = buildStyleDictionaryConfigs(baseOpts);
+    it('defaults to light then dark when semantic files not provided', () => {
+      const configs = buildStyleDictionaryConfigs(baseOpts);
+      expect(configs).toHaveLength(2);
+    });
+
+    it('uses the spec-matching selectors and filenames for light/dark', () => {
+      const configs = buildStyleDictionaryConfigs({
+        ...baseOpts,
+        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
+      });
+      const [light, dark] = configs;
       const lightFile = light.config.platforms?.css?.files?.[0];
       const darkFile = dark.config.platforms?.css?.files?.[0];
 
@@ -102,8 +113,12 @@ describe('style-dictionary-config', () => {
       expect(darkFile?.options?.selector).toBe(DARK_SELECTOR);
     });
 
-    it('loads primitives alongside the per-mode Backpack file', () => {
-      const [light, dark] = buildStyleDictionaryConfigs(baseOpts);
+    it('loads primitives alongside each semantic token file', () => {
+      const configs = buildStyleDictionaryConfigs({
+        ...baseOpts,
+        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
+      });
+      const [light, dark] = configs;
       expect(light.config.source).toEqual([
         path.join(tokensDir, PRIMITIVES_FILE),
         path.join(tokensDir, BACKPACK_LIGHT_FILE),
@@ -138,32 +153,33 @@ describe('style-dictionary-config', () => {
       const configs = buildStyleDictionaryConfigs({
         ...baseOpts,
         cssTransforms: custom,
+        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
       });
       for (const { config } of configs) {
-        // Order is significant — SD applies transforms in sequence — so
-        // assert the exact array, not a set.
         expect(config.platforms?.css?.transforms).toEqual(custom);
       }
     });
 
     it('defensively copies cssTransforms so caller mutation is harmless', () => {
-      // Mutating the input after building shouldn't poison the produced
-      // config (and vice versa). Trust-but-verify the spread inside the
-      // implementation.
       const mutable = ['attribute/cti', 'size/pxToRem'];
-      const [day] = buildStyleDictionaryConfigs({
+      const configs = buildStyleDictionaryConfigs({
         ...baseOpts,
         cssTransforms: mutable,
+        semanticFileNames: [BACKPACK_LIGHT_FILE],
       });
       mutable.push('color/css');
-      expect(day.config.platforms?.css?.transforms).toEqual([
+      expect(configs[0].config.platforms?.css?.transforms).toEqual([
         'attribute/cti',
         'size/pxToRem',
       ]);
     });
 
-    it('keeps Backpack tokens but not primitives via the filter', () => {
-      const [light] = buildStyleDictionaryConfigs(baseOpts);
+    it('keeps semantic file tokens but not primitives via the filter', () => {
+      const configs = buildStyleDictionaryConfigs({
+        ...baseOpts,
+        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
+      });
+      const [light] = configs;
       const filter = light.config.platforms?.css?.files?.[0]?.filter;
       expect(typeof filter).toBe('function');
       const fn = filter as (t: TransformedToken) => boolean;
@@ -173,18 +189,14 @@ describe('style-dictionary-config', () => {
       expect(
         fn({ filePath: path.join(tokensDir, PRIMITIVES_FILE) } as TransformedToken),
       ).toBe(false);
-      // Light filter rejects dark-source tokens (defence-in-depth in case the
-      // SD platform setup ever loads both at the same time).
       expect(
         fn({ filePath: path.join(tokensDir, BACKPACK_DARK_FILE) } as TransformedToken),
       ).toBe(false);
     });
   });
 
-  it('REQUIRED_INPUT_FILES lists every DTCG input the build needs', () => {
-    expect([...REQUIRED_INPUT_FILES].sort()).toEqual(
-      [PRIMITIVES_FILE, BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE].sort(),
-    );
+  it('REQUIRED_INPUT_FILES lists primitives (semantic files auto-discovered)', () => {
+    expect([...REQUIRED_INPUT_FILES]).toEqual([PRIMITIVES_FILE]);
   });
 
   describe('findInvalidDimensions', () => {
