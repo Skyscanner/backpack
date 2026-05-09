@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
+@use '../../bpk-mixins/tokens';
 
 .bpk-scrim-content {
   position: fixed;
@@ -29,4 +29,10 @@
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  // Re-enable vertical touch panning under body's touch-action: none set by
+  // lockTouchAction on iOS. Without this, touch scrolling inside withScrim
+  // descendants (e.g. modal/drawer content) is blocked via the touch-action
+  // ancestor-chain intersection.
+  touch-action: pan-y;
 }

@@ -22,7 +22,7 @@ import { useMemo, useState } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { useTable, useSortBy } from 'react-table';
 
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkDataTableHeader from './BpkDataTableHeader';
 import { type BpkDataTableProps, SORT_DIRECTION_TYPES } from './common-types';
@@ -148,6 +148,7 @@ const BpkDataTable = (props: BpkDataTableProps) => {
         className: classNames,
       })}
       {...restOfProps}
+      {...getDataComponentAttribute('DataTable')}
     >
       <div>
         {headerGroups.map((headerGroup: any) => (

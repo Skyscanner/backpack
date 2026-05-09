@@ -18,7 +18,7 @@
 
 import { type MutableRefObject, useEffect, useState } from 'react';
 
-import { BpkButtonV2, BUTTON_TYPES } from '../../bpk-component-button';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { CHIP_TYPES } from '../../bpk-component-chip';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
 import ArrowLeft from '../../bpk-component-icon/sm/long-arrow-left';
@@ -97,7 +97,7 @@ const Nudger = ({
 
   return show ? (
     <div className={classNames}>
-      <BpkButtonV2
+      <BpkButton
         title={ariaLabel}
         type={CHIP_STYLE_TO_BUTTON_STYLE[chipStyle]}
         iconOnly
@@ -112,7 +112,7 @@ const Nudger = ({
         }}
       >
         {isLeft ? <AlignedLeftArrowIcon /> : <AlignedRightArrowIcon />}
-      </BpkButtonV2>
+      </BpkButton>
     </div>
   ) : null;
 }

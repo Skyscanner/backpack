@@ -11,6 +11,7 @@
 /packages/bpk-component-spinner/src/spinners
 /packages/bpk-component-flare/src/__generated__
 !/packages/bpk-component-icon/src
+!/packages/bpk-component-icon/scripts
 node_modules
 npm-debug.*
 yarn.lock
@@ -20,4 +21,14 @@ yarn.lock
 # Ignore css assets as these should be built on demand from sass
 *.css
 !packages/bpk-stylesheets/base.css
-/packages/unstable__bpk-mixins
+/packages/bpk-stylesheets/normalize.scss
+.copilot-progress
+
+# Playwright
+.playwright-cli
+
+# OpenSpec - until Backpack officially endorses it
+.claude/commands/opsx
+.claude/skills/openspec-*
+.claude/settings.local.json
+openspec

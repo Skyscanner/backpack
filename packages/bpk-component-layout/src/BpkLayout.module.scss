@@ -1,0 +1,91 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+
+// Text colors — must stay in sync with TEXT_COLORS in bpk-component-text/src/BpkText.tsx
+$layout-text-colors: (
+  'text-disabled': tokens.$bpk-text-disabled-day,
+  'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
+  'text-error': tokens.$bpk-text-error-day,
+  'text-hero': tokens.$bpk-text-hero-day,
+  'text-link': tokens.$bpk-text-link-day,
+  'text-on-dark': tokens.$bpk-text-on-dark-day,
+  'text-on-light': tokens.$bpk-text-on-light-day,
+  'text-primary': tokens.$bpk-text-primary-day,
+  'text-primary-inverse': tokens.$bpk-text-primary-inverse-day,
+  'text-secondary': tokens.$bpk-text-secondary-day,
+  'text-success': tokens.$bpk-text-success-day,
+);
+
+// Canvas background colors (day mode only)
+$layout-canvas-bg-colors: (
+  'canvas': tokens.$bpk-canvas-day,
+  'canvas-contrast': tokens.$bpk-canvas-contrast-day,
+);
+
+// Status fill background colors (day mode only)
+$layout-status-fill-bg-colors: (
+  'status-success-fill': tokens.$bpk-status-success-fill-day,
+  'status-danger-fill': tokens.$bpk-status-danger-fill-day,
+  'status-warning-fill': tokens.$bpk-status-warning-fill-day,
+);
+
+// Surface background colors — must stay in sync with SURFACE_COLORS in bpk-react-utils/src/surfaceColors.ts
+$layout-surface-bg-colors: (
+  'surface-default': tokens.$bpk-surface-default-day,
+  'surface-elevated': tokens.$bpk-surface-elevated-day,
+  'surface-hero': tokens.$bpk-surface-hero-day,
+  'surface-contrast': tokens.$bpk-surface-contrast-day,
+  'surface-highlight': tokens.$bpk-surface-highlight-day,
+  'surface-subtle': tokens.$bpk-surface-subtle-day,
+  'surface-low-contrast': tokens.$bpk-surface-low-contrast-day,
+  'surface-tint': tokens.$bpk-surface-tint-day,
+);
+
+// Shared base class applied to all BpkLayout components when color/backgroundColor is set.
+// Compound selectors beat Chakra emotion specificity, matching the BpkText approach.
+.bpk-layout {
+  // Text color modifiers
+  @each $color-name, $color-value in $layout-text-colors {
+    &.bpk-layout--#{$color-name} {
+      color: $color-value;
+    }
+  }
+
+  // Surface background color modifiers
+  @each $color-name, $color-value in $layout-surface-bg-colors {
+    &.bpk-layout--#{$color-name} {
+      background-color: $color-value;
+    }
+  }
+
+  // Canvas background color modifiers
+  @each $color-name, $color-value in $layout-canvas-bg-colors {
+    &.bpk-layout--#{$color-name} {
+      background-color: $color-value;
+    }
+  }
+
+  // Status fill background color modifiers
+  @each $color-name, $color-value in $layout-status-fill-bg-colors {
+    &.bpk-layout--#{$color-name} {
+      background-color: $color-value;
+    }
+  }
+}

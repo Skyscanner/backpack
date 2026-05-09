@@ -19,9 +19,9 @@
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable selector-max-compound-selectors */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
-@use '../../unstable__bpk-mixins/typography';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/breakpoints';
+@use '../../bpk-mixins/typography';
 
 .bpk-content-cards {
   &--header-text {

@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-05-08T08:12:33.041Z",
+  "files": [
+    {
+      "fileName": "backpack.light.json",
+      "collectionName": "Backpack",
+      "modeName": "Light",
+      "role": "semantic",
+      "variableCount": 175,
+      "preservedAliasCount": 113,
+      "inlinedAliasCount": 36,
+      "skippedVariableCount": 4
+    },
+    {
+      "fileName": "backpack.dark.json",
+      "collectionName": "Backpack",
+      "modeName": "Dark",
+      "role": "semantic",
+      "variableCount": 175,
+      "preservedAliasCount": 116,
+      "inlinedAliasCount": 33,
+      "skippedVariableCount": 4
+    },
+    {
+      "fileName": "primitives.json",
+      "collectionName": "Primitives",
+      "modeName": "Hex",
+      "role": "primitive",
+      "variableCount": 104,
+      "preservedAliasCount": 0,
+      "inlinedAliasCount": 0,
+      "skippedVariableCount": 0
+    }
+  ]
+}

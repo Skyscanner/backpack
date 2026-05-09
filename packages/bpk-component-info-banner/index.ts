@@ -29,4 +29,5 @@ export {
   BpkInfoBannerExpandable,
   withBannerAlertState,
 };
+export type { AlertTypeValue, StyleTypeValue } from './src/common-types';
 export default BpkInfoBanner;

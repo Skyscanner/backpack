@@ -5,6 +5,7 @@ exports[`BpkTextarea should render correctly 1`] = `
   <textarea
     aria-invalid="false"
     class="bpk-textarea"
+    data-backpack-ds-component="Textarea"
     id="test"
     name="test"
   />
@@ -16,6 +17,7 @@ exports[`BpkTextarea should render correctly with "className" attribute 1`] = `
   <textarea
     aria-invalid="false"
     class="bpk-textarea my-custom-class-1 my-custom-class-2"
+    data-backpack-ds-component="Textarea"
     id="test"
     name="test"
   />

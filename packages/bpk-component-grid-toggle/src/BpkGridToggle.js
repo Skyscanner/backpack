@@ -19,7 +19,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { BpkButtonLink } from '../../bpk-component-link';
+import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkGridToggle.module.scss';
@@ -73,12 +73,13 @@ class BpkGridToggle extends Component {
 
     return (
       <span className={className}>
-        <BpkButtonLink
+        <BpkLink
+          as="button"
           title="Keyboard Shortcut: ctrl + cmd + g"
           onClick={this.toggleGrid}
         >
           Baseline grid {onOrOff}
-        </BpkButtonLink>
+        </BpkLink>
       </span>
     );
   }

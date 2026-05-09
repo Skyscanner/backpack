@@ -14,6 +14,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -33,6 +34,7 @@ exports[`BpkDialog should render correctly in the given target if renderTarget i
               <button
                 aria-label="Close"
                 class="bpk-close-button__default"
+                data-backpack-ds-component="CloseButton"
                 title="Close"
                 type="button"
               >
@@ -76,6 +78,7 @@ exports[`BpkDialog should render correctly when it is not dismissible 2`] = `
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -112,6 +115,7 @@ exports[`BpkDialog should render default icon dialog correctly 2`] = `
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -163,6 +167,7 @@ exports[`BpkDialog should render destructive icon dialog correctly 2`] = `
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -214,6 +219,7 @@ exports[`BpkDialog should render warning icon dialog correctly 2`] = `
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -265,6 +271,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -332,6 +339,7 @@ exports[`BpkDialog should render with flare dialog 2`] = `
               <button
                 aria-label=""
                 class="bpk-close-button__default"
+                data-backpack-ds-component="CloseButton"
                 title=""
                 type="button"
               >
@@ -375,6 +383,7 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
       >
         <div
           class="bpk-scrim"
+          data-backpack-ds-component="Scrim"
           role="presentation"
         />
         <section
@@ -442,6 +451,7 @@ exports[`BpkDialog should render with flare dialog with flareClassName 2`] = `
               <button
                 aria-label=""
                 class="bpk-close-button__default"
+                data-backpack-ds-component="CloseButton"
                 title=""
                 type="button"
               >

@@ -1,0 +1,162 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/utils';
+
+// Matches BpkAccordion (200ms via AnimateHeight). Sourced from foundations
+// rather than hardcoded so the two stay in sync.
+$collapsible-duration: tokens.$bpk-duration-sm;
+
+// `inline-size: 100%` stops a flex/grid parent (e.g. BpkVStack, BpkCardV2.Body)
+// from sizing the root to the wider of trigger/content, which would make the
+// wrapper visibly shrink and grow as the content expands or collapses.
+// `min-inline-size: 0` lets the root shrink below its content's intrinsic
+// min-width so flex/grid children honour the parent's width instead of
+// overflowing it.
+.bpk-collapsible {
+  display: block;
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.bpk-collapsible--default {
+  color: tokens.$bpk-text-primary-day;
+}
+
+.bpk-collapsible--on-contrast {
+  color: tokens.$bpk-text-on-dark-day;
+
+  .bpk-collapsible__trigger:disabled,
+  .bpk-collapsible__content[data-disabled] {
+    color: tokens.$bpk-text-disabled-on-dark-day;
+  }
+}
+
+// Trigger is the flex row itself — leading accessories cluster on the start
+// with `gap`, the Indicator pulls to the end via `margin-inline-start: auto`,
+// and consumers drop content directly without a wrapper span (which would
+// break HTML5 phrasing-content rules inside <button>).
+.bpk-collapsible__trigger {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: start;
+  cursor: pointer;
+  appearance: none;
+  gap: tokens.bpk-spacing-sm();
+  inline-size: 100%;
+
+  // Native <button>:disabled — Ark only emits data-disabled, but we forward
+  // the disabled prop to the underlying button in BpkCollapsibleTrigger.tsx.
+  &:disabled,
+  &[data-disabled] {
+    cursor: not-allowed;
+  }
+
+  &:disabled {
+    color: tokens.$bpk-text-disabled-day;
+  }
+
+  // Zag does not emit `data-focus-visible` for the collapsible trigger, so we
+  // rely on the standard CSS pseudo-class.
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}
+
+// `margin-inline-start: auto` parks the indicator at the end of the trigger
+// flex row so leading children keep their natural `gap` spacing without a
+// wrapper.
+.bpk-collapsible__indicator {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform $collapsible-duration ease;
+  color: inherit;
+  margin-inline-start: auto;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  svg {
+    fill: currentcolor;
+  }
+
+  &[data-state='open'] {
+    transform: rotate(180deg);
+  }
+}
+
+// Ark exposes --height as a CSS var; the keyframes below interpolate against it.
+.bpk-collapsible__content {
+  overflow: hidden;
+
+  @media (prefers-reduced-motion: reduce) {
+    &[data-state='open'],
+    &[data-state='closing'],
+    &[data-state='closed'] {
+      animation: none;
+    }
+  }
+
+  &[data-disabled] {
+    color: tokens.$bpk-text-disabled-day;
+  }
+
+  &[data-state='open'] {
+    animation: bpk-collapsible-expand $collapsible-duration ease;
+  }
+
+  &[data-state='closing'],
+  &[data-state='closed'] {
+    animation: bpk-collapsible-collapse $collapsible-duration ease;
+  }
+}
+
+.bpk-collapsible__content-inner {
+  display: block;
+}
+
+// Animations interpolate between --collapsed-height (set by Ark when the
+// collapsedHeight prop is supplied — falls back to 0px otherwise) and --height
+// (the measured size). This keeps the "show more" pattern smooth instead of
+// flashing through a fully collapsed state.
+@keyframes bpk-collapsible-expand {
+  from {
+    block-size: var(--collapsed-height, 0);
+  }
+
+  to {
+    block-size: var(--height);
+  }
+}
+
+@keyframes bpk-collapsible-collapse {
+  from {
+    block-size: var(--height);
+  }
+
+  to {
+    block-size: var(--collapsed-height, 0);
+  }
+}

@@ -23,7 +23,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 import { cssModules } from '../../bpk-react-utils';
 

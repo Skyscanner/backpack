@@ -38,8 +38,9 @@ import { isTablet, isMobilePhone } from 'some-device-detection';
 </BpkBreakpoint>
 ```
 
-If you match to a different breakpoint when rendering on the server, than what is matched to in the traveller's browser,
-then React will print a warning saying there is a mismatch. **This will also cause reflow during client-side hydration, which can lead to a poor user experience—especially for layout components like header.**
+When `matchSSR=true`, the component prevents React hydration errors by matching the server-rendered state during initial client render. This may cause a brief visual flash but avoids hydration warnings when User-Agent detection doesn't match the actual viewport.
+
+If you match to a different breakpoint when rendering on the server than what is matched in the traveller's browser and `matchSSR=false`, React will print a warning about mismatches. **This can also cause reflow during client-side hydration, which can lead to a poor user experience—especially for layout components like headers.**
 Please consider this carefully before using this component in critical UI areas.
 
 ### Testing

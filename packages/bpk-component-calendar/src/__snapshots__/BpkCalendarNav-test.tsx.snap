@@ -4,6 +4,7 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar-nav"
+    data-backpack-ds-component="CalendarNav"
   >
     <div
       style="display: table-row;"
@@ -97,6 +98,7 @@ exports[`BpkCalendarNav should disable inputs when disabled 1`] = `
       <div
         aria-live="polite"
         class="bpk-aria-live bpk-aria-live--invisible"
+        data-backpack-ds-component="AriaLive"
       >
         February 2010
       </div>
@@ -109,6 +111,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar-nav"
+    data-backpack-ds-component="CalendarNav"
   >
     <div
       style="display: table-row;"
@@ -200,6 +203,7 @@ exports[`BpkCalendarNav should render correctly 1`] = `
       <div
         aria-live="polite"
         class="bpk-aria-live bpk-aria-live--invisible"
+        data-backpack-ds-component="AriaLive"
       >
         February 2010
       </div>
@@ -212,6 +216,7 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
 <DocumentFragment>
   <div
     class="bpk-calendar-nav"
+    data-backpack-ds-component="CalendarNav"
   >
     <div
       style="display: table-row;"
@@ -305,6 +310,7 @@ exports[`BpkCalendarNav should use given previousMonth and nextMonth labels corr
       <div
         aria-live="polite"
         class="bpk-aria-live bpk-aria-live--invisible"
+        data-backpack-ds-component="AriaLive"
       >
         February 2010
       </div>

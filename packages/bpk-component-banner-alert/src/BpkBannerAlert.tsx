@@ -16,16 +16,11 @@
  * limitations under the License.
  */
 
+import { getDataComponentAttribute } from '../../bpk-react-utils';
+
 import BpkBannerAlertInner from './BpkBannerAlertInner';
 
 import type { CommonProps } from './common-types';
-
-const defaultProps = {
-  animateOnEnter: false,
-  animateOnLeave: false,
-  show: true,
-  icon: null,
-};
 
 /**
  * @deprecated use bpk-component-info-banner instead
@@ -43,6 +38,7 @@ const BpkBannerAlert = ({
     animateOnLeave={animateOnLeave}
     show={show}
     icon={icon}
+    {...getDataComponentAttribute('BannerAlert')}
     {...rest}
   />
 );

@@ -24,17 +24,17 @@ import type { ReactNode, FunctionComponent, SVGProps } from 'react';
 
 import { durationSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAnimateHeight from '../../bpk-animate-height';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
 import { withButtonAlignment } from '../../bpk-component-icon';
 import ChevronDownIcon from '../../bpk-component-icon/sm/chevron-down';
 import ChevronUpIcon from '../../bpk-component-icon/sm/chevron-up';
+import ExclamationCircleIcon from '../../bpk-component-icon/sm/exclamation-circle';
 import InfoCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLink from '../../bpk-component-link';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
 
 import AnimateAndFade from './AnimateAndFade';
@@ -70,6 +70,7 @@ const getIconForType = (
     [ALERT_TYPES.WARNING]: getClassName('bpk-info-banner__warning-icon'),
     [ALERT_TYPES.ERROR]: getClassName('bpk-info-banner__error-icon'),
     [ALERT_TYPES.INFO]: getClassName('bpk-info-banner__info-icon'),
+    [ALERT_TYPES.CRITICAL]: getClassName('bpk-info-banner__critical-icon'),
   } as const;
   const className = classMap[type];
   const componentMap: {
@@ -79,6 +80,7 @@ const getIconForType = (
     [ALERT_TYPES.WARNING]: InfoCircleIcon,
     [ALERT_TYPES.ERROR]: InfoCircleIcon,
     [ALERT_TYPES.INFO]: InfoCircleIcon,
+    [ALERT_TYPES.CRITICAL]: ExclamationCircleIcon,
   } as const;
   const Icon = CustomIcon || componentMap[type];
   const AlignedIcon = withButtonAlignment(Icon);
@@ -94,7 +96,7 @@ type ToggleButtonProps = {
 const ToggleButton = (props: ToggleButtonProps) => (
   <div className={getClassName('bpk-info-banner__toggle-button')}>
     {props.expanded ? <CollapseIcon /> : <ExpandIcon />}
-    <span className="visually-hidden">{props.label}</span>
+    <BpkVisuallyHidden>{props.label}</BpkVisuallyHidden>
   </div>
 );
 
@@ -199,6 +201,7 @@ const BpkInfoBannerInner = ({
                 onClick={onBannerDismiss}
                 aria-label={dismissButtonLabel}
                 label={dismissButtonLabel}
+                onDark={type === ALERT_TYPES.CRITICAL}
               />
             </span>
           )}
@@ -212,8 +215,9 @@ const BpkInfoBannerInner = ({
           </div>
           {isExpandable && action && (
             <BpkLink
+              alternate={type === ALERT_TYPES.CRITICAL}
               onClick={action.callback}
-              href={null}
+              href="#"
             >
               {action.title}
             </BpkLink>

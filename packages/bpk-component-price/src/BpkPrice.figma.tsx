@@ -23,13 +23,14 @@ import { SIZES, ALIGNS } from './common-types'
 
 figma.connect(
   BpkPrice,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=16470%3A17021",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A19302",
   {
     props: {
       price: figma.string("Price"),
       size: figma.enum("Size", {
         "X-Small": SIZES.xsmall,
         Small: SIZES.small,
+        Medium: SIZES.medium,
         Large: SIZES.large,
       }),
       align: figma.enum("Alignment", {

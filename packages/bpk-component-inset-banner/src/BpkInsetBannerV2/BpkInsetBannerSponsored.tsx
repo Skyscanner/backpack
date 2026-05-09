@@ -20,11 +20,12 @@ import { useState } from 'react';
 import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkBottomSheet from '../../../bpk-component-bottom-sheet';
+import { PADDING_TYPE } from '../../../bpk-component-bottom-sheet/src/BpkBottomSheet';
 import ViewIcon from '../../../bpk-component-icon/lg/view';
 import InfoIcon from '../../../bpk-component-icon/sm/information-circle';
 import BpkImage from '../../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text/src/BpkText';
-import { cssModules } from '../../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 
 import { VARIANT, type CommonProps } from './common-types';
 
@@ -53,7 +54,7 @@ const BpkInsetBannerSponsored = ({
   const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
-    <div>
+    <div {...getDataComponentAttribute('InsetBannerSponsored')}>
       <div
         aria-label={accessibilityLabel}
         className={classNames}
@@ -115,6 +116,11 @@ const BpkInsetBannerSponsored = ({
               ariaLabel={callToAction?.bottomSheetA11yLabel || ''}
               closeOnScrimClick
               closeOnEscPressed
+              paddingStyles={{
+                top: PADDING_TYPE.base,
+                start: PADDING_TYPE.lg,
+                bottom: PADDING_TYPE.base
+              }}
             >
               {callToAction.bottomSheetContent.map((item, index) => (
                 <div

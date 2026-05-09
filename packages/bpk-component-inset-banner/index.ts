@@ -22,9 +22,27 @@ import BpkInsetBanner, {
 import BpkInsetBannerSponsored from './src/BpkInsetBannerV2/BpkInsetBannerSponsored';
 import { type CommonProps as BpkInsetBannerSponsoredProps } from './src/BpkInsetBannerV2/common-types';
 import { VARIANT } from './src/BpkInsetBannerV2/common-types';
+import BpkInsetBannerV3 from './src/BpkInsetBannerV3/BpkInsetBannerV3';
+
+import type {
+  RootProps as BpkInsetBannerV3RootProps,
+  HeaderProps as BpkInsetBannerV3HeaderProps,
+  LeadingAccessoryProps as BpkInsetBannerV3LeadingAccessoryProps,
+  ContentProps as BpkInsetBannerV3ContentProps,
+  BodyProps as BpkInsetBannerV3BodyProps,
+  TrailingAccessoryProps as BpkInsetBannerV3TrailingAccessoryProps,
+} from './src/BpkInsetBannerV3/BpkInsetBannerV3';
 
 export type { BpkInsetBannerProps };
 export type { BpkInsetBannerSponsoredProps };
+export type {
+  BpkInsetBannerV3RootProps,
+  BpkInsetBannerV3HeaderProps,
+  BpkInsetBannerV3LeadingAccessoryProps,
+  BpkInsetBannerV3ContentProps,
+  BpkInsetBannerV3BodyProps,
+  BpkInsetBannerV3TrailingAccessoryProps,
+};
 
 export { VARIANT };
-export { BpkInsetBannerSponsored, BpkInsetBanner };
+export { BpkInsetBannerSponsored, BpkInsetBanner, BpkInsetBannerV3 };

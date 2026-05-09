@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
+@use '../../../bpk-mixins/tokens';
+
 .bpk-card-list-row-rail {
   display: flex;
   flex-direction: column;
 
   &__accessory {
     width: 100%;
+    margin-block-start: tokens.bpk-spacing-lg();
   }
 }

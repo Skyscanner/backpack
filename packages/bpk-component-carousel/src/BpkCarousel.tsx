@@ -20,7 +20,7 @@ import { type MouseEvent, useRef, useState } from 'react';
 
 import { BREAKPOINTS, useMediaQuery } from '../../bpk-component-breakpoint';
 import BpkPageIndicator, { DIRECTIONS, VARIANT } from '../../bpk-component-page-indicator';
-import { cssModules } from '../../bpk-react-utils';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import BpkCarouselContainer from './BpkCarouselContainer';
 import { scrollToIndex, useScrollToInitialImage } from './utils';
@@ -37,10 +37,13 @@ const BpkCarousel = ({
   images,
   initialImageIndex = 0,
   onImageChanged = null,
+  pageIndicatorVariant = VARIANT.overImageSpaced,
+  showPageIndicatorNav,
   }: Props) => {
   const [shownImageIndex, updateShownImageIndex] = useState(initialImageIndex);
   const imagesRef = useRef<Array<HTMLElement | null>>([]);
   const isDesktop = useMediaQuery(BREAKPOINTS.ABOVE_TABLET);
+  const showNav = showPageIndicatorNav ?? isDesktop;
 
   const handleIndicatorClick = (
     e: MouseEvent<HTMLButtonElement>,
@@ -57,7 +60,10 @@ const BpkCarousel = ({
   useScrollToInitialImage(initialImageIndex!, imagesRef);
 
   return (
-    <div className={getClassName('bpk-carousel')}>
+    <div
+      className={getClassName('bpk-carousel')}
+      {...getDataComponentAttribute('Carousel')}
+    >
       <BpkCarouselContainer
         images={images}
         onVisible={updateShownImageIndex}
@@ -74,12 +80,12 @@ const BpkCarousel = ({
         <BpkPageIndicator
           currentIndex={shownImageIndex}
           totalIndicators={images.length}
-          variant={VARIANT.overImageSpaced}
+          variant={pageIndicatorVariant}
           indicatorLabel={accessibilityLabels.indicatorLabel ?? "Go to slide"}
           prevNavLabel={accessibilityLabels.prevNavLabel ?? "Previous slide"}
           nextNavLabel={accessibilityLabels.nextNavLabel ?? "Next slide"}
-          showNav={isDesktop}
-          onClick={isDesktop ? handleIndicatorClick : () => {}}
+          showNav={showNav}
+          onClick={showNav ? handleIndicatorClick : () => {}}
         />
       </div>
     </div>

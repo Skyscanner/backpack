@@ -16,6 +16,4 @@
  * limitations under the License.
  */
 
-/* stylelint-disable at-rule-disallowed-list */
-
-@import '@skyscanner/bpk-foundations-web/tokens/base.default';
+@forward '@skyscanner/bpk-foundations-web/tokens/base.default';

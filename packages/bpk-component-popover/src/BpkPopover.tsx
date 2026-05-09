@@ -45,10 +45,9 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
+import BpkLink from '../../bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import { ARROW_ID } from './constants';
 
@@ -234,6 +233,7 @@ const BpkPopover = ({
                   role="dialog"
                   aria-labelledby={labelId}
                   className={classNames}
+                  {...getDataComponentAttribute('Popover')}
                   {...rest}
                 >
                   {showArrow && (
@@ -274,7 +274,8 @@ const BpkPopover = ({
                         />
                       ) : (
                         closeButtonText && (
-                          <BpkButtonLink
+                          <BpkLink
+                            as="button"
                             onClick={(
                               event: SyntheticEvent<HTMLButtonElement>,
                             ) => {
@@ -288,7 +289,7 @@ const BpkPopover = ({
                             {...closeButtonProps}
                           >
                             {closeButtonText}
-                          </BpkButtonLink>
+                          </BpkLink>
                         )
                       )}
                     </header>
@@ -303,14 +304,15 @@ const BpkPopover = ({
                   <div className={bodyClassNames}>{children}</div>
                   {actionText && onAction && (
                     <div className={getClassName('bpk-popover__action')}>
-                      <BpkButtonLink onClick={onAction}>
+                      <BpkLink as="button" onClick={onAction}>
                         {actionText}
-                      </BpkButtonLink>
+                      </BpkLink>
                     </div>
                   )}
                   {!labelAsTitle && closeButtonText && (
                     <footer className={getClassName('bpk-popover__footer')}>
-                      <BpkButtonLink
+                      <BpkLink
+                        as="button"
                         onClick={(event: SyntheticEvent<HTMLButtonElement>) => {
                           bindEventSource(
                             EVENT_SOURCES.CLOSE_LINK,
@@ -322,7 +324,7 @@ const BpkPopover = ({
                         {...closeButtonProps}
                       >
                         {closeButtonText}
-                      </BpkButtonLink>
+                      </BpkLink>
                     </footer>
                   )}
                 </section>

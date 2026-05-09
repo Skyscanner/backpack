@@ -8,6 +8,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
     <header
       aria-hidden="true"
       class="bpk-calendar-header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -72,7 +73,12 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
     </header>
     <div
       class="bpk-scrollable-calendar-grid-list"
+      data-backpack-ds-component="ScrollableCalendarGridList"
     >
+      <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
       <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
@@ -87,12 +93,14 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -101,6 +109,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                   aria-hidden="false"
                   aria-label="February 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -108,6 +117,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -119,6 +129,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 1st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -139,6 +150,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 2nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -159,6 +171,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 3rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -179,6 +192,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 4th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -199,6 +213,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 5th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -219,6 +234,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 6th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -239,6 +255,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 7th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -253,6 +270,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -264,6 +282,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 8th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -284,6 +303,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 9th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -304,6 +324,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 10th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -324,6 +345,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 11th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -344,6 +366,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 12th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -364,6 +387,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 13th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -384,6 +408,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 14th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--focused"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="0"
                           type="button"
                         >
@@ -397,6 +422,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -408,6 +434,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 15th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -427,6 +454,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 16th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -446,6 +474,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 17th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -465,6 +494,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 18th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -484,6 +514,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 19th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -503,6 +534,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 20th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -522,6 +554,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 21st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -535,6 +568,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -546,6 +580,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 22nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -565,6 +600,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 23rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -584,6 +620,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 24th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -603,6 +640,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 25th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -622,6 +660,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 26th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -641,6 +680,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 27th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -660,6 +700,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 28th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -680,12 +721,14 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -694,6 +737,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                   aria-hidden="false"
                   aria-label="March 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -701,6 +745,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -712,6 +757,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 1st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -731,6 +777,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 2nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -750,6 +797,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 3rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -769,6 +817,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 4th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -788,6 +837,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 5th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -807,6 +857,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 6th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -826,6 +877,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 7th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -839,6 +891,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -850,6 +903,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 8th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -869,6 +923,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 9th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -888,6 +943,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 10th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -907,6 +963,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 11th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -926,6 +983,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 12th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -945,6 +1003,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 13th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -964,6 +1023,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 14th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -977,6 +1037,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -988,6 +1049,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 15th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1007,6 +1069,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 16th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1026,6 +1089,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 17th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1045,6 +1109,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 18th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1064,6 +1129,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 19th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1083,6 +1149,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 20th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1102,6 +1169,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 21st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1115,6 +1183,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -1126,6 +1195,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 22nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1145,6 +1215,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 23rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1164,6 +1235,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 24th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1183,6 +1255,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Thursday, 25th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1202,6 +1275,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Friday, 26th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1221,6 +1295,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Saturday, 27th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1240,6 +1315,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Sunday, 28th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1253,6 +1329,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -1264,6 +1341,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Monday, 29th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1283,6 +1361,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Tuesday, 30th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1302,6 +1381,7 @@ exports[`BpkScrollableCalendar should render correctly 1`] = `
                           aria-label="Wednesday, 31st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1367,6 +1447,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
     <header
       aria-hidden="true"
       class="bpk-calendar-header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -1431,7 +1512,12 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
     </header>
     <div
       class="bpk-scrollable-calendar-grid-list"
+      data-backpack-ds-component="ScrollableCalendarGridList"
     >
+      <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
       <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
@@ -1446,12 +1532,14 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -1460,6 +1548,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                   aria-hidden="false"
                   aria-label="February 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -1467,6 +1556,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -1478,6 +1568,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 1st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1498,6 +1589,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 2nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1518,6 +1610,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 3rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1538,6 +1631,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 4th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1558,6 +1652,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 5th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1578,6 +1673,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 6th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1598,6 +1694,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 7th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1612,6 +1709,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -1623,6 +1721,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 8th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1643,6 +1742,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 9th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1663,6 +1763,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 10th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1683,6 +1784,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 11th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1703,6 +1805,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 12th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1723,6 +1826,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 13th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -1743,6 +1847,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 14th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1756,6 +1861,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -1767,6 +1873,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 15th February 2010"
                           aria-pressed="true"
                           class="bpk-calendar-date bpk-calendar-date--focused bpk-calendar-date--selected bpk-calendar-date--start"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="0"
                           type="button"
                         >
@@ -1786,6 +1893,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 16th February 2010"
                           aria-pressed="true"
                           class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1805,6 +1913,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 17th February 2010"
                           aria-pressed="true"
                           class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1824,6 +1933,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 18th February 2010"
                           aria-pressed="true"
                           class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1843,6 +1953,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 19th February 2010"
                           aria-pressed="true"
                           class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--middle"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1862,6 +1973,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 20th February 2010"
                           aria-pressed="true"
                           class="bpk-calendar-date bpk-calendar-date--selected bpk-calendar-date--end"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1881,6 +1993,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 21st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1894,6 +2007,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -1905,6 +2019,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 22nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1924,6 +2039,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 23rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1943,6 +2059,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 24th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1962,6 +2079,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 25th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -1981,6 +2099,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 26th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2000,6 +2119,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 27th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2019,6 +2139,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 28th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2039,12 +2160,14 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -2053,6 +2176,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                   aria-hidden="false"
                   aria-label="March 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -2060,6 +2184,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2071,6 +2196,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 1st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2090,6 +2216,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 2nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2109,6 +2236,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 3rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2128,6 +2256,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 4th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2147,6 +2276,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 5th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2166,6 +2296,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 6th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2185,6 +2316,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 7th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2198,6 +2330,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2209,6 +2342,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 8th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2228,6 +2362,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 9th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2247,6 +2382,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 10th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2266,6 +2402,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 11th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2285,6 +2422,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 12th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2304,6 +2442,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 13th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2323,6 +2462,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 14th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2336,6 +2476,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2347,6 +2488,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 15th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2366,6 +2508,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 16th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2385,6 +2528,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 17th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2404,6 +2548,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 18th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2423,6 +2568,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 19th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2442,6 +2588,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 20th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2461,6 +2608,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 21st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2474,6 +2622,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2485,6 +2634,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 22nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2504,6 +2654,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 23rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2523,6 +2674,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 24th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2542,6 +2694,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Thursday, 25th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2561,6 +2714,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Friday, 26th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2580,6 +2734,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Saturday, 27th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2599,6 +2754,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Sunday, 28th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2612,6 +2768,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2623,6 +2780,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Monday, 29th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2642,6 +2800,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Tuesday, 30th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2661,6 +2820,7 @@ exports[`BpkScrollableCalendar should render ranges correctly 1`] = `
                           aria-label="Wednesday, 31st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -2726,6 +2886,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
     <header
       aria-hidden="true"
       class="bpk-calendar-header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -2790,7 +2951,12 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
     </header>
     <div
       class="bpk-scrollable-calendar-grid-list"
+      data-backpack-ds-component="ScrollableCalendarGridList"
     >
+      <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
       <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
@@ -2805,12 +2971,14 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -2819,6 +2987,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                   aria-hidden="false"
                   aria-label="February 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -2826,6 +2995,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2837,6 +3007,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 1st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2857,6 +3028,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 2nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2877,6 +3049,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 3rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2897,6 +3070,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 4th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2917,6 +3091,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 5th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2937,6 +3112,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 6th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2957,6 +3133,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 7th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -2971,6 +3148,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -2982,6 +3160,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 8th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -3002,6 +3181,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 9th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -3022,6 +3202,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 10th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -3042,6 +3223,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 11th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -3062,6 +3244,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 12th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -3082,6 +3265,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 13th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -3102,6 +3286,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 14th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--focused"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="0"
                           type="button"
                         >
@@ -3115,6 +3300,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3126,6 +3312,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 15th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3145,6 +3332,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 16th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3164,6 +3352,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 17th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3183,6 +3372,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 18th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3202,6 +3392,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 19th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3221,6 +3412,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 20th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3240,6 +3432,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 21st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3253,6 +3446,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3264,6 +3458,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 22nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3283,6 +3478,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 23rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3302,6 +3498,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 24th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3321,6 +3518,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 25th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3340,6 +3538,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 26th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3359,6 +3558,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 27th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3378,6 +3578,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 28th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3398,12 +3599,14 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -3412,6 +3615,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                   aria-hidden="false"
                   aria-label="March 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -3419,6 +3623,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3430,6 +3635,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 1st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3449,6 +3655,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 2nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3468,6 +3675,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 3rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3487,6 +3695,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 4th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3506,6 +3715,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 5th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3525,6 +3735,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 6th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3544,6 +3755,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 7th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3557,6 +3769,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3568,6 +3781,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 8th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3587,6 +3801,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 9th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3606,6 +3821,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 10th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3625,6 +3841,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 11th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3644,6 +3861,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 12th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3663,6 +3881,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 13th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3682,6 +3901,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 14th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3695,6 +3915,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3706,6 +3927,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 15th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3725,6 +3947,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 16th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3744,6 +3967,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 17th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3763,6 +3987,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 18th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3782,6 +4007,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 19th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3801,6 +4027,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 20th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3820,6 +4047,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 21st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3833,6 +4061,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3844,6 +4073,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 22nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3863,6 +4093,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 23rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3882,6 +4113,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 24th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3901,6 +4133,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Thursday, 25th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3920,6 +4153,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Friday, 26th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3939,6 +4173,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Saturday, 27th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3958,6 +4193,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Sunday, 28th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -3971,6 +4207,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -3982,6 +4219,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Monday, 29th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4001,6 +4239,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Tuesday, 30th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4020,6 +4259,7 @@ exports[`BpkScrollableCalendar should support arbitrary props 1`] = `
                           aria-label="Wednesday, 31st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4085,6 +4325,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
     <header
       aria-hidden="true"
       class="bpk-calendar-header"
+      data-backpack-ds-component="CalendarGridHeader"
     >
       <ol
         class="bpk-calendar-header__week"
@@ -4149,7 +4390,12 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
     </header>
     <div
       class="bpk-scrollable-calendar-grid-list"
+      data-backpack-ds-component="ScrollableCalendarGridList"
     >
+      <div
+        aria-hidden="true"
+        class="bpk-scrollable-calendar-grid-list__font-sentinel"
+      />
       <div
         style="overflow: visible; height: 0px; width: 0px;"
       >
@@ -4164,12 +4410,14 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     February 2010
                   </h2>
@@ -4178,6 +4426,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                   aria-hidden="false"
                   aria-label="February 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -4185,6 +4434,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -4196,6 +4446,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 1st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4216,6 +4467,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 2nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4236,6 +4488,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 3rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4256,6 +4509,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 4th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4276,6 +4530,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 5th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4296,6 +4551,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 6th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4316,6 +4572,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 7th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4330,6 +4587,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -4341,6 +4599,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 8th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4361,6 +4620,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 9th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4381,6 +4641,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 10th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4401,6 +4662,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 11th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4421,6 +4683,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 12th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4441,6 +4704,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 13th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--blocked"
+                          data-backpack-ds-component="CalendarDate"
                           disabled=""
                           tabindex="-1"
                           type="button"
@@ -4461,6 +4725,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 14th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date bpk-calendar-date--focused"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="0"
                           type="button"
                         >
@@ -4474,6 +4739,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -4485,6 +4751,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 15th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4504,6 +4771,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 16th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4523,6 +4791,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 17th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4542,6 +4811,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 18th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4561,6 +4831,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 19th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4580,6 +4851,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 20th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4599,6 +4871,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 21st February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4612,6 +4885,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -4623,6 +4897,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 22nd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4642,6 +4917,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 23rd February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4661,6 +4937,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 24th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4680,6 +4957,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 25th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4699,6 +4977,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 26th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4718,6 +4997,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 27th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4737,6 +5017,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 28th February 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4757,12 +5038,14 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
             >
               <div
                 class="bpk-scrollable-calendar-grid"
+                data-backpack-ds-component="ScrollableCalendarGrid"
               >
                 <span
                   class="bpk-scrollable-calendar-grid__title"
                 >
                   <h2
                     class="bpk-text bpk-text--heading-4"
+                    data-backpack-ds-component="Text"
                   >
                     March 2010
                   </h2>
@@ -4771,6 +5054,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                   aria-hidden="false"
                   aria-label="March 2010"
                   class="bpk-calendar-grid"
+                  data-backpack-ds-component="CalendarGrid"
                   role="grid"
                 >
                   <div
@@ -4778,6 +5062,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                   >
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -4789,6 +5074,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 1st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4808,6 +5094,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 2nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4827,6 +5114,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 3rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4846,6 +5134,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 4th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4865,6 +5154,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 5th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4884,6 +5174,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 6th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4903,6 +5194,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 7th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4916,6 +5208,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -4927,6 +5220,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 8th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4946,6 +5240,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 9th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4965,6 +5260,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 10th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -4984,6 +5280,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 11th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5003,6 +5300,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 12th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5022,6 +5320,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 13th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5041,6 +5340,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 14th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5054,6 +5354,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -5065,6 +5366,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 15th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5084,6 +5386,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 16th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5103,6 +5406,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 17th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5122,6 +5426,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 18th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5141,6 +5446,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 19th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5160,6 +5466,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 20th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5179,6 +5486,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 21st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5192,6 +5500,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -5203,6 +5512,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 22nd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5222,6 +5532,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 23rd March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5241,6 +5552,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 24th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5260,6 +5572,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Thursday, 25th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5279,6 +5592,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Friday, 26th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5298,6 +5612,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Saturday, 27th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5317,6 +5632,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Sunday, 28th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5330,6 +5646,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                     </div>
                     <div
                       class="bpk-calendar-week"
+                      data-backpack-ds-component="CalendarWeek"
                       role="row"
                     >
                       <div
@@ -5341,6 +5658,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Monday, 29th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5360,6 +5678,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Tuesday, 30th March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >
@@ -5379,6 +5698,7 @@ exports[`BpkScrollableCalendar should support custom class names 1`] = `
                           aria-label="Wednesday, 31st March 2010"
                           aria-pressed="false"
                           class="bpk-calendar-date"
+                          data-backpack-ds-component="CalendarDate"
                           tabindex="-1"
                           type="button"
                         >

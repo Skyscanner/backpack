@@ -18,9 +18,9 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
-@import 'borders.scss';
-@import 'radii.scss';
+@use 'tokens';
+@use 'borders';
+@use 'radii';
 
 ////
 /// @group panels
@@ -34,9 +34,9 @@
 ///   }
 @mixin bpk-panel {
   display: block;
-  background-color: $bpk-card-background-color;
+  background-color: tokens.$bpk-card-background-color;
 
-  @include bpk-border-radius-md;
+  @include radii.bpk-border-radius-md;
 }
 
 /// Adds padding to panels. Modifies the bpk-panel mixin.
@@ -49,7 +49,7 @@
 ///     @include bpk-panel--padded();
 ///   }
 @mixin bpk-panel--padded {
-  padding: $bpk-card-padding;
+  padding: tokens.$bpk-card-padding;
 }
 
 /// Controls if we have a keyline or not on the panel
@@ -63,7 +63,7 @@
 ///     @include bpk-panel--keyline();
 ///   }
 @mixin bpk-panel--keyline {
-  @include bpk-border-sm($bpk-panel-border-color);
+  @include borders.bpk-border-sm(tokens.$bpk-panel-border-color);
 }
 
 /// Makes panel full width by removing the border radius
@@ -91,6 +91,6 @@
 ///   }
 @mixin bpk-panel--full-width-keyline {
   box-shadow:
-    $bpk-panel-border-color 0 -1 * $bpk-one-pixel-rem 0 0 inset,
-    $bpk-panel-border-color 0 $bpk-one-pixel-rem 0 0 inset;
+    tokens.$bpk-panel-border-color 0 -1 * tokens.$bpk-one-pixel-rem 0 0 inset,
+    tokens.$bpk-panel-border-color 0 tokens.$bpk-one-pixel-rem 0 0 inset;
 }

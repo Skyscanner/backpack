@@ -196,4 +196,37 @@ describe('BpkInfoBannerInner', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should render correctly with "type" attribute equal to "critical"', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerInner type={ALERT_TYPES.CRITICAL} message={message} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with critical dismissable', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerInner
+        type={ALERT_TYPES.CRITICAL}
+        message={message}
+        configuration={CONFIGURATION.DISMISSABLE}
+        dismissButtonLabel="Dismiss"
+      />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with critical expandable', () => {
+    const { asFragment } = render(
+      <BpkInfoBannerInner
+        type={ALERT_TYPES.CRITICAL}
+        message={message}
+        toggleButtonLabel="View more"
+        configuration={CONFIGURATION.EXPANDABLE}
+      >
+        {message}
+      </BpkInfoBannerInner>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

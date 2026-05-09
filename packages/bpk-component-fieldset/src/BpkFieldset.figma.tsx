@@ -25,7 +25,7 @@ import BpkTextarea from "../../bpk-component-textarea";
 
 import BpkFieldset from "./BpkFieldset";
 
-const figmaUrl = "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=30459%3A44425";
+const figmaUrl = "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A4953";
 // Input variant
 figma.connect(BpkFieldset, figmaUrl, {
   variant: { Type: "Input" },

@@ -19,8 +19,8 @@
 import type { CSSProperties } from 'react';
 import { Children, useState } from 'react';
 
-import { BpkButtonV2 } from '../../../bpk-component-button';
-import { cssModules } from '../../../bpk-react-utils';
+import BpkButton from '../../../bpk-component-button';
+import { cssModules, getDataComponentAttribute } from '../../../bpk-react-utils';
 import ExpandAccessoryContent from '../BpkExpand/ExpandAccessoryContent';
 import { ACCESSORY_DESKTOP_TYPES } from '../common-types';
 
@@ -79,19 +79,20 @@ const BpkCardListGridStack = (props: CardListGridStackProps) => {
     <div
       className={getClassName('bpk-card-list-grid-stack__accessory__button')}
     >
-      <BpkButtonV2
+      <BpkButton
         data-testid="bpk-card-list__accessory-button"
         onClick={onButtonClick}
         href={buttonHref}
       >
         {buttonContent}
-      </BpkButtonV2>
+      </BpkButton>
     </div>
   );
 
   return (
     <div
       className={getClassName('bpk-card-list-grid-stack')}
+      {...getDataComponentAttribute('CardListGridStack')}
       data-testid="bpk-card-list-grid-stack"
     >
       <div

@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import BpkBottomSheet from './src/BpkBottomSheet';
+import BpkBottomSheet, { PADDING_TYPE } from './src/BpkBottomSheet';
 
 import type { Props } from './src/BpkBottomSheet';
 
 export type BpkBottomSheetProps = Props;
 
+export { PADDING_TYPE };
 export default BpkBottomSheet;

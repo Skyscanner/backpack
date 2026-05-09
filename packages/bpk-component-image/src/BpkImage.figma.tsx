@@ -22,7 +22,7 @@ import BpkImage from './BpkImage';
 
 figma.connect(
   BpkImage,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=4401-28&m=dev",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A6138",
   {
     props: {
     },

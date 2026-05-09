@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/breakpoints';
 
 .bpk-floating-notification {
   position: fixed;
@@ -41,6 +41,11 @@
   @include breakpoints.bpk-breakpoint-mobile {
     max-width: 100%;
     padding: tokens.bpk-spacing-base();
+  }
+
+  &--critical {
+    background-color: tokens.$bpk-status-danger-spot-day;
+    color: tokens.$bpk-text-primary-inverse-day;
   }
 
   &--leave {
@@ -73,7 +78,7 @@
     flex-shrink: 0;
     transform: translateY(tokens.bpk-spacing-sm());
     text-align: bottom;
-    fill: tokens.$bpk-text-on-dark-day;
+    fill: currentcolor;
   }
 
   &__text {

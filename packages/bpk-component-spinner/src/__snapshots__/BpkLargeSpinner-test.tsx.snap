@@ -4,6 +4,7 @@ exports[`BpkLargeSpinner should render correctly 1`] = `
 <DocumentFragment>
   <span
     class="bpk-spinner bpk-spinner--large bpk-spinner--dark"
+    data-backpack-ds-component="LargeSpinner"
   >
     <svg
       aria-hidden="true"
@@ -81,6 +82,7 @@ exports[`BpkLargeSpinner should render correctly with a "alignToButton" attribut
 <DocumentFragment>
   <span
     class="bpk-spinner bpk-spinner--large bpk-spinner--dark bpk-spinner--align-to-large-button"
+    data-backpack-ds-component="LargeSpinner"
   >
     <svg
       aria-hidden="true"
@@ -158,6 +160,7 @@ exports[`BpkLargeSpinner should render correctly with a "className" attribute 1`
 <DocumentFragment>
   <span
     class="bpk-spinner bpk-spinner--large bpk-spinner--dark my-custom-class"
+    data-backpack-ds-component="LargeSpinner"
   >
     <svg
       aria-hidden="true"
@@ -235,6 +238,7 @@ exports[`BpkLargeSpinner should render correctly with type as light 1`] = `
 <DocumentFragment>
   <span
     class="bpk-spinner bpk-spinner--large bpk-spinner--light"
+    data-backpack-ds-component="LargeSpinner"
   >
     <svg
       aria-hidden="true"
@@ -312,6 +316,7 @@ exports[`BpkLargeSpinner should render correctly with type as primary 1`] = `
 <DocumentFragment>
   <span
     class="bpk-spinner bpk-spinner--large bpk-spinner--primary"
+    data-backpack-ds-component="LargeSpinner"
   >
     <svg
       aria-hidden="true"

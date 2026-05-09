@@ -18,19 +18,19 @@
 
 import figma from '@figma/code-connect';
 
-import { BpkButtonV2 } from '../../bpk-component-button';
+import BpkButton from '../../bpk-component-button';
 
 import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
 
 figma.connect(
   BpkSectionHeader,
-  'https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=31941%3A4068',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A28653',
   {
     props: {
       title: figma.string('Title'),
       description: figma.string('Subheading'),
       button: figma.boolean('Button', {
-        true: <BpkButtonV2 onClick={() => null}>action</BpkButtonV2>,
+        true: <BpkButton onClick={() => null}>action</BpkButton>,
       }),
       style: figma.enum('Style', {
         Default: SECTION_TYPES.default,

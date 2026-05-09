@@ -120,7 +120,7 @@ describe('BpkBreakpoint', () => {
       expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false);
     });
 
-    it('should pass matchSSR=false to useMediaQuery when matchSSR not defined', () => {
+    it('should pass matchSSR=undefined to useMediaQuery when matchSSR not defined', () => {
       const mockUseMediaQuery = jest.fn();
       jest.mock('./useMediaQuery', () => mockUseMediaQuery);
       const BpkBreakpoint = require('./BpkBreakpoint').default; // eslint-disable-line global-require
@@ -129,7 +129,7 @@ describe('BpkBreakpoint', () => {
         <BpkBreakpoint query={BREAKPOINTS.MOBILE} />,
       );
 
-      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, false);
+      expect(mockUseMediaQuery).toHaveBeenCalledWith(BREAKPOINTS.MOBILE, undefined);
     });
   });
 

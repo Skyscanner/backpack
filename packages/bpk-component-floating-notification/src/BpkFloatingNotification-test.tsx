@@ -20,7 +20,9 @@ import { fireEvent, render } from '@testing-library/react';
 
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 
-import BpkFloatingNotification from './BpkFloatingNotification';
+import BpkFloatingNotification, {
+  NOTIFICATION_TYPES,
+} from './BpkFloatingNotification';
 
 const props = {
   text: 'Saved',
@@ -71,6 +73,13 @@ describe('BpkFloatingNotification', () => {
     fireEvent.click(cta as HTMLButtonElement);
 
     expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render correctly with critical type', () => {
+    const { asFragment } = render(
+      <BpkFloatingNotification type={NOTIFICATION_TYPES.critical} {...props} />,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should do function when unmounted (exited)', () => {

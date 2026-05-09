@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'tokens';
 
 ////
 /// @group borders
@@ -37,7 +37,11 @@
 /// @access private
 
 @mixin _bpk-border-top($size, $color, $inset) {
-  $offset-y: if($inset == inset, $size, -#{$size});
+  $offset-y: $size;
+
+  @if $inset != inset {
+    $offset-y: -#{$size};
+  }
 
   box-shadow: 0 $offset-y 0 0 $color #{$inset};
 }
@@ -47,7 +51,11 @@
 /// @access private
 
 @mixin bpk-border-right($size, $color, $inset) {
-  $offset-x: if($inset == inset, -#{$size}, $size);
+  $offset-x: -#{$size};
+
+  @if $inset != inset {
+    $offset-x: $size;
+  }
 
   box-shadow: $offset-x 0 0 0 $color #{$inset};
 }
@@ -57,7 +65,11 @@
 /// @access private
 
 @mixin _bpk-border-bottom($size, $color, $inset) {
-  $offset-y: if($inset == inset, -#{$size}, $size);
+  $offset-y: -#{$size};
+
+  @if $inset != inset {
+    $offset-y: $size;
+  }
 
   box-shadow: 0 $offset-y 0 0 $color #{$inset};
 }
@@ -67,7 +79,11 @@
 /// @access private
 
 @mixin bpk-border-left($size, $color, $inset) {
-  $offset-x: if($inset == inset, $size, -#{$size});
+  $offset-x: $size;
+
+  @if $inset != inset {
+    $offset-x: -#{$size};
+  }
 
   box-shadow: $offset-x 0 0 0 $color #{$inset};
 }
@@ -82,7 +98,7 @@
 ///   }
 
 @mixin bpk-border-sm($color, $inset: inset) {
-  @include _bpk-border($bpk-border-size-sm, $color, $inset);
+  @include _bpk-border(tokens.$bpk-border-size-sm, $color, $inset);
 }
 
 /// Small "1px" top border.
@@ -95,7 +111,7 @@
 ///   }
 
 @mixin bpk-border-top-sm($color, $inset: inset) {
-  @include _bpk-border-top($bpk-border-size-sm, $color, $inset);
+  @include _bpk-border-top(tokens.$bpk-border-size-sm, $color, $inset);
 }
 
 /// Small "1px" right border.
@@ -108,7 +124,7 @@
 ///   }
 
 @mixin bpk-border-right-sm($color, $inset: inset) {
-  @include bpk-border-right($bpk-border-size-sm, $color, $inset);
+  @include bpk-border-right(tokens.$bpk-border-size-sm, $color, $inset);
 }
 
 /// Small "1px" bottom border.
@@ -121,7 +137,7 @@
 ///   }
 
 @mixin bpk-border-bottom-sm($color, $inset: inset) {
-  @include _bpk-border-bottom($bpk-border-size-sm, $color, $inset);
+  @include _bpk-border-bottom(tokens.$bpk-border-size-sm, $color, $inset);
 }
 
 /// Small "1px" left border.
@@ -134,7 +150,7 @@
 ///   }
 
 @mixin bpk-border-left-sm($color, $inset: inset) {
-  @include bpk-border-left($bpk-border-size-sm, $color, $inset);
+  @include bpk-border-left(tokens.$bpk-border-size-sm, $color, $inset);
 }
 
 /// Large "2px" border.
@@ -147,7 +163,7 @@
 ///   }
 
 @mixin bpk-border-lg($color, $inset: inset) {
-  @include _bpk-border($bpk-border-size-lg, $color, $inset);
+  @include _bpk-border(tokens.$bpk-border-size-lg, $color, $inset);
 }
 
 /// Large "2px" top border.
@@ -160,7 +176,7 @@
 ///   }
 
 @mixin bpk-border-top-lg($color, $inset: inset) {
-  @include _bpk-border-top($bpk-border-size-lg, $color, $inset);
+  @include _bpk-border-top(tokens.$bpk-border-size-lg, $color, $inset);
 }
 
 /// Large "2px" right border.
@@ -173,7 +189,7 @@
 ///   }
 
 @mixin bpk-border-right-lg($color, $inset: inset) {
-  @include bpk-border-right($bpk-border-size-lg, $color, $inset);
+  @include bpk-border-right(tokens.$bpk-border-size-lg, $color, $inset);
 }
 
 /// Large "2px" bottom border.
@@ -186,7 +202,7 @@
 ///   }
 
 @mixin bpk-border-bottom-lg($color, $inset: inset) {
-  @include _bpk-border-bottom($bpk-border-size-lg, $color, $inset);
+  @include _bpk-border-bottom(tokens.$bpk-border-size-lg, $color, $inset);
 }
 
 /// Large "2px" left border.
@@ -199,7 +215,7 @@
 ///   }
 
 @mixin bpk-border-left-lg($color, $inset: inset) {
-  @include bpk-border-left($bpk-border-size-lg, $color, $inset);
+  @include bpk-border-left(tokens.$bpk-border-size-lg, $color, $inset);
 }
 
 /// Extra large "3px" border.
@@ -212,7 +228,7 @@
 ///   }
 
 @mixin bpk-border-xl($color, $inset: inset) {
-  @include _bpk-border($bpk-border-size-xl, $color, $inset);
+  @include _bpk-border(tokens.$bpk-border-size-xl, $color, $inset);
 }
 
 /// Extra large "3px" top border.
@@ -225,7 +241,7 @@
 ///   }
 
 @mixin bpk-border-top-xl($color, $inset: inset) {
-  @include _bpk-border-top($bpk-border-size-xl, $color, $inset);
+  @include _bpk-border-top(tokens.$bpk-border-size-xl, $color, $inset);
 }
 
 /// Extra large "3px" right border.
@@ -238,7 +254,7 @@
 ///   }
 
 @mixin bpk-border-right-xl($color, $inset: inset) {
-  @include bpk-border-right($bpk-border-size-xl, $color, $inset);
+  @include bpk-border-right(tokens.$bpk-border-size-xl, $color, $inset);
 }
 
 /// Extra large "3px" bottom border.
@@ -251,7 +267,7 @@
 ///   }
 
 @mixin bpk-border-bottom-xl($color, $inset: inset) {
-  @include _bpk-border-bottom($bpk-border-size-xl, $color, $inset);
+  @include _bpk-border-bottom(tokens.$bpk-border-size-xl, $color, $inset);
 }
 
 /// Extra large "3px" left border.
@@ -264,5 +280,5 @@
 ///   }
 
 @mixin bpk-border-left-xl($color, $inset: inset) {
-  @include bpk-border-left($bpk-border-size-xl, $color, $inset);
+  @include bpk-border-left(tokens.$bpk-border-size-xl, $color, $inset);
 }

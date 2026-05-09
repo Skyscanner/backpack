@@ -20,6 +20,7 @@ import { render, screen } from '@testing-library/react';
 
 import { withButtonAlignment } from '../../bpk-component-icon';
 import BaggageIcon from '../../bpk-component-icon/sm/baggage';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
@@ -124,7 +125,7 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with a "iconOnly" attribute', () => {
     const { container } = render(
       <BpkLoadingButton iconOnly>
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--icon-only').length).toBe(1);
@@ -246,7 +247,7 @@ describe('BpkLoadingButton', () => {
   it('should render correctly with "large" and "iconOnly" attributes', () => {
     const { container } = render(
       <BpkLoadingButton large iconOnly>
-        <span className="visually-hidden">Search</span>
+        <BpkVisuallyHidden>Search</BpkVisuallyHidden>
       </BpkLoadingButton>,
     );
     expect(container.querySelectorAll('.bpk-button--large').length).toBe(1);

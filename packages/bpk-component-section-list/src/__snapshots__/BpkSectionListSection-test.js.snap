@@ -22,6 +22,7 @@ exports[`BpkSectionListSection should render correctly with "headerText" prop 1`
     >
       <span
         class="bpk-text bpk-text--label-1"
+        data-backpack-ds-component="Text"
       >
         Heading
       </span>

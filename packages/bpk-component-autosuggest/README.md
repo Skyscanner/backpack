@@ -13,7 +13,7 @@ import { Component } from 'react';
 import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import FlightIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/flight';
-import BpkAutosuggest, { BpkAutosuggestSuggestion } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '@skyscanner/backpack-web/bpk-component-autosuggest';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
@@ -90,7 +90,7 @@ class MyComponent extends Component {
     return (
       <div>
         <BpkLabel htmlFor="my-autosuggest">Office</BpkLabel>
-        <BpkAutosuggest
+        <BpkAutosuggestLegacy
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -103,6 +103,23 @@ class MyComponent extends Component {
   }
 }
 ```
+
+## AutosuggestV2
+
+The default export is now **BpkAutosuggest** (V2):
+
+```js
+import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';
+```
+
+The legacy implementation is still available as a named export:
+
+```js
+import { BpkAutosuggestLegacy } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+```
+
+- **Migration guide**: see `docs/migrating-from-v1-to-v2.md`.
+- **Note**: `BpkAutosuggestLegacy` is the legacy implementation (based on `react-autosuggest`).
 
 ## Props
 

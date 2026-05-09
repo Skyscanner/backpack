@@ -25,12 +25,8 @@ console.log('Copying bpk-mixins...');
 execSync(`cp -r packages/bpk-mixins dist/bpk-mixins`);
 execSync(`rm -r dist/bpk-mixins/README.md`);
 
-execSync(`cp -r packages/unstable__bpk-mixins dist/unstable__bpk-mixins`);
-execSync(`rm -r dist/unstable__bpk-mixins/README.md`);
-
 // eslint-disable-next-line no-console
 console.log('bpk-mixins copied.  👍');
-
 
 // eslint-disable-next-line no-console
 console.log('Copying bpk-stylesheets files...');

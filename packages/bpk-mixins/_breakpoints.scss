@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'tokens';
 
 ////
 /// @group breakpoints
@@ -44,7 +44,7 @@
 ///   }
 
 @mixin bpk-breakpoint-small-mobile {
-  @media #{$bpk-breakpoint-query-small-mobile} {
+  @media #{tokens.$bpk-breakpoint-query-small-mobile} {
     @content;
   }
 }
@@ -63,7 +63,7 @@
 ///   }
 
 @mixin bpk-breakpoint-mobile {
-  @media #{$bpk-breakpoint-query-mobile} {
+  @media #{tokens.$bpk-breakpoint-query-mobile} {
     @content;
   }
 }
@@ -82,7 +82,7 @@
 ///   }
 
 @mixin bpk-breakpoint-small-tablet {
-  @media #{$bpk-breakpoint-query-small-tablet} {
+  @media #{tokens.$bpk-breakpoint-query-small-tablet} {
     @content;
   }
 }
@@ -101,7 +101,7 @@
 ///   }
 
 @mixin bpk-breakpoint-tablet {
-  @media #{$bpk-breakpoint-query-tablet} {
+  @media #{tokens.$bpk-breakpoint-query-tablet} {
     @content;
   }
 }
@@ -120,7 +120,7 @@
 ///   }
 
 @mixin bpk-breakpoint-small-tablet-only {
-  @media #{$bpk-breakpoint-query-small-tablet-only} {
+  @media #{tokens.$bpk-breakpoint-query-small-tablet-only} {
     @content;
   }
 }
@@ -139,7 +139,7 @@
 ///   }
 
 @mixin bpk-breakpoint-tablet-only {
-  @media #{$bpk-breakpoint-query-tablet-only} {
+  @media #{tokens.$bpk-breakpoint-query-tablet-only} {
     @content;
   }
 }
@@ -158,7 +158,7 @@
 ///   }
 
 @mixin bpk-breakpoint-above-mobile {
-  @media #{$bpk-breakpoint-query-above-mobile} {
+  @media #{tokens.$bpk-breakpoint-query-above-mobile} {
     @content;
   }
 }
@@ -177,7 +177,7 @@
 ///   }
 
 @mixin bpk-breakpoint-above-tablet {
-  @media #{$bpk-breakpoint-query-above-tablet} {
+  @media #{tokens.$bpk-breakpoint-query-above-tablet} {
     @content;
   }
 }
@@ -196,7 +196,7 @@
 ///   }
 
 @mixin bpk-breakpoint-above-desktop {
-  @media #{$bpk-breakpoint-query-above-desktop} {
+  @media #{tokens.$bpk-breakpoint-query-above-desktop} {
     @content;
   }
 }
@@ -215,7 +215,7 @@
 ///   }
 
 @mixin bpk-breakpoint-desktop-only {
-  @media #{$bpk-breakpoint-query-desktop-only} {
+  @media #{tokens.$bpk-breakpoint-query-desktop-only} {
     @content;
   }
 }

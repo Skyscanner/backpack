@@ -20,6 +20,8 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkInfoBanner from './BpkInfoBanner';
+import BpkInfoBannerDismissable from './BpkInfoBannerDismissable';
+import BpkInfoBannerExpandable from './BpkInfoBannerExpandable';
 import { ALERT_TYPES } from './common-types';
 
 const message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.';
@@ -28,6 +30,42 @@ describe('BpkInfoBanner accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
       <BpkInfoBanner type={ALERT_TYPES.SUCCESS} message={message} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues with critical type', async () => {
+    const { container } = render(
+      <BpkInfoBanner type={ALERT_TYPES.CRITICAL} message={message} />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues with critical dismissable', async () => {
+    const { container } = render(
+      <BpkInfoBannerDismissable
+        type={ALERT_TYPES.CRITICAL}
+        message={message}
+        dismissButtonLabel="Dismiss"
+        onDismiss={jest.fn()}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues with critical expandable', async () => {
+    const { container } = render(
+      <BpkInfoBannerExpandable
+        type={ALERT_TYPES.CRITICAL}
+        message={message}
+        toggleButtonLabel="View more"
+        onExpandToggle={jest.fn()}
+      >
+        More details here.
+      </BpkInfoBannerExpandable>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();

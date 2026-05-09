@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'utils.scss';
+@use 'utils';
 
 /// RTL aware leading margin
 ///
@@ -38,7 +38,7 @@
     margin-right: 0;
   }
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     @if $resetOppositeMargin {
       margin-left: 0;
     }
@@ -65,7 +65,7 @@
 
   margin-right: $margin;
 
-  @include bpk-rtl {
+  @include utils.bpk-rtl {
     margin-left: $margin;
 
     @if $resetOppositeMargin {

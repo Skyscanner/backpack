@@ -18,7 +18,7 @@
 
 /* stylelint-disable at-rule-disallowed-list */
 
-@import 'tokens.scss';
+@use 'tokens';
 
 ////
 /// @group scroll-indicator
@@ -29,7 +29,11 @@
 /// @access private
 
 @mixin _bpk-scroll-indicator($gradient-color, $direction: 'left') {
-  $gradient-direction: if($direction == 'left', 90deg, 270deg);
+  $gradient-direction: 90deg;
+
+  @if $direction != 'left' {
+    $gradient-direction: 270deg;
+  }
 
   position: absolute;
   top: 0;
@@ -37,7 +41,7 @@
   content: ' ';
   display: block;
   z-index: 1;
-  width: bpk-spacing-xl();
+  width: tokens.bpk-spacing-xl();
   background-image: linear-gradient(
     $gradient-direction,
     rgba($gradient-color, 1),

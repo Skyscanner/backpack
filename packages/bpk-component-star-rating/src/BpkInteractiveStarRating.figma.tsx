@@ -22,7 +22,7 @@ import BpkInteractiveStarRating from './BpkInteractiveStarRating'
 
 figma.connect(
   BpkInteractiveStarRating,
-  "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=51587%3A777",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A49221",
   {
     props: {
       large: figma.enum("Size", {
@@ -43,6 +43,7 @@ figma.connect(
       <BpkInteractiveStarRating
         getStarLabel={(rating: number, maxRating: number) => `${rating} out of ${maxRating} stars`}
         id="uniqueId"
+        // eslint-disable-next-line no-console
         onRatingSelect={(rating: number) => console.log(rating)}
         large={large}
         extraLarge={extraLarge}

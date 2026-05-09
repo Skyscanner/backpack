@@ -18,7 +18,7 @@
 
 import type { SyntheticEvent } from 'react';
 
-import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
 
@@ -36,6 +36,7 @@ const BpkScrim = ({ onClose = () => {} }: Props) => (
     <div
       role="presentation"
       className={getClassName('bpk-scrim')}
+      {...getDataComponentAttribute('Scrim')}
       onMouseDown={onClose}
       onTouchStart={onClose}
     />

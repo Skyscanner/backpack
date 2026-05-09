@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import { BpkButtonV2 } from '../../bpk-component-button';
+import BpkButton from '../../bpk-component-button';
 
 import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
 
@@ -43,7 +43,7 @@ describe('BpkSectionHeader', () => {
       <BpkSectionHeader
         title="Section title"
         description="Section title description"
-        button={<BpkButtonV2 onClick={() => jest.fn()}>Action</BpkButtonV2>}
+        button={<BpkButton onClick={() => jest.fn()}>Action</BpkButton>}
       />,
     );
     expect(asFragment()).toMatchSnapshot();
@@ -54,7 +54,7 @@ describe('BpkSectionHeader', () => {
       <BpkSectionHeader
         title="Section title"
         description="Section title description"
-        button={<BpkButtonV2 onClick={() => jest.fn()}>Action</BpkButtonV2>}
+        button={<BpkButton onClick={() => jest.fn()}>Action</BpkButton>}
         type={SECTION_TYPES.onDark}
       />,
     );

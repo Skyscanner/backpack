@@ -21,6 +21,8 @@ import { useEffect, useRef, useState } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 
 import cssModules from '../cssModules';
+import { getDataComponentAttribute } from '../getDataComponentAttribute';
+import useBodyLock from '../useBodyLock';
 
 import STYLES from './BpkDialogWrapper.module.scss';
 
@@ -55,20 +57,8 @@ interface CommonProps {
 export type Props = CommonProps &
   ({ ariaLabelledby: string } | { ariaLabel: string });
 
-type DialogProps = {
-  isDialogOpen: boolean;
-};
-
 // TODO: this check if the browser support the HTML dialog element. We can remove it once we drop support as a business for Safari 14
 const dialogSupported = typeof HTMLDialogElement === 'function';
-
-const setPageProperties = ({ isDialogOpen }: DialogProps) => {
-  document.body.style.overflowY = isDialogOpen ? 'hidden' : 'visible';
-  if (!dialogSupported) {
-    document.body.style.position = isDialogOpen ? 'fixed' : 'relative';
-    document.body.style.width = isDialogOpen ? '100%' : 'auto';
-  }
-};
 
 export const BpkDialogWrapper = ({
   children,
@@ -138,13 +128,7 @@ export const BpkDialogWrapper = ({
     };
   }, [id, isOpen, onClose, closeOnEscPressed, closeOnScrimClick]);
 
-  // Lock the scroll of the page when the dialog is open
-  useEffect(() => {
-    setPageProperties({ isDialogOpen: isOpen });
-    return () => {
-      setPageProperties({ isDialogOpen: false });
-    };
-  }, [isOpen]);
+  useBodyLock(isOpen);
 
   const aria = {
     ...('ariaLabelledby' in ariaProps
@@ -161,6 +145,7 @@ export const BpkDialogWrapper = ({
         'bpk-dialog-wrapper',
         !dialogSupported && 'bpk-dialog-wrapper--polyfill',
       )}
+      {...getDataComponentAttribute('DialogWrapper')}
     >
       {!dialogSupported && (
         <div

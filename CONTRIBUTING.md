@@ -11,6 +11,7 @@ You want to help us enable Skyscanner to create beautiful, coherent products at 
 * [Design documentation](#design-documentation)
 * [Experimenting with Backpack components](#experimenting-with-backpack-components)
 * [How to](#how-to)
+* [Figma Code Connect](#figma-code-connect)
 
 ## Prerequisites
 
@@ -39,9 +40,9 @@ We recommend that you install [a plugin to your editor](https://eslint.org/docs/
 
 ### Android, iOS and React Native
 
-Backpack also supports React Native, plus native Android and iOS.
+Backpack also supports native Android and iOS.
 
-They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios) and [backpack-react-native](https://github.com/skyscanner/backpack-react-native)
+They can be found at [backpack-android](https://github.com/skyscanner/backpack-android) and [backpack-ios](https://github.com/skyscanner/backpack-ios)
 
 ## Getting started
 
@@ -60,13 +61,7 @@ git checkout -b {BRANCH_NAME}
 npm install --registry="https://registry.npmjs.org/"
 ```
 
-3. Build a modern version of mixins for local development
-
-```sh
-npm run build:unstable__bpk-mixins
-```
-
-4. Build SVGs
+3. Build SVGs
 
 ```sh
 npm run build
@@ -77,6 +72,21 @@ npm run build
 ```sh
 npm start
 ```
+
+> **Local vs CI Storybook**
+>
+> | | Local (`npm start`) | CI build (`npm run storybook:dist`) |
+> |---|---|---|
+> | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
+> | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |
+> | Webpack cache | filesystem (`storybook-local`) | webpack default (no override) |
+>
+> Local builds use a named filesystem cache partition (`storybook-local`), so switching between local and CI modes does not produce stale-cache warnings. CI does not override the webpack cache and relies on webpack's default behaviour.
+>
+> If you see `[webpack.cache.PackFileCacheStrategy] Restoring failed` warnings, clear the cache and restart:
+> ```sh
+> rm -rf node_modules/.cache && npm start
+> ```
 
 ## Write your code
 
@@ -102,7 +112,7 @@ If you'd like to contribute a change to a React component, please first reach ou
 #### Example components
 Look at existing components for code style inspiration. Here are some good examples to follow:
 - [bpk-component-chip](./packages/bpk-component-chip/index.ts)
-- [bpk-component-button](./packages/bpk-component-button/src/BpkButtonV2/BpkButton.tsx)
+- [bpk-component-button](./packages/bpk-component-button/index.ts)
 
 #### CSS
 
@@ -113,14 +123,13 @@ When creating (S)CSS files, follow the CSS Module naming convention by using the
 When creating or modifying SCSS files, follow these rules
 
 1. Use Modern SASS API
-   * Prefer `@use` instead of `@import`
+   * Use `@use` instead of `@import`
    * Prefer `math.div($a, $b)` instead of `$a / $b`. Add `@use sass:math` statement to the top of your file to make this function available
    * Read more about [@use rule](https://sass-lang.com/documentation/at-rules/use/) and [SASS math functions](https://sass-lang.com/documentation/modules/math/)
 2. Use only what you need
-   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../unstable__bpk-mixins/tokens'` statement only
-3. Use `unstable__bpk-mixins` for Backpack components development
-   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`, then execute `npm run unstable__bpk-mixins` command to make it available for Modern API
-   * Import mixins from `packages/unstable__bpk-mixins` only. Otherwise your code will break because Modern SASS API doesn't support `~` import syntax or slash division
+   * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../bpk-mixins/tokens'` statement only
+3. Use `bpk-mixins` for Backpack components development
+   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/bpk-mixins`.
 
 #### Adding a new component
 
@@ -129,13 +138,19 @@ If you want to add a new component:
 1. Use `bpk-component-boilerplate` to create a new skeleton React component
 2. Our components where possible are written as function components, familiarise yourself using [React component guidelines](https://react.dev/reference/react/Component) for more guidance
     - **For new components we restrict the use of `className` and `style` props to avoid allowing overwriting the component's styles and to ensure consistency across our product.**
-3. Create stories - each component has a set of stories living under `examples/bpk-component-{name}/stories.ts`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
+3. Create stories - stories are colocated with the component source code at `packages/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
     - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
 5. Add type declaration files within the same folder of the component to ensure proper compatibility and usage of the components
 6. Update `README.md` following the boilerplate format
+7. **Add data component attributes** - All components must include data attributes for design system tracking and automation:
+    - Import the utility function: `import { getDataComponentAttribute } from '../../bpk-react-utils'` (adjust path based on component location)
+    - Apply the attribute to the root element of your component: `{...getDataComponentAttribute('ComponentName')}`
+    - This generates the `data-backpack-ds-component="ComponentName"` attribute automatically
+    - For an example, see [bpk-component-boilerplate](./packages/bpk-component-boilerplate/src/BpkBoilerplate.tsx)
+    - Make sure the attribute is only applied to the outermost component element, not to nested elements or helper functions
 
 #### Contribute breaking changes
 
@@ -150,7 +165,7 @@ If keeping both versions in one component does not affect its readability, you w
 
 Migration guides are required for all breaking changes.
 
-If you are unsure of the impact or scale of your change, reach out to Clover team and we will help you!
+If you are unsure of the impact or scale of your change, reach out to Backpack design system team and we will help you!
 
 ### Foundation elements
 
@@ -195,7 +210,7 @@ For patch and minor changes, you should use JSDoc annotations. JSDoc is a widely
 
 For major changes, you should create a new experimental V2 component. If the experiment is successful, the old component should be deprecated.
 
-The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButtonV2` should be `packages/bpk-component-button/src/BpkButtonV2/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
+The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButton` should be `packages/bpk-component-button/src/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
 
 Any follow-up changes to experimental components will not be considered breaking.
 </details>
@@ -221,7 +236,7 @@ Experimentation code should be cleaned up at most 2 weeks after an experiment ha
 
 Here’s an end-to-end example on how to add an experimental prop to a Bpk component:
 
-1. Reach out to Clover with the proposed change
+1. Reach out to Backpack design system team with the proposed change
 2. Contribute code changes. Make sure the API table is updated too!
 ```typescript
 type Props = {
@@ -237,10 +252,10 @@ const BpkText = ({text, color, sparkles}: Props) => {
     ...
 }
 ```
-3. Released by Clover
+3. Released by Backpack design system team
 4. Adopt changes in project
 5. Run experiment
-    - if experiment is successful, publish documentation (only Clover members) and remove experimental code.
+    - if experiment is successful, publish documentation (only Backpack design system team members) and remove experimental code.
     - if experiment is unsuccessful and further iterations are needed, repeat from step 2. Otherwise, remove experimental code. That’s all!
 </details>
 
@@ -249,7 +264,7 @@ const BpkText = ({text, color, sparkles}: Props) => {
 <details>
 <summary>Create a pull request to Backpack</summary>
 
-For anything non-trivial, we strongly recommend speaking to somebody from Backpack squad before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
+For anything non-trivial, we strongly recommend speaking to somebody from Backpack design system team before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
 
 1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository. This contains information about setting up your Github account such as how to get added to the Skyscanner organisation, or set an SSH key to swap between your GH Enterprise and public GH accounts.
 2. Create a new branch.
@@ -260,7 +275,7 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
     * minor, A non-breaking change or a new component
     * patch, A fixed bug or updates to documentation
     * skip-changelog, The change you made should not end up in the release changelog
-6. Notify someone in Backpack squad or drop a note in #backpack.
+6. Notify someone in Backpack design system team or drop a note in #backpack.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
@@ -275,7 +290,7 @@ You can also run the tests in 'watch mode', which means the process will continu
 
 There are also visual regression tests, powered by [Percy](https://www.percy.io/).
 
-These visual tests are run on CI. When a PR is raised, a build should be showing on the Percy Backpack dashboard. Head into this build/run and you should be able to view any differences there. Ask a member of the Clover team to approve the changes once you have confirmed it all looks as expected.
+These visual tests are run on CI. When a PR is raised, a build should be showing on the Percy Backpack dashboard. Head into this build/run and you should be able to view any differences there. Ask a member of the Backpack design system team to approve the changes once you have confirmed it all looks as expected.
 
 Visual regression tests run on all Storybook stories titled _'Visual test'_.
 
@@ -292,13 +307,48 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 </details>
 
 <details>
-<summary>Publish packages (Backpack squad members only)</summary>
+<summary>Publish packages (Backpack design system team only)</summary>
+
+Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please drop a note in #backpack and notify @design-system-web-gf.
 
 - Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
 - Ensure CI runs the release workflow successfully
 - Once released verify the artifacts are available
 
 </details>
+
+## Figma Code Connect
+
+Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. When `.figma.tsx` files are merged to `main`, a GitHub Actions workflow automatically publishes the mappings to Figma.
+
+### Regenerating all Figma assets
+
+To regenerate both the `figma.config.json` import path mappings and the icon Code Connect mappings in one step:
+
+```sh
+FIGMA_ACCESS_TOKEN=<your-token> npm run figma:generate
+```
+
+This runs two scripts in sequence:
+
+1. `npm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
+2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/bpk-component-icon/BpkIcon.figma.tsx`
+
+### Import path configuration
+
+`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `npm run figma:generate-config` to update it after adding new components.
+
+### Icon mappings
+
+Icon Code Connect mappings are auto-generated. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
+
+### Component mappings
+
+For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples. After adding a new `.figma.tsx` file, run `npm run figma:generate-config` to update the import path mappings.
+
+### Publishing
+
+The `sync-figma-code-connect` workflow (`.github/workflows/sync-figma-code-connect.yml`) runs on pushes to `main` when `packages/**/*.figma.tsx` files change. It requires the `FIGMA_TOKEN` secret to be configured in the repository.
 
 ## And finally..
 

@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```js
+```tsx
 import { BpkCode, BpkCodeBlock } from '@skyscanner/backpack-web/bpk-component-code';
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 

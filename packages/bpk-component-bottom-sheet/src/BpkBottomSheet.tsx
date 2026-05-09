@@ -15,21 +15,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { SyntheticEvent, ReactNode } from 'react';
-import { useCallback, useState } from 'react';
+import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
+import { useCallback, useState, isValidElement, cloneElement } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkButtonLink } from '../../bpk-component-link';
+import BpkLink from '../../bpk-component-link';
 import BpkNavigationBar from '../../bpk-component-navigation-bar';
 import { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { BpkDialogWrapper, cssModules } from '../../bpk-react-utils';
+import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
+import { BpkDialogWrapper, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBottomSheet.module.scss';
 
 const getClassName = cssModules(STYLES);
+
+export const PADDING_TYPE = {
+  none: 'none',
+  base: 'base',
+  lg: 'lg',
+  xxl: 'xxl',
+  xxxl: 'xxxl'
+}
+
+export type PaddingType = (typeof PADDING_TYPE)[keyof typeof PADDING_TYPE];
+
+export type PaddingStyles = {
+  top?: PaddingType,
+  start?: PaddingType,
+  end?: PaddingType,
+  bottom?: PaddingType,
+}
 
 interface CommonProps {
   actionText?: string;
@@ -49,13 +66,45 @@ interface CommonProps {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  title?: string;
+  title?: string | ReactNode;
   wide?: boolean;
   isOpen: boolean;
+  paddingStyles?: PaddingStyles;
 }
 
-export type Props = CommonProps &
-  ({ ariaLabelledby: string } | { ariaLabel: string });
+export type Props = CommonProps & ({ ariaLabelledby: string } | { ariaLabel: string; });
+
+const getContentStyles = (paddingStyles: PaddingStyles): string => {
+  const {
+    bottom = PADDING_TYPE.lg,
+    end,
+    start = PADDING_TYPE.lg,
+    top = PADDING_TYPE.none
+  } = paddingStyles;
+
+  const classNames = ['bpk-bottom-sheet--content'];
+
+  // Add padding classes for each side if not 'none'
+  if (top !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${top}-top`);
+  }
+
+  if (bottom !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${bottom}-bottom`);
+  }
+
+  if (start !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${start}-start`);
+  }
+
+  // Handle end padding: use explicit 'end' value or fallback to 'start' value
+  const endPadding = end || start;
+  if (endPadding && endPadding !== PADDING_TYPE.none) {
+    classNames.push(`bpk-bottom-sheet--padding-${endPadding}-end`);
+  }
+
+  return getClassName(...classNames);
+};
 
 const BpkBottomSheet = ({
   actionText = '',
@@ -68,6 +117,12 @@ const BpkBottomSheet = ({
   isOpen,
   onAction = () => null,
   onClose,
+  paddingStyles = {
+    top: PADDING_TYPE.none,
+    start: PADDING_TYPE.lg,
+    end: PADDING_TYPE.lg,
+    bottom: PADDING_TYPE.lg
+  },
   title = '',
   wide = false,
   ...ariaProps
@@ -101,10 +156,21 @@ const BpkBottomSheet = ({
   );
 
   const headingId = `bpk-bottom-sheet-heading-${id}`;
+  const hiddenTitleId = `bpk-bottom-sheet-title-hidden-${id}`;
+  const hasTitle = !!title;
+  const showHiddenTitle = !hasTitle && 'ariaLabel' in ariaProps && ariaProps.ariaLabel;
   const dialogClassName = getClassName(
     'bpk-bottom-sheet',
     wide && 'bpk-bottom-sheet--wide',
   );
+
+  const contentStyle = getContentStyles(paddingStyles);
+
+  // For custom title (ReactNode), wrap it with an element that has the correct id
+  // so BpkNavigationBar's aria-labelledby reference is valid
+  const titleWithId = hasTitle && typeof title !== 'string' && isValidElement(title)
+    ? cloneElement(title as ReactElement, { id: showHiddenTitle ? hiddenTitleId : headingId })
+    : title;
 
   return (
     <BpkDialogWrapper
@@ -125,27 +191,34 @@ const BpkBottomSheet = ({
         appear: animationTimeout,
         exit: isAboveMobile ? 0 : animationTimeout,
       }}
+      {...getDataComponentAttribute('BottomSheet')}
     >
       <>
-        <header className={getClassName('bpk-bottom-sheet--header')}>
+        <header className={getClassName('bpk-bottom-sheet--header-wrapper')}>
           <BpkNavigationBar
-            id={headingId}
-            title={title}
+            id={showHiddenTitle ? hiddenTitleId : headingId}
+            title={titleWithId}
             titleTextStyle={TEXT_STYLES.label1}
-            titleTagName={title ? 'h2' : 'span'}
+            titleTagName={hasTitle ? 'h2' : 'span'}
+            wrapTitle
+            className={getClassName('bpk-bottom-sheet--header')}
             leadingButton={
               <BpkCloseButton label={closeLabel} onClick={handleClose} />
             }
             trailingButton={
               actionText && onAction ? (
-                <BpkButtonLink onClick={onAction}>{actionText}</BpkButtonLink>
+                <BpkLink as="button" onClick={onAction}>{actionText}</BpkLink>
               ) : null
             }
           />
+          {/* Visually hidden title required for Android TalkBack to announce ariaLabel on BottomSheet open when no visible title provided */}
+          {showHiddenTitle && (
+            <BpkVisuallyHidden as="h2">
+              <span id={hiddenTitleId}>{ariaProps.ariaLabel}</span>
+            </BpkVisuallyHidden>
+          )}
         </header>
-        <div className={getClassName('bpk-bottom-sheet--content')}>
-          {children}
-        </div>
+        <div className={contentStyle}>{children}</div>
       </>
     </BpkDialogWrapper>
   );

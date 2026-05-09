@@ -18,7 +18,7 @@
 
 import { render } from '@testing-library/react';
 
-import BpkPanel from './BpkPanel';
+import BpkPanel, { PANEL_BG_COLORS } from './BpkPanel';
 
 describe('BpkPanel', () => {
   it('should render correctly', () => {
@@ -83,5 +83,23 @@ describe('BpkPanel', () => {
     expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--keyline');
     expect(container.querySelector('.bpk-panel')).not.toHaveClass('bpk-panel--full-width-keyline');
     expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--full-width');
+  });
+
+  it('should render with bgColor', () => {
+    const { container } = render(
+      <BpkPanel bgColor={PANEL_BG_COLORS.surfaceSubtle}>
+        Content
+      </BpkPanel>,
+    );
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--surface-subtle');
+  });
+
+  it('should default to surfaceDefault bgColor', () => {
+    const { container } = render(
+      <BpkPanel>
+        Content
+      </BpkPanel>,
+    );
+    expect(container.querySelector('.bpk-panel')).toHaveClass('bpk-panel--surface-default');
   });
 });

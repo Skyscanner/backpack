@@ -34,8 +34,12 @@ let props;
 describe.each([
   [SIZES.xsmall, ALIGNS.left],
   [SIZES.small, ALIGNS.left],
+  [SIZES.medium, ALIGNS.left],
   [SIZES.large, ALIGNS.left],
+  [SIZES.xsmall, ALIGNS.right],
   [SIZES.small, ALIGNS.right],
+  [SIZES.medium, ALIGNS.right],
+  [SIZES.large, ALIGNS.right],
 ])(`%s %s view`, (size, align) => {
   beforeEach(() => {
     props = {

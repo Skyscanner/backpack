@@ -7,6 +7,7 @@ exports[`BpkScrim render should render correctly 1`] = `
   >
     <div
       class="bpk-scrim"
+      data-backpack-ds-component="Scrim"
       role="presentation"
     />
     <testcomponent />
@@ -21,6 +22,7 @@ exports[`BpkScrim render should render correctly when is iPhone 1`] = `
   >
     <div
       class="bpk-scrim"
+      data-backpack-ds-component="Scrim"
       role="presentation"
     />
     <testcomponent />
@@ -35,6 +37,7 @@ exports[`BpkScrim render should render correctly with closeOnScrimClick as false
   >
     <div
       class="bpk-scrim"
+      data-backpack-ds-component="Scrim"
       role="presentation"
     />
     <testcomponent />
@@ -49,6 +52,7 @@ exports[`BpkScrim render should render correctly with containerClassName 1`] = `
   >
     <div
       class="bpk-scrim"
+      data-backpack-ds-component="Scrim"
       role="presentation"
     />
     <testcomponent />

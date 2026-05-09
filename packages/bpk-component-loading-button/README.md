@@ -12,6 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkLoadingButton from '@skyscanner/backpack-web/bpk-component-loading-button';
 import BaggageIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/baggage';
 import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
+import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
 
 const AlignedBaggageIcon = withButtonAlignment(withRtlSupport(BaggageIcon));
 const icon = <AlignedBaggageIcon />;
@@ -22,7 +23,7 @@ export default () => (
     <BpkLoadingButton large>Large primary</BpkLoadingButton>
     <BpkLoadingButton secondary>Secondary</BpkLoadingButton>
     <BpkLoadingButton iconOnly>
-      <span className="visually-hidden">Search</span>
+      <BpkVisuallyHidden>Search</BpkVisuallyHidden>
     </BpkLoadingButton>
     <BpkLoadingButton icon={icon} iconDisabled={icon}>Custom Icon</BpkLoadingButton>
   </div>

@@ -5,6 +5,7 @@ exports[`BpkGridToggle should render correctly 1`] = `
   <span>
     <button
       class="bpk-link"
+      data-backpack-ds-component="Link"
       title="Keyboard Shortcut: ctrl + cmd + g"
       type="button"
     >
@@ -25,6 +26,7 @@ exports[`BpkGridToggle should render correctly with the className prop 1`] = `
   >
     <button
       class="bpk-link"
+      data-backpack-ds-component="Link"
       title="Keyboard Shortcut: ctrl + cmd + g"
       type="button"
     >

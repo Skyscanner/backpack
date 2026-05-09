@@ -15,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@use '../../unstable__bpk-mixins/tokens';
-@use '../../unstable__bpk-mixins/breakpoints';
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/breakpoints';
 
 .bpk-phone-input {
   display: flex;

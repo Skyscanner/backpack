@@ -4,6 +4,7 @@ exports[`BpkCalendarWeek should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="bpk-calendar-week"
+    data-backpack-ds-component="CalendarWeek"
     role="row"
   >
     <div
