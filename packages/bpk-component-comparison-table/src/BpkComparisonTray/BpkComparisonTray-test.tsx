@@ -26,7 +26,7 @@ import BpkComparisonTray from './BpkComparisonTray';
 
 import type { BpkComparisonItem } from './common-types';
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 const ITEM_1: BpkComparisonItem = { id: '1', label: 'VIP Cars', image: 'car1.png' };

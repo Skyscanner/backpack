@@ -34,7 +34,7 @@ export type PolitenessSetting =
   (typeof POLITENESS_SETTINGS)[keyof typeof POLITENESS_SETTINGS];
 
 export type Props = {
-  children: ReactElement | string;
+  children: ReactElement<any> | string;
   politenessSetting?: PolitenessSetting;
   visible?: boolean;
   className?: string | null;

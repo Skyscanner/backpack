@@ -38,7 +38,7 @@ export type Props = Omit<
   dockedFirst?: boolean;
   dockedLast?: boolean;
   dockedMiddle?: boolean;
-  image?: ReactElement | null;
+  image?: ReactElement<any> | null;
   large?: boolean;
   valid?: boolean | null;
   wrapperClassName?: string | null;

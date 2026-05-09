@@ -38,7 +38,7 @@ type Props = {
 
 const BpkAutosuggestSuggestion = (props: Props) => {
   const classNames = [getClassName('bpk-autosuggest__suggestion')];
-  const { className, icon, indent, subHeading, tertiaryLabel, value, ...rest } =
+  const { className = null, icon = null, indent = false, subHeading = null, tertiaryLabel = null, value, ...rest } =
     props;
   const Icon = icon;
 
@@ -96,14 +96,6 @@ BpkAutosuggestSuggestion.propTypes = {
   icon: PropTypes.func,
   indent: PropTypes.bool,
   className: PropTypes.string,
-};
-
-BpkAutosuggestSuggestion.defaultProps = {
-  subHeading: null,
-  tertiaryLabel: null,
-  icon: null,
-  indent: false,
-  className: null,
 };
 
 export default BpkAutosuggestSuggestion;

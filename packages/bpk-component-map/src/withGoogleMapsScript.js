@@ -37,9 +37,9 @@ export const LibraryShapeType = PropTypes.arrayOf(
 function withGoogleMapsScript(Component: ComponentType<any>) {
   const WithGoogleMapsScript = ({
     googleMapsApiKey,
-    libraries,
-    loadingElement,
-    preventGoogleFontsLoading,
+    libraries = ['geometry', 'drawing', 'places'],
+    loadingElement = <DefaultLoadingElement />,
+    preventGoogleFontsLoading = false,
     ...rest
   }: {
     [string]: any,
@@ -67,12 +67,6 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
     googleMapsApiKey: PropTypes.string.isRequired,
     libraries: LibraryShapeType,
     preventGoogleFontsLoading: PropTypes.bool,
-  };
-
-  WithGoogleMapsScript.defaultProps = {
-    loadingElement: <DefaultLoadingElement />,
-    preventGoogleFontsLoading: false,
-    libraries: ['geometry', 'drawing', 'places'],
   };
 
   return WithGoogleMapsScript;
