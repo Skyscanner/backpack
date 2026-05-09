@@ -26,8 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run sync
+      - name: Stage 1 - Fetch tokens from Figma
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
-        run: npm run sync
+        run: npm run tokens:fetch
+
+      - name: Stage 2 - Build CSS from DTCG tokens
+        run: npm run tokens:build-css

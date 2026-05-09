@@ -423,12 +423,41 @@ describe('build-css CLI', () => {
       expect(after).toEqual(before);
       expect(await readFile(path.join(buildDir, LIGHT_OUTPUT_FILE), 'utf8')).toBe(previousLight);
 
-      // No staging dir left alongside buildDir.
+      // No staging or backup dirs left alongside buildDir.
       const parentEntries = await readdir(path.dirname(buildDir));
-      const stagingLeftovers = parentEntries.filter((e) =>
-        e.startsWith(`${path.basename(buildDir)}.staging-`),
-      );
-      expect(stagingLeftovers).toEqual([]);
+      const base = path.basename(buildDir);
+      expect(parentEntries.filter((e) => e.startsWith(`${base}.staging-`))).toEqual([]);
+      expect(parentEntries.filter((e) => e.startsWith(`${base}.backup-`))).toEqual([]);
+    } finally {
+      await cleanup();
+    }
+  });
+
+  it('creates and removes a backup dir when swapping in a new build over an existing one', async () => {
+    const { buildDir, cleanup, tokensDir } = await setUpFixture();
+    try {
+      // Seed buildDir with a first successful run.
+      const first = await runCli({
+        DTCG_OUTPUT_DIR: tokensDir,
+        CSS_OUTPUT_DIR: buildDir,
+      });
+      expect(first.code).toBe(0);
+      const firstLight = await readFile(path.join(buildDir, LIGHT_OUTPUT_FILE), 'utf8');
+
+      // Second run with valid inputs — should succeed and swap in fresh output.
+      const second = await runCli({
+        DTCG_OUTPUT_DIR: tokensDir,
+        CSS_OUTPUT_DIR: buildDir,
+      });
+      expect(second.code).toBe(0);
+      // Output is regenerated correctly.
+      expect(await readFile(path.join(buildDir, LIGHT_OUTPUT_FILE), 'utf8')).toBe(firstLight);
+
+      // Neither staging nor backup dirs must linger alongside buildDir.
+      const parentEntries = await readdir(path.dirname(buildDir));
+      const base = path.basename(buildDir);
+      expect(parentEntries.filter((e) => e.startsWith(`${base}.staging-`))).toEqual([]);
+      expect(parentEntries.filter((e) => e.startsWith(`${base}.backup-`))).toEqual([]);
     } finally {
       await cleanup();
     }

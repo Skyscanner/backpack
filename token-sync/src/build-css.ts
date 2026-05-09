@@ -115,7 +115,7 @@ export interface BuildCSSResult {
 
 // Verify each Stage 1 file is present on disk. SD would otherwise throw a
 // less actionable error mid-build. Doing it up-front lets us point the user
-// at the exact missing file and the `npm run sync` command that creates them.
+// at the exact missing file and the `npm run tokens:fetch` command that creates them.
 async function assertInputsExist(tokensDir: string): Promise<void> {
   const missing: string[] = [];
   await Promise.all(
@@ -132,7 +132,7 @@ async function assertInputsExist(tokensDir: string): Promise<void> {
     throw new Error(
       `Missing Stage 1 DTCG file(s):\n  ${missing.join(
         '\n  ',
-      )}\nRun \`npm run sync\` to (re)generate them before building CSS.`,
+      )}\nRun \`npm run tokens:fetch\` to (re)generate them before building CSS.`,
     );
   }
 }
@@ -235,8 +235,11 @@ export async function runBuildCSS({
   // Stage in a sibling directory so any SD failure leaves the existing
   // `buildDir` (committed to git) untouched. The rename at the end is the
   // only step that mutates `buildDir`.
-  const stagingDir = `${buildDir}.staging-${process.pid}-${Date.now()}`;
+  const resolvedBuildDir = path.resolve(buildDir);
+  const stagingDir = `${resolvedBuildDir}.staging-${process.pid}-${Date.now()}`;
+  const backupDir = `${resolvedBuildDir}.backup-${process.pid}-${Date.now()}`;
   assertSafeOutputDir(stagingDir);
+  assertSafeOutputDir(backupDir);
 
   const cssTransforms = buildCssTransforms();
   const configs = buildStyleDictionaryConfigs({
@@ -261,13 +264,39 @@ export async function runBuildCSS({
       const filesForPlatform = config.platforms?.css?.files ?? [];
       for (const file of filesForPlatform) {
         if (file.destination) {
-          outputs.push(path.join(buildDir, file.destination));
+          outputs.push(path.join(resolvedBuildDir, file.destination));
         }
       }
     }, Promise.resolve());
 
-    await rm(buildDir, { force: true, recursive: true });
-    await rename(stagingDir, buildDir);
+    // Swap staging into place. Move the existing resolvedBuildDir aside first
+    // so a failed rename(staging → resolvedBuildDir) can be rolled back,
+    // instead of leaving the previous committed CSS deleted.
+    let backupCreated = false;
+    try {
+      await rename(resolvedBuildDir, backupDir);
+      backupCreated = true;
+    } catch (error: unknown) {
+      // First run (or external cleanup) — resolvedBuildDir doesn't exist yet,
+      // which is fine. Anything else is a real failure.
+      if ((error as Error & { code?: string }).code !== 'ENOENT') throw error;
+    }
+
+    try {
+      await rename(stagingDir, resolvedBuildDir);
+    } catch (renameError) {
+      if (backupCreated) {
+        await rename(backupDir, resolvedBuildDir).catch(() => {
+          // Restoring the backup also failed — surface the original error
+          // and leave both dirs on disk for manual recovery.
+        });
+      }
+      throw renameError;
+    }
+
+    if (backupCreated) {
+      await rm(backupDir, { force: true, recursive: true });
+    }
   } catch (error) {
     await rm(stagingDir, { force: true, recursive: true });
     throw error;

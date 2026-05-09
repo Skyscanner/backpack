@@ -136,7 +136,7 @@ export function findCssNameCollisions(
   // collisions are scoped per file because each mode's CSS is built
   // independently — but kept on the signature so callers don't need to
   // change shape later.
-   
+
   _filePath: string,
 ): CssNameCollision[] {
   const seen = new Map<string, string[]>();
