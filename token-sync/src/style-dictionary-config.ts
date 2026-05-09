@@ -40,6 +40,11 @@ export const BASE_PX_FONT_SIZE = 16;
 // `--bpk-*` convention on bpk-tokens / bpk-stylesheets.
 export const CSS_PREFIX = 'bpk';
 
+// Name of the SD fileHeader that emits the Apache 2.0 license + auto-generated
+// notice. Registered in build-css.ts so SD's module-scoped registry picks it up
+// before configs run; referenced by name from the file options below.
+export const BPK_FILE_HEADER = 'bpk-license-and-generated';
+
 // Figma organisational prefixes stripped from the CSS variable name.
 // e.g. `Component.Badge.Colour.bg-default` → `--bpk-badge-colour-bg-default`.
 export const STRIPPED_TOP_LEVEL_SEGMENTS: ReadonlySet<string> = new Set([
@@ -388,6 +393,7 @@ export function buildStyleDictionaryConfigs({
                 options: {
                   selector: selectorForSemanticFile(semanticFile),
                   outputReferences: false,
+                  fileHeader: BPK_FILE_HEADER,
                 },
               },
             ],
