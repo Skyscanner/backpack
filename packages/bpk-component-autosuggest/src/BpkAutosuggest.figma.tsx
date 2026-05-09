@@ -18,7 +18,6 @@
 
 import figma from '@figma/code-connect';
 
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import BpkAutosuggest from './BpkAutosuggest';
 
 figma.connect(

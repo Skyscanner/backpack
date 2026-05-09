@@ -24,7 +24,6 @@ import type { ChangeEvent, ReactElement } from 'react';
 import { action } from '../../../.storybook/bpk-storybook-utils';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
-  // @ts-expect-error Untyped import
 } from '../../bpk-component-autosuggest';
 import BpkButton from '../../bpk-component-button';
 import { format } from '../../bpk-component-calendar/src/date-utils';

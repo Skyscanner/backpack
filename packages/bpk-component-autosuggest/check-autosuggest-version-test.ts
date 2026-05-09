@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import packageFile from '../package.json';
 
 describe('Check version of react-autosuggest', () => {

@@ -15,11 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* eslint-disable react/prop-types */
-
-/* @flow strict */
 
 import { Component } from 'react';
+import type { SyntheticEvent } from 'react';
 
 import { Title, Markdown, ArgTypes } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
@@ -32,7 +30,15 @@ import BpkAutosuggestSuggestion from './BpkAutosuggestSuggestion';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
-const offices = [
+type Office = {
+  name: string;
+  code: string;
+  country: string;
+  tertiaryLabel: string;
+  indent?: boolean;
+};
+
+const offices: Office[] = [
   {
     name: 'Barcelona',
     code: 'BCN',
@@ -96,7 +102,7 @@ const offices = [
   },
 ];
 
-const dataHanzi = [
+const dataHanzi: Office[] = [
   {
     name: '深圳寶安國際 (Shenzhen)',
     code: 'SZX',
@@ -105,7 +111,7 @@ const dataHanzi = [
   },
 ];
 
-const getSuggestions = (value, hanzi) => {
+const getSuggestions = (value: string, hanzi: boolean): Office[] => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
@@ -118,10 +124,23 @@ const getSuggestions = (value, hanzi) => {
       );
 };
 
-const getSuggestionValue = (suggestion) =>
+const getSuggestionValue = (suggestion: Office) =>
   `${suggestion.name} (${suggestion.code})`;
 
-class AutosuggestExample extends Component {
+type State = {
+  value: string;
+  suggestions: Office[];
+};
+
+type Props = {
+  hanzi: boolean;
+  includeIcon: boolean;
+  includeSubheading: boolean;
+  includeTertiaryLabel: boolean;
+  alwaysRenderSuggestions: boolean;
+};
+
+class AutosuggestExample extends Component<Props, State> {
   static defaultProps = {
     hanzi: false,
     includeIcon: false,
@@ -130,8 +149,8 @@ class AutosuggestExample extends Component {
     alwaysRenderSuggestions: false,
   };
 
-  constructor() {
-    super();
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
       value: '',
@@ -139,16 +158,20 @@ class AutosuggestExample extends Component {
     };
   }
 
-  onChange = (e, { newValue }) => {
+  onChange = (_e: SyntheticEvent, { newValue }: { newValue: string }) => {
     this.setState({
       value: newValue,
     });
   };
 
-  onSuggestionsFetchRequested = ({ value }) => {
+  onSuggestionsFetchRequested = ({ value }: { value: string }) => {
     this.setState({
       suggestions: getSuggestions(value, this.props.hanzi),
     });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({ suggestions: [] });
   };
 
   render() {
@@ -171,7 +194,7 @@ class AutosuggestExample extends Component {
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
-        renderSuggestion={(suggestion) => (
+        renderSuggestion={(suggestion: Office) => (
           <BpkAutosuggestSuggestion
             value={getSuggestionValue(suggestion)}
             indent={suggestion.indent}
@@ -239,7 +262,7 @@ export const SmallInput = {
 
 export const VisualTest = {
   render: () => <AutosuggestExample alwaysRenderSuggestions />,
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement);
 
     const input = canvas.getByPlaceholderText('Enter an office name'); // Find the input field

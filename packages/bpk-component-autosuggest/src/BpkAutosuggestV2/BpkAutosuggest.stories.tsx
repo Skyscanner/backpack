@@ -24,7 +24,6 @@ import { userEvent, within } from 'storybook/test';
 
 import { withRtlSupport } from '../../../bpk-component-icon';
 import FlightIcon from '../../../bpk-component-icon/lg/flight';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkAutosuggestSuggestion from '../BpkAutosuggestSuggestion';
 
 import BpkAutosuggest from './BpkAutosuggest';
