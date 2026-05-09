@@ -28,7 +28,6 @@ import {
   BACKPACK_DARK_FILE,
   BACKPACK_LIGHT_FILE,
   PRIMITIVES_FILE,
-  REQUIRED_INPUT_FILES,
   buildStyleDictionaryConfigs,
   findAsymmetricSemanticTokens,
   findCssNameCollisions,
@@ -106,26 +105,26 @@ export interface BuildCSSResult {
   outputs: string[];
 }
 
+async function discoverSemanticFiles(tokensDir: string): Promise<string[]> {
+  const entries = await readdir(tokensDir);
+  return entries.filter((f) => f.startsWith('backpack.') && f.endsWith('.json')).sort();
+}
+
 // Verify primitives + at least one semantic token file exists before SD runs.
 // Semantic token files (backpack.*.json) are auto-discovered, so new themes
 // require no code changes — just add the file via Stage 1 sync.
 async function assertInputsExist(tokensDir: string): Promise<void> {
   const missing: string[] = [];
-  await Promise.all(
-    REQUIRED_INPUT_FILES.map(async (fileName) => {
-      const filePath = path.join(tokensDir, fileName);
-      try {
-        await access(filePath);
-      } catch {
-        missing.push(filePath);
-      }
-    }),
-  );
+  const primitivesPath = path.join(tokensDir, PRIMITIVES_FILE);
+  try {
+    await access(primitivesPath);
+  } catch {
+    missing.push(primitivesPath);
+  }
 
   let semanticFiles: string[] = [];
   try {
-    const entries = await readdir(tokensDir);
-    semanticFiles = entries.filter((f) => f.startsWith('backpack.') && f.endsWith('.json'));
+    semanticFiles = await discoverSemanticFiles(tokensDir);
   } catch {
     // readdir fails if tokensDir doesn't exist; let the primitives check surface it.
   }
@@ -145,17 +144,14 @@ async function assertInputsExist(tokensDir: string): Promise<void> {
 }
 
 // Run all Stage 2 structural checks (dimension units, CSS name collisions,
-// semantic token symmetry) off a single parse. Returns the discovered semantic
-// file names for later use in SD config building.
+// semantic token symmetry) off a single parse.
+// Returns the discovered semantic file names for later use in SD config building.
 async function assertInputsAreBuildable(
   tokensDir: string,
 ): Promise<{ semanticFileNames: string[] }> {
-  const entries = await readdir(tokensDir);
-  const semanticFileNames = entries
-    .filter((f) => f.startsWith('backpack.') && f.endsWith('.json'))
-    .sort();
+  const semanticFileNames = await discoverSemanticFiles(tokensDir);
 
-  const fileNames = [...REQUIRED_INPUT_FILES, ...semanticFileNames];
+  const fileNames = [PRIMITIVES_FILE, ...semanticFileNames];
   const parsedFiles = await Promise.all(
     fileNames.map(async (fileName) => {
       const filePath = path.join(tokensDir, fileName);
@@ -179,7 +175,7 @@ async function assertInputsAreBuildable(
   }> = [];
   for (const { filePath, tree } of parsedFiles) {
     dimensionViolations.push(...findInvalidDimensions(tree, filePath));
-    const collisions = findCssNameCollisions(tree, filePath);
+    const collisions = findCssNameCollisions(tree);
     if (collisions.length > 0) {
       collisionsByFile.push({ filePath, collisions });
     }
@@ -192,22 +188,35 @@ async function assertInputsAreBuildable(
     throw new Error(formatCssNameCollisions(collisionsByFile));
   }
 
-  // All semantic token files must declare the same set of semantic token paths.
+  // Symmetry check against a fixed reference theme: every other semantic file
+  // must declare the same token paths as the reference. Light is the canonical
+  // baseline (it's the `:root` theme; other themes layer on top via attribute
+  // selectors). Falls back to the first file alphabetically if Light is absent
+  // — keeps the check working for downstream forks that ship without Light.
   const semanticParsed = parsedFiles.filter(
     ({ filePath }) => !filePath.endsWith(PRIMITIVES_FILE),
   );
-  for (let i = 0; i < semanticParsed.length - 1; i += 1) {
-    const file1 = semanticParsed[i];
-    const file2 = semanticParsed[i + 1];
-    const asymmetry = findAsymmetricSemanticTokens(file1.tree, file2.tree);
-    if (asymmetry.lightOnly.length > 0 || asymmetry.darkOnly.length > 0) {
-      const name1 = path.basename(file1.filePath);
-      const name2 = path.basename(file2.filePath);
-      const message = formatAsymmetricSemanticTokens(asymmetry);
+  const referenceFile =
+    semanticParsed.find(
+      ({ filePath }) => path.basename(filePath) === BACKPACK_LIGHT_FILE,
+    ) ?? semanticParsed[0];
+  const referenceName = path.basename(referenceFile.filePath);
+  for (const candidate of semanticParsed) {
+    if (candidate === referenceFile) continue; // eslint-disable-line no-continue
+    const asymmetry = findAsymmetricSemanticTokens(
+      referenceFile.tree,
+      candidate.tree,
+    );
+    if (
+      asymmetry.onlyInFirst.length > 0 ||
+      asymmetry.onlyInSecond.length > 0
+    ) {
       throw new Error(
-        message
-          .replace(`Missing in ${BACKPACK_DARK_FILE}`, `Missing in ${name2}`)
-          .replace(`Missing in ${BACKPACK_LIGHT_FILE}`, `Missing in ${name1}`),
+        formatAsymmetricSemanticTokens(
+          asymmetry,
+          referenceName,
+          path.basename(candidate.filePath),
+        ),
       );
     }
   }
@@ -221,10 +230,10 @@ export async function runBuildCSS({
   buildDir,
   tokensDir,
 }: BuildCSSOptions): Promise<BuildCSSResult> {
+  // Absolute paths only — CWD can change mid-run (e.g. SD's config loading),
+  // which would break the staging/atomic-swap dance.
   if (!path.isAbsolute(tokensDir)) {
-    throw new Error(
-      `tokensDir must be absolute, got "${tokensDir}".`,
-    );
+    throw new Error(`tokensDir must be absolute, got "${tokensDir}".`);
   }
   if (!path.isAbsolute(buildDir)) {
     throw new Error(`buildDir must be absolute, got "${buildDir}".`);
@@ -254,8 +263,7 @@ export async function runBuildCSS({
     await rm(stagingDir, { force: true, recursive: true });
     await mkdir(stagingDir, { recursive: true });
 
-    // Run sequentially via reduce (avoids no-await-in-loop). See PR thread
-    // on why parallelism here offers no real speedup.
+    // Sequential builds: serialises awaits without tripping no-await-in-loop.
     await configs.reduce<Promise<void>>(async (prev, { config }) => {
       await prev;
       const sd = new StyleDictionary(config);
@@ -269,7 +277,7 @@ export async function runBuildCSS({
     }, Promise.resolve());
 
     // Swap staging into place: backup → swap → cleanup, with rollback on
-    // a failed swap. See PR thread for the failure-mode analysis.
+    // a failed swap.
     let backupCreated = false;
     try {
       await rename(resolvedBuildDir, backupDir);

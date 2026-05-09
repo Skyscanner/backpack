@@ -114,6 +114,17 @@ Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
 - **The CSS lives outside `token-sync/tokens/`** so Stage 1's directory wipe
   doesn't clobber it.
 
+### Adding a new theme
+
+Both stages are theme-agnostic — adding a third theme (e.g. Sepia) requires **no code changes**:
+
+1. Add the mode to the `Backpack` collection in Figma and assign every semantic token a value for it.
+2. Run `npm run tokens:sync`.
+
+Stage 1 emits `backpack.<mode>.json`; Stage 2 picks it up automatically and writes `theme-backpack-<mode>.css` with selector `:root[data-theme="<mode>"]`.
+
+Only edit code if the Figma mode name shouldn't be used verbatim — add a `Figma name → output name` entry to `MODE_NAME_OVERRIDES` in `src/sync-helpers.ts` (e.g. Figma's `Day`/`Night` → `Light`/`Dark`).
+
 ### Overriding paths
 
 `DTCG_OUTPUT_DIR` and `CSS_OUTPUT_DIR` can be set to absolute paths if the

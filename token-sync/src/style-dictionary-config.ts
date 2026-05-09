@@ -20,21 +20,13 @@ import path from 'node:path';
 
 import type { Config, TransformedToken } from 'style-dictionary/types';
 
-// `:root` for Light, scoped attribute selector for Dark so a single document
-// can opt into the Dark palette by setting `data-theme="dark"` on <html> or
-// <body>. The values come from CLOV-1403's spec — keep them in sync with any
-// runtime theme-toggling code.
+// Light applies globally; Dark scopes to `data-theme="dark"` on <html>/<body>.
 export const LIGHT_SELECTOR = ':root';
 export const DARK_SELECTOR = ':root[data-theme="dark"]';
 
-// Filenames are spec'd by the ticket. Keep matching the convention used by
-// downstream consumers so we don't break any imports.
 export const LIGHT_OUTPUT_FILE = 'theme-backpack-light.css';
 export const DARK_OUTPUT_FILE = 'theme-backpack-dark.css';
 
-// Source DTCG filenames written by the Stage 1 sync. These names are also
-// hard-coded in `dtcg-writer.ts` (single-mode collection) and the Backpack
-// collection (multi-mode); both stages need to agree.
 export const PRIMITIVES_FILE = 'primitives.json';
 export const BACKPACK_LIGHT_FILE = 'backpack.light.json';
 export const BACKPACK_DARK_FILE = 'backpack.dark.json';
@@ -48,13 +40,8 @@ export const BASE_PX_FONT_SIZE = 16;
 // `--bpk-*` convention on bpk-tokens / bpk-stylesheets.
 export const CSS_PREFIX = 'bpk';
 
-// Top-level DTCG group names that should NOT show up in the CSS variable
-// name. These come from Figma's organisational hierarchy ("Component/" is a
-// folder there) but carry no useful information for consumers — every token
-// underneath is already namespaced by the component name (Badge, Button, …).
-//
-// Compared case-insensitively to the first path segment. Strip-then-kebab
-// so e.g. `Component.Badge.Colour.bg-default` → `--bpk-badge-colour-bg-default`.
+// Figma organisational prefixes stripped from the CSS variable name.
+// e.g. `Component.Badge.Colour.bg-default` → `--bpk-badge-colour-bg-default`.
 export const STRIPPED_TOP_LEVEL_SEGMENTS: ReadonlySet<string> = new Set([
   'component',
 ]);
@@ -94,32 +81,21 @@ export function kebabBpkName(
 export interface CssNameCollision {
   // Final kebab-cased name (without prefix) that two or more tokens share.
   name: string;
-  // Dotted DTCG paths of every token that maps to `name`. Always >= 2.
+  // Dotted DTCG paths of every token that maps to `name`. Length always >= 2.
   sources: string[];
 }
 
-// Walk a parsed DTCG tree and return every CSS name that two or more tokens
-// would collide on after `kebabBpkName` runs. The most likely cause is a
-// top-level `Foo` group co-existing with a `Component.Foo` group: both
-// produce `--bpk-foo-…` after stripping. SD itself wouldn't error on this —
-// it would just emit both, with the second silently winning the cascade.
-export function findCssNameCollisions(
-  tree: unknown,
-  // Reserved for future cross-file collision detection. Unused today —
-  // collisions are scoped per file because each mode's CSS is built
-  // independently — but kept on the signature so callers don't need to
-  // change shape later.
-
-  _filePath: string,
-): CssNameCollision[] {
+// Return every CSS name that two or more tokens collide on after `kebabBpkName`.
+// e.g. `Foo.*` and `Component.Foo.*` both strip to `--bpk-foo-…`.
+export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
   const seen = new Map<string, string[]>();
 
   function walk(node: unknown, pathSegments: readonly string[]): void {
     if (typeof node !== 'object' || node === null || Array.isArray(node)) {
       return;
     }
-    const obj = node as Record<string, unknown>;
-    if (Object.prototype.hasOwnProperty.call(obj, '$value')) {
+    const nodeRecord = node as Record<string, unknown>;
+    if (Object.prototype.hasOwnProperty.call(nodeRecord, '$value')) {
       const cssName = kebabBpkName(pathSegments);
       const dotted = pathSegments.join('.');
       const existing = seen.get(cssName);
@@ -130,7 +106,7 @@ export function findCssNameCollisions(
       }
       return;
     }
-    for (const [key, child] of Object.entries(obj)) {
+    for (const [key, child] of Object.entries(nodeRecord)) {
       if (!key.startsWith('$')) {
         walk(child, [...pathSegments, key]);
       }
@@ -184,7 +160,7 @@ export function formatCssNameCollisions(
 
 // Walk a parsed DTCG tree and collect every leaf token's dotted path.
 // `Component.Badge.Colour.bg-default` is one entry. Used by the symmetry
-// check below — pure, no I/O.
+// check below.
 function collectTokenPaths(tree: unknown): string[] {
   const paths: string[] = [];
 
@@ -192,12 +168,12 @@ function collectTokenPaths(tree: unknown): string[] {
     if (typeof node !== 'object' || node === null || Array.isArray(node)) {
       return;
     }
-    const obj = node as Record<string, unknown>;
-    if (Object.prototype.hasOwnProperty.call(obj, '$value')) {
+    const nodeRecord = node as Record<string, unknown>;
+    if (Object.prototype.hasOwnProperty.call(nodeRecord, '$value')) {
       paths.push(segments.join('.'));
       return;
     }
-    for (const [key, child] of Object.entries(obj)) {
+    for (const [key, child] of Object.entries(nodeRecord)) {
       if (!key.startsWith('$')) {
         walk(child, [...segments, key]);
       }
@@ -209,72 +185,71 @@ function collectTokenPaths(tree: unknown): string[] {
 }
 
 export interface SemanticTokenAsymmetry {
-  // Token paths present in Light but missing in Dark. Sorted, de-duplicated.
-  lightOnly: string[];
-  // Token paths present in Dark but missing in Light. Sorted, de-duplicated.
-  darkOnly: string[];
+  // Token paths present in the first tree but missing in the second.
+  onlyInFirst: string[];
+  // Token paths present in the second tree but missing in the first.
+  onlyInSecond: string[];
 }
 
-// Symmetric difference of leaf token paths between Light and Dark files.
-// Every semantic token must exist in both themes — see contract notes in
-// the PR thread. Pure: caller passes parsed JSON.
+// Symmetric difference of leaf token paths between two semantic token trees.
+// Every semantic token must exist in every theme file.
 export function findAsymmetricSemanticTokens(
-  lightTree: unknown,
-  darkTree: unknown,
+  firstTree: unknown,
+  secondTree: unknown,
 ): SemanticTokenAsymmetry {
-  const lightPaths = new Set(collectTokenPaths(lightTree));
-  const darkPaths = new Set(collectTokenPaths(darkTree));
-  const lightOnly: string[] = [];
-  const darkOnly: string[] = [];
-  lightPaths.forEach((tokenPath) => {
-    if (!darkPaths.has(tokenPath)) lightOnly.push(tokenPath);
+  const firstPaths = new Set(collectTokenPaths(firstTree));
+  const secondPaths = new Set(collectTokenPaths(secondTree));
+  const onlyInFirst: string[] = [];
+  const onlyInSecond: string[] = [];
+  firstPaths.forEach((tokenPath) => {
+    if (!secondPaths.has(tokenPath)) onlyInFirst.push(tokenPath);
   });
-  darkPaths.forEach((tokenPath) => {
-    if (!lightPaths.has(tokenPath)) darkOnly.push(tokenPath);
+  secondPaths.forEach((tokenPath) => {
+    if (!firstPaths.has(tokenPath)) onlyInSecond.push(tokenPath);
   });
-  return { lightOnly: lightOnly.sort(), darkOnly: darkOnly.sort() };
+  return {
+    onlyInFirst: onlyInFirst.sort(),
+    onlyInSecond: onlyInSecond.sort(),
+  };
 }
 
-// Render the asymmetry into a multi-line CLI error message.
+// Render the asymmetry into a multi-line CLI error message. `firstFile` and
+// `secondFile` should be the base names of the files compared — they appear
+// in the headings so the user knows which file to edit.
 export function formatAsymmetricSemanticTokens(
   asymmetry: SemanticTokenAsymmetry,
+  firstFile: string,
+  secondFile: string,
 ): string {
-  const { darkOnly, lightOnly } = asymmetry;
-  const total = lightOnly.length + darkOnly.length;
+  const { onlyInFirst, onlyInSecond } = asymmetry;
+  const total = onlyInFirst.length + onlyInSecond.length;
   const lines: string[] = [];
-  if (lightOnly.length > 0) {
-    lines.push(`  Missing in ${BACKPACK_DARK_FILE} (only in ${BACKPACK_LIGHT_FILE}):`);
-    lines.push(...lightOnly.map((tokenPath) => `    ${tokenPath}`));
+  if (onlyInFirst.length > 0) {
+    lines.push(`  Missing in ${secondFile} (only in ${firstFile}):`);
+    lines.push(...onlyInFirst.map((tokenPath) => `    ${tokenPath}`));
   }
-  if (darkOnly.length > 0) {
-    lines.push(`  Missing in ${BACKPACK_LIGHT_FILE} (only in ${BACKPACK_DARK_FILE}):`);
-    lines.push(...darkOnly.map((tokenPath) => `    ${tokenPath}`));
+  if (onlyInSecond.length > 0) {
+    lines.push(`  Missing in ${firstFile} (only in ${secondFile}):`);
+    lines.push(...onlyInSecond.map((tokenPath) => `    ${tokenPath}`));
   }
   return (
-    `Found ${total} semantic token(s) defined in only one of {Light, Dark}.\n` +
+    `Found ${total} semantic token(s) defined in only one of {${firstFile}, ${secondFile}}.\n` +
     `${lines.join('\n')}\n` +
-    `Every Backpack semantic token must exist in both themes. Declare the same ` +
-    `path in both files; if the value really is meant to be shared across themes, ` +
-    `point one side at the other with a DTCG alias (e.g. \`"{Colour.Pink}"\`).`
+    `Every Backpack semantic token must exist in every theme file. Declare the ` +
+    `same path in both files; if the value really is meant to be shared across ` +
+    `themes, point one side at the other with a DTCG alias (e.g. \`"{Colour.Pink}"\`).`
   );
 }
 
 // Accepted dimension forms: literal `Xpx` (signed/decimal allowed) or a
-// DTCG alias `{Group.Token}`. See PR thread for size/pxToRem rationale.
+// DTCG alias `{Group.Token}`.
 const VALID_PX_LITERAL = /^-?\d+(\.\d+)?px$/;
 const DTCG_ALIAS = /^\{.+\}$/;
 
 export interface DimensionViolation {
-  // Absolute path of the JSON file the offending token came from.
-  filePath: string;
-  // Dotted path inside the file, e.g. "Component.Button.Dimension.padding-h".
-  // Empty string for the root token (which shouldn't happen in practice but
-  // is well-defined here).
-  tokenPath: string;
-  // The raw `$value` we rejected. Kept as `unknown` so the caller can decide
-  // how to render it (typically `JSON.stringify`) — bare numbers, booleans,
-  // etc. should still surface in the error message.
-  value: unknown;
+  filePath: string;  // absolute path of the source JSON file
+  tokenPath: string; // dotted path, e.g. "Component.Button.Dimension.padding-h"
+  value: unknown;    // raw rejected $value; kept as unknown for flexible rendering
 }
 
 function hasOwnDollarValue(node: Record<string, unknown>): boolean {
@@ -286,12 +261,9 @@ function isValidDimensionValue(value: unknown): boolean {
   return VALID_PX_LITERAL.test(value) || DTCG_ALIAS.test(value);
 }
 
-// Walk a parsed DTCG tree and return every dimension token whose `$value`
-// would not survive the px→rem assumption. `$type` cascades from the
-// nearest ancestor group that declared one (DTCG spec §7.1) — leaf tokens
-// rarely repeat `$type` themselves, so the cascade matters in practice.
-//
-// Pure: no I/O, no SD. Caller is responsible for reading + parsing the JSON.
+// Walk a DTCG tree and return every dimension token whose $value would not
+// survive the px→rem transform. $type cascades from ancestor groups per
+// https://www.designtokens.org/TR/drafts/format/#type-0
 export function findInvalidDimensions(
   tree: unknown,
   filePath: string,
@@ -306,24 +278,27 @@ export function findInvalidDimensions(
     if (typeof node !== 'object' || node === null || Array.isArray(node)) {
       return;
     }
-    const obj = node as Record<string, unknown>;
+    const nodeRecord = node as Record<string, unknown>;
     const localType =
-      typeof obj.$type === 'string' ? obj.$type : inheritedType;
+      typeof nodeRecord.$type === 'string' ? nodeRecord.$type : inheritedType;
 
-    if (hasOwnDollarValue(obj)) {
-      // It's a token. Validate iff it resolves to a `dimension`.
-      if (localType === 'dimension' && !isValidDimensionValue(obj.$value)) {
+    if (hasOwnDollarValue(nodeRecord)) {
+      // It's a token. Validate if it resolves to a `dimension`.
+      if (
+        localType === 'dimension' &&
+        !isValidDimensionValue(nodeRecord.$value)
+      ) {
         violations.push({
           filePath,
           tokenPath: pathSegments.join('.'),
-          value: obj.$value,
+          value: nodeRecord.$value,
         });
       }
       return; // Tokens don't have nested children we care about.
     }
 
     // It's a group: recurse into every non-`$`-prefixed child.
-    for (const [key, child] of Object.entries(obj)) {
+    for (const [key, child] of Object.entries(nodeRecord)) {
       if (!key.startsWith('$')) {
         walk(child, [...pathSegments, key], localType);
       }
@@ -354,15 +329,8 @@ export function formatDimensionViolations(
   );
 }
 
-// Filter that keeps tokens authored in `sourceFileName` and drops the rest.
-// We use this to omit Primitives from the per-mode CSS output: they're loaded
-// as a `source` so cross-collection aliases resolve, but we don't want raw
-// primitives leaking into the theme stylesheets — only the semantic Backpack
-// tokens should produce `--bpk-*` variables.
-//
-// `filePath` is set to the absolute path SD read the file from. We compare on
-// basename so the filter remains correct regardless of how callers spell the
-// source paths (relative vs absolute, different working dir, etc.).
+// Keeps only tokens from `sourceFileName`, dropping Primitives and any other
+// source files loaded solely for alias resolution.
 export function makeBackpackTokenFilter(
   sourceFileName: string,
 ): (token: TransformedToken) => boolean {
@@ -375,10 +343,7 @@ interface BuildConfigOptions {
   tokensDir: string;
   buildDir: string;
   cssTransforms: readonly string[];
-  // Semantic token file names (e.g. ['backpack.light.json', 'backpack.dark.json']).
-  // If omitted, auto-discovered by reading tokensDir. Pass explicitly to avoid I/O
-  // in unit tests or when the caller already has the list.
-  semanticFileNames?: string[];
+  semanticFileNames?: string[]; // defaults to auto-discovery from tokensDir
 }
 
 // Builds the array of named (name, config) pairs the runner iterates over.
@@ -389,8 +354,6 @@ export function buildStyleDictionaryConfigs({
   semanticFileNames,
   tokensDir,
 }: BuildConfigOptions): Array<{ name: string; config: Config }> {
-  // Trailing slash is required: SD's `buildPath` is concatenated raw with the
-  // file destination, so omitting it produces paths like `/tmp/cssfile.css`.
   const buildPath = buildDir.endsWith(path.sep) ? buildDir : `${buildDir}${path.sep}`;
 
   const sharedPlatformOptions = {
@@ -400,36 +363,39 @@ export function buildStyleDictionaryConfigs({
     buildPath,
   };
 
-  // If not provided by caller, default to known light/dark for backwards compat.
   const filesToBuild = semanticFileNames ?? [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE];
 
-  return filesToBuild.map((semanticFile, idx) => ({
-    name: `web-theme-${idx}`,
-    config: {
-      // Primitives + semantic tokens for alias resolution. Only the semantic
-      // file is emitted (see filter below).
-      source: [
-        path.join(tokensDir, PRIMITIVES_FILE),
-        path.join(tokensDir, semanticFile),
-      ],
-      platforms: {
-        css: {
-          ...sharedPlatformOptions,
-          files: [
-            {
-              destination: outputFileForSemanticFile(semanticFile),
-              format: 'css/variables',
-              filter: makeBackpackTokenFilter(semanticFile),
-              options: {
-                selector: selectorForSemanticFile(semanticFile),
-                outputReferences: false,
+  return filesToBuild.map((semanticFile) => {
+    // backpack.light.json → "light"
+    const themeName = path.basename(semanticFile, '.json').split('.').at(-1) ?? semanticFile;
+    return {
+      name: `web-theme-${themeName}`,
+      config: {
+        // Primitives + semantic tokens for alias resolution. Only the semantic
+        // file is emitted (see filter below).
+        source: [
+          path.join(tokensDir, PRIMITIVES_FILE),
+          path.join(tokensDir, semanticFile),
+        ],
+        platforms: {
+          css: {
+            ...sharedPlatformOptions,
+            files: [
+              {
+                destination: outputFileForSemanticFile(semanticFile),
+                format: 'css/variables',
+                filter: makeBackpackTokenFilter(semanticFile),
+                options: {
+                  selector: selectorForSemanticFile(semanticFile),
+                  outputReferences: false,
+                },
               },
-            },
-          ],
+            ],
+          },
         },
       },
-    },
-  }));
+    };
+  });
 }
 
 // Map semantic file names to their output CSS file and selector.
@@ -446,8 +412,3 @@ function selectorForSemanticFile(semanticFile: string): string {
   const match = semanticFile.match(/^backpack\.(.+)\.json$/);
   return match ? `:root[data-theme="${match[1]}"]` : ':root';
 }
-
-// Primitives are always required. Semantic token files (backpack.*.json) are
-// discovered dynamically from the tokens directory — adding a new theme just
-// requires a new file, no code changes.
-export const REQUIRED_INPUT_FILES = [PRIMITIVES_FILE] as const;
