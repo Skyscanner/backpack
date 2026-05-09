@@ -278,7 +278,7 @@ export function findAsymmetricSemanticTokens(
 export function formatAsymmetricSemanticTokens(
   asymmetry: SemanticTokenAsymmetry,
 ): string {
-  const { lightOnly, darkOnly } = asymmetry;
+  const { darkOnly, lightOnly } = asymmetry;
   const total = lightOnly.length + darkOnly.length;
   const lines: string[] = [];
   if (lightOnly.length > 0) {
