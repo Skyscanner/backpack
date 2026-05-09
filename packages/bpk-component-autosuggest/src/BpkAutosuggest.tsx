@@ -52,9 +52,18 @@ Autosuggest.defaultProps.theme = {
   sectionTitle: getClassName('bpk-autosuggest__section-title'),
 };
 
-type InputComponentProps = InputHTMLAttributes<HTMLInputElement> & {
+type InputComponentProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'type'
+> & {
   ref: (element: HTMLInputElement | null) => void;
   inputRef?: ((element: HTMLInputElement | null) => void) | null;
+  // `react-autosuggest` always supplies these at runtime — narrow them so
+  // BpkInput's required-prop contract is satisfied without an `as any` spread.
+  id: string;
+  name: string;
+  value: string | number;
+  type?: 'text' | 'email' | 'number' | 'password' | 'tel';
 };
 
 Autosuggest.defaultProps.renderInputComponent = (
@@ -71,8 +80,8 @@ Autosuggest.defaultProps.renderInputComponent = (
           inputRef(element);
         }
       }}
-      autoComplete={autoComplete as string}
-      {...(rest as any)}
+      autoComplete={autoComplete}
+      {...rest}
     />
   );
 };
