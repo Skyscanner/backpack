@@ -319,7 +319,7 @@ Releases are managed by the Backpack design system team. If you have contributed
 
 ## Figma Code Connect
 
-Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. When `.figma.tsx` files are merged to `main`, a GitHub Actions workflow automatically publishes the mappings to Figma.
+Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. Pull requests that touch `.figma.tsx` files are validated with `figma connect publish --dry-run`, and once merged to `main` a GitHub Actions workflow automatically publishes the mappings to Figma.
 
 ### Regenerating all Figma assets
 
@@ -346,9 +346,14 @@ Icon Code Connect mappings are auto-generated. Do not edit `packages/bpk-compone
 
 For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples. After adding a new `.figma.tsx` file, run `npm run figma:generate-config` to update the import path mappings.
 
-### Publishing
+### Publishing and validation
 
-The `sync-figma-code-connect` workflow (`.github/workflows/sync-figma-code-connect.yml`) runs on pushes to `main` when `packages/**/*.figma.tsx` files change. It requires the `FIGMA_TOKEN` secret to be configured in the repository.
+The `sync-figma-code-connect` workflow (`.github/workflows/sync-figma-code-connect.yml`) runs whenever `packages/**/*.figma.tsx` files change:
+
+- On **pull requests** to `main`, it runs `figma connect publish --dry-run` to validate the mappings without publishing, surfacing parsing or schema issues as a PR check.
+- On **pushes** to `main`, it runs `figma connect publish` to publish the mappings to Figma.
+
+It requires the `FIGMA_TOKEN` secret to be configured in the repository. Pull requests from forks are skipped because forked workflows don't have access to repository secrets.
 
 ## And finally..
 
