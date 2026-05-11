@@ -50,9 +50,9 @@ const OnContrastExample = () => (
       gap={BpkSpacing.Base}
       backgroundColor={BACKGROUND_COLORS.surfaceContrast}
     >
-      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} checked ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} defaultChecked ariaLabel="Activate Backpack" />
       <BpkSwitch variant={SWITCH_VARIANTS.onContrast} ariaLabel="Activate Backpack" />
-      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small checked ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small defaultChecked ariaLabel="Activate Backpack" />
       <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small ariaLabel="Activate Backpack" />
     </BpkFlex>
   </BpkProvider>
