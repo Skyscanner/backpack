@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import {
   lineHeightSm,
   iconSizeSm,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import AnimateHeight from '../../bpk-animate-height';
+import AnimateHeight, { type Props as AnimateHeightProps } from '../../bpk-animate-height';
 import { withAlignment } from '../../bpk-component-icon';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation-circle';
 import { cssModules } from '../../bpk-react-utils';
@@ -37,6 +37,15 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
+export type Props = HTMLAttributes<HTMLDivElement> & {
+  children: ReactNode;
+  id: string;
+  expanded: boolean;
+  isCheckbox?: boolean;
+  className?: string | null;
+  containerProps?: Partial<AnimateHeightProps>;
+};
+
 const BpkFormValidation = ({
   children,
   className = null,
@@ -44,7 +53,7 @@ const BpkFormValidation = ({
   expanded,
   isCheckbox = false,
   ...rest
-}) => {
+}: Props) => {
   const classNames = getClassName(
     'bpk-form-validation',
     expanded && 'bpk-form-validation--appear',
@@ -69,15 +78,6 @@ const BpkFormValidation = ({
       </div>
     </AnimateHeight>
   );
-};
-
-BpkFormValidation.propTypes = {
-  children: PropTypes.node.isRequired,
-  id: PropTypes.string.isRequired,
-  expanded: PropTypes.bool.isRequired,
-  isCheckbox: PropTypes.bool,
-  className: PropTypes.string,
-  containerProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default BpkFormValidation;
