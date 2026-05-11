@@ -73,6 +73,7 @@ const MixedExample = () => (
     <DefaultExample checked />
     <SmallExample checked />
     <ReducedSpaceExample checked />
+    <OnContrastExample />
   </div>
 );
 
