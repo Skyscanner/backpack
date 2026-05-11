@@ -301,35 +301,51 @@ export async function runBuildCSS({
         }
       }
     }, Promise.resolve());
-
-    // Swap staging into place: backup → swap → cleanup, with rollback on
-    // a failed swap.
-    let backupCreated = false;
-    try {
-      await rename(resolvedBuildDir, backupDir);
-      backupCreated = true;
-    } catch (error: unknown) {
-      // First run — resolvedBuildDir doesn't exist yet; any other code is real.
-      if ((error as Error & { code?: string }).code !== 'ENOENT') throw error;
-    }
-
-    try {
-      await rename(stagingDir, resolvedBuildDir);
-    } catch (renameError) {
-      if (backupCreated) {
-        // If restore also fails, surface the original error and leave both
-        // dirs on disk for manual recovery.
-        await rename(backupDir, resolvedBuildDir).catch(() => {});
-      }
-      throw renameError;
-    }
-
-    if (backupCreated) {
-      await rm(backupDir, { force: true, recursive: true });
-    }
   } catch (error) {
+    // SD build failed before any rename — staging is half-built junk.
     await rm(stagingDir, { force: true, recursive: true });
     throw error;
+  }
+
+  // Atomic swap: move buildDir aside (backup), promote staging to buildDir,
+  // then drop the backup. Each rename failure path cleans up its own mess so
+  // we never leak orphaned `.staging-*` / `.backup-*` dirs.
+  let backupCreated = false;
+  try {
+    await rename(resolvedBuildDir, backupDir);
+    backupCreated = true;
+  } catch (error: unknown) {
+    // ENOENT just means first run (no prior buildDir); anything else is real.
+    if ((error as Error & { code?: string }).code !== 'ENOENT') {
+      await rm(stagingDir, { force: true, recursive: true });
+      throw error;
+    }
+  }
+
+  try {
+    await rename(stagingDir, resolvedBuildDir);
+  } catch (renameError) {
+    // First run + swap fails: no backup to restore, just drop staging.
+    if (!backupCreated) {
+      await rm(stagingDir, { force: true, recursive: true });
+      throw renameError;
+    }
+    try {
+      // Swap failed but we still have the backup — put it back.
+      await rename(backupDir, resolvedBuildDir);
+    } catch {
+      // Catastrophic: swap AND rollback both failed. Leave staging + backup
+      // on disk so the operator can recover one of them by hand.
+      throw renameError;
+    }
+    // Rollback succeeded: previous build is restored, staging is now stale.
+    await rm(stagingDir, { force: true, recursive: true });
+    throw renameError;
+  }
+
+  // Swap succeeded: previous build (now in backupDir) is no longer needed.
+  if (backupCreated) {
+    await rm(backupDir, { force: true, recursive: true });
   }
 
   return { outputs };
