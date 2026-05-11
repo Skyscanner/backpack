@@ -23,7 +23,7 @@ import { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './common-types';
 
 figma.connect(
   BpkChatBubble,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=14703%3A2848',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17976-8767',
   {
     props: {
       type: figma.enum('Type', {

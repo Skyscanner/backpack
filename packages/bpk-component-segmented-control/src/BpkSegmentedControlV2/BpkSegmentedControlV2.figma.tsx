@@ -21,7 +21,7 @@ import figma from '@figma/code-connect';
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 import { SEGMENT_TYPES_V2 } from './common-types';
 
-figma.connect(BpkSegmentedControlV2.Root, 'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911-36313', {
+figma.connect(BpkSegmentedControlV2.Root, 'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17386-8546', {
   props: {
     type: figma.enum('Style', {
       'Canvas Default': SEGMENT_TYPES_V2.CanvasDefault,
