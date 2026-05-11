@@ -18,7 +18,14 @@
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
-import BpkSwitch from './BpkSwitch';
+import {
+  BACKGROUND_COLORS,
+  BpkFlex,
+  BpkProvider,
+  BpkSpacing,
+} from '../../bpk-component-layout';
+
+import BpkSwitch, { SWITCH_VARIANTS } from './BpkSwitch';
 
 import type { Meta } from '@storybook/react';
 
@@ -33,6 +40,22 @@ const DefaultExample = ({ ...rest }: Props) => (
 
 const SmallExample = ({ ...rest }: Props) => (
   <BpkSwitch small {...rest} ariaLabel="Activate Backpack" />
+);
+
+const OnContrastExample = () => (
+  <BpkProvider>
+    <BpkFlex
+      direction="column"
+      padding={BpkSpacing.Base}
+      gap={BpkSpacing.Base}
+      backgroundColor={BACKGROUND_COLORS.surfaceContrast}
+    >
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} defaultChecked ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small defaultChecked ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small ariaLabel="Activate Backpack" />
+    </BpkFlex>
+  </BpkProvider>
 );
 
 const ReducedSpaceExample = ({ ...rest }: Props) => (
@@ -50,6 +73,7 @@ const MixedExample = () => (
     <DefaultExample checked />
     <SmallExample checked />
     <ReducedSpaceExample checked />
+    <OnContrastExample />
   </div>
 );
 
@@ -85,6 +109,10 @@ export const Small = {
 
 export const ReducedSpace = {
   render: () => <ReducedSpaceExample />,
+};
+
+export const OnContrast = {
+  render: () => <OnContrastExample />,
 };
 
 export const VisualTest = {

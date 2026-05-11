@@ -18,7 +18,7 @@
 
 import { render, screen } from '@testing-library/react';
 
-import BpkSwitch from './BpkSwitch';
+import BpkSwitch, { SWITCH_VARIANTS } from './BpkSwitch';
 
 describe('BpkSwitch', () => {
   it('should render correctly', () => {
@@ -55,5 +55,21 @@ describe('BpkSwitch', () => {
     render(<BpkSwitch ariaLabel="Switch" data-testid="my-switch" />);
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
     expect(screen.getAllByTestId('my-switch')).toHaveLength(1);
+  });
+
+  it('should render the on-contrast variant', () => {
+    const { container } = render(
+      <BpkSwitch ariaLabel="Switch" variant={SWITCH_VARIANTS.onContrast} />,
+    );
+    expect(container.querySelectorAll('.bpk-switch__switch--on-contrast')[0].className).toBe(
+      'bpk-switch__switch bpk-switch__switch--on-contrast',
+    );
+  });
+
+  it('should not apply the on-contrast modifier for the default variant', () => {
+    const { container } = render(<BpkSwitch ariaLabel="Switch" />);
+    expect(
+      container.querySelectorAll('.bpk-switch__switch--on-contrast'),
+    ).toHaveLength(0);
   });
 });

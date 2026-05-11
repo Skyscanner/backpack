@@ -17,9 +17,13 @@
  */
 /* @flow strict */
 
-import BpkSwitch, { type Props as BpkSwitchProps } from './src/BpkSwitch';
+import BpkSwitch, {
+  SWITCH_VARIANTS,
+  type Props as BpkSwitchProps,
+  type SwitchVariant,
+} from './src/BpkSwitch';
 import themeAttributes from './src/themeAttributes';
 
-export type { BpkSwitchProps };
-export { themeAttributes };
+export type { BpkSwitchProps, SwitchVariant };
+export { SWITCH_VARIANTS, themeAttributes };
 export default BpkSwitch;
