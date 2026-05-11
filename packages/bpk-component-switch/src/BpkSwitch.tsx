@@ -20,25 +20,26 @@ import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkSwitch.module.scss';
 
-export const SWITCH_TYPES = {
+export const SWITCH_VARIANTS = {
   default: 'default',
   onContrast: 'onContrast',
 } as const;
 
-export type SwitchType = (typeof SWITCH_TYPES)[keyof typeof SWITCH_TYPES];
+export type SwitchVariant =
+  (typeof SWITCH_VARIANTS)[keyof typeof SWITCH_VARIANTS];
 
 const getClassName = cssModules(STYLES);
 
-const switchTypeClassNames = {
-  [SWITCH_TYPES.default]: null,
-  [SWITCH_TYPES.onContrast]: getClassName('bpk-switch__switch--on-contrast'),
+const switchVariantClassNames = {
+  [SWITCH_VARIANTS.default]: null,
+  [SWITCH_VARIANTS.onContrast]: getClassName('bpk-switch__switch--on-contrast'),
 };
 
 export type Props = {
   ariaLabel: string;
   className?: string | null;
   small?: boolean;
-  type?: SwitchType;
+  variant?: SwitchVariant;
   [rest: string]: any;
 };
 
@@ -46,13 +47,13 @@ const BpkSwitch = ({
   ariaLabel,
   className = null,
   small = false,
-  type = SWITCH_TYPES.default,
+  variant = SWITCH_VARIANTS.default,
   ...rest
 }: Props) => {
   const switchClassNames = getClassName(
     'bpk-switch__switch',
     small && 'bpk-switch__switch--small',
-    switchTypeClassNames[type],
+    switchVariantClassNames[variant],
   );
 
   return (

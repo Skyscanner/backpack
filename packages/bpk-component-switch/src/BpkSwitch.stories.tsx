@@ -25,7 +25,7 @@ import {
   BpkSpacing,
 } from '../../bpk-component-layout';
 
-import BpkSwitch, { SWITCH_TYPES } from './BpkSwitch';
+import BpkSwitch, { SWITCH_VARIANTS } from './BpkSwitch';
 
 import type { Meta } from '@storybook/react';
 
@@ -50,10 +50,10 @@ const OnContrastExample = () => (
       gap={BpkSpacing.Base}
       backgroundColor={BACKGROUND_COLORS.surfaceContrast}
     >
-      <BpkSwitch type={SWITCH_TYPES.onContrast} checked ariaLabel="Activate Backpack" />
-      <BpkSwitch type={SWITCH_TYPES.onContrast} ariaLabel="Activate Backpack" />
-      <BpkSwitch type={SWITCH_TYPES.onContrast} small checked ariaLabel="Activate Backpack" />
-      <BpkSwitch type={SWITCH_TYPES.onContrast} small ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} checked ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small checked ariaLabel="Activate Backpack" />
+      <BpkSwitch variant={SWITCH_VARIANTS.onContrast} small ariaLabel="Activate Backpack" />
     </BpkFlex>
   </BpkProvider>
 );
