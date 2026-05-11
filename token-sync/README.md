@@ -104,9 +104,11 @@ Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
 
 - **Light / Dark symmetry is enforced.** Every token must exist in both modes;
   any that are missing from one mode will abort the build. Fix it in Figma by adding the missing path to the other mode.
-- **`Component` prefix is stripped.** `Component.Badge.Colour.bg-default`
-  becomes `--bpk-badge-colour-bg-default`. If stripping would cause two tokens
-  to collide on the same CSS variable name, the build refuses and tells you
+- **`Component` prefix is renamed to `private`.** `Component.Badge.Colour.bg-default`
+  becomes `--bpk-private-badge-colour-bg-default`. The rename signals that these
+  tokens are component internals — they ship in CSS but are not part of the
+  public semantic API consumers should target. If two tokens would collide on
+  the same CSS variable name after kebab-casing, the build refuses and tells you
   which ones to rename in Figma.
 - **Non-`px` dimensions abort the build.** Every `$type: dimension` value must
   be `Xpx` (e.g. `"16px"`) or a DTCG alias; other units or bare numbers are

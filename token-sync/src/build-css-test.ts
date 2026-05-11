@@ -212,14 +212,23 @@ describe('build-css CLI', () => {
     },
   );
 
-  it('rejects DTCG inputs whose tokens collide on CSS name after Component stripping', async () => {
+  it('rejects DTCG inputs whose tokens collide on CSS name after Component → private rename', async () => {
     await setUpFixture();
+    // Casing variants under the same Component parent kebab to the same name.
     await writeTokenFile(BACKPACK_LIGHT_FILE, {
       ...BACKPACK_LIGHT,
-      Button: {
-        Dimension: {
-          $type: 'dimension',
-          'padding-h': { $value: '8px' },
+      Component: {
+        Button: {
+          Dimension: {
+            $type: 'dimension',
+            'padding-h': { $value: '16px' },
+          },
+        },
+        button: {
+          Dimension: {
+            $type: 'dimension',
+            'padding-h': { $value: '8px' },
+          },
         },
       },
     });
@@ -227,9 +236,9 @@ describe('build-css CLI', () => {
     const result = await build();
     expect(result.code).not.toBe(0);
     expect(result.stderr).toMatch(/CSS variable name collision/);
-    expect(result.stderr).toContain('--bpk-button-dimension-padding-h');
-    expect(result.stderr).toContain('Button.Dimension.padding-h');
+    expect(result.stderr).toContain('--bpk-private-button-dimension-padding-h');
     expect(result.stderr).toContain('Component.Button.Dimension.padding-h');
+    expect(result.stderr).toContain('Component.button.Dimension.padding-h');
   });
 
   it('rejects DTCG inputs containing non-px dimension values', async () => {
@@ -280,10 +289,13 @@ describe('build-css CLI', () => {
     expect(light).toMatch(/--bpk-canvas-default:\s*#ff66b3/);
     expect(dark).toMatch(/--bpk-canvas-default:\s*#cc0066/);
 
-    // 16px → 1rem via size/pxToRem; leading `Component` group is stripped.
-    expect(light).toMatch(/--bpk-button-dimension-padding-h:\s*1rem/);
+    // 16px → 1rem via size/pxToRem; leading `Component` group is renamed to `private`.
+    expect(light).toMatch(/--bpk-private-button-dimension-padding-h:\s*1rem/);
     expect(light).not.toMatch(/--bpk-component-/);
     expect(dark).not.toMatch(/--bpk-component-/);
+    // Sanity check: the rename actually emits private-prefixed variables.
+    expect(light).toMatch(/--bpk-private-/);
+    expect(dark).toMatch(/--bpk-private-/);
 
     // Same alias on both sides resolves to the same primitive.
     expect(light).toMatch(/--bpk-surface-highlight:\s*#ff66b3/);

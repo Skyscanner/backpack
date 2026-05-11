@@ -45,11 +45,12 @@ export const CSS_PREFIX = 'bpk';
 // before configs run; referenced by name from the file options below.
 export const BPK_FILE_HEADER = 'bpk-license-and-generated';
 
-// Figma organisational prefixes stripped from the CSS variable name.
-// e.g. `Component.Badge.Colour.bg-default` → `--bpk-badge-colour-bg-default`.
-export const STRIPPED_TOP_LEVEL_SEGMENTS: ReadonlySet<string> = new Set([
-  'component',
-]);
+// Figma's `Component` group is renamed to `private` in the CSS variable name
+// to mark these tokens as component internals, not part of the public semantic
+// API consumers should target.
+// e.g. `Component.Badge.Colour.bg-default` → `--bpk-private-badge-colour-bg-default`.
+export const COMPONENT_SEGMENT = 'component';
+export const PRIVATE_SEGMENT_RENAME = 'private';
 
 // Kebab one path segment, sanitising to `[a-z0-9-]` so designer annotations
 // (parens, brackets, emoji) flow through without breaking the build.
@@ -63,23 +64,24 @@ function kebabSegment(segment: string): string {
     .replace(/^-|-$/g, '');
 }
 
-// Strip leading `Component` segment (per STRIPPED_TOP_LEVEL_SEGMENTS), then
-// kebab-case. `prefix` is prepended after stripping. Refuses to leave a token
-// nameless when the whole path is a single stripped segment.
+// Rename a leading `Component` segment to `private`, then kebab-case. `prefix`
+// is prepended after the rename. The rename signals "component internal" — the
+// tokens still ship in CSS, but consumers shouldn't target them as part of the
+// public semantic API.
 export function kebabBpkName(
   tokenPath: readonly string[],
   prefix?: string,
 ): string {
-  const stripped =
-    tokenPath.length > 1 &&
+  const renamed =
+    tokenPath.length > 0 &&
     typeof tokenPath[0] === 'string' &&
-    STRIPPED_TOP_LEVEL_SEGMENTS.has(tokenPath[0].toLowerCase())
-      ? tokenPath.slice(1)
+    tokenPath[0].toLowerCase() === COMPONENT_SEGMENT
+      ? [PRIVATE_SEGMENT_RENAME, ...tokenPath.slice(1)]
       : tokenPath;
   const withPrefix =
     typeof prefix === 'string' && prefix.length > 0
-      ? [prefix, ...stripped]
-      : stripped;
+      ? [prefix, ...renamed]
+      : renamed;
   return withPrefix.map(kebabSegment).filter(Boolean).join('-');
 }
 
@@ -91,7 +93,8 @@ export interface CssNameCollision {
 }
 
 // Return every CSS name that two or more tokens collide on after `kebabBpkName`.
-// e.g. `Foo.*` and `Component.Foo.*` both strip to `--bpk-foo-…`.
+// e.g. casing variants under the same parent (`Component.Badge` and
+// `Component.badge`) both kebab to `--bpk-private-badge-…`.
 export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
   const seen = new Map<string, string[]>();
 
@@ -154,12 +157,12 @@ export function formatCssNameCollisions(
     }
   }
   return (
-    `Found ${total} CSS variable name collision(s) after stripping leading ` +
-    `${Array.from(STRIPPED_TOP_LEVEL_SEGMENTS).join(', ')} segment(s):\n` +
+    `Found ${total} CSS variable name collision(s) after renaming leading ` +
+    `\`${COMPONENT_SEGMENT}\` → \`${PRIVATE_SEGMENT_RENAME}\` and kebab-casing:\n` +
     `${lines.join('\n')}\n` +
     `Two or more DTCG tokens map to the same CSS custom property. Rename ` +
-    `one of the colliding sources in Figma, or extend STRIPPED_TOP_LEVEL_SEGMENTS ` +
-    `with care so the stripping no longer produces a clash.`
+    `one of the colliding sources in Figma so each path produces a unique CSS ` +
+    `variable name.`
   );
 }
 

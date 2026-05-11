@@ -334,17 +334,17 @@ describe('style-dictionary-config', () => {
     it.each<[string[], string]>([
       // basic joining and casing
       [['Canvas', 'Default'], 'canvas-default'],
-      [['Component', 'Button', 'Colour', 'bg-default'], 'button-colour-bg-default'],
+      [['Component', 'Button', 'Colour', 'bg-default'], 'private-button-colour-bg-default'],
       [['Neutral', 'Grey 10'], 'neutral-grey-10'],
       [['borderRadius'], 'border-radius'],
-      // Component stripping (case-insensitive, first segment only)
-      [['Component', 'Badge', 'Colour', 'bg-default'], 'badge-colour-bg-default'],
-      [['component', 'Badge'], 'badge'],
-      [['COMPONENT', 'Badge'], 'badge'],
+      // Component → private rename (case-insensitive, first segment only)
+      [['Component', 'Badge', 'Colour', 'bg-default'], 'private-badge-colour-bg-default'],
+      [['component', 'Badge'], 'private-badge'],
+      [['COMPONENT', 'Badge'], 'private-badge'],
       [['Layout', 'Component', 'Inner'], 'layout-component-inner'],
-      [['Component'], 'component'], // single-segment: keep to avoid empty name
+      [['Component'], 'private'],
       // sanitisation: parens, brackets, punctuation, emoji
-      [['Component', 'Chip', 'Colour', 'stroke-Off (new)'], 'chip-colour-stroke-off-new'],
+      [['Component', 'Chip', 'Colour', 'stroke-Off (new)'], 'private-chip-colour-stroke-off-new'],
       [['Foo (WIP)'], 'foo-wip'],
       [['Card [draft]'], 'card-draft'],
       [['!important'], 'important'],
@@ -358,11 +358,11 @@ describe('style-dictionary-config', () => {
     });
 
     it.each<[string[], string | undefined, string]>([
-      [['Component', 'Badge', 'Colour', 'bg-default'], 'bpk', 'bpk-badge-colour-bg-default'],
+      [['Component', 'Badge', 'Colour', 'bg-default'], 'bpk', 'bpk-private-badge-colour-bg-default'],
       [['Canvas', 'Default'], 'bpk', 'bpk-canvas-default'],
       [['Canvas', 'Default'], undefined, 'canvas-default'],
       [['Canvas', 'Default'], '', 'canvas-default'],
-      [['Component', 'Button', 'Colour', 'bg-primary (new)'], 'bpk', 'bpk-button-colour-bg-primary-new'],
+      [['Component', 'Button', 'Colour', 'bg-primary (new)'], 'bpk', 'bpk-private-button-colour-bg-primary-new'],
     ])('path %j with prefix %j → "%s"', (tokenPath, prefix, expected) => {
       expect(kebabBpkName(tokenPath, prefix)).toBe(expected);
     });
@@ -384,17 +384,23 @@ describe('style-dictionary-config', () => {
       expect(findCssNameCollisions(tree)).toEqual([]);
     });
 
-    it('detects a top-level Foo colliding with Component.Foo after stripping', () => {
+    it('detects two paths that kebab to the same name (casing variants under same parent)', () => {
       const tree = {
-        Badge: { Colour: { $type: 'color', 'bg-default': { $value: '#aaa' } } },
-        Component: { Badge: { Colour: { $type: 'color', 'bg-default': { $value: '#bbb' } } } },
+        Component: {
+          Badge: {
+            Colour: { $type: 'color', 'bg-default': { $value: '#aaa' } },
+          },
+          badge: {
+            Colour: { $type: 'color', 'bg-default': { $value: '#bbb' } },
+          },
+        },
       };
       const collisions = findCssNameCollisions(tree);
       expect(collisions).toHaveLength(1);
-      expect(collisions[0].name).toBe('badge-colour-bg-default');
+      expect(collisions[0].name).toBe('private-badge-colour-bg-default');
       expect(collisions[0].sources).toEqual([
-        'Badge.Colour.bg-default',
         'Component.Badge.Colour.bg-default',
+        'Component.badge.Colour.bg-default',
       ]);
     });
   });
@@ -406,10 +412,10 @@ describe('style-dictionary-config', () => {
           filePath: '/abs/repo/tokens/backpack.day.json',
           collisions: [
             {
-              name: 'badge-colour-bg-default',
+              name: 'private-badge-colour-bg-default',
               sources: [
-                'Badge.Colour.bg-default',
                 'Component.Badge.Colour.bg-default',
+                'Component.badge.Colour.bg-default',
               ],
             },
           ],
@@ -418,10 +424,10 @@ describe('style-dictionary-config', () => {
       expect(message).toMatch(/Found 1 CSS variable name collision/);
       expect(message).toContain('backpack.day.json');
       // The actual CSS variable that would have collided, for a quick eye-grep.
-      expect(message).toContain('--bpk-badge-colour-bg-default');
+      expect(message).toContain('--bpk-private-badge-colour-bg-default');
       // Both source paths visible so designers can locate them in Figma.
-      expect(message).toContain('Badge.Colour.bg-default');
       expect(message).toContain('Component.Badge.Colour.bg-default');
+      expect(message).toContain('Component.badge.Colour.bg-default');
     });
   });
 
