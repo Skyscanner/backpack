@@ -344,6 +344,30 @@ export function makeBackpackTokenFilter(
     path.basename(token.filePath) === sourceFileName;
 }
 
+// Segments containing a standalone `ios` or `android` word (case-insensitive)
+// disqualify a token from the web build (e.g. `Component.Switch.ios-switch-*`,
+// `Component.iOS Tab-bar-fill`). They stay in the shared DTCG JSON for
+// cross-platform parity but have no use in the browser.
+const NON_WEB_SEGMENT_PATTERN = /\b(ios|android)\b/i;
+
+// True if the token belongs in the web CSS build — i.e. no path segment is
+// platform-specific to iOS or Android.
+export function isWebTokenPath(tokenPath: readonly string[]): boolean {
+  return !tokenPath.some((segment) => NON_WEB_SEGMENT_PATTERN.test(segment));
+}
+
+// Composite filter applied to each platform's `files[]`: keep tokens that
+// belong to the semantic source file AND are web-compatible.
+export function makeWebCssTokenFilter(
+  sourceFileName: string,
+): (token: TransformedToken) => boolean {
+  const fileFilter = makeBackpackTokenFilter(sourceFileName);
+  return (token) =>
+    fileFilter(token) &&
+    Array.isArray(token.path) &&
+    isWebTokenPath(token.path);
+}
+
 interface BuildConfigOptions {
   tokensDir: string;
   buildDir: string;
@@ -392,7 +416,7 @@ export function buildStyleDictionaryConfigs({
               {
                 destination: outputFileForSemanticFile(semanticFile),
                 format: 'css/variables',
-                filter: makeBackpackTokenFilter(semanticFile),
+                filter: makeWebCssTokenFilter(semanticFile),
                 options: {
                   selector: selectorForSemanticFile(semanticFile),
                   outputReferences: false,

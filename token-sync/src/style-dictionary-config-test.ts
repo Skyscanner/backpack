@@ -37,6 +37,7 @@ import {
   formatAsymmetricSemanticTokens,
   formatCssNameCollisions,
   formatDimensionViolations,
+  isWebTokenPath,
   kebabBpkName,
   makeBackpackTokenFilter,
 } from './style-dictionary-config';
@@ -141,7 +142,7 @@ describe('style-dictionary-config', () => {
       }
     });
 
-    it('keeps semantic file tokens but not primitives via the filter', () => {
+    it('keeps semantic file tokens but not primitives or non-web tokens via the filter', () => {
       const configs = buildStyleDictionaryConfigs({
         ...baseOpts,
         semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
@@ -150,15 +151,46 @@ describe('style-dictionary-config', () => {
       const tokenFilter = light.config.platforms?.css?.files?.[0]?.filter;
       expect(typeof tokenFilter).toBe('function');
       const shouldEmit = tokenFilter as (t: TransformedToken) => boolean;
+      const lightFilePath = path.join(tokensDir, BACKPACK_LIGHT_FILE);
       expect(
-        shouldEmit({ filePath: path.join(tokensDir, BACKPACK_LIGHT_FILE) } as TransformedToken),
+        shouldEmit({ filePath: lightFilePath, path: ['Canvas', 'Default'] } as TransformedToken),
       ).toBe(true);
       expect(
-        shouldEmit({ filePath: path.join(tokensDir, PRIMITIVES_FILE) } as TransformedToken),
+        shouldEmit({ filePath: path.join(tokensDir, PRIMITIVES_FILE), path: ['Colour', 'Pink'] } as TransformedToken),
       ).toBe(false);
       expect(
-        shouldEmit({ filePath: path.join(tokensDir, BACKPACK_DARK_FILE) } as TransformedToken),
+        shouldEmit({ filePath: path.join(tokensDir, BACKPACK_DARK_FILE), path: ['Canvas', 'Default'] } as TransformedToken),
       ).toBe(false);
+      // Non-web (ios/android) paths are dropped even when the source file matches.
+      expect(
+        shouldEmit({
+          filePath: lightFilePath,
+          path: ['Component', 'Switch', 'ios-switch-default-off'],
+        } as TransformedToken),
+      ).toBe(false);
+      expect(
+        shouldEmit({
+          filePath: lightFilePath,
+          path: ['Component', 'iOS Tab-bar-fill'],
+        } as TransformedToken),
+      ).toBe(false);
+    });
+  });
+
+  describe('isWebTokenPath', () => {
+    it.each<[string[], boolean]>([
+      // Non-web paths: ios/android segments are excluded.
+      [['Component', 'Switch', 'android-switch-default-disabled'], false],
+      [['Component', 'Switch', 'ios-switch-default-off'], false],
+      [['Component', 'iOS Tab-bar-fill'], false],
+      [['Component', 'Switch', 'IOS-Switch'], false], // case-insensitive
+      // Word-boundary safety: substrings inside other words still emit.
+      [['Component', 'Audio', 'audios'], true],
+      [['Component', 'Meander'], true],
+      [['Canvas', 'Default'], true],
+      [['Component', 'Button', 'Colour', 'bg-primary'], true],
+    ])('path %j → %p', (tokenPath, expected) => {
+      expect(isWebTokenPath(tokenPath)).toBe(expected);
     });
   });
 
