@@ -181,14 +181,47 @@ describe('build-css CLI', () => {
     await rm(testRoot, { force: true, recursive: true });
   });
 
-  it('reports every missing DTCG input and exits non-zero', async () => {
+  it('reports the missing default theme when no semantic file exists', async () => {
     await mkdir(tokensDir, { recursive: true });
     await writeTokenFile(PRIMITIVES_FILE, PRIMITIVES);
     const result = await build();
     expect(result.code).not.toBe(0);
     expect(result.stderr).toMatch(/Missing Stage 1 DTCG file/);
+    // Light is the default theme — it's the minimum required to build.
+    // Experimental themes (Dark, etc.) are auto-discovered and not surfaced
+    // here as required.
     expect(result.stderr).toMatch(BACKPACK_LIGHT_FILE);
-    expect(result.stderr).toMatch(BACKPACK_DARK_FILE);
+  });
+
+  it('rejects when only an experimental theme is present and the default (Light) is missing', async () => {
+    // Dark exists but Light doesn't — without `:root` baseline, consumers who
+    // don't set [data-theme="dark"] would get no token values at all.
+    await mkdir(tokensDir, { recursive: true });
+    await writeTokenFile(PRIMITIVES_FILE, PRIMITIVES);
+    await writeTokenFile(BACKPACK_DARK_FILE, BACKPACK_DARK);
+    const result = await build();
+    expect(result.code).not.toBe(0);
+    expect(result.stderr).toMatch(/Missing Stage 1 DTCG file/);
+    expect(result.stderr).toMatch(BACKPACK_LIGHT_FILE);
+  });
+
+  it('builds successfully with only the default theme (Light) — Dark is optional', async () => {
+    // Positive coverage for the "Dark is optional" guarantee: Light alone is
+    // sufficient. Symmetry check is a no-op with a single semantic file.
+    await mkdir(tokensDir, { recursive: true });
+    await writeTokenFile(PRIMITIVES_FILE, PRIMITIVES);
+    await writeTokenFile(BACKPACK_LIGHT_FILE, BACKPACK_LIGHT);
+
+    const result = await build();
+    expect(result.code).toBe(0);
+    expect(await readdir(buildDir)).toEqual([LIGHT_OUTPUT_FILE]);
+
+    const light = await readFile(
+      path.join(buildDir, LIGHT_OUTPUT_FILE),
+      'utf8',
+    );
+    expect(light).toMatch(new RegExp(`${escapeRegExp(LIGHT_SELECTOR)} \\{`));
+    expect(light).toMatch(/--bpk-canvas-default:\s*#ff66b3/);
   });
 
   it.each([

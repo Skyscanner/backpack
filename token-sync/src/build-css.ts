@@ -25,7 +25,6 @@ import { transforms as sdTransforms } from 'style-dictionary/enums';
 
 import { assertSafeOutputDir } from './dtcg-writer';
 import {
-  BACKPACK_DARK_FILE,
   BACKPACK_LIGHT_FILE,
   BPK_FILE_HEADER,
   PRIMITIVES_FILE,
@@ -136,33 +135,28 @@ async function discoverSemanticFiles(tokensDir: string): Promise<string[]> {
   return entries.filter((f) => f.startsWith('backpack.') && f.endsWith('.json')).sort();
 }
 
-// Verify primitives + at least one semantic token file exists before SD runs.
-// Semantic token files (backpack.*.json) are auto-discovered, so new themes
-// require no code changes — just add the file via Stage 1 sync.
+// Verify primitives + the default semantic theme (Light) exist before SD runs.
+// Light is the default theme (emitted under `:root`) and is required — without
+// it, consumers who don't set `[data-theme="…"]` would get no token values at
+// all. Any additional themes (Dark, Sepia, …) are auto-discovered via the
+// `backpack.*.json` glob and layer on top via `[data-theme="<mode>"]`
+// selectors — no code changes needed to add one.
 async function assertInputsExist(tokensDir: string): Promise<void> {
   const missing: string[] = [];
-  const primitivesPath = path.join(tokensDir, PRIMITIVES_FILE);
-  try {
-    await access(primitivesPath);
-  } catch {
-    missing.push(primitivesPath);
-  }
+  await Promise.all(
+    [PRIMITIVES_FILE, BACKPACK_LIGHT_FILE].map(async (file) => {
+      const filePath = path.join(tokensDir, file);
+      try {
+        await access(filePath);
+      } catch {
+        missing.push(filePath);
+      }
+    }),
+  );
 
-  let semanticFiles: string[] = [];
-  try {
-    semanticFiles = await discoverSemanticFiles(tokensDir);
-  } catch {
-    // readdir fails if tokensDir doesn't exist; let the primitives check surface it.
-  }
-
-  if (missing.length > 0 || semanticFiles.length === 0) {
-    const allMissing = [...missing];
-    if (semanticFiles.length === 0) {
-      allMissing.push(path.join(tokensDir, BACKPACK_LIGHT_FILE));
-      allMissing.push(path.join(tokensDir, BACKPACK_DARK_FILE));
-    }
+  if (missing.length > 0) {
     throw new Error(
-      `Missing Stage 1 DTCG file(s):\n  ${allMissing.join(
+      `Missing Stage 1 DTCG file(s):\n  ${missing.join(
         '\n  ',
       )}\nRun \`npm run tokens:fetch\` to (re)generate them before building CSS.`,
     );
@@ -214,21 +208,23 @@ async function assertInputsAreBuildable(
     throw new Error(formatCssNameCollisions(collisionsByFile));
   }
 
-  // Symmetry check against a fixed reference theme: every other semantic file
-  // must declare the same token paths as the reference. Light is the canonical
-  // baseline (it's the `:root` theme; other themes layer on top via attribute
-  // selectors). Falls back to the first file alphabetically if Light is absent
-  // — keeps the check working for downstream forks that ship without Light.
+  // Symmetry check against Light (the default theme): every additional
+  // semantic file must declare the same token paths as Light. With only Light
+  // present this loop is a no-op. Light is guaranteed by `assertInputsExist`
+  // above, so `.find` always resolves.
   const semanticParsed = parsedFiles.filter(
     ({ filePath }) => !filePath.endsWith(PRIMITIVES_FILE),
   );
-  const referenceFile =
-    semanticParsed.find(
-      ({ filePath }) => path.basename(filePath) === BACKPACK_LIGHT_FILE,
-    ) ?? semanticParsed[0];
+  const referenceFile = semanticParsed.find(
+    ({ filePath }) => path.basename(filePath) === BACKPACK_LIGHT_FILE,
+  );
+  if (!referenceFile) {
+    throw new Error(
+      `Expected ${BACKPACK_LIGHT_FILE} to be present after input check.`,
+    );
+  }
   const referenceName = path.basename(referenceFile.filePath);
-  for (const candidate of semanticParsed) {
-    if (candidate === referenceFile) continue; // eslint-disable-line no-continue
+  for (const candidate of semanticParsed.filter((c) => c !== referenceFile)) {
     const asymmetry = findAsymmetricSemanticTokens(
       referenceFile.tree,
       candidate.tree,

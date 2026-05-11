@@ -76,13 +76,15 @@ describe('style-dictionary-config', () => {
     const tokensDir = '/repo/token-sync/tokens';
     const buildDir = '/repo/token-sync/tokens/css';
     const cssTransforms = ['attribute/cti', 'name/kebab', 'size/pxToRem'];
-    const baseOpts = { tokensDir, buildDir, cssTransforms };
+    const baseOpts = {
+      tokensDir,
+      buildDir,
+      cssTransforms,
+      semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
+    };
 
     it('produces one config per semantic file with correct names, selectors, and filenames', () => {
-      const configs = buildStyleDictionaryConfigs({
-        ...baseOpts,
-        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
-      });
+      const configs = buildStyleDictionaryConfigs(baseOpts);
       const [light, dark] = configs;
       const lightFile = light.config.platforms?.css?.files?.[0];
       const darkFile = dark.config.platforms?.css?.files?.[0];
@@ -96,10 +98,7 @@ describe('style-dictionary-config', () => {
     });
 
     it('loads primitives alongside each semantic token file', () => {
-      const configs = buildStyleDictionaryConfigs({
-        ...baseOpts,
-        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
-      });
+      const configs = buildStyleDictionaryConfigs(baseOpts);
       const [light, dark] = configs;
       expect(light.config.source).toEqual([
         path.join(tokensDir, PRIMITIVES_FILE),
@@ -135,7 +134,6 @@ describe('style-dictionary-config', () => {
       const configs = buildStyleDictionaryConfigs({
         ...baseOpts,
         cssTransforms: custom,
-        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
       });
       for (const { config } of configs) {
         expect(config.platforms?.css?.transforms).toEqual(custom);
@@ -143,10 +141,7 @@ describe('style-dictionary-config', () => {
     });
 
     it('keeps semantic file tokens but not primitives or non-web tokens via the filter', () => {
-      const configs = buildStyleDictionaryConfigs({
-        ...baseOpts,
-        semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
-      });
+      const configs = buildStyleDictionaryConfigs(baseOpts);
       const [light] = configs;
       const tokenFilter = light.config.platforms?.css?.files?.[0]?.filter;
       expect(typeof tokenFilter).toBe('function');

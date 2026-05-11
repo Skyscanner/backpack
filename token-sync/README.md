@@ -102,8 +102,12 @@ Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
 
 ### Things worth knowing
 
-- **Light / Dark symmetry is enforced.** Every token must exist in both modes;
-  any that are missing from one mode will abort the build. Fix it in Figma by adding the missing path to the other mode.
+- **Light is the default theme; additional themes layer on top.** The default
+  (Light) is emitted under `:root`; every additional theme (Dark today, plus
+  any future experimental themes) is emitted under `:root[data-theme="<mode>"]`.
+  Symmetry between the default and every additional theme is enforced — a
+  token declared in one but missing in another will abort the build. Fix it
+  in Figma by adding the missing path to the theme that's lacking it.
 - **`Component` prefix is renamed to `private`.** `Component.Badge.Colour.bg-default`
   becomes `--bpk-private-badge-colour-bg-default`. The rename signals that these
   tokens are component internals — they ship in CSS but are not part of the

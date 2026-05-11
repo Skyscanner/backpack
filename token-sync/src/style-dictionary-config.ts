@@ -375,9 +375,10 @@ interface BuildConfigOptions {
   tokensDir: string;
   buildDir: string;
   cssTransforms: readonly string[];
-  // List of `backpack.<theme>.json` files to emit. The runner discovers these
-  // from disk; this fallback to [light, dark] only kicks in for callers that omit the param.
-  semanticFileNames?: string[];
+  // List of `backpack.<theme>.json` files to emit, supplied by the runner from
+  // `discoverSemanticFiles` — typically the default theme (Light) plus any
+  // experimental themes (Dark, Sepia, …). One SD config is produced per entry.
+  semanticFileNames: readonly string[];
 }
 
 // Builds the array of named (name, config) pairs the runner iterates over.
@@ -398,9 +399,7 @@ export function buildStyleDictionaryConfigs({
     buildPath,
   };
 
-  const filesToBuild = semanticFileNames ?? [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE];
-
-  return filesToBuild.map((semanticFile) => {
+  return semanticFileNames.map((semanticFile) => {
     // backpack.light.json → "light"
     const themeName = path.basename(semanticFile, '.json').split('.').at(-1) ?? semanticFile;
     return {
