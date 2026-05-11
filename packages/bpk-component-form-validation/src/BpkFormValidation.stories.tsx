@@ -26,8 +26,7 @@ import BpkSelect from '../../bpk-component-select';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkFormValidation from './BpkFormValidation';
-import type { Props as BpkFormValidationProps } from './BpkFormValidation';
+import BpkFormValidation, { type Props as BpkFormValidationProps } from './BpkFormValidation';
 
 import type { Meta } from '@storybook/react';
 
