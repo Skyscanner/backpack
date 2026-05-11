@@ -22,7 +22,7 @@ import BpkChatbotInput from './BpkChatbotInput';
 
 figma.connect(
   BpkChatbotInput.Root,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=14703%3A2902',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17976-8833',
   {
     props: {
       placeholder: figma.textContent('Your message'),

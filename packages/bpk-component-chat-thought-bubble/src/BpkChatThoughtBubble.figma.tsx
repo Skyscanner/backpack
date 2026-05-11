@@ -22,7 +22,7 @@ import BpkChatThoughtBubble from './BpkChatThoughtBubble';
 
 figma.connect(
   BpkChatThoughtBubble,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=14703%3A2864',
+  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17976-8783',
   {
     props: {
       content: figma.textContent('Label'),
