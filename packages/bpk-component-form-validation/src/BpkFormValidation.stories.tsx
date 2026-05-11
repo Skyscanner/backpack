@@ -26,8 +26,8 @@ import BpkSelect from '../../bpk-component-select';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error Untyped import
 import BpkFormValidation from './BpkFormValidation';
+import type { Props as BpkFormValidationProps } from './BpkFormValidation';
 
 import type { Meta } from '@storybook/react';
 
@@ -37,8 +37,13 @@ const getClassName = cssModules(STYLES);
 
 const formClassName = getClassName('bpkdocs-forms-page__form');
 
-class FormValidationContainer extends Component<any, any> {
-  constructor(props: any) {
+type FormValidationContainerProps = Omit<BpkFormValidationProps, 'expanded'>;
+
+class FormValidationContainer extends Component<
+  FormValidationContainerProps,
+  { expanded: boolean }
+> {
+  constructor(props: FormValidationContainerProps) {
     super(props);
 
     this.state = {
@@ -47,7 +52,7 @@ class FormValidationContainer extends Component<any, any> {
   }
 
   toggleExpanded = () => {
-    this.setState((prevState: any) => ({
+    this.setState((prevState) => ({
       expanded: !prevState.expanded,
     }));
   };
@@ -58,7 +63,7 @@ class FormValidationContainer extends Component<any, any> {
         <div style={{ textAlign: 'center' }}>
           <BpkButton onClick={this.toggleExpanded}>Toggle</BpkButton>
         </div>
-        <BpkFormValidation expanded={this.state.expanded} {...this.props} />
+        <BpkFormValidation {...this.props} expanded={this.state.expanded} />
       </div>
     );
   }

@@ -37,7 +37,7 @@ const AlignedExclamationIcon = withAlignment(
   iconSizeSm,
 );
 
-export type Props = HTMLAttributes<HTMLDivElement> & {
+export type Props = Omit<HTMLAttributes<HTMLDivElement>, 'className'> & {
   children: ReactNode;
   id: string;
   expanded: boolean;
