@@ -90,5 +90,9 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
         height: tokens.bpk-spacing-base();
       }
     }
+
+    &--on-contrast {
+      background: tokens.$bpk-private-switch-on-contrast-off-day;
+    }
   }
 }
