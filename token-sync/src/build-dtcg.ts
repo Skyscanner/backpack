@@ -191,13 +191,30 @@ function addToGroup(
 
 // Formats a SkippedByKey entry as a human-readable string, e.g.
 // "[Backpack] Canvas/Default (modes: Light, Dark)"
-function renderReferences(references: SkippedByKey): string {
-  return sortBy(Array.from(references.values()), (r) => r.variableName)
-    .map(({ collectionName, modes, variableName }) => {
+function renderReferences(references: SkippedByKey): string[] {
+  return sortBy(Array.from(references.values()), (r) => r.variableName).map(
+    ({ collectionName, modes, variableName }) => {
       const modeLabel = Array.from(modes).sort().join(', ');
       return `[${collectionName}] ${variableName} (modes: ${modeLabel})`;
-    })
-    .join('; ');
+    },
+  );
+}
+
+// 1 ref → inline after ←; N refs → nested bullet list to avoid one giant line.
+function pushBucket(
+  lines: string[],
+  itemLabel: string,
+  references: SkippedByKey,
+): void {
+  const rendered = renderReferences(references);
+  if (rendered.length === 1) {
+    lines.push(`  - ${itemLabel} ← ${rendered[0]}`);
+    return;
+  }
+  lines.push(`  - ${itemLabel} (${rendered.length} variable(s)):`);
+  for (const ref of rendered) {
+    lines.push(`      • ${ref}`);
+  }
 }
 
 function countInstances(groups: Map<string, SkippedByKey>): number {
@@ -304,9 +321,7 @@ function appendSkippedSections(
   for (const { groups, header, itemLabel } of sections) {
     if (groups.size > 0) {
       lines.push(header(countInstances(groups), groups.size));
-      groups.forEach((refs, key) =>
-        lines.push(`  - ${itemLabel(key)} ← ${renderReferences(refs)}`),
-      );
+      groups.forEach((refs, key) => pushBucket(lines, itemLabel(key), refs));
     }
   }
 }
@@ -344,7 +359,7 @@ function appendAmbiguousFloatSection(
       `If any of these aren't dimensions (e.g. font weights), tighten the scope in Figma:`,
   );
   groups.forEach((refs, scopeLabel) =>
-    lines.push(`  - scope=[${scopeLabel}] ← ${renderReferences(refs)}`),
+    pushBucket(lines, `scope=[${scopeLabel}]`, refs),
   );
 }
 

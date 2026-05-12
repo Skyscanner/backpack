@@ -312,6 +312,51 @@ describe('formatBuildSummary', () => {
     );
   });
 
+  it('expands into bullet list when multiple variables share the same unresolved alias id', () => {
+    const varA = makeSkipped('Component/Button/bg-default', {
+      reason: 'unresolved-alias',
+      unresolvedAliasId: 'VariableID:9999:0000',
+    });
+    const varB = makeSkipped('Component/Card/bg-default', {
+      reason: 'unresolved-alias',
+      unresolvedAliasId: 'VariableID:9999:0000',
+    });
+
+    const lines = formatBuildSummary(
+      makeResult({ outputs: [makeOutput(BACKPACK_MODE_LIGHT, [varA, varB])] }),
+    );
+
+    expect(lines).toContain('  - missing VariableID:9999:0000 (2 variable(s)):');
+    expect(lines).toContain('      • [Backpack] Component/Button/bg-default (modes: Light)');
+    expect(lines).toContain('      • [Backpack] Component/Card/bg-default (modes: Light)');
+  });
+
+  it('expands into bullet list when multiple FLOAT variables share the same scope key', () => {
+    const lightOutput = makeOutput(BACKPACK_MODE_LIGHT);
+    lightOutput.stats.ambiguousFloatVariables = [
+      {
+        variableName: 'Typography/Weight/Bold',
+        variableId: 'v3',
+        variableKey: 'k3',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+      {
+        variableName: 'Typography/Weight/Regular',
+        variableId: 'v4',
+        variableKey: 'k4',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+    ];
+
+    const lines = formatBuildSummary(makeResult({ outputs: [lightOutput] }));
+
+    expect(lines).toContain('  - scope=[ALL_SCOPES] (2 variable(s)):');
+    expect(lines).toContain('      • [Backpack] Typography/Weight/Bold (modes: Light)');
+    expect(lines).toContain('      • [Backpack] Typography/Weight/Regular (modes: Light)');
+  });
+
   it('warns about FLOAT variables with unconstrained scopes and merges Light/Dark duplicates', () => {
     const lightOutput = makeOutput(BACKPACK_MODE_LIGHT);
     lightOutput.stats.ambiguousFloatVariables = [
