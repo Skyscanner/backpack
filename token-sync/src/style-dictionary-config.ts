@@ -82,7 +82,16 @@ export function kebabBpkName(
     typeof prefix === 'string' && prefix.length > 0
       ? [prefix, ...renamed]
       : renamed;
-  return withPrefix.map(kebabSegment).filter(Boolean).join('-');
+  const result = withPrefix.map(kebabSegment).filter(Boolean).join('-');
+  // Every segment kebabed to "" (e.g. path was all emoji or punctuation) — SD
+  // would emit `--bpk-: <value>;` which browsers silently ignore. Fail loud
+  // instead. `result === prefix` covers the case where only the prefix survived.
+  if (!result || (typeof prefix === 'string' && result === prefix)) {
+    throw new Error(
+      `Token path ${tokenPath.join('.')} produced an empty CSS name after kebab-casing.`,
+    );
+  }
+  return result;
 }
 
 export interface CssNameCollision {

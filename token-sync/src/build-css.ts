@@ -306,6 +306,10 @@ export async function runBuildCSS({
   // Atomic swap: move buildDir aside (backup), promote staging to buildDir,
   // then drop the backup. Each rename failure path cleans up its own mess so
   // we never leak orphaned `.staging-*` / `.backup-*` dirs.
+  // Note: between the two renames, `buildDir` briefly does not exist on disk.
+  // Fine for offline CSS builds; not safe for live-served paths. Keep the
+  // two-step swap so non-empty directory replacement stays portable (POSIX
+  // `rename` cannot atomically overwrite a non-empty directory cross-platform).
   let backupCreated = false;
   try {
     await rename(resolvedBuildDir, backupDir);

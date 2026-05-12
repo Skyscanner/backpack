@@ -361,6 +361,19 @@ describe('style-dictionary-config', () => {
     ])('path %j with prefix %j → "%s"', (tokenPath, prefix, expected) => {
       expect(kebabBpkName(tokenPath, prefix)).toBe(expected);
     });
+
+    // Guard against silently emitting `--bpk-: <value>;` (invalid CSS that
+    // browsers ignore) when every path segment kebabs to "".
+    it.each<[string[], string | undefined]>([
+      [['💎'], undefined],
+      [['!@#'], undefined],
+      [['💎', '🔥'], 'bpk'],
+      [[''], 'bpk'],
+    ])('throws on degenerate path %j with prefix %j', (tokenPath, prefix) => {
+      expect(() => kebabBpkName(tokenPath, prefix)).toThrow(
+        /produced an empty CSS name/,
+      );
+    });
   });
 
   describe('findCssNameCollisions', () => {
