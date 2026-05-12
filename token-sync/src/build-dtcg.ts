@@ -189,6 +189,8 @@ function addToGroup(
   references.get(referenceKey)!.modes.add(modeName);
 }
 
+// Formats a SkippedByKey entry as a human-readable string, e.g.
+// "[Backpack] Canvas/Default (modes: Light, Dark)"
 function renderReferences(references: SkippedByKey): string[] {
   return sortBy(Array.from(references.values()), (r) => r.variableName).map(
     ({ collectionName, modes, variableName }) => {
