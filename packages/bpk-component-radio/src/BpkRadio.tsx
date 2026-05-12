@@ -69,7 +69,7 @@ const BpkRadio = ({
         className={getClassName('bpk-radio__input')}
         name={name}
         disabled={disabled}
-        aria-label={(ariaLabel || label) as string}
+        aria-label={ariaLabel || (typeof label === 'string' ? label : undefined)}
         aria-invalid={isInvalid}
         {...rest}
       />
