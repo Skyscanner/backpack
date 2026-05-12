@@ -19,5 +19,6 @@
 import BpkFormValidation from './src/BpkFormValidation';
 import themeAttributes from './src/themeAttributes';
 
+export type { Props } from './src/BpkFormValidation';
 export default BpkFormValidation;
 export { themeAttributes };
