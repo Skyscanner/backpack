@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { InputHTMLAttributes, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,14 +24,16 @@ import STYLES from './BpkRadio.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  name: string,
-  label: Node,
-  ariaLabel: ?string,
-  className: ?string,
-  disabled: boolean,
-  white: boolean,
-  valid: ?boolean,
+type NativeInputProps = InputHTMLAttributes<HTMLInputElement>;
+
+export type Props = Omit<NativeInputProps, 'type' | 'className'> & {
+  name: string;
+  label: ReactNode;
+  ariaLabel?: string | null;
+  className?: string | null;
+  disabled?: boolean;
+  white?: boolean;
+  valid?: boolean | null;
 };
 
 const BpkRadio = ({
@@ -65,13 +64,12 @@ const BpkRadio = ({
       {/* Deciding to support this because `aria-invalid` does often work with voiceover
       despite not being in the spec. */}
       {/* eslint-disable jsx-a11y/role-supports-aria-props */}
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */}
       <input
         type="radio"
         className={getClassName('bpk-radio__input')}
         name={name}
         disabled={disabled}
-        aria-label={ariaLabel || label}
+        aria-label={(ariaLabel || label) as string}
         aria-invalid={isInvalid}
         {...rest}
       />
@@ -80,16 +78,6 @@ const BpkRadio = ({
       <span aria-hidden="true">{label}</span>
     </label>
   );
-};
-
-BpkRadio.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.node.isRequired,
-  ariaLabel: PropTypes.string,
-  disabled: PropTypes.bool,
-  white: PropTypes.bool,
-  className: PropTypes.string,
-  valid: PropTypes.bool,
 };
 
 export default BpkRadio;

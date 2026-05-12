@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkRadio, { type Props as BpkRadioProps } from './src/BpkRadio';
+import themeAttributes from './src/themeAttributes';
 
-export default ['radioCheckedColor'];
+export default BpkRadio;
+export type { BpkRadioProps };
+export { themeAttributes };

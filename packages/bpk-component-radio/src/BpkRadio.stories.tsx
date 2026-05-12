@@ -21,7 +21,6 @@ import { Component } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkRadio from './BpkRadio';
 
 import type { Meta } from '@storybook/react';
