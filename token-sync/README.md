@@ -47,7 +47,7 @@ From the repo root:
 
 ```bash
 npm install
-npm run sync
+npm run tokens:fetch
 ```
 
 Output:
@@ -81,5 +81,63 @@ place depending on whether you're running locally or in CI.
 
 ## Stage 2 — DTCG → CSS
 
-_Coming next: style-dictionary transforms the DTCG files above into CSS custom
-properties._
+[Style Dictionary](https://styledictionary.com/) v5 reads the DTCG files above
+and emits two CSS files — one per theme — to `token-sync/css/`.
+
+From the repo root, **after** running Stage 1:
+
+```bash
+npm run tokens:build-css
+```
+
+Output:
+
+```text
+token-sync/css/
+├─ theme-backpack-light.css     # :root                    { --bpk-…: <light value>; }
+└─ theme-backpack-dark.css      # :root[data-theme="dark"] { --bpk-…: <dark value>;  }
+```
+
+Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
+
+### Things worth knowing
+
+- **Light is the default theme; additional themes layer on top.** The default
+  (Light) is emitted under `:root`; every additional theme (Dark today, plus
+  any future experimental themes) is emitted under `:root[data-theme="<mode>"]`.
+  Symmetry between the default and every additional theme is enforced — a
+  token declared in one but missing in another will abort the build. Fix it
+  in Figma by adding the missing path to the theme that's lacking it.
+- **`Component` prefix is renamed to `private`.** `Component.Badge.Colour.bg-default`
+  becomes `--bpk-private-badge-colour-bg-default`. The rename signals that these
+  tokens are component internals — they ship in CSS but are not part of the
+  public semantic API consumers should target. If two tokens would collide on
+  the same CSS variable name after kebab-casing, the build refuses and tells you
+  which ones to rename in Figma.
+- **Non-`px` dimensions abort the build.** Every `$type: dimension` value must
+  be `Xpx` (e.g. `"16px"`) or a DTCG alias; other units or bare numbers are
+  rejected so they can't be silently miscalculated during `px → rem` conversion.
+- **The CSS lives outside `token-sync/tokens/`** so Stage 1's directory wipe
+  doesn't clobber it.
+
+### Adding a new theme
+
+Both stages are theme-agnostic — adding a third theme (e.g. Sepia) requires **no code changes**:
+
+1. Add the mode to the `Backpack` collection in Figma and assign every semantic token a value for it.
+2. Run `npm run tokens:sync`.
+
+Stage 1 emits `backpack.<mode>.json`; Stage 2 picks it up automatically and writes `theme-backpack-<mode>.css` with selector `:root[data-theme="<mode>"]`.
+
+Only edit code if the Figma mode name shouldn't be used verbatim — add a `Figma name → output name` entry to `MODE_NAME_OVERRIDES` in `src/sync-helpers.ts` (e.g. Figma's `Day`/`Night` → `Light`/`Dark`).
+
+### Overriding paths
+
+`DTCG_OUTPUT_DIR` and `CSS_OUTPUT_DIR` can be set to absolute paths if the
+default layout doesn't suit your build pipeline.
+
+### Combined sync + build
+
+```bash
+npm run tokens:sync
+```
