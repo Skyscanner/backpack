@@ -334,8 +334,20 @@ describe('formatBuildSummary', () => {
   it('expands into bullet list when multiple FLOAT variables share the same scope key', () => {
     const lightOutput = makeOutput(BACKPACK_MODE_LIGHT);
     lightOutput.stats.ambiguousFloatVariables = [
-      { variableName: 'Typography/Weight/Bold', variableId: 'v3', variableKey: 'k3', scopes: ['ALL_SCOPES'], inferredType: 'dimension' },
-      { variableName: 'Typography/Weight/Regular', variableId: 'v4', variableKey: 'k4', scopes: ['ALL_SCOPES'], inferredType: 'dimension' },
+      {
+        variableName: 'Typography/Weight/Bold',
+        variableId: 'v3',
+        variableKey: 'k3',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
+      {
+        variableName: 'Typography/Weight/Regular',
+        variableId: 'v4',
+        variableKey: 'k4',
+        scopes: ['ALL_SCOPES'],
+        inferredType: 'dimension',
+      },
     ];
 
     const lines = formatBuildSummary(makeResult({ outputs: [lightOutput] }));
