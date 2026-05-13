@@ -1,52 +1,6 @@
 ---
 name: backpack-external-component-migration
-description: |
-  Migrate React components from external Skyscanner repositories (e.g., carhire-homepage)
-  into Backpack design system components. Use when: (1) Component exists in app-specific
-  repo with "unstable_backpack" or similar prefix, (2) Component needs to be promoted to
-  official Backpack component, (3) Converting app code to follow Backpack constitution,
-  (4) Extracting reusable UI patterns from product repos. Covers GitHub API access,
-  Backpack naming conventions, modern Sass API, TypeScript patterns, license headers,
-  accessibility testing, and Storybook integration. MANDATORY: Component must pass full
-  test suite (npm run lint && npm run check-react-versions && npm run check-bpk-dependencies
-  && npm run jest) with 0 errors before acceptance.
-author: Claude Code
-version: 1.4.0
-date: 2026-03-02
-changelog: |
-  v1.4.0 (2026-03-02):
-  - Fixed index.ts template: use explicit `import ... + export default` instead of `export { default }` shorthand
-  - Simplified README template to match standard Backpack format (button/chip pattern)
-  - README now only includes: Installation + Usage + Props (removed Tracking, Accessibility, Design tokens, Features sections)
-  - Added "What NOT to include in README" guidance
-  - Removed README Tracking section from verification checklist
-
-  v1.3.0 (2026-02-28):
-  - Added mandatory data-backpack-ds-component attribute requirement
-  - Updated TypeScript template to include getDataComponentAttribute usage
-  - Added README Tracking section template
-  - Added to verification checklist
-
-  v1.2.0 (2026-02-28):
-  - Closed props interface by default: no className, no HTML element spread
-  - Added "Why no HTML element spread?" rationale
-  - Updated TypeScript template to reflect lean props API
-  - Updated test/example templates to match
-  - Updated API Encapsulation notes section
-
-  v1.1.0 (2026-02-12):
-  - Added mandatory full test suite acceptance criteria
-  - Enhanced verification phase with comprehensive debugging steps
-  - Added common acceptance failure patterns and solutions
-  - Clarified that 100% component coverage is required
-  - Added detailed lint failure troubleshooting
-  - Documented proper handling of generated directories in .eslintignore
-  - Added guidance for undefined Sass token errors
-  - Expanded verification checklist with accessibility requirements
-
-  v1.0.0 (2026-02-12):
-  - Initial skill creation from BpkThinking component migration
-  - Complete workflow from external repo to Backpack standards
+description: "Migrate React components from external Skyscanner repositories (e.g., carhire-homepage) into Backpack design system components. Use when: (1) Component exists in app-specific repo with 'unstable_backpack' or similar prefix, (2) Component needs to be promoted to official Backpack component, (3) Converting app code to follow Backpack constitution, (4) Extracting reusable UI patterns from product repos. Covers GitHub API access, Backpack naming conventions, modern Sass API, TypeScript patterns, license headers, accessibility testing, and Storybook integration. MANDATORY: Component must pass full test suite (npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest) with 0 errors before acceptance."
 ---
 
 # Backpack External Component Migration
@@ -215,14 +169,6 @@ export default Bpk[ComponentName];
 - ❌ NO `className` or `style` props for new components (API encapsulation, constitution XI)
 - ❌ NO `& Omit<ComponentPropsWithoutRef<'div'>, 'children'>` — do NOT spread HTML element props. Default to a closed, explicit props interface. Only use element spread when the component is explicitly a thin wrapper that must forward all native attributes (rare).
 - ❌ NO product-specific i18n hooks
-
-**Why no HTML element spread?**
-Extending `ComponentPropsWithoutRef<'div'>` seems convenient but in practice:
-- It exposes dozens of irrelevant props (`onPointerEnterCapture`, `aria-*`, `data-*`, etc.)
-- It lets consumers bypass intentional API constraints
-- It makes the component contract unclear and harder to evolve
-- It couples the component to a specific HTML element
-Only use it when the component is explicitly a thin wrapper around a native element (e.g. a styled `<button>` that must accept all button attributes).
 
 #### 2.3 Convert Styles (Modern Sass API)
 
@@ -538,108 +484,9 @@ npm run storybook
 - [ ] No console errors or warnings
 - [ ] Reduced motion preference is respected
 
-#### 3.4 Common Acceptance Failures
+#### 3.4 Troubleshooting
 
-**Failure: Lint errors in dist-sassdoc or generated files**
-
-**Symptom:** Lint fails with errors in `dist-sassdoc/`, `dist/`, or other generated directories
-
-**Solution:** Ensure `.eslintignore` includes all generated directories:
-```
-node_modules
-dist
-dist-storybook
-dist-sassdoc
-coverage
-```
-
-**Failure: Undefined Sass token errors**
-
-**Symptom:** `Undefined variable: tokens.$bpk-border-radius-pill`
-
-**Solution:** Check token exists in `@skyscanner/bpk-foundations-web`:
-1. Search existing components for similar usage
-2. Use standard CSS values for unavailable tokens (e.g., `50%` for circles instead of `$bpk-border-radius-pill`)
-3. For pixel values, convert to rem: `10px` → `0.625rem`
-
-**Failure: Module resolution errors**
-
-**Symptom:** `Module not found: Can't resolve '../../bpk-component-*'`
-
-**Solution:** Verify relative import paths:
-- From component source: `../../bpk-component-text`
-- From examples: `../../packages/bpk-component-text`
-- From tests: Same as component source (tests are co-located)
-
-**Failure: Global coverage threshold not met**
-
-**Symptom:** `Jest: "global" coverage threshold for statements (75%) not met: 17.22%`
-
-**Expected:** This is normal when testing a single component. Check that YOUR component has 100% coverage:
-```
-packages/bpk-component-[name]/src  | 100 | 100 | 100 | 100 |
-Bpk[ComponentName].tsx             | 100 | 100 | 100 | 100 |
-```
-
-**Failure: Snapshot mismatch**
-
-**Symptom:** `1 snapshot failed`
-
-**Solution:** For new components, this is expected on first run:
-```bash
-npm run jest -- packages/bpk-component-[name] -u
-# Updates snapshots, then re-run to verify they pass
-```
-
-## Common Issues & Solutions
-
-### Issue 1: Token Import Errors
-
-**Symptom:** `Error: Can't find module '@skyscanner/bpk-foundations-web'`
-
-**Solution:**
-```bash
-npm install
-npm run build  # Rebuild bpk-mixins package
-```
-
-### Issue 2: Wrong Import Paths
-
-**Symptom:** `Module not found: Can't resolve '../../../bpk-component-text'`
-
-**Solution:** Use correct relative paths:
-- From component: `../../bpk-component-text`
-- From examples: `../../packages/bpk-component-text`
-
-### Issue 3: CSS Classes Not Applied
-
-**Symptom:** Component renders but no styles visible
-
-**Solution:** Check:
-1. `.module.scss` extension used (not just `.scss`)
-2. Styles imported correctly: `import STYLES from './Component.module.scss'`
-3. `cssModules(STYLES)` pattern used correctly
-4. Class names follow BEM: `.bpk-[name]`
-
-### Issue 4: Accessibility Test Failures
-
-**Symptom:** `jest-axe` reports violations
-
-**Common fixes:**
-- Decorative elements have `aria-hidden="true"`
-- Interactive elements have proper `role` attributes and labels
-- Color contrast meets WCAG AA standards
-- If visible text is the only identifier, no extra `aria-label` is needed — screen readers will read the rendered text
-
-### Issue 5: Snapshot Mismatches
-
-**Symptom:** Snapshot tests fail on first run
-
-**Solution:** This is expected for new components:
-```bash
-npm test -- packages/bpk-component-[name] -u
-# Updates snapshots for new component
-```
+See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for common acceptance failures (lint errors, Sass token issues, module resolution, coverage thresholds, snapshot mismatches) and their solutions.
 
 ## Verification Checklist
 
@@ -708,16 +555,6 @@ Don't migrate if:
 
 Consider creating as experimental V2 component instead if uncertain.
 
-### API Encapsulation for New Components
-
-Per constitution principle XI:
-- NEW components must NOT expose `className` or `style` props
-- NEW components must NOT spread HTML element props via `& Omit<ComponentPropsWithoutRef<'div'>, 'children'>` or similar — default to a closed, explicit props interface
-- Only declare props the component actually uses
-- Prevents consumers from bypassing the design system's visual constraints
-- Makes the component contract clear and easy to evolve
-- Existing components may grandfather `className` for backward compatibility, but do NOT replicate this in new components
-
 ### Dependency Removal
 
 Common product-specific dependencies to remove:
@@ -726,15 +563,10 @@ Common product-specific dependencies to remove:
 - Custom CSS modules patterns → Use `cssModules(STYLES)`
 - App-specific types → Use standard React types
 
-### Performance Considerations
-
-- Minimize bundle size - avoid unnecessary dependencies
-- Use dynamic imports for large dependencies
-- Follow `browserslist-config-skyscanner` for transpilation
-- No polyfills in component code (handled by app layer)
-
 ## References
 
+- [Troubleshooting Guide](TROUBLESHOOTING.md) — acceptance failures and common issues
+- [Changelog](CHANGELOG.md) — version history
 - [Backpack Constitution](../../.specify/memory/constitution.md)
 - [Backpack Documentation](https://www.skyscanner.design/)
 - [Modern Sass API Decision](../../decisions/modern-sass-api.md)
