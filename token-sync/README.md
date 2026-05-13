@@ -82,7 +82,8 @@ place depending on whether you're running locally or in CI.
 ## Stage 2 — DTCG → CSS
 
 [Style Dictionary](https://styledictionary.com/) v5 reads the DTCG files above
-and emits two CSS files — one per theme — to `token-sync/css/`.
+and emits one CSS file per theme plus a theme-independent primitives sheet to
+`token-sync/css/`.
 
 From the repo root, **after** running Stage 1:
 
@@ -94,11 +95,19 @@ Output:
 
 ```text
 token-sync/css/
+├─ primitives.css               # :root                    { --bpk-spacing-…: <value>; … }
 ├─ theme-backpack-light.css     # :root                    { --bpk-…: <light value>; }
 └─ theme-backpack-dark.css      # :root[data-theme="dark"] { --bpk-…: <dark value>;  }
 ```
 
 Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
+
+`primitives.css` carries the **non-color** primitives only (Spacing, Heights,
+Radius — the dimension scale). Color primitives are intentionally excluded:
+semantic tokens are the public colour API and resolve primitive references
+inline at build time, so `--bpk-colour-pink` would just encourage bypassing
+the semantic layer. Import `primitives.css` once, alongside whichever theme
+sheets you use.
 
 ### Things worth knowing
 

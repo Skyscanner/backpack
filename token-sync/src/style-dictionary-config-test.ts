@@ -30,8 +30,11 @@ import {
   LIGHT_OUTPUT_FILE,
   LIGHT_SELECTOR,
   PRIMITIVES_FILE,
+  PRIMITIVES_OUTPUT_FILE,
+  PRIMITIVES_SELECTOR,
   buildStyleDictionaryConfigs,
   findAsymmetricSemanticTokens,
+  findCrossFileCssNameCollisions,
   findCssNameCollisions,
   findInvalidDimensions,
   formatAsymmetricSemanticTokens,
@@ -40,6 +43,7 @@ import {
   isWebTokenPath,
   kebabBpkName,
   makeBackpackTokenFilter,
+  makeWebPrimitivesTokenFilter,
 } from './style-dictionary-config';
 
 import type { TransformedToken } from 'style-dictionary/types';
@@ -83,23 +87,33 @@ describe('style-dictionary-config', () => {
       semanticFileNames: [BACKPACK_LIGHT_FILE, BACKPACK_DARK_FILE],
     };
 
-    it('produces one config per semantic file with correct names, selectors, and filenames', () => {
+    it('emits a primitives config first, then one config per semantic file', () => {
       const configs = buildStyleDictionaryConfigs(baseOpts);
-      const [light, dark] = configs;
+      const [primitives, light, dark] = configs;
+      const primitivesFile = primitives.config.platforms?.css?.files?.[0];
       const lightFile = light.config.platforms?.css?.files?.[0];
       const darkFile = dark.config.platforms?.css?.files?.[0];
 
-      expect(configs).toHaveLength(2);
-      expect(configs.map((c) => c.name)).toEqual(['web-theme-light', 'web-theme-dark']);
+      expect(configs).toHaveLength(3);
+      expect(configs.map((c) => c.name)).toEqual([
+        'web-primitives',
+        'web-theme-light',
+        'web-theme-dark',
+      ]);
+      expect(primitivesFile?.destination).toBe(PRIMITIVES_OUTPUT_FILE);
+      expect(primitivesFile?.options?.selector).toBe(PRIMITIVES_SELECTOR);
       expect(lightFile?.destination).toBe(LIGHT_OUTPUT_FILE);
       expect(lightFile?.options?.selector).toBe(LIGHT_SELECTOR);
       expect(darkFile?.destination).toBe(DARK_OUTPUT_FILE);
       expect(darkFile?.options?.selector).toBe(DARK_SELECTOR);
     });
 
-    it('loads primitives alongside each semantic token file', () => {
+    it('loads primitives alongside each semantic token file (and only primitives for the primitives config)', () => {
       const configs = buildStyleDictionaryConfigs(baseOpts);
-      const [light, dark] = configs;
+      const [primitives, light, dark] = configs;
+      expect(primitives.config.source).toEqual([
+        path.join(tokensDir, PRIMITIVES_FILE),
+      ]);
       expect(light.config.source).toEqual([
         path.join(tokensDir, PRIMITIVES_FILE),
         path.join(tokensDir, BACKPACK_LIGHT_FILE),
@@ -142,7 +156,8 @@ describe('style-dictionary-config', () => {
 
     it('keeps semantic file tokens but not primitives or non-web tokens via the filter', () => {
       const configs = buildStyleDictionaryConfigs(baseOpts);
-      const [light] = configs;
+      // [primitives, light, dark] — light is index 1.
+      const light = configs[1];
       const tokenFilter = light.config.platforms?.css?.files?.[0]?.filter;
       expect(typeof tokenFilter).toBe('function');
       const shouldEmit = tokenFilter as (t: TransformedToken) => boolean;
@@ -168,6 +183,62 @@ describe('style-dictionary-config', () => {
           filePath: lightFilePath,
           path: ['Component', 'iOS Tab-bar-fill'],
         } as TransformedToken),
+      ).toBe(false);
+    });
+  });
+
+  describe('makeWebPrimitivesTokenFilter', () => {
+    const filter = makeWebPrimitivesTokenFilter();
+    const primitivesPath = '/repo/token-sync/tokens/primitives.json';
+    const semanticPath = '/repo/token-sync/tokens/backpack.light.json';
+
+    it('keeps non-color primitives (dimension, etc.)', () => {
+      expect(
+        filter({
+          filePath: primitivesPath,
+          path: ['Spacing', 'md'],
+          $type: 'dimension',
+        } as unknown as TransformedToken),
+      ).toBe(true);
+    });
+
+    it('falls back to legacy `type` when `$type` is absent', () => {
+      expect(
+        filter({
+          filePath: primitivesPath,
+          path: ['Radius', 'md'],
+          type: 'dimension',
+        } as unknown as TransformedToken),
+      ).toBe(true);
+    });
+
+    it('drops color primitives — semantic tokens are the public colour API', () => {
+      expect(
+        filter({
+          filePath: primitivesPath,
+          path: ['Colour', 'Pink'],
+          $type: 'color',
+        } as unknown as TransformedToken),
+      ).toBe(false);
+    });
+
+    it('drops tokens from semantic theme files (only primitives.json should match)', () => {
+      expect(
+        filter({
+          filePath: semanticPath,
+          path: ['Spacing', 'md'],
+          $type: 'dimension',
+        } as unknown as TransformedToken),
+      ).toBe(false);
+    });
+
+    it('drops non-web (ios/android) primitive paths', () => {
+      expect(
+        filter({
+          filePath: primitivesPath,
+          path: ['Spacing', 'ios-only'],
+          $type: 'dimension',
+        } as unknown as TransformedToken),
       ).toBe(false);
     });
   });
@@ -409,6 +480,43 @@ describe('style-dictionary-config', () => {
       expect(collisions[0].sources).toEqual([
         'Component.Badge.Colour.bg-default',
         'Component.badge.Colour.bg-default',
+      ]);
+    });
+  });
+
+  describe('findCrossFileCssNameCollisions', () => {
+    it('returns no collisions when no CSS name appears in more than one tree', () => {
+      const primitives = {
+        Spacing: { $type: 'dimension', base: { $value: '16px' } },
+      };
+      const semantic = {
+        Canvas: { $type: 'color', Default: { $value: '#fff' } },
+      };
+      expect(
+        findCrossFileCssNameCollisions([
+          { filePath: '/repo/tokens/primitives.json', tree: primitives },
+          { filePath: '/repo/tokens/backpack.light.json', tree: semantic },
+        ]),
+      ).toEqual([]);
+    });
+
+    it('detects a primitive whose CSS name reappears in a semantic tree', () => {
+      const primitives = {
+        Spacing: { $type: 'dimension', base: { $value: '16px' } },
+      };
+      // Hypothetical: a semantic group also kebabs to spacing-base.
+      const semantic = {
+        Spacing: { $type: 'dimension', base: { $value: '{Spacing.base}' } },
+      };
+      const collisions = findCrossFileCssNameCollisions([
+        { filePath: '/repo/tokens/primitives.json', tree: primitives },
+        { filePath: '/repo/tokens/backpack.light.json', tree: semantic },
+      ]);
+      expect(collisions).toHaveLength(1);
+      expect(collisions[0].name).toBe('spacing-base');
+      expect(collisions[0].sources).toEqual([
+        'backpack.light.json: Spacing.base',
+        'primitives.json: Spacing.base',
       ]);
     });
   });

@@ -39,6 +39,8 @@ import {
   LIGHT_OUTPUT_FILE,
   LIGHT_SELECTOR,
   PRIMITIVES_FILE,
+  PRIMITIVES_OUTPUT_FILE,
+  PRIMITIVES_SELECTOR,
 } from './style-dictionary-config';
 
 // CLI is spawned via tsx (not imported) to keep SD's ESM runtime out of
@@ -214,7 +216,9 @@ describe('build-css CLI', () => {
 
     const result = await build();
     expect(result.code).toBe(0);
-    expect(await readdir(buildDir)).toEqual([LIGHT_OUTPUT_FILE]);
+    expect((await readdir(buildDir)).sort()).toEqual(
+      [PRIMITIVES_OUTPUT_FILE, LIGHT_OUTPUT_FILE].sort(),
+    );
 
     const light = await readFile(
       path.join(buildDir, LIGHT_OUTPUT_FILE),
@@ -274,6 +278,32 @@ describe('build-css CLI', () => {
     expect(result.stderr).toContain('Component.button.Dimension.padding-h');
   });
 
+  it('rejects DTCG inputs whose primitive and semantic tokens share a CSS name', async () => {
+    await setUpFixture();
+    await writeTokenFile(BACKPACK_LIGHT_FILE, {
+      ...BACKPACK_LIGHT,
+      Spacing: {
+        $type: 'dimension',
+        md: { $value: '{Spacing.md}' },
+      },
+    });
+    await writeTokenFile(BACKPACK_DARK_FILE, {
+      ...BACKPACK_DARK,
+      Spacing: {
+        $type: 'dimension',
+        md: { $value: '{Spacing.md}' },
+      },
+    });
+
+    const result = await build();
+    expect(result.code).not.toBe(0);
+    expect(result.stderr).toMatch(/CSS variable name collision/);
+    expect(result.stderr).toContain('--bpk-spacing-md');
+    // Both source files appear in the error so the operator can locate them.
+    expect(result.stderr).toContain(PRIMITIVES_FILE);
+    expect(result.stderr).toContain(BACKPACK_LIGHT_FILE);
+  });
+
   it('rejects DTCG inputs containing non-px dimension values', async () => {
     await setUpFixture();
     await writeTokenFile(BACKPACK_DARK_FILE, {
@@ -300,6 +330,9 @@ describe('build-css CLI', () => {
     ).rejects.toThrow();
     await expect(
       readFile(path.join(buildDir, DARK_OUTPUT_FILE), 'utf8'),
+    ).rejects.toThrow();
+    await expect(
+      readFile(path.join(buildDir, PRIMITIVES_OUTPUT_FILE), 'utf8'),
     ).rejects.toThrow();
   });
 
@@ -337,6 +370,19 @@ describe('build-css CLI', () => {
     // Primitives must NOT leak into the per-mode CSS.
     expect(light).not.toMatch(/--bpk-colour-pink/);
     expect(dark).not.toMatch(/--bpk-colour-berry/);
+
+    // Non-color primitives ship in their own theme-independent file.
+    const primitives = await readFile(
+      path.join(buildDir, PRIMITIVES_OUTPUT_FILE),
+      'utf8',
+    );
+    expect(primitives).toMatch(
+      new RegExp(`${escapeRegExp(PRIMITIVES_SELECTOR)} \\{`),
+    );
+    // Spacing.md (16px) → 1rem via size/pxToRem.
+    expect(primitives).toMatch(/--bpk-spacing-md:\s*1rem/);
+    // Color primitives are intentionally excluded.
+    expect(primitives).not.toMatch(/--bpk-colour-/);
   });
 
   it('atomically swaps buildDir on success, rolls back on failure, and never leaves staging/backup dirs', async () => {
@@ -381,7 +427,7 @@ describe('build-css CLI', () => {
 
     expect((await build()).code).toBe(0);
     expect((await readdir(buildDir)).sort()).toEqual(
-      [LIGHT_OUTPUT_FILE, DARK_OUTPUT_FILE].sort(),
+      [LIGHT_OUTPUT_FILE, DARK_OUTPUT_FILE, PRIMITIVES_OUTPUT_FILE].sort(),
     );
   });
 });

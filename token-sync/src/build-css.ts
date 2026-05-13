@@ -30,6 +30,7 @@ import {
   PRIMITIVES_FILE,
   buildStyleDictionaryConfigs,
   findAsymmetricSemanticTokens,
+  findCrossFileCssNameCollisions,
   findCssNameCollisions,
   findInvalidDimensions,
   formatAsymmetricSemanticTokens,
@@ -206,6 +207,31 @@ async function assertInputsAreBuildable(
   }
   if (collisionsByFile.length > 0) {
     throw new Error(formatCssNameCollisions(collisionsByFile));
+  }
+
+  // Check primitives vs Light for cross-file CSS name collisions (both emit to :root).
+  // Comparing against Light alone is sufficient — all themes share the same paths.
+  const lightFile = parsedFiles.find(
+    ({ filePath }) => path.basename(filePath) === BACKPACK_LIGHT_FILE,
+  );
+  const primitivesFile = parsedFiles.find(
+    ({ filePath }) => path.basename(filePath) === PRIMITIVES_FILE,
+  );
+  if (lightFile && primitivesFile) {
+    const crossCollisions = findCrossFileCssNameCollisions([
+      primitivesFile,
+      lightFile,
+    ]);
+    if (crossCollisions.length > 0) {
+      throw new Error(
+        formatCssNameCollisions([
+          {
+            filePath: `${path.basename(primitivesFile.filePath)} ↔ ${path.basename(lightFile.filePath)}`,
+            collisions: crossCollisions,
+          },
+        ]),
+      );
+    }
   }
 
   // Symmetry check against Light (the default theme): every additional
