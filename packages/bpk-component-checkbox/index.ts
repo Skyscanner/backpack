@@ -32,3 +32,4 @@ export type { BpkCheckboxV2RootProps, BpkCheckboxV2CheckedState } from './src/Bp
 export type { BpkCheckboxV2ControlProps } from './src/BpkCheckboxV2/BpkCheckboxV2Control';
 export type { BpkCheckboxV2LabelProps } from './src/BpkCheckboxV2/BpkCheckboxV2Label';
 export type { BpkCheckboxV2DescriptionProps } from './src/BpkCheckboxV2/BpkCheckboxV2Description';
+export type { BpkCheckboxV2HiddenInputProps } from './src/BpkCheckboxV2/BpkCheckboxV2HiddenInput';
