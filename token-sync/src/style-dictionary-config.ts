@@ -144,7 +144,7 @@ function collectCssNamePaths(tree: unknown): Map<string, string[]> {
 
 // Return every CSS name that two or more tokens collide on after `kebabBpkName`.
 // e.g. casing variants under the same parent (`Component.Badge` and
-// `Component.badge`) both kebab to `--bpk-private-badge-…`.
+// `Component.badge`) both kebab to `private-badge-…` (without the `--bpk-` prefix).
 export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
   const collisions: CssNameCollision[] = [];
   collectCssNamePaths(tree).forEach((sources, name) => {
@@ -156,7 +156,7 @@ export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
 }
 
 // Detects CSS name collisions across files (e.g. primitives.json and backpack.light.json
-// both producing `--bpk-spacing-base`). Within-file collisions are handled by `findCssNameCollisions`.
+// both producing `spacing-base`). Within-file collisions are handled by `findCssNameCollisions`.
 export function findCrossFileCssNameCollisions(
   perFile: ReadonlyArray<{ filePath: string; tree: unknown }>,
 ): CssNameCollision[] {
