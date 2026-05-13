@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, LabelHTMLAttributes, ReactNode } from 'react';
 
 import { Checkbox } from '@ark-ui/react';
 
@@ -28,7 +28,17 @@ const getClassName = cssModules(STYLES);
 
 export type BpkCheckboxV2CheckedState = boolean | 'indeterminate';
 
-export type BpkCheckboxV2RootProps = {
+// `className` and `style` are blocked — Backpack owns the visual layer.
+// `role` is blocked because Ark UI sets it.
+// `id`, `children` are managed below; `defaultChecked` is overridden because
+// Ark's HTMLAttributes value is a `boolean` whereas V2 also supports
+// `'indeterminate'`.
+type BpkCheckboxV2RootSafePassThroughProps = Omit<
+  HTMLAttributes<HTMLDivElement>,
+  'className' | 'style' | 'role' | 'id' | 'children' | 'defaultChecked'
+>;
+
+export type BpkCheckboxV2RootProps = BpkCheckboxV2RootSafePassThroughProps & {
   children: ReactNode;
   checked?: BpkCheckboxV2CheckedState;
   defaultChecked?: BpkCheckboxV2CheckedState;
@@ -52,22 +62,43 @@ const BpkCheckboxV2Root = ({
   onCheckedChange,
   required = false,
   value,
-}: BpkCheckboxV2RootProps) => (
-  <Checkbox.Root
-    className={getClassName('bpk-checkbox-v2')}
-    checked={checked}
-    defaultChecked={defaultChecked}
-    disabled={disabled}
-    id={id}
-    invalid={invalid}
-    name={name}
-    onCheckedChange={(details) => onCheckedChange?.(details.checked)}
-    required={required}
-    value={value}
-    {...getDataComponentAttribute('CheckboxV2')}
-  >
-    {children}
-  </Checkbox.Root>
-);
+  ...rest
+}: BpkCheckboxV2RootProps) => {
+  const { className, style, ...safeProps } = rest as typeof rest & {
+    className?: unknown;
+    style?: unknown;
+  };
+
+  if (process.env.NODE_ENV !== 'production' && (className || style)) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[BpkCheckboxV2.Root] `className` and `style` are not supported.',
+    );
+  }
+
+  // Public type is `HTMLAttributes<HTMLDivElement>` for ergonomics, but
+  // Checkbox.Root renders a <label>; the event-handler element types differ
+  // only in label-specific properties consumers are unlikely to use.
+  const labelSafeProps = safeProps as LabelHTMLAttributes<HTMLLabelElement>;
+
+  return (
+    <Checkbox.Root
+      {...labelSafeProps}
+      className={getClassName('bpk-checkbox-v2')}
+      checked={checked}
+      defaultChecked={defaultChecked}
+      disabled={disabled}
+      id={id}
+      invalid={invalid}
+      name={name}
+      onCheckedChange={(details) => onCheckedChange?.(details.checked)}
+      required={required}
+      value={value}
+      {...getDataComponentAttribute('CheckboxV2')}
+    >
+      {children}
+    </Checkbox.Root>
+  );
+};
 
 export default BpkCheckboxV2Root;

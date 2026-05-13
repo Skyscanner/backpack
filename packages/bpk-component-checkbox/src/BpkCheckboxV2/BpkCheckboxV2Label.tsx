@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { Checkbox } from '@ark-ui/react';
 
@@ -26,14 +26,38 @@ import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxV2LabelProps = {
+// `className` and `style` are intentionally blocked — Backpack owns the
+// visual layer.
+type BpkCheckboxV2LabelSafePassThroughProps = Omit<
+  HTMLAttributes<HTMLSpanElement>,
+  'className' | 'style' | 'children'
+>;
+
+export type BpkCheckboxV2LabelProps = BpkCheckboxV2LabelSafePassThroughProps & {
   children: ReactNode;
 };
 
-const BpkCheckboxV2Label = ({ children }: BpkCheckboxV2LabelProps) => (
-  <Checkbox.Label className={getClassName('bpk-checkbox-v2__label')}>
-    {children}
-  </Checkbox.Label>
-);
+const BpkCheckboxV2Label = ({ children, ...rest }: BpkCheckboxV2LabelProps) => {
+  const { className, style, ...safeProps } = rest as typeof rest & {
+    className?: unknown;
+    style?: unknown;
+  };
+
+  if (process.env.NODE_ENV !== 'production' && (className || style)) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[BpkCheckboxV2.Label] `className` and `style` are not supported.',
+    );
+  }
+
+  return (
+    <Checkbox.Label
+      {...safeProps}
+      className={getClassName('bpk-checkbox-v2__label')}
+    >
+      {children}
+    </Checkbox.Label>
+  );
+};
 
 export default BpkCheckboxV2Label;

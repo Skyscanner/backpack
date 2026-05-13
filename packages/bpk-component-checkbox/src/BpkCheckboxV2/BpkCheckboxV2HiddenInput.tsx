@@ -16,10 +16,43 @@
  * limitations under the License.
  */
 
+import type { InputHTMLAttributes } from 'react';
+
 import { Checkbox } from '@ark-ui/react';
+
+// `className` and `style` are intentionally blocked — Backpack owns the visual
+// layer. The other props are managed by `BpkCheckboxV2.Root` to keep a single
+// source of truth.
+export type BpkCheckboxV2HiddenInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  | 'className'
+  | 'style'
+  | 'checked'
+  | 'defaultChecked'
+  | 'disabled'
+  | 'name'
+  | 'required'
+  | 'value'
+  | 'onChange'
+  | 'children'
+>;
 
 // Renders Ark's visually hidden native <input type="checkbox">.
 // Include when the checkbox is inside a <form> for native form submission.
-const BpkCheckboxV2HiddenInput = () => <Checkbox.HiddenInput />;
+const BpkCheckboxV2HiddenInput = (props: BpkCheckboxV2HiddenInputProps = {}) => {
+  const { className, style, ...safeProps } = props as BpkCheckboxV2HiddenInputProps & {
+    className?: unknown;
+    style?: unknown;
+  };
+
+  if (process.env.NODE_ENV !== 'production' && (className || style)) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[BpkCheckboxV2.HiddenInput] `className` and `style` are not supported.',
+    );
+  }
+
+  return <Checkbox.HiddenInput {...safeProps} />;
+};
 
 export default BpkCheckboxV2HiddenInput;

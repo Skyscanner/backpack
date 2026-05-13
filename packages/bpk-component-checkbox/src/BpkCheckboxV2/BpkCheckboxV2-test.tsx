@@ -151,4 +151,120 @@ describe('BpkCheckboxV2', () => {
       expect(root).toHaveAttribute('data-backpack-ds-component');
     });
   });
+
+  describe('safe prop forwarding', () => {
+    let warnSpy: jest.SpyInstance;
+
+    beforeEach(() => {
+      warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
+
+    afterEach(() => {
+      warnSpy.mockRestore();
+    });
+
+    it('forwards data-* and aria-* attributes on each part', () => {
+      render(
+        <BpkCheckboxV2.Root data-testid="root" aria-label="root-label">
+          <BpkCheckboxV2.Control data-testid="control">
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label data-testid="label">Label text</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.Description data-testid="description">
+            Description text
+          </BpkCheckboxV2.Description>
+          <BpkCheckboxV2.HiddenInput
+            data-testid="hidden-input"
+            aria-label="hidden-input-label"
+          />
+        </BpkCheckboxV2.Root>,
+      );
+
+      expect(screen.getByTestId('root')).toHaveAttribute(
+        'aria-label',
+        'root-label',
+      );
+      expect(screen.getByTestId('control')).toBeInTheDocument();
+      expect(screen.getByTestId('label')).toBeInTheDocument();
+      expect(screen.getByTestId('description')).toBeInTheDocument();
+      expect(screen.getByTestId('hidden-input')).toHaveAttribute(
+        'aria-label',
+        'hidden-input-label',
+      );
+    });
+
+    it('strips className from each part and warns in development', () => {
+      render(
+        <BpkCheckboxV2.Root
+          data-testid="root"
+          // @ts-expect-error className is intentionally not in the public type
+          className="consumer-root"
+        >
+          <BpkCheckboxV2.Control
+            data-testid="control"
+            // @ts-expect-error className is intentionally not in the public type
+            className="consumer-control"
+          >
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label
+            data-testid="label"
+            // @ts-expect-error className is intentionally not in the public type
+            className="consumer-label"
+          >
+            Label text
+          </BpkCheckboxV2.Label>
+          <BpkCheckboxV2.Description
+            data-testid="description"
+            // @ts-expect-error className is intentionally not in the public type
+            className="consumer-description"
+          >
+            Description text
+          </BpkCheckboxV2.Description>
+          <BpkCheckboxV2.HiddenInput
+            data-testid="hidden-input"
+            // @ts-expect-error className is intentionally not in the public type
+            className="consumer-hidden-input"
+          />
+        </BpkCheckboxV2.Root>,
+      );
+
+      expect(screen.getByTestId('root').className).not.toMatch('consumer-root');
+      expect(screen.getByTestId('control').className).not.toMatch(
+        'consumer-control',
+      );
+      expect(screen.getByTestId('label').className).not.toMatch(
+        'consumer-label',
+      );
+      expect(screen.getByTestId('description').className).not.toMatch(
+        'consumer-description',
+      );
+      expect(screen.getByTestId('hidden-input').className).not.toMatch(
+        'consumer-hidden-input',
+      );
+      expect(warnSpy).toHaveBeenCalledTimes(5);
+    });
+
+    it('strips style from each part and warns in development', () => {
+      render(
+        <BpkCheckboxV2.Root
+          data-testid="root"
+          // @ts-expect-error style is intentionally not in the public type
+          style={{ display: 'block' }}
+        >
+          <BpkCheckboxV2.Control data-testid="control">
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label data-testid="label">Label</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput data-testid="hidden-input" />
+        </BpkCheckboxV2.Root>,
+      );
+
+      expect(screen.getByTestId('root')).not.toHaveAttribute('style');
+      expect(warnSpy).toHaveBeenCalledTimes(1);
+      expect(warnSpy).toHaveBeenCalledWith(
+        expect.stringContaining('BpkCheckboxV2.Root'),
+      );
+    });
+  });
 });

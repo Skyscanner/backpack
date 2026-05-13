@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cssModules } from '../../../bpk-react-utils';
 
@@ -24,15 +24,45 @@ import STYLES from './BpkCheckboxV2.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkCheckboxV2DescriptionProps = {
-  children: ReactNode;
-};
+// `className` and `style` are intentionally blocked — Backpack owns the
+// visual layer.
+type BpkCheckboxV2DescriptionSafePassThroughProps = Omit<
+  HTMLAttributes<HTMLSpanElement>,
+  'className' | 'style' | 'children'
+>;
+
+export type BpkCheckboxV2DescriptionProps =
+  BpkCheckboxV2DescriptionSafePassThroughProps & {
+    children: ReactNode;
+  };
 
 // Description renders as a <span> inside the Checkbox.Root <label>.
 // Being inside the <label> element means screen readers announce its text
 // as part of the checkbox's accessible name.
-const BpkCheckboxV2Description = ({ children }: BpkCheckboxV2DescriptionProps) => (
-  <span className={getClassName('bpk-checkbox-v2__description')}>{children}</span>
-);
+const BpkCheckboxV2Description = ({
+  children,
+  ...rest
+}: BpkCheckboxV2DescriptionProps) => {
+  const { className, style, ...safeProps } = rest as typeof rest & {
+    className?: unknown;
+    style?: unknown;
+  };
+
+  if (process.env.NODE_ENV !== 'production' && (className || style)) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      '[BpkCheckboxV2.Description] `className` and `style` are not supported.',
+    );
+  }
+
+  return (
+    <span
+      {...safeProps}
+      className={getClassName('bpk-checkbox-v2__description')}
+    >
+      {children}
+    </span>
+  );
+};
 
 export default BpkCheckboxV2Description;
