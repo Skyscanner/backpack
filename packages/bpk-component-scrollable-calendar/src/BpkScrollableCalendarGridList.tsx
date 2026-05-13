@@ -213,6 +213,10 @@ const BpkScrollableCalendarGridList = (props: Props) => {
         }}
         overscanCount={1}
         defaultHeight={estimatedMonthItemHeight}
+        // v2 defaults the outer element to role="list", but our rows render
+        // calendar grids (role="grid") rather than listitems. Suppress the
+        // implicit list role so axe doesn't flag aria-required-children.
+        role="presentation"
         style={isRtl ? { direction: 'rtl' } : undefined}
       />
     </div>

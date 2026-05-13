@@ -29,6 +29,14 @@ import { formatDateFull, formatMonth } from '../test-utils';
 import BpkCalendarScrollDate from './BpkScrollableCalendarDate';
 import BpkScrollableCalendarGridList from './BpkScrollableCalendarGridList';
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 const testDate = new Date(2010, 1, 15);
 
 describe('BpkCalendarScrollGridList', () => {
