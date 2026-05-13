@@ -241,6 +241,16 @@ describe('style-dictionary-config', () => {
         } as unknown as TransformedToken),
       ).toBe(false);
     });
+
+    it('drops Heights primitives — excluded until there is a confirmed consumer need', () => {
+      expect(
+        filter({
+          filePath: primitivesPath,
+          path: ['Heights', '36'],
+          $type: 'dimension',
+        } as unknown as TransformedToken),
+      ).toBe(false);
+    });
   });
 
   describe('isWebTokenPath', () => {

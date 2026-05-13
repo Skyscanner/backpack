@@ -89,6 +89,10 @@ const PRIMITIVES = {
     $type: 'dimension',
     md: { $value: '16px' },
   },
+  Heights: {
+    $type: 'dimension',
+    36: { $value: '36px' },
+  },
 };
 
 const BACKPACK_LIGHT = {
@@ -381,8 +385,9 @@ describe('build-css CLI', () => {
     );
     // Spacing.md (16px) → 1rem via size/pxToRem.
     expect(primitives).toMatch(/--bpk-spacing-md:\s*1rem/);
-    // Color primitives are intentionally excluded.
+    // Color and Heights primitives are intentionally excluded.
     expect(primitives).not.toMatch(/--bpk-colour-/);
+    expect(primitives).not.toMatch(/--bpk-heights-/);
   });
 
   it('atomically swaps buildDir on success, rolls back on failure, and never leaves staging/backup dirs', async () => {

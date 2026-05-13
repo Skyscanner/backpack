@@ -102,12 +102,10 @@ token-sync/css/
 
 Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
 
-`primitives.css` carries the **non-color** primitives only (Spacing, Heights,
-Radius — the dimension scale). Color primitives are intentionally excluded:
-semantic tokens are the public colour API and resolve primitive references
-inline at build time, so `--bpk-colour-pink` would just encourage bypassing
-the semantic layer. Import `primitives.css` once, alongside whichever theme
-sheets you use.
+`primitives.css` carries Spacing and Radius only. Color primitives are
+excluded (semantic tokens are the public colour API). Heights are excluded
+until there is a confirmed consumer need. Import `primitives.css` once,
+alongside whichever theme sheets you use.
 
 ### Things worth knowing
 

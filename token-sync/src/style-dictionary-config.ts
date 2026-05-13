@@ -27,9 +27,9 @@ export const DARK_SELECTOR = ':root[data-theme="dark"]';
 export const LIGHT_OUTPUT_FILE = 'theme-backpack-light.css';
 export const DARK_OUTPUT_FILE = 'theme-backpack-dark.css';
 
-// Theme-independent primitives (Spacing, Radius, Heights, …) get their own
-// file under `:root` so consumers can import a single sheet without picking a
-// theme. Color primitives are intentionally excluded — see
+// Theme-independent primitives (Spacing, Radius, …) get their own file under
+// `:root` so consumers can import a single sheet without picking a theme.
+// Color and Heights primitives are intentionally excluded — see
 // `makeWebPrimitivesTokenFilter` for the rationale.
 export const PRIMITIVES_OUTPUT_FILE = 'primitives.css';
 export const PRIMITIVES_SELECTOR = ':root';
@@ -431,11 +431,9 @@ function tokenType(token: TransformedToken): string | undefined {
   return undefined;
 }
 
-// Filter for the standalone `primitives.css` output: keep every non-color
-// primitive. Color primitives are excluded so consumers go through the
-// semantic colour API instead of targeting `--bpk-colour-pink` directly.
-// Only `color` is excluded — any future primitive type (fontWeight, duration,
-// …) ships automatically without code changes here.
+// Filter for the standalone `primitives.css` output: keep Spacing and Radius
+// only. Colors are excluded (consumers should use semantic tokens). Heights are
+// excluded until there is a confirmed consumer need.
 export function makeWebPrimitivesTokenFilter(): (
   token: TransformedToken,
 ) => boolean {
@@ -444,7 +442,8 @@ export function makeWebPrimitivesTokenFilter(): (
     fileFilter(token) &&
     Array.isArray(token.path) &&
     isWebTokenPath(token.path) &&
-    tokenType(token) !== 'color';
+    tokenType(token) !== 'color' &&
+    token.path[0] !== 'Heights';
 }
 
 interface BuildConfigOptions {
