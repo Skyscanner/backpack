@@ -90,7 +90,7 @@
   --bpk-private-chip-colour-border-default-off: rgba(255, 255, 255, 0.2);
   --bpk-private-chip-colour-border-on-contrast-off: #131d2b;
   --bpk-private-chip-colour-border-on-contrast-on: #131d2b;
-  --bpk-private-chip-colour-border-on-dark-dismissible-hover: #131d2b;
+  --bpk-private-chip-colour-border-on-dark-disimissible-hover: #131d2b;
   --bpk-private-chip-colour-border-on-dark-hover: #ffffff;
   --bpk-private-chip-colour-border-on-dark-off: rgba(255, 255, 255, 0.2);
   --bpk-private-chip-colour-stroke-off-on-canvas-contrast-new: rgba(255, 255, 255, 0);
@@ -100,13 +100,13 @@
   --bpk-private-chip-colour-text-on-image: #ffffff;
   --bpk-private-chip-colour-text-on-image-dismissible-icon: #bdc4cb;
   --bpk-private-chip-colour-text-on-dark: #ffffff;
-  --bpk-private-chip-colour-text-on-dark-dismissible-hover: #ffffff;
-  --bpk-private-chip-colour-text-on-dark-dismissible-icon: #bdc4cb;
+  --bpk-private-chip-colour-text-on-dark-dismisisble-hover: #ffffff;
+  --bpk-private-chip-colour-text-on-dark-dismisisble-icon: #bdc4cb;
   --bpk-private-chip-dimension-min-height-width: 2rem;
   --bpk-private-chip-dimension-radius: 0.5rem;
   --bpk-private-date-selector-cheapest-month-highlight: #ffffff;
   --bpk-private-date-selector-flexible-date-card: #243346;
-  --bpk-private-dimension-padding-vertical: 0;
+  --bpk-private-dimension-padding-veritcal: 0;
   --bpk-private-info-banner-default: #131d2b;
   --bpk-private-info-banner-on-contrast: #131d2b;
   --bpk-private-map-cluster-pin: #ffffff;
