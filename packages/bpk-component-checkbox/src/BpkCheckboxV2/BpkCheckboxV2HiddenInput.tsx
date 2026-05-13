@@ -18,8 +18,27 @@
 
 import { Checkbox } from '@ark-ui/react';
 
+export type BpkCheckboxV2HiddenInputProps = {
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
+};
+
 // Renders Ark's visually hidden native <input type="checkbox">.
 // Include when the checkbox is inside a <form> for native form submission.
-const BpkCheckboxV2HiddenInput = () => <Checkbox.HiddenInput />;
+// Accepts aria-* attributes so consumers can override the screen-reader
+// announcement when the visible <BpkCheckboxV2.Label> is missing or differs
+// from the desired accessible name.
+const BpkCheckboxV2HiddenInput = ({
+  'aria-describedby': ariaDescribedby,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
+}: BpkCheckboxV2HiddenInputProps = {}) => (
+  <Checkbox.HiddenInput
+    aria-describedby={ariaDescribedby}
+    aria-label={ariaLabel}
+    aria-labelledby={ariaLabelledby}
+  />
+);
 
 export default BpkCheckboxV2HiddenInput;

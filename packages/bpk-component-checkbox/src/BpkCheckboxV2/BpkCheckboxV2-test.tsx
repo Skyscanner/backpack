@@ -150,5 +150,63 @@ describe('BpkCheckboxV2', () => {
       const root = container.firstChild as HTMLElement;
       expect(root).toHaveAttribute('data-backpack-ds-component');
     });
+
+    it('forwards data-testid on Root to the outer label', () => {
+      render(<SimpleCheckbox data-testid="terms-checkbox" />);
+      expect(screen.getByTestId('terms-checkbox').tagName).toBe('LABEL');
+    });
+  });
+
+  describe('HiddenInput aria-* forwarding', () => {
+    it('forwards aria-label to the hidden input', () => {
+      render(
+        <BpkCheckboxV2.Root>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.HiddenInput aria-label="Save my searches to my account" />
+        </BpkCheckboxV2.Root>,
+      );
+      expect(
+        screen.getByRole('checkbox', { name: 'Save my searches to my account' }),
+      ).toBeInTheDocument();
+    });
+
+    it('forwards aria-labelledby to the hidden input', () => {
+      render(
+        <>
+          <span id="external-label">External title</span>
+          <BpkCheckboxV2.Root>
+            <BpkCheckboxV2.Control>
+              <BpkCheckboxV2.Indicator />
+            </BpkCheckboxV2.Control>
+            <BpkCheckboxV2.HiddenInput aria-labelledby="external-label" />
+          </BpkCheckboxV2.Root>
+        </>,
+      );
+      expect(screen.getByRole('checkbox')).toHaveAttribute(
+        'aria-labelledby',
+        'external-label',
+      );
+    });
+
+    it('forwards aria-describedby to the hidden input', () => {
+      render(
+        <>
+          <span id="external-help">Helpful description</span>
+          <BpkCheckboxV2.Root>
+            <BpkCheckboxV2.Control>
+              <BpkCheckboxV2.Indicator />
+            </BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Label>Accept terms</BpkCheckboxV2.Label>
+            <BpkCheckboxV2.HiddenInput aria-describedby="external-help" />
+          </BpkCheckboxV2.Root>
+        </>,
+      );
+      expect(screen.getByRole('checkbox')).toHaveAttribute(
+        'aria-describedby',
+        'external-help',
+      );
+    });
   });
 });
