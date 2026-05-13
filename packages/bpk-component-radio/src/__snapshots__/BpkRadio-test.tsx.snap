@@ -56,7 +56,6 @@ exports[`BpkRadio should render correctly when label is a node 1`] = `
   >
     <input
       aria-invalid="false"
-      aria-label="[object Object]"
       class="bpk-radio__input"
       name="radio"
       type="radio"

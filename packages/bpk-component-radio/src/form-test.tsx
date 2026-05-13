@@ -27,7 +27,7 @@ describe('BpkRadio form test', () => {
   it('should work as a form component in a form', async () => {
     render(
       <form data-testid="form">
-        <BpkRadio type="radio" name="radio" data-testid="myradio" />
+        <BpkRadio name="radio" label="Radio" data-testid="myradio" />
         <button type="submit">Submit</button>
       </form>,
     );
@@ -40,7 +40,9 @@ describe('BpkRadio form test', () => {
 
     expect(radio).toBeChecked();
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(
+      screen.getByTestId('form') as HTMLFormElement,
+    );
 
     expect(Object.fromEntries(formData.entries())).toEqual({ radio: 'on' });
   });
@@ -49,10 +51,15 @@ describe('BpkRadio form test', () => {
     const formValidation = jest.fn();
     const Wrap = () => (
       <form data-testid="form">
-        <BpkRadio type="radio" name="radio" value="One" data-testid="myradio" />
         <BpkRadio
-          type="radio"
           name="radio"
+          label="One"
+          value="One"
+          data-testid="myradio"
+        />
+        <BpkRadio
+          name="radio"
+          label="Two"
           value="Two"
           data-testid="myradio2"
         />

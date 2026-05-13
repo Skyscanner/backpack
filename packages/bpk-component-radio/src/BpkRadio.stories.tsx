@@ -21,7 +21,6 @@ import { Component } from 'react';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from '../../../.storybook/bpk-storybook-utils';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkRadio from './BpkRadio';
 
 import type { Meta } from '@storybook/react';
@@ -53,7 +52,7 @@ class GroupExample extends Component<{ valid?: boolean; white?: boolean }, { val
               id={city}
               name='group_example'
               label={city}
-              onChange={(event: any) => {
+              onChange={(event) => {
                 this.updateValue(event.target.value);
               }}
               value={city}
