@@ -23,6 +23,11 @@
 
 // Root — flex row container (renders as <label> via Ark)
 .bpk-checkbox-v2 {
+  // Anchor Ark's visually-hidden <input position:absolute> to the Root.
+  // Without this, the hidden input climbs the DOM to the nearest positioned
+  // ancestor (e.g. a fixed BpkDrawer), inflating that ancestor's scrollHeight
+  // by the cumulative offsets of every checkbox inside it.
+  position: relative;
   display: inline-flex;
   align-items: flex-start;
   cursor: pointer;
