@@ -52,7 +52,7 @@ class GroupExample extends Component<{ valid?: boolean; white?: boolean }, { val
               id={city}
               name='group_example'
               label={city}
-              onChange={(event: any) => {
+              onChange={(event) => {
                 this.updateValue(event.target.value);
               }}
               value={city}
