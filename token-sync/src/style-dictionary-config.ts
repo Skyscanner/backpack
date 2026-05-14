@@ -27,6 +27,13 @@ export const DARK_SELECTOR = ':root[data-theme="dark"]';
 export const LIGHT_OUTPUT_FILE = 'theme-backpack-light.css';
 export const DARK_OUTPUT_FILE = 'theme-backpack-dark.css';
 
+// Theme-independent primitives (Spacing, Radius, …) get their own file under
+// `:root` so consumers can import a single sheet without picking a theme.
+// Color and Heights primitives are intentionally excluded — see
+// `makeWebPrimitivesTokenFilter` for the rationale.
+export const PRIMITIVES_OUTPUT_FILE = 'primitives.css';
+export const PRIMITIVES_SELECTOR = ':root';
+
 export const PRIMITIVES_FILE = 'primitives.json';
 export const BACKPACK_LIGHT_FILE = 'backpack.light.json';
 export const BACKPACK_DARK_FILE = 'backpack.dark.json';
@@ -101,10 +108,11 @@ export interface CssNameCollision {
   sources: string[];
 }
 
-// Return every CSS name that two or more tokens collide on after `kebabBpkName`.
-// e.g. casing variants under the same parent (`Component.Badge` and
-// `Component.badge`) both kebab to `--bpk-private-badge-…`.
-export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
+// Walk a DTCG tree and map every leaf token's kebab-cased CSS name back to
+// the dotted DTCG paths that produce it. Multiple paths in the same tree can
+// share a CSS name when casing or punctuation differences kebab to the same
+// string (`Component.Badge` and `Component.badge` both → `private-badge-…`).
+function collectCssNamePaths(tree: unknown): Map<string, string[]> {
   const seen = new Map<string, string[]>();
 
   function walk(node: unknown, pathSegments: readonly string[]): void {
@@ -131,9 +139,43 @@ export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
   }
 
   walk(tree, []);
+  return seen;
+}
+
+// Return every CSS name that two or more tokens collide on after `kebabBpkName`.
+// e.g. casing variants under the same parent (`Component.Badge` and
+// `Component.badge`) both kebab to `private-badge-…` (without the `--bpk-` prefix).
+export function findCssNameCollisions(tree: unknown): CssNameCollision[] {
+  const collisions: CssNameCollision[] = [];
+  collectCssNamePaths(tree).forEach((sources, name) => {
+    if (sources.length > 1) {
+      collisions.push({ name, sources: sources.slice().sort() });
+    }
+  });
+  return collisions;
+}
+
+// Detects CSS name collisions across files (e.g. primitives.json and backpack.light.json
+// both producing `spacing-base`). Within-file collisions are handled by `findCssNameCollisions`.
+export function findCrossFileCssNameCollisions(
+  perFile: ReadonlyArray<{ filePath: string; tree: unknown }>,
+): CssNameCollision[] {
+  const acrossFiles = new Map<string, string[]>();
+  for (const { filePath, tree } of perFile) {
+    const fileLabel = path.basename(filePath);
+    collectCssNamePaths(tree).forEach((dottedPaths, cssName) => {
+      const tag = `${fileLabel}: ${dottedPaths[0]}`;
+      const existing = acrossFiles.get(cssName);
+      if (existing) {
+        existing.push(tag);
+      } else {
+        acrossFiles.set(cssName, [tag]);
+      }
+    });
+  }
 
   const collisions: CssNameCollision[] = [];
-  seen.forEach((sources, name) => {
+  acrossFiles.forEach((sources, name) => {
     if (sources.length > 1) {
       collisions.push({ name, sources: sources.slice().sort() });
     }
@@ -380,6 +422,30 @@ export function makeWebCssTokenFilter(
     isWebTokenPath(token.path);
 }
 
+// SD v5 preserves both `$type` (DTCG) and `type` (legacy) on transformed
+// tokens. Read whichever is present so the filter works regardless of how the
+// token entered the pipeline.
+function tokenType(token: TransformedToken): string | undefined {
+  if (typeof token.$type === 'string') return token.$type;
+  if (typeof token.type === 'string') return token.type;
+  return undefined;
+}
+
+// Filter for the standalone `primitives.css` output: keep Spacing and Radius
+// only. Colors are excluded (consumers should use semantic tokens). Heights are
+// excluded until there is a confirmed consumer need.
+export function makeWebPrimitivesTokenFilter(): (
+  token: TransformedToken,
+) => boolean {
+  const fileFilter = makeBackpackTokenFilter(PRIMITIVES_FILE);
+  return (token) =>
+    fileFilter(token) &&
+    Array.isArray(token.path) &&
+    isWebTokenPath(token.path) &&
+    tokenType(token) !== 'color' &&
+    token.path[0] !== 'Heights';
+}
+
 interface BuildConfigOptions {
   tokensDir: string;
   buildDir: string;
@@ -408,7 +474,34 @@ export function buildStyleDictionaryConfigs({
     buildPath,
   };
 
-  return semanticFileNames.map((semanticFile) => {
+  // Emit non-color primitives once (theme-independent), then one file per
+  // semantic theme. Primitives ship first to mirror the recommended consumer
+  // import order (primitives.css before any theme sheet).
+  const primitivesConfig = {
+    name: 'web-primitives',
+    config: {
+      source: [path.join(tokensDir, PRIMITIVES_FILE)],
+      platforms: {
+        css: {
+          ...sharedPlatformOptions,
+          files: [
+            {
+              destination: PRIMITIVES_OUTPUT_FILE,
+              format: 'css/variables',
+              filter: makeWebPrimitivesTokenFilter(),
+              options: {
+                selector: PRIMITIVES_SELECTOR,
+                outputReferences: false,
+                fileHeader: BPK_FILE_HEADER,
+              },
+            },
+          ],
+        },
+      },
+    },
+  };
+
+  const semanticConfigs = semanticFileNames.map((semanticFile) => {
     // backpack.light.json → "light"
     const themeName = path.basename(semanticFile, '.json').split('.').at(-1) ?? semanticFile;
     return {
@@ -440,6 +533,8 @@ export function buildStyleDictionaryConfigs({
       },
     };
   });
+
+  return [primitivesConfig, ...semanticConfigs];
 }
 
 // Map semantic file names to their output CSS file and selector.

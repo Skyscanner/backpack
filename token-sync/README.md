@@ -82,7 +82,8 @@ place depending on whether you're running locally or in CI.
 ## Stage 2 — DTCG → CSS
 
 [Style Dictionary](https://styledictionary.com/) v5 reads the DTCG files above
-and emits two CSS files — one per theme — to `token-sync/css/`.
+and emits one CSS file per theme plus a theme-independent primitives sheet to
+`token-sync/css/`.
 
 From the repo root, **after** running Stage 1:
 
@@ -94,11 +95,17 @@ Output:
 
 ```text
 token-sync/css/
+├─ primitives.css               # :root                    { --bpk-spacing-…: <value>; … }
 ├─ theme-backpack-light.css     # :root                    { --bpk-…: <light value>; }
 └─ theme-backpack-dark.css      # :root[data-theme="dark"] { --bpk-…: <dark value>;  }
 ```
 
 Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
+
+`primitives.css` carries Spacing and Radius only. Color primitives are
+excluded (semantic tokens are the public colour API). Heights are excluded
+until there is a confirmed consumer need. Import `primitives.css` once,
+alongside whichever theme sheets you use.
 
 ### Things worth knowing
 
@@ -111,12 +118,17 @@ Apply dark mode by setting `data-theme="dark"` on `<html>` or `<body>`.
 - **`Component` prefix is renamed to `private`.** `Component.Badge.Colour.bg-default`
   becomes `--bpk-private-badge-colour-bg-default`. The rename signals that these
   tokens are component internals — they ship in CSS but are not part of the
-  public semantic API consumers should target. If two tokens would collide on
-  the same CSS variable name after kebab-casing, the build refuses and tells you
-  which ones to rename in Figma.
+  public semantic API consumers should target. If two tokens collide on the same
+  CSS variable name after kebab-casing — whether within a single file or across
+  `primitives.css` and the per-theme files (both emit under `:root`) — the build
+  refuses and tells you which ones to rename in Figma.
+- **iOS/Android tokens are excluded from all CSS outputs.** Tokens whose path
+  contains a standalone `ios` or `android` segment (case-insensitive) are dropped.
+  They remain in the shared DTCG JSON for cross-platform parity.
 - **Non-`px` dimensions abort the build.** Every `$type: dimension` value must
   be `Xpx` (e.g. `"16px"`) or a DTCG alias; other units or bare numbers are
-  rejected so they can't be silently miscalculated during `px → rem` conversion.
+  rejected so they can't be silently miscalculated during `px → rem` conversion
+  (base: `1rem = 16px`).
 - **The CSS lives outside `token-sync/tokens/`** so Stage 1's directory wipe
   doesn't clobber it.
 
