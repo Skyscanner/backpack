@@ -5,6 +5,33 @@ Figma file into the Backpack codebase, in two stages:
 
 **Figma variables → DTCG JSON → CSS custom properties.**
 
+```mermaid
+flowchart LR
+    figma["Figma<br/>Primitives · Backpack"]
+
+    subgraph s1["tokens:fetch"]
+        fetch["Figma Variables REST API<br/>GET variables/local"]
+        xform["Transform → DTCG JSON"]
+        fetch --> xform
+    end
+
+    subgraph tokens["token-sync/tokens/"]
+        pj["primitives.json"]
+        bl["backpack.light.json"]
+        bd["backpack.dark.json"]
+    end
+
+    subgraph css["token-sync/css/"]
+        pc["primitives.css<br/>:root { }"]
+        lc["theme-backpack-light.css<br/>:root { }"]
+        dc["theme-backpack-dark.css<br/>:root[data-theme='dark'] { }"]
+    end
+
+    figma --> fetch
+    xform --> tokens
+    tokens -->|"tokens:build-css<br/>Style Dictionary v5"| css
+```
+
 > Requires a Figma **Enterprise** org. Non-Enterprise accounts get `403` even with a valid token.
 
 ## Setup
