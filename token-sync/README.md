@@ -118,12 +118,17 @@ alongside whichever theme sheets you use.
 - **`Component` prefix is renamed to `private`.** `Component.Badge.Colour.bg-default`
   becomes `--bpk-private-badge-colour-bg-default`. The rename signals that these
   tokens are component internals — they ship in CSS but are not part of the
-  public semantic API consumers should target. If two tokens would collide on
-  the same CSS variable name after kebab-casing, the build refuses and tells you
-  which ones to rename in Figma.
+  public semantic API consumers should target. If two tokens collide on the same
+  CSS variable name after kebab-casing — whether within a single file or across
+  `primitives.css` and the per-theme files (both emit under `:root`) — the build
+  refuses and tells you which ones to rename in Figma.
+- **iOS/Android tokens are excluded from all CSS outputs.** Tokens whose path
+  contains a standalone `ios` or `android` segment (case-insensitive) are dropped.
+  They remain in the shared DTCG JSON for cross-platform parity.
 - **Non-`px` dimensions abort the build.** Every `$type: dimension` value must
   be `Xpx` (e.g. `"16px"`) or a DTCG alias; other units or bare numbers are
-  rejected so they can't be silently miscalculated during `px → rem` conversion.
+  rejected so they can't be silently miscalculated during `px → rem` conversion
+  (base: `1rem = 16px`).
 - **The CSS lives outside `token-sync/tokens/`** so Stage 1's directory wipe
   doesn't clobber it.
 
