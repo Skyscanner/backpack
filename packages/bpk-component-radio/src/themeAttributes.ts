@@ -16,12 +16,4 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import themeAttributes from './themeAttributes';
-
-describe('themeAttributes', () => {
-  it('exports the expected attributes', () => {
-    expect(themeAttributes).toEqual(['radioCheckedColor']);
-  });
-});
+export default ['radioCheckedColor'];

@@ -31,6 +31,7 @@ export type BpkCheckboxV2CheckedState = boolean | 'indeterminate';
 export type BpkCheckboxV2RootProps = {
   children: ReactNode;
   checked?: BpkCheckboxV2CheckedState;
+  'data-testid'?: string;
   defaultChecked?: BpkCheckboxV2CheckedState;
   disabled?: boolean;
   id?: string;
@@ -44,6 +45,7 @@ export type BpkCheckboxV2RootProps = {
 const BpkCheckboxV2Root = ({
   checked,
   children,
+  'data-testid': dataTestId,
   defaultChecked,
   disabled = false,
   id,
@@ -56,6 +58,7 @@ const BpkCheckboxV2Root = ({
   <Checkbox.Root
     className={getClassName('bpk-checkbox-v2')}
     checked={checked}
+    data-testid={dataTestId}
     defaultChecked={defaultChecked}
     disabled={disabled}
     id={id}
