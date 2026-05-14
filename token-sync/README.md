@@ -16,9 +16,8 @@ flowchart LR
     end
 
     subgraph tokens["token-sync/tokens/"]
-        pj["primitives.json"]
-        bl["backpack.light.json"]
-        bd["backpack.dark.json"]
+        pj["primitives.json"] ~~~ mf["manifest.json"]
+        bl["backpack.light.json"] ~~~ bd["backpack.dark.json"]
     end
 
     subgraph css["token-sync/css/"]
