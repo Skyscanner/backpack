@@ -27,9 +27,20 @@ import STYLES from './BpkProgress.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-class ProgressContainer extends Component {
-  constructor() {
-    super();
+type ProgressContainerProps = {
+  small?: boolean;
+};
+
+type ProgressContainerState = {
+  progress: number;
+};
+
+class ProgressContainer extends Component<
+  ProgressContainerProps,
+  ProgressContainerState
+> {
+  constructor(props: ProgressContainerProps) {
+    super(props);
 
     this.state = {
       progress: 0,
@@ -63,16 +74,23 @@ class ProgressContainer extends Component {
   }
 }
 
-class SteppedProgressContainer extends Component {
-  constructor() {
-    super();
+type SteppedProgressContainerState = {
+  progress: number;
+};
+
+class SteppedProgressContainer extends Component<
+  {},
+  SteppedProgressContainerState
+> {
+  constructor(props: {}) {
+    super(props);
 
     this.state = {
       progress: 1,
     };
   }
 
-  setProgress = (progress) => {
+  setProgress = (progress: number) => {
     if (progress >= 1 && progress <= 5) {
       this.setState({ progress });
     }

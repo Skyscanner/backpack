@@ -16,12 +16,28 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import themeAttributes from './themeAttributes';
+import BpkProgress from './BpkProgress';
 
-describe('themeAttributes', () => {
-  it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual(['progressBarFillColor']);
+describe('BpkProgress accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <div>
+        <label id="label" htmlFor="progress">
+          Progress indicator
+        </label>
+        <BpkProgress
+          id="progress"
+          aria-labelledby="label"
+          min={0}
+          max={100}
+          value={25}
+        />
+      </div>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
