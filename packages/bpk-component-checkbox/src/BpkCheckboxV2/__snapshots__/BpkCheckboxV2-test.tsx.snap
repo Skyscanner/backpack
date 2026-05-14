@@ -41,6 +41,7 @@ exports[`BpkCheckboxV2 Description should render snapshot with title and descrip
     <input
       aria-invalid="false"
       aria-labelledby="checkbox::ra::label"
+      class="bpk-checkbox-v2__hidden-input"
       id="checkbox::ra::input"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
@@ -84,6 +85,7 @@ exports[`BpkCheckboxV2 Root should render correctly with default props 1`] = `
     <input
       aria-invalid="false"
       aria-labelledby="checkbox::r0::label"
+      class="bpk-checkbox-v2__hidden-input"
       id="checkbox::r0::input"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
@@ -128,6 +130,7 @@ exports[`BpkCheckboxV2 Root should render in checked state 1`] = `
       aria-invalid="false"
       aria-labelledby="checkbox::r1::label"
       checked=""
+      class="bpk-checkbox-v2__hidden-input"
       id="checkbox::r1::input"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
@@ -174,6 +177,7 @@ exports[`BpkCheckboxV2 Root should render in disabled state 1`] = `
     <input
       aria-invalid="false"
       aria-labelledby="checkbox::r2::label"
+      class="bpk-checkbox-v2__hidden-input"
       disabled=""
       id="checkbox::r2::input"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
@@ -218,6 +222,7 @@ exports[`BpkCheckboxV2 Root should render in indeterminate state 1`] = `
     <input
       aria-invalid="false"
       aria-labelledby="checkbox::r4::label"
+      class="bpk-checkbox-v2__hidden-input"
       id="checkbox::r4::input"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
@@ -264,6 +269,7 @@ exports[`BpkCheckboxV2 Root should render in invalid state 1`] = `
     <input
       aria-invalid="true"
       aria-labelledby="checkbox::r3::label"
+      class="bpk-checkbox-v2__hidden-input"
       id="checkbox::r3::input"
       style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; word-wrap: normal;"
       type="checkbox"
