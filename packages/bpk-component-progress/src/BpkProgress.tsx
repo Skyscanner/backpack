@@ -55,7 +55,7 @@ export type Props = Omit<NativeDivProps, 'className'> & {
   className?: string | null;
   onComplete?: (() => unknown) | null;
   onCompleteTransitionEnd?: (() => unknown) | null;
-  getValueText?: ((value: number, min: number, max: number) => unknown) | null;
+  getValueText?: ((value: number, min: number, max: number) => string) | null;
 };
 
 class BpkProgress extends Component<Props> {
@@ -124,7 +124,7 @@ class BpkProgress extends Component<Props> {
         className={classNames}
         role="progressbar"
         aria-valuetext={
-          getValueText ? (getValueText(value, min, max) as string) : undefined
+          getValueText ? getValueText(value, min, max) : undefined
         }
         aria-valuenow={value}
         aria-valuemin={min}
