@@ -26,6 +26,7 @@ import {
 import BpkButton from '../../../bpk-component-button';
 import BpkDrawer from '../../../bpk-component-drawer';
 import {
+  BpkBox,
   BpkFlex,
   BpkProvider,
   BpkSpacing,
@@ -182,10 +183,10 @@ const InsideDrawerExample = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div id="checkbox-drawer-container">
-      <div id="checkbox-drawer-pagewrap">
+    <BpkBox id="checkbox-drawer-container">
+      <BpkBox id="checkbox-drawer-pagewrap">
         <BpkButton onClick={() => setIsOpen(true)}>Open drawer</BpkButton>
-      </div>
+      </BpkBox>
       <BpkDrawer
         id="checkbox-inside-drawer"
         title="Drawer title"
@@ -216,7 +217,7 @@ const InsideDrawerExample = () => {
           </BpkCheckboxV2.Root>
         </BpkVStack>
       </BpkDrawer>
-    </div>
+    </BpkBox>
   );
 };
 
