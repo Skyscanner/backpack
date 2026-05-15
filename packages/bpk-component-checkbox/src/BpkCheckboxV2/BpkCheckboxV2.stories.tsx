@@ -200,7 +200,7 @@ const InsideDrawerExample = () => {
           document.getElementById('checkbox-drawer-pagewrap')
         }
       >
-        <BpkVStack gap={BpkSpacing.Base} align="f">
+        <BpkVStack gap={BpkSpacing.Base} align="flex-start">
           <BpkCheckboxV2.Root>
             <BpkCheckboxV2.Control>
               <BpkCheckboxV2.Indicator />
