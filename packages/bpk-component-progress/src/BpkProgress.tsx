@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { Component, type HTMLAttributes } from 'react';
 
 import clamp from 'lodash.clamp';
 
@@ -32,7 +29,7 @@ const getClassName = cssModules(STYLES);
 const isTransitionEndSupported = () =>
   !!(typeof window !== 'undefined' && 'TransitionEvent' in window);
 
-const renderSteps = (numberOfSteps) => {
+const renderSteps = (numberOfSteps: number) => {
   const steps = [];
   for (let i = 1; i <= numberOfSteps; i += 1) {
     const left = `${100 * (i / (numberOfSteps + 1))}%`;
@@ -47,42 +44,30 @@ const renderSteps = (numberOfSteps) => {
   return steps;
 };
 
-type Props = {
-  max: number,
-  min: number,
-  value: number,
-  stepped: boolean,
-  small: boolean,
-  className: ?string,
-  tabIndex: ?number,
-  onComplete: ?() => mixed,
-  onCompleteTransitionEnd: ?() => mixed,
-  getValueText: ?(number, number, number) => mixed,
-};
+type NativeDivProps = HTMLAttributes<HTMLDivElement>;
 
-const propTypes = {
-  max: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-  stepped: PropTypes.bool,
-  small: PropTypes.bool,
-  className: PropTypes.string,
-  onComplete: PropTypes.func,
-  onCompleteTransitionEnd: PropTypes.func,
-  getValueText: PropTypes.func,
-  tabIndex: PropTypes.number,
+export type Props = Omit<NativeDivProps, 'className'> & {
+  max: number;
+  min: number;
+  value: number;
+  stepped?: boolean;
+  small?: boolean;
+  className?: string | null;
+  onComplete?: (() => unknown) | null;
+  onCompleteTransitionEnd?: (() => unknown) | null;
+  getValueText?: ((value: number, min: number, max: number) => string) | null;
 };
-
-const defaultProps = {
-  className: null,
-  stepped: false,
-  small: false,
-  onComplete: () => null,
-  onCompleteTransitionEnd: () => null,
-  getValueText: null,
-}
 
 class BpkProgress extends Component<Props> {
+  static defaultProps = {
+    className: null,
+    stepped: false,
+    small: false,
+    onComplete: () => null,
+    onCompleteTransitionEnd: () => null,
+    getValueText: null,
+  };
+
   componentDidUpdate(previousProps: Props) {
     const { max, value } = this.props;
     if (
@@ -111,6 +96,8 @@ class BpkProgress extends Component<Props> {
       getValueText,
       max,
       min,
+      onComplete,
+      onCompleteTransitionEnd,
       small,
       stepped,
       value,
@@ -132,19 +119,17 @@ class BpkProgress extends Component<Props> {
     const percentage = 100 * (adjustedValue / (max - min));
     const numberOfSteps = stepped ? max - min - 1 : 0;
 
-    delete rest.onComplete;
-    delete rest.onCompleteTransitionEnd;
-
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <div
         className={classNames}
         role="progressbar"
-        aria-valuetext={getValueText ? getValueText(value, min, max) : null}
+        aria-valuetext={
+          getValueText ? getValueText(value, min, max) : undefined
+        }
         aria-valuenow={value}
         aria-valuemin={min}
         aria-valuemax={max}
-        tabIndex="0"
+        tabIndex={0}
         {...rest}
       >
         <div
@@ -156,14 +141,6 @@ class BpkProgress extends Component<Props> {
       </div>
     );
   }
-}
-
-BpkProgress.propTypes = {
-  ...propTypes,
-}
-
-BpkProgress.defaultProps = {
-  ...defaultProps,
 }
 
 export default BpkProgress;
