@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkProgress from './src/BpkProgress';
+import BpkProgress, { type Props as BpkProgressProps } from './src/BpkProgress';
 import themeAttributes from './src/themeAttributes';
 
 export default BpkProgress;
+export type { BpkProgressProps };
 export { themeAttributes };
