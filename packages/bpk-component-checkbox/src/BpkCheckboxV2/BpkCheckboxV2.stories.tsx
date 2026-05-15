@@ -16,15 +16,21 @@
  * limitations under the License.
  */
 
+import { useState } from 'react';
+
 import {
   borderRadiusFull,
   statusDangerSpotDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+import BpkButton from '../../../bpk-component-button';
+import BpkDrawer from '../../../bpk-component-drawer';
 import {
+  BpkBox,
   BpkFlex,
   BpkProvider,
   BpkSpacing,
+  BpkVStack,
 } from '../../../bpk-component-layout';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../../bpk-theming';
@@ -140,28 +146,80 @@ const InvalidExample = () => (
 const ThemedExample = () => (
   <BpkProvider>
     <BpkThemeProvider
-      theme={{ checkboxSelectedColor: statusDangerSpotDay, checkboxBorderRadius: borderRadiusFull }}
-      themeAttributes={[...checkboxSelectedColorThemeAttributes, ...checkboxBorderRadiusThemeAttributes]}
+      theme={{
+        checkboxSelectedColor: statusDangerSpotDay,
+        checkboxBorderRadius: borderRadiusFull,
+      }}
+      themeAttributes={[
+        ...checkboxSelectedColorThemeAttributes,
+        ...checkboxBorderRadiusThemeAttributes,
+      ]}
     >
       <BpkFlex gap={BpkSpacing.Base} direction="column">
         <BpkCheckboxV2.Root defaultChecked>
           <BpkCheckboxV2.Control>
             <BpkCheckboxV2.Indicator />
           </BpkCheckboxV2.Control>
-          <BpkCheckboxV2.Label>Custom colour + border-radius — checked</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.Label>
+            Custom colour + border-radius — checked
+          </BpkCheckboxV2.Label>
           <BpkCheckboxV2.HiddenInput />
         </BpkCheckboxV2.Root>
         <BpkCheckboxV2.Root checked="indeterminate" onCheckedChange={() => {}}>
           <BpkCheckboxV2.Control>
             <BpkCheckboxV2.Indicator />
           </BpkCheckboxV2.Control>
-          <BpkCheckboxV2.Label>Custom colour + border-radius — indeterminate</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.Label>
+            Custom colour + border-radius — indeterminate
+          </BpkCheckboxV2.Label>
           <BpkCheckboxV2.HiddenInput />
         </BpkCheckboxV2.Root>
       </BpkFlex>
     </BpkThemeProvider>
   </BpkProvider>
 );
+
+const InsideDrawerExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <BpkBox id="checkbox-drawer-container">
+      <BpkBox id="checkbox-drawer-pagewrap">
+        <BpkButton onClick={() => setIsOpen(true)}>Open drawer</BpkButton>
+      </BpkBox>
+      <BpkDrawer
+        id="checkbox-inside-drawer"
+        title="Drawer title"
+        closeLabel="Close drawer"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        renderTarget={() =>
+          document.getElementById('checkbox-drawer-container')
+        }
+        getApplicationElement={() =>
+          document.getElementById('checkbox-drawer-pagewrap')
+        }
+      >
+        <BpkVStack gap={BpkSpacing.Base} align="flex-start">
+          <BpkCheckboxV2.Root>
+            <BpkCheckboxV2.Control>
+              <BpkCheckboxV2.Indicator />
+            </BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Label>Inside drawer</BpkCheckboxV2.Label>
+            <BpkCheckboxV2.HiddenInput />
+          </BpkCheckboxV2.Root>
+          <BpkCheckboxV2.Root>
+            <BpkCheckboxV2.Control>
+              <BpkCheckboxV2.Indicator />
+            </BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Label>Inside drawer</BpkCheckboxV2.Label>
+            <BpkCheckboxV2.HiddenInput />
+          </BpkCheckboxV2.Root>
+        </BpkVStack>
+      </BpkDrawer>
+    </BpkBox>
+  );
+};
 
 const ComposedHertzExample = () => (
   <BpkProvider>
@@ -200,7 +258,13 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-checkbox-v2',
   component: BpkCheckboxV2.Root,
-  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
+  decorators: [
+    (Story: any) => (
+      <BpkProvider>
+        <Story />
+      </BpkProvider>
+    ),
+  ],
 } satisfies Meta;
 
 export default meta;
@@ -239,6 +303,10 @@ export const Themed = {
 
 export const ComposedHertz = {
   render: () => <ComposedHertzExample />,
+};
+
+export const InsideDrawer = {
+  render: () => <InsideDrawerExample />,
 };
 
 export const VisualTest = {

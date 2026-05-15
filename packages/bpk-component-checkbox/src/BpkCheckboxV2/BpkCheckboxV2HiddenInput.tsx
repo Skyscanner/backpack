@@ -18,6 +18,12 @@
 
 import { Checkbox } from '@ark-ui/react';
 
+import { cssModules } from '../../../bpk-react-utils';
+
+import STYLES from './BpkCheckboxV2.module.scss';
+
+const getClassName = cssModules(STYLES);
+
 export type BpkCheckboxV2HiddenInputProps = {
   'aria-label'?: string;
   'aria-labelledby'?: string;
@@ -35,6 +41,7 @@ const BpkCheckboxV2HiddenInput = ({
   'aria-labelledby': ariaLabelledby,
 }: BpkCheckboxV2HiddenInputProps = {}) => (
   <Checkbox.HiddenInput
+    className={getClassName('bpk-checkbox-v2__hidden-input')}
     aria-describedby={ariaDescribedby}
     aria-label={ariaLabel}
     aria-labelledby={ariaLabelledby}
