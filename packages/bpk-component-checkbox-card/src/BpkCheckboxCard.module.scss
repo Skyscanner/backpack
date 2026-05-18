@@ -147,12 +147,14 @@
       }
     }
 
+    // Touch chips replicate origin BpkPanel's `inset 2px + 0.2px border`
+    // combo for pixel parity (incl. origin's 1px width shift on selection).
     &[data-state='checked'] {
       box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
         tokens.$bpk-core-primary-day;
 
       @media (hover: none) and (pointer: coarse) {
-        box-shadow: inset 0 0 0 (4 * tokens.$bpk-border-size-sm)
+        border: (tokens.$bpk-one-pixel-rem * 0.2) solid
           tokens.$bpk-core-primary-day;
       }
     }
@@ -163,7 +165,7 @@
         tokens.$bpk-core-primary-day;
 
       @media (hover: none) and (pointer: coarse) {
-        box-shadow: inset 0 0 0 (4 * tokens.$bpk-border-size-sm)
+        border: (tokens.$bpk-one-pixel-rem * 0.2) solid
           tokens.$bpk-core-primary-day;
       }
     }
@@ -179,11 +181,6 @@
       outline-offset: 0;
       box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
         tokens.$bpk-text-link-day;
-
-      @media (hover: none) and (pointer: coarse) {
-        box-shadow: inset 0 0 0 (4 * tokens.$bpk-border-size-sm)
-          tokens.$bpk-text-link-day;
-      }
     }
   }
 
