@@ -119,26 +119,48 @@
   }
 
   &--cars {
-    // White background, border changes to primary color on hover/checked
+    // Cars uses inset box-shadow (not border) for the visual stroke. A
+    // border-box would add 2px to the chip's outer width and shift the
+    // absolute-positioned indicator down 1px; inset shadow occupies no
+    // layout space, so the chip's outer dimensions match content + padding
+    // exactly — pixel parity with origin BpkPanel-based chips, and never
+    // clipped by ancestor overflow: hidden (e.g. BpkMobileScrollContainer).
+    transition:
+      background-color tokens.$bpk-duration-sm ease-in-out,
+      box-shadow tokens.$bpk-duration-sm ease-in-out,
+      color tokens.$bpk-duration-sm ease-in-out;
+    border: none;
+    box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm tokens.$bpk-line-day;
+
     --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
-    --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
-    --bpk-checkbox-card-disabled-border-color: transparent;
+    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
 
     // Match BpkPanel border-radius used in car hire
     &#{&}--radius-rounded {
       border-radius: tokens.$bpk-border-radius-lg;
     }
 
-    --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-day};
-    --bpk-checkbox-card-hover-border-color: #{tokens.$bpk-core-primary-day};
-    --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
-    --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
-    --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-core-primary-day};
-    --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
+    // Hover (unchecked, non-disabled or loading): swap stroke colour to primary.
+    &:not([data-state='checked']):not([data-disabled]),
+    &:not([data-state='checked'])[data-loading] {
+      @include utils.bpk-hover {
+        box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
+          tokens.$bpk-core-primary-day;
+      }
+    }
 
-    // Checked: outer shadow adds 1px to simulate 2px border without layout shift
+    // Checked: 2px inset stroke, no layout shift.
     &[data-state='checked'] {
-      box-shadow: 0 0 0 tokens.$bpk-border-size-sm tokens.$bpk-core-primary-day;
+      box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
+        tokens.$bpk-core-primary-day;
+    }
+
+    // Disabled: drop the stroke (matches the previous transparent-border behaviour).
+    &[data-disabled]:not([data-loading]) {
+      box-shadow: none;
     }
   }
 

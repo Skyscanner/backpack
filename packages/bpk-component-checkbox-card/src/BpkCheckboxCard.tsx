@@ -20,7 +20,6 @@ import type { CSSProperties, ReactNode } from 'react';
 
 import { CheckboxHiddenInput } from '@ark-ui/react';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { BpkSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
@@ -34,7 +33,6 @@ import type { TextStyle } from '../../bpk-component-text/src/BpkText';
 import STYLES from './BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
-const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
 // ─── HiddenInput ─────────────────────────────────────────────────────────────
 
@@ -192,7 +190,7 @@ export type IndicatorProps = Record<string, never>;
 function Indicator(_props: IndicatorProps = {}) {
   return (
     <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden>
-      <AlignedTickCircleIcon />
+      <TickCircleIcon />
     </div>
   );
 }
