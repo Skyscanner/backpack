@@ -119,12 +119,8 @@
   }
 
   &--cars {
-    // Cars uses inset box-shadow (not border) for the visual stroke. A
-    // border-box would add 2px to the chip's outer width and shift the
-    // absolute-positioned indicator down 1px; inset shadow occupies no
-    // layout space, so the chip's outer dimensions match content + padding
-    // exactly — pixel parity with origin BpkPanel-based chips, and never
-    // clipped by ancestor overflow: hidden (e.g. BpkMobileScrollContainer).
+    // Inset box-shadow instead of border: outer width matches origin, never
+    // clipped by ancestor overflow:hidden (e.g. BpkMobileScrollContainer).
     transition:
       background-color tokens.$bpk-duration-sm ease-in-out,
       box-shadow tokens.$bpk-duration-sm ease-in-out,
@@ -143,7 +139,6 @@
       border-radius: tokens.$bpk-border-radius-lg;
     }
 
-    // Hover (unchecked, non-disabled or loading): swap stroke colour to primary.
     &:not([data-state='checked']):not([data-disabled]),
     &:not([data-state='checked'])[data-loading] {
       @include utils.bpk-hover {
@@ -152,15 +147,43 @@
       }
     }
 
-    // Checked: 2px inset stroke, no layout shift.
     &[data-state='checked'] {
       box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
         tokens.$bpk-core-primary-day;
+
+      @media (hover: none) and (pointer: coarse) {
+        box-shadow: inset 0 0 0 (4 * tokens.$bpk-border-size-sm)
+          tokens.$bpk-core-primary-day;
+      }
     }
 
-    // Disabled: drop the stroke (matches the previous transparent-border behaviour).
+    // Paint the checked stroke on touchstart so the transition doesn't lag.
+    &:active:not([data-disabled]):not([data-loading]) {
+      box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
+        tokens.$bpk-core-primary-day;
+
+      @media (hover: none) and (pointer: coarse) {
+        box-shadow: inset 0 0 0 (4 * tokens.$bpk-border-size-sm)
+          tokens.$bpk-core-primary-day;
+      }
+    }
+
     &[data-disabled]:not([data-loading]) {
       box-shadow: none;
+    }
+
+    // Inset focus ring: not clipped by overflow:hidden, not sticky outside
+    // chip on iOS after tap. Must come last so cascade puts focus highest.
+    &:has(:focus-visible) {
+      outline: none;
+      outline-offset: 0;
+      box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
+        tokens.$bpk-text-link-day;
+
+      @media (hover: none) and (pointer: coarse) {
+        box-shadow: inset 0 0 0 (4 * tokens.$bpk-border-size-sm)
+          tokens.$bpk-text-link-day;
+      }
     }
   }
 
