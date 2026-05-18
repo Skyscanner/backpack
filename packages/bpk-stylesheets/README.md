@@ -155,3 +155,14 @@ Defined in `font.scss`, `larken.scss`
 Don't forget to rebuild and commit `base.css` after you make changes to this package.
 
 To build the `base.css` file run `npm run build:stylesheets` in the root folder.
+
+`index.scss` depends on two sets of files that are gitignored and copied in at build time:
+
+- `normalize.scss` — copied from `node_modules/normalize.css/` by `npm run build:copy-normal_css`
+- `primitives.css`, `theme-backpack-light.css`, `theme-backpack-dark.css` — copied from `token-sync/css/` by `npm run build:copy-token-css`
+
+`npm run build` covers both via `run-s build:*` (alphabetical order). If you run `npm run build:stylesheets` or `npm run build:sass` standalone — for example after a fresh checkout, or after regenerating tokens with `npm run tokens:sync` — run the two copy steps first:
+
+```bash
+npm run build:copy-normal_css && npm run build:copy-token-css
+```
