@@ -1,11 +1,11 @@
 on:
   push:
     paths:
-      - packages/**/*.figma.tsx
+      - packages/backpack-web/**/*.figma.tsx
     branches: [main]
   pull_request:
     paths:
-      - packages/**/*.figma.tsx
+      - packages/backpack-web/**/*.figma.tsx
     branches: [main]
 
 permissions: {}

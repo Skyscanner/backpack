@@ -23,7 +23,7 @@
     "outDir": "dist"
   },
   "include": [
-    "packages",
+    "packages/backpack-web/src",
     "@types"
   ],
   "exclude": [
