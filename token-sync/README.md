@@ -177,5 +177,7 @@ default layout doesn't suit your build pipeline.
 ### Combined sync + build
 
 ```bash
-npm run tokens:sync
+npm run tokens:sync && npm run build:stylesheets
 ```
+
+`tokens:sync` regenerates `token-sync/css/`; `build:stylesheets` copies them into `bpk-stylesheets/` and rebuilds `base.css` so the new tokens reach the published bundle.
