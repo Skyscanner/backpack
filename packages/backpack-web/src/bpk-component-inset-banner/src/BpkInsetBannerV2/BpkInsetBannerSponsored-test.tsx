@@ -111,7 +111,7 @@ describe('BpkInsetBanner', () => {
     expect(screen.getByText('Consectetur adipiscing elit')).toBeInTheDocument();
   });
 
-  it('should not render an info icon when there is only one item in bottom sheet content', () => {
+  it('should not render view or info icons in bottom sheet items', () => {
     render(
       <BpkInsetBannerSponsored
         title="Lorem ipsum"
@@ -120,14 +120,15 @@ describe('BpkInsetBanner', () => {
           text: 'Sponsored',
           bottomSheetContent: [
             {
-              title: 'Single item title',
-              description: 'Single item description',
-            }
+              title: 'First item title',
+              description: 'First item description',
+            },
+            {
+              title: 'Second item title',
+              description: 'Second item description',
+            },
           ],
           bottomSheetTitle: 'About this advert',
-          closeBtnIcon: true,
-          labelTitle: true,
-          bottomSheetLabel: 'Info',
           buttonCloseLabel: 'Close',
         }}
         backgroundColor="#FFE300"
@@ -139,9 +140,47 @@ describe('BpkInsetBanner', () => {
     const ctaButton = screen.getByTestId('ctaBtn');
     fireEvent.click(ctaButton);
 
-    const infoIconContainers = screen.getAllByTestId('bottom-sheet-icon-container');
-    expect(infoIconContainers.length).toBe(1);
-    expect(screen.getByTestId('view-icon')).toBeInTheDocument();
+    expect(screen.queryByTestId('view-icon')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('info-icon')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('bottom-sheet-icon-container')).not.toBeInTheDocument();
+  });
+
+  it('should render a title-less first item followed by titled sections (DSA shape)', () => {
+    render(
+      <BpkInsetBannerSponsored
+        title="Lorem ipsum"
+        logo="https://content.skyscnr.com/m/49503c4388cb05ab/original/Skyland_Black_172x96.png"
+        callToAction={{
+          text: 'Sponsored',
+          bottomSheetContent: [
+            {
+              description: 'This advert was shown because you searched for flights.',
+            },
+            {
+              title: 'Based on your current search',
+              description: 'We use your current search to show relevant ads.',
+            },
+            {
+              title: 'Based on your past activity',
+              description: 'We may use your past searches to personalise ads.',
+            },
+          ],
+          bottomSheetTitle: 'About this advert',
+          buttonCloseLabel: 'Close',
+        }}
+        backgroundColor="#FFE300"
+        variant={VARIANT.onLight}
+        accessibilityLabel="Sponsored by Skyscanner"
+      />,
+    );
+
+    const ctaButton = screen.getByTestId('ctaBtn');
+    fireEvent.click(ctaButton);
+
+    expect(screen.getByText('This advert was shown because you searched for flights.')).toBeInTheDocument();
+    expect(screen.getByText('Based on your current search')).toBeInTheDocument();
+    expect(screen.getByText('Based on your past activity')).toBeInTheDocument();
+    expect(screen.queryByTestId('view-icon')).not.toBeInTheDocument();
     expect(screen.queryByTestId('info-icon')).not.toBeInTheDocument();
   });
 });

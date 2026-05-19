@@ -113,12 +113,6 @@
     flex-direction: row;
   }
 
-  &--bottom-sheet-icon {
-    display: flex;
-    fill: tokens.$bpk-font-color-base;
-    margin-inline-end: tokens.bpk-spacing-lg();
-  }
-
   &--bottom-sheet-text {
     display: flex;
     flex-direction: column;
