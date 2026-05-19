@@ -116,9 +116,8 @@ const BpkInsetBannerSponsored = ({
               closeOnScrimClick
               closeOnEscPressed
               paddingStyles={{
-                top: PADDING_TYPE.base,
                 start: PADDING_TYPE.lg,
-                bottom: PADDING_TYPE.base
+                bottom: PADDING_TYPE.base,
               }}
             >
               {callToAction.bottomSheetContent.map((item, index) => (
