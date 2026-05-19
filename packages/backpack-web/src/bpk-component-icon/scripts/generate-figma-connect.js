@@ -26,10 +26,10 @@
  * a single .figma.tsx file that maps every icon to its Figma component.
  *
  * Usage:
- *   FIGMA_ACCESS_TOKEN=<token> node packages/bpk-component-icon/scripts/generate-figma-connect.js
+ *   FIGMA_ACCESS_TOKEN=<token> node packages/backpack-web/src/bpk-component-icon/scripts/generate-figma-connect.js
  *
  * The generated file is written to:
- *   packages/bpk-component-icon/BpkIcon.figma.tsx
+ *   packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx
  */
 
 const fs = require('fs');
