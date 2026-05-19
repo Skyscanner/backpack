@@ -21,7 +21,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WrapperPlugin = require('wrapper-webpack-plugin');
 
-const postCssPlugins = require('../../scripts/webpack/postCssPlugins');
+const postCssPlugins = require('../../../../scripts/webpack/postCssPlugins');
 
 const TEXT = `
 Backpack - Skyscanner's Design System

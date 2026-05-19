@@ -25,7 +25,7 @@ import {
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../../../.storybook/bpk-storybook-utils';
+import { action } from '../../../../../.storybook/bpk-storybook-utils';
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
 import SmallFilterIcon from '../../bpk-component-icon/sm/filter';
