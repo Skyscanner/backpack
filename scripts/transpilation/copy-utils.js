@@ -22,7 +22,7 @@ const fs = require("fs");
 // eslint-disable-next-line no-console
 console.log('Copying bpk-mixins...');
 
-execSync(`cp -r packages/bpk-mixins dist/bpk-mixins`);
+execSync(`cp -r packages/backpack-web/src/bpk-mixins dist/bpk-mixins`);
 execSync(`rm -r dist/bpk-mixins/README.md`);
 
 // eslint-disable-next-line no-console
@@ -35,12 +35,12 @@ if (!fs.existsSync('dist/bpk-stylesheets')) {
   execSync(`mkdir dist/bpk-stylesheets`);
 }
 
-const styleFiles = execSync('find packages/bpk-stylesheets -name "*.scss" -o -name "*.js" -o -name "*.css" | grep -v  "webpack.config.babel.js" | grep -v "build.js"').toString()
+const styleFiles = execSync('find packages/backpack-web/src/bpk-stylesheets -name "*.scss" -o -name "*.js" -o -name "*.css" | grep -v  "webpack.config.babel.js" | grep -v "build.js"').toString()
   .split('\n')
   .filter((s) => s !== '');
 
 styleFiles.forEach((styleFile) => {
-  const component = styleFile.split('packages/bpk-stylesheets/')[1];
+  const component = styleFile.split('packages/backpack-web/src/bpk-stylesheets/')[1];
   execSync(`cp ${styleFile} dist/bpk-stylesheets/${component}`);
 })
 

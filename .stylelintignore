@@ -1,4 +1,4 @@
 node_modules
 **/*.css
-packages/bpk-stylesheets/normalize.scss
+packages/backpack-web/src/bpk-stylesheets/normalize.scss
 

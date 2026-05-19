@@ -18,11 +18,11 @@
 
 import { ArgTypes, Title } from '@storybook/addon-docs/blocks';
 
-import '../packages/bpk-stylesheets';
-import '../packages/bpk-stylesheets/font';
-import '../packages/bpk-stylesheets/larken';
+import '../packages/backpack-web/src/bpk-stylesheets';
+import '../packages/backpack-web/src/bpk-stylesheets/font';
+import '../packages/backpack-web/src/bpk-stylesheets/larken';
 
-import BpkRtlToggle from '../packages/bpk-component-rtl-toggle';
+import BpkRtlToggle from '../packages/backpack-web/src/bpk-component-rtl-toggle';
 
 import type { Preview } from '@storybook/react';
 
