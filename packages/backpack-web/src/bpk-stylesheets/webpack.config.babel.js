@@ -18,21 +18,11 @@
 
 const path = require('path');
 
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WrapperPlugin = require('wrapper-webpack-plugin');
 
 const postCssPlugins = require('../../../../scripts/webpack/postCssPlugins');
-
-// Inline postcss plugin: strips license/comment blocks from the
-// vendored token CSS files so they don't pile up inside base.css.
-// WrapperPlugin re-adds the single Backpack license header.
-const stripComments = {
-  postcssPlugin: 'strip-comments',
-  Once(root) {
-    root.walkComments((c) => c.remove());
-  },
-};
-stripComments.postcss = true;
 
 const TEXT = `
 Backpack - Skyscanner's Design System
@@ -52,7 +42,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 `;
 
-const licenseHeader = `/*
+// Use a `/*!` "important" comment so CssMinimizerPlugin (cssnano) preserves
+// it through minification.
+const licenseHeader = `/*!
 ${TEXT.replace(/^/gm, ' * ')}
  */`;
 
@@ -65,6 +57,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, ''),
     filename: 'base.js',
+  },
+
+  optimization: {
+    minimizer: ['...', new CssMinimizerPlugin()],
   },
 
   module: {
@@ -125,7 +121,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [...postCssPlugins(), stripComments],
+                plugins: [postCssPlugins],
               },
             },
           },
