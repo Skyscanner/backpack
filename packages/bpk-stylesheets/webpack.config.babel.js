@@ -19,10 +19,20 @@
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const postcssDiscardComments = require('postcss-discard-comments');
 const WrapperPlugin = require('wrapper-webpack-plugin');
 
 const postCssPlugins = require('../../scripts/webpack/postCssPlugins');
+
+// Inline postcss plugin: strips license/comment blocks from the
+// vendored token CSS files so they don't pile up inside base.css.
+// WrapperPlugin re-adds the single Backpack license header.
+const stripComments = {
+  postcssPlugin: 'strip-comments',
+  Once(root) {
+    root.walkComments((c) => c.remove());
+  },
+};
+stripComments.postcss = true;
 
 const TEXT = `
 Backpack - Skyscanner's Design System
@@ -115,7 +125,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [...postCssPlugins(), postcssDiscardComments()],
+                plugins: [...postCssPlugins(), stripComments],
               },
             },
           },
