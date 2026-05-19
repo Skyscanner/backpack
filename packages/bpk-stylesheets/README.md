@@ -156,13 +156,9 @@ Don't forget to rebuild and commit `base.css` after you make changes to this pac
 
 To build the `base.css` file run `npm run build:stylesheets` in the root folder.
 
-`index.scss` depends on two sets of files that are gitignored and copied in at build time:
+The webpack build depends on two sets of files that are gitignored and copied in at build time:
 
-- `normalize.scss` — copied from `node_modules/normalize.css/` by `npm run build:copy-normal_css`
-- `primitives.css`, `theme-backpack-light.css`, `theme-backpack-dark.css` — copied from `token-sync/css/` by `npm run build:copy-token-css`
+- `normalize.scss` — copied from `node_modules/normalize.css/` by `npm run build:copy-normal_css`. Imported via `@use` in `index.scss`.
+- `primitives.css`, `theme-backpack-light.css`, `theme-backpack-dark.css` — copied from `token-sync/css/` by `npm run copy:token-css`. Imported in `index.js` so they reach `base.css` through webpack's CSS pipeline (which strips their license headers via `postcss-discard-comments`); `index.scss` does not depend on them, so `build:sass` does not need them either.
 
-`npm run build` covers both via `run-s build:*` (alphabetical order). If you run `npm run build:stylesheets` or `npm run build:sass` standalone — for example after a fresh checkout, or after regenerating tokens with `npm run tokens:sync` — run the two copy steps first:
-
-```bash
-npm run build:copy-normal_css && npm run build:copy-token-css
-```
+`build:stylesheets` invokes `copy:token-css` automatically, so `npm run build` and `npm run build:stylesheets` both work standalone (including after a fresh checkout or after regenerating tokens with `npm run tokens:sync`). For `build:sass`, run `npm run build:copy-normal_css` first if `normalize.scss` isn't already vendored.

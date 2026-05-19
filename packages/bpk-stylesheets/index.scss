@@ -19,9 +19,6 @@
 @use '../bpk-mixins/tokens';
 @use '../bpk-mixins/utils';
 @use './normalize';
-@use './primitives.css';
-@use './theme-backpack-light.css';
-@use './theme-backpack-dark.css';
 
 // stylelint-disable-next-line selector-max-type
 html {

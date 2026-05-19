@@ -19,6 +19,7 @@
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const postcssDiscardComments = require('postcss-discard-comments');
 const WrapperPlugin = require('wrapper-webpack-plugin');
 
 const postCssPlugins = require('../../scripts/webpack/postCssPlugins');
@@ -114,7 +115,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [postCssPlugins],
+                plugins: [...postCssPlugins(), postcssDiscardComments()],
               },
             },
           },
