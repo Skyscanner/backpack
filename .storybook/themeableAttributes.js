@@ -18,48 +18,48 @@
 
 /* @flow */
 
-import { themeAttributes as badgeThemeAttributes } from '../packages/bpk-component-badge';
-import { themeAttributes as bannerAlertThemeAttributes } from '../packages/bpk-component-banner-alert';
-import { themeAttributes as barchartThemeAttributes } from '../packages/bpk-component-barchart';
-import { themeAttributes as blockquoteThemeAttributes } from '../packages/bpk-component-blockquote';
+import { themeAttributes as badgeThemeAttributes } from '../packages/backpack-web/src/bpk-component-badge';
+import { themeAttributes as bannerAlertThemeAttributes } from '../packages/backpack-web/src/bpk-component-banner-alert';
+import { themeAttributes as barchartThemeAttributes } from '../packages/backpack-web/src/bpk-component-barchart';
+import { themeAttributes as blockquoteThemeAttributes } from '../packages/backpack-web/src/bpk-component-blockquote';
 import {
   buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-} from '../packages/bpk-component-button';
-import { themeAttributes as calendarThemeAttributes } from '../packages/bpk-component-calendar';
-import { themeAttributes as checkboxThemeAttributes } from '../packages/bpk-component-checkbox';
-import { themeAttributes as chipThemeAttributes } from '../packages/bpk-component-chip';
-import { themeAttributes as datepickerThemeAttributes } from '../packages/bpk-component-datepicker';
-import { themeAttributes as drawerThemeAttributes } from '../packages/bpk-component-drawer';
-import { themeAttributes as fieldsetThemeAttributes } from '../packages/bpk-component-fieldset';
-import { themeAttributes as formValidationThemeAttributes } from '../packages/bpk-component-form-validation';
-import { themeAttributes as horizontalNavThemeAttributes } from '../packages/bpk-component-horizontal-nav';
-import { themeAttributes as inputThemeAttributes } from '../packages/bpk-component-input';
+} from '../packages/backpack-web/src/bpk-component-button';
+import { themeAttributes as calendarThemeAttributes } from '../packages/backpack-web/src/bpk-component-calendar';
+import { themeAttributes as checkboxThemeAttributes } from '../packages/backpack-web/src/bpk-component-checkbox';
+import { themeAttributes as chipThemeAttributes } from '../packages/backpack-web/src/bpk-component-chip';
+import { themeAttributes as datepickerThemeAttributes } from '../packages/backpack-web/src/bpk-component-datepicker';
+import { themeAttributes as drawerThemeAttributes } from '../packages/backpack-web/src/bpk-component-drawer';
+import { themeAttributes as fieldsetThemeAttributes } from '../packages/backpack-web/src/bpk-component-fieldset';
+import { themeAttributes as formValidationThemeAttributes } from '../packages/backpack-web/src/bpk-component-form-validation';
+import { themeAttributes as horizontalNavThemeAttributes } from '../packages/backpack-web/src/bpk-component-horizontal-nav';
+import { themeAttributes as inputThemeAttributes } from '../packages/backpack-web/src/bpk-component-input';
 import {
   linkAlternateThemeAttributes,
   themeAttributes as linkThemeAttributes,
-} from '../packages/bpk-component-link';
+} from '../packages/backpack-web/src/bpk-component-link';
 import {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
-} from '../packages/bpk-component-map';
-import { themeAttributes as modalThemeAttributes } from '../packages/bpk-component-modal';
-import { themeAttributes as navigationBarThemeAttributes } from '../packages/bpk-component-navigation-bar';
-import { themeAttributes as nudgerThemeAttributes } from '../packages/bpk-component-nudger';
-import { themeAttributes as paginationThemeAttributes } from '../packages/bpk-component-pagination';
-import { themeAttributes as popoverThemeAttributes } from '../packages/bpk-component-popover';
-import { themeAttributes as progressThemeAttributes } from '../packages/bpk-component-progress';
-import { themeAttributes as radioThemeAttributes } from '../packages/bpk-component-radio';
-import { themeAttributes as selectThemeAttributes } from '../packages/bpk-component-select';
-import { themeAttributes as skipLinkThemeAttributes } from '../packages/bpk-component-skip-link';
-import { themeAttributes as sliderThemeAttributes } from '../packages/bpk-component-slider';
-import { themeAttributes as spinnerThemeAttributes } from '../packages/bpk-component-spinner';
-import { themeAttributes as starRatingThemeAttributes } from '../packages/bpk-component-star-rating';
-import { themeAttributes as switchThemeAttributes } from '../packages/bpk-component-switch';
-import { themeAttributes as textareaThemeAttributes } from '../packages/bpk-component-textarea';
+} from '../packages/backpack-web/src/bpk-component-map';
+import { themeAttributes as modalThemeAttributes } from '../packages/backpack-web/src/bpk-component-modal';
+import { themeAttributes as navigationBarThemeAttributes } from '../packages/backpack-web/src/bpk-component-navigation-bar';
+import { themeAttributes as nudgerThemeAttributes } from '../packages/backpack-web/src/bpk-component-nudger';
+import { themeAttributes as paginationThemeAttributes } from '../packages/backpack-web/src/bpk-component-pagination';
+import { themeAttributes as popoverThemeAttributes } from '../packages/backpack-web/src/bpk-component-popover';
+import { themeAttributes as progressThemeAttributes } from '../packages/backpack-web/src/bpk-component-progress';
+import { themeAttributes as radioThemeAttributes } from '../packages/backpack-web/src/bpk-component-radio';
+import { themeAttributes as selectThemeAttributes } from '../packages/backpack-web/src/bpk-component-select';
+import { themeAttributes as skipLinkThemeAttributes } from '../packages/backpack-web/src/bpk-component-skip-link';
+import { themeAttributes as sliderThemeAttributes } from '../packages/backpack-web/src/bpk-component-slider';
+import { themeAttributes as spinnerThemeAttributes } from '../packages/backpack-web/src/bpk-component-spinner';
+import { themeAttributes as starRatingThemeAttributes } from '../packages/backpack-web/src/bpk-component-star-rating';
+import { themeAttributes as switchThemeAttributes } from '../packages/backpack-web/src/bpk-component-switch';
+import { themeAttributes as textareaThemeAttributes } from '../packages/backpack-web/src/bpk-component-textarea';
 
 const storybookAttributes = ['primaryColor', 'themeName', 'logoFillColor'];
 

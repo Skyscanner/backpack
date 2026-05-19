@@ -46,7 +46,7 @@ module.exports = {
         [
           'module-resolver',
           {
-            root: ['./packages'],
+            root: ['./packages/backpack-web/src'],
             alias: {
               '^@skyscanner/bpk-svgs/dist/js/(.+)': (stats) =>
                 `@skyscanner/bpk-svgs/dist/svgs/${stats[1]}.svg`,

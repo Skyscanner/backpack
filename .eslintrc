@@ -197,7 +197,7 @@
       }
     },
     {
-      "files": ["**/packages/bpk-component-modal/src/BpkModalV2/BpKModal-test.tsx", "**/packages/bpk-react-utils/src/BpkDialogWrapper/BpkDialogWrapper-test.tsx"],
+      "files": ["**/packages/backpack-web/src/bpk-component-modal/src/BpkModalV2/BpKModal-test.tsx", "**/packages/backpack-web/src/bpk-react-utils/src/BpkDialogWrapper/BpkDialogWrapper-test.tsx"],
       "rules": {
         "compat/compat": "off"
       }

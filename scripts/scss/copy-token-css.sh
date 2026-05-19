@@ -18,8 +18,8 @@ set -e
 
 printf "📋 Copying token-sync CSS files to bpk-stylesheets...\n"
 
-cp token-sync/css/primitives.css packages/bpk-stylesheets/primitives.css
-cp token-sync/css/theme-backpack-light.css packages/bpk-stylesheets/theme-backpack-light.css
-cp token-sync/css/theme-backpack-dark.css packages/bpk-stylesheets/theme-backpack-dark.css
+cp token-sync/css/primitives.css packages/backpack-web/src/bpk-stylesheets/primitives.css
+cp token-sync/css/theme-backpack-light.css packages/backpack-web/src/bpk-stylesheets/theme-backpack-light.css
+cp token-sync/css/theme-backpack-dark.css packages/backpack-web/src/bpk-stylesheets/theme-backpack-dark.css
 
 printf "✅  Token CSS files copied.\n"

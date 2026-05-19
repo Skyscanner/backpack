@@ -18,6 +18,6 @@ set -e
 
 printf "📋 Copying normal.css to new location...\n"
 
-cp packages/node_modules/normalize.css/normalize.css packages/bpk-stylesheets/normalize.scss
+cp packages/backpack-web/node_modules/normalize.css/normalize.css packages/backpack-web/src/bpk-stylesheets/normalize.scss
 
 printf "✅  New normal.scss generated. \n"
