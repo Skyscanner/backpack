@@ -21,9 +21,8 @@
     "allowJs": false
   },
   "include": [
-    "packages",
+    "packages/backpack-web/src",
     "@types",
-    "examples",
     "token-sync"
   ],
   "exclude": ["**/**/*.figma.tsx"]

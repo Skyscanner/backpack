@@ -20,7 +20,7 @@ const { Glob } = require('glob');
 
 const { compile } = require('./style-compiler');
 
-const DIR_GLOB = './{packages,examples}/bpk-*/**/[!_]*.scss';
+const DIR_GLOB = './packages/backpack-web/src/bpk-*/**/[!_]*.scss';
 
 const files = new Glob(DIR_GLOB, {});
 
