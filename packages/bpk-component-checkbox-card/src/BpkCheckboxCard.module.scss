@@ -126,12 +126,16 @@
       box-shadow tokens.$bpk-duration-sm ease-in-out,
       color tokens.$bpk-duration-sm ease-in-out;
     border: none;
-    box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm tokens.$bpk-line-day;
+    box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
+      var(--bpk-checkbox-card-default-border-color, #{tokens.$bpk-line-day});
 
     --bpk-checkbox-card-default-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-default-border-color: #{tokens.$bpk-line-day};
     --bpk-checkbox-card-hover-background-color: #{tokens.$bpk-canvas-day};
+    --bpk-checkbox-card-hover-border-color: #{tokens.$bpk-core-primary-day};
     --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
+    --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-core-primary-day};
     --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
 
     // Match BpkPanel border-radius used in car hire
@@ -143,7 +147,10 @@
     &:not([data-state='checked'])[data-loading] {
       @include utils.bpk-hover {
         box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
-          tokens.$bpk-core-primary-day;
+          var(
+            --bpk-checkbox-card-hover-border-color,
+            #{tokens.$bpk-core-primary-day}
+          );
       }
     }
 
@@ -151,22 +158,37 @@
     // combo for pixel parity (incl. origin's 1px width shift on selection).
     &[data-state='checked'] {
       box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
-        tokens.$bpk-core-primary-day;
+        var(
+          --bpk-checkbox-card-checked-border-color,
+          #{tokens.$bpk-core-primary-day}
+        );
 
       @media (hover: none) and (pointer: coarse) {
         border: (tokens.$bpk-one-pixel-rem * 0.2) solid
-          tokens.$bpk-core-primary-day;
+          var(
+            --bpk-checkbox-card-checked-border-color,
+            #{tokens.$bpk-core-primary-day}
+          );
       }
     }
 
     // Paint the checked stroke on touchstart so the transition doesn't lag.
+    // transition: none kills the parent box-shadow transition so border + shadow
+    // both appear instantly; without it the shadow would still animate in 200ms.
     &:active:not([data-disabled]):not([data-loading]) {
+      transition: none;
       box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
-        tokens.$bpk-core-primary-day;
+        var(
+          --bpk-checkbox-card-checked-border-color,
+          #{tokens.$bpk-core-primary-day}
+        );
 
       @media (hover: none) and (pointer: coarse) {
         border: (tokens.$bpk-one-pixel-rem * 0.2) solid
-          tokens.$bpk-core-primary-day;
+          var(
+            --bpk-checkbox-card-checked-border-color,
+            #{tokens.$bpk-core-primary-day}
+          );
       }
     }
 
