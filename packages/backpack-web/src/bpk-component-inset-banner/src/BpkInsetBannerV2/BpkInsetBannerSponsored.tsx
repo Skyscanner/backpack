@@ -21,7 +21,6 @@ import { surfaceHighlightDay } from '@skyscanner/bpk-foundations-web/tokens/base
 
 import BpkBottomSheet from '../../../bpk-component-bottom-sheet';
 import { PADDING_TYPE } from '../../../bpk-component-bottom-sheet/src/BpkBottomSheet';
-import ViewIcon from '../../../bpk-component-icon/lg/view';
 import InfoIcon from '../../../bpk-component-icon/sm/information-circle';
 import BpkImage from '../../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text/src/BpkText';
@@ -124,37 +123,27 @@ const BpkInsetBannerSponsored = ({
             >
               {callToAction.bottomSheetContent.map((item, index) => (
                 <div
-                  key={item.title}
+                  key={item.title ?? `section-${index}`}
                   className={getClassName(
                     'bpk-inset-banner--bottom-sheet-content',
                   )}
                 >
                   <div
                     className={getClassName(
-                      'bpk-inset-banner--bottom-sheet-icon',
-                    )}
-                    data-testid="bottom-sheet-icon-container"
-                  >
-                    {index === 0 ? (
-                      <ViewIcon height={24} width={24} data-testid="view-icon" />
-                    ) : (
-                      callToAction.bottomSheetContent.length > 1 && <InfoIcon height={24} width={24} data-testid="info-icon" />
-                    )}
-                  </div>
-                  <div
-                    className={getClassName(
                       'bpk-inset-banner--bottom-sheet-text',
                     )}
                   >
-                    <div
-                      className={getClassName(
-                        'bpk-inset-banner--bottom-sheet-title',
-                      )}
-                    >
-                      <BpkText textStyle={TEXT_STYLES.heading4}>
-                        {item.title}
-                      </BpkText>
-                    </div>
+                    {item.title && (
+                      <div
+                        className={getClassName(
+                          'bpk-inset-banner--bottom-sheet-title',
+                        )}
+                      >
+                        <BpkText textStyle={TEXT_STYLES.heading4}>
+                          {item.title}
+                        </BpkText>
+                      </div>
+                    )}
                     <div
                       className={getClassName(
                         'bpk-inset-banner--bottom-sheet-description',

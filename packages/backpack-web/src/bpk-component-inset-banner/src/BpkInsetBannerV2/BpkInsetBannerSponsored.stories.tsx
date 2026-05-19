@@ -205,8 +205,7 @@ const WithSingleBottomSheetItemExampleV2Light = () => (
       bottomSheetContent: [
         {
           title: 'Single Information Item',
-          description:
-            'This example only has one item in the bottom sheet content, so it should not display an info icon next to it.',
+          description: 'This example only has one item in the bottom sheet content.',
         },
       ],
       bottomSheetTitle: 'About this advert',
@@ -219,6 +218,45 @@ const WithSingleBottomSheetItemExampleV2Light = () => (
     variant={VARIANT.onLight}
     accessibilityLabel="Sponsored by Skyscanner"
   />
+);
+
+const WithDsaStyleBottomSheetExampleV2Light = () => (
+  <div id="bottom-sheet-container">
+    <div id="pagewrap">
+      <BpkInsetBannerSponsored
+        title="Exclusive Travel Deals"
+        subheadline="Sponsored by Skyland"
+        logo={logoDarkUrl}
+        callToAction={{
+          text: 'Sponsored',
+          bottomSheetContent: [
+            {
+              description:
+                'This advert was placed by Skyland via Skyscanner\'s advertising platform.',
+            },
+            {
+              title: 'Based on your current search',
+              description:
+                'We use your current search to show you relevant ads from our advertising partners.',
+            },
+            {
+              title: 'Based on your past activity',
+              description:
+                'We may use your past searches and browsing history to personalise the ads you see.',
+            },
+          ],
+          bottomSheetTitle: 'About this advert',
+          closeBtnIcon: true,
+          labelTitle: true,
+          bottomSheetLabel: 'Info',
+          buttonCloseLabel: 'Close',
+        }}
+        backgroundColor="#FFE300"
+        variant={VARIANT.onLight}
+        accessibilityLabel="Sponsored by Skyscanner"
+      />
+    </div>
+  </div>
 );
 
 export const SponsoredBannerWithCtaTextAndPopoverLight = {
@@ -243,4 +281,8 @@ export const SponsoredBannerWithCustomPopoverWidthAndMargins = {
 
 export const SponsoredBannerWithSingleBottomSheetItem = {
   render: () => <WithSingleBottomSheetItemExampleV2Light />,
+};
+
+export const SponsoredBannerWithDsaStyleBottomSheet = {
+  render: () => <WithDsaStyleBottomSheetExampleV2Light />,
 };

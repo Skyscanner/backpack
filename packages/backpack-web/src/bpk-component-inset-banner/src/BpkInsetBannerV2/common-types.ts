@@ -23,7 +23,7 @@ export const VARIANT = {
 type callToActionType = {
   text?: string;
   bottomSheetContent: Array<{
-    title: string;
+    title?: string;
     description: string;
   }>;
   bottomSheetTitle?: string;
