@@ -29,12 +29,12 @@ const rm = (path, options) =>
 gulp.task('copy', () =>
   gulp
     .src(`${ICONS_FOLDER_PATH}/**/*`)
-    .pipe(gulp.dest('./packages/bpk-component-spinner/src/spinners')),
+    .pipe(gulp.dest('./packages/backpack-web/src/bpk-component-spinner/src/spinners')),
 );
 
 gulp.task('clean', () =>
   Promise.all([
-    rm('./packages/bpk-component-spinner/src/spinners', { force: true, recursive: true }),
+    rm('./packages/backpack-web/src/bpk-component-spinner/src/spinners', { force: true, recursive: true }),
   ]),
 );
 gulp.task('generateSpinners', gulp.series('clean', 'copy'));
