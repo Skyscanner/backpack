@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import packageFile from '../package.json';
+import packageFile from '../../package.json';
 
 describe('Check version of react-autosuggest', () => {
   it('should not be v10 or higher due to compatibility issues with react version < 16.3', () => {
