@@ -87,9 +87,24 @@ token-sync/tokens/
 └─ manifest.json        # metadata: counts, roles, generatedAt
 ```
 
-A manually-triggered workflow at `.github/workflows/sync-figma-variables.yml` runs the same
-command in CI; trigger it from **Actions → Sync Figma variables → Run workflow**. It reads the
-two repo secrets from step 2.
+A scheduled workflow at `.github/workflows/sync-figma-variables.yml` runs the same two-stage
+sync in CI every week. It can also be triggered manually from
+**Actions → Sync Figma variables → Run workflow**, with an optional file key override for testing.
+It reads the Figma secrets from step 2, plus the `GH_APP_ID` repository variable and
+`GH_APP_PRIVATE_KEY` secret for branch and pull request automation.
+
+After fetching from Figma, the workflow checks `token-sync/tokens/` before building CSS. If there are
+no token changes, or the only change is `manifest.json`'s `generatedAt` metadata, the workflow exits
+cleanly without running the CSS build or creating a pull request.
+
+When generated output changes under `token-sync/tokens/` or `token-sync/css/`, the workflow closes
+any existing open `figma-token-sync/*` pull request, then creates a fresh
+`figma-token-sync/<timestamp>-<run-id>` branch and opens one pull request against `main`. Because the
+fresh branch is generated from the latest Figma state against `main`, it includes any still-unmerged
+token changes from previous sync runs. The pull request is labelled `minor` when the token diff only
+adds new tokens, and `major` when existing token paths are changed, removed, or renamed. If release
+label classification fails, the pull request defaults to `major` for review. Figma API or Style
+Dictionary failures fail the workflow at the failing step.
 
 ### How it works
 
