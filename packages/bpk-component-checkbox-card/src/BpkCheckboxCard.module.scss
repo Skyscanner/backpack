@@ -156,8 +156,12 @@
 
     // Touch chips replicate origin BpkPanel's `inset 2px + 0.2px border`
     // combo for pixel parity (incl. origin's 1px width shift on selection).
+    // The 0.2 coefficient has no matching foundations token (smallest is
+    // $bpk-border-size-sm = 1px); kept for visual parity with the legacy
+    // hairline. To migrate to a token, foundations would need a hairline
+    // entry first.
     &[data-state='checked'] {
-      box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
+      box-shadow: inset 0 0 0 tokens.$bpk-border-size-lg
         var(
           --bpk-checkbox-card-checked-border-color,
           #{tokens.$bpk-core-primary-day}
@@ -177,7 +181,7 @@
     // both appear instantly; without it the shadow would still animate in 200ms.
     &:active:not([data-disabled]):not([data-loading]) {
       transition: none;
-      box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
+      box-shadow: inset 0 0 0 tokens.$bpk-border-size-lg
         var(
           --bpk-checkbox-card-checked-border-color,
           #{tokens.$bpk-core-primary-day}
@@ -196,13 +200,18 @@
       box-shadow: none;
     }
 
-    // Inset focus ring: not clipped by overflow:hidden, not sticky outside
-    // chip on iOS after tap. Must come last so cascade puts focus highest.
+    // outline:none is unconditional — kills the base ring so iOS sticky focus
+    // doesn't paint a 4px halo outside the chip. The inset shadow is gated on
+    // non-touch only: origin BpkPanel never showed a focus ring on touch, and
+    // doing so here would override the selected stroke for sticky-focus chips.
     &:has(:focus-visible) {
       outline: none;
       outline-offset: 0;
-      box-shadow: inset 0 0 0 (2 * tokens.$bpk-border-size-sm)
-        tokens.$bpk-text-link-day;
+
+      @media (hover: hover) and (pointer: fine) {
+        box-shadow: inset 0 0 0 tokens.$bpk-border-size-lg
+          tokens.$bpk-text-link-day;
+      }
     }
   }
 
