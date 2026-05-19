@@ -376,6 +376,7 @@ const WithCustomSendButtonExample = () => {
 
 const meta = {
   title: 'bpk-component-chatbot-input',
+  component: BpkChatbotInput.Input,
   decorators: [
     (Story: any) => (
       <BpkProvider>
