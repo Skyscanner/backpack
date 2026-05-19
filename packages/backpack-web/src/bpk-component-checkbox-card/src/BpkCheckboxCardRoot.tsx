@@ -21,7 +21,6 @@ import { useMemo } from 'react';
 
 import { CheckboxRoot } from '@ark-ui/react';
 
-import { withButtonAlignment } from '../../bpk-component-icon';
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -33,7 +32,6 @@ import type { CheckboxCardVariant, CheckboxCardRadius } from './common-types';
 import STYLES from './BpkCheckboxCard.module.scss';
 
 const getClassName = cssModules(STYLES);
-const AlignedTickCircleIcon = withButtonAlignment(TickCircleIcon);
 
 export type RootProps = {
   /**
@@ -188,7 +186,7 @@ export function Root({
         >
           {variant === CHECKBOX_CARD_VARIANTS.cars && (
             <div className={getClassName('bpk-checkbox-card-indicator')} aria-hidden>
-              <AlignedTickCircleIcon />
+              <TickCircleIcon />
             </div>
           )}
           {children}
