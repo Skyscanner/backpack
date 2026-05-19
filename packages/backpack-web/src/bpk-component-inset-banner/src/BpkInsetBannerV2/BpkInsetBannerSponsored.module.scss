@@ -109,7 +109,7 @@
 
   &--bottom-sheet-content {
     display: flex;
-    padding-bottom: tokens.bpk-spacing-xl();
+    padding-bottom: tokens.bpk-spacing-lg();
     flex-direction: row;
   }
 
@@ -119,7 +119,7 @@
   }
 
   &--bottom-sheet-title {
-    margin-bottom: tokens.bpk-spacing-md();
+    margin-bottom: tokens.bpk-spacing-sm();
     color: tokens.$bpk-text-on-light-day;
   }
 

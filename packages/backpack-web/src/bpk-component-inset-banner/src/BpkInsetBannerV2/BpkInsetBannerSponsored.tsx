@@ -139,7 +139,7 @@ const BpkInsetBannerSponsored = ({
                           'bpk-inset-banner--bottom-sheet-title',
                         )}
                       >
-                        <BpkText textStyle={TEXT_STYLES.heading4}>
+                        <BpkText textStyle={TEXT_STYLES.heading5}>
                           {item.title}
                         </BpkText>
                       </div>
