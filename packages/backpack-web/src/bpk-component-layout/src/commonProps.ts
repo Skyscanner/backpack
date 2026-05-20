@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { AriaAttributes, AriaRole, ElementType, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
@@ -112,6 +112,15 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   overflowX?: BpkResponsiveValue<BpkOverflowValue>;
   overflowY?: BpkResponsiveValue<BpkOverflowValue>;
   zIndex?: BpkZIndexValue;
+
+  // Polymorphic rendering — allows changing the underlying HTML element
+  as?: ElementType;
+
+  // Opacity — CSS opacity value (0–1)
+  opacity?: number;
+
+  // Text direction — for RTL/LTR content
+  dir?: 'ltr' | 'rtl' | 'auto';
 
   // Testing & automation attributes
   'data-testid'?: string;
