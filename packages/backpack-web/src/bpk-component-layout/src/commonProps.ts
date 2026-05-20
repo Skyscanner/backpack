@@ -119,9 +119,6 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   // Opacity — CSS opacity value (0–1)
   opacity?: number;
 
-  // Text direction — for RTL/LTR content
-  dir?: 'ltr' | 'rtl' | 'auto';
-
   // Testing & automation attributes
   'data-testid'?: string;
   'data-cy'?: string;

@@ -378,23 +378,4 @@ describe('BpkBox', () => {
     });
   });
 
-  describe('dir prop', () => {
-    it('sets dir="rtl" attribute on the DOM element', () => {
-      const { container } = render(
-        <BpkProvider>
-          <BpkBox dir="rtl">RTL content</BpkBox>
-        </BpkProvider>,
-      );
-      expect(container.querySelector('div')).toHaveAttribute('dir', 'rtl');
-    });
-
-    it('sets dir="ltr" attribute on the DOM element', () => {
-      const { container } = render(
-        <BpkProvider>
-          <BpkBox dir="ltr">LTR content</BpkBox>
-        </BpkProvider>,
-      );
-      expect(container.querySelector('div')).toHaveAttribute('dir', 'ltr');
-    });
-  });
 });
