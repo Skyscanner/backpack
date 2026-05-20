@@ -30,57 +30,7 @@ import type {
 } from '@chakra-ui/react';
 
 
-/**
- * Layout-level event props that should not be exposed on layout components.
- * onClick is handled via BpkCommonLayoutProps; onFocus/onBlur are reintroduced
- * on BpkBoxProps only.
- */
-type LayoutEventProps =
-  | 'onMouseEnter'
-  | 'onMouseLeave'
-  | 'onMouseOver'
-  | 'onMouseOut'
-  | 'onMouseDown'
-  | 'onMouseUp'
-  | 'onFocus'
-  | 'onBlur'
-  | 'onKeyDown'
-  | 'onKeyUp'
-  | 'onKeyPress';
 
-/**
- * Shorthand props from the underlying layout system that we do NOT expose on
- * Backpack layout components. These mostly mirror longer-form spacing,
- * sizing and visual props that we already model explicitly via
- * BpkCommonLayoutProps and BpkFlexGridProps.
- */
-type DisallowedShorthandProps =
-  // Spacing shorthands
-  | 'p'
-  | 'pt'
-  | 'pr'
-  | 'pb'
-  | 'pl'
-  | 'px'
-  | 'py'
-  | 'm'
-  | 'mt'
-  | 'mr'
-  | 'mb'
-  | 'ml'
-  | 'mx'
-  | 'my'
-  // Size shorthands
-  | 'w'
-  | 'h'
-  | 'minW'
-  | 'maxW'
-  | 'minH'
-  | 'maxH'
-  // Visual shorthands that map to props we have intentionally excluded
-  | 'bg'
-  | 'rounded'
-  | 'shadow';
 
 /**
  * Flexbox & grid layout props that we explicitly support on Backpack layout
@@ -162,28 +112,11 @@ type BpkBoxResponsiveLayoutProps = {
 type BpkBoxResponsiveLayoutPropKeys = keyof BpkBoxResponsiveLayoutProps;
 
 /**
- * Base type that removes common layout props, reserved props (className,
- * children) and all layout-level event props from Chakra UI props.
- *
- * These will be replaced with Backpack-specific types.
- */
-export type RemoveCommonProps<T> = Omit<
-  T,
-  | keyof BpkCommonLayoutProps
-  | 'className'
-  | 'children'
-  | LayoutEventProps
-  | FlexGridPropKeys
-  | DisallowedShorthandProps
->;
-
-/**
- * Component-specific props for BpkBox
- * Includes all Box props except those in BpkCommonLayoutProps
+ * Component-specific props for BpkBox.
+ * Explicit allowlist — does NOT inherit from Chakra BoxProps.
  */
 export interface BpkBoxSpecificProps
-  extends Omit<RemoveCommonProps<BoxProps>, BpkBoxResponsiveLayoutPropKeys>,
-    BpkBoxResponsiveLayoutProps,
+  extends BpkBoxResponsiveLayoutProps,
     Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {}
 
 /**
@@ -258,7 +191,7 @@ export type BpkVesselProps = {
  * Component-specific props for BpkFlex
  * Includes all Flex props except those in BpkCommonLayoutProps
  */
-export interface BpkFlexSpecificProps extends RemoveCommonProps<FlexProps> {
+export interface BpkFlexSpecificProps {
   direction?: BpkResponsiveValue<FlexProps['flexDirection']>;
   justify?: BpkResponsiveValue<FlexProps['justifyContent']>;
   align?: BpkResponsiveValue<FlexProps['alignItems']>;
@@ -281,7 +214,7 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
  * Component-specific props for BpkGrid
  * Includes all Grid props except those in BpkCommonLayoutProps
  */
-export interface BpkGridSpecificProps extends RemoveCommonProps<GridProps> {
+export interface BpkGridSpecificProps {
   justify?: BpkResponsiveValue<GridProps['justifyContent']>;
   align?: BpkResponsiveValue<GridProps['alignItems']>;
   templateColumns?: BpkResponsiveValue<GridProps['gridTemplateColumns']>;
@@ -309,7 +242,7 @@ export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps
  * Component-specific props for BpkGridItem
  * Includes all GridItem props except those in BpkCommonLayoutProps
  */
-export interface BpkGridItemSpecificProps extends RemoveCommonProps<GridItemProps> {
+export interface BpkGridItemSpecificProps {
   area?: GridItemProps['area'];
   colEnd?: GridItemProps['colEnd'];
   colStart?: GridItemProps['colStart'];
@@ -341,14 +274,12 @@ type BpkStackOptions = {
 
 /**
  * Component-specific props for BpkStack
- * Includes all Stack props except those in BpkCommonLayoutProps
  * Overrides StackOptions to support BpkResponsiveValue.
  * `alignItems` and `justifyContent` are accepted as semantic aliases for `align` and `justify`.
  * If both are provided, `align`/`justify` take precedence.
  */
 export interface BpkStackSpecificProps
-  extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
-    BpkStackOptions,
+  extends BpkStackOptions,
     Omit<BpkFlexGridProps, 'alignItems' | 'justifyContent'> {
   /** Alias for `align`. Maps to CSS `align-items`. Responsive — replaces the non-responsive BpkFlexGridProps.alignItems. */
   alignItems?: BpkStackOptions['align'];
