@@ -31,7 +31,7 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
+export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
   ({ backgroundColor, children, color, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
     const classNames = (color || backgroundColor)

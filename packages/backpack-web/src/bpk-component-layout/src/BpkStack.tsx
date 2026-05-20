@@ -31,7 +31,7 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+export const BpkStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
   const resolvedAlign = align ?? alignItems;
   const resolvedJustify = justify ?? justifyContent;
   const processedProps = processBpkComponentProps({
@@ -56,7 +56,7 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alig
 
 BpkStack.displayName = 'BpkStack';
 
-export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+export const BpkHStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
   const resolvedAlign = align ?? alignItems;
   const resolvedJustify = justify ?? justifyContent;
   const processedProps = processBpkComponentProps({
@@ -81,7 +81,7 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, ali
 
 BpkHStack.displayName = 'BpkHStack';
 
-export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+export const BpkVStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
   const resolvedAlign = align ?? alignItems;
   const resolvedJustify = justify ?? justifyContent;
   const processedProps = processBpkComponentProps({

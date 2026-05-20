@@ -31,7 +31,7 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
+export const BpkFlex = forwardRef<HTMLElement, BpkFlexProps>(
   ({ align, backgroundColor, basis, children, color, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkFlex',

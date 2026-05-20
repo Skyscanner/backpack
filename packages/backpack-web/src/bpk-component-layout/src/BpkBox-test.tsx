@@ -338,22 +338,36 @@ describe('BpkBox', () => {
   });
 
   describe('opacity prop', () => {
-    it('renders with opacity without errors', () => {
-      const { container } = render(
+    it('forwards opacity to Chakra — produces different output than no opacity', () => {
+      const { container: withOpacity } = render(
         <BpkProvider>
           <BpkBox opacity={0.5}>Faded content</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      const { container: withoutOpacity } = render(
+        <BpkProvider>
+          <BpkBox>Default content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withOpacity.querySelector('div')?.className).not.toBe(
+        withoutOpacity.querySelector('div')?.className,
+      );
     });
 
-    it('renders with opacity={0}', () => {
-      const { container } = render(
+    it('forwards different opacity values as distinct rendered output', () => {
+      const { container: halfOpacity } = render(
+        <BpkProvider>
+          <BpkBox opacity={0.5}>Faded content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: zeroOpacity } = render(
         <BpkProvider>
           <BpkBox opacity={0}>Hidden content</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(halfOpacity.querySelector('div')?.className).not.toBe(
+        zeroOpacity.querySelector('div')?.className,
+      );
     });
   });
 
