@@ -31,8 +31,8 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
+export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+  const processedProps = processBpkComponentProps({ ...props, align: align ?? alignItems, justify: justify ?? justifyContent }, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -50,8 +50,8 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundC
 
 BpkStack.displayName = 'BpkStack';
 
-export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
+export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+  const processedProps = processBpkComponentProps({ ...props, align: align ?? alignItems, justify: justify ?? justifyContent }, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -69,8 +69,8 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ background
 
 BpkHStack.displayName = 'BpkHStack';
 
-export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ backgroundColor, children, color, ...props }, ref) => {
-  const processedProps = processBpkComponentProps(props, { component: 'BpkStack' });
+export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+  const processedProps = processBpkComponentProps({ ...props, align: align ?? alignItems, justify: justify ?? justifyContent }, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',

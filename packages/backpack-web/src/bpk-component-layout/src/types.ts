@@ -342,12 +342,19 @@ type BpkStackOptions = {
 /**
  * Component-specific props for BpkStack
  * Includes all Stack props except those in BpkCommonLayoutProps
- * Overrides StackOptions to support BpkResponsiveValue
+ * Overrides StackOptions to support BpkResponsiveValue.
+ * `alignItems` and `justifyContent` are accepted as semantic aliases for `align` and `justify`.
+ * If both are provided, `align`/`justify` take precedence.
  */
 export interface BpkStackSpecificProps
   extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
     BpkStackOptions,
-    BpkFlexGridProps {}
+    BpkFlexGridProps {
+  /** Alias for `align`. Maps to CSS `align-items`. */
+  alignItems?: BpkStackOptions['align'];
+  /** Alias for `justify`. Maps to CSS `justify-content`. */
+  justifyContent?: BpkStackOptions['justify'];
+}
 
 /**
  * Props for BpkStack component
