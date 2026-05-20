@@ -336,4 +336,65 @@ describe('BpkBox', () => {
       expect(container.querySelector('div')).toBeInTheDocument();
     });
   });
+
+  describe('opacity prop', () => {
+    it('renders with opacity without errors', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox opacity={0.5}>Faded content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with opacity={0}', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox opacity={0}>Hidden content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+  });
+
+  describe('as prop', () => {
+    it('renders as a different HTML element when as prop is provided', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox as="section">Section content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('section')).toBeInTheDocument();
+      expect(container.querySelector('div')).not.toBeInTheDocument();
+    });
+
+    it('renders as a nav element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox as="nav">Nav content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('nav')).toBeInTheDocument();
+    });
+  });
+
+  describe('dir prop', () => {
+    it('sets dir="rtl" attribute on the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox dir="rtl">RTL content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('dir', 'rtl');
+    });
+
+    it('sets dir="ltr" attribute on the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox dir="ltr">LTR content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('dir', 'ltr');
+    });
+  });
 });
