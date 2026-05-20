@@ -17,7 +17,7 @@
  */
 /* @flow strict */
 
-import { cssModules } from '../../../packages/backpack-web/src/bpk-react-utils';
+import { cssModules } from './cssModules';
 
 import STYLES from './BpkDarkExampleWrapper.module.scss';
 

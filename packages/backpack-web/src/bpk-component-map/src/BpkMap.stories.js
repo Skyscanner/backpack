@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import { Component, useRef, useState } from 'react';
 
+import { action } from 'bpk-storybook-utils';
+
 import BpkMap, {
   BpkOverlayView,
   BpkIconMarker,
@@ -27,7 +29,6 @@ import BpkMap, {
   withGoogleMapsScript,
   BpkPriceMarkerButton,
 } from "..";
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
 import { withRtlSupport } from '../../bpk-component-icon';
 import AirportsIconSm from '../../bpk-component-icon/sm/airports';
 import FoodIconSm from '../../bpk-component-icon/sm/food';
