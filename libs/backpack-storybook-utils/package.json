@@ -6,9 +6,6 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "exports": {
-    ".": {
-      "types": "./index.js",
-      "default": "./index.js"
-    }
+    ".": "./index.js"
   }
 }
