@@ -147,6 +147,7 @@ export const usePageScrollSync = ({
       return undefined;
     }
 
+    let observer: ResizeObserver | null = null;
     const tryScroll = () => {
       if (hasInitialScrolled.current) return;
       if (container.clientWidth === 0) return;
@@ -161,6 +162,7 @@ export const usePageScrollSync = ({
         inline: 'start',
       });
       hasInitialScrolled.current = true;
+      observer?.disconnect();
     };
 
     tryScroll();
@@ -169,9 +171,9 @@ export const usePageScrollSync = ({
       return undefined;
     }
 
-    const observer = new ResizeObserver(tryScroll);
+    observer = new ResizeObserver(tryScroll);
     observer.observe(container);
-    return () => observer.disconnect();
+    return () => observer?.disconnect();
   }, [cardRefs, container, enabled, initialPageIndex, initiallyShownCards]);
 
   // Effect 1: Programmatic scroll when currentIndex changes

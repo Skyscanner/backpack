@@ -402,9 +402,6 @@ const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
 const RowToRailHiddenInAccordionWithPrescrollExample = () => (
   <PageContainer>
-    <div style={{ height: '100vh', background: '#f4f4f4', padding: '1rem' }}>
-      Spacer above the accordion — scroll down to see the cardlist accordion.
-    </div>
     <BpkAccordion>
       <StatefulAccordionItem id="hidden-cards" title="Hidden cards (collapsed)">
         <BpkCardList
@@ -417,9 +414,6 @@ const RowToRailHiddenInAccordionWithPrescrollExample = () => (
         />
       </StatefulAccordionItem>
     </BpkAccordion>
-    <div style={{ height: '100vh', background: '#f4f4f4', padding: '1rem' }}>
-      Spacer below.
-    </div>
   </PageContainer>
 );
 
