@@ -18,7 +18,7 @@ set -e
 
 printf "📋 Copying normal.css to new location...\n"
 
-NORMALIZE_CSS=$(node -p "require.resolve('normalize.css/normalize.css')")
+NORMALIZE_CSS=$(node -e "console.log(require.resolve('normalize.css/normalize.css', { paths: ['packages/backpack-web', '.'] }))")
 cp "$NORMALIZE_CSS" packages/backpack-web/src/bpk-stylesheets/normalize.scss
 
 printf "✅  New normal.scss generated. \n"

@@ -18,9 +18,6 @@
       "{workspaceRoot}/packages/backpack-web/src/bpk-mixins/**/*"
     ],
     "svgSources": [
-      "{projectRoot}/src/bpk-component-flare/gulpfile.js",
-      "{projectRoot}/src/bpk-component-icon/gulpfile.js",
-      "{projectRoot}/src/bpk-component-spinner/gulpfile.js",
       "{workspaceRoot}/gulpfile.js/**/*",
       {
         "externalDependencies": ["@skyscanner/bpk-svgs"]
