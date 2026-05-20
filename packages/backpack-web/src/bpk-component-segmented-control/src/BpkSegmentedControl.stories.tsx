@@ -22,9 +22,9 @@ import {
   canvasContrastDay,
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from '../../../../../.storybook/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
