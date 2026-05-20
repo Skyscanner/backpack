@@ -33,3 +33,11 @@ yarn.lock
 .claude/skills/openspec-*
 .claude/settings.local.json
 openspec
+
+# Nx
+.nx/cache
+.nx/workspace-data
+*.tsbuildinfo
+/dist/out-tsc
+storybook-static
+.context
