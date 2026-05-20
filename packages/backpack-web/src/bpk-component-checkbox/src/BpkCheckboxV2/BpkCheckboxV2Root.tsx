@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
 import type { ReactNode } from 'react';
 
 import { Checkbox } from '@ark-ui/react';
@@ -42,35 +43,43 @@ export type BpkCheckboxV2RootProps = {
   value?: string;
 };
 
-const BpkCheckboxV2Root = ({
-  checked,
-  children,
-  'data-testid': dataTestId,
-  defaultChecked,
-  disabled = false,
-  id,
-  invalid = false,
-  name,
-  onCheckedChange,
-  required = false,
-  value,
-}: BpkCheckboxV2RootProps) => (
-  <Checkbox.Root
-    className={getClassName('bpk-checkbox-v2')}
-    checked={checked}
-    data-testid={dataTestId}
-    defaultChecked={defaultChecked}
-    disabled={disabled}
-    id={id}
-    invalid={invalid}
-    name={name}
-    onCheckedChange={(details) => onCheckedChange?.(details.checked)}
-    required={required}
-    value={value}
-    {...getDataComponentAttribute('CheckboxV2')}
-  >
-    {children}
-  </Checkbox.Root>
+const BpkCheckboxV2Root = forwardRef<HTMLLabelElement, BpkCheckboxV2RootProps>(
+  (
+    {
+      checked,
+      children,
+      'data-testid': dataTestId,
+      defaultChecked,
+      disabled = false,
+      id,
+      invalid = false,
+      name,
+      onCheckedChange,
+      required = false,
+      value,
+    },
+    ref,
+  ) => (
+    <Checkbox.Root
+      ref={ref}
+      className={getClassName('bpk-checkbox-v2')}
+      checked={checked}
+      data-testid={dataTestId}
+      defaultChecked={defaultChecked}
+      disabled={disabled}
+      id={id}
+      invalid={invalid}
+      name={name}
+      onCheckedChange={(details) => onCheckedChange?.(details.checked)}
+      required={required}
+      value={value}
+      {...getDataComponentAttribute('CheckboxV2')}
+    >
+      {children}
+    </Checkbox.Root>
+  ),
 );
+
+BpkCheckboxV2Root.displayName = 'BpkCheckboxV2Root';
 
 export default BpkCheckboxV2Root;
