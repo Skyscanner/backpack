@@ -32,7 +32,13 @@ import STYLES from './BpkLayout.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
-  const processedProps = processBpkComponentProps({ ...props, align: align ?? alignItems, justify: justify ?? justifyContent }, { component: 'BpkStack' });
+  const resolvedAlign = align ?? alignItems;
+  const resolvedJustify = justify ?? justifyContent;
+  const processedProps = processBpkComponentProps({
+    ...props,
+    ...(resolvedAlign !== undefined && { align: resolvedAlign }),
+    ...(resolvedJustify !== undefined && { justify: resolvedJustify }),
+  }, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -51,7 +57,13 @@ export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alig
 BpkStack.displayName = 'BpkStack';
 
 export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
-  const processedProps = processBpkComponentProps({ ...props, align: align ?? alignItems, justify: justify ?? justifyContent }, { component: 'BpkStack' });
+  const resolvedAlign = align ?? alignItems;
+  const resolvedJustify = justify ?? justifyContent;
+  const processedProps = processBpkComponentProps({
+    ...props,
+    ...(resolvedAlign !== undefined && { align: resolvedAlign }),
+    ...(resolvedJustify !== undefined && { justify: resolvedJustify }),
+  }, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
@@ -70,7 +82,13 @@ export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, ali
 BpkHStack.displayName = 'BpkHStack';
 
 export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
-  const processedProps = processBpkComponentProps({ ...props, align: align ?? alignItems, justify: justify ?? justifyContent }, { component: 'BpkStack' });
+  const resolvedAlign = align ?? alignItems;
+  const resolvedJustify = justify ?? justifyContent;
+  const processedProps = processBpkComponentProps({
+    ...props,
+    ...(resolvedAlign !== undefined && { align: resolvedAlign }),
+    ...(resolvedJustify !== undefined && { justify: resolvedJustify }),
+  }, { component: 'BpkStack' });
   const classNames = (color || backgroundColor)
     ? getClassName(
         'bpk-layout',
