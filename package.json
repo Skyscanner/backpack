@@ -7,6 +7,10 @@
     "node": ">=22.9.0",
     "npm": ">=10.8.3"
   },
+  "workspaces": [
+    "packages/*",
+    "libs/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -26,7 +30,7 @@
     "check-pristine": "node scripts/check-pristine-state",
     "clean": "npm run clean:dist && npm run clean:node_modules",
     "clean:dist": "rm -rf dist",
-    "clean:node_modules": "rm -rf packages/backpack-web/node_modules && rm -rf node_modules",
+    "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "figma:generate-config": "node scripts/figma/generate-figma-config.js",
     "figma:generate-icons": "node packages/backpack-web/src/bpk-component-icon/scripts/generate-figma-connect.js",
@@ -43,7 +47,6 @@
     "lint:scss": "stylelint 'packages/backpack-web/**/*.scss'",
     "lint:scss:fix": "stylelint 'packages/backpack-web/**/*.scss' --fix",
     "lint-staged": "lint-staged",
-    "postinstall": "(cd packages/backpack-web && npm install)",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
     "storybook": "storybook dev -p 9001",
@@ -125,6 +128,12 @@
     "@babel/register": "^7.28.3",
     "@figma/code-connect": "^1.4.3",
     "@figma/rest-api-spec": "^0.37.0",
+    "@nx/eslint-plugin": "22.7.1",
+    "@nx/jest": "22.7.1",
+    "@nx/js": "22.7.1",
+    "@nx/react": "22.7.1",
+    "@nx/storybook": "22.7.1",
+    "@nx/webpack": "22.7.1",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^9.1.0",
     "@skyscanner/bpk-foundations-web": "^24.6.0",
@@ -173,6 +182,7 @@
     "lodash": "^4.18.1",
     "mini-css-extract-plugin": "^2.9.0",
     "npm-run-all": "^4.1.5",
+    "nx": "22.7.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^8.2.0",
     "prop-types": "^15.7.2",
