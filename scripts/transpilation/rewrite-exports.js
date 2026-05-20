@@ -19,11 +19,13 @@
 const fs = require('fs');
 const path = require('path');
 
-// The source-time package.json declares exports with `./src/...` paths and
-// `.ts`/`.tsx` extensions because that is the layout consumers see when the
-// repo is linked directly. The published package is built from
-// packages/backpack-web/dist, so the manifest copied into dist/ must point at
-// compiled `.js` files at the dist root, not at TypeScript sources under src/.
+// The source-time package.json declares an `exports` map with `./src/...`
+// paths so sibling workspace packages can resolve `@skyscanner/backpack-web/foo`
+// against the source tree before the package is built. The published artifact
+// is built from packages/backpack-web/dist and has historically relied on
+// Node's legacy filesystem resolution (no `exports` field), which is what
+// existing consumers expect. Strip the field from the dist manifest so the
+// published package keeps that contract.
 
 const distPackageJsonPath = path.join(
   'packages',
@@ -34,29 +36,7 @@ const distPackageJsonPath = path.join(
 
 const pkg = JSON.parse(fs.readFileSync(distPackageJsonPath, 'utf8'));
 
-const rewriteTarget = (target) =>
-  target.replace(/^\.\/src\//, './').replace(/\.tsx?$/, '.js');
-
-const rewrittenExports = {};
-for (const [subpath, target] of Object.entries(pkg.exports)) {
-  rewrittenExports[subpath] =
-    typeof target === 'string' ? rewriteTarget(target) : target;
-}
-
-// Deep imports for individual icons (e.g. bpk-component-icon/sm/flight). The
-// existing wildcard `./*` would otherwise resolve these to non-existent
-// `*/index.js` paths.
-rewrittenExports['./bpk-component-icon/*'] = './bpk-component-icon/*.js';
-
-// bpk-stylesheets is shipped with `.css` and `.scss` files alongside the
-// compiled `.js` bundles. The base `./bpk-stylesheets/*` pattern only maps to
-// `*.js`, so explicit patterns are required for the other extensions. Node
-// picks the pattern with the longest matching suffix, so `*.css` wins over
-// `*` for `.css` requests.
-rewrittenExports['./bpk-stylesheets/*.css'] = './bpk-stylesheets/*.css';
-rewrittenExports['./bpk-stylesheets/*.scss'] = './bpk-stylesheets/*.scss';
-
-pkg.exports = rewrittenExports;
+delete pkg.exports;
 
 fs.writeFileSync(
   distPackageJsonPath,
@@ -65,4 +45,4 @@ fs.writeFileSync(
 );
 
 // eslint-disable-next-line no-console
-console.log('Rewrote dist/package.json exports for the published layout. 👍');
+console.log('Stripped exports from dist/package.json for the published layout. 👍');
