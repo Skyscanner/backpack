@@ -4,6 +4,7 @@
 .env
 .sass-cache
 /dist
+/packages/backpack-web/dist
 /dist-sassdoc
 /dist-storybook
 /coverage
