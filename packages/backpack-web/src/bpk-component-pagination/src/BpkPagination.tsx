@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -27,24 +27,42 @@ import STYLES from './BpkPagination.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const handlePageChange = (onPageChange, pageCount) => (nextPageIndex) => {
-  if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
-    onPageChange(nextPageIndex);
-  }
+type PageLabel = (page: number, isSelected: boolean) => string;
+
+type NativeNavProps = HTMLAttributes<HTMLElement>;
+
+export type Props = Omit<NativeNavProps, 'className'> & {
+  selectedPageIndex: number;
+  pageCount: number;
+  previousLabel: string;
+  nextLabel: string;
+  paginationLabel: string;
+  pageLabel: PageLabel;
+  onPageChange?: ((nextPageIndex: number) => void) | null;
+  visibleRange?: number;
+  className?: string | null;
 };
 
-const BpkPagination = (props) => {
+const handlePageChange =
+  (onPageChange: Props['onPageChange'], pageCount: number) =>
+  (nextPageIndex: number) => {
+    if (onPageChange && nextPageIndex < pageCount && nextPageIndex >= 0) {
+      onPageChange(nextPageIndex);
+    }
+  };
+
+const BpkPagination = (props: Props) => {
   const classNames = [getClassName('bpk-pagination')];
   const {
-    className,
+    className = null,
     nextLabel,
-    onPageChange,
+    onPageChange = null,
     pageCount,
     pageLabel,
     paginationLabel,
     previousLabel,
     selectedPageIndex,
-    visibleRange,
+    visibleRange = 3,
     ...rest
   } = props;
 
@@ -79,24 +97,6 @@ const BpkPagination = (props) => {
       />
     </nav>
   );
-};
-
-BpkPagination.propTypes = {
-  selectedPageIndex: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func,
-  pageCount: PropTypes.number.isRequired,
-  previousLabel: PropTypes.string.isRequired,
-  nextLabel: PropTypes.string.isRequired,
-  paginationLabel: PropTypes.string.isRequired,
-  pageLabel: PropTypes.func.isRequired,
-  visibleRange: PropTypes.number,
-  className: PropTypes.string,
-};
-
-BpkPagination.defaultProps = {
-  onPageChange: null,
-  visibleRange: 3,
-  className: null,
 };
 
 export default BpkPagination;
