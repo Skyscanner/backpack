@@ -88,6 +88,78 @@
       "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --build packages/backpack-web/tsconfig.lib.json",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/**/*.tsx",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/@types/**/*",
+        "{workspaceRoot}/tsconfig.base.json"
+      ],
+      "outputs": [
+        "{projectRoot}/.tsbuildinfo",
+        "{workspaceRoot}/dist/out-tsc/packages/backpack-web"
+      ],
+      "cache": true
+    },
+    "lint-js": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint packages/backpack-web --ext .js,.jsx,.ts,.tsx",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{js,jsx,ts,tsx}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ],
+      "cache": true
+    },
+    "lint-scss": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint 'packages/backpack-web/**/*.scss'",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.scss",
+        "{workspaceRoot}/.stylelintrc*"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run backpack-web:lint-js",
+          "nx run backpack-web:lint-scss"
+        ],
+        "parallel": false
+      },
+      "cache": true
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "jest --coverage --config packages/backpack-web/jest.config.js",
+        "cwd": "{workspaceRoot}",
+        "env": {
+          "TZ": "Etc/UTC"
+        }
+      },
+      "inputs": [
+        "default",
+        "{projectRoot}/jest.config.js",
+        "{workspaceRoot}/scripts/jest/**/*",
+        "{workspaceRoot}/scripts/stubs/**/*"
+      ],
+      "cache": true
+    },
     "nx-release-publish": {
       "dependsOn": ["build"],
       "options": {

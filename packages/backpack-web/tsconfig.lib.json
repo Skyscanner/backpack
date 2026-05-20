@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "../../dist/out-tsc/packages/backpack-web",
+    "rootDir": "src",
+    "types": ["node", "@types/jest", "webpack-env"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../../@types/**/*.d.ts"
+  ],
+  "exclude": [
+    "**/*-test.ts",
+    "**/*-test.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.ts",
+    "**/*.stories.tsx",
+    "**/*.story-helpers.ts",
+    "**/*.story-helpers.tsx",
+    "**/*.figma.ts",
+    "**/*.figma.tsx",
+    "**/dist/**"
+  ]
+}
