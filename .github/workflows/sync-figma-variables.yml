@@ -2,8 +2,8 @@ name: Sync Figma variables
 
 on:
   schedule:
-    # Weekly polling sync, every Monday at 09:00 UTC.
-    - cron: '0 9 * * 1'
+    # Temporarily poll every 30 minutes for validation; the production cadence will be daily at 18:00 GMT.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       file_key:
@@ -105,12 +105,10 @@ jobs:
             exit 0
           fi
 
-          closed_count=0
           while IFS=$'\t' read -r number _branch _url; do
             gh pr close "$number" --comment "Closing this automated token sync PR because a newer run will open a fresh PR with the latest cumulative Figma token changes against main."
-            closed_count=$((closed_count + 1))
+            echo "Closed superseded Figma token sync pull request: ${_url}"
           done <<< "$open_prs"
-          echo "Closed ${closed_count} superseded Figma token sync pull request(s)."
 
       - name: Commit generated token changes
         id: commit
