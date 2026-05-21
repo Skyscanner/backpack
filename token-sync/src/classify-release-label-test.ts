@@ -99,6 +99,8 @@ describe('classifyTokenReleaseLabel', () => {
     expect(
       formatDeletedOrRenamedTokensMarkdown([
         { fileName: 'backpack.light.json', tokenPath: 'Spacing/Base' },
+        { fileName: 'backpack.light.json', tokenPath: 'Spacing/Small' },
+        { fileName: 'backpack.dark.json', tokenPath: 'Spacing/Base' },
       ]),
     ).toBe(
       [
@@ -106,7 +108,14 @@ describe('classifyTokenReleaseLabel', () => {
         '',
         'The following token paths existed in the previous commit but are missing from the fetched tokens. Treat them as breaking changes and verify usages have been migrated.',
         '',
-        '- `backpack.light.json`: `Spacing/Base`',
+        '### backpack.light.json',
+        '',
+        '- `Spacing/Base`',
+        '- `Spacing/Small`',
+        '',
+        '### backpack.dark.json',
+        '',
+        '- `Spacing/Base`',
       ].join('\n'),
     );
   });

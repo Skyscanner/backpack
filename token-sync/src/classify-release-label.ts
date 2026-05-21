@@ -217,14 +217,29 @@ export function formatDeletedOrRenamedTokensMarkdown(
   }
 
   const visibleTokens = deletedOrRenamedTokens.slice(0, limit);
+  const tokensByFile = new Map<string, string[]>();
+  visibleTokens.forEach(({ fileName, tokenPath }) => {
+    tokensByFile.set(fileName, [
+      ...(tokensByFile.get(fileName) ?? []),
+      tokenPath,
+    ]);
+  });
+
+  const tokenLines = Array.from(tokensByFile.entries()).flatMap(
+    ([fileName, tokenPaths]) => [
+      `### ${fileName}`,
+      '',
+      ...tokenPaths.map((tokenPath) => `- \`${tokenPath}\``),
+      '',
+    ],
+  );
+
   const lines = [
     '## Deleted or renamed tokens',
     '',
     'The following token paths existed in the previous commit but are missing from the fetched tokens. Treat them as breaking changes and verify usages have been migrated.',
     '',
-    ...visibleTokens.map(
-      ({ fileName, tokenPath }) => `- \`${fileName}\`: \`${tokenPath}\``,
-    ),
+    ...tokenLines.slice(0, -1),
   ];
 
   if (deletedOrRenamedTokens.length > visibleTokens.length) {
