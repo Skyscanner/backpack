@@ -65,7 +65,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
+            libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 

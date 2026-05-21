@@ -69,7 +69,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
+            libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
@@ -119,14 +119,14 @@ jobs:
       id: storybook-dist-cache
       with:
         path: |
-          dist-storybook/
+          libs/backpack-storybook-host/dist-storybook/
           .nx/cache/
         key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
     - name: Prepare to deploy Storybook (pull request build)
       run: |
         mkdir build
-        mv dist-storybook $PR_NUMBER
+        mv libs/backpack-storybook-host/dist-storybook $PR_NUMBER
         cp -R $PR_NUMBER build/
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       env:

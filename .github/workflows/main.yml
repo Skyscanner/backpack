@@ -69,7 +69,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
+            libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
@@ -117,7 +117,7 @@ jobs:
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
+            libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
@@ -126,7 +126,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: dist-storybook/
+          publish_dir: libs/backpack-storybook-host/dist-storybook/
           keep_files: false
           external_repository: backpack/storybook
           publish_branch: main
