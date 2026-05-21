@@ -21,7 +21,6 @@ import type { ReactNode } from 'react';
 
 import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../../bpk-component-button';
 import AirportsIconLg from '../../bpk-component-icon/lg/airports';
 import CityIconLg from '../../bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../bpk-component-icon/lg/landmark';
@@ -372,13 +371,16 @@ const WithCustomThemeExample = () => {
 };
 
 const WithCarVariantExample = () => {
+  // Three chips side-by-side cover the three cars-variant states a consumer
+  // (e.g. carhire) renders: a normal available chip, a chip still waiting on
+  // a price (loading spinner), and a chip the API returned as unavailable
+  // (disabled, "Not available" caption, no price).
   const carTypes = [
-    { id: 'small', label: 'Small', price: '£35', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', price: '£52', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', price: '£78', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'small', label: 'Small', price: '£35', state: 'normal' as const, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'medium', label: 'Medium', price: '£52', state: 'loading' as const, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'large', label: 'Large', price: '£78', state: 'unavailable' as const, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
   ];
 
-  const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (id: string) => {
@@ -391,13 +393,14 @@ const WithCarVariantExample = () => {
     <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type</BpkText>
       <BpkHStack gap="bpk-spacing-md" wrap="wrap">
-        {carTypes.map(({ id, label, price, src }) => (
+        {carTypes.map(({ id, label, price, src, state }) => (
           <BpkBox key={id} width="7.25rem">
             <BpkCheckboxCard.Root
               checked={selected.includes(id)}
               onCheckedChange={() => toggle(id)}
               variant={CHECKBOX_CARD_VARIANTS.cars}
-              loading={loading}
+              loading={state === 'loading'}
+              disabled={state === 'unavailable'}
             >
               <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Content>
@@ -409,16 +412,19 @@ const WithCarVariantExample = () => {
                     style={{ width: '100%' }}
                   />
                   <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                  <BpkCheckboxCard.Price price={price} />
+                  {state === 'unavailable' ? (
+                    <BpkCheckboxCard.Description>
+                      Not available
+                    </BpkCheckboxCard.Description>
+                  ) : (
+                    <BpkCheckboxCard.Price price={price} />
+                  )}
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
           </BpkBox>
         ))}
       </BpkHStack>
-      <BpkButton onClick={() => setLoading((prev) => !prev)}>
-        {loading ? 'Simulate loading' : 'Simulate prices loaded'}
-      </BpkButton>
     </BpkVStack>
   );
 };
