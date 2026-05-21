@@ -604,3 +604,30 @@ export const Polymorphic = {
   render: () => <PolymorphicExample />,
 };
 
+/**
+ * Dir example – demonstrates the `dir` prop for embedding bidirectional content.
+ *
+ * @returns {JSX.Element} Boxes with ltr and rtl text direction.
+ */
+const DirExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>dir=&quot;ltr&quot; — left-to-right content</BpkText>
+      <BpkBox dir="ltr" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>Left-to-right: Hello, world!</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>dir=&quot;rtl&quot; — right-to-left content embedded within an LTR page</BpkText>
+      <BpkBox dir="rtl" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>Right-to-left: مرحبا بالعالم</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const Dir = {
+  render: () => <DirExample />,
+};
+
