@@ -3,6 +3,9 @@
   "references": [
     {
       "path": "./libs/backpack-storybook-utils/tsconfig.lib.json"
+    },
+    {
+      "path": "./packages/backpack-web/tsconfig.lib.json"
     }
   ]
 }
