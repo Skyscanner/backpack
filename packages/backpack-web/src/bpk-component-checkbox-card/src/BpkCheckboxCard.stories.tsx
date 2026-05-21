@@ -495,53 +495,6 @@ const WithCarVariantMobileExample = () => {
   );
 };
 
-// All-disabled showcase to visually inspect chip-bg vs image-bg blend under
-// opacity:0.5. If the disabled bg override is wrong, a seam appears between
-// the chip surface and the image area.
-const WithCarVariantUnavailableExample = () => {
-  const carTypes = [
-    { id: 'small', label: 'Small', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'suv', label: 'SUV', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-  ];
-
-  return (
-    <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
-      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>All unavailable — on tinted parent (carhire scenario)</BpkText>
-      <div style={{ background: canvasContrastDay, padding: '1rem' }}>
-        <BpkHStack gap="bpk-spacing-md" wrap="wrap">
-          {carTypes.map(({ id, label, src }) => (
-            <BpkBox key={id} width="7.25rem">
-              <BpkCheckboxCard.Root
-                checked={false}
-                variant={CHECKBOX_CARD_VARIANTS.cars}
-                disabled
-              >
-                <BpkCheckboxCard.HiddenInput />
-                <BpkCheckboxCard.Content>
-                  <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
-                    <BpkImage
-                      src={src}
-                      altText={`${label} car`}
-                      aspectRatio={100 / 66}
-                      style={{ width: '100%' }}
-                    />
-                    <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
-                      Not available
-                    </BpkCheckboxCard.Description>
-                  </BpkVStack>
-                </BpkCheckboxCard.Content>
-              </BpkCheckboxCard.Root>
-            </BpkBox>
-          ))}
-        </BpkHStack>
-      </div>
-    </BpkVStack>
-  );
-};
-
 function VariantBadge() {
   const { variant } = useCheckboxCardContext();
 

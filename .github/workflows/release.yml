@@ -68,7 +68,8 @@ jobs:
         with:
           path: |
             dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**') }}
+            .nx/cache/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}

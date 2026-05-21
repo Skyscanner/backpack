@@ -41,4 +41,5 @@ openspec
 *.tsbuildinfo
 /dist/out-tsc
 storybook-static
+debug-storybook.log
 .context
