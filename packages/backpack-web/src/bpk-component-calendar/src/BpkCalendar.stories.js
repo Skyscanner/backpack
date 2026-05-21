@@ -19,13 +19,14 @@
 import { addMonths } from 'date-fns/addMonths';
 import { startOfDay } from 'date-fns/startOfDay';
 
+import { action } from 'bpk-storybook-utils';
+
 import {
   BpkCalendarGrid,
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
 } from '..';
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
 import BpkText from '../../bpk-component-text';
 
 import CalendarContainer, { MonthViewCalendar } from './BpkCalendar.stories-components';

@@ -18,7 +18,8 @@
 
 import PropTypes from 'prop-types';
 
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
+import { action } from 'bpk-storybook-utils';
+
 import BpkButton from '../../bpk-component-button';
 import { BpkList, BpkListItem } from '../../bpk-component-list';
 import {

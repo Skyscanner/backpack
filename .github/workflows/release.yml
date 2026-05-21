@@ -68,7 +68,7 @@ jobs:
         with:
           path: |
             dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
@@ -111,11 +111,11 @@ jobs:
           packages/backpack-web/node_modules/
         key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
 
-    - run: npm run transpile
+    - run: npm run build
 
     - name: Publish NPM package
       run: |
-        cd dist
+        cd packages/backpack-web/dist
         npm version $RELEASE_VERSION --no-git-tag-version
         npm publish
       env:

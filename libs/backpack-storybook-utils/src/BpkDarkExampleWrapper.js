@@ -15,20 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/* @flow strict */
 
-import PropTypes from 'prop-types';
+import { cssModules } from './cssModules';
 
-const BpkPaginationBreak = (props) => {
-  const { breakLabel } = props;
-  return <div>{breakLabel}</div>;
+import STYLES from './BpkDarkExampleWrapper.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
+  const { padded, ...rest } = props;
+  return (
+    /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
+    <div
+      className={getClassName(
+        'bpk-dark-example-wrapper',
+        padded && 'bpk-dark-example-wrapper--padded',
+      )}
+      {...rest}
+    />
+  );
 };
 
-BpkPaginationBreak.propTypes = {
-  breakLabel: PropTypes.string,
+BpkDarkExampleWrapper.defaultProps = {
+  padded: false,
 };
 
-BpkPaginationBreak.defaultProps = {
-  breakLabel: '...',
-};
-
-export default BpkPaginationBreak;
+export default BpkDarkExampleWrapper;

@@ -22,8 +22,8 @@ const fs = require("fs");
 // eslint-disable-next-line no-console
 console.log('Copying bpk-mixins...');
 
-execSync(`cp -r packages/backpack-web/src/bpk-mixins dist/bpk-mixins`);
-execSync(`rm -r dist/bpk-mixins/README.md`);
+execSync(`cp -r packages/backpack-web/src/bpk-mixins packages/backpack-web/dist/bpk-mixins`);
+execSync(`rm -f packages/backpack-web/dist/bpk-mixins/README.md`);
 
 // eslint-disable-next-line no-console
 console.log('bpk-mixins copied.  👍');
@@ -31,8 +31,8 @@ console.log('bpk-mixins copied.  👍');
 // eslint-disable-next-line no-console
 console.log('Copying bpk-stylesheets files...');
 
-if (!fs.existsSync('dist/bpk-stylesheets')) {
-  execSync(`mkdir dist/bpk-stylesheets`);
+if (!fs.existsSync('packages/backpack-web/dist/bpk-stylesheets')) {
+  execSync(`mkdir packages/backpack-web/dist/bpk-stylesheets`);
 }
 
 const styleFiles = execSync('find packages/backpack-web/src/bpk-stylesheets -name "*.scss" -o -name "*.js" -o -name "*.css" | grep -v  "webpack.config.babel.js" | grep -v "build.js"').toString()
@@ -41,9 +41,8 @@ const styleFiles = execSync('find packages/backpack-web/src/bpk-stylesheets -nam
 
 styleFiles.forEach((styleFile) => {
   const component = styleFile.split('packages/backpack-web/src/bpk-stylesheets/')[1];
-  execSync(`cp ${styleFile} dist/bpk-stylesheets/${component}`);
+  execSync(`cp ${styleFile} packages/backpack-web/dist/bpk-stylesheets/${component}`);
 })
 
 // eslint-disable-next-line no-console
 console.log('bpk-stylesheets copied.  👍');
-
