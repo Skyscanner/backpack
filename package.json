@@ -54,7 +54,7 @@
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "prepare": "husky",
-    "percy-test": "nx run backpack-storybook-host:visual-test",
+    "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
     "ts-migrate": "ts-migrate"
   },
   "lint-staged": {
