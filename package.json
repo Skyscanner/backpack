@@ -45,8 +45,8 @@
     "lint-staged": "lint-staged",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
     "start": "npm run build && npm run storybook",
-    "storybook": "storybook dev -p 9001",
-    "storybook:dist": "storybook build -c .storybook -o dist-storybook",
+    "storybook": "nx run backpack-storybook-host:serve-storybook -- -p 9001",
+    "storybook:dist": "nx run backpack-storybook-host:build-storybook -- -o ../../dist-storybook",
     "tokens:fetch": "tsx token-sync/src/index.ts",
     "tokens:build-css": "tsx token-sync/src/build-css-cli.ts",
     "tokens:sync": "npm run tokens:fetch && npm run tokens:build-css",
@@ -54,7 +54,7 @@
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc",
     "prepare": "husky",
-    "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
+    "percy-test": "nx run backpack-storybook-host:visual-test",
     "ts-migrate": "ts-migrate"
   },
   "lint-staged": {
