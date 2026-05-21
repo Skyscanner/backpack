@@ -299,6 +299,10 @@
     );
   }
 
+  .bpk-checkbox-card-root--cars[data-disabled]:not([data-loading]) & {
+    color: tokens.$bpk-text-disabled-day;
+  }
+
   // Keep nested content centered without using !important.
   > * {
     text-align: inherit;
