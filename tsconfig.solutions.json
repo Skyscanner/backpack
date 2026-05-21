@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./libs/backpack-storybook-utils/tsconfig.lib.json"
+    }
+  ]
+}

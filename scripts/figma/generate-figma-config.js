@@ -31,7 +31,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
 const CONFIG_FILE = path.join(ROOT, 'figma.config.json');
-const PACKAGES_DIR = path.join(ROOT, 'packages');
+const PACKAGES_DIR = path.join(ROOT, 'packages/backpack-web/src');
 
 function findFigmaFiles(dir) {
   const results = [];
