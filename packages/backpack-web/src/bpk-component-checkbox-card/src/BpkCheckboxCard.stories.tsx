@@ -39,6 +39,17 @@ import CHECKBOX_CARD_THEME_ATTRIBUTES, { createCheckboxCardTheme } from './theme
 
 import type { Meta } from '@storybook/react';
 
+const CAR_IMAGE_BASE_URL = 'https://logos.skyscnr.com/images/carhire/sippmaps/';
+
+const CAR_IMAGES = {
+  small: `${CAR_IMAGE_BASE_URL}14942_cc2400_032_N1.png`,
+  medium: `${CAR_IMAGE_BASE_URL}43518_cc2400_032_FRD.png`,
+  large: `${CAR_IMAGE_BASE_URL}53101_cc2400_032_695.png`,
+  suv: `${CAR_IMAGE_BASE_URL}13070_cc2400_032_YZ.png`,
+};
+
+const CAR_IMAGE_STYLE = { width: '100%', backgroundColor: colorWhite };
+
 const BasicExample = () => {
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(true);
@@ -376,9 +387,9 @@ const WithCarVariantExample = () => {
   // a price (loading spinner), and a chip the API returned as unavailable
   // (disabled, "Not available" caption, no price).
   const carTypes = [
-    { id: 'small', label: 'Small', price: '£35', state: 'normal' as const, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', price: '£52', state: 'loading' as const, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', price: '£78', state: 'unavailable' as const, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'small', label: 'Small', price: '£35', state: 'normal' as const, src: CAR_IMAGES.small },
+    { id: 'medium', label: 'Medium', price: '£52', state: 'loading' as const, src: CAR_IMAGES.medium },
+    { id: 'large', label: 'Large', price: '£78', state: 'unavailable' as const, src: CAR_IMAGES.large },
   ];
 
   const [selected, setSelected] = useState<string[]>([]);
@@ -409,7 +420,7 @@ const WithCarVariantExample = () => {
                     src={src}
                     altText={`${label} car`}
                     aspectRatio={100 / 66}
-                    style={{ width: '100%' }}
+                    style={CAR_IMAGE_STYLE}
                   />
                   <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
                   {state === 'unavailable' ? (
@@ -431,11 +442,11 @@ const WithCarVariantExample = () => {
 
 const WithCarVariantMobileExample = () => {
   const carTypes = [
-    { id: 'small', label: 'Small', price: 'from £35', available: true, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', price: 'from £52', available: true, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', price: 'from £78', available: false, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'mpv', label: 'MPV', price: 'from £92', available: true, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'people-carrier', label: 'People carrier', price: 'from £120', available: false, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'small', label: 'Small', price: 'from £35', available: true, src: CAR_IMAGES.small },
+    { id: 'medium', label: 'Medium', price: 'from £52', available: true, src: CAR_IMAGES.medium },
+    { id: 'large', label: 'Large', price: 'from £78', available: false, src: CAR_IMAGES.large },
+    { id: 'mpv', label: 'MPV', price: 'from £92', available: true, src: CAR_IMAGES.suv },
+    { id: 'people-carrier', label: 'People carrier', price: 'from £120', available: false, src: CAR_IMAGES.medium },
   ];
 
   const [selected, setSelected] = useState<string[]>(['medium']);
@@ -470,7 +481,7 @@ const WithCarVariantMobileExample = () => {
                           src={src}
                           altText={`${label} car`}
                           aspectRatio={64 / 42.5}
-                          style={{ width: '100%' }}
+                          style={CAR_IMAGE_STYLE}
                         />
                       </BpkBox>
                       <BpkVStack gap="bpk-spacing-none" align="start">
@@ -490,6 +501,54 @@ const WithCarVariantMobileExample = () => {
             ))}
           </BpkHStack>
         </BpkMobileScrollContainer>
+      </div>
+    </BpkVStack>
+  );
+};
+
+// All-disabled showcase to visually inspect chip-bg vs image-bg blend under
+// opacity:0.5. Transparent carhire PNGs are rendered on an explicit white image
+// background to mirror carhire assets; if the disabled card bg drifts from
+// white, the image area shows the same seam seen in product.
+const WithCarVariantUnavailableExample = () => {
+  const carTypes = [
+    { id: 'small', label: 'Small', src: CAR_IMAGES.small },
+    { id: 'medium', label: 'Medium', src: CAR_IMAGES.medium },
+    { id: 'large', label: 'Large', src: CAR_IMAGES.large },
+    { id: 'suv', label: 'SUV', src: CAR_IMAGES.suv },
+  ];
+
+  return (
+    <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>All unavailable — on tinted parent (carhire scenario)</BpkText>
+      <div style={{ background: canvasContrastDay, padding: '1rem' }}>
+        <BpkHStack gap="bpk-spacing-md" wrap="wrap">
+          {carTypes.map(({ id, label, src }) => (
+            <BpkBox key={id} width="7.25rem">
+              <BpkCheckboxCard.Root
+                checked={false}
+                variant={CHECKBOX_CARD_VARIANTS.cars}
+                disabled
+              >
+                <BpkCheckboxCard.HiddenInput />
+                <BpkCheckboxCard.Content>
+                  <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                    <BpkImage
+                      src={src}
+                      altText={`${label} car`}
+                      aspectRatio={100 / 66}
+                      style={CAR_IMAGE_STYLE}
+                    />
+                    <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
+                      Not available
+                    </BpkCheckboxCard.Description>
+                  </BpkVStack>
+                </BpkCheckboxCard.Content>
+              </BpkCheckboxCard.Root>
+            </BpkBox>
+          ))}
+        </BpkHStack>
       </div>
     </BpkVStack>
   );
