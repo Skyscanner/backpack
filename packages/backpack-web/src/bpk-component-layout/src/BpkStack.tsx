@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
+import { forwardRef, type Ref } from 'react';
 
 import { Stack, VStack, HStack } from '@chakra-ui/react';
 
@@ -48,7 +48,7 @@ export const BpkStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignIt
     : undefined;
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Stack ref={ref} className={classNames} {...getDataComponentAttribute('Stack')} {...processedProps}>
+    <Stack ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('Stack')} {...processedProps}>
       {children}
     </Stack>
   );
@@ -73,7 +73,7 @@ export const BpkHStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignI
     : undefined;
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <HStack ref={ref} className={classNames} {...getDataComponentAttribute('HStack')} {...processedProps}>
+    <HStack ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('HStack')} {...processedProps}>
       {children}
     </HStack>
   );
@@ -98,7 +98,7 @@ export const BpkVStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignI
     : undefined;
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <VStack ref={ref} className={classNames} {...getDataComponentAttribute('VStack')} {...processedProps}>
+    <VStack ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('VStack')} {...processedProps}>
       {children}
     </VStack>
   );

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
+import { forwardRef, type Ref } from 'react';
 
 import { Flex } from '@chakra-ui/react';
 
@@ -56,7 +56,7 @@ export const BpkFlex = forwardRef<HTMLElement, BpkFlexProps>(
 
     return (
       <Flex
-        ref={ref}
+        ref={ref as Ref<HTMLDivElement>}
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={classNames}
         {...getDataComponentAttribute('Flex')}

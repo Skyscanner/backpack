@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef } from 'react';
+import { forwardRef, type Ref } from 'react';
 
 import { Box } from '@chakra-ui/react';
 
@@ -43,7 +43,7 @@ export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
       : undefined;
     return (
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <Box ref={ref} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
+      <Box ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
         {children}
       </Box>
     );
