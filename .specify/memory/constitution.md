@@ -159,9 +159,10 @@ Every public-facing component MUST meet WCAG 2.1 Level AA standards:
 All new code MUST be written in TypeScript:
 
 - Use TypeScript for all new components and utilities
-- When migrating a component, replace `prop-types` with TypeScript types and replace
-  function-component `defaultProps` with ES6 destructuring defaults. Class-component
-  `defaultProps` may remain (no ES6 equivalent exists)
+- When migrating a component, replace `prop-types` with TypeScript types and use
+  ES6 destructuring defaults instead of function-component `defaultProps`.
+  Class-component `defaultProps` (the static API) may remain — React 19 only
+  stopped applying it for function components
 - Generate `.d.ts` declaration files for published packages
 - Use JSDoc `@deprecated` tags for deprecated APIs
 - Add console warnings for deprecated prop usage at runtime
@@ -175,7 +176,7 @@ type MyCompProps = {
 }
 ```
 
-**Rationale**: TypeScript provides type safety, better IDE support, and catches errors at compile time. React 19 removes `propTypes` and function-component `defaultProps` from the React package ([upgrade guide](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops)), so retaining them during migration is either no-op or actively broken. See `decisions/ts-deprecating-props.md`.
+**Rationale**: TypeScript provides type safety, better IDE support, and catches errors at compile time. React 19 silently ignores `propTypes` checks and no longer applies `defaultProps` on function components ([upgrade guide](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops)), so retaining them during a function-component migration is either no-op or non-functional. See `decisions/ts-deprecating-props.md`.
 
 ### VI. Semantic Versioning (SemVer)
 
