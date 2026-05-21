@@ -16,19 +16,13 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+export type Props = {
+  breakLabel?: string;
+};
 
-const BpkPaginationBreak = (props) => {
-  const { breakLabel } = props;
+const BpkPaginationBreak = (props: Props) => {
+  const { breakLabel = '...' } = props;
   return <div>{breakLabel}</div>;
-};
-
-BpkPaginationBreak.propTypes = {
-  breakLabel: PropTypes.string,
-};
-
-BpkPaginationBreak.defaultProps = {
-  breakLabel: '...',
 };
 
 export default BpkPaginationBreak;

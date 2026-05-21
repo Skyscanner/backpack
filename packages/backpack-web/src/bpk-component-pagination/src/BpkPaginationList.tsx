@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkPaginationBreak from './BpkPaginationBreak';
@@ -27,7 +25,15 @@ import STYLES from './BpkPaginationList.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationList = (props) => {
+export type Props = {
+  selectedPageIndex: number;
+  pageCount: number;
+  visibleRange: number;
+  onPageChange: (nextPageIndex: number) => void;
+  pageLabel: (page: number, isSelected: boolean) => string;
+};
+
+const BpkPaginationList = (props: Props) => {
   const {
     onPageChange,
     pageCount,
@@ -88,14 +94,6 @@ const BpkPaginationList = (props) => {
   return (
     <ul className={getClassName('bpk-pagination-page-list')}>{children}</ul>
   );
-};
-
-BpkPaginationList.propTypes = {
-  selectedPageIndex: PropTypes.number.isRequired,
-  pageCount: PropTypes.number.isRequired,
-  visibleRange: PropTypes.number.isRequired,
-  onPageChange: PropTypes.func.isRequired,
-  pageLabel: PropTypes.func.isRequired,
 };
 
 export default BpkPaginationList;
