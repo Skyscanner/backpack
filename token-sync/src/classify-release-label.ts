@@ -195,10 +195,7 @@ export function summariseTokenReleaseChanges(
   return {
     changedTokens,
     deletedOrRenamedTokens,
-    label:
-      deletedOrRenamedTokens.length > 0 || changedTokens.length > 0
-        ? 'major'
-        : 'minor',
+    label: deletedOrRenamedTokens.length > 0 ? 'major' : 'minor',
   };
 }
 

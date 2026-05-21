@@ -145,9 +145,16 @@ jobs:
             echo "Automated Figma variable sync generated updates to Backpack design tokens and CSS custom properties."
             echo
             echo "Release label: \`${RELEASE_LABEL}\`"
+            echo
+            echo "**Release label rules:**"
+            echo "- \`major\` — an existing token path was removed or renamed (consumer code may break)."
+            echo "- \`minor\` — only new token paths were added, or values of existing tokens changed."
             if [ "$RELEASE_LABEL_OUTCOME" != "success" ]; then
               echo
-              echo "> Release label classification failed, so this PR defaults to \`major\` for review."
+              echo "> [!WARNING]"
+              echo "> **Release label classification threw an exception** and has fallen back to \`major\` as a safe default."
+              echo "> The automated analysis could not determine whether this change is \`major\` or \`minor\`, so a reviewer must inspect the token diff and decide manually — if \`minor\` is more appropriate, swap the label before merging."
+              echo "> See the [workflow run](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) logs for the underlying error."
             fi
             if [ -s "$RUNNER_TEMP/token-release-summary.md" ]; then
               echo

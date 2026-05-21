@@ -30,12 +30,41 @@ to a repository output change.
    - It targets `main`.
    - It is opened from a `figma-token-sync/<timestamp>-<run-id>` branch.
    - It has the `design-token-automation` label.
-   - It has a `minor` label when only new token paths are added.
-   - It has a `major` label when existing token paths are changed, removed, or renamed.
+   - It has a `major` label when an existing token path was removed or renamed.
+   - It has a `minor` label otherwise — including when only token values change or new token paths
+     are added.
    - Any removed or renamed token paths are listed in the pull request body, grouped by token file.
 6. After validation, revert the controlled Figma change if it was only for testing, then rerun the
    workflow or wait for the next scheduled run to confirm the repository output returns to the
    expected state.
+
+## Manual intervention
+
+Occasionally the sync needs manual intervention — for example, to apply hand-curated edits, hold a
+controversial change for review, or run the sync earlier than the next scheduled tick. The scheduled
+workflow only auto-closes pull requests whose branch starts with `figma-token-sync/`, so use a
+different branch prefix to keep the workflow from auto-closing your PR.
+
+1. Close the current `figma-token-sync/*` pull request opened by the workflow. Closing it has no
+   side effects — the next scheduled run would close it anyway when it opens a fresh one.
+2. Run the sync locally:
+
+   ```bash
+   npm run tokens:sync
+   ```
+
+3. Create your branch using a prefix **other than** `figma-token-sync/` (e.g. `manual-token-sync/...`
+   or `<jira-key>/token-sync-fix`), commit the regenerated `token-sync/tokens/` and `token-sync/css/`
+   output, and open the pull request.
+4. Apply labels manually following the same rules the workflow uses:
+   - `design-token-automation`
+   - `major` if an existing token path was removed or renamed.
+   - `minor` if only new token paths were added or existing values changed.
+
+While your manual pull request is open the next scheduled run will still detect the same Figma
+changes and may open another `figma-token-sync/*` pull request. Either merge or close your manual
+pull request before the next scheduled tick, or close any new auto-generated `figma-token-sync/*`
+pull requests while your manual change is in flight.
 
 ## Failure triage
 
