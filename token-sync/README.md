@@ -101,11 +101,15 @@ When generated output changes under `token-sync/tokens/` or `token-sync/css/`, t
 any existing open `figma-token-sync/*` pull request, then creates a fresh
 `figma-token-sync/<timestamp>-<run-id>` branch and opens one pull request against `main`. Because the
 fresh branch is generated from the latest Figma state against `main`, it includes any still-unmerged
-token changes from previous sync runs. The pull request is labelled `minor` when the token diff only
-adds new tokens, and `major` when existing token paths are changed, removed, or renamed. Removed or
-renamed token paths are listed in the pull request body so reviewers can verify usage migrations. If
-release label classification fails, the pull request defaults to `major` for review. Figma API or
-Style Dictionary failures fail the workflow at the failing step.
+token changes from previous sync runs. The pull request is labelled `major` when an existing token
+path is removed or renamed (because consumer code may break), and `minor` otherwise — including when
+only token values change, since existing names keep working for consumers. Removed or renamed token
+paths are listed in the pull request body so reviewers can verify usage migrations. If release label
+classification fails, the pull request defaults to `major` for review. Figma API or Style Dictionary
+failures fail the workflow at the failing step.
+
+For human takeover (when the automated PR needs to be replaced with a hand-curated one), see the
+"Manual intervention" section in [`RUNBOOK.md`](RUNBOOK.md).
 
 ### How it works
 
