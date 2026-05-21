@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { HTMLAttributes, MouseEvent } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -39,18 +37,27 @@ export const getTypeByRating = (starNumber: number, rating: number) => {
   return STAR_TYPES.FULL;
 };
 
-type Props = {
-  getStarLabel: (number, number) => string,
-  id: string,
-  className: ?string,
-  hoverRating: number,
-  large: boolean,
-  extraLarge: boolean,
-  maxRating: number,
-  onMouseLeave: () => mixed,
-  onRatingHover: (number, any) => mixed,
-  onRatingSelect: (number, any) => mixed,
+type StarLabel = (rating: number, maxRating: number) => string;
+
+type RatingHandler = (
   rating: number,
+  event: MouseEvent<HTMLButtonElement>,
+) => unknown;
+
+type NativeDivProps = HTMLAttributes<HTMLDivElement>;
+
+export type Props = Omit<NativeDivProps, 'className' | 'id' | 'onMouseLeave'> & {
+  getStarLabel: StarLabel;
+  id: string;
+  className?: string | null;
+  hoverRating?: number;
+  large?: boolean;
+  extraLarge?: boolean;
+  maxRating?: number;
+  onMouseLeave?: () => unknown;
+  onRatingHover?: RatingHandler;
+  onRatingSelect?: RatingHandler;
+  rating?: number;
 };
 
 const BpkInteractiveStarRating = ({
@@ -101,20 +108,6 @@ const BpkInteractiveStarRating = ({
       {stars}
     </div>
   );
-};
-
-BpkInteractiveStarRating.propTypes = {
-  getStarLabel: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  hoverRating: PropTypes.number,
-  large: PropTypes.bool,
-  extraLarge: PropTypes.bool,
-  maxRating: PropTypes.number,
-  onMouseLeave: PropTypes.func,
-  onRatingHover: PropTypes.func,
-  onRatingSelect: PropTypes.func,
-  rating: PropTypes.number,
 };
 
 export default BpkInteractiveStarRating;

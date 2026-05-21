@@ -16,12 +16,21 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import BpkInteractiveStar from './src/BpkInteractiveStar';
-import BpkInteractiveStarRating from './src/BpkInteractiveStarRating';
-import BpkStar, { BpkStarNonRtl, STAR_TYPES } from './src/BpkStar';
-import BpkStarRating, { ROUNDING_TYPES } from './src/BpkStarRating';
+import BpkInteractiveStar, {
+  type Props as BpkInteractiveStarProps,
+} from './src/BpkInteractiveStar';
+import BpkInteractiveStarRating, {
+  type Props as BpkInteractiveStarRatingProps,
+} from './src/BpkInteractiveStarRating';
+import BpkStar, {
+  BpkStarNonRtl,
+  STAR_TYPES,
+  type Props as BpkStarProps,
+} from './src/BpkStar';
+import BpkStarRating, {
+  ROUNDING_TYPES,
+  type Props as BpkStarRatingProps,
+} from './src/BpkStarRating';
 import themeAttributes from './src/themeAttributes';
 import withInteractiveStarRatingState from './src/withInteractiveStarRatingState';
 
@@ -34,5 +43,11 @@ export {
   BpkInteractiveStarRating,
   withInteractiveStarRatingState,
   themeAttributes,
+};
+export type {
+  BpkStarProps,
+  BpkStarRatingProps,
+  BpkInteractiveStarProps,
+  BpkInteractiveStarRatingProps,
 };
 export default BpkStarRating;

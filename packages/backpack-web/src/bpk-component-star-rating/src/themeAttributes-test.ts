@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import themeAttributes from './themeAttributes';
 
-export default ['starRatingFilledColor'];
+describe('themeAttributes', () => {
+  it('exports the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual(['starRatingFilledColor']);
+  });
+});
