@@ -55,6 +55,7 @@ module.exports = ({ config }) => {
   });
   config.module.rules.push({
     test: /\.(js|jsx)?$/,
+    exclude: /node_modules/,
     loader: 'babel-loader',
     options: {
       cacheDirectory: true,
@@ -78,7 +79,6 @@ module.exports = ({ config }) => {
     loader: 'babel-loader',
     options: {
       cacheDirectory: true,
-      rootMode: 'upward',
       presets: [['@babel/preset-env']],
     },
   });
