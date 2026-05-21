@@ -20,16 +20,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "run-s build:*",
-    "build:copy-normal_css": "./scripts/scss/copy-normal_css.sh",
-    "build:gulp": "gulp",
-    "build:sass": "node scripts/scss/styles-prod.js && rm packages/backpack-web/src/bpk-stylesheets/index.css",
-    "build:stylesheets": "(cd packages/backpack-web/src/bpk-stylesheets && node build)",
+    "build": "nx run backpack-web:build",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
     "clean": "npm run clean:dist && npm run clean:node_modules",
-    "clean:dist": "rm -rf dist",
+    "clean:dist": "rm -rf dist packages/backpack-web/dist",
     "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "figma:generate-config": "node scripts/figma/generate-figma-config.js",
@@ -59,16 +55,7 @@
     "typecheck": "tsc",
     "prepare": "husky",
     "percy-test": "percy storybook ./dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
-    "ts-migrate": "ts-migrate",
-    "transpile": "npm run build && run-s transpile:*",
-    "transpile:clean": "rm -rf ./dist",
-    "transpile:js": "BABEL_ENV=dev babel packages/backpack-web/src --ignore ./packages/backpack-web/src/bpk-stylesheets --out-dir dist --extensions \".ts,.tsx,.js,.jsx\" --config-file ./babel.config.js",
-    "transpile:dts": "tsc --project tsconfig.declaration.json",
-    "transpile:imports": "node scripts/transpilation/transform-js-scss-css-imports.js",
-    "transpile:copy-css": "node scripts/transpilation/copy-css.js",
-    "transpile:copy-utils": "node scripts/transpilation/copy-utils.js",
-    "transpile:copy-package-json": "cp ./packages/backpack-web/package.json ./dist/",
-    "transpile:copy-readme": "cp packages/backpack-web/README.md ./dist/"
+    "ts-migrate": "ts-migrate"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
