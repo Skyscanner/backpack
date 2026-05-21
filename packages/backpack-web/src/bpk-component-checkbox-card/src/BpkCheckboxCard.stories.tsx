@@ -413,7 +413,7 @@ const WithCarVariantExample = () => {
                   />
                   <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
                   {state === 'unavailable' ? (
-                    <BpkCheckboxCard.Description>
+                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
                       Not available
                     </BpkCheckboxCard.Description>
                   ) : (
