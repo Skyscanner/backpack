@@ -19,7 +19,11 @@
  * limitations under the License.
  */
 
-import { classifyTokenReleaseLabel } from './classify-release-label';
+import {
+  classifyTokenReleaseLabel,
+  formatDeletedOrRenamedTokensMarkdown,
+  summariseTokenReleaseChanges,
+} from './classify-release-label';
 
 describe('classifyTokenReleaseLabel', () => {
   it('returns minor when the diff only adds tokens', () => {
@@ -69,6 +73,42 @@ describe('classifyTokenReleaseLabel', () => {
         },
       ]),
     ).toBe('major');
+  });
+
+  it('reports token paths that were deleted or renamed', () => {
+    expect(
+      summariseTokenReleaseChanges([
+        {
+          fileName: 'token-sync/tokens/backpack.light.json',
+          previous: {
+            Spacing: {
+              $type: 'dimension',
+              Base: { $value: '8px' },
+              Default: { $value: '12px' },
+            },
+          },
+          current: {
+            Spacing: { $type: 'dimension', Default: { $value: '12px' } },
+          },
+        },
+      ]).deletedOrRenamedTokens,
+    ).toEqual([{ fileName: 'backpack.light.json', tokenPath: 'Spacing/Base' }]);
+  });
+
+  it('formats deleted or renamed token paths for pull request bodies', () => {
+    expect(
+      formatDeletedOrRenamedTokensMarkdown([
+        { fileName: 'backpack.light.json', tokenPath: 'Spacing/Base' },
+      ]),
+    ).toBe(
+      [
+        '## Deleted or renamed tokens',
+        '',
+        'The following token paths existed in the previous commit but are missing from the fetched tokens. Treat them as breaking changes and verify usages have been migrated.',
+        '',
+        '- `backpack.light.json`: `Spacing/Base`',
+      ].join('\n'),
+    );
   });
 
   it('normalises object key order before comparing token values', () => {

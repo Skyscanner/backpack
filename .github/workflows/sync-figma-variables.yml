@@ -65,6 +65,8 @@ jobs:
         id: release_label
         if: steps.token_changes.outputs.changed == 'true'
         continue-on-error: true
+        env:
+          TOKEN_RELEASE_SUMMARY_PATH: ${{ runner.temp }}/token-release-summary.md
         run: ./node_modules/.bin/tsx token-sync/src/classify-release-label-cli.ts
 
       - name: Stage 2 - Build CSS from DTCG tokens
@@ -146,6 +148,10 @@ jobs:
             if [ "$RELEASE_LABEL_OUTCOME" != "success" ]; then
               echo
               echo "> Release label classification failed, so this PR defaults to \`major\` for review."
+            fi
+            if [ -s "$RUNNER_TEMP/token-release-summary.md" ]; then
+              echo
+              cat "$RUNNER_TEMP/token-release-summary.md"
             fi
             echo
             echo "## Source"

@@ -28,7 +28,19 @@ type PlainObject = Record<string, unknown>;
 
 export interface TokenFileChange {
   current: unknown;
+  fileName?: string;
   previous: unknown;
+}
+
+export interface TokenPathChange {
+  fileName: string;
+  tokenPath: string;
+}
+
+export interface TokenReleaseSummary {
+  changedTokens: TokenPathChange[];
+  deletedOrRenamedTokens: TokenPathChange[];
+  label: ReleaseLabel;
 }
 
 function git(args: string[]): string[] {
@@ -39,7 +51,13 @@ function git(args: string[]): string[] {
 
 export function listTokenJsonFiles(tokensDir = DEFAULT_TOKENS_DIR): string[] {
   const tracked = git(['ls-files', tokensDir]);
-  const untracked = git(['ls-files', '--others', '--exclude-standard', '--', tokensDir]);
+  const untracked = git([
+    'ls-files',
+    '--others',
+    '--exclude-standard',
+    '--',
+    tokensDir,
+  ]);
 
   return Array.from(new Set([...tracked, ...untracked]))
     .filter((file) => file.endsWith('.json'))
@@ -64,7 +82,11 @@ function stringifyErrorOutput(output: unknown): string {
 }
 
 function isMissingHeadPathError(error: unknown): boolean {
-  const gitError = error as { message?: string; status?: number; stderr?: unknown };
+  const gitError = error as {
+    message?: string;
+    status?: number;
+    stderr?: unknown;
+  };
   const errorText = `${stringifyErrorOutput(gitError.stderr)} ${gitError.message ?? ''}`;
 
   return (
@@ -77,7 +99,9 @@ export function readHeadJson(file: string): unknown {
   let source: string;
 
   try {
-    source = execFileSync('git', ['show', `HEAD:${file}`], { encoding: 'utf8' });
+    source = execFileSync('git', ['show', `HEAD:${file}`], {
+      encoding: 'utf8',
+    });
   } catch (error: unknown) {
     if (isMissingHeadPathError(error)) {
       return undefined;
@@ -121,7 +145,10 @@ function collectTokens(
 
   if (Object.prototype.hasOwnProperty.call(node, '$value')) {
     return new Map([
-      [prefix.join('/'), JSON.stringify(normalise({ ...node, $type: tokenType }))],
+      [
+        prefix.join('/'),
+        JSON.stringify(normalise({ ...node, $type: tokenType })),
+      ],
     ]);
   }
 
@@ -129,36 +156,101 @@ function collectTokens(
   Object.entries(node)
     .filter(([key]) => !key.startsWith('$'))
     .forEach(([key, value]) => {
-      collectTokens(value, [...prefix, key], tokenType).forEach((tokenValue, tokenPath) => {
-        tokens.set(tokenPath, tokenValue);
-      });
+      collectTokens(value, [...prefix, key], tokenType).forEach(
+        (tokenValue, tokenPath) => {
+          tokens.set(tokenPath, tokenValue);
+        },
+      );
     });
 
   return tokens;
 }
 
-export function classifyTokenReleaseLabel(files: TokenFileChange[]): ReleaseLabel {
+function displayFileName(fileName?: string): string {
+  return fileName ? path.basename(fileName) : 'tokens';
+}
+
+export function summariseTokenReleaseChanges(
+  files: TokenFileChange[],
+): TokenReleaseSummary {
+  const changedTokens: TokenPathChange[] = [];
+  const deletedOrRenamedTokens: TokenPathChange[] = [];
+
   for (const file of files) {
     const previousTokens = collectTokens(file.previous);
     const currentTokens = collectTokens(file.current);
+    const fileName = displayFileName(file.fileName);
 
-    for (const [tokenPath, previousValue] of Array.from(previousTokens.entries())) {
-      if (!currentTokens.has(tokenPath) || currentTokens.get(tokenPath) !== previousValue) {
-        return 'major';
+    for (const [tokenPath, previousValue] of Array.from(
+      previousTokens.entries(),
+    )) {
+      if (!currentTokens.has(tokenPath)) {
+        deletedOrRenamedTokens.push({ fileName, tokenPath });
+      } else if (currentTokens.get(tokenPath) !== previousValue) {
+        changedTokens.push({ fileName, tokenPath });
       }
     }
   }
 
-  return 'minor';
+  return {
+    changedTokens,
+    deletedOrRenamedTokens,
+    label:
+      deletedOrRenamedTokens.length > 0 || changedTokens.length > 0
+        ? 'major'
+        : 'minor',
+  };
+}
+
+export function classifyTokenReleaseLabel(
+  files: TokenFileChange[],
+): ReleaseLabel {
+  return summariseTokenReleaseChanges(files).label;
+}
+
+export function formatDeletedOrRenamedTokensMarkdown(
+  deletedOrRenamedTokens: TokenPathChange[],
+  limit = 50,
+): string {
+  if (deletedOrRenamedTokens.length === 0) {
+    return '';
+  }
+
+  const visibleTokens = deletedOrRenamedTokens.slice(0, limit);
+  const lines = [
+    '## Deleted or renamed tokens',
+    '',
+    'The following token paths existed in the previous commit but are missing from the fetched tokens. Treat them as breaking changes and verify usages have been migrated.',
+    '',
+    ...visibleTokens.map(
+      ({ fileName, tokenPath }) => `- \`${fileName}\`: \`${tokenPath}\``,
+    ),
+  ];
+
+  if (deletedOrRenamedTokens.length > visibleTokens.length) {
+    lines.push(
+      '',
+      `And ${deletedOrRenamedTokens.length - visibleTokens.length} more deleted or renamed token path(s).`,
+    );
+  }
+
+  return lines.join('\n');
+}
+
+export function summariseTokenReleaseChangesFromGit(
+  tokensDir = DEFAULT_TOKENS_DIR,
+): TokenReleaseSummary {
+  return summariseTokenReleaseChanges(
+    listTokenJsonFiles(tokensDir).map((file) => ({
+      current: readCurrentJson(file),
+      fileName: file,
+      previous: readHeadJson(file),
+    })),
+  );
 }
 
 export function classifyTokenReleaseLabelFromGit(
   tokensDir = DEFAULT_TOKENS_DIR,
 ): ReleaseLabel {
-  return classifyTokenReleaseLabel(
-    listTokenJsonFiles(tokensDir).map((file) => ({
-      current: readCurrentJson(file),
-      previous: readHeadJson(file),
-    })),
-  );
+  return summariseTokenReleaseChangesFromGit(tokensDir).label;
 }
