@@ -122,6 +122,11 @@ Style Dictionary failures fail the workflow at the failing step.
 Errors (missing env / bad token / wrong file key) exit with a hint that points to the right
 place depending on whether you're running locally or in CI.
 
+### Validation and debugging
+
+For the repeatable end-to-end validation process and basic failure triage, see
+[`RUNBOOK.md`](RUNBOOK.md).
+
 ## Stage 2 — DTCG → CSS
 
 [Style Dictionary](https://styledictionary.com/) v5 reads the DTCG files above
