@@ -87,7 +87,8 @@ token-sync/tokens/
 ```
 
 A scheduled workflow at `.github/workflows/sync-figma-variables.yml` runs the same two-stage
-sync in CI every week. It can also be triggered manually from
+sync in CI. It is temporarily configured to run every 30 minutes for validation; the production
+cadence will be daily at 18:00 GMT. It can also be triggered manually from
 **Actions → Sync Figma variables → Run workflow**, with an optional file key override for testing.
 It reads the Figma secrets from step 2, plus the `GH_APP_ID` repository variable and
 `GH_APP_PRIVATE_KEY` secret for branch and pull request automation.
@@ -101,9 +102,10 @@ any existing open `figma-token-sync/*` pull request, then creates a fresh
 `figma-token-sync/<timestamp>-<run-id>` branch and opens one pull request against `main`. Because the
 fresh branch is generated from the latest Figma state against `main`, it includes any still-unmerged
 token changes from previous sync runs. The pull request is labelled `minor` when the token diff only
-adds new tokens, and `major` when existing token paths are changed, removed, or renamed. If release
-label classification fails, the pull request defaults to `major` for review. Figma API or Style
-Dictionary failures fail the workflow at the failing step.
+adds new tokens, and `major` when existing token paths are changed, removed, or renamed. Removed or
+renamed token paths are listed in the pull request body so reviewers can verify usage migrations. If
+release label classification fails, the pull request defaults to `major` for review. Figma API or
+Style Dictionary failures fail the workflow at the failing step.
 
 ### How it works
 

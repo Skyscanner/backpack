@@ -20,22 +20,44 @@ import fs from 'node:fs';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
-import { classifyTokenReleaseLabelFromGit } from './classify-release-label';
+import {
+  formatDeletedOrRenamedTokensMarkdown,
+  summariseTokenReleaseChangesFromGit,
+} from './classify-release-label';
 import { formatFatalError } from './sync-helpers';
 
 const GITHUB_OUTPUT_LABEL = 'label';
 
 function writeLabelOutput(label: string): void {
   if (process.env.GITHUB_OUTPUT) {
-    fs.appendFileSync(process.env.GITHUB_OUTPUT, `${GITHUB_OUTPUT_LABEL}=${label}\n`);
+    fs.appendFileSync(
+      process.env.GITHUB_OUTPUT,
+      `${GITHUB_OUTPUT_LABEL}=${label}\n`,
+    );
     return;
   }
 
   console.log(label);
 }
 
+function writeTokenReleaseSummary(markdown: string): void {
+  if (!process.env.TOKEN_RELEASE_SUMMARY_PATH) {
+    return;
+  }
+
+  fs.writeFileSync(
+    process.env.TOKEN_RELEASE_SUMMARY_PATH,
+    markdown ? `${markdown}\n` : '',
+    'utf8',
+  );
+}
+
 function main(): void {
-  writeLabelOutput(classifyTokenReleaseLabelFromGit());
+  const summary = summariseTokenReleaseChangesFromGit();
+  writeLabelOutput(summary.label);
+  writeTokenReleaseSummary(
+    formatDeletedOrRenamedTokensMarkdown(summary.deletedOrRenamedTokens),
+  );
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
