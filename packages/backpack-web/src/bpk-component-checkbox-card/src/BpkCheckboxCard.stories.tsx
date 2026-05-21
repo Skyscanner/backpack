@@ -425,11 +425,11 @@ const WithCarVariantExample = () => {
 
 const WithCarVariantMobileExample = () => {
   const carTypes = [
-    { id: 'small', label: 'Small', price: 'from £35', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', price: 'from £52', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', price: 'from £78', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'mpv', label: 'MPV', price: 'from £92', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'people-carrier', label: 'People carrier', price: 'from £120', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'small', label: 'Small', price: 'from £35', available: true, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'medium', label: 'Medium', price: 'from £52', available: true, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'large', label: 'Large', price: 'from £78', available: false, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'mpv', label: 'MPV', price: 'from £92', available: true, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'people-carrier', label: 'People carrier', price: 'from £120', available: false, src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
   ];
 
   const [selected, setSelected] = useState<string[]>(['medium']);
@@ -443,43 +443,48 @@ const WithCarVariantMobileExample = () => {
   return (
     <BpkVStack padding="bpk-spacing-md" align="stretch" gap="bpk-spacing-md">
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type (mWeb — horizontal scroll)</BpkText>
-      <BpkMobileScrollContainer>
-        <BpkHStack gap="bpk-spacing-sm" padding="bpk-spacing-sm">
-          {carTypes.map(({ id, label, price, src }) => (
-            <BpkBox key={id} flexShrink={0}>
-              <BpkCheckboxCard.Root
-                checked={selected.includes(id)}
-                onCheckedChange={() => toggle(id)}
-                variant={CHECKBOX_CARD_VARIANTS.cars}
-              >
-                <BpkCheckboxCard.HiddenInput />
-                <BpkCheckboxCard.Content>
-                  <BpkFlex direction="row" align="center" gap="bpk-spacing-md" width="100%">
-                    <BpkBox width="4rem" flexShrink={0}>
-                      <BpkImage
-                        src={src}
-                        altText={`${label} car`}
-                        aspectRatio={64 / 42.5}
-                        style={{ width: '100%' }}
-                      />
-                    </BpkBox>
-                    <BpkVStack gap="bpk-spacing-none" align="start">
-                      <BpkCheckboxCard.Label textStyle={TEXT_STYLES.label2}>
-                        {label}
-                      </BpkCheckboxCard.Label>
-                      <BpkCheckboxCard.Description textStyle={TEXT_STYLES.caption}>
-                        {price}
-                      </BpkCheckboxCard.Description>
-                    </BpkVStack>
-                    {/* Spacer reserves room for the absolute-positioned indicator (top-right). */}
-                    <BpkBox aria-hidden width="0.75rem" flexShrink={0} />
-                  </BpkFlex>
-                </BpkCheckboxCard.Content>
-              </BpkCheckboxCard.Root>
-            </BpkBox>
-          ))}
-        </BpkHStack>
-      </BpkMobileScrollContainer>
+      {/* Tinted parent surface mirrors carhire's chip strip background, where
+          the disabled chip's white fill + grey stroke must stay distinguishable. */}
+      <div style={{ background: canvasContrastDay }}>
+        <BpkMobileScrollContainer>
+          <BpkHStack gap="bpk-spacing-sm" padding="bpk-spacing-sm">
+            {carTypes.map(({ available, id, label, price, src }) => (
+              <BpkBox key={id} flexShrink={0}>
+                <BpkCheckboxCard.Root
+                  checked={selected.includes(id)}
+                  onCheckedChange={() => toggle(id)}
+                  variant={CHECKBOX_CARD_VARIANTS.cars}
+                  disabled={!available}
+                >
+                  <BpkCheckboxCard.HiddenInput />
+                  <BpkCheckboxCard.Content>
+                    <BpkFlex direction="row" align="center" gap="bpk-spacing-md" width="100%">
+                      <BpkBox width="4rem" flexShrink={0}>
+                        <BpkImage
+                          src={src}
+                          altText={`${label} car`}
+                          aspectRatio={64 / 42.5}
+                          style={{ width: '100%' }}
+                        />
+                      </BpkBox>
+                      <BpkVStack gap="bpk-spacing-none" align="start">
+                        <BpkCheckboxCard.Label textStyle={TEXT_STYLES.label2}>
+                          {label}
+                        </BpkCheckboxCard.Label>
+                        <BpkCheckboxCard.Description textStyle={TEXT_STYLES.caption}>
+                          {available ? price : 'Not available'}
+                        </BpkCheckboxCard.Description>
+                      </BpkVStack>
+                      {/* Spacer reserves room for the absolute-positioned indicator (top-right). */}
+                      <BpkBox aria-hidden width="0.75rem" flexShrink={0} />
+                    </BpkFlex>
+                  </BpkCheckboxCard.Content>
+                </BpkCheckboxCard.Root>
+              </BpkBox>
+            ))}
+          </BpkHStack>
+        </BpkMobileScrollContainer>
+      </div>
     </BpkVStack>
   );
 };

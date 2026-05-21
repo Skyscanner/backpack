@@ -136,6 +136,7 @@
     --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
     --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-core-primary-day};
+    --bpk-checkbox-card-disabled-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
 
     // Match BpkPanel border-radius used in car hire
@@ -196,8 +197,12 @@
       }
     }
 
+    // Keep an inset stroke so the chip remains identifiable as a chip on
+    // tinted parent surfaces (e.g. carhire's chip strip), matching origin
+    // BpkPanel's disabled style.
     &[data-disabled]:not([data-loading]) {
-      box-shadow: none;
+      box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
+        var(--bpk-checkbox-card-disabled-border-color, #{tokens.$bpk-line-day});
     }
 
     // outline:none is unconditional — kills the base ring so iOS sticky focus
