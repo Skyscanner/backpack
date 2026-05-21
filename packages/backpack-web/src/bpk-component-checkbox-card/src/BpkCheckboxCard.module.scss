@@ -136,6 +136,12 @@
     --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
     --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-core-primary-day};
+
+    // Disabled bg must match the rest of the cars chip palette (white) so the
+    // PNG image's own white bg blends identically under opacity:0.5 — leaving
+    // it at the base canvas-contrast-day default produces a visible seam
+    // between the chip surface and the image area.
+    --bpk-checkbox-card-disabled-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
 
     // Match BpkPanel border-radius used in car hire
