@@ -49,6 +49,7 @@
     },
     "visual-test": {
       "executor": "nx:run-commands",
+      "dependsOn": ["^build"],
       "options": {
         "commands": [
           "nx run backpack-storybook-host:build-storybook -- -o ../../dist-storybook",
