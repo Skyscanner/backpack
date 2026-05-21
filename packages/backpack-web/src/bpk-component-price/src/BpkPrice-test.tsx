@@ -15,21 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
+
+import type { ReactNode } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
+
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 
-import BpkPrice from './BpkPrice';
+import BpkPrice, { type Props as BpkPriceProps } from './BpkPrice';
 import { ALIGNS, SIZES } from './common-types';
 
 const price = '£1,830';
 const previousPrice = '£2,000';
 const leadingText = 'from';
 const trailingText = 'per day';
-const icon = NewWindowIcon;
-let props;
+const icon = NewWindowIcon as unknown as ReactNode;
+let props: BpkPriceProps;
 
 describe.each([
   [SIZES.xsmall, ALIGNS.left],

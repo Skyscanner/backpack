@@ -15,10 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import BpkPrice from './src/BpkPrice';
-import { SIZES, ALIGNS } from './src/common-types';
+export const SIZES = {
+  xsmall: 'xsmall',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+} as const;
 
-export default BpkPrice;
-export { SIZES, ALIGNS };
+export const ALIGNS = {
+  left: 'left',
+  right: 'right',
+} as const;

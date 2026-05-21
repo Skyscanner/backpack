@@ -16,16 +16,22 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-export const SIZES = {
-  xsmall: 'xsmall',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-};
+import BpkPrice from './BpkPrice';
 
-export const ALIGNS = {
-  left: 'left',
-  right: 'right',
-};
+describe('BpkPrice accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkPrice
+        price="£1,830"
+        previousPrice="£2,000"
+        leadingText="Web only deal"
+        trailingText="per day"
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
