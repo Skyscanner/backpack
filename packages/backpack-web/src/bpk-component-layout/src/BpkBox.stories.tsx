@@ -481,6 +481,36 @@ export const RtlSpacing = {
   render: () => <RtlSpacingExample />,
 };
 
+/**
+ * Block spacing example – demonstrates marginBlock and paddingBlock (CSS logical
+ * shorthands for top+bottom spacing). Prefer these over marginTop+marginBottom
+ * when the same value applies to both sides, as they complete the logical
+ * properties set alongside marginInline/paddingInline.
+ *
+ * @returns {JSX.Element} Boxes using marginBlock and paddingBlock tokens.
+ */
+const BlockSpacingExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>marginBlock — equal top &amp; bottom margin</BpkText>
+      <BpkBox marginBlock={BpkSpacing.LG} backgroundColor={BACKGROUND_COLORS.surfaceElevated} padding={BpkSpacing.SM}>
+        <BpkText>marginBlock={'{'}BpkSpacing.LG{'}'} — same space above and below</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>paddingBlock — equal top &amp; bottom padding</BpkText>
+      <BpkBox paddingBlock={BpkSpacing.LG} paddingInline={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>paddingBlock={'{'}BpkSpacing.LG{'}'} — same internal space top and bottom</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const BlockSpacing = {
+  render: () => <BlockSpacingExample />,
+};
+
 export const Size = {
   render: () => <SizeExample />,
 };

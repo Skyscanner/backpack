@@ -412,4 +412,38 @@ describe('BpkBox', () => {
     });
   });
 
+  describe('marginBlock and paddingBlock props', () => {
+    it('forwards marginBlock — produces different output than no marginBlock', () => {
+      const { container: withMarginBlock } = render(
+        <BpkProvider>
+          <BpkBox marginBlock={BpkSpacing.MD}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withoutMarginBlock } = render(
+        <BpkProvider>
+          <BpkBox>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withMarginBlock.querySelector('div')?.className).not.toBe(
+        withoutMarginBlock.querySelector('div')?.className,
+      );
+    });
+
+    it('forwards paddingBlock — produces different output than no paddingBlock', () => {
+      const { container: withPaddingBlock } = render(
+        <BpkProvider>
+          <BpkBox paddingBlock={BpkSpacing.MD}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withoutPaddingBlock } = render(
+        <BpkProvider>
+          <BpkBox>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withPaddingBlock.querySelector('div')?.className).not.toBe(
+        withoutPaddingBlock.querySelector('div')?.className,
+      );
+    });
+  });
+
 });
