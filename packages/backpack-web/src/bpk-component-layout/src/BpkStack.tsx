@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef, type Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { Stack, VStack, HStack } from '@chakra-ui/react';
 
@@ -31,7 +31,7 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+export const BpkStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
   const resolvedAlign = align ?? alignItems;
   const resolvedJustify = justify ?? justifyContent;
   const processedProps = processBpkComponentProps({
@@ -48,7 +48,7 @@ export const BpkStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignIt
     : undefined;
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <Stack ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('Stack')} {...processedProps}>
+    <Stack ref={ref} className={classNames} {...getDataComponentAttribute('Stack')} {...processedProps}>
       {children}
     </Stack>
   );
@@ -56,7 +56,7 @@ export const BpkStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignIt
 
 BpkStack.displayName = 'BpkStack';
 
-export const BpkHStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+export const BpkHStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
   const resolvedAlign = align ?? alignItems;
   const resolvedJustify = justify ?? justifyContent;
   const processedProps = processBpkComponentProps({
@@ -73,7 +73,7 @@ export const BpkHStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignI
     : undefined;
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <HStack ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('HStack')} {...processedProps}>
+    <HStack ref={ref} className={classNames} {...getDataComponentAttribute('HStack')} {...processedProps}>
       {children}
     </HStack>
   );
@@ -81,7 +81,7 @@ export const BpkHStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignI
 
 BpkHStack.displayName = 'BpkHStack';
 
-export const BpkVStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
+export const BpkVStack = forwardRef<HTMLDivElement, BpkStackProps>(({ align, alignItems, backgroundColor, children, color, justify, justifyContent, ...props }, ref) => {
   const resolvedAlign = align ?? alignItems;
   const resolvedJustify = justify ?? justifyContent;
   const processedProps = processBpkComponentProps({
@@ -98,7 +98,7 @@ export const BpkVStack = forwardRef<HTMLElement, BpkStackProps>(({ align, alignI
     : undefined;
   return (
     // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <VStack ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('VStack')} {...processedProps}>
+    <VStack ref={ref} className={classNames} {...getDataComponentAttribute('VStack')} {...processedProps}>
       {children}
     </VStack>
   );

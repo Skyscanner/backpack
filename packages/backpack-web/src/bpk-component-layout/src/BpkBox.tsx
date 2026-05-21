@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef, type Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { Box } from '@chakra-ui/react';
 
@@ -31,7 +31,7 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
+export const BpkBox = forwardRef<HTMLDivElement, BpkBoxProps>(
   ({ backgroundColor, children, color, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, { component: 'BpkBox' });
     const classNames = (color || backgroundColor)
@@ -43,7 +43,7 @@ export const BpkBox = forwardRef<HTMLElement, BpkBoxProps>(
       : undefined;
     return (
       // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-      <Box ref={ref as Ref<HTMLDivElement>} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
+      <Box ref={ref} className={classNames} {...getDataComponentAttribute('Box')} {...processedProps}>
         {children}
       </Box>
     );

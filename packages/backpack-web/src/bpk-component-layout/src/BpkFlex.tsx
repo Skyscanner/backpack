@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { forwardRef, type Ref } from 'react';
+import { forwardRef } from 'react';
 
 import { Flex } from '@chakra-ui/react';
 
@@ -31,7 +31,7 @@ import STYLES from './BpkLayout.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export const BpkFlex = forwardRef<HTMLElement, BpkFlexProps>(
+export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
   ({ align, backgroundColor, basis, children, color, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkFlex',
@@ -56,7 +56,7 @@ export const BpkFlex = forwardRef<HTMLElement, BpkFlexProps>(
 
     return (
       <Flex
-        ref={ref as Ref<HTMLDivElement>}
+        ref={ref}
         // eslint-disable-next-line @skyscanner/rules/forbid-component-props
         className={classNames}
         {...getDataComponentAttribute('Flex')}
