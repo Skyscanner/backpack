@@ -38,7 +38,6 @@ export type DTCGScalar = boolean | number | string;
 export interface DTCGFigmaMetadata {
   id: string;
   key: string;
-  name: string;
 }
 
 export interface DTCGTokenExtensions {

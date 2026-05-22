@@ -665,7 +665,6 @@ export function buildDTCGTreeForMode(
           figma: {
             id: variable.id,
             key: variable.key,
-            name: variable.name,
           },
         },
       });
