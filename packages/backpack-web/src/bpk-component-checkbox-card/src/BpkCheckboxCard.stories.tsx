@@ -21,7 +21,6 @@ import type { ReactNode } from 'react';
 
 import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkButton from '../../bpk-component-button';
 import AirportsIconLg from '../../bpk-component-icon/lg/airports';
 import CityIconLg from '../../bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../bpk-component-icon/lg/landmark';
@@ -39,6 +38,17 @@ import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, useCheck
 import CHECKBOX_CARD_THEME_ATTRIBUTES, { createCheckboxCardTheme } from './themeAttributes';
 
 import type { Meta } from '@storybook/react';
+
+const CAR_IMAGE_BASE_URL = 'https://logos.skyscnr.com/images/carhire/sippmaps/';
+
+const CAR_IMAGES = {
+  small: `${CAR_IMAGE_BASE_URL}14942_cc2400_032_N1.png`,
+  medium: `${CAR_IMAGE_BASE_URL}43518_cc2400_032_FRD.png`,
+  large: `${CAR_IMAGE_BASE_URL}53101_cc2400_032_695.png`,
+  suv: `${CAR_IMAGE_BASE_URL}13070_cc2400_032_YZ.png`,
+};
+
+const CAR_IMAGE_STYLE = { width: '100%', backgroundColor: colorWhite };
 
 const BasicExample = () => {
   const [selected1, setSelected1] = useState(false);
@@ -372,13 +382,16 @@ const WithCustomThemeExample = () => {
 };
 
 const WithCarVariantExample = () => {
+  // Three chips side-by-side cover the three cars-variant states a consumer
+  // (e.g. carhire) renders: a normal available chip, a chip still waiting on
+  // a price (loading spinner), and a chip the API returned as unavailable
+  // (disabled, "Not available" caption, no price).
   const carTypes = [
-    { id: 'small', label: 'Small', price: '£35', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', price: '£52', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', price: '£78', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'small', label: 'Small', price: '£35', state: 'normal' as const, src: CAR_IMAGES.small },
+    { id: 'medium', label: 'Medium', price: '£52', state: 'loading' as const, src: CAR_IMAGES.medium },
+    { id: 'large', label: 'Large', price: '£78', state: 'unavailable' as const, src: CAR_IMAGES.large },
   ];
 
-  const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (id: string) => {
@@ -391,13 +404,14 @@ const WithCarVariantExample = () => {
     <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type</BpkText>
       <BpkHStack gap="bpk-spacing-md" wrap="wrap">
-        {carTypes.map(({ id, label, price, src }) => (
+        {carTypes.map(({ id, label, price, src, state }) => (
           <BpkBox key={id} width="7.25rem">
             <BpkCheckboxCard.Root
               checked={selected.includes(id)}
               onCheckedChange={() => toggle(id)}
               variant={CHECKBOX_CARD_VARIANTS.cars}
-              loading={loading}
+              loading={state === 'loading'}
+              disabled={state === 'unavailable'}
             >
               <BpkCheckboxCard.HiddenInput />
               <BpkCheckboxCard.Content>
@@ -406,30 +420,33 @@ const WithCarVariantExample = () => {
                     src={src}
                     altText={`${label} car`}
                     aspectRatio={100 / 66}
-                    style={{ width: '100%' }}
+                    style={CAR_IMAGE_STYLE}
                   />
                   <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                  <BpkCheckboxCard.Price price={price} />
+                  {state === 'unavailable' ? (
+                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
+                      Not available
+                    </BpkCheckboxCard.Description>
+                  ) : (
+                    <BpkCheckboxCard.Price price={price} />
+                  )}
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
           </BpkBox>
         ))}
       </BpkHStack>
-      <BpkButton onClick={() => setLoading((prev) => !prev)}>
-        {loading ? 'Simulate loading' : 'Simulate prices loaded'}
-      </BpkButton>
     </BpkVStack>
   );
 };
 
 const WithCarVariantMobileExample = () => {
   const carTypes = [
-    { id: 'small', label: 'Small', price: 'from £35', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'medium', label: 'Medium', price: 'from £52', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'large', label: 'Large', price: 'from £78', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'mpv', label: 'MPV', price: 'from £92', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
-    { id: 'people-carrier', label: 'People carrier', price: 'from £120', src: 'https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg' },
+    { id: 'small', label: 'Small', price: 'from £35', available: true, src: CAR_IMAGES.small },
+    { id: 'medium', label: 'Medium', price: 'from £52', available: true, src: CAR_IMAGES.medium },
+    { id: 'large', label: 'Large', price: 'from £78', available: false, src: CAR_IMAGES.large },
+    { id: 'mpv', label: 'MPV', price: 'from £92', available: true, src: CAR_IMAGES.suv },
+    { id: 'people-carrier', label: 'People carrier', price: 'from £120', available: false, src: CAR_IMAGES.medium },
   ];
 
   const [selected, setSelected] = useState<string[]>(['medium']);
@@ -443,43 +460,96 @@ const WithCarVariantMobileExample = () => {
   return (
     <BpkVStack padding="bpk-spacing-md" align="stretch" gap="bpk-spacing-md">
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type (mWeb — horizontal scroll)</BpkText>
-      <BpkMobileScrollContainer>
-        <BpkHStack gap="bpk-spacing-sm" padding="bpk-spacing-sm">
-          {carTypes.map(({ id, label, price, src }) => (
-            <BpkBox key={id} flexShrink={0}>
+      {/* Tinted parent surface mirrors carhire's chip strip background, where
+          the disabled chip's white fill + grey stroke must stay distinguishable. */}
+      <div style={{ background: canvasContrastDay }}>
+        <BpkMobileScrollContainer>
+          <BpkHStack gap="bpk-spacing-sm" padding="bpk-spacing-sm">
+            {carTypes.map(({ available, id, label, price, src }) => (
+              <BpkBox key={id} flexShrink={0}>
+                <BpkCheckboxCard.Root
+                  checked={selected.includes(id)}
+                  onCheckedChange={() => toggle(id)}
+                  variant={CHECKBOX_CARD_VARIANTS.cars}
+                  disabled={!available}
+                >
+                  <BpkCheckboxCard.HiddenInput />
+                  <BpkCheckboxCard.Content>
+                    <BpkFlex direction="row" align="center" gap="bpk-spacing-md" width="100%">
+                      <BpkBox width="4rem" flexShrink={0}>
+                        <BpkImage
+                          src={src}
+                          altText={`${label} car`}
+                          aspectRatio={64 / 42.5}
+                          style={CAR_IMAGE_STYLE}
+                        />
+                      </BpkBox>
+                      <BpkVStack gap="bpk-spacing-none" align="start">
+                        <BpkCheckboxCard.Label textStyle={TEXT_STYLES.label2}>
+                          {label}
+                        </BpkCheckboxCard.Label>
+                        <BpkCheckboxCard.Description textStyle={TEXT_STYLES.caption}>
+                          {available ? price : 'Not available'}
+                        </BpkCheckboxCard.Description>
+                      </BpkVStack>
+                      {/* Spacer reserves room for the absolute-positioned indicator (top-right). */}
+                      <BpkBox aria-hidden width="0.75rem" flexShrink={0} />
+                    </BpkFlex>
+                  </BpkCheckboxCard.Content>
+                </BpkCheckboxCard.Root>
+              </BpkBox>
+            ))}
+          </BpkHStack>
+        </BpkMobileScrollContainer>
+      </div>
+    </BpkVStack>
+  );
+};
+
+// All-disabled showcase to visually inspect chip-bg vs image-bg blend under
+// opacity:0.5. Transparent carhire PNGs are rendered on an explicit white image
+// background to mirror carhire assets; if the disabled card bg drifts from
+// white, the image area shows the same seam seen in product.
+const WithCarVariantUnavailableExample = () => {
+  const carTypes = [
+    { id: 'small', label: 'Small', src: CAR_IMAGES.small },
+    { id: 'medium', label: 'Medium', src: CAR_IMAGES.medium },
+    { id: 'large', label: 'Large', src: CAR_IMAGES.large },
+    { id: 'suv', label: 'SUV', src: CAR_IMAGES.suv },
+  ];
+
+  return (
+    <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>All unavailable — on tinted parent (carhire scenario)</BpkText>
+      <div style={{ background: canvasContrastDay, padding: '1rem' }}>
+        <BpkHStack gap="bpk-spacing-md" wrap="wrap">
+          {carTypes.map(({ id, label, src }) => (
+            <BpkBox key={id} width="7.25rem">
               <BpkCheckboxCard.Root
-                checked={selected.includes(id)}
-                onCheckedChange={() => toggle(id)}
+                checked={false}
                 variant={CHECKBOX_CARD_VARIANTS.cars}
+                disabled
               >
                 <BpkCheckboxCard.HiddenInput />
                 <BpkCheckboxCard.Content>
-                  <BpkFlex direction="row" align="center" gap="bpk-spacing-md" width="100%">
-                    <BpkBox width="4rem" flexShrink={0}>
-                      <BpkImage
-                        src={src}
-                        altText={`${label} car`}
-                        aspectRatio={64 / 42.5}
-                        style={{ width: '100%' }}
-                      />
-                    </BpkBox>
-                    <BpkVStack gap="bpk-spacing-none" align="start">
-                      <BpkCheckboxCard.Label textStyle={TEXT_STYLES.label2}>
-                        {label}
-                      </BpkCheckboxCard.Label>
-                      <BpkCheckboxCard.Description textStyle={TEXT_STYLES.caption}>
-                        {price}
-                      </BpkCheckboxCard.Description>
-                    </BpkVStack>
-                    {/* Spacer reserves room for the absolute-positioned indicator (top-right). */}
-                    <BpkBox aria-hidden width="0.75rem" flexShrink={0} />
-                  </BpkFlex>
+                  <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                    <BpkImage
+                      src={src}
+                      altText={`${label} car`}
+                      aspectRatio={100 / 66}
+                      style={CAR_IMAGE_STYLE}
+                    />
+                    <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
+                      Not available
+                    </BpkCheckboxCard.Description>
+                  </BpkVStack>
                 </BpkCheckboxCard.Content>
               </BpkCheckboxCard.Root>
             </BpkBox>
           ))}
         </BpkHStack>
-      </BpkMobileScrollContainer>
+      </div>
     </BpkVStack>
   );
 };
@@ -622,6 +692,10 @@ export const WithCarVariant = {
 
 export const WithCarVariantMobile = {
   render: () => <WithCarVariantMobileExample />,
+};
+
+export const WithCarVariantUnavailable = {
+  render: () => <WithCarVariantUnavailableExample />,
 };
 
 export const WithContextOutsideRoot = {
