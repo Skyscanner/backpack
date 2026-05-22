@@ -349,10 +349,10 @@ type BpkStackOptions = {
 export interface BpkStackSpecificProps
   extends Omit<RemoveCommonProps<StackProps>, StackOptionKeysType>,
     BpkStackOptions,
-    BpkFlexGridProps {
-  /** Alias for `align`. Maps to CSS `align-items`. */
+    Omit<BpkFlexGridProps, 'alignItems' | 'justifyContent'> {
+  /** Alias for `align`. Maps to CSS `align-items`. Responsive — replaces the non-responsive BpkFlexGridProps.alignItems. */
   alignItems?: BpkStackOptions['align'];
-  /** Alias for `justify`. Maps to CSS `justify-content`. */
+  /** Alias for `justify`. Maps to CSS `justify-content`. Responsive — replaces the non-responsive BpkFlexGridProps.justifyContent. */
   justifyContent?: BpkStackOptions['justify'];
 }
 

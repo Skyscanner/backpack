@@ -281,7 +281,7 @@ const FlightLeg = ({
         {stops}
       </BpkText>
     </BpkVStack>
-    <BpkVStack alignItems="start" gap={BpkSpacing.None}>
+    <BpkVStack align="start" gap={BpkSpacing.None}>
       <BpkText textStyle={TEXT_STYLES.heading3}>{arrivalTime}</BpkText>
       <BpkText
         textStyle={TEXT_STYLES.bodyDefault}
