@@ -36,7 +36,6 @@ function token(value: unknown, key: string) {
       figma: {
         id: `id-${key}`,
         key,
-        name: key,
       },
     },
   };
@@ -219,7 +218,6 @@ describe('classifyTokenReleaseLabel', () => {
                   figma: {
                     id: 'new-id',
                     key: 'spacing-base',
-                    name: 'Spacing/Base',
                   },
                 },
               },

@@ -65,7 +65,6 @@ function figmaExtensions(variable: LocalVariable) {
     figma: {
       id: variable.id,
       key: variable.key,
-      name: variable.name,
     },
   };
 }
