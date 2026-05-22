@@ -387,10 +387,10 @@ export function processSpacingProps<T extends Record<string, any>>(
   const spacingKeys = [
     // Padding props
     'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
-    'paddingStart', 'paddingEnd', 'paddingInline',
+    'paddingStart', 'paddingEnd', 'paddingInline', 'paddingBlock',
     // Margin props
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
-    'marginStart', 'marginEnd', 'marginInline',
+    'marginStart', 'marginEnd', 'marginInline', 'marginBlock',
     // Gap and spacing
     'gap', 'spacing',
     'rowGap', 'columnGap',
