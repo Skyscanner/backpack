@@ -30,7 +30,7 @@ jobs:
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
-        run: npm run tokens:fetch
+        run: ./node_modules/.bin/nx run backpack-token-sync:tokens-fetch
 
       - name: Stage 2 - Build CSS from DTCG tokens
-        run: npm run tokens:build-css
+        run: ./node_modules/.bin/nx run backpack-token-sync:tokens-build-css

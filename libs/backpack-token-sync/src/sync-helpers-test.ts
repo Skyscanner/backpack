@@ -68,7 +68,7 @@ describe('isCI / credentialLocation', () => {
 
   it('credentialLocation points to the .env file locally and to the repo secret in CI', () => {
     expect(credentialLocation('FOO')).toBe(
-      'FOO in token-sync/.env (see token-sync/.env.example)',
+      'FOO in libs/backpack-token-sync/.env (see libs/backpack-token-sync/.env.example)',
     );
 
     process.env.GITHUB_ACTIONS = 'true';
@@ -99,7 +99,7 @@ describe('requireEnv', () => {
 
   it('throws a CI-aware message when the env var is missing', () => {
     expect(() => requireEnv('TEST_TOKEN_SYNC_REQUIRE_ENV')).toThrow(
-      'Missing required environment variable: TEST_TOKEN_SYNC_REQUIRE_ENV. Set TEST_TOKEN_SYNC_REQUIRE_ENV in token-sync/.env (see token-sync/.env.example).',
+      'Missing required environment variable: TEST_TOKEN_SYNC_REQUIRE_ENV. Set TEST_TOKEN_SYNC_REQUIRE_ENV in libs/backpack-token-sync/.env (see libs/backpack-token-sync/.env.example).',
     );
   });
 });

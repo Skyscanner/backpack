@@ -52,7 +52,7 @@ export function credentialLocation(name: string): string {
   if (isCI()) {
     return `the "${name}" repository secret (Settings → Secrets and variables → Actions)`;
   }
-  return `${name} in token-sync/.env (see token-sync/.env.example)`;
+  return `${name} in libs/backpack-token-sync/.env (see libs/backpack-token-sync/.env.example)`;
 }
 
 export function requireEnv(name: string): string {

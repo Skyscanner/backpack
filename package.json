@@ -47,9 +47,9 @@
     "start": "npm run build && npm run storybook",
     "storybook": "nx run backpack-storybook-host:serve-storybook -- -p 9001",
     "storybook:dist": "nx run backpack-storybook-host:build-storybook -- -o dist-storybook",
-    "tokens:fetch": "tsx token-sync/src/index.ts",
-    "tokens:build-css": "tsx token-sync/src/build-css-cli.ts",
-    "tokens:sync": "npm run tokens:fetch && npm run tokens:build-css",
+    "tokens:fetch": "nx run backpack-token-sync:tokens-fetch",
+    "tokens:build-css": "nx run backpack-token-sync:tokens-build-css",
+    "tokens:sync": "nx run backpack-token-sync:tokens-sync",
     "sassdoc": "nx run backpack-web:sassdoc",
     "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc && nx run-many -t typecheck",
@@ -89,7 +89,7 @@
       "<rootDir>/scripts/jest/setup.js"
     ],
     "testEnvironment": "jsdom",
-    "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",
+    "testRegex": "(?:packages|libs/backpack-token-sync)/.*-test\\.[jt]sx?$",
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],

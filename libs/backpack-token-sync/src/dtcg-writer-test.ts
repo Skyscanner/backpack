@@ -201,7 +201,7 @@ describe('assertUniqueFileNames', () => {
 describe('assertSafeOutputDir', () => {
   it('accepts a subdirectory of the current working directory', () => {
     expect(() =>
-      assertSafeOutputDir(path.join(process.cwd(), 'token-sync', 'tokens')),
+      assertSafeOutputDir(path.join(process.cwd(), 'libs', 'backpack-token-sync', 'tokens')),
     ).not.toThrow();
   });
 
