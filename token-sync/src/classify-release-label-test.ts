@@ -21,7 +21,6 @@
 
 import {
   classifyTokenReleaseLabel,
-  formatAddedTokensMarkdown,
   formatChangedTokenValuesMarkdown,
   formatDeletedOrRenamedTokensMarkdown,
   summariseTokenReleaseChanges,
@@ -162,31 +161,6 @@ describe('classifyTokenReleaseLabel', () => {
         '### backpack.dark.json',
         '',
         '- `Spacing/Base`',
-      ].join('\n'),
-    );
-  });
-
-  it('formats added token paths for pull request bodies', () => {
-    expect(
-      formatAddedTokensMarkdown([
-        { fileName: 'backpack.light.json', tokenPath: 'Spacing/Large' },
-        { fileName: 'backpack.light.json', tokenPath: 'Spacing/XLarge' },
-        { fileName: 'backpack.dark.json', tokenPath: 'Spacing/Large' },
-      ]),
-    ).toBe(
-      [
-        '## Added tokens',
-        '',
-        "The following token paths are new in this sync — they didn't exist in the previous commit.",
-        '',
-        '### backpack.light.json',
-        '',
-        '- `Spacing/Large`',
-        '- `Spacing/XLarge`',
-        '',
-        '### backpack.dark.json',
-        '',
-        '- `Spacing/Large`',
       ].join('\n'),
     );
   });

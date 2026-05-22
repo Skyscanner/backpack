@@ -305,50 +305,6 @@ export function formatChangedTokenValuesMarkdown(
   return lines.join('\n');
 }
 
-export function formatAddedTokensMarkdown(
-  addedTokens: TokenPathChange[],
-  limit = 50,
-): string {
-  if (addedTokens.length === 0) {
-    return '';
-  }
-
-  const visibleTokens = addedTokens.slice(0, limit);
-  const tokensByFile = new Map<string, string[]>();
-  visibleTokens.forEach(({ fileName, tokenPath }) => {
-    tokensByFile.set(fileName, [
-      ...(tokensByFile.get(fileName) ?? []),
-      tokenPath,
-    ]);
-  });
-
-  const tokenLines = Array.from(tokensByFile.entries()).flatMap(
-    ([fileName, tokenPaths]) => [
-      `### ${fileName}`,
-      '',
-      ...tokenPaths.map((tokenPath) => `- \`${tokenPath}\``),
-      '',
-    ],
-  );
-
-  const lines = [
-    '## Added tokens',
-    '',
-    "The following token paths are new in this sync — they didn't exist in the previous commit.",
-    '',
-    ...tokenLines.slice(0, -1),
-  ];
-
-  if (addedTokens.length > visibleTokens.length) {
-    lines.push(
-      '',
-      `And ${addedTokens.length - visibleTokens.length} more added token path(s).`,
-    );
-  }
-
-  return lines.join('\n');
-}
-
 export function summariseTokenReleaseChangesFromGit(
   tokensDir = DEFAULT_TOKENS_DIR,
 ): TokenReleaseSummary {

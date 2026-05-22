@@ -104,9 +104,11 @@ fresh branch is generated from the latest Figma state against `main`, it include
 token changes from previous sync runs. The pull request is labelled `major` when an existing token
 path is removed, renamed, or has its value changed (because consumer code or downstream visuals may
 break), and `minor` only when the diff is purely additive (new token paths). Removed or renamed
-token paths are listed in the pull request body so reviewers can verify usage migrations. If release label
-classification fails, the pull request defaults to `major` for review. Figma API or Style Dictionary
-failures fail the workflow at the failing step.
+token paths, plus changed token values, are listed in the pull request body so reviewers can verify
+usage migrations and visual impact. Pure additions are not listed because a delete-and-add diff can
+represent a change that needs reviewer judgement. If release label classification fails, the pull
+request defaults to `major` for review. Figma API or Style Dictionary failures fail the workflow at
+the failing step.
 
 For human takeover (when the automated PR needs to be replaced with a hand-curated one), see the
 "Manual intervention" section in [`RUNBOOK.md`](RUNBOOK.md).

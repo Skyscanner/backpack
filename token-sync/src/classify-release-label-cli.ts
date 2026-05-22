@@ -21,7 +21,6 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
 import {
-  formatAddedTokensMarkdown,
   formatChangedTokenValuesMarkdown,
   formatDeletedOrRenamedTokensMarkdown,
   summariseTokenReleaseChangesFromGit,
@@ -61,7 +60,6 @@ function main(): void {
   const sections = [
     formatDeletedOrRenamedTokensMarkdown(summary.deletedOrRenamedTokens),
     formatChangedTokenValuesMarkdown(summary.changedTokens),
-    formatAddedTokensMarkdown(summary.addedTokens),
   ].filter(Boolean);
 
   writeTokenReleaseSummary(sections.join('\n\n'));
