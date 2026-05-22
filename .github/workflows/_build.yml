@@ -24,7 +24,6 @@ jobs:
       # against the wrong baseline.
       actions: read
       contents: read
-      id-token: write
       statuses: write
       pull-requests: write
 
