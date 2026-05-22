@@ -492,16 +492,38 @@ export const RtlSpacing = {
 const BlockSpacingExample = () => (
   <LayoutWrapper>
     <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
-      <BpkText textStyle={TEXT_STYLES.label2}>marginBlock — equal top &amp; bottom margin</BpkText>
+      <BpkText textStyle={TEXT_STYLES.label2}>marginBlock — static</BpkText>
       <BpkBox marginBlock={BpkSpacing.LG} backgroundColor={BACKGROUND_COLORS.surfaceElevated} padding={BpkSpacing.SM}>
         <BpkText>marginBlock={'{'}BpkSpacing.LG{'}'} — same space above and below</BpkText>
       </BpkBox>
     </BpkBox>
 
-    <BpkBox padding={BpkSpacing.SM}>
-      <BpkText textStyle={TEXT_STYLES.label2}>paddingBlock — equal top &amp; bottom padding</BpkText>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>paddingBlock — static</BpkText>
       <BpkBox paddingBlock={BpkSpacing.LG} paddingInline={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
         <BpkText>paddingBlock={'{'}BpkSpacing.LG{'}'} — same internal space top and bottom</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>marginBlock — responsive (SM on mobile, LG on tablet+)</BpkText>
+      <BpkBox
+        marginBlock={{ mobile: BpkSpacing.SM, tablet: BpkSpacing.LG }}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        padding={BpkSpacing.SM}
+      >
+        <BpkText>resize the viewport to see the margin change</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>paddingBlock — responsive (SM on mobile, LG on tablet+)</BpkText>
+      <BpkBox
+        paddingBlock={{ mobile: BpkSpacing.SM, tablet: BpkSpacing.LG }}
+        paddingInline={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>resize the viewport to see the padding change</BpkText>
       </BpkBox>
     </BpkBox>
   </LayoutWrapper>
