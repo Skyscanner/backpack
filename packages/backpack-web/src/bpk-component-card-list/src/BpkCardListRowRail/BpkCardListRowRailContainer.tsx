@@ -34,7 +34,6 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
     accessibilityLabels,
     accessory,
     children,
-    initiallyInViewCardIndex,
     initiallyShownCards,
     isMobile = false,
     layout,
@@ -44,18 +43,7 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
   const totalIndicators = Math.ceil(childrenCount / initiallyShownCards);
   const showAccessory = childrenCount > initiallyShownCards;
 
-  // Calculate initial page from card index
-  const [initialPageIndex] = useState(() => {
-    if (initiallyInViewCardIndex < 0) {
-      return 0;
-    }
-    if (initiallyInViewCardIndex >= childrenCount) {
-      return Math.max(0, totalIndicators - 1);
-    }
-    return Math.floor(initiallyInViewCardIndex / initiallyShownCards);
-  });
-
-  const [currentIndex, setCurrentIndex] = useState(initialPageIndex);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const accessoryContent =
     layout === LAYOUTS.row &&
@@ -85,7 +73,6 @@ const BpkCardListRowRailContainer = (props: CardListRowRailProps) => {
         isMobile={isMobile}
         carouselLabel={accessibilityLabels?.carouselLabel}
         slideLabel={accessibilityLabels?.slideLabel}
-        initialPageIndex={initialPageIndex}
       >
         {children}
       </BpkCardListCarousel>
