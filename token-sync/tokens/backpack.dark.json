@@ -1,10 +1,22 @@
 {
   "Canvas": {
     "Contrast": {
-      "$value": "{Neutral.Dark Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6569",
+          "key": "128edf9f8fc516352dddb9185dc710b8e60d83c5"
+        }
+      }
     },
     "Default": {
-      "$value": "{Neutral.Dark Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6568",
+          "key": "40cbc126ddac330d7a5cbd23d05c471a8546d8e9"
+        }
+      }
     },
     "$type": "color"
   },
@@ -12,37 +24,91 @@
     "Badge": {
       "Colour": {
         "bg-default": {
-          "$value": "{Neutral.Dark Grey 25}"
+          "$value": "{Neutral.Dark Grey 25}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5533:6927",
+              "key": "b767b622dd6f4f8ab6797cc34d750eec60dce4fd"
+            }
+          }
         },
         "bg-inverse": {
-          "$value": "{Neutral.Dark Grey 25}"
+          "$value": "{Neutral.Dark Grey 25}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:10981:27550",
+              "key": "47eb5ea4c60b606de5338e03ea2f3f0658910a1e"
+            }
+          }
         },
         "bg-outline": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:10981:27551",
+              "key": "c7cdd19eb09f218ffaa827b4f002ad90182cf180"
+            }
+          }
         },
         "bg-subtle": {
-          "$value": "{Neutral.Dark Grey 25}"
+          "$value": "{Neutral.Dark Grey 25}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11008:8442",
+              "key": "c365945cc68443f17ba780a466c1b2db286535e6"
+            }
+          }
         },
         "stroke-outline": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11008:33657",
+              "key": "76d96395b1dd0f5faaf7611e6641de670918c3c7"
+            }
+          }
         },
         "$type": "color"
       },
       "Dimension": {
         "padding-horizontal-default": {
-          "$value": "{Spacing.md}"
+          "$value": "{Spacing.md}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11008:33786",
+              "key": "9403a46b93438d5cc7e8e7dd44ebec261e8aaf85"
+            }
+          }
         },
         "padding-horizontal-subtle": {
-          "$value": "{Spacing.md}"
+          "$value": "{Spacing.md}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11129:5087",
+              "key": "7af70d5b1f38998b08e12f0026f633be6ff5fd36"
+            }
+          }
         },
         "$type": "dimension"
       },
       "Typography": {
         "tmp-badge-label": {
-          "$value": "14px"
+          "$value": "14px",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11394:3268",
+              "key": "7f664fb3e4531667cec28feaae93d6aa54a6ed91"
+            }
+          }
         },
         "tmp-badge-line-height": {
-          "$value": "0px"
+          "$value": "0px",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11394:11791",
+              "key": "9f4c76a7ab86770a2e867f1267d6961f81e898e4"
+            }
+          }
         },
         "$type": "dimension"
       }
@@ -50,156 +116,522 @@
     "Button": {
       "Colour": {
         "bg-destructive": {
-          "$value": "{Neutral.Grey 20}"
+          "$value": "{Neutral.Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5457:6462",
+              "key": "fef94e050a921961a8d4ea212eb892dd54127645"
+            }
+          }
         },
         "bg-destructive-pressed": {
-          "$value": "{Colour.Bright Berry}"
+          "$value": "{Colour.Bright Berry}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11214:33337",
+              "key": "6a292b4b34f84e7d18d4451ba3dda6200cad8bee"
+            }
+          }
         },
         "bg-disabled": {
-          "$value": "{Neutral.Dark Grey 00}"
+          "$value": "{Neutral.Dark Grey 00}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5456:6464",
+              "key": "b8e6ca57d4687ea1e2edef27c399260b26edd1bf"
+            }
+          }
         },
         "bg-feature-pressed": {
-          "$value": "{Colour.Bright Blue 20}"
+          "$value": "{Colour.Bright Blue 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5457:6458",
+              "key": "50d426cb015ac979efa991cfa393190f6277cbfa"
+            }
+          }
         },
         "bg-featured": {
-          "$value": "{Colour.Bright Blue 20}"
+          "$value": "{Colour.Bright Blue 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11214:35675",
+              "key": "7d6828a82cb76a5f5f79c9e1f2c93ee179e43f11"
+            }
+          }
         },
         "bg-footer": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11214:33441",
+              "key": "9e879ee1c48fb27491e2016db6d8d2a582f342a1"
+            }
+          }
         },
         "bg-footer-pressed": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11214:33447",
+              "key": "38642da57dbb6ca87b3445097827d4e8423161d4"
+            }
+          }
         },
         "bg-primary": {
-          "$value": "{Colour.Sky Blue 85}"
+          "$value": "{Colour.Sky Blue 85}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:6734:13",
+              "key": "069d439b6c7782c6e927fd90fd3363ae3f3fb1cf"
+            }
+          }
         },
         "bg-primaryOnDark": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11252:4723",
+              "key": "03cde5a46b1be1655007ca2434dc01877b7addd0"
+            }
+          }
         },
         "bg-primaryOnDark-pressed": {
-          "$value": "{Neutral.Grey 30}"
+          "$value": "{Neutral.Grey 30}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5457:6464",
+              "key": "8f17093a5826e5adb705f8a77f33500324895725"
+            }
+          }
         },
         "bg-primaryOnLight": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11235:28792",
+              "key": "c565aa0f2113860f6920c9989019f1dcf465e32e"
+            }
+          }
         },
         "bg-primaryOnLight-pressed": {
-          "$value": "{Colour.Dark Blue 100}"
+          "$value": "{Colour.Dark Blue 100}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5457:6460",
+              "key": "c120d9119611950da20114c722b0a00d32fb72ee"
+            }
+          }
         },
         "bg-secondary": {
-          "$value": "{Neutral.Dark Grey 25}"
+          "$value": "{Neutral.Dark Grey 25}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11206:9547",
+              "key": "ab616fb4d9fe9270849095904daed9640c4c9718"
+            }
+          }
         },
         "bg-secondary-pressed": {
-          "$value": "{Neutral.Dark Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5457:6463",
+              "key": "f423f5c682be1788284aa85dcf8639e6e3d2d27f"
+            }
+          }
         },
         "bg-secondaryOnContrast": {
-          "$value": "{Neutral.Dark Grey 25}"
+          "$value": "{Neutral.Dark Grey 25}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11206:33275",
+              "key": "bb0c9371d37144bd57d7532f259b17c0e58cd4ca"
+            }
+          }
         },
         "bg-secondaryOnContrast-pressed": {
-          "$value": "{Neutral.Dark Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11206:33276",
+              "key": "d6b46e0d871d5dc45b8ae80b092dff5b7804c5eb"
+            }
+          }
         },
         "bg-secondaryOnDark": {
-          "$value": "{Alpha.White Alpha 10}"
+          "$value": "{Alpha.White Alpha 10}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5457:6465",
+              "key": "b3f985bb53aa7e139a06d37a5596526a0d673edd"
+            }
+          }
         },
         "bg-secondaryOnDark-disabled": {
-          "$value": "{Neutral.Dark Grey 00}"
+          "$value": "{Neutral.Dark Grey 00}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11235:31573",
+              "key": "50b3147f4fc0cd661bb5286654ccdea3012d31d7"
+            }
+          }
         },
         "bg-secondaryOnDark-pressed": {
-          "$value": "{Alpha.White Alpha 20}"
+          "$value": "{Alpha.White Alpha 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5690:4472",
+              "key": "f81ebb6950992efaf57d8da4df3e17adcd980bcc"
+            }
+          }
         },
         "text-disruptive": {
-          "$value": "{Colour.Bright Berry}"
+          "$value": "{Colour.Bright Berry}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11311:19665",
+              "key": "7f6fe8c0e6ff4a04f9f2fb11b04b8b77608bee19"
+            }
+          }
         },
         "text-feature": {
-          "$value": "{Neutral.Dark Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11265:60605",
+              "key": "5230b3f0e2039e6f58cde2e6a214e5de60d7cfa8"
+            }
+          }
         },
         "text-footer": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11261:35553",
+              "key": "c514f8457f8240f4d599180bc021a90986552687"
+            }
+          }
         },
         "text-linkOnDark": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11311:45716",
+              "key": "97207556fa9ff4e917b52bcda0a1d51d1322375b"
+            }
+          }
         },
         "text-secondary": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11261:35549",
+              "key": "e9930e0b02c220b2bf02cc1e6ddc1a84557233f9"
+            }
+          }
         },
         "$type": "color"
       },
       "Dimension": {
         "Radius": {
-          "$value": "{Radius.sm}"
+          "$value": "{Radius.sm}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11261:30733",
+              "key": "bfe3f9ed5827fff0aeab5dc7a251ccf189233737"
+            }
+          }
         },
         "min-height-default": {
-          "$value": "{Heights.36}"
+          "$value": "{Heights.36}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11311:17225",
+              "key": "fb352ad804eb443a9bb0e5f8504e29f3d3aab8a0"
+            }
+          }
         },
         "min-height-large": {
-          "$value": "48px"
+          "$value": "48px",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11311:17226",
+              "key": "0e2841fb400aed68f135a8b0414f78150553ec56"
+            }
+          }
         },
         "min-weight-large": {
-          "$value": "48px"
+          "$value": "48px",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11311:45953",
+              "key": "67789c83aa74440bb5deae780f727f5a5ba23c57"
+            }
+          }
         },
         "padding-horizontal-default": {
-          "$value": "{Spacing.base}"
+          "$value": "{Spacing.base}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11261:11850",
+              "key": "cc01a966c9960b1460348264758873bc88da40a0"
+            }
+          }
         },
         "padding-horizontal-large": {
-          "$value": "{Spacing.base}"
+          "$value": "{Spacing.base}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11265:15803",
+              "key": "32ce3e0c256d23e48a5fd44e3a6cf4bbe95e96ce"
+            }
+          }
         },
         "$type": "dimension"
       },
       "Typography": {
         "tmp-default-label": {
-          "$value": "16px"
+          "$value": "16px",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11286:15696",
+              "key": "f323656104b0bb98e97eb43d73e6981be00d9f3d"
+            }
+          }
         },
         "$type": "dimension"
       }
     },
     "Card Button": {
       "contained-fill": {
-        "$value": "{Alpha.White Alpha 10}"
+        "$value": "{Alpha.White Alpha 10}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5459:6465",
+            "key": "6276cf24fe7544da86f9aadbe3ff7577d16ae7d9"
+          }
+        }
       },
       "$type": "color"
     },
     "Carousel-trigger": {
       "bg-default": {
-        "$value": "{Alpha.White Alpha 50}"
+        "$value": "{Alpha.White Alpha 50}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:17722:12254",
+            "key": "3bbb0752b8fcfab432079a7bc1a216f1e8bc015a"
+          }
+        }
       },
       "bg-default-hover": {
-        "$value": "{Alpha.White Alpha 80}"
+        "$value": "{Alpha.White Alpha 80}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:17722:12253",
+            "key": "771d0659afead08cf1c09700c895f9ee67d8fa7d"
+          }
+        }
       },
       "$type": "color"
+    },
+    "Checkbox": {
+      "bg-default-checked": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:8895",
+            "key": "894c62f76429d1bddb2bf8525bc6a7fd64332f2d"
+          }
+        }
+      },
+      "bg-default-intermediate": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:8936",
+            "key": "8695b11ddcd5af8a53a45babac9d3122f0460e19"
+          }
+        }
+      },
+      "bg-onContrast-checked": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:9021",
+            "key": "f923b4e17025775b26d6e7cfd4c543a40bdb6197"
+          }
+        }
+      },
+      "bg-onContrast-intermediate": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:9018",
+            "key": "d3a1329ac4068490ad98d9b72497b910f04d7e97"
+          }
+        }
+      },
+      "border-default-disabled": {
+        "$value": "{Alpha.White Alpha 20}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4212",
+            "key": "7836840d5707115ac6a4b918f1f9823fe108857c"
+          }
+        }
+      },
+      "border-default-notChecked": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:9007",
+            "key": "b1e24eee88b499fd0f362ea91d26ea6cdd73c7f5"
+          }
+        }
+      },
+      "border-onContrast-disabled": {
+        "$value": "{Alpha.White Alpha 20}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4214",
+            "key": "603f0e89ca6a625f4820511332bcc26d92edfb83"
+          }
+        }
+      },
+      "border-onContrast-notChecked": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:9008",
+            "key": "28a7ba0d8b521847fc640b552ebc47486b70f4d4"
+          }
+        }
+      },
+      "icon-onContrast": {
+        "$value": "{Neutral.Charcoal}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:9023",
+            "key": "7f50aead42b34f590b98e77cec19358d1b544b48"
+          }
+        }
+      },
+      "stroke": {
+        "$value": "3px",
+        "$type": "dimension",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18740:9011",
+            "key": "511dada63c15c9a691c7de8ca74c4f6f9f34b4a9"
+          }
+        }
+      }
     },
     "Chip-group-filter": {
       "Colour": {
         "bg-icon-hover-on-image": {
-          "$value": "{Neutral.Dark Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5931",
+              "key": "69ad4aba6fe79167e84a905c141e916e2ac0e240"
+            }
+          }
         },
         "bg-icon-off-on-image": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5944",
+              "key": "9cbe31b1ed25d9507b1c7fadcea5b8ca655f7e2f"
+            }
+          }
         },
         "bg-icon-on-default": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5932",
+              "key": "5dce6ba40292707ace7285a02332b8fc084e62a2"
+            }
+          }
         },
         "bg-icon-on-on-dark": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5933",
+              "key": "d7b1b63a8bc7698e2e4f60660acb7d8a0f0efe2e"
+            }
+          }
         },
         "bg-icon-on-on-image": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5934",
+              "key": "72c74a589b4935aa2cb8529a91d3fa6590c633ac"
+            }
+          }
         },
         "stroke-icon-hover-default": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5929",
+              "key": "603ea6756135642f25b45e46a0e1cc6f87baff03"
+            }
+          }
         },
         "stroke-icon-hover-on-dark": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5930",
+              "key": "8859f2fe061a795815093690d46368d3beec39f2"
+            }
+          }
         },
         "stroke-icon-off-default": {
-          "$value": "{Alpha.White Alpha 20}"
+          "$value": "{Alpha.White Alpha 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5926",
+              "key": "2cfd3130096ac7a2123e3ebde7cea7fd77a215ba"
+            }
+          }
         },
         "stroke-icon-off-on-dark": {
-          "$value": "{Alpha.White Alpha 20}"
+          "$value": "{Alpha.White Alpha 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11694:5927",
+              "key": "6ade7864bb58e68a37d028b3b0ef09a0b69401ba"
+            }
+          }
         },
         "$type": "color"
       },
       "Dimensions": {
         "min-height": {
-          "$value": "{Heights.36}"
+          "$value": "{Heights.36}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11697:2878",
+              "key": "b9c3ddc569ab916896a9f28baeaa05c68e6721da"
+            }
+          }
         },
         "$type": "dimension"
       }
@@ -207,452 +639,1300 @@
     "Chip": {
       "Colour": {
         "bg-default-dismissible-hover": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11571:1506",
+              "key": "b048bc00a7009bfc5064469689ccfaa9a82f593d"
+            }
+          }
         },
         "bg-default-on": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13442",
+              "key": "034e56b9f754fb65a1922b72feb0ef0514d59376"
+            }
+          }
         },
         "bg-disabled": {
-          "$value": "{Neutral.Dark Grey 00}"
+          "$value": "{Neutral.Dark Grey 00}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:5456:6461",
+              "key": "fddcb2c6fc9d50f9a3a557654b854747a1de589c"
+            }
+          }
         },
         "bg-onContrast-hover": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13464",
+              "key": "33b103b1dbeac3f77c6903f00157798441237d22"
+            }
+          }
         },
         "bg-onContrast-on": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13466",
+              "key": "9b5c02ac3fb1df507ca4f7d61b7f2aefbd3f54b1"
+            }
+          }
         },
         "bg-onDark-dismissible-hover": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11571:1507",
+              "key": "80e34d9a895ed0381f396fdfd7477ff162213930"
+            }
+          }
         },
         "bg-onDark-hover": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13452",
+              "key": "7d89f2f44519e65855ab59af0c5445ed5c46f770"
+            }
+          }
         },
         "bg-onDark-off": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13450",
+              "key": "a6f2b36b7fb521d85cead2f7c7f57d40fc9c4fe5"
+            }
+          }
         },
         "bg-onDark-on": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13454",
+              "key": "2ed06e7bf1f656d558f50b23e4f958c45e89d357"
+            }
+          }
         },
         "bg-onImage-dismissible-hover": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11571:1508",
+              "key": "61908c7e1abbd7d9b2712f8bf21f2effd9750374"
+            }
+          }
         },
         "bg-onImage-on": {
-          "$value": "{Neutral.Dark Grey 10}"
+          "$value": "{Neutral.Dark Grey 10}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13458",
+              "key": "516242aef00ba98cb2f38614f95d6c99503bc851"
+            }
+          }
         },
         "border-default-dismissible-hover": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11606:2879",
+              "key": "faca118aaba518f9e4addc36bbbe71ea669f1cef"
+            }
+          }
         },
         "border-default-hover": {
-          "$value": "{Colour.Twilight}"
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13441",
+              "key": "d32d8c1852c4f16237817fa896babb3fcbb9a45c"
+            }
+          }
         },
         "border-default-off": {
-          "$value": "{Alpha.White Alpha 20}"
+          "$value": "{Alpha.White Alpha 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13439",
+              "key": "469d4e3a55b99b2519c401e6a348fe062a79daa4"
+            }
+          }
         },
         "border-onContrast-off": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13462",
+              "key": "131015e781da731ade393ed6215a69d648022805"
+            }
+          }
         },
         "border-onContrast-on": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13465",
+              "key": "bbf28029004ecaebc114195058df5a9021e3bd0b"
+            }
+          }
         },
-        "border-onDark-disimissible-hover": {
-          "$value": "{Neutral.Dark Grey 20}"
+        "border-onDark-dismissible-hover": {
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11590:3205",
+              "key": "07aceecb07953fc8b4161b616c0ef9866474d894"
+            }
+          }
         },
         "border-onDark-hover": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13453",
+              "key": "c3cb2969fdf485cac8aed94e9cdc8abb2e539911"
+            }
+          }
         },
         "border-onDark-off": {
-          "$value": "{Alpha.White Alpha 20}"
+          "$value": "{Alpha.White Alpha 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13451",
+              "key": "b30e9e46d87ff7785cf28f80c7b3da7f806e7e26"
+            }
+          }
         },
         "stroke-Off-on-canvas-contrast (new)": {
-          "$value": "{Alpha.Transparent}"
+          "$value": "{Alpha.Transparent}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11509:13463",
+              "key": "ef3851fdd62ed7d3ad176ffe9939ca851eaa48ce"
+            }
+          }
         },
         "text-default-dismissible-hover": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11642:14206",
+              "key": "94069d7a97924598de62073ca2236d716ea40f2b"
+            }
+          }
         },
         "text-dismissible-on-icon": {
-          "$value": "{Alpha.White Alpha 50}"
+          "$value": "{Alpha.White Alpha 50}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11642:14208",
+              "key": "30b7035b1c5b1b43b1fcc2a4098cc5ad9f090e26"
+            }
+          }
         },
         "text-on": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11606:2882",
+              "key": "46b14b2545684d7091e8a87188f3d281498cd9a4"
+            }
+          }
         },
         "text-on image": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11606:3016",
+              "key": "c8d3d4f5a44d080622861fcf4a563c3d1e4a0103"
+            }
+          }
         },
         "text-on-image-dismissible-icon": {
-          "$value": "{Neutral.Dark Grey 40}"
+          "$value": "{Neutral.Dark Grey 40}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11642:17094",
+              "key": "7a16e7803979f08889fad170f3d3bacc4fe48f03"
+            }
+          }
         },
         "text-onDark": {
-          "$value": "{Neutral.White}"
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11606:2884",
+              "key": "874ed0551523bb6ec7e503f17cd5e366c76a9ac6"
+            }
+          }
         },
-        "text-onDark-dismisisble-hover": {
-          "$value": "{Neutral.White}"
+        "text-onDark-dismissible-hover": {
+          "$value": "{Neutral.White}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11634:4291",
+              "key": "dd4799323de053f62bc0ddfda994cf0ffe2e3e7e"
+            }
+          }
         },
-        "text-onDark-dismisisble-icon": {
-          "$value": "{Neutral.Dark Grey 40}"
+        "text-onDark-dismissible-icon": {
+          "$value": "{Neutral.Dark Grey 40}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11642:17032",
+              "key": "cd65c1a093dfeb18fa3b528bcd0acc3ce9c80181"
+            }
+          }
         },
         "$type": "color"
       },
       "Dimension": {
         "min-height-width": {
-          "$value": "{Heights.32}"
+          "$value": "{Heights.32}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11550:1505",
+              "key": "1d738fa29c60cf29a401006eb452359f6a02cbab"
+            }
+          }
         },
         "radius": {
-          "$value": "{Radius.sm}"
+          "$value": "{Radius.sm}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11488:13321",
+              "key": "141cec186dc925793a7afefdec41632828d00cb6"
+            }
+          }
         },
         "$type": "dimension"
       }
     },
     "Date Selector": {
       "cheapest-month-highlight": {
-        "$value": "{Neutral.White}"
+        "$value": "{Neutral.White}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:8307:3137",
+            "key": "a9d660a50068c8c7fde60eed27958cc61811cb4c"
+          }
+        }
       },
       "flexible-date-card": {
-        "$value": "{Neutral.Dark Grey 25}"
+        "$value": "{Neutral.Dark Grey 25}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:8307:3136",
+            "key": "0eb9bea3eaaf01cd384c00ced627ab54918e7b87"
+          }
+        }
       },
       "$type": "color"
     },
-    "Dimension": {
-      "padding-veritcal": {
-        "$value": "0px"
-      },
-      "$type": "dimension"
-    },
     "Info Banner": {
       "default": {
-        "$value": "{Neutral.Dark Grey 20}"
+        "$value": "{Neutral.Dark Grey 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6229:2667",
+            "key": "484c07c0805548d91c3eb2f63ccb2020a19d983c"
+          }
+        }
       },
       "on-contrast": {
-        "$value": "{Neutral.Dark Grey 20}"
+        "$value": "{Neutral.Dark Grey 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6229:2668",
+            "key": "9841c78e7b6c2fa8ac1662cd71862fe4b261d030"
+          }
+        }
       },
       "$type": "color"
     },
     "Map": {
       "cluster-pin": {
-        "$value": "{Neutral.White}"
+        "$value": "{Neutral.White}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6085:2861",
+            "key": "65cfcbee135e3806723ad5a46a4325cb4b1f4432"
+          }
+        }
       },
       "cluster-pin-previous-selection": {
-        "$value": "{Colour.Baby Blue 40}"
+        "$value": "{Colour.Baby Blue 40}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6023:3015",
+            "key": "08c375cc8e29d56d4b5d8823f4ffd40b928aa31e"
+          }
+        }
       },
       "marker-viewed": {
-        "$value": "{Alpha.Black Alpha 80}"
+        "$value": "{Alpha.Black Alpha 80}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5456:6463",
+            "key": "1447fa75342aba40c47de7f93c5d107b9758c605"
+          }
+        }
       },
       "poi-pin": {
-        "$value": "{Colour.Purple}"
+        "$value": "{Colour.Purple}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6023:3017",
+            "key": "ce7c020a55e4f2d506ffa1a741081c739bd3abef"
+          }
+        }
       },
       "previous-selection": {
-        "$value": "{Colour.Baby Blue 20}"
+        "$value": "{Colour.Baby Blue 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6023:3013",
+            "key": "3646d526a230bb2eaf95c5dfccded86258af8f6c"
+          }
+        }
       },
       "$type": "color"
     },
     "Navigation Tabs": {
       "hover": {
-        "$value": "{Colour.Dark Blue 100}"
+        "$value": "{Colour.Dark Blue 100}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:6596:2667",
+            "key": "142e55b5de84e35091762af43671398490ddf27e"
+          }
+        }
       },
       "outline": {
-        "$value": "{Alpha.White Alpha 20}"
+        "$value": "{Alpha.White Alpha 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:7104:13",
+            "key": "a7df83b698eec364fe02f7e5c7540ce8d420c8fc"
+          }
+        }
       },
       "selected": {
-        "$value": "{Colour.Twilight}"
+        "$value": "{Colour.Twilight}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:13688:12936",
+            "key": "abed483a7f72b04280cdbe38364d056a69be4199"
+          }
+        }
       },
       "$type": "color"
     },
+    "Radio": {
+      "bg-default-disabled": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4333",
+            "key": "af84e7a068a46f9fa1e063f4eb780043dd174612"
+          }
+        }
+      },
+      "bg-default-on": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:1975",
+            "key": "344d2dd98be73605fa977704fecf4203d0dcb2b5"
+          }
+        }
+      },
+      "bg-onContrast-off": {
+        "$value": "{Alpha.Transparent}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4329",
+            "key": "688f227d14ac4d052bf4ed331b75aa3f05f0258b"
+          }
+        }
+      },
+      "bg-onContrast-on": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4102",
+            "key": "982198baed0cec51d972033fcea6e1c44a6ccc9c"
+          }
+        }
+      },
+      "border": {
+        "$value": "3px",
+        "$type": "dimension",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4296",
+            "key": "84e8939bde78f1e88b136ebb289079b531934914"
+          }
+        }
+      },
+      "border-default-off": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:18750:4326",
+            "key": "6cb4ec0df017779c5039c0786bc88eb2ee752047"
+          }
+        }
+      }
+    },
     "Rating Bar": {
       "Default": {
-        "$value": "{Neutral.Dark Grey 25}"
+        "$value": "{Neutral.Dark Grey 25}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10955:16117",
+            "key": "4ebd62197e996ba178a5bfe342658f6190d02a2c"
+          }
+        }
       },
       "On Contrast": {
-        "$value": "{Neutral.Dark Grey 25}"
+        "$value": "{Neutral.Dark Grey 25}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10955:16116",
+            "key": "7b35239e37486f5bd2e3ff331aba8ac3b99bb7b4"
+          }
+        }
       },
       "$type": "color"
     },
     "Segmented Control": {
-      "canvas-default": {
-        "$value": "{Neutral.Dark Grey 20}"
+      "Colour": {
+        "bg-onCanvasDefault-default": {
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:6994:316",
+              "key": "f0c8df85e7921f69db25c8acd64a2f927db98af2"
+            }
+          }
+        },
+        "bg-onSurfaceContrast-default": {
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:7586:12",
+              "key": "16f3104e13d5ad76dbc596a72381725ce58a4315"
+            }
+          }
+        },
+        "bg-onSurfaceContrast-selected": {
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:7586:2697",
+              "key": "399f12363db033d000d7246c2345d40b9f90ff11"
+            }
+          }
+        },
+        "bg-selected": {
+          "$value": "{Colour.Twilight}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18457:37155",
+              "key": "429d912dfb24e18ab533370c0318437a40d31bf5"
+            }
+          }
+        },
+        "divider-default": {
+          "$value": "{Neutral.Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18515:37881",
+              "key": "62e7db9475fabc5d2519487275237cbc4a72474a"
+            }
+          }
+        },
+        "divider-onSurfaceContrast": {
+          "$value": "{Alpha.White Alpha 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18515:37882",
+              "key": "6d4423a768bc3336d71a820bb95f277eacfaf8f1"
+            }
+          }
+        },
+        "$type": "color"
       },
-      "surface-contrast": {
-        "$value": "{Neutral.Dark Grey 20}"
-      },
-      "surface-contrast-on": {
-        "$value": "{Colour.Twilight}"
-      },
-      "$type": "color"
+      "Dimension": {
+        "bg-indicator-radius": {
+          "$value": "{Radius.None}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18499:1864",
+              "key": "6dc97937725eee577c7a93c8a37858d2aad375de"
+            }
+          }
+        },
+        "bg-track-radius": {
+          "$value": "{Radius.sm}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18442:37144",
+              "key": "22ed66d608dc9a050496749d8103d1903585e5e4"
+            }
+          }
+        },
+        "min-height": {
+          "$value": "{Heights.32}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18442:37145",
+              "key": "ee327fc6c063c47bc7e05d9a97895af52469b713"
+            }
+          }
+        },
+        "track-padding": {
+          "$value": "{Spacing.none}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18499:37878",
+              "key": "97433aaf80b77e02d67eff27bf892a13881aee1b"
+            }
+          }
+        },
+        "$type": "dimension"
+      }
     },
     "Shadow": {
       "Large": {
         "blur": {
           "$value": "14px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:493",
+              "key": "85364f9c389c783b5a31bb36e3a47333567e76b7"
+            }
+          }
         },
         "color": {
           "$value": "{Alpha.Charcoal Alpha 25}",
-          "$type": "color"
+          "$type": "color",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:495",
+              "key": "a7b77fe6fc1ba9ae15a3957ff70d36de0cf70c5b"
+            }
+          }
         },
         "position-x": {
           "$value": "0px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:486",
+              "key": "51dee512f6cf4764558354b8943dcd97361ad2d1"
+            }
+          }
         },
         "position-y": {
           "$value": "4px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:492",
+              "key": "ff6d750a2df648f844de76c2c8fd128391679af0"
+            }
+          }
         },
         "spread": {
           "$value": "0px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:494",
+              "key": "74eb405552f8eb07f0b550490a26ca03964d330b"
+            }
+          }
         }
       },
       "Small": {
         "blur": {
           "$value": "3px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:482",
+              "key": "a32136c1757d4b17c9639628e99661bd078042b9"
+            }
+          }
         },
         "color": {
           "$value": "{Alpha.Charcoal Alpha 25}",
-          "$type": "color"
+          "$type": "color",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:484",
+              "key": "608210db594eab16c019325ad8629105470a7bd3"
+            }
+          }
         },
         "position-x": {
           "$value": "0px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:480",
+              "key": "fdf4be8ae75cdb33a58afbe4f0516af5f75b9405"
+            }
+          }
         },
         "position-y": {
           "$value": "1px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:481",
+              "key": "80a9118fcbd4332e56664be17ea353a122290edc"
+            }
+          }
         },
         "spread": {
           "$value": "0px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:483",
+              "key": "05db4a9cfa24ed25b1ce5b79333cb49c609a23d7"
+            }
+          }
         }
       },
       "XL": {
         "blur": {
           "$value": "50px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:498",
+              "key": "e91e4a2201ea50096a189532b53d351fe43a9185"
+            }
+          }
         },
         "color": {
           "$value": "{Alpha.Charcoal Alpha 25}",
-          "$type": "color"
+          "$type": "color",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:501",
+              "key": "989ad37b7b1390497d86a94653c05c72632a292c"
+            }
+          }
         },
         "position-x": {
           "$value": "0px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:496",
+              "key": "f62f2b48f11ca4f4f5b7578e9c37ed9c1b942a84"
+            }
+          }
         },
         "position-y": {
           "$value": "12px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:497",
+              "key": "b61d181374f8bb34158aa1084a0c96f947dc2f16"
+            }
+          }
         },
         "spread": {
           "$value": "0px",
-          "$type": "dimension"
+          "$type": "dimension",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:11462:499",
+              "key": "3007e1709a603dce3c52b44fc8588312cfc77b4c"
+            }
+          }
         }
       }
     },
     "Skeleton": {
       "on-dark": {
-        "$value": "{Neutral.Dark Grey 25}"
+        "$value": "{Neutral.Dark Grey 25}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:9123:2736",
+            "key": "a517c7f16343cb5ed5d1a5cdfd984f91dc9dbda1"
+          }
+        }
       },
       "$type": "color"
     },
     "Speech Bubble": {
       "Colour": {
         "bg-contrast": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18003:34360",
+              "key": "1218edf89376b1db90d2199e96fea10bfc33a726"
+            }
+          }
         },
         "bg-default": {
-          "$value": "{Neutral.Dark Grey 20}"
+          "$value": "{Neutral.Dark Grey 20}",
+          "$extensions": {
+            "figma": {
+              "id": "VariableID:18003:14145",
+              "key": "103e10b273b54c34dea2e09a0c8c8e7ccccbbb02"
+            }
+          }
         }
       },
       "$type": "color"
     },
     "Switch": {
       "android-switch-default-disabled": {
-        "$value": "{Alpha.White Alpha 10}"
+        "$value": "{Alpha.White Alpha 10}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:15757:18243",
+            "key": "336fd6a38bbaa7fd2badeed25a9a52356595a3f2"
+          }
+        }
       },
       "android-switch-knob-disabled": {
-        "$value": "{Alpha.White Alpha 20}"
+        "$value": "{Alpha.White Alpha 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:15850:17746",
+            "key": "602c04b246140ea93a673ba4fd0973bfe44ce4b1"
+          }
+        }
       },
       "android-switch-on-contrast-fill-disabled": {
-        "$value": "{Alpha.White Alpha 10}"
+        "$value": "{Alpha.White Alpha 10}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:15850:1618",
+            "key": "1ac3f7f9a043e9942383df7d2f9879fc4039ae94"
+          }
+        }
       },
       "android-switch-on-contrast-off": {
-        "$value": "{Alpha.White Alpha 80}"
+        "$value": "{Alpha.White Alpha 80}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:8385:2746",
+            "key": "d3c2faecf0e294a77f1b7fc77cb7f19c28de8099"
+          }
+        }
       },
       "ios-switch-default-off": {
-        "$value": "{Alpha.White Alpha 20}"
+        "$value": "{Alpha.White Alpha 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:15755:1267",
+            "key": "1cacec18e4a556d3c87b8c840b7d86572c3947dc"
+          }
+        }
       },
       "ios-switch-disabled": {
-        "$value": "{Neutral.Grey 20}"
+        "$value": "{Neutral.Grey 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:15755:18197",
+            "key": "5f44b16004da4df385e31698482831b0aed66e5c"
+          }
+        }
       },
       "ios-switch-on-contrast-off": {
-        "$value": "{Alpha.White Alpha 20}"
+        "$value": "{Alpha.White Alpha 20}",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:8376:12",
+            "key": "e550524f6f4c19c2c03efa4ce304d74a92352789"
+          }
+        }
       },
       "$type": "color"
     },
     "Trip Advisor": {
       "$value": "#9ce6c0",
-      "$type": "color"
+      "$type": "color",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5464:6713",
+          "key": "3cff95fe7963f93cf984986b5d9c4b976f455f15"
+        }
+      }
     },
     "iOS Tab-bar-fill": {
       "$value": "{Neutral.Dark Grey 25}",
-      "$type": "color"
+      "$type": "color",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5467:6713",
+          "key": "b2a44afeeb68512be0f3f0c2e6b330caac4d73ad"
+        }
+      }
     }
   },
   "Core": {
     "Accent": {
-      "$value": "{Colour.Bright Blue}"
+      "$value": "{Colour.Bright Blue}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6553",
+          "key": "dfee9a525292964cbac3397a1fc2888e28ad4c89"
+        }
+      }
     },
     "Eco": {
-      "$value": "{Colour.Eco Green}"
+      "$value": "{Colour.Eco Green}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6554",
+          "key": "64513d61d443a42bfa721a0b5238462c1172c8c6"
+        }
+      }
     },
     "Primary": {
-      "$value": "{Colour.Twilight}"
+      "$value": "{Colour.Twilight}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6552",
+          "key": "5110fc2d2e56b377c7d68b894f4e12abac446ff7"
+        }
+      }
     },
     "$type": "color"
   },
   "Other": {
     "Line": {
-      "$value": "{Alpha.White Alpha 20}"
+      "$value": "{Alpha.White Alpha 20}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6570",
+          "key": "0493689bce53ce56d5a86def9626415f98b35253"
+        }
+      }
     },
     "Line On Dark": {
-      "$value": "{Alpha.White Alpha 20}"
+      "$value": "{Alpha.White Alpha 20}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6571",
+          "key": "49da3cb65b34aec0404f505a74a29ea7a047a51f"
+        }
+      }
     },
     "Overlay": {
-      "$value": "{Alpha.White Alpha 80}"
+      "$value": "{Alpha.White Alpha 80}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:8368:12",
+          "key": "1a36730ed381506558dcc55773cabb27b0262027"
+        }
+      }
     },
     "Scrim": {
-      "$value": "{Alpha.Black Alpha 70}"
+      "$value": "{Alpha.Black Alpha 70}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6572",
+          "key": "424a0e814f9b1ab8570b768ea88ad341a86ad804"
+        }
+      }
     },
     "Shadow": {
-      "$value": "{Alpha.Charcoal Alpha 25}"
+      "$value": "{Alpha.Charcoal Alpha 25}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:9692:2773",
+          "key": "a8119ed37287c28a9d1c1a7f7f16a92ce3a11596"
+        }
+      }
     },
     "$type": "color"
   },
   "Status": {
-    "Danger Fill": {
-      "$value": "{Colour.Bright Pink}"
-    },
     "Danger Spot": {
-      "$value": "{Colour.Bright Berry}"
-    },
-    "Success Fill": {
-      "$value": "{Colour.Bright Green 20}"
+      "$value": "{Colour.Bright Berry}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6559",
+          "key": "6e1a2d4c42c6b44c7ce8bcbb771ffd8639579112"
+        }
+      }
     },
     "Success Spot": {
-      "$value": "{Colour.Bright Green}"
-    },
-    "Warning Fill": {
-      "$value": "{Colour.Bright Yellow}"
+      "$value": "{Colour.Bright Green}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6555",
+          "key": "1ab000ab21dc730f81e3e794c1e6cf2ef5a598bb"
+        }
+      }
     },
     "Warning Spot": {
-      "$value": "{Colour.Yellow}"
+      "$value": "{Colour.Yellow}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5318:6557",
+          "key": "93eeee9d55c9fa192f146cf70696b3c12d20e4e1"
+        }
+      }
     },
     "$type": "color"
   },
   "Surface": {
     "Contrast": {
-      "$value": "{Neutral.Dark Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6566",
+          "key": "066343297140a6f93568644e743bfa7f7f36e35a"
+        }
+      }
+    },
+    "Danger Fill": {
+      "$value": "{Colour.Bright Pink}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6560",
+          "key": "3cb8be69ebd7f52c2500ea308be7d89c668f9f54"
+        }
+      }
     },
     "Default": {
-      "$value": "{Neutral.Dark Grey 20}"
+      "$value": "{Neutral.Dark Grey 20}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6563",
+          "key": "cbe282fa7151d3b3b7acd36a014e5e5cc7526b18"
+        }
+      }
     },
     "Elevated": {
-      "$value": "{Neutral.Dark Grey 25}"
+      "$value": "{Neutral.Dark Grey 25}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6564",
+          "key": "f4ca7ac15cdce2bdc9edfbe3a18bff11b547824c"
+        }
+      }
     },
     "Hero": {
-      "$value": "{Neutral.Dark Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:6224:4372",
+          "key": "6a667273c1c0da53610ba8258c475e9b382992f2"
+        }
+      }
     },
     "Highlight": {
-      "$value": "{Neutral.Dark Grey 25}"
+      "$value": "{Neutral.Dark Grey 25}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6567",
+          "key": "0ffef5e4f19ebf836414b0cfbf21344101ef0a54"
+        }
+      }
     },
     "Low Contrast": {
-      "$value": "{Neutral.Dark Grey 25}"
+      "$value": "{Neutral.Dark Grey 25}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:8368:13",
+          "key": "45e154f42cd6f24a106cf4bb5c798d46087811d2"
+        }
+      }
     },
     "Subtle": {
-      "$value": "{Neutral.Dark Grey 25}"
+      "$value": "{Neutral.Dark Grey 25}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6565",
+          "key": "97914fb06292486a34b6d49b68e198d2d03b9130"
+        }
+      }
+    },
+    "Success Fill": {
+      "$value": "{Colour.Bright Green 20}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5318:6556",
+          "key": "c1569dc0382a31d92ab9c0a110de86635d9a4aa5"
+        }
+      }
     },
     "Tint": {
-      "$value": "{Alpha.White Alpha 10}"
+      "$value": "{Alpha.White Alpha 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:10376:12",
+          "key": "5c3e4497fa19b333f0d8a9e5691f75ae3318583e"
+        }
+      }
+    },
+    "Warning Fill": {
+      "$value": "{Colour.Bright Yellow}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5322:6558",
+          "key": "f17b49b1615927b628901dceb3ef4a66bfa29359"
+        }
+      }
     },
     "🚧 Promo": {
-      "$value": "{Neutral.Dark Grey 25}"
+      "$value": "{Neutral.Dark Grey 25}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:7073:984",
+          "key": "dbbe35fe0c395d67965ec2a4e126fb7d5ac95c85"
+        }
+      }
     },
     "$type": "color"
   },
+  "Test": {
+    "$value": "#ff0000",
+    "$type": "color",
+    "$extensions": {
+      "figma": {
+        "id": "VariableID:18845:1566",
+        "key": "0cb3bf7fe7bfcf001db389bd7c7b3eff096e5266"
+      }
+    }
+  },
   "Text": {
     "Disabled": {
-      "$value": "{Alpha.White Alpha 20}"
+      "$value": "{Alpha.White Alpha 20}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6514",
+          "key": "6e98e089de0273e2a6e001b1fe65adc98a674e5b"
+        }
+      }
     },
     "Disabled on Dark": {
-      "$value": "{Alpha.White Alpha 50}"
+      "$value": "{Alpha.White Alpha 50}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6515",
+          "key": "e8a1a00a35ba105da82d97c1075bb31ab63d9397"
+        }
+      }
     },
     "Error": {
-      "$value": "{Colour.Bright Berry}"
+      "$value": "{Colour.Bright Berry}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6548",
+          "key": "ab1694051b71125d4b6f4d39b39e6672b4f2be77"
+        }
+      }
     },
     "Inverse": {
-      "$value": "{Neutral.Dark Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6549",
+          "key": "b931f1c095aec80fbb1ba8d9d7ce2bebc5d89b14"
+        }
+      }
     },
     "On Dark": {
-      "$value": "{Neutral.White}"
+      "$value": "{Neutral.White}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6550",
+          "key": "8b976e305fb7f8b431b394c7628a84d34610afdc"
+        }
+      }
     },
     "On Light": {
-      "$value": "{Neutral.Dark Grey 10}"
+      "$value": "{Neutral.Dark Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6551",
+          "key": "50f97cbc97e587213135c1a01205176a3f7a9da5"
+        }
+      }
     },
     "Primary": {
-      "$value": "{Neutral.White}"
+      "$value": "{Neutral.White}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6496",
+          "key": "9662ebe1258029e69590f2301009418f81c7537c"
+        }
+      }
     },
     "Secondary": {
-      "$value": "{Neutral.Dark Grey 40}"
+      "$value": "{Neutral.Dark Grey 40}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6497",
+          "key": "2ff6a6e2e5d65dbaa12b51a0c8137dd35d12ca29"
+        }
+      }
     },
     "Success": {
-      "$value": "{Colour.Bright Green}"
+      "$value": "{Colour.Bright Green}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:9788:2787",
+          "key": "38d769cb2e15b9a8bec5cb5610b244868527312f"
+        }
+      }
     },
     "💀 DEPRECATED Link": {
-      "$value": "{Colour.Bright Blue}"
+      "$value": "{Colour.Bright Blue}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5317:6547",
+          "key": "5acccb76ad194a4f370f4bd009f83011675a62ef"
+        }
+      }
     },
     "🚧 Hero": {
-      "$value": "{Neutral.Night.Night Grey 10}"
+      "$value": "{Neutral.Night.Night Grey 10}",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:10974:205",
+          "key": "6b7ddd0506290abf212c49b19edf433d977a15b7"
+        }
+      }
     },
     "$type": "color"
   },
   "Title?": {
     "$value": true,
-    "$type": "boolean"
+    "$type": "boolean",
+    "$extensions": {
+      "figma": {
+        "id": "VariableID:17912:8249",
+        "key": "d84ed4e5e987b9db762d60269afb4dbfe8e89b2e"
+      }
+    }
   },
   "Typography": {
     "Family": {
       "Sans Serif": {
-        "$value": "Skyscanner Relative"
+        "$value": "Skyscanner Relative",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:256",
+            "key": "de976c1930eb1a40dcc6978556dc4bed5c0424ac"
+          }
+        }
       },
       "Serif": {
-        "$value": "Larken"
+        "$value": "Larken",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:255",
+            "key": "c81a0ba4663bb79368231e1b0247bf4694cae3d3"
+          }
+        }
       },
       "$type": "fontFamily"
     },
     "Kerning": {
       "Default": {
-        "$value": "0px"
+        "$value": "0px",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:252",
+            "key": "4d914f1d343d7dcf72f5893702dca1e5cbe57c03"
+          }
+        }
       },
       "Loose": {
-        "$value": "0px"
+        "$value": "0px",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:251",
+            "key": "4bd4107c9b7372e23962879590a516e86defbe92"
+          }
+        }
       },
       "Tight": {
-        "$value": "0px"
+        "$value": "0px",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:254",
+            "key": "1f1d2c6965441fd2b690e289af25ea109b7cb5e2"
+          }
+        }
       },
       "$type": "dimension"
     },
     "Style": {
       "Body": {
-        "$value": 400
+        "$value": 400,
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:249",
+            "key": "cc20992bfb43847fa877d4b5d2478bc27b221173"
+          }
+        }
       },
       "Headline": {
-        "$value": 700
+        "$value": 700,
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:250",
+            "key": "34253b770f75fab41726c131e0c7fa431b16e083"
+          }
+        }
       },
       "Hero": {
-        "$value": 900
+        "$value": 900,
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:253",
+            "key": "f43c424e15fbdd339f4c66d4772fb3e68483177c"
+          }
+        }
       },
       "Label": {
-        "$value": 700
+        "$value": 700,
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10994:248",
+            "key": "6ab503ca96fb14519426e45b586d274011a6eb8d"
+          }
+        }
       },
       "Subhead": {
-        "$value": 300
+        "$value": 300,
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:10999:3043",
+            "key": "b2c6d23185c378627299f84f452c018e6da1ab93"
+          }
+        }
       },
       "$type": "fontWeight"
     }

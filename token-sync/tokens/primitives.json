@@ -1,336 +1,960 @@
 {
   "Alpha": {
     "Black Alpha 20": {
-      "$value": "rgba(0, 0, 0, 0.2)"
+      "$value": "rgba(0, 0, 0, 0.2)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5363:6463",
+          "key": "12f5cb38e505589e9538e91d5e4d0c34129b3f87"
+        }
+      }
     },
     "Black Alpha 50": {
-      "$value": "rgba(0, 0, 0, 0.5)"
+      "$value": "rgba(0, 0, 0, 0.5)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5363:6462",
+          "key": "490e4200f5c6a903df9cf362fbb83070e942c1ed"
+        }
+      }
     },
     "Black Alpha 70": {
-      "$value": "rgba(0, 0, 0, 0.7)"
+      "$value": "rgba(0, 0, 0, 0.7)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6489",
+          "key": "281059004f18208891c49a3b3f98bd0450fb1a8d"
+        }
+      }
     },
     "Black Alpha 80": {
-      "$value": "rgba(0, 0, 0, 0.8)"
+      "$value": "rgba(0, 0, 0, 0.8)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5363:6461",
+          "key": "b02393ac07faed3e34dbb5fa4171ce1569ad1804"
+        }
+      }
     },
     "Charcoal Alpha 25": {
-      "$value": "rgba(22, 22, 22, 0.25)"
+      "$value": "rgba(22, 22, 22, 0.25)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3578",
+          "key": "2f224d2c75a2733b36f28304cfbcec03d6cdcb34"
+        }
+      }
     },
     "Transparent": {
-      "$value": "rgba(255, 255, 255, 0)"
+      "$value": "rgba(255, 255, 255, 0)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:11008:33655",
+          "key": "b2254b571bd7ee5b9a21632fdb867b980228399b"
+        }
+      }
     },
     "White Alpha 10": {
-      "$value": "rgba(255, 255, 255, 0.1)"
+      "$value": "rgba(255, 255, 255, 0.1)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5376:6463",
+          "key": "41978f7c1c7d23323c02b833ff6253341c1bec98"
+        }
+      }
     },
     "White Alpha 20": {
-      "$value": "rgba(255, 255, 255, 0.2)"
+      "$value": "rgba(255, 255, 255, 0.2)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5364:6463",
+          "key": "9202111ca65982874c6c307c84694483b0d904e9"
+        }
+      }
     },
     "White Alpha 50": {
-      "$value": "rgba(255, 255, 255, 0.5)"
+      "$value": "rgba(255, 255, 255, 0.5)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5364:6462",
+          "key": "24141818bfe9445524a86224ccaa2a9d5235aecd"
+        }
+      }
     },
     "White Alpha 80": {
-      "$value": "rgba(255, 255, 255, 0.8)"
+      "$value": "rgba(255, 255, 255, 0.8)",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5364:6461",
+          "key": "3ea6eebe7f542617ded0713a03c62e34691853bf"
+        }
+      }
     },
     "$type": "color"
   },
   "Colour": {
     "Amber": {
-      "$value": "#f55d42"
+      "$value": "#f55d42",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6492",
+          "key": "dd65da6009826ba86f9f24aee497b040fd5c27c1"
+        }
+      }
     },
     "Baby Blue": {
-      "$value": "#e3f0ff"
+      "$value": "#e3f0ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6482",
+          "key": "5207330968290b0502a2a47c975da1e49ebd5a20"
+        }
+      }
     },
     "Baby Blue 20": {
-      "$value": "#cfe4ff"
+      "$value": "#cfe4ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:6022:2607",
+          "key": "0ac32779a8ed8df691f49f9d0bb3e01bcdef3c78"
+        }
+      }
     },
     "Baby Blue 30": {
-      "$value": "#b4d7ff"
+      "$value": "#b4d7ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:8288:4018",
+          "key": "6f05ca71d55ca40f034908ff49c8bc9fc971eed5"
+        }
+      }
     },
     "Baby Blue 40": {
-      "$value": "#94c3ff"
+      "$value": "#94c3ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:6022:2606",
+          "key": "4ef90d8a5aabc01d084c70a06a6bbb5bda169070"
+        }
+      }
     },
     "Berry": {
-      "$value": "#e70866"
+      "$value": "#e70866",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6494",
+          "key": "66f8581362421a0883168c9d510f084b3886071f"
+        }
+      }
     },
     "Berry 75": {
-      "$value": "#c80456"
+      "$value": "#c80456",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5376:6462",
+          "key": "02f0b407e5c1fc15bcc42deae8a06e55f28f0810"
+        }
+      }
     },
     "Brand": {
       "Blue Bright": {
-        "$value": "#a1eeff"
+        "$value": "#a1eeff",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5641:6611",
+            "key": "83b9f9bb7283fbf116ebbc44e344ac005a5296f2"
+          }
+        }
       },
       "Blue Muted": {
-        "$value": "#d9f8ff"
+        "$value": "#d9f8ff",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5641:6612",
+            "key": "982ebb7573a46c44230eb74fc4abad4121a3b0e4"
+          }
+        }
       },
       "Green Bright": {
-        "$value": "#93ffde"
+        "$value": "#93ffde",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5641:6613",
+            "key": "4ca38aeef5a13597e01be53f78e081146a61fbaa"
+          }
+        }
       },
       "Orange": {
-        "$value": "#ff7b59"
+        "$value": "#ff7b59",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5641:6616",
+            "key": "a086015d46a17ad7458a9a449eacb7c95960f1f0"
+          }
+        }
       },
       "Pink": {
-        "$value": "#ffa3e5"
+        "$value": "#ffa3e5",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5641:6615",
+            "key": "117f6e831abdb12564ada0cdbad885f71aad1785"
+          }
+        }
       },
       "Yellow": {
-        "$value": "#feeb87"
+        "$value": "#feeb87",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6511",
+            "key": "5bfd7085e4f84f84cb839747f94ad310beaedb02"
+          }
+        }
       }
     },
     "Bright Berry": {
-      "$value": "#ff649c"
+      "$value": "#ff649c",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3565",
+          "key": "6e812aa4619204f8b83e690f1ed576c6284901ea"
+        }
+      }
     },
     "Bright Blue": {
-      "$value": "#84e9ff"
+      "$value": "#84e9ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3576",
+          "key": "133ba148fec021d474fdbcbfdbf826565a7af24d"
+        }
+      }
     },
     "Bright Blue 20": {
-      "$value": "#d1f7ff"
+      "$value": "#d1f7ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3566",
+          "key": "657c9034daf717883ac45d2fd3ea82983b60afcb"
+        }
+      }
     },
     "Bright Green": {
-      "$value": "#62f1c6"
+      "$value": "#62f1c6",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3564",
+          "key": "046cf7527e90b1a841493fa140dc6882bc14cf9a"
+        }
+      }
     },
     "Bright Green 20": {
-      "$value": "#b1ffe7"
+      "$value": "#b1ffe7",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3572",
+          "key": "35d4a328f698f1803e8dca2d497a91879ca09b46"
+        }
+      }
     },
     "Bright Green 30": {
-      "$value": "#93ffde"
+      "$value": "#93ffde",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3526",
+          "key": "22980d3150b219fbab85780acc8022d788d741f6"
+        }
+      }
     },
     "Bright Pink": {
-      "$value": "#ffcadd"
+      "$value": "#ffcadd",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3571",
+          "key": "0a5540f8d5c30148cc76d403a366648537d21210"
+        }
+      }
     },
     "Bright Yellow": {
-      "$value": "#fbf1bb"
+      "$value": "#fbf1bb",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3568",
+          "key": "b01458730ebddc8d7637705c9572067ff6770094"
+        }
+      }
     },
     "Dark Blue 100": {
-      "$value": "#002b4b"
+      "$value": "#002b4b",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3570",
+          "key": "dd22073148768f8e90ca61521029cfbab0c73bec"
+        }
+      }
     },
     "Dark Sky": {
-      "$value": "#05203c"
+      "$value": "#05203c",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6479",
+          "key": "66f3ba593a984a667523d380702f81281ce99bb6"
+        }
+      }
     },
     "Dark Sky 85": {
-      "$value": "#154679"
+      "$value": "#154679",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5376:6460",
+          "key": "b967761cfc93dfbb2fd436955610f5856cb419f1"
+        }
+      }
     },
     "Eco Green": {
-      "$value": "#0fa1a9"
+      "$value": "#0fa1a9",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6483",
+          "key": "7c16a3583ef16886091ded8a7a20b8d964ea3a63"
+        }
+      }
     },
     "Green": {
-      "$value": "#0c838a"
+      "$value": "#0c838a",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6490",
+          "key": "8bce68a6340941f95a777a96e29b0b35018cf9d7"
+        }
+      }
     },
     "Light Blue": {
-      "$value": "#a1eeff"
+      "$value": "#a1eeff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3527",
+          "key": "76fe371350aba535b488fde56855ab9be7c6c42c"
+        }
+      }
     },
     "Midnight Sky": {
-      "$value": "#04182d"
+      "$value": "#04182d",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:11004:35930",
+          "key": "3075b91408260959e740305d695d7c61f5bcad47"
+        }
+      }
     },
     "Muted Blue": {
-      "$value": "#d9f8ff"
+      "$value": "#d9f8ff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3523",
+          "key": "8895dd9122dbc3a78c1881da276d919b0c801051"
+        }
+      }
     },
     "Muted Green": {
-      "$value": "#d4fff2"
+      "$value": "#d4fff2",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6491",
+          "key": "8a12d90eb1cfd313dcc881ad80acc00cbfe55d24"
+        }
+      }
     },
     "Muted Pink": {
-      "$value": "#ffe9f9"
+      "$value": "#ffe9f9",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6495",
+          "key": "1cdeb8f4ad2a91c4a2c83949c2311fe8761cc834"
+        }
+      }
     },
     "Muted Yellow": {
-      "$value": "#fff7cf"
+      "$value": "#fff7cf",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6493",
+          "key": "eb73209124ae6fbb644f13e05c2c4fa4e2a7e876"
+        }
+      }
     },
     "Orange": {
-      "$value": "#ff7b59"
+      "$value": "#ff7b59",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3524",
+          "key": "09c2cc4f2e5adb4ba532cde06c9becfb2b31cf0a"
+        }
+      }
     },
     "Pink": {
-      "$value": "#ffa3e5"
+      "$value": "#ffa3e5",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3525",
+          "key": "16f78b9234119929743f0f1846af0f12c3c3c6a6"
+        }
+      }
     },
     "Purple": {
-      "$value": "#8e47ba"
+      "$value": "#8e47ba",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5641:6614",
+          "key": "73c9727caac362c0298ac2eb3358f7b33ae85300"
+        }
+      }
     },
     "Sky Blue": {
-      "$value": "#0062e3"
+      "$value": "#0062e3",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6480",
+          "key": "cf2487770575c76721d9a6cd605f3645303c9675"
+        }
+      }
     },
     "Sky Blue 85": {
-      "$value": "#024daf"
+      "$value": "#024daf",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5376:6461",
+          "key": "b024cdcc3a53e13213c1ba3fef3a55828f279261"
+        }
+      }
     },
     "Twilight": {
-      "$value": "#054184"
+      "$value": "#054184",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3575",
+          "key": "05d939d8fb06f6c672f57a0713bb95b7248f9537"
+        }
+      }
     },
     "Twilight 85": {
-      "$value": "#024daf"
+      "$value": "#024daf",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3573",
+          "key": "10af9e14a5092d71b0abc0f7956c370c443c5451"
+        }
+      }
     },
     "Yellow": {
-      "$value": "#feeb87"
+      "$value": "#feeb87",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3522",
+          "key": "27db88b6d37f2e51d7b7e8ca8fb976690a934d5c"
+        }
+      }
     },
     "$type": "color"
   },
   "Heights": {
     "20": {
-      "$value": "20px"
+      "$value": "20px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3502",
+          "key": "acfa96e41bcddee52933c6a0889e3427a11f91f0"
+        }
+      }
     },
     "24": {
-      "$value": "24px"
+      "$value": "24px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3503",
+          "key": "6b8f0d6400eac6d5d0c155cfb7eeb59393fbce5a"
+        }
+      }
     },
     "32": {
-      "$value": "32px"
+      "$value": "32px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3501",
+          "key": "aa54db8ecaa38cdb5852570e585917e480c37092"
+        }
+      }
     },
     "36": {
-      "$value": "36px"
+      "$value": "36px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3500",
+          "key": "75444a54a762f3702e9e858a1a6997c794daf623"
+        }
+      }
     },
     "40": {
-      "$value": "40px"
+      "$value": "40px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3498",
+          "key": "780e349381922227f6b90d5eb113a47967a2b156"
+        }
+      }
     },
     "44": {
-      "$value": "44px"
+      "$value": "44px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3505",
+          "key": "74801f8cc0b5e186b347546239e1115716fd0b7a"
+        }
+      }
     },
     "48": {
-      "$value": "48px"
+      "$value": "48px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3497",
+          "key": "bdca738936559d356a897ac6cb085e687053363e"
+        }
+      }
     },
     "52": {
-      "$value": "52px"
+      "$value": "52px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3499",
+          "key": "a36e13049855d65c27281e58815033dbe92f2d04"
+        }
+      }
     },
     "56": {
-      "$value": "56px"
+      "$value": "56px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3496",
+          "key": "7a5f49d30269d2888933fa40e7303a79f6d6408d"
+        }
+      }
     },
     "64": {
-      "$value": "64px"
+      "$value": "64px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3504",
+          "key": "648d3597c6b6490bb655ae49d58bb923b4eceb9f"
+        }
+      }
     },
     "base": {
-      "$value": "16px"
+      "$value": "16px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3506",
+          "key": "e803fac4e1a8b2c9d48523582513457f3ba74ef3"
+        }
+      }
     },
     "$type": "dimension"
   },
   "Neutral": {
     "Charcoal": {
-      "$value": "#161616"
+      "$value": "#161616",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6484",
+          "key": "d338065599ef784fa5e39b7a8c645cf3db399f7e"
+        }
+      }
     },
     "Dark Grey 00": {
-      "$value": "#0b121d"
+      "$value": "#0b121d",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3577",
+          "key": "6c337cc96a1ebd441c4a31e9883f2552156e46c2"
+        }
+      }
     },
     "Dark Grey 10": {
-      "$value": "#010913"
+      "$value": "#010913",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3567",
+          "key": "b045e55080126228c642e619b2690b15b281f3b2"
+        }
+      }
     },
     "Dark Grey 20": {
-      "$value": "#131d2b"
+      "$value": "#131d2b",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3563",
+          "key": "cb0ac77e4a41d9354b8c5d0027093471865e35c7"
+        }
+      }
     },
     "Dark Grey 25": {
-      "$value": "#243346"
+      "$value": "#243346",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3569",
+          "key": "5e97a8634275a7df414f2348fb3bb3929028e904"
+        }
+      }
     },
     "Dark Grey 30": {
-      "$value": "#44505f"
+      "$value": "#44505f",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3574",
+          "key": "436c7e0a052067720015ca01d2bf80a9626ad71c"
+        }
+      }
     },
     "Dark Grey 40": {
-      "$value": "#bdc4cb"
+      "$value": "#bdc4cb",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3562",
+          "key": "30c06966acc098f9ffcf63c089e174e3548f4f8c"
+        }
+      }
     },
     "Grey 05": {
-      "$value": "#f7f9fb"
+      "$value": "#f7f9fb",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:8092:2700",
+          "key": "1421b48cb1ea179d03adb5a1cd4e29bae71e288f"
+        }
+      }
     },
     "Grey 10": {
-      "$value": "#eff3f8"
+      "$value": "#eff3f8",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6487",
+          "key": "5bb74da12661fd0e8272d3f323b8aee87176a5f5"
+        }
+      }
     },
     "Grey 20": {
-      "$value": "#e0e4e9"
+      "$value": "#e0e4e9",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6481",
+          "key": "ce7fcf59de710a1fe7210f4238e0f54b476faa3a"
+        }
+      }
     },
     "Grey 30": {
-      "$value": "#c1c7cf"
+      "$value": "#c1c7cf",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6486",
+          "key": "90afe2028e9008006c97edd5653e7839c221d2d8"
+        }
+      }
     },
     "Grey 40": {
-      "$value": "#626971"
+      "$value": "#626971",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6485",
+          "key": "e94c9f1fc4f2ac2a3bbf7cbe579c270edd590311"
+        }
+      }
     },
     "Night": {
       "Night Berry": {
-        "$value": "#ff649c"
+        "$value": "#ff649c",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5322:6561",
+            "key": "2ee9f78a1b44db6246067fb80d36957af14e1406"
+          }
+        }
       },
       "Night Blue": {
-        "$value": "#84e9ff"
+        "$value": "#84e9ff",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6499",
+            "key": "adcf057c879a3586e30fa40590c7559e8ac51a89"
+          }
+        }
       },
       "Night Green Fill": {
-        "$value": "#b1ffe7"
+        "$value": "#b1ffe7",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6510",
+            "key": "6839f17dc7bf9217c4a15c9478b9a91b2370f12f"
+          }
+        }
       },
       "Night Green Spot": {
-        "$value": "#62f1c6"
+        "$value": "#62f1c6",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6509",
+            "key": "3683509c92540063ff8e1702eeca110e5bc43e78"
+          }
+        }
       },
       "Night Grey 10": {
-        "$value": "#010913"
+        "$value": "#010913",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6507",
+            "key": "4c8d000dfd9c4a357004233bb72d8f2c49a36d51"
+          }
+        }
       },
       "Night Grey 20": {
-        "$value": "#131d2b"
+        "$value": "#131d2b",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6506",
+            "key": "884bc22dff64a54fc2a74a01f72450f10e611757"
+          }
+        }
       },
       "Night Grey 25": {
-        "$value": "#243346"
+        "$value": "#243346",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6500",
+            "key": "5ad839038571d63efd2a31d1890c0948f8528efe"
+          }
+        }
       },
       "Night Grey 30": {
-        "$value": "#44505f"
+        "$value": "#44505f",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6505",
+            "key": "4c8f95a74d4a7680160f5ee10fe747afddabe3ba"
+          }
+        }
       },
       "Night Grey 40": {
-        "$value": "#bdc4cb"
+        "$value": "#bdc4cb",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6504",
+            "key": "47ac95ab442455d79541f4192ce5b1b05441f6c5"
+          }
+        }
       },
       "Night Pink": {
-        "$value": "#ffcadd"
+        "$value": "#ffcadd",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5322:6562",
+            "key": "caaa0cebef552627420c6a7e5e8bb7e5642e6573"
+          }
+        }
       },
       "Night Sky": {
-        "$value": "#054184"
+        "$value": "#054184",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6501",
+            "key": "232cfda3de25bdf1337c002cd2b17e29ef254247"
+          }
+        }
       },
       "Night Yellow Fill": {
-        "$value": "#fbf1bb"
+        "$value": "#fbf1bb",
+        "$extensions": {
+          "figma": {
+            "id": "VariableID:5315:6512",
+            "key": "ace587ec6fb51a4e075c77992c31becce45b49f4"
+          }
+        }
       }
     },
     "White": {
-      "$value": "#ffffff"
+      "$value": "#ffffff",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:5315:6488",
+          "key": "5136ae1fbc606d5a570d9ba1aa8c0e0197c0d603"
+        }
+      }
     },
     "$type": "color"
   },
   "Radius": {
     "None": {
-      "$value": "0px"
+      "$value": "0px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3438",
+          "key": "094e77105a9eb307c7feeb848fb045c7a505ee3a"
+        }
+      }
     },
     "full": {
-      "$value": "100px"
+      "$value": "999px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3435",
+          "key": "fe7b862ebd8e0ede5c5b7643935042d65492e064"
+        }
+      }
     },
     "lg": {
-      "$value": "24px"
+      "$value": "24px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3432",
+          "key": "5c7ad64cb4501097eb17a7ce7f2062ed3f9e0f6c"
+        }
+      }
     },
     "md": {
-      "$value": "12px"
+      "$value": "12px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3434",
+          "key": "a1aa7dcc17173231ad45b7f98e3220004d01f22d"
+        }
+      }
     },
     "nav-tabs": {
-      "$value": "18px"
+      "$value": "18px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3433",
+          "key": "500d83ad17aa4ccf15b6d9c1a8c12682b171dc6b"
+        }
+      }
     },
     "sm": {
-      "$value": "8px"
+      "$value": "8px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3436",
+          "key": "20bfc7992f044ed1f78adf2dc8b98bdab2be578c"
+        }
+      }
     },
     "xs": {
-      "$value": "4px"
+      "$value": "4px",
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3437",
+          "key": "2660f176a5783e69bb168f5c8f10389dd62ad998"
+        }
+      }
     },
     "$type": "dimension"
   },
   "Spacing": {
     "base": {
-      "$value": "16px"
+      "$value": 16,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3470",
+          "key": "5a215e151f64d7bc22cb61ce3b2db581ecc93a8e"
+        }
+      }
     },
     "lg": {
-      "$value": "24px"
+      "$value": 24,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3466",
+          "key": "9f4b566a49387fc31f77a5307cf2a1b2a7db8226"
+        }
+      }
     },
     "md": {
-      "$value": "8px"
+      "$value": 8,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3468",
+          "key": "bec2712b59ecfef40c8ef7eb550375105d974491"
+        }
+      }
     },
     "none": {
-      "$value": "0px"
+      "$value": 0,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3462",
+          "key": "eda1e36b7747adb80426b1d521a32a805c817135"
+        }
+      }
     },
     "sm": {
-      "$value": "4px"
+      "$value": 4,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3469",
+          "key": "fb7d534cfe7769f3aba768c126ff961b199395a0"
+        }
+      }
     },
     "xl": {
-      "$value": "32px"
+      "$value": 32,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3465",
+          "key": "a09b78b511ebc2083675f15d8927c896996a88a0"
+        }
+      }
     },
     "xs": {
-      "$value": "2px"
+      "$value": 2,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3467",
+          "key": "3a169833f69d6e40036fe4e918691cb891d9cdae"
+        }
+      }
     },
     "xxl": {
-      "$value": "40px"
+      "$value": 40,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3471",
+          "key": "136e4a906f630d0b8179be6e8068e9a3147473a2"
+        }
+      }
     },
     "xxs": {
-      "$value": "1px"
+      "$value": 1,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3472",
+          "key": "828b2fd31f3e370ce8f12ed7e24c62f5a127f9a0"
+        }
+      }
     },
     "xxxl": {
-      "$value": "64px"
+      "$value": 64,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3464",
+          "key": "a3f90ae481f98b0a15270579a81e73693e699951"
+        }
+      }
     },
     "xxxxl": {
-      "$value": "96px"
+      "$value": 96,
+      "$extensions": {
+        "figma": {
+          "id": "VariableID:16299:3463",
+          "key": "b800a4caf4b4f149f5a32838c2a9a4b92d4678bd"
+        }
+      }
     },
-    "$type": "dimension"
+    "$type": "fontWeight"
   }
 }
