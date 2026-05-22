@@ -16,8 +16,13 @@
  * limitations under the License.
  */
 
-import BpkPagination from './src/BpkPagination';
-import themeAttributes from './src/themeAttributes';
+export type Props = {
+  breakLabel?: string;
+};
 
-export default BpkPagination;
-export { themeAttributes };
+const BpkPaginationBreak = (props: Props) => {
+  const { breakLabel = '...' } = props;
+  return <div>{breakLabel}</div>;
+};
+
+export default BpkPaginationBreak;

@@ -1,0 +1,68 @@
+{
+  "name": "backpack-storybook-host",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backpack-storybook-host/src",
+  "projectType": "library",
+  "tags": ["scope:internal", "type:storybook"],
+  "// targets": "Storybook plugin auto-infers build-storybook/serve-storybook/static-storybook/build-deps/watch-deps. The targets below are explicit lint/typecheck wrappers; run `nx show project backpack-storybook-host --web` for the full set.",
+  "targets": {
+    "lint-js": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint libs/backpack-storybook-host libs/backpack-storybook-host/.storybook --ext .js,.jsx,.ts,.tsx",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{js,jsx,ts,tsx}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx run backpack-storybook-host:lint-js"],
+        "parallel": false
+      },
+      "cache": true
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tsc --build libs/backpack-storybook-host/tsconfig.lib.json",
+          "tsc --build libs/backpack-storybook-host/tsconfig.storybook.json"
+        ],
+        "parallel": false,
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{ts,tsx}",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/tsconfig.base.json"
+      ],
+      "outputs": [
+        "{workspaceRoot}/dist/out-tsc/libs/backpack-storybook-host"
+      ],
+      "cache": true
+    },
+    "visual-test": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["^build"],
+      "options": {
+        "commands": [
+          "nx run backpack-storybook-host:build-storybook -- -o dist-storybook",
+          "percy storybook libs/backpack-storybook-host/dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'"
+        ],
+        "parallel": false,
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/.percy.yml"
+      ]
+    }
+  }
+}

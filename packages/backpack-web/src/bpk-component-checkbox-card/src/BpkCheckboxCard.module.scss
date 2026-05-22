@@ -136,6 +136,7 @@
     --bpk-checkbox-card-checked-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-checked-text-color: #{tokens.$bpk-text-primary-day};
     --bpk-checkbox-card-checked-border-color: #{tokens.$bpk-core-primary-day};
+    --bpk-checkbox-card-disabled-background-color: #{tokens.$bpk-canvas-day};
     --bpk-checkbox-card-indicator-background-color: #{tokens.$bpk-core-primary-day};
 
     // Match BpkPanel border-radius used in car hire
@@ -196,8 +197,16 @@
       }
     }
 
+    // Match origin BpkPanel's disabled treatment: faint inset stroke for chip
+    // boundary on tinted parents, plus opacity:0.5 to mute the entire chip
+    // (image, label, indicator) together — the indicator inherits the
+    // half-opacity so a checked-and-disabled chip doesn't show an orphaned
+    // full-opacity navy tick.
     &[data-disabled]:not([data-loading]) {
-      box-shadow: none;
+      color: tokens.$bpk-text-primary-day;
+      box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
+        var(--bpk-checkbox-card-disabled-border-color, #{tokens.$bpk-line-day});
+      opacity: 0.5;
     }
 
     // outline:none is unconditional — kills the base ring so iOS sticky focus
@@ -288,6 +297,10 @@
       --bpk-checkbox-card-secondary-text-color,
       #{tokens.$bpk-text-secondary-day}
     );
+  }
+
+  .bpk-checkbox-card-root--cars[data-disabled]:not([data-loading]) & {
+    color: tokens.$bpk-text-disabled-day;
   }
 
   // Keep nested content centered without using !important.

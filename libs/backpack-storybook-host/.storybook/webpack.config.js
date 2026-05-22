@@ -21,10 +21,10 @@ const path = require('path');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const postCssPlugins = require('../scripts/webpack/postCssPlugins');
+const postCssPlugins = require('../../../scripts/webpack/postCssPlugins');
 
 const { BPK_TOKENS } = process.env;
-const rootDir = path.resolve(__dirname, '../');
+const rootDir = path.resolve(__dirname, '../../../');
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = ({ config }) => {
@@ -49,14 +49,17 @@ module.exports = ({ config }) => {
     loader: 'babel-loader',
     options: {
       cacheDirectory: true,
+      rootMode: 'upward',
       presets: [['@babel/preset-env']],
     },
   });
   config.module.rules.push({
     test: /\.(js|jsx)?$/,
+    exclude: /node_modules/,
     loader: 'babel-loader',
     options: {
       cacheDirectory: true,
+      rootMode: 'upward',
       plugins: ['babel-plugin-react-docgen'],
     },
   });
@@ -67,6 +70,8 @@ module.exports = ({ config }) => {
     ...config.resolve.alias,
     react: path.join(rootDir, 'node_modules/react'),
     'react-dom': path.join(rootDir, 'node_modules/react-dom'),
+    'bpk-storybook-utils': path.join(rootDir, 'libs/backpack-storybook-utils'),
+    '@skyscanner/backpack-web': path.join(rootDir, 'packages/backpack-web/src'),
   };
   config.module.rules.push({
     test: /\.[jt]sx?$/,
