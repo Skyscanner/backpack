@@ -226,6 +226,26 @@ describe('BpkStack', () => {
       expect(stack).toHaveStyle('justify-content: flex-end');
     });
 
+    it('preserves built-in default alignment when neither align nor alignItems is provided', () => {
+      const { container: hStackContainer } = render(
+        <BpkProvider>
+          <BpkHStack gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkHStack>
+        </BpkProvider>,
+      );
+      expect(hStackContainer.firstChild).toHaveStyle('align-items: center');
+
+      const { container: vStackContainer } = render(
+        <BpkProvider>
+          <BpkVStack gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkVStack>
+        </BpkProvider>,
+      );
+      expect(vStackContainer.firstChild).toHaveStyle('align-items: center');
+    });
+
     it('align takes precedence over alignItems when both are provided', () => {
       const { container } = render(
         <BpkProvider>
