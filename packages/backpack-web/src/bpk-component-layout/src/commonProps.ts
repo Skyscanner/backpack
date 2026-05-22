@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { AriaAttributes, AriaRole, ElementType, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
@@ -54,6 +54,9 @@ export interface BpkSpacingProps {
   paddingEnd?: BpkResponsiveValue<BpkSpacingValue>;
   marginInline?: BpkResponsiveValue<BpkSpacingValue>;
   paddingInline?: BpkResponsiveValue<BpkSpacingValue>;
+  // CSS logical shorthands for vertical (block) spacing — RTL-safe equivalent of marginTop+marginBottom
+  marginBlock?: BpkResponsiveValue<BpkSpacingValue>;
+  paddingBlock?: BpkResponsiveValue<BpkSpacingValue>;
 
   // Gap
   gap?: BpkResponsiveValue<BpkSpacingValue>;
@@ -112,6 +115,15 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   overflowX?: BpkResponsiveValue<BpkOverflowValue>;
   overflowY?: BpkResponsiveValue<BpkOverflowValue>;
   zIndex?: BpkZIndexValue;
+
+  // Polymorphic rendering — allows changing the underlying HTML element
+  as?: ElementType;
+
+  // Opacity — CSS opacity value (0–1)
+  opacity?: number;
+
+  // Text direction — for embedding bidirectional content within a page
+  dir?: 'ltr' | 'rtl' | 'auto';
 
   // Testing & automation attributes
   'data-testid'?: string;

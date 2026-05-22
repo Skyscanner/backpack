@@ -184,6 +184,92 @@ describe('BpkStack', () => {
       expect(stack).toHaveStyle('justify-content: space-between');
     });
 
+    it('supports alignItems and justifyContent as aliases on BpkStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack alignItems="flex-start" justifyContent="flex-end" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
+      );
+
+      const stack = container.firstChild;
+      expect(stack).toHaveStyle('align-items: flex-start');
+      expect(stack).toHaveStyle('justify-content: flex-end');
+    });
+
+    it('supports alignItems and justifyContent as aliases on BpkHStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkHStack alignItems="flex-start" justifyContent="flex-end" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkHStack>
+        </BpkProvider>,
+      );
+
+      const stack = container.firstChild;
+      expect(stack).toHaveStyle('align-items: flex-start');
+      expect(stack).toHaveStyle('justify-content: flex-end');
+    });
+
+    it('supports alignItems and justifyContent as aliases on BpkVStack', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkVStack alignItems="flex-start" justifyContent="flex-end" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkVStack>
+        </BpkProvider>,
+      );
+
+      const stack = container.firstChild;
+      expect(stack).toHaveStyle('align-items: flex-start');
+      expect(stack).toHaveStyle('justify-content: flex-end');
+    });
+
+    it('preserves built-in default alignment when neither align nor alignItems is provided', () => {
+      const { container: hStackContainer } = render(
+        <BpkProvider>
+          <BpkHStack gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkHStack>
+        </BpkProvider>,
+      );
+      expect(hStackContainer.firstChild).toHaveStyle('align-items: center');
+
+      const { container: vStackContainer } = render(
+        <BpkProvider>
+          <BpkVStack gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkVStack>
+        </BpkProvider>,
+      );
+      expect(vStackContainer.firstChild).toHaveStyle('align-items: center');
+    });
+
+    it('align takes precedence over alignItems when both are provided', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack align="center" alignItems="flex-start" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
+      );
+
+      expect(container.firstChild).toHaveStyle('align-items: center');
+    });
+
+    it('justify takes precedence over justifyContent when both are provided', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack justify="space-around" justifyContent="flex-end" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
+      );
+
+      expect(container.firstChild).toHaveStyle('justify-content: space-around');
+    });
+
     it('filters out invalid props (e.g. className)', () => {
       const { container } = render(
         <BpkProvider>

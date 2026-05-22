@@ -336,4 +336,114 @@ describe('BpkBox', () => {
       expect(container.querySelector('div')).toBeInTheDocument();
     });
   });
+
+  describe('opacity prop', () => {
+    it('forwards opacity to Chakra — produces different output than no opacity', () => {
+      const { container: withOpacity } = render(
+        <BpkProvider>
+          <BpkBox opacity={0.5}>Faded content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withoutOpacity } = render(
+        <BpkProvider>
+          <BpkBox>Default content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withOpacity.querySelector('div')?.className).not.toBe(
+        withoutOpacity.querySelector('div')?.className,
+      );
+    });
+
+    it('forwards different opacity values as distinct rendered output', () => {
+      const { container: halfOpacity } = render(
+        <BpkProvider>
+          <BpkBox opacity={0.5}>Faded content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: zeroOpacity } = render(
+        <BpkProvider>
+          <BpkBox opacity={0}>Hidden content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(halfOpacity.querySelector('div')?.className).not.toBe(
+        zeroOpacity.querySelector('div')?.className,
+      );
+    });
+  });
+
+  describe('as prop', () => {
+    it('renders as a different HTML element when as prop is provided', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox as="section">Section content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('section')).toBeInTheDocument();
+      expect(container.querySelector('div')).not.toBeInTheDocument();
+    });
+
+    it('renders as a nav element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox as="nav">Nav content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('nav')).toBeInTheDocument();
+    });
+  });
+
+  describe('dir prop', () => {
+    it('sets dir="rtl" attribute on the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox dir="rtl">RTL content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('dir', 'rtl');
+    });
+
+    it('sets dir="ltr" attribute on the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox dir="ltr">LTR content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveAttribute('dir', 'ltr');
+    });
+  });
+
+  describe('marginBlock and paddingBlock props', () => {
+    it('forwards marginBlock — produces different output than no marginBlock', () => {
+      const { container: withMarginBlock } = render(
+        <BpkProvider>
+          <BpkBox marginBlock={BpkSpacing.MD}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withoutMarginBlock } = render(
+        <BpkProvider>
+          <BpkBox>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withMarginBlock.querySelector('div')?.className).not.toBe(
+        withoutMarginBlock.querySelector('div')?.className,
+      );
+    });
+
+    it('forwards paddingBlock — produces different output than no paddingBlock', () => {
+      const { container: withPaddingBlock } = render(
+        <BpkProvider>
+          <BpkBox paddingBlock={BpkSpacing.MD}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withoutPaddingBlock } = render(
+        <BpkProvider>
+          <BpkBox>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withPaddingBlock.querySelector('div')?.className).not.toBe(
+        withoutPaddingBlock.querySelector('div')?.className,
+      );
+    });
+  });
+
 });
