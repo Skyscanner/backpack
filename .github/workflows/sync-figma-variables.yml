@@ -145,7 +145,8 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           NEW_BRANCH: ${{ steps.commit.outputs.branch_name }}
         run: |
-          open_prs="$(gh pr list --state open --limit 100 --json number,headRefName,url --jq --arg new "$NEW_BRANCH" '.[] | select(.headRefName | startswith("figma-token-sync/")) | select(.headRefName != $new) | [.number, .headRefName, .url] | @tsv')"
+          open_prs="$(gh pr list --state open --limit 100 --json number,headRefName,url \
+            | jq -r --arg new "$NEW_BRANCH" '.[] | select(.headRefName | startswith("figma-token-sync/")) | select(.headRefName != $new) | [.number, .headRefName, .url] | @tsv')"
 
           if [ -z "$open_prs" ]; then
             echo "No superseded Figma token sync pull requests."
