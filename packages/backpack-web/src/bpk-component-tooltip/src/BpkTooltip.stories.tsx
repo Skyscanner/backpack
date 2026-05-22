@@ -130,6 +130,33 @@ const LinkExample = () => (
   </div>
 );
 
+const CustomZIndexExample = () => (
+  <div style={wrapperStyle}>
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0, 0, 0, 0.1)',
+        zIndex: 1000,
+        pointerEvents: 'none',
+      }}
+    />
+    <BpkTooltip
+      ariaLabel="London Heathrow Airport"
+      id="my-tooltip"
+      target={
+        <div>
+          <Heading>LHR</Heading>
+        </div>
+      }
+      isOpen
+      zIndexValue={1500}
+    >
+      London Heathrow Airport
+    </BpkTooltip>
+  </div>
+);
+
 const VisualTestExample = () => (
   <div style={wrapperStyle}>
     <BpkTooltip
@@ -159,6 +186,7 @@ export const Dark = { render: () => <DarkExample /> };
 export const OnTheSide = { render: () => <SideExample /> };
 export const WithoutPadding = { render: () => <NoPaddingExample /> };
 export const OnALink = { render: () => <LinkExample /> };
+export const WithCustomZIndex = { render: () => <CustomZIndexExample /> };
 
 export const VisualTest = {
   render: () => <VisualTestExample />,
