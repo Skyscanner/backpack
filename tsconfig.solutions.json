@@ -9,6 +9,9 @@
     },
     {
       "path": "./libs/backpack-storybook-host/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/backpack-token-sync/tsconfig.lib.json"
     }
   ]
 }

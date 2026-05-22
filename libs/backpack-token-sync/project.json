@@ -1,0 +1,105 @@
+{
+  "name": "backpack-token-sync",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backpack-token-sync/src",
+  "projectType": "library",
+  "tags": ["scope:internal", "type:tooling"],
+  "targets": {
+    "tokens-fetch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/index.ts",
+        "cwd": "{projectRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/.env",
+        "{projectRoot}/.env.example",
+        { "env": "FIGMA_VARIABLES_SYNC_TOKEN" },
+        { "env": "FIGMA_FILE_KEY" },
+        { "env": "DTCG_OUTPUT_DIR" }
+      ],
+      "outputs": ["{projectRoot}/tokens"],
+      "cache": false
+    },
+    "tokens-build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx src/build-css-cli.ts",
+        "cwd": "{projectRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/tokens/**/*",
+        { "env": "DTCG_OUTPUT_DIR" },
+        { "env": "CSS_OUTPUT_DIR" }
+      ],
+      "outputs": ["{projectRoot}/css"],
+      "cache": true
+    },
+    "tokens-sync": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run backpack-token-sync:tokens-fetch",
+          "nx run backpack-token-sync:tokens-build-css"
+        ],
+        "parallel": false
+      }
+    },
+    "lint-js": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint libs/backpack-token-sync --ext .js,.jsx,.ts,.tsx",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{js,jsx,ts,tsx}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx run backpack-token-sync:lint-js"],
+        "parallel": false
+      },
+      "cache": true
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --build libs/backpack-token-sync/tsconfig.lib.json",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/tsconfig.base.json"
+      ],
+      "outputs": [
+        "{projectRoot}/.tsbuildinfo",
+        "{workspaceRoot}/dist/out-tsc/libs/backpack-token-sync"
+      ],
+      "cache": true
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "jest --config libs/backpack-token-sync/jest.config.js",
+        "cwd": "{workspaceRoot}",
+        "env": {
+          "TZ": "Etc/UTC"
+        }
+      },
+      "inputs": [
+        "default",
+        "{projectRoot}/jest.config.js",
+        "{workspaceRoot}/scripts/jest/**/*"
+      ],
+      "cache": true
+    }
+  }
+}

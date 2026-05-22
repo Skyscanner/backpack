@@ -1,4 +1,4 @@
-# token-sync
+# backpack-token-sync
 
 A small CLI that syncs design tokens from the Backpack Foundations & Components
 Figma file into the Backpack codebase, in two stages:
@@ -15,12 +15,12 @@ flowchart LR
         fetch --> xform
     end
 
-    subgraph tokens["token-sync/tokens/"]
+    subgraph tokens["libs/backpack-token-sync/tokens/"]
         pj["primitives.json"] ~~~ mf["manifest.json"]
         bl["backpack.light.json"] ~~~ bd["backpack.dark.json"]
     end
 
-    subgraph css["token-sync/css/"]
+    subgraph css["libs/backpack-token-sync/css/"]
         pc["primitives.css<br/>:root { }"]
         lc["theme-backpack-light.css<br/>:root { }"]
         dc["theme-backpack-dark.css<br/>:root[data-theme='dark'] { }"]
@@ -44,7 +44,7 @@ token with the **Variables — Read-only** scope, and copy it (Figma only shows 
 
 The token is never committed. There are two places it needs to live:
 
-- **Local dev** — copy `token-sync/.env.example` to `token-sync/.env` and fill in:
+- **Local dev** — copy `libs/backpack-token-sync/.env.example` to `libs/backpack-token-sync/.env` and fill in:
 
   ```
   FIGMA_VARIABLES_SYNC_TOKEN=<token from step 1>
@@ -67,7 +67,7 @@ The token is never committed. There are two places it needs to live:
 Fetches the `Primitives` and `Backpack` collections from the Figma
 [Variables REST API](https://www.figma.com/developers/api#variables) and writes
 deterministic [DTCG](https://design-tokens.github.io/community-group/format/)
-JSON files to `token-sync/tokens/`.
+JSON files to `libs/backpack-token-sync/tokens/`.
 
 From the repo root:
 
@@ -79,7 +79,7 @@ npm run tokens:fetch
 Output:
 
 ```text
-token-sync/tokens/
+libs/backpack-token-sync/tokens/
 ├─ primitives.json      # raw colour/spacing/… literals
 ├─ backpack.light.json  # semantic tokens, Light mode
 ├─ backpack.dark.json   # semantic tokens, Dark mode
@@ -109,7 +109,7 @@ place depending on whether you're running locally or in CI.
 
 [Style Dictionary](https://styledictionary.com/) v5 reads the DTCG files above
 and emits one CSS file per theme plus a theme-independent primitives sheet to
-`token-sync/css/`.
+`libs/backpack-token-sync/css/`.
 
 From the repo root, **after** running Stage 1:
 
@@ -120,7 +120,7 @@ npm run tokens:build-css
 Output:
 
 ```text
-token-sync/css/
+libs/backpack-token-sync/css/
 ├─ primitives.css               # :root                    { --bpk-spacing-…: <value>; … }
 ├─ theme-backpack-light.css     # :root                    { --bpk-…: <light value>; }
 └─ theme-backpack-dark.css      # :root[data-theme="dark"] { --bpk-…: <dark value>;  }
@@ -155,7 +155,7 @@ alongside whichever theme sheets you use.
   be `Xpx` (e.g. `"16px"`) or a DTCG alias; other units or bare numbers are
   rejected so they can't be silently miscalculated during `px → rem` conversion
   (base: `1rem = 16px`).
-- **The CSS lives outside `token-sync/tokens/`** so Stage 1's directory wipe
+- **The CSS lives outside `libs/backpack-token-sync/tokens/`** so Stage 1's directory wipe
   doesn't clobber it.
 
 ### Adding a new theme

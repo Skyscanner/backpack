@@ -22,7 +22,7 @@ yarn.lock
 # Ignore css assets as these should be built on demand from sass
 *.css
 !packages/backpack-web/src/bpk-stylesheets/base.css
-!token-sync/css/*.css
+!libs/backpack-token-sync/css/*.css
 /packages/backpack-web/src/bpk-stylesheets/normalize.scss
 .copilot-progress
 

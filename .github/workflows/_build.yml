@@ -70,13 +70,13 @@ jobs:
         run: mkdir logs
 
       - name: Build (affected)
-        run: npx nx affected -t build --parallel=3
+        run: ./node_modules/.bin/nx affected -t build --parallel=3
 
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
 
       # TODO(Issue 6.1): replace the two checks below with
-      #   npx nx run backpack-harness:lint
+      #   ./node_modules/.bin/nx run backpack-harness:lint
       # once the backpack-harness lib is created.
       - name: Check React versions
         run: npm run check-react-versions
@@ -85,13 +85,13 @@ jobs:
         run: npm run check-bpk-dependencies
 
       - name: Lint (affected)
-        run: npx nx affected -t lint --parallel=3
+        run: ./node_modules/.bin/nx affected -t lint --parallel=3
 
       - name: Typecheck (affected)
-        run: npx nx affected -t typecheck --parallel=3
+        run: ./node_modules/.bin/nx affected -t typecheck --parallel=3
 
       - name: Tests (affected)
-        run: bash -c "set -o pipefail; npx nx affected -t test --parallel=3 |& tee 'logs/test.log'"
+        run: bash -c "set -o pipefail; ./node_modules/.bin/nx affected -t test --parallel=3 |& tee 'logs/test.log'"
 
       - name: Tar and compress logs
         run: |

@@ -54,15 +54,15 @@ describe('style-dictionary-config', () => {
     const tokenWithPath = (filePath: string) => ({ filePath }) as unknown as TransformedToken;
 
     it.each([
-      ['/repo/token-sync/tokens/backpack.day.json'],
+      ['/repo/libs/backpack-token-sync/tokens/backpack.day.json'],
       ['tokens/backpack.day.json'], // relative path
     ])('accepts %s', (filePath) => {
       expect(filter(tokenWithPath(filePath))).toBe(true);
     });
 
     it.each([
-      ['/repo/token-sync/tokens/primitives.json'],
-      ['/repo/token-sync/tokens/backpack.night.json'],
+      ['/repo/libs/backpack-token-sync/tokens/primitives.json'],
+      ['/repo/libs/backpack-token-sync/tokens/backpack.night.json'],
       ['/repo/backpack.day.json.bak'],  // extension mismatch
       ['/repo/some-backpack.day.json'], // prefix mismatch
     ])('rejects %s', (filePath) => {
@@ -77,8 +77,8 @@ describe('style-dictionary-config', () => {
   });
 
   describe('buildStyleDictionaryConfigs', () => {
-    const tokensDir = '/repo/token-sync/tokens';
-    const buildDir = '/repo/token-sync/tokens/css';
+    const tokensDir = '/repo/libs/backpack-token-sync/tokens';
+    const buildDir = '/repo/libs/backpack-token-sync/tokens/css';
     const cssTransforms = ['attribute/cti', 'name/kebab', 'size/pxToRem'];
     const baseOpts = {
       tokensDir,
@@ -189,8 +189,8 @@ describe('style-dictionary-config', () => {
 
   describe('makeWebPrimitivesTokenFilter', () => {
     const filter = makeWebPrimitivesTokenFilter();
-    const primitivesPath = '/repo/token-sync/tokens/primitives.json';
-    const semanticPath = '/repo/token-sync/tokens/backpack.light.json';
+    const primitivesPath = '/repo/libs/backpack-token-sync/tokens/primitives.json';
+    const semanticPath = '/repo/libs/backpack-token-sync/tokens/backpack.light.json';
 
     it.each<[string, object, boolean]>([
       ['Spacing (dimension, $type)', { filePath: primitivesPath, path: ['Spacing', 'md'], $type: 'dimension' }, true],
@@ -600,12 +600,12 @@ describe('style-dictionary-config', () => {
     it('renders one line per violation with file basename and JSON-stringified value', () => {
       const message = formatDimensionViolations([
         {
-          filePath: '/abs/repo/token-sync/tokens/backpack.day.json',
+          filePath: '/abs/repo/libs/backpack-token-sync/tokens/backpack.day.json',
           tokenPath: 'Component.Button.Dimension.padding-h',
           value: '16em',
         },
         {
-          filePath: '/abs/repo/token-sync/tokens/primitives.json',
+          filePath: '/abs/repo/libs/backpack-token-sync/tokens/primitives.json',
           tokenPath: 'Spacing.md',
           value: 16,
         },

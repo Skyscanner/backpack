@@ -46,7 +46,7 @@ import {
 // CLI is spawned via tsx (not imported) to keep SD's ESM runtime out of
 // jest's CJS babel transform.
 
-const REPO_ROOT = path.resolve(__dirname, '../..');
+const REPO_ROOT = path.resolve(__dirname, '../../..');
 const CLI_ENTRY = path.resolve(__dirname, 'build-css-cli.ts');
 // Use the project-local tsx so the test doesn't depend on a globally
 // installed binary.

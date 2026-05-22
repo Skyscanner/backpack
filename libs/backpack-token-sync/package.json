@@ -1,0 +1,7 @@
+{
+  "name": "bpk-token-sync",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal CLI that syncs design tokens from the Backpack Foundations & Components Figma file into DTCG JSON and CSS custom properties.",
+  "license": "Apache-2.0"
+}

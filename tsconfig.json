@@ -12,5 +12,5 @@
     "jsx": "react-jsx",
     "allowJs": false
   },
-  "include": ["packages", "@types", "token-sync"]
+  "include": ["packages", "@types", "libs/backpack-token-sync"]
 }
