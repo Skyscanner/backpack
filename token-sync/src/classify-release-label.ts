@@ -38,6 +38,7 @@ export interface TokenPathChange {
 }
 
 export interface TokenReleaseSummary {
+  addedTokens: TokenPathChange[];
   changedTokens: TokenPathChange[];
   deletedOrRenamedTokens: TokenPathChange[];
   label: ReleaseLabel;
@@ -173,6 +174,7 @@ function displayFileName(fileName?: string): string {
 export function summariseTokenReleaseChanges(
   files: TokenFileChange[],
 ): TokenReleaseSummary {
+  const addedTokens: TokenPathChange[] = [];
   const changedTokens: TokenPathChange[] = [];
   const deletedOrRenamedTokens: TokenPathChange[] = [];
 
@@ -190,9 +192,16 @@ export function summariseTokenReleaseChanges(
         changedTokens.push({ fileName, tokenPath });
       }
     }
+
+    for (const tokenPath of Array.from(currentTokens.keys())) {
+      if (!previousTokens.has(tokenPath)) {
+        addedTokens.push({ fileName, tokenPath });
+      }
+    }
   }
 
   return {
+    addedTokens,
     changedTokens,
     deletedOrRenamedTokens,
     label:
@@ -246,6 +255,94 @@ export function formatDeletedOrRenamedTokensMarkdown(
     lines.push(
       '',
       `And ${deletedOrRenamedTokens.length - visibleTokens.length} more deleted or renamed token path(s).`,
+    );
+  }
+
+  return lines.join('\n');
+}
+
+export function formatChangedTokenValuesMarkdown(
+  changedTokens: TokenPathChange[],
+  limit = 50,
+): string {
+  if (changedTokens.length === 0) {
+    return '';
+  }
+
+  const visibleTokens = changedTokens.slice(0, limit);
+  const tokensByFile = new Map<string, string[]>();
+  visibleTokens.forEach(({ fileName, tokenPath }) => {
+    tokensByFile.set(fileName, [
+      ...(tokensByFile.get(fileName) ?? []),
+      tokenPath,
+    ]);
+  });
+
+  const tokenLines = Array.from(tokensByFile.entries()).flatMap(
+    ([fileName, tokenPaths]) => [
+      `### ${fileName}`,
+      '',
+      ...tokenPaths.map((tokenPath) => `- \`${tokenPath}\``),
+      '',
+    ],
+  );
+
+  const lines = [
+    '## Changed token values',
+    '',
+    'The following token values changed while the path stayed the same. Treat them as potentially breaking — visuals or behaviour driven by these tokens may shift.',
+    '',
+    ...tokenLines.slice(0, -1),
+  ];
+
+  if (changedTokens.length > visibleTokens.length) {
+    lines.push(
+      '',
+      `And ${changedTokens.length - visibleTokens.length} more changed token path(s).`,
+    );
+  }
+
+  return lines.join('\n');
+}
+
+export function formatAddedTokensMarkdown(
+  addedTokens: TokenPathChange[],
+  limit = 50,
+): string {
+  if (addedTokens.length === 0) {
+    return '';
+  }
+
+  const visibleTokens = addedTokens.slice(0, limit);
+  const tokensByFile = new Map<string, string[]>();
+  visibleTokens.forEach(({ fileName, tokenPath }) => {
+    tokensByFile.set(fileName, [
+      ...(tokensByFile.get(fileName) ?? []),
+      tokenPath,
+    ]);
+  });
+
+  const tokenLines = Array.from(tokensByFile.entries()).flatMap(
+    ([fileName, tokenPaths]) => [
+      `### ${fileName}`,
+      '',
+      ...tokenPaths.map((tokenPath) => `- \`${tokenPath}\``),
+      '',
+    ],
+  );
+
+  const lines = [
+    '## Added tokens',
+    '',
+    "The following token paths are new in this sync — they didn't exist in the previous commit.",
+    '',
+    ...tokenLines.slice(0, -1),
+  ];
+
+  if (addedTokens.length > visibleTokens.length) {
+    lines.push(
+      '',
+      `And ${addedTokens.length - visibleTokens.length} more added token path(s).`,
     );
   }
 

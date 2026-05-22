@@ -21,6 +21,8 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
 import {
+  formatAddedTokensMarkdown,
+  formatChangedTokenValuesMarkdown,
   formatDeletedOrRenamedTokensMarkdown,
   summariseTokenReleaseChangesFromGit,
 } from './classify-release-label';
@@ -55,9 +57,14 @@ function writeTokenReleaseSummary(markdown: string): void {
 function main(): void {
   const summary = summariseTokenReleaseChangesFromGit();
   writeLabelOutput(summary.label);
-  writeTokenReleaseSummary(
+
+  const sections = [
     formatDeletedOrRenamedTokensMarkdown(summary.deletedOrRenamedTokens),
-  );
+    formatChangedTokenValuesMarkdown(summary.changedTokens),
+    formatAddedTokensMarkdown(summary.addedTokens),
+  ].filter(Boolean);
+
+  writeTokenReleaseSummary(sections.join('\n\n'));
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
