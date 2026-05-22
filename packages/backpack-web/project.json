@@ -132,6 +132,14 @@
       ],
       "cache": true
     },
+    "lint-scss-fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint 'packages/backpack-web/**/*.scss' --fix",
+        "cwd": "{workspaceRoot}"
+      },
+      "cache": false
+    },
     "lint": {
       "executor": "nx:run-commands",
       "options": {
@@ -165,6 +173,33 @@
       "options": {
         "packageRoot": "{projectRoot}/dist"
       }
+    },
+    "sassdoc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "sassdoc {packages/backpack-web/src/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/src/bpk-mixins/**/*.scss",
+        {
+          "externalDependencies": [
+            "@skyscanner/bpk-svgs",
+            "@skyscanner/bpk-foundations-web",
+            "sassdoc"
+          ]
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist-sassdoc"],
+      "cache": true
+    },
+    "figma-generate-icons": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node packages/backpack-web/src/bpk-component-icon/scripts/generate-figma-connect.js",
+        "cwd": "{workspaceRoot}"
+      },
+      "cache": false
     }
   }
 }
