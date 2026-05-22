@@ -45,7 +45,7 @@ describe('classifyTokenReleaseLabel', () => {
     ).toBe('minor');
   });
 
-  it('returns minor when an existing token value changes but no token paths are removed', () => {
+  it('returns major when an existing token value changes', () => {
     expect(
       classifyTokenReleaseLabel([
         {
@@ -57,10 +57,10 @@ describe('classifyTokenReleaseLabel', () => {
           },
         },
       ]),
-    ).toBe('minor');
+    ).toBe('major');
   });
 
-  it('returns minor when token values change alongside new token paths', () => {
+  it('returns major when token values change alongside new token paths', () => {
     expect(
       classifyTokenReleaseLabel([
         {
@@ -76,7 +76,7 @@ describe('classifyTokenReleaseLabel', () => {
           },
         },
       ]),
-    ).toBe('minor');
+    ).toBe('major');
   });
 
   it('returns major when an existing token is removed or renamed', () => {
