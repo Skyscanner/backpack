@@ -33,7 +33,8 @@ to a repository output change.
    - It has a `major` label when an existing token path was removed, renamed, or had its value
      changed.
    - It has a `minor` label only when the diff is purely additive (new token paths added).
-   - Any removed or renamed token paths are listed in the pull request body, grouped by token file.
+   - Any removed, renamed, or changed token paths are listed in the pull request body, grouped by
+     token file. Pure additions are not listed.
 6. After validation, revert the controlled Figma change if it was only for testing, then rerun the
    workflow or wait for the next scheduled run to confirm the repository output returns to the
    expected state.
