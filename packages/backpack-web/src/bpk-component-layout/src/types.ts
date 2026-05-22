@@ -188,8 +188,8 @@ export type BpkVesselProps = {
 } & HTMLAttributes<HTMLElement>;
 
 /**
- * Component-specific props for BpkFlex
- * Includes all Flex props except those in BpkCommonLayoutProps
+ * Component-specific props for BpkFlex.
+ * Explicit allowlist — does NOT inherit from Chakra FlexProps.
  */
 export interface BpkFlexSpecificProps {
   direction?: BpkResponsiveValue<FlexProps['flexDirection']>;
@@ -211,8 +211,8 @@ export interface BpkFlexProps extends BpkCommonLayoutProps, BpkFlexSpecificProps
 }
 
 /**
- * Component-specific props for BpkGrid
- * Includes all Grid props except those in BpkCommonLayoutProps
+ * Component-specific props for BpkGrid.
+ * Explicit allowlist — does NOT inherit from Chakra GridProps.
  */
 export interface BpkGridSpecificProps {
   justify?: BpkResponsiveValue<GridProps['justifyContent']>;
@@ -239,8 +239,8 @@ export interface BpkGridProps extends BpkCommonLayoutProps, BpkGridSpecificProps
 }
 
 /**
- * Component-specific props for BpkGridItem
- * Includes all GridItem props except those in BpkCommonLayoutProps
+ * Component-specific props for BpkGridItem.
+ * Explicit allowlist — does NOT inherit from Chakra GridItemProps.
  */
 export interface BpkGridItemSpecificProps {
   area?: GridItemProps['area'];
@@ -273,10 +273,15 @@ type BpkStackOptions = {
 };
 
 /**
- * Component-specific props for BpkStack
+ * Component-specific props for BpkStack.
+ * Explicit allowlist — does NOT inherit from Chakra StackProps.
  * Overrides StackOptions to support BpkResponsiveValue.
  * `alignItems` and `justifyContent` are accepted as semantic aliases for `align` and `justify`.
  * If both are provided, `align`/`justify` take precedence.
+ *
+ * `alignItems` and `justifyContent` are explicitly omitted from `BpkFlexGridProps` here so
+ * that the responsive alias declarations below (which match BpkStackOptions) unambiguously
+ * replace the non-responsive `BoxProps` variants from `BpkFlexGridProps`.
  */
 export interface BpkStackSpecificProps
   extends BpkStackOptions,
