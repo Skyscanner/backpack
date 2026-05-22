@@ -186,17 +186,8 @@ jobs:
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
       - name: Percy Test
+        run: npm run percy-test
         if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: |
-          if [ -z "$PERCY_TOKEN" ]; then
-            echo "::error::PERCY_TOKEN is not set"
-            exit 1
-          fi
-          LOG=$(mktemp)
-          npm run percy-test 2>&1 | tee "$LOG"
-          if grep -qE "\[percy\] (Build not created|Failed to create build|Error:)" "$LOG"; then
-            echo "::error::Percy failed silently — see logs above"
-            exit 1
-          fi
+          PERCY_RAISE_ERROR: 'true'
