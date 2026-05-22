@@ -30,11 +30,11 @@ to a repository output change.
    - It targets `main`.
    - It is opened from a `figma-token-sync/<timestamp>-<run-id>` branch.
    - It has the `design-token-automation` label.
-   - It has a `major` label when an existing token path was removed, renamed, or had its value
-     changed.
-   - It has a `minor` label only when the diff is purely additive (new token paths added).
-   - Any removed, renamed, or changed token paths are listed in the pull request body, grouped by
-     token file. Pure additions are not listed.
+   - It has a `major` label when an existing Figma variable key was removed, renamed, or had its
+     emitted token value changed.
+   - It has a `minor` label only when the diff is purely additive (new Figma variable keys added).
+   - Any removed, renamed, changed, or added token paths are listed in the pull request body,
+     grouped by token file.
 6. After validation, revert the controlled Figma change if it was only for testing, then rerun the
    workflow or wait for the next scheduled run to confirm the repository output returns to the
    expected state.
@@ -59,8 +59,9 @@ different branch prefix to keep the workflow from auto-closing your PR.
    output, and open the pull request.
 4. Apply labels manually following the same rules the workflow uses:
    - `design-token-automation`
-   - `major` if an existing token path was removed, renamed, or had its value changed.
-   - `minor` only if the diff is purely additive (new token paths added).
+   - `major` if an existing Figma variable key was removed, renamed, or had its emitted token value
+     changed.
+   - `minor` only if the diff is purely additive (new Figma variable keys added).
 
 While your manual pull request is open the next scheduled run will still detect the same Figma
 changes and may open another `figma-token-sync/*` pull request. Either merge or close your manual
