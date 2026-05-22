@@ -66,6 +66,49 @@ describe('BpkTooltip', () => {
     });
   });
 
+  it('should apply a custom zIndexValue to the floating container', () => {
+    const target = <span>My tooltip target</span>;
+
+    render(
+      <BpkTooltip
+        id="my-tooltip"
+        target={target}
+        ariaLabel="My tooltip content"
+        isOpen
+        zIndexValue={1500}
+      >
+        My tooltip content
+      </BpkTooltip>,
+    );
+
+    const container = screen
+      .getByText('My tooltip content')
+      .closest('[class*="bpk-tooltip--container"]') as HTMLElement;
+    expect(container).not.toBeNull();
+    expect(container.style.zIndex).toBe('1500');
+  });
+
+  it('should not set an inline zIndex when zIndexValue is omitted', () => {
+    const target = <span>My tooltip target</span>;
+
+    render(
+      <BpkTooltip
+        id="my-tooltip"
+        target={target}
+        ariaLabel="My tooltip content"
+        isOpen
+      >
+        My tooltip content
+      </BpkTooltip>,
+    );
+
+    const container = screen
+      .getByText('My tooltip content')
+      .closest('[class*="bpk-tooltip--container"]') as HTMLElement;
+    expect(container).not.toBeNull();
+    expect(container.style.zIndex).toBe('');
+  });
+
   it('should render correctly with "padded" attribute equal to false', async () => {
     const target = <span>My tooltip target</span>;
 
