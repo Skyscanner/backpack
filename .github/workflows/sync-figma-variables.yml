@@ -109,8 +109,8 @@ jobs:
             echo "Release label: \`${RELEASE_LABEL}\`"
             echo
             echo "**Release label rules:**"
-            echo "- \`major\` — an existing token path was removed, renamed, or had its value changed (consumer code may break)."
-            echo "- \`minor\` — only new token paths were added."
+            echo "- \`major\` — an existing Figma variable key was removed, renamed, or had its emitted token value changed (consumer code may break)."
+            echo "- \`minor\` — only new Figma variable keys were added."
             if [ "$RELEASE_LABEL_OUTCOME" != "success" ]; then
               echo
               echo "> [!WARNING]"
