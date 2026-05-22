@@ -24,7 +24,6 @@ import {
   formatAddedTokensMarkdown,
   formatChangedTokenValuesMarkdown,
   formatDeletedTokensMarkdown,
-  formatDeletedOrRenamedTokensMarkdown,
   formatRenamedTokensMarkdown,
   summariseTokenReleaseChangesFromGit,
 } from './classify-release-label';
@@ -60,19 +59,12 @@ function main(): void {
   const summary = summariseTokenReleaseChangesFromGit();
   writeLabelOutput(summary.label);
 
-  const sections =
-    summary.classificationMethod === 'figma-key'
-      ? [
-          formatDeletedTokensMarkdown(summary.deletedTokens),
-          formatRenamedTokensMarkdown(summary.renamedTokens),
-          formatChangedTokenValuesMarkdown(summary.changedTokens),
-          formatAddedTokensMarkdown(summary.addedTokens),
-        ].filter(Boolean)
-      : [
-          formatDeletedOrRenamedTokensMarkdown(summary.deletedOrRenamedTokens),
-          formatChangedTokenValuesMarkdown(summary.changedTokens),
-          formatAddedTokensMarkdown(summary.addedTokens),
-        ].filter(Boolean);
+  const sections = [
+    formatRenamedTokensMarkdown(summary.renamedTokens),
+    formatChangedTokenValuesMarkdown(summary.changedTokens),
+    formatDeletedTokensMarkdown(summary.deletedTokens),
+    formatAddedTokensMarkdown(summary.addedTokens),
+  ].filter(Boolean);
 
   writeTokenReleaseSummary(sections.join('\n\n'));
 }

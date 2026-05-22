@@ -355,6 +355,7 @@ function summariseFigmaTokenReleaseChanges(
         fileName: currentToken.fileName,
         previousTokenPath: previousToken.tokenPath,
       });
+      return;
     }
 
     if (previousToken.value !== currentToken.value) {
@@ -620,7 +621,7 @@ export function formatChangedTokenValuesMarkdown(
   const lines = [
     '## Changed token values',
     '',
-    'The following token values changed for an existing token. Treat them as potentially breaking — visuals or behaviour driven by these tokens may shift.',
+    'The following token values changed while the token path stayed the same. Treat them as potentially breaking — visuals or behaviour driven by these tokens may shift.',
     '',
     ...tokenLines.slice(0, -1),
   ];

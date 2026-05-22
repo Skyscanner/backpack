@@ -165,6 +165,39 @@ describe('classifyTokenReleaseLabel', () => {
     });
   });
 
+  it('does not report renamed tokens as value changes', () => {
+    const summary = summariseTokenReleaseChanges([
+      {
+        fileName: 'token-sync/tokens/backpack.light.json',
+        previous: {
+          Spacing: {
+            $type: 'dimension',
+            Base: token('8px', 'spacing-base'),
+          },
+        },
+        current: {
+          Spacing: {
+            $type: 'dimension',
+            Default: token('12px', 'spacing-base'),
+          },
+        },
+      },
+    ]);
+
+    expect(summary).toMatchObject({
+      addedTokens: [],
+      changedTokens: [],
+      deletedTokens: [],
+      renamedTokens: [
+        {
+          currentTokenPath: 'Spacing/Default',
+          fileName: 'backpack.light.json',
+          previousTokenPath: 'Spacing/Base',
+        },
+      ],
+    });
+  });
+
   it('uses Figma keys to report added, deleted, and changed tokens', () => {
     const summary = summariseTokenReleaseChanges([
       {
@@ -318,7 +351,7 @@ describe('classifyTokenReleaseLabel', () => {
       [
         '## Changed token values',
         '',
-        'The following token values changed for an existing token. Treat them as potentially breaking — visuals or behaviour driven by these tokens may shift.',
+        'The following token values changed while the token path stayed the same. Treat them as potentially breaking — visuals or behaviour driven by these tokens may shift.',
         '',
         '### backpack.light.json',
         '',
