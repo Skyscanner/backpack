@@ -20,21 +20,21 @@
 
 :root {
   --bpk-radius-none: 0;
-  --bpk-radius-full: 6.25rem;
+  --bpk-radius-full: 62.4375rem;
   --bpk-radius-lg: 1.5rem;
   --bpk-radius-md: 0.75rem;
   --bpk-radius-nav-tabs: 1.125rem;
   --bpk-radius-sm: 0.5rem;
   --bpk-radius-xs: 0.25rem;
-  --bpk-spacing-base: 1rem;
-  --bpk-spacing-lg: 1.5rem;
-  --bpk-spacing-md: 0.5rem;
+  --bpk-spacing-base: 16;
+  --bpk-spacing-lg: 24;
+  --bpk-spacing-md: 8;
   --bpk-spacing-none: 0;
-  --bpk-spacing-sm: 0.25rem;
-  --bpk-spacing-xl: 2rem;
-  --bpk-spacing-xs: 0.125rem;
-  --bpk-spacing-xxl: 2.5rem;
-  --bpk-spacing-xxs: 0.0625rem;
-  --bpk-spacing-xxxl: 4rem;
-  --bpk-spacing-xxxxl: 6rem;
+  --bpk-spacing-sm: 4;
+  --bpk-spacing-xl: 32;
+  --bpk-spacing-xs: 2;
+  --bpk-spacing-xxl: 40;
+  --bpk-spacing-xxs: 1;
+  --bpk-spacing-xxxl: 64;
+  --bpk-spacing-xxxxl: 96;
 }
