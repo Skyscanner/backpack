@@ -25,6 +25,10 @@ import { transforms as sdTransforms } from 'style-dictionary/enums';
 
 import { assertSafeOutputDir } from './dtcg-writer';
 import {
+  emitTokensMangleMap,
+  TOKENS_MANGLE_MAP_FILE,
+} from './manifest-emitter';
+import {
   BACKPACK_LIGHT_FILE,
   BPK_FILE_HEADER,
   PRIMITIVES_FILE,
@@ -45,7 +49,10 @@ import type {
 } from './style-dictionary-config';
 
 // Drops the leading `Component` group so `Component.Badge.Colour.bg-default`
-// emits as `--bpk-badge-…` not `--bpk-component-badge-…`.
+// emits as `--bpk-badge-…` not `--bpk-component-badge-…`. Token-sync's CSS
+// outputs intentionally keep their full readable names — the byte-saving
+// mangle is applied later, in the consumer's PostCSS pipeline, so standalone
+// consumers of `theme-backpack-*.css` are unaffected.
 // SD's registry is module-scoped, so re-importing is safe.
 const BPK_NAME_TRANSFORM = 'name/bpk-kebab';
 StyleDictionary.registerTransform({
@@ -323,6 +330,21 @@ export async function runBuildCSS({
         }
       }
     }, Promise.resolve());
+
+    // Emit the mangle-map manifest alongside the SD output. Walking
+    // primitives + the canonical light theme is sufficient because every
+    // additional theme (dark, sepia, …) is asserted symmetric in
+    // `assertInputsAreBuildable`, so they share the same set of token paths.
+    // The consumer-side PostCSS plugin reads this manifest at webpack build
+    // time to rewrite `var(--bpk-original)` references to the mangled form.
+    const manifestTrees = await Promise.all(
+      [PRIMITIVES_FILE, BACKPACK_LIGHT_FILE].map(async (fileName) => {
+        const raw = await readFile(path.join(tokensDir, fileName), 'utf8');
+        return JSON.parse(raw) as unknown;
+      }),
+    );
+    await emitTokensMangleMap({ buildDir: stagingDir, trees: manifestTrees });
+    outputs.push(path.join(resolvedBuildDir, TOKENS_MANGLE_MAP_FILE));
   } catch (error) {
     // SD build failed before any rename — staging is half-built junk.
     await rm(stagingDir, { force: true, recursive: true });
