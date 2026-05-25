@@ -2,8 +2,8 @@ name: Sync Figma variables
 
 on:
   schedule:
-    # Temporarily poll every 30 minutes for validation; the production cadence will be daily at 18:00 GMT.
-    - cron: '*/30 * * * *'
+    # Daily at 18:00 GMT.
+    - cron: '0 18 * * *'
   workflow_dispatch:
     inputs:
       file_key:
