@@ -106,10 +106,7 @@ const makeRows = (
 ];
 
 const makeHeader = (name: string, description: string, price: string) => (
-  // The outer BpkVStack is display:flex + flex-direction:column. height="100%"
-  // fills the row-equalised <th> cell (via BpkComparisonTable's block-size chain).
-  // marginTop="auto" (margin-top: auto) on the price/CTA group pushes it to the
-  // bottom of that space, keeping CTAs aligned across columns with uneven content.
+  // height="100%" fills the row-equalised cell; marginTop="auto" bottom-anchors the price/CTA group.
   <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start" height="100%">
     <BpkVStack gap={BpkSpacing.None} alignItems="flex-start">
       <BpkText textStyle={TEXT_STYLES.label1}>{name}</BpkText>
@@ -514,9 +511,7 @@ export const CompareModalWithTray = {
 
 // ─── Uneven header content (CTA bottom-alignment) ────────────────────────────
 
-// Demonstrates that CTAs (or any direct child of headerContent that opts in
-// via marginTop="auto") stay bottom-aligned across columns even when one
-// column has a much taller description than its neighbours.
+// Demonstrates CTA bottom-alignment via marginTop="auto" across columns with uneven descriptions.
 const UnevenHeaderContentExample = () => {
   const [isOpen, setIsOpen] = useState(true);
 
