@@ -54,12 +54,17 @@ const makeRows = (cancellation: string, stars: string, rating: string, included:
 ];
 
 const makeHeader = (name: string, description: string, price: string) => (
-  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+  // The outer BpkVStack maps to display: flex; flex-direction: column. height: 100%
+  // makes it fill the row-equalised header cell (BpkComparisonTable's <th> + flex
+  // column chain). marginBlockStart: 'auto' on the price/CTA group then anchors
+  // it to the bottom regardless of how many lines the description wraps to,
+  // which keeps CTAs aligned across columns with uneven content.
+  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start" height="100%">
     <BpkVStack gap={BpkSpacing.None} alignItems="flex-start">
       <BpkText textStyle={TEXT_STYLES.label1}>{name}</BpkText>
       <BpkText textStyle={TEXT_STYLES.caption}>{description}</BpkText>
     </BpkVStack>
-    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start" width="100%">
+    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start" width="100%" style={{ marginBlockStart: 'auto' }}>
       <BpkPrice
         price={price}
         size={PRICE_SIZES.small}
@@ -348,4 +353,71 @@ export const CompareModalExample = {
 export const CompareModalWithTray = {
   name: 'BpkComparisonTable + BpkComparisonTray',
   render: () => <CombinedExample />,
+};
+
+// ─── Uneven header content (CTA bottom-alignment) ────────────────────────────
+
+// Demonstrates that CTAs (or any direct child of headerContent that opts in
+// via margin-block-start: auto) stay bottom-aligned across columns even when
+// one column has a much taller description than its neighbours.
+const UnevenHeaderContentExample = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const columns: BpkCompareColumn[] = [
+    {
+      itemId: 'short',
+      imageSrc: CAR_IMAGES[0],
+      imageAlt: 'Citroen C1',
+      headerContent: makeHeader('rentalcars.com', 'Citroen C1 economy', '£71'),
+      rows: makeRows('Free cancellation', '3.5 / 5', '4.5 — Excellent', 'Free cancellation'),
+      removeA11yLabel: 'Remove rentalcars.com deal',
+    },
+    {
+      itemId: 'long',
+      imageSrc: CAR_IMAGES[1],
+      imageAlt: 'Ford Fiesta',
+      // Intentionally long, multi-line description to force this column's
+      // header to be the tallest in the row.
+      headerContent: makeHeader(
+        'Discover Cars',
+        'Ford Fiesta 1.0 EcoBoost or similar economy hatchback with manual transmission, air conditioning and Bluetooth — perfect for short city trips and longer countryside drives alike.',
+        '£89',
+      ),
+      rows: makeRows('Free cancellation', '4 / 5', '4.0 — Very good', 'Unlimited mileage'),
+      removeA11yLabel: 'Remove Discover Cars deal',
+    },
+    {
+      itemId: 'short-2',
+      imageSrc: CAR_IMAGES[2],
+      imageAlt: 'Fiat 500',
+      headerContent: makeHeader('Hertz', 'Fiat 500 economy', '£95'),
+      rows: makeRows('No free cancellation', '4.5 / 5', '4.2 — Great', 'Child seat'),
+      removeA11yLabel: 'Remove Hertz deal',
+    },
+  ];
+
+  return (
+    <BpkVStack gap={BpkSpacing.LG}>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+        The middle column has a multi-line description; the price + CTA in the short
+        columns should still sit at the bottom of their cell, aligned with the long column&apos;s
+        CTA.
+      </BpkText>
+      <BpkButton onClick={() => setIsOpen(true)}>Reopen modal</BpkButton>
+      <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BpkComparisonTable.Header title="Uneven header content" strings={STRINGS} />
+        <BpkComparisonTable.Content
+          columns={columns}
+          onRemove={() => {}}
+          onAddMoreClick={() => {}}
+          strings={STRINGS}
+        />
+      </BpkComparisonTable.Root>
+    </BpkVStack>
+  );
+};
+
+export const CompareModalUnevenHeaderContent = {
+  name: 'BpkComparisonTable - Uneven Header Content',
+  render: () => <UnevenHeaderContentExample />,
 };
