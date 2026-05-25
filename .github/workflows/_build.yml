@@ -192,15 +192,12 @@ jobs:
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: |
-          if [ -z "$PERCY_TOKEN" ]; then
-            echo "::error::PERCY_TOKEN is not set or empty"
-            exit 1
-          fi
           npm run percy-test 2>&1 | tee "${RUNNER_TEMP}/percy.log"
           # Assert success by the presence of a percy.io build URL rather than
           # enumerating failure strings. The CLI only prints this URL when a
           # build is actually finalized; the URL is part of Percy's product
           # contract (the domain), so it is far more stable than CLI wording.
+          # A missing/invalid token also surfaces here — no URL means failure.
           if ! grep -qE 'https://percy\.io/[^[:space:]]+/builds/' "${RUNNER_TEMP}/percy.log"; then
             echo "::error::No Percy build URL found in output — build did not complete successfully"
             exit 1
