@@ -20,7 +20,17 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
+import focusScope from '../../../bpk-scrim-utils/src/focusScope';
+
 import BpkModalV3 from './BpkModalV3';
+
+jest.mock('../../../bpk-scrim-utils/src/focusScope', () => ({
+  __esModule: true,
+  default: {
+    unscopeFocus: jest.fn(),
+    scopeFocus: jest.fn(),
+  },
+}));
 
 // ResizeObserver mock required for Ark UI / Zag.js
 window.ResizeObserver =
@@ -75,6 +85,40 @@ describe('BpkModalV3', () => {
   });
 
   describe('Root', () => {
+    beforeEach(() => {
+      (focusScope.unscopeFocus as jest.Mock).mockClear();
+    });
+
+    it('should call focusScope.unscopeFocus when the modal opens', () => {
+      renderModal({ open: true });
+      expect(focusScope.unscopeFocus).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not call focusScope.unscopeFocus when the modal is closed', () => {
+      renderModal({ open: false });
+      expect(focusScope.unscopeFocus).not.toHaveBeenCalled();
+    });
+
+    it('should call focusScope.unscopeFocus when modal transitions from closed to open', () => {
+      const { rerender } = render(
+        <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(focusScope.unscopeFocus).not.toHaveBeenCalled();
+
+      rerender(
+        <BpkModalV3.Root open onOpenChange={jest.fn()}>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(focusScope.unscopeFocus).toHaveBeenCalledTimes(1);
+    });
+
     it('should render wrapper div with default type', () => {
       const { container } = renderModal();
       const wrapper = container.querySelector('[data-type]');

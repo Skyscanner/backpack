@@ -23,6 +23,7 @@ import { Dialog } from '@ark-ui/react';
 import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { getDataComponentAttribute, useBodyLock } from '../../../../bpk-react-utils';
+import focusScope from '../../../../bpk-scrim-utils/src/focusScope';
 import { ModalTypeProvider } from '../BpkModalV3Context';
 import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
 
@@ -56,6 +57,16 @@ const BpkModalV3Root = ({
   }, [isOpen]);
 
   useBodyLock(type === MODAL_V3_TYPES.chatbot && bodyLockOpen);
+
+  // When this modal opens, deactivate any active focusScope (used by legacy
+  // withScrim components such as BpkDrawer). Both systems listen to 'focusin'
+  // on document, and their simultaneous presence causes an infinite focus
+  // redirect loop that overflows the call stack.
+  useEffect(() => {
+    if (isOpen) {
+      focusScope.unscopeFocus();
+    }
+  }, [isOpen]);
 
   const handleOpenChange = (details: { open: boolean }) => {
     if (open === undefined) {
