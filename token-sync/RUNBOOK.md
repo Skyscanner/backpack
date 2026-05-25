@@ -80,6 +80,10 @@ pull requests while your manual change is in flight.
 - **No-op runs** - If the workflow exits after `Detect meaningful fetched token changes`, no
   repository output PR is expected. This means either Figma has no token value changes compared with
   `main`, or the only fetched change was `manifest.json`'s `generatedAt` metadata.
+  - **Caveat**: when the run is a no-op, the "Close superseded Figma token sync pull requests"
+    step is also skipped. If a stale `figma-token-sync/*` pull request is still open while `main`
+    and Figma are now in sync, it will not be auto-closed — close it manually, or wait until the
+    next real Figma change triggers a run that closes it.
 - **PR automation failures** - If token generation succeeds but no PR appears, check the
   `create-github-app-token`, `Commit generated token changes`, and `Open pull request` steps. Verify
   `GH_APP_ID` and `GH_APP_PRIVATE_KEY` are configured and that the app can push branches and open
