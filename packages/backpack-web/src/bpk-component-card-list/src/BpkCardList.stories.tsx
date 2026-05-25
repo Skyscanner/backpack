@@ -306,6 +306,29 @@ const RowToStackWithExpandExample = () => {
   );
 };
 
+const RowToRailWithSingleItemExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard, 1)}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+  </PageContainer>
+);
+
+const GridToStackWithSingleItemExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard, 1)}
+      layoutDesktop={LAYOUTS.grid}
+      layoutMobile={LAYOUTS.stack}
+    />
+  </PageContainer>
+);
+
 const GridToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
@@ -405,6 +428,8 @@ export const RowToRail = { render: () => <RowToRailExample /> };
 export const RowToStack = { render: () => <RowToStackExample /> };
 export const GridToRail = { render: () => <GridToRailExample /> };
 export const GridToStack = { render: () => <GridToStackExample /> };
+export const GridToStackWithSingleItem = { render: () => <GridToStackWithSingleItemExample /> };
+export const RowToRailWithSingleItem = { render: () => <RowToRailWithSingleItemExample /> };
 export const RowToStackWithExpand = { render: () => <RowToStackWithExpandExample /> };
 export const GridToStackWithExpand = { render: () => <GridToStackWithExpandExample /> };
 export const RowToRailForSnippets = { render: () => <RowToRailForSnippetsExample /> };
