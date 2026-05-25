@@ -5,6 +5,8 @@ on:
     secrets:
       GH_APP_PRIVATE_KEY:
         required: true
+      PERCY_TOKEN:
+        required: false
 
 defaults:
   run:
