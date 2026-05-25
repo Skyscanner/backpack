@@ -56,15 +56,15 @@ const makeRows = (cancellation: string, stars: string, rating: string, included:
 const makeHeader = (name: string, description: string, price: string) => (
   // The outer BpkVStack maps to display: flex; flex-direction: column. height: 100%
   // makes it fill the row-equalised header cell (BpkComparisonTable's <th> + flex
-  // column chain). marginBlockStart: 'auto' on the price/CTA group then anchors
-  // it to the bottom regardless of how many lines the description wraps to,
-  // which keeps CTAs aligned across columns with uneven content.
+  // column chain). marginTop: 'auto' on the price/CTA group then anchors it to
+  // the bottom regardless of how many lines the description wraps to, keeping
+  // CTAs aligned across columns with uneven content.
   <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start" height="100%">
     <BpkVStack gap={BpkSpacing.None} alignItems="flex-start">
       <BpkText textStyle={TEXT_STYLES.label1}>{name}</BpkText>
       <BpkText textStyle={TEXT_STYLES.caption}>{description}</BpkText>
     </BpkVStack>
-    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start" width="100%" style={{ marginBlockStart: 'auto' }}>
+    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start" width="100%" marginTop="auto">
       <BpkPrice
         price={price}
         size={PRICE_SIZES.small}
