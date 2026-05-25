@@ -19,7 +19,11 @@
 const autoprefixer = require('autoprefixer');
 const postCssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
+const dedupeDarkTheme = require('./postcss-dedupe-dark-theme');
+
 module.exports = () => [
+  // Run dedupe first so downstream plugins see the trimmed dark theme block.
+  dedupeDarkTheme(),
   postCssFlexbugsFixes,
   autoprefixer({ flexbox: 'no-2009' }),
 ];
