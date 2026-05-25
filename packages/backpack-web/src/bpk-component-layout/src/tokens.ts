@@ -72,6 +72,13 @@ export const BpkBreakpointToChakraKey: Record<BpkBreakpointToken, ChakraBreakpoi
  * but NOT px/rem values
  */
 export type BpkSpacingValue = BpkSpacingToken | `${number}%`;
+/**
+ * Margin-only superset of BpkSpacingValue. Adds 'auto' so consumers can
+ * push a flex/block-level margin to consume free space (e.g. bottom-aligning
+ * a flex item with marginTop: auto). Padding/gap intentionally exclude 'auto'
+ * because CSS ignores it there.
+ */
+export type BpkMarginValue = BpkSpacingValue | 'auto';
 export type BpkBreakpointValue = BpkBreakpointToken;
 
 /**
@@ -168,6 +175,17 @@ export function isPercentage(value: string): boolean {
  */
 export function isValidSpacingValue(value: string): boolean {
   return Object.values(BpkSpacing).includes(value as BpkSpacingToken) || isPercentage(value);
+}
+
+/**
+ * Validates if a margin value is valid (spacing value or 'auto').
+ * Margin-specific because CSS ignores 'auto' on padding/gap.
+ *
+ * @param {string} value - The margin value to validate
+ * @returns {boolean} True if the value is a valid spacing value or 'auto'
+ */
+export function isValidMarginValue(value: string): boolean {
+  return value === 'auto' || isValidSpacingValue(value);
 }
 
 /**

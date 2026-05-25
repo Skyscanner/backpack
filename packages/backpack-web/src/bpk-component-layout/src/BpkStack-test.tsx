@@ -283,6 +283,40 @@ describe('BpkStack', () => {
       const stack = container.firstChild;
       expect(stack).not.toHaveClass('forbidden-class');
     });
+
+    it('accepts "auto" on margin props', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack marginTop="auto" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
+      );
+
+      expect(warnSpy).not.toHaveBeenCalledWith(
+        expect.stringContaining('Invalid value "auto" for prop "marginTop"'),
+      );
+      expect(container.firstChild).toHaveStyle('margin-top: auto');
+      warnSpy.mockRestore();
+    });
+
+    it('rejects "auto" on padding props (CSS ignores it there)', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+      render(
+        <BpkProvider>
+          {/* @ts-expect-error 'auto' is intentionally not assignable to padding (BpkSpacingValue) */}
+          <BpkStack padding="auto" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
+      );
+
+      expect(warnSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Invalid value "auto" for prop "padding"'),
+      );
+      warnSpy.mockRestore();
+    });
   });
 
   describe('color and backgroundColor', () => {
