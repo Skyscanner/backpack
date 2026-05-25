@@ -5,11 +5,14 @@ Modified principles:
 - V. TypeScript Migration & Type Safety: replaced "maintain both TypeScript types
   and prop-types during migration" with explicit guidance to remove prop-types
   and function-component defaultProps in favour of TypeScript types and ES6
-  destructuring defaults, aligning with React 19 (which removed both APIs).
+  destructuring defaults, aligning with React 19, which ignores `propTypes`
+  checks and no longer applies `defaultProps` for function components.
 Added sections: None
 Removed sections: None
 Templates status:
-- ✅ No template changes required
+- ✅ .specify/templates/tasks-template.md — updated T015 to drop the
+  "Add prop-types for runtime validation" step and align its Constitution
+  Check with the new Principle V guidance
 Follow-up TODOs: None
 -->
 
