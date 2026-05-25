@@ -119,6 +119,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 // ID section — slides up over the fading image.
 // Negative margin-block-start collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
+// flex column with flex: 1 + min-block-size: 0 lets the section claim the remaining vertical space inside header-content (after the fixed-height image wrapper), so consumers can bottom-align any direct child of headerContent with margin-block-start: auto. Works in concert with the block-size trick on <table> above to give the percentage chain a determinate base.
 .bpk-comparison-table__header-id-section {
   display: flex;
   flex-direction: column;
