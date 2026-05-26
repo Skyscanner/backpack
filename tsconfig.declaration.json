@@ -21,7 +21,8 @@
     "allowJs": false,
     "declaration": true,
     "outDir": "packages/backpack-web/dist",
-    "rootDir": "packages/backpack-web/src"
+    "rootDir": "packages/backpack-web/src",
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "packages/backpack-web/src",
