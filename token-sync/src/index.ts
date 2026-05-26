@@ -24,6 +24,7 @@ import { config as loadDotenv } from 'dotenv';
 
 import { buildDTCG, formatBuildSummary } from './build-dtcg';
 import {
+  MODE_NAME_OVERRIDES,
   TARGET_COLLECTION_NAMES,
   formatFatalError,
   requireEnv,
@@ -49,6 +50,7 @@ async function main() {
     // against the local payload. The summary lists each skip so a designer
     // can fix the broken reference in Figma.
     skipUnresolvedAliases: true,
+    modeNameMap: MODE_NAME_OVERRIDES,
   });
 
   for (const line of formatBuildSummary(result)) {

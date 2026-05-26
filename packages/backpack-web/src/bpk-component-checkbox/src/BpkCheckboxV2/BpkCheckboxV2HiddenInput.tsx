@@ -1,0 +1,51 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { Checkbox } from '@ark-ui/react';
+
+import { cssModules } from '../../../bpk-react-utils';
+
+import STYLES from './BpkCheckboxV2.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type BpkCheckboxV2HiddenInputProps = {
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
+};
+
+// Renders Ark's visually hidden native <input type="checkbox">.
+// Include when the checkbox is inside a <form> for native form submission.
+// Accepts aria-* attributes so consumers can override the screen-reader
+// announcement when the visible <BpkCheckboxV2.Label> is missing or differs
+// from the desired accessible name.
+const BpkCheckboxV2HiddenInput = ({
+  'aria-describedby': ariaDescribedby,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
+}: BpkCheckboxV2HiddenInputProps = {}) => (
+  <Checkbox.HiddenInput
+    className={getClassName('bpk-checkbox-v2__hidden-input')}
+    aria-describedby={ariaDescribedby}
+    aria-label={ariaLabel}
+    aria-labelledby={ariaLabelledby}
+  />
+);
+
+export default BpkCheckboxV2HiddenInput;

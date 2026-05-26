@@ -20,10 +20,11 @@
     "jsx": "react-jsx",
     "allowJs": false,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "packages/backpack-web/dist",
+    "rootDir": "packages/backpack-web/src"
   },
   "include": [
-    "packages",
+    "packages/backpack-web/src",
     "@types"
   ],
   "exclude": [

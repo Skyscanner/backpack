@@ -1,0 +1,99 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(test|spec).[jt]s?(x)",
+      "!{projectRoot}/**/*-test.[jt]s?(x)",
+      "!{projectRoot}/**/*.stories.[jt]s?(x)",
+      "!{projectRoot}/**/*.story-helpers.[jt]s?(x)",
+      "!{projectRoot}/**/*.figma.[jt]s?(x)",
+      "!{projectRoot}/**/__snapshots__/**",
+      "!{projectRoot}/**/dist/**"
+    ],
+    "scss": [
+      "{projectRoot}/**/*.scss",
+      "{workspaceRoot}/scripts/scss/**/*",
+      "{workspaceRoot}/packages/backpack-web/src/bpk-mixins/**/*"
+    ],
+    "svgSources": [
+      "{workspaceRoot}/gulpfile.js/**/*",
+      {
+        "externalDependencies": ["@skyscanner/bpk-svgs"]
+      }
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/babel.config.js",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/tsconfig.json",
+      "{workspaceRoot}/tsconfig.declaration.json",
+      "{workspaceRoot}/.eslintrc*",
+      "{workspaceRoot}/.eslintignore",
+      "{workspaceRoot}/.stylelintrc*",
+      "{workspaceRoot}/.prettierrc",
+      "{workspaceRoot}/jest.config.*",
+      {
+        "env": "BABEL_ENV"
+      }
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true,
+      "inputs": ["production", "^production"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "typecheck": {
+      "cache": true,
+      "inputs": ["production", "^production"]
+    }
+  },
+  "analytics": false,
+  "plugins": [
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "serveStorybookTargetName": "serve-storybook",
+        "buildStorybookTargetName": "build-storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    }
+  ],
+  "generators": {
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "none"
+      }
+    },
+    "@nx/js:typescript-sync": {}
+  }
+}
