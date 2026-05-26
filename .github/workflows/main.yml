@@ -12,9 +12,6 @@ defaults:
   run:
     shell: bash -l {0}
 
-env:
-  BUILD_CACHE_NAME: build-cache
-
 permissions: {}
 
 jobs:
@@ -38,20 +35,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Upload dist-storybook to Cache
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        id: storybook-dist-cache
-        with:
-          path: |
-            libs/backpack-storybook-host/dist-storybook/
-            .nx/cache/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/src/**', 'libs/backpack-storybook-utils/src/**', 'libs/backpack-storybook-host/src/**', 'libs/backpack-storybook-host/.storybook/**') }}
-
-      - name: Create build cache
-        if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
+      - name: Build
         run: |
           pnpm run build
           pnpm run storybook:dist
+
+      - name: Upload Storybook dist
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: storybook-dist
+          path: libs/backpack-storybook-host/dist-storybook/
 
   Build:
     permissions:
@@ -63,7 +56,6 @@ jobs:
     uses: ./.github/workflows/_build.yml
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
-      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   StorybookDeploy:
     runs-on: ubuntu-latest
@@ -73,14 +65,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Restore Cache
-        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        id: storybook-dist-cache
+      - name: Download Storybook dist
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          path: |
-            libs/backpack-storybook-host/dist-storybook/
-            .nx/cache/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/src/**', 'libs/backpack-storybook-utils/src/**', 'libs/backpack-storybook-host/src/**', 'libs/backpack-storybook-host/.storybook/**') }}
+          name: storybook-dist
+          path: libs/backpack-storybook-host/dist-storybook/
 
       - name: Deploy Storybook for main
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0

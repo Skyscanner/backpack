@@ -8,9 +8,6 @@ defaults:
   run:
     shell: bash -l {0}
 
-env:
-  BUILD_CACHE_NAME: build-cache
-
 permissions: {}
 
 jobs:
@@ -34,20 +31,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Upload dist-storybook to Cache
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        id: storybook-dist-cache
-        with:
-          path: |
-            libs/backpack-storybook-host/dist-storybook/
-            .nx/cache/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/src/**', 'libs/backpack-storybook-utils/src/**', 'libs/backpack-storybook-host/src/**', 'libs/backpack-storybook-host/.storybook/**') }}
-
-      - name: Create build cache
-        if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
+      - name: Build
         run: |
           pnpm run build
           pnpm run storybook:dist
+
+      - name: Upload Storybook dist
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: storybook-dist
+          path: libs/backpack-storybook-host/dist-storybook/
 
   Build:
     permissions:
@@ -59,7 +52,6 @@ jobs:
     uses: ./.github/workflows/_build.yml
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
-      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   ReleaseWeb:
     name: Release @skyscanner/backpack-web to NPM
