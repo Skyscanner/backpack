@@ -86,7 +86,7 @@ const BpkFloatingNotification = (props: Props) => {
     if (hideAfter) {
       timer = setTimeout(() => setShowMessage(false), hideAfter);
     }
-    return () => timer && clearTimeout(timer);
+    return () => { if (timer) clearTimeout(timer); };
   });
 
   return (
