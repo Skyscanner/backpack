@@ -27,7 +27,6 @@ import {
   BpkVStack,
   BpkHStack,
 } from '../../../bpk-component-layout';
-// @ts-ignore - bpk-component-price has no TypeScript declarations
 import BpkPrice, {
   SIZES as PRICE_SIZES,
   ALIGNS as PRICE_ALIGNS,

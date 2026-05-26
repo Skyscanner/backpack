@@ -25,6 +25,10 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   flex: 1;
   overflow: auto;
   min-block-size: 0;
+
+  // The scroll handler drives margin/max-block-size via --bpk-image-opacity (layout-affecting props).
+  // Scroll anchoring would adjust scrollTop to compensate for the size change, re-firing the handler and causing jitter.
+  overflow-anchor: none;
   overscroll-behavior: contain;
 
   // Rows lock in place during the header collapse animation, then scroll normally.

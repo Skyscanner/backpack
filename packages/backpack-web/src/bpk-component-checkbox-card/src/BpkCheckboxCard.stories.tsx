@@ -28,7 +28,6 @@ import TrendDownIconLg from '../../bpk-component-icon/lg/trend--down';
 import BpkImage from '../../bpk-component-image';
 import { BpkBox, BpkVStack, BpkHStack, BpkFlex, BpkProvider } from '../../bpk-component-layout';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice from '../../bpk-component-price';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
