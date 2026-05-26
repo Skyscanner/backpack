@@ -179,6 +179,10 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Draft release notes
-        uses: release-drafter/release-drafter@6db134d15f3909ccc9eefd369f02bd1e9cffdf97 # v6.2.0
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        uses: release-drafter/release-drafter@563bf132657a13ded0b01fcb723c5a58cdd824e2 # v7.2.1
+        # release-drafter v7 no longer reads the GITHUB_TOKEN env var; the
+        # token must be passed via the `token` input or it falls back to the
+        # default `github.token`, which lacks the GitHub App permissions we
+        # rely on for drafting releases.
+        with:
+          token: ${{ steps.app-token.outputs.token }}
