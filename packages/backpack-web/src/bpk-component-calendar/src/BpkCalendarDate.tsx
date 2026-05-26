@@ -78,25 +78,14 @@ const navigatedByMonthNudger = () =>
   document?.activeElement?.id &&
   document.activeElement.id.indexOf('month_nudger') !== -1;
 
-class BpkCalendarDate extends PureComponent<Props> {
-  static defaultProps: DefaultProps = {
-    className: null,
-    isBlocked: false,
-    isFocused: false,
-    isKeyboardFocusable: true,
-    isOutside: false,
-    isSelected: false,
-    isToday: false,
-    modifiers: {},
-    onClick: null,
-    onDateKeyDown: () => {},
-    preventKeyboardFocus: true,
-    selectionType: SELECTION_TYPES.none,
-    style: {},
-  };
+const EMPTY_MODIFIERS: DateModifiers = {};
+const EMPTY_STYLE = {};
+const noopKeyDown = () => {};
 
+class BpkCalendarDate extends PureComponent<Props> {
   componentDidMount() {
-    if (!this.props.preventKeyboardFocus && this.props.isFocused) {
+    const { isFocused = false, preventKeyboardFocus = true } = this.props;
+    if (!preventKeyboardFocus && isFocused) {
       // If we got here by clicking the nudger, don't focus this date
       if (!navigatedByMonthNudger()) {
         // Giving focus after instantiation
@@ -106,30 +95,29 @@ class BpkCalendarDate extends PureComponent<Props> {
   }
 
   componentDidUpdate(prevProps: Props) {
+    const {
+      isFocused = false,
+      isKeyboardFocusable = true,
+      preventKeyboardFocus = true,
+    } = this.props;
+    const { isFocused: prevIsFocused = false, isKeyboardFocusable: prevIsKeyboardFocusable = true } = prevProps;
+
     if (
-      !this.props.isKeyboardFocusable ||
-      this.props.preventKeyboardFocus ||
+      !isKeyboardFocusable ||
+      preventKeyboardFocus ||
       navigatedByMonthNudger()
     ) {
       return;
     }
 
     // Giving focus after keyboard navigation
-    if (
-      !prevProps.isFocused &&
-      this.props.isFocused &&
-      this.props.isKeyboardFocusable
-    ) {
+    if (!prevIsFocused && isFocused && isKeyboardFocusable) {
       this.button?.focus();
       return;
     }
 
     // Giving focus after changing months with transition
-    if (
-      this.props.isFocused &&
-      !prevProps.isKeyboardFocusable &&
-      this.props.isKeyboardFocusable
-    ) {
+    if (isFocused && !prevIsKeyboardFocusable && isKeyboardFocusable) {
       this.button?.focus();
     }
   }
@@ -138,26 +126,25 @@ class BpkCalendarDate extends PureComponent<Props> {
 
   render() {
     const {
-      className,
+      className = null,
       date,
-      isBlocked,
-      isFocused,
-      isKeyboardFocusable,
-      isOutside,
-      isSelected,
-      isToday,
-      modifiers,
-      onClick,
-      onDateKeyDown,
-      selectionType,
-      style,
+      isBlocked = false,
+      isFocused = false,
+      isKeyboardFocusable = true,
+      isOutside = false,
+      isSelected = false,
+      modifiers = EMPTY_MODIFIERS,
+      onClick = null,
+      onDateKeyDown = noopKeyDown,
+      selectionType = SELECTION_TYPES.none,
+      style = EMPTY_STYLE,
       ...buttonProps
     } = this.props;
 
     const classNames = [getClassName('bpk-calendar-date')];
 
-    Object.keys(modifiers!).forEach((modifier) => {
-      if (modifiers![modifier](this.props)) {
+    Object.keys(modifiers).forEach((modifier) => {
+      if (modifiers[modifier](this.props)) {
         classNames.push(
           getClassName(`bpk-calendar-date--modifier-${modifier}`),
         );
@@ -187,6 +174,7 @@ class BpkCalendarDate extends PureComponent<Props> {
 
     delete buttonProps.preventKeyboardFocus;
     delete buttonProps.isoLabel;
+    delete buttonProps.isToday;
 
     return (
       <button

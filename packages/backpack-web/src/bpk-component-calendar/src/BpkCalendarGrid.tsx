@@ -49,26 +49,26 @@ type DefaultProps = {
   className?: string | null;
   dateModifiers?: DateModifiers;
   focusedDate?: Date | null;
-  cellClassName: string | null;
-  isKeyboardFocusable: boolean;
-  markOutsideDays: boolean;
-  markToday: boolean;
-  maxDate: Date;
-  minDate: Date;
-  onDateClick: () => void;
-  onDateKeyDown: () => void;
+  cellClassName?: string | null;
+  isKeyboardFocusable?: boolean;
+  markOutsideDays?: boolean;
+  markToday?: boolean;
+  maxDate?: Date;
+  minDate?: Date;
+  onDateClick?: () => void;
+  onDateKeyDown?: () => void;
   /**
    * A function to format a human-readable month, for example: "January 2018":
    * If you just need to quickly prototype, use the following from [`date-fns`](https://date-fns.org/docs/format#usage)
    */
-  formatMonth: (month: Date) => string;
-  preventKeyboardFocus: boolean;
+  formatMonth?: (month: Date) => string;
+  preventKeyboardFocus?: boolean;
   /**
    * An object to indicate which configuration of the calendar is being used. Choices are `single` date selection or `range` date selection.
    */
-  selectionConfiguration: SelectionConfiguration;
-  ignoreOutsideDate: boolean;
-  dateProps: {};
+  selectionConfiguration?: SelectionConfiguration;
+  ignoreOutsideDate?: boolean;
+  dateProps?: {};
 };
 
 export type Props = DefaultProps & {
@@ -93,32 +93,23 @@ export type DateProps = {
 type State = {
   calendarMonthWeeks: DateProps[][];
 };
+
+const EMPTY_DATE_MODIFIERS: DateModifiers = {};
+const EMPTY_DATE_PROPS = {};
+const DEFAULT_MAX_DATE = addMonths(new Date(), 12);
+const DEFAULT_MIN_DATE = new Date();
+const DEFAULT_SELECTION_CONFIGURATION: SelectionConfiguration = {
+  type: CALENDAR_SELECTION_TYPE.single,
+  date: null,
+};
+const noopDateClick = () => {};
+const noopDateKeyDown = () => {};
+const defaultFormatMonth = (month: Date) => format(month, 'MMMM yyyy');
+
 /*
   BpkCalendarGrid - the grid representing a whole month
 */
 class BpkCalendarGrid extends Component<Props, State> {
-  static defaultProps: DefaultProps = {
-    className: null,
-    dateModifiers: {},
-    focusedDate: null,
-    isKeyboardFocusable: true,
-    markOutsideDays: true,
-    markToday: true,
-    maxDate: addMonths(new Date(), 12),
-    minDate: new Date(),
-    onDateClick: () => {},
-    onDateKeyDown: () => {},
-    formatMonth: (month: Date) => format(month, 'MMMM yyyy'),
-    preventKeyboardFocus: false,
-    selectionConfiguration: {
-      type: CALENDAR_SELECTION_TYPE.single,
-      date: null,
-    },
-    ignoreOutsideDate: false,
-    dateProps: {},
-    cellClassName: null,
-  };
-
   constructor(props: Props) {
     super(props);
 
@@ -160,23 +151,23 @@ class BpkCalendarGrid extends Component<Props, State> {
   render() {
     const {
       DateComponent,
-      cellClassName,
-      className,
-      dateModifiers,
-      dateProps,
-      focusedDate,
-      formatMonth,
-      ignoreOutsideDate,
-      isKeyboardFocusable,
-      markOutsideDays,
-      markToday,
-      maxDate,
-      minDate,
+      cellClassName = null,
+      className = null,
+      dateModifiers = EMPTY_DATE_MODIFIERS,
+      dateProps = EMPTY_DATE_PROPS,
+      focusedDate = null,
+      formatMonth = defaultFormatMonth,
+      ignoreOutsideDate = false,
+      isKeyboardFocusable = true,
+      markOutsideDays = true,
+      markToday = true,
+      maxDate = DEFAULT_MAX_DATE,
+      minDate = DEFAULT_MIN_DATE,
       month,
-      onDateClick,
-      onDateKeyDown,
-      preventKeyboardFocus,
-      selectionConfiguration,
+      onDateClick = noopDateClick,
+      onDateKeyDown = noopDateKeyDown,
+      preventKeyboardFocus = false,
+      selectionConfiguration = DEFAULT_SELECTION_CONFIGURATION,
       weekStartsOn,
     } = this.props;
 
@@ -201,7 +192,7 @@ class BpkCalendarGrid extends Component<Props, State> {
               onDateClick={onDateClick}
               onDateKeyDown={onDateKeyDown}
               DateComponent={DateComponent}
-              dateModifiers={dateModifiers!}
+              dateModifiers={dateModifiers}
               preventKeyboardFocus={preventKeyboardFocus}
               isKeyboardFocusable={isKeyboardFocusable}
               weekStartsOn={weekStartsOn}

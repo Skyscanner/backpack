@@ -30,19 +30,14 @@ export type Props = DefaultProps;
 type DefaultProps = {
   id: string;
   label: string;
-  value: string | number;
+  value?: string | number;
   focus: boolean;
   index: number;
-  name: string;
+  name?: string;
   [key: string]: any;
 }
 
 class BpkInputField extends PureComponent<Props> {
-  static defaultProps = {
-    value: '',
-    name: ''
-  };
-
   componentDidUpdate(prevProps: Props) {
     const { focus } = this.props;
     if (prevProps.focus !== focus && this.input && focus) {
@@ -54,7 +49,7 @@ class BpkInputField extends PureComponent<Props> {
   private input: HTMLInputElement | null = null;
 
   render() {
-    const { focus, id, index, label, name, value, ...rest } = this.props;
+    const { focus, id, index, label, name = '', value = '', ...rest } = this.props;
     return (
       <div key={index} className={getClassName('bpk-input-field')} {...getDataComponentAttribute('InputField')}>
         <BpkInput

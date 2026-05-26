@@ -114,8 +114,6 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
     static propTypes = { ...propTypes };
 
-    static defaultProps = { ...defaultProps };
-
     constructor(props: Props) {
       super(props);
 
@@ -140,7 +138,8 @@ const withInfiniteScroll = <T: ExtendedProps>(
     componentDidMount() {
       this.props.dataSource.onDataChange(this.updateData);
       this.fetchItems({
-        elementsPerScroll: this.props.initiallyLoadedElements,
+        elementsPerScroll:
+          this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
       }).then((newState) => {
         this.setState(newState);
       });
@@ -156,7 +155,8 @@ const withInfiniteScroll = <T: ExtendedProps>(
         this.props.dataSource.onDataChange(this.updateData);
         this.fetchItems({
           index: 0,
-          elementsPerScroll: this.props.elementsPerScroll,
+          elementsPerScroll:
+            this.props.elementsPerScroll ?? defaultProps.elementsPerScroll,
           elementsToRender: [],
         }).then((newState) => this.setStateAfterDsUpdate(newState));
       }
@@ -185,14 +185,16 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
     updateData = () => {
       const { index } = this.state;
+      const elementsPerScroll =
+        this.props.elementsPerScroll ?? defaultProps.elementsPerScroll;
       // This means updateData was called before any data was loaded, e.g.
       // An ArrayDataSource initialized empty and then changed latter on via `updateData`
       // In this case we want to load new data and not just replace the old one.
       // "See More After" should also be computed again in this case.
-      const isFirstLoad = index < this.props.elementsPerScroll;
+      const isFirstLoad = index < elementsPerScroll;
       this.fetchItems({
         index: 0,
-        elementsPerScroll: isFirstLoad ? this.props.elementsPerScroll : index,
+        elementsPerScroll: isFirstLoad ? elementsPerScroll : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
       }).then((newState) => this.setStateAfterDsUpdate(newState));
@@ -204,7 +206,8 @@ const withInfiniteScroll = <T: ExtendedProps>(
         extend(
           {
             index: this.state.index,
-            elementsPerScroll: this.props.elementsPerScroll,
+            elementsPerScroll:
+              this.props.elementsPerScroll ?? defaultProps.elementsPerScroll,
             elementsToRender: this.state.elementsToRender,
             computeShowSeeMore: true,
           },
