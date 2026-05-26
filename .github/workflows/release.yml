@@ -41,7 +41,7 @@ jobs:
           path: |
             libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ github.sha }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
