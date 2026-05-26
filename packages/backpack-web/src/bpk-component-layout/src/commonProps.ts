@@ -55,7 +55,9 @@ export interface BpkSpacingProps {
   paddingEnd?: BpkResponsiveValue<BpkSpacingValue>;
   marginInline?: BpkResponsiveValue<BpkMarginValue>;
   paddingInline?: BpkResponsiveValue<BpkSpacingValue>;
-  // CSS logical shorthands for vertical (block) spacing — RTL-safe equivalent of marginTop+marginBottom
+  // CSS logical properties for vertical (block) spacing — RTL-safe equivalents of marginTop/marginBottom
+  marginBlockStart?: BpkResponsiveValue<BpkMarginValue>;
+  marginBlockEnd?: BpkResponsiveValue<BpkMarginValue>;
   marginBlock?: BpkResponsiveValue<BpkMarginValue>;
   paddingBlock?: BpkResponsiveValue<BpkSpacingValue>;
 

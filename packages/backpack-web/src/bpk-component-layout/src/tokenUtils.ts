@@ -395,7 +395,7 @@ export function processSpacingProps<T extends Record<string, any>>(
     'paddingStart', 'paddingEnd', 'paddingInline', 'paddingBlock',
     // Margin props
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
-    'marginStart', 'marginEnd', 'marginInline', 'marginBlock',
+    'marginStart', 'marginEnd', 'marginInline', 'marginBlockStart', 'marginBlockEnd', 'marginBlock',
     // Gap and spacing
     'gap', 'spacing',
     'rowGap', 'columnGap',
@@ -411,7 +411,7 @@ export function processSpacingProps<T extends Record<string, any>>(
   // Margin keys accept 'auto' (e.g. marginTop: 'auto' to bottom-anchor a flex child); padding/gap don't.
   const marginKeys = [
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
-    'marginStart', 'marginEnd', 'marginInline', 'marginBlock',
+    'marginStart', 'marginEnd', 'marginInline', 'marginBlockStart', 'marginBlockEnd', 'marginBlock',
   ];
 
   spacingKeys.forEach((key) => {

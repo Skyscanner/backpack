@@ -301,6 +301,23 @@ describe('BpkStack', () => {
       warnSpy.mockRestore();
     });
 
+    it('accepts "auto" on marginBlockStart (logical block-start)', () => {
+      const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+      const { container } = render(
+        <BpkProvider>
+          <BpkStack marginBlockStart="auto" gap={BpkSpacing.MD}>
+            <div>Child</div>
+          </BpkStack>
+        </BpkProvider>,
+      );
+
+      expect(warnSpy).not.toHaveBeenCalledWith(
+        expect.stringContaining('Invalid value "auto" for prop "marginBlockStart"'),
+      );
+      expect(container.firstChild).toHaveStyle('margin-block-start: auto');
+      warnSpy.mockRestore();
+    });
+
     it('rejects "auto" on padding props (CSS ignores it there)', () => {
       const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
       render(
