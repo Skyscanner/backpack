@@ -102,7 +102,6 @@ type CardListRowRailProps = {
   accessory?: typeof ACCESSORY_DESKTOP_TYPES.pagination;
   isMobile?: boolean;
   accessibilityLabels?: AccessibilityLabels;
-  initiallyInViewCardIndex: number;
 };
 
 type CardListCarouselProps = {
@@ -114,7 +113,6 @@ type CardListCarouselProps = {
   isMobile?: boolean;
   carouselLabel?: (initiallyShownCards: number, childrenLength: number) => string;
   slideLabel?: (index: number, childrenLength: number) => string;
-  initialPageIndex: number;
 };
 
 type CardListProps = CardListBaseProps;

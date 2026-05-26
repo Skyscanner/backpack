@@ -356,19 +356,6 @@ const RowToRailWithoutTitleExample = () => (
   </PageContainer>
 );
 
-const RowToRailWithInitiallyInViewCardIndexExample = () => (
-  <PageContainer>
-    <BpkCardList
-      {...commonProps}
-      cardList={makeList(DestinationCard)}
-      layoutDesktop={LAYOUTS.row}
-      layoutMobile={LAYOUTS.rail}
-      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
-      initiallyInViewCardIndex={7}
-    />
-  </PageContainer>
-);
-
 const MultiComponentsScrollingTestExample = () => (
   <PageContainer>
     <RowToRailExample />
@@ -409,7 +396,6 @@ export const RowToStackWithExpand = { render: () => <RowToStackWithExpandExample
 export const GridToStackWithExpand = { render: () => <GridToStackWithExpandExample /> };
 export const RowToRailForSnippets = { render: () => <RowToRailForSnippetsExample /> };
 export const RowToRailWithoutTitle = { render: () => <RowToRailWithoutTitleExample /> };
-export const RowToRailWithInitiallyInViewCardIndex = { render: () => <RowToRailWithInitiallyInViewCardIndexExample /> };
 
 export const MultiComponentsScrollingTest = { render: () => <MultiComponentsScrollingTestExample /> };
 export const VisualTest = { render: () => <BasicExample /> };

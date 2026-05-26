@@ -64,7 +64,6 @@ describe('BpkCardListCarousel', () => {
     initiallyShownCards: 3,
     layout: LAYOUTS.row,
     setCurrentIndex: mockSetCurrentIndex,
-    initialPageIndex: 0,
   };
 
   afterEach(() => {
