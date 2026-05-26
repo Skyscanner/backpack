@@ -5,6 +5,8 @@ on:
     secrets:
       GH_APP_PRIVATE_KEY:
         required: true
+      PERCY_TOKEN:
+        required: false
 
 defaults:
   run:
@@ -185,7 +187,17 @@ jobs:
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
       - name: Percy Test
-        run: pnpm run percy-test
         if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: |
+          pnpm run percy-test 2>&1 | tee "${RUNNER_TEMP}/percy.log"
+          # Assert success by the presence of a percy.io build URL rather than
+          # enumerating failure strings. The CLI only prints this URL when a
+          # build is actually finalized; the URL is part of Percy's product
+          # contract (the domain), so it is far more stable than CLI wording.
+          # A missing/invalid token also surfaces here — no URL means failure.
+          if ! grep -qE 'https://percy\.io/[^[:space:]]+/builds/' "${RUNNER_TEMP}/percy.log"; then
+            echo "::error::No Percy build URL found in output — build did not complete successfully"
+            exit 1
+          fi

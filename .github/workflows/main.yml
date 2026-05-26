@@ -63,6 +63,7 @@ jobs:
     uses: ./.github/workflows/_build.yml
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   StorybookDeploy:
     runs-on: ubuntu-latest
