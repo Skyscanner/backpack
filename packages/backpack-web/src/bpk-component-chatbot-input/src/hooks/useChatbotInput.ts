@@ -43,7 +43,7 @@ interface UseChatbotInputOptions {
 }
 
 interface UseChatbotInputReturn {
-  inputRef: RefObject<HTMLInputElement | HTMLTextAreaElement>;
+  inputRef: RefObject<HTMLInputElement | HTMLTextAreaElement | null>;
   isFocused: boolean;
   isDisabled: boolean;
   isOverLimit: boolean;

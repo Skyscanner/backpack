@@ -24,7 +24,7 @@ import STYLES from './BpkDarkExampleWrapper.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
-  const { padded, ...rest } = props;
+  const { padded = false, ...rest } = props;
   return (
     /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */
     <div
@@ -35,10 +35,6 @@ const BpkDarkExampleWrapper = (props: { padded: boolean }) => {
       {...rest}
     />
   );
-};
-
-BpkDarkExampleWrapper.defaultProps = {
-  padded: false,
 };
 
 export default BpkDarkExampleWrapper;

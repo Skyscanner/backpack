@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { render } from '@testing-library/react';
 import { isWeekend } from 'date-fns/isWeekend';
 
@@ -110,9 +108,6 @@ describe('BpkCalendarScrollGridList', () => {
         cx.backgroundColor = 'rgb(0, 215, 117)';
       }
       return <div style={cx} />;
-    };
-    MyCustomDate.propTypes = {
-      date: PropTypes.instanceOf(Date).isRequired,
     };
     const { asFragment } = render(
       <BpkScrollableCalendarGridList

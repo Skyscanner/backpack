@@ -88,6 +88,9 @@
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
     ],
+    "snapshotSerializers": [
+      "<rootDir>/scripts/jest/normalizeUseIdSerializer.js"
+    ],
     "testEnvironment": "jsdom",
     "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",
     "transformIgnorePatterns": [

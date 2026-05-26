@@ -46,13 +46,13 @@ type Props = {
 const BpkTicket = (props: Props) => {
   const {
     children,
-    className,
-    href,
-    padded,
+    className = null,
+    href = null,
+    padded = true,
     stub,
-    stubClassName,
-    stubProps,
-    vertical,
+    stubClassName = null,
+    stubProps = {},
+    vertical = false,
     ...rest
   } = props;
 
@@ -139,15 +139,6 @@ BpkTicket.propTypes = {
   vertical: PropTypes.bool,
   stubClassName: PropTypes.string,
   stubProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkTicket.defaultProps = {
-  className: null,
-  href: null,
-  padded: true,
-  vertical: false,
-  stubClassName: null,
-  stubProps: {},
 };
 
 export default BpkTicket;

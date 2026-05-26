@@ -24,10 +24,10 @@ import { wrapDisplayName } from '../../bpk-react-utils';
 import type { BpkAccordionProps } from './BpkAccordion';
 
 const getInitiallyExpanded = (children: ReactNode) => {
-  const accordionItems = Children.toArray(children) as ReactElement[];
+  const accordionItems = Children.toArray(children) as Array<ReactElement<any>>;
   const result = accordionItems.reduceRight(
     (prev, item) => (item.props.initiallyExpanded ? item : prev),
-    {} as ReactElement,
+    {} as ReactElement<any>,
   );
   return (result || {}).key || null;
 };
@@ -61,7 +61,7 @@ const withSingleItemAccordionState = <P extends BpkAccordionProps>(
       this.setState({ expanded: key });
     };
 
-    renderAccordionItem = (accordionItem: ReactElement) => {
+    renderAccordionItem = (accordionItem: ReactElement<any>) => {
       const expanded = this.state.expanded === accordionItem.key;
       const onClick = () => this.openAccordionItem(accordionItem?.key);
 
@@ -74,7 +74,7 @@ const withSingleItemAccordionState = <P extends BpkAccordionProps>(
       return (
         <ComposedComponent {...(rest as P)}>
           {Children.toArray(children).map((el) =>
-            this.renderAccordionItem(el as ReactElement),
+            this.renderAccordionItem(el as ReactElement<any>),
           )}
         </ComposedComponent>
       );

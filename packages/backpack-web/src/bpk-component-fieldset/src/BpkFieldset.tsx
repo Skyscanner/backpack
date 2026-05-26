@@ -28,7 +28,7 @@ import STYLES from './BpkFieldset.module.scss';
 const getClassName = cssModules(STYLES);
 
 type BaseProps = {
-  children: ReactElement;
+  children: ReactElement<any>;
   disabled?: boolean;
   valid?: boolean | null;
   required?: boolean;

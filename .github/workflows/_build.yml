@@ -105,6 +105,56 @@ jobs:
           name: ${{env.BUILD_LOGS}}
           path: ${{env.BUILD_LOGS}}.tar.br
 
+  React19:
+    # Forward-compatibility check: install React 19 + types into the cached
+    # node_modules (no save) and run typecheck + jest. Allowed to fail while
+    # the migration lands; flip to required once Repo 1 (backpack-web) is
+    # released and consumers can opt in.
+    runs-on: ubuntu-latest
+    needs: Build
+    continue-on-error: true
+    permissions:
+      statuses: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Cache
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        id: npm-cache
+        with:
+          path: |
+            node_modules/
+            packages/node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+
+      - name: Override React to 19.2.5
+        # The inner packages/node_modules tree has its own copy of react/react-dom
+        # populated from the cache. Overlay the root install into it so jest
+        # (which resolves react-dom from packages/) sees R19 too.
+        run: |
+          npm install --no-save react@19.2.5 react-dom@19.2.5 @types/react@19 @types/react-dom@19 @types/prop-types
+          rm -rf packages/node_modules/react packages/node_modules/react-dom
+          cp -r node_modules/react packages/node_modules/
+          cp -r node_modules/react-dom packages/node_modules/
+
+      - name: Generate component code (icons, flare, spinners)
+        run: npm run build:gulp
+
+      - name: Run typecheck (React 19)
+        run: npm run typecheck
+
+      - name: Run jest (React 19)
+        run: TZ=Etc/UTC npm run jest
+
   Danger:
     runs-on: ubuntu-latest
     needs: Build
