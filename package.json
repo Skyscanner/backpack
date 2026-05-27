@@ -3,14 +3,11 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=22.9.0",
-    "npm": ">=10.8.3"
+    "pnpm": ">=9.15.9"
   },
-  "workspaces": [
-    "packages/*",
-    "libs/*"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -24,34 +21,34 @@
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
-    "clean": "npm run clean:dist && npm run clean:node_modules",
+    "clean": "pnpm run clean:dist && pnpm run clean:node_modules",
     "clean:dist": "rm -rf dist packages/backpack-web/dist",
     "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "figma:generate-config": "node scripts/figma/generate-figma-config.js",
     "figma:generate-icons": "nx run backpack-web:figma-generate-icons",
-    "figma:generate": "npm run figma:generate-config && npm run figma:generate-icons",
+    "figma:generate": "pnpm run figma:generate-config && pnpm run figma:generate-icons",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "upgrade-foundations": "node scripts/npm/check-bpk-dependencies.js --fix --upgrade-foundations",
     "jest": "TZ=Etc/UTC jest --coverage",
     "jest:update": "TZ=Etc/UTC jest --updateSnapshot",
     "jest:watch": "TZ=Etc/UTC jest --watch",
     "jest:accessibility": "jest --testRegex accessibility-test",
-    "lint": "npm run lint:js && npm run lint:scss",
+    "lint": "pnpm run lint:js && pnpm run lint:scss",
     "lint:js": "eslint . libs/backpack-storybook-host/.storybook --ext .js,.jsx,.ts,.tsx",
     "lint:js:fix": "eslint . libs/backpack-storybook-host/.storybook --ext .js,.jsx,.ts,.tsx --fix",
     "lint:scss": "nx run backpack-web:lint-scss",
     "lint:scss:fix": "nx run backpack-web:lint-scss-fix",
     "lint-staged": "lint-staged",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
-    "start": "npm run build && npm run storybook",
+    "start": "pnpm run build && pnpm run storybook",
     "storybook": "nx run backpack-storybook-host:serve-storybook -- -p 9001",
     "storybook:dist": "nx run backpack-storybook-host:build-storybook -- -o dist-storybook",
     "tokens:fetch": "tsx token-sync/src/index.ts",
     "tokens:build-css": "tsx token-sync/src/build-css-cli.ts",
-    "tokens:sync": "npm run tokens:fetch && npm run tokens:build-css",
+    "tokens:sync": "pnpm run tokens:fetch && pnpm run tokens:build-css",
     "sassdoc": "nx run backpack-web:sassdoc",
-    "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
+    "test": "pnpm run lint && pnpm run check-react-versions && pnpm run check-bpk-dependencies && pnpm run jest",
     "typecheck": "tsc && nx run-many -t typecheck",
     "prepare": "husky",
     "percy-test": "percy storybook ./libs/backpack-storybook-host/dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
@@ -91,7 +88,7 @@
     "testEnvironment": "jsdom",
     "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",
     "transformIgnorePatterns": [
-      "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
+      "node_modules/(?!(.pnpm|bpk|@skyscanner|d3-.*|internmap))"
     ],
     "verbose": true
   },
@@ -190,7 +187,9 @@
     "webpack": "^5.103.0",
     "wrapper-webpack-plugin": "^2.2.2"
   },
-  "overrides": {
-    "braces": "3.0.3"
+  "pnpm": {
+    "overrides": {
+      "braces": "3.0.3"
+    }
   }
 }

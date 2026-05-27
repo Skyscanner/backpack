@@ -49,7 +49,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   testRegex: 'src/.*-test\\.[jt]sx?$',
   transformIgnorePatterns: [
-    'node_modules/(?!bpk|@skyscanner|d3-.*|internmap)',
+    'node_modules/(?!(.pnpm|bpk|@skyscanner|d3-.*|internmap))',
   ],
   verbose: true,
 };

@@ -14,8 +14,10 @@
 !/packages/backpack-web/src/bpk-component-icon/src
 !/packages/backpack-web/src/bpk-component-icon/scripts
 node_modules
-npm-debug.*
+pnpm-debug.log*
 yarn.lock
+# Ignore package-lock.json files, we're using pnpm instead
+package-lock.json
 /packages/backpack-web/src/*/changelog.md
 .storybook/__image_snapshots__/__diff_output__
 

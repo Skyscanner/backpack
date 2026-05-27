@@ -2,6 +2,10 @@
   "name": "backpack-storybook-host",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "pnpm": ">=9.15.9"
+  },
   "description": "Internal Storybook 10 host configuration for the Backpack design system.",
   "license": "Apache-2.0",
   "main": "src/index.ts",

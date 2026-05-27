@@ -8,7 +8,7 @@ This guide provides instructions and context for AI agents working with the Back
 
 - **Repository**: Skyscanner/backpack
 - **Language**: TypeScript/JavaScript (React components)
-- **Package Manager**: npm
+- **Package Manager**: pnpm
 - **Build System**: Webpack, Gulp + custom scripts
 - **Styling**: SCSS with BEM methodology
 - **Documentation**: [skyscanner.design](https://www.skyscanner.design/)
@@ -74,22 +74,22 @@ interface BpkComponentProps {
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Build all packages
-npm run build
+pnpm run build
 
 # Run tests
-npm test
+pnpm test
 
 # Run Storybook
-npm run storybook
+pnpm run storybook
 
 # Lint code
-npm run lint
+pnpm run lint
 
 # Type check
-npm run typecheck
+pnpm run typecheck
 ```
 
 ## Component Development Workflow
