@@ -25,7 +25,7 @@
 // hold their own lock: opening a second modal increments to 2, closing it
 // decrements back to 1, and the first modal's lock is still active.
 //
-// TODO: Remove once BpkDrawer, BpkModal, and BpkDialog are deprecated. (CLOV-1643)
+// TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, and BpkDialog are deprecated.
 
 let lockCount = 0;
 

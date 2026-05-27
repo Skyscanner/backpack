@@ -70,7 +70,7 @@ const BpkModalV3Root = ({
   // The cleanup function runs both on isOpen→false AND on unmount-while-open,
   // ensuring the locks are always released.
   //
-  // TODO: Remove once BpkDrawer, BpkModal, BpkDialog are deprecated. (CLOV-1643)
+  // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
   useEffect(() => {
     if (!isOpen) return undefined;
     focusScope.pauseFocus();
