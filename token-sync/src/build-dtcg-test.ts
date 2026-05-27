@@ -26,13 +26,11 @@ import path from 'node:path';
 import {
   BACKPACK_MODE_DARK,
   BACKPACK_MODE_LIGHT,
+  KEY_SEM_CANVAS_CONTRAST,
+  KEY_SEM_CANVAS_DEFAULT,
   buildFixtureResponse,
 } from './__fixtures__/figma-variable';
-import {
-  buildDTCG,
-  buildDTCGOutputs,
-  formatBuildSummary,
-} from './build-dtcg';
+import { buildDTCG, buildDTCGOutputs, formatBuildSummary } from './build-dtcg';
 import { FigmaApi } from './figma-api';
 import { TARGET_COLLECTION_NAMES } from './sync-helpers';
 
@@ -50,7 +48,10 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
     );
 
     expect(classified).toEqual([
-      { collection: expect.objectContaining({ name: 'Backpack' }), role: 'semantic' },
+      {
+        collection: expect.objectContaining({ name: 'Backpack' }),
+        role: 'semantic',
+      },
       {
         collection: expect.objectContaining({ name: 'Primitives' }),
         role: 'primitive',
@@ -72,8 +73,18 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
     expect(backpackLight.tree).toEqual({
       Canvas: {
         $type: 'color',
-        Contrast: { $value: '{Colour.Pink}' },
-        Default: { $value: '{Colour.Pink}' },
+        Contrast: {
+          $value: '{Colour.Pink}',
+          $extensions: {
+            figma: expect.objectContaining({ key: KEY_SEM_CANVAS_CONTRAST }),
+          },
+        },
+        Default: {
+          $value: '{Colour.Pink}',
+          $extensions: {
+            figma: expect.objectContaining({ key: KEY_SEM_CANVAS_DEFAULT }),
+          },
+        },
       },
     });
     expect(backpackLight.stats).toMatchObject({
@@ -113,9 +124,17 @@ describe('buildDTCGOutputs (end-to-end on fixtures)', () => {
       modeNameMap: { Light: 'LightSky', Dark: 'DarkSky' },
     });
 
-    expect(outputs.filter((o) => o.collectionName === 'Backpack')).toMatchObject([
-      { modeName: 'DarkSky', tree: { Canvas: { Default: { $value: '{Colour.Berry}' } } } },
-      { modeName: 'LightSky', tree: { Canvas: { Default: { $value: '{Colour.Pink}' } } } },
+    expect(
+      outputs.filter((o) => o.collectionName === 'Backpack'),
+    ).toMatchObject([
+      {
+        modeName: 'DarkSky',
+        tree: { Canvas: { Default: { $value: '{Colour.Berry}' } } },
+      },
+      {
+        modeName: 'LightSky',
+        tree: { Canvas: { Default: { $value: '{Colour.Pink}' } } },
+      },
     ]);
   });
 });
@@ -199,15 +218,21 @@ describe('formatBuildSummary', () => {
   }
 
   // Minimal fake — we only exercise the formatter, not the writer.
-  function makeResult(overrides: Partial<BuildDTCGResult> = {}): BuildDTCGResult {
+  function makeResult(
+    overrides: Partial<BuildDTCGResult> = {},
+  ): BuildDTCGResult {
     return {
       classified: [
         {
-          collection: { name: 'Backpack' } as BuildDTCGResult['classified'][number]['collection'],
+          collection: {
+            name: 'Backpack',
+          } as BuildDTCGResult['classified'][number]['collection'],
           role: 'semantic',
         },
         {
-          collection: { name: 'Primitives' } as BuildDTCGResult['classified'][number]['collection'],
+          collection: {
+            name: 'Primitives',
+          } as BuildDTCGResult['classified'][number]['collection'],
           role: 'primitive',
         },
       ],
@@ -244,7 +269,9 @@ describe('formatBuildSummary', () => {
 
   it('includes a warning when target collections are missing', () => {
     const lines = formatBuildSummary(makeResult({ missingNames: ['VDL'] }));
-    expect(lines.some((l) => l.includes('Warning') && l.includes('VDL'))).toBe(true);
+    expect(lines.some((l) => l.includes('Warning') && l.includes('VDL'))).toBe(
+      true,
+    );
   });
 
   it('groups unresolved aliases by missing alias id and merges Light/Dark duplicates', () => {
@@ -326,9 +353,15 @@ describe('formatBuildSummary', () => {
       makeResult({ outputs: [makeOutput(BACKPACK_MODE_LIGHT, [varA, varB])] }),
     );
 
-    expect(lines).toContain('  - missing VariableID:9999:0000 (2 variable(s)):');
-    expect(lines).toContain('      • [Backpack] Component/Button/bg-default (modes: Light)');
-    expect(lines).toContain('      • [Backpack] Component/Card/bg-default (modes: Light)');
+    expect(lines).toContain(
+      '  - missing VariableID:9999:0000 (2 variable(s)):',
+    );
+    expect(lines).toContain(
+      '      • [Backpack] Component/Button/bg-default (modes: Light)',
+    );
+    expect(lines).toContain(
+      '      • [Backpack] Component/Card/bg-default (modes: Light)',
+    );
   });
 
   it('expands into bullet list when multiple FLOAT variables share the same scope key', () => {
@@ -353,8 +386,12 @@ describe('formatBuildSummary', () => {
     const lines = formatBuildSummary(makeResult({ outputs: [lightOutput] }));
 
     expect(lines).toContain('  - scope=[ALL_SCOPES] (2 variable(s)):');
-    expect(lines).toContain('      • [Backpack] Typography/Weight/Bold (modes: Light)');
-    expect(lines).toContain('      • [Backpack] Typography/Weight/Regular (modes: Light)');
+    expect(lines).toContain(
+      '      • [Backpack] Typography/Weight/Bold (modes: Light)',
+    );
+    expect(lines).toContain(
+      '      • [Backpack] Typography/Weight/Regular (modes: Light)',
+    );
   });
 
   it('warns about FLOAT variables with unconstrained scopes and merges Light/Dark duplicates', () => {

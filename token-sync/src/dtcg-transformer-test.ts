@@ -60,6 +60,15 @@ import {
 import type { LocalVariable } from './figma-api';
 import type { DTCGTree, ResolveContext } from './types';
 
+function figmaExtensions(variable: LocalVariable) {
+  return {
+    figma: {
+      id: variable.id,
+      key: variable.key,
+    },
+  };
+}
+
 function makeContext(
   options: {
     includeCycle?: boolean;
@@ -245,10 +254,14 @@ describe('resolveAliasTarget', () => {
 describe('resolveVariableValue', () => {
   it('returns the correct literal value for non-alias variables', () => {
     const context = makeContext();
-    expect(resolveVariableValue(primitiveColourPink, PRIMITIVES_MODE_HEX, context)).toEqual({
+    expect(
+      resolveVariableValue(primitiveColourPink, PRIMITIVES_MODE_HEX, context),
+    ).toEqual({
       value: '#ff66b3',
     });
-    expect(resolveVariableValue(primitiveSpacingMd, PRIMITIVES_MODE_HEX, context)).toEqual({
+    expect(
+      resolveVariableValue(primitiveSpacingMd, PRIMITIVES_MODE_HEX, context),
+    ).toEqual({
       value: '8px',
     });
   });
@@ -257,14 +270,15 @@ describe('resolveVariableValue', () => {
     const context = makeContext({
       preservedKeys: new Set([KEY_COLOUR_PINK, KEY_COLOUR_BERRY]),
     });
-    expect(resolveVariableValue(semanticCanvasDefault, BACKPACK_MODE_LIGHT, context)).toEqual(
-      {
-        value: '{Colour.Pink}',
-        preservedAliasTo: 'Colour.Pink',
-      },
-    );
     expect(
-      resolveVariableValue(semanticCanvasDefault, BACKPACK_MODE_DARK, context).value,
+      resolveVariableValue(semanticCanvasDefault, BACKPACK_MODE_LIGHT, context),
+    ).toEqual({
+      value: '{Colour.Pink}',
+      preservedAliasTo: 'Colour.Pink',
+    });
+    expect(
+      resolveVariableValue(semanticCanvasDefault, BACKPACK_MODE_DARK, context)
+        .value,
     ).toBe('{Colour.Berry}');
   });
 
@@ -273,7 +287,11 @@ describe('resolveVariableValue', () => {
     // Canvas/Contrast -> Canvas/Default -> primitive Colour/Pink (preserved).
     // Since the intermediate target is NOT preserved, we walk through it;
     // the terminal target IS preserved, so we end on a {Colour.Pink} ref.
-    const result = resolveVariableValue(semanticCanvasContrast, BACKPACK_MODE_LIGHT, context);
+    const result = resolveVariableValue(
+      semanticCanvasContrast,
+      BACKPACK_MODE_LIGHT,
+      context,
+    );
     expect(result.value).toBe('{Colour.Pink}');
     expect(result.inlinedFrom).toBe('Canvas.Default');
   });
@@ -287,22 +305,22 @@ describe('resolveVariableValue', () => {
       preservedReferenceKeys: new Set(),
     };
     const broken = response.meta.variables['variable-semantic-broken'];
-    expect(() => resolveVariableValue(broken, BACKPACK_MODE_LIGHT, context)).toThrow(
-      DTCGTransformError,
-    );
-    expect(() => resolveVariableValue(broken, BACKPACK_MODE_LIGHT, context)).toThrow(
-      /Could not resolve alias target/,
-    );
+    expect(() =>
+      resolveVariableValue(broken, BACKPACK_MODE_LIGHT, context),
+    ).toThrow(DTCGTransformError);
+    expect(() =>
+      resolveVariableValue(broken, BACKPACK_MODE_LIGHT, context),
+    ).toThrow(/Could not resolve alias target/);
   });
 
   it('throws an alias-cycle DTCGTransformError when variables alias each other', () => {
     const context = makeContext({ includeCycle: true });
-    expect(() => resolveVariableValue(semanticCycleA, BACKPACK_MODE_LIGHT, context)).toThrow(
-      DTCGTransformError,
-    );
-    expect(() => resolveVariableValue(semanticCycleA, BACKPACK_MODE_LIGHT, context)).toThrow(
-      /Alias cycle detected/,
-    );
+    expect(() =>
+      resolveVariableValue(semanticCycleA, BACKPACK_MODE_LIGHT, context),
+    ).toThrow(DTCGTransformError);
+    expect(() =>
+      resolveVariableValue(semanticCycleA, BACKPACK_MODE_LIGHT, context),
+    ).toThrow(/Alias cycle detected/);
   });
 
   it('throws when the collection is missing', () => {
@@ -322,12 +340,12 @@ describe('resolveVariableValue', () => {
       ...primitiveColourPink,
       valuesByMode: {},
     } as LocalVariable;
-    expect(() => resolveVariableValue(emptyModes, PRIMITIVES_MODE_HEX, context)).toThrow(
-      DTCGTransformError,
-    );
-    expect(() => resolveVariableValue(emptyModes, PRIMITIVES_MODE_HEX, context)).toThrow(
-      /has no value for mode/,
-    );
+    expect(() =>
+      resolveVariableValue(emptyModes, PRIMITIVES_MODE_HEX, context),
+    ).toThrow(DTCGTransformError);
+    expect(() =>
+      resolveVariableValue(emptyModes, PRIMITIVES_MODE_HEX, context),
+    ).toThrow(/has no value for mode/);
   });
 });
 
@@ -472,8 +490,14 @@ describe('buildDTCGTreeForMode', () => {
     expect(output.tree).toEqual({
       Colour: {
         $type: 'color',
-        Berry: { $value: 'rgba(0, 0, 0, 0.5)' },
-        Pink: { $value: '#ff66b3' },
+        Berry: {
+          $value: 'rgba(0, 0, 0, 0.5)',
+          $extensions: figmaExtensions(primitiveColourBerry),
+        },
+        Pink: {
+          $value: '#ff66b3',
+          $extensions: figmaExtensions(primitiveColourPink),
+        },
       },
     });
     expect(output.stats).toEqual({
@@ -532,7 +556,10 @@ describe('buildDTCGTreeForMode', () => {
     expect(lightOutput.tree).toEqual({
       Canvas: {
         $type: 'color',
-        Default: { $value: '{Colour.Pink}' },
+        Default: {
+          $value: '{Colour.Pink}',
+          $extensions: figmaExtensions(semanticCanvasDefault),
+        },
       },
     });
     expect(lightOutput.stats.preservedAliasCount).toBe(1);
@@ -547,7 +574,10 @@ describe('buildDTCGTreeForMode', () => {
     expect(darkOutput.tree).toEqual({
       Canvas: {
         $type: 'color',
-        Default: { $value: '{Colour.Berry}' },
+        Default: {
+          $value: '{Colour.Berry}',
+          $extensions: figmaExtensions(semanticCanvasDefault),
+        },
       },
     });
   });
@@ -566,7 +596,10 @@ describe('buildDTCGTreeForMode', () => {
     expect(output.tree).toEqual({
       Surface: {
         $type: 'color',
-        Default: { $value: '{Colour.Pink}' },
+        Default: {
+          $value: '{Colour.Pink}',
+          $extensions: figmaExtensions(semanticSurface),
+        },
       },
     });
   });
@@ -684,7 +717,9 @@ describe('buildDTCGTreeForMode', () => {
       id: 'variable-collide-child',
       key: 'key-collide-child',
       name: 'Colour/Brand/Pink',
-      valuesByMode: { [PRIMITIVES_MODE_HEX_ID]: { r: 1, g: 0.4, b: 0.7, a: 1 } },
+      valuesByMode: {
+        [PRIMITIVES_MODE_HEX_ID]: { r: 1, g: 0.4, b: 0.7, a: 1 },
+      },
     } as unknown as LocalVariable;
     // Parent writes first (sorted: "Colour/Brand" < "Colour/Brand/Pink"); child collides.
     const { skipped, skippedCount, throwingCall } = setupSkipOrThrow(

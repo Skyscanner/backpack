@@ -21,8 +21,10 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 
 import {
+  formatAddedTokensMarkdown,
   formatChangedTokenValuesMarkdown,
-  formatDeletedOrRenamedTokensMarkdown,
+  formatDeletedTokensMarkdown,
+  formatRenamedTokensMarkdown,
   summariseTokenReleaseChangesFromGit,
 } from './classify-release-label';
 import { formatFatalError } from './sync-helpers';
@@ -58,8 +60,10 @@ function main(): void {
   writeLabelOutput(summary.label);
 
   const sections = [
-    formatDeletedOrRenamedTokensMarkdown(summary.deletedOrRenamedTokens),
+    formatRenamedTokensMarkdown(summary.renamedTokens),
     formatChangedTokenValuesMarkdown(summary.changedTokens),
+    formatDeletedTokensMarkdown(summary.deletedTokens),
+    formatAddedTokensMarkdown(summary.addedTokens),
   ].filter(Boolean);
 
   writeTokenReleaseSummary(sections.join('\n\n'));

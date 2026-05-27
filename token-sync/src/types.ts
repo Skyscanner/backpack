@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-import type {
-  LocalVariable,
-  LocalVariableCollection,
-} from './figma-api';
+import type { LocalVariable, LocalVariableCollection } from './figma-api';
 
 // DTCG token types we emit. Narrower than the full DTCG spec — only the types
 // Backpack's Figma variables actually produce today. `'number'` is used for
@@ -38,9 +35,19 @@ export type DTCGTokenType =
 // types (e.g. typography) but Backpack variables only emit primitives.
 export type DTCGScalar = boolean | number | string;
 
+export interface DTCGFigmaMetadata {
+  id: string;
+  key: string;
+}
+
+export interface DTCGTokenExtensions {
+  figma?: DTCGFigmaMetadata;
+}
+
 export interface DTCGToken {
   $value: DTCGScalar;
   $type?: DTCGTokenType;
+  $extensions?: DTCGTokenExtensions;
 }
 
 // Recursive DTCG group: a node is either a token (has $value) or another group

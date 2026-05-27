@@ -295,7 +295,8 @@ export function resolveVariableValue(
   context: ResolveContext,
   seen: ReadonlySet<string> = new Set<string>(),
 ): ResolveValueResult {
-  const collection = context.localCollectionsById[variable.variableCollectionId];
+  const collection =
+    context.localCollectionsById[variable.variableCollectionId];
   if (!collection) {
     throw new Error(
       `Missing local collection "${variable.variableCollectionId}" for variable "${variable.name}"`,
@@ -342,7 +343,12 @@ export function resolveVariableValue(
   const nextSeen = new Set(seen);
   nextSeen.add(seenKey);
 
-  const resolved = resolveVariableValue(target, sourceModeName, context, nextSeen);
+  const resolved = resolveVariableValue(
+    target,
+    sourceModeName,
+    context,
+    nextSeen,
+  );
   return {
     value: resolved.value,
     // Report the immediate target path so stats reflect which var we inlined
@@ -497,7 +503,10 @@ export function setTokenAtPath(
 
 // Walk the variable list and assign a group-level $type when every descendant
 // of that group shares a single DTCG type. Reduces verbosity in output files.
-export function addGroupTypes(tree: DTCGTree, variables: LocalVariable[]): void {
+export function addGroupTypes(
+  tree: DTCGTree,
+  variables: LocalVariable[],
+): void {
   const groupTypes = new Map<string, Set<DTCGTokenType>>();
 
   for (const variable of variables) {
@@ -548,7 +557,9 @@ export function stripRedundantTypes(
 
   const record = node as Record<string, unknown>;
   const ownType =
-    typeof record.$type === 'string' ? (record.$type as DTCGTokenType) : undefined;
+    typeof record.$type === 'string'
+      ? (record.$type as DTCGTokenType)
+      : undefined;
   const isLeaf = '$value' in record;
 
   if (ownType && inheritedType && ownType === inheritedType) {
@@ -600,17 +611,26 @@ export function buildDTCGTreeForMode(
     const invalidNameReason = describeInvalidVariableName(variable.name);
     if (invalidNameReason) {
       if (options.skipUnresolvedAliases) {
-        skippedVariables.push({ ...baseRecord, reason: SKIPPED_VARIABLE_REASONS.invalidName, invalidNameReason });
+        skippedVariables.push({
+          ...baseRecord,
+          reason: SKIPPED_VARIABLE_REASONS.invalidName,
+          invalidNameReason,
+        });
         return;
       }
-      throw new Error(`Invalid variable name "${variable.name}": ${invalidNameReason}`);
+      throw new Error(
+        `Invalid variable name "${variable.name}": ${invalidNameReason}`,
+      );
     }
 
     let resolved: ResolveValueResult;
     try {
       resolved = resolveVariableValue(variable, modeName, context);
     } catch (error: unknown) {
-      if (options.skipUnresolvedAliases && error instanceof DTCGTransformError) {
+      if (
+        options.skipUnresolvedAliases &&
+        error instanceof DTCGTransformError
+      ) {
         if (error.reason === TRANSFORM_ERROR_REASONS.unresolvedAlias) {
           skippedVariables.push({
             ...baseRecord,
@@ -618,10 +638,16 @@ export function buildDTCGTreeForMode(
             unresolvedAliasId: error.aliasId,
             // When the chain broke at a different variable (X → M → missing),
             // remember M so the diagnostic can point at it.
-            ...(error.variableName !== variable.name ? { unresolvedAt: error.variableName } : {}),
+            ...(error.variableName !== variable.name
+              ? { unresolvedAt: error.variableName }
+              : {}),
           });
         } else if (error.reason === TRANSFORM_ERROR_REASONS.missingModeValue) {
-          skippedVariables.push({ ...baseRecord, reason: SKIPPED_VARIABLE_REASONS.missingModeValue, missingModeName: error.modeName });
+          skippedVariables.push({
+            ...baseRecord,
+            reason: SKIPPED_VARIABLE_REASONS.missingModeValue,
+            missingModeName: error.modeName,
+          });
         } else {
           throw error;
         }
@@ -635,6 +661,12 @@ export function buildDTCGTreeForMode(
       setTokenAtPath(tree, variable.name, {
         $value: resolved.value,
         $type: tokenType,
+        $extensions: {
+          figma: {
+            id: variable.id,
+            key: variable.key,
+          },
+        },
       });
     } catch (error: unknown) {
       if (
@@ -642,7 +674,11 @@ export function buildDTCGTreeForMode(
         error instanceof DTCGTransformError &&
         error.reason === TRANSFORM_ERROR_REASONS.pathCollision
       ) {
-        skippedVariables.push({ ...baseRecord, reason: SKIPPED_VARIABLE_REASONS.pathCollision, collidingVariableName: error.collidingVariableName });
+        skippedVariables.push({
+          ...baseRecord,
+          reason: SKIPPED_VARIABLE_REASONS.pathCollision,
+          collidingVariableName: error.collidingVariableName,
+        });
         return;
       }
       throw error;

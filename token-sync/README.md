@@ -56,7 +56,7 @@ The token is never committed. There are two places it needs to live:
 - **CI** — add two repository secrets at **Settings → Secrets and variables → Actions**:
 
   | Secret name                  | Value                                      |
-  |------------------------------|--------------------------------------------|
+  | ---------------------------- | ------------------------------------------ |
   | `FIGMA_VARIABLES_SYNC_TOKEN` | Same token as above                        |
   | `FIGMA_FILE_KEY`             | Backpack Foundations & Components file key |
 
@@ -101,14 +101,14 @@ When generated output changes under `token-sync/tokens/` or `token-sync/css/`, t
 any existing open `figma-token-sync/*` pull request, then creates a fresh
 `figma-token-sync/<timestamp>-<run-id>` branch and opens one pull request against `main`. Because the
 fresh branch is generated from the latest Figma state against `main`, it includes any still-unmerged
-token changes from previous sync runs. The pull request is labelled `major` when an existing token
-path is removed, renamed, or has its value changed (because consumer code or downstream visuals may
-break), and `minor` only when the diff is purely additive (new token paths). Removed or renamed
-token paths, plus changed token values, are listed in the pull request body so reviewers can verify
-usage migrations and visual impact. Pure additions are not listed because a delete-and-add diff can
-represent a change that needs reviewer judgement. If release label classification fails, the pull
-request defaults to `major` for review. Figma API or Style Dictionary failures fail the workflow at
-the failing step.
+token changes from previous sync runs. Generated DTCG tokens include Figma variable metadata under
+`$extensions.figma`, allowing the workflow to compare stable Figma variable keys across runs. The
+pull request is labelled `major` when an existing Figma variable key is removed, renamed, or has its
+emitted token value changed (because consumer code or downstream visuals may break), and `minor`
+only when the diff is purely additive (new Figma variable keys). Deleted, renamed, changed, and added
+token paths are listed in the pull request body so reviewers can verify usage migrations and visual
+impact. If release label classification fails, the pull request defaults to `major` for review.
+Figma API or Style Dictionary failures fail the workflow at the failing step.
 
 For human takeover (when the automated PR needs to be replaced with a hand-curated one), see the
 "Manual intervention" section in [`RUNBOOK.md`](RUNBOOK.md).
