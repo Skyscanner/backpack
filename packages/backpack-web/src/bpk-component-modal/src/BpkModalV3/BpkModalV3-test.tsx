@@ -20,9 +20,19 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
+import { portalLock } from '../../../bpk-react-utils';
 import { focusScope } from '../../../bpk-scrim-utils';
 
 import BpkModalV3 from './BpkModalV3';
+
+jest.mock('../../../bpk-react-utils', () => ({
+  ...jest.requireActual('../../../bpk-react-utils'),
+  portalLock: {
+    lock: jest.fn(),
+    unlock: jest.fn(),
+    isLocked: jest.fn(() => false),
+  },
+}));
 
 jest.mock('../../../bpk-scrim-utils', () => ({
   __esModule: true,
@@ -91,6 +101,8 @@ describe('BpkModalV3', () => {
       (focusScope.pauseFocus as jest.Mock).mockClear();
       (focusScope.resumeFocus as jest.Mock).mockClear();
       (focusScope.scopeFocus as jest.Mock).mockClear();
+      (portalLock.lock as jest.Mock).mockClear();
+      (portalLock.unlock as jest.Mock).mockClear();
     });
 
     it('should call focusScope.pauseFocus when the modal opens', () => {
@@ -146,6 +158,43 @@ describe('BpkModalV3', () => {
     it('should not call focusScope.resumeFocus when the modal is initially open', () => {
       renderModal({ open: true });
       expect(focusScope.resumeFocus).not.toHaveBeenCalled();
+    });
+
+    it('should call portalLock.lock when the modal opens', () => {
+      renderModal({ open: true });
+      expect(portalLock.lock).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not call portalLock.lock when the modal is closed', () => {
+      renderModal({ open: false });
+      expect(portalLock.lock).not.toHaveBeenCalled();
+    });
+
+    it('should call portalLock.unlock when modal transitions from open to closed', () => {
+      const { rerender } = render(
+        <BpkModalV3.Root open onOpenChange={jest.fn()}>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(portalLock.unlock).not.toHaveBeenCalled();
+
+      rerender(
+        <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(portalLock.unlock).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call portalLock.unlock on unmount while open', () => {
+      const { unmount } = renderModal({ open: true });
+      expect(portalLock.unlock).not.toHaveBeenCalled();
+      unmount();
+      expect(portalLock.unlock).toHaveBeenCalledTimes(1);
     });
 
     it('should render wrapper div with default type', () => {

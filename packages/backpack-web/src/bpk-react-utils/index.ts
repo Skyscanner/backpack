@@ -30,6 +30,7 @@ import {
 import { getDataComponentAttribute } from './src/getDataComponentAttribute';
 import isRTL from './src/isRTL';
 import { setNativeValue } from './src/nativeEventHandler';
+import portalLock from './src/portalLock';
 import { SURFACE_COLORS } from './src/surfaceColors';
 import useBodyLock from './src/useBodyLock';
 import withDefaultProps from './src/withDefaultProps';
@@ -52,6 +53,7 @@ export {
   getDataComponentAttribute,
   SURFACE_COLORS,
   useBodyLock,
+  portalLock,
 };
 export default {
   Portal,
@@ -69,4 +71,5 @@ export default {
   getDataComponentAttribute,
   SURFACE_COLORS,
   useBodyLock,
+  portalLock,
 };

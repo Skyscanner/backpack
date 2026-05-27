@@ -22,7 +22,7 @@ import { Dialog } from '@ark-ui/react';
 
 import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { getDataComponentAttribute, useBodyLock } from '../../../../bpk-react-utils';
+import { getDataComponentAttribute, portalLock, useBodyLock } from '../../../../bpk-react-utils';
 import { focusScope } from '../../../../bpk-scrim-utils';
 import { ModalTypeProvider } from '../BpkModalV3Context';
 import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
@@ -58,18 +58,27 @@ const BpkModalV3Root = ({
 
   useBodyLock(type === MODAL_V3_TYPES.chatbot && bodyLockOpen);
 
-  // When this modal opens, pause any active focusScope (used by legacy
-  // withScrim components such as BpkDrawer). Both systems listen to 'focusin'
-  // on document, and their simultaneous presence causes an infinite focus
-  // redirect loop that overflows the call stack. The scope is resumed without
-  // stealing focus when the modal closes, restoring the drawer's focus trap.
-  // TODO: Remove once BpkDrawer is migrated to ark-ui.
+  // When this modal opens, pause the active focusScope (used by legacy withScrim
+  // components such as BpkDrawer) and lock the Portal event handlers so legacy
+  // overlays do not respond to clicks/Esc while the modal is visible.
+  //
+  // focusScope: prevents an infinite focus-redirect loop — both systems listen
+  //   to 'focusin' on document and would fight each other without this guard.
+  // portalLock: prevents legacy Portal (BpkDrawer/BpkModal/BpkDialog) from
+  //   starting their close animation simultaneously, which causes a visible flash.
+  //
+  // The cleanup function runs both on isOpen→false AND on unmount-while-open,
+  // ensuring the locks are always released.
+  //
+  // TODO: Remove once BpkDrawer, BpkModal, BpkDialog are deprecated. (CLOV-1643)
   useEffect(() => {
-    if (isOpen) {
-      focusScope.pauseFocus();
-    } else {
+    if (!isOpen) return undefined;
+    focusScope.pauseFocus();
+    portalLock.lock();
+    return () => {
       focusScope.resumeFocus();
-    }
+      portalLock.unlock();
+    };
   }, [isOpen]);
 
   const handleOpenChange = (details: { open: boolean }) => {
