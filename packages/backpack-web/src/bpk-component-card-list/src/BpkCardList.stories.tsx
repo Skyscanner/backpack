@@ -20,6 +20,11 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 
+import {
+  BpkAccordion,
+  BpkAccordionItem,
+  withAccordionItemState,
+} from '../../bpk-component-accordion';
 import BpkCard from '../../bpk-component-card';
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
@@ -393,6 +398,25 @@ const MultiComponentsScrollingTestExample = () => (
   </PageContainer>
 );
 
+const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
+
+const RowToRailHiddenInAccordionWithPrescrollExample = () => (
+  <PageContainer>
+    <BpkAccordion>
+      <StatefulAccordionItem id="hidden-cards" title="Hidden cards (collapsed)">
+        <BpkCardList
+          {...commonProps}
+          cardList={makeList(DestinationCard, 9)}
+          layoutDesktop={LAYOUTS.row}
+          layoutMobile={LAYOUTS.rail}
+          accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+          initiallyInViewCardIndex={8}
+        />
+      </StatefulAccordionItem>
+    </BpkAccordion>
+  </PageContainer>
+);
+
 const meta = {
   title: 'bpk-component-card-list',
   component: BpkCardList,
@@ -410,6 +434,7 @@ export const GridToStackWithExpand = { render: () => <GridToStackWithExpandExamp
 export const RowToRailForSnippets = { render: () => <RowToRailForSnippetsExample /> };
 export const RowToRailWithoutTitle = { render: () => <RowToRailWithoutTitleExample /> };
 export const RowToRailWithInitiallyInViewCardIndex = { render: () => <RowToRailWithInitiallyInViewCardIndexExample /> };
+export const RowToRailHiddenInAccordionWithPrescroll = { render: () => <RowToRailHiddenInAccordionWithPrescrollExample /> };
 
 export const MultiComponentsScrollingTest = { render: () => <MultiComponentsScrollingTestExample /> };
 export const VisualTest = { render: () => <BasicExample /> };

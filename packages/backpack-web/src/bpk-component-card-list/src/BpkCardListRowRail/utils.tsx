@@ -132,26 +132,49 @@ export const usePageScrollSync = ({
   const lastCurrentIndexRef = useRef<number>(currentIndex);
   const hasInitialScrolled = useRef(false);
 
-  // Effect 0: Initial scroll (instant, runs once on mount)
+  // Effect 0: Initial scroll (instant, runs once when the container has layout).
+  // Defers via ResizeObserver so the scroll fires after a hidden ancestor (e.g. a
+  // collapsed accordion using display:none) reveals the rail.
   useEffect(() => {
     if (hasInitialScrolled.current) {
-      return;
+      return undefined;
     }
-    hasInitialScrolled.current = true;
-
     if (!enabled || initialPageIndex === 0) {
-      return;
+      hasInitialScrolled.current = true;
+      return undefined;
+    }
+    if (!container) {
+      return undefined;
     }
 
-    const targetCard = cardRefs.current?.[initialPageIndex * initiallyShownCards];
-    if (targetCard) {
+    let observer: ResizeObserver | null = null;
+    const tryScroll = () => {
+      if (hasInitialScrolled.current) return;
+      if (container.clientWidth === 0) return;
+
+      const targetCard =
+        cardRefs.current?.[initialPageIndex * initiallyShownCards];
+      if (!targetCard) return;
+
       targetCard.scrollIntoView({
         behavior: 'instant',
         block: 'nearest',
         inline: 'start',
       });
+      hasInitialScrolled.current = true;
+      observer?.disconnect();
+    };
+
+    tryScroll();
+
+    if (hasInitialScrolled.current || typeof ResizeObserver === 'undefined') {
+      return undefined;
     }
-  }, [cardRefs, enabled, initialPageIndex, initiallyShownCards]); // Run once on mount only
+
+    observer = new ResizeObserver(tryScroll);
+    observer.observe(container);
+    return () => observer?.disconnect();
+  }, [cardRefs, container, enabled, initialPageIndex, initiallyShownCards]);
 
   // Effect 1: Programmatic scroll when currentIndex changes
   useEffect(() => {

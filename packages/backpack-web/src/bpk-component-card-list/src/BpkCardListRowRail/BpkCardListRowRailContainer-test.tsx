@@ -88,13 +88,33 @@ describe('BpkCardListRowRailContainer', () => {
   describe('initiallyInViewCardIndex', () => {
     const mockScrollIntoView = jest.fn();
     const originalScrollIntoView = Element.prototype.scrollIntoView;
+    const originalClientWidth = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'clientWidth',
+    );
 
     beforeAll(() => {
       Element.prototype.scrollIntoView = mockScrollIntoView;
+      // jsdom reports clientWidth = 0 on every element; usePageScrollSync's
+      // initial-scroll effect now gates on clientWidth > 0, so stub a non-zero
+      // value to simulate a laid-out rail container.
+      Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+        configurable: true,
+        get: () => 1024,
+      });
     });
 
     afterAll(() => {
       Element.prototype.scrollIntoView = originalScrollIntoView;
+      if (originalClientWidth) {
+        Object.defineProperty(
+          HTMLElement.prototype,
+          'clientWidth',
+          originalClientWidth,
+        );
+      } else {
+        delete (HTMLElement.prototype as { clientWidth?: number }).clientWidth;
+      }
     });
 
     beforeEach(() => {

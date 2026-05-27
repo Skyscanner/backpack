@@ -60,10 +60,31 @@ describe('usePageScrollSync', () => {
   let mockContainer: HTMLDivElement;
   let mockCardRefs: { current: Array<HTMLDivElement | null> };
   let mockSetCurrentIndex: jest.Mock;
+  let resizeObserverCallback: ResizeObserverCallback | null;
+  let resizeObserverDisconnect: jest.Mock;
+  const originalResizeObserver = window.ResizeObserver;
+
+  const setContainerClientWidth = (width: number) => {
+    Object.defineProperty(mockContainer, 'clientWidth', {
+      configurable: true,
+      value: width,
+    });
+  };
 
   beforeEach(() => {
     jest.clearAllMocks();
     jest.useFakeTimers();
+
+    resizeObserverCallback = null;
+    resizeObserverDisconnect = jest.fn();
+    window.ResizeObserver = jest.fn().mockImplementation((cb) => {
+      resizeObserverCallback = cb;
+      return {
+        observe: jest.fn(),
+        disconnect: resizeObserverDisconnect,
+        unobserve: jest.fn(),
+      };
+    }) as unknown as typeof ResizeObserver;
 
     mockContainer = document.createElement('div');
     mockContainer.getBoundingClientRect = jest.fn(
@@ -72,6 +93,7 @@ describe('usePageScrollSync', () => {
           bottom: window.innerHeight - 10,
         }) as DOMRect,
     );
+    setContainerClientWidth(1024);
 
     mockCardRefs = { current: [] };
     Array.from({ length: 12 }).forEach((_, index) => {
@@ -85,6 +107,7 @@ describe('usePageScrollSync', () => {
 
   afterEach(() => {
     jest.useRealTimers();
+    window.ResizeObserver = originalResizeObserver;
   });
 
   describe('Effect 0: Initial scroll on mount', () => {
@@ -189,6 +212,40 @@ describe('usePageScrollSync', () => {
         block: 'nearest',
         inline: 'start',
       });
+    });
+
+    it('should defer the initial scroll until the container has layout', () => {
+      setContainerClientWidth(0);
+
+      renderHook(() =>
+        usePageScrollSync({
+          cardRefs: mockCardRefs,
+          container: mockContainer,
+          currentIndex: 2,
+          enabled: true,
+          initialPageIndex: 2,
+          initiallyShownCards: 3,
+          setCurrentIndex: mockSetCurrentIndex,
+          visibilityList: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        }),
+      );
+
+      expect(mockCardRefs.current[6]?.scrollIntoView).not.toHaveBeenCalled();
+
+      setContainerClientWidth(1024);
+      act(() => {
+        resizeObserverCallback?.(
+          [],
+          {} as unknown as ResizeObserver,
+        );
+      });
+
+      expect(mockCardRefs.current[6]?.scrollIntoView).toHaveBeenCalledWith({
+        behavior: 'instant',
+        block: 'nearest',
+        inline: 'start',
+      });
+      expect(resizeObserverDisconnect).toHaveBeenCalled();
     });
   });
 
