@@ -198,7 +198,6 @@
 ///   }
 
 @mixin bpk-themeable-property($property, $variableName, $fallback) {
-  #{$property}: $fallback;
   #{$property}: var($variableName, $fallback);
 }
 
