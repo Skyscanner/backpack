@@ -58,13 +58,17 @@ const BpkModalV3Root = ({
 
   useBodyLock(type === MODAL_V3_TYPES.chatbot && bodyLockOpen);
 
-  // When this modal opens, deactivate any active focusScope (used by legacy
+  // When this modal opens, pause any active focusScope (used by legacy
   // withScrim components such as BpkDrawer). Both systems listen to 'focusin'
   // on document, and their simultaneous presence causes an infinite focus
-  // redirect loop that overflows the call stack.
+  // redirect loop that overflows the call stack. The scope is resumed without
+  // stealing focus when the modal closes, restoring the drawer's focus trap.
+  // TODO: Remove once BpkDrawer is migrated to ark-ui.
   useEffect(() => {
     if (isOpen) {
-      focusScope.unscopeFocus();
+      focusScope.pauseFocus();
+    } else {
+      focusScope.resumeFocus();
     }
   }, [isOpen]);
 

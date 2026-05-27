@@ -27,8 +27,10 @@ import BpkModalV3 from './BpkModalV3';
 jest.mock('../../../bpk-scrim-utils/src/focusScope', () => ({
   __esModule: true,
   default: {
-    unscopeFocus: jest.fn(),
     scopeFocus: jest.fn(),
+    unscopeFocus: jest.fn(),
+    pauseFocus: jest.fn(),
+    resumeFocus: jest.fn(),
   },
 }));
 
@@ -86,20 +88,22 @@ describe('BpkModalV3', () => {
 
   describe('Root', () => {
     beforeEach(() => {
-      (focusScope.unscopeFocus as jest.Mock).mockClear();
+      (focusScope.pauseFocus as jest.Mock).mockClear();
+      (focusScope.resumeFocus as jest.Mock).mockClear();
+      (focusScope.scopeFocus as jest.Mock).mockClear();
     });
 
-    it('should call focusScope.unscopeFocus when the modal opens', () => {
+    it('should call focusScope.pauseFocus when the modal opens', () => {
       renderModal({ open: true });
-      expect(focusScope.unscopeFocus).toHaveBeenCalledTimes(1);
+      expect(focusScope.pauseFocus).toHaveBeenCalledTimes(1);
     });
 
-    it('should not call focusScope.unscopeFocus when the modal is closed', () => {
+    it('should not call focusScope.pauseFocus when the modal is closed', () => {
       renderModal({ open: false });
-      expect(focusScope.unscopeFocus).not.toHaveBeenCalled();
+      expect(focusScope.pauseFocus).not.toHaveBeenCalled();
     });
 
-    it('should call focusScope.unscopeFocus when modal transitions from closed to open', () => {
+    it('should call focusScope.pauseFocus when modal transitions from closed to open', () => {
       const { rerender } = render(
         <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
           <BpkModalV3.Content>
@@ -107,7 +111,7 @@ describe('BpkModalV3', () => {
           </BpkModalV3.Content>
         </BpkModalV3.Root>,
       );
-      expect(focusScope.unscopeFocus).not.toHaveBeenCalled();
+      expect(focusScope.pauseFocus).not.toHaveBeenCalled();
 
       rerender(
         <BpkModalV3.Root open onOpenChange={jest.fn()}>
@@ -116,7 +120,32 @@ describe('BpkModalV3', () => {
           </BpkModalV3.Content>
         </BpkModalV3.Root>,
       );
-      expect(focusScope.unscopeFocus).toHaveBeenCalledTimes(1);
+      expect(focusScope.pauseFocus).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call focusScope.resumeFocus when modal transitions from open to closed', () => {
+      const { rerender } = render(
+        <BpkModalV3.Root open onOpenChange={jest.fn()}>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(focusScope.resumeFocus).not.toHaveBeenCalled();
+
+      rerender(
+        <BpkModalV3.Root open={false} onOpenChange={jest.fn()}>
+          <BpkModalV3.Content>
+            <BpkModalV3.Title>Test</BpkModalV3.Title>
+          </BpkModalV3.Content>
+        </BpkModalV3.Root>,
+      );
+      expect(focusScope.resumeFocus).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not call focusScope.resumeFocus when the modal is initially open', () => {
+      renderModal({ open: true });
+      expect(focusScope.resumeFocus).not.toHaveBeenCalled();
     });
 
     it('should render wrapper div with default type', () => {
