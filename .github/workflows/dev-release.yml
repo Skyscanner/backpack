@@ -45,6 +45,22 @@ jobs:
         with:
           pr_number: ${{ inputs.pr_number }}
 
+      - name: Add or update starting comment on PR
+        if: success()
+        uses: ./.github/actions/upsert-pr-comment
+        with:
+          pr_number: ${{ inputs.pr_number }}
+          marker: ${{ env.PR_COMMENT_MARKER }}
+          body: |
+            ${{ env.PR_COMMENT_MARKER }}
+            ### Dev Release Started
+
+            Building and publishing a dev release. The result will be posted here when the workflow completes.
+
+            See the [workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) for live progress.
+
+            Triggered by @${{ github.actor }}.
+
       - name: Add or update failure comment on PR
         if: failure()
         uses: ./.github/actions/upsert-pr-comment
@@ -75,13 +91,13 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
 
       - name: Cache npm dependencies
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: npm-cache
         with:
           path: |
@@ -101,13 +117,13 @@ jobs:
           echo "dev_version=${DEV_VERSION}" >> "$GITHUB_OUTPUT"
           echo "Dev version: ${DEV_VERSION}"
 
-      - name: Transpile
-        run: npm run transpile
+      - name: Build
+        run: npm run build
 
       - name: Publish dev release to npm
         if: ${{ inputs.dry_run != true }}
         run: |
-          cd dist
+          cd packages/backpack-web/dist
           npm version $DEV_VERSION --no-git-tag-version
           npm publish --tag dev
         env:
@@ -152,7 +168,7 @@ jobs:
                 '',
                 `**Version (not published):** \`${process.env.DEV_VERSION}\``,
                 '',
-                'The build and transpilation completed successfully. No package was published to npm.',
+                'The build completed successfully. No package was published to npm.',
                 '',
                 'Run the workflow again without dry run to publish this version.',
                 '',
