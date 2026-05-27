@@ -20,13 +20,13 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import focusScope from '../../../bpk-scrim-utils/src/focusScope';
+import { focusScope } from '../../../bpk-scrim-utils';
 
 import BpkModalV3 from './BpkModalV3';
 
-jest.mock('../../../bpk-scrim-utils/src/focusScope', () => ({
+jest.mock('../../../bpk-scrim-utils', () => ({
   __esModule: true,
-  default: {
+  focusScope: {
     scopeFocus: jest.fn(),
     unscopeFocus: jest.fn(),
     pauseFocus: jest.fn(),

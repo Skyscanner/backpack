@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
+import focusScope from './src/focusScope';
 import withScrim from './src/withScrim';
 import withScrimmedPortal from './src/withScrimmedPortal';
 
-export { withScrim, withScrimmedPortal };
+export { focusScope, withScrim, withScrimmedPortal };
 export default {
   withScrim,
 };

@@ -748,11 +748,18 @@ const WithDrawerExample = () => {
             </BpkModalV3.Header>
             <BpkModalV3.Body>
               <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
-                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                  This modal was opened while a BpkDrawer was active. Focus
-                  management has transitioned from the drawer&apos;s focusScope
-                  to the modal&apos;s ark-ui focus trap without conflict.
-                </BpkText>
+                <BpkVStack gap={BpkSpacing.Base}>
+                  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                    This modal was opened while a BpkDrawer was active. Focus
+                    management has transitioned from the drawer&apos;s focusScope
+                    to the modal&apos;s ark-ui focus trap without conflict.
+                  </BpkText>
+                  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                    <strong>To verify:</strong> close this modal (click &ldquo;Close&rdquo;
+                    or press Esc), then press Tab inside the drawer. Focus should
+                    remain trapped within the drawer and not escape to the page.
+                  </BpkText>
+                </BpkVStack>
               </BpkBox>
             </BpkModalV3.Body>
           </BpkModalV3.Content>
