@@ -55,7 +55,7 @@ git clone https://github.com/YOUR_USERNAME/Backpack.git
 git checkout -b {BRANCH_NAME}
 ```
 
-2. Install npm dependencies
+2. Install dependencies
 
 ```sh
 pnpm install --frozen-lockfile
@@ -75,7 +75,7 @@ pnpm start
 
 > **Local vs CI Storybook**
 >
-> | | Local (`npm start`) | CI build (`npm run storybook:dist`) |
+> | | Local (`pnpm start`) | CI build (`pnpm run storybook:dist`) |
 > |---|---|---|
 > | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
 > | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |

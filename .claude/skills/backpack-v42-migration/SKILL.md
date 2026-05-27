@@ -460,7 +460,7 @@ Grep: BpkAutosuggest|BpkButtonV2|bpk-component-autosuggest|bpk-component-button/
 
 #### Button tests
 - Update any mocked imports from `BpkButtonV2` → `BpkButton`.
-- Snapshot tests will fail — run `npm run jest:update` to update.
+- Snapshot tests will fail — run `pnpm run jest:update` to update.
 
 #### Autosuggest tests — JSDOM patterns
 
@@ -566,9 +566,9 @@ Run typecheck in each affected package using the commands discovered in Step 1. 
 
 ```bash
 # Example — use the actual command discovered for this project
-cd apps/webapp && npm run typecheck
-cd apps/common && npm run typecheck
-cd apps/server && npm run typecheck
+cd apps/webapp && pnpm run typecheck
+cd apps/common && pnpm run typecheck
+cd apps/server && pnpm run typecheck
 ```
 
 Report any type errors. Fix type errors before proceeding to tests.
@@ -581,15 +581,15 @@ Once typecheck is clean, run tests scoped to the changed modules using the comma
 # Example — use the actual command discovered for this project
 # Run tests for a specific file
 cd apps/webapp
-npm test -- src/path/to/Component.test.tsx
+pnpm test -- src/path/to/Component.test.tsx
 
 # Run tests for a directory
 cd apps/webapp
-npm test -- src/modules/hotel-content/
+pnpm test -- src/modules/hotel-content/
 
 # Run all tests in a package (only when no narrow scope is practical)
 cd apps/webapp
-npm test
+pnpm test
 ```
 
 **For button migration**: focus on components that import `BpkButton` — snapshot tests will need updating after the rename. Run `jest --updateSnapshot` (or project equivalent) for those.
