@@ -17,7 +17,8 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
+import { action } from 'bpk-storybook-utils';
+
 import BpkLabel from '../../bpk-component-label';
 
 import BpkTextarea from './BpkTextarea';

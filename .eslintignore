@@ -1,5 +1,6 @@
 node_modules
 dist
+packages/backpack-web/dist
 dist-storybook
 coverage
 /packages/backpack-web/src/bpk-component-flare/src/__generated__

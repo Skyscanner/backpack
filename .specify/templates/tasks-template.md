@@ -164,9 +164,11 @@ VALIDATION:
 
 - [ ] T015 [US1] Add prop validation and default props in component
   - Define prop types with TypeScript
-  - Set default values for optional props
-  - Add prop-types for runtime validation (during migration period)
-  - **Constitution Check**: TypeScript types + prop-types during migration
+  - Use ES6 destructuring defaults for optional props (function components)
+  - **Constitution Check**: TypeScript types REQUIRED; prop-types and
+    function-component defaultProps MUST NOT be used (React 19 ignores
+    `propTypes` checks and no longer applies `defaultProps` to function
+    components)
 
 - [ ] T016 [US1] Implement keyboard event handlers for accessibility
   - Handle Enter key

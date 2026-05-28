@@ -24,6 +24,7 @@ import {
   cardPadding,
   fontWeightBold,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { action } from 'bpk-storybook-utils';
 
 import BpkInfoBanner, {
   ALERT_TYPES,
@@ -32,7 +33,6 @@ import BpkInfoBanner, {
   STYLE_TYPES,
   withBannerAlertState,
 } from '..';
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
 import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import BpkButton from '../../bpk-component-button';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';

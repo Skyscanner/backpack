@@ -4,8 +4,9 @@
 .env
 .sass-cache
 /dist
+/packages/backpack-web/dist
 /dist-sassdoc
-/dist-storybook
+/libs/backpack-storybook-host/dist-storybook
 /coverage
 /packages/backpack-web/src/bpk-component-icon/*/
 /packages/backpack-web/src/bpk-component-spinner/src/spinners
@@ -33,3 +34,12 @@ yarn.lock
 .claude/skills/openspec-*
 .claude/settings.local.json
 openspec
+
+# Nx
+.nx/cache
+.nx/workspace-data
+*.tsbuildinfo
+/dist/out-tsc
+storybook-static
+debug-storybook.log
+.context

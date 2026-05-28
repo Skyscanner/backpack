@@ -18,7 +18,8 @@
 
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from '../../../../../.storybook/bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import {
   withButtonAlignment,
   withLargeButtonAlignment,

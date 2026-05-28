@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { createRef } from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -154,6 +156,23 @@ describe('BpkCheckboxV2', () => {
     it('forwards data-testid on Root to the outer label', () => {
       render(<SimpleCheckbox data-testid="terms-checkbox" />);
       expect(screen.getByTestId('terms-checkbox').tagName).toBe('LABEL');
+    });
+
+    it('forwards refs to the root label', () => {
+      const ref = createRef<HTMLLabelElement>();
+
+      render(
+        <BpkCheckboxV2.Root ref={ref}>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>Accept terms</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>,
+      );
+
+      expect(ref.current).toBeInstanceOf(HTMLLabelElement);
+      expect(ref.current).toHaveAttribute('data-backpack-ds-component');
     });
   });
 

@@ -25,6 +25,10 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   flex: 1;
   overflow: auto;
   min-block-size: 0;
+
+  // The scroll handler drives margin/max-block-size via --bpk-image-opacity (layout-affecting props).
+  // Scroll anchoring would adjust scrollTop to compensate for the size change, re-firing the handler and causing jitter.
+  overflow-anchor: none;
   overscroll-behavior: contain;
 
   // Rows lock in place during the header collapse animation, then scroll normally.
@@ -54,8 +58,27 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
     border-spacing: 0;
     box-shadow: none;
 
+    // percentage heights only resolve when the parent has an *explicitly* specified size
+    block-size: tokens.$bpk-one-pixel-rem;
+
     // min-width ensures horizontal scroll kicks in before columns become too narrow to read (e.g. inside a modal on small screens).
     min-inline-size: 3 * 180 * tokens.$bpk-one-pixel-rem;
+  }
+
+  // Pass cell row-equalised height down to the header content via the explicit chain,
+  // so consumers' headerContent flex columns have a determinate block-size to fill.
+  thead {
+    block-size: 100%;
+  }
+
+  // stylelint-disable-next-line selector-max-compound-selectors
+  thead tr {
+    block-size: 100%;
+  }
+
+  // stylelint-disable-next-line selector-max-compound-selectors
+  thead th {
+    block-size: 100%;
   }
 }
 
@@ -72,6 +95,7 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
   display: flex;
   padding: tokens.bpk-spacing-base();
   flex-direction: column;
+  block-size: 100%;
 }
 
 // Image wrapper — fades out via --bpk-image-opacity (set by JS on the parent element).
@@ -99,11 +123,16 @@ $image-area-height: 83 * tokens.$bpk-one-pixel-rem;
 
 // ID section — slides up over the fading image.
 // Negative margin-block-start collapses layout space (unlike translateY) so the sticky header cell actually shrinks in height and rows are no longer hidden behind invisible space.
+// flex: 1 claims space after the image wrapper; consumers bottom-align children via margin-block-start: auto.
 .bpk-comparison-table__header-id-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   margin-block-start: calc(
     ($image-area-height + tokens.bpk-spacing-base()) *
       (var(--bpk-image-opacity, 1) - 1)
   );
+  min-block-size: 0;
 }
 
 .bpk-comparison-table__best-tag {

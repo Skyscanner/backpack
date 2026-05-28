@@ -22,8 +22,8 @@ import {
   onePixelRem,
   colorSkyGrayTint06,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
-import { BpkDarkExampleWrapper } from '../../../../../.storybook/bpk-storybook-utils';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 

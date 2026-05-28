@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { action } from 'bpk-storybook-utils';
 
 import BpkBannerAlert, {
   ALERT_TYPES,
@@ -27,7 +28,6 @@ import BpkBannerAlert, {
   BpkBannerAlertExpandable,
   withBannerAlertState,
 } from '..';
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
 import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import BpkButton from '../../bpk-component-button';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';

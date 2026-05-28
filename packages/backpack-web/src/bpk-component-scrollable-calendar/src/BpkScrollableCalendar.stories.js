@@ -22,7 +22,8 @@ import { Component, useEffect } from 'react';
 import { endOfMonth } from 'date-fns/endOfMonth';
 import { startOfMonth } from 'date-fns/startOfMonth';
 
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
+import { action } from 'bpk-storybook-utils';
+
 import {
   DateUtils,
   CustomPropTypes,

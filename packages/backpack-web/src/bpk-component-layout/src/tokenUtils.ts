@@ -21,6 +21,7 @@ import { getSpacingValue } from './theme';
 import {
   BpkBreakpointToChakraKey,
   isValidSpacingValue,
+  isValidMarginValue,
   isValidSizeValue,
   isValidPositionValue,
   isPercentage,
@@ -270,6 +271,10 @@ export function processBpkComponentProps<T extends Record<string, any>>(
  * @returns {string} The actual spacing value in rem or the percentage string
  */
 export function convertBpkSpacingToChakra(value: string): string {
+  if (value === 'auto') {
+    return value; // 'auto' passes through (only reaches here for margin props; padding/gap reject it at validation)
+  }
+
   if (isPercentage(value)) {
     return value; // Percentages pass through
   }
@@ -387,10 +392,10 @@ export function processSpacingProps<T extends Record<string, any>>(
   const spacingKeys = [
     // Padding props
     'padding', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft',
-    'paddingStart', 'paddingEnd', 'paddingInline',
+    'paddingStart', 'paddingEnd', 'paddingInline', 'paddingBlock',
     // Margin props
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
-    'marginStart', 'marginEnd', 'marginInline',
+    'marginStart', 'marginEnd', 'marginInline', 'marginBlockStart', 'marginBlockEnd', 'marginBlock',
     // Gap and spacing
     'gap', 'spacing',
     'rowGap', 'columnGap',
@@ -403,11 +408,17 @@ export function processSpacingProps<T extends Record<string, any>>(
   const processed: Record<string, any> = { ...props };
   const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
   const positionKeys = ['top', 'right', 'bottom', 'left'];
+  // Margin keys accept 'auto' (e.g. marginTop: 'auto' to bottom-anchor a flex child); padding/gap don't.
+  const marginKeys = [
+    'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
+    'marginStart', 'marginEnd', 'marginInline', 'marginBlockStart', 'marginBlockEnd', 'marginBlock',
+  ];
 
   spacingKeys.forEach((key) => {
     if (key in processed && processed[key] !== undefined) {
       const isSizeProp = sizeKeys.includes(key);
       const isPositionProp = positionKeys.includes(key);
+      const isMarginProp = marginKeys.includes(key);
 
       let converter: (v: string) => string;
       if (isSizeProp || isPositionProp) {
@@ -421,6 +432,8 @@ export function processSpacingProps<T extends Record<string, any>>(
         validator = isValidSizeValue;
       } else if (isPositionProp) {
         validator = isValidPositionValue;
+      } else if (isMarginProp) {
+        validator = isValidMarginValue;
       } else {
         validator = isValidSpacingValue;
       }

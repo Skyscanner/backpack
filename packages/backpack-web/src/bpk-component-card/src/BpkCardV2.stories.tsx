@@ -37,7 +37,6 @@ import {
   BpkVStack,
 } from '../../bpk-component-layout';
 import BpkLink from '../../bpk-component-link';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice, { SIZES, ALIGNS } from '../../bpk-component-price';
 import BpkRating from '../../bpk-component-rating';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -187,7 +186,7 @@ const PackagesCardExample = () => (
         >
           <BpkFlex direction="column" gap={BpkSpacing.MD}>
             <BpkPrice
-              size={SIZES.Large}
+              size={SIZES.large}
               leadingText="Half board"
               price="£2,185"
               trailingText="total"
@@ -254,7 +253,6 @@ const FlightLeg = ({
   stops: string;
 }) => (
   <BpkGrid
-    columns={4}
     templateColumns="1fr 1fr 1fr 1fr"
     gap={BpkSpacing.Base}
     align="center"
@@ -324,7 +322,7 @@ const FlightsCardExample = () => (
         <BpkCardV2.Section gap={BpkSpacing.Base} justifyContent="end">
           <BpkFlex direction="column" gap={BpkSpacing.SM}>
             <BpkPrice
-              size={SIZES.Large}
+              size={SIZES.large}
               price="£752"
               trailingText="£1,523 total"
               align={ALIGNS.right}
@@ -378,7 +376,7 @@ const HotelCardExample = () => (
               Our cheapest price
             </BpkText>
             <BpkPrice
-              size={SIZES.Large}
+              size={SIZES.large}
               previousPrice="£2,033"
               leadingText="19% off"
               price="£1,830"

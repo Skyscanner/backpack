@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { withRtlSupport, withButtonAlignment } from '../../bpk-component-icon';
 import ArrowLeftIcon from '../../bpk-component-icon/sm/arrow-left';
@@ -30,11 +28,18 @@ const getClassName = cssModules(STYLES);
 const AlignedArrowLeftIcon = withRtlSupport(withButtonAlignment(ArrowLeftIcon));
 const AlignedArrowRightIcon = withRtlSupport(withButtonAlignment(ArrowRightIcon));
 
-const nudgerIcon = (forward) =>
-  forward ? (<AlignedArrowRightIcon/>) : (<AlignedArrowLeftIcon/>);
+const nudgerIcon = (forward: boolean) =>
+  forward ? <AlignedArrowRightIcon /> : <AlignedArrowLeftIcon />;
 
-const BpkPaginationNudger = (props) => {
-  const { disabled, forward, label, onNudge } = props;
+export type Props = {
+  label: string;
+  onNudge: () => void;
+  forward?: boolean;
+  disabled?: boolean;
+};
+
+const BpkPaginationNudger = (props: Props) => {
+  const { disabled = false, forward = false, label, onNudge } = props;
 
   return (
     <div className={getClassName('bpk-pagination-nudger')}>
@@ -51,18 +56,6 @@ const BpkPaginationNudger = (props) => {
       </BpkButton>
     </div>
   );
-};
-
-BpkPaginationNudger.propTypes = {
-  label: PropTypes.string.isRequired,
-  onNudge: PropTypes.func.isRequired,
-  forward: PropTypes.bool,
-  disabled: PropTypes.bool,
-};
-
-BpkPaginationNudger.defaultProps = {
-  forward: false,
-  disabled: false,
 };
 
 export default BpkPaginationNudger;

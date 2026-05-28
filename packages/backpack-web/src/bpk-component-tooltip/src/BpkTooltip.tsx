@@ -72,6 +72,7 @@ export type Props = {
   hideOnTouchDevices?: boolean;
   placement?: Placement;
   isOpen?: boolean;
+  zIndexValue?: number;
 };
 
 // This function is to ensure the arrow alignment when used on the top and bottom
@@ -103,6 +104,7 @@ const BpkTooltip = ({
   placement = 'bottom',
   target,
   type = TOOLTIP_TYPES.light,
+  zIndexValue,
   ...rest
 }: Props) => {
   const [isOpenState, setIsOpenState] = useState(isOpen);
@@ -162,7 +164,7 @@ const BpkTooltip = ({
           <div
             className={getClassName('bpk-tooltip--container')}
             ref={refs.setFloating}
-            style={floatingStyles}
+            style={{ ...floatingStyles, zIndex: zIndexValue }}
             {...getFloatingProps()}
           >
             <TransitionInitialMount

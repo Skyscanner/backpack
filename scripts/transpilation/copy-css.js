@@ -29,7 +29,7 @@ const cssFiles = execSync('find packages/backpack-web/src -name "*.css" | grep -
   .filter((s) => s !== '');
 
 cssFiles.forEach((cssFile) => {
-  const destDir = path.dirname(cssFile).replace(/^packages\/backpack-web\/src\//, 'dist/');
+  const destDir = path.dirname(cssFile).replace(/^packages\/backpack-web\/src\//, 'packages/backpack-web/dist/');
   fs.mkdirSync(destDir, { recursive: true });
   fs.copyFileSync(cssFile, path.join(destDir, path.basename(cssFile)));
 });

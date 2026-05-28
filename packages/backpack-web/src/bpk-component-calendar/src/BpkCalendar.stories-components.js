@@ -30,6 +30,7 @@ import {
   colorSkyGrayTint04,
   colorMonteverde,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { action } from 'bpk-storybook-utils';
 
 import BpkCalendar, {
   BpkCalendarGrid,
@@ -39,7 +40,6 @@ import BpkCalendar, {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
 } from '..';
-import { action } from '../../../../../.storybook/bpk-storybook-utils';
 import BpkButton from '../../bpk-component-button';
 import {
   withButtonAlignment,

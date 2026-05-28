@@ -16,17 +16,22 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPaginationPage.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BpkPaginationPage = (props) => {
+export type Props = {
+  page: number;
+  onSelect: () => void;
+  pageLabel: (page: number, isSelected: boolean) => string;
+  isSelected?: boolean;
+};
+
+const BpkPaginationPage = (props: Props) => {
   const classNames = [getClassName('bpk-pagination-page')];
-  const { isSelected, onSelect, page, pageLabel } = props;
+  const { isSelected = false, onSelect, page, pageLabel } = props;
 
   if (!isSelected) {
     // reverse class type so we can always load `buttons.bpk-button` as a base style for overridding.
@@ -44,17 +49,6 @@ const BpkPaginationPage = (props) => {
       <span>{page}</span>
     </button>
   );
-};
-
-BpkPaginationPage.propTypes = {
-  page: PropTypes.number.isRequired,
-  onSelect: PropTypes.func.isRequired,
-  pageLabel: PropTypes.func.isRequired,
-  isSelected: PropTypes.bool,
-};
-
-BpkPaginationPage.defaultProps = {
-  isSelected: false,
 };
 
 export default BpkPaginationPage;
