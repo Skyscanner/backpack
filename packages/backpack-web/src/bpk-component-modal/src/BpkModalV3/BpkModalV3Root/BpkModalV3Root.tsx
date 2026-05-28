@@ -67,19 +67,25 @@ const BpkModalV3Root = ({
   // portalLock: prevents legacy Portal (BpkDrawer/BpkModal/BpkDialog) from
   //   starting their close animation simultaneously, which causes a visible flash.
   //
-  // The cleanup function runs both on isOpen→false AND on unmount-while-open,
+  // bodyLockOpen (rather than isOpen) is used as the dependency so that the
+  // locks stay active for the full exit-animation duration (durationBase ms)
+  // after isOpen becomes false. Without the delay, events fired during the
+  // exit animation (e.g. the mousedown that triggered the close falling through
+  // to a BpkScrim below) would reach legacy overlays and cause a flash.
+  //
+  // The cleanup function runs both on bodyLockOpen→false AND on unmount-while-open,
   // ensuring the locks are always released.
   //
   // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
   useEffect(() => {
-    if (!isOpen) return undefined;
+    if (!bodyLockOpen) return undefined;
     focusScope.pauseFocus();
     portalLock.lock();
     return () => {
       focusScope.resumeFocus();
       portalLock.unlock();
     };
-  }, [isOpen]);
+  }, [bodyLockOpen]);
 
   const handleOpenChange = (details: { open: boolean }) => {
     if (open === undefined) {

@@ -136,6 +136,7 @@ describe('BpkModalV3', () => {
     });
 
     it('should call focusScope.resumeFocus when modal transitions from open to closed', () => {
+      jest.useFakeTimers();
       const { rerender } = render(
         <BpkModalV3.Root open onOpenChange={jest.fn()}>
           <BpkModalV3.Content>
@@ -152,7 +153,12 @@ describe('BpkModalV3', () => {
           </BpkModalV3.Content>
         </BpkModalV3.Root>,
       );
+      // Lock stays active during the exit animation — not released yet.
+      expect(focusScope.resumeFocus).not.toHaveBeenCalled();
+
+      act(() => { jest.runAllTimers(); });
       expect(focusScope.resumeFocus).toHaveBeenCalledTimes(1);
+      jest.useRealTimers();
     });
 
     it('should not call focusScope.resumeFocus when the modal is initially open', () => {
@@ -171,6 +177,7 @@ describe('BpkModalV3', () => {
     });
 
     it('should call portalLock.unlock when modal transitions from open to closed', () => {
+      jest.useFakeTimers();
       const { rerender } = render(
         <BpkModalV3.Root open onOpenChange={jest.fn()}>
           <BpkModalV3.Content>
@@ -187,7 +194,12 @@ describe('BpkModalV3', () => {
           </BpkModalV3.Content>
         </BpkModalV3.Root>,
       );
+      // Lock stays active during the exit animation — not released yet.
+      expect(portalLock.unlock).not.toHaveBeenCalled();
+
+      act(() => { jest.runAllTimers(); });
       expect(portalLock.unlock).toHaveBeenCalledTimes(1);
+      jest.useRealTimers();
     });
 
     it('should call portalLock.unlock on unmount while open', () => {
