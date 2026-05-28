@@ -57,7 +57,7 @@ jobs:
 
       - name: Build CSS, rebuild base stylesheet, and open PR
         if: steps.token_changes.outputs.changed == 'true'
-        uses: ./.github/actions/figma-token-sync-build-and-pr
+        uses: ./.github/actions/figma-token-sync-pr
         with:
           app_id: ${{ vars.GH_APP_ID }}
           app_private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
