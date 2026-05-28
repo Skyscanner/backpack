@@ -24,7 +24,10 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(var(--initially-shown-cards, 3), minmax(0, 1fr));
+    grid-template-columns: repeat(
+      var(--initially-shown-cards, 3),
+      minmax(0, 1fr)
+    );
     gap: tokens.bpk-spacing-lg();
   }
 
