@@ -69,10 +69,7 @@ jobs:
 
       - name: Stage 3 - Rebuild base stylesheet
         if: steps.token_changes.outputs.changed == 'true'
-        run: |
-          nx run backpack-web:copy-normalize-css
-          nx run backpack-web:copy-token-css
-          node packages/backpack-web/src/bpk-stylesheets/build.js
+        run: nx run backpack-web:build-stylesheets
 
       - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         id: app-token

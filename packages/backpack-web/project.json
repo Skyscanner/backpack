@@ -74,7 +74,7 @@
         "command": "node build.js",
         "cwd": "{projectRoot}/src/bpk-stylesheets"
       },
-      "dependsOn": ["build-sass", "copy-token-css"],
+      "dependsOn": ["copy-normalize-css", "copy-token-css"],
       "inputs": [
         "{projectRoot}/src/bpk-stylesheets/**/*",
         "{workspaceRoot}/babel.config.js"
@@ -98,7 +98,7 @@
         "parallel": false,
         "cwd": "{workspaceRoot}"
       },
-      "dependsOn": ["build-stylesheets"],
+      "dependsOn": ["build-sass", "build-stylesheets"],
       "inputs": [
         "production",
         "^production",
@@ -145,10 +145,7 @@
         "command": "stylelint 'packages/backpack-web/**/*.scss'",
         "cwd": "{workspaceRoot}"
       },
-      "inputs": [
-        "{projectRoot}/**/*.scss",
-        "{workspaceRoot}/.stylelintrc*"
-      ],
+      "inputs": ["{projectRoot}/**/*.scss", "{workspaceRoot}/.stylelintrc*"],
       "cache": true
     },
     "lint-scss-fix": {
