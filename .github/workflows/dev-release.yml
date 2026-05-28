@@ -87,7 +87,10 @@ jobs:
   DevRelease:
     name: Build and publish dev release
     runs-on: ubuntu-latest
-    environment: Publishing
+    # Dry runs do not need maintainer approval because they never publish.
+    # Real publishes still go through the Publishing environment so the
+    # backpack-web team approves the npm release.
+    environment: ${{ inputs.dry_run && '' || 'Publishing' }}
     needs: [SecurityCheck]
     permissions:
       contents: read
