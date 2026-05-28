@@ -67,6 +67,13 @@ jobs:
         if: steps.token_changes.outputs.changed == 'true'
         run: npm run tokens:build-css
 
+      - name: Stage 3 - Rebuild base stylesheet
+        if: steps.token_changes.outputs.changed == 'true'
+        run: |
+          ./scripts/scss/copy-normal_css.sh
+          ./scripts/scss/copy-token-css.sh
+          node packages/backpack-web/src/bpk-stylesheets/build.js
+
       - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         id: app-token
         if: steps.token_changes.outputs.changed == 'true'
@@ -86,7 +93,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch_name"
-          git add token-sync/tokens token-sync/css
+          git add token-sync/tokens token-sync/css packages/backpack-web/src/bpk-stylesheets/base.css
           git commit -m "Update Figma design tokens"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin "HEAD:${branch_name}"
