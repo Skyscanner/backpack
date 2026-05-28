@@ -22,11 +22,11 @@ runs:
       shell: bash
       run: ./node_modules/.bin/tsx token-sync/src/classify-release-label-cli.ts
 
-    - name: Stage 2 - Build CSS from DTCG tokens
+    - name: Build CSS from DTCG tokens
       shell: bash
       run: npm run tokens:build-css
 
-    - name: Stage 3 - Rebuild base stylesheet
+    - name: Rebuild base stylesheet
       shell: bash
       run: nx run backpack-web:build-stylesheets
 
