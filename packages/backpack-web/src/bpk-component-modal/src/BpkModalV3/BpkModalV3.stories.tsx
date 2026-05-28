@@ -20,7 +20,6 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import BpkButton from '../../../bpk-component-button';
-import BpkDrawer from '../../../bpk-component-drawer';
 import {
   BpkBox,
   BpkBreakpoint,
@@ -692,83 +691,6 @@ const LogoExample = () => (
   </ModalContainer>
 );
 
-const WithDrawerExample = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  return (
-    <BpkProvider>
-      <div id="modal-with-drawer-pagewrap">
-        <BpkVStack gap={BpkSpacing.Base} padding={BpkSpacing.LG}>
-          <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-            Open the drawer first, then open the modal from within it.
-            BpkDrawer uses the legacy focusScope system; BpkModalV3 uses
-            ark-ui. Both coexist without causing a focus redirect loop.
-          </BpkText>
-          <BpkButton onClick={() => setIsDrawerOpen(true)}>
-            Open drawer
-          </BpkButton>
-        </BpkVStack>
-      </div>
-
-      <BpkDrawer
-        id="modal-with-drawer-drawer"
-        isOpen={isDrawerOpen}
-        onClose={() => setIsDrawerOpen(false)}
-        title="Filters"
-        closeLabel="Close drawer"
-        getApplicationElement={() =>
-          document.getElementById('modal-with-drawer-pagewrap')
-        }
-      >
-        <BpkVStack gap={BpkSpacing.Base}>
-          <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-            The drawer is open. Click below to open a BpkModalV3 on top.
-          </BpkText>
-          <BpkButton onClick={() => setIsModalOpen(true)}>
-            Open modal
-          </BpkButton>
-        </BpkVStack>
-      </BpkDrawer>
-
-      <BpkModalV3.Root
-        open={isModalOpen}
-        onOpenChange={({ open }) => setIsModalOpen(open)}
-      >
-        <BpkModalV3.Portal>
-          <BpkModalV3.Scrim />
-          <BpkModalV3.Content>
-            <BpkModalV3.Header>
-              <BpkModalV3.Title>
-                <BpkText textStyle={TEXT_STYLES.label1} tagName="span">
-                  Modal opened from drawer
-                </BpkText>
-              </BpkModalV3.Title>
-              <BpkModalV3.CloseTrigger label="Close" />
-            </BpkModalV3.Header>
-            <BpkModalV3.Body>
-              <BpkBox paddingInline={BpkSpacing.LG} paddingBottom={BpkSpacing.LG}>
-                <BpkVStack gap={BpkSpacing.Base}>
-                  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                    This modal was opened while a BpkDrawer was active. Focus
-                    management has transitioned from the drawer&apos;s focusScope
-                    to the modal&apos;s ark-ui focus trap without conflict.
-                  </BpkText>
-                  <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                    <strong>To verify:</strong> close this modal (click &ldquo;Close&rdquo;
-                    or press Esc), then press Tab inside the drawer. Focus should
-                    remain trapped within the drawer and not escape to the page.
-                  </BpkText>
-                </BpkVStack>
-              </BpkBox>
-            </BpkModalV3.Body>
-          </BpkModalV3.Content>
-        </BpkModalV3.Portal>
-      </BpkModalV3.Root>
-    </BpkProvider>
-  );
-};
-
 const meta = {
   title: 'bpk-component-modal-v3',
   component: BpkModalV3.Root,
@@ -839,10 +761,6 @@ export const Trigger = {
 
 export const Logo = {
   render: () => <LogoExample />,
-};
-
-export const WithDrawer = {
-  render: () => <WithDrawerExample />,
 };
 
 export const VisualTest = {
