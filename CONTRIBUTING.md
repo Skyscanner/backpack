@@ -35,7 +35,7 @@ To install pnpm, set it up via Corepack:
 ```bash
 npm install --global corepack@latest
 corepack enable pnpm
-corepack use pnpm@latest-9
+corepack use pnpm@latest-10
 ```
 
 ### Code style
