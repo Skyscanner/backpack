@@ -91,7 +91,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [postCssPlugins],
+                plugins: postCssPlugins(),
               },
             },
           },
@@ -121,7 +121,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [postCssPlugins],
+                plugins: postCssPlugins(),
               },
             },
           },

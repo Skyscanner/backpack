@@ -186,9 +186,15 @@
   }
 }
 
-/// Create a Backpack themeable property with
-/// fallback support for old browsers and when
-/// the CSS variable is not defined.
+/// Create a Backpack themeable property. Emits a single `var()` declaration
+/// with an inline SCSS fallback used when the CSS variable is not defined at
+/// runtime.
+///
+/// Previously this mixin emitted two declarations — a bare SCSS fallback
+/// followed by the `var()` form — to support browsers without CSS custom
+/// properties. Those browsers (IE 11 and earlier) are no longer supported, so
+/// the duplicate declaration is dropped to roughly halve the bytes emitted at
+/// every callsite.
 ///
 /// @content
 ///
