@@ -134,15 +134,30 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Update the version in dist/package.json directly rather than running
+      # `npm version`, which would execute any preversion / version /
+      # postversion lifecycle scripts present in the PR's package.json.
+      # Always run on dry runs too so the stamping logic itself is
+      # exercised before a real publish depends on it.
+      - name: Stamp dev version into dist/package.json
+        working-directory: packages/backpack-web/dist
+        run: |
+          node -e "const fs=require('fs'); const p=require('./package.json'); p.version=process.env.DEV_VERSION; fs.writeFileSync('./package.json', JSON.stringify(p, null, 2) + '\n');"
+          node -e "console.log('dist/package.json version:', require('./package.json').version);"
+        env:
+          DEV_VERSION: ${{ steps.version.outputs.dev_version }}
+
+      # `--ignore-scripts` prevents npm from running prepack / prepare /
+      # prepublishOnly / postpack / postpublish hooks from the PR's
+      # package.json with NPM_TOKEN in scope. The published artifact is
+      # already fully built by the Build step above, so no script needs to
+      # run at publish time.
       - name: Publish dev release to npm
         if: ${{ inputs.dry_run != true }}
-        run: |
-          cd packages/backpack-web/dist
-          npm version $DEV_VERSION --no-git-tag-version
-          npm publish --tag dev
+        working-directory: packages/backpack-web/dist
+        run: npm publish --ignore-scripts --tag dev
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          DEV_VERSION: ${{ steps.version.outputs.dev_version }}
 
   ReportResults:
     name: Report results on PR
