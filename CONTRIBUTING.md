@@ -30,7 +30,7 @@ Backpack is developed using Node. The required Node version is specified in `.nv
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, Backpack has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
-To install pnpm, use corepack: `npm install --global corepack@latest && corepack enable pnpm && corepack use pnpm@9.15.9`.
+To install pnpm, use corepack: `npm install --global corepack@latest && corepack enable pnpm && corepack use pnpm@10.34.1`.
 
 ### Code style
 
