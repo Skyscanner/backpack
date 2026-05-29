@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Stage 1 - Fetch tokens from Figma
+      - name: Fetch tokens from Figma
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
@@ -55,105 +55,9 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "Fetched token values changed."
 
-      - name: Classify token release label
-        id: release_label
+      - name: Build CSS, rebuild base stylesheet, and open PR
         if: steps.token_changes.outputs.changed == 'true'
-        continue-on-error: true
-        env:
-          TOKEN_RELEASE_SUMMARY_PATH: ${{ runner.temp }}/token-release-summary.md
-        run: ./node_modules/.bin/tsx token-sync/src/classify-release-label-cli.ts
-
-      - name: Stage 2 - Build CSS from DTCG tokens
-        if: steps.token_changes.outputs.changed == 'true'
-        run: npm run tokens:build-css
-
-      - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
-        id: app-token
-        if: steps.token_changes.outputs.changed == 'true'
+        uses: ./.github/actions/figma-token-sync-pr
         with:
-          app-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-
-      - name: Commit generated token changes
-        id: commit
-        if: steps.token_changes.outputs.changed == 'true'
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-        run: |
-          timestamp="$(date -u +'%Y%m%d%H%M%S')"
-          branch_name="figma-token-sync/${timestamp}-${GITHUB_RUN_ID}"
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$branch_name"
-          git add token-sync/tokens token-sync/css
-          git commit -m "Update Figma design tokens"
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push origin "HEAD:${branch_name}"
-
-          echo "branch_name=$branch_name" >> "$GITHUB_OUTPUT"
-
-      - name: Open pull request
-        if: steps.token_changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          BRANCH_NAME: ${{ steps.commit.outputs.branch_name }}
-          RELEASE_LABEL: ${{ steps.release_label.outputs.label || 'major' }}
-          RELEASE_LABEL_OUTCOME: ${{ steps.release_label.outcome }}
-        run: |
-          {
-            echo "## Summary"
-            echo
-            echo "Automated Figma variable sync generated updates to Backpack design tokens and CSS custom properties."
-            echo
-            echo "Release label: \`${RELEASE_LABEL}\`"
-            echo
-            echo "**Release label rules:**"
-            echo "- \`major\` — an existing token path was removed, renamed, or had its value changed (consumer code may break)."
-            echo "- \`minor\` — only new token paths were added."
-            if [ "$RELEASE_LABEL_OUTCOME" != "success" ]; then
-              echo
-              echo "> [!WARNING]"
-              echo "> **Release label classification threw an exception** and has fallen back to \`major\` as a safe default."
-              echo "> The automated analysis could not determine whether this change is \`major\` or \`minor\`, so a reviewer must inspect the token diff and decide manually — if \`minor\` is more appropriate, swap the label before merging."
-              echo "> See the [workflow run](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) logs for the underlying error."
-            fi
-            if [ -s "$RUNNER_TEMP/token-release-summary.md" ]; then
-              echo
-              cat "$RUNNER_TEMP/token-release-summary.md"
-            fi
-            echo
-            echo "## Source"
-            echo
-            echo "- Trigger: \`${GITHUB_EVENT_NAME}\`"
-            echo "- Workflow run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          } > "$RUNNER_TEMP/figma-token-sync-pr.md"
-
-          pr_url="$(gh pr create \
-            --base main \
-            --head "$BRANCH_NAME" \
-            --title "Update Figma design tokens" \
-            --body-file "$RUNNER_TEMP/figma-token-sync-pr.md" \
-            --label design-token-automation \
-            --label "$RELEASE_LABEL")"
-
-          echo "Opened pull request: $pr_url"
-
-      - name: Close superseded Figma token sync pull requests
-        if: steps.token_changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          NEW_BRANCH: ${{ steps.commit.outputs.branch_name }}
-        run: |
-          open_prs="$(gh pr list --state open --limit 100 --json number,headRefName,url \
-            | jq -r --arg new "$NEW_BRANCH" '.[] | select(.headRefName | startswith("figma-token-sync/")) | select(.headRefName != $new) | [.number, .headRefName, .url] | @tsv')"
-
-          if [ -z "$open_prs" ]; then
-            echo "No superseded Figma token sync pull requests."
-            exit 0
-          fi
-
-          while IFS=$'\t' read -r number _branch _url; do
-            gh pr close "$number" --comment "Closing this automated token sync PR because a newer run has opened a fresh PR with the latest cumulative Figma token changes against main."
-            echo "Closed superseded Figma token sync pull request: ${_url}"
-          done <<< "$open_prs"
+          app_id: ${{ vars.GH_APP_ID }}
+          app_private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}
