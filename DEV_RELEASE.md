@@ -8,8 +8,6 @@ Dev releases never overwrite a real version. They use the version format
 `<latest-stable>-dev-v<run_id>.<run_attempt>` (for example
 `42.21.1-dev-v26558464180.1`) and are published under the `dev` npm dist-tag.
 
----
-
 ## When to use it
 
 - You opened a PR to fix a bug and need to confirm the fix works in
@@ -21,8 +19,6 @@ Dev releases never overwrite a real version. They use the version format
 
 If you only need a Storybook to share, the [PR Storybook deploy](https://backpack.github.io/storybook-prs/)
 is automatic and faster.
-
----
 
 ## How to trigger
 
@@ -58,8 +54,6 @@ gh workflow run dev-release.yml \
 PR's HEAD commit, regardless of which branch the workflow itself is loaded
 from.
 
----
-
 ## What happens
 
 1. **Security check** — confirms the PR is open, lives in `Skyscanner/backpack`
@@ -74,8 +68,6 @@ from.
    `backpack-web` team must approve it from the run page.
 5. **Result comment** — the same PR comment is updated in place with the
    final outcome and the install command for the published version.
-
----
 
 ## Consuming a dev release
 
@@ -100,8 +92,6 @@ consumer change:
 npm install @skyscanner/backpack-web@latest
 ```
 
----
-
 ## Dry run vs real publish
 
 |                       | `dry_run=true`           | `dry_run=false`          |
@@ -114,8 +104,6 @@ npm install @skyscanner/backpack-web@latest
 
 Use `dry_run=true` when iterating on the workflow itself, or to confirm a
 build still passes after a force-push.
-
----
 
 ## Limitations
 
@@ -132,8 +120,6 @@ build still passes after a force-push.
   npm dist-tag rm @skyscanner/backpack-web dev
   ```
   Individual versions cannot be unpublished after 72 hours per npm policy.
-
----
 
 ## Implementation
 
