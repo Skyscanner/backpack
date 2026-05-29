@@ -19,7 +19,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-2cores-tools-public
     permissions:
       # actions: read is mandatory for nrwl/nx-set-shas to read base/head SHAs
       # via the GitHub Actions API. Without it, `nx affected` silently runs
