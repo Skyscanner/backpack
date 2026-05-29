@@ -159,7 +159,7 @@ async function assertInputsExist(tokensDir: string): Promise<void> {
     throw new Error(
       `Missing Stage 1 DTCG file(s):\n  ${missing.join(
         '\n  ',
-      )}\nRun \`npm run tokens:fetch\` to (re)generate them before building CSS.`,
+      )}\nRun \`pnpm run tokens:fetch\` to (re)generate them before building CSS.`,
     );
   }
 }

@@ -26,8 +26,8 @@ import { formatFatalError } from './sync-helpers';
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 
 // Default layout:
-//   token-sync/tokens/   ← Stage 1 DTCG output (`npm run tokens:fetch`)
-//   token-sync/css/      ← Stage 2 CSS output (`npm run tokens:build-css`)
+//   token-sync/tokens/   ← Stage 1 DTCG output (`pnpm run tokens:fetch`)
+//   token-sync/css/      ← Stage 2 CSS output (`pnpm run tokens:build-css`)
 // CSS sits outside `tokens/` so Stage 1's directory-clear doesn't wipe it.
 // Both paths overridable via env vars.
 const DEFAULT_TOKENS_DIR = path.resolve(scriptDir, '../tokens');

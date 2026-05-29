@@ -30,7 +30,7 @@ At the time of this decision:
 
 As Backpack is non-transpiled `backpack-react-scripts` (BRS) will transpile it at build time for consumers even though it is inside node modules. BRS also runs a type check at this time for any files it detects are using TypeScript, including in these non-transpiled node modules.
 
-With no action `npm run build` or `npm run start` fail on this type check due to `noImplicitAny` in consumers picking up paths inside of Backpack that have no type declarations.
+With no action `pnpm run build` or `pnpm run start` fail on this type check due to `noImplicitAny` in consumers picking up paths inside of Backpack that have no type declarations.
 
 Two options exist here:
 

@@ -72,8 +72,8 @@ JSON files to `token-sync/tokens/`.
 From the repo root:
 
 ```bash
-npm install
-npm run tokens:fetch
+pnpm install --frozen-lockfile
+pnpm run tokens:fetch
 ```
 
 Output:
@@ -142,7 +142,7 @@ and emits one CSS file per theme plus a theme-independent primitives sheet to
 From the repo root, **after** running Stage 1:
 
 ```bash
-npm run tokens:build-css
+pnpm run tokens:build-css
 ```
 
 Output:
@@ -191,7 +191,7 @@ alongside whichever theme sheets you use.
 Both stages are theme-agnostic — adding a third theme (e.g. Sepia) requires **no code changes**:
 
 1. Add the mode to the `Backpack` collection in Figma and assign every semantic token a value for it.
-2. Run `npm run tokens:sync`.
+2. Run `pnpm run tokens:sync`.
 
 Stage 1 emits `backpack.<mode>.json`; Stage 2 picks it up automatically and writes `theme-backpack-<mode>.css` with selector `:root[data-theme="<mode>"]`.
 
@@ -205,5 +205,5 @@ default layout doesn't suit your build pipeline.
 ### Combined sync + build
 
 ```bash
-npm run tokens:sync
+pnpm run tokens:sync
 ```

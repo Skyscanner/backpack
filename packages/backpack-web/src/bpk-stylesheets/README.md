@@ -98,7 +98,7 @@ Defined in `font.scss`, `larken.scss`
 3. Build
    
    ```bash
-   npm run build:stylesheets
+   pnpm run build:stylesheets
    ```
 4) Verify
   - Import bundles:
@@ -135,4 +135,4 @@ Defined in `font.scss`, `larken.scss`
 
 Don't forget to rebuild and commit `base.js` after you make changes to this package.
 
-To build the `base.js` file run `npm run build:stylesheets` in the root folder.
+To build the `base.js` file run `pnpm run build:stylesheets` in the root folder.

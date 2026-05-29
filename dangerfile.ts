@@ -35,8 +35,21 @@ const createdFiles = danger.git.created_files;
 const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
 
+// Ensure pnpm-lock.yaml is updated when package.json changes.
+const packageJsonChanged = fileChanges.some((f) => f.endsWith('package.json'));
+const lockfileChanged =
+  modifiedFiles.includes('pnpm-lock.yaml') ||
+  createdFiles.includes('pnpm-lock.yaml');
+if (packageJsonChanged && !lockfileChanged) {
+  fail(
+    '`package.json` was changed but `pnpm-lock.yaml` was not updated. Run `pnpm install` and commit the updated lockfile.',
+  );
+}
+
 const componentChangedOrCreated = fileChanges.some((filePath) =>
-  filePath.match(/packages\/backpack-web\/src\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/),
+  filePath.match(
+    /packages\/backpack-web\/src\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/,
+  ),
 );
 
 if (componentChangedOrCreated) {
@@ -51,8 +64,9 @@ if (componentChangedOrCreated) {
 const componentSourceFilesModified = fileChanges.some(
   (filePath) =>
     // packages/backpack-web/src/(one or more chars)/src/(one or more chars).(js or ts or tsx)
-    filePath.match(/packages\/backpack-web\/src\/.*bpk-component.+\/src\/.+\.(js|ts|tsx)$/) &&
-    !filePath.includes('-test.'),
+    filePath.match(
+      /packages\/backpack-web\/src\/.*bpk-component.+\/src\/.+\.(js|ts|tsx)$/,
+    ) && !filePath.includes('-test.'),
 );
 
 const snapshotsModified = fileChanges.some(
@@ -89,9 +103,11 @@ if (unlicensedFiles.length > 0) {
 }
 
 const newComponentContainsClass = createdFiles.filter((filePath: string) => {
-  if (filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) &&
+  if (
+    filePath.match(/\.(js|ts|tsx|css|scss|sh)$/) &&
     !filePath.includes('dist/') &&
-    !filePath.includes('base.js')) {
+    !filePath.includes('base.js')
+  ) {
     const fileContent = fs.readFileSync(filePath);
     return fileContent.includes('className?: string | null');
   }
@@ -127,7 +143,9 @@ if (nonModuleCssFiles.length) {
 const newComponentPackages = Array.from(
   new Set(
     createdFiles
-      .map((f) => f.match(/^(packages\/backpack-web\/src\/bpk-component-[^/]+)\//))
+      .map((f) =>
+        f.match(/^(packages\/backpack-web\/src\/bpk-component-[^/]+)\//),
+      )
       .filter((m): m is RegExpMatchArray => m !== null)
       .map((m) => m[1]),
   ),
@@ -166,7 +184,9 @@ if (packagesMissingA11yTest.length) {
 // Inside bpk-component-* packages, story files must live alongside the
 // component source under src/. See decisions/colocated-stories.md.
 const misplacedStories = fileChanges.filter((filePath) => {
-  const match = filePath.match(/^packages\/backpack-web\/src\/bpk-component-[^/]+\/(.+)\.stories\.(t|j)sx?$/);
+  const match = filePath.match(
+    /^packages\/backpack-web\/src\/bpk-component-[^/]+\/(.+)\.stories\.(t|j)sx?$/,
+  );
   return match !== null && !match[1].startsWith('src/');
 });
 
@@ -202,13 +222,16 @@ const physicalPropertyPattern = new RegExp(
     'border-bottom-left-radius|border-bottom-right-radius' +
     ')\\s*:',
 );
-const physicalValuePattern = /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/;
+const physicalValuePattern =
+  /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/;
 
 // Scan only newly-created SCSS files — modified files would flag pre-existing
 // violations across the ~92 non-migrated components. Once the codebase is
 // cleaned up, replace this rule with stylelint-use-logical at error severity.
 const scssCreated = createdFiles.filter((filePath) =>
-  filePath.match(/^packages\/backpack-web\/src\/bpk-component-[^/]+\/src\/.+\.module\.scss$/),
+  filePath.match(
+    /^packages\/backpack-web\/src\/bpk-component-[^/]+\/src\/.+\.module\.scss$/,
+  ),
 );
 
 const physicalHits = scssCreated
@@ -219,8 +242,7 @@ const physicalHits = scssCreated
       .split('\n')
       .filter(
         (line) =>
-          physicalPropertyPattern.test(line) ||
-          physicalValuePattern.test(line),
+          physicalPropertyPattern.test(line) || physicalValuePattern.test(line),
       );
     return offending.length
       ? `- \`${filePath}\`:\n\`\`\`\n${offending.join('\n')}\n\`\`\``
@@ -234,23 +256,48 @@ if (physicalHits.length) {
   );
 }
 
-const linterWarnings = ["no-console", "no-undef", "@typescript-eslint/no-unused-vars", "jest/no-disabled-tests", "no-alert", "func-names", "react-hooks/exhaustive-deps"]
-const invalidReactChild = ["Functions are not valid as a React child"];
-const invalidFormField = ["You provided .* to a form field without"];
-const components = ["<TestComponent />", "<TestComponent>", "<Nav />", "<Header />", "<Grid />", "<Grid>", "<Portal />", "<Portal>"];
-const reactRecogniseProp = ["React does not recognize"]
-const invalidTags = ["The tag <rect>", "The tag <g>", "The tag <text>"]
-const passingTests = ["✓"]
-const unknownEventHandler = ["Unknown event handler"]
-const propType = ["Failed prop type", "Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.", 'A props object containing a "key" prop is being spread into JSX:']
-const componentWillReceiveProps = ["componentWillReceiveProps"]
-const invalidCSSProperties = ["is an invalid value for the .* css style property."]
-const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
+const linterWarnings = [
+  'no-console',
+  'no-undef',
+  '@typescript-eslint/no-unused-vars',
+  'jest/no-disabled-tests',
+  'no-alert',
+  'func-names',
+  'react-hooks/exhaustive-deps',
+];
+const invalidReactChild = ['Functions are not valid as a React child'];
+const invalidFormField = ['You provided .* to a form field without'];
+const components = [
+  '<TestComponent />',
+  '<TestComponent>',
+  '<Nav />',
+  '<Header />',
+  '<Grid />',
+  '<Grid>',
+  '<Portal />',
+  '<Portal>',
+];
+const reactRecogniseProp = ['React does not recognize'];
+const invalidTags = ['The tag <rect>', 'The tag <g>', 'The tag <text>'];
+const passingTests = ['✓'];
+const unknownEventHandler = ['Unknown event handler'];
+const propType = [
+  'Failed prop type',
+  'Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.',
+  'A props object containing a "key" prop is being spread into JSX:',
+];
+const componentWillReceiveProps = ['componentWillReceiveProps'];
+const invalidCSSProperties = [
+  'is an invalid value for the .* css style property.',
+];
+const invalidProps = ['for a non-boolean attribute', 'Invalid ARIA attribute'];
 // TODO: Address tests being wrapped in act
-const actTests = ["inside a test was not wrapped in act(...)"]
+const actTests = ['inside a test was not wrapped in act(...)'];
 // TODO: Convert components that use CSSTransition to functional components and allow for using refs
-const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
-const nxWarnings = ["nx.dev/"];
+const findDOMNode = [
+  'findDOMNode is deprecated and will be removed in the next major release.',
+];
+const nxWarnings = ['nx.dev/'];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -270,5 +317,5 @@ const allIgnoredWarnings = linterWarnings
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',
-  ignoreRegex: new RegExp(allIgnoredWarnings.join("|"))
+  ignoreRegex: new RegExp(allIgnoredWarnings.join('|')),
 });

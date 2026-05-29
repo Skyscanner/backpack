@@ -8,8 +8,8 @@ description: |
   (4) Extracting reusable UI patterns from product repos. Covers GitHub API access,
   Backpack naming conventions, modern Sass API, TypeScript patterns, license headers,
   accessibility testing, and Storybook integration. MANDATORY: Component must pass full
-  test suite (npm run lint && npm run check-react-versions && npm run check-bpk-dependencies
-  && npm run jest) with 0 errors before acceptance.
+  test suite (pnpm run lint && pnpm run check-react-versions && pnpm run check-bpk-dependencies
+  && pnpm run jest) with 0 errors before acceptance.
 author: Claude Code
 version: 1.4.0
 date: 2026-03-02
@@ -480,7 +480,7 @@ export default () => (
 Run the complete Backpack verification suite:
 
 ```bash
-npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest
+pnpm run lint && pnpm run check-react-versions && pnpm run check-bpk-dependencies && pnpm run jest
 ```
 
 **Success Criteria:**
@@ -502,32 +502,32 @@ If the full suite fails, debug with individual commands:
 
 **Type Check:**
 ```bash
-npm run typecheck
+pnpm run typecheck
 # Should compile without errors or warnings
 ```
 
 **Lint (JS/TS):**
 ```bash
-npm run lint:js
+pnpm run lint:js
 # 0 errors in new component files
 ```
 
 **Lint (SCSS):**
 ```bash
-npm run lint:scss
+pnpm run lint:scss
 # 0 errors in new component styles
 ```
 
 **Component Tests Only:**
 ```bash
-npm run jest -- packages/bpk-component-[name]
+pnpm run jest -- packages/bpk-component-[name]
 # All tests pass, 100% component coverage
 ```
 
 #### 3.3 Storybook Visual Verification
 
 ```bash
-npm run storybook
+pnpm run storybook
 ```
 
 **Manual Checks:**
@@ -587,7 +587,7 @@ Bpk[ComponentName].tsx             | 100 | 100 | 100 | 100 |
 
 **Solution:** For new components, this is expected on first run:
 ```bash
-npm run jest -- packages/bpk-component-[name] -u
+pnpm run jest -- packages/bpk-component-[name] -u
 # Updates snapshots, then re-run to verify they pass
 ```
 
@@ -599,8 +599,8 @@ npm run jest -- packages/bpk-component-[name] -u
 
 **Solution:**
 ```bash
-npm install
-npm run build  # Rebuild bpk-mixins package
+pnpm install
+pnpm run build  # Rebuild bpk-mixins package
 ```
 
 ### Issue 2: Wrong Import Paths
@@ -637,14 +637,14 @@ npm run build  # Rebuild bpk-mixins package
 
 **Solution:** This is expected for new components:
 ```bash
-npm test -- packages/bpk-component-[name] -u
+pnpm test -- packages/bpk-component-[name] -u
 # Updates snapshots for new component
 ```
 
 ## Verification Checklist
 
 **MANDATORY ACCEPTANCE TEST** (must pass before merge):
-- [ ] **Full test suite passes**: `npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest`
+- [ ] **Full test suite passes**: `pnpm run lint && pnpm run check-react-versions && pnpm run check-bpk-dependencies && pnpm run jest`
   - [ ] 0 lint errors (warnings acceptable if justified)
   - [ ] All React version checks pass
   - [ ] All dependency checks pass
