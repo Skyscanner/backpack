@@ -36,7 +36,7 @@ const svgoCommonPlugins = [
 
 gulp.task('pointer-base', () => {
   const optimised = gulp
-    .src('./packages/bpk-component-flare/src/svgs/**/*.svg')
+    .src('./packages/backpack-web/src/bpk-component-flare/src/svgs/**/*.svg')
     .pipe(
       svgmin({
         plugins: [
@@ -57,12 +57,12 @@ gulp.task('pointer-base', () => {
         ],
       }),
     )
-    .pipe(gulp.dest('./packages/bpk-component-flare/src/svgs'));
+    .pipe(gulp.dest('./packages/backpack-web/src/bpk-component-flare/src/svgs'));
 
   return optimised
     .pipe(svg2react())
     .pipe(rename({ extname: '.js' }))
-    .pipe(gulp.dest('./packages/bpk-component-flare/src/__generated__/js'));
+    .pipe(gulp.dest('./packages/backpack-web/src/bpk-component-flare/src/__generated__/js'));
 });
 
 gulp.task('generateFlare', gulp.series('pointer-base'));

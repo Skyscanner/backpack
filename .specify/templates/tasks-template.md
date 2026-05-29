@@ -96,7 +96,7 @@ VALIDATION:
 - [ ] T001 Create package directory `packages/bpk-component-[name]/`
 - [ ] T002 [P] Create `packages/bpk-component-[name]/index.ts` export file
 - [ ] T003 [P] Create `packages/bpk-component-[name]/README.md` stub (will be completed in Phase 5)
-- [ ] T004 [P] Create `packages/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkButton/`)
+- [ ] T004 [P] Create `packages/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkModal/`)
 - [ ] T005 [P] Create `packages/bpk-component-[name]/docs/` directory for assets
 
 ---
@@ -164,9 +164,11 @@ VALIDATION:
 
 - [ ] T015 [US1] Add prop validation and default props in component
   - Define prop types with TypeScript
-  - Set default values for optional props
-  - Add prop-types for runtime validation (during migration period)
-  - **Constitution Check**: TypeScript types + prop-types during migration
+  - Use ES6 destructuring defaults for optional props (function components)
+  - **Constitution Check**: TypeScript types REQUIRED; prop-types and
+    function-component defaultProps MUST NOT be used (React 19 ignores
+    `propTypes` checks and no longer applies `defaultProps` to function
+    components)
 
 - [ ] T016 [US1] Implement keyboard event handlers for accessibility
   - Handle Enter key
@@ -312,10 +314,10 @@ VALIDATION:
 
 - [ ] TXXX Test component in all supported browsers
   - Chrome >= 109
-  - Edge >= 129
-  - Firefox >= 131
-  - Safari >= 15
-  - Samsung >= 26
+  - Edge >= 142
+  - Firefox >= 145
+  - Safari >= 16
+  - Samsung >= 29
   - **Constitution Check**: Browser support REQUIRED
 
 - [ ] TXXX Perform manual accessibility testing

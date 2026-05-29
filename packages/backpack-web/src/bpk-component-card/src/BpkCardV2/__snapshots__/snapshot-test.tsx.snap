@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkCardV2 Snapshots matches snapshot - basic card 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surface-default"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-jay209"
+      data-backpack-ds-component="CardV2.Header"
+    >
+      Card Title
+    </div>
+    <div
+      class="css-1gldux5"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      Card content goes here
+    </div>
+    <div
+      class="css-1tj5csu"
+      data-backpack-ds-component="CardV2.Footer"
+    >
+      Card footer
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - complex layout with all sections 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surface-default"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-jay209"
+      data-backpack-ds-component="CardV2.Header"
+    >
+      Product
+    </div>
+    <div
+      class="css-1un1jtv"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        <img
+          alt="Product"
+          src="product.jpg"
+        />
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
+      />
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        <h3
+          class="bpk-text bpk-text--heading-4"
+          data-backpack-ds-component="Text"
+        >
+          Description
+        </h3>
+        <span
+          class="bpk-text bpk-text--body-default"
+          data-backpack-ds-component="Text"
+        >
+          Product details
+        </span>
+      </div>
+    </div>
+    <div
+      class="css-1tj5csu"
+      data-backpack-ds-component="CardV2.Footer"
+    >
+      <button
+        class="bpk-button bpk-button--primary"
+        data-backpack-ds-component="Button"
+        type="button"
+      >
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - elevated surface color 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surface-elevated"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-1gldux5"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      Elevated background surface
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - minimal card (body only) 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surface-default"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-1gldux5"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      Minimal card with just body
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - multi-column layout with divider 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surface-default"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-fgs40z"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Main content area (70%)
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
+      />
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Sidebar area (30%)
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - outlined variant 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--outlined bpk-card-v2--surface-default"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-jay209"
+      data-backpack-ds-component="CardV2.Header"
+    >
+      Outlined Card
+    </div>
+    <div
+      class="css-1gldux5"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      Content with border instead of shadow
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BpkCardV2 Snapshots matches snapshot - three-column layout 1`] = `
+<div>
+  <div
+    class="bpk-card-v2 bpk-card-v2--default bpk-card-v2--surface-default"
+    data-backpack-ds-component="CardV2"
+  >
+    <div
+      class="css-1he6qm"
+      data-backpack-ds-component="CardV2.Body"
+    >
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Left
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
+      />
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Center
+      </div>
+      <div
+        class="bpk-card-v2__divider"
+        data-backpack-ds-component="CardV2.Divider"
+      />
+      <div
+        class="css-592ccz"
+        data-backpack-ds-component="CardV2.Section"
+      >
+        Right
+      </div>
+    </div>
+  </div>
+</div>
+`;

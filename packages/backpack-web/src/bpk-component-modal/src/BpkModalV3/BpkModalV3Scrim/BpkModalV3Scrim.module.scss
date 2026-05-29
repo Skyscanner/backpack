@@ -1,0 +1,88 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../../bpk-mixins/tokens';
+
+.bpk-modal-v3__scrim {
+  position: fixed;
+  z-index: tokens.$bpk-zindex-modal;
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
+  background-color: tokens.$bpk-scrim-day;
+  opacity: 0;
+  inset: 0;
+  pointer-events: none;
+
+  &[data-state='open'] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &[data-state='closed'] {
+    opacity: 0;
+  }
+
+  // Auto-hide scrim for full variant
+  &--full {
+    display: none;
+  }
+
+  &--chatbot {
+    // Use CSS animation instead of transition so Ark UI's presence
+    // machine detects the exit animation and keeps the scrim mounted
+    // until it completes (Ark only listens for animationend, not transitionend).
+    transition: none;
+
+    &[data-state='open'] {
+      animation: bpk-scrim-fade-in tokens.$bpk-duration-sm ease-in-out forwards;
+    }
+
+    &[data-state='closed'] {
+      // Fade out over the same duration as the panel slide (durationBase = 400ms),
+      // no delay — scrim fades in parallel with the panel sliding off-screen.
+      // fill-mode: both ensures opacity starts at 1 (backwards) and stays at 0 (forwards).
+      animation: bpk-scrim-fade-out tokens.$bpk-duration-base ease-in-out both;
+    }
+  }
+}
+
+@keyframes bpk-scrim-fade-in {
+  from {
+    opacity: tokens.$bpk-modal-initial-opacity;
+  }
+
+  to {
+    opacity: tokens.$bpk-modal-opacity;
+  }
+}
+
+@keyframes bpk-scrim-fade-out {
+  from {
+    opacity: tokens.$bpk-modal-opacity;
+  }
+
+  to {
+    opacity: tokens.$bpk-modal-initial-opacity;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bpk-modal-v3__scrim {
+    transition: none;
+    animation: none;
+  }
+}

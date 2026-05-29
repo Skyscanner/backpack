@@ -1,0 +1,94 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import { cssModules } from '../../bpk-react-utils';
+
+import BpkBubble from './BpkBubble';
+
+import type { Meta } from '@storybook/react';
+
+import STYLES from './BpkBubble.stories.module.scss';
+
+
+const getClassNames = cssModules(STYLES);
+
+const SimpleExample = () => (
+  <div className={getClassNames('bpk-content')}>
+    <span className={getClassNames('bpk-content__container')}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+        Simple
+      </BpkText>
+
+      <span className={getClassNames('bpk-content__container__bubble-wrapper')}>
+        <BpkBubble>
+          New
+        </BpkBubble>
+      </span>
+    </span>
+  </div>
+);
+
+const WithLongLabelExample = () => (
+  <div className={getClassNames('bpk-content')}>
+    <span className={getClassNames('bpk-content__container')}>
+      <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+        With long label
+      </BpkText>
+
+      <span className={getClassNames('bpk-content__container__bubble-wrapper')}>
+        <BpkBubble>
+          Nouveau
+        </BpkBubble>
+      </span>
+    </span>
+  </div>
+);
+
+const VisualTestExample = () => (
+  <div>
+    <SimpleExample />
+    <WithLongLabelExample />
+  </div>
+);
+
+const meta = {
+  title: 'bpk-component-bubble',
+  component: BpkBubble,
+} satisfies Meta;
+
+export default meta;
+
+export const Default = {
+  render: () => <SimpleExample />,
+};
+
+export const LongLabel = {
+  render: () => <WithLongLabelExample />,
+};
+
+export const VisualTest = {
+  render: () => <VisualTestExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <VisualTestExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

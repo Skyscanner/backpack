@@ -46,7 +46,7 @@ module.exports = {
         [
           'module-resolver',
           {
-            root: ['./packages'],
+            root: ['./packages/backpack-web/src'],
             alias: {
               '^@skyscanner/bpk-svgs/dist/js/(.+)': (stats) =>
                 `@skyscanner/bpk-svgs/dist/svgs/${stats[1]}.svg`,
@@ -60,6 +60,7 @@ module.exports = {
           !!(
             fileName.includes('-test') ||
             fileName.includes('-Test') ||
+            fileName.includes('.stories') ||
             /\/node_modules\//.test(fileName) ||
             fileName.includes('.d.ts') ||
             fileName.includes('.figma.tsx')

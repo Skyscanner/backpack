@@ -1,0 +1,91 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import BpkCode from './BpkCode';
+import BpkCodeBlock from './BpkCodeBlock';
+
+import type { Meta } from '@storybook/react';
+
+const InlineExample = () => <BpkCode>npm install react --save</BpkCode>;
+const InlineAlternateExample = () => (
+  <BpkCode alternate>npm install react --save</BpkCode>
+);
+const BlockExample = () => (
+  <BpkCodeBlock>
+    import React from &apos;react&apos;;
+    <br />
+    import ReactDOM from &apos;react-dom&apos;;
+    <br />
+    ReactDOM.render( ... );
+  </BpkCodeBlock>
+);
+const BlockAlternateExample = () => (
+  <BpkCodeBlock alternate>
+    import React from &apos;react&apos;;
+    <br />
+    import ReactDOM from &apos;react-dom&apos;;
+    <br />
+    ReactDOM.render( ... );
+  </BpkCodeBlock>
+);
+
+const MixedExample = () => (
+  <div>
+    <InlineExample />
+    <InlineAlternateExample />
+    <BlockExample />
+    <BlockAlternateExample />
+  </div>
+);
+
+const meta = {
+  title: 'bpk-component-code',
+  component: BpkCode,
+  subcomponents: {
+    BpkCodeBlock,
+  },
+} satisfies Meta;
+
+export default meta;
+
+export const Inline = {
+  render: () => <InlineExample />,
+};
+
+export const InlineAlternate = {
+  render: () => <InlineAlternateExample />,
+};
+
+export const Block = {
+  render: () => <BlockExample />,
+};
+
+export const BlockAlternate = {
+  render: () => <BlockAlternateExample />,
+};
+
+export const VisualTest = {
+  render: () => <MixedExample />,
+};
+
+export const VisualTestWithZoom = {
+  render: () => <MixedExample />,
+  args: {
+    zoomEnabled: true,
+  },
+};

@@ -1,0 +1,85 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'tokens';
+
+////
+/// @group focus-indicator-v2
+////
+
+/// V2 focus indicator — base/mobile style.
+/// Applies an accent-coloured outline suitable for inputs, buttons and calendar elements.
+///
+/// @example scss
+///   .selector {
+///     &:focus-visible {
+///       @include bpk-focus-indicator-v2();
+///     }
+///   }
+
+@mixin bpk-focus-indicator-v2 {
+  border-color: tokens.$bpk-core-accent-day;
+  outline-color: tokens.$bpk-core-accent-day;
+  outline-style: auto;
+}
+
+/// V2 focus indicator — desktop enhanced style.
+/// Applies an inset focus ring with a canvas-coloured box-shadow gap for higher
+/// visibility on desktop viewports. Typically combined with `bpk-focus-indicator-v2`.
+///
+/// @example scss
+///   .selector {
+///     &:focus-visible {
+///       @include bpk-focus-indicator-v2();
+///
+///       @include breakpoints.bpk-breakpoint-above-mobile {
+///         @include bpk-focus-indicator-v2-desktop();
+///       }
+///     }
+///   }
+
+@mixin bpk-focus-indicator-v2-desktop {
+  outline-color: tokens.$bpk-core-accent-day;
+  outline-offset: calc(-1 * tokens.bpk-spacing-sm() * 0.75);
+  outline-style: solid;
+  outline-width: tokens.bpk-spacing-sm();
+  box-shadow: 0 0 0 calc(tokens.$bpk-one-pixel-rem * 2) tokens.$bpk-canvas-day;
+}
+
+/// V2 focus indicator — desktop reset.
+/// Resets the desktop inset focus styles so that the base/mobile indicator is
+/// restored. Useful inside mobile-specific breakpoint overrides.
+///
+/// @example scss
+///   .selector {
+///     &:focus-visible {
+///       @include bpk-focus-indicator-v2();
+///       @include bpk-focus-indicator-v2-desktop();
+///
+///       @include breakpoints.bpk-breakpoint-mobile {
+///         @include bpk-focus-indicator-v2-desktop-reset();
+///       }
+///     }
+///   }
+
+@mixin bpk-focus-indicator-v2-desktop-reset {
+  outline-offset: 0;
+  outline-style: auto;
+  outline-width: initial;
+  box-shadow: none;
+}

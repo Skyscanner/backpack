@@ -1,0 +1,216 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/borders';
+@use '../../bpk-mixins/breakpoints';
+@use '../../bpk-mixins/radii';
+@use '../../bpk-mixins/shadows';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
+
+@mixin animation-slide-up {
+  animation-duration: tokens.$bpk-duration-sm;
+  animation-name: slide-up;
+  animation-timing-function: ease-in-out;
+}
+
+@mixin animation-slide-down {
+  animation-duration: tokens.$bpk-duration-sm;
+  animation-name: slide-down;
+  animation-timing-function: ease-in-out;
+}
+
+.bpk-bottom-sheet {
+  z-index: tokens.$bpk-zindex-modal;
+  width: 100%;
+  max-width: tokens.$bpk-modal-max-width;
+  margin: auto;
+  transition:
+    opacity tokens.$bpk-duration-sm ease-in-out,
+    transform tokens.$bpk-duration-sm ease-in-out;
+  outline: 0;
+  background-color: tokens.$bpk-modal-background-color;
+  opacity: tokens.$bpk-modal-opacity;
+
+  // required to prevent the header extending beyond the rounded corners
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  // FIX: Prevents ugly flickering when tapping inside the modal in Mobile Safari
+  -webkit-tap-highlight-color: transparent;
+
+  @include shadows.bpk-box-shadow-xl;
+  @include radii.bpk-border-radius-sm;
+
+  @include breakpoints.bpk-breakpoint-mobile {
+    position: fixed;
+    bottom: 0;
+    height: fit-content;
+    max-height: 90%;
+    margin-bottom: 0;
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    overflow-x: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &--appear {
+    @include animation-slide-up;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      transform: scale(0.9);
+      opacity: tokens.$bpk-modal-initial-opacity;
+      animation: none;
+    }
+  }
+
+  &--appear-active {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      transform: scale(1);
+      opacity: tokens.$bpk-modal-opacity;
+    }
+  }
+
+  &--exit {
+    animation-fill-mode: forwards;
+
+    @include animation-slide-down;
+
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      animation: none;
+    }
+  }
+
+  &--content {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &--padding-base-top {
+    padding-top: tokens.bpk-spacing-base();
+  }
+
+  &--padding-base-bottom {
+    padding-bottom: tokens.bpk-spacing-base();
+  }
+
+  &--padding-base-start {
+    padding-inline-start: tokens.bpk-spacing-base();
+  }
+
+  &--padding-base-end {
+    padding-inline-end: tokens.bpk-spacing-base();
+  }
+
+  &--padding-lg-top {
+    padding-top: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-bottom {
+    padding-bottom: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-start {
+    padding-inline-start: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-lg-end {
+    padding-inline-end: tokens.bpk-spacing-lg();
+  }
+
+  &--padding-xxl-top {
+    padding-top: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-bottom {
+    padding-bottom: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-start {
+    padding-inline-start: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxl-end {
+    padding-inline-end: tokens.bpk-spacing-xxl();
+  }
+
+  &--padding-xxxl-top {
+    padding-top: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-bottom {
+    padding-bottom: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-start {
+    padding-inline-start: tokens.bpk-spacing-xxxl();
+  }
+
+  &--padding-xxxl-end {
+    padding-inline-end: tokens.bpk-spacing-xxxl();
+  }
+
+  &--wide {
+    @include breakpoints.bpk-breakpoint-above-mobile {
+      max-width: tokens.$bpk-modal-wide-max-width;
+    }
+  }
+
+  &--header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: tokens.$bpk-zindex-tooltip - 1;
+
+    @include utils.bpk-themeable-property(
+      background-color,
+      --bpk-navigation-bar-background-color,
+      tokens.$bpk-surface-default-day
+    );
+  }
+
+  &--header {
+    min-height: fit-content;
+    padding: tokens.bpk-spacing-lg();
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(0%);
+    }
+
+    100% {
+      transform: translateY(100%); /* Adjust this value as needed */
+    }
+  }
+}

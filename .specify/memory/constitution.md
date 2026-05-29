@@ -1,21 +1,19 @@
 <!--
 Sync Impact Report:
-Version: 1.0.1 → 1.0.2 (PATCH - Template improvements and example corrections)
-Modified principles: None (content clarifications only)
+Version: 1.0.2 → 1.1.0 (MINOR - Principle V guidance updated for React 19 alignment)
+Modified principles:
+- V. TypeScript Migration & Type Safety: replaced "maintain both TypeScript types
+  and prop-types during migration" with explicit guidance to remove prop-types
+  and function-component defaultProps in favour of TypeScript types and ES6
+  destructuring defaults, aligning with React 19, which ignores `propTypes`
+  checks and no longer applies `defaultProps` for function components.
 Added sections: None
 Removed sections: None
-Changes made:
-- Updated component name placeholders from BpkComponentName to Bpk[ComponentName] format across all templates for consistency
-- Changed color token examples from $bpk-color-primary to $bpk-color-white for better visual contrast demonstration
-- Added "e.g." prefix to all examples for clarity
-- Removed package.json references from templates (components don't have individual package.json in Monorepo)
-- Corrected Storybook examples structure (stories.tsx, examples.tsx in examples/ directory)
-- Adjusted task numbering in tasks-template.md after package.json removal
 Templates status:
-- ✅ .specify/templates/spec-template.md - Updated with Bpk[ComponentName] format and corrected examples
-- ✅ .specify/templates/plan-template.md - Updated structure and removed package.json reference
-- ✅ .specify/templates/tasks-template.md - Updated with correct task sequence and examples
-Follow-up TODOs: None - all templates aligned and corrected
+- ✅ .specify/templates/tasks-template.md — updated T015 to drop the
+  "Add prop-types for runtime validation" step and align its Constitution
+  Check with the new Principle V guidance
+Follow-up TODOs: None
 -->
 
 # Backpack Design System Constitution
@@ -164,7 +162,10 @@ Every public-facing component MUST meet WCAG 2.1 Level AA standards:
 All new code MUST be written in TypeScript:
 
 - Use TypeScript for all new components and utilities
-- Maintain both TypeScript types and prop-types during migration
+- When migrating a component, replace `prop-types` with TypeScript types and use
+  ES6 destructuring defaults instead of function-component `defaultProps`.
+  Class-component `defaultProps` (the static API) may remain — React 19 only
+  stopped applying it for function components
 - Generate `.d.ts` declaration files for published packages
 - Use JSDoc `@deprecated` tags for deprecated APIs
 - Add console warnings for deprecated prop usage at runtime
@@ -178,7 +179,7 @@ type MyCompProps = {
 }
 ```
 
-**Rationale**: TypeScript provides type safety, better IDE support, and catches errors at compile time. See `decisions/ts-deprecating-props.md`.
+**Rationale**: TypeScript provides type safety, better IDE support, and catches errors at compile time. React 19 silently ignores `propTypes` checks and no longer applies `defaultProps` on function components ([upgrade guide](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#removed-proptypes-and-defaultprops)), so retaining them during a function-component migration is either no-op or non-functional. See `decisions/ts-deprecating-props.md`.
 
 ### VI. Semantic Versioning (SemVer)
 
@@ -208,11 +209,11 @@ Create V2 component if change requires:
 
 **V2 Component Structure**:
 ```
-packages/bpk-component-button/src/
-├── BpkButton/           # V1 (current)
-│   └── BpkButton.tsx
-└── BpkButtonV2/         # V2 (future, experimental)
-    └── BpkButton.tsx
+packages/bpk-component-modal/src/
+├── BpkModal/           # V1 (current)
+│   └── BpkModal.tsx
+└── BpkModalV2/         # V2 (future, experimental)
+    └── BpkModal.tsx
 ```
 
 **V2 Guidelines**:
@@ -350,7 +351,7 @@ Experimental features MUST follow a controlled lifecycle to enable A/B testing w
 - Update API documentation to indicate experimental status
 
 **Major Changes** (new V2 component):
-- Create experimental V2 component following V2 naming: `Bpk[ComponentName]V2` (e.g., `BpkButtonV2`)
+- Create experimental V2 component following V2 naming: `Bpk[ComponentName]V2` (e.g., `BpkModalV2`)
 - Path: `packages/bpk-component-[name]/src/Bpk[Name]V2/`
 - If experiment succeeds: V1 deprecated, V2 becomes default in next MAJOR version
 - If experiment fails: V2 removed
@@ -404,10 +405,10 @@ Components MUST be built with performance in mind:
 - **TypeScript**: 5.9.2
 - **Browsers** (from [browserslist-config-skyscanner](https://github.skyscannertools.net/web-engineering/browserslist-config-skyscanner)):
   - Chrome >= 109
-  - Edge >= 129
-  - Firefox >= 131
-  - Safari >= 15
-  - Samsung >= 26
+  - Edge >= 142
+  - Firefox >= 145
+  - Safari >= 16
+  - Samsung >= 29
 
 ### Build Tools & Testing
 
@@ -500,11 +501,15 @@ Constitution amendments require:
 
 ### Version History
 
-- **Version**: 1.0.2
+- **Version**: 1.1.0
 - **Ratified**: 2025-12-22
-- **Last Amended**: 2026-01-19
+- **Last Amended**: 2026-05-20
 
 **Changelog**:
+- v1.1.0 (2026-05-20): Updated Principle V (TypeScript Migration & Type Safety) to align with React 19
+  - Replaced "maintain both TypeScript types and prop-types during migration" guidance with explicit instruction to remove `prop-types` and function-component `defaultProps` in favour of TypeScript types and ES6 destructuring defaults
+  - Added React 19 upgrade guide reference in Rationale
+  - Reflects current migration practice (BpkProgress, BpkRadio, BpkFormValidation, BpkAutosuggest, BpkPagination)
 - v1.0.2 (2026-01-19): Template improvements and example corrections
   - Standardized component name placeholders to `Bpk[ComponentName]` format
   - Updated color token examples to use `$bpk-color-white` for better contrast demonstration

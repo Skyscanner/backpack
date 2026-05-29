@@ -29,13 +29,13 @@ const rm = (path, options) =>
 gulp.task('copy', () =>
   gulp
     .src(`${ICONS_FOLDER_PATH}/**/*`)
-    .pipe(gulp.dest('./packages/bpk-component-icon')),
+    .pipe(gulp.dest('./packages/backpack-web/src/bpk-component-icon')),
 );
 
 gulp.task('clean', () =>
   Promise.all([
-    rm('./packages/bpk-component-icon/sm', { force: true, recursive: true }),
-    rm('./packages/bpk-component-icon/lg', { force: true, recursive: true }),
+    rm('./packages/backpack-web/src/bpk-component-icon/sm', { force: true, recursive: true }),
+    rm('./packages/backpack-web/src/bpk-component-icon/lg', { force: true, recursive: true }),
   ]),
 );
 gulp.task('generateIcons', gulp.series('clean', 'copy'));

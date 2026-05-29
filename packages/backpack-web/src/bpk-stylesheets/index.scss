@@ -1,0 +1,91 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* stylelint-disable at-rule-disallowed-list */
+@use '../bpk-mixins/tokens';
+@use '../bpk-mixins/utils';
+@use './normalize';
+
+// stylelint-disable-next-line selector-max-type
+html {
+  font-size: tokens.$bpk-font-size-root;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+/* stylelint-disable selector-class-pattern */
+body {
+  color: tokens.$bpk-font-color-base;
+  font-family: var(--bpk-base-font-stack, tokens.$bpk-font-family-base);
+  font-size: tokens.$bpk-font-size-base;
+  line-height: 1.3rem; /* stylelint-disable-line scale-unlimited/declaration-strict-value */
+}
+
+:global(body.scaffold-font-size) {
+  font-size: 13px; /* stylelint-disable-line unit-disallowed-list, scale-unlimited/declaration-strict-value */
+}
+
+:global(body.enable-font-smoothing) {
+  -webkit-font-smoothing: antialiased;
+}
+
+// normalize.css 4.x ships Firefox `:-moz-focusring` rules for both `button` and
+// button-like input controls. These have mixed specificity: `button:-moz-focusring`
+// is 0-1-1, while `[type='button'|'reset'|'submit']:-moz-focusring` is 0-2-0, and
+// both beat a bare `:focus-visible` rule (0-1-0) in Firefox. Adding matching
+// button/control `:focus-visible` selectors lets Backpack's ring win by source
+// order, restoring WCAG-compliant focus visibility on those controls.
+:focus-visible,
+button:focus-visible,
+[type='button']:focus-visible,
+[type='reset']:focus-visible,
+[type='submit']:focus-visible {
+  @include utils.bpk-focus-indicator;
+}
+
+:global(.hidden),
+:global(.hide) {
+  @include utils.bpk-hidden;
+}
+
+:global(.visuallyhidden),
+:global(.visually-hidden) {
+  @include utils.bpk-visually-hidden;
+}
+
+:global(.visuallyhidden.focusable),
+:global(.visually-hidden.focusable) {
+  @include utils.bpk-visually-hidden--focusable;
+}
+
+:global(.invisible) {
+  @include utils.bpk-invisible;
+}
+
+:global(.clearfix) {
+  @include utils.bpk-clearfix;
+}
+/* stylelint-enable selector-class-pattern */
+/* stylelint-enable at-rule-disallowed-list */

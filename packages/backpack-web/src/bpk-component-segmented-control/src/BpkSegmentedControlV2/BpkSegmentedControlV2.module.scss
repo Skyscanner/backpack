@@ -1,0 +1,110 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../bpk-mixins/segmented-control';
+@use '../../../bpk-mixins/tokens';
+@use '../../../bpk-mixins/utils';
+
+.bpk-segmented-control-v2 {
+  @include segmented-control.bpk-segmented-control-v2;
+
+  &--canvas-default {
+    @include segmented-control.bpk-segmented-control-v2--canvas-default;
+  }
+
+  &--canvas-contrast {
+    @include segmented-control.bpk-segmented-control-v2--canvas-contrast;
+
+    .bpk-segmented-control-v2__indicator {
+      @include segmented-control.bpk-segmented-control-v2__indicator--canvas-contrast;
+    }
+  }
+
+  &--surface-default {
+    @include segmented-control.bpk-segmented-control-v2--surface-default;
+
+    .bpk-segmented-control-v2__indicator {
+      @include segmented-control.bpk-segmented-control-v2__indicator--surface-default;
+    }
+  }
+
+  &--surface-contrast {
+    @include segmented-control.bpk-segmented-control-v2--surface-contrast;
+
+    .bpk-segmented-control-v2__indicator {
+      @include segmented-control.bpk-segmented-control-v2__indicator--surface-contrast;
+    }
+
+    .bpk-segmented-control-v2__item-text {
+      @include segmented-control.bpk-segmented-control-v2__item-text--surface-contrast;
+    }
+  }
+
+  &--shadow {
+    @include segmented-control.bpk-segmented-control-v2--shadow;
+  }
+
+  // stylelint-disable-next-line selector-attribute
+  > [data-part='label'] {
+    @include segmented-control.bpk-segmented-control-v2__label;
+  }
+}
+
+.bpk-segmented-control-v2__indicator {
+  @include segmented-control.bpk-segmented-control-v2__indicator;
+}
+
+.bpk-segmented-control-v2__item {
+  @include segmented-control.bpk-segmented-control-v2__item;
+
+  &:first-of-type .bpk-segmented-control-v2__item-text {
+    border-inline-start: none;
+  }
+
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  &:has([data-state='checked']) .bpk-segmented-control-v2__item-text {
+    border-inline-start-color: transparent;
+  }
+
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  &:has([data-state='checked']) + .bpk-segmented-control-v2__item {
+    // stylelint-disable-next-line selector-max-compound-selectors
+    .bpk-segmented-control-v2__item-text {
+      border-inline-start-color: transparent;
+    }
+  }
+
+  // Use inset outline so it isn't clipped by the root's overflow: hidden.
+  // Applied to the item (grid cell) so it renders above sibling items.
+  // stylelint-disable-next-line selector-pseudo-class-no-unknown
+  &:has(:focus-visible) {
+    z-index: 1;
+    outline: calc(tokens.$bpk-one-pixel-rem * 2) solid tokens.$bpk-text-link-day;
+    outline-offset: calc(tokens.$bpk-one-pixel-rem * -2);
+  }
+}
+
+.bpk-segmented-control-v2__item-control {
+  @include segmented-control.bpk-segmented-control-v2__item-control;
+}
+
+.bpk-segmented-control-v2__item-text {
+  padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-md();
+
+  @include segmented-control.bpk-segmented-control-v2__item-text;
+}

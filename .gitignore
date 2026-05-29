@@ -4,21 +4,42 @@
 .env
 .sass-cache
 /dist
+/packages/backpack-web/dist
 /dist-sassdoc
-/dist-storybook
+/libs/backpack-storybook-host/dist-storybook
 /coverage
-/packages/bpk-component-icon/*/
-/packages/bpk-component-spinner/src/spinners
-/packages/bpk-component-flare/src/__generated__
-!/packages/bpk-component-icon/src
+/packages/backpack-web/src/bpk-component-icon/*/
+/packages/backpack-web/src/bpk-component-spinner/src/spinners
+/packages/backpack-web/src/bpk-component-flare/src/__generated__
+!/packages/backpack-web/src/bpk-component-icon/src
+!/packages/backpack-web/src/bpk-component-icon/scripts
 node_modules
 npm-debug.*
 yarn.lock
-/packages/*/changelog.md
+/packages/backpack-web/src/*/changelog.md
 .storybook/__image_snapshots__/__diff_output__
 
 # Ignore css assets as these should be built on demand from sass
 *.css
-!packages/bpk-stylesheets/base.css
-/packages/bpk-stylesheets/normalize.scss
+!packages/backpack-web/src/bpk-stylesheets/base.css
+!token-sync/css/*.css
+/packages/backpack-web/src/bpk-stylesheets/normalize.scss
 .copilot-progress
+
+# Playwright
+.playwright-cli
+
+# OpenSpec - until Backpack officially endorses it
+.claude/commands/opsx
+.claude/skills/openspec-*
+.claude/settings.local.json
+openspec
+
+# Nx
+.nx/cache
+.nx/workspace-data
+*.tsbuildinfo
+/dist/out-tsc
+storybook-static
+debug-storybook.log
+.context

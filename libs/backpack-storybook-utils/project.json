@@ -1,0 +1,63 @@
+{
+  "name": "backpack-storybook-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backpack-storybook-utils/src",
+  "projectType": "library",
+  "tags": ["scope:internal", "type:tooling"],
+  "//": "test target is intentionally omitted — BpkStorybookUtils-test.js fails to resolve `storybook/addon-actions` after the Storybook 10 upgrade. Re-enable once that import is fixed and broaden jest.config.js testRegex to cover libs/.",
+  "targets": {
+    "lint-js": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint libs/backpack-storybook-utils --ext .js,.jsx,.ts,.tsx",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{js,jsx,ts,tsx}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ],
+      "cache": true
+    },
+    "lint-scss": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint 'libs/backpack-storybook-utils/**/*.scss'",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.scss",
+        "{workspaceRoot}/.stylelintrc*"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run backpack-storybook-utils:lint-js",
+          "nx run backpack-storybook-utils:lint-scss"
+        ],
+        "parallel": false
+      },
+      "cache": true
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --build libs/backpack-storybook-utils/tsconfig.lib.json",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{ts,tsx}",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/tsconfig.base.json"
+      ],
+      "outputs": [
+        "{projectRoot}/.tsbuildinfo",
+        "{workspaceRoot}/dist/out-tsc/libs/backpack-storybook-utils"
+      ],
+      "cache": true
+    }
+  }
+}
