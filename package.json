@@ -188,7 +188,7 @@
     "ts-migrate": "^0.1.35",
     "tsx": "^4.19.2",
     "typescript": "^5.9.2",
-    "webpack": "^5.103.0",
+    "webpack": "^5.104.1",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
