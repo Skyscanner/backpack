@@ -17,9 +17,6 @@
  */
 
 import './index.scss';
-import './primitives.css';
-import './theme-backpack-light.css';
-import './theme-backpack-dark.css';
 
 (() => {
   if (typeof document === 'undefined') {
