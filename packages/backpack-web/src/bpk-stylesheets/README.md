@@ -115,13 +115,13 @@ Defined in `font.scss`, `larken.scss`
    - Keep `font-family` names and weights the same unless design says otherwise.
    - If the CDN path changes, update `$base-url` at the top of the file.
 3. Build
-   
+
    ```bash
-   npm run build:stylesheets
+   nx run backpack-web:build-stylesheets
    ```
 4) Verify
   - Import bundles:
-    
+
     ```js
     import '@skyscanner/backpack-web/bpk-stylesheets/font';
     import '@skyscanner/backpack-web/bpk-stylesheets/larken';
@@ -154,11 +154,11 @@ Defined in `font.scss`, `larken.scss`
 
 Don't forget to rebuild and commit `base.css` after you make changes to this package.
 
-To build the `base.css` file run `npm run build:stylesheets` in the root folder.
+To build the `base.css` file run `nx run backpack-web:build-stylesheets` in the root folder.
 
 The webpack build depends on two sets of files that are gitignored and copied in at build time:
 
-- `normalize.scss` — copied from `node_modules/normalize.css/` by `npm run build:copy-normal_css`. Imported via `@use` in `index.scss`.
-- `primitives.css`, `theme-backpack-light.css`, `theme-backpack-dark.css` — copied from `token-sync/css/` by `npm run copy:token-css`. Imported in `index.js` so they go through webpack's CSS pipeline, which minifies via `css-minimizer-webpack-plugin` and strips per-file license blocks. The Backpack license header is preserved as a `/*!` important comment.
+- `normalize.scss` — copied from `node_modules/normalize.css/` by `nx run backpack-web:copy-normalize-css`. Imported via `@use` in `index.scss`.
+- `primitives.css`, `theme-backpack-light.css`, `theme-backpack-dark.css` — copied from `token-sync/css/` by `nx run backpack-web:copy-token-css`. Imported in `index.js` so they go through webpack's CSS pipeline, which minifies via `css-minimizer-webpack-plugin` and strips per-file license blocks. The Backpack license header is preserved as a `/*!` important comment.
 
-`build:stylesheets` invokes `copy:token-css` automatically, so `npm run build` and `npm run build:stylesheets` both work standalone (including after a fresh checkout or after regenerating tokens with `npm run tokens:sync`). For `build:sass`, run `npm run build:copy-normal_css` first if `normalize.scss` isn't already vendored.
+`nx run backpack-web:build-stylesheets` declares `copy-normalize-css` and `copy-token-css` as dependencies in `project.json`, so both files are copied automatically before the webpack build runs. `npm run build` also works (it runs `nx run-many -t build`). For `nx run backpack-web:build-sass`, run `nx run backpack-web:copy-normalize-css` first if `normalize.scss` isn't already vendored.
