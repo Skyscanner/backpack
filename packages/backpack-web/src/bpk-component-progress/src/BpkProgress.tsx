@@ -76,7 +76,7 @@ class BpkProgress extends Component<Props> {
       value,
     } = this.props;
     if (value >= max && value !== previousProps.value) {
-      onComplete();
+      onComplete?.();
 
       if (!isTransitionEndSupported() && onCompleteTransitionEnd) {
         onCompleteTransitionEnd();
