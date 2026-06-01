@@ -45,7 +45,7 @@
     tokens.$bpk-border-radius-xs
   );
   @include typography.bpk-text;
-  @include typography.bpk-footnote;
+  @include typography.bpk-caption;
   @include utils.bpk-themeable-property(
     font-size,
     --bpk-badge-font-size,
