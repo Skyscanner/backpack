@@ -278,7 +278,7 @@
       "$value": "0px"
     },
     "full": {
-      "$value": "100px"
+      "$value": "999px"
     },
     "lg": {
       "$value": "24px"
@@ -299,38 +299,38 @@
   },
   "Spacing": {
     "base": {
-      "$value": "16px"
+      "$value": 16
     },
     "lg": {
-      "$value": "24px"
+      "$value": 24
     },
     "md": {
-      "$value": "8px"
+      "$value": 8
     },
     "none": {
-      "$value": "0px"
+      "$value": 0
     },
     "sm": {
-      "$value": "4px"
+      "$value": 4
     },
     "xl": {
-      "$value": "32px"
+      "$value": 32
     },
     "xs": {
-      "$value": "2px"
+      "$value": 2
     },
     "xxl": {
-      "$value": "40px"
+      "$value": 40
     },
     "xxs": {
-      "$value": "1px"
+      "$value": 1
     },
     "xxxl": {
-      "$value": "64px"
+      "$value": 64
     },
     "xxxxl": {
-      "$value": "96px"
+      "$value": 96
     },
-    "$type": "dimension"
+    "$type": "fontWeight"
   }
 }
