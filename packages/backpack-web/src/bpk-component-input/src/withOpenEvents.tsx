@@ -147,7 +147,7 @@ const withOpenEvents = <P extends object>(WithOpenEventsInputComponent: Componen
       }
     };
 
-    render(): ReactElement {
+    render(): ReactElement<any> {
       const {
         className,
         hasTouchSupport,

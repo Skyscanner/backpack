@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import type { CSSProperties, ReactNode, RefObject } from 'react';
+import type { CSSProperties, MutableRefObject, ReactNode, Ref } from 'react';
+import { useCallback, useRef } from 'react';
 
 import { Transition } from 'react-transition-group';
 
@@ -33,7 +34,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   children: ReactNode,
-  dialogRef: () => RefObject<HTMLElement>,
+  dialogRef: Ref<HTMLElement>,
   onCloseAnimationComplete: () => void,
   onClose: () => void
   id: string,
@@ -96,8 +97,23 @@ const BpkDrawerContent = ({
 
   const headingId = `bpk-drawer-heading-${id}`;
 
+  const nodeRef = useRef<HTMLElement | null>(null);
+  const setRefs = useCallback(
+    (el: HTMLElement | null) => {
+      nodeRef.current = el;
+      const consumerRef = dialogRef;
+      if (typeof consumerRef === 'function') {
+        consumerRef(el);
+      } else if (consumerRef) {
+        (consumerRef as MutableRefObject<HTMLElement | null>).current = el;
+      }
+    },
+    [dialogRef],
+  );
+
   return (
     <Transition
+      nodeRef={nodeRef}
       timeout={{
         enter: 0,
         exit: parseInt(animations.durationSm, 10),
@@ -124,7 +140,7 @@ const BpkDrawerContent = ({
             drawerClassNames.join(' '),
             getClassName(`bpk-drawer--${status}`, mobileModalDisplay ? `bpk-drawer__modal-mobile-view--${status}` : undefined),
           ].join(' ')}
-          ref={dialogRef}
+          ref={setRefs}
           {...rest}
         >
           <header className={getClassName('bpk-drawer__header')}>

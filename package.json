@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "nx run-many -t build",
+    "build:gulp": "gulp",
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
@@ -87,6 +88,9 @@
     },
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/scripts/jest/normalizeUseIdSerializer.js"
     ],
     "testEnvironment": "jsdom",
     "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",

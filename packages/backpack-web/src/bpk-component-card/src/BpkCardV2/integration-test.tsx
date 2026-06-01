@@ -28,7 +28,7 @@ import { CARD_V2_SURFACE_COLORS } from './common-types';
 
 const toKebab = (s: string) => s.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`);
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkCardV2 Integration Tests', () => {

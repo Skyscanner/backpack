@@ -25,7 +25,7 @@ import BpkDrawerContent from './BpkDrawerContent';
 jest.mock(
   'react-transition-group/Transition',
   () =>
-    ({ children }: { children: (state: string) => ReactElement }) =>
+    ({ children }: { children: (state: string) => ReactElement<any> }) =>
       children('entered'),
 );
 

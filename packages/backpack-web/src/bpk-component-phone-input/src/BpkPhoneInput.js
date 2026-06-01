@@ -75,21 +75,21 @@ type CommonProps = {
 
 const BpkPhoneInput = (props: Props) => {
   const {
-    className,
+    className = null,
     dialingCode,
-    dialingCodeMask,
+    dialingCodeMask = false,
     dialingCodeProps,
     dialingCodes,
-    disabled,
+    disabled = false,
     id,
     label,
-    large,
+    large = false,
     name,
     onChange,
     onDialingCodeChange,
-    valid,
+    valid = null,
     value,
-    wrapperProps,
+    wrapperProps = {},
     ...rest
   } = props;
 
@@ -170,9 +170,9 @@ const BpkPhoneInput = (props: Props) => {
         >
           {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
             // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-            <option key={code} value={code} {...extraDialingProps}>
+            (<option key={code} value={code} {...extraDialingProps}>
               {description}
-            </option>
+            </option>)
           ))}
         </BpkSelect>
       </div>
@@ -227,15 +227,6 @@ BpkPhoneInput.propTypes = {
   large: PropTypes.bool,
   valid: PropTypes.bool,
   wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkPhoneInput.defaultProps = {
-  className: null,
-  disabled: false,
-  dialingCodeMask: false,
-  large: false,
-  valid: null,
-  wrapperProps: {},
 };
 
 export default BpkPhoneInput;
