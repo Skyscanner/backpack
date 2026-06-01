@@ -17,6 +17,9 @@
  */
 
 import BpkCalendarContainer, {
+  DEFAULT_MARK_TODAY,
+  DEFAULT_MAX_DATE,
+  DEFAULT_MIN_DATE,
   withCalendarState,
 } from './src/BpkCalendarContainer';
 import BpkCalendarDate, {
@@ -56,6 +59,9 @@ export {
   BpkCalendarDate,
   DateUtils,
   CALENDAR_SELECTION_TYPE,
+  DEFAULT_MARK_TODAY,
+  DEFAULT_MAX_DATE,
+  DEFAULT_MIN_DATE,
   DaysOfWeek,
   ReactComponent,
   WeekDay,

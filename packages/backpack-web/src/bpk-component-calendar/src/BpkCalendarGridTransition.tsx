@@ -81,12 +81,6 @@ type State = {
 class BpkCalendarGridTransition extends Component<Props, State> {
   isTransitionEndSupported: boolean;
 
-  static defaultProps = {
-    className: null,
-    month: new Date(),
-    focusedDate: null,
-  };
-
   constructor(props: Props) {
     super(props);
 

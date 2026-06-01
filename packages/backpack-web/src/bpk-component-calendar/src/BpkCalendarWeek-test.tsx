@@ -34,7 +34,6 @@ const DummyDateComponent = (props: any) => {
 };
 
 const initialProps: Props = {
-  ...BpkCalendarWeek.defaultProps,
   DateComponent: DummyDateComponent,
   dateModifiers: {},
   dates: [
