@@ -205,5 +205,7 @@ default layout doesn't suit your build pipeline.
 ### Combined sync + build
 
 ```bash
-npm run tokens:sync
+npm run tokens:sync && nx run backpack-web:build-stylesheets
 ```
+
+`tokens:sync` regenerates `token-sync/css/`; `nx run backpack-web:build-stylesheets` copies them into `bpk-stylesheets/` and rebuilds `base.css` so the new tokens reach the published bundle.
