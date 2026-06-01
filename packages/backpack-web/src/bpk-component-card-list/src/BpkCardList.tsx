@@ -48,7 +48,6 @@ const BpkCardList = (props: CardListProps) => {
     chipGroup,
     description,
     expandText,
-    initiallyInViewCardIndex = 0,
     initiallyShownCardsDesktop = DEFAULT_ITEMS_DESKTOP,
     initiallyShownCardsMobile = DEFAULT_ITEMS_MOBILE,
     layoutDesktop,
@@ -106,7 +105,6 @@ const BpkCardList = (props: CardListProps) => {
                       initiallyShownCards={initiallyShownCardsMobile}
                       layout={layoutMobile}
                       accessibilityLabels={accessibilityLabels}
-                      initiallyInViewCardIndex={initiallyInViewCardIndex}
                       isMobile
                     >
                       {cardList}
@@ -137,7 +135,6 @@ const BpkCardList = (props: CardListProps) => {
                         initiallyShownCards={initiallyShownCardsDesktop}
                         layout={layoutDesktop}
                         accessibilityLabels={accessibilityLabels}
-                        initiallyInViewCardIndex={initiallyInViewCardIndex}
                       >
                         {cardList}
                       </BpkCardListRowRailContainer>

@@ -100,7 +100,6 @@ type UsePageScrollSyncOptions = {
   visibilityList: number[];
   container: HTMLElement | null;
   enabled: boolean;
-  initialPageIndex: number;
 };
 
 /**
@@ -120,7 +119,6 @@ export const usePageScrollSync = ({
   container,
   currentIndex,
   enabled,
-  initialPageIndex,
   initiallyShownCards,
   setCurrentIndex,
   visibilityList,
@@ -130,28 +128,6 @@ export const usePageScrollSync = ({
     null,
   );
   const lastCurrentIndexRef = useRef<number>(currentIndex);
-  const hasInitialScrolled = useRef(false);
-
-  // Effect 0: Initial scroll (instant, runs once on mount)
-  useEffect(() => {
-    if (hasInitialScrolled.current) {
-      return;
-    }
-    hasInitialScrolled.current = true;
-
-    if (!enabled || initialPageIndex === 0) {
-      return;
-    }
-
-    const targetCard = cardRefs.current?.[initialPageIndex * initiallyShownCards];
-    if (targetCard) {
-      targetCard.scrollIntoView({
-        behavior: 'instant',
-        block: 'nearest',
-        inline: 'start',
-      });
-    }
-  }, [cardRefs, enabled, initialPageIndex, initiallyShownCards]); // Run once on mount only
 
   // Effect 1: Programmatic scroll when currentIndex changes
   useEffect(() => {
