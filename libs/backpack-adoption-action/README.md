@@ -21,3 +21,20 @@ Backpack adoption rate.
 
 The guard threshold is maintained inside the action and is not configurable by
 consumer repositories.
+
+## Source structure
+
+```text
+src/
+├── action/        # GitHub Action orchestration, input/output, step summary
+├── analysis/      # Repository scanning and JSX/CSS adoption metrics
+├── cortex/        # Cortex custom data upload
+├── git/           # Pull request base checkout helpers
+├── guard/         # Adoption guard decision logic
+└── shared/        # Constants and shared result types
+```
+
+`src/action/run.ts` should stay thin: it wires inputs, analysis, guard
+evaluation, results writing, and optional Cortex upload. The adoption metric
+logic belongs under `src/analysis/`, and the PR blocking policy belongs under
+`src/guard/`.
