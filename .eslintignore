@@ -1,5 +1,6 @@
 node_modules
 dist
+libs/backpack-adoption-action/dist
 packages/backpack-web/dist
 dist-storybook
 coverage

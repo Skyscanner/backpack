@@ -1,0 +1,12 @@
+{
+  "name": "@skyscanner/backpack-adoption-action",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --format=cjs --outfile=dist/index.js",
+    "lint": "eslint src jest.config.js --ext .js,.ts",
+    "test": "jest --config jest.config.js",
+    "typecheck": "tsc --project tsconfig.json",
+    "verify-dist": "npm run build && git diff --exit-code -- dist/index.js"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "../../.eslintrc",
+  "env": {
+    "browser": false,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "backpack/use-tokens": "off",
+    "compat/compat": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "no-console": "off",
+    "no-continue": "off",
+    "no-param-reassign": "off",
+    "prefer-destructuring": "off"
+  }
+}

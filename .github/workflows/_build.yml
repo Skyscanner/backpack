@@ -74,6 +74,9 @@ jobs:
       - name: Build (affected)
         run: npx nx affected -t build --parallel=3
 
+      - name: Verify committed dist (affected)
+        run: npx nx affected -t verify-dist --parallel=3
+
       - name: Confirm the build hasn't changed any files
         run: ./scripts/check-pristine-state package-lock.json
 

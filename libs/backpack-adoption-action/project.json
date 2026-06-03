@@ -1,0 +1,59 @@
+{
+  "name": "backpack-adoption-action",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backpack-adoption-action/src",
+  "projectType": "library",
+  "tags": ["scope:internal", "type:tooling"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm --workspace @skyscanner/backpack-adoption-action run build"
+      },
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true,
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm --workspace @skyscanner/backpack-adoption-action run lint"
+      },
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.{js,ts}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm --workspace @skyscanner/backpack-adoption-action run test"
+      },
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm --workspace @skyscanner/backpack-adoption-action run typecheck"
+      },
+      "outputs": [],
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/tsconfig.base.json",
+        "{workspaceRoot}/tsconfig.json"
+      ]
+    },
+    "verify-dist": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm --workspace @skyscanner/backpack-adoption-action run verify-dist"
+      },
+      "cache": false
+    }
+  }
+}
