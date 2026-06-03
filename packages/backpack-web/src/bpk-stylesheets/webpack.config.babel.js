@@ -18,6 +18,7 @@
 
 const path = require('path');
 
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WrapperPlugin = require('wrapper-webpack-plugin');
 
@@ -41,7 +42,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 `;
 
-const licenseHeader = `/*
+// Use a `/*!` "important" comment so CssMinimizerPlugin (cssnano) preserves
+// it through minification.
+const licenseHeader = `/*!
 ${TEXT.replace(/^/gm, ' * ')}
  */`;
 
@@ -54,6 +57,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, ''),
     filename: 'base.js',
+  },
+
+  optimization: {
+    minimizer: ['...', new CssMinimizerPlugin()],
   },
 
   module: {

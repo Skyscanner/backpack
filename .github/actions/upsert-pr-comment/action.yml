@@ -1,0 +1,59 @@
+name: Upsert PR Comment
+description: Create or update a comment on a pull request, identified by a unique marker
+
+inputs:
+  pr_number:
+    description: The pull request number to comment on
+    required: true
+  marker:
+    description: HTML comment marker used to identify and update existing comments
+    required: true
+  body:
+    description: Full comment body (should include the marker)
+    required: true
+  github_token:
+    description: GitHub token for API authentication
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Create or update PR comment
+      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+      env:
+        PR_NUMBER: ${{ inputs.pr_number }}
+        COMMENT_MARKER: ${{ inputs.marker }}
+        COMMENT_BODY: ${{ inputs.body }}
+      with:
+        github-token: ${{ inputs.github_token }}
+        script: |
+          const prNumber = Number(process.env.PR_NUMBER);
+          const marker = process.env.COMMENT_MARKER;
+          const body = process.env.COMMENT_BODY;
+
+          const { data: comments } = await github.rest.issues.listComments({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: prNumber,
+          });
+
+          const existingComment = comments.find(comment => comment.body.includes(marker));
+
+          if (existingComment) {
+            await github.rest.issues.updateComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: existingComment.id,
+              body,
+            });
+            core.info(`Updated existing comment ${existingComment.id}`);
+          } else {
+            const { data: created } = await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body,
+            });
+            core.info(`Created new comment ${created.id}`);
+          }
