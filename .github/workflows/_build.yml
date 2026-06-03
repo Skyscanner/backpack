@@ -13,7 +13,7 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache-v2
+  CACHE_NAME: node-modules-cache-v3
   BUILD_CACHE_NAME: build-cache
   BUILD_LOGS: log-artifacts-build
 

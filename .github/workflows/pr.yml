@@ -2,7 +2,6 @@ name: PR
 
 on:
   pull_request:
-    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -13,7 +12,7 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache-v2
+  CACHE_NAME: node-modules-cache-v3
   BUILD_CACHE_NAME: build-cache
 
 permissions: {}

@@ -10,6 +10,7 @@ publicHoistPattern:
   - '*stylelint*'
   - '*prettier*'
 linkWorkspacePackages: true
+shamefullyHoist: true
 allowBuilds:
   '@parcel/watcher': true
   '@percy/core': true
