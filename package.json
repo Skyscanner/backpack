@@ -190,11 +190,12 @@
   },
   "pnpm": {
     "overrides": {
-      "braces": "3.0.3"
+      "braces": "3.0.3",
+      "eslint": "^8.57.1"
     },
     "peerDependencyRules": {
       "allowedVersions": {
-        "eslint": "9",
+        "eslint": "8",
         "react": "18",
         "react-dom": "18"
       }
