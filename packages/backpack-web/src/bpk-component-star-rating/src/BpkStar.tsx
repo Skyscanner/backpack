@@ -96,7 +96,7 @@ const BpkStar = ({
 
   if (type === STAR_TYPES.HALF) {
     return (
-      <span className={[containerClassNames, halfIconClassNames] as unknown as string} {...rest}>
+      <span className={[containerClassNames, halfIconClassNames].join(' ')} {...rest}>
         <HalfIcon />
       </span>
     );

@@ -356,7 +356,7 @@ exports[`BpkStarRating should render correctly with "rounding" attribute 1`] = `
       </svg>
     </span>
     <span
-      class="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support,bpk-star bpk-star--half bpk-star--filled"
+      class="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support bpk-star bpk-star--half bpk-star--filled"
     >
       <svg
         aria-hidden="true"
@@ -615,7 +615,7 @@ exports[`BpkStarRating should render correctly with 3.5 stars 1`] = `
       </svg>
     </span>
     <span
-      class="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support,bpk-star bpk-star--half bpk-star--filled"
+      class="bpk-star__container bpk-star__container--half-star bpk-icon--rtl-support bpk-star bpk-star--half bpk-star--filled"
     >
       <svg
         aria-hidden="true"

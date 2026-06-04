@@ -17,7 +17,7 @@
  */
 
 import { Component } from 'react';
-import type { ComponentType, MouseEvent, SyntheticEvent } from 'react';
+import type { ComponentType, MouseEvent } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
@@ -59,10 +59,6 @@ const withInteractiveStarRatingState = <P extends object>(
       rating: number,
       event?: MouseEvent<HTMLButtonElement> | null,
     ) => {
-      if (event) {
-        (event as SyntheticEvent).persist();
-      }
-
       const callback = () => {
         if (this.props.onRatingSelect) {
           this.props.onRatingSelect(rating, event);
@@ -81,9 +77,10 @@ const withInteractiveStarRatingState = <P extends object>(
     };
 
     render() {
+      const { onRatingSelect, ...rest } = this.props;
       return (
         <InteractiveStarRating
-          {...(this.props as P)}
+          {...(rest as P)}
           rating={this.state.rating}
           hoverRating={this.state.hoverRating}
           onRatingHover={this.onRatingHover}
