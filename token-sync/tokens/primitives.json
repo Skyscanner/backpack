@@ -32,6 +32,18 @@
     },
     "$type": "color"
   },
+  "Border": {
+    "1": {
+      "$value": "1px"
+    },
+    "2": {
+      "$value": "2px"
+    },
+    "3": {
+      "$value": "3px"
+    },
+    "$type": "dimension"
+  },
   "Colour": {
     "Amber": {
       "$value": "#f55d42"
@@ -278,7 +290,7 @@
       "$value": "0px"
     },
     "full": {
-      "$value": "100px"
+      "$value": "999px"
     },
     "lg": {
       "$value": "24px"

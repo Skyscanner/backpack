@@ -19,8 +19,11 @@
  */
 
 :root {
+  --bpk-border-1: 0.0625rem;
+  --bpk-border-2: 0.125rem;
+  --bpk-border-3: 0.1875rem;
   --bpk-radius-none: 0;
-  --bpk-radius-full: 6.25rem;
+  --bpk-radius-full: 62.4375rem;
   --bpk-radius-lg: 1.5rem;
   --bpk-radius-md: 0.75rem;
   --bpk-radius-nav-tabs: 1.125rem;
