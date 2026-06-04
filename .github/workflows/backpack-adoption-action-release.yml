@@ -36,7 +36,7 @@ jobs:
 
       - run: npx nx run backpack-adoption-action:test
 
-      - run: npx nx run backpack-adoption-action:build
+      - run: npx nx run backpack-adoption-action:verify-dist
 
   UpdateMajorTag:
     if: ${{ startsWith(github.event.release.tag_name, 'backpack-adoption-action/') }}

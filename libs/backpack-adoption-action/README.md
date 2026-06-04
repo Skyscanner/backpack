@@ -30,27 +30,12 @@ consumer repositories.
 | Pull request, base adoption < 60% | Calculates adoption and reports. Never blocks. |
 | Pull request, base adoption ≥ 60% | Fails when head adoption drops below base adoption. `dry-run: true` downgrades the failure to a warning. |
 
-## How it runs
-
-This is a composite action. When the action starts on a runner it:
-
-1. Sets up Node from the action's bundled `.nvmrc` (uses `actions/setup-node`'s npm cache).
-2. Installs the action's runtime dependencies via `npm ci --omit=dev` against the
-   action's own `package-lock.json`.
-3. Compiles the TypeScript source with `tsc` into a local `dist/`.
-4. Runs the compiled entry point with the inputs forwarded as `INPUT_*` env vars.
-
-Cold cache install adds roughly 10 seconds to a consumer CI run. Once the
-runner caches the action's lockfile (subsequent runs on the same runner image),
-install drops to a few seconds. The action's own `dist/` is generated per run
-and never committed.
-
 ## Source structure
 
 ```text
 src/
 ├── action/        # GitHub Action orchestration, input/output, step summary
-├── analysis/      # Repository scanning and JSX/CSS adoption metrics
+├── analysis/      # Repository scanning and JSX adoption metrics
 ├── cortex/        # Cortex custom data upload
 ├── git/           # Pull request base checkout helpers
 ├── guard/         # Adoption guard decision logic
@@ -65,3 +50,16 @@ logic belongs under `src/analysis/`, and the PR blocking policy belongs under
 The JSX/TS analyser uses [`@babel/parser`](https://babeljs.io/docs/babel-parser)
 and [`@babel/traverse`](https://babeljs.io/docs/babel-traverse) — kept in sync
 with [`Skyscanner/ds-analyser`](https://github.com/Skyscanner/ds-analyser).
+
+## Building
+
+The committed `dist/index.js` is a single-file bundle produced by `esbuild`.
+After changing any source under `src/`, run:
+
+```bash
+npx nx run backpack-adoption-action:build
+```
+
+…and commit the regenerated `dist/`. The release workflow's `verify-dist`
+target re-runs the build and rejects the release if the committed bundle does
+not match the source.
