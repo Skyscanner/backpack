@@ -32,7 +32,17 @@ runs:
     - name: Install Backpack adoption action dependencies
       shell: bash
       working-directory: ${{ github.action_path }}
-      run: npm ci --workspaces=false --omit=dev --no-audit --no-fund
+      env:
+        # Ignore the consumer's userconfig (which may force a private
+        # registry that requires an auth token we don't have).
+        NPM_CONFIG_USERCONFIG: /dev/null
+      run: |
+        npm ci \
+          --workspaces=false \
+          --omit=dev \
+          --no-audit \
+          --no-fund \
+          --registry=https://registry.npmjs.org/
 
     - name: Compile Backpack adoption action
       shell: bash
