@@ -1,0 +1,6 @@
+upcoming:
+  changes:
+    major:
+      - Migrated `react-window` to v2 and removed the legacy auto-sizing dependency.
+
+releases: []

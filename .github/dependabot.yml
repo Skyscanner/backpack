@@ -12,6 +12,10 @@ updates:
   ignore:
     - dependency-name: '*'
       update-types: ['version-update:semver-patch']
+    - dependency-name: 'react-window'
+      update-types: ['version-update:semver-major']
+    - dependency-name: '@types/react-window'
+      update-types: ['version-update:semver-major']
   allow:
     - dependency-type: "direct"
   groups:

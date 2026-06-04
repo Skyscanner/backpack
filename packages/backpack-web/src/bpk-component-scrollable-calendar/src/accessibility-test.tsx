@@ -24,6 +24,14 @@ import { weekDays, formatDateFull, formatMonth } from '../test-utils';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('BpkScrollableCalendar accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const testDate = new Date(2010, 1, 15);
