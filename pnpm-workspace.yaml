@@ -1,3 +1,23 @@
 packages:
   - 'packages/*'
   - 'libs/*'
+
+# Settings migrated from .npmrc (pnpm 11 reads workspace config from here)
+strictPeerDependencies: true
+engineStrict: true
+publicHoistPattern:
+  - '*eslint*'
+  - '*stylelint*'
+  - '*prettier*'
+linkWorkspacePackages: true
+shamefullyHoist: true
+allowBuilds:
+  '@parcel/watcher': true
+  '@percy/core': true
+  '@skyscanner/eslint-config-skyscanner': true
+  core-js: true
+  esbuild: true
+  less: true
+  node-sass: false
+  nx: true
+  unrs-resolver: true
