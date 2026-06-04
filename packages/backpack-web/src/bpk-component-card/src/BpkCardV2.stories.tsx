@@ -40,7 +40,6 @@ import BpkLink from '../../bpk-component-link';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice, { SIZES, ALIGNS } from '../../bpk-component-price';
 import BpkRating from '../../bpk-component-rating';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkStarRating from '../../bpk-component-star-rating';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
