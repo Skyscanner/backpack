@@ -35,16 +35,6 @@ describe("analyzeRepository", () => {
     );
     await writeRepoFile(
       repoPath,
-      "src/App.module.scss",
-      `
-.ButtonOverride {
-  color: red;
-  margin: 0;
-}
-`,
-    );
-    await writeRepoFile(
-      repoPath,
       "src/App.tsx",
       `
 import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
@@ -80,14 +70,11 @@ export const App = () => (
     expect(report.usage.rawHtml.count).toBe(2);
     expect(report.usage.backpack.percentage).toBe(50);
     expect(report.usage.pureBackpack.count).toBe(2);
+    expect(report.usage.nonPureBackpack.count).toBe(1);
     expect(report.componentCounts).toEqual({
       BpkButton: 1,
       BpkText: 2,
     });
-    expect(report.cssOverrides.byCategory.color).toBe(1);
-    expect(report.cssOverrides.byCategory.layout).toBe(1);
-    expect(report.cssOverrides.total).toBe(2);
-    expect(report.rawHtmlCssOverrides.byCategory.layout).toBe(2);
   });
 
   it("ignores generated, test, story, mock, and dependency files", async () => {

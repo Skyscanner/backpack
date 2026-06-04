@@ -1,4 +1,5 @@
 import { execFile } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -27,9 +28,9 @@ const readBaseShaFromEvent = () => {
   }
 
   try {
-    // Require avoids adding a second async filesystem path to the action startup.
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    const payload = require(eventPath) as GitHubEventPayload;
+    const payload = JSON.parse(
+      readFileSync(eventPath, "utf8"),
+    ) as GitHubEventPayload;
     return payload.pull_request?.base?.sha || null;
   } catch {
     return null;

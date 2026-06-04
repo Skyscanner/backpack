@@ -1,17 +1,12 @@
 import { readFileSync } from "node:fs";
 import { basename, join, relative } from "node:path";
 
+import _traverse from "@babel/traverse";
+import type { JSXAttribute, JSXOpeningElement, JSXSpreadAttribute } from "@babel/types";
 import { glob } from "glob";
-import ts from "typescript";
 
 import { extractClassNameInfo } from "./class-name";
-import {
-  addCategories,
-  categoryTotal,
-  createEmptyCategoryCounts,
-} from "./css/categories";
 import { collectImports } from "./imports";
-import type { CssModuleImport } from "./imports";
 import {
   firstMemberName,
   isBackpackComponent,
@@ -19,12 +14,16 @@ import {
   isNonVisualComponent,
   isRawHtmlElement,
   lastMemberName,
-  sourceFileFor,
+  parseSourceFile,
   tagNameText,
 } from "./jsx";
 import { buildVisualComponentRegistry } from "./visual-components";
 import { DEFAULT_IGNORE_PATTERNS, DEFAULT_PATTERN } from "../shared/config";
-import type { AdoptionReport, CssCategoryCounts } from "../shared/types";
+import type { AdoptionReport } from "../shared/types";
+
+const traverse = (
+  (_traverse as unknown as { default?: typeof _traverse }).default ?? _traverse
+) as typeof _traverse;
 
 type FileAnalysis = {
   backpackUsages: number;
@@ -32,8 +31,6 @@ type FileAnalysis = {
   nonBackpackUsages: number;
   rawHtmlUsages: number;
   componentCounts: Record<string, number>;
-  cssOverrides: CssCategoryCounts;
-  rawHtmlCssOverrides: CssCategoryCounts;
 };
 
 type AnalyzerOptions = {
@@ -49,8 +46,6 @@ const emptyFileAnalysis = (): FileAnalysis => ({
   nonBackpackUsages: 0,
   rawHtmlUsages: 0,
   componentCounts: {},
-  cssOverrides: createEmptyCategoryCounts(),
-  rawHtmlCssOverrides: createEmptyCategoryCounts(),
 });
 
 const incrementComponentCount = (
@@ -60,137 +55,69 @@ const incrementComponentCount = (
   componentCounts[componentName] = (componentCounts[componentName] || 0) + 1;
 };
 
-const addCategoryCounts = (
-  target: CssCategoryCounts,
-  source: CssCategoryCounts,
-) => {
-  addCategories(
-    target,
-    Object.entries(source).flatMap(([category, count]) =>
-      Array.from({ length: count }, () => category),
-    ),
-  );
-};
-
 const analyzeFile = (
   filePath: string,
   visualComponentRegistry: Set<string>,
 ): FileAnalysis => {
   const content = readFileSync(filePath, "utf8");
-  const sourceFile = sourceFileFor(filePath, content);
+  const ast = parseSourceFile(content);
   const importedComponents = new Set<string>();
   const namespaceImports = new Set<string>();
-  const cssModuleImports = new Map<string, CssModuleImport>();
   const nonVisualImports = new Set<string>();
   const result = emptyFileAnalysis();
 
-  collectImports(
-    sourceFile,
-    filePath,
-    importedComponents,
-    namespaceImports,
-    cssModuleImports,
-    nonVisualImports,
-  );
+  collectImports(ast, importedComponents, namespaceImports, nonVisualImports);
 
-  const visit = (node: ts.Node) => {
-    if (ts.isJsxFragment(node)) {
-      ts.forEachChild(node, visit);
+  const handleOpening = (
+    name: JSXOpeningElement["name"],
+    attributes: Array<JSXAttribute | JSXSpreadAttribute>,
+  ) => {
+    const elementName = tagNameText(name);
+    if (!elementName || isNonVisualComponent(elementName, nonVisualImports)) {
       return;
     }
 
-    if (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) {
-      const elementName = tagNameText(node.tagName);
-      if (!elementName || isNonVisualComponent(elementName, nonVisualImports)) {
-        ts.forEachChild(node, visit);
-        return;
+    const isBackpackUsage =
+      (elementName.includes(".") &&
+        namespaceImports.has(firstMemberName(elementName))) ||
+      (!elementName.includes(".") &&
+        (isBackpackComponent(elementName) ||
+          importedComponents.has(elementName)));
+
+    if (isBackpackUsage) {
+      const componentName = elementName.includes(".")
+        ? lastMemberName(elementName)
+        : elementName;
+      result.backpackUsages += 1;
+      incrementComponentCount(result.componentCounts, componentName);
+
+      if (extractClassNameInfo(attributes).hasOverride) {
+        result.classNameOverrides += 1;
       }
-
-      if (elementName.includes(".")) {
-        const namespace = firstMemberName(elementName);
-        const componentName = lastMemberName(elementName);
-
-        if (namespaceImports.has(namespace)) {
-          result.backpackUsages += 1;
-          incrementComponentCount(result.componentCounts, componentName);
-
-          const classNameInfo = extractClassNameInfo(
-            node.attributes,
-            cssModuleImports,
-          );
-          if (classNameInfo.hasOverride) {
-            result.classNameOverrides += classNameInfo.overrideCount;
-            addCategories(result.cssOverrides, classNameInfo.cssCategories);
-          }
-        } else {
-          const classNameInfo = extractClassNameInfo(
-            node.attributes,
-            cssModuleImports,
-          );
-          if (
-            classNameInfo.hasOverride ||
-            visualComponentRegistry.has(elementName)
-          ) {
-            result.nonBackpackUsages += 1;
-          }
-        }
-
-        ts.forEachChild(node, visit);
-        return;
-      }
-
-      if (isRawHtmlElement(elementName)) {
-        result.rawHtmlUsages += 1;
-        const classNameInfo = extractClassNameInfo(
-          node.attributes,
-          cssModuleImports,
-        );
-        if (classNameInfo.hasOverride) {
-          addCategories(
-            result.rawHtmlCssOverrides,
-            classNameInfo.cssCategories,
-          );
-        }
-
-        ts.forEachChild(node, visit);
-        return;
-      }
-
-      if (isBackpackComponent(elementName) || importedComponents.has(elementName)) {
-        result.backpackUsages += 1;
-        incrementComponentCount(result.componentCounts, elementName);
-
-        const classNameInfo = extractClassNameInfo(
-          node.attributes,
-          cssModuleImports,
-        );
-        if (classNameInfo.hasOverride) {
-          result.classNameOverrides += classNameInfo.overrideCount;
-          addCategories(result.cssOverrides, classNameInfo.cssCategories);
-        }
-
-        ts.forEachChild(node, visit);
-        return;
-      }
-
-      if (isNonBackpackComponent(elementName)) {
-        const classNameInfo = extractClassNameInfo(
-          node.attributes,
-          cssModuleImports,
-        );
-        if (
-          classNameInfo.hasOverride ||
-          visualComponentRegistry.has(elementName)
-        ) {
-          result.nonBackpackUsages += 1;
-        }
-      }
+      return;
     }
 
-    ts.forEachChild(node, visit);
+    if (!elementName.includes(".") && isRawHtmlElement(elementName)) {
+      result.rawHtmlUsages += 1;
+      return;
+    }
+
+    if (
+      elementName.includes(".") ||
+      isNonBackpackComponent(elementName)
+    ) {
+      const hasOverride = extractClassNameInfo(attributes).hasOverride;
+      if (hasOverride || visualComponentRegistry.has(elementName)) {
+        result.nonBackpackUsages += 1;
+      }
+    }
   };
 
-  visit(sourceFile);
+  traverse(ast, {
+    JSXOpeningElement(path) {
+      handleOpening(path.node.name, path.node.attributes);
+    },
+  });
 
   return result;
 };
@@ -252,11 +179,6 @@ export const analyzeRepository = async (
       totals.classNameOverrides += fileResult.classNameOverrides;
       totals.nonBackpackUsages += fileResult.nonBackpackUsages;
       totals.rawHtmlUsages += fileResult.rawHtmlUsages;
-      addCategoryCounts(totals.cssOverrides, fileResult.cssOverrides);
-      addCategoryCounts(
-        totals.rawHtmlCssOverrides,
-        fileResult.rawHtmlCssOverrides,
-      );
       Object.entries(fileResult.componentCounts).forEach(
         ([componentName, count]) => {
           totals.componentCounts[componentName] =
@@ -271,15 +193,14 @@ export const analyzeRepository = async (
     }
   });
 
-  const nonPureBackpackUsages = Math.min(
-    totals.classNameOverrides,
-    totals.backpackUsages,
-  );
+  const nonPureBackpackUsages = totals.classNameOverrides;
   const pureBackpackUsages = totals.backpackUsages - nonPureBackpackUsages;
   const totalElementUsages =
     totals.backpackUsages + totals.nonBackpackUsages + totals.rawHtmlUsages;
   const percentage = (count: number) =>
-    totalElementUsages > 0 ? roundPercentage((count / totalElementUsages) * 100) : 0;
+    totalElementUsages > 0
+      ? roundPercentage((count / totalElementUsages) * 100)
+      : 0;
 
   return {
     repository: basename(repoPath),
@@ -308,14 +229,6 @@ export const analyzeRepository = async (
         count: totals.rawHtmlUsages,
         percentage: percentage(totals.rawHtmlUsages),
       },
-    },
-    cssOverrides: {
-      byCategory: totals.cssOverrides,
-      total: categoryTotal(totals.cssOverrides),
-    },
-    rawHtmlCssOverrides: {
-      byCategory: totals.rawHtmlCssOverrides,
-      total: categoryTotal(totals.rawHtmlCssOverrides),
     },
     componentCounts: totals.componentCounts,
   };

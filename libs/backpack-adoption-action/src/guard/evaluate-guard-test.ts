@@ -14,36 +14,6 @@ const reportWithBackpackPercentage = (percentage: number): AdoptionReport => ({
     nonBackpack: { count: 0, percentage: 0 },
     rawHtml: { count: 0, percentage: 0 },
   },
-  cssOverrides: {
-    byCategory: {
-      color: 0,
-      layout: 0,
-      typography: 0,
-      size: 0,
-      position: 0,
-      visibility: 0,
-      border: 0,
-      shadow: 0,
-      transform: 0,
-      custom: 0,
-    },
-    total: 0,
-  },
-  rawHtmlCssOverrides: {
-    byCategory: {
-      color: 0,
-      layout: 0,
-      typography: 0,
-      size: 0,
-      position: 0,
-      visibility: 0,
-      border: 0,
-      shadow: 0,
-      transform: 0,
-      custom: 0,
-    },
-    total: 0,
-  },
   componentCounts: {},
 });
 

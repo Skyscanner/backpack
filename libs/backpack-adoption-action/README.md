@@ -22,6 +22,29 @@ Backpack adoption rate.
 The guard threshold is maintained inside the action and is not configurable by
 consumer repositories.
 
+## Behaviour
+
+| Branch context | Behaviour |
+| --- | --- |
+| `refs/heads/main` | Calculates adoption, writes JSON, optionally uploads to Cortex. Never fails. |
+| Pull request, base adoption < 60% | Calculates adoption and reports. Never blocks. |
+| Pull request, base adoption ≥ 60% | Fails when head adoption drops below base adoption. `dry-run: true` downgrades the failure to a warning. |
+
+## How it runs
+
+This is a composite action. When the action starts on a runner it:
+
+1. Sets up Node from the action's bundled `.nvmrc` (uses `actions/setup-node`'s npm cache).
+2. Installs the action's runtime dependencies via `npm ci --omit=dev` against the
+   action's own `package-lock.json`.
+3. Compiles the TypeScript source with `tsc` into a local `dist/`.
+4. Runs the compiled entry point with the inputs forwarded as `INPUT_*` env vars.
+
+Cold cache install adds roughly 10 seconds to a consumer CI run. Once the
+runner caches the action's lockfile (subsequent runs on the same runner image),
+install drops to a few seconds. The action's own `dist/` is generated per run
+and never committed.
+
 ## Source structure
 
 ```text
@@ -38,3 +61,7 @@ src/
 evaluation, results writing, and optional Cortex upload. The adoption metric
 logic belongs under `src/analysis/`, and the PR blocking policy belongs under
 `src/guard/`.
+
+The JSX/TS analyser uses [`@babel/parser`](https://babeljs.io/docs/babel-parser)
+and [`@babel/traverse`](https://babeljs.io/docs/babel-traverse) — kept in sync
+with [`Skyscanner/ds-analyser`](https://github.com/Skyscanner/ds-analyser).

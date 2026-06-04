@@ -47,13 +47,6 @@
         "{workspaceRoot}/tsconfig.base.json",
         "{workspaceRoot}/tsconfig.json"
       ]
-    },
-    "verify-dist": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "npm --workspace @skyscanner/backpack-adoption-action run verify-dist"
-      },
-      "cache": false
     }
   }
 }

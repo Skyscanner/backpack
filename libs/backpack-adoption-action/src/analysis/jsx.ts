@@ -1,4 +1,6 @@
-import ts from "typescript";
+import { parse } from "@babel/parser";
+import type { File } from "@babel/types";
+import * as t from "@babel/types";
 
 const HTML_ELEMENTS = new Set([
   "a",
@@ -124,19 +126,27 @@ const NON_VISUAL_REACT_COMPONENTS = new Set([
   "Portal",
 ]);
 
-export const sourceFileFor = (filePath: string, content: string) => {
-  const scriptKind = filePath.endsWith(".tsx")
-    ? ts.ScriptKind.TSX
-    : ts.ScriptKind.JSX;
+const PARSER_PLUGINS = [
+  "jsx",
+  "typescript",
+  "decorators-legacy",
+  "classProperties",
+  "objectRestSpread",
+  "asyncGenerators",
+  "functionBind",
+  "exportDefaultFrom",
+  "exportNamespaceFrom",
+  "dynamicImport",
+  "nullishCoalescingOperator",
+  "optionalChaining",
+] as const;
 
-  return ts.createSourceFile(
-    filePath,
-    content,
-    ts.ScriptTarget.Latest,
-    true,
-    scriptKind,
-  );
-};
+export const parseSourceFile = (content: string): File =>
+  parse(content, {
+    sourceType: "module",
+    plugins: [...PARSER_PLUGINS],
+    errorRecovery: false,
+  });
 
 export const isBackpackComponent = (componentName: string | null) =>
   !!componentName && componentName.startsWith("Bpk");
@@ -152,18 +162,20 @@ export const isNonBackpackComponent = (componentName: string | null) =>
   !isBackpackComponent(componentName) &&
   !isRawHtmlElement(componentName);
 
-export const tagNameText = (name: ts.JsxTagNameExpression): string | null => {
-  if (ts.isIdentifier(name)) {
-    return name.text;
+export const tagNameText = (
+  name: t.JSXOpeningElement["name"],
+): string | null => {
+  if (t.isJSXIdentifier(name)) {
+    return name.name;
   }
 
-  if (ts.isPropertyAccessExpression(name)) {
-    const left = tagNameText(name.expression as ts.JsxTagNameExpression);
-    return left ? `${left}.${name.name.text}` : name.name.text;
+  if (t.isJSXMemberExpression(name)) {
+    const left = tagNameText(name.object);
+    return left ? `${left}.${name.property.name}` : name.property.name;
   }
 
-  if (ts.isJsxNamespacedName(name)) {
-    return `${name.namespace.text}:${name.name.text}`;
+  if (t.isJSXNamespacedName(name)) {
+    return `${name.namespace.name}:${name.name.name}`;
   }
 
   return null;
@@ -174,7 +186,8 @@ export const lastMemberName = (elementName: string) => {
   return segments[segments.length - 1];
 };
 
-export const firstMemberName = (elementName: string) => elementName.split(".")[0];
+export const firstMemberName = (elementName: string) =>
+  elementName.split(".")[0];
 
 export const isNonVisualReactComponentName = (componentName: string) =>
   NON_VISUAL_REACT_COMPONENTS.has(componentName);
@@ -200,28 +213,32 @@ export const isNonVisualComponent = (
   );
 };
 
-export const expressionName = (expression: ts.Expression): string | null => {
-  if (ts.isIdentifier(expression)) {
-    return expression.text;
+export const expressionName = (expression: t.Expression): string | null => {
+  if (t.isIdentifier(expression)) {
+    return expression.name;
   }
 
-  if (ts.isPropertyAccessExpression(expression)) {
-    return expression.name.text;
+  if (t.isMemberExpression(expression) && t.isIdentifier(expression.property)) {
+    return expression.property.name;
   }
 
   return null;
 };
 
-export const stringFromExpression = (expression: ts.Expression): string | null => {
-  if (ts.isStringLiteral(expression) || ts.isNoSubstitutionTemplateLiteral(expression)) {
-    return expression.text;
+export const stringFromExpression = (
+  expression: t.Expression,
+): string | null => {
+  if (t.isStringLiteral(expression)) {
+    return expression.value;
   }
 
-  if (ts.isTemplateExpression(expression)) {
-    return [
-      expression.head.text,
-      ...expression.templateSpans.map((span) => span.literal.text),
-    ]
+  if (t.isTemplateLiteral(expression)) {
+    if (expression.expressions.length === 0 && expression.quasis.length === 1) {
+      return expression.quasis[0].value.cooked ?? expression.quasis[0].value.raw;
+    }
+
+    return expression.quasis
+      .map((quasi) => quasi.value.cooked ?? quasi.value.raw)
       .filter((part) => part.trim())
       .join("...");
   }

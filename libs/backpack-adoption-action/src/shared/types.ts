@@ -3,24 +3,6 @@ export type UsageMetric = {
   percentage: number;
 };
 
-export type CssCategoryCounts = {
-  color: number;
-  layout: number;
-  typography: number;
-  size: number;
-  position: number;
-  visibility: number;
-  border: number;
-  shadow: number;
-  transform: number;
-  custom: number;
-};
-
-export type CssOverrideSummary = {
-  byCategory: CssCategoryCounts;
-  total: number;
-};
-
 export type UsageSummary = {
   backpack: UsageMetric;
   pureBackpack: UsageMetric;
@@ -39,8 +21,6 @@ export type AdoptionReport = {
   }>;
   backpackWebVersion: string | null;
   usage: UsageSummary;
-  cssOverrides: CssOverrideSummary;
-  rawHtmlCssOverrides: CssOverrideSummary;
   componentCounts: Record<string, number>;
 };
 

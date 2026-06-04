@@ -1,46 +1,50 @@
 import { readFileSync } from "node:fs";
 
-import ts from "typescript";
+import _traverse from "@babel/traverse";
+import type { NodePath } from "@babel/traverse";
+import * as t from "@babel/types";
 
 import {
   expressionName,
   isBackpackComponent,
   isRawHtmlElement,
-  sourceFileFor,
+  parseSourceFile,
   tagNameText,
 } from "./jsx";
 
-const hasVisualJsx = (node: ts.Node): boolean => {
+const traverse = (
+  (_traverse as unknown as { default?: typeof _traverse }).default ?? _traverse
+) as typeof _traverse;
+
+const containsVisualJsx = (
+  fnPath: NodePath<
+    | t.FunctionDeclaration
+    | t.FunctionExpression
+    | t.ArrowFunctionExpression
+  >,
+): boolean => {
   let found = false;
 
-  const visit = (child: ts.Node) => {
-    if (found) {
-      return;
-    }
-
-    if (
-      child !== node &&
-      (ts.isFunctionDeclaration(child) ||
-        ts.isFunctionExpression(child) ||
-        ts.isArrowFunction(child) ||
-        ts.isClassDeclaration(child) ||
-        ts.isClassExpression(child))
-    ) {
-      return;
-    }
-
-    if (ts.isJsxOpeningElement(child) || ts.isJsxSelfClosingElement(child)) {
-      const name = tagNameText(child.tagName);
+  fnPath.traverse({
+    Function(innerPath) {
+      if (innerPath.node !== fnPath.node) {
+        innerPath.skip();
+      }
+    },
+    ClassDeclaration(innerPath) {
+      innerPath.skip();
+    },
+    ClassExpression(innerPath) {
+      innerPath.skip();
+    },
+    JSXOpeningElement(innerPath) {
+      const name = tagNameText(innerPath.node.name);
       if (isRawHtmlElement(name) || isBackpackComponent(name)) {
         found = true;
-        return;
+        innerPath.stop();
       }
-    }
-
-    ts.forEachChild(child, visit);
-  };
-
-  ts.forEachChild(node, visit);
+    },
+  });
 
   return found;
 };
@@ -51,52 +55,66 @@ export const buildVisualComponentRegistry = (files: string[]) => {
   files.forEach((filePath) => {
     try {
       const content = readFileSync(filePath, "utf8");
-      const sourceFile = sourceFileFor(filePath, content);
+      const ast = parseSourceFile(content);
 
-      const visit = (node: ts.Node) => {
-        if (
-          ts.isFunctionDeclaration(node) &&
-          node.name &&
-          /^[A-Z]/.test(node.name.text) &&
-          hasVisualJsx(node.body || node)
-        ) {
-          registry.add(node.name.text);
-        }
+      traverse(ast, {
+        FunctionDeclaration(path) {
+          const id = path.node.id;
+          if (!id || !/^[A-Z]/.test(id.name)) {
+            return;
+          }
+          if (containsVisualJsx(path)) {
+            registry.add(id.name);
+          }
+        },
+        VariableDeclarator(path) {
+          const id = path.node.id;
+          if (!t.isIdentifier(id) || !/^[A-Z]/.test(id.name)) {
+            return;
+          }
 
-        if (
-          ts.isVariableDeclaration(node) &&
-          ts.isIdentifier(node.name) &&
-          /^[A-Z]/.test(node.name.text) &&
-          node.initializer
-        ) {
-          const initializer = node.initializer;
+          const init = path.node.init;
+          if (!init) {
+            return;
+          }
 
           if (
-            (ts.isArrowFunction(initializer) ||
-              ts.isFunctionExpression(initializer)) &&
-            hasVisualJsx(initializer.body)
+            t.isArrowFunctionExpression(init) ||
+            t.isFunctionExpression(init)
           ) {
-            registry.add(node.name.text);
+            const initPath = path.get("init") as NodePath<
+              t.ArrowFunctionExpression | t.FunctionExpression
+            >;
+            if (containsVisualJsx(initPath)) {
+              registry.add(id.name);
+            }
+            return;
           }
 
-          if (ts.isCallExpression(initializer)) {
-            const functionName = expressionName(initializer.expression);
-            const isForwardRef = functionName === "forwardRef";
-            const callback = initializer.arguments.find(
-              (argument) =>
-                ts.isArrowFunction(argument) || ts.isFunctionExpression(argument),
-            );
+          if (t.isCallExpression(init)) {
+            const callee = init.callee;
+            const fnName = t.isExpression(callee) ? expressionName(callee) : null;
+            const isForwardRef = fnName === "forwardRef";
+            if (!isForwardRef) {
+              return;
+            }
 
-            if (isForwardRef && callback && hasVisualJsx(callback)) {
-              registry.add(node.name.text);
+            const callbackIndex = init.arguments.findIndex(
+              (arg) => t.isArrowFunctionExpression(arg) || t.isFunctionExpression(arg),
+            );
+            if (callbackIndex === -1) {
+              return;
+            }
+
+            const callbackPath = path.get(
+              `init.arguments.${callbackIndex}`,
+            ) as NodePath<t.ArrowFunctionExpression | t.FunctionExpression>;
+            if (containsVisualJsx(callbackPath)) {
+              registry.add(id.name);
             }
           }
-        }
-
-        ts.forEachChild(node, visit);
-      };
-
-      visit(sourceFile);
+        },
+      });
     } catch {
       // Parse errors are recorded during the main analysis pass.
     }

@@ -17,16 +17,3 @@ export const DEFAULT_IGNORE_PATTERNS = [
   "**/__mock__/**",
   "**/mocks/**",
 ];
-
-export const CSS_CATEGORY_NAMES = [
-  "color",
-  "layout",
-  "typography",
-  "size",
-  "position",
-  "visibility",
-  "border",
-  "shadow",
-  "transform",
-  "custom",
-] as const;
