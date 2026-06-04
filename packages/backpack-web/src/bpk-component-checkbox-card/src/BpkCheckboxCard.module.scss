@@ -203,6 +203,7 @@
     // half-opacity so a checked-and-disabled chip doesn't show an orphaned
     // full-opacity navy tick.
     &[data-disabled]:not([data-loading]) {
+      color: tokens.$bpk-text-primary-day;
       box-shadow: inset 0 0 0 tokens.$bpk-border-size-sm
         var(--bpk-checkbox-card-disabled-border-color, #{tokens.$bpk-line-day});
       opacity: 0.5;
@@ -296,6 +297,10 @@
       --bpk-checkbox-card-secondary-text-color,
       #{tokens.$bpk-text-secondary-day}
     );
+  }
+
+  .bpk-checkbox-card-root--cars[data-disabled]:not([data-loading]) & {
+    color: tokens.$bpk-text-disabled-day;
   }
 
   // Keep nested content centered without using !important.

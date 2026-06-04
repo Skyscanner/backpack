@@ -2,6 +2,7 @@
   "extends": [
     "@skyscanner/eslint-config-skyscanner"
   ],
+  "plugins": ["@nx"],
   "env": {
     "browser": true,
     "jest": true
@@ -87,6 +88,23 @@
         "message": "Use '@ark-ui/react' instead of deep imports like '@ark-ui/react/dialog'. Deep imports cause transpilation errors during release."
       }]
     }],
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "enforceBuildableLibDependency": true,
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "scope:publishable",
+            "onlyDependOnLibsWithTags": ["scope:publishable"]
+          },
+          {
+            "sourceTag": "scope:internal",
+            "onlyDependOnLibsWithTags": ["scope:publishable", "scope:internal"]
+          }
+        ]
+      }
+    ],
     "backpack/use-components": "off",
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
@@ -194,6 +212,23 @@
       "files": ["*test*", "*examples*", "*stories*"],
       "rules": {
         "@skyscanner/rules/forbid-component-props": ["off"]
+      }
+    },
+    {
+      // Module boundaries only apply to published source. Dev-only files (tests,
+      // stories, figma helpers, snapshots, build configs) are excluded — these
+      // match the inverse of the `production` namedInput in nx.json.
+      "files": [
+        "**/*test*",
+        "**/*stories*",
+        "**/*examples*",
+        "**/*.figma.*",
+        "**/__snapshots__/**",
+        "**/webpack.config*",
+        "**/gulpfile.js"
+      ],
+      "rules": {
+        "@nx/enforce-module-boundaries": "off"
       }
     },
     {

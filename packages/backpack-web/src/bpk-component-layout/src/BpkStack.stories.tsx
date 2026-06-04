@@ -209,3 +209,49 @@ export const Color = {
 export const LayoutProps = {
   render: () => <BpkStackLayoutPropsExample />,
 };
+
+const BpkStackAliasExample = () => (
+  <LayoutWrapper>
+    <BpkStack gap={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>alignItems=&quot;center&quot; and align=&quot;center&quot; are equivalent on BpkVStack</BpkText>
+      <BpkHStack gap={BpkSpacing.MD}>
+        <BpkStack gap={BpkSpacing.XS} flex="1">
+          <BpkText textStyle={TEXT_STYLES.caption}>alignItems=&quot;center&quot; (alias)</BpkText>
+          <BpkVStack alignItems="center" gap={BpkSpacing.SM}>
+            <BpkBox width="8rem"><span className={outline}>centered</span></BpkBox>
+            <BpkBox width="12rem"><span className={outline}>centered wider</span></BpkBox>
+          </BpkVStack>
+        </BpkStack>
+        <BpkStack gap={BpkSpacing.XS} flex="1">
+          <BpkText textStyle={TEXT_STYLES.caption}>align=&quot;center&quot; (canonical)</BpkText>
+          <BpkVStack align="center" gap={BpkSpacing.SM}>
+            <BpkBox width="8rem"><span className={outline}>centered</span></BpkBox>
+            <BpkBox width="12rem"><span className={outline}>centered wider</span></BpkBox>
+          </BpkVStack>
+        </BpkStack>
+      </BpkHStack>
+    </BpkStack>
+
+    <BpkStack gap={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>justifyContent=&quot;space-between&quot; and justify=&quot;space-between&quot; are equivalent on BpkHStack</BpkText>
+      <BpkStack gap={BpkSpacing.XS}>
+        <BpkText textStyle={TEXT_STYLES.caption}>justifyContent=&quot;space-between&quot; (alias)</BpkText>
+        <BpkHStack justifyContent="space-between" gap={BpkSpacing.SM}>
+          <BpkBox width="6rem"><span className={outline}>left</span></BpkBox>
+          <BpkBox width="6rem"><span className={outline}>right</span></BpkBox>
+        </BpkHStack>
+      </BpkStack>
+      <BpkStack gap={BpkSpacing.XS}>
+        <BpkText textStyle={TEXT_STYLES.caption}>justify=&quot;space-between&quot; (canonical)</BpkText>
+        <BpkHStack justify="space-between" gap={BpkSpacing.SM}>
+          <BpkBox width="6rem"><span className={outline}>left</span></BpkBox>
+          <BpkBox width="6rem"><span className={outline}>right</span></BpkBox>
+        </BpkHStack>
+      </BpkStack>
+    </BpkStack>
+  </LayoutWrapper>
+);
+
+export const Aliases = {
+  render: () => <BpkStackAliasExample />,
+};

@@ -22,6 +22,7 @@
     "access": "public"
   },
   "exports": {
+    "./package.json": "./package.json",
     "./bpk-stylesheets": "./src/bpk-stylesheets/index.js",
     "./bpk-stylesheets/*": "./src/bpk-stylesheets/*.js",
     "./bpk-component-autosuggest": "./src/bpk-component-autosuggest/index.js",

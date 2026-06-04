@@ -49,13 +49,32 @@
       ],
       "cache": true
     },
+    "copy-token-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./scripts/scss/copy-token-css.sh",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{workspaceRoot}/scripts/scss/copy-token-css.sh",
+        "{workspaceRoot}/token-sync/css/primitives.css",
+        "{workspaceRoot}/token-sync/css/theme-backpack-light.css",
+        "{workspaceRoot}/token-sync/css/theme-backpack-dark.css"
+      ],
+      "outputs": [
+        "{projectRoot}/src/bpk-stylesheets/primitives.css",
+        "{projectRoot}/src/bpk-stylesheets/theme-backpack-light.css",
+        "{projectRoot}/src/bpk-stylesheets/theme-backpack-dark.css"
+      ],
+      "cache": true
+    },
     "build-stylesheets": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node build.js",
         "cwd": "{projectRoot}/src/bpk-stylesheets"
       },
-      "dependsOn": ["build-sass"],
+      "dependsOn": ["copy-normalize-css", "copy-token-css"],
       "inputs": [
         "{projectRoot}/src/bpk-stylesheets/**/*",
         "{workspaceRoot}/babel.config.js"
@@ -79,7 +98,7 @@
         "parallel": false,
         "cwd": "{workspaceRoot}"
       },
-      "dependsOn": ["build-stylesheets"],
+      "dependsOn": ["build-sass", "build-stylesheets"],
       "inputs": [
         "production",
         "^production",
@@ -126,11 +145,16 @@
         "command": "stylelint 'packages/backpack-web/**/*.scss'",
         "cwd": "{workspaceRoot}"
       },
-      "inputs": [
-        "{projectRoot}/**/*.scss",
-        "{workspaceRoot}/.stylelintrc*"
-      ],
+      "inputs": ["{projectRoot}/**/*.scss", "{workspaceRoot}/.stylelintrc*"],
       "cache": true
+    },
+    "lint-scss-fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint 'packages/backpack-web/**/*.scss' --fix",
+        "cwd": "{workspaceRoot}"
+      },
+      "cache": false
     },
     "lint": {
       "executor": "nx:run-commands",
@@ -165,6 +189,33 @@
       "options": {
         "packageRoot": "{projectRoot}/dist"
       }
+    },
+    "sassdoc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "sassdoc {packages/backpack-web/src/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/src/bpk-mixins/**/*.scss",
+        {
+          "externalDependencies": [
+            "@skyscanner/bpk-svgs",
+            "@skyscanner/bpk-foundations-web",
+            "sassdoc"
+          ]
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist-sassdoc"],
+      "cache": true
+    },
+    "figma-generate-icons": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node packages/backpack-web/src/bpk-component-icon/scripts/generate-figma-connect.js",
+        "cwd": "{workspaceRoot}"
+      },
+      "cache": false
     }
   }
 }

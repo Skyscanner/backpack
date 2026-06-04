@@ -481,6 +481,58 @@ export const RtlSpacing = {
   render: () => <RtlSpacingExample />,
 };
 
+/**
+ * Block spacing example – demonstrates marginBlock and paddingBlock (CSS logical
+ * shorthands for top+bottom spacing). Prefer these over marginTop+marginBottom
+ * when the same value applies to both sides, as they complete the logical
+ * properties set alongside marginInline/paddingInline.
+ *
+ * @returns {JSX.Element} Boxes using marginBlock and paddingBlock tokens.
+ */
+const BlockSpacingExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>marginBlock — static</BpkText>
+      <BpkBox marginBlock={BpkSpacing.LG} backgroundColor={BACKGROUND_COLORS.surfaceElevated} padding={BpkSpacing.SM}>
+        <BpkText>marginBlock={'{'}BpkSpacing.LG{'}'} — same space above and below</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>paddingBlock — static</BpkText>
+      <BpkBox paddingBlock={BpkSpacing.LG} paddingInline={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>paddingBlock={'{'}BpkSpacing.LG{'}'} — same internal space top and bottom</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>marginBlock — responsive (SM on mobile, LG on tablet+)</BpkText>
+      <BpkBox
+        marginBlock={{ mobile: BpkSpacing.SM, tablet: BpkSpacing.LG }}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        padding={BpkSpacing.SM}
+      >
+        <BpkText>resize the viewport to see the margin change</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>paddingBlock — responsive (SM on mobile, LG on tablet+)</BpkText>
+      <BpkBox
+        paddingBlock={{ mobile: BpkSpacing.SM, tablet: BpkSpacing.LG }}
+        paddingInline={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>resize the viewport to see the padding change</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const BlockSpacing = {
+  render: () => <BlockSpacingExample />,
+};
+
 export const Size = {
   render: () => <SizeExample />,
 };
@@ -520,3 +572,114 @@ export const BackgroundColor = {
 export const VisualTest = {
   render: () => <MixedExample />,
 };
+
+/**
+ * Opacity example – demonstrates the opacity prop with different values.
+ *
+ * @returns {JSX.Element} Boxes with different opacity values.
+ */
+const OpacityExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>opacity=1 (fully visible)</BpkText>
+      <BpkBox
+        opacity={1}
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>Fully opaque box</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>opacity=0.5 (semi-transparent)</BpkText>
+      <BpkBox
+        opacity={0.5}
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>50% opacity box</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>opacity=0.2 (nearly transparent)</BpkText>
+      <BpkBox
+        opacity={0.2}
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>20% opacity box</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const Opacity = {
+  render: () => <OpacityExample />,
+};
+
+/**
+ * Polymorphic example – demonstrates the `as` prop for rendering as different HTML elements.
+ *
+ * @returns {JSX.Element} BpkBox rendered as section, article, and nav elements.
+ */
+const PolymorphicExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>as=&quot;section&quot; — renders a &lt;section&gt; element</BpkText>
+      <BpkBox as="section" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>This box renders as a &lt;section&gt; in the DOM</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>as=&quot;article&quot; — renders an &lt;article&gt; element</BpkText>
+      <BpkBox as="article" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>This box renders as an &lt;article&gt; in the DOM</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>as=&quot;nav&quot; — renders a &lt;nav&gt; element</BpkText>
+      <BpkBox as="nav" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>This box renders as a &lt;nav&gt; in the DOM</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const Polymorphic = {
+  render: () => <PolymorphicExample />,
+};
+
+/**
+ * Dir example – demonstrates the `dir` prop for embedding bidirectional content.
+ *
+ * @returns {JSX.Element} Boxes with ltr and rtl text direction.
+ */
+const DirExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>dir=&quot;ltr&quot; — left-to-right content</BpkText>
+      <BpkBox dir="ltr" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>Left-to-right: Hello, world!</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>dir=&quot;rtl&quot; — right-to-left content embedded within an LTR page</BpkText>
+      <BpkBox dir="rtl" padding={BpkSpacing.SM} marginTop={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+        <BpkText>Right-to-left: مرحبا بالعالم</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const Dir = {
+  render: () => <DirExample />,
+};
+

@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type { AriaAttributes, AriaRole, ElementType, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
   BpkSpacingValue,
+  BpkMarginValue,
   BpkSizeValue,
   BpkPositionValue,
   BpkPositionKeyword,
@@ -42,18 +43,23 @@ export interface BpkSpacingProps {
   paddingBottom?: BpkResponsiveValue<BpkSpacingValue>;
   paddingLeft?: BpkResponsiveValue<BpkSpacingValue>;
 
-  // Margin props
-  margin?: BpkResponsiveValue<BpkSpacingValue>;
-  marginTop?: BpkResponsiveValue<BpkSpacingValue>;
-  marginRight?: BpkResponsiveValue<BpkSpacingValue>;
-  marginBottom?: BpkResponsiveValue<BpkSpacingValue>;
-  marginLeft?: BpkResponsiveValue<BpkSpacingValue>;
-  marginStart?: BpkResponsiveValue<BpkSpacingValue>;
-  marginEnd?: BpkResponsiveValue<BpkSpacingValue>;
+  // Margin props (accept 'auto' in addition to BpkSpacingValue, e.g. marginTop="auto" to bottom-anchor a flex child)
+  margin?: BpkResponsiveValue<BpkMarginValue>;
+  marginTop?: BpkResponsiveValue<BpkMarginValue>;
+  marginRight?: BpkResponsiveValue<BpkMarginValue>;
+  marginBottom?: BpkResponsiveValue<BpkMarginValue>;
+  marginLeft?: BpkResponsiveValue<BpkMarginValue>;
+  marginStart?: BpkResponsiveValue<BpkMarginValue>;
+  marginEnd?: BpkResponsiveValue<BpkMarginValue>;
   paddingStart?: BpkResponsiveValue<BpkSpacingValue>;
   paddingEnd?: BpkResponsiveValue<BpkSpacingValue>;
-  marginInline?: BpkResponsiveValue<BpkSpacingValue>;
+  marginInline?: BpkResponsiveValue<BpkMarginValue>;
   paddingInline?: BpkResponsiveValue<BpkSpacingValue>;
+  // CSS logical properties for vertical (block) spacing — RTL-safe equivalents of marginTop/marginBottom
+  marginBlockStart?: BpkResponsiveValue<BpkMarginValue>;
+  marginBlockEnd?: BpkResponsiveValue<BpkMarginValue>;
+  marginBlock?: BpkResponsiveValue<BpkMarginValue>;
+  paddingBlock?: BpkResponsiveValue<BpkSpacingValue>;
 
   // Gap
   gap?: BpkResponsiveValue<BpkSpacingValue>;
@@ -112,6 +118,15 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   overflowX?: BpkResponsiveValue<BpkOverflowValue>;
   overflowY?: BpkResponsiveValue<BpkOverflowValue>;
   zIndex?: BpkZIndexValue;
+
+  // Polymorphic rendering — allows changing the underlying HTML element
+  as?: ElementType;
+
+  // Opacity — CSS opacity value (0–1)
+  opacity?: number;
+
+  // Text direction — for embedding bidirectional content within a page
+  dir?: 'ltr' | 'rtl' | 'auto';
 
   // Testing & automation attributes
   'data-testid'?: string;

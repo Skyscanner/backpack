@@ -6,7 +6,7 @@
 /dist
 /packages/backpack-web/dist
 /dist-sassdoc
-/dist-storybook
+/libs/backpack-storybook-host/dist-storybook
 /coverage
 /packages/backpack-web/src/bpk-component-icon/*/
 /packages/backpack-web/src/bpk-component-spinner/src/spinners

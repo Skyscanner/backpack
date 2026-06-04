@@ -21,9 +21,16 @@ import { useEffect, useRef, useState } from 'react';
 
 import BpkAiBlurb from '../../../bpk-component-ai-blurb';
 import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
-import { BpkProvider, BpkSpacing, BpkVStack, BpkHStack } from '../../../bpk-component-layout';
-// @ts-ignore - bpk-component-price has no TypeScript declarations
-import BpkPrice, { SIZES as PRICE_SIZES, ALIGNS as PRICE_ALIGNS } from '../../../bpk-component-price';
+import {
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+  BpkHStack,
+} from '../../../bpk-component-layout';
+import BpkPrice, {
+  SIZES as PRICE_SIZES,
+  ALIGNS as PRICE_ALIGNS,
+} from '../../../bpk-component-price';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkComparisonTray from '../BpkComparisonTray/BpkComparisonTray';
 
@@ -37,36 +44,88 @@ import type { Meta } from '@storybook/react';
 
 type AiState = 'thinking' | 'aiResponse';
 
-const makeRows = (cancellation: string, stars: string, rating: string, included: string): BpkCompareColumn['rows'] => [
-  { rowId: 'cancellation', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{cancellation}</BpkText> },
-  { rowId: 'stars', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{stars}</BpkText> },
-  { rowId: 'rating', cell: <BpkText textStyle={TEXT_STYLES.footnote}>{rating}</BpkText> },
-  { rowId: 'included', cell: <BpkText textStyle={TEXT_STYLES.footnote}>✓ {included}</BpkText> },
-  { rowId: 'fuel', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Full to full</BpkText> },
-  { rowId: 'mileage', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Unlimited mileage</BpkText> },
-  { rowId: 'doors', cell: <BpkText textStyle={TEXT_STYLES.footnote}>5 doors</BpkText> },
-  { rowId: 'transmission', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Manual</BpkText> },
-  { rowId: 'age', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Min. age 21</BpkText> },
-  { rowId: 'deposit', cell: <BpkText textStyle={TEXT_STYLES.footnote}>£200 deposit</BpkText> },
-  { rowId: 'insurance', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Third party</BpkText> },
-  { rowId: 'pickup', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Airport pickup</BpkText> },
-  { rowId: 'extra', cell: <BpkText textStyle={TEXT_STYLES.footnote}>Placeholder</BpkText> },
+const makeRows = (
+  cancellation: string,
+  stars: string,
+  rating: string,
+  included: string,
+): BpkCompareColumn['rows'] => [
+  {
+    rowId: 'cancellation',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>{cancellation}</BpkText>,
+  },
+  {
+    rowId: 'stars',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>{stars}</BpkText>,
+  },
+  {
+    rowId: 'rating',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>{rating}</BpkText>,
+  },
+  {
+    rowId: 'included',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>✓ {included}</BpkText>,
+  },
+  {
+    rowId: 'fuel',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Full to full</BpkText>,
+  },
+  {
+    rowId: 'mileage',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Unlimited mileage</BpkText>,
+  },
+  {
+    rowId: 'doors',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>5 doors</BpkText>,
+  },
+  {
+    rowId: 'transmission',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Manual</BpkText>,
+  },
+  {
+    rowId: 'age',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Min. age 21</BpkText>,
+  },
+  {
+    rowId: 'deposit',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>£200 deposit</BpkText>,
+  },
+  {
+    rowId: 'insurance',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Third party</BpkText>,
+  },
+  {
+    rowId: 'pickup',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Airport pickup</BpkText>,
+  },
+  {
+    rowId: 'extra',
+    cell: <BpkText textStyle={TEXT_STYLES.footnote}>Placeholder</BpkText>,
+  },
 ];
 
 const makeHeader = (name: string, description: string, price: string) => (
-  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+  // height="100%" fills the row-equalised cell; marginBlockStart="auto" bottom-anchors the price/CTA group.
+  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start" height="100%">
     <BpkVStack gap={BpkSpacing.None} alignItems="flex-start">
       <BpkText textStyle={TEXT_STYLES.label1}>{name}</BpkText>
       <BpkText textStyle={TEXT_STYLES.caption}>{description}</BpkText>
     </BpkVStack>
-    <BpkVStack gap={BpkSpacing.SM} alignItems="flex-start" width="100%">
+    <BpkVStack
+      gap={BpkSpacing.SM}
+      alignItems="flex-start"
+      width="100%"
+      marginBlockStart="auto"
+    >
       <BpkPrice
         price={price}
         size={PRICE_SIZES.small}
         align={PRICE_ALIGNS.left}
         trailingText="total"
       />
-      <BpkButton type={BUTTON_TYPES.primary} size="small" fullWidth>Go to site</BpkButton>
+      <BpkButton type={BUTTON_TYPES.primary} size="small" fullWidth>
+        Go to site
+      </BpkButton>
     </BpkVStack>
   </BpkVStack>
 );
@@ -78,7 +137,8 @@ const makeAiBlurbSummaryState = (aiState: AiState) =>
         state: 'aiResponse',
         aiResponseText: (
           <BpkText textStyle={TEXT_STYLES.caption}>
-            The first rentalcars.com deal includes free cancellation and is rated slightly higher. Choose it if flexibility matters.
+            The first rentalcars.com deal includes free cancellation and is
+            rated slightly higher. Choose it if flexibility matters.
           </BpkText>
         ),
       } as const);
@@ -117,23 +177,43 @@ const INITIAL_TABLE_COLUMNS: BpkCompareColumn[] = [
     bestTag: true,
     imageSrc: CAR_IMAGES[0],
     imageAlt: 'Citroen C1',
-    headerContent: makeHeader('rentalcars.com', 'Citroen C1 o similar economy', '£71'),
-    rows: makeRows('Free cancellation', '3.5 / 5', '4.5 — Excellent', 'Free cancellation'),
+    headerContent: makeHeader(
+      'rentalcars.com',
+      'Citroen C1 o similar economy',
+      '£71',
+    ),
+    rows: makeRows(
+      'Free cancellation',
+      '3.5 / 5',
+      '4.5 — Excellent',
+      'Free cancellation',
+    ),
     removeA11yLabel: 'Remove rentalcars.com deal',
   },
   {
     itemId: 'rentalcars-2',
     imageSrc: CAR_IMAGES[1],
     imageAlt: 'Ford Fiesta',
-    headerContent: makeHeader('rentalcars.com', 'Ford Fiesta o similar economy', '£71'),
-    rows: makeRows('No free cancellation', '4 / 5', '3.8 — Good', 'GPS included'),
+    headerContent: makeHeader(
+      'rentalcars.com',
+      'Ford Fiesta o similar economy',
+      '£71',
+    ),
+    rows: makeRows(
+      'No free cancellation',
+      '4 / 5',
+      '3.8 — Good',
+      'GPS included',
+    ),
     removeA11yLabel: 'Remove second rentalcars.com deal',
   },
 ];
 
 const StandaloneExample = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [columns, setColumns] = useState<BpkCompareColumn[]>(INITIAL_TABLE_COLUMNS);
+  const [columns, setColumns] = useState<BpkCompareColumn[]>(
+    INITIAL_TABLE_COLUMNS,
+  );
   const [aiState, setAiState] = useState<AiState>('aiResponse');
 
   const handleRemove = (itemId: string) => {
@@ -143,7 +223,9 @@ const StandaloneExample = () => {
   return (
     <BpkVStack gap={BpkSpacing.LG}>
       <BpkHStack gap={BpkSpacing.Base}>
-        <BpkButton onClick={() => setIsOpen(true)}>Open comparison modal</BpkButton>
+        <BpkButton onClick={() => setIsOpen(true)}>
+          Open comparison modal
+        </BpkButton>
       </BpkHStack>
 
       <BpkHStack gap={BpkSpacing.Base}>
@@ -160,7 +242,10 @@ const StandaloneExample = () => {
       </BpkHStack>
 
       <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
+        <BpkComparisonTable.Header
+          title="Modal Headline (Optional)"
+          strings={STRINGS}
+        >
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -192,25 +277,76 @@ const SAMPLE_ITEMS: BpkComparisonItem[] = [
   { id: 'hertz', label: 'Hertz', image: CAR_IMAGES[0], imageAlt: 'Hertz' },
   { id: 'avis', label: 'Avis', image: CAR_IMAGES[1], imageAlt: 'Avis' },
   { id: 'budget', label: 'Budget', image: CAR_IMAGES[2], imageAlt: 'Budget' },
-  { id: 'europcar', label: 'Europcar', image: CAR_IMAGES[3], imageAlt: 'Europcar' },
+  {
+    id: 'europcar',
+    label: 'Europcar',
+    image: CAR_IMAGES[3],
+    imageAlt: 'Europcar',
+  },
 ];
 
 // Per-item row data (mirrors what a real consumer would derive from their API).
-const ITEM_ROWS: Record<string, { cancellation: string; stars: string; rating: string; included: string; price: string }> = {
-  hertz:     { cancellation: 'Free cancellation',    stars: '3.5 / 5', rating: '4.5 — Excellent', included: 'Free cancellation', price: '£71' },
-  avis:      { cancellation: 'No free cancellation', stars: '4 / 5',   rating: '3.8 — Good',      included: 'GPS included',      price: '£85' },
-  budget:    { cancellation: 'Free cancellation',    stars: '4.5 / 5', rating: '4.2 — Great',     included: 'Child seat',        price: '£79' },
-  europcar:  { cancellation: 'No free cancellation', stars: '3 / 5',   rating: '3.5 — Average',   included: 'Unlimited mileage', price: '£68' },
+const ITEM_ROWS: Record<
+  string,
+  {
+    cancellation: string;
+    stars: string;
+    rating: string;
+    included: string;
+    price: string;
+  }
+> = {
+  hertz: {
+    cancellation: 'Free cancellation',
+    stars: '3.5 / 5',
+    rating: '4.5 — Excellent',
+    included: 'Free cancellation',
+    price: '£71',
+  },
+  avis: {
+    cancellation: 'No free cancellation',
+    stars: '4 / 5',
+    rating: '3.8 — Good',
+    included: 'GPS included',
+    price: '£85',
+  },
+  budget: {
+    cancellation: 'Free cancellation',
+    stars: '4.5 / 5',
+    rating: '4.2 — Great',
+    included: 'Child seat',
+    price: '£79',
+  },
+  europcar: {
+    cancellation: 'No free cancellation',
+    stars: '3 / 5',
+    rating: '3.5 — Average',
+    included: 'Unlimited mileage',
+    price: '£68',
+  },
 };
 
-const itemToColumn = (item: BpkComparisonItem, index: number): BpkCompareColumn => {
-  const data = ITEM_ROWS[item.id] ?? { cancellation: '—', stars: '—', rating: '—', included: '—', price: '—' };
+const itemToColumn = (
+  item: BpkComparisonItem,
+  index: number,
+): BpkCompareColumn => {
+  const data = ITEM_ROWS[item.id] ?? {
+    cancellation: '—',
+    stars: '—',
+    rating: '—',
+    included: '—',
+    price: '—',
+  };
   return {
     itemId: item.id,
     bestTag: index === 0,
     imageSrc: item.image,
     imageAlt: item.imageAlt ?? item.label,
-    headerContent: makeHeader(item.label, 'Citroen C1 o similar economy', data.price),
+    headerContent: makeHeader(
+      item.label,
+      'Citroen C1 o similar economy',
+      data.price,
+    ),
     rows: makeRows(data.cancellation, data.stars, data.rating, data.included),
     removeA11yLabel: `Remove ${item.label}`,
   };
@@ -241,7 +377,8 @@ const CombinedExample = () => {
     const removedIndex = items.findIndex((item) => item.id === id);
     const remaining = items.filter((item) => item.id !== id);
     if (remaining.length > 0) {
-      pendingFocusIndexRef.current = removedIndex < remaining.length ? removedIndex : removedIndex - 1;
+      pendingFocusIndexRef.current =
+        removedIndex < remaining.length ? removedIndex : removedIndex - 1;
     }
     setItems(remaining);
   };
@@ -251,8 +388,12 @@ const CombinedExample = () => {
     if (pendingFocusIndexRef.current === null) return;
     const idx = pendingFocusIndexRef.current;
     pendingFocusIndexRef.current = null;
-    const tray = document.querySelector('[data-backpack-ds-component="ComparisonTray"]');
-    const removeButtons = tray?.querySelectorAll<HTMLButtonElement>('button[aria-label^="Remove"]');
+    const tray = document.querySelector(
+      '[data-backpack-ds-component="ComparisonTray"]',
+    );
+    const removeButtons = tray?.querySelectorAll<HTMLButtonElement>(
+      'button[aria-label^="Remove"]',
+    );
     removeButtons?.[idx]?.focus();
   }, [items]);
 
@@ -281,11 +422,20 @@ const CombinedExample = () => {
       <BpkHStack gap={BpkSpacing.Base}>
         {SAMPLE_ITEMS.map((item) =>
           isAdded(item.id) ? (
-            <BpkButton key={item.id} type={BUTTON_TYPES.destructive} onClick={() => removeItem(item.id)}>
+            <BpkButton
+              key={item.id}
+              type={BUTTON_TYPES.destructive}
+              onClick={() => removeItem(item.id)}
+            >
               Remove {item.label}
             </BpkButton>
           ) : (
-            <BpkButton key={item.id} type={BUTTON_TYPES.secondary} disabled={isFull} onClick={() => addItem(item)}>
+            <BpkButton
+              key={item.id}
+              type={BUTTON_TYPES.secondary}
+              disabled={isFull}
+              onClick={() => addItem(item)}
+            >
               Add {item.label}
             </BpkButton>
           ),
@@ -303,8 +453,14 @@ const CombinedExample = () => {
         />
       )}
 
-      <BpkComparisonTable.Root isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <BpkComparisonTable.Header title="Modal Headline (Optional)" strings={STRINGS}>
+      <BpkComparisonTable.Root
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <BpkComparisonTable.Header
+          title="Modal Headline (Optional)"
+          strings={STRINGS}
+        >
           <BpkAiBlurb.Root>
             <BpkAiBlurb.Header title={AI_BLURB_STRINGS.aiBlurbHeadingLabel} />
             <BpkAiBlurb.Summary {...makeAiBlurbSummaryState(aiState)} />
@@ -335,7 +491,9 @@ const CombinedExample = () => {
 const meta = {
   title: 'bpk-component-comparison-table',
   component: BpkComparisonTable.Root,
-  decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+  decorators: [
+    (story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>,
+  ],
 } satisfies Meta;
 
 export default meta;
@@ -348,4 +506,87 @@ export const CompareModalExample = {
 export const CompareModalWithTray = {
   name: 'BpkComparisonTable + BpkComparisonTray',
   render: () => <CombinedExample />,
+};
+
+// ─── Uneven header content (CTA bottom-alignment) ────────────────────────────
+
+// Demonstrates CTA bottom-alignment via marginBlockStart="auto" across columns with uneven descriptions.
+const UnevenHeaderContentExample = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const columns: BpkCompareColumn[] = [
+    {
+      itemId: 'short',
+      imageSrc: CAR_IMAGES[0],
+      imageAlt: 'Citroen C1',
+      headerContent: makeHeader('rentalcars.com', 'Citroen C1 economy', '£71'),
+      rows: makeRows(
+        'Free cancellation',
+        '3.5 / 5',
+        '4.5 — Excellent',
+        'Free cancellation',
+      ),
+      removeA11yLabel: 'Remove rentalcars.com deal',
+    },
+    {
+      itemId: 'long',
+      imageSrc: CAR_IMAGES[1],
+      imageAlt: 'Ford Fiesta',
+      // Intentionally long, multi-line description to force this column's
+      // header to be the tallest in the row.
+      headerContent: makeHeader(
+        'Discover Cars',
+        'Ford Fiesta 1.0 EcoBoost or similar economy hatchback with manual transmission, air conditioning and Bluetooth — perfect for short city trips and longer countryside drives alike.',
+        '£89',
+      ),
+      rows: makeRows(
+        'Free cancellation',
+        '4 / 5',
+        '4.0 — Very good',
+        'Unlimited mileage',
+      ),
+      removeA11yLabel: 'Remove Discover Cars deal',
+    },
+    {
+      itemId: 'short-2',
+      imageSrc: CAR_IMAGES[2],
+      imageAlt: 'Fiat 500',
+      headerContent: makeHeader('Hertz', 'Fiat 500 economy', '£95'),
+      rows: makeRows(
+        'No free cancellation',
+        '4.5 / 5',
+        '4.2 — Great',
+        'Child seat',
+      ),
+      removeA11yLabel: 'Remove Hertz deal',
+    },
+  ];
+
+  return (
+    <BpkVStack gap={BpkSpacing.LG}>
+      <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+        The middle column has a multi-line description; the price + CTA in the
+        short columns should still sit at the bottom of their cell, aligned with
+        the long column&apos;s CTA.
+      </BpkText>
+      <BpkButton onClick={() => setIsOpen(true)}>Reopen modal</BpkButton>
+      <BpkComparisonTable.Root isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <BpkComparisonTable.Header
+          title="Uneven header content"
+          strings={STRINGS}
+        />
+        <BpkComparisonTable.Content
+          columns={columns}
+          onRemove={() => {}}
+          onAddMoreClick={() => {}}
+          strings={STRINGS}
+        />
+      </BpkComparisonTable.Root>
+    </BpkVStack>
+  );
+};
+
+export const CompareModalUnevenHeaderContent = {
+  name: 'BpkComparisonTable - Uneven Header Content',
+  render: () => <UnevenHeaderContentExample />,
 };

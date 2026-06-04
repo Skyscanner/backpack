@@ -52,8 +52,8 @@
       "dependsOn": ["^build"],
       "options": {
         "commands": [
-          "nx run backpack-storybook-host:build-storybook -- -o ../../dist-storybook",
-          "percy storybook dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'"
+          "nx run backpack-storybook-host:build-storybook -- -o dist-storybook",
+          "percy storybook libs/backpack-storybook-host/dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'"
         ],
         "parallel": false,
         "cwd": "{workspaceRoot}"

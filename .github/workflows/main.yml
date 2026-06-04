@@ -13,7 +13,7 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache
+  CACHE_NAME: node-modules-cache-v2
   BUILD_CACHE_NAME: build-cache
 
 permissions: {}
@@ -37,8 +37,7 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
@@ -63,15 +62,14 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Upload dist-storybook to Cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
+            libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
@@ -83,12 +81,15 @@ jobs:
 
   Build:
     permissions:
+      actions: read
+      contents: read
       statuses: write
       pull-requests: write
     needs: [Create-NPM-Cache, Create-Build-Cache]
     uses: ./.github/workflows/_build.yml
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   StorybookDeploy:
     runs-on: ubuntu-latest
@@ -109,15 +110,14 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Restore Cache
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
+            libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
@@ -126,7 +126,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: dist-storybook/
+          publish_dir: libs/backpack-storybook-host/dist-storybook/
           keep_files: false
           external_repository: backpack/storybook
           publish_branch: main
@@ -150,8 +150,7 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Build Sass docs
         if: github.ref == 'refs/heads/main'
