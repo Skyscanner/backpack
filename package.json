@@ -191,8 +191,7 @@
   },
   "pnpm": {
     "overrides": {
-      "braces": "3.0.3",
-      "eslint": "^8.57.1"
+      "braces": "3.0.3"
     },
     "peerDependencyRules": {
       "allowedVersions": {
