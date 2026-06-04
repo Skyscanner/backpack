@@ -46,7 +46,7 @@ export type Props = Omit<NativeDivProps, 'className'> & {
 
 const getClassName = cssModules(STYLES);
 
-const getPriceTextStyle = (size: Props['size']) => {
+const getPriceTextStyle = (size: NonNullable<Props['size']>) => {
   if (size === SIZES.small) {
     return TEXT_STYLES.heading4;
   }
@@ -62,7 +62,7 @@ const getPriceTextStyle = (size: Props['size']) => {
   return TEXT_STYLES.heading5;
 };
 
-const getDefaultTextStyle = (size: Props['size']) => {
+const getDefaultTextStyle = (size: NonNullable<Props['size']>) => {
   if (size === SIZES.large) {
     return TEXT_STYLES.sm;
   }
