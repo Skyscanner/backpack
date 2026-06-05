@@ -26,12 +26,18 @@ export const DEFAULT_PATTERN = "**/*.{jsx,tsx}";
 
 export const DEFAULT_OUTPUT_PATH = "backpack-adoption-results.json";
 
-// Aligned with Skyscanner/ds-analyser report-json.js so that adoption metrics
-// produced by this action and by ds-analyser are computed over the same files.
-// Note: spec, story, and mock files are intentionally NOT ignored here.
+// Mirrors the ignore list used by Skyscanner/ds-analyser's seed-worker.js,
+// cli.js, and the per-repo `analyzeOptions.ignore` entries in repos.json
+// (the canonical source for the dashboard / history.json metrics). Using the
+// same list ensures this action's adoption percentages match those numbers.
 export const DEFAULT_IGNORE_PATTERNS = [
-  "node_modules/**",
-  "dist/**",
-  "build/**",
+  "**/node_modules/**",
+  "**/dist/**",
+  "**/build/**",
   "**/*.test.*",
+  "**/*.spec.*",
+  "**/*.stories.*",
+  "**/__mocks__/**",
+  "**/__mock__/**",
+  "**/mocks/**",
 ];

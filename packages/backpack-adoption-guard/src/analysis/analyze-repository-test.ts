@@ -164,7 +164,7 @@ export const App = () => (
     expect(report.usage.nonPureBackpack.count).toBe(3);
   });
 
-  it("scans spec, story, and mock files (alignment with ds-analyser)", async () => {
+  it("ignores spec, story, and mock files (alignment with ds-analyser)", async () => {
     await writeRepoFile(
       repoPath,
       "src/App.tsx",
@@ -177,11 +177,13 @@ export const App = () => <BpkText>Prod</BpkText>;
     await writeRepoFile(repoPath, "src/App.spec.tsx", "export const Spec = () => <div />;");
     await writeRepoFile(repoPath, "src/App.stories.tsx", "export const Story = () => <div />;");
     await writeRepoFile(repoPath, "src/__mocks__/Mock.tsx", "export const Mock = () => <div />;");
+    await writeRepoFile(repoPath, "src/__mock__/Mock2.tsx", "export const Mock2 = () => <div />;");
+    await writeRepoFile(repoPath, "src/mocks/Mock3.tsx", "export const Mock3 = () => <div />;");
 
     const report = await analyzeRepository(repoPath);
 
-    expect(report.filesAnalyzed).toBe(4);
+    expect(report.filesAnalyzed).toBe(1);
     expect(report.usage.backpack.count).toBe(1);
-    expect(report.usage.rawHtml.count).toBe(3);
+    expect(report.usage.rawHtml.count).toBe(0);
   });
 });

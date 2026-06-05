@@ -525,7 +525,6 @@ async function runAnalyzer(
     cwd: repoPath,
     ignore,
     absolute: true,
-    nodir: true,
   });
 
   const visualComponentRegistry = buildVisualComponentRegistry(files);
