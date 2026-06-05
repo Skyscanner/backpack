@@ -116,6 +116,54 @@ export const App = () => <BpkText>Only production file</BpkText>;
     expect(report.usage.rawHtml.count).toBe(0);
   });
 
+  it("treats classNames(variable) as no-override (matches ds-analyser)", async () => {
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      `
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import classNames from 'classnames';
+
+const dynamic = 'pill';
+
+export const App = () => (
+  <BpkButton className={classNames(dynamic)}>Book</BpkButton>
+);
+`,
+    );
+
+    const report = await analyzeRepository(repoPath);
+
+    expect(report.usage.backpack.count).toBe(1);
+    // classNames(variable) cannot be statically resolved → ds-analyser does
+    // NOT count it as an override. So the BpkButton stays "pure".
+    expect(report.usage.pureBackpack.count).toBe(1);
+    expect(report.usage.nonPureBackpack.count).toBe(0);
+  });
+
+  it("counts each classNames('a', 'b') argument as a separate override", async () => {
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      `
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import classNames from 'classnames';
+
+export const App = () => (
+  <BpkButton className={classNames('alpha', 'beta', 'gamma')}>Book</BpkButton>
+);
+`,
+    );
+
+    const report = await analyzeRepository(repoPath);
+
+    // 1 Backpack usage, but classNames(...) has 3 string args → overrideCount 3.
+    // ds-analyser pure = backpackUsages - classNameOverrides = 1 - 3 = -2.
+    expect(report.usage.backpack.count).toBe(1);
+    expect(report.usage.pureBackpack.count).toBe(-2);
+    expect(report.usage.nonPureBackpack.count).toBe(3);
+  });
+
   it("scans spec, story, and mock files (alignment with ds-analyser)", async () => {
     await writeRepoFile(
       repoPath,

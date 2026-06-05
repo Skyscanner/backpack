@@ -15,127 +15,124 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// Verbatim port of buildVisualComponentRegistry / checkBodyForVisualJSX from
+// Skyscanner/ds-analyser src/analyzer.js.
 import { readFileSync } from "node:fs";
 
+import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import type { NodePath } from "@babel/traverse";
-import * as t from "@babel/types";
 
 import {
-  expressionName,
+  PARSER_PLUGINS,
+  getJSXElementName,
   isBackpackComponent,
-  isRawHtmlElement,
-  parseSourceFile,
-  tagNameText,
-} from "./jsx";
+  isRawHTMLElement,
+} from "./jsx-helpers";
 
 const traverse = (
   (_traverse as unknown as { default?: typeof _traverse }).default ?? _traverse
 ) as typeof _traverse;
 
-const containsVisualJsx = (
-  fnPath: NodePath<
-    | t.FunctionDeclaration
-    | t.FunctionExpression
-    | t.ArrowFunctionExpression
-  >,
-): boolean => {
-  let found = false;
-
-  fnPath.traverse({
-    Function(innerPath) {
-      if (innerPath.node !== fnPath.node) {
-        innerPath.skip();
+function checkBodyForVisualJSX(
+  path: any,
+  componentName: string,
+  visualComponents: Set<string>,
+): void {
+  let bodyPath: any;
+  if (path.isFunctionDeclaration()) {
+    bodyPath = path.get("body");
+  } else if (path.isVariableDeclarator()) {
+    const init = path.get("init");
+    if (init.isArrowFunctionExpression() || init.isFunctionExpression()) {
+      bodyPath = init.get("body");
+    } else if (init.isCallExpression()) {
+      for (const arg of init.get("arguments")) {
+        if (arg.isArrowFunctionExpression() || arg.isFunctionExpression()) {
+          bodyPath = arg.get("body");
+          break;
+        }
       }
+    }
+  }
+  if (!bodyPath) return;
+
+  let hasVisualJSX = false;
+  bodyPath.traverse({
+    FunctionDeclaration(p: any) {
+      p.skip();
     },
-    ClassDeclaration(innerPath) {
-      innerPath.skip();
+    FunctionExpression(p: any) {
+      p.skip();
     },
-    ClassExpression(innerPath) {
-      innerPath.skip();
+    ArrowFunctionExpression(p: any) {
+      p.skip();
     },
-    JSXOpeningElement(innerPath) {
-      const name = tagNameText(innerPath.node.name);
-      if (isRawHtmlElement(name) || isBackpackComponent(name)) {
-        found = true;
+    ClassDeclaration(p: any) {
+      p.skip();
+    },
+    ClassExpression(p: any) {
+      p.skip();
+    },
+    JSXOpeningElement(innerPath: any) {
+      const name = getJSXElementName(innerPath.node.name);
+      if (name && (isRawHTMLElement(name) || isBackpackComponent(name))) {
+        hasVisualJSX = true;
         innerPath.stop();
       }
     },
   });
+  if (hasVisualJSX) {
+    visualComponents.add(componentName);
+  }
+}
 
-  return found;
-};
+export function buildVisualComponentRegistry(files: string[]): Set<string> {
+  const visualComponents = new Set<string>();
 
-export const buildVisualComponentRegistry = (files: string[]) => {
-  const registry = new Set<string>();
-
-  files.forEach((filePath) => {
+  for (const filePath of files) {
     try {
-      const content = readFileSync(filePath, "utf8");
-      const ast = parseSourceFile(content);
+      const content = readFileSync(filePath, "utf-8");
+      const ast = parse(content, {
+        sourceType: "module",
+        plugins: PARSER_PLUGINS as any,
+      });
 
       traverse(ast, {
-        FunctionDeclaration(path) {
-          const id = path.node.id;
-          if (!id || !/^[A-Z]/.test(id.name)) {
-            return;
-          }
-          if (containsVisualJsx(path)) {
-            registry.add(id.name);
+        FunctionDeclaration(path: any) {
+          const name = path.node.id?.name;
+          if (name && /^[A-Z]/.test(name)) {
+            checkBodyForVisualJSX(path, name, visualComponents);
           }
         },
-        VariableDeclarator(path) {
-          const id = path.node.id;
-          if (!t.isIdentifier(id) || !/^[A-Z]/.test(id.name)) {
-            return;
-          }
+        VariableDeclarator(path: any) {
+          const name = path.node.id?.name;
+          if (!name || !/^[A-Z]/.test(name)) return;
 
           const init = path.node.init;
-          if (!init) {
-            return;
-          }
+          if (!init) return;
 
           if (
-            t.isArrowFunctionExpression(init) ||
-            t.isFunctionExpression(init)
+            init.type === "ArrowFunctionExpression" ||
+            init.type === "FunctionExpression"
           ) {
-            const initPath = path.get("init") as NodePath<
-              t.ArrowFunctionExpression | t.FunctionExpression
-            >;
-            if (containsVisualJsx(initPath)) {
-              registry.add(id.name);
-            }
-            return;
+            checkBodyForVisualJSX(path, name, visualComponents);
           }
-
-          if (t.isCallExpression(init)) {
+          if (init.type === "CallExpression") {
             const callee = init.callee;
-            const fnName = t.isExpression(callee) ? expressionName(callee) : null;
-            const isForwardRef = fnName === "forwardRef";
-            if (!isForwardRef) {
-              return;
-            }
-
-            const callbackIndex = init.arguments.findIndex(
-              (arg) => t.isArrowFunctionExpression(arg) || t.isFunctionExpression(arg),
-            );
-            if (callbackIndex === -1) {
-              return;
-            }
-
-            const callbackPath = path.get(
-              `init.arguments.${callbackIndex}`,
-            ) as NodePath<t.ArrowFunctionExpression | t.FunctionExpression>;
-            if (containsVisualJsx(callbackPath)) {
-              registry.add(id.name);
+            const isForwardRef =
+              (callee.type === "MemberExpression" &&
+                callee.property?.name === "forwardRef") ||
+              (callee.type === "Identifier" && callee.name === "forwardRef");
+            if (isForwardRef) {
+              checkBodyForVisualJSX(path, name, visualComponents);
             }
           }
         },
       });
     } catch {
-      // Parse errors are recorded during the main analysis pass.
+      // Skip files that fail to parse.
     }
-  });
+  }
 
-  return registry;
-};
+  return visualComponents;
+}
