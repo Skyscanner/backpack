@@ -3,7 +3,10 @@ packages:
   - 'libs/*'
 
 # Settings migrated from .npmrc (pnpm 11 reads workspace config from here)
-strictPeerDependencies: true
+# strictPeerDependencies is intentionally false: Dependabot bump PRs run pnpm install
+# and would fail if a bumped package temporarily creates peer dep mismatches.
+# Enforcement for human PRs is handled by the check-peer-dependencies CI workflow instead.
+strictPeerDependencies: false
 engineStrict: true
 publicHoistPattern:
   - '*eslint*'

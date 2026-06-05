@@ -82,6 +82,13 @@ jobs:
           pnpm run build
           pnpm run storybook:dist
 
+  Check-Peer-Dependencies:
+    needs: [Create-NPM-Cache]
+    uses: ./.github/workflows/check-peer-dependencies.yml
+    permissions:
+      contents: read
+      id-token: write
+
   Build:
     permissions:
       actions: read
