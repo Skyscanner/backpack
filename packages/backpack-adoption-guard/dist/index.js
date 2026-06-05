@@ -66528,15 +66528,10 @@ var BACKPACK_ADOPTION_OUTPUT_KEY = "backpack-adoption";
 var DEFAULT_PATTERN = "**/*.{jsx,tsx}";
 var DEFAULT_OUTPUT_PATH = "backpack-adoption-results.json";
 var DEFAULT_IGNORE_PATTERNS = [
-  "**/node_modules/**",
-  "**/dist/**",
-  "**/build/**",
-  "**/*.test.*",
-  "**/*.spec.*",
-  "**/*.stories.*",
-  "**/__mocks__/**",
-  "**/__mock__/**",
-  "**/mocks/**"
+  "node_modules/**",
+  "dist/**",
+  "build/**",
+  "**/*.test.*"
 ];
 
 // src/analysis/analyze-repository.ts

@@ -94,7 +94,7 @@ export const App = () => (
     });
   });
 
-  it("ignores generated, test, story, mock, and dependency files", async () => {
+  it("ignores generated, test, and dependency files", async () => {
     await writeRepoFile(
       repoPath,
       "src/App.tsx",
@@ -105,9 +105,6 @@ export const App = () => <BpkText>Only production file</BpkText>;
 `,
     );
     await writeRepoFile(repoPath, "src/App.test.tsx", "export const Test = () => <div />;");
-    await writeRepoFile(repoPath, "src/App.spec.tsx", "export const Spec = () => <div />;");
-    await writeRepoFile(repoPath, "src/App.stories.tsx", "export const Story = () => <div />;");
-    await writeRepoFile(repoPath, "src/__mocks__/Mock.tsx", "export const Mock = () => <div />;");
     await writeRepoFile(repoPath, "dist/Generated.tsx", "export const Generated = () => <div />;");
     await writeRepoFile(repoPath, "build/Generated.tsx", "export const Built = () => <div />;");
     await writeRepoFile(repoPath, "node_modules/pkg/Component.tsx", "export const Dep = () => <div />;");
@@ -117,5 +114,26 @@ export const App = () => <BpkText>Only production file</BpkText>;
     expect(report.filesAnalyzed).toBe(1);
     expect(report.usage.backpack.count).toBe(1);
     expect(report.usage.rawHtml.count).toBe(0);
+  });
+
+  it("scans spec, story, and mock files (alignment with ds-analyser)", async () => {
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      `
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+
+export const App = () => <BpkText>Prod</BpkText>;
+`,
+    );
+    await writeRepoFile(repoPath, "src/App.spec.tsx", "export const Spec = () => <div />;");
+    await writeRepoFile(repoPath, "src/App.stories.tsx", "export const Story = () => <div />;");
+    await writeRepoFile(repoPath, "src/__mocks__/Mock.tsx", "export const Mock = () => <div />;");
+
+    const report = await analyzeRepository(repoPath);
+
+    expect(report.filesAnalyzed).toBe(4);
+    expect(report.usage.backpack.count).toBe(1);
+    expect(report.usage.rawHtml.count).toBe(3);
   });
 });
