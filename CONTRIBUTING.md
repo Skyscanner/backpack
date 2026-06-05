@@ -222,7 +222,7 @@ Each Bpk component has a corresponding README file which contains information ab
 
 For changes to existing components, make sure the API documentation is updated to indicate if something is experimental.
 
-Major changes will often require a migration guide. If an experiment is considered succesful, you should add a migration guide within the docs folder located in the respective component folder.
+Major changes will often require a migration guide. If an experiment is considered successful, you should add a migration guide within the docs folder located in the respective component folder.
 </details>
 
 <details>
