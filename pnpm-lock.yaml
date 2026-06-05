@@ -4,273 +4,597 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@ark-ui/react':
+      specifier: ^5.34.1
+      version: 5.36.2
+    '@babel/cli':
+      specifier: ^7.28.3
+      version: 7.28.3
+    '@babel/core':
+      specifier: ^7.28.3
+      version: 7.28.5
+    '@babel/plugin-proposal-class-properties':
+      specifier: ^7.18.6
+      version: 7.18.6
+    '@babel/plugin-proposal-object-rest-spread':
+      specifier: ^7.20.2
+      version: 7.20.7
+    '@babel/plugin-proposal-private-methods':
+      specifier: ^7.17.12
+      version: 7.18.6
+    '@babel/plugin-transform-runtime':
+      specifier: ^7.28.3
+      version: 7.28.3
+    '@babel/preset-env':
+      specifier: ^7.28.3
+      version: 7.28.3
+    '@babel/preset-react':
+      specifier: ^7.28.5
+      version: 7.28.5
+    '@babel/preset-typescript':
+      specifier: ^7.28.5
+      version: 7.28.5
+    '@babel/register':
+      specifier: ^7.28.3
+      version: 7.28.3
+    '@chakra-ui/react':
+      specifier: ^3.33.0
+      version: 3.35.0
+    '@figma/code-connect':
+      specifier: ^1.4.3
+      version: 1.4.3
+    '@figma/rest-api-spec':
+      specifier: ^0.37.0
+      version: 0.37.0
+    '@floating-ui/react':
+      specifier: ^0.26.12
+      version: 0.26.28
+    '@nx/eslint-plugin':
+      specifier: 22.7.1
+      version: 22.7.1
+    '@nx/jest':
+      specifier: 22.7.1
+      version: 22.7.1
+    '@nx/js':
+      specifier: 22.7.1
+      version: 22.7.1
+    '@nx/react':
+      specifier: 22.7.1
+      version: 22.7.1
+    '@nx/storybook':
+      specifier: 22.7.1
+      version: 22.7.1
+    '@nx/webpack':
+      specifier: 22.7.1
+      version: 22.7.1
+    '@percy/cli':
+      specifier: ^1.31.0
+      version: 1.31.0
+    '@percy/storybook':
+      specifier: ^9.1.0
+      version: 9.1.0
+    '@radix-ui/react-compose-refs':
+      specifier: ^1.1.1
+      version: 1.1.2
+    '@radix-ui/react-slider':
+      specifier: 1.3.5
+      version: 1.3.5
+    '@react-google-maps/api':
+      specifier: ^2.19.3
+      version: 2.20.8
+    '@skyscanner/bpk-foundations-web':
+      specifier: ^24.6.0
+      version: 24.6.0
+    '@skyscanner/bpk-svgs':
+      specifier: ^20.11.0
+      version: 20.11.0
+    '@skyscanner/eslint-config-skyscanner':
+      specifier: ^22.6.0
+      version: 22.6.0
+    '@skyscanner/stylelint-config-skyscanner':
+      specifier: ^14.2.0
+      version: 14.2.0
+    '@storybook/addon-a11y':
+      specifier: ^10.3.5
+      version: 10.3.5
+    '@storybook/addon-docs':
+      specifier: ^10.3.5
+      version: 10.3.5
+    '@storybook/addon-webpack5-compiler-babel':
+      specifier: ^4.0.0
+      version: 4.0.0
+    '@storybook/react':
+      specifier: ^10.3.5
+      version: 10.3.5
+    '@storybook/react-webpack5':
+      specifier: ^10.3.5
+      version: 10.3.5
+    '@testing-library/jest-dom':
+      specifier: ^6.8.0
+      version: 6.9.1
+    '@testing-library/react':
+      specifier: ^16.3.0
+      version: 16.3.0
+    '@testing-library/user-event':
+      specifier: ^14.6.1
+      version: 14.6.1
+    '@types/jest':
+      specifier: ^30.0.0
+      version: 30.0.0
+    '@types/jest-axe':
+      specifier: ^3.5.9
+      version: 3.5.9
+    '@types/lodash.clamp':
+      specifier: ^4.0.9
+      version: 4.0.9
+    '@types/react':
+      specifier: ^18.3.1
+      version: 18.3.1
+    '@types/react-dom':
+      specifier: ^18.3.0
+      version: 18.3.0
+    '@types/react-transition-group':
+      specifier: ^4.4.11
+      version: 4.4.11
+    '@types/react-window':
+      specifier: ^1.8.8
+      version: 1.8.8
+    '@types/webpack-env':
+      specifier: ^1.18.4
+      version: 1.18.4
+    autoprefixer:
+      specifier: ^10.4.18
+      version: 10.4.18
+    babel-loader:
+      specifier: ^10.0.0
+      version: 10.0.0
+    babel-plugin-inline-react-svg:
+      specifier: ^2.0.1
+      version: 2.0.2
+    babel-plugin-module-resolver:
+      specifier: ^5.0.0
+      version: 5.0.0
+    babel-plugin-react-docgen:
+      specifier: ^4.2.1
+      version: 4.2.1
+    babel-plugin-require-context-hook:
+      specifier: ^1.0.0
+      version: 1.0.0
+    core-js:
+      specifier: ^3.47.0
+      version: 3.47.0
+    css-loader:
+      specifier: ^7.1.2
+      version: 7.1.2
+    css-minimizer-webpack-plugin:
+      specifier: ^8.0.0
+      version: 8.0.0
+    d3-path:
+      specifier: ^3.1.0
+      version: 3.1.0
+    d3-scale:
+      specifier: ^4.0.2
+      version: 4.0.2
+    danger:
+      specifier: ^13.0.4
+      version: 13.0.4
+    danger-plugin-toolbox:
+      specifier: ^3.1.2
+      version: 3.1.2
+    date-fns:
+      specifier: ^4.1.0
+      version: 4.1.0
+    dotenv:
+      specifier: ^16.4.5
+      version: 16.6.1
+    downshift:
+      specifier: ^9.0.10
+      version: 9.3.3
+    eslint:
+      specifier: ^8.57.1
+      version: 8.57.1
+    eslint_d:
+      specifier: ^14.3.0
+      version: 14.3.0
+    glob:
+      specifier: ^13.0.0
+      version: 13.0.6
+    gulp:
+      specifier: ^5.0.0
+      version: 5.0.0
+    gulp-rename:
+      specifier: ^2.1.0
+      version: 2.1.0
+    gulp-svgmin:
+      specifier: ^4.1.0
+      version: 4.1.0
+    husky:
+      specifier: ^9.1.3
+      version: 9.1.3
+    intersection-observer:
+      specifier: ^0.12.2
+      version: 0.12.2
+    jest:
+      specifier: ^30.3.0
+      version: 30.3.0
+    jest-axe:
+      specifier: ^10.0.0
+      version: 10.0.0
+    jest-environment-jsdom:
+      specifier: ^30.3.0
+      version: 30.3.0
+    lint-staged:
+      specifier: ^16.2.7
+      version: 16.2.7
+    lodash:
+      specifier: ^4.18.1
+      version: 4.18.1
+    lodash.clamp:
+      specifier: ^4.0.3
+      version: 4.0.3
+    lodash.debounce:
+      specifier: ^4.0.8
+      version: 4.0.8
+    mini-css-extract-plugin:
+      specifier: ^2.9.0
+      version: 2.9.0
+    normalize.css:
+      specifier: 4.2.0
+      version: 4.2.0
+    npm-run-all:
+      specifier: ^4.1.5
+      version: 4.1.5
+    nx:
+      specifier: 22.7.1
+      version: 22.7.1
+    object-assign:
+      specifier: ^4.1.1
+      version: 4.1.1
+    postcss-flexbugs-fixes:
+      specifier: ^5.0.2
+      version: 5.0.2
+    postcss-loader:
+      specifier: ^8.2.0
+      version: 8.2.1
+    prop-types:
+      specifier: ^15.7.2
+      version: 15.8.1
+    raf:
+      specifier: ^3.4.1
+      version: 3.4.1
+    react:
+      specifier: 18.3.1
+      version: 18.3.1
+    react-autosuggest:
+      specifier: ^9.4.3
+      version: 9.4.3
+    react-dom:
+      specifier: 18.3.1
+      version: 18.3.1
+    react-svg-loader:
+      specifier: ^3.0.1
+      version: 3.0.3
+    react-table:
+      specifier: ^7.8.0
+      version: 7.8.0
+    react-virtualized-auto-sizer:
+      specifier: 1.0.20
+      version: 1.0.20
+    react-window:
+      specifier: ^1.8.7
+      version: 1.8.11
+    sass-embedded:
+      specifier: ^1.90.0
+      version: 1.90.0
+    sass-loader:
+      specifier: ^16.0.4
+      version: 16.0.4
+    sass-migrator:
+      specifier: ^2.5.6
+      version: 2.5.6
+    sassdoc:
+      specifier: ^2.7.0
+      version: 2.7.4
+    storybook:
+      specifier: ^10.3.3
+      version: 10.3.5
+    style-dictionary:
+      specifier: ^5.4.0
+      version: 5.4.0
+    style-loader:
+      specifier: ^4.0.0
+      version: 4.0.0
+    tabbable:
+      specifier: ^6.4.0
+      version: 6.4.0
+    ts-migrate:
+      specifier: ^0.1.35
+      version: 0.1.35
+    tsx:
+      specifier: ^4.19.2
+      version: 4.21.0
+    typescript:
+      specifier: ^5.9.2
+      version: 5.9.3
+    webpack:
+      specifier: ^5.103.0
+      version: 5.103.0
+    wrapper-webpack-plugin:
+      specifier: ^2.2.2
+      version: 2.2.2
+
+overrides:
+  braces: 3.0.3
+
 importers:
 
   .:
     devDependencies:
       '@babel/cli':
-        specifier: ^7.28.3
+        specifier: 'catalog:'
         version: 7.28.3(@babel/core@7.28.5)
       '@babel/core':
-        specifier: ^7.28.3
+        specifier: 'catalog:'
         version: 7.28.5
       '@babel/plugin-proposal-class-properties':
-        specifier: ^7.18.6
+        specifier: 'catalog:'
         version: 7.18.6(@babel/core@7.28.5)
       '@babel/plugin-proposal-object-rest-spread':
-        specifier: ^7.20.2
+        specifier: 'catalog:'
         version: 7.20.7(@babel/core@7.28.5)
       '@babel/plugin-proposal-private-methods':
-        specifier: ^7.17.12
+        specifier: 'catalog:'
         version: 7.18.6(@babel/core@7.28.5)
       '@babel/plugin-transform-runtime':
-        specifier: ^7.28.3
+        specifier: 'catalog:'
         version: 7.28.3(@babel/core@7.28.5)
       '@babel/preset-env':
-        specifier: ^7.28.3
+        specifier: 'catalog:'
         version: 7.28.3(@babel/core@7.28.5)
       '@babel/preset-react':
-        specifier: ^7.28.5
+        specifier: 'catalog:'
         version: 7.28.5(@babel/core@7.28.5)
       '@babel/preset-typescript':
-        specifier: ^7.28.5
+        specifier: 'catalog:'
         version: 7.28.5(@babel/core@7.28.5)
       '@babel/register':
-        specifier: ^7.28.3
+        specifier: 'catalog:'
         version: 7.28.3(@babel/core@7.28.5)
       '@figma/code-connect':
-        specifier: ^1.4.3
+        specifier: 'catalog:'
         version: 1.4.3
       '@figma/rest-api-spec':
-        specifier: ^0.37.0
+        specifier: 'catalog:'
         version: 0.37.0
       '@nx/eslint-plugin':
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1(@babel/traverse@7.29.0)(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.9.3))(eslint-config-prettier@10.1.8(eslint@8.57.1))(eslint@8.57.1)(nx@22.7.1)(typescript@5.9.3)
       '@nx/jest':
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1(@babel/traverse@7.29.0)(@types/node@25.9.1)(babel-plugin-macros@3.1.0)(nx@22.7.1)(typescript@5.9.3)
       '@nx/js':
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1(@babel/traverse@7.29.0)(nx@22.7.1)
       '@nx/react':
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1(0fac4f756feb72645ce5190bced88d49)
       '@nx/storybook':
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1(@babel/traverse@7.29.0)(@nx/jest@22.7.1(@babel/traverse@7.29.0)(@types/node@25.9.1)(babel-plugin-macros@3.1.0)(nx@22.7.1)(typescript@5.9.3))(@nx/web@22.7.1(718433503aaf055c406c48d59b4afc71))(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@22.7.1)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)
       '@nx/webpack':
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1(@babel/traverse@7.29.0)(@rspack/core@1.6.8(@swc/helpers@0.5.21))(esbuild@0.27.7)(html-webpack-plugin@5.6.6(@rspack/core@1.6.8(@swc/helpers@0.5.21))(webpack@5.103.0(esbuild@0.27.7)))(node-sass@7.0.3)(nx@22.7.1)(typescript@5.9.3)
       '@percy/cli':
-        specifier: ^1.31.0
+        specifier: 'catalog:'
         version: 1.31.0(typescript@5.9.3)
       '@percy/storybook':
-        specifier: ^9.1.0
+        specifier: 'catalog:'
         version: 9.1.0(typescript@5.9.3)
       '@skyscanner/bpk-foundations-web':
-        specifier: ^24.6.0
+        specifier: 'catalog:'
         version: 24.6.0
       '@skyscanner/bpk-svgs':
-        specifier: ^20.11.0
+        specifier: 'catalog:'
         version: 20.11.0
       '@skyscanner/eslint-config-skyscanner':
-        specifier: ^22.6.0
+        specifier: 'catalog:'
         version: 22.6.0(@types/eslint@8.44.3)(jest@30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0))(typescript@5.9.3)(vitest@4.1.6(@types/node@25.9.1)(jsdom@26.1.0)(vite@8.0.13(@types/node@25.9.1)(esbuild@0.27.7)(jiti@2.5.1)(less@4.5.1)(sass-embedded@1.90.0)(sass@1.90.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3)))
       '@skyscanner/stylelint-config-skyscanner':
-        specifier: ^14.2.0
+        specifier: 'catalog:'
         version: 14.2.0(@types/eslint@8.44.3)(jest@30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0))(postcss@8.5.14)(prettier@3.6.2)(typescript@5.9.3)(vitest@4.1.6(@types/node@25.9.1)(jsdom@26.1.0)(vite@8.0.13(@types/node@25.9.1)(esbuild@0.27.7)(jiti@2.5.1)(less@4.5.1)(sass-embedded@1.90.0)(sass@1.90.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3)))
       '@storybook/addon-a11y':
-        specifier: ^10.3.5
+        specifier: 'catalog:'
         version: 10.3.5(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@storybook/addon-docs':
-        specifier: ^10.3.5
+        specifier: 'catalog:'
         version: 10.3.5(@types/react@18.3.1)(esbuild@0.27.7)(rollup@4.60.4)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(vite@8.0.13(@types/node@25.9.1)(esbuild@0.27.7)(jiti@2.5.1)(less@4.5.1)(sass-embedded@1.90.0)(sass@1.90.0)(terser@5.39.0)(tsx@4.21.0)(yaml@2.8.3))(webpack@5.103.0(esbuild@0.27.7))
       '@storybook/addon-webpack5-compiler-babel':
-        specifier: ^4.0.0
+        specifier: 'catalog:'
         version: 4.0.0(webpack@5.103.0(esbuild@0.27.7))
       '@storybook/react':
-        specifier: ^10.3.5
+        specifier: 'catalog:'
         version: 10.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)
       '@storybook/react-webpack5':
-        specifier: ^10.3.5
+        specifier: 'catalog:'
         version: 10.3.5(@rspack/core@1.6.8(@swc/helpers@0.5.21))(esbuild@0.27.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.9.3)
       '@testing-library/jest-dom':
-        specifier: ^6.8.0
+        specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^16.3.0
+        specifier: 'catalog:'
         version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
-        specifier: ^14.6.1
+        specifier: 'catalog:'
         version: 14.6.1(@testing-library/dom@10.4.0)
       '@types/jest':
-        specifier: ^30.0.0
+        specifier: 'catalog:'
         version: 30.0.0
       '@types/jest-axe':
-        specifier: ^3.5.9
+        specifier: 'catalog:'
         version: 3.5.9
       '@types/lodash.clamp':
-        specifier: ^4.0.9
+        specifier: 'catalog:'
         version: 4.0.9
       '@types/react':
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: 'catalog:'
         version: 18.3.0
       '@types/react-transition-group':
-        specifier: ^4.4.11
+        specifier: 'catalog:'
         version: 4.4.11
       '@types/react-window':
-        specifier: ^1.8.8
+        specifier: 'catalog:'
         version: 1.8.8
       '@types/webpack-env':
-        specifier: ^1.18.4
+        specifier: 'catalog:'
         version: 1.18.4
       autoprefixer:
-        specifier: ^10.4.18
+        specifier: 'catalog:'
         version: 10.4.18(postcss@8.5.14)
       babel-loader:
-        specifier: ^10.0.0
+        specifier: 'catalog:'
         version: 10.0.0(@babel/core@7.28.5)(webpack@5.103.0(esbuild@0.27.7))
       babel-plugin-inline-react-svg:
-        specifier: ^2.0.1
+        specifier: 'catalog:'
         version: 2.0.2(@babel/core@7.28.5)
       babel-plugin-module-resolver:
-        specifier: ^5.0.0
+        specifier: 'catalog:'
         version: 5.0.0
       babel-plugin-react-docgen:
-        specifier: ^4.2.1
+        specifier: 'catalog:'
         version: 4.2.1
       babel-plugin-require-context-hook:
-        specifier: ^1.0.0
+        specifier: 'catalog:'
         version: 1.0.0
       core-js:
-        specifier: ^3.47.0
+        specifier: 'catalog:'
         version: 3.47.0
       css-loader:
-        specifier: ^7.1.2
+        specifier: 'catalog:'
         version: 7.1.2(@rspack/core@1.6.8(@swc/helpers@0.5.21))(webpack@5.103.0(esbuild@0.27.7))
       css-minimizer-webpack-plugin:
-        specifier: ^8.0.0
+        specifier: 'catalog:'
         version: 8.0.0(esbuild@0.27.7)(webpack@5.103.0(esbuild@0.27.7))
       d3-scale:
-        specifier: ^4.0.2
+        specifier: 'catalog:'
         version: 4.0.2
       danger:
-        specifier: ^13.0.4
+        specifier: 'catalog:'
         version: 13.0.4(encoding@0.1.13)
       danger-plugin-toolbox:
-        specifier: ^3.1.2
+        specifier: 'catalog:'
         version: 3.1.2
       date-fns:
-        specifier: ^4.1.0
+        specifier: 'catalog:'
         version: 4.1.0
       dotenv:
-        specifier: ^16.4.5
+        specifier: 'catalog:'
         version: 16.6.1
       eslint:
-        specifier: ^8.57.1
+        specifier: 'catalog:'
         version: 8.57.1
       eslint_d:
-        specifier: ^14.3.0
+        specifier: 'catalog:'
         version: 14.3.0(jiti@2.5.1)
       glob:
-        specifier: ^13.0.0
+        specifier: 'catalog:'
         version: 13.0.6
       gulp:
-        specifier: ^5.0.0
+        specifier: 'catalog:'
         version: 5.0.0
       gulp-rename:
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0
       gulp-svgmin:
-        specifier: ^4.1.0
+        specifier: 'catalog:'
         version: 4.1.0
       husky:
-        specifier: ^9.1.3
+        specifier: 'catalog:'
         version: 9.1.3
       jest:
-        specifier: ^30.3.0
+        specifier: 'catalog:'
         version: 30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0)
       jest-axe:
-        specifier: ^10.0.0
+        specifier: 'catalog:'
         version: 10.0.0
       jest-environment-jsdom:
-        specifier: ^30.3.0
+        specifier: 'catalog:'
         version: 30.3.0
       lint-staged:
-        specifier: ^16.2.7
+        specifier: 'catalog:'
         version: 16.2.7
       lodash:
-        specifier: ^4.18.1
+        specifier: 'catalog:'
         version: 4.18.1
       mini-css-extract-plugin:
-        specifier: ^2.9.0
+        specifier: 'catalog:'
         version: 2.9.0(webpack@5.103.0(esbuild@0.27.7))
       npm-run-all:
-        specifier: ^4.1.5
+        specifier: 'catalog:'
         version: 4.1.5
       nx:
-        specifier: 22.7.1
+        specifier: 'catalog:'
         version: 22.7.1
       postcss-flexbugs-fixes:
-        specifier: ^5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(postcss@8.5.14)
       postcss-loader:
-        specifier: ^8.2.0
+        specifier: 'catalog:'
         version: 8.2.1(@rspack/core@1.6.8(@swc/helpers@0.5.21))(postcss@8.5.14)(typescript@5.9.3)(webpack@5.103.0(esbuild@0.27.7))
       prop-types:
-        specifier: ^15.7.2
+        specifier: 'catalog:'
         version: 15.8.1
       raf:
-        specifier: ^3.4.1
+        specifier: 'catalog:'
         version: 3.4.1
       react:
-        specifier: 18.3.1
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: 18.3.1
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
       react-svg-loader:
-        specifier: ^3.0.1
+        specifier: 'catalog:'
         version: 3.0.3
       sass-embedded:
-        specifier: ^1.90.0
+        specifier: 'catalog:'
         version: 1.90.0
       sass-loader:
-        specifier: ^16.0.4
+        specifier: 'catalog:'
         version: 16.0.4(@rspack/core@1.6.8(@swc/helpers@0.5.21))(node-sass@7.0.3)(sass-embedded@1.90.0)(sass@1.90.0)(webpack@5.103.0(esbuild@0.27.7))
       sass-migrator:
-        specifier: ^2.5.6
+        specifier: 'catalog:'
         version: 2.5.6
       sassdoc:
-        specifier: ^2.7.0
+        specifier: 'catalog:'
         version: 2.7.4(chokidar@3.6.0)
       storybook:
-        specifier: ^10.3.3
+        specifier: 'catalog:'
         version: 10.3.5(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       style-dictionary:
-        specifier: ^5.4.0
+        specifier: 'catalog:'
         version: 5.4.0(tslib@2.8.1)
       style-loader:
-        specifier: ^4.0.0
+        specifier: 'catalog:'
         version: 4.0.0(webpack@5.103.0(esbuild@0.27.7))
       ts-migrate:
-        specifier: ^0.1.35
+        specifier: 'catalog:'
         version: 0.1.35(@babel/preset-env@7.28.3(@babel/core@7.28.5))(typescript@5.9.3)
       tsx:
-        specifier: ^4.19.2
+        specifier: 'catalog:'
         version: 4.21.0
       typescript:
-        specifier: ^5.9.2
+        specifier: 'catalog:'
         version: 5.9.3
       webpack:
-        specifier: ^5.103.0
+        specifier: 'catalog:'
         version: 5.103.0(esbuild@0.27.7)
       wrapper-webpack-plugin:
-        specifier: ^2.2.2
+        specifier: 'catalog:'
         version: 2.2.2(webpack@5.103.0(esbuild@0.27.7))
 
   libs/backpack-storybook-host:
@@ -287,82 +611,82 @@ importers:
   packages/backpack-web:
     dependencies:
       '@ark-ui/react':
-        specifier: ^5.34.1
+        specifier: 'catalog:'
         version: 5.36.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@chakra-ui/react':
-        specifier: ^3.33.0
+        specifier: 'catalog:'
         version: 3.35.0(@emotion/react@11.14.0(@types/react@18.3.1)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@floating-ui/react':
-        specifier: ^0.26.12
+        specifier: 'catalog:'
         version: 0.26.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-compose-refs':
-        specifier: ^1.1.1
+        specifier: 'catalog:'
         version: 1.1.2(@types/react@18.3.1)(react@18.3.1)
       '@radix-ui/react-slider':
-        specifier: 1.3.5
+        specifier: 'catalog:'
         version: 1.3.5(@types/react-dom@18.3.0)(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-google-maps/api':
-        specifier: ^2.19.3
+        specifier: 'catalog:'
         version: 2.20.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@skyscanner/bpk-foundations-web':
-        specifier: ^24.6.0
+        specifier: 'catalog:'
         version: 24.6.0
       '@skyscanner/bpk-svgs':
-        specifier: ^20.11.0
+        specifier: 'catalog:'
         version: 20.11.0
       d3-path:
-        specifier: ^3.1.0
+        specifier: 'catalog:'
         version: 3.1.0
       d3-scale:
-        specifier: ^4.0.2
+        specifier: 'catalog:'
         version: 4.0.2
       date-fns:
         specifier: 3.3.1 - 4
         version: 4.1.0
       downshift:
-        specifier: ^9.0.10
+        specifier: 'catalog:'
         version: 9.3.3(react@18.3.1)
       intersection-observer:
-        specifier: ^0.12.2
+        specifier: 'catalog:'
         version: 0.12.2
       lodash:
-        specifier: ^4.18.1
+        specifier: 'catalog:'
         version: 4.18.1
       lodash.clamp:
-        specifier: ^4.0.3
+        specifier: 'catalog:'
         version: 4.0.3
       lodash.debounce:
-        specifier: ^4.0.8
+        specifier: 'catalog:'
         version: 4.0.8
       normalize.css:
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0
       object-assign:
-        specifier: ^4.1.1
+        specifier: 'catalog:'
         version: 4.1.1
       prop-types:
-        specifier: ^15.7.2
+        specifier: 'catalog:'
         version: 15.8.1
       react:
         specifier: 17.0.2 - 18.3.1
         version: 18.3.1
       react-autosuggest:
-        specifier: ^9.4.3
+        specifier: 'catalog:'
         version: 9.4.3(react@18.3.1)
       react-dom:
         specifier: 17.0.2 - 18.3.1
         version: 18.3.1(react@18.3.1)
       react-table:
-        specifier: ^7.8.0
+        specifier: 'catalog:'
         version: 7.8.0(react@18.3.1)
       react-transition-group:
         specifier: ^4.4.5
         version: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-virtualized-auto-sizer:
-        specifier: 1.0.20
+        specifier: 'catalog:'
         version: 1.0.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-window:
-        specifier: ^1.8.7
+        specifier: 'catalog:'
         version: 1.8.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sass:
         specifier: ^1
@@ -371,7 +695,7 @@ importers:
         specifier: ^1
         version: 1.90.0
       tabbable:
-        specifier: ^6.4.0
+        specifier: 'catalog:'
         version: 6.4.0
 
 packages:
@@ -4210,10 +4534,6 @@ packages:
     resolution: {integrity: sha512-YVIQ82gZPGBebQV/a8dar4AitzCQs0jjXwMPZllpXMaGjXPYVUawSxQrRsjhjupyVxEvbHgUmIhKVlND+j02kA==}
     engines: {node: '>=0.10.0'}
 
-  arr-flatten@1.1.0:
-    resolution: {integrity: sha512-L3hKV5R/p5o81R7O02IGnwpDmkp6E982XhtbuwSe3O4qOtMMMtodicASA1Cny2U+aCXcNpml+m4dPsvsJ3jatg==}
-    engines: {node: '>=0.10.0'}
-
   arr-union@3.1.0:
     resolution: {integrity: sha512-sKpyeERZ02v1FeCZT8lrfJq5u6goHCtpTAzPwJYe7c8SPFOboNjNg1vz2L4VTn9T4PQxEx13TbXLmYUcS6Ug7Q==}
     engines: {node: '>=0.10.0'}
@@ -4607,10 +4927,6 @@ packages:
   brace-expansion@5.0.6:
     resolution: {integrity: sha512-kLpxurY4Z4r9sgMsyG0Z9uzsBlgiU/EFKhj/h91/8yHu0edo7XuixOIH3VcJ8kkxs6/jPzoI6U9Vj3WqbMQ94g==}
     engines: {node: 18 || 20 || >=22}
-
-  braces@2.3.2:
-    resolution: {integrity: sha512-aNdbnj9P8PjdXU4ybaWLK2IF3jc/EoDYbC7AazW6to3TRsfXxscC9UXOB5iDiEQrkyIbWp2SLQda4+QAa7nc3w==}
-    engines: {node: '>=0.10.0'}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -6242,10 +6558,6 @@ packages:
   file-entry-cache@8.0.0:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
-
-  fill-range@4.0.0:
-    resolution: {integrity: sha512-VcpLTWqWDiTerugjj8e3+esbg+skS3M9e54UuR3iCeIDMXCLTsAH8hTSzDQU/X6/6t3eYkOKoZSef2PlU6U1XQ==}
-    engines: {node: '>=0.10.0'}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -9655,14 +9967,6 @@ packages:
   renderkid@3.0.0:
     resolution: {integrity: sha512-q/7VIQA8lmM1hF+jn+sFSPWGlMkSAeNYcPLmDQx2zzuiDfaLrOmumR8iaUKlenFgh0XRPIUeSPlH3A+AW3Z5pg==}
 
-  repeat-element@1.1.4:
-    resolution: {integrity: sha512-LFiNfRcSu7KK3evMyYOuCzv3L10TW7yC1G2/+StMjK8Y6Vqd2MG7r/Qjw4ghtuCOjFvlnms/iMmLqpvW/ES/WQ==}
-    engines: {node: '>=0.10.0'}
-
-  repeat-string@1.6.1:
-    resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
-    engines: {node: '>=0.10'}
-
   replace-ext@0.0.1:
     resolution: {integrity: sha512-AFBWBy9EVRTa/LhEcG8QDP3FvpwZqmvN2QFDuJswFeaVhWnZMp8q3E6Zd90SR04PlIwfGdyVjNyLPyen/ek5CQ==}
     engines: {node: '>= 0.4'}
@@ -10230,14 +10534,6 @@ packages:
 
   snake-case@3.0.4:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
-
-  snapdragon-node@2.1.1:
-    resolution: {integrity: sha512-O27l4xaMYt/RSQ5TR3vpWCAB5Kb/czIcqUFOM/C4fYcLnbZUc1PkjTAMjof2pBWaSTwOUd6qUHcFGVGj7aIwnw==}
-    engines: {node: '>=0.10.0'}
-
-  snapdragon-util@3.0.1:
-    resolution: {integrity: sha512-mbKkMdQKsjX4BAL4bRYTj21edOf8cN7XHdYUJEe+Zn99hVEYcMvKPct1IqNe7+AZPirn8BCDOQBHQZknqmKlZQ==}
-    engines: {node: '>=0.10.0'}
 
   snapdragon@0.8.2:
     resolution: {integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==}
@@ -10828,10 +11124,6 @@ packages:
   to-readable-stream@1.0.0:
     resolution: {integrity: sha512-Iq25XBt6zD5npPhlLVXGFN3/gyR2/qODcKNNyTMd4vbm39HUaOiAM4PMq0eMVC/Tkxz+Zjdsc55g9yyz+Yq00Q==}
     engines: {node: '>=6'}
-
-  to-regex-range@2.1.1:
-    resolution: {integrity: sha512-ZZWNfCjUokXXDGXFpZehJIkZqq91BcULFq/Pi7M5i4JnxXdhMKAK682z8bCW3o8Hj1wuuzoKcW3DfVzaP6VuNg==}
-    engines: {node: '>=0.10.0'}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -16840,8 +17132,6 @@ snapshots:
 
   arr-diff@4.0.0: {}
 
-  arr-flatten@1.1.0: {}
-
   arr-union@3.1.0: {}
 
   array-buffer-byte-length@1.0.2:
@@ -17334,21 +17624,6 @@ snapshots:
   brace-expansion@5.0.6:
     dependencies:
       balanced-match: 4.0.4
-
-  braces@2.3.2:
-    dependencies:
-      arr-flatten: 1.1.0
-      array-unique: 0.3.2
-      extend-shallow: 2.0.1
-      fill-range: 4.0.0
-      isobject: 3.0.1
-      repeat-element: 1.1.4
-      snapdragon: 0.8.2
-      snapdragon-node: 2.1.1
-      split-string: 3.1.0
-      to-regex: 3.0.2
-    transitivePeerDependencies:
-      - supports-color
 
   braces@3.0.3:
     dependencies:
@@ -19332,13 +19607,6 @@ snapshots:
   file-entry-cache@8.0.0:
     dependencies:
       flat-cache: 4.0.1
-
-  fill-range@4.0.0:
-    dependencies:
-      extend-shallow: 2.0.1
-      is-number: 3.0.0
-      repeat-string: 1.6.1
-      to-regex-range: 2.1.1
 
   fill-range@7.1.1:
     dependencies:
@@ -21677,7 +21945,7 @@ snapshots:
     dependencies:
       arr-diff: 4.0.0
       array-unique: 0.3.2
-      braces: 2.3.2
+      braces: 3.0.3
       define-property: 2.0.2
       extend-shallow: 3.0.2
       extglob: 2.0.4
@@ -23318,10 +23586,6 @@ snapshots:
       lodash: 4.18.1
       strip-ansi: 6.0.1
 
-  repeat-element@1.1.4: {}
-
-  repeat-string@1.6.1: {}
-
   replace-ext@0.0.1: {}
 
   replace-ext@1.0.1: {}
@@ -23972,16 +24236,6 @@ snapshots:
     dependencies:
       dot-case: 3.0.4
       tslib: 2.8.1
-
-  snapdragon-node@2.1.1:
-    dependencies:
-      define-property: 1.0.0
-      isobject: 3.0.1
-      snapdragon-util: 3.0.1
-
-  snapdragon-util@3.0.1:
-    dependencies:
-      kind-of: 3.2.2
 
   snapdragon@0.8.2:
     dependencies:
@@ -24708,11 +24962,6 @@ snapshots:
       kind-of: 3.2.2
 
   to-readable-stream@1.0.0: {}
-
-  to-regex-range@2.1.1:
-    dependencies:
-      is-number: 3.0.0
-      repeat-string: 1.6.1
 
   to-regex-range@5.0.1:
     dependencies:
