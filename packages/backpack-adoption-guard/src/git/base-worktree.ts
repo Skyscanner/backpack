@@ -32,9 +32,14 @@ type GitHubEventPayload = {
   };
 };
 
+// Intentionally limited to `pull_request`: `pull_request_target` runs in the
+// context of the base branch (GITHUB_REF=refs/heads/<base>), which would make
+// the main-branch detection in run.ts win and silently drop the guard to
+// `not_applicable` even though the workflow logically targets a PR. Consumers
+// that need PR-level guarding should use `pull_request`; falling through to
+// the main reporting path is the safe behaviour for `pull_request_target`.
 export const isPullRequestEvent = () =>
-  process.env.GITHUB_EVENT_NAME === "pull_request" ||
-  process.env.GITHUB_EVENT_NAME === "pull_request_target";
+  process.env.GITHUB_EVENT_NAME === "pull_request";
 
 export const isMainBranch = () => process.env.GITHUB_REF === "refs/heads/main";
 

@@ -58,6 +58,31 @@ export const evaluateGuard = ({
   const baseBackpackPercentage = baseReport.usage.backpack.percentage;
   const delta = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
 
+  // Parse errors silently drop the offending file's element counts from the
+  // totals, which can artificially inflate head adoption (e.g. a raw-HTML-heavy
+  // file that fails to parse on head removes its rawHtmlUsages from the
+  // denominator). Refusing to evaluate on incomplete data prevents the guard
+  // from masking real regressions.
+  const headParseErrorCount = headReport.parseErrors.length;
+  const baseParseErrorCount = baseReport.parseErrors.length;
+  if (headParseErrorCount > 0 || baseParseErrorCount > 0) {
+    const sides: string[] = [];
+    if (headParseErrorCount > 0) sides.push(`head (${headParseErrorCount})`);
+    if (baseParseErrorCount > 0) sides.push(`base (${baseParseErrorCount})`);
+    const summary = sides.join(" and ");
+    return {
+      status: dryRun ? "warn" : "fail",
+      reason: dryRun
+        ? `Parse errors in ${summary}; treating as warning because dry-run is enabled.`
+        : `Parse errors in ${summary}; refusing to evaluate adoption with incomplete data.`,
+      dryRun,
+      threshold: ADOPTION_GUARD_THRESHOLD,
+      baseBackpackPercentage,
+      headBackpackPercentage,
+      delta,
+    };
+  }
+
   if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
     return {
       status: "pass",

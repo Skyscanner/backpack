@@ -67513,6 +67513,23 @@ var evaluateGuard = ({
   }
   const baseBackpackPercentage = baseReport.usage.backpack.percentage;
   const delta2 = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
+  const headParseErrorCount = headReport.parseErrors.length;
+  const baseParseErrorCount = baseReport.parseErrors.length;
+  if (headParseErrorCount > 0 || baseParseErrorCount > 0) {
+    const sides = [];
+    if (headParseErrorCount > 0) sides.push(`head (${headParseErrorCount})`);
+    if (baseParseErrorCount > 0) sides.push(`base (${baseParseErrorCount})`);
+    const summary2 = sides.join(" and ");
+    return {
+      status: dryRun ? "warn" : "fail",
+      reason: dryRun ? `Parse errors in ${summary2}; treating as warning because dry-run is enabled.` : `Parse errors in ${summary2}; refusing to evaluate adoption with incomplete data.`,
+      dryRun,
+      threshold: ADOPTION_GUARD_THRESHOLD,
+      baseBackpackPercentage,
+      headBackpackPercentage,
+      delta: delta2
+    };
+  }
   if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
     return {
       status: "pass",
@@ -67554,7 +67571,7 @@ var import_node_os = require("node:os");
 var import_node_path4 = require("node:path");
 var import_node_util = require("node:util");
 var execFileAsync = (0, import_node_util.promisify)(import_node_child_process.execFile);
-var isPullRequestEvent = () => process.env.GITHUB_EVENT_NAME === "pull_request" || process.env.GITHUB_EVENT_NAME === "pull_request_target";
+var isPullRequestEvent = () => process.env.GITHUB_EVENT_NAME === "pull_request";
 var isMainBranch = () => process.env.GITHUB_REF === "refs/heads/main";
 var readBaseShaFromEvent = () => {
   const eventPath = process.env.GITHUB_EVENT_PATH;

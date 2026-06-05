@@ -103,4 +103,70 @@ describe("evaluateGuard", () => {
 
     expect(result.status).toBe("not_applicable");
   });
+
+  it("fails when head has parse errors above threshold (refuses to evaluate on incomplete data)", () => {
+    const headReport = reportWithBackpackPercentage(75);
+    headReport.parseErrors = [
+      { file: "src/Broken.tsx", message: "Unexpected token" },
+    ];
+
+    const result = evaluateGuard({
+      baseReport: reportWithBackpackPercentage(70),
+      dryRun: false,
+      headReport,
+      isMain: false,
+    });
+
+    expect(result.status).toBe("fail");
+    expect(result.reason).toContain("head (1)");
+  });
+
+  it("fails when base has parse errors above threshold", () => {
+    const baseReport = reportWithBackpackPercentage(70);
+    baseReport.parseErrors = [
+      { file: "src/Stale.tsx", message: "Unexpected token" },
+    ];
+
+    const result = evaluateGuard({
+      baseReport,
+      dryRun: false,
+      headReport: reportWithBackpackPercentage(72),
+      isMain: false,
+    });
+
+    expect(result.status).toBe("fail");
+    expect(result.reason).toContain("base (1)");
+  });
+
+  it("downgrades parse-error failure to warn under dry-run", () => {
+    const headReport = reportWithBackpackPercentage(75);
+    headReport.parseErrors = [
+      { file: "src/Broken.tsx", message: "Unexpected token" },
+    ];
+
+    const result = evaluateGuard({
+      baseReport: reportWithBackpackPercentage(70),
+      dryRun: true,
+      headReport,
+      isMain: false,
+    });
+
+    expect(result.status).toBe("warn");
+  });
+
+  it("does not check parse errors on main (reporting-only path)", () => {
+    const headReport = reportWithBackpackPercentage(75);
+    headReport.parseErrors = [
+      { file: "src/Broken.tsx", message: "Unexpected token" },
+    ];
+
+    const result = evaluateGuard({
+      baseReport: null,
+      dryRun: false,
+      headReport,
+      isMain: true,
+    });
+
+    expect(result.status).toBe("not_applicable");
+  });
 });
