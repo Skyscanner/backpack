@@ -1,0 +1,221 @@
+{
+  "name": "backpack-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/backpack-web/src",
+  "projectType": "library",
+  "tags": ["scope:publishable", "type:design-system"],
+  "targets": {
+    "generate-svgs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "gulp",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": ["svgSources"],
+      "outputs": [
+        "{projectRoot}/src/bpk-component-icon/sm",
+        "{projectRoot}/src/bpk-component-icon/lg",
+        "{projectRoot}/src/bpk-component-icon/xxxl",
+        "{projectRoot}/src/bpk-component-spinner/src/spinners",
+        "{projectRoot}/src/bpk-component-flare/src/svgs",
+        "{projectRoot}/src/bpk-component-flare/src/__generated__"
+      ],
+      "cache": true
+    },
+    "copy-normalize-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./scripts/scss/copy-normal_css.sh",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{workspaceRoot}/scripts/scss/copy-normal_css.sh",
+        "{workspaceRoot}/node_modules/normalize.css/normalize.css"
+      ],
+      "outputs": ["{projectRoot}/src/bpk-stylesheets/normalize.scss"],
+      "cache": true
+    },
+    "build-sass": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/scss/styles-prod.js && rm -f packages/backpack-web/src/bpk-stylesheets/index.css",
+        "cwd": "{workspaceRoot}"
+      },
+      "dependsOn": ["copy-normalize-css", "generate-svgs"],
+      "inputs": [
+        "scss",
+        "{workspaceRoot}/scripts/scss/styles-prod.js",
+        "{workspaceRoot}/scripts/scss/style-compiler.js"
+      ],
+      "cache": true
+    },
+    "copy-token-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./scripts/scss/copy-token-css.sh",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{workspaceRoot}/scripts/scss/copy-token-css.sh",
+        "{workspaceRoot}/token-sync/css/primitives.css",
+        "{workspaceRoot}/token-sync/css/theme-backpack-light.css",
+        "{workspaceRoot}/token-sync/css/theme-backpack-dark.css"
+      ],
+      "outputs": [
+        "{projectRoot}/src/bpk-stylesheets/primitives.css",
+        "{projectRoot}/src/bpk-stylesheets/theme-backpack-light.css",
+        "{projectRoot}/src/bpk-stylesheets/theme-backpack-dark.css"
+      ],
+      "cache": true
+    },
+    "build-stylesheets": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node build.js",
+        "cwd": "{projectRoot}/src/bpk-stylesheets"
+      },
+      "dependsOn": ["copy-normalize-css", "copy-token-css"],
+      "inputs": [
+        "{projectRoot}/src/bpk-stylesheets/**/*",
+        "{workspaceRoot}/babel.config.js"
+      ],
+      "cache": true
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "rm -rf packages/backpack-web/dist",
+          "BABEL_ENV=dev babel packages/backpack-web/src --ignore ./packages/backpack-web/src/bpk-stylesheets --out-dir packages/backpack-web/dist --extensions .ts,.tsx,.js,.jsx --config-file ./babel.config.js",
+          "tsc --project tsconfig.declaration.json",
+          "node scripts/transpilation/transform-js-scss-css-imports.js",
+          "node scripts/transpilation/copy-css.js",
+          "node scripts/transpilation/copy-utils.js",
+          "cp packages/backpack-web/package.json packages/backpack-web/dist/",
+          "cp packages/backpack-web/README.md packages/backpack-web/dist/",
+          "node scripts/transpilation/strip-exports.js"
+        ],
+        "parallel": false,
+        "cwd": "{workspaceRoot}"
+      },
+      "dependsOn": ["build-sass", "build-stylesheets"],
+      "inputs": [
+        "production",
+        "^production",
+        "{workspaceRoot}/scripts/transpilation/**/*"
+      ],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --build packages/backpack-web/tsconfig.lib.json",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/**/*.tsx",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/@types/**/*",
+        "{workspaceRoot}/tsconfig.base.json"
+      ],
+      "outputs": [
+        "{projectRoot}/.tsbuildinfo",
+        "{workspaceRoot}/dist/out-tsc/packages/backpack-web"
+      ],
+      "cache": true
+    },
+    "lint-js": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint packages/backpack-web --ext .js,.jsx,.ts,.tsx",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{js,jsx,ts,tsx}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ],
+      "cache": true
+    },
+    "lint-scss": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint 'packages/backpack-web/**/*.scss'",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": ["{projectRoot}/**/*.scss", "{workspaceRoot}/.stylelintrc*"],
+      "cache": true
+    },
+    "lint-scss-fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "stylelint 'packages/backpack-web/**/*.scss' --fix",
+        "cwd": "{workspaceRoot}"
+      },
+      "cache": false
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run backpack-web:lint-js",
+          "nx run backpack-web:lint-scss"
+        ],
+        "parallel": false
+      },
+      "cache": true
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "jest --coverage --config packages/backpack-web/jest.config.js",
+        "cwd": "{workspaceRoot}",
+        "env": {
+          "TZ": "Etc/UTC"
+        }
+      },
+      "inputs": [
+        "default",
+        "{projectRoot}/jest.config.js",
+        "{workspaceRoot}/scripts/jest/**/*",
+        "{workspaceRoot}/scripts/stubs/**/*"
+      ],
+      "cache": true
+    },
+    "nx-release-publish": {
+      "dependsOn": ["build"],
+      "options": {
+        "packageRoot": "{projectRoot}/dist"
+      }
+    },
+    "sassdoc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "sassdoc {packages/backpack-web/src/bpk-mixins/**/*,node_modules/@skyscanner/bpk-svgs/dist/*,node_modules/@skyscanner/bpk-foundations-web/tokens/base.default}.scss -d dist-sassdoc -v --strict",
+        "cwd": "{workspaceRoot}"
+      },
+      "inputs": [
+        "{projectRoot}/src/bpk-mixins/**/*.scss",
+        {
+          "externalDependencies": [
+            "@skyscanner/bpk-svgs",
+            "@skyscanner/bpk-foundations-web",
+            "sassdoc"
+          ]
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist-sassdoc"],
+      "cache": true
+    },
+    "figma-generate-icons": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node packages/backpack-web/src/bpk-component-icon/scripts/generate-figma-connect.js",
+        "cwd": "{workspaceRoot}"
+      },
+      "cache": false
+    }
+  }
+}

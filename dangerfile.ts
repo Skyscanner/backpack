@@ -36,7 +36,7 @@ const modifiedFiles = danger.git.modified_files;
 const fileChanges = [...modifiedFiles, ...createdFiles];
 
 const componentChangedOrCreated = fileChanges.some((filePath) =>
-  filePath.match(/packages\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/),
+  filePath.match(/packages\/backpack-web\/src\/bpk-component.+\/src\/.+\.(js|ts|tsx)$/),
 );
 
 if (componentChangedOrCreated) {
@@ -50,8 +50,8 @@ if (componentChangedOrCreated) {
 // If source files have changed, the snapshots should have been updated.
 const componentSourceFilesModified = fileChanges.some(
   (filePath) =>
-    // packages/(one or more chars)/src/(one or more chars).(js or ts or tsx)
-    filePath.match(/packages\/.*bpk-component.+\/src\/.+\.(js|ts|tsx)$/) &&
+    // packages/backpack-web/src/(one or more chars)/src/(one or more chars).(js or ts or tsx)
+    filePath.match(/packages\/backpack-web\/src\/.*bpk-component.+\/src\/.+\.(js|ts|tsx)$/) &&
     !filePath.includes('-test.'),
 );
 
@@ -127,7 +127,7 @@ if (nonModuleCssFiles.length) {
 const newComponentPackages = Array.from(
   new Set(
     createdFiles
-      .map((f) => f.match(/^(packages\/bpk-component-[^/]+)\//))
+      .map((f) => f.match(/^(packages\/backpack-web\/src\/bpk-component-[^/]+)\//))
       .filter((m): m is RegExpMatchArray => m !== null)
       .map((m) => m[1]),
   ),
@@ -166,7 +166,7 @@ if (packagesMissingA11yTest.length) {
 // Inside bpk-component-* packages, story files must live alongside the
 // component source under src/. See decisions/colocated-stories.md.
 const misplacedStories = fileChanges.filter((filePath) => {
-  const match = filePath.match(/^packages\/bpk-component-[^/]+\/(.+)\.stories\.(t|j)sx?$/);
+  const match = filePath.match(/^packages\/backpack-web\/src\/bpk-component-[^/]+\/(.+)\.stories\.(t|j)sx?$/);
   return match !== null && !match[1].startsWith('src/');
 });
 
@@ -208,7 +208,7 @@ const physicalValuePattern = /^\s*(text-align|float|clear)\s*:\s*(left|right)\b/
 // violations across the ~92 non-migrated components. Once the codebase is
 // cleaned up, replace this rule with stylelint-use-logical at error severity.
 const scssCreated = createdFiles.filter((filePath) =>
-  filePath.match(/^packages\/bpk-component-[^/]+\/src\/.+\.module\.scss$/),
+  filePath.match(/^packages\/backpack-web\/src\/bpk-component-[^/]+\/src\/.+\.module\.scss$/),
 );
 
 const physicalHits = scssCreated
@@ -250,6 +250,7 @@ const invalidProps = ["for a non-boolean attribute", "Invalid ARIA attribute"]
 const actTests = ["inside a test was not wrapped in act(...)"]
 // TODO: Convert components that use CSSTransition to functional components and allow for using refs
 const findDOMNode = ["findDOMNode is deprecated and will be removed in the next major release."];
+const nxWarnings = ["nx.dev/"];
 
 const allIgnoredWarnings = linterWarnings
   .concat(invalidReactChild)
@@ -264,7 +265,8 @@ const allIgnoredWarnings = linterWarnings
   .concat(invalidCSSProperties)
   .concat(invalidProps)
   .concat(actTests)
-  .concat(findDOMNode);
+  .concat(findDOMNode)
+  .concat(nxWarnings);
 
 commonFileWarnings('logs/test.log', {
   logType: 'fail',

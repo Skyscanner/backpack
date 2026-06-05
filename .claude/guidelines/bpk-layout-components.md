@@ -44,6 +44,10 @@ Layout components block both visual props and arbitrary overrides. `className` a
 
 When a container needs **both layout and visual styling on the same element**, use SCSS for the whole element.
 
+### Inside a `<button>` element
+
+`BpkFlex`, `BpkHStack`, `BpkVStack`, `BpkBox`, and `BpkGrid` all render `<div>`s. HTML5 only allows phrasing content inside `<button>`, so a `<div>` inside a button is invalid markup and browsers will quietly close the button before the div. When composing a flex row inside a custom button (e.g. an Ark `Collapsible.Trigger`), use `<span style={{ display: 'flex', ... }}>` with inline flex styles for that one row. Use the layout components freely for everything outside the button.
+
 ## Mapping
 
 | Use case | Component |

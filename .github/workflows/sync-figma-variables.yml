@@ -1,11 +1,18 @@
 name: Sync Figma variables
 
 on:
+  schedule:
+    # Daily at 18:00 GMT.
+    - cron: '0 18 * * *'
   workflow_dispatch:
     inputs:
       file_key:
         description: 'Optional Figma file key override (defaults to the FIGMA_FILE_KEY repo secret).'
         required: false
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
 
 permissions: {}
 
@@ -17,6 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          ref: main
           persist-credentials: false
 
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
@@ -26,8 +34,30 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run sync
+      - name: Fetch tokens from Figma
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
-        run: npm run sync
+        run: npm run tokens:fetch
+
+      - name: Detect meaningful fetched token changes
+        id: token_changes
+        run: |
+          token_status="$(git status --porcelain --untracked-files=all -- token-sync/tokens)"
+          untracked_tokens="$(printf '%s\n' "$token_status" | grep '^?? ' || true)"
+
+          if git diff --ignore-matching-lines='^[[:space:]]*"generatedAt":' --quiet -- token-sync/tokens && [ -z "$untracked_tokens" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Only token metadata changed; skipping CSS build and PR creation."
+            exit 0
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "Fetched token values changed."
+
+      - name: Build CSS, rebuild base stylesheet, and open PR
+        if: steps.token_changes.outputs.changed == 'true'
+        uses: ./.github/actions/figma-token-sync-pr
+        with:
+          app_id: ${{ vars.GH_APP_ID }}
+          app_private_key: ${{ secrets.GH_APP_PRIVATE_KEY }}

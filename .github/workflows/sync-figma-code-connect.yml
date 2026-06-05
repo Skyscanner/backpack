@@ -1,7 +1,11 @@
 on:
   push:
     paths:
-      - packages/**/*.figma.tsx
+      - packages/backpack-web/**/*.figma.tsx
+    branches: [main]
+  pull_request:
+    paths:
+      - packages/backpack-web/**/*.figma.tsx
     branches: [main]
 
 permissions: {}
@@ -10,10 +14,19 @@ jobs:
   code-connect:
     name: Code Connect
     runs-on: ubuntu-latest
+    # Skip on PRs from forks where FIGMA_TOKEN is unavailable.
+    if: github.event_name == 'push' || github.repository == github.event.pull_request.head.repo.full_name
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - run: npx --package @figma/code-connect figma connect publish
+      - name: Validate Code Connect (dry run)
+        if: github.event_name == 'pull_request'
+        run: npx --package @figma/code-connect figma connect publish --dry-run
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+      - name: Publish Code Connect
+        if: github.event_name == 'push'
+        run: npx --package @figma/code-connect figma connect publish
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}

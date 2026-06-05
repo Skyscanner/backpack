@@ -34,11 +34,32 @@ import SmallLightningIcon from '../../bpk-component-icon/sm/lightning';
 
 ### Icons next to text outside a button
 
-Wrap with `withButtonAlignment` when the icon sits inline with text but is **not** inside a `BpkButton`:
+Wrap with `withButtonAlignment` when the icon sits **inline with text** (in normal text flow, not a flex container) and is **not** inside a `BpkButton`:
 
 ```typescript
 import { withButtonAlignment } from '../../bpk-component-icon';
 const AlignedIcon = withButtonAlignment(ArrowUpIcon);
+```
+
+`withButtonAlignment` adds a calculated `margin-top` and `vertical-align: top` to align the icon to a button's inline line-height. It is for inline-text contexts only.
+
+### Icons in flex / grid layouts
+
+Use the **raw icon** when the icon is a flex or grid item (e.g. inside a `display: flex; align-items: center` row). The HOC's `margin-top` shifts the icon off the centre line and produces a visible vertical mismatch with adjacent text. Let the flex container's alignment do the work instead.
+
+```tsx
+// ✅ Flex row: raw icon, parent centres them
+<span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+  <ArrowUpIcon />
+  <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
+</span>
+
+// ❌ Flex row: HOC-wrapped icon ends up offset above the text
+const AlignedIcon = withButtonAlignment(ArrowUpIcon);
+<span style={{ display: 'flex', alignItems: 'center' }}>
+  <AlignedIcon />
+  <BpkText textStyle={TEXT_STYLES.heading5}>Title</BpkText>
+</span>
 ```
 
 ## className is forbidden on icon components

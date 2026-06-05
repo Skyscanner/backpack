@@ -1,0 +1,189 @@
+/**
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --bpk-canvas-contrast: #eff3f8;
+  --bpk-canvas-default: #ffffff;
+  --bpk-private-badge-colour-bg-default: #eff3f8;
+  --bpk-private-badge-colour-bg-inverse: #ffffff;
+  --bpk-private-badge-colour-bg-outline: rgba(255, 255, 255, 0);
+  --bpk-private-badge-colour-bg-subtle: #eff3f8;
+  --bpk-private-badge-colour-stroke-outline: #ffffff;
+  --bpk-private-badge-dimension-padding-horizontal-default: 0.5rem;
+  --bpk-private-badge-dimension-padding-horizontal-subtle: 0.5rem;
+  --bpk-private-badge-typography-tmp-badge-label: 0.875rem;
+  --bpk-private-badge-typography-tmp-badge-line-height: 0;
+  --bpk-private-button-colour-bg-destructive: #e0e4e9;
+  --bpk-private-button-colour-bg-destructive-pressed: #e70866;
+  --bpk-private-button-colour-bg-disabled: #e0e4e9;
+  --bpk-private-button-colour-bg-feature-pressed: #024daf;
+  --bpk-private-button-colour-bg-featured: #0062e3;
+  --bpk-private-button-colour-bg-footer: rgba(255, 255, 255, 0);
+  --bpk-private-button-colour-bg-footer-pressed: rgba(255, 255, 255, 0);
+  --bpk-private-button-colour-bg-primary: #05203c;
+  --bpk-private-button-colour-bg-primary-on-dark: #ffffff;
+  --bpk-private-button-colour-bg-primary-on-dark-pressed: #c1c7cf;
+  --bpk-private-button-colour-bg-primary-on-light: #ffffff;
+  --bpk-private-button-colour-bg-primary-on-light-pressed: #154679;
+  --bpk-private-button-colour-bg-secondary: #e0e4e9;
+  --bpk-private-button-colour-bg-secondary-pressed: #c1c7cf;
+  --bpk-private-button-colour-bg-secondary-on-contrast: #e0e4e9;
+  --bpk-private-button-colour-bg-secondary-on-contrast-pressed: #c1c7cf;
+  --bpk-private-button-colour-bg-secondary-on-dark: rgba(255, 255, 255, 0.1);
+  --bpk-private-button-colour-bg-secondary-on-dark-disabled: #0b121d;
+  --bpk-private-button-colour-bg-secondary-on-dark-pressed: #04182d;
+  --bpk-private-button-colour-text-disruptive: #e70866;
+  --bpk-private-button-colour-text-feature: #ffffff;
+  --bpk-private-button-colour-text-footer: rgba(255, 255, 255, 0);
+  --bpk-private-button-colour-text-link-on-dark: #ffffff;
+  --bpk-private-button-colour-text-secondary: #161616;
+  --bpk-private-button-dimension-radius: 0.5rem;
+  --bpk-private-button-dimension-min-height-default: 2.25rem;
+  --bpk-private-button-dimension-min-height-large: 3rem;
+  --bpk-private-button-dimension-min-weight-large: 3rem;
+  --bpk-private-button-dimension-padding-horizontal-default: 1rem;
+  --bpk-private-button-dimension-padding-horizontal-large: 1rem;
+  --bpk-private-button-typography-tmp-default-label: 1rem;
+  --bpk-private-card-button-contained-fill: rgba(255, 255, 255, 0.8);
+  --bpk-private-carousel-trigger-bg-default: rgba(255, 255, 255, 0.5);
+  --bpk-private-carousel-trigger-bg-default-hover: rgba(255, 255, 255, 0.8);
+  --bpk-private-chip-group-filter-colour-bg-icon-hover-on-image: #eff3f8;
+  --bpk-private-chip-group-filter-colour-bg-icon-off-on-image: #ffffff;
+  --bpk-private-chip-group-filter-colour-bg-icon-on-default: #05203c;
+  --bpk-private-chip-group-filter-colour-bg-icon-on-on-dark: #ffffff;
+  --bpk-private-chip-group-filter-colour-bg-icon-on-on-image: #05203c;
+  --bpk-private-chip-group-filter-colour-stroke-icon-hover-default: #05203c;
+  --bpk-private-chip-group-filter-colour-stroke-icon-hover-on-dark: #ffffff;
+  --bpk-private-chip-group-filter-colour-stroke-icon-off-default: #c1c7cf;
+  --bpk-private-chip-group-filter-colour-stroke-icon-off-on-dark: rgba(255, 255, 255, 0.5);
+  --bpk-private-chip-group-filter-dimensions-min-height: 2.25rem;
+  --bpk-private-chip-colour-bg-default-dismissible-hover: #05203c;
+  --bpk-private-chip-colour-bg-default-on: #05203c;
+  --bpk-private-chip-colour-bg-disabled: #e0e4e9;
+  --bpk-private-chip-colour-bg-on-contrast-hover: #ffffff;
+  --bpk-private-chip-colour-bg-on-contrast-on: #05203c;
+  --bpk-private-chip-colour-bg-on-dark-dismissible-hover: #ffffff;
+  --bpk-private-chip-colour-bg-on-dark-hover: #ffffff;
+  --bpk-private-chip-colour-bg-on-dark-off: rgba(255, 255, 255, 0);
+  --bpk-private-chip-colour-bg-on-dark-on: #ffffff;
+  --bpk-private-chip-colour-bg-on-image-dismissible-hover: #05203c;
+  --bpk-private-chip-colour-bg-on-image-on: #eff3f8;
+  --bpk-private-chip-colour-border-default-dismissible-hover: rgba(255, 255, 255, 0);
+  --bpk-private-chip-colour-border-default-hover: #05203c;
+  --bpk-private-chip-colour-border-default-off: #c1c7cf;
+  --bpk-private-chip-colour-border-on-contrast-off: #ffffff;
+  --bpk-private-chip-colour-border-on-contrast-on: #05203c;
+  --bpk-private-chip-colour-border-on-dark-disimissible-hover: #ffffff;
+  --bpk-private-chip-colour-border-on-dark-hover: #ffffff;
+  --bpk-private-chip-colour-border-on-dark-off: rgba(255, 255, 255, 0.5);
+  --bpk-private-chip-colour-stroke-off-on-canvas-contrast-new: rgba(255, 255, 255, 0);
+  --bpk-private-chip-colour-text-default-dismissible-hover: #ffffff;
+  --bpk-private-chip-colour-text-dismissible-on-icon: rgba(255, 255, 255, 0.5);
+  --bpk-private-chip-colour-text-on: #ffffff;
+  --bpk-private-chip-colour-text-on-image: #ffffff;
+  --bpk-private-chip-colour-text-on-image-dismissible-icon: #626971;
+  --bpk-private-chip-colour-text-on-dark: #161616;
+  --bpk-private-chip-colour-text-on-dark-dismisisble-hover: #161616;
+  --bpk-private-chip-colour-text-on-dark-dismisisble-icon: #626971;
+  --bpk-private-chip-dimension-min-height-width: 2rem;
+  --bpk-private-chip-dimension-radius: 0.5rem;
+  --bpk-private-date-selector-cheapest-month-highlight: #154679;
+  --bpk-private-date-selector-flexible-date-card: #eff3f8;
+  --bpk-private-dimension-padding-veritcal: 0;
+  --bpk-private-info-banner-default: #eff3f8;
+  --bpk-private-info-banner-on-contrast: #ffffff;
+  --bpk-private-map-cluster-pin: #05203c;
+  --bpk-private-map-cluster-pin-previous-selection: #94c3ff;
+  --bpk-private-map-marker-viewed: rgba(255, 255, 255, 0.8);
+  --bpk-private-map-poi-pin: #8e47ba;
+  --bpk-private-map-previous-selection: #cfe4ff;
+  --bpk-private-navigation-tabs-hover: #154679;
+  --bpk-private-navigation-tabs-outline: rgba(255, 255, 255, 0.2);
+  --bpk-private-navigation-tabs-selected: #024daf;
+  --bpk-private-rating-bar-default: #e0e4e9;
+  --bpk-private-rating-bar-on-contrast: #ffffff;
+  --bpk-private-segmented-control-canvas-default: #eff3f8;
+  --bpk-private-segmented-control-surface-contrast: rgba(255, 255, 255, 0.1);
+  --bpk-private-segmented-control-surface-contrast-on: #024daf;
+  --bpk-private-shadow-large-blur: 0.875rem;
+  --bpk-private-shadow-large-color: rgba(22, 22, 22, 0.25);
+  --bpk-private-shadow-large-position-x: 0;
+  --bpk-private-shadow-large-position-y: 0.25rem;
+  --bpk-private-shadow-large-spread: 0;
+  --bpk-private-shadow-small-blur: 0.1875rem;
+  --bpk-private-shadow-small-color: rgba(22, 22, 22, 0.25);
+  --bpk-private-shadow-small-position-x: 0;
+  --bpk-private-shadow-small-position-y: 0.0625rem;
+  --bpk-private-shadow-small-spread: 0;
+  --bpk-private-shadow-xl-blur: 3.125rem;
+  --bpk-private-shadow-xl-color: rgba(22, 22, 22, 0.25);
+  --bpk-private-shadow-xl-position-x: 0;
+  --bpk-private-shadow-xl-position-y: 0.75rem;
+  --bpk-private-shadow-xl-spread: 0;
+  --bpk-private-skeleton-on-dark: rgba(255, 255, 255, 0.1);
+  --bpk-private-speech-bubble-colour-bg-contrast: #eff3f8;
+  --bpk-private-speech-bubble-colour-bg-default: #ffffff;
+  --bpk-private-trip-advisor: #00aa6c;
+  --bpk-core-accent: #0062e3;
+  --bpk-core-eco: #0fa1a9;
+  --bpk-core-primary: #05203c;
+  --bpk-other-line: #c1c7cf;
+  --bpk-other-line-on-dark: rgba(255, 255, 255, 0.5);
+  --bpk-other-overlay: rgba(0, 0, 0, 0.2);
+  --bpk-other-scrim: rgba(0, 0, 0, 0.7);
+  --bpk-other-shadow: rgba(22, 22, 22, 0.25);
+  --bpk-status-danger-fill: #ffe9f9;
+  --bpk-status-danger-spot: #e70866;
+  --bpk-status-success-fill: #d4fff2;
+  --bpk-status-success-spot: #0c838a;
+  --bpk-status-warning-fill: #fff7cf;
+  --bpk-status-warning-spot: #f55d42;
+  --bpk-surface-contrast: #05203c;
+  --bpk-surface-default: #ffffff;
+  --bpk-surface-elevated: #ffffff;
+  --bpk-surface-hero: #0062e3;
+  --bpk-surface-highlight: #e0e4e9;
+  --bpk-surface-low-contrast: #f7f9fb;
+  --bpk-surface-subtle: #e3f0ff;
+  --bpk-surface-tint: rgba(255, 255, 255, 0.1);
+  --bpk-surface-promo: #0062e3;
+  --bpk-text-disabled: rgba(0, 0, 0, 0.2);
+  --bpk-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --bpk-text-error: #e70866;
+  --bpk-text-inverse: #ffffff;
+  --bpk-text-on-dark: #ffffff;
+  --bpk-text-on-light: #161616;
+  --bpk-text-primary: #161616;
+  --bpk-text-secondary: #626971;
+  --bpk-text-success: #0c838a;
+  --bpk-text-deprecated-link: #0062e3;
+  --bpk-text-hero: #0062e3;
+  --bpk-title: true;
+  --bpk-typography-family-sans-serif: 'Skyscanner Relative';
+  --bpk-typography-family-serif: Larken;
+  --bpk-typography-kerning-default: 0;
+  --bpk-typography-kerning-loose: 0;
+  --bpk-typography-kerning-tight: 0;
+  --bpk-typography-style-body: 400;
+  --bpk-typography-style-headline: 700;
+  --bpk-typography-style-hero: 900;
+  --bpk-typography-style-label: 700;
+  --bpk-typography-style-subhead: 300;
+}

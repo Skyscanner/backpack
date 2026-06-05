@@ -374,3 +374,7 @@ See `.claude/guidelines/bpk-token-value-lookup.md` for the lookup workflow, nami
 ## Icon Usage Rules (MANDATORY)
 
 See `.claude/guidelines/bpk-icon-usage.md` for icon import pattern, `withButtonAlignment` usage, className restrictions, and size guidance.
+
+## New Component Workflow (MANDATORY)
+
+See `.claude/guidelines/bpk-new-component-workflow.md` when scaffolding a new component package, wrapping an Ark UI primitive, or creating a new `*.module.scss` file. Covers the ESLint allowlist for Ark wrappers, the SCSS → `.module.css` compile step, prop-naming pitfalls (`style`/`className`), and the per-package scaffolding checklist.
