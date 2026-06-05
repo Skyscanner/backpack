@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { STAR_TYPES } from './BpkStar';
 import BpkStarRating, {
@@ -24,88 +25,95 @@ import BpkStarRating, {
   ROUNDING_TYPES,
 } from './BpkStarRating';
 
+const ratingLabel = (rating: number, maxRating: number) =>
+  `Rated ${rating} out of ${maxRating} stars`;
+
+const countStarsByType = (container: HTMLElement) => ({
+  full: container.querySelectorAll('.bpk-star--filled:not(.bpk-star--half)')
+    .length,
+  half: container.querySelectorAll('.bpk-star__container--half-star').length,
+  empty: container.querySelectorAll(
+    '.bpk-star:not(.bpk-star--filled):not(.bpk-star--half)',
+  ).length,
+});
+
 describe('BpkStarRating', () => {
-  it('should render correctly if you give it more than the max rating allowed', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={7}
-      />,
+  it('caps the visual rating at maxRating but keeps the raw rating in the label', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={7} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByRole('img')).toHaveAttribute(
+      'aria-label',
+      'Rated 7 out of 5 stars',
+    );
+    expect(countStarsByType(container)).toEqual({ full: 5, half: 0, empty: 0 });
   });
 
-  it('should render correctly with 0 stars', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={0}
-      />,
+  it('renders all empty stars when rating is 0', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={0} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getByRole('img')).toHaveAttribute(
+      'aria-label',
+      'Rated 0 out of 5 stars',
+    );
+    expect(countStarsByType(container)).toEqual({ full: 0, half: 0, empty: 5 });
   });
 
-  it('should render correctly with 3 stars', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={3}
-      />,
+  it('renders 3 full and 2 empty stars for rating 3', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={3} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(countStarsByType(container)).toEqual({ full: 3, half: 0, empty: 2 });
   });
 
-  it('should render correctly with 3.5 stars', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={3.5}
-      />,
+  it('renders 3 full, 1 half and 1 empty star for rating 3.5', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={3.5} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(countStarsByType(container)).toEqual({ full: 3, half: 1, empty: 1 });
   });
 
-  it('should render correctly with 5 stars', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={5}
-      />,
+  it('renders all full stars for rating 5', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={5} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(countStarsByType(container)).toEqual({ full: 5, half: 0, empty: 0 });
   });
 
-  it('should render correctly with "large" attribute', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={5}
-        large
-      />,
+  it('applies the large modifier to every star', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={5} large />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(container.querySelectorAll('.bpk-star--large')).toHaveLength(5);
   });
 
-  it('should render correctly with "maxRating" attribute', () => {
-    const { asFragment } = render(
-      <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
-        rating={5}
-        maxRating={8}
-      />,
+  it('respects the maxRating prop', () => {
+    const { container } = render(
+      <BpkStarRating ratingLabel={ratingLabel} rating={5} maxRating={8} />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const counts = countStarsByType(container);
+    expect(counts.full + counts.half + counts.empty).toBe(8);
+    expect(counts).toEqual({ full: 5, half: 0, empty: 3 });
   });
 
-  it('should render correctly with "rounding" attribute', () => {
-    const { asFragment } = render(
+  it('rounds 3.4 up to 3.5 stars when using ROUNDING_TYPES.nearest', () => {
+    const { container } = render(
       <BpkStarRating
-        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        ratingLabel={ratingLabel}
         rating={3.4}
         rounding={ROUNDING_TYPES.nearest}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(countStarsByType(container)).toEqual({ full: 3, half: 1, empty: 1 });
   });
 
   describe('getTypeByRating()', () => {

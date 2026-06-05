@@ -17,44 +17,67 @@
  */
 
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkStar, { STAR_TYPES } from './BpkStar';
 
 describe('BpkStar', () => {
-  it('should render correctly with empty star', () => {
-    const { asFragment } = render(<BpkStar type={STAR_TYPES.EMPTY} />);
-    expect(asFragment()).toMatchSnapshot();
+  it('renders an empty star without the filled or half modifiers', () => {
+    const { container } = render(<BpkStar type={STAR_TYPES.EMPTY} />);
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star');
+    expect(star).not.toHaveClass('bpk-star--filled');
+    expect(star).not.toHaveClass('bpk-star__container--half-star');
   });
 
-  it('should render correctly with half star', () => {
-    const { asFragment } = render(<BpkStar type={STAR_TYPES.HALF} />);
-    expect(asFragment()).toMatchSnapshot();
+  it('renders a half star with the half-container modifier', () => {
+    const { container } = render(<BpkStar type={STAR_TYPES.HALF} />);
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star__container');
+    expect(star).toHaveClass('bpk-star__container--half-star');
   });
 
-  it('should render correctly with full star', () => {
-    const { asFragment } = render(<BpkStar type={STAR_TYPES.FULL} />);
-    expect(asFragment()).toMatchSnapshot();
+  it('renders a full star with the filled modifier', () => {
+    const { container } = render(<BpkStar type={STAR_TYPES.FULL} />);
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star');
+    expect(star).toHaveClass('bpk-star--filled');
   });
 
-  it('should render correctly with a large empty star', () => {
-    const { asFragment } = render(<BpkStar type={STAR_TYPES.EMPTY} large />);
-    expect(asFragment()).toMatchSnapshot();
+  it('applies the large modifier to an empty star', () => {
+    const { container } = render(<BpkStar type={STAR_TYPES.EMPTY} large />);
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star--large');
+    expect(star).not.toHaveClass('bpk-star--filled');
   });
 
-  it('should render correctly with a large half star', () => {
-    const { asFragment } = render(<BpkStar type={STAR_TYPES.HALF} large />);
-    expect(asFragment()).toMatchSnapshot();
+  it('applies the large modifier to a half star', () => {
+    const { container } = render(<BpkStar type={STAR_TYPES.HALF} large />);
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star__container--half-star');
+    expect(star).toHaveClass('bpk-star__container--large');
   });
 
-  it('should render correctly with a large full star', () => {
-    const { asFragment } = render(<BpkStar type={STAR_TYPES.FULL} large />);
-    expect(asFragment()).toMatchSnapshot();
+  it('applies the large modifier to a full star', () => {
+    const { container } = render(<BpkStar type={STAR_TYPES.FULL} large />);
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star--filled');
+    expect(star).toHaveClass('bpk-star--large');
   });
 
-  it('should render correctly with a "className" prop', () => {
-    const { asFragment } = render(
+  it('appends a custom className', () => {
+    const { container } = render(
       <BpkStar type={STAR_TYPES.FULL} className="my-class" />,
     );
-    expect(asFragment()).toMatchSnapshot();
+    const star = container.firstChild as HTMLElement;
+
+    expect(star).toHaveClass('bpk-star--filled');
+    expect(star).toHaveClass('my-class');
   });
 });
