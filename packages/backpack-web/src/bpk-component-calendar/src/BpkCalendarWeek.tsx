@@ -256,25 +256,17 @@ type DefaultProps = {
   selectionConfiguration?: SelectionConfiguration;
 };
 
+const DEFAULT_SELECTION_CONFIGURATION: SelectionConfiguration = {
+  type: CALENDAR_SELECTION_TYPE.single,
+  date: null,
+};
+
+const noop = () => {};
+
 /*
   BpkCalendarWeek - table row containing a week full of DateContainer components
 */
 class BpkCalendarWeek extends Component<Props> {
-  static defaultProps: DefaultProps = {
-    dateProps: {},
-    focusedDate: null,
-    ignoreOutsideDate: false,
-    maxDate: null,
-    minDate: null,
-    onDateClick: () => {},
-    onDateKeyDown: () => {},
-    selectionConfiguration: {
-      type: CALENDAR_SELECTION_TYPE.single,
-      date: null,
-    },
-    cellClassName: null,
-  };
-
   shouldComponentUpdate(nextProps: Props) {
     const shallowProps = [
       'DateComponent',
@@ -354,21 +346,21 @@ class BpkCalendarWeek extends Component<Props> {
   render() {
     const {
       DateComponent,
-      cellClassName,
+      cellClassName = null,
       dateModifiers,
-      dateProps,
-      focusedDate,
-      ignoreOutsideDate,
+      dateProps = {},
+      focusedDate = null,
+      ignoreOutsideDate = false,
       isKeyboardFocusable,
       markOutsideDays,
       markToday,
-      maxDate,
-      minDate,
+      maxDate = null,
+      minDate = null,
       month,
-      onDateClick,
-      onDateKeyDown,
+      onDateClick = noop,
+      onDateKeyDown = noop,
       preventKeyboardFocus,
-      selectionConfiguration,
+      selectionConfiguration = DEFAULT_SELECTION_CONFIGURATION,
       weekStartsOn,
     } = this.props;
 
@@ -398,16 +390,16 @@ class BpkCalendarWeek extends Component<Props> {
 
           const dateSelectionType = getSelectionType(
             date.val,
-            selectionConfiguration!,
+            selectionConfiguration,
             month,
             weekStartsOn,
-            ignoreOutsideDate!,
+            ignoreOutsideDate,
           );
 
           return (
             <DateContainer
               className={cellClassName}
-              isEmptyCell={!isSameMonth(date.val, month) && ignoreOutsideDate!}
+              isEmptyCell={!isSameMonth(date.val, month) && ignoreOutsideDate}
               key={date.val.getDate()}
               selectionType={dateSelectionType}
             >
@@ -420,7 +412,7 @@ class BpkCalendarWeek extends Component<Props> {
                 preventKeyboardFocus={preventKeyboardFocus}
                 isKeyboardFocusable={isKeyboardFocusable}
                 isFocused={focusedDate && isSameDay(date.val, focusedDate)}
-                isSelected={getSelectedDate(date.val, selectionConfiguration!)}
+                isSelected={getSelectedDate(date.val, selectionConfiguration)}
                 isBlocked={isBlocked}
                 isOutside={markOutsideDays && !isSameMonth(date.val, month)}
                 isToday={markToday && isToday(date.val)}
