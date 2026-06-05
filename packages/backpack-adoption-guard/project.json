@@ -1,14 +1,14 @@
 {
-  "name": "backpack-adoption-action",
+  "name": "backpack-adoption-guard",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/backpack-adoption-action/src",
+  "sourceRoot": "packages/backpack-adoption-guard/src",
   "projectType": "library",
   "tags": ["scope:internal", "type:tooling"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm --workspace @skyscanner/backpack-adoption-action run build"
+        "command": "npm --workspace @skyscanner/backpack-adoption-guard run build"
       },
       "outputs": ["{projectRoot}/dist"],
       "cache": true,
@@ -17,7 +17,7 @@
     "lint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm --workspace @skyscanner/backpack-adoption-action run lint"
+        "command": "npm --workspace @skyscanner/backpack-adoption-guard run lint"
       },
       "cache": true,
       "inputs": [
@@ -29,7 +29,7 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm --workspace @skyscanner/backpack-adoption-action run test"
+        "command": "npm --workspace @skyscanner/backpack-adoption-guard run test"
       },
       "cache": true,
       "inputs": ["default", "^production"]
@@ -37,7 +37,7 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm --workspace @skyscanner/backpack-adoption-action run typecheck"
+        "command": "npm --workspace @skyscanner/backpack-adoption-guard run typecheck"
       },
       "outputs": [],
       "cache": true,
@@ -51,7 +51,7 @@
     "verify-dist": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm --workspace @skyscanner/backpack-adoption-action run verify-dist"
+        "command": "npm --workspace @skyscanner/backpack-adoption-guard run verify-dist"
       },
       "cache": false
     }

@@ -1,5 +1,5 @@
 {
-  "name": "@skyscanner/backpack-adoption-action",
+  "name": "@skyscanner/backpack-adoption-guard",
   "version": "0.0.0",
   "private": true,
   "scripts": {

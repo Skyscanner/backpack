@@ -12,7 +12,7 @@ Backpack adoption rate.
     fetch-depth: 0
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/libs/backpack-adoption-action@backpack-adoption-action/v1
+  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
   with:
     dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
     cortex-webhook-uuid: ${{ secrets.BACKPACK_ADOPTION_CORTEX_WEBHOOK_UUID }}
@@ -57,7 +57,7 @@ The committed `dist/index.js` is a single-file bundle produced by `esbuild`.
 After changing any source under `src/`, run:
 
 ```bash
-npx nx run backpack-adoption-action:build
+npx nx run backpack-adoption-guard:build
 ```
 
 …and commit the regenerated `dist/`. The release workflow's `verify-dist`
