@@ -13,7 +13,7 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache
+  CACHE_NAME: node-modules-cache-v2
   BUILD_CACHE_NAME: build-cache
 
 permissions: {}
@@ -37,8 +37,7 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
@@ -63,16 +62,16 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Upload dist-storybook to Cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: storybook-dist-cache
         with:
           path: |
-            dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**') }}
+            libs/backpack-storybook-host/dist-storybook/
+            .nx/cache/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
       - name: Create build cache
         if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
@@ -82,12 +81,15 @@ jobs:
 
   Build:
     permissions:
+      actions: read
+      contents: read
       statuses: write
       pull-requests: write
     needs: [Create-NPM-Cache, Create-Build-Cache]
     uses: ./.github/workflows/_build.yml
     secrets:
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   StorybookDeploy:
     runs-on: ubuntu-latest
@@ -108,22 +110,23 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Restore Cache
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         id: storybook-dist-cache
         with:
-          path: dist-storybook/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**') }}
+          path: |
+            libs/backpack-storybook-host/dist-storybook/
+            .nx/cache/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
       - name: Deploy Storybook for main
         uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
         if: github.ref == 'refs/heads/main'
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: dist-storybook/
+          publish_dir: libs/backpack-storybook-host/dist-storybook/
           keep_files: false
           external_repository: backpack/storybook
           publish_branch: main
@@ -147,8 +150,7 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/backpack-web/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/backpack-web/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Build Sass docs
         if: github.ref == 'refs/heads/main'
@@ -177,6 +179,10 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Draft release notes
-        uses: release-drafter/release-drafter@6db134d15f3909ccc9eefd369f02bd1e9cffdf97 # v6.2.0
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        uses: release-drafter/release-drafter@563bf132657a13ded0b01fcb723c5a58cdd824e2 # v7.2.1
+        # release-drafter v7 no longer reads the GITHUB_TOKEN env var; the
+        # token must be passed via the `token` input or it falls back to the
+        # default `github.token`, which lacks the GitHub App permissions we
+        # rely on for drafting releases.
+        with:
+          token: ${{ steps.app-token.outputs.token }}

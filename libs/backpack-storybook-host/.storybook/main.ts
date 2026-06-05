@@ -24,7 +24,7 @@ const isCI = !!process.env.CI;
 
 const config: StorybookConfig = {
   stories: [
-    '../packages/backpack-web/src/*/src/**/*.stories.@(ts|tsx|js|jsx)',
+    '../../../packages/backpack-web/src/*/src/**/*.stories.@(ts|tsx|js|jsx)',
   ],
   addons: [
     '@storybook/addon-a11y',

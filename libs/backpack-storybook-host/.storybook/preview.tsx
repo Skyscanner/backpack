@@ -18,13 +18,13 @@
 
 import { ArgTypes, Title } from '@storybook/addon-docs/blocks';
 
-import '../packages/backpack-web/src/bpk-stylesheets';
-import '../packages/backpack-web/src/bpk-stylesheets/font';
-import '../packages/backpack-web/src/bpk-stylesheets/larken';
-
-import BpkRtlToggle from '../packages/backpack-web/src/bpk-component-rtl-toggle';
+import BpkRtlToggle from '@skyscanner/backpack-web/bpk-component-rtl-toggle';
 
 import type { Preview } from '@storybook/react';
+
+import '@skyscanner/backpack-web/bpk-stylesheets';
+import '@skyscanner/backpack-web/bpk-stylesheets/font';
+import '@skyscanner/backpack-web/bpk-stylesheets/larken';
 
 const preview: Preview = {
   argTypesEnhancers: [

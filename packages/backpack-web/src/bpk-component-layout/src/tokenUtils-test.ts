@@ -57,6 +57,26 @@ describe('processBpkProps', () => {
     expect(result.paddingEnd).toBe('1.5rem');
   });
 
+  it('converts block spacing props (marginBlock / paddingBlock)', () => {
+    const result = processBpkProps({
+      marginBlock: BpkSpacing.Base,
+      paddingBlock: BpkSpacing.SM,
+    });
+
+    expect(result.marginBlock).toBe('1rem');
+    expect(result.paddingBlock).toBe('.25rem');
+  });
+
+  it('converts responsive marginBlock / paddingBlock with Backpack breakpoint keys', () => {
+    const result = processBpkProps({
+      marginBlock: { mobile: BpkSpacing.SM, tablet: BpkSpacing.LG },
+      paddingBlock: { mobile: BpkSpacing.None, desktop: BpkSpacing.MD },
+    });
+
+    expect(result.marginBlock).toEqual({ md: '.25rem', xl: '1.5rem' });
+    expect(result.paddingBlock).toEqual({ md: '0', '2xl': '.5rem' });
+  });
+
   it('allows bare "0" for position offset props', () => {
     const result = processBpkProps({
       top: '0',

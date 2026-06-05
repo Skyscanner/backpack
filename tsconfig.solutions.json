@@ -6,6 +6,9 @@
     },
     {
       "path": "./packages/backpack-web/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/backpack-storybook-host/tsconfig.lib.json"
     }
   ]
 }
