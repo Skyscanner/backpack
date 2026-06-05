@@ -41,10 +41,6 @@ type ImageProps = {
 class Image extends Component<ImageProps> {
   img?: HTMLImageElement | null;
 
-  static defaultProps = {
-    hidden: false,
-  };
-
   constructor(props: ImageProps) {
     super(props);
     this.img = null;
@@ -63,7 +59,7 @@ class Image extends Component<ImageProps> {
   };
 
   render() {
-    const { altText, hidden, onImageLoad, ...rest } = this.props;
+    const { altText, hidden = false, onImageLoad, ...rest } = this.props;
 
     const imgClassNames = [getClassName('bpk-image__img')];
 
@@ -103,15 +99,6 @@ type BpkImageProps = {
 class BpkImage extends Component<BpkImageProps> {
   placeholder?: HTMLElement | null;
 
-  static defaultProps = {
-    borderRadiusStyle: BORDER_RADIUS_STYLES.none,
-    inView: true,
-    loading: false,
-    onLoad: null,
-    style: {},
-    suppressHydrationWarning: false,
-  };
-
   onImageLoad = (): void => {
     if (this.props.onLoad) {
       this.props.onLoad();
@@ -129,12 +116,12 @@ class BpkImage extends Component<BpkImageProps> {
     const {
       altText,
       aspectRatio,
-      borderRadiusStyle,
+      borderRadiusStyle = BORDER_RADIUS_STYLES.none,
       className,
-      inView,
-      loading,
+      inView = true,
+      loading = false,
       onLoad,
-      style,
+      style = {},
       ...rest
     } = this.props;
 

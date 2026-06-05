@@ -53,6 +53,16 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
+const DEFAULT_X_AXIS_MARGIN = 2 * (lineHeight + spacing);
+const DEFAULT_Y_AXIS_MARGIN = 4 * lineHeight + spacing;
+const DEFAULT_Y_AXIS_DOMAIN = [null, null];
+const DEFAULT_GET_BAR_LABEL = (
+  point: any,
+  xScaleDataKey: string,
+  yScaleDataKey: string,
+) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`;
+const DEFAULT_GET_BAR_SELECTION = () => false;
+
 const getMaxYValue = (
   dataPoints: Array<number>,
   outlierPercentage: ?number,
@@ -108,30 +118,6 @@ class BpkBarchart extends Component<Props, State> {
 
   svgEl: ?Element;
 
-  static defaultProps = {
-    leadingScrollIndicatorClassName: null,
-    trailingScrollIndicatorClassName: null,
-    outlierPercentage: null,
-    showGridlines: false,
-    xAxisMargin: 2 * (lineHeight + spacing),
-    xAxisTickValue: identity,
-    xAxisTickOffset: 0,
-    xAxisTickEvery: 1,
-    yAxisMargin: 4 * lineHeight + spacing,
-    yAxisTickValue: identity,
-    yAxisNumTicks: null,
-    yAxisDomain: [null, null],
-    onBarClick: null,
-    onBarHover: null,
-    onBarFocus: null,
-    // Using type any here as xScaleDataKey or yScaleDataKey are strings and there is an issue that strings are not valid keys
-    getBarLabel: (point: any, xScaleDataKey: string, yScaleDataKey: string) =>
-      `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`,
-    getBarSelection: () => false,
-    BarComponent: BpkBarchartBar,
-    disableDataTable: false,
-  };
-
   constructor(props: Props) {
     super(props);
 
@@ -167,31 +153,31 @@ class BpkBarchart extends Component<Props, State> {
 
   render() {
     const {
-      BarComponent,
+      BarComponent = BpkBarchartBar,
       data,
-      disableDataTable,
-      getBarLabel,
-      getBarSelection,
+      disableDataTable = false,
+      getBarLabel = DEFAULT_GET_BAR_LABEL,
+      getBarSelection = DEFAULT_GET_BAR_SELECTION,
       initialHeight,
       initialWidth,
-      leadingScrollIndicatorClassName,
-      onBarClick,
-      onBarFocus,
-      onBarHover,
-      outlierPercentage,
-      showGridlines,
-      trailingScrollIndicatorClassName,
+      leadingScrollIndicatorClassName = null,
+      onBarClick = null,
+      onBarFocus = null,
+      onBarHover = null,
+      outlierPercentage = null,
+      showGridlines = false,
+      trailingScrollIndicatorClassName = null,
       xAxisLabel,
-      xAxisMargin,
-      xAxisTickEvery,
-      xAxisTickOffset,
-      xAxisTickValue,
+      xAxisMargin = DEFAULT_X_AXIS_MARGIN,
+      xAxisTickEvery = 1,
+      xAxisTickOffset = 0,
+      xAxisTickValue = identity,
       xScaleDataKey,
-      yAxisDomain,
+      yAxisDomain = DEFAULT_Y_AXIS_DOMAIN,
       yAxisLabel,
-      yAxisMargin,
-      yAxisNumTicks,
-      yAxisTickValue,
+      yAxisMargin = DEFAULT_Y_AXIS_MARGIN,
+      yAxisNumTicks = null,
+      yAxisTickValue = identity,
       yScaleDataKey,
       ...rest
     } = this.props;
