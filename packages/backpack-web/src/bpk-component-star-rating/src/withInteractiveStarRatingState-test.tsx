@@ -26,58 +26,73 @@ const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
 );
 
+const getStarLabel = (rating: number, maxRating: number) =>
+  `${rating} out of ${maxRating} stars`;
+
+const filledCount = () =>
+  document.querySelectorAll('.bpk-interactive-star .bpk-star--filled').length;
+
 describe('withInteractiveStarRatingState', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
+  it('starts with an unselected rating of 0', () => {
+    render(
       <InteractiveStarRating
         id="my-star-rating"
         getStarLabel={() => 'my-label'}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getAllByRole('button')).toHaveLength(5);
+    expect(filledCount()).toBe(0);
   });
 
-  it('should render correctly with "large" attribute', () => {
-    const { asFragment } = render(
+  it('passes the large prop through to the wrapped component', () => {
+    const { container } = render(
       <InteractiveStarRating
         id="my-star-rating"
         getStarLabel={() => 'my-label'}
         large
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(container.querySelectorAll('.bpk-star--large')).toHaveLength(5);
   });
 
-  it('should render correctly when selecting 3rd star', async () => {
-    const { asFragment } = render(
+  it('selects up to and including the clicked star and marks it as pressed', () => {
+    render(
       <InteractiveStarRating
         id="my-star-rating"
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
       />,
     );
 
-    const star = screen.getByLabelText('3 out of 5 stars');
-    await fireEvent.click(star);
+    fireEvent.click(screen.getByLabelText('3 out of 5 stars'));
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(filledCount()).toBe(3);
+    expect(screen.getByLabelText('3 out of 5 stars')).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    expect(screen.getByLabelText('4 out of 5 stars')).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    );
   });
 
-  it('should render correctly when hovering over 4th star', async () => {
-    const { asFragment } = render(
+  it('previews up to and including the hovered star without selecting it', () => {
+    render(
       <InteractiveStarRating
         id="my-star-rating"
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
       />,
     );
 
-    const star = screen.getByLabelText('4 out of 5 stars');
+    fireEvent.mouseOver(screen.getByLabelText('4 out of 5 stars'));
 
-    await fireEvent.mouseOver(star);
-
-    expect(asFragment()).toMatchSnapshot();
+    expect(filledCount()).toBe(4);
+    // Hovering must not change the selected/pressed state.
+    expect(screen.getByLabelText('4 out of 5 stars')).toHaveAttribute(
+      'aria-pressed',
+      'false',
+    );
   });
 });

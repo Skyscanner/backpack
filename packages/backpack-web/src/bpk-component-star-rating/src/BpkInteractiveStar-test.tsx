@@ -16,14 +16,15 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkInteractiveStar from './BpkInteractiveStar';
 import { STAR_TYPES } from './BpkStar';
 
 describe('BpkInteractiveStar', () => {
-  it('should render correctly with empty star', () => {
-    const { asFragment } = render(
+  it('renders an unselected empty star button', () => {
+    render(
       <BpkInteractiveStar
         type={STAR_TYPES.EMPTY}
         label="One star"
@@ -33,11 +34,19 @@ describe('BpkInteractiveStar', () => {
         onMouseEnter={() => null}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const button = screen.getByRole('button', { name: 'One star' });
+    expect(button).toHaveAttribute('type', 'button');
+    expect(button).toHaveAttribute('aria-pressed', 'false');
+    expect(button).toHaveClass('bpk-interactive-star');
+    expect(button).not.toHaveClass('bpk-interactive-star--selected');
+    expect(button.querySelector('.bpk-star')).not.toHaveClass(
+      'bpk-star--filled',
+    );
   });
 
-  it('should render correctly with full star', () => {
-    const { asFragment } = render(
+  it('renders an unselected full star button with the filled inner star', () => {
+    render(
       <BpkInteractiveStar
         type={STAR_TYPES.FULL}
         label="One star"
@@ -47,11 +56,15 @@ describe('BpkInteractiveStar', () => {
         onMouseEnter={() => null}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const button = screen.getByRole('button', { name: 'One star' });
+    expect(button).toHaveAttribute('aria-pressed', 'false');
+    expect(button).not.toHaveClass('bpk-interactive-star--selected');
+    expect(button.querySelector('.bpk-star')).toHaveClass('bpk-star--filled');
   });
 
-  it('should render correctly with a selected full star', () => {
-    const { asFragment } = render(
+  it('marks the button as pressed and selected when "selected" is true', () => {
+    render(
       <BpkInteractiveStar
         type={STAR_TYPES.FULL}
         label="One star"
@@ -62,6 +75,12 @@ describe('BpkInteractiveStar', () => {
         selected
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    const button = screen.getByRole('button', { name: 'One star' });
+    expect(button).toHaveAttribute('aria-pressed', 'true');
+    expect(button).toHaveClass('bpk-interactive-star--selected');
+    expect(button.querySelector('.bpk-interactive-star__icon')).toHaveClass(
+      'bpk-interactive-star__icon--selected',
+    );
   });
 });
