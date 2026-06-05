@@ -19,33 +19,18 @@
 /* stylelint-disable at-rule-disallowed-list */
 
 @use 'tokens';
-@use 'borders';
 @use 'margins';
 @use 'shadows';
 @use 'utils';
 
-// Private helper: applies a box-shadow border with CSS variable fallback.
-// bpk-border-sm() uses a box-shadow shorthand, so bpk-themeable-property cannot
-// embed a CSS variable inside it — this mixin applies the two-line fallback pattern manually.
-@mixin _bpk-chip-themeable-border($var-name, $fallback-color) {
-  box-shadow: 0 0 0 tokens.$bpk-border-size-sm $fallback-color inset;
-  box-shadow: 0 0 0 tokens.$bpk-border-size-sm
-    var(#{$var-name}, $fallback-color) inset;
-}
-
 @mixin bpk-chip {
   display: inline-flex;
-  height: tokens.bpk-spacing-xl();
+  height: var(--bpk-private-chip-dimension-min-height-width);
   padding: 0 tokens.bpk-spacing-base();
   align-items: center;
   border: none;
+  border-radius: var(--bpk-private-chip-dimension-radius);
   cursor: pointer;
-
-  @include utils.bpk-themeable-property(
-    border-radius,
-    --bpk-chip-border-radius,
-    tokens.$bpk-border-radius-sm
-  );
 
   &__leading-accessory-view {
     display: inline-flex;
@@ -63,253 +48,176 @@
   }
 
   &--on-dark {
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-chip-on-dark-background-color,
-      transparent
-    );
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-chip-on-dark-text-color,
-      tokens.$bpk-text-on-dark-day
-    );
-    @include _bpk-chip-themeable-border(
-      --bpk-chip-on-dark-border-color,
-      tokens.$bpk-line-on-dark-day
-    );
+    background-color: var(--bpk-private-chip-colour-bg-on-dark-off);
+    color: tokens.$bpk-text-on-dark-day;
+    box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+      var(--bpk-private-chip-colour-border-on-dark-off) inset;
 
     @include utils.bpk-hover {
-      @include _bpk-chip-themeable-border(
-        --bpk-chip-on-dark-hover-border-color,
-        tokens.$bpk-surface-default-day
-      );
+      background-color: var(--bpk-private-chip-colour-bg-on-dark-hover);
+      color: var(--bpk-private-chip-colour-text-on-dark);
+      box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+        var(--bpk-private-chip-colour-border-on-dark-hover) inset;
     }
 
     &:active:not(:disabled) {
-      @include _bpk-chip-themeable-border(
-        --bpk-chip-on-dark-active-border-color,
-        tokens.$bpk-surface-default-day
-      );
+      background-color: var(--bpk-private-chip-colour-bg-on-dark-hover);
+      box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+        var(--bpk-private-chip-colour-border-on-dark-hover) inset;
     }
 
     &-selected {
-      @include utils.bpk-themeable-property(
-        color,
-        --bpk-chip-on-dark-selected-text-color,
-        tokens.$bpk-text-on-light-day
-      );
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-on-dark-selected-background-color,
-        tokens.$bpk-surface-default-day
-      );
-      @include borders.bpk-border-sm(transparent);
+      background-color: var(--bpk-private-chip-colour-bg-on-dark-on);
+      color: var(--bpk-private-chip-colour-text-on-dark);
+      box-shadow: none;
 
       @include utils.bpk-hover {
-        @include utils.bpk-themeable-property(
-          background-color,
-          --bpk-chip-on-dark-selected-hover-background-color,
-          tokens.$bpk-surface-default-day
-        );
-        @include borders.bpk-border-sm(transparent);
+        background-color: var(--bpk-private-chip-colour-bg-on-dark-on);
+        box-shadow: none;
       }
 
       &:active:not(:disabled) {
-        @include utils.bpk-themeable-property(
-          background-color,
-          --bpk-chip-on-dark-selected-active-background-color,
-          tokens.$bpk-surface-default-day
-        );
-        @include borders.bpk-border-sm(transparent);
+        background-color: var(--bpk-private-chip-colour-bg-on-dark-on);
+        box-shadow: none;
       }
     }
 
     &-dismissible {
       @include utils.bpk-hover {
-        svg {
-          fill: currentcolor;
-        }
+        background-color: var(
+          --bpk-private-chip-colour-bg-on-dark-dismissible-hover
+        );
+        color: var(--bpk-private-chip-colour-text-on-dark-dismisisble-hover);
+        box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+          var(--bpk-private-chip-colour-border-on-dark-disimissible-hover) inset;
       }
 
       &:active:not(:disabled) {
-        svg {
-          fill: currentcolor;
-        }
+        background-color: var(
+          --bpk-private-chip-colour-bg-on-dark-dismissible-hover
+        );
+        color: var(--bpk-private-chip-colour-text-on-dark-dismisisble-hover);
+        box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+          var(--bpk-private-chip-colour-border-on-dark-disimissible-hover) inset;
       }
 
       &__trailing-accessory-view {
-        fill: tokens.$bpk-text-secondary-day;
+        fill: var(--bpk-private-chip-colour-text-on-dark-dismisisble-icon);
       }
     }
 
     &-disabled {
-      @include borders.bpk-border-sm(transparent);
+      box-shadow: none;
     }
   }
 
   &--default {
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-chip-default-background-color,
-      transparent
-    );
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-chip-default-text-color,
-      tokens.$bpk-text-primary-day
-    );
-    @include _bpk-chip-themeable-border(
-      --bpk-chip-default-border-color,
-      tokens.$bpk-line-day
-    );
+    background-color: transparent;
+    color: tokens.$bpk-text-primary-day;
+    box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+      var(--bpk-private-chip-colour-border-default-off) inset;
 
     @include utils.bpk-hover {
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-default-hover-background-color,
-        transparent
-      );
-      @include _bpk-chip-themeable-border(
-        --bpk-chip-default-hover-border-color,
-        tokens.$bpk-core-primary-day
-      );
+      box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+        var(--bpk-private-chip-colour-border-default-hover) inset;
     }
 
     &:active:not(:disabled) {
-      @include _bpk-chip-themeable-border(
-        --bpk-chip-default-active-border-color,
-        tokens.$bpk-core-primary-day
-      );
+      box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+        var(--bpk-private-chip-colour-border-default-hover) inset;
     }
 
     &-selected {
-      @include utils.bpk-themeable-property(
-        color,
-        --bpk-chip-default-selected-text-color,
-        tokens.$bpk-text-on-dark-day
-      );
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-default-selected-background-color,
-        tokens.$bpk-core-primary-day
-      );
-      @include borders.bpk-border-sm(transparent);
+      background-color: var(--bpk-private-chip-colour-bg-default-on);
+      color: var(--bpk-private-chip-colour-text-on);
+      box-shadow: none;
 
       @include utils.bpk-hover {
-        @include utils.bpk-themeable-property(
-          background-color,
-          --bpk-chip-default-selected-hover-background-color,
-          tokens.$bpk-core-primary-day
-        );
-        @include borders.bpk-border-sm(transparent);
+        background-color: var(--bpk-private-chip-colour-bg-default-on);
+        box-shadow: none;
       }
 
       &:active:not(:disabled) {
-        @include utils.bpk-themeable-property(
-          background-color,
-          --bpk-chip-default-selected-active-background-color,
-          tokens.$bpk-core-primary-day
-        );
-        @include borders.bpk-border-sm(transparent);
+        background-color: var(--bpk-private-chip-colour-bg-default-on);
+        box-shadow: none;
       }
     }
 
     &-dismissible {
       @include utils.bpk-hover {
-        svg {
-          fill: currentcolor;
-        }
+        background-color: var(
+          --bpk-private-chip-colour-bg-default-dismissible-hover
+        );
+        color: var(--bpk-private-chip-colour-text-default-dismissible-hover);
+        box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+          var(--bpk-private-chip-colour-border-default-dismissible-hover) inset;
       }
 
       &:active:not(:disabled) {
-        svg {
-          fill: currentcolor;
-        }
+        background-color: var(
+          --bpk-private-chip-colour-bg-default-dismissible-hover
+        );
+        color: var(--bpk-private-chip-colour-text-default-dismissible-hover);
+        box-shadow: 0 0 0 tokens.$bpk-border-size-sm
+          var(--bpk-private-chip-colour-border-default-dismissible-hover) inset;
       }
 
       &__trailing-accessory-view {
-        fill: tokens.$bpk-text-disabled-on-dark-day;
+        fill: var(--bpk-private-chip-colour-text-dismissible-on-icon);
       }
     }
 
     &-disabled {
-      @include borders.bpk-border-sm(transparent);
+      box-shadow: none;
     }
   }
 
   &--on-image {
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-chip-on-image-background-color,
-      tokens.$bpk-surface-default-day
-    );
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-chip-on-image-text-color,
-      tokens.$bpk-text-primary-day
-    );
+    background-color: tokens.$bpk-surface-default-day;
+    color: tokens.$bpk-text-primary-day;
+
     @include shadows.bpk-box-shadow-sm;
 
     @include utils.bpk-hover {
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-on-image-hover-background-color,
-        tokens.$bpk-canvas-contrast-day
-      );
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
 
     &:active:not(:disabled) {
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-on-image-active-background-color,
-        tokens.$bpk-canvas-contrast-day
-      );
+      background-color: tokens.$bpk-canvas-contrast-day;
     }
 
     &-selected {
-      @include utils.bpk-themeable-property(
-        color,
-        --bpk-chip-on-image-selected-text-color,
-        tokens.$bpk-text-on-dark-day
-      );
-      @include utils.bpk-themeable-property(
-        background-color,
-        --bpk-chip-on-image-selected-background-color,
-        tokens.$bpk-core-primary-day
-      );
+      background-color: tokens.$bpk-core-primary-day;
+      color: var(--bpk-private-chip-colour-text-on-image);
 
       @include utils.bpk-hover {
-        @include utils.bpk-themeable-property(
-          background-color,
-          --bpk-chip-on-image-selected-hover-background-color,
-          tokens.$bpk-core-primary-day
-        );
+        background-color: tokens.$bpk-core-primary-day;
       }
 
       &:active:not(:disabled) {
-        @include utils.bpk-themeable-property(
-          background-color,
-          --bpk-chip-on-image-selected-active-background-color,
-          tokens.$bpk-core-primary-day
-        );
+        background-color: tokens.$bpk-core-primary-day;
       }
     }
 
     &-dismissible {
       @include utils.bpk-hover {
+        background-color: var(
+          --bpk-private-chip-colour-bg-on-image-dismissible-hover
+        );
+
         svg {
           fill: currentcolor;
         }
       }
 
       &:active:not(:disabled) {
-        svg {
-          fill: currentcolor;
-        }
+        background-color: var(
+          --bpk-private-chip-colour-bg-on-image-dismissible-hover
+        );
       }
 
       &__trailing-accessory-view {
-        fill: tokens.$bpk-text-disabled-on-dark-day;
+        fill: var(--bpk-private-chip-colour-text-on-image-dismissible-icon);
       }
     }
 
@@ -319,7 +227,7 @@
   }
 
   &--disabled {
-    background-color: tokens.$bpk-private-chip-disabled-background-day;
+    background-color: var(--bpk-private-chip-colour-bg-disabled);
     color: tokens.$bpk-text-disabled-day;
     cursor: not-allowed;
   }
