@@ -14,12 +14,6 @@ inputs:
     description: Path for the generated adoption result JSON.
     required: false
     default: backpack-adoption-results.json
-  cortex-webhook-uuid:
-    description: Cortex webhook UUID used only on the main branch.
-    required: false
-  cortex-entity:
-    description: Cortex entity name, for example carhire-homepage.
-    required: false
 
 runs:
   using: node24

@@ -20,7 +20,7 @@ import { basename, dirname, resolve } from "node:path";
 
 import { analyzeRepository } from "../analysis/analyze-repository";
 import {
-  BACKPACK_ADOPTION_CORTEX_KEY,
+  BACKPACK_ADOPTION_OUTPUT_KEY,
   DEFAULT_OUTPUT_PATH,
   DEFAULT_PATTERN,
 } from "../shared/config";
@@ -29,7 +29,6 @@ import type {
   AdoptionReport,
   ResultsFile,
 } from "../shared/types";
-import { uploadToCortex } from "../cortex/upload-to-cortex";
 import { evaluateGuard } from "../guard/evaluate-guard";
 import {
   getPullRequestBaseRef,
@@ -43,7 +42,6 @@ import { buildStepSummary } from "./summary";
 
 export type RunOptions = {
   cwd?: string;
-  fetchImpl?: typeof fetch;
   io?: ActionIO;
 };
 
@@ -56,7 +54,7 @@ const writeResults = async (
   await mkdir(dirname(absolutePath), { recursive: true });
 
   const resultsFile: ResultsFile = {
-    [BACKPACK_ADOPTION_CORTEX_KEY]: result,
+    [BACKPACK_ADOPTION_OUTPUT_KEY]: result,
   };
 
   await writeFile(
@@ -66,7 +64,7 @@ const writeResults = async (
   );
 };
 
-const createPendingActionResult = ({
+const createActionResult = ({
   baseReport,
   eventName,
   guard,
@@ -102,10 +100,6 @@ const createPendingActionResult = ({
     threshold: guard.threshold,
   },
   guard,
-  cortex: {
-    status: "skipped",
-    reason: "Cortex upload has not run yet.",
-  },
 });
 
 const analyzeBaseReport = async ({
@@ -131,14 +125,11 @@ const analyzeBaseReport = async ({
 
 export const run = async ({
   cwd = process.cwd(),
-  fetchImpl,
   io = createGitHubActionsIO(),
 }: RunOptions = {}) => {
   const dryRun = getBooleanInput(io, "dry-run");
   const pattern = io.getInput("pattern") || DEFAULT_PATTERN;
   const outputPath = io.getInput("output-path") || DEFAULT_OUTPUT_PATH;
-  const cortexWebhookUuid = io.getInput("cortex-webhook-uuid");
-  const cortexEntity = io.getInput("cortex-entity");
   const main = isMainBranch();
   const pullRequest = isPullRequestEvent();
 
@@ -158,7 +149,7 @@ export const run = async ({
     headReport,
     isMain: main,
   });
-  const pendingResult = createPendingActionResult({
+  const result = createActionResult({
     baseReport,
     eventName: process.env.GITHUB_EVENT_NAME || null,
     guard,
@@ -168,18 +159,6 @@ export const run = async ({
     ref: process.env.GITHUB_REF || null,
     repository: basename(cwd),
   });
-  const cortex = await uploadToCortex({
-    actionResult: pendingResult,
-    cortexEntity,
-    fetchImpl,
-    io,
-    isMain: main,
-    webhookUuid: cortexWebhookUuid,
-  });
-  const result: ActionResult = {
-    ...pendingResult,
-    cortex,
-  };
 
   await writeResults(cwd, outputPath, result);
   await io.appendSummary(buildStepSummary(result));

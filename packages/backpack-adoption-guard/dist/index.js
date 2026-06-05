@@ -13046,7 +13046,7 @@ var require_fetch = __commonJS({
         this.emit("terminated", error2);
       }
     };
-    function fetch2(input, init = {}) {
+    function fetch(input, init = {}) {
       webidl.argumentLengthCheck(arguments, 1, { header: "globalThis.fetch" });
       const p = createDeferredPromise();
       let requestObject;
@@ -13976,7 +13976,7 @@ var require_fetch = __commonJS({
       }
     }
     module2.exports = {
-      fetch: fetch2,
+      fetch,
       Fetch,
       fetching,
       finalizeAndReportTiming
@@ -17232,7 +17232,7 @@ var require_undici = __commonJS({
     module2.exports.getGlobalDispatcher = getGlobalDispatcher;
     if (util.nodeMajor > 16 || util.nodeMajor === 16 && util.nodeMinor >= 8) {
       let fetchImpl = null;
-      module2.exports.fetch = async function fetch2(resource) {
+      module2.exports.fetch = async function fetch(resource) {
         if (!fetchImpl) {
           fetchImpl = require_fetch().fetch;
         }
@@ -66524,7 +66524,7 @@ var buildVisualComponentRegistry = (files) => {
 
 // src/shared/config.ts
 var ADOPTION_GUARD_THRESHOLD = 60;
-var BACKPACK_ADOPTION_CORTEX_KEY = "backpack-adoption";
+var BACKPACK_ADOPTION_OUTPUT_KEY = "backpack-adoption";
 var DEFAULT_PATTERN = "**/*.{jsx,tsx}";
 var DEFAULT_OUTPUT_PATH = "backpack-adoption-results.json";
 var DEFAULT_IGNORE_PATTERNS = [
@@ -66681,59 +66681,6 @@ var analyzeRepository = async (repoPath, options = {}) => {
     },
     componentCounts: totals.componentCounts
   };
-};
-
-// src/cortex/upload-to-cortex.ts
-var cortexWebhookUrl = (webhookUuid) => `https://api.getcortexapp.com/api/v1/custom-integrations/data/${webhookUuid}`;
-var uploadToCortex = async ({
-  actionResult,
-  cortexEntity,
-  fetchImpl = fetch,
-  io,
-  isMain,
-  webhookUuid
-}) => {
-  if (!isMain) {
-    return {
-      status: "skipped",
-      reason: "Cortex upload only runs on refs/heads/main."
-    };
-  }
-  if (!webhookUuid || !cortexEntity) {
-    return {
-      status: "skipped",
-      reason: "Cortex webhook UUID or entity input was not provided."
-    };
-  }
-  try {
-    const response = await fetchImpl(cortexWebhookUrl(webhookUuid), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        entity_tag: cortexEntity,
-        [BACKPACK_ADOPTION_CORTEX_KEY]: actionResult
-      })
-    });
-    if (!response.ok) {
-      const body = await response.text().catch(() => "");
-      throw new Error(
-        `Cortex responded with ${response.status} ${response.statusText}${body ? `: ${body}` : ""}`
-      );
-    }
-    return {
-      status: "uploaded",
-      reason: "Uploaded Backpack adoption data to Cortex."
-    };
-  } catch (error2) {
-    const message = error2 instanceof Error ? error2.message : String(error2);
-    io.warning(`Failed to upload Backpack adoption data to Cortex: ${message}`);
-    return {
-      status: "warning",
-      reason: `Failed to upload Backpack adoption data to Cortex: ${message}`
-    };
-  }
 };
 
 // src/guard/evaluate-guard.ts
@@ -66904,7 +66851,6 @@ var buildStepSummary = (result) => `## Backpack Adoption Guard
 | Guard threshold | ${result.comparison.threshold.toFixed(2)}% |
 | Dry run | ${result.guard.dryRun ? "true" : "false"} |
 | Guard status | ${statusLabel(result.guard.status)} |
-| Cortex upload | ${result.cortex.status} |
 
 ${result.guard.reason}
 
@@ -66915,7 +66861,7 @@ var writeResults = async (cwd, outputPath, result) => {
   const absolutePath = (0, import_node_path4.resolve)(cwd, outputPath);
   await (0, import_promises3.mkdir)((0, import_node_path4.dirname)(absolutePath), { recursive: true });
   const resultsFile = {
-    [BACKPACK_ADOPTION_CORTEX_KEY]: result
+    [BACKPACK_ADOPTION_OUTPUT_KEY]: result
   };
   await (0, import_promises3.writeFile)(
     absolutePath,
@@ -66924,7 +66870,7 @@ var writeResults = async (cwd, outputPath, result) => {
     "utf8"
   );
 };
-var createPendingActionResult = ({
+var createActionResult = ({
   baseReport,
   eventName,
   guard,
@@ -66950,11 +66896,7 @@ var createPendingActionResult = ({
     delta: guard.delta,
     threshold: guard.threshold
   },
-  guard,
-  cortex: {
-    status: "skipped",
-    reason: "Cortex upload has not run yet."
-  }
+  guard
 });
 var analyzeBaseReport = async ({
   cwd,
@@ -66975,14 +66917,11 @@ var analyzeBaseReport = async ({
 };
 var run = async ({
   cwd = process.cwd(),
-  fetchImpl,
   io = createGitHubActionsIO()
 } = {}) => {
   const dryRun = getBooleanInput(io, "dry-run");
   const pattern = io.getInput("pattern") || DEFAULT_PATTERN;
   const outputPath = io.getInput("output-path") || DEFAULT_OUTPUT_PATH;
-  const cortexWebhookUuid = io.getInput("cortex-webhook-uuid");
-  const cortexEntity = io.getInput("cortex-entity");
   const main = isMainBranch();
   const pullRequest = isPullRequestEvent();
   io.info(`Analyzing Backpack adoption in ${cwd}`);
@@ -66998,7 +66937,7 @@ var run = async ({
     headReport,
     isMain: main
   });
-  const pendingResult = createPendingActionResult({
+  const result = createActionResult({
     baseReport,
     eventName: process.env.GITHUB_EVENT_NAME || null,
     guard,
@@ -67008,18 +66947,6 @@ var run = async ({
     ref: process.env.GITHUB_REF || null,
     repository: (0, import_node_path4.basename)(cwd)
   });
-  const cortex = await uploadToCortex({
-    actionResult: pendingResult,
-    cortexEntity,
-    fetchImpl,
-    io,
-    isMain: main,
-    webhookUuid: cortexWebhookUuid
-  });
-  const result = {
-    ...pendingResult,
-    cortex
-  };
   await writeResults(cwd, outputPath, result);
   await io.appendSummary(buildStepSummary(result));
   io.info(`Backpack adoption results written to ${outputPath}`);

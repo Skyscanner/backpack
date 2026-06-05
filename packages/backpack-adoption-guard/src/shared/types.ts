@@ -53,13 +53,6 @@ export type GuardResult = {
   delta: number | null;
 };
 
-export type CortexStatus = "skipped" | "uploaded" | "warning";
-
-export type CortexResult = {
-  status: CortexStatus;
-  reason: string;
-};
-
 export type ActionResult = {
   generatedAt: string;
   repository: string;
@@ -78,7 +71,6 @@ export type ActionResult = {
     threshold: number;
   };
   guard: GuardResult;
-  cortex: CortexResult;
 };
 
 export type ResultsFile = {

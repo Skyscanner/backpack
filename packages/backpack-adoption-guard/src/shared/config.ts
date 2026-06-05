@@ -17,7 +17,10 @@
  */
 export const ADOPTION_GUARD_THRESHOLD = 60;
 
-export const BACKPACK_ADOPTION_CORTEX_KEY = "backpack-adoption";
+// Top-level key in the generated results JSON. Consumers shipping the JSON to
+// Cortex via Skyscanner/push-custom-cortex-data should use this same value as
+// the `data-descriptor.key` input.
+export const BACKPACK_ADOPTION_OUTPUT_KEY = "backpack-adoption";
 
 export const DEFAULT_PATTERN = "**/*.{jsx,tsx}";
 

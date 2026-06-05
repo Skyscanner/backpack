@@ -54,7 +54,6 @@ export const buildStepSummary = (result: ActionResult) => `## Backpack Adoption 
 | Guard threshold | ${result.comparison.threshold.toFixed(2)}% |
 | Dry run | ${result.guard.dryRun ? "true" : "false"} |
 | Guard status | ${statusLabel(result.guard.status)} |
-| Cortex upload | ${result.cortex.status} |
 
 ${result.guard.reason}
 
