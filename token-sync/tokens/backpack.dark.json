@@ -9,6 +9,23 @@
     "$type": "color"
   },
   "Component": {
+    "Autosuggest": {
+      "Colour": {
+        "bg-default": {
+          "$value": "#ffffff"
+        },
+        "bg-hover": {
+          "$value": "#ffffff"
+        },
+        "border-default": {
+          "$value": "#ffffff"
+        },
+        "text-close": {
+          "$value": "#ffffff"
+        }
+      },
+      "$type": "color"
+    },
     "Badge": {
       "Colour": {
         "bg-default": {
@@ -40,9 +57,6 @@
       "Typography": {
         "tmp-badge-label": {
           "$value": "14px"
-        },
-        "tmp-badge-line-height": {
-          "$value": "0px"
         },
         "$type": "dimension"
       }
@@ -153,9 +167,13 @@
     },
     "Card Button": {
       "contained-fill": {
-        "$value": "{Alpha.White Alpha 10}"
+        "$value": "{Alpha.White Alpha 10}",
+        "$type": "color"
       },
-      "$type": "color"
+      "max-height": {
+        "$value": "{Heights.40}",
+        "$type": "dimension"
+      }
     },
     "Carousel-trigger": {
       "bg-default": {
@@ -165,6 +183,48 @@
         "$value": "{Alpha.White Alpha 80}"
       },
       "$type": "color"
+    },
+    "Checkbox": {
+      "bg-default-checked": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color"
+      },
+      "bg-default-intermediate": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color"
+      },
+      "bg-onContrast-checked": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color"
+      },
+      "bg-onContrast-intermediate": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color"
+      },
+      "border-default-disabled": {
+        "$value": "{Alpha.White Alpha 20}",
+        "$type": "color"
+      },
+      "border-default-notChecked": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color"
+      },
+      "border-onContrast-disabled": {
+        "$value": "{Alpha.White Alpha 20}",
+        "$type": "color"
+      },
+      "border-onContrast-notChecked": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color"
+      },
+      "icon-onContrast": {
+        "$value": "{Neutral.Charcoal}",
+        "$type": "color"
+      },
+      "stroke": {
+        "$value": "3px",
+        "$type": "dimension"
+      }
     },
     "Chip-group-filter": {
       "Colour": {
@@ -254,7 +314,7 @@
         "border-onContrast-on": {
           "$value": "{Neutral.Dark Grey 20}"
         },
-        "border-onDark-disimissible-hover": {
+        "border-onDark-dismissible-hover": {
           "$value": "{Neutral.Dark Grey 20}"
         },
         "border-onDark-hover": {
@@ -284,15 +344,18 @@
         "text-onDark": {
           "$value": "{Neutral.White}"
         },
-        "text-onDark-dismisisble-hover": {
+        "text-onDark-dismissible-hover": {
           "$value": "{Neutral.White}"
         },
-        "text-onDark-dismisisble-icon": {
+        "text-onDark-dismissible-icon": {
           "$value": "{Neutral.Dark Grey 40}"
         },
         "$type": "color"
       },
       "Dimension": {
+        "border": {
+          "$value": "{Border.1}"
+        },
         "min-height-width": {
           "$value": "{Heights.32}"
         },
@@ -310,12 +373,6 @@
         "$value": "{Neutral.Dark Grey 25}"
       },
       "$type": "color"
-    },
-    "Dimension": {
-      "padding-veritcal": {
-        "$value": "0px"
-      },
-      "$type": "dimension"
     },
     "Info Banner": {
       "default": {
@@ -356,6 +413,32 @@
       },
       "$type": "color"
     },
+    "Radio": {
+      "bg-default-disabled": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color"
+      },
+      "bg-default-on": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color"
+      },
+      "bg-onContrast-off": {
+        "$value": "{Alpha.Transparent}",
+        "$type": "color"
+      },
+      "bg-onContrast-on": {
+        "$value": "{Colour.Bright Blue}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "3px",
+        "$type": "dimension"
+      },
+      "border-default-off": {
+        "$value": "{Alpha.White Alpha 50}",
+        "$type": "color"
+      }
+    },
     "Rating Bar": {
       "Default": {
         "$value": "{Neutral.Dark Grey 25}"
@@ -366,16 +449,42 @@
       "$type": "color"
     },
     "Segmented Control": {
-      "canvas-default": {
-        "$value": "{Neutral.Dark Grey 20}"
+      "Colour": {
+        "bg-onCanvasDefault-default": {
+          "$value": "{Neutral.Dark Grey 20}"
+        },
+        "bg-onSurfaceContrast-default": {
+          "$value": "{Neutral.Dark Grey 20}"
+        },
+        "bg-onSurfaceContrast-selected": {
+          "$value": "{Colour.Twilight}"
+        },
+        "bg-selected": {
+          "$value": "{Colour.Twilight}"
+        },
+        "divider-default": {
+          "$value": "{Neutral.Grey 20}"
+        },
+        "divider-onSurfaceContrast": {
+          "$value": "{Alpha.White Alpha 20}"
+        },
+        "$type": "color"
       },
-      "surface-contrast": {
-        "$value": "{Neutral.Dark Grey 20}"
-      },
-      "surface-contrast-on": {
-        "$value": "{Colour.Twilight}"
-      },
-      "$type": "color"
+      "Dimension": {
+        "bg-indicator-radius": {
+          "$value": "{Radius.None}"
+        },
+        "bg-track-radius": {
+          "$value": "{Radius.sm}"
+        },
+        "min-height": {
+          "$value": "{Heights.32}"
+        },
+        "track-padding": {
+          "$value": "{Spacing.none}"
+        },
+        "$type": "dimension"
+      }
     },
     "Shadow": {
       "Large": {
@@ -526,20 +635,11 @@
     "$type": "color"
   },
   "Status": {
-    "Danger Fill": {
-      "$value": "{Colour.Bright Pink}"
-    },
     "Danger Spot": {
       "$value": "{Colour.Bright Berry}"
     },
-    "Success Fill": {
-      "$value": "{Colour.Bright Green 20}"
-    },
     "Success Spot": {
       "$value": "{Colour.Bright Green}"
-    },
-    "Warning Fill": {
-      "$value": "{Colour.Bright Yellow}"
     },
     "Warning Spot": {
       "$value": "{Colour.Yellow}"
@@ -549,6 +649,9 @@
   "Surface": {
     "Contrast": {
       "$value": "{Neutral.Dark Grey 10}"
+    },
+    "Danger Fill": {
+      "$value": "{Colour.Bright Pink}"
     },
     "Default": {
       "$value": "{Neutral.Dark Grey 20}"
@@ -568,12 +671,22 @@
     "Subtle": {
       "$value": "{Neutral.Dark Grey 25}"
     },
+    "Success Fill": {
+      "$value": "{Colour.Bright Green 20}"
+    },
     "Tint": {
       "$value": "{Alpha.White Alpha 10}"
+    },
+    "Warning Fill": {
+      "$value": "{Colour.Bright Yellow}"
     },
     "🚧 Promo": {
       "$value": "{Neutral.Dark Grey 25}"
     },
+    "$type": "color"
+  },
+  "Test": {
+    "$value": "#ff0000",
     "$type": "color"
   },
   "Text": {
