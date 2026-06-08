@@ -192,6 +192,8 @@
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
-    "braces": "3.0.3"
+    "braces": "3.0.3",
+    "@typescript-eslint/utils": "^8.59.4",
+    "@typescript-eslint/typescript-estree": "^8.59.4"
   }
 }
