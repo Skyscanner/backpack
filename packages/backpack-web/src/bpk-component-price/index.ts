@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkPrice, { type Props as BpkPriceProps } from './src/BpkPrice';
+import { SIZES, ALIGNS } from './src/common-types';
 
-export default ['starRatingFilledColor'];
+export default BpkPrice;
+export type { BpkPriceProps };
+export { SIZES, ALIGNS };

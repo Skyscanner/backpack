@@ -16,16 +16,10 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import themeAttributes from './themeAttributes';
 
-export const SIZES = {
-  xsmall: 'xsmall',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-};
-
-export const ALIGNS = {
-  left: 'left',
-  right: 'right',
-};
+describe('themeAttributes', () => {
+  it('exports the expected themeAttributes', () => {
+    expect(themeAttributes).toEqual(['starRatingFilledColor']);
+  });
+});

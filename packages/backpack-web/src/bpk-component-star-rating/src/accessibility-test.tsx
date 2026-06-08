@@ -15,21 +15,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import BpkPrice from './BpkPrice';
+import BpkInteractiveStarRating from './BpkInteractiveStarRating';
+import BpkStarRating from './BpkStarRating';
 
-describe('BpkPrice accessibility tests', () => {
+describe('BpkStarRating accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
     const { container } = render(
-      <BpkPrice
-        price="£1,830"
-        previousPrice="£2,000"
-        leadingText="Web only deal"
-        trailingText="per day"
+      <BpkStarRating
+        ratingLabel={(r, m) => `Rated ${r} out of ${m} stars`}
+        rating={7}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkInteractiveStarRating accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkInteractiveStarRating
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
+        id="my-rating"
+        rating={7}
       />,
     );
     const results = await axe(container);
