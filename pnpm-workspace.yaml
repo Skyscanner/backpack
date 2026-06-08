@@ -2,18 +2,29 @@ packages:
   - 'packages/*'
   - 'libs/*'
 
-# Settings migrated from .npmrc (pnpm 11 reads workspace config from here)
-# strictPeerDependencies is intentionally false: Dependabot bump PRs run pnpm install
-# and would fail if a bumped package temporarily creates peer dep mismatches.
-# Enforcement for human PRs is handled by the check-peer-dependencies CI workflow instead.
-strictPeerDependencies: false
+# Reduces the risk of supply chain attacks, while balancing additional friction.
+# Increased safety is provided by enforcing that external packages must be at least 2 days old before we can install them, providing a window for malicious versions to be identified and mitigated. Necessary friction with the high rate of successful compromise of external packages.
+# Allowlists internal packages as the trust level, rate of change, and friction is much higher. Any non-internal allowlisted package should have explicit and strong justification added as an inline comment.
+minimumReleaseAge: 2880 # 2 days in minutes
+minimumReleaseAgeExclude:
+  - '@skyscanner*'
+
 engineStrict: true
+# TEMPORARY WORKAROUND: Setting strict-peer-dependencies=false as a transition from Dependabot incompatibility.
+# Revisit when Dependabot supports strict peer dependencies
+# CI enforces strict checking via a separate step.
+# Known peer dep issues are allowlisted in pnpm-workspace.yaml peerDependencyRules.
+strictPeerDependencies: false
+# auto-install-peers is the pnpm default, but must be declared explicitly for --strict-peer-dependencies to report errors correctly.
+# https://pnpm.io/settings#autoinstallpeers
+autoInstallPeers: true
 publicHoistPattern:
   - '*eslint*'
   - '*stylelint*'
   - '*prettier*'
 linkWorkspacePackages: true
 shamefullyHoist: true
+# PNPM 10 onwards disables postinstall scripts by default to reduce the risk of supply chain attacks. https://pnpm.io/supply-chain-security. This is a positive change, but some of our existing packages rely on postinstall scripts. Rather than turn the setting off completely we allowlist packages with essential postinstall scripts. This reduces the risk of _new_ packages executing unexpected postinstall scripts, while accepting the risk of existing packages where the postinstall is essential.
 allowBuilds:
   '@parcel/watcher': true
   '@percy/core': true
@@ -25,9 +36,21 @@ allowBuilds:
   nx: true
   unrs-resolver: true
 
+# Do NOT add new overrides unless solving a CRITICAL issue and no other option exists.
+# Overrides significantly complicate the dependency tree. They can cause unexpected side effects forcing packages to use dependencies they do not expect. Even if something works at the time the override is added it can unexpectedly break later on, easily in a way unit tests of our code would not pick up. The more overrides that are added the more complex it becomes to understand what is being used where, the risk is, why something was added, and how and when to remove. From experience of working with trees with many overrides, it becomes a nightmare later on.
+# Overrides should only be added as a last resort, even when fixing security alerts. First establish if the alert is actually an issue in how our code uses a package, and then work from the bottom of the tree upwards updating things. Even though this takes longer, and can rely on waiting for external packages to update it is usually more healthy and a fair risk trade off. ONLY add if there is a clearly identified risk in our specific usage that needs to be mitigated at speed and there is no other way.
+# For product changes, again do not add overrides. Work from the bottom of the tree upwards to upgrade all the relevant packages until a clean install can be done.
+# Any override that is added should have:
+# - An inline comment clearly explaining what is being done, why, and blockers need resolved to remove it
+# - A Jira ticket reference to remove the override in the future
 overrides:
   braces: '3.0.3'
 
+# Do NOT add new entries here unless solving a CRITICAL issue.
+# When a dependency declares a peerDependency it only guarantees that it will work with what it declares. Using anything else is a risk. Any override may fail in silent ways, or may work initially but stop working in the future if a dependency uses a new feature of the peerDep it declares.
+# If there is a critical reason, make sure to add an inline comment explaining why and a jira reference for removing the override.
+# Dependabot is not compatible with PNPM's way of running strict-peer-dependencies, so we enforce it via a separate check-peer-dependencies workflow in CI.
+# Run `pnpm peers check` to test locally
 peerDependencyRules:
   allowedVersions:
     eslint: '8'
