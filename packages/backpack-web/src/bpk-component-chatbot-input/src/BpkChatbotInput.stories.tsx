@@ -37,7 +37,6 @@ import { BpkProvider } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkChatbotInput from './BpkChatbotInput';

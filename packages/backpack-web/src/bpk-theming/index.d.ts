@@ -21,7 +21,7 @@ import type { ComponentType, ReactNode } from 'react';
 interface BpkThemeProviderProps {
   children: ReactNode;
   theme?: Record<string, string>;
-  themeAttributes?: string[] | string[][];
+  themeAttributes?: readonly string[] | string[] | string[][];
   component?: ComponentType<any> | string;
   style?: Record<string, string>;
   [key: string]: any;
