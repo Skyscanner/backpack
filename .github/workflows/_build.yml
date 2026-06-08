@@ -13,7 +13,7 @@ defaults:
     shell: bash -l {0}
 
 env:
-  CACHE_NAME: node-modules-cache-v2
+  CACHE_NAME: node-modules-cache-v3
   BUILD_CACHE_NAME: build-cache
   BUILD_LOGS: log-artifacts-build
 
@@ -35,6 +35,8 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - uses: pnpm/action-setup@v4.1.0
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
@@ -46,7 +48,7 @@ jobs:
         with:
           path: |
             node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Restore Nx Build Cache
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -75,16 +77,16 @@ jobs:
         run: npx nx affected -t build --parallel=3
 
       - name: Confirm the build hasn't changed any files
-        run: ./scripts/check-pristine-state package-lock.json
+        run: ./scripts/check-pristine-state pnpm-lock.yaml
 
       # TODO(Issue 6.1): replace the two checks below with
       #   npx nx run backpack-harness:lint
       # once the backpack-harness lib is created.
       - name: Check React versions
-        run: npm run check-react-versions
+        run: pnpm run check-react-versions
 
       - name: Check Backpack dependencies
-        run: npm run check-bpk-dependencies
+        run: pnpm run check-bpk-dependencies
 
       - name: Lint (affected)
         run: npx nx affected -t lint --parallel=3
@@ -117,6 +119,8 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: pnpm/action-setup@v4.1.0
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
@@ -128,7 +132,7 @@ jobs:
         with:
           path: |
             node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Download artifacts
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
@@ -148,7 +152,7 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Danger
-        run: npm run danger
+        run: pnpm run danger
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
@@ -165,6 +169,8 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: pnpm/action-setup@v4.1.0
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
@@ -176,7 +182,7 @@ jobs:
         with:
           path: |
             node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Restore Cache
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -192,7 +198,7 @@ jobs:
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: |
-          npm run percy-test 2>&1 | tee "${RUNNER_TEMP}/percy.log"
+          pnpm run percy-test 2>&1 | tee "${RUNNER_TEMP}/percy.log"
           # Assert success by the presence of a percy.io build URL rather than
           # enumerating failure strings. The CLI only prints this URL when a
           # build is actually finalized; the URL is part of Percy's product

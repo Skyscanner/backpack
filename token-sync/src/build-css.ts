@@ -133,7 +133,9 @@ export interface BuildCSSResult {
 
 async function discoverSemanticFiles(tokensDir: string): Promise<string[]> {
   const entries = await readdir(tokensDir);
-  return entries.filter((f) => f.startsWith('backpack.') && f.endsWith('.json')).sort();
+  return entries
+    .filter((f) => f.startsWith('backpack.') && f.endsWith('.json'))
+    .sort();
 }
 
 // Verify primitives + the default semantic theme (Light) exist before SD runs.
@@ -159,7 +161,7 @@ async function assertInputsExist(tokensDir: string): Promise<void> {
     throw new Error(
       `Missing Stage 1 DTCG file(s):\n  ${missing.join(
         '\n  ',
-      )}\nRun \`npm run tokens:fetch\` to (re)generate them before building CSS.`,
+      )}\nRun \`pnpm run tokens:fetch\` to (re)generate them before building CSS.`,
     );
   }
 }
@@ -255,10 +257,7 @@ async function assertInputsAreBuildable(
       referenceFile.tree,
       candidate.tree,
     );
-    if (
-      asymmetry.onlyInFirst.length > 0 ||
-      asymmetry.onlyInSecond.length > 0
-    ) {
+    if (asymmetry.onlyInFirst.length > 0 || asymmetry.onlyInSecond.length > 0) {
       throw new Error(
         formatAsymmetricSemanticTokens(
           asymmetry,

@@ -52,7 +52,7 @@ different branch prefix to keep the workflow from auto-closing your PR.
 2. Run the sync locally:
 
    ```bash
-   npm run tokens:sync
+   pnpm run tokens:sync
    ```
 
 3. Create your branch using a prefix **other than** `figma-token-sync/` (e.g. `manual-token-sync/...`

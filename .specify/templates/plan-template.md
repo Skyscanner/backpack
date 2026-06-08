@@ -64,7 +64,7 @@ VALIDATION:
 **Build Tools**: Webpack 5, Babel 7
 **Linting**: ESLint (@skyscanner/eslint-config-skyscanner), Stylelint
 **Component Library**: Backpack Design System (Monorepo)
-**Package Manager**: npm >=10.7.0
+**Package Manager**: pnpm >=9.15.9
 **Node Version**: >=18.20.4
 **Target Browsers**: Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+
 **Performance Goals**: Meet test coverage thresholds (70% branches, 75% functions/lines/statements)

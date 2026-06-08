@@ -46,7 +46,7 @@ Flag if missing. This applies to both new and existing components — Phase 3 wi
 Only flag if the diff adds new JSX branches or new props with no corresponding test in the diff.
 
 **Snapshot files (CI handles this):**
-Do NOT check `.snap` files for staleness — this is enforced by CI (`npm test` fails if
+Do NOT check `.snap` files for staleness — this is enforced by CI (`pnpm test` fails if
 snapshots are out of date). Only flag if you see a `.snap` file being deleted or a test
 being removed that would leave a stale snapshot unreachable.
 
