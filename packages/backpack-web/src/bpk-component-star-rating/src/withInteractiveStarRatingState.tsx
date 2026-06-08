@@ -42,10 +42,6 @@ const withInteractiveStarRatingState = <P extends object>(
   > {
     public static displayName: string;
 
-    static defaultProps = {
-      onRatingSelect: () => null,
-    };
-
     constructor(props: P & WithInteractiveStarRatingStateProps) {
       super(props);
 
