@@ -16,155 +16,153 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import BpkInteractiveStarRating, {
   getTypeByRating,
 } from './BpkInteractiveStarRating';
 import { STAR_TYPES } from './BpkStar';
 
+const getStarLabel = (rating: number, maxRating: number) =>
+  `${rating} out of ${maxRating} stars`;
+
+const filledCount = () =>
+  document.querySelectorAll('.bpk-interactive-star .bpk-star--filled').length;
+
 describe('BpkInteractiveStarRating', () => {
-  it('should render correctly if you give it more than the max rating allowed', () => {
-    const { asFragment } = render(
+  it('caps the visual rating at maxRating', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={7}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getAllByRole('button')).toHaveLength(5);
+    expect(filledCount()).toBe(5);
   });
 
-  it('should render correctly with 0 stars', () => {
-    const { asFragment } = render(
+  it('renders all empty stars when rating is 0', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={0}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getAllByRole('button')).toHaveLength(5);
+    expect(filledCount()).toBe(0);
   });
 
-  it('should render correctly with 3 stars', () => {
-    const { asFragment } = render(
+  it('fills 3 stars for rating 3', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={3}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(filledCount()).toBe(3);
   });
 
-  it('should render correctly with 3.5 stars', () => {
-    const { asFragment } = render(
+  it('treats rating 3.5 the same as 3 (no half stars in interactive mode)', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={3.5}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(filledCount()).toBe(3);
   });
 
-  it('should render correctly with 5 stars', () => {
-    const { asFragment } = render(
+  it('fills all stars for rating 5', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={5}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(filledCount()).toBe(5);
   });
 
-  it('should render correctly with "large" attribute', () => {
-    const { asFragment } = render(
+  it('applies the large modifier to every star', () => {
+    const { container } = render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={5}
         large
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(container.querySelectorAll('.bpk-star--large')).toHaveLength(5);
   });
 
-  it('should render correctly with "maxRating" attribute', () => {
-    const { asFragment } = render(
+  it('respects the maxRating prop', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={5}
         maxRating={8}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.getAllByRole('button')).toHaveLength(8);
+    expect(filledCount()).toBe(5);
   });
 
-  it('should render 4 stars based on hoverRating as it has priority over rating', () => {
-    const { asFragment } = render(
+  it('uses hoverRating instead of rating when both are provided', () => {
+    render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-rating"
         rating={3}
         hoverRating={4}
       />,
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(filledCount()).toBe(4);
   });
 
-  it('should call onRatingHover on mouseenter', async () => {
+  it('calls onRatingHover when a star is hovered', () => {
     const onRatingHover = jest.fn();
     render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-star-rating"
         onRatingHover={onRatingHover}
       />,
     );
 
-    expect(onRatingHover).not.toHaveBeenCalled();
-    await fireEvent.mouseEnter(screen.getByLabelText('1 out of 5 stars'));
-    expect(onRatingHover).toHaveBeenCalled();
+    fireEvent.mouseEnter(screen.getByLabelText('1 out of 5 stars'));
+
+    expect(onRatingHover).toHaveBeenCalledTimes(1);
+    expect(onRatingHover).toHaveBeenCalledWith(1, expect.anything());
   });
 
-  it('should call onRatingSelect on click', async () => {
+  it('calls onRatingSelect when a star is clicked', () => {
     const onRatingSelect = jest.fn();
     render(
       <BpkInteractiveStarRating
-        getStarLabel={(rating, maxRating) =>
-          `${rating} out of ${maxRating} stars`
-        }
+        getStarLabel={getStarLabel}
         id="my-star-rating"
         onRatingSelect={onRatingSelect}
       />,
     );
 
-    expect(onRatingSelect).not.toHaveBeenCalled();
-    await fireEvent.click(screen.getByLabelText('1 out of 5 stars'));
-    expect(onRatingSelect).toHaveBeenCalled();
+    fireEvent.click(screen.getByLabelText('1 out of 5 stars'));
+
+    expect(onRatingSelect).toHaveBeenCalledTimes(1);
+    expect(onRatingSelect).toHaveBeenCalledWith(1, expect.anything());
   });
 
   describe('getTypeByRating()', () => {

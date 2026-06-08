@@ -16,26 +16,30 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { ButtonHTMLAttributes, MouseEventHandler } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { BpkStarNonRtl, STAR_TYPES } from './BpkStar';
+import { BpkStarNonRtl, type STAR_TYPES } from './BpkStar';
 
 import STYLES from './BpkInteractiveStar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  label: string,
-  name: string,
-  onClick: () => mixed,
-  onMouseEnter: () => mixed,
-  type: typeof STAR_TYPES.EMPTY | typeof STAR_TYPES.FULL,
-  value: number,
-  selected: boolean,
+type InteractiveStarType = typeof STAR_TYPES.EMPTY | typeof STAR_TYPES.FULL;
+
+type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+export type Props = Omit<NativeButtonProps, 'className' | 'type' | 'onClick' | 'onMouseEnter' | 'name' | 'value' | 'aria-label' | 'aria-pressed'> & {
+  label: string;
+  name: string;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  onMouseEnter: MouseEventHandler<HTMLButtonElement>;
+  type: InteractiveStarType;
+  value: number;
+  selected?: boolean;
+  large?: boolean;
+  extraLarge?: boolean;
 };
 
 const BpkInteractiveStar = ({
@@ -73,22 +77,11 @@ const BpkInteractiveStar = ({
       <div className={iconClassNames} >
         <BpkStarNonRtl
           type={type}
-          /* $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md */
           {...rest}
         />
       </div>
     </button>
   );
-};
-
-BpkInteractiveStar.propTypes = {
-  label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  onMouseEnter: PropTypes.func.isRequired,
-  type: PropTypes.oneOf([STAR_TYPES.EMPTY, STAR_TYPES.FULL]).isRequired,
-  value: PropTypes.number.isRequired,
-  selected: PropTypes.bool,
 };
 
 export default BpkInteractiveStar;
