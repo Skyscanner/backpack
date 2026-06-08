@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "moduleResolution": "bundler",
-    "target": "ES2017",
+    "target": "ES2022",
     "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
