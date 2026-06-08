@@ -16,37 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { ComponentType } from 'react';
 import { Component } from 'react';
+import type { ComponentType, MouseEvent } from 'react';
 
 import { wrapDisplayName } from '../../bpk-react-utils';
 
-const withInteractiveStarRatingState = (
-  InteractiveStarRating: ComponentType<any>,
-) => {
-  type Props = {
-    onRatingSelect: (number, Function) => mixed,
-  };
-
-  type State = {
+type WithInteractiveStarRatingStateProps = {
+  onRatingSelect?: (
     rating: number,
-    hoverRating: number,
-  };
+    event?: MouseEvent<HTMLButtonElement> | null,
+  ) => unknown;
+};
 
-  class EnhancedComponent extends Component<Props, State> {
-    static propTypes = {
-      onRatingSelect: PropTypes.func,
-    };
+type State = {
+  rating: number;
+  hoverRating: number;
+};
+
+const withInteractiveStarRatingState = <P extends object>(
+  InteractiveStarRating: ComponentType<P>,
+) => {
+  class EnhancedComponent extends Component<
+    P & WithInteractiveStarRatingStateProps,
+    State
+  > {
+    public static displayName: string;
 
     static defaultProps = {
       onRatingSelect: () => null,
     };
 
-    constructor() {
-      super();
+    constructor(props: P & WithInteractiveStarRatingStateProps) {
+      super(props);
 
       this.state = {
         rating: 0,
@@ -54,11 +55,10 @@ const withInteractiveStarRatingState = (
       };
     }
 
-    onRatingSelect = (rating: number, event: Function) => {
-      if (event) {
-        event.persist();
-      }
-
+    onRatingSelect = (
+      rating: number,
+      event?: MouseEvent<HTMLButtonElement> | null,
+    ) => {
       const callback = () => {
         if (this.props.onRatingSelect) {
           this.props.onRatingSelect(rating, event);
@@ -77,9 +77,10 @@ const withInteractiveStarRatingState = (
     };
 
     render() {
+      const { onRatingSelect, ...rest } = this.props;
       return (
         <InteractiveStarRating
-          {...this.props}
+          {...(rest as P)}
           rating={this.state.rating}
           hoverRating={this.state.hoverRating}
           onRatingHover={this.onRatingHover}
