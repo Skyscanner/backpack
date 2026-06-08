@@ -15,10 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -27,26 +25,28 @@ import { SIZES, ALIGNS } from './common-types';
 
 import STYLES from './BpkPrice.module.scss';
 
-type Props = {
-  price: string,
-  size: $Values<typeof SIZES>,
-  align: $Values<typeof ALIGNS>,
-  className: ?string,
-  leadingText: ?string,
+type NativeDivProps = HTMLAttributes<HTMLDivElement>;
+
+export type Props = Omit<NativeDivProps, 'className'> & {
+  price: string;
+  size?: (typeof SIZES)[keyof typeof SIZES];
+  align?: (typeof ALIGNS)[keyof typeof ALIGNS];
+  className?: string | null;
+  leadingText?: string | null;
   /**
    * **Experimental** This prop is experimental and subject to change.
    * Use with caution.
    */
-  leadingClassName: ?string,
-  trailingText: ?string,
-  previousPrice: ?string,
-  icon?: Node,
-  dataAttributes?: Record<string, string>,
+  leadingClassName?: string | null;
+  trailingText?: string | null;
+  previousPrice?: string | null;
+  icon?: ReactNode;
+  dataAttributes?: Record<string, string>;
 };
 
 const getClassName = cssModules(STYLES);
 
-const getPriceTextStyle = (size: $Values<typeof SIZES>) => {
+const getPriceTextStyle = (size: NonNullable<Props['size']>) => {
   if (size === SIZES.small) {
     return TEXT_STYLES.heading4;
   }
@@ -62,7 +62,7 @@ const getPriceTextStyle = (size: $Values<typeof SIZES>) => {
   return TEXT_STYLES.heading5;
 };
 
-const getDefaultTextStyle = (size: $Values<typeof SIZES>) => {
+const getDefaultTextStyle = (size: NonNullable<Props['size']>) => {
   if (size === SIZES.large) {
     return TEXT_STYLES.sm;
   }
@@ -112,7 +112,6 @@ const BpkPrice = ({
         isAlignRight && 'bpk-price--right',
         className,
       )}
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       {...rest}
     >
       <div
@@ -174,18 +173,6 @@ const BpkPrice = ({
       {isAlignRight && getTrailingTextNode()}
     </div>
   );
-};
-
-BpkPrice.propTypes = {
-  price: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(Object.keys(SIZES)),
-  align: PropTypes.oneOf(Object.keys(ALIGNS)),
-  className: PropTypes.string,
-  leadingText: PropTypes.string,
-  trailingText: PropTypes.string,
-  previousPrice: PropTypes.string,
-  leadingClassName: PropTypes.string,
-  dataAttributes: PropTypes.objectOf(PropTypes.string),
 };
 
 export default BpkPrice;
