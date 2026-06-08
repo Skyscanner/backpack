@@ -93,15 +93,55 @@ describe("evaluateGuard", () => {
     expect(result.status).toBe("warn");
   });
 
-  it("never fails on main", () => {
+  it("passes on main when no parse errors", () => {
     const result = evaluateGuard({
-      baseReport: reportWithBackpackPercentage(80),
+      baseReport: null,
       dryRun: false,
       headReport: reportWithBackpackPercentage(10),
       isMain: true,
     });
 
-    expect(result.status).toBe("not_applicable");
+    expect(result.status).toBe("pass");
+  });
+
+  it("warns on main when there are parse errors (data is incomplete)", () => {
+    const headReport = reportWithBackpackPercentage(75);
+    headReport.parseErrors = [
+      { file: "src/Broken.tsx", message: "Unexpected token" },
+    ];
+
+    const result = evaluateGuard({
+      baseReport: null,
+      dryRun: false,
+      headReport,
+      isMain: true,
+    });
+
+    expect(result.status).toBe("warn");
+    expect(result.reason).toContain("1 file(s) were skipped");
+  });
+
+  it("fails on PR when base ref cannot be loaded", () => {
+    const result = evaluateGuard({
+      baseReport: null,
+      dryRun: false,
+      headReport: reportWithBackpackPercentage(75),
+      isMain: false,
+    });
+
+    expect(result.status).toBe("fail");
+    expect(result.reason).toContain("Could not load `main`");
+  });
+
+  it("warns on PR with missing base ref under dry-run", () => {
+    const result = evaluateGuard({
+      baseReport: null,
+      dryRun: true,
+      headReport: reportWithBackpackPercentage(75),
+      isMain: false,
+    });
+
+    expect(result.status).toBe("warn");
   });
 
   it("fails when head has parse errors above threshold (refuses to evaluate on incomplete data)", () => {
@@ -118,7 +158,7 @@ describe("evaluateGuard", () => {
     });
 
     expect(result.status).toBe("fail");
-    expect(result.reason).toContain("head (1)");
+    expect(result.reason).toContain("this PR (1)");
   });
 
   it("fails when base has parse errors above threshold", () => {
@@ -135,7 +175,7 @@ describe("evaluateGuard", () => {
     });
 
     expect(result.status).toBe("fail");
-    expect(result.reason).toContain("base (1)");
+    expect(result.reason).toContain("main (1)");
   });
 
   it("downgrades parse-error failure to warn under dry-run", () => {
@@ -154,19 +194,4 @@ describe("evaluateGuard", () => {
     expect(result.status).toBe("warn");
   });
 
-  it("does not check parse errors on main (reporting-only path)", () => {
-    const headReport = reportWithBackpackPercentage(75);
-    headReport.parseErrors = [
-      { file: "src/Broken.tsx", message: "Unexpected token" },
-    ];
-
-    const result = evaluateGuard({
-      baseReport: null,
-      dryRun: false,
-      headReport,
-      isMain: true,
-    });
-
-    expect(result.status).toBe("not_applicable");
-  });
 });

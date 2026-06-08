@@ -104,9 +104,11 @@ const createActionResult = ({
 
 const analyzeBaseReport = async ({
   cwd,
+  io,
   pattern,
 }: {
   cwd: string;
+  io: ActionIO;
   pattern: string;
 }): Promise<AdoptionReport | null> => {
   if (!isPullRequestEvent()) {
@@ -118,9 +120,21 @@ const analyzeBaseReport = async ({
     return null;
   }
 
-  return withBaseWorktree(cwd, baseRef, (basePath) =>
-    analyzeRepository(basePath, { pattern }),
-  );
+  try {
+    return await withBaseWorktree(
+      cwd,
+      baseRef,
+      (basePath) => analyzeRepository(basePath, { pattern }),
+      { log: (message) => io.warning(message) },
+    );
+  } catch (error) {
+    io.warning(
+      `Failed to analyze base ref \`${baseRef}\`: ${
+        error instanceof Error ? error.message : String(error)
+      }`,
+    );
+    return null;
+  }
 };
 
 export const run = async ({
@@ -141,6 +155,7 @@ export const run = async ({
     ? null
     : await analyzeBaseReport({
         cwd,
+        io,
         pattern,
       });
   const guard = evaluateGuard({

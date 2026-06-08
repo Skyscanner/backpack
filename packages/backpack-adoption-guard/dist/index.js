@@ -51164,14 +51164,14 @@ var require_sourcemap_codec_umd = __commonJS({
         return relative2 + value;
       }
       function encodeInteger(builder, num, relative2) {
-        let delta2 = num - relative2;
-        delta2 = delta2 < 0 ? -delta2 << 1 | 1 : delta2 << 1;
+        let delta = num - relative2;
+        delta = delta < 0 ? -delta << 1 | 1 : delta << 1;
         do {
-          let clamped = delta2 & 31;
-          delta2 >>>= 5;
-          if (delta2 > 0) clamped |= 32;
+          let clamped = delta & 31;
+          delta >>>= 5;
+          if (delta > 0) clamped |= 32;
           builder.write(intToChar[clamped]);
-        } while (delta2 > 0);
+        } while (delta > 0);
         return num;
       }
       function hasMoreVlq(reader, max) {
@@ -67444,7 +67444,7 @@ var analyzeRepository = async (repoPath, options = {}) => {
   const totalElementUsages = analyzer.backpackUsages + analyzer.nonBackpackUsages + analyzer.rawHtmlUsages;
   const pureBackpackUsages = analyzer.backpackUsages - analyzer.classNameOverrides;
   const nonPureBackpackUsages = analyzer.classNameOverrides;
-  const percentage2 = (count) => totalElementUsages > 0 ? roundPercentage(count / totalElementUsages * 100) : 0;
+  const percentage = (count) => totalElementUsages > 0 ? roundPercentage(count / totalElementUsages * 100) : 0;
   const componentCounts = {};
   for (const [name, comp] of Object.entries(analyzer.components)) {
     componentCounts[name] = comp.totalUsages;
@@ -67458,23 +67458,23 @@ var analyzeRepository = async (repoPath, options = {}) => {
     usage: {
       backpack: {
         count: analyzer.backpackUsages,
-        percentage: percentage2(analyzer.backpackUsages)
+        percentage: percentage(analyzer.backpackUsages)
       },
       pureBackpack: {
         count: pureBackpackUsages,
-        percentage: percentage2(pureBackpackUsages)
+        percentage: percentage(pureBackpackUsages)
       },
       nonPureBackpack: {
         count: nonPureBackpackUsages,
-        percentage: percentage2(nonPureBackpackUsages)
+        percentage: percentage(nonPureBackpackUsages)
       },
       nonBackpack: {
         count: analyzer.nonBackpackUsages,
-        percentage: percentage2(analyzer.nonBackpackUsages)
+        percentage: percentage(analyzer.nonBackpackUsages)
       },
       rawHtml: {
         count: analyzer.rawHtmlUsages,
-        percentage: percentage2(analyzer.rawHtmlUsages)
+        percentage: percentage(analyzer.rawHtmlUsages)
       }
     },
     componentCounts
@@ -67489,10 +67489,22 @@ var evaluateGuard = ({
   isMain
 }) => {
   const headBackpackPercentage = headReport.usage.backpack.percentage;
+  const headParseErrorCount = headReport.parseErrors.length;
   if (isMain) {
+    if (headParseErrorCount > 0) {
+      return {
+        status: "warn",
+        reason: `Adoption metrics for \`main\` reported, but ${headParseErrorCount} file(s) were skipped (parse error). Reported numbers may be inaccurate.`,
+        dryRun,
+        threshold: ADOPTION_GUARD_THRESHOLD,
+        baseBackpackPercentage: null,
+        headBackpackPercentage,
+        delta: null
+      };
+    }
     return {
-      status: "not_applicable",
-      reason: "Main branch runs report adoption but never fail on adoption changes.",
+      status: "pass",
+      reason: "Adoption metrics for `main` are reported here for visibility. The guard never blocks on `main`.",
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage: null,
@@ -67502,8 +67514,8 @@ var evaluateGuard = ({
   }
   if (!baseReport) {
     return {
-      status: "not_applicable",
-      reason: "No pull request base report was available.",
+      status: dryRun ? "warn" : "fail",
+      reason: dryRun ? "Could not load `main` for comparison; treated as warning because dry-run is enabled." : "Could not load `main` for comparison. Ensure the workflow uses `actions/checkout` and the base ref is reachable.",
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage: null,
@@ -67512,44 +67524,43 @@ var evaluateGuard = ({
     };
   }
   const baseBackpackPercentage = baseReport.usage.backpack.percentage;
-  const delta2 = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
-  const headParseErrorCount = headReport.parseErrors.length;
+  const delta = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
   const baseParseErrorCount = baseReport.parseErrors.length;
   if (headParseErrorCount > 0 || baseParseErrorCount > 0) {
     const sides = [];
-    if (headParseErrorCount > 0) sides.push(`head (${headParseErrorCount})`);
-    if (baseParseErrorCount > 0) sides.push(`base (${baseParseErrorCount})`);
+    if (headParseErrorCount > 0) sides.push(`this PR (${headParseErrorCount})`);
+    if (baseParseErrorCount > 0) sides.push(`main (${baseParseErrorCount})`);
     const summary2 = sides.join(" and ");
     return {
       status: dryRun ? "warn" : "fail",
-      reason: dryRun ? `Parse errors in ${summary2}; treating as warning because dry-run is enabled.` : `Parse errors in ${summary2}; refusing to evaluate adoption with incomplete data.`,
+      reason: dryRun ? `Skipped files in ${summary2}; treated as warning because dry-run is enabled.` : `Skipped files in ${summary2}; refusing to evaluate adoption with incomplete data.`,
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage,
       headBackpackPercentage,
-      delta: delta2
+      delta
     };
   }
   if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
     return {
       status: "pass",
-      reason: `Base adoption is below ${ADOPTION_GUARD_THRESHOLD}%, so this PR is reported but not blocked.`,
+      reason: `Main is currently below the ${ADOPTION_GUARD_THRESHOLD}% threshold, so this PR is reported but not blocked.`,
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage,
       headBackpackPercentage,
-      delta: delta2
+      delta
     };
   }
   if (headBackpackPercentage < baseBackpackPercentage) {
     return {
       status: dryRun ? "warn" : "fail",
-      reason: dryRun ? "Backpack adoption decreased, but dry-run is enabled." : "Backpack adoption decreased after the repository had reached the guard threshold.",
+      reason: dryRun ? "Backpack adoption decreased, but dry-run is enabled." : `Backpack adoption decreased after this repository had reached the ${ADOPTION_GUARD_THRESHOLD}% threshold.`,
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage,
       headBackpackPercentage,
-      delta: delta2
+      delta
     };
   }
   return {
@@ -67559,7 +67570,7 @@ var evaluateGuard = ({
     threshold: ADOPTION_GUARD_THRESHOLD,
     baseBackpackPercentage,
     headBackpackPercentage,
-    delta: delta2
+    delta
   };
 };
 
@@ -67588,12 +67599,49 @@ var readBaseShaFromEvent = () => {
   }
 };
 var getPullRequestBaseRef = () => readBaseShaFromEvent() || (process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}` : null);
-var withBaseWorktree = async (repoPath, baseRef, callback) => {
+var ensureBaseRefAvailable = async (repoPath, log) => {
+  const baseSha = readBaseShaFromEvent();
+  const baseBranch = process.env.GITHUB_BASE_REF;
+  if (baseSha) {
+    try {
+      await execFileAsync("git", [
+        "-C",
+        repoPath,
+        "fetch",
+        "origin",
+        baseSha,
+        "--depth=1"
+      ]);
+      return;
+    } catch {
+    }
+  }
+  if (baseBranch) {
+    try {
+      await execFileAsync("git", [
+        "-C",
+        repoPath,
+        "fetch",
+        "origin",
+        baseBranch,
+        "--depth=1"
+      ]);
+      return;
+    } catch {
+    }
+  }
+  log(
+    "Could not pre-fetch base ref; relying on local git history. Set `fetch-depth: 0` on actions/checkout if base comparison fails."
+  );
+};
+var withBaseWorktree = async (repoPath, baseRef, callback, options = {}) => {
+  const log = options.log || (() => void 0);
   const parentDirectory = await (0, import_promises2.mkdtemp)(
     (0, import_node_path4.join)((0, import_node_os.tmpdir)(), "backpack-adoption-base-")
   );
   const basePath = (0, import_node_path4.join)(parentDirectory, "base");
   try {
+    await ensureBaseRefAvailable(repoPath, log);
     await execFileAsync("git", [
       "-C",
       repoPath,
@@ -67637,39 +67685,148 @@ var createGitHubActionsIO = () => ({
 });
 
 // src/action/summary.ts
-var percentage = (value) => value === null ? "n/a" : `${value.toFixed(2)}%`;
-var delta = (value) => {
+var STATUS_HEADER = {
+  pass: "\u2705 Backpack Adoption Guard \u2014 Pass",
+  fail: "\u274C Backpack Adoption Guard \u2014 Fail",
+  warn: "\u26A0\uFE0F Backpack Adoption Guard \u2014 Warning"
+};
+var formatPercentage = (value) => value === null ? "n/a" : `${value.toFixed(2)}%`;
+var formatDelta = (value) => {
   if (value === null) {
     return "n/a";
   }
   return `${value >= 0 ? "+" : ""}${value.toFixed(2)}pp`;
 };
-var statusLabel = (status) => {
-  if (status === "fail") {
-    return "Fail";
-  }
-  if (status === "warn") {
-    return "Warning";
-  }
-  if (status === "pass") {
-    return "Pass";
-  }
-  return "Not applicable";
+var formatVersion = (value) => value || "unknown";
+var formatCount = (value) => value.toLocaleString("en-US");
+var formatPercentageAndCount = (percentage, count) => `${percentage.toFixed(2)}% (${formatCount(count)})`;
+var buildPlainEnglishMain = (report) => {
+  const total = report.usage.backpack.count + report.usage.nonBackpack.count + report.usage.rawHtml.count;
+  return `\`${formatCount(report.usage.backpack.count)} of ${formatCount(total)} React elements use Backpack components (across ${formatCount(report.filesAnalyzed)} files).\``;
 };
-var buildStepSummary = (result) => `## Backpack Adoption Guard
+var buildPlainEnglishComparison = (head, base) => {
+  const headTotal = head.usage.backpack.count + head.usage.nonBackpack.count + head.usage.rawHtml.count;
+  const baseTotal = base.usage.backpack.count + base.usage.nonBackpack.count + base.usage.rawHtml.count;
+  return `\`This PR: ${formatCount(head.usage.backpack.count)} of ${formatCount(headTotal)} elements use Backpack. Main: ${formatCount(base.usage.backpack.count)} of ${formatCount(baseTotal)}.\``;
+};
+var buildParseErrorDetails = (parseErrors, label) => {
+  if (parseErrors.length === 0) {
+    return "";
+  }
+  const items = parseErrors.map(({ file, message }) => `- \`${file}\` \u2014 ${message}`).join("\n");
+  return `
+<details>
+<summary>${parseErrors.length} file(s) skipped in ${label} because @babel/parser could not parse them. The guard fails when this number is non-zero.</summary>
 
-| Metric | Value |
-| --- | ---: |
-| Base Backpack adoption | ${percentage(result.comparison.baseBackpackPercentage)} |
-| Head Backpack adoption | ${percentage(result.comparison.headBackpackPercentage)} |
-| Delta | ${delta(result.comparison.delta)} |
-| Guard threshold | ${result.comparison.threshold.toFixed(2)}% |
-| Dry run | ${result.guard.dryRun ? "true" : "false"} |
-| Guard status | ${statusLabel(result.guard.status)} |
+${items}
 
-${result.guard.reason}
-
+</details>
 `;
+};
+var buildMainView = (result) => {
+  const { head, guard } = result;
+  const skipped = head.parseErrors.length;
+  const skippedRow = `| Skipped files (parse error) | ${formatCount(skipped)} |`;
+  return `## ${STATUS_HEADER[guard.status]}
+
+> ${guard.reason}
+
+### Backpack adoption rate: **${formatPercentage(guard.headBackpackPercentage)}**
+
+${buildPlainEnglishMain(head)}
+
+| Category | Count | % |
+| --- | ---: | ---: |
+| Backpack | ${formatCount(head.usage.backpack.count)} | ${head.usage.backpack.percentage.toFixed(2)}% |
+| \u2514 Pure | ${formatCount(head.usage.pureBackpack.count)} | ${head.usage.pureBackpack.percentage.toFixed(2)}% |
+| \u2514 With className override | ${formatCount(head.usage.nonPureBackpack.count)} | ${head.usage.nonPureBackpack.percentage.toFixed(2)}% |
+| Non-Backpack | ${formatCount(head.usage.nonBackpack.count)} | ${head.usage.nonBackpack.percentage.toFixed(2)}% |
+| Raw HTML | ${formatCount(head.usage.rawHtml.count)} | ${head.usage.rawHtml.percentage.toFixed(2)}% |
+
+### Run details
+
+| | |
+| --- | --- |
+| Files analyzed | ${formatCount(head.filesAnalyzed)} |
+| backpack-web version | ${formatVersion(head.backpackWebVersion)} |
+${skippedRow}
+${buildParseErrorDetails(head.parseErrors, "this run")}
+`;
+};
+var buildPRWithoutBaseView = (result) => {
+  const { head, guard } = result;
+  const skipped = head.parseErrors.length;
+  return `## ${STATUS_HEADER[guard.status]}
+
+> ${guard.reason}
+
+### Backpack adoption rate: **${formatPercentage(guard.headBackpackPercentage)}** (this PR)
+
+${buildPlainEnglishMain(head)}
+
+| Category | Count | % |
+| --- | ---: | ---: |
+| Backpack | ${formatCount(head.usage.backpack.count)} | ${head.usage.backpack.percentage.toFixed(2)}% |
+| \u2514 Pure | ${formatCount(head.usage.pureBackpack.count)} | ${head.usage.pureBackpack.percentage.toFixed(2)}% |
+| \u2514 With className override | ${formatCount(head.usage.nonPureBackpack.count)} | ${head.usage.nonPureBackpack.percentage.toFixed(2)}% |
+| Non-Backpack | ${formatCount(head.usage.nonBackpack.count)} | ${head.usage.nonBackpack.percentage.toFixed(2)}% |
+| Raw HTML | ${formatCount(head.usage.rawHtml.count)} | ${head.usage.rawHtml.percentage.toFixed(2)}% |
+
+### Run details
+
+| | |
+| --- | --- |
+| Files analyzed | ${formatCount(head.filesAnalyzed)} |
+| backpack-web version | ${formatVersion(head.backpackWebVersion)} |
+| Guard threshold | ${guard.threshold.toFixed(2)}% |
+| Dry run | ${guard.dryRun ? "true" : "false"} |
+| Skipped files (parse error) | ${formatCount(skipped)} |
+${buildParseErrorDetails(head.parseErrors, "this PR")}
+`;
+};
+var buildPRComparisonView = (result) => {
+  const { base, head, guard } = result;
+  if (!base) {
+    return buildPRWithoutBaseView(result);
+  }
+  const headSkipped = head.parseErrors.length;
+  const baseSkipped = base.parseErrors.length;
+  return `## ${STATUS_HEADER[guard.status]}
+
+> ${guard.reason}
+
+### Backpack adoption rate: **${formatPercentage(guard.headBackpackPercentage)}** (${formatDelta(guard.delta)} vs \`main\`)
+
+${buildPlainEnglishComparison(head, base)}
+
+| Category | This PR | Main | Change |
+| --- | ---: | ---: | ---: |
+| Backpack | ${formatPercentageAndCount(head.usage.backpack.percentage, head.usage.backpack.count)} | ${formatPercentageAndCount(base.usage.backpack.percentage, base.usage.backpack.count)} | ${formatDelta(Number((head.usage.backpack.percentage - base.usage.backpack.percentage).toFixed(2)))} |
+| \u2514 Pure | ${formatPercentageAndCount(head.usage.pureBackpack.percentage, head.usage.pureBackpack.count)} | ${formatPercentageAndCount(base.usage.pureBackpack.percentage, base.usage.pureBackpack.count)} | ${formatDelta(Number((head.usage.pureBackpack.percentage - base.usage.pureBackpack.percentage).toFixed(2)))} |
+| \u2514 With className override | ${formatPercentageAndCount(head.usage.nonPureBackpack.percentage, head.usage.nonPureBackpack.count)} | ${formatPercentageAndCount(base.usage.nonPureBackpack.percentage, base.usage.nonPureBackpack.count)} | ${formatDelta(Number((head.usage.nonPureBackpack.percentage - base.usage.nonPureBackpack.percentage).toFixed(2)))} |
+| Non-Backpack | ${formatPercentageAndCount(head.usage.nonBackpack.percentage, head.usage.nonBackpack.count)} | ${formatPercentageAndCount(base.usage.nonBackpack.percentage, base.usage.nonBackpack.count)} | ${formatDelta(Number((head.usage.nonBackpack.percentage - base.usage.nonBackpack.percentage).toFixed(2)))} |
+| Raw HTML | ${formatPercentageAndCount(head.usage.rawHtml.percentage, head.usage.rawHtml.count)} | ${formatPercentageAndCount(base.usage.rawHtml.percentage, base.usage.rawHtml.count)} | ${formatDelta(Number((head.usage.rawHtml.percentage - base.usage.rawHtml.percentage).toFixed(2)))} |
+
+### Run details
+
+| | |
+| --- | --- |
+| Files analyzed (this PR) | ${formatCount(head.filesAnalyzed)} |
+| Files analyzed (main) | ${formatCount(base.filesAnalyzed)} |
+| backpack-web version | ${formatVersion(head.backpackWebVersion)} |
+| Guard threshold | ${guard.threshold.toFixed(2)}% |
+| Dry run | ${guard.dryRun ? "true" : "false"} |
+| Skipped files in this PR | ${formatCount(headSkipped)} |
+| Skipped files in main | ${formatCount(baseSkipped)} |
+${buildParseErrorDetails(head.parseErrors, "this PR")}${buildParseErrorDetails(base.parseErrors, "main")}
+`;
+};
+var buildStepSummary = (result) => {
+  if (result.branch.isMain) {
+    return buildMainView(result);
+  }
+  return buildPRComparisonView(result);
+};
 
 // src/action/run.ts
 var writeResults = async (cwd, outputPath, result) => {
@@ -67715,6 +67872,7 @@ var createActionResult = ({
 });
 var analyzeBaseReport = async ({
   cwd,
+  io,
   pattern
 }) => {
   if (!isPullRequestEvent()) {
@@ -67724,11 +67882,19 @@ var analyzeBaseReport = async ({
   if (!baseRef) {
     return null;
   }
-  return withBaseWorktree(
-    cwd,
-    baseRef,
-    (basePath) => analyzeRepository(basePath, { pattern })
-  );
+  try {
+    return await withBaseWorktree(
+      cwd,
+      baseRef,
+      (basePath) => analyzeRepository(basePath, { pattern }),
+      { log: (message) => io.warning(message) }
+    );
+  } catch (error2) {
+    io.warning(
+      `Failed to analyze base ref \`${baseRef}\`: ${error2 instanceof Error ? error2.message : String(error2)}`
+    );
+    return null;
+  }
 };
 var run = async ({
   cwd = process.cwd(),
@@ -67744,6 +67910,7 @@ var run = async ({
   const headReport = await analyzeRepository(cwd, { pattern });
   const baseReport = main ? null : await analyzeBaseReport({
     cwd,
+    io,
     pattern
   });
   const guard = evaluateGuard({

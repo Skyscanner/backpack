@@ -41,7 +41,7 @@ export type AdoptionReport = {
   componentCounts: Record<string, number>;
 };
 
-export type GuardStatus = "pass" | "fail" | "warn" | "not_applicable";
+export type GuardStatus = "pass" | "fail" | "warn";
 
 export type GuardResult = {
   status: GuardStatus;

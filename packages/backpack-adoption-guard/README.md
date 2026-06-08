@@ -7,8 +7,6 @@ already at least 60% and the PR lowers the Backpack adoption rate.
 
 ```yaml
 - uses: actions/checkout@v6
-  with:
-    fetch-depth: 0
 
 - name: Backpack Adoption Guard
   uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
@@ -16,16 +14,29 @@ already at least 60% and the PR lowers the Backpack adoption rate.
     dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
 ```
 
+The action transparently fetches the PR base commit on demand, so the default
+shallow `actions/checkout` is enough. If your runner blocks single-commit
+fetches, fall back to `fetch-depth: 0` on the checkout step.
+
 The guard threshold is maintained inside the action and is not configurable by
 consumer repositories.
 
 ## Behaviour
 
+The action emits one of three guard statuses:
+
+| Status | Meaning |
+| --- | --- |
+| ✅ `pass` | Adoption did not regress, or the run is informational only (`main`, or PR where main is still below 60%). |
+| ⚠️ `warn` | A regression was detected under `dry-run: true`, base ref could not be loaded, or files were skipped because of parse errors. The CI step does not fail. |
+| ❌ `fail` | A regression was detected after main reached the 60% threshold, or the action could not gather the data needed to evaluate it (and `dry-run` is off). |
+
 | Branch context | Behaviour |
 | --- | --- |
-| `refs/heads/main` | Calculates adoption and writes JSON. Never fails. |
-| Pull request, base adoption < 60% | Calculates adoption and reports. Never blocks. |
-| Pull request, base adoption ≥ 60% | Fails when head adoption drops below base adoption. `dry-run: true` downgrades the failure to a warning. |
+| `refs/heads/main` | Reports adoption only. Never fails. Emits `warn` if files could not be parsed. |
+| Pull request, main adoption < 60% | Reports adoption. Never blocks. |
+| Pull request, main adoption ≥ 60% | Fails when adoption drops. `dry-run: true` downgrades the failure to a warning. |
+| Pull request, base ref unavailable | Fails (`warn` under `dry-run`) so the workflow surfaces the misconfiguration. |
 
 ## Inputs
 
@@ -46,8 +57,6 @@ results JSON uses).
 
 ```yaml
 - uses: actions/checkout@v6
-  with:
-    fetch-depth: 0
 
 - name: Backpack Adoption Guard
   uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1

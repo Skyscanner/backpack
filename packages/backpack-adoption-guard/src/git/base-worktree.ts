@@ -35,9 +35,8 @@ type GitHubEventPayload = {
 // Intentionally limited to `pull_request`: `pull_request_target` runs in the
 // context of the base branch (GITHUB_REF=refs/heads/<base>), which would make
 // the main-branch detection in run.ts win and silently drop the guard to
-// `not_applicable` even though the workflow logically targets a PR. Consumers
-// that need PR-level guarding should use `pull_request`; falling through to
-// the main reporting path is the safe behaviour for `pull_request_target`.
+// the main reporting path even though the workflow logically targets a PR.
+// Consumers that need PR-level guarding should use `pull_request`.
 export const isPullRequestEvent = () =>
   process.env.GITHUB_EVENT_NAME === "pull_request";
 
@@ -65,17 +64,74 @@ export const getPullRequestBaseRef = () =>
     ? `origin/${process.env.GITHUB_BASE_REF}`
     : null);
 
+// Make the base commit available locally even when the consumer used a shallow
+// `actions/checkout` (the default). Tries the exact base SHA first (cheapest
+// on github.com), then falls back to the base branch name. Both attempts are
+// best-effort: if they fail, the subsequent `git worktree add` will surface
+// a clear error and `evaluateGuard` will turn it into a fail/warn result.
+const ensureBaseRefAvailable = async (
+  repoPath: string,
+  log: (message: string) => void,
+) => {
+  const baseSha = readBaseShaFromEvent();
+  const baseBranch = process.env.GITHUB_BASE_REF;
+
+  if (baseSha) {
+    try {
+      await execFileAsync("git", [
+        "-C",
+        repoPath,
+        "fetch",
+        "origin",
+        baseSha,
+        "--depth=1",
+      ]);
+      return;
+    } catch {
+      // Some git servers reject fetch-by-SHA; fall through.
+    }
+  }
+
+  if (baseBranch) {
+    try {
+      await execFileAsync("git", [
+        "-C",
+        repoPath,
+        "fetch",
+        "origin",
+        baseBranch,
+        "--depth=1",
+      ]);
+      return;
+    } catch {
+      // Fall through; let the worktree command surface the real error.
+    }
+  }
+
+  log(
+    "Could not pre-fetch base ref; relying on local git history. Set `fetch-depth: 0` on actions/checkout if base comparison fails.",
+  );
+};
+
+export type WithBaseWorktreeOptions = {
+  log?: (message: string) => void;
+};
+
 export const withBaseWorktree = async <T>(
   repoPath: string,
   baseRef: string,
   callback: (basePath: string) => Promise<T>,
+  options: WithBaseWorktreeOptions = {},
 ) => {
+  const log = options.log || (() => undefined);
   const parentDirectory = await mkdtemp(
     join(tmpdir(), "backpack-adoption-base-"),
   );
   const basePath = join(parentDirectory, "base");
 
   try {
+    await ensureBaseRefAvailable(repoPath, log);
+
     await execFileAsync("git", [
       "-C",
       repoPath,
