@@ -141,7 +141,7 @@ jobs:
         # populated from the cache. Overlay the root install into it so jest
         # (which resolves react-dom from packages/) sees R19 too.
         run: |
-          npm install --no-save react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19 @types/prop-types
+          npm install --no-save react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19.0.6 @types/prop-types
           rm -rf packages/node_modules/react packages/node_modules/react-dom
           cp -r node_modules/react packages/node_modules/
           cp -r node_modules/react-dom packages/node_modules/
