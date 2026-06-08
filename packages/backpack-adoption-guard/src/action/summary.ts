@@ -109,7 +109,7 @@ ${buildPlainEnglishMain(head)}
 
 ### Run details
 
-| | |
+| Detail | Value |
 | --- | --- |
 | Files analyzed | ${formatCount(head.filesAnalyzed)} |
 | backpack-web version | ${formatVersion(head.backpackWebVersion)} |
@@ -140,7 +140,7 @@ ${buildPlainEnglishMain(head)}
 
 ### Run details
 
-| | |
+| Detail | Value |
 | --- | --- |
 | Files analyzed | ${formatCount(head.filesAnalyzed)} |
 | backpack-web version | ${formatVersion(head.backpackWebVersion)} |
@@ -178,7 +178,7 @@ ${buildPlainEnglishComparison(head, base)}
 
 ### Run details
 
-| | |
+| Detail | Value |
 | --- | --- |
 | Files analyzed (this PR) | ${formatCount(head.filesAnalyzed)} |
 | Files analyzed (main) | ${formatCount(base.filesAnalyzed)} |
