@@ -27,6 +27,7 @@ import {
 import type {
   ActionResult,
   AdoptionReport,
+  BackpackAdoptionMetrics,
   ResultsFile,
 } from "../shared/types";
 import { evaluateGuard } from "../guard/evaluate-guard";
@@ -53,8 +54,17 @@ const writeResults = async (
   const absolutePath = resolve(cwd, outputPath);
   await mkdir(dirname(absolutePath), { recursive: true });
 
+  const metrics: BackpackAdoptionMetrics = {
+    generatedAt: result.generatedAt,
+    repository: result.repository,
+    backpackWebVersion: result.head.backpackWebVersion,
+    filesAnalyzed: result.head.filesAnalyzed,
+    skippedFiles: result.head.parseErrors.length,
+    usage: result.head.usage,
+  };
+
   const resultsFile: ResultsFile = {
-    [BACKPACK_ADOPTION_OUTPUT_KEY]: result,
+    [BACKPACK_ADOPTION_OUTPUT_KEY]: metrics,
   };
 
   await writeFile(

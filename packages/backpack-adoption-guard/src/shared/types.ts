@@ -73,6 +73,15 @@ export type ActionResult = {
   guard: GuardResult;
 };
 
+export type BackpackAdoptionMetrics = {
+  generatedAt: string;
+  repository: string;
+  backpackWebVersion: string | null;
+  filesAnalyzed: number;
+  skippedFiles: number;
+  usage: UsageSummary;
+};
+
 export type ResultsFile = {
-  "backpack-adoption": ActionResult;
+  "backpack-adoption": BackpackAdoptionMetrics;
 };

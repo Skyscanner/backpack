@@ -53,7 +53,28 @@ This action only writes a JSON results file. To ship the results to Cortex on
 [`Skyscanner/push-custom-cortex-data`](https://github.com/Skyscanner/push-custom-cortex-data)
 and points its `data-descriptor.path` at the file produced above. Use
 `backpack-adoption` as the `data-descriptor.key` (the top-level key the
-results JSON uses).
+results JSON uses). The file intentionally contains compact main-branch
+metrics for Cortex; detailed guard, PR comparison, parse-error, and per-component
+data stays in the GitHub step summary and action internals.
+
+```json
+{
+  "backpack-adoption": {
+    "generatedAt": "2026-06-08T08:21:38.000Z",
+    "repository": "consumer-repo",
+    "backpackWebVersion": "^42.21.1",
+    "filesAnalyzed": 328,
+    "skippedFiles": 0,
+    "usage": {
+      "backpack": { "count": 1234, "percentage": 62.5 },
+      "pureBackpack": { "count": 1100, "percentage": 55.75 },
+      "nonPureBackpack": { "count": 134, "percentage": 6.75 },
+      "nonBackpack": { "count": 500, "percentage": 25.35 },
+      "rawHtml": { "count": 240, "percentage": 12.15 }
+    }
+  }
+}
+```
 
 ```yaml
 - uses: actions/checkout@v6

@@ -67832,8 +67832,16 @@ var buildStepSummary = (result) => {
 var writeResults = async (cwd, outputPath, result) => {
   const absolutePath = (0, import_node_path5.resolve)(cwd, outputPath);
   await (0, import_promises3.mkdir)((0, import_node_path5.dirname)(absolutePath), { recursive: true });
+  const metrics = {
+    generatedAt: result.generatedAt,
+    repository: result.repository,
+    backpackWebVersion: result.head.backpackWebVersion,
+    filesAnalyzed: result.head.filesAnalyzed,
+    skippedFiles: result.head.parseErrors.length,
+    usage: result.head.usage
+  };
   const resultsFile = {
-    [BACKPACK_ADOPTION_OUTPUT_KEY]: result
+    [BACKPACK_ADOPTION_OUTPUT_KEY]: metrics
   };
   await (0, import_promises3.writeFile)(
     absolutePath,
