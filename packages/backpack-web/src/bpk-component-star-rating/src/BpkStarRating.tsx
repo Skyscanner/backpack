@@ -16,9 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -47,17 +45,23 @@ export const ROUNDING_TYPES = {
   nearest: (n: number) => Math.round(n * 2) / 2,
 };
 
-type Props = {
-  ratingLabel: string | ((number, number) => mixed),
-  className: ?string,
-  large: boolean,
-  extraLarge: boolean,
-  maxRating: number,
-  rating: number,
-  rounding:
-    | typeof ROUNDING_TYPES.down
-    | typeof ROUNDING_TYPES.up
-    | typeof ROUNDING_TYPES.nearest,
+type RatingLabel = string | ((rating: number, maxRating: number) => string);
+
+type Rounding =
+  | typeof ROUNDING_TYPES.down
+  | typeof ROUNDING_TYPES.up
+  | typeof ROUNDING_TYPES.nearest;
+
+type NativeDivProps = HTMLAttributes<HTMLDivElement>;
+
+export type Props = Omit<NativeDivProps, 'className' | 'aria-label'> & {
+  ratingLabel: RatingLabel;
+  className?: string | null;
+  large?: boolean;
+  extraLarge?: boolean;
+  maxRating?: number;
+  rating?: number;
+  rounding?: Rounding;
 };
 
 const BpkStarRating = ({
@@ -103,21 +107,6 @@ const BpkStarRating = ({
       {stars}
     </div>
   );
-};
-
-BpkStarRating.propTypes = {
-  ratingLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-    .isRequired,
-  className: PropTypes.string,
-  large: PropTypes.bool,
-  extraLarge: PropTypes.bool,
-  maxRating: PropTypes.number,
-  rating: PropTypes.number,
-  rounding: PropTypes.oneOf([
-    ROUNDING_TYPES.down,
-    ROUNDING_TYPES.up,
-    ROUNDING_TYPES.nearest,
-  ]),
 };
 
 export default BpkStarRating;

@@ -28,10 +28,8 @@ import {
   BpkTableHead,
   BpkTableHeadCell,
 } from '../../bpk-component-table';
-// @ts-expect-error Untyped import
 import { BpkStar, STAR_TYPES, ROUNDING_TYPES, BpkInteractiveStarRating, withInteractiveStarRatingState } from '../index';
 
-// @ts-expect-error Untyped import
 import BpkStarRating from './BpkStarRating';
 
 import type { Meta } from '@storybook/react';
@@ -39,7 +37,7 @@ import type { Meta } from '@storybook/react';
 const InteractiveStarRating = withInteractiveStarRatingState(
   BpkInteractiveStarRating,
 );
-const StarRating = (props: { rating: number; large?: boolean; extraLarge?: boolean; rounding?: string }) => (
+const StarRating = (props: { rating: number; large?: boolean; extraLarge?: boolean; rounding?: (n: number) => number }) => (
   <BpkStarRating ratingLabel={(r: number, m: number) => `${r} out of ${m} stars`} {...props} />
 );
 

@@ -16,10 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-
 import { withRtlSupport } from '../../bpk-component-icon';
 import LargeIcon from '../../bpk-component-icon/lg/star';
 import HalfLargeIcon from '../../bpk-component-icon/lg/star-half';
@@ -42,13 +38,15 @@ export const STAR_TYPES = {
   EMPTY: 'empty',
   HALF: 'half',
   FULL: 'full',
-};
+} as const;
 
-type Props = {
-  type: $Keys<typeof STAR_TYPES>,
-  className: ?string,
-  large: boolean,
-  extraLarge: boolean,
+export type StarType = (typeof STAR_TYPES)[keyof typeof STAR_TYPES];
+
+export type Props = {
+  type: StarType;
+  className?: string | null;
+  large?: boolean;
+  extraLarge?: boolean;
 };
 
 const BpkStar = ({
@@ -98,8 +96,7 @@ const BpkStar = ({
 
   if (type === STAR_TYPES.HALF) {
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
-      <span className={[containerClassNames, halfIconClassNames]} {...rest}>
+      <span className={[containerClassNames, halfIconClassNames].join(' ')} {...rest}>
         <HalfIcon />
       </span>
     );
@@ -108,26 +105,16 @@ const BpkStar = ({
   return type === STAR_TYPES.FULL ? (
     <span className={iconClassNames} >
       <Icon
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
     </span>
 
   ) : (
     <span className={iconClassNames} >
       <OutlineIcon
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See decisions/flowfixme.md
       {...rest} />
     </span>
 
   );
-};
-
-BpkStar.propTypes = {
-  type: PropTypes.oneOf([STAR_TYPES.EMPTY, STAR_TYPES.HALF, STAR_TYPES.FULL])
-    .isRequired,
-  className: PropTypes.string,
-  large: PropTypes.bool,
-  extraLarge: PropTypes.bool,
 };
 
 export const BpkStarNonRtl = BpkStar;
