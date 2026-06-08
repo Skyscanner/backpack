@@ -178,6 +178,24 @@ describe("evaluateGuard", () => {
     expect(result.reason).toContain("main (1)");
   });
 
+  it("passes when base adoption is below threshold even with parse errors", () => {
+    const headReport = reportWithBackpackPercentage(40);
+    headReport.parseErrors = [
+      { file: "src/Broken.tsx", message: "Unexpected token" },
+    ];
+
+    const result = evaluateGuard({
+      baseReport: reportWithBackpackPercentage(30),
+      dryRun: false,
+      headReport,
+      isMain: false,
+    });
+
+    expect(result.status).toBe("pass");
+    expect(result.reason).toContain("below the");
+    expect(result.reason).toContain("1 file(s) were skipped");
+  });
+
   it("downgrades parse-error failure to warn under dry-run", () => {
     const headReport = reportWithBackpackPercentage(75);
     headReport.parseErrors = [

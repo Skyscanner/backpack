@@ -86,8 +86,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Validate]
     if: ${{ !inputs.dry_run }}
+    # contents: read covers the checkout below; tag pushes use the App token
+    # via http.extraHeader, so the default GITHUB_TOKEN never needs write.
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         id: app-token

@@ -72,13 +72,30 @@ export const evaluateGuard = ({
 
   const baseBackpackPercentage = baseReport.usage.backpack.percentage;
   const delta = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
+  const baseParseErrorCount = baseReport.parseErrors.length;
+  const totalParseErrorCount = headParseErrorCount + baseParseErrorCount;
+
+  if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
+    const parseErrorNote =
+      totalParseErrorCount > 0
+        ? ` ${totalParseErrorCount} file(s) were skipped (parse error); reported numbers may be inaccurate.`
+        : "";
+    return {
+      status: "pass",
+      reason: `Main is currently below the ${ADOPTION_GUARD_THRESHOLD}% threshold, so this PR is reported but not blocked.${parseErrorNote}`,
+      dryRun,
+      threshold: ADOPTION_GUARD_THRESHOLD,
+      baseBackpackPercentage,
+      headBackpackPercentage,
+      delta,
+    };
+  }
 
   // Parse errors silently drop the offending file's element counts from the
   // totals, which can artificially inflate head adoption (e.g. a raw-HTML-heavy
   // file that fails to parse on head removes its rawHtmlUsages from the
-  // denominator). Refusing to evaluate on incomplete data prevents the guard
-  // from masking real regressions.
-  const baseParseErrorCount = baseReport.parseErrors.length;
+  // denominator). Once main has reached the threshold we refuse to evaluate on
+  // incomplete data so the guard cannot mask real regressions.
   if (headParseErrorCount > 0 || baseParseErrorCount > 0) {
     const sides: string[] = [];
     if (headParseErrorCount > 0) sides.push(`this PR (${headParseErrorCount})`);
@@ -89,18 +106,6 @@ export const evaluateGuard = ({
       reason: dryRun
         ? `Skipped files in ${summary}; treated as warning because dry-run is enabled.`
         : `Skipped files in ${summary}; refusing to evaluate adoption with incomplete data.`,
-      dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
-      baseBackpackPercentage,
-      headBackpackPercentage,
-      delta,
-    };
-  }
-
-  if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
-    return {
-      status: "pass",
-      reason: `Main is currently below the ${ADOPTION_GUARD_THRESHOLD}% threshold, so this PR is reported but not blocked.`,
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage,

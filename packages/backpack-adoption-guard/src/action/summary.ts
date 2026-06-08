@@ -78,7 +78,7 @@ const buildParseErrorDetails = (
     .join("\n");
 
   return `\n<details>
-<summary>${parseErrors.length} file(s) skipped in ${label} because @babel/parser could not parse them. The guard fails when this number is non-zero.</summary>
+<summary>${parseErrors.length} file(s) skipped in ${label} because @babel/parser could not parse them. Once main reaches the adoption threshold, the guard fails when this number is non-zero.</summary>
 
 ${items}
 

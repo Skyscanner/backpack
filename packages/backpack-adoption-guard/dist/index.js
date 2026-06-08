@@ -67526,6 +67526,19 @@ var evaluateGuard = ({
   const baseBackpackPercentage = baseReport.usage.backpack.percentage;
   const delta = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
   const baseParseErrorCount = baseReport.parseErrors.length;
+  const totalParseErrorCount = headParseErrorCount + baseParseErrorCount;
+  if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
+    const parseErrorNote = totalParseErrorCount > 0 ? ` ${totalParseErrorCount} file(s) were skipped (parse error); reported numbers may be inaccurate.` : "";
+    return {
+      status: "pass",
+      reason: `Main is currently below the ${ADOPTION_GUARD_THRESHOLD}% threshold, so this PR is reported but not blocked.${parseErrorNote}`,
+      dryRun,
+      threshold: ADOPTION_GUARD_THRESHOLD,
+      baseBackpackPercentage,
+      headBackpackPercentage,
+      delta
+    };
+  }
   if (headParseErrorCount > 0 || baseParseErrorCount > 0) {
     const sides = [];
     if (headParseErrorCount > 0) sides.push(`this PR (${headParseErrorCount})`);
@@ -67534,17 +67547,6 @@ var evaluateGuard = ({
     return {
       status: dryRun ? "warn" : "fail",
       reason: dryRun ? `Skipped files in ${summary2}; treated as warning because dry-run is enabled.` : `Skipped files in ${summary2}; refusing to evaluate adoption with incomplete data.`,
-      dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
-      baseBackpackPercentage,
-      headBackpackPercentage,
-      delta
-    };
-  }
-  if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
-    return {
-      status: "pass",
-      reason: `Main is currently below the ${ADOPTION_GUARD_THRESHOLD}% threshold, so this PR is reported but not blocked.`,
       dryRun,
       threshold: ADOPTION_GUARD_THRESHOLD,
       baseBackpackPercentage,
@@ -67716,7 +67718,7 @@ var buildParseErrorDetails = (parseErrors, label) => {
   const items = parseErrors.map(({ file, message }) => `- \`${file}\` \u2014 ${message}`).join("\n");
   return `
 <details>
-<summary>${parseErrors.length} file(s) skipped in ${label} because @babel/parser could not parse them. The guard fails when this number is non-zero.</summary>
+<summary>${parseErrors.length} file(s) skipped in ${label} because @babel/parser could not parse them. Once main reaches the adoption threshold, the guard fails when this number is non-zero.</summary>
 
 ${items}
 

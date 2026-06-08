@@ -28,14 +28,14 @@ The action emits one of three guard statuses:
 | Status | Meaning |
 | --- | --- |
 | ✅ `pass` | Adoption did not regress, or the run is informational only (`main`, or PR where main is still below 60%). |
-| ⚠️ `warn` | A regression was detected under `dry-run: true`, base ref could not be loaded, or files were skipped because of parse errors. The CI step does not fail. |
-| ❌ `fail` | A regression was detected after main reached the 60% threshold, or the action could not gather the data needed to evaluate it (and `dry-run` is off). |
+| ⚠️ `warn` | The run is informational with caveats: a regression detected under `dry-run`, the base ref could not be loaded, files were skipped on a `main` run, or a would-be parse-error fail was downgraded by `dry-run`. The CI step does not fail. |
+| ❌ `fail` | The guard refused to pass: a regression after main reached the 60% threshold, files were skipped at or above the threshold (incomplete data), or the base ref could not be loaded (with `dry-run` off). |
 
 | Branch context | Behaviour |
 | --- | --- |
 | `refs/heads/main` | Reports adoption only. Never fails. Emits `warn` if files could not be parsed. |
-| Pull request, main adoption < 60% | Reports adoption. Never blocks. |
-| Pull request, main adoption ≥ 60% | Fails when adoption drops. `dry-run: true` downgrades the failure to a warning. |
+| Pull request, main adoption < 60% | Reports adoption. Never blocks; any skipped files are flagged in the report but do not change the result. |
+| Pull request, main adoption ≥ 60% | Fails when adoption drops, or when files were skipped on either side (incomplete data). `dry-run: true` downgrades the failure to a warning. |
 | Pull request, base ref unavailable | Fails (`warn` under `dry-run`) so the workflow surfaces the misconfiguration. |
 
 ## Inputs
