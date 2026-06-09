@@ -12,7 +12,7 @@ ls packages/ | grep bpk-component
 ls packages/ | grep -i "card\|chip\|badge\|notification"
 
 # Inspect what a package exports
-cat packages/bpk-component-{name}/index.ts
+cat packages/backpack-web/src/bpk-component-{name}/index.ts
 ```
 
 ## Common mappings (non-exhaustive — always search first)

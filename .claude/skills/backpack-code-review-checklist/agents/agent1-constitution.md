@@ -91,7 +91,7 @@ Use the Read tool only when you need to inspect a specific file in full depth
 ### Package Import Investigation
 
 For each `import X from '../../bpk-component-Y'` in the changed files:
-1. Read `packages/bpk-component-Y/index.tsx` to see full export list
+1. Read `packages/backpack-web/src/bpk-component-Y/index.tsx` to see full export list
 2. Look for size/variant suffixes (Large, Small, OnDark, V2)
 3. Verify the imported variant matches context
 

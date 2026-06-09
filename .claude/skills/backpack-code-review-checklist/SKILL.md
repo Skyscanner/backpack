@@ -194,7 +194,7 @@ Agents may also use the Read tool for deeper file inspection.
   {
     "title": "Brief issue title (max 10 words)",
     "explanation": "What is wrong, why it matters, what to use instead",
-    "file": "packages/bpk-component-foo/src/BpkFoo.tsx",
+    "file": "packages/backpack-web/src/bpk-component-foo/src/BpkFoo.tsx",
     "startLine": 42,
     "endLine": 45,
     "source": "constitution|sass-tokens|a11y-testing|history|bug-scan|learned-patterns",
@@ -364,7 +364,7 @@ cat > /tmp/bpk_review_[NUMBER].json << 'ENDJSON'
   "body": "### Code review\n\nFound N issues (reviewed by M/6 agents).\n\n🤖 Generated with [Claude Code](https://claude.ai/code)",
   "comments": [
     {
-      "path": "packages/bpk-component-foo/src/BpkFoo.tsx",
+      "path": "packages/backpack-web/src/bpk-component-foo/src/BpkFoo.tsx",
       "line": 45,
       "start_line": 42,
       "side": "RIGHT",
