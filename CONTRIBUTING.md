@@ -57,7 +57,7 @@ Backpack is an npm workspaces monorepo orchestrated with [Nx](https://nx.dev/). 
 - `packages/backpack-web/src/bpk-stylesheets/` — compiled CSS
 - `libs/backpack-storybook-host/` — Storybook host configuration
 
-Older docs (and some links from external repos) refer to `packages/bpk-component-*` at the repository root. That layout is gone — every component now lives under `packages/backpack-web/src/`.
+Other docs and links from external repos may still refer to `packages/bpk-component-*` at the repository root — those paths are stale. Every component now lives under `packages/backpack-web/src/`.
 
 1. Pull the code and create a new branch
 
@@ -118,7 +118,6 @@ We also ship the type declaration files for all TypeScript components to ensure 
 Backpack ships repo-aware Claude Code skills under [`.claude/skills/`](./.claude/skills/) to help with common contributor tasks:
 
 - `backpack-external-component-migration` — promote a component from a product repo into a Backpack package, applying naming conventions, modern Sass API, license headers, and the standard test gates.
-- `backpack-component-ts-migration` — migrate a `bpk-component-*` package from Flow to TypeScript end-to-end.
 - `backpack-code-review-checklist` — multi-agent PR review against the Backpack Constitution, including a learned-patterns pass over recent PR comments.
 
 If your change introduces a breaking API change, consider shipping a version-specific migration skill alongside it (e.g. `backpack-v42-migration` guided consumers through the v41 → v42 upgrade). This is optional but strongly encouraged for major version bumps.
