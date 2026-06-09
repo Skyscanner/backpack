@@ -15,7 +15,9 @@ Custom jscodeshift transform that:
   `Identifier.defaultProps = <ObjectExpression>` into ES6 destructure
   defaults at the function's parameter or top-of-body destructure point.
 - **Phase C** (all files): reports class components with `static defaultProps`
-  to stderr — manual migration required (React 19 makes them no-ops).
+  to stderr — manual migration required for consistency. Class-component
+  `defaultProps` still apply in React 19 (only function-component
+  `defaultProps` are ignored), but we want to remove them for future-proofing.
 
 `.js`/`.jsx` files keep their `prop-types` in place because the project's
 `react/prop-types` lint rule requires either prop-types or types for prop
@@ -44,7 +46,7 @@ node ./node_modules/types-react-codemod/node_modules/jscodeshift/bin/jscodeshift
   --no-babel \
   --extensions=ts,tsx \
   --ignore-pattern '**/{node_modules,dist,build,storybook-static}/**' \
-  packages .storybook
+  packages libs/backpack-storybook-host/.storybook
 
 # .js / .jsx files (Flow)
 node ./node_modules/types-react-codemod/node_modules/jscodeshift/bin/jscodeshift.js \
@@ -53,7 +55,7 @@ node ./node_modules/types-react-codemod/node_modules/jscodeshift/bin/jscodeshift
   --no-babel \
   --extensions=js,jsx \
   --ignore-pattern '**/{node_modules,dist,build,storybook-static}/**' \
-  packages .storybook
+  packages libs/backpack-storybook-host/.storybook
 ```
 
 Skip messages (Phase B couldn't safely merge defaults; Phase C class
