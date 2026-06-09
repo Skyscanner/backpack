@@ -207,7 +207,7 @@ Given that feature description, do this:
 
 This is the **Backpack Design System** - a React component library for Skyscanner. When creating specifications:
 
-- **Component-focused**: Describe reusable UI components that will live in `packages/bpk-component-[name]/`
+- **Component-focused**: Describe reusable UI components that will live in `packages/backpack-web/src/bpk-component-[name]/`
 - **Design System Language**: Use design system terminology (variants, states, tokens, accessibility)
 - **User = Consumer**: Users are developers consuming components, not end-users
 - **Reference Constitution**: All specs must align with `.specify/memory/constitution.md` principles

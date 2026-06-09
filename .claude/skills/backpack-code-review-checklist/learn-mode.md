@@ -16,7 +16,7 @@ gh pr list \
   --json number,title,mergedAt,files
 ```
 
-If `--component COMP` is specified, filter to PRs touching `packages/bpk-component-[COMP]/`.
+If `--component COMP` is specified, filter to PRs touching `packages/backpack-web/src/bpk-component-[COMP]/`.
 
 For each PR, fetch review comments:
 ```bash

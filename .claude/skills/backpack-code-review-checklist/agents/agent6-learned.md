@@ -48,7 +48,7 @@ Same JSON array as other agents:
   {
     "title": "Brief issue title (max 10 words)",
     "explanation": "What pattern recurs in past reviews, why reviewers flag it, and how the current PR triggers it.",
-    "file": "packages/bpk-component-foo/src/BpkFoo.tsx",
+    "file": "packages/backpack-web/src/bpk-component-foo/src/BpkFoo.tsx",
     "startLine": 42,
     "endLine": 45,
     "source": "learned-patterns",

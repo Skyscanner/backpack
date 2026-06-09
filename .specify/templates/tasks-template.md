@@ -50,7 +50,7 @@ VALIDATION:
 **Input**: Design documents from `/specs/[###-component-name]/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, api-design.md, styling-guide.md, examples/
 
-**Backpack Context**: This component will be implemented in `packages/bpk-component-[name]/` following Backpack constitution and architecture decisions.
+**Backpack Context**: This component will be implemented in `packages/backpack-web/src/bpk-component-[name]/` following Backpack constitution and architecture decisions.
 
 **Tests**: Tests are MANDATORY for Backpack components. All tasks include test requirements.
 
@@ -64,8 +64,8 @@ VALIDATION:
 
 ## Backpack Path Conventions
 
-- **Component Package**: `packages/bpk-component-[name]/`
-- **Source Files**: `packages/bpk-component-[name]/src/BpkComponentName/`
+- **Component Package**: `packages/backpack-web/src/bpk-component-[name]/`
+- **Source Files**: `packages/backpack-web/src/bpk-component-[name]/src/BpkComponentName/`
 - **Test Files**: Same directory as source (e.g., `BpkComponentName-test.tsx`)
 - **Examples**: `examples/bpk-component-[name]/`
 
@@ -93,11 +93,11 @@ VALIDATION:
 
 **Purpose**: Initialize component package structure per Backpack standards
 
-- [ ] T001 Create package directory `packages/bpk-component-[name]/`
-- [ ] T002 [P] Create `packages/bpk-component-[name]/index.ts` export file
-- [ ] T003 [P] Create `packages/bpk-component-[name]/README.md` stub (will be completed in Phase 5)
-- [ ] T004 [P] Create `packages/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkModal/`)
-- [ ] T005 [P] Create `packages/bpk-component-[name]/docs/` directory for assets
+- [ ] T001 Create package directory `packages/backpack-web/src/bpk-component-[name]/`
+- [ ] T002 [P] Create `packages/backpack-web/src/bpk-component-[name]/index.ts` export file
+- [ ] T003 [P] Create `packages/backpack-web/src/bpk-component-[name]/README.md` stub (will be completed in Phase 5)
+- [ ] T004 [P] Create `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]/` directory (e.g., `src/BpkModal/`)
+- [ ] T005 [P] Create `packages/backpack-web/src/bpk-component-[name]/docs/` directory for assets
 
 ---
 
@@ -107,9 +107,9 @@ VALIDATION:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Create TypeScript types file `packages/bpk-component-[name]/src/Bpk[ComponentName]/common-types.ts` (e.g., `BpkButton/common-types.ts`) with component props interface
-- [ ] T007 Create theme attributes file `packages/bpk-component-[name]/src/themeAttributes.ts` (if component is themeable)
-- [ ] T008 [P] Setup test utilities and mocks in `packages/bpk-component-[name]/src/__mocks__/` if needed
+- [ ] T006 Create TypeScript types file `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]/common-types.ts` (e.g., `BpkButton/common-types.ts`) with component props interface
+- [ ] T007 Create theme attributes file `packages/backpack-web/src/bpk-component-[name]/src/themeAttributes.ts` (if component is themeable)
+- [ ] T008 [P] Setup test utilities and mocks in `packages/backpack-web/src/bpk-component-[name]/src/__mocks__/` if needed
 - [ ] T009 Verify constitution compliance: PascalCase naming, `.module.scss` extension, test file naming
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
@@ -126,14 +126,14 @@ VALIDATION:
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T010 [P] [US1] Create unit test file `packages/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName]-test.tsx` (e.g., `BpkButton/BpkButton-test.tsx`)
+- [ ] T010 [P] [US1] Create unit test file `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName]-test.tsx` (e.g., `BpkButton/BpkButton-test.tsx`)
   - Test rendering with required props
   - Test rendering with optional props
   - Test all variants (e.g., primary, secondary, tertiary)
   - Test snapshot for default state
   - **Constitution Check**: Uses Jest + Testing Library, targets 70% branches, 75% functions/lines
 
-- [ ] T011 [P] [US1] Create accessibility test file `packages/bpk-component-[name]/src/Bpk[ComponentName]/accessibility-test.tsx`
+- [ ] T011 [P] [US1] Create accessibility test file `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]/accessibility-test.tsx`
   - Test with jest-axe for no violations
   - Test keyboard navigation (Tab, Enter, Space)
   - Test ARIA attributes
@@ -148,13 +148,13 @@ VALIDATION:
 
 ### Implementation for User Story 1
 
-- [ ] T013 [US1] Create main component file `packages/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName].tsx` (e.g., `BpkButton/BpkButton.tsx`)
+- [ ] T013 [US1] Create main component file `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName].tsx` (e.g., `BpkButton/BpkButton.tsx`)
   - Implement component with TypeScript
   - Export default component
   - Add JSDoc comments (British English prose)
   - **Constitution Check**: TypeScript NON-NEGOTIABLE, JSDoc required
 
-- [ ] T014 [US1] Create component styles `packages/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName].module.scss` (e.g., `BpkButton/BpkButton.module.scss`)
+- [ ] T014 [US1] Create component styles `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]/Bpk[ComponentName].module.scss` (e.g., `BpkButton/BpkButton.module.scss`)
   - Use `@use` syntax to import from `bpk-mixins` (e.g., `@use '../../../bpk-mixins/tokens'`)
   - Import granularly (tokens, typography, shadows, etc.)
   - Use BEM naming with `bpk-` prefix (e.g., `.bpk-button`, `.bpk-button--primary`)
@@ -254,7 +254,7 @@ VALIDATION:
 
 **Purpose**: Complete documentation and polish for release
 
-- [ ] TXXX [P] Complete `packages/bpk-component-[name]/README.md`
+- [ ] TXXX [P] Complete `packages/backpack-web/src/bpk-component-[name]/README.md`
   - Component description (<100 words, British English prose)
   - Title in sentence case, singular form (e.g., "Bar chart" not "Bar Charts")
   - Usage examples with code snippets
@@ -269,7 +269,7 @@ VALIDATION:
   - Include usage examples
   - **Constitution Check**: Documentation Standards principle
 
-- [ ] TXXX [P] Create Figma Code Connect file `packages/bpk-component-[name]/src/BpkComponentName/BpkComponentName.figma.tsx`
+- [ ] TXXX [P] Create Figma Code Connect file `packages/backpack-web/src/bpk-component-[name]/src/BpkComponentName/BpkComponentName.figma.tsx`
   - Connect component to Figma designs
   - Map props to Figma properties
   - Provide usage examples
@@ -283,7 +283,7 @@ VALIDATION:
   - Accessibility demo
   - **Constitution Check**: Comprehensive Storybook REQUIRED
 
-- [ ] TXXX [P] Add component screenshots to `packages/bpk-component-[name]/docs/screenshots/`
+- [ ] TXXX [P] Add component screenshots to `packages/backpack-web/src/bpk-component-[name]/docs/screenshots/`
   - Screenshot for README
   - Screenshots for documentation
 
@@ -426,7 +426,7 @@ With multiple developers:
 Throughout implementation, verify compliance with:
 
 ### Component-First Architecture
-- [ ] Package in `packages/bpk-component-[name]/`
+- [ ] Package in `packages/backpack-web/src/bpk-component-[name]/`
 - [ ] Self-contained with own tests, styles, docs
 - [ ] Clear public API
 - [ ] Independently testable

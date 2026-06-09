@@ -54,7 +54,7 @@ VALIDATION:
 
 *GATE: Must pass before implementation begins.*
 
-- [ ] **Component-First Architecture**: Component will be in `packages/bpk-component-[name]/`
+- [ ] **Component-First Architecture**: Component will be in `packages/backpack-web/src/bpk-component-[name]/`
 - [ ] **Naming Conventions**: Component name follows PascalCase (e.g., BpkButton)
 - [ ] **License Headers**: All source files (.ts, .tsx, .js, .jsx, .scss, .css) will include Apache 2.0 license header
 - [ ] **Modern Sass**: Will use `@use` syntax with granular imports from `bpk-mixins`
@@ -348,7 +348,7 @@ type Bpk[ComponentName]Props = {
 
 **File Structure** (per constitution):
 ```
-packages/bpk-component-[name]/
+packages/backpack-web/src/bpk-component-[name]/
 ├── README.md
 ├── index.ts                            # exports default from src/
 ├── docs/                               # screenshots, design assets
