@@ -1,0 +1,74 @@
+name: Backpack Adoption Guard
+
+# Reusable workflow that runs the Backpack Adoption Guard action and uploads
+# results to Cortex on default-branch pushes. Pull-request runs only compute
+# the adoption rate and never touch Cortex.
+#
+# Consumers call this from their own workflow:
+#
+#   jobs:
+#     backpack-adoption-guard:
+#       uses: Skyscanner/backpack/.github/workflows/backpack-adoption-guard.yml@backpack-adoption-guard/v1
+#       with:
+#         cortex-entity: my-cortex-entity-tag
+#       secrets:
+#         CORTEX_WEBHOOK_UUID: ${{ secrets.BACKPACK_ADOPTION_CORTEX_WEBHOOK_UUID }}
+
+on:
+  workflow_call:
+    inputs:
+      cortex-entity:
+        description: "Cortex entity tag for this repo. Used as the `cortex-entity` input to skyscanner/push-custom-cortex-data."
+        required: true
+        type: string
+      dry-run:
+        description: "If true, PR adoption regressions are reported as warnings instead of failing the check. The guard never blocks main, regardless of this flag."
+        required: false
+        type: boolean
+        default: true
+      pattern:
+        description: "Glob for files scanned for Backpack adoption."
+        required: false
+        type: string
+        default: "**/*.{jsx,tsx}"
+      runs-on:
+        description: "Runner label for the job (e.g. `ubuntu-latest`, `ubuntu-latest-small`)."
+        required: false
+        type: string
+        default: "ubuntu-latest"
+    secrets:
+      CORTEX_WEBHOOK_UUID:
+        description: "UUID of the Cortex custom integration webhook for backpack adoption metrics. Required even on PR runs (the secret is only consumed on default-branch pushes, but workflow_call resolves it up front)."
+        required: true
+
+permissions: {}
+
+jobs:
+  backpack-adoption-guard:
+    runs-on: ${{ inputs.runs-on }}
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Backpack Adoption Guard
+        uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
+        with:
+          dry-run: ${{ inputs.dry-run }}
+          pattern: ${{ inputs.pattern }}
+
+      - name: Upload Backpack adoption metrics to Cortex
+        if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch
+        uses: skyscanner/push-custom-cortex-data@v0.0.3
+        with:
+          webhook-uuid: ${{ secrets.CORTEX_WEBHOOK_UUID }}
+          cortex-entity: ${{ inputs.cortex-entity }}
+          data-descriptor: |
+            {
+              "description": "Backpack adoption metrics",
+              "key": "backpack-adoption",
+              "path": "backpack-adoption-results.json"
+            }

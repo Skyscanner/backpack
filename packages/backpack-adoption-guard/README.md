@@ -5,21 +5,50 @@ and writes the result to a JSON file. On pull requests it compares the PR
 checkout against the base checkout and fails only when the base adoption is
 already at least 60% and the PR lowers the Backpack adoption rate.
 
-```yaml
-- uses: actions/checkout@v6
-
-- name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
-  with:
-    dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
-```
-
-The action transparently fetches the PR base commit on demand, so the default
-shallow `actions/checkout` is enough. If your runner blocks single-commit
-fetches, fall back to `fetch-depth: 0` on the checkout step.
-
 The guard threshold is maintained inside the action and is not configurable by
 consumer repositories.
+
+## Quick start (recommended)
+
+This package ships a reusable workflow that handles checkout, runs the guard,
+and uploads metrics to Cortex on default-branch pushes — all in five lines on
+the consumer side.
+
+```yaml
+on: [pull_request, push]
+
+jobs:
+  backpack-adoption-guard:
+    uses: Skyscanner/backpack/.github/workflows/backpack-adoption-guard.yml@backpack-adoption-guard/v1
+    with:
+      cortex-entity: <your-cortex-entity-tag>
+    secrets:
+      CORTEX_WEBHOOK_UUID: ${{ secrets.BACKPACK_ADOPTION_CORTEX_WEBHOOK_UUID }}
+```
+
+PR runs only compute the rate; Cortex is only uploaded on pushes to the default
+branch.
+
+### Prerequisites
+
+- A Cortex custom integration webhook configured for this repo's entity. The
+  recommended values are entity tag JQ `.entity_tag` and CQL key
+  `backpack-adoption-metadata`. Coordinate with SRE to create one if needed.
+- A repo secret holding the webhook UUID, mapped into the workflow's
+  `CORTEX_WEBHOOK_UUID` secret as shown above.
+
+### Reusable workflow inputs
+
+| Input | Description | Required | Default |
+| --- | --- | --- | --- |
+| `cortex-entity` | Cortex entity tag for this repo. | Yes | — |
+| `dry-run` | Report PR adoption regressions as warnings instead of failing. The guard never blocks the default branch regardless of this flag. | No | `true` |
+| `pattern` | Glob for files scanned. | No | `**/*.{jsx,tsx}` |
+| `runs-on` | Runner label. | No | `ubuntu-latest` |
+
+| Secret | Description | Required |
+| --- | --- | --- |
+| `CORTEX_WEBHOOK_UUID` | UUID of the Cortex custom integration webhook. Only consumed on default-branch pushes, but `workflow_call` resolves it up front so it must always be passed. | Yes |
 
 ## Behaviour
 
@@ -38,7 +67,26 @@ The action emits one of three guard statuses:
 | Pull request, main adoption ≥ 60% | Fails when adoption drops, or when files were skipped on either side (incomplete data). `dry-run: true` downgrades the failure to a warning. |
 | Pull request, base ref unavailable | Fails (`warn` under `dry-run`) so the workflow surfaces the misconfiguration. |
 
-## Inputs
+## Manual setup (advanced)
+
+If you can't or don't want to use the reusable workflow above (e.g. because
+you need fine-grained control over the steps surrounding the guard), invoke
+the action directly.
+
+```yaml
+- uses: actions/checkout@v6
+
+- name: Backpack Adoption Guard
+  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
+  with:
+    dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
+```
+
+The action transparently fetches the PR base commit on demand, so the default
+shallow `actions/checkout` is enough. If your runner blocks single-commit
+fetches, fall back to `fetch-depth: 0` on the checkout step.
+
+### Action inputs
 
 | Input | Description | Required | Default |
 | --- | --- | --- | --- |
@@ -46,16 +94,21 @@ The action emits one of three guard statuses:
 | `pattern` | Glob for files scanned. | No | `**/*.{jsx,tsx}` |
 | `output-path` | Path for the generated adoption result JSON. | No | `backpack-adoption-results.json` |
 
-## Uploading metrics to Cortex
+> Note: the action's `dry-run` defaults to `false` (strict), while the reusable
+> workflow's `dry-run` defaults to `true` (safe). The reusable workflow targets
+> first-time consumers; direct action callers are assumed to want strict
+> behaviour by default.
 
-This action only writes a JSON results file. To ship the results to Cortex on
-`main`, add a separate step that uses
+### Uploading metrics to Cortex manually
+
+The action only writes a JSON results file. To ship the results to Cortex on
+the default branch, add a separate step using
 [`Skyscanner/push-custom-cortex-data`](https://github.com/Skyscanner/push-custom-cortex-data)
-and points its `data-descriptor.path` at the file produced above. Use
+and point its `data-descriptor.path` at the file produced above. Use
 `backpack-adoption` as the `data-descriptor.key` (the top-level key the
-results JSON uses). The file intentionally contains compact main-branch
-metrics for Cortex; detailed guard, PR comparison, parse-error, and per-component
-data stays in the GitHub step summary and action internals.
+results JSON uses). The file intentionally contains compact default-branch
+metrics for Cortex; detailed guard, PR comparison, parse-error, and
+per-component data stays in the GitHub step summary and action internals.
 
 ```json
 {
@@ -83,8 +136,8 @@ data stays in the GitHub step summary and action internals.
   uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
 
 - name: Upload Backpack adoption metrics to Cortex
-  if: github.ref == 'refs/heads/main'
-  uses: Skyscanner/push-custom-cortex-data@v1
+  if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch
+  uses: skyscanner/push-custom-cortex-data@v0.0.3
   with:
     webhook-uuid: ${{ secrets.BACKPACK_ADOPTION_CORTEX_WEBHOOK_UUID }}
     cortex-entity: <your-cortex-entity>
