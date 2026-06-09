@@ -120,7 +120,8 @@ Backpack ships repo-aware Claude Code skills under [`.claude/skills/`](./.claude
 - `backpack-external-component-migration` — promote a component from a product repo into a Backpack package, applying naming conventions, modern Sass API, license headers, and the standard test gates.
 - `backpack-component-ts-migration` — migrate a `bpk-component-*` package from Flow to TypeScript end-to-end.
 - `backpack-code-review-checklist` — multi-agent PR review against the Backpack Constitution, including a learned-patterns pass over recent PR comments.
-- `backpack-v42-migration` — handle the v41 → v42 consumer upgrade.
+
+If your change introduces a breaking API change, consider shipping a version-specific migration skill alongside it (e.g. `backpack-v42-migration` guided consumers through the v41 → v42 upgrade). This is optional but strongly encouraged for major version bumps.
 
 These skills are loaded automatically by Claude Code when working in this repo. They are accelerators, not approvals — the same review, lint, and test gates apply to AI-assisted PRs as to any other PR.
 
