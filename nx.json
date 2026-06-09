@@ -27,7 +27,7 @@
       "{workspaceRoot}/babel.config.js",
       "{workspaceRoot}/tsconfig.base.json",
       "{workspaceRoot}/tsconfig.json",
-      "{workspaceRoot}/tsconfig.declaration.json",
+      "{workspaceRoot}/packages/backpack-web/tsconfig.declaration.json",
       "{workspaceRoot}/.eslintrc*",
       "{workspaceRoot}/.eslintignore",
       "{workspaceRoot}/.stylelintrc*",

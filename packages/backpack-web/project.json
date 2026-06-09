@@ -87,7 +87,7 @@
         "commands": [
           "rm -rf packages/backpack-web/dist",
           "BABEL_ENV=dev babel packages/backpack-web/src --ignore ./packages/backpack-web/src/bpk-stylesheets --out-dir packages/backpack-web/dist --extensions .ts,.tsx,.js,.jsx --config-file ./babel.config.js",
-          "tsc --project tsconfig.declaration.json",
+          "tsc --project packages/backpack-web/tsconfig.declaration.json",
           "node scripts/transpilation/transform-js-scss-css-imports.js",
           "node scripts/transpilation/copy-css.js",
           "node scripts/transpilation/copy-utils.js",
