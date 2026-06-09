@@ -103,4 +103,59 @@ describe('focusScope', () => {
 
     expect(document.activeElement).toBe(secondContainer);
   });
+
+  describe('pauseFocus / resumeFocus', () => {
+    it('should stop capturing focus after pauseFocus', () => {
+      focusScope.scopeFocus(container);
+      focusScope.pauseFocus();
+
+      outsideButton.focus();
+      outsideButton.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+
+      expect(document.activeElement).toBe(outsideButton);
+    });
+
+    it('should resume capturing focus after resumeFocus, without stealing focus immediately', () => {
+      focusScope.scopeFocus(container);
+      focusScope.pauseFocus();
+
+      // focus has moved outside while paused
+      outsideButton.focus();
+      outsideButton.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+      expect(document.activeElement).toBe(outsideButton);
+
+      // resume — does NOT immediately steal focus back
+      focusScope.resumeFocus();
+      expect(document.activeElement).toBe(outsideButton);
+
+      // but a new focusin outside the container IS now intercepted
+      outsideButton.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+      expect(document.activeElement).toBe(container);
+    });
+
+    it('should be a no-op when pauseFocus is called with no active scope', () => {
+      expect(() => focusScope.pauseFocus()).not.toThrow();
+    });
+
+    it('should be a no-op when resumeFocus is called with no previously scoped element', () => {
+      expect(() => focusScope.resumeFocus()).not.toThrow();
+
+      outsideButton.focus();
+      outsideButton.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+      // focus should not have been redirected
+      expect(document.activeElement).toBe(outsideButton);
+    });
+
+    it('should not resume after unscopeFocus clears the paused element', () => {
+      focusScope.scopeFocus(container);
+      focusScope.pauseFocus();
+      focusScope.unscopeFocus(); // permanent clear — discards pausedElement
+
+      focusScope.resumeFocus(); // should be no-op
+
+      outsideButton.focus();
+      outsideButton.dispatchEvent(new FocusEvent('focusin', { bubbles: true }));
+      expect(document.activeElement).toBe(outsideButton);
+    });
+  });
 });

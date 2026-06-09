@@ -22,7 +22,8 @@ import { Dialog } from '@ark-ui/react';
 
 import { durationBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import { getDataComponentAttribute, useBodyLock } from '../../../../bpk-react-utils';
+import { getDataComponentAttribute, portalLock, useBodyLock } from '../../../../bpk-react-utils';
+import { focusScope } from '../../../../bpk-scrim-utils';
 import { ModalTypeProvider } from '../BpkModalV3Context';
 import { MODAL_V3_TYPES, type BpkModalV3Type } from '../common-types';
 
@@ -56,6 +57,35 @@ const BpkModalV3Root = ({
   }, [isOpen]);
 
   useBodyLock(type === MODAL_V3_TYPES.chatbot && bodyLockOpen);
+
+  // When this modal opens, pause the active focusScope (used by legacy withScrim
+  // components such as BpkDrawer) and lock the Portal event handlers so legacy
+  // overlays do not respond to clicks/Esc while the modal is visible.
+  //
+  // focusScope: prevents an infinite focus-redirect loop — both systems listen
+  //   to 'focusin' on document and would fight each other without this guard.
+  // portalLock: prevents legacy Portal (BpkDrawer/BpkModal/BpkDialog) from
+  //   starting their close animation simultaneously, which causes a visible flash.
+  //
+  // bodyLockOpen (rather than isOpen) is used as the dependency so that the
+  // locks stay active for the full exit-animation duration (durationBase ms)
+  // after isOpen becomes false. Without the delay, events fired during the
+  // exit animation (e.g. the mousedown that triggered the close falling through
+  // to a BpkScrim below) would reach legacy overlays and cause a flash.
+  //
+  // The cleanup function runs both on bodyLockOpen→false AND on unmount-while-open,
+  // ensuring the locks are always released.
+  //
+  // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
+  useEffect(() => {
+    if (!bodyLockOpen) return undefined;
+    focusScope.pauseFocus();
+    portalLock.lock();
+    return () => {
+      focusScope.resumeFocus();
+      portalLock.unlock();
+    };
+  }, [bodyLockOpen]);
 
   const handleOpenChange = (details: { open: boolean }) => {
     if (open === undefined) {

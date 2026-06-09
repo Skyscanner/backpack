@@ -53,30 +53,31 @@
 import { tabbable } from 'tabbable';
 
 let teardownFn: (() => void) | null = null;
+let pausedElement: HTMLElement | null = null;
 
-function init(element: HTMLElement): () => void {
-  function focus() {
-    const firstTabbable = tabbable(element)[0];
-    if (firstTabbable) {
-      firstTabbable.focus();
-    } else {
-      if (!element.hasAttribute('tabindex')) {
-        element.setAttribute('tabindex', '-1');
-      }
-      element.focus();
+function focusElement(element: HTMLElement) {
+  const firstTabbable = tabbable(element)[0];
+  if (firstTabbable) {
+    firstTabbable.focus();
+  } else {
+    if (!element.hasAttribute('tabindex')) {
+      element.setAttribute('tabindex', '-1');
     }
+    element.focus();
   }
+}
 
+// Registers the focusin listener that redirects focus back into element.
+// Does NOT call focus() immediately — use init() when initial focus steal is needed.
+function registerListener(element: HTMLElement): () => void {
   function onFocusIn(event: FocusEvent) {
     if (
       element !== event.target &&
       !element.contains(event.target as Node)
     ) {
-      focus();
+      focusElement(element);
     }
   }
-
-  focus();
 
   document.addEventListener('focusin', onFocusIn);
 
@@ -85,15 +86,42 @@ function init(element: HTMLElement): () => void {
   };
 }
 
+function init(element: HTMLElement): () => void {
+  focusElement(element);
+  return registerListener(element);
+}
+
 const focusScope = {
   scopeFocus(element: HTMLElement) {
     if (teardownFn) teardownFn();
+    pausedElement = element;
     teardownFn = init(element);
   },
 
   unscopeFocus() {
     if (teardownFn) teardownFn();
     teardownFn = null;
+    pausedElement = null;
+  },
+
+  // Temporarily deactivates the active focusScope listener without discarding
+  // the scoped element. Call resumeFocus() to re-register the listener.
+  // Used by BpkModalV3 to prevent a focus loop when opened over a withScrim
+  // component (e.g. BpkDrawer). To be removed when BpkDrawer migrates to ark-ui.
+  pauseFocus() {
+    if (teardownFn) {
+      teardownFn();
+      teardownFn = null;
+    }
+  },
+
+  // Re-registers the focusin listener for the previously paused element
+  // without stealing focus. This lets ark-ui's own focus-return logic run
+  // first before the focusScope listener takes effect.
+  resumeFocus() {
+    if (pausedElement) {
+      teardownFn = registerListener(pausedElement);
+    }
   },
 };
 

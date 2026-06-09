@@ -34,6 +34,14 @@
 
   &[data-state='closed'] {
     opacity: 0;
+
+    // Keep pointer-events active during the close animation so events do NOT
+    // fall through to legacy overlays beneath (e.g. BpkDrawer's close button,
+    // which shares z-index 1100) and trigger an unintended close.  The scrim
+    // absorbs all pointer events while it fades; once ark-ui removes the element
+    // the underlying content becomes interactive again.
+    // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
+    pointer-events: auto;
   }
 
   // Auto-hide scrim for full variant

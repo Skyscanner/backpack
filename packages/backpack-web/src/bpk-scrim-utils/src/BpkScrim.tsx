@@ -18,7 +18,7 @@
 
 import type { SyntheticEvent } from 'react';
 
-import { TransitionInitialMount, cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+import { TransitionInitialMount, cssModules, getDataComponentAttribute, portalLock } from '../../bpk-react-utils';
 
 import STYLES from './bpk-scrim.module.scss';
 
@@ -27,20 +27,35 @@ const getClassName = cssModules(STYLES);
 type Props = {
   onClose?: (e?: SyntheticEvent) => void | null;
 };
-const BpkScrim = ({ onClose = () => {} }: Props) => (
-  <TransitionInitialMount
-    appearClassName={getClassName('bpk-scrim--appear')}
-    appearActiveClassName={getClassName('bpk-scrim--appear-active')}
-    transitionTimeout={200}
-  >
-    <div
-      role="presentation"
-      className={getClassName('bpk-scrim')}
-      {...getDataComponentAttribute('Scrim')}
-      onMouseDown={onClose}
-      onTouchStart={onClose}
-    />
-  </TransitionInitialMount>
-);
+const BpkScrim = ({ onClose = () => {} }: Props) => {
+  // When a higher-priority overlay (e.g. BpkModalV3) closes, ark-ui's
+  // pointerdown handler fires first and changes data-state to 'closed',
+  // making the modal scrim pointer-events:none before mousedown fires.
+  // The mousedown then falls through to this scrim and would immediately
+  // trigger onClose (hide), causing a visible flash. Guard against this
+  // by ignoring mousedown/touchstart while the portal lock is active.
+  // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
+  const handlePointerDown = (e: SyntheticEvent) => {
+    if (!portalLock.isLocked()) {
+      onClose(e);
+    }
+  };
+
+  return (
+    <TransitionInitialMount
+      appearClassName={getClassName('bpk-scrim--appear')}
+      appearActiveClassName={getClassName('bpk-scrim--appear-active')}
+      transitionTimeout={200}
+    >
+      <div
+        role="presentation"
+        className={getClassName('bpk-scrim')}
+        {...getDataComponentAttribute('Scrim')}
+        onMouseDown={handlePointerDown}
+        onTouchStart={handlePointerDown}
+      />
+    </TransitionInitialMount>
+  );
+};
 
 export default BpkScrim;

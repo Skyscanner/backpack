@@ -23,6 +23,9 @@ import { createPortal } from 'react-dom';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
 
+// TODO: CLOV-1643 Remove portalLock import once BpkDrawer, BpkModal, BpkDialog are deprecated.
+import portalLock from './portalLock';
+
 const KEYCODES = {
   ESCAPE: 'Escape',
 } as const;
@@ -134,6 +137,13 @@ class Portal extends Component<Props, State> {
   }
 
   onDocumentMouseDown(event: MouseEvent | TouchEvent) {
+    // A higher-priority overlay (e.g. BpkModalV3) is open — do not close.
+    // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
+    if (portalLock.isLocked()) {
+      this.shouldClose = false;
+      return;
+    }
+
     const clickEventProperties = this.getClickEventProperties(event);
     if (
       clickEventProperties.isNotLeftClick ||
@@ -167,6 +177,12 @@ class Portal extends Component<Props, State> {
   }
 
   onDocumentKeyDown(event: KeyboardEvent) {
+    // A higher-priority overlay (e.g. BpkModalV3) is open — do not intercept Esc.
+    // TODO: CLOV-1643 Remove once BpkDrawer, BpkModal, BpkDialog are deprecated.
+    if (portalLock.isLocked()) {
+      return;
+    }
+
     if (
       event.key === KEYCODES.ESCAPE &&
       this.props.isOpen &&
