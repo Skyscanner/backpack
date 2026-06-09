@@ -22,8 +22,6 @@ publicHoistPattern:
   - '*eslint*'
   - '*stylelint*'
   - '*prettier*'
-linkWorkspacePackages: true
-shamefullyHoist: true
 # PNPM 10 onwards disables postinstall scripts by default to reduce the risk of supply chain attacks. https://pnpm.io/supply-chain-security. This is a positive change, but some of our existing packages rely on postinstall scripts. Rather than turn the setting off completely we allowlist packages with essential postinstall scripts. This reduces the risk of _new_ packages executing unexpected postinstall scripts, while accepting the risk of existing packages where the postinstall is essential.
 allowBuilds:
   '@parcel/watcher': true
