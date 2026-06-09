@@ -67,7 +67,7 @@ VALIDATION:
 - **Component Package**: `packages/backpack-web/src/bpk-component-[name]/`
 - **Source Files**: `packages/backpack-web/src/bpk-component-[name]/src/BpkComponentName/`
 - **Test Files**: Same directory as source (e.g., `BpkComponentName-test.tsx`)
-- **Examples**: `examples/bpk-component-[name]/`
+- **Stories (colocated)**: `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx`
 
 <!--
   ============================================================================
@@ -140,7 +140,7 @@ VALIDATION:
   - Test focus management
   - **Constitution Check**: NON-NEGOTIABLE - all components MUST have accessibility tests
 
-- [ ] T012 [P] [US1] Create Storybook story `examples/bpk-component-[name]/stories.tsx`
+- [ ] T012 [P] [US1] Create Storybook story `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx`
   - Default story with minimal props
   - All variants story
   - All sizes story
@@ -275,7 +275,7 @@ VALIDATION:
   - Provide usage examples
   - **Constitution Check**: Figma Code Connect REQUIRED
 
-- [ ] TXXX [P] Complete all Storybook stories in `examples/bpk-component-[name]/stories.tsx`
+- [ ] TXXX [P] Complete all Storybook stories in `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx`
   - Default story
   - All variants and sizes
   - Interactive states (hover, focus, active, disabled)
@@ -491,7 +491,7 @@ Throughout implementation, verify compliance with:
 
 - **Backpack Constitution**: `.specify/memory/constitution.md`
 - **Architecture Decisions**: `decisions/` directory
-- **Component Examples**: `packages/` directory
-- **Design Tokens**: `@skyscanner/bpk-foundations-web`, `packages/bpk-mixins/`
-- **React Utilities**: `packages/bpk-react-utils/`
+- **Component Examples**: `packages/backpack-web/src/` directory
+- **Design Tokens**: `@skyscanner/bpk-foundations-web`, `packages/backpack-web/src/bpk-mixins/`
+- **React Utilities**: `packages/backpack-web/src/bpk-react-utils/`
 - **Testing Patterns**: Existing component test files

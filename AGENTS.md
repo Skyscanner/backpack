@@ -23,7 +23,7 @@ This guide provides instructions and context for AI agents working with the Back
 
 ### Package Organization
 ```
-packages/
+packages/backpack-web/src/
 ├── bpk-component-{name}/          # Individual React components
 ├── bpk-mixins/                    # SCSS mixins and utilities
 ├── bpk-stylesheets/               # Compiled CSS
@@ -126,7 +126,7 @@ Backpack uses design tokens and typography mixins for consistent styling across 
 
 ### Design Token Architecture
 
-Design tokens are centralized in `packages/bpk-mixins/_tokens.scss` which forwards all tokens from the foundations package:
+Design tokens are centralized in `packages/backpack-web/src/bpk-mixins/_tokens.scss` which forwards all tokens from the foundations package:
 
 ```scss
 @forward '@skyscanner/bpk-foundations-web/tokens/base.default';

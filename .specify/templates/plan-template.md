@@ -112,7 +112,7 @@ VALIDATION:
 - [ ] **British English**: Prose uses British English, code uses US English
 - [ ] **Sentence Case**: Titles use sentence case, singular form
 - [ ] **<100 Words**: Component description under 100 words
-- [ ] **Storybook**: Stories in `examples/bpk-component-[name]/stories.tsx`
+- [ ] **Storybook**: Stories colocated at `packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx`
 - [ ] **JSDoc**: All public APIs documented
 - [ ] **Figma Connect**: `.figma.tsx` file connects to Figma designs
 
@@ -130,7 +130,7 @@ specs/[###-component-name]/
 └── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
-**Note**: Storybook examples are created in `examples/bpk-component-[name]/` directory (separate from specs), not within the specs directory.
+**Note**: Storybook stories are colocated with the component source in `packages/backpack-web/src/bpk-component-[name]/src/` (not within the specs directory).
 
 ### Package Structure (Backpack Monorepo)
 
@@ -156,12 +156,12 @@ packages/backpack-web/src/bpk-component-[name]/
 
 ### Storybook Examples
 
+Stories are colocated with the component source under `packages/backpack-web/src/bpk-component-[name]/src/`:
+
 ```text
-examples/bpk-component-[name]/
-├── stories.tsx                    # Storybook story definitions (CSF 3.0)
-├── examples.tsx                   # Example component implementations
-├── [ComponentName]Story.module.scss # Styles for examples (if needed)
-└── README.md                      # Example documentation (optional)
+packages/backpack-web/src/bpk-component-[name]/src/
+├── Bpk[ComponentName].stories.tsx          # Storybook story definitions (CSF 3.0)
+└── Bpk[ComponentName].stories.module.scss  # Styles for stories (if needed)
 ```
 
 **Structure Decision**: Backpack uses a Monorepo architecture where each component is a separate package in `packages/`. This enables:
@@ -194,7 +194,7 @@ If no violations: **No constitution violations. Component follows all Backpack s
    - Review design tokens in `@skyscanner/bpk-foundations-web`
 
 2. **Review Sass Mixins**:
-   - Explore `packages/bpk-mixins/` for relevant utilities
+   - Explore `packages/backpack-web/src/bpk-mixins/` for relevant utilities
    - Identify which mixins to import (tokens, typography, shadows, etc.)
    - Check modern Sass API usage examples
 
@@ -297,23 +297,19 @@ type Bpk[ComponentName]Props = {
 
 ### Storybook Examples
 
-**Deliverable**: Storybook stories in `examples/bpk-component-[name]/` directory:
+**Deliverable**: Storybook stories colocated with the component source at `packages/backpack-web/src/bpk-component-[name]/src/`:
 
-1. **`stories.tsx`**: Storybook story definitions using CSF 3.0 format
+1. **`Bpk[ComponentName].stories.tsx`**: Storybook story definitions using CSF 3.0 format
    - Default story with minimal props
    - Stories for all variants and sizes
    - Stories for interactive states (hover, focus, active, disabled)
    - Stories for edge cases (long text, empty states, errors)
    - Accessibility stories demonstrating keyboard navigation
-
-2. **`examples.tsx`**: Example component implementations
-   - Reusable example components used by stories
    - Visual demonstrations of all component features
-   - Edge case demonstrations
 
-3. **`*.module.scss`** (if needed): Styles for example layouts and demonstrations
+2. **`Bpk[ComponentName].stories.module.scss`** (if needed): Styles for story layouts and demonstrations
 
-**Note**: Examples are written as Storybook stories, not as separate standalone files. All examples are contained within the `examples/bpk-component-[name]/` directory structure.
+**Note**: Examples are written as Storybook stories, not as separate standalone files. All stories are colocated with the component source.
 
 ## Phase 2: Task Breakdown
 
@@ -335,7 +331,7 @@ type Bpk[ComponentName]Props = {
 
 **Design Foundations**:
 - `@skyscanner/bpk-foundations-web`: Design tokens (colors, spacing, typography)
-- `packages/bpk-mixins/`: Sass mixins and utilities
+- `packages/backpack-web/src/bpk-mixins/`: Sass mixins and utilities
 
 **React Utilities** (if needed):
 - `bpk-react-utils`: Portal, cssModules, TransitionInitialMount, isRTL, etc.
@@ -482,7 +478,7 @@ import BpkBarchart from '@skyscanner/backpack-web/bpk-component-barchart';
 [Props table, examples, etc.]
 ```
 
-### Storybook Stories (`examples/bpk-component-[name]/stories.tsx`)
+### Storybook Stories (`packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx`)
 
 **Stories to include**:
 1. **Default**: Basic usage with minimal props
@@ -735,9 +731,9 @@ Before releasing this component:
 
 - **Backpack Constitution**: `.specify/memory/constitution.md`
 - **Architecture Decisions**: `decisions/` directory
-- **Component Examples**: Browse `packages/` for similar components
-- **Design Tokens**: `@skyscanner/bpk-foundations-web` and `packages/bpk-mixins/`
-- **React Utilities**: `packages/bpk-react-utils/`
-- **Theming**: `packages/bpk-theming/`
-- **Storybook Examples**: `examples/` directory
+- **Component Examples**: Browse `packages/backpack-web/src/` for similar components
+- **Design Tokens**: `@skyscanner/bpk-foundations-web` and `packages/backpack-web/src/bpk-mixins/`
+- **React Utilities**: `packages/backpack-web/src/bpk-react-utils/`
+- **Theming**: `packages/backpack-web/src/bpk-theming/`
+- **Storybook Stories**: Colocated under `packages/backpack-web/src/bpk-component-[name]/src/`
 - **Testing Patterns**: Review test files in existing components

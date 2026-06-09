@@ -130,7 +130,6 @@ ls packages/backpack-web/src/bpk-component-*/
 
 ```bash
 mkdir -p packages/backpack-web/src/bpk-component-[name]/src
-mkdir -p examples/bpk-component-[name]
 ```
 
 **Required files:**
@@ -142,12 +141,9 @@ packages/backpack-web/src/bpk-component-[name]/
     ├── Bpk[ComponentName].tsx
     ├── Bpk[ComponentName].module.scss
     ├── Bpk[ComponentName]-test.tsx
-    └── accessibility-test.tsx
-
-examples/bpk-component-[name]/
-├── examples.tsx
-├── examples.module.scss
-└── stories.tsx
+    ├── accessibility-test.tsx
+    ├── Bpk[ComponentName].stories.tsx
+    └── Bpk[ComponentName].stories.module.scss
 ```
 
 #### 2.2 Convert Component TypeScript
@@ -355,17 +351,17 @@ describe('Bpk[ComponentName] accessibility tests', () => {
 
 #### 2.6 Create Storybook Integration
 
-**examples/bpk-component-[name]/examples.tsx:**
+**packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].examples.tsx (story helpers):**
 ```typescript
 /*
  * Backpack - Skyscanner's Design System
  * [... license header ...]
  */
 
-import Bpk[ComponentName] from '../../packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]';
-import { cssModules } from '../../packages/bpk-react-utils';
+import Bpk[ComponentName] from './Bpk[ComponentName]';
+import { cssModules } from '../../bpk-react-utils';
 
-import STYLES from './examples.module.scss';
+import STYLES from './Bpk[ComponentName].stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
@@ -385,19 +381,19 @@ export const CustomExample = () => (
 );
 ```
 
-**examples/bpk-component-[name]/stories.tsx:**
+**packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx:**
 ```typescript
 /*
  * Backpack - Skyscanner's Design System
  * [... license header ...]
  */
 
-import Bpk[ComponentName] from '../../packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]';
+import Bpk[ComponentName] from './Bpk[ComponentName]';
 
 import {
   DefaultExample,
   CustomExample,
-} from './examples';
+} from './Bpk[ComponentName].examples';
 
 export default {
   title: 'bpk-component-[name]',

@@ -12,7 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import {
   BpkInsetBannerSponsored,
   VARIANT,
-} from '../../packages/bpk-component-inset-banner';
+} from '@skyscanner/backpack-web/bpk-component-inset-banner';
 
 export default () => (
   <BpkInsetBanner

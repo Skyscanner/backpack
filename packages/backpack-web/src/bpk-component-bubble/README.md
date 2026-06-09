@@ -13,7 +13,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 Render a pink “New” (or any short label) badge. Typically used as a small callout near another control (e.g. a navigation tab). The arrow is decorative.
 
 ```tsx
-import BpkBubble from '../../packages/bpk-component-tab-new-bubble';
+import BpkBubble from '@skyscanner/backpack-web/bpk-component-tab-new-bubble';
 
 export default () => <BpkBubble>New</BpkBubble>;
 ```
@@ -23,9 +23,9 @@ export default () => <BpkBubble>New</BpkBubble>;
 Wrap the target element and the bubble in a relatively-positioned container, then absolutely position the bubble.
 
 ```tsx
-import BpkText, { TEXT_STYLES } from '../../packages/bpk-component-text';
-import { cssModules } from '../../packages/bpk-react-utils';
-import BpkBubble from '../../packages/bpk-component-tab-new-bubble';
+import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
+import BpkBubble from '@skyscanner/backpack-web/bpk-component-tab-new-bubble';
 import STYLES from './examples.module.scss';
 
 const getClassNames = cssModules(STYLES);

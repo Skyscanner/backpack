@@ -33,7 +33,7 @@ Use the Read tool only when you need to inspect a specific SCSS file in full dep
 For these **known high-risk CSS patterns** (not every CSS property):
 `:hover`, `transition`, `z-index`, `::before`/`::after` pseudo-elements
 
-1. Grep `packages/bpk-mixins/` for an existing mixin that abstracts this pattern
+1. Grep `packages/backpack-web/src/bpk-mixins/` for an existing mixin that abstracts this pattern
 2. Read 2-3 similar existing components to see how they handle the same pattern
 3. If a mixin exists and the new code bypasses it, flag it as a violation
 

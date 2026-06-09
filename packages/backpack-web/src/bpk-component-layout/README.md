@@ -240,7 +240,7 @@ To keep layout predictable, performant and consistent with Backpack:
 
 ## Storybook and examples
 
-This package includes Storybook examples under `examples/bpk-component-layout` showing:
+This package includes Storybook examples colocated under `packages/backpack-web/src/bpk-component-layout/src/` showing:
 
 - Basic spacing
 - RTL‑friendly spacing (`marginInline`, `paddingInline`)

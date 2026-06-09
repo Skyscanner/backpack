@@ -13,14 +13,14 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 This is a NavigationTab Group that only allows a single tab to be `selected`, determined by the `selectedIndex` prop. State of selected tab should be managed using the `onItemClick` prop.
 
 ```tsx
-import { withRtlSupport } from '../../packages/bpk-component-icon';
-import Car from '../../packages/bpk-component-icon/sm/cars';
-import Explore from '../../packages/bpk-component-icon/sm/explore';
-import Flight from '../../packages/bpk-component-icon/sm/flight';
-import Hotel from '../../packages/bpk-component-icon/sm/hotels';
-import BpkNavigationTabGroup from '../../packages/bpk-component-navigation-tab-group';
-import { NAVIGATION_TAB_GROUP_TYPES } from '../../packages/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
-import type { BpkNavigationTabGroupProps } from '../../packages/bpk-component-navigation-tab-group';
+import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
+import Car from '@skyscanner/backpack-web/bpk-component-icon/sm/cars';
+import Explore from '@skyscanner/backpack-web/bpk-component-icon/sm/explore';
+import Flight from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
+import Hotel from '@skyscanner/backpack-web/bpk-component-icon/sm/hotels';
+import BpkNavigationTabGroup from '@skyscanner/backpack-web/bpk-component-navigation-tab-group';
+import { NAVIGATION_TAB_GROUP_TYPES } from '@skyscanner/backpack-web/bpk-component-navigation-tab-group/src/BpkNavigationTabGroup';
+import type { BpkNavigationTabGroupProps } from '@skyscanner/backpack-web/bpk-component-navigation-tab-group';
 
 const exploreIcons = withRtlSupport(Explore);
 

@@ -50,9 +50,9 @@ You **MUST** consider the user input before proceeding (if not empty).
    For each unknown in Technical Context:
      Task: "Research {unknown} in existing Backpack components"
    For similar components:
-     Task: "Review {similar component} in packages/ for patterns"
+     Task: "Review {similar component} in packages/backpack-web/src/ for patterns"
    For styling approach:
-     Task: "Review Sass mixins in packages/bpk-mixins/"
+     Task: "Review Sass mixins in packages/backpack-web/src/bpk-mixins/"
    For testing patterns:
      Task: "Review test files in similar components"
    For accessibility:

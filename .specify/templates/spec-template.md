@@ -306,7 +306,7 @@ type Bpk[ComponentName]Props = {
 - Browser support information
 - Link to Storybook
 
-### Storybook (`examples/bpk-component-[name]/stories.tsx`)
+### Storybook (`packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName].stories.tsx`)
 - Default story showing basic usage
 - Story for each variant/size combination
 - Story for interactive states (hover, focus, active)
@@ -388,6 +388,6 @@ packages/backpack-web/src/bpk-component-[name]/
 
 - **Backpack Constitution**: `.specify/memory/constitution.md`
 - **Architecture Decisions**: `decisions/` directory
-- **Component Examples**: Other components in `packages/`
+- **Component Examples**: Other components in `packages/backpack-web/src/`
 - **Design Tokens**: `@skyscanner/bpk-foundations-web`
-- **Sass Mixins**: `packages/bpk-mixins/`
+- **Sass Mixins**: `packages/backpack-web/src/bpk-mixins/`

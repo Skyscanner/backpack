@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ### BpkMultiSelectChipGroup
 
-This is a multiselectable chip group without any built in state management. State of chips must be managed by the consumer as passed in through the `chips` prop, using the `onClick` property of each chip to detect interaction. See [stories.tsx](/examples/bpk-component-chip-group/examples.tsx) for an example of how to manage state of chips.
+This is a multiselectable chip group without any built in state management. State of chips must be managed by the consumer as passed in through the `chips` prop, using the `onClick` property of each chip to detect interaction. See the [colocated stories](/packages/backpack-web/src/bpk-component-chip-group/src) for an example of how to manage state of chips.
 
 ```tsx
 import BpkMultiSelectChipGroup, {

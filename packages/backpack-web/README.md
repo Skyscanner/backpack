@@ -24,7 +24,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 
 ## List of packages
 
-[`bpk-animate-height`](/packages/bpk-animate-height)
+[`bpk-animate-height`](/packages/backpack-web/src/bpk-animate-height)
 [`bpk-component-accordion`](/packages/backpack-web/src/bpk-component-accordion)
 [`bpk-component-autosuggest`](/packages/backpack-web/src/bpk-component-autosuggest)
 [`bpk-component-badge`](/packages/backpack-web/src/bpk-component-badge)
@@ -81,12 +81,12 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-table`](/packages/backpack-web/src/bpk-component-table)
 [`bpk-component-text`](/packages/backpack-web/src/bpk-component-text)
 [`bpk-component-textarea`](/packages/backpack-web/src/bpk-component-textarea)
-[`bpk-theming`](/packages/bpk-theming)
+[`bpk-theming`](/packages/backpack-web/src/bpk-theming)
 [`bpk-component-ticket`](/packages/backpack-web/src/bpk-component-ticket)
 [`bpk-component-tooltip`](/packages/backpack-web/src/bpk-component-tooltip)
-[`bpk-react-utils`](/packages/bpk-react-utils)
-[`bpk-mixins`](/packages/bpk-mixins)
-[`bpk-stylesheets`](/packages/bpk-stylesheets)
+[`bpk-react-utils`](/packages/backpack-web/src/bpk-react-utils)
+[`bpk-mixins`](/packages/backpack-web/src/bpk-mixins)
+[`bpk-stylesheets`](/packages/backpack-web/src/bpk-stylesheets)
 
 ## List of external packages
 

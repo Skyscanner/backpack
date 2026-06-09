@@ -13,7 +13,7 @@ import BpkSkeleton, {
   SKELETON_TYPES,
   SIZE_TYPES, 
   IMAGE_SKELETON_STYLE 
-} from '../../packages/bpk-component-skeleton';
+} from '@skyscanner/backpack-web/bpk-component-skeleton';
 
 export default () => (
   <div>

@@ -87,8 +87,8 @@ Backpack uses two font bundles:
 Fallbacks are needed for non‑Latin scripts so text renders correctly everywhere.
 
 ### Where to change
-- Update Skyscanner Relative files and Noto fallback files in `packages/bpk-stylesheets/font.scss`.
-- Update Larken and Noto fallback files in `packages/bpk-stylesheets/larken.scss`.
+- Update Skyscanner Relative files and Noto fallback files in `packages/backpack-web/src/bpk-stylesheets/font.scss`.
+- Update Larken and Noto fallback files in `packages/backpack-web/src/bpk-stylesheets/larken.scss`.
 
 ### Locale and Font Mapping
 Defined in `font.scss`, `larken.scss`

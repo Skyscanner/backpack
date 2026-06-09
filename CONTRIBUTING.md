@@ -111,8 +111,8 @@ If you'd like to contribute a change to a React component, please first reach ou
 
 #### Example components
 Look at existing components for code style inspiration. Here are some good examples to follow:
-- [bpk-component-chip](./packages/bpk-component-chip/index.ts)
-- [bpk-component-button](./packages/bpk-component-button/index.ts)
+- [bpk-component-chip](./packages/backpack-web/src/bpk-component-chip/index.ts)
+- [bpk-component-button](./packages/backpack-web/src/bpk-component-button/index.ts)
 
 #### CSS
 
@@ -129,7 +129,7 @@ When creating or modifying SCSS files, follow these rules
 2. Use only what you need
    * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../bpk-mixins/tokens'` statement only
 3. Use `bpk-mixins` for Backpack components development
-   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/bpk-mixins`.
+   * If you need to add or modify a mixin, do it in `packages/backpack-web/src/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/backpack-web/src/bpk-mixins`.
 
 #### Adding a new component
 
@@ -138,7 +138,7 @@ If you want to add a new component:
 1. Use `bpk-component-boilerplate` to create a new skeleton React component
 2. Our components where possible are written as function components, familiarise yourself using [React component guidelines](https://react.dev/reference/react/Component) for more guidance
     - **For new components we restrict the use of `className` and `style` props to avoid allowing overwriting the component's styles and to ensure consistency across our product.**
-3. Create stories - stories are colocated with the component source code at `packages/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
+3. Create stories - stories are colocated with the component source code at `packages/backpack-web/src/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
@@ -149,7 +149,7 @@ If you want to add a new component:
     - Import the utility function: `import { getDataComponentAttribute } from '../../bpk-react-utils'` (adjust path based on component location)
     - Apply the attribute to the root element of your component: `{...getDataComponentAttribute('ComponentName')}`
     - This generates the `data-backpack-ds-component="ComponentName"` attribute automatically
-    - For an example, see [bpk-component-boilerplate](./packages/bpk-component-boilerplate/src/BpkBoilerplate.tsx)
+    - For an example, see [bpk-component-boilerplate](./packages/backpack-web/src/bpk-component-boilerplate/src/BpkBoilerplate.tsx)
     - Make sure the attribute is only applied to the outermost component element, not to nested elements or helper functions
 
 #### Contribute breaking changes
@@ -210,7 +210,7 @@ For patch and minor changes, you should use JSDoc annotations. JSDoc is a widely
 
 For major changes, you should create a new experimental V2 component. If the experiment is successful, the old component should be deprecated.
 
-The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButton` should be `packages/bpk-component-button/src/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
+The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButton` should be `packages/backpack-web/src/bpk-component-button/src/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
 
 Any follow-up changes to experimental components will not be considered breaking.
 </details>
@@ -332,7 +332,7 @@ FIGMA_ACCESS_TOKEN=<your-token> npm run figma:generate
 This runs two scripts in sequence:
 
 1. `npm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
-2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/bpk-component-icon/BpkIcon.figma.tsx`
+2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx`
 
 ### Import path configuration
 
@@ -340,7 +340,7 @@ This runs two scripts in sequence:
 
 ### Icon mappings
 
-Icon Code Connect mappings are auto-generated. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
+Icon Code Connect mappings are auto-generated. Do not edit `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
 
 ### Component mappings
 

@@ -14,7 +14,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
 import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
-import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
+import AirportsIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/airports';
 import BpkMap, {
   BpkIconMarker,
   BpkOverlayView,
