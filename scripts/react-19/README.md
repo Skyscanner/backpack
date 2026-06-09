@@ -68,6 +68,22 @@ When done, uninstall the codemod packages:
 npm uninstall codemod types-react-codemod
 ```
 
+## Tests
+
+`transforms/strip-proptypes.test.js` covers phase routing, skip-paths, and
+the stderr key annotations. Run with the built-in node test runner — no
+Jest/dev-deps needed:
+
+```bash
+node scripts/react-19/transforms/strip-proptypes.test.js
+```
+
+The "happy-path" output of Phase B (rewriting `Foo.defaultProps = { x: 1 }`
+into `{ x = 1 }`) is intentionally not asserted by the tests because it
+depends on the recast version bundled with the jscodeshift used to invoke
+the transform. The migration commit itself is the source of truth for that
+output.
+
 ## Future home
 
 This transform should ultimately move to
