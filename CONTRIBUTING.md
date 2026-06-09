@@ -48,6 +48,17 @@ They can be found at [backpack-android](https://github.com/skyscanner/backpack-a
 
 Once you have a compatible environment as stated above, you can setup the project.
 
+### Repository layout
+
+Backpack is an npm workspaces monorepo orchestrated with [Nx](https://nx.dev/). The root `package.json` declares `workspaces: ["packages/*", "libs/*"]`.
+
+- `packages/backpack-web/src/bpk-component-*/` — individual web component packages
+- `packages/backpack-web/src/bpk-mixins/` — Sass mixins consumed by components
+- `packages/backpack-web/src/bpk-stylesheets/` — compiled CSS
+- `libs/backpack-storybook-host/` — Storybook host configuration
+
+Older docs (and some links from external repos) refer to `packages/bpk-component-*` at the repository root. That layout is gone — every component now lives under `packages/backpack-web/src/`.
+
 1. Pull the code and create a new branch
 
 ```sh
@@ -102,6 +113,17 @@ Before you start writing code, we recommend familiarising yourself with the engi
 
 We also ship the type declaration files for all TypeScript components to ensure proper compatibility and usage of the components.
 
+#### AI assistance
+
+Backpack ships repo-aware Claude Code skills under [`.claude/skills/`](./.claude/skills/) to help with common contributor tasks:
+
+- `backpack-external-component-migration` — promote a component from a product repo into a Backpack package, applying naming conventions, modern Sass API, license headers, and the standard test gates.
+- `backpack-component-ts-migration` — migrate a `bpk-component-*` package from Flow to TypeScript end-to-end.
+- `backpack-code-review-checklist` — multi-agent PR review against the Backpack Constitution, including a learned-patterns pass over recent PR comments.
+- `backpack-v42-migration` — handle the v41 → v42 consumer upgrade.
+
+These skills are loaded automatically by Claude Code when working in this repo. They are accelerators, not approvals — the same review, lint, and test gates apply to AI-assisted PRs as to any other PR.
+
 #### React version
 
 Our current supported React version is 17.0.2, please be mindful when using React features that may not yet be supported.
@@ -109,10 +131,35 @@ Our current supported React version is 17.0.2, please be mindful when using Reac
 #### Design
 If you'd like to contribute a change to a React component, please first reach out to the backpack team on Slack to discuss and agree on the proposed change. Make sure to add to your message the design (Figma file) and include examples for each state e.g. disabled, expanded etc. if applicable.
 
-#### Example components
-Look at existing components for code style inspiration. Here are some good examples to follow:
-- [bpk-component-chip](./packages/bpk-component-chip/index.ts)
-- [bpk-component-button](./packages/bpk-component-button/index.ts)
+#### Composable components
+
+For new interactive components we prefer a composable / compound shape modelled on [Ark UI](https://ark-ui.com/). Each part of the component is exported individually and re-exported as a namespaced object so consumers compose the anatomy themselves:
+
+```tsx
+<BpkCollapsible.Root>
+  <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+  <BpkCollapsible.Content>...</BpkCollapsible.Content>
+</BpkCollapsible.Root>
+```
+
+Reference implementations to copy the shape from:
+
+- [bpk-component-collapsible](./packages/backpack-web/src/bpk-component-collapsible/) — wraps Ark's `Collapsible` primitive
+- [bpk-component-checkbox/BpkCheckboxV2](./packages/backpack-web/src/bpk-component-checkbox/src/BpkCheckboxV2/) — wraps Ark's `Checkbox` primitive
+- [bpk-component-checkbox-card](./packages/backpack-web/src/bpk-component-checkbox-card/) — checkbox-card built from the same primitive
+
+The convention is one file per part, with a top-level `Bpk{Name}.tsx` that compounds them into the namespaced export.
+
+File and SCSS conventions for compound components — sub-component naming (short exported API `Bpk{Name}.{Part}` vs full internal filename `Bpk{Name}{Part}.tsx`), `displayName`, single vs split SCSS, and folder shape — are documented in [`decisions/composable-component-conventions.md`](./decisions/composable-component-conventions.md). Read it before scaffolding.
+
+Implementation traps specific to Ark wrappers (ESLint allowlist, sibling `.module.css` for Jest, `data-state` handling, prop-name collisions, reapplying native HTML attributes) are documented in [`.claude/guidelines/bpk-new-component-workflow.md`](./.claude/guidelines/bpk-new-component-workflow.md).
+
+Single-file function components remain appropriate for purely presentational components with no internal state. Reference implementations:
+
+- [bpk-component-button](./packages/backpack-web/src/bpk-component-button/index.ts) — single-file function component
+- [bpk-component-chip](./packages/backpack-web/src/bpk-component-chip/index.ts) — package with several independent variants, each itself a single-file component
+
+When in doubt about which shape to use, open a GitHub issue or reach out to the Backpack team before scaffolding.
 
 #### CSS
 
@@ -129,27 +176,28 @@ When creating or modifying SCSS files, follow these rules
 2. Use only what you need
    * Instead of blank import of all mixins, import them on demand. E.g. if you need only colour tokens, add `@use '../bpk-mixins/tokens'` statement only
 3. Use `bpk-mixins` for Backpack components development
-   * If you need to add or modify a mixin, do it in `packages/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/bpk-mixins`.
+   * If you need to add or modify a mixin, do it in `packages/backpack-web/src/bpk-mixins`. Backpack now formally deprecates `@import` usage and uses the Modern Sass API in `packages/backpack-web/src/bpk-mixins`.
 
 #### Adding a new component
 
 If you want to add a new component:
 
-1. Use `bpk-component-boilerplate` to create a new skeleton React component
+1. Use [`bpk-component-boilerplate`](./packages/backpack-web/src/bpk-component-boilerplate/) to create a new skeleton React component. If your component is interactive or wraps an Ark UI primitive, follow the [composable shape](#composable-components) instead of the single-file boilerplate.
 2. Our components where possible are written as function components, familiarise yourself using [React component guidelines](https://react.dev/reference/react/Component) for more guidance
     - **For new components we restrict the use of `className` and `style` props to avoid allowing overwriting the component's styles and to ensure consistency across our product.**
-3. Create stories - stories are colocated with the component source code at `packages/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
+3. Create stories - stories are colocated with the component source code at `packages/backpack-web/src/bpk-component-{name}/src/{ComponentName}.stories.tsx`. Stories should cover most visual variants of a component. Read more about Storybook stories [here](https://storybook.js.org/docs/react/writing-stories/introduction)
 4. Create tests
     - Visual regression tests - Each UI component's stories should also include a story that begins with the name `VisualTest` - these will then be picked up by Percy to run on CI
     - Unit tests - Unit tests live in the same folder with the component's code and rely on `jest` and `React Testing Library`
     - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
 5. Add type declaration files within the same folder of the component to ensure proper compatibility and usage of the components
 6. Update `README.md` following the boilerplate format
-7. **Add data component attributes** - All components must include data attributes for design system tracking and automation:
+7. **Add a Figma Code Connect mapping.** Every new non-icon component must ship a `Bpk{Name}.figma.tsx` next to its source code, mapping the React API to the corresponding Figma component. After adding it, run `npm run figma:generate-config` to refresh `figma.config.json`. PRs without a `.figma.tsx` will fail the `sync-figma-code-connect` check on `main`. See the [Figma Code Connect](#figma-code-connect) section below for the full workflow.
+8. **Add data component attributes** - All components must include data attributes for design system tracking and automation:
     - Import the utility function: `import { getDataComponentAttribute } from '../../bpk-react-utils'` (adjust path based on component location)
     - Apply the attribute to the root element of your component: `{...getDataComponentAttribute('ComponentName')}`
     - This generates the `data-backpack-ds-component="ComponentName"` attribute automatically
-    - For an example, see [bpk-component-boilerplate](./packages/bpk-component-boilerplate/src/BpkBoilerplate.tsx)
+    - For an example, see [bpk-component-boilerplate](./packages/backpack-web/src/bpk-component-boilerplate/src/BpkBoilerplate.tsx)
     - Make sure the attribute is only applied to the outermost component element, not to nested elements or helper functions
 
 #### Contribute breaking changes
@@ -210,7 +258,7 @@ For patch and minor changes, you should use JSDoc annotations. JSDoc is a widely
 
 For major changes, you should create a new experimental V2 component. If the experiment is successful, the old component should be deprecated.
 
-The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButton` should be `packages/bpk-component-button/src/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
+The new component should be added in the same folder as the original component, further nested inside a folder which follows the `Bpk{ComponentName}V2` naming. For example, the full path for a new component `BpkButton` should be `packages/backpack-web/src/bpk-component-button/src/BpkButton.tsx`. The 2 components will then be exported in the `index.(js|ts)` file of `bpk-component-button`.
 
 Any follow-up changes to experimental components will not be considered breaking.
 </details>
@@ -275,7 +323,7 @@ For anything non-trivial, we strongly recommend speaking to somebody from Backpa
     * minor, A non-breaking change or a new component
     * patch, A fixed bug or updates to documentation
     * skip-changelog, The change you made should not end up in the release changelog
-6. Notify someone in Backpack design system team or drop a note in #backpack.
+6. Notify the Backpack design system team on the PR.
 
 Bear in mind that small, incremental pull requests are likely to be reviewed faster.
 
@@ -309,7 +357,7 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 <details>
 <summary>Publish packages (Backpack design system team only)</summary>
 
-Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please drop a note in #backpack and notify @design-system-web-gf.
+Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please notify the Backpack design system team on your PR.
 
 - Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
 - Ensure CI runs the release workflow successfully
@@ -319,7 +367,7 @@ Releases are managed by the Backpack design system team. If you have contributed
 
 ## Figma Code Connect
 
-Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. Pull requests that touch `.figma.tsx` files are validated with `figma connect publish --dry-run`, and once merged to `main` a GitHub Actions workflow automatically publishes the mappings to Figma.
+Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to link React components to their Figma designs. **A Figma Code Connect mapping is required for every new non-icon component before its PR can be merged.** Pull requests that touch `.figma.tsx` files are validated with `figma connect publish --dry-run`, and once merged to `main` a GitHub Actions workflow automatically publishes the mappings to Figma.
 
 ### Regenerating all Figma assets
 
@@ -332,7 +380,7 @@ FIGMA_ACCESS_TOKEN=<your-token> npm run figma:generate
 This runs two scripts in sequence:
 
 1. `npm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
-2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/bpk-component-icon/BpkIcon.figma.tsx`
+2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx`
 
 ### Import path configuration
 
@@ -340,11 +388,16 @@ This runs two scripts in sequence:
 
 ### Icon mappings
 
-Icon Code Connect mappings are auto-generated. Do not edit `packages/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
+Icon Code Connect mappings are auto-generated. Do not edit `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
 
 ### Component mappings
 
-For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. See existing `.figma.tsx` files for examples. After adding a new `.figma.tsx` file, run `npm run figma:generate-config` to update the import path mappings.
+For non-icon components, Code Connect mappings are written manually. Each component's mapping lives alongside its source code as `BpkComponentName.figma.tsx`. Reference examples:
+
+- [`bpk-component-button/src/BpkButton.figma.tsx`](./packages/backpack-web/src/bpk-component-button/src/BpkButton.figma.tsx) — single-element component
+- [`bpk-component-checkbox-card/src/BpkCheckboxCard.figma.tsx`](./packages/backpack-web/src/bpk-component-checkbox-card/src/BpkCheckboxCard.figma.tsx) — compound / composable component
+
+After adding a new `.figma.tsx` file, run `npm run figma:generate-config` to update the import path mappings.
 
 ### Publishing and validation
 
