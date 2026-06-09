@@ -5,9 +5,7 @@
     "target": "ES2022",
     "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "ignoreDeprecations": "6.0"
+    "skipLibCheck": true
   },
   "exclude": ["**/**/*.figma.tsx"]
 }
