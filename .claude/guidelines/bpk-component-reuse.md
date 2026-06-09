@@ -6,10 +6,10 @@
 
 ```bash
 # List all BPK component packages
-ls packages/ | grep bpk-component
+ls packages/backpack-web/src/ | grep bpk-component
 
 # Filter by concept keyword
-ls packages/ | grep -i "card\|chip\|badge\|notification"
+ls packages/backpack-web/src/ | grep -i "card\|chip\|badge\|notification"
 
 # Inspect what a package exports
 cat packages/backpack-web/src/bpk-component-{name}/index.ts
