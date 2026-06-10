@@ -233,6 +233,8 @@ jobs:
         if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          LOG_LEVEL: debug
+          PERCY_DEBUG: '*'
         run: |
           npm run percy-test 2>&1 | tee "${RUNNER_TEMP}/percy.log"
           # Assert success by the presence of a percy.io build URL rather than
