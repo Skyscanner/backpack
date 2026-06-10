@@ -113,4 +113,30 @@ export const App = () => (
     expect(metrics).not.toHaveProperty("componentCounts");
     expect(metrics).not.toHaveProperty("parseErrors");
   });
+
+  it("uses the default guard threshold when the input is omitted", async () => {
+    const result = await run({ cwd: repoPath, io: createTestIO() });
+
+    expect(result.guard.threshold).toBe(60);
+    expect(result.comparison.threshold).toBe(60);
+  });
+
+  it("uses the configured guard threshold", async () => {
+    const result = await run({
+      cwd: repoPath,
+      io: createTestIO({ threshold: "70" }),
+    });
+
+    expect(result.guard.threshold).toBe(70);
+    expect(result.comparison.threshold).toBe(70);
+  });
+
+  it("rejects an invalid guard threshold", async () => {
+    await expect(
+      run({
+        cwd: repoPath,
+        io: createTestIO({ threshold: "101" }),
+      }),
+    ).rejects.toThrow("Invalid threshold input");
+  });
 });

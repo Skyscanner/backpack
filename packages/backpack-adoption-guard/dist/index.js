@@ -66936,7 +66936,7 @@ function buildVisualComponentRegistry(files) {
 }
 
 // src/shared/config.ts
-var ADOPTION_GUARD_THRESHOLD = 60;
+var DEFAULT_ADOPTION_GUARD_THRESHOLD = 60;
 var BACKPACK_ADOPTION_OUTPUT_KEY = "backpack-adoption";
 var DEFAULT_PATTERN = "**/*.{jsx,tsx}";
 var DEFAULT_OUTPUT_PATH = "backpack-adoption-results.json";
@@ -67486,7 +67486,8 @@ var evaluateGuard = ({
   baseReport,
   dryRun,
   headReport,
-  isMain
+  isMain,
+  threshold
 }) => {
   const headBackpackPercentage = headReport.usage.backpack.percentage;
   const headParseErrorCount = headReport.parseErrors.length;
@@ -67496,7 +67497,7 @@ var evaluateGuard = ({
         status: "warn",
         reason: `Adoption metrics for \`main\` reported, but ${headParseErrorCount} file(s) were skipped (parse error). Reported numbers may be inaccurate.`,
         dryRun,
-        threshold: ADOPTION_GUARD_THRESHOLD,
+        threshold,
         baseBackpackPercentage: null,
         headBackpackPercentage,
         delta: null
@@ -67506,7 +67507,7 @@ var evaluateGuard = ({
       status: "pass",
       reason: "Adoption metrics for `main` are reported here for visibility. The guard never blocks on `main`.",
       dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
+      threshold,
       baseBackpackPercentage: null,
       headBackpackPercentage,
       delta: null
@@ -67517,7 +67518,7 @@ var evaluateGuard = ({
       status: dryRun ? "warn" : "fail",
       reason: dryRun ? "Could not load `main` for comparison; treated as warning because dry-run is enabled." : "Could not load `main` for comparison. Ensure the workflow uses `actions/checkout` and the base ref is reachable.",
       dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
+      threshold,
       baseBackpackPercentage: null,
       headBackpackPercentage,
       delta: null
@@ -67527,13 +67528,13 @@ var evaluateGuard = ({
   const delta = Number((headBackpackPercentage - baseBackpackPercentage).toFixed(2));
   const baseParseErrorCount = baseReport.parseErrors.length;
   const totalParseErrorCount = headParseErrorCount + baseParseErrorCount;
-  if (baseBackpackPercentage < ADOPTION_GUARD_THRESHOLD) {
+  if (baseBackpackPercentage < threshold) {
     const parseErrorNote = totalParseErrorCount > 0 ? ` ${totalParseErrorCount} file(s) were skipped (parse error); reported numbers may be inaccurate.` : "";
     return {
       status: "pass",
-      reason: `Main is currently below the ${ADOPTION_GUARD_THRESHOLD}% threshold, so this PR is reported but not blocked.${parseErrorNote}`,
+      reason: `Main is currently below the ${threshold}% threshold, so this PR is reported but not blocked.${parseErrorNote}`,
       dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
+      threshold,
       baseBackpackPercentage,
       headBackpackPercentage,
       delta
@@ -67548,7 +67549,7 @@ var evaluateGuard = ({
       status: dryRun ? "warn" : "fail",
       reason: dryRun ? `Skipped files in ${summary2}; treated as warning because dry-run is enabled.` : `Skipped files in ${summary2}; refusing to evaluate adoption with incomplete data.`,
       dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
+      threshold,
       baseBackpackPercentage,
       headBackpackPercentage,
       delta
@@ -67557,9 +67558,9 @@ var evaluateGuard = ({
   if (headBackpackPercentage < baseBackpackPercentage) {
     return {
       status: dryRun ? "warn" : "fail",
-      reason: dryRun ? "Backpack adoption decreased, but dry-run is enabled." : `Backpack adoption decreased after this repository had reached the ${ADOPTION_GUARD_THRESHOLD}% threshold.`,
+      reason: dryRun ? "Backpack adoption decreased, but dry-run is enabled." : `Backpack adoption decreased after this repository had reached the ${threshold}% threshold.`,
       dryRun,
-      threshold: ADOPTION_GUARD_THRESHOLD,
+      threshold,
       baseBackpackPercentage,
       headBackpackPercentage,
       delta
@@ -67569,7 +67570,7 @@ var evaluateGuard = ({
     status: "pass",
     reason: "Backpack adoption did not decrease.",
     dryRun,
-    threshold: ADOPTION_GUARD_THRESHOLD,
+    threshold,
     baseBackpackPercentage,
     headBackpackPercentage,
     delta
@@ -67751,6 +67752,7 @@ ${buildPlainEnglishMain(head)}
 | --- | --- |
 | Files analyzed | ${formatCount(head.filesAnalyzed)} |
 | backpack-web version | ${formatVersion(head.backpackWebVersion)} |
+| Guard threshold | ${guard.threshold.toFixed(2)}% |
 ${skippedRow}
 ${buildParseErrorDetails(head.parseErrors, "this run")}
 `;
@@ -67906,6 +67908,19 @@ var analyzeBaseReport = async ({
     return null;
   }
 };
+var parseThresholdInput = (input) => {
+  const value = input.trim();
+  if (!value) {
+    return DEFAULT_ADOPTION_GUARD_THRESHOLD;
+  }
+  const threshold = Number(value);
+  if (!Number.isFinite(threshold) || threshold < 0 || threshold > 100) {
+    throw new Error(
+      `Invalid threshold input: ${input}. Expected a number between 0 and 100.`
+    );
+  }
+  return threshold;
+};
 var run = async ({
   cwd = process.cwd(),
   io = createGitHubActionsIO()
@@ -67913,6 +67928,7 @@ var run = async ({
   const dryRun = getBooleanInput(io, "dry-run");
   const pattern = io.getInput("pattern") || DEFAULT_PATTERN;
   const outputPath = io.getInput("output-path") || DEFAULT_OUTPUT_PATH;
+  const threshold = parseThresholdInput(io.getInput("threshold"));
   const main = isMainBranch();
   const pullRequest = isPullRequestEvent();
   io.info(`Analyzing Backpack adoption in ${cwd}`);
@@ -67927,7 +67943,8 @@ var run = async ({
     baseReport,
     dryRun,
     headReport,
-    isMain: main
+    isMain: main,
+    threshold
   });
   const result = createActionResult({
     baseReport,

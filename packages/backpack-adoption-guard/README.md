@@ -3,7 +3,8 @@
 This GitHub Action calculates Backpack adoption for a consuming repository
 and writes the result to a JSON file. On pull requests it compares the PR
 checkout against the base checkout and fails only when the base adoption is
-already at least 60% and the PR lowers the Backpack adoption rate.
+already at least the configured threshold and the PR lowers the Backpack
+adoption rate.
 
 ```yaml
 - uses: actions/checkout@v6
@@ -18,8 +19,8 @@ The action transparently fetches the PR base commit on demand, so the default
 shallow `actions/checkout` is enough. If your runner blocks single-commit
 fetches, fall back to `fetch-depth: 0` on the checkout step.
 
-The guard threshold is maintained inside the action and is not configurable by
-consumer repositories.
+The guard threshold defaults to 60%. Consumer repositories can set the
+`threshold` input to use a different adoption starting point.
 
 ## Behaviour
 
@@ -27,15 +28,15 @@ The action emits one of three guard statuses:
 
 | Status | Meaning |
 | --- | --- |
-| ✅ `pass` | Adoption did not regress, or the run is informational only (`main`, or PR where main is still below 60%). |
+| ✅ `pass` | Adoption did not regress, or the run is informational only (`main`, or PR where main is still below the configured threshold). |
 | ⚠️ `warn` | The run is informational with caveats: a regression detected under `dry-run`, the base ref could not be loaded, files were skipped on a `main` run, or a would-be parse-error fail was downgraded by `dry-run`. The CI step does not fail. |
-| ❌ `fail` | The guard refused to pass: a regression after main reached the 60% threshold, files were skipped at or above the threshold (incomplete data), or the base ref could not be loaded (with `dry-run` off). |
+| ❌ `fail` | The guard refused to pass: a regression after main reached the configured threshold, files were skipped at or above the threshold (incomplete data), or the base ref could not be loaded (with `dry-run` off). |
 
 | Branch context | Behaviour |
 | --- | --- |
 | `refs/heads/main` | Reports adoption only. Never fails. Emits `warn` if files could not be parsed. |
-| Pull request, main adoption < 60% | Reports adoption. Never blocks; any skipped files are flagged in the report but do not change the result. |
-| Pull request, main adoption ≥ 60% | Fails when adoption drops, or when files were skipped on either side (incomplete data). `dry-run: true` downgrades the failure to a warning. |
+| Pull request, main adoption < configured threshold | Reports adoption. Never blocks; any skipped files are flagged in the report but do not change the result. |
+| Pull request, main adoption ≥ configured threshold | Fails when adoption drops, or when files were skipped on either side (incomplete data). `dry-run: true` downgrades the failure to a warning. |
 | Pull request, base ref unavailable | Fails (`warn` under `dry-run`) so the workflow surfaces the misconfiguration. |
 
 ## Inputs
@@ -45,6 +46,7 @@ The action emits one of three guard statuses:
 | `dry-run` | Report adoption drops as warnings instead of failing the PR. | No | `false` |
 | `pattern` | Glob for files scanned. | No | `**/*.{jsx,tsx}` |
 | `output-path` | Path for the generated adoption result JSON. | No | `backpack-adoption-results.json` |
+| `threshold` | Backpack adoption percentage threshold before the guard starts blocking decreases. | No | `60` |
 
 ## Uploading metrics to Cortex
 

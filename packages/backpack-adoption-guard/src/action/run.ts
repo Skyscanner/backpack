@@ -21,6 +21,7 @@ import { basename, dirname, resolve } from "node:path";
 import { analyzeRepository } from "../analysis/analyze-repository";
 import {
   BACKPACK_ADOPTION_OUTPUT_KEY,
+  DEFAULT_ADOPTION_GUARD_THRESHOLD,
   DEFAULT_OUTPUT_PATH,
   DEFAULT_PATTERN,
 } from "../shared/config";
@@ -147,6 +148,22 @@ const analyzeBaseReport = async ({
   }
 };
 
+const parseThresholdInput = (input: string) => {
+  const value = input.trim();
+  if (!value) {
+    return DEFAULT_ADOPTION_GUARD_THRESHOLD;
+  }
+
+  const threshold = Number(value);
+  if (!Number.isFinite(threshold) || threshold < 0 || threshold > 100) {
+    throw new Error(
+      `Invalid threshold input: ${input}. Expected a number between 0 and 100.`,
+    );
+  }
+
+  return threshold;
+};
+
 export const run = async ({
   cwd = process.cwd(),
   io = createGitHubActionsIO(),
@@ -154,6 +171,7 @@ export const run = async ({
   const dryRun = getBooleanInput(io, "dry-run");
   const pattern = io.getInput("pattern") || DEFAULT_PATTERN;
   const outputPath = io.getInput("output-path") || DEFAULT_OUTPUT_PATH;
+  const threshold = parseThresholdInput(io.getInput("threshold"));
   const main = isMainBranch();
   const pullRequest = isPullRequestEvent();
 
@@ -173,6 +191,7 @@ export const run = async ({
     dryRun,
     headReport,
     isMain: main,
+    threshold,
   });
   const result = createActionResult({
     baseReport,

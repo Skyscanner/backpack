@@ -113,6 +113,7 @@ ${buildPlainEnglishMain(head)}
 | --- | --- |
 | Files analyzed | ${formatCount(head.filesAnalyzed)} |
 | backpack-web version | ${formatVersion(head.backpackWebVersion)} |
+| Guard threshold | ${guard.threshold.toFixed(2)}% |
 ${skippedRow}
 ${buildParseErrorDetails(head.parseErrors, "this run")}
 `;

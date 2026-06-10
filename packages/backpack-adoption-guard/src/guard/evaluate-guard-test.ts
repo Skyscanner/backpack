@@ -34,9 +34,15 @@ const reportWithBackpackPercentage = (percentage: number): AdoptionReport => ({
   componentCounts: {},
 });
 
+const DEFAULT_THRESHOLD = 60;
+
+const evaluate = (
+  options: Omit<Parameters<typeof evaluateGuard>[0], "threshold">,
+) => evaluateGuard({ ...options, threshold: DEFAULT_THRESHOLD });
+
 describe("evaluateGuard", () => {
   it("passes when base adoption is below the threshold even if head decreases", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(59),
       dryRun: false,
       headReport: reportWithBackpackPercentage(58),
@@ -48,7 +54,7 @@ describe("evaluateGuard", () => {
   });
 
   it("fails when base adoption is at threshold and head decreases", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(60),
       dryRun: false,
       headReport: reportWithBackpackPercentage(59.5),
@@ -60,7 +66,7 @@ describe("evaluateGuard", () => {
   });
 
   it("passes when base adoption is at threshold and head is unchanged", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(60),
       dryRun: false,
       headReport: reportWithBackpackPercentage(60),
@@ -71,7 +77,7 @@ describe("evaluateGuard", () => {
   });
 
   it("passes when base adoption is at threshold and head increases", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(61),
       dryRun: false,
       headReport: reportWithBackpackPercentage(62),
@@ -83,7 +89,7 @@ describe("evaluateGuard", () => {
   });
 
   it("converts a failing PR result to warning in dry-run mode", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(70),
       dryRun: true,
       headReport: reportWithBackpackPercentage(69),
@@ -94,7 +100,7 @@ describe("evaluateGuard", () => {
   });
 
   it("passes on main when no parse errors", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: null,
       dryRun: false,
       headReport: reportWithBackpackPercentage(10),
@@ -110,7 +116,7 @@ describe("evaluateGuard", () => {
       { file: "src/Broken.tsx", message: "Unexpected token" },
     ];
 
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: null,
       dryRun: false,
       headReport,
@@ -122,7 +128,7 @@ describe("evaluateGuard", () => {
   });
 
   it("fails on PR when base ref cannot be loaded", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: null,
       dryRun: false,
       headReport: reportWithBackpackPercentage(75),
@@ -134,7 +140,7 @@ describe("evaluateGuard", () => {
   });
 
   it("warns on PR with missing base ref under dry-run", () => {
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: null,
       dryRun: true,
       headReport: reportWithBackpackPercentage(75),
@@ -150,7 +156,7 @@ describe("evaluateGuard", () => {
       { file: "src/Broken.tsx", message: "Unexpected token" },
     ];
 
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(70),
       dryRun: false,
       headReport,
@@ -167,7 +173,7 @@ describe("evaluateGuard", () => {
       { file: "src/Stale.tsx", message: "Unexpected token" },
     ];
 
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport,
       dryRun: false,
       headReport: reportWithBackpackPercentage(72),
@@ -184,7 +190,7 @@ describe("evaluateGuard", () => {
       { file: "src/Broken.tsx", message: "Unexpected token" },
     ];
 
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(30),
       dryRun: false,
       headReport,
@@ -202,7 +208,7 @@ describe("evaluateGuard", () => {
       { file: "src/Broken.tsx", message: "Unexpected token" },
     ];
 
-    const result = evaluateGuard({
+    const result = evaluate({
       baseReport: reportWithBackpackPercentage(70),
       dryRun: true,
       headReport,
@@ -212,4 +218,17 @@ describe("evaluateGuard", () => {
     expect(result.status).toBe("warn");
   });
 
+  it("uses the configured threshold when deciding whether to block", () => {
+    const result = evaluateGuard({
+      baseReport: reportWithBackpackPercentage(65),
+      dryRun: false,
+      headReport: reportWithBackpackPercentage(64),
+      isMain: false,
+      threshold: 70,
+    });
+
+    expect(result.status).toBe("pass");
+    expect(result.threshold).toBe(70);
+    expect(result.reason).toContain("70% threshold");
+  });
 });

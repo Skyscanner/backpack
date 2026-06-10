@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const ADOPTION_GUARD_THRESHOLD = 60;
+export const DEFAULT_ADOPTION_GUARD_THRESHOLD = 60;
 
 // Top-level key in the generated results JSON. Consumers shipping the JSON to
 // Cortex via Skyscanner/push-custom-cortex-data should use this same value as
