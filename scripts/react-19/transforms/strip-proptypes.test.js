@@ -126,6 +126,17 @@ export default Foo;
   assert.equal(output, null, 'no change on .js — Phase A is TS/TSX only');
 });
 
+test('Phase B: merges defaultProps into destructure pattern', () => {
+  const input = `
+const Foo = ({ name }: { name?: string }) => name;
+Foo.defaultProps = { name: 'hello' };
+export default Foo;
+`;
+  const { output } = run(input);
+  assert.ok(output, 'transform should report a change');
+  assert.doesNotMatch(output, /\.defaultProps\b/);
+});
+
 test('Phase B skip: function uses props as Identifier with no top-level destructure', () => {
   const input = `
 function Foo(props: { count?: number }) {
