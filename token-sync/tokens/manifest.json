@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T18:24:42.103Z",
+  "generatedAt": "2026-06-09T18:41:42.877Z",
   "files": [
     {
       "fileName": "backpack.light.json",
@@ -26,7 +26,7 @@
       "collectionName": "Primitives",
       "modeName": "Hex",
       "role": "primitive",
-      "variableCount": 107,
+      "variableCount": 112,
       "preservedAliasCount": 0,
       "inlinedAliasCount": 0,
       "skippedVariableCount": 0
