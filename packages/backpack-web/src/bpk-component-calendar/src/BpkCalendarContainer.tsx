@@ -109,8 +109,10 @@ const focusedDateHasChanged = <T extends {}>(
   prevProps: CalendarProps<T>,
   currentProps: CalendarProps<T>,
 ) => {
-  const prevSelectConfig = prevProps.selectionConfiguration!;
-  const currentSelectConfig = currentProps.selectionConfiguration!;
+  const prevSelectConfig =
+    prevProps.selectionConfiguration ?? DEFAULT_SELECTION_CONFIGURATION;
+  const currentSelectConfig =
+    currentProps.selectionConfiguration ?? DEFAULT_SELECTION_CONFIGURATION;
 
   const rawCurrentSelectedDate =
     currentSelectConfig.type === CALENDAR_SELECTION_TYPE.single
@@ -388,8 +390,8 @@ const withCalendarState = <P extends object>(Calendar: ComponentType<P>) => {
         markToday = DEFAULT_MARK_TODAY,
         maxDate = DEFAULT_MAX_DATE,
         minDate = DEFAULT_MIN_DATE,
-        onDateSelect,
-        onMonthChange,
+        onDateSelect = null,
+        onMonthChange = null,
         selectionConfiguration = DEFAULT_SELECTION_CONFIGURATION,
         ...calendarProps
       } = this.props;

@@ -138,9 +138,10 @@ class BpkDatepicker extends Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
-    const { isOpen } = this.props;
+    const { isOpen = false } = this.props;
+    const { isOpen: prevIsOpen = false } = prevProps;
 
-    if (prevProps.isOpen !== isOpen && prevState.isOpen !== isOpen) {
+    if (prevIsOpen !== isOpen && prevState.isOpen !== isOpen) {
       if (isOpen) {
         this.onOpen();
       } else {
