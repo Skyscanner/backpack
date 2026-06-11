@@ -192,11 +192,13 @@
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
     "tsx": "^4.19.2",
-    "typescript": "^5.9.2",
+    "typescript": "^6.0.3",
     "webpack": "^5.107.2",
     "wrapper-webpack-plugin": "^2.2.2"
   },
   "overrides": {
-    "braces": "3.0.3"
+    "braces": "3.0.3",
+    "@typescript-eslint/utils": "^8.59.4",
+    "@typescript-eslint/typescript-estree": "^8.59.4"
   }
 }
