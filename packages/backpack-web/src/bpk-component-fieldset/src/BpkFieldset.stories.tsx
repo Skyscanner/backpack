@@ -95,7 +95,7 @@ type FieldsetContainerProps = {
   description?: string;
   required?: boolean;
   className?: string | null;
-  children: ReactElement;
+  children: ReactElement<any>;
 };
 
 type FieldsetContainerState = {

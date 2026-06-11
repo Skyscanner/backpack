@@ -78,20 +78,20 @@ type Props = {
 
 const BpkMap = (props: Props) => {
   const {
-    bounds,
-    center,
-    children,
-    className,
-    greedyGestureHandling,
-    mapId,
-    mapOptionStyles,
-    mapRef,
-    onRegionChange,
-    onTilesLoaded,
-    onZoom,
-    panEnabled,
-    showControls,
-    zoom,
+    bounds = null,
+    center = undefined,
+    children = null,
+    className = null,
+    greedyGestureHandling = false,
+    mapId = null,
+    mapOptionStyles = null,
+    mapRef = null,
+    onRegionChange = null,
+    onTilesLoaded = null,
+    onZoom = null,
+    panEnabled = true,
+    showControls = true,
+    zoom = 15,
   } = props;
 
   if (!bounds && !center) {
@@ -208,23 +208,6 @@ BpkMap.propTypes = {
     }),
   ),
   mapId: PropTypes.string,
-};
-
-BpkMap.defaultProps = {
-  bounds: null,
-  center: undefined,
-  children: null,
-  greedyGestureHandling: false,
-  mapRef: null,
-  onRegionChange: null,
-  onZoom: null,
-  onTilesLoaded: null,
-  panEnabled: true,
-  showControls: true,
-  zoom: 15,
-  className: null,
-  mapOptionStyles: null,
-  mapId: null,
 };
 
 export default BpkMap;

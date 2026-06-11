@@ -49,11 +49,11 @@ const BpkChartGridLines = (props: Props) => {
   const {
     height,
     margin,
-    numTicks,
+    numTicks = null,
     orientation,
     scale,
-    tickEvery,
-    tickOffset,
+    tickEvery = 1,
+    tickOffset = 0,
     width,
     ...rest
   } = props;
@@ -80,12 +80,12 @@ const BpkChartGridLines = (props: Props) => {
 
   const toLine = (tick, i) => (
     // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-    <line
+    (<line
       className={getClassName('bpk-chart__grid-line')}
       key={`${orientation}gridline${i.toString()}`}
       {...lineProps(tick)}
       {...rest}
-    />
+    />)
   );
 
   return (
@@ -108,12 +108,6 @@ BpkChartGridLines.propTypes = {
   numTicks: PropTypes.number,
   tickOffset: PropTypes.number,
   tickEvery: PropTypes.number,
-};
-
-BpkChartGridLines.defaultProps = {
-  numTicks: null,
-  tickOffset: 0,
-  tickEvery: 1,
 };
 
 export default BpkChartGridLines;

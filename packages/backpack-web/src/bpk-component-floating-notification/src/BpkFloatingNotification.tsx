@@ -17,7 +17,7 @@
  */
 
 import type { MouseEvent, FunctionComponent } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -58,6 +58,7 @@ export type Props = {
 
 const BpkFloatingNotification = (props: Props) => {
   const [showMessage, setShowMessage] = useState(true);
+  const nodeRef = useRef<HTMLDivElement>(null);
 
   const {
     animateOnEnter = true,
@@ -91,6 +92,7 @@ const BpkFloatingNotification = (props: Props) => {
   return (
     <CSSTransition
       in={showMessage}
+      nodeRef={nodeRef}
       classNames={{
         exit: getClassName('bpk-floating-notification--leave'),
         exitActive: getClassName('bpk-floating-notification--leave-active'),
@@ -104,6 +106,7 @@ const BpkFloatingNotification = (props: Props) => {
       onExited={onExit}
     >
       <div
+        ref={nodeRef}
         className={classNames}
         {...getDataComponentAttribute('FloatingNotification')}
         {...rest}

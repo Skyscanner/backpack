@@ -30,7 +30,6 @@ import LargeLongArrowRightIcon from '../../bpk-component-icon/lg/long-arrow-righ
 import SmallLightningIcon from '../../bpk-component-icon/sm/lightning';
 import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkButton from './BpkButton';

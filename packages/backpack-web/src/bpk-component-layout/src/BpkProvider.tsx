@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactNode, JSX } from 'react';
 import { useEffect, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';

@@ -42,7 +42,7 @@ type Props = {
 };
 
 const BpkSectionListItem = (props: Props) => {
-  const { blank, children, className, href, onClick, ...rest } = props;
+  const { blank = false, children, className = null, href = null, onClick = null, ...rest } = props;
   const classNames = [
     getClassName(
       'bpk-section-list-item',
@@ -101,13 +101,6 @@ BpkSectionListItem.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
   onClick: PropTypes.func,
-};
-
-BpkSectionListItem.defaultProps = {
-  blank: false,
-  className: null,
-  href: null,
-  onClick: null,
 };
 
 export default BpkSectionListItem;

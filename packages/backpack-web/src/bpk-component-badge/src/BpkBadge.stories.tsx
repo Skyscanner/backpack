@@ -39,7 +39,6 @@ import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';

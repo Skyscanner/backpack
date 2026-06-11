@@ -41,7 +41,7 @@ export type Props = {
 };
 
 const BpkIconMarker = (props: Props) => {
-  const { buttonProps, className, icon, onClick, position, selected, ...rest } =
+  const { buttonProps = null, className = null, icon, onClick = null, position, selected = false, ...rest } =
     props;
 
   const wrapperClassNames = getClassName(
@@ -83,13 +83,6 @@ BpkIconMarker.propTypes = {
   onClick: PropTypes.func,
   selected: PropTypes.bool,
   buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-BpkIconMarker.defaultProps = {
-  className: null,
-  onClick: null,
-  selected: false,
-  buttonProps: null,
 };
 
 export default BpkIconMarker;

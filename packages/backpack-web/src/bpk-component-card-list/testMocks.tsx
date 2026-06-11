@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { JSX } from 'react';
+
 import BpkCard from '../bpk-component-card';
 
 const mockCards = (numberOfCards: number): JSX.Element[] =>

@@ -75,8 +75,8 @@
   },
   "peerDependencies": {
     "date-fns": "3.3.1 - 4",
-    "react": "17.0.2 - 18.3.1",
-    "react-dom": "17.0.2 - 18.3.1",
+    "react": "18.3.1 - 19.2.5",
+    "react-dom": "18.3.1 - 19.2.5",
     "react-transition-group": "^4.4.5",
     "sass": "^1",
     "sass-embedded": "^1"
