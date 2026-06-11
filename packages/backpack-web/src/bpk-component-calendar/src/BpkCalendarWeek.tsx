@@ -186,10 +186,10 @@ function getSelectionType(
  * @returns {Boolean} based on if the date has changed
  */
 const singleDateHandler = (props: Props, nextProps: Props) => {
-  const currentSelectConfig =
-    props.selectionConfiguration as SelectionConfigurationSingle;
-  const nextSelectConfig =
-    nextProps.selectionConfiguration as SelectionConfigurationSingle;
+  const currentSelectConfig = (props.selectionConfiguration ??
+    DEFAULT_SELECTION_CONFIGURATION) as SelectionConfigurationSingle;
+  const nextSelectConfig = (nextProps.selectionConfiguration ??
+    DEFAULT_SELECTION_CONFIGURATION) as SelectionConfigurationSingle;
 
   if (
     ((nextSelectConfig.date &&
@@ -214,10 +214,11 @@ const singleDateHandler = (props: Props, nextProps: Props) => {
  * @returns {Boolean} based on if the date has changed
  */
 const rangeDateHandler = (props: Props, nextProps: Props) => {
-  const { endDate, startDate } =
-    props.selectionConfiguration as SelectionConfigurationRange;
+  const { endDate, startDate } = (props.selectionConfiguration ??
+    DEFAULT_SELECTION_CONFIGURATION) as SelectionConfigurationRange;
   const { endDate: nextEndDate, startDate: nextStartDate } =
-    nextProps.selectionConfiguration as SelectionConfigurationRange;
+    (nextProps.selectionConfiguration ??
+      DEFAULT_SELECTION_CONFIGURATION) as SelectionConfigurationRange;
 
   const startDateChanged =
     startDate && nextStartDate && !isSameDay(startDate, nextStartDate);

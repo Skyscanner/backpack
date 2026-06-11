@@ -158,7 +158,7 @@ class BpkImage extends Component<BpkImageProps> {
           }}
           style={{ height: 0, paddingBottom: aspectRatioPercentage }}
           className={classNames.join(' ')}
-          suppressHydrationWarning={this.props.suppressHydrationWarning}
+          suppressHydrationWarning={!!this.props.suppressHydrationWarning}
         >
           {/*
             Image needs to come before the spinner to avoid a problem where
