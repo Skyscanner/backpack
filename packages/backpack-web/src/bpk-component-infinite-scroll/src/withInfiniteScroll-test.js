@@ -388,6 +388,55 @@ describe('withInfiniteScroll', () => {
     expect(onFinished).toHaveBeenCalled();
   });
 
+  it('updateData reset should use initiallyLoadedElements, not elementsPerScroll', async () => {
+    const data = Array.from({ length: 20 }, (_, i) => `Element ${i}`);
+    const myDs = mockDataSource(data);
+
+    render(
+      <InfiniteList
+        dataSource={myDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+    await nextTick(); // componentDidMount: fetchItems(0, 11)
+
+    myDs.updateData(data); // triggers updateData — should reset with initiallyLoadedElements
+    await nextTick();
+
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(1, 0, 11);
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(2, 0, 11);
+  });
+
+  it('dataSource prop change should use initiallyLoadedElements, not elementsPerScroll', async () => {
+    const data = Array.from({ length: 20 }, (_, i) => `Element ${i}`);
+    const myDs = mockDataSource(data);
+
+    const { rerender } = render(
+      <InfiniteList
+        dataSource={myDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+    await nextTick(); // componentDidMount: fetchItems(0, 11)
+
+    const newData = Array.from({ length: 20 }, (_, i) => `New Element ${i}`);
+    const newDs = mockDataSource(newData);
+
+    rerender(
+      <InfiniteList
+        dataSource={newDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+    await nextTick();
+
+    // componentDidUpdate dataSource change — should use initiallyLoadedElements, not elementsPerScroll
+    expect(newDs.fetchItems).toHaveBeenCalledWith(0, 11);
+  });
+
   it('should finish the list when data source returns less than the number of elements requested', async () => {
     const myDs = mockDataSource(elementsArray);
 
