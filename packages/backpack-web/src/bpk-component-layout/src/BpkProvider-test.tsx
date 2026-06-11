@@ -187,6 +187,42 @@ describe('BpkProvider - RTL support', () => {
     expect(getByTestId('locale').textContent).toBe('en-US');
   });
 
+  it('falls back to en-US and does not crash when html[lang] is an invalid locale (numeric string)', async () => {
+    document.documentElement.setAttribute('lang', '123');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to en-US and does not crash when html[lang] is an empty string', async () => {
+    document.documentElement.setAttribute('lang', '');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('passes a valid html[lang] through to Ark unchanged', () => {
+    document.documentElement.setAttribute('lang', 'en-GB');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-GB');
+  });
+
   it('disconnects MutationObserver on unmount', () => {
     const disconnectSpy = jest.spyOn(MutationObserver.prototype, 'disconnect');
 
