@@ -92,9 +92,6 @@ const getArkLocale = (): string => {
 
   if (lang) {
     try {
-      // Intl.Locale throws if lang is not a valid BCP 47 tag.
-      // The assignment and if-check are intentional to satisfy the no-new
-      // ESLint rule — Intl.Locale always returns a truthy object on success.
       const locale = new Intl.Locale(lang);
       if (locale) return lang;
     } catch {
