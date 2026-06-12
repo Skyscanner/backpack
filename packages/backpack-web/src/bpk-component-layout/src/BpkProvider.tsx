@@ -92,8 +92,9 @@ const getArkLocale = (): string => {
 
   if (lang) {
     try {
-      new Intl.Locale(lang);
-      return lang;
+      // Validates lang — Intl.Locale throws if not a valid BCP 47 tag
+      const isValid = !!new Intl.Locale(lang);
+      if (isValid) return lang;
     } catch {
       // Invalid locale string — fall through to default
     }
