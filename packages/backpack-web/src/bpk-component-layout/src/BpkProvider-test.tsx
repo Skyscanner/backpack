@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+import { Component } from 'react';
+
 import { useLocaleContext } from '@ark-ui/react';
 import { act, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -23,6 +26,39 @@ import '@testing-library/jest-dom';
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
+
+// Mirrors the production topology: error boundary whose fallback also mounts BpkProvider.
+// This is exactly the structure that causes the infinite remount loop.
+class LoopBoundary extends Component<
+  { children: ReactNode },
+  { errored: boolean }
+> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { errored: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { errored: true };
+  }
+
+  componentDidCatch() {
+    this.catchCount += 1;
+  }
+
+  catchCount = 0;
+
+  render() {
+    if (this.state.errored) {
+      return (
+        <BpkProvider>
+          <div data-testid="fallback">fallback</div>
+        </BpkProvider>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 const LocaleReader = () => {
   const { locale } = useLocaleContext();
@@ -185,6 +221,66 @@ describe('BpkProvider - RTL support', () => {
     });
 
     expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to en-US and does not crash when html[lang] is an invalid locale (numeric string)', () => {
+    document.documentElement.setAttribute('lang', '123');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to en-US and does not crash when html[lang] is an empty string', () => {
+    document.documentElement.setAttribute('lang', '');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('does not loop when ErrorBoundary fallback also mounts BpkProvider with invalid html[lang]', () => {
+    document.documentElement.setAttribute('lang', '123');
+
+    // Suppress expected React error output for this test
+    jest.spyOn(console, 'error').mockImplementation(jest.fn());
+
+    const boundary = { current: null as LoopBoundary | null };
+    render(
+      // LoopBoundary mirrors the production topology: ErrorBoundary whose fallback
+      // also mounts BpkProvider. Without the fix this render() never returns —
+      // it exhausts the JS heap as BpkProvider → Ark throws → boundary remounts
+      // BpkProvider → repeat. With the fix BpkProvider never throws.
+      <LoopBoundary ref={(el) => { boundary.current = el; }}>
+        <BpkProvider>
+          <div>content</div>
+        </BpkProvider>
+      </LoopBoundary>,
+    );
+
+    expect(boundary.current?.catchCount).toBe(0);
+
+    jest.restoreAllMocks();
+  });
+
+  it('passes a valid html[lang] through to Ark unchanged', () => {
+    document.documentElement.setAttribute('lang', 'en-GB');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-GB');
   });
 
   it('disconnects MutationObserver on unmount', () => {
