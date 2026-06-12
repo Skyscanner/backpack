@@ -17,8 +17,21 @@
  */
 
 import { useLocaleContext } from '@ark-ui/react';
-import { act, render } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+
+import createCache from '@emotion/cache';
+
+jest.mock('@emotion/cache', () =>
+  jest.fn((options: object) => {
+    const realCreateCache =
+      jest.requireActual<typeof import('@emotion/cache')>('@emotion/cache')
+        .default;
+    return realCreateCache(options);
+  }),
+);
+
+const mockCreateCache = createCache as jest.Mock;
 
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
@@ -28,6 +41,91 @@ const LocaleReader = () => {
   const { locale } = useLocaleContext();
   return <span data-testid="locale">{locale}</span>;
 };
+
+describe('BpkProvider - Emotion cache', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+    delete (window as any).Cypress;
+    delete (window as any).hotelsDisableEmotionSpeedy;
+  });
+
+  it('creates cache without speedy in a normal (non-Cypress) environment', () => {
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    expect(mockCreateCache).toHaveBeenCalledWith({ key: 'css' });
+    expect(mockCreateCache).not.toHaveBeenCalledWith(
+      expect.objectContaining({ speedy: false }),
+    );
+  });
+
+  it('creates cache with speedy: false when hotelsDisableEmotionSpeedy is set', async () => {
+    (window as any).hotelsDisableEmotionSpeedy = true;
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateCache).toHaveBeenCalledWith({
+        key: 'css',
+        speedy: false,
+      });
+    });
+  });
+
+  it('creates cache with speedy: false when window.Cypress is set', async () => {
+    (window as any).Cypress = {};
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateCache).toHaveBeenCalledWith({
+        key: 'css',
+        speedy: false,
+      });
+    });
+  });
+
+  it('recreates the cache after mount in Cypress to replace hydration-stripped styles', async () => {
+    (window as any).hotelsDisableEmotionSpeedy = true;
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      const speedyCalls = mockCreateCache.mock.calls.filter(
+        (args: any[]) => args[0]?.speedy === false,
+      );
+      expect(speedyCalls.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  it('does not create a new cache when nested inside another BpkProvider', () => {
+    render(
+      <BpkProvider>
+        <BpkProvider>
+          <div />
+        </BpkProvider>
+      </BpkProvider>,
+    );
+
+    // Only the outermost BpkProvider should create a cache
+    expect(mockCreateCache).toHaveBeenCalledTimes(1);
+  });
+});
 
 describe('BpkProvider', () => {
   it('renders children inside Chakra system without crashing', () => {
