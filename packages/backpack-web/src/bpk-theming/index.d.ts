@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+// Hand-written declaration for the JS-only `bpk-theming` package. Remove once
+// BpkThemeProvider moves to TS.
 import type { ComponentType, ReactNode } from 'react';
 
 interface BpkThemeProviderProps {
