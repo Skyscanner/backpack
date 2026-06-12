@@ -92,6 +92,10 @@
       "<rootDir>/scripts/jest/normalizeUseIdSerializer.js"
     ],
     "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/packages/backpack-adoption-guard/"
+    ],
     "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",
     "transformIgnorePatterns": [
       "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
@@ -106,6 +110,7 @@
     "Samsung >= 29"
   ],
   "devDependencies": {
+    "@actions/core": "1.11.1",
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.3",
     "@babel/plugin-proposal-class-properties": "^7.18.6",

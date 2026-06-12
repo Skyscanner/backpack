@@ -1,0 +1,140 @@
+name: Backpack Adoption Guard Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release, e.g. 1.2.3 (no v prefix, no namespace)'
+        required: true
+        type: string
+      ref:
+        description: 'Branch or commit SHA to tag from'
+        required: false
+        type: string
+        default: 'main'
+      dry_run:
+        description: 'Validate only, do not push tags'
+        required: false
+        type: boolean
+        default: false
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+permissions: {}
+
+jobs:
+  Validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      release_tag: ${{ steps.compute.outputs.release_tag }}
+      major_tag: ${{ steps.compute.outputs.major_tag }}
+      target_sha: ${{ steps.resolve.outputs.target_sha }}
+    steps:
+      - name: Compute and validate tag names
+        id: compute
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Version must be MAJOR.MINOR.PATCH (got: $VERSION)"
+            exit 1
+          fi
+          MAJOR="${VERSION%%.*}"
+          echo "release_tag=backpack-adoption-guard/v${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "major_tag=backpack-adoption-guard/v${MAJOR}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Resolve ref to immutable SHA
+        id: resolve
+        env:
+          TARGET_REF: ${{ inputs.ref }}
+        run: |
+          sha="$(git rev-parse --verify "${TARGET_REF}^{commit}")"
+          echo "target_sha=${sha}" >> "$GITHUB_OUTPUT"
+          echo "Resolved ${TARGET_REF} -> ${sha}"
+
+      - name: Ensure release tag does not already exist
+        env:
+          RELEASE_TAG: ${{ steps.compute.outputs.release_tag }}
+        run: |
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists"
+            exit 1
+          fi
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm ci
+      - run: npx nx run backpack-adoption-guard:lint
+      - run: npx nx run backpack-adoption-guard:typecheck
+      - run: npx nx run backpack-adoption-guard:test
+      - run: npx nx run backpack-adoption-guard:verify-dist
+
+  CreateTags:
+    runs-on: ubuntu-latest
+    needs: [Validate]
+    if: ${{ !inputs.dry_run }}
+    # contents: read covers the checkout below; tag pushes use the App token
+    # via http.extraHeader, so the default GITHUB_TOKEN never needs write.
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.Validate.outputs.target_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Create release tag and move major tag
+        env:
+          RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
+          MAJOR_TAG: ${{ needs.Validate.outputs.major_tag }}
+          TARGET_SHA: ${{ needs.Validate.outputs.target_sha }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG" "$TARGET_SHA"
+          git tag -f -a "$MAJOR_TAG" -m "$RELEASE_TAG" "$TARGET_SHA"
+
+          git -c http.extraHeader="Authorization: Bearer $GH_TOKEN" \
+            push origin "refs/tags/$RELEASE_TAG"
+          git -c http.extraHeader="Authorization: Bearer $GH_TOKEN" \
+            push origin "refs/tags/$MAJOR_TAG" --force
+
+      - name: Summary
+        env:
+          RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
+          MAJOR_TAG: ${{ needs.Validate.outputs.major_tag }}
+          TARGET_SHA: ${{ needs.Validate.outputs.target_sha }}
+        run: |
+          {
+            echo "## Released"
+            echo "- Immutable tag: \`$RELEASE_TAG\`"
+            echo "- Floating major tag: \`$MAJOR_TAG\`"
+            echo "- Commit: \`$TARGET_SHA\`"
+            echo ""
+            echo "Consumers can now use:"
+            echo '```yaml'
+            echo "uses: Skyscanner/backpack/packages/backpack-adoption-guard@$RELEASE_TAG"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
