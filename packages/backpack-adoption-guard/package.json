@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/babel__traverse": "7.28.0",
     "@types/node": "25.9.1",
-    "esbuild": "0.27.7",
+    "esbuild": "0.28.1",
     "typescript": "5.9.3"
   }
 }
