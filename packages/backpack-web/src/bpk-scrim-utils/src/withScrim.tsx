@@ -44,6 +44,9 @@ import STYLES from './bpk-scrim-content.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+const DEFAULT_IS_IPHONE = isDeviceIphone();
+const DEFAULT_IS_IPAD = isDeviceIpad();
+
 export type Props = {
   /**
    * The `pagewrap` element id is a convention we use internally at Skyscanner. In most cases it should "just work".
@@ -74,16 +77,12 @@ const withScrim = <P extends object>(
 
     public static displayName: string;
 
-    static defaultProps = {
-      onClose: null,
-      isIphone: isDeviceIphone(),
-      isIpad: isDeviceIpad(),
-      containerClassName: null,
-      closeOnScrimClick: true,
-    };
-
     componentDidMount() {
-      const { getApplicationElement, isIpad, isIphone } = this.props;
+      const {
+        getApplicationElement,
+        isIpad = DEFAULT_IS_IPAD,
+        isIphone = DEFAULT_IS_IPHONE,
+      } = this.props;
       const applicationElement = getApplicationElement();
 
       /**
@@ -117,7 +116,11 @@ const withScrim = <P extends object>(
     }
 
     componentWillUnmount() {
-      const { getApplicationElement, isIpad, isIphone } = this.props;
+      const {
+        getApplicationElement,
+        isIpad = DEFAULT_IS_IPAD,
+        isIphone = DEFAULT_IS_IPHONE,
+      } = this.props;
       const applicationElement = getApplicationElement();
 
       if (isIphone || isIpad) {
@@ -143,11 +146,11 @@ const withScrim = <P extends object>(
 
     render() {
       const {
-        closeOnScrimClick,
-        containerClassName,
+        closeOnScrimClick = true,
+        containerClassName = null,
         getApplicationElement,
-        isIpad,
-        isIphone,
+        isIpad = DEFAULT_IS_IPAD,
+        isIphone = DEFAULT_IS_IPHONE,
         onClose,
         ...rest
       } = this.props;

@@ -22,7 +22,7 @@ import { withButtonAlignment } from '../../bpk-component-icon';
 import ClearIcon from '../../bpk-component-icon/sm/close-circle';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
-import { CLEAR_BUTTON_MODES, defaultProps } from './common-types';
+import { CLEAR_BUTTON_MODES, INPUT_TYPES } from './common-types';
 
 import type { Props } from './common-types';
 
@@ -36,8 +36,6 @@ const getClassName = cssModules(STYLES);
 
 const ClearButtonIcon = withButtonAlignment(ClearIcon);
 class BpkInput extends Component<Props, State> {
-  static defaultProps = defaultProps;
-
   constructor(props: Props) {
     super(props);
 
@@ -50,17 +48,18 @@ class BpkInput extends Component<Props, State> {
     const clearButtonClassNames = [getClassName('bpk-input__clear-button')];
     const {
       className,
-      clearButtonLabel,
-      clearButtonMode,
-      docked,
-      dockedFirst,
-      dockedLast,
-      dockedMiddle,
-      inputRef,
-      large,
+      clearButtonLabel = null,
+      clearButtonMode = CLEAR_BUTTON_MODES.never,
+      docked = false,
+      dockedFirst = false,
+      dockedLast = false,
+      dockedMiddle = false,
+      inputRef = null,
+      large = false,
       name,
-      onClear,
-      valid,
+      onClear = null,
+      type = INPUT_TYPES.text,
+      valid = null,
       value,
       ...rest
     } = this.props;
@@ -130,6 +129,7 @@ class BpkInput extends Component<Props, State> {
           }
         }}
         aria-invalid={isInvalid}
+        type={type}
         value={value}
         name={name}
         {...getDataComponentAttribute('Input')}
