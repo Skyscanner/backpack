@@ -16,11 +16,14 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
+import type { EmotionCache } from '@emotion/cache';
+import type { ReactElement, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
 import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 import { createBpkConfig } from './theme';
 
@@ -36,6 +39,27 @@ export interface BpkProviderProps {
  * See: https://chakra-ui.com/guides/component-bundle-optimization
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
+
+type CypressWindow = Window & {
+  Cypress?: unknown;
+  hotelsDisableEmotionSpeedy?: boolean;
+};
+
+const isCypressEnv = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  const win = window as CypressWindow;
+  if (win.Cypress || win.hotelsDisableEmotionSpeedy) return true;
+  try {
+    return Boolean((win.parent as CypressWindow | undefined)?.Cypress);
+  } catch {
+    return false;
+  }
+};
+
+const createBpkEmotionCache = (speedy?: boolean) =>
+  createCache({ key: 'css', ...(speedy !== undefined && { speedy }) });
+
+const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
 
 type Direction = 'ltr' | 'rtl';
 
@@ -135,14 +159,41 @@ const useArkLocale = (): string => {
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {ReactElement} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
+  const parentCache = useContext(BpkEmotionCacheContext);
+  const isNested = parentCache !== null;
+
+  const [isCypress] = useState(isCypressEnv);
+  const [ownCache, setOwnCache] = useState(() =>
+    isNested ? parentCache : createBpkEmotionCache(isCypress ? false : undefined),
+  );
+  const hasRecreated = useRef(false);
   const locale = useArkLocale();
 
-  return (
+  useEffect(() => {
+    if (isNested || !isCypress) return;
+    if (hasRecreated.current) return;
+    hasRecreated.current = true;
+    setOwnCache(createBpkEmotionCache(false));
+  }, [isCypress, isNested]);
+
+  const inner = (
     <ChakraProvider value={bpkSystem}>
       <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
+  );
+
+  if (isNested) {
+    return inner;
+  }
+
+  return (
+    <BpkEmotionCacheContext.Provider value={ownCache}>
+      <CacheProvider value={ownCache}>
+        {inner}
+      </CacheProvider>
+    </BpkEmotionCacheContext.Provider>
   );
 };
