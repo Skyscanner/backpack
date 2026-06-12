@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
 import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 import { createBpkConfig } from './theme';
 
@@ -36,6 +38,8 @@ export interface BpkProviderProps {
  * See: https://chakra-ui.com/guides/component-bundle-optimization
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
+
+const createBpkEmotionCache = () => createCache({ key: 'bpk' });
 
 type Direction = 'ltr' | 'rtl';
 
@@ -127,14 +131,19 @@ const useArkLocale = (): string => {
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {ReactElement} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
+  // Initialise Emotion before Chakra's inner cache so legacy hydrate consumers
+  // do not bail on SSR className mismatches.
+  const [cache] = useState(createBpkEmotionCache);
   const locale = useArkLocale();
 
   return (
-    <ChakraProvider value={bpkSystem}>
-      <LocaleProvider locale={locale}>{children}</LocaleProvider>
-    </ChakraProvider>
+    <CacheProvider value={cache}>
+      <ChakraProvider value={bpkSystem}>
+        <LocaleProvider locale={locale}>{children}</LocaleProvider>
+      </ChakraProvider>
+    </CacheProvider>
   );
 };
