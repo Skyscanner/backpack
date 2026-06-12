@@ -223,7 +223,7 @@ describe('BpkProvider - RTL support', () => {
     expect(getByTestId('locale').textContent).toBe('en-US');
   });
 
-  it('falls back to en-US and does not crash when html[lang] is an invalid locale (numeric string)', async () => {
+  it('falls back to en-US and does not crash when html[lang] is an invalid locale (numeric string)', () => {
     document.documentElement.setAttribute('lang', '123');
 
     const { getByTestId } = render(
@@ -235,7 +235,7 @@ describe('BpkProvider - RTL support', () => {
     expect(getByTestId('locale').textContent).toBe('en-US');
   });
 
-  it('falls back to en-US and does not crash when html[lang] is an empty string', async () => {
+  it('falls back to en-US and does not crash when html[lang] is an empty string', () => {
     document.documentElement.setAttribute('lang', '');
 
     const { getByTestId } = render(

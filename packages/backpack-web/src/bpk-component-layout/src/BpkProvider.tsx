@@ -92,8 +92,8 @@ const getArkLocale = (): string => {
 
   if (lang) {
     try {
-      const locale = new Intl.Locale(lang);
-      if (locale) return lang;
+      new Intl.Locale(lang);
+      return lang;
     } catch {
       // Invalid locale string — fall through to default
     }
