@@ -1,0 +1,19 @@
+{
+  "skill_name": "bpk-token-migrate",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "/bpk-token-migrate chip https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858-52134&m=dev\n\nWorking directory: /Users/gczhu/conductor/workspaces/backpack/buffalo\n\nPlease complete the migration task — show the mapping table and then update the SCSS file. Do NOT commit the changes.",
+      "expected_output": "1. A mapping table showing old CSS variable names (--bpk-chip-*) mapped to new CSS variable names (--bpk-private-chip-*). 2. The updated _chips.scss file with bpk-themeable-property calls replaced by direct var(--bpk-private-chip-*) declarations. 3. Lint and test run confirmation.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 1,
+      "prompt": "I need to work on CLOV-1632 — the chip component token migration. I have the Figma link: https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858-52134&m=dev\n\nWorking directory: /Users/gczhu/conductor/workspaces/backpack/buffalo\n\nCan you help me replace the old --bpk-chip-* CSS variable names with the new Figma token names in the chip mixin?",
+      "expected_output": "Same as eval 0 — the skill should trigger, build a mapping table, and apply the replacements to _chips.scss.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}
