@@ -17,25 +17,26 @@
  */
 
 import { useLocaleContext } from '@ark-ui/react';
+import createCache from '@emotion/cache';
 import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import createCache from '@emotion/cache';
+import { BpkBox } from './BpkBox';
+import { BpkProvider } from './BpkProvider';
+import { BpkSpacing } from './tokens';
+
+import type { EmotionCache, Options } from '@emotion/cache';
 
 jest.mock('@emotion/cache', () =>
-  jest.fn((options: object) => {
-    const realCreateCache =
-      jest.requireActual<typeof import('@emotion/cache')>('@emotion/cache')
-        .default;
+  jest.fn((options: Options): EmotionCache => {
+    const realCreateCache = jest.requireActual('@emotion/cache').default as (
+      mockCacheOptions: Options,
+    ) => EmotionCache;
     return realCreateCache(options);
   }),
 );
 
 const mockCreateCache = createCache as jest.Mock;
-
-import { BpkBox } from './BpkBox';
-import { BpkProvider } from './BpkProvider';
-import { BpkSpacing } from './tokens';
 
 const LocaleReader = () => {
   const { locale } = useLocaleContext();

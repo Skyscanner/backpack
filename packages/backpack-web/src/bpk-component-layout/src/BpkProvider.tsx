@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import type { EmotionCache } from '@emotion/cache';
 import type { ReactElement, ReactNode } from 'react';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
@@ -26,6 +25,8 @@ import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 
 import { createBpkConfig } from './theme';
+
+import type { EmotionCache } from '@emotion/cache';
 
 export interface BpkProviderProps {
   children: ReactNode;
