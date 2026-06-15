@@ -25,7 +25,7 @@
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
     "clean": "npm run clean:dist && npm run clean:node_modules",
-    "clean:dist": "rm -rf dist packages/backpack-web/dist",
+    "clean:dist": "rm -rf dist packages/backpack-web/dist packages/backpack-adoption-guard/dist",
     "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "figma:generate-config": "node scripts/figma/generate-figma-config.js",

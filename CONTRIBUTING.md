@@ -57,8 +57,6 @@ Backpack is an npm workspaces monorepo orchestrated with [Nx](https://nx.dev/). 
 - `packages/backpack-web/src/bpk-stylesheets/` — compiled CSS
 - `libs/backpack-storybook-host/` — Storybook host configuration
 
-Other docs and links from external repos may still refer to `packages/bpk-component-*` at the repository root — those paths are stale. Every component now lives under `packages/backpack-web/src/`.
-
 1. Pull the code and create a new branch
 
 ```sh

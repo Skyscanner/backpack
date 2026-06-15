@@ -69,7 +69,7 @@ VALIDATION:
 **Target Browsers**: Chrome 109+, Edge 129+, Firefox 131+, Safari 15+, Samsung 26+
 **Performance Goals**: Meet test coverage thresholds (70% branches, 75% functions/lines/statements)
 **Constraints**: Must follow Backpack constitution and architecture decisions
-**Scale/Scope**: Single reusable component in `packages/bpk-component-[name]/`
+**Scale/Scope**: Single reusable component in `packages/backpack-web/src/bpk-component-[name]/`
 
 ## Constitution Check
 
@@ -77,7 +77,7 @@ VALIDATION:
 
 ### Core Principles Compliance
 
-- [ ] **Component-First Architecture**: Package structure in `packages/bpk-component-[name]/`
+- [ ] **Component-First Architecture**: Package structure in `packages/backpack-web/src/bpk-component-[name]/`
 - [ ] **Naming Conventions**: PascalCase for components, `.module.scss` for styles, `*-test.tsx` for tests
 - [ ] **License Headers**: All source files include Apache 2.0 license header at the top
 - [ ] **Modern Sass**: Using `@use` syntax with granular imports from `bpk-mixins`
@@ -135,7 +135,7 @@ specs/[###-component-name]/
 ### Package Structure (Backpack Monorepo)
 
 ```text
-packages/bpk-component-[name]/
+packages/backpack-web/src/bpk-component-[name]/
 ├── README.md                     # Component documentation (British English prose)
 ├── index.ts                      # Export entry point (exports from src/)
 ├── docs/                         # Documentation assets
