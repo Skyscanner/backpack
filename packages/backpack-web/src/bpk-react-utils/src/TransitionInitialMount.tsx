@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { cloneElement, isValidElement, useRef } from 'react';
+import type { ReactElement, ReactNode, RefObject } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
@@ -38,18 +39,27 @@ const TransitionInitialMount = ({
   appearClassName,
   children,
   transitionTimeout,
-}: Props) => (
-  <CSSTransition
-    classNames={{
-      appear: appearClassName,
-      appearActive: appearActiveClassName,
-    }}
-    in
-    appear
-    timeout={{ exit: 0, enter: 0, appear: transitionTimeout }}
-  >
-    {children}
-  </CSSTransition>
-);
+}: Props) => {
+  const nodeRef = useRef<HTMLElement>(null);
+  return (
+    <CSSTransition
+      nodeRef={nodeRef}
+      classNames={{
+        appear: appearClassName,
+        appearActive: appearActiveClassName,
+      }}
+      in
+      appear
+      timeout={{ exit: 0, enter: 0, appear: transitionTimeout }}
+    >
+      {isValidElement(children)
+        ? cloneElement(
+            children as ReactElement<{ ref?: RefObject<HTMLElement | null> }>,
+            { ref: nodeRef },
+          )
+        : children}
+    </CSSTransition>
+  );
+};
 
 export default TransitionInitialMount;
