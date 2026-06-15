@@ -22,6 +22,11 @@
   --bpk-border-1: 0.0625rem;
   --bpk-border-2: 0.125rem;
   --bpk-border-3: 0.1875rem;
+  --bpk-modal-200: 12.5rem;
+  --bpk-modal-400: 25rem;
+  --bpk-modal-600: 37.5rem;
+  --bpk-modal-800: 50rem;
+  --bpk-modal-1000: 62.5rem;
   --bpk-radius-none: 0;
   --bpk-radius-full: 62.4375rem;
   --bpk-radius-lg: 1.5rem;

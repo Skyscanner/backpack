@@ -1,0 +1,25 @@
+{
+  "name": "@skyscanner/backpack-adoption-guard",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --outfile=dist/index.js --sourcemap --format=cjs",
+    "lint": "eslint src jest.config.js --ext .js,.ts",
+    "test": "jest --config jest.config.js",
+    "typecheck": "tsc --project tsconfig.json",
+    "verify-dist": "npm run build && git diff --exit-code -- dist/"
+  },
+  "dependencies": {
+    "@actions/core": "1.11.1",
+    "@babel/parser": "7.29.3",
+    "@babel/traverse": "7.29.0",
+    "@babel/types": "7.29.0",
+    "glob": "13.0.6"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "7.28.0",
+    "@types/node": "25.9.1",
+    "esbuild": "0.27.7",
+    "typescript": "5.9.3"
+  }
+}

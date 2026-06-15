@@ -205,6 +205,24 @@
     },
     "$type": "dimension"
   },
+  "Modal": {
+    "200": {
+      "$value": "200px"
+    },
+    "400": {
+      "$value": "400px"
+    },
+    "600": {
+      "$value": "600px"
+    },
+    "800": {
+      "$value": "800px"
+    },
+    "1000": {
+      "$value": "1000px"
+    },
+    "$type": "dimension"
+  },
   "Neutral": {
     "Charcoal": {
       "$value": "#161616"

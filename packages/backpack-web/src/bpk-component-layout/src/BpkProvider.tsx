@@ -90,7 +90,15 @@ const getArkLocale = (): string => {
     return FALLBACK_LOCALE_BY_DIRECTION[explicitDir];
   }
 
-  return lang || 'en-US';
+  if (lang) {
+    try {
+      const locale = new Intl.Locale(lang);
+      if (locale) return lang;
+    } catch {
+      // Invalid locale string — fall through to default
+    }
+  }
+  return 'en-US';
 };
 
 // Reactive hook: subscribes to document.documentElement[dir] and [lang] changes
