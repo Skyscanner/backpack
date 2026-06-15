@@ -43,13 +43,13 @@ const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
 
 type CypressWindow = Window & {
   Cypress?: unknown;
-  hotelsDisableEmotionSpeedy?: boolean;
+  bpkDisableEmotionSpeedy?: boolean;
 };
 
 const isCypressEnv = (): boolean => {
   if (typeof window === 'undefined') return false;
   const win = window as CypressWindow;
-  if (win.Cypress || win.hotelsDisableEmotionSpeedy) return true;
+  if (win.Cypress || win.bpkDisableEmotionSpeedy) return true;
   try {
     return Boolean((win.parent as CypressWindow | undefined)?.Cypress);
   } catch {

@@ -83,7 +83,7 @@ describe('BpkProvider - Emotion cache', () => {
   afterEach(() => {
     jest.clearAllMocks();
     delete (window as any).Cypress;
-    delete (window as any).hotelsDisableEmotionSpeedy;
+    delete (window as any).bpkDisableEmotionSpeedy;
   });
 
   it('creates cache without speedy in a normal (non-Cypress) environment', () => {
@@ -99,8 +99,8 @@ describe('BpkProvider - Emotion cache', () => {
     );
   });
 
-  it('creates cache with speedy: false when hotelsDisableEmotionSpeedy is set', async () => {
-    (window as any).hotelsDisableEmotionSpeedy = true;
+  it('creates cache with speedy: false when bpkDisableEmotionSpeedy is set', async () => {
+    (window as any).bpkDisableEmotionSpeedy = true;
 
     render(
       <BpkProvider>
@@ -134,7 +134,7 @@ describe('BpkProvider - Emotion cache', () => {
   });
 
   it('recreates the cache after mount in Cypress to replace hydration-stripped styles', async () => {
-    (window as any).hotelsDisableEmotionSpeedy = true;
+    (window as any).bpkDisableEmotionSpeedy = true;
 
     render(
       <BpkProvider>
