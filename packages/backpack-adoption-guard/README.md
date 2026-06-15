@@ -119,13 +119,15 @@ with [`Skyscanner/ds-analyser`](https://github.com/Skyscanner/ds-analyser).
 
 ## Building
 
-The committed `dist/index.js` is a single-file bundle produced by `esbuild`.
-After changing any source under `src/`, run:
+`dist/index.js` is a single-file bundle produced by `esbuild`. It is generated
+on demand and is not committed to the main Backpack source tree. After changing
+any source under `src/`, run:
 
 ```bash
 npx nx run backpack-adoption-guard:build
 ```
 
-…and commit the regenerated `dist/`. The release workflow's `verify-dist`
-target re-runs the build and rejects the release if the committed bundle does
-not match the source.
+The generated `dist/` directory is ignored by git. Any ref used directly as a
+GitHub JavaScript action must still contain the generated bundle because
+`action.yml` runs `dist/index.js`; keep that packaging step separate from normal
+source changes.
