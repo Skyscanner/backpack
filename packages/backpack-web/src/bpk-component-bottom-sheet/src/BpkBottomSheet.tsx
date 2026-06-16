@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 import type { SyntheticEvent, ReactNode, ReactElement } from 'react';
-import { useCallback, useState, isValidElement, cloneElement } from 'react';
+import { useCallback, useEffect, useRef, useState, isValidElement, cloneElement } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -130,8 +130,18 @@ const BpkBottomSheet = ({
   isAboveMobile: boolean;
 }) => {
   const [exiting, setExiting] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const animationTimeout = 240;
+
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current !== null) {
+        clearTimeout(closeTimerRef.current);
+      }
+    },
+    [],
+  );
 
   const handleClose = useCallback(
     (
@@ -147,7 +157,7 @@ const BpkBottomSheet = ({
       const timeoutDuration = isAboveMobile ? 0 : animationTimeout;
 
       setExiting(true);
-      setTimeout(() => {
+      closeTimerRef.current = setTimeout(() => {
         onClose(arg0, arg1);
         setExiting(false);
       }, timeoutDuration);

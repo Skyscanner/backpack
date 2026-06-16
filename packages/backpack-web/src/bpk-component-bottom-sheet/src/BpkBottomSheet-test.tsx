@@ -240,6 +240,28 @@ describe('BpkBottomSheet', () => {
     expect(titleEl).toBeInTheDocument();
   });
 
+  it('does not call onClose after unmount (timer leak regression)', () => {
+    jest.useFakeTimers();
+    const onClose = jest.fn();
+    const { unmount } = render(
+      <BpkBottomSheet
+        ariaLabelledby="bottom-sheet"
+        closeLabel="Close"
+        id="my-bottom-sheet"
+        isOpen
+        onClose={onClose}
+      >
+        Content
+      </BpkBottomSheet>,
+    );
+    // Simulate close button click would normally schedule a 240ms timer.
+    // Unmounting before the timer fires should cancel it.
+    unmount();
+    jest.advanceTimersByTime(300);
+    expect(onClose).not.toHaveBeenCalled();
+    jest.useRealTimers();
+  });
+
   it('adds correct id to custom title element for aria-labelledby reference', () => {
     const { container } = render(
       <BpkBottomSheet
