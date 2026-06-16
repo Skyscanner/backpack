@@ -30,8 +30,6 @@ import type { EmotionCache } from '@emotion/cache';
 
 export interface BpkProviderProps {
   children: ReactNode;
-  /** SSR: pass the same cache to `@emotion/server` for critical-CSS extraction. */
-  emotionCache?: EmotionCache;
 }
 
 /**
@@ -67,7 +65,7 @@ const isCypressEnv = (): boolean => {
 
 // `'css'` is shared with Chakra v3's internal key on purpose — keeps this
 // boundary in front of Chakra's auto-created cache.
-export const createBpkEmotionCache = (speedy?: boolean): EmotionCache =>
+const createBpkEmotionCache = (speedy?: boolean): EmotionCache =>
   createCache(speedy === undefined ? { key: 'css' } : { key: 'css', speedy });
 
 const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
@@ -172,20 +170,14 @@ const useArkLocale = (): string => {
  * @param {BpkProviderProps} props - The provider props.
  * @returns {ReactElement} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({
-  children,
-  emotionCache,
-}: BpkProviderProps): ReactElement => {
+export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
   const parentCache = useContext(BpkEmotionCacheContext);
   const isNested = parentCache !== null;
-  const isConsumerManaged = emotionCache !== undefined;
 
   const [isCypress] = useState(isCypressEnv);
-  const [ownCache, setOwnCache] = useState(() => {
-    if (isNested) return parentCache;
-    if (isConsumerManaged) return emotionCache;
-    return createBpkEmotionCache(isCypress ? false : undefined);
-  });
+  const [ownCache, setOwnCache] = useState(() =>
+    isNested ? parentCache : createBpkEmotionCache(isCypress ? false : undefined),
+  );
   const hasRecreated = useRef(false);
   const locale = useArkLocale();
 
@@ -193,7 +185,7 @@ export const BpkProvider = ({
   // nodes the hydrator stripped. `hasRecreated` guards StrictMode double-invoke.
   // Deps stable for provider lifetime → empty array is intentional.
   useEffect(() => {
-    if (isNested || isConsumerManaged || !isCypress) return;
+    if (isNested || !isCypress) return;
     if (hasRecreated.current) return;
     hasRecreated.current = true;
     setOwnCache(createBpkEmotionCache(false));

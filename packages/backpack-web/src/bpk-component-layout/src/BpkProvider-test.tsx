@@ -25,7 +25,7 @@ import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
-import { BpkProvider, createBpkEmotionCache } from './BpkProvider';
+import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 import type { EmotionCache, Options } from '@emotion/cache';
@@ -183,50 +183,6 @@ describe('BpkProvider - Emotion cache', () => {
 
     // Only the outermost BpkProvider should create a cache
     expect(mockCreateCache).toHaveBeenCalledTimes(1);
-  });
-
-  it('uses the supplied emotionCache prop instead of creating one', () => {
-    // Reset the mock so we only observe createCache calls made *after* the
-    // pre-baked cache is built — the prop path should not call createCache.
-    const providedCache = createBpkEmotionCache();
-    mockCreateCache.mockClear();
-
-    render(
-      <BpkProvider emotionCache={providedCache}>
-        <div />
-      </BpkProvider>,
-    );
-
-    expect(mockCreateCache).not.toHaveBeenCalled();
-  });
-
-  it('does not recreate the cache in Cypress when emotionCache is supplied', async () => {
-    (window as any).Cypress = {};
-    const providedCache = createBpkEmotionCache(false);
-    mockCreateCache.mockClear();
-
-    render(
-      <BpkProvider emotionCache={providedCache}>
-        <div />
-      </BpkProvider>,
-    );
-
-    // Consumer owns the cache lifecycle; the provider must not swap it out.
-    await waitFor(() => {
-      expect(mockCreateCache).not.toHaveBeenCalled();
-    });
-  });
-
-  it('exports createBpkEmotionCache that produces a cache with key "css"', () => {
-    mockCreateCache.mockClear();
-    createBpkEmotionCache();
-    expect(mockCreateCache).toHaveBeenCalledWith({ key: 'css' });
-  });
-
-  it('exports createBpkEmotionCache that accepts speedy override', () => {
-    mockCreateCache.mockClear();
-    createBpkEmotionCache(false);
-    expect(mockCreateCache).toHaveBeenCalledWith({ key: 'css', speedy: false });
   });
 });
 

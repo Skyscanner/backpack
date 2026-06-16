@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-export { BpkProvider, createBpkEmotionCache } from './src/BpkProvider';
+export { BpkProvider } from './src/BpkProvider';
 export { BpkBox } from './src/BpkBox';
 export { BpkVessel } from './src/BpkVessel';
 export { BpkFlex } from './src/BpkFlex';
