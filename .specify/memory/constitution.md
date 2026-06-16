@@ -209,7 +209,7 @@ Create V2 component if change requires:
 
 **V2 Component Structure**:
 ```
-packages/bpk-component-modal/src/
+packages/backpack-web/src/bpk-component-modal/src/
 ├── BpkModal/           # V1 (current)
 │   └── BpkModal.tsx
 └── BpkModalV2/         # V2 (future, experimental)
@@ -217,7 +217,7 @@ packages/bpk-component-modal/src/
 ```
 
 **V2 Guidelines**:
-- Path: `packages/bpk-component-[name]/src/Bpk[Name]V2/`
+- Path: `packages/backpack-web/src/bpk-component-[name]/src/Bpk[Name]V2/`
 - Export both from `index.ts`
 - V2 is experimental; follow-up changes NOT considered breaking
 - Provide 3+ months for adoption before deprecating V1
@@ -352,7 +352,7 @@ Experimental features MUST follow a controlled lifecycle to enable A/B testing w
 
 **Major Changes** (new V2 component):
 - Create experimental V2 component following V2 naming: `Bpk[ComponentName]V2` (e.g., `BpkModalV2`)
-- Path: `packages/bpk-component-[name]/src/Bpk[Name]V2/`
+- Path: `packages/backpack-web/src/bpk-component-[name]/src/Bpk[Name]V2/`
 - If experiment succeeds: V1 deprecated, V2 becomes default in next MAJOR version
 - If experiment fails: V2 removed
 
@@ -423,7 +423,7 @@ Components MUST be built with performance in mind:
 Each component package MUST follow this structure:
 
 ```
-packages/bpk-component-[name]/
+packages/backpack-web/src/bpk-component-[name]/
 ├── README.md                     # Component documentation
 ├── index.ts                      # Export entry point
 ├── docs/                         # Documentation assets

@@ -253,7 +253,7 @@
           "$value": "{Neutral.Grey 30}"
         },
         "stroke-icon-off-on-dark": {
-          "$value": "{Alpha.White Alpha 50}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "$type": "color"
       },
@@ -321,7 +321,7 @@
           "$value": "{Neutral.White}"
         },
         "border-onDark-off": {
-          "$value": "{Alpha.White Alpha 50}"
+          "$value": "{Alpha.White Alpha 20}"
         },
         "stroke-Off-on-canvas-contrast (new)": {
           "$value": "{Alpha.Transparent}"
@@ -443,7 +443,7 @@
       "Default": {
         "$value": "{Neutral.Grey 20}"
       },
-      "On Contrast": {
+      "OnContrast": {
         "$value": "{Neutral.White}"
       },
       "$type": "color"
@@ -578,11 +578,11 @@
       "android-switch-knob-disabled": {
         "$value": "{Alpha.White Alpha 50}"
       },
-      "android-switch-on-contrast-fill-disabled": {
-        "$value": "{Alpha.White Alpha 10}"
-      },
       "android-switch-on-contrast-off": {
         "$value": "{Alpha.White Alpha 80}"
+      },
+      "android-switch-onContrast-fill-disabled": {
+        "$value": "{Alpha.White Alpha 10}"
       },
       "ios-switch-default-off": {
         "$value": "{Neutral.Grey 40}"
@@ -590,7 +590,7 @@
       "ios-switch-disabled": {
         "$value": "{Neutral.Grey 20}"
       },
-      "ios-switch-on-contrast-off": {
+      "ios-switch-onContrast-off": {
         "$value": "{Alpha.White Alpha 20}"
       },
       "$type": "color"
@@ -617,12 +617,6 @@
     "$type": "color"
   },
   "Other": {
-    "Line": {
-      "$value": "{Neutral.Grey 30}"
-    },
-    "Line On Dark": {
-      "$value": "{Alpha.White Alpha 50}"
-    },
     "Overlay": {
       "$value": "{Alpha.Black Alpha 20}"
     },
@@ -631,6 +625,12 @@
     },
     "Shadow": {
       "$value": "{Alpha.Charcoal Alpha 25}"
+    },
+    "line-default": {
+      "$value": "{Neutral.Grey 30}"
+    },
+    "line-onContrast": {
+      "$value": "{Alpha.White Alpha 20}"
     },
     "$type": "color"
   },
@@ -686,7 +686,7 @@
     "$type": "color"
   },
   "Test": {
-    "$value": "#ff0000",
+    "$value": "#ff1088",
     "$type": "color"
   },
   "Text": {
@@ -713,6 +713,9 @@
     },
     "Secondary": {
       "$value": "{Neutral.Grey 40}"
+    },
+    "Secondary On Contrast": {
+      "$value": "{Alpha.White Alpha 50}"
     },
     "Success": {
       "$value": "{Colour.Green}"

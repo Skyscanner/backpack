@@ -7,13 +7,13 @@
 If you see an inline `<svg>` in existing code, treat it as a violation and replace it:
 
 1. Identify what the icon visually represents (check the SVG path or surrounding context).
-2. Find the matching icon in `packages/bpk-component-icon/lg/` or `sm/`.
+2. Find the matching icon in `packages/backpack-web/src/bpk-component-icon/lg/` or `sm/`.
 3. Replace the `<svg>` with the imported icon component using the pattern below.
 4. If no matching icon exists in `bpk-component-icon`, leave a `// TODO: replace with Backpack icon` comment and do not modify the SVG further.
 
 ## How to find icons
 
-Browse `packages/bpk-component-icon/lg/` (24×24) and `packages/bpk-component-icon/sm/` (16×16). The file name is the icon name (e.g. `arrow-up.jsx`, `close.jsx`).
+Browse `packages/backpack-web/src/bpk-component-icon/lg/` (24×24) and `packages/backpack-web/src/bpk-component-icon/sm/` (16×16). The file name is the icon name (e.g. `arrow-up.jsx`, `close.jsx`).
 
 ## Import pattern
 

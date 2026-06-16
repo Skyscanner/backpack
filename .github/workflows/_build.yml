@@ -133,21 +133,13 @@ jobs:
         with:
           path: |
             node_modules/
-            packages/node_modules/
-          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json', 'packages/package-lock.json') }}
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
 
       - name: Override React to 19.2.5
-        # The inner packages/node_modules tree has its own copy of react/react-dom
-        # populated from the cache. Overlay the root install into it so jest
-        # (which resolves react-dom from packages/) sees R19 too.
-        run: |
-          npm install --no-save react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19.0.6 @types/prop-types
-          rm -rf packages/node_modules/react packages/node_modules/react-dom
-          cp -r node_modules/react packages/node_modules/
-          cp -r node_modules/react-dom packages/node_modules/
+        run: npm install --no-save react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19.0.6 @types/prop-types
 
       - name: Generate component code (icons, flare, spinners)
-        run: npm run build:gulp
+        run: npx nx run backpack-web:generate-svgs
 
       - name: Run typecheck (React 19)
         run: npm run typecheck
@@ -241,6 +233,8 @@ jobs:
         if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          LOG_LEVEL: debug
+          PERCY_DEBUG: '*'
         run: |
           npm run percy-test 2>&1 | tee "${RUNNER_TEMP}/percy.log"
           # Assert success by the presence of a percy.io build URL rather than
