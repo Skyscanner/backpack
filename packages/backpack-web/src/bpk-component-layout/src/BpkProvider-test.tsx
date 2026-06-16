@@ -93,6 +93,9 @@ describe('BpkProvider - RTL support', () => {
   afterEach(() => {
     document.documentElement.removeAttribute('dir');
     document.documentElement.removeAttribute('lang');
+    // Restore any console.error spy set up within this describe block.
+    // Doing this in afterEach guarantees cleanup even when an assertion throws.
+    jest.restoreAllMocks();
   });
 
   it('passes en-US locale to Ark when document dir is ltr', () => {
@@ -290,8 +293,6 @@ describe('BpkProvider - RTL support', () => {
     );
 
     expect(boundary.current?.catchCount).toBe(0);
-
-    jest.restoreAllMocks();
   });
 
   it('does not loop when ErrorBoundary fallback also mounts BpkProvider with invalid html[lang]', () => {
@@ -314,8 +315,6 @@ describe('BpkProvider - RTL support', () => {
     );
 
     expect(boundary.current?.catchCount).toBe(0);
-
-    jest.restoreAllMocks();
   });
 
   it('passes a valid html[lang] through to Ark unchanged', () => {

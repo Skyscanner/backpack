@@ -59,9 +59,8 @@ const RTL_LANGUAGE_SUBTAGS = new Set([
 // "Incorrect locale information provided".
 const isValidLocale = (locale: string): boolean => {
   try {
-    // Assigning the result (rather than bare `new`) satisfies the no-new lint rule.
-    const parsed = new Intl.Locale(locale);
-    return Boolean(parsed);
+    // Reading a property on the result (rather than bare `new`) satisfies the no-new lint rule.
+    return Boolean(new Intl.Locale(locale).baseName);
   } catch {
     return false;
   }
