@@ -34,10 +34,12 @@ export const LibraryShapeType = PropTypes.arrayOf(
   ]),
 );
 
+const DEFAULT_LIBRARIES = ['geometry', 'drawing', 'places'];
+
 function withGoogleMapsScript(Component: ComponentType<any>) {
   const WithGoogleMapsScript = ({
     googleMapsApiKey,
-    libraries = ['geometry', 'drawing', 'places'],
+    libraries = DEFAULT_LIBRARIES,
     loadingElement = <DefaultLoadingElement />,
     preventGoogleFontsLoading = false,
     ...rest

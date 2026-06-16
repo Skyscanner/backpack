@@ -43,9 +43,11 @@
  *     without a top-level destructure, SKIP — leave for manual review.
  *
  * Phase C (all files):
- *   - Class components with `static defaultProps`: SKIP and report. Manual
- *     migration required (convert to functional component or add destructure-
- *     with-defaults inside render()).
+ *   - Class components with `static defaultProps`: SKIP and report. Class
+ *     `defaultProps` still apply in React 19 (only function-component
+ *     `defaultProps` are ignored); migration is for consistency/future-
+ *     proofing — convert to a functional component or destructure-with-
+ *     defaults inside render().
  */
 
 module.exports = function transformer(file, api) {
@@ -57,7 +59,7 @@ module.exports = function transformer(file, api) {
   const runPhaseA = /\.(ts|tsx)$/.test(file.path);
 
   if (runPhaseA) {
-    // Phase A.2: remove `<Identifier>.propTypes = { ... }` ExpressionStatements.
+    // Phase A.1: remove `<Identifier>.propTypes = { ... }` ExpressionStatements.
     root
       .find(j.ExpressionStatement, {
         expression: {
@@ -76,7 +78,7 @@ module.exports = function transformer(file, api) {
         changed = true;
       });
 
-    // Phase A.3: remove `static propTypes = { ... }` class fields.
+    // Phase A.2: remove `static propTypes = { ... }` class fields.
     root
       .find(j.ClassProperty, {
         static: true,
@@ -107,6 +109,9 @@ module.exports = function transformer(file, api) {
       if (left.object.type !== 'Identifier') return;
       const componentName = left.object.name;
       const defaultsObj = expr.right;
+      const defaultsKeys = defaultsObj.properties
+        .map((p) => (p.key && (p.key.name ?? p.key.value)) || '?')
+        .join(', ');
 
       const decls = root
         .find(j.VariableDeclarator, { id: { name: componentName } })
@@ -128,14 +133,14 @@ module.exports = function transformer(file, api) {
       else if (fnDecls.size() === 1) fnPath = fnDecls.get();
 
       if (!fnPath) {
-        skips.push(`${file.path}: defaultProps for "${componentName}" — declaration not found or ambiguous`);
+        skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — declaration not found or ambiguous`);
         return;
       }
 
       const fnNode = fnPath.node.init || fnPath.node;
       const {params} = fnNode;
       if (!params || params.length === 0) {
-        skips.push(`${file.path}: defaultProps for "${componentName}" — fn has no params`);
+        skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — fn has no params`);
         return;
       }
 
@@ -153,7 +158,7 @@ module.exports = function transformer(file, api) {
         const paramName = firstParam.name;
         const {body} = fnNode;
         if (!body || body.type !== 'BlockStatement') {
-          skips.push(`${file.path}: defaultProps for "${componentName}" — body is not a block`);
+          skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — body is not a block`);
           return;
         }
         const firstStmt = body.body.find(
@@ -166,26 +171,26 @@ module.exports = function transformer(file, api) {
             s.declarations[0].init.name === paramName,
         );
         if (!firstStmt) {
-          skips.push(`${file.path}: defaultProps for "${componentName}" — no top-level destructure of ${paramName}`);
+          skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — no top-level destructure of ${paramName}`);
           return;
         }
         destructurePattern = firstStmt.declarations[0].id;
       } else {
-        skips.push(`${file.path}: defaultProps for "${componentName}" — unhandled first param type ${firstParam.type}`);
+        skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — unhandled first param type ${firstParam.type}`);
         return;
       }
 
       for (const prop of defaultsObj.properties) {
         if (prop.type !== 'Property' && prop.type !== 'ObjectProperty') {
-          skips.push(`${file.path}: defaultProps for "${componentName}" — non-Property entry, skipped`);
+          skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — non-Property entry, skipped`);
           return;
         }
         if (prop.computed) {
-          skips.push(`${file.path}: defaultProps for "${componentName}" — computed key, skipped`);
+          skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — computed key, skipped`);
           return;
         }
         if (prop.key.type !== 'Identifier' && prop.key.type !== 'Literal' && prop.key.type !== 'StringLiteral') {
-          skips.push(`${file.path}: defaultProps for "${componentName}" — non-identifier key`);
+          skips.push(`${file.path}: defaultProps for "${componentName}" [${defaultsKeys}] — non-identifier key`);
           return;
         }
         const keyName =
@@ -222,9 +227,10 @@ module.exports = function transformer(file, api) {
     });
 
   if (runPhaseA) {
-    // Phase A.1: strip `import PropTypes from 'prop-types'` if no remaining
-    // references after A.2/A.3. Re-attach leading comments (license header)
-    // to the next sibling so they aren't lost with the import.
+    // Phase A.3: strip `import PropTypes from 'prop-types'` if no remaining
+    // references after A.1/A.2. Done after Phase B so any defaultProps merges
+    // that referenced PropTypes have run first. Re-attach leading comments
+    // (license header) to the next sibling so they aren't lost with the import.
     root
       .find(j.ImportDeclaration, { source: { value: 'prop-types' } })
       .forEach((path) => {
