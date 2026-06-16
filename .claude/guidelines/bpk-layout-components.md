@@ -58,4 +58,4 @@ When a container needs **both layout and visual styling on the same element**, u
 | Evenly-spaced vertical items | `BpkVStack` |
 | CSS grid | `BpkGrid` + `BpkGridItem` |
 | Generic structural box | `BpkBox` |
-| Legacy migration (needs `className`/`style`) | `BpkVessel` ⚠️ temporary — see "BpkVessel" section in `packages/bpk-component-layout/README.md` |
+| Legacy migration (needs `className`/`style`) | `BpkVessel` ⚠️ temporary — see "BpkVessel" section in `packages/backpack-web/src/bpk-component-layout/README.md` |

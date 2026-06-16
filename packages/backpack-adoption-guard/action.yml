@@ -1,0 +1,24 @@
+name: Backpack Adoption Guard
+description: Calculate Backpack adoption and block PRs that reduce adoption after reaching the guard threshold.
+
+inputs:
+  dry-run:
+    description: If true, adoption drops are reported as warnings instead of failing the PR.
+    required: false
+    default: "false"
+  pattern:
+    description: Files scanned for Backpack adoption.
+    required: false
+    default: "**/*.{jsx,tsx}"
+  output-path:
+    description: Path for the generated adoption result JSON.
+    required: false
+    default: backpack-adoption-results.json
+  threshold:
+    description: Backpack adoption percentage threshold before the guard starts blocking decreases.
+    required: false
+    default: "60"
+
+runs:
+  using: node24
+  main: dist/index.js
