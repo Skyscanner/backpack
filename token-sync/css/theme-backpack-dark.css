@@ -171,11 +171,11 @@
   --bpk-core-accent: #84e9ff;
   --bpk-core-eco: #0fa1a9;
   --bpk-core-primary: #054184;
-  --bpk-other-line: rgba(255, 255, 255, 0.2);
-  --bpk-other-line-on-dark: rgba(255, 255, 255, 0.2);
   --bpk-other-overlay: rgba(255, 255, 255, 0.8);
   --bpk-other-scrim: rgba(0, 0, 0, 0.7);
   --bpk-other-shadow: rgba(22, 22, 22, 0.25);
+  --bpk-other-line-default: rgba(255, 255, 255, 0.2);
+  --bpk-other-line-on-contrast: rgba(255, 255, 255, 0.2);
   --bpk-status-danger-spot: #ff649c;
   --bpk-status-success-spot: #62f1c6;
   --bpk-status-warning-spot: #feeb87;
@@ -200,6 +200,7 @@
   --bpk-text-on-light: #010913;
   --bpk-text-primary: #ffffff;
   --bpk-text-secondary: #bdc4cb;
+  --bpk-text-secondary-on-contrast: rgba(255, 255, 255, 0.5);
   --bpk-text-success: #62f1c6;
   --bpk-text-deprecated-link: #84e9ff;
   --bpk-text-hero: #010913;

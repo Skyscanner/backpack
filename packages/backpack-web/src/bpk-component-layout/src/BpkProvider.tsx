@@ -16,13 +16,21 @@
  * limitations under the License.
  */
 
-import type { ReactNode, JSX } from 'react';
-import { useEffect, useState } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  createSystem,
+  defaultBaseConfig,
+} from '@chakra-ui/react';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 import { createBpkConfig } from './theme';
+
+import type { EmotionCache } from '@emotion/cache';
 
 export interface BpkProviderProps {
   children: ReactNode;
@@ -37,6 +45,35 @@ export interface BpkProviderProps {
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
 
+// Cypress/Percy workaround: `hydrateRoot()` strips SSR <style> nodes, then
+// Emotion falls back to speedy mode (insertRule) which Percy can't serialise.
+// Force speedy:false + recreate after mount in Cypress. Remove once Emotion /
+// React Router 7 provide a cleaner hydration story. Ported from hotels-website#12025.
+type CypressWindow = Window & {
+  Cypress?: unknown;
+  bpkDisableEmotionSpeedy?: boolean;
+};
+
+const isCypressEnv = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  const win = window as CypressWindow;
+  // `bpkDisableEmotionSpeedy` is an explicit escape hatch for non-Cypress
+  // Percy runs; consumers set it in their test bootstrap.
+  if (win.Cypress || win.bpkDisableEmotionSpeedy) return true;
+  try {
+    return Boolean((win.parent as CypressWindow | undefined)?.Cypress);
+  } catch {
+    return false; // cross-origin parent frame
+  }
+};
+
+// `'css'` is shared with Chakra v3's internal key on purpose — keeps this
+// boundary in front of Chakra's auto-created cache.
+const createBpkEmotionCache = (speedy?: boolean): EmotionCache =>
+  createCache(speedy === undefined ? { key: 'css' } : { key: 'css', speedy });
+
+const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
+
 type Direction = 'ltr' | 'rtl';
 
 // Fallback locale mapping used when no explicit locale is available on the document.
@@ -50,7 +87,16 @@ const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
 // Known RTL language subtags (ISO 639 codes). Used as fallback when
 // Intl.Locale.textInfo is unavailable (Node < 22, older browsers).
 const RTL_LANGUAGE_SUBTAGS = new Set([
-  'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
+  'ar',
+  'he',
+  'fa',
+  'ur',
+  'yi',
+  'iw',
+  'ps',
+  'sd',
+  'ug',
+  'ku',
 ]);
 
 // Returns the text direction implied by a BCP 47 locale string.
@@ -135,14 +181,45 @@ const useArkLocale = (): string => {
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {ReactElement} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
+  const parentCache = useContext(BpkEmotionCacheContext);
+  const isNested = parentCache !== null;
+
+  const [isCypress] = useState(isCypressEnv);
+  const [ownCache, setOwnCache] = useState(() =>
+    isNested
+      ? parentCache
+      : createBpkEmotionCache(isCypress ? false : undefined),
+  );
+  const hasRecreated = useRef(false);
   const locale = useArkLocale();
 
-  return (
+  // Recreate the cache once after mount in Cypress to replace SSR <style>
+  // nodes the hydrator stripped. `hasRecreated` guards StrictMode double-invoke.
+  // Deps stable for provider lifetime → empty array is intentional.
+  useEffect(() => {
+    if (isNested || !isCypress) return;
+    if (hasRecreated.current) return;
+    hasRecreated.current = true;
+    setOwnCache(createBpkEmotionCache(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const inner = (
     <ChakraProvider value={bpkSystem}>
       <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
+  );
+
+  if (isNested) {
+    return inner;
+  }
+
+  return (
+    <BpkEmotionCacheContext.Provider value={ownCache}>
+      <CacheProvider value={ownCache}>{inner}</CacheProvider>
+    </BpkEmotionCacheContext.Provider>
   );
 };

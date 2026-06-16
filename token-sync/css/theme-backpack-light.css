@@ -86,7 +86,7 @@
   --bpk-private-chip-group-filter-colour-stroke-icon-hover-default: #05203c;
   --bpk-private-chip-group-filter-colour-stroke-icon-hover-on-dark: #ffffff;
   --bpk-private-chip-group-filter-colour-stroke-icon-off-default: #c1c7cf;
-  --bpk-private-chip-group-filter-colour-stroke-icon-off-on-dark: rgba(255, 255, 255, 0.5);
+  --bpk-private-chip-group-filter-colour-stroke-icon-off-on-dark: rgba(255, 255, 255, 0.2);
   --bpk-private-chip-group-filter-dimensions-min-height: 2.25rem;
   --bpk-private-chip-colour-bg-default-dismissible-hover: #05203c;
   --bpk-private-chip-colour-bg-default-on: #05203c;
@@ -106,7 +106,7 @@
   --bpk-private-chip-colour-border-on-contrast-on: #05203c;
   --bpk-private-chip-colour-border-on-dark-dismissible-hover: #ffffff;
   --bpk-private-chip-colour-border-on-dark-hover: #ffffff;
-  --bpk-private-chip-colour-border-on-dark-off: rgba(255, 255, 255, 0.5);
+  --bpk-private-chip-colour-border-on-dark-off: rgba(255, 255, 255, 0.2);
   --bpk-private-chip-colour-stroke-off-on-canvas-contrast-new: rgba(255, 255, 255, 0);
   --bpk-private-chip-colour-text-default-dismissible-hover: #ffffff;
   --bpk-private-chip-colour-text-dismissible-on-icon: rgba(255, 255, 255, 0.5);
@@ -171,11 +171,11 @@
   --bpk-core-accent: #0062e3;
   --bpk-core-eco: #0fa1a9;
   --bpk-core-primary: #05203c;
-  --bpk-other-line: #c1c7cf;
-  --bpk-other-line-on-dark: rgba(255, 255, 255, 0.5);
   --bpk-other-overlay: rgba(0, 0, 0, 0.2);
   --bpk-other-scrim: rgba(0, 0, 0, 0.7);
   --bpk-other-shadow: rgba(22, 22, 22, 0.25);
+  --bpk-other-line-default: #c1c7cf;
+  --bpk-other-line-on-contrast: rgba(255, 255, 255, 0.2);
   --bpk-status-danger-spot: #e70866;
   --bpk-status-success-spot: #0c838a;
   --bpk-status-warning-spot: #f55d42;
@@ -200,6 +200,7 @@
   --bpk-text-on-light: #161616;
   --bpk-text-primary: #161616;
   --bpk-text-secondary: #626971;
+  --bpk-text-secondary-on-contrast: rgba(255, 255, 255, 0.5);
   --bpk-text-success: #0c838a;
   --bpk-text-deprecated-link: #0062e3;
   --bpk-text-hero: #0062e3;
