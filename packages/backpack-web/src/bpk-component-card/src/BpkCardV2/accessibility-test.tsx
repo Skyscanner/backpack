@@ -28,7 +28,7 @@ import { CARD_V2_SURFACE_COLORS, CARD_V2_VARIANTS } from './common-types';
 
 expect.extend(toHaveNoViolations);
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkCardV2 Accessibility', () => {

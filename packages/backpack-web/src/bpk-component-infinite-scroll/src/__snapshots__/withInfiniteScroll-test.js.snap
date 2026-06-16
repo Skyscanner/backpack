@@ -44,25 +44,6 @@ exports[`withInfiniteScroll should finish the list when array changes to empty 1
   <div>
     <div
       id="list"
-    >
-      <div>
-        Element 0
-      </div>
-      <div>
-        Element 1
-      </div>
-      <div>
-        Element 2
-      </div>
-      <div>
-        Element 3
-      </div>
-      <div>
-        Element 4
-      </div>
-    </div>
-    <div
-      class="bpk-sentinel"
     />
   </div>
 </DocumentFragment>
@@ -88,24 +69,15 @@ exports[`withInfiniteScroll should refresh data when data changes 1`] = `
       id="list"
     >
       <div>
-        Element 0
+        1
       </div>
       <div>
-        Element 1
+        2
       </div>
       <div>
-        Element 2
-      </div>
-      <div>
-        Element 3
-      </div>
-      <div>
-        Element 4
+        3
       </div>
     </div>
-    <div
-      class="bpk-sentinel"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -117,24 +89,15 @@ exports[`withInfiniteScroll should refresh data when data changes from an empty 
       id="list"
     >
       <div>
-        Element 0
+        1
       </div>
       <div>
-        Element 1
+        2
       </div>
       <div>
-        Element 2
-      </div>
-      <div>
-        Element 3
-      </div>
-      <div>
-        Element 4
+        3
       </div>
     </div>
-    <div
-      class="bpk-sentinel"
-    />
   </div>
 </DocumentFragment>
 `;

@@ -20,7 +20,11 @@ import type { ReactElement, ReactNode } from 'react';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  createSystem,
+  defaultBaseConfig,
+} from '@chakra-ui/react';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 
@@ -83,7 +87,16 @@ const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
 // Known RTL language subtags (ISO 639 codes). Used as fallback when
 // Intl.Locale.textInfo is unavailable (Node < 22, older browsers).
 const RTL_LANGUAGE_SUBTAGS = new Set([
-  'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
+  'ar',
+  'he',
+  'fa',
+  'ur',
+  'yi',
+  'iw',
+  'ps',
+  'sd',
+  'ug',
+  'ku',
 ]);
 
 // Returns the text direction implied by a BCP 47 locale string.
@@ -176,7 +189,9 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
 
   const [isCypress] = useState(isCypressEnv);
   const [ownCache, setOwnCache] = useState(() =>
-    isNested ? parentCache : createBpkEmotionCache(isCypress ? false : undefined),
+    isNested
+      ? parentCache
+      : createBpkEmotionCache(isCypress ? false : undefined),
   );
   const hasRecreated = useRef(false);
   const locale = useArkLocale();
@@ -204,9 +219,7 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
 
   return (
     <BpkEmotionCacheContext.Provider value={ownCache}>
-      <CacheProvider value={ownCache}>
-        {inner}
-      </CacheProvider>
+      <CacheProvider value={ownCache}>{inner}</CacheProvider>
     </BpkEmotionCacheContext.Provider>
   );
 };
