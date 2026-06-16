@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -240,26 +241,34 @@ describe('BpkBottomSheet', () => {
     expect(titleEl).toBeInTheDocument();
   });
 
-  it('does not call onClose after unmount (timer leak regression)', () => {
-    jest.useFakeTimers();
-    const onClose = jest.fn();
-    const { unmount } = render(
-      <BpkBottomSheet
-        ariaLabelledby="bottom-sheet"
-        closeLabel="Close"
-        id="my-bottom-sheet"
-        isOpen
-        onClose={onClose}
-      >
-        Content
-      </BpkBottomSheet>,
-    );
-    // Simulate close button click would normally schedule a 240ms timer.
-    // Unmounting before the timer fires should cancel it.
-    unmount();
-    jest.advanceTimersByTime(300);
-    expect(onClose).not.toHaveBeenCalled();
-    jest.useRealTimers();
+  describe('timer leak regression', () => {
+    afterEach(() => {
+      jest.useRealTimers();
+    });
+
+    it('does not call onClose after unmount when timer is pending', async () => {
+      jest.useFakeTimers();
+      const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+      const onClose = jest.fn();
+      const { unmount } = render(
+        <BpkBottomSheet
+          ariaLabelledby="bottom-sheet"
+          closeLabel="Close"
+          id="my-bottom-sheet"
+          isOpen
+          onClose={onClose}
+        >
+          Content
+        </BpkBottomSheet>,
+      );
+      // Click close to schedule the 240ms animation timer
+      await user.click(screen.getByTitle('Close'));
+      // Unmount before the timer fires
+      unmount();
+      // Advance past the animation duration — onClose must not be called
+      act(() => { jest.advanceTimersByTime(300); });
+      expect(onClose).not.toHaveBeenCalled();
+    });
   });
 
   it('adds correct id to custom title element for aria-labelledby reference', () => {

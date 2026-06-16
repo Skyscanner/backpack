@@ -156,8 +156,12 @@ const BpkBottomSheet = ({
     ) => {
       const timeoutDuration = isAboveMobile ? 0 : animationTimeout;
 
+      if (closeTimerRef.current !== null) {
+        clearTimeout(closeTimerRef.current);
+      }
       setExiting(true);
       closeTimerRef.current = setTimeout(() => {
+        closeTimerRef.current = null;
         onClose(arg0, arg1);
         setExiting(false);
       }, timeoutDuration);
