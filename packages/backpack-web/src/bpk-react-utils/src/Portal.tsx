@@ -27,6 +27,8 @@ const KEYCODES = {
   ESCAPE: 'Escape',
 } as const;
 
+const noop = () => null;
+
 type InteractionEvents = TouchEvent | MouseEvent | KeyboardEvent;
 
 type JSXElementWithRefProps = JSX.Element & {
@@ -36,24 +38,24 @@ type JSXElementWithRefProps = JSX.Element & {
 type Props = {
   children: string | ReactNode;
   isOpen: boolean;
-  beforeClose: ((arg0: () => void) => void) | null | undefined;
-  className: string | null | undefined;
-  onClose: (
+  beforeClose?: ((arg0: () => void) => void) | null | undefined;
+  className?: string | null | undefined;
+  onClose?: (
     arg0: InteractionEvents,
     arg1: {
       source: 'ESCAPE' | 'DOCUMENT_CLICK';
     },
   ) => void;
-  onOpen: (arg0: HTMLElement, arg1?: HTMLElement | null | undefined) => void;
-  onRender: (
+  onOpen?: (arg0: HTMLElement, arg1?: HTMLElement | null | undefined) => void;
+  onRender?: (
     arg0: HTMLElement | null | undefined,
     arg1: HTMLElement | null | undefined,
   ) => void;
-  style: {} | null | undefined;
-  renderTarget: null | HTMLElement | (() => null | HTMLElement);
-  target: null | HTMLElement | JSX.Element | (() => HTMLElement);
-  targetRef: ((arg0: null | Element | undefined) => void) | null | undefined;
-  closeOnEscPressed: boolean;
+  style?: {} | null | undefined;
+  renderTarget?: null | HTMLElement | (() => null | HTMLElement);
+  target?: null | HTMLElement | JSX.Element | (() => HTMLElement);
+  targetRef?: ((arg0: null | Element | undefined) => void) | null | undefined;
+  closeOnEscPressed?: boolean;
 };
 
 type State = {
@@ -64,19 +66,6 @@ class Portal extends Component<Props, State> {
   portalElement: null | HTMLDivElement;
 
   shouldClose: boolean;
-
-  static defaultProps = {
-    beforeClose: null,
-    className: null,
-    onClose: () => null,
-    onOpen: () => null,
-    onRender: () => null,
-    style: null,
-    renderTarget: null,
-    target: null,
-    targetRef: null,
-    closeOnEscPressed: true,
-  };
 
   constructor(props: Props) {
     super(props);
@@ -114,15 +103,16 @@ class Portal extends Component<Props, State> {
   // call their beforeClose function so that they can trigger the close.
   // If they don't provide `beforeClose` we just call `close` directly.
   componentDidUpdate(prevProps: Props) {
+    const { beforeClose, onRender = noop } = this.props;
     if (this.props.isOpen) {
       if (!prevProps.isOpen) {
         this.open();
       } else {
-        this.props.onRender(this.portalElement, this.getTargetElement());
+        onRender(this.portalElement, this.getTargetElement());
       }
     } else if (prevProps.isOpen) {
-      if (this.props.beforeClose) {
-        this.props.beforeClose(this.close);
+      if (beforeClose) {
+        beforeClose(this.close);
       } else {
         this.close();
       }
@@ -148,6 +138,7 @@ class Portal extends Component<Props, State> {
   }
 
   onDocumentMouseUp(event: MouseEvent | TouchEvent) {
+    const { onClose = noop } = this.props;
     const clickEventProperties = this.getClickEventProperties(event);
 
     if (
@@ -162,19 +153,20 @@ class Portal extends Component<Props, State> {
     if (this.shouldClose) {
       // `onClose` tells the consumer that they should change `isOpen` to false.
       // Once the consumer has responded to `onClose`, `beforeClose` and `close` will be called.
-      this.props.onClose(event, { source: 'DOCUMENT_CLICK' });
+      onClose(event, { source: 'DOCUMENT_CLICK' });
     }
   }
 
   onDocumentKeyDown(event: KeyboardEvent) {
+    const { closeOnEscPressed = true, onClose = noop } = this.props;
     if (
       event.key === KEYCODES.ESCAPE &&
       this.props.isOpen &&
-      this.props.closeOnEscPressed
+      closeOnEscPressed
     ) {
       // `onClose` tells the consumer that they should change `isOpen` to false.
       // Once the consumer has responded to `onClose`, `beforeClose` and `close` will be called.
-      this.props.onClose(event, { source: 'ESCAPE' });
+      onClose(event, { source: 'ESCAPE' });
     }
   }
 
@@ -261,9 +253,10 @@ class Portal extends Component<Props, State> {
       portalElement.className = this.props.className;
     }
 
+    const { onOpen = noop } = this.props;
     this.portalElement = portalElement;
     this.setState({ isVisible: true }, () =>
-      this.props.onOpen(portalElement, this.getTargetElement()),
+      onOpen(portalElement, this.getTargetElement()),
     );
   }
 

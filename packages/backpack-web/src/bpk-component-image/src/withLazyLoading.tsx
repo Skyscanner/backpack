@@ -47,11 +47,6 @@ export default function withLazyLoading<P extends object>(
 
     placeholderReference?: string;
 
-    static defaultProps = {
-      style: {},
-      className: '',
-    };
-
     constructor(props: Omit<P, 'inView'> & WithLazyLoadingProps) {
       super(props);
 
@@ -144,7 +139,7 @@ export default function withLazyLoading<P extends object>(
     };
 
     render() {
-      const { className, style, ...rest } = this.props;
+      const { className = '', style = {}, ...rest } = this.props;
 
       return (
         <div

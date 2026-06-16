@@ -59,26 +59,13 @@ export type Props = Omit<NativeDivProps, 'className'> & {
 };
 
 class BpkProgress extends Component<Props> {
-  static defaultProps = {
-    className: null,
-    stepped: false,
-    small: false,
-    onComplete: () => null,
-    onCompleteTransitionEnd: () => null,
-    getValueText: null,
-  };
-
   componentDidUpdate(previousProps: Props) {
-    const { max, value } = this.props;
-    if (
-      value >= max &&
-      value !== previousProps.value &&
-      this.props.onComplete
-    ) {
-      this.props.onComplete();
+    const { max, onComplete, onCompleteTransitionEnd, value } = this.props;
+    if (value >= max && value !== previousProps.value) {
+      onComplete?.();
 
-      if (!isTransitionEndSupported() && this.props.onCompleteTransitionEnd) {
-        this.props.onCompleteTransitionEnd();
+      if (!isTransitionEndSupported() && onCompleteTransitionEnd) {
+        onCompleteTransitionEnd();
       }
     }
   }
@@ -92,14 +79,14 @@ class BpkProgress extends Component<Props> {
 
   render() {
     const {
-      className,
-      getValueText,
+      className = null,
+      getValueText = null,
       max,
       min,
       onComplete,
       onCompleteTransitionEnd,
-      small,
-      stepped,
+      small = false,
+      stepped = false,
       value,
       ...rest
     } = this.props;
