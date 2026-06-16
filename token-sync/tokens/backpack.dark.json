@@ -443,7 +443,7 @@
       "Default": {
         "$value": "{Neutral.Dark Grey 25}"
       },
-      "On Contrast": {
+      "OnContrast": {
         "$value": "{Neutral.Dark Grey 25}"
       },
       "$type": "color"
@@ -578,11 +578,11 @@
       "android-switch-knob-disabled": {
         "$value": "{Alpha.White Alpha 20}"
       },
-      "android-switch-on-contrast-fill-disabled": {
-        "$value": "{Alpha.White Alpha 10}"
-      },
       "android-switch-on-contrast-off": {
         "$value": "{Alpha.White Alpha 80}"
+      },
+      "android-switch-onContrast-fill-disabled": {
+        "$value": "{Alpha.White Alpha 10}"
       },
       "ios-switch-default-off": {
         "$value": "{Alpha.White Alpha 20}"
@@ -590,7 +590,7 @@
       "ios-switch-disabled": {
         "$value": "{Neutral.Grey 20}"
       },
-      "ios-switch-on-contrast-off": {
+      "ios-switch-onContrast-off": {
         "$value": "{Alpha.White Alpha 20}"
       },
       "$type": "color"
@@ -617,12 +617,6 @@
     "$type": "color"
   },
   "Other": {
-    "Line": {
-      "$value": "{Alpha.White Alpha 20}"
-    },
-    "Line On Dark": {
-      "$value": "{Alpha.White Alpha 20}"
-    },
     "Overlay": {
       "$value": "{Alpha.White Alpha 80}"
     },
@@ -631,6 +625,12 @@
     },
     "Shadow": {
       "$value": "{Alpha.Charcoal Alpha 25}"
+    },
+    "line-default": {
+      "$value": "{Alpha.White Alpha 20}"
+    },
+    "line-onContrast": {
+      "$value": "{Alpha.White Alpha 20}"
     },
     "$type": "color"
   },
@@ -713,6 +713,9 @@
     },
     "Secondary": {
       "$value": "{Neutral.Dark Grey 40}"
+    },
+    "Secondary On Contrast": {
+      "$value": "{Alpha.White Alpha 50}"
     },
     "Success": {
       "$value": "{Colour.Bright Green}"
