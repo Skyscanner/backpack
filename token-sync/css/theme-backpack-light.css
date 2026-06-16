@@ -89,6 +89,8 @@
   --bpk-private-chip-group-filter-colour-stroke-icon-off-on-dark: rgba(255, 255, 255, 0.2);
   --bpk-private-chip-group-filter-dimensions-min-height: 2.25rem;
   --bpk-private-chip-colour-bg-default-dismissible-hover: #05203c;
+  --bpk-private-chip-colour-bg-default-hover: rgba(255, 255, 255, 0);
+  --bpk-private-chip-colour-bg-default-off: rgba(255, 255, 255, 0);
   --bpk-private-chip-colour-bg-default-on: #05203c;
   --bpk-private-chip-colour-bg-disabled: #e0e4e9;
   --bpk-private-chip-colour-bg-on-contrast-hover: #ffffff;
@@ -130,7 +132,7 @@
   --bpk-private-map-previous-selection: #cfe4ff;
   --bpk-private-navigation-tabs-hover: #154679;
   --bpk-private-navigation-tabs-outline: rgba(255, 255, 255, 0.2);
-  --bpk-private-navigation-tabs-selected: #024daf;
+  --bpk-private-navigation-tabs-selected: #0062e3;
   --bpk-private-radio-bg-default-disabled: #c1c7cf;
   --bpk-private-radio-bg-default-on: #0062e3;
   --bpk-private-radio-bg-on-contrast-off: #ffffff;
@@ -165,6 +167,8 @@
   --bpk-private-shadow-xl-position-y: 0.75rem;
   --bpk-private-shadow-xl-spread: 0;
   --bpk-private-skeleton-on-dark: rgba(255, 255, 255, 0.1);
+  --bpk-private-slider-bg-knob: #0062e3;
+  --bpk-private-slider-bg-track: #0062e3;
   --bpk-private-speech-bubble-colour-bg-contrast: #eff3f8;
   --bpk-private-speech-bubble-colour-bg-default: #ffffff;
   --bpk-private-trip-advisor: #00aa6c;

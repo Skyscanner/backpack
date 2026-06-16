@@ -269,6 +269,12 @@
         "bg-default-dismissible-hover": {
           "$value": "{Colour.Twilight}"
         },
+        "bg-default-hover": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "bg-default-off": {
+          "$value": "{Alpha.Transparent}"
+        },
         "bg-default-on": {
           "$value": "{Colour.Twilight}"
         },
@@ -557,6 +563,15 @@
     "Skeleton": {
       "on-dark": {
         "$value": "{Neutral.Dark Grey 25}"
+      },
+      "$type": "color"
+    },
+    "Slider": {
+      "bg-knob": {
+        "$value": "{Colour.Bright Blue}"
+      },
+      "bg-track": {
+        "$value": "{Colour.Bright Blue}"
       },
       "$type": "color"
     },
