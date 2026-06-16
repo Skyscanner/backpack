@@ -16,17 +16,31 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+import { Component } from 'react';
+
 import { useLocaleContext } from '@ark-ui/react';
 import createCache from '@emotion/cache';
 import { withEmotionCache } from '@emotion/react';
-import { act, render } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
 import { BpkProvider, BpkEmotionCacheContext } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
-import type { EmotionCache } from '@emotion/cache';
+import type { EmotionCache, Options } from '@emotion/cache';
+
+jest.mock('@emotion/cache', () =>
+  jest.fn((options: Options): EmotionCache => {
+    const realCreateCache = jest.requireActual('@emotion/cache').default as (
+      mockCacheOptions: Options,
+    ) => EmotionCache;
+    return realCreateCache(options);
+  }),
+);
+
+const mockCreateCache = createCache as jest.Mock;
 
 // Helper: reads the active Emotion cache key from context via withEmotionCache.
 const EmotionCacheReader = withEmotionCache(
@@ -35,10 +49,151 @@ const EmotionCacheReader = withEmotionCache(
   ),
 );
 
+// Mirrors the production topology: error boundary whose fallback also mounts BpkProvider.
+// This is exactly the structure that causes the infinite remount loop.
+class LoopBoundary extends Component<
+  { children: ReactNode },
+  { errored: boolean }
+> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { errored: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { errored: true };
+  }
+
+  componentDidCatch() {
+    this.catchCount += 1;
+  }
+
+  catchCount = 0;
+
+  render() {
+    if (this.state.errored) {
+      return (
+        <BpkProvider>
+          <div data-testid="fallback">fallback</div>
+        </BpkProvider>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+
 const LocaleReader = () => {
   const { locale } = useLocaleContext();
   return <span data-testid="locale">{locale}</span>;
 };
+
+describe('BpkProvider - Emotion cache', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+    delete (window as any).Cypress;
+    delete (window as any).bpkDisableEmotionSpeedy;
+  });
+
+  it('creates cache without speedy in a normal (non-Cypress) environment', () => {
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    // Cache is created via the useState lazy initialiser (StrictMode may
+    // invoke it more than once in dev, so we don't assert an exact count).
+    expect(mockCreateCache).toHaveBeenCalledWith({ key: 'css' });
+    // The recreate path is the ONLY code path that passes `speedy: false`,
+    // so absence of any such call proves the provider did not recreate the
+    // cache in a normal client runtime.
+    expect(mockCreateCache).not.toHaveBeenCalledWith(
+      expect.objectContaining({ speedy: false }),
+    );
+  });
+
+  it('creates cache with speedy: false when bpkDisableEmotionSpeedy is set', async () => {
+    (window as any).bpkDisableEmotionSpeedy = true;
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateCache).toHaveBeenCalledWith({
+        key: 'css',
+        speedy: false,
+      });
+    });
+  });
+
+  it('creates cache with speedy: false when window.Cypress is set', async () => {
+    (window as any).Cypress = {};
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateCache).toHaveBeenCalledWith({
+        key: 'css',
+        speedy: false,
+      });
+    });
+  });
+
+  it('recreates the cache after mount when bpkDisableEmotionSpeedy is set', async () => {
+    (window as any).bpkDisableEmotionSpeedy = true;
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      const speedyCalls = mockCreateCache.mock.calls.filter(
+        (args: any[]) => args[0]?.speedy === false,
+      );
+      expect(speedyCalls.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  it('recreates the cache after mount when window.Cypress is set', async () => {
+    (window as any).Cypress = {};
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      const speedyCalls = mockCreateCache.mock.calls.filter(
+        (args: any[]) => args[0]?.speedy === false,
+      );
+      expect(speedyCalls.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  it('does not create a new cache when nested inside another BpkProvider', () => {
+    render(
+      <BpkProvider>
+        <BpkProvider>
+          <div />
+        </BpkProvider>
+      </BpkProvider>,
+    );
+
+    // Only the outermost BpkProvider should create a cache
+    expect(mockCreateCache).toHaveBeenCalledTimes(1);
+  });
+});
 
 describe('BpkProvider', () => {
   it('renders children inside Chakra system without crashing', () => {
@@ -220,6 +375,66 @@ describe('BpkProvider - RTL support', () => {
     });
 
     expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to en-US and does not crash when html[lang] is an invalid locale (numeric string)', () => {
+    document.documentElement.setAttribute('lang', '123');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to en-US and does not crash when html[lang] is an empty string', () => {
+    document.documentElement.setAttribute('lang', '');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('does not loop when ErrorBoundary fallback also mounts BpkProvider with invalid html[lang]', () => {
+    document.documentElement.setAttribute('lang', '123');
+
+    // Suppress expected React error output for this test
+    jest.spyOn(console, 'error').mockImplementation(jest.fn());
+
+    const boundary = { current: null as LoopBoundary | null };
+    render(
+      // LoopBoundary mirrors the production topology: ErrorBoundary whose fallback
+      // also mounts BpkProvider. Without the fix this render() never returns —
+      // it exhausts the JS heap as BpkProvider → Ark throws → boundary remounts
+      // BpkProvider → repeat. With the fix BpkProvider never throws.
+      <LoopBoundary ref={(el) => { boundary.current = el; }}>
+        <BpkProvider>
+          <div>content</div>
+        </BpkProvider>
+      </LoopBoundary>,
+    );
+
+    expect(boundary.current?.catchCount).toBe(0);
+
+    jest.restoreAllMocks();
+  });
+
+  it('passes a valid html[lang] through to Ark unchanged', () => {
+    document.documentElement.setAttribute('lang', 'en-GB');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-GB');
   });
 
   it('disconnects MutationObserver on unmount', () => {

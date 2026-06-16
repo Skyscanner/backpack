@@ -47,6 +47,10 @@ export const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
 
+// Cypress/Percy workaround: `hydrateRoot()` strips SSR <style> nodes, then
+// Emotion falls back to speedy mode (insertRule) which Percy can't serialise.
+// Force speedy:false + recreate after mount in Cypress. Remove once Emotion /
+// React Router 7 provide a cleaner hydration story. Ported from hotels-website#12025.
 type CypressWindow = Window & {
   Cypress?: unknown;
   bpkDisableEmotionSpeedy?: boolean;
@@ -68,7 +72,7 @@ const isCypressEnv = (): boolean => {
   try {
     return Boolean((win.parent as CypressWindow | undefined)?.Cypress);
   } catch {
-    return false;
+    return false; // cross-origin parent frame
   }
 };
 
@@ -125,7 +129,15 @@ const getArkLocale = (): string => {
     return FALLBACK_LOCALE_BY_DIRECTION[explicitDir];
   }
 
-  return lang || 'en-US';
+  if (lang) {
+    try {
+      const locale = new Intl.Locale(lang);
+      if (locale) return lang;
+    } catch {
+      // Invalid locale string — fall through to default
+    }
+  }
+  return 'en-US';
 };
 
 // Reactive hook: subscribes to document.documentElement[dir] and [lang] changes
@@ -168,7 +180,7 @@ const useArkLocale = (): string => {
  * fresh cache after a hydration error so all Backpack styles are re-injected.
  *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {ReactElement} The provider wrapping its children with Chakra and Ark context.
  */
 export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
   const externalCache = useContext(BpkEmotionCacheContext);
@@ -179,7 +191,6 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
     isNested ? externalCache : createBpkEmotionCache(isCypress ? false : undefined),
   );
   const hasRecreated = useRef(false);
-
   const locale = useArkLocale();
 
   // Recreate the cache once after mount in Cypress to replace SSR <style>
