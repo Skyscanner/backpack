@@ -53,6 +53,20 @@ const RTL_LANGUAGE_SUBTAGS = new Set([
   'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
 ]);
 
+// Returns true when `locale` is a BCP 47 string that Intl.Locale accepts.
+// Ark's LocaleProvider calls `new Intl.Locale(locale)` without a try/catch,
+// so any value we hand it must be validated here first or it throws
+// "Incorrect locale information provided".
+const isValidLocale = (locale: string): boolean => {
+  try {
+    // Assigning the result (rather than bare `new`) satisfies the no-new lint rule.
+    const parsed = new Intl.Locale(locale);
+    return Boolean(parsed);
+  } catch {
+    return false;
+  }
+};
+
 // Returns the text direction implied by a BCP 47 locale string.
 // Uses Intl.Locale.textInfo when available (Chrome 99+, Safari 15.4+, Firefox 126+, Node 22+);
 // falls back to a known-RTL-subtag lookup.
@@ -72,11 +86,18 @@ const getLangDir = (locale: string): Direction => {
 //
 // Priority rules:
 //   1. If html[dir] is explicitly set:
-//      - Use html[lang] only when its direction is consistent with html[dir].
+//      - Use html[lang] only when it is a valid locale AND its direction is
+//        consistent with html[dir].
 //      - Otherwise fall back to FALLBACK_LOCALE_BY_DIRECTION[dir].
 //      This prevents an LTR html[lang] (e.g. 'en' from a page template) from
 //      overriding an explicit html[dir]="rtl" signal (e.g. from a dev RTL toggle).
-//   2. If html[dir] is not set: use html[lang] if present, else 'en-US'.
+//   2. If html[dir] is not set: use html[lang] if it is a valid locale, else 'en-US'.
+//
+// Every value returned here is validated with isValidLocale() because Ark's
+// LocaleProvider passes it straight to `new Intl.Locale()`, which throws on
+// malformed input (e.g. '', '123', 'en_US'). An unvalidated value crashes the
+// provider, and when the ErrorBoundary fallback also mounts BpkProvider the same
+// bad value is re-read on every remount, producing an indefinite crash loop.
 //
 // SSR-safe: returns 'en-US' when document is unavailable.
 const getArkLocale = (): string => {
@@ -86,18 +107,13 @@ const getArkLocale = (): string => {
   const lang = document.documentElement.getAttribute('lang');
 
   if (explicitDir === 'rtl' || explicitDir === 'ltr') {
-    if (lang && getLangDir(lang) === explicitDir) return lang;
+    if (lang && isValidLocale(lang) && getLangDir(lang) === explicitDir) {
+      return lang;
+    }
     return FALLBACK_LOCALE_BY_DIRECTION[explicitDir];
   }
 
-  if (lang) {
-    try {
-      const locale = new Intl.Locale(lang);
-      if (locale) return lang;
-    } catch {
-      // Invalid locale string — fall through to default
-    }
-  }
+  if (lang && isValidLocale(lang)) return lang;
   return 'en-US';
 };
 
