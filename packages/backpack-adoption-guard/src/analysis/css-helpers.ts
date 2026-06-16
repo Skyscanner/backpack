@@ -376,7 +376,7 @@ export function parseCSSModule(cssFilePath: string, className: string): CSSModul
       }
     }
 
-    return { rules, mixins: [...new Set(mixins)] };
+    return { rules, mixins: Array.from(new Set(mixins)) };
   } catch {
     return { rules: [], mixins: [] };
   }
