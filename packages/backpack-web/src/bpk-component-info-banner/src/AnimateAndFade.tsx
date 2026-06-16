@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
-import type { ReactNode } from 'react';
+import { Component, cloneElement, createRef, isValidElement } from 'react';
+import type { ReactElement, ReactNode, RefObject } from 'react';
 
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -110,6 +110,8 @@ class AnimateAndFade extends Component<Props, State> {
     }
   };
 
+  nodeRef = createRef<HTMLElement>();
+
   toggle = () => {
     if (this.state.visible && this.state.isExpanded) {
       this.setState({
@@ -147,6 +149,7 @@ class AnimateAndFade extends Component<Props, State> {
           >
             {this.state.visible && (
               <CSSTransition
+                nodeRef={this.nodeRef}
                 classNames={{
                   exit: getClassName('bpk-animate-and-fade--leave'),
                   exitActive: getClassName('bpk-animate-and-fade--leave-active'),
@@ -162,7 +165,9 @@ class AnimateAndFade extends Component<Props, State> {
                   exit: ANIMATION_DURATION * 2,
                 }}
               >
-                {children}
+                {isValidElement(children)
+                  ? cloneElement(children as ReactElement<{ ref?: RefObject<HTMLElement | null> }>, { ref: this.nodeRef })
+                  : children}
               </CSSTransition>
             )}
           </TransitionGroup>

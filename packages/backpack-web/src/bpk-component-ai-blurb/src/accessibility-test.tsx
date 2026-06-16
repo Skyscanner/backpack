@@ -26,7 +26,7 @@ import { BpkProvider } from '../../bpk-component-layout';
 
 import BpkAiBlurb from './BpkAiBlurb';
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 describe('BpkAiBlurb accessibility tests', () => {

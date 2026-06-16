@@ -32,7 +32,6 @@ import {
   BpkSpacing,
   BpkVStack,
 } from '../../../bpk-component-layout';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../../bpk-theming';
 
 import BpkCheckboxV2 from './BpkCheckboxV2';
