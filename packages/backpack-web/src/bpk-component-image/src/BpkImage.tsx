@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 
 import CSSTransition from 'react-transition-group/CSSTransition';
 
@@ -112,6 +112,8 @@ class BpkImage extends Component<BpkImageProps> {
     return 1;
   };
 
+  spinnerNodeRef = createRef<HTMLDivElement>();
+
   render() {
     const {
       altText,
@@ -179,13 +181,17 @@ class BpkImage extends Component<BpkImageProps> {
           )}
           {loading && (
             <CSSTransition
+              nodeRef={this.spinnerNodeRef}
               classNames={{
                 exit: getClassName('bpk-image__spinner--shown'),
                 exitActive: getClassName('bpk-image__spinner--hidden'),
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-image__spinner')}>
+              <div
+                ref={this.spinnerNodeRef}
+                className={getClassName('bpk-image__spinner')}
+              >
                 <BpkSpinner />
               </div>
             </CSSTransition>
