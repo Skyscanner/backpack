@@ -16,17 +16,27 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
 import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 import { createBpkConfig } from './theme';
+
+import type { EmotionCache } from '@emotion/cache';
 
 export interface BpkProviderProps {
   children: ReactNode;
 }
+
+// Exported so host apps can inject an externally-managed Emotion cache into
+// BpkProvider (e.g. to force re-injection after a hydration error recovery).
+// When a non-null value is provided via this context, BpkProvider operates in
+// "nested" mode: it skips creating its own cache and delegates to the external one.
+export const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
 
 /**
  * Creates a Chakra UI system with Backpack token mappings.
@@ -36,6 +46,31 @@ export interface BpkProviderProps {
  * See: https://chakra-ui.com/guides/component-bundle-optimization
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
+
+type CypressWindow = Window & {
+  Cypress?: unknown;
+  bpkDisableEmotionSpeedy?: boolean;
+};
+
+// `'css'` is shared with Chakra v3's internal key on purpose — keeps this
+// boundary in front of Chakra's auto-created cache.
+const createBpkEmotionCache = (speedy?: boolean) =>
+  createCache(
+    speedy === undefined ? { key: 'css' } : { key: 'css', speedy },
+  );
+
+const isCypressEnv = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  const win = window as CypressWindow;
+  // `bpkDisableEmotionSpeedy` is an explicit escape hatch for non-Cypress
+  // Percy runs; consumers set it in their test bootstrap.
+  if (win.Cypress || win.bpkDisableEmotionSpeedy) return true;
+  try {
+    return Boolean((win.parent as CypressWindow | undefined)?.Cypress);
+  } catch {
+    return false;
+  }
+};
 
 type Direction = 'ltr' | 'rtl';
 
@@ -119,6 +154,7 @@ const useArkLocale = (): string => {
  * BpkProvider - Provides context for Backpack layout and Ark-based components.
  *
  * Wraps children with:
+ * - Emotion CacheProvider (own cache, or external cache injected via BpkEmotionCacheContext)
  * - Chakra UI system context (for layout components: BpkFlex, BpkGrid, etc.)
  * - Ark UI LocaleProvider (for Ark-based components: BpkCheckboxV2, BpkSegmentedControlV2, etc.)
  *
@@ -126,15 +162,54 @@ const useArkLocale = (): string => {
  * the appropriate locale to Ark's LocaleProvider. All Ark-based components in the
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
+ * External cache injection: host apps can supply an Emotion cache via
+ * BpkEmotionCacheContext. When a non-null value is provided, BpkProvider uses it
+ * directly and skips creating its own cache. This allows the host to swap in a
+ * fresh cache after a hydration error so all Backpack styles are re-injected.
+ *
  * @param {BpkProviderProps} props - The provider props.
  * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
+  const externalCache = useContext(BpkEmotionCacheContext);
+  const isNested = externalCache !== null;
+
+  const [isCypress] = useState(isCypressEnv);
+  const [ownCache, setOwnCache] = useState<EmotionCache>(() =>
+    isNested ? externalCache : createBpkEmotionCache(isCypress ? false : undefined),
+  );
+  const hasRecreated = useRef(false);
+
   const locale = useArkLocale();
 
-  return (
+  // Recreate the cache once after mount in Cypress to replace SSR <style>
+  // nodes the hydrator stripped. `hasRecreated` guards StrictMode double-invoke.
+  // Deps stable for provider lifetime → empty array is intentional.
+  useEffect(() => {
+    if (isNested || !isCypress) return;
+    if (hasRecreated.current) return;
+    hasRecreated.current = true;
+    setOwnCache(createBpkEmotionCache(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const activeCache = isNested ? externalCache : ownCache;
+
+  const inner = (
     <ChakraProvider value={bpkSystem}>
       <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
+  );
+
+  if (isNested) {
+    return inner;
+  }
+
+  return (
+    <BpkEmotionCacheContext.Provider value={activeCache}>
+      <CacheProvider value={activeCache}>
+        {inner}
+      </CacheProvider>
+    </BpkEmotionCacheContext.Provider>
   );
 };

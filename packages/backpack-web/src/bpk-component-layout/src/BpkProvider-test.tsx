@@ -17,12 +17,23 @@
  */
 
 import { useLocaleContext } from '@ark-ui/react';
+import createCache from '@emotion/cache';
+import { withEmotionCache } from '@emotion/react';
 import { act, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
-import { BpkProvider } from './BpkProvider';
+import { BpkProvider, BpkEmotionCacheContext } from './BpkProvider';
 import { BpkSpacing } from './tokens';
+
+import type { EmotionCache } from '@emotion/cache';
+
+// Helper: reads the active Emotion cache key from context via withEmotionCache.
+const EmotionCacheReader = withEmotionCache(
+  (_props: Record<string, never>, cache: EmotionCache) => (
+    <span data-testid="emotion-cache-key">{cache.key}</span>
+  ),
+);
 
 const LocaleReader = () => {
   const { locale } = useLocaleContext();
@@ -50,6 +61,30 @@ describe('BpkProvider', () => {
     );
 
     expect(getByText('Plain child')).toBeInTheDocument();
+  });
+
+  it('uses own emotion cache when no external cache is provided', () => {
+    const { getByTestId } = render(
+      <BpkProvider>
+        <EmotionCacheReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('css');
+  });
+
+  it('uses external emotion cache injected via BpkEmotionCacheContext', () => {
+    const externalCache = createCache({ key: 'css' });
+
+    const { getByTestId } = render(
+      <BpkEmotionCacheContext.Provider value={externalCache}>
+        <BpkProvider>
+          <EmotionCacheReader />
+        </BpkProvider>
+      </BpkEmotionCacheContext.Provider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('css');
   });
 });
 
