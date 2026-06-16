@@ -20,12 +20,26 @@ import type { ReactNode } from 'react';
 import { Component } from 'react';
 
 import { useLocaleContext } from '@ark-ui/react';
-import { act, render } from '@testing-library/react';
+import createCache from '@emotion/cache';
+import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
 import { BpkProvider } from './BpkProvider';
 import { BpkSpacing } from './tokens';
+
+import type { EmotionCache, Options } from '@emotion/cache';
+
+jest.mock('@emotion/cache', () =>
+  jest.fn((options: Options): EmotionCache => {
+    const realCreateCache = jest.requireActual('@emotion/cache').default as (
+      mockCacheOptions: Options,
+    ) => EmotionCache;
+    return realCreateCache(options);
+  }),
+);
+
+const mockCreateCache = createCache as jest.Mock;
 
 // Mirrors the production topology: error boundary whose fallback also mounts BpkProvider.
 // This is exactly the structure that causes the infinite remount loop.
@@ -64,6 +78,113 @@ const LocaleReader = () => {
   const { locale } = useLocaleContext();
   return <span data-testid="locale">{locale}</span>;
 };
+
+describe('BpkProvider - Emotion cache', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+    delete (window as any).Cypress;
+    delete (window as any).bpkDisableEmotionSpeedy;
+  });
+
+  it('creates cache without speedy in a normal (non-Cypress) environment', () => {
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    // Cache is created via the useState lazy initialiser (StrictMode may
+    // invoke it more than once in dev, so we don't assert an exact count).
+    expect(mockCreateCache).toHaveBeenCalledWith({ key: 'css' });
+    // The recreate path is the ONLY code path that passes `speedy: false`,
+    // so absence of any such call proves the provider did not recreate the
+    // cache in a normal client runtime.
+    expect(mockCreateCache).not.toHaveBeenCalledWith(
+      expect.objectContaining({ speedy: false }),
+    );
+  });
+
+  it('creates cache with speedy: false when bpkDisableEmotionSpeedy is set', async () => {
+    (window as any).bpkDisableEmotionSpeedy = true;
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateCache).toHaveBeenCalledWith({
+        key: 'css',
+        speedy: false,
+      });
+    });
+  });
+
+  it('creates cache with speedy: false when window.Cypress is set', async () => {
+    (window as any).Cypress = {};
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockCreateCache).toHaveBeenCalledWith({
+        key: 'css',
+        speedy: false,
+      });
+    });
+  });
+
+  it('recreates the cache after mount when bpkDisableEmotionSpeedy is set', async () => {
+    (window as any).bpkDisableEmotionSpeedy = true;
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      const speedyCalls = mockCreateCache.mock.calls.filter(
+        (args: any[]) => args[0]?.speedy === false,
+      );
+      expect(speedyCalls.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  it('recreates the cache after mount when window.Cypress is set', async () => {
+    (window as any).Cypress = {};
+
+    render(
+      <BpkProvider>
+        <div />
+      </BpkProvider>,
+    );
+
+    await waitFor(() => {
+      const speedyCalls = mockCreateCache.mock.calls.filter(
+        (args: any[]) => args[0]?.speedy === false,
+      );
+      expect(speedyCalls.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  it('does not create a new cache when nested inside another BpkProvider', () => {
+    render(
+      <BpkProvider>
+        <BpkProvider>
+          <div />
+        </BpkProvider>
+      </BpkProvider>,
+    );
+
+    // Only the outermost BpkProvider should create a cache
+    expect(mockCreateCache).toHaveBeenCalledTimes(1);
+  });
+});
 
 describe('BpkProvider', () => {
   it('renders children inside Chakra system without crashing', () => {
