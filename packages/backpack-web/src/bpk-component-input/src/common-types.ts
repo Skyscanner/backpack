@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ComponentProps, SyntheticEvent } from 'react';
 
 export const CLEAR_BUTTON_MODES = {
@@ -79,81 +78,3 @@ export type PropsWithClearButtonMode = BaseProps & {
 };
 
 export type Props = PropsWithoutClearButonMode | PropsWithClearButtonMode;
-
-// TODO - this function should be removed once all input examples have been migrated to TS
-export const clearablePropType = (
-  props: any,
-  propName: string,
-  componentName: string,
-) => {
-  const createError = (message: string) =>
-    new Error(
-      `Invalid prop \`${propName}\` supplied to \`${componentName}\`. ${message}.`,
-    );
-
-  const propBeingChecked = props[propName];
-  if (
-    props.clearButtonMode &&
-    props.clearButtonMode !== CLEAR_BUTTON_MODES.never
-  ) {
-    if (!propBeingChecked) {
-      return createError(
-        `When \`clearButtonMode\` is not 'never', \`${propName}\` must be supplied`,
-      );
-    }
-
-    switch (propName) {
-      case 'clearButtonLabel':
-        return typeof propBeingChecked === 'string'
-          ? null
-          : createError(`\`clearButtonLabel\` must be a string`);
-      case 'onClear':
-        return typeof propBeingChecked === 'function'
-          ? null
-          : createError(`\`onClear\` must be a function`);
-      default:
-        return null;
-    }
-  }
-  return null;
-};
-
-// TODO - this should be removed once all input examples have been migrated to TS
-export const propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
-    INPUT_TYPES.text,
-    INPUT_TYPES.email,
-    INPUT_TYPES.number,
-    INPUT_TYPES.password,
-    INPUT_TYPES.tel,
-  ]),
-  className: PropTypes.string,
-  valid: PropTypes.bool,
-  large: PropTypes.bool,
-  docked: PropTypes.bool,
-  dockedFirst: PropTypes.bool,
-  dockedMiddle: PropTypes.bool,
-  dockedLast: PropTypes.bool,
-  inputRef: PropTypes.func,
-  clearButtonMode: PropTypes.oneOf(Object.keys(CLEAR_BUTTON_MODES)),
-  clearButtonLabel: clearablePropType,
-  onClear: clearablePropType,
-};
-
-// TODO - this should be removed once all input examples have been migrated to TS
-export const defaultProps = {
-  type: INPUT_TYPES.text,
-  valid: null,
-  large: false,
-  docked: false,
-  dockedFirst: false,
-  dockedMiddle: false,
-  dockedLast: false,
-  inputRef: null,
-  clearButtonMode: CLEAR_BUTTON_MODES.never,
-  clearButtonLabel: null,
-  onClear: null,
-};
