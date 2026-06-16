@@ -2,11 +2,11 @@
 
 ## TL;DR
 
-Storybook stories live alongside their component source code in `packages/bpk-component-{name}/src/` rather than in a separate `examples/` directory.
+Storybook stories live alongside their component source code in `packages/backpack-web/src/bpk-component-{name}/src/` rather than in a separate `examples/` directory.
 
 ## Decision
 
-Stories are colocated with the component source at `packages/bpk-component-{name}/src/{ComponentName}.stories.tsx`. The Storybook config discovers stories via the glob `../packages/*/src/**/*.stories.@(ts|tsx|js|jsx)`.
+Stories are colocated with the component source at `packages/backpack-web/src/bpk-component-{name}/src/{ComponentName}.stories.tsx`. The Storybook config discovers stories via the glob `../packages/*/src/**/*.stories.@(ts|tsx|js|jsx)`.
 
 Stories are excluded from the published npm package using `files` in each component's `package.json` (which only includes `src/**/*.ts`, `src/**/*.tsx`, etc. — not story files) or via `.npmignore`.
 

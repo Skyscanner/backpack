@@ -5,6 +5,7 @@
 .sass-cache
 /dist
 /packages/backpack-web/dist
+/packages/backpack-adoption-guard/dist
 /dist-sassdoc
 /libs/backpack-storybook-host/dist-storybook
 /coverage
