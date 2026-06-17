@@ -21,11 +21,12 @@ import { Component } from 'react';
 
 import { useLocaleContext } from '@ark-ui/react';
 import createCache from '@emotion/cache';
+import { withEmotionCache } from '@emotion/react';
 import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
-import { BpkProvider } from './BpkProvider';
+import { BpkProvider, BpkEmotionCacheContext } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 import type { EmotionCache, Options } from '@emotion/cache';
@@ -40,6 +41,13 @@ jest.mock('@emotion/cache', () =>
 );
 
 const mockCreateCache = createCache as jest.Mock;
+
+// Helper: reads the active Emotion cache key from context via withEmotionCache.
+const EmotionCacheReader = withEmotionCache(
+  (_props: Record<string, never>, cache: EmotionCache) => (
+    <span data-testid="emotion-cache-key">{cache.key}</span>
+  ),
+);
 
 // Mirrors the production topology: error boundary whose fallback also mounts BpkProvider.
 // This is exactly the structure that causes the infinite remount loop.
@@ -73,6 +81,7 @@ class LoopBoundary extends Component<
     return this.props.children;
   }
 }
+
 
 const LocaleReader = () => {
   const { locale } = useLocaleContext();
@@ -207,6 +216,44 @@ describe('BpkProvider', () => {
     );
 
     expect(getByText('Plain child')).toBeInTheDocument();
+  });
+
+  it('uses own emotion cache when no external cache is provided', () => {
+    const { getByTestId } = render(
+      <BpkProvider>
+        <EmotionCacheReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('css');
+  });
+
+  it('uses external emotion cache injected via BpkEmotionCacheContext', () => {
+    const externalCache = createCache({ key: 'css' });
+
+    const { getByTestId } = render(
+      <BpkEmotionCacheContext.Provider value={externalCache}>
+        <BpkProvider>
+          <EmotionCacheReader />
+        </BpkProvider>
+      </BpkEmotionCacheContext.Provider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('css');
+  });
+
+  it('uses external emotion cache with non-default key injected via BpkEmotionCacheContext', () => {
+    const externalCache = createCache({ key: 'bpk-injected' });
+
+    const { getByTestId } = render(
+      <BpkEmotionCacheContext.Provider value={externalCache}>
+        <BpkProvider>
+          <EmotionCacheReader />
+        </BpkProvider>
+      </BpkEmotionCacheContext.Provider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('bpk-injected');
   });
 });
 
