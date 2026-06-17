@@ -261,6 +261,9 @@ describe('BpkProvider - RTL support', () => {
   afterEach(() => {
     document.documentElement.removeAttribute('dir');
     document.documentElement.removeAttribute('lang');
+    // Restore any console.error spy set up within this describe block.
+    // Doing this in afterEach guarantees cleanup even when an assertion throws.
+    jest.restoreAllMocks();
   });
 
   it('passes en-US locale to Ark when document dir is ltr', () => {
@@ -415,6 +418,51 @@ describe('BpkProvider - RTL support', () => {
     expect(getByTestId('locale').textContent).toBe('en-US');
   });
 
+  it('falls back to direction locale and does not crash when html[dir] is set and html[lang] is invalid', () => {
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', '123');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to ar-SA and does not crash when html[dir] is rtl and html[lang] is invalid', () => {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'en_US');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('ar-SA');
+  });
+
+  it('does not loop when ErrorBoundary fallback mounts BpkProvider with html[dir] set and invalid html[lang]', () => {
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', '123');
+
+    // Suppress expected React error output for this test
+    jest.spyOn(console, 'error').mockImplementation(jest.fn());
+
+    const boundary = { current: null as LoopBoundary | null };
+    render(
+      <LoopBoundary ref={(el) => { boundary.current = el; }}>
+        <BpkProvider>
+          <div>content</div>
+        </BpkProvider>
+      </LoopBoundary>,
+    );
+
+    expect(boundary.current?.catchCount).toBe(0);
+  });
+
   it('does not loop when ErrorBoundary fallback also mounts BpkProvider with invalid html[lang]', () => {
     document.documentElement.setAttribute('lang', '123');
 
@@ -435,8 +483,6 @@ describe('BpkProvider - RTL support', () => {
     );
 
     expect(boundary.current?.catchCount).toBe(0);
-
-    jest.restoreAllMocks();
   });
 
   it('passes a valid html[lang] through to Ark unchanged', () => {
