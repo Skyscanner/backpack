@@ -18,7 +18,7 @@
 
 import { useState } from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkCollapsible from './BpkCollapsible';
@@ -186,7 +186,9 @@ describe('BpkCollapsible', () => {
       expect(trigger).toHaveAttribute('aria-expanded', 'false');
 
       await user.click(trigger);
-      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+      await waitFor(() =>
+        expect(trigger).toHaveAttribute('aria-expanded', 'true'),
+      );
     });
   });
 

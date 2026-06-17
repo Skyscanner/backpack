@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import type { ReactNode, CSSProperties } from 'react';
 
 import CSSTransition from 'react-transition-group/CSSTransition';
@@ -46,31 +46,23 @@ export type BpkBackgroundImageProps = {
 class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   trackImg?: HTMLImageElement | null;
 
-  static defaultProps = {
-    className: '',
-    inView: true,
-    loading: false,
-    onLoad: null,
-    onError: null,
-    style: {},
-    imageStyle: {},
-  };
-
   constructor(props: BpkBackgroundImageProps) {
     super(props);
     this.trackImg = null;
   }
 
   componentDidMount() {
-    if (this.props.inView) {
+    const { inView = true } = this.props;
+    if (inView) {
       this.startImageLoad();
     }
   }
 
   componentDidUpdate(prevProps: BpkBackgroundImageProps) {
-    const { inView, src } = this.props;
+    const { inView = true, src } = this.props;
+    const { inView: prevInView = true } = prevProps;
 
-    if (prevProps.src !== src || (inView && !prevProps.inView)) {
+    if (prevProps.src !== src || (inView && !prevInView)) {
       this.startImageLoad();
     }
   }
@@ -95,6 +87,8 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     return 1;
   };
 
+  spinnerNodeRef = createRef<HTMLDivElement>();
+
   startImageLoad = (): void => {
     this.trackImg = new Image();
     this.trackImg.src = this.props.src;
@@ -103,8 +97,15 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
   };
 
   render() {
-    const { children, className, imageStyle, inView, loading, src, style } =
-      this.props;
+    const {
+      children,
+      className = '',
+      imageStyle = {},
+      inView = true,
+      loading = false,
+      src,
+      style = {},
+    } = this.props;
 
     const calculatedAspectRatio = this.getAspectRatio();
     const aspectRatioPc = `${100 / calculatedAspectRatio}%`;
@@ -136,6 +137,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
           />
           {loading && (
             <CSSTransition
+              nodeRef={this.spinnerNodeRef}
               classNames={{
                 exit: getClassName('bpk-background-image__spinner--shown'),
                 exitActive: getClassName(
@@ -144,7 +146,10 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-background-image__spinner')}>
+              <div
+                ref={this.spinnerNodeRef}
+                className={getClassName('bpk-background-image__spinner')}
+              >
                 <BpkSpinner />
               </div>
             </CSSTransition>

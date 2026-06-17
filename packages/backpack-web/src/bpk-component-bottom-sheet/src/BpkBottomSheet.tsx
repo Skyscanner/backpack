@@ -169,7 +169,7 @@ const BpkBottomSheet = ({
   // For custom title (ReactNode), wrap it with an element that has the correct id
   // so BpkNavigationBar's aria-labelledby reference is valid
   const titleWithId = hasTitle && typeof title !== 'string' && isValidElement(title)
-    ? cloneElement(title as ReactElement, { id: showHiddenTitle ? hiddenTitleId : headingId })
+    ? cloneElement(title as ReactElement<any>, { id: showHiddenTitle ? hiddenTitleId : headingId })
     : title;
 
   return (

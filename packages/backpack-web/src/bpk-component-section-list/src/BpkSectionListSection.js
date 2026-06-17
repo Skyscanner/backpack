@@ -35,7 +35,7 @@ type Props = {
 };
 
 const BpkSectionListSection = (props: Props) => {
-  const { children, headerText, ...rest } = props;
+  const { children, headerText = null, ...rest } = props;
 
   return (
     <section {...rest}>
@@ -56,10 +56,6 @@ const BpkSectionListSection = (props: Props) => {
 BpkSectionListSection.propTypes = {
   children: PropTypes.node.isRequired,
   headerText: PropTypes.string,
-};
-
-BpkSectionListSection.defaultProps = {
-  headerText: null,
 };
 
 export default BpkSectionListSection;

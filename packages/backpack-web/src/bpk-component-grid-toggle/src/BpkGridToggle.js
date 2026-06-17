@@ -42,8 +42,9 @@ class BpkGridToggle extends Component {
   }
 
   componentWillUnmount() {
+    const { targetContainer = 'body' } = this.props;
     document
-      .querySelector(this.props.targetContainer)
+      .querySelector(targetContainer)
       .classList.remove(GRID_CLASS_NAME);
     document.removeEventListener('keydown', this.handleKeyDown);
   }
@@ -55,10 +56,11 @@ class BpkGridToggle extends Component {
   };
 
   toggleGrid = (e) => {
+    const { targetContainer = 'body' } = this.props;
     e.preventDefault();
 
     document
-      .querySelector(this.props.targetContainer)
+      .querySelector(targetContainer)
       .classList.toggle(GRID_CLASS_NAME);
 
     this.setState((state) => ({
@@ -67,7 +69,7 @@ class BpkGridToggle extends Component {
   };
 
   render() {
-    const { className } = this.props;
+    const { className = null } = this.props;
     const { gridEnabled } = this.state;
     const onOrOff = gridEnabled ? 'off' : 'on';
 
@@ -88,11 +90,6 @@ class BpkGridToggle extends Component {
 BpkGridToggle.propTypes = {
   targetContainer: PropTypes.string,
   className: PropTypes.string,
-};
-
-BpkGridToggle.defaultProps = {
-  targetContainer: 'body',
-  className: null,
 };
 
 export default BpkGridToggle;

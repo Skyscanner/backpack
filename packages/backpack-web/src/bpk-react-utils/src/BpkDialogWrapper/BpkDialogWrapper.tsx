@@ -155,6 +155,7 @@ export const BpkDialogWrapper = ({
         />
       )}
       <CSSTransition
+        nodeRef={ref}
         classNames={transitionClassNames}
         in={!exiting}
         appear={!exiting}

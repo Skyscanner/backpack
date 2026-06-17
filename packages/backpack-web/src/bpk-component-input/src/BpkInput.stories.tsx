@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
@@ -32,12 +31,7 @@ import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkInput from './BpkInput';
-import {
-  propTypes as inputPropTypes,
-  defaultProps as inputDefaultProps,
-  INPUT_TYPES,
-  CLEAR_BUTTON_MODES,
-} from './common-types';
+import { INPUT_TYPES, CLEAR_BUTTON_MODES } from './common-types';
 
 import type { WithOpenEventsProps } from './withOpenEvents';
 import type { Meta } from '@storybook/react';
@@ -46,20 +40,9 @@ import STYLES from './BpkInput.stories.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-const { value: valueProp, ...propTypes } = inputPropTypes;
-
 const WithOpenEventsMock = (props: WithOpenEventsProps) => <div />;
 
 class ClearableInput extends Component<any, any> {
-  static propTypes = {
-    ...propTypes,
-    initialValue: PropTypes.string.isRequired,
-  };
-
-  static defaultProps = {
-    ...inputDefaultProps,
-  };
-
   constructor(props: any) {
     super(props);
 

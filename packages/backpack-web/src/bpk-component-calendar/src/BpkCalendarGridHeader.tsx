@@ -77,13 +77,8 @@ const WeekDayComponent = ({
 );
 
 class BpkCalendarGridHeader extends PureComponent<Props> {
-  static defaultProps = {
-    className: null,
-    weekDayKey: 'nameAbbr',
-  };
-
   render() {
-    const { className, weekDayKey, weekStartsOn } = this.props;
+    const { className = null, weekDayKey = 'nameAbbr', weekStartsOn } = this.props;
 
     const daysOfWeek = orderDaysOfWeek(this.props.daysOfWeek, weekStartsOn);
 

@@ -77,15 +77,15 @@ const BpkBreakpoint = ({
   useLegacyWarning(query, legacy, isClient);
   if (isClient) {
     if (typeof children === 'function') {
-      return children(matches) as ReactElement;
+      return children(matches) as ReactElement<any>;
     }
-    return matches ? (children as ReactElement) : null;
+    return matches ? (children as ReactElement<any>) : null;
   }
 
   if (typeof children === 'function') {
-    return children(!!matchSSR) as ReactElement;
+    return children(!!matchSSR) as ReactElement<any>;
   }
-  return matchSSR ? (children as ReactElement) : null;
+  return matchSSR ? (children as ReactElement<any>) : null;
 };
 export { BREAKPOINTS };
 export default BpkBreakpoint;

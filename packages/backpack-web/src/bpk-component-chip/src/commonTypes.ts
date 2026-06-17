@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 import type { ComponentProps, ReactNode, SyntheticEvent } from 'react';
 
 export const CHIP_TYPES = {

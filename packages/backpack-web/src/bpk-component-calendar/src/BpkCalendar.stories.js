@@ -253,7 +253,6 @@ const CustomComposedCalendarExample = () => (
 
 const WeekExample = () => {
   const weekProps = {
-    ...BpkCalendarWeek.defaultProps,
     DateComponent: DummyDateComponent,
     dateModifiers: {},
     dates: [

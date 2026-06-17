@@ -20,7 +20,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';
 
 interface UseTextAreaAutoResizeProps {
-  ref: RefObject<HTMLTextAreaElement>;
+  ref: RefObject<HTMLTextAreaElement | null>;
   value: string;
   enabled?: boolean;
   maxLines?: number;
