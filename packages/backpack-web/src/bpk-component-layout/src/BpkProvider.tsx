@@ -204,6 +204,11 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // NOTE: if externalCache changes from non-null to null at runtime, ownCache
+  // will still hold the value it was initialised with (the old external cache).
+  // This is intentional: BpkEmotionCacheContext.Provider is expected to be
+  // mounted for the lifetime of the app once set — toggling it off is not a
+  // supported use case. The state initialiser runs only once per mount.
   const activeCache = isNested ? externalCache : ownCache;
 
   const inner = (
@@ -211,10 +216,6 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
       <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
   );
-
-  if (isNested) {
-    return inner;
-  }
 
   return (
     <BpkEmotionCacheContext.Provider value={activeCache}>

@@ -241,6 +241,20 @@ describe('BpkProvider', () => {
 
     expect(getByTestId('emotion-cache-key').textContent).toBe('css');
   });
+
+  it('uses external emotion cache with non-default key injected via BpkEmotionCacheContext', () => {
+    const externalCache = createCache({ key: 'bpk-injected' });
+
+    const { getByTestId } = render(
+      <BpkEmotionCacheContext.Provider value={externalCache}>
+        <BpkProvider>
+          <EmotionCacheReader />
+        </BpkProvider>
+      </BpkEmotionCacheContext.Provider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('bpk-injected');
+  });
 });
 
 describe('BpkProvider - RTL support', () => {
