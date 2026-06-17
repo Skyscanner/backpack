@@ -118,7 +118,7 @@ cat decisions/accessibility-tests.md
 
 ```bash
 # Look for similar existing Backpack component
-ls packages/bpk-component-*/
+ls packages/backpack-web/src/bpk-component-*/
 
 # Study the reference component structure
 # Good references: bpk-component-chip, bpk-component-button
@@ -129,13 +129,13 @@ ls packages/bpk-component-*/
 #### 2.1 Create Package Structure
 
 ```bash
-mkdir -p packages/bpk-component-[name]/src
+mkdir -p packages/backpack-web/src/bpk-component-[name]/src
 mkdir -p examples/bpk-component-[name]
 ```
 
 **Required files:**
 ```
-packages/bpk-component-[name]/
+packages/backpack-web/src/bpk-component-[name]/
 ├── README.md
 ├── index.ts
 └── src/
@@ -362,7 +362,7 @@ describe('Bpk[ComponentName] accessibility tests', () => {
  * [... license header ...]
  */
 
-import Bpk[ComponentName] from '../../packages/bpk-component-[name]/src/Bpk[ComponentName]';
+import Bpk[ComponentName] from '../../packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]';
 import { cssModules } from '../../packages/bpk-react-utils';
 
 import STYLES from './examples.module.scss';
@@ -392,7 +392,7 @@ export const CustomExample = () => (
  * [... license header ...]
  */
 
-import Bpk[ComponentName] from '../../packages/bpk-component-[name]/src/Bpk[ComponentName]';
+import Bpk[ComponentName] from '../../packages/backpack-web/src/bpk-component-[name]/src/Bpk[ComponentName]';
 
 import {
   DefaultExample,
@@ -418,7 +418,7 @@ export const VisualTestWithZoom = {
 
 #### 2.7 Create Package Index
 
-**packages/bpk-component-[name]/index.ts:**
+**packages/backpack-web/src/bpk-component-[name]/index.ts:**
 ```typescript
 /*
  * Backpack - Skyscanner's Design System
@@ -493,7 +493,7 @@ npm run lint && npm run check-react-versions && npm run check-bpk-dependencies &
 
 **Note**: Global coverage may be low when testing a single component, but the component itself must have 100% coverage:
 ```
-packages/bpk-component-[name]/src  | 100 | 100 | 100 | 100 |
+packages/backpack-web/src/bpk-component-[name]/src  | 100 | 100 | 100 | 100 |
 ```
 
 #### 3.2 Individual Verification Steps
@@ -520,7 +520,7 @@ npm run lint:scss
 
 **Component Tests Only:**
 ```bash
-npm run jest -- packages/bpk-component-[name]
+npm run jest -- packages/backpack-web/src/bpk-component-[name]
 # All tests pass, 100% component coverage
 ```
 
@@ -568,7 +568,7 @@ coverage
 
 **Solution:** Verify relative import paths:
 - From component source: `../../bpk-component-text`
-- From examples: `../../packages/bpk-component-text`
+- From examples: `../../packages/backpack-web/src/bpk-component-text`
 - From tests: Same as component source (tests are co-located)
 
 **Failure: Global coverage threshold not met**
@@ -577,7 +577,7 @@ coverage
 
 **Expected:** This is normal when testing a single component. Check that YOUR component has 100% coverage:
 ```
-packages/bpk-component-[name]/src  | 100 | 100 | 100 | 100 |
+packages/backpack-web/src/bpk-component-[name]/src  | 100 | 100 | 100 | 100 |
 Bpk[ComponentName].tsx             | 100 | 100 | 100 | 100 |
 ```
 
@@ -587,7 +587,7 @@ Bpk[ComponentName].tsx             | 100 | 100 | 100 | 100 |
 
 **Solution:** For new components, this is expected on first run:
 ```bash
-npm run jest -- packages/bpk-component-[name] -u
+npm run jest -- packages/backpack-web/src/bpk-component-[name] -u
 # Updates snapshots, then re-run to verify they pass
 ```
 
@@ -609,7 +609,7 @@ npm run build  # Rebuild bpk-mixins package
 
 **Solution:** Use correct relative paths:
 - From component: `../../bpk-component-text`
-- From examples: `../../packages/bpk-component-text`
+- From examples: `../../packages/backpack-web/src/bpk-component-text`
 
 ### Issue 3: CSS Classes Not Applied
 
@@ -637,7 +637,7 @@ npm run build  # Rebuild bpk-mixins package
 
 **Solution:** This is expected for new components:
 ```bash
-npm test -- packages/bpk-component-[name] -u
+npm test -- packages/backpack-web/src/bpk-component-[name] -u
 # Updates snapshots for new component
 ```
 

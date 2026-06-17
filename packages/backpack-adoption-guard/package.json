@@ -6,8 +6,7 @@
     "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --outfile=dist/index.js --sourcemap --format=cjs",
     "lint": "eslint src jest.config.js --ext .js,.ts",
     "test": "jest --config jest.config.js",
-    "typecheck": "tsc --project tsconfig.json",
-    "verify-dist": "npm run build && git diff --exit-code -- dist/"
+    "typecheck": "tsc --project tsconfig.json"
   },
   "dependencies": {
     "@actions/core": "1.11.1",

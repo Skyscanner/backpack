@@ -34,7 +34,7 @@ Only flag issues that are **visible in the changed lines**. Do not speculatively
 ## Step 3: Check testing coverage
 
 **Constitution IV — accessibility test file (NON-NEGOTIABLE):**
-For each `packages/bpk-component-*/` directory that appears in the changed files list,
+For each `packages/backpack-web/src/bpk-component-*/` directory that appears in the changed files list,
 verify that an `accessibility-test.tsx` exists in that directory:
 ```bash
 gh api repos/Skyscanner/backpack/contents/packages/[COMPONENT_DIR] \

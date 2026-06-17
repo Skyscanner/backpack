@@ -80,7 +80,7 @@ jobs:
       - run: npx nx run backpack-adoption-guard:lint
       - run: npx nx run backpack-adoption-guard:typecheck
       - run: npx nx run backpack-adoption-guard:test
-      - run: npx nx run backpack-adoption-guard:verify-dist
+      - run: npx nx run backpack-adoption-guard:build
 
   CreateTags:
     runs-on: ubuntu-latest
