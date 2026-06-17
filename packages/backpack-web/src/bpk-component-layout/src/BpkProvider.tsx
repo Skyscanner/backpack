@@ -35,7 +35,7 @@ export interface BpkProviderProps {
 // Exported so host apps can inject an externally-managed Emotion cache into
 // BpkProvider (e.g. to force re-injection after a hydration error recovery).
 // When a non-null value is provided via this context, BpkProvider operates in
-// "nested" mode: it skips creating its own cache and delegates to the external one.
+// "external cache" mode: it skips creating its own cache and delegates to the external one.
 export const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
 
 /**
@@ -184,11 +184,11 @@ const useArkLocale = (): string => {
  */
 export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
   const externalCache = useContext(BpkEmotionCacheContext);
-  const isNested = externalCache !== null;
+  const hasExternalCache = externalCache !== null;
 
   const [isCypress] = useState(isCypressEnv);
   const [ownCache, setOwnCache] = useState<EmotionCache>(() =>
-    isNested ? externalCache : createBpkEmotionCache(isCypress ? false : undefined),
+    hasExternalCache ? externalCache : createBpkEmotionCache(isCypress ? false : undefined),
   );
   const hasRecreated = useRef(false);
   const locale = useArkLocale();
@@ -197,7 +197,7 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
   // nodes the hydrator stripped. `hasRecreated` guards StrictMode double-invoke.
   // Deps stable for provider lifetime → empty array is intentional.
   useEffect(() => {
-    if (isNested || !isCypress) return;
+    if (hasExternalCache || !isCypress) return;
     if (hasRecreated.current) return;
     hasRecreated.current = true;
     setOwnCache(createBpkEmotionCache(false));
@@ -209,7 +209,7 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
   // This is intentional: BpkEmotionCacheContext.Provider is expected to be
   // mounted for the lifetime of the app once set — toggling it off is not a
   // supported use case. The state initialiser runs only once per mount.
-  const activeCache = isNested ? externalCache : ownCache;
+  const activeCache = hasExternalCache ? externalCache : ownCache;
 
   const inner = (
     <ChakraProvider value={bpkSystem}>
