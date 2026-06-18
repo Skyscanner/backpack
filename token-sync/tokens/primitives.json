@@ -3,6 +3,9 @@
     "Black Alpha 20": {
       "$value": "rgba(0, 0, 0, 0.2)"
     },
+    "Black Alpha 25": {
+      "$value": "rgba(22, 22, 22, 0.25)"
+    },
     "Black Alpha 50": {
       "$value": "rgba(0, 0, 0, 0.5)"
     },
@@ -11,9 +14,6 @@
     },
     "Black Alpha 80": {
       "$value": "rgba(0, 0, 0, 0.8)"
-    },
-    "Charcoal Alpha 25": {
-      "$value": "rgba(22, 22, 22, 0.25)"
     },
     "Transparent": {
       "$value": "rgba(255, 255, 255, 0)"
@@ -252,7 +252,7 @@
       "$value": "#bdc4cb"
     },
     "Grey 05": {
-      "$value": "#f7f9fb"
+      "$value": "#f5f7fa"
     },
     "Grey 10": {
       "$value": "#eff3f8"
