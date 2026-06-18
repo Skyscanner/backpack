@@ -399,10 +399,14 @@ describe('withInfiniteScroll', () => {
         elementsPerScroll={12}
       />,
     );
-    await nextTick(); // componentDidMount: fetchItems(0, 11)
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
 
     myDs.updateData(data); // triggers updateData — should reset with initiallyLoadedElements
-    await nextTick();
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
 
     expect(myDs.fetchItems).toHaveBeenNthCalledWith(1, 0, 11);
     expect(myDs.fetchItems).toHaveBeenNthCalledWith(2, 0, 11);
@@ -419,7 +423,9 @@ describe('withInfiniteScroll', () => {
         elementsPerScroll={12}
       />,
     );
-    await nextTick(); // componentDidMount: fetchItems(0, 11)
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
 
     const newData = Array.from({ length: 20 }, (_, i) => `New Element ${i}`);
     const newDs = mockDataSource(newData);
@@ -431,7 +437,9 @@ describe('withInfiniteScroll', () => {
         elementsPerScroll={12}
       />,
     );
-    await nextTick();
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
 
     // componentDidUpdate dataSource change — should use initiallyLoadedElements, not elementsPerScroll
     expect(newDs.fetchItems).toHaveBeenCalledWith(0, 11);
