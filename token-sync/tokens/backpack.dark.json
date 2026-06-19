@@ -269,6 +269,12 @@
         "bg-default-dismissible-hover": {
           "$value": "{Colour.Twilight}"
         },
+        "bg-default-hover": {
+          "$value": "{Alpha.Transparent}"
+        },
+        "bg-default-off": {
+          "$value": "{Alpha.Transparent}"
+        },
         "bg-default-on": {
           "$value": "{Colour.Twilight}"
         },
@@ -493,7 +499,7 @@
           "$type": "dimension"
         },
         "color": {
-          "$value": "{Alpha.Charcoal Alpha 25}",
+          "$value": "{Alpha.Black Alpha 25}",
           "$type": "color"
         },
         "position-x": {
@@ -515,7 +521,7 @@
           "$type": "dimension"
         },
         "color": {
-          "$value": "{Alpha.Charcoal Alpha 25}",
+          "$value": "{Alpha.Black Alpha 25}",
           "$type": "color"
         },
         "position-x": {
@@ -537,7 +543,7 @@
           "$type": "dimension"
         },
         "color": {
-          "$value": "{Alpha.Charcoal Alpha 25}",
+          "$value": "{Alpha.Black Alpha 25}",
           "$type": "color"
         },
         "position-x": {
@@ -557,6 +563,15 @@
     "Skeleton": {
       "on-dark": {
         "$value": "{Neutral.Dark Grey 25}"
+      },
+      "$type": "color"
+    },
+    "Slider": {
+      "bg-knob": {
+        "$value": "{Colour.Bright Blue}"
+      },
+      "bg-track": {
+        "$value": "{Colour.Bright Blue}"
       },
       "$type": "color"
     },
@@ -624,7 +639,7 @@
       "$value": "{Alpha.Black Alpha 70}"
     },
     "Shadow": {
-      "$value": "{Alpha.Charcoal Alpha 25}"
+      "$value": "{Alpha.Black Alpha 25}"
     },
     "line-default": {
       "$value": "{Alpha.White Alpha 20}"
