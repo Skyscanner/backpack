@@ -23,6 +23,7 @@ import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 import { BACKGROUND_COLORS, BpkBox, BpkProvider, BpkSpacing } from '..';
 import BpkButton from '../../bpk-component-button';
 import BpkText, {
+  TEXT_ALIGN,
   TEXT_COLORS,
   TEXT_STYLES,
 } from '../../bpk-component-text';
@@ -555,6 +556,53 @@ export const TextStyle = {
 
 export const ResponsiveTextStyle = {
   render: () => <ResponsiveTextStyleExample />,
+};
+
+/**
+ * textAlign example – demonstrates all four alignment values on BpkBox.
+ */
+const TextAlignExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.start}>
+      start — aligns to the inline-start edge (left in LTR, right in RTL)
+    </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.center}>
+      center — centred horizontally
+    </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.end}>
+      end — aligns to the inline-end edge (right in LTR, left in RTL)
+    </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.justify}>
+      justify — stretches each line to fill the full width. Works best with
+      longer sentences that span several words.
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+/**
+ * Responsive textAlign example – alignment changes across breakpoints.
+ */
+const ResponsiveTextAlignExample = () => (
+  <LayoutWrapper>
+    <BpkBox
+      padding={BpkSpacing.MD}
+      textAlign={{
+        base: TEXT_ALIGN.start,
+        tablet: TEXT_ALIGN.center,
+        desktop: TEXT_ALIGN.end,
+      }}
+    >
+      Alignment changes: start (base) → center (tablet) → end (desktop)
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const TextAlign = {
+  render: () => <TextAlignExample />,
+};
+
+export const ResponsiveTextAlign = {
+  render: () => <ResponsiveTextAlignExample />,
 };
 
 export const Ref = {

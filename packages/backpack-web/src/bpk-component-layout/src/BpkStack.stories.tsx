@@ -19,7 +19,7 @@
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import { BACKGROUND_COLORS, BpkBox, BpkHStack, BpkProvider, BpkSpacing, BpkStack, BpkVStack } from '..';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
+import BpkText, { TEXT_ALIGN, TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -254,4 +254,31 @@ const BpkStackAliasExample = () => (
 
 export const Aliases = {
   render: () => <BpkStackAliasExample />,
+};
+
+/**
+ * textAlign example – demonstrates all four alignment values on BpkStack.
+ */
+const BpkStackTextAlignExample = () => (
+  <LayoutWrapper>
+    <BpkStack direction="column" gap={BpkSpacing.SM}>
+      <BpkStack padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.start}>
+        start — inline-start edge
+      </BpkStack>
+      <BpkStack padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.center}>
+        center — centred horizontally
+      </BpkStack>
+      <BpkStack padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.end}>
+        end — inline-end edge
+      </BpkStack>
+      <BpkStack padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.justify}>
+        justify — stretches lines to fill the full width. Works best with
+        longer sentences.
+      </BpkStack>
+    </BpkStack>
+  </LayoutWrapper>
+);
+
+export const TextAlign = {
+  render: () => <BpkStackTextAlignExample />,
 };

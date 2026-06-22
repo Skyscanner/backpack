@@ -19,7 +19,7 @@
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import { BACKGROUND_COLORS, BpkBox, BpkFlex, BpkProvider, BpkSpacing } from '..';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
+import BpkText, { TEXT_ALIGN, TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -235,4 +235,31 @@ export const Color = {
 
 export const LayoutProps = {
   render: () => <BpkFlexLayoutPropsExample />,
+};
+
+/**
+ * textAlign example – demonstrates all four alignment values on BpkFlex.
+ */
+const BpkFlexTextAlignExample = () => (
+  <LayoutWrapper>
+    <BpkFlex direction="column" gap={BpkSpacing.SM}>
+      <BpkFlex padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.start}>
+        start — inline-start edge
+      </BpkFlex>
+      <BpkFlex padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.center}>
+        center — centred horizontally
+      </BpkFlex>
+      <BpkFlex padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.end}>
+        end — inline-end edge
+      </BpkFlex>
+      <BpkFlex padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.justify}>
+        justify — stretches lines to fill the full width. Works best with
+        longer sentences.
+      </BpkFlex>
+    </BpkFlex>
+  </LayoutWrapper>
+);
+
+export const TextAlign = {
+  render: () => <BpkFlexTextAlignExample />,
 };

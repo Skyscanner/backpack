@@ -19,7 +19,7 @@
 import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
 
 import { BACKGROUND_COLORS, BpkBox, BpkGrid, BpkGridItem, BpkProvider, BpkSpacing } from '..';
-import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
+import BpkText, { TEXT_ALIGN, TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -211,4 +211,31 @@ export const Color = {
 
 export const LayoutProps = {
   render: () => <BpkGridLayoutPropsExample />,
+};
+
+/**
+ * textAlign example – demonstrates all four alignment values on BpkGrid.
+ */
+const BpkGridTextAlignExample = () => (
+  <LayoutWrapper>
+    <BpkGrid templateColumns="1fr" gap={BpkSpacing.SM}>
+      <BpkGrid padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.start}>
+        start — inline-start edge
+      </BpkGrid>
+      <BpkGrid padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.center}>
+        center — centred horizontally
+      </BpkGrid>
+      <BpkGrid padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.end}>
+        end — inline-end edge
+      </BpkGrid>
+      <BpkGrid padding={BpkSpacing.SM} textAlign={TEXT_ALIGN.justify}>
+        justify — stretches lines to fill the full width. Works best with
+        longer sentences.
+      </BpkGrid>
+    </BpkGrid>
+  </LayoutWrapper>
+);
+
+export const TextAlign = {
+  render: () => <BpkGridTextAlignExample />,
 };
