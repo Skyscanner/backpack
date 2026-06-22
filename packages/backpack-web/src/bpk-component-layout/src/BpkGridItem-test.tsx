@@ -63,6 +63,15 @@ describe('BpkGridItem', () => {
     expect(getByText('Item')).toBeInTheDocument();
   });
 
+  it('renders when textAlign is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkGridItem textAlign="center">Item</BpkGridItem>
+      </BpkProvider>,
+    );
+    expect(getByText('Item')).toBeInTheDocument();
+  });
+
   it('supports Backpack spacing tokens', () => {
     const { container } = render(
       <BpkProvider>

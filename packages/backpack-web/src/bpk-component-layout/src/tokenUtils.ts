@@ -60,6 +60,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
     container: [
       // Typography
       'textStyle',
+      'textAlign',
       // Display
       'display',
       // Flex container props
@@ -99,6 +100,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   BpkFlex: {
     container: [
       'textStyle',
+      'textAlign',
       'flexDirection',
       'justifyContent',
       'alignItems',
@@ -119,6 +121,7 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
   BpkGrid: {
     container: [
       'textStyle',
+      'textAlign',
       'justifyContent',
       'alignItems',
       'gridTemplateColumns',
@@ -140,12 +143,13 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
     ],
   },
   BpkGridItem: {
-    container: ['textStyle', 'position', 'overflow', 'overflowX', 'overflowY'],
+    container: ['textStyle', 'textAlign', 'position', 'overflow', 'overflowX', 'overflowY'],
   },
   // Note: BpkStack uses Chakra Stack option prop names directly.
   BpkStack: {
     container: [
       'textStyle',
+      'textAlign',
       ...(StackOptionKeys as unknown as readonly string[]),
       // Position keyword and overflow (from BpkCommonLayoutProps)
       'position',

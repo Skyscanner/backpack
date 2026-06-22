@@ -116,6 +116,17 @@ describe('BpkStack', () => {
     expect(getByText('Child')).toBeInTheDocument();
   });
 
+  it('renders when textAlign is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkStack textAlign="center" gap={BpkSpacing.MD}>
+          <div>Child</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    expect(getByText('Child')).toBeInTheDocument();
+  });
+
   describe('BpkHStack', () => {
     it('defaults to row direction', () => {
       const { container } = render(

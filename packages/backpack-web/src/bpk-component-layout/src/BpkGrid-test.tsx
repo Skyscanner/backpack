@@ -100,6 +100,15 @@ describe('BpkGrid', () => {
     expect(getByText('Content')).toBeInTheDocument();
   });
 
+  it('renders when textAlign is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkGrid textAlign="center">Content</BpkGrid>
+      </BpkProvider>,
+    );
+    expect(getByText('Content')).toBeInTheDocument();
+  });
+
   it('accepts grid props: justify, align, gap', () => {
     const { container } = render(
       <BpkProvider>

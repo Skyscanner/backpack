@@ -108,6 +108,15 @@ describe('BpkBox', () => {
     expect(getByText('Styled text')).toBeInTheDocument();
   });
 
+  it('renders when textAlign is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkBox textAlign="center">Aligned text</BpkBox>
+      </BpkProvider>,
+    );
+    expect(getByText('Aligned text')).toBeInTheDocument();
+  });
+
   it('renders when textStyle is not provided', () => {
     const { getByText } = render(
       <BpkProvider>

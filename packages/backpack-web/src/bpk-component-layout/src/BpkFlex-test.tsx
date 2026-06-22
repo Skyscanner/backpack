@@ -122,6 +122,15 @@ describe('BpkFlex', () => {
     expect(getByText('Content')).toBeInTheDocument();
   });
 
+  it('renders when textAlign is provided', () => {
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex textAlign="center">Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(getByText('Content')).toBeInTheDocument();
+  });
+
   it('supports responsive direction', () => {
     const { container } = render(
       <BpkProvider>

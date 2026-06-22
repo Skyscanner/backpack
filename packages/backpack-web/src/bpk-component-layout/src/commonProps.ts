@@ -29,7 +29,7 @@ import type {
   BpkZIndexValue,
   BpkResponsiveValue,
 } from './tokens';
-import type { TextColor, TextStyle } from '../../bpk-component-text';
+import type { TextAlign, TextColor, TextStyle } from '../../bpk-component-text';
 
 /**
  * Common spacing-related props shared by all Backpack layout components
@@ -109,6 +109,7 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;
+  textAlign?: BpkResponsiveValue<TextAlign>;
 
   // CSS `position` keyword (static | relative | absolute | fixed | sticky)
   position?: BpkResponsiveValue<BpkPositionKeyword>;
