@@ -116,24 +116,15 @@ describe('BpkStack', () => {
     expect(getByText('Child')).toBeInTheDocument();
   });
 
-  it('applies textAlign — produces different className than without it', () => {
-    const { container: withAlign } = render(
+  it('applies textAlign to the DOM element', () => {
+    const { container } = render(
       <BpkProvider>
         <BpkStack textAlign="center" gap={BpkSpacing.MD}>
           <div>Child</div>
         </BpkStack>
       </BpkProvider>,
     );
-    const { container: withoutAlign } = render(
-      <BpkProvider>
-        <BpkStack gap={BpkSpacing.MD}>
-          <div>Child</div>
-        </BpkStack>
-      </BpkProvider>,
-    );
-    expect(withAlign.firstChild?.className).not.toBe(
-      withoutAlign.firstChild?.className,
-    );
+    expect(container.firstChild).toHaveStyle('text-align: center');
   });
 
   describe('BpkHStack', () => {

@@ -108,20 +108,13 @@ describe('BpkBox', () => {
     expect(getByText('Styled text')).toBeInTheDocument();
   });
 
-  it('applies textAlign — produces different className than without it', () => {
-    const { container: withAlign } = render(
+  it('applies textAlign to the DOM element', () => {
+    const { container } = render(
       <BpkProvider>
         <BpkBox textAlign="center">Aligned text</BpkBox>
       </BpkProvider>,
     );
-    const { container: withoutAlign } = render(
-      <BpkProvider>
-        <BpkBox>Aligned text</BpkBox>
-      </BpkProvider>,
-    );
-    expect(withAlign.querySelector('div')?.className).not.toBe(
-      withoutAlign.querySelector('div')?.className,
-    );
+    expect(container.firstChild).toHaveStyle('text-align: center');
   });
 
   it('renders when textStyle is not provided', () => {
