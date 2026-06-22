@@ -30,13 +30,8 @@ import {
 
 import BpkDatepicker from './BpkDatepicker';
 
-// mock breakpoint to always match mobile (modal path)
+// mock breakpoint to always match
 jest.mock('../../bpk-component-breakpoint/src/useMediaQuery', () => jest.fn(() => true));
-
-// generated icon files don't exist in source — stub them
-jest.mock('../../bpk-component-icon/lg/arrow-left', () => () => null);
-jest.mock('../../bpk-component-icon/lg/arrow-right', () => () => null);
-jest.mock('../../bpk-component-icon/sm/close', () => () => null);
 
 const formatDate = (date: Date) => format(date, 'dd/MM/yyyy');
 
@@ -384,4 +379,3 @@ describe('BpkDatepicker', () => {
     expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
 });
-
