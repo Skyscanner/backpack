@@ -258,6 +258,8 @@ export const Aliases = {
 
 /**
  * textAlign example – demonstrates all four alignment values on BpkStack.
+ *
+ * @returns {JSX.Element} Stack containers with different textAlign values applied.
  */
 const BpkStackTextAlignExample = () => (
   <LayoutWrapper>

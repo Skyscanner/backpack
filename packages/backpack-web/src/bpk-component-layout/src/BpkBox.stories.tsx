@@ -560,6 +560,8 @@ export const ResponsiveTextStyle = {
 
 /**
  * textAlign example – demonstrates all four alignment values on BpkBox.
+ *
+ * @returns {JSX.Element} Boxes with different textAlign values applied.
  */
 const TextAlignExample = () => (
   <LayoutWrapper>
@@ -581,6 +583,8 @@ const TextAlignExample = () => (
 
 /**
  * Responsive textAlign example – alignment changes across breakpoints.
+ *
+ * @returns {JSX.Element} A box whose text alignment changes across breakpoints.
  */
 const ResponsiveTextAlignExample = () => (
   <LayoutWrapper>

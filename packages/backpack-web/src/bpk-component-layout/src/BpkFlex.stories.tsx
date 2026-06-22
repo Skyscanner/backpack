@@ -239,6 +239,8 @@ export const LayoutProps = {
 
 /**
  * textAlign example – demonstrates all four alignment values on BpkFlex.
+ *
+ * @returns {JSX.Element} Flex containers with different textAlign values applied.
  */
 const BpkFlexTextAlignExample = () => (
   <LayoutWrapper>

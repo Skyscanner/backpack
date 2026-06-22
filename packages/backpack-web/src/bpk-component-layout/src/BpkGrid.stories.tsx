@@ -215,6 +215,8 @@ export const LayoutProps = {
 
 /**
  * textAlign example – demonstrates all four alignment values on BpkGrid.
+ *
+ * @returns {JSX.Element} Grid containers with different textAlign values applied.
  */
 const BpkGridTextAlignExample = () => (
   <LayoutWrapper>
