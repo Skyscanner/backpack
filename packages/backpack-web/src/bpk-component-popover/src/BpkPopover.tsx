@@ -141,7 +141,9 @@ const BpkPopover = ({
   const [isOpenState, setIsOpenState] = useState(isOpen);
 
   useEffect(() => {
-    setIsOpenState(isOpen);
+    if (!isOpen) {
+      setIsOpenState(false);
+    }
   }, [isOpen]);
 
   const arrowRef = useRef(null);

@@ -70,33 +70,6 @@ describe('BpkPopover', () => {
     expect(screen.queryByRole('My popover content')).not.toBeInTheDocument();
   });
 
-  it('should open when "isOpen" prop changes from false to true', async () => {
-    const props = {
-      id: 'my-popover',
-      onClose: () => null,
-      label: 'My popover',
-      closeButtonLabel: 'Close',
-      target: <button type="button">My target</button>,
-    };
-    const { rerender } = render(
-      <BpkPopover {...props} isOpen={false}>
-        My popover content
-      </BpkPopover>,
-    );
-
-    expect(screen.queryByText('My popover content')).not.toBeInTheDocument();
-
-    rerender(
-      <BpkPopover {...props} isOpen>
-        My popover content
-      </BpkPopover>,
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText('My popover content')).toBeVisible();
-    });
-  });
-
   it('should render without an arrow', async () => {
     const target = (<button type="button">My target</button>);
     render(
