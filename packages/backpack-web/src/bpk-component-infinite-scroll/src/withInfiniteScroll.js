@@ -156,7 +156,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
         this.fetchItems({
           index: 0,
           elementsPerScroll:
-            this.props.elementsPerScroll ?? defaultProps.elementsPerScroll,
+            this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
           elementsToRender: [],
         }).then((newState) => this.setStateAfterDsUpdate(newState));
       }
@@ -186,7 +186,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
     updateData = () => {
       const { index } = this.state;
       const elementsPerScroll =
-        this.props.elementsPerScroll ?? defaultProps.elementsPerScroll;
+        this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements;
       // This means updateData was called before any data was loaded, e.g.
       // An ArrayDataSource initialized empty and then changed latter on via `updateData`
       // In this case we want to load new data and not just replace the old one.
