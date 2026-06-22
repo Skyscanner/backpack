@@ -86,15 +86,15 @@ describe('BpkPopover', () => {
 
     expect(screen.queryByText('My popover content')).not.toBeInTheDocument();
 
-    await waitFor(async () => {
-      rerender(
-        <BpkPopover {...props} isOpen>
-          My popover content
-        </BpkPopover>,
-      );
-    });
+    rerender(
+      <BpkPopover {...props} isOpen>
+        My popover content
+      </BpkPopover>,
+    );
 
-    expect(screen.getByText('My popover content')).toBeVisible();
+    await waitFor(() => {
+      expect(screen.getByText('My popover content')).toBeVisible();
+    });
   });
 
   it('should render without an arrow', async () => {
