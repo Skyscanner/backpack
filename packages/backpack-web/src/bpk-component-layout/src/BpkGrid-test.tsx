@@ -100,13 +100,20 @@ describe('BpkGrid', () => {
     expect(getByText('Content')).toBeInTheDocument();
   });
 
-  it('renders when textAlign is provided', () => {
-    const { getByText } = render(
+  it('applies textAlign — produces different className than without it', () => {
+    const { container: withAlign } = render(
       <BpkProvider>
         <BpkGrid textAlign="center">Content</BpkGrid>
       </BpkProvider>,
     );
-    expect(getByText('Content')).toBeInTheDocument();
+    const { container: withoutAlign } = render(
+      <BpkProvider>
+        <BpkGrid>Content</BpkGrid>
+      </BpkProvider>,
+    );
+    expect(withAlign.querySelector('div')?.className).not.toBe(
+      withoutAlign.querySelector('div')?.className,
+    );
   });
 
   it('accepts grid props: justify, align, gap', () => {

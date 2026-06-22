@@ -63,13 +63,20 @@ describe('BpkGridItem', () => {
     expect(getByText('Item')).toBeInTheDocument();
   });
 
-  it('renders when textAlign is provided', () => {
-    const { getByText } = render(
+  it('applies textAlign — produces different className than without it', () => {
+    const { container: withAlign } = render(
       <BpkProvider>
         <BpkGridItem textAlign="center">Item</BpkGridItem>
       </BpkProvider>,
     );
-    expect(getByText('Item')).toBeInTheDocument();
+    const { container: withoutAlign } = render(
+      <BpkProvider>
+        <BpkGridItem>Item</BpkGridItem>
+      </BpkProvider>,
+    );
+    expect(withAlign.querySelector('div')?.className).not.toBe(
+      withoutAlign.querySelector('div')?.className,
+    );
   });
 
   it('supports Backpack spacing tokens', () => {

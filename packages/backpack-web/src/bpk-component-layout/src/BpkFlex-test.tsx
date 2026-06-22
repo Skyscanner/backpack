@@ -122,13 +122,20 @@ describe('BpkFlex', () => {
     expect(getByText('Content')).toBeInTheDocument();
   });
 
-  it('renders when textAlign is provided', () => {
-    const { getByText } = render(
+  it('applies textAlign — produces different className than without it', () => {
+    const { container: withAlign } = render(
       <BpkProvider>
         <BpkFlex textAlign="center">Content</BpkFlex>
       </BpkProvider>,
     );
-    expect(getByText('Content')).toBeInTheDocument();
+    const { container: withoutAlign } = render(
+      <BpkProvider>
+        <BpkFlex>Content</BpkFlex>
+      </BpkProvider>,
+    );
+    expect(withAlign.querySelector('div')?.className).not.toBe(
+      withoutAlign.querySelector('div')?.className,
+    );
   });
 
   it('supports responsive direction', () => {

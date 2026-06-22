@@ -116,15 +116,24 @@ describe('BpkStack', () => {
     expect(getByText('Child')).toBeInTheDocument();
   });
 
-  it('renders when textAlign is provided', () => {
-    const { getByText } = render(
+  it('applies textAlign — produces different className than without it', () => {
+    const { container: withAlign } = render(
       <BpkProvider>
         <BpkStack textAlign="center" gap={BpkSpacing.MD}>
           <div>Child</div>
         </BpkStack>
       </BpkProvider>,
     );
-    expect(getByText('Child')).toBeInTheDocument();
+    const { container: withoutAlign } = render(
+      <BpkProvider>
+        <BpkStack gap={BpkSpacing.MD}>
+          <div>Child</div>
+        </BpkStack>
+      </BpkProvider>,
+    );
+    expect(withAlign.firstChild?.className).not.toBe(
+      withoutAlign.firstChild?.className,
+    );
   });
 
   describe('BpkHStack', () => {
