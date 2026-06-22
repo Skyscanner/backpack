@@ -387,7 +387,8 @@ class BpkDatepicker extends Component<Props, State> {
               isOpen={this.state.isOpen}
               label={title}
               closeButtonText={closeButtonText}
-              {...getDataComponentAttribute('Datepicker')} 
+              renderTarget={renderTarget}
+              {...getDataComponentAttribute('Datepicker')}
               {...rest}
             >
               <Calendar {...calendarProps} fixedWidth={fixedWidth} />

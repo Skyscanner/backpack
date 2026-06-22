@@ -16,10 +16,11 @@
  * limitations under the License.
  */
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
+import useMediaQuery from '../../bpk-component-breakpoint/src/useMediaQuery';
 import { CALENDAR_SELECTION_TYPE } from '../../bpk-component-calendar';
 import { format } from '../../bpk-component-calendar/src/date-utils';
 import {
@@ -27,6 +28,7 @@ import {
   formatMonth,
   formatDateFull,
 } from '../../bpk-component-calendar/test-utils';
+
 
 import BpkDatepicker from './BpkDatepicker';
 
@@ -377,5 +379,54 @@ describe('BpkDatepicker', () => {
     await userEvent.click(closeButton);
     expect(calendarDialog).not.toBeInTheDocument();
     expect(onOpenChangeMock).toHaveBeenCalledWith(false);
+  });
+});
+
+describe('BpkDatepicker (desktop)', () => {
+  beforeEach(() => {
+    jest.mocked(useMediaQuery).mockReturnValue(false);
+  });
+
+  const defaultProps = {
+    id: 'myDatepicker',
+    closeButtonText: 'Close',
+    daysOfWeek: weekDays,
+    changeMonthLabel: 'Change month',
+    previousMonthLabel: 'Go to previous month',
+    nextMonthLabel: 'Go to next month',
+    title: 'Departure date',
+    weekStartsOn: 1,
+    getApplicationElement: () => document.createElement('div'),
+    formatDate: (date: Date) => format(date, 'dd/MM/yyyy'),
+    formatMonth,
+    formatDateFull,
+    inputProps: { onChange: () => null, placeholder: 'placeholder', large: true },
+    minDate: new Date(2010, 1, 15),
+    maxDate: new Date(2010, 2, 15),
+    selectionConfiguration: {
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(2010, 1, 15),
+    },
+  };
+
+  it('should open the popover when the input is focused', async () => {
+    render(<BpkDatepicker {...defaultProps} />);
+
+    const inputField = screen.getByRole('textbox', { name: /15th February 2010/i });
+    fireEvent.focus(inputField);
+
+    await waitFor(() => {
+      expect(screen.getByRole('dialog', { name: 'Departure date' })).toBeInTheDocument();
+    });
+  });
+
+  it('should open the popover when "isOpen" prop changes from false to true', () => {
+    const { rerender } = render(<BpkDatepicker {...defaultProps} isOpen={false} />);
+
+    expect(screen.queryByRole('dialog', { name: 'Departure date' })).not.toBeInTheDocument();
+
+    rerender(<BpkDatepicker {...defaultProps} isOpen />);
+
+    expect(screen.getByRole('dialog', { name: 'Departure date' })).toBeInTheDocument();
   });
 });

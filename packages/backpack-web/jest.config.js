@@ -43,6 +43,8 @@ module.exports = {
       '<rootDir>/../../scripts/stubs/cssTransitionStub.js',
     '@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$':
       '<rootDir>/../../scripts/stubs/fileStub.js',
+    '^(\\.{1,2}/)+bpk-component-icon/(lg|sm)/.+$':
+      '<rootDir>/../../scripts/stubs/iconStub.js',
     '^react($|/.+)': '<rootDir>/../../node_modules/react$1',
   },
   setupFilesAfterEnv: ['<rootDir>/../../scripts/jest/setup.js'],
