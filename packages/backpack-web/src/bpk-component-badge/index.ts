@@ -28,6 +28,7 @@ import themeAttributes, {
   badgeOutlineThemeAttributes,
   badgeStrongThemeAttributes,
   badgeBrandThemeAttributes,
+  badgeSubtleThemeAttributes,
 } from './src/themeAttributes';
 
 export type BpkBadgeProps = Props;
@@ -45,4 +46,5 @@ export {
   badgeOutlineThemeAttributes,
   badgeStrongThemeAttributes,
   badgeBrandThemeAttributes,
+  badgeSubtleThemeAttributes,
 };

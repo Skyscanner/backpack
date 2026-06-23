@@ -153,6 +153,17 @@ const BrandExample = () => (
   </BadgeLayout>
 );
 
+const SubtleExample = () => (
+  <BadgeLayout>
+    <BpkBadge type={BADGE_TYPES.subtle}>Subtle</BpkBadge>
+    &nbsp;
+    <BpkBadge type={BADGE_TYPES.subtle}>
+      <BpkSmallTickIcon />
+      &nbsp;Subtle
+    </BpkBadge>
+  </BadgeLayout>
+);
+
 const CenteredExample = () => (
   <BadgeLayout>
     <div>
@@ -176,8 +187,8 @@ const DockedTrailingExample = () => (
 
 const ThemedCornerRadiusExample = () => (
   <BpkThemeProvider
-    theme={{ badgeBorderRadius: '999px' }}
-    themeAttributes={['badgeBorderRadius']}
+    theme={{ radiusXs: '999px' }}
+    themeAttributes={['radiusXs']}
   >
     <BadgeLayout>
       <BpkBadge>Normal</BpkBadge>
@@ -192,43 +203,43 @@ const ThemedCornerRadiusExample = () => (
 const ThemedBackgroundColorExample = () => (
   <BadgeLayout>
     <BpkThemeProvider
-      theme={{ badgeNormalBackgroundColor: coreAccentDay }}
-      themeAttributes={['badgeNormalBackgroundColor']}
+      theme={{ privateBadgeColourBgDefault: coreAccentDay }}
+      themeAttributes={['privateBadgeColourBgDefault']}
     >
       <BpkBadge type={BADGE_TYPES.normal}>Normal</BpkBadge>
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeWarningBackgroundColor: statusWarningFillDay }}
-      themeAttributes={['badgeWarningBackgroundColor']}
+      theme={{ privateBadgeColourBgDefault: statusWarningFillDay }}
+      themeAttributes={['privateBadgeColourBgDefault']}
     >
       <BpkBadge type={BADGE_TYPES.warning}>Warning</BpkBadge>
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeSuccessBackgroundColor: statusSuccessFillDay }}
-      themeAttributes={['badgeSuccessBackgroundColor']}
+      theme={{ privateBadgeColourBgDefault: statusSuccessFillDay }}
+      themeAttributes={['privateBadgeColourBgDefault']}
     >
       <BpkBadge type={BADGE_TYPES.success}>Success</BpkBadge>
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeCriticalBackgroundColor: statusDangerFillDay }}
-      themeAttributes={['badgeCriticalBackgroundColor']}
+      theme={{ privateBadgeColourBgDefault: statusDangerFillDay }}
+      themeAttributes={['privateBadgeColourBgDefault']}
     >
       <BpkBadge type={BADGE_TYPES.critical}>Critical</BpkBadge>
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeStrongBackgroundColor: corePrimaryDay }}
-      themeAttributes={['badgeStrongBackgroundColor']}
+      theme={{ corePrimary: corePrimaryDay }}
+      themeAttributes={['corePrimary']}
     >
       <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeBrandBackgroundColor: coreEcoDay }}
-      themeAttributes={['badgeBrandBackgroundColor']}
+      theme={{ coreAccent: coreEcoDay }}
+      themeAttributes={['coreAccent']}
     >
       <BpkBadge type={BADGE_TYPES.brand}>Brand</BpkBadge>
     </BpkThemeProvider>
@@ -238,8 +249,8 @@ const ThemedBackgroundColorExample = () => (
 const ThemedIconColorExample = () => (
   <BadgeLayout>
     <BpkThemeProvider
-      theme={{ badgeNormalIconColor: coreAccentDay }}
-      themeAttributes={['badgeNormalIconColor']}
+      theme={{ textPrimary: coreAccentDay }}
+      themeAttributes={['textPrimary']}
     >
       <BpkBadge type={BADGE_TYPES.normal}>
         <BpkSmallTickIcon />
@@ -248,8 +259,8 @@ const ThemedIconColorExample = () => (
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeWarningIconColor: statusWarningSpotDay }}
-      themeAttributes={['badgeWarningIconColor']}
+      theme={{ statusWarningSpot: statusWarningSpotDay }}
+      themeAttributes={['statusWarningSpot']}
     >
       <BpkBadge type={BADGE_TYPES.warning}>
         <BpkSmallHelpCircleIcon />
@@ -258,8 +269,8 @@ const ThemedIconColorExample = () => (
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeSuccessIconColor: statusSuccessSpotDay }}
-      themeAttributes={['badgeSuccessIconColor']}
+      theme={{ statusSuccessSpot: statusSuccessSpotDay }}
+      themeAttributes={['statusSuccessSpot']}
     >
       <BpkBadge type={BADGE_TYPES.success}>
         <BpkSmallTickIcon />
@@ -268,8 +279,8 @@ const ThemedIconColorExample = () => (
     </BpkThemeProvider>
     &nbsp;
     <BpkThemeProvider
-      theme={{ badgeCriticalIconColor: statusDangerSpotDay }}
-      themeAttributes={['badgeCriticalIconColor']}
+      theme={{ statusDangerSpot: statusDangerSpotDay }}
+      themeAttributes={['statusDangerSpot']}
     >
       <BpkBadge type={BADGE_TYPES.critical}>
         <BpkSmallExclamationIcon />
@@ -314,6 +325,7 @@ const MixedExample = () => (
     <BrandExample />
     <InverseExample />
     <OutlineExample />
+    <SubtleExample />
   </div>
 );
 
@@ -355,6 +367,10 @@ export const Inverse = {
 
 export const Outline = {
   render: () => <OutlineExample />,
+};
+
+export const Subtle = {
+  render: () => <SubtleExample />,
 };
 
 export const Centered = {

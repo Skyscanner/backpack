@@ -20,55 +20,56 @@ export const badgeThemeAttributes = [
   'badgeFontSize',
   'badgeFontWeight',
   'badgeLineHeight',
-  'badgeBorderRadius',
+  'radiusXs',
 ];
 
 export const badgeNormalThemeAttributes = [
-  'badgeNormalBackgroundColor',
-  'badgeNormalTextColor',
-  'badgeNormalIconColor',
+  'privateBadgeColourBgDefault',
+  'textPrimary',
 ];
 
 export const badgeWarningThemeAttributes = [
-  'badgeWarningBackgroundColor',
-  'badgeWarningTextColor',
-  'badgeWarningIconColor',
+  'privateBadgeColourBgDefault',
+  'textOnLight',
+  'statusWarningSpot',
 ];
 
 export const badgeSuccessThemeAttributes = [
-  'badgeSuccessBackgroundColor',
-  'badgeSuccessTextColor',
-  'badgeSuccessIconColor',
+  'privateBadgeColourBgDefault',
+  'textOnLight',
+  'statusSuccessSpot',
 ];
 
 export const badgeCriticalThemeAttributes = [
-  'badgeCriticalBackgroundColor',
-  'badgeCriticalTextColor',
-  'badgeCriticalIconColor',
+  'privateBadgeColourBgDefault',
+  'textOnLight',
+  'statusDangerSpot',
 ];
 
 export const badgeInverseThemeAttributes = [
-  'badgeInverseBackgroundColor',
-  'badgeInverseTextColor',
-  'badgeInverseIconColor',
+  'privateBadgeColourBgInverse',
+  'textPrimary',
 ];
 
 export const badgeOutlineThemeAttributes = [
-  'badgeOutlineBackgroundColor',
-  'badgeOutlineTextColor',
-  'badgeOutlineIconColor',
+  'privateBadgeColourBgOutline',
+  'privateBadgeColourStrokeOutline',
+  'textOnDark',
 ];
 
 export const badgeStrongThemeAttributes = [
-  'badgeStrongBackgroundColor',
-  'badgeStrongTextColor',
-  'badgeStrongIconColor',
+  'corePrimary',
+  'textOnDark',
 ];
 
 export const badgeBrandThemeAttributes = [
-  'badgeBrandBackgroundColor',
-  'badgeBrandTextColor',
-  'badgeBrandIconColor',
+  'coreAccent',
+  'textInverse',
+];
+
+export const badgeSubtleThemeAttributes = [
+  'privateBadgeColourBgSubtle',
+  'textPrimary',
 ];
 
 /**
@@ -87,6 +88,7 @@ export const allBadgeThemeAttributes = [
   ...badgeOutlineThemeAttributes,
   ...badgeStrongThemeAttributes,
   ...badgeBrandThemeAttributes,
+  ...badgeSubtleThemeAttributes,
 ];
 
 /**

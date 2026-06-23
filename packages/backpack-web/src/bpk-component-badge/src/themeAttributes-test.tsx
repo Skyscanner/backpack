@@ -28,6 +28,7 @@ import {
   badgeOutlineThemeAttributes,
   badgeStrongThemeAttributes,
   badgeBrandThemeAttributes,
+  badgeSubtleThemeAttributes,
 } from '../index';
 
 describe('badge component themeAttributes', () => {
@@ -36,71 +37,67 @@ describe('badge component themeAttributes', () => {
       'badgeFontSize',
       'badgeFontWeight',
       'badgeLineHeight',
-      'badgeBorderRadius',
+      'radiusXs',
     ]);
   });
 
   it('should export the correct normal theme attributes', () => {
     expect(badgeNormalThemeAttributes).toEqual([
-      'badgeNormalBackgroundColor',
-      'badgeNormalTextColor',
-      'badgeNormalIconColor',
+      'privateBadgeColourBgDefault',
+      'textPrimary',
     ]);
   });
 
   it('should export the correct warning theme attributes', () => {
     expect(badgeWarningThemeAttributes).toEqual([
-      'badgeWarningBackgroundColor',
-      'badgeWarningTextColor',
-      'badgeWarningIconColor',
+      'privateBadgeColourBgDefault',
+      'textOnLight',
+      'statusWarningSpot',
     ]);
   });
 
   it('should export the correct success theme attributes', () => {
     expect(badgeSuccessThemeAttributes).toEqual([
-      'badgeSuccessBackgroundColor',
-      'badgeSuccessTextColor',
-      'badgeSuccessIconColor',
+      'privateBadgeColourBgDefault',
+      'textOnLight',
+      'statusSuccessSpot',
     ]);
   });
 
   it('should export the correct critical theme attributes', () => {
     expect(badgeCriticalThemeAttributes).toEqual([
-      'badgeCriticalBackgroundColor',
-      'badgeCriticalTextColor',
-      'badgeCriticalIconColor',
+      'privateBadgeColourBgDefault',
+      'textOnLight',
+      'statusDangerSpot',
     ]);
   });
 
   it('should export the correct inverse theme attributes', () => {
     expect(badgeInverseThemeAttributes).toEqual([
-      'badgeInverseBackgroundColor',
-      'badgeInverseTextColor',
-      'badgeInverseIconColor',
+      'privateBadgeColourBgInverse',
+      'textPrimary',
     ]);
   });
 
   it('should export the correct outline theme attributes', () => {
     expect(badgeOutlineThemeAttributes).toEqual([
-      'badgeOutlineBackgroundColor',
-      'badgeOutlineTextColor',
-      'badgeOutlineIconColor',
+      'privateBadgeColourBgOutline',
+      'privateBadgeColourStrokeOutline',
+      'textOnDark',
     ]);
   });
 
   it('should export the correct strong theme attributes', () => {
     expect(badgeStrongThemeAttributes).toEqual([
-      'badgeStrongBackgroundColor',
-      'badgeStrongTextColor',
-      'badgeStrongIconColor',
+      'corePrimary',
+      'textOnDark',
     ]);
   });
 
   it('should export the correct brand theme attributes', () => {
     expect(badgeBrandThemeAttributes).toEqual([
-      'badgeBrandBackgroundColor',
-      'badgeBrandTextColor',
-      'badgeBrandIconColor',
+      'coreAccent',
+      'textInverse',
     ]);
   });
 
@@ -109,6 +106,13 @@ describe('badge component themeAttributes', () => {
       'badgeBackgroundColor',
       'badgeSuccessBackgroundColor',
       'badgeDestructiveBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct subtle theme attributes', () => {
+    expect(badgeSubtleThemeAttributes).toEqual([
+      'privateBadgeColourBgSubtle',
+      'textPrimary',
     ]);
   });
 
@@ -123,6 +127,7 @@ describe('badge component themeAttributes', () => {
       ...badgeOutlineThemeAttributes,
       ...badgeStrongThemeAttributes,
       ...badgeBrandThemeAttributes,
+      ...badgeSubtleThemeAttributes,
     ]);
   });
 });
