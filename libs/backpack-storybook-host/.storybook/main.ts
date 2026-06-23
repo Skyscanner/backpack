@@ -35,6 +35,12 @@ const config: StorybookConfig = {
     name: '@storybook/react-webpack5',
     options: {},
   },
+  tags: {
+    'dark-mode-compatible': {
+      excludeFromSidebar: false,
+      excludeFromDocsStories: false,
+    },
+  },
   docs: {
     defaultName: 'Documentation'
   },
