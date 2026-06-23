@@ -25,8 +25,8 @@ import type { Preview } from '@storybook/react';
 import '@skyscanner/backpack-web/bpk-stylesheets';
 import '@skyscanner/backpack-web/bpk-stylesheets/font';
 import '@skyscanner/backpack-web/bpk-stylesheets/larken';
-import '@skyscanner/backpack-web/bpk-stylesheets/theme-backpack-dark.css';
-import '@skyscanner/backpack-web/bpk-stylesheets/theme-backpack-light.css';
+import '@skyscanner/backpack-web/bpk-stylesheets/theme-backpack-dark';
+import '@skyscanner/backpack-web/bpk-stylesheets/theme-backpack-light';
 
 const preview: Preview = {
   globalTypes: {
