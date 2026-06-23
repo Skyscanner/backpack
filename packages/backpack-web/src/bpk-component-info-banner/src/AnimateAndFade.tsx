@@ -33,8 +33,8 @@ const getClassName = cssModules(STYLES);
 const ANIMATION_DURATION = parseInt(durationSm, 10);
 
 type Props = {
-  animateOnEnter: boolean;
-  animateOnLeave: boolean;
+  animateOnEnter?: boolean;
+  animateOnLeave?: boolean;
   children: ReactNode | string;
   show: boolean;
   className?: string | undefined;
@@ -51,16 +51,12 @@ type State = {
 class AnimateAndFade extends Component<Props, State> {
   toggleImmediately: boolean;
 
-  static defaultProps = {
-    animateOnEnter: false,
-    animateOnLeave: false,
-  };
-
   constructor(props: Props) {
     super(props);
 
-    this.toggleImmediately = this.props.show && this.props.animateOnEnter;
-    const initiallyShown = this.toggleImmediately ? false : this.props.show;
+    const { animateOnEnter = false, show } = props;
+    this.toggleImmediately = show && animateOnEnter;
+    const initiallyShown = this.toggleImmediately ? false : show;
 
     this.state = {
       isExpanded: initiallyShown,
@@ -127,7 +123,7 @@ class AnimateAndFade extends Component<Props, State> {
   };
 
   render() {
-    const { animateOnEnter, animateOnLeave, children, className } = this.props;
+    const { animateOnEnter = false, animateOnLeave = false, children, className } = this.props;
     const showPlaceholder =
       !this.state.visible && !this.state.hideAnimationInProgress;
     // While the expanding animation takes place, we render the child element
