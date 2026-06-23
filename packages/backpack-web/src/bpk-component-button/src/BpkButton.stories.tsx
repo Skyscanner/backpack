@@ -502,6 +502,7 @@ export const BpkButtonPrimary = {
 
 export const BpkButtonPrimaryOnDark = {
   render: () => <PrimaryOnDarkExample />,
+  parameters: { background: 'dark' },
 };
 
 export const BpkButtonPrimaryOnLight = {
@@ -514,6 +515,7 @@ export const BpkButtonSecondary = {
 
 export const BpkButtonSecondaryOnDark = {
   render: () => <SecondaryOnDarkExample />,
+  parameters: { background: 'dark' },
 };
 
 export const BpkButtonDestructive = {
@@ -530,6 +532,7 @@ export const BpkButtonLinkButton = {
 
 export const BpkButtonLinkOnDarkButton = {
   render: () => <LinkOnDarkExample />,
+  parameters: { background: 'dark' },
 };
 
 export const BpkButtonLinks = {
