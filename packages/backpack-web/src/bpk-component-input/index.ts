@@ -18,8 +18,6 @@
 
 import BpkInput from './src/BpkInput';
 import {
-  propTypes,
-  defaultProps,
   CLEAR_BUTTON_MODES,
   INPUT_TYPES,
   type Props,
@@ -30,11 +28,4 @@ import withOpenEvents from './src/withOpenEvents';
 export default BpkInput;
 
 export type BpkInputProps = Props;
-export {
-  propTypes,
-  defaultProps,
-  withOpenEvents,
-  INPUT_TYPES,
-  CLEAR_BUTTON_MODES,
-  themeAttributes,
-};
+export { withOpenEvents, INPUT_TYPES, CLEAR_BUTTON_MODES, themeAttributes };
