@@ -230,7 +230,10 @@ jobs:
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
       - name: Percy Test
-        if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'
+        if: |
+          github.actor != 'dependabot[bot]' &&
+          (github.ref == 'refs/heads/main' ||
+           (github.event_name == 'pull_request' && github.repository == github.event.pull_request.head.repo.full_name))
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
           LOG_LEVEL: debug
