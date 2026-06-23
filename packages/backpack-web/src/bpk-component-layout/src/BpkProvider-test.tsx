@@ -21,11 +21,12 @@ import { Component } from 'react';
 
 import { useLocaleContext } from '@ark-ui/react';
 import createCache from '@emotion/cache';
+import { withEmotionCache } from '@emotion/react';
 import { act, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BpkBox } from './BpkBox';
-import { BpkProvider } from './BpkProvider';
+import { BpkProvider, BpkEmotionCacheContext } from './BpkProvider';
 import { BpkSpacing } from './tokens';
 
 import type { EmotionCache, Options } from '@emotion/cache';
@@ -40,6 +41,13 @@ jest.mock('@emotion/cache', () =>
 );
 
 const mockCreateCache = createCache as jest.Mock;
+
+// Helper: reads the active Emotion cache key from context via withEmotionCache.
+const EmotionCacheReader = withEmotionCache(
+  (_props: Record<string, never>, cache: EmotionCache) => (
+    <span data-testid="emotion-cache-key">{cache.key}</span>
+  ),
+);
 
 // Mirrors the production topology: error boundary whose fallback also mounts BpkProvider.
 // This is exactly the structure that causes the infinite remount loop.
@@ -73,6 +81,7 @@ class LoopBoundary extends Component<
     return this.props.children;
   }
 }
+
 
 const LocaleReader = () => {
   const { locale } = useLocaleContext();
@@ -208,12 +217,53 @@ describe('BpkProvider', () => {
 
     expect(getByText('Plain child')).toBeInTheDocument();
   });
+
+  it('uses own emotion cache when no external cache is provided', () => {
+    const { getByTestId } = render(
+      <BpkProvider>
+        <EmotionCacheReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('css');
+  });
+
+  it('uses external emotion cache injected via BpkEmotionCacheContext', () => {
+    const externalCache = createCache({ key: 'css' });
+
+    const { getByTestId } = render(
+      <BpkEmotionCacheContext.Provider value={externalCache}>
+        <BpkProvider>
+          <EmotionCacheReader />
+        </BpkProvider>
+      </BpkEmotionCacheContext.Provider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('css');
+  });
+
+  it('uses external emotion cache with non-default key injected via BpkEmotionCacheContext', () => {
+    const externalCache = createCache({ key: 'bpk-injected' });
+
+    const { getByTestId } = render(
+      <BpkEmotionCacheContext.Provider value={externalCache}>
+        <BpkProvider>
+          <EmotionCacheReader />
+        </BpkProvider>
+      </BpkEmotionCacheContext.Provider>,
+    );
+
+    expect(getByTestId('emotion-cache-key').textContent).toBe('bpk-injected');
+  });
 });
 
 describe('BpkProvider - RTL support', () => {
   afterEach(() => {
     document.documentElement.removeAttribute('dir');
     document.documentElement.removeAttribute('lang');
+    // Restore any console.error spy set up within this describe block.
+    // Doing this in afterEach guarantees cleanup even when an assertion throws.
+    jest.restoreAllMocks();
   });
 
   it('passes en-US locale to Ark when document dir is ltr', () => {
@@ -368,6 +418,51 @@ describe('BpkProvider - RTL support', () => {
     expect(getByTestId('locale').textContent).toBe('en-US');
   });
 
+  it('falls back to direction locale and does not crash when html[dir] is set and html[lang] is invalid', () => {
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', '123');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('en-US');
+  });
+
+  it('falls back to ar-SA and does not crash when html[dir] is rtl and html[lang] is invalid', () => {
+    document.documentElement.setAttribute('dir', 'rtl');
+    document.documentElement.setAttribute('lang', 'en_US');
+
+    const { getByTestId } = render(
+      <BpkProvider>
+        <LocaleReader />
+      </BpkProvider>,
+    );
+
+    expect(getByTestId('locale').textContent).toBe('ar-SA');
+  });
+
+  it('does not loop when ErrorBoundary fallback mounts BpkProvider with html[dir] set and invalid html[lang]', () => {
+    document.documentElement.setAttribute('dir', 'ltr');
+    document.documentElement.setAttribute('lang', '123');
+
+    // Suppress expected React error output for this test
+    jest.spyOn(console, 'error').mockImplementation(jest.fn());
+
+    const boundary = { current: null as LoopBoundary | null };
+    render(
+      <LoopBoundary ref={(el) => { boundary.current = el; }}>
+        <BpkProvider>
+          <div>content</div>
+        </BpkProvider>
+      </LoopBoundary>,
+    );
+
+    expect(boundary.current?.catchCount).toBe(0);
+  });
+
   it('does not loop when ErrorBoundary fallback also mounts BpkProvider with invalid html[lang]', () => {
     document.documentElement.setAttribute('lang', '123');
 
@@ -388,8 +483,6 @@ describe('BpkProvider - RTL support', () => {
     );
 
     expect(boundary.current?.catchCount).toBe(0);
-
-    jest.restoreAllMocks();
   });
 
   it('passes a valid html[lang] through to Ark unchanged', () => {
