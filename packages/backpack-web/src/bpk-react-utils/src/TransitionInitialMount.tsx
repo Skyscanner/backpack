@@ -16,7 +16,8 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { cloneElement, useRef } from 'react';
+import type { ReactElement, RefObject } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import assign from 'object-assign';
@@ -30,26 +31,36 @@ type Props = {
   appearClassName: string;
   appearActiveClassName: string;
   transitionTimeout: number;
-  children: string | ReactNode;
+  // Must be a single ReactElement that accepts a ref — React 19 removed the
+  // findDOMNode fallback in react-transition-group@4, so we inject a nodeRef
+  // into the child via cloneElement. A plain string/fragment cannot accept a
+  // ref and would crash at runtime, so the type is narrowed accordingly.
+  children: ReactElement<{ ref?: RefObject<HTMLElement | null> }>;
 };
 
+// TODO: revisit the cloneElement pattern when react-transition-group v5 ships;
+// it is expected to remove the nodeRef requirement.
 const TransitionInitialMount = ({
   appearActiveClassName,
   appearClassName,
   children,
   transitionTimeout,
-}: Props) => (
-  <CSSTransition
-    classNames={{
-      appear: appearClassName,
-      appearActive: appearActiveClassName,
-    }}
-    in
-    appear
-    timeout={{ exit: 0, enter: 0, appear: transitionTimeout }}
-  >
-    {children}
-  </CSSTransition>
-);
+}: Props) => {
+  const nodeRef = useRef<HTMLElement>(null);
+  return (
+    <CSSTransition
+      nodeRef={nodeRef}
+      classNames={{
+        appear: appearClassName,
+        appearActive: appearActiveClassName,
+      }}
+      in
+      appear
+      timeout={{ exit: 0, enter: 0, appear: transitionTimeout }}
+    >
+      {cloneElement(children, { ref: nodeRef })}
+    </CSSTransition>
+  );
+};
 
 export default TransitionInitialMount;
