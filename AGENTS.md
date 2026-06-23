@@ -16,7 +16,7 @@ This guide provides instructions and context for AI agents working with the Back
 ## Key Architecture Patterns
 
 ### Component Structure
-- Each component lives in `packages/bpk-component-{name}/`
+- Each component lives in `packages/backpack-web/src/bpk-component-{name}/`
 - Components follow the pattern: `BpkComponentName`
 - All components are prefixed with `Bpk`
 - Examples: `BpkButton`, `BpkCard`, `BpkChip`
@@ -95,7 +95,7 @@ npm run typecheck
 ## Component Development Workflow
 
 1. **Create Component Package**
-   - Follow existing package structure in `packages/bpk-component-{name}/`
+   - Follow existing package structure in `packages/backpack-web/src/bpk-component-{name}/`
    - Include: component file, tests, stories, SCSS, and package.json
 
 2. **Component Implementation**
@@ -339,7 +339,7 @@ Check the `decisions/` directory for architectural decisions and guidelines:
 
 ### Component Template Structure
 ```
-packages/bpk-component-example/
+packages/backpack-web/src/bpk-component-example/
 ├── src/
 │   ├── BpkExample.tsx              # Main component
 │   ├── BpkExample.module.scss      # Styles

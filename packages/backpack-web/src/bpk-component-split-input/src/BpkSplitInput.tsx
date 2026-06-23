@@ -46,13 +46,6 @@ interface State {
 }
 
 class BpkSplitInput extends Component<Props, State> {
-  static defaultProps = {
-    type: INPUT_TYPES.number,
-    inputLength: 4,
-    large: true,
-    placeholder: '',
-  };
-
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -94,7 +87,7 @@ class BpkSplitInput extends Component<Props, State> {
     return true;
   };
 
-  isNumeric = () => this.props.type === INPUT_TYPES.number;
+  isNumeric = () => (this.props.type ?? INPUT_TYPES.number) === INPUT_TYPES.number;
 
   isInputValid = (value: string | number) => {
     const isTypeValid = this.isNumeric() ? /^\d$/.test(`${value}`) : typeof value === 'string';
@@ -102,8 +95,8 @@ class BpkSplitInput extends Component<Props, State> {
   };
 
   focusInput = (inputIndex: number) => {
-    const { inputLength } = this.props;
-    const focusedInput = Math.max(Math.min(inputLength! - 1, inputIndex), 0);
+    const { inputLength = 4 } = this.props;
+    const focusedInput = Math.max(Math.min(inputLength - 1, inputIndex), 0);
     this.setState({ focusedInput });
   };
 
@@ -119,12 +112,12 @@ class BpkSplitInput extends Component<Props, State> {
 
   handleOnPaste = (e: ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const { inputLength } = this.props;
+    const { inputLength = 4 } = this.props;
     const { focusedInput, inputValue } = this.state;
 
     const pastedData = e.clipboardData
       .getData('text/plain')
-      .slice(0, inputLength! - focusedInput)
+      .slice(0, inputLength - focusedInput)
   .split('');
     const charsReceived = pastedData.length;
 
@@ -193,9 +186,18 @@ class BpkSplitInput extends Component<Props, State> {
 
   renderInputs = () => {
     const { focusedInput, inputValue } = this.state;
-    const { id, inputLength, label, large, name, placeholder, type, ...rest } = this.props;
+    const {
+      id,
+      inputLength = 4,
+      label,
+      large = true,
+      name,
+      placeholder = '',
+      type = INPUT_TYPES.number,
+      ...rest
+    } = this.props;
     const inputs = [];
-    for (let index = 0; index < inputLength!; index += 1) {
+    for (let index = 0; index < inputLength; index += 1) {
       inputs.push(
         <InputField
           key={index}

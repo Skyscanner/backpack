@@ -111,15 +111,17 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     --bpk-button-secondary-on-dark-text-color: #{tokens.$bpk-text-primary-day};
     --bpk-button-secondary-on-dark-hover-text-color: #{tokens.$bpk-text-primary-day};
     --bpk-button-secondary-on-dark-active-text-color: #{tokens.$bpk-text-primary-day};
-  }
 
-  &__nav-carousel-button {
-    display: inline-flex;
-    width: tokens.bpk-spacing-xl();
-    height: tokens.bpk-spacing-xl();
-    min-height: tokens.bpk-spacing-xl();
-    padding: 0;
-    justify-content: center;
-    align-items: center;
+    // Keep this selector more specific than BpkButton's icon-only padding,
+    // which may be loaded later in production CSS chunks.
+    & &-button {
+      display: inline-flex;
+      width: tokens.bpk-spacing-xl();
+      height: tokens.bpk-spacing-xl();
+      min-height: tokens.bpk-spacing-xl();
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

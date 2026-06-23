@@ -33,7 +33,6 @@ import FaceHappyIconSm from '../../bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkDismissibleChip from './BpkDismissibleChip';

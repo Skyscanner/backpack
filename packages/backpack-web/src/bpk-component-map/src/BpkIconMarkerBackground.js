@@ -31,7 +31,7 @@ type Props = {
 };
 
 const BpkIconMarkerBackground = (props: Props) => {
-  const { disabled, interactive, selected, ...rest } = props;
+  const { disabled = false, interactive = false, selected = false, ...rest } = props;
 
   const classNames = getClassName(
     'bpk-icon-marker-background',
@@ -70,12 +70,6 @@ const BpkIconMarkerBackground = (props: Props) => {
       <path d="M26,13.006 L25.9996018,13.1054 C26.0026018,13.4349 25.9880018,13.763 25.9557018,14.0875 C25.7666018,16.3861 24.9800018,18.5153 23.7516018,20.3193 C21.2977018,24.5933 17.2166018,28.7687 14.0461018,31.6 C13.4489018,32.1333 12.5511018,32.1333 11.9539018,31.6 C8.78340182,28.7687 4.70232182,24.5933 2.24837182,20.3193 C1.02002182,18.5153 0.233431825,16.3861 0.0443018246,14.0875 C0.0120218246,13.763 -0.00257817543,13.4348 0.000371824568,13.1054 L-4.4408921e-16,13.006 C-4.4408921e-16,5.82298 5.82030182,0 13,0 C20.1797018,0 26,5.82298 26,13.006 Z" />
     </svg>
   );
-};
-
-BpkIconMarkerBackground.defaultProps = {
-  disabled: false,
-  interactive: false,
-  selected: false,
 };
 
 export default BpkIconMarkerBackground;

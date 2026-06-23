@@ -14,13 +14,14 @@ to a repository output change.
      exercises the same `FIGMA_FILE_KEY` secret path used by scheduled runs.
    - For production validation, wait for the scheduled run.
 3. Confirm the workflow completes successfully. The expected successful path is:
-   - `Stage 1 - Fetch tokens from Figma`
+   - `Fetch tokens from Figma`
    - `Detect meaningful fetched token changes`
-   - `Classify token release label`
-   - `Stage 2 - Build CSS from DTCG tokens`
-   - `Detect generated token changes`
-   - `Commit generated token changes`
-   - `Open pull request`
+   - `Build CSS, rebuild base stylesheet, and open PR` (composite action, which internally runs):
+     - `Classify token release label`
+     - `Build CSS from DTCG tokens`
+     - `Rebuild base stylesheet`
+     - `Commit generated token changes`
+     - `Open pull request`
 4. Confirm the generated outputs reflect the intended change. Check the new `figma-token-sync/*`
    pull request diff for updates under:
    - `token-sync/tokens/*.json`
@@ -72,10 +73,11 @@ pull requests while your manual change is in flight.
 - **Auth failures** - Check that `FIGMA_VARIABLES_SYNC_TOKEN` is present, has the
   **Variables - Read-only** scope, is not expired, and can access the Figma file. Check that
   `FIGMA_FILE_KEY` points to the Backpack Foundations & Components file unless testing an override.
-- **Build failures** - Read the failing step output. Stage 1 failures usually point to Figma API,
-  invalid variable names, unresolved aliases, or DTCG path collisions. Stage 2 failures usually point
-  to invalid dimensions, CSS variable name collisions, or Light/Dark token symmetry issues. Fix the
-  source token data in Figma, publish, then rerun.
+- **Build failures** - Read the failing step output. `Fetch tokens from Figma` failures usually point
+  to Figma API, invalid variable names, unresolved aliases, or DTCG path collisions.
+  `Build CSS from DTCG tokens` and `Rebuild base stylesheet` failures usually point to invalid
+  dimensions, CSS variable name collisions, or Light/Dark token symmetry issues. Fix the source token
+  data in Figma, publish, then rerun.
 - **No-op runs** - If the workflow exits after `Detect meaningful fetched token changes`, no
   repository output PR is expected. This means either Figma has no token value changes compared with
   `main`, or the only fetched change was `manifest.json`'s `generatedAt` metadata.

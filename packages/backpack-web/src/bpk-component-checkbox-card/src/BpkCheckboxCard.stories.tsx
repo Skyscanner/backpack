@@ -19,23 +19,42 @@
 import { useState, Component } from 'react';
 import type { ReactNode } from 'react';
 
-import { canvasContrastDay, colorWhite, lineDay, statusSuccessSpotDay, surfaceContrastDay, textPrimaryDay, textSecondaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  canvasContrastDay,
+  colorWhite,
+  lineDay,
+  statusSuccessSpotDay,
+  surfaceContrastDay,
+  textPrimaryDay,
+  textSecondaryDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import AirportsIconLg from '../../bpk-component-icon/lg/airports';
 import CityIconLg from '../../bpk-component-icon/lg/city';
 import LandmarkIconLg from '../../bpk-component-icon/lg/landmark';
 import TrendDownIconLg from '../../bpk-component-icon/lg/trend--down';
 import BpkImage from '../../bpk-component-image';
-import { BpkBox, BpkVStack, BpkHStack, BpkFlex, BpkProvider } from '../../bpk-component-layout';
+import {
+  BpkBox,
+  BpkVStack,
+  BpkHStack,
+  BpkFlex,
+  BpkProvider,
+} from '../../bpk-component-layout';
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkPrice from '../../bpk-component-price';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
-import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS, CHECKBOX_CARD_RADIUS, useCheckboxCardContext } from './BpkCheckboxCard';
-import CHECKBOX_CARD_THEME_ATTRIBUTES, { createCheckboxCardTheme } from './themeAttributes';
+import {
+  BpkCheckboxCard,
+  CHECKBOX_CARD_VARIANTS,
+  CHECKBOX_CARD_RADIUS,
+  useCheckboxCardContext,
+} from './BpkCheckboxCard';
+import CHECKBOX_CARD_THEME_ATTRIBUTES, {
+  createCheckboxCardTheme,
+} from './themeAttributes';
 
 import type { Meta } from '@storybook/react';
 
@@ -120,7 +139,11 @@ const WithMultiContentExample = () => {
                   Central location with easy access to attractions
                 </BpkCheckboxCard.Description>
               </BpkVStack>
-              <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected ? TEXT_COLORS.textOnDark : undefined}>
+              <BpkText
+                textStyle={TEXT_STYLES.heading5}
+                tagName="span"
+                color={selected ? TEXT_COLORS.textOnDark : undefined}
+              >
                 £85
               </BpkText>
             </BpkVStack>
@@ -141,7 +164,9 @@ const AllVariantsExample = () => {
     <BpkVStack gap="bpk-spacing-lg" padding="bpk-spacing-lg" align="start">
       {/* onCanvasDefault */}
       <BpkVStack gap="bpk-spacing-md" align="start">
-        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Canvas Default</BpkText>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>
+          On Canvas Default
+        </BpkText>
         <BpkBox width="9.375rem" height="9.375rem">
           <BpkCheckboxCard.Root
             checked={selected1}
@@ -158,7 +183,9 @@ const AllVariantsExample = () => {
 
       {/* onCanvasContrast */}
       <BpkVStack gap="bpk-spacing-md" align="start">
-        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Canvas Contrast</BpkText>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>
+          On Canvas Contrast
+        </BpkText>
         <div style={{ background: canvasContrastDay, padding: '1.5rem' }}>
           <BpkBox width="9.375rem" height="9.375rem">
             <BpkCheckboxCard.Root
@@ -177,7 +204,9 @@ const AllVariantsExample = () => {
 
       {/* onSurfaceContrast */}
       <BpkVStack gap="bpk-spacing-md" align="start">
-        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>On Surface Contrast (Dark)</BpkText>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>
+          On Surface Contrast (Dark)
+        </BpkText>
         <div style={{ background: surfaceContrastDay, padding: '1.5rem' }}>
           <BpkBox width="9.375rem" height="9.375rem">
             <BpkCheckboxCard.Root
@@ -196,7 +225,9 @@ const AllVariantsExample = () => {
 
       {/* cars */}
       <BpkVStack gap="bpk-spacing-md" align="start">
-        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>Cars</BpkText>
+        <BpkText tagName="h4" textStyle={TEXT_STYLES.heading4}>
+          Cars
+        </BpkText>
         <BpkBox width="9.375rem" height="9.375rem">
           <BpkCheckboxCard.Root
             checked={selected4}
@@ -231,12 +262,24 @@ const WithImageExample = () => {
               <BpkImage
                 src="https://content.skyscnr.com/m/c9a57fbf76030f2/original/March-25-B2-IT-Spiagge-Liguria_1B_1.jpg"
                 altText="Car"
-                aspectRatio={16/9}
+                aspectRatio={16 / 9}
                 style={{ width: '100%' }}
               />
               <BpkCheckboxCard.Label>Economy</BpkCheckboxCard.Label>
-              <BpkText textStyle={TEXT_STYLES.xs} tagName="span" color={selected ? TEXT_COLORS.textOnDark : undefined}>from</BpkText>
-              <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected ? TEXT_COLORS.textOnDark : undefined}>£74</BpkText>
+              <BpkText
+                textStyle={TEXT_STYLES.xs}
+                tagName="span"
+                color={selected ? TEXT_COLORS.textOnDark : undefined}
+              >
+                from
+              </BpkText>
+              <BpkText
+                textStyle={TEXT_STYLES.heading5}
+                tagName="span"
+                color={selected ? TEXT_COLORS.textOnDark : undefined}
+              >
+                £74
+              </BpkText>
             </BpkVStack>
           </BpkCheckboxCard.Content>
         </BpkCheckboxCard.Root>
@@ -269,9 +312,28 @@ const WithInlineLayoutExample = () => {
 
 const WithIndicatorExample = () => {
   const options = [
-    { id: 'city', label: 'City Centre', description: 'Best for sightseeing', icon: CityIconLg, price: '£85' },
-    { id: 'landmark', label: 'Old Town', description: 'Best for culture', icon: LandmarkIconLg, price: '£78' },
-    { id: 'airport', label: 'Airport Area', description: 'Best for transit', icon: AirportsIconLg, price: '£60', disabled: true },
+    {
+      id: 'city',
+      label: 'City Centre',
+      description: 'Best for sightseeing',
+      icon: CityIconLg,
+      price: '£85',
+    },
+    {
+      id: 'landmark',
+      label: 'Old Town',
+      description: 'Best for culture',
+      icon: LandmarkIconLg,
+      price: '£78',
+    },
+    {
+      id: 'airport',
+      label: 'Airport Area',
+      description: 'Best for transit',
+      icon: AirportsIconLg,
+      price: '£60',
+      disabled: true,
+    },
   ];
 
   const [selected, setSelected] = useState<string[]>(['city']);
@@ -291,32 +353,45 @@ const WithIndicatorExample = () => {
 
   return (
     <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
-      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select neighbourhoods</BpkText>
-      <BpkThemeProvider theme={indicatorTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+        Select neighbourhoods
+      </BpkText>
+      <BpkThemeProvider
+        theme={indicatorTheme}
+        themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}
+      >
         <BpkHStack gap="bpk-spacing-md" wrap="wrap" align="stretch">
-          {options.map(({ description, disabled, icon: CardIcon, id, label, price }) => (
-            <BpkBox key={id} width="8.75rem">
-            <BpkCheckboxCard.Root
-              checked={selected.includes(id)}
-              onCheckedChange={() => toggle(id)}
-              variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
-              disabled={disabled}
-            >
-              <BpkCheckboxCard.HiddenInput />
-              <BpkCheckboxCard.Indicator />
-              <BpkCheckboxCard.Content>
-                <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
-                  <CardIcon />
-                  <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
-                    <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                    <BpkCheckboxCard.Description>{description}</BpkCheckboxCard.Description>
-                  </BpkVStack>
-                  <BpkPrice price={price} leadingText="from" />
-                </BpkVStack>
-              </BpkCheckboxCard.Content>
-            </BpkCheckboxCard.Root>
-            </BpkBox>
-          ))}
+          {options.map(
+            ({ description, disabled, icon: CardIcon, id, label, price }) => (
+              <BpkBox key={id} width="8.75rem">
+                <BpkCheckboxCard.Root
+                  checked={selected.includes(id)}
+                  onCheckedChange={() => toggle(id)}
+                  variant={CHECKBOX_CARD_VARIANTS.onCanvasDefault}
+                  disabled={disabled}
+                >
+                  <BpkCheckboxCard.HiddenInput />
+                  <BpkCheckboxCard.Indicator />
+                  <BpkCheckboxCard.Content>
+                    <BpkVStack gap="bpk-spacing-sm" align="center" width="100%">
+                      <CardIcon />
+                      <BpkVStack
+                        gap="bpk-spacing-sm"
+                        align="center"
+                        width="100%"
+                      >
+                        <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
+                        <BpkCheckboxCard.Description>
+                          {description}
+                        </BpkCheckboxCard.Description>
+                      </BpkVStack>
+                      <BpkPrice price={price} leadingText="from" />
+                    </BpkVStack>
+                  </BpkCheckboxCard.Content>
+                </BpkCheckboxCard.Root>
+              </BpkBox>
+            ),
+          )}
         </BpkHStack>
       </BpkThemeProvider>
     </BpkVStack>
@@ -340,7 +415,10 @@ const WithCustomThemeExample = () => {
 
   return (
     <BpkVStack padding="bpk-spacing-lg" align="start">
-      <BpkThemeProvider theme={customTheme} themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}>
+      <BpkThemeProvider
+        theme={customTheme}
+        themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}
+      >
         <BpkHStack gap="bpk-spacing-base" wrap="wrap">
           <BpkBox width="9.375rem">
             <BpkCheckboxCard.Root
@@ -353,7 +431,13 @@ const WithCustomThemeExample = () => {
                 <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
                   <LandmarkIconLg fill={selected1 ? 'white' : undefined} />
                   <BpkCheckboxCard.Label>City Centre</BpkCheckboxCard.Label>
-                  <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected1 ? TEXT_COLORS.textOnDark : undefined}>£85</BpkText>
+                  <BpkText
+                    textStyle={TEXT_STYLES.heading5}
+                    tagName="span"
+                    color={selected1 ? TEXT_COLORS.textOnDark : undefined}
+                  >
+                    £85
+                  </BpkText>
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
@@ -370,7 +454,13 @@ const WithCustomThemeExample = () => {
                 <BpkVStack gap="bpk-spacing-md" align="center" width="100%">
                   <LandmarkIconLg fill={selected2 ? 'white' : undefined} />
                   <BpkCheckboxCard.Label>Waterfront</BpkCheckboxCard.Label>
-                  <BpkText textStyle={TEXT_STYLES.heading5} tagName="span" color={selected2 ? TEXT_COLORS.textOnDark : undefined}>£95</BpkText>
+                  <BpkText
+                    textStyle={TEXT_STYLES.heading5}
+                    tagName="span"
+                    color={selected2 ? TEXT_COLORS.textOnDark : undefined}
+                  >
+                    £95
+                  </BpkText>
                 </BpkVStack>
               </BpkCheckboxCard.Content>
             </BpkCheckboxCard.Root>
@@ -387,9 +477,27 @@ const WithCarVariantExample = () => {
   // a price (loading spinner), and a chip the API returned as unavailable
   // (disabled, "Not available" caption, no price).
   const carTypes = [
-    { id: 'small', label: 'Small', price: '£35', state: 'normal' as const, src: CAR_IMAGES.small },
-    { id: 'medium', label: 'Medium', price: '£52', state: 'loading' as const, src: CAR_IMAGES.medium },
-    { id: 'large', label: 'Large', price: '£78', state: 'unavailable' as const, src: CAR_IMAGES.large },
+    {
+      id: 'small',
+      label: 'Small',
+      price: '£35',
+      state: 'normal' as const,
+      src: CAR_IMAGES.small,
+    },
+    {
+      id: 'medium',
+      label: 'Medium',
+      price: '£52',
+      state: 'loading' as const,
+      src: CAR_IMAGES.medium,
+    },
+    {
+      id: 'large',
+      label: 'Large',
+      price: '£78',
+      state: 'unavailable' as const,
+      src: CAR_IMAGES.large,
+    },
   ];
 
   const [selected, setSelected] = useState<string[]>([]);
@@ -402,7 +510,9 @@ const WithCarVariantExample = () => {
 
   return (
     <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
-      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type</BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+        Select car type
+      </BpkText>
       <BpkHStack gap="bpk-spacing-md" wrap="wrap">
         {carTypes.map(({ id, label, price, src, state }) => (
           <BpkBox key={id} width="7.25rem">
@@ -424,7 +534,9 @@ const WithCarVariantExample = () => {
                   />
                   <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
                   {state === 'unavailable' ? (
-                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
+                    <BpkCheckboxCard.Description
+                      textStyle={TEXT_STYLES.footnote}
+                    >
                       Not available
                     </BpkCheckboxCard.Description>
                   ) : (
@@ -442,11 +554,41 @@ const WithCarVariantExample = () => {
 
 const WithCarVariantMobileExample = () => {
   const carTypes = [
-    { id: 'small', label: 'Small', price: 'from £35', available: true, src: CAR_IMAGES.small },
-    { id: 'medium', label: 'Medium', price: 'from £52', available: true, src: CAR_IMAGES.medium },
-    { id: 'large', label: 'Large', price: 'from £78', available: false, src: CAR_IMAGES.large },
-    { id: 'mpv', label: 'MPV', price: 'from £92', available: true, src: CAR_IMAGES.suv },
-    { id: 'people-carrier', label: 'People carrier', price: 'from £120', available: false, src: CAR_IMAGES.medium },
+    {
+      id: 'small',
+      label: 'Small',
+      price: 'from £35',
+      available: true,
+      src: CAR_IMAGES.small,
+    },
+    {
+      id: 'medium',
+      label: 'Medium',
+      price: 'from £52',
+      available: true,
+      src: CAR_IMAGES.medium,
+    },
+    {
+      id: 'large',
+      label: 'Large',
+      price: 'from £78',
+      available: false,
+      src: CAR_IMAGES.large,
+    },
+    {
+      id: 'mpv',
+      label: 'MPV',
+      price: 'from £92',
+      available: true,
+      src: CAR_IMAGES.suv,
+    },
+    {
+      id: 'people-carrier',
+      label: 'People carrier',
+      price: 'from £120',
+      available: false,
+      src: CAR_IMAGES.medium,
+    },
   ];
 
   const [selected, setSelected] = useState<string[]>(['medium']);
@@ -459,7 +601,9 @@ const WithCarVariantMobileExample = () => {
 
   return (
     <BpkVStack padding="bpk-spacing-md" align="stretch" gap="bpk-spacing-md">
-      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>Select car type (mWeb — horizontal scroll)</BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+        Select car type (mWeb — horizontal scroll)
+      </BpkText>
       {/* Tinted parent surface mirrors carhire's chip strip background, where
           the disabled chip's white fill + grey stroke must stay distinguishable. */}
       <div style={{ background: canvasContrastDay }}>
@@ -475,7 +619,12 @@ const WithCarVariantMobileExample = () => {
                 >
                   <BpkCheckboxCard.HiddenInput />
                   <BpkCheckboxCard.Content>
-                    <BpkFlex direction="row" align="center" gap="bpk-spacing-md" width="100%">
+                    <BpkFlex
+                      direction="row"
+                      align="center"
+                      gap="bpk-spacing-md"
+                      width="100%"
+                    >
                       <BpkBox width="4rem" flexShrink={0}>
                         <BpkImage
                           src={src}
@@ -488,7 +637,9 @@ const WithCarVariantMobileExample = () => {
                         <BpkCheckboxCard.Label textStyle={TEXT_STYLES.label2}>
                           {label}
                         </BpkCheckboxCard.Label>
-                        <BpkCheckboxCard.Description textStyle={TEXT_STYLES.caption}>
+                        <BpkCheckboxCard.Description
+                          textStyle={TEXT_STYLES.caption}
+                        >
                           {available ? price : 'Not available'}
                         </BpkCheckboxCard.Description>
                       </BpkVStack>
@@ -520,7 +671,9 @@ const WithCarVariantUnavailableExample = () => {
 
   return (
     <BpkVStack padding="bpk-spacing-lg" align="start" gap="bpk-spacing-md">
-      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>All unavailable — on tinted parent (carhire scenario)</BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
+        All unavailable — on tinted parent (carhire scenario)
+      </BpkText>
       <div style={{ background: canvasContrastDay, padding: '1rem' }}>
         <BpkHStack gap="bpk-spacing-md" wrap="wrap">
           {carTypes.map(({ id, label, src }) => (
@@ -540,7 +693,9 @@ const WithCarVariantUnavailableExample = () => {
                       style={CAR_IMAGE_STYLE}
                     />
                     <BpkCheckboxCard.Label>{label}</BpkCheckboxCard.Label>
-                    <BpkCheckboxCard.Description textStyle={TEXT_STYLES.footnote}>
+                    <BpkCheckboxCard.Description
+                      textStyle={TEXT_STYLES.footnote}
+                    >
                       Not available
                     </BpkCheckboxCard.Description>
                   </BpkVStack>
@@ -568,7 +723,10 @@ function VariantBadge() {
   );
 }
 
-class ErrorBoundary extends Component<{ children: ReactNode }, { error: string | null }> {
+class ErrorBoundary extends Component<
+  { children: ReactNode },
+  { error: string | null }
+> {
   constructor(props: { children: ReactNode }) {
     super(props);
     this.state = { error: null };
@@ -603,9 +761,27 @@ const WithContextOutsideRootExample = () => (
 
 const WithMetadataExample = () => {
   const neighbourhoods = [
-    { id: 'westminster', name: 'City Of Westminster', count: 158, avgPrice: '£85', trend: 'down' as const },
-    { id: 'shoreditch', name: 'Shoreditch', count: 94, avgPrice: '£72', trend: 'down' as const },
-    { id: 'mayfair', name: 'Mayfair', count: 42, avgPrice: '£120', trend: 'down' as const },
+    {
+      id: 'westminster',
+      name: 'City Of Westminster',
+      count: 158,
+      avgPrice: '£85',
+      trend: 'down' as const,
+    },
+    {
+      id: 'shoreditch',
+      name: 'Shoreditch',
+      count: 94,
+      avgPrice: '£72',
+      trend: 'down' as const,
+    },
+    {
+      id: 'mayfair',
+      name: 'Mayfair',
+      count: 42,
+      avgPrice: '£120',
+      trend: 'down' as const,
+    },
   ];
 
   const [selected, setSelected] = useState<string[]>(['westminster']);
@@ -634,8 +810,17 @@ const WithMetadataExample = () => {
               <BpkVStack gap="bpk-spacing-sm" align="start" width="100%">
                 <BpkCheckboxCard.Label>{`${name} (${count})`}</BpkCheckboxCard.Label>
                 <BpkHStack gap="bpk-spacing-sm" align="center">
-                  <TrendDownIconLg fill={trendColor} style={{ width: '1rem', height: '1rem' }} />
-                  <BpkText textStyle={TEXT_STYLES.label2} tagName="span" color={isChecked ? TEXT_COLORS.textOnDark : undefined}>{avgPrice} avg.</BpkText>
+                  <TrendDownIconLg
+                    fill={trendColor}
+                    style={{ width: '1rem', height: '1rem' }}
+                  />
+                  <BpkText
+                    textStyle={TEXT_STYLES.label2}
+                    tagName="span"
+                    color={isChecked ? TEXT_COLORS.textOnDark : undefined}
+                  >
+                    {avgPrice} avg.
+                  </BpkText>
                 </BpkHStack>
               </BpkVStack>
             </BpkCheckboxCard.Content>
@@ -649,7 +834,13 @@ const WithMetadataExample = () => {
 const meta = {
   title: 'bpk-component-checkbox-card',
   component: BpkCheckboxCard,
-  decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
+  decorators: [
+    (Story: any) => (
+      <BpkProvider>
+        <Story />
+      </BpkProvider>
+    ),
+  ],
 } satisfies Meta;
 
 export default meta;

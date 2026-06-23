@@ -82,6 +82,14 @@ module.exports = ({ config }) => {
       presets: [['@babel/preset-env']],
     },
   });
+  // Storybook's default webpack5 config already has a .css rule; if we push
+  // ours on top the two chains concatenate and css-loader receives style-loader
+  // JS output, causing "SyntaxError: Unknown word import". Exclude .css from
+  // the default rule so only ours handles it.
+  const cssRule = config.module.rules.find(
+    (rule) => rule?.test instanceof RegExp && rule.test.test('a.css'),
+  );
+  if (cssRule) cssRule.exclude = /\.css$/i;
   config.module.rules.push({
     test: /\.css/,
     use: [

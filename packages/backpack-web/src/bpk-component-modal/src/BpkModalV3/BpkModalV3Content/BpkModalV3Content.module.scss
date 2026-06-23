@@ -68,7 +68,9 @@
     max-width: 50rem; // 800px
     max-height: 90vh;
     transform: scale(0.9);
-    transition: transform tokens.$bpk-duration-sm ease-in-out;
+    transition:
+      transform tokens.$bpk-duration-sm ease-in-out,
+      opacity tokens.$bpk-duration-sm ease-in-out;
     border-radius: tokens.$bpk-border-radius-lg;
     opacity: 0;
 

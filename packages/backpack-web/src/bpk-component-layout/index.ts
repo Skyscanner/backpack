@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-export { BpkProvider } from './src/BpkProvider';
+export { BpkProvider, BpkEmotionCacheContext } from './src/BpkProvider';
 export { BpkBox } from './src/BpkBox';
 export { BpkVessel } from './src/BpkVessel';
 export { BpkFlex } from './src/BpkFlex';
@@ -46,12 +46,14 @@ export type {
   BpkSpacingToken,
   BpkBreakpointToken,
   BpkSpacingValue,
+  BpkMarginValue,
   BpkBreakpointValue,
 } from './src/tokens';
 export {
   BpkSpacing,
   BpkBreakpoint,
   isValidSpacingValue,
+  isValidMarginValue,
   isPercentage,
 } from './src/tokens';
 

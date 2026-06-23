@@ -104,14 +104,14 @@ type Props = {
 const BpkChartAxis = (props: Props) => {
   const {
     height,
-    label,
+    label = null,
     margin,
-    numTicks,
+    numTicks = null,
     orientation,
     scale,
-    tickEvery,
-    tickOffset,
-    tickValue,
+    tickEvery = 1,
+    tickOffset = 0,
+    tickValue = identity,
     width,
     ...rest
   } = props;
@@ -174,14 +174,6 @@ BpkChartAxis.propTypes = {
   numTicks: PropTypes.number,
   tickOffset: PropTypes.number,
   tickEvery: PropTypes.number,
-};
-
-BpkChartAxis.defaultProps = {
-  tickOffset: 0,
-  tickEvery: 1,
-  tickValue: identity,
-  numTicks: null,
-  label: null,
 };
 
 export default BpkChartAxis;

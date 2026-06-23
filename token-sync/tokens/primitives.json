@@ -32,6 +32,18 @@
     },
     "$type": "color"
   },
+  "Border": {
+    "1": {
+      "$value": "1px"
+    },
+    "2": {
+      "$value": "2px"
+    },
+    "3": {
+      "$value": "3px"
+    },
+    "$type": "dimension"
+  },
   "Colour": {
     "Amber": {
       "$value": "#f55d42"
@@ -193,6 +205,30 @@
     },
     "$type": "dimension"
   },
+  "Modal": {
+    "200": {
+      "$value": "200px"
+    },
+    "400": {
+      "$value": "400px"
+    },
+    "512": {
+      "$value": "512px"
+    },
+    "600": {
+      "$value": "600px"
+    },
+    "800": {
+      "$value": "800px"
+    },
+    "1000": {
+      "$value": "1000px"
+    },
+    "1024": {
+      "$value": "1024px"
+    },
+    "$type": "dimension"
+  },
   "Neutral": {
     "Charcoal": {
       "$value": "#161616"
@@ -278,7 +314,7 @@
       "$value": "0px"
     },
     "full": {
-      "$value": "100px"
+      "$value": "999px"
     },
     "lg": {
       "$value": "24px"

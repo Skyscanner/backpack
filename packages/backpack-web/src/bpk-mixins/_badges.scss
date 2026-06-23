@@ -45,11 +45,11 @@
     tokens.$bpk-border-radius-xs
   );
   @include typography.bpk-text;
-  @include typography.bpk-footnote;
+  @include typography.bpk-caption;
   @include utils.bpk-themeable-property(
     font-size,
     --bpk-badge-font-size,
-    tokens.$bpk-font-size-sm
+    tokens.$bpk-font-size-xs
   );
   @include utils.bpk-themeable-property(
     font-weight,
@@ -59,7 +59,7 @@
   @include utils.bpk-themeable-property(
     line-height,
     --bpk-badge-line-height,
-    tokens.$bpk-line-height-sm
+    tokens.$bpk-line-height-xs
   );
 }
 

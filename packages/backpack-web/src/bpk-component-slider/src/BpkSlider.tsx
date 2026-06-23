@@ -102,7 +102,7 @@ const BpkSlider = ({
       }
     }, []);
 
-  const thumbRefs = [useRef(null), useRef(null)];
+  const thumbRefs = [useRef<HTMLElement>(null), useRef<HTMLElement>(null)];
 
   const handleOnChange = useCallback(
     (sliderValues: number[]) => {
@@ -201,12 +201,12 @@ const BpkSlider = ({
 const BubbleInput = forwardRef(
   (
     props: ComponentPropsWithRef<'input'> & {
-      thumbRef: RefObject<HTMLElement>;
+      thumbRef: RefObject<HTMLElement | null>;
     },
     forwardedRef,
   ) => {
     const { thumbRef, value, ...inputProps } = props;
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement>(null);
     const composedRefs = useComposedRefs(forwardedRef, ref);
 
     // This Hook Provides the native behaviour that the input range type would have around the "change" event.

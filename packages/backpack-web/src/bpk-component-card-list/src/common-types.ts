@@ -40,7 +40,7 @@ const ACCESSORY_MOBILE_TYPES = {
 } as const;
 
 type ExpandProps = {
-  children: string | ReactElement;
+  children: string | ReactElement<any>;
   collapsed: boolean;
   onExpandToggle: () => void;
 };
@@ -54,14 +54,14 @@ type AccessibilityLabels = {
 };
 
 type CardListBaseProps = {
-  cardList: ReactElement[];
+  cardList: Array<ReactElement<any>>;
   layoutMobile: LayoutMobile;
   layoutDesktop: LayoutDesktop;
   accessoryDesktop?: (typeof ACCESSORY_DESKTOP_TYPES)[keyof typeof ACCESSORY_DESKTOP_TYPES];
   accessoryMobile?: (typeof ACCESSORY_MOBILE_TYPES)[keyof typeof ACCESSORY_MOBILE_TYPES];
   initiallyShownCardsDesktop?: number;
   initiallyShownCardsMobile?: number;
-  chipGroup?: ReactElement;
+  chipGroup?: ReactElement<any>;
   buttonContent?: React.ReactNode;
   onButtonClick?: () => void;
   onExpandClick?: () => void;
@@ -79,7 +79,7 @@ type TitleProps = {
 }
 
 type CardListGridStackProps = {
-  children: ReactElement[];
+  children: Array<ReactElement<any>>;
   initiallyShownCards: number;
   layout: typeof LAYOUTS.grid | typeof LAYOUTS.stack;
   accessory?:

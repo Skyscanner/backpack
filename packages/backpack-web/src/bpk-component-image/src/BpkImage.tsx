@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 
 import CSSTransition from 'react-transition-group/CSSTransition';
 
@@ -41,10 +41,6 @@ type ImageProps = {
 class Image extends Component<ImageProps> {
   img?: HTMLImageElement | null;
 
-  static defaultProps = {
-    hidden: false,
-  };
-
   constructor(props: ImageProps) {
     super(props);
     this.img = null;
@@ -63,7 +59,7 @@ class Image extends Component<ImageProps> {
   };
 
   render() {
-    const { altText, hidden, onImageLoad, ...rest } = this.props;
+    const { altText, hidden = false, onImageLoad, ...rest } = this.props;
 
     const imgClassNames = [getClassName('bpk-image__img')];
 
@@ -103,15 +99,6 @@ type BpkImageProps = {
 class BpkImage extends Component<BpkImageProps> {
   placeholder?: HTMLElement | null;
 
-  static defaultProps = {
-    borderRadiusStyle: BORDER_RADIUS_STYLES.none,
-    inView: true,
-    loading: false,
-    onLoad: null,
-    style: {},
-    suppressHydrationWarning: false,
-  };
-
   onImageLoad = (): void => {
     if (this.props.onLoad) {
       this.props.onLoad();
@@ -125,16 +112,18 @@ class BpkImage extends Component<BpkImageProps> {
     return 1;
   };
 
+  spinnerNodeRef = createRef<HTMLDivElement>();
+
   render() {
     const {
       altText,
       aspectRatio,
-      borderRadiusStyle,
+      borderRadiusStyle = BORDER_RADIUS_STYLES.none,
       className,
-      inView,
-      loading,
+      inView = true,
+      loading = false,
       onLoad,
-      style,
+      style = {},
       ...rest
     } = this.props;
 
@@ -171,7 +160,7 @@ class BpkImage extends Component<BpkImageProps> {
           }}
           style={{ height: 0, paddingBottom: aspectRatioPercentage }}
           className={classNames.join(' ')}
-          suppressHydrationWarning={this.props.suppressHydrationWarning}
+          suppressHydrationWarning={!!this.props.suppressHydrationWarning}
         >
           {/*
             Image needs to come before the spinner to avoid a problem where
@@ -192,13 +181,17 @@ class BpkImage extends Component<BpkImageProps> {
           )}
           {loading && (
             <CSSTransition
+              nodeRef={this.spinnerNodeRef}
               classNames={{
                 exit: getClassName('bpk-image__spinner--shown'),
                 exitActive: getClassName('bpk-image__spinner--hidden'),
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-image__spinner')}>
+              <div
+                ref={this.spinnerNodeRef}
+                className={getClassName('bpk-image__spinner')}
+              >
                 <BpkSpinner />
               </div>
             </CSSTransition>

@@ -18,7 +18,7 @@
 
 import PropTypes from 'prop-types';
 
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ArrayDataSource } from './DataSource';
@@ -65,9 +65,9 @@ describe('withInfiniteScroll', () => {
         currentOptions = options;
       }
 
-      observe() {}  
+      observe() {}
 
-      unobserve() {}  
+      unobserve() {}
     };
   });
 
@@ -280,8 +280,9 @@ describe('withInfiniteScroll', () => {
     const { asFragment } = render(<InfiniteList dataSource={myDs} />);
     await nextTick();
 
-    myDs.updateData([1, 2, 3]);
-    await nextTick();
+    await act(async () => {
+      myDs.updateData([1, 2, 3]);
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(asFragment()).toMatchSnapshot();
@@ -293,8 +294,9 @@ describe('withInfiniteScroll', () => {
     const { asFragment } = render(<InfiniteList dataSource={myDs} />);
     await nextTick();
 
-    myDs.updateData([1, 2, 3]);
-    await nextTick();
+    await act(async () => {
+      myDs.updateData([1, 2, 3]);
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(asFragment()).toMatchSnapshot();
@@ -315,8 +317,9 @@ describe('withInfiniteScroll', () => {
     );
     await nextTick();
 
-    myDs.updateData([]);
-    await nextTick();
+    await act(async () => {
+      myDs.updateData([]);
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(onFinished).toHaveBeenCalled();
@@ -388,6 +391,92 @@ describe('withInfiniteScroll', () => {
     expect(onFinished).toHaveBeenCalled();
   });
 
+  it('updateData reset should use initiallyLoadedElements, not elementsPerScroll', async () => {
+    const data = Array.from({ length: 20 }, (_, i) => `Element ${i}`);
+    const myDs = mockDataSource(data);
+
+    render(
+      <InfiniteList
+        dataSource={myDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
+
+    myDs.updateData(data); // triggers updateData — should reset with initiallyLoadedElements
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
+
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(1, 0, 11);
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(2, 0, 11);
+  });
+
+  it('dataSource prop change should use initiallyLoadedElements, not elementsPerScroll', async () => {
+    const data = Array.from({ length: 20 }, (_, i) => `Element ${i}`);
+    const myDs = mockDataSource(data);
+
+    const { rerender } = render(
+      <InfiniteList
+        dataSource={myDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
+
+    const newData = Array.from({ length: 20 }, (_, i) => `New Element ${i}`);
+    const newDs = mockDataSource(newData);
+
+    rerender(
+      <InfiniteList
+        dataSource={newDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
+
+    // componentDidUpdate dataSource change — should use initiallyLoadedElements, not elementsPerScroll
+    expect(newDs.fetchItems).toHaveBeenCalledWith(0, 11);
+  });
+
+  it('should refetch all visible elements when current index > initiallyLoadedElements', async () => {
+    const data = Array.from({ length: 40 }, (_, i) => `Element ${i}`);
+    const myDs = mockDataSource(data);
+
+    render(
+      <InfiniteList
+        dataSource={myDs}
+        initiallyLoadedElements={11}
+        elementsPerScroll={12}
+      />,
+    );
+
+    await screen.findByText('Element 10');
+    expect(await screen.queryByText('Element 11')).not.toBeInTheDocument();
+    await act(() => intersect()); // fetchItems(11, 12)
+
+    await screen.findByText('Element 22');
+    expect(await screen.queryByText('Element 23')).not.toBeInTheDocument();
+
+    myDs.updateData(data); // triggers updateData — should reset with 11+12 = 23 elements
+
+    await screen.findByText('Element 22');
+    expect(await screen.queryByText('Element 23')).not.toBeInTheDocument();
+
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(1, 0, 11);
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(2, 11, 12);
+    expect(myDs.fetchItems).toHaveBeenNthCalledWith(3, 0, 23);
+  });
+
   it('should finish the list when data source returns less than the number of elements requested', async () => {
     const myDs = mockDataSource(elementsArray);
 
@@ -401,9 +490,15 @@ describe('withInfiniteScroll', () => {
         onScrollFinished={onFinished}
       />,
     );
-    await nextTick();
-    await intersect();
-    await intersect();
+    await act(async () => {
+      await nextTick();
+    });
+    await act(async () => {
+      await intersect();
+    });
+    await act(async () => {
+      await intersect();
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
     expect(onFinished).toHaveBeenCalled();

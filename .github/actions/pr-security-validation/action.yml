@@ -1,0 +1,148 @@
+name: PR Security Validation
+description: Validates PR security before executing code with access to secrets
+
+inputs:
+  pr_number:
+    description: PR number to validate
+    required: true
+  github_token:
+    description: GitHub token with repo read permission
+    required: false
+    default: ${{ github.token }}
+  triggered_by:
+    description: User who triggered the workflow
+    required: false
+    default: ${{ github.actor }}
+
+outputs:
+  pr_number:
+    description: Validated PR number
+    value: ${{ steps.get-pr-data.outputs.pr_number }}
+  pr_sha:
+    description: PR commit SHA
+    value: ${{ steps.get-pr-data.outputs.pr_sha }}
+  pr_ref:
+    description: PR branch reference
+    value: ${{ steps.get-pr-data.outputs.pr_ref }}
+  pr_author:
+    description: PR author username
+    value: ${{ steps.get-pr-data.outputs.pr_author }}
+
+runs:
+  using: composite
+  steps:
+    - name: Get PR data
+      id: get-pr-data
+      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+      env:
+        PR_NUMBER: ${{ inputs.pr_number }}
+      with:
+        github-token: ${{ inputs.github_token }}
+        script: |
+          const prNumber = parseInt(process.env.PR_NUMBER, 10);
+
+          try {
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+            });
+
+            const prData = {
+              pr_number: pr.number,
+              pr_sha: pr.head.sha,
+              pr_ref: pr.head.ref,
+              head_repo: pr.head.repo?.full_name || 'null',
+              base_repo: pr.base.repo?.full_name || 'null',
+              pr_state: pr.state,
+              pr_author: pr.user.login,
+            };
+
+            if (!prData.pr_number || !prData.pr_sha) {
+              throw new Error(`PR data is incomplete (number: ${prData.pr_number}, sha: ${prData.pr_sha})`);
+            }
+
+            core.setOutput('pr_number', prData.pr_number);
+            core.setOutput('pr_sha', prData.pr_sha);
+            core.setOutput('pr_ref', prData.pr_ref);
+            core.setOutput('head_repo', prData.head_repo);
+            core.setOutput('base_repo', prData.base_repo);
+            core.setOutput('pr_state', prData.pr_state);
+            core.setOutput('pr_author', prData.pr_author);
+
+            core.info(`PR #${prData.pr_number}`);
+            core.info(`State: ${prData.pr_state}`);
+            core.info(`Author: ${prData.pr_author}`);
+            core.info(`Commit: ${prData.pr_sha}`);
+            core.info(`Head repo: ${prData.head_repo}`);
+            core.info(`Base repo: ${prData.base_repo}`);
+          } catch (error) {
+            core.setFailed(`Failed to fetch PR data: ${error.message}`);
+          }
+
+    - name: Validate PR and check for forks
+      shell: bash
+      env:
+        HEAD_REPO: ${{ steps.get-pr-data.outputs.head_repo }}
+        BASE_REPO: ${{ steps.get-pr-data.outputs.base_repo }}
+        PR_STATE: ${{ steps.get-pr-data.outputs.pr_state }}
+      run: |
+        echo "Running security checks..."
+
+        if [ "$PR_STATE" != "open" ]; then
+          echo "::error::PR is not open (state: $PR_STATE)"
+          exit 1
+        fi
+
+        if [ -z "$HEAD_REPO" ] || [ "$HEAD_REPO" = "null" ]; then
+          echo "::error::Cannot determine head repository. Rejecting as a security precaution."
+          exit 1
+        fi
+
+        if [ -z "$BASE_REPO" ] || [ "$BASE_REPO" = "null" ]; then
+          echo "::error::Cannot determine base repository. Rejecting as a security precaution."
+          exit 1
+        fi
+
+        if [ "$HEAD_REPO" != "$BASE_REPO" ]; then
+          echo "::error::Dev releases are not permitted from forked repositories."
+          echo ""
+          echo "Head repo: $HEAD_REPO"
+          echo "Base repo: $BASE_REPO"
+          echo ""
+          echo "Create a branch directly in the main repository instead of using a fork."
+          exit 1
+        fi
+
+        echo "PR is from the same repository"
+
+    - name: Check user authorisation
+      id: check-authorisation
+      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+      env:
+        TRIGGERED_BY: ${{ inputs.triggered_by }}
+      with:
+        github-token: ${{ inputs.github_token }}
+        script: |
+          const triggeredBy = process.env.TRIGGERED_BY;
+          core.info(`Checking permission for user: ${triggeredBy}`);
+
+          try {
+            const { data: permission } = await github.rest.repos.getCollaboratorPermissionLevel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              username: triggeredBy,
+            });
+
+            const userPermission = permission.permission;
+            core.info(`User permission: ${userPermission}`);
+
+            if (!userPermission || userPermission === 'none' || userPermission === 'read') {
+              core.setFailed(`User ${triggeredBy} does not have write access to this repository (permission: ${userPermission}).`);
+              return;
+            }
+
+            core.info(`User is authorised (permission: ${userPermission})`);
+          } catch (error) {
+            core.setFailed(`Unable to determine user permission: ${error.message}`);
+          }

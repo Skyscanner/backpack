@@ -16,17 +16,31 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  createSystem,
+  defaultBaseConfig,
+} from '@chakra-ui/react';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 
 import { createBpkConfig } from './theme';
+
+import type { EmotionCache } from '@emotion/cache';
 
 export interface BpkProviderProps {
   children: ReactNode;
 }
+
+// Exported so host apps can inject an externally-managed Emotion cache into
+// BpkProvider (e.g. to force re-injection after a hydration error recovery).
+// When a non-null value is provided via this context, BpkProvider operates in
+// "external cache" mode: it skips creating its own cache and delegates to the external one.
+export const BpkEmotionCacheContext = createContext<EmotionCache | null>(null);
 
 /**
  * Creates a Chakra UI system with Backpack token mappings.
@@ -36,6 +50,33 @@ export interface BpkProviderProps {
  * See: https://chakra-ui.com/guides/component-bundle-optimization
  */
 const bpkSystem = createSystem(defaultBaseConfig, createBpkConfig());
+
+// Cypress/Percy workaround: `hydrateRoot()` strips SSR <style> nodes, then
+// Emotion falls back to speedy mode (insertRule) which Percy can't serialise.
+// Force speedy:false + recreate after mount in Cypress. Remove once Emotion /
+// React Router 7 provide a cleaner hydration story. Ported from hotels-website#12025.
+type CypressWindow = Window & {
+  Cypress?: unknown;
+  bpkDisableEmotionSpeedy?: boolean;
+};
+
+// `'css'` is shared with Chakra v3's internal key on purpose — keeps this
+// boundary in front of Chakra's auto-created cache.
+const createBpkEmotionCache = (speedy?: boolean) =>
+  createCache(speedy === undefined ? { key: 'css' } : { key: 'css', speedy });
+
+const isCypressEnv = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  const win = window as CypressWindow;
+  // `bpkDisableEmotionSpeedy` is an explicit escape hatch for non-Cypress
+  // Percy runs; consumers set it in their test bootstrap.
+  if (win.Cypress || win.bpkDisableEmotionSpeedy) return true;
+  try {
+    return Boolean((win.parent as CypressWindow | undefined)?.Cypress);
+  } catch {
+    return false; // cross-origin parent frame
+  }
+};
 
 type Direction = 'ltr' | 'rtl';
 
@@ -50,8 +91,30 @@ const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
 // Known RTL language subtags (ISO 639 codes). Used as fallback when
 // Intl.Locale.textInfo is unavailable (Node < 22, older browsers).
 const RTL_LANGUAGE_SUBTAGS = new Set([
-  'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
+  'ar',
+  'he',
+  'fa',
+  'ur',
+  'yi',
+  'iw',
+  'ps',
+  'sd',
+  'ug',
+  'ku',
 ]);
+
+// Returns true when `locale` is a BCP 47 string that Intl.Locale accepts.
+// Ark's LocaleProvider calls `new Intl.Locale(locale)` without a try/catch,
+// so any value we hand it must be validated here first or it throws
+// "Incorrect locale information provided".
+const isValidLocale = (locale: string): boolean => {
+  try {
+    // Reading a property on the result (rather than bare `new`) satisfies the no-new lint rule.
+    return Boolean(new Intl.Locale(locale).baseName);
+  } catch {
+    return false;
+  }
+};
 
 // Returns the text direction implied by a BCP 47 locale string.
 // Uses Intl.Locale.textInfo when available (Chrome 99+, Safari 15.4+, Firefox 126+, Node 22+);
@@ -72,11 +135,18 @@ const getLangDir = (locale: string): Direction => {
 //
 // Priority rules:
 //   1. If html[dir] is explicitly set:
-//      - Use html[lang] only when its direction is consistent with html[dir].
+//      - Use html[lang] only when it is a valid locale AND its direction is
+//        consistent with html[dir].
 //      - Otherwise fall back to FALLBACK_LOCALE_BY_DIRECTION[dir].
 //      This prevents an LTR html[lang] (e.g. 'en' from a page template) from
 //      overriding an explicit html[dir]="rtl" signal (e.g. from a dev RTL toggle).
-//   2. If html[dir] is not set: use html[lang] if present, else 'en-US'.
+//   2. If html[dir] is not set: use html[lang] if it is a valid locale, else 'en-US'.
+//
+// Every value returned here is validated with isValidLocale() because Ark's
+// LocaleProvider passes it straight to `new Intl.Locale()`, which throws on
+// malformed input (e.g. '', '123', 'en_US'). An unvalidated value crashes the
+// provider, and when the ErrorBoundary fallback also mounts BpkProvider the same
+// bad value is re-read on every remount, producing an indefinite crash loop.
 //
 // SSR-safe: returns 'en-US' when document is unavailable.
 const getArkLocale = (): string => {
@@ -86,11 +156,14 @@ const getArkLocale = (): string => {
   const lang = document.documentElement.getAttribute('lang');
 
   if (explicitDir === 'rtl' || explicitDir === 'ltr') {
-    if (lang && getLangDir(lang) === explicitDir) return lang;
+    if (lang && isValidLocale(lang) && getLangDir(lang) === explicitDir) {
+      return lang;
+    }
     return FALLBACK_LOCALE_BY_DIRECTION[explicitDir];
   }
 
-  return lang || 'en-US';
+  if (lang && isValidLocale(lang)) return lang;
+  return 'en-US';
 };
 
 // Reactive hook: subscribes to document.documentElement[dir] and [lang] changes
@@ -119,6 +192,7 @@ const useArkLocale = (): string => {
  * BpkProvider - Provides context for Backpack layout and Ark-based components.
  *
  * Wraps children with:
+ * - Emotion CacheProvider (own cache, or external cache injected via BpkEmotionCacheContext)
  * - Chakra UI system context (for layout components: BpkFlex, BpkGrid, etc.)
  * - Ark UI LocaleProvider (for Ark-based components: BpkCheckboxV2, BpkSegmentedControlV2, etc.)
  *
@@ -126,15 +200,54 @@ const useArkLocale = (): string => {
  * the appropriate locale to Ark's LocaleProvider. All Ark-based components in the
  * tree render correctly in RTL without requiring additional wrapping or prop changes.
  *
+ * External cache injection: host apps can supply an Emotion cache via
+ * BpkEmotionCacheContext. When a non-null value is provided, BpkProvider uses it
+ * directly and skips creating its own cache. This allows the host to swap in a
+ * fresh cache after a hydration error so all Backpack styles are re-injected.
+ *
  * @param {BpkProviderProps} props - The provider props.
- * @returns {JSX.Element} The provider wrapping its children with Chakra and Ark context.
+ * @returns {ReactElement} The provider wrapping its children with Chakra and Ark context.
  */
-export const BpkProvider = ({ children }: BpkProviderProps): JSX.Element => {
+export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
+  const externalCache = useContext(BpkEmotionCacheContext);
+  const hasExternalCache = externalCache !== null;
+
+  const [isCypress] = useState(isCypressEnv);
+  const [ownCache, setOwnCache] = useState<EmotionCache>(() =>
+    hasExternalCache
+      ? externalCache
+      : createBpkEmotionCache(isCypress ? false : undefined),
+  );
+  const hasRecreated = useRef(false);
   const locale = useArkLocale();
 
-  return (
+  // Recreate the cache once after mount in Cypress to replace SSR <style>
+  // nodes the hydrator stripped. `hasRecreated` guards StrictMode double-invoke.
+  // Deps stable for provider lifetime → empty array is intentional.
+  useEffect(() => {
+    if (hasExternalCache || !isCypress) return;
+    if (hasRecreated.current) return;
+    hasRecreated.current = true;
+    setOwnCache(createBpkEmotionCache(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // NOTE: if externalCache changes from non-null to null at runtime, ownCache
+  // will still hold the value it was initialised with (the old external cache).
+  // This is intentional: BpkEmotionCacheContext.Provider is expected to be
+  // mounted for the lifetime of the app once set — toggling it off is not a
+  // supported use case. The state initialiser runs only once per mount.
+  const activeCache = hasExternalCache ? externalCache : ownCache;
+
+  const inner = (
     <ChakraProvider value={bpkSystem}>
       <LocaleProvider locale={locale}>{children}</LocaleProvider>
     </ChakraProvider>
+  );
+
+  return (
+    <BpkEmotionCacheContext.Provider value={activeCache}>
+      <CacheProvider value={activeCache}>{inner}</CacheProvider>
+    </BpkEmotionCacheContext.Provider>
   );
 };

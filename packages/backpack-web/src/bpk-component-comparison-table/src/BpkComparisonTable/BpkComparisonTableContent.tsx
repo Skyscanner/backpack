@@ -18,7 +18,10 @@
 
 import { useEffect, useRef } from 'react';
 
-import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../../bpk-component-button';
+import BpkButton, {
+  BUTTON_TYPES,
+  SIZE_TYPES,
+} from '../../../bpk-component-button';
 import {
   BpkTable,
   BpkTableBody,
@@ -56,7 +59,9 @@ const BpkComparisonTableContent = ({
 
   // Dev-mode guard: warn if not all columns share the same rowId sequence.
   if (process.env.NODE_ENV !== 'production' && columns.length > 1) {
-    const rowIdsByColumn = columns.map((column) => column.rows.map((row) => row.rowId).join(','));
+    const rowIdsByColumn = columns.map((column) =>
+      column.rows.map((row) => row.rowId).join(','),
+    );
     const allMatch = rowIdsByColumn.every((ids) => ids === rowIdsByColumn[0]);
     if (!allMatch) {
       // eslint-disable-next-line no-console
@@ -71,7 +76,7 @@ const BpkComparisonTableContent = ({
     columns.map((column) => [
       column.itemId,
       new Map(column.rows.map((row) => [row.rowId, row.cell])),
-    ])
+    ]),
   );
 
   useEffect(() => {
@@ -82,8 +87,14 @@ const BpkComparisonTableContent = ({
       const { scrollTop } = container;
       // During the animation phase, push tbody down by the scroll amount so rows appear locked in place.
       // Once the fade-out completes the offset is fixed at the threshold and normal scrolling resumes.
-      container.style.setProperty('--bpk-rows-offset', `${Math.min(scrollTop, IMAGE_FADE_THRESHOLD_PX)}px`);
-      container.style.setProperty('--bpk-image-opacity', `${1 - Math.min(scrollTop / IMAGE_FADE_THRESHOLD_PX, 1)}`);
+      container.style.setProperty(
+        '--bpk-rows-offset',
+        `${Math.min(scrollTop, IMAGE_FADE_THRESHOLD_PX)}px`,
+      );
+      container.style.setProperty(
+        '--bpk-image-opacity',
+        `${1 - Math.min(scrollTop / IMAGE_FADE_THRESHOLD_PX, 1)}`,
+      );
     };
 
     container.addEventListener('scroll', handleScroll, { passive: true });
@@ -105,42 +116,58 @@ const BpkComparisonTableContent = ({
         <BpkTableBody type={TABLE_BODY_TYPES.striped}>
           {/* Remove-button row — only when there's at least one real column to remove. Fades and collapses in place so data rows below slide up into its space. */}
           {columns.length > 0 && (
-          <BpkTableRow>
-            {displayColumns.map((column, index) => (
-              <BpkTableCell
-                key={column ? `remove-${column.itemId}` : `remove-placeholder-${index}`}
-                // Zero padding needed for row collapse animation — no BpkTableCell prop.
-                // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                className={getClassName('bpk-comparison-table__remove-cell')}
-              >
-                {column && (
-                  <div className={getClassName('bpk-comparison-table__remove-cell-inner')}>
-                    <BpkButton
-                      type={BUTTON_TYPES.link}
-                      size={SIZE_TYPES.small}
-                      onClick={() => onRemove(column.itemId)}
-                      aria-label={column.removeA11yLabel}
+            <BpkTableRow>
+              {displayColumns.map((column, index) => (
+                <BpkTableCell
+                  key={
+                    column
+                      ? `remove-${column.itemId}`
+                      : `remove-placeholder-${index}`
+                  }
+                  // Zero padding needed for row collapse animation — no BpkTableCell prop.
+                  // eslint-disable-next-line @skyscanner/rules/forbid-component-props
+                  className={getClassName('bpk-comparison-table__remove-cell')}
+                >
+                  {column && (
+                    <div
+                      className={getClassName(
+                        'bpk-comparison-table__remove-cell-inner',
+                      )}
                     >
-                      {strings.removeLabel}
-                    </BpkButton>
-                  </div>
-                )}
-              </BpkTableCell>
-            ))}
-          </BpkTableRow>
+                      <BpkButton
+                        type={BUTTON_TYPES.link}
+                        size={SIZE_TYPES.small}
+                        onClick={() => onRemove(column.itemId)}
+                        aria-label={column.removeA11yLabel}
+                      >
+                        {strings.removeLabel}
+                      </BpkButton>
+                    </div>
+                  )}
+                </BpkTableCell>
+              ))}
+            </BpkTableRow>
           )}
 
           {rowIds.map((rowId) => (
             <BpkTableRow key={rowId}>
               {displayColumns.map((column, index) => (
                 <BpkTableCell
-                  key={column ? `${rowId}-${column.itemId}` : `${rowId}-placeholder-${index}`}
+                  key={
+                    column
+                      ? `${rowId}-${column.itemId}`
+                      : `${rowId}-placeholder-${index}`
+                  }
                   // Placeholder need a distinct background colour not available via BpkTableCell props
                   // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-                  className={column ? undefined : getClassName('bpk-comparison-table__placeholder-cell')}
+                  className={
+                    column
+                      ? undefined
+                      : getClassName('bpk-comparison-table__placeholder-cell')
+                  }
                 >
                   {column
-                    ? cellsByItemAndRow.get(column.itemId)?.get(rowId) ?? null
+                    ? (cellsByItemAndRow.get(column.itemId)?.get(rowId) ?? null)
                     : null}
                 </BpkTableCell>
               ))}

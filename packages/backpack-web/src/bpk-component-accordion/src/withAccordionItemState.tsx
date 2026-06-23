@@ -24,8 +24,8 @@ import { wrapDisplayName } from '../../bpk-react-utils';
 import type { BpkAccordionItemProps } from './BpkAccordionItem';
 
 type Props = {
-  initiallyExpanded: boolean;
-  expanded: boolean;
+  initiallyExpanded?: boolean;
+  expanded?: boolean;
   onClick?: () => void;
 };
 
@@ -42,17 +42,13 @@ const withAccordionItemState = <P extends BpkAccordionItemProps>(
       'withAccordionItemState',
     );
 
-    static defaultProps = {
-      initiallyExpanded: false,
-      expanded: false,
-      onClick: null,
-    };
-
     constructor(props: P & Props) {
       super(props);
 
+      const { initiallyExpanded = false } = props;
+
       this.state = {
-        expanded: props.initiallyExpanded,
+        expanded: initiallyExpanded,
       };
     }
 
