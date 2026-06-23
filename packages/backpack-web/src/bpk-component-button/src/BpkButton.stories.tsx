@@ -508,6 +508,7 @@ export const BpkButtonPrimaryOnDark = {
 
 export const BpkButtonPrimaryOnLight = {
   render: () => <PrimaryOnLightExample />,
+  parameters: { bpkTheme: 'light' },
 };
 
 export const BpkButtonSecondary = {
