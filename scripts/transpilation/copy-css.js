@@ -16,20 +16,24 @@
  * limitations under the License.
  */
 
-const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+
+const { globSync } = require('glob');
 
 // eslint-disable-next-line no-console
 console.log('Copying CSS files...');
 
-// `grep` exits 1 when it matches nothing, which would make `execSync` throw.
-// Pipe through `cat` so the pipeline's exit code reflects a real failure
-// (e.g. `find` erroring) rather than an empty—but valid—result set.
-const cssFiles = execSync('find packages/backpack-web/src -name "*.css" | grep -v node_modules | grep -v "bpk-stylesheets" | cat')
-  .toString()
-  .split('\n')
-  .filter((s) => s !== '');
+// Glob in Node rather than shelling out: an empty result is unambiguously an
+// empty array, while a genuine I/O error throws — neither is conflated with a
+// pipeline exit code (the old `find | grep` exited 1 on zero matches and
+// crashed the build).
+const cssFiles = globSync('packages/backpack-web/src/**/*.css', {
+  ignore: [
+    '**/node_modules/**',
+    'packages/backpack-web/src/bpk-stylesheets/**',
+  ],
+});
 
 cssFiles.forEach((cssFile) => {
   const destDir = path.dirname(cssFile).replace(/^packages\/backpack-web\/src\//, 'packages/backpack-web/dist/');
