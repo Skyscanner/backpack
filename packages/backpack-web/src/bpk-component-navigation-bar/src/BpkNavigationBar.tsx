@@ -42,8 +42,8 @@ export type Props = {
    * Note: this prop only applies when `title` is a string; ReactNode titles are not truncated and wrap naturally. */
   wrapTitle?: boolean;
   className?: string;
-  leadingButton?: ReactElement | null;
-  trailingButton?: ReactElement | null;
+  leadingButton?: ReactElement<any> | null;
+  trailingButton?: ReactElement<any> | null;
   sticky?: boolean;
   barStyle?: BarStyle;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md

@@ -25,7 +25,7 @@ import { BpkProvider } from '../../../bpk-component-layout';
 
 import BpkComparisonTray from './BpkComparisonTray';
 
-const renderWithProvider = (ui: ReactElement) =>
+const renderWithProvider = (ui: ReactElement<any>) =>
   render(<BpkProvider>{ui}</BpkProvider>);
 
 expect.extend(toHaveNoViolations);

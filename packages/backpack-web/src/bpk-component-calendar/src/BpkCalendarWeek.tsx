@@ -437,7 +437,7 @@ class BpkCalendarWeek extends Component<Props> {
 }
 
 type DateContainerProps = {
-  children: ReactElement;
+  children: ReactElement<any>;
   className?: string | null;
   isEmptyCell: boolean;
   selectionType: string;

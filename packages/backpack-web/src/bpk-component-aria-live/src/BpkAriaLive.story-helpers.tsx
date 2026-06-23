@@ -28,8 +28,8 @@ import STYLES from './BpkAriaLive.stories.module.scss';
 const getClassName = cssModules(STYLES);
 
 type AriaLiveDemoProps = {
-  preamble?: ReactElement | null;
-  children: ReactElement;
+  preamble?: ReactElement<any> | null;
+  children: ReactElement<any>;
   className?: string | null;
   style?: {};
   visible?: Boolean;

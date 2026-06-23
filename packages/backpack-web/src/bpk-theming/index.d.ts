@@ -16,8 +16,18 @@
  * limitations under the License.
  */
 
-import { version } from 'react';
+// Hand-written declaration for the JS-only `bpk-theming` package. Remove once
+// BpkThemeProvider moves to TS.
+import type { ComponentType, ReactNode } from 'react';
 
-it('packages/* should run on React 18 or 19', () => {
-  expect(version).toMatch(/^(18|19)\./);
-});
+interface BpkThemeProviderProps {
+  children: ReactNode;
+  theme?: Record<string, string>;
+  themeAttributes?: readonly string[] | string[] | string[][];
+  component?: ComponentType<any> | string;
+  style?: Record<string, string>;
+  [key: string]: any;
+}
+
+declare const BpkThemeProvider: ComponentType<BpkThemeProviderProps>;
+export default BpkThemeProvider;

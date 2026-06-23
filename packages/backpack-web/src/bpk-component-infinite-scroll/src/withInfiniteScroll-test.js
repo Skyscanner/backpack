@@ -280,8 +280,9 @@ describe('withInfiniteScroll', () => {
     const { asFragment } = render(<InfiniteList dataSource={myDs} />);
     await nextTick();
 
-    myDs.updateData([1, 2, 3]);
-    await nextTick();
+    await act(async () => {
+      myDs.updateData([1, 2, 3]);
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(asFragment()).toMatchSnapshot();
@@ -293,8 +294,9 @@ describe('withInfiniteScroll', () => {
     const { asFragment } = render(<InfiniteList dataSource={myDs} />);
     await nextTick();
 
-    myDs.updateData([1, 2, 3]);
-    await nextTick();
+    await act(async () => {
+      myDs.updateData([1, 2, 3]);
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(asFragment()).toMatchSnapshot();
@@ -315,8 +317,9 @@ describe('withInfiniteScroll', () => {
     );
     await nextTick();
 
-    myDs.updateData([]);
-    await nextTick();
+    await act(async () => {
+      myDs.updateData([]);
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(2);
     expect(onFinished).toHaveBeenCalled();
@@ -487,9 +490,15 @@ describe('withInfiniteScroll', () => {
         onScrollFinished={onFinished}
       />,
     );
-    await nextTick();
-    await intersect();
-    await intersect();
+    await act(async () => {
+      await nextTick();
+    });
+    await act(async () => {
+      await intersect();
+    });
+    await act(async () => {
+      await intersect();
+    });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
     expect(onFinished).toHaveBeenCalled();

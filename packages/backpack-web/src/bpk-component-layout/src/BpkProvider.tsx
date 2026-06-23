@@ -20,7 +20,11 @@ import type { ReactNode, ReactElement } from 'react';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { ChakraProvider, createSystem, defaultBaseConfig } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  createSystem,
+  defaultBaseConfig,
+} from '@chakra-ui/react';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 
@@ -59,9 +63,7 @@ type CypressWindow = Window & {
 // `'css'` is shared with Chakra v3's internal key on purpose — keeps this
 // boundary in front of Chakra's auto-created cache.
 const createBpkEmotionCache = (speedy?: boolean) =>
-  createCache(
-    speedy === undefined ? { key: 'css' } : { key: 'css', speedy },
-  );
+  createCache(speedy === undefined ? { key: 'css' } : { key: 'css', speedy });
 
 const isCypressEnv = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -89,7 +91,16 @@ const FALLBACK_LOCALE_BY_DIRECTION: Record<Direction, string> = {
 // Known RTL language subtags (ISO 639 codes). Used as fallback when
 // Intl.Locale.textInfo is unavailable (Node < 22, older browsers).
 const RTL_LANGUAGE_SUBTAGS = new Set([
-  'ar', 'he', 'fa', 'ur', 'yi', 'iw', 'ps', 'sd', 'ug', 'ku',
+  'ar',
+  'he',
+  'fa',
+  'ur',
+  'yi',
+  'iw',
+  'ps',
+  'sd',
+  'ug',
+  'ku',
 ]);
 
 // Returns true when `locale` is a BCP 47 string that Intl.Locale accepts.
@@ -203,7 +214,9 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
 
   const [isCypress] = useState(isCypressEnv);
   const [ownCache, setOwnCache] = useState<EmotionCache>(() =>
-    hasExternalCache ? externalCache : createBpkEmotionCache(isCypress ? false : undefined),
+    hasExternalCache
+      ? externalCache
+      : createBpkEmotionCache(isCypress ? false : undefined),
   );
   const hasRecreated = useRef(false);
   const locale = useArkLocale();
@@ -234,9 +247,7 @@ export const BpkProvider = ({ children }: BpkProviderProps): ReactElement => {
 
   return (
     <BpkEmotionCacheContext.Provider value={activeCache}>
-      <CacheProvider value={activeCache}>
-        {inner}
-      </CacheProvider>
+      <CacheProvider value={activeCache}>{inner}</CacheProvider>
     </BpkEmotionCacheContext.Provider>
   );
 };
