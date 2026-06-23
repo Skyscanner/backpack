@@ -17,7 +17,6 @@
  */
 
 export const badgeThemeAttributes = [
-  'badgeFontSize',
   'badgeFontWeight',
   'badgeLineHeight',
   'radiusXs',

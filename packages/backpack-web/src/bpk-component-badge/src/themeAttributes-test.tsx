@@ -34,7 +34,6 @@ import {
 describe('badge component themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
     expect(badgeThemeAttributes).toEqual([
-      'badgeFontSize',
       'badgeFontWeight',
       'badgeLineHeight',
       'radiusXs',

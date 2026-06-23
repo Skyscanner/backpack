@@ -41,10 +41,7 @@
     );
   align-items: center;
   border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
-  font-size: var(
-    --bpk-private-badge-typography-tmp-badge-label,
-    tokens.$bpk-font-size-xs
-  );
+  font-size: tokens.$bpk-font-size-xs;
   font-weight: var(--bpk-badge-font-weight, tokens.$bpk-font-weight-book);
   line-height: var(--bpk-badge-line-height, tokens.$bpk-line-height-xs);
 }
