@@ -76,11 +76,11 @@ const preview: Preview = {
       try {
         root = document?.querySelector(':root') as HTMLElement;
         root.style.setProperty('font-size', fontSize);
-        // Per-story `parameters.background: 'dark' | 'light'` pins the canvas
+        // Per-story `parameters.bpkTheme: 'dark' | 'light'` pins the canvas
         // independent of the toolbar toggle — useful for on-dark/on-light variants.
-        const theme = (parameters.background ?? globals.colorScheme) === 'dark' ? 'dark' : 'light';
+        const theme = (parameters.bpkTheme ?? globals.colorScheme) === 'dark' ? 'dark' : 'light';
         root.setAttribute('data-theme', theme);
-        document.body.style.setProperty('background', 'var(--bpk-canvas-default)');
+        document.body.style.setProperty('background-color', 'var(--bpk-canvas-default)');
       } catch(e) {
         console.error(e); // eslint-disable-line no-console
       }
