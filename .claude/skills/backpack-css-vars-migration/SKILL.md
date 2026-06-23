@@ -9,7 +9,7 @@ description: |
   wire up BpkThemeProvider overrides to the new CSS var names. Covers the full
   migration: SCSS mixins, themeAttributes.tsx, stories, and tests.
 author: Claude Code
-version: 1.0.0
+version: 1.1.0
 date: 2026-06-23
 ---
 
@@ -84,7 +84,7 @@ Map each token to its CSS var equivalent:
 | SASS token | CSS var |
 |------------|---------|
 | `$bpk-text-primary-day` | `--bpk-text-primary` |
-| `$bpk-text-on-light-day` | `--bpk-text-on-light` |
+| `$bpk-text-on-light-day` | `--bpk-text-on-light` (avoid for status/info badges — Figma uses `text-primary` there) |
 | `$bpk-text-on-dark-day` | `--bpk-text-on-dark` |
 | `$bpk-text-primary-inverse-day` | `--bpk-text-inverse` |
 | `$bpk-core-primary-day` | `--bpk-core-primary` |
@@ -120,18 +120,25 @@ border: var(--bpk-border-1, tokens.$bpk-border-size-sm) solid ...;
 ```
 
 #### Typography
-Replace `@include typography.bpk-footnote` (and similar) with explicit declarations so each property can have its own var:
-```scss
-// Before
-@include typography.bpk-text;
-@include typography.bpk-footnote;
+Replace `@include typography.bpk-footnote` (and similar) with explicit declarations so each property can have its own var.
 
-// After
-margin: 0;
-font-size: var(--bpk-private-{component}-typography-tmp-{label}, tokens.$bpk-font-size-sm);
+**Check for `--bpk-private-{component}-typography-tmp-*` vars first** — these are transitional names that exist in `theme-backpack-light/dark.css` but will be removed. If one exists, use it with a SASS fallback. If not (or if the var is marked `tmp` and removal is planned), use the SASS token directly — no CSS var wrapper.
+
+```scss
+// When a stable CSS var exists:
+font-size: var(--bpk-private-{component}-typography-stable-name, tokens.$bpk-font-size-sm);
+
+// When only a tmp var exists (will be removed) — use SASS token directly:
+font-size: tokens.$bpk-font-size-xs;
+
+// Font weight / line-height (stable vars):
 font-weight: var(--bpk-{component}-font-weight, tokens.$bpk-font-weight-book);
 line-height: var(--bpk-{component}-line-height, tokens.$bpk-line-height-sm);
 ```
+
+When dropping a `tmp` font-size var, also remove the corresponding camelCase key (e.g. `badgeFontSize`) from `themeAttributes` and its test — it's no longer themeable via that route.
+
+**Typography mixins `bpk-text` and `bpk-caption`**: `bpk-text` only sets `margin: 0` (already in the base mixin). `bpk-caption` only sets font-size, line-height, and font-weight via `_bpk-text-factory` — no font-family or letter-spacing. Our three explicit `var()` declarations fully replace them.
 
 #### RTL / logical properties
 Replace physical properties + `bpk-rtl` mixin with CSS logical properties:
@@ -205,6 +212,15 @@ Replace old theme keys in `BpkThemeProvider` story instances:
 ### Step 6: Update themeAttributes-test.tsx
 
 Update all `.toEqual([...])` assertions to match the new key names.
+
+## Verify token choices against Figma
+
+Always cross-check colour tokens against the Figma component. Use `get_design_context` with `disableCodeConnect: true` to get the generated code — it includes the CSS var names Figma uses (e.g. `--text/primary`, `--component/badge/colour/bg-default`). Strip the slashes and prepend `--bpk-` to get the SCSS var name.
+
+The Figma-generated code is the source of truth for which colour goes on which variant. Example from badge:
+- Normal / Subtle / Inverse / Warning / Success / Critical text: `--text/primary` → `--bpk-text-primary`
+- Strong / Outline text: `--text/on-dark` → `--bpk-text-on-dark`
+- Brand text: `--text/inverse` → `--bpk-text-inverse`
 
 ## Verification
 
