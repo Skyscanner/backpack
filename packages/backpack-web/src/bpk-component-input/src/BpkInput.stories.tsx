@@ -31,7 +31,11 @@ import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkInput from './BpkInput';
-import { INPUT_TYPES, CLEAR_BUTTON_MODES } from './common-types';
+import {
+  defaultProps as inputDefaultProps,
+  INPUT_TYPES,
+  CLEAR_BUTTON_MODES,
+} from './common-types';
 
 import type { WithOpenEventsProps } from './withOpenEvents';
 import type { Meta } from '@storybook/react';
@@ -43,6 +47,10 @@ const getClassName = cssModules(STYLES);
 const WithOpenEventsMock = (props: WithOpenEventsProps) => <div />;
 
 class ClearableInput extends Component<any, any> {
+  static defaultProps = {
+    ...inputDefaultProps,
+  };
+
   constructor(props: any) {
     super(props);
 
