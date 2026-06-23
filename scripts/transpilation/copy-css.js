@@ -23,7 +23,10 @@ const path = require('path');
 // eslint-disable-next-line no-console
 console.log('Copying CSS files...');
 
-const cssFiles = execSync('find packages/backpack-web/src -name "*.css" | grep -v node_modules | grep -v "bpk-stylesheets"')
+// `grep` exits 1 when it matches nothing, which would make `execSync` throw.
+// Pipe through `cat` so the pipeline's exit code reflects a real failure
+// (e.g. `find` erroring) rather than an empty—but valid—result set.
+const cssFiles = execSync('find packages/backpack-web/src -name "*.css" | grep -v node_modules | grep -v "bpk-stylesheets" | cat')
   .toString()
   .split('\n')
   .filter((s) => s !== '');
