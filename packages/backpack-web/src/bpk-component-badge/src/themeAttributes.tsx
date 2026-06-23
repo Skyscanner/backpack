@@ -30,19 +30,19 @@ export const badgeNormalThemeAttributes = [
 
 export const badgeWarningThemeAttributes = [
   'privateBadgeColourBgDefault',
-  'textOnLight',
+  'textPrimary',
   'statusWarningSpot',
 ];
 
 export const badgeSuccessThemeAttributes = [
   'privateBadgeColourBgDefault',
-  'textOnLight',
+  'textPrimary',
   'statusSuccessSpot',
 ];
 
 export const badgeCriticalThemeAttributes = [
   'privateBadgeColourBgDefault',
-  'textOnLight',
+  'textPrimary',
   'statusDangerSpot',
 ];
 

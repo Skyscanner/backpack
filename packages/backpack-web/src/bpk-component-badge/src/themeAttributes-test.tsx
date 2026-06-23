@@ -51,7 +51,7 @@ describe('badge component themeAttributes', () => {
   it('should export the correct warning theme attributes', () => {
     expect(badgeWarningThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
-      'textOnLight',
+      'textPrimary',
       'statusWarningSpot',
     ]);
   });
@@ -59,7 +59,7 @@ describe('badge component themeAttributes', () => {
   it('should export the correct success theme attributes', () => {
     expect(badgeSuccessThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
-      'textOnLight',
+      'textPrimary',
       'statusSuccessSpot',
     ]);
   });
@@ -67,7 +67,7 @@ describe('badge component themeAttributes', () => {
   it('should export the correct critical theme attributes', () => {
     expect(badgeCriticalThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
-      'textOnLight',
+      'textPrimary',
       'statusDangerSpot',
     ]);
   });

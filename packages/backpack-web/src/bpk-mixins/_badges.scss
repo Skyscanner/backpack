@@ -135,7 +135,7 @@
     --bpk-private-badge-colour-bg-default,
     tokens.$bpk-private-badge-background-normal-day
   );
-  color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   fill: var(--bpk-status-warning-spot, tokens.$bpk-status-warning-spot-day);
 }
 
@@ -154,7 +154,7 @@
     --bpk-private-badge-colour-bg-default,
     tokens.$bpk-private-badge-background-normal-day
   );
-  color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   fill: var(--bpk-status-success-spot, tokens.$bpk-status-success-spot-day);
 }
 
@@ -173,7 +173,7 @@
     --bpk-private-badge-colour-bg-default,
     tokens.$bpk-private-badge-background-normal-day
   );
-  color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   fill: var(--bpk-status-danger-spot, tokens.$bpk-status-danger-spot-day);
 }
 
