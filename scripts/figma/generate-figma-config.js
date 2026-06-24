@@ -20,7 +20,7 @@
 
 /**
  * Generates figma.config.json with importPaths for all component packages
- * that have .figma.tsx files.
+ * that have .figma.tsx or .figma.batch.json files.
  *
  * Usage:
  *   node scripts/figma/generate-figma-config.js
@@ -39,7 +39,11 @@ function findFigmaFiles(dir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory() && entry.name !== 'node_modules') {
       results.push(...findFigmaFiles(fullPath));
-    } else if (entry.isFile() && entry.name.endsWith('.figma.tsx')) {
+    } else if (
+      entry.isFile() &&
+      (entry.name.endsWith('.figma.tsx') ||
+        entry.name.endsWith('.figma.batch.json'))
+    ) {
       results.push(fullPath);
     }
   }
@@ -77,7 +81,7 @@ for (const pkg of [...pkgs].sort()) {
 
 const config = {
   codeConnect: {
-    include: ['/**/*.{tsx,jsx}'],
+    include: ['/**/*.{tsx,jsx}', '**/*.figma.batch.json'],
     label: 'React',
     importPaths,
     interactiveSetupFigmaFileUrl:

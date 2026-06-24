@@ -121,7 +121,7 @@
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@babel/register": "^7.28.3",
-    "@figma/code-connect": "^1.4.3",
+    "@figma/code-connect": "^1.4.8",
     "@figma/rest-api-spec": "^0.37.0",
     "@nx/eslint-plugin": "22.7.1",
     "@nx/jest": "22.7.1",
