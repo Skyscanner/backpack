@@ -148,4 +148,5 @@ type:
 The workflow calculates the next immutable
 `backpack-adoption-guard/vMAJOR.MINOR.PATCH` tag from existing release tags. It
 builds `dist/` into a tag-only release commit so generated bundles stay out of
-`main`.
+`main`. Only workflow runs dispatched from the `main` branch can create release
+tags; runs from other branches validate, lint, test, and build only.
