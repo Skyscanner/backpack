@@ -47,6 +47,12 @@
         "{workspaceRoot}/scripts/scss/styles-prod.js",
         "{workspaceRoot}/scripts/scss/style-compiler.js"
       ],
+      "outputs": [
+        "{projectRoot}/src/**/*.module.css",
+        "{projectRoot}/src/bpk-stylesheets/font.css",
+        "{projectRoot}/src/bpk-stylesheets/larken.css",
+        "{projectRoot}/src/bpk-stylesheets/normalize.css"
+      ],
       "cache": true
     },
     "copy-token-css": {

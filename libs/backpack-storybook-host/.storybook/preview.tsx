@@ -27,6 +27,25 @@ import '@skyscanner/backpack-web/bpk-stylesheets/font';
 import '@skyscanner/backpack-web/bpk-stylesheets/larken';
 
 const preview: Preview = {
+  globalTypes: {
+    colorScheme: {
+      description: 'Color scheme',
+      toolbar: {
+        title: 'Color scheme',
+        icon: 'circlehollow',
+        items: [
+          { value: 'light', title: 'Light', icon: 'sun' },
+          { value: 'dark', title: 'Dark', icon: 'moon' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+
+  initialGlobals: {
+    colorScheme: 'light',
+  },
+
   argTypesEnhancers: [
     // Hide props intentionally typed as `?: never` — these are disallowed at the TypeScript
     // level and should not appear in Storybook docs. With strictNullChecks (strict: true),
@@ -45,7 +64,7 @@ const preview: Preview = {
   ],
 
   decorators: [
-    (story, { args }) => {
+    (story, { args, globals, parameters }) => {
       let root;
       /**
        * We want to test all Backpack components at 200% text-only zoom, as well as the default 100% which corresponds to the browser (and Percy) root font size (16px)
@@ -53,8 +72,13 @@ const preview: Preview = {
        */
       const fontSize = args.zoomEnabled ? '200%' : '100%';
       try {
-        root = document?.querySelector(':root');
-        (root as HTMLElement).style.setProperty('font-size', fontSize);
+        root = document?.querySelector(':root') as HTMLElement;
+        root.style.setProperty('font-size', fontSize);
+        // Per-story `parameters.bpkTheme: 'dark' | 'light'` pins the canvas
+        // independent of the toolbar toggle — useful for on-dark/on-light variants.
+        const theme = (parameters.bpkTheme ?? globals.colorScheme) === 'dark' ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        document.body.style.setProperty('background-color', 'var(--bpk-canvas-default)');
       } catch(e) {
         console.error(e); // eslint-disable-line no-console
       }

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import type { ReactNode, CSSProperties } from 'react';
 
 import CSSTransition from 'react-transition-group/CSSTransition';
@@ -87,6 +87,8 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
     return 1;
   };
 
+  spinnerNodeRef = createRef<HTMLDivElement>();
+
   startImageLoad = (): void => {
     this.trackImg = new Image();
     this.trackImg.src = this.props.src;
@@ -135,6 +137,7 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
           />
           {loading && (
             <CSSTransition
+              nodeRef={this.spinnerNodeRef}
               classNames={{
                 exit: getClassName('bpk-background-image__spinner--shown'),
                 exitActive: getClassName(
@@ -143,7 +146,10 @@ class BpkBackgroundImage extends Component<BpkBackgroundImageProps> {
               }}
               timeout={parseInt(animations.durationBase, 10)}
             >
-              <div className={getClassName('bpk-background-image__spinner')}>
+              <div
+                ref={this.spinnerNodeRef}
+                className={getClassName('bpk-background-image__spinner')}
+              >
                 <BpkSpinner />
               </div>
             </CSSTransition>
