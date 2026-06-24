@@ -12,11 +12,6 @@ on:
           - patch
           - minor
           - major
-      ref:
-        description: 'Branch or commit SHA to tag from'
-        required: false
-        type: string
-        default: 'main'
       dry_run:
         description: 'Validate only, do not push tags'
         required: false
@@ -45,18 +40,16 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.sha }}
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Resolve ref to immutable SHA
+      - name: Record source SHA
         id: resolve
-        env:
-          TARGET_REF: ${{ inputs.ref }}
         run: |
-          sha="$(git rev-parse --verify "${TARGET_REF}^{commit}")"
+          sha="$(git rev-parse HEAD)"
           echo "target_sha=${sha}" >> "$GITHUB_OUTPUT"
-          echo "Resolved ${TARGET_REF} -> ${sha}"
+          echo "Resolved ${GITHUB_REF} -> ${sha}"
 
       - name: Compute next release tag
         id: compute
