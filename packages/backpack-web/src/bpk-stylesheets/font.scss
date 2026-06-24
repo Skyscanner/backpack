@@ -21,6 +21,7 @@ $font-formats: (woff2, woff, ttf);
 
 @use 'sass:list';
 @use 'sass:map';
+@use '../bpk-mixins/tokens';
 
 // Table-driven font registry: add families/weights in $bpk-fonts, and the mixin
 // will emit matching @font-face rules. Filenames are the hashed names without
@@ -558,8 +559,7 @@ $bpk-fonts: (
 }
 
 // Mobile: strict can leave uneven rag or orphaned characters on narrow viewports.
-// 48rem = bpk-breakpoint-query-small-tablet
-@media (max-width: 48rem) {
+@media #{tokens.$bpk-breakpoint-query-small-tablet} {
   :lang(zh),
   :lang(ja),
   :lang(ko) {
