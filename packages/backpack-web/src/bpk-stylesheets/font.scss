@@ -532,3 +532,64 @@ $bpk-fonts: (
 :where([lang]) {
   font-family: var(--bpk-base-font-stack);
 }
+
+// Locale-aware line-break rules.
+// Must be after font-stack rules so source order wins over browser defaults.
+// :lang() matches subtags — :lang(ja) covers ja, ja-JP, etc.
+
+// CJK: strict kinsoku (JIS X 4051 / GB/T 15834) — punctuation/particles cannot
+// appear at line-start. Fixes headlines breaking before を、に、の etc.
+// overflow-wrap: anywhere is last-resort only — preserves Latin brand names/URLs
+// on mixed-script pages by only breaking at non-standard points as a final fallback.
+:lang(zh),
+:lang(ja) {
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+
+// Korean: word-level breaks (KS X 1026 kinsoku), not character-level.
+// word-break: keep-all preserves syllable blocks (Korean typographic convention).
+// overflow-wrap: break-word fallback required — on 360–390px viewports a long
+// compound word with no spaces still overflows with keep-all alone.
+:lang(ko) {
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+// Mobile: strict can leave uneven rag or orphaned characters on narrow viewports.
+@media #{tokens.$bpk-breakpoint-query-small-tablet} {
+  :lang(zh),
+  :lang(ja),
+  :lang(ko) {
+    line-break: loose;
+  }
+}
+
+// Arabic, Hebrew — overflow only; direction handled by existing html[dir] RTL system.
+:lang(ar),
+:lang(he) {
+  overflow-wrap: break-word;
+}
+
+// Thai — no word spaces; ICU dictionary failure = no natural break points.
+// overflow-wrap: anywhere (not just break-word) because Thai strings have no
+// space characters to serve as natural break opportunities.
+:lang(th) {
+  line-break: loose;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+// Hindi (Devanagari) — space-delimited, wraps like Latin.
+:lang(hi) {
+  overflow-wrap: break-word;
+}
+
+// Russian, Ukrainian — Cyrillic wraps like Latin.
+// hyphens: auto works in Safari and Firefox; Chrome degrades silently to no hyphens.
+:lang(ru),
+:lang(uk) {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
