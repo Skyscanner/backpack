@@ -128,7 +128,7 @@ jobs:
   CreateTags:
     runs-on: ubuntu-latest
     needs: [Validate]
-    if: ${{ !inputs.dry_run }}
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
     # contents: read covers the checkout below; tag pushes use the App token.
     permissions:
       contents: read
@@ -170,7 +170,7 @@ jobs:
             exit 1
           fi
 
-          git commit -m "Build $RELEASE_TAG"
+          HUSKY=0 git commit -m "Build $RELEASE_TAG"
           release_sha="$(git rev-parse HEAD)"
           echo "release_sha=${release_sha}" >> "$GITHUB_OUTPUT"
 
