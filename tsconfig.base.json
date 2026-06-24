@@ -8,5 +8,5 @@
     "skipLibCheck": true,
     "baseUrl": "."
   },
-  "exclude": ["**/**/*.figma.tsx"]
+  "exclude": ["**/**/*.figma.tsx", "**/**/*.figma.ts", "**/**/*.figma.batch.ts"]
 }

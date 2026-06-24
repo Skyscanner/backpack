@@ -30,6 +30,8 @@
   "exclude": [
     "**/**/*test*",
     "**/**/*stories*",
-    "**/**/*.figma.tsx"
+    "**/**/*.figma.tsx",
+    "**/**/*.figma.ts",
+    "**/**/*.figma.batch.ts"
   ]
 }
