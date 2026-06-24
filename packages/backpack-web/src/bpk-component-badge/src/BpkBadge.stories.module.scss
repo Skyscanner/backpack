@@ -18,6 +18,7 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/radii';
+@use '../../bpk-mixins/typography';
 
 .bpk-badge-layout {
   &__container {
@@ -31,5 +32,23 @@
 
       @include radii.bpk-border-radius-xs;
     }
+  }
+
+  &__themed-grid {
+    display: flex;
+    gap: tokens.bpk-spacing-xl();
+  }
+
+  &__themed-col {
+    display: flex;
+    flex-direction: column;
+    gap: tokens.bpk-spacing-sm();
+  }
+
+  &__themed-col-label {
+    padding: tokens.bpk-spacing-sm() tokens.bpk-spacing-lg();
+    color: tokens.$bpk-text-secondary-day;
+
+    @include typography.bpk-caption;
   }
 }

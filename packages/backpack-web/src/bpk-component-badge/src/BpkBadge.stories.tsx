@@ -171,36 +171,67 @@ const DockedTrailingExample = () => (
   </BadgeLayout>
 );
 
-const VdlThemedExample = () => (
-  <BpkThemeProvider
-    theme={{
-      privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
-      privateBadgeDimensionPaddingHorizontalDefault: '0',
-    }}
-    themeAttributes={[
-      'privateBadgeColourBgDefault',
-      'privateBadgeDimensionPaddingHorizontalDefault',
-    ]}
-  >
-    <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.normal}>Normal</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.warning}>
-        <BpkSmallHelpCircleIcon />
-        &nbsp;Warning
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.success}>
-        <BpkSmallTickIcon />
-        &nbsp;Success
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.critical}>
-        <BpkSmallExclamationIcon />
-        &nbsp;Critical
-      </BpkBadge>
-    </BadgeLayout>
-  </BpkThemeProvider>
+const ALL_BADGE_ROWS: Array<{
+  type: (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
+  label: string;
+  dark?: boolean;
+}> = [
+  { type: BADGE_TYPES.normal, label: 'Normal' },
+  { type: BADGE_TYPES.warning, label: 'Warning' },
+  { type: BADGE_TYPES.success, label: 'Success' },
+  { type: BADGE_TYPES.critical, label: 'Critical' },
+  { type: BADGE_TYPES.strong, label: 'Strong' },
+  { type: BADGE_TYPES.brand, label: 'Brand' },
+  { type: BADGE_TYPES.inverse, label: 'Inverse', dark: true },
+  { type: BADGE_TYPES.outline, label: 'Outline', dark: true },
+  { type: BADGE_TYPES.subtle, label: 'Subtle' },
+];
+
+const BadgeRow = ({
+  dark,
+  label,
+  type,
+}: (typeof ALL_BADGE_ROWS)[number]) => {
+  const badge = <BpkBadge type={type}>{label}</BpkBadge>;
+  return dark ? (
+    <BpkDarkExampleWrapper>
+      <BadgeLayout>{badge}</BadgeLayout>
+    </BpkDarkExampleWrapper>
+  ) : (
+    <BadgeLayout>{badge}</BadgeLayout>
+  );
+};
+
+const ThemedExample = () => (
+  <div className={getClassName('bpk-badge-layout__themed-grid')}>
+    <div className={getClassName('bpk-badge-layout__themed-col')}>
+      <div className={getClassName('bpk-badge-layout__themed-col-label')}>
+        Default
+      </div>
+      {ALL_BADGE_ROWS.map((row) => (
+        <BadgeRow key={row.label} {...row} />
+      ))}
+    </div>
+    <BpkThemeProvider
+      theme={{
+        privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
+        privateBadgeDimensionPaddingHorizontalDefault: '0',
+      }}
+      themeAttributes={[
+        'privateBadgeColourBgDefault',
+        'privateBadgeDimensionPaddingHorizontalDefault',
+      ]}
+    >
+      <div className={getClassName('bpk-badge-layout__themed-col')}>
+        <div className={getClassName('bpk-badge-layout__themed-col-label')}>
+          Themed
+        </div>
+        {ALL_BADGE_ROWS.map((row) => (
+          <BadgeRow key={row.label} {...row} />
+        ))}
+      </div>
+    </BpkThemeProvider>
+  </div>
 );
 
 const MixedExample = () => (
@@ -273,8 +304,8 @@ export const DockedLeft = {
   render: () => <DockedLeadingExample />,
 };
 
-export const VdlThemed = {
-  render: () => <VdlThemedExample />,
+export const Themed = {
+  render: () => <ThemedExample />,
 };
 
 export const VisualTest = {
