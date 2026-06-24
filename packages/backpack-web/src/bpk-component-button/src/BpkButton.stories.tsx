@@ -502,10 +502,13 @@ export const BpkButtonPrimary = {
 
 export const BpkButtonPrimaryOnDark = {
   render: () => <PrimaryOnDarkExample />,
+  parameters: { bpkTheme: 'dark' },
+  tags: ['dark-mode-compatible'],
 };
 
 export const BpkButtonPrimaryOnLight = {
   render: () => <PrimaryOnLightExample />,
+  parameters: { bpkTheme: 'light' },
 };
 
 export const BpkButtonSecondary = {
@@ -514,6 +517,8 @@ export const BpkButtonSecondary = {
 
 export const BpkButtonSecondaryOnDark = {
   render: () => <SecondaryOnDarkExample />,
+  parameters: { bpkTheme: 'dark' },
+  tags: ['dark-mode-compatible'],
 };
 
 export const BpkButtonDestructive = {
@@ -530,6 +535,8 @@ export const BpkButtonLinkButton = {
 
 export const BpkButtonLinkOnDarkButton = {
   render: () => <LinkOnDarkExample />,
+  parameters: { bpkTheme: 'dark' },
+  tags: ['dark-mode-compatible'],
 };
 
 export const BpkButtonLinks = {

@@ -111,7 +111,7 @@ export type Props = CloseButtonProps & {
   actionText?: string;
   zIndexValue?: number;
   onAction?: () => void;
-  renderTarget?: () => HTMLElement | HTMLElement | undefined;
+  renderTarget?: null | HTMLElement | (() => HTMLElement | null | undefined);
   [rest: string]: any;
 };
 
@@ -212,7 +212,7 @@ const BpkPopover = ({
     <>
       {targetElement}
       {isOpenState && (
-        <FloatingPortal root={renderElement}>
+        <FloatingPortal root={renderElement ?? undefined}>
           <FloatingFocusManager context={context}>
             <div
               className={getClassName('bpk-popover--container')}
