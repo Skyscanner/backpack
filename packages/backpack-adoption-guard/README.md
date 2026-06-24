@@ -86,7 +86,7 @@ data stays in the GitHub step summary and action internals.
 
 - name: Upload Backpack adoption metrics to Cortex
   if: github.ref == 'refs/heads/main'
-  uses: Skyscanner/push-custom-cortex-data@v1
+  uses: Skyscanner/push-custom-cortex-data@5130533baa1119bdd53816d8ef920a69dccde515 # v0.0.4
   with:
     webhook-uuid: ${{ secrets.BACKPACK_ADOPTION_CORTEX_WEBHOOK_UUID }}
     cortex-entity: <your-cortex-entity>

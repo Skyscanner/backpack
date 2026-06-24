@@ -41,13 +41,14 @@ permissions:
 
 jobs:
   AdoptionGuard:
-    runs-on: ubuntu-latest-small
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
+          persist-credentials: false
 
       # Resolve the ref this reusable workflow was loaded from so the guard
       # source we build matches the version the consumer pinned. Format:
@@ -100,7 +101,7 @@ jobs:
 
       - name: Upload Backpack adoption metrics to Cortex
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: Skyscanner/push-custom-cortex-data@v1
+        uses: Skyscanner/push-custom-cortex-data@5130533baa1119bdd53816d8ef920a69dccde515 # v0.0.4
         with:
           webhook-uuid: ${{ secrets.cortex-webhook-uuid }}
           cortex-entity: ${{ inputs.cortex-entity }}

@@ -107,9 +107,11 @@ jobs:
           fi
 
           major_tag="${next_version%%.*}"
-          echo "release_version=${next_version}" >> "$GITHUB_OUTPUT"
-          echo "release_tag=backpack-adoption-guard/v${next_version}" >> "$GITHUB_OUTPUT"
-          echo "major_tag=backpack-adoption-guard/v${major_tag}" >> "$GITHUB_OUTPUT"
+          {
+            echo "release_version=${next_version}"
+            echo "release_tag=backpack-adoption-guard/v${next_version}"
+            echo "major_tag=backpack-adoption-guard/v${major_tag}"
+          } >> "$GITHUB_OUTPUT"
           echo "Latest release: ${latest_version:-none}"
           echo "Next ${RELEASE_TYPE} release: ${next_version}"
 
