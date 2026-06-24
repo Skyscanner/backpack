@@ -20,6 +20,7 @@ const fs = require('fs');
 const path = require('path');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 const postCssPlugins = require('../../../scripts/webpack/postCssPlugins');
 
@@ -40,6 +41,26 @@ module.exports = ({ config }) => {
         : {};
     /* eslint-disable-next-line no-param-reassign */
     config.cache = { ...existingCache, type: 'filesystem', name: 'storybook-local' };
+  }
+
+  // Why: Percy snapshots the static Storybook build by navigating to each story
+  // via render.percy.local. Storybook lazy-loads each story file with a
+  // dynamic import(), so webpack emits one async chunk per story; under load a
+  // chunk request occasionally outruns Percy's asset-discovery proxy and the
+  // iframe renders the "Loading chunk N failed" error frame. For the static
+  // build only, force webpack to merge every async chunk back into the parent
+  // bundle (LimitChunkCountPlugin maxChunks: 1) so the iframe has no dynamic
+  // imports to fetch at snapshot time. Dev (serve-storybook) keeps default
+  // splitting so HMR stays fast.
+  if (!devMode) {
+    /* eslint-disable no-param-reassign */
+    config.optimization = {
+      ...(config.optimization || {}),
+      splitChunks: false,
+      runtimeChunk: false,
+    };
+    config.plugins.push(new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }));
+    /* eslint-enable no-param-reassign */
   }
 
   config.plugins.push(new MiniCssExtractPlugin());
