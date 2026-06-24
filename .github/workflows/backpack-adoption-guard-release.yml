@@ -176,7 +176,10 @@ jobs:
 
           git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG" "$release_sha"
 
-          git -c http.extraHeader="Authorization: Bearer $GH_TOKEN" \
+          basic_auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          echo "::add-mask::$basic_auth"
+
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${basic_auth}" \
             push origin "refs/tags/$RELEASE_TAG"
 
       - name: Summary
