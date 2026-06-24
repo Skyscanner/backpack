@@ -18,13 +18,25 @@
 
 export const badgeThemeAttributes: string[] = [];
 
-export const badgeNormalThemeAttributes = ['privateBadgeColourBgDefault'];
+export const badgeNormalThemeAttributes = [
+  'privateBadgeColourBgDefault',
+  'privateBadgeDimensionPaddingHorizontalDefault',
+];
 
-export const badgeWarningThemeAttributes = ['privateBadgeColourBgDefault'];
+export const badgeWarningThemeAttributes = [
+  'privateBadgeColourBgDefault',
+  'privateBadgeDimensionPaddingHorizontalDefault',
+];
 
-export const badgeSuccessThemeAttributes = ['privateBadgeColourBgDefault'];
+export const badgeSuccessThemeAttributes = [
+  'privateBadgeColourBgDefault',
+  'privateBadgeDimensionPaddingHorizontalDefault',
+];
 
-export const badgeCriticalThemeAttributes = ['privateBadgeColourBgDefault'];
+export const badgeCriticalThemeAttributes = [
+  'privateBadgeColourBgDefault',
+  'privateBadgeDimensionPaddingHorizontalDefault',
+];
 
 export const badgeInverseThemeAttributes = ['privateBadgeColourBgInverse'];
 
@@ -46,6 +58,7 @@ export const badgeSubtleThemeAttributes = ['privateBadgeColourBgSubtle'];
  */
 export const allBadgeThemeAttributes = [
   'privateBadgeColourBgDefault',
+  'privateBadgeDimensionPaddingHorizontalDefault',
   'privateBadgeColourBgInverse',
   'privateBadgeColourBgOutline',
   'privateBadgeColourStrokeOutline',

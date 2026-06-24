@@ -39,24 +39,28 @@ describe('badge component themeAttributes', () => {
   it('should export the correct normal theme attributes', () => {
     expect(badgeNormalThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
+      'privateBadgeDimensionPaddingHorizontalDefault',
     ]);
   });
 
   it('should export the correct warning theme attributes', () => {
     expect(badgeWarningThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
+      'privateBadgeDimensionPaddingHorizontalDefault',
     ]);
   });
 
   it('should export the correct success theme attributes', () => {
     expect(badgeSuccessThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
+      'privateBadgeDimensionPaddingHorizontalDefault',
     ]);
   });
 
   it('should export the correct critical theme attributes', () => {
     expect(badgeCriticalThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
+      'privateBadgeDimensionPaddingHorizontalDefault',
     ]);
   });
 
@@ -98,6 +102,7 @@ describe('badge component themeAttributes', () => {
   it('should export allBadgeThemeAttributes with all unique private badge tokens', () => {
     expect(allBadgeThemeAttributes).toEqual([
       'privateBadgeColourBgDefault',
+      'privateBadgeDimensionPaddingHorizontalDefault',
       'privateBadgeColourBgInverse',
       'privateBadgeColourBgOutline',
       'privateBadgeColourStrokeOutline',

@@ -18,12 +18,6 @@
 
 import type { ReactNode } from 'react';
 
-import {
-  coreAccentDay,
-  statusDangerFillDay,
-  statusSuccessFillDay,
-  statusWarningFillDay,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
@@ -177,36 +171,36 @@ const DockedTrailingExample = () => (
   </BadgeLayout>
 );
 
-const ThemedBackgroundColorExample = () => (
-  <BadgeLayout>
-    <BpkThemeProvider
-      theme={{ privateBadgeColourBgDefault: coreAccentDay }}
-      themeAttributes={['privateBadgeColourBgDefault']}
-    >
+const VdlThemedExample = () => (
+  <BpkThemeProvider
+    theme={{
+      privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
+      privateBadgeDimensionPaddingHorizontalDefault: '0',
+    }}
+    themeAttributes={[
+      'privateBadgeColourBgDefault',
+      'privateBadgeDimensionPaddingHorizontalDefault',
+    ]}
+  >
+    <BadgeLayout>
       <BpkBadge type={BADGE_TYPES.normal}>Normal</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ privateBadgeColourBgDefault: statusWarningFillDay }}
-      themeAttributes={['privateBadgeColourBgDefault']}
-    >
-      <BpkBadge type={BADGE_TYPES.warning}>Warning</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ privateBadgeColourBgDefault: statusSuccessFillDay }}
-      themeAttributes={['privateBadgeColourBgDefault']}
-    >
-      <BpkBadge type={BADGE_TYPES.success}>Success</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ privateBadgeColourBgDefault: statusDangerFillDay }}
-      themeAttributes={['privateBadgeColourBgDefault']}
-    >
-      <BpkBadge type={BADGE_TYPES.critical}>Critical</BpkBadge>
-    </BpkThemeProvider>
-  </BadgeLayout>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.warning}>
+        <BpkSmallHelpCircleIcon />
+        &nbsp;Warning
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.success}>
+        <BpkSmallTickIcon />
+        &nbsp;Success
+      </BpkBadge>
+      &nbsp;
+      <BpkBadge type={BADGE_TYPES.critical}>
+        <BpkSmallExclamationIcon />
+        &nbsp;Critical
+      </BpkBadge>
+    </BadgeLayout>
+  </BpkThemeProvider>
 );
 
 const MixedExample = () => (
@@ -279,8 +273,8 @@ export const DockedLeft = {
   render: () => <DockedLeadingExample />,
 };
 
-export const ThemedBackgroundColor = {
-  render: () => <ThemedBackgroundColorExample />,
+export const VdlThemed = {
+  render: () => <VdlThemedExample />,
 };
 
 export const VisualTest = {
