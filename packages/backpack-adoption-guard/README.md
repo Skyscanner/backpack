@@ -131,3 +131,19 @@ The generated `dist/` directory is ignored by git. Any ref used directly as a
 GitHub JavaScript action must still contain the generated bundle because
 `action.yml` runs `dist/index.js`; keep that packaging step separate from normal
 source changes.
+
+## Releasing
+
+Use the `Backpack Adoption Guard Release` workflow and choose the semver bump
+type:
+
+| Release type | Use when |
+| --- | --- |
+| `patch` | Fixing bugs or release packaging without changing consumer-facing behaviour. |
+| `minor` | Adding backwards-compatible optional inputs, outputs, or reporting. |
+| `major` | Changing defaults, guard pass/fail behaviour, inputs, or the results JSON schema. |
+
+The workflow calculates the next `backpack-adoption-guard/vMAJOR.MINOR.PATCH`
+tag from existing release tags and moves the matching
+`backpack-adoption-guard/vMAJOR` tag to the same release. It builds `dist/` into
+a tag-only release commit so generated bundles stay out of `main`.
