@@ -16,78 +16,40 @@
  * limitations under the License.
  */
 
-export const badgeThemeAttributes = [
-  'badgeFontWeight',
-  'badgeLineHeight',
-  'radiusXs',
-];
+export const badgeThemeAttributes: string[] = [];
 
-export const badgeNormalThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'textPrimary',
-];
+export const badgeNormalThemeAttributes = ['privateBadgeColourBgDefault'];
 
-export const badgeWarningThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'textPrimary',
-  'statusWarningSpot',
-];
+export const badgeWarningThemeAttributes = ['privateBadgeColourBgDefault'];
 
-export const badgeSuccessThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'textPrimary',
-  'statusSuccessSpot',
-];
+export const badgeSuccessThemeAttributes = ['privateBadgeColourBgDefault'];
 
-export const badgeCriticalThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'textPrimary',
-  'statusDangerSpot',
-];
+export const badgeCriticalThemeAttributes = ['privateBadgeColourBgDefault'];
 
-export const badgeInverseThemeAttributes = [
-  'privateBadgeColourBgInverse',
-  'textPrimary',
-];
+export const badgeInverseThemeAttributes = ['privateBadgeColourBgInverse'];
 
 export const badgeOutlineThemeAttributes = [
   'privateBadgeColourBgOutline',
   'privateBadgeColourStrokeOutline',
-  'textOnDark',
 ];
 
-export const badgeStrongThemeAttributes = [
-  'corePrimary',
-  'textOnDark',
-];
+export const badgeStrongThemeAttributes: string[] = [];
 
-export const badgeBrandThemeAttributes = [
-  'coreAccent',
-  'textInverse',
-];
+export const badgeBrandThemeAttributes: string[] = [];
 
-export const badgeSubtleThemeAttributes = [
-  'privateBadgeColourBgSubtle',
-  'textPrimary',
-];
+export const badgeSubtleThemeAttributes = ['privateBadgeColourBgSubtle'];
 
 /**
- * Combined array of all badge theme attributes across all variants and shared properties.
- * Requires all these attributes to be present in the BpkThemeProvider theme object or theming
- * will be silently ignored. Prefer per-variant arrays (e.g. badgeNormalThemeAttributes) for
- * targeted theming.
+ * Combined deduplicated array of all badge private theme attributes.
+ * Only exposes component-scoped (private) badge tokens — global semantic vars
+ * (text, status, core colours) can be overridden at the theme level independently.
  */
 export const allBadgeThemeAttributes = [
-  ...badgeThemeAttributes,
-  ...badgeNormalThemeAttributes,
-  ...badgeWarningThemeAttributes,
-  ...badgeSuccessThemeAttributes,
-  ...badgeCriticalThemeAttributes,
-  ...badgeInverseThemeAttributes,
-  ...badgeOutlineThemeAttributes,
-  ...badgeStrongThemeAttributes,
-  ...badgeBrandThemeAttributes,
-  ...badgeSubtleThemeAttributes,
+  'privateBadgeColourBgDefault',
+  'privateBadgeColourBgInverse',
+  'privateBadgeColourBgOutline',
+  'privateBadgeColourStrokeOutline',
+  'privateBadgeColourBgSubtle',
 ];
 
 /**

@@ -9,8 +9,8 @@ description: |
   wire up BpkThemeProvider overrides to the new CSS var names. Covers the full
   migration: SCSS mixins, themeAttributes.tsx, stories, and tests.
 author: Claude Code
-version: 1.1.0
-date: 2026-06-23
+version: 1.2.0
+date: 2026-06-24
 ---
 
 # Backpack CSS Vars Migration
@@ -171,25 +171,37 @@ grep "utils\.\|typography\.\|radii\." packages/backpack-web/src/bpk-mixins/_{com
 
 `BpkThemeProvider` converts camelCase keys → `--bpk-{kebab-case}` inline styles. Inline styles have higher specificity than stylesheets, so themed overrides win automatically.
 
-Update per-variant arrays to use keys that map to the new CSS var names:
+**Only expose `--bpk-private-{component}-*` vars as themeable keys.** Global semantic vars (`--bpk-text-primary`, `--bpk-core-primary`, `--bpk-radius-xs`, etc.) are theme-level concerns — they apply across all components and should be set globally, not per-component in a badge's themeAttributes.
+
+Update per-variant arrays to only list private component-scoped keys:
 
 ```ts
 // Key → CSS var injected by BpkThemeProvider
 // privateBadgeColourBgDefault → --bpk-private-badge-colour-bg-default
-// textPrimary                 → --bpk-text-primary
-// corePrimary                 → --bpk-core-primary
-// radiusXs                    → --bpk-radius-xs
 
-export const badgeNormalThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'textPrimary',
-];
+// ✓ Correct — component-scoped private var
+export const badgeNormalThemeAttributes = ['privateBadgeColourBgDefault'];
+
+// ✗ Wrong — global semantic var; override at theme level, not here
+export const badgeNormalThemeAttributes = ['privateBadgeColourBgDefault', 'textPrimary'];
 ```
 
 **Camelcase conversion rule:** strip `--bpk-`, convert kebab to camelCase.
 e.g. `--bpk-private-badge-colour-bg-default` → `privateBadgeColourBgDefault`
 
 Note: `BpkThemeProvider` has a digit handler so `--bpk-border-1` → key `border1`.
+
+**`allBadgeThemeAttributes` should be a deduplicated flat array** of all private badge vars — not a spread of per-variant arrays (which repeat shared vars). Since normal/warning/success/critical all share `privateBadgeColourBgDefault`, the combined array should only list it once:
+
+```ts
+export const allBadgeThemeAttributes = [
+  'privateBadgeColourBgDefault',   // normal, warning, success, critical
+  'privateBadgeColourBgInverse',   // inverse
+  'privateBadgeColourBgOutline',   // outline
+  'privateBadgeColourStrokeOutline',
+  'privateBadgeColourBgSubtle',    // subtle
+];
+```
 
 ### Step 5: Update stories
 

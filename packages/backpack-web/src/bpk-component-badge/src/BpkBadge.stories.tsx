@@ -20,17 +20,9 @@ import type { ReactNode } from 'react';
 
 import {
   coreAccentDay,
-  coreEcoDay,
-  corePrimaryDay,
-  fontSizeBase,
-  fontWeightBold,
-  lineHeightBase,
   statusDangerFillDay,
-  statusDangerSpotDay,
   statusSuccessFillDay,
-  statusSuccessSpotDay,
   statusWarningFillDay,
-  statusWarningSpotDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
@@ -185,21 +177,6 @@ const DockedTrailingExample = () => (
   </BadgeLayout>
 );
 
-const ThemedCornerRadiusExample = () => (
-  <BpkThemeProvider
-    theme={{ radiusXs: '999px' }}
-    themeAttributes={['radiusXs']}
-  >
-    <BadgeLayout>
-      <BpkBadge>Normal</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.brand}>Brand</BpkBadge>
-    </BadgeLayout>
-  </BpkThemeProvider>
-);
-
 const ThemedBackgroundColorExample = () => (
   <BadgeLayout>
     <BpkThemeProvider
@@ -229,90 +206,7 @@ const ThemedBackgroundColorExample = () => (
     >
       <BpkBadge type={BADGE_TYPES.critical}>Critical</BpkBadge>
     </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ corePrimary: corePrimaryDay }}
-      themeAttributes={['corePrimary']}
-    >
-      <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ coreAccent: coreEcoDay }}
-      themeAttributes={['coreAccent']}
-    >
-      <BpkBadge type={BADGE_TYPES.brand}>Brand</BpkBadge>
-    </BpkThemeProvider>
   </BadgeLayout>
-);
-
-const ThemedIconColorExample = () => (
-  <BadgeLayout>
-    <BpkThemeProvider
-      theme={{ textPrimary: coreAccentDay }}
-      themeAttributes={['textPrimary']}
-    >
-      <BpkBadge type={BADGE_TYPES.normal}>
-        <BpkSmallTickIcon />
-        &nbsp;Normal
-      </BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ statusWarningSpot: statusWarningSpotDay }}
-      themeAttributes={['statusWarningSpot']}
-    >
-      <BpkBadge type={BADGE_TYPES.warning}>
-        <BpkSmallHelpCircleIcon />
-        &nbsp;Warning
-      </BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ statusSuccessSpot: statusSuccessSpotDay }}
-      themeAttributes={['statusSuccessSpot']}
-    >
-      <BpkBadge type={BADGE_TYPES.success}>
-        <BpkSmallTickIcon />
-        &nbsp;Success
-      </BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ statusDangerSpot: statusDangerSpotDay }}
-      themeAttributes={['statusDangerSpot']}
-    >
-      <BpkBadge type={BADGE_TYPES.critical}>
-        <BpkSmallExclamationIcon />
-        &nbsp;Critical
-      </BpkBadge>
-    </BpkThemeProvider>
-  </BadgeLayout>
-);
-
-const ThemedTypographyExample = () => (
-  <BpkThemeProvider
-    theme={{
-      badgeFontSize: fontSizeBase,
-      badgeFontWeight: fontWeightBold,
-      badgeLineHeight: lineHeightBase,
-    }}
-    themeAttributes={['badgeFontSize', 'badgeFontWeight', 'badgeLineHeight']}
-  >
-    <BadgeLayout>
-      <BpkBadge>Normal</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.warning}>
-        <BpkSmallHelpCircleIcon />
-        &nbsp;Warning
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.success}>
-        <BpkSmallTickIcon />
-        &nbsp;Success
-      </BpkBadge>
-    </BadgeLayout>
-  </BpkThemeProvider>
 );
 
 const MixedExample = () => (
@@ -385,20 +279,8 @@ export const DockedLeft = {
   render: () => <DockedLeadingExample />,
 };
 
-export const ThemedCornerRadius = {
-  render: () => <ThemedCornerRadiusExample />,
-};
-
 export const ThemedBackgroundColor = {
   render: () => <ThemedBackgroundColorExample />,
-};
-
-export const ThemedIconColor = {
-  render: () => <ThemedIconColorExample />,
-};
-
-export const ThemedTypography = {
-  render: () => <ThemedTypographyExample />,
 };
 
 export const VisualTest = {
