@@ -176,8 +176,8 @@ jobs:
 
           git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG" "$release_sha"
 
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push origin "refs/tags/$RELEASE_TAG"
+          git -c http.extraHeader="Authorization: Bearer $GH_TOKEN" \
+            push origin "refs/tags/$RELEASE_TAG"
 
       - name: Summary
         env:
