@@ -558,7 +558,8 @@ $bpk-fonts: (
 }
 
 // Mobile: strict can leave uneven rag or orphaned characters on narrow viewports.
-@media #{tokens.$bpk-breakpoint-query-small-tablet} {
+// 48rem = bpk-breakpoint-query-small-tablet
+@media (max-width: 48rem) {
   :lang(zh),
   :lang(ja),
   :lang(ko) {
