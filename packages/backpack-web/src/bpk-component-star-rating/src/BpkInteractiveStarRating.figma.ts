@@ -23,7 +23,7 @@ export default {
   imports: [
     "import BpkInteractiveStarRating from '@skyscanner/backpack-web/bpk-component-star-rating'",
   ],
-  example: figma.code`<BpkInteractiveStarRating getStarLabel={(rating: number, maxRating: number) => \`\${rating} out of \${maxRating} stars\`} id="uniqueId"
+  example: figma.code`<BpkInteractiveStarRating getStarLabel={(rating: number, maxRating: number) => \`${rating} out of ${maxRating} stars\`} id="uniqueId" 
 // eslint-disable-next-line no-console
 onRatingSelect={(rating: number) => console.log(rating)}${figma.helpers.react.renderProp(
     "large",
