@@ -378,4 +378,47 @@ describe('BpkDatepicker', () => {
     expect(calendarDialog).not.toBeInTheDocument();
     expect(onOpenChangeMock).toHaveBeenCalledWith(false);
   });
+
+  describe('desktop (above mobile breakpoint)', () => {
+    const useMediaQuery = jest.requireMock('../../bpk-component-breakpoint/src/useMediaQuery');
+
+    beforeEach(() => useMediaQuery.mockReturnValue(false));
+    afterEach(() => useMediaQuery.mockReturnValue(true));
+
+    it('should forward renderTarget to BpkPopover so the portal renders in the supplied container', () => {
+      const portalContainer = document.createElement('div');
+      document.body.appendChild(portalContainer);
+      const renderTargetFn = jest.fn(() => portalContainer);
+
+      render(
+        <BpkDatepicker
+          id="myDatepicker"
+          closeButtonText="Close"
+          daysOfWeek={weekDays}
+          changeMonthLabel="Change month"
+          previousMonthLabel="Go to previous month"
+          nextMonthLabel="Go to next month"
+          title="Departure date"
+          weekStartsOn={1}
+          getApplicationElement={() => document.createElement('div')}
+          formatDate={(date: Date) => format(date, 'dd/MM/yyyy')}
+          formatMonth={formatMonth}
+          formatDateFull={formatDateFull}
+          minDate={new Date(2010, 1, 15)}
+          maxDate={new Date(2010, 2, 15)}
+          selectionConfiguration={{
+            type: CALENDAR_SELECTION_TYPE.single,
+            date: new Date(2010, 1, 15),
+          }}
+          renderTarget={renderTargetFn}
+          isOpen
+        />,
+      );
+
+      // FloatingPortal calls renderTarget() to resolve the portal root
+      expect(renderTargetFn).toHaveBeenCalled();
+
+      document.body.removeChild(portalContainer);
+    });
+  });
 });
