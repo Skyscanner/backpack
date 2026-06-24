@@ -174,25 +174,31 @@ const DockedTrailingExample = () => (
 const ALL_BADGE_ROWS: Array<{
   type: (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
   label: string;
+  icon: ReactNode;
   dark?: boolean;
 }> = [
-  { type: BADGE_TYPES.normal, label: 'Normal' },
-  { type: BADGE_TYPES.warning, label: 'Warning' },
-  { type: BADGE_TYPES.success, label: 'Success' },
-  { type: BADGE_TYPES.critical, label: 'Critical' },
-  { type: BADGE_TYPES.strong, label: 'Strong' },
-  { type: BADGE_TYPES.brand, label: 'Brand' },
-  { type: BADGE_TYPES.inverse, label: 'Inverse', dark: true },
-  { type: BADGE_TYPES.outline, label: 'Outline', dark: true },
-  { type: BADGE_TYPES.subtle, label: 'Subtle' },
+  { type: BADGE_TYPES.normal, label: 'Normal', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.warning, label: 'Warning', icon: <BpkSmallHelpCircleIcon /> },
+  { type: BADGE_TYPES.success, label: 'Success', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.critical, label: 'Critical', icon: <BpkSmallExclamationIcon /> },
+  { type: BADGE_TYPES.strong, label: 'Strong', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.brand, label: 'Brand', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.inverse, label: 'Inverse', icon: <BpkSmallTickIcon />, dark: true },
+  { type: BADGE_TYPES.outline, label: 'Outline', icon: <BpkSmallTickIcon />, dark: true },
+  { type: BADGE_TYPES.subtle, label: 'Subtle', icon: <BpkSmallTickIcon /> },
 ];
 
 const BadgeRow = ({
   dark,
+  icon,
   label,
   type,
 }: (typeof ALL_BADGE_ROWS)[number]) => {
-  const badge = <BpkBadge type={type}>{label}</BpkBadge>;
+  const badge = (
+    <BpkBadge type={type}>
+      {icon}&nbsp;{label}
+    </BpkBadge>
+  );
   return dark ? (
     <BpkDarkExampleWrapper>
       <BadgeLayout>{badge}</BadgeLayout>
