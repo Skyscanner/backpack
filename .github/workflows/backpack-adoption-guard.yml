@@ -9,7 +9,7 @@
 #
 #   jobs:
 #     backpack-adoption-guard:
-#       uses: Skyscanner/backpack/.github/workflows/backpack-adoption-guard.yml@backpack-adoption-guard/v1
+#       uses: Skyscanner/backpack/.github/workflows/backpack-adoption-guard.yml@backpack-adoption-guard/v1.0.0
 #       with:
 #         cortex-entity: my-service
 #       secrets:
@@ -52,7 +52,7 @@ jobs:
 
       # Resolve the ref this reusable workflow was loaded from so the guard
       # source we build matches the version the consumer pinned. Format:
-      #   Skyscanner/backpack/.github/workflows/...yml@refs/tags/backpack-adoption-guard/v1
+      #   Skyscanner/backpack/.github/workflows/...yml@refs/tags/backpack-adoption-guard/v1.0.0
       - name: Resolve adoption guard source ref
         id: guard_ref
         run: echo "ref=${GITHUB_WORKFLOW_REF##*@}" >> "$GITHUB_OUTPUT"

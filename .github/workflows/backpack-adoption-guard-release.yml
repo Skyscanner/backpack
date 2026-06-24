@@ -41,7 +41,6 @@ jobs:
     outputs:
       release_tag: ${{ steps.compute.outputs.release_tag }}
       release_version: ${{ steps.compute.outputs.release_version }}
-      major_tag: ${{ steps.compute.outputs.major_tag }}
       target_sha: ${{ steps.resolve.outputs.target_sha }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -106,11 +105,9 @@ jobs:
             next_version="${major}.${minor}.${patch}"
           fi
 
-          major_tag="${next_version%%.*}"
           {
             echo "release_version=${next_version}"
             echo "release_tag=backpack-adoption-guard/v${next_version}"
-            echo "major_tag=backpack-adoption-guard/v${major_tag}"
           } >> "$GITHUB_OUTPUT"
           echo "Latest release: ${latest_version:-none}"
           echo "Next ${RELEASE_TYPE} release: ${next_version}"
@@ -164,11 +161,10 @@ jobs:
       - run: npm ci
       - run: npx nx run backpack-adoption-guard:build
 
-      - name: Create release tag and move major tag
+      - name: Create release tag
         id: create-tags
         env:
           RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
-          MAJOR_TAG: ${{ needs.Validate.outputs.major_tag }}
           TARGET_SHA: ${{ needs.Validate.outputs.target_sha }}
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
@@ -186,17 +182,14 @@ jobs:
           echo "release_sha=${release_sha}" >> "$GITHUB_OUTPUT"
 
           git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG" "$release_sha"
-          git tag -f -a "$MAJOR_TAG" -m "$RELEASE_TAG" "$release_sha"
 
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin "refs/tags/$RELEASE_TAG"
-          git push origin "refs/tags/$MAJOR_TAG" --force
 
       - name: Summary
         env:
           RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
           RELEASE_VERSION: ${{ needs.Validate.outputs.release_version }}
-          MAJOR_TAG: ${{ needs.Validate.outputs.major_tag }}
           TARGET_SHA: ${{ needs.Validate.outputs.target_sha }}
           RELEASE_SHA: ${{ steps.create-tags.outputs.release_sha }}
         run: |
@@ -204,7 +197,6 @@ jobs:
             echo "## Released"
             echo "- Version: \`$RELEASE_VERSION\`"
             echo "- Immutable tag: \`$RELEASE_TAG\`"
-            echo "- Floating major tag: \`$MAJOR_TAG\`"
             echo "- Source commit: \`$TARGET_SHA\`"
             echo "- Release commit: \`$RELEASE_SHA\`"
             echo ""

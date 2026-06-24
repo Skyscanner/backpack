@@ -10,10 +10,12 @@ adoption rate.
 - uses: actions/checkout@v6
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
+  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
   with:
     dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
 ```
+
+Replace `v1.0.0` with the immutable release tag you want to pin.
 
 The action transparently fetches the PR base commit on demand, so the default
 shallow `actions/checkout` is enough. If your runner blocks single-commit
@@ -82,7 +84,7 @@ data stays in the GitHub step summary and action internals.
 - uses: actions/checkout@v6
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
+  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
 
 - name: Upload Backpack adoption metrics to Cortex
   if: github.ref == 'refs/heads/main'
@@ -143,7 +145,7 @@ type:
 | `minor` | Adding backwards-compatible optional inputs, outputs, or reporting. |
 | `major` | Changing defaults, guard pass/fail behaviour, inputs, or the results JSON schema. |
 
-The workflow calculates the next `backpack-adoption-guard/vMAJOR.MINOR.PATCH`
-tag from existing release tags and moves the matching
-`backpack-adoption-guard/vMAJOR` tag to the same release. It builds `dist/` into
-a tag-only release commit so generated bundles stay out of `main`.
+The workflow calculates the next immutable
+`backpack-adoption-guard/vMAJOR.MINOR.PATCH` tag from existing release tags. It
+builds `dist/` into a tag-only release commit so generated bundles stay out of
+`main`.
