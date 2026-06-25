@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown, Title } from '@storybook/addon-docs/blocks';
 
 import {
   coreAccentDay,
@@ -329,6 +329,7 @@ const meta = {
     docs: {
       page: () => (
         <>
+          <Title />
           <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
         </>

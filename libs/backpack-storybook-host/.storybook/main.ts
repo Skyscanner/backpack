@@ -38,7 +38,9 @@ const config: StorybookConfig = {
   webpackFinal: async (webpackConfig) => {
     // Allow importing README.md (and other Markdown) files as raw source
     // strings so they can be rendered in Docs pages via the <Markdown> block.
-    webpackConfig.module?.rules?.push({
+    webpackConfig.module = webpackConfig.module ?? {};
+    webpackConfig.module.rules = webpackConfig.module.rules ?? [];
+    webpackConfig.module.rules.push({
       test: /\.md$/,
       type: 'asset/source',
     });
