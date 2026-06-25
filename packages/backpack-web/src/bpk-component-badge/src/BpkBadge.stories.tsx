@@ -18,6 +18,8 @@
 
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   coreAccentDay,
   coreEcoDay,
@@ -40,12 +42,15 @@ import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 import type { Meta } from '@storybook/react';
 
+
 import LAYOUT_STYLES from './BpkBadge.stories.module.scss';
+
 
 const getClassName = cssModules(LAYOUT_STYLES);
 
@@ -320,6 +325,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-badge',
   component: BpkBadge,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

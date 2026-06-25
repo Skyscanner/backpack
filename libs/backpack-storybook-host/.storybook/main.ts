@@ -35,6 +35,15 @@ const config: StorybookConfig = {
     name: '@storybook/react-webpack5',
     options: {},
   },
+  webpackFinal: async (webpackConfig) => {
+    // Allow importing README.md (and other Markdown) files as raw source
+    // strings so they can be rendered in Docs pages via the <Markdown> block.
+    webpackConfig.module?.rules?.push({
+      test: /\.md$/,
+      type: 'asset/source',
+    });
+    return webpackConfig;
+  },
   tags: {
     'dark-mode-compatible': {
       excludeFromSidebar: false,
