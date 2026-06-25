@@ -153,6 +153,12 @@ jobs:
 
       - run: npm ci
       - run: npx nx run backpack-adoption-guard:build
+      - name: Verify adoption guard bundle
+        run: |
+          if [ ! -f packages/backpack-adoption-guard/dist/index.js ]; then
+            echo "::error::packages/backpack-adoption-guard/dist/index.js was not produced"
+            exit 1
+          fi
 
       - name: Create release tag
         id: create-tags
@@ -163,6 +169,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch --force --tags origin
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists (concurrent release detected)"
+            exit 1
+          fi
 
           git add -f packages/backpack-adoption-guard/dist
           if git diff --cached --quiet; then

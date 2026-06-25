@@ -145,6 +145,10 @@ type:
 | `minor` | Adding backwards-compatible optional inputs, outputs, or reporting. |
 | `major` | Changing defaults, guard pass/fail behaviour, inputs, or the results JSON schema. |
 
+> **Migration**: The floating `backpack-adoption-guard/v1` major tag is no
+> longer updated. Pin to an immutable tag such as
+> `backpack-adoption-guard/v1.0.0` or newer.
+
 The workflow calculates the next immutable
 `backpack-adoption-guard/vMAJOR.MINOR.PATCH` tag from existing release tags. It
 builds `dist/` into a tag-only release commit so generated bundles stay out of
