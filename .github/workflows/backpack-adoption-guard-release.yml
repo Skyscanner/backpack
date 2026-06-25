@@ -3,15 +3,15 @@ name: Backpack Adoption Guard Release
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version to release, e.g. 1.2.3 (no v prefix, no namespace)'
+      release_type:
+        description: 'Semver bump to release'
         required: true
-        type: string
-      ref:
-        description: 'Branch or commit SHA to tag from'
-        required: false
-        type: string
-        default: 'main'
+        type: choice
+        default: patch
+        options:
+          - patch
+          - minor
+          - major
       dry_run:
         description: 'Validate only, do not push tags'
         required: false
@@ -24,6 +24,10 @@ defaults:
 
 permissions: {}
 
+concurrency:
+  group: backpack-adoption-guard-release
+  cancel-in-progress: false
+
 jobs:
   Validate:
     runs-on: ubuntu-latest
@@ -31,36 +35,75 @@ jobs:
       contents: read
     outputs:
       release_tag: ${{ steps.compute.outputs.release_tag }}
-      major_tag: ${{ steps.compute.outputs.major_tag }}
+      release_version: ${{ steps.compute.outputs.release_version }}
       target_sha: ${{ steps.resolve.outputs.target_sha }}
     steps:
-      - name: Compute and validate tag names
-        id: compute
-        env:
-          VERSION: ${{ inputs.version }}
-        run: |
-          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "::error::Version must be MAJOR.MINOR.PATCH (got: $VERSION)"
-            exit 1
-          fi
-          MAJOR="${VERSION%%.*}"
-          echo "release_tag=backpack-adoption-guard/v${VERSION}" >> "$GITHUB_OUTPUT"
-          echo "major_tag=backpack-adoption-guard/v${MAJOR}" >> "$GITHUB_OUTPUT"
-
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.sha }}
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Resolve ref to immutable SHA
+      - name: Record source SHA
         id: resolve
-        env:
-          TARGET_REF: ${{ inputs.ref }}
         run: |
-          sha="$(git rev-parse --verify "${TARGET_REF}^{commit}")"
+          sha="$(git rev-parse HEAD)"
           echo "target_sha=${sha}" >> "$GITHUB_OUTPUT"
-          echo "Resolved ${TARGET_REF} -> ${sha}"
+          echo "Resolved ${GITHUB_REF} -> ${sha}"
+
+      - name: Compute next release tag
+        id: compute
+        env:
+          RELEASE_TYPE: ${{ inputs.release_type }}
+        run: |
+          case "$RELEASE_TYPE" in
+            patch|minor|major) ;;
+            *)
+              echo "::error::release_type must be patch, minor, or major (got: $RELEASE_TYPE)"
+              exit 1
+              ;;
+          esac
+
+          git fetch --force --tags origin
+
+          latest_version="$(
+            git tag --list 'backpack-adoption-guard/v[0-9]*.[0-9]*.[0-9]*' \
+              | sed -nE 's#^backpack-adoption-guard/v([0-9]+)\.([0-9]+)\.([0-9]+)$#\1.\2.\3#p' \
+              | sort -V \
+              | tail -n 1
+          )"
+
+          if [ -z "$latest_version" ]; then
+            case "$RELEASE_TYPE" in
+              major) next_version="1.0.0" ;;
+              minor) next_version="0.1.0" ;;
+              patch) next_version="0.0.1" ;;
+            esac
+          else
+            IFS=. read -r major minor patch <<< "$latest_version"
+            case "$RELEASE_TYPE" in
+              major)
+                major=$((major + 1))
+                minor=0
+                patch=0
+                ;;
+              minor)
+                minor=$((minor + 1))
+                patch=0
+                ;;
+              patch)
+                patch=$((patch + 1))
+                ;;
+            esac
+            next_version="${major}.${minor}.${patch}"
+          fi
+
+          {
+            echo "release_version=${next_version}"
+            echo "release_tag=backpack-adoption-guard/v${next_version}"
+          } >> "$GITHUB_OUTPUT"
+          echo "Latest release: ${latest_version:-none}"
+          echo "Next ${RELEASE_TYPE} release: ${next_version}"
 
       - name: Ensure release tag does not already exist
         env:
@@ -85,9 +128,8 @@ jobs:
   CreateTags:
     runs-on: ubuntu-latest
     needs: [Validate]
-    if: ${{ !inputs.dry_run }}
-    # contents: read covers the checkout below; tag pushes use the App token
-    # via http.extraHeader, so the default GITHUB_TOKEN never needs write.
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    # contents: read covers the checkout below; tag pushes use the App token.
     permissions:
       contents: read
     steps:
@@ -96,6 +138,7 @@ jobs:
         with:
           app-id: ${{ vars.GH_APP_ID }}
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          permission-contents: write
 
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -103,35 +146,67 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Create release tag and move major tag
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm ci
+      - run: npx nx run backpack-adoption-guard:build
+      - name: Verify adoption guard bundle
+        run: |
+          if [ ! -f packages/backpack-adoption-guard/dist/index.js ]; then
+            echo "::error::packages/backpack-adoption-guard/dist/index.js was not produced"
+            exit 1
+          fi
+
+      - name: Create release tag
+        id: create-tags
         env:
           RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
-          MAJOR_TAG: ${{ needs.Validate.outputs.major_tag }}
           TARGET_SHA: ${{ needs.Validate.outputs.target_sha }}
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG" "$TARGET_SHA"
-          git tag -f -a "$MAJOR_TAG" -m "$RELEASE_TAG" "$TARGET_SHA"
+          git fetch --force --tags origin
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists (concurrent release detected)"
+            exit 1
+          fi
 
-          git -c http.extraHeader="Authorization: Bearer $GH_TOKEN" \
+          git add -f packages/backpack-adoption-guard/dist
+          if git diff --cached --quiet; then
+            echo "::error::No adoption guard dist files were staged for release"
+            exit 1
+          fi
+
+          HUSKY=0 git commit -m "Build $RELEASE_TAG"
+          release_sha="$(git rev-parse HEAD)"
+          echo "release_sha=${release_sha}" >> "$GITHUB_OUTPUT"
+
+          git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG" "$release_sha"
+
+          basic_auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          echo "::add-mask::$basic_auth"
+
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${basic_auth}" \
             push origin "refs/tags/$RELEASE_TAG"
-          git -c http.extraHeader="Authorization: Bearer $GH_TOKEN" \
-            push origin "refs/tags/$MAJOR_TAG" --force
 
       - name: Summary
         env:
           RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
-          MAJOR_TAG: ${{ needs.Validate.outputs.major_tag }}
+          RELEASE_VERSION: ${{ needs.Validate.outputs.release_version }}
           TARGET_SHA: ${{ needs.Validate.outputs.target_sha }}
+          RELEASE_SHA: ${{ steps.create-tags.outputs.release_sha }}
         run: |
           {
             echo "## Released"
+            echo "- Version: \`$RELEASE_VERSION\`"
             echo "- Immutable tag: \`$RELEASE_TAG\`"
-            echo "- Floating major tag: \`$MAJOR_TAG\`"
-            echo "- Commit: \`$TARGET_SHA\`"
+            echo "- Source commit: \`$TARGET_SHA\`"
+            echo "- Release commit: \`$RELEASE_SHA\`"
             echo ""
             echo "Consumers can now use:"
             echo '```yaml'
