@@ -126,8 +126,25 @@ jobs:
   SupernovaPublish:
     runs-on: ubuntu-latest
     environment: Publishing
-    needs: [Build]
+    needs: [Create-Build-Cache, Build]
     steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Restore Storybook build cache
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: |
+            libs/backpack-storybook-host/dist-storybook/
+            .nx/cache/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
+
       - name: Install system dependencies
         run: |
           sudo apt-get update
@@ -137,4 +154,17 @@ jobs:
         run: npx @supernovaio/cli publish-documentation --apiKey=$SUPERNOVA_API_KEY --designSystemId=$DESIGN_SYSTEM_ID
         env:
           SUPERNOVA_API_KEY: ${{ secrets.SUPERNOVA_API_KEY }}
+          DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
+
+      - name: Import Storybook to Supernova
+        run: |
+          npx @supernovaio/cli storybook-import \
+            --from ./libs/backpack-storybook-host/dist-storybook \
+            --designSystemId $DESIGN_SYSTEM_ID \
+            --brandId 80f68ac7-b11d-4c97-a4dc-f01dc458da83 \
+            --sourceId f88b7fa5-26af-44b7-a8dc-87593f336c3c \
+            --name bpk-storybook \
+            --publicAccess
+        env:
+          SUPERNOVA_TOKEN: ${{ secrets.SUPERNOVA_API_KEY }}
           DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
