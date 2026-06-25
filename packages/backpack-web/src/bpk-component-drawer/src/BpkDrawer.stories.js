@@ -330,6 +330,72 @@ const DrawerWithTooltipExampleAbleToBeShown = () => (
   </DrawerContainer>
 );
 
+class DrawerWithSecondaryPanelContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false,
+      isSecondaryOpen: false,
+    };
+  }
+
+  onOpen = () => {
+    this.setState({ isOpen: true });
+  };
+
+  onClose = () => {
+    this.setState({ isOpen: false, isSecondaryOpen: false });
+  };
+
+  onSecondaryOpen = () => {
+    this.setState({ isSecondaryOpen: true });
+  };
+
+  onSecondaryClose = () => {
+    this.setState({ isSecondaryOpen: false });
+  };
+
+  render() {
+    return (
+      <div id="drawer-secondary-container">
+        <div id="pagewrap-secondary">
+          <BpkButton onClick={this.onOpen}>Open drawer</BpkButton>
+        </div>
+        <BpkDrawer
+          id="my-secondary-drawer"
+          isOpen={this.state.isOpen}
+          onClose={this.onClose}
+          title="Booking Panel"
+          closeLabel="Close drawer"
+          width="min(750px, 100%)"
+          renderTarget={() => document.getElementById('drawer-secondary-container')}
+          getApplicationElement={() => document.getElementById('pagewrap-secondary')}
+          secondaryPanel={{
+            isOpen: this.state.isSecondaryOpen,
+            onClose: this.onSecondaryClose,
+            children: (
+              <div style={{ padding: '1rem' }}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                  This is the secondary panel content. It slides in alongside the primary content.
+                </BpkText>
+              </div>
+            ),
+          }}
+        >
+          <div style={{ padding: '1rem' }}>
+            <Paragraph>This is the primary drawer content.</Paragraph>
+            <BpkButton type={BUTTON_TYPES.secondary} onClick={() => this.onSecondaryOpen()}>
+              Open secondary panel
+            </BpkButton>
+          </div>
+        </BpkDrawer>
+      </div>
+    );
+  }
+}
+
+const WithSecondaryPanelExample = () => <DrawerWithSecondaryPanelContainer />;
+
 const meta = {
   title: 'bpk-component-drawer',
   component: BpkDrawer,
@@ -346,3 +412,4 @@ export const WithNonPaddedContent = { render: () => <WithNonPaddedContentExample
 export const WithMobileModalBehaviour = { render: () => <WithMobileModalBehaviourExample /> };
 export const DrawerWithTooltipNotAbleToBeShown = { render: () => <DrawerWithTooltipExampleNotAbleToBeShown /> };
 export const DrawerWithTooltipAbleToBeShown = { render: () => <DrawerWithTooltipExampleAbleToBeShown /> };
+export const WithSecondaryPanel = { render: () => <WithSecondaryPanelExample /> };

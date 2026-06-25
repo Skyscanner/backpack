@@ -28,6 +28,8 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
+import type { SecondaryPanelProps } from './BpkDrawer';
+
 import STYLES from './BpkDrawerContent.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -51,29 +53,33 @@ type Props = {
   isIpad?: boolean,
   padded?: boolean,
   mobileModalDisplay?: boolean,
+  secondaryPanel?: SecondaryPanelProps,
 };
 
 const BpkDrawerContent = ({
   children,
   className,
   closeLabel,
-  closeOnScrimClick = true, // Unused from withScrim scrim HOC
+  closeOnScrimClick = true,
   closeText,
   contentClassName,
   dialogRef,
   hideTitle = false,
   id,
   isDrawerShown = true,
-  isIpad = false, // Unused from withScrim scrim HOC
-  isIphone = false, // Unused from withScrim scrim HOC
+  isIpad = false,
+  isIphone = false,
   mobileModalDisplay = false,
   onClose,
   onCloseAnimationComplete,
   padded,
+  secondaryPanel,
   title,
   width,
   ...rest
 }: Props) => {
+
+  const isDualPanel = Boolean(secondaryPanel?.isOpen);
 
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
@@ -81,6 +87,10 @@ const BpkDrawerContent = ({
 
   if (className) {
     drawerClassNames.push(className);
+  }
+
+  if (isDualPanel) {
+    drawerClassNames.push(getClassName('bpk-drawer--dual-panel'));
   }
 
   if (hideTitle) {
@@ -96,6 +106,22 @@ const BpkDrawerContent = ({
   }
 
   const headingId = `bpk-drawer-heading-${id}`;
+
+  const drawerHeader = (
+    <header className={getClassName('bpk-drawer__header')}>
+      <h2 id={headingId} className={headerClassNames.join(' ')}>
+        {title}
+      </h2>
+      &nbsp;
+      {closeText ? (
+        <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
+      ) : (
+        <div className={getClassName('bpk-drawer__close-button')}>
+          <BpkCloseButton label={closeLabel} onClick={onClose} />
+        </div>
+      )}
+    </header>
+  );
 
   const nodeRef = useRef<HTMLElement | null>(null);
   const setRefs = useCallback(
@@ -143,20 +169,34 @@ const BpkDrawerContent = ({
           ref={setRefs}
           {...rest}
         >
-          <header className={getClassName('bpk-drawer__header')}>
-            <h2 id={headingId} className={headerClassNames.join(' ')}>
-              {title}
-            </h2>
-            &nbsp;
-            {closeText ? (
-              <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
-            ) : (
-              <div className={getClassName('bpk-drawer__close-button')}>
-                <BpkCloseButton label={closeLabel} onClick={onClose} />
+          {secondaryPanel ? (
+            <div className={getClassName('bpk-drawer__panels')}>
+              <div className={getClassName('bpk-drawer__primary')}>
+                {drawerHeader}
+                <div className={contentClassNames.join(' ')}>{children}</div>
               </div>
-            )}
-          </header>
-          <div className={contentClassNames.join(' ')}>{children}</div>
+
+              {secondaryPanel.isOpen && (
+                <div
+                  role="complementary"
+                  className={getClassName('bpk-drawer__secondary')}
+                  data-testid="secondary-panel"
+                >
+                  <div className={getClassName('bpk-drawer__secondary-close')}>
+                    <BpkCloseButton label={secondaryPanel.closeLabel ?? 'Close panel'} onClick={secondaryPanel.onClose} />
+                  </div>
+                  <div className={getClassName('bpk-drawer__secondary-content')}>
+                    {secondaryPanel.children}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              {drawerHeader}
+              <div className={contentClassNames.join(' ')}>{children}</div>
+            </>
+          )}
         </section>
       )}
     </Transition>
