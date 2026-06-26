@@ -92,11 +92,11 @@ const BpkThemeProvider = ({
   );
 };
 
-export const themeAttributesPropType = (
+function themeAttributesPropType(
   props: { theme?: Theme | null; themeAttributes?: Array<string | string[]> },
   propName: string,
   componentName: string,
-): Error | null => {
+): Error | null {
   const { theme } = props;
   const { themeAttributes } = props;
   if (!theme) {
@@ -141,4 +141,5 @@ export const themeAttributesPropType = (
   return null;
 };
 
+export { themeAttributesPropType };
 export default BpkThemeProvider;
