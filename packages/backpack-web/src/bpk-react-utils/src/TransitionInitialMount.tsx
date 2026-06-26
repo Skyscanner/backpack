@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { cloneElement, useCallback, useRef } from 'react';
+import { cloneElement, useCallback, useRef, version } from 'react';
 import type { MutableRefObject, ReactElement, Ref } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -31,23 +31,31 @@ type Props = {
   appearClassName: string;
   appearActiveClassName: string;
   transitionTimeout: number;
-  // Must be a single ReactElement that accepts a ref — React 19 removed the
-  // findDOMNode fallback in react-transition-group@4, so we inject a nodeRef
-  // into the child via cloneElement. A plain string/fragment cannot accept a
-  // ref and would crash at runtime, so the type is narrowed accordingly.
+  // Must be a single ReactElement that forwards a ref to a DOM node — React 19
+  // removed the findDOMNode fallback in react-transition-group@4, so we inject
+  // a nodeRef into the child via cloneElement. The child therefore has to be a
+  // DOM element (e.g. <section>), a class component, or a forwardRef component;
+  // a plain string/fragment or a function component that drops the ref cannot
+  // receive nodeRef, so CSSTransition would have no node to animate.
   // `Ref` (not `RefObject`) so the merged callback ref we inject is assignable.
   children: ReactElement<{ ref?: Ref<HTMLElement> }>;
 };
 
-const assignRef = (ref: Ref<HTMLElement> | undefined, node: HTMLElement | null) => {
-  if (!ref) {
+// Assigns a node to the child's own ref, supporting both callback refs and
+// object refs (e.g. createRef). nodeRef is handled separately below since it is
+// always an object ref we own.
+const assignChildRef = (
+  childRef: Ref<HTMLElement> | undefined,
+  node: HTMLElement | null,
+) => {
+  if (!childRef) {
     return;
   }
-  if (typeof ref === 'function') {
-    ref(node);
+  if (typeof childRef === 'function') {
+    childRef(node);
   } else {
     // eslint-disable-next-line no-param-reassign
-    (ref as MutableRefObject<HTMLElement | null>).current = node;
+    (childRef as MutableRefObject<HTMLElement | null>).current = node;
   }
 };
 
@@ -59,15 +67,16 @@ const TransitionInitialMount = ({
   children,
   transitionTimeout,
 }: Props) => {
-  const nodeRef = useRef<HTMLElement>(null);
+  const nodeRef = useRef<HTMLElement | null>(null);
   // Read the child's own ref so injecting nodeRef does not clobber it.
-  // React 19 exposes ref as a normal prop (children.props.ref); React 18 keeps
-  // it on the element itself (children.ref). Check props.ref FIRST so that on
-  // React 19 we never touch element.ref (which logs a deprecation warning).
-  const childProps = children.props as { ref?: Ref<HTMLElement> };
-  const childRef =
-    childProps.ref ??
-    (children as ReactElement & { ref?: Ref<HTMLElement> }).ref;
+  // React 19 exposes ref as a normal prop (children.props.ref) and logs a
+  // deprecation warning if you read element.ref; React 18 keeps it on the
+  // element itself. Pick the source by major version so we never touch
+  // element.ref on React 19, even when the child has no ref of its own.
+  const isReact19OrLater = parseInt(version, 10) >= 19;
+  const childRef = isReact19OrLater
+    ? (children.props as { ref?: Ref<HTMLElement> }).ref
+    : (children as ReactElement & { ref?: Ref<HTMLElement> }).ref;
 
   // Compose the nodeRef CSSTransition needs with any ref the child already has,
   // so injecting nodeRef does not clobber the child's own ref (e.g. the
@@ -76,8 +85,8 @@ const TransitionInitialMount = ({
   // only re-run when nodeRef or the child's ref actually changes.
   const mergedRef = useCallback(
     (node: HTMLElement | null) => {
-      assignRef(nodeRef, node);
-      assignRef(childRef, node);
+      nodeRef.current = node;
+      assignChildRef(childRef, node);
     },
     [childRef],
   );
