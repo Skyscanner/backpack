@@ -317,6 +317,7 @@ export const DockedLeft = {
 
 export const Themed = {
   render: () => <ThemedExample />,
+  tags: ['dark-mode-compatible'],
 };
 
 export const VisualTest = {
