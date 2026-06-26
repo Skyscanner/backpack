@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentType , Component, type MouseEvent as ReactMouseEvent  } from 'react';
+import { Component, type ComponentType, type MouseEvent as ReactMouseEvent } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
