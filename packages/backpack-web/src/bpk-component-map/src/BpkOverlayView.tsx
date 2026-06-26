@@ -18,34 +18,27 @@
 
 import type { ReactNode } from 'react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { OverlayView } from '@react-google-maps/api';
 
-import BpkOverlayView from './BpkOverlayView';
 import type { LatLong } from './common-types';
 
 type Props = {
   children: ReactNode;
   position: LatLong;
+  getPixelPositionOffset?: (width: number, height: number) => { x: number; y: number };
 };
 
-const getPixelPositionOffset = (width: number, height: number) => ({
-  x: -(width / 2),
-  y: -height,
-});
-
-const BpkBasicMapMarker = (props: Props) => {
+const BpkOverlayView = (props: Props) => {
   const { children, position, ...rest } = props;
-
   return (
-    <BpkOverlayView
-      position={position}
-      getPixelPositionOffset={getPixelPositionOffset}
-      {...getDataComponentAttribute('BasicMapMarker')}
+    <OverlayView
+      mapPaneName="overlayMouseTarget"
+      position={{ lat: position.latitude, lng: position.longitude }}
       {...rest}
     >
       {children}
-    </BpkOverlayView>
+    </OverlayView>
   );
 };
 
-export default BpkBasicMapMarker;
+export default BpkOverlayView;

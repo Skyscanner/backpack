@@ -18,34 +18,32 @@
 
 import type { ReactNode } from 'react';
 
-import { getDataComponentAttribute } from '../../bpk-react-utils';
+import { render } from '@testing-library/react';
 
-import BpkOverlayView from './BpkOverlayView';
-import type { LatLong } from './common-types';
+import BpkBasicMapMarker from './BpkBasicMapMarker';
 
 type Props = {
   children: ReactNode;
-  position: LatLong;
 };
 
-const getPixelPositionOffset = (width: number, height: number) => ({
-  x: -(width / 2),
-  y: -height,
+jest.mock('@react-google-maps/api', () => ({
+  OverlayView: (props: Props) => (
+    <div>
+      <div className="mock-overlay-view" />
+      {props.children}
+    </div>
+  ),
+}));
+
+describe('BpkBasicMapMarker', () => {
+  it('should render correctly', () => {
+    const position = {
+      latitude: 41.386947,
+      longitude: 2.170048,
+    };
+    const { asFragment } = render(
+      <BpkBasicMapMarker position={position}>Children</BpkBasicMapMarker>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
-
-const BpkBasicMapMarker = (props: Props) => {
-  const { children, position, ...rest } = props;
-
-  return (
-    <BpkOverlayView
-      position={position}
-      getPixelPositionOffset={getPixelPositionOffset}
-      {...getDataComponentAttribute('BasicMapMarker')}
-      {...rest}
-    >
-      {children}
-    </BpkOverlayView>
-  );
-};
-
-export default BpkBasicMapMarker;
