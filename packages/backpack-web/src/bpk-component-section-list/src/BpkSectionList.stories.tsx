@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
 import { action } from 'bpk-storybook-utils';
 
 import BpkSectionList from './BpkSectionList';
