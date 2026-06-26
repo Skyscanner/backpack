@@ -202,8 +202,7 @@
   },
   "pnpm": {
     "overrides": {
-      "braces": "3.0.3",
-      "@types/react-transition-group>@types/react": "$@types/react"
+      "braces": "3.0.3"
     },
     "neverBuiltDependencies": ["node-sass"]
   }
