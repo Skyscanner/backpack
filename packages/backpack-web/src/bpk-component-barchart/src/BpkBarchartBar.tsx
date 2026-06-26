@@ -46,7 +46,7 @@ const borderRadius = remToPx(borderRadiusXs);
 
 type Props = Omit<SVGProps<SVGRectElement>, 'x' | 'y' | 'width' | 'height' | 'onClick' | 'onFocus' | 'onMouseOver'> & {
   height: number;
-  label: string;
+  label?: string | null;
   width: number;
   x: number;
   y: number;
@@ -116,7 +116,7 @@ const BpkBarchartBar = ({
         role={onClick ? 'button' : 'graphics-symbol'}
         aria-roledescription={onClick ? undefined : 'bar'}
         aria-pressed={onClick ? isAriaPressed : undefined}
-        aria-label={label}
+        aria-label={label ?? undefined}
       />
     </g>
   );

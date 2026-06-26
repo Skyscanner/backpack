@@ -76,7 +76,7 @@ type Props = Omit<SVGProps<SVGGElement>, 'scale' | 'x' | 'y' | 'width' | 'onClic
   yScale: Scale;
   maxYValue: number;
   margin: Margin;
-  getBarLabel: (point: BarPoint, xScaleDataKey: string, yScaleDataKey: string) => string;
+  getBarLabel: (point: BarPoint, xScaleDataKey: string, yScaleDataKey: string) => string | null;
   BarComponent: BarComponentType;
   getBarSelection?: (point: BarPoint) => boolean;
   outerPadding?: number;
@@ -84,6 +84,7 @@ type Props = Omit<SVGProps<SVGGElement>, 'scale' | 'x' | 'y' | 'width' | 'onClic
   onBarClick?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
   onBarHover?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
   onBarFocus?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
+  [key: string]: unknown;
 };
 
 const BpkBarchartBars = ({

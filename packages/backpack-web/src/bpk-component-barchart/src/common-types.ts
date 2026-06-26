@@ -47,7 +47,7 @@ export type BarComponentProps = {
   y: number;
   width: number;
   height: number;
-  label: string;
+  label?: string | null;
   outlier: boolean;
   onClick?: ((event: MouseEvent<SVGRectElement>) => void) | undefined;
   onHover?: ((event: MouseEvent<SVGRectElement>) => void) | undefined;
@@ -64,8 +64,8 @@ export type BpkBarchartProps = {
   data: BarPoint[];
   xScaleDataKey: string;
   yScaleDataKey: string;
-  xAxisLabel: string;
-  yAxisLabel: string;
+  xAxisLabel?: string;
+  yAxisLabel?: string;
   initialWidth: number;
   initialHeight: number;
   leadingScrollIndicatorClassName?: string | undefined;
@@ -83,7 +83,7 @@ export type BpkBarchartProps = {
   onBarClick?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
   onBarHover?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
   onBarFocus?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
-  getBarLabel?: (point: BarPoint, xScaleDataKey: string, yScaleDataKey: string) => string;
+  getBarLabel?: (point: BarPoint, xScaleDataKey: string, yScaleDataKey: string) => string | null;
   getBarSelection?: (point: BarPoint) => boolean;
   BarComponent?: BarComponent;
   disableDataTable?: boolean;

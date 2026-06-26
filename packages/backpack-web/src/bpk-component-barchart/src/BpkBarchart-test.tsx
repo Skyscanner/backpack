@@ -100,7 +100,7 @@ describe('BpkBarchart', () => {
         initialWidth={size}
         initialHeight={size}
         data={prices}
-        yAxisDomain={[null, 100]}
+        yAxisDomain={[undefined, 100]}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

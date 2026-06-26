@@ -51,7 +51,7 @@ const Heading = withDefaultProps(BpkText, {
   className: getClassName('bpk-heading'),
 });
 
-const RtlBarchart = updateOnDirectionChange(BpkBarchart) as ComponentType<BpkBarchartProps>;
+const RtlBarchart = updateOnDirectionChange(BpkBarchart) as unknown as ComponentType<BpkBarchartProps>;
 
 type WithSelectedStateProps = BpkBarchartProps;
 
