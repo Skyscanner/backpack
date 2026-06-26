@@ -1,0 +1,105 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { Component, type MouseEvent as ReactMouseEvent } from 'react';
+
+import BpkLink from '../../bpk-component-link';
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkGridToggle.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
+
+export interface BpkGridToggleProps {
+  targetContainer?: string;
+  className?: string;
+}
+
+interface BpkGridToggleState {
+  gridEnabled: boolean;
+}
+
+class BpkGridToggle extends Component<
+  BpkGridToggleProps,
+  BpkGridToggleState
+> {
+  constructor(props: BpkGridToggleProps) {
+    super(props);
+
+    this.state = {
+      gridEnabled: false,
+    };
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    const { targetContainer = 'body' } = this.props;
+    document
+      .querySelector(targetContainer)
+      ?.classList.remove(GRID_CLASS_NAME);
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown = (e: KeyboardEvent) => {
+    if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'g') {
+      this.toggleGrid(e);
+    }
+  };
+
+  toggleGrid = (e: MouseEvent | KeyboardEvent) => {
+    const { targetContainer = 'body' } = this.props;
+    e.preventDefault();
+
+    document
+      .querySelector(targetContainer)
+      ?.classList.toggle(GRID_CLASS_NAME);
+
+    this.setState((state) => ({
+      gridEnabled: !state.gridEnabled,
+    }));
+  };
+
+  handleLinkClick = (e: ReactMouseEvent<HTMLButtonElement>) => {
+    this.toggleGrid(e as unknown as MouseEvent);
+  };
+
+  render() {
+    const { className = undefined } = this.props;
+    const { gridEnabled } = this.state;
+    const onOrOff = gridEnabled ? 'off' : 'on';
+
+    return (
+      <span className={className}>
+        <BpkLink
+          as="button"
+          title="Keyboard Shortcut: ctrl + cmd + g"
+          onClick={this.handleLinkClick}
+        >
+          Baseline grid {onOrOff}
+        </BpkLink>
+      </span>
+    );
+  }
+}
+
+export default BpkGridToggle;
