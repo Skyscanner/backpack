@@ -21,12 +21,12 @@ import PropTypes from 'prop-types';
 import { isBefore, isSameDay } from './date-utils';
 
 import type {
-  DateModifiers,
-  DaysOfWeek,
-  ReactComponent,
-  SelectionConfiguration,
-  WeekDay,
-  WeekDayKey,
+  DateModifiers as DateModifiersType,
+  DaysOfWeek as DaysOfWeekType,
+  ReactComponent as ReactComponentType,
+  SelectionConfiguration as SelectionConfigurationType,
+  WeekDay as WeekDayType,
+  WeekDayKey as WeekDayKeyType,
 } from './custom-proptypes';
 
 type DateRangeProps = {
@@ -147,12 +147,12 @@ const BpkCalendarDatePropTypes = {
 };
 
 export type {
-  DateModifiers,
-  DaysOfWeek,
-  ReactComponent,
-  SelectionConfiguration,
-  WeekDay,
-  WeekDayKey,
+  DateModifiersType as DateModifiers,
+  DaysOfWeekType as DaysOfWeek,
+  ReactComponentType as ReactComponent,
+  SelectionConfigurationType as SelectionConfiguration,
+  WeekDayType as WeekDay,
+  WeekDayKeyType as WeekDayKey,
 };
 
 export { CALENDAR_SELECTION_TYPE, BpkCalendarGridPropTypes, BpkCalendarDatePropTypes };
