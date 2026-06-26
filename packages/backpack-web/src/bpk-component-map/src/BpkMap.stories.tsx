@@ -19,6 +19,7 @@
 import type { ReactNode } from 'react';
 import { Component, useRef, useState } from 'react';
 
+// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
 import { action } from 'bpk-storybook-utils';
 
 import BpkMap, {
