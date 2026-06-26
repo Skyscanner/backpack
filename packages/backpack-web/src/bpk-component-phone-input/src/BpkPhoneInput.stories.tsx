@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import { type ChangeEvent, Component } from 'react';
+import { Component } from 'react';
 
 import BpkFieldSet from '../../bpk-component-fieldset';
 import BpkImage from '../../bpk-component-image';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import BpkPhoneInput from './BpkPhoneInput';
 
 import type { Meta } from '@storybook/react';
@@ -70,11 +72,11 @@ class StoryContainer extends Component<
     this.state = { dialingCode: '44_uk', value: '' };
   }
 
-  onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  onChange = (e: any) => {
     this.setState({ value: e.target.value });
   };
 
-  onDialingCodeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+  onDialingCodeChange = (e: any) => {
     this.setState({ dialingCode: e.target.value });
   };
 
