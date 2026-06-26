@@ -18,7 +18,7 @@
 
 import { format } from 'date-fns/format';
 
-import { WeekDay } from '../../bpk-component-calendar';
+import type { WeekDay } from '../../bpk-component-calendar';
 
 export const formatDateFull = (date: Date) => format(date, 'EEEE, do MMMM yyyy');
 export const formatDateFullArabic = (date: Date) => {
