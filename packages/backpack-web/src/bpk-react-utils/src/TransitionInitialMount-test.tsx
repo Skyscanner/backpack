@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { createRef } from 'react';
+
 import { render } from '@testing-library/react';
 
 import TransitionInitialMount from './TransitionInitialMount';
@@ -33,5 +35,35 @@ describe('TransitionInitialMount', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should preserve the child's own ref when injecting nodeRef", () => {
+    // Regression: cloneElement used to overwrite the child ref with nodeRef,
+    // which broke focus trapping in BpkModal/BpkDialog (the dialogRef from
+    // withScrim never fired). See backpack#4701.
+    const callbackRef = jest.fn();
+    const objectRef = createRef<HTMLElement>();
+
+    render(
+      <TransitionInitialMount
+        appearClassName="block--appear"
+        appearActiveClassName="block--appear-active"
+        transitionTimeout={250}
+      >
+        <section ref={callbackRef}>callback ref child</section>
+      </TransitionInitialMount>,
+    );
+    expect(callbackRef).toHaveBeenCalledWith(expect.any(HTMLElement));
+
+    render(
+      <TransitionInitialMount
+        appearClassName="block--appear"
+        appearActiveClassName="block--appear-active"
+        transitionTimeout={250}
+      >
+        <section ref={objectRef}>object ref child</section>
+      </TransitionInitialMount>,
+    );
+    expect(objectRef.current).toBeInstanceOf(HTMLElement);
   });
 });
