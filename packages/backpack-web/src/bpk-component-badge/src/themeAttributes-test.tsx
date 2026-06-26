@@ -16,73 +16,11 @@
  * limitations under the License.
  */
 
-import {
-  themeAttributes,
-  allBadgeThemeAttributes,
-  badgeThemeAttributes,
-  badgeNormalThemeAttributes,
-  badgeWarningThemeAttributes,
-  badgeSuccessThemeAttributes,
-  badgeCriticalThemeAttributes,
-  badgeInverseThemeAttributes,
-  badgeOutlineThemeAttributes,
-  badgeStrongThemeAttributes,
-  badgeBrandThemeAttributes,
-  badgeSubtleThemeAttributes,
-} from '../index';
+import { themeAttributes, allBadgeThemeAttributes, badgeThemeAttributes } from '../index';
 
 describe('badge component themeAttributes', () => {
-  it('should export the correct general theme attributes', () => {
+  it('should export badgeThemeAttributes as an empty array', () => {
     expect(badgeThemeAttributes).toEqual([]);
-  });
-
-  it('should export the correct normal theme attributes', () => {
-    expect(badgeNormalThemeAttributes).toEqual([
-      'privateBadgeColourBgDefault',
-      'privateBadgeDimensionPaddingHorizontalDefault',
-    ]);
-  });
-
-  it('should export the correct warning theme attributes', () => {
-    expect(badgeWarningThemeAttributes).toEqual([
-      'privateBadgeColourBgDefault',
-      'privateBadgeDimensionPaddingHorizontalDefault',
-    ]);
-  });
-
-  it('should export the correct success theme attributes', () => {
-    expect(badgeSuccessThemeAttributes).toEqual([
-      'privateBadgeColourBgDefault',
-      'privateBadgeDimensionPaddingHorizontalDefault',
-    ]);
-  });
-
-  it('should export the correct critical theme attributes', () => {
-    expect(badgeCriticalThemeAttributes).toEqual([
-      'privateBadgeColourBgDefault',
-      'privateBadgeDimensionPaddingHorizontalDefault',
-    ]);
-  });
-
-  it('should export the correct inverse theme attributes', () => {
-    expect(badgeInverseThemeAttributes).toEqual([
-      'privateBadgeColourBgInverse',
-    ]);
-  });
-
-  it('should export the correct outline theme attributes', () => {
-    expect(badgeOutlineThemeAttributes).toEqual([
-      'privateBadgeColourBgOutline',
-      'privateBadgeColourStrokeOutline',
-    ]);
-  });
-
-  it('should export the correct strong theme attributes', () => {
-    expect(badgeStrongThemeAttributes).toEqual([]);
-  });
-
-  it('should export the correct brand theme attributes', () => {
-    expect(badgeBrandThemeAttributes).toEqual([]);
   });
 
   it('should export the deprecated themeAttributes default with the legacy keys', () => {
@@ -90,12 +28,6 @@ describe('badge component themeAttributes', () => {
       'badgeBackgroundColor',
       'badgeSuccessBackgroundColor',
       'badgeDestructiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct subtle theme attributes', () => {
-    expect(badgeSubtleThemeAttributes).toEqual([
-      'privateBadgeColourBgSubtle',
     ]);
   });
 

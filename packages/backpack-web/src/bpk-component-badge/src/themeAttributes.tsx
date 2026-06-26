@@ -18,39 +18,6 @@
 
 export const badgeThemeAttributes: string[] = [];
 
-export const badgeNormalThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'privateBadgeDimensionPaddingHorizontalDefault',
-];
-
-export const badgeWarningThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'privateBadgeDimensionPaddingHorizontalDefault',
-];
-
-export const badgeSuccessThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'privateBadgeDimensionPaddingHorizontalDefault',
-];
-
-export const badgeCriticalThemeAttributes = [
-  'privateBadgeColourBgDefault',
-  'privateBadgeDimensionPaddingHorizontalDefault',
-];
-
-export const badgeInverseThemeAttributes = ['privateBadgeColourBgInverse'];
-
-export const badgeOutlineThemeAttributes = [
-  'privateBadgeColourBgOutline',
-  'privateBadgeColourStrokeOutline',
-];
-
-export const badgeStrongThemeAttributes: string[] = [];
-
-export const badgeBrandThemeAttributes: string[] = [];
-
-export const badgeSubtleThemeAttributes = ['privateBadgeColourBgSubtle'];
-
 /**
  * Combined deduplicated array of all badge private theme attributes.
  * Only exposes component-scoped (private) badge tokens — global semantic vars
