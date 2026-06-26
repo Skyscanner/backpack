@@ -17,6 +17,7 @@
  */
 
 
+// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
 import { action } from 'bpk-storybook-utils';
 
 import BpkButton from '../../bpk-component-button';
@@ -70,7 +71,7 @@ const List = ({ elements }: { elements: any[] }) => (
 const InfiniteList = withInfiniteScroll(List);
 
 class DelayedDataSource extends ArrayDataSource<any> {
-  fetchItems(index: number, nElements: number) {
+  fetchItems(index: number, nElements: number): Promise<any[]> {
     return new Promise((resolve) => {
       setTimeout(() => resolve(super.fetchItems(index, nElements)), 500);
     });
@@ -85,7 +86,7 @@ class InfiniteDataSource extends DataSource<any> {
     this.elements = [];
   }
 
-  fetchItems(index: number, nElements: number) {
+  fetchItems(index: number, nElements: number): Promise<any[]> {
     return new Promise((resolve) => {
       for (let i = index; i < index + nElements; i += 1) {
         this.elements.push(i);
