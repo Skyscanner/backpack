@@ -20,7 +20,9 @@ import type { ReactNode } from 'react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
+// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
 import BpkOverlayView from './BpkOverlayView';
+// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
 import { type LatLong } from './common-types';
 
 type Props = {
