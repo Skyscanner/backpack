@@ -23,8 +23,8 @@ class DataSource<T = any> {
     this.listeners = [];
   }
 
-  /* eslint-disable-next-line no-unused-vars */
-  fetchItems(index: number, nElements: number): Promise<Array<T>> {
+   
+  fetchItems(index: number, nElements: number): Promise<T[]> {
     throw new Error('Not implemented');
   }
 
@@ -45,20 +45,20 @@ class DataSource<T = any> {
     return false;
   }
 
-  triggerListeners = (...args: Array<any>): void => {
+  triggerListeners = (...args: any[]): void => {
     this.listeners.forEach((cb) => cb(...args));
   };
 }
 
 export class ArrayDataSource<T = any> extends DataSource<T> {
-  elements: Array<T>;
+  elements: T[];
 
-  constructor(elementsArray: Array<T>) {
+  constructor(elementsArray: T[]) {
     super();
     this.elements = elementsArray;
   }
 
-  fetchItems(index: number, nElements: number): Promise<Array<T>> {
+  fetchItems(index: number, nElements: number): Promise<T[]> {
     const { elements } = this;
     return new Promise((resolve) => {
       const totalElements = elements.length;
@@ -72,7 +72,7 @@ export class ArrayDataSource<T = any> extends DataSource<T> {
     });
   }
 
-  updateData(newElementsArray: Array<T>) {
+  updateData(newElementsArray: T[]) {
     this.elements = newElementsArray;
     this.triggerListeners();
   }
