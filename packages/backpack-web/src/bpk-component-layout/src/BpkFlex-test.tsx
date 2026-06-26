@@ -61,6 +61,43 @@ describe('BpkFlex', () => {
     expect(container.firstChild).toHaveStyle(`gap: .5rem`);
   });
 
+  it('supports independent rowGap and columnGap props', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          wrap="wrap"
+          rowGap={BpkSpacing.SM}
+          columnGap={BpkSpacing.LG}
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    expect(container.firstChild).toHaveStyle('row-gap: .25rem');
+    expect(container.firstChild).toHaveStyle('column-gap: 1.5rem');
+  });
+
+  it('supports self placement and grid placement props', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          alignSelf="flex-end"
+          justifySelf="center"
+          gridColumn="2 / span 2"
+          gridRow="1"
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    expect(container.firstChild).toHaveStyle('align-self: flex-end');
+    expect(container.firstChild).toHaveStyle('justify-self: center');
+    expect(container.firstChild).toHaveStyle('grid-column: 2/span 2');
+    expect(container.firstChild).toHaveStyle('grid-row: 1');
+  });
+
   it('forwards ref to the underlying DOM element', () => {
     const ref = createRef<HTMLDivElement>();
     render(

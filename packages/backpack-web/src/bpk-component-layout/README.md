@@ -105,6 +105,8 @@ The layout API is intentionally limited and strongly typed. The main groups are:
 
 - **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`:
   - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …) or percentages (e.g. `'50%'`).
+- **Flex gaps** – `BpkFlex` supports `gap`, `rowGap`, and `columnGap` for shared or independent flex row/column spacing.
+  - Values: `BpkSpacing` tokens (`BpkSpacing.SM`, `BpkSpacing.LG`, …) or percentages.
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
 - **Position keyword** – `position`:
@@ -131,12 +133,12 @@ In addition, `BpkBox` forwards through a set of **flexbox and grid layout props*
 
 In addition, `BpkBox` re‑introduces a **minimal interaction and accessibility surface**:
 
-- `onClick`, `onFocus`, `onBlur` – event handlers for interactive container patterns.
+- `onClick`, `onFocus`, `onBlur`, mouse, pointer, and touch handlers such as `onMouseDown`, `onPointerDown`, and `onTouchStart` – event handlers for interactive container patterns.
 - `tabIndex`, `role` – make containers focusable and assign ARIA roles (e.g. `role="region"`, `role="button"`).
 - `id` – useful for `aria-labelledby`/`aria-describedby` cross-references.
 - All `aria-*` props – forwarded directly to the DOM element for full ARIA attribute support.
 
-No other event handlers are exposed on layout components.
+Layout primitives expose this event surface only where the underlying rendered element supports it.
 
 ## Component roles
 
@@ -223,6 +225,33 @@ In particular:
   - **Key structural layout props**: `display`, flex container/item props, and grid container props (via Backpack breakpoint keys).
   - **Not responsive**: `zIndex` (stacking context is not breakpoint-dependent), `id`, `aria-*` attributes.
 - **`BpkGridItem`** placement props like `colSpan/rowSpan` are currently scalar (non-responsive) and should be extended only when needed.
+
+### BpkFlex placement and independent gaps
+
+`BpkFlex` supports independent row and column gaps, plus item placement props used when the flex container itself sits inside a parent flex or grid layout:
+
+```tsx
+<BpkFlex
+  wrap="wrap"
+  rowGap={BpkSpacing.SM}
+  columnGap={BpkSpacing.LG}
+>
+  ...
+</BpkFlex>
+
+<BpkBox display="grid" gridTemplateColumns="repeat(3, 1fr)">
+  <BpkFlex
+    alignSelf="end"
+    justifySelf="stretch"
+    gridColumn="2 / span 2"
+    gridRow="1"
+  >
+    Placed flex item
+  </BpkFlex>
+</BpkBox>
+```
+
+`alignSelf`, `justifySelf`, `gridColumn`, and `gridRow` also support Backpack responsive breakpoint objects.
 
 ## Constraints and design principles
 

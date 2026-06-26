@@ -199,6 +199,12 @@ export interface BpkFlexSpecificProps {
   grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
   shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
   basis?: BpkResponsiveValue<BpkBasisValue>;
+  alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
+  justifySelf?: BpkResponsiveValue<BoxProps['justifySelf']>;
+  gridColumn?: BpkResponsiveValue<GridProps['gridColumn']>;
+  gridRow?: BpkResponsiveValue<GridProps['gridRow']>;
+  rowGap?: BpkResponsiveValue<BpkSpacingValue>;
+  columnGap?: BpkResponsiveValue<BpkSpacingValue>;
   inline?: boolean;
 }
 

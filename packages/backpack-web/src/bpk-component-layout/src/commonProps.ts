@@ -16,7 +16,15 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, ElementType, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type {
+  AriaAttributes,
+  AriaRole,
+  ElementType,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  PointerEventHandler,
+  TouchEventHandler,
+} from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
@@ -106,6 +114,18 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   role?: AriaRole;
   onClick?: MouseEventHandler<HTMLElement>;
   onKeyDown?: KeyboardEventHandler<HTMLElement>;
+  onMouseDown?: MouseEventHandler<HTMLElement>;
+  onMouseUp?: MouseEventHandler<HTMLElement>;
+  onMouseEnter?: MouseEventHandler<HTMLElement>;
+  onMouseLeave?: MouseEventHandler<HTMLElement>;
+  onPointerDown?: PointerEventHandler<HTMLElement>;
+  onPointerUp?: PointerEventHandler<HTMLElement>;
+  onPointerEnter?: PointerEventHandler<HTMLElement>;
+  onPointerLeave?: PointerEventHandler<HTMLElement>;
+  onTouchStart?: TouchEventHandler<HTMLElement>;
+  onTouchMove?: TouchEventHandler<HTMLElement>;
+  onTouchEnd?: TouchEventHandler<HTMLElement>;
+  onTouchCancel?: TouchEventHandler<HTMLElement>;
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;
