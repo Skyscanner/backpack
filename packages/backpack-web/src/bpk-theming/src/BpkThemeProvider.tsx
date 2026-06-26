@@ -27,10 +27,10 @@ export type Props = {
   component?: ElementType;
   style?: CSSProperties | null;
   theme?: Theme | null;
-  themeAttributes: Array<string | string[]>;
+  themeAttributes: ReadonlyArray<string | string[]>;
 } & Record<string, unknown>;
 
-const uniq = (arr: Array<string | string[]> = []): Array<string | string[]> => {
+const uniq = (arr: ReadonlyArray<string | string[]> = []): ReadonlyArray<string | string[]> => {
   const seen = new Set<string>();
   return arr.filter((item) => {
     const key = Array.isArray(item) ? JSON.stringify(item) : item;
@@ -44,7 +44,7 @@ const uniq = (arr: Array<string | string[]> = []): Array<string | string[]> => {
 
 const createStyle = (
   theme: Theme | null | undefined,
-  themeAttributes: Array<string | string[]>,
+  themeAttributes: ReadonlyArray<string | string[]>,
 ): Record<string, string> => {
   if (!theme) {
     return {};
