@@ -16,9 +16,9 @@
  * limitations under the License.
  */
 
-import type { Meta, StoryObj } from '@storybook/react';
-
 import BpkGridToggle from './BpkGridToggle';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const DefaultExample = () => <BpkGridToggle />;
 
