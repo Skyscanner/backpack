@@ -24,6 +24,13 @@ import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
+import {
+  BpkFlex,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
 
@@ -209,35 +216,33 @@ const BadgeRow = ({
 };
 
 const ThemedExample = () => (
-  <div className={getClassName('bpk-badge-layout__themed-grid')}>
-    <div className={getClassName('bpk-badge-layout__themed-col')}>
-      <div className={getClassName('bpk-badge-layout__themed-col-label')}>
-        Default
-      </div>
-      {ALL_BADGE_ROWS.map((row) => (
-        <BadgeRow key={row.label} {...row} />
-      ))}
-    </div>
-    <BpkThemeProvider
-      theme={{
-        privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
-        privateBadgeDimensionPaddingHorizontalDefault: '0',
-      }}
-      themeAttributes={[
-        'privateBadgeColourBgDefault',
-        'privateBadgeDimensionPaddingHorizontalDefault',
-      ]}
-    >
-      <div className={getClassName('bpk-badge-layout__themed-col')}>
-        <div className={getClassName('bpk-badge-layout__themed-col-label')}>
-          Themed
-        </div>
+  <BpkProvider>
+    <BpkFlex gap={BpkSpacing.XL}>
+      <BpkVStack gap={BpkSpacing.SM}>
+        <BpkText textStyle={TEXT_STYLES.caption}>Default</BpkText>
         {ALL_BADGE_ROWS.map((row) => (
           <BadgeRow key={row.label} {...row} />
         ))}
-      </div>
-    </BpkThemeProvider>
-  </div>
+      </BpkVStack>
+      <BpkThemeProvider
+        theme={{
+          privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
+          privateBadgeDimensionPaddingHorizontalDefault: '0',
+        }}
+        themeAttributes={[
+          'privateBadgeColourBgDefault',
+          'privateBadgeDimensionPaddingHorizontalDefault',
+        ]}
+      >
+        <BpkVStack gap={BpkSpacing.SM}>
+          <BpkText textStyle={TEXT_STYLES.caption}>Themed</BpkText>
+          {ALL_BADGE_ROWS.map((row) => (
+            <BadgeRow key={row.label} {...row} />
+          ))}
+        </BpkVStack>
+      </BpkThemeProvider>
+    </BpkFlex>
+  </BpkProvider>
 );
 
 const MixedExample = () => (
