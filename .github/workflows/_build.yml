@@ -125,22 +125,11 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
 
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Override React to 19.2.5
-        run: |
-          node -e "
-            const fs = require('fs');
-            const pkg = JSON.parse(fs.readFileSync('package.json'));
-            pkg.pnpm = pkg.pnpm || {};
-            pkg.pnpm.overrides = {
-              ...pkg.pnpm.overrides,
-              'react': '19.2.5',
-              'react-dom': '19.2.5',
-              '@types/react': '19.0.14',
-              '@types/react-dom': '19.0.6',
-            };
-            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
-          "
-          pnpm install --no-frozen-lockfile
+        run: pnpm add -w react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19.0.6 @types/prop-types @types/react-transition-group@4.4.12
 
       - name: Generate component code (icons, flare, spinners)
         run: npx nx run backpack-web:generate-svgs
