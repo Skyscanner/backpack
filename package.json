@@ -96,7 +96,7 @@
     ],
     "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",
     "transformIgnorePatterns": [
-      "node_modules/(?!(.pnpm|bpk|@skyscanner|d3-.*|internmap))"
+      "node_modules/(?!\\.pnpm|bpk|@skyscanner|d3-.*|internmap)"
     ],
     "verbose": true
   },
