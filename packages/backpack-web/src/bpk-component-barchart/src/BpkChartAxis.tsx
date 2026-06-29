@@ -66,7 +66,7 @@ const getAxisConfig = ({
   scale: Scale;
   width: number;
 }): AxisConfig => {
-  const position = scale.bandwidth ? center(scale) : identity;
+  const position = scale.bandwidth ? center(scale) : (d: unknown) => scale(d as number);
 
   if (orientation === ORIENTATION_X) {
     return {

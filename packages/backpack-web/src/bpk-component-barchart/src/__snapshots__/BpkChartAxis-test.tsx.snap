@@ -184,7 +184,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
       transform="translate(0, 120)"
     >
       <g
-        transform="translate(50, 0)"
+        transform="translate(18.947368421052634, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -195,7 +195,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(100, 0)"
+        transform="translate(40, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -206,7 +206,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(150, 0)"
+        transform="translate(61.05263157894737, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -217,7 +217,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(200, 0)"
+        transform="translate(82.10526315789474, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -228,7 +228,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(250, 0)"
+        transform="translate(103.15789473684211, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -239,7 +239,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(300, 0)"
+        transform="translate(124.21052631578948, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -250,7 +250,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(350, 0)"
+        transform="translate(145.26315789473685, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -261,7 +261,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(400, 0)"
+        transform="translate(166.31578947368422, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -272,7 +272,7 @@ exports[`BpkChartAxis X should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(450, 0)"
+        transform="translate(187.3684210526316, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -297,7 +297,7 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
       transform="translate(0, 120)"
     >
       <g
-        transform="translate(200, 0)"
+        transform="translate(82.10526315789474, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -308,7 +308,7 @@ exports[`BpkChartAxis X should render linear scale with "numTicks" attribute 1`]
         </text>
       </g>
       <g
-        transform="translate(400, 0)"
+        transform="translate(166.31578947368422, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -333,7 +333,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
       transform="translate(0, 120)"
     >
       <g
-        transform="translate(50, 0)"
+        transform="translate(18.947368421052634, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -344,7 +344,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(100, 0)"
+        transform="translate(40, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -355,7 +355,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(150, 0)"
+        transform="translate(61.05263157894737, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -366,7 +366,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(200, 0)"
+        transform="translate(82.10526315789474, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -377,7 +377,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(250, 0)"
+        transform="translate(103.15789473684211, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -388,7 +388,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(300, 0)"
+        transform="translate(124.21052631578948, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -399,7 +399,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(350, 0)"
+        transform="translate(145.26315789473685, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -410,7 +410,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(400, 0)"
+        transform="translate(166.31578947368422, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -421,7 +421,7 @@ exports[`BpkChartAxis X should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(450, 0)"
+        transform="translate(187.3684210526316, 0)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -640,7 +640,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
       transform="translate(0, 0)"
     >
       <g
-        transform="translate(0, 50)"
+        transform="translate(0, 18.947368421052634)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -652,7 +652,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 100)"
+        transform="translate(0, 40)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -664,7 +664,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 150)"
+        transform="translate(0, 61.05263157894737)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -676,7 +676,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 200)"
+        transform="translate(0, 82.10526315789474)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -688,7 +688,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 250)"
+        transform="translate(0, 103.15789473684211)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -700,7 +700,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 300)"
+        transform="translate(0, 124.21052631578948)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -712,7 +712,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 350)"
+        transform="translate(0, 145.26315789473685)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -724,7 +724,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 400)"
+        transform="translate(0, 166.31578947368422)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -736,7 +736,7 @@ exports[`BpkChartAxis Y should render linear scale 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 450)"
+        transform="translate(0, 187.3684210526316)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -762,7 +762,7 @@ exports[`BpkChartAxis Y should render linear scale with "numTicks" attribute 1`]
       transform="translate(0, 0)"
     >
       <g
-        transform="translate(0, 200)"
+        transform="translate(0, 82.10526315789474)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -774,7 +774,7 @@ exports[`BpkChartAxis Y should render linear scale with "numTicks" attribute 1`]
         </text>
       </g>
       <g
-        transform="translate(0, 400)"
+        transform="translate(0, 166.31578947368422)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -800,7 +800,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
       transform="translate(0, 0)"
     >
       <g
-        transform="translate(0, 50)"
+        transform="translate(0, 18.947368421052634)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -812,7 +812,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 100)"
+        transform="translate(0, 40)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -824,7 +824,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 150)"
+        transform="translate(0, 61.05263157894737)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -836,7 +836,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 200)"
+        transform="translate(0, 82.10526315789474)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -848,7 +848,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 250)"
+        transform="translate(0, 103.15789473684211)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -860,7 +860,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 300)"
+        transform="translate(0, 124.21052631578948)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -872,7 +872,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 350)"
+        transform="translate(0, 145.26315789473685)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -884,7 +884,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 400)"
+        transform="translate(0, 166.31578947368422)"
       >
         <text
           class="bpk-chart__axis-tick-text"
@@ -896,7 +896,7 @@ exports[`BpkChartAxis Y should render with label 1`] = `
         </text>
       </g>
       <g
-        transform="translate(0, 450)"
+        transform="translate(0, 187.3684210526316)"
       >
         <text
           class="bpk-chart__axis-tick-text"
