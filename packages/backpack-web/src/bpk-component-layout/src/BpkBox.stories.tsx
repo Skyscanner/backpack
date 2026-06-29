@@ -124,26 +124,42 @@ const PositionExample = () => (
 );
 
 /**
- * Interactive props example – demonstrates tabIndex, role, and onClick on BpkBox.
+ * Interactive props example – demonstrates keyboard, mouse, pointer, and touch event props on BpkBox.
  *
- * @returns {JSX.Element} A clickable region using role, tabIndex, and onClick.
+ * @returns {JSX.Element} An interactive region using common event handler props.
  */
 const InteractiveExample = () => {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount((c) => c + 1);
+  const [counts, setCounts] = useState({
+    click: 0,
+    mouseDown: 0,
+    pointerDown: 0,
+    touchStart: 0,
+  });
+  const increment = (eventName: keyof typeof counts) => {
+    setCounts((currentCounts) => ({
+      ...currentCounts,
+      [eventName]: currentCounts[eventName] + 1,
+    }));
+  };
+
   return (
     <LayoutWrapper>
       <BpkBox
         padding={BpkSpacing.MD}
         role="button"
         tabIndex={0}
-        onClick={increment}
+        onClick={() => increment('click')}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') increment();
+          if (e.key === 'Enter' || e.key === ' ') {
+            increment('click');
+          }
         }}
+        onMouseDown={() => increment('mouseDown')}
+        onPointerDown={() => increment('pointerDown')}
+        onTouchStart={() => increment('touchStart')}
       >
         <BpkText>
-          Clicked {count} times (role=&quot;button&quot;, tabIndex=0)
+          Click: {counts.click}; mouseDown: {counts.mouseDown}; pointerDown: {counts.pointerDown}; touchStart: {counts.touchStart}
         </BpkText>
       </BpkBox>
     </LayoutWrapper>
@@ -682,4 +698,3 @@ const DirExample = () => (
 export const Dir = {
   render: () => <DirExample />,
 };
-
