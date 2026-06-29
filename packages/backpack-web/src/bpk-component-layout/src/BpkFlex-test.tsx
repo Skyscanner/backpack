@@ -92,10 +92,12 @@ describe('BpkFlex', () => {
       </BpkProvider>,
     );
 
-    expect(container.firstChild).toHaveStyle('align-self: flex-end');
-    expect(container.firstChild).toHaveStyle('justify-self: center');
-    expect(container.firstChild).toHaveStyle('grid-column: 2/span 2');
-    expect(container.firstChild).toHaveStyle('grid-row: 1');
+    const element = container.firstChild as HTMLElement;
+
+    expect(element).toHaveStyle('align-self: flex-end');
+    expect(element).toHaveStyle('justify-self: center');
+    expect(element).toHaveStyle('grid-row: 1');
+    expect(getComputedStyle(element).gridColumn.replace(/\s/g, '')).toBe('2/span2');
   });
 
   it('forwards ref to the underlying DOM element', () => {
