@@ -10,10 +10,12 @@ adoption rate.
 - uses: actions/checkout@v6
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
+  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
   with:
     dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
 ```
+
+Replace `v1.0.0` with the immutable release tag you want to pin.
 
 The action transparently fetches the PR base commit on demand, so the default
 shallow `actions/checkout` is enough. If your runner blocks single-commit
@@ -82,11 +84,11 @@ data stays in the GitHub step summary and action internals.
 - uses: actions/checkout@v6
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1
+  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
 
 - name: Upload Backpack adoption metrics to Cortex
   if: github.ref == 'refs/heads/main'
-  uses: Skyscanner/push-custom-cortex-data@v1
+  uses: Skyscanner/push-custom-cortex-data@v0.0.4
   with:
     webhook-uuid: ${{ secrets.BACKPACK_ADOPTION_CORTEX_WEBHOOK_UUID }}
     cortex-entity: <your-cortex-entity>
@@ -131,3 +133,24 @@ The generated `dist/` directory is ignored by git. Any ref used directly as a
 GitHub JavaScript action must still contain the generated bundle because
 `action.yml` runs `dist/index.js`; keep that packaging step separate from normal
 source changes.
+
+## Releasing
+
+Use the `Backpack Adoption Guard Release` workflow and choose the semver bump
+type:
+
+| Release type | Use when |
+| --- | --- |
+| `patch` | Fixing bugs or release packaging without changing consumer-facing behaviour. |
+| `minor` | Adding backwards-compatible optional inputs, outputs, or reporting. |
+| `major` | Changing defaults, guard pass/fail behaviour, inputs, or the results JSON schema. |
+
+> **Migration**: The floating `backpack-adoption-guard/v1` major tag is no
+> longer updated. Pin to an immutable tag such as
+> `backpack-adoption-guard/v1.0.0` or newer.
+
+The workflow calculates the next immutable
+`backpack-adoption-guard/vMAJOR.MINOR.PATCH` tag from existing release tags. It
+builds `dist/` into a tag-only release commit so generated bundles stay out of
+`main`. Only workflow runs dispatched from the `main` branch can create release
+tags; runs from other branches validate, lint, test, and build only.
