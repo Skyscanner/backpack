@@ -36,6 +36,10 @@
   &[data-disabled] {
     cursor: not-allowed;
   }
+
+  &--full-width {
+    width: 100%;
+  }
 }
 
 // Control — the visual 20×20 checkbox box

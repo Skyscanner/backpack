@@ -35,6 +35,7 @@ export type BpkCheckboxV2RootProps = {
   'data-testid'?: string;
   defaultChecked?: BpkCheckboxV2CheckedState;
   disabled?: boolean;
+  fullWidth?: boolean;
   id?: string;
   invalid?: boolean;
   name?: string;
@@ -51,6 +52,7 @@ const BpkCheckboxV2Root = forwardRef<HTMLLabelElement, BpkCheckboxV2RootProps>(
       'data-testid': dataTestId,
       defaultChecked,
       disabled = false,
+      fullWidth = false,
       id,
       invalid = false,
       name,
@@ -62,7 +64,9 @@ const BpkCheckboxV2Root = forwardRef<HTMLLabelElement, BpkCheckboxV2RootProps>(
   ) => (
     <Checkbox.Root
       ref={ref}
-      className={getClassName('bpk-checkbox-v2')}
+      className={getClassName('bpk-checkbox-v2', {
+        'bpk-checkbox-v2--full-width': fullWidth,
+      })}
       checked={checked}
       data-testid={dataTestId}
       defaultChecked={defaultChecked}

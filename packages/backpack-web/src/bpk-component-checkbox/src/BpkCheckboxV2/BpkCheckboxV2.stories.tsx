@@ -238,6 +238,41 @@ const ComposedHertzExample = () => (
   </BpkProvider>
 );
 
+const FullWidthExample = () => (
+  <BpkProvider>
+    <div style={{ width: '300px', border: '1px dashed #ccc', padding: '16px' }}>
+      <BpkFlex direction="column" gap={BpkSpacing.Base}>
+        <BpkCheckboxV2.Root fullWidth>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>Stretch to container width</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Root fullWidth defaultChecked>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkFlex direction="column">
+            <BpkCheckboxV2.Label>Price alerts</BpkCheckboxV2.Label>
+            <BpkCheckboxV2.Description>
+              We&apos;ll email you about price drops.
+            </BpkCheckboxV2.Description>
+          </BpkFlex>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
+        <BpkCheckboxV2.Root fullWidth disabled>
+          <BpkCheckboxV2.Control>
+            <BpkCheckboxV2.Indicator />
+          </BpkCheckboxV2.Control>
+          <BpkCheckboxV2.Label>Disabled full-width</BpkCheckboxV2.Label>
+          <BpkCheckboxV2.HiddenInput />
+        </BpkCheckboxV2.Root>
+      </BpkFlex>
+    </div>
+  </BpkProvider>
+);
+
 const MixedExample = () => (
   <BpkProvider>
     <BpkFlex gap={BpkSpacing.Base} direction="column">
@@ -250,6 +285,7 @@ const MixedExample = () => (
       <IndeterminateExample />
       <InvalidExample />
       <ThemedExample />
+      <FullWidthExample />
     </BpkFlex>
   </BpkProvider>
 );
@@ -306,6 +342,10 @@ export const ComposedHertz = {
 
 export const InsideDrawer = {
   render: () => <InsideDrawerExample />,
+};
+
+export const FullWidth = {
+  render: () => <FullWidthExample />,
 };
 
 export const VisualTest = {
