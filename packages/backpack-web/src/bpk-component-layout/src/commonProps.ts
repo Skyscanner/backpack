@@ -114,6 +114,7 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   role?: AriaRole;
   onClick?: MouseEventHandler<HTMLElement>;
   onKeyDown?: KeyboardEventHandler<HTMLElement>;
+  onKeyUp?: KeyboardEventHandler<HTMLElement>;
   onMouseDown?: MouseEventHandler<HTMLElement>;
   onMouseUp?: MouseEventHandler<HTMLElement>;
   onMouseEnter?: MouseEventHandler<HTMLElement>;
