@@ -15,7 +15,6 @@
 !/packages/backpack-web/src/bpk-component-icon/src
 !/packages/backpack-web/src/bpk-component-icon/scripts
 node_modules
-npm-debug.*
 pnpm-debug.log*
 yarn.lock
 
