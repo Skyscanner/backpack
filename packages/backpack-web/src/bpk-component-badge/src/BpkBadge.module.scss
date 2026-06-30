@@ -64,4 +64,8 @@
   &--brand {
     @include badges.bpk-badge--brand;
   }
+
+  &--subtle {
+    @include badges.bpk-badge--subtle;
+  }
 }
