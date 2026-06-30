@@ -486,3 +486,4 @@ export const VisualTestRangeWithZoom = {
     zoomEnabled: true,
   },
 };
+
