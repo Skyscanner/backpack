@@ -30,6 +30,7 @@ export const allBadgeThemeAttributes = [
   'privateBadgeColourBgOutline',
   'privateBadgeColourStrokeOutline',
   'privateBadgeColourBgSubtle',
+  'privateBadgeDimensionPaddingHorizontalSubtle',
 ];
 
 /**
