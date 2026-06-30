@@ -347,12 +347,17 @@ AnnotatedDateComponent.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
 };
 
-// Multi-city scenario: leg 1 = Apr 5 (outbound), leg 2 = Apr 12 (connection).
+// Multi-city scenario: leg 1 = 5th (outbound), leg 2 = 12th (connection).
 // The calendar is open for leg 3 — legs 1 & 2 dates show the inset ring as
-// context, leg 3's selected date (Apr 20) shows the filled selection style.
-const MULTI_CITY_LEG_DATES = [new Date(2020, 3, 5), new Date(2020, 3, 12)];
+// context, leg 3's selected date (20th) shows the filled selection style.
+const TODAY = new Date();
+const MULTI_CITY_MIN_DATE = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
+const MULTI_CITY_LEG1 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 5);
+const MULTI_CITY_LEG2 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 12);
+const MULTI_CITY_LEG3 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 20);
+
 const isOtherLegDate = (date) =>
-  MULTI_CITY_LEG_DATES.some((d) => d.toDateString() === date.toDateString());
+  [MULTI_CITY_LEG1, MULTI_CITY_LEG2].some((d) => d.toDateString() === date.toDateString());
 
 const MultiCityDateComponent = ({ date, ...rest }) => (
   <BpkCalendarDateComponent {...rest} date={date} isAnnotated={isOtherLegDate(date)} />
@@ -380,10 +385,12 @@ const MultiCityAnnotatedDatesExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    minDate={new Date(2020, 3, 1)}
+    minDate={MULTI_CITY_MIN_DATE}
+    initiallyFocusedDate={MULTI_CITY_LEG3}
+    preventKeyboardFocus
     selectionConfiguration={{
       type: CALENDAR_SELECTION_TYPE.single,
-      date: new Date(2020, 3, 20),
+      date: MULTI_CITY_LEG3,
     }}
   />
 );
