@@ -253,6 +253,8 @@ In particular:
 
 `alignSelf`, `justifySelf`, `gridColumn`, and `gridRow` also support Backpack responsive breakpoint objects.
 
+> **Note:** `justifySelf`, `gridColumn`, and `gridRow` only take effect when `BpkFlex` is a child of a **grid** parent. In a flex parent, `justify-self`/`grid-*` are ignored by CSS (main-axis alignment there is controlled by the parent's `justify` or a child `margin: auto`). `alignSelf` works in both flex and grid parents. These props mirror the equivalent `BpkBox` placement props.
+
 ## Constraints and design principles
 
 To keep layout predictable, performant and consistent with Backpack:

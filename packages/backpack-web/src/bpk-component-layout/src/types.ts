@@ -201,8 +201,8 @@ export interface BpkFlexSpecificProps {
   basis?: BpkResponsiveValue<BpkBasisValue>;
   alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
   justifySelf?: BpkResponsiveValue<BoxProps['justifySelf']>;
-  gridColumn?: BpkResponsiveValue<GridProps['gridColumn']>;
-  gridRow?: BpkResponsiveValue<GridProps['gridRow']>;
+  gridColumn?: BpkResponsiveValue<BoxProps['gridColumn']>;
+  gridRow?: BpkResponsiveValue<BoxProps['gridRow']>;
   rowGap?: BpkResponsiveValue<BpkSpacingValue>;
   columnGap?: BpkResponsiveValue<BpkSpacingValue>;
   inline?: boolean;

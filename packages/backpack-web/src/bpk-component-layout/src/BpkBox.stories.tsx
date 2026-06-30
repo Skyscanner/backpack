@@ -150,16 +150,7 @@ const InteractiveExample = () => {
         tabIndex={0}
         onClick={() => increment('click')}
         onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            increment('click');
-          }
-          if (e.key === ' ') {
-            e.preventDefault();
-          }
-        }}
-        onKeyUp={(e) => {
-          if (e.key === ' ') {
-            e.preventDefault();
+          if (e.key === 'Enter' || e.key === ' ') {
             increment('click');
           }
         }}
