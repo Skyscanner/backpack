@@ -38,7 +38,7 @@ automatically with the active theme, but components need to opt in by using `var
 | `packages/backpack-web/src/bpk-stylesheets/theme-backpack-dark.css` | Dark theme CSS vars (same names, different values) |
 | `packages/backpack-web/src/bpk-stylesheets/primitives.css` | Global primitive vars (`--bpk-spacing-*`, `--bpk-radius-*`, `--bpk-border-*`) |
 | `src/bpk-component-{name}/src/themeAttributes.tsx` | Declares keys BpkThemeProvider injects as inline CSS vars |
-| `src/bpk-component-{name}/src/BpkBadge.stories.tsx` | Themed story examples — must use new key names |
+| `src/bpk-component-{name}/src/{component}.stories.tsx` | Themed story examples — must use new key names |
 | `src/bpk-component-{name}/src/themeAttributes-test.tsx` | Tests for exported themeAttribute arrays |
 
 ## Solution
