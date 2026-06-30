@@ -587,7 +587,7 @@ Bpk[ComponentName].tsx             | 100 | 100 | 100 | 100 |
 
 **Solution:** For new components, this is expected on first run:
 ```bash
-ppnpm run jest -- packages/backpack-web/src/bpk-component-[name] -u
+pnpm run jest -- packages/backpack-web/src/bpk-component-[name] -u
 # Updates snapshots, then re-run to verify they pass
 ```
 
