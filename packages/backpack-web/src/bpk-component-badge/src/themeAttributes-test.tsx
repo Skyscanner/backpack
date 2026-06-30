@@ -39,6 +39,7 @@ describe('badge component themeAttributes', () => {
       'privateBadgeColourBgOutline',
       'privateBadgeColourStrokeOutline',
       'privateBadgeColourBgSubtle',
+      'privateBadgeDimensionPaddingHorizontalSubtle',
     ]);
   });
 });
