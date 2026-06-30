@@ -56,7 +56,9 @@ const BpkChartGridLines = ({
     : (scale.domain() as unknown[]).filter(
         (_tick, i) => (i - tickOffset) % tickEvery === 0,
       );
-  const position = scale.bandwidth ? center(scale) : identity;
+  const position = scale.bandwidth
+    ? center(scale)
+    : (tick: unknown) => scale(tick);
 
   const lineProps = (tick: any) => {
     const value = position(tick);
