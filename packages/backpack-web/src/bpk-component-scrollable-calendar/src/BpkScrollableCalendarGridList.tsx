@@ -100,7 +100,7 @@ const BpkScrollableCalendarGridList = (props: Props) => {
 
   const months = useMemo(
     () => getMonthsArray(startDate, monthsCount),
-    [minDate, monthsCount],
+    [startDate, monthsCount],
   );
 
   const monthItemHeights = useMemo(
