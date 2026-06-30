@@ -128,7 +128,11 @@ const PositionExample = () => (
  *
  * @returns {JSX.Element} An interactive region using common event handler props.
  */
-const InteractiveExample = () => {
+const InteractiveExample = ({
+  showEventCounts = true,
+}: {
+  showEventCounts?: boolean;
+}) => {
   const [counts, setCounts] = useState({
     click: 0,
     mouseDown: 0,
@@ -159,7 +163,9 @@ const InteractiveExample = () => {
         onTouchStart={() => increment('touchStart')}
       >
         <BpkText>
-          Click: {counts.click}; mouseDown: {counts.mouseDown}; pointerDown: {counts.pointerDown}; touchStart: {counts.touchStart}
+          {showEventCounts
+            ? `Click: ${counts.click}; mouseDown: ${counts.mouseDown}; pointerDown: ${counts.pointerDown}; touchStart: ${counts.touchStart}`
+            : `Clicked ${counts.click} times (role="button", tabIndex=0)`}
         </BpkText>
       </BpkBox>
     </LayoutWrapper>
@@ -455,7 +461,7 @@ const MixedExample = () => (
     <OverflowExample />
     <ZIndexExample />
     <AccessibilityExample />
-    <InteractiveExample />
+    <InteractiveExample showEventCounts={false} />
     <TextStyleExample />
     <BackgroundColorExample />
   </LayoutWrapper>
