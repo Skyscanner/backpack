@@ -345,6 +345,40 @@ AnnotatedDateComponent.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
 };
 
+// Multi-city scenario: 3 legs, each leg's selected date shown as an annotated ring.
+// Leg 1 = Apr 5 (outbound), Leg 2 = Apr 12 (connection), Leg 3 = Apr 20 (return).
+// The calendar is currently open for leg 3 — legs 1 & 2 dates show the inset ring
+// as context while leg 3's selected date shows the filled selection style.
+const MULTI_CITY_LEG_DATES = [new Date(2020, 3, 5), new Date(2020, 3, 12)];
+const isOtherLegDate = (date) =>
+  MULTI_CITY_LEG_DATES.some((d) => d.toDateString() === date.toDateString());
+
+const MultiCityDateComponent = ({ date, ...rest }) => (
+  <BpkCalendarDateComponent {...rest} date={date} isAnnotated={isOtherLegDate(date)} />
+);
+MultiCityDateComponent.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+};
+
+const MultiCityAnnotatedDatesExample = () => (
+  <CalendarContainer
+    minDate={new Date(2020, 3, 1)}
+    id="multiCityCalendar"
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    DateComponent={MultiCityDateComponent}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(2020, 3, 20),
+    }}
+  />
+);
+
 // Simulates a multi-city picker: dates from other legs are annotated with an
 // inset accent ring so the user can see them at a glance without being able to
 // confuse them with the current selection.
@@ -430,6 +464,8 @@ export const CustomComposedCalendar = { render: () => <CustomComposedCalendarExa
 export const CustomComposedCalendarSafariDstBug = { render: () => <CustomComposedCalendarSafariBugExample /> };
 
 export const CalendarAnnotatedDates = { render: () => <AnnotatedDatesExample /> };
+
+export const CalendarMultiCityAnnotatedDates = { render: () => <MultiCityAnnotatedDatesExample /> };
 
 export const Week = { render: () => <WeekExample /> };
 
