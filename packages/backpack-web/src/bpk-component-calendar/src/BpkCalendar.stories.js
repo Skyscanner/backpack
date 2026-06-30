@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
+
 import { addMonths } from 'date-fns/addMonths';
 import { startOfDay } from 'date-fns/startOfDay';
 
@@ -332,6 +334,39 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
+const LEG_ONE_DATES = [new Date(2020, 3, 10), new Date(2020, 3, 17)];
+const isLegOneDate = (date) =>
+  LEG_ONE_DATES.some((d) => d.toDateString() === date.toDateString());
+
+const AnnotatedDateComponent = ({ date, ...rest }) => (
+  <BpkCalendarDateComponent {...rest} date={date} isAnnotated={isLegOneDate(date)} />
+);
+AnnotatedDateComponent.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+};
+
+// Simulates a multi-city picker: dates from other legs are annotated with an
+// inset accent ring so the user can see them at a glance without being able to
+// confuse them with the current selection.
+const AnnotatedDatesExample = () => (
+  <CalendarContainer
+    minDate={new Date(2020, 3, 1)}
+    id="myCalendar"
+    formatMonth={formatMonth}
+    formatDateFull={formatDateFull}
+    daysOfWeek={weekDays}
+    weekStartsOn={1}
+    changeMonthLabel="Change month"
+    previousMonthLabel="Go to previous month"
+    nextMonthLabel="Go to next month"
+    DateComponent={AnnotatedDateComponent}
+    selectionConfiguration={{
+      type: CALENDAR_SELECTION_TYPE.single,
+      date: new Date(2020, 3, 25),
+    }}
+  />
+);
+
 const RangeDateCalendarExample = () => (
   <CalendarContainer
     minDate={new Date(2020, 3, 1)}
@@ -393,6 +428,8 @@ export const CalendarDontMarkOutsideDays = { render: () => <MarkOutsideDaysFalse
 export const CustomComposedCalendar = { render: () => <CustomComposedCalendarExample /> };
 
 export const CustomComposedCalendarSafariDstBug = { render: () => <CustomComposedCalendarSafariBugExample /> };
+
+export const CalendarAnnotatedDates = { render: () => <AnnotatedDatesExample /> };
 
 export const Week = { render: () => <WeekExample /> };
 
