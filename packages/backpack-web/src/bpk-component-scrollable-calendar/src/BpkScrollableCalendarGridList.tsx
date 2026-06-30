@@ -19,7 +19,7 @@
 import { useRef, useState, useMemo, useEffect } from 'react';
 import type { ElementType, ReactNode } from 'react';
 
-import { startOfDay, startOfMonth } from 'date-fns';
+import { isBefore, startOfDay, startOfMonth } from 'date-fns';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { VariableSizeList as List } from 'react-window';
 
@@ -62,6 +62,10 @@ type Props = Partial<BpkCalendarGridProps> & {
    * Sets the height of month rows in 'rem' units. If not specified, the default value of `2.75rem` will be used.
    */
   customRowHeight?: number;
+  /**
+   * When set to a date earlier than minDate, extends the scrollable/rendered range back to this date while keeping minDate as the selection boundary.
+   */
+  minScrollable?: Date;
 };
 
 const BpkScrollableCalendarGridList = (props: Props) => {
@@ -70,12 +74,14 @@ const BpkScrollableCalendarGridList = (props: Props) => {
     customRowHeight = 2.75,
     focusedDate = null,
     minDate,
+    minScrollable,
     selectionConfiguration,
     ...rest
   } = props;
   const listRef = useRef(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
-  const startDate = startOfDay(startOfMonth(minDate));
+  const scrollAnchor = minScrollable && isBefore(minScrollable, minDate) ? minScrollable : minDate;
+  const startDate = startOfDay(startOfMonth(scrollAnchor));
   const endDate = startOfDay(startOfMonth(rest.maxDate));
   const monthsCount = DateUtils.differenceInCalendarMonths(endDate, startDate);
 
