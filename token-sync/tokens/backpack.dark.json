@@ -647,6 +647,9 @@
     "line-onContrast": {
       "$value": "{Alpha.White Alpha 20}"
     },
+    "line-subtle": {
+      "$value": "{Alpha.White Alpha 10}"
+    },
     "$type": "color"
   },
   "Status": {
@@ -862,7 +865,7 @@
       },
       "$type": "dimension"
     },
-    "Style": {
+    "Weight": {
       "Body": {
         "$value": 400
       },
