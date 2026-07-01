@@ -61,6 +61,45 @@ describe('BpkFlex', () => {
     expect(container.firstChild).toHaveStyle(`gap: .5rem`);
   });
 
+  it('supports independent rowGap and columnGap props', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          wrap="wrap"
+          rowGap={BpkSpacing.SM}
+          columnGap={BpkSpacing.LG}
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    expect(container.firstChild).toHaveStyle('row-gap: .25rem');
+    expect(container.firstChild).toHaveStyle('column-gap: 1.5rem');
+  });
+
+  it('supports self placement and grid placement props', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          alignSelf="flex-end"
+          justifySelf="center"
+          gridColumn="2 / span 2"
+          gridRow="1"
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    const element = container.firstChild as HTMLElement;
+
+    expect(element).toHaveStyle('align-self: flex-end');
+    expect(element).toHaveStyle('justify-self: center');
+    expect(element).toHaveStyle('grid-row: 1');
+    expect(getComputedStyle(element).gridColumn.replace(/\s/g, '')).toBe('2/span2');
+  });
+
   it('forwards ref to the underlying DOM element', () => {
     const ref = createRef<HTMLDivElement>();
     render(
@@ -111,6 +150,25 @@ describe('BpkFlex', () => {
     );
     fireEvent.keyDown(getByText('Interactive'), { key: 'Enter' });
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onFocus and onBlur', () => {
+    const handleFocus = jest.fn();
+    const handleBlur = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex tabIndex={0} onFocus={handleFocus} onBlur={handleBlur}>
+          Focusable
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    const element = getByText('Focusable');
+
+    fireEvent.focus(element);
+    expect(handleFocus).toHaveBeenCalledTimes(1);
+
+    fireEvent.blur(element);
+    expect(handleBlur).toHaveBeenCalledTimes(1);
   });
 
   it('renders when textStyle is provided', () => {

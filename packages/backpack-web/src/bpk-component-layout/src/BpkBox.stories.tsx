@@ -124,26 +124,58 @@ const PositionExample = () => (
 );
 
 /**
- * Interactive props example – demonstrates tabIndex, role, and onClick on BpkBox.
+ * Interactive props example – demonstrates keyboard, focus, mouse, pointer, and touch event props on BpkBox.
  *
- * @returns {JSX.Element} A clickable region using role, tabIndex, and onClick.
+ * @returns {JSX.Element} An interactive region using common event handler props.
  */
-const InteractiveExample = () => {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount((c) => c + 1);
+const InteractiveExample = ({
+  showEventCounts = true,
+}: {
+  showEventCounts?: boolean;
+}) => {
+  const [counts, setCounts] = useState({
+    click: 0,
+    focus: 0,
+    blur: 0,
+    mouseDown: 0,
+    mouseUp: 0,
+    pointerDown: 0,
+    pointerUp: 0,
+    touchStart: 0,
+    touchEnd: 0,
+  });
+  const increment = (eventName: keyof typeof counts) => {
+    setCounts((currentCounts) => ({
+      ...currentCounts,
+      [eventName]: currentCounts[eventName] + 1,
+    }));
+  };
+
   return (
     <LayoutWrapper>
       <BpkBox
         padding={BpkSpacing.MD}
         role="button"
         tabIndex={0}
-        onClick={increment}
+        onClick={() => increment('click')}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') increment();
+          if (e.key === 'Enter' || e.key === ' ') {
+            increment('click');
+          }
         }}
+        onFocus={() => increment('focus')}
+        onBlur={() => increment('blur')}
+        onMouseDown={() => increment('mouseDown')}
+        onMouseUp={() => increment('mouseUp')}
+        onPointerDown={() => increment('pointerDown')}
+        onPointerUp={() => increment('pointerUp')}
+        onTouchStart={() => increment('touchStart')}
+        onTouchEnd={() => increment('touchEnd')}
       >
         <BpkText>
-          Clicked {count} times (role=&quot;button&quot;, tabIndex=0)
+          {showEventCounts
+            ? `Click: ${counts.click}; focus: ${counts.focus}; blur: ${counts.blur}; mouseDown: ${counts.mouseDown}; mouseUp: ${counts.mouseUp}; pointerDown: ${counts.pointerDown}; pointerUp: ${counts.pointerUp}; touchStart: ${counts.touchStart}; touchEnd: ${counts.touchEnd}`
+            : `Clicked ${counts.click} times (role="button", tabIndex=0)`}
         </BpkText>
       </BpkBox>
     </LayoutWrapper>
@@ -439,7 +471,7 @@ const MixedExample = () => (
     <OverflowExample />
     <ZIndexExample />
     <AccessibilityExample />
-    <InteractiveExample />
+    <InteractiveExample showEventCounts={false} />
     <TextStyleExample />
     <BackgroundColorExample />
   </LayoutWrapper>
@@ -682,4 +714,3 @@ const DirExample = () => (
 export const Dir = {
   render: () => <DirExample />,
 };
-
