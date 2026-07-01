@@ -32,7 +32,6 @@
   --bpk-private-badge-colour-stroke-outline: #ffffff;
   --bpk-private-badge-dimension-padding-horizontal-default: 0.5rem;
   --bpk-private-badge-dimension-padding-horizontal-subtle: 0.5rem;
-  --bpk-private-badge-typography-tmp-badge-label: 0.875rem;
   --bpk-private-button-colour-bg-destructive: #e0e4e9;
   --bpk-private-button-colour-bg-destructive-pressed: #e70866;
   --bpk-private-button-colour-bg-disabled: #e0e4e9;
@@ -180,6 +179,7 @@
   --bpk-other-shadow: rgba(22, 22, 22, 0.25);
   --bpk-other-line-default: #c1c7cf;
   --bpk-other-line-on-contrast: rgba(255, 255, 255, 0.2);
+  --bpk-other-line-subtle: #e0e4e9;
   --bpk-status-danger-spot: #e70866;
   --bpk-status-success-spot: #0c838a;
   --bpk-status-warning-spot: #f55d42;
@@ -243,9 +243,9 @@
   --bpk-typography-sizes-192: 12rem;
   --bpk-typography-sizes-240: 15rem;
   --bpk-typography-sizes-base: 1rem;
-  --bpk-typography-style-body: 400;
-  --bpk-typography-style-headline: 700;
-  --bpk-typography-style-hero: 900;
-  --bpk-typography-style-label: 700;
-  --bpk-typography-style-subhead: 300;
+  --bpk-typography-weight-body: 400;
+  --bpk-typography-weight-headline: 700;
+  --bpk-typography-weight-hero: 900;
+  --bpk-typography-weight-label: 700;
+  --bpk-typography-weight-subhead: 300;
 }
