@@ -131,7 +131,7 @@ In addition, `BpkBox` forwards through a set of **flexbox and grid layout props*
 - `display="flex"`, `flexDirection`, `justifyContent`, `alignItems`, `flexWrap`
 - `display="grid"`, `gridTemplateColumns`, `gridTemplateRows`, `gap`
 
-In addition, `BpkBox` re‑introduces a **minimal interaction and accessibility surface**:
+In addition, `BpkBox` exposes a **minimal interaction and accessibility surface**. This surface is shared across all layout components via the common layout props, so `BpkFlex`, `BpkGrid`, `BpkStack` etc. accept the same handlers:
 
 - `onClick`, `onFocus`, `onBlur`, mouse, pointer, and touch handlers such as `onMouseDown`, `onPointerDown`, and `onTouchStart` – event handlers for interactive container patterns.
 - `tabIndex`, `role` – make containers focusable and assign ARIA roles (e.g. `role="region"`, `role="button"`).

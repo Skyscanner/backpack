@@ -152,6 +152,25 @@ describe('BpkFlex', () => {
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
   });
 
+  it('calls onFocus and onBlur', () => {
+    const handleFocus = jest.fn();
+    const handleBlur = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex tabIndex={0} onFocus={handleFocus} onBlur={handleBlur}>
+          Focusable
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    const element = getByText('Focusable');
+
+    fireEvent.focus(element);
+    expect(handleFocus).toHaveBeenCalledTimes(1);
+
+    fireEvent.blur(element);
+    expect(handleBlur).toHaveBeenCalledTimes(1);
+  });
+
   it('renders when textStyle is provided', () => {
     const { getByText } = render(
       <BpkProvider>
