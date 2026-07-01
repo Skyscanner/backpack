@@ -16,21 +16,55 @@
  * limitations under the License.
  */
 
+@use 'sass:list';
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
 
 $text-colors: (
-  'text-disabled': tokens.$bpk-text-disabled-day,
-  'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
-  'text-error': tokens.$bpk-text-error-day,
-  'text-hero': tokens.$bpk-text-hero-day,
-  'text-link': tokens.$bpk-text-link-day,
-  'text-on-dark': tokens.$bpk-text-on-dark-day,
-  'text-on-light': tokens.$bpk-text-on-light-day,
-  'text-primary': tokens.$bpk-text-primary-day,
-  'text-primary-inverse': tokens.$bpk-text-primary-inverse-day,
-  'text-secondary': tokens.$bpk-text-secondary-day,
-  'text-success': tokens.$bpk-text-success-day,
+  'text-disabled': (
+    --bpk-text-disabled,
+    tokens.$bpk-text-disabled-day,
+  ),
+  'text-disabled-on-dark': (
+    --bpk-text-disabled-on-dark,
+    tokens.$bpk-text-disabled-on-dark-day,
+  ),
+  'text-error': (
+    --bpk-text-error,
+    tokens.$bpk-text-error-day,
+  ),
+  'text-hero': (
+    --bpk-text-hero,
+    tokens.$bpk-text-hero-day,
+  ),
+  'text-link': (
+    --bpk-text-link,
+    tokens.$bpk-text-link-day,
+  ),
+  'text-on-dark': (
+    --bpk-text-on-dark,
+    tokens.$bpk-text-on-dark-day,
+  ),
+  'text-on-light': (
+    --bpk-text-on-light,
+    tokens.$bpk-text-on-light-day,
+  ),
+  'text-primary': (
+    --bpk-text-primary,
+    tokens.$bpk-text-primary-day,
+  ),
+  'text-primary-inverse': (
+    --bpk-text-inverse,
+    tokens.$bpk-text-primary-inverse-day,
+  ),
+  'text-secondary': (
+    --bpk-text-secondary,
+    tokens.$bpk-text-secondary-day,
+  ),
+  'text-success': (
+    --bpk-text-success,
+    tokens.$bpk-text-success-day,
+  ),
 );
 
 .bpk-text {
@@ -160,9 +194,12 @@ $text-colors: (
     @include typography.bpk-editorial-3;
   }
 
-  @each $color-name, $color-value in $text-colors {
+  @each $color-name, $css-var-fallback in $text-colors {
     &.bpk-text--#{$color-name} {
-      color: $color-value;
+      color: var(
+        list.nth($css-var-fallback, 1),
+        list.nth($css-var-fallback, 2)
+      );
     }
   }
 
