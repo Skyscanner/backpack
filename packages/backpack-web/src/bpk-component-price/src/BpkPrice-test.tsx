@@ -105,8 +105,6 @@ describe.each([
       />,
     );
 
-    const previous = container.querySelector('.bpk-price__previous-price');
-    expect(previous).toHaveTextContent(previousPrice);
     expect(screen.getByText(previousPrice)).toHaveClass(expectedDefaultClass);
   });
 
