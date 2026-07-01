@@ -351,7 +351,6 @@ AnnotatedDateComponent.propTypes = {
 // The calendar is open for leg 3 — legs 1 & 2 dates show the inset ring as
 // context, leg 3's selected date (20th) shows the filled selection style.
 const TODAY = new Date();
-const MULTI_CITY_MIN_DATE = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
 const MULTI_CITY_LEG1 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 5);
 const MULTI_CITY_LEG2 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 12);
 const MULTI_CITY_LEG3 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 20);
@@ -375,6 +374,9 @@ const MultiCityCalendar = withCalendarState(
   ),
 );
 
+// minDate = leg 2 date so dates before it are blocked (unselectable).
+// minScrollable not available on BpkCalendar directly — this pattern is
+// used via BpkScrollableCalendarGridList in the mobile picker in GC.
 const MultiCityAnnotatedDatesExample = () => (
   <MultiCityCalendar
     id="multiCityCalendar"
@@ -385,7 +387,7 @@ const MultiCityAnnotatedDatesExample = () => (
     changeMonthLabel="Change month"
     previousMonthLabel="Go to previous month"
     nextMonthLabel="Go to next month"
-    minDate={MULTI_CITY_MIN_DATE}
+    minDate={MULTI_CITY_LEG2}
     initiallyFocusedDate={MULTI_CITY_LEG3}
     preventKeyboardFocus
     selectionConfiguration={{
