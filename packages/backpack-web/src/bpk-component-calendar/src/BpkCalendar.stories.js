@@ -389,7 +389,6 @@ const MultiCityAnnotatedDatesExample = () => (
     nextMonthLabel="Go to next month"
     minDate={MULTI_CITY_LEG2}
     initiallyFocusedDate={MULTI_CITY_LEG3}
-    preventKeyboardFocus
     selectionConfiguration={{
       type: CALENDAR_SELECTION_TYPE.single,
       date: MULTI_CITY_LEG3,
