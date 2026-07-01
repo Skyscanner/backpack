@@ -209,6 +209,7 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-text',
   component: BpkText,
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;
