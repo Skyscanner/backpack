@@ -124,7 +124,7 @@ const PositionExample = () => (
 );
 
 /**
- * Interactive props example – demonstrates keyboard, mouse, pointer, and touch event props on BpkBox.
+ * Interactive props example – demonstrates keyboard, focus, mouse, pointer, and touch event props on BpkBox.
  *
  * @returns {JSX.Element} An interactive region using common event handler props.
  */
@@ -135,6 +135,8 @@ const InteractiveExample = ({
 }) => {
   const [counts, setCounts] = useState({
     click: 0,
+    focus: 0,
+    blur: 0,
     mouseDown: 0,
     mouseUp: 0,
     pointerDown: 0,
@@ -161,6 +163,8 @@ const InteractiveExample = ({
             increment('click');
           }
         }}
+        onFocus={() => increment('focus')}
+        onBlur={() => increment('blur')}
         onMouseDown={() => increment('mouseDown')}
         onMouseUp={() => increment('mouseUp')}
         onPointerDown={() => increment('pointerDown')}
@@ -170,7 +174,7 @@ const InteractiveExample = ({
       >
         <BpkText>
           {showEventCounts
-            ? `Click: ${counts.click}; mouseDown: ${counts.mouseDown}; mouseUp: ${counts.mouseUp}; pointerDown: ${counts.pointerDown}; pointerUp: ${counts.pointerUp}; touchStart: ${counts.touchStart}; touchEnd: ${counts.touchEnd}`
+            ? `Click: ${counts.click}; focus: ${counts.focus}; blur: ${counts.blur}; mouseDown: ${counts.mouseDown}; mouseUp: ${counts.mouseUp}; pointerDown: ${counts.pointerDown}; pointerUp: ${counts.pointerUp}; touchStart: ${counts.touchStart}; touchEnd: ${counts.touchEnd}`
             : `Clicked ${counts.click} times (role="button", tabIndex=0)`}
         </BpkText>
       </BpkBox>
