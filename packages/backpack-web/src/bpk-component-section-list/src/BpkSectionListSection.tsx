@@ -29,7 +29,7 @@ const getClassName = cssModules(STYLES);
 export type Props = HTMLAttributes<HTMLElement> & {
   children: ReactNode;
   headerText?: string | null;
-  [key: string]: unknown;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkSectionListSection = ({

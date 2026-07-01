@@ -20,7 +20,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 export type Props = HTMLAttributes<HTMLElement> & {
   children: ReactNode;
-  [key: string]: unknown;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkSectionList = ({ children, ...rest }: Props) => (

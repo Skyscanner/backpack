@@ -36,7 +36,7 @@ export type Props = Omit<HTMLAttributes<HTMLElement>, 'onClick' | 'className'> &
   className?: string | null;
   href?: string | null;
   onClick?: ((event: MouseEvent<HTMLElement>) => void) | null;
-  [key: string]: unknown;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkSectionListItem = ({
