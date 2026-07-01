@@ -149,15 +149,21 @@ describe('BpkBox', () => {
 
   it('supports pointer, mouse, and touch interaction props', () => {
     const handleMouseDown = jest.fn();
+    const handleMouseUp = jest.fn();
     const handlePointerDown = jest.fn();
+    const handlePointerUp = jest.fn();
     const handleTouchStart = jest.fn();
+    const handleTouchEnd = jest.fn();
 
     const { getByText } = render(
       <BpkProvider>
         <BpkBox
           onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
           onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
           onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           Interactive
         </BpkBox>
@@ -169,11 +175,20 @@ describe('BpkBox', () => {
     fireEvent.mouseDown(element);
     expect(handleMouseDown).toHaveBeenCalledTimes(1);
 
+    fireEvent.mouseUp(element);
+    expect(handleMouseUp).toHaveBeenCalledTimes(1);
+
     fireEvent.pointerDown(element);
     expect(handlePointerDown).toHaveBeenCalledTimes(1);
 
+    fireEvent.pointerUp(element);
+    expect(handlePointerUp).toHaveBeenCalledTimes(1);
+
     fireEvent.touchStart(element);
     expect(handleTouchStart).toHaveBeenCalledTimes(1);
+
+    fireEvent.touchEnd(element);
+    expect(handleTouchEnd).toHaveBeenCalledTimes(1);
   });
 
   it('calls onKeyDown when a key is pressed', () => {

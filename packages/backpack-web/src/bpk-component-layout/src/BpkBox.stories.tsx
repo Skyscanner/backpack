@@ -136,8 +136,11 @@ const InteractiveExample = ({
   const [counts, setCounts] = useState({
     click: 0,
     mouseDown: 0,
+    mouseUp: 0,
     pointerDown: 0,
+    pointerUp: 0,
     touchStart: 0,
+    touchEnd: 0,
   });
   const increment = (eventName: keyof typeof counts) => {
     setCounts((currentCounts) => ({
@@ -159,12 +162,15 @@ const InteractiveExample = ({
           }
         }}
         onMouseDown={() => increment('mouseDown')}
+        onMouseUp={() => increment('mouseUp')}
         onPointerDown={() => increment('pointerDown')}
+        onPointerUp={() => increment('pointerUp')}
         onTouchStart={() => increment('touchStart')}
+        onTouchEnd={() => increment('touchEnd')}
       >
         <BpkText>
           {showEventCounts
-            ? `Click: ${counts.click}; mouseDown: ${counts.mouseDown}; pointerDown: ${counts.pointerDown}; touchStart: ${counts.touchStart}`
+            ? `Click: ${counts.click}; mouseDown: ${counts.mouseDown}; mouseUp: ${counts.mouseUp}; pointerDown: ${counts.pointerDown}; pointerUp: ${counts.pointerUp}; touchStart: ${counts.touchStart}; touchEnd: ${counts.touchEnd}`
             : `Clicked ${counts.click} times (role="button", tabIndex=0)`}
         </BpkText>
       </BpkBox>
