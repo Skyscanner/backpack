@@ -379,7 +379,7 @@ const MultiCityCalendar = withCalendarState(
 // minDate = leg 2 date so dates before it are blocked (unselectable).
 // Legs 1 & 2 show the inset ring; the selected leg 3 date shows filled selection.
 const MultiCityAnnotatedDatesExample = () => {
-  const [selectedDate, setSelectedDate] = React.useState(MULTI_CITY_LEG3);
+  const [selectedDate, setSelectedDate] = React.useState(null);
   return (
     <MultiCityCalendar
       id="multiCityCalendar"
