@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React from 'react';
+import { Component } from 'react';
 
 
 import { addMonths } from 'date-fns/addMonths';
@@ -377,29 +377,44 @@ const MultiCityCalendar = withCalendarState(
 );
 
 // minDate = leg 2 date so dates before it are blocked (unselectable).
-// Legs 1 & 2 show the inset ring; the selected leg 3 date shows filled selection.
-const MultiCityAnnotatedDatesExample = () => {
-  const [selectedDate, setSelectedDate] = React.useState(null);
-  return (
-    <MultiCityCalendar
-      id="multiCityCalendar"
-      formatMonth={formatMonth}
-      formatDateFull={formatDateFull}
-      daysOfWeek={weekDays}
-      weekStartsOn={1}
-      changeMonthLabel="Change month"
-      previousMonthLabel="Go to previous month"
-      nextMonthLabel="Go to next month"
-      minDate={MULTI_CITY_LEG2}
-      initiallyFocusedDate={MULTI_CITY_LEG3}
-      onDateSelect={setSelectedDate}
-      selectionConfiguration={{
+// Legs 1 & 2 show the inset ring; clicking any selectable date fills it.
+class MultiCityAnnotatedDatesExample extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectionConfiguration: {
         type: CALENDAR_SELECTION_TYPE.single,
-        date: selectedDate,
-      }}
-    />
-  );
-};
+        date: null,
+      },
+    };
+  }
+
+  render() {
+    return (
+      <MultiCityCalendar
+        id="multiCityCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        minDate={MULTI_CITY_LEG2}
+        initiallyFocusedDate={MULTI_CITY_LEG3}
+        onDateSelect={(date) => {
+          this.setState({
+            selectionConfiguration: {
+              type: CALENDAR_SELECTION_TYPE.single,
+              date,
+            },
+          });
+        }}
+        selectionConfiguration={this.state.selectionConfiguration}
+      />
+    );
+  }
+}
 
 // Simulates a multi-city picker: dates from other legs are annotated with an
 // inset accent ring so the user can see them at a glance without being able to
