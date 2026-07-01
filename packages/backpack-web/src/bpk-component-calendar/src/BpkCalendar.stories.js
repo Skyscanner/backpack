@@ -17,6 +17,8 @@
  */
 
 import PropTypes from 'prop-types';
+import React from 'react';
+
 
 import { addMonths } from 'date-fns/addMonths';
 import { startOfDay } from 'date-fns/startOfDay';
@@ -375,26 +377,29 @@ const MultiCityCalendar = withCalendarState(
 );
 
 // minDate = leg 2 date so dates before it are blocked (unselectable).
-// minScrollable not available on BpkCalendar directly — this pattern is
-// used via BpkScrollableCalendarGridList in the mobile picker in GC.
-const MultiCityAnnotatedDatesExample = () => (
-  <MultiCityCalendar
-    id="multiCityCalendar"
-    formatMonth={formatMonth}
-    formatDateFull={formatDateFull}
-    daysOfWeek={weekDays}
-    weekStartsOn={1}
-    changeMonthLabel="Change month"
-    previousMonthLabel="Go to previous month"
-    nextMonthLabel="Go to next month"
-    minDate={MULTI_CITY_LEG2}
-    initiallyFocusedDate={MULTI_CITY_LEG3}
-    selectionConfiguration={{
-      type: CALENDAR_SELECTION_TYPE.single,
-      date: MULTI_CITY_LEG3,
-    }}
-  />
-);
+// Legs 1 & 2 show the inset ring; the selected leg 3 date shows filled selection.
+const MultiCityAnnotatedDatesExample = () => {
+  const [selectedDate, setSelectedDate] = React.useState(MULTI_CITY_LEG3);
+  return (
+    <MultiCityCalendar
+      id="multiCityCalendar"
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      daysOfWeek={weekDays}
+      weekStartsOn={1}
+      changeMonthLabel="Change month"
+      previousMonthLabel="Go to previous month"
+      nextMonthLabel="Go to next month"
+      minDate={MULTI_CITY_LEG2}
+      initiallyFocusedDate={MULTI_CITY_LEG3}
+      onDateSelect={setSelectedDate}
+      selectionConfiguration={{
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: selectedDate,
+      }}
+    />
+  );
+};
 
 // Simulates a multi-city picker: dates from other legs are annotated with an
 // inset accent ring so the user can see them at a glance without being able to
