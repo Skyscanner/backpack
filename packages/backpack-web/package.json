@@ -83,11 +83,6 @@
     "sass": "^1",
     "sass-embedded": "^1"
   },
-  "devDependencies": {
-    "@jest/globals": "^30.3.0",
-    "@types/node": "25.9.1",
-    "bpk-storybook-utils": "workspace:*"
-  },
   "peerDependenciesMeta": {
     "sass": {
       "optional": true

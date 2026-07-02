@@ -27,20 +27,18 @@ jobs:
           ref: main
           persist-credentials: false
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version-file: '.nvmrc'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Fetch tokens from Figma
         env:
           FIGMA_VARIABLES_SYNC_TOKEN: ${{ secrets.FIGMA_VARIABLES_SYNC_TOKEN }}
           FIGMA_FILE_KEY: ${{ github.event.inputs.file_key || secrets.FIGMA_FILE_KEY }}
-        run: pnpm run tokens:fetch
+        run: npm run tokens:fetch
 
       - name: Detect meaningful fetched token changes
         id: token_changes
