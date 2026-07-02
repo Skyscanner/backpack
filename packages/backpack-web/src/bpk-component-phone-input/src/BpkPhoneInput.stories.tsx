@@ -21,8 +21,7 @@ import { Component } from 'react';
 import BpkFieldSet from '../../bpk-component-fieldset';
 import BpkImage from '../../bpk-component-image';
 
-// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+ 
 import BpkPhoneInput from './BpkPhoneInput';
 
 import type { Meta } from '@storybook/react';
