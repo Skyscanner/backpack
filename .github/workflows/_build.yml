@@ -129,7 +129,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Override React to 19.2.5
-        run: pnpm_config_lockfile=false pnpm add -w react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19.0.6 @types/prop-types @types/react-transition-group@4.4.12
+        run: |
+          pnpm add -w react@19.2.5 react-dom@19.2.5 @types/react@19.0.14 @types/react-dom@19.0.6 @types/prop-types@15.7.15 @types/react-transition-group@4.4.12
+          git restore package.json pnpm-lock.yaml
 
       - name: Generate component code (icons, flare, spinners)
         run: npx nx run backpack-web:generate-svgs
