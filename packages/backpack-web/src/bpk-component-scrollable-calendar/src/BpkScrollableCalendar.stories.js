@@ -292,6 +292,30 @@ const ScrollableCalendarGridListExample = () => (
   />
 );
 
+// Simulates a multi-city picker: leg 1 selected May 10, leg 2 minDate is Jun 1.
+// minScrollable extends the scroll range back to May so the user can see leg 1's
+// date, while dates before Jun 1 remain blocked (unselectable).
+const MultiCityMinScrollableExample = () => (
+  <div style={{ height: '500px', display: 'flex' }}>
+    <BpkScrollableCalendarGridList
+      month={new Date(2020, 5, 1)}
+      weekStartsOn={1}
+      daysOfWeek={weekDays}
+      onDateClick={action('Clicked day')}
+      formatMonth={formatMonth}
+      formatDateFull={formatDateFull}
+      DateComponent={BpkScrollableCalendarDate}
+      minDate={new Date(2020, 5, 1)}
+      minScrollable={new Date(2020, 4, 1)}
+      maxDate={new Date(2020, 7, 31)}
+      selectionConfiguration={{
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: new Date(2020, 5, 15),
+      }}
+    />
+  </div>
+);
+
 const WeekStartsOnSundayExample = () => (
   <ScrollableCal
     id="myCalendar"
@@ -510,6 +534,8 @@ export const ScrollableCalendarDate = { render: () => <ScrollableCalendarDateExa
 export const ScrollableCalendarGrid = { render: () => <ScrollableCalendarGridExample /> };
 
 export const ScrollableCalendarGridList = { render: () => <ScrollableCalendarGridListExample /> };
+
+export const ScrollableCalendarMultiCityMinScrollable = { render: () => <MultiCityMinScrollableExample /> };
 
 export const VisualTest = { render: () => <DefaultExample /> };
 export const VisualTestWithZoom = { render: () => <DefaultExample />, args: { zoomEnabled: true } };
