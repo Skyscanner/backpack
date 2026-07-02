@@ -35,8 +35,8 @@ import composeCalendar from './src/composeCalendar';
 import { CALENDAR_SELECTION_TYPE } from './src/custom-proptypes';
 import CustomPropTypes, {
   BpkCalendarGridPropTypes,
+  // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
   BpkCalendarDatePropTypes,
-  // @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
 } from './src/custom-proptypes-legacy';
 import * as DateUtils from './src/date-utils';
 import themeAttributes from './src/themeAttributes';
