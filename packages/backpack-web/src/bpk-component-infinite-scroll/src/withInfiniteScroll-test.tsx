@@ -492,6 +492,6 @@ describe('withInfiniteScroll', () => {
     });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
-    expect(onFinished).toHaveBeenCalled();
+    expect(onFinished).toHaveBeenCalledWith({ totalNumberElements: 5 });
   });
 });

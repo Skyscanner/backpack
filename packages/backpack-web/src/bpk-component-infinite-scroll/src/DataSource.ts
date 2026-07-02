@@ -23,7 +23,6 @@ class DataSource<T = any> {
     this.listeners = [];
   }
 
-   
   fetchItems(index: number, nElements: number): Promise<T[]> {
     throw new Error('Not implemented');
   }

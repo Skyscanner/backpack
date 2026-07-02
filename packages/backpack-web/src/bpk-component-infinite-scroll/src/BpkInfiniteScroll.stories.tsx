@@ -277,8 +277,9 @@ const InferDatasourceWhenLessThanRequestElementsExample = () => {
   );
 };
 
-const meta: Meta = {
+const meta: Meta<typeof InfiniteList> = {
   title: 'bpk-component-infinite-scroll',
+  component: InfiniteList,
   decorators: [withScrollReset],
 };
 

@@ -90,7 +90,7 @@ const defaultProps = {
   seeMoreAfter: null,
 };
 
-const OWN_PROP_KEYS = [
+const OWN_PROP_KEYS: Array<keyof Props> = [
   'initiallyLoadedElements',
   'elementsPerScroll',
   'dataSource',
@@ -140,7 +140,7 @@ const withInfiniteScroll = <T extends ExtendedProps>(
           this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
       })
         .then((newState) => {
-          this.setState(newState as State);
+          this.setState(newState);
         })
         .catch(console.error);
     }
