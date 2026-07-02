@@ -173,7 +173,7 @@ $text-colors: (
   }
 
   &--strikethrough {
-    text-decoration-line: line-through;
+    text-decoration: line-through;
   }
 
   $text-aligns: 'start', 'end', 'center', 'justify';
