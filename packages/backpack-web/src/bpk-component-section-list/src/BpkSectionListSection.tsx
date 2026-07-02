@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 import { Children } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -29,33 +26,29 @@ import STYLES from './BpkSectionListSection.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  headerText: ?string,
+export type Props = HTMLAttributes<HTMLElement> & {
+  children: ReactNode;
+  headerText?: string | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkSectionListSection = (props: Props) => {
-  const { children, headerText = null, ...rest } = props;
-
-  return (
-    <section {...rest}>
-      {headerText && (
-        <header className={getClassName('bpk-section-list-section__header')}>
-          <BpkText textStyle={TEXT_STYLES.label1}>{headerText}</BpkText>
-        </header>
-      )}
-      <ul className={getClassName('bpk-section-list-section')}>
-        {Children.map(children, (child) => (
-          <li>{child}</li>
-        ))}
-      </ul>
-    </section>
-  );
-};
-
-BpkSectionListSection.propTypes = {
-  children: PropTypes.node.isRequired,
-  headerText: PropTypes.string,
-};
+const BpkSectionListSection = ({
+  children,
+  headerText = null,
+  ...rest
+}: Props) => (
+  <section {...rest}>
+    {headerText && (
+      <header className={getClassName('bpk-section-list-section__header')}>
+        <BpkText textStyle={TEXT_STYLES.label1}>{headerText}</BpkText>
+      </header>
+    )}
+    <ul className={getClassName('bpk-section-list-section')}>
+      {Children.map(children, (child) => (
+        <li>{child}</li>
+      ))}
+    </ul>
+  </section>
+);
 
 export default BpkSectionListSection;

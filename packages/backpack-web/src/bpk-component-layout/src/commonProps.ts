@@ -16,7 +16,16 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, ElementType, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type {
+  AriaAttributes,
+  AriaRole,
+  ElementType,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  PointerEventHandler,
+  TouchEventHandler,
+} from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
@@ -91,7 +100,9 @@ export interface BpkSpacingProps {
  * NOTE:
  * - Layout components expose onClick, tabIndex and role to support interactive
  *   container patterns (e.g. clickable cards, landmark regions).
- * - BpkBox additionally exposes onFocus and onBlur on its own props type.
+ * - Interaction events (onFocus/onBlur, mouse/pointer/touch) are exposed on all
+ *   layout components, since they all render standard HTML elements that support
+ *   them. They only take effect where the underlying rendered element supports it.
  */
 export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   // Explicitly exclude className
@@ -106,6 +117,14 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   role?: AriaRole;
   onClick?: MouseEventHandler<HTMLElement>;
   onKeyDown?: KeyboardEventHandler<HTMLElement>;
+  onFocus?: FocusEventHandler<HTMLElement>;
+  onBlur?: FocusEventHandler<HTMLElement>;
+  onMouseDown?: MouseEventHandler<HTMLElement>;
+  onMouseUp?: MouseEventHandler<HTMLElement>;
+  onPointerDown?: PointerEventHandler<HTMLElement>;
+  onPointerUp?: PointerEventHandler<HTMLElement>;
+  onTouchStart?: TouchEventHandler<HTMLElement>;
+  onTouchEnd?: TouchEventHandler<HTMLElement>;
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;

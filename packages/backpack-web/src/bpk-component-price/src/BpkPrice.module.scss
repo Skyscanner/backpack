@@ -21,7 +21,6 @@
 .bpk-price {
   display: flex;
   flex-direction: column;
-  color: tokens.$bpk-text-secondary-day;
 
   &--right {
     align-items: flex-end;
@@ -35,12 +34,6 @@
       display: flex;
       justify-content: flex-end;
     }
-  }
-
-  &__previous-price {
-    display: flex;
-    color: tokens.$bpk-text-error-day;
-    text-decoration-line: line-through;
   }
 
   &__separator {
@@ -58,7 +51,6 @@
 
   &__price {
     display: contents;
-    color: tokens.$bpk-text-primary-day;
     word-break: break-all;
   }
 

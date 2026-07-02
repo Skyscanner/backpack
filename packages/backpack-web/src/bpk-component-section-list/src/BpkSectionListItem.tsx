@@ -16,10 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 
 import { withRtlSupport } from '../../bpk-component-icon';
 import BpkLargeChevronRightIcon from '../../bpk-component-icon/lg/chevron-right';
@@ -33,16 +30,23 @@ const BpkLargeChevronRightIconWithRtlSupport = withRtlSupport(
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  blank: boolean,
-  children: Node,
-  className: ?string,
-  href: ?string,
-  onClick: ?(event: SyntheticEvent<>) => void,
+export type Props = Omit<HTMLAttributes<HTMLElement>, 'onClick' | 'className'> & {
+  blank?: boolean;
+  children: ReactNode;
+  className?: string | null;
+  href?: string | null;
+  onClick?: ((event: MouseEvent<HTMLElement>) => void) | null;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkSectionListItem = (props: Props) => {
-  const { blank = false, children, className = null, href = null, onClick = null, ...rest } = props;
+const BpkSectionListItem = ({
+  blank = false,
+  children,
+  className = null,
+  href = null,
+  onClick = null,
+  ...rest
+}: Props) => {
   const classNames = [
     getClassName(
       'bpk-section-list-item',
@@ -52,19 +56,18 @@ const BpkSectionListItem = (props: Props) => {
   ];
 
   if (href) {
-    const target = blank ? '_blank' : null;
+    const target = blank ? '_blank' : undefined;
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a
         href={href}
         target={target}
-        onClick={onClick}
+        onClick={onClick ?? undefined}
         className={classNames.join(' ')}
         {...rest}
       >
         {children}
         <span className={getClassName('bpk-section-list-item__chevron')}>
-          <BpkLargeChevronRightIconWithRtlSupport/>
+          <BpkLargeChevronRightIconWithRtlSupport />
         </span>
       </a>
     );
@@ -72,7 +75,6 @@ const BpkSectionListItem = (props: Props) => {
 
   if (onClick) {
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <button
         type="button"
         onClick={onClick}
@@ -81,26 +83,17 @@ const BpkSectionListItem = (props: Props) => {
       >
         {children}
         <span className={getClassName('bpk-section-list-item__chevron')}>
-          <BpkLargeChevronRightIconWithRtlSupport/>
+          <BpkLargeChevronRightIconWithRtlSupport />
         </span>
       </button>
     );
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div className={classNames.join(' ')} {...rest}>
       {children}
     </div>
   );
-};
-
-BpkSectionListItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  blank: PropTypes.bool,
-  className: PropTypes.string,
-  href: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 export default BpkSectionListItem;

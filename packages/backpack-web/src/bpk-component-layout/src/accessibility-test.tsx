@@ -26,6 +26,7 @@ import { BpkFlex } from './BpkFlex';
 import { BpkGrid } from './BpkGrid';
 import { BpkProvider } from './BpkProvider';
 import { BpkStack } from './BpkStack';
+import { BpkVessel } from './BpkVessel';
 import { BpkSpacing } from './tokens';
 
 describe('bpk-component-layout accessibility tests', () => {
@@ -118,6 +119,29 @@ describe('bpk-component-layout accessibility tests', () => {
           Card content
         </BpkBox>
       </BpkProvider>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('BpkVessel basic usage should not have detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkVessel as="section" aria-label="Vessel region">
+        Accessible vessel content
+      </BpkVessel>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('BpkVessel rendered as a semantic landmark should not have detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkVessel as="nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+      </BpkVessel>,
     );
 
     const results = await axe(container);
