@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
 import BpkSectionList from './BpkSectionList';

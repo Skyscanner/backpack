@@ -31,6 +31,7 @@ export const BADGE_TYPES = {
   outline: 'outline',
   strong: 'strong',
   brand: 'brand',
+  subtle: 'subtle',
 } as const;
 
 const getClassName = cssModules(STYLES);
@@ -44,6 +45,7 @@ const badgeTypeClassNames = {
   [BADGE_TYPES.outline]: getClassName('bpk-badge--outline'),
   [BADGE_TYPES.strong]: getClassName('bpk-badge--strong'),
   [BADGE_TYPES.brand]: getClassName('bpk-badge--brand'),
+  [BADGE_TYPES.subtle]: getClassName('bpk-badge--subtle'),
 };
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];

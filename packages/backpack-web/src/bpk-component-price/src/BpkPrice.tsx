@@ -18,7 +18,7 @@
 
 import type { HTMLAttributes, ReactNode } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkText, { TEXT_STYLES, TEXT_COLORS } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
 import { SIZES, ALIGNS } from './common-types';
@@ -92,7 +92,7 @@ const BpkPrice = ({
       return null;
     }
     const textNode = (
-      <BpkText textStyle={defaultTextStyle} tagName="span">
+      <BpkText textStyle={defaultTextStyle} tagName="span" color={TEXT_COLORS.textSecondary}>
         {trailingText}
       </BpkText>
     );
@@ -122,21 +122,19 @@ const BpkPrice = ({
         )}
       >
         {previousPrice && (
-          <span className={getClassName('bpk-price__previous-price')}>
-            <BpkText textStyle={defaultTextStyle} tagName="span">
-              {previousPrice}
-            </BpkText>
-          </span>
+          <BpkText textStyle={defaultTextStyle} tagName="span" color={TEXT_COLORS.textError} strikethrough>
+            {previousPrice}
+          </BpkText>
         )}
         {previousPrice && leadingText && (
           <span className={getClassName('bpk-price__separator')}>
-            <BpkText textStyle={defaultTextStyle} tagName="span">
+            <BpkText textStyle={defaultTextStyle} tagName="span" color={TEXT_COLORS.textSecondary}>
               &#67871;
             </BpkText>
           </span>
         )}
         {leadingText && (
-          <BpkText textStyle={defaultTextStyle} tagName="span">
+          <BpkText textStyle={defaultTextStyle} tagName="span" color={TEXT_COLORS.textSecondary}>
             {leadingText}
           </BpkText>
         )}
@@ -153,6 +151,7 @@ const BpkPrice = ({
           <BpkText
             textStyle={priceTextStyle}
             tagName="span"
+            color={TEXT_COLORS.textPrimary}
             {...dataAttributes}
           >
             {price}

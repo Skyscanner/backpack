@@ -298,6 +298,39 @@ describe('processBpkProps', () => {
     expect(result.flexDirection).toBe('row');
   });
 
+  it('maps Backpack breakpoint keys for BpkFlex self and grid placement props', () => {
+    const result = processBpkComponentProps(
+      {
+        alignSelf: { mobile: 'flex-end', tablet: 'center' },
+        justifySelf: { mobile: 'stretch', desktop: 'center' },
+        gridColumn: { tablet: '2 / span 2' },
+        gridRow: { mobile: '1', desktop: '2' },
+      },
+      {
+        component: 'BpkFlex',
+        responsiveProps: { flexDirection: 'row' },
+      },
+    );
+
+    expect(result.alignSelf).toEqual({ md: 'flex-end', xl: 'center' });
+    expect(result.justifySelf).toEqual({ md: 'stretch', '2xl': 'center' });
+    expect(result.gridColumn).toEqual({ xl: '2 / span 2' });
+    expect(result.gridRow).toEqual({ md: '1', '2xl': '2' });
+  });
+
+  it('converts rowGap and columnGap spacing tokens without reprocessing Chakra breakpoint keys', () => {
+    const result = processBpkComponentProps(
+      {
+        rowGap: { mobile: BpkSpacing.SM, tablet: BpkSpacing.LG },
+        columnGap: BpkSpacing.MD,
+      },
+      { component: 'BpkFlex' },
+    );
+
+    expect(result.rowGap).toEqual({ md: '.25rem', xl: '1.5rem' });
+    expect(result.columnGap).toBe('.5rem');
+  });
+
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 

@@ -93,6 +93,14 @@
     background-color: tokens.$bpk-core-accent-day;
   }
 
+  &--annotated:not(.bpk-calendar-date--selected):not(
+      .bpk-calendar-date--start
+    ):not(.bpk-calendar-date--end):not(.bpk-calendar-date--single):not(
+      .bpk-calendar-date--sameDay
+    ) {
+    box-shadow: 0 0 0 2px tokens.$bpk-core-accent-day inset;
+  }
+
   &--focused:not(:disabled):not(.bpk-calendar-date--selected) {
     box-shadow: 0 0 0 2px tokens.$bpk-core-accent-day inset;
     box-shadow: 0 0 0 2px

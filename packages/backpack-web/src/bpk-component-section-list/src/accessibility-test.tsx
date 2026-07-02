@@ -16,11 +16,21 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 
-import BpkSectionList from './src/BpkSectionList';
-import BpkSectionListItem from './src/BpkSectionListItem';
-import BpkSectionListSection from './src/BpkSectionListSection';
+import BpkSectionList from './BpkSectionList';
+import BpkSectionListItem from './BpkSectionListItem';
 
-export default BpkSectionList;
-export { BpkSectionListSection, BpkSectionListItem };
+describe('BpkSectionList accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues', async () => {
+    const { container } = render(
+      <BpkSectionList>
+        <BpkSectionListItem>Hello world</BpkSectionListItem>
+        <BpkSectionListItem href="#">Hello world</BpkSectionListItem>
+      </BpkSectionList>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
