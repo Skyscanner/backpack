@@ -108,10 +108,12 @@ const withInfiniteScroll = <T extends ExtendedProps>(
   (class WithInfiniteScroll extends Component<Props, State> {
     observer: IntersectionObserver;
 
-    sentinel!: HTMLElement | null;
+    sentinel: HTMLElement | null;
 
     constructor(props: Props) {
       super(props);
+
+      this.sentinel = null;
 
       this.state = {
         index: 0,
@@ -136,9 +138,11 @@ const withInfiniteScroll = <T extends ExtendedProps>(
       this.fetchItems({
         elementsPerScroll:
           this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
-      }).then((newState) => {
-        this.setState(newState as State);
-      });
+      })
+        .then((newState) => {
+          this.setState(newState as State);
+        })
+        .catch(console.error);
     }
 
     componentDidUpdate(prevProps: Props) {
@@ -153,7 +157,9 @@ const withInfiniteScroll = <T extends ExtendedProps>(
           index: 0,
           elementsPerScroll: this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
           elementsToRender: [],
-        }).then((newState) => this.setStateAfterDsUpdate(newState));
+        })
+          .then((newState) => this.setStateAfterDsUpdate(newState))
+          .catch(console.error);
       }
     }
 
@@ -191,7 +197,9 @@ const withInfiniteScroll = <T extends ExtendedProps>(
         elementsPerScroll: isFirstLoad ? initiallyLoaded : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
-      }).then((newState) => this.setStateAfterDsUpdate(newState));
+      })
+        .then((newState) => this.setStateAfterDsUpdate(newState))
+        .catch(console.error);
     };
 
     fetchItems(config?: FetchItemsConfig): Promise<Partial<State>> {
@@ -226,7 +234,7 @@ const withInfiniteScroll = <T extends ExtendedProps>(
           }
           if (onScrollFinished && result.isListFinished) {
             onScrollFinished({
-              totalNumberElements: (elementsToRender || []).length,
+              totalNumberElements: (result.elementsToRender || elementsToRender || []).length,
             });
           }
           return result;
@@ -243,17 +251,21 @@ const withInfiniteScroll = <T extends ExtendedProps>(
         if (onScroll) {
           onScroll({ currentIndex: this.state.index });
         }
-        return this.fetchItems().then((newState) => {
-          this.setState(newState as State);
-        });
+        return this.fetchItems()
+          .then((newState) => {
+            this.setState(newState as State);
+          })
+          .catch(console.error);
       }
       return Promise.resolve();
     };
 
     handleSeeMoreClick = (): void => {
-      this.fetchItems().then((newState) => {
-        this.setState(newState as State);
-      });
+      this.fetchItems()
+        .then((newState) => {
+          this.setState(newState as State);
+        })
+        .catch(console.error);
     };
 
     render() {

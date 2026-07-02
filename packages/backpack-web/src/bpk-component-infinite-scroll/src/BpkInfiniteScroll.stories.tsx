@@ -17,7 +17,7 @@
  */
 
 
-// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
 import BpkButton from '../../bpk-component-button';
