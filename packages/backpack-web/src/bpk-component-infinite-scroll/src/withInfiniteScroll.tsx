@@ -140,7 +140,7 @@ const withInfiniteScroll = <T extends ExtendedProps>(
           this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
       })
         .then((newState) => {
-          this.setState(newState);
+          this.setState(newState as State);
         })
         .catch(console.error);
     }
