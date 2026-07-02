@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-// @ts-ignore TODO: Remove once all packages are migrated to TypeScript.
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkContentBubble } from '../../bpk-component-flare';
 import { TransitionInitialMount, cssModules } from '../../bpk-react-utils';
 import { withScrim } from '../../bpk-scrim-utils';
