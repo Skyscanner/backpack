@@ -104,6 +104,42 @@ const BpkFlexWrapExample = () => (
   </LayoutWrapper>
 );
 
+const BpkFlexIndependentGapsExample = () => (
+  <LayoutWrapper>
+    <BpkFlex wrap="wrap" rowGap={BpkSpacing.SM} columnGap={BpkSpacing.LG} width="20rem">
+      <BpkBox height="2rem" width="9rem"><span className={outline}>1</span></BpkBox>
+      <BpkBox height="2rem" width="9rem"><span className={outline}>2</span></BpkBox>
+      <BpkBox height="2rem" width="9rem"><span className={outline}>3</span></BpkBox>
+      <BpkBox height="2rem" width="9rem"><span className={outline}>4</span></BpkBox>
+    </BpkFlex>
+  </LayoutWrapper>
+);
+
+const BpkFlexPlacementPropsExample = () => (
+  <LayoutWrapper>
+    <BpkBox
+      display="grid"
+      gridTemplateColumns="repeat(3, 1fr)"
+      gap={BpkSpacing.SM}
+      height="8rem"
+    >
+      <BpkBox height="100%"><span className={outline}>1</span></BpkBox>
+      <BpkFlex
+        align="center"
+        justify="center"
+        alignSelf="end"
+        justifySelf="stretch"
+        gridColumn="2 / span 2"
+        gridRow="1"
+        height="4rem"
+        backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
+      >
+        <BpkText>Placed flex item</BpkText>
+      </BpkFlex>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
 const BpkFlexLayoutPropsExample = () => (
   <LayoutWrapper>
     <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
@@ -227,6 +263,14 @@ export const Order = {
 
 export const Wrap = {
   render: () => <BpkFlexWrapExample />,
+};
+
+export const IndependentGaps = {
+  render: () => <BpkFlexIndependentGapsExample />,
+};
+
+export const PlacementProps = {
+  render: () => <BpkFlexPlacementPropsExample />,
 };
 
 export const Color = {

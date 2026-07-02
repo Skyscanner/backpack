@@ -122,16 +122,11 @@ export interface BpkBoxSpecificProps
 /**
  * Props for BpkBox component
  * Combines Box-specific props with Backpack common layout props.
- * onClick is inherited from BpkCommonLayoutProps.
- * onFocus and onBlur are reintroduced here as BpkBox-only interaction props.
+ * onClick, onFocus and onBlur are inherited from BpkCommonLayoutProps.
  * textStyle maps to Chakra's `textStyle` theme prop for Backpack typography and supports responsive values.
  */
-type BoxEventProps = Pick<BoxProps, 'onFocus' | 'onBlur'>;
-
 export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   children?: ReactNode;
-  onFocus?: BoxEventProps['onFocus'];
-  onBlur?: BoxEventProps['onBlur'];
 }
 
 /**
@@ -199,6 +194,12 @@ export interface BpkFlexSpecificProps {
   grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
   shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
   basis?: BpkResponsiveValue<BpkBasisValue>;
+  alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
+  justifySelf?: BpkResponsiveValue<BoxProps['justifySelf']>;
+  gridColumn?: BpkResponsiveValue<BoxProps['gridColumn']>;
+  gridRow?: BpkResponsiveValue<BoxProps['gridRow']>;
+  rowGap?: BpkResponsiveValue<BpkSpacingValue>;
+  columnGap?: BpkResponsiveValue<BpkSpacingValue>;
   inline?: boolean;
 }
 

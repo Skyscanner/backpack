@@ -18,26 +18,19 @@
 
 import type { ReactNode } from 'react';
 
-import {
-  coreAccentDay,
-  coreEcoDay,
-  corePrimaryDay,
-  fontSizeBase,
-  fontWeightBold,
-  lineHeightBase,
-  statusDangerFillDay,
-  statusDangerSpotDay,
-  statusSuccessFillDay,
-  statusSuccessSpotDay,
-  statusWarningFillDay,
-  statusWarningSpotDay,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkSmallExclamationIcon from '../../bpk-component-icon/sm/exclamation';
 import BpkSmallHelpCircleIcon from '../../bpk-component-icon/sm/help-circle';
 import BpkSmallTickIcon from '../../bpk-component-icon/sm/tick-circle';
+import {
+  BpkFlex,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
 
@@ -153,6 +146,17 @@ const BrandExample = () => (
   </BadgeLayout>
 );
 
+const SubtleExample = () => (
+  <BadgeLayout>
+    <BpkBadge type={BADGE_TYPES.subtle}>Subtle</BpkBadge>
+    &nbsp;
+    <BpkBadge type={BADGE_TYPES.subtle}>
+      <BpkSmallTickIcon />
+      &nbsp;Subtle
+    </BpkBadge>
+  </BadgeLayout>
+);
+
 const CenteredExample = () => (
   <BadgeLayout>
     <div>
@@ -174,134 +178,71 @@ const DockedTrailingExample = () => (
   </BadgeLayout>
 );
 
-const ThemedCornerRadiusExample = () => (
-  <BpkThemeProvider
-    theme={{ badgeBorderRadius: '999px' }}
-    themeAttributes={['badgeBorderRadius']}
-  >
-    <BadgeLayout>
-      <BpkBadge>Normal</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.brand}>Brand</BpkBadge>
-    </BadgeLayout>
-  </BpkThemeProvider>
-);
+const ALL_BADGE_ROWS: Array<{
+  type: (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
+  label: string;
+  icon: ReactNode;
+  dark?: boolean;
+}> = [
+  { type: BADGE_TYPES.normal, label: 'Normal', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.warning, label: 'Warning', icon: <BpkSmallHelpCircleIcon /> },
+  { type: BADGE_TYPES.success, label: 'Success', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.critical, label: 'Critical', icon: <BpkSmallExclamationIcon /> },
+  { type: BADGE_TYPES.strong, label: 'Strong', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.brand, label: 'Brand', icon: <BpkSmallTickIcon /> },
+  { type: BADGE_TYPES.inverse, label: 'Inverse', icon: <BpkSmallTickIcon />, dark: true },
+  { type: BADGE_TYPES.outline, label: 'Outline', icon: <BpkSmallTickIcon />, dark: true },
+  { type: BADGE_TYPES.subtle, label: 'Subtle', icon: <BpkSmallTickIcon /> },
+];
 
-const ThemedBackgroundColorExample = () => (
-  <BadgeLayout>
-    <BpkThemeProvider
-      theme={{ badgeNormalBackgroundColor: coreAccentDay }}
-      themeAttributes={['badgeNormalBackgroundColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.normal}>Normal</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeWarningBackgroundColor: statusWarningFillDay }}
-      themeAttributes={['badgeWarningBackgroundColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.warning}>Warning</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeSuccessBackgroundColor: statusSuccessFillDay }}
-      themeAttributes={['badgeSuccessBackgroundColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.success}>Success</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeCriticalBackgroundColor: statusDangerFillDay }}
-      themeAttributes={['badgeCriticalBackgroundColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.critical}>Critical</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeStrongBackgroundColor: corePrimaryDay }}
-      themeAttributes={['badgeStrongBackgroundColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.strong}>Strong</BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeBrandBackgroundColor: coreEcoDay }}
-      themeAttributes={['badgeBrandBackgroundColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.brand}>Brand</BpkBadge>
-    </BpkThemeProvider>
-  </BadgeLayout>
-);
+const BadgeRow = ({
+  dark,
+  icon,
+  label,
+  type,
+}: (typeof ALL_BADGE_ROWS)[number]) => {
+  const badge = (
+    <BpkBadge type={type}>
+      {icon}&nbsp;{label}
+    </BpkBadge>
+  );
+  return dark ? (
+    <BpkDarkExampleWrapper>
+      <BadgeLayout>{badge}</BadgeLayout>
+    </BpkDarkExampleWrapper>
+  ) : (
+    <BadgeLayout>{badge}</BadgeLayout>
+  );
+};
 
-const ThemedIconColorExample = () => (
-  <BadgeLayout>
-    <BpkThemeProvider
-      theme={{ badgeNormalIconColor: coreAccentDay }}
-      themeAttributes={['badgeNormalIconColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.normal}>
-        <BpkSmallTickIcon />
-        &nbsp;Normal
-      </BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeWarningIconColor: statusWarningSpotDay }}
-      themeAttributes={['badgeWarningIconColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.warning}>
-        <BpkSmallHelpCircleIcon />
-        &nbsp;Warning
-      </BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeSuccessIconColor: statusSuccessSpotDay }}
-      themeAttributes={['badgeSuccessIconColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.success}>
-        <BpkSmallTickIcon />
-        &nbsp;Success
-      </BpkBadge>
-    </BpkThemeProvider>
-    &nbsp;
-    <BpkThemeProvider
-      theme={{ badgeCriticalIconColor: statusDangerSpotDay }}
-      themeAttributes={['badgeCriticalIconColor']}
-    >
-      <BpkBadge type={BADGE_TYPES.critical}>
-        <BpkSmallExclamationIcon />
-        &nbsp;Critical
-      </BpkBadge>
-    </BpkThemeProvider>
-  </BadgeLayout>
-);
-
-const ThemedTypographyExample = () => (
-  <BpkThemeProvider
-    theme={{
-      badgeFontSize: fontSizeBase,
-      badgeFontWeight: fontWeightBold,
-      badgeLineHeight: lineHeightBase,
-    }}
-    themeAttributes={['badgeFontSize', 'badgeFontWeight', 'badgeLineHeight']}
-  >
-    <BadgeLayout>
-      <BpkBadge>Normal</BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.warning}>
-        <BpkSmallHelpCircleIcon />
-        &nbsp;Warning
-      </BpkBadge>
-      &nbsp;
-      <BpkBadge type={BADGE_TYPES.success}>
-        <BpkSmallTickIcon />
-        &nbsp;Success
-      </BpkBadge>
-    </BadgeLayout>
-  </BpkThemeProvider>
+const ThemedExample = () => (
+  <BpkProvider>
+    <BpkFlex gap={BpkSpacing.XL}>
+      <BpkVStack gap={BpkSpacing.SM}>
+        <BpkText textStyle={TEXT_STYLES.caption}>Default</BpkText>
+        {ALL_BADGE_ROWS.map((row) => (
+          <BadgeRow key={row.label} {...row} />
+        ))}
+      </BpkVStack>
+      <BpkThemeProvider
+        theme={{
+          privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
+          privateBadgeDimensionPaddingHorizontalDefault: '0',
+        }}
+        themeAttributes={[
+          'privateBadgeColourBgDefault',
+          'privateBadgeDimensionPaddingHorizontalDefault',
+        ]}
+      >
+        <BpkVStack gap={BpkSpacing.SM}>
+          <BpkText textStyle={TEXT_STYLES.caption}>Themed</BpkText>
+          {ALL_BADGE_ROWS.map((row) => (
+            <BadgeRow key={row.label} {...row} />
+          ))}
+        </BpkVStack>
+      </BpkThemeProvider>
+    </BpkFlex>
+  </BpkProvider>
 );
 
 const MixedExample = () => (
@@ -314,6 +255,7 @@ const MixedExample = () => (
     <BrandExample />
     <InverseExample />
     <OutlineExample />
+    <SubtleExample />
   </div>
 );
 
@@ -357,6 +299,10 @@ export const Outline = {
   render: () => <OutlineExample />,
 };
 
+export const Subtle = {
+  render: () => <SubtleExample />,
+};
+
 export const Centered = {
   render: () => <CenteredExample />,
 };
@@ -369,20 +315,9 @@ export const DockedLeft = {
   render: () => <DockedLeadingExample />,
 };
 
-export const ThemedCornerRadius = {
-  render: () => <ThemedCornerRadiusExample />,
-};
-
-export const ThemedBackgroundColor = {
-  render: () => <ThemedBackgroundColorExample />,
-};
-
-export const ThemedIconColor = {
-  render: () => <ThemedIconColorExample />,
-};
-
-export const ThemedTypography = {
-  render: () => <ThemedTypographyExample />,
+export const Themed = {
+  render: () => <ThemedExample />,
+  tags: ['dark-mode-compatible'],
 };
 
 export const VisualTest = {
