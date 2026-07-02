@@ -195,6 +195,20 @@ const ColorPropExample = () => (
   </div>
 );
 
+const StrikethroughExample = () => (
+  <div>
+    <BpkText tagName="p" strikethrough>
+      Plain strikethrough text
+    </BpkText>
+    <BpkText tagName="p" color={TEXT_COLORS.textError} strikethrough>
+      Strikethrough with textError color
+    </BpkText>
+    <BpkText tagName="p" color={TEXT_COLORS.textSecondary} strikethrough>
+      Strikethrough with textSecondary color
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
@@ -203,6 +217,7 @@ const MixedExample = () => (
     <LabelStylesExample />
     <LarkenStylesExample />
     <ColorPropExample />
+    <StrikethroughExample />
   </div>
 );
 
@@ -268,6 +283,10 @@ export const TextAlignProp = {
 
 export const ColorProp = {
   render: () => <ColorPropExample />,
+};
+
+export const Strikethrough = {
+  render: () => <StrikethroughExample />,
 };
 
 export const VisualTest = {

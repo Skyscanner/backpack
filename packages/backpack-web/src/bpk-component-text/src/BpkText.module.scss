@@ -172,6 +172,10 @@ $text-colors: (
     }
   }
 
+  &--strikethrough {
+    text-decoration: line-through;
+  }
+
   $text-aligns: 'start', 'end', 'center', 'justify';
 
   @each $align in $text-aligns {
