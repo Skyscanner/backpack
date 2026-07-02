@@ -66,7 +66,7 @@ module.exports = ({ config }) => {
   config.plugins.push(new MiniCssExtractPlugin());
   config.module.rules.push({
     test: /\.[jt]sx?$/,
-    exclude: /node_modules\/(?!(\.pnpm|bpk-)).*/,
+    exclude: /node_modules\/(?!bpk-).*/,
     loader: 'babel-loader',
     options: {
       cacheDirectory: true,

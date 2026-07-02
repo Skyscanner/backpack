@@ -24,7 +24,7 @@ runs:
 
     - name: Build CSS from DTCG tokens
       shell: bash
-      run: pnpm run tokens:build-css
+      run: npm run tokens:build-css
 
     - name: Rebuild base stylesheet
       shell: bash

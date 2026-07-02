@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=22.9.0",
-    "pnpm": ">=9.15.9"
+    "npm": ">=10.8.3"
   },
+  "workspaces": [
+    "packages/*",
+    "libs/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:Skyscanner/backpack.git"
@@ -21,34 +24,34 @@
     "check-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js",
     "check-react-versions": "node scripts/npm/check-react-versions.js",
     "check-pristine": "node scripts/check-pristine-state",
-    "clean": "pnpm run clean:dist && pnpm run clean:node_modules",
+    "clean": "npm run clean:dist && npm run clean:node_modules",
     "clean:dist": "rm -rf dist packages/backpack-web/dist packages/backpack-adoption-guard/dist",
     "clean:node_modules": "rm -rf node_modules",
     "danger": "danger ci",
     "figma:generate-config": "node scripts/figma/generate-figma-config.js",
     "figma:generate-icons": "nx run backpack-web:figma-generate-icons",
-    "figma:generate": "pnpm run figma:generate-config && pnpm run figma:generate-icons",
+    "figma:generate": "npm run figma:generate-config && npm run figma:generate-icons",
     "fix-bpk-dependencies": "node scripts/npm/check-bpk-dependencies.js --fix",
     "upgrade-foundations": "node scripts/npm/check-bpk-dependencies.js --fix --upgrade-foundations",
     "jest": "TZ=Etc/UTC jest --coverage",
     "jest:update": "TZ=Etc/UTC jest --updateSnapshot",
     "jest:watch": "TZ=Etc/UTC jest --watch",
     "jest:accessibility": "jest --testRegex accessibility-test",
-    "lint": "pnpm run lint:js && pnpm run lint:scss",
+    "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint . libs/backpack-storybook-host/.storybook --ext .js,.jsx,.ts,.tsx",
     "lint:js:fix": "eslint . libs/backpack-storybook-host/.storybook --ext .js,.jsx,.ts,.tsx --fix",
     "lint:scss": "nx run backpack-web:lint-scss",
     "lint:scss:fix": "nx run backpack-web:lint-scss-fix",
     "lint-staged": "lint-staged",
     "prettier": "prettier --config .prettierrc --write \"**/*.(js|ts|tsx)\"",
-    "start": "pnpm run build && pnpm run storybook",
+    "start": "npm run build && npm run storybook",
     "storybook": "nx run backpack-storybook-host:serve-storybook -- -p 9001",
     "storybook:dist": "nx run backpack-storybook-host:build-storybook -- -o dist-storybook",
     "tokens:fetch": "tsx token-sync/src/index.ts",
     "tokens:build-css": "tsx token-sync/src/build-css-cli.ts",
-    "tokens:sync": "pnpm run tokens:fetch && pnpm run tokens:build-css",
+    "tokens:sync": "npm run tokens:fetch && npm run tokens:build-css",
     "sassdoc": "nx run backpack-web:sassdoc",
-    "test": "pnpm run lint && pnpm run check-react-versions && pnpm run check-bpk-dependencies && pnpm run jest",
+    "test": "npm run lint && npm run check-react-versions && npm run check-bpk-dependencies && npm run jest",
     "typecheck": "tsc && nx run-many -t typecheck",
     "prepare": "husky",
     "percy-test": "percy storybook ./libs/backpack-storybook-host/dist-storybook -i '/Visual\\stest\\s?([a-z]*)?/i'",
@@ -80,8 +83,7 @@
       "^.+\\.(svg|png)$": "<rootDir>/scripts/stubs/fileStub.js",
       "react-transition-group/CSSTransition": "<rootDir>/scripts/stubs/cssTransitionStub.js",
       "@skyscanner/bpk-svgs/dist/svgs/^.+\\.svg$": "<rootDir>/scripts/stubs/fileStub.js",
-      "^react($|/.+)": "<rootDir>/node_modules/react$1",
-      "^react-dom($|/.+)": "<rootDir>/node_modules/react-dom$1"
+      "^react($|/.+)": "<rootDir>/node_modules/react$1"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
@@ -96,7 +98,7 @@
     ],
     "testRegex": "(?:packages|token-sync)/.*-test\\.[jt]sx?$",
     "transformIgnorePatterns": [
-      "node_modules/(?!\\.pnpm|bpk|@skyscanner|d3-.*|internmap)"
+      "node_modules/(?!bpk|@skyscanner|d3-.*|internmap)"
     ],
     "verbose": true
   },
@@ -133,7 +135,6 @@
     "@skyscanner/bpk-svgs": "^20.14.0",
     "@skyscanner/eslint-config-skyscanner": "^22.6.0",
     "@skyscanner/stylelint-config-skyscanner": "^14.2.0",
-    "stylelint": "^16.26.1",
     "@storybook/addon-a11y": "^10.3.5",
     "@storybook/addon-docs": "^10.3.5",
     "@storybook/addon-webpack5-compiler-babel": "^4.0.0",
@@ -144,7 +145,6 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
     "@types/jest-axe": "^3.5.9",
-    "@types/lodash": "^4.14.202",
     "@types/lodash.clamp": "^4.0.9",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
@@ -174,7 +174,6 @@
     "jest": "^30.3.0",
     "jest-axe": "^10.0.0",
     "jest-environment-jsdom": "^30.3.0",
-    "jscodeshift": "0.13.1",
     "lint-staged": "^16.2.7",
     "lodash": "^4.18.1",
     "mini-css-extract-plugin": "^2.9.0",
@@ -182,7 +181,6 @@
     "nx": "22.7.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^8.2.0",
-    "pretty-format": "29.7.0",
     "prop-types": "^15.7.2",
     "raf": "^3.4.1",
     "react": "18.3.1",
@@ -201,10 +199,7 @@
     "webpack": "^5.107.2",
     "wrapper-webpack-plugin": "^2.2.2"
   },
-  "pnpm": {
-    "overrides": {
-      "braces": "3.0.3"
-    },
-    "neverBuiltDependencies": ["node-sass"]
+  "overrides": {
+    "braces": "3.0.3"
   }
 }
