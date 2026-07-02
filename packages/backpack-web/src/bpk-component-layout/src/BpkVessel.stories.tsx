@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
+import { useEffect, useRef, useState } from 'react';
+
 import { BpkProvider, BpkVessel } from '..';
+import BpkText from '../../bpk-component-text';
 
 import type { Meta } from '@storybook/react';
 
@@ -31,6 +34,28 @@ const BpkVesselExample = () => (
     Content
   </BpkVessel>
 );
+
+const BpkVesselRefExample = () => {
+  const ref = useRef<HTMLElement>(null);
+  const [tagName, setTagName] = useState('');
+
+  useEffect(() => {
+    setTagName(ref.current?.tagName ?? '');
+  }, []);
+
+  return (
+    <BpkVessel
+      ref={ref}
+      as="section"
+      style={{
+        padding: '16px',
+      }}
+      data-testid="vessel-ref"
+    >
+      <BpkText>Ref target: {tagName}</BpkText>
+    </BpkVessel>
+  );
+};
 
 const meta = {
   title: 'bpk-component-layout/Vessel',
@@ -48,4 +73,8 @@ export default meta;
 
 export const Default = {
   render: () => <BpkVesselExample />,
+};
+
+export const Ref = {
+  render: () => <BpkVesselRefExample />,
 };

@@ -16,12 +16,9 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes, {
-  allBadgeThemeAttributes,
-  badgeThemeAttributes,
-} from './src/themeAttributes';
+import BpkSectionList from './src/BpkSectionList';
+import BpkSectionListItem from './src/BpkSectionListItem';
+import BpkSectionListSection from './src/BpkSectionListSection';
 
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes, allBadgeThemeAttributes, badgeThemeAttributes };
+export default BpkSectionList;
+export { BpkSectionListSection, BpkSectionListItem };
