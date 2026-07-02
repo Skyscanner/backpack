@@ -105,7 +105,10 @@ describe.each([
       />,
     );
 
-    expect(screen.getByText(previousPrice)).toHaveClass(expectedDefaultClass);
+    const previousPriceEl = screen.getByText(previousPrice);
+    expect(previousPriceEl).toHaveClass(expectedDefaultClass);
+    expect(previousPriceEl).toHaveClass('bpk-text--text-error');
+    expect(previousPriceEl).toHaveClass('bpk-text--strikethrough');
   });
 
   it('should render previous price and leading text separated by a separator', () => {
