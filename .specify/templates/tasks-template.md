@@ -189,8 +189,8 @@ VALIDATION:
   - **Constitution Check**: RTL support REQUIRED
 
 - [ ] T019 [US1] Run tests and verify they pass
-  - Run `npm run jest` for unit tests
-  - Run `npm run jest:accessibility` for a11y tests
+  - Run `pnpm run jest` for unit tests
+  - Run `pnpm run jest:accessibility` for a11y tests
   - Verify coverage meets thresholds (70% branches, 75% functions/lines/statements)
   - **Constitution Check**: Coverage thresholds MUST be met
 
@@ -293,22 +293,22 @@ VALIDATION:
   - **Constitution Check**: Skip if component uses images (per decisions/visual-tests.md)
 
 - [ ] TXXX Run full test suite and verify all pass
-  - `npm run test` (includes lint, type-check, jest)
+  - `pnpm run test` (includes lint, type-check, jest)
   - Verify coverage thresholds met
   - Fix any failing tests
 
 - [ ] TXXX Verify TypeScript compilation
-  - Run `npm run typecheck`
+  - Run `pnpm run typecheck`
   - Ensure no TypeScript errors
   - Generate `.d.ts` declaration files
 
 - [ ] TXXX Verify ESLint and Stylelint pass
-  - Run `npm run lint:js`
-  - Run `npm run lint:scss`
+  - Run `pnpm run lint:js`
+  - Run `pnpm run lint:scss`
   - Fix any linting errors
 
 - [ ] TXXX Build component and verify output
-  - Run `npm run build`
+  - Run `pnpm run build`
   - Check `dist/` output
   - Verify styles compiled correctly
 
