@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkTicket from './src/BpkTicket';
 
 export default BpkTicket;
