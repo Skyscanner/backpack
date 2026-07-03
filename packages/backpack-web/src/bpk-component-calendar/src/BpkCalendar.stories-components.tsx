@@ -254,7 +254,7 @@ class MonthViewCalendar extends Component<MonthViewCalendarProps, MonthViewCalen
 
 type CalendarContainerProps = {
   selectionConfiguration?: SelectionConfiguration;
-  [key: string]: any;
+  [key: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 type CalendarContainerState = {
@@ -292,7 +292,7 @@ class CalendarContainer extends Component<CalendarContainerProps, CalendarContai
   render() {
     return (
       <BpkCalendar
-        {...(this.props as any)}
+        {...this.props}
         onDateSelect={(startDate: Date, endDate: Date | null = null) => {
           const { selectionConfiguration } = this.props;
           if (selectionConfiguration?.type === 'range') {
