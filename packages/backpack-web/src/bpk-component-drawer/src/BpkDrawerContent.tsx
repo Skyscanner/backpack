@@ -79,8 +79,6 @@ const BpkDrawerContent = ({
   ...rest
 }: Props) => {
 
-  const isDualPanel = Boolean(secondaryPanel?.isOpen);
-
   const drawerClassNames = [getClassName('bpk-drawer')];
   const headerClassNames = [getClassName('bpk-drawer__heading')];
   const contentClassNames = [getClassName('bpk-drawer__content')];
@@ -89,7 +87,7 @@ const BpkDrawerContent = ({
     drawerClassNames.push(className);
   }
 
-  if (isDualPanel) {
+  if (secondaryPanel?.isOpen) {
     drawerClassNames.push(getClassName('bpk-drawer--dual-panel'));
   }
 
@@ -169,28 +167,25 @@ const BpkDrawerContent = ({
           ref={setRefs}
           {...rest}
         >
-          {secondaryPanel ? (
+          {secondaryPanel?.isOpen ? (
             <div className={getClassName('bpk-drawer__panels')}>
               <div className={getClassName('bpk-drawer__primary')}>
                 {drawerHeader}
                 <div className={contentClassNames.join(' ')}>{children}</div>
               </div>
-
-              {secondaryPanel.isOpen && (
-                <div
-                  role="complementary"
-                  aria-label={secondaryPanel.closeLabel ?? closeLabel}
-                  className={getClassName('bpk-drawer__secondary')}
-                  data-testid="secondary-panel"
-                >
-                  <div className={getClassName('bpk-drawer__secondary-close')}>
-                    <BpkCloseButton label={secondaryPanel.closeLabel ?? closeLabel} onClick={secondaryPanel.onClose} />
-                  </div>
-                  <div className={getClassName('bpk-drawer__secondary-content')}>
-                    {secondaryPanel.children}
-                  </div>
+              <div
+                role="complementary"
+                aria-label="Secondary panel"
+                className={getClassName('bpk-drawer__secondary')}
+                data-testid="secondary-panel"
+              >
+                <div className={getClassName('bpk-drawer__secondary-close')}>
+                  <BpkCloseButton label={secondaryPanel.closeLabel ?? closeLabel} onClick={secondaryPanel.onClose} />
                 </div>
-              )}
+                <div className={getClassName('bpk-drawer__secondary-content')}>
+                  {secondaryPanel.children}
+                </div>
+              </div>
             </div>
           ) : (
             <>
