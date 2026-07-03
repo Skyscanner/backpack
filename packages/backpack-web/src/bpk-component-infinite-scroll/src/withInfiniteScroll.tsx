@@ -140,7 +140,10 @@ const withInfiniteScroll = <T extends ExtendedProps>(
           this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
       })
         .then((newState) => {
-          this.setState(newState as State);
+          this.setState((prevState) => ({
+            ...prevState,
+            ...newState,
+          }));
         })
         .catch(console.error);
     }
@@ -176,12 +179,12 @@ const withInfiniteScroll = <T extends ExtendedProps>(
       // If after this call there is no elementsToRender or index present in state
       // it means the new data source has no items and we need to
       // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
-      const { elementsToRender, index } = newState;
-      this.setState({
+      this.setState((prevState) => ({
+        ...prevState,
         ...newState,
-        elementsToRender: elementsToRender || [],
-        index: index || 0,
-      } as State);
+        elementsToRender: newState.elementsToRender || [],
+        index: newState.index || 0,
+      }));
     }
 
     updateData = () => {
@@ -253,7 +256,10 @@ const withInfiniteScroll = <T extends ExtendedProps>(
         }
         return this.fetchItems()
           .then((newState) => {
-            this.setState(newState as State);
+            this.setState((prevState) => ({
+              ...prevState,
+              ...newState,
+            }));
           })
           .catch(console.error);
       }
@@ -263,7 +269,10 @@ const withInfiniteScroll = <T extends ExtendedProps>(
     handleSeeMoreClick = (): void => {
       this.fetchItems()
         .then((newState) => {
-          this.setState(newState as State);
+          this.setState((prevState) => ({
+            ...prevState,
+            ...newState,
+          }));
         })
         .catch(console.error);
     };
