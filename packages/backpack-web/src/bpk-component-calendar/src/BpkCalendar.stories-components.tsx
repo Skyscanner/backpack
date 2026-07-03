@@ -292,7 +292,7 @@ class CalendarContainer extends Component<CalendarContainerProps, CalendarContai
   render() {
     return (
       <BpkCalendar
-        {...this.props}
+        {...(this.props as any)}
         onDateSelect={(startDate: Date, endDate: Date | null = null) => {
           const { selectionConfiguration } = this.props;
           if (selectionConfiguration?.type === 'range') {
