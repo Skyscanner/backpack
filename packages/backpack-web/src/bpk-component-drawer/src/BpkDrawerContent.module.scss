@@ -136,7 +136,7 @@
   }
 
   &--dual-panel {
-    width: calc(var(--dynamic-width) * 2);
+    width: min(calc(var(--dynamic-width) * 2), 100vw);
     overflow: hidden;
     will-change: width;
   }
@@ -151,16 +151,18 @@
   &__primary {
     display: flex;
     width: var(--dynamic-width);
+    min-width: 0;
     flex-direction: column;
-    flex-shrink: 0;
+    flex: 1 1 var(--dynamic-width);
     overflow-y: auto;
   }
 
   &__secondary {
     display: flex;
     width: var(--dynamic-width);
+    min-width: 0;
     flex-direction: column;
-    flex-shrink: 0;
+    flex: 1 1 var(--dynamic-width);
     border-left: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
     overflow-y: auto;
   }
