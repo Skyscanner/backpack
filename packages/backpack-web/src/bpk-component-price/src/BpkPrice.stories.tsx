@@ -17,10 +17,14 @@
  */
 
 
+import { surfaceContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 
 import BpkPrice from './BpkPrice';
-import { SIZES, ALIGNS } from './common-types';
+import { SIZES, ALIGNS, VARIANTS } from './common-types';
 
 import type { Meta } from '@storybook/react';
 
@@ -363,6 +367,80 @@ const MixedExample = () => (
   </div>
 );
 
+const OnContrastExample = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: surfaceContrastDay }}
+  >
+    <BpkPrice
+      size={SIZES.large}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      variant={VARIANTS.onContrast}
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const OnContrastRightExample = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: surfaceContrastDay }}
+  >
+    <BpkPrice
+      size={SIZES.large}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      align={ALIGNS.right}
+      variant={VARIANTS.onContrast}
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const MixedOnContrastExample = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: surfaceContrastDay }}
+  >
+    <BpkPrice
+      size={SIZES.large}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      variant={VARIANTS.onContrast}
+    />
+    <BpkPrice
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      variant={VARIANTS.onContrast}
+    />
+    <BpkPrice
+      size={SIZES.small}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      align={ALIGNS.right}
+      variant={VARIANTS.onContrast}
+    />
+    <BpkPrice
+      size={SIZES.xsmall}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      align={ALIGNS.right}
+      variant={VARIANTS.onContrast}
+    />
+  </BpkDarkExampleWrapper>
+);
+
 const meta = {
   title: 'bpk-component-price',
   component: BpkPrice,
@@ -535,8 +613,20 @@ export const LargeLongPrice = {
   render: () => <LargeLongPriceExample />,
 };
 
+export const OnContrast = {
+  render: () => <OnContrastExample />,
+};
+
+export const OnContrastRight = {
+  render: () => <OnContrastRightExample />,
+};
+
 export const VisualTest = {
   render: () => <MixedExample />,
+};
+
+export const VisualTestOnContrast = {
+  render: () => <MixedOnContrastExample />,
 };
 
 export const VisualTestWithZoom = {

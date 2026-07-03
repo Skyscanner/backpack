@@ -18,7 +18,7 @@
 import figma from "@figma/code-connect"
 
 import BpkPrice from "./BpkPrice"
-import { SIZES, ALIGNS } from './common-types'
+import { SIZES, ALIGNS, VARIANTS } from './common-types'
 
 
 figma.connect(
@@ -37,10 +37,14 @@ figma.connect(
         Left: ALIGNS.left,
         Right: ALIGNS.right,
       }),
+      variant: figma.enum("Style", {
+        Default: VARIANTS.default,
+        onContrast: VARIANTS.onContrast,
+      }),
       trailingText: figma.string('Trailing text'),
     },
-    example: ({ align, price, size, trailingText }) => (
-      <BpkPrice price={price} size={size} align={align} trailingText={trailingText} />
+    example: ({ align, price, size, trailingText, variant }) => (
+      <BpkPrice price={price} size={size} align={align} trailingText={trailingText} variant={variant} />
     ),
   },
 )
