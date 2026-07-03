@@ -20,26 +20,43 @@ import PropTypes from 'prop-types';
 
 import { isBefore, isSameDay } from './date-utils';
 
-const DateType = () => (props) => {
+import type {
+  DateModifiers as DateModifiersType,
+  DaysOfWeek as DaysOfWeekType,
+  ReactComponent as ReactComponentType,
+  SelectionConfiguration as SelectionConfigurationType,
+  WeekDay as WeekDayType,
+  WeekDayKey as WeekDayKeyType,
+} from './custom-proptypes';
+
+type DateRangeProps = {
+  endDate?: Date | null;
+  startDate?: Date | null;
+};
+
+const DateType = () => (
+  props: DateRangeProps,
+): Error | null => {
   const { endDate, startDate } = props;
 
-  // No range selected
   if (!startDate && !endDate) {
     return null;
   }
 
-  // End date without a start date is not allowed
   if (!startDate && endDate) {
-    return new Error(`Cannot specify \`endDate\` without \`startDate\`.`);
+    return new Error('Cannot specify `endDate` without `startDate`.');
   }
 
-  // Start date without an end date is always valid
   if (startDate && !endDate) {
     return null;
   }
 
-  // Start date cannot be after end date
-  if (isBefore(endDate, startDate) && !isSameDay(endDate, startDate)) {
+  if (
+    endDate &&
+    startDate &&
+    isBefore(endDate, startDate) &&
+    !isSameDay(endDate, startDate)
+  ) {
     return new Error(
       `Start date \`${startDate}\` cannot be after end date \`${endDate}\`.`,
     );
@@ -51,7 +68,7 @@ const DateType = () => (props) => {
 const CALENDAR_SELECTION_TYPE = {
   single: 'single',
   range: 'range',
-};
+} as const;
 
 export const SELECTION_TYPES = {
   none: 'none',
@@ -60,7 +77,7 @@ export const SELECTION_TYPES = {
   middle: 'middle',
   end: 'end',
   sameDay: 'sameDay',
-};
+} as const;
 
 const SelectionConfigurationSingle = PropTypes.shape({
   type: PropTypes.oneOf([CALENDAR_SELECTION_TYPE.single]),
@@ -91,12 +108,10 @@ const DateModifiers = PropTypes.objectOf(PropTypes.func);
 const ReactComponent = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
 
 const BpkCalendarGridPropTypes = {
-  // Required
   DateComponent: PropTypes.elementType.isRequired,
   formatDateFull: PropTypes.func.isRequired,
   month: PropTypes.instanceOf(Date).isRequired,
   weekStartsOn: PropTypes.number.isRequired,
-  // Optional
   className: PropTypes.string,
   cellClassName: PropTypes.string,
   dateModifiers: DateModifiers,
@@ -115,9 +130,7 @@ const BpkCalendarGridPropTypes = {
 };
 
 const BpkCalendarDatePropTypes = {
-  // Required
   date: PropTypes.instanceOf(Date).isRequired,
-  // Optional
   className: PropTypes.string,
   isBlocked: PropTypes.bool,
   isFocused: PropTypes.bool,
@@ -133,11 +146,16 @@ const BpkCalendarDatePropTypes = {
   style: PropTypes.object,
 };
 
-export {
-  CALENDAR_SELECTION_TYPE,
-  BpkCalendarGridPropTypes,
-  BpkCalendarDatePropTypes,
+export type {
+  DateModifiersType as DateModifiers,
+  DaysOfWeekType as DaysOfWeek,
+  ReactComponentType as ReactComponent,
+  SelectionConfigurationType as SelectionConfiguration,
+  WeekDayType as WeekDay,
+  WeekDayKeyType as WeekDayKey,
 };
+
+export { CALENDAR_SELECTION_TYPE, BpkCalendarGridPropTypes, BpkCalendarDatePropTypes };
 
 export default {
   SelectionConfiguration,
