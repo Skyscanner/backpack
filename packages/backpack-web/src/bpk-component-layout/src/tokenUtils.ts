@@ -113,6 +113,10 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'flexGrow',
       'flexShrink',
       'flexBasis',
+      'alignSelf',
+      'justifySelf',
+      'gridColumn',
+      'gridRow',
     ],
   },
   // Note: BpkGrid maps its public API props to these Chakra keys.

@@ -16,8 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkSectionList from './src/BpkSectionList';
+import BpkSectionListItem from './src/BpkSectionListItem';
+import BpkSectionListSection from './src/BpkSectionListSection';
 
-import BpkTicket from './src/BpkTicket';
-
-export default BpkTicket;
+export default BpkSectionList;
+export { BpkSectionListSection, BpkSectionListItem };

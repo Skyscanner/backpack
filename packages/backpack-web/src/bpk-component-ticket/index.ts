@@ -16,12 +16,6 @@
  * limitations under the License.
  */
 
-import component, { BADGE_TYPES, type Props } from './src/BpkBadge';
-import themeAttributes, {
-  allBadgeThemeAttributes,
-  badgeThemeAttributes,
-} from './src/themeAttributes';
+import BpkTicket from './src/BpkTicket';
 
-export type BpkBadgeProps = Props;
-export default component;
-export { BADGE_TYPES, themeAttributes, allBadgeThemeAttributes, badgeThemeAttributes };
+export default BpkTicket;

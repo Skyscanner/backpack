@@ -16,23 +16,15 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { HTMLAttributes, ReactNode } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
-
-type Props = {
-  children: Node,
+export type Props = HTMLAttributes<HTMLElement> & {
+  children: ReactNode;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-const BpkSectionList = (props: Props) => {
-  const { children, ...rest } = props;
-
-  return <section {...rest}>{children}</section>;
-};
-
-BpkSectionList.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const BpkSectionList = ({ children, ...rest }: Props) => (
+  <section {...rest}>{children}</section>
+);
 
 export default BpkSectionList;

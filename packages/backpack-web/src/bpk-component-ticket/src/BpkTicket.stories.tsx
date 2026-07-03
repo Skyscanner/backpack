@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import BpkButton from '../../bpk-component-button';
 import {
   withButtonAlignment,
@@ -46,7 +44,7 @@ const flights = Array(100).fill({
   logo: '//logos.skyscnr.com/images/airlines/BA.png',
 });
 
-const Flight = ({ flight }) => (
+const Flight = ({ flight }: { flight: Record<string, string> }) => (
   <BpkTicket
     className={getClassName('bpk-stories-flight')}
     stubClassName={getClassName('bpk-stories-flight__stub')}
@@ -91,10 +89,6 @@ const Flight = ({ flight }) => (
     </div>
   </BpkTicket>
 );
-
-Flight.propTypes = {
-  flight: PropTypes.objectOf(PropTypes.string).isRequired,
-};
 
 const DefaultExample = () => (
   <BpkTicket stub="Lorem ipsum dolor sit amet.">

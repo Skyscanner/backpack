@@ -16,28 +16,30 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
-import BpkSectionList from './BpkSectionList';
+import BpkSectionListSection from './BpkSectionListSection';
 
-describe('BpkSectionList', () => {
+describe('BpkSectionListSection', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<BpkSectionList>Hello world</BpkSectionList>);
+    const { asFragment } = render(
+      <BpkSectionListSection>Hello world</BpkSectionListSection>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with a custom className', () => {
+  it('should render correctly with "headerText" prop', () => {
     const { asFragment } = render(
-      <BpkSectionList className="custom-class">Hello world</BpkSectionList>,
+      <BpkSectionListSection headerText="Heading">
+        Hello world
+      </BpkSectionListSection>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkSectionList testid="123">Hello world</BpkSectionList>,
+      <BpkSectionListSection testid="123">Hello world</BpkSectionListSection>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
