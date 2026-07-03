@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Component, type MouseEvent as ReactMouseEvent } from 'react';
+import { Component, type MouseEvent } from 'react';
 
 import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
@@ -66,7 +66,7 @@ class BpkGridToggle extends Component<
     }
   };
 
-  toggleGrid = (e: MouseEvent | KeyboardEvent) => {
+  toggleGrid = (e: MouseEvent<HTMLButtonElement> | KeyboardEvent) => {
     const { targetContainer = 'body' } = this.props;
     e.preventDefault();
 
@@ -79,10 +79,6 @@ class BpkGridToggle extends Component<
     }));
   };
 
-  handleLinkClick = (e: ReactMouseEvent<HTMLButtonElement>) => {
-    this.toggleGrid(e as unknown as MouseEvent);
-  };
-
   render() {
     const { className = undefined } = this.props;
     const { gridEnabled } = this.state;
@@ -93,7 +89,7 @@ class BpkGridToggle extends Component<
         <BpkLink
           as="button"
           title="Keyboard Shortcut: ctrl + cmd + g"
-          onClick={this.handleLinkClick}
+          onClick={this.toggleGrid}
         >
           Baseline grid {onOrOff}
         </BpkLink>
