@@ -99,7 +99,7 @@
           "node scripts/transpilation/copy-utils.js",
           "cp packages/backpack-web/package.json packages/backpack-web/dist/",
           "cp packages/backpack-web/README.md packages/backpack-web/dist/",
-          "node scripts/transpilation/strip-exports.js"
+          "node scripts/transpilation/prepare-package-manifest.js"
         ],
         "parallel": false,
         "cwd": "{workspaceRoot}"

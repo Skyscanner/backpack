@@ -19,13 +19,18 @@
 const fs = require('fs');
 const path = require('path');
 
-// The source-time package.json declares an `exports` map with `./src/...`
-// paths so sibling workspace packages can resolve `@skyscanner/backpack-web/foo`
-// against the source tree before the package is built. The published artifact
-// is built from packages/backpack-web/dist and has historically relied on
-// Node's legacy filesystem resolution (no `exports` field), which is what
-// existing consumers expect. Strip the field from the dist manifest so the
-// published package keeps that contract.
+// The source-time package.json contains fields that are useful inside the
+// workspace, but should not be copied into the package published from
+// packages/backpack-web/dist.
+//
+// `exports` points to ./src/... paths so sibling workspace packages can resolve
+// @skyscanner/backpack-web/foo against the source tree before the package is
+// built. The published artifact has historically relied on Node's legacy
+// filesystem resolution, which is what existing consumers expect.
+//
+// `devDependencies` can contain workspace:* dependencies that are only
+// resolvable inside this monorepo. They are not needed by consumers and can
+// break package-manager publish validation when publishing from dist.
 
 const distPackageJsonPath = path.join(
   'packages',
@@ -37,6 +42,7 @@ const distPackageJsonPath = path.join(
 const pkg = JSON.parse(fs.readFileSync(distPackageJsonPath, 'utf8'));
 
 delete pkg.exports;
+delete pkg.devDependencies;
 
 fs.writeFileSync(
   distPackageJsonPath,
@@ -45,4 +51,4 @@ fs.writeFileSync(
 );
 
 // eslint-disable-next-line no-console
-console.log('Stripped exports from dist/package.json for the published layout. 👍');
+console.log('Prepared dist/package.json for the published layout.');

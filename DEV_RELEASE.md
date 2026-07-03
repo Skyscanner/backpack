@@ -62,8 +62,8 @@ from.
    workflow run.
 3. **Build** — `pnpm install --frozen-lockfile` and `pnpm run build` run against the PR's HEAD
    commit, producing `packages/backpack-web/dist`.
-4. **Publish** — only when `dry_run=false`. Bumps the version with
-   `npm version --no-git-tag-version` and runs `npm publish --tag dev`. This
+4. **Publish** — only when `dry_run=false`. Stamps the dev version into the
+   built package and runs `pnpm publish --tag dev --no-git-checks`. This
    step is gated by the `Publishing` GitHub environment, so a member of the
    `backpack-web` team must approve it from the run page.
 5. **Result comment** — the same PR comment is updated in place with the
@@ -97,7 +97,7 @@ npm install @skyscanner/backpack-web@latest
 |                       | `dry_run=true`           | `dry_run=false`          |
 |-----------------------|--------------------------|--------------------------|
 | Runs build pipeline   | Yes                      | Yes                      |
-| Calls `npm publish`   | No                       | Yes                      |
+| Calls `pnpm publish`  | No                       | Yes                      |
 | Needs `Publishing` approval | No                 | Yes (backpack-web team)  |
 | Posts result comment  | "Dry Run Successful"     | "Dev Release Published"  |
 | Useful for            | Validating the workflow  | Sharing a build with a consumer |
@@ -110,7 +110,7 @@ build still passes after a force-push.
 - Fork PRs are rejected by the security check. Push your branch directly to
   `Skyscanner/backpack` if you have write access.
 - A real publish requires a `backpack-web` team approval each time. This is
-  intentional — `npm publish` is irreversible and shows up in every consumer's
+  intentional — publishing is irreversible and shows up in every consumer's
   `npm install`.
 - The base version comes from `git describe --tags --abbrev=0 --exclude='*-*'`
   on the PR's HEAD. If the PR branch is far behind `main`, the base version
