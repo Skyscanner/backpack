@@ -16,32 +16,44 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
 
-import BpkSectionListSection from './BpkSectionListSection';
+import BpkSectionListItem from './BpkSectionListItem';
 
-describe('BpkSectionListSection', () => {
+describe('BpkSectionListItem', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkSectionListSection>Hello world</BpkSectionListSection>,
+      <BpkSectionListItem>Hello world</BpkSectionListItem>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should render correctly with "headerText" prop', () => {
+  it('should render correctly with a "href" prop', () => {
     const { asFragment } = render(
-      <BpkSectionListSection headerText="Heading">
+      <BpkSectionListItem href="#">Hello world</BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with an "onClick" prop', () => {
+    const { asFragment } = render(
+      <BpkSectionListItem onClick={jest.fn()}>Hello world</BpkSectionListItem>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly with a custom className', () => {
+    const { asFragment } = render(
+      <BpkSectionListItem className="custom-class">
         Hello world
-      </BpkSectionListSection>,
+      </BpkSectionListItem>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkSectionListSection testid="123">Hello world</BpkSectionListSection>,
+      <BpkSectionListItem testid="123">Hello world</BpkSectionListItem>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
