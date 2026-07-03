@@ -137,6 +137,8 @@
 
   &--dual-panel {
     width: calc(var(--dynamic-width) * 2);
+    overflow: hidden;
+    will-change: width;
   }
 
   &__panels {

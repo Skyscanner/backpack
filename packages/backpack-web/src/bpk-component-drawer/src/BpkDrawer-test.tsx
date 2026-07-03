@@ -122,13 +122,14 @@ describe('BpkDrawer', () => {
           isOpen: true,
           onClose: onSecondaryClose,
           children: <div>Secondary content</div>,
+          closeLabel: 'Close secondary panel',
         }}
       >
         Primary content
       </BpkDrawer>,
     );
 
-    fireEvent.click(within(customRenderTarget).getByLabelText('Close panel'));
+    fireEvent.click(within(customRenderTarget).getByRole('button', { name: 'Close secondary panel' }));
 
     expect(onSecondaryClose).toHaveBeenCalledTimes(1);
   });

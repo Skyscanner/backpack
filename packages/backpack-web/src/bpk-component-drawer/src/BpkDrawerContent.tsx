@@ -28,7 +28,7 @@ import BpkCloseButton from '../../bpk-component-close-button';
 import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
 
-import type { SecondaryPanelProps } from './BpkDrawer';
+import type { SecondaryPanelProps } from './types';
 
 import STYLES from './BpkDrawerContent.module.scss';
 
@@ -179,11 +179,12 @@ const BpkDrawerContent = ({
               {secondaryPanel.isOpen && (
                 <div
                   role="complementary"
+                  aria-label={secondaryPanel.closeLabel ?? closeLabel}
                   className={getClassName('bpk-drawer__secondary')}
                   data-testid="secondary-panel"
                 >
                   <div className={getClassName('bpk-drawer__secondary-close')}>
-                    <BpkCloseButton label={secondaryPanel.closeLabel ?? 'Close panel'} onClick={secondaryPanel.onClose} />
+                    <BpkCloseButton label={secondaryPanel.closeLabel ?? closeLabel} onClick={secondaryPanel.onClose} />
                   </div>
                   <div className={getClassName('bpk-drawer__secondary-content')}>
                     {secondaryPanel.children}

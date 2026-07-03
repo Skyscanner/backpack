@@ -374,20 +374,16 @@ class DrawerWithSecondaryPanelContainer extends Component {
             isOpen: this.state.isSecondaryOpen,
             onClose: this.onSecondaryClose,
             children: (
-              <div style={{ padding: '1rem' }}>
-                <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                  This is the secondary panel content. It slides in alongside the primary content.
-                </BpkText>
-              </div>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+                This is the secondary panel content. It slides in alongside the primary content.
+              </BpkText>
             ),
           }}
         >
-          <div style={{ padding: '1rem' }}>
-            <Paragraph>This is the primary drawer content.</Paragraph>
-            <BpkButton type={BUTTON_TYPES.secondary} onClick={() => this.onSecondaryOpen()}>
-              Open secondary panel
-            </BpkButton>
-          </div>
+          <Paragraph>This is the primary drawer content.</Paragraph>
+          <BpkButton type={BUTTON_TYPES.secondary} onClick={() => this.onSecondaryOpen()}>
+            Open secondary panel
+          </BpkButton>
         </BpkDrawer>
       </div>
     );

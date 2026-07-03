@@ -26,14 +26,11 @@ import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
-const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
+import type { SecondaryPanelProps } from './types';
 
-export type SecondaryPanelProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  children: ReactNode;
-  closeLabel?: string;
-};
+export type { SecondaryPanelProps };
+
+const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
 export type Props = {
   id: string,
