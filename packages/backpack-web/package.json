@@ -59,7 +59,7 @@
     "@react-google-maps/api": "^2.19.3",
     "@skyscanner/bpk-foundations-web": "^24.6.0",
     "@skyscanner/bpk-svgs": "^20.14.0",
-    "tabbable": "^6.4.0",
+    "tabbable": "6.3.0",
     "d3-path": "^3.1.0",
     "d3-scale": "^4.0.2",
     "downshift": "^9.0.10",

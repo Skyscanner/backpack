@@ -18,15 +18,19 @@
 
 import BpkGridToggle from './BpkGridToggle';
 
+import type { Meta, StoryObj } from '@storybook/react';
+
 const DefaultExample = () => <BpkGridToggle />;
 
-const meta = {
+const meta: Meta<typeof BpkGridToggle> = {
   title: 'bpk-component-grid-toggle',
   component: BpkGridToggle,
 };
 
 export default meta;
 
-export const Example = {
+type Story = StoryObj<typeof BpkGridToggle>;
+
+export const Example: Story = {
   render: () => <DefaultExample />,
 };

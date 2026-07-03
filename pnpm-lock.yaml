@@ -427,8 +427,8 @@ importers:
         specifier: ^1
         version: 1.90.0
       tabbable:
-        specifier: ^6.4.0
-        version: 6.4.0
+        specifier: 6.3.0
+        version: 6.3.0
     devDependencies:
       '@jest/globals':
         specifier: ^30.3.0
@@ -10638,8 +10638,8 @@ packages:
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
 
-  tabbable@6.4.0:
-    resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
+  tabbable@6.3.0:
+    resolution: {integrity: sha512-EIHvdY5bPLuWForiR/AN2Bxngzpuwn1is4asboytXtpTgsArc+WmSJKVLlhdh71u7jFcryDqB2A8lQvj78MkyQ==}
 
   table@6.9.0:
     resolution: {integrity: sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==}
@@ -13109,7 +13109,7 @@ snapshots:
       '@floating-ui/utils': 0.2.11
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      tabbable: 6.4.0
+      tabbable: 6.3.0
 
   '@floating-ui/utils@0.2.11': {}
 
@@ -15141,10 +15141,10 @@ snapshots:
       eslint-plugin-compat: 6.0.2(eslint@8.57.1)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.1)
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@7.18.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@9.33.0(jiti@2.5.1))
-      eslint-plugin-jest: 28.14.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(jest@30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0))(typescript@5.9.3)
+      eslint-plugin-jest: 28.14.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@8.57.1)(jest@30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0))(typescript@5.9.3)
       eslint-plugin-jest-formatting: 3.1.0(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
-      eslint-plugin-prettier: 5.5.1(eslint-config-prettier@10.1.8(eslint@9.33.0(jiti@2.5.1)))(eslint@8.57.1)(prettier@3.6.2)
+      eslint-plugin-prettier: 5.5.1(eslint-config-prettier@10.1.8(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
       eslint-plugin-react: 7.37.4(eslint@8.57.1)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.1)
       eslint-plugin-sort-destructure-keys: 2.0.0(eslint@8.57.1)
@@ -18859,7 +18859,7 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-plugin-jest@28.14.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(jest@30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0))(typescript@5.9.3):
+  eslint-plugin-jest@28.14.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.3))(eslint@8.57.1)(jest@30.3.0(@types/node@25.9.1)(babel-plugin-macros@3.1.0))(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/utils': 8.60.0(eslint@8.57.1)(typescript@5.9.3)
       eslint: 8.57.1
@@ -18889,7 +18889,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-prettier@5.5.1(eslint-config-prettier@10.1.8(eslint@9.33.0(jiti@2.5.1)))(eslint@8.57.1)(prettier@3.6.2):
+  eslint-plugin-prettier@5.5.1(eslint-config-prettier@10.1.8(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2):
     dependencies:
       eslint: 8.57.1
       prettier: 3.6.2
@@ -24603,7 +24603,7 @@ snapshots:
 
   systeminformation@5.31.5: {}
 
-  tabbable@6.4.0: {}
+  tabbable@6.3.0: {}
 
   table@6.9.0:
     dependencies:

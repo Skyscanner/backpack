@@ -18,19 +18,20 @@
 
 import { format } from 'date-fns/format';
 
-export const formatDateFull = (date) => format(date, 'EEEE, do MMMM yyyy');
-export const formatDateFullArabic = (date) => {
+export const formatDateFull = (date: Date): string =>
+  format(date, 'EEEE, do MMMM yyyy');
+export const formatDateFullArabic = (date: Date): string => {
   const dateString = 'EEEE, dd، MMMM، yyyy';
-  const newString = dateString.replace('yyyy', date.getUTCFullYear());
+  const newString = dateString.replace('yyyy', String(date.getUTCFullYear()));
   return format(date, newString);
 };
-export const formatDateFullJapanese = (date) => {
+export const formatDateFullJapanese = (date: Date): string => {
   const dateString = 'Y年M月d日EEEE';
-  const newString = dateString.replace('Y', date.getUTCFullYear());
+  const newString = dateString.replace('Y', String(date.getUTCFullYear()));
   return format(date, newString);
 };
-export const formatMonth = (date) => format(date, 'MMMM yyyy');
-export const formatMonthArabic = (date) => {
+export const formatMonth = (date: Date): string => format(date, 'MMMM yyyy');
+export const formatMonthArabic = (date: Date): string => {
   const months = [
     'يناير',
     'فبراير',
@@ -47,7 +48,7 @@ export const formatMonthArabic = (date) => {
   ];
   return `${months[date.getMonth()]} ${date.getFullYear()}`;
 };
-export const formatMonthJapanese = (date) => {
+export const formatMonthJapanese = (date: Date): string => {
   const months = [
     '1月',
     '2月',
@@ -65,7 +66,17 @@ export const formatMonthJapanese = (date) => {
   return `${date.getFullYear()}年${months[date.getMonth()]}`;
 };
 
-export const weekDays = [
+type WeekDay = {
+  name: string;
+  nameAbbr: string;
+  nameNarrow: string;
+  nameShort?: string;
+  index: number;
+  isWeekend: boolean;
+  cldrKey?: string;
+};
+
+export const weekDays: WeekDay[] = [
   {
     name: 'Sunday',
     nameAbbr: 'Sun',
@@ -117,7 +128,7 @@ export const weekDays = [
   },
 ];
 
-export const weekDaysMoreWeekend = [
+export const weekDaysMoreWeekend: WeekDay[] = [
   {
     name: 'Sunday',
     nameAbbr: 'Sun',
@@ -169,7 +180,7 @@ export const weekDaysMoreWeekend = [
   },
 ];
 
-export const weekDaysArabic = [
+export const weekDaysArabic: WeekDay[] = [
   {
     name: 'الأحد',
     nameAbbr: 'الأحد',
@@ -235,7 +246,7 @@ export const weekDaysArabic = [
   },
 ];
 
-export const weekDaysJapanese = [
+export const weekDaysJapanese: WeekDay[] = [
   {
     name: '日曜日',
     nameAbbr: '日',
