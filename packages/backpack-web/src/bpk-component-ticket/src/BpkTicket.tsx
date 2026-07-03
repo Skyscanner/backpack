@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-/* eslint-disable valid-jsdoc */
+ 
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -28,34 +26,32 @@ import STYLES from './BpkTicket.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  children: Node,
-  stub: Node,
-  stubProps: { [string]: any },
-  padded: boolean,
-  vertical: boolean,
-  className: ?string,
-  stubClassName: ?string,
-  href: ?string,
+export type Props = Omit<HTMLAttributes<HTMLElement>, 'className'> & {
+  children: ReactNode;
+  stub: ReactNode;
+  padded?: boolean;
+  vertical?: boolean;
+  className?: string | null;
+  stubClassName?: string | null;
+  stubProps?: Record<string, unknown>;
+  href?: string | null;
 };
 
 /**
  * @deprecated use bpk-component-card instead
  * @returns {Component} a ticket component
  */
-const BpkTicket = (props: Props) => {
-  const {
-    children,
-    className = null,
-    href = null,
-    padded = true,
-    stub,
-    stubClassName = null,
-    stubProps = {},
-    vertical = false,
-    ...rest
-  } = props;
-
+const BpkTicket = ({
+  children,
+  className = null,
+  href = null,
+  padded = true,
+  stub,
+  stubClassName = null,
+  stubProps = {},
+  vertical = false,
+  ...rest
+}: Props) => {
   const classNames = getClassName(
     'bpk-ticket',
     className,
@@ -107,15 +103,13 @@ const BpkTicket = (props: Props) => {
     <div key="main" className={mainClassNames}>
       {mainContent}
     </div>,
-    // $FlowFixMe[cannot-spread-indexer] - inexact rest. See 'decisions/flowfixme.md'.
-    <div key="stub" className={stubClassNames} {...stubProps}>
+    <div key="stub" className={stubClassNames} {...stubProps as HTMLAttributes<HTMLDivElement>}>
       {stubContent}
     </div>,
   ];
 
   if (href) {
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <a href={href} className={classNames} {...rest}>
         {contents}
       </a>
@@ -123,22 +117,10 @@ const BpkTicket = (props: Props) => {
   }
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <div role="button" className={classNames} {...rest}>
       {contents}
     </div>
   );
-};
-
-BpkTicket.propTypes = {
-  children: PropTypes.node.isRequired,
-  stub: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  href: PropTypes.string,
-  padded: PropTypes.bool,
-  vertical: PropTypes.bool,
-  stubClassName: PropTypes.string,
-  stubProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default BpkTicket;
