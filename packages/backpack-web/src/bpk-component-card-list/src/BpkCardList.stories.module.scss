@@ -20,7 +20,8 @@
 
 .bpk-destination {
   img {
-    border-radius: tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md 0 0;
+    border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md)
+      var(--bpk-radius-md, tokens.$bpk-border-radius-md) 0 0;
     overflow: hidden;
   }
 

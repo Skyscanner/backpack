@@ -20,7 +20,7 @@
 
 .bpk-panel-examples--wrapper {
   padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-canvas-contrast-day;
+  background-color: var(--bpk-canvas-contrast, tokens.$bpk-canvas-contrast-day);
 }
 
 .bpk-panel-examples--row {
@@ -32,7 +32,10 @@
 
 .bpk-panel-examples--row-dark {
   padding: tokens.bpk-spacing-base();
-  background-color: tokens.$bpk-surface-contrast-day;
+  background-color: var(
+    --bpk-surface-contrast,
+    tokens.$bpk-surface-contrast-day
+  );
   composes: bpk-panel-examples--row;
 }
 
@@ -40,9 +43,9 @@
   padding: tokens.bpk-spacing-base();
   background: linear-gradient(
     135deg,
-    tokens.$bpk-core-accent-day,
-    tokens.$bpk-status-danger-spot-day,
-    tokens.$bpk-status-warning-spot-day
+    var(--bpk-core-accent, tokens.$bpk-core-accent-day),
+    var(--bpk-status-danger-spot, tokens.$bpk-status-danger-spot-day),
+    var(--bpk-status-warning-spot, tokens.$bpk-status-warning-spot-day)
   );
   composes: bpk-panel-examples--row;
 }
