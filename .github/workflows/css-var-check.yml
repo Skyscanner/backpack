@@ -1,0 +1,127 @@
+name: CSS var check
+
+on:
+  pull_request:
+    types: [opened, synchronize, labeled, unlabeled]
+    branches: [main]
+
+concurrency:
+  group: css-var-check-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+permissions: {}
+
+env:
+  CACHE_NAME: node-modules-cache-v2
+  # Marker so we can find-and-update our own comment across pushes
+  COMMENT_MARKER: "<!-- css-var-check -->"
+
+jobs:
+  css-var-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Restore NPM Cache
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: node_modules/
+          key: ${{ env.CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+
+      - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Check CSS vars
+        id: check
+        run: |
+          set +e
+          OUTPUT=$(node scripts/npm/check-css-vars.js --json)
+          EXIT_CODE=$?
+          set -e
+          echo "output=$OUTPUT" >> "$GITHUB_OUTPUT"
+          echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+
+      - name: Post or update PR comment
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const marker = process.env.COMMENT_MARKER;
+            const rawOutput = ${{ toJSON(steps.check.outputs.output) }};
+            const exitCode = parseInt(${{ toJSON(steps.check.outputs.exit_code) }}, 10);
+            const skipLabel = context.payload.pull_request.labels
+              .some(l => l.name === 'skip-css-var-check');
+
+            let parsed;
+            try { parsed = JSON.parse(rawOutput); } catch { parsed = { violations: [] }; }
+
+            const { violations = [] } = parsed;
+
+            let body;
+            if (violations.length === 0) {
+              body = `${marker}\n### CSS var check ✅\n\nNo undefined CSS vars found in changed lines.`;
+            } else {
+              const rows = violations
+                .map(v => `| \`${v.varName}\` | \`${v.file}:${v.line}\` |`)
+                .join('\n');
+              const table = `| Variable | Location |\n|---|---|\n${rows}`;
+              const skipNote = skipLabel
+                ? '\n\n> ⚠️ **skip-css-var-check** label is set — CI will not fail, but these vars are still missing from base.css.'
+                : '\n\n> Add the **skip-css-var-check** label to bypass the CI failure.';
+              body = `${marker}\n### CSS var check ❌\n\n${violations.length} CSS var(s) used in new/changed lines are not defined in \`base.css\`:\n\n${table}${skipNote}`;
+            }
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+        env:
+          COMMENT_MARKER: ${{ env.COMMENT_MARKER }}
+
+      - name: Fail if violations found and label not set
+        if: steps.check.outputs.exit_code != '0'
+        run: |
+          LABELS='${{ toJSON(github.event.pull_request.labels.*.name) }}'
+          if echo "$LABELS" | grep -q 'skip-css-var-check'; then
+            echo "skip-css-var-check label is set — allowing merge despite violations."
+            exit 0
+          fi
+          echo "CSS var violations found. Add the 'skip-css-var-check' label to bypass."
+          exit 1
