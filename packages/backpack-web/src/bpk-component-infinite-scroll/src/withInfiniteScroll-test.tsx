@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -25,7 +23,7 @@ import { ArrayDataSource } from './DataSource';
 import withInfiniteScroll from './withInfiniteScroll';
 
 const nextTick = () => new Promise((res) => setTimeout(res, 0));
-const mockDataSource = (data) => {
+const mockDataSource = (data: any) => {
   const myDs = new ArrayDataSource(data);
   const mockFetch = myDs.fetchItems.bind(myDs);
   myDs.fetchItems = jest.fn((...args) => mockFetch(...args));
@@ -33,34 +31,27 @@ const mockDataSource = (data) => {
 };
 
 describe('withInfiniteScroll', () => {
-  const elementsArray = [];
+  const elementsArray: any[] = [];
 
   for (let i = 0; i < 5; i += 1) {
     elementsArray.push(`Element ${i}`);
   }
 
-  const List = (props) => (
+  const List = (props: any) => (
     <div id="list">
-      {props.elements.map((element) => (
+      {props.elements.map((element: any) => (
         <div key={element}>{element}</div>
       ))}
     </div>
   );
 
-  List.propTypes = {
-    elements: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.string),
-      PropTypes.arrayOf(PropTypes.number),
-    ]).isRequired,
-  };
-
   const InfiniteList = withInfiniteScroll(List);
-  let intersect;
-  let currentOptions = {};
+  let intersect: any;
+  let currentOptions: any = {};
 
   beforeEach(() => {
     global.IntersectionObserver = class {
-      constructor(callback, options) {
+      constructor(callback: any, options: any) {
         intersect = async () => callback([{ isIntersecting: true }]);
         currentOptions = options;
       }
@@ -68,7 +59,7 @@ describe('withInfiniteScroll', () => {
       observe() {}
 
       unobserve() {}
-    };
+    } as any;
   });
 
   it('renders an empty list for the first render', () => {
@@ -501,6 +492,6 @@ describe('withInfiniteScroll', () => {
     });
 
     expect(myDs.fetchItems).toHaveBeenCalledTimes(3);
-    expect(onFinished).toHaveBeenCalled();
+    expect(onFinished).toHaveBeenCalledWith({ totalNumberElements: 5 });
   });
 });

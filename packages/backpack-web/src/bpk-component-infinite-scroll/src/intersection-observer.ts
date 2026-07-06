@@ -16,14 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+if (typeof window === 'undefined') {
+  global.IntersectionObserver = class {
+    observe() {}
 
-import withInfiniteScroll, {
-  type Props as WithInfiniteScrollProps,
-} from './src/withInfiniteScroll';
-
-export { default as DataSource, ArrayDataSource } from './src/DataSource';
-
-export type { WithInfiniteScrollProps };
-
-export default withInfiniteScroll;
+    unobserve() {}
+  } as any;
+} else {
+  // eslint-disable-next-line global-require
+  require('intersection-observer');
+}

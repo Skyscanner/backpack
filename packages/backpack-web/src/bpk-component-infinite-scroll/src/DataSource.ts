@@ -16,21 +16,18 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 class DataSource<T = any> {
-  listeners: Array<() => mixed>;
+  listeners: Array<(...args: any[]) => void>;
 
   constructor() {
     this.listeners = [];
   }
 
-  /* eslint-disable-next-line no-unused-vars */
-  fetchItems(index: number, nElements: number): Promise<Array<T>> {
+  fetchItems(index: number, nElements: number): Promise<T[]> {
     throw new Error('Not implemented');
   }
 
-  onDataChange(callback: () => mixed): boolean {
+  onDataChange(callback: (...args: any[]) => void): boolean {
     if (this.listeners.indexOf(callback) === -1) {
       this.listeners.push(callback);
       return true;
@@ -38,7 +35,7 @@ class DataSource<T = any> {
     return false;
   }
 
-  removeListener(callback: () => mixed): boolean {
+  removeListener(callback: (...args: any[]) => void): boolean {
     const index = this.listeners.indexOf(callback);
     if (index !== -1) {
       this.listeners.splice(index, 1);
@@ -47,20 +44,20 @@ class DataSource<T = any> {
     return false;
   }
 
-  triggerListeners = (...args: Array<any>): void => {
+  triggerListeners = (...args: any[]): void => {
     this.listeners.forEach((cb) => cb(...args));
   };
 }
 
 export class ArrayDataSource<T = any> extends DataSource<T> {
-  elements: Array<T>;
+  elements: T[];
 
-  constructor(elementsArray: Array<T>) {
+  constructor(elementsArray: T[]) {
     super();
     this.elements = elementsArray;
   }
 
-  fetchItems(index: number, nElements: number): Promise<Array<T>> {
+  fetchItems(index: number, nElements: number): Promise<T[]> {
     const { elements } = this;
     return new Promise((resolve) => {
       const totalElements = elements.length;
@@ -74,7 +71,7 @@ export class ArrayDataSource<T = any> extends DataSource<T> {
     });
   }
 
-  updateData(newElementsArray: Array<T>) {
+  updateData(newElementsArray: T[]) {
     this.elements = newElementsArray;
     this.triggerListeners();
   }
