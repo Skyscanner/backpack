@@ -22,7 +22,10 @@
   &__on-dark {
     margin-top: tokens.bpk-spacing-lg();
     padding: tokens.bpk-spacing-base();
-    background-color: var(--bpk-surface-contrast, tokens.$bpk-surface-contrast-day);
+    background-color: var(
+      --bpk-surface-contrast,
+      tokens.$bpk-surface-contrast-day
+    );
   }
 
   &__mixed {
