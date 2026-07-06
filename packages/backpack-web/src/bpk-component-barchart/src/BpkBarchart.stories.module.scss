@@ -26,7 +26,7 @@
 $custom-color: tokens.$bpk-canvas-contrast-day;
 
 .bpk-barchart-custom-scrollers {
-  background: var(--bpk-canvas-contrast, tokens.$bpk-canvas-contrast-day);
+  background: $custom-color;
 
   &--leading {
     @include scroll-indicators.bpk-scroll-indicator-left($custom-color);
