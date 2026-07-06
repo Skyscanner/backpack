@@ -41,6 +41,8 @@ export const BpkSpacing = {
 
 export type BpkSpacingToken = typeof BpkSpacing[keyof typeof BpkSpacing];
 
+export const BPK_SPACING_TOKEN_SET: ReadonlySet<string> = new Set(Object.values(BpkSpacing));
+
 /**
  * Backpack Breakpoint Tokens
  * Use these constants to ensure type safety when defining responsive overrides
@@ -176,7 +178,7 @@ export function isPercentage(value: string): boolean {
  * @returns {boolean} True if the value is a valid Backpack spacing token or percentage
  */
 export function isValidSpacingValue(value: string): boolean {
-  return Object.values(BpkSpacing).includes(value as BpkSpacingToken) || isPercentage(value);
+  return BPK_SPACING_TOKEN_SET.has(value) || isPercentage(value);
 }
 
 /**
@@ -217,6 +219,6 @@ export function isValidPositionValue(value: string): boolean {
     value === '0' || // bare zero — valid CSS without a unit
     /^-?\d+(\.\d+)?rem$/.test(value) || // rem values
     isPercentage(value) || // percentage values
-    Object.values(BpkSpacing).includes(value as BpkSpacingToken) // BPK spacing tokens
+    BPK_SPACING_TOKEN_SET.has(value) // BPK spacing tokens
   );
 }

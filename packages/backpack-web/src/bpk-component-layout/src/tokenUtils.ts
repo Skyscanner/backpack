@@ -19,6 +19,7 @@
 import StackOptionKeys from './BpkStack.constant';
 import { getSpacingValue } from './theme';
 import {
+  BPK_SPACING_TOKEN_SET,
   BpkBreakpointToChakraKey,
   isValidSpacingValue,
   isValidMarginValue,
@@ -269,16 +270,18 @@ export function processBpkComponentProps<T extends Record<string, any>>(
 
 /**
  * Converts a position value to its CSS form.
- * Raw values (rem, %, '0') pass through directly; BPK spacing tokens are resolved to rem.
+ * BPK spacing tokens are resolved to rem; all other valid values (rem, %, '0') pass through.
+ * Uses BPK_SPACING_TOKEN_SET as the single discriminator to avoid duplicating the raw-value
+ * regex that already lives in isValidPositionValue.
  *
  * @param {string} value - Position value or BPK spacing token
  * @returns {string} CSS value
  */
 export function convertBpkPositionValue(value: string): string {
-  if (value === '0' || /^-?\d+(\.\d+)?rem$/.test(value) || isPercentage(value)) {
-    return value;
+  if (BPK_SPACING_TOKEN_SET.has(value)) {
+    return convertBpkSpacingToChakra(value);
   }
-  return convertBpkSpacingToChakra(value);
+  return value;
 }
 
 /**

@@ -210,6 +210,7 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   transitionDuration?: never;
   transitionTimingFunction?: never;
   transitionDelay?: never;
-  // transform is excluded here so BpkBox can opt-in via its own specific props
+  // transform is excluded on the shared interface; BpkBox opts in via Omit<BpkCommonLayoutProps, 'transform'>
+  transform?: never;
   transformOrigin?: never;
 }
