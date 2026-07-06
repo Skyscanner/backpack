@@ -16,8 +16,8 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
 import BpkButton from '../../bpk-component-button';
@@ -30,6 +30,8 @@ import { cssModules } from '../../bpk-react-utils';
 
 import DataSource, { ArrayDataSource } from './DataSource';
 import withInfiniteScroll from './withInfiniteScroll';
+
+import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkInfiniteScroll.stories.module.scss';
 
@@ -58,7 +60,7 @@ const elementsArray = [
   'Item 20',
 ];
 
-const List = ({ elements }) => (
+const List = ({ elements }: { elements: any[] }) => (
   <BpkList className={getClassName('bpk-infinite-scroll-stories__list')}>
     {elements.map((element) => (
       <BpkListItem key={element}>{element}</BpkListItem>
@@ -66,27 +68,25 @@ const List = ({ elements }) => (
   </BpkList>
 );
 
-List.propTypes = {
-  elements: PropTypes.arrayOf(PropTypes.node).isRequired,
-};
-
 const InfiniteList = withInfiniteScroll(List);
 
-class DelayedDataSource extends ArrayDataSource {
-  fetchItems(index, nElements) {
+class DelayedDataSource extends ArrayDataSource<any> {
+  fetchItems(index: number, nElements: number): Promise<any[]> {
     return new Promise((resolve) => {
       setTimeout(() => resolve(super.fetchItems(index, nElements)), 500);
     });
   }
 }
 
-class InfiniteDataSource extends DataSource {
+class InfiniteDataSource extends DataSource<any> {
+  elements: any[];
+
   constructor() {
     super();
     this.elements = [];
   }
 
-  fetchItems(index, nElements) {
+  fetchItems(index: number, nElements: number): Promise<any[]> {
     return new Promise((resolve) => {
       for (let i = index; i < index + nElements; i += 1) {
         this.elements.push(i);
@@ -96,69 +96,13 @@ class InfiniteDataSource extends DataSource {
   }
 }
 
-// Inlined from stories-utils.js
-/**
- * This file is a workaround for Storybook not supporting HOCs API table generation in v7 by creating mock components that can be used to generate the API table
- * They plan on adding support in v8
- * https://github.com/storybookjs/storybook/issues/12558#issuecomment-1288834879
- * @todo remove this file once we upgrade to Storybook v8
- */
-
-/**
- * Temporarily re-defining the infinite scroll props due to a bug in react docgen which doesn't allow us to import the prop types from another file
- * https://github.com/storybookjs/storybook/issues/9266
- * This does work in TS, so we can remove this once we migrate the map component to TS
- * @todo remove this once we migrate the infinite scroll component to TS
- */
-const WithInfiniteScrollPropTypes = {
-  /**
-   * How many more elements to load every time the user reaches the bottom of the list.
-   */
-  initiallyLoadedElements: PropTypes.number,
-  /**
-   * How many more elements to load every time the user reaches the bottom of the list.
-   */
-  elementsPerScroll: PropTypes.number,
-  dataSource: PropTypes.instanceOf(DataSource).isRequired,
-  loaderIntersectionTrigger: PropTypes.oneOf(['small', 'half', 'full']),
-  onScroll: PropTypes.func,
-  onScrollFinished: PropTypes.func,
-  renderLoadingComponent: PropTypes.func,
-  renderSeeMoreComponent: PropTypes.func,
-  /**
-   * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
-   */
-  seeMoreAfter: PropTypes.number,
-};
-
-const WithInfiniteScrollDefaultProps = {
-  initiallyLoadedElements: 5,
-  elementsPerScroll: 5,
-  loaderIntersectionTrigger: 'full',
-  onScroll: null,
-  onScrollFinished: null,
-  renderLoadingComponent: null,
-  renderSeeMoreComponent: null,
-  seeMoreAfter: null,
-};
-
-const WithInfiniteScrollMock = () => <div />;
-
-WithInfiniteScrollMock.propTypes = {
-  ...WithInfiniteScrollPropTypes,
-};
-
-WithInfiniteScrollMock.defaultProps = {
-  ...WithInfiniteScrollDefaultProps,
-};
-
 /*
  * Scrolls back to the top before rendering the story.
  * We do this because when stories change the scroll position will (probably) be
  * at the bottom, which will cause the next story to load all items up to that position.
  * That is not a problem but we want each story to start with a clean state.
  */
-const withScrollReset = (story) => {
+const withScrollReset = (story: any) => {
   window.scrollTo(0, 0);
   return story();
 };
@@ -231,12 +175,12 @@ const CustomLoadingItemExample = () => (
 );
 
 const ForceUpdateDataExample = () => {
-  const dataSource = new ArrayDataSource(elementsArray);
+  const dataSource = new ArrayDataSource<string>(elementsArray);
   return (
     <div>
       <BpkButton
         onClick={() => {
-          const newElements = [];
+          const newElements: string[] = [];
           const k = Math.floor(Math.random() * 10);
           for (let i = 0; i < 100; i += 1) {
             newElements.push(`Element ${k} ${i}`);
@@ -254,12 +198,12 @@ const ForceUpdateDataExample = () => {
 };
 
 const ForceUpdateDataExampleEmptyArrayExample = () => {
-  const dataSource = new ArrayDataSource([]);
+  const dataSource = new ArrayDataSource<string>([]);
   return (
     <div>
       <BpkButton
         onClick={() => {
-          const newElements = [];
+          const newElements: string[] = [];
           const k = Math.floor(Math.random() * 10);
           for (let i = 0; i < 100; i += 1) {
             newElements.push(`Element ${k} ${i}`);
@@ -284,7 +228,7 @@ const ForceUpdateDataExampleEmptyArrayExample = () => {
 };
 
 const ForceUpdateDataExampleFromNonEmptyToEmptyExample = () => {
-  const dataSource = new ArrayDataSource(elementsArray);
+  const dataSource = new ArrayDataSource<string>(elementsArray);
   return (
     <div>
       <BpkButton
@@ -333,9 +277,9 @@ const InferDatasourceWhenLessThanRequestElementsExample = () => {
   );
 };
 
-const meta = {
+const meta: Meta<typeof InfiniteList> = {
   title: 'bpk-component-infinite-scroll',
-  component: WithInfiniteScrollMock,
+  component: InfiniteList,
   decorators: [withScrollReset],
 };
 
