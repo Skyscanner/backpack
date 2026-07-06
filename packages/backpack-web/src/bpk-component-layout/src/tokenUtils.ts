@@ -448,7 +448,6 @@ export function processSpacingProps<T extends Record<string, any>>(
       if (isSizeProp) {
         converter = (v: string) => v;
       } else if (isPositionProp) {
-        // Resolves BPK spacing tokens to rem; raw rem/% values pass through without a warning.
         converter = convertBpkPositionValue;
       } else {
         converter = convertBpkSpacingToChakra;

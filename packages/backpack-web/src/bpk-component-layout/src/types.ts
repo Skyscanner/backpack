@@ -118,7 +118,6 @@ type BpkBoxResponsiveLayoutPropKeys = keyof BpkBoxResponsiveLayoutProps;
 export interface BpkBoxSpecificProps
   extends BpkBoxResponsiveLayoutProps,
   Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {
-  // CSS transform — BpkBox only, for positioning and animation (e.g. translate, scale, rotate)
   transform?: string;
 }
 

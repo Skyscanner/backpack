@@ -722,39 +722,44 @@ export const Dir = {
  */
 const TransformExample = () => (
   <LayoutWrapper>
-    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.XL}>
       <BpkText textStyle={TEXT_STYLES.label2}>translateX(16px) — horizontal shift</BpkText>
-      <BpkBox
-        transform="translateX(16px)"
-        padding={BpkSpacing.SM}
-        marginTop={BpkSpacing.SM}
-        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
-      >
-        <BpkText>Shifted 16px to the right</BpkText>
+      {/* Extra minHeight gives visual room for the shifted box */}
+      <BpkBox minHeight="3rem" marginTop={BpkSpacing.SM}>
+        <BpkBox
+          transform="translateX(16px)"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>Shifted 16px to the right</BpkText>
+        </BpkBox>
       </BpkBox>
     </BpkBox>
 
-    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+    {/* Extra bottom margin because rotate extends the visual bounding box beyond the layout footprint */}
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.XXXL}>
       <BpkText textStyle={TEXT_STYLES.label2}>rotate(10deg) — slight rotation</BpkText>
-      <BpkBox
-        transform="rotate(10deg)"
-        padding={BpkSpacing.SM}
-        marginTop={BpkSpacing.SM}
-        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
-      >
-        <BpkText>Rotated 10 degrees</BpkText>
+      <BpkBox minHeight="4rem" marginTop={BpkSpacing.SM}>
+        <BpkBox
+          transform="rotate(10deg)"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>Rotated 10 degrees</BpkText>
+        </BpkBox>
       </BpkBox>
     </BpkBox>
 
     <BpkBox padding={BpkSpacing.SM}>
       <BpkText textStyle={TEXT_STYLES.label2}>scale(0.8) — scaled down</BpkText>
-      <BpkBox
-        transform="scale(0.8)"
-        padding={BpkSpacing.SM}
-        marginTop={BpkSpacing.SM}
-        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
-      >
-        <BpkText>Scaled to 80%</BpkText>
+      <BpkBox minHeight="3rem" marginTop={BpkSpacing.SM}>
+        <BpkBox
+          transform="scale(0.8)"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>Scaled to 80%</BpkText>
+        </BpkBox>
       </BpkBox>
     </BpkBox>
   </LayoutWrapper>
@@ -776,12 +781,12 @@ const PointerEventsExample = () => {
     <LayoutWrapper>
       <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
         <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — overlay passes clicks through</BpkText>
-        <BpkBox position="relative" width="14rem" height="5rem" marginTop={BpkSpacing.SM}>
+        <BpkBox position="relative" width="24rem" height="5rem" marginTop={BpkSpacing.SM}>
           <BpkBox
             position="absolute"
             top="0"
             left="0"
-            width="14rem"
+            width="24rem"
             height="5rem"
             padding={BpkSpacing.SM}
             backgroundColor={BACKGROUND_COLORS.surfaceDefault}
@@ -795,7 +800,7 @@ const PointerEventsExample = () => {
             position="absolute"
             top="0"
             left="0"
-            width="14rem"
+            width="24rem"
             height="5rem"
             backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
             opacity={0.5}
