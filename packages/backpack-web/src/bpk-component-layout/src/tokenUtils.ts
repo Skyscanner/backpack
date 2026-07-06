@@ -268,6 +268,20 @@ export function processBpkComponentProps<T extends Record<string, any>>(
 }
 
 /**
+ * Converts a position value to its CSS form.
+ * Raw values (rem, %, '0') pass through directly; BPK spacing tokens are resolved to rem.
+ *
+ * @param {string} value - Position value or BPK spacing token
+ * @returns {string} CSS value
+ */
+export function convertBpkPositionValue(value: string): string {
+  if (value === '0' || /^-?\d+(\.\d+)?rem$/.test(value) || isPercentage(value)) {
+    return value;
+  }
+  return convertBpkSpacingToChakra(value);
+}
+
+/**
  * Converts Backpack spacing token to Chakra UI compatible value
  * Returns the actual spacing value from the theme, not a token path
  *
@@ -405,13 +419,16 @@ export function processSpacingProps<T extends Record<string, any>>(
     'rowGap', 'columnGap',
     // Size props
     'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
-    // Position props
+    // Position props (rem, %, '0', or BPK spacing tokens)
     'top', 'right', 'bottom', 'left',
+    'insetInlineStart', 'insetInlineEnd',
+    // Scroll snap margin props
+    'scrollMarginTop', 'scrollMarginBottom',
   ];
 
   const processed: Record<string, any> = { ...props };
   const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
-  const positionKeys = ['top', 'right', 'bottom', 'left'];
+  const positionKeys = ['top', 'right', 'bottom', 'left', 'insetInlineStart', 'insetInlineEnd'];
   // Margin keys accept 'auto' (e.g. marginTop: 'auto' to bottom-anchor a flex child); padding/gap don't.
   const marginKeys = [
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
@@ -425,8 +442,11 @@ export function processSpacingProps<T extends Record<string, any>>(
       const isMarginProp = marginKeys.includes(key);
 
       let converter: (v: string) => string;
-      if (isSizeProp || isPositionProp) {
+      if (isSizeProp) {
         converter = (v: string) => v;
+      } else if (isPositionProp) {
+        // Resolves BPK spacing tokens to rem; raw rem/% values pass through without a warning.
+        converter = convertBpkPositionValue;
       } else {
         converter = convertBpkSpacingToChakra;
       }

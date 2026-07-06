@@ -84,11 +84,18 @@ export interface BpkSpacingProps {
   maxWidth?: BpkResponsiveValue<BpkSizeValue>;
   maxHeight?: BpkResponsiveValue<BpkSizeValue>;
 
-  // Position props (use rem values or percentages)
+  // Position props (use rem values, percentages, or BPK spacing tokens)
   top?: BpkResponsiveValue<BpkPositionValue>;
   right?: BpkResponsiveValue<BpkPositionValue>;
   bottom?: BpkResponsiveValue<BpkPositionValue>;
   left?: BpkResponsiveValue<BpkPositionValue>;
+  // CSS logical position props — RTL-safe equivalents of left/right
+  insetInlineStart?: BpkResponsiveValue<BpkPositionValue>;
+  insetInlineEnd?: BpkResponsiveValue<BpkPositionValue>;
+
+  // Scroll snap margin props — space between the scroll container's snap point and the element
+  scrollMarginTop?: BpkResponsiveValue<BpkSpacingValue>;
+  scrollMarginBottom?: BpkResponsiveValue<BpkSpacingValue>;
 }
 
 /**
@@ -144,6 +151,9 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   // Opacity — CSS opacity value (0–1)
   opacity?: number;
 
+  // CSS pointer-events — use 'none' for click-through overlays, 'auto' to restore interaction
+  pointerEvents?: 'none' | 'auto';
+
   // Text direction — for embedding bidirectional content within a page
   dir?: 'ltr' | 'rtl' | 'auto';
 
@@ -194,12 +204,12 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   borderX?: never;
   borderY?: never;
 
-  // Explicitly exclude transition & transform related props for performance reasons
+  // Explicitly exclude transition-related props — apply animations via CSS classes instead
   transition?: never;
   transitionProperty?: never;
   transitionDuration?: never;
   transitionTimingFunction?: never;
   transitionDelay?: never;
-  transform?: never;
+  // transform is excluded here so BpkBox can opt-in via its own specific props
   transformOrigin?: never;
 }

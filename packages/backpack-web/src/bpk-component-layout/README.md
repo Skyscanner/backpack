@@ -103,16 +103,18 @@ BpkVessel accepts **all React.HTMLAttributes** to maximize migration flexibility
 
 The layout API is intentionally limited and strongly typed. The main groups are:
 
-- **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`:
-  - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …) or percentages (e.g. `'50%'`).
+- **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`, `scrollMarginTop`, `scrollMarginBottom`:
+  - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …, `BpkSpacing.XXXL`) or percentages (e.g. `'50%'`).
+  - `scrollMarginTop`/`scrollMarginBottom` control the scroll snap margin for the element.
 - **Flex gaps** – `BpkFlex` supports `gap`, `rowGap`, and `columnGap` for shared or independent flex row/column spacing.
   - Values: `BpkSpacing` tokens (`BpkSpacing.SM`, `BpkSpacing.LG`, …) or percentages.
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
 - **Position keyword** – `position`:
   - Values: `'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'`. Supports responsive overrides.
-- **Position offsets** – `top`, `right`, `bottom`, `left`:
-  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), or bare `'0'` (no unit required). Supports responsive overrides.
+- **Position offsets** – `top`, `right`, `bottom`, `left`, `insetInlineStart`, `insetInlineEnd`:
+  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), bare `'0'`, or **BPK spacing tokens** (e.g. `BpkSpacing.Base`). Supports responsive overrides.
+  - `insetInlineStart`/`insetInlineEnd` are the RTL-safe logical equivalents of `left`/`right`.
 - **Overflow** – `overflow`, `overflowX`, `overflowY`:
   - Values: `'visible' | 'hidden' | 'scroll' | 'auto' | 'clip'`. All three support responsive overrides. Use `overflowX`/`overflowY` for per-axis control (e.g. `overflowX="hidden"` + `overflowY="auto"`).
 - **Stacking context** – `zIndex`:
@@ -137,6 +139,7 @@ In addition, `BpkBox` exposes a **minimal interaction and accessibility surface*
 - `tabIndex`, `role` – make containers focusable and assign ARIA roles (e.g. `role="region"`, `role="button"`).
 - `id` – useful for `aria-labelledby`/`aria-describedby` cross-references.
 - All `aria-*` props – forwarded directly to the DOM element for full ARIA attribute support.
+- `pointerEvents` (`'none' | 'auto'`) – controls mouse/touch hit-testing. Use `'none'` for click-through overlays; `'auto'` explicitly restores interaction. Available on all layout components.
 
 Layout primitives expose this event surface only where the underlying rendered element supports it.
 
@@ -253,6 +256,8 @@ In particular:
 
 `alignSelf`, `justifySelf`, `gridColumn`, and `gridRow` also support Backpack responsive breakpoint objects.
 
+`BpkFlex` exposes `shrink` and `flexShrink` as aliases for CSS `flex-shrink` (both accept responsive values; `shrink` takes precedence if both are provided).
+
 > **Note:** `justifySelf`, `gridColumn`, and `gridRow` only take effect when `BpkFlex` is a child of a **grid** parent. In a flex parent, `justify-self`/`grid-*` are ignored by CSS (main-axis alignment there is controlled by the parent's `justify` or a child `margin: auto`). `alignSelf` works in both flex and grid parents. These props mirror the equivalent `BpkBox` placement props.
 
 ## Constraints and design principles
@@ -265,7 +270,8 @@ To keep layout predictable, performant and consistent with Backpack:
 - **Tokenised colors only** – `color` and `backgroundColor` are supported but must use Backpack tokens (`TEXT_COLORS` / `BACKGROUND_COLORS`); raw CSS values and Chakra color props (`borderColor`, `borderWidth`, `borderRadius`, `boxShadow`) are not exposed.
 - **No composite border shorthands** – props like `border`, `borderX`, `borderInline`, `borderBlock` are not supported.
 - **No typography props** – font family/size/line height/etc. should come from dedicated text components, not from layout primitives.
-- **No transition/transform props** – layout components are purely structural; animations and transforms should live in higher‑level components.
+- **No transition props** – layout components are purely structural; CSS transitions should live in higher‑level components or CSS classes.
+- **`transform` on BpkBox only** – `BpkBox` supports a `transform?: string` prop (e.g. `translateX(16px)`, `rotate(10deg)`). Other layout primitives (`BpkFlex`, `BpkGrid`, `BpkStack`) do not expose `transform`.
 - **Token‑driven spacing** – spacing props only accept Backpack spacing tokens (or percentages) to keep design consistent and avoid magic numbers.
 - **Breakpoint‑driven responsiveness** – responsive overrides must use Backpack breakpoint keys in object form; array syntax is intentionally disabled.
 
@@ -276,7 +282,11 @@ This package includes Storybook examples under `examples/bpk-component-layout` s
 - Basic spacing
 - RTL‑friendly spacing (`marginInline`, `paddingInline`)
 - Size props
-- Position keyword (`position`) and offset props (`top/right/bottom/left`)
+- Position keyword (`position`) and offset props (`top/right/bottom/left`, `insetInlineStart/End`)
+- Logical position offsets with BPK spacing tokens
+- Scroll snap margins (`scrollMarginTop`, `scrollMarginBottom`)
+- CSS `transform` on BpkBox
+- `pointerEvents` for click-through overlays
 - Overflow props (`overflow`, `overflowX`, `overflowY`)
 - Stacking context (`zIndex`)
 - Accessibility props (`id`, `aria-label`, `aria-labelledby`)

@@ -714,3 +714,196 @@ const DirExample = () => (
 export const Dir = {
   render: () => <DirExample />,
 };
+
+/**
+ * Transform example – demonstrates the `transform` prop on BpkBox for translate, rotate, and scale.
+ *
+ * @returns {JSX.Element} Boxes with CSS transform applied.
+ */
+const TransformExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>translateX(16px) — horizontal shift</BpkText>
+      <BpkBox
+        transform="translateX(16px)"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>Shifted 16px to the right</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>rotate(10deg) — slight rotation</BpkText>
+      <BpkBox
+        transform="rotate(10deg)"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>Rotated 10 degrees</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>scale(0.8) — scaled down</BpkText>
+      <BpkBox
+        transform="scale(0.8)"
+        padding={BpkSpacing.SM}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>Scaled to 80%</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const Transform = {
+  render: () => <TransformExample />,
+};
+
+/**
+ * PointerEvents example – demonstrates `pointerEvents="none"` for click-through overlays
+ * and `pointerEvents="auto"` for restoring interaction.
+ *
+ * @returns {JSX.Element} A stacked overlay with pointer-events control.
+ */
+const PointerEventsExample = () => {
+  const [clicked, setClicked] = useState(false);
+  return (
+    <LayoutWrapper>
+      <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — overlay passes clicks through</BpkText>
+        <BpkBox position="relative" width="14rem" height="5rem" marginTop={BpkSpacing.SM}>
+          <BpkBox
+            position="absolute"
+            top="0"
+            left="0"
+            width="14rem"
+            height="5rem"
+            padding={BpkSpacing.SM}
+            backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+            role="button"
+            tabIndex={0}
+            onClick={() => setClicked(true)}
+          >
+            <BpkText>{clicked ? 'Clicked!' : 'Click me (underneath)'}</BpkText>
+          </BpkBox>
+          <BpkBox
+            position="absolute"
+            top="0"
+            left="0"
+            width="14rem"
+            height="5rem"
+            backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
+            opacity={0.5}
+            pointerEvents="none"
+          />
+        </BpkBox>
+      </BpkBox>
+
+      <BpkBox padding={BpkSpacing.SM}>
+        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;auto&quot; — explicit restore of interaction</BpkText>
+        <BpkBox
+          pointerEvents="auto"
+          padding={BpkSpacing.SM}
+          marginTop={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          role="button"
+          tabIndex={0}
+        >
+          <BpkText>Fully interactive (pointerEvents=&quot;auto&quot;)</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </LayoutWrapper>
+  );
+};
+
+export const PointerEvents = {
+  render: () => <PointerEventsExample />,
+};
+
+/**
+ * InsetInline example – demonstrates `insetInlineStart` and `insetInlineEnd` with
+ * BPK spacing tokens for RTL-safe absolute positioning.
+ *
+ * @returns {JSX.Element} Relative box with children positioned via logical inset props.
+ */
+const InsetInlineExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>insetInlineStart + insetInlineEnd with BPK spacing tokens (LTR)</BpkText>
+      <BpkBox position="relative" height="5rem" backgroundColor={BACKGROUND_COLORS.surfaceDefault} marginTop={BpkSpacing.SM}>
+        <BpkBox
+          position="absolute"
+          top="0"
+          insetInlineStart={BpkSpacing.Base}
+          insetInlineEnd={BpkSpacing.Base}
+          height="2rem"
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          padding={BpkSpacing.SM}
+        >
+          <BpkText>insetInlineStart=Base, insetInlineEnd=Base</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>Same layout in RTL — start/end swap automatically</BpkText>
+      <BpkBox dir="rtl" position="relative" height="5rem" backgroundColor={BACKGROUND_COLORS.surfaceDefault} marginTop={BpkSpacing.SM}>
+        <BpkBox
+          position="absolute"
+          top="0"
+          insetInlineStart={BpkSpacing.Base}
+          insetInlineEnd={BpkSpacing.XXXL}
+          height="2rem"
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          padding={BpkSpacing.SM}
+        >
+          <BpkText>insetInlineStart=Base, insetInlineEnd=XXXL (RTL)</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const InsetInline = {
+  render: () => <InsetInlineExample />,
+};
+
+/**
+ * SpacingXXXL example – demonstrates the new `bpk-spacing-xxxl` (4rem / 64px) token.
+ *
+ * @returns {JSX.Element} A box using the xxxl spacing token for padding and margin.
+ */
+const SpacingXXXLExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>BpkSpacing.XXXL (4rem / 64px) as padding</BpkText>
+      <BpkBox
+        padding={BpkSpacing.XXXL}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>64px padding on all sides</BpkText>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>XXXL as top margin</BpkText>
+      <BpkBox
+        marginTop={BpkSpacing.XXXL}
+        padding={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>64px top margin</BpkText>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const SpacingXXXL = {
+  render: () => <SpacingXXXLExample />,
+};

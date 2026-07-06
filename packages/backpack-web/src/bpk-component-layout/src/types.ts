@@ -117,7 +117,10 @@ type BpkBoxResponsiveLayoutPropKeys = keyof BpkBoxResponsiveLayoutProps;
  */
 export interface BpkBoxSpecificProps
   extends BpkBoxResponsiveLayoutProps,
-    Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {}
+  Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {
+  // CSS transform — BpkBox only, for positioning and animation (e.g. translate, scale, rotate)
+  transform?: string;
+}
 
 /**
  * Props for BpkBox component
@@ -192,6 +195,7 @@ export interface BpkFlexSpecificProps {
   align?: BpkResponsiveValue<FlexProps['alignItems']>;
   wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
   grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
+  flexShrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
   shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
   basis?: BpkResponsiveValue<BpkBasisValue>;
   alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
@@ -269,8 +273,8 @@ type StackOptionKeysType = typeof StackOptionKeys[number];
  */
 type BpkStackOptions = {
   [K in StackOptionKeysType]?: K extends keyof StackProps
-    ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
-    : never;
+  ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
+  : never;
 };
 
 /**
@@ -286,7 +290,7 @@ type BpkStackOptions = {
  */
 export interface BpkStackSpecificProps
   extends BpkStackOptions,
-    Omit<BpkFlexGridProps, 'alignItems' | 'justifyContent'> {
+  Omit<BpkFlexGridProps, 'alignItems' | 'justifyContent'> {
   /** Alias for `align`. Maps to CSS `align-items`. Responsive — replaces the non-responsive BpkFlexGridProps.alignItems. */
   alignItems?: BpkStackOptions['align'];
   /** Alias for `justify`. Maps to CSS `justify-content`. Responsive — replaces the non-responsive BpkFlexGridProps.justifyContent. */

@@ -490,4 +490,98 @@ describe('BpkBox', () => {
     });
   });
 
+  describe('transform prop (BpkBox only)', () => {
+    it('renders with a CSS transform string', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox transform="translateX(10px)">Transformed</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('produces different output with and without transform', () => {
+      const { container: withTransform } = render(
+        <BpkProvider>
+          <BpkBox transform="rotate(45deg)">Rotated</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withoutTransform } = render(
+        <BpkProvider>
+          <BpkBox>No transform</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withTransform.querySelector('div')?.className).not.toBe(
+        withoutTransform.querySelector('div')?.className,
+      );
+    });
+  });
+
+  describe('pointerEvents prop', () => {
+    it('renders with pointerEvents="none"', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox pointerEvents="none">Overlay</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('produces different output with pointerEvents="none" vs default', () => {
+      const { container: withNone } = render(
+        <BpkProvider>
+          <BpkBox pointerEvents="none">Click-through</BpkBox>
+        </BpkProvider>,
+      );
+      const { container: withAuto } = render(
+        <BpkProvider>
+          <BpkBox pointerEvents="auto">Interactive</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withNone.querySelector('div')?.className).not.toBe(
+        withAuto.querySelector('div')?.className,
+      );
+    });
+  });
+
+  describe('insetInlineStart / insetInlineEnd props', () => {
+    it('renders with a spacing token for insetInlineStart', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox position="absolute" insetInlineStart={BpkSpacing.Base}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with a raw rem value for insetInlineEnd', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox position="absolute" insetInlineEnd="1.5rem">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+  });
+
+  describe('scrollMarginTop / scrollMarginBottom props', () => {
+    it('renders with scrollMarginTop using a spacing token', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox scrollMarginTop={BpkSpacing.XXXL}>Scroll target</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+
+    it('renders with scrollMarginBottom using a spacing token', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox scrollMarginBottom={BpkSpacing.MD}>Scroll target</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
+  });
+
 });
