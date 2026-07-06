@@ -25,7 +25,8 @@
   display: flex;
   width: 100%;
   min-height: tokens.bpk-spacing-xl() * 2;
-  padding: var(--bpk-spacing-md, tokens.bpk-spacing-md()) var(--bpk-spacing-base, tokens.bpk-spacing-base());
+  padding: var(--bpk-spacing-md, tokens.bpk-spacing-md())
+    var(--bpk-spacing-base, tokens.bpk-spacing-base());
   justify-content: space-between;
   align-items: center;
   border: none;
@@ -33,7 +34,9 @@
   color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   text-decoration: none;
 
-  @include borders.bpk-border-bottom-sm(var(--bpk-other-line-default, tokens.$bpk-line-day));
+  @include borders.bpk-border-bottom-sm(
+    var(--bpk-other-line-default, tokens.$bpk-line-day)
+  );
 
   &--interactive {
     cursor: pointer;
