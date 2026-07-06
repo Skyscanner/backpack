@@ -23,7 +23,7 @@
   @include utils.bpk-themeable-property(
     fill,
     --bpk-barchart-bar-background-color,
-    tokens.$bpk-line-day
+    var(--bpk-other-line-default, tokens.$bpk-line-day)
   );
 
   &--interactive:not(.bpk-barchart-bar--selected) {
@@ -33,7 +33,7 @@
       @include utils.bpk-themeable-property(
         fill,
         --bpk-barchart-bar-hover-background-color,
-        tokens.$bpk-core-primary-day
+        var(--bpk-core-primary, tokens.$bpk-core-primary-day)
       );
     }
 
@@ -41,7 +41,7 @@
       @include utils.bpk-themeable-property(
         fill,
         --bpk-barchart-bar-active-background-color,
-        tokens.$bpk-core-accent-day
+        var(--bpk-core-accent, tokens.$bpk-core-accent-day)
       );
     }
   }
@@ -50,7 +50,7 @@
     @include utils.bpk-themeable-property(
       fill,
       --bpk-barchart-bar-selected-background-color,
-      tokens.$bpk-core-accent-day
+      var(--bpk-core-accent, tokens.$bpk-core-accent-day)
     );
   }
 
