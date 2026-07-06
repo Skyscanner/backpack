@@ -24,7 +24,7 @@
 
   display: flex;
   width: 100%;
-  min-height: calc(var(--bpk-spacing-xl, tokens.bpk-spacing-xl()) * 2);
+  min-height: tokens.bpk-spacing-xl() * 2;
   padding: var(--bpk-spacing-md, tokens.bpk-spacing-md())
     var(--bpk-spacing-base, tokens.bpk-spacing-base());
   justify-content: space-between;
