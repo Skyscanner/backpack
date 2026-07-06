@@ -143,6 +143,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
+    "@types/node": "25.9.1",
     "@types/jest-axe": "^3.5.9",
     "@types/lodash": "^4.14.202",
     "@types/lodash.clamp": "^4.0.9",
