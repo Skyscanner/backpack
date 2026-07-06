@@ -18,6 +18,8 @@
 
 import type { ReactNode } from 'react';
 
+import { waitFor } from 'storybook/test';
+
 import BpkPriceRange, {
   type BpkPriceRangeProps,
 } from './BpkPriceRange';
@@ -219,5 +221,26 @@ export const VisualTestWithZoom = {
   render: () => <MixedExample />,
   args: {
     zoomEnabled: true,
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    // Wait for the ResizeObserver + useEffect measurement cycle to complete.
+    // --prefilled-width starts at 0px and is updated asynchronously after
+    // scrollWidth is measured. Percy must not snapshot before this settles,
+    // otherwise the bubble marker position is inconsistent between runs.
+    await waitFor(() => {
+      const markers = canvasElement.querySelectorAll<HTMLElement>(
+        '[data-backpack-ds-component="PriceMarker"]',
+      );
+      markers.forEach((marker) => {
+        const priceRange = marker.closest<HTMLElement>(
+          '[data-backpack-ds-component="PriceRange"]',
+        );
+        if (!priceRange) return;
+        const prefilledWidth = priceRange.style.getPropertyValue('--prefilled-width');
+        if (!prefilledWidth || prefilledWidth === '0px') {
+          throw new Error('--prefilled-width not yet settled');
+        }
+      });
+    });
   },
 };
