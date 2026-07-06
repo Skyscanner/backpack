@@ -27,7 +27,7 @@ The original baseline overstated several categories. Re-audit confirmed:
 - Zero-arg `useRef()`: 0
 - TS 5.9.2; `@types/react` 18.3.1
 - Tests: Jest + `@testing-library/react` 16.3.0
-- CI: `.github/workflows/{release,pr,main}.yml` — `pnpm publish` after transpile
+- CI: `.github/workflows/{release,pr,main}.yml` — `npm publish` after transpile
 
 ### Runbook insight: `react/19/migration-recipe` is destructive on this codebase
 
@@ -70,3 +70,4 @@ The current PR establishes the scaffolding (peerDep range, CI matrix, codemod to
 - **`@types/react@19` bump** — running `types-react-codemod preset-19`'s `refobject-defaults` and `useRef-required-initial` sub-transforms together with bumping `@types/react` to 19. These were skipped here because they emit code that only typechecks against `@types/react@19`.
 - **Track and fix the React19 CI matrix failures** — typecheck has 8 known errors (the deferred sub-transforms above plus a missing `@types/prop-types`), and jest has 326 suite failures (mostly transitive deps still using removed React 18 internals like `ReactCurrentDispatcher`). Once green, flip the matrix from `continue-on-error: true` to required.
 - **Move the custom transform to `web-migration-scripts/migrations/2026-05-react-19/transforms/`** when that migration directory is set up.
+

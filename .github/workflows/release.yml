@@ -86,8 +86,8 @@ jobs:
     - name: Publish NPM package
       run: |
         cd packages/backpack-web/dist
-        pnpm version $RELEASE_VERSION --no-git-tag-version
-        pnpm publish --no-git-checks
+        npm version $RELEASE_VERSION --no-git-tag-version
+        npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         RELEASE_VERSION: ${{ github.event.release.tag_name }}
