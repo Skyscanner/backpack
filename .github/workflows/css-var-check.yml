@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: css-var-check-${{ github.head_ref || github.run_id }}
+  group: css-var-check-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
 
 defaults:
@@ -58,7 +58,12 @@ jobs:
           OUTPUT=$(node scripts/npm/check-css-vars.js --json)
           EXIT_CODE=$?
           set -e
-          echo "output=$OUTPUT" >> "$GITHUB_OUTPUT"
+          # Use heredoc syntax so JSON with special characters is passed safely
+          {
+            echo "output<<__EOF__"
+            echo "$OUTPUT"
+            echo "__EOF__"
+          } >> "$GITHUB_OUTPUT"
           echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
       - name: Post or update PR comment

@@ -18,13 +18,14 @@
 
 /* eslint-disable no-console */
 
-const { execSync } = require('child_process');
+const { spawnSync } = require('child_process');
 const fs = require('fs');
+const path = require('path');
 
 const BASE_CSS = 'packages/backpack-web/src/bpk-stylesheets/base.css';
 
-// Only check these source extensions; skip compiled .module.css outputs
-const SOURCE_GLOB = ['*.scss', '*.tsx', '*.ts', '*.js', '*.jsx'];
+// Allowlisted source extensions — everything else is skipped
+const SOURCE_EXTENSIONS = new Set(['.scss', '.tsx', '.ts', '.js', '.jsx']);
 // Skip compiled CSS module outputs and node_modules
 const SKIP_REGEX = /(\bnode_modules\b|\.module\.css$)/;
 
@@ -40,29 +41,41 @@ function extractDefinedVars(cssPath) {
   return defined;
 }
 
+function isCheckedFile(filePath) {
+  if (SKIP_REGEX.test(filePath)) return false;
+  return SOURCE_EXTENSIONS.has(path.extname(filePath));
+}
+
 // Parse added lines from a unified diff, returning { file, line, content }[]
 function parseAddedLines(diff) {
   const results = [];
   let currentFile = null;
   let currentNewLine = 0;
+  let insideHunk = false;
 
   for (const line of diff.split('\n')) {
     if (line.startsWith('+++ b/')) {
-      currentFile = line.slice(6);
-      if (SKIP_REGEX.test(currentFile)) currentFile = null;
+      currentFile = isCheckedFile(line.slice(6)) ? line.slice(6) : null;
+      insideHunk = false;
     } else if (line.startsWith('@@ ')) {
       const lineMatch = line.match(/\+(\d+)/);
       if (lineMatch) currentNewLine = parseInt(lineMatch[1], 10) - 1;
+      insideHunk = true;
+    } else if (!insideHunk) {
+      // skip diff header lines before the first hunk
+    } else if (line.startsWith('\\')) {
+      // meta line e.g. "\ No newline at end of file" — do not advance counter
     } else if (line.startsWith('+') && !line.startsWith('+++')) {
       currentNewLine += 1;
       if (currentFile) {
         results.push({
+          content: line.slice(1),
           file: currentFile,
           line: currentNewLine,
-          content: line.slice(1),
         });
       }
     } else if (!line.startsWith('-')) {
+      // context line
       currentNewLine += 1;
     }
   }
@@ -70,16 +83,34 @@ function parseAddedLines(diff) {
   return results;
 }
 
+// Use :(glob) pathspecs so nested files are matched at any depth.
+// We still filter by extension in JS (isCheckedFile) as an extra safety net.
+// spawnSync with an args array bypasses the shell so :(glob) is passed
+// directly to git without shell-quoting issues.
+const DIFF_PATHSPECS = [
+  ':(glob)**/*.scss',
+  ':(glob)**/*.tsx',
+  ':(glob)**/*.ts',
+  ':(glob)**/*.js',
+  ':(glob)**/*.jsx',
+];
+
 function getDiff() {
-  try {
-    const globs = SOURCE_GLOB.map((g) => `"${g}"`).join(' ');
-    return execSync(
-      `git diff origin/main --unified=0 --diff-filter=ACMR -- ${globs}`,
-      { encoding: 'utf8' },
-    );
-  } catch {
-    return '';
-  }
+  const result = spawnSync(
+    'git',
+    [
+      'diff',
+      'origin/main',
+      '--unified=0',
+      '--diff-filter=ACMR',
+      '--',
+      ...DIFF_PATHSPECS,
+    ],
+    { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 },
+  );
+  if (result.error) throw result.error;
+  if (result.status !== 0) throw new Error(result.stderr || 'git diff failed');
+  return result.stdout;
 }
 
 function findViolations(addedLines, definedVars) {
@@ -111,7 +142,17 @@ if (!fs.existsSync(BASE_CSS)) {
 }
 
 const definedVars = extractDefinedVars(BASE_CSS);
-const diff = getDiff();
+
+let diff;
+try {
+  diff = getDiff();
+} catch (err) {
+  const msg = `git diff failed: ${err.message}`;
+  if (useJson) console.log(JSON.stringify({ error: msg, violations: [] }));
+  else console.error(msg);
+  process.exit(1);
+}
+
 const addedLines = parseAddedLines(diff);
 const violations = findViolations(addedLines, definedVars);
 
