@@ -410,20 +410,8 @@ export function isWebTokenPath(tokenPath: readonly string[]): boolean {
   return !tokenPath.some((segment) => NON_WEB_SEGMENT_PATTERN.test(segment));
 }
 
-// Typography tokens (path[0] === 'Typography') are theme-invariant: identical
-// across light and dark. They live in the semantic file but belong in
-// primitives.css so consumers import them once, not per-theme.
-export function isTypographyToken(token: TransformedToken): boolean {
-  return (
-    Array.isArray(token.path) &&
-    typeof token.path[0] === 'string' &&
-    token.path[0].startsWith('Typography')
-  );
-}
-
 // Composite filter applied to each platform's `files[]`: keep tokens that
-// belong to the semantic source file, are web-compatible, and are NOT
-// Typography (those go to primitives.css instead).
+// belong to the semantic source file AND are web-compatible.
 export function makeWebCssTokenFilter(
   sourceFileName: string,
 ): (token: TransformedToken) => boolean {
@@ -431,8 +419,7 @@ export function makeWebCssTokenFilter(
   return (token) =>
     fileFilter(token) &&
     Array.isArray(token.path) &&
-    isWebTokenPath(token.path) &&
-    !isTypographyToken(token);
+    isWebTokenPath(token.path);
 }
 
 // SD v5 preserves both `$type` (DTCG) and `type` (legacy) on transformed
@@ -444,27 +431,19 @@ function tokenType(token: TransformedToken): string | undefined {
   return undefined;
 }
 
-// Filter for the standalone `primitives.css` output: keeps tokens from
-// primitives.json (Spacing, Radius — excluding Colors and Heights) plus
-// Typography tokens from the semantic file (theme-invariant, so they don't
-// belong in per-theme outputs).
-export function makeWebPrimitivesTokenFilter(
-  semanticFileName?: string,
-): (token: TransformedToken) => boolean {
-  const primitivesFilter = makeBackpackTokenFilter(PRIMITIVES_FILE);
-  const semanticFilter = semanticFileName
-    ? makeBackpackTokenFilter(semanticFileName)
-    : null;
-  return (token) => {
-    if (!Array.isArray(token.path) || !isWebTokenPath(token.path)) return false;
-    if (primitivesFilter(token)) {
-      return tokenType(token) !== 'color' && token.path[0] !== 'Heights';
-    }
-    if (semanticFilter && semanticFilter(token)) {
-      return isTypographyToken(token);
-    }
-    return false;
-  };
+// Filter for the standalone `primitives.css` output: keep Spacing and Radius
+// only. Colors are excluded (consumers should use semantic tokens). Heights are
+// excluded until there is a confirmed consumer need.
+export function makeWebPrimitivesTokenFilter(): (
+  token: TransformedToken,
+) => boolean {
+  const fileFilter = makeBackpackTokenFilter(PRIMITIVES_FILE);
+  return (token) =>
+    fileFilter(token) &&
+    Array.isArray(token.path) &&
+    isWebTokenPath(token.path) &&
+    tokenType(token) !== 'color' &&
+    token.path[0] !== 'Heights';
 }
 
 interface BuildConfigOptions {
@@ -498,15 +477,10 @@ export function buildStyleDictionaryConfigs({
   // Emit non-color primitives once (theme-independent), then one file per
   // semantic theme. Primitives ship first to mirror the recommended consumer
   // import order (primitives.css before any theme sheet).
-  // The light semantic file is also sourced here so Typography tokens (which
-  // are theme-invariant) can be included in primitives.css.
   const primitivesConfig = {
     name: 'web-primitives',
     config: {
-      source: [
-        path.join(tokensDir, PRIMITIVES_FILE),
-        path.join(tokensDir, BACKPACK_LIGHT_FILE),
-      ],
+      source: [path.join(tokensDir, PRIMITIVES_FILE)],
       platforms: {
         css: {
           ...sharedPlatformOptions,
@@ -514,7 +488,7 @@ export function buildStyleDictionaryConfigs({
             {
               destination: PRIMITIVES_OUTPUT_FILE,
               format: 'css/variables',
-              filter: makeWebPrimitivesTokenFilter(BACKPACK_LIGHT_FILE),
+              filter: makeWebPrimitivesTokenFilter(),
               options: {
                 selector: PRIMITIVES_SELECTOR,
                 outputReferences: false,
