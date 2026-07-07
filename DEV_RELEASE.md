@@ -60,7 +60,7 @@ from.
    (no forks), and the user who triggered the workflow has write access.
 2. **Started comment** — a comment is posted on the PR linking to the
    workflow run.
-3. **Build** — `npm ci` and `npm run build` run against the PR's HEAD
+3. **Build** — `pnpm install --frozen-lockfile` and `pnpm run build` run against the PR's HEAD
    commit, producing `packages/backpack-web/dist`.
 4. **Publish** — only when `dry_run=false`. Bumps the version with
    `npm version --no-git-tag-version` and runs `npm publish --tag dev`. This

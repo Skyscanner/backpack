@@ -80,6 +80,21 @@ export default () => (
 );
 ```
 
+### Strikethrough Prop
+
+The `strikethrough` prop renders text with a line through it. It defaults to `false`. When combined with the `color` prop, both the text and the decoration line use the same color, ensuring visual consistency — including in dark mode.
+
+```javascript
+import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+
+export default () => (
+  <BpkText strikethrough>Struck-through text</BpkText>
+  <BpkText color={TEXT_COLORS.textError} strikethrough>
+    Struck-through error text
+  </BpkText>
+);
+```
+
 ### Color Prop
 
 The `color` prop allows you to set the text color directly rather override by  `className`. It uses predefined `TEXT_COLORS` tokens to ensure ux consistency with the design system.

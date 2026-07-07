@@ -79,4 +79,18 @@ describe('BpkCalendarDate', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should apply annotated class when isAnnotated is true', () => {
+    const { asFragment } = render(
+      <BpkCalendarDate date={new Date(2010, 1, 15)} isAnnotated />,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should not apply annotated class by default', () => {
+    const { container } = render(
+      <BpkCalendarDate date={new Date(2010, 1, 15)} />,
+    );
+    expect(container.querySelector('.bpk-calendar-date--annotated')).toBeNull();
+  });
 });

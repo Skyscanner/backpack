@@ -80,10 +80,13 @@
   max-width: 76.5rem;
   margin-right: auto;
   margin-left: auto;
-  background-color: tokens.$bpk-surface-contrast-day;
+  background-color: var(
+    --bpk-surface-contrast,
+    tokens.$bpk-surface-contrast-day
+  );
   background-position: center;
   background-size: cover;
-  color: tokens.$bpk-text-on-dark-day;
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   text-decoration: none;
   box-shadow: none;
 
@@ -128,7 +131,7 @@
     }
 
     @include breakpoints.bpk-breakpoint-small-tablet {
-      padding: tokens.bpk-spacing-xl();
+      padding: var(--bpk-spacing-xl, tokens.bpk-spacing-xl());
       justify-content: space-between;
 
       @include reset-alignment;
@@ -145,12 +148,12 @@
     }
 
     @include breakpoints.bpk-breakpoint-small-mobile {
-      padding: tokens.bpk-spacing-lg();
+      padding: var(--bpk-spacing-lg, tokens.bpk-spacing-lg());
     }
   }
 
   &__tagline {
-    margin-bottom: tokens.bpk-spacing-md();
+    margin-bottom: var(--bpk-spacing-md, tokens.bpk-spacing-md());
 
     @include typography.bpk-heading-5;
 
@@ -174,7 +177,7 @@
       @include typography.bpk-hero-5;
 
       &:not(:last-child) {
-        margin-bottom: tokens.bpk-spacing-md();
+        margin-bottom: var(--bpk-spacing-md, tokens.bpk-spacing-md());
       }
     }
 
@@ -182,12 +185,12 @@
       @include typography.bpk-heading-1;
 
       &:not(:last-child) {
-        margin-bottom: tokens.bpk-spacing-md();
+        margin-bottom: var(--bpk-spacing-md, tokens.bpk-spacing-md());
       }
     }
 
     @include breakpoints.bpk-breakpoint-small-tablet {
-      margin-bottom: tokens.bpk-spacing-md();
+      margin-bottom: var(--bpk-spacing-md, tokens.bpk-spacing-md());
     }
 
     @include breakpoints.bpk-breakpoint-mobile {
@@ -236,7 +239,7 @@
 
   &__sponsor-content {
     display: flex;
-    margin-bottom: tokens.bpk-spacing-base();
+    margin-bottom: var(--bpk-spacing-base, tokens.bpk-spacing-base());
     flex-direction: column;
 
     @include breakpoints.bpk-breakpoint-small-tablet {
@@ -245,18 +248,18 @@
   }
 
   &__sponsor-label {
-    margin-bottom: tokens.bpk-spacing-sm();
+    margin-bottom: var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
 
     @include typography.bpk-label-1;
 
     @include breakpoints.bpk-breakpoint-small-tablet {
-      margin-bottom: tokens.bpk-spacing-md();
+      margin-bottom: var(--bpk-spacing-md, tokens.bpk-spacing-md());
 
       @include typography.bpk-heading-3;
     }
 
     @include breakpoints.bpk-breakpoint-small-mobile {
-      margin-bottom: tokens.bpk-spacing-sm();
+      margin-bottom: var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
 
       @include typography.bpk-label-1;
     }
@@ -270,7 +273,7 @@
   }
 
   &__cta {
-    margin-top: tokens.bpk-spacing-xl();
+    margin-top: var(--bpk-spacing-xl, tokens.bpk-spacing-xl());
 
     @include breakpoints.bpk-breakpoint-small-tablet {
       display: none;
