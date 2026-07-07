@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { Component, useState } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkLink from '../../bpk-component-link';
@@ -330,65 +330,43 @@ const DrawerWithTooltipExampleAbleToBeShown = () => (
   </DrawerContainer>
 );
 
-class DrawerWithSecondaryPanelContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isOpen: false,
-      isSecondaryOpen: false,
-    };
-  }
+const DrawerWithSecondaryPanelContainer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSecondaryOpen, setIsSecondaryOpen] = useState(false);
 
-  onOpen = () => {
-    this.setState({ isOpen: true });
-  };
-
-  onClose = () => {
-    this.setState({ isOpen: false, isSecondaryOpen: false });
-  };
-
-  onSecondaryOpen = () => {
-    this.setState({ isSecondaryOpen: true });
-  };
-
-  onSecondaryClose = () => {
-    this.setState({ isSecondaryOpen: false });
-  };
-
-  render() {
-    return (
-      <div id="drawer-secondary-container">
-        <div id="pagewrap-secondary">
-          <BpkButton onClick={this.onOpen}>Open drawer</BpkButton>
-        </div>
-        <BpkDrawer
-          id="my-secondary-drawer"
-          isOpen={this.state.isOpen}
-          onClose={this.onClose}
-          title="Booking Panel"
-          closeLabel="Close drawer"
-          width="min(750px, 100%)"
-          renderTarget={() => document.getElementById('drawer-secondary-container')}
-          getApplicationElement={() => document.getElementById('pagewrap-secondary')}
-          secondaryPanel={{
-            isOpen: this.state.isSecondaryOpen,
-            onClose: this.onSecondaryClose,
-            children: (
-              <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
-                This is the secondary panel content. It slides in alongside the primary content.
-              </BpkText>
-            ),
-          }}
-        >
-          <Paragraph>This is the primary drawer content.</Paragraph>
-          <BpkButton type={BUTTON_TYPES.secondary} onClick={() => this.onSecondaryOpen()}>
-            Open secondary panel
-          </BpkButton>
-        </BpkDrawer>
+  return (
+    <div id="drawer-secondary-container">
+      <div id="pagewrap-secondary">
+        <BpkButton onClick={() => setIsOpen(true)}>Open drawer</BpkButton>
       </div>
-    );
-  }
-}
+      <BpkDrawer
+        id="my-secondary-drawer"
+        isOpen={isOpen}
+        onClose={() => { setIsOpen(false); setIsSecondaryOpen(false); }}
+        title="Booking Panel"
+        closeLabel="Close drawer"
+        width="min(750px, 100%)"
+        renderTarget={() => document.getElementById('drawer-secondary-container')}
+        getApplicationElement={() => document.getElementById('pagewrap-secondary')}
+        secondaryPanel={{
+          isOpen: isSecondaryOpen,
+          onClose: () => setIsSecondaryOpen(false),
+          title: 'Details Panel',
+          children: (
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This is the secondary panel content. It slides in alongside the primary content.
+            </BpkText>
+          ),
+        }}
+      >
+        <Paragraph>This is the primary drawer content.</Paragraph>
+        <BpkButton type={BUTTON_TYPES.secondary} onClick={() => setIsSecondaryOpen(true)}>
+          Open secondary panel
+        </BpkButton>
+      </BpkDrawer>
+    </div>
+  );
+};
 
 const WithSecondaryPanelExample = () => <DrawerWithSecondaryPanelContainer />;
 

@@ -110,7 +110,6 @@ const BpkDrawerContent = ({
       <h2 id={headingId} className={headerClassNames.join(' ')}>
         {title}
       </h2>
-      &nbsp;
       {closeText ? (
         <BpkLink as="button" onClick={onClose}>{closeText}</BpkLink>
       ) : (
@@ -175,13 +174,24 @@ const BpkDrawerContent = ({
               </div>
               <div
                 role="complementary"
-                aria-label="Secondary panel"
+                aria-label={secondaryPanel.ariaLabel ?? 'Secondary panel'}
                 className={getClassName('bpk-drawer__secondary')}
                 data-testid="secondary-panel"
               >
-                <div className={getClassName('bpk-drawer__secondary-close')}>
-                  <BpkCloseButton label={secondaryPanel.closeLabel ?? closeLabel} onClick={secondaryPanel.onClose} />
-                </div>
+                {secondaryPanel.title ? (
+                  <header className={getClassName('bpk-drawer__header')}>
+                    <h2 className={getClassName('bpk-drawer__heading')}>
+                      {secondaryPanel.title}
+                    </h2>
+                    <div className={getClassName('bpk-drawer__close-button')}>
+                      <BpkCloseButton label={secondaryPanel.closeLabel ?? closeLabel} onClick={secondaryPanel.onClose} />
+                    </div>
+                  </header>
+                ) : (
+                  <div className={getClassName('bpk-drawer__secondary-close')}>
+                    <BpkCloseButton label={secondaryPanel.closeLabel ?? closeLabel} onClick={secondaryPanel.onClose} />
+                  </div>
+                )}
                 <div className={getClassName('bpk-drawer__secondary-content')}>
                   {secondaryPanel.children}
                 </div>

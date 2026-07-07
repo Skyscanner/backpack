@@ -23,4 +23,6 @@ export type SecondaryPanelProps = {
   onClose: () => void;
   children: ReactNode;
   closeLabel?: string;
+  ariaLabel?: string;
+  title?: ReactNode;
 };
