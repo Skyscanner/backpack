@@ -50,7 +50,7 @@ Once you have a compatible environment as stated above, you can setup the projec
 
 ### Repository layout
 
-Backpack is an npm workspaces monorepo orchestrated with [Nx](https://nx.dev/). The root `package.json` declares `workspaces: ["packages/*", "libs/*"]`.
+Backpack is a pnpm workspaces monorepo orchestrated with [Nx](https://nx.dev/).
 
 - `packages/backpack-web/src/bpk-component-*/` — individual web component packages
 - `packages/backpack-web/src/bpk-mixins/` — Sass mixins consumed by components
@@ -64,27 +64,27 @@ git clone https://github.com/YOUR_USERNAME/Backpack.git
 git checkout -b {BRANCH_NAME}
 ```
 
-2. Install npm dependencies
+2. Install dependencies
 
 ```sh
-npm install --registry="https://registry.npmjs.org/"
+pnpm install
 ```
 
 3. Build SVGs
 
 ```sh
-npm run build
+pnpm run build
 ```
 
 4. Start the Storybook server, then go to [http://localhost:9001](http://localhost:9001) in a web browser to view it
 
 ```sh
-npm start
+pnpm start
 ```
 
 > **Local vs CI Storybook**
 >
-> | | Local (`npm start`) | CI build (`npm run storybook:dist`) |
+> | | Local (`pnpm start`) | CI build (`pnpm run storybook:dist`) |
 > |---|---|---|
 > | Prop extractor | `react-docgen` (fast, less accurate) | `react-docgen-typescript` (full TypeScript inference) |
 > | `never` props in docs | Hidden (not extracted by react-docgen) | Hidden (filtered by `propFilter` in `.storybook/main.ts`) |
@@ -94,7 +94,7 @@ npm start
 >
 > If you see `[webpack.cache.PackFileCacheStrategy] Restoring failed` warnings, clear the cache and restart:
 > ```sh
-> rm -rf node_modules/.cache && npm start
+> rm -rf node_modules/.cache && pnpm start
 > ```
 
 ## Write your code
@@ -190,7 +190,7 @@ If you want to add a new component:
     - Accessibility tests - Accessibility tests live in the same folder with the component's code and rely on `jest-axe` and `React Testing Library`
 5. Add type declaration files within the same folder of the component to ensure proper compatibility and usage of the components
 6. Update `README.md` following the boilerplate format
-7. **Add a Figma Code Connect mapping.** Every new non-icon component must ship a `Bpk{Name}.figma.tsx` next to its source code, mapping the React API to the corresponding Figma component. After adding it, run `npm run figma:generate-config` to refresh `figma.config.json`. PRs without a `.figma.tsx` will fail the `sync-figma-code-connect` check on `main`. See the [Figma Code Connect](#figma-code-connect) section below for the full workflow.
+7. **Add a Figma Code Connect mapping.** Every new non-icon component must ship a `Bpk{Name}.figma.tsx` next to its source code, mapping the React API to the corresponding Figma component. After adding it, run `pnpm run figma:generate-config` to refresh `figma.config.json`. PRs without a `.figma.tsx` will fail the `sync-figma-code-connect` check on `main`. See the [Figma Code Connect](#figma-code-connect) section below for the full workflow.
 8. **Add data component attributes** - All components must include data attributes for design system tracking and automation:
     - Import the utility function: `import { getDataComponentAttribute } from '../../bpk-react-utils'` (adjust path based on component location)
     - Apply the attribute to the root element of your component: `{...getDataComponentAttribute('ComponentName')}`
@@ -330,9 +330,9 @@ Bear in mind that small, incremental pull requests are likely to be reviewed fas
 <details>
 <summary>Run tests</summary>
 
-`npm test` will pick up any files that end in `-test.js`, so you don't need to do anything to make Jest pick them up.
+`pnpm test` will pick up any files that end in `-test.js`, so you don't need to do anything to make Jest pick them up.
 
-You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `npm run jest:watch` to do this.
+You can also run the tests in 'watch mode', which means the process will continually run and run tests every time files change. Use `pnpm run jest:watch` to do this.
 
 There are also visual regression tests, powered by [Percy](https://www.percy.io/).
 
@@ -345,10 +345,10 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 <details>
 <summary>Run linters manually</summary>
 
-* `npm run lint` to lint both JS and SCSS.
-* `npm run lint:js` to lint JS.
-* `npm run lint:js:fix` to lint and try to automatically fix any errors.
-* `npm run lint:scss` to lint SCSS.
+* `pnpm run lint` to lint both JS and SCSS.
+* `pnpm run lint:js` to lint JS.
+* `pnpm run lint:js:fix` to lint and try to automatically fix any errors.
+* `pnpm run lint:scss` to lint SCSS.
 
 </details>
 
@@ -372,21 +372,21 @@ Backpack uses [Figma Code Connect](https://github.com/figma/code-connect) to lin
 To regenerate both the `figma.config.json` import path mappings and the icon Code Connect mappings in one step:
 
 ```sh
-FIGMA_ACCESS_TOKEN=<your-token> npm run figma:generate
+FIGMA_ACCESS_TOKEN=<your-token> pnpm run figma:generate
 ```
 
 This runs two scripts in sequence:
 
-1. `npm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
-2. `npm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx`
+1. `pnpm run figma:generate-config` — scans for `.figma.tsx` files and regenerates `figma.config.json` with `importPaths` for all component packages
+2. `pnpm run figma:generate-icons` — fetches component metadata from the [Backpack Icons Figma file](https://www.figma.com/design/I9hynSlX2wyrlhceZr7z1u/Backpack-Icons), matches icons to the `sm/` and `lg/` directories, and writes `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx`
 
 ### Import path configuration
 
-`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `npm run figma:generate-config` to update it after adding new components.
+`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `pnpm run figma:generate-config` to update it after adding new components.
 
 ### Icon mappings
 
-Icon Code Connect mappings are auto-generated. Do not edit `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `npm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
+Icon Code Connect mappings are auto-generated. Do not edit `packages/backpack-web/src/bpk-component-icon/BpkIcon.figma.tsx` manually. Run `pnpm run figma:generate-icons` (with `FIGMA_ACCESS_TOKEN` set) to regenerate.
 
 ### Component mappings
 

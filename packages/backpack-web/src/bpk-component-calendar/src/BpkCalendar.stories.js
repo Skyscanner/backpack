@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import PropTypes from 'prop-types';
+import { Component } from 'react';
+
+
 import { addMonths } from 'date-fns/addMonths';
 import { startOfDay } from 'date-fns/startOfDay';
 
@@ -26,6 +30,8 @@ import {
   BpkCalendarGridHeader,
   BpkCalendarNav,
   BpkCalendarDate,
+  withCalendarState,
+  composeCalendar,
 } from '..';
 import BpkText from '../../bpk-component-text';
 
@@ -332,6 +338,73 @@ const FocusedDateInThePastExample = () => (
   />
 );
 
+// Multi-city scenario: leg 1 = 5th (outbound), leg 2 = 12th (connection).
+// The calendar is open for leg 3 — legs 1 & 2 dates show the inset ring as
+// context, leg 3's selected date (20th) shows the filled selection style.
+const TODAY = new Date();
+const MULTI_CITY_LEG1 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 5);
+const MULTI_CITY_LEG2 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 12);
+const MULTI_CITY_LEG3 = new Date(TODAY.getFullYear(), TODAY.getMonth(), 20);
+
+const isOtherLegDate = (date) =>
+  [MULTI_CITY_LEG1, MULTI_CITY_LEG2].some((d) => d.toDateString() === date.toDateString());
+
+const MultiCityDateComponent = ({ date, ...rest }) => (
+  <BpkCalendarDateComponent {...rest} date={date} isAnnotated={isOtherLegDate(date)} />
+);
+MultiCityDateComponent.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+};
+
+const MultiCityCalendar = withCalendarState(
+  composeCalendar(
+    BpkCalendarNav,
+    BpkCalendarGridHeader,
+    BpkCalendarGrid,
+    MultiCityDateComponent,
+  ),
+);
+
+// minDate = leg 2 date so dates before it are blocked (unselectable).
+// Legs 1 & 2 show the inset ring; clicking any selectable date fills it.
+class MultiCityAnnotatedDatesExample extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectionConfiguration: {
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null,
+      },
+    };
+  }
+
+  render() {
+    return (
+      <MultiCityCalendar
+        id="multiCityCalendar"
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        daysOfWeek={weekDays}
+        weekStartsOn={1}
+        changeMonthLabel="Change month"
+        previousMonthLabel="Go to previous month"
+        nextMonthLabel="Go to next month"
+        minDate={MULTI_CITY_LEG2}
+        initiallyFocusedDate={MULTI_CITY_LEG3}
+        onDateSelect={(date) => {
+          this.setState({
+            selectionConfiguration: {
+              type: CALENDAR_SELECTION_TYPE.single,
+              date,
+            },
+          });
+        }}
+        selectionConfiguration={this.state.selectionConfiguration}
+      />
+    );
+  }
+}
+
 const RangeDateCalendarExample = () => (
   <CalendarContainer
     minDate={new Date(2020, 3, 1)}
@@ -394,6 +467,8 @@ export const CustomComposedCalendar = { render: () => <CustomComposedCalendarExa
 
 export const CustomComposedCalendarSafariDstBug = { render: () => <CustomComposedCalendarSafariBugExample /> };
 
+export const CalendarMultiCityAnnotatedDates = { render: () => <MultiCityAnnotatedDatesExample /> };
+
 export const Week = { render: () => <WeekExample /> };
 
 export const VisualTest = { render: () => <FocusedDateInThePastExample /> };
@@ -413,3 +488,4 @@ export const VisualTestRangeWithZoom = {
     zoomEnabled: true,
   },
 };
+

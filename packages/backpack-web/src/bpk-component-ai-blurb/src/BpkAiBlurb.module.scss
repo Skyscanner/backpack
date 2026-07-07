@@ -22,10 +22,10 @@
 .bpk-ai-blurb {
   display: flex;
   flex-direction: column;
-  gap: tokens.bpk-spacing-md();
+  gap: var(--bpk-spacing-md, tokens.bpk-spacing-md());
 
   &__header {
-    color: tokens.$bpk-text-secondary-day;
+    color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
 
     // Apply secondary colour to the AI spark icon SVG
     svg {
@@ -42,7 +42,7 @@
     margin: 0;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0 tokens.bpk-spacing-sm();
+    gap: 0 var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
 
     @include typography.bpk-caption;
   }
@@ -50,7 +50,7 @@
   &__ellipsis {
     display: inline;
     vertical-align: baseline;
-    margin-inline-start: tokens.bpk-spacing-sm();
+    margin-inline-start: var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
 
     &-dot {
       display: inline;

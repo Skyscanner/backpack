@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { forwardRef, type ElementType } from 'react';
+
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
 import type { BpkVesselProps } from './types';
@@ -63,14 +65,25 @@ import type { BpkVesselProps } from './types';
  *
  * @returns {JSX.Element} An HTML element with all props applied.
  */
-export const BpkVessel = ({
-  as: Element = 'div',
-  children,
-  ...restProps
-}: BpkVesselProps) => (
-  <Element {...getDataComponentAttribute('Vessel')} {...restProps}>
-    {children}
-  </Element>
+export const BpkVessel = forwardRef<HTMLElement, BpkVesselProps>(
+  (
+    {
+      as: Element = 'div',
+      children,
+      ...restProps
+    },
+    ref,
+  ) => {
+    const Component = Element as ElementType;
+
+    return (
+      <Component ref={ref} {...getDataComponentAttribute('Vessel')} {...restProps}>
+        {children}
+      </Component>
+    );
+  },
 );
+
+BpkVessel.displayName = 'BpkVessel';
 
 export type { BpkVesselProps };
