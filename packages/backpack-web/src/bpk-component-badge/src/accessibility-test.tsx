@@ -27,4 +27,10 @@ describe('BpkBadge accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues for subtle badge', async () => {
+    const { container } = render(<BpkBadge type="subtle">Promociando</BpkBadge>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

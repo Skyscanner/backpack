@@ -95,6 +95,24 @@ describe('BpkCalendarScrollGridList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  it('should render months starting from minScrollable when earlier than minDate', () => {
+    const { getAllByRole } = render(
+      <BpkScrollableCalendarGridList
+        minDate={testDate}
+        minScrollable={DateUtils.addMonths(testDate, -2)}
+        maxDate={DateUtils.addMonths(testDate, 12)}
+        month={testDate}
+        formatMonth={formatMonth}
+        formatDateFull={formatDateFull}
+        DateComponent={BpkCalendarScrollDate}
+        weekStartsOn={0}
+      />,
+    );
+    const buttons = getAllByRole('button');
+    const disabledButtons = buttons.filter((b) => b.hasAttribute('disabled'));
+    expect(disabledButtons.length).toBeGreaterThan(0);
+  });
+
   it('should render correctly with a custom date component', () => {
     const MyCustomDate = (props: any) => {
       const cx = {

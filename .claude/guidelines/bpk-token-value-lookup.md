@@ -4,7 +4,7 @@
 - **SCSS**: `node_modules/@skyscanner/bpk-foundations-web/tokens/base.default.scss`
 - **TSX**: `node_modules/@skyscanner/bpk-foundations-web/tokens/base.es6.d.ts`
 
-If these files do not exist, stop and ask the user to run `npm install` first.
+If these files do not exist, stop and ask the user to run `pnpm install` first.
 
 If a token name cannot be confirmed in those files, use the hardcoded value as-is.
 

@@ -400,7 +400,7 @@ Components MUST be built with performance in mind:
 ### Supported Platforms & Browsers
 
 - **Node.js**: >=18.20.4
-- **npm**: >=10.7.0
+- **pnpm**: >=9.15.9
 - **React**: 18.3.1
 - **TypeScript**: 5.9.2
 - **Browsers** (from [browserslist-config-skyscanner](https://github.skyscannertools.net/web-engineering/browserslist-config-skyscanner)):

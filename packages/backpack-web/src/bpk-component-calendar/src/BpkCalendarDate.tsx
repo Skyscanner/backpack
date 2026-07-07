@@ -71,6 +71,7 @@ type DefaultProps = {
    *   - `SELECTION_TYPES.end` - When an end date is selected in a range calendar i.e. Last date in the range
    */
   selectionType?: SelectionTypes;
+  isAnnotated?: boolean;
   style?: {};
 };
 
@@ -128,6 +129,7 @@ class BpkCalendarDate extends PureComponent<Props> {
     const {
       className = null,
       date,
+      isAnnotated = false,
       isBlocked = false,
       isFocused = false,
       isKeyboardFocusable = true,
@@ -162,6 +164,9 @@ class BpkCalendarDate extends PureComponent<Props> {
     }
     if (isOutside) {
       classNames.push(getClassName('bpk-calendar-date--outside'));
+    }
+    if (isAnnotated) {
+      classNames.push(getClassName('bpk-calendar-date--annotated'));
     }
 
     if (selectionType !== SELECTION_TYPES.none) {
