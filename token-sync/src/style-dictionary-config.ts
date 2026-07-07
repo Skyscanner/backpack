@@ -431,11 +431,22 @@ function tokenType(token: TransformedToken): string | undefined {
   return undefined;
 }
 
+// DTCG types that are exclusively typographic — unambiguous from the Figma API
+// scope (fontFamily ← FONT_FAMILY scope, fontWeight ← FONT_STYLE scope,
+// lineHeight ← LINE_HEIGHT scope). Used to exclude Type primitives from
+// primitives.css without relying on path names.
+// Note: Type.Letter-spacing and Type.Size use $type: dimension because their
+// Figma scope is ALL_SCOPES (unconstrained) — indistinguishable from Spacing
+// at the DTCG level. Those are caught by the `Type` path guard below.
+// Fix: tighten their Figma scopes to LETTER_SPACING and FONT_SIZE so the
+// transformer can map them to proper DTCG types and the path guard can be dropped.
+const TYPOGRAPHY_TYPES = new Set(['fontFamily', 'fontWeight', 'lineHeight']);
+
 // Filter for the standalone `primitives.css` output: keep Spacing and Radius
 // only. Colors are excluded (consumers should use semantic tokens). Heights are
-// excluded until there is a confirmed consumer need. Type primitives (font
-// families, sizes, line-heights, letter-spacing, weights) are excluded — they
-// belong in the per-theme outputs via the semantic token layer.
+// excluded until there is a confirmed consumer need. Type primitives are
+// excluded: unambiguous ones by $type, the rest (letter-spacing, size) by the
+// `Type` path guard until their Figma scopes are tightened.
 export function makeWebPrimitivesTokenFilter(): (
   token: TransformedToken,
 ) => boolean {
@@ -445,6 +456,7 @@ export function makeWebPrimitivesTokenFilter(): (
     Array.isArray(token.path) &&
     isWebTokenPath(token.path) &&
     tokenType(token) !== 'color' &&
+    !TYPOGRAPHY_TYPES.has(tokenType(token) ?? '') &&
     token.path[0] !== 'Heights' &&
     token.path[0] !== 'Type';
 }
