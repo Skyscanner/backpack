@@ -401,8 +401,17 @@ export function processResponsiveValue(
 }
 
 /**
- * Validates and converts spacing props for Chakra UI
- * Handles all spacing-related properties including padding, margin, gap, size, border radius and position
+ * Validates and converts spacing props for Chakra UI.
+ *
+ * Handles:
+ * - Padding props: padding, paddingTop/Right/Bottom/Left, paddingStart/End, paddingInline, paddingBlock
+ * - Margin props: margin, marginTop/Right/Bottom/Left, marginStart/End, marginInline,
+ *   marginBlockStart/End, marginBlock
+ * - Gap: gap, rowGap, columnGap
+ * - Size: width, height, minWidth, minHeight, maxWidth, maxHeight
+ * - Position offsets: top, right, bottom, left, insetInlineStart, insetInlineEnd
+ *   (accept rem, %, '0', or BPK spacing tokens)
+ * - Scroll snap margin: scrollMarginTop, scrollMarginBottom (scalar BPK spacing tokens)
  *
  * @param {T} props - Component props object
  * @returns {Record<string, any>} Processed props with spacing tokens converted to actual values
@@ -423,15 +432,16 @@ export function processSpacingProps<T extends Record<string, any>>(
     // Size props
     'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
     // Position props (rem, %, '0', or BPK spacing tokens)
+    // scrollMarginTop/Bottom are included here because they use the same value space as position
+    // offsets (rem for sticky-header heights, tokens, or '0') rather than spacing-only values.
     'top', 'right', 'bottom', 'left',
     'insetInlineStart', 'insetInlineEnd',
-    // Scroll snap margin props
     'scrollMarginTop', 'scrollMarginBottom',
   ];
 
   const processed: Record<string, any> = { ...props };
   const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
-  const positionKeys = ['top', 'right', 'bottom', 'left', 'insetInlineStart', 'insetInlineEnd'];
+  const positionKeys = ['top', 'right', 'bottom', 'left', 'insetInlineStart', 'insetInlineEnd', 'scrollMarginTop', 'scrollMarginBottom'];
   // Margin keys accept 'auto' (e.g. marginTop: 'auto' to bottom-anchor a flex child); padding/gap don't.
   const marginKeys = [
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',

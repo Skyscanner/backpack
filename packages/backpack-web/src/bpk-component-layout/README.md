@@ -103,18 +103,18 @@ BpkVessel accepts **all React.HTMLAttributes** to maximize migration flexibility
 
 The layout API is intentionally limited and strongly typed. The main groups are:
 
-- **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`, `scrollMarginTop`, `scrollMarginBottom`:
+- **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`:
   - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …, `BpkSpacing.XXXL`) or percentages (e.g. `'50%'`).
-  - `scrollMarginTop`/`scrollMarginBottom` control the scroll snap margin for the element.
 - **Flex gaps** – `BpkFlex` supports `gap`, `rowGap`, and `columnGap` for shared or independent flex row/column spacing.
   - Values: `BpkSpacing` tokens (`BpkSpacing.SM`, `BpkSpacing.LG`, …) or percentages.
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
 - **Position keyword** – `position`:
   - Values: `'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'`. Supports responsive overrides.
-- **Position offsets** – `top`, `right`, `bottom`, `left`, `insetInlineStart`, `insetInlineEnd`:
-  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), bare `'0'`, or **BPK spacing tokens** (e.g. `BpkSpacing.Base`). Supports responsive overrides.
+- **Position offsets** – `top`, `right`, `bottom`, `left`, `insetInlineStart`, `insetInlineEnd`, `scrollMarginTop`, `scrollMarginBottom`:
+  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), bare `'0'`, or **BPK spacing tokens** (e.g. `BpkSpacing.Base`). `top/right/bottom/left/insetInline*` support responsive overrides; `scrollMargin*` are scalar only.
   - `insetInlineStart`/`insetInlineEnd` are the RTL-safe logical equivalents of `left`/`right`.
+  - `scrollMarginTop`/`scrollMarginBottom` offset the scroll snap position, typically matching a sticky header height (e.g. `scrollMarginTop="3.5rem"`).
 - **Overflow** – `overflow`, `overflowX`, `overflowY`:
   - Values: `'visible' | 'hidden' | 'scroll' | 'auto' | 'clip'`. All three support responsive overrides. Use `overflowX`/`overflowY` for per-axis control (e.g. `overflowX="hidden"` + `overflowY="auto"`).
 - **Stacking context** – `zIndex`:

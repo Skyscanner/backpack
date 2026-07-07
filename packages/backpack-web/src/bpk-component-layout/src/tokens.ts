@@ -168,7 +168,7 @@ export type BpkResponsiveValue<T> =
  * @returns {boolean} True if the value is a valid percentage string
  */
 export function isPercentage(value: string): boolean {
-  return /^\d+(\.\d+)?%$/.test(value);
+  return /^-?\d+(\.\d+)?%$/.test(value);
 }
 
 /**

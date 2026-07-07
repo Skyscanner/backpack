@@ -93,9 +93,12 @@ export interface BpkSpacingProps {
   insetInlineStart?: BpkResponsiveValue<BpkPositionValue>;
   insetInlineEnd?: BpkResponsiveValue<BpkPositionValue>;
 
-  // Scroll snap margin props — space between the scroll container's snap point and the element
-  scrollMarginTop?: BpkResponsiveValue<BpkSpacingValue>;
-  scrollMarginBottom?: BpkResponsiveValue<BpkSpacingValue>;
+  // Scroll snap margin props — space between the scroll container's snap point and the element.
+  // Scalar only: scroll-margin is typically a fixed sticky-header height, not per-breakpoint.
+  // Uses BpkPositionValue (rem | % | '0' | BpkSpacingToken) so that rem offsets like '3.5rem'
+  // are accepted alongside spacing tokens.
+  scrollMarginTop?: BpkPositionValue;
+  scrollMarginBottom?: BpkPositionValue;
 }
 
 /**
@@ -210,7 +213,9 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   transitionDuration?: never;
   transitionTimingFunction?: never;
   transitionDelay?: never;
-  // transform is excluded on the shared interface; BpkBox opts in via Omit<BpkCommonLayoutProps, 'transform'>
-  transform?: never;
+  // `transform` is intentionally absent here — BpkBox declares `transform?: string` in
+  // BpkBoxSpecificProps; all other layout components simply do not expose it.
+  // `transformOrigin` stays excluded on all components: it is only meaningful alongside
+  // `transform`, and BpkBox's token-based API is not designed for full transform-origin control.
   transformOrigin?: never;
 }

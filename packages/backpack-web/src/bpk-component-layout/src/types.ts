@@ -126,8 +126,12 @@ export interface BpkBoxSpecificProps
  * Combines Box-specific props with Backpack common layout props.
  * onClick, onFocus and onBlur are inherited from BpkCommonLayoutProps.
  * textStyle maps to Chakra's `textStyle` theme prop for Backpack typography and supports responsive values.
+ *
+ * `transform` is available on BpkBox only — declared in BpkBoxSpecificProps.
+ * BpkCommonLayoutProps does not declare transform (neither string nor never), so there is no
+ * type conflict when BpkBoxSpecificProps adds it as string.
  */
-export interface BpkBoxProps extends Omit<BpkCommonLayoutProps, 'transform'>, BpkBoxSpecificProps {
+export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   children?: ReactNode;
 }
 

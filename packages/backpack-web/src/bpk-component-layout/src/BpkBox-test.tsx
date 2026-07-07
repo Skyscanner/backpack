@@ -582,6 +582,15 @@ describe('BpkBox', () => {
       );
       expect(container.querySelector('div')).toBeInTheDocument();
     });
+
+    it('renders with scrollMarginTop using a raw rem value (e.g. sticky-header height)', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox scrollMarginTop="3.5rem">Scroll target</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toBeInTheDocument();
+    });
   });
 
 });

@@ -402,7 +402,7 @@ describe('processBpkProps', () => {
     expect(result.insetInlineEnd).toBe('25%');
   });
 
-  it('converts spacing tokens for scrollMarginTop and scrollMarginBottom', () => {
+  it('converts BPK spacing tokens for scrollMarginTop and scrollMarginBottom', () => {
     const result = processBpkProps({
       scrollMarginTop: BpkSpacing.MD,
       scrollMarginBottom: BpkSpacing.XXXL,
@@ -412,12 +412,24 @@ describe('processBpkProps', () => {
     expect(result.scrollMarginBottom).toBe('4rem');
   });
 
-  it('supports responsive values for scrollMarginTop/Bottom', () => {
+  it('passes through raw rem values for scrollMarginTop/Bottom (e.g. sticky-header height)', () => {
     const result = processBpkProps({
-      scrollMarginTop: { mobile: BpkSpacing.SM, desktop: BpkSpacing.LG },
+      scrollMarginTop: '3.5rem',
+      scrollMarginBottom: '0',
     });
 
-    expect(result.scrollMarginTop).toEqual({ md: '.25rem', '2xl': '1.5rem' });
+    expect(result.scrollMarginTop).toBe('3.5rem');
+    expect(result.scrollMarginBottom).toBe('0');
+  });
+
+  it('passes through negative percentages for position props (e.g. top: -50% for vertical centering)', () => {
+    const result = processBpkProps({
+      top: '-50%',
+      left: '-100%',
+    });
+
+    expect(result.top).toBe('-50%');
+    expect(result.left).toBe('-100%');
   });
 });
 

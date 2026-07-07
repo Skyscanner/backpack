@@ -41,6 +41,16 @@ const SpacingExample = () => (
     <BpkBox padding={BpkSpacing.MD} margin={BpkSpacing.MD}>
       Default box with padding and margin using Backpack spacing tokens.
     </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>BpkSpacing.XXXL (4rem / 64px)</BpkText>
+      <BpkBox
+        padding={BpkSpacing.XXXL}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>64px padding on all sides</BpkText>
+      </BpkBox>
+    </BpkBox>
   </LayoutWrapper>
 );
 
@@ -738,14 +748,14 @@ const TransformExample = () => (
 
     {/* Extra bottom margin because rotate extends the visual bounding box beyond the layout footprint */}
     <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.XXXL}>
-      <BpkText textStyle={TEXT_STYLES.label2}>rotate(10deg) — slight rotation</BpkText>
+      <BpkText textStyle={TEXT_STYLES.label2}>rotate(5deg) — slight rotation</BpkText>
       <BpkBox minHeight="4rem" marginTop={BpkSpacing.SM}>
         <BpkBox
-          transform="rotate(10deg)"
+          transform="rotate(5deg)"
           padding={BpkSpacing.SM}
           backgroundColor={BACKGROUND_COLORS.surfaceElevated}
         >
-          <BpkText>Rotated 10 degrees</BpkText>
+          <BpkText>Rotated 5 degrees</BpkText>
         </BpkBox>
       </BpkBox>
     </BpkBox>
@@ -770,47 +780,35 @@ export const Transform = {
 };
 
 /**
- * PointerEvents example – demonstrates `pointerEvents="none"` for click-through overlays
- * and `pointerEvents="auto"` for restoring interaction.
+ * PointerEvents example – demonstrates the `pointerEvents` prop.
+ * pointerEvents="none" makes a box non-interactive (clicks pass through to elements behind it).
+ * pointerEvents="auto" restores interaction explicitly.
  *
- * @returns {JSX.Element} A stacked overlay with pointer-events control.
+ * @returns {JSX.Element} Two boxes with different pointerEvents values.
  */
 const PointerEventsExample = () => {
-  const [clicked, setClicked] = useState(false);
+  const [clickedNone, setClickedNone] = useState(false);
+  const [clickedAuto, setClickedAuto] = useState(false);
   return (
     <LayoutWrapper>
       <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
-        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — overlay passes clicks through</BpkText>
-        <BpkBox position="relative" width="24rem" height="5rem" marginTop={BpkSpacing.SM}>
-          <BpkBox
-            position="absolute"
-            top="0"
-            left="0"
-            width="24rem"
-            height="5rem"
-            padding={BpkSpacing.SM}
-            backgroundColor={BACKGROUND_COLORS.surfaceDefault}
-            role="button"
-            tabIndex={0}
-            onClick={() => setClicked(true)}
-          >
-            <BpkText>{clicked ? 'Clicked!' : 'Click me (underneath)'}</BpkText>
-          </BpkBox>
-          <BpkBox
-            position="absolute"
-            top="0"
-            left="0"
-            width="24rem"
-            height="5rem"
-            backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
-            opacity={0.5}
-            pointerEvents="none"
-          />
+        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — box does not receive clicks</BpkText>
+        <BpkBox
+          pointerEvents="none"
+          padding={BpkSpacing.SM}
+          marginTop={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
+          opacity={0.6}
+          role="button"
+          tabIndex={0}
+          onClick={() => setClickedNone(true)}
+        >
+          <BpkText>{clickedNone ? 'You clicked (pointerEvents=none should prevent this)' : 'Try clicking — pointer events are disabled'}</BpkText>
         </BpkBox>
       </BpkBox>
 
       <BpkBox padding={BpkSpacing.SM}>
-        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;auto&quot; — explicit restore of interaction</BpkText>
+        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;auto&quot; — box receives clicks normally</BpkText>
         <BpkBox
           pointerEvents="auto"
           padding={BpkSpacing.SM}
@@ -818,8 +816,9 @@ const PointerEventsExample = () => {
           backgroundColor={BACKGROUND_COLORS.surfaceElevated}
           role="button"
           tabIndex={0}
+          onClick={() => setClickedAuto((v) => !v)}
         >
-          <BpkText>Fully interactive (pointerEvents=&quot;auto&quot;)</BpkText>
+          <BpkText>{clickedAuto ? 'Clicked!' : 'Click me — pointer events are active'}</BpkText>
         </BpkBox>
       </BpkBox>
     </LayoutWrapper>
@@ -878,37 +877,3 @@ export const InsetInline = {
   render: () => <InsetInlineExample />,
 };
 
-/**
- * SpacingXXXL example – demonstrates the new `bpk-spacing-xxxl` (4rem / 64px) token.
- *
- * @returns {JSX.Element} A box using the xxxl spacing token for padding and margin.
- */
-const SpacingXXXLExample = () => (
-  <LayoutWrapper>
-    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
-      <BpkText textStyle={TEXT_STYLES.label2}>BpkSpacing.XXXL (4rem / 64px) as padding</BpkText>
-      <BpkBox
-        padding={BpkSpacing.XXXL}
-        marginTop={BpkSpacing.SM}
-        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
-      >
-        <BpkText>64px padding on all sides</BpkText>
-      </BpkBox>
-    </BpkBox>
-
-    <BpkBox padding={BpkSpacing.SM}>
-      <BpkText textStyle={TEXT_STYLES.label2}>XXXL as top margin</BpkText>
-      <BpkBox
-        marginTop={BpkSpacing.XXXL}
-        padding={BpkSpacing.SM}
-        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
-      >
-        <BpkText>64px top margin</BpkText>
-      </BpkBox>
-    </BpkBox>
-  </LayoutWrapper>
-);
-
-export const SpacingXXXL = {
-  render: () => <SpacingXXXLExample />,
-};
