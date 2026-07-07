@@ -26,13 +26,13 @@
 
   &__description {
     display: block;
-    margin-top: tokens.bpk-spacing-md();
-    color: tokens.$bpk-text-secondary-day;
+    margin-top: var(--bpk-spacing-md, tokens.bpk-spacing-md());
+    color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
 
     @include typography.bpk-caption;
   }
 
   &__label {
-    margin-bottom: tokens.bpk-spacing-sm();
+    margin-bottom: var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
   }
 }

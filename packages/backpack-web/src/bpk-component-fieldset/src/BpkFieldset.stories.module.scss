@@ -25,12 +25,12 @@
   }
 
   &__fieldset {
-    margin-right: tokens.bpk-spacing-sm();
+    margin-right: var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
     flex: 1;
 
     @include utils.bpk-rtl {
       margin-right: 0;
-      margin-left: tokens.bpk-spacing-sm();
+      margin-left: var(--bpk-spacing-sm, tokens.bpk-spacing-sm());
     }
   }
 
