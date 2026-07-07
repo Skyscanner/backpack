@@ -26,6 +26,7 @@ import { transforms as sdTransforms } from 'style-dictionary/enums';
 import { assertSafeOutputDir } from './dtcg-writer';
 import {
   BACKPACK_LIGHT_FILE,
+  BASE_PX_FONT_SIZE,
   BPK_FILE_HEADER,
   PRIMITIVES_FILE,
   buildStyleDictionaryConfigs,
@@ -56,6 +57,31 @@ StyleDictionary.registerTransform({
       token.path,
       typeof config?.prefix === 'string' ? config.prefix : undefined,
     ),
+});
+
+// Converts `Xpx` dimension values to rem, rounding to 4 decimal places.
+// Replaces SD's built-in `size/pxToRem` which applies no rounding — Figma's
+// internal float representation (e.g. `0.6000000238418579px`) would otherwise
+// produce noisy values like `0.03750000149011612rem`.
+const BPK_REM_TRANSFORM = 'size/bpk-rem';
+StyleDictionary.registerTransform({
+  name: BPK_REM_TRANSFORM,
+  type: 'value',
+  filter: (token) => {
+    const type = token.$type ?? token.type;
+    return type === 'dimension';
+  },
+  transform: (token, config) => {
+    const basePx: number =
+      typeof (config as Record<string, unknown> | undefined)?.basePxFontSize === 'number'
+        ? ((config as Record<string, unknown>).basePxFontSize as number)
+        : BASE_PX_FONT_SIZE;
+    const raw = String((token as unknown as Record<string, unknown>).$value ?? token.value ?? '');
+    const match = raw.match(/^(-?\d+(?:\.\d+)?)px$/);
+    if (!match) return raw;
+    const rem = Math.round((parseFloat(match[1]) / basePx) * 10000) / 10000;
+    return `${rem}rem`;
+  },
 });
 
 // Apache 2.0 license + auto-generated marker. Required by dangerfile's
@@ -94,16 +120,16 @@ export function buildCssTransforms(): readonly string[] {
     );
   }
   const swapped = cssGroup.map((name) => {
-    if (name === sdTransforms.sizeRem) return sdTransforms.sizePxToRem;
+    if (name === sdTransforms.sizeRem) return BPK_REM_TRANSFORM;
+    if (name === sdTransforms.sizePxToRem) return BPK_REM_TRANSFORM;
     if (name === sdTransforms.nameKebab) return BPK_NAME_TRANSFORM;
     return name;
   });
-  if (!swapped.includes(sdTransforms.sizePxToRem)) {
+  if (!swapped.includes(BPK_REM_TRANSFORM)) {
     throw new Error(
-      `Expected "${sdTransforms.sizePxToRem}" in the css transform list ` +
-        `after swapping "${sdTransforms.sizeRem}". The default css transform ` +
-        `group has changed (or no longer contains "${sdTransforms.sizeRem}"); ` +
-        `update build-css.ts to match the new SD version.`,
+      `Expected "${BPK_REM_TRANSFORM}" in the css transform list ` +
+        `after swapping size transforms. The default css transform ` +
+        `group has changed; update build-css.ts to match the new SD version.`,
     );
   }
   if (!swapped.includes(BPK_NAME_TRANSFORM)) {
