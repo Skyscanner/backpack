@@ -21,6 +21,6 @@
 .bpk-chart {
   &__grid-line {
     shape-rendering: crispedges;
-    stroke: tokens.$bpk-line-day;
+    stroke: var(--bpk-other-line-default, tokens.$bpk-line-day);
   }
 }

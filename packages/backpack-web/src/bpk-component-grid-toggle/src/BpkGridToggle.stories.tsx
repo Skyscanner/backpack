@@ -16,12 +16,21 @@
  * limitations under the License.
  */
 
-if (typeof window === 'undefined') {
-  global.IntersectionObserver = class {
-    observe() {}  
+import BpkGridToggle from './BpkGridToggle';
 
-    unobserve() {}  
-  };
-} else {
-  require('intersection-observer'); /* eslint-disable-line global-require */
-}
+import type { Meta, StoryObj } from '@storybook/react';
+
+const DefaultExample = () => <BpkGridToggle />;
+
+const meta: Meta<typeof BpkGridToggle> = {
+  title: 'bpk-component-grid-toggle',
+  component: BpkGridToggle,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof BpkGridToggle>;
+
+export const Example: Story = {
+  render: () => <DefaultExample />,
+};

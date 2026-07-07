@@ -16,82 +16,73 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { ComponentType, ReactNode } from 'react';
 import { Component } from 'react';
-import type { Element, Config, AbstractComponent } from 'react';
 
-import extend from 'lodash/extend';
 import omit from 'lodash/omit';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import './intersection-observer';
-import DataSource from './DataSource';
+import type DataSource from './DataSource';
 
 import STYLES from './withInfiniteScroll.module.scss';
 
 const getClassNames = cssModules(STYLES);
 
 type ScrollEvent = {
-  currentIndex: number,
+  currentIndex: number;
 };
 
 type ScrollFinishedEvent = {
-  totalNumberElements: number,
+  totalNumberElements: number;
 };
 
 export type Props = {
-  dataSource: DataSource<any>,
+  dataSource: DataSource<any>;
   /**
    * How many more elements to load every time the user reaches the bottom of the list.
    */
-  elementsPerScroll: number,
+  elementsPerScroll?: number;
   /**
    * How many more elements to load every time the user reaches the bottom of the list.
    */
-  initiallyLoadedElements: number,
-  loaderIntersectionTrigger: ?('small' | 'half' | 'full'),
-  onScroll: ?(o: ScrollEvent) => void,
-  onScrollFinished: ?(o: ScrollFinishedEvent) => void,
-  renderLoadingComponent: ?() => Element<any>,
-  renderSeeMoreComponent: ?({
-    onSeeMoreClick: (event: SyntheticEvent<any>) => mixed,
-  }) => Element<any>,
+  initiallyLoadedElements?: number;
+  loaderIntersectionTrigger?: 'small' | 'half' | 'full';
+  onScroll?: ((o: ScrollEvent) => void) | null;
+  onScrollFinished?: ((o: ScrollFinishedEvent) => void) | null;
+  renderLoadingComponent?: (() => ReactNode) | null;
+  renderSeeMoreComponent?:
+    | ((props: { onSeeMoreClick: () => void }) => ReactNode)
+    | null;
   /**
    * `seeMoreAfter` is how many scrolls should happen before a 'See more' button is displayed. This only happens once.
    */
-  seeMoreAfter: ?number,
+  seeMoreAfter?: number | null;
 };
 
 export type State = {
-  index: number,
-  elementsToRender: Array<any>,
-  isListFinished: boolean,
-  showSeeMore: boolean,
+  index: number;
+  elementsToRender: any[];
+  isListFinished: boolean;
+  showSeeMore: boolean;
 };
 
 type ExtendedProps = {
-  elements: Array<any>,
+  elements: any[];
 };
 
-const propTypes = {
-  initiallyLoadedElements: PropTypes.number,
-  elementsPerScroll: PropTypes.number,
-  dataSource: PropTypes.instanceOf(DataSource).isRequired,
-  loaderIntersectionTrigger: PropTypes.oneOf(['small', 'half', 'full']),
-  onScroll: PropTypes.func,
-  onScrollFinished: PropTypes.func,
-  renderLoadingComponent: PropTypes.func,
-  renderSeeMoreComponent: PropTypes.func,
-  seeMoreAfter: PropTypes.number,
+type FetchItemsConfig = {
+  index?: number;
+  elementsPerScroll?: number;
+  elementsToRender?: any[];
+  computeShowSeeMore?: boolean;
 };
 
 const defaultProps = {
   initiallyLoadedElements: 5,
   elementsPerScroll: 5,
-  loaderIntersectionTrigger: 'full',
+  loaderIntersectionTrigger: 'full' as const,
   onScroll: null,
   onScrollFinished: null,
   renderLoadingComponent: null,
@@ -99,23 +90,30 @@ const defaultProps = {
   seeMoreAfter: null,
 };
 
-type PropsWithDefault = Config<Props, typeof defaultProps>;
+const OWN_PROP_KEYS: Array<keyof Props> = [
+  'initiallyLoadedElements',
+  'elementsPerScroll',
+  'dataSource',
+  'loaderIntersectionTrigger',
+  'onScroll',
+  'onScrollFinished',
+  'renderLoadingComponent',
+  'renderSeeMoreComponent',
+  'seeMoreAfter',
+];
 
-const withInfiniteScroll = <T: ExtendedProps>(
-  ComponentToExtend: AbstractComponent<T>,
-): AbstractComponent<PropsWithDefault & $Diff<T, ExtendedProps>> =>
-  class WithInfiniteScroll extends Component<Props, State> {
-
-    handleKeyPress: (e: SyntheticKeyboardEvent<HTMLButtonElement>) => void;
-
+const withInfiniteScroll = <T extends ExtendedProps>(
+  ComponentToExtend: ComponentType<T>,
+): ComponentType<Props & Omit<T, keyof ExtendedProps>> =>
+  (class WithInfiniteScroll extends Component<Props, State> {
     observer: IntersectionObserver;
 
-    sentinel: ?HTMLElement;
-
-    static propTypes = { ...propTypes };
+    sentinel: HTMLElement | null;
 
     constructor(props: Props) {
       super(props);
+
+      this.sentinel = null;
 
       this.state = {
         index: 0,
@@ -140,12 +138,17 @@ const withInfiniteScroll = <T: ExtendedProps>(
       this.fetchItems({
         elementsPerScroll:
           this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
-      }).then((newState) => {
-        this.setState(newState);
-      });
+      })
+        .then((newState) => {
+          this.setState((prevState) => ({
+            ...prevState,
+            ...newState,
+          }));
+        })
+        .catch(console.error);
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: Props) {
       if (this.sentinel && this.state.index > 0) {
         this.observer.observe(this.sentinel);
       }
@@ -157,7 +160,9 @@ const withInfiniteScroll = <T: ExtendedProps>(
           index: 0,
           elementsPerScroll: this.props.initiallyLoadedElements ?? defaultProps.initiallyLoadedElements,
           elementsToRender: [],
-        }).then((newState) => this.setStateAfterDsUpdate(newState));
+        })
+          .then((newState) => this.setStateAfterDsUpdate(newState))
+          .catch(console.error);
       }
     }
 
@@ -168,18 +173,18 @@ const withInfiniteScroll = <T: ExtendedProps>(
       }
     }
 
-    setStateAfterDsUpdate(newState: State) {
+    setStateAfterDsUpdate(newState: Partial<State>) {
       // After a data source update (calling updateData in the data source or changing the dataSource prop)
       // all visible data is fetched again (from 0 to current index) to update the list with the new data.
       // If after this call there is no elementsToRender or index present in state
       // it means the new data source has no items and we need to
       // reset the list, which we do by setting `elementsToRender` to `[]` and `index` to `0`
-      const { elementsToRender, index } = newState;
-      this.setState({
+      this.setState((prevState) => ({
+        ...prevState,
         ...newState,
-        elementsToRender: elementsToRender || [],
-        index: index || 0,
-      });
+        elementsToRender: newState.elementsToRender || [],
+        index: newState.index || 0,
+      }));
     }
 
     updateData = () => {
@@ -195,27 +200,28 @@ const withInfiniteScroll = <T: ExtendedProps>(
         elementsPerScroll: isFirstLoad ? initiallyLoaded : index,
         elementsToRender: [],
         computeShowSeeMore: isFirstLoad,
-      }).then((newState) => this.setStateAfterDsUpdate(newState));
+      })
+        .then((newState) => this.setStateAfterDsUpdate(newState))
+        .catch(console.error);
     };
 
-    fetchItems(config): Promise<$Shape<State>> {
+    fetchItems(config?: FetchItemsConfig): Promise<Partial<State>> {
       const { onScrollFinished, seeMoreAfter } = this.props;
+      const merged = {
+        index: this.state.index,
+        elementsPerScroll:
+          this.props.elementsPerScroll ?? defaultProps.elementsPerScroll,
+        elementsToRender: this.state.elementsToRender,
+        computeShowSeeMore: true,
+        ...config,
+      };
       const { computeShowSeeMore, elementsPerScroll, elementsToRender, index } =
-        extend(
-          {
-            index: this.state.index,
-            elementsPerScroll:
-              this.props.elementsPerScroll ?? defaultProps.elementsPerScroll,
-            elementsToRender: this.state.elementsToRender,
-            computeShowSeeMore: true,
-          },
-          config,
-        );
+        merged;
 
       return this.props.dataSource
         .fetchItems(index, elementsPerScroll)
         .then((nextElements) => {
-          let result = {
+          let result: Partial<State> = {
             isListFinished: true,
           };
           if (nextElements && nextElements.length > 0) {
@@ -231,14 +237,14 @@ const withInfiniteScroll = <T: ExtendedProps>(
           }
           if (onScrollFinished && result.isListFinished) {
             onScrollFinished({
-              totalNumberElements: elementsToRender.length,
+              totalNumberElements: (result.elementsToRender || elementsToRender || []).length,
             });
           }
           return result;
         });
     }
 
-    handleIntersection = (entries: Array<IntersectionObserverEntry>) => {
+    handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const { onScroll } = this.props;
       const entry = entries[0];
       if (entry.isIntersecting) {
@@ -248,26 +254,36 @@ const withInfiniteScroll = <T: ExtendedProps>(
         if (onScroll) {
           onScroll({ currentIndex: this.state.index });
         }
-        return this.fetchItems().then((newState) => {
-          this.setState(newState);
-        });
+        return this.fetchItems()
+          .then((newState) => {
+            this.setState((prevState) => ({
+              ...prevState,
+              ...newState,
+            }));
+          })
+          .catch(console.error);
       }
       return Promise.resolve();
     };
 
     handleSeeMoreClick = (): void => {
-      this.fetchItems().then((newState) => {
-        this.setState(newState);
-      });
+      this.fetchItems()
+        .then((newState) => {
+          this.setState((prevState) => ({
+            ...prevState,
+            ...newState,
+          }));
+        })
+        .catch(console.error);
     };
 
     render() {
       const { elementsToRender, isListFinished, showSeeMore } = this.state;
       const { renderLoadingComponent, renderSeeMoreComponent } = this.props;
 
-      const rest = omit(this.props, Object.keys(propTypes));
+      const rest = omit(this.props, OWN_PROP_KEYS);
 
-      let loadingOrButton = null;
+      let loadingOrButton: ReactNode = null;
 
       if (!isListFinished) {
         if (showSeeMore && renderSeeMoreComponent) {
@@ -281,7 +297,7 @@ const withInfiniteScroll = <T: ExtendedProps>(
                 this.sentinel = spinner;
               }}
               className={
-                renderLoadingComponent ? null : getClassNames('bpk-sentinel')
+                renderLoadingComponent ? undefined : getClassNames('bpk-sentinel')
               }
             >
               {renderLoadingComponent && renderLoadingComponent()}
@@ -292,11 +308,14 @@ const withInfiniteScroll = <T: ExtendedProps>(
 
       return (
         <div>
-          <ComponentToExtend {...rest} elements={elementsToRender} />
+          <ComponentToExtend
+            {...(rest as any)}
+            elements={elementsToRender}
+          />
           {loadingOrButton}
         </div>
       );
     }
-  };
+  } as unknown as ComponentType<Props & Omit<T, keyof ExtendedProps>>);
 
 export default withInfiniteScroll;

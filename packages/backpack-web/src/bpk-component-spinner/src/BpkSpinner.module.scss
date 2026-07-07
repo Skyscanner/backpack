@@ -18,7 +18,6 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/spinners';
-@use '../../bpk-mixins/utils';
 
 .bpk-spinner {
   display: block;
@@ -27,19 +26,15 @@
 
   &--primary {
     // Post colour adoption/rollout we will require to move the 'primary' style to be the same as dark and make dark (moving to primary/defautl) and light the only options
-    @include utils.bpk-themeable-property(
-      fill,
-      --bpk-spinner-primary-color,
-      tokens.$bpk-core-accent-day
-    );
+    fill: var(--bpk-core-accent, tokens.$bpk-core-accent-day);
   }
 
   &--light {
-    fill: tokens.$bpk-text-on-dark-day;
+    fill: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 
   &--dark {
-    fill: tokens.$bpk-text-primary-day;
+    fill: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   }
 
   &--large {

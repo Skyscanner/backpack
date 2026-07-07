@@ -16,17 +16,12 @@
  * limitations under the License.
  */
 
-import BpkGridToggle from './BpkGridToggle';
+import withInfiniteScroll, {
+  type Props as WithInfiniteScrollProps,
+} from './src/withInfiniteScroll';
 
-const DefaultExample = () => <BpkGridToggle />;
+export { default as DataSource, ArrayDataSource } from './src/DataSource';
 
-const meta = {
-  title: 'bpk-component-grid-toggle',
-  component: BpkGridToggle,
-};
+export type { WithInfiniteScrollProps };
 
-export default meta;
-
-export const Example = {
-  render: () => <DefaultExample />,
-};
+export default withInfiniteScroll;

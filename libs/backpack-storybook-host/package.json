@@ -11,8 +11,11 @@
       "default": "./src/index.ts"
     }
   },
+  "devDependencies": {
+    "@types/node": "25.9.1"
+  },
   "dependencies": {
-    "@skyscanner/backpack-web": "*",
-    "bpk-storybook-utils": "*"
+    "@skyscanner/backpack-web": "workspace:*",
+    "bpk-storybook-utils": "workspace:*"
   }
 }

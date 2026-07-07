@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { Component, type MouseEvent } from 'react';
 
 import BpkLink from '../../bpk-component-link';
 import { cssModules } from '../../bpk-react-utils';
@@ -28,8 +27,20 @@ const getClassName = cssModules(STYLES);
 
 const GRID_CLASS_NAME = getClassName('bpk-vertical-grid--on');
 
-class BpkGridToggle extends Component {
-  constructor(props) {
+export interface BpkGridToggleProps {
+  targetContainer?: string;
+  className?: string;
+}
+
+interface BpkGridToggleState {
+  gridEnabled: boolean;
+}
+
+class BpkGridToggle extends Component<
+  BpkGridToggleProps,
+  BpkGridToggleState
+> {
+  constructor(props: BpkGridToggleProps) {
     super(props);
 
     this.state = {
@@ -45,23 +56,23 @@ class BpkGridToggle extends Component {
     const { targetContainer = 'body' } = this.props;
     document
       .querySelector(targetContainer)
-      .classList.remove(GRID_CLASS_NAME);
+      ?.classList.remove(GRID_CLASS_NAME);
     document.removeEventListener('keydown', this.handleKeyDown);
   }
 
-  handleKeyDown = (e) => {
+  handleKeyDown = (e: KeyboardEvent) => {
     if (e.ctrlKey && e.metaKey && e.key.toLowerCase() === 'g') {
       this.toggleGrid(e);
     }
   };
 
-  toggleGrid = (e) => {
+  toggleGrid = (e: MouseEvent<HTMLButtonElement> | KeyboardEvent) => {
     const { targetContainer = 'body' } = this.props;
     e.preventDefault();
 
     document
       .querySelector(targetContainer)
-      .classList.toggle(GRID_CLASS_NAME);
+      ?.classList.toggle(GRID_CLASS_NAME);
 
     this.setState((state) => ({
       gridEnabled: !state.gridEnabled,
@@ -69,7 +80,7 @@ class BpkGridToggle extends Component {
   };
 
   render() {
-    const { className = null } = this.props;
+    const { className = undefined } = this.props;
     const { gridEnabled } = this.state;
     const onOrOff = gridEnabled ? 'off' : 'on';
 
@@ -86,10 +97,5 @@ class BpkGridToggle extends Component {
     );
   }
 }
-
-BpkGridToggle.propTypes = {
-  targetContainer: PropTypes.string,
-  className: PropTypes.string,
-};
 
 export default BpkGridToggle;

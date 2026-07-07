@@ -33,8 +33,11 @@
       height: tokens.bpk-spacing-xxl() * 2;
       justify-content: center;
       align-items: center;
-      background-color: tokens.$bpk-canvas-contrast-day;
-      color: tokens.$bpk-text-secondary-day;
+      background-color: var(
+        --bpk-canvas-contrast,
+        tokens.$bpk-canvas-contrast-day
+      );
+      color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
     }
   }
 

@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
-
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
@@ -26,23 +24,19 @@ import withInfiniteScroll from './withInfiniteScroll';
 
 describe('withInfiniteScroll accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues', async () => {
-    const elementsArray = [];
+    const elementsArray: any[] = [];
 
     for (let i = 0; i < 5; i += 1) {
       elementsArray.push(`Element ${i}`);
     }
 
-    const List = (props) => (
+    const List = (props: any) => (
       <div id="list">
-        {props.elements.map((element) => (
+        {props.elements.map((element: any) => (
           <div key={element}>{element}</div>
         ))}
       </div>
     );
-
-    List.propTypes = {
-      elements: PropTypes.arrayOf(PropTypes.string).isRequired,
-    };
 
     const InfiniteList = withInfiniteScroll(List);
     const { container } = render(
