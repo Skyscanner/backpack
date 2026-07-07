@@ -23,12 +23,12 @@ import type { WeekDay } from '../../bpk-component-calendar';
 export const formatDateFull = (date: Date) => format(date, 'EEEE, do MMMM yyyy');
 export const formatDateFullArabic = (date: Date) => {
   const dateString = 'EEEE, dd، MMMM، yyyy';
-  const newString = dateString.replace('yyyy', date.getUTCFullYear() as unknown as string);
+  const newString = dateString.replace('yyyy', String(date.getUTCFullYear()));
   return format(date, newString);
 };
 export const formatDateFullJapanese = (date: Date) => {
   const dateString = 'Y年M月d日EEEE';
-  const newString = dateString.replace('Y', date.getUTCFullYear() as unknown as string);
+  const newString = dateString.replace('Y', String(date.getUTCFullYear()));
   return format(date, newString);
 };
 export const formatMonth = (date: Date) => format(date, 'MMMM yyyy');
