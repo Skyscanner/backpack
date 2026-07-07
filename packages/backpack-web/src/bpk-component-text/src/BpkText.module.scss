@@ -20,17 +20,23 @@
 @use '../../bpk-mixins/typography';
 
 $text-colors: (
-  'text-disabled': tokens.$bpk-text-disabled-day,
-  'text-disabled-on-dark': tokens.$bpk-text-disabled-on-dark-day,
-  'text-error': tokens.$bpk-text-error-day,
-  'text-hero': tokens.$bpk-text-hero-day,
-  'text-link': tokens.$bpk-text-link-day,
-  'text-on-dark': tokens.$bpk-text-on-dark-day,
-  'text-on-light': tokens.$bpk-text-on-light-day,
-  'text-primary': tokens.$bpk-text-primary-day,
-  'text-primary-inverse': tokens.$bpk-text-primary-inverse-day,
-  'text-secondary': tokens.$bpk-text-secondary-day,
-  'text-success': tokens.$bpk-text-success-day,
+  'text-disabled': var(--bpk-text-disabled, tokens.$bpk-text-disabled-day),
+  'text-disabled-on-dark': var(
+      --bpk-text-disabled-on-dark,
+      tokens.$bpk-text-disabled-on-dark-day
+    ),
+  'text-error': var(--bpk-text-error, tokens.$bpk-text-error-day),
+  'text-hero': var(--bpk-text-hero, tokens.$bpk-text-hero-day),
+  'text-link': var(--bpk-text-deprecated-link, tokens.$bpk-text-link-day),
+  'text-on-dark': var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day),
+  'text-on-light': var(--bpk-text-on-light, tokens.$bpk-text-on-light-day),
+  'text-primary': var(--bpk-text-primary, tokens.$bpk-text-primary-day),
+  'text-primary-inverse': var(
+      --bpk-text-inverse,
+      tokens.$bpk-text-primary-inverse-day
+    ),
+  'text-secondary': var(--bpk-text-secondary, tokens.$bpk-text-secondary-day),
+  'text-success': var(--bpk-text-success, tokens.$bpk-text-success-day),
 );
 
 .bpk-text {
@@ -164,6 +170,10 @@ $text-colors: (
     &.bpk-text--#{$color-name} {
       color: $color-value;
     }
+  }
+
+  &--strikethrough {
+    text-decoration: line-through;
   }
 
   $text-aligns: 'start', 'end', 'center', 'justify';

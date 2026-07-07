@@ -22,10 +22,14 @@
 
 .bpk-accordion {
   &__item--with-divider {
-    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+    @include borders.bpk-border-bottom-sm(
+      var(--bpk-other-line-default, tokens.$bpk-line-day)
+    );
 
     &-on-dark {
-      @include borders.bpk-border-bottom-sm(tokens.$bpk-line-on-dark-day);
+      @include borders.bpk-border-bottom-sm(
+        var(--bpk-other-line-on-contrast, tokens.$bpk-line-on-dark-day)
+      );
     }
   }
 
@@ -38,7 +42,7 @@
     padding: 0;
     border: 0;
     background-color: transparent;
-    color: tokens.$bpk-text-primary-day;
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     text-align: start;
     cursor: pointer;
     appearance: none;
@@ -47,7 +51,7 @@
   &__flex-container {
     display: inline-flex;
     width: 100%;
-    margin: tokens.bpk-spacing-base() 0;
+    margin: var(--bpk-spacing-base, tokens.bpk-spacing-base()) 0;
     flex-direction: row;
   }
 
@@ -55,7 +59,7 @@
     flex-grow: 1;
 
     &--on-dark {
-      color: tokens.$bpk-canvas-day;
+      color: var(--bpk-surface-default, tokens.$bpk-canvas-day);
     }
   }
 
@@ -63,22 +67,27 @@
     display: flex;
     align-items: center;
 
-    @include margins.bpk-margin-leading(tokens.bpk-spacing-md());
+    @include margins.bpk-margin-leading(
+      var(--bpk-spacing-md, tokens.bpk-spacing-md())
+    );
   }
 
   &__leading-icon {
-    @include margins.bpk-margin-trailing(tokens.bpk-spacing-md(), true);
+    @include margins.bpk-margin-trailing(
+      var(--bpk-spacing-md, tokens.bpk-spacing-md()),
+      true
+    );
   }
 
   &__item-expand-icon {
-    fill: tokens.$bpk-text-primary-day;
+    fill: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
 
     &--flipped {
       transform: scaleY(-1);
     }
 
     &--on-dark {
-      fill: tokens.$bpk-canvas-day;
+      fill: var(--bpk-surface-default, tokens.$bpk-canvas-day);
     }
   }
 
@@ -88,7 +97,7 @@
 
   &__content-inner-container {
     &--with-divider {
-      padding-bottom: tokens.bpk-spacing-base();
+      padding-bottom: var(--bpk-spacing-base, tokens.bpk-spacing-base());
     }
   }
 }

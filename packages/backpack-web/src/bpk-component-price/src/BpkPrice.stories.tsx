@@ -366,6 +366,7 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-price',
   component: BpkPrice,
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;

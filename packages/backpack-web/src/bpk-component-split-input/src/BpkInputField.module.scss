@@ -30,5 +30,5 @@
 }
 
 .bpk-input-field:last-child {
-  margin-right: tokens.$bpk-spacing-none;
+  margin-right: var(--bpk-spacing-none, tokens.$bpk-spacing-none);
 }
