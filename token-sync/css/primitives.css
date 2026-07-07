@@ -29,7 +29,7 @@
   --bpk-modal-800: 50rem;
   --bpk-modal-1000: 62.5rem;
   --bpk-modal-1024: 64rem;
-  --bpk-radius-none: 0rem;
+  --bpk-radius-none: 0;
   --bpk-radius-full: 62.4375rem;
   --bpk-radius-lg: 1.5rem;
   --bpk-radius-md: 0.75rem;
@@ -39,7 +39,7 @@
   --bpk-spacing-base: 1rem;
   --bpk-spacing-lg: 1.5rem;
   --bpk-spacing-md: 0.5rem;
-  --bpk-spacing-none: 0rem;
+  --bpk-spacing-none: 0;
   --bpk-spacing-sm: 0.25rem;
   --bpk-spacing-xl: 2rem;
   --bpk-spacing-xs: 0.125rem;
@@ -49,7 +49,7 @@
   --bpk-spacing-xxxxl: 6rem;
   --bpk-type-family-larken: Larken;
   --bpk-type-family-skyscanner-relative: 'Skyscanner Relative';
-  --bpk-type-letter-spacing-default: 0rem;
+  --bpk-type-letter-spacing-default: 0;
   --bpk-type-letter-spacing-loose-10: 0.0375rem;
   --bpk-type-letter-spacing-loose-20: 0.0625rem;
   --bpk-type-letter-spacing-tight-10: -0.0375rem;

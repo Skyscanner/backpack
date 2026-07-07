@@ -80,7 +80,7 @@ StyleDictionary.registerTransform({
     const match = raw.match(/^(-?\d+(?:\.\d+)?)px$/);
     if (!match) return raw;
     const rem = Math.round((parseFloat(match[1]) / basePx) * 10000) / 10000;
-    return `${rem}rem`;
+    return rem === 0 ? '0' : `${rem}rem`;
   },
 });
 
