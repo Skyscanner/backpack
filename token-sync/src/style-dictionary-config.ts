@@ -433,7 +433,9 @@ function tokenType(token: TransformedToken): string | undefined {
 
 // Filter for the standalone `primitives.css` output: keep Spacing and Radius
 // only. Colors are excluded (consumers should use semantic tokens). Heights are
-// excluded until there is a confirmed consumer need.
+// excluded until there is a confirmed consumer need. Type primitives (font
+// families, sizes, line-heights, letter-spacing, weights) are excluded — they
+// belong in the per-theme outputs via the semantic token layer.
 export function makeWebPrimitivesTokenFilter(): (
   token: TransformedToken,
 ) => boolean {
@@ -443,7 +445,8 @@ export function makeWebPrimitivesTokenFilter(): (
     Array.isArray(token.path) &&
     isWebTokenPath(token.path) &&
     tokenType(token) !== 'color' &&
-    token.path[0] !== 'Heights';
+    token.path[0] !== 'Heights' &&
+    token.path[0] !== 'Type';
 }
 
 interface BuildConfigOptions {
