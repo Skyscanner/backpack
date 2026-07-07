@@ -327,12 +327,12 @@ const BpkFlexPointerEventsExample = () => (
   <LayoutWrapper>
     <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
       <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — flex overlay passes clicks through</BpkText>
-      <BpkBox position="relative" width="16rem" height="5rem" marginTop={BpkSpacing.SM}>
+      <BpkBox position="relative" width="26rem" height="5rem" marginTop={BpkSpacing.SM}>
         <BpkFlex
           position="absolute"
           top="0"
           left="0"
-          width="16rem"
+          width="26rem"
           height="5rem"
           align="center"
           padding={BpkSpacing.SM}
@@ -344,7 +344,7 @@ const BpkFlexPointerEventsExample = () => (
           position="absolute"
           top="0"
           left="0"
-          width="16rem"
+          width="26rem"
           height="5rem"
           align="center"
           justify="flex-end"
