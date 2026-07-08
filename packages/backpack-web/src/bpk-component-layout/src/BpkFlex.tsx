@@ -32,7 +32,7 @@ import STYLES from './BpkLayout.module.scss';
 const getClassName = cssModules(STYLES);
 
 export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
-  ({ align, backgroundColor, basis, children, color, direction, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
+  ({ align, backgroundColor, basis, children, color, direction, flexShrink, grow, inline, justify, shrink, textStyle, wrap, ...props }, ref) => {
     const processedProps = processBpkComponentProps(props, {
       component: 'BpkFlex',
       responsiveProps: {
@@ -42,7 +42,7 @@ export const BpkFlex = forwardRef<HTMLDivElement, BpkFlexProps>(
         alignItems: align,
         flexWrap: wrap,
         flexGrow: grow,
-        flexShrink: shrink,
+        flexShrink: shrink ?? flexShrink,
         flexBasis: basis,
       },
     });

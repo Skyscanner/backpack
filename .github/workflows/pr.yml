@@ -21,7 +21,7 @@ jobs:
   Create-Build-Cache:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [Create-Build-Cache]
     steps:
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+    - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       with:
         persist-credentials: false
 
@@ -82,7 +82,7 @@ jobs:
       run: pnpm install --frozen-lockfile
 
     - name: Restore Cache
-      uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       id: storybook-dist-cache
       with:
         path: |
@@ -100,7 +100,7 @@ jobs:
         PR_NUMBER: ${{ github.event.pull_request.number }}
 
     - name: Deploy Storybook to backpack.github.io/storybook-prs
-      uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
+      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
       with:
         personal_token: ${{ secrets.DEPLOY_TOKEN }}
@@ -109,7 +109,7 @@ jobs:
         external_repository: backpack/storybook-prs
         publish_branch: main
 
-    - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
       id: app-token
       with:
         app-id: ${{ vars.GH_APP_ID }}
