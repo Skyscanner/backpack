@@ -19,7 +19,7 @@
 @use '../../bpk-mixins/tokens';
 
 .bpk-nudger-secondary-on-dark {
-  color: tokens.$bpk-text-on-dark-day;
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
 }
 
 .bpk-nudger-configurable {

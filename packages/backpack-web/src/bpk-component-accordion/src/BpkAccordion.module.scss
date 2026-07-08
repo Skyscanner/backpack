@@ -22,6 +22,6 @@
   margin: 0;
 
   &--on-dark {
-    color: tokens.$bpk-text-on-dark-day;
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 }

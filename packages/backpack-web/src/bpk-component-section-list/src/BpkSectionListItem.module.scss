@@ -24,16 +24,19 @@
 
   display: flex;
   width: 100%;
-  min-height: tokens.bpk-spacing-xl() * 2;
-  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  min-height: calc(var(--bpk-spacing-xl, tokens.bpk-spacing-xl()) * 2);
+  padding: var(--bpk-spacing-md, tokens.bpk-spacing-md())
+    var(--bpk-spacing-base, tokens.bpk-spacing-base());
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: tokens.$bpk-surface-default-day;
-  color: tokens.$bpk-text-primary-day;
+  background-color: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   text-decoration: none;
 
-  @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day);
+  @include borders.bpk-border-bottom-sm(
+    var(--bpk-other-line-default, tokens.$bpk-line-day)
+  );
 
   &--interactive {
     cursor: pointer;
@@ -41,14 +44,14 @@
 
   &__chevron {
     display: contents;
-    fill: tokens.$bpk-text-secondary-day;
+    fill: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
 
     #{$root}:hover & {
-      fill: tokens.$bpk-text-primary-day;
+      fill: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     }
 
     #{$root}:active & {
-      fill: tokens.$bpk-text-primary-day;
+      fill: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     }
   }
 }

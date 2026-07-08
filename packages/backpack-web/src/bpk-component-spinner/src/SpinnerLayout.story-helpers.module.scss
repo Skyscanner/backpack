@@ -25,11 +25,14 @@
 
   &__spinner {
     display: flex;
-    padding: tokens.bpk-spacing-lg();
+    padding: var(--bpk-spacing-lg, tokens.bpk-spacing-lg());
     justify-content: center;
 
     &--light {
-      background-color: tokens.$bpk-surface-contrast-day;
+      background-color: var(
+        --bpk-surface-contrast,
+        tokens.$bpk-surface-contrast-day
+      );
 
       @include radii.bpk-border-radius-xs;
     }
