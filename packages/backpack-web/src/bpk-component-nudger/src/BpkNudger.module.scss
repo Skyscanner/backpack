@@ -29,7 +29,7 @@
     display: inline-block;
     padding: tokens.bpk-spacing-md() 0;
     border: none;
-    color: tokens.$bpk-text-primary-day;
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     text-align: center;
     vertical-align: middle;
 
@@ -48,7 +48,7 @@
 
     &--secondary-on-dark {
       background-color: transparent;
-      color: tokens.$bpk-text-on-dark-day;
+      color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
     }
 
     &--numeric {
@@ -75,7 +75,7 @@
     }
 
     &--subtitle {
-      color: tokens.$bpk-text-secondary-day;
+      color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
     }
   }
 }
