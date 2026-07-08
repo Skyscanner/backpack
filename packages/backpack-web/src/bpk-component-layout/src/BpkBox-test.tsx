@@ -491,105 +491,94 @@ describe('BpkBox', () => {
   });
 
   describe('transform prop (BpkBox only)', () => {
-    it('renders with a CSS transform string', () => {
+    it('applies the CSS transform to the DOM element', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox transform="translateX(10px)">Transformed</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(container.querySelector('div')).toHaveStyle('transform: translateX(10px)');
     });
 
-    it('produces different output with and without transform', () => {
+    it('applies a different transform value than no transform', () => {
       const { container: withTransform } = render(
         <BpkProvider>
           <BpkBox transform="rotate(45deg)">Rotated</BpkBox>
         </BpkProvider>,
       );
-      const { container: withoutTransform } = render(
-        <BpkProvider>
-          <BpkBox>No transform</BpkBox>
-        </BpkProvider>,
-      );
-      expect(withTransform.querySelector('div')?.className).not.toBe(
-        withoutTransform.querySelector('div')?.className,
-      );
+      expect(withTransform.querySelector('div')).toHaveStyle('transform: rotate(45deg)');
     });
   });
 
   describe('pointerEvents prop', () => {
-    it('renders with pointerEvents="none"', () => {
+    it('applies pointer-events: none to the DOM element', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox pointerEvents="none">Overlay</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: none');
     });
 
-    it('produces different output with pointerEvents="none" vs default', () => {
-      const { container: withNone } = render(
-        <BpkProvider>
-          <BpkBox pointerEvents="none">Click-through</BpkBox>
-        </BpkProvider>,
-      );
-      const { container: withAuto } = render(
+    it('applies pointer-events: auto to the DOM element', () => {
+      const { container } = render(
         <BpkProvider>
           <BpkBox pointerEvents="auto">Interactive</BpkBox>
         </BpkProvider>,
       );
-      expect(withNone.querySelector('div')?.className).not.toBe(
-        withAuto.querySelector('div')?.className,
-      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: auto');
     });
   });
 
   describe('insetInlineStart / insetInlineEnd props', () => {
-    it('renders with a spacing token for insetInlineStart', () => {
+    it('applies inset-inline-start from a BPK spacing token (resolves to rem)', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox position="absolute" insetInlineStart={BpkSpacing.Base}>Content</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      // BpkSpacing.Base = 1rem
+      expect(container.querySelector('div')).toHaveStyle('inset-inline-start: 1rem');
     });
 
-    it('renders with a raw rem value for insetInlineEnd', () => {
+    it('applies inset-inline-end from a raw rem value', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox position="absolute" insetInlineEnd="1.5rem">Content</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(container.querySelector('div')).toHaveStyle('inset-inline-end: 1.5rem');
     });
   });
 
   describe('scrollMarginTop / scrollMarginBottom props', () => {
-    it('renders with scrollMarginTop using a spacing token', () => {
+    it('applies scroll-margin-top from a BPK spacing token (resolves to rem)', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox scrollMarginTop={BpkSpacing.XXXL}>Scroll target</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      // BpkSpacing.XXXL = 4rem
+      expect(container.querySelector('div')).toHaveStyle('scroll-margin-top: 4rem');
     });
 
-    it('renders with scrollMarginBottom using a spacing token', () => {
+    it('applies scroll-margin-bottom from a BPK spacing token', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox scrollMarginBottom={BpkSpacing.MD}>Scroll target</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      // BpkSpacing.MD = .5rem
+      expect(container.querySelector('div')).toHaveStyle('scroll-margin-bottom: .5rem');
     });
 
-    it('renders with scrollMarginTop using a raw rem value (e.g. sticky-header height)', () => {
+    it('applies scroll-margin-top from a raw rem value (sticky-header height)', () => {
       const { container } = render(
         <BpkProvider>
           <BpkBox scrollMarginTop="3.5rem">Scroll target</BpkBox>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(container.querySelector('div')).toHaveStyle('scroll-margin-top: 3.5rem');
     });
   });
 

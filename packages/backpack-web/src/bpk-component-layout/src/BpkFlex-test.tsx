@@ -223,73 +223,52 @@ describe('BpkFlex', () => {
   });
 
   describe('flexShrink prop', () => {
-    it('renders with flexShrink=0 (direct CSS prop alias)', () => {
+    it('applies flex-shrink: 0 via the flexShrink prop alias', () => {
       const { container } = render(
         <BpkProvider>
           <BpkFlex flexShrink={0}>Fixed-size item</BpkFlex>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(container.querySelector('div')).toHaveStyle('flex-shrink: 0');
     });
 
-    it('produces different output with flexShrink=0 vs flexShrink=1', () => {
-      const { container: noShrink } = render(
-        <BpkProvider>
-          <BpkFlex flexShrink={0}>Fixed</BpkFlex>
-        </BpkProvider>,
-      );
-      const { container: defaultShrink } = render(
+    it('applies flex-shrink: 1 via the flexShrink prop alias', () => {
+      const { container } = render(
         <BpkProvider>
           <BpkFlex flexShrink={1}>Shrinkable</BpkFlex>
         </BpkProvider>,
       );
-      expect(noShrink.querySelector('div')?.className).not.toBe(
-        defaultShrink.querySelector('div')?.className,
-      );
+      expect(container.querySelector('div')).toHaveStyle('flex-shrink: 1');
     });
 
     it('shrink prop takes precedence over flexShrink when both are provided', () => {
       const { container: shrinkWins } = render(
         <BpkProvider>
-          <BpkFlex shrink={0} flexShrink={1}>Should be shrink=0</BpkFlex>
+          <BpkFlex shrink={0} flexShrink={1}>Should be flex-shrink: 0</BpkFlex>
         </BpkProvider>,
       );
-      const { container: flexShrinkAlone } = render(
-        <BpkProvider>
-          <BpkFlex flexShrink={0}>flexShrink=0</BpkFlex>
-        </BpkProvider>,
-      );
-      // Both should produce the same output since the effective value is 0 in both cases
-      expect(shrinkWins.querySelector('div')?.className).toBe(
-        flexShrinkAlone.querySelector('div')?.className,
-      );
+      // shrink=0 wins over flexShrink=1
+      expect(shrinkWins.querySelector('div')).toHaveStyle('flex-shrink: 0');
     });
   });
 
   describe('pointerEvents prop', () => {
-    it('renders with pointerEvents="none"', () => {
+    it('applies pointer-events: none to the DOM element', () => {
       const { container } = render(
         <BpkProvider>
           <BpkFlex pointerEvents="none">Click-through overlay</BpkFlex>
         </BpkProvider>,
       );
-      expect(container.querySelector('div')).toBeInTheDocument();
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: none');
     });
 
-    it('produces different output with pointerEvents="none" vs "auto"', () => {
-      const { container: withNone } = render(
+    it('applies pointer-events: auto to the DOM element', () => {
+      const { container } = render(
         <BpkProvider>
-          <BpkFlex pointerEvents="none">None</BpkFlex>
+          <BpkFlex pointerEvents="auto">Interactive</BpkFlex>
         </BpkProvider>,
       );
-      const { container: withAuto } = render(
-        <BpkProvider>
-          <BpkFlex pointerEvents="auto">Auto</BpkFlex>
-        </BpkProvider>,
-      );
-      expect(withNone.querySelector('div')?.className).not.toBe(
-        withAuto.querySelector('div')?.className,
-      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: auto');
     });
   });
 });
