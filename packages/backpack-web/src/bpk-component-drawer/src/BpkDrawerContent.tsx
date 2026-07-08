@@ -174,7 +174,7 @@ const BpkDrawerContent = ({
               </div>
               <div
                 role="complementary"
-                aria-label={secondaryPanel.ariaLabel ?? 'Secondary panel'}
+                aria-label={secondaryPanel.ariaLabel}
                 className={getClassName('bpk-drawer__secondary')}
                 data-testid="secondary-panel"
               >
