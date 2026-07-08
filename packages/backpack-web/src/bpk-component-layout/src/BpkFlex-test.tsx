@@ -221,4 +221,54 @@ describe('BpkFlex', () => {
     );
     expect(container.querySelector('div')).toBeInTheDocument();
   });
+
+  describe('flexShrink prop', () => {
+    it('applies flex-shrink: 0 via the flexShrink prop alias', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex flexShrink={0}>Fixed-size item</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('flex-shrink: 0');
+    });
+
+    it('applies flex-shrink: 1 via the flexShrink prop alias', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex flexShrink={1}>Shrinkable</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('flex-shrink: 1');
+    });
+
+    it('shrink prop takes precedence over flexShrink when both are provided', () => {
+      const { container: shrinkWins } = render(
+        <BpkProvider>
+          <BpkFlex shrink={0} flexShrink={1}>Should be flex-shrink: 0</BpkFlex>
+        </BpkProvider>,
+      );
+      // shrink=0 wins over flexShrink=1
+      expect(shrinkWins.querySelector('div')).toHaveStyle('flex-shrink: 0');
+    });
+  });
+
+  describe('pointerEvents prop', () => {
+    it('applies pointer-events: none to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex pointerEvents="none">Click-through overlay</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: none');
+    });
+
+    it('applies pointer-events: auto to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex pointerEvents="auto">Interactive</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: auto');
+    });
+  });
 });
