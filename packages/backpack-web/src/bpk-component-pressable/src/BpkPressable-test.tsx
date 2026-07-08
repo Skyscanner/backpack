@@ -207,4 +207,35 @@ describe('BpkPressable — anchor mode (as="a")', () => {
     expect(ref.current).not.toBeNull();
     expect((ref.current as HTMLElement).tagName).toBe('A');
   });
+
+  it('sets aria-disabled and prevents navigation when disabled', () => {
+    const onClick = jest.fn();
+    render(
+      <BpkPressable as="a" href="/flights" disabled onClick={onClick}>
+        Flights
+      </BpkPressable>,
+    );
+    const el = screen.getByRole('link');
+    expect(el).toHaveAttribute('aria-disabled', 'true');
+    fireEvent.click(el);
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not set aria-disabled when not disabled', () => {
+    render(
+      <BpkPressable as="a" href="#">
+        Link
+      </BpkPressable>,
+    );
+    expect(screen.getByRole('link')).not.toHaveAttribute('aria-disabled');
+  });
+
+  it('target is always _blank when blank=true regardless of target prop', () => {
+    render(
+      <BpkPressable as="a" href="#" blank target="_self">
+        Link
+      </BpkPressable>,
+    );
+    expect(screen.getByRole('link')).toHaveAttribute('target', '_blank');
+  });
 });

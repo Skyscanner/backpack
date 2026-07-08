@@ -25,17 +25,19 @@ import STYLES from './BpkPressable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'style'> & {
   as?: 'button';
   children: ReactNode;
 };
 
-type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type AnchorProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | 'style'> & {
   as: 'a';
   href: string;
   children: ReactNode;
   /** Open link in a new tab. Sets target="_blank" and rel="noopener noreferrer". */
   blank?: boolean;
+  /** Marks the anchor as non-interactive. Sets aria-disabled="true" and suppresses click. */
+  disabled?: boolean;
 };
 
 type Props = ButtonProps | AnchorProps;
@@ -49,17 +51,39 @@ const BpkPressableInner = (
   const sharedClass = getClassName('bpk-pressable');
 
   if (isAnchorProps(props)) {
-    const { as: _as, blank = false, children, href, rel, ...rest } = props;
+    const {
+      as: _as,
+      blank = false,
+      children,
+      disabled = false,
+      href,
+      onClick,
+      rel,
+      target,
+      ...rest
+    } = props;
+
     const resolvedRel = blank ? rel || 'noopener noreferrer' : rel;
-    const target = blank ? '_blank' : undefined;
+    // blank always wins — consumer's target is ignored when blank=true
+    const resolvedTarget = blank ? '_blank' : target;
+
+    type AnchorClick = AnchorHTMLAttributes<HTMLAnchorElement>['onClick'];
+    const handleClick: AnchorClick = disabled
+      ? (e) => {
+          e?.preventDefault();
+          onClick?.(e!);
+        }
+      : onClick;
 
     return (
       <a
         ref={ref as Ref<HTMLAnchorElement>}
         href={href}
         rel={resolvedRel}
-        target={target}
+        target={resolvedTarget}
+        aria-disabled={disabled || undefined}
         className={sharedClass}
+        onClick={handleClick}
         {...getDataComponentAttribute('Pressable')}
         {...rest}
       >
