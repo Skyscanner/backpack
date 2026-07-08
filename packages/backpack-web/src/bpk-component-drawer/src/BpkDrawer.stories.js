@@ -17,7 +17,7 @@
  */
 
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import { Component, useState } from 'react';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkLink from '../../bpk-component-link';
@@ -330,6 +330,46 @@ const DrawerWithTooltipExampleAbleToBeShown = () => (
   </DrawerContainer>
 );
 
+const DrawerWithSecondaryPanelContainer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSecondaryOpen, setIsSecondaryOpen] = useState(false);
+
+  return (
+    <div id="drawer-secondary-container">
+      <div id="pagewrap-secondary">
+        <BpkButton onClick={() => setIsOpen(true)}>Open drawer</BpkButton>
+      </div>
+      <BpkDrawer
+        id="my-secondary-drawer"
+        isOpen={isOpen}
+        onClose={() => { setIsOpen(false); setIsSecondaryOpen(false); }}
+        title="Booking Panel"
+        closeLabel="Close drawer"
+        width="min(750px, 100%)"
+        renderTarget={() => document.getElementById('drawer-secondary-container')}
+        getApplicationElement={() => document.getElementById('pagewrap-secondary')}
+        secondaryPanel={{
+          isOpen: isSecondaryOpen,
+          onClose: () => setIsSecondaryOpen(false),
+          title: 'Details Panel',
+          children: (
+            <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">
+              This is the secondary panel content. It slides in alongside the primary content.
+            </BpkText>
+          ),
+        }}
+      >
+        <Paragraph>This is the primary drawer content.</Paragraph>
+        <BpkButton type={BUTTON_TYPES.secondary} onClick={() => setIsSecondaryOpen(true)}>
+          Open secondary panel
+        </BpkButton>
+      </BpkDrawer>
+    </div>
+  );
+};
+
+const WithSecondaryPanelExample = () => <DrawerWithSecondaryPanelContainer />;
+
 const meta = {
   title: 'bpk-component-drawer',
   component: BpkDrawer,
@@ -346,3 +386,4 @@ export const WithNonPaddedContent = { render: () => <WithNonPaddedContentExample
 export const WithMobileModalBehaviour = { render: () => <WithMobileModalBehaviourExample /> };
 export const DrawerWithTooltipNotAbleToBeShown = { render: () => <DrawerWithTooltipExampleNotAbleToBeShown /> };
 export const DrawerWithTooltipAbleToBeShown = { render: () => <DrawerWithTooltipExampleAbleToBeShown /> };
+export const WithSecondaryPanel = { render: () => <WithSecondaryPanelExample /> };
