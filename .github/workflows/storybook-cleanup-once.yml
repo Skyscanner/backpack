@@ -26,6 +26,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -euo pipefail
+
           gh pr list \
             --repo Skyscanner/backpack \
             --state open \
@@ -38,6 +40,8 @@ jobs:
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
+          set -euo pipefail
+
           git config --global credential.helper store
           echo "https://x-access-token:${DEPLOY_TOKEN}@github.com" > ~/.git-credentials
           git clone \
@@ -50,6 +54,8 @@ jobs:
         env:
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
+          set -euo pipefail
+
           cd /tmp/storybook-prs
           OPEN_PRS=$(cat /tmp/open_prs.json)
           REMOVED=0
@@ -80,6 +86,8 @@ jobs:
       - name: Commit and push
         if: ${{ inputs.dry_run == false }}
         run: |
+          set -euo pipefail
+
           cd /tmp/storybook-prs
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
@@ -87,8 +95,22 @@ jobs:
           CHANGED=$(git status --short | wc -l | tr -d ' ')
           if [ "$CHANGED" -gt "0" ]; then
             git commit -m "chore: remove storybook previews for closed PRs"
-            git push
-            echo "Done — pushed cleanup commit removing $CHANGED files."
+
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                echo "Done — pushed cleanup commit removing $CHANGED files."
+                exit 0
+              fi
+
+              if [ "$attempt" -eq 3 ]; then
+                echo "::error::Failed to push cleanup after $attempt attempts."
+                exit 1
+              fi
+
+              echo "Push failed; rebasing onto latest storybook-prs main and retrying."
+              git fetch origin main
+              git rebase origin/main
+            done
           else
             echo "Nothing to remove."
           fi

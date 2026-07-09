@@ -13,10 +13,10 @@ permissions: {}
 
 jobs:
   cleanup:
-    # Only run for PRs from the same repo (not forks) and not dependabot
+    # Only run for PRs from the same repo (not forks) and not Dependabot-authored PRs.
     if: >
       github.repository == github.event.pull_request.head.repo.full_name &&
-      github.actor != 'dependabot[bot]'
+      github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Clone storybook-prs and remove PR directory
@@ -24,6 +24,8 @@ jobs:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
+          set -euo pipefail
+
           git config --global credential.helper store
           echo "https://x-access-token:${DEPLOY_TOKEN}@github.com" > ~/.git-credentials
 
@@ -44,5 +46,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git commit -m "chore: remove storybook preview for closed PR #$PR_NUMBER"
-          git push
-          echo "Removed storybook preview for PR #$PR_NUMBER."
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Removed storybook preview for PR #$PR_NUMBER."
+              exit 0
+            fi
+
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::Failed to push cleanup after $attempt attempts."
+              exit 1
+            fi
+
+            echo "Push failed; rebasing onto latest storybook-prs main and retrying."
+            git fetch origin main
+            git rebase origin/main
+          done
