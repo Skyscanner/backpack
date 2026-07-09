@@ -63,7 +63,7 @@ jobs:
           shopt -s nullglob
           for dir in [0-9]*/; do
             PR_NUM="${dir%/}"
-            IS_OPEN=$(echo "$OPEN_PRS" | jq -r --arg n "$PR_NUM" 'contains([$n])')
+            IS_OPEN=$(echo "$OPEN_PRS" | jq -r --arg n "$PR_NUM" 'any(. == $n)')
             if [ "$IS_OPEN" = "true" ]; then
               echo "  KEEP  PR #$PR_NUM (open)"
             else
@@ -109,6 +109,7 @@ jobs:
 
               echo "Push failed; rebasing onto latest storybook-prs main and retrying."
               git fetch origin main
+              git rebase --abort 2>/dev/null || true
               git rebase origin/main
             done
           else
