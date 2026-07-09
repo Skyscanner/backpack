@@ -84,7 +84,7 @@ const ButtonModeExample = () => (
       <BpkPressable onClick={action('icon+text pressed')}>
         <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
           <SmallSearchIcon />
-          <span>Search flights</span>
+          <BpkText textStyle={TEXT_STYLES.bodyDefault}>Search flights</BpkText>
         </span>
       </BpkPressable>
 

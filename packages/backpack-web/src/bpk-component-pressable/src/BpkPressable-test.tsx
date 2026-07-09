@@ -136,13 +136,13 @@ describe('BpkPressable — anchor mode (as="a")', () => {
     expect(el).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
-  it('uses custom rel when provided with blank=true', () => {
+  it('merges custom rel with noopener noreferrer when blank=true', () => {
     render(
       <BpkPressable as="a" href="/cars" blank rel="custom-rel">
         Cars
       </BpkPressable>,
     );
-    expect(screen.getByRole('link')).toHaveAttribute('rel', 'custom-rel');
+    expect(screen.getByRole('link')).toHaveAttribute('rel', 'custom-rel noopener noreferrer');
   });
 
   it('does not set target or rel when blank is false', () => {

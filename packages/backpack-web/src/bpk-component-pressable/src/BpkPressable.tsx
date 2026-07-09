@@ -74,7 +74,10 @@ const BpkPressableInner = (
     // href removed when disabled so the browser cannot navigate;
     // role="link" restores the semantic lost when <a> has no href.
     const resolvedHref = disabled ? undefined : href;
-    const resolvedRel = blank ? rel || 'noopener noreferrer' : rel;
+    // Always include noopener noreferrer when blank=true; merge with consumer rel if provided.
+    const resolvedRel = blank
+      ? [rel, 'noopener noreferrer'].filter(Boolean).join(' ')
+      : rel;
     const resolvedRole = disabled ? 'link' : role;
     const resolvedTabIndex = disabled ? -1 : tabIndex;
     const targetFromBlank = blank ? '_blank' : target;
@@ -99,10 +102,10 @@ const BpkPressableInner = (
         tabIndex={resolvedTabIndex}
         target={resolvedTarget}
         aria-disabled={resolvedAriaDisabled}
-        className={sharedClass}
         onClick={handleClick}
-        {...getDataComponentAttribute('Pressable')}
         {...rest}
+        className={sharedClass}
+        {...getDataComponentAttribute('Pressable')}
       >
         {children}
       </a>
@@ -116,9 +119,9 @@ const BpkPressableInner = (
       ref={ref as Ref<HTMLButtonElement>}
       type="button"
       disabled={disabled}
+      {...rest}
       className={sharedClass}
       {...getDataComponentAttribute('Pressable')}
-      {...rest}
     >
       {children}
     </button>
