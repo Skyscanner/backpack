@@ -114,6 +114,8 @@ jobs:
       with:
         client-id: ${{ vars.GH_APP_ID }}
         private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+        owner: ${{ github.repository_owner }}
+        repositories: ${{ github.event.repository.name }}
 
     - name: Link to the pull request build
       uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0

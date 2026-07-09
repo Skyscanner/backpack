@@ -17,6 +17,9 @@ permissions: {}
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      contents: read
     steps:
       - name: Get open PR numbers
         id: open-prs
@@ -35,10 +38,12 @@ jobs:
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
+          git config --global credential.helper store
+          echo "https://x-access-token:${DEPLOY_TOKEN}@github.com" > ~/.git-credentials
           git clone \
             --depth 1 \
             --filter=blob:none \
-            https://x-access-token:${DEPLOY_TOKEN}@github.com/backpack/storybook-prs.git \
+            https://github.com/backpack/storybook-prs.git \
             /tmp/storybook-prs
 
       - name: Identify and remove closed PR directories
@@ -49,6 +54,7 @@ jobs:
           OPEN_PRS=$(cat /tmp/open_prs.json)
           REMOVED=0
 
+          shopt -s nullglob
           for dir in [0-9]*/; do
             PR_NUM="${dir%/}"
             IS_OPEN=$(echo "$OPEN_PRS" | jq -r --arg n "$PR_NUM" 'contains([$n])')

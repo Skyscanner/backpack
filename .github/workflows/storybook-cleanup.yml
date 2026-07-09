@@ -19,15 +19,18 @@ jobs:
       github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Clone storybook-prs (blobless — no file content downloaded)
+      - name: Clone storybook-prs and remove PR directory
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
+          git config --global credential.helper store
+          echo "https://x-access-token:${DEPLOY_TOKEN}@github.com" > ~/.git-credentials
+
           git clone \
             --depth 1 \
             --filter=blob:none \
-            https://x-access-token:${DEPLOY_TOKEN}@github.com/backpack/storybook-prs.git \
+            https://github.com/backpack/storybook-prs.git \
             /tmp/storybook-prs
 
           cd /tmp/storybook-prs
