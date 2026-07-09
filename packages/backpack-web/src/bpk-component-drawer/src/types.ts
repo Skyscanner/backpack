@@ -16,14 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import withInfiniteScroll, {
-  type Props as WithInfiniteScrollProps,
-} from './src/withInfiniteScroll';
-
-export { default as DataSource, ArrayDataSource } from './src/DataSource';
-
-export type { WithInfiniteScrollProps };
-
-export default withInfiniteScroll;
+export type SecondaryPanelProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  closeLabel?: string;
+  ariaLabel?: string;
+  title?: ReactNode;
+};

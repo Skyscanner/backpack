@@ -16,22 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+if (typeof window === 'undefined') {
+  global.IntersectionObserver = class {
+    observe() {}
 
-.bpk-section-list-section {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  &__header {
-    display: flex;
-    min-height: var(--bpk-spacing-xl, tokens.bpk-spacing-xl());
-    padding: var(--bpk-spacing-md, tokens.bpk-spacing-md())
-      var(--bpk-spacing-base, tokens.bpk-spacing-base());
-    align-items: center;
-    background-color: var(
-      --bpk-surface-highlight,
-      tokens.$bpk-surface-highlight-day
-    );
-  }
+    unobserve() {}
+  } as any;
+} else {
+  // eslint-disable-next-line global-require
+  require('intersection-observer');
 }

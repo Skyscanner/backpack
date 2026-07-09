@@ -2,12 +2,12 @@
 
 Composite action used by the [Sync Figma variables](../../workflows/sync-figma-variables.yml) workflow.
 
-**Precondition:** Figma tokens have already been fetched to `token-sync/tokens/` and `npm ci` has been run.
+**Precondition:** Figma tokens have already been fetched to `token-sync/tokens/` and `pnpm install --frozen-lockfile` has been run.
 
 ## What it does
 
 1. Classifies the release label (`major` / `minor`) based on the token diff.
-2. Builds CSS custom properties from the DTCG tokens (`npm run tokens:build-css`).
+2. Builds CSS custom properties from the DTCG tokens (`pnpm run tokens:build-css`).
 3. Rebuilds `packages/backpack-web/src/bpk-stylesheets/base.css` (`npx nx run backpack-web:build-stylesheets`).
 4. Commits `token-sync/tokens`, `token-sync/css`, and `base.css` to a new branch and pushes it.
 5. Opens a pull request against `main` with a release label and description.

@@ -53,12 +53,6 @@
           "$value": "{Spacing.md}"
         },
         "$type": "dimension"
-      },
-      "Typography": {
-        "tmp-badge-label": {
-          "$value": "14px"
-        },
-        "$type": "dimension"
       }
     },
     "Button": {
@@ -647,6 +641,9 @@
     "line-onContrast": {
       "$value": "{Alpha.White Alpha 20}"
     },
+    "line-subtle": {
+      "$value": "{Neutral.Grey 20}"
+    },
     "$type": "color"
   },
   "Status": {
@@ -862,7 +859,7 @@
       },
       "$type": "dimension"
     },
-    "Style": {
+    "Weight": {
       "Body": {
         "$value": 400
       },
