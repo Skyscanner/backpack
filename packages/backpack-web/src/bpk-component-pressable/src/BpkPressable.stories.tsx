@@ -20,6 +20,7 @@
 import { action } from 'bpk-storybook-utils';
 
 import BpkBadge from '../../bpk-component-badge';
+import { withButtonAlignment } from '../../bpk-component-icon';
 import SmallHeartIcon from '../../bpk-component-icon/sm/heart';
 import SmallSearchIcon from '../../bpk-component-icon/sm/search';
 import {
@@ -66,6 +67,8 @@ const meta = {
 
 export default meta;
 
+const AlignedSearchIcon = withButtonAlignment(SmallSearchIcon);
+
 const ButtonModeExample = () => (
   <BpkProvider>
     <BpkFlex gap={BpkSpacing.LG} align="center" wrap="wrap">
@@ -82,10 +85,9 @@ const ButtonModeExample = () => (
       </BpkPressable>
 
       <BpkPressable onClick={action('icon+text pressed')}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-          <SmallSearchIcon />
-          <BpkText textStyle={TEXT_STYLES.bodyDefault}>Search flights</BpkText>
-        </span>
+        <AlignedSearchIcon />
+        &nbsp;
+        <BpkText textStyle={TEXT_STYLES.bodyDefault}>Search flights</BpkText>
       </BpkPressable>
 
       <BpkPressable disabled onClick={action('should not fire')}>
