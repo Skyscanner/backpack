@@ -25,6 +25,12 @@ import BpkPressable from '@skyscanner/backpack-web/bpk-component-pressable';
 <BpkPressable as="a" href="/flights" blank>
   <SomeCustomContent />
 </BpkPressable>
+
+// Disabled anchor — no navigation, aria-disabled="true", removed from tab order.
+// Note: onClick is not called and the click does not bubble when disabled.
+<BpkPressable as="a" href="/flights" disabled>
+  <SomeCustomContent />
+</BpkPressable>
 ```
 
 ## When to use

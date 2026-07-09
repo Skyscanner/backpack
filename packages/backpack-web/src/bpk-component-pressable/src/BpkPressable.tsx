@@ -36,7 +36,11 @@ type AnchorProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | '
   children: ReactNode;
   /** Open link in a new tab. Sets target="_blank" and rel="noopener noreferrer". */
   blank?: boolean;
-  /** Marks the anchor as non-interactive. Sets aria-disabled="true" and suppresses click. */
+  /**
+   * Marks the anchor as non-interactive: removes href (no navigation), sets
+   * aria-disabled="true", removes from tab order, and suppresses onClick —
+   * the click event does not bubble to parent handlers.
+   */
   disabled?: boolean;
 };
 
@@ -52,6 +56,7 @@ const BpkPressableInner = (
 
   if (isAnchorProps(props)) {
     const {
+      'aria-disabled': ariaDisabled,
       as: _as,
       blank = false,
       children,
@@ -59,29 +64,41 @@ const BpkPressableInner = (
       href,
       onClick,
       rel,
+      role,
+      tabIndex,
       target,
       ...rest
     } = props;
 
+    const resolvedAriaDisabled = disabled ? true : ariaDisabled;
+    // href removed when disabled so the browser cannot navigate;
+    // role="link" restores the semantic lost when <a> has no href.
+    const resolvedHref = disabled ? undefined : href;
     const resolvedRel = blank ? rel || 'noopener noreferrer' : rel;
-    // blank always wins — consumer's target is ignored when blank=true
-    const resolvedTarget = blank ? '_blank' : target;
+    const resolvedRole = disabled ? 'link' : role;
+    const resolvedTabIndex = disabled ? -1 : tabIndex;
+    const targetFromBlank = blank ? '_blank' : target;
+    const resolvedTarget = disabled ? undefined : targetFromBlank;
 
     type AnchorClick = AnchorHTMLAttributes<HTMLAnchorElement>['onClick'];
+    // When disabled, consumer's onClick is not called and the click does not
+    // bubble — consistent with native <button disabled> behaviour.
     const handleClick: AnchorClick = disabled
       ? (e) => {
           e?.preventDefault();
-          onClick?.(e!);
+          e?.stopPropagation();
         }
       : onClick;
 
     return (
       <a
         ref={ref as Ref<HTMLAnchorElement>}
-        href={href}
+        href={resolvedHref}
         rel={resolvedRel}
+        role={resolvedRole}
+        tabIndex={resolvedTabIndex}
         target={resolvedTarget}
-        aria-disabled={disabled || undefined}
+        aria-disabled={resolvedAriaDisabled}
         className={sharedClass}
         onClick={handleClick}
         {...getDataComponentAttribute('Pressable')}

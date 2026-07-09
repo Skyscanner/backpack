@@ -208,7 +208,7 @@ describe('BpkPressable — anchor mode (as="a")', () => {
     expect((ref.current as HTMLElement).tagName).toBe('A');
   });
 
-  it('sets aria-disabled and prevents navigation when disabled', () => {
+  it('sets aria-disabled and suppresses navigation and clicks when disabled', () => {
     const onClick = jest.fn();
     render(
       <BpkPressable as="a" href="/flights" disabled onClick={onClick}>
@@ -217,8 +217,10 @@ describe('BpkPressable — anchor mode (as="a")', () => {
     );
     const el = screen.getByRole('link');
     expect(el).toHaveAttribute('aria-disabled', 'true');
+    expect(el).toHaveAttribute('tabindex', '-1');
+    expect(el).not.toHaveAttribute('href');
     fireEvent.click(el);
-    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onClick).not.toHaveBeenCalled();
   });
 
   it('does not set aria-disabled when not disabled', () => {
