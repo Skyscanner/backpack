@@ -38,26 +38,3 @@ import BpkPressable from '@skyscanner/backpack-web/bpk-component-pressable';
 | **`BpkPressable as="a"`** | Any content needing anchor semantics *without* link styling |
 | `<button>` | Private implementation detail *inside* a Backpack component |
 | `<a>` | Private implementation detail *inside* a Backpack component |
-
-## Props
-
-### Button mode (default)
-
-Accepts all standard `<button>` HTML attributes plus:
-
-| Property | PropType | Required | Default Value |
-|---|---|---|---|
-| children | node | ✓ | - |
-| as | 'button' | | 'button' |
-| disabled | bool | | false |
-
-### Anchor mode (as="a")
-
-Accepts all standard `<a>` HTML attributes plus:
-
-| Property | PropType | Required | Default Value |
-|---|---|---|---|
-| children | node | ✓ | - |
-| as | 'a' | ✓ | - |
-| href | string | ✓ | - |
-| blank | bool | | false |
