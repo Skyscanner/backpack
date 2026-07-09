@@ -1,0 +1,88 @@
+name: Cleanup Storybook PR Previews
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — list directories to delete without actually deleting'
+        type: boolean
+        default: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+permissions: {}
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get open PR numbers
+        id: open-prs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr list \
+            --repo Skyscanner/backpack \
+            --state open \
+            --json number \
+            --limit 500 \
+            --jq '[.[].number | tostring]' > /tmp/open_prs.json
+          echo "Open PRs: $(cat /tmp/open_prs.json)"
+
+      - name: Clone storybook-prs (blobless — no file content downloaded)
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          git clone \
+            --depth 1 \
+            --filter=blob:none \
+            https://x-access-token:${DEPLOY_TOKEN}@github.com/backpack/storybook-prs.git \
+            /tmp/storybook-prs
+
+      - name: Identify and remove closed PR directories
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          cd /tmp/storybook-prs
+          OPEN_PRS=$(cat /tmp/open_prs.json)
+          REMOVED=0
+
+          for dir in [0-9]*/; do
+            PR_NUM="${dir%/}"
+            IS_OPEN=$(echo "$OPEN_PRS" | jq -r --arg n "$PR_NUM" 'contains([$n])')
+            if [ "$IS_OPEN" = "true" ]; then
+              echo "  KEEP  PR #$PR_NUM (open)"
+            else
+              echo "  REMOVE PR #$PR_NUM (closed)"
+              if [ "$DRY_RUN" != "true" ]; then
+                git rm -rf "$PR_NUM" --quiet
+              fi
+              REMOVED=$((REMOVED + 1))
+            fi
+          done
+
+          echo ""
+          echo "Total to remove: $REMOVED PR directories"
+
+          if [ "$DRY_RUN" = "true" ]; then
+            echo ""
+            echo "DRY RUN — no changes made. Re-run with dry_run=false to apply."
+          fi
+
+      - name: Commit and push
+        if: ${{ inputs.dry_run == false }}
+        run: |
+          cd /tmp/storybook-prs
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
+          CHANGED=$(git status --short | wc -l | tr -d ' ')
+          if [ "$CHANGED" -gt "0" ]; then
+            git commit -m "chore: remove storybook previews for closed PRs"
+            git push
+            echo "Done — pushed cleanup commit removing $CHANGED files."
+          else
+            echo "Nothing to remove."
+          fi

@@ -1,0 +1,45 @@
+name: Cleanup Storybook PR Preview on Close
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+permissions: {}
+
+jobs:
+  cleanup:
+    # Only run for PRs from the same repo (not forks) and not dependabot
+    if: >
+      github.repository == github.event.pull_request.head.repo.full_name &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone storybook-prs (blobless — no file content downloaded)
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          git clone \
+            --depth 1 \
+            --filter=blob:none \
+            https://x-access-token:${DEPLOY_TOKEN}@github.com/backpack/storybook-prs.git \
+            /tmp/storybook-prs
+
+          cd /tmp/storybook-prs
+
+          if [ ! -d "$PR_NUMBER" ]; then
+            echo "No storybook directory found for PR #$PR_NUMBER — nothing to clean up."
+            exit 0
+          fi
+
+          git rm -rf "$PR_NUMBER" --quiet
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git commit -m "chore: remove storybook preview for closed PR #$PR_NUMBER"
+          git push
+          echo "Removed storybook preview for PR #$PR_NUMBER."
