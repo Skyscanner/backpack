@@ -34,7 +34,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
 
-import BpkBadge, { BADGE_TYPES } from './BpkBadge';
+import BpkBadge, { BADGE_TYPES, BADGE_VARIANTS } from './BpkBadge';
 
 import type { Meta } from '@storybook/react';
 
@@ -143,6 +143,12 @@ const BrandExample = () => (
       <BpkSmallTickIcon />
       &nbsp;Brand
     </BpkBadge>
+  </BadgeLayout>
+);
+
+const InteractiveExample = () => (
+  <BadgeLayout>
+    <BpkBadge type={BADGE_TYPES.brand} variant={BADGE_VARIANTS.interactive}>Brand</BpkBadge>
   </BadgeLayout>
 );
 
@@ -290,6 +296,10 @@ export const Strong = {
 export const Brand = {
   render: () => <BrandExample />,
 };
+
+export const Interactive = {
+  render: () => <InteractiveExample />,
+}
 
 export const Inverse = {
   render: () => <InverseExample />,
