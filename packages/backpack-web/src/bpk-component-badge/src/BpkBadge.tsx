@@ -18,6 +18,7 @@
 
 import type { ReactNode } from 'react';
 
+import BpkInformationCircleIcon from '../../bpk-component-icon/sm/information-circle';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBadge.module.scss';
@@ -33,6 +34,11 @@ export const BADGE_TYPES = {
   brand: 'brand',
   subtle: 'subtle',
 } as const;
+
+export const BADGE_VARIANTS = {
+  default: 'default',
+  interactive: 'interactive',
+};
 
 const getClassName = cssModules(STYLES);
 
@@ -50,8 +56,11 @@ const badgeTypeClassNames = {
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
 
+export type BadgeVariant = (typeof BADGE_VARIANTS)[keyof typeof BADGE_VARIANTS];
+
 export type Props = {
   type?: BadgeType;
+  variant?: BadgeVariant;
   docked?: 'right' | 'left' | null;
   centered?: boolean;
   className?: string | null;
@@ -61,9 +70,11 @@ export type Props = {
 
 const BpkBadge = ({
   centered = false,
+  children,
   className = null,
   docked = null,
   type = BADGE_TYPES.normal,
+  variant = BADGE_VARIANTS.default,
   ...rest
 }: Props) => {
   const classNames = getClassName(
@@ -75,12 +86,35 @@ const BpkBadge = ({
     className,
   );
 
+  // TODO: should this really be a button? it makes sense for accessibility
+  if (variant === BADGE_VARIANTS.interactive) {
+    return (
+      <button
+        type="button"
+        {...getDataComponentAttribute('Badge')}
+        // TODO: reduce some duplication
+        className={getClassName(
+          'bpk-badge',
+          'bpk-badge--interactive',
+          badgeTypeClassNames[type],
+          docked === 'right' && 'bpk-badge--docked-right',
+          docked === 'left' && 'bpk-badge--docked-left',
+          centered && 'bpk-badge--centered',
+          className,
+        )}
+      >
+        {children}
+        <BpkInformationCircleIcon />
+      </button>
+    );
+  }
+
   return (
     <span
       className={classNames}
       {...getDataComponentAttribute('Badge')}
       {...rest}
-    />
+    >{children}</span>
   );
 };
 

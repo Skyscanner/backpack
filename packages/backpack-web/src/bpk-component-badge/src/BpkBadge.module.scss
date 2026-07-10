@@ -68,4 +68,8 @@
   &--subtle {
     @include badges.bpk-badge--subtle;
   }
+
+  &--interactive {
+    @include badges.bpk-badge--interactive;
+  }
 }
