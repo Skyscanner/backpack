@@ -81,6 +81,9 @@
         "bg-primary": {
           "$value": "{Colour.Sky Blue 85}"
         },
+        "bg-primary-pressed": {
+          "$value": "{Colour.Twilight}"
+        },
         "bg-primaryOnDark": {
           "$value": "{Neutral.White}"
         },
@@ -88,10 +91,10 @@
           "$value": "{Neutral.Grey 30}"
         },
         "bg-primaryOnLight": {
-          "$value": "{Neutral.White}"
+          "$value": "{Colour.Dark Sky}"
         },
         "bg-primaryOnLight-pressed": {
-          "$value": "{Colour.Dark Blue 100}"
+          "$value": "{Colour.Dark Sky 85}"
         },
         "bg-secondary": {
           "$value": "{Neutral.Dark Grey 25}"
@@ -114,7 +117,7 @@
         "bg-secondaryOnDark-pressed": {
           "$value": "{Alpha.White Alpha 20}"
         },
-        "text-disruptive": {
+        "text-destructive": {
           "$value": "{Colour.Bright Berry}"
         },
         "text-feature": {
