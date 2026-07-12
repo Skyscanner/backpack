@@ -40,9 +40,10 @@
   --bpk-private-button-colour-bg-footer: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-bg-footer-pressed: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-bg-primary: #05203c;
+  --bpk-private-button-colour-bg-primary-pressed: #154679;
   --bpk-private-button-colour-bg-primary-on-dark: #ffffff;
   --bpk-private-button-colour-bg-primary-on-dark-pressed: #c1c7cf;
-  --bpk-private-button-colour-bg-primary-on-light: #ffffff;
+  --bpk-private-button-colour-bg-primary-on-light: #05203c;
   --bpk-private-button-colour-bg-primary-on-light-pressed: #154679;
   --bpk-private-button-colour-bg-secondary: #e0e4e9;
   --bpk-private-button-colour-bg-secondary-pressed: #c1c7cf;
@@ -51,7 +52,7 @@
   --bpk-private-button-colour-bg-secondary-on-dark: rgba(255, 255, 255, 0.1);
   --bpk-private-button-colour-bg-secondary-on-dark-disabled: #0b121d;
   --bpk-private-button-colour-bg-secondary-on-dark-pressed: #04182d;
-  --bpk-private-button-colour-text-disruptive: #e70866;
+  --bpk-private-button-colour-text-destructive: #e70866;
   --bpk-private-button-colour-text-feature: #ffffff;
   --bpk-private-button-colour-text-footer: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-text-link-on-dark: #ffffff;
