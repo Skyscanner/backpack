@@ -23,18 +23,36 @@
   // Must be after font-stack rules so source order wins over browser defaults.
   // :lang() matches subtags - :lang(ja) covers ja, ja-JP, etc.
 
-  // Japanese: preserve phrase boundaries. Browsers with auto-phrase can infer
-  // better phrase breaks; others should use explicit <wbr> hints for key copy.
+  // Japanese: preserve phrase boundaries where the browser can.
+  // Base rule keeps the default `word-break: normal`, which gives standard
+  // per-character CJK wrapping under kinsoku (line-break: strict). This is the
+  // correct, universal fallback: Japanese has no word spaces, so `keep-all`
+  // would forbid every break and overflow the container in browsers without
+  // auto-phrase (Safari, Firefox). auto-phrase, where supported (Chromium),
+  // upgrades this to phrase-level breaks; overflow-wrap: break-word is a
+  // last-resort safety net for long unbreakable runs (e.g. embedded URLs).
   :lang(ja) {
     line-break: strict;
-    overflow-wrap: normal;
-    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   @supports (word-break: auto-phrase) {
     :lang(ja) {
       word-break: auto-phrase;
     }
+  }
+
+  // Author-hinted phrase breaks: when the copy contains explicit <wbr> break
+  // opportunities, switch to `word-break: keep-all` so per-character wrapping
+  // is suppressed and the <wbr> marks become the *only* break points. This
+  // makes Firefox and Safari (which lack auto-phrase) honour the author's
+  // phrase boundaries too, matching Chromium. No consumer className required —
+  // the presence of <wbr> in the content is itself the opt-in signal.
+  // Higher specificity than the @supports rule above, so keep-all wins over
+  // auto-phrase and behaviour is identical across all browsers when hinted.
+  // stylelint-disable-next-line order/order, selector-max-type
+  :lang(ja):has(wbr) {
+    word-break: keep-all;
   }
 
   // Chinese: strict kinsoku controls punctuation and prohibited line-start
