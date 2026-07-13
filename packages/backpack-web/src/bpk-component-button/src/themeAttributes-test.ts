@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import legacyThemeAttributes, {
+import {
   allButtonThemeAttributes,
   buttonThemeAttributes,
   destructiveThemeAttributes,
@@ -125,66 +125,6 @@ describe('themeAttributes', () => {
       'privateButtonColourBgDestructive',
       'privateButtonColourBgDestructivePressed',
       'privateButtonColourTextLinkOnDark',
-    ]);
-  });
-
-  it('should export the deprecated legacyThemeAttributes default with the legacy keys', () => {
-    expect(legacyThemeAttributes).toEqual([
-      'buttonFontSize',
-      'buttonBorderRadius',
-      'buttonPrimaryTextColor',
-      'buttonPrimaryHoverTextColor',
-      'buttonPrimaryActiveTextColor',
-      'buttonPrimaryGradientStartColor',
-      'buttonPrimaryGradientEndColor',
-      'buttonPrimaryBackgroundColor',
-      'buttonPrimaryHoverBackgroundColor',
-      'buttonPrimaryActiveBackgroundColor',
-      'buttonPrimaryOnDarkTextColor',
-      'buttonPrimaryOnDarkHoverTextColor',
-      'buttonPrimaryOnDarkActiveTextColor',
-      'buttonPrimaryOnDarkBackgroundColor',
-      'buttonPrimaryOnDarkHoverBackgroundColor',
-      'buttonPrimaryOnDarkActiveBackgroundColor',
-      'buttonPrimaryOnLightTextColor',
-      'buttonPrimaryOnLightHoverTextColor',
-      'buttonPrimaryOnLightActiveTextColor',
-      'buttonPrimaryOnLightBackgroundColor',
-      'buttonPrimaryOnLightHoverBackgroundColor',
-      'buttonPrimaryOnLightActiveBackgroundColor',
-      'buttonSecondaryTextColor',
-      'buttonSecondaryHoverTextColor',
-      'buttonSecondaryActiveTextColor',
-      'buttonSecondaryBorderColor',
-      'buttonSecondaryHoverBorderColor',
-      'buttonSecondaryActiveBorderColor',
-      'buttonSecondaryBackgroundColor',
-      'buttonSecondaryHoverBackgroundColor',
-      'buttonSecondaryActiveBackgroundColor',
-      'buttonSecondaryOnDarkTextColor',
-      'buttonSecondaryOnDarkHoverTextColor',
-      'buttonSecondaryOnDarkActiveTextColor',
-      'buttonSecondaryOnDarkBackgroundColor',
-      'buttonSecondaryOnDarkHoverBackgroundColor',
-      'buttonSecondaryOnDarkActiveBackgroundColor',
-      'buttonFeaturedTextColor',
-      'buttonFeaturedHoverTextColor',
-      'buttonFeaturedActiveTextColor',
-      'buttonFeaturedGradientStartColor',
-      'buttonFeaturedGradientEndColor',
-      'buttonFeaturedBackgroundColor',
-      'buttonFeaturedHoverBackgroundColor',
-      'buttonFeaturedActiveBackgroundColor',
-      'buttonDestructiveTextColor',
-      'buttonDestructiveHoverTextColor',
-      'buttonDestructiveActiveTextColor',
-      'buttonDestructiveBorderColor',
-      'buttonDestructiveHoverBorderColor',
-      'buttonDestructiveActiveBorderColor',
-      'buttonDestructiveBackgroundColor',
-      'buttonDestructiveHoverBackgroundColor',
-      'buttonDestructiveActiveBackgroundColor',
-      'buttonLinkLoadingColor',
     ]);
   });
 });

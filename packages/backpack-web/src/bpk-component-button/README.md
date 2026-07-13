@@ -107,7 +107,7 @@ import BpkButton, { linkThemeAttributes } from '@skyscanner/backpack-web/bpk-com
 </BpkThemeProvider>
 ```
 
-The loading-state colour for `link`-type buttons (`--bpk-button-link-loading-color`) pre-dates the CSS custom properties migration and has no private var equivalent — it remains available only via the deprecated `legacyThemeAttributes` default export (`buttonLinkLoadingColor`).
+The loading-state colour for `link`-type buttons (`--bpk-button-link-loading-color`) pre-dates the CSS custom properties migration and has no private var equivalent. It isn't exposed via a `themeAttributes` key — set it directly as a CSS custom property (e.g. via inline `style` or a wrapping class) if you need to override it.
 
 ### Button Link
 The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
