@@ -149,9 +149,9 @@ const BrandExample = () => (
 const InteractiveExample = () => (
 
   <BadgeLayout>
-    <BpkBadge variant={BADGE_VARIANTS.interactive}>Normal</BpkBadge>
+    <BpkBadge as='button'>Normal</BpkBadge>
     &nbsp;
-    <BpkBadge type={BADGE_TYPES.brand} variant={BADGE_VARIANTS.interactive}>Brand</BpkBadge>
+    <BpkBadge type={BADGE_TYPES.brand} as='button'>Brand</BpkBadge>
   </BadgeLayout>
 );
 

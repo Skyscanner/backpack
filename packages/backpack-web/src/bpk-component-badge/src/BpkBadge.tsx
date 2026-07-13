@@ -16,10 +16,9 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { forwardRef } from 'react';
+import type { ReactNode, Ref } from 'react';
 
-import BpkInformationCircleIcon from '../../bpk-component-icon/sm/information-circle';
-import { BpkBackgroundImage } from '../../bpk-component-image';
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import STYLES from './BpkBadge.module.scss';
@@ -35,11 +34,6 @@ export const BADGE_TYPES = {
   brand: 'brand',
   subtle: 'subtle',
 } as const;
-
-export const BADGE_VARIANTS = {
-  default: 'default',
-  interactive: 'interactive',
-};
 
 const getClassName = cssModules(STYLES);
 
@@ -57,58 +51,14 @@ const badgeTypeClassNames = {
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
 
-export type BadgeVariant = (typeof BADGE_VARIANTS)[keyof typeof BADGE_VARIANTS];
-
 export type Props = {
   type?: BadgeType;
-  variant?: BadgeVariant;
+  as?: 'button' | null;
   docked?: 'right' | 'left' | null;
   centered?: boolean;
   className?: string | null;
   children: string | ReactNode;
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
-};
-
-const BpkBadge = ({
-                    centered = false,
-                    children,
-                    className = null,
-                    docked = null,
-                    type = BADGE_TYPES.normal,
-                    variant = BADGE_VARIANTS.default,
-                    ...rest
-                  }: Props) => {
-  const classNames = getClassName(
-    'bpk-badge',
-    badgeTypeClassNames[type],
-    variant === BADGE_VARIANTS.interactive && 'bpk-badge--interactive',
-    docked === 'right' && 'bpk-badge--docked-right',
-    docked === 'left' && 'bpk-badge--docked-left',
-    centered && 'bpk-badge--centered',
-    className,
-  );
-
-  // TODO: should this really be a button? it makes sense for accessibility
-  if (variant === BADGE_VARIANTS.interactive) {
-    return (
-      <button
-        type="button"
-        {...getDataComponentAttribute('Badge')}
-        className={classNames}
-      >
-        {children}
-        <BadgeInfoCircleIcon />
-      </button>
-    );
-  }
-
-  return (
-    <span
-      className={classNames}
-      {...getDataComponentAttribute('Badge')}
-      {...rest}
-    >{children}</span>
-  );
 };
 
 const BadgeInfoCircleIcon = () => (
@@ -129,5 +79,54 @@ const BadgeInfoCircleIcon = () => (
       d="M6.64375 3.68125C6.64375 4.04024 6.35274 4.33125 5.99375 4.33125C5.63477 4.33125 5.34375 4.04024 5.34375 3.68125C5.34375 3.32227 5.63477 3.03125 5.99375 3.03125C6.35274 3.03125 6.64375 3.32227 6.64375 3.68125Z" />
   </svg>
 );
+
+const BpkBadgeInner = (
+  {
+    as = null,
+    centered = false,
+    children,
+    className = null,
+    docked = null,
+    type = BADGE_TYPES.normal,
+    ...rest
+  }: Props,
+  ref: Ref<HTMLButtonElement | HTMLSpanElement>,
+) => {
+  const classNames = getClassName(
+    'bpk-badge',
+    badgeTypeClassNames[type],
+    as === 'button' && 'bpk-badge--interactive',
+    docked === 'right' && 'bpk-badge--docked-right',
+    docked === 'left' && 'bpk-badge--docked-left',
+    centered && 'bpk-badge--centered',
+    className,
+  );
+
+  if (as === 'button') {
+    return (
+      <button
+        ref={ref as Ref<HTMLButtonElement>}
+        type="button"
+        {...getDataComponentAttribute('Badge')}
+        className={classNames}
+        {...rest}
+      >
+        {children}
+        <BadgeInfoCircleIcon />
+      </button>
+    );
+  }
+
+  return (
+    <span
+      ref={ref as Ref<HTMLSpanElement>}
+      className={classNames}
+      {...getDataComponentAttribute('Badge')}
+      {...rest}
+    >{children} </span>
+  );
+};
+
+const BpkBadge = forwardRef(BpkBadgeInner);
 
 export default BpkBadge;
