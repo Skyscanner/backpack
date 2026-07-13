@@ -16,9 +16,79 @@
  * limitations under the License.
  */
 
-export const buttonThemeAttributes = ['buttonFontSize', 'buttonBorderRadius'];
+export const buttonThemeAttributes = [
+  'privateButtonDimensionRadius',
+  'privateButtonDimensionMinHeightLarge',
+  'privateButtonDimensionPaddingHorizontalLarge',
+];
 
 export const primaryThemeAttributes = [
+  'privateButtonColourBgPrimary',
+  'privateButtonColourBgPrimaryPressed',
+];
+
+export const primaryOnDarkThemeAttributes = [
+  'privateButtonColourBgPrimaryOnDark',
+  'privateButtonColourBgPrimaryOnDarkPressed',
+];
+
+export const primaryOnLightThemeAttributes = [
+  'privateButtonColourBgPrimaryOnLight',
+  'privateButtonColourBgPrimaryOnLightPressed',
+];
+
+export const secondaryThemeAttributes = [
+  'privateButtonColourTextSecondary',
+  'privateButtonColourBgSecondary',
+  'privateButtonColourBgSecondaryPressed',
+];
+
+export const secondaryOnDarkThemeAttributes = [
+  'privateButtonColourBgSecondaryOnDark',
+  'privateButtonColourBgSecondaryOnDarkPressed',
+];
+
+export const featuredThemeAttributes = [
+  'privateButtonColourTextFeature',
+  'privateButtonColourBgFeatured',
+  'privateButtonColourBgFeaturePressed',
+];
+
+export const destructiveThemeAttributes = [
+  'privateButtonColourTextDestructive',
+  'privateButtonColourBgDestructive',
+  'privateButtonColourBgDestructivePressed',
+];
+
+export const linkThemeAttributes = ['privateButtonColourTextLinkOnDark'];
+
+/**
+ * Combined deduplicated array of all button private theme attributes.
+ * Only exposes component-scoped (private) button tokens — global semantic vars
+ * (text, core, status colours) can be overridden at the theme level independently.
+ */
+export const allButtonThemeAttributes = [
+  ...buttonThemeAttributes,
+  ...primaryThemeAttributes,
+  ...primaryOnDarkThemeAttributes,
+  ...primaryOnLightThemeAttributes,
+  ...secondaryThemeAttributes,
+  ...secondaryOnDarkThemeAttributes,
+  ...featuredThemeAttributes,
+  ...destructiveThemeAttributes,
+  ...linkThemeAttributes,
+];
+
+/**
+ * @deprecated The keys in this array pre-date the CSS custom properties migration and map to
+ * CSS variables that are no longer wired up in the SCSS (the mixin now uses the
+ * --bpk-private-button-* vars directly). Use the named exports above (e.g.
+ * primaryThemeAttributes) for fine-grained theming, or allButtonThemeAttributes for the
+ * complete list. Will be removed in the next major release.
+ */
+const legacyThemeAttributes = [
+  'buttonFontSize',
+  'buttonBorderRadius',
   'buttonPrimaryTextColor',
   'buttonPrimaryHoverTextColor',
   'buttonPrimaryActiveTextColor',
@@ -27,27 +97,18 @@ export const primaryThemeAttributes = [
   'buttonPrimaryBackgroundColor',
   'buttonPrimaryHoverBackgroundColor',
   'buttonPrimaryActiveBackgroundColor',
-];
-
-export const primaryOnDarkThemeAttributes = [
   'buttonPrimaryOnDarkTextColor',
   'buttonPrimaryOnDarkHoverTextColor',
   'buttonPrimaryOnDarkActiveTextColor',
   'buttonPrimaryOnDarkBackgroundColor',
   'buttonPrimaryOnDarkHoverBackgroundColor',
   'buttonPrimaryOnDarkActiveBackgroundColor',
-];
-
-export const primaryOnLightThemeAttributes = [
   'buttonPrimaryOnLightTextColor',
   'buttonPrimaryOnLightHoverTextColor',
   'buttonPrimaryOnLightActiveTextColor',
   'buttonPrimaryOnLightBackgroundColor',
   'buttonPrimaryOnLightHoverBackgroundColor',
   'buttonPrimaryOnLightActiveBackgroundColor',
-];
-
-export const secondaryThemeAttributes = [
   'buttonSecondaryTextColor',
   'buttonSecondaryHoverTextColor',
   'buttonSecondaryActiveTextColor',
@@ -57,18 +118,12 @@ export const secondaryThemeAttributes = [
   'buttonSecondaryBackgroundColor',
   'buttonSecondaryHoverBackgroundColor',
   'buttonSecondaryActiveBackgroundColor',
-];
-
-export const secondaryOnDarkThemeAttributes = [
   'buttonSecondaryOnDarkTextColor',
   'buttonSecondaryOnDarkHoverTextColor',
   'buttonSecondaryOnDarkActiveTextColor',
   'buttonSecondaryOnDarkBackgroundColor',
   'buttonSecondaryOnDarkHoverBackgroundColor',
   'buttonSecondaryOnDarkActiveBackgroundColor',
-];
-
-export const featuredThemeAttributes = [
   'buttonFeaturedTextColor',
   'buttonFeaturedHoverTextColor',
   'buttonFeaturedActiveTextColor',
@@ -77,9 +132,6 @@ export const featuredThemeAttributes = [
   'buttonFeaturedBackgroundColor',
   'buttonFeaturedHoverBackgroundColor',
   'buttonFeaturedActiveBackgroundColor',
-];
-
-export const destructiveThemeAttributes = [
   'buttonDestructiveTextColor',
   'buttonDestructiveHoverTextColor',
   'buttonDestructiveActiveTextColor',
@@ -89,6 +141,7 @@ export const destructiveThemeAttributes = [
   'buttonDestructiveBackgroundColor',
   'buttonDestructiveHoverBackgroundColor',
   'buttonDestructiveActiveBackgroundColor',
+  'buttonLinkLoadingColor',
 ];
 
-export const linkThemeAttributes = ['buttonLinkLoadingColor'];
+export default legacyThemeAttributes;

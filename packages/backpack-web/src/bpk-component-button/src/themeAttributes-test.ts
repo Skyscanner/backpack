@@ -16,25 +16,114 @@
  * limitations under the License.
  */
 
-import {
+import legacyThemeAttributes, {
+  allButtonThemeAttributes,
   buttonThemeAttributes,
-  primaryThemeAttributes,
-  primaryOnDarkThemeAttributes,
-  primaryOnLightThemeAttributes,
-  secondaryThemeAttributes,
-  secondaryOnDarkThemeAttributes,
   destructiveThemeAttributes,
   featuredThemeAttributes,
   linkThemeAttributes,
+  primaryOnDarkThemeAttributes,
+  primaryOnLightThemeAttributes,
+  primaryThemeAttributes,
+  secondaryOnDarkThemeAttributes,
+  secondaryThemeAttributes,
 } from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
-    expect(buttonThemeAttributes).toEqual(['buttonFontSize', 'buttonBorderRadius']);
+    expect(buttonThemeAttributes).toEqual([
+      'privateButtonDimensionRadius',
+      'privateButtonDimensionMinHeightLarge',
+      'privateButtonDimensionPaddingHorizontalLarge',
+    ]);
   });
 
   it('should export the correct primary theme attributes', () => {
     expect(primaryThemeAttributes).toEqual([
+      'privateButtonColourBgPrimary',
+      'privateButtonColourBgPrimaryPressed',
+    ]);
+  });
+
+  it('should export the correct primaryOnDark theme attributes', () => {
+    expect(primaryOnDarkThemeAttributes).toEqual([
+      'privateButtonColourBgPrimaryOnDark',
+      'privateButtonColourBgPrimaryOnDarkPressed',
+    ]);
+  });
+
+  it('should export the correct primaryOnLight theme attributes', () => {
+    expect(primaryOnLightThemeAttributes).toEqual([
+      'privateButtonColourBgPrimaryOnLight',
+      'privateButtonColourBgPrimaryOnLightPressed',
+    ]);
+  });
+
+  it('should export the correct secondary theme attributes', () => {
+    expect(secondaryThemeAttributes).toEqual([
+      'privateButtonColourTextSecondary',
+      'privateButtonColourBgSecondary',
+      'privateButtonColourBgSecondaryPressed',
+    ]);
+  });
+
+  it('should export the correct secondaryOnDark theme attributes', () => {
+    expect(secondaryOnDarkThemeAttributes).toEqual([
+      'privateButtonColourBgSecondaryOnDark',
+      'privateButtonColourBgSecondaryOnDarkPressed',
+    ]);
+  });
+
+  it('should export the correct destructive theme attributes', () => {
+    expect(destructiveThemeAttributes).toEqual([
+      'privateButtonColourTextDestructive',
+      'privateButtonColourBgDestructive',
+      'privateButtonColourBgDestructivePressed',
+    ]);
+  });
+
+  it('should export the correct featured theme attributes', () => {
+    expect(featuredThemeAttributes).toEqual([
+      'privateButtonColourTextFeature',
+      'privateButtonColourBgFeatured',
+      'privateButtonColourBgFeaturePressed',
+    ]);
+  });
+
+  it('should export the correct link theme attributes', () => {
+    expect(linkThemeAttributes).toEqual(['privateButtonColourTextLinkOnDark']);
+  });
+
+  it('should export allButtonThemeAttributes with all unique private button tokens', () => {
+    expect(allButtonThemeAttributes).toEqual([
+      'privateButtonDimensionRadius',
+      'privateButtonDimensionMinHeightLarge',
+      'privateButtonDimensionPaddingHorizontalLarge',
+      'privateButtonColourBgPrimary',
+      'privateButtonColourBgPrimaryPressed',
+      'privateButtonColourBgPrimaryOnDark',
+      'privateButtonColourBgPrimaryOnDarkPressed',
+      'privateButtonColourBgPrimaryOnLight',
+      'privateButtonColourBgPrimaryOnLightPressed',
+      'privateButtonColourTextSecondary',
+      'privateButtonColourBgSecondary',
+      'privateButtonColourBgSecondaryPressed',
+      'privateButtonColourBgSecondaryOnDark',
+      'privateButtonColourBgSecondaryOnDarkPressed',
+      'privateButtonColourTextFeature',
+      'privateButtonColourBgFeatured',
+      'privateButtonColourBgFeaturePressed',
+      'privateButtonColourTextDestructive',
+      'privateButtonColourBgDestructive',
+      'privateButtonColourBgDestructivePressed',
+      'privateButtonColourTextLinkOnDark',
+    ]);
+  });
+
+  it('should export the deprecated legacyThemeAttributes default with the legacy keys', () => {
+    expect(legacyThemeAttributes).toEqual([
+      'buttonFontSize',
+      'buttonBorderRadius',
       'buttonPrimaryTextColor',
       'buttonPrimaryHoverTextColor',
       'buttonPrimaryActiveTextColor',
@@ -43,33 +132,18 @@ describe('themeAttributes', () => {
       'buttonPrimaryBackgroundColor',
       'buttonPrimaryHoverBackgroundColor',
       'buttonPrimaryActiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct primaryOnDark theme attributes', () => {
-    expect(primaryOnDarkThemeAttributes).toEqual([
       'buttonPrimaryOnDarkTextColor',
       'buttonPrimaryOnDarkHoverTextColor',
       'buttonPrimaryOnDarkActiveTextColor',
       'buttonPrimaryOnDarkBackgroundColor',
       'buttonPrimaryOnDarkHoverBackgroundColor',
       'buttonPrimaryOnDarkActiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct primaryOnLight theme attributes', () => {
-    expect(primaryOnLightThemeAttributes).toEqual([
       'buttonPrimaryOnLightTextColor',
       'buttonPrimaryOnLightHoverTextColor',
       'buttonPrimaryOnLightActiveTextColor',
       'buttonPrimaryOnLightBackgroundColor',
       'buttonPrimaryOnLightHoverBackgroundColor',
       'buttonPrimaryOnLightActiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct secondary theme attributes', () => {
-    expect(secondaryThemeAttributes).toEqual([
       'buttonSecondaryTextColor',
       'buttonSecondaryHoverTextColor',
       'buttonSecondaryActiveTextColor',
@@ -79,22 +153,20 @@ describe('themeAttributes', () => {
       'buttonSecondaryBackgroundColor',
       'buttonSecondaryHoverBackgroundColor',
       'buttonSecondaryActiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct secondaryOnDark theme attributes', () => {
-    expect(secondaryOnDarkThemeAttributes).toEqual([
       'buttonSecondaryOnDarkTextColor',
       'buttonSecondaryOnDarkHoverTextColor',
       'buttonSecondaryOnDarkActiveTextColor',
       'buttonSecondaryOnDarkBackgroundColor',
       'buttonSecondaryOnDarkHoverBackgroundColor',
       'buttonSecondaryOnDarkActiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct destructive theme attributes', () => {
-    expect(destructiveThemeAttributes).toEqual([
+      'buttonFeaturedTextColor',
+      'buttonFeaturedHoverTextColor',
+      'buttonFeaturedActiveTextColor',
+      'buttonFeaturedGradientStartColor',
+      'buttonFeaturedGradientEndColor',
+      'buttonFeaturedBackgroundColor',
+      'buttonFeaturedHoverBackgroundColor',
+      'buttonFeaturedActiveBackgroundColor',
       'buttonDestructiveTextColor',
       'buttonDestructiveHoverTextColor',
       'buttonDestructiveActiveTextColor',
@@ -104,23 +176,7 @@ describe('themeAttributes', () => {
       'buttonDestructiveBackgroundColor',
       'buttonDestructiveHoverBackgroundColor',
       'buttonDestructiveActiveBackgroundColor',
+      'buttonLinkLoadingColor',
     ]);
-  });
-
-  it('should export the correct featured theme attributes', () => {
-    expect(featuredThemeAttributes).toEqual([
-      'buttonFeaturedTextColor',
-      'buttonFeaturedHoverTextColor',
-      'buttonFeaturedActiveTextColor',
-      'buttonFeaturedGradientStartColor',
-      'buttonFeaturedGradientEndColor',
-      'buttonFeaturedBackgroundColor',
-      'buttonFeaturedHoverBackgroundColor',
-      'buttonFeaturedActiveBackgroundColor',
-    ]);
-  });
-
-  it('should export the correct link theme attributes', () => {
-    expect(linkThemeAttributes).toEqual(['buttonLinkLoadingColor']);
   });
 });

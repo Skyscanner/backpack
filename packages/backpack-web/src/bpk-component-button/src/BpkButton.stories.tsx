@@ -29,11 +29,19 @@ import LargeLightningIcon from '../../bpk-component-icon/lg/lightning';
 import LargeLongArrowRightIcon from '../../bpk-component-icon/lg/long-arrow-right';
 import SmallLightningIcon from '../../bpk-component-icon/sm/lightning';
 import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
+import {
+  BpkHStack,
+  BpkProvider,
+  BpkSpacing,
+  BpkVStack,
+} from '../../bpk-component-layout';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
+import { allButtonThemeAttributes } from './themeAttributes';
 
 import type { Meta } from '@storybook/react';
 
@@ -444,11 +452,87 @@ const SubmitButtonExample = (props: any) => (
 
 const ThemedBorderRadiusExample = () => (
   <BpkThemeProvider
-    theme={{ buttonBorderRadius: '999px' }}
-    themeAttributes={['buttonBorderRadius']}
+    theme={{ privateButtonDimensionRadius: '999px' }}
+    themeAttributes={['privateButtonDimensionRadius']}
   >
     <PrimaryExample />
   </BpkThemeProvider>
+);
+
+const ALL_BUTTON_ROWS: Array<{
+  type: (typeof BUTTON_TYPES)[keyof typeof BUTTON_TYPES];
+  label: string;
+  dark?: boolean;
+}> = [
+  { type: BUTTON_TYPES.primary, label: 'Primary' },
+  { type: BUTTON_TYPES.primaryOnDark, label: 'PrimaryOnDark', dark: true },
+  { type: BUTTON_TYPES.primaryOnLight, label: 'PrimaryOnLight' },
+  { type: BUTTON_TYPES.secondary, label: 'Secondary' },
+  { type: BUTTON_TYPES.secondaryOnDark, label: 'SecondaryOnDark', dark: true },
+  { type: BUTTON_TYPES.destructive, label: 'Destructive' },
+  { type: BUTTON_TYPES.featured, label: 'Featured' },
+  { type: BUTTON_TYPES.linkOnDark, label: 'LinkOnDark', dark: true },
+];
+
+const THEMED_BUTTON_THEME = {
+  privateButtonDimensionRadius: '999px',
+  privateButtonDimensionMinHeightLarge: '56px',
+  privateButtonDimensionPaddingHorizontalLarge: '24px',
+  privateButtonColourBgPrimary: '#05203c',
+  privateButtonColourBgPrimaryPressed: '#154679',
+  privateButtonColourBgPrimaryOnDark: '#ffffff',
+  privateButtonColourBgPrimaryOnDarkPressed: '#c1c7cf',
+  privateButtonColourBgPrimaryOnLight: '#05203c',
+  privateButtonColourBgPrimaryOnLightPressed: '#154679',
+  privateButtonColourTextSecondary: '#161616',
+  privateButtonColourBgSecondary: '#e3f0ff',
+  privateButtonColourBgSecondaryPressed: '#b4d7ff',
+  privateButtonColourBgSecondaryOnDark: 'rgba(255, 255, 255, 0.1)',
+  privateButtonColourBgSecondaryOnDarkPressed: 'rgba(0, 0, 0, 0.5)',
+  privateButtonColourTextFeature: '#ffffff',
+  privateButtonColourBgFeatured: '#0062e3',
+  privateButtonColourBgFeaturePressed: '#024daf',
+  privateButtonColourTextDestructive: '#e70866',
+  privateButtonColourBgDestructive: '#e0e4e9',
+  privateButtonColourBgDestructivePressed: '#e70866',
+  privateButtonColourTextLinkOnDark: '#ffffff',
+};
+
+const ButtonRow = ({ dark, label, type }: (typeof ALL_BUTTON_ROWS)[number]) => {
+  const row = (
+    <BpkHStack gap={BpkSpacing.XL} align="center" flexGrow={1}>
+      <BpkButton type={type} size={SIZE_TYPES.large} onClick={action('Button clicked')}>
+        {label}
+      </BpkButton>
+      <BpkThemeProvider
+        theme={THEMED_BUTTON_THEME}
+        themeAttributes={allButtonThemeAttributes}
+      >
+        <BpkButton type={type} size={SIZE_TYPES.large} onClick={action('Button clicked')}>
+          {label}
+        </BpkButton>
+      </BpkThemeProvider>
+    </BpkHStack>
+  );
+  return dark ? (
+    <BpkDarkExampleWrapper padded>{row}</BpkDarkExampleWrapper>
+  ) : (
+    row
+  );
+};
+
+const ThemedExample = () => (
+  <BpkProvider>
+    <BpkVStack gap={BpkSpacing.SM}>
+      <BpkHStack gap={BpkSpacing.XL}>
+        <BpkText textStyle={TEXT_STYLES.caption}>Default</BpkText>
+        <BpkText textStyle={TEXT_STYLES.caption}>Themed</BpkText>
+      </BpkHStack>
+      {ALL_BUTTON_ROWS.map((row) => (
+        <ButtonRow key={row.label} {...row} />
+      ))}
+    </BpkVStack>
+  </BpkProvider>
 );
 
 const LinksExamples = () => (
@@ -572,4 +656,9 @@ export const FullWidth = {
 
 export const ThemedCornerRadius = {
   render: () => <ThemedBorderRadiusExample />,
+};
+
+export const Themed = {
+  render: () => <ThemedExample />,
+  tags: ['dark-mode-compatible'],
 };

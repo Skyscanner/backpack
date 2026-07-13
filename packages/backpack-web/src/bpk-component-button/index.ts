@@ -27,6 +27,7 @@ export {
 } from './src/common-types';
 
 export {
+  allButtonThemeAttributes,
   buttonThemeAttributes,
   primaryThemeAttributes,
   primaryOnDarkThemeAttributes,
