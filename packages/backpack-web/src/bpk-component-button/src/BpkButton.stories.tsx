@@ -35,7 +35,7 @@ import {
   BpkSpacing,
   BpkVStack,
 } from '../../bpk-component-layout';
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
 
@@ -476,8 +476,11 @@ const ALL_BUTTON_ROWS: Array<{
 
 const THEMED_BUTTON_THEME = {
   privateButtonDimensionRadius: '999px',
+  privateButtonDimensionMinHeightDefault: '36px',
+  privateButtonDimensionPaddingHorizontalDefault: '16px',
   privateButtonDimensionMinHeightLarge: '56px',
   privateButtonDimensionPaddingHorizontalLarge: '24px',
+  privateButtonColourBgDisabled: '#e0e4e9',
   privateButtonColourBgPrimary: '#05203c',
   privateButtonColourBgPrimaryPressed: '#154679',
   privateButtonColourBgPrimaryOnDark: '#ffffff',
@@ -489,6 +492,7 @@ const THEMED_BUTTON_THEME = {
   privateButtonColourBgSecondaryPressed: '#b4d7ff',
   privateButtonColourBgSecondaryOnDark: 'rgba(255, 255, 255, 0.1)',
   privateButtonColourBgSecondaryOnDarkPressed: 'rgba(0, 0, 0, 0.5)',
+  privateButtonColourBgSecondaryOnDarkDisabled: '#0b121d',
   privateButtonColourTextFeature: '#ffffff',
   privateButtonColourBgFeatured: '#0062e3',
   privateButtonColourBgFeaturePressed: '#024daf',

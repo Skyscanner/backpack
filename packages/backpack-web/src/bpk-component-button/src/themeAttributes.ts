@@ -18,8 +18,11 @@
 
 export const buttonThemeAttributes = [
   'privateButtonDimensionRadius',
+  'privateButtonDimensionMinHeightDefault',
+  'privateButtonDimensionPaddingHorizontalDefault',
   'privateButtonDimensionMinHeightLarge',
   'privateButtonDimensionPaddingHorizontalLarge',
+  'privateButtonColourBgDisabled',
 ];
 
 export const primaryThemeAttributes = [
@@ -46,6 +49,7 @@ export const secondaryThemeAttributes = [
 export const secondaryOnDarkThemeAttributes = [
   'privateButtonColourBgSecondaryOnDark',
   'privateButtonColourBgSecondaryOnDarkPressed',
+  'privateButtonColourBgSecondaryOnDarkDisabled',
 ];
 
 export const featuredThemeAttributes = [
@@ -68,15 +72,17 @@ export const linkThemeAttributes = ['privateButtonColourTextLinkOnDark'];
  * (text, core, status colours) can be overridden at the theme level independently.
  */
 export const allButtonThemeAttributes = [
-  ...buttonThemeAttributes,
-  ...primaryThemeAttributes,
-  ...primaryOnDarkThemeAttributes,
-  ...primaryOnLightThemeAttributes,
-  ...secondaryThemeAttributes,
-  ...secondaryOnDarkThemeAttributes,
-  ...featuredThemeAttributes,
-  ...destructiveThemeAttributes,
-  ...linkThemeAttributes,
+  ...new Set([
+    ...buttonThemeAttributes,
+    ...primaryThemeAttributes,
+    ...primaryOnDarkThemeAttributes,
+    ...primaryOnLightThemeAttributes,
+    ...secondaryThemeAttributes,
+    ...secondaryOnDarkThemeAttributes,
+    ...featuredThemeAttributes,
+    ...destructiveThemeAttributes,
+    ...linkThemeAttributes,
+  ]),
 ];
 
 /**

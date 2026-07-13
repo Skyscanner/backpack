@@ -33,8 +33,11 @@ describe('themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
     expect(buttonThemeAttributes).toEqual([
       'privateButtonDimensionRadius',
+      'privateButtonDimensionMinHeightDefault',
+      'privateButtonDimensionPaddingHorizontalDefault',
       'privateButtonDimensionMinHeightLarge',
       'privateButtonDimensionPaddingHorizontalLarge',
+      'privateButtonColourBgDisabled',
     ]);
   });
 
@@ -71,6 +74,7 @@ describe('themeAttributes', () => {
     expect(secondaryOnDarkThemeAttributes).toEqual([
       'privateButtonColourBgSecondaryOnDark',
       'privateButtonColourBgSecondaryOnDarkPressed',
+      'privateButtonColourBgSecondaryOnDarkDisabled',
     ]);
   });
 
@@ -97,8 +101,11 @@ describe('themeAttributes', () => {
   it('should export allButtonThemeAttributes with all unique private button tokens', () => {
     expect(allButtonThemeAttributes).toEqual([
       'privateButtonDimensionRadius',
+      'privateButtonDimensionMinHeightDefault',
+      'privateButtonDimensionPaddingHorizontalDefault',
       'privateButtonDimensionMinHeightLarge',
       'privateButtonDimensionPaddingHorizontalLarge',
+      'privateButtonColourBgDisabled',
       'privateButtonColourBgPrimary',
       'privateButtonColourBgPrimaryPressed',
       'privateButtonColourBgPrimaryOnDark',
@@ -110,6 +117,7 @@ describe('themeAttributes', () => {
       'privateButtonColourBgSecondaryPressed',
       'privateButtonColourBgSecondaryOnDark',
       'privateButtonColourBgSecondaryOnDarkPressed',
+      'privateButtonColourBgSecondaryOnDarkDisabled',
       'privateButtonColourTextFeature',
       'privateButtonColourBgFeatured',
       'privateButtonColourBgFeaturePressed',

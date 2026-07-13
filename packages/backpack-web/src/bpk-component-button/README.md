@@ -78,13 +78,16 @@ All attributes in the array must be supplied or `BpkThemeProvider` will silently
 | Theme attribute | CSS custom property | Used by |
 |---|---|---|
 | `privateButtonDimensionRadius` | `--bpk-private-button-dimension-radius` | all variants (corner radius) |
+| `privateButtonDimensionMinHeightDefault` | `--bpk-private-button-dimension-min-height-default` | all variants (default size height) |
+| `privateButtonDimensionPaddingHorizontalDefault` | `--bpk-private-button-dimension-padding-horizontal-default` | all variants (default size horizontal padding) |
 | `privateButtonDimensionMinHeightLarge` | `--bpk-private-button-dimension-min-height-large` | all variants (large size height) |
 | `privateButtonDimensionPaddingHorizontalLarge` | `--bpk-private-button-dimension-padding-horizontal-large` | all variants (large size horizontal padding) |
+| `privateButtonColourBgDisabled` | `--bpk-private-button-colour-bg-disabled` | primary, primaryOnDark, primaryOnLight, secondary, destructive, featured (disabled background) |
 | `privateButtonColourBgPrimary` / `privateButtonColourBgPrimaryPressed` | `--bpk-private-button-colour-bg-primary` / `-primary-pressed` | primary |
 | `privateButtonColourBgPrimaryOnDark` / `privateButtonColourBgPrimaryOnDarkPressed` | `--bpk-private-button-colour-bg-primary-on-dark` / `-primary-on-dark-pressed` | primaryOnDark |
 | `privateButtonColourBgPrimaryOnLight` / `privateButtonColourBgPrimaryOnLightPressed` | `--bpk-private-button-colour-bg-primary-on-light` / `-primary-on-light-pressed` | primaryOnLight |
 | `privateButtonColourTextSecondary`, `privateButtonColourBgSecondary`, `privateButtonColourBgSecondaryPressed` | `--bpk-private-button-colour-text-secondary`, `-colour-bg-secondary`, `-secondary-pressed` | secondary |
-| `privateButtonColourBgSecondaryOnDark` / `privateButtonColourBgSecondaryOnDarkPressed` | `--bpk-private-button-colour-bg-secondary-on-dark` / `-secondary-on-dark-pressed` | secondaryOnDark |
+| `privateButtonColourBgSecondaryOnDark`, `privateButtonColourBgSecondaryOnDarkPressed`, `privateButtonColourBgSecondaryOnDarkDisabled` | `--bpk-private-button-colour-bg-secondary-on-dark`, `-secondary-on-dark-pressed`, `-secondary-on-dark-disabled` | secondaryOnDark |
 | `privateButtonColourTextFeature`, `privateButtonColourBgFeatured`, `privateButtonColourBgFeaturePressed` | `--bpk-private-button-colour-text-feature`, `-colour-bg-featured`, `-feature-pressed` | featured |
 | `privateButtonColourTextDestructive`, `privateButtonColourBgDestructive`, `privateButtonColourBgDestructivePressed` | `--bpk-private-button-colour-text-destructive`, `-colour-bg-destructive`, `-destructive-pressed` | destructive |
 | `privateButtonColourTextLinkOnDark` | `--bpk-private-button-colour-text-link-on-dark` | linkOnDark |
