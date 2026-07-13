@@ -71,8 +71,8 @@ export const linkThemeAttributes = ['privateButtonColourTextLinkOnDark'];
  * Only exposes component-scoped (private) button tokens — global semantic vars
  * (text, core, status colours) can be overridden at the theme level independently.
  */
-export const allButtonThemeAttributes = [
-  ...new Set([
+export const allButtonThemeAttributes = Array.from(
+  new Set([
     ...buttonThemeAttributes,
     ...primaryThemeAttributes,
     ...primaryOnDarkThemeAttributes,
@@ -83,7 +83,7 @@ export const allButtonThemeAttributes = [
     ...destructiveThemeAttributes,
     ...linkThemeAttributes,
   ]),
-];
+);
 
 /**
  * @deprecated The keys in this array pre-date the CSS custom properties migration and map to
