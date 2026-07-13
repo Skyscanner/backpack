@@ -1,0 +1,92 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../bpk-mixins/tokens';
+
+@mixin bpk-locale-line-breaks {
+  // Locale-aware line-break rules.
+  // Must be after font-stack rules so source order wins over browser defaults.
+  // :lang() matches subtags - :lang(ja) covers ja, ja-JP, etc.
+
+  // Japanese: preserve phrase boundaries. Browsers with auto-phrase can infer
+  // better phrase breaks; others should use explicit <wbr> hints for key copy.
+  :lang(ja) {
+    line-break: strict;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  @supports (word-break: auto-phrase) {
+    :lang(ja) {
+      word-break: auto-phrase;
+    }
+  }
+
+  // Chinese: strict kinsoku controls punctuation and prohibited line-start
+  // characters. `break-word` is a conservative fallback that avoids overflow.
+  :lang(zh) {
+    line-break: strict;
+    overflow-wrap: break-word;
+  }
+
+  // Korean: word-level breaks (KS X 1026 kinsoku), not character-level.
+  // word-break: keep-all preserves syllable blocks (Korean typographic convention).
+  // overflow-wrap: break-word fallback required for long compounds with no spaces.
+  :lang(ko) {
+    line-break: strict;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  // Mobile: strict can leave uneven rag or orphaned characters on narrow viewports.
+  // stylelint-disable-next-line order/order
+  @media #{tokens.$bpk-breakpoint-query-small-tablet} {
+    :lang(zh),
+    :lang(ko) {
+      line-break: loose;
+    }
+  }
+
+  // Arabic, Hebrew - overflow only; direction handled by existing html[dir] RTL system.
+  :lang(ar),
+  :lang(he) {
+    overflow-wrap: break-word;
+  }
+
+  // Thai - no word spaces; ICU dictionary failure = no natural break points.
+  // overflow-wrap: anywhere (not just break-word) because Thai strings have no
+  // space characters to serve as natural break opportunities.
+  :lang(th) {
+    line-break: loose;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+
+  // Hindi (Devanagari) - space-delimited, wraps like Latin.
+  :lang(hi) {
+    overflow-wrap: break-word;
+  }
+
+  // Russian, Ukrainian - Cyrillic wraps like Latin.
+  // hyphens: auto works in Safari and Firefox; Chrome degrades silently to no hyphens.
+  :lang(ru),
+  :lang(uk) {
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+}

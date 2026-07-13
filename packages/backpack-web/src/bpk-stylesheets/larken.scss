@@ -244,6 +244,7 @@ $bpk-fonts: (
 
 @use 'sass:list';
 @use 'sass:map';
+@use './locale-line-breaks';
 
 @mixin bpk-font-face($family, $style, $weight, $files) {
   $srcs: ();
@@ -360,3 +361,5 @@ $bpk-fonts: (
     larken, 'Noto Serif', 'Noto Sans Arabic', 'Noto Serif Hebrew',
     'Noto Serif Devanagari', 'Noto Serif Thai', sans-serif;
 }
+
+@include locale-line-breaks.bpk-locale-line-breaks;
