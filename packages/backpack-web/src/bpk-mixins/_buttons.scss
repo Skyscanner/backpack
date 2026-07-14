@@ -510,16 +510,12 @@
   }
 
   // Loading state override: restore pressed appearance while disabled.
-  // No published CSS var exists for this legacy theme hook, so it keeps
-  // using bpk-themeable-property rather than a plain var().
   &.bpk-button--loading:disabled,
   &.bpk-button--loading:disabled:active {
     background: none;
-
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-button-link-loading-color,
-      tokens.$bpk-text-primary-day
+    color: var(
+      --bpk-private-button-colour-text-link,
+      var(--bpk-text-primary, tokens.$bpk-text-primary-day)
     );
   }
 
