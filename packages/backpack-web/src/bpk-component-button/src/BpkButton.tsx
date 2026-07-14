@@ -59,8 +59,9 @@ const BpkButton = ({
 }: Props) => {
   const isDisabled = disabled || loading;
   const isLinkType = type === BUTTON_TYPES.link || type === BUTTON_TYPES.linkOnDark;
+  const isLinkWithText = isLinkType && !iconOnly;
   const alternate = type === BUTTON_TYPES.linkOnDark;
-  const shouldUnderline = isLinkType && !iconOnly && !isDisabled;
+  const shouldUnderline = isLinkWithText && !isDisabled;
   const hasIcons = !!(leadingIcon || trailingIcon);
 
   const classNames = getCommonClassName(
@@ -90,7 +91,7 @@ const BpkButton = ({
   // to toggle on/off with `disabled`, which made React add/remove the wrapper and move the
   // bare text node. If Google Translate had replaced that text node with a <font> element,
   // React's reconciler would throw a removeChild error. Keeping the span stable avoids it.
-  const textContent = isLinkType && !iconOnly
+  const textContent = isLinkWithText
     ? <span className={underlinedClassName}>{children}</span>
     : children;
 
