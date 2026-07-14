@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/badges';
+@use '../../bpk-mixins/utils';
 
 .bpk-badge {
   @include badges.bpk-badge;
@@ -70,6 +71,14 @@
   }
 
   &--interactive {
+    // Remove text decoration from link-like badges
+    // and ensure focus visibility interactive badges
+    text-decoration: none;
+
     @include badges.bpk-badge--interactive;
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
   }
 }

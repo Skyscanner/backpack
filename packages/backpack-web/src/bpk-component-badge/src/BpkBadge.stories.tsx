@@ -34,7 +34,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
 
-import BpkBadge, { BADGE_TYPES, BADGE_VARIANTS } from './BpkBadge';
+import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 import type { Meta } from '@storybook/react';
 
@@ -151,7 +151,11 @@ const InteractiveExample = () => (
   <BadgeLayout>
     <BpkBadge as='button'>Normal</BpkBadge>
     &nbsp;
-    <BpkBadge type={BADGE_TYPES.brand} as='button'>Brand</BpkBadge>
+    <BpkBadge as='button' type={BADGE_TYPES.brand}>Brand</BpkBadge>
+    &nbsp;
+    <BpkBadge as='a' href=''>Normal</BpkBadge>
+    &nbsp;
+    <BpkBadge as='a' href='' type={BADGE_TYPES.brand}>Brand</BpkBadge>
   </BadgeLayout>
 );
 

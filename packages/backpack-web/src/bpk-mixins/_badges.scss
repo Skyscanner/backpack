@@ -283,7 +283,8 @@
   appearance: none;
   gap: tokens.bpk-spacing-md();
 
-  // TODO: icon should be 12px (0.75rem) but we can't style svgs here
-
-  // TODO: Match figma design in text + icon vertical alignment.
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+  }
 }

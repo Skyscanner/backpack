@@ -15,9 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { forwardRef } from 'react';
-import type { ReactNode, Ref } from 'react';
+import type { ReactNode, Ref, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -51,15 +50,32 @@ const badgeTypeClassNames = {
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
 
-export type Props = {
+type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'type'> & {
+  as: 'button';
+  onClick?: () => void;
+};
+
+type AnchorProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'className' | 'style'> & {
+  as: 'a';
+  href: string;
+  /** Open link in a new tab. Sets target="_blank" and rel="noopener noreferrer". */
+  blank?: boolean;
+};
+
+type CommonProps = {
+  children: string | ReactNode;
   type?: BadgeType;
-  as?: 'button' | null;
   docked?: 'right' | 'left' | null;
   centered?: boolean;
   className?: string | null;
-  children: string | ReactNode;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
+
+export type Props = CommonProps & (
+  | { as?: 'span' }
+  | ButtonProps
+  | AnchorProps
+  );
+
 
 const BadgeInfoCircleIcon = () => (
   <svg
@@ -82,7 +98,7 @@ const BadgeInfoCircleIcon = () => (
 
 const BpkBadgeInner = (
   {
-    as = null,
+    as = 'span',
     centered = false,
     children,
     className = null,
@@ -90,26 +106,54 @@ const BpkBadgeInner = (
     type = BADGE_TYPES.normal,
     ...rest
   }: Props,
-  ref: Ref<HTMLButtonElement | HTMLSpanElement>,
+  ref: Ref<HTMLButtonElement | HTMLAnchorElement | HTMLSpanElement>,
 ) => {
   const classNames = getClassName(
     'bpk-badge',
     badgeTypeClassNames[type],
-    as === 'button' && 'bpk-badge--interactive',
+    (as === 'button' || as === 'a') && 'bpk-badge--interactive',
     docked === 'right' && 'bpk-badge--docked-right',
     docked === 'left' && 'bpk-badge--docked-left',
     centered && 'bpk-badge--centered',
     className,
   );
 
+  if (as === 'a') {
+
+    const {
+      blank,
+      rel,
+      ...anchorRest
+    } = rest as Omit<AnchorProps, 'as' | 'children'>;
+
+
+    // Always include noopener noreferrer when blank=true; merge with consumer rel if provided.
+    const resolvedRel = blank
+      ? [rel, 'noopener noreferrer'].filter(Boolean).join(' ')
+      : rel;
+
+    return (<a
+      ref={ref as Ref<HTMLAnchorElement>}
+      rel={resolvedRel}
+      {...anchorRest}
+      className={classNames}
+      {...getDataComponentAttribute('Badge')}
+    >
+      {children}
+      <BadgeInfoCircleIcon />
+    </a>);
+  }
+
   if (as === 'button') {
+    const { onClick, ...buttonRest } = rest as Omit<ButtonProps, 'as' | 'children'>;
     return (
       <button
         ref={ref as Ref<HTMLButtonElement>}
+        onClick={onClick}
         type="button"
         {...getDataComponentAttribute('Badge')}
         className={classNames}
-        {...rest}
+        {...buttonRest}
       >
         {children}
         <BadgeInfoCircleIcon />
@@ -123,7 +167,7 @@ const BpkBadgeInner = (
       className={classNames}
       {...getDataComponentAttribute('Badge')}
       {...rest}
-    >{children} </span>
+    >{children}</span>
   );
 };
 
