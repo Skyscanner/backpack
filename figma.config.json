@@ -29,7 +29,6 @@
       "bpk-component-checkbox-card/src/*": "@skyscanner/backpack-web/bpk-component-checkbox-card",
       "bpk-component-chip/src/*": "@skyscanner/backpack-web/bpk-component-chip",
       "bpk-component-chip-group/src/*": "@skyscanner/backpack-web/bpk-component-chip-group",
-      "bpk-component-code/src/*": "@skyscanner/backpack-web/bpk-component-code",
       "bpk-component-content-cards/src/*": "@skyscanner/backpack-web/bpk-component-content-cards",
       "bpk-component-datatable/src/*": "@skyscanner/backpack-web/bpk-component-datatable",
       "bpk-component-dialog/src/*": "@skyscanner/backpack-web/bpk-component-dialog",
@@ -56,7 +55,6 @@
       "bpk-component-overlay/src/*": "@skyscanner/backpack-web/bpk-component-overlay",
       "bpk-component-page-indicator/src/*": "@skyscanner/backpack-web/bpk-component-page-indicator",
       "bpk-component-pagination/src/*": "@skyscanner/backpack-web/bpk-component-pagination",
-      "bpk-component-panel/src/*": "@skyscanner/backpack-web/bpk-component-panel",
       "bpk-component-phone-input/src/*": "@skyscanner/backpack-web/bpk-component-phone-input",
       "bpk-component-popover/src/*": "@skyscanner/backpack-web/bpk-component-popover",
       "bpk-component-price/src/*": "@skyscanner/backpack-web/bpk-component-price",
@@ -78,7 +76,6 @@
       "bpk-component-switch/src/*": "@skyscanner/backpack-web/bpk-component-switch",
       "bpk-component-table/src/*": "@skyscanner/backpack-web/bpk-component-table",
       "bpk-component-textarea/src/*": "@skyscanner/backpack-web/bpk-component-textarea",
-      "bpk-component-ticket/src/*": "@skyscanner/backpack-web/bpk-component-ticket",
       "bpk-component-tooltip/src/*": "@skyscanner/backpack-web/bpk-component-tooltip"
     },
     "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/irZ3YBx8vOm16ICkAr7mB3/Backpack-Components?node-id=100-1682&p=f&t=dyMLItX3JduHpAEJ-0"
