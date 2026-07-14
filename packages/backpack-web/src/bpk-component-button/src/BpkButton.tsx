@@ -89,7 +89,6 @@ const BpkButton = ({
   // Always wrap in a span (even when disabled/no underline) to prevent Google Translate
   // from replacing bare text nodes with <font> elements, which causes React's reconciler
   // to throw a removeChild error when it later tries to remove the original text node.
-  // See: https://skyscanner.atlassian.net/browse/SDBCK-302
   const textContent = <span className={underlinedClassName}>{children}</span>;
 
   const leadingIconEl = !iconOnly && leadingIcon ? (
