@@ -22,11 +22,16 @@ jobs:
           persist-credentials: false
       - name: Validate Code Connect (dry run)
         if: github.event_name == 'pull_request'
-        run: npx --package @figma/code-connect figma connect publish --dry-run
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          mapfile -t FILES < <(git diff --name-only origin/${{ github.base_ref }}...HEAD -- '*.figma.tsx')
+          if [ ${#FILES[@]} -gt 0 ]; then
+            npx --package @figma/code-connect@1.4.5 figma connect publish --dry-run --file "${FILES[@]}"
+          fi
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
       - name: Publish Code Connect
         if: github.event_name == 'push'
-        run: npx --package @figma/code-connect figma connect publish
+        run: npx --package @figma/code-connect@1.4.5 figma connect publish
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
