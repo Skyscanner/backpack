@@ -106,10 +106,11 @@ jobs:
       run: |
         trap 'rm -rf _prs_tmp' EXIT
         gh repo clone backpack/storybook-prs _prs_tmp -- \
-          --depth 1 --filter=blob:none --sparse
-        git -C _prs_tmp sparse-checkout set .github 2>/dev/null || true
+          --depth 1 --filter=blob:none --sparse --branch main
+        git -C _prs_tmp sparse-checkout set .github
         if [ -d _prs_tmp/.github ]; then
-          cp -r _prs_tmp/.github build/.github
+          mkdir -p build/.github
+          cp -r _prs_tmp/.github/. build/.github/
         fi
 
     - name: Deploy Storybook to backpack.github.io/storybook-prs
