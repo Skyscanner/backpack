@@ -29,7 +29,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
         env:
           PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
@@ -77,7 +77,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
         env:
           PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
@@ -117,7 +117,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
         env:
           PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 

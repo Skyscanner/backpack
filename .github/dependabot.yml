@@ -36,11 +36,6 @@ updates:
     interval: weekly
     time: "10:00"
   open-pull-requests-limit: 10
-  ignore:
-    # Pinned to v5.0.0 — v6.x caused 401s against Artifactory (see #228)
-    # https://github.com/pnpm/action-setup/issues/228
-    - dependency-name: 'pnpm/action-setup'
-      versions: ['>=6.0.0']
   groups:
     artifacts-actions:
       patterns:
