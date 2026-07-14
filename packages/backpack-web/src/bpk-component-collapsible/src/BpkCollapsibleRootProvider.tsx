@@ -31,14 +31,20 @@ export type BpkCollapsibleRootProviderProps = {
   children: ReactNode;
   value: BpkUseCollapsibleReturn;
   variant?: BpkCollapsibleVariant;
+  // When true, merges all provider props onto the single child element instead
+  // of injecting a wrapper div — load-bearing for pixel parity in layouts that
+  // hoist the provider over an existing item element.
+  asChild?: boolean;
 };
 
 const BpkCollapsibleRootProvider = ({
+  asChild,
   children,
   value,
   variant = COLLAPSIBLE_VARIANTS.default,
 }: BpkCollapsibleRootProviderProps) => (
   <Collapsible.RootProvider
+    asChild={asChild}
     className={getRootClassName(variant)}
     value={value}
     {...getDataComponentAttribute('Collapsible')}
