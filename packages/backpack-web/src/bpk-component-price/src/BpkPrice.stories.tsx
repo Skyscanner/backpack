@@ -655,6 +655,7 @@ const ThemedExample = () => (
       Themed
     </BpkText>
     <BpkThemeProvider
+      // eslint-disable-next-line backpack/use-tokens
       theme={{ textPrimary: 'red', textSecondary: 'green', textError: 'orange' }}
       themeAttributes={['textPrimary', 'textSecondary', 'textError']}
     >
@@ -684,6 +685,7 @@ const ThemedExample = () => (
     </BpkText>
     <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
       <BpkThemeProvider
+        // eslint-disable-next-line backpack/use-tokens
         theme={{ textOnDark: 'lime', textSecondaryOnContrast: 'orange', textError: 'yellow' }}
         themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
       >
