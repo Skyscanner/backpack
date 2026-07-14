@@ -84,11 +84,11 @@ const BpkButton = ({
         alternate && !implicit && 'bpk-button--link-underlined--alternate',
         implicit && alternate && 'bpk-button--link-underlined--implicit--alternate',
       )
-    : null;
+    : undefined;
 
-  const textContent = underlinedClassName
-    ? <span className={underlinedClassName}>{children}</span>
-    : children;
+  // Always wrap in a span to prevent Google Translate from replacing bare text nodes,
+  // which would cause React's removeChild to fail when reconciling the DOM.
+  const textContent = <span className={underlinedClassName}>{children}</span>;
 
   const leadingIconEl = !iconOnly && leadingIcon ? (
     <span className={getCommonClassName('bpk-button__leading-icon')}>
