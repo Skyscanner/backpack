@@ -22,6 +22,8 @@ import { surfaceContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../bpk-theming';
 
 import BpkPrice from './BpkPrice';
 import { SIZES, ALIGNS, VARIANTS } from './common-types';
@@ -634,4 +636,68 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+// Verify BpkThemeProvider CSS custom properties flow through BpkPrice → BpkText
+export const ThemeVerification = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
+        Default (no theme)
+      </p>
+      <BpkPrice
+        size={SIZES.large}
+        price="£1,830"
+        leadingText="from"
+        trailingText="per day"
+        previousPrice="£2,033"
+      />
+      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
+        Themed: textPrimary=red, textSecondary=green, textError=orange
+      </p>
+      <BpkThemeProvider
+        theme={{ textPrimary: 'red', textSecondary: 'green', textError: 'orange' }}
+        themeAttributes={['textPrimary', 'textSecondary', 'textError']}
+      >
+        <BpkPrice
+          size={SIZES.large}
+          price="£1,830"
+          leadingText="from"
+          trailingText="per day"
+          previousPrice="£2,033"
+        />
+      </BpkThemeProvider>
+      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
+        onContrast default (no theme)
+      </p>
+      <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
+        <BpkPrice
+          size={SIZES.large}
+          price="£1,830"
+          leadingText="from"
+          trailingText="per day"
+          previousPrice="£2,033"
+          variant={VARIANTS.onContrast}
+        />
+      </BpkDarkExampleWrapper>
+      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
+        onContrast themed: textOnDark=lime, textSecondaryOnContrast=orange, textError=yellow
+      </p>
+      <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
+        <BpkThemeProvider
+          theme={{ textOnDark: 'lime', textSecondaryOnContrast: 'orange', textError: 'yellow' }}
+          themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
+        >
+          <BpkPrice
+            size={SIZES.large}
+            price="£1,830"
+            leadingText="from"
+            trailingText="per day"
+            previousPrice="£2,033"
+            variant={VARIANTS.onContrast}
+          />
+        </BpkThemeProvider>
+      </BpkDarkExampleWrapper>
+    </div>
+  ),
 };

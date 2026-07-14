@@ -36,6 +36,10 @@ $text-colors: (
       tokens.$bpk-text-primary-inverse-day
     ),
   'text-secondary': var(--bpk-text-secondary, tokens.$bpk-text-secondary-day),
+  // No dedicated secondary-on-contrast token exists in bpk-foundations-web.
+  // textDisabledOnDark (white 50%) is the closest semantic match for secondary/supporting
+  // text on a contrast surface until a proper token is introduced.
+  'text-secondary-on-contrast': var(--bpk-text-secondary-on-contrast, tokens.$bpk-text-disabled-on-dark-day),
   'text-success': var(--bpk-text-success, tokens.$bpk-text-success-day),
 );
 

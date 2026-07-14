@@ -97,9 +97,8 @@ const BpkPrice = ({
     ? TEXT_COLORS.textOnDark
     : TEXT_COLORS.textPrimary;
 
-  // textDisabledOnDark is the closest available on-dark token for secondary/supporting text
   const secondaryColor = isOnContrast
-    ? TEXT_COLORS.textDisabledOnDark
+    ? TEXT_COLORS.textSecondaryOnContrast
     : TEXT_COLORS.textSecondary;
 
   const getTrailingTextNode = () => {
