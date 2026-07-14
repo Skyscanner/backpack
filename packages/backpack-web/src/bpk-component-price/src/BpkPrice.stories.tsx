@@ -17,7 +17,13 @@
  */
 
 
-import { surfaceContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  coreAccentDay,
+  corePrimaryDay,
+  statusDangerSpotDay,
+  statusSuccessSpotDay,
+  surfaceContrastDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
@@ -655,8 +661,7 @@ const ThemedExample = () => (
       Themed
     </BpkText>
     <BpkThemeProvider
-      // eslint-disable-next-line backpack/use-tokens
-      theme={{ textPrimary: 'red', textSecondary: 'green', textError: 'orange' }}
+      theme={{ textPrimary: statusDangerSpotDay, textSecondary: statusSuccessSpotDay, textError: coreAccentDay }}
       themeAttributes={['textPrimary', 'textSecondary', 'textError']}
     >
       <BpkPrice
@@ -685,8 +690,7 @@ const ThemedExample = () => (
     </BpkText>
     <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
       <BpkThemeProvider
-        // eslint-disable-next-line backpack/use-tokens
-        theme={{ textOnDark: 'lime', textSecondaryOnContrast: 'orange', textError: 'yellow' }}
+        theme={{ textOnDark: corePrimaryDay, textSecondaryOnContrast: statusSuccessSpotDay, textError: statusDangerSpotDay }}
         themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
       >
         <BpkPrice
