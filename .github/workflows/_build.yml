@@ -34,15 +34,18 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnpm'
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Restore Nx Build Cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
@@ -118,15 +121,18 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnpm'
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Override React to 19.2.5
         run: |
@@ -154,15 +160,18 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnpm'
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Download artifacts
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
@@ -199,15 +208,18 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnpm'
+
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        env:
+          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Restore Cache
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
