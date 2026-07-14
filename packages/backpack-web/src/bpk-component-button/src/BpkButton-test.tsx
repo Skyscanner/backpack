@@ -486,13 +486,13 @@ describe('BpkButton', () => {
     });
 
     it('should wrap children in a span when disabled to prevent Google Translate removeChild error', () => {
-      const { container } = render(
+      const { getByText } = render(
         <BpkButton type={BUTTON_TYPES.link} disabled>
           Disabled link
         </BpkButton>,
       );
 
-      expect(container.firstElementChild?.querySelector('span')).toBeInTheDocument();
+      expect(getByText('Disabled link').tagName).toBe('SPAN');
     });
 
     it('should NOT render underline span for iconOnly linkOnDark', () => {

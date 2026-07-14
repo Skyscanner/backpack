@@ -19,7 +19,7 @@
 import type { CSSProperties } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -36,6 +36,12 @@ window.ResizeObserver =
     observe: jest.fn(),
     unobserve: jest.fn(),
   }));
+
+// Zag.js fires async state updates on mount (e.g. indicator position sync). Flushing
+// them after each test prevents "not wrapped in act(...)" warnings in subsequent tests.
+afterEach(async () => {
+  await act(async () => {});
+});
 
 const ThreeItemControl = ({
   defaultValue,
