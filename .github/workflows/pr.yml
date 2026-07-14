@@ -30,13 +30,9 @@ jobs:
           node-version-file: ".nvmrc"
 
       - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
-        env:
-          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - name: Upload dist-storybook to Cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -79,13 +75,9 @@ jobs:
         node-version-file: ".nvmrc"
 
     - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
-      env:
-        PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
-      env:
-        PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
     - name: Restore Cache
       uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0

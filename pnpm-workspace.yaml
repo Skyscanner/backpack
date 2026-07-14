@@ -19,6 +19,8 @@ allowBuilds:
 ignoredOptionalDependencies:
   - node-sass
 
+# Dependabot is not compatible with pnpm strict peer dependency installs.
+# Keep installs unblocked and enforce peer dependency health via a separate CI check.
 strictPeerDependencies: false
 
 publicHoistPattern:

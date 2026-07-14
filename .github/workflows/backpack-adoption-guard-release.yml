@@ -120,12 +120,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
-        env:
-          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - run: pnpm install --frozen-lockfile
         env:
-          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
       - run: npx nx run backpack-adoption-guard:lint
       - run: npx nx run backpack-adoption-guard:typecheck
       - run: npx nx run backpack-adoption-guard:test
@@ -158,12 +155,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - uses: pnpm/action-setup@008330803749db0355799c700092d9a85fd074e9 # v6.0.9
-        env:
-          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
 
       - run: pnpm install --frozen-lockfile
         env:
-          PNPM_CONFIG_USERCONFIG: ${{ env.NPM_CONFIG_USERCONFIG }}
       - run: npx nx run backpack-adoption-guard:build
       - name: Verify adoption guard bundle
         run: |
