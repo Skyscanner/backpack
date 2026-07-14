@@ -39,7 +39,7 @@ figma.connect(
       }),
       variant: figma.enum("Style", {
         Default: VARIANTS.default,
-        onContrast: VARIANTS.onContrast,
+        OnContrast: VARIANTS.onContrast,
       }),
       trailingText: figma.string('Trailing text'),
     },
