@@ -37,10 +37,14 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
-// Zag.js fires async state updates on mount (e.g. indicator position sync). Flushing
-// them after each test prevents "not wrapped in act(...)" warnings in subsequent tests.
+// Zag.js syncs the indicator position via requestAnimationFrame on mount; in jsdom, RAF
+// falls back to setTimeout(fn, 0) — a macrotask that won't be caught by act(async()=>{}).
+// Running one extra setTimeout tick inside act() flushes those pending macrotasks and
+// prevents "not wrapped in act(...)" warnings from leaking into subsequent tests.
 afterEach(async () => {
-  await act(async () => {});
+  await act(async () => {
+    await new Promise<void>((resolve) => setTimeout(resolve, 0));
+  });
 });
 
 const ThreeItemControl = ({
