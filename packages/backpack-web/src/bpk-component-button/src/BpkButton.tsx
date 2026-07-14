@@ -86,10 +86,13 @@ const BpkButton = ({
       )
     : undefined;
 
-  // Always wrap in a span (even when disabled/no underline) to prevent Google Translate
-  // from replacing bare text nodes with <font> elements, which causes React's reconciler
-  // to throw a removeChild error when it later tries to remove the original text node.
-  const textContent = <span className={underlinedClassName}>{children}</span>;
+  // Wrap link-type text in a span regardless of disabled state. The underline span used
+  // to toggle on/off with `disabled`, which made React add/remove the wrapper and move the
+  // bare text node. If Google Translate had replaced that text node with a <font> element,
+  // React's reconciler would throw a removeChild error. Keeping the span stable avoids it.
+  const textContent = isLinkType && !iconOnly
+    ? <span className={underlinedClassName}>{children}</span>
+    : children;
 
   const leadingIconEl = !iconOnly && leadingIcon ? (
     <span className={getCommonClassName('bpk-button__leading-icon')}>
