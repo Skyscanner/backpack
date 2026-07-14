@@ -22,6 +22,7 @@ import { surfaceContrastDay } from '@skyscanner/bpk-foundations-web/tokens/base.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
@@ -638,13 +639,25 @@ export const VisualTestWithZoom = {
   },
 };
 
-// Verify BpkThemeProvider CSS custom properties flow through BpkPrice → BpkText
-export const ThemeVerification = {
-  render: () => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
-        Default (no theme)
-      </p>
+const ThemedExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Default (no theme)
+    </BpkText>
+    <BpkPrice
+      size={SIZES.large}
+      price="£1,830"
+      leadingText="from"
+      trailingText="per day"
+      previousPrice="£2,033"
+    />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Themed
+    </BpkText>
+    <BpkThemeProvider
+      theme={{ textPrimary: 'red', textSecondary: 'green', textError: 'orange' }}
+      themeAttributes={['textPrimary', 'textSecondary', 'textError']}
+    >
       <BpkPrice
         size={SIZES.large}
         price="£1,830"
@@ -652,25 +665,28 @@ export const ThemeVerification = {
         trailingText="per day"
         previousPrice="£2,033"
       />
-      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
-        Themed: textPrimary=red, textSecondary=green, textError=orange
-      </p>
+    </BpkThemeProvider>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      onContrast (no theme)
+    </BpkText>
+    <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
+      <BpkPrice
+        size={SIZES.large}
+        price="£1,830"
+        leadingText="from"
+        trailingText="per day"
+        previousPrice="£2,033"
+        variant={VARIANTS.onContrast}
+      />
+    </BpkDarkExampleWrapper>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      onContrast themed
+    </BpkText>
+    <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
       <BpkThemeProvider
-        theme={{ textPrimary: 'red', textSecondary: 'green', textError: 'orange' }}
-        themeAttributes={['textPrimary', 'textSecondary', 'textError']}
+        theme={{ textOnDark: 'lime', textSecondaryOnContrast: 'orange', textError: 'yellow' }}
+        themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
       >
-        <BpkPrice
-          size={SIZES.large}
-          price="£1,830"
-          leadingText="from"
-          trailingText="per day"
-          previousPrice="£2,033"
-        />
-      </BpkThemeProvider>
-      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
-        onContrast default (no theme)
-      </p>
-      <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
         <BpkPrice
           size={SIZES.large}
           price="£1,830"
@@ -679,25 +695,11 @@ export const ThemeVerification = {
           previousPrice="£2,033"
           variant={VARIANTS.onContrast}
         />
-      </BpkDarkExampleWrapper>
-      <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#666' }}>
-        onContrast themed: textOnDark=lime, textSecondaryOnContrast=orange, textError=yellow
-      </p>
-      <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
-        <BpkThemeProvider
-          theme={{ textOnDark: 'lime', textSecondaryOnContrast: 'orange', textError: 'yellow' }}
-          themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
-        >
-          <BpkPrice
-            size={SIZES.large}
-            price="£1,830"
-            leadingText="from"
-            trailingText="per day"
-            previousPrice="£2,033"
-            variant={VARIANTS.onContrast}
-          />
-        </BpkThemeProvider>
-      </BpkDarkExampleWrapper>
-    </div>
-  ),
+      </BpkThemeProvider>
+    </BpkDarkExampleWrapper>
+  </div>
+);
+
+export const Themed = {
+  render: () => <ThemedExample />,
 };
