@@ -206,6 +206,11 @@
     "overrides": {
       "braces": "3.0.3"
     },
-    "ignoredBuiltDependencies": ["node-sass"]
+    "ignoredBuiltDependencies": [
+      "node-sass"
+    ],
+    "ignoredOptionalDependencies": [
+      "node-sass"
+    ]
   }
 }
