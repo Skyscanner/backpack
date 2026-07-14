@@ -36,7 +36,10 @@
     --bpk-private-button-colour-bg-primary-pressed,
     tokens.$bpk-private-button-primary-pressed-background-day
   );
-  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+  color: var(
+    --bpk-private-button-colour-text-primary,
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
+  );
 }
 
 @mixin _bpk-button-primary-on-dark-hover {
@@ -44,7 +47,10 @@
     --bpk-private-button-colour-bg-primary-on-dark-pressed,
     tokens.$bpk-private-button-primary-on-dark-pressed-background-day
   );
-  color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+  color: var(
+    --bpk-private-button-colour-text-primary-on-dark,
+    var(--bpk-text-on-light, tokens.$bpk-text-on-light-day)
+  );
 }
 
 @mixin _bpk-button-primary-on-light-hover {
@@ -52,7 +58,10 @@
     --bpk-private-button-colour-bg-primary-on-light-pressed,
     tokens.$bpk-private-button-primary-on-light-pressed-background-day
   );
-  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-night);
+  color: var(
+    --bpk-private-button-colour-text-primary-on-light,
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-night)
+  );
 }
 
 @mixin _bpk-button-secondary-hover {
@@ -71,7 +80,10 @@
     --bpk-private-button-colour-bg-secondary-on-dark-pressed,
     tokens.$bpk-private-button-secondary-on-dark-pressed-background-day
   );
-  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+  color: var(
+    --bpk-private-button-colour-text-secondary-on-dark,
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
+  );
 }
 
 @mixin _bpk-button-destructive-hover {
@@ -127,7 +139,10 @@
     --bpk-private-button-colour-bg-primary,
     tokens.$bpk-private-button-primary-normal-background-day
   );
-  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+  color: var(
+    --bpk-private-button-colour-text-primary,
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
+  );
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -145,7 +160,10 @@
       --bpk-private-button-colour-bg-primary-pressed,
       tokens.$bpk-private-button-primary-pressed-background-day
     );
-    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+    color: var(
+      --bpk-private-button-colour-text-primary,
+      var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
+    );
   }
 
   &:disabled {
@@ -200,7 +218,10 @@
     --bpk-private-button-colour-bg-primary-on-dark,
     tokens.$bpk-private-button-primary-on-dark-normal-background-day
   );
-  color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+  color: var(
+    --bpk-private-button-colour-text-primary-on-dark,
+    var(--bpk-text-on-light, tokens.$bpk-text-on-light-day)
+  );
 
   @include utils.bpk-hover {
     @include _bpk-button-primary-on-dark-hover;
@@ -211,7 +232,10 @@
       --bpk-private-button-colour-bg-primary-on-dark-pressed,
       tokens.$bpk-private-button-primary-on-dark-pressed-background-day
     );
-    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+    color: var(
+      --bpk-private-button-colour-text-primary-on-dark,
+      var(--bpk-text-on-light, tokens.$bpk-text-on-light-day)
+    );
   }
 
   &:disabled {
@@ -246,7 +270,10 @@
     --bpk-private-button-colour-bg-primary-on-light,
     tokens.$bpk-private-button-primary-on-light-normal-background-day
   );
-  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-night);
+  color: var(
+    --bpk-private-button-colour-text-primary-on-light,
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-night)
+  );
 
   @include utils.bpk-hover {
     @include _bpk-button-primary-on-light-hover;
@@ -257,7 +284,10 @@
       --bpk-private-button-colour-bg-primary-on-light-pressed,
       tokens.$bpk-private-button-primary-on-light-pressed-background-day
     );
-    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-night);
+    color: var(
+      --bpk-private-button-colour-text-primary-on-light,
+      var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-night)
+    );
   }
 
   &:disabled {
@@ -341,7 +371,10 @@
     --bpk-private-button-colour-bg-secondary-on-dark,
     tokens.$bpk-private-button-secondary-on-dark-normal-background-day
   );
-  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+  color: var(
+    --bpk-private-button-colour-text-secondary-on-dark,
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
+  );
 
   @include utils.bpk-hover {
     @include _bpk-button-secondary-on-dark-hover;
@@ -352,7 +385,10 @@
       --bpk-private-button-colour-bg-secondary-on-dark-pressed,
       tokens.$bpk-private-button-secondary-on-dark-pressed-background-day
     );
-    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+    color: var(
+      --bpk-private-button-colour-text-secondary-on-dark,
+      var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
+    );
   }
 
   &:disabled {
@@ -441,17 +477,26 @@
   }
 
   padding: $vertical-padding 0; /* stylelint-disable-line order/order, order/properties-order */
-  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
+  color: var(
+    --bpk-private-button-colour-text-link,
+    var(--bpk-text-primary, tokens.$bpk-text-primary-day)
+  );
 
   @include utils.bpk-hover {
     background: none;
-    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
+    color: var(
+      --bpk-private-button-colour-text-link,
+      var(--bpk-text-primary, tokens.$bpk-text-primary-day)
+    );
     text-decoration: none;
   }
 
   &:active {
     background: none;
-    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
+    color: var(
+      --bpk-private-button-colour-text-link,
+      var(--bpk-text-primary, tokens.$bpk-text-primary-day)
+    );
     text-decoration: none;
   }
 

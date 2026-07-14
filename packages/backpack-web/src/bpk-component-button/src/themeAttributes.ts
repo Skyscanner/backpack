@@ -28,16 +28,19 @@ export const buttonThemeAttributes = [
 export const primaryThemeAttributes = [
   'privateButtonColourBgPrimary',
   'privateButtonColourBgPrimaryPressed',
+  'privateButtonColourTextPrimary',
 ];
 
 export const primaryOnDarkThemeAttributes = [
   'privateButtonColourBgPrimaryOnDark',
   'privateButtonColourBgPrimaryOnDarkPressed',
+  'privateButtonColourTextPrimaryOnDark',
 ];
 
 export const primaryOnLightThemeAttributes = [
   'privateButtonColourBgPrimaryOnLight',
   'privateButtonColourBgPrimaryOnLightPressed',
+  'privateButtonColourTextPrimaryOnLight',
 ];
 
 export const secondaryThemeAttributes = [
@@ -50,6 +53,7 @@ export const secondaryOnDarkThemeAttributes = [
   'privateButtonColourBgSecondaryOnDark',
   'privateButtonColourBgSecondaryOnDarkPressed',
   'privateButtonColourBgSecondaryOnDarkDisabled',
+  'privateButtonColourTextSecondaryOnDark',
 ];
 
 export const featuredThemeAttributes = [
@@ -64,7 +68,9 @@ export const destructiveThemeAttributes = [
   'privateButtonColourBgDestructivePressed',
 ];
 
-export const linkThemeAttributes = ['privateButtonColourTextLinkOnDark'];
+export const linkThemeAttributes = ['privateButtonColourTextLink'];
+
+export const linkOnDarkThemeAttributes = ['privateButtonColourTextLinkOnDark'];
 
 /**
  * Combined deduplicated array of all button private theme attributes.
@@ -82,5 +88,6 @@ export const allButtonThemeAttributes = Array.from(
     ...featuredThemeAttributes,
     ...destructiveThemeAttributes,
     ...linkThemeAttributes,
+    ...linkOnDarkThemeAttributes,
   ]),
 );

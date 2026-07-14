@@ -83,25 +83,26 @@ All attributes in the array must be supplied or `BpkThemeProvider` will silently
 | `privateButtonDimensionMinHeightLarge` | `--bpk-private-button-dimension-min-height-large` | all variants (large size height) |
 | `privateButtonDimensionPaddingHorizontalLarge` | `--bpk-private-button-dimension-padding-horizontal-large` | all variants (large size horizontal padding) |
 | `privateButtonColourBgDisabled` | `--bpk-private-button-colour-bg-disabled` | primary, primaryOnDark, primaryOnLight, secondary, destructive, featured (disabled background) |
-| `privateButtonColourBgPrimary` / `privateButtonColourBgPrimaryPressed` | `--bpk-private-button-colour-bg-primary` / `-primary-pressed` | primary |
-| `privateButtonColourBgPrimaryOnDark` / `privateButtonColourBgPrimaryOnDarkPressed` | `--bpk-private-button-colour-bg-primary-on-dark` / `-primary-on-dark-pressed` | primaryOnDark |
-| `privateButtonColourBgPrimaryOnLight` / `privateButtonColourBgPrimaryOnLightPressed` | `--bpk-private-button-colour-bg-primary-on-light` / `-primary-on-light-pressed` | primaryOnLight |
+| `privateButtonColourBgPrimary` / `privateButtonColourBgPrimaryPressed` / `privateButtonColourTextPrimary` | `--bpk-private-button-colour-bg-primary` / `-primary-pressed` / `-colour-text-primary` | primary |
+| `privateButtonColourBgPrimaryOnDark` / `privateButtonColourBgPrimaryOnDarkPressed` / `privateButtonColourTextPrimaryOnDark` | `--bpk-private-button-colour-bg-primary-on-dark` / `-primary-on-dark-pressed` / `-colour-text-primary-on-dark` | primaryOnDark |
+| `privateButtonColourBgPrimaryOnLight` / `privateButtonColourBgPrimaryOnLightPressed` / `privateButtonColourTextPrimaryOnLight` | `--bpk-private-button-colour-bg-primary-on-light` / `-primary-on-light-pressed` / `-colour-text-primary-on-light` | primaryOnLight |
 | `privateButtonColourTextSecondary`, `privateButtonColourBgSecondary`, `privateButtonColourBgSecondaryPressed` | `--bpk-private-button-colour-text-secondary`, `-colour-bg-secondary`, `-secondary-pressed` | secondary |
-| `privateButtonColourBgSecondaryOnDark`, `privateButtonColourBgSecondaryOnDarkPressed`, `privateButtonColourBgSecondaryOnDarkDisabled` | `--bpk-private-button-colour-bg-secondary-on-dark`, `-secondary-on-dark-pressed`, `-secondary-on-dark-disabled` | secondaryOnDark |
+| `privateButtonColourBgSecondaryOnDark`, `privateButtonColourBgSecondaryOnDarkPressed`, `privateButtonColourBgSecondaryOnDarkDisabled`, `privateButtonColourTextSecondaryOnDark` | `--bpk-private-button-colour-bg-secondary-on-dark`, `-secondary-on-dark-pressed`, `-secondary-on-dark-disabled`, `-colour-text-secondary-on-dark` | secondaryOnDark |
 | `privateButtonColourTextFeature`, `privateButtonColourBgFeatured`, `privateButtonColourBgFeaturePressed` | `--bpk-private-button-colour-text-feature`, `-colour-bg-featured`, `-feature-pressed` | featured |
 | `privateButtonColourTextDestructive`, `privateButtonColourBgDestructive`, `privateButtonColourBgDestructivePressed` | `--bpk-private-button-colour-text-destructive`, `-colour-bg-destructive`, `-destructive-pressed` | destructive |
+| `privateButtonColourTextLink` | `--bpk-private-button-colour-text-link` | link |
 | `privateButtonColourTextLinkOnDark` | `--bpk-private-button-colour-text-link-on-dark` | linkOnDark |
 
-#### Theming the link-on-dark text colour
+#### Theming button text colour
 
-The text colour for `linkOnDark`-type buttons is exposed as a private CSS custom property and can be themed via `BpkThemeProvider`:
+Every variant's text colour is controlled by a private CSS custom property that is unset by default (so it falls through to the existing colour). Use the per-variant array (e.g. `primaryThemeAttributes`, `linkThemeAttributes`) to override it via `BpkThemeProvider`:
 
 ```js
-import BpkButton, { linkThemeAttributes } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton, { BUTTON_TYPES, linkOnDarkThemeAttributes } from '@skyscanner/backpack-web/bpk-component-button';
 
 <BpkThemeProvider
   theme={{ privateButtonColourTextLinkOnDark: '#yourColor' }}
-  themeAttributes={linkThemeAttributes}
+  themeAttributes={linkOnDarkThemeAttributes}
 >
   <BpkButton type={BUTTON_TYPES.linkOnDark}>Submit</BpkButton>
 </BpkThemeProvider>

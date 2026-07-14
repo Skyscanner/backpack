@@ -37,6 +37,7 @@ export {
   featuredThemeAttributes,
   destructiveThemeAttributes,
   linkThemeAttributes,
+  linkOnDarkThemeAttributes,
 } from './src/themeAttributes';
 
 export default BpkButton;

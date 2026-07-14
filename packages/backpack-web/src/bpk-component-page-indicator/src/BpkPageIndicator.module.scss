@@ -107,7 +107,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     --bpk-private-button-dimension-radius: 50%;
     --bpk-private-button-colour-bg-secondary-on-dark: #{tokens.$bpk-private-page-indicator-button-carousel-normal-background-day};
     --bpk-private-button-colour-bg-secondary-on-dark-pressed: #{tokens.$bpk-private-page-indicator-button-carousel-pressed-background-day};
-    --bpk-text-on-dark: #{tokens.$bpk-text-primary-day};
+    --bpk-private-button-colour-text-secondary-on-dark: #{tokens.$bpk-text-primary-day};
 
     // Keep this selector more specific than BpkButton's icon-only padding,
     // which may be loaded later in production CSS chunks.
