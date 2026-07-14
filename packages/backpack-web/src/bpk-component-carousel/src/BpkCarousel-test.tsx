@@ -91,7 +91,7 @@ describe('BpkCarousel', () => {
     expect(screen.queryByTestId('carousel-page-indicator-container')).toBeNull();
   });
 
-  it('should render costom bottom', async () => {
+  it('should render custom bottom', async () => {
     render(<BpkCarousel images={images} bottom={48} />);
 
     expect(screen.getByTestId('carousel-page-indicator-container')).toHaveStyle({bottom: '48px'});
