@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=22.9.0",
-    "pnpm": ">=9.15.9"
+    "pnpm": ">=10.33.0"
   },
   "repository": {
     "type": "git",
@@ -206,6 +206,6 @@
     "overrides": {
       "braces": "3.0.3"
     },
-    "neverBuiltDependencies": ["node-sass"]
+    "ignoredBuiltDependencies": ["node-sass"]
   }
 }
