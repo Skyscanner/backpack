@@ -120,6 +120,7 @@ jobs:
         personal_token: ${{ secrets.DEPLOY_TOKEN }}
         publish_dir: build/
         keep_files: true
+        exclude_assets: ''
         external_repository: backpack/storybook-prs
         publish_branch: main
 
