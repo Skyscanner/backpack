@@ -58,10 +58,6 @@ export default () => (
 | `privateBadgeColourBgSubtle` | `--bpk-private-badge-colour-bg-subtle` | `$bpk-private-badge-background-normal-day` | subtle |
 | `privateBadgeDimensionPaddingHorizontalSubtle` | `--bpk-private-badge-dimension-padding-horizontal-subtle` | `bpk-spacing-sm()` | subtle |
 
-## Props
-
-Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/badge/web-vDRH571D#section-props-0c).
-
 ## Interactive badge
 
 Use `as='button'` for actions or `as='a'` for navigation. Interactive badges always render a trailing info logo.
@@ -93,23 +89,10 @@ export default () => (
 );
 ```
 
-### `as='button'` props
-
-Accepts all standard `<button>` attributes except `className`, `style`, and `type`.
-
-| Prop      | Type | Description            |
-|-----------|---|------------------------|
-| `onClick` | `() => void` | Optional click handler |
-
-### `as='a'` props
-
-Accepts all standard `<a>` attributes except `className` and `style`.
-
-| Prop | Type | Description |
-|---|---|---|
-| `href` | `string` | **Required.** Navigation target |
-| `blank` | `boolean` | Opens in a new tab. Automatically sets `target="_blank"` and `rel="noopener noreferrer"` |
-
 ### Accessibility
 
 Non-interactive badges render as `<span>` element. Interactive badges render as native `<button>` or `<a>` elements, so keyboard navigation and screen reader announcement work without any extra configuration. The trailing info icon is marked `aria-hidden`.
+
+## Props
+
+Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/badge/web-vDRH571D#section-props-0c).
