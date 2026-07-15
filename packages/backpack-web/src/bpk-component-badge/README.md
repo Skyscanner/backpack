@@ -61,3 +61,55 @@ export default () => (
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/badge/web-vDRH571D#section-props-0c).
+
+## Interactive badge
+
+Use `as='button'` for actions or `as='a'` for navigation. Interactive badges always render a trailing info logo.
+
+### Usage
+
+```tsx
+import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
+
+// Rendering as a button
+export default () => (
+  <BpkBadge as="button" type={BADGE_TYPES.normal} onClick={() => console.log('clicked')}>
+    My Badge
+  </BpkBadge>
+);
+
+// Rendering as a link
+export default () => (
+  <BpkBadge as="a" href="/destination" type={BADGE_TYPES.brand}>
+    My Badge
+  </BpkBadge>
+);
+
+// Rendering as a link that opens in a new tab (sets target="_blank" and rel="noopener noreferrer" automatically)
+export default () => (
+  <BpkBadge as="a" href="/destination" blank>
+    My Badge
+  </BpkBadge>
+);
+```
+
+### `as='button'` props
+
+Accepts all standard `<button>` attributes except `className`, `style`, and `type`.
+
+| Prop      | Type | Description            |
+|-----------|---|------------------------|
+| `onClick` | `() => void` | Optional click handler |
+
+### `as='a'` props
+
+Accepts all standard `<a>` attributes except `className` and `style`.
+
+| Prop | Type | Description |
+|---|---|---|
+| `href` | `string` | **Required.** Navigation target |
+| `blank` | `boolean` | Opens in a new tab. Automatically sets `target="_blank"` and `rel="noopener noreferrer"` |
+
+### Accessibility
+
+Non-interactive badges render as `<span>` element. Interactive badges render as native `<button>` or `<a>` elements, so keyboard navigation and screen reader announcement work without any extra configuration. The trailing info icon is marked `aria-hidden`.
