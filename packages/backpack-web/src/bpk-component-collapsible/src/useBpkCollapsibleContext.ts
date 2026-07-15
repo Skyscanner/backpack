@@ -16,18 +16,14 @@
  * limitations under the License.
  */
 
-import themeAttributes from './themeAttributes';
+import { useCollapsibleContext } from '@ark-ui/react';
 
-describe('themeAttributes', () => {
-  it('should export the correct theme attributes', () => {
-    expect(themeAttributes).toEqual([
-      'privateButtonColourTextSecondary',
-      'privateButtonColourBgSecondary',
-      'privateButtonColourBgSecondaryPressed',
-      'paginationNudgerActiveColor',
-      'paginationNudgerColor',
-      'paginationNudgerHoverColor',
-      'paginationSelectedBackgroundColor',
-    ]);
-  });
-});
+import type { BpkUseCollapsibleReturn } from './useBpkCollapsible';
+
+// Reader hook for the shared collapsible machine. Call from any component
+// inside BpkCollapsible.Root or BpkCollapsible.RootProvider to access the
+// current open/disabled/visible state and setOpen without prop-drilling.
+const useBpkCollapsibleContext = (): BpkUseCollapsibleReturn =>
+  useCollapsibleContext();
+
+export default useBpkCollapsibleContext;
