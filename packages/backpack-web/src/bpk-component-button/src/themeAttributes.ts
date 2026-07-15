@@ -23,6 +23,7 @@ export const buttonThemeAttributes = [
   'privateButtonDimensionMinHeightLarge',
   'privateButtonDimensionPaddingHorizontalLarge',
   'privateButtonColourBgDisabled',
+  'privateButtonColourTextDisabled',
 ];
 
 export const primaryThemeAttributes = [

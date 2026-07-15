@@ -39,6 +39,7 @@ describe('themeAttributes', () => {
       'privateButtonDimensionMinHeightLarge',
       'privateButtonDimensionPaddingHorizontalLarge',
       'privateButtonColourBgDisabled',
+      'privateButtonColourTextDisabled',
     ]);
   });
 
@@ -117,6 +118,7 @@ describe('themeAttributes', () => {
       'privateButtonDimensionMinHeightLarge',
       'privateButtonDimensionPaddingHorizontalLarge',
       'privateButtonColourBgDisabled',
+      'privateButtonColourTextDisabled',
       'privateButtonColourBgPrimary',
       'privateButtonColourBgPrimaryPressed',
       'privateButtonColourTextPrimary',

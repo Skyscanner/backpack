@@ -481,6 +481,7 @@ const THEMED_BUTTON_THEME = {
   privateButtonDimensionMinHeightLarge: '56px',
   privateButtonDimensionPaddingHorizontalLarge: '24px',
   privateButtonColourBgDisabled: '#e0e4e9',
+  privateButtonColourTextDisabled: 'rgba(0, 0, 0, 0.2)',
   privateButtonColourBgPrimary: '#05203c',
   privateButtonColourBgPrimaryPressed: '#154679',
   privateButtonColourTextPrimary: '#ffffff',

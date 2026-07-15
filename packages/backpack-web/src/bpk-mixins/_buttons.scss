@@ -171,7 +171,10 @@
       --bpk-private-button-colour-bg-disabled,
       tokens.$bpk-private-button-disabled-background-day
     );
-    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
+    color: var(
+      --bpk-private-button-colour-text-disabled,
+      var(--bpk-text-disabled, tokens.$bpk-text-disabled-day)
+    );
     cursor: not-allowed;
   }
 
@@ -244,8 +247,11 @@
       tokens.$bpk-private-button-primary-on-dark-disabled-background-day
     );
     color: var(
-      --bpk-text-disabled,
-      tokens.$bpk-private-button-primary-on-dark-disabled-foreground-day
+      --bpk-private-button-colour-text-disabled,
+      var(
+        --bpk-text-disabled,
+        tokens.$bpk-private-button-primary-on-dark-disabled-foreground-day
+      )
     );
   }
 
@@ -296,8 +302,11 @@
       tokens.$bpk-private-button-primary-on-light-disabled-background-day
     );
     color: var(
-      --bpk-text-disabled,
-      tokens.$bpk-private-button-primary-on-light-disabled-foreground-day
+      --bpk-private-button-colour-text-disabled,
+      var(
+        --bpk-text-disabled,
+        tokens.$bpk-private-button-primary-on-light-disabled-foreground-day
+      )
     );
   }
 
@@ -347,7 +356,10 @@
       --bpk-private-button-colour-bg-disabled,
       tokens.$bpk-private-button-disabled-background-day
     );
-    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
+    color: var(
+      --bpk-private-button-colour-text-disabled,
+      var(--bpk-text-disabled, tokens.$bpk-text-disabled-day)
+    );
   }
 
   // Loading state override: restore hover/pressed appearance while disabled.
@@ -444,7 +456,10 @@
       --bpk-private-button-colour-bg-disabled,
       tokens.$bpk-private-button-disabled-background-day
     );
-    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
+    color: var(
+      --bpk-private-button-colour-text-disabled,
+      var(--bpk-text-disabled, tokens.$bpk-text-disabled-day)
+    );
   }
 
   // Loading state override: restore hover/pressed appearance while disabled.
@@ -505,7 +520,10 @@
   &:disabled,
   &:disabled:active {
     background: none;
-    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
+    color: var(
+      --bpk-private-button-colour-text-disabled,
+      var(--bpk-text-disabled, tokens.$bpk-text-disabled-day)
+    );
     text-decoration: none;
   }
 
@@ -687,7 +705,10 @@
       --bpk-private-button-colour-bg-disabled,
       tokens.$bpk-private-button-disabled-background-day
     );
-    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
+    color: var(
+      --bpk-private-button-colour-text-disabled,
+      var(--bpk-text-disabled, tokens.$bpk-text-disabled-day)
+    );
   }
 
   // Loading state override: restore hover/pressed appearance while disabled.
