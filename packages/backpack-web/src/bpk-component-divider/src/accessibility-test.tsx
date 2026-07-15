@@ -27,4 +27,10 @@ describe('BpkDivider accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues for the vertical variant', async () => {
+    const { container } = render(<BpkDivider orientation="vertical" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });
