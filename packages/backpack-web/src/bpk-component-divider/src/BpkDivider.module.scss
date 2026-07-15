@@ -19,7 +19,7 @@
 @use '../../bpk-mixins/tokens';
 
 .bpk-divider {
-  --bpk-divider-thickness: #{tokens.$bpk-border-size-sm};
+  --bpk-divider-thickness: var(--bpk-border-1, #{tokens.$bpk-border-size-sm});
 
   margin: 0;
   border: 0;
@@ -30,13 +30,13 @@
     height: var(--bpk-divider-thickness);
 
     &.bpk-divider--spacing-base {
-      margin-top: tokens.bpk-spacing-base();
-      margin-bottom: tokens.bpk-spacing-base();
+      margin-top: var(--bpk-spacing-base, tokens.bpk-spacing-base());
+      margin-bottom: var(--bpk-spacing-base, tokens.bpk-spacing-base());
     }
 
     &.bpk-divider--spacing-lg {
-      margin-top: tokens.bpk-spacing-lg();
-      margin-bottom: tokens.bpk-spacing-lg();
+      margin-top: var(--bpk-spacing-lg, tokens.bpk-spacing-lg());
+      margin-bottom: var(--bpk-spacing-lg, tokens.bpk-spacing-lg());
     }
   }
 
@@ -46,17 +46,17 @@
     align-self: stretch;
 
     &.bpk-divider--spacing-base {
-      margin-inline-end: tokens.bpk-spacing-base();
-      margin-inline-start: tokens.bpk-spacing-base();
+      margin-inline-end: var(--bpk-spacing-base, tokens.bpk-spacing-base());
+      margin-inline-start: var(--bpk-spacing-base, tokens.bpk-spacing-base());
     }
 
     &.bpk-divider--spacing-lg {
-      margin-inline-end: tokens.bpk-spacing-lg();
-      margin-inline-start: tokens.bpk-spacing-lg();
+      margin-inline-end: var(--bpk-spacing-lg, tokens.bpk-spacing-lg());
+      margin-inline-start: var(--bpk-spacing-lg, tokens.bpk-spacing-lg());
     }
   }
 
   &--weight-bold {
-    --bpk-divider-thickness: #{tokens.$bpk-border-size-lg};
+    --bpk-divider-thickness: var(--bpk-border-2, #{tokens.$bpk-border-size-lg});
   }
 }
