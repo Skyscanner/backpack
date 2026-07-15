@@ -16,79 +16,80 @@
  * limitations under the License.
  */
 
-export const buttonThemeAttributes = ['buttonFontSize', 'buttonBorderRadius'];
+export const buttonThemeAttributes = [
+  'privateButtonDimensionRadius',
+  'privateButtonDimensionMinHeightDefault',
+  'privateButtonDimensionPaddingHorizontalDefault',
+  'privateButtonDimensionMinHeightLarge',
+  'privateButtonDimensionPaddingHorizontalLarge',
+  'privateButtonColourBgDisabled',
+  'privateButtonColourTextDisabled',
+];
 
 export const primaryThemeAttributes = [
-  'buttonPrimaryTextColor',
-  'buttonPrimaryHoverTextColor',
-  'buttonPrimaryActiveTextColor',
-  'buttonPrimaryGradientStartColor',
-  'buttonPrimaryGradientEndColor',
-  'buttonPrimaryBackgroundColor',
-  'buttonPrimaryHoverBackgroundColor',
-  'buttonPrimaryActiveBackgroundColor',
+  'privateButtonColourBgPrimary',
+  'privateButtonColourBgPrimaryPressed',
+  'privateButtonColourTextPrimary',
 ];
 
 export const primaryOnDarkThemeAttributes = [
-  'buttonPrimaryOnDarkTextColor',
-  'buttonPrimaryOnDarkHoverTextColor',
-  'buttonPrimaryOnDarkActiveTextColor',
-  'buttonPrimaryOnDarkBackgroundColor',
-  'buttonPrimaryOnDarkHoverBackgroundColor',
-  'buttonPrimaryOnDarkActiveBackgroundColor',
+  'privateButtonColourBgPrimaryOnDark',
+  'privateButtonColourBgPrimaryOnDarkPressed',
+  'privateButtonColourTextPrimaryOnDark',
 ];
 
 export const primaryOnLightThemeAttributes = [
-  'buttonPrimaryOnLightTextColor',
-  'buttonPrimaryOnLightHoverTextColor',
-  'buttonPrimaryOnLightActiveTextColor',
-  'buttonPrimaryOnLightBackgroundColor',
-  'buttonPrimaryOnLightHoverBackgroundColor',
-  'buttonPrimaryOnLightActiveBackgroundColor',
+  'privateButtonColourBgPrimaryOnLight',
+  'privateButtonColourBgPrimaryOnLightPressed',
+  'privateButtonColourTextPrimaryOnLight',
 ];
 
 export const secondaryThemeAttributes = [
-  'buttonSecondaryTextColor',
-  'buttonSecondaryHoverTextColor',
-  'buttonSecondaryActiveTextColor',
-  'buttonSecondaryBorderColor',
-  'buttonSecondaryHoverBorderColor',
-  'buttonSecondaryActiveBorderColor',
-  'buttonSecondaryBackgroundColor',
-  'buttonSecondaryHoverBackgroundColor',
-  'buttonSecondaryActiveBackgroundColor',
+  'privateButtonColourTextSecondary',
+  'privateButtonColourBgSecondary',
+  'privateButtonColourBgSecondaryPressed',
 ];
 
 export const secondaryOnDarkThemeAttributes = [
-  'buttonSecondaryOnDarkTextColor',
-  'buttonSecondaryOnDarkHoverTextColor',
-  'buttonSecondaryOnDarkActiveTextColor',
-  'buttonSecondaryOnDarkBackgroundColor',
-  'buttonSecondaryOnDarkHoverBackgroundColor',
-  'buttonSecondaryOnDarkActiveBackgroundColor',
+  'privateButtonColourBgSecondaryOnDark',
+  'privateButtonColourBgSecondaryOnDarkPressed',
+  'privateButtonColourBgSecondaryOnDarkDisabled',
+  'privateButtonColourTextSecondaryOnDark',
 ];
 
 export const featuredThemeAttributes = [
-  'buttonFeaturedTextColor',
-  'buttonFeaturedHoverTextColor',
-  'buttonFeaturedActiveTextColor',
-  'buttonFeaturedGradientStartColor',
-  'buttonFeaturedGradientEndColor',
-  'buttonFeaturedBackgroundColor',
-  'buttonFeaturedHoverBackgroundColor',
-  'buttonFeaturedActiveBackgroundColor',
+  'privateButtonColourTextFeature',
+  'privateButtonColourBgFeatured',
+  'privateButtonColourBgFeaturePressed',
 ];
 
 export const destructiveThemeAttributes = [
-  'buttonDestructiveTextColor',
-  'buttonDestructiveHoverTextColor',
-  'buttonDestructiveActiveTextColor',
-  'buttonDestructiveBorderColor',
-  'buttonDestructiveHoverBorderColor',
-  'buttonDestructiveActiveBorderColor',
-  'buttonDestructiveBackgroundColor',
-  'buttonDestructiveHoverBackgroundColor',
-  'buttonDestructiveActiveBackgroundColor',
+  'privateButtonColourTextDestructive',
+  'privateButtonColourTextDestructivePressed',
+  'privateButtonColourBgDestructive',
+  'privateButtonColourBgDestructivePressed',
 ];
 
-export const linkThemeAttributes = ['buttonLinkLoadingColor'];
+export const linkThemeAttributes = ['privateButtonColourTextLink'];
+
+export const linkOnDarkThemeAttributes = ['privateButtonColourTextLinkOnDark'];
+
+/**
+ * Combined deduplicated array of all button private theme attributes.
+ * Only exposes component-scoped (private) button tokens — global semantic vars
+ * (text, core, status colours) can be overridden at the theme level independently.
+ */
+export const allButtonThemeAttributes = Array.from(
+  new Set([
+    ...buttonThemeAttributes,
+    ...primaryThemeAttributes,
+    ...primaryOnDarkThemeAttributes,
+    ...primaryOnLightThemeAttributes,
+    ...secondaryThemeAttributes,
+    ...secondaryOnDarkThemeAttributes,
+    ...featuredThemeAttributes,
+    ...destructiveThemeAttributes,
+    ...linkThemeAttributes,
+    ...linkOnDarkThemeAttributes,
+  ]),
+);

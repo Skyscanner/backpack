@@ -21,15 +21,9 @@ import themeAttributes from './themeAttributes';
 describe('themeAttributes', () => {
   it('should export the correct theme attributes', () => {
     expect(themeAttributes).toEqual([
-      'buttonSecondaryTextColor',
-      'buttonSecondaryHoverTextColor',
-      'buttonSecondaryActiveTextColor',
-      'buttonSecondaryBorderColor',
-      'buttonSecondaryHoverBorderColor',
-      'buttonSecondaryActiveBorderColor',
-      'buttonSecondaryBackgroundColor',
-      'buttonSecondaryHoverBackgroundColor',
-      'buttonSecondaryActiveBackgroundColor',
+      'privateButtonColourTextSecondary',
+      'privateButtonColourBgSecondary',
+      'privateButtonColourBgSecondaryPressed',
     ]);
   });
 });
