@@ -215,7 +215,7 @@ export const VisualTest = {
   render: () => <MixedExample />,
   parameters: {
     percy: {
-      waitForTimeout: 1000,
+      waitForTimeout: 10000,
     },
   },
 };
@@ -227,7 +227,7 @@ export const VisualTestWithZoom = {
   },
   parameters: {
     percy: {
-      waitForTimeout: 1000,
+      waitForTimeout: 10000,
     },
   },
 };
