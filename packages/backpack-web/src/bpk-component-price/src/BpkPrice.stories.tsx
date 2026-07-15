@@ -19,7 +19,6 @@
 
 import {
   coreAccentDay,
-  corePrimaryDay,
   statusDangerSpotDay,
   statusSuccessSpotDay,
   surfaceContrastDay,
@@ -690,7 +689,7 @@ const ThemedExample = () => (
     </BpkText>
     <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
       <BpkThemeProvider
-        theme={{ textOnDark: corePrimaryDay, textSecondaryOnContrast: statusSuccessSpotDay, textError: statusDangerSpotDay }}
+        theme={{ textOnDark: statusDangerSpotDay, textSecondaryOnContrast: statusSuccessSpotDay, textError: coreAccentDay }}
         themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
       >
         <BpkPrice
