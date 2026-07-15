@@ -21,6 +21,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 The package also exports:
 
 - `useBpkCollapsible` — the underlying Ark state machine hook.
+- `useBpkCollapsibleContext` — reader hook for consuming the shared machine from inside a `Root` or `RootProvider` subtree without prop-drilling.
 - `COLLAPSIBLE_VARIANTS` — variant constants (`default`, `onContrast`).
 
 ## Usage
@@ -113,6 +114,52 @@ const Example = () => {
 ```
 
 `useBpkCollapsible` accepts the same machine props as Ark's `useCollapsible` and returns the live state plus imperative `setOpen`. `RootProvider` accepts the same `variant` prop as `Root`.
+
+### Reading state from deep children with `useBpkCollapsibleContext`
+
+Any component inside a `Root` or `RootProvider` subtree can call `useBpkCollapsibleContext()` to read the current machine state without having it prop-drilled from above:
+
+```tsx
+import BpkCollapsible, {
+  useBpkCollapsible,
+  useBpkCollapsibleContext,
+} from '@skyscanner/backpack-web/bpk-component-collapsible';
+
+const StatusBadge = () => {
+  const { disabled, open } = useBpkCollapsibleContext();
+  return <span>{open ? 'Open' : 'Closed'}{disabled ? ' (disabled)' : ''}</span>;
+};
+
+const Example = () => {
+  const collapsible = useBpkCollapsible();
+  return (
+    <BpkCollapsible.RootProvider value={collapsible}>
+      <BpkCollapsible.Trigger>…</BpkCollapsible.Trigger>
+      <StatusBadge />
+      <BpkCollapsible.Content>…</BpkCollapsible.Content>
+    </BpkCollapsible.RootProvider>
+  );
+};
+```
+
+### Preventing a wrapper element with `asChild`
+
+By default `RootProvider` renders a `<div>` to host its ARIA attributes and class names. Pass `asChild` to merge those props onto your single child element instead — useful when the provider wraps an existing item element and an extra DOM node would break layout or produce invalid HTML:
+
+```tsx
+<ul>
+  <BpkCollapsible.RootProvider value={collapsible} asChild>
+    <li>
+      <BpkCollapsible.Trigger>…</BpkCollapsible.Trigger>
+      <BpkCollapsible.Content>…</BpkCollapsible.Content>
+    </li>
+  </BpkCollapsible.RootProvider>
+</ul>
+```
+
+The `<li>` becomes the collapsible root — no wrapper `<div>` is inserted between it and the `<ul>`.
+
+> **Note:** `asChild` requires exactly one React element child. Passing a fragment, a string, or multiple siblings will throw a runtime error from Ark's slot merging.
 
 ## Lazy mounting
 
