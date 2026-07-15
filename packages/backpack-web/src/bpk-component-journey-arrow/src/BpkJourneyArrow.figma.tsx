@@ -22,7 +22,7 @@ import BpkJourneyArrow from "./BpkJourneyArrow";
 
 figma.connect(
   BpkJourneyArrow,
-  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10885%3A8553",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=19850%3A20116",
   {
     example: () => <BpkJourneyArrow stops={1} />,
   },

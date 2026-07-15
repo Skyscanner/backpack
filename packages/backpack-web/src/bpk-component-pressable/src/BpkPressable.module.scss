@@ -16,14 +16,27 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+@use '../../bpk-mixins/utils';
 
-import BpkTicket from './BpkTicket';
+// Shared reset for button-like and link-like pressable primitives.
+// Strips all browser default button/anchor chrome while preserving
+// correct focus visibility and pointer cursor.
+.bpk-pressable {
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
 
-figma.connect(
-  BpkTicket,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A51477',
-  {
-    example: () => <BpkTicket />,
-  },
-);
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}

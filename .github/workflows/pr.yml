@@ -99,6 +99,20 @@ jobs:
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
 
+    - name: Preserve .github from storybook-prs
+      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
+      env:
+        GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      run: |
+        trap 'rm -rf _prs_tmp' EXIT
+        gh repo clone backpack/storybook-prs _prs_tmp -- \
+          --depth 1 --filter=blob:none --sparse --branch main
+        git -C _prs_tmp sparse-checkout set .github
+        if [ -d _prs_tmp/.github ]; then
+          mkdir -p build/.github
+          cp -r _prs_tmp/.github/. build/.github/
+        fi
+
     - name: Deploy Storybook to backpack.github.io/storybook-prs
       uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
       if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
@@ -106,6 +120,7 @@ jobs:
         personal_token: ${{ secrets.DEPLOY_TOKEN }}
         publish_dir: build/
         keep_files: true
+        exclude_assets: ''
         external_repository: backpack/storybook-prs
         publish_branch: main
 

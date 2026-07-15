@@ -16,14 +16,8 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+import BpkPressable from './src/BpkPressable';
 
-import { BpkCode } from './BpkCode';
+export type { BpkPressableProps } from './src/BpkPressable';
 
-figma.connect(
-  BpkCode,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A59646',
-  {
-    example: () => <BpkCode />,
-  },
-);
+export default BpkPressable;

@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "license": "Apache-2.0",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=22.9.0",
-    "pnpm": ">=9.15.9"
+    "pnpm": ">=10.33.0"
   },
   "repository": {
     "type": "git",
@@ -134,11 +134,11 @@
     "@skyscanner/eslint-config-skyscanner": "^22.6.0",
     "@skyscanner/stylelint-config-skyscanner": "^14.2.0",
     "stylelint": "^16.26.1",
-    "@storybook/addon-a11y": "^10.3.5",
-    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/addon-docs": "^10.4.6",
     "@storybook/addon-webpack5-compiler-babel": "^4.0.0",
-    "@storybook/react": "^10.3.5",
-    "@storybook/react-webpack5": "^10.3.5",
+    "@storybook/react": "^10.4.6",
+    "@storybook/react-webpack5": "^10.4.6",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -193,7 +193,7 @@
     "sass-loader": "^16.0.4",
     "sass-migrator": "^2.5.6",
     "sassdoc": "^2.7.0",
-    "storybook": "^10.3.3",
+    "storybook": "^10.4.6",
     "style-dictionary": "^5.4.0",
     "style-loader": "^4.0.0",
     "ts-migrate": "^0.1.35",
@@ -206,6 +206,11 @@
     "overrides": {
       "braces": "3.0.3"
     },
-    "neverBuiltDependencies": ["node-sass"]
+    "ignoredBuiltDependencies": [
+      "node-sass"
+    ],
+    "ignoredOptionalDependencies": [
+      "node-sass"
+    ]
   }
 }
