@@ -16,19 +16,14 @@
  * limitations under the License.
  */
 
-export const SIZES = {
-  xsmall: 'xsmall',
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-} as const;
+import { useCollapsibleContext } from '@ark-ui/react';
 
-export const ALIGNS = {
-  left: 'left',
-  right: 'right',
-} as const;
+import type { BpkUseCollapsibleReturn } from './useBpkCollapsible';
 
-export const VARIANTS = {
-  default: 'default',
-  onContrast: 'onContrast',
-} as const;
+// Reader hook for the shared collapsible machine. Call from any component
+// inside BpkCollapsible.Root or BpkCollapsible.RootProvider to access the
+// current open/disabled/visible state and setOpen without prop-drilling.
+const useBpkCollapsibleContext = (): BpkUseCollapsibleReturn =>
+  useCollapsibleContext();
+
+export default useBpkCollapsibleContext;
