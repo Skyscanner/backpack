@@ -28,25 +28,6 @@ import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
 import BpkSegmentedControlV2 from './BpkSegmentedControlV2';
 import { SEGMENT_TYPES_V2 } from './common-types';
 
-// Zag.js fires a syncSsr state update outside act() during initial mount in jsdom.
-// This is an internal @ark-ui implementation detail, not a bug in our code.
-// Suppress the act() warning so jest 30's stricter console.error handling doesn't fail CI.
-const originalConsoleError = console.error;
-beforeAll(() => {
-  jest.spyOn(console, 'error').mockImplementation((...args) => {
-    if (
-      typeof args[0] === 'string' &&
-      args[0].includes('not wrapped in act')
-    ) {
-      return;
-    }
-    originalConsoleError(...args);
-  });
-});
-afterAll(() => {
-  (console.error as jest.Mock).mockRestore();
-});
-
 // Zag-JS uses ResizeObserver to track the indicator element's size; jsdom doesn't implement it.
 window.ResizeObserver =
   window.ResizeObserver ||
