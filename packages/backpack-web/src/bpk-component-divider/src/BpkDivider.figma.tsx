@@ -27,7 +27,7 @@ import BpkDivider from "./BpkDivider"
 // map it here via `figma.enum("Orientation", { ... })`.
 figma.connect(
   BpkDivider,
-  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=21653-57904",
+  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17423-70360",
   {
     props: {
       spacing: figma.enum("Padding", {
