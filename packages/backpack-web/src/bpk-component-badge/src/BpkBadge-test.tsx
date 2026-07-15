@@ -67,4 +67,18 @@ describe('BpkBadge', () => {
       expect(asFragment()).toMatchSnapshot();
     });
   });
+
+  it('should render correctly button like interactive variant', () => {
+    const { asFragment } = render(
+      <BpkBadge as="button">Promociando</BpkBadge>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should render correctly link like interactive variant', () => {
+    const { asFragment } = render(
+      <BpkBadge as='a' href='#'>Promociando</BpkBadge>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
