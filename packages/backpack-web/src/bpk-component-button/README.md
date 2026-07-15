@@ -52,64 +52,6 @@ Use the `loading` boolean prop to show a spinner inside the button and prevent i
 
 When `loading={true}` the button is rendered as `disabled` in the DOM and `aria-busy="true"` is added. The spinner colour adapts automatically to each button type. For `link` and `linkOnDark` types the underline decoration is suppressed.
 
-## Theming
-
-BpkButton supports theming via `BpkThemeProvider`. Backgrounds and select text colours are controlled by private CSS custom properties, allowing overrides per variant. Use the per-variant arrays (e.g. `primaryThemeAttributes`) for targeted theming, or `allButtonThemeAttributes` for the complete set:
-
-```js
-import BpkButton, { BUTTON_TYPES, primaryThemeAttributes } from '@skyscanner/backpack-web/bpk-component-button';
-import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
-
-<BpkThemeProvider
-  theme={{
-    privateButtonColourBgPrimary: '#0062e3',
-    privateButtonColourBgPrimaryPressed: '#024daf',
-  }}
-  themeAttributes={primaryThemeAttributes}
->
-  <BpkButton type={BUTTON_TYPES.primary}>Submit</BpkButton>
-</BpkThemeProvider>
-```
-
-All attributes in the array must be supplied or `BpkThemeProvider` will silently ignore the theme.
-
-### Theme attributes reference
-
-| Theme attribute | CSS custom property | Used by |
-|---|---|---|
-| `privateButtonDimensionRadius` | `--bpk-private-button-dimension-radius` | all variants (corner radius) |
-| `privateButtonDimensionMinHeightDefault` | `--bpk-private-button-dimension-min-height-default` | all variants (default size height) |
-| `privateButtonDimensionPaddingHorizontalDefault` | `--bpk-private-button-dimension-padding-horizontal-default` | all variants (default size horizontal padding) |
-| `privateButtonDimensionMinHeightLarge` | `--bpk-private-button-dimension-min-height-large` | all variants (large size height) |
-| `privateButtonDimensionPaddingHorizontalLarge` | `--bpk-private-button-dimension-padding-horizontal-large` | all variants (large size horizontal padding) |
-| `privateButtonColourBgDisabled` | `--bpk-private-button-colour-bg-disabled` | primary, primaryOnDark, primaryOnLight, secondary, destructive, featured (disabled background) |
-| `privateButtonColourBgPrimary` / `privateButtonColourBgPrimaryPressed` / `privateButtonColourTextPrimary` | `--bpk-private-button-colour-bg-primary` / `-primary-pressed` / `-colour-text-primary` | primary |
-| `privateButtonColourBgPrimaryOnDark` / `privateButtonColourBgPrimaryOnDarkPressed` / `privateButtonColourTextPrimaryOnDark` | `--bpk-private-button-colour-bg-primary-on-dark` / `-primary-on-dark-pressed` / `-colour-text-primary-on-dark` | primaryOnDark |
-| `privateButtonColourBgPrimaryOnLight` / `privateButtonColourBgPrimaryOnLightPressed` / `privateButtonColourTextPrimaryOnLight` | `--bpk-private-button-colour-bg-primary-on-light` / `-primary-on-light-pressed` / `-colour-text-primary-on-light` | primaryOnLight |
-| `privateButtonColourTextSecondary`, `privateButtonColourBgSecondary`, `privateButtonColourBgSecondaryPressed` | `--bpk-private-button-colour-text-secondary`, `-colour-bg-secondary`, `-secondary-pressed` | secondary |
-| `privateButtonColourBgSecondaryOnDark`, `privateButtonColourBgSecondaryOnDarkPressed`, `privateButtonColourBgSecondaryOnDarkDisabled`, `privateButtonColourTextSecondaryOnDark` | `--bpk-private-button-colour-bg-secondary-on-dark`, `-secondary-on-dark-pressed`, `-secondary-on-dark-disabled`, `-colour-text-secondary-on-dark` | secondaryOnDark |
-| `privateButtonColourTextFeature`, `privateButtonColourBgFeatured`, `privateButtonColourBgFeaturePressed` | `--bpk-private-button-colour-text-feature`, `-colour-bg-featured`, `-feature-pressed` | featured |
-| `privateButtonColourTextDestructive`, `privateButtonColourBgDestructive`, `privateButtonColourBgDestructivePressed` | `--bpk-private-button-colour-text-destructive`, `-colour-bg-destructive`, `-destructive-pressed` | destructive |
-| `privateButtonColourTextLink` | `--bpk-private-button-colour-text-link` | link |
-| `privateButtonColourTextLinkOnDark` | `--bpk-private-button-colour-text-link-on-dark` | linkOnDark |
-
-#### Theming button text colour
-
-Every variant's text colour is controlled by a private CSS custom property that is unset by default (so it falls through to the existing colour). Use the per-variant array (e.g. `primaryThemeAttributes`, `linkThemeAttributes`) to override it via `BpkThemeProvider`:
-
-```js
-import BpkButton, { BUTTON_TYPES, linkOnDarkThemeAttributes } from '@skyscanner/backpack-web/bpk-component-button';
-
-<BpkThemeProvider
-  theme={{ privateButtonColourTextLinkOnDark: '#yourColor' }}
-  themeAttributes={linkOnDarkThemeAttributes}
->
-  <BpkButton type={BUTTON_TYPES.linkOnDark}>Submit</BpkButton>
-</BpkThemeProvider>
-```
-
-The `link` variant's loading-state spinner and text share the same `privateButtonColourTextLink` token, so overriding it via `linkThemeAttributes` themes both consistently.
-
 ### Button Link
 The button which has `link` or `linkOnDark` type. Detail in [Button Link Type](./docs/button-link-type.md)
 
