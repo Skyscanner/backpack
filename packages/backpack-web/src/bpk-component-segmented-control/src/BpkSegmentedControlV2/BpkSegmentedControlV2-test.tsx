@@ -19,7 +19,7 @@
 import type { CSSProperties } from 'react';
 
 import { LocaleProvider } from '@ark-ui/react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -37,14 +37,15 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
-// @ark-ui SegmentGroup.Root fires a syncSsr update outside act() in jsdom — upstream issue.
-const { error } = console;
-beforeAll(() =>
-  jest.spyOn(console, 'error').mockImplementation(
-    (...args) => String(args[0]).includes('not wrapped in act') || error(...args),
-  ),
-);
-afterAll(() => jest.restoreAllMocks());
+// Zag.js syncs the indicator position via requestAnimationFrame on mount; in jsdom, RAF
+// falls back to setTimeout(fn, 0) — a macrotask that won't be caught by act(async()=>{}).
+// Running one extra setTimeout tick inside act() flushes those pending macrotasks and
+// prevents "not wrapped in act(...)" warnings from leaking into subsequent tests.
+afterEach(async () => {
+  await act(async () => {
+    await new Promise<void>((resolve) => setTimeout(resolve, 0));
+  });
+});
 
 const ThreeItemControl = ({
   defaultValue,

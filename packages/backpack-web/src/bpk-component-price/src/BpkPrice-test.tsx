@@ -224,7 +224,7 @@ describe('BpkPrice variant', () => {
     expect(screen.getByText(trailingText)).toHaveClass('bpk-text--text-secondary');
   });
 
-  it('should render the leading and trailing text in the on-dark disabled colour when onContrast', () => {
+  it('should render the leading and trailing text in the secondary-on-contrast colour when onContrast', () => {
     render(
       <BpkPrice
         price={price}
@@ -235,10 +235,10 @@ describe('BpkPrice variant', () => {
     );
 
     expect(screen.getByText(leadingText)).toHaveClass(
-      'bpk-text--text-disabled-on-dark',
+      'bpk-text--text-secondary-on-contrast',
     );
     expect(screen.getByText(trailingText)).toHaveClass(
-      'bpk-text--text-disabled-on-dark',
+      'bpk-text--text-secondary-on-contrast',
     );
   });
 });
