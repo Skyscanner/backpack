@@ -213,11 +213,21 @@ export const NoMarker = {
 
 export const VisualTest = {
   render: () => <MixedExample />,
+  parameters: {
+    percy: {
+      waitForTimeout: 1000,
+    },
+  },
 };
 
 export const VisualTestWithZoom = {
   render: () => <MixedExample />,
   args: {
     zoomEnabled: true,
+  },
+  parameters: {
+    percy: {
+      waitForTimeout: 1000,
+    },
   },
 };
