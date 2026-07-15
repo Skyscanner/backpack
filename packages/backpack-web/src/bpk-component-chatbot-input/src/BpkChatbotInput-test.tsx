@@ -338,6 +338,39 @@ describe('BpkChatbotInput', () => {
       expect(container.className).not.toContain('overLimit');
     });
 
+    it('does not apply overLimit class when noCharacterLimit is true, even beyond MAX_CHARACTERS', async () => {
+      const longText = 'a'.repeat(MAX_CHARACTERS + 1);
+      renderWithProvider(
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            inputValue={longText}
+            noCharacterLimit
+          />
+        </BpkChatbotInput.Root>,
+      );
+
+      const container = screen.getByTestId('bpk-chatbot-input-container');
+      await waitFor(() => {
+        expect(container.className).not.toContain('overLimit');
+      });
+    });
+
+    it('enables send button when noCharacterLimit is true and input exceeds MAX_CHARACTERS', () => {
+      const longText = 'a'.repeat(MAX_CHARACTERS + 1);
+      renderWithProvider(
+        <BpkChatbotInput.Root inputType={CHATBOT_INPUT_TYPES.COMPOSER}>
+          <BpkChatbotInput.Input
+            {...defaultProps}
+            inputValue={longText}
+            noCharacterLimit
+          />
+        </BpkChatbotInput.Root>,
+      );
+
+      expect(screen.getByTestId('bpk-chatbot-input-send')).not.toBeDisabled();
+    });
+
     it('stops propagation on container touchStart', () => {
       renderWithProvider(
         <BpkChatbotInput.Root>
