@@ -87,6 +87,7 @@ describe('themeAttributes', () => {
   it('should export the correct destructive theme attributes', () => {
     expect(destructiveThemeAttributes).toEqual([
       'privateButtonColourTextDestructive',
+      'privateButtonColourTextDestructivePressed',
       'privateButtonColourBgDestructive',
       'privateButtonColourBgDestructivePressed',
     ]);
@@ -139,6 +140,7 @@ describe('themeAttributes', () => {
       'privateButtonColourBgFeatured',
       'privateButtonColourBgFeaturePressed',
       'privateButtonColourTextDestructive',
+      'privateButtonColourTextDestructivePressed',
       'privateButtonColourBgDestructive',
       'privateButtonColourBgDestructivePressed',
       'privateButtonColourTextLink',

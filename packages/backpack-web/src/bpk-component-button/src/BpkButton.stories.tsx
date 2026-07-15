@@ -502,6 +502,7 @@ const THEMED_BUTTON_THEME = {
   privateButtonColourBgFeatured: '#0062e3',
   privateButtonColourBgFeaturePressed: '#024daf',
   privateButtonColourTextDestructive: '#e70866',
+  privateButtonColourTextDestructivePressed: '#ffffff',
   privateButtonColourBgDestructive: '#e0e4e9',
   privateButtonColourBgDestructivePressed: '#e70866',
   privateButtonColourTextLink: '#161616',

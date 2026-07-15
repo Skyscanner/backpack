@@ -91,7 +91,10 @@
     --bpk-private-button-colour-bg-destructive-pressed,
     tokens.$bpk-private-button-destructive-pressed-background-day
   );
-  color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
+  color: var(
+    --bpk-private-button-colour-text-destructive-pressed,
+    var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day)
+  );
 }
 
 @mixin _bpk-button-featured-hover {
@@ -448,7 +451,10 @@
       --bpk-private-button-colour-bg-destructive-pressed,
       tokens.$bpk-private-button-destructive-pressed-background-day
     );
-    color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
+    color: var(
+      --bpk-private-button-colour-text-destructive-pressed,
+      var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day)
+    );
   }
 
   &:disabled {

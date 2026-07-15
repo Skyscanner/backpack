@@ -65,6 +65,7 @@ export const featuredThemeAttributes = [
 
 export const destructiveThemeAttributes = [
   'privateButtonColourTextDestructive',
+  'privateButtonColourTextDestructivePressed',
   'privateButtonColourBgDestructive',
   'privateButtonColourBgDestructivePressed',
 ];
