@@ -43,6 +43,7 @@
   &--vertical {
     width: var(--bpk-divider-thickness);
     height: 100%;
+    align-self: stretch;
 
     &.bpk-divider--spacing-base {
       margin-inline-end: tokens.bpk-spacing-base();
