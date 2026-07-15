@@ -231,6 +231,18 @@ describe('useChatbotInput', () => {
       expect(result.current.inputProps.isOverLimit).toBe(true);
     });
 
+    it('should not be over limit when noCharacterLimit is true, even beyond MAX_CHARACTERS', () => {
+      const longText = 'a'.repeat(MAX_CHARACTERS + 1);
+      const { result } = renderUseChatbotInput({
+        inputValue: longText,
+        noCharacterLimit: true,
+      });
+
+      expect(result.current.isOverLimit).toBe(false);
+      expect(result.current.sendButtonDisabled).toBe(false);
+      expect(result.current.inputProps.isOverLimit).toBe(false);
+    });
+
     it('should call onSubmit only with valid trimmed text', () => {
       const { result: validResult } = renderUseChatbotInput({
         inputValue: 'Hello',
