@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
