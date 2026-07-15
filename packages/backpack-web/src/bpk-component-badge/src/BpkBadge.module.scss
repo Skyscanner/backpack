@@ -71,8 +71,6 @@
   }
 
   &--interactive {
-    // Remove text decoration from link-like badges
-    // and ensure focus visibility interactive badges
     text-decoration: none;
 
     @include badges.bpk-badge--interactive;

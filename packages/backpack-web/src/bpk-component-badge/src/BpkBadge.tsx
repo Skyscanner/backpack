@@ -76,7 +76,6 @@ export type Props = CommonProps & (
   | AnchorProps
   );
 
-
 const BadgeInfoCircleIcon = () => (
   <svg
     width="12"
@@ -123,20 +122,22 @@ const BpkBadgeInner = (
     const {
       blank,
       rel,
+      target,
       ...anchorRest
     } = rest as Omit<AnchorProps, 'as' | 'children'>;
-
 
     // Always include noopener noreferrer when blank=true; merge with consumer rel if provided.
     const resolvedRel = blank
       ? [rel, 'noopener noreferrer'].filter(Boolean).join(' ')
       : rel;
+    const resolvedTarget = blank ? '_blank' : target;
 
     return (<a
       ref={ref as Ref<HTMLAnchorElement>}
       rel={resolvedRel}
       {...anchorRest}
       className={classNames}
+      target={resolvedTarget}
       {...getDataComponentAttribute('Badge')}
     >
       {children}
@@ -163,7 +164,6 @@ const BpkBadgeInner = (
 
   return (
     <span
-      ref={ref as Ref<HTMLSpanElement>}
       className={classNames}
       {...getDataComponentAttribute('Badge')}
       {...rest}
