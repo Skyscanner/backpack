@@ -51,6 +51,10 @@ export type BpkChatbotInputInputProps = {
   isSending?: boolean;
   isPolling?: boolean;
   maxCharacters?: number;
+  /**
+   * When true, disables the character limit entirely.
+   * `maxCharacters` is ignored when this is set.
+   */
   noCharacterLimit?: boolean;
   /** Maximum number of visible lines before the textarea scrolls. Defaults to 4 (expanding to 5 when content exceeds 4 lines). Only applies to multiline input types. */
   maxLines?: number;
