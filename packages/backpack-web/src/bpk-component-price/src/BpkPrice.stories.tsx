@@ -23,12 +23,12 @@ import {
   statusSuccessSpotDay,
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
 
 import BpkPrice from './BpkPrice';
