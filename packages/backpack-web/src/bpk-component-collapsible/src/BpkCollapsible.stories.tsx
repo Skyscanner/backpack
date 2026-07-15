@@ -473,11 +473,11 @@ const AsChildRootProvider = () => {
     <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
       <BpkText textStyle={TEXT_STYLES.bodyDefault}>
         Without <code>asChild</code>: RootProvider renders a wrapper{' '}
-        <code>&lt;div&gt;</code> around the list item.
+        <code>&lt;div&gt;</code> around its child.
       </BpkText>
-      <ul>
+      <div>
         <BpkCollapsible.RootProvider value={withoutAsChild}>
-          <li>
+          <div>
             <BpkCollapsible.Trigger>
               <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
               <BpkCollapsible.Indicator>
@@ -489,9 +489,9 @@ const AsChildRootProvider = () => {
                 <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
               </BpkBox>
             </BpkCollapsible.Content>
-          </li>
+          </div>
         </BpkCollapsible.RootProvider>
-      </ul>
+      </div>
 
       <BpkText textStyle={TEXT_STYLES.bodyDefault}>
         With <code>asChild</code>: the <code>&lt;li&gt;</code> becomes the root

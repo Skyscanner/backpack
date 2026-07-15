@@ -159,6 +159,8 @@ By default `RootProvider` renders a `<div>` to host its ARIA attributes and clas
 
 The `<li>` becomes the collapsible root — no wrapper `<div>` is inserted between it and the `<ul>`.
 
+> **Note:** `asChild` requires exactly one React element child. Passing a fragment, a string, or multiple siblings will throw a runtime error from Ark's slot merging.
+
 ## Lazy mounting
 
 Use `lazyMount` to defer rendering the content until the first time the section is opened. Pair with `unmountOnExit` to remove the content from the DOM whenever it closes.

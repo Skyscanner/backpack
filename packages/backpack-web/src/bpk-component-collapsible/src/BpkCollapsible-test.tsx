@@ -302,6 +302,7 @@ describe('BpkCollapsible', () => {
       );
 
       expect(screen.getByTestId('open').textContent).toBe('true');
+      expect(screen.getByTestId('visible').textContent).toBe('true');
       expect(screen.getByTestId('disabled').textContent).toBe('false');
     });
 
@@ -351,9 +352,28 @@ describe('BpkCollapsible', () => {
       const Harness = () => {
         const collapsible = useBpkCollapsible();
         return (
-          <ul>
+          <div data-testid="wrapper">
             <BpkCollapsible.RootProvider value={collapsible}>
-              <li>
+              <span>
+                <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+                <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+              </span>
+            </BpkCollapsible.RootProvider>
+          </div>
+        );
+      };
+      const { container } = render(<Harness />);
+      const wrapper = container.querySelector('[data-testid="wrapper"]') as HTMLElement;
+      expect(wrapper.firstElementChild?.tagName).toBe('DIV');
+    });
+
+    it('merges collapsible attributes onto the child element when asChild is true', () => {
+      const Harness = () => {
+        const collapsible = useBpkCollapsible({ defaultOpen: true });
+        return (
+          <ul>
+            <BpkCollapsible.RootProvider value={collapsible} asChild>
+              <li data-testid="item">
                 <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
                 <BpkCollapsible.Content>Body</BpkCollapsible.Content>
               </li>
@@ -361,9 +381,12 @@ describe('BpkCollapsible', () => {
           </ul>
         );
       };
-      const { container } = render(<Harness />);
-      const list = container.querySelector('ul') as HTMLElement;
-      expect(list.firstElementChild?.tagName).not.toBe('LI');
+      render(<Harness />);
+
+      const item = screen.getByTestId('item');
+      expect(item.tagName).toBe('LI');
+      expect(item).toHaveAttribute('data-state', 'open');
+      expect(item).toHaveAttribute('data-backpack-ds-component');
     });
   });
 
