@@ -211,13 +211,25 @@ export const NoMarker = {
   render: () => <NoMarkerExample />,
 };
 
+// Marker position is computed async (ResizeObserver + scrollWidth), so give
+// Percy time to settle before snapshotting to avoid flaky diffs.
 export const VisualTest = {
   render: () => <MixedExample />,
+  parameters: {
+    percy: {
+      waitForTimeout: 10000,
+    },
+  },
 };
 
 export const VisualTestWithZoom = {
   render: () => <MixedExample />,
   args: {
     zoomEnabled: true,
+  },
+  parameters: {
+    percy: {
+      waitForTimeout: 10000,
+    },
   },
 };
