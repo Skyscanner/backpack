@@ -37,22 +37,14 @@ window.ResizeObserver =
     unobserve: jest.fn(),
   }));
 
-// Zag.js fires a syncSsr state update outside act() during initial mount in jsdom.
-// This is an internal @ark-ui implementation detail, not a bug in our code.
-// Suppress the specific act() warning so jest 30's stricter console.error handling
-// doesn't fail CI. All other console.error calls are forwarded normally.
-const originalConsoleError = console.error.bind(console);
-beforeAll(() => {
-  jest.spyOn(console, 'error').mockImplementation((...args) => {
-    if (typeof args[0] === 'string' && args[0].includes('not wrapped in act')) {
-      return;
-    }
-    originalConsoleError(...args);
-  });
-});
-afterAll(() => {
-  (console.error as jest.Mock).mockRestore();
-});
+// @ark-ui SegmentGroup.Root fires a syncSsr update outside act() in jsdom — upstream issue.
+const { error } = console;
+beforeAll(() =>
+  jest.spyOn(console, 'error').mockImplementation(
+    (...args) => String(args[0]).includes('not wrapped in act') || error(...args),
+  ),
+);
+afterAll(() => jest.restoreAllMocks());
 
 const ThreeItemControl = ({
   defaultValue,
