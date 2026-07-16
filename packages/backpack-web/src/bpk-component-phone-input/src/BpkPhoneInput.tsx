@@ -123,6 +123,10 @@ const BpkPhoneInput = (props: Props) => {
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!onChange) {
+      return;
+    }
+
     if (!dialingCodeMask) {
       onChange(e);
       return;
