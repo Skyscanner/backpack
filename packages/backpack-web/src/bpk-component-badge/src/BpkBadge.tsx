@@ -77,7 +77,7 @@ export type Props = CommonProps & (
   | SpanProps
   | ButtonProps
   | AnchorProps
-);
+  );
 
 const BadgeInfoCircleIcon = () => (
   <svg
@@ -98,7 +98,7 @@ const BadgeInfoCircleIcon = () => (
   </svg>
 );
 
-const BpkBadgeInner = (
+const BpkBadge = (
   {
     as = 'span',
     centered = false,
@@ -108,7 +108,6 @@ const BpkBadgeInner = (
     type = BADGE_TYPES.normal,
     ...rest
   }: Props,
-  ref: Ref<HTMLButtonElement | HTMLAnchorElement >,
 ) => {
   const classNames = getClassName(
     'bpk-badge',
@@ -135,7 +134,6 @@ const BpkBadgeInner = (
     const resolvedTarget = blank ? '_blank' : target;
 
     return (<a
-      ref={ref as Ref<HTMLAnchorElement>}
       rel={resolvedRel}
       {...anchorRest}
       className={classNames}
@@ -151,7 +149,6 @@ const BpkBadgeInner = (
     const buttonRest = rest as Omit<ButtonProps, 'as' | 'children'>;
     return (
       <button
-        ref={ref as Ref<HTMLButtonElement>}
         type="button"
         {...buttonRest}
         className={classNames}
@@ -171,7 +168,5 @@ const BpkBadgeInner = (
     >{children}</span>
   );
 };
-
-const BpkBadge = forwardRef(BpkBadgeInner);
 
 export default BpkBadge;
