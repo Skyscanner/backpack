@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ChangeEvent, HTMLAttributes, ReactElement } from 'react';
+import type { ChangeEvent, HTMLAttributes, OptionHTMLAttributes, ReactElement } from 'react';
 
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 import BpkLabel from '../../bpk-component-label';
@@ -32,8 +32,8 @@ export type DialingCode = {
   code: string;
   description: string;
   numberPrefix?: string | null;
-  [key: string]: unknown;
-};
+  // value is omitted: controlled internally via the code field
+} & Omit<OptionHTMLAttributes<HTMLOptionElement>, 'value'>;
 
 export type DialingCodeProps = {
   // id and name are required, inherited from BpkSelectProps
@@ -70,7 +70,7 @@ export type Props = {
   dialingCodeMask?: boolean;
   large?: boolean;
   valid?: boolean | null;
-  wrapperProps?: HTMLAttributes<HTMLDivElement>;
+  wrapperProps?: HTMLAttributes<HTMLSpanElement>;
 };
 
 type CommonProps = {
