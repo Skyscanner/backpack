@@ -16,14 +16,13 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+import type { ReactNode } from 'react';
 
-import { BpkCode } from './BpkCode';
-
-figma.connect(
-  BpkCode,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A59646',
-  {
-    example: () => <BpkCode />,
-  },
-);
+export type SecondaryPanelProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  closeLabel?: string;
+  ariaLabel?: string;
+  title?: ReactNode;
+};

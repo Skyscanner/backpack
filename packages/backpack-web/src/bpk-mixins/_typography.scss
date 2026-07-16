@@ -785,8 +785,8 @@
   padding-bottom: tokens.$bpk-one-pixel-rem;
   transition: background-size 200ms ease;
   background: linear-gradient(
-    tokens.$bpk-text-primary-day,
-    tokens.$bpk-text-primary-day
+    var(--bpk-text-primary, tokens.$bpk-text-primary-day),
+    var(--bpk-text-primary, tokens.$bpk-text-primary-day)
   );
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -821,8 +821,8 @@
 
 @mixin bpk-link-underlined--alternate {
   background: linear-gradient(
-    tokens.$bpk-text-on-dark-day,
-    tokens.$bpk-text-on-dark-day
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day),
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
   );
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -842,8 +842,8 @@
 
 @mixin bpk-link-underlined-implicit--alternate {
   background: linear-gradient(
-    tokens.$bpk-text-on-dark-day,
-    tokens.$bpk-text-on-dark-day
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day),
+    var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day)
   );
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -867,40 +867,22 @@
   padding: 0;
   border: 0;
   background-color: transparent;
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   text-decoration: none;
   cursor: pointer;
   appearance: none;
 
-  @include utils.bpk-themeable-property(
-    color,
-    --bpk-link-color,
-    tokens.$bpk-text-primary-day
-  );
-
   @include utils.bpk-hover {
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     text-decoration: none;
-
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-hover-color,
-      tokens.$bpk-text-primary-day
-    );
   }
 
   &:visited {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-visited-color,
-      tokens.$bpk-text-primary-day
-    );
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   }
 
   &:active {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-active-color,
-      tokens.$bpk-text-primary-day
-    );
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   }
 }
 
@@ -913,28 +895,15 @@
 ///   }
 
 @mixin bpk-link--implicit {
-  @include utils.bpk-themeable-property(
-    color,
-    --bpk-link-color,
-    tokens.$bpk-text-primary-day
-  );
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-hover-color,
-      tokens.$bpk-text-primary-day
-    );
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
   }
 
   &:active {
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     text-decoration: none;
-
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-active-color,
-      tokens.$bpk-text-primary-day
-    );
   }
 }
 
@@ -949,34 +918,18 @@
 ///   }
 
 @mixin bpk-link--alternate {
-  @include utils.bpk-themeable-property(
-    color,
-    --bpk-link-alternate-color,
-    tokens.$bpk-text-on-dark-day
-  );
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
 
   @include utils.bpk-hover {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-alternate-hover-color,
-      tokens.$bpk-text-on-dark-day
-    );
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 
   &:visited {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-alternate-visited-color,
-      tokens.$bpk-text-on-dark-day
-    );
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 
   &:active {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-link-alternate-active-color,
-      tokens.$bpk-text-on-dark-day
-    );
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 }
 

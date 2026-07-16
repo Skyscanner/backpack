@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { titlePropType, onClosePropType } from './customPropTypes';
 
 describe('titlePropType', () => {

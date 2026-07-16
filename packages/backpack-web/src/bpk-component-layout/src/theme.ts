@@ -56,6 +56,7 @@ const spacingMd = '.5rem';
 const spacingLg = '1.5rem';
 const spacingXl = '2rem';
 const spacingXxl = '2.5rem';
+const spacingXxxl = '4rem';
 
 /**
  * Backpack Theme Configuration for Chakra UI
@@ -80,6 +81,7 @@ const spacingMap: Record<string, { value: string }> = {
   'bpk-spacing-lg': { value: spacingLg },
   'bpk-spacing-xl': { value: spacingXl },
   'bpk-spacing-xxl': { value: spacingXxl },
+  'bpk-spacing-xxxl': { value: spacingXxxl },
 };
 
 /**

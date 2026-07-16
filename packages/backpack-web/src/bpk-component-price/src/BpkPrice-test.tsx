@@ -21,7 +21,7 @@ import { render, screen } from '@testing-library/react';
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 
 import BpkPrice, { type Props as BpkPriceProps } from './BpkPrice';
-import { ALIGNS, SIZES } from './common-types';
+import { ALIGNS, SIZES, VARIANTS } from './common-types';
 
 const price = '£1,830';
 const previousPrice = '£2,000';
@@ -97,7 +97,7 @@ describe.each([
   });
 
   it('should render the previous price', () => {
-    const { container } = render(
+    render(
       <BpkPrice
         {...props}
         previousPrice={previousPrice}
@@ -179,5 +179,66 @@ describe.each([
     expect(
       container.querySelector('.leading-classname'),
     ).toBeInTheDocument();
+  });
+});
+
+describe('BpkPrice variant', () => {
+  it('should render the price with the primary text colour by default', () => {
+    render(<BpkPrice price={price} />);
+
+    expect(screen.getByText(price)).toHaveClass('bpk-text--text-primary');
+  });
+
+  it('should render the price with the on-dark text colour when onContrast', () => {
+    render(<BpkPrice price={price} variant={VARIANTS.onContrast} />);
+
+    const priceEl = screen.getByText(price);
+    expect(priceEl).toHaveClass('bpk-text--text-on-dark');
+    expect(priceEl).not.toHaveClass('bpk-text--text-primary');
+  });
+
+  it('should keep the previous price in the error colour when onContrast', () => {
+    render(
+      <BpkPrice
+        price={price}
+        previousPrice={previousPrice}
+        variant={VARIANTS.onContrast}
+      />,
+    );
+
+    expect(screen.getByText(previousPrice)).toHaveClass(
+      'bpk-text--text-error',
+    );
+  });
+
+  it('should render the leading and trailing text in the secondary colour by default', () => {
+    render(
+      <BpkPrice
+        price={price}
+        leadingText={leadingText}
+        trailingText={trailingText}
+      />,
+    );
+
+    expect(screen.getByText(leadingText)).toHaveClass('bpk-text--text-secondary');
+    expect(screen.getByText(trailingText)).toHaveClass('bpk-text--text-secondary');
+  });
+
+  it('should render the leading and trailing text in the secondary-on-contrast colour when onContrast', () => {
+    render(
+      <BpkPrice
+        price={price}
+        leadingText={leadingText}
+        trailingText={trailingText}
+        variant={VARIANTS.onContrast}
+      />,
+    );
+
+    expect(screen.getByText(leadingText)).toHaveClass(
+      'bpk-text--text-secondary-on-contrast',
+    );
+    expect(screen.getByText(trailingText)).toHaveClass(
+      'bpk-text--text-secondary-on-contrast',
+    );
   });
 });

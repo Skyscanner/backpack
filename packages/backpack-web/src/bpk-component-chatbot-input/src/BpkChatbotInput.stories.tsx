@@ -145,6 +145,16 @@ const ComposerOver500Example = () => (
   </div>
 );
 
+const ComposerUnlimitedExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+      noCharacterLimit
+      initialValue={longText}
+    />
+  </div>
+);
+
 const CarsExample = () => (
   <div className={getClassName('bpk-chatbot-input-examples')}>
     <ChatbotInputWithState
@@ -401,6 +411,10 @@ export const ComposerSending = {
 
 export const ComposerOver500 = {
   render: () => <ComposerOver500Example />,
+};
+
+export const ComposerUnlimited = {
+  render: () => <ComposerUnlimitedExample />,
 };
 
 export const WithToolbar = {
