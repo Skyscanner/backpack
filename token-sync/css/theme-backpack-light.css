@@ -32,7 +32,6 @@
   --bpk-private-badge-colour-stroke-outline: #ffffff;
   --bpk-private-badge-dimension-padding-horizontal-default: 0.5rem;
   --bpk-private-badge-dimension-padding-horizontal-subtle: 0.5rem;
-  --bpk-private-badge-typography-tmp-badge-label: 0.875rem;
   --bpk-private-button-colour-bg-destructive: #e0e4e9;
   --bpk-private-button-colour-bg-destructive-pressed: #e70866;
   --bpk-private-button-colour-bg-disabled: #e0e4e9;
@@ -41,9 +40,10 @@
   --bpk-private-button-colour-bg-footer: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-bg-footer-pressed: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-bg-primary: #05203c;
+  --bpk-private-button-colour-bg-primary-pressed: #154679;
   --bpk-private-button-colour-bg-primary-on-dark: #ffffff;
   --bpk-private-button-colour-bg-primary-on-dark-pressed: #c1c7cf;
-  --bpk-private-button-colour-bg-primary-on-light: #ffffff;
+  --bpk-private-button-colour-bg-primary-on-light: #05203c;
   --bpk-private-button-colour-bg-primary-on-light-pressed: #154679;
   --bpk-private-button-colour-bg-secondary: #e0e4e9;
   --bpk-private-button-colour-bg-secondary-pressed: #c1c7cf;
@@ -52,7 +52,7 @@
   --bpk-private-button-colour-bg-secondary-on-dark: rgba(255, 255, 255, 0.1);
   --bpk-private-button-colour-bg-secondary-on-dark-disabled: #0b121d;
   --bpk-private-button-colour-bg-secondary-on-dark-pressed: #04182d;
-  --bpk-private-button-colour-text-disruptive: #e70866;
+  --bpk-private-button-colour-text-destructive: #e70866;
   --bpk-private-button-colour-text-feature: #ffffff;
   --bpk-private-button-colour-text-footer: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-text-link-on-dark: #ffffff;
@@ -180,6 +180,7 @@
   --bpk-other-shadow: rgba(22, 22, 22, 0.25);
   --bpk-other-line-default: #c1c7cf;
   --bpk-other-line-on-contrast: rgba(255, 255, 255, 0.2);
+  --bpk-other-line-subtle: #e0e4e9;
   --bpk-status-danger-spot: #e70866;
   --bpk-status-success-spot: #0c838a;
   --bpk-status-warning-spot: #f55d42;
@@ -243,9 +244,9 @@
   --bpk-typography-sizes-192: 12rem;
   --bpk-typography-sizes-240: 15rem;
   --bpk-typography-sizes-base: 1rem;
-  --bpk-typography-style-body: 400;
-  --bpk-typography-style-headline: 700;
-  --bpk-typography-style-hero: 900;
-  --bpk-typography-style-label: 700;
-  --bpk-typography-style-subhead: 300;
+  --bpk-typography-weight-body: 400;
+  --bpk-typography-weight-headline: 700;
+  --bpk-typography-weight-hero: 900;
+  --bpk-typography-weight-label: 700;
+  --bpk-typography-weight-subhead: 300;
 }

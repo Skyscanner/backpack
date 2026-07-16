@@ -32,7 +32,6 @@
   --bpk-private-badge-colour-stroke-outline: #ffffff;
   --bpk-private-badge-dimension-padding-horizontal-default: 0.5rem;
   --bpk-private-badge-dimension-padding-horizontal-subtle: 0.5rem;
-  --bpk-private-badge-typography-tmp-badge-label: 0.875rem;
   --bpk-private-button-colour-bg-destructive: #e0e4e9;
   --bpk-private-button-colour-bg-destructive-pressed: #ff649c;
   --bpk-private-button-colour-bg-disabled: #0b121d;
@@ -41,10 +40,11 @@
   --bpk-private-button-colour-bg-footer: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-bg-footer-pressed: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-bg-primary: #024daf;
+  --bpk-private-button-colour-bg-primary-pressed: #054184;
   --bpk-private-button-colour-bg-primary-on-dark: #ffffff;
   --bpk-private-button-colour-bg-primary-on-dark-pressed: #c1c7cf;
-  --bpk-private-button-colour-bg-primary-on-light: #ffffff;
-  --bpk-private-button-colour-bg-primary-on-light-pressed: #002b4b;
+  --bpk-private-button-colour-bg-primary-on-light: #05203c;
+  --bpk-private-button-colour-bg-primary-on-light-pressed: #154679;
   --bpk-private-button-colour-bg-secondary: #243346;
   --bpk-private-button-colour-bg-secondary-pressed: #010913;
   --bpk-private-button-colour-bg-secondary-on-contrast: #243346;
@@ -52,7 +52,7 @@
   --bpk-private-button-colour-bg-secondary-on-dark: rgba(255, 255, 255, 0.1);
   --bpk-private-button-colour-bg-secondary-on-dark-disabled: #0b121d;
   --bpk-private-button-colour-bg-secondary-on-dark-pressed: rgba(255, 255, 255, 0.2);
-  --bpk-private-button-colour-text-disruptive: #ff649c;
+  --bpk-private-button-colour-text-destructive: #ff649c;
   --bpk-private-button-colour-text-feature: #010913;
   --bpk-private-button-colour-text-footer: rgba(255, 255, 255, 0);
   --bpk-private-button-colour-text-link-on-dark: #ffffff;
@@ -180,6 +180,7 @@
   --bpk-other-shadow: rgba(22, 22, 22, 0.25);
   --bpk-other-line-default: rgba(255, 255, 255, 0.2);
   --bpk-other-line-on-contrast: rgba(255, 255, 255, 0.2);
+  --bpk-other-line-subtle: rgba(255, 255, 255, 0.1);
   --bpk-status-danger-spot: #ff649c;
   --bpk-status-success-spot: #62f1c6;
   --bpk-status-warning-spot: #feeb87;
@@ -243,9 +244,9 @@
   --bpk-typography-sizes-192: 12rem;
   --bpk-typography-sizes-240: 15rem;
   --bpk-typography-sizes-base: 1rem;
-  --bpk-typography-style-body: 400;
-  --bpk-typography-style-headline: 700;
-  --bpk-typography-style-hero: 900;
-  --bpk-typography-style-label: 700;
-  --bpk-typography-style-subhead: 300;
+  --bpk-typography-weight-body: 400;
+  --bpk-typography-weight-headline: 700;
+  --bpk-typography-weight-hero: 900;
+  --bpk-typography-weight-label: 700;
+  --bpk-typography-weight-subhead: 300;
 }

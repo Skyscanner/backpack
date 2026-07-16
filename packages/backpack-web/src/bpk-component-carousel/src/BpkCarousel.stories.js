@@ -62,6 +62,18 @@ const WithCarouselPageIndicatorExample = () => (
   </div>
 );
 
+const SingleImageExample = () => (
+  <div
+    style={{
+      maxWidth: '800px',
+      width: '100%',
+      margin: 'auto',
+    }}
+  >
+    <BpkCarousel images={[imagesList[0]]} bottom={16} />
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
@@ -83,6 +95,10 @@ export const Default = {
 
 export const WithCarouselPageIndicator = {
   render: () => <WithCarouselPageIndicatorExample />,
+};
+
+export const SingleImage = {
+  render: () => <SingleImageExample />,
 };
 
 export const VisualTest = {

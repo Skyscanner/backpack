@@ -27,6 +27,7 @@ export {
 } from './src/common-types';
 
 export {
+  allButtonThemeAttributes,
   buttonThemeAttributes,
   primaryThemeAttributes,
   primaryOnDarkThemeAttributes,
@@ -36,6 +37,7 @@ export {
   featuredThemeAttributes,
   destructiveThemeAttributes,
   linkThemeAttributes,
+  linkOnDarkThemeAttributes,
 } from './src/themeAttributes';
 
 export default BpkButton;
