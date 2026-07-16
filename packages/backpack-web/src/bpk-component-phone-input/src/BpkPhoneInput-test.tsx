@@ -18,7 +18,7 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import BpkPhoneInput from './BpkPhoneInput';
+import BpkPhoneInput, { type Props as BpkPhoneInputProps } from './BpkPhoneInput';
 
 const dialingCodeProps = {
   id: 'dialing-code',
@@ -33,7 +33,7 @@ const dialingCodes = [
   { code: '55', description: '+55', numberPrefix: '+55' },
 ];
 
-const defaultProps = {
+const defaultProps: BpkPhoneInputProps = {
   id: 'phone-input-id',
   name: 'Telephone input',
   label: 'Telephone number',
