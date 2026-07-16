@@ -157,8 +157,8 @@ const InteractiveExample = () => (
         </BpkVStack>
         <BpkVStack gap={BpkSpacing.LG}>
           <BpkText textStyle={TEXT_STYLES.caption}>Link</BpkText>
-          <BpkBadge as="a" href="">Normal</BpkBadge>
-          <BpkBadge as="a" href="" type={BADGE_TYPES.brand}>Brand</BpkBadge>
+          <BpkBadge as="a" href="#">Normal</BpkBadge>
+          <BpkBadge as="a" href="#" type={BADGE_TYPES.brand}>Brand</BpkBadge>
         </BpkVStack>
       </BpkFlex>
     </BpkProvider>

@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { forwardRef } from 'react';
 import type { ReactNode, Ref, AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
@@ -50,8 +49,9 @@ const badgeTypeClassNames = {
 
 export type BadgeType = (typeof BADGE_TYPES)[keyof typeof BADGE_TYPES];
 
-type SpanProps = Omit<HTMLAttributes<HTMLSpanElement>, 'className' | 'style'> & {
+type SpanProps = Omit<HTMLAttributes<HTMLSpanElement>, 'className' > & {
   as?: 'span';
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'style' | 'type' | 'disabled'> & {
@@ -79,7 +79,7 @@ export type Props = CommonProps & (
   | AnchorProps
   );
 
-const BadgeInfoCircleIcon = () => (
+const BadgeInfoCircleLogo = () => (
   <svg
     width="12"
     height="12"
@@ -141,7 +141,7 @@ const BpkBadge = (
       {...getDataComponentAttribute('Badge')}
     >
       {children}
-      <BadgeInfoCircleIcon />
+      <BadgeInfoCircleLogo />
     </a>);
   }
 
@@ -155,7 +155,7 @@ const BpkBadge = (
         {...getDataComponentAttribute('Badge')}
       >
         {children}
-        <BadgeInfoCircleIcon />
+        <BadgeInfoCircleLogo />
       </button>
     );
   }

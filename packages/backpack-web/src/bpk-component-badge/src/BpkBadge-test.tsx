@@ -77,7 +77,7 @@ describe('BpkBadge', () => {
 
   it('should render correctly link like interactive variant', () => {
     const { asFragment } = render(
-      <BpkBadge as='a' href='#'>Promociando</BpkBadge>,
+      <BpkBadge as="a" href="#">Promociando</BpkBadge>,
     );
     expect(asFragment()).toMatchSnapshot();
   });

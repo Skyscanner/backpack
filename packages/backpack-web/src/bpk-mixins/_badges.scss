@@ -282,9 +282,4 @@
   cursor: pointer;
   appearance: none;
   gap: tokens.bpk-spacing-md();
-
-  &:disabled,
-  &[aria-disabled='true'] {
-    cursor: not-allowed;
-  }
 }
