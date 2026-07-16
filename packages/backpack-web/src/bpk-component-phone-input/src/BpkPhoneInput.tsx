@@ -21,8 +21,9 @@ import type { ChangeEvent, HTMLAttributes, OptionHTMLAttributes, ReactElement } 
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
-import type { BpkSelectProps } from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
+
+import type { BpkSelectProps } from '../../bpk-component-select';
 
 import STYLES from './BpkPhoneInput.module.scss';
 
