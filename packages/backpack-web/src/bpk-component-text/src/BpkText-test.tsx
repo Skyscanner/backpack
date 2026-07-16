@@ -128,6 +128,16 @@ describe('BpkText', () => {
       );
     });
 
+    it('should render correctly with prop color is token textSecondaryOnContrast', () => {
+      const { getByText } = render(
+        <BpkText color={TEXT_COLORS.textSecondaryOnContrast}>{text}</BpkText>,
+      );
+
+      expect(getByText(text)).toHaveClass(
+        `bpk-text bpk-text--body-default bpk-text--text-secondary-on-contrast`,
+      );
+    });
+
     it('should render correctly with prop color is invalid', () => {
       // @ts-expect-error Type '"invalid"' is not assignable to type 'TextColor | null | undefined'.
       const { getByText } = render(<BpkText color="invalid">{text}</BpkText>);

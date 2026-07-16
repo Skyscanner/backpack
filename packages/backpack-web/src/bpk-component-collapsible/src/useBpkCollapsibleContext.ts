@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import figma from "@figma/code-connect"
+import { useCollapsibleContext } from '@ark-ui/react';
 
-import BpkJourneyArrow from "./BpkJourneyArrow";
+import type { BpkUseCollapsibleReturn } from './useBpkCollapsible';
 
-figma.connect(
-  BpkJourneyArrow,
-  "https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=19850%3A20116",
-  {
-    example: () => <BpkJourneyArrow stops={1} />,
-  },
-)
+// Reader hook for the shared collapsible machine. Call from any component
+// inside BpkCollapsible.Root or BpkCollapsible.RootProvider to access the
+// current open/disabled/visible state and setOpen without prop-drilling.
+const useBpkCollapsibleContext = (): BpkUseCollapsibleReturn =>
+  useCollapsibleContext();
+
+export default useBpkCollapsibleContext;

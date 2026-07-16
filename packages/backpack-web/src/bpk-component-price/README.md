@@ -12,6 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import BpkPrice, {
   SIZES,
   ALIGNS,
+  VARIANTS,
 } from '@skyscanner/backpack-web/bpk-component-price';
 
 export default () => (
@@ -23,6 +24,24 @@ export default () => (
     leadingText="App only deal"
     trailingText="a night"
     icon={<NewWindowIcon />}
+  />
+);
+```
+
+### On contrast
+
+Use `variant={VARIANTS.onContrast}` when the price is placed on a dark / contrast
+surface so the text colours remain legible.
+
+```js
+export default () => (
+  <BpkPrice
+    variant={VARIANTS.onContrast}
+    size={SIZES.large}
+    price="£1,209"
+    previousPrice="£1,830"
+    leadingText="App only deal"
+    trailingText="a night"
   />
 );
 ```

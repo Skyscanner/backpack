@@ -23,6 +23,7 @@ import userEvent from '@testing-library/user-event';
 
 import BpkCollapsible from './BpkCollapsible';
 import useBpkCollapsible from './useBpkCollapsible';
+import useBpkCollapsibleContext from './useBpkCollapsibleContext';
 
 import type { BpkCollapsibleRootProps } from './BpkCollapsibleRoot';
 
@@ -275,6 +276,117 @@ describe('BpkCollapsible', () => {
 
       expect(trigger).toHaveAttribute('aria-expanded', 'true');
       expect(onOpen).toHaveBeenCalled();
+    });
+  });
+
+  describe('useBpkCollapsibleContext', () => {
+    const ReadState = () => {
+      const { disabled, open, visible } = useBpkCollapsibleContext();
+      return (
+        <div>
+          <span data-testid="open">{String(open)}</span>
+          <span data-testid="visible">{String(visible)}</span>
+          <span data-testid="disabled">{String(disabled)}</span>
+        </div>
+      );
+    };
+
+    it('reads open/visible/disabled from a Root', () => {
+      render(
+        <BpkCollapsible.Root defaultOpen>
+          <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <ReadState />
+          </BpkCollapsible.Content>
+        </BpkCollapsible.Root>,
+      );
+
+      expect(screen.getByTestId('open').textContent).toBe('true');
+      expect(screen.getByTestId('visible').textContent).toBe('true');
+      expect(screen.getByTestId('disabled').textContent).toBe('false');
+    });
+
+    it('reads open/visible/disabled from a RootProvider', () => {
+      const Harness = () => {
+        const collapsible = useBpkCollapsible({ defaultOpen: true });
+        return (
+          <BpkCollapsible.RootProvider value={collapsible}>
+            <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+            <BpkCollapsible.Content>
+              <ReadState />
+            </BpkCollapsible.Content>
+          </BpkCollapsible.RootProvider>
+        );
+      };
+      render(<Harness />);
+
+      expect(screen.getByTestId('open').textContent).toBe('true');
+      expect(screen.getByTestId('disabled').textContent).toBe('false');
+    });
+
+  });
+
+  describe('RootProvider asChild', () => {
+    it('renders no wrapper element when asChild is true', () => {
+      const Harness = () => {
+        const collapsible = useBpkCollapsible();
+        return (
+          <ul>
+            <BpkCollapsible.RootProvider value={collapsible} asChild>
+              <li>
+                <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+                <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+              </li>
+            </BpkCollapsible.RootProvider>
+          </ul>
+        );
+      };
+      const { container } = render(<Harness />);
+      const list = container.querySelector('ul') as HTMLElement;
+      // With asChild the <li> is the direct child of <ul>; without asChild
+      // Ark injects a <div> between them.
+      expect(list.firstElementChild?.tagName).toBe('LI');
+    });
+
+    it('renders a wrapper element when asChild is omitted', () => {
+      const Harness = () => {
+        const collapsible = useBpkCollapsible();
+        return (
+          <div data-testid="wrapper">
+            <BpkCollapsible.RootProvider value={collapsible}>
+              <span>
+                <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+                <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+              </span>
+            </BpkCollapsible.RootProvider>
+          </div>
+        );
+      };
+      const { container } = render(<Harness />);
+      const wrapper = container.querySelector('[data-testid="wrapper"]') as HTMLElement;
+      expect(wrapper.firstElementChild?.tagName).toBe('DIV');
+    });
+
+    it('merges collapsible attributes onto the child element when asChild is true', () => {
+      const Harness = () => {
+        const collapsible = useBpkCollapsible({ defaultOpen: true });
+        return (
+          <ul>
+            <BpkCollapsible.RootProvider value={collapsible} asChild>
+              <li data-testid="item">
+                <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+                <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+              </li>
+            </BpkCollapsible.RootProvider>
+          </ul>
+        );
+      };
+      render(<Harness />);
+
+      const item = screen.getByTestId('item');
+      expect(item.tagName).toBe('LI');
+      expect(item).toHaveAttribute('data-state', 'open');
+      expect(item).toHaveAttribute('data-backpack-ds-component');
     });
   });
 

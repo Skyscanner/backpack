@@ -28,15 +28,12 @@ type ThemeConfig = {
   docsSidebarLink: string;
   docsSidebarLinkBorder: string;
   docsSidebarSelectedArrowColor: string;
-  fontSize: string;
   primaryColor300: string;
   primaryColor500: string;
   primaryColor600: string;
   primaryColor700: string;
   secondaryColor300: string;
   secondaryColor500: string;
-  secondaryColor600: string;
-  secondaryColor700: string;
   themeName: string;
 };
 
@@ -59,41 +56,6 @@ export type Theme = {
   barchartBarActiveBackgroundColor: string;
   barchartBarSelectedBackgroundColor: string;
   blockquoteBarColor: string;
-  buttonFontSize: string;
-  buttonPrimaryTextColor: string;
-  buttonPrimaryHoverTextColor: string;
-  buttonPrimaryActiveTextColor: string;
-  buttonPrimaryGradientStartColor: string;
-  buttonPrimaryGradientEndColor: string;
-  buttonPrimaryBackgroundColor: string;
-  buttonPrimaryHoverBackgroundColor: string;
-  buttonPrimaryActiveBackgroundColor: string;
-  buttonSecondaryTextColor: string;
-  buttonSecondaryHoverTextColor: string;
-  buttonSecondaryActiveTextColor: string;
-  buttonSecondaryBorderColor: string;
-  buttonSecondaryHoverBorderColor: string;
-  buttonSecondaryActiveBorderColor: string;
-  buttonSecondaryBackgroundColor: string;
-  buttonSecondaryHoverBackgroundColor: string;
-  buttonSecondaryActiveBackgroundColor: string;
-  buttonFeaturedTextColor: string;
-  buttonFeaturedHoverTextColor: string;
-  buttonFeaturedActiveTextColor: string;
-  buttonFeaturedGradientStartColor: string;
-  buttonFeaturedGradientEndColor: string;
-  buttonFeaturedBackgroundColor: string;
-  buttonFeaturedHoverBackgroundColor: string;
-  buttonFeaturedActiveBackgroundColor: string;
-  buttonDestructiveTextColor: string;
-  buttonDestructiveHoverTextColor: string;
-  buttonDestructiveActiveTextColor: string;
-  buttonDestructiveBorderColor: string;
-  buttonDestructiveHoverBorderColor: string;
-  buttonDestructiveActiveBorderColor: string;
-  buttonDestructiveBackgroundColor: string;
-  buttonDestructiveHoverBackgroundColor: string;
-  buttonDestructiveActiveBackgroundColor: string;
   chipDefaultSelectedBackgroundColor: string;
   chipDefaultSelectedTextColor: string;
   chipOnDarkSelectedBackgroundColor: string;
@@ -178,14 +140,11 @@ const generateTheme = ({
   docsSidebarLink,
   docsSidebarLinkBorder,
   docsSidebarSelectedArrowColor,
-  fontSize,
   primaryColor300,
   primaryColor500,
   primaryColor600,
   primaryColor700,
   secondaryColor500,
-  secondaryColor600,
-  secondaryColor700,
   themeName,
 }: ThemeConfig): Theme => ({
   themeName,
@@ -212,46 +171,6 @@ const generateTheme = ({
   barchartBarSelectedBackgroundColor: primaryColor700,
 
   blockquoteBarColor: primaryColor500,
-
-  buttonFontSize: fontSize,
-
-  buttonPrimaryTextColor: colorWhite,
-  buttonPrimaryHoverTextColor: colorWhite,
-  buttonPrimaryActiveTextColor: colorWhite,
-  buttonPrimaryGradientStartColor: secondaryColor500,
-  buttonPrimaryGradientEndColor: secondaryColor600,
-  buttonPrimaryBackgroundColor: secondaryColor600,
-  buttonPrimaryHoverBackgroundColor: secondaryColor600,
-  buttonPrimaryActiveBackgroundColor: secondaryColor700,
-
-  buttonSecondaryTextColor: primaryColor500,
-  buttonSecondaryHoverTextColor: primaryColor600,
-  buttonSecondaryActiveTextColor: primaryColor700,
-  buttonSecondaryBorderColor: colorSkyGrayTint06,
-  buttonSecondaryHoverBorderColor: primaryColor600,
-  buttonSecondaryActiveBorderColor: primaryColor700,
-  buttonSecondaryBackgroundColor: colorWhite,
-  buttonSecondaryHoverBackgroundColor: colorWhite,
-  buttonSecondaryActiveBackgroundColor: colorWhite,
-
-  buttonFeaturedTextColor: colorWhite,
-  buttonFeaturedHoverTextColor: colorWhite,
-  buttonFeaturedActiveTextColor: colorWhite,
-  buttonFeaturedGradientStartColor: primaryColor500,
-  buttonFeaturedGradientEndColor: primaryColor600,
-  buttonFeaturedBackgroundColor: primaryColor600,
-  buttonFeaturedHoverBackgroundColor: primaryColor600,
-  buttonFeaturedActiveBackgroundColor: primaryColor700,
-
-  buttonDestructiveTextColor: secondaryColor500,
-  buttonDestructiveHoverTextColor: secondaryColor600,
-  buttonDestructiveActiveTextColor: secondaryColor700,
-  buttonDestructiveBorderColor: colorSkyGrayTint06,
-  buttonDestructiveHoverBorderColor: secondaryColor500,
-  buttonDestructiveActiveBorderColor: secondaryColor500,
-  buttonDestructiveBackgroundColor: colorWhite,
-  buttonDestructiveHoverBackgroundColor: colorWhite,
-  buttonDestructiveActiveBackgroundColor: colorWhite,
 
   chipDefaultSelectedBackgroundColor: primaryColor500,
   chipDefaultSelectedTextColor: colorWhite,
@@ -363,9 +282,6 @@ const londonTheme: ThemeConfig = {
   primaryColor700: '#B1121C',
   secondaryColor300: '#6889AB',
   secondaryColor500: '#013A76',
-  secondaryColor600: '#002F61',
-  secondaryColor700: '#00254B',
-  fontSize: '1.2rem',
   docsSidebarBackground: '#013A76',
   docsSidebarLink: '#6889AB',
   docsSidebarLinkBorder: '#6889AB',
@@ -380,9 +296,6 @@ const hongKongTheme: ThemeConfig = {
   primaryColor700: '#013838',
   secondaryColor300: '#686868',
   secondaryColor500: '#4C4C4C',
-  secondaryColor600: '#3C3C3C',
-  secondaryColor700: '#2A2A2A',
-  fontSize: '1.2rem',
   docsSidebarBackground: '#4C4C4C',
   docsSidebarLink: '#686868',
   docsSidebarLinkBorder: '#686868',
@@ -397,9 +310,6 @@ const dohaTheme: ThemeConfig = {
   primaryColor700: '#5E072C',
   secondaryColor300: '#ffd54f',
   secondaryColor500: '#ffc107',
-  secondaryColor600: '#ffb300',
-  secondaryColor700: '#ffa000',
-  fontSize: '1.2rem',
   docsSidebarBackground: '#5E072C',
   docsSidebarLink: '#BF3671',
   docsSidebarLinkBorder: '#BF3671',
