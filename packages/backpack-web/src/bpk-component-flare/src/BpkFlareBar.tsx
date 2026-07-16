@@ -32,7 +32,6 @@ type NativeDivProps = HTMLAttributes<HTMLDivElement>;
 export type Props = Omit<NativeDivProps, 'className'> & {
   className?: string | null;
   svgClassName?: string | null;
-  rounded?: boolean;
 };
 
 const BpkFlareBar = ({

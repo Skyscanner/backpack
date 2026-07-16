@@ -36,7 +36,7 @@ export type Props = Omit<NativeDivProps, 'className' | 'content'> & {
   showPointer?: boolean;
   className?: string | null;
   contentClassName?: string | null;
-  flareProps?: (HTMLAttributes<HTMLDivElement> & { svgClassName?: string; rounded?: boolean }) | null;
+  flareProps?: (HTMLAttributes<HTMLDivElement> & { svgClassName?: string }) | null;
 };
 
 const BpkContentBubble = ({
