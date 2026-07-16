@@ -21,7 +21,7 @@ import { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BpkPhoneInput from './BpkPhoneInput';
+import BpkPhoneInput, { type Props as BpkPhoneInputProps } from './BpkPhoneInput';
 
 const dialingCodeProps = {
   id: 'dialing-code',
@@ -36,7 +36,7 @@ const dialingCodes = [
   { code: '55', description: '+55', numberPrefix: '+55' },
 ];
 
-const defaultProps = {
+const defaultProps: BpkPhoneInputProps = {
   id: 'phone-input-id',
   name: 'telephone_input',
   label: 'Telephone number',
@@ -78,7 +78,7 @@ describe('BpkPhoneInput form test', () => {
 
     expect(textInput).toHaveValue('555 5555');
 
-    const formData = new FormData(screen.getByTestId('form'));
+    const formData = new FormData(screen.getByTestId('form') as HTMLFormElement);
     expect(Object.fromEntries(formData.entries())).toEqual({
       telephone_input: '555 5555',
       dialing_code: '44',

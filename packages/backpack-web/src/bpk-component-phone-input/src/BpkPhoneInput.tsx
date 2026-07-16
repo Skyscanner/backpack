@@ -16,61 +16,68 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { ChangeEvent, HTMLAttributes, OptionHTMLAttributes, ReactElement } from 'react';
 
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
+import type { BpkSelectProps } from '../../bpk-component-select';
+
 import STYLES from './BpkPhoneInput.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+export type DialingCode = {
+  code: string;
+  description: string;
+  numberPrefix?: string | null;
+  // value is omitted: controlled internally via the code field
+} & Omit<OptionHTMLAttributes<HTMLOptionElement>, 'value'>;
+
+export type DialingCodeProps = {
+  // id and name are required, inherited from BpkSelectProps
+  // label is required by BpkLabel, not part of BpkSelectProps
+  label: string;
+  className?: string;
+  wrapperClassName?: string;
+  image?: ReactElement | null;
+  // value is omitted: controlled internally via the dialingCode prop
+} & Omit<BpkSelectProps, 'value'>;
+
 export type Props = {
-  dialingCode: string,
+  dialingCode: string;
   /**
    * Note that `id`, `name` and `label` are required but more properties can be provided,
    * e.g. `dialingCodeProps={{ id: 'id', name: 'name', label: 'label', className: 'some-class' }}`.
    * All properties will be forwarded to the underlying `BpkSelect` component.
    */
-  dialingCodeProps: {
-    id: string,
-    name: string,
-    label: string,
-    className?: string,
-    wrapperClassName?: string,
-  },
+  dialingCodeProps: DialingCodeProps;
   /**
    * Each object **must** have a `code` and `description`, but can have more properties and those
    * will be forwarded the the `option` element they represent.
    * Note that, when using the `dialingCodeMask` option, all `dialingCodes` values must have a `numberPrefix` attribute.
    */
-  dialingCodes: Array<{
-    code: string,
-    description: string,
-    numberPrefix: ?string,
-  }>,
-  id: string,
-  name: string,
-  label: string,
-  onChange: (SyntheticInputEvent<HTMLElement>) => mixed,
-  onDialingCodeChange: (SyntheticInputEvent<HTMLElement>) => mixed,
-  value: string,
-  className: ?string,
-  disabled: boolean,
-  dialingCodeMask: boolean,
-  large: boolean,
-  valid: ?boolean,
-  wrapperProps: { [string]: any },
+  dialingCodes: DialingCode[];
+  id: string;
+  name: string;
+  label: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onDialingCodeChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+  value: string;
+  className?: string | null;
+  disabled?: boolean;
+  dialingCodeMask?: boolean;
+  large?: boolean;
+  valid?: boolean | null;
+  wrapperProps?: HTMLAttributes<HTMLSpanElement>;
 };
 
 type CommonProps = {
-  large: boolean,
-  disabled: boolean,
-  valid: ?boolean,
+  large: boolean;
+  disabled: boolean;
+  valid: boolean | null;
 };
 
 const BpkPhoneInput = (props: Props) => {
@@ -116,7 +123,7 @@ const BpkPhoneInput = (props: Props) => {
     displayValue = `${numberPrefix} ${value}`;
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (!onChange) {
       return;
     }
@@ -157,7 +164,6 @@ const BpkPhoneInput = (props: Props) => {
             {dialingCodeProps.label}
           </BpkLabel>
         </div>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkSelect
           {...commonProps}
           {...dialingCodeProps}
@@ -169,10 +175,9 @@ const BpkPhoneInput = (props: Props) => {
           onChange={onDialingCodeChange}
         >
           {dialingCodes.map(({ code, description, ...extraDialingProps }) => (
-            // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
-            (<option key={code} value={code} {...extraDialingProps}>
+            <option key={code} value={code} {...extraDialingProps}>
               {description}
-            </option>)
+            </option>
           ))}
         </BpkSelect>
       </div>
@@ -185,7 +190,6 @@ const BpkPhoneInput = (props: Props) => {
             {label}
           </BpkLabel>
         </div>
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <BpkInput
           {...commonProps}
           {...rest}
@@ -201,32 +205,6 @@ const BpkPhoneInput = (props: Props) => {
       </div>
     </span>
   );
-};
-
-BpkPhoneInput.propTypes = {
-  dialingCode: PropTypes.string.isRequired,
-  dialingCodeProps: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    label: PropTypes.string,
-    className: PropTypes.string,
-    wrapperClassName: PropTypes.string,
-  }).isRequired,
-  dialingCodes: PropTypes.arrayOf(
-    PropTypes.shape({ code: PropTypes.string, description: PropTypes.string }),
-  ).isRequired,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onDialingCodeChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  dialingCodeMask: PropTypes.bool,
-  disabled: PropTypes.bool,
-  large: PropTypes.bool,
-  valid: PropTypes.bool,
-  wrapperProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default BpkPhoneInput;
