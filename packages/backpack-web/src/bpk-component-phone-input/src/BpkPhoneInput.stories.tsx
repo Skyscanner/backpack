@@ -21,7 +21,7 @@ import { Component } from 'react';
 import BpkFieldSet from '../../bpk-component-fieldset';
 import BpkImage from '../../bpk-component-image';
 
- 
+
 import BpkPhoneInput from './BpkPhoneInput';
 
 import type { Meta } from '@storybook/react';

@@ -21,6 +21,7 @@ import type { ChangeEvent, HTMLAttributes, ReactElement } from 'react';
 import BpkInput, { INPUT_TYPES } from '../../bpk-component-input';
 import BpkLabel from '../../bpk-component-label';
 import BpkSelect from '../../bpk-component-select';
+import type { BpkSelectProps } from '../../bpk-component-select';
 import { cssModules } from '../../bpk-react-utils';
 
 import STYLES from './BpkPhoneInput.module.scss';
@@ -35,14 +36,14 @@ export type DialingCode = {
 };
 
 export type DialingCodeProps = {
-  id: string;
-  name: string;
+  // id and name are required, inherited from BpkSelectProps
+  // label is required by BpkLabel, not part of BpkSelectProps
   label: string;
   className?: string;
   wrapperClassName?: string;
   image?: ReactElement | null;
-  [key: string]: unknown;
-};
+  // value is omitted: controlled internally via the dialingCode prop
+} & Omit<BpkSelectProps, 'value'>;
 
 export type Props = {
   dialingCode: string;
@@ -122,10 +123,6 @@ const BpkPhoneInput = (props: Props) => {
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (!onChange) {
-      return;
-    }
-
     if (!dialingCodeMask) {
       onChange(e);
       return;
