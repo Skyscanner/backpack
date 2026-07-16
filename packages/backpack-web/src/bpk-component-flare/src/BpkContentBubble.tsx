@@ -20,7 +20,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkFlareBar from './BpkFlareBar';
+import BpkFlareBar, { type Props as BpkFlareBarProps } from './BpkFlareBar';
 // @ts-expect-error Generated import. See `decisions/imports-ts-suppressions.md`.
 import CornerRadius from './__generated__/js/corner-radius';
 
@@ -36,7 +36,7 @@ export type Props = Omit<NativeDivProps, 'className' | 'content'> & {
   showPointer?: boolean;
   className?: string | null;
   contentClassName?: string | null;
-  flareProps?: (HTMLAttributes<HTMLDivElement> & { svgClassName?: string }) | null;
+  flareProps?: BpkFlareBarProps | null;
 };
 
 const BpkContentBubble = ({
