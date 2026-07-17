@@ -1,5 +1,38 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`BpkBadge sets target="_blank" and rel="noopener noreferrer" when blank=true in link like variant 1`] = `
+<DocumentFragment>
+  <a
+    class="bpk-badge bpk-badge--normal bpk-badge--interactive"
+    data-backpack-ds-component="Badge"
+    href="#"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Promociando
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      focusable="false"
+      height="12"
+      viewBox="0 0 12 12"
+      width="12"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.7002 6C10.7002 3.40426 8.59574 1.2998 6 1.2998C3.40426 1.2998 1.2998 3.40426 1.2998 6C1.2998 8.59574 3.40426 10.7002 6 10.7002V12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 9.31371 9.31371 12 6 12V10.7002C8.59574 10.7002 10.7002 8.59574 10.7002 6Z"
+      />
+      <path
+        d="M6.60645 8.87728C6.60645 9.04297 6.47213 9.17728 6.30645 9.17728H5.70625C5.54056 9.17728 5.40625 9.04297 5.40625 8.87728V5.47188C5.40625 5.30619 5.54056 5.17188 5.70625 5.17188H6.30645C6.47213 5.17188 6.60645 5.30619 6.60645 5.47188V8.87728Z"
+      />
+      <path
+        d="M6.64375 3.68125C6.64375 4.04024 6.35274 4.33125 5.99375 4.33125C5.63477 4.33125 5.34375 4.04024 5.34375 3.68125C5.34375 3.32227 5.63477 3.03125 5.99375 3.03125C6.35274 3.03125 6.64375 3.32227 6.64375 3.68125Z"
+      />
+    </svg>
+  </a>
+</DocumentFragment>
+`;
+
 exports[`BpkBadge should render correctly 1`] = `
 <DocumentFragment>
   <span

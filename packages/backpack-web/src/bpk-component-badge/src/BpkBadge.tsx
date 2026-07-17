@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode, Ref, AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes } from 'react';
+import type { ReactNode, AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -149,8 +149,8 @@ const BpkBadge = (
     const buttonRest = rest as Omit<ButtonProps, 'as' | 'children'>;
     return (
       <button
-        type="button"
         {...buttonRest}
+        type="button"
         className={classNames}
         {...getDataComponentAttribute('Badge')}
       >

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import BpkSmallFlightIcon from '../../bpk-component-icon/sm/flight';
 
@@ -80,5 +80,28 @@ describe('BpkBadge', () => {
       <BpkBadge as="a" href="#">Promociando</BpkBadge>,
     );
     expect(asFragment()).toMatchSnapshot();
+
+    const el = screen.getByRole('link');
+    expect(el).not.toHaveAttribute('target');
+    expect(el).not.toHaveAttribute('rel');
+  });
+
+  it('sets target="_blank" and rel="noopener noreferrer" when blank=true in link like variant', () => {
+    const { asFragment } = render(
+      <BpkBadge as="a" href="#" blank>Promociando</BpkBadge>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+
+    const el = screen.getByRole('link');
+    expect(el).toHaveAttribute('target', '_blank');
+    expect(el).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(el).not.toHaveAttribute('blank', '');
+  });
+
+  it('merges consumer supplied rel with noopener noreferrer when blank=true in link like variant', () => {
+    render(
+      <BpkBadge as="a" href="#" blank rel="custom-rel">Promociando</BpkBadge>,
+    );
+    expect(screen.getByRole('link')).toHaveAttribute('rel', 'custom-rel noopener noreferrer');
   });
 });
