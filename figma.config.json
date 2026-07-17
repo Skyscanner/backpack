@@ -32,6 +32,7 @@
       "bpk-component-content-cards/src/*": "@skyscanner/backpack-web/bpk-component-content-cards",
       "bpk-component-datatable/src/*": "@skyscanner/backpack-web/bpk-component-datatable",
       "bpk-component-dialog/src/*": "@skyscanner/backpack-web/bpk-component-dialog",
+      "bpk-component-divider/src/*": "@skyscanner/backpack-web/bpk-component-divider",
       "bpk-component-drawer/src/*": "@skyscanner/backpack-web/bpk-component-drawer",
       "bpk-component-fieldset/src/*": "@skyscanner/backpack-web/bpk-component-fieldset",
       "bpk-component-flare/src/*": "@skyscanner/backpack-web/bpk-component-flare",
