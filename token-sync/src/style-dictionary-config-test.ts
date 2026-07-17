@@ -193,14 +193,17 @@ describe('style-dictionary-config', () => {
     const semanticPath = '/repo/token-sync/tokens/backpack.light.json';
 
     it.each<[string, object, boolean]>([
-      ['Spacing (dimension, $type)', { filePath: primitivesPath, path: ['Spacing', 'md'], $type: 'dimension' }, true],
-      ['Radius (dimension, legacy type)', { filePath: primitivesPath, path: ['Radius', 'md'], type: 'dimension' }, true],
-      // dropped
-      ['color primitive', { filePath: primitivesPath, path: ['Colour', 'Pink'], $type: 'color' }, false],
-      ['Heights primitive', { filePath: primitivesPath, path: ['Heights', '36'], $type: 'dimension' }, false],
-      ['Type/Letter-spacing primitive', { filePath: primitivesPath, path: ['Type', 'Letter-spacing', 'tight-10'], $type: 'dimension' }, false],
-      ['Type/Line-height primitive', { filePath: primitivesPath, path: ['Type', 'Line-height', '16'], $type: 'dimension' }, false],
-      ['Type/Size primitive', { filePath: primitivesPath, path: ['Type', 'Size', '16'], $type: 'dimension' }, false],
+      // allowed groups
+      ['Spacing', { filePath: primitivesPath, path: ['Spacing', 'md'], $type: 'dimension' }, true],
+      ['Radius', { filePath: primitivesPath, path: ['Radius', 'md'], $type: 'dimension' }, true],
+      ['Border', { filePath: primitivesPath, path: ['Border', '1'], $type: 'dimension' }, true],
+      ['Modal', { filePath: primitivesPath, path: ['Modal', '200'], $type: 'dimension' }, true],
+      // excluded groups
+      ['Colour', { filePath: primitivesPath, path: ['Colour', 'Pink'], $type: 'color' }, false],
+      ['Heights', { filePath: primitivesPath, path: ['Heights', '36'], $type: 'dimension' }, false],
+      ['Type', { filePath: primitivesPath, path: ['Type', 'Size', '16'], $type: 'dimension' }, false],
+      ['Alpha', { filePath: primitivesPath, path: ['Alpha', 'black-10'], $type: 'color' }, false],
+      // other exclusions
       ['semantic theme file', { filePath: semanticPath, path: ['Spacing', 'md'], $type: 'dimension' }, false],
       ['non-web path', { filePath: primitivesPath, path: ['Spacing', 'ios-only'], $type: 'dimension' }, false],
     ])('%s → %s', (_label, token, expected) => {
