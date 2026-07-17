@@ -86,13 +86,11 @@
     overflow-wrap: break-word;
   }
 
-  // Thai - no word spaces; ICU dictionary failure = no natural break points.
-  // overflow-wrap: anywhere (not just break-word) because Thai strings have no
-  // space characters to serve as natural break opportunities.
+  // Thai - no word spaces; ICU dictionary handles word boundaries where available.
+  // overflow-wrap: anywhere (not break-word) because Thai strings have no space
+  // characters to serve as natural break opportunities — needed as last resort.
   :lang(th) {
-    line-break: loose;
     overflow-wrap: anywhere;
-    word-break: break-all;
   }
 
   // Hindi (Devanagari) - space-delimited, wraps like Latin.

@@ -161,13 +161,13 @@ By default, Japanese text (`:lang(ja)`) wraps safely in every browser:
 - **Chromium** (Chrome/Edge) uses `word-break: auto-phrase` to break at natural phrase (文節) boundaries automatically.
 - **Firefox / Safari** have no equivalent, so they fall back to standard per-character wrapping under kinsoku (`line-break: strict`). This is the conventional way Japanese wraps in print and never overflows the container.
 
-For key marketing/UI copy where you want phrase-aware breaks in **all** browsers (not just Chromium), insert `<wbr>` at the phrase boundaries. Backpack detects the presence of `<wbr>` via `:lang(ja):has(wbr)` and automatically switches that text to `word-break: keep-all`, making the `<wbr>` marks the only break points — so Firefox and Safari honour the same boundaries as Chromium.
+For key marketing/UI copy where you want phrase-aware breaks in **all modern browsers** (Chrome 105+, Safari 15.4+, Firefox 121+), insert `<wbr>` at the phrase boundaries. Backpack detects the presence of `<wbr>` via `:lang(ja):has(wbr)` and automatically switches that text to `word-break: keep-all`, making the `<wbr>` marks the only break points — so Firefox and Safari honour the same boundaries as Chromium.
 
 ```jsx
 // Without <wbr>: safe everywhere, phrase-aware only in Chromium.
 <BpkText>プライスアラートを設定して東京行きのお得な航空券を見つけましょう</BpkText>
 
-// With <wbr>: phrase-aware in every browser. No className needed —
+// With <wbr>: phrase-aware in all modern browsers (Chrome 105+, Safari 15.4+, Firefox 121+). No className needed —
 // the presence of <wbr> is itself the opt-in signal.
 <BpkText>
   プライスアラートを<wbr />設定して<wbr />東京行きの<wbr />
