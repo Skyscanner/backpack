@@ -79,7 +79,6 @@ const meta = {
     docs: {
       page: () => (
         <>
-
           <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
         </>

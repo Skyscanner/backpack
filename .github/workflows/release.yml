@@ -143,10 +143,12 @@ jobs:
           npx @supernovaio/cli storybook-import \
             --from ./libs/backpack-storybook-host/dist-storybook \
             --designSystemId $DESIGN_SYSTEM_ID \
-            --brandId 80f68ac7-b11d-4c97-a4dc-f01dc458da83 \
-            --sourceId f88b7fa5-26af-44b7-a8dc-87593f336c3c \
+            --brandId $SUPERNOVA_BRAND_ID \
+            --sourceId $SUPERNOVA_SOURCE_ID \
             --name bpk-storybook \
             --publicAccess
         env:
           SUPERNOVA_TOKEN: ${{ secrets.SUPERNOVA_API_KEY }}
           DESIGN_SYSTEM_ID: ${{ secrets.SUPERNOVA_DESIGN_SYSTEM_ID }}
+          SUPERNOVA_BRAND_ID: ${{ secrets.SUPERNOVA_BRAND_ID }}
+          SUPERNOVA_SOURCE_ID: ${{ secrets.SUPERNOVA_SOURCE_ID }}

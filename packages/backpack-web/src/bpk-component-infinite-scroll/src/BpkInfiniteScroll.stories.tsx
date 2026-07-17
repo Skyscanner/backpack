@@ -289,7 +289,6 @@ const meta: Meta<typeof InfiniteList> = {
     docs: {
       page: () => (
         <>
-
           <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
         </>

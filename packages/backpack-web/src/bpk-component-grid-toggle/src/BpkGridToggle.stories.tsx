@@ -33,7 +33,6 @@ const meta: Meta<typeof BpkGridToggle> = {
     docs: {
       page: () => (
         <>
-
           <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
         </>
