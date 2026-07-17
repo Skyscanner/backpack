@@ -275,6 +275,7 @@ const MixedExample = () => (
     <InverseExample />
     <OutlineExample />
     <SubtleExample />
+    <InteractiveExample />
   </div>
 );
 
