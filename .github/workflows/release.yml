@@ -101,19 +101,32 @@ jobs:
         with:
           persist-credentials: false
 
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
-          cache: ''
+          cache: 'pnpm'
 
       - name: Restore Storybook build cache
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        id: storybook-dist-cache
         with:
           path: |
             libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
+
+      - name: Install dependencies
+        if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Storybook
+        if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
+        run: |
+          pnpm run build
+          pnpm run storybook:dist
 
       - name: Install system dependencies
         run: |
