@@ -29,7 +29,7 @@
   flex-direction: column;
   flex: 1;
   transition: box-shadow tokens.$bpk-duration-sm ease-in-out;
-  background-color: tokens.$bpk-surface-default-day;
+  background-color: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
   overflow: hidden;
 
   @include radii.bpk-border-radius-md;
@@ -48,7 +48,8 @@
 
 // Outlined variant - replaces shadow with border
 .bpk-card-v2--outlined {
-  border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  border: var(--bpk-border-1, tokens.$bpk-border-size-sm) solid
+    var(--bpk-other-line-default, tokens.$bpk-line-day);
   box-shadow: none;
 
   @include utils.bpk-hover {
@@ -67,21 +68,24 @@
 
 // Cars prompt variant - interactive card with background-color change on hover, no shadow
 .bpk-card-v2--cars-prompt {
-  background-color: tokens.$bpk-surface-low-contrast-day;
+  background-color: var(
+    --bpk-surface-low-contrast,
+    tokens.$bpk-surface-low-contrast-day
+  );
   box-shadow: none;
 
   @include utils.bpk-hover {
-    background-color: tokens.$bpk-surface-subtle-day;
+    background-color: var(--bpk-surface-subtle, tokens.$bpk-surface-subtle-day);
     box-shadow: none;
   }
 
   &:active {
-    background-color: tokens.$bpk-surface-subtle-day;
+    background-color: var(--bpk-surface-subtle, tokens.$bpk-surface-subtle-day);
     box-shadow: none;
   }
 
   &:focus-visible {
-    background-color: tokens.$bpk-surface-subtle-day;
+    background-color: var(--bpk-surface-subtle, tokens.$bpk-surface-subtle-day);
     box-shadow: none;
 
     @include utils.bpk-focus-indicator;
@@ -92,13 +96,13 @@
 // Horizontal on mobile, vertical on desktop
 .bpk-card-v2__divider {
   // Mobile: horizontal divider
-  height: tokens.$bpk-border-size-sm;
+  height: var(--bpk-border-1, tokens.$bpk-border-size-sm);
   margin: 0 tokens.bpk-spacing-md();
-  background-color: tokens.$bpk-line-day;
+  background-color: var(--bpk-other-line-default, tokens.$bpk-line-day);
 
   // Desktop: vertical divider
   @include breakpoints.bpk-breakpoint-above-mobile {
-    width: tokens.$bpk-border-size-sm;
+    width: var(--bpk-border-1, tokens.$bpk-border-size-sm);
     height: auto;
     margin: tokens.bpk-spacing-md() 0;
     align-self: stretch;
