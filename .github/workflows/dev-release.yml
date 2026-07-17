@@ -118,7 +118,7 @@ jobs:
       - name: Determine dev version
         id: version
         run: |
-          BASE_VERSION=$(git describe --tags --abbrev=0 --exclude='*-*' HEAD)
+          BASE_VERSION="42.28.0"
           DEV_VERSION="${BASE_VERSION}-dev-v${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
           echo "dev_version=${DEV_VERSION}" >> "$GITHUB_OUTPUT"
           echo "Dev version: ${DEV_VERSION}"
