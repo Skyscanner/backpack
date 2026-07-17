@@ -78,6 +78,7 @@ const meta = {
     BpkDividedCard,
     BpkCardWrapper,
   },
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;

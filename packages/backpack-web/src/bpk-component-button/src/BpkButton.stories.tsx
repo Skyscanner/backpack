@@ -586,6 +586,7 @@ const AnchorTagsExample = () => (
 const meta = {
   title: 'bpk-component-button',
   component: BpkButton,
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;
