@@ -14,9 +14,9 @@ exports[`BpkBadge sets target="_blank" and rel="noopener noreferrer" when blank=
       aria-hidden="true"
       fill="currentColor"
       focusable="false"
-      height="12"
+      height="0.75rem"
       viewBox="0 0 12 12"
-      width="12"
+      width="0.75rem"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -56,9 +56,9 @@ exports[`BpkBadge should render correctly button like interactive variant 1`] = 
       aria-hidden="true"
       fill="currentColor"
       focusable="false"
-      height="12"
+      height="0.75rem"
       viewBox="0 0 12 12"
-      width="12"
+      width="0.75rem"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -87,9 +87,9 @@ exports[`BpkBadge should render correctly link like interactive variant 1`] = `
       aria-hidden="true"
       fill="currentColor"
       focusable="false"
-      height="12"
+      height="0.75rem"
       viewBox="0 0 12 12"
-      width="12"
+      width="0.75rem"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
