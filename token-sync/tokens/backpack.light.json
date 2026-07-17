@@ -141,23 +141,11 @@
         "min-height-default": {
           "$value": "{Heights.36}"
         },
-        "min-height-large": {
-          "$value": "48px"
-        },
-        "min-weight-large": {
-          "$value": "48px"
-        },
         "padding-horizontal-default": {
-          "$value": "16px"
+          "$value": "{Spacing.base}"
         },
         "padding-horizontal-large": {
-          "$value": "16px"
-        },
-        "$type": "dimension"
-      },
-      "Typography": {
-        "tmp-default-label": {
-          "$value": "16px"
+          "$value": "{Spacing.base}"
         },
         "$type": "dimension"
       }
@@ -747,138 +735,705 @@
     "$value": true,
     "$type": "boolean"
   },
-  "Typography": {
+  "Typography None Binding ❌": {
     "Family": {
-      "Sans Serif": {
-        "$value": "Skyscanner Relative"
-      },
-      "Serif": {
-        "$value": "Larken"
+      "Sans": {
+        "$value": "{Type.Family.Skyscanner Relative}"
       },
       "$type": "fontFamily"
     },
-    "Kerning": {
-      "Default": {
-        "$value": "0px"
-      },
-      "Loose": {
-        "$value": "0px"
-      },
-      "Tight": {
-        "$value": "0px"
-      },
-      "$type": "dimension"
-    },
-    "Line Heights": {
-      "16": {
-        "$value": "16px"
-      },
-      "20": {
-        "$value": "20px"
-      },
-      "24": {
-        "$value": "24px"
-      },
-      "28": {
-        "$value": "28px"
-      },
-      "40": {
-        "$value": "40px"
-      },
-      "48": {
-        "$value": "48px"
-      },
-      "64": {
-        "$value": "64px"
-      },
-      "76": {
-        "$value": "76px"
-      },
-      "82": {
-        "$value": "82px"
-      },
-      "96": {
-        "$value": "96px"
-      },
-      "115": {
-        "$value": "115px"
-      },
-      "120": {
-        "$value": "120px"
-      },
-      "153": {
-        "$value": "154px"
-      },
-      "192": {
-        "$value": "192px"
-      },
-      "$type": "dimension"
-    },
-    "Sizes": {
-      "12": {
-        "$value": "12px"
-      },
-      "14": {
-        "$value": "14px"
-      },
-      "20": {
-        "$value": "20px"
-      },
-      "24": {
-        "$value": "24px"
-      },
-      "32": {
-        "$value": "32px"
-      },
-      "40": {
-        "$value": "40px"
-      },
-      "48": {
-        "$value": "48px"
-      },
-      "64": {
-        "$value": "64px"
-      },
-      "76": {
-        "$value": "76px"
-      },
-      "96": {
-        "$value": "96px"
-      },
-      "120": {
-        "$value": "120px"
-      },
-      "144": {
-        "$value": "144px"
-      },
-      "192": {
-        "$value": "192px"
-      },
-      "240": {
-        "$value": "240px"
-      },
-      "base": {
-        "$value": "16px"
-      },
-      "$type": "dimension"
-    },
     "Weight": {
       "Body": {
-        "$value": 400
-      },
-      "Headline": {
-        "$value": 700
-      },
-      "Hero": {
-        "$value": 900
+        "$value": "{Type.Weight.400}"
       },
       "Label": {
-        "$value": 700
-      },
-      "Subhead": {
-        "$value": 300
+        "$value": "{Type.Weight.700}"
       },
       "$type": "fontWeight"
+    }
+  },
+  "Typography": {
+    "Body Default": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.24}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.16}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Body Longform": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.28}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.20}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Caption": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.16}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.12}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Display 1": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.192}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.240}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Display 2": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.153}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.192}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Display 3": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.115}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.144}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Display 4": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.82}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.96}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Display 5": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.64}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.76}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Display 6": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.40}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.48}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Editorial 1": {
+      "Family": {
+        "$value": "{Type.Family.Larken}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.56}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.48}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.300}",
+        "$type": "fontWeight"
+      }
+    },
+    "Editorial 2": {
+      "Family": {
+        "$value": "{Type.Family.Larken}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.40}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.32}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Editorial 3": {
+      "Family": {
+        "$value": "{Type.Family.Larken}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.28}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.20}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Editorial 4": {
+      "Family": {
+        "$value": "{Type.Family.Larken}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.22}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.16}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Editorial 5": {
+      "Family": {
+        "$value": "{Type.Family.Larken}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.20}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.14}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Editorial 6": {
+      "Family": {
+        "$value": "{Type.Family.Larken}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.16}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.12}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Footnote": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.20}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.14}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.400}",
+        "$type": "fontWeight"
+      }
+    },
+    "Heading 1": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.48}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.40}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Heading 2": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.40}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.32}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Heading 3": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.28}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.24}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Heading 4": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.24}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.20}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Heading 5": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.20}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.16}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Hero 1": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.120}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.120}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Hero 2": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.96}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.96}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Hero 3": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 50}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.76}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.76}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Hero 4": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 40}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.64}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.64}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Hero 5": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 40}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.48}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.48}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Hero 6": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Tight 30}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.40}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.40}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.900}",
+        "$type": "fontWeight"
+      }
+    },
+    "Label 1": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.24}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.16}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Label 2": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.20}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.14}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Label 3": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.16}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.12}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.700}",
+        "$type": "fontWeight"
+      }
+    },
+    "Subheading": {
+      "Family": {
+        "$value": "{Type.Family.Skyscanner Relative}",
+        "$type": "string"
+      },
+      "Letter-spacing": {
+        "$value": "{Type.Letter-spacing.Default}",
+        "$type": "dimension"
+      },
+      "Line-height": {
+        "$value": "{Type.Line-height.32}",
+        "$type": "number"
+      },
+      "Size": {
+        "$value": "{Type.Size.24}",
+        "$type": "dimension"
+      },
+      "Weight": {
+        "$value": "{Type.Weight.300}",
+        "$type": "fontWeight"
+      }
     }
   }
 }
