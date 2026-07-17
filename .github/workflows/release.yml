@@ -107,7 +107,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
 
       - name: Restore Storybook build cache
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
