@@ -22,7 +22,6 @@ import readme from '../README.md';
 
 import BpkCode from './BpkCode';
 import BpkCodeBlock from './BpkCodeBlock';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta } from '@storybook/react';
 

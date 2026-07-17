@@ -23,7 +23,6 @@ import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import readme from '../README.md';
 
 import BpkContentCards from './BpkContentCards';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta } from '@storybook/react';
 

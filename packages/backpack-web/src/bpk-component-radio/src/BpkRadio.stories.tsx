@@ -18,9 +18,9 @@
 
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 

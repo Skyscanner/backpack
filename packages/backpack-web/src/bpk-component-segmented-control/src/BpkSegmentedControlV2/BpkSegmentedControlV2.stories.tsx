@@ -20,8 +20,6 @@ import { useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
 import ChevronDownIcon from '../../../bpk-component-icon/sm/chevron-down';
 import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';

@@ -18,8 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import
-
 import BpkButton from '../../bpk-component-button';
 import {
   withButtonAlignment,

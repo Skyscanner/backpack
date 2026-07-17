@@ -17,13 +17,12 @@
  */
 
 
-// @ts-expect-error Untyped import
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
 
-// @ts-expect-error Untyped import
 import {
   BpkTable,
   BpkTableBody,

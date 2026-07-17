@@ -32,8 +32,6 @@ import readme from '../README.md';
 import BpkChatBubble from './BpkChatBubble';
 import { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './common-types';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 import type { Meta } from '@storybook/react';
 

@@ -34,8 +34,6 @@ import BpkCard from './BpkCard';
 import BpkCardWrapper from './BpkCardWrapper';
 import BpkDividedCard, { ORIENTATION } from './BpkDividedCard';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkCard.stories.module.scss';

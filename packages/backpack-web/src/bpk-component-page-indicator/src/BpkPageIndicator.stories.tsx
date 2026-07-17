@@ -32,9 +32,6 @@ import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
 import type { Props as BpkPageIndicatorProps } from './BpkPageIndicator';
 import type { Meta } from '@storybook/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
-
 import STYLES from './BpkPageIndicator.stories.module.scss';
 
 const getClassName = cssModules(STYLES);

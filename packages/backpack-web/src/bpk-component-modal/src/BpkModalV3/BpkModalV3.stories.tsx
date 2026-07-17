@@ -33,7 +33,6 @@ import {
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkModalV3 from './BpkModalV3';
 import readme from './README.md';
 import { MODAL_V3_TYPES } from './common-types';

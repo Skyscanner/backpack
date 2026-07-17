@@ -18,8 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import
-
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { withDefaultProps } from '../../bpk-react-utils';
 import readme from '../README.md';

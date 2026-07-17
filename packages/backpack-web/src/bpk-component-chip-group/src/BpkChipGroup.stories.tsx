@@ -30,7 +30,6 @@ import BpkMultiSelectChipGroup, {
   CHIP_COMPONENT,
 } from './BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { MultiSelectProps, ChipItem } from './BpkMultiSelectChipGroup';
 import type { SingleSelectProps } from './BpkSingleSelectChipGroup';

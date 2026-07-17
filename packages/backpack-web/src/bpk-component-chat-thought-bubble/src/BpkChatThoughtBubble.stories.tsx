@@ -19,7 +19,6 @@
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { cssModules } from '../../bpk-react-utils';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import readme from '../README.md';
 
 import BpkChatThoughtBubble from './BpkChatThoughtBubble';

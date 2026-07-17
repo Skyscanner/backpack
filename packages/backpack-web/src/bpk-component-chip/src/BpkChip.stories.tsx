@@ -43,7 +43,6 @@ import BpkDropdownChip from './BpkDropdownChip';
 import BpkIconChip from './BpkIconChip';
 import BpkSelectableChip from './BpkSelectableChip';
 import { CHIP_TYPES } from './commonTypes';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Props as BpkSelectableChipProps } from './BpkSelectableChip';
 import type { Meta } from '@storybook/react';

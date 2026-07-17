@@ -46,8 +46,6 @@ import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
 import themeAttributes from './themeAttributes';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkChatbotInput.stories.module.scss';

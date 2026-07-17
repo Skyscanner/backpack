@@ -16,13 +16,12 @@
  * limitations under the License.
  */
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 
-// @ts-expect-error Untyped import
 import readme from '../README.md';
 
 import BpkSwapButton, { SWAPBUTTON_STYLES } from './BpkSwapButton';

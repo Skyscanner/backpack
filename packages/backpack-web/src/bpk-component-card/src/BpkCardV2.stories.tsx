@@ -45,7 +45,6 @@ import BpkStarRating from '../../bpk-component-star-rating';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import readme from './BpkCardV2/README.md';
 
 import type { BpkCardV2SurfaceColor } from "..";

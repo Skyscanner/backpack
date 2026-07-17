@@ -17,16 +17,14 @@
  */
 import { useState } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import readme from '../README.md';
 
 import BpkSaveButton, { STYLE_TYPES, SIZE_TYPES } from './BpkSaveButton';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type {
   SizeType,

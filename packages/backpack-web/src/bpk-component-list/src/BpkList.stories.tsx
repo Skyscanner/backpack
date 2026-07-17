@@ -23,9 +23,6 @@ import readme from '../README.md';
 import BpkList from './BpkList';
 import BpkListItem from './BpkListItem';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
-
 import type { Meta } from '@storybook/react';
 
 const UnorderedExample = () => (

@@ -19,7 +19,6 @@
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import readme from '../README.md';
 

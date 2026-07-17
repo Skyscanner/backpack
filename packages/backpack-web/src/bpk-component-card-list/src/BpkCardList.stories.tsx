@@ -43,8 +43,6 @@ import {
   ACCESSORY_MOBILE_TYPES,
 } from './common-types';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import type { MultiSelectProps } from '../../bpk-component-chip-group';
 import type { Meta } from '@storybook/react';
 

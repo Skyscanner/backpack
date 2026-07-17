@@ -38,7 +38,6 @@ import BpkComparisonTray from '../BpkComparisonTray/BpkComparisonTray';
 
 
 import BpkComparisonTable from './BpkComparisonTable';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import readme from './README.md';
 
 import type { BpkCompareColumn } from './common-types';

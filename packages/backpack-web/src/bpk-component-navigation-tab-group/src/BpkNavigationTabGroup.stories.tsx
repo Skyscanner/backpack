@@ -34,9 +34,6 @@ import BpkNavigationTabGroup, {
 
 import type { Meta } from '@storybook/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
-
 import STYLES from './BpkNavigationTabGroup.stories.module.scss';
 
 const getClassNames = cssModules(STYLES);

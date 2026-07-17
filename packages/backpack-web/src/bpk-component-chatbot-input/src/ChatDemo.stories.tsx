@@ -48,8 +48,6 @@ import readme from '../README.md';
 import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 import type { Meta } from '@storybook/react';
 

@@ -21,7 +21,6 @@ import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import readme from '../README.md';
 
 import BpkDataTable from './BpkDataTable';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta, StoryObj } from '@storybook/react';
 

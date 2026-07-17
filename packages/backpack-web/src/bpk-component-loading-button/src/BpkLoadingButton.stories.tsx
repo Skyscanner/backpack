@@ -18,9 +18,9 @@
 
 import { Component } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import {
@@ -37,9 +37,6 @@ import readme from '../README.md';
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
 import type { Meta } from '@storybook/react';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 
 import STYLES from './BpkLoadingButton.stories.module.scss';
 

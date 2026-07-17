@@ -59,8 +59,6 @@ import CHECKBOX_CARD_THEME_ATTRIBUTES, {
   createCheckboxCardTheme,
 } from './themeAttributes';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import type { Meta } from '@storybook/react';
 
 const CAR_IMAGE_BASE_URL = 'https://logos.skyscnr.com/images/carhire/sippmaps/';

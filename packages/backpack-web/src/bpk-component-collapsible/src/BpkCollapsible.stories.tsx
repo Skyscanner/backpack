@@ -41,7 +41,6 @@ import BpkCollapsible from './BpkCollapsible';
 import { COLLAPSIBLE_VARIANTS } from './common-types';
 import useBpkCollapsible from './useBpkCollapsible';
 import useBpkCollapsibleContext from './useBpkCollapsibleContext';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta } from '@storybook/react';
 

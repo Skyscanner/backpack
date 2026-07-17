@@ -35,9 +35,6 @@ import BpkNudger from './BpkNudger';
 import type { BUTTON_TYPES } from './common-types';
 import type { Meta } from '@storybook/react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
-
 import STYLES from './BpkNudger.stories.module.scss';
 
 const getClassName = cssModules(STYLES);

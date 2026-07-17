@@ -18,7 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import
 import { withDefaultProps, cssModules } from '../../bpk-react-utils';
 import readme from '../README.md';
 
