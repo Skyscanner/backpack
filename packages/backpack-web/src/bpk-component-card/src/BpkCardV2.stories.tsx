@@ -490,13 +490,13 @@ const meta = {
     docs: {
       page: () => (
         <>
-
           <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
         </>
       ),
     },
   },
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;
