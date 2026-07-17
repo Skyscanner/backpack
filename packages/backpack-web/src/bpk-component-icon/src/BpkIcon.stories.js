@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import {
   textColors,
   lineHeightBase,
@@ -27,6 +30,7 @@ import {
 import BpkButton, { SIZE_TYPES } from '../../bpk-component-button';
 import { BpkList, BpkListItem } from '../../bpk-component-list';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
 import { sm, lg, xxxl } from '../all';
 import {
   withAlignment,
@@ -157,6 +161,16 @@ const MixedExample = () => (
 
 const meta = {
   title: 'bpk-component-icon',
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

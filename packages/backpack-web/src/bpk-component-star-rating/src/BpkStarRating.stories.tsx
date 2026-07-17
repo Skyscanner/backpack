@@ -17,8 +17,11 @@
  */
 
 
-// @ts-expect-error Untyped import
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
+
 
 import {
   BpkTable,
@@ -28,6 +31,7 @@ import {
   BpkTableHead,
   BpkTableHeadCell,
 } from '../../bpk-component-table';
+import readme from '../README.md';
 import { BpkStar, STAR_TYPES, ROUNDING_TYPES, BpkInteractiveStarRating, withInteractiveStarRatingState } from '../index';
 
 import BpkStarRating from './BpkStarRating';
@@ -218,6 +222,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-star-rating',
   component: BpkStarRating,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

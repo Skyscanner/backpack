@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   colorMonteverde,
   colorPanjin,
@@ -24,11 +26,13 @@ import {
   surfaceContrastDay,
 } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+
 import BpkCheckbox from '../../bpk-component-checkbox';
 import { withAlignment } from '../../bpk-component-icon';
 import StopsIcon from '../../bpk-component-icon/sm/stops';
 import TimeIcon from '../../bpk-component-icon/sm/time';
 import BpkText from '../../bpk-component-text';
+import readme from '../README.md';
 
 import BpkAccordion from './BpkAccordion';
 import BpkAccordionItem from './BpkAccordionItem';
@@ -306,6 +310,16 @@ const meta = {
   component: BpkAccordion,
   subcomponents: {
     BpkAccordionItem,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

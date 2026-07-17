@@ -19,6 +19,8 @@
 import { Fragment } from 'react';
 
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   coreAccentDay,
   surfaceHighlightDay,
@@ -26,6 +28,7 @@ import {
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkCard from './BpkCard';
 import BpkCardWrapper from './BpkCardWrapper';
@@ -77,6 +80,16 @@ const meta = {
   subcomponents: {
     BpkDividedCard,
     BpkCardWrapper,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
   tags: ['dark-mode-compatible'],
 } satisfies Meta;

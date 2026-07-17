@@ -19,7 +19,10 @@
 import type { ReactNode } from 'react';
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkButton from '../../bpk-component-button';
+import readme from '../README.md';
 
 import AnimateHeight from './AnimateHeight';
 
@@ -72,6 +75,16 @@ class AnimateHeightExample extends Component<Props, State> {
 const meta = {
   title: 'bpk-animate-height',
   component: AnimateHeight,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

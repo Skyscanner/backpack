@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
@@ -33,6 +35,7 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkCollapsible from './BpkCollapsible';
 import { COLLAPSIBLE_VARIANTS } from './common-types';
@@ -533,6 +536,16 @@ const VisualTest = () => (
 const meta = {
   title: 'bpk-component-collapsible',
   component: BpkCollapsible.Root,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
   decorators: [
     (Story: any) => (
       <BpkProvider>

@@ -18,6 +18,9 @@
 
 import { Fragment, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import {
   onePixelRem,
   colorSkyGrayTint06,
@@ -26,6 +29,7 @@ import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkHorizontalNav, { HORIZONTAL_NAV_TYPES } from './BpkHorizontalNav';
 import BpkHorizontalNavItem from './BpkHorizontalNavItem';
@@ -211,6 +215,16 @@ const meta = {
   title: 'bpk-component-horizontal-nav',
   component: BpkHorizontalNav,
   subcomponents: { BpkHorizontalNavItem },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

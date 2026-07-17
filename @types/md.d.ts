@@ -1,7 +1,7 @@
 /*
  * Backpack - Skyscanner's Design System
  *
- * Copyright 2016 Skyscanner Ltd
+ * Copyright 2022 Skyscanner Ltd
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,29 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
-
-import readme from '../README.md';
-
-import BpkRtlToggle from './BpkRtlToggle';
-
-const meta = {
-  title: 'bpk-component-rtl-toggle',
-  component: BpkRtlToggle,
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Markdown>{readme}</Markdown>
-          <ArgTypes exclude={['zoomEnabled']} />
-        </>
-      ),
-    },
-  },
-};
-
-export default meta;
-
-export const Example = {
-  render: () => <BpkRtlToggle />,
-};
+declare module '*.md' {
+  const content: string;
+  export default content;
+}
