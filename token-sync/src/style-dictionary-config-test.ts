@@ -198,6 +198,7 @@ describe('style-dictionary-config', () => {
       // dropped
       ['color primitive', { filePath: primitivesPath, path: ['Colour', 'Pink'], $type: 'color' }, false],
       ['Heights primitive', { filePath: primitivesPath, path: ['Heights', '36'], $type: 'dimension' }, false],
+      ['Type primitive', { filePath: primitivesPath, path: ['Type', 'size-16'], $type: 'dimension' }, false],
       ['semantic theme file', { filePath: semanticPath, path: ['Spacing', 'md'], $type: 'dimension' }, false],
       ['non-web path', { filePath: primitivesPath, path: ['Spacing', 'ios-only'], $type: 'dimension' }, false],
     ])('%s → %s', (_label, token, expected) => {
