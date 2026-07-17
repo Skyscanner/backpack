@@ -151,6 +151,25 @@ const BrandExample = () => (
   </BadgeLayout>
 );
 
+const InteractiveExample = () => (
+  <BadgeLayout>
+    <BpkProvider>
+      <BpkFlex gap={BpkSpacing.XXL}>
+        <BpkVStack gap={BpkSpacing.LG}>
+          <BpkText textStyle={TEXT_STYLES.caption}>Button</BpkText>
+          <BpkBadge as="button">Normal</BpkBadge>
+          <BpkBadge as="button" type={BADGE_TYPES.brand}>Brand</BpkBadge>
+        </BpkVStack>
+        <BpkVStack gap={BpkSpacing.LG}>
+          <BpkText textStyle={TEXT_STYLES.caption}>Link</BpkText>
+          <BpkBadge as="a" href="#">Normal</BpkBadge>
+          <BpkBadge as="a" href="#" type={BADGE_TYPES.brand}>Brand</BpkBadge>
+        </BpkVStack>
+      </BpkFlex>
+    </BpkProvider>
+  </BadgeLayout>
+);
+
 const SubtleExample = () => (
   <BadgeLayout>
     <BpkBadge type={BADGE_TYPES.subtle}>Subtle</BpkBadge>
@@ -261,6 +280,7 @@ const MixedExample = () => (
     <InverseExample />
     <OutlineExample />
     <SubtleExample />
+    <InteractiveExample />
   </div>
 );
 
@@ -304,6 +324,10 @@ export const Strong = {
 
 export const Brand = {
   render: () => <BrandExample />,
+};
+
+export const Interactive = {
+  render: () => <InteractiveExample />,
 };
 
 export const Inverse = {
