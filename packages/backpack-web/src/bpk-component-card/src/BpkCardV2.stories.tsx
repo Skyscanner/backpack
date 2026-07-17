@@ -481,6 +481,7 @@ const meta = {
   title: 'bpk-component-card-v2',
   component: BpkCardV2.Root,
   decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;

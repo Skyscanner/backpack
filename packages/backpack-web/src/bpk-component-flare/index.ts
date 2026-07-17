@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import BpkContentBubble from './src/BpkContentBubble';
 import BpkFlareBar from './src/BpkFlareBar';
 

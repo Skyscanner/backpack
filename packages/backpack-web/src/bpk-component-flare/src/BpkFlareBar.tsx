@@ -16,21 +16,29 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { HTMLAttributes } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+// @ts-expect-error Generated import. See `decisions/imports-ts-suppressions.md`.
 import Pointer from './__generated__/js/pointer';
 
 import STYLES from './bpk-flare-bar.module.scss';
 
 const getClassName = cssModules(STYLES);
 
+type NativeDivProps = HTMLAttributes<HTMLDivElement>;
+
+export type Props = Omit<NativeDivProps, 'className'> & {
+  className?: string | null;
+  svgClassName?: string | null;
+};
+
 const BpkFlareBar = ({
   className = null,
   svgClassName = null,
   ...rest
-}) => {
+}: Props) => {
   const classNames = [getClassName('bpk-flare-bar__container')];
   if (className) {
     classNames.push(className);
@@ -47,11 +55,6 @@ const BpkFlareBar = ({
       <Pointer className={curveClassNames.join(' ')} />
     </div>
   );
-};
-
-BpkFlareBar.propTypes = {
-  className: PropTypes.string,
-  svgClassName: PropTypes.string,
 };
 
 export default BpkFlareBar;
