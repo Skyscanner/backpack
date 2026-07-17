@@ -431,9 +431,13 @@ function tokenType(token: TransformedToken): string | undefined {
   return undefined;
 }
 
-// Filter for the standalone `primitives.css` output: keep Spacing and Radius
-// only. Colors are excluded (consumers should use semantic tokens). Heights are
-// excluded until there is a confirmed consumer need.
+// Top-level groups from primitives.json that are emitted in primitives.css.
+// All other groups (Colour, Heights, Type, …) are excluded — consumers should
+// use semantic tokens from the theme files instead of raw primitives.
+const PRIMITIVES_ALLOWLIST = new Set(['Border', 'Modal', 'Radius', 'Spacing']);
+
+// Filter for the standalone `primitives.css` output: only tokens whose
+// top-level group is in PRIMITIVES_ALLOWLIST are emitted.
 export function makeWebPrimitivesTokenFilter(): (
   token: TransformedToken,
 ) => boolean {
@@ -442,8 +446,7 @@ export function makeWebPrimitivesTokenFilter(): (
     fileFilter(token) &&
     Array.isArray(token.path) &&
     isWebTokenPath(token.path) &&
-    tokenType(token) !== 'color' &&
-    token.path[0] !== 'Heights';
+    PRIMITIVES_ALLOWLIST.has(token.path[0]);
 }
 
 interface BuildConfigOptions {

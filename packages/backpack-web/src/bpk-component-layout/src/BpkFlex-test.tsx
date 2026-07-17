@@ -61,6 +61,45 @@ describe('BpkFlex', () => {
     expect(container.firstChild).toHaveStyle(`gap: .5rem`);
   });
 
+  it('supports independent rowGap and columnGap props', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          wrap="wrap"
+          rowGap={BpkSpacing.SM}
+          columnGap={BpkSpacing.LG}
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    expect(container.firstChild).toHaveStyle('row-gap: .25rem');
+    expect(container.firstChild).toHaveStyle('column-gap: 1.5rem');
+  });
+
+  it('supports self placement and grid placement props', () => {
+    const { container } = render(
+      <BpkProvider>
+        <BpkFlex
+          alignSelf="flex-end"
+          justifySelf="center"
+          gridColumn="2 / span 2"
+          gridRow="1"
+        >
+          Content
+        </BpkFlex>
+      </BpkProvider>,
+    );
+
+    const element = container.firstChild as HTMLElement;
+
+    expect(element).toHaveStyle('align-self: flex-end');
+    expect(element).toHaveStyle('justify-self: center');
+    expect(element).toHaveStyle('grid-row: 1');
+    expect(getComputedStyle(element).gridColumn.replace(/\s/g, '')).toBe('2/span2');
+  });
+
   it('forwards ref to the underlying DOM element', () => {
     const ref = createRef<HTMLDivElement>();
     render(
@@ -113,6 +152,25 @@ describe('BpkFlex', () => {
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
   });
 
+  it('calls onFocus and onBlur', () => {
+    const handleFocus = jest.fn();
+    const handleBlur = jest.fn();
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkFlex tabIndex={0} onFocus={handleFocus} onBlur={handleBlur}>
+          Focusable
+        </BpkFlex>
+      </BpkProvider>,
+    );
+    const element = getByText('Focusable');
+
+    fireEvent.focus(element);
+    expect(handleFocus).toHaveBeenCalledTimes(1);
+
+    fireEvent.blur(element);
+    expect(handleBlur).toHaveBeenCalledTimes(1);
+  });
+
   it('renders when textStyle is provided', () => {
     const { getByText } = render(
       <BpkProvider>
@@ -162,5 +220,55 @@ describe('BpkFlex', () => {
       </BpkProvider>,
     );
     expect(container.querySelector('div')).toBeInTheDocument();
+  });
+
+  describe('flexShrink prop', () => {
+    it('applies flex-shrink: 0 via the flexShrink prop alias', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex flexShrink={0}>Fixed-size item</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('flex-shrink: 0');
+    });
+
+    it('applies flex-shrink: 1 via the flexShrink prop alias', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex flexShrink={1}>Shrinkable</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('flex-shrink: 1');
+    });
+
+    it('shrink prop takes precedence over flexShrink when both are provided', () => {
+      const { container: shrinkWins } = render(
+        <BpkProvider>
+          <BpkFlex shrink={0} flexShrink={1}>Should be flex-shrink: 0</BpkFlex>
+        </BpkProvider>,
+      );
+      // shrink=0 wins over flexShrink=1
+      expect(shrinkWins.querySelector('div')).toHaveStyle('flex-shrink: 0');
+    });
+  });
+
+  describe('pointerEvents prop', () => {
+    it('applies pointer-events: none to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex pointerEvents="none">Click-through overlay</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: none');
+    });
+
+    it('applies pointer-events: auto to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkFlex pointerEvents="auto">Interactive</BpkFlex>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: auto');
+    });
   });
 });

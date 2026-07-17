@@ -16,7 +16,16 @@
  * limitations under the License.
  */
 
-import type { AriaAttributes, AriaRole, ElementType, KeyboardEventHandler, MouseEventHandler } from 'react';
+import type {
+  AriaAttributes,
+  AriaRole,
+  ElementType,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  PointerEventHandler,
+  TouchEventHandler,
+} from 'react';
 
 import type { BpkLayoutBackgroundColor } from './backgroundColors';
 import type {
@@ -75,11 +84,21 @@ export interface BpkSpacingProps {
   maxWidth?: BpkResponsiveValue<BpkSizeValue>;
   maxHeight?: BpkResponsiveValue<BpkSizeValue>;
 
-  // Position props (use rem values or percentages)
+  // Position props (use rem values, percentages, or BPK spacing tokens)
   top?: BpkResponsiveValue<BpkPositionValue>;
   right?: BpkResponsiveValue<BpkPositionValue>;
   bottom?: BpkResponsiveValue<BpkPositionValue>;
   left?: BpkResponsiveValue<BpkPositionValue>;
+  // CSS logical position props — RTL-safe equivalents of left/right
+  insetInlineStart?: BpkResponsiveValue<BpkPositionValue>;
+  insetInlineEnd?: BpkResponsiveValue<BpkPositionValue>;
+
+  // Scroll snap margin props — space between the scroll container's snap point and the element.
+  // Scalar only: scroll-margin is typically a fixed sticky-header height, not per-breakpoint.
+  // Uses BpkPositionValue (rem | % | '0' | BpkSpacingToken) so that rem offsets like '3.5rem'
+  // are accepted alongside spacing tokens.
+  scrollMarginTop?: BpkPositionValue;
+  scrollMarginBottom?: BpkPositionValue;
 }
 
 /**
@@ -91,7 +110,9 @@ export interface BpkSpacingProps {
  * NOTE:
  * - Layout components expose onClick, tabIndex and role to support interactive
  *   container patterns (e.g. clickable cards, landmark regions).
- * - BpkBox additionally exposes onFocus and onBlur on its own props type.
+ * - Interaction events (onFocus/onBlur, mouse/pointer/touch) are exposed on all
+ *   layout components, since they all render standard HTML elements that support
+ *   them. They only take effect where the underlying rendered element supports it.
  */
 export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   // Explicitly exclude className
@@ -106,6 +127,14 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   role?: AriaRole;
   onClick?: MouseEventHandler<HTMLElement>;
   onKeyDown?: KeyboardEventHandler<HTMLElement>;
+  onFocus?: FocusEventHandler<HTMLElement>;
+  onBlur?: FocusEventHandler<HTMLElement>;
+  onMouseDown?: MouseEventHandler<HTMLElement>;
+  onMouseUp?: MouseEventHandler<HTMLElement>;
+  onPointerDown?: PointerEventHandler<HTMLElement>;
+  onPointerUp?: PointerEventHandler<HTMLElement>;
+  onTouchStart?: TouchEventHandler<HTMLElement>;
+  onTouchEnd?: TouchEventHandler<HTMLElement>;
 
   // Typography
   textStyle?: BpkResponsiveValue<TextStyle>;
@@ -124,6 +153,9 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
 
   // Opacity — CSS opacity value (0–1)
   opacity?: number;
+
+  // CSS pointer-events — use 'none' for click-through overlays, 'auto' to restore interaction
+  pointerEvents?: 'none' | 'auto';
 
   // Text direction — for embedding bidirectional content within a page
   dir?: 'ltr' | 'rtl' | 'auto';
@@ -175,12 +207,15 @@ export interface BpkCommonLayoutProps extends BpkSpacingProps, AriaAttributes {
   borderX?: never;
   borderY?: never;
 
-  // Explicitly exclude transition & transform related props for performance reasons
+  // Explicitly exclude transition-related props — apply animations via CSS classes instead
   transition?: never;
   transitionProperty?: never;
   transitionDuration?: never;
   transitionTimingFunction?: never;
   transitionDelay?: never;
-  transform?: never;
+  // `transform` is intentionally absent here — BpkBox declares `transform?: string` in
+  // BpkBoxSpecificProps; all other layout components simply do not expose it.
+  // `transformOrigin` stays excluded on all components: it is only meaningful alongside
+  // `transform`, and BpkBox's token-based API is not designed for full transform-origin control.
   transformOrigin?: never;
 }

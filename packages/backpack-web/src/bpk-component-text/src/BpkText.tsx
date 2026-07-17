@@ -76,6 +76,7 @@ export const TEXT_COLORS = {
   textPrimary: 'text-primary',
   textPrimaryInverse: 'text-primary-inverse',
   textSecondary: 'text-secondary',
+  textSecondaryOnContrast: 'text-secondary-on-contrast',
   textSuccess: 'text-success',
 } as const;
 
@@ -100,6 +101,7 @@ type Props = {
   className?: string | null;
   color?: TextColor | null;
   textAlign?: TextAlign | null;
+  strikethrough?: boolean;
   id?: string;
   [rest: string]: any;
 };
@@ -108,6 +110,7 @@ const BpkText = ({
   children,
   className = null,
   color = null,
+  strikethrough = false,
   tagName: TagName = 'span',
   textAlign = null,
   textStyle = TEXT_STYLES.bodyDefault,
@@ -118,6 +121,7 @@ const BpkText = ({
     `bpk-text--${textStyle}`,
     color ? `bpk-text--${color}` : '',
     textAlign ? `bpk-text--align-${textAlign}` : '',
+    strikethrough ? 'bpk-text--strikethrough' : '',
     className,
   );
 

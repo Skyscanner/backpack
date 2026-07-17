@@ -41,6 +41,16 @@ const SpacingExample = () => (
     <BpkBox padding={BpkSpacing.MD} margin={BpkSpacing.MD}>
       Default box with padding and margin using Backpack spacing tokens.
     </BpkBox>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>BpkSpacing.XXXL (4rem / 64px)</BpkText>
+      <BpkBox
+        padding={BpkSpacing.XXXL}
+        marginTop={BpkSpacing.SM}
+        backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+      >
+        <BpkText>64px padding on all sides</BpkText>
+      </BpkBox>
+    </BpkBox>
   </LayoutWrapper>
 );
 
@@ -124,26 +134,58 @@ const PositionExample = () => (
 );
 
 /**
- * Interactive props example – demonstrates tabIndex, role, and onClick on BpkBox.
+ * Interactive props example – demonstrates keyboard, focus, mouse, pointer, and touch event props on BpkBox.
  *
- * @returns {JSX.Element} A clickable region using role, tabIndex, and onClick.
+ * @returns {JSX.Element} An interactive region using common event handler props.
  */
-const InteractiveExample = () => {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount((c) => c + 1);
+const InteractiveExample = ({
+  showEventCounts = true,
+}: {
+  showEventCounts?: boolean;
+}) => {
+  const [counts, setCounts] = useState({
+    click: 0,
+    focus: 0,
+    blur: 0,
+    mouseDown: 0,
+    mouseUp: 0,
+    pointerDown: 0,
+    pointerUp: 0,
+    touchStart: 0,
+    touchEnd: 0,
+  });
+  const increment = (eventName: keyof typeof counts) => {
+    setCounts((currentCounts) => ({
+      ...currentCounts,
+      [eventName]: currentCounts[eventName] + 1,
+    }));
+  };
+
   return (
     <LayoutWrapper>
       <BpkBox
         padding={BpkSpacing.MD}
         role="button"
         tabIndex={0}
-        onClick={increment}
+        onClick={() => increment('click')}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') increment();
+          if (e.key === 'Enter' || e.key === ' ') {
+            increment('click');
+          }
         }}
+        onFocus={() => increment('focus')}
+        onBlur={() => increment('blur')}
+        onMouseDown={() => increment('mouseDown')}
+        onMouseUp={() => increment('mouseUp')}
+        onPointerDown={() => increment('pointerDown')}
+        onPointerUp={() => increment('pointerUp')}
+        onTouchStart={() => increment('touchStart')}
+        onTouchEnd={() => increment('touchEnd')}
       >
         <BpkText>
-          Clicked {count} times (role=&quot;button&quot;, tabIndex=0)
+          {showEventCounts
+            ? `Click: ${counts.click}; focus: ${counts.focus}; blur: ${counts.blur}; mouseDown: ${counts.mouseDown}; mouseUp: ${counts.mouseUp}; pointerDown: ${counts.pointerDown}; pointerUp: ${counts.pointerUp}; touchStart: ${counts.touchStart}; touchEnd: ${counts.touchEnd}`
+            : `Clicked ${counts.click} times (role="button", tabIndex=0)`}
         </BpkText>
       </BpkBox>
     </LayoutWrapper>
@@ -439,7 +481,7 @@ const MixedExample = () => (
     <OverflowExample />
     <ZIndexExample />
     <AccessibilityExample />
-    <InteractiveExample />
+    <InteractiveExample showEventCounts={false} />
     <TextStyleExample />
     <BackgroundColorExample />
   </LayoutWrapper>
@@ -681,5 +723,157 @@ const DirExample = () => (
 
 export const Dir = {
   render: () => <DirExample />,
+};
+
+/**
+ * Transform example – demonstrates the `transform` prop on BpkBox for translate, rotate, and scale.
+ *
+ * @returns {JSX.Element} Boxes with CSS transform applied.
+ */
+const TransformExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.XL}>
+      <BpkText textStyle={TEXT_STYLES.label2}>translateX(16px) — horizontal shift</BpkText>
+      {/* Extra minHeight gives visual room for the shifted box */}
+      <BpkBox minHeight="3rem" marginTop={BpkSpacing.SM}>
+        <BpkBox
+          transform="translateX(16px)"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>Shifted 16px to the right</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+
+    {/* Extra bottom margin because rotate extends the visual bounding box beyond the layout footprint */}
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.XXXL}>
+      <BpkText textStyle={TEXT_STYLES.label2}>rotate(5deg) — slight rotation</BpkText>
+      <BpkBox minHeight="4rem" marginTop={BpkSpacing.SM}>
+        <BpkBox
+          transform="rotate(5deg)"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>Rotated 5 degrees</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>scale(0.8) — scaled down</BpkText>
+      <BpkBox minHeight="3rem" marginTop={BpkSpacing.SM}>
+        <BpkBox
+          transform="scale(0.8)"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+        >
+          <BpkText>Scaled to 80%</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const Transform = {
+  render: () => <TransformExample />,
+};
+
+/**
+ * PointerEvents example – demonstrates the `pointerEvents` prop.
+ * pointerEvents="none" makes a box non-interactive (clicks pass through to elements behind it).
+ * pointerEvents="auto" restores interaction explicitly.
+ *
+ * @returns {JSX.Element} Two boxes with different pointerEvents values.
+ */
+const PointerEventsExample = () => {
+  const [clickedNone, setClickedNone] = useState(false);
+  const [clickedAuto, setClickedAuto] = useState(false);
+  return (
+    <LayoutWrapper>
+      <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — box does not receive clicks</BpkText>
+        <BpkBox
+          pointerEvents="none"
+          padding={BpkSpacing.SM}
+          marginTop={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
+          opacity={0.6}
+          role="button"
+          tabIndex={0}
+          onClick={() => setClickedNone(true)}
+        >
+          <BpkText>{clickedNone ? 'You clicked (pointerEvents=none should prevent this)' : 'Try clicking — pointer events are disabled'}</BpkText>
+        </BpkBox>
+      </BpkBox>
+
+      <BpkBox padding={BpkSpacing.SM}>
+        <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;auto&quot; — box receives clicks normally</BpkText>
+        <BpkBox
+          pointerEvents="auto"
+          padding={BpkSpacing.SM}
+          marginTop={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          role="button"
+          tabIndex={0}
+          onClick={() => setClickedAuto((v) => !v)}
+        >
+          <BpkText>{clickedAuto ? 'Clicked!' : 'Click me — pointer events are active'}</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </LayoutWrapper>
+  );
+};
+
+export const PointerEvents = {
+  render: () => <PointerEventsExample />,
+};
+
+/**
+ * InsetInline example – demonstrates `insetInlineStart` and `insetInlineEnd` with
+ * BPK spacing tokens for RTL-safe absolute positioning.
+ *
+ * @returns {JSX.Element} Relative box with children positioned via logical inset props.
+ */
+const InsetInlineExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>insetInlineStart + insetInlineEnd with BPK spacing tokens (LTR)</BpkText>
+      <BpkBox position="relative" height="5rem" backgroundColor={BACKGROUND_COLORS.surfaceDefault} marginTop={BpkSpacing.SM}>
+        <BpkBox
+          position="absolute"
+          top="0"
+          insetInlineStart={BpkSpacing.Base}
+          insetInlineEnd={BpkSpacing.Base}
+          height="2rem"
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          padding={BpkSpacing.SM}
+        >
+          <BpkText>insetInlineStart=Base, insetInlineEnd=Base</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>Same layout in RTL — start/end swap automatically</BpkText>
+      <BpkBox dir="rtl" position="relative" height="5rem" backgroundColor={BACKGROUND_COLORS.surfaceDefault} marginTop={BpkSpacing.SM}>
+        <BpkBox
+          position="absolute"
+          top="0"
+          insetInlineStart={BpkSpacing.Base}
+          insetInlineEnd={BpkSpacing.XXXL}
+          height="2rem"
+          backgroundColor={BACKGROUND_COLORS.surfaceElevated}
+          padding={BpkSpacing.SM}
+        >
+          <BpkText>insetInlineStart=Base, insetInlineEnd=XXXL (RTL)</BpkText>
+        </BpkBox>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const InsetInline = {
+  render: () => <InsetInlineExample />,
 };
 

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { createRef } from 'react';
+
 import { render } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
@@ -61,6 +63,14 @@ describe('BpkVessel', () => {
     const { getByText } = render(<BpkVessel>Plain Content</BpkVessel>);
 
     expect(getByText('Plain Content')).toBeInTheDocument();
+  });
+
+  it('forwards ref to the underlying DOM element', () => {
+    const ref = createRef<HTMLElement>();
+
+    render(<BpkVessel ref={ref}>Content</BpkVessel>);
+
+    expect(ref.current).toBeInstanceOf(HTMLDivElement);
   });
 
   it('handles empty className gracefully', () => {

@@ -17,8 +17,8 @@
  */
 
 import BpkPrice, { type Props as BpkPriceProps } from './src/BpkPrice';
-import { SIZES, ALIGNS } from './src/common-types';
+import { SIZES, ALIGNS, VARIANTS } from './src/common-types';
 
 export default BpkPrice;
 export type { BpkPriceProps };
-export { SIZES, ALIGNS };
+export { SIZES, ALIGNS, VARIANTS };

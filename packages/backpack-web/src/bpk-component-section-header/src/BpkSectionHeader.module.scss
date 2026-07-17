@@ -31,11 +31,11 @@
     flex-direction: column;
 
     &--default {
-      color: tokens.$bpk-text-primary-day;
+      color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
     }
 
     &--on-dark {
-      color: tokens.$bpk-text-on-dark-day;
+      color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
     }
   }
 

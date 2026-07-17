@@ -19,6 +19,7 @@
 import StackOptionKeys from './BpkStack.constant';
 import { getSpacingValue } from './theme';
 import {
+  BPK_SPACING_TOKEN_SET,
   BpkBreakpointToChakraKey,
   isValidSpacingValue,
   isValidMarginValue,
@@ -113,6 +114,10 @@ export const BPK_RESPONSIVE_PROP_GROUPS_BY_COMPONENT: Record<
       'flexGrow',
       'flexShrink',
       'flexBasis',
+      'alignSelf',
+      'justifySelf',
+      'gridColumn',
+      'gridRow',
     ],
   },
   // Note: BpkGrid maps its public API props to these Chakra keys.
@@ -264,6 +269,22 @@ export function processBpkComponentProps<T extends Record<string, any>>(
 }
 
 /**
+ * Converts a position value to its CSS form.
+ * BPK spacing tokens are resolved to rem; all other valid values (rem, %, '0') pass through.
+ * Uses BPK_SPACING_TOKEN_SET as the single discriminator to avoid duplicating the raw-value
+ * regex that already lives in isValidPositionValue.
+ *
+ * @param {string} value - Position value or BPK spacing token
+ * @returns {string} CSS value
+ */
+export function convertBpkPositionValue(value: string): string {
+  if (BPK_SPACING_TOKEN_SET.has(value)) {
+    return convertBpkSpacingToChakra(value);
+  }
+  return value;
+}
+
+/**
  * Converts Backpack spacing token to Chakra UI compatible value
  * Returns the actual spacing value from the theme, not a token path
  *
@@ -380,8 +401,17 @@ export function processResponsiveValue(
 }
 
 /**
- * Validates and converts spacing props for Chakra UI
- * Handles all spacing-related properties including padding, margin, gap, size, border radius and position
+ * Validates and converts spacing props for Chakra UI.
+ *
+ * Handles:
+ * - Padding props: padding, paddingTop/Right/Bottom/Left, paddingStart/End, paddingInline, paddingBlock
+ * - Margin props: margin, marginTop/Right/Bottom/Left, marginStart/End, marginInline,
+ *   marginBlockStart/End, marginBlock
+ * - Gap: gap, rowGap, columnGap
+ * - Size: width, height, minWidth, minHeight, maxWidth, maxHeight
+ * - Position offsets: top, right, bottom, left, insetInlineStart, insetInlineEnd
+ *   (accept rem, %, '0', or BPK spacing tokens)
+ * - Scroll snap margin: scrollMarginTop, scrollMarginBottom (scalar BPK spacing tokens)
  *
  * @param {T} props - Component props object
  * @returns {Record<string, any>} Processed props with spacing tokens converted to actual values
@@ -401,13 +431,17 @@ export function processSpacingProps<T extends Record<string, any>>(
     'rowGap', 'columnGap',
     // Size props
     'width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight',
-    // Position props
+    // Position props (rem, %, '0', or BPK spacing tokens)
+    // scrollMarginTop/Bottom are included here because they use the same value space as position
+    // offsets (rem for sticky-header heights, tokens, or '0') rather than spacing-only values.
     'top', 'right', 'bottom', 'left',
+    'insetInlineStart', 'insetInlineEnd',
+    'scrollMarginTop', 'scrollMarginBottom',
   ];
 
   const processed: Record<string, any> = { ...props };
   const sizeKeys = ['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight'];
-  const positionKeys = ['top', 'right', 'bottom', 'left'];
+  const positionKeys = ['top', 'right', 'bottom', 'left', 'insetInlineStart', 'insetInlineEnd', 'scrollMarginTop', 'scrollMarginBottom'];
   // Margin keys accept 'auto' (e.g. marginTop: 'auto' to bottom-anchor a flex child); padding/gap don't.
   const marginKeys = [
     'margin', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft',
@@ -421,8 +455,10 @@ export function processSpacingProps<T extends Record<string, any>>(
       const isMarginProp = marginKeys.includes(key);
 
       let converter: (v: string) => string;
-      if (isSizeProp || isPositionProp) {
+      if (isSizeProp) {
         converter = (v: string) => v;
+      } else if (isPositionProp) {
+        converter = convertBpkPositionValue;
       } else {
         converter = convertBpkSpacingToChakra;
       }

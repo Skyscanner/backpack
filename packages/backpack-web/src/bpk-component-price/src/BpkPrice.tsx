@@ -18,10 +18,10 @@
 
 import type { HTMLAttributes, ReactNode } from 'react';
 
-import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import BpkText, { TEXT_STYLES, TEXT_COLORS } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 
-import { SIZES, ALIGNS } from './common-types';
+import { SIZES, ALIGNS, VARIANTS } from './common-types';
 
 import STYLES from './BpkPrice.module.scss';
 
@@ -31,6 +31,10 @@ export type Props = Omit<NativeDivProps, 'className'> & {
   price: string;
   size?: (typeof SIZES)[keyof typeof SIZES];
   align?: (typeof ALIGNS)[keyof typeof ALIGNS];
+  /**
+   * Use `onContrast` when the price sits on a dark / contrast surface.
+   */
+  variant?: (typeof VARIANTS)[keyof typeof VARIANTS];
   className?: string | null;
   leadingText?: string | null;
   /**
@@ -81,18 +85,28 @@ const BpkPrice = ({
   price,
   size = SIZES.small,
   trailingText = null,
+  variant = VARIANTS.default,
   ...rest
 }: Props) => {
   const defaultTextStyle = getDefaultTextStyle(size);
   const priceTextStyle = getPriceTextStyle(size);
   const isAlignRight = align === ALIGNS.right;
+  const isOnContrast = variant === VARIANTS.onContrast;
+
+  const priceColor = isOnContrast
+    ? TEXT_COLORS.textOnDark
+    : TEXT_COLORS.textPrimary;
+
+  const secondaryColor = isOnContrast
+    ? TEXT_COLORS.textSecondaryOnContrast
+    : TEXT_COLORS.textSecondary;
 
   const getTrailingTextNode = () => {
     if (!trailingText) {
       return null;
     }
     const textNode = (
-      <BpkText textStyle={defaultTextStyle} tagName="span">
+      <BpkText textStyle={defaultTextStyle} tagName="span" color={secondaryColor}>
         {trailingText}
       </BpkText>
     );
@@ -122,21 +136,19 @@ const BpkPrice = ({
         )}
       >
         {previousPrice && (
-          <span className={getClassName('bpk-price__previous-price')}>
-            <BpkText textStyle={defaultTextStyle} tagName="span">
-              {previousPrice}
-            </BpkText>
-          </span>
+          <BpkText textStyle={defaultTextStyle} tagName="span" color={TEXT_COLORS.textError} strikethrough>
+            {previousPrice}
+          </BpkText>
         )}
         {previousPrice && leadingText && (
           <span className={getClassName('bpk-price__separator')}>
-            <BpkText textStyle={defaultTextStyle} tagName="span">
+            <BpkText textStyle={defaultTextStyle} tagName="span" color={secondaryColor}>
               &#67871;
             </BpkText>
           </span>
         )}
         {leadingText && (
-          <BpkText textStyle={defaultTextStyle} tagName="span">
+          <BpkText textStyle={defaultTextStyle} tagName="span" color={secondaryColor}>
             {leadingText}
           </BpkText>
         )}
@@ -153,6 +165,7 @@ const BpkPrice = ({
           <BpkText
             textStyle={priceTextStyle}
             tagName="span"
+            color={priceColor}
             {...dataAttributes}
           >
             {price}

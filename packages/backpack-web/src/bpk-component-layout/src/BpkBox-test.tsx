@@ -147,6 +147,50 @@ describe('BpkBox', () => {
     expect(handleBlur).toHaveBeenCalledTimes(1);
   });
 
+  it('supports pointer, mouse, and touch interaction props', () => {
+    const handleMouseDown = jest.fn();
+    const handleMouseUp = jest.fn();
+    const handlePointerDown = jest.fn();
+    const handlePointerUp = jest.fn();
+    const handleTouchStart = jest.fn();
+    const handleTouchEnd = jest.fn();
+
+    const { getByText } = render(
+      <BpkProvider>
+        <BpkBox
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          Interactive
+        </BpkBox>
+      </BpkProvider>,
+    );
+
+    const element = getByText('Interactive');
+
+    fireEvent.mouseDown(element);
+    expect(handleMouseDown).toHaveBeenCalledTimes(1);
+
+    fireEvent.mouseUp(element);
+    expect(handleMouseUp).toHaveBeenCalledTimes(1);
+
+    fireEvent.pointerDown(element);
+    expect(handlePointerDown).toHaveBeenCalledTimes(1);
+
+    fireEvent.pointerUp(element);
+    expect(handlePointerUp).toHaveBeenCalledTimes(1);
+
+    fireEvent.touchStart(element);
+    expect(handleTouchStart).toHaveBeenCalledTimes(1);
+
+    fireEvent.touchEnd(element);
+    expect(handleTouchEnd).toHaveBeenCalledTimes(1);
+  });
+
   it('calls onKeyDown when a key is pressed', () => {
     const handleKeyDown = jest.fn();
     const { getByText } = render(
@@ -443,6 +487,98 @@ describe('BpkBox', () => {
       expect(withPaddingBlock.querySelector('div')?.className).not.toBe(
         withoutPaddingBlock.querySelector('div')?.className,
       );
+    });
+  });
+
+  describe('transform prop (BpkBox only)', () => {
+    it('applies the CSS transform to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox transform="translateX(10px)">Transformed</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('transform: translateX(10px)');
+    });
+
+    it('applies a different transform value than no transform', () => {
+      const { container: withTransform } = render(
+        <BpkProvider>
+          <BpkBox transform="rotate(45deg)">Rotated</BpkBox>
+        </BpkProvider>,
+      );
+      expect(withTransform.querySelector('div')).toHaveStyle('transform: rotate(45deg)');
+    });
+  });
+
+  describe('pointerEvents prop', () => {
+    it('applies pointer-events: none to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox pointerEvents="none">Overlay</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: none');
+    });
+
+    it('applies pointer-events: auto to the DOM element', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox pointerEvents="auto">Interactive</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('pointer-events: auto');
+    });
+  });
+
+  describe('insetInlineStart / insetInlineEnd props', () => {
+    it('applies inset-inline-start from a BPK spacing token (resolves to rem)', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox position="absolute" insetInlineStart={BpkSpacing.Base}>Content</BpkBox>
+        </BpkProvider>,
+      );
+      // BpkSpacing.Base = 1rem
+      expect(container.querySelector('div')).toHaveStyle('inset-inline-start: 1rem');
+    });
+
+    it('applies inset-inline-end from a raw rem value', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox position="absolute" insetInlineEnd="1.5rem">Content</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('inset-inline-end: 1.5rem');
+    });
+  });
+
+  describe('scrollMarginTop / scrollMarginBottom props', () => {
+    it('applies scroll-margin-top from a BPK spacing token (resolves to rem)', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox scrollMarginTop={BpkSpacing.XXXL}>Scroll target</BpkBox>
+        </BpkProvider>,
+      );
+      // BpkSpacing.XXXL = 4rem
+      expect(container.querySelector('div')).toHaveStyle('scroll-margin-top: 4rem');
+    });
+
+    it('applies scroll-margin-bottom from a BPK spacing token', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox scrollMarginBottom={BpkSpacing.MD}>Scroll target</BpkBox>
+        </BpkProvider>,
+      );
+      // BpkSpacing.MD = .5rem
+      expect(container.querySelector('div')).toHaveStyle('scroll-margin-bottom: .5rem');
+    });
+
+    it('applies scroll-margin-top from a raw rem value (sticky-header height)', () => {
+      const { container } = render(
+        <BpkProvider>
+          <BpkBox scrollMarginTop="3.5rem">Scroll target</BpkBox>
+        </BpkProvider>,
+      );
+      expect(container.querySelector('div')).toHaveStyle('scroll-margin-top: 3.5rem');
     });
   });
 

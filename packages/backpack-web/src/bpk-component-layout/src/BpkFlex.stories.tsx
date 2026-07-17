@@ -104,6 +104,42 @@ const BpkFlexWrapExample = () => (
   </LayoutWrapper>
 );
 
+const BpkFlexIndependentGapsExample = () => (
+  <LayoutWrapper>
+    <BpkFlex wrap="wrap" rowGap={BpkSpacing.SM} columnGap={BpkSpacing.LG} width="20rem">
+      <BpkBox height="2rem" width="9rem"><span className={outline}>1</span></BpkBox>
+      <BpkBox height="2rem" width="9rem"><span className={outline}>2</span></BpkBox>
+      <BpkBox height="2rem" width="9rem"><span className={outline}>3</span></BpkBox>
+      <BpkBox height="2rem" width="9rem"><span className={outline}>4</span></BpkBox>
+    </BpkFlex>
+  </LayoutWrapper>
+);
+
+const BpkFlexPlacementPropsExample = () => (
+  <LayoutWrapper>
+    <BpkBox
+      display="grid"
+      gridTemplateColumns="repeat(3, 1fr)"
+      gap={BpkSpacing.SM}
+      height="8rem"
+    >
+      <BpkBox height="100%"><span className={outline}>1</span></BpkBox>
+      <BpkFlex
+        align="center"
+        justify="center"
+        alignSelf="end"
+        justifySelf="stretch"
+        gridColumn="2 / span 2"
+        gridRow="1"
+        height="4rem"
+        backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
+      >
+        <BpkText>Placed flex item</BpkText>
+      </BpkFlex>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
 const BpkFlexLayoutPropsExample = () => (
   <LayoutWrapper>
     <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
@@ -229,10 +265,101 @@ export const Wrap = {
   render: () => <BpkFlexWrapExample />,
 };
 
+export const IndependentGaps = {
+  render: () => <BpkFlexIndependentGapsExample />,
+};
+
+export const PlacementProps = {
+  render: () => <BpkFlexPlacementPropsExample />,
+};
+
 export const Color = {
   render: () => <BpkFlexColorExample />,
 };
 
 export const LayoutProps = {
   render: () => <BpkFlexLayoutPropsExample />,
+};
+
+/**
+ * FlexShrink example – demonstrates the `shrink` prop for controlling how flex items shrink.
+ *
+ * @returns {JSX.Element} A flex container where children have different shrink values.
+ */
+const BpkFlexShrinkExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>shrink=0 — item refuses to shrink below its natural size</BpkText>
+      <BpkFlex gap={BpkSpacing.SM} width="20rem" marginTop={BpkSpacing.SM}>
+        <BpkFlex shrink={0} width="14rem" padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+          <BpkText>shrink=0 (fixed)</BpkText>
+        </BpkFlex>
+        <BpkBox width="100%" padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceDefault}>
+          <BpkText>flexible</BpkText>
+        </BpkBox>
+      </BpkFlex>
+    </BpkBox>
+
+    <BpkBox padding={BpkSpacing.SM}>
+      <BpkText textStyle={TEXT_STYLES.label2}>shrink=1 (default) — item shrinks proportionally</BpkText>
+      <BpkFlex gap={BpkSpacing.SM} width="20rem" marginTop={BpkSpacing.SM}>
+        <BpkFlex shrink={1} width="14rem" padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceElevated}>
+          <BpkText>shrink=1</BpkText>
+        </BpkFlex>
+        <BpkBox width="100%" padding={BpkSpacing.SM} backgroundColor={BACKGROUND_COLORS.surfaceDefault}>
+          <BpkText>flexible</BpkText>
+        </BpkBox>
+      </BpkFlex>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const FlexShrink = {
+  render: () => <BpkFlexShrinkExample />,
+};
+
+/**
+ * PointerEvents example – demonstrates `pointerEvents="none"` for a click-through overlay on BpkFlex.
+ *
+ * @returns {JSX.Element} A flex overlay that passes clicks through to the content underneath.
+ */
+const BpkFlexPointerEventsExample = () => (
+  <LayoutWrapper>
+    <BpkBox padding={BpkSpacing.SM} marginBottom={BpkSpacing.MD}>
+      <BpkText textStyle={TEXT_STYLES.label2}>pointerEvents=&quot;none&quot; — flex overlay passes clicks through</BpkText>
+      <BpkBox position="relative" width="26rem" height="5rem" marginTop={BpkSpacing.SM}>
+        <BpkFlex
+          position="absolute"
+          top="0"
+          left="0"
+          width="26rem"
+          height="5rem"
+          align="center"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceDefault}
+        >
+          <BpkText>Content underneath</BpkText>
+        </BpkFlex>
+        <BpkFlex
+          position="absolute"
+          top="0"
+          left="0"
+          width="26rem"
+          height="5rem"
+          align="center"
+          justify="flex-end"
+          padding={BpkSpacing.SM}
+          backgroundColor={BACKGROUND_COLORS.surfaceHighlight}
+          opacity={0.6}
+          pointerEvents="none"
+        >
+          <BpkText>Overlay (non-interactive)</BpkText>
+        </BpkFlex>
+      </BpkBox>
+    </BpkBox>
+  </LayoutWrapper>
+);
+
+export const FlexPointerEvents = {
+  render: () => <BpkFlexPointerEventsExample />,
 };

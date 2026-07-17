@@ -1,0 +1,29 @@
+packages:
+  - 'packages/*'
+  - 'libs/*'
+
+overrides:
+  braces: 3.0.3
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@percy/core': true
+  '@skyscanner/eslint-config-skyscanner': true
+  core-js: true
+  esbuild: true
+  less: true
+  node-sass: false
+  nx: true
+  unrs-resolver: true
+
+ignoredOptionalDependencies:
+  - node-sass
+
+# Dependabot is not compatible with pnpm strict peer dependency installs.
+# Keep installs unblocked and enforce peer dependency health via a separate CI check.
+strictPeerDependencies: false
+
+publicHoistPattern:
+  - '*eslint*'
+  - '*stylelint*'
+  - '*prettier*'

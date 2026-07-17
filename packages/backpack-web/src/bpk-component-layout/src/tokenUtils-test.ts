@@ -17,6 +17,7 @@
  */
 
 import {
+  convertBpkPositionValue,
   convertBpkSpacingToChakra,
   processBpkComponentProps,
   processBpkProps,
@@ -298,6 +299,39 @@ describe('processBpkProps', () => {
     expect(result.flexDirection).toBe('row');
   });
 
+  it('maps Backpack breakpoint keys for BpkFlex self and grid placement props', () => {
+    const result = processBpkComponentProps(
+      {
+        alignSelf: { mobile: 'flex-end', tablet: 'center' },
+        justifySelf: { mobile: 'stretch', desktop: 'center' },
+        gridColumn: { tablet: '2 / span 2' },
+        gridRow: { mobile: '1', desktop: '2' },
+      },
+      {
+        component: 'BpkFlex',
+        responsiveProps: { flexDirection: 'row' },
+      },
+    );
+
+    expect(result.alignSelf).toEqual({ md: 'flex-end', xl: 'center' });
+    expect(result.justifySelf).toEqual({ md: 'stretch', '2xl': 'center' });
+    expect(result.gridColumn).toEqual({ xl: '2 / span 2' });
+    expect(result.gridRow).toEqual({ md: '1', '2xl': '2' });
+  });
+
+  it('converts rowGap and columnGap spacing tokens without reprocessing Chakra breakpoint keys', () => {
+    const result = processBpkComponentProps(
+      {
+        rowGap: { mobile: BpkSpacing.SM, tablet: BpkSpacing.LG },
+        columnGap: BpkSpacing.MD,
+      },
+      { component: 'BpkFlex' },
+    );
+
+    expect(result.rowGap).toEqual({ md: '.25rem', xl: '1.5rem' });
+    expect(result.columnGap).toBe('.5rem');
+  });
+
   it('warns and returns unknown spacing tokens as-is (dev fallback)', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
@@ -306,5 +340,115 @@ describe('processBpkProps', () => {
     expect(result).toBe('bpk-spacing-unknown');
     expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockRestore();
+  });
+
+  it('converts bpk-spacing-xxxl to 4rem', () => {
+    const result = processBpkProps({ padding: BpkSpacing.XXXL });
+
+    expect(result.padding).toBe('4rem');
+  });
+
+  it('converts spacing tokens in position props (top/right/bottom/left)', () => {
+    const result = processBpkProps({
+      top: BpkSpacing.Base,
+      left: BpkSpacing.LG,
+    });
+
+    expect(result.top).toBe('1rem');
+    expect(result.left).toBe('1.5rem');
+  });
+
+  it('passes through raw rem and % values for position props without a warning', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      top: '2rem',
+      right: '50%',
+      bottom: '0',
+    });
+
+    expect(result.top).toBe('2rem');
+    expect(result.right).toBe('50%');
+    expect(result.bottom).toBe('0');
+    expect(warnSpy).not.toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('converts spacing tokens for insetInlineStart and insetInlineEnd', () => {
+    const result = processBpkProps({
+      insetInlineStart: BpkSpacing.Base,
+      insetInlineEnd: BpkSpacing.SM,
+    });
+
+    expect(result.insetInlineStart).toBe('1rem');
+    expect(result.insetInlineEnd).toBe('.25rem');
+  });
+
+  it('supports responsive BPK spacing tokens for insetInlineStart/End', () => {
+    const result = processBpkProps({
+      insetInlineStart: { mobile: BpkSpacing.SM, tablet: BpkSpacing.LG },
+    });
+
+    expect(result.insetInlineStart).toEqual({ md: '.25rem', xl: '1.5rem' });
+  });
+
+  it('passes through raw values for insetInlineStart and insetInlineEnd', () => {
+    const result = processBpkProps({
+      insetInlineStart: '1.5rem',
+      insetInlineEnd: '25%',
+    });
+
+    expect(result.insetInlineStart).toBe('1.5rem');
+    expect(result.insetInlineEnd).toBe('25%');
+  });
+
+  it('converts BPK spacing tokens for scrollMarginTop and scrollMarginBottom', () => {
+    const result = processBpkProps({
+      scrollMarginTop: BpkSpacing.MD,
+      scrollMarginBottom: BpkSpacing.XXXL,
+    });
+
+    expect(result.scrollMarginTop).toBe('.5rem');
+    expect(result.scrollMarginBottom).toBe('4rem');
+  });
+
+  it('passes through raw rem values for scrollMarginTop/Bottom (e.g. sticky-header height)', () => {
+    const result = processBpkProps({
+      scrollMarginTop: '3.5rem',
+      scrollMarginBottom: '0',
+    });
+
+    expect(result.scrollMarginTop).toBe('3.5rem');
+    expect(result.scrollMarginBottom).toBe('0');
+  });
+
+  it('passes through negative percentages for position props (e.g. top: -50% for vertical centering)', () => {
+    const result = processBpkProps({
+      top: '-50%',
+      left: '-100%',
+    });
+
+    expect(result.top).toBe('-50%');
+    expect(result.left).toBe('-100%');
+  });
+});
+
+describe('convertBpkPositionValue', () => {
+  it('resolves a BPK spacing token to its rem value', () => {
+    expect(convertBpkPositionValue(BpkSpacing.Base)).toBe('1rem');
+    expect(convertBpkPositionValue(BpkSpacing.XXXL)).toBe('4rem');
+  });
+
+  it('passes through raw rem values unchanged', () => {
+    expect(convertBpkPositionValue('2.5rem')).toBe('2.5rem');
+    expect(convertBpkPositionValue('-1rem')).toBe('-1rem');
+  });
+
+  it('passes through percentage values unchanged', () => {
+    expect(convertBpkPositionValue('50%')).toBe('50%');
+  });
+
+  it('passes through bare zero unchanged', () => {
+    expect(convertBpkPositionValue('0')).toBe('0');
   });
 });
