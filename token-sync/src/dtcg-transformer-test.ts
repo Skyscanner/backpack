@@ -132,7 +132,7 @@ describe('inferDTCGType', () => {
     ['STRING', [], 'string'],
     ['FLOAT', ['FONT_STYLE'], 'fontWeight'],
     ['FLOAT', ['OPACITY'], 'number'],
-    ['FLOAT', ['LINE_HEIGHT'], 'number'],
+    ['FLOAT', ['LINE_HEIGHT'], 'dimension'],
     ['FLOAT', ['CORNER_RADIUS'], 'dimension'],
     ['FLOAT', ['FONT_SIZE'], 'dimension'],
     ['FLOAT', ['PARAGRAPH_SPACING'], 'dimension'],

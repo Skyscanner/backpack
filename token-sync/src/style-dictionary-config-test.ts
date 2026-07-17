@@ -198,7 +198,11 @@ describe('style-dictionary-config', () => {
       // dropped
       ['color primitive', { filePath: primitivesPath, path: ['Colour', 'Pink'], $type: 'color' }, false],
       ['Heights primitive', { filePath: primitivesPath, path: ['Heights', '36'], $type: 'dimension' }, false],
-      ['Type primitive', { filePath: primitivesPath, path: ['Type', 'size-16'], $type: 'dimension' }, false],
+      ['Type/Letter-spacing primitive', { filePath: primitivesPath, path: ['Type', 'Letter-spacing', 'tight-10'], $type: 'dimension' }, true],
+      ['Type/Line-height primitive', { filePath: primitivesPath, path: ['Type', 'Line-height', '16'], $type: 'dimension' }, true],
+      ['Type/Size primitive', { filePath: primitivesPath, path: ['Type', 'Size', '16'], $type: 'dimension' }, false],
+      ['Type/Family primitive', { filePath: primitivesPath, path: ['Type', 'Family', 'larken'], $type: 'fontFamily' }, false],
+      ['Type/Weight primitive', { filePath: primitivesPath, path: ['Type', 'Weight', '700'], $type: 'fontWeight' }, false],
       ['semantic theme file', { filePath: semanticPath, path: ['Spacing', 'md'], $type: 'dimension' }, false],
       ['non-web path', { filePath: primitivesPath, path: ['Spacing', 'ios-only'], $type: 'dimension' }, false],
     ])('%s → %s', (_label, token, expected) => {

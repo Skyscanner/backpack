@@ -155,9 +155,10 @@ export function figmaColorToCss(value: FigmaRGBA): string {
 }
 
 // Figma FLOAT scopes that unambiguously indicate a unitless numeric value.
-// OPACITY is 0..1; LINE_HEIGHT is commonly a multiplier (1.5) in Figma and
-// converting it to "1.5px" is always wrong.
-const NUMBER_FLOAT_SCOPES: readonly string[] = ['OPACITY', 'LINE_HEIGHT'];
+// OPACITY is 0..1. LINE_HEIGHT is excluded here: Backpack uses absolute px
+// values for line-height (not multipliers), so it should be typed as
+// `dimension` and converted to rem via the pxToRem transform.
+const NUMBER_FLOAT_SCOPES: readonly string[] = ['OPACITY'];
 
 // A FLOAT variable's scope is "unconstrained" when Figma reports either no
 // scopes or only the catch-all `ALL_SCOPES`. Inference has nothing specific

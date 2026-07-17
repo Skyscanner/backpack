@@ -431,20 +431,30 @@ function tokenType(token: TransformedToken): string | undefined {
   return undefined;
 }
 
-// Filter for the standalone `primitives.css` output: keep Spacing and Radius
-// only. Colors are excluded (consumers should use semantic tokens). Heights and
-// Type (typography) primitives are excluded — same rationale as Colors.
+// Allowed sub-groups under `Type` for the primitives.css output. Only
+// Letter-spacing and Line-height have dimension values that belong in CSS.
+// Size is excluded (consumers use semantic tokens); Family/Weight/other are
+// not dimension types.
+const ALLOWED_TYPE_SUBGROUPS = new Set(['Letter-spacing', 'Line-height']);
+
+// Filter for the standalone `primitives.css` output. Colors are excluded
+// (consumers should use semantic tokens). Heights are excluded (no confirmed
+// consumer need). From the Type group, only Letter-spacing and Line-height
+// dimension primitives are emitted; the rest (Family, Size, Weight, etc.) are
+// excluded for the same reason as color primitives.
 export function makeWebPrimitivesTokenFilter(): (
   token: TransformedToken,
 ) => boolean {
   const fileFilter = makeBackpackTokenFilter(PRIMITIVES_FILE);
-  return (token) =>
-    fileFilter(token) &&
-    Array.isArray(token.path) &&
-    isWebTokenPath(token.path) &&
-    tokenType(token) !== 'color' &&
-    token.path[0] !== 'Heights' &&
-    token.path[0] !== 'Type';
+  return (token) => {
+    if (!fileFilter(token)) return false;
+    if (!Array.isArray(token.path)) return false;
+    if (!isWebTokenPath(token.path)) return false;
+    if (tokenType(token) === 'color') return false;
+    if (token.path[0] === 'Heights') return false;
+    if (token.path[0] === 'Type') return ALLOWED_TYPE_SUBGROUPS.has(token.path[1]);
+    return true;
+  };
 }
 
 interface BuildConfigOptions {
