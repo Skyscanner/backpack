@@ -19,7 +19,12 @@
 import { Component } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
+
+import readme from '../README.md';
 
 import BpkRadio from './BpkRadio';
 
@@ -120,6 +125,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-radio',
   component: BpkRadio,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

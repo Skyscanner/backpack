@@ -17,6 +17,9 @@
  */
 
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
@@ -27,6 +30,7 @@ import {
   SPINNER_TYPES,
 } from '../../bpk-component-spinner';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import DataSource, { ArrayDataSource } from './DataSource';
 import withInfiniteScroll from './withInfiniteScroll';
@@ -281,6 +285,17 @@ const meta: Meta<typeof InfiniteList> = {
   title: 'bpk-component-infinite-scroll',
   component: InfiniteList,
   decorators: [withScrollReset],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { cssModules } from '../../bpk-react-utils';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import readme from '../README.md';
 
 import BpkChatThoughtBubble from './BpkChatThoughtBubble';
 
@@ -67,6 +71,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-chat-thought-bubble',
   component: BpkChatThoughtBubble,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

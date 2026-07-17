@@ -19,6 +19,7 @@
 import { number } from 'prop-types';
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import isEqual from 'lodash/isEqual';
 
@@ -27,6 +28,7 @@ import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps, wrapDisplayName } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkBarchart from './BpkBarchart';
 import data from './BpkBarchart.stories.data.json';
@@ -38,6 +40,7 @@ import {
   ORIENTATION_Y,
 } from './orientation';
 import { remToPx } from './utils';
+
 
 import STYLES from './BpkBarchart.stories.module.scss';
 
@@ -372,6 +375,16 @@ const CustomYAxisDomainExample = () => (
 const meta = {
   title: 'bpk-component-barchart',
   component: BpkBarchart,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

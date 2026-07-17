@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import readme from '../README.md';
+
 import BpkSkipLink from './BpkSkipLink';
 
 import type { Meta } from '@storybook/react';
@@ -69,6 +74,17 @@ const RealisticExample = () => {
 const meta = {
   title: 'bpk-component-skip-link',
   component: BpkSkipLink,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

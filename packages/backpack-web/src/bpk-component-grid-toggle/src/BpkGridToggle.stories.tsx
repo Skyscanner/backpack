@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkGridToggle from './BpkGridToggle';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -25,6 +29,17 @@ const DefaultExample = () => <BpkGridToggle />;
 const meta: Meta<typeof BpkGridToggle> = {
   title: 'bpk-component-grid-toggle',
   component: BpkGridToggle,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

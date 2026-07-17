@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
 
 import BpkDivider from './BpkDivider';
 
@@ -127,6 +131,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-divider',
   component: BpkDivider,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

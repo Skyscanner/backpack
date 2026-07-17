@@ -19,6 +19,9 @@
 import { cloneElement, Component } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
@@ -41,6 +44,7 @@ import BpkSelect from '../../bpk-component-select';
 import BpkSplitInput from '../../bpk-component-split-input';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkFieldset, { type Props as BpkFieldsetProps } from './BpkFieldset';
 
@@ -499,6 +503,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-fieldset',
   component: BpkFieldset,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

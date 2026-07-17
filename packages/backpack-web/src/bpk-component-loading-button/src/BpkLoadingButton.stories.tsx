@@ -19,6 +19,8 @@
 import { Component } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import {
@@ -30,10 +32,14 @@ import BaggageIconLg from '../../bpk-component-icon/lg/baggage';
 import BaggageIconSm from '../../bpk-component-icon/sm/baggage';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkLoadingButton, { ICON_POSITION } from './BpkLoadingButton';
 
 import type { Meta } from '@storybook/react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 
 import STYLES from './BpkLoadingButton.stories.module.scss';
 
@@ -313,6 +319,17 @@ const SubmitExample = () => (
 const meta = {
   title: 'bpk-component-loading-button',
   component: BpkLoadingButton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

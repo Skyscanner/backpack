@@ -19,15 +19,20 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   BpkSpacing,
   BpkStack,
   BpkProvider,
 } from '../../bpk-component-layout';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkChatBubble from './BpkChatBubble';
 import { CHAT_BUBBLE_TYPE, CHAT_BUBBLE_POSITION } from './common-types';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { ThumbsButtonType } from '../../bpk-component-thumb-button';
 import type { Meta } from '@storybook/react';
@@ -207,6 +212,17 @@ const meta = {
   title: 'bpk-component-chat-bubble',
   component: BpkChatBubble,
   decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

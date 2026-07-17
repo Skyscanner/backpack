@@ -18,6 +18,8 @@
 
 import { useMemo, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   canvasContrastDay,
   surfaceContrastDay,
@@ -27,6 +29,7 @@ import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkSegmentedControl, { SEGMENT_TYPES, useSegmentedControlPanels } from './BpkSegmentedControl';
 
@@ -358,6 +361,17 @@ const WithConditionalPanelsExample = () => {
 const meta = {
   title: 'bpk-component-segmented-control',
   component: BpkSegmentedControl,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

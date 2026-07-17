@@ -18,7 +18,7 @@
 
 import type { ReactNode } from 'react';
 
-import { ArgTypes, Markdown, Title } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
@@ -271,7 +271,7 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+
           <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
         </>

@@ -16,13 +16,19 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkImage from '../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkOverlay, { OVERLAY_TYPES } from './BpkOverlay';
 
 import type { Meta } from '@storybook/react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 
 import STYLES from './BpkOverlay.stories.module.scss';
 
@@ -274,6 +280,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-overlay',
   component: BpkOverlay,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

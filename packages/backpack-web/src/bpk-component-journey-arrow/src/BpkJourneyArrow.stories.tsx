@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+import readme from '../README.md';
+
 
 import BpkJourneyArrow from './BpkJourneyArrow';
 
@@ -46,6 +50,17 @@ const JourneyArrowExample = () => {
 const meta = {
   title: 'bpk-component-journey-arrow',
   component: BpkJourneyArrow,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

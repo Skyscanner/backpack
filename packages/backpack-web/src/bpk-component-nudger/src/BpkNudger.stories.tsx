@@ -18,6 +18,8 @@
 
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { iconSizeLg, lineHeightBase } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
@@ -26,11 +28,15 @@ import { withAlignment } from '../../bpk-component-icon';
 import AccountIcon from '../../bpk-component-icon/lg/account';
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkNudger from './BpkNudger';
 
 import type { BUTTON_TYPES } from './common-types';
 import type { Meta } from '@storybook/react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 
 import STYLES from './BpkNudger.stories.module.scss';
 
@@ -157,6 +163,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-nudger',
   component: BpkNudger,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

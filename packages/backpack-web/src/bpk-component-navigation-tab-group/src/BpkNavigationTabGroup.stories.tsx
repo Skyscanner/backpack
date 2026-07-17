@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { withRtlSupport } from '../../bpk-component-icon';
 import Car from '../../bpk-component-icon/sm/cars';
 import Explore from '../../bpk-component-icon/sm/explore';
@@ -23,6 +25,7 @@ import Flight from '../../bpk-component-icon/sm/flight';
 import Hotel from '../../bpk-component-icon/sm/hotels';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkNavigationTabGroup, {
   NAVIGATION_TAB_GROUP_TYPES,
@@ -30,6 +33,9 @@ import BpkNavigationTabGroup, {
 } from './BpkNavigationTabGroup';
 
 import type { Meta } from '@storybook/react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 
 import STYLES from './BpkNavigationTabGroup.stories.module.scss';
 
@@ -272,6 +278,17 @@ const VisualTestExample = () => (
 const meta = {
   title: 'bpk-component-navigation-tab-group',
   component: BpkNavigationTabGroup,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

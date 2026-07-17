@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { VARIANT } from '../../bpk-component-page-indicator';
+import readme from '../README.md';
+
 
 import BpkCarousel from './BpkCarousel';
 
@@ -85,6 +89,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-carousel',
   component: BpkCarousel,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

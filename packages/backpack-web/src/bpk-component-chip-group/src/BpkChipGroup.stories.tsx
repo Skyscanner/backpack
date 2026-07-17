@@ -18,15 +18,19 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { CHIP_TYPES } from '../../bpk-component-chip';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT,
 } from './BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { MultiSelectProps, ChipItem } from './BpkMultiSelectChipGroup';
 import type { SingleSelectProps } from './BpkSingleSelectChipGroup';
@@ -389,6 +393,17 @@ const meta = {
   subcomponents: {
     BpkChipGroupSingleSelect: BpkSingleSelectChipGroup,
     // TODO: can we show the shape of ChipItem here?
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkBlockquote from './BpkBlockquote';
 
 import type { Meta } from '@storybook/react';
@@ -33,6 +37,17 @@ const ExtraSpaceExample = () => (
 const meta = {
   title: 'bpk-component-blockquote',
   component: BpkBlockquote,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -17,7 +17,13 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
+
+// @ts-expect-error Untyped import
+import readme from '../README.md';
 
 import BpkSwapButton, { SWAPBUTTON_STYLES } from './BpkSwapButton';
 
@@ -52,6 +58,17 @@ const CanvasContrastExample = () => (
 const meta = {
   title: 'bpk-component-swap-button',
   component: BpkSwapButton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

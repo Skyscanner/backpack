@@ -17,7 +17,11 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action } from 'bpk-storybook-utils';
+
 
 import BpkBadge from '../../bpk-component-badge';
 import { withButtonAlignment } from '../../bpk-component-icon';
@@ -29,6 +33,7 @@ import {
   BpkSpacing,
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
 
 import BpkPressable from './BpkPressable';
 
@@ -37,6 +42,17 @@ import type { Meta } from '@storybook/react';
 const meta = {
   title: 'bpk-component-pressable',
   component: BpkPressable,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
   argTypes: {
     as: {
       control: 'select',

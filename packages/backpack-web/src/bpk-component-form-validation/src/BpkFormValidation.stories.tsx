@@ -18,6 +18,8 @@
 
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 
 import BpkButton from '../../bpk-component-button';
 import BpkCheckbox from '../../bpk-component-checkbox';
@@ -25,6 +27,7 @@ import BpkInput from '../../bpk-component-input';
 import BpkSelect from '../../bpk-component-select';
 import BpkTextarea from '../../bpk-component-textarea';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkFormValidation, { type Props as BpkFormValidationProps } from './BpkFormValidation';
 
@@ -175,6 +178,17 @@ const FormsExample = () => (
 const meta = {
   title: 'bpk-component-form-validation',
   component: BpkFormValidation,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

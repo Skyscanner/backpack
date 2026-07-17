@@ -18,6 +18,8 @@
 
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   BpkCardV2,
   CARD_V2_SURFACE_COLORS,
@@ -42,6 +44,9 @@ import BpkRating from '../../bpk-component-rating';
 import BpkStarRating from '../../bpk-component-star-rating';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import readme from './BpkCardV2/README.md';
 
 import type { BpkCardV2SurfaceColor } from "..";
 import type { Meta } from '@storybook/react';
@@ -481,6 +486,17 @@ const meta = {
   title: 'bpk-component-card-v2',
   component: BpkCardV2.Root,
   decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

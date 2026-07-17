@@ -19,6 +19,8 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   canvasContrastDay,
   cardPadding,
@@ -38,6 +40,7 @@ import BpkButton from '../../bpk-component-button';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import STYLES from './BpkInfoBanner.stories.module.scss';
 
@@ -467,6 +470,16 @@ const meta = {
     BpkInfoBannerDismissable,
     BpkInfoBannerExpandable,
     withBannerAlertState: withBannerAlertStateMock,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 

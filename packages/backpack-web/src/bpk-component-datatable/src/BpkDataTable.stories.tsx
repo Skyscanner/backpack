@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkDataTable from './BpkDataTable';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -317,6 +322,17 @@ const WithColumnArrayExample = () => (
 export default {
   title: 'bpk-component-datatable',
   component: BpkDataTable,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof BpkDataTable>;
 
 type Story = StoryObj<typeof BpkDataTable>;

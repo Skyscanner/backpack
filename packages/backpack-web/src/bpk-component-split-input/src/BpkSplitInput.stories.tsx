@@ -17,9 +17,14 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action } from 'bpk-storybook-utils';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkLabel from '../../bpk-component-label';
+import readme from '../README.md';
+
 
 import BpkSplitInput, { INPUT_TYPES } from './BpkSplitInput';
 
@@ -89,6 +94,17 @@ const SplitInputSmallExample = () => (
 const meta = {
   title: 'bpk-component-split-input',
   component: BpkSplitInput,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

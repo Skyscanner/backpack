@@ -18,6 +18,10 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
 import ChevronDownIcon from '../../../bpk-component-icon/sm/chevron-down';
 import GridLayoutIcon from '../../../bpk-component-icon/sm/grid-layout';
@@ -32,6 +36,7 @@ import {
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
 import { cssModules } from '../../../bpk-react-utils';
+import readme from '../../README.md';
 
 import BpkSegmentedControlV2, { SEGMENT_TYPES_V2 } from './BpkSegmentedControlV2';
 
@@ -594,6 +599,15 @@ const meta = {
   decorators: [(Story: any) => <BpkProvider><Story /></BpkProvider>],
   parameters: {
     a11y: { disable: false },
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

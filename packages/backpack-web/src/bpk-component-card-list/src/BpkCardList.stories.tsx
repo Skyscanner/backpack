@@ -20,6 +20,8 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkCard from '../../bpk-component-card';
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
@@ -32,7 +34,7 @@ import BpkSnippet, {
 import BpkText, {
   TEXT_STYLES,
 } from '../../bpk-component-text/src/BpkText';
-
+import readme from '../README.md';
 
 import BpkCardList from './BpkCardList';
 import {
@@ -40,6 +42,8 @@ import {
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
 } from './common-types';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { MultiSelectProps } from '../../bpk-component-chip-group';
 import type { Meta } from '@storybook/react';
@@ -406,6 +410,17 @@ const MultiComponentsScrollingTestExample = () => (
 const meta = {
   title: 'bpk-component-card-list',
   component: BpkCardList,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -18,15 +18,21 @@
 
 import { Children, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkButton from '../../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../../bpk-react-utils';
 import { MODAL_STYLING } from '../BpkModalInner';
 
 import { BpkModalV2 } from './BpkModal';
+import readme from './README.md';
 
 import type { Props as BpkModalProps } from './BpkModal';
 import type { Meta } from '@storybook/react';
+
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
 
 import STYLES from './BpkModalV2.stories.module.scss';
 
@@ -260,6 +266,17 @@ const MultipleModalsExample = () => (
 const meta = {
   title: 'bpk-component-modal-v2',
   component: BpkModalV2,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof BpkModalV2>;
 
 export default meta;

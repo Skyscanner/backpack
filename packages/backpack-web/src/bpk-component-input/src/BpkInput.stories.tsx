@@ -18,7 +18,8 @@
 
 import { Component } from 'react';
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
@@ -29,6 +30,7 @@ import BpkBannerAlert, {
 } from '../../bpk-component-banner-alert';
 import BpkLabel from '../../bpk-component-label';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkInput from './BpkInput';
 import { INPUT_TYPES, CLEAR_BUTTON_MODES } from './common-types';
@@ -444,13 +446,9 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
-          <Markdown>
-            {
-            `**Note:** Additionally, all native \`input\` attributes such as \`placeholder\` and \`onChange\` are supported.`
-            }
-          </Markdown>
         </>
       )
     },

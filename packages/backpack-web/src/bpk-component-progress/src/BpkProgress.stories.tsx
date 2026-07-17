@@ -18,8 +18,12 @@
 
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkProgress from './BpkProgress';
 
@@ -145,6 +149,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-progress',
   component: BpkProgress,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

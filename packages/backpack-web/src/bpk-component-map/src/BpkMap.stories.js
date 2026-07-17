@@ -19,6 +19,9 @@
 import PropTypes from 'prop-types';
 import { Component, useRef, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import { action } from 'bpk-storybook-utils';
 
 import BpkMap, {
@@ -37,6 +40,7 @@ import HotelIconSm from '../../bpk-component-icon/sm/hotels';
 import LandmarkIconSm from '../../bpk-component-icon/sm/landmark';
 import BpkPopover from '../../bpk-component-popover';
 import BpkText from '../../bpk-component-text';
+import readme from '../README.md';
 
 import BpkIconMarkerComp from './BpkIconMarker';
 import BpkMapComp from './BpkMap';
@@ -460,6 +464,16 @@ export default {
     BpkPriceMarkerButton: BpkPriceMarkerButtonComp,
     BpkOverlayView: BpkOverlayViewComp,
     withGoogleMapsScript: WithGoogleMapsScriptMock,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 

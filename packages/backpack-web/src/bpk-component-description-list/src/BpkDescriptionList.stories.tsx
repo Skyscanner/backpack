@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkDescriptionDetails from './BpkDescriptionDetails';
 import BpkDescriptionList from './BpkDescriptionList';
 import BpkDescriptionTerm from './BpkDescriptionTerm';
@@ -47,6 +51,17 @@ const DefaultExample = () => (
 const meta = {
   title: 'bpk-component-description-list',
   component: BpkDescriptionList,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

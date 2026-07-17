@@ -18,6 +18,10 @@
 
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkPagination from './BpkPagination';
 
 import type { Meta } from '@storybook/react';
@@ -97,6 +101,17 @@ const VisibleRangeExample = () => (
 const meta = {
   title: 'bpk-component-pagination',
   component: BpkPagination,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

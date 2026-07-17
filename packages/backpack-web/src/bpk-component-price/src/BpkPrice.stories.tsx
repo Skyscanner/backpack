@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import {
   coreAccentDay,
@@ -26,10 +27,12 @@ import {
 // @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
+
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 // @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkPrice from './BpkPrice';
 import { SIZES, ALIGNS, VARIANTS } from './common-types';
@@ -453,6 +456,17 @@ const meta = {
   title: 'bpk-component-price',
   component: BpkPrice,
   tags: ['dark-mode-compatible'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

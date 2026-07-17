@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   borderRadiusFull,
   statusDangerSpotDay,
@@ -34,11 +36,14 @@ import {
 } from '../../../bpk-component-layout';
 import BpkThemeProvider from '../../../bpk-theming';
 
+
 import BpkCheckboxV2 from './BpkCheckboxV2';
+import readme from './README.md';
 import {
   checkboxBorderRadiusThemeAttributes,
   checkboxSelectedColorThemeAttributes,
 } from './themeAttributes';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta } from '@storybook/react';
 
@@ -257,6 +262,17 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-checkbox-v2',
   component: BpkCheckboxV2.Root,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
   decorators: [
     (Story: any) => (
       <BpkProvider>

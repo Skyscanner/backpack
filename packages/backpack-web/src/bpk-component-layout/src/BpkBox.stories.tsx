@@ -18,7 +18,8 @@
 
 import { useRef, useState } from 'react';
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 
 import { BACKGROUND_COLORS, BpkBox, BpkProvider, BpkSpacing } from '..';
 import BpkButton from '../../bpk-component-button';
@@ -26,6 +27,7 @@ import BpkText, {
   TEXT_COLORS,
   TEXT_STYLES,
 } from '../../bpk-component-text';
+import readme from '../README.md';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -501,7 +503,8 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             Notes: `BpkBox` is the base layout primitive. It exposes a curated,

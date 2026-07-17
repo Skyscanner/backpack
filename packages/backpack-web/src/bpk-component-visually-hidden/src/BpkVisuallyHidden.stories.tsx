@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   action,
   // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 } from 'bpk-storybook-utils';
+
 
 import BpkButton, {
   BUTTON_TYPES,
@@ -31,6 +34,7 @@ import HeartIcon from '../../bpk-component-icon/sm/heart';
 import ShareIcon from '../../bpk-component-icon/sm/share';
 import TrashIcon from '../../bpk-component-icon/sm/trash';
 import BpkText from '../../bpk-component-text/src/BpkText';
+import readme from '../README.md';
 
 import BpkVisuallyHidden from './BpkVisuallyHidden';
 
@@ -105,6 +109,17 @@ const BasicExample = () => (
 const meta = {
   title: 'bpk-component-visually-hidden',
   component: BpkVisuallyHidden,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

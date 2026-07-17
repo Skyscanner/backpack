@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
+
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -183,6 +187,17 @@ const MixedExample = () => (
 
 const meta = {
   title: 'bpk-stylesheets-fonts',
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

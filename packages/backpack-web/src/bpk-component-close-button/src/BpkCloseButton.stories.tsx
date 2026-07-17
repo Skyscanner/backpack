@@ -17,9 +17,15 @@
  */
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action } from 'bpk-storybook-utils';
 
+
+import readme from '../README.md';
+
 import BpkCloseButton from './BpkCloseButton';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 
 import type { Meta } from '@storybook/react';
 
@@ -30,6 +36,17 @@ const DefaultExample = () => (
 const meta = {
   title: 'bpk-component-close-button',
   component: BpkCloseButton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

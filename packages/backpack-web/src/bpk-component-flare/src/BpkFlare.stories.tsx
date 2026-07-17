@@ -16,9 +16,13 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import { BpkFlareBar, BpkContentBubble } from "..";
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import STYLES from './BpkFlare.stories.module.scss';
 
@@ -152,6 +156,17 @@ export default {
   component: BpkContentBubble,
   subcomponents: {
     BpkFlareBar,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 
