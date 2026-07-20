@@ -48,9 +48,15 @@ import {
   isNonVisualComponentName,
   isRawHTMLElement,
 } from "./jsx-helpers";
+import {
+  type NxProjectIndexEntry,
+  buildProjectIndex,
+  detectNxProjects,
+  resolveProject,
+} from "./nx-projects";
 import { buildVisualComponentRegistry } from "./visual-components";
 import { DEFAULT_IGNORE_PATTERNS, DEFAULT_PATTERN } from "../shared/config";
-import type { AdoptionReport } from "../shared/types";
+import type { AdoptionReport, UsageSummary } from "../shared/types";
 
 const traverse = (
   (_traverse as unknown as { default?: typeof _traverse }).default ?? _traverse
@@ -132,6 +138,145 @@ type AnalyzerOptions = {
   ignore?: string[];
   components?: string[] | null;
 };
+
+type FileAnalysisResult = ReturnType<typeof analyzeFile>;
+
+/**
+ * Creates an empty result-accumulator bucket. Used for both the repo-wide
+ * totals and per-NX-project sub-totals so they share an identical shape.
+ */
+function createResultBucket(repository: string): AnalyzerResults {
+  return {
+    repository,
+    filesAnalyzed: 0,
+    components: {},
+    totalUsages: 0,
+    classNameOverrides: 0,
+    backpackUsages: 0,
+    nonBackpackUsages: 0,
+    nonBackpackComponents: { visual: {}, nonVisual: {} },
+    rawHtmlUsages: 0,
+    rawHtmlComponents: {},
+    excludedUsages: 0,
+    excludedComponents: {},
+    backpackPercentage: 0,
+    rawHtmlPercentage: 0,
+  };
+}
+
+/**
+ * Merges a single file's analysis output into an accumulator bucket.
+ * Mutates `target` in place. Sets remain Sets at this stage.
+ * Verbatim port of ds-analyser's mergeFileResults from analyzer.js.
+ */
+function mergeFileResults(
+  target: AnalyzerResults,
+  fileResults: FileAnalysisResult,
+): void {
+  for (const [componentName, usage] of Object.entries(fileResults.components)) {
+    if (!target.components[componentName]) {
+      target.components[componentName] = {
+        name: componentName,
+        totalUsages: 0,
+        files: new Set(),
+        variants: {},
+        classNameOverrides: 0,
+        locations: [],
+      };
+    }
+    const comp = target.components[componentName];
+    comp.totalUsages += usage.totalUsages;
+    comp.classNameOverrides += usage.classNameOverrides;
+    usage.files.forEach((f: string) => comp.files.add(f));
+    comp.locations.push(...usage.locations);
+
+    for (const [variant, count] of Object.entries(usage.variants)) {
+      comp.variants[variant] = (comp.variants[variant] || 0) + (count as number);
+    }
+  }
+
+  target.totalUsages += fileResults.totalUsages;
+  target.classNameOverrides += fileResults.classNameOverrides;
+  target.backpackUsages += fileResults.backpackUsages || 0;
+  target.nonBackpackUsages += fileResults.nonBackpackUsages || 0;
+  target.rawHtmlUsages += fileResults.rawHtmlUsages || 0;
+  target.excludedUsages += fileResults.excludedUsages || 0;
+
+  if (fileResults.rawHtmlComponents) {
+    for (const [tagName, usage] of Object.entries(fileResults.rawHtmlComponents)) {
+      if (!target.rawHtmlComponents[tagName]) {
+        target.rawHtmlComponents[tagName] = {
+          name: tagName,
+          totalUsages: 0,
+          styledUsages: 0,
+          files: new Set(),
+          locations: [],
+        };
+      }
+      const comp = target.rawHtmlComponents[tagName];
+      comp.totalUsages += usage.totalUsages;
+      comp.styledUsages += usage.styledUsages || 0;
+      usage.files.forEach((f: string) => comp.files.add(f));
+      comp.locations.push(...usage.locations);
+    }
+  }
+
+  if (fileResults.nonBackpackComponents) {
+    for (const [componentName, usage] of Object.entries(
+      fileResults.nonBackpackComponents.visual || {},
+    )) {
+      if (!target.nonBackpackComponents.visual[componentName]) {
+        target.nonBackpackComponents.visual[componentName] = {
+          name: componentName,
+          totalUsages: 0,
+          files: new Set(),
+          locations: [],
+        };
+      }
+      const comp = target.nonBackpackComponents.visual[componentName];
+      comp.totalUsages += usage.totalUsages;
+      usage.files.forEach((f: string) => comp.files.add(f));
+      comp.locations.push(...(usage.locations || []));
+    }
+
+    for (const [componentName, usage] of Object.entries(
+      fileResults.nonBackpackComponents.nonVisual || {},
+    )) {
+      if (!target.nonBackpackComponents.nonVisual[componentName]) {
+        target.nonBackpackComponents.nonVisual[componentName] = {
+          name: componentName,
+          totalUsages: 0,
+          files: new Set(),
+          locations: [],
+        };
+      }
+      const comp = target.nonBackpackComponents.nonVisual[componentName];
+      comp.totalUsages += usage.totalUsages;
+      usage.files.forEach((f: string) => comp.files.add(f));
+      comp.locations.push(...(usage.locations || []));
+    }
+  }
+
+  if (fileResults.excludedComponents) {
+    for (const [componentName, count] of Object.entries(fileResults.excludedComponents)) {
+      target.excludedComponents[componentName] =
+        (target.excludedComponents[componentName] || 0) + (count as number);
+    }
+  }
+}
+
+/**
+ * Converts the Set-valued `files` fields of a bucket to arrays and computes
+ * the backpack/rawHtml percentages. Idempotent enough for one-shot use.
+ */
+function finalizeBucket(bucket: AnalyzerResults): void {
+  const totalElementUsages =
+    bucket.backpackUsages + bucket.nonBackpackUsages + bucket.rawHtmlUsages;
+  if (totalElementUsages > 0) {
+    bucket.backpackPercentage = (bucket.backpackUsages / totalElementUsages) * 100;
+    bucket.rawHtmlPercentage = (bucket.rawHtmlUsages / totalElementUsages) * 100;
+  }
+}
 
 function buildLocation(
   node: any,
@@ -514,7 +659,13 @@ function analyzeFile(
 async function runAnalyzer(
   repoPath: string,
   options: AnalyzerOptions,
-): Promise<AnalyzerResults & { parseErrors: Array<{ file: string; message: string }> }> {
+): Promise<
+  AnalyzerResults & {
+    parseErrors: Array<{ file: string; message: string }>;
+    isNx: boolean;
+    projectBuckets: Record<string, AnalyzerResults> | null;
+  }
+> {
   const {
     pattern = DEFAULT_PATTERN,
     ignore = DEFAULT_IGNORE_PATTERNS,
@@ -529,27 +680,24 @@ async function runAnalyzer(
 
   const visualComponentRegistry = buildVisualComponentRegistry(files);
 
-  const results: AnalyzerResults = {
-    repository: basename(repoPath),
-    filesAnalyzed: files.length,
-    components: {},
-    totalUsages: 0,
-    classNameOverrides: 0,
-    backpackUsages: 0,
-    nonBackpackUsages: 0,
-    nonBackpackComponents: { visual: {}, nonVisual: {} },
-    rawHtmlUsages: 0,
-    rawHtmlComponents: {},
-    excludedUsages: 0,
-    excludedComponents: {},
-    backpackPercentage: 0,
-    rawHtmlPercentage: 0,
-  };
+  const results = createResultBucket(basename(repoPath));
+  results.filesAnalyzed = files.length;
+
+  // Detect NX projects so file-level results can be attributed per project.
+  // Static read only — no NX runtime. Disabled for non-NX repos (no nx.json).
+  const nxInfo = detectNxProjects(repoPath);
+  const projectIndex: NxProjectIndexEntry[] | null = nxInfo.isNx
+    ? buildProjectIndex(nxInfo.projects)
+    : null;
+  const projectBuckets: Record<string, AnalyzerResults> | null = nxInfo.isNx
+    ? {}
+    : null;
 
   const parseErrors: Array<{ file: string; message: string }> = [];
 
   for (let i = 0; i < files.length; i += 1) {
     const filePath = files[i];
+    const relativePath = relative(repoPath, filePath);
 
     try {
       const content = readFileSync(filePath, "utf-8");
@@ -561,114 +709,35 @@ async function runAnalyzer(
         visualComponentRegistry,
       );
 
-      for (const [componentName, usage] of Object.entries(fileResults.components)) {
-        if (!results.components[componentName]) {
-          results.components[componentName] = {
-            name: componentName,
-            totalUsages: 0,
-            files: new Set(),
-            variants: {},
-            classNameOverrides: 0,
-            locations: [],
-          };
-        }
-        const comp = results.components[componentName];
-        comp.totalUsages += usage.totalUsages;
-        comp.classNameOverrides += usage.classNameOverrides;
-        usage.files.forEach((f: string) => comp.files.add(f));
-        comp.locations.push(...usage.locations);
+      // Merge into the repo-wide totals
+      mergeFileResults(results, fileResults);
 
-        for (const [variant, count] of Object.entries(usage.variants)) {
-          comp.variants[variant] = (comp.variants[variant] || 0) + (count as number);
+      // Attribute the same file's results to its NX project bucket
+      if (projectBuckets) {
+        const projectName = resolveProject(relativePath, projectIndex);
+        if (!projectBuckets[projectName]) {
+          projectBuckets[projectName] = createResultBucket(projectName);
         }
-      }
-
-      results.totalUsages += fileResults.totalUsages;
-      results.classNameOverrides += fileResults.classNameOverrides;
-      results.backpackUsages += fileResults.backpackUsages || 0;
-      results.nonBackpackUsages += fileResults.nonBackpackUsages || 0;
-      results.rawHtmlUsages += fileResults.rawHtmlUsages || 0;
-      results.excludedUsages += fileResults.excludedUsages || 0;
-
-      if (fileResults.rawHtmlComponents) {
-        for (const [tagName, usage] of Object.entries(fileResults.rawHtmlComponents)) {
-          if (!results.rawHtmlComponents[tagName]) {
-            results.rawHtmlComponents[tagName] = {
-              name: tagName,
-              totalUsages: 0,
-              styledUsages: 0,
-              files: new Set(),
-              locations: [],
-            };
-          }
-          const comp = results.rawHtmlComponents[tagName];
-          comp.totalUsages += usage.totalUsages;
-          comp.styledUsages += usage.styledUsages || 0;
-          usage.files.forEach((f: string) => comp.files.add(f));
-          comp.locations.push(...usage.locations);
-        }
-      }
-
-      if (fileResults.nonBackpackComponents) {
-        for (const [componentName, usage] of Object.entries(
-          fileResults.nonBackpackComponents.visual || {},
-        )) {
-          if (!results.nonBackpackComponents.visual[componentName]) {
-            results.nonBackpackComponents.visual[componentName] = {
-              name: componentName,
-              totalUsages: 0,
-              files: new Set(),
-              locations: [],
-            };
-          }
-          const comp = results.nonBackpackComponents.visual[componentName];
-          comp.totalUsages += usage.totalUsages;
-          usage.files.forEach((f: string) => comp.files.add(f));
-          comp.locations.push(...(usage.locations || []));
-        }
-
-        for (const [componentName, usage] of Object.entries(
-          fileResults.nonBackpackComponents.nonVisual || {},
-        )) {
-          if (!results.nonBackpackComponents.nonVisual[componentName]) {
-            results.nonBackpackComponents.nonVisual[componentName] = {
-              name: componentName,
-              totalUsages: 0,
-              files: new Set(),
-              locations: [],
-            };
-          }
-          const comp = results.nonBackpackComponents.nonVisual[componentName];
-          comp.totalUsages += usage.totalUsages;
-          usage.files.forEach((f: string) => comp.files.add(f));
-          comp.locations.push(...(usage.locations || []));
-        }
-      }
-
-      if (fileResults.excludedComponents) {
-        for (const [componentName, count] of Object.entries(fileResults.excludedComponents)) {
-          results.excludedComponents[componentName] =
-            (results.excludedComponents[componentName] || 0) + (count as number);
-        }
+        projectBuckets[projectName].filesAnalyzed += 1;
+        mergeFileResults(projectBuckets[projectName], fileResults);
       }
     } catch (error) {
       parseErrors.push({
-        file: relative(repoPath, filePath),
+        file: relativePath,
         message: error instanceof Error ? error.message : String(error),
       });
     }
   }
 
-  const totalElementUsages =
-    results.backpackUsages + results.nonBackpackUsages + results.rawHtmlUsages;
-  if (totalElementUsages > 0) {
-    results.backpackPercentage =
-      (results.backpackUsages / totalElementUsages) * 100;
-    results.rawHtmlPercentage =
-      (results.rawHtmlUsages / totalElementUsages) * 100;
+  finalizeBucket(results);
+
+  if (projectBuckets) {
+    for (const bucket of Object.values(projectBuckets)) {
+      finalizeBucket(bucket);
+    }
   }
 
-  return { ...results, parseErrors };
+  return { ...results, parseErrors, isNx: nxInfo.isNx, projectBuckets };
 }
 
 /**
@@ -719,16 +788,13 @@ async function findBackpackWebVersion(repoPath: string): Promise<string | null> 
 const roundPercentage = (value: number) => Number(value.toFixed(2));
 
 /**
- * Public entry point used by the action's run.ts. Wraps the ds-analyser-style
- * analyzer in our AdoptionReport shape so the guard logic and writer stay
- * stable.
+ * Derives the usage/componentCounts portion of an AdoptionReport from an
+ * analyzer result bucket. Shared between the repo-wide bucket and each
+ * per-NX-project bucket so both produce structurally identical reports.
  */
-export const analyzeRepository = async (
-  repoPath: string,
-  options: AnalyzerOptions = {},
-): Promise<AdoptionReport> => {
-  const analyzer = await runAnalyzer(repoPath, options);
-
+function buildUsageSummary(
+  analyzer: AnalyzerResults,
+): { usage: UsageSummary; componentCounts: Record<string, number> } {
   const totalElementUsages =
     analyzer.backpackUsages + analyzer.nonBackpackUsages + analyzer.rawHtmlUsages;
 
@@ -752,11 +818,6 @@ export const analyzeRepository = async (
   }
 
   return {
-    repository: basename(repoPath),
-    generatedAt: new Date().toISOString(),
-    filesAnalyzed: analyzer.filesAnalyzed,
-    parseErrors: analyzer.parseErrors,
-    backpackWebVersion: await findBackpackWebVersion(repoPath),
     usage: {
       backpack: {
         count: analyzer.backpackUsages,
@@ -781,4 +842,50 @@ export const analyzeRepository = async (
     },
     componentCounts,
   };
+}
+
+/**
+ * Public entry point used by the action's run.ts. Wraps the ds-analyser-style
+ * analyzer in our AdoptionReport shape so the guard logic and writer stay
+ * stable.
+ */
+export const analyzeRepository = async (
+  repoPath: string,
+  options: AnalyzerOptions = {},
+): Promise<AdoptionReport> => {
+  const analyzer = await runAnalyzer(repoPath, options);
+  const generatedAt = new Date().toISOString();
+  const backpackWebVersion = await findBackpackWebVersion(repoPath);
+  const { usage, componentCounts } = buildUsageSummary(analyzer);
+
+  const report: AdoptionReport = {
+    repository: basename(repoPath),
+    generatedAt,
+    filesAnalyzed: analyzer.filesAnalyzed,
+    parseErrors: analyzer.parseErrors,
+    backpackWebVersion,
+    usage,
+    componentCounts,
+  };
+
+  // (unassigned) bucket is kept as-is (not stripped) so consumers can see how
+  // much usage isn't attributed to any NX project, matching ds-analyser.
+  if (analyzer.isNx && analyzer.projectBuckets) {
+    report.isNx = true;
+    report.projects = {};
+    for (const [name, bucket] of Object.entries(analyzer.projectBuckets)) {
+      const projectUsage = buildUsageSummary(bucket);
+      report.projects[name] = {
+        repository: bucket.repository,
+        generatedAt,
+        filesAnalyzed: bucket.filesAnalyzed,
+        parseErrors: [],
+        backpackWebVersion,
+        usage: projectUsage.usage,
+        componentCounts: projectUsage.componentCounts,
+      };
+    }
+  }
+
+  return report;
 };

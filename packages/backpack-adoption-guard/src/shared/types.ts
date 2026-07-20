@@ -39,6 +39,12 @@ export type AdoptionReport = {
   backpackWebVersion: string | null;
   usage: UsageSummary;
   componentCounts: Record<string, number>;
+  // Present when the repository is an NX workspace (an `nx.json` exists at
+  // the root). `projects` maps NX project name -> that project's own
+  // AdoptionReport slice, including the `(unassigned)` bucket for files that
+  // don't fall under any detected project root.
+  isNx?: boolean;
+  projects?: Record<string, Omit<AdoptionReport, "projects" | "isNx">>;
 };
 
 export type GuardStatus = "pass" | "fail" | "warn";
@@ -51,6 +57,9 @@ export type GuardResult = {
   baseBackpackPercentage: number | null;
   headBackpackPercentage: number;
   delta: number | null;
+  // Present on the top-level guard result once per-project evaluation runs;
+  // keyed by NX project name (including the `(unassigned)` bucket).
+  projects?: Record<string, GuardResult>;
 };
 
 export type ActionResult = {
@@ -80,6 +89,10 @@ export type BackpackAdoptionMetrics = {
   filesAnalyzed: number;
   skippedFiles: number;
   usage: UsageSummary;
+  // Lightweight per-project metrics for NX workspaces. Deliberately omits
+  // componentCounts to keep the Cortex payload small (mirrors ds-analyser's
+  // toProjectTimeSeriesBlock).
+  projects?: Record<string, UsageSummary & { filesAnalyzed: number }>;
 };
 
 export type ResultsFile = {

@@ -29,9 +29,14 @@ import type {
   ActionResult,
   AdoptionReport,
   BackpackAdoptionMetrics,
+  GuardResult,
   ResultsFile,
 } from "../shared/types";
-import { evaluateGuard } from "../guard/evaluate-guard";
+import {
+  combineGuardStatuses,
+  evaluateGuard,
+  evaluateProjectGuards,
+} from "../guard/evaluate-guard";
 import {
   getPullRequestBaseRef,
   isMainBranch,
@@ -63,6 +68,16 @@ const writeResults = async (
     skippedFiles: result.head.parseErrors.length,
     usage: result.head.usage,
   };
+
+  if (result.head.projects) {
+    metrics.projects = {};
+    for (const [name, project] of Object.entries(result.head.projects)) {
+      metrics.projects[name] = {
+        filesAnalyzed: project.filesAnalyzed,
+        ...project.usage,
+      };
+    }
+  }
 
   const resultsFile: ResultsFile = {
     [BACKPACK_ADOPTION_OUTPUT_KEY]: metrics,
@@ -164,6 +179,32 @@ const parseThresholdInput = (input: string) => {
   return threshold;
 };
 
+const projectNamesWithStatus = (
+  projectGuards: Record<string, GuardResult>,
+  status: GuardResult["status"],
+) =>
+  Object.entries(projectGuards)
+    .filter(([, projectGuard]) => projectGuard.status === status)
+    .map(([name]) => name);
+
+const buildCombinedReason = (
+  guard: GuardResult,
+  projectGuards: Record<string, GuardResult>,
+  combinedStatus: GuardResult["status"],
+): string => {
+  if (combinedStatus === guard.status) {
+    return guard.reason;
+  }
+
+  if (combinedStatus === "fail") {
+    const names = projectNamesWithStatus(projectGuards, "fail").join(", ");
+    return `${guard.reason} Also failing due to per-project regression in: ${names}.`;
+  }
+
+  const names = projectNamesWithStatus(projectGuards, "warn").join(", ");
+  return `${guard.reason} Also warning due to per-project regression in: ${names}.`;
+};
+
 export const run = async ({
   cwd = process.cwd(),
   io = createGitHubActionsIO(),
@@ -193,10 +234,25 @@ export const run = async ({
     isMain: main,
     threshold,
   });
+  const projectGuards = evaluateProjectGuards({
+    baseReport,
+    dryRun,
+    headReport,
+    isMain: main,
+    threshold,
+  });
+  const combinedStatus = combineGuardStatuses(guard, projectGuards);
+  const combinedReason = buildCombinedReason(guard, projectGuards, combinedStatus);
+  const combinedGuard = {
+    ...guard,
+    status: combinedStatus,
+    reason: combinedReason,
+    projects: projectGuards,
+  };
   const result = createActionResult({
     baseReport,
     eventName: process.env.GITHUB_EVENT_NAME || null,
-    guard,
+    guard: combinedGuard,
     headReport,
     isMain: main,
     isPullRequest: pullRequest,
@@ -227,12 +283,12 @@ export const run = async ({
     );
   }
 
-  if (guard.status === "warn") {
-    io.warning(guard.reason);
+  if (result.guard.status === "warn") {
+    io.warning(result.guard.reason);
   }
 
-  if (guard.status === "fail") {
-    io.setFailed(guard.reason);
+  if (result.guard.status === "fail") {
+    io.setFailed(result.guard.reason);
   }
 
   return result;

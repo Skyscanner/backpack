@@ -23,6 +23,12 @@ const STATUS_HEADER: Record<GuardResult["status"], string> = {
   warn: "⚠️ Backpack Adoption Guard — Warning",
 };
 
+const STATUS_ICON: Record<GuardResult["status"], string> = {
+  pass: "✅",
+  fail: "❌",
+  warn: "⚠️",
+};
+
 const formatPercentage = (value: number | null) =>
   value === null ? "n/a" : `${value.toFixed(2)}%`;
 
@@ -86,6 +92,69 @@ ${items}
 `;
 };
 
+const buildMainProjectsTable = (head: AdoptionReport) => {
+  if (!head.projects) {
+    return "";
+  }
+
+  const rows = Object.entries(head.projects)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(
+      ([name, project]) =>
+        `| ${name} | ${formatPercentage(project.usage.backpack.percentage)} | ${formatCount(project.filesAnalyzed)} |`,
+    )
+    .join("\n");
+
+  return `
+### Per-project adoption
+
+| Project | Adoption | Files |
+| --- | ---: | ---: |
+${rows}
+`;
+};
+
+const buildComparisonProjectsTable = (result: ActionResult) => {
+  const { base, head, guard } = result;
+  if (!head.projects || !base) {
+    return "";
+  }
+
+  const projectGuards = guard.projects || {};
+  const baseProjects = base.projects || {};
+
+  const rows = Object.entries(head.projects)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([name, project]) => {
+      const baseProject = baseProjects[name];
+      const projectGuard = projectGuards[name];
+      const mainCell = baseProject
+        ? formatPercentage(baseProject.usage.backpack.percentage)
+        : "n/a";
+      const changeCell = baseProject
+        ? formatDelta(
+            Number(
+              (
+                project.usage.backpack.percentage -
+                baseProject.usage.backpack.percentage
+              ).toFixed(2),
+            ),
+          )
+        : "n/a";
+      const statusCell = projectGuard ? STATUS_ICON[projectGuard.status] : "—";
+      return `| ${name} | ${formatPercentage(project.usage.backpack.percentage)} | ${mainCell} | ${changeCell} | ${statusCell} |`;
+    })
+    .join("\n");
+
+  return `
+### Per-project adoption
+
+| Project | This PR | Main | Change | Status |
+| --- | ---: | ---: | ---: | :---: |
+${rows}
+`;
+};
+
 const buildMainView = (result: ActionResult) => {
   const { head, guard } = result;
   const skipped = head.parseErrors.length;
@@ -106,7 +175,7 @@ ${buildPlainEnglishMain(head)}
 | └ With className override | ${formatCount(head.usage.nonPureBackpack.count)} | ${head.usage.nonPureBackpack.percentage.toFixed(2)}% |
 | Non-Backpack | ${formatCount(head.usage.nonBackpack.count)} | ${head.usage.nonBackpack.percentage.toFixed(2)}% |
 | Raw HTML | ${formatCount(head.usage.rawHtml.count)} | ${head.usage.rawHtml.percentage.toFixed(2)}% |
-
+${buildMainProjectsTable(head)}
 ### Run details
 
 | Detail | Value |
@@ -138,7 +207,7 @@ ${buildPlainEnglishMain(head)}
 | └ With className override | ${formatCount(head.usage.nonPureBackpack.count)} | ${head.usage.nonPureBackpack.percentage.toFixed(2)}% |
 | Non-Backpack | ${formatCount(head.usage.nonBackpack.count)} | ${head.usage.nonBackpack.percentage.toFixed(2)}% |
 | Raw HTML | ${formatCount(head.usage.rawHtml.count)} | ${head.usage.rawHtml.percentage.toFixed(2)}% |
-
+${buildMainProjectsTable(head)}
 ### Run details
 
 | Detail | Value |
@@ -176,7 +245,7 @@ ${buildPlainEnglishComparison(head, base)}
 | └ With className override | ${formatPercentageAndCount(head.usage.nonPureBackpack.percentage, head.usage.nonPureBackpack.count)} | ${formatPercentageAndCount(base.usage.nonPureBackpack.percentage, base.usage.nonPureBackpack.count)} | ${formatDelta(Number((head.usage.nonPureBackpack.percentage - base.usage.nonPureBackpack.percentage).toFixed(2)))} |
 | Non-Backpack | ${formatPercentageAndCount(head.usage.nonBackpack.percentage, head.usage.nonBackpack.count)} | ${formatPercentageAndCount(base.usage.nonBackpack.percentage, base.usage.nonBackpack.count)} | ${formatDelta(Number((head.usage.nonBackpack.percentage - base.usage.nonBackpack.percentage).toFixed(2)))} |
 | Raw HTML | ${formatPercentageAndCount(head.usage.rawHtml.percentage, head.usage.rawHtml.count)} | ${formatPercentageAndCount(base.usage.rawHtml.percentage, base.usage.rawHtml.count)} | ${formatDelta(Number((head.usage.rawHtml.percentage - base.usage.rawHtml.percentage).toFixed(2)))} |
-
+${buildComparisonProjectsTable(result)}
 ### Run details
 
 | Detail | Value |

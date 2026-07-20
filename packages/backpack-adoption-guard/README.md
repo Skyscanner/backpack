@@ -41,6 +41,33 @@ The action emits one of three guard statuses:
 | Pull request, main adoption ≥ configured threshold | Fails when adoption drops, or when files were skipped on either side (incomplete data). `dry-run: true` downgrades the failure to a warning. |
 | Pull request, base ref unavailable | Fails (`warn` under `dry-run`) so the workflow surfaces the misconfiguration. |
 
+### Per-project guard (NX workspaces)
+
+When the scanned repository is an NX workspace (an `nx.json` exists at the
+root), the action additionally attributes every scanned file to the NX
+project that owns it — using the same longest-root-prefix matching NX itself
+uses — and evaluates the guard rules above **per project**, not just for the
+repository as a whole.
+
+This means a large, high-adoption project's improvement can no longer mask a
+regression in a smaller project: if any individual project would fail the
+guard on its own (per the rules in the table above), the overall guard status
+becomes `fail`, even if the repository-wide percentage held steady or
+improved. The same logic applies to `warn`. The top-level `reason` names the
+project(s) responsible so it's clear at a glance who to talk to.
+
+Files that don't fall under any detected NX project root are grouped into a
+`(unassigned)` bucket rather than being dropped or folded into another
+project. This is intentional (it mirrors `Skyscanner/ds-analyser`) — a large
+`(unassigned)` bucket usually means root-level files, or a directory that
+should have its own `project.json`, and is worth investigating rather than
+hiding.
+
+Per-project results are included in the PR step summary as an additional
+table, and in the generated results JSON under `head.projects` /
+`guard.projects`. Non-NX repositories are unaffected: `projects` is simply
+absent everywhere.
+
 ## Inputs
 
 | Input | Description | Required | Default |
@@ -75,10 +102,33 @@ data stays in the GitHub step summary and action internals.
       "nonPureBackpack": { "count": 134, "percentage": 6.75 },
       "nonBackpack": { "count": 500, "percentage": 25.35 },
       "rawHtml": { "count": 240, "percentage": 12.15 }
+    },
+    "projects": {
+      "banana-webapp": {
+        "filesAnalyzed": 210,
+        "backpack": { "count": 900, "percentage": 70.31 },
+        "pureBackpack": { "count": 850, "percentage": 66.41 },
+        "nonPureBackpack": { "count": 50, "percentage": 3.9 },
+        "nonBackpack": { "count": 300, "percentage": 23.44 },
+        "rawHtml": { "count": 80, "percentage": 6.25 }
+      },
+      "(unassigned)": {
+        "filesAnalyzed": 12,
+        "backpack": { "count": 10, "percentage": 20 },
+        "pureBackpack": { "count": 10, "percentage": 20 },
+        "nonPureBackpack": { "count": 0, "percentage": 0 },
+        "nonBackpack": { "count": 5, "percentage": 10 },
+        "rawHtml": { "count": 35, "percentage": 70 }
+      }
     }
   }
 }
 ```
+
+`projects` is only present for NX workspaces, and (to keep the always-loaded
+Cortex payload small) each project entry omits `componentCounts` — the full
+per-project detail, including component counts, is available in the PR step
+summary and the generated `backpack-adoption-results.json`'s `head.projects`.
 
 ```yaml
 - uses: actions/checkout@v6
@@ -135,6 +185,15 @@ GitHub JavaScript action must still contain the generated bundle because
 source changes.
 
 ## Releasing
+
+> **Migration to v2**: Starting with `backpack-adoption-guard/v2.0.0`, the
+> guard evaluates NX projects individually (see
+> [Per-project guard (NX workspaces)](#per-project-guard-nx-workspaces)) —
+> a PR that regresses a single NX project now fails even if the
+> repository-wide adoption percentage is unchanged or improved. This is a
+> pass/fail behaviour change: consumers on NX workspaces should expect some
+> previously-passing PRs to start failing (or warn, under `dry-run`) once
+> they upgrade. Non-NX repositories are unaffected.
 
 Use the `Backpack Adoption Guard Release` workflow and choose the semver bump
 type:

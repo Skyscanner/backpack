@@ -114,6 +114,53 @@ export const App = () => (
     expect(metrics).not.toHaveProperty("parseErrors");
   });
 
+  it("writes per-project metrics for NX workspaces", async () => {
+    await writeRepoFile(repoPath, "nx.json", JSON.stringify({ version: 2 }));
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/project.json",
+      JSON.stringify({
+        name: "flights",
+        root: "apps/flights",
+        projectType: "application",
+      }),
+    );
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/src/App.tsx",
+      `
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+
+export const App = () => <BpkButton>Book</BpkButton>;
+`,
+    );
+    await writeRepoFile(
+      repoPath,
+      "RootThing.tsx",
+      `
+export const RootThing = () => <div>root</div>;
+`,
+    );
+
+    const result = await run({ cwd: repoPath, io: createTestIO() });
+    const resultsFile = JSON.parse(
+      await readFile(join(repoPath, "backpack-adoption-results.json"), "utf8"),
+    );
+    const metrics = resultsFile["backpack-adoption"];
+
+    expect(result.head.isNx).toBe(true);
+    expect(result.head.projects).toBeDefined();
+    expect(result.guard.projects).toBeDefined();
+
+    expect(metrics.projects).toBeDefined();
+    expect(metrics.projects.flights).toEqual({
+      filesAnalyzed: result.head.projects!.flights.filesAnalyzed,
+      ...result.head.projects!.flights.usage,
+    });
+    expect(metrics.projects.flights).not.toHaveProperty("componentCounts");
+    expect(metrics.projects["(unassigned)"]).toBeDefined();
+  });
+
   it("uses the default guard threshold when the input is omitted", async () => {
     const result = await run({ cwd: repoPath, io: createTestIO() });
 
