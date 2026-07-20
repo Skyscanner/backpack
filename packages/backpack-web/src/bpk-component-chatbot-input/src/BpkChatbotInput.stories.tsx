@@ -21,12 +21,12 @@ import type { ComponentProps } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import {
-  borderRadiusLg,
-  corePrimaryDay,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+
+import { borderRadiusLg, corePrimaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { action } from 'bpk-storybook-utils';
+
+
 
 import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '../../bpk-component-button';
 import { withButtonAlignment, withRtlSupport } from '../../bpk-component-icon';
@@ -39,7 +39,7 @@ import { BpkProvider } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
-import BpkThemeProvider from '../../bpk-theming';
+import { BpkLegacyThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkChatbotInput from './BpkChatbotInput';
@@ -250,7 +250,7 @@ const ThemedExample = () => (
         With theme override (pill border-radius + navy focus colour)
       </BpkText>
     </div>
-    <BpkThemeProvider
+    <BpkLegacyThemeProvider
       theme={{
         chatbotInputBorderRadius: borderRadiusLg,
         chatbotInputFocusBorderColor: corePrimaryDay,
@@ -275,7 +275,7 @@ const ThemedExample = () => (
         </BpkText>
         <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER} />
       </div>
-    </BpkThemeProvider>
+    </BpkLegacyThemeProvider>
 
     <div className={getClassName('bpk-chatbot-input-examples__section-label')}>
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>

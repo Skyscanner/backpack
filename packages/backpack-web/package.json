@@ -45,7 +45,7 @@
     "./bpk-component-split-input": "./src/bpk-component-split-input/index.js",
     "./bpk-component-star-rating": "./src/bpk-component-star-rating/index.js",
     "./bpk-component-ticket": "./src/bpk-component-ticket/index.js",
-    "./bpk-theming": "./src/bpk-theming/index.js",
+    "./bpk-theming": "./src/bpk-theming/index.ts",
     "./*": "./src/*/index.ts"
   },
   "dependencies": {

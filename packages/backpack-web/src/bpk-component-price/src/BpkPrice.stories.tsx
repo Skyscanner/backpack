@@ -27,11 +27,12 @@ import {
 // @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
+// @ts-ignore
+
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkThemeProvider from '../../bpk-theming';
+import { BpkLegacyThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkPrice from './BpkPrice';
@@ -672,7 +673,7 @@ const ThemedExample = () => (
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Themed
     </BpkText>
-    <BpkThemeProvider
+    <BpkLegacyThemeProvider
       theme={{ textPrimary: statusDangerSpotDay, textSecondary: statusSuccessSpotDay, textError: coreAccentDay }}
       themeAttributes={['textPrimary', 'textSecondary', 'textError']}
     >
@@ -683,7 +684,7 @@ const ThemedExample = () => (
         trailingText="per day"
         previousPrice="£2,033"
       />
-    </BpkThemeProvider>
+    </BpkLegacyThemeProvider>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       onContrast (no theme)
     </BpkText>
@@ -701,7 +702,7 @@ const ThemedExample = () => (
       onContrast themed
     </BpkText>
     <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
-      <BpkThemeProvider
+      <BpkLegacyThemeProvider
         theme={{ textOnDark: statusDangerSpotDay, textSecondaryOnContrast: statusSuccessSpotDay, textError: coreAccentDay }}
         themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
       >
@@ -713,7 +714,7 @@ const ThemedExample = () => (
           previousPrice="£2,033"
           variant={VARIANTS.onContrast}
         />
-      </BpkThemeProvider>
+      </BpkLegacyThemeProvider>
     </BpkDarkExampleWrapper>
   </div>
 );

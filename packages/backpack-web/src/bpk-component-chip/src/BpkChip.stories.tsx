@@ -21,21 +21,14 @@ import { useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import {
-  borderRadiusLg,
-  corePrimaryDay,
-  lineDay,
-  statusDangerSpotDay,
-  surfaceHighlightDay,
-  textOnDarkDay,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { borderRadiusLg, corePrimaryDay, lineDay, statusDangerSpotDay, surfaceHighlightDay, textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import FaceHappyIconSm from '../../bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import BpkThemeProvider from '../../bpk-theming';
+import { BpkLegacyThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkDismissibleChip from './BpkDismissibleChip';
@@ -347,7 +340,7 @@ const ThemedExample = () => (
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Custom theme override
     </BpkText>
-    <BpkThemeProvider
+    <BpkLegacyThemeProvider
       theme={{
         chipBorderRadius: borderRadiusLg,
         chipDefaultBorderColor: statusDangerSpotDay,
@@ -372,7 +365,7 @@ const ThemedExample = () => (
       ]}
     >
       <StatefulSelectableChips type={CHIP_TYPES.default} />
-    </BpkThemeProvider>
+    </BpkLegacyThemeProvider>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Default theme (no override)
     </BpkText>

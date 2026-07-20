@@ -55,7 +55,7 @@ const createStyle = (theme, themeAttributes) => {
   return style;
 };
 
-const BpkThemeProvider = ({
+const BpkLegacyThemeProvider = ({
   children,
   component: WrapperComponent = 'div',
   style: userStyle = null,
@@ -118,7 +118,7 @@ const themeAttributesPropType = (props, propName, componentName) => {
   return false;
 };
 
-BpkThemeProvider.propTypes = {
+BpkLegacyThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
   theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   themeAttributes: themeAttributesPropType,
@@ -127,4 +127,4 @@ BpkThemeProvider.propTypes = {
   style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
-export default BpkThemeProvider;
+export default BpkLegacyThemeProvider;

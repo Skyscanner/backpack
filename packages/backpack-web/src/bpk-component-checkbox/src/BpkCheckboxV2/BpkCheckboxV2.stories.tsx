@@ -20,10 +20,7 @@ import { useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import {
-  borderRadiusFull,
-  statusDangerSpotDay,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { borderRadiusFull, statusDangerSpotDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton from '../../../bpk-component-button';
 import BpkDrawer from '../../../bpk-component-drawer';
@@ -34,15 +31,12 @@ import {
   BpkSpacing,
   BpkVStack,
 } from '../../../bpk-component-layout';
-import BpkThemeProvider from '../../../bpk-theming';
+import { BpkLegacyThemeProvider } from '../../../bpk-theming';
 
 
 import BpkCheckboxV2 from './BpkCheckboxV2';
 import readme from './README.md';
-import {
-  checkboxBorderRadiusThemeAttributes,
-  checkboxSelectedColorThemeAttributes,
-} from './themeAttributes';
+import { checkboxBorderRadiusThemeAttributes, checkboxSelectedColorThemeAttributes } from './themeAttributes';
 
 import type { Meta } from '@storybook/react';
 
@@ -148,7 +142,7 @@ const InvalidExample = () => (
 
 const ThemedExample = () => (
   <BpkProvider>
-    <BpkThemeProvider
+    <BpkLegacyThemeProvider
       theme={{
         checkboxSelectedColor: statusDangerSpotDay,
         checkboxBorderRadius: borderRadiusFull,
@@ -178,7 +172,7 @@ const ThemedExample = () => (
           <BpkCheckboxV2.HiddenInput />
         </BpkCheckboxV2.Root>
       </BpkFlex>
-    </BpkThemeProvider>
+    </BpkLegacyThemeProvider>
   </BpkProvider>
 );
 
