@@ -89,6 +89,8 @@ export default () => (
 );
 ```
 
+`BpkBadge` forwards its `ref` to the underlying `<button>` (when `as="button"`) or `<a>` (when `as="a"`) element. For non-interactive `<span>` badge, no ref is forwarded.
+
 ### Accessibility
 
 Non-interactive badges render as `<span>` element. Interactive badges render as native `<button>` or `<a>` elements, so keyboard navigation and screen reader announcement work without any extra configuration. The trailing info icon is marked `aria-hidden`.
