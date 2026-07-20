@@ -52,8 +52,11 @@ import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkButton.stories.module.scss';
 
+// Custom brand theme for the button — demonstrates light/dark adaptive values.
+// Toggle the Storybook colour-scheme toolbar to see dark mode values applied.
 const THEMED_BUTTON_THEME: BpkTheme = {
   button: {
+    // Structural tokens — same in both modes
     dimensionRadius: '999px',
     dimensionMinHeightDefault: '36px',
     dimensionPaddingHorizontalDefault: '16px',
@@ -61,31 +64,47 @@ const THEMED_BUTTON_THEME: BpkTheme = {
     dimensionPaddingHorizontalLarge: '24px',
     colourBgDisabled: '#e0e4e9',
     colourTextDisabled: 'rgba(0, 0, 0, 0.2)',
-    colourBgPrimary: '#05203c',
-    colourBgPrimaryPressed: '#154679',
-    colourTextPrimary: '#ffffff',
-    colourBgPrimaryOnDark: '#ffffff',
-    colourBgPrimaryOnDarkPressed: '#c1c7cf',
-    colourTextPrimaryOnDark: '#161616',
-    colourBgPrimaryOnLight: '#05203c',
-    colourBgPrimaryOnLightPressed: '#154679',
-    colourTextPrimaryOnLight: '#ffffff',
-    colourTextSecondary: '#161616',
-    colourBgSecondary: '#e3f0ff',
-    colourBgSecondaryPressed: '#b4d7ff',
-    colourBgSecondaryOnDark: 'rgba(255, 255, 255, 0.1)',
-    colourBgSecondaryOnDarkPressed: 'rgba(0, 0, 0, 0.5)',
+
+    // Primary — teal in light, soft amber in dark
+    colourBgPrimary: { light: '#007a6c', dark: '#f4a623' },
+    colourBgPrimaryPressed: { light: '#005c51', dark: '#d4891b' },
+    colourTextPrimary: { light: '#ffffff', dark: '#161616' },
+
+    // PrimaryOnDark
+    colourBgPrimaryOnDark: { light: '#ffffff', dark: '#f4a623' },
+    colourBgPrimaryOnDarkPressed: { light: '#c1c7cf', dark: '#d4891b' },
+    colourTextPrimaryOnDark: { light: '#161616', dark: '#161616' },
+
+    // PrimaryOnLight
+    colourBgPrimaryOnLight: { light: '#007a6c', dark: '#f4a623' },
+    colourBgPrimaryOnLightPressed: { light: '#005c51', dark: '#d4891b' },
+    colourTextPrimaryOnLight: { light: '#ffffff', dark: '#161616' },
+
+    // Secondary
+    colourBgSecondary: { light: '#e6f4f2', dark: '#1a2e2c' },
+    colourBgSecondaryPressed: { light: '#bfe3df', dark: '#264340' },
+    colourTextSecondary: { light: '#007a6c', dark: '#5ecfc4' },
+
+    // SecondaryOnDark
+    colourBgSecondaryOnDark: { light: 'rgba(0, 122, 108, 0.15)', dark: 'rgba(244, 166, 35, 0.15)' },
+    colourBgSecondaryOnDarkPressed: { light: 'rgba(0, 122, 108, 0.3)', dark: 'rgba(244, 166, 35, 0.3)' },
     colourBgSecondaryOnDarkDisabled: '#0b121d',
-    colourTextSecondaryOnDark: '#ffffff',
-    colourTextFeature: '#ffffff',
-    colourBgFeatured: '#0062e3',
-    colourBgFeaturePressed: '#024daf',
-    colourTextDestructive: '#e70866',
-    colourTextDestructivePressed: '#ffffff',
-    colourBgDestructive: '#e0e4e9',
-    colourBgDestructivePressed: '#e70866',
-    colourTextLink: '#161616',
-    colourTextLinkOnDark: '#ffffff',
+    colourTextSecondaryOnDark: { light: '#007a6c', dark: '#f4a623' },
+
+    // Featured
+    colourBgFeatured: { light: '#007a6c', dark: '#f4a623' },
+    colourBgFeaturePressed: { light: '#005c51', dark: '#d4891b' },
+    colourTextFeature: { light: '#ffffff', dark: '#161616' },
+
+    // Destructive
+    colourBgDestructive: { light: '#e0e4e9', dark: '#2e1a1a' },
+    colourBgDestructivePressed: { light: '#e70866', dark: '#c0392b' },
+    colourTextDestructive: { light: '#e70866', dark: '#ff6b6b' },
+    colourTextDestructivePressed: { light: '#ffffff', dark: '#ffffff' },
+
+    // Link
+    colourTextLink: { light: '#007a6c', dark: '#5ecfc4' },
+    colourTextLinkOnDark: { light: '#5ecfc4', dark: '#f4a623' },
   },
 };
 
