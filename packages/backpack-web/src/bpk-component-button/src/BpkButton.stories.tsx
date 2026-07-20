@@ -58,8 +58,7 @@ import STYLES from './BpkButton.stories.module.scss';
 // Toggle the Storybook colour-scheme toolbar to switch between modes.
 const THEMED_BUTTON_THEME: BpkTheme = {
   button: {
-    // Radius — 8px in light, pill (999px) in dark
-    dimensionRadius: { light: '8px', dark: '999px' },
+    dimensionRadius: '999px',
 
     // Dimensions — same in both modes
     dimensionMinHeightDefault: '36px',
