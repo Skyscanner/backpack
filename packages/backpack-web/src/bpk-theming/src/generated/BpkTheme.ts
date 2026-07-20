@@ -107,6 +107,22 @@ export interface BpkButtonTheme {
   dimensionPaddingHorizontalDefault?: BpkThemedValue;
   /** --bpk-private-button-dimension-padding-horizontal-large */
   dimensionPaddingHorizontalLarge?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-destructive-pressed */
+  colourTextDestructivePressed?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-disabled */
+  colourTextDisabled?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-link */
+  colourTextLink?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-primary */
+  colourTextPrimary?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-primary-on-dark */
+  colourTextPrimaryOnDark?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-primary-on-light */
+  colourTextPrimaryOnLight?: BpkThemedValue;
+  /** --bpk-private-button-colour-text-secondary-on-dark */
+  colourTextSecondaryOnDark?: BpkThemedValue;
+  /** --bpk-private-button-dimension-min-height-large */
+  dimensionMinHeightLarge?: BpkThemedValue;
 }
 
 export interface BpkCardButtonTheme {
@@ -591,6 +607,14 @@ export const themeToVars = (theme: BpkTheme): Record<string, string> => {
     if (typeof ns.dimensionMinHeightDefault === 'string') vars['--bpk-private-button-dimension-min-height-default'] = ns.dimensionMinHeightDefault as string;
     if (typeof ns.dimensionPaddingHorizontalDefault === 'string') vars['--bpk-private-button-dimension-padding-horizontal-default'] = ns.dimensionPaddingHorizontalDefault as string;
     if (typeof ns.dimensionPaddingHorizontalLarge === 'string') vars['--bpk-private-button-dimension-padding-horizontal-large'] = ns.dimensionPaddingHorizontalLarge as string;
+    if (typeof ns.colourTextDestructivePressed === 'string') vars['--bpk-private-button-colour-text-destructive-pressed'] = ns.colourTextDestructivePressed as string;
+    if (typeof ns.colourTextDisabled === 'string') vars['--bpk-private-button-colour-text-disabled'] = ns.colourTextDisabled as string;
+    if (typeof ns.colourTextLink === 'string') vars['--bpk-private-button-colour-text-link'] = ns.colourTextLink as string;
+    if (typeof ns.colourTextPrimary === 'string') vars['--bpk-private-button-colour-text-primary'] = ns.colourTextPrimary as string;
+    if (typeof ns.colourTextPrimaryOnDark === 'string') vars['--bpk-private-button-colour-text-primary-on-dark'] = ns.colourTextPrimaryOnDark as string;
+    if (typeof ns.colourTextPrimaryOnLight === 'string') vars['--bpk-private-button-colour-text-primary-on-light'] = ns.colourTextPrimaryOnLight as string;
+    if (typeof ns.colourTextSecondaryOnDark === 'string') vars['--bpk-private-button-colour-text-secondary-on-dark'] = ns.colourTextSecondaryOnDark as string;
+    if (typeof ns.dimensionMinHeightLarge === 'string') vars['--bpk-private-button-dimension-min-height-large'] = ns.dimensionMinHeightLarge as string;
   }
   ns = t.cardButton as Record<string, BpkThemedValue> | undefined;
   if (ns) {

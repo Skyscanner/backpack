@@ -21,9 +21,8 @@ import type { ComponentProps } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-
 import { borderRadiusLg, corePrimaryDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
 

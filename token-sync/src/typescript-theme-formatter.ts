@@ -36,6 +36,7 @@ import { fileURLToPath } from 'node:url';
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(scriptDir, '..', '..');
 const TOKENS_DIR = path.join(REPO_ROOT, 'token-sync', 'tokens');
+const GHOST_TOKENS_PATH = path.join(REPO_ROOT, 'token-sync', 'ghost-tokens.json');
 const OUTPUT_PATH = path.join(
   REPO_ROOT,
   'packages',
@@ -45,6 +46,19 @@ const OUTPUT_PATH = path.join(
   'src',
   'generated',
   'BpkTheme.ts',
+);
+
+// Ghost tokens: CSS vars used by component SCSS that are not modelled in Figma.
+// Keyed by the DTCG component name (e.g. "Button"), values are arrays of
+// { key, cssVar, note } where key is the camelCase interface key and cssVar is
+// the full var name without `--`.
+interface GhostEntry {
+  key: string;
+  cssVar: string;
+  note?: string;
+}
+const GHOST_TOKENS: Record<string, GhostEntry[]> = JSON.parse(
+  readFileSync(GHOST_TOKENS_PATH, 'utf-8'),
 );
 
 // Groups excluded from the generated theme type (internal / platform / test)
@@ -193,12 +207,17 @@ function main() {
         const fixedLeaves = leaves.map((leaf) =>
           leaf.keyPath.length === 0 ? { ...leaf, keyPath: ['value'] } : leaf,
         );
-        if (fixedLeaves.length === 0) return;
+        // Merge ghost tokens (CSS vars not in Figma) for this component.
+        const ghosts: LeafToken[] = (GHOST_TOKENS[compName] ?? []).map(
+          ({ cssVar, key }) => ({ keyPath: [key], cssVar }),
+        );
+        const allLeaves = [...fixedLeaves, ...ghosts];
+        if (allLeaves.length === 0) return;
 
         const typeName = `Bpk${toTypeName(compName)}Theme`;
         const nsKey = toCamelFragment(compName);
 
-        emitComponentInterface(typeName, fixedLeaves, lines);
+        emitComponentInterface(typeName, allLeaves, lines);
         componentEntries.push({ nsKey, typeName });
       });
   }
@@ -258,10 +277,16 @@ function main() {
       .filter(([compName]) => !compName.startsWith('$') && !NON_WEB_SEGMENT.test(compName))
       .forEach(([compName, compValue]) => {
         const leaves = collectLeaves(compValue, ['Component', compName], []);
-        const entries = leaves.map((leaf) => {
-          const keyPath = leaf.keyPath.length === 0 ? ['value'] : leaf.keyPath;
-          return { key: pathToCamelKey(keyPath), cssVar: `--${leaf.cssVar}` };
-        });
+        const ghostEntries = (GHOST_TOKENS[compName] ?? []).map(
+          ({ cssVar, key }) => ({ key, cssVar: `--${cssVar}` }),
+        );
+        const entries = [
+          ...leaves.map((leaf) => {
+            const keyPath = leaf.keyPath.length === 0 ? ['value'] : leaf.keyPath;
+            return { key: pathToCamelKey(keyPath), cssVar: `--${leaf.cssVar}` };
+          }),
+          ...ghostEntries,
+        ];
         if (entries.length === 0) return;
 
         const ns = toCamelFragment(compName);
