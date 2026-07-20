@@ -243,11 +243,12 @@ export const run = async ({
   });
   const combinedStatus = combineGuardStatuses(guard, projectGuards);
   const combinedReason = buildCombinedReason(guard, projectGuards, combinedStatus);
-  const combinedGuard = {
+  const hasProjectGuards = Object.keys(projectGuards).length > 0;
+  const combinedGuard: GuardResult = {
     ...guard,
     status: combinedStatus,
     reason: combinedReason,
-    projects: projectGuards,
+    ...(hasProjectGuards ? { projects: projectGuards } : {}),
   };
   const result = createActionResult({
     baseReport,

@@ -266,8 +266,11 @@ function mergeFileResults(
 }
 
 /**
- * Converts the Set-valued `files` fields of a bucket to arrays and computes
- * the backpack/rawHtml percentages. Idempotent enough for one-shot use.
+ * Computes the backpack/rawHtml percentages for a bucket once all files have
+ * been merged into it. Idempotent enough for one-shot use. Unlike
+ * ds-analyser's finalizeBucket, this does not convert Set-valued `files`
+ * fields to arrays — nothing downstream serializes them, since
+ * buildUsageSummary only reads the numeric counts off each bucket.
  */
 function finalizeBucket(bucket: AnalyzerResults): void {
   const totalElementUsages =
@@ -699,6 +702,19 @@ async function runAnalyzer(
     const filePath = files[i];
     const relativePath = relative(repoPath, filePath);
 
+    // Every matched file counts toward its project's filesAnalyzed, even if
+    // analysis below fails, so per-project totals stay in lockstep with the
+    // repo-wide filesAnalyzed (= files.length).
+    let projectBucket: AnalyzerResults | null = null;
+    if (projectBuckets) {
+      const projectName = resolveProject(relativePath, projectIndex);
+      if (!projectBuckets[projectName]) {
+        projectBuckets[projectName] = createResultBucket(projectName);
+      }
+      projectBucket = projectBuckets[projectName];
+      projectBucket.filesAnalyzed += 1;
+    }
+
     try {
       const content = readFileSync(filePath, "utf-8");
       const fileResults = analyzeFile(
@@ -713,13 +729,8 @@ async function runAnalyzer(
       mergeFileResults(results, fileResults);
 
       // Attribute the same file's results to its NX project bucket
-      if (projectBuckets) {
-        const projectName = resolveProject(relativePath, projectIndex);
-        if (!projectBuckets[projectName]) {
-          projectBuckets[projectName] = createResultBucket(projectName);
-        }
-        projectBuckets[projectName].filesAnalyzed += 1;
-        mergeFileResults(projectBuckets[projectName], fileResults);
+      if (projectBucket) {
+        mergeFileResults(projectBucket, fileResults);
       }
     } catch (error) {
       parseErrors.push({

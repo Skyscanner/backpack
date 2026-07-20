@@ -112,6 +112,8 @@ export const App = () => (
     expect(metrics).not.toHaveProperty("guard");
     expect(metrics).not.toHaveProperty("componentCounts");
     expect(metrics).not.toHaveProperty("parseErrors");
+    expect(metrics).not.toHaveProperty("projects");
+    expect(result.guard).not.toHaveProperty("projects");
   });
 
   it("writes per-project metrics for NX workspaces", async () => {

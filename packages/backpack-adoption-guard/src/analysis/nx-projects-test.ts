@@ -17,7 +17,7 @@
  */
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 
 import {
   UNASSIGNED,
@@ -34,7 +34,7 @@ const writeRepoFile = async (
   content: string,
 ) => {
   const absolutePath = join(repoPath, filePath);
-  await mkdir(join(absolutePath, ".."), { recursive: true });
+  await mkdir(dirname(absolutePath), { recursive: true });
   await writeFile(absolutePath, content, "utf8");
 };
 

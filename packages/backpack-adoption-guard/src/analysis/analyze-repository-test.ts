@@ -234,6 +234,39 @@ export const RootThing = () => <div>root</div>;
     expect(projectFilesTotal).toBe(report.filesAnalyzed);
   });
 
+  it("counts a file with a parse error toward its project's filesAnalyzed", async () => {
+    await writeRepoFile(repoPath, "nx.json", JSON.stringify({ version: 2 }));
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/project.json",
+      JSON.stringify({
+        name: "flights",
+        root: "apps/flights",
+        projectType: "application",
+      }),
+    );
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/src/Broken.tsx",
+      "export const Broken = () => <div>{",
+    );
+
+    const report = await analyzeRepository(repoPath);
+
+    // The file failed to parse (no usages recorded), but it still matched
+    // the glob and its project should still count it as analyzed — matching
+    // the repo-wide filesAnalyzed, which counts every matched file.
+    expect(report.filesAnalyzed).toBe(1);
+    expect(report.parseErrors).toHaveLength(1);
+    expect(report.projects!.flights.filesAnalyzed).toBe(1);
+
+    const projectFilesTotal = Object.values(report.projects!).reduce(
+      (sum, project) => sum + project.filesAnalyzed,
+      0,
+    );
+    expect(projectFilesTotal).toBe(report.filesAnalyzed);
+  });
+
   it("omits projects/isNx for non-NX repositories", async () => {
     await writeRepoFile(
       repoPath,
