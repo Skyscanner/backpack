@@ -89,7 +89,7 @@ export default () => (
 );
 ```
 
-`BpkBadge` forwards its `ref` to the underlying `<button>` (when `as="button"`) or `<a>` (when `as="a"`) element. For a plain `<span>` badge, no ref is forwarded.
+`BpkBadge` forwards its `ref` to the underlying `<button>` (when `as="button"`) or `<a>` (when `as="a"`) element. For non-interactive `<span>` badge, no ref is forwarded.
 
 ### Accessibility
 
