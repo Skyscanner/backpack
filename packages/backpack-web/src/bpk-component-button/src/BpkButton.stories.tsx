@@ -52,59 +52,65 @@ import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkButton.stories.module.scss';
 
-// Custom brand theme for the button — demonstrates light/dark adaptive values.
-// Toggle the Storybook colour-scheme toolbar to see dark mode values applied.
+// VDL (Visual Design Language) theme sourced from Figma:
+//   Light: https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX?node-id=16727-13420
+//   Dark:  https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX?node-id=16727-13421
+// Toggle the Storybook colour-scheme toolbar to switch between modes.
 const THEMED_BUTTON_THEME: BpkTheme = {
   button: {
-    // Structural tokens — same in both modes
-    dimensionRadius: '999px',
+    // Radius — 8px in light, pill (999px) in dark
+    dimensionRadius: { light: '8px', dark: '999px' },
+
+    // Dimensions — same in both modes
     dimensionMinHeightDefault: '36px',
     dimensionPaddingHorizontalDefault: '16px',
     dimensionMinHeightLarge: '56px',
     dimensionPaddingHorizontalLarge: '24px',
-    colourBgDisabled: '#e0e4e9',
-    colourTextDisabled: 'rgba(0, 0, 0, 0.2)',
 
-    // Primary — teal in light, soft amber in dark
-    colourBgPrimary: { light: '#007a6c', dark: '#f4a623' },
-    colourBgPrimaryPressed: { light: '#005c51', dark: '#d4891b' },
-    colourTextPrimary: { light: '#ffffff', dark: '#161616' },
+    // Disabled
+    colourBgDisabled: { light: '#e0e4e9', dark: '#0b121d' },
+    colourTextDisabled: { light: 'rgba(0, 0, 0, 0.2)', dark: 'rgba(255, 255, 255, 0.2)' },
+
+    // Primary
+    colourBgPrimary: { light: '#05203c', dark: '#024daf' },
+    colourBgPrimaryPressed: { light: '#154679', dark: '#054184' },
+    colourTextPrimary: { light: '#ffffff', dark: '#ffffff' },
 
     // PrimaryOnDark
-    colourBgPrimaryOnDark: { light: '#ffffff', dark: '#f4a623' },
-    colourBgPrimaryOnDarkPressed: { light: '#c1c7cf', dark: '#d4891b' },
-    colourTextPrimaryOnDark: { light: '#161616', dark: '#161616' },
+    colourBgPrimaryOnDark: { light: '#ffffff', dark: '#ffffff' },
+    colourBgPrimaryOnDarkPressed: { light: '#c1c7cf', dark: '#c1c7cf' },
+    colourTextPrimaryOnDark: { light: '#161616', dark: '#010913' },
 
     // PrimaryOnLight
-    colourBgPrimaryOnLight: { light: '#007a6c', dark: '#f4a623' },
-    colourBgPrimaryOnLightPressed: { light: '#005c51', dark: '#d4891b' },
-    colourTextPrimaryOnLight: { light: '#ffffff', dark: '#161616' },
+    colourBgPrimaryOnLight: { light: '#05203c', dark: '#05203c' },
+    colourBgPrimaryOnLightPressed: { light: '#154679', dark: '#154679' },
+    colourTextPrimaryOnLight: { light: '#ffffff', dark: '#ffffff' },
 
     // Secondary
-    colourBgSecondary: { light: '#e6f4f2', dark: '#1a2e2c' },
-    colourBgSecondaryPressed: { light: '#bfe3df', dark: '#264340' },
-    colourTextSecondary: { light: '#007a6c', dark: '#5ecfc4' },
+    colourBgSecondary: { light: '#e0e4e9', dark: '#243346' },
+    colourBgSecondaryPressed: { light: '#c1c7cf', dark: '#010913' },
+    colourTextSecondary: { light: '#161616', dark: '#ffffff' },
 
     // SecondaryOnDark
-    colourBgSecondaryOnDark: { light: 'rgba(0, 122, 108, 0.15)', dark: 'rgba(244, 166, 35, 0.15)' },
-    colourBgSecondaryOnDarkPressed: { light: 'rgba(0, 122, 108, 0.3)', dark: 'rgba(244, 166, 35, 0.3)' },
+    colourBgSecondaryOnDark: { light: 'rgba(255, 255, 255, 0.1)', dark: 'rgba(255, 255, 255, 0.1)' },
+    colourBgSecondaryOnDarkPressed: { light: '#04182d', dark: '#ffffff33' },
     colourBgSecondaryOnDarkDisabled: '#0b121d',
-    colourTextSecondaryOnDark: { light: '#007a6c', dark: '#f4a623' },
+    colourTextSecondaryOnDark: { light: '#ffffff', dark: '#ffffff' },
 
-    // Featured
-    colourBgFeatured: { light: '#007a6c', dark: '#f4a623' },
-    colourBgFeaturePressed: { light: '#005c51', dark: '#d4891b' },
-    colourTextFeature: { light: '#ffffff', dark: '#161616' },
+    // Featured — standard blue in light, cyan in dark
+    colourBgFeatured: { light: '#0062e3', dark: '#d1f7ff' },
+    colourBgFeaturePressed: { light: '#024daf', dark: '#84e9ff' },
+    colourTextFeature: { light: '#ffffff', dark: '#010913' },
 
     // Destructive
-    colourBgDestructive: { light: '#e0e4e9', dark: '#2e1a1a' },
-    colourBgDestructivePressed: { light: '#e70866', dark: '#c0392b' },
-    colourTextDestructive: { light: '#e70866', dark: '#ff6b6b' },
+    colourBgDestructive: { light: '#e0e4e9', dark: '#e0e4e9' },
+    colourBgDestructivePressed: { light: '#e70866', dark: '#ff649c' },
+    colourTextDestructive: { light: '#e70866', dark: '#e70866' },
     colourTextDestructivePressed: { light: '#ffffff', dark: '#ffffff' },
 
     // Link
-    colourTextLink: { light: '#007a6c', dark: '#5ecfc4' },
-    colourTextLinkOnDark: { light: '#5ecfc4', dark: '#f4a623' },
+    colourTextLink: { light: '#161616', dark: '#ffffff' },
+    colourTextLinkOnDark: { light: '#ffffff', dark: '#ffffff' },
   },
 };
 
