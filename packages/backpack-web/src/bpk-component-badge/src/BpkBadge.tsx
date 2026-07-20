@@ -15,7 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode, AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes } from 'react';
+import type { ReactNode, AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes, Ref} from 'react';
+import { forwardRef } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -98,7 +99,7 @@ const BadgeInfoCircleLogo = () => (
   </svg>
 );
 
-const BpkBadge = (
+const BpkBadgeInner = (
   {
     as = 'span',
     centered = false,
@@ -108,6 +109,7 @@ const BpkBadge = (
     type = BADGE_TYPES.normal,
     ...rest
   }: Props,
+  ref: Ref<HTMLButtonElement | HTMLAnchorElement >,
 ) => {
   const classNames = getClassName(
     'bpk-badge',
@@ -134,6 +136,7 @@ const BpkBadge = (
     const resolvedTarget = blank ? '_blank' : target;
 
     return (<a
+      ref={ref as Ref<HTMLAnchorElement>}
       rel={resolvedRel}
       {...anchorRest}
       className={classNames}
@@ -149,6 +152,7 @@ const BpkBadge = (
     const buttonRest = rest as Omit<ButtonProps, 'as' | 'children'>;
     return (
       <button
+        ref={ref as Ref<HTMLButtonElement>}
         {...buttonRest}
         type="button"
         className={classNames}
@@ -168,5 +172,7 @@ const BpkBadge = (
     >{children}</span>
   );
 };
+
+const BpkBadge = forwardRef(BpkBadgeInner);
 
 export default BpkBadge;
