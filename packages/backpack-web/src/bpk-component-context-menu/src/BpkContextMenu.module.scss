@@ -1,0 +1,167 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
+
+$context-menu-duration: tokens.$bpk-duration-sm;
+$context-menu-min-width: 12rem;
+$context-menu-max-width: 20rem;
+
+// Positioner is a bare wrapper that Floating UI (via Ark/Zag) positions.
+// It must not carry padding or width — those live on the content surface —
+// otherwise Floating UI's measurements will include the wrong box.
+.bpk-context-menu__positioner {
+  z-index: 1;
+  pointer-events: none;
+}
+
+// The content surface — this is the visible "card". Rounded corners, elevation,
+// canvas background. Renders a min/max width so short and long trip names both
+// look consistent.
+.bpk-context-menu__content {
+  display: flex;
+  padding: tokens.bpk-spacing-sm() 0;
+  flex-direction: column;
+  border-radius: tokens.$bpk-border-radius-sm;
+  outline: none;
+  background-color: tokens.$bpk-canvas-day;
+  box-shadow: tokens.$bpk-box-shadow-lg;
+  overflow-y: auto;
+
+  // 8.5 items: (8.5 × 2.5rem item-height) = 21.25rem.
+  max-block-size: 21.25rem;
+  max-inline-size: $context-menu-max-width;
+  min-inline-size: $context-menu-min-width;
+  pointer-events: auto;
+
+  @media (prefers-reduced-motion: reduce) {
+    &[data-state='open'],
+    &[data-state='closed'] {
+      animation: none;
+    }
+  }
+
+  &[data-state='open'] {
+    animation: bpk-context-menu-fade-in $context-menu-duration ease;
+  }
+
+  &[data-state='closed'] {
+    animation: bpk-context-menu-fade-out $context-menu-duration ease forwards;
+  }
+}
+
+// Each item is a flex row: label pushes to the start, optional end icon parks
+// on the end via `margin-inline-start: auto` on its container.
+.bpk-context-menu__item {
+  display: flex;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: tokens.$bpk-text-primary-day;
+  cursor: pointer;
+  gap: tokens.bpk-spacing-base();
+
+  @include typography.bpk-body-default;
+
+  &:hover:not([data-disabled]) {
+    background-color: tokens.$bpk-surface-highlight-day;
+  }
+
+  // Ark exposes `data-highlighted` on keyboard-navigated items. We reuse the
+  // hover surface treatment so mouse and keyboard land on the same visual.
+  &[data-highlighted] {
+    background-color: tokens.$bpk-surface-highlight-day;
+  }
+
+  &[data-disabled] {
+    color: tokens.$bpk-text-disabled-day;
+    cursor: not-allowed;
+  }
+
+  & + & {
+    border-block-start: var(--bpk-context-menu-item-divider, 0);
+  }
+
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}
+
+.bpk-context-menu__item--destructive {
+  color: tokens.$bpk-status-danger-spot-day;
+}
+
+.bpk-context-menu__item-label {
+  display: inline-flex;
+  align-items: center;
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.bpk-context-menu__item-end-icon {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+
+  svg {
+    fill: currentcolor;
+  }
+}
+
+.bpk-context-menu__item-group {
+  --bpk-context-menu-item-divider: #{tokens.$bpk-border-size-sm} solid
+    #{tokens.$bpk-line-day};
+}
+
+.bpk-context-menu__separator {
+  display: block;
+  margin: tokens.bpk-spacing-sm() 0;
+  border: 0;
+  block-size: 0;
+  border-block-start: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  inline-size: 100%;
+}
+
+@keyframes bpk-context-menu-fade-in {
+  from {
+    transform: translateY(-0.25rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bpk-context-menu-fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-0.25rem);
+    opacity: 0;
+  }
+}
