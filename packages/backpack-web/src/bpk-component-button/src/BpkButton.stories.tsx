@@ -40,51 +40,53 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import { BpkLegacyThemeProvider } from '../../bpk-theming';
+import BpkThemeProvider from '../../bpk-theming';
 import readme from '../README.md';
 
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
-import { allButtonThemeAttributes } from './themeAttributes';
 
+import type { BpkTheme } from '../../bpk-theming';
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkButton.stories.module.scss';
 
-const THEMED_BUTTON_THEME = {
-  privateButtonDimensionRadius: '999px',
-  privateButtonDimensionMinHeightDefault: '36px',
-  privateButtonDimensionPaddingHorizontalDefault: '16px',
-  privateButtonDimensionMinHeightLarge: '56px',
-  privateButtonDimensionPaddingHorizontalLarge: '24px',
-  privateButtonColourBgDisabled: '#e0e4e9',
-  privateButtonColourTextDisabled: 'rgba(0, 0, 0, 0.2)',
-  privateButtonColourBgPrimary: '#05203c',
-  privateButtonColourBgPrimaryPressed: '#154679',
-  privateButtonColourTextPrimary: '#ffffff',
-  privateButtonColourBgPrimaryOnDark: '#ffffff',
-  privateButtonColourBgPrimaryOnDarkPressed: '#c1c7cf',
-  privateButtonColourTextPrimaryOnDark: '#161616',
-  privateButtonColourBgPrimaryOnLight: '#05203c',
-  privateButtonColourBgPrimaryOnLightPressed: '#154679',
-  privateButtonColourTextPrimaryOnLight: '#ffffff',
-  privateButtonColourTextSecondary: '#161616',
-  privateButtonColourBgSecondary: '#e3f0ff',
-  privateButtonColourBgSecondaryPressed: '#b4d7ff',
-  privateButtonColourBgSecondaryOnDark: 'rgba(255, 255, 255, 0.1)',
-  privateButtonColourBgSecondaryOnDarkPressed: 'rgba(0, 0, 0, 0.5)',
-  privateButtonColourBgSecondaryOnDarkDisabled: '#0b121d',
-  privateButtonColourTextSecondaryOnDark: '#ffffff',
-  privateButtonColourTextFeature: '#ffffff',
-  privateButtonColourBgFeatured: '#0062e3',
-  privateButtonColourBgFeaturePressed: '#024daf',
-  privateButtonColourTextDestructive: '#e70866',
-  privateButtonColourTextDestructivePressed: '#ffffff',
-  privateButtonColourBgDestructive: '#e0e4e9',
-  privateButtonColourBgDestructivePressed: '#e70866',
-  privateButtonColourTextLink: '#161616',
-  privateButtonColourTextLinkOnDark: '#ffffff',
+const THEMED_BUTTON_THEME: BpkTheme = {
+  button: {
+    dimensionRadius: '999px',
+    dimensionMinHeightDefault: '36px',
+    dimensionPaddingHorizontalDefault: '16px',
+    dimensionMinHeightLarge: '56px',
+    dimensionPaddingHorizontalLarge: '24px',
+    colourBgDisabled: '#e0e4e9',
+    colourTextDisabled: 'rgba(0, 0, 0, 0.2)',
+    colourBgPrimary: '#05203c',
+    colourBgPrimaryPressed: '#154679',
+    colourTextPrimary: '#ffffff',
+    colourBgPrimaryOnDark: '#ffffff',
+    colourBgPrimaryOnDarkPressed: '#c1c7cf',
+    colourTextPrimaryOnDark: '#161616',
+    colourBgPrimaryOnLight: '#05203c',
+    colourBgPrimaryOnLightPressed: '#154679',
+    colourTextPrimaryOnLight: '#ffffff',
+    colourTextSecondary: '#161616',
+    colourBgSecondary: '#e3f0ff',
+    colourBgSecondaryPressed: '#b4d7ff',
+    colourBgSecondaryOnDark: 'rgba(255, 255, 255, 0.1)',
+    colourBgSecondaryOnDarkPressed: 'rgba(0, 0, 0, 0.5)',
+    colourBgSecondaryOnDarkDisabled: '#0b121d',
+    colourTextSecondaryOnDark: '#ffffff',
+    colourTextFeature: '#ffffff',
+    colourBgFeatured: '#0062e3',
+    colourBgFeaturePressed: '#024daf',
+    colourTextDestructive: '#e70866',
+    colourTextDestructivePressed: '#ffffff',
+    colourBgDestructive: '#e0e4e9',
+    colourBgDestructivePressed: '#e70866',
+    colourTextLink: '#161616',
+    colourTextLinkOnDark: '#ffffff',
+  },
 };
 
 const RtlSmallLongArrowRightIcon = withRtlSupport(SmallLongArrowRightIcon);
@@ -491,12 +493,9 @@ const SubmitButtonExample = (props: any) => (
 );
 
 const ThemedBorderRadiusExample = () => (
-  <BpkLegacyThemeProvider
-    theme={{ privateButtonDimensionRadius: '999px' }}
-    themeAttributes={['privateButtonDimensionRadius']}
-  >
+  <BpkThemeProvider theme={{ button: { dimensionRadius: '999px' } }}>
     <PrimaryExample />
-  </BpkLegacyThemeProvider>
+  </BpkThemeProvider>
 );
 
 const ALL_BUTTON_ROWS: Array<{
@@ -520,14 +519,11 @@ const ButtonRow = ({ dark, label, type }: (typeof ALL_BUTTON_ROWS)[number]) => {
       <BpkButton type={type} size={SIZE_TYPES.large} onClick={action('Button clicked')}>
         {label}
       </BpkButton>
-      <BpkLegacyThemeProvider
-        theme={THEMED_BUTTON_THEME}
-        themeAttributes={allButtonThemeAttributes}
-      >
+      <BpkThemeProvider theme={THEMED_BUTTON_THEME}>
         <BpkButton type={type} size={SIZE_TYPES.large} onClick={action('Button clicked')}>
           {label}
         </BpkButton>
-      </BpkLegacyThemeProvider>
+      </BpkThemeProvider>
     </BpkHStack>
   );
   return dark ? (
