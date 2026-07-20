@@ -165,10 +165,9 @@ export const evaluateProjectGuards = ({
 }): Record<string, GuardResult> => {
   const headProjects = headReport.projects || {};
   const baseProjects = baseReport?.projects || {};
-  const projectNames = new Set([
-    ...Object.keys(headProjects),
-    ...Object.keys(baseProjects),
-  ]);
+  const projectNames = Array.from(
+    new Set([...Object.keys(headProjects), ...Object.keys(baseProjects)]),
+  );
 
   const projectResults: Record<string, GuardResult> = {};
 
