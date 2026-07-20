@@ -18,20 +18,20 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 
-import { analyzeRepository } from "../analysis/analyze-repository";
 import {
   BACKPACK_ADOPTION_OUTPUT_KEY,
   DEFAULT_ADOPTION_GUARD_THRESHOLD,
   DEFAULT_OUTPUT_PATH,
   DEFAULT_PATTERN,
-} from "../shared/config";
+  analyzeRepository,
+  evaluateGuard,
+} from "@skyscanner/backpack-adoption-analyzer";
 import type {
   ActionResult,
   AdoptionReport,
   BackpackAdoptionMetrics,
   ResultsFile,
-} from "../shared/types";
-import { evaluateGuard } from "../guard/evaluate-guard";
+} from "@skyscanner/backpack-adoption-analyzer";
 import {
   getPullRequestBaseRef,
   isMainBranch,
