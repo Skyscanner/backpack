@@ -191,7 +191,7 @@ function main() {
     '',
     '// GENERATED — do not edit by hand. Run: pnpm -w run build:theme-types',
     '',
-    'export type BpkThemedValue = string | { light: string; dark: string };',
+    'export type BpkThemedValue = string | { light?: string; dark?: string };',
     '',
   ];
 

@@ -37,32 +37,31 @@ export const useBpkTheme = (): BpkTheme | null => useContext(BpkThemeContext);
 
 // ─── Mode-specific value helpers ──────────────────────────────────────────────
 
-function isModeValue(v: unknown): v is { light: string; dark: string } {
-  return (
-    typeof v === 'object' &&
-    v !== null &&
-    typeof (v as { light?: unknown }).light === 'string' &&
-    typeof (v as { dark?: unknown }).dark === 'string'
-  );
+function isModeValue(v: unknown): v is { light?: string; dark?: string } {
+  if (typeof v !== 'object' || v === null) return false;
+  const { dark, light } = v as { light?: unknown; dark?: unknown };
+  return typeof light === 'string' || typeof dark === 'string';
 }
 
 function buildModeStyleTag(
   id: string,
-  modeEntries: Array<[cssVar: string, light: string, dark: string]>,
+  modeEntries: Array<[cssVar: string, light?: string, dark?: string]>,
 ): string {
   if (modeEntries.length === 0) return '';
 
   const lightRules = modeEntries
+    .filter(([, light]) => light !== undefined)
     .map(([v, light]) => `  ${v}: ${light};`)
     .join('\n');
   const darkRules = modeEntries
+    .filter(([, , dark]) => dark !== undefined)
     .map(([v, , dark]) => `  ${v}: ${dark};`)
     .join('\n');
 
-  return (
-    `#${id} {\n${lightRules}\n}\n` +
-    `:root[data-theme="dark"] #${id} {\n${darkRules}\n}`
-  );
+  const parts: string[] = [];
+  if (lightRules) parts.push(`#${id} {\n${lightRules}\n}`);
+  if (darkRules) parts.push(`:root[data-theme="dark"] #${id} {\n${darkRules}\n}`);
+  return parts.join('\n');
 }
 
 // ─── Props ───────────────────────────────────────────────────────────────────
@@ -137,8 +136,8 @@ const BpkThemeProvider = ({
 
 function extractModeEntries(
   theme: BpkTheme,
-): Array<[cssVar: string, light: string, dark: string]> {
-  const entries: Array<[string, string, string]> = [];
+): Array<[cssVar: string, light?: string, dark?: string]> {
+  const entries: Array<[string, string | undefined, string | undefined]> = [];
   const t = theme as Record<string, unknown>;
   const sentinel = '__bpk_probe__';
 

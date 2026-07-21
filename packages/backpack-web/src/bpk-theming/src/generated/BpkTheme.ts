@@ -18,7 +18,7 @@
 
 // GENERATED — do not edit by hand. Run: pnpm -w run build:theme-types
 
-export type BpkThemedValue = string | { light: string; dark: string };
+export type BpkThemedValue = string | { light?: string; dark?: string };
 
 export interface BpkAutosuggestTheme {
   /** --bpk-private-autosuggest-colour-bg-default */
