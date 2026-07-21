@@ -84,6 +84,10 @@ registry by the **Backpack Adoption NX Plugin Release** workflow. The published
 bundle contains the private `backpack-adoption-analyzer` implementation, so
 there is no analyzer package for consumers to install or version separately.
 
+Pull requests that change the plugin or analyzer run the workflow's validation
+job automatically. The publish job only runs from a manual, non-dry-run
+dispatch on `main`.
+
 ## Options
 
 `analyze` options:

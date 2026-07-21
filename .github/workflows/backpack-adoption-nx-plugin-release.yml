@@ -1,6 +1,13 @@
 name: Backpack Adoption NX Plugin Release
 
 on:
+  pull_request:
+    paths:
+      - '.github/workflows/backpack-adoption-nx-plugin-release.yml'
+      - 'packages/backpack-adoption-analyzer/**'
+      - 'packages/backpack-adoption-nx-plugin/**'
+      - 'pnpm-lock.yaml'
+      - 'tsconfig.json'
   workflow_dispatch:
     inputs:
       release_type:
@@ -46,7 +53,7 @@ jobs:
 
       - id: version
         env:
-          RELEASE_TYPE: ${{ inputs.release_type }}
+          RELEASE_TYPE: ${{ inputs.release_type || 'minor' }}
         run: |
           git fetch --force --tags origin
           latest="$(git tag --list 'backpack-adoption-nx-plugin/v[0-9]*.[0-9]*.[0-9]*' | sed -nE 's#^backpack-adoption-nx-plugin/v([0-9]+\.[0-9]+\.[0-9]+)$#\1#p' | sort -V | tail -n 1)"
@@ -86,7 +93,7 @@ jobs:
   Publish:
     runs-on: ubuntu-latest
     needs: Validate
-    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.dry_run && github.ref == 'refs/heads/main' }}
     permissions:
       contents: read
     steps:
