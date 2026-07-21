@@ -79,3 +79,5 @@ export default () => {
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/text-input/web-nRg9O75F#section-input-props-51).
+
+**Note:** Additionally, all native `input` attributes such as `placeholder` and `onChange` are supported.

@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 
 import { BACKGROUND_COLORS, BpkBox, BpkHStack, BpkProvider, BpkSpacing, BpkStack, BpkVStack } from '..';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -168,7 +170,7 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             Notes: `BpkStack`, `BpkHStack` and `BpkVStack` are layout primitives

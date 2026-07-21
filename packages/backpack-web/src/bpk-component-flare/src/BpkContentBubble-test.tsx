@@ -51,7 +51,7 @@ describe('BpkContentBubble', () => {
         showPointer
         content={content}
         rounded={false}
-        flareProps={{ rounded: false }}
+        flareProps={{}}
       />,
     );
 
@@ -64,7 +64,7 @@ describe('BpkContentBubble', () => {
       <BpkContentBubble
         content={content}
         rounded={false}
-        flareProps={{ rounded: false }}
+        flareProps={{}}
       />,
     );
 

@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
+
 
 import BpkMobileScrollContainer from './BpkMobileScrollContainer';
 
@@ -69,6 +73,16 @@ const SettingLeadingAndTrailingIndicatorClassNameExample = () => (
 const meta = {
   title: 'bpk-component-mobile-scroll-container',
   component: BpkMobileScrollContainer,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

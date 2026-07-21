@@ -170,6 +170,9 @@
     "$type": "color"
   },
   "Heights": {
+    "16": {
+      "$value": "16px"
+    },
     "20": {
       "$value": "20px"
     },
@@ -199,9 +202,6 @@
     },
     "64": {
       "$value": "64px"
-    },
-    "base": {
-      "$value": "16px"
     },
     "$type": "dimension"
   },
@@ -328,6 +328,9 @@
     "sm": {
       "$value": "8px"
     },
+    "xl": {
+      "$value": "48px"
+    },
     "xs": {
       "$value": "4px"
     },
@@ -368,5 +371,160 @@
       "$value": "96px"
     },
     "$type": "dimension"
+  },
+  "Type": {
+    "Family": {
+      "Larken": {
+        "$value": "Larken"
+      },
+      "Skyscanner Relative": {
+        "$value": "Skyscanner Relative"
+      },
+      "$type": "fontFamily"
+    },
+    "Letter-spacing": {
+      "Default": {
+        "$value": "0px"
+      },
+      "Loose 10": {
+        "$value": "0.6000000238418579px"
+      },
+      "Loose 20": {
+        "$value": "1px"
+      },
+      "Tight 10": {
+        "$value": "-0.6000000238418579px"
+      },
+      "Tight 20": {
+        "$value": "-1px"
+      },
+      "Tight 30": {
+        "$value": "-1.2000000476837158px"
+      },
+      "Tight 40": {
+        "$value": "-2px"
+      },
+      "Tight 50": {
+        "$value": "-3.5px"
+      },
+      "$type": "dimension"
+    },
+    "Line-height": {
+      "16": {
+        "$value": 16
+      },
+      "20": {
+        "$value": 20
+      },
+      "22": {
+        "$value": 22
+      },
+      "24": {
+        "$value": 24
+      },
+      "28": {
+        "$value": 28
+      },
+      "32": {
+        "$value": 32
+      },
+      "40": {
+        "$value": 40
+      },
+      "48": {
+        "$value": 48
+      },
+      "56": {
+        "$value": 56
+      },
+      "64": {
+        "$value": 64
+      },
+      "76": {
+        "$value": 76
+      },
+      "82": {
+        "$value": 82
+      },
+      "96": {
+        "$value": 96
+      },
+      "115": {
+        "$value": 115
+      },
+      "120": {
+        "$value": 120
+      },
+      "153": {
+        "$value": 153
+      },
+      "192": {
+        "$value": 192
+      },
+      "$type": "number"
+    },
+    "Size": {
+      "12": {
+        "$value": "12px"
+      },
+      "14": {
+        "$value": "14px"
+      },
+      "16": {
+        "$value": "16px"
+      },
+      "20": {
+        "$value": "20px"
+      },
+      "24": {
+        "$value": "24px"
+      },
+      "32": {
+        "$value": "32px"
+      },
+      "40": {
+        "$value": "40px"
+      },
+      "48": {
+        "$value": "48px"
+      },
+      "64": {
+        "$value": "64px"
+      },
+      "76": {
+        "$value": "76px"
+      },
+      "96": {
+        "$value": "96px"
+      },
+      "120": {
+        "$value": "120px"
+      },
+      "144": {
+        "$value": "144px"
+      },
+      "192": {
+        "$value": "192px"
+      },
+      "240": {
+        "$value": "240px"
+      },
+      "$type": "dimension"
+    },
+    "Weight": {
+      "300": {
+        "$value": 300
+      },
+      "400": {
+        "$value": 400
+      },
+      "700": {
+        "$value": 700
+      },
+      "900": {
+        "$value": 900
+      },
+      "$type": "fontWeight"
+    }
   }
 }

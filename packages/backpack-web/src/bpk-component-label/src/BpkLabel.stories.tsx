@@ -17,8 +17,12 @@
  */
 
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
+import readme from '../README.md';
 
 import BpkLabel from './BpkLabel';
 
@@ -78,6 +82,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-label',
   component: BpkLabel,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

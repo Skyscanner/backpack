@@ -16,13 +16,17 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { action } from 'bpk-storybook-utils';
+
 
 import { withRtlSupport } from '../../bpk-component-icon';
 import CloseIcon from '../../bpk-component-icon/sm/close';
 import ArrowIcon from '../../bpk-component-icon/sm/long-arrow-left';
 import BpkText from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkNavigationBar, { BAR_STYLES } from './BpkNavigationBar';
 import BpkNavigationBarButtonLink from './BpkNavigationBarButtonLink';
@@ -331,6 +335,16 @@ const meta = {
   subcomponents: {
     BpkNavigationBarIconButton,
     BpkNavigationBarButtonLink,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 

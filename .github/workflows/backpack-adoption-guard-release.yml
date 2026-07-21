@@ -114,12 +114,13 @@ jobs:
             exit 1
           fi
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
+          cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
       - run: npx nx run backpack-adoption-guard:lint
@@ -135,7 +136,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: app-token
         with:
           app-id: ${{ vars.GH_APP_ID }}
@@ -148,12 +149,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
+          cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
       - run: npx nx run backpack-adoption-guard:build

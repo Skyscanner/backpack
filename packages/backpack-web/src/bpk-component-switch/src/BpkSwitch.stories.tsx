@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import {
   BACKGROUND_COLORS,
@@ -24,6 +24,8 @@ import {
   BpkProvider,
   BpkSpacing,
 } from '../../bpk-component-layout';
+import readme from '../README.md';
+
 
 import BpkSwitch, { SWITCH_VARIANTS } from './BpkSwitch';
 
@@ -84,7 +86,7 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {

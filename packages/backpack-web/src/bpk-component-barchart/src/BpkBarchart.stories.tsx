@@ -18,7 +18,7 @@
 
 import { Component, type ComponentType, type MouseEvent as ReactMouseEvent } from 'react';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import isEqual from 'lodash/isEqual';
 
@@ -27,6 +27,7 @@ import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps, wrapDisplayName } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkBarchart from './BpkBarchart';
 import data from './BpkBarchart.stories.data.json';
@@ -399,6 +400,16 @@ const CustomYAxisDomainExample = () => (
 const meta = {
   title: 'bpk-component-barchart',
   component: BpkBarchart,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

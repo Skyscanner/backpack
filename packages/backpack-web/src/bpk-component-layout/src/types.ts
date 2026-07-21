@@ -117,13 +117,19 @@ type BpkBoxResponsiveLayoutPropKeys = keyof BpkBoxResponsiveLayoutProps;
  */
 export interface BpkBoxSpecificProps
   extends BpkBoxResponsiveLayoutProps,
-    Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {}
+  Omit<BpkFlexGridProps, BpkBoxResponsiveLayoutPropKeys> {
+  transform?: string;
+}
 
 /**
  * Props for BpkBox component
  * Combines Box-specific props with Backpack common layout props.
  * onClick, onFocus and onBlur are inherited from BpkCommonLayoutProps.
  * textStyle maps to Chakra's `textStyle` theme prop for Backpack typography and supports responsive values.
+ *
+ * `transform` is available on BpkBox only — declared in BpkBoxSpecificProps.
+ * BpkCommonLayoutProps does not declare transform (neither string nor never), so there is no
+ * type conflict when BpkBoxSpecificProps adds it as string.
  */
 export interface BpkBoxProps extends BpkCommonLayoutProps, BpkBoxSpecificProps {
   children?: ReactNode;
@@ -192,6 +198,7 @@ export interface BpkFlexSpecificProps {
   align?: BpkResponsiveValue<FlexProps['alignItems']>;
   wrap?: BpkResponsiveValue<FlexProps['flexWrap']>;
   grow?: BpkResponsiveValue<FlexProps['flexGrow']>;
+  flexShrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
   shrink?: BpkResponsiveValue<FlexProps['flexShrink']>;
   basis?: BpkResponsiveValue<BpkBasisValue>;
   alignSelf?: BpkResponsiveValue<BoxProps['alignSelf']>;
@@ -269,8 +276,8 @@ type StackOptionKeysType = typeof StackOptionKeys[number];
  */
 type BpkStackOptions = {
   [K in StackOptionKeysType]?: K extends keyof StackProps
-    ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
-    : never;
+  ? BpkResponsiveValue<StackProps[K]> | StackProps[K]
+  : never;
 };
 
 /**
@@ -286,7 +293,7 @@ type BpkStackOptions = {
  */
 export interface BpkStackSpecificProps
   extends BpkStackOptions,
-    Omit<BpkFlexGridProps, 'alignItems' | 'justifyContent'> {
+  Omit<BpkFlexGridProps, 'alignItems' | 'justifyContent'> {
   /** Alias for `align`. Maps to CSS `align-items`. Responsive — replaces the non-responsive BpkFlexGridProps.alignItems. */
   alignItems?: BpkStackOptions['align'];
   /** Alias for `justify`. Maps to CSS `justify-content`. Responsive — replaces the non-responsive BpkFlexGridProps.justifyContent. */

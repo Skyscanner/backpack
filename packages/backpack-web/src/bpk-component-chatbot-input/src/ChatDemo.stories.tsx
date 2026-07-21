@@ -19,6 +19,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkChatBubble from '../../bpk-component-chat-bubble/src/BpkChatBubble';
 import { CHAT_BUBBLE_TYPE } from '../../bpk-component-chat-bubble/src/common-types';
@@ -41,6 +43,7 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
+import readme from '../README.md';
 
 import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
@@ -449,6 +452,16 @@ const meta = {
       </BpkProvider>
     ),
   ],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

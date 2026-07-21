@@ -19,11 +19,12 @@
 import { Component } from 'react';
 import type { SyntheticEvent } from 'react';
 
-import { Title, Markdown, ArgTypes } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
 
 import { withRtlSupport } from '../../bpk-component-icon';
 import FlightIcon from '../../bpk-component-icon/lg/flight';
+import readme from '../README.md';
 
 import BpkAutosuggestLegacy from './BpkAutosuggest';
 import BpkAutosuggestSuggestion from './BpkAutosuggestSuggestion';
@@ -221,7 +222,7 @@ export default {
     docs: {
       page: () => (
         <>
-          <Title />
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {

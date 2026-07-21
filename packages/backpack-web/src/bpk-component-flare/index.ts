@@ -16,14 +16,8 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+import BpkContentBubble from './src/BpkContentBubble';
+import BpkFlareBar from './src/BpkFlareBar';
 
-import { BpkCode } from './BpkCode';
-
-figma.connect(
-  BpkCode,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A59646',
-  {
-    example: () => <BpkCode />,
-  },
-);
+export default BpkFlareBar;
+export { BpkFlareBar, BpkContentBubble };
