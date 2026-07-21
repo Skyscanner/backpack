@@ -19,12 +19,15 @@
 import PropTypes from 'prop-types';
 import { Component, Children } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { action } from 'bpk-storybook-utils';
+
 
 import BpkButton from '../../bpk-component-button';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkBottomSheet, { PADDING_TYPE } from './BpkBottomSheet';
 
@@ -419,6 +422,16 @@ const XXXLPaddingExample = () => (
 const meta = {
   title: 'bpk-component-bottom-sheet',
   component: BpkBottomSheet,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

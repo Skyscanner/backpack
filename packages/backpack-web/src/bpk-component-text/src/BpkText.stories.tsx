@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { withDefaultProps, cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
+
 
 import BpkText, { TEXT_ALIGN, TEXT_COLORS, TEXT_STYLES } from './BpkText';
 
@@ -225,6 +229,16 @@ const meta = {
   title: 'bpk-component-text',
   component: BpkText,
   tags: ['dark-mode-compatible'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

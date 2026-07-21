@@ -18,11 +18,14 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { backgroundElevation03DarkColor } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 
 import { BpkBackgroundImage } from '../../bpk-component-image';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkPageIndicator, { VARIANT } from './BpkPageIndicator';
 
@@ -155,6 +158,16 @@ const VisualTestExample = () => (
 const meta = {
   title: 'bpk-component-page-indicator',
   component: BpkPageIndicator,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

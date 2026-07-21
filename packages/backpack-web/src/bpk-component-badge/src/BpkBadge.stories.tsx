@@ -18,6 +18,8 @@
 
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
@@ -33,12 +35,15 @@ import {
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 import type { Meta } from '@storybook/react';
 
+
 import LAYOUT_STYLES from './BpkBadge.stories.module.scss';
+
 
 const getClassName = cssModules(LAYOUT_STYLES);
 
@@ -143,6 +148,25 @@ const BrandExample = () => (
       <BpkSmallTickIcon />
       &nbsp;Brand
     </BpkBadge>
+  </BadgeLayout>
+);
+
+const InteractiveExample = () => (
+  <BadgeLayout>
+    <BpkProvider>
+      <BpkFlex gap={BpkSpacing.XXL}>
+        <BpkVStack gap={BpkSpacing.LG}>
+          <BpkText textStyle={TEXT_STYLES.caption}>Button</BpkText>
+          <BpkBadge as="button">Normal</BpkBadge>
+          <BpkBadge as="button" type={BADGE_TYPES.brand}>Brand</BpkBadge>
+        </BpkVStack>
+        <BpkVStack gap={BpkSpacing.LG}>
+          <BpkText textStyle={TEXT_STYLES.caption}>Link</BpkText>
+          <BpkBadge as="a" href="#">Normal</BpkBadge>
+          <BpkBadge as="a" href="#" type={BADGE_TYPES.brand}>Brand</BpkBadge>
+        </BpkVStack>
+      </BpkFlex>
+    </BpkProvider>
   </BadgeLayout>
 );
 
@@ -256,12 +280,23 @@ const MixedExample = () => (
     <InverseExample />
     <OutlineExample />
     <SubtleExample />
+    <InteractiveExample />
   </div>
 );
 
 const meta = {
   title: 'bpk-component-badge',
   component: BpkBadge,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -289,6 +324,10 @@ export const Strong = {
 
 export const Brand = {
   render: () => <BrandExample />,
+};
+
+export const Interactive = {
+  render: () => <InteractiveExample />,
 };
 
 export const Inverse = {

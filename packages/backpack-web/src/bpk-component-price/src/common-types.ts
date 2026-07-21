@@ -27,3 +27,8 @@ export const ALIGNS = {
   left: 'left',
   right: 'right',
 } as const;
+
+export const VARIANTS = {
+  default: 'default',
+  onContrast: 'onContrast',
+} as const;

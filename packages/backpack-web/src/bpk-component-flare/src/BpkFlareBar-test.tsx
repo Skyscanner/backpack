@@ -40,10 +40,4 @@ describe('BpkFlareBar', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
-
-  it('should render correctly with "rounded" set to `false`', () => {
-    const { asFragment } = render(<BpkFlareBar rounded={false} />);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
 });

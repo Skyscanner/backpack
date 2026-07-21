@@ -16,13 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+type ValidatorProps = {
+  showHeader?: boolean;
+  title?: string;
+  onClose?: () => void;
+  [key: string]: unknown;
+};
 
-export const titlePropType = (
-  props: Object,
+export type Validator = (
+  props: ValidatorProps,
   propName: string,
   componentName: string,
-): ?Error => {
+) => Error | null;
+
+export const titlePropType: Validator = (props, propName, componentName) => {
   const titleValue = props[propName];
 
   if (props.showHeader && (!titleValue || typeof titleValue !== 'string')) {
@@ -34,11 +41,7 @@ export const titlePropType = (
   return null;
 };
 
-export const onClosePropType = (
-  props: Object,
-  propName: string,
-  componentName: string,
-): ?Error => {
+export const onClosePropType: Validator = (props, propName, componentName) => {
   const onCloseValue = props[propName];
 
   if (

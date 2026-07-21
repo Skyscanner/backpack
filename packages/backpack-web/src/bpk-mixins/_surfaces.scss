@@ -26,14 +26,26 @@
 
 // Keys must stay in sync with bpk-react-utils/src/surfaceColors.ts
 $bpk-surface-bg-colors: (
-  'surface-default': tokens.$bpk-surface-default-day,
-  'surface-elevated': tokens.$bpk-surface-elevated-day,
-  'surface-hero': tokens.$bpk-surface-hero-day,
-  'surface-contrast': tokens.$bpk-surface-contrast-day,
-  'surface-highlight': tokens.$bpk-surface-highlight-day,
-  'surface-subtle': tokens.$bpk-surface-subtle-day,
-  'surface-low-contrast': tokens.$bpk-surface-low-contrast-day,
-  'surface-tint': tokens.$bpk-surface-tint-day,
+  'surface-default': var(--bpk-surface-default, tokens.$bpk-surface-default-day),
+  'surface-elevated': var(
+      --bpk-surface-elevated,
+      tokens.$bpk-surface-elevated-day
+    ),
+  'surface-hero': var(--bpk-surface-hero, tokens.$bpk-surface-hero-day),
+  'surface-contrast': var(
+      --bpk-surface-contrast,
+      tokens.$bpk-surface-contrast-day
+    ),
+  'surface-highlight': var(
+      --bpk-surface-highlight,
+      tokens.$bpk-surface-highlight-day
+    ),
+  'surface-subtle': var(--bpk-surface-subtle, tokens.$bpk-surface-subtle-day),
+  'surface-low-contrast': var(
+      --bpk-surface-low-contrast,
+      tokens.$bpk-surface-low-contrast-day
+    ),
+  'surface-tint': var(--bpk-surface-tint, tokens.$bpk-surface-tint-day),
 );
 
 /// Generates background-color modifier classes for all surface colors.

@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkButton from '../../bpk-component-button';
 import {
   withButtonAlignment,
@@ -23,6 +25,7 @@ import {
 } from '../../bpk-component-icon';
 import ArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkTicket from './BpkTicket';
 
@@ -176,6 +179,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-ticket',
   component: BpkTicket,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

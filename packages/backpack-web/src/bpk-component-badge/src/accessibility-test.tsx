@@ -33,4 +33,16 @@ describe('BpkBadge accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues for interactive button badge', async () => {
+    const { container } = render(<BpkBadge as="button">Promociando</BpkBadge>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues for interactive link badge', async () => {
+    const { container } = render(<BpkBadge as="a" href="#">Promociando</BpkBadge>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

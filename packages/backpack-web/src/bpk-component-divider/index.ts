@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import BpkDivider, { type Props as BpkDividerProps } from './src/BpkDivider';
 
-import BpkPhoneInput, {
-  type Props as BpkPhoneInputProps,
-} from './src/BpkPhoneInput';
-
-export type { BpkPhoneInputProps };
-export default BpkPhoneInput;
+export type { BpkDividerProps };
+export default BpkDivider;

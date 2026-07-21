@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkGraphicPromo, {
   TEXT_ALIGN,
 } from "..";
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import STYLES from './BpkGraphicPromotion.stories.module.scss';
 
@@ -286,6 +290,16 @@ const VisualTestExample = () => (
 export default {
   title: 'bpk-component-graphic-promotion',
   component: BpkGraphicPromo,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export const DefaultNoBackgroundImage = {

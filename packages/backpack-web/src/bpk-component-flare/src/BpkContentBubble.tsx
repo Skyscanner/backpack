@@ -16,26 +16,38 @@
  * limitations under the License.
  */
 
-import PropTypes from 'prop-types';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import BpkFlareBar from './BpkFlareBar';
+import BpkFlareBar, { type Props as BpkFlareBarProps } from './BpkFlareBar';
+// @ts-expect-error Generated import. See `decisions/imports-ts-suppressions.md`.
 import CornerRadius from './__generated__/js/corner-radius';
 
 import STYLES from './bpk-content-bubble.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-  const BpkContentBubble = ({
-    className = null,
-    content = null,
-    contentClassName = null,
-    flareProps = null,
-    rounded = true,
-    showPointer = true,
-    ...rest
-  }) => {
+type NativeDivProps = HTMLAttributes<HTMLDivElement>;
+
+export type Props = Omit<NativeDivProps, 'className' | 'content'> & {
+  content?: ReactNode;
+  rounded?: boolean;
+  showPointer?: boolean;
+  className?: string | null;
+  contentClassName?: string | null;
+  flareProps?: BpkFlareBarProps | null;
+};
+
+const BpkContentBubble = ({
+  className = null,
+  content = null,
+  contentClassName = null,
+  flareProps = null,
+  rounded = true,
+  showPointer = true,
+  ...rest
+}: Props) => {
   const wrapperClassNames = [getClassName('bpk-content-bubble__wrapper')];
   const contentClassNames = [
     getClassName('bpk-content-bubble__content-wrapper'),
@@ -100,15 +112,6 @@ const getClassName = cssModules(STYLES);
       </div>
     </div>
   );
-};
-
-BpkContentBubble.propTypes = {
-  flareProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  content: PropTypes.node,
-  rounded: PropTypes.bool,
-  showPointer: PropTypes.bool,
-  className: PropTypes.string,
-  contentClassName: PropTypes.string,
 };
 
 export default BpkContentBubble;

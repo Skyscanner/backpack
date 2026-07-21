@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render } from '@testing-library/react';
+import { fireEvent, render, within } from '@testing-library/react';
 
 import BpkDrawer from './BpkDrawer';
 
@@ -46,5 +46,91 @@ describe('BpkDrawer', () => {
     // but to the container element: withScrim.
     expect(drawer?.classList.contains('test-class')).toBe(false);
 
+  });
+
+  it('should not render secondary panel content when secondaryPanel.isOpen is false', () => {
+    const customRenderTarget = document.createElement('div');
+
+    render(
+      <BpkDrawer
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        isIphone={false}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+        secondaryPanel={{
+          isOpen: false,
+          onClose: jest.fn(),
+          children: <div>Secondary content</div>,
+        }}
+      >
+        Primary content
+      </BpkDrawer>,
+    );
+
+    expect(customRenderTarget.querySelector('[data-testid="secondary-panel"]')).toBeNull();
+  });
+
+  it('should render secondary panel content when secondaryPanel.isOpen is true', () => {
+    const customRenderTarget = document.createElement('div');
+
+    render(
+      <BpkDrawer
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        isIphone={false}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+        secondaryPanel={{
+          isOpen: true,
+          onClose: jest.fn(),
+          children: <div>Secondary content</div>,
+        }}
+      >
+        Primary content
+      </BpkDrawer>,
+    );
+
+    expect(customRenderTarget.querySelector('[data-testid="secondary-panel"]')).not.toBeNull();
+    expect(customRenderTarget.textContent).toContain('Secondary content');
+  });
+
+  it('should call secondaryPanel.onClose when the secondary close button is clicked', () => {
+    const customRenderTarget = document.createElement('div');
+    const onSecondaryClose = jest.fn();
+
+    render(
+      <BpkDrawer
+        id="my-drawer"
+        title="Drawer title"
+        onClose={jest.fn()}
+        closeLabel="Close"
+        dialogRef={jest.fn()}
+        isIphone={false}
+        getApplicationElement={jest.fn()}
+        isOpen
+        renderTarget={() => customRenderTarget}
+        secondaryPanel={{
+          isOpen: true,
+          onClose: onSecondaryClose,
+          children: <div>Secondary content</div>,
+          closeLabel: 'Close secondary panel',
+        }}
+      >
+        Primary content
+      </BpkDrawer>,
+    );
+
+    fireEvent.click(within(customRenderTarget).getByRole('button', { name: 'Close secondary panel' }));
+
+    expect(onSecondaryClose).toHaveBeenCalledTimes(1);
   });
 });
