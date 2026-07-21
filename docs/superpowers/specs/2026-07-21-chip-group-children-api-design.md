@@ -81,6 +81,31 @@ Effects:
 `stickyChip` stays a `ChipItem` (it is independent of scroll content) and works
 in both modes.
 
+#### Shared-type risk: `SingleSelectProps` intersects `MultiSelectProps`
+
+`BpkSingleSelectChipGroup` is out of scope functionally, but its type is coupled:
+
+```ts
+// BpkSingleSelectChipGroup.tsx
+export type SingleSelectProps = {
+  chips: SingleSelectChipItem[];
+  ...
+} & MultiSelectProps;
+```
+
+Turning `MultiSelectProps`'s `chips` into a `chips XOR children` discriminated
+union means `SingleSelectProps` intersects its own `chips: SingleSelectChipItem[]`
+with the new union, which can degrade to `SingleSelectChipItem[] & (… | never)`
+and break type inference on the single-select path — even though multi-select
+compiles fine.
+
+Mitigation: after changing `MultiSelectProps`, the implementation must run `tsc`
+against the single-select path (see verification) and, if inference breaks,
+adjust `SingleSelectProps` to pick from `MultiSelectProps` without inheriting the
+`chips XOR children` union (e.g. intersect with the non-content part only). This
+stays within scope — it is a type-compatibility fix, not adding single-select
+children support.
+
 ### 2. Rendering — branch in `ChipGroupContent`
 
 `ChipGroupContent` currently renders `chips.map(<Chip>)`. It branches on
@@ -136,6 +161,13 @@ independently.
 - The story uses `rail` + `onImage` + Nudger (same scenario as the old demo) and
   wraps each `BpkDropdownChip` in its own `BpkPopover`, proving precise anchoring
   and unaffected scrolling.
+- No explicit `role` is set on the chip: `BpkSelectableChip` (which
+  `BpkDropdownChip` wraps) defaults `role` to `'checkbox'`
+  (`BpkSelectableChip.tsx:44`), which is correct for multi-select. `role` is not
+  a chip-specific prop — it is a native `<button>` attribute that flows through
+  `CommonProps extends ComponentProps<'button'>` and the chip's `{...rest}`
+  spread, so callers can override it when needed (verified in source, not the
+  CLI props list).
 
 Reference example:
 
@@ -163,7 +195,6 @@ Reference example:
           selected={activeLabel === label}
           accessibilityLabel={label}
           onClick={() => toggle(label)}
-          role="checkbox"
         >
           {label}
         </BpkDropdownChip>
@@ -188,13 +219,17 @@ Tests (`BpkMultiSelectChipGroup-test.tsx`):
 
 Docs:
 - Update `bpk-component-chip-group/README.md` with the composable children usage,
-  noting that per-chip `role`/`selected` accessibility is the caller's
-  responsibility in this mode.
+  noting that per-chip `selected` state and, when overriding the default,
+  `role` accessibility are the caller's responsibility in this mode. `role`
+  defaults to `'checkbox'` via `BpkSelectableChip` and is a native `<button>`
+  attribute, not a chip-specific prop.
 
 Verification (direct commands, not nx cached tasks):
 - `pnpm eslint <changed files>`
 - `pnpm tsc` (or the project's tsc)
 - `pnpm jest bpk-component-chip-group`
+- **`tsc` on the single-select path specifically** — see the shared-type risk
+  below. Confirm `SingleSelectProps` still type-checks after the union change.
 - Manual Storybook check: rail horizontal scroll + click different chips, each
   popover anchors correctly.
 
