@@ -30,7 +30,19 @@ Backpack is developed using Node. The required Node version is specified in `.nv
 
 If you use [nvm](https://github.com/creationix/nvm) or [nave](https://github.com/isaacs/nave) to manage your Node environment, Backpack has built-in support for these. Just run `nvm use` or `nave auto` to install the correct Node version.
 
-To install npm, use `npm install --global npm@^<version>`. For example, `npm install --global npm@^9.5.1`.
+Backpack uses pnpm as its package manager, pinned via the `packageManager` field in `package.json`. Run `corepack enable` to have the correct pnpm version resolved automatically.
+
+### Package registry access
+
+If your work device blocks direct access to public package registries (e.g. via a corporate network policy), do not edit this repository's `.npmrc` — it must keep pointing at the public npm registry so that external contributors without access to an internal registry mirror can still install dependencies.
+
+Instead, point your own environment at your organisation's allow-listed registry mirror with an environment variable, which takes precedence over the project-level `.npmrc`:
+
+```sh
+export npm_config_registry=<your-internal-registry-url>
+```
+
+Add this to your shell profile (e.g. `~/.zshrc`) so it persists across sessions, then run `pnpm install` as usual.
 
 ### Code style
 

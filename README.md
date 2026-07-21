@@ -15,8 +15,10 @@
 ### Installation
 
 ```sh
-npm install --save @skyscanner/backpack-web
+pnpm add @skyscanner/backpack-web
 ```
+
+> If your device blocks direct access to public package registries, see [Package registry access](CONTRIBUTING.md#package-registry-access) in the contributing guide.
 
 ## Contributing
 
