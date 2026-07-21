@@ -18,6 +18,7 @@
 import type {
   AdoptionReport,
   GuardResult,
+  GuardStatus,
 } from "../shared/types";
 
 export const evaluateGuard = ({
@@ -141,4 +142,55 @@ export const evaluateGuard = ({
     headBackpackPercentage,
     delta,
   };
+};
+
+/**
+ * Evaluates independently attributed project reports. This remains pure
+ * analysis-layer logic so Nx consumers can apply it without GitHub Actions.
+ */
+export const evaluateProjectGuards = ({
+  baseReport,
+  dryRun,
+  headReport,
+  isMain,
+  threshold,
+}: {
+  baseReport: AdoptionReport | null;
+  dryRun: boolean;
+  headReport: AdoptionReport;
+  isMain: boolean;
+  threshold: number;
+}): Record<string, GuardResult> => {
+  const headProjects = headReport.projects || {};
+  const baseProjects = baseReport?.projects || {};
+  const projectNames = Array.from(
+    new Set([...Object.keys(headProjects), ...Object.keys(baseProjects)]),
+  );
+  const projectResults: Record<string, GuardResult> = {};
+
+  for (const projectName of projectNames) {
+    const headProjectReport = headProjects[projectName];
+    if (!headProjectReport) continue;
+
+    projectResults[projectName] = evaluateGuard({
+      baseReport: baseProjects[projectName] ?? null,
+      dryRun,
+      headReport: headProjectReport,
+      isMain,
+      threshold,
+    });
+  }
+
+  return projectResults;
+};
+
+/** Combines an overall guard verdict with independently evaluated projects. */
+export const combineGuardStatuses = (
+  overall: GuardResult,
+  projectResults: Record<string, GuardResult>,
+): GuardStatus => {
+  const statuses = Object.values(projectResults).map((result) => result.status);
+  if (statuses.some((status) => status === "fail")) return "fail";
+  if (statuses.some((status) => status === "warn")) return "warn";
+  return overall.status;
 };
