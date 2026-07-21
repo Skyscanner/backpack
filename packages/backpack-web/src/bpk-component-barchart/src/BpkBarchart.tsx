@@ -42,7 +42,7 @@ import {
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, remToPx } from './utils';
 
-import type { BpkBarchartProps, Scale } from './common-types';
+import type { BandScale, BpkBarchartProps, ContinuousScale } from './common-types';
 
 import STYLES from './BpkBarchart.module.scss';
 
@@ -79,9 +79,9 @@ type State = {
 };
 
 class BpkBarchart extends Component<BpkBarchartProps, State> {
-  xScale: Scale;
+  xScale: BandScale;
 
-  yScale: Scale;
+  yScale: ContinuousScale;
 
   onWindowResize: () => void;
 
@@ -95,8 +95,8 @@ class BpkBarchart extends Component<BpkBarchartProps, State> {
       height: props.initialHeight,
     };
 
-    this.xScale = scaleBand() as unknown as Scale;
-    this.yScale = scaleLinear() as unknown as Scale;
+    this.xScale = scaleBand() as unknown as BandScale;
+    this.yScale = scaleLinear() as unknown as ContinuousScale;
 
     this.onWindowResize = debounce(this.updateDimensions, 100);
   }

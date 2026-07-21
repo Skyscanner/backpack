@@ -24,18 +24,19 @@ import BpkBarchartBar from './BpkBarchartBar';
 import { remToPx } from './utils';
 
 import type {
+  BandScale,
   BarComponent as BarComponentType,
   BarInteractionEvent,
   BarPoint,
+  ContinuousScale,
   Margin,
-  Scale,
 } from './common-types';
 
 const borderRadius = remToPx(borderRadiusXs);
 
 type BarsContext = {
   maxYValue: number;
-  yScale: Scale;
+  yScale: ContinuousScale;
   yScaleDataKey: string;
   height?: number;
   margin?: Margin;
@@ -72,8 +73,8 @@ type Props = Omit<SVGProps<SVGGElement>, 'scale' | 'x' | 'y' | 'width' | 'onClic
   xScaleDataKey: string;
   yScaleDataKey: string;
   height: number;
-  xScale: Scale;
-  yScale: Scale;
+  xScale: BandScale;
+  yScale: ContinuousScale;
   maxYValue: number;
   margin: Margin;
   getBarLabel: (point: BarPoint, xScaleDataKey: string, yScaleDataKey: string) => string | null;
@@ -109,12 +110,12 @@ const BpkBarchartBars = ({
   xScale.paddingOuter(outerPadding);
   xScale.paddingInner(0);
 
-  const barWidth = xScale.bandwidth ? xScale.bandwidth() : 0;
+  const barWidth = xScale.bandwidth();
 
   return (
     <g>
       {data.map((point, i) => {
-        const x = xScale(point[xScaleDataKey]);
+        const x = xScale(point[xScaleDataKey]) ?? 0;
         const y = getYPos(point, { yScale, yScaleDataKey, maxYValue });
         const outlier = isOutlier(point, { maxYValue, yScale, yScaleDataKey });
         const barHeight = getBarHeight(point, {

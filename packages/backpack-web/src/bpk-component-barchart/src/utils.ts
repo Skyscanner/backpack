@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import type { Scale } from './common-types';
+import type { BandScale } from './common-types';
 
-const center = (scale: Scale) => {
-  let offset = scale.bandwidth ? scale.bandwidth() / 2 : 0;
+const center = (scale: BandScale) => {
+  let offset = scale.bandwidth() / 2;
   if (scale.round()) {
     offset = Math.round(offset);
   }
-  return (d: unknown) => scale(d) + offset;
+  return (d: unknown) => (scale(d) ?? 0) + offset;
 };
 
 const identity = <T>(x: T): T => x;

@@ -66,7 +66,10 @@ const getAxisConfig = ({
   scale: Scale;
   width: number;
 }): AxisConfig => {
-  const position = scale.bandwidth ? center(scale) : (d: unknown) => scale(d as number);
+  const position =
+    'bandwidth' in scale
+      ? center(scale)
+      : (d: unknown) => scale(d as number);
 
   if (orientation === ORIENTATION_X) {
     return {
@@ -139,11 +142,12 @@ const BpkChartAxis = ({
   const { containerProps, labelProps, textProps, tickPosition } =
     getAxisConfig({ height, margin, orientation, scale, width });
 
-  const ticks = scale.ticks
-    ? scale.ticks(numTicks ?? undefined)
-    : (scale.domain() as unknown[]).filter(
-        (_tick, i) => (i - tickOffset) % tickEvery === 0,
-      );
+  const ticks: unknown[] =
+    'ticks' in scale
+      ? scale.ticks(numTicks ?? undefined)
+      : (scale.domain() as unknown[]).filter(
+          (_tick, i) => (i - tickOffset) % tickEvery === 0,
+        );
 
   return (
     <g
