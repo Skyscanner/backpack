@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentType, MouseEvent, ReactNode } from 'react';
+import type { ComponentType, MouseEvent, ReactNode, SVGProps } from 'react';
 
 export type Orientation = 'x' | 'y';
 
@@ -60,7 +60,7 @@ export type BarComponent = ComponentType<BarComponentProps & Record<string, unkn
 
 export type BarInteractionEvent = MouseEvent<SVGElement>;
 
-export type BpkBarchartProps = {
+export type BpkBarchartProps = Omit<SVGProps<SVGSVGElement>, 'width' | 'height'> & {
   data: BarPoint[];
   xScaleDataKey: string;
   yScaleDataKey: string;
@@ -87,5 +87,4 @@ export type BpkBarchartProps = {
   getBarSelection?: (point: BarPoint) => boolean;
   BarComponent?: BarComponent;
   disableDataTable?: boolean;
-  [key: string]: unknown;
 };
