@@ -350,6 +350,28 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
 
+  packages/backpack-adoption-nx-plugin:
+    dependencies:
+      '@nx/devkit':
+        specifier: 22.7.1
+        version: 22.7.1(nx@22.7.1)
+      nx:
+        specifier: '>=20'
+        version: 22.7.1
+    devDependencies:
+      '@skyscanner/backpack-adoption-analyzer':
+        specifier: workspace:*
+        version: link:../../libs/backpack-adoption-analyzer
+      '@types/node':
+        specifier: 25.9.1
+        version: 25.9.1
+      esbuild:
+        specifier: 0.27.7
+        version: 0.27.7
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
+
   packages/backpack-web:
     dependencies:
       '@ark-ui/react':
@@ -14108,7 +14130,7 @@ snapshots:
       enquirer: 2.3.6
       minimatch: 10.2.4
       nx: 22.7.1
-      semver: 7.8.1
+      semver: 7.8.5
       tslib: 2.8.1
       yargs-parser: 21.1.1
 

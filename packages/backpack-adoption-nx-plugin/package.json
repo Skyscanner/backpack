@@ -1,0 +1,41 @@
+{
+  "name": "@skyscanner/backpack-adoption-nx-plugin",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skyscanner/backpack.git",
+    "directory": "packages/backpack-adoption-nx-plugin"
+  },
+  "main": "dist/index.js",
+  "executors": "./executors.json",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "executors.json", "README.md"],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "eslint src jest.config.js --ext .js,.ts",
+    "test": "jest --config jest.config.js",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@nx/devkit": "22.7.1"
+  },
+  "peerDependencies": {
+    "nx": ">=20"
+  },
+  "devDependencies": {
+    "@skyscanner/backpack-adoption-analyzer": "workspace:*",
+    "@types/node": "25.9.1",
+    "esbuild": "0.27.7",
+    "typescript": "5.9.3"
+  }
+}
