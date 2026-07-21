@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../bpk-component-icon/sm/information-circle';
+import readme from '../README.md';
 
 import BpkFloatingNotification, { NOTIFICATION_TYPES } from './BpkFloatingNotification';
 
@@ -86,6 +90,16 @@ const CriticalWithCtaExample = () => (
 const meta = {
   title: 'bpk-component-floating-notification',
   component: BpkFloatingNotification,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

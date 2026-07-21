@@ -70,24 +70,26 @@ const BpkCarousel = ({
         imagesRef={imagesRef}
         onImageChanged={onImageChanged}
       />
-      <div
-        className={getClassName('bpk-carousel__page-indicator-over-image')}
-        style={bottom ? {
-          bottom
-        } : undefined}
-        data-testid="carousel-page-indicator-container"
-      >
-        <BpkPageIndicator
-          currentIndex={shownImageIndex}
-          totalIndicators={images.length}
-          variant={pageIndicatorVariant}
-          indicatorLabel={accessibilityLabels.indicatorLabel ?? "Go to slide"}
-          prevNavLabel={accessibilityLabels.prevNavLabel ?? "Previous slide"}
-          nextNavLabel={accessibilityLabels.nextNavLabel ?? "Next slide"}
-          showNav={showNav}
-          onClick={showNav ? handleIndicatorClick : () => {}}
-        />
-      </div>
+      {images.length > 1 && (
+        <div
+          className={getClassName('bpk-carousel__page-indicator-over-image')}
+          style={bottom ? {
+            bottom
+          } : undefined}
+          data-testid="carousel-page-indicator-container"
+        >
+          <BpkPageIndicator
+            currentIndex={shownImageIndex}
+            totalIndicators={images.length}
+            variant={pageIndicatorVariant}
+            indicatorLabel={accessibilityLabels.indicatorLabel ?? "Go to slide"}
+            prevNavLabel={accessibilityLabels.prevNavLabel ?? "Previous slide"}
+            nextNavLabel={accessibilityLabels.nextNavLabel ?? "Next slide"}
+            showNav={showNav}
+            onClick={showNav ? handleIndicatorClick : () => {}}
+          />
+        </div>
+      )}
     </div>
   );
 };

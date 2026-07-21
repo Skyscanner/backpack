@@ -109,3 +109,5 @@ The background image component is useful for setting background images in CSS th
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/image/web-O1z3ATvN#section-props-f1).
+
+**Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including `srcSet` are also supported.

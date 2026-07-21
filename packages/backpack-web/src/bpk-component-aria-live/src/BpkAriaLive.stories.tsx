@@ -19,7 +19,8 @@
 import { Component } from 'react';
 import type { ChangeEvent } from 'react';
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 
 import BpkChip from '../../bpk-component-chip';
 import { BpkCode } from '../../bpk-component-code';
@@ -27,6 +28,7 @@ import BpkFieldset from '../../bpk-component-fieldset';
 import BpkSelect from '../../bpk-component-select';
 import BpkSwitch from '../../bpk-component-switch';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkAriaLive from './BpkAriaLive';
 import AriaLiveDemo from './BpkAriaLive.story-helpers';
@@ -224,7 +226,7 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
             {`**Note:** \`aria-relevant\` and \`aria-atomic\` props can also be set.

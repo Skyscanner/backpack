@@ -16,10 +16,13 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
-import BpkContentBubble from './src/BpkContentBubble';
-import BpkFlareBar from './src/BpkFlareBar';
-
-export default BpkFlareBar;
-export { BpkFlareBar, BpkContentBubble };
+export type SecondaryPanelProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  closeLabel?: string;
+  ariaLabel?: string;
+  title?: ReactNode;
+};

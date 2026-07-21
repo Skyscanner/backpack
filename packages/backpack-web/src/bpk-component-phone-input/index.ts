@@ -16,14 +16,9 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+import BpkPhoneInput, {
+  type Props as BpkPhoneInputProps,
+} from './src/BpkPhoneInput';
 
-import BpkTicket from './BpkTicket';
-
-figma.connect(
-  BpkTicket,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A51477',
-  {
-    example: () => <BpkTicket />,
-  },
-);
+export type { BpkPhoneInputProps };
+export default BpkPhoneInput;

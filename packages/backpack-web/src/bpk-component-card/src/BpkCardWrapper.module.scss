@@ -26,7 +26,8 @@
   @include borders.bpk-border-lg(var(--background-color), '');
 
   &--header {
-    border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
+    border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm)
+      var(--bpk-radius-sm, tokens.$bpk-border-radius-sm) 0 0;
     background-color: var(--background-color);
     cursor: default;
     overflow: hidden;
@@ -34,7 +35,8 @@
 
   &--content {
     position: relative;
-    border-radius: 0 0 tokens.$bpk-border-radius-md tokens.$bpk-border-radius-md;
+    border-radius: 0 0 var(--bpk-radius-md, tokens.$bpk-border-radius-md)
+      var(--bpk-radius-md, tokens.$bpk-border-radius-md);
     overflow: hidden;
 
     &::before,

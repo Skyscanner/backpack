@@ -19,6 +19,7 @@
 import BpkCollapsible from './src/BpkCollapsible';
 
 export { default as useBpkCollapsible } from './src/useBpkCollapsible';
+export { default as useBpkCollapsibleContext } from './src/useBpkCollapsibleContext';
 export { COLLAPSIBLE_VARIANTS } from './src/common-types';
 
 export default BpkCollapsible;

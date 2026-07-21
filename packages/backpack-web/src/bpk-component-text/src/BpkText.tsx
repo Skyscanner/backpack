@@ -76,6 +76,7 @@ export const TEXT_COLORS = {
   textPrimary: 'text-primary',
   textPrimaryInverse: 'text-primary-inverse',
   textSecondary: 'text-secondary',
+  textSecondaryOnContrast: 'text-secondary-on-contrast',
   textSuccess: 'text-success',
 } as const;
 

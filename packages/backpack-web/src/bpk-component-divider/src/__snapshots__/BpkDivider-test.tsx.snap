@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkDivider should render correctly 1`] = `
+<DocumentFragment>
+  <hr
+    class="bpk-divider bpk-divider--horizontal bpk-divider--spacing-none bpk-divider--weight-default"
+    data-backpack-ds-component="Divider"
+  />
+</DocumentFragment>
+`;

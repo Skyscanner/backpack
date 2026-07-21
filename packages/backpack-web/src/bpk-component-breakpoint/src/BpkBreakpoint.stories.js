@@ -18,7 +18,12 @@
 
 import PropTypes from 'prop-types';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
+
+
 
 import BpkBreakpoint, { BREAKPOINTS } from './BpkBreakpoint';
 
@@ -101,6 +106,16 @@ const DefaultExample = () => (
 const meta = {
   title: 'bpk-component-breakpoint',
   component: BpkBreakpoint,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;
