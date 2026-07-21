@@ -59,57 +59,13 @@ import STYLES from './BpkButton.stories.module.scss';
 const THEMED_BUTTON_THEME: BpkTheme = {
   button: {
     dimensionRadius: '999px',
-
-    // Dimensions — same in both modes
-    dimensionMinHeightDefault: '36px',
-    dimensionPaddingHorizontalDefault: '16px',
-    dimensionMinHeightLarge: '56px',
-    dimensionPaddingHorizontalLarge: '24px',
-
-    // Disabled
-    colourBgDisabled: { light: '#e0e4e9', dark: '#0b121d' },
-    colourTextDisabled: { light: 'rgba(0, 0, 0, 0.2)', dark: 'rgba(255, 255, 255, 0.2)' },
-
-    // Primary
-    colourBgPrimary: { light: '#05203c', dark: '#024daf' },
-    colourBgPrimaryPressed: { light: '#154679', dark: '#054184' },
-    colourTextPrimary: { light: '#ffffff', dark: '#ffffff' },
-
-    // PrimaryOnDark
-    colourBgPrimaryOnDark: { light: '#ffffff', dark: '#ffffff' },
-    colourBgPrimaryOnDarkPressed: { light: '#c1c7cf', dark: '#c1c7cf' },
-    colourTextPrimaryOnDark: { light: '#161616', dark: '#010913' },
-
-    // PrimaryOnLight
-    colourBgPrimaryOnLight: { light: '#05203c', dark: '#05203c' },
-    colourBgPrimaryOnLightPressed: { light: '#154679', dark: '#154679' },
-    colourTextPrimaryOnLight: { light: '#ffffff', dark: '#ffffff' },
-
-    // Secondary
-    colourBgSecondary: { light: '#e0e4e9', dark: '#243346' },
-    colourBgSecondaryPressed: { light: '#c1c7cf', dark: '#010913' },
-    colourTextSecondary: { light: '#161616', dark: '#ffffff' },
-
-    // SecondaryOnDark
-    colourBgSecondaryOnDark: { light: 'rgba(255, 255, 255, 0.1)', dark: 'rgba(255, 255, 255, 0.1)' },
-    colourBgSecondaryOnDarkPressed: { light: '#04182d', dark: '#ffffff33' },
-    colourBgSecondaryOnDarkDisabled: '#0b121d',
-    colourTextSecondaryOnDark: { light: '#ffffff', dark: '#ffffff' },
-
-    // Featured — standard blue in light, cyan in dark
-    colourBgFeatured: { light: '#0062e3', dark: '#d1f7ff' },
-    colourBgFeaturePressed: { light: '#024daf', dark: '#84e9ff' },
-    colourTextFeature: { light: '#ffffff', dark: '#010913' },
-
-    // Destructive
-    colourBgDestructive: { light: '#e0e4e9', dark: '#e0e4e9' },
-    colourBgDestructivePressed: { light: '#e70866', dark: '#ff649c' },
-    colourTextDestructive: { light: '#e70866', dark: '#e70866' },
-    colourTextDestructivePressed: { light: '#ffffff', dark: '#ffffff' },
-
-    // Link
-    colourTextLink: { light: '#161616', dark: '#ffffff' },
-    colourTextLinkOnDark: { light: '#ffffff', dark: '#ffffff' },
+    colourBgSecondary: { light: '#E3F0FF' },
+    colourBgSecondaryPressed: { light: '#B4D7FF' },
+    colourBgSecondaryOnContrast: { light: '#E3F0FF' },
+    colourBgSecondaryOnContrastPressed: { light: '#B4D7FF' },
+    colourBgSecondaryOnDarkPressed: { light: '#00000080' },
+    dimensionPaddingHorizontalLarge: '1.5rem',
+    dimensionMinHeightLarge: '3.5rem',
   },
 };
 
