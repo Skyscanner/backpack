@@ -376,6 +376,8 @@ const CustomYAxisDomainExample = () => (
       data={data.prices}
       xScaleDataKey="month"
       yScaleDataKey="price"
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
       style={{
         maxWidth: '580px',
       }}
@@ -389,6 +391,8 @@ const CustomYAxisDomainExample = () => (
       data={data.prices}
       xScaleDataKey="month"
       yScaleDataKey="price"
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
       style={{
         maxWidth: '580px',
       }}
