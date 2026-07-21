@@ -132,7 +132,7 @@ export const App = () => (
 `,
     );
 
-    const report = await analyzeRepository(repoPath);
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
 
     expect(report.usage.backpack.count).toBe(1);
     // classNames(variable) cannot be statically resolved → ds-analyser does
@@ -155,7 +155,7 @@ export const App = () => (
 `,
     );
 
-    const report = await analyzeRepository(repoPath);
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
 
     // 1 Backpack usage, but classNames(...) has 3 string args → overrideCount 3.
     // ds-analyser pure = backpackUsages - classNameOverrides = 1 - 3 = -2.
@@ -210,7 +210,7 @@ export const RootThing = () => <div>root</div>;
 `,
     );
 
-    const report = await analyzeRepository(repoPath);
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
 
     expect(report.isNx).toBe(true);
     expect(report.projects).toBeDefined();
@@ -251,7 +251,7 @@ export const RootThing = () => <div>root</div>;
       "export const Broken = () => <div>{",
     );
 
-    const report = await analyzeRepository(repoPath);
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
 
     // The file failed to parse (no usages recorded), but it still matched
     // the glob and its project should still count it as analyzed — matching

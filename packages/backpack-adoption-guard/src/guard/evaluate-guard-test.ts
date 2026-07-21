@@ -16,11 +16,9 @@
  * limitations under the License.
  */
 import {
-  combineGuardStatuses,
   evaluateGuard,
-  evaluateProjectGuards,
 } from "./evaluate-guard";
-import type { AdoptionReport, GuardResult } from "../shared/types";
+import type { AdoptionReport } from "../shared/types";
 
 const reportWithBackpackPercentage = (percentage: number): AdoptionReport => ({
   repository: "repo",
@@ -234,135 +232,5 @@ describe("evaluateGuard", () => {
     expect(result.status).toBe("pass");
     expect(result.threshold).toBe(70);
     expect(result.reason).toContain("70% threshold");
-  });
-});
-
-const reportWithProjects = (
-  overallPercentage: number,
-  projects: Record<string, number>,
-): AdoptionReport => {
-  const report = reportWithBackpackPercentage(overallPercentage);
-  report.projects = {};
-  for (const [name, percentage] of Object.entries(projects)) {
-    report.projects[name] = reportWithBackpackPercentage(percentage);
-  }
-  return report;
-};
-
-describe("evaluateProjectGuards", () => {
-  it("evaluates each project independently using the same rules as evaluateGuard", () => {
-    const baseReport = reportWithProjects(65, { flights: 70, hotels: 50 });
-    const headReport = reportWithProjects(66, { flights: 65, hotels: 55 });
-
-    const results = evaluateProjectGuards({
-      baseReport,
-      dryRun: false,
-      headReport,
-      isMain: false,
-      threshold: DEFAULT_THRESHOLD,
-    });
-
-    // flights: base (70) >= threshold, head decreased (65) -> fail
-    expect(results.flights.status).toBe("fail");
-    // hotels: base (50) < threshold -> pass regardless of head movement
-    expect(results.hotels.status).toBe("pass");
-  });
-
-  it("treats a project missing from base as unable to compare", () => {
-    const baseReport = reportWithProjects(65, { flights: 70 });
-    const headReport = reportWithProjects(66, { flights: 70, hotels: 55 });
-
-    const results = evaluateProjectGuards({
-      baseReport,
-      dryRun: false,
-      headReport,
-      isMain: false,
-      threshold: DEFAULT_THRESHOLD,
-    });
-
-    expect(results.hotels.status).toBe("fail");
-    expect(results.hotels.reason).toContain("Could not load `main`");
-  });
-
-  it("skips projects that exist only in base (removed in this PR)", () => {
-    const baseReport = reportWithProjects(65, { flights: 70, hotels: 50 });
-    const headReport = reportWithProjects(66, { flights: 70 });
-
-    const results = evaluateProjectGuards({
-      baseReport,
-      dryRun: false,
-      headReport,
-      isMain: false,
-      threshold: DEFAULT_THRESHOLD,
-    });
-
-    expect(Object.keys(results)).toEqual(["flights"]);
-  });
-
-  it("returns an empty map when neither side has NX projects", () => {
-    const results = evaluateProjectGuards({
-      baseReport: reportWithBackpackPercentage(65),
-      dryRun: false,
-      headReport: reportWithBackpackPercentage(66),
-      isMain: false,
-      threshold: DEFAULT_THRESHOLD,
-    });
-
-    expect(results).toEqual({});
-  });
-});
-
-describe("combineGuardStatuses", () => {
-  const passResult: GuardResult = {
-    status: "pass",
-    reason: "ok",
-    dryRun: false,
-    threshold: 60,
-    baseBackpackPercentage: 65,
-    headBackpackPercentage: 66,
-    delta: 1,
-  };
-
-  it("returns fail when the overall status passes but a project fails", () => {
-    const failingProject: GuardResult = { ...passResult, status: "fail" };
-
-    const combined = combineGuardStatuses(passResult, {
-      flights: failingProject,
-      hotels: passResult,
-    });
-
-    expect(combined).toBe("fail");
-  });
-
-  it("returns warn when no project fails but one warns", () => {
-    const warningProject: GuardResult = { ...passResult, status: "warn" };
-
-    const combined = combineGuardStatuses(passResult, {
-      flights: warningProject,
-      hotels: passResult,
-    });
-
-    expect(combined).toBe("warn");
-  });
-
-  it("keeps the overall status when no project fails or warns", () => {
-    const combined = combineGuardStatuses(passResult, {
-      flights: passResult,
-      hotels: passResult,
-    });
-
-    expect(combined).toBe("pass");
-  });
-
-  it("prefers fail over warn when both are present", () => {
-    const failingProject: GuardResult = { ...passResult, status: "fail" };
-    const warningProject: GuardResult = { ...passResult, status: "warn" };
-
-    const combined = combineGuardStatuses(passResult, {
-      flights: failingProject,
-      hotels: warningProject,
-    });
-
-    expect(combined).toBe("fail");
   });
 });

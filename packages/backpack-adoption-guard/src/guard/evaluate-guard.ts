@@ -18,7 +18,6 @@
 import type {
   AdoptionReport,
   GuardResult,
-  GuardStatus,
 } from "../shared/types";
 
 export const evaluateGuard = ({
@@ -142,73 +141,4 @@ export const evaluateGuard = ({
     headBackpackPercentage,
     delta,
   };
-};
-
-/**
- * Runs evaluateGuard's per-project bucket (including the `(unassigned)`
- * bucket, kept as its own entry rather than special-cased away) so a
- * regression in one NX project fails the guard even if the repo-wide
- * percentage looks fine.
- */
-export const evaluateProjectGuards = ({
-  baseReport,
-  dryRun,
-  headReport,
-  isMain,
-  threshold,
-}: {
-  baseReport: AdoptionReport | null;
-  dryRun: boolean;
-  headReport: AdoptionReport;
-  isMain: boolean;
-  threshold: number;
-}): Record<string, GuardResult> => {
-  const headProjects = headReport.projects || {};
-  const baseProjects = baseReport?.projects || {};
-  const projectNames = Array.from(
-    new Set([...Object.keys(headProjects), ...Object.keys(baseProjects)]),
-  );
-
-  const projectResults: Record<string, GuardResult> = {};
-
-  for (const projectName of projectNames) {
-    const headProjectReport = headProjects[projectName];
-    if (!headProjectReport) {
-      // Project existed on the other side only (e.g. removed in this PR);
-      // nothing to evaluate for the head side.
-      continue;
-    }
-
-    projectResults[projectName] = evaluateGuard({
-      baseReport: baseProjects[projectName] ?? null,
-      dryRun,
-      headReport: headProjectReport,
-      isMain,
-      threshold,
-    });
-  }
-
-  return projectResults;
-};
-
-/**
- * Combines the repo-wide guard result with the per-project results: any
- * project fail forces an overall fail, any project warn forces an overall
- * warn (unless already failing), otherwise the repo-wide status is kept.
- */
-export const combineGuardStatuses = (
-  overall: GuardResult,
-  projectResults: Record<string, GuardResult>,
-): GuardStatus => {
-  const statuses = Object.values(projectResults).map((result) => result.status);
-
-  if (statuses.some((status) => status === "fail")) {
-    return "fail";
-  }
-
-  if (statuses.some((status) => status === "warn")) {
-    return "warn";
-  }
-
-  return overall.status;
 };

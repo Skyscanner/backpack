@@ -116,7 +116,7 @@ export const App = () => (
     expect(result.guard).not.toHaveProperty("projects");
   });
 
-  it("writes per-project metrics for NX workspaces", async () => {
+  it("reports NX workspaces as a single repository", async () => {
     await writeRepoFile(repoPath, "nx.json", JSON.stringify({ version: 2 }));
     await writeRepoFile(
       repoPath,
@@ -150,17 +150,10 @@ export const RootThing = () => <div>root</div>;
     );
     const metrics = resultsFile["backpack-adoption"];
 
-    expect(result.head.isNx).toBe(true);
-    expect(result.head.projects).toBeDefined();
-    expect(result.guard.projects).toBeDefined();
-
-    expect(metrics.projects).toBeDefined();
-    expect(metrics.projects.flights).toEqual({
-      filesAnalyzed: result.head.projects!.flights.filesAnalyzed,
-      ...result.head.projects!.flights.usage,
-    });
-    expect(metrics.projects.flights).not.toHaveProperty("componentCounts");
-    expect(metrics.projects["(unassigned)"]).toBeDefined();
+    expect(result.head.isNx).toBeUndefined();
+    expect(result.head.projects).toBeUndefined();
+    expect(result.guard.projects).toBeUndefined();
+    expect(metrics.projects).toBeUndefined();
   });
 
   it("uses the default guard threshold when the input is omitted", async () => {

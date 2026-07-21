@@ -137,6 +137,7 @@ type AnalyzerOptions = {
   pattern?: string;
   ignore?: string[];
   components?: string[] | null;
+  includeNxProjects?: boolean;
 };
 
 type FileAnalysisResult = ReturnType<typeof analyzeFile>;
@@ -673,6 +674,7 @@ async function runAnalyzer(
     pattern = DEFAULT_PATTERN,
     ignore = DEFAULT_IGNORE_PATTERNS,
     components = null,
+    includeNxProjects = false,
   } = options;
 
   const files = await glob(pattern, {
@@ -686,9 +688,11 @@ async function runAnalyzer(
   const results = createResultBucket(basename(repoPath));
   results.filesAnalyzed = files.length;
 
-  // Detect NX projects so file-level results can be attributed per project.
-  // Static read only — no NX runtime. Disabled for non-NX repos (no nx.json).
-  const nxInfo = detectNxProjects(repoPath);
+  // Project attribution is opt-in. The GitHub Action only needs repository-wide
+  // metrics; Nx-specific consumers enable it explicitly.
+  const nxInfo = includeNxProjects
+    ? detectNxProjects(repoPath)
+    : { isNx: false, projects: [] };
   const projectIndex: NxProjectIndexEntry[] | null = nxInfo.isNx
     ? buildProjectIndex(nxInfo.projects)
     : null;
