@@ -30,8 +30,8 @@ type Props = {
   data: BarPoint[];
   xScaleDataKey: string;
   yScaleDataKey: string;
-  xAxisLabel?: string;
-  yAxisLabel?: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
 };
 
 const BpkChartDataTable = ({

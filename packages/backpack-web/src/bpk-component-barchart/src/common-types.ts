@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ComponentType, MouseEvent, ReactNode } from 'react';
+import type { ComponentType, MouseEvent, ReactNode, SVGProps } from 'react';
 
 export type Orientation = 'x' | 'y';
 
@@ -27,18 +27,28 @@ export type Margin = {
   right: number;
 };
 
-export type Scale = {
-  bandwidth?: () => number;
+export type BandScale = {
+  (value: unknown): number | undefined;
+  bandwidth: () => number;
   round: () => boolean;
-  ticks?: (count?: number) => number[];
-  domain: <T extends unknown[]>(domain?: T) => T | unknown[];
-  range: (range: [number, number]) => Scale;
-  rangeRound: (range: [number, number]) => Scale;
-  copy: () => Scale;
-  paddingInner: (value: number) => Scale;
-  paddingOuter: (value: number | undefined) => Scale;
-  (value: unknown): number;
+  paddingInner: (value: number) => BandScale;
+  paddingOuter: (value: number | undefined) => BandScale;
+  domain: (domain?: unknown[]) => unknown[];
+  range: (range: [number, number]) => BandScale;
+  rangeRound: (range: [number, number]) => BandScale;
+  copy: () => BandScale;
 };
+
+export type ContinuousScale = {
+  (value: number): number;
+  ticks: (count?: number) => number[];
+  domain: (domain?: Array<number | undefined>) => Array<number | undefined>;
+  range: (range: [number, number]) => ContinuousScale;
+  rangeRound: (range: [number, number]) => ContinuousScale;
+  copy: () => ContinuousScale;
+};
+
+export type Scale = BandScale | ContinuousScale;
 
 export type BarPoint = Record<string, unknown>;
 
@@ -60,12 +70,15 @@ export type BarComponent = ComponentType<BarComponentProps & Record<string, unkn
 
 export type BarInteractionEvent = MouseEvent<SVGElement>;
 
-export type BpkBarchartProps = {
+export type BpkBarchartProps = Omit<
+  SVGProps<SVGSVGElement>,
+  'width' | 'height' | 'onClick'
+> & {
   data: BarPoint[];
   xScaleDataKey: string;
   yScaleDataKey: string;
-  xAxisLabel?: string;
-  yAxisLabel?: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
   initialWidth: number;
   initialHeight: number;
   leadingScrollIndicatorClassName?: string | undefined;
@@ -87,5 +100,4 @@ export type BpkBarchartProps = {
   getBarSelection?: (point: BarPoint) => boolean;
   BarComponent?: BarComponent;
   disableDataTable?: boolean;
-  [key: string]: unknown;
 };
