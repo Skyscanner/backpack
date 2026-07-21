@@ -59,8 +59,15 @@ function buildModeStyleTag(
     .join('\n');
 
   const parts: string[] = [];
-  if (lightRules) parts.push(`#${id} {\n${lightRules}\n}`);
-  if (darkRules) parts.push(`:root[data-theme="dark"] #${id} {\n${darkRules}\n}`);
+  if (lightRules && darkRules) {
+    // Both modes specified — light is the unscoped default, dark overrides it
+    parts.push(`#${id} {\n${lightRules}\n}`);
+    parts.push(`:root[data-theme="dark"] #${id} {\n${darkRules}\n}`);
+  } else {
+    // Single-mode: scope tightly so the other mode is unaffected
+    if (lightRules) parts.push(`:root:not([data-theme="dark"]) #${id} {\n${lightRules}\n}`);
+    if (darkRules) parts.push(`:root[data-theme="dark"] #${id} {\n${darkRules}\n}`);
+  }
   return parts.join('\n');
 }
 
