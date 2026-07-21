@@ -70,10 +70,7 @@ export type BarComponent = ComponentType<BarComponentProps & Record<string, unkn
 
 export type BarInteractionEvent = MouseEvent<SVGElement>;
 
-export type BpkBarchartProps = Omit<
-  SVGProps<SVGSVGElement>,
-  'width' | 'height' | 'onClick'
-> & {
+export type BpkBarchartProps = Omit<SVGProps<SVGSVGElement>, 'width' | 'height'> & {
   data: BarPoint[];
   xScaleDataKey: string;
   yScaleDataKey: string;

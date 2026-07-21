@@ -19,6 +19,7 @@
 import { Component, type ComponentType, type MouseEvent as ReactMouseEvent } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
 import isEqual from 'lodash/isEqual';
 

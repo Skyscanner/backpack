@@ -17,7 +17,6 @@
  */
 
 import { Component } from 'react';
-import type { SVGProps } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
@@ -105,6 +104,23 @@ class BpkBarchart extends Component<BpkBarchartProps, State> {
   componentDidMount() {
     this.updateDimensions();
     window.addEventListener('resize', this.onWindowResize);
+
+    if (process.env.NODE_ENV !== 'production') {
+      const { data, xScaleDataKey, yScaleDataKey } = this.props;
+      for (const point of data) {
+        if (
+          !Object.prototype.hasOwnProperty.call(point, xScaleDataKey) ||
+          !Object.prototype.hasOwnProperty.call(point, yScaleDataKey)
+        ) {
+          // eslint-disable-next-line no-console
+          console.warn(
+            `BpkBarchart: data point is missing "${xScaleDataKey}" or "${yScaleDataKey}" key:`,
+            point,
+          );
+          break;
+        }
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -194,7 +210,7 @@ class BpkBarchart extends Component<BpkBarchartProps, State> {
           ref={(svgEl) => {
             this.svgEl = svgEl;
           }}
-          {...(rest as SVGProps<SVGSVGElement>)}
+          {...rest}
         >
           <BpkBarchartDefs />
           <BpkChartMargin margin={margin}>
