@@ -27,7 +27,7 @@ export type Props = {
   component?: ElementType;
   style?: CSSProperties | null;
   theme?: Theme | null;
-  themeAttributes: ReadonlyArray<string | string[]>;
+  themeAttributes?: ReadonlyArray<string | string[]>;
 } & Record<string, unknown>;
 
 const uniq = (arr: ReadonlyArray<string | string[]> = []): ReadonlyArray<string | string[]> => {
@@ -81,6 +81,17 @@ const BpkThemeProvider = ({
 }: Props) => {
   const dedupedThemeAttributes = uniq(themeAttributes);
   const style = createStyle(theme, dedupedThemeAttributes);
+
+  if (process.env.NODE_ENV !== 'production') {
+    const themeAttributesError = themeAttributesPropType(
+      { theme, themeAttributes },
+      'themeAttributes',
+      'BpkThemeProvider',
+    );
+    if (themeAttributesError) {
+      console.error(themeAttributesError.message); // eslint-disable-line no-console
+    }
+  }
 
   return (
     <WrapperComponent
