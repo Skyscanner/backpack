@@ -20,6 +20,6 @@ import themeAttributes from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('exports the expected themeAttributes', () => {
-    expect(themeAttributes).toEqual(['starRatingFilledColor']);
+    expect(themeAttributes).toEqual([]);
   });
 });
