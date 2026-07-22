@@ -20,6 +20,6 @@ import themeAttributes from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('exports the expected attributes', () => {
-    expect(themeAttributes).toEqual([]);
+    expect(themeAttributes).toEqual(['switchCheckedColor']);
   });
 });
