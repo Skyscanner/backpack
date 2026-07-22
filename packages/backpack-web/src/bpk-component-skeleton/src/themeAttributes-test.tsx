@@ -16,17 +16,22 @@
  * limitations under the License.
  */
 
-import BpkSkeleton from './src/BpkSkeleton';
-import themeAttributes, {
+import {
+  themeAttributes,
   allSkeletonThemeAttributes,
   skeletonThemeAttributes,
-} from './src/themeAttributes';
+} from '../index';
 
-export {
-  SIZE_TYPES,
-  SKELETON_TYPES,
-  IMAGE_SKELETON_STYLE,
-  BACKGROUND_STYLE,
-} from './src/common-types';
-export default BpkSkeleton;
-export { themeAttributes, allSkeletonThemeAttributes, skeletonThemeAttributes };
+describe('skeleton component themeAttributes', () => {
+  it('should export skeletonThemeAttributes as an empty array', () => {
+    expect(skeletonThemeAttributes).toEqual([]);
+  });
+
+  it('should export the deprecated themeAttributes default as an empty array', () => {
+    expect(themeAttributes).toEqual([]);
+  });
+
+  it('should export allSkeletonThemeAttributes as an empty array', () => {
+    expect(allSkeletonThemeAttributes).toEqual([]);
+  });
+});

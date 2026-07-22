@@ -16,17 +16,19 @@
  * limitations under the License.
  */
 
-import BpkSkeleton from './src/BpkSkeleton';
-import themeAttributes, {
-  allSkeletonThemeAttributes,
-  skeletonThemeAttributes,
-} from './src/themeAttributes';
+export const skeletonThemeAttributes: string[] = [];
 
-export {
-  SIZE_TYPES,
-  SKELETON_TYPES,
-  IMAGE_SKELETON_STYLE,
-  BACKGROUND_STYLE,
-} from './src/common-types';
-export default BpkSkeleton;
-export { themeAttributes, allSkeletonThemeAttributes, skeletonThemeAttributes };
+/**
+ * Combined deduplicated array of all skeleton private theme attributes.
+ * Only exposes component-scoped (private) skeleton tokens — global semantic vars
+ * (surface, canvas colours) can be overridden at the theme level independently.
+ */
+export const allSkeletonThemeAttributes: string[] = [];
+
+/**
+ * @deprecated Use allSkeletonThemeAttributes instead.
+ * Will be removed in the next major release.
+ */
+const themeAttributes: string[] = [];
+
+export default themeAttributes;
