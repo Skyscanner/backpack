@@ -18,9 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error -- bpk-storybook-utils has no type declarations
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
 import readme from '../README.md';
 
@@ -82,12 +79,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-export const VisualTestDarkMode = {
-  render: () => (
-    <BpkDarkExampleWrapper>
-      <VisualTestExample />
-    </BpkDarkExampleWrapper>
-  ),
 };
