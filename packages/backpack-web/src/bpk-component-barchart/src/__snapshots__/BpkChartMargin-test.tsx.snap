@@ -4,7 +4,7 @@ exports[`BpkChartMargin should render correctly 1`] = `
 <DocumentFragment>
   <svg>
     <g
-      transform="translate(undefined, undefined)"
+      transform="translate(4, 4)"
     >
       Children
     </g>

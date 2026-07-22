@@ -16,20 +16,17 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode, SVGProps } from 'react';
 
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
-
-import {
-  lineHeightSm,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import { rtlConditionalValue } from './RTLtransforms';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, center, remToPx } from './utils';
+
+import type { Margin, Orientation, Scale } from './common-types';
 
 import STYLES from './BpkChartAxis.module.scss';
 
@@ -38,8 +35,41 @@ const getClassName = cssModules(STYLES);
 const spacing = remToPx('.375rem');
 const lineHeight = remToPx(lineHeightSm);
 
-const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
-  const position = (scale.bandwidth ? center : identity)(scale.copy());
+type AxisConfig = {
+  containerProps: {
+    textAnchor: string;
+    transform: string;
+  };
+  textProps: {
+    y: number;
+    x: number;
+    dy?: string;
+  };
+  labelProps: {
+    x?: number;
+    y?: number;
+    transform?: string;
+  };
+  tickPosition: (tick: any) => [number, number];
+};
+
+const getAxisConfig = ({
+  height,
+  margin,
+  orientation,
+  scale,
+  width,
+}: {
+  height: number;
+  margin: Margin;
+  orientation: Orientation;
+  scale: Scale;
+  width: number;
+}): AxisConfig => {
+  const position =
+    'bandwidth' in scale
+      ? center(scale)
+      : (d: unknown) => scale(d as number);
 
   if (orientation === ORIENTATION_X) {
     return {
@@ -83,48 +113,43 @@ const getAxisConfig = ({ height, margin, orientation, scale, width }) => {
   };
 };
 
-type Props = {
-  height: number,
-  width: number,
-  margin: {
-    top: number,
-    bottom: number,
-    left: number,
-    right: number,
-  },
-  scale: Object,
-  label: ?Node,
-  orientation: string,
-  tickValue: (any, any) => any,
-  numTicks: ?number,
-  tickOffset: number,
-  tickEvery: number,
+type Props = Omit<SVGProps<SVGGElement>, 'transform' | 'scale'> & {
+  height: number;
+  width: number;
+  margin: Margin;
+  scale: Scale;
+  label?: ReactNode | null;
+  orientation: Orientation;
+  tickValue?: (tick: any, index: number) => ReactNode;
+  numTicks?: number | null;
+  tickOffset?: number;
+  tickEvery?: number;
 };
 
-const BpkChartAxis = (props: Props) => {
-  const {
-    height,
-    label = null,
-    margin,
-    numTicks = null,
-    orientation,
-    scale,
-    tickEvery = 1,
-    tickOffset = 0,
-    tickValue = identity,
-    width,
-    ...rest
-  } = props;
-
+const BpkChartAxis = ({
+  height,
+  label = null,
+  margin,
+  numTicks = null,
+  orientation,
+  scale,
+  tickEvery = 1,
+  tickOffset = 0,
+  tickValue = identity,
+  width,
+  ...rest
+}: Props) => {
   const { containerProps, labelProps, textProps, tickPosition } =
-    getAxisConfig(props);
+    getAxisConfig({ height, margin, orientation, scale, width });
 
-  const ticks = scale.ticks
-    ? scale.ticks(numTicks)
-    : scale.domain().filter((tick, i) => (i - tickOffset) % tickEvery === 0);
+  const ticks: unknown[] =
+    'ticks' in scale
+      ? scale.ticks(numTicks ?? undefined)
+      : (scale.domain() as unknown[]).filter(
+          (_tick, i) => (i - tickOffset) % tickEvery === 0,
+        );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <g
       className={getClassName('bpk-chart__axis')}
       aria-hidden="true"
@@ -155,25 +180,6 @@ const BpkChartAxis = (props: Props) => {
       )}
     </g>
   );
-};
-
-BpkChartAxis.propTypes = {
-  height: PropTypes.number.isRequired,
-  width: PropTypes.number.isRequired,
-  margin: PropTypes.shape({
-    top: PropTypes.number,
-    bottom: PropTypes.number,
-    left: PropTypes.number,
-    right: PropTypes.number,
-  }).isRequired,
-  scale: PropTypes.func.isRequired,
-  label: PropTypes.node,
-
-  orientation: PropTypes.oneOf([ORIENTATION_X, ORIENTATION_Y]).isRequired,
-  tickValue: PropTypes.func,
-  numTicks: PropTypes.number,
-  tickOffset: PropTypes.number,
-  tickEvery: PropTypes.number,
 };
 
 export default BpkChartAxis;

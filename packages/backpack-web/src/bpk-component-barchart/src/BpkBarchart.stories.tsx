@@ -16,10 +16,10 @@
  * limitations under the License.
  */
 
-import { number } from 'prop-types';
-import { Component } from 'react';
+import { Component, type ComponentType, type MouseEvent as ReactMouseEvent } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
 import isEqual from 'lodash/isEqual';
 
@@ -41,9 +41,9 @@ import {
 } from './orientation';
 import { remToPx } from './utils';
 
+import type { BpkBarchartProps, BarPoint, Margin, Scale } from './common-types';
 
 import STYLES from './BpkBarchart.stories.module.scss';
-
 
 const getClassName = cssModules(STYLES);
 
@@ -53,13 +53,25 @@ const Heading = withDefaultProps(BpkText, {
   className: getClassName('bpk-heading'),
 });
 
-const RtlBarchart = updateOnDirectionChange(BpkBarchart);
+const RtlBarchart = updateOnDirectionChange(BpkBarchart) as unknown as ComponentType<BpkBarchartProps>;
 
-// Inlined from hocs.js
-const withSelectedState = (ComposedComponent) => {
-  class WithSelectedState extends Component {
-    constructor() {
-      super();
+type WithSelectedStateProps = BpkBarchartProps;
+
+type WithSelectedStateState = {
+  selectedPoint: BarPoint | null;
+};
+
+const withSelectedState = (
+  ComposedComponent: ComponentType<BpkBarchartProps>,
+) => {
+  class WithSelectedState extends Component<
+    WithSelectedStateProps,
+    WithSelectedStateState
+  > {
+    static displayName: string;
+
+    constructor(props: WithSelectedStateProps) {
+      super(props);
 
       this.state = {
         selectedPoint: null,
@@ -69,13 +81,16 @@ const withSelectedState = (ComposedComponent) => {
       this.getBarSelection = this.getBarSelection.bind(this);
     }
 
-    onBarClick(e, { point }) {
+    onBarClick(
+      _e: ReactMouseEvent<SVGElement>,
+      { point }: { point: BarPoint },
+    ) {
       this.setState({
         selectedPoint: point,
       });
     }
 
-    getBarSelection(point) {
+    getBarSelection(point: BarPoint) {
       return isEqual(this.state.selectedPoint, point);
     }
 
@@ -102,14 +117,22 @@ const withSelectedState = (ComposedComponent) => {
 
 const SelectableBarChart = withSelectedState(RtlBarchart);
 
-const margin = {
+const margin: Margin = {
   top: 0,
   left: 40,
   bottom: 40,
   right: 0,
 };
 
-const Gridlines = ({ size, ...rest }) => (
+type GridlinesProps = {
+  size: number;
+  scale: Scale;
+  numTicks?: number;
+  tickEvery?: number;
+  tickOffset?: number;
+};
+
+const Gridlines = ({ size, ...rest }: GridlinesProps) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size}>
     <BpkChartMargin margin={margin}>
       <BpkChartAxis
@@ -144,10 +167,8 @@ const Gridlines = ({ size, ...rest }) => (
   </svg>
 );
 
-Gridlines.propTypes = { size: number.isRequired };
-
 const AxesAndGridlinesExample = () => {
-  const dataset = [
+  const dataset: Array<[number, number]> = [
     [5, 20],
     [480, 90],
     [250, 50],
@@ -170,12 +191,17 @@ const AxesAndGridlinesExample = () => {
   return (
     <div>
       <Heading>Linear scale</Heading>
-      <Gridlines scale={scale} size={size} />
-      <Gridlines scale={scale} size={size} numTicks={2} />
+      <Gridlines scale={scale as unknown as Scale} size={size} />
+      <Gridlines scale={scale as unknown as Scale} size={size} numTicks={2} />
       <Heading>Band scale</Heading>
-      <Gridlines scale={scale2} size={size} />
-      <Gridlines scale={scale2} size={size} tickEvery={2} />
-      <Gridlines scale={scale2} size={size} tickEvery={2} tickOffset={1} />
+      <Gridlines scale={scale2 as unknown as Scale} size={size} />
+      <Gridlines scale={scale2 as unknown as Scale} size={size} tickEvery={2} />
+      <Gridlines
+        scale={scale2 as unknown as Scale}
+        size={size}
+        tickEvery={2}
+        tickOffset={1}
+      />
     </div>
   );
 };
@@ -350,6 +376,8 @@ const CustomYAxisDomainExample = () => (
       data={data.prices}
       xScaleDataKey="month"
       yScaleDataKey="price"
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
       style={{
         maxWidth: '580px',
       }}
@@ -363,11 +391,13 @@ const CustomYAxisDomainExample = () => (
       data={data.prices}
       xScaleDataKey="month"
       yScaleDataKey="price"
+      xAxisLabel="Month"
+      yAxisLabel="Average Price (£)"
       style={{
         maxWidth: '580px',
       }}
       showGridlines
-      yAxisDomain={[300, null]}
+      yAxisDomain={[300, undefined]}
     />
   </div>
 );

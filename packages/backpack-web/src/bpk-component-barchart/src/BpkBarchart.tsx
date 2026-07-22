@@ -16,17 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
 import { Component } from 'react';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import debounce from 'lodash.debounce';
 
-import {
-  lineHeightSm,
-} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import { lineHeightSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import { cssModules } from '../../bpk-react-utils';
@@ -42,9 +39,10 @@ import {
   applyArrayRTLTransform,
   applyMarginRTLTransform,
 } from './RTLtransforms';
-import dataProp from './customPropTypes';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 import { identity, remToPx } from './utils';
+
+import type { BandScale, BpkBarchartProps, ContinuousScale } from './common-types';
 
 import STYLES from './BpkBarchart.module.scss';
 
@@ -55,18 +53,18 @@ const lineHeight = remToPx(lineHeightSm);
 
 const DEFAULT_X_AXIS_MARGIN = 2 * (lineHeight + spacing);
 const DEFAULT_Y_AXIS_MARGIN = 4 * lineHeight + spacing;
-const DEFAULT_Y_AXIS_DOMAIN = [null, null];
+const DEFAULT_Y_AXIS_DOMAIN: Array<number | undefined> = [undefined, undefined];
 const DEFAULT_GET_BAR_LABEL = (
-  point: any,
+  point: Record<string, unknown>,
   xScaleDataKey: string,
   yScaleDataKey: string,
-) => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`;
+): string => `${point[xScaleDataKey]} - ${point[yScaleDataKey]}`;
 const DEFAULT_GET_BAR_SELECTION = () => false;
 
 const getMaxYValue = (
-  dataPoints: Array<number>,
-  outlierPercentage: ?number,
-) => {
+  dataPoints: number[],
+  outlierPercentage?: number | undefined,
+): number => {
   const meanValue = dataPoints.reduce((d, t) => d + t, 0) / dataPoints.length;
   const maxYValue = Math.max(...dataPoints);
 
@@ -75,50 +73,21 @@ const getMaxYValue = (
     : maxYValue;
 };
 
-type Props = {
-  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
-  xScaleDataKey: string,
-  yScaleDataKey: string,
-  xAxisLabel: string,
-  yAxisLabel: string,
-  initialWidth: number,
-  initialHeight: number,
-  leadingScrollIndicatorClassName: ?string,
-  trailingScrollIndicatorClassName: ?string,
-  outlierPercentage: ?number,
-  showGridlines: boolean,
-  xAxisMargin: number,
-  xAxisTickValue: () => mixed,
-  xAxisTickOffset: number,
-  xAxisTickEvery: number,
-  yAxisMargin: number,
-  yAxisTickValue: () => mixed,
-  yAxisNumTicks: ?number,
-  yAxisDomain: Array<?number>,
-  onBarClick: ?() => mixed,
-  onBarHover: ?() => mixed,
-  onBarFocus: ?() => mixed,
-  getBarLabel: (any, string, string) => ?string,
-  getBarSelection: () => mixed,
-  BarComponent: typeof BpkBarchartBar,
-  disableDataTable: boolean,
-};
-
 type State = {
-  width: number,
-  height: number,
+  width: number;
+  height: number;
 };
 
-class BpkBarchart extends Component<Props, State> {
-  xScale: typeof scaleBand;
+class BpkBarchart extends Component<BpkBarchartProps, State> {
+  xScale: BandScale;
 
-  yScale: typeof scaleLinear;
+  yScale: ContinuousScale;
 
-  onWindowResize: () => mixed;
+  onWindowResize: () => void;
 
-  svgEl: ?Element;
+  svgEl!: SVGSVGElement | null;
 
-  constructor(props: Props) {
+  constructor(props: BpkBarchartProps) {
     super(props);
 
     this.state = {
@@ -126,8 +95,8 @@ class BpkBarchart extends Component<Props, State> {
       height: props.initialHeight,
     };
 
-    this.xScale = scaleBand();
-    this.yScale = scaleLinear();
+    this.xScale = scaleBand() as unknown as BandScale;
+    this.yScale = scaleLinear() as unknown as ContinuousScale;
 
     this.onWindowResize = debounce(this.updateDimensions, 100);
   }
@@ -135,6 +104,23 @@ class BpkBarchart extends Component<Props, State> {
   componentDidMount() {
     this.updateDimensions();
     window.addEventListener('resize', this.onWindowResize);
+
+    if (process.env.NODE_ENV !== 'production') {
+      const { data, xScaleDataKey, yScaleDataKey } = this.props;
+      for (const point of data) {
+        if (
+          !Object.prototype.hasOwnProperty.call(point, xScaleDataKey) ||
+          !Object.prototype.hasOwnProperty.call(point, yScaleDataKey)
+        ) {
+          // eslint-disable-next-line no-console
+          console.warn(
+            `BpkBarchart: data point is missing "${xScaleDataKey}" or "${yScaleDataKey}" key:`,
+            point,
+          );
+          break;
+        }
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -160,13 +146,13 @@ class BpkBarchart extends Component<Props, State> {
       getBarSelection = DEFAULT_GET_BAR_SELECTION,
       initialHeight,
       initialWidth,
-      leadingScrollIndicatorClassName = null,
-      onBarClick = null,
-      onBarFocus = null,
-      onBarHover = null,
-      outlierPercentage = null,
+      leadingScrollIndicatorClassName = undefined,
+      onBarClick = undefined,
+      onBarFocus = undefined,
+      onBarHover = undefined,
+      outlierPercentage = undefined,
       showGridlines = false,
-      trailingScrollIndicatorClassName = null,
+      trailingScrollIndicatorClassName = undefined,
       xAxisLabel,
       xAxisMargin = DEFAULT_X_AXIS_MARGIN,
       xAxisTickEvery = 1,
@@ -176,7 +162,7 @@ class BpkBarchart extends Component<Props, State> {
       yAxisDomain = DEFAULT_Y_AXIS_DOMAIN,
       yAxisLabel,
       yAxisMargin = DEFAULT_Y_AXIS_MARGIN,
-      yAxisNumTicks = null,
+      yAxisNumTicks = undefined,
       yAxisTickValue = identity,
       yScaleDataKey,
       ...rest
@@ -193,7 +179,7 @@ class BpkBarchart extends Component<Props, State> {
     const width = this.state.width - margin.left - margin.right;
     const height = this.state.height - margin.bottom - margin.top;
     const maxYValue = getMaxYValue(
-      data.map((d) => d[yScaleDataKey]),
+      data.map((d) => d[yScaleDataKey] as number),
       outlierPercentage,
     );
 
@@ -204,8 +190,8 @@ class BpkBarchart extends Component<Props, State> {
 
     return (
       <BpkMobileScrollContainer
-        leadingIndicatorClassName={leadingScrollIndicatorClassName}
-        trailingIndicatorClassName={trailingScrollIndicatorClassName}
+        leadingIndicatorClassName={leadingScrollIndicatorClassName ?? undefined}
+        trailingIndicatorClassName={trailingScrollIndicatorClassName ?? undefined}
       >
         {!disableDataTable && (
           <BpkChartDataTable
@@ -216,7 +202,6 @@ class BpkBarchart extends Component<Props, State> {
             yAxisLabel={yAxisLabel}
           />
         )}
-        {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={getClassName('bpk-barchart')}
@@ -282,57 +267,5 @@ class BpkBarchart extends Component<Props, State> {
     );
   }
 }
-
-BpkBarchart.propTypes = {
-  /**
-   * **Required**
-   * An array of data points with a value for the x axis and y axis respectively.
-   * The keys for the x axis and y axis can be anything you choose.
-   * Specify the keys with the props `xScaleDataKey` and `yScaleDataKey`.
-   */
-  data: dataProp,
-  /**
-   * The key in each data point that holds the value for the x axis of that data point.
-   */
-  xScaleDataKey: PropTypes.string.isRequired,
-  /**
-   * The key in each data point that holds the value for the y axis of that data point.
-   */
-  yScaleDataKey: PropTypes.string.isRequired,
-  xAxisLabel: PropTypes.string.isRequired,
-  /**
-   * Override the default y axis domain.  This is an array with two elements, the lower and upper domain.
-   * If either value is set to `null` the default value is used instead.
-   */
-  yAxisLabel: PropTypes.string.isRequired,
-  initialWidth: PropTypes.number.isRequired,
-  initialHeight: PropTypes.number.isRequired,
-
-  leadingScrollIndicatorClassName: PropTypes.string,
-  trailingScrollIndicatorClassName: PropTypes.string,
-  /**
-   * Values that are `outlierPercentage` percent above the mean of the whole dataset are considered outliers and rendered cut off instead of at their full height.
-   */
-  outlierPercentage: PropTypes.number,
-  showGridlines: PropTypes.bool,
-  xAxisMargin: PropTypes.number,
-  xAxisTickValue: PropTypes.func,
-  xAxisTickOffset: PropTypes.number,
-  xAxisTickEvery: PropTypes.number,
-  yAxisMargin: PropTypes.number,
-  yAxisTickValue: PropTypes.func,
-  yAxisNumTicks: PropTypes.number,
-  yAxisDomain: PropTypes.arrayOf(PropTypes.number),
-  onBarClick: PropTypes.func,
-  onBarHover: PropTypes.func,
-  onBarFocus: PropTypes.func,
-  getBarLabel: PropTypes.func,
-  /**
-   * Must be a function which returns true based on the `point` argument
-   */
-  getBarSelection: PropTypes.func,
-  BarComponent: PropTypes.elementType,
-  disableDataTable: PropTypes.bool,
-};
 
 export default BpkBarchart;

@@ -16,32 +16,25 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render } from '@testing-library/react';
-import { axe } from 'jest-axe';
 
 import data from '../data.json';
 
-import BpkBarchart from './BpkBarchart';
+import BpkChartDataTable from './BpkChartDataTable';
 
 const { prices } = data;
-const size = 200;
 
-describe('BpkBarchart accessibility tests', () => {
-  it('should not have programmatically-detectable accessibility issues', async () => {
-    const { container } = render(
-      <BpkBarchart
+describe('BpkChartDataTable', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <BpkChartDataTable
         xScaleDataKey="month"
         yScaleDataKey="price"
         xAxisLabel="Month"
         yAxisLabel="Average price (£)"
-        initialWidth={size}
-        initialHeight={size}
         data={prices}
       />,
     );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

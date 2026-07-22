@@ -16,27 +16,31 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { isRTL } from '../../bpk-react-utils';
 
-import { render } from '@testing-library/react';
+import type { Margin } from './common-types';
 
-import data from '../data.json';
+const rtlConditionalValue = (ltrValue: number, rtlValue: number): number =>
+  isRTL() ? rtlValue : ltrValue;
 
-import BpkChartDataTable from './BpkChartDataTable';
+const applyArrayRTLTransform = <T>(arr: T[]): T[] =>
+  isRTL() ? arr.slice(0).reverse() : arr;
 
-const { prices } = data;
+const applyMarginRTLTransform = (obj: Margin): Margin => {
+  if (!isRTL()) {
+    return obj;
+  }
+  const { left, right, ...rest } = obj;
+  return {
+    left: right,
+    right: left,
+    ...rest,
+  };
+};
 
-describe('BpkChartDataTable', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <BpkChartDataTable
-        xScaleDataKey="month"
-        yScaleDataKey="price"
-        xAxisLabel="Month"
-        yAxisLabel="Average price (£)"
-        data={prices}
-      />,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export {
+  applyArrayRTLTransform,
+  applyMarginRTLTransform,
+  rtlConditionalValue,
+  isRTL,
+};

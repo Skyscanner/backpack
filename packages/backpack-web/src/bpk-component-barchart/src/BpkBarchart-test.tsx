@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -102,7 +100,7 @@ describe('BpkBarchart', () => {
         initialWidth={size}
         initialHeight={size}
         data={prices}
-        yAxisDomain={[null, 100]}
+        yAxisDomain={[undefined, 100]}
       />,
     );
     expect(asFragment()).toMatchSnapshot();

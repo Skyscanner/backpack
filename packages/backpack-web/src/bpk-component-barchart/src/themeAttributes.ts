@@ -16,23 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+const themeAttributes: string[] = [
+  'barchartBarBackgroundColor',
+  'barchartBarHoverBackgroundColor',
+  'barchartBarActiveBackgroundColor',
+  'barchartBarSelectedBackgroundColor',
+];
 
-import BpkBarchart from './src/BpkBarchart';
-import BpkBarchartBars from './src/BpkBarchartBars';
-import BpkBarchartDefs from './src/BpkBarchartDefs';
-import BpkChartAxis from './src/BpkChartAxis';
-import BpkChartGridLines from './src/BpkChartGridLines';
-import BpkChartMargin from './src/BpkChartMargin';
-import themeAttributes from './src/themeAttributes';
-
-export default BpkBarchart;
-
-export {
-  BpkBarchartBars,
-  BpkBarchartDefs,
-  BpkChartAxis,
-  BpkChartGridLines,
-  BpkChartMargin,
-  themeAttributes,
-};
+export default themeAttributes;

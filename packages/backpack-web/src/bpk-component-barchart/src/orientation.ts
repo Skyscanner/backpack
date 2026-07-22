@@ -16,19 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { Orientation } from './common-types';
 
-import { render } from '@testing-library/react';
-
-import BpkBarchartDefs from './BpkBarchartDefs';
-
-describe('BpkBarchartDefs', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <svg>
-        <BpkBarchartDefs />
-      </svg>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+export const ORIENTATION_X: Orientation = 'x';
+export const ORIENTATION_Y: Orientation = 'y';

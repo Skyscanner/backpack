@@ -16,28 +16,26 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { BandScale } from './common-types';
 
-import { render } from '@testing-library/react';
-
-import { spacingSm } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
-import BpkChartMargin from './BpkChartMargin';
-
-const margin = {
-  top: spacingSm,
-  right: spacingSm,
-  bottom: spacingSm,
-  left: spacingSm,
+const center = (scale: BandScale) => {
+  let offset = scale.bandwidth() / 2;
+  if (scale.round()) {
+    offset = Math.round(offset);
+  }
+  return (d: unknown) => (scale(d) ?? 0) + offset;
 };
 
-describe('BpkChartMargin', () => {
-  it('should render correctly', () => {
-    const { asFragment } = render(
-      <svg>
-        <BpkChartMargin margin={margin}>Children</BpkChartMargin>
-      </svg>,
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-});
+const identity = <T>(x: T): T => x;
+
+const remToPx = (value: string): number => {
+  let parsed = 0;
+
+  if (/rem$/.test(value)) {
+    parsed = parseFloat(value.replace(/rem/, '')) * 16;
+  }
+
+  return parsed;
+};
+
+export { center, identity, remToPx };

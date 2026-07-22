@@ -16,16 +16,14 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
- 
 
 import { render } from '@testing-library/react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
 
-import BpkChartGridLines from './BpkChartGridLines';
+import BpkChartAxis from './BpkChartAxis';
 import { ORIENTATION_X, ORIENTATION_Y } from './orientation';
 
 const margin = {
@@ -48,12 +46,12 @@ const bandScale = scaleBand()
   ])
   .range([0, size]);
 
-describe('BpkChartGridLines', () => {
+describe('BpkChartAxis', () => {
   describe('X', () => {
     it('should render linear scale', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -68,7 +66,7 @@ describe('BpkChartGridLines', () => {
     it('should render linear scale with "numTicks" attribute', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -84,7 +82,7 @@ describe('BpkChartGridLines', () => {
     it('should render band scale', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -99,7 +97,7 @@ describe('BpkChartGridLines', () => {
     it('should render band scale with "tickEvery" attribute', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -115,7 +113,7 @@ describe('BpkChartGridLines', () => {
     it('should render band scale with "tickEvery" and "tickOffset" attributes', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -123,6 +121,22 @@ describe('BpkChartGridLines', () => {
             orientation={ORIENTATION_X}
             tickEvery={2}
             tickOffset={1}
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render with label', () => {
+      const { asFragment } = render(
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_X}
+            label="X axis label"
           />
         </svg>,
       );
@@ -134,7 +148,7 @@ describe('BpkChartGridLines', () => {
     it('should render linear scale', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -149,7 +163,7 @@ describe('BpkChartGridLines', () => {
     it('should render linear scale with "numTicks" attribute', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -165,7 +179,7 @@ describe('BpkChartGridLines', () => {
     it('should render band scale', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -180,7 +194,7 @@ describe('BpkChartGridLines', () => {
     it('should render band scale with "tickEvery" attribute', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -196,7 +210,7 @@ describe('BpkChartGridLines', () => {
     it('should render band scale with "tickEvery" and "tickOffset" attributes', () => {
       const { asFragment } = render(
         <svg>
-          <BpkChartGridLines
+          <BpkChartAxis
             width={size}
             height={size}
             margin={margin}
@@ -204,6 +218,22 @@ describe('BpkChartGridLines', () => {
             orientation={ORIENTATION_Y}
             tickEvery={2}
             tickOffset={1}
+          />
+        </svg>,
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render with label', () => {
+      const { asFragment } = render(
+        <svg>
+          <BpkChartAxis
+            width={size}
+            height={size}
+            margin={margin}
+            scale={linearScale}
+            orientation={ORIENTATION_Y}
+            label="Y axis label"
           />
         </svg>,
       );

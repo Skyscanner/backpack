@@ -16,8 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleBand } from 'd3-scale';
 
 import data from '../data.json';
@@ -28,7 +27,7 @@ describe('utils', () => {
   describe('identity', () => {
     it('should return the input', () => {
       const obj = {};
-      const arr = [];
+      const arr: unknown[] = [];
       expect(identity(null)).toBe(null);
       expect(identity(0)).toBe(0);
       expect(identity(obj)).toBe(obj);

@@ -16,35 +16,38 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import dataProp from './customPropTypes';
+import type { BarPoint } from './common-types';
 
 import STYLES from './BpkChartDataTable.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 type Props = {
-  data: Array<any>, // We pass any here as the array can contain free form data depending on the user
-  xScaleDataKey: string,
-  yScaleDataKey: string,
-  xAxisLabel: string,
-  yAxisLabel: string,
+  data: BarPoint[];
+  xScaleDataKey: string;
+  yScaleDataKey: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
 };
 
-const BpkChartDataTable = (props: Props) => {
-  const { data = null, xAxisLabel, xScaleDataKey, yAxisLabel, yScaleDataKey } = props;
+const BpkChartDataTable = ({
+  data,
+  xAxisLabel,
+  xScaleDataKey,
+  yAxisLabel,
+  yScaleDataKey,
+}: Props) => {
   const rows = data.map((point, i) => {
     const key = `chart-data-table-row-${i}`;
 
     return (
       <tr key={key}>
-        <td>{point[xScaleDataKey]}</td>
-        <td>{point[yScaleDataKey]}</td>
+        <td>{point[xScaleDataKey] as ReactNode}</td>
+        <td>{point[yScaleDataKey] as ReactNode}</td>
       </tr>
     );
   });
@@ -60,14 +63,6 @@ const BpkChartDataTable = (props: Props) => {
       <tbody>{rows}</tbody>
     </table>
   );
-};
-
-BpkChartDataTable.propTypes = {
-  data: dataProp, // This is actually required and will fail if not present
-  xScaleDataKey: PropTypes.string.isRequired,
-  yScaleDataKey: PropTypes.string.isRequired,
-  xAxisLabel: PropTypes.string.isRequired,
-  yAxisLabel: PropTypes.string.isRequired,
 };
 
 export default BpkChartDataTable;

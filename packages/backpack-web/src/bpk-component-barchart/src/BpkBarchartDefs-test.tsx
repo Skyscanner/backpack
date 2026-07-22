@@ -16,28 +16,17 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import { render } from '@testing-library/react';
 
-// Using Function here as scale refers to the d3-scale 3rd party library
-const center = (scale: Function) => {
-  let offset = scale.bandwidth() / 2;
-  if (scale.round()) {
-    offset = Math.round(offset);
-  }
-  return (d: number) => scale(d) + offset;
-};
+import BpkBarchartDefs from './BpkBarchartDefs';
 
-// Using any here as x can be any form see utils-test.js
-const identity = (x: any) => x;
-
-const remToPx = (value: string) => {
-  let parsed = 0;
-
-  if (/rem$/.test(value)) {
-    parsed = parseFloat(value.replace(/rem/, '')) * 16;
-  }
-
-  return parsed;
-};
-
-export { center, identity, remToPx };
+describe('BpkBarchartDefs', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(
+      <svg>
+        <BpkBarchartDefs />
+      </svg>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

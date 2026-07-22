@@ -16,7 +16,19 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode, SVGProps } from 'react';
 
-export const ORIENTATION_X = 'x';
-export const ORIENTATION_Y = 'y';
+import type { Margin } from './common-types';
+
+type Props = Omit<SVGProps<SVGGElement>, 'transform'> & {
+  children: ReactNode;
+  margin: Margin;
+};
+
+const BpkChartMargin = ({ children, margin, ...rest }: Props) => (
+  <g transform={`translate(${margin.left}, ${margin.top})`} {...rest}>
+    {children}
+  </g>
+);
+
+export default BpkChartMargin;

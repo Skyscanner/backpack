@@ -16,13 +16,11 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
 // TODO: remove this once we update the Chart implementation to accept values
 // other than pixels
- 
 
 import { render, fireEvent, screen } from '@testing-library/react';
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { scaleLinear, scaleBand } from 'd3-scale';
 
 import data from '../data.json';
