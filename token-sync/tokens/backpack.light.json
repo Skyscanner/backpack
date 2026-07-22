@@ -763,7 +763,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.24}",
+        "$value": 1.5,
         "$type": "number"
       },
       "Size": {
@@ -785,7 +785,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.28}",
+        "$value": 1.399999976158142,
         "$type": "number"
       },
       "Size": {
@@ -807,7 +807,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.16}",
+        "$value": 1.3300000429153442,
         "$type": "number"
       },
       "Size": {
@@ -829,7 +829,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.192}",
+        "$value": 0.800000011920929,
         "$type": "number"
       },
       "Size": {
@@ -851,7 +851,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.153}",
+        "$value": 0.800000011920929,
         "$type": "number"
       },
       "Size": {
@@ -873,7 +873,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.115}",
+        "$value": 0.800000011920929,
         "$type": "number"
       },
       "Size": {
@@ -895,7 +895,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.82}",
+        "$value": 0.8500000238418579,
         "$type": "number"
       },
       "Size": {
@@ -917,7 +917,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.64}",
+        "$value": 0.8500000238418579,
         "$type": "number"
       },
       "Size": {
@@ -939,7 +939,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.40}",
+        "$value": 0.8500000238418579,
         "$type": "number"
       },
       "Size": {
@@ -961,7 +961,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.56}",
+        "$value": 1.1670000553131104,
         "$type": "number"
       },
       "Size": {
@@ -983,7 +983,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.40}",
+        "$value": 1.25,
         "$type": "number"
       },
       "Size": {
@@ -1005,7 +1005,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.28}",
+        "$value": 1.399999976158142,
         "$type": "number"
       },
       "Size": {
@@ -1027,7 +1027,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.22}",
+        "$value": 1.399999976158142,
         "$type": "number"
       },
       "Size": {
@@ -1049,7 +1049,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.20}",
+        "$value": 1.399999976158142,
         "$type": "number"
       },
       "Size": {
@@ -1071,7 +1071,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.16}",
+        "$value": 1.399999976158142,
         "$type": "number"
       },
       "Size": {
@@ -1093,7 +1093,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.20}",
+        "$value": 1.4279999732971191,
         "$type": "number"
       },
       "Size": {
@@ -1115,7 +1115,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.48}",
+        "$value": 1.2000000476837158,
         "$type": "number"
       },
       "Size": {
@@ -1137,7 +1137,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.40}",
+        "$value": 1.25,
         "$type": "number"
       },
       "Size": {
@@ -1159,7 +1159,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.28}",
+        "$value": 1.159999966621399,
         "$type": "number"
       },
       "Size": {
@@ -1181,7 +1181,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.24}",
+        "$value": 1.2000000476837158,
         "$type": "number"
       },
       "Size": {
@@ -1203,7 +1203,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.20}",
+        "$value": 1.25,
         "$type": "number"
       },
       "Size": {
@@ -1225,7 +1225,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.120}",
+        "$value": 1,
         "$type": "number"
       },
       "Size": {
@@ -1247,7 +1247,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.96}",
+        "$value": 1,
         "$type": "number"
       },
       "Size": {
@@ -1269,7 +1269,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.76}",
+        "$value": 1,
         "$type": "number"
       },
       "Size": {
@@ -1291,7 +1291,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.64}",
+        "$value": 1,
         "$type": "number"
       },
       "Size": {
@@ -1313,7 +1313,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.48}",
+        "$value": 1,
         "$type": "number"
       },
       "Size": {
@@ -1335,7 +1335,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.40}",
+        "$value": 1,
         "$type": "number"
       },
       "Size": {
@@ -1357,7 +1357,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.24}",
+        "$value": 1.5,
         "$type": "number"
       },
       "Size": {
@@ -1379,7 +1379,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.20}",
+        "$value": 1.4199999570846558,
         "$type": "number"
       },
       "Size": {
@@ -1401,7 +1401,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.16}",
+        "$value": 1.3300000429153442,
         "$type": "number"
       },
       "Size": {
@@ -1423,7 +1423,7 @@
         "$type": "dimension"
       },
       "Line-height": {
-        "$value": "{Type.Line-height.32}",
+        "$value": 1.3300000429153442,
         "$type": "number"
       },
       "Size": {
