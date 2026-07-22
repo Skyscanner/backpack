@@ -20,7 +20,7 @@
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+import { action } from 'bpk-storybook-utils';
 
 
 import {
@@ -219,12 +219,6 @@ const MixedExample = () => (
   </div>
 );
 
-const DarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <MixedExample />
-  </BpkDarkExampleWrapper>
-);
-
 const meta = {
   title: 'bpk-component-star-rating',
   component: BpkStarRating,
@@ -291,8 +285,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-export const VisualTestDark = {
-  render: () => <DarkExample />,
 };
