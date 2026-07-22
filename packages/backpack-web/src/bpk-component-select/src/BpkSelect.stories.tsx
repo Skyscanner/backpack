@@ -21,8 +21,8 @@ import type { ChangeEvent } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+// @ts-expect-error Untyped import
+import { action } from 'bpk-storybook-utils';
 
 import readme from '../README.md';
 
@@ -283,12 +283,6 @@ const MixedExample = () => (
   </div>
 );
 
-const DarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <MixedExample />
-  </BpkDarkExampleWrapper>
-);
-
 const meta = {
   title: 'bpk-component-select',
   component: BpkSelect,
@@ -359,10 +353,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-export const VisualTestWithDarkMode = {
-  render: () => <DarkExample />,
-  parameters: { bpkTheme: 'dark' },
-  tags: ['dark-mode-compatible'],
 };
