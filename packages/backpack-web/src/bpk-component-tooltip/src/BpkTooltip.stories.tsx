@@ -18,9 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { withDefaultProps } from '../../bpk-react-utils';
 import readme from '../README.md';
@@ -204,26 +201,6 @@ export const WithoutPadding = { render: () => <NoPaddingExample /> };
 export const OnALink = { render: () => <LinkExample /> };
 export const WithCustomZIndex = { render: () => <CustomZIndexExample /> };
 
-const VisualTestDarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <div style={wrapperStyle}>
-      <BpkTooltip
-        ariaLabel="Montréal-Trudeau International Airport"
-        id="my-tooltip-dark"
-        type={TOOLTIP_TYPES.dark}
-        target={
-          <div>
-            <Heading>YUL</Heading>
-          </div>
-        }
-        isOpen
-      >
-        Montréal-Trudeau International Airport
-      </BpkTooltip>
-    </div>
-  </BpkDarkExampleWrapper>
-);
-
 export const VisualTest = {
   render: () => <VisualTestExample />,
   parameters: {
@@ -237,15 +214,6 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-  parameters: {
-    percy: {
-      waitForTimeout: 10000
-    }
-  }
-};
-
-export const VisualTestDark = {
-  render: () => <VisualTestDarkExample />,
   parameters: {
     percy: {
       waitForTimeout: 10000
