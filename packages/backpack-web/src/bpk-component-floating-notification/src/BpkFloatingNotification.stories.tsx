@@ -18,6 +18,7 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkIconHeart from '../../bpk-component-icon/sm/heart';
 import BpkIconInformationCircle from '../../bpk-component-icon/sm/information-circle';
@@ -87,6 +88,28 @@ const CriticalWithCtaExample = () => (
   />
 );
 
+const DarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkFloatingNotification
+      icon={BpkIconHeart}
+      ctaText="View"
+      text="Saved"
+      hideAfter={2_147_483_647}
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const DarkCriticalExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkFloatingNotification
+      ctaText="View"
+      text="Critical notification"
+      type={NOTIFICATION_TYPES.critical}
+      hideAfter={2_147_483_647}
+    />
+  </BpkDarkExampleWrapper>
+);
+
 const meta = {
   title: 'bpk-component-floating-notification',
   component: BpkFloatingNotification,
@@ -100,6 +123,7 @@ const meta = {
       ),
     },
   },
+  tags: ['dark-mode-compatible'],
 } satisfies Meta;
 
 export default meta;
@@ -141,4 +165,12 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const DarkDefault = {
+  render: () => <DarkExample />,
+};
+
+export const DarkCritical = {
+  render: () => <DarkCriticalExample />,
 };
