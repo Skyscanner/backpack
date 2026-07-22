@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { forwardRef } from 'react';
 import type { ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -35,7 +36,7 @@ export interface Props extends CommonProps {
   trailingAccessoryView?: ReactNode;
 }
 
-const BpkSelectableChip = ({
+const BpkSelectableChip = forwardRef<HTMLButtonElement, Props>(({
   accessibilityLabel,
   children,
   className,
@@ -47,7 +48,7 @@ const BpkSelectableChip = ({
   trailingAccessoryView = null,
   type = CHIP_TYPES.default,
   ...rest
-}: Props) => {
+}, ref) => {
   const classNames = getClassName(
     'bpk-chip',
     `bpk-chip--${type}`,
@@ -61,6 +62,7 @@ const BpkSelectableChip = ({
 
   return (
     <button
+      ref={ref}
       aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
       className={classNames}
       {...getDataComponentAttribute('SelectableChip')}
@@ -88,6 +90,8 @@ const BpkSelectableChip = ({
       )}
     </button>
   );
-};
+});
+
+BpkSelectableChip.displayName = 'BpkSelectableChip';
 
 export default BpkSelectableChip;
