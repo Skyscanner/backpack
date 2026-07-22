@@ -18,8 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import { BpkFlareBar, BpkContentBubble } from "..";
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -153,19 +151,6 @@ const MixedExample = () => (
   </div>
 );
 
-const DarkModeExample = () => (
-  <BpkDarkExampleWrapper>
-    <div className={getClassName('bpk-flare-stories__container')}>
-      <BpkContentBubble
-        className={getClassName('bpk-flare-stories__content-bubble')}
-        rounded
-        flareProps={{svgClassName: getClassName('bpk-flare-stories__flare-bar--svg')}}
-        content={contentShort}
-      />
-    </div>
-  </BpkDarkExampleWrapper>
-);
-
 export default {
   title: 'bpk-component-flare',
   component: BpkContentBubble,
@@ -210,10 +195,6 @@ export const BpkContentBubbleFixedHeight = {
 
 export const BpkContentBubblePointerHiddenRounded = {
   render: () => <ContentBubblePointerHiddenRoundedExample />,
-};
-
-export const BpkContentBubbleDarkMode = {
-  render: () => <DarkModeExample />,
 };
 
 export const VisualTest = {
