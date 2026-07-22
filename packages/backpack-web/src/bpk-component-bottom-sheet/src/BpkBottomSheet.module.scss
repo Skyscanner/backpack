@@ -17,36 +17,34 @@
  */
 
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/borders';
 @use '../../bpk-mixins/breakpoints';
 @use '../../bpk-mixins/radii';
 @use '../../bpk-mixins/shadows';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
 
 @mixin animation-slide-up {
-  animation-duration: tokens.$bpk-duration-sm;
+  animation-duration: tokens.$bpk-duration-sm; /* gap: animation duration */
   animation-name: slide-up;
   animation-timing-function: ease-in-out;
 }
 
 @mixin animation-slide-down {
-  animation-duration: tokens.$bpk-duration-sm;
+  animation-duration: tokens.$bpk-duration-sm; /* gap: animation duration */
   animation-name: slide-down;
   animation-timing-function: ease-in-out;
 }
 
 .bpk-bottom-sheet {
-  z-index: tokens.$bpk-zindex-modal;
+  z-index: tokens.$bpk-zindex-modal; /* gap: z-index */
   width: 100%;
-  max-width: tokens.$bpk-modal-max-width;
+  max-width: tokens.$bpk-modal-max-width; /* gap: max-width */
   margin: auto;
   transition:
     opacity tokens.$bpk-duration-sm ease-in-out,
-    transform tokens.$bpk-duration-sm ease-in-out;
+    /* gap: animation duration */ transform tokens.$bpk-duration-sm ease-in-out; /* gap: animation duration */
+
   outline: 0;
-  background-color: tokens.$bpk-modal-background-color;
-  opacity: tokens.$bpk-modal-opacity;
+  background-color: tokens.$bpk-modal-background-color; /* gap: backdrop colour */
+  opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
 
   // required to prevent the header extending beyond the rounded corners
   overflow: hidden;
@@ -66,7 +64,8 @@
     height: fit-content;
     max-height: 90%;
     margin-bottom: 0;
-    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    border-radius: var(--bpk-radius-lg, tokens.$bpk-border-radius-lg)
+      var(--bpk-radius-lg, tokens.$bpk-border-radius-lg) 0 0;
     overflow-x: hidden;
   }
 
@@ -79,7 +78,7 @@
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(0.9);
-      opacity: tokens.$bpk-modal-initial-opacity;
+      opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
       animation: none;
     }
   }
@@ -87,7 +86,7 @@
   &--appear-active {
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(1);
-      opacity: tokens.$bpk-modal-opacity;
+      opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
     }
   }
 
@@ -173,18 +172,16 @@
 
   &--wide {
     @include breakpoints.bpk-breakpoint-above-mobile {
-      max-width: tokens.$bpk-modal-wide-max-width;
+      max-width: tokens.$bpk-modal-wide-max-width; /* gap: max-width */
     }
   }
 
   &--header-wrapper {
     position: sticky;
     top: 0;
-    z-index: tokens.$bpk-zindex-tooltip - 1;
-
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-navigation-bar-background-color,
+    z-index: tokens.$bpk-zindex-tooltip - 1; /* gap: z-index */
+    background-color: var(
+      --bpk-surface-default,
       tokens.$bpk-surface-default-day
     );
   }

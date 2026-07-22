@@ -21,7 +21,7 @@ import { Component, Children } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import { action } from 'bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 
 import BpkButton from '../../bpk-component-button';
@@ -465,3 +465,16 @@ export const BasePadding = { render: () => <BasePaddingExample /> };
 export const LgPadding = { render: () => <LgPaddingExample /> };
 export const XXLPadding = { render: () => <XXLPaddingExample /> };
 export const XXXLPadding = { render: () => <XXXLPaddingExample /> };
+export const DarkMode = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <BottomSheetContainer
+        title="Bottom Sheet title"
+        closeLabel="Close Bottom Sheet"
+        isComponentOpen
+      >
+        This is a bottom sheet in dark mode.
+      </BottomSheetContainer>
+    </BpkDarkExampleWrapper>
+  ),
+};
