@@ -46,6 +46,10 @@ ships a simpler no-arg `() => ReactNode` variant of the same idea in its fork).
 - `renderChip?: (props: ChipRenderProps) => ReactElement | null` on `ChipItem`.
 - New exported `ChipRenderProps` type.
 - `Chip` internal render branch that calls `renderChip` with group-computed props.
+- **`forwardRef` on `BpkSelectableChip` and `BpkDropdownChip`** so `BpkPopover`
+  can inject its ref into the chip target. Without this the popover cannot obtain
+  the chip's DOM node and anchoring still fails — it is a hard prerequisite, not
+  optional. (Added on the #4918 branch; `bpk-component-chip` package.)
 - `WithPopover` Storybook story.
 - Barrel export of `ChipRenderProps` from `index.ts`.
 
@@ -161,7 +165,60 @@ Notes:
 rail machinery (`BpkMobileScrollContainer` + `scrollContainerRef` + two `Nudger`s
 + `stickyChip`) and `ChipGroupContent` are unchanged.
 
-### 3. Storybook — `WithPopover` story
+### 3. `forwardRef` on the chip components (`bpk-component-chip`)
+
+**Prerequisite for popover anchoring.** `BpkPopover` positions itself by
+`cloneElement(target, { ref: refs.setReference })` — it injects a ref into its
+`target`. If the target is a `<BpkDropdownChip>` that does not forward that ref to
+its underlying `<button>`, `@floating-ui/react` receives `null` and the popover
+still cannot anchor. So the chip components used as popover targets must forward
+their ref to the DOM node.
+
+`BpkSelectableChip` (the leaf that renders the `<button>`) and `BpkDropdownChip`
+(which wraps it) are wrapped in `forwardRef`:
+
+```tsx
+// BpkSelectableChip.tsx
+const BpkSelectableChip = forwardRef<HTMLButtonElement, Props>(
+  ({ accessibilityLabel, children, className, /* … */ role = 'checkbox', /* … */ }, ref) => {
+    // …
+    return (
+      <button
+        ref={ref}
+        aria-checked={role === 'button' || role === 'tab' ? undefined : selected}
+        className={classNames}
+        {/* …unchanged… */}
+      >
+        {/* …unchanged… */}
+      </button>
+    );
+  },
+);
+
+// BpkDropdownChip.tsx
+const BpkDropdownChip = forwardRef<HTMLButtonElement, Props>(
+  ({ disabled = false, leadingAccessoryView = null, selected = false, type = CHIP_TYPES.default, ...rest }, ref) => (
+    <BpkSelectableChip
+      ref={ref}
+      disabled={disabled}
+      leadingAccessoryView={leadingAccessoryView}
+      selected={selected}
+      type={type}
+      {...getDataComponentAttribute('DropdownChip')}
+      {...rest}
+      trailingAccessoryView={<ChevronDownIconSm />}
+    />
+  ),
+);
+```
+
+This is a backward-compatible, internal change — `forwardRef` does not alter the
+public props. Other chip variants (`BpkDismissibleChip`, `BpkIconChip`) are out of
+scope unless a caller needs them as popover targets; the design leaves them
+untouched to keep the change minimal, and this limit is called out so it is not
+mistaken for full coverage.
+
+### 4. Storybook — `WithPopover` story
 
 Add to the main `BpkChipGroup.stories.tsx` (matching PR #4918):
 
@@ -182,6 +239,7 @@ const WithPopoverExample = () => {
         label={`${label} options`}
         labelAsTitle
         placement="bottom"
+        showArrow={false}
         closeButtonLabel={`Close ${label} options`}
         onClose={() => {}}
         target={
@@ -218,12 +276,12 @@ Delete the standalone demo files added by PR #4910:
 `BpkChipGroupPopoverExample.stories.tsx` and
 `BpkChipGroupPopoverExample.stories.module.scss` — superseded by `WithPopover`.
 
-### 4. Barrel export
+### 5. Barrel export
 
 Export `ChipRenderProps` from `bpk-component-chip-group/index.ts` alongside
 `ChipItem` / `MultiSelectProps` / etc., so consumers can type their render fns.
 
-### 5. Tests, docs, verification
+### 6. Tests, docs, verification
 
 Tests (`BpkMultiSelectChipGroup-test.tsx`):
 - `renderChip` is called and its returned element is rendered instead of the
@@ -236,6 +294,10 @@ Tests (`BpkMultiSelectChipGroup-test.tsx`):
 - existing `chips` array cases stay green (backward-compat evidence).
 - update snapshots if any.
 
+Tests (`bpk-component-chip`): a ref passed to `BpkSelectableChip` /
+`BpkDropdownChip` resolves to the underlying `<button>` element (guards the
+popover-anchoring prerequisite). Existing chip tests stay green.
+
 Docs:
 - Update `bpk-component-chip-group/README.md` with the `renderChip` usage and the
   popover-anchoring example; note that `renderChip` receives group-computed props
@@ -245,20 +307,27 @@ Docs:
 Verification (direct commands, not nx cached tasks):
 - `pnpm eslint <changed files>`
 - `pnpm tsc` (or the project's tsc)
-- `pnpm jest bpk-component-chip-group`
+- `pnpm jest bpk-component-chip-group bpk-component-chip`
 - Manual Storybook check: the `WithPopover` story — click different chips, each
   popover anchors to its own chip.
 
 ### Changed files
 
+**`bpk-component-chip-group`:**
 1. `BpkMultiSelectChipGroup.tsx` — add `ChipRenderProps` type, `renderChip` on
    `ChipItem`, hoist `hidden`, extract `handleClick`, add the `renderChip` branch.
 2. `index.ts` — export `ChipRenderProps`.
-3. `BpkChipGroup.stories.tsx` — add `WithPopover` story.
+3. `BpkChipGroup.stories.tsx` — add `WithPopover` story (with `showArrow={false}`).
 4. Delete `BpkChipGroupPopoverExample.stories.tsx` + `.stories.module.scss`.
 5. `BpkMultiSelectChipGroup-test.tsx` — `renderChip` / `ChipRenderProps` / hidden
    cases.
 6. `README.md` — `renderChip` usage.
+
+**`bpk-component-chip`:**
+7. `BpkSelectableChip.tsx` — wrap in `forwardRef`, forward `ref` to `<button>`.
+8. `BpkDropdownChip.tsx` — wrap in `forwardRef`, forward `ref` to
+   `BpkSelectableChip`.
+9. chip tests — ref-forwarding case.
 
 (No SCSS change expected, so no `.module.css` recompile — confirm during
 implementation.)
