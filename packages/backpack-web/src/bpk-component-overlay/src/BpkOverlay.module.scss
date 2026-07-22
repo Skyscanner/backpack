@@ -21,9 +21,6 @@
 // CSS var wrapping uses color-mix(in srgb, COLOR X%, transparent) because
 // rgba() cannot accept CSS custom properties as the colour argument.
 // --bpk-text-primary flips automatically between light (#161616) and dark (#ffffff).
-// $bpk-color-sky-blue-shade-03 is kept as a bare SASS token — gap: raw primitive colour,
-// no semantic CSS var mapping exists.
-
 .bpk-overlay {
   &__wrapper {
     position: relative;
@@ -41,7 +38,6 @@
     border-radius: inherit;
 
     &--tint {
-      /* gap: raw primitive colour, no semantic mapping */
       background: rgba(tokens.$bpk-color-sky-blue-shade-03, 0.56);
     }
 
