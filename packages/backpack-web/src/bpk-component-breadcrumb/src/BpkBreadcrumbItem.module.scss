@@ -23,6 +23,8 @@
 /* After adding the wrapper around the icon, need to set the line
     height to stop the 16x16 or 32x32(zoomed) icon from expanding
     verically past it's 16 or 32 pixels height */
+
+/* gap: typography line-height */
 $icon-height: math.div(tokens.$bpk-line-height-xs, 2);
 
 .bpk-breadcrumb-item {
@@ -35,12 +37,12 @@ $icon-height: math.div(tokens.$bpk-line-height-xs, 2);
   }
 
   &__active-item {
-    color: tokens.$bpk-text-secondary-day;
+    color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
   }
 
   &__arrow {
     margin: 0 tokens.bpk-spacing-sm();
     line-height: $icon-height;
-    fill: tokens.$bpk-text-disabled-day;
+    fill: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
   }
 }
