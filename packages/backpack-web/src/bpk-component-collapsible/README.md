@@ -174,7 +174,7 @@ Both `Root` and `RootProvider` accept an `asChild` prop. By default they render 
 
 In both cases the `<li>` becomes the collapsible root — no wrapper `<div>` is inserted between it and the `<ul>`.
 
-> **Note:** `asChild` requires exactly one React element child. Passing a fragment, a string, or multiple siblings will throw a runtime error from Ark's slot merging.
+> **Note:** `asChild` requires exactly one React element child. Passing a fragment, a string, or multiple siblings will throw a runtime error from Ark's slot merging. If the child is a custom React component (rather than a DOM element), it must forward the merged props and `ref` to an underlying DOM node — e.g. via `forwardRef` — otherwise the class names, ARIA attributes, and data attributes will not be applied.
 
 ## Lazy mounting
 

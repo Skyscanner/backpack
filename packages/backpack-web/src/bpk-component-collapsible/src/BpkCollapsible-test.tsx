@@ -328,7 +328,7 @@ describe('BpkCollapsible', () => {
 
   describe('Root asChild', () => {
     it('renders no wrapper element when asChild is true', () => {
-      const { container } = render(
+      render(
         <ul>
           <BpkCollapsible.Root asChild>
             <li>
@@ -338,14 +338,14 @@ describe('BpkCollapsible', () => {
           </BpkCollapsible.Root>
         </ul>,
       );
-      const list = container.querySelector('ul') as HTMLElement;
+      const list = screen.getByRole('list');
       // With asChild the <li> is the direct child of <ul>; without asChild
       // Ark injects a <div> between them.
       expect(list.firstElementChild?.tagName).toBe('LI');
     });
 
     it('renders a wrapper element when asChild is omitted', () => {
-      const { container } = render(
+      render(
         <div data-testid="wrapper">
           <BpkCollapsible.Root>
             <span>
@@ -355,7 +355,7 @@ describe('BpkCollapsible', () => {
           </BpkCollapsible.Root>
         </div>,
       );
-      const wrapper = container.querySelector('[data-testid="wrapper"]') as HTMLElement;
+      const wrapper = screen.getByTestId('wrapper');
       expect(wrapper.firstElementChild?.tagName).toBe('DIV');
     });
 
@@ -393,8 +393,8 @@ describe('BpkCollapsible', () => {
           </ul>
         );
       };
-      const { container } = render(<Harness />);
-      const list = container.querySelector('ul') as HTMLElement;
+      render(<Harness />);
+      const list = screen.getByRole('list');
       // With asChild the <li> is the direct child of <ul>; without asChild
       // Ark injects a <div> between them.
       expect(list.firstElementChild?.tagName).toBe('LI');
@@ -414,8 +414,8 @@ describe('BpkCollapsible', () => {
           </div>
         );
       };
-      const { container } = render(<Harness />);
-      const wrapper = container.querySelector('[data-testid="wrapper"]') as HTMLElement;
+      render(<Harness />);
+      const wrapper = screen.getByTestId('wrapper');
       expect(wrapper.firstElementChild?.tagName).toBe('DIV');
     });
 
