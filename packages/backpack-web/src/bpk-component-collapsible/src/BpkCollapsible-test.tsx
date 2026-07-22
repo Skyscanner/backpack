@@ -27,7 +27,7 @@ import useBpkCollapsibleContext from './useBpkCollapsibleContext';
 
 import type { BpkCollapsibleRootProps } from './BpkCollapsibleRoot';
 
-const SimpleCollapsible = (props: Partial<BpkCollapsibleRootProps> = {}) => (
+const SimpleCollapsible = (props: Omit<BpkCollapsibleRootProps, 'children' | 'asChild'> = {}) => (
   <BpkCollapsible.Root {...props}>
     <BpkCollapsible.Trigger>
       Toggle
