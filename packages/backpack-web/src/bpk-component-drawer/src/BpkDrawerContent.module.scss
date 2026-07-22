@@ -27,14 +27,14 @@
   position: fixed;
   right: 0;
   display: flex;
-  z-index: tokens.$bpk-zindex-drawer; /* gap: z-index */
+  z-index: tokens.$bpk-zindex-drawer;
   width: var(--dynamic-width);
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
   transition:
     transform tokens.$bpk-duration-base ease,
-    /* gap: animation duration */ width tokens.$bpk-duration-base ease; /* gap: animation duration */
+ width tokens.$bpk-duration-base ease;
 
   outline: 0;
   background: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
@@ -63,7 +63,7 @@
   }
 
   &--exiting {
-    transition: transform tokens.$bpk-duration-base ease; /* gap: animation duration */
+    transition: transform tokens.$bpk-duration-base ease;
   }
 
   &--exiting,
@@ -116,20 +116,20 @@
       transform: scale(0.9);
       transition:
         opacity tokens.$bpk-duration-base ease-in-out,
-        /* gap: animation duration */ transform tokens.$bpk-duration-base
-          ease-in-out; /* gap: animation duration */
+ transform tokens.$bpk-duration-base
+          ease-in-out;
 
-      opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
+      opacity: tokens.$bpk-modal-initial-opacity;
 
       &--entering,
       &--entered {
         transform: scale(1);
-        opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
+        opacity: tokens.$bpk-modal-opacity;
       }
 
       &--exited {
         transform: scale(0.9);
-        opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
+        opacity: tokens.$bpk-modal-initial-opacity;
       }
 
       &--exiting {
