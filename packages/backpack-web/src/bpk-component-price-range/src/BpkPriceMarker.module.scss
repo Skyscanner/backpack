@@ -32,7 +32,7 @@ $arrow-size: tokens.bpk-spacing-base();
   border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
   background: none;
   white-space: nowrap;
-  box-shadow: tokens.$bpk-box-shadow-sm; /* gap: box-shadow shorthand, no CSS var */
+  box-shadow: tokens.$bpk-box-shadow-sm;
   margin-block-end: tokens.bpk-spacing-sm() * 1.5;
 
   span {
