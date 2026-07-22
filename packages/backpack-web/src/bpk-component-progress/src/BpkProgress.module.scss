@@ -17,18 +17,20 @@
  */
 
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
 
 .bpk-progress {
   position: relative;
   height: tokens.bpk-spacing-base();
-  border-radius: tokens.$bpk-border-radius-md;
-  background-color: tokens.$bpk-surface-highlight-day;
+  border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
+  background-color: var(
+    --bpk-surface-highlight,
+    tokens.$bpk-surface-highlight-day
+  );
   overflow: hidden;
 
   &--small {
     height: tokens.bpk-spacing-md();
-    border-radius: tokens.$bpk-border-radius-xs;
+    border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
   }
 
   &__value {
@@ -39,14 +41,9 @@
     left: 0;
     content: ' ';
     width: 0;
-    transition: width tokens.$bpk-duration-base ease-in-out;
-    border-radius: tokens.$bpk-border-radius-sm;
-
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-progress-bar-fill-color,
-      tokens.$bpk-core-accent-day
-    );
+    transition: width tokens.$bpk-duration-base ease-in-out; /* gap: animation duration */
+    border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
+    background-color: var(--bpk-core-accent, tokens.$bpk-core-accent-day);
 
     &--stepped {
       border-radius: 0;
@@ -57,7 +54,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2 * tokens.$bpk-one-pixel-rem;
-    background: tokens.$bpk-canvas-day;
+    width: 2 * tokens.$bpk-one-pixel-rem; /* gap: hairline border utility */
+    background: var(--bpk-surface-default, tokens.$bpk-canvas-day);
   }
 }

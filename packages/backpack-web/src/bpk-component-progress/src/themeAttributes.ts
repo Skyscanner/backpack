@@ -16,4 +16,4 @@
  * limitations under the License.
  */
 
-export default ['progressBarFillColor'];
+export default [];
