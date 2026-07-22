@@ -19,7 +19,10 @@
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/scroll-indicators';
 
-$custom-color: tokens.$bpk-status-success-fill-day;
+$custom-color: var(
+  --bpk-surface-success-fill,
+  tokens.$bpk-status-success-fill-day
+);
 
 .bpk-horizontal-nav-custom-scrollers {
   background: $custom-color;

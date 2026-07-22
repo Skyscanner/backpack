@@ -20,7 +20,6 @@ import { Fragment, useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-
 import {
   onePixelRem,
   colorSkyGrayTint06,
@@ -282,4 +281,14 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const VisualTestDark = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <MixedExample />
+    </BpkDarkExampleWrapper>
+  ),
+  parameters: { bpkTheme: 'dark' },
+  tags: ['dark-mode-compatible'],
 };
