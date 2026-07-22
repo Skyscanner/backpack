@@ -63,6 +63,7 @@
 
   // When persistent, set background to override any validity icons
   // appearing and make the clear button always display.
+  // gap: $bpk-input-background — form input background, no CSS var exists yet
   &--persistent-clearable {
     background: tokens.$bpk-input-background;
   }
