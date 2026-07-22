@@ -21,7 +21,7 @@ import { useState } from 'react';
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { backgroundElevation03DarkColor } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import { BpkBackgroundImage } from '../../bpk-component-image';
 import { cssModules } from '../../bpk-react-utils';
@@ -75,10 +75,7 @@ const OverImageExample = () => (
     src={image}
   >
     <div className={getClassName('bpk-page-indicator-examples__container')}>
-      <PageIndicatorContainer
-        totalIndicators={3}
-        variant={VARIANT.overImage}
-      />
+      <PageIndicatorContainer totalIndicators={3} variant={VARIANT.overImage} />
     </div>
   </BpkBackgroundImage>
 );
@@ -89,14 +86,18 @@ const WithNavExample = () => (
 
 const WithNavOverImageSpacedExample = () => (
   <div
-    style={{ width: imageWidth, height: imageHeight, backgroundColor: backgroundElevation03DarkColor }}
+    style={{
+      width: imageWidth,
+      height: imageHeight,
+      backgroundColor: backgroundElevation03DarkColor,
+    }}
   >
     <div className={getClassName('bpk-page-indicator-examples__container')}>
       <PageIndicatorContainer
         totalIndicators={3}
         variant={VARIANT.overImageSpaced}
         showNav
-        onClick={ () => {}}
+        onClick={() => {}}
       />
     </div>
   </div>
@@ -139,6 +140,15 @@ const CarouselExample = () => {
     </BpkBackgroundImage>
   );
 };
+
+const DarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <DefaultExample />
+    <ThreePagesExample />
+    <WithNavExample />
+    <ThreePagesWithNavExample />
+  </BpkDarkExampleWrapper>
+);
 
 const VisualTestExample = () => (
   <>
@@ -194,6 +204,12 @@ export const WithNavOverImageSpaced = {
 
 export const Carousel = {
   render: () => <CarouselExample />,
+};
+
+export const OnDark = {
+  render: () => <DarkExample />,
+  parameters: { bpkTheme: 'dark' },
+  tags: ['dark-mode-compatible'],
 };
 
 export const VisualTest = {
