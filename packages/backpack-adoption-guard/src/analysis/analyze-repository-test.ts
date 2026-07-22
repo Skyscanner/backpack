@@ -132,7 +132,7 @@ export const App = () => (
 `,
     );
 
-    const report = await analyzeRepository(repoPath);
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
 
     expect(report.usage.backpack.count).toBe(1);
     // classNames(variable) cannot be statically resolved → ds-analyser does
@@ -155,13 +155,133 @@ export const App = () => (
 `,
     );
 
-    const report = await analyzeRepository(repoPath);
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
 
     // 1 Backpack usage, but classNames(...) has 3 string args → overrideCount 3.
     // ds-analyser pure = backpackUsages - classNameOverrides = 1 - 3 = -2.
     expect(report.usage.backpack.count).toBe(1);
     expect(report.usage.pureBackpack.count).toBe(-2);
     expect(report.usage.nonPureBackpack.count).toBe(3);
+  });
+
+  it("attributes usages to NX projects, keeping an (unassigned) bucket", async () => {
+    await writeRepoFile(repoPath, "nx.json", JSON.stringify({ version: 2 }));
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/project.json",
+      JSON.stringify({
+        name: "flights",
+        root: "apps/flights",
+        projectType: "application",
+      }),
+    );
+    await writeRepoFile(
+      repoPath,
+      "libs/shared-ui/project.json",
+      JSON.stringify({
+        name: "shared-ui",
+        root: "libs/shared-ui",
+        projectType: "library",
+      }),
+    );
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/src/App.tsx",
+      `
+import { BpkButton } from '@skyscanner/backpack-web';
+
+export const App = () => <BpkButton>Go</BpkButton>;
+`,
+    );
+    await writeRepoFile(
+      repoPath,
+      "libs/shared-ui/src/Card.tsx",
+      `
+import { BpkCard, BpkText } from '@skyscanner/backpack-web';
+
+export const Card = () => <BpkCard><BpkText>t</BpkText></BpkCard>;
+`,
+    );
+    await writeRepoFile(
+      repoPath,
+      "RootThing.tsx",
+      `
+export const RootThing = () => <div>root</div>;
+`,
+    );
+
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
+
+    expect(report.isNx).toBe(true);
+    expect(report.projects).toBeDefined();
+
+    const projects = report.projects!;
+    expect(projects.flights.usage.backpack.count).toBe(1);
+    expect(projects["shared-ui"].usage.backpack.count).toBe(2);
+    expect(projects["(unassigned)"].usage.rawHtml.count).toBe(1);
+
+    // Repo-wide usage totals are unaffected by per-project attribution.
+    const projectBackpackTotal = Object.values(projects).reduce(
+      (sum, project) => sum + project.usage.backpack.count,
+      0,
+    );
+    expect(projectBackpackTotal).toBe(report.usage.backpack.count);
+
+    const projectFilesTotal = Object.values(projects).reduce(
+      (sum, project) => sum + project.filesAnalyzed,
+      0,
+    );
+    expect(projectFilesTotal).toBe(report.filesAnalyzed);
+  });
+
+  it("counts a file with a parse error toward its project's filesAnalyzed", async () => {
+    await writeRepoFile(repoPath, "nx.json", JSON.stringify({ version: 2 }));
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/project.json",
+      JSON.stringify({
+        name: "flights",
+        root: "apps/flights",
+        projectType: "application",
+      }),
+    );
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/src/Broken.tsx",
+      "export const Broken = () => <div>{",
+    );
+
+    const report = await analyzeRepository(repoPath, { includeNxProjects: true });
+
+    // The file failed to parse (no usages recorded), but it still matched
+    // the glob and its project should still count it as analyzed — matching
+    // the repo-wide filesAnalyzed, which counts every matched file.
+    expect(report.filesAnalyzed).toBe(1);
+    expect(report.parseErrors).toHaveLength(1);
+    expect(report.projects!.flights.filesAnalyzed).toBe(1);
+
+    const projectFilesTotal = Object.values(report.projects!).reduce(
+      (sum, project) => sum + project.filesAnalyzed,
+      0,
+    );
+    expect(projectFilesTotal).toBe(report.filesAnalyzed);
+  });
+
+  it("omits projects/isNx for non-NX repositories", async () => {
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      `
+import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+
+export const App = () => <BpkText>Prod</BpkText>;
+`,
+    );
+
+    const report = await analyzeRepository(repoPath);
+
+    expect(report.isNx).toBeUndefined();
+    expect(report.projects).toBeUndefined();
   });
 
   it("ignores spec, story, and mock files (alignment with ds-analyser)", async () => {

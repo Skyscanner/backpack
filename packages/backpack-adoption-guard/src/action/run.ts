@@ -227,12 +227,12 @@ export const run = async ({
     );
   }
 
-  if (guard.status === "warn") {
-    io.warning(guard.reason);
+  if (result.guard.status === "warn") {
+    io.warning(result.guard.reason);
   }
 
-  if (guard.status === "fail") {
-    io.setFailed(guard.reason);
+  if (result.guard.status === "fail") {
+    io.setFailed(result.guard.reason);
   }
 
   return result;

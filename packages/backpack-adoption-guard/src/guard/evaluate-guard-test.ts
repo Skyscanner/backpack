@@ -15,7 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { evaluateGuard } from "./evaluate-guard";
+import {
+  evaluateGuard,
+} from "./evaluate-guard";
 import type { AdoptionReport } from "../shared/types";
 
 const reportWithBackpackPercentage = (percentage: number): AdoptionReport => ({
