@@ -17,11 +17,11 @@
  */
 
 import BpkCheckbox, { type Props as BpkCheckboxProps } from './src/BpkCheckbox';
-import themeAttributes, { allCheckboxThemeAttributes } from './src/themeAttributes';
+import themeAttributes from './src/themeAttributes';
 
 export default BpkCheckbox;
 export type { BpkCheckboxProps };
-export { themeAttributes, allCheckboxThemeAttributes };
+export { themeAttributes };
 
 export { default as BpkCheckboxV2 } from './src/BpkCheckboxV2/BpkCheckboxV2';
 export {
