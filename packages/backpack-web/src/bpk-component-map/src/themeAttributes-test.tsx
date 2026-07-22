@@ -16,13 +16,29 @@
  * limitations under the License.
  */
 
-import mapThemeAttributes from './themeAttributes';
+import {
+  defaultIconMarkerThemeAttributes,
+  priceMarkerThemeAttributes,
+} from './themeAttributes';
 
-describe('mapThemeAttributes', () => {
-  it('should have correct theme attributes', () => {
-    expect(mapThemeAttributes).toEqual([
-      'privateMapPreviousSelection',
-      'privateMapPoiPin',
+describe('themeAttributes', () => {
+  it('should export the correct default icon marker theme attributes', () => {
+    expect(defaultIconMarkerThemeAttributes).toEqual([
+      'iconMarkerDefaultBackgroundColor',
+      'iconMarkerDefaultSelectedColor',
+      'iconMarkerDefaultDisabledColor',
+      'iconMarkerDefaultDisabledBackgroundColor',
+    ]);
+  });
+
+  it('should export the correct price marker theme attributes', () => {
+    expect(priceMarkerThemeAttributes).toEqual([
+      'priceMarkerBackgroundColor',
+      'priceMarkerSelectedBorderColor',
+      'priceMarkerSelectedColor',
+      'priceMarkerViewedBackgroundColor',
+      'priceMarkerViewedBorderColor',
+      'priceMarkerViewedColor',
     ]);
   });
 });
