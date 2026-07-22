@@ -189,8 +189,11 @@ export const combineGuardStatuses = (
   overall: GuardResult,
   projectResults: Record<string, GuardResult>,
 ): GuardStatus => {
-  const statuses = Object.values(projectResults).map((result) => result.status);
+  const statuses = [
+    overall.status,
+    ...Object.values(projectResults).map((result) => result.status),
+  ];
   if (statuses.some((status) => status === "fail")) return "fail";
   if (statuses.some((status) => status === "warn")) return "warn";
-  return overall.status;
+  return "pass";
 };

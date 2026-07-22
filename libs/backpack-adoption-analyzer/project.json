@@ -1,7 +1,7 @@
 {
   "name": "backpack-adoption-analyzer",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/backpack-adoption-analyzer/src",
+  "sourceRoot": "libs/backpack-adoption-analyzer/src",
   "projectType": "library",
   "tags": ["scope:internal", "type:tooling"],
   "targets": {

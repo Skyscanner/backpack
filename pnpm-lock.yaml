@@ -306,7 +306,7 @@ importers:
 
   libs/backpack-storybook-utils: {}
 
-  packages/backpack-adoption-analyzer:
+  libs/backpack-adoption-analyzer:
     dependencies:
       '@babel/parser':
         specifier: 7.29.3
@@ -338,7 +338,7 @@ importers:
         version: 1.11.1
       '@skyscanner/backpack-adoption-analyzer':
         specifier: workspace:*
-        version: link:../backpack-adoption-analyzer
+        version: link:../../libs/backpack-adoption-analyzer
     devDependencies:
       '@types/node':
         specifier: 25.9.1

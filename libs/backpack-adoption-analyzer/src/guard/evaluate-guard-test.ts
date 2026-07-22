@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 import {
+  combineGuardStatuses,
   evaluateGuard,
 } from "./evaluate-guard";
 import type { AdoptionReport } from "../shared/types";
@@ -232,5 +233,26 @@ describe("evaluateGuard", () => {
     expect(result.status).toBe("pass");
     expect(result.threshold).toBe(70);
     expect(result.reason).toContain("70% threshold");
+  });
+});
+
+describe("combineGuardStatuses", () => {
+  it("preserves an overall failure when no project fails", () => {
+    const overall = evaluate({
+      baseReport: reportWithBackpackPercentage(70),
+      dryRun: false,
+      headReport: reportWithBackpackPercentage(69),
+      isMain: false,
+    });
+    const warningProject = evaluate({
+      baseReport: reportWithBackpackPercentage(70),
+      dryRun: true,
+      headReport: reportWithBackpackPercentage(69),
+      isMain: false,
+    });
+
+    expect(
+      combineGuardStatuses(overall, { "project-with-warning": warningProject }),
+    ).toBe("fail");
   });
 });
