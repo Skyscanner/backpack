@@ -21,9 +21,6 @@ import { Component } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
 import readme from '../README.md';
 
@@ -161,12 +158,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-export const VisualTestDarkMode = {
-  render: () => (
-    <BpkDarkExampleWrapper>
-      <MixedExample />
-    </BpkDarkExampleWrapper>
-  ),
 };

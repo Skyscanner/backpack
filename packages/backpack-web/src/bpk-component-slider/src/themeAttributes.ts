@@ -16,9 +16,4 @@
  * limitations under the License.
  */
 
-export const sliderThemeAttributes = [
-  'privateSliderBgKnob',
-  'privateSliderBgTrack',
-];
-
-export default sliderThemeAttributes;
+export default ['sliderBarColor'];

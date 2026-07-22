@@ -16,14 +16,10 @@
  * limitations under the License.
  */
 
-import themeAttributes, { sliderThemeAttributes } from './themeAttributes';
+import themeAttributes from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('should export the correct theme attributes', () => {
-    expect(themeAttributes).toEqual(['privateSliderBgKnob', 'privateSliderBgTrack']);
-  });
-
-  it('should export sliderThemeAttributes', () => {
-    expect(sliderThemeAttributes).toEqual(['privateSliderBgKnob', 'privateSliderBgTrack']);
+    expect(themeAttributes).toEqual(['sliderBarColor']);
   });
 });
