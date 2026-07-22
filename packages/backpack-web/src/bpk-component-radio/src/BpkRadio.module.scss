@@ -20,7 +20,6 @@
 @use '../../bpk-mixins/forms';
 @use '../../bpk-mixins/utils';
 
-// gap: hairline border utility — $bpk-one-pixel-rem has no CSS var equivalent
 $bpk-radio-circle-size: tokens.$bpk-one-pixel-rem * 8;
 $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
 
