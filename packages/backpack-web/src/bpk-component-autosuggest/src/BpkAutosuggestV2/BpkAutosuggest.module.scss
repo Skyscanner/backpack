@@ -29,15 +29,22 @@
 
   &__suggestions-container {
     margin-top: tokens.bpk-spacing-md() + tokens.bpk-spacing-sm();
-    border: tokens.$bpk-one-pixel-rem solid tokens.$bpk-surface-highlight-day;
-    border-radius: tokens.$bpk-border-radius-sm;
-    background-color: tokens.$bpk-color-white;
+    border: tokens.$bpk-one-pixel-rem solid
+      var(
+        --bpk-private-autosuggest-colour-border-default,
+        tokens.$bpk-surface-highlight-day
+      );
+    border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
+    background-color: var(
+      --bpk-private-autosuggest-colour-bg-default,
+      tokens.$bpk-color-white
+    );
   }
 
   &__arrow {
     width: tokens.bpk-spacing-lg();
     height: tokens.bpk-spacing-lg();
-    fill: tokens.$bpk-surface-default-day;
+    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     &[data-hide] {
       visibility: hidden;
@@ -48,8 +55,11 @@
     min-width: fit-content;
     margin: 0;
     padding: 0;
-    border-radius: tokens.$bpk-border-radius-sm;
-    background-color: tokens.$bpk-color-white;
+    border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
+    background-color: var(
+      --bpk-private-autosuggest-colour-bg-default,
+      tokens.$bpk-color-white
+    );
     list-style: none;
     box-shadow: tokens.$bpk-box-shadow-lg;
     overflow: hidden;
@@ -66,11 +76,17 @@
     }
 
     &:active {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      background-color: var(
+        --bpk-private-autosuggest-colour-bg-hover,
+        tokens.$bpk-canvas-contrast-day
+      );
     }
 
     &--highlighted {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      background-color: var(
+        --bpk-private-autosuggest-colour-bg-hover,
+        tokens.$bpk-canvas-contrast-day
+      );
     }
   }
 
@@ -86,7 +102,7 @@
     &-icon {
       display: table-cell;
       vertical-align: top;
-      fill: tokens.$bpk-text-secondary-day;
+      fill: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
       margin-inline-end: tokens.bpk-spacing-md();
     }
 
@@ -120,7 +136,7 @@
     &-tertiary-label {
       display: table-cell;
       align-self: center;
-      color: tokens.$bpk-text-secondary-day;
+      color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
       vertical-align: top;
       word-break: keep-all;
 
@@ -131,7 +147,8 @@
 
   &__section-container {
     &:not(:first-of-type) {
-      border-top: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+      border-top: var(--bpk-border-1, tokens.$bpk-border-size-sm) solid
+        tokens.$bpk-line-day;
     }
   }
 

@@ -49,7 +49,10 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
         margin-left: -1 *
           ((tokens.bpk-spacing-sm() * 3) + tokens.$bpk-one-pixel-rem);
         border: ($arrow-size + tokens.$bpk-one-pixel-rem) solid transparent;
-        border-bottom-color: tokens.$bpk-surface-highlight-day;
+        border-bottom-color: var(
+          --bpk-surface-highlight,
+          tokens.$bpk-surface-highlight-day
+        );
         pointer-events: none;
       }
 
@@ -62,7 +65,10 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
         margin-bottom: -1 * tokens.$bpk-one-pixel-rem;
         margin-left: -1 * (tokens.bpk-spacing-md() + tokens.bpk-spacing-sm());
         border: $arrow-size solid transparent;
-        border-bottom-color: tokens.$bpk-surface-default-day;
+        border-bottom-color: var(
+          --bpk-private-autosuggest-colour-bg-default,
+          tokens.$bpk-surface-default-day
+        );
         pointer-events: none;
       }
     }
@@ -89,11 +95,17 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
     }
 
     &:active {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      background-color: var(
+        --bpk-private-autosuggest-colour-bg-hover,
+        tokens.$bpk-canvas-contrast-day
+      );
     }
 
     &--highlighted {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      background-color: var(
+        --bpk-private-autosuggest-colour-bg-hover,
+        tokens.$bpk-canvas-contrast-day
+      );
     }
   }
 
@@ -109,7 +121,7 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
     &-icon {
       display: flex;
       vertical-align: top;
-      fill: tokens.$bpk-text-secondary-day;
+      fill: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
       margin-inline-end: tokens.bpk-spacing-md();
     }
 
@@ -144,7 +156,7 @@ $arrow-size: tokens.bpk-spacing-sm() * 3;
     &-tertiary-label {
       display: table-cell;
       align-self: center;
-      color: tokens.$bpk-text-secondary-day;
+      color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
       vertical-align: top;
       word-break: keep-all;
 
