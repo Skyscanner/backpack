@@ -18,6 +18,9 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import readme from '../README.md';
 
 import BpkDataTable from './BpkDataTable';
@@ -318,6 +321,12 @@ const WithColumnArrayExample = () => (
   />
 );
 
+const VisualTestDarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <AutowidthExample />
+  </BpkDarkExampleWrapper>
+);
+
 export default {
   title: 'bpk-component-datatable',
   component: BpkDataTable,
@@ -353,4 +362,8 @@ export const VisualTest: Story = { render: () => <AutowidthExample /> };
 export const VisualTestWithZoom: Story = {
   render: () => <AutowidthExample />,
   args: {zoomEnabled: true}
+};
+
+export const VisualTestDark: Story = {
+  render: () => <VisualTestDarkExample />,
 };
