@@ -20,8 +20,8 @@
 @use '../../bpk-mixins/typography';
 
 .bpk-skip-link {
-  padding: (12 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base(); /* gap: hairline border utility */
-  transition: opacity tokens.$bpk-duration-sm ease-in-out; /* gap: animation duration */
+  padding: (12 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
   border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
   background-color: var(
     --bpk-status-danger-spot,
@@ -35,7 +35,7 @@
 
   // We want the skiplink to remain visible for a short period of time after it is blurred so that
   // a user tabbing quickly has a chance to see that it appeared
-  transition-delay: tokens.$bpk-duration-sm; /* gap: animation duration */
+  transition-delay: tokens.$bpk-duration-sm;
 
   @include typography.bpk-heading-5;
 
