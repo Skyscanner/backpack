@@ -21,7 +21,6 @@
 @use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
-// gap: hairline border utility — $bpk-one-pixel-rem has no CSS var equivalent
 $bpk-outline-offset: -1 * (4 * tokens.$bpk-one-pixel-rem);
 
 @mixin bpk-datatable-border-left() {

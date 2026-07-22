@@ -23,7 +23,6 @@
 
 $bpk-margin-size-sort-icons: tokens.bpk-spacing-sm() + tokens.bpk-spacing-md();
 
-// gap: typography line-height — $bpk-line-height-xs has no CSS var equivalent
 $icon-height: math.div(tokens.$bpk-line-height-xs, 2);
 
 .bpk-data-table-column__header {
