@@ -28,11 +28,11 @@ $dark-background-color: var(
 );
 
 .bpk-tooltip--container {
-  z-index: tokens.$bpk-zindex-tooltip; /* gap: z-index, not in token-sync */
+  z-index: tokens.$bpk-zindex-tooltip;
 }
 
 .bpk-tooltip {
-  transition: opacity tokens.$bpk-duration-sm ease-in-out; /* gap: animation duration */
+  transition: opacity tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
   opacity: 1;
 
