@@ -20,6 +20,7 @@
 @use '../../bpk-mixins/forms';
 @use '../../bpk-mixins/utils';
 
+// gap: hairline border utility — $bpk-one-pixel-rem has no CSS var equivalent
 $bpk-radio-circle-size: tokens.$bpk-one-pixel-rem * 8;
 $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
 
@@ -34,7 +35,10 @@ $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
     @include forms.bpk-radio--disabled;
 
     &--white {
-      color: tokens.$bpk-text-disabled-on-dark-day;
+      color: var(
+        --bpk-text-disabled-on-dark,
+        tokens.$bpk-text-disabled-on-dark-day
+      );
     }
   }
 
@@ -57,7 +61,7 @@ $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
       &:disabled {
         + .bpk-radio__circle {
           display: block;
-          background: tokens.$bpk-text-disabled-day;
+          background: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
         }
       }
     }
@@ -71,12 +75,7 @@ $bpk-radio-size: tokens.bpk-spacing-lg() - (tokens.$bpk-one-pixel-rem * 4);
     width: $bpk-radio-circle-size;
     height: $bpk-radio-circle-size;
     border-radius: 50%;
-
-    @include utils.bpk-themeable-property(
-      background,
-      --bpk-radio-checked-color,
-      tokens.$bpk-text-link-day
-    );
+    background: var(--bpk-text-deprecated-link, tokens.$bpk-text-link-day);
 
     @include utils.bpk-rtl {
       right: tokens.bpk-spacing-md() - (tokens.$bpk-one-pixel-rem * 2);

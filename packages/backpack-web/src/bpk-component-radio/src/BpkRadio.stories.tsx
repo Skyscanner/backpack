@@ -163,6 +163,16 @@ export const DisabledUnchecked = {
   render: () => <DisabledUncheckedExample />,
 };
 
+const DarkExample = () => (
+  <BpkDarkExampleWrapper padded>
+    <GroupExample />
+  </BpkDarkExampleWrapper>
+);
+
+export const DarkMode = {
+  render: () => <DarkExample />,
+};
+
 export const VisualTest = {
   render: () => <MixedExample />,
 };
