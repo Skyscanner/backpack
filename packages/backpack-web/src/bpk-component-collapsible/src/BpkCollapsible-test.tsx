@@ -326,6 +326,58 @@ describe('BpkCollapsible', () => {
 
   });
 
+  describe('Root asChild', () => {
+    it('renders no wrapper element when asChild is true', () => {
+      const { container } = render(
+        <ul>
+          <BpkCollapsible.Root asChild>
+            <li>
+              <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+              <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+            </li>
+          </BpkCollapsible.Root>
+        </ul>,
+      );
+      const list = container.querySelector('ul') as HTMLElement;
+      // With asChild the <li> is the direct child of <ul>; without asChild
+      // Ark injects a <div> between them.
+      expect(list.firstElementChild?.tagName).toBe('LI');
+    });
+
+    it('renders a wrapper element when asChild is omitted', () => {
+      const { container } = render(
+        <div data-testid="wrapper">
+          <BpkCollapsible.Root>
+            <span>
+              <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+              <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+            </span>
+          </BpkCollapsible.Root>
+        </div>,
+      );
+      const wrapper = container.querySelector('[data-testid="wrapper"]') as HTMLElement;
+      expect(wrapper.firstElementChild?.tagName).toBe('DIV');
+    });
+
+    it('merges collapsible attributes onto the child element when asChild is true', () => {
+      render(
+        <ul>
+          <BpkCollapsible.Root asChild defaultOpen>
+            <li data-testid="item">
+              <BpkCollapsible.Trigger>Toggle</BpkCollapsible.Trigger>
+              <BpkCollapsible.Content>Body</BpkCollapsible.Content>
+            </li>
+          </BpkCollapsible.Root>
+        </ul>,
+      );
+
+      const item = screen.getByTestId('item');
+      expect(item.tagName).toBe('LI');
+      expect(item).toHaveAttribute('data-state', 'open');
+      expect(item).toHaveAttribute('data-backpack-ds-component');
+    });
+  });
+
   describe('RootProvider asChild', () => {
     it('renders no wrapper element when asChild is true', () => {
       const Harness = () => {
