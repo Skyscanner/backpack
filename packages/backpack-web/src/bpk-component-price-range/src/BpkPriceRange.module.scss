@@ -50,32 +50,59 @@ $large-lines-height: tokens.bpk-spacing-md();
     &--low {
       width: calc(100% * var(--low));
       height: 100%;
-      background-color: tokens.$bpk-status-success-spot-day;
-      border-end-start-radius: tokens.$bpk-border-radius-sm;
-      border-start-start-radius: tokens.$bpk-border-radius-sm;
+      background-color: var(
+        --bpk-status-success-spot,
+        tokens.$bpk-status-success-spot-day
+      );
+      border-end-start-radius: var(
+        --bpk-radius-sm,
+        tokens.$bpk-border-radius-sm
+      );
+      border-start-start-radius: var(
+        --bpk-radius-sm,
+        tokens.$bpk-border-radius-sm
+      );
 
       &Large {
-        border-end-start-radius: tokens.$bpk-border-radius-md;
-        border-start-start-radius: tokens.$bpk-border-radius-md;
+        border-end-start-radius: var(
+          --bpk-radius-md,
+          tokens.$bpk-border-radius-md
+        );
+        border-start-start-radius: var(
+          --bpk-radius-md,
+          tokens.$bpk-border-radius-md
+        );
       }
     }
 
     &--medium {
       width: calc(100% * (var(--high) - var(--low)));
       height: 100%;
-      background-color: tokens.$bpk-core-primary-day;
+      background-color: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
     }
 
     &--high {
       width: calc(100% * (1 - var(--high)));
       height: 100%;
-      background-color: tokens.$bpk-status-danger-spot-day;
-      border-end-end-radius: tokens.$bpk-border-radius-sm;
-      border-start-end-radius: tokens.$bpk-border-radius-sm;
+      background-color: var(
+        --bpk-status-danger-spot,
+        tokens.$bpk-status-danger-spot-day
+      );
+      border-end-end-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
+      border-start-end-radius: var(
+        --bpk-radius-sm,
+        tokens.$bpk-border-radius-sm
+      );
 
       &Large {
-        border-end-end-radius: tokens.$bpk-border-radius-md;
-        border-start-end-radius: tokens.$bpk-border-radius-md;
+        border-end-end-radius: var(
+          --bpk-radius-md,
+          tokens.$bpk-border-radius-md
+        );
+        border-start-end-radius: var(
+          --bpk-radius-md,
+          tokens.$bpk-border-radius-md
+        );
       }
     }
 
@@ -97,7 +124,10 @@ $large-lines-height: tokens.bpk-spacing-md();
         width: $small-lines-height;
         height: $small-lines-height;
         border-radius: 50%;
-        background-color: tokens.$bpk-text-primary-inverse-day;
+        background-color: var(
+          --bpk-text-inverse,
+          tokens.$bpk-text-primary-inverse-day
+        );
       }
     }
   }
