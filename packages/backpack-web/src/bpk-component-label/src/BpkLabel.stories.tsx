@@ -130,21 +130,3 @@ export const VisualTestWithZoom = {
     zoomEnabled: true,
   },
 };
-
-const DarkModeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkLabel htmlFor="origin" white>
-      Origin
-    </BpkLabel>
-    <BpkLabel htmlFor="origin" white valid={false}>
-      Origin
-    </BpkLabel>
-    <BpkLabel htmlFor="origin" white disabled>
-      Origin
-    </BpkLabel>
-  </BpkDarkExampleWrapper>
-);
-
-export const DarkMode = {
-  render: () => <DarkModeExample />,
-};
