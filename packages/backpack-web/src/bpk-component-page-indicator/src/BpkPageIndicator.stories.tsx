@@ -21,6 +21,7 @@ import { useState } from 'react';
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { backgroundElevation03DarkColor } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+// @ts-expect-error -- bpk-storybook-utils has no type declarations
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import { BpkBackgroundImage } from '../../bpk-component-image';
