@@ -42,10 +42,7 @@
     bottom: -1px;
     width: 700rem; // required for correct behaviour in IE
     // stylelint-disable unit-disallowed-list
-    height: calc(
-      tokens.$bpk-flare-height-desktop - 1px
-    );
-
+    height: calc(tokens.$bpk-flare-height-desktop - 1px);
     // stylelint-enable unit-disallowed-list
 
     margin-left: 50%;
