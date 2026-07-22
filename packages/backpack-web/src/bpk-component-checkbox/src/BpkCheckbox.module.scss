@@ -50,38 +50,9 @@
   }
 
   &__input {
-    border-color: var(
-      --bpk-private-checkbox-border-default-not-checked,
-      tokens.$bpk-text-secondary-day
-    );
-
     @include forms.bpk-checkbox__input;
 
-    &:checked,
-    &:indeterminate {
-      border-color: var(
-        --bpk-private-checkbox-bg-default-checked,
-        tokens.$bpk-core-accent-day
-      );
-      background-color: var(
-        --bpk-private-checkbox-bg-default-checked,
-        tokens.$bpk-core-accent-day
-      );
-
-      &:disabled {
-        border-color: var(
-          --bpk-private-checkbox-border-default-disabled,
-          tokens.$bpk-text-disabled-day
-        );
-        background: none;
-      }
-    }
-
     &:disabled {
-      border-color: var(
-        --bpk-private-checkbox-border-default-disabled,
-        tokens.$bpk-text-disabled-day
-      );
       cursor: inherit;
     }
 

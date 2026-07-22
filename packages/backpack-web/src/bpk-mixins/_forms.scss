@@ -666,7 +666,11 @@
   height: $checkbox-input-size;
   margin: 0;
   padding: 0;
-  border: (tokens.$bpk-one-pixel-rem * 3) solid tokens.$bpk-text-secondary-day;
+  border: (tokens.$bpk-one-pixel-rem * 3) solid;
+  border-color: var(
+    --bpk-private-checkbox-border-default-not-checked,
+    tokens.$bpk-text-secondary-day
+  );
   border-radius: (tokens.$bpk-one-pixel-rem * 4);
   cursor: pointer;
   vertical-align: text-bottom;
@@ -684,19 +688,20 @@
 
   &:checked,
   &:indeterminate {
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-checkbox-checked-color,
+    border-color: var(
+      --bpk-private-checkbox-bg-default-checked,
       tokens.$bpk-core-accent-day
     );
-    @include utils.bpk-themeable-property(
-      border-color,
-      --bpk-checkbox-checked-color,
+    background-color: var(
+      --bpk-private-checkbox-bg-default-checked,
       tokens.$bpk-core-accent-day
     );
 
     &:disabled {
-      border-color: tokens.$bpk-text-disabled-day;
+      border-color: var(
+        --bpk-private-checkbox-border-default-disabled,
+        tokens.$bpk-text-disabled-day
+      );
       background: none;
     }
   }
@@ -706,7 +711,10 @@
   }
 
   &:disabled {
-    border-color: tokens.$bpk-text-disabled-day;
+    border-color: var(
+      --bpk-private-checkbox-border-default-disabled,
+      tokens.$bpk-text-disabled-day
+    );
   }
 }
 
