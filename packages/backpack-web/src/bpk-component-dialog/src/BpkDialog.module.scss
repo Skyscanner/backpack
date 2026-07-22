@@ -59,24 +59,30 @@
     margin-left: -1 * $size * 0.5;
     justify-content: center;
     align-items: center;
-    border: (tokens.$bpk-border-size-lg * 2) tokens.$bpk-surface-default-day
-      solid;
+    border: calc(#{tokens.$bpk-border-size-lg} * 2)
+      var(--bpk-surface-default, #{tokens.$bpk-surface-default-day}) solid;
     border-radius: 50%;
 
     &--primary {
-      background-color: tokens.$bpk-core-accent-day;
+      background-color: var(--bpk-core-accent, #{tokens.$bpk-core-accent-day});
     }
 
     &--warning {
-      background-color: tokens.$bpk-status-warning-spot-day;
+      background-color: var(
+        --bpk-status-warning-spot,
+        #{tokens.$bpk-status-warning-spot-day}
+      );
     }
 
     &--destructive {
-      background-color: tokens.$bpk-status-danger-spot-day;
+      background-color: var(
+        --bpk-status-danger-spot,
+        #{tokens.$bpk-status-danger-spot-day}
+      );
     }
 
     > svg {
-      fill: tokens.$bpk-text-primary-inverse-day;
+      fill: var(--bpk-text-inverse, #{tokens.$bpk-text-primary-inverse-day});
     }
   }
 }

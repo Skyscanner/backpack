@@ -23,6 +23,8 @@ import { Component } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import BpkButton from '../../bpk-component-button';
 import InfoIcon from '../../bpk-component-icon/lg/information-circle';
 import TickIcon from '../../bpk-component-icon/lg/tick';
@@ -171,6 +173,17 @@ const WithFlareExample = () => (
   </DialogContainer>
 );
 
+
+const DarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <DialogContainer initiallyOpen>
+      <Paragraph>
+        This is a default dialog rendered in dark mode.
+      </Paragraph>
+    </DialogContainer>
+  </BpkDarkExampleWrapper>
+);
+
 const meta = {
   title: 'bpk-component-dialog',
   component: BpkDialog,
@@ -192,5 +205,6 @@ export const Default = { render: () => <DefaultExample /> };
 export const WithAnIcon = { render: () => <WithIconExample /> };
 export const NotDismissible = { render: () => <NotDismissibleExample /> };
 export const WithFlare = { render: () => <WithFlareExample /> };
+export const DarkMode = { render: () => <DarkExample /> };
 export const VisualTest = { render: () => <DefaultExample /> };
 export const VisualTestWithZoom = { render: () => <DefaultExample />, args: { zoomEnabled: true } };

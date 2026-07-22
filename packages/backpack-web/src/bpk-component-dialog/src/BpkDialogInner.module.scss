@@ -21,17 +21,18 @@
 @use '../../bpk-mixins/shadows';
 
 .bpk-dialog-inner {
-  z-index: tokens.$bpk-zindex-modal;
+  z-index: tokens.$bpk-zindex-modal; /* gap: z-index */
   width: 100%;
-  max-width: tokens.$bpk-modal-max-width;
+  max-width: tokens.$bpk-modal-max-width; /* gap: max-width */
   margin: auto;
   transform: scale(1);
   transition:
     opacity tokens.$bpk-duration-sm ease-in-out,
-    transform tokens.$bpk-duration-sm ease-in-out;
+    /* gap: animation duration */ transform tokens.$bpk-duration-sm ease-in-out; /* gap: animation duration */
+
   outline: 0;
-  background-color: tokens.$bpk-modal-background-color;
-  opacity: tokens.$bpk-modal-opacity;
+  background-color: tokens.$bpk-modal-background-color; /* gap: backdrop colour */
+  opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
 
   // FIX: Prevents ugly flickering when tapping inside the dialog in Mobile Safari
   -webkit-tap-highlight-color: transparent;
@@ -41,16 +42,16 @@
 
   &--appear {
     transform: scale(0.9);
-    opacity: tokens.$bpk-modal-initial-opacity;
+    opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
   }
 
   &--appear-active {
     transform: scale(1);
-    opacity: tokens.$bpk-modal-opacity;
+    opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
   }
 
   &__content {
-    padding: tokens.$bpk-modal-content-padding;
+    padding: tokens.$bpk-modal-content-padding; /* gap: content padding */
     flex: 1;
     overflow-y: auto;
   }
@@ -61,6 +62,9 @@
 
     // We inherit radius from the outer modal so they match and align correctly to the container.
     border-radius: inherit;
-    background-color: tokens.$bpk-surface-contrast-day;
+    background-color: var(
+      --bpk-surface-contrast,
+      #{tokens.$bpk-surface-contrast-day}
+    );
   }
 }
