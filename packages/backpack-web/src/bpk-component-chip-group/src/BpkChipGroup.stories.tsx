@@ -462,6 +462,7 @@ const makePopoverRenderChip =
         showArrow={false}
         closeButtonLabel={`Close ${label} options`}
         onClose={() => {}}
+        style={{ marginTop: '8px' }}
         target={
           <BpkDropdownChip
             accessibilityLabel={accessibilityLabel}
