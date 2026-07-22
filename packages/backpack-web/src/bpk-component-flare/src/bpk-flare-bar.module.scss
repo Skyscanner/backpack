@@ -28,11 +28,11 @@
     // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     // By using `display: flex` we ensure that this container is the nearest block container
     display: flex;
-    height: tokens.$bpk-flare-height-desktop;
+    height: tokens.$bpk-flare-height-desktop; /* gap: flare-specific dimension */
     overflow: hidden;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      height: tokens.$bpk-flare-height-mobile;
+      height: tokens.$bpk-flare-height-mobile; /* gap: flare-specific dimension */
     }
   }
 
@@ -41,11 +41,16 @@
     // stylelint-disable-next-line unit-disallowed-list
     bottom: -1px;
     width: 700rem; // required for correct behaviour in IE
-    // stylelint-disable-next-line unit-disallowed-list
-    height: calc(tokens.$bpk-flare-height-desktop - 1px);
+    // stylelint-disable unit-disallowed-list
+    height: calc(
+      tokens.$bpk-flare-height-desktop - 1px
+    ); /* gap: flare-specific dimension */
+
+    // stylelint-enable unit-disallowed-list
+
     margin-left: 50%;
     transform: translateX(-50%);
-    fill: tokens.$bpk-surface-default-day;
+    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     @include utils.bpk-rtl {
       margin-right: 50%;
@@ -53,7 +58,7 @@
     }
 
     @include breakpoints.bpk-breakpoint-mobile {
-      height: tokens.$bpk-flare-height-mobile;
+      height: tokens.$bpk-flare-height-mobile; /* gap: flare-specific dimension */
     }
   }
 }
