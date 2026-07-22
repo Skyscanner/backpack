@@ -16,16 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+/**
+ * Private map CSS custom property theme attributes.
+ * Only exposes component-scoped (private) map tokens — global semantic vars
+ * (text, core colours, surface) can be overridden at the theme level independently.
+ */
+const mapThemeAttributes: string[] = [
+  'privateMapPreviousSelection',
+  'privateMapPoiPin',
+];
 
-.bpk-map-default-loading-element {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background-color: var(
-    --bpk-surface-highlight,
-    tokens.$bpk-surface-highlight-day
-  );
-}
+export default mapThemeAttributes;

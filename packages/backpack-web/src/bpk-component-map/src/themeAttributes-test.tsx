@@ -16,16 +16,13 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
+import mapThemeAttributes from './themeAttributes';
 
-.bpk-map-default-loading-element {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  background-color: var(
-    --bpk-surface-highlight,
-    tokens.$bpk-surface-highlight-day
-  );
-}
+describe('mapThemeAttributes', () => {
+  it('should have correct theme attributes', () => {
+    expect(mapThemeAttributes).toEqual([
+      'privateMapPreviousSelection',
+      'privateMapPoiPin',
+    ]);
+  });
+});

@@ -22,7 +22,7 @@ import { Component, useRef, useState } from 'react';
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 
-import { action } from 'bpk-storybook-utils';
+import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkMap, {
   BpkOverlayView,
@@ -503,3 +503,11 @@ export const PriceMarkersButtonWithPopoverOnMap = { render: () => <WithPriceMark
 export const WithIconPriceMarkersButtonWithPopoverOnMap = { render: () => <WithIconPriceMarkersButtonWithPopoverOnMapExample /> };
 
 export const MultiMaps = { render: () => <MultipleMapsExample /> };
+
+const DarkPriceMarkersExample = () => (
+  <BpkDarkExampleWrapper>
+    <StatefulBpkPriceMarker action={action('Price marker clicked')} airportsIconWithPrice={false} />
+  </BpkDarkExampleWrapper>
+);
+
+export const DarkPriceMarkers = { render: () => <DarkPriceMarkersExample /> };
