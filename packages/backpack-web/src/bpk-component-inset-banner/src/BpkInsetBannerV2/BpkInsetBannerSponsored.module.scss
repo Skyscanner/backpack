@@ -26,7 +26,7 @@
   grid-template-columns: auto 1fr auto;
   grid-template-areas: 'logo content cta';
   align-items: center;
-  border-radius: tokens.$bpk-border-radius-sm;
+  border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
 
   @include breakpoints.bpk-breakpoint-mobile {
     grid-template-columns: 1fr auto;
@@ -46,21 +46,22 @@
   }
 
   &--with-image {
-    border-radius: tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm 0 0;
+    border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm)
+      var(--bpk-radius-sm, tokens.$bpk-border-radius-sm) 0 0;
   }
 
   &--on-light {
-    color: tokens.$bpk-text-on-light-day;
-    fill: tokens.$bpk-text-on-light-day;
+    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+    fill: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
   }
 
   &--on-dark {
-    color: tokens.$bpk-text-on-dark-day;
-    fill: tokens.$bpk-text-on-dark-day;
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+    fill: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 
   &--image {
-    max-height: tokens.$bpk-icon-size-lg;
+    max-height: tokens.$bpk-icon-size-lg; /* gap: icon dimension */
     object-fit: contain;
     padding-inline-end: tokens.bpk-spacing-base();
   }
@@ -115,7 +116,7 @@
 
   &--bottom-sheet-icon {
     display: flex;
-    fill: tokens.$bpk-font-color-base;
+    fill: tokens.$bpk-font-color-base; /* gap: no semantic CSS var */
     margin-inline-end: tokens.bpk-spacing-lg();
   }
 
@@ -126,16 +127,17 @@
 
   &--bottom-sheet-title {
     margin-bottom: tokens.bpk-spacing-md();
-    color: tokens.$bpk-text-on-light-day;
+    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
   }
 
   &--bottom-sheet-description {
-    color: tokens.$bpk-text-on-light-day;
+    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
   }
 }
 
 .bpk-inset-banner-image-container {
-  min-height: tokens.$bpk-line-height-8-xl;
-  border-radius: 0 0 tokens.$bpk-border-radius-sm tokens.$bpk-border-radius-sm;
+  min-height: tokens.$bpk-line-height-8-xl; /* gap: typography line-height */
+  border-radius: 0 0 var(--bpk-radius-sm, tokens.$bpk-border-radius-sm)
+    var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
   overflow: hidden;
 }
