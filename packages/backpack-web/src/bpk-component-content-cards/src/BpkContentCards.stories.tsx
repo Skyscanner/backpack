@@ -20,9 +20,6 @@ import type { ComponentProps } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error -- bpk-storybook-utils has no type declarations
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import readme from '../README.md';
 
 import BpkContentCards from './BpkContentCards';
@@ -67,7 +64,7 @@ const contentCardProps: ComponentProps<typeof BpkContentCards> = {
       },
       headline: 'Try the food of the Gods',
       description:
-        "Greece gave us the Gyros. A vessel of bread lifting chips from plate to mouth. It doesn't get godlier than this.",
+        'Greece gave us the Gyros. A vessel of bread lifting chips from plate to mouth. It doesn\'t get godlier than this.',
       href: 'https://www.skyscanner.net',
     },
     {
@@ -77,7 +74,7 @@ const contentCardProps: ComponentProps<typeof BpkContentCards> = {
       },
       headline: 'Our top 10 Greek islands',
       description:
-        "There are islands for everything. You can party, relax, chill, eat and hike, and that's just Santorini.",
+        'There are islands for everything. You can party, relax, chill, eat and hike, and that\'s just Santorini.',
       href: 'https://www.skyscanner.net',
     },
   ],
@@ -114,12 +111,4 @@ export const DefaultThreeCards= {
 
 export const VisualTestThreeCards= {
   render: () => <WithThreeCardsExample />,
-};
-
-export const VisualTestThreeCardsDark = {
-  render: () => (
-    <BpkDarkExampleWrapper>
-      <WithThreeCardsExample />
-    </BpkDarkExampleWrapper>
-  ),
 };
