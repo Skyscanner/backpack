@@ -18,6 +18,8 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import {
   BACKGROUND_COLORS,
   BpkFlex,
@@ -126,4 +128,12 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const VisualTestDarkMode = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <MixedExample />
+    </BpkDarkExampleWrapper>
+  ),
 };
