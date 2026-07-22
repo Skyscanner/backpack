@@ -803,14 +803,42 @@ Expected: no errors.
 Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip packages/backpack-web/src/bpk-component-chip-group`
 Expected: all PASS. If any snapshot legitimately changed (e.g. story-driven snapshots picking up the new `WithPopover` story), review the diff and update with `-u` only after confirming it is intended.
 
-- [ ] **Step 4: Manual Storybook check**
+- [ ] **Step 4: Storybook visual verification via Chrome DevTools MCP**
 
-Run: `pnpm run storybook`
-Open `bpk-component-chip-group` → `WithPopover`. Click each chip; confirm each popover opens anchored beneath its own chip (not a fixed left-edge position). Confirm the existing stories (`OnDark`, `OnImage`, `WithLabel`, `AllChipTypes`, `ExampleStateManagement`, `VisualTest`) still render.
+This step is what actually proves the feature — jest and tsc cannot verify that a
+popover is positioned beneath its own chip. Automate it with the Chrome DevTools
+MCP (via the `workflow-automation:chrome-with-user-data` skill) rather than only
+eyeballing.
+
+1. Start Storybook (background): `pnpm run storybook` — it serves on **port 9001**
+   (`nx run backpack-storybook-host:serve-storybook -- -p 9001`). Wait for
+   "Storybook … started" / the port to accept connections before proceeding.
+2. Open the story's isolated iframe directly (no manager chrome):
+   `http://localhost:9001/iframe.html?id=bpk-component-chip-group--with-popover`
+   (story id = `title` `bpk-component-chip-group` + export `WithPopover`). Use the
+   Chrome DevTools MCP `new_page` / `navigate_page` tool.
+3. `take_snapshot` to get element uids, then `click` the first chip
+   (e.g. "Flights"). `take_screenshot` and confirm the popover ("Flights options")
+   opens **anchored directly beneath that chip**, not at a fixed left-edge
+   position.
+4. Repeat the click + screenshot for a chip further along the row (e.g. "Trains")
+   to confirm each popover tracks its own chip — this is the exact regression
+   PR #4910 demonstrated and this feature fixes.
+5. Also load a pre-existing story to confirm no regression, e.g.
+   `http://localhost:9001/iframe.html?id=bpk-component-chip-group--on-image`, and
+   `take_screenshot`.
+6. Save the screenshots (Chrome MCP `take_screenshot` with a `filePath`) so they
+   can be attached to the PR as before/after evidence.
+7. Stop the background Storybook process when done.
+
+If the Chrome DevTools MCP is unavailable in the session, fall back to a manual
+check: open the two URLs above in a browser, click chips, and confirm anchoring
+by eye.
 
 - [ ] **Step 5: Final confirmation (no commit — nothing changed)**
 
-Report: lint clean, tsc clean, jest green, Storybook anchoring verified.
+Report: lint clean, tsc clean, jest green, and Storybook anchoring verified via
+Chrome DevTools MCP screenshots (attach the before/after images to the PR).
 
 ---
 
