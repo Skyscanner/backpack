@@ -18,6 +18,9 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import BpkImage from '../../bpk-component-image';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -332,4 +335,12 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const DarkMode = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <MixedExample />
+    </BpkDarkExampleWrapper>
+  ),
 };
