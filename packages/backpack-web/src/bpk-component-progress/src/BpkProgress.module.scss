@@ -41,7 +41,7 @@
     left: 0;
     content: ' ';
     width: 0;
-    transition: width tokens.$bpk-duration-base ease-in-out; /* gap: animation duration */
+    transition: width tokens.$bpk-duration-base ease-in-out;
     border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
     background-color: var(--bpk-core-accent, tokens.$bpk-core-accent-day);
 
@@ -54,7 +54,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 2 * tokens.$bpk-one-pixel-rem; /* gap: hairline border utility */
+    width: 2 * tokens.$bpk-one-pixel-rem;
     background: var(--bpk-surface-default, tokens.$bpk-canvas-day);
   }
 }
