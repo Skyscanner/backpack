@@ -102,7 +102,6 @@ $select-image-large-height: 24 * tokens.$bpk-one-pixel-rem;
   &__image {
     position: absolute;
 
-    /* gap: $bpk-input-height — form input dimension, no CSS var exists yet */
     top: (tokens.$bpk-input-height - $select-image-height) * 0.5;
     left: tokens.bpk-spacing-md();
     width: $select-image-width;
@@ -115,7 +114,6 @@ $select-image-large-height: 24 * tokens.$bpk-one-pixel-rem;
     }
 
     &--large {
-      /* gap: $bpk-input-large-height — form input dimension, no CSS var exists yet */
       top: (tokens.$bpk-input-large-height - $select-image-large-height) * 0.5;
       left: tokens.bpk-spacing-base();
       width: $select-image-large-width;
