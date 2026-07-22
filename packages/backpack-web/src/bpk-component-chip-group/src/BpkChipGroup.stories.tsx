@@ -20,7 +20,8 @@ import { useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import { CHIP_TYPES } from '../../bpk-component-chip';
+import { CHIP_TYPES, BpkDropdownChip } from '../../bpk-component-chip';
+import BpkPopover from '../../bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import readme from '../README.md';
@@ -31,7 +32,7 @@ import BpkMultiSelectChipGroup, {
 } from './BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 
-import type { MultiSelectProps, ChipItem } from './BpkMultiSelectChipGroup';
+import type { MultiSelectProps, ChipItem, ChipRenderProps } from './BpkMultiSelectChipGroup';
 import type { SingleSelectProps } from './BpkSingleSelectChipGroup';
 import type { Meta } from '@storybook/react';
 
@@ -445,6 +446,54 @@ export const AllChipTypes = {
 
 export const ExampleStateManagement = {
   render: () => <StateManagement />,
+};
+
+const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
+
+const WithPopoverExample = () => {
+  const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
+    text: label,
+    renderChip: ({
+      accessibilityLabel,
+      chipStyle,
+      index,
+      selected,
+    }: ChipRenderProps) => (
+      <BpkPopover
+        id={`popover-chip-${index}`}
+        label={`${label} options`}
+        labelAsTitle
+        placement="bottom"
+        showArrow={false}
+        closeButtonLabel={`Close ${label} options`}
+        onClose={() => {}}
+        target={
+          <BpkDropdownChip
+            accessibilityLabel={accessibilityLabel}
+            type={chipStyle}
+            selected={selected}
+            onClick={() => {}}
+          >
+            {label}
+          </BpkDropdownChip>
+        }
+      >
+        <BpkText>Content for {label}</BpkText>
+      </BpkPopover>
+    ),
+  }));
+
+  return (
+    <BpkMultiSelectChipGroup
+      type={CHIP_GROUP_TYPES.wrap}
+      chips={chipsWithPopover}
+      ariaLabel="Select filters"
+    />
+  );
+};
+
+export const WithPopover = {
+  render: () => <WithPopoverExample />,
 };
 
 export const VisualTest = {
