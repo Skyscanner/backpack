@@ -23,7 +23,7 @@ import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+import { action } from 'bpk-storybook-utils';
 
 import BpkBannerAlert, {
   ALERT_TYPES,
@@ -517,16 +517,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-const DarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <MixedExample />
-  </BpkDarkExampleWrapper>
-);
-
-export const VisualTestDark = {
-  render: () => <DarkExample />,
-  parameters: { bpkTheme: 'dark' },
-  tags: ['dark-mode-compatible'],
 };
