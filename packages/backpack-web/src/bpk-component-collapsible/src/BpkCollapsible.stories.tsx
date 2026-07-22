@@ -22,9 +22,6 @@ import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-// @ts-expect-error -- bpk-storybook-utils has no type declarations
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { BpkCardV2 } from '../../bpk-component-card';
 import AirportsIcon from '../../bpk-component-icon/sm/airports';
@@ -469,6 +466,56 @@ const ContextReader = () => {
   );
 };
 
+// Demonstrates asChild on Root: the Root merges its props onto the child
+// element instead of injecting a wrapper <div>. No hook required.
+const AsChildRoot = () => (
+  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      Without <code>asChild</code>: Root renders a wrapper{' '}
+      <code>&lt;div&gt;</code> around its child.
+    </BpkText>
+    <div>
+      <BpkCollapsible.Root defaultOpen>
+        <div>
+          <BpkCollapsible.Trigger>
+            <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </div>
+      </BpkCollapsible.Root>
+    </div>
+
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      With <code>asChild</code>: the <code>&lt;li&gt;</code> becomes the root
+      — no wrapper inserted.
+    </BpkText>
+    <ul>
+      <BpkCollapsible.Root asChild defaultOpen>
+        <li>
+          <BpkCollapsible.Trigger>
+            <BpkText textStyle={TEXT_STYLES.heading5}>With asChild</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </li>
+      </BpkCollapsible.Root>
+    </ul>
+  </BpkVStack>
+);
+
 // Demonstrates asChild: the RootProvider merges its props onto the child
 // <li> element instead of injecting a wrapper <div>. Inspect the DOM to
 // confirm the output is <li data-backpack-ds-component …> with no extra node.
@@ -485,9 +532,7 @@ const AsChildRootProvider = () => {
         <BpkCollapsible.RootProvider value={withoutAsChild}>
           <div>
             <BpkCollapsible.Trigger>
-              <BpkText textStyle={TEXT_STYLES.heading5}>
-                Without asChild
-              </BpkText>
+              <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
               <BpkCollapsible.Indicator>
                 <ChevronIcon />
               </BpkCollapsible.Indicator>
@@ -525,28 +570,6 @@ const AsChildRootProvider = () => {
     </BpkVStack>
   );
 };
-
-const DarkModeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkVStack gap={BpkSpacing.Base}>
-      <BpkCollapsible.Root defaultOpen>
-        <BpkCollapsible.Trigger>
-          <BpkText textStyle={TEXT_STYLES.heading5}>Dark mode title</BpkText>
-          <BpkCollapsible.Indicator>
-            <ChevronIcon />
-          </BpkCollapsible.Indicator>
-        </BpkCollapsible.Trigger>
-        <BpkCollapsible.Content>
-          <BpkBox paddingTop={BpkSpacing.SM}>
-            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
-              Content visible in dark mode.
-            </BpkText>
-          </BpkBox>
-        </BpkCollapsible.Content>
-      </BpkCollapsible.Root>
-    </BpkVStack>
-  </BpkDarkExampleWrapper>
-);
 
 const VisualTest = () => (
   <BpkVStack gap={BpkSpacing.Base}>
@@ -604,5 +627,5 @@ export const CollapsedHeightShowMore = { render: () => <ShowMore /> };
 export const LongContentExample = { render: () => <LongContent /> };
 export const VisualTestComposite = { render: () => <VisualTest /> };
 export const ContextReaderHook = { render: () => <ContextReader /> };
+export const AsChildOnRoot = { render: () => <AsChildRoot /> };
 export const AsChildOnRootProvider = { render: () => <AsChildRootProvider /> };
-export const DarkMode = { render: () => <DarkModeExample /> };
