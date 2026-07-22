@@ -16,9 +16,10 @@
  * limitations under the License.
  */
 
-
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkStarRating from '../../bpk-component-star-rating';
 import { cssModules } from '../../bpk-react-utils';
@@ -365,9 +366,21 @@ const MixedExample = () => (
   </div>
 );
 
+const DarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkRating
+      ariaLabel="4.8 Excellent 2,420 reviews"
+      value={4.8}
+      title="Excellent"
+      subtitle="2,420 reviews"
+    />
+  </BpkDarkExampleWrapper>
+);
+
 const meta = {
   title: 'bpk-component-rating',
   component: BpkRating,
+  tags: ['dark-mode-compatible'],
   parameters: {
     docs: {
       page: () => (
@@ -415,4 +428,10 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const VisualTestDark = {
+  render: () => <DarkExample />,
+  parameters: { bpkTheme: 'dark' },
+  tags: ['dark-mode-compatible'],
 };
