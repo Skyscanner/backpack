@@ -3,7 +3,7 @@
 **Date:** 2026-07-21
 **Status:** Approved (design), pending implementation
 **Related:** PR #4910 (demo story showing the anchoring limitation),
-PR #4918 (colleague POC — this design aligns to it)
+PR #4918 (colleague POC — API design reference only; will not be merged)
 
 ## Problem
 
@@ -265,8 +265,11 @@ implementation.)
 
 ### Relationship to PR #4918
 
-PR #4918 is the colleague POC and the reference for this design. This spec matches
-its API (`ChipRenderProps` render prop) and story (`WithPopover`), and adds the
-test/docs/cleanup items #4918 left unchecked (tests, README, deleting the #4910
-demo files). If #4918 lands first, this reduces to completing those follow-ups on
-top of it rather than reimplementing the prop.
+PR #4918 is a colleague POC/demo and **will not be merged** — it is used here only
+as the API design reference. This spec therefore covers the **full
+implementation** independently: the `renderChip` prop and `ChipRenderProps` type,
+the `WithPopover` story, plus the test / README / cleanup items the POC left
+unchecked. Nothing here depends on #4918 landing; we reimplement the prop from
+scratch, matching its API shape (`ChipRenderProps` render prop) because that shape
+was validated as the better design (group hands back state vs. hotels' no-arg
+`() => ReactNode`).
