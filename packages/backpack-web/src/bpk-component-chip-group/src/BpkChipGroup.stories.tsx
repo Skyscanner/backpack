@@ -464,6 +464,7 @@ const WithPopoverExample = () => {
         label={`${label} options`}
         labelAsTitle
         placement="bottom"
+        showArrow={false}
         closeButtonLabel={`Close ${label} options`}
         onClose={() => {}}
         target={
