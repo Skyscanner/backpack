@@ -509,8 +509,3 @@ export const CriticalWithCustomIcon = { render: () => <CriticalCustomIconExample
 
 export const VisualTest = { render: () => <DocsDefaultExample /> };
 export const VisualTestWithZoom = { render: () => <DocsDefaultExample />, args: { zoomEnabled: true } };
-export const VisualTestDark = {
-  render: () => <DocsDefaultExample />,
-  parameters: { bpkTheme: 'dark' },
-  tags: ['dark-mode-compatible'],
-};
