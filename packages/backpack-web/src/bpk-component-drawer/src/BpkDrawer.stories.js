@@ -23,8 +23,6 @@ import { Component, useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkLink from '../../bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
@@ -404,18 +402,3 @@ export const WithMobileModalBehaviour = { render: () => <WithMobileModalBehaviou
 export const DrawerWithTooltipNotAbleToBeShown = { render: () => <DrawerWithTooltipExampleNotAbleToBeShown /> };
 export const DrawerWithTooltipAbleToBeShown = { render: () => <DrawerWithTooltipExampleAbleToBeShown /> };
 export const WithSecondaryPanel = { render: () => <WithSecondaryPanelExample /> };
-
-const DarkModeExample = () => (
-  <BpkDarkExampleWrapper>
-    <DrawerContainer
-      title="Drawer title"
-      closeLabel="Close drawer"
-      buttonText="Open drawer (dark)"
-      getApplicationElement={() => document.getElementById('pagewrap')}
-    >
-      This is a drawer in dark mode.
-    </DrawerContainer>
-  </BpkDarkExampleWrapper>
-);
-
-export const DarkMode = { render: () => <DarkModeExample /> };
