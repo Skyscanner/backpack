@@ -2,6 +2,7 @@
   "name": "@skyscanner/backpack-adoption-analyzer",
   "version": "0.0.0",
   "private": true,
+  "description": "Internal TypeScript source library. It is consumed only by workspace packages that bundle it at build time; it is not published or executed directly by Node.",
   "main": "src/index.ts",
   "exports": {
     ".": {
