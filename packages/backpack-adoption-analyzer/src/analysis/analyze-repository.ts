@@ -41,6 +41,7 @@ import {
   detectVariant,
   extractProps,
   getJSXElementName,
+  hasInlineStyleAttribute,
   isBackpackComponent,
   isDesignSystemImport,
   isNonBackpackComponent,
@@ -54,7 +55,6 @@ import {
   detectNxProjects,
   resolveProject,
 } from "./nx-projects";
-import { buildVisualComponentRegistry } from "./visual-components";
 import { DEFAULT_IGNORE_PATTERNS, DEFAULT_PATTERN } from "../shared/config";
 import type { AdoptionReport, UsageSummary } from "../shared/types";
 
@@ -314,7 +314,6 @@ function analyzeFile(
   filePath: string,
   repoPath: string,
   targetComponents: string[] | null,
-  visualComponentRegistry: Set<string>,
 ) {
   let ast: any;
   try {
@@ -464,7 +463,10 @@ function analyzeFile(
             repoPath,
           );
           const hasClassName = classNameInfo.hasOverride;
-          const isVisual = hasClassName || visualComponentRegistry.has(elementName);
+          // An unstyled component call is a wrapper, not another visual
+          // element: its rendered Backpack/raw HTML is counted at its
+          // definition. This mirrors ds-analyser and avoids double-counting.
+          const isVisual = hasClassName || hasInlineStyleAttribute(path.node.attributes);
 
           if (isVisual) {
             nonBackpackUsages += 1;
@@ -550,7 +552,9 @@ function analyzeFile(
             repoPath,
           );
           const hasClassName = classNameInfo.hasOverride;
-          const isVisual = hasClassName || visualComponentRegistry.has(elementName);
+          // See the namespaced component path above for why unstyled wrappers
+          // are excluded from the repo-wide visual-element total.
+          const isVisual = hasClassName || hasInlineStyleAttribute(path.node.attributes);
 
           if (isVisual) {
             nonBackpackUsages += 1;
@@ -683,8 +687,6 @@ async function runAnalyzer(
     absolute: true,
   });
 
-  const visualComponentRegistry = buildVisualComponentRegistry(files);
-
   const results = createResultBucket(basename(repoPath));
   results.filesAnalyzed = files.length;
 
@@ -726,7 +728,6 @@ async function runAnalyzer(
         filePath,
         repoPath,
         components,
-        visualComponentRegistry,
       );
 
       // Merge into the repo-wide totals
