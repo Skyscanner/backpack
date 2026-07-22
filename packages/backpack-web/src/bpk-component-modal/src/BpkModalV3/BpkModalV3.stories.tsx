@@ -22,6 +22,8 @@ import { useState } from 'react';
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkButton from '../../../bpk-component-button';
+// @ts-expect-error -- bpk-storybook-utils has no type declarations
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 import {
   BpkBox,
   BpkBreakpoint,
@@ -818,4 +820,12 @@ export const VisualTestChatbotWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+export const VisualTestDark = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <DefaultExample />
+    </BpkDarkExampleWrapper>
+  ),
 };
