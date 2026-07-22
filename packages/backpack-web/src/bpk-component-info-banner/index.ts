@@ -20,6 +20,9 @@ import BpkInfoBanner from './src/BpkInfoBanner';
 import BpkInfoBannerDismissable from './src/BpkInfoBannerDismissable';
 import BpkInfoBannerExpandable from './src/BpkInfoBannerExpandable';
 import { ALERT_TYPES, STYLE_TYPES } from './src/common-types';
+import themeAttributes, {
+  allInfoBannerThemeAttributes,
+} from './src/themeAttributes';
 import withBannerAlertState from './src/withBannerAlertState';
 
 export {
@@ -28,6 +31,8 @@ export {
   BpkInfoBannerDismissable,
   BpkInfoBannerExpandable,
   withBannerAlertState,
+  themeAttributes,
+  allInfoBannerThemeAttributes,
 };
 export type { AlertTypeValue, StyleTypeValue } from './src/common-types';
 export default BpkInfoBanner;

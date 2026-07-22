@@ -29,11 +29,17 @@
   @include typography.bpk-footnote;
 
   &--style-default {
-    background-color: tokens.$bpk-private-info-banner-default-day;
+    background-color: var(
+      --bpk-private-info-banner-default,
+      tokens.$bpk-private-info-banner-default-day
+    );
   }
 
   &--style-onContrast {
-    background-color: tokens.$bpk-private-info-banner-on-contrast-day;
+    background-color: var(
+      --bpk-private-info-banner-on-contrast,
+      tokens.$bpk-private-info-banner-on-contrast-day
+    );
   }
 
   &__header {
@@ -74,30 +80,30 @@
   }
 
   &__info-icon {
-    fill: tokens.$bpk-text-secondary-day;
+    fill: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
   }
 
   &__critical-icon {
-    fill: tokens.$bpk-text-primary-inverse-day;
+    fill: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &--critical {
     background-color: tokens.$bpk-private-info-banner-error-day;
-    color: tokens.$bpk-text-primary-inverse-day;
+    color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &--critical &__message {
-    color: tokens.$bpk-text-primary-inverse-day;
+    color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &--critical &__toggle-button {
-    fill: tokens.$bpk-text-primary-inverse-day;
+    fill: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &--critical &__children-container,
   &--critical &__children-container--with-action,
   &--critical &__children-container--no-action {
-    color: tokens.$bpk-text-primary-inverse-day;
+    color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &__toggle-button {
@@ -106,11 +112,11 @@
     background-color: transparent;
     cursor: pointer;
     appearance: none;
-    fill: tokens.$bpk-text-secondary-day;
+    fill: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
   }
 
   &__children-container {
-    color: tokens.$bpk-text-primary-day;
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
 
     @include typography.bpk-footnote;
 
