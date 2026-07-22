@@ -85,7 +85,7 @@ type Props = Omit<SVGProps<SVGGElement>, 'scale' | 'x' | 'y' | 'width' | 'onClic
   onBarClick?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
   onBarHover?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
   onBarFocus?: ((event: BarInteractionEvent, payload: { point: BarPoint }) => void) | undefined;
-  [key: string]: unknown;
+  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 const BpkBarchartBars = ({
