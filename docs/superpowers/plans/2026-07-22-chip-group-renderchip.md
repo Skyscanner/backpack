@@ -34,6 +34,63 @@ Order: chip `forwardRef` first (prerequisite), then chip-group feature, then sto
 
 ---
 
+## Command conventions (verified in this worktree)
+
+These were confirmed empirically against this worktree — do **not** substitute:
+
+- **Jest:** use `pnpm exec jest <path>` (NOT `pnpm jest`). The root `jest` npm
+  script is `TZ=Etc/UTC jest --coverage`, which applies a global 70–75% coverage
+  threshold and would fail a single-file run even when tests pass. `pnpm exec jest`
+  invokes the binary directly with no coverage gate — verified: a single existing
+  test file returns "Tests: N passed" cleanly. (A benign `jest-haste-map` naming
+  collision warning about `packages/backpack-web/dist/package.json` is printed but
+  does not fail the run.)
+- **tsc:** `pnpm tsc` resolves to the TypeScript binary and compiles — verified.
+- **ESLint — KNOWN BLOCKER in this worktree:** `pnpm eslint <file>`, `pnpm exec
+  eslint <file>`, and even the repo's own `pnpm run lint:js` all fail here with
+  `Please remove the "plugins" setting from either config`. Cause: the worktree
+  lives at `.claude/worktrees/<name>/` and its `.eslintrc` does **not** set
+  `root: true`, so ESLint walks up and also loads the main repo's `../../../.eslintrc`,
+  colliding on the `@nx/eslint-plugin` plugin. This is an environment issue, not a
+  code issue — see Task 0. Until resolved, lint verification steps below cannot be
+  run from inside the worktree; the fallback is to lint from a normal (non-worktree)
+  checkout, or fix the worktree ESLint config first.
+
+---
+
+## Task 0: Environment preflight (do this before any code)
+
+**Files:** none (environment only)
+
+- [ ] **Step 1: Confirm Node version meets `engines.node`**
+
+Run: `node --version` and compare against `engines.node` in `package.json`.
+If below requirement: `nvm use <required>` then `pnpm install` **from inside the
+worktree** (required so husky's pre-commit hook is installed for this worktree).
+
+- [ ] **Step 2: Confirm the worktree is on the right branch and clean**
+
+Run: `git -C /Users/tuxiuluo/Documents/code/backpack/.claude/worktrees/example-chip-group-popover status`
+Expected: on the worktree branch, clean tree (only the spec/plan docs already
+committed).
+
+- [ ] **Step 3: Confirm the jest command works (baseline)**
+
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx`
+Expected: "Tests: 17 passed" (plus the benign haste-map warning). This proves the
+verified jest invocation before you rely on it.
+
+- [ ] **Step 4: Decide the ESLint strategy**
+
+Try: `pnpm exec eslint packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip.tsx`
+If it fails with the `"plugins" setting` collision (expected in this worktree per
+the note above), either (a) add `"root": true` to the worktree's `.eslintrc` after
+confirming with the maintainer that this is acceptable, or (b) plan to run lint
+from a non-worktree checkout before opening the PR. Record which path you took;
+the lint steps in later tasks assume one of these is in place.
+
+---
+
 ## Task 1: `forwardRef` on `BpkSelectableChip`
 
 **Files:**
@@ -65,7 +122,7 @@ import { createRef } from 'react';
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip-test.tsx -t "forward its ref"`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip-test.tsx -t "forward its ref"`
 Expected: FAIL — `ref.current` is `null` (function component ignores `ref`), so `toBeInstanceOf(HTMLButtonElement)` fails.
 
 - [ ] **Step 3: Wrap the component in `forwardRef`**
@@ -133,12 +190,12 @@ Change the component's closing from `};` to `});` (the arrow function is now a `
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip-test.tsx -t "forward its ref"`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip-test.tsx -t "forward its ref"`
 Expected: PASS.
 
 - [ ] **Step 5: Run the full chip test file to confirm no regressions**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip-test.tsx`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip-test.tsx`
 Expected: all PASS (snapshots unchanged — `forwardRef` does not alter rendered output).
 
 - [ ] **Step 6: Commit**
@@ -179,7 +236,7 @@ it('should forward its ref to the underlying button', () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx -t "forward its ref"`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx -t "forward its ref"`
 Expected: FAIL — `ref.current` is `null`.
 
 - [ ] **Step 3: Wrap the component in `forwardRef`**
@@ -221,12 +278,12 @@ export default BpkDropdownChip;
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx -t "forward its ref"`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx -t "forward its ref"`
 Expected: PASS.
 
 - [ ] **Step 5: Run the full DropdownChip test file to confirm no regressions**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip-test.tsx`
 Expected: all PASS (snapshots unchanged).
 
 - [ ] **Step 6: Commit**
@@ -317,7 +374,7 @@ it('should not render a renderChip chip when hidden', () => {
 
 - [ ] **Step 2: Run tests to verify they fail**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip-group/src/BpkMultiSelectChipGroup-test.tsx -t "renderChip"`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip-group/src/BpkMultiSelectChipGroup-test.tsx -t "renderChip"`
 Expected: FAIL — `renderChip` is not a known field, so the default chip renders and `custom-chip` is never found. (TypeScript will also error on the unknown property; that is expected pre-implementation.)
 
 - [ ] **Step 3: Add the `ChipRenderProps` type and `renderChip` field**
@@ -446,12 +503,12 @@ Replace it with:
 
 - [ ] **Step 5: Run tests to verify they pass**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip-group/src/BpkMultiSelectChipGroup-test.tsx`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip-group/src/BpkMultiSelectChipGroup-test.tsx`
 Expected: all PASS, including the four new `renderChip` tests and all pre-existing tests.
 
 - [ ] **Step 6: Typecheck**
 
-Run: `pnpm tsc --noEmit -p packages/backpack-web/tsconfig.json`
+Run: `pnpm tsc -b packages/backpack-web/tsconfig.lib.json`
 (If that path/flag is not valid for this repo, run the package's configured typecheck. Do NOT use `pnpm nx run <project>:typecheck` — Nx caching can report a stale pass.)
 Expected: no errors relating to `ChipRenderProps` / `renderChip`.
 
@@ -521,7 +578,7 @@ export type {
 
 - [ ] **Step 3: Typecheck the barrel**
 
-Run: `pnpm tsc --noEmit -p packages/backpack-web/tsconfig.json`
+Run: `pnpm tsc -b packages/backpack-web/tsconfig.lib.json`
 Expected: no errors; `ChipRenderProps` resolves.
 
 - [ ] **Step 4: Commit**
@@ -627,9 +684,12 @@ git rm packages/backpack-web/src/bpk-component-chip-group/src/BpkChipGroupPopove
 
 - [ ] **Step 4: Lint + typecheck the stories file**
 
-Run: `pnpm eslint packages/backpack-web/src/bpk-component-chip-group/src/BpkChipGroup.stories.tsx`
-Then: `pnpm tsc --noEmit -p packages/backpack-web/tsconfig.json`
-Expected: no errors.
+Run: `pnpm exec eslint packages/backpack-web/src/bpk-component-chip-group/src/BpkChipGroup.stories.tsx`
+(Per the "Command conventions" note and Task 0: if this hits the `"plugins"
+setting` collision in the worktree, run it from a non-worktree checkout or after
+adding `"root": true` to the worktree `.eslintrc`.)
+Then: `pnpm tsc -b packages/backpack-web/tsconfig.lib.json`
+Expected: no errors once the ESLint environment issue is resolved.
 
 - [ ] **Step 5: Commit**
 
@@ -720,7 +780,7 @@ git commit -m "[BpkChipGroup] document renderChip popover-anchoring usage"
 Run:
 
 ```bash
-pnpm eslint \
+pnpm exec eslint \
   packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip.tsx \
   packages/backpack-web/src/bpk-component-chip/src/BpkDropdownChip.tsx \
   packages/backpack-web/src/bpk-component-chip-group/src/BpkMultiSelectChipGroup.tsx \
@@ -728,16 +788,19 @@ pnpm eslint \
   packages/backpack-web/src/bpk-component-chip-group/src/BpkChipGroup.stories.tsx
 ```
 
-Expected: no errors. (Direct `eslint`, not an Nx task — Nx caches results.)
+Expected: no errors. (Direct `eslint` binary via `pnpm exec`, not an Nx task — Nx
+caches results.) **In-worktree caveat:** if this fails with the `"plugins"
+setting` collision, that is the known worktree ESLint issue (Task 0 / Command
+conventions), not a code problem — resolve per Task 0 before trusting this step.
 
 - [ ] **Step 2: Typecheck**
 
-Run: `pnpm tsc --noEmit -p packages/backpack-web/tsconfig.json`
+Run: `pnpm tsc -b packages/backpack-web/tsconfig.lib.json`
 Expected: no errors.
 
 - [ ] **Step 3: Run both affected package test suites**
 
-Run: `pnpm jest packages/backpack-web/src/bpk-component-chip packages/backpack-web/src/bpk-component-chip-group`
+Run: `pnpm exec jest packages/backpack-web/src/bpk-component-chip packages/backpack-web/src/bpk-component-chip-group`
 Expected: all PASS. If any snapshot legitimately changed (e.g. story-driven snapshots picking up the new `WithPopover` story), review the diff and update with `-u` only after confirming it is intended.
 
 - [ ] **Step 4: Manual Storybook check**
