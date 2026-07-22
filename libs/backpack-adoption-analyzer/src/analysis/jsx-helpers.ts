@@ -177,6 +177,19 @@ export function extractProps(attributes: any[]): Record<string, any> {
 }
 
 /**
+ * An inline `style` value means the component call site owns visual styling.
+ * This deliberately matches ds-analyser's non-Backpack classification rule.
+ */
+export function hasInlineStyleAttribute(attributes: any[]): boolean {
+  return attributes.some(
+    (attribute) =>
+      attribute.type === "JSXAttribute" &&
+      attribute.name?.name === "style" &&
+      attribute.value != null,
+  );
+}
+
+/**
  * Variant detection rules — verbatim from ds-analyser.
  */
 export function detectVariant(

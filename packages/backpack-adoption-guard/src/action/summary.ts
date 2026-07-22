@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ActionResult, AdoptionReport, GuardResult } from "../shared/types";
+import type {
+  ActionResult,
+  AdoptionReport,
+  GuardResult,
+} from "@skyscanner/backpack-adoption-analyzer";
 
 const STATUS_HEADER: Record<GuardResult["status"], string> = {
   pass: "✅ Backpack Adoption Guard — Pass",
