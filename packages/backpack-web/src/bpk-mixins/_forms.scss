@@ -596,7 +596,7 @@
 ///   }
 
 @mixin bpk-checkbox--white {
-  color: tokens.$bpk-surface-default-day;
+  color: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 }
 
 /// Disabled form checkbox. Modifies the bpk-checkbox mixin.

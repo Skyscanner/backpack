@@ -31,7 +31,7 @@
   }
 
   &--white {
-    color: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
+    @include forms.bpk-checkbox--white;
   }
 
   &--disabled {
