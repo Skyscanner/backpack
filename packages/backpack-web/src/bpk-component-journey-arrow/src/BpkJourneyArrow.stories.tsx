@@ -18,40 +18,33 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error -- bpk-storybook-utils has no type declarations
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import readme from '../README.md';
+
 
 import BpkJourneyArrow from './BpkJourneyArrow';
 
 import type { Meta } from '@storybook/react';
 
 const JourneyArrowExample = () => {
-  const widths = ['25%', '50%', '100%'];
-  return (
-    <>
-      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
-        Direct, different widths
-      </BpkText>
-      {widths.map((width) => (
-        <div style={{ display: 'flex', alignItems: 'center', width }}>
-          <BpkText>Origin</BpkText>
-          <BpkJourneyArrow />
-          <BpkText>Destination</BpkText>
-        </div>
-      ))}
-      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">
-        With stops
-      </BpkText>
-      <div style={{ display: 'flex', alignItems: 'center', width: '50%' }}>
-        <BpkJourneyArrow stops={1} />
-        <BpkJourneyArrow stops={2} />
-        <BpkJourneyArrow stops={3} />
+  const widths = ["25%", "50%", "100%"]
+  return (<>
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">Direct, different widths</BpkText>
+      {widths.map((width) =>
+          <div style={{display: 'flex', alignItems: 'center', width}}>
+        <BpkText>Origin</BpkText>
+        <BpkJourneyArrow />
+        <BpkText>Destination</BpkText>
       </div>
+    )}
+      <BpkText textStyle={TEXT_STYLES.heading2} tagName="h2">With stops</BpkText>
+    <div style={{display: 'flex', alignItems: 'center', width: '50%' }}>
+      <BpkJourneyArrow stops={1} />
+      <BpkJourneyArrow stops={2} />
+      <BpkJourneyArrow stops={3} />
+    </div>
     </>
-  );
+  )
 };
 
 const meta = {
@@ -80,14 +73,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-export const VisualTestDark = {
-  render: () => (
-    <BpkDarkExampleWrapper>
-      <JourneyArrowExample />
-    </BpkDarkExampleWrapper>
-  ),
-  parameters: { bpkTheme: 'dark' },
-  tags: ['dark-mode-compatible'],
 };
