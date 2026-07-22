@@ -28,11 +28,11 @@
     // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
     // By using `display: flex` we ensure that this container is the nearest block container
     display: flex;
-    height: tokens.$bpk-flare-height-desktop; /* gap: flare-specific dimension */
+    height: tokens.$bpk-flare-height-desktop;
     overflow: hidden;
 
     @include breakpoints.bpk-breakpoint-mobile {
-      height: tokens.$bpk-flare-height-mobile; /* gap: flare-specific dimension */
+      height: tokens.$bpk-flare-height-mobile;
     }
   }
 
@@ -44,7 +44,7 @@
     // stylelint-disable unit-disallowed-list
     height: calc(
       tokens.$bpk-flare-height-desktop - 1px
-    ); /* gap: flare-specific dimension */
+    );
 
     // stylelint-enable unit-disallowed-list
 
@@ -58,7 +58,7 @@
     }
 
     @include breakpoints.bpk-breakpoint-mobile {
-      height: tokens.$bpk-flare-height-mobile; /* gap: flare-specific dimension */
+      height: tokens.$bpk-flare-height-mobile;
     }
   }
 }

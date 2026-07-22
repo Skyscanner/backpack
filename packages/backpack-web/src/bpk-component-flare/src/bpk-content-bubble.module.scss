@@ -35,12 +35,10 @@
     background-size: cover;
 
     &--rounded {
-      border-radius: tokens.$bpk-flare-corner-radius; /* gap: flare-specific dimension */
-
+      border-radius: tokens.$bpk-flare-corner-radius;
       &--with-pointer {
         border-radius: tokens.$bpk-flare-corner-radius
-          tokens.$bpk-flare-corner-radius 0 0; /* gap: flare-specific dimension */
-      }
+          tokens.$bpk-flare-corner-radius 0 0;      }
     }
   }
 
@@ -68,21 +66,17 @@
     // stylelint-disable unit-disallowed-list
     bottom: calc(
       tokens.$bpk-flare-height-desktop - 2px
-    ); /* gap: flare-specific dimension */
-
+    );
     // stylelint-enable unit-disallowed-list
 
     left: 0;
-    width: tokens.$bpk-flare-corner-radius; /* gap: flare-specific dimension */
-    height: tokens.$bpk-flare-corner-radius; /* gap: flare-specific dimension */
-    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
+    width: tokens.$bpk-flare-corner-radius;    height: tokens.$bpk-flare-corner-radius;    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     @include breakpoints.bpk-breakpoint-mobile {
       // stylelint-disable unit-disallowed-list
       bottom: calc(
         tokens.$bpk-flare-height-mobile - 1px
-      ); /* gap: flare-specific dimension */
-
+      );
       // stylelint-enable unit-disallowed-list
     }
 
