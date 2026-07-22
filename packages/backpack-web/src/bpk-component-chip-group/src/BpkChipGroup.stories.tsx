@@ -450,15 +450,10 @@ export const ExampleStateManagement = {
 
 const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
 
-const WithPopoverExample = () => {
-  const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
-    text: label,
-    renderChip: ({
-      accessibilityLabel,
-      chipStyle,
-      index,
-      selected,
-    }: ChipRenderProps) => (
+const makePopoverRenderChip =
+  (label: string) =>
+  ({ accessibilityLabel, chipStyle, index, selected }: ChipRenderProps) =>
+    (
       <BpkPopover
         id={`popover-chip-${index}`}
         label={`${label} options`}
@@ -480,14 +475,27 @@ const WithPopoverExample = () => {
       >
         <BpkText>Content for {label}</BpkText>
       </BpkPopover>
-    ),
+    );
+
+const WithPopoverExample = () => {
+  const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
+    text: label,
+    renderChip: makePopoverRenderChip(label),
   }));
 
+  const stickyChip: ChipItem = {
+    text: 'Sort & Filter',
+    renderChip: makePopoverRenderChip('Sort & Filter'),
+  };
+
   return (
-    <BpkMultiSelectChipGroup
-      type={CHIP_GROUP_TYPES.wrap}
+    <BpkMultiSelectChipGroupState
+      type={CHIP_GROUP_TYPES.rail}
       chips={chipsWithPopover}
+      stickyChip={stickyChip}
       ariaLabel="Select filters"
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
     />
   );
 };
