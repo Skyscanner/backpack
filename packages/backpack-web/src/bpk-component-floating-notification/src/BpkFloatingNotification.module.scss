@@ -30,14 +30,13 @@
   margin: auto;
   padding: tokens.bpk-spacing-lg();
   align-items: center;
-  /* gap: animation duration — $bpk-duration-base has no CSS var equivalent */
   transition:
     opacity tokens.$bpk-duration-base ease-in-out,
     transform tokens.$bpk-duration-base ease-in-out;
   border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
   background: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
   color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
-  box-shadow: tokens.$bpk-box-shadow-xl, tokens.$bpk-box-shadow-lg; /* gap: box-shadow shorthand */
+  box-shadow: tokens.$bpk-box-shadow-xl, tokens.$bpk-box-shadow-lg;
 
   @include breakpoints.bpk-breakpoint-mobile {
     max-width: 100%;
