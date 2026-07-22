@@ -448,55 +448,39 @@ export const ExampleStateManagement = {
   render: () => <StateManagement />,
 };
 
-const WithPopoverExample = () => {
-  const [selectedChips, setSelectedChips] = useState([false, false, false]);
+const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
 
-  const chipsWithPopover: ChipItem[] = [
-    {
-      text: 'Flights',
-      selected: selectedChips[0],
-      onClick: (selected: boolean, index: number) => {
-        const next = [...selectedChips];
-        next[index] = selected;
-        setSelectedChips(next);
-      },
-    },
-    {
-      text: 'Hotels',
-      selected: selectedChips[1],
-      onClick: (selected: boolean, index: number) => {
-        const next = [...selectedChips];
-        next[index] = selected;
-        setSelectedChips(next);
-      },
-    },
-    {
-      text: 'Filter',
-      selected: selectedChips[2],
-      renderChip: ({ accessibilityLabel, chipStyle, index, onClick, selected }: ChipRenderProps) => (
-        <BpkPopover
-          key="filter-popover"
-          id="filter-popover"
-          label="Filter options"
-          labelAsTitle
-          onClose={onClick}
-          closeButtonLabel="Close filter"
-          target={
-            <BpkDropdownChip
-              accessibilityLabel={accessibilityLabel}
-              type={chipStyle}
-              selected={selected}
-              onClick={onClick}
-            >
-              Filter
-            </BpkDropdownChip>
-          }
-        >
-          <BpkText>Popover anchored to chip {index + 1}</BpkText>
-        </BpkPopover>
-      ),
-    },
-  ];
+const WithPopoverExample = () => {
+  const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
+    text: label,
+    renderChip: ({
+      accessibilityLabel,
+      chipStyle,
+      index,
+      selected,
+    }: ChipRenderProps) => (
+      <BpkPopover
+        id={`popover-chip-${index}`}
+        label={`${label} options`}
+        labelAsTitle
+        placement="bottom"
+        closeButtonLabel={`Close ${label} options`}
+        onClose={() => {}}
+        target={
+          <BpkDropdownChip
+            accessibilityLabel={accessibilityLabel}
+            type={chipStyle}
+            selected={selected}
+            onClick={() => {}}
+          >
+            {label}
+          </BpkDropdownChip>
+        }
+      >
+        <BpkText>Content for {label}</BpkText>
+      </BpkPopover>
+    ),
+  }));
 
   return (
     <div>
