@@ -16,17 +16,20 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { ReactNode } from 'react';
 
 import { render } from '@testing-library/react';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 
+type Props = {
+  children: ReactNode;
+};
+
 jest.mock('@react-google-maps/api', () => ({
-  OverlayView: (props) => (
+  OverlayView: (props: Props) => (
     <div>
       <div className="mock-overlay-view" />
-      {/* eslint-disable-next-line react/prop-types */}
       {props.children}
     </div>
   ),

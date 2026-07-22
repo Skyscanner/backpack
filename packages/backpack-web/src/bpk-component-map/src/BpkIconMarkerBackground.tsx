@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-/* @flow strict */
+import type { SVGProps } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -24,10 +24,10 @@ import STYLES from './BpkIconMarkerBackground.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-type Props = {
-  disabled: boolean,
-  interactive: boolean,
-  selected: boolean,
+type Props = SVGProps<SVGSVGElement> & {
+  disabled?: boolean;
+  interactive?: boolean;
+  selected?: boolean;
 };
 
 const BpkIconMarkerBackground = (props: Props) => {
@@ -42,7 +42,6 @@ const BpkIconMarkerBackground = (props: Props) => {
 
   if (selected) {
     return (
-      // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -57,7 +56,6 @@ const BpkIconMarkerBackground = (props: Props) => {
     );
   }
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="26"

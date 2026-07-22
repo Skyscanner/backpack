@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* eslint-disable react/prop-types */
-import PropTypes from 'prop-types';
+
+import type { ReactNode } from 'react';
 import { Component, useRef, useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action } from 'bpk-storybook-utils';
 
 import BpkMap, {
@@ -49,6 +49,8 @@ import BpkPriceMarkerComp from './BpkPriceMarker';
 import BpkPriceMarkerButtonComp from './BpkPriceMarkerButton';
 import DefaultLoadingElement from './DefaultLoadingElement';
 
+import type { Meta } from '@storybook/react';
+
 /**
  * This file is a workaround for Storybook not supporting HOCs API table generation in v7 by creating mock components that can be used to generate the API table
  * They plan on adding support in v8
@@ -56,42 +58,7 @@ import DefaultLoadingElement from './DefaultLoadingElement';
  * @todo remove this file once we upgrade to Storybook v8
  */
 
-/**
- * Temporarily re-defining the map props due to a bug in react docgen which doesn't allow us to import the prop types from another file
- * https://github.com/storybookjs/storybook/issues/9266
- * This does work in TS, so we can remove this once we migrate the map component to TS
- * @todo remove this once we migrate the map component to TS
- */
-const WithGoogleMapsScriptPropTypes = {
-    loadingElement: PropTypes.node,
-    googleMapsApiKey: PropTypes.string.isRequired,
-    libraries: PropTypes.arrayOf(
-        PropTypes.oneOf([
-          'drawing',
-          'geometry',
-          'localContext',
-          'places',
-          'visualization',
-        ]),
-      ),
-    preventGoogleFontsLoading: PropTypes.bool,
-  };
-
-const WithGoogleMapsScriptDefaultProps = {
-    loadingElement: <DefaultLoadingElement />,
-    preventGoogleFontsLoading: false,
-    libraries: ['geometry', 'drawing', 'places'],
-  };
-
 const WithGoogleMapsScriptMock = () => <div />;
-
-WithGoogleMapsScriptMock.propTypes = {
-    ...WithGoogleMapsScriptPropTypes,
-};
-
-WithGoogleMapsScriptMock.defaultProps = {
-    ...WithGoogleMapsScriptDefaultProps,
-};
 
 const BpkMapWithLoading = withGoogleMapsScript(BpkMap);
 
@@ -101,12 +68,16 @@ const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 const AlignedFoodIconSm = withRtlSupport(FoodIconSm);
 const AlignedHeartIconSm = withRtlSupport(HeartIconSm);
 
-const StoryMap = (props) => {
-  // eslint-disable-next-line no-unused-vars
+type StoryMapProps = {
+  children?: ReactNode;
+  language?: string;
+  [key: string]: unknown;
+};
+
+const StoryMap = (props: StoryMapProps) => {
   const { children = null, language = '', ...rest } = props;
   return (
     <div style={{ height: '400px' }}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <BpkMapWithLoading googleMapsApiKey="" {...rest}>
         {children}
       </BpkMapWithLoading>
@@ -114,12 +85,18 @@ const StoryMap = (props) => {
   );
 };
 
-StoryMap.propTypes = {
-  children: PropTypes.node,
-  language: PropTypes.string,
+type Venue = {
+  id: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+  price: string;
+  icon: ReactNode;
+  airportsIcon: ReactNode;
+  heartIcon: ReactNode;
 };
 
-const venues = [
+const venues: Venue[] = [
   {
     id: '1',
     name: 'Hotel Monteverde',
@@ -162,12 +139,22 @@ const venues = [
   },
 ];
 
-class StatefulBpkPriceMarker extends Component {
-  static defaultProps = {
-    action: () => null,
-  };
+type StatefulBpkPriceMarkerProps = {
+  action?: () => void;
+  airportsIconWithPrice?: boolean;
+  heartIconWithPrice?: boolean;
+};
 
-  constructor(props) {
+type StatefulBpkPriceMarkerState = {
+  selectedId: string;
+  viewedVenues: string[];
+};
+
+class StatefulBpkPriceMarker extends Component<
+  StatefulBpkPriceMarkerProps,
+  StatefulBpkPriceMarkerState
+> {
+  constructor(props: StatefulBpkPriceMarkerProps) {
     super(props);
     this.state = {
       selectedId: '2',
@@ -175,7 +162,7 @@ class StatefulBpkPriceMarker extends Component {
     };
   }
 
-  getStatus = (id) => {
+  getStatus = (id: string) => {
     if (this.state.selectedId === id) {
       return MARKER_STATUSES.selected;
     }
@@ -185,7 +172,7 @@ class StatefulBpkPriceMarker extends Component {
     return MARKER_STATUSES.unselected;
   };
 
-  selectVenue = (id) => {
+  selectVenue = (id: string) => {
     this.setState((prevState) => ({
       selectedId: id,
       viewedVenues: [...prevState.viewedVenues, id],
@@ -199,7 +186,7 @@ class StatefulBpkPriceMarker extends Component {
         center={{ latitude: 55.944665, longitude: -3.1964903 }}
       >
         {venues.map((venue) => {
-          let icon = null;
+          let icon: ReactNode = null;
           if (this.props.airportsIconWithPrice) {
             icon = venue.airportsIcon;
           }
@@ -209,15 +196,15 @@ class StatefulBpkPriceMarker extends Component {
 
           return (
             <BpkPriceMarker
-              id={venue.id}
+              key={venue.id}
               label={venue.price}
-              icon={icon}
+              icon={icon ?? undefined}
               position={{
                 latitude: venue.latitude,
                 longitude: venue.longitude,
               }}
               onClick={() => {
-                this.props.action();
+                this.props.action?.();
                 this.selectVenue(venue.id);
               }}
               status={this.getStatus(venue.id)}
@@ -230,19 +217,26 @@ class StatefulBpkPriceMarker extends Component {
   }
 }
 
-class StatefulBpkIconMarker extends Component {
-  static defaultProps = {
-    action: () => null,
-  };
+type StatefulBpkIconMarkerProps = {
+  action?: () => void;
+};
 
-  constructor(props) {
+type StatefulBpkIconMarkerState = {
+  selectedId: string;
+};
+
+class StatefulBpkIconMarker extends Component<
+  StatefulBpkIconMarkerProps,
+  StatefulBpkIconMarkerState
+> {
+  constructor(props: StatefulBpkIconMarkerProps) {
     super(props);
     this.state = {
       selectedId: '3',
     };
   }
 
-  selectVenue = (id) => {
+  selectVenue = (id: string) => {
     this.setState({ selectedId: id });
   };
 
@@ -257,7 +251,7 @@ class StatefulBpkIconMarker extends Component {
             key={venue.id}
             position={{ latitude: venue.latitude, longitude: venue.longitude }}
             onClick={() => {
-              this.props.action();
+              this.props.action?.();
               this.selectVenue(venue.id);
             }}
             icon={venue.icon}
@@ -269,18 +263,23 @@ class StatefulBpkIconMarker extends Component {
   }
 }
 
-const getPixelPositionOffset = (width, height) => ({
+const getPixelPositionOffset = (width: number, height: number) => ({
   x: -(width / 2),
   y: -height,
 });
 
+type StatefulBpkPriceMarkerButtonWithPopoverOnMapProps = {
+  action?: () => void;
+  airportsIconWithPrice?: boolean;
+};
+
 const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
   action: inlineAction,
   airportsIconWithPrice,
-}) => {
+}: StatefulBpkPriceMarkerButtonWithPopoverOnMapProps) => {
   const [selectedId, setSelectedId] = useState('2');
   const [viewedVenues, setViewedVenues] = useState(['1']);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const getStatus = (id: string) => {
     if (selectedId === id) {
@@ -301,6 +300,7 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
     <StoryMap zoom={15} center={{ latitude: 55.944665, longitude: -3.1964903 }}>
       {venues.map((venue) => (
         <BpkOverlayView
+          key={venue.id}
           getPixelPositionOffset={getPixelPositionOffset}
           position={{
             latitude: venue.latitude,
@@ -314,18 +314,17 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
             padded
             label="Map marker popover"
             labelAsTitle
+            onClose={() => {}}
             target={
               <div ref={ref} style={{ width: 'fit-content' }}>
                 <BpkPriceMarkerButton
-                  id={venue.id}
                   label={venue.price}
-                  icon={airportsIconWithPrice ? venue.airportsIcon : null}
+                  icon={airportsIconWithPrice ? venue.airportsIcon : undefined}
                   onClick={() => {
-                    inlineAction();
+                    inlineAction?.();
                     selectVenue(venue.id);
                   }}
                   status={getStatus(venue.id)}
-                  accessibilityLabel="Click the price marker button"
                 />
               </div>
             }
@@ -338,13 +337,13 @@ const StatefulBpkPriceMarkerButtonWithPopoverOnMap = ({
   );
 };
 
-const onZoom = (level) => {
+const onZoom = (level: number) => {
   action(`Zoom changed to ${level}`);
 };
 
-const onRegionChange = (bounds, center) => {
+const onRegionChange = (bounds: unknown, center: unknown) => {
   action(
-    `Dragged to bounds: ${bounds.toString()}, center: ${center.toString()}`,
+    `Dragged to bounds: ${(bounds as object).toString()}, center: ${(center as object).toString()}`,
   );
 };
 
@@ -455,7 +454,7 @@ const MultipleMapsExample = () => (
   </>
 );
 
-export default {
+const meta: Meta = {
   title: 'bpk-component-map',
   component: BpkMapComp,
   subcomponents: {
@@ -476,6 +475,8 @@ export default {
     },
   },
 };
+
+export default meta;
 
 export const Simple = { render: () => <SimpleExample /> };
 export const DragDisabledAndControlsHidden = { render: () => <DragDisabledAndHiddenControlsExample /> };

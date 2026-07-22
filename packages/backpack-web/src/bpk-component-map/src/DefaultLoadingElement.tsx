@@ -16,23 +16,17 @@
  * limitations under the License.
  */
 
-export const defaultIconMarkerThemeAttributes = [
-  'iconMarkerDefaultBackgroundColor',
-  'iconMarkerDefaultSelectedColor',
-  'iconMarkerDefaultDisabledColor',
-  'iconMarkerDefaultDisabledBackgroundColor',
-];
+import { BpkLargeSpinner, SPINNER_TYPES } from '../../bpk-component-spinner';
+import { cssModules } from '../../bpk-react-utils';
 
-export const priceMarkerThemeAttributes = [
-  'priceMarkerBackgroundColor',
-  'priceMarkerSelectedBorderColor',
-  'priceMarkerSelectedColor',
-  'priceMarkerViewedBackgroundColor',
-  'priceMarkerViewedBorderColor',
-  'priceMarkerViewedColor',
-];
+import STYLES from './DefaultLoadingElement.module.scss';
 
-export default {
-  defaultIconMarkerThemeAttributes,
-  priceMarkerThemeAttributes,
-};
+const getClassName = cssModules(STYLES);
+
+const DefaultLoadingElement = () => (
+  <div className={getClassName('bpk-map-default-loading-element')}>
+    <BpkLargeSpinner type={SPINNER_TYPES.primary} />
+  </div>
+);
+
+export default DefaultLoadingElement;

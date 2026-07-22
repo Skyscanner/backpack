@@ -15,40 +15,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* @flow strict */
 
-import PropTypes from 'prop-types';
-import type { ComponentType } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 
 import { useJsApiLoader } from '@react-google-maps/api';
 
 import DefaultLoadingElement from './DefaultLoadingElement';
 
-export const LibraryShapeType = PropTypes.arrayOf(
-  PropTypes.oneOf([
-    'drawing',
-    'geometry',
-    'localContext',
-    'places',
-    'visualization',
-  ]),
-);
+export const LIBRARIES = [
+  'drawing',
+  'geometry',
+  'localContext',
+  'places',
+  'visualization',
+] as const;
 
-const DEFAULT_LIBRARIES = ['geometry', 'drawing', 'places'];
+export type Library = (typeof LIBRARIES)[number];
 
-function withGoogleMapsScript(Component: ComponentType<any>) {
+const DEFAULT_LIBRARIES: Library[] = ['geometry', 'drawing', 'places'];
+
+type WithGoogleMapsScriptProps = {
+  googleMapsApiKey: string;
+  libraries?: Library[];
+  loadingElement?: ReactNode;
+  preventGoogleFontsLoading?: boolean;
+};
+
+function withGoogleMapsScript<P extends object>(
+  Component: ComponentType<P>,
+): ComponentType<Omit<P, keyof WithGoogleMapsScriptProps> & WithGoogleMapsScriptProps> {
   const WithGoogleMapsScript = ({
     googleMapsApiKey,
     libraries = DEFAULT_LIBRARIES,
     loadingElement = <DefaultLoadingElement />,
     preventGoogleFontsLoading = false,
     ...rest
-  }: {
-    [string]: any,
-  }) => {
+  }: WithGoogleMapsScriptProps & Omit<P, keyof WithGoogleMapsScriptProps>) => {
     const { isLoaded, loadError } = useJsApiLoader({
       googleMapsApiKey,
-      libraries,
+      libraries: libraries as any,
       preventGoogleFontsLoading,
       version: '3.46',
     });
@@ -61,14 +66,7 @@ function withGoogleMapsScript(Component: ComponentType<any>) {
       throw new Error('Google maps cannot be loaded!');
     }
 
-    return <Component {...rest} />;
-  };
-
-  WithGoogleMapsScript.propTypes = {
-    loadingElement: PropTypes.node,
-    googleMapsApiKey: PropTypes.string.isRequired,
-    libraries: LibraryShapeType,
-    preventGoogleFontsLoading: PropTypes.bool,
+    return <Component {...(rest as P)} />;
   };
 
   return WithGoogleMapsScript;

@@ -16,32 +16,30 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkBasicMapMarker from './BpkBasicMapMarker';
 import BpkIconMarkerBackground from './BpkIconMarkerBackground';
-import { LatLongPropType, type LatLong } from './common-types';
+
+import type { LatLong } from './common-types';
 
 import STYLES from './BpkIconMarker.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 export type Props = {
-  icon: Node,
-  position: LatLong,
-  selected: boolean,
-  className: ?string,
-  onClick: ?(event: SyntheticEvent<>) => mixed,
-  buttonProps: ?{ [string]: any },
+  icon: ReactNode;
+  position: LatLong;
+  selected?: boolean;
+  className?: string | null;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  buttonProps?: HTMLAttributes<HTMLButtonElement>;
 };
 
 const BpkIconMarker = (props: Props) => {
-  const { buttonProps = null, className = null, icon, onClick = null, position, selected = false, ...rest } =
+  const { buttonProps = null, className = null, icon, onClick = undefined, position, selected = false, ...rest } =
     props;
 
   const wrapperClassNames = getClassName(
@@ -57,9 +55,7 @@ const BpkIconMarker = (props: Props) => {
   );
 
   return (
-    // $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'.
     <BpkBasicMapMarker position={position} {...rest}>
-      {/* $FlowFixMe[cannot-spread-inexact] - inexact rest. See 'decisions/flowfixme.md'. */}
       <button
         type="button"
         className={wrapperClassNames}
@@ -67,22 +63,13 @@ const BpkIconMarker = (props: Props) => {
         {...buttonProps}
       >
         <BpkIconMarkerBackground
-          interactive={onClick !== null}
+          interactive={onClick !== undefined}
           selected={selected}
         />
         <div className={iconClassNames}>{icon}</div>
       </button>
     </BpkBasicMapMarker>
   );
-};
-
-BpkIconMarker.propTypes = {
-  icon: PropTypes.node.isRequired,
-  position: LatLongPropType.isRequired,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  selected: PropTypes.bool,
-  buttonProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default BpkIconMarker;

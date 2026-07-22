@@ -16,64 +16,60 @@
  * limitations under the License.
  */
 
-/* @flow strict */
-
-import PropTypes from 'prop-types';
-import type { Node } from 'react';
+import type { ReactNode } from 'react';
 import { useCallback, useRef } from 'react';
 
 import { GoogleMap } from '@react-google-maps/api';
 
 import { cssModules } from '../../bpk-react-utils';
 
-import { LatLongPropType, type LatLong } from './common-types';
+import type { LatLong } from './common-types';
 
 import STYLES from './BpkMap.module.scss';
 
 const getClassName = cssModules(STYLES);
 
 export type Bounds = {
-  south: number,
-  west: number,
-  north: number,
-  east: number,
+  south: number;
+  west: number;
+  north: number;
+  east: number;
 };
 
-export type MapRef = ?{
-  getBounds: () => Bounds,
-  getCenter: () => LatLong,
-  getZoom: () => number,
-  fitBounds: (Bounds) => void,
+export type MapRef = {
+  getBounds: () => Bounds;
+  getCenter: () => { lat: () => number; lng: () => number };
+  getZoom: () => number;
+  fitBounds: (bounds: Bounds) => void;
 };
 
 type MapOptionStyle = {
-  featureType: ?string,
-  elementType: ?string,
-  stylers: Array<{
-    [string]: string,
-  }>,
+  featureType?: string;
+  elementType?: string;
+  stylers: Array<Record<string, string>>;
 };
 
 type Props = {
-  greedyGestureHandling: boolean,
-  panEnabled: boolean,
-  showControls: boolean,
-  zoom: number,
+  greedyGestureHandling?: boolean;
+  panEnabled?: boolean;
+  showControls?: boolean;
+  zoom?: number;
   /**
    * Note: One of `bounds` and `center` must be provided.
    */
-  bounds: ?Bounds,
+  bounds?: Bounds | null;
   /**
    * Note: One of `bounds` and `center` must be provided.
    */
-  center: ?LatLong,
-  children: ?Node,
-  mapRef: ?(MapRef) => mixed,
-  onRegionChange: ?(Bounds, LatLong) => mixed,
-  onZoom: ?(number) => mixed,
-  onTilesLoaded: ?() => void,
-  className: ?string,
-  mapOptionStyles: ?Array<MapOptionStyle>,
+  center?: LatLong | null;
+  children?: ReactNode;
+  mapRef?: ((map: MapRef) => void) | null;
+  onRegionChange?: ((bounds: Bounds, center: LatLong) => void) | null;
+  onZoom?: ((zoom: number) => void) | null;
+  onTilesLoaded?: (() => void) | null;
+  className?: string | null;
+  mapOptionStyles?: MapOptionStyle[] | null;
+  mapId?: string | null;
 };
 
 const BpkMap = (props: Props) => {
@@ -106,11 +102,11 @@ const BpkMap = (props: Props) => {
     gestureHandling = 'greedy';
   }
 
-  const ref = useRef(null);
+  const ref = useRef<MapRef | null>(null);
   const mapContainerClassName = getClassName('bpk-map', className);
 
   const onLoad = useCallback(
-    (map) => {
+    (map: any) => {
       ref.current = map;
       if (map && bounds) {
         map.fitBounds({
@@ -155,7 +151,12 @@ const BpkMap = (props: Props) => {
       }}
       onDragEnd={() => {
         if (ref && ref.current && onRegionChange) {
-          onRegionChange(ref.current.getBounds(), ref.current.getCenter());
+          const mapBounds = ref.current.getBounds();
+          const mapCenter = ref.current.getCenter();
+          onRegionChange(mapBounds, {
+            latitude: mapCenter.lat(),
+            longitude: mapCenter.lng(),
+          });
         }
       }}
       onZoomChanged={() => {
@@ -173,41 +174,6 @@ const BpkMap = (props: Props) => {
       {children}
     </GoogleMap>
   );
-};
-
-BpkMap.propTypes = {
-  /**
-   * Note: One of `bounds` and `center` must be provided.
-   */
-  bounds: PropTypes.shape({
-    south: PropTypes.number.isRequired,
-    west: PropTypes.number.isRequired,
-    north: PropTypes.number.isRequired,
-    east: PropTypes.number.isRequired,
-  }),
-  /**
-   * Note: One of `bounds` and `center` must be provided.
-   */
-  center: LatLongPropType,
-  children: PropTypes.node,
-  greedyGestureHandling: PropTypes.bool,
-  mapRef: PropTypes.func,
-  className: PropTypes.string,
-  onRegionChange: PropTypes.func,
-  onZoom: PropTypes.func,
-  panEnabled: PropTypes.bool,
-  showControls: PropTypes.bool,
-  onTilesLoaded: PropTypes.func,
-  zoom: PropTypes.number,
-  mapOptionStyles: PropTypes.arrayOf(
-    PropTypes.shape({
-      featureType: PropTypes.string,
-      elementType: PropTypes.string,
-      // eslint-disable-next-line react/forbid-prop-types
-      stylers: PropTypes.arrayOf(PropTypes.object).isRequired,
-    }),
-  ),
-  mapId: PropTypes.string,
 };
 
 export default BpkMap;
