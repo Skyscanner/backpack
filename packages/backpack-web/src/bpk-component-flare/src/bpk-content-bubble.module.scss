@@ -65,19 +65,16 @@
   &__rounded-corner {
     position: absolute;
 
-    // stylelint-disable unit-disallowed-list
+    // stylelint-disable-next-line unit-disallowed-list
     bottom: calc(tokens.$bpk-flare-height-desktop - 2px);
-    // stylelint-enable unit-disallowed-list
-
     left: 0;
     width: tokens.$bpk-flare-corner-radius;
     height: tokens.$bpk-flare-corner-radius;
     fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     @include breakpoints.bpk-breakpoint-mobile {
-      // stylelint-disable unit-disallowed-list
+      // stylelint-disable-next-line unit-disallowed-list
       bottom: calc(tokens.$bpk-flare-height-mobile - 1px);
-      // stylelint-enable unit-disallowed-list
     }
 
     &--trailing {
