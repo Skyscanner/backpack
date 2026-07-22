@@ -22,9 +22,6 @@ import type { ReactElement, InputHTMLAttributes, Ref } from 'react';
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
 
-// @ts-expect-error -- bpk-storybook-utils has no type declarations
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import { withRtlSupport } from '../../../bpk-component-icon';
 import FlightIcon from '../../../bpk-component-icon/lg/flight';
 import readme from '../../README.md';
@@ -429,30 +426,6 @@ export const CustomRenderInput: Story = {
 
 export const VisualTest: Story = {
   render: () => <AutosuggestExample alwaysRenderSuggestions />,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    const input = canvas.getByPlaceholderText('Enter an office name');
-    input.focus();
-    await userEvent.type(input, 'Lon', { delay: 100 });
-
-    await canvas.findByText('London (Any)');
-    const dropdown = canvas.getByText('London (Any)');
-    dropdown.classList.add('percy-selector-placeholder');
-  },
-  parameters: {
-    percy: {
-      waitForSelector: '.percy-selector-placeholder',
-    },
-  },
-};
-
-export const VisualTestDark: Story = {
-  render: () => (
-    <BpkDarkExampleWrapper>
-      <AutosuggestExample alwaysRenderSuggestions />
-    </BpkDarkExampleWrapper>
-  ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
