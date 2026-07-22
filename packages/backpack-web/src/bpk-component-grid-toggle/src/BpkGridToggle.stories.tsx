@@ -18,6 +18,9 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error -- bpk-storybook-utils has no type declarations
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import readme from '../README.md';
 
 import BpkGridToggle from './BpkGridToggle';
@@ -47,4 +50,12 @@ type Story = StoryObj<typeof BpkGridToggle>;
 
 export const Example: Story = {
   render: () => <DefaultExample />,
+};
+
+export const DarkMode: Story = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <DefaultExample />
+    </BpkDarkExampleWrapper>
+  ),
 };
