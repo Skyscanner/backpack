@@ -20,8 +20,6 @@ import { Component } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkButton from '../../bpk-component-button';
 import BpkCheckbox from '../../bpk-component-checkbox';
@@ -211,18 +209,4 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-};
-
-const DarkModeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkFormValidation id="form-validation-dark" expanded>
-      A validation message on dark background
-    </BpkFormValidation>
-  </BpkDarkExampleWrapper>
-);
-
-export const DarkMode = {
-  render: () => <DarkModeExample />,
-  parameters: { bpkTheme: 'dark' },
-  tags: ['dark-mode-compatible'],
 };
