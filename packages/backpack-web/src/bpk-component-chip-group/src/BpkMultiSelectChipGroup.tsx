@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 import { useRef } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
@@ -69,8 +69,17 @@ export type SingleSelectChipItem = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
+export type ChipRenderProps = {
+  selected: boolean;
+  chipStyle: ChipStyleType;
+  accessibilityLabel: string;
+  onClick: () => void;
+  index: number;
+};
+
 export type ChipItem = {
   component?: ChipComponentType;
+  renderChip?: (props: ChipRenderProps) => ReactElement | null;
   onClick?: (selected: boolean, index: number) => void;
   selected?: boolean;
   hidden?: boolean;
@@ -113,21 +122,37 @@ const Chip = ({
     hidden = false,
     leadingAccessoryView = null,
     onClick,
+    renderChip,
     selected,
     text,
     ...rest
   } = chipItem;
+
+  if (hidden) return null;
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick(!selected, chipIndex);
+    }
+  };
+
+  if (renderChip) {
+    return renderChip({
+      selected: selected ?? false,
+      chipStyle,
+      accessibilityLabel: accessibilityLabel || text,
+      onClick: handleClick,
+      index: chipIndex,
+    });
+  }
+
   const Component = CHIP_COMPONENT_MAP[component];
-  return hidden ? null : (
+  return (
     <Component
       selected={selected ?? false}
       type={chipStyle}
       accessibilityLabel={accessibilityLabel || text}
-      onClick={() => {
-        if (onClick) {
-          onClick(!selected, chipIndex);
-        }
-      }}
+      onClick={handleClick}
       role={ariaMultiselectable ? 'checkbox' : 'radio'}
       leadingAccessoryView={leadingAccessoryView}
       {...rest}

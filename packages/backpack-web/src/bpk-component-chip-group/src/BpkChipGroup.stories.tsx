@@ -20,7 +20,8 @@ import { useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import { CHIP_TYPES } from '../../bpk-component-chip';
+import { CHIP_TYPES, BpkDropdownChip } from '../../bpk-component-chip';
+import BpkPopover from '../../bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import readme from '../README.md';
@@ -31,7 +32,7 @@ import BpkMultiSelectChipGroup, {
 } from './BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 
-import type { MultiSelectProps, ChipItem } from './BpkMultiSelectChipGroup';
+import type { MultiSelectProps, ChipItem, ChipRenderProps } from './BpkMultiSelectChipGroup';
 import type { SingleSelectProps } from './BpkSingleSelectChipGroup';
 import type { Meta } from '@storybook/react';
 
@@ -445,6 +446,71 @@ export const AllChipTypes = {
 
 export const ExampleStateManagement = {
   render: () => <StateManagement />,
+};
+
+const WithPopoverExample = () => {
+  const [selectedChips, setSelectedChips] = useState([false, false, false]);
+
+  const chipsWithPopover: ChipItem[] = [
+    {
+      text: 'Flights',
+      selected: selectedChips[0],
+      onClick: (selected: boolean, index: number) => {
+        const next = [...selectedChips];
+        next[index] = selected;
+        setSelectedChips(next);
+      },
+    },
+    {
+      text: 'Hotels',
+      selected: selectedChips[1],
+      onClick: (selected: boolean, index: number) => {
+        const next = [...selectedChips];
+        next[index] = selected;
+        setSelectedChips(next);
+      },
+    },
+    {
+      text: 'Filter',
+      selected: selectedChips[2],
+      renderChip: ({ accessibilityLabel, chipStyle, index, onClick, selected }: ChipRenderProps) => (
+        <BpkPopover
+          key="filter-popover"
+          id="filter-popover"
+          label="Filter options"
+          labelAsTitle
+          onClose={onClick}
+          closeButtonLabel="Close filter"
+          target={
+            <BpkDropdownChip
+              accessibilityLabel={accessibilityLabel}
+              type={chipStyle}
+              selected={selected}
+              onClick={onClick}
+            >
+              Filter
+            </BpkDropdownChip>
+          }
+        >
+          <BpkText>Popover anchored to chip {index + 1}</BpkText>
+        </BpkPopover>
+      ),
+    },
+  ];
+
+  return (
+    <div>
+      <BpkMultiSelectChipGroup
+        type={CHIP_GROUP_TYPES.wrap}
+        chips={chipsWithPopover}
+        ariaLabel="Select filters"
+      />
+    </div>
+  );
+};
+
+export const WithPopover = {
+  render: () => <WithPopoverExample />,
 };
 
 export const VisualTest = {
