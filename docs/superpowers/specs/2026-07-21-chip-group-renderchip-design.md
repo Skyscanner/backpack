@@ -2,7 +2,8 @@
 
 **Date:** 2026-07-21
 **Status:** Approved (design), pending implementation
-**Related:** PR #4910 (demo story showing the anchoring limitation)
+**Related:** PR #4910 (demo story showing the anchoring limitation),
+PR #4918 (colleague POC — this design aligns to it)
 
 ## Problem
 
@@ -18,270 +19,254 @@ individual chip's bounding rect.
 
 ## Goal
 
-Backport the `renderChip` mechanism that `hotels-website` already ships in its
-fork of this component, into official Backpack. `renderChip` lets a caller supply
-a custom render function for a single chip item, so the caller can render
-`<BpkPopover target={<Chip/>}>…</BpkPopover>` in place — the popover then anchors
+Add an optional `renderChip` render prop to `ChipItem`. When provided, the group
+delegates leaf rendering of that chip slot to the caller instead of picking from
+the internal `CHIP_COMPONENT_MAP`. The caller can then render
+`<BpkPopover target={<Chip/>}>…</BpkPopover>` in place, so the popover anchors
 precisely to that chip.
 
-This aligns the official component with the hotels fork so hotels can eventually
-delete its fork.
+This design aligns to colleague **PR #4918** (`[BpkChipGroup] POC: renderChip
+render prop for custom subcomponents`), which is the reference implementation.
 
-## Precedent — hotels-website fork (already in production)
+## Design source — PR #4918
 
-`hotels-website` maintains a fork at
-`libs/shared/ui/src/common/BpkChipGroup/` that already implements `renderChip`.
-Its `PartnersFilter` uses it to anchor a popover to a chip in production:
+PR #4918 already implements exactly this on official Backpack:
+- Adds `renderChip?: (props: ChipRenderProps) => ReactElement | null` to `ChipItem`.
+- Adds and exports a `ChipRenderProps` type from the package barrel.
+- `Chip` calls `renderChip(...)` before default rendering, passing back the
+  group-computed state so the caller does not rebuild it from scratch.
+- Adds a `WithPopover` Storybook story.
 
-```tsx
-// OfferFiltersChips.tsx — passes a popover-wrapped chip via renderChip
-const partnersChip = {
-  text: partnersFilter.title,
-  renderChip: () => <PartnersFilter ... />,
-};
-
-// PartnersFilter.tsx — the chip IS a popover target
-<BpkPopover
-  id="offer-filter-partners-popover"
-  label={title}
-  target={
-    <span ref={target}>
-      <BpkDropdownChip accessibilityLabel={...} selected={...} onClick={onOpen}>
-        {partnersFilterTitle}
-      </BpkDropdownChip>
-    </span>
-  }
-  isOpen={isOpen}
-  onClose={onClose}
->
-  <PartnersFilterOptionList ... />
-</BpkPopover>
-```
-
-The backport keeps the exact same `renderChip` shape and semantics so this usage
-ports over unchanged.
+This spec documents that design (and the earlier discovery that hotels-website
+ships a simpler no-arg `() => ReactNode` variant of the same idea in its fork).
 
 ## Scope
 
-**In scope** — three portable changes from the hotels fork:
+**In scope:**
+- `renderChip?: (props: ChipRenderProps) => ReactElement | null` on `ChipItem`.
+- New exported `ChipRenderProps` type.
+- `Chip` internal render branch that calls `renderChip` with group-computed props.
+- `WithPopover` Storybook story.
+- Barrel export of `ChipRenderProps` from `index.ts`.
 
-1. `renderChip?: () => ReactNode` on `ChipItem` — the core fix.
-2. `content?: ReactNode` on `SingleSelectChipItem`, rendered as `{content || text}`
-   — lets a chip's body be a node, not just a string.
-3. `key` de-dup bugfix — official uses `key={chip.text}`, which collides when two
-   chips share the same text. Change to `key={`${chip.text}-${index}`}` (with the
-   `react/no-array-index-key` eslint-disable the fork uses).
+**Out of scope (explicitly dropped):**
+- `content?: ReactNode` field. `content` renders *inside* the chip's `<button>`
+  (as `{content || text}`), so it cannot host a popover without producing a
+  button-in-button structure. It solves a different problem (rich-text chip body,
+  e.g. hotels `NeighbourhoodChipsGroup`) and is not needed for popover anchoring.
+  Any rich-text-chip need is a separate proposal.
+- Top-level `children` composition API (earlier approach A — dropped in favour of
+  the render prop, which is a smaller, fully backward-compatible change).
+- `BpkSingleSelectChipGroup` behavioural change. `renderChip` lives on the shared
+  `ChipItem` type; no single-select-specific logic is added.
+- Hotels-specific fork extras (`mobilePadding`, `BpkVessel`, sticky-chip
+  `FilterIconSm`).
 
-Backward compatible: existing `chips` array callers need zero changes. All three
-additions are optional fields / internal keying.
-
-**Out of scope:**
-- Hotels-specific differences: `mobilePadding`, `BpkVessel` container, sticky-chip
-  hardcoded `FilterIconSm` leading accessory. These are product concerns, not
-  Backpack primitives.
-- A top-level `children` composition API (was the earlier approach A — dropped in
-  favour of matching the hotels fork).
-- `BpkSingleSelectChipGroup` behavioural change. `content`/`renderChip` live on
-  the shared `ChipItem`/`SingleSelectChipItem` types, so single-select inherits
-  them for free — but no new single-select-specific logic is added.
+Backward compatible: `renderChip` is an optional field; existing `chips` array
+callers need zero changes. No change to `MultiSelectProps` / `SingleSelectProps`,
+so there is no discriminated-union type risk on the single-select path.
 
 ## Design
 
 ### 1. Types
 
-Add `renderChip` to `ChipItem` and `content` to `SingleSelectChipItem`:
-
 ```ts
-export type SingleSelectChipItem = {
-  text: string;
-  content?: ReactNode;          // NEW — chip body as a node
-  accessibilityLabel?: string;
-  leadingAccessoryView?: ReactNode;
-  [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
+import type { ReactNode, ReactElement } from 'react';
+
+// NEW — the group-computed state handed back to the caller's render fn
+export type ChipRenderProps = {
+  selected: boolean;
+  chipStyle: ChipStyleType;
+  accessibilityLabel: string;
+  onClick: () => void;   // pre-wired toggle (calls the item's onClick(!selected, index))
+  index: number;
 };
 
 export type ChipItem = {
   component?: ChipComponentType;
+  renderChip?: (props: ChipRenderProps) => ReactElement | null;  // NEW
   onClick?: (selected: boolean, index: number) => void;
   selected?: boolean;
   hidden?: boolean;
-  /**
-   * Custom render function for the chip. When provided, the default chip
-   * rendering (including role, accessibilityLabel, and onClick bindings) is
-   * bypassed entirely. All other ChipItem props (onClick, selected, component,
-   * etc.) will be ignored.
-   */
-  renderChip?: () => ReactNode;  // NEW — custom render escape hatch
 } & SingleSelectChipItem;
 ```
 
-No change to `CommonProps` / `MultiSelectProps` / `SingleSelectProps` — the `chips`
-array API is untouched, so there is no discriminated-union type risk on the
-single-select path.
+Why a function taking `ChipRenderProps`, not a bare `ReactNode`:
+- **Lazy / conditional**: `renderChip` is only called when the chip actually
+  renders (after the `hidden` check), so a heavy stateful chip (e.g. a popover
+  filter) is not instantiated for hidden or unrendered slots.
+- **State handed back**: the group computes `selected`, a pre-wired `onClick`
+  toggle, `chipStyle`, `accessibilityLabel`, and `index`, and passes them to the
+  caller — so the caller wires its custom chip without rebuilding the default
+  bindings from scratch.
+- **`ReactElement | null` return** matches the `hidden ? null` contract.
 
 ### 2. Rendering — `Chip` internal component
-
-Two edits inside the internal `Chip` component:
 
 ```tsx
 const {
   accessibilityLabel,
   component = CHIP_COMPONENT.selectable,
-  content,          // NEW — destructure
   hidden = false,
   leadingAccessoryView = null,
   onClick,
-  renderChip,       // NEW — destructure
+  renderChip,     // NEW
   selected,
   text,
   ...rest
 } = chipItem;
 
-// NEW — escape hatch, bypasses default chip entirely
-if (renderChip) {
-  return hidden ? null : <>{renderChip()}</>;
+if (hidden) return null;               // hoisted above the branch
+
+const handleClick = () => {
+  if (onClick) {
+    onClick(!selected, chipIndex);
+  }
+};
+
+if (renderChip) {                      // NEW — delegate leaf rendering to caller
+  return renderChip({
+    selected: selected ?? false,
+    chipStyle,
+    accessibilityLabel: accessibilityLabel || text,
+    onClick: handleClick,
+    index: chipIndex,
+  });
 }
 
 const Component = CHIP_COMPONENT_MAP[component];
-return hidden ? null : (
+return (
   <Component
     selected={selected ?? false}
     type={chipStyle}
     accessibilityLabel={accessibilityLabel || text}
-    onClick={() => { if (onClick) onClick(!selected, chipIndex); }}
+    onClick={handleClick}
     role={ariaMultiselectable ? 'checkbox' : 'radio'}
     leadingAccessoryView={leadingAccessoryView}
     {...rest}
   >
-    {content || text}     {/* CHANGED — was `{text}` */}
+    {text}
   </Component>
 );
 ```
 
-`renderChip` returns before any default binding, so the caller owns everything
-(role, a11y, onClick, popover). This is why `<BpkPopover target={<Chip/>}>`
-anchors correctly: the caller renders a real element in place and `BpkPopover`
-clones it, giving `@floating-ui/react` the chip's real bounding rect.
-
-### 3. `key` de-dup in `ChipGroupContent`
-
-```tsx
-{chips.map((chip, index) => (
-  <Chip
-    // Use chip.text with index to ensure unique keys when chip.text values are duplicated
-    key={`${chip.text}-${index}`} // eslint-disable-line react/no-array-index-key
-    chipItem={chip}
-    chipStyle={chipStyle}
-    ariaMultiselectable={ariaMultiselectable}
-    chipIndex={index}
-  />
-))}
-```
+Notes:
+- `hidden` check is hoisted so both the `renderChip` and default paths honour it.
+- `handleClick` is extracted so the default chip and the `renderChip` callback
+  share the identical toggle behaviour.
+- `renderChip` returns before any default `<Component>` render, so the caller owns
+  the element `BpkPopover` clones — giving `@floating-ui/react` the chip's real
+  bounding rect, which is why anchoring works.
 
 rail machinery (`BpkMobileScrollContainer` + `scrollContainerRef` + two `Nudger`s
-+ `stickyChip`) is unchanged.
++ `stickyChip`) and `ChipGroupContent` are unchanged.
 
-### 4. Storybook
+### 3. Storybook — `WithPopover` story
 
-- Delete the standalone demo files:
-  `BpkChipGroupPopoverExample.stories.tsx` and
-  `BpkChipGroupPopoverExample.stories.module.scss`.
-- Add a working popover story to the main `BpkChipGroup.stories.tsx`, merging any
-  needed styles into `BpkChipGroup.stories.module.scss`. The story uses `rail` +
-  `onImage` + Nudger (same scenario as the old demo) and supplies a
-  popover-wrapped `BpkDropdownChip` via `renderChip`, proving precise anchoring
-  and unaffected scrolling.
-
-Reference example (mirrors the hotels `PartnersFilter` pattern):
+Add to the main `BpkChipGroup.stories.tsx` (matching PR #4918):
 
 ```tsx
-const FilterChip = ({ label, content }: { label: string; content: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
+
+const WithPopoverExample = () => {
+  const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
+    text: label,
+    renderChip: ({
+      accessibilityLabel,
+      chipStyle,
+      index,
+      selected,
+    }: ChipRenderProps) => (
+      <BpkPopover
+        id={`popover-chip-${index}`}
+        label={`${label} options`}
+        labelAsTitle
+        placement="bottom"
+        closeButtonLabel={`Close ${label} options`}
+        onClose={() => {}}
+        target={
+          <BpkDropdownChip
+            accessibilityLabel={accessibilityLabel}
+            type={chipStyle}
+            selected={selected}
+            onClick={() => {}}
+          >
+            {label}
+          </BpkDropdownChip>
+        }
+      >
+        <BpkText>Content for {label}</BpkText>
+      </BpkPopover>
+    ),
+  }));
+
   return (
-    <BpkPopover
-      id={`popover-${label}`}
-      isOpen={isOpen}
-      label={label}
-      labelAsTitle
-      closeButtonLabel="Close"
-      onClose={() => setIsOpen(false)}
-      placement="bottom-start"
-      target={
-        <BpkDropdownChip
-          type={CHIP_TYPES.onImage}
-          selected={isOpen}
-          accessibilityLabel={label}
-          onClick={() => setIsOpen((o) => !o)}
-        >
-          {label}
-        </BpkDropdownChip>
-      }
-    >
-      <BpkText textStyle={TEXT_STYLES.bodyDefault} tagName="p">{content}</BpkText>
-    </BpkPopover>
+    <BpkMultiSelectChipGroup
+      type={CHIP_GROUP_TYPES.wrap}
+      chips={chipsWithPopover}
+      ariaLabel="Select filters"
+    />
   );
 };
 
-<BpkMultiSelectChipGroup
-  type={CHIP_GROUP_TYPES.rail}
-  chipStyle={CHIP_TYPES.onImage}
-  ariaLabel="Filter results"
-  leadingNudgerLabel="Scroll back"
-  trailingNudgerLabel="Scroll forward"
-  chips={Object.entries(FILTER_CONTENT).map(([label, content]) => ({
-    text: label,
-    renderChip: () => <FilterChip label={label} content={content} />,
-  }))}
-/>
+export const WithPopover = {
+  render: () => <WithPopoverExample />,
+};
 ```
 
-Note: `role` is not set explicitly — `BpkSelectableChip` defaults it to
-`'checkbox'` (`BpkSelectableChip.tsx:44`), which is correct for multi-select, and
-`role` is a native `<button>` attribute, not a chip-specific prop. In a
-`renderChip` chip the caller owns the element entirely anyway.
+Delete the standalone demo files added by PR #4910:
+`BpkChipGroupPopoverExample.stories.tsx` and
+`BpkChipGroupPopoverExample.stories.module.scss` — superseded by `WithPopover`.
+
+### 4. Barrel export
+
+Export `ChipRenderProps` from `bpk-component-chip-group/index.ts` alongside
+`ChipItem` / `MultiSelectProps` / etc., so consumers can type their render fns.
 
 ### 5. Tests, docs, verification
 
-Tests (`BpkMultiSelectChipGroup-test.tsx`) — mirror the fork's coverage:
-- `renderChip` renders the custom node and bypasses the default chip (assert the
-  custom content is present; default `role`/onClick bindings are absent).
-- `hidden` still suppresses a `renderChip` chip.
-- `content` renders in place of `text` when provided.
-- duplicate `text` values across chips no longer produce a React key warning.
+Tests (`BpkMultiSelectChipGroup-test.tsx`):
+- `renderChip` is called and its returned element is rendered instead of the
+  default chip.
+- the `ChipRenderProps` handed to `renderChip` carry the expected `selected`,
+  `chipStyle`, `accessibilityLabel`, `index`, and a working `onClick` (invoking it
+  fires the item's `onClick(!selected, index)`).
+- `hidden` still suppresses a `renderChip` chip (returns null, callback not
+  invoked).
 - existing `chips` array cases stay green (backward-compat evidence).
 - update snapshots if any.
 
 Docs:
-- Update `bpk-component-chip-group/README.md` with the `renderChip` usage,
-  including the popover-anchoring example, and note that `renderChip` bypasses all
-  default chip bindings so the caller owns role/a11y/onClick.
+- Update `bpk-component-chip-group/README.md` with the `renderChip` usage and the
+  popover-anchoring example; note that `renderChip` receives group-computed props
+  (`selected`, pre-wired `onClick`, `chipStyle`, `accessibilityLabel`, `index`)
+  and that the caller owns the returned element (role/a11y beyond what is passed).
 
 Verification (direct commands, not nx cached tasks):
 - `pnpm eslint <changed files>`
 - `pnpm tsc` (or the project's tsc)
 - `pnpm jest bpk-component-chip-group`
-- Manual Storybook check: rail horizontal scroll + click different chips, each
-  popover anchors correctly.
+- Manual Storybook check: the `WithPopover` story — click different chips, each
+  popover anchors to its own chip.
 
 ### Changed files
 
-1. `BpkMultiSelectChipGroup.tsx` — add `renderChip` to `ChipItem`, `content` to
-   `SingleSelectChipItem`, the `renderChip` early return + `{content || text}` in
-   `Chip`, and the `key` de-dup in `ChipGroupContent`.
-2. `BpkChipGroup.stories.tsx` — new working popover story via `renderChip`.
-3. `BpkChipGroup.stories.module.scss` — merge needed styles.
+1. `BpkMultiSelectChipGroup.tsx` — add `ChipRenderProps` type, `renderChip` on
+   `ChipItem`, hoist `hidden`, extract `handleClick`, add the `renderChip` branch.
+2. `index.ts` — export `ChipRenderProps`.
+3. `BpkChipGroup.stories.tsx` — add `WithPopover` story.
 4. Delete `BpkChipGroupPopoverExample.stories.tsx` + `.stories.module.scss`.
-5. `BpkMultiSelectChipGroup-test.tsx` — `renderChip` / `content` / key cases.
+5. `BpkMultiSelectChipGroup-test.tsx` — `renderChip` / `ChipRenderProps` / hidden
+   cases.
 6. `README.md` — `renderChip` usage.
-7. Recompile the corresponding `.module.css` if the scss changes (per
-   new-component-workflow rules).
 
-### Divergences from the hotels fork (intentionally not ported)
+(No SCSS change expected, so no `.module.css` recompile — confirm during
+implementation.)
 
-- `mobilePadding` prop + `bpk-chip-group--mobile-padding` class.
-- `BpkVessel` wrapper (official uses a plain `div` +
-  `getDataComponentAttribute('MultiSelectChipGroup')`).
-- sticky-chip hardcoded `FilterIconSm` leading accessory.
+### Relationship to PR #4918
 
-These stay hotels-specific; hotels keeps a thin fork or passes them via existing
-props until/unless a separate proposal promotes them.
+PR #4918 is the colleague POC and the reference for this design. This spec matches
+its API (`ChipRenderProps` render prop) and story (`WithPopover`), and adds the
+test/docs/cleanup items #4918 left unchecked (tests, README, deleting the #4910
+demo files). If #4918 lands first, this reduces to completing those follow-ups on
+top of it rather than reimplementing the prop.
