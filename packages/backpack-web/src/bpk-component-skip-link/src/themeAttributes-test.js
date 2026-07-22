@@ -20,6 +20,6 @@ import themeAttributes from './themeAttributes';
 
 describe('themeAttributes', () => {
   it('should export the correct general theme attributes', () => {
-    expect(themeAttributes).toEqual(['skipLinkBackgroundColor']);
+    expect(themeAttributes).toEqual([]);
   });
 });

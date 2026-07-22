@@ -18,6 +18,9 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import readme from '../README.md';
 
 import BpkSkipLink from './BpkSkipLink';
@@ -93,4 +96,16 @@ export const Default = {
 
 export const Realistic = {
   render: () => <RealisticExample />,
+};
+
+export const DarkMode = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <BpkSkipLink
+        style={{ position: 'relative', opacity: 1, pointerEvents: 'auto' }}
+        href="#main"
+        label="Skip to main content"
+      />
+    </BpkDarkExampleWrapper>
+  ),
 };

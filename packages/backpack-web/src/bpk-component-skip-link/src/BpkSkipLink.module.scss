@@ -18,13 +18,16 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
 
 .bpk-skip-link {
-  padding: (12 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
-  transition: opacity tokens.$bpk-duration-sm ease-in-out;
-  border-radius: tokens.$bpk-border-radius-sm;
-  color: tokens.$bpk-text-on-dark-day;
+  padding: (12 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base(); /* gap: hairline border utility */
+  transition: opacity tokens.$bpk-duration-sm ease-in-out; /* gap: animation duration */
+  border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
+  background-color: var(
+    --bpk-status-danger-spot,
+    tokens.$bpk-status-danger-spot-day
+  );
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   text-decoration: none;
   opacity: 0;
   overflow: hidden;
@@ -32,14 +35,9 @@
 
   // We want the skiplink to remain visible for a short period of time after it is blurred so that
   // a user tabbing quickly has a chance to see that it appeared
-  transition-delay: tokens.$bpk-duration-sm;
+  transition-delay: tokens.$bpk-duration-sm; /* gap: animation duration */
 
   @include typography.bpk-heading-5;
-  @include utils.bpk-themeable-property(
-    background-color,
-    --bpk-skip-link-background-color,
-    tokens.$bpk-status-danger-spot-day
-  );
 
   &:focus-within,
   &:focus {
