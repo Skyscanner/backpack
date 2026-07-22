@@ -21,6 +21,7 @@ import { Component, createRef } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkButton from '../../bpk-component-button';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
@@ -222,3 +223,13 @@ export const TriggeredByInput = { render: () => <InputTriggerExample /> };
 export const WithActionButton = { render: () => <WithActionButtonExample /> };
 export const VisualTest = { render: () => <VisualExample /> };
 export const VisualTestWithZoom = { render: () => <VisualExample />, args: { zoomEnabled: true } };
+
+const DarkExample = () => (
+  <BpkDarkExampleWrapper>
+    <Spacer>
+      <PopoverContainer id="my-popover-dark" isOpen />
+    </Spacer>
+  </BpkDarkExampleWrapper>
+);
+
+export const VisualTestDark = { render: () => <DarkExample /> };
