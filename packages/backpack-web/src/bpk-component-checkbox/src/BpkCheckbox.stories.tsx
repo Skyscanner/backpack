@@ -237,6 +237,14 @@ export const VisualTest = {
   render: () => <MixedExample />,
 };
 
+export const VisualTestDarkMode = {
+  render: () => (
+    <BpkDarkExampleWrapper>
+      <MixedExample />
+    </BpkDarkExampleWrapper>
+  ),
+};
+
 export const VisualTestWithZoom = {
   render: () => <MixedExample />,
   args: {

@@ -16,12 +16,25 @@
  * limitations under the License.
  */
 
-import themeAttributes from './themeAttributes';
+import themeAttributes, { allCheckboxThemeAttributes } from './themeAttributes';
 
-describe('themeAttributes', () => {
-  it('exports the expected attributes', () => {
+describe('checkbox themeAttributes', () => {
+  it('should export the deprecated default themeAttributes with the legacy key', () => {
     expect(themeAttributes).toEqual(['checkboxCheckedColor']);
   });
+
+  it('should export allCheckboxThemeAttributes with all unique private checkbox tokens', () => {
+    expect(allCheckboxThemeAttributes).toEqual([
+      'privateCheckboxBgDefaultChecked',
+      'privateCheckboxBgDefaultIntermediate',
+      'privateCheckboxBgOnContrastChecked',
+      'privateCheckboxBgOnContrastIntermediate',
+      'privateCheckboxBorderDefaultDisabled',
+      'privateCheckboxBorderDefaultNotChecked',
+      'privateCheckboxBorderOnContrastDisabled',
+      'privateCheckboxBorderOnContrastNotChecked',
+      'privateCheckboxIconOnContrast',
+      'privateCheckboxStroke',
+    ]);
+  });
 });
-
-
