@@ -27,16 +27,17 @@
   position: fixed;
   right: 0;
   display: flex;
-  z-index: tokens.$bpk-zindex-drawer;
+  z-index: tokens.$bpk-zindex-drawer; /* gap: z-index */
   width: var(--dynamic-width);
   height: 100%;
   flex-direction: column;
   transform: translate(100%);
   transition:
     transform tokens.$bpk-duration-base ease,
-    width tokens.$bpk-duration-base ease;
+    /* gap: animation duration */ width tokens.$bpk-duration-base ease; /* gap: animation duration */
+
   outline: 0;
-  background: tokens.$bpk-surface-default-day;
+  background: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
   overflow-y: scroll;
 
   @include shadows.bpk-box-shadow-xl;
@@ -62,7 +63,7 @@
   }
 
   &--exiting {
-    transition: transform tokens.$bpk-duration-base ease;
+    transition: transform tokens.$bpk-duration-base ease; /* gap: animation duration */
   }
 
   &--exiting,
@@ -115,18 +116,20 @@
       transform: scale(0.9);
       transition:
         opacity tokens.$bpk-duration-base ease-in-out,
-        transform tokens.$bpk-duration-base ease-in-out;
-      opacity: tokens.$bpk-modal-initial-opacity;
+        /* gap: animation duration */ transform tokens.$bpk-duration-base
+          ease-in-out; /* gap: animation duration */
+
+      opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
 
       &--entering,
       &--entered {
         transform: scale(1);
-        opacity: tokens.$bpk-modal-opacity;
+        opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
       }
 
       &--exited {
         transform: scale(0.9);
-        opacity: tokens.$bpk-modal-initial-opacity;
+        opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
       }
 
       &--exiting {
@@ -164,7 +167,8 @@
     flex-direction: column;
     flex: 1 1 var(--dynamic-width);
     overflow-y: auto;
-    border-inline-start: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-inline-start: tokens.$bpk-border-size-sm solid
+      var(--bpk-other-line-default, tokens.$bpk-line-day);
   }
 
   &__secondary-close {
