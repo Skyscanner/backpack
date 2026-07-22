@@ -16,21 +16,4 @@
  * limitations under the License.
  */
 
-import themeAttributes, { allRadioThemeAttributes } from './themeAttributes';
-
-describe('themeAttributes', () => {
-  it('exports the expected legacy attributes', () => {
-    expect(themeAttributes).toEqual(['radioCheckedColor']);
-  });
-
-  it('allRadioThemeAttributes exports all private radio CSS var keys', () => {
-    expect(allRadioThemeAttributes).toEqual([
-      'privateRadioBgDefaultDisabled',
-      'privateRadioBgDefaultOn',
-      'privateRadioBgOnContrastOff',
-      'privateRadioBgOnContrastOn',
-      'privateRadioBorder',
-      'privateRadioBorderDefaultOff',
-    ]);
-  });
-});
+export default ['radioCheckedColor'];
