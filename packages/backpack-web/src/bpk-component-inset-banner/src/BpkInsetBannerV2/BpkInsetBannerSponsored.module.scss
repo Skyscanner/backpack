@@ -61,7 +61,7 @@
   }
 
   &--image {
-    max-height: tokens.$bpk-icon-size-lg; /* gap: icon dimension */
+    max-height: tokens.$bpk-icon-size-lg;
     object-fit: contain;
     padding-inline-end: tokens.bpk-spacing-base();
   }
@@ -116,7 +116,7 @@
 
   &--bottom-sheet-icon {
     display: flex;
-    fill: tokens.$bpk-font-color-base; /* gap: no semantic CSS var */
+    fill: tokens.$bpk-font-color-base;
     margin-inline-end: tokens.bpk-spacing-lg();
   }
 
@@ -136,7 +136,7 @@
 }
 
 .bpk-inset-banner-image-container {
-  min-height: tokens.$bpk-line-height-8-xl; /* gap: typography line-height */
+  min-height: tokens.$bpk-line-height-8-xl;
   border-radius: 0 0 var(--bpk-radius-sm, tokens.$bpk-border-radius-sm)
     var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
   overflow: hidden;

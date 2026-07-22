@@ -106,11 +106,11 @@
   color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
 
   &--link-text {
-    color: tokens.$bpk-private-button-link-normal-foreground-day; /* gap: no CSS var equivalent */
+    color: tokens.$bpk-private-button-link-normal-foreground-day;
     text-decoration: none;
 
     @include utils.bpk-hover {
-      color: tokens.$bpk-private-button-link-pressed-foreground-day; /* gap: no CSS var equivalent */
+      color: tokens.$bpk-private-button-link-pressed-foreground-day;
     }
   }
 }
