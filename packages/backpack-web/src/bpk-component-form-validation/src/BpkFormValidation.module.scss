@@ -29,7 +29,6 @@
   }
 
   &__icon {
-    /* gap: $bpk-form-validation-color — no CSS var exists yet */
     @include utils.bpk-themeable-property(
       fill,
       --bpk-form-validation-icon-fill,
