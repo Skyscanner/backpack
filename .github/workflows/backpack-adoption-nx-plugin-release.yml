@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/backpack-adoption-nx-plugin-release.yml'
-      - 'packages/backpack-adoption-analyzer/**'
+      - 'libs/backpack-adoption-analyzer/**'
       - 'packages/backpack-adoption-nx-plugin/**'
       - 'pnpm-lock.yaml'
       - 'tsconfig.json'
@@ -37,7 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write
     outputs:
       release_tag: ${{ steps.version.outputs.release_tag }}
       release_version: ${{ steps.version.outputs.release_version }}
@@ -96,6 +95,7 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && !inputs.dry_run && github.ref == 'refs/heads/main' }}
     permissions:
       contents: read
+      id-token: write
     steps:
       - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: app-token
@@ -117,6 +117,8 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: pnpm
 
+      # npm trusted publishing requires npm 11.5.1 or newer for OIDC support.
+      - run: npm install --global npm@11.5.1
       - run: pnpm install --frozen-lockfile
       - run: npx nx run backpack-adoption-nx-plugin:build
       - name: Stamp release version

@@ -86,7 +86,11 @@ there is no analyzer package for consumers to install or version separately.
 
 Pull requests that change the plugin or analyzer run the workflow's validation
 job automatically. The publish job only runs from a manual, non-dry-run
-dispatch on `main`.
+dispatch on `main`. Before automated publishing, configure npm trusted
+publishing for `@skyscanner/backpack-adoption-nx-plugin` with GitHub Actions:
+organization `Skyscanner`, repository `backpack`, and workflow filename
+`backpack-adoption-nx-plugin-release.yml`. The workflow uses its OIDC identity
+and does not require an npm publish token.
 
 ## Options
 
