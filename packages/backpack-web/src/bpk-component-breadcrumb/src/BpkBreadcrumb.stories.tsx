@@ -18,9 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import readme from '../README.md';
 
 import BpkBreadcrumb from './BpkBreadcrumb';
@@ -86,14 +83,6 @@ export const Default = {
 
 export const Extreme = {
   render: () => <ExtremeExample />,
-};
-
-export const DarkMode = {
-  render: () => (
-    <BpkDarkExampleWrapper>
-      <DefaultExample />
-    </BpkDarkExampleWrapper>
-  ),
 };
 
 export const VisualTest = {
