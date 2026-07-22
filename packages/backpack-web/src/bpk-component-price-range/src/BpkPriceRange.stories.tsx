@@ -20,9 +20,6 @@ import type { ReactNode } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error -- bpk-storybook-utils has no type declarations
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import readme from '../README.md';
 
 import BpkPriceRange, {
@@ -244,21 +241,6 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
-  parameters: {
-    percy: {
-      waitForTimeout: 10000,
-    },
-  },
-};
-
-const DarkExample = () => (
-  <BpkDarkExampleWrapper>
-    <MixedExample />
-  </BpkDarkExampleWrapper>
-);
-
-export const VisualTestDark = {
-  render: () => <DarkExample />,
   parameters: {
     percy: {
       waitForTimeout: 10000,
