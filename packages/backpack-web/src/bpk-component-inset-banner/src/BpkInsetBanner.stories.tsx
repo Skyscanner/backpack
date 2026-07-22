@@ -18,9 +18,6 @@
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
-
 import readme from '../README.md';
 
 import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
@@ -154,26 +151,6 @@ const WithCustomPopoverWidthAndMarginsExample = () => (
   />
 );
 
-const DarkModeExample = () => (
-  <BpkDarkExampleWrapper>
-    <BpkInsetBanner
-      title="Lorem ipsum"
-      subheadline="Lorem ipsum dolor sit amet"
-      logo="https://content.skyscnr.com/m/3f4dadbd41da8235/original/Skyland_White_172x96.png"
-      backgroundColor="#FF6601"
-      callToAction={{
-        text: 'Sponsored',
-      }}
-      body={{
-        text: 'You can change your destination, date of travel, or both, with no change fee. Valid for all new bookings made up to 31 May for travel between now and 31 December 2020.',
-        linkText: 'More information',
-        link: 'www.skyscanner.net',
-      }}
-      variant={VARIANT.onDark}
-    />
-  </BpkDarkExampleWrapper>
-);
-
 export const DefaultWithTitle = {
   render: () => <DefaultExampleTitleOnly />,
 };
@@ -208,8 +185,4 @@ export const WithCtaTextAndPopoverLight = {
 
 export const WithCustomPopoverWidthAndMargins = {
   render: () => <WithCustomPopoverWidthAndMarginsExample />,
-};
-
-export const DarkMode = {
-  render: () => <DarkModeExample />,
 };
