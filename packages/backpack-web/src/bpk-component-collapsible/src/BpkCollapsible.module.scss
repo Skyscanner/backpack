@@ -21,6 +21,7 @@
 
 // Matches BpkAccordion (200ms via AnimateHeight). Sourced from foundations
 // rather than hardcoded so the two stay in sync.
+/* gap: animation duration */
 $collapsible-duration: tokens.$bpk-duration-sm;
 
 // `inline-size: 100%` stops a flex/grid parent (e.g. BpkVStack, BpkCardV2.Body)
@@ -36,15 +37,18 @@ $collapsible-duration: tokens.$bpk-duration-sm;
 }
 
 .bpk-collapsible--default {
-  color: tokens.$bpk-text-primary-day;
+  color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
 }
 
 .bpk-collapsible--on-contrast {
-  color: tokens.$bpk-text-on-dark-day;
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
 
   .bpk-collapsible__trigger:disabled,
   .bpk-collapsible__content[data-disabled] {
-    color: tokens.$bpk-text-disabled-on-dark-day;
+    color: var(
+      --bpk-text-disabled-on-dark,
+      tokens.$bpk-text-disabled-on-dark-day
+    );
   }
 }
 
@@ -73,7 +77,7 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   }
 
   &:disabled {
-    color: tokens.$bpk-text-disabled-day;
+    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
   }
 
   // Zag does not emit `data-focus-visible` for the collapsible trigger, so we
@@ -120,7 +124,7 @@ $collapsible-duration: tokens.$bpk-duration-sm;
   }
 
   &[data-disabled] {
-    color: tokens.$bpk-text-disabled-day;
+    color: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
   }
 
   &[data-state='open'] {

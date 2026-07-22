@@ -22,6 +22,9 @@ import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
+// @ts-expect-error -- bpk-storybook-utils has no type declarations
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import { BpkCardV2 } from '../../bpk-component-card';
 import AirportsIcon from '../../bpk-component-icon/sm/airports';
@@ -482,7 +485,9 @@ const AsChildRootProvider = () => {
         <BpkCollapsible.RootProvider value={withoutAsChild}>
           <div>
             <BpkCollapsible.Trigger>
-              <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
+              <BpkText textStyle={TEXT_STYLES.heading5}>
+                Without asChild
+              </BpkText>
               <BpkCollapsible.Indicator>
                 <ChevronIcon />
               </BpkCollapsible.Indicator>
@@ -520,6 +525,28 @@ const AsChildRootProvider = () => {
     </BpkVStack>
   );
 };
+
+const DarkModeExample = () => (
+  <BpkDarkExampleWrapper>
+    <BpkVStack gap={BpkSpacing.Base}>
+      <BpkCollapsible.Root defaultOpen>
+        <BpkCollapsible.Trigger>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Dark mode title</BpkText>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
+        </BpkCollapsible.Trigger>
+        <BpkCollapsible.Content>
+          <BpkBox paddingTop={BpkSpacing.SM}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Content visible in dark mode.
+            </BpkText>
+          </BpkBox>
+        </BpkCollapsible.Content>
+      </BpkCollapsible.Root>
+    </BpkVStack>
+  </BpkDarkExampleWrapper>
+);
 
 const VisualTest = () => (
   <BpkVStack gap={BpkSpacing.Base}>
@@ -578,3 +605,4 @@ export const LongContentExample = { render: () => <LongContent /> };
 export const VisualTestComposite = { render: () => <VisualTest /> };
 export const ContextReaderHook = { render: () => <ContextReader /> };
 export const AsChildOnRootProvider = { render: () => <AsChildRootProvider /> };
+export const DarkMode = { render: () => <DarkModeExample /> };
