@@ -21,7 +21,6 @@
 
 // Matches BpkAccordion (200ms via AnimateHeight). Sourced from foundations
 // rather than hardcoded so the two stay in sync.
-/* gap: animation duration */
 $collapsible-duration: tokens.$bpk-duration-sm;
 
 // `inline-size: 100%` stops a flex/grid parent (e.g. BpkVStack, BpkCardV2.Body)
