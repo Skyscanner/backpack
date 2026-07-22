@@ -22,29 +22,29 @@
 @use '../../bpk-mixins/shadows';
 
 @mixin animation-slide-up {
-  animation-duration: tokens.$bpk-duration-sm; /* gap: animation duration */
+  animation-duration: tokens.$bpk-duration-sm;
   animation-name: slide-up;
   animation-timing-function: ease-in-out;
 }
 
 @mixin animation-slide-down {
-  animation-duration: tokens.$bpk-duration-sm; /* gap: animation duration */
+  animation-duration: tokens.$bpk-duration-sm;
   animation-name: slide-down;
   animation-timing-function: ease-in-out;
 }
 
 .bpk-bottom-sheet {
-  z-index: tokens.$bpk-zindex-modal; /* gap: z-index */
+  z-index: tokens.$bpk-zindex-modal;
   width: 100%;
-  max-width: tokens.$bpk-modal-max-width; /* gap: max-width */
+  max-width: tokens.$bpk-modal-max-width;
   margin: auto;
   transition:
     opacity tokens.$bpk-duration-sm ease-in-out,
-    /* gap: animation duration */ transform tokens.$bpk-duration-sm ease-in-out; /* gap: animation duration */
+ transform tokens.$bpk-duration-sm ease-in-out;
 
   outline: 0;
-  background-color: tokens.$bpk-modal-background-color; /* gap: backdrop colour */
-  opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
+  background-color: tokens.$bpk-modal-background-color;
+  opacity: tokens.$bpk-modal-opacity;
 
   // required to prevent the header extending beyond the rounded corners
   overflow: hidden;
@@ -78,7 +78,7 @@
 
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(0.9);
-      opacity: tokens.$bpk-modal-initial-opacity; /* gap: animation opacity */
+      opacity: tokens.$bpk-modal-initial-opacity;
       animation: none;
     }
   }
@@ -86,7 +86,7 @@
   &--appear-active {
     @include breakpoints.bpk-breakpoint-above-mobile {
       transform: scale(1);
-      opacity: tokens.$bpk-modal-opacity; /* gap: opacity */
+      opacity: tokens.$bpk-modal-opacity;
     }
   }
 
@@ -172,14 +172,14 @@
 
   &--wide {
     @include breakpoints.bpk-breakpoint-above-mobile {
-      max-width: tokens.$bpk-modal-wide-max-width; /* gap: max-width */
+      max-width: tokens.$bpk-modal-wide-max-width;
     }
   }
 
   &--header-wrapper {
     position: sticky;
     top: 0;
-    z-index: tokens.$bpk-zindex-tooltip - 1; /* gap: z-index */
+    z-index: tokens.$bpk-zindex-tooltip - 1;
     background-color: var(
       --bpk-surface-default,
       tokens.$bpk-surface-default-day
