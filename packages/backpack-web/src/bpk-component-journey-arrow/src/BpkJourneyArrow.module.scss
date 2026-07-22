@@ -35,7 +35,6 @@
   &__stop {
     width: tokens.bpk-spacing-md();
     height: tokens.bpk-spacing-md();
-    /* TODO: CSS var gap — border-image SVG fill colour (%23C1C7CF) cannot use CSS custom properties inside data URIs */
     border: 2 * tokens.$bpk-one-pixel-rem solid
       var(--bpk-surface-default, tokens.$bpk-surface-default-day);
     border-radius: tokens.bpk-spacing-sm();
