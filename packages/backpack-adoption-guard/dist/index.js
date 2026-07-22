@@ -22883,14 +22883,14 @@ var require_lib2 = __commonJS({
         super.checkParams(node, false, true);
         this.scope.exit();
       }
-      forwardNoArrowParamsConversionAt(node, parse4) {
+      forwardNoArrowParamsConversionAt(node, parse3) {
         let result;
         if (this.state.noArrowParamsConversionAt.includes(this.offsetToSourcePos(node.start))) {
           this.state.noArrowParamsConversionAt.push(this.state.start);
-          result = parse4();
+          result = parse3();
           this.state.noArrowParamsConversionAt.pop();
         } else {
-          result = parse4();
+          result = parse3();
         }
         return result;
       }
@@ -34290,7 +34290,7 @@ var require_lib2 = __commonJS({
         return result;
       }
     };
-    function parse3(input, options) {
+    function parse2(input, options) {
       var _options;
       if (((_options = options) == null ? void 0 : _options.sourceType) === "unambiguous") {
         options = Object.assign({}, options);
@@ -34377,7 +34377,7 @@ var require_lib2 = __commonJS({
       }
       return cls;
     }
-    exports2.parse = parse3;
+    exports2.parse = parse2;
     exports2.parseExpression = parseExpression;
     exports2.tokTypes = tokTypes;
   }
@@ -34425,7 +34425,7 @@ var require_ms = __commonJS({
       options = options || {};
       var type = typeof val;
       if (type === "string" && val.length > 0) {
-        return parse3(val);
+        return parse2(val);
       } else if (type === "number" && isFinite(val)) {
         return options.long ? fmtLong(val) : fmtShort(val);
       }
@@ -34433,7 +34433,7 @@ var require_ms = __commonJS({
         "val is not a non-empty string or a valid number. val=" + JSON.stringify(val)
       );
     };
-    function parse3(str) {
+    function parse2(str) {
       str = String(str);
       if (str.length > 100) {
         return;
@@ -48202,9 +48202,9 @@ var require_traverse = __commonJS({
     Object.defineProperty(exports2, "__esModule", {
       value: true
     });
-    exports2.default = traverse3;
+    exports2.default = traverse2;
     var _index = require_definitions();
-    function traverse3(node, handlers, state) {
+    function traverse2(node, handlers, state) {
       if (typeof handlers === "function") {
         handlers = {
           enter: handlers
@@ -49051,7 +49051,7 @@ var require_lib5 = __commonJS({
     Object.defineProperty(exports2, "traverse", {
       enumerable: true,
       get: function() {
-        return _traverse3.default;
+        return _traverse2.default;
       }
     });
     Object.defineProperty(exports2, "traverseFast", {
@@ -49182,15 +49182,15 @@ var require_lib5 = __commonJS({
     var _getBindingIdentifiers = require_getBindingIdentifiers();
     var _getOuterBindingIdentifiers = require_getOuterBindingIdentifiers();
     var _getFunctionName = require_getFunctionName();
-    var _traverse3 = require_traverse();
-    Object.keys(_traverse3).forEach(function(key) {
+    var _traverse2 = require_traverse();
+    Object.keys(_traverse2).forEach(function(key) {
       if (key === "default" || key === "__esModule") return;
       if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-      if (key in exports2 && exports2[key] === _traverse3[key]) return;
+      if (key in exports2 && exports2[key] === _traverse2[key]) return;
       Object.defineProperty(exports2, key, {
         enumerable: true,
         get: function() {
-          return _traverse3[key];
+          return _traverse2[key];
         }
       });
     });
@@ -49815,8 +49815,8 @@ var require_traverseForScope = __commonJS({
       if (exploded.enter || exploded.exit) {
         throw new Error("Should not be used with enter/exit visitors.");
       }
-      _traverse3(path.parentPath, path.parent, path.node, path.container, path.key, path.listKey, path.hub, path);
-      function _traverse3(parentPath, parent, node, container, key, listKey, hub, inPath) {
+      _traverse2(path.parentPath, path.parent, path.node, path.container, path.key, path.listKey, path.hub, path);
+      function _traverse2(parentPath, parent, node, container, key, listKey, hub, inPath) {
         if (!node) {
           return;
         }
@@ -49848,10 +49848,10 @@ var require_traverseForScope = __commonJS({
           if (Array.isArray(prop)) {
             for (let i = 0; i < prop.length; i++) {
               const value = prop[i];
-              _traverse3(path2, node, value, prop, i, key2);
+              _traverse2(path2, node, value, prop, i, key2);
             }
           } else {
-            _traverse3(path2, node, prop, node, key2, null);
+            _traverse2(path2, node, prop, node, key2, null);
           }
         }
         if (visitor != null && visitor.exit) {
@@ -51964,11 +51964,11 @@ var require_trace_mapping_umd = __commonJS({
       function buildNullArray() {
         return { __proto__: null };
       }
-      function parse3(map) {
+      function parse2(map) {
         return typeof map === "string" ? JSON.parse(map) : map;
       }
       var FlattenMap = function(map, mapUrl) {
-        const parsed = parse3(map);
+        const parsed = parse2(map);
         if (!("sections" in parsed)) {
           return new TraceMap(parsed, mapUrl);
         }
@@ -52032,7 +52032,7 @@ var require_trace_mapping_umd = __commonJS({
         }
       }
       function addSection(input, mapUrl, mappings, sources, sourcesContent, names, ignoreList, lineOffset, columnOffset, stopLine, stopColumn) {
-        const parsed = parse3(input);
+        const parsed = parse2(input);
         if ("sections" in parsed) return recurse(...arguments);
         const map = new TraceMap(parsed, mapUrl);
         const sourcesOffset = sources.length;
@@ -52082,7 +52082,7 @@ var require_trace_mapping_umd = __commonJS({
         constructor(map, mapUrl) {
           const isString = typeof map === "string";
           if (!isString && map._decodedMemo) return map;
-          const parsed = parse3(map);
+          const parsed = parse2(map);
           const { version, file, names, sourceRoot, sources, sourcesContent } = parsed;
           this.version = version;
           this.file = file;
@@ -65545,9 +65545,9 @@ var require_traverse2 = __commonJS({
     Object.defineProperty(exports2, "__esModule", {
       value: true
     });
-    exports2.default = traverse3;
+    exports2.default = traverse2;
     var _index = require_definitions2();
-    function traverse3(node, handlers, state) {
+    function traverse2(node, handlers, state) {
       if (typeof handlers === "function") {
         handlers = {
           enter: handlers
@@ -66394,7 +66394,7 @@ var require_lib6 = __commonJS({
     Object.defineProperty(exports2, "traverse", {
       enumerable: true,
       get: function() {
-        return _traverse3.default;
+        return _traverse2.default;
       }
     });
     Object.defineProperty(exports2, "traverseFast", {
@@ -66525,15 +66525,15 @@ var require_lib6 = __commonJS({
     var _getBindingIdentifiers = require_getBindingIdentifiers2();
     var _getOuterBindingIdentifiers = require_getOuterBindingIdentifiers2();
     var _getFunctionName = require_getFunctionName2();
-    var _traverse3 = require_traverse2();
-    Object.keys(_traverse3).forEach(function(key) {
+    var _traverse2 = require_traverse2();
+    Object.keys(_traverse2).forEach(function(key) {
       if (key === "default" || key === "__esModule") return;
       if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-      if (key in exports2 && exports2[key] === _traverse3[key]) return;
+      if (key in exports2 && exports2[key] === _traverse2[key]) return;
       Object.defineProperty(exports2, key, {
         enumerable: true,
         get: function() {
-          return _traverse3[key];
+          return _traverse2[key];
         }
       });
     });
@@ -77113,14 +77113,14 @@ var require_lib9 = __commonJS({
         super.checkParams(node, false, true);
         this.scope.exit();
       }
-      forwardNoArrowParamsConversionAt(node, parse4) {
+      forwardNoArrowParamsConversionAt(node, parse3) {
         let result;
         if (this.state.noArrowParamsConversionAt.includes(this.offsetToSourcePos(node.start))) {
           this.state.noArrowParamsConversionAt.push(this.state.start);
-          result = parse4();
+          result = parse3();
           this.state.noArrowParamsConversionAt.pop();
         } else {
-          result = parse4();
+          result = parse3();
         }
         return result;
       }
@@ -88520,7 +88520,7 @@ var require_lib9 = __commonJS({
         return result;
       }
     };
-    function parse3(input, options) {
+    function parse2(input, options) {
       var _options;
       if (((_options = options) == null ? void 0 : _options.sourceType) === "unambiguous") {
         options = Object.assign({}, options);
@@ -88607,7 +88607,7 @@ var require_lib9 = __commonJS({
       }
       return cls;
     }
-    exports2.parse = parse3;
+    exports2.parse = parse2;
     exports2.parseExpression = parseExpression;
     exports2.tokTypes = tokTypes;
   }
@@ -88635,7 +88635,7 @@ var require_parse2 = __commonJS({
       isStatement,
       isStringLiteral,
       removePropertiesDeep,
-      traverse: traverse3
+      traverse: traverse2
     } = _t2;
     var PATTERN = /^[_$A-Z0-9]+$/;
     function parseAndBuildMetadata(formatter, code, opts) {
@@ -88663,7 +88663,7 @@ var require_parse2 = __commonJS({
         placeholderPattern,
         syntacticPlaceholders
       };
-      traverse3(ast, placeholderVisitorHandler, state);
+      traverse2(ast, placeholderVisitorHandler, state);
       return Object.assign({
         ast
       }, state.syntactic.placeholders.length ? state.syntactic : state.legacy);
@@ -91307,7 +91307,7 @@ var require_lib11 = __commonJS({
       removeProperties,
       traverseFast
     } = _t2;
-    function traverse3(parent, opts = {}, scope, state, parentPath, visitSelf) {
+    function traverse2(parent, opts = {}, scope, state, parentPath, visitSelf) {
       if (!parent) return;
       if (!opts.noScope && !scope) {
         if (parent.type !== "Program" && parent.type !== "File") {
@@ -91323,25 +91323,25 @@ var require_lib11 = __commonJS({
       visitors.explode(opts);
       (0, _traverseNode.traverseNode)(parent, opts, scope, state, parentPath, void 0, visitSelf);
     }
-    var _default = exports2.default = traverse3;
-    traverse3.visitors = visitors;
-    traverse3.verify = visitors.verify;
-    traverse3.explode = visitors.explode;
-    traverse3.cheap = function(node, enter) {
+    var _default = exports2.default = traverse2;
+    traverse2.visitors = visitors;
+    traverse2.verify = visitors.verify;
+    traverse2.explode = visitors.explode;
+    traverse2.cheap = function(node, enter) {
       traverseFast(node, enter);
       return;
     };
-    traverse3.node = function(node, opts, scope, state, path, skipKeys) {
+    traverse2.node = function(node, opts, scope, state, path, skipKeys) {
       (0, _traverseNode.traverseNode)(node, opts, scope, state, path, skipKeys);
     };
-    traverse3.clearNode = function(node, opts) {
+    traverse2.clearNode = function(node, opts) {
       removeProperties(node, opts);
     };
-    traverse3.removeProperties = function(tree, opts) {
-      traverseFast(tree, traverse3.clearNode, opts);
+    traverse2.removeProperties = function(tree, opts) {
+      traverseFast(tree, traverse2.clearNode, opts);
       return tree;
     };
-    traverse3.hasType = function(tree, type, denylistTypes) {
+    traverse2.hasType = function(tree, type, denylistTypes) {
       if (denylistTypes != null && denylistTypes.includes(tree.type)) return false;
       if (tree.type === type) return true;
       return traverseFast(tree, function(node) {
@@ -91353,7 +91353,7 @@ var require_lib11 = __commonJS({
         }
       });
     };
-    traverse3.cache = cache;
+    traverse2.cache = cache;
   }
 });
 
@@ -91365,10 +91365,10 @@ var import_promises3 = require("node:fs/promises");
 var import_node_path6 = require("node:path");
 
 // ../backpack-adoption-analyzer/src/analysis/analyze-repository.ts
-var import_node_fs4 = require("node:fs");
+var import_node_fs3 = require("node:fs");
 var import_node_path4 = require("node:path");
-var import_parser2 = __toESM(require_lib2());
-var import_traverse2 = __toESM(require_lib11());
+var import_parser = __toESM(require_lib2());
+var import_traverse = __toESM(require_lib11());
 
 // ../../node_modules/.pnpm/glob@13.0.6/node_modules/glob/dist/esm/index.min.js
 var import_node_url = require("node:url");
@@ -94965,6 +94965,11 @@ function extractProps(attributes) {
   });
   return props;
 }
+function hasInlineStyleAttribute(attributes) {
+  return attributes.some(
+    (attribute) => attribute.type === "JSXAttribute" && attribute.name?.name === "style" && attribute.value != null
+  );
+}
 function detectVariant(props, componentName, attributes) {
   if (componentName === "BpkButtonV2") {
     const typeAttr = attributes?.find(
@@ -95103,97 +95108,6 @@ function resolveProject(relativePath, projectIndex) {
   return UNASSIGNED;
 }
 
-// ../backpack-adoption-analyzer/src/analysis/visual-components.ts
-var import_node_fs3 = require("node:fs");
-var import_parser = __toESM(require_lib2());
-var import_traverse = __toESM(require_lib11());
-var traverse = import_traverse.default.default ?? import_traverse.default;
-function checkBodyForVisualJSX(path, componentName, visualComponents) {
-  let bodyPath;
-  if (path.isFunctionDeclaration()) {
-    bodyPath = path.get("body");
-  } else if (path.isVariableDeclarator()) {
-    const init = path.get("init");
-    if (init.isArrowFunctionExpression() || init.isFunctionExpression()) {
-      bodyPath = init.get("body");
-    } else if (init.isCallExpression()) {
-      for (const arg of init.get("arguments")) {
-        if (arg.isArrowFunctionExpression() || arg.isFunctionExpression()) {
-          bodyPath = arg.get("body");
-          break;
-        }
-      }
-    }
-  }
-  if (!bodyPath) return;
-  let hasVisualJSX = false;
-  bodyPath.traverse({
-    FunctionDeclaration(p) {
-      p.skip();
-    },
-    FunctionExpression(p) {
-      p.skip();
-    },
-    ArrowFunctionExpression(p) {
-      p.skip();
-    },
-    ClassDeclaration(p) {
-      p.skip();
-    },
-    ClassExpression(p) {
-      p.skip();
-    },
-    JSXOpeningElement(innerPath) {
-      const name = getJSXElementName(innerPath.node.name);
-      if (name && (isRawHTMLElement(name) || isBackpackComponent(name))) {
-        hasVisualJSX = true;
-        innerPath.stop();
-      }
-    }
-  });
-  if (hasVisualJSX) {
-    visualComponents.add(componentName);
-  }
-}
-function buildVisualComponentRegistry(files) {
-  const visualComponents = /* @__PURE__ */ new Set();
-  for (const filePath of files) {
-    try {
-      const content = (0, import_node_fs3.readFileSync)(filePath, "utf-8");
-      const ast = (0, import_parser.parse)(content, {
-        sourceType: "module",
-        plugins: PARSER_PLUGINS
-      });
-      traverse(ast, {
-        FunctionDeclaration(path) {
-          const name = path.node.id?.name;
-          if (name && /^[A-Z]/.test(name)) {
-            checkBodyForVisualJSX(path, name, visualComponents);
-          }
-        },
-        VariableDeclarator(path) {
-          const name = path.node.id?.name;
-          if (!name || !/^[A-Z]/.test(name)) return;
-          const init = path.node.init;
-          if (!init) return;
-          if (init.type === "ArrowFunctionExpression" || init.type === "FunctionExpression") {
-            checkBodyForVisualJSX(path, name, visualComponents);
-          }
-          if (init.type === "CallExpression") {
-            const callee = init.callee;
-            const isForwardRef = callee.type === "MemberExpression" && callee.property?.name === "forwardRef" || callee.type === "Identifier" && callee.name === "forwardRef";
-            if (isForwardRef) {
-              checkBodyForVisualJSX(path, name, visualComponents);
-            }
-          }
-        }
-      });
-    } catch {
-    }
-  }
-  return visualComponents;
-}
-
 // ../backpack-adoption-analyzer/src/shared/config.ts
 var DEFAULT_ADOPTION_GUARD_THRESHOLD = 60;
 var BACKPACK_ADOPTION_OUTPUT_KEY = "backpack-adoption";
@@ -95212,7 +95126,7 @@ var DEFAULT_IGNORE_PATTERNS = [
 ];
 
 // ../backpack-adoption-analyzer/src/analysis/analyze-repository.ts
-var traverse2 = import_traverse2.default.default ?? import_traverse2.default;
+var traverse = import_traverse.default.default ?? import_traverse.default;
 function createResultBucket(repository) {
   return {
     repository,
@@ -95340,10 +95254,10 @@ function buildLocation(node, relativePath, contentLines) {
     source
   };
 }
-function analyzeFile(content, filePath, repoPath, targetComponents, visualComponentRegistry) {
+function analyzeFile(content, filePath, repoPath, targetComponents) {
   let ast;
   try {
-    ast = (0, import_parser2.parse)(content, {
+    ast = (0, import_parser.parse)(content, {
       sourceType: "module",
       plugins: PARSER_PLUGINS
     });
@@ -95372,7 +95286,7 @@ function analyzeFile(content, filePath, repoPath, targetComponents, visualCompon
   const designSystemImports = /* @__PURE__ */ new Set();
   const cssModuleImports = /* @__PURE__ */ new Map();
   const nonVisualImports = /* @__PURE__ */ new Set();
-  traverse2(ast, {
+  traverse(ast, {
     ImportDeclaration(path) {
       const source = path.node.source.value;
       if (isDesignSystemImport(source)) {
@@ -95470,7 +95384,7 @@ function analyzeFile(content, filePath, repoPath, targetComponents, visualCompon
             repoPath
           );
           const hasClassName = classNameInfo2.hasOverride;
-          const isVisual = hasClassName || visualComponentRegistry.has(elementName);
+          const isVisual = hasClassName || hasInlineStyleAttribute(path.node.attributes);
           if (isVisual) {
             nonBackpackUsages += 1;
             if (!nonBackpackComponents.visual[elementName]) {
@@ -95549,7 +95463,7 @@ function analyzeFile(content, filePath, repoPath, targetComponents, visualCompon
             repoPath
           );
           const hasClassName = classNameInfo2.hasOverride;
-          const isVisual = hasClassName || visualComponentRegistry.has(elementName);
+          const isVisual = hasClassName || hasInlineStyleAttribute(path.node.attributes);
           if (isVisual) {
             nonBackpackUsages += 1;
             if (!nonBackpackComponents.visual[elementName]) {
@@ -95656,7 +95570,6 @@ async function runAnalyzer(repoPath, options) {
     ignore,
     absolute: true
   });
-  const visualComponentRegistry = buildVisualComponentRegistry(files);
   const results = createResultBucket((0, import_node_path4.basename)(repoPath));
   results.filesAnalyzed = files.length;
   const nxInfo = includeNxProjects ? detectNxProjects(repoPath) : { isNx: false, projects: [] };
@@ -95676,13 +95589,12 @@ async function runAnalyzer(repoPath, options) {
       projectBucket.filesAnalyzed += 1;
     }
     try {
-      const content = (0, import_node_fs4.readFileSync)(filePath, "utf-8");
+      const content = (0, import_node_fs3.readFileSync)(filePath, "utf-8");
       const fileResults = analyzeFile(
         content,
         filePath,
         repoPath,
-        components,
-        visualComponentRegistry
+        components
       );
       mergeFileResults(results, fileResults);
       if (projectBucket) {
@@ -95706,14 +95618,14 @@ async function runAnalyzer(repoPath, options) {
 async function findBackpackWebVersion(repoPath) {
   const tryRead = (filePath) => {
     try {
-      const pkg = JSON.parse((0, import_node_fs4.readFileSync)(filePath, "utf8"));
+      const pkg = JSON.parse((0, import_node_fs3.readFileSync)(filePath, "utf8"));
       return pkg.dependencies?.["@skyscanner/backpack-web"] || pkg.devDependencies?.["@skyscanner/backpack-web"] || null;
     } catch {
       return null;
     }
   };
   const rootPackageJson = (0, import_node_path4.join)(repoPath, "package.json");
-  if ((0, import_node_fs4.existsSync)(rootPackageJson)) {
+  if ((0, import_node_fs3.existsSync)(rootPackageJson)) {
     const rootVersion = tryRead(rootPackageJson);
     if (rootVersion) return rootVersion;
   }
@@ -95896,7 +95808,7 @@ var evaluateGuard = ({
 
 // src/git/base-worktree.ts
 var import_node_child_process = require("node:child_process");
-var import_node_fs5 = require("node:fs");
+var import_node_fs4 = require("node:fs");
 var import_promises2 = require("node:fs/promises");
 var import_node_os = require("node:os");
 var import_node_path5 = require("node:path");
@@ -95911,7 +95823,7 @@ var readBaseShaFromEvent = () => {
   }
   try {
     const payload = JSON.parse(
-      (0, import_node_fs5.readFileSync)(eventPath, "utf8")
+      (0, import_node_fs4.readFileSync)(eventPath, "utf8")
     );
     return payload.pull_request?.base?.sha || null;
   } catch {

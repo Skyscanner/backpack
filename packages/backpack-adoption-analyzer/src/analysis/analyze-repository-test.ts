@@ -83,15 +83,40 @@ export const App = () => (
     expect(report.filesAnalyzed).toBe(1);
     expect(report.backpackWebVersion).toBe("^42.0.0");
     expect(report.usage.backpack.count).toBe(3);
-    expect(report.usage.nonBackpack.count).toBe(1);
+    // LocalCard is an unstyled wrapper. Its <section> is counted where it is
+    // defined, but the wrapper call itself is not a second visual element.
+    expect(report.usage.nonBackpack.count).toBe(0);
     expect(report.usage.rawHtml.count).toBe(2);
-    expect(report.usage.backpack.percentage).toBe(50);
+    expect(report.usage.backpack.percentage).toBe(60);
     expect(report.usage.pureBackpack.count).toBe(2);
     expect(report.usage.nonPureBackpack.count).toBe(1);
     expect(report.componentCounts).toEqual({
       BpkButton: 1,
       BpkText: 2,
     });
+  });
+
+  it("counts non-Backpack components only when the call site applies styling", async () => {
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      `
+const LocalCard = () => <section>Card</section>;
+
+export const App = () => (
+  <>
+    <LocalCard />
+    <LocalCard className="card" />
+    <LocalCard style={{ marginTop: 8 }} />
+  </>
+);
+`,
+    );
+
+    const report = await analyzeRepository(repoPath);
+
+    expect(report.usage.nonBackpack.count).toBe(2);
+    expect(report.usage.rawHtml.count).toBe(1);
   });
 
   it("ignores generated, test, and dependency files", async () => {
