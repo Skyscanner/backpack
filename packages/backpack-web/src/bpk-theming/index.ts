@@ -16,7 +16,12 @@
  * limitations under the License.
  */
 
-export { useBpkTheme } from './src/BpkThemeProvider';
+export {
+  default as BpkThemeProvider,
+  useBpkTheme,
+} from './src/BpkThemeProvider';
 export type { BpkTheme, BpkThemedValue } from './src/BpkThemeProvider';
-export { default } from './src/BpkThemeProvider';
-export { default as BpkLegacyThemeProvider } from './src/BpkLegacyThemeProvider';
+export {
+  default,
+  default as BpkLegacyThemeProvider,
+} from './src/BpkLegacyThemeProvider';
