@@ -18,6 +18,9 @@
 
 import { useRef, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import {
   BpkBox,
   BpkFlex,
@@ -34,6 +37,7 @@ import BpkButton from '../../bpk-component-button';
 import BpkText, {
   TEXT_STYLES,
 } from '../../bpk-component-text';
+import readme from '../README.md';
 
 import LayoutWrapper from './BpkLayout.stories-wrapper';
 
@@ -454,8 +458,12 @@ const meta = {
   },
   parameters: {
     docs: {
-      // Use Storybook's default docs rendering.
-      page: undefined,
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
     },
   },
 } satisfies Meta;

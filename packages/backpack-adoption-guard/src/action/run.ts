@@ -18,20 +18,20 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 
-import { analyzeRepository } from "../analysis/analyze-repository";
 import {
   BACKPACK_ADOPTION_OUTPUT_KEY,
   DEFAULT_ADOPTION_GUARD_THRESHOLD,
   DEFAULT_OUTPUT_PATH,
   DEFAULT_PATTERN,
-} from "../shared/config";
+  analyzeRepository,
+  evaluateGuard,
+} from "@skyscanner/backpack-adoption-analyzer";
 import type {
   ActionResult,
   AdoptionReport,
   BackpackAdoptionMetrics,
   ResultsFile,
-} from "../shared/types";
-import { evaluateGuard } from "../guard/evaluate-guard";
+} from "@skyscanner/backpack-adoption-analyzer";
 import {
   getPullRequestBaseRef,
   isMainBranch,
@@ -227,12 +227,12 @@ export const run = async ({
     );
   }
 
-  if (guard.status === "warn") {
-    io.warning(guard.reason);
+  if (result.guard.status === "warn") {
+    io.warning(result.guard.reason);
   }
 
-  if (guard.status === "fail") {
-    io.setFailed(guard.reason);
+  if (result.guard.status === "fail") {
+    io.setFailed(result.guard.reason);
   }
 
   return result;

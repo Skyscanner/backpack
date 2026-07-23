@@ -16,7 +16,10 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import TickCircleIcon from '../../bpk-component-icon/sm/tick-circle';
+import readme from '../README.md';
 
 import BpkChatNotification from './BpkChatNotification';
 
@@ -45,6 +48,16 @@ const VisualTestExample = () => (
 const meta = {
   title: 'bpk-component-chat-notification',
   component: BpkChatNotification,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

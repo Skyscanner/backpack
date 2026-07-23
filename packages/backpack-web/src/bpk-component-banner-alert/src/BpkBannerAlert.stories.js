@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
+
+
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { fontWeightBold } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 import { action } from 'bpk-storybook-utils';
@@ -32,6 +36,7 @@ import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-he
 import BpkButton from '../../bpk-component-button';
 import CurrencyIcon from '../../bpk-component-icon/sm/currency';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import STYLES from './BpkBannerAlert.stories.module.scss';
 
@@ -300,6 +305,16 @@ const meta = {
     BpkBannerAlertDismissable,
     BpkBannerAlertExpandable,
     withBannerAlertState: withBannerAlertStateMock,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 

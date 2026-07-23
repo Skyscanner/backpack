@@ -1,0 +1,179 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import type { ReactNode } from 'react';
+import { useCallback, useRef } from 'react';
+
+import { GoogleMap } from '@react-google-maps/api';
+
+import { cssModules } from '../../bpk-react-utils';
+
+import type { LatLong } from './common-types';
+
+import STYLES from './BpkMap.module.scss';
+
+const getClassName = cssModules(STYLES);
+
+export type Bounds = {
+  south: number;
+  west: number;
+  north: number;
+  east: number;
+};
+
+export type MapRef = {
+  getBounds: () => Bounds;
+  getCenter: () => { lat: () => number; lng: () => number };
+  getZoom: () => number;
+  fitBounds: (bounds: Bounds) => void;
+};
+
+type MapOptionStyle = {
+  featureType?: string;
+  elementType?: string;
+  stylers: Array<Record<string, string>>;
+};
+
+type Props = {
+  greedyGestureHandling?: boolean;
+  panEnabled?: boolean;
+  showControls?: boolean;
+  zoom?: number;
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
+  bounds?: Bounds | null;
+  /**
+   * Note: One of `bounds` and `center` must be provided.
+   */
+  center?: LatLong | null;
+  children?: ReactNode;
+  mapRef?: ((map: MapRef) => void) | null;
+  onRegionChange?: ((bounds: Bounds, center: LatLong) => void) | null;
+  onZoom?: ((zoom: number) => void) | null;
+  onTilesLoaded?: (() => void) | null;
+  className?: string | null;
+  mapOptionStyles?: MapOptionStyle[] | null;
+  mapId?: string | null;
+};
+
+const BpkMap = (props: Props) => {
+  const {
+    bounds = null,
+    center = undefined,
+    children = null,
+    className = null,
+    greedyGestureHandling = false,
+    mapId = null,
+    mapOptionStyles = null,
+    mapRef = null,
+    onRegionChange = null,
+    onTilesLoaded = null,
+    onZoom = null,
+    panEnabled = true,
+    showControls = true,
+    zoom = 15,
+  } = props;
+
+  if (!bounds && !center) {
+    throw new Error('BpkMap: Provide either `bounds` or `center` props.');
+  }
+
+  // https://developers.google.com/maps/documentation/javascript/reference/map#MapOptions.gestureHandling
+  let gestureHandling = 'auto';
+  if (!panEnabled) {
+    gestureHandling = 'none';
+  } else if (greedyGestureHandling) {
+    gestureHandling = 'greedy';
+  }
+
+  const ref = useRef<MapRef | null>(null);
+  const mapContainerClassName = getClassName('bpk-map', className);
+
+  const onLoad = useCallback(
+    (map: any) => {
+      ref.current = map;
+      if (map && bounds) {
+        map.fitBounds({
+          south: bounds.south,
+          west: bounds.west,
+          north: bounds.north,
+          east: bounds.east,
+        });
+      }
+      if (mapRef) {
+        mapRef(map);
+      }
+    },
+    [bounds, mapRef],
+  );
+
+  return (
+    <GoogleMap
+      onLoad={onLoad}
+      center={
+        center
+          ? {
+              lat: center.latitude,
+              lng: center.longitude,
+            }
+          : undefined
+      }
+      zoom={zoom}
+      options={{
+        // If you want to set style by mapId, you should remove the styles property: https://developers.google.com/maps/documentation/get-map-id#javascript
+        mapId,
+        gestureHandling,
+        disableDefaultUI: !showControls,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+        rotateControl: false,
+        clickableIcons: false,
+        // https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeStyle
+        styles: mapOptionStyles,
+        scaleControl: true,
+      }}
+      onDragEnd={() => {
+        if (ref && ref.current && onRegionChange) {
+          const mapBounds = ref.current.getBounds();
+          const mapCenter = ref.current.getCenter();
+          onRegionChange(mapBounds, {
+            latitude: mapCenter.lat(),
+            longitude: mapCenter.lng(),
+          });
+        }
+      }}
+      onZoomChanged={() => {
+        if (ref && ref.current && onZoom) {
+          onZoom(ref.current.getZoom());
+        }
+      }}
+      onTilesLoaded={() => {
+        if (onTilesLoaded) {
+          onTilesLoaded();
+        }
+      }}
+      mapContainerClassName={mapContainerClassName}
+    >
+      {children}
+    </GoogleMap>
+  );
+};
+
+export default BpkMap;

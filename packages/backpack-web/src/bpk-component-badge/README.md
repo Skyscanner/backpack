@@ -58,6 +58,43 @@ export default () => (
 | `privateBadgeColourBgSubtle` | `--bpk-private-badge-colour-bg-subtle` | `$bpk-private-badge-background-normal-day` | subtle |
 | `privateBadgeDimensionPaddingHorizontalSubtle` | `--bpk-private-badge-dimension-padding-horizontal-subtle` | `bpk-spacing-sm()` | subtle |
 
+## Interactive badge
+
+Use `as='button'` for actions or `as='a'` for navigation. Interactive badges always render a trailing info logo.
+
+### Usage
+
+```tsx
+import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
+
+// Rendering as a button
+export default () => (
+  <BpkBadge as="button" type={BADGE_TYPES.normal} onClick={() => console.log('clicked')}>
+    My Badge
+  </BpkBadge>
+);
+
+// Rendering as a link
+export default () => (
+  <BpkBadge as="a" href="/destination" type={BADGE_TYPES.brand}>
+    My Badge
+  </BpkBadge>
+);
+
+// Rendering as a link that opens in a new tab (sets target="_blank" and rel="noopener noreferrer" automatically)
+export default () => (
+  <BpkBadge as="a" href="/destination" blank>
+    My Badge
+  </BpkBadge>
+);
+```
+
+`BpkBadge` forwards its `ref` to the underlying `<button>` (when `as="button"`) or `<a>` (when `as="a"`) element. For non-interactive `<span>` badge, no ref is forwarded.
+
+### Accessibility
+
+Non-interactive badges render as `<span>` element. Interactive badges render as native `<button>` or `<a>` elements, so keyboard navigation and screen reader announcement work without any extra configuration. The trailing info icon is marked `aria-hidden`.
+
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/badge/web-vDRH571D#section-props-0c).

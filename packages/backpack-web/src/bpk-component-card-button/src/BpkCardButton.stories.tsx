@@ -17,8 +17,12 @@
  */
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
+import readme from '../README.md';
 
 import BpkSaveButton, { STYLE_TYPES, SIZE_TYPES } from './BpkSaveButton';
 
@@ -127,6 +131,16 @@ const VisualTestExample = () => (
 const meta = {
   title: 'bpk-component-card-button',
   component: BpkSaveButton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

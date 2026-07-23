@@ -45,7 +45,7 @@
     height: calc(tokens.$bpk-flare-height-desktop - 1px);
     margin-left: 50%;
     transform: translateX(-50%);
-    fill: tokens.$bpk-surface-default-day;
+    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     @include utils.bpk-rtl {
       margin-right: 50%;

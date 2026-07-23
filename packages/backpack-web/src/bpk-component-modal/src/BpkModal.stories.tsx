@@ -18,6 +18,8 @@
 import { Children, useState } from 'react';
 import type { ComponentProps } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   lineHeightBase,
   iconSizeSm,
@@ -32,7 +34,7 @@ import ArrowIcon from '../../bpk-component-icon/sm/long-arrow-left';
 import { BpkNavigationBarButtonLink } from '../../bpk-component-navigation-bar';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';
-
+import readme from '../README.md';
 
 import BpkModal from './BpkModal';
 import { MODAL_STYLING } from './BpkModalInner';
@@ -303,6 +305,16 @@ const WithAccessoryViewExample = () => (
 const meta = {
   title: 'bpk-component-modal',
   component: BpkModal,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof BpkModal>;
 
 export default meta;

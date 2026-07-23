@@ -1,0 +1,25 @@
+{
+  "extends": "../../.eslintrc",
+  "env": {
+    "browser": false,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "backpack/use-tokens": "off",
+    "compat/compat": "off",
+    "dot-notation": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "no-console": "off",
+    "no-continue": "off",
+    "no-else-return": "off",
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "prefer-destructuring": "off",
+    "sort-destructure-keys/sort-destructure-keys": "off",
+    "valid-jsdoc": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  }
+}

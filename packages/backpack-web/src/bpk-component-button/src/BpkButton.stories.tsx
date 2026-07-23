@@ -17,8 +17,11 @@
  */
 
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 
 import {
   withButtonAlignment,
@@ -38,6 +41,7 @@ import {
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
@@ -586,6 +590,16 @@ const AnchorTagsExample = () => (
 const meta = {
   title: 'bpk-component-button',
   component: BpkButton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
   tags: ['dark-mode-compatible'],
 } satisfies Meta;
 

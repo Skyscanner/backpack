@@ -16,14 +16,19 @@
  * limitations under the License.
  */
 
+
+
 import PropTypes from 'prop-types';
 import { Component, useState } from 'react';
+
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkLink from '../../bpk-component-link';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkTooltip from '../../bpk-component-tooltip';
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkDrawer from './BpkDrawer';
 
@@ -373,6 +378,16 @@ const WithSecondaryPanelExample = () => <DrawerWithSecondaryPanelContainer />;
 const meta = {
   title: 'bpk-component-drawer',
   component: BpkDrawer,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

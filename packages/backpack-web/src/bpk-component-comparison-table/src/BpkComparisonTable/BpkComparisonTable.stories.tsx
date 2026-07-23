@@ -19,6 +19,8 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkAiBlurb from '../../../bpk-component-ai-blurb';
 import BpkButton, { BUTTON_TYPES } from '../../../bpk-component-button';
 import {
@@ -34,7 +36,9 @@ import BpkPrice, {
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkComparisonTray from '../BpkComparisonTray/BpkComparisonTray';
 
+
 import BpkComparisonTable from './BpkComparisonTable';
+import readme from './README.md';
 
 import type { BpkCompareColumn } from './common-types';
 import type { BpkComparisonItem } from '../BpkComparisonTray/common-types';
@@ -491,6 +495,16 @@ const CombinedExample = () => {
 const meta = {
   title: 'bpk-component-comparison-table',
   component: BpkComparisonTable.Root,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
   decorators: [
     (story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>,
   ],

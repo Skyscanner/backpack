@@ -19,6 +19,7 @@
 import PropTypes from 'prop-types';
 import { Component, useEffect } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { endOfMonth } from 'date-fns/endOfMonth';
 import { startOfMonth } from 'date-fns/startOfMonth';
 
@@ -29,6 +30,7 @@ import {
   CustomPropTypes,
   CALENDAR_SELECTION_TYPE,
 } from '../../bpk-component-calendar';
+import readme from '../README.md';
 
 import BpkScrollableCalendar from './BpkScrollableCalendar';
 import {
@@ -55,6 +57,16 @@ export default {
     BpkScrollableCalendarDate,
     BpkScrollableCalendarGrid,
     BpkScrollableCalendar: BpkScrollableCalendarMock,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 
