@@ -36,7 +36,7 @@
     transform tokens.$bpk-duration-base ease,
     width tokens.$bpk-duration-base ease;
   outline: 0;
-  background: tokens.$bpk-surface-default-day;
+  background: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
   overflow-y: scroll;
 
   @include shadows.bpk-box-shadow-xl;
@@ -164,7 +164,8 @@
     flex-direction: column;
     flex: 1 1 var(--dynamic-width);
     overflow-y: auto;
-    border-inline-start: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border-inline-start: tokens.$bpk-border-size-sm solid
+      var(--bpk-other-line-default, tokens.$bpk-line-day);
   }
 
   &__secondary-close {
