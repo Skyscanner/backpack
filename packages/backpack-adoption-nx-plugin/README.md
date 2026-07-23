@@ -41,8 +41,10 @@ writes `adoption-guard-results.json` in that root and always succeeds so all
 projects can report their results before the final verdict is calculated.
 
 For pull-request comparisons, provide `baseWorktreePath` as an absolute path
-to a checkout of the base ref. `dryRun: true` changes otherwise failing
-regressions into warnings.
+to a checkout of the base ref. The base checkout must be **outside** the Nx
+workspace root, otherwise Nx discovers its `project.json` files a second time
+and fails while constructing the project graph. `dryRun: true` changes
+otherwise failing regressions into warnings.
 
 ## Aggregate the result
 
