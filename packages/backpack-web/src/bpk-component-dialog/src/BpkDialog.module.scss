@@ -59,7 +59,7 @@
     margin-left: -1 * $size * 0.5;
     justify-content: center;
     align-items: center;
-    border: calc(#{tokens.$bpk-border-size-lg} * 2)
+    border: (tokens.$bpk-border-size-lg * 2)
       var(--bpk-surface-default, #{tokens.$bpk-surface-default-day}) solid;
     border-radius: 50%;
 
