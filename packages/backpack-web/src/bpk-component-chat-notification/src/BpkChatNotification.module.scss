@@ -21,15 +21,15 @@
 .bpk-chat-notification {
   display: flex;
   width: 100%;
-  padding: tokens.bpk-spacing-base();
+  padding: var(--bpk-spacing-base, tokens.bpk-spacing-base());
   align-items: center;
-  border-radius: tokens.$bpk-border-radius-md;
-  background: tokens.$bpk-core-primary-day;
-  color: tokens.$bpk-text-on-dark-day;
+  border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
+  background: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   box-shadow: none;
   animation: bpk-chat-notification-slide-in tokens.$bpk-duration-base ease-out
     forwards;
-  gap: tokens.bpk-spacing-md();
+  gap: var(--bpk-spacing-md, tokens.bpk-spacing-md());
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -38,7 +38,7 @@
   &__icon {
     display: flex;
     flex-shrink: 0;
-    fill: tokens.$bpk-text-on-dark-day;
+    fill: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 }
 
