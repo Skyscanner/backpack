@@ -52,10 +52,6 @@
   &__input {
     @include forms.bpk-checkbox__input;
 
-    &:disabled {
-      cursor: inherit;
-    }
-
     &-indeterminate {
       &::before {
         position: absolute;
@@ -63,13 +59,17 @@
         left: tokens.bpk-spacing-sm() * 0.5;
         content: '';
         width: tokens.bpk-spacing-xxl() * 0.25;
-        height: var(--bpk-private-checkbox-stroke, tokens.$bpk-border-size-lg);
-        border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
+        height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
+        border-radius: tokens.$bpk-border-size-lg;
         background-color: var(
           --bpk-surface-default,
           tokens.$bpk-surface-default-day
         );
       }
+    }
+
+    &:disabled {
+      cursor: inherit;
     }
 
     &-white {
