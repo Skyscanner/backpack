@@ -44,7 +44,10 @@
   }
 
   &--critical {
-    background-color: var(--bpk-status-danger-spot, tokens.$bpk-status-danger-spot-day);
+    background-color: var(
+      --bpk-status-danger-spot,
+      tokens.$bpk-status-danger-spot-day
+    );
     color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
