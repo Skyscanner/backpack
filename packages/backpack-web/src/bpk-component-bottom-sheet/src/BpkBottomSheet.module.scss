@@ -40,8 +40,7 @@
   margin: auto;
   transition:
     opacity tokens.$bpk-duration-sm ease-in-out,
- transform tokens.$bpk-duration-sm ease-in-out;
-
+    transform tokens.$bpk-duration-sm ease-in-out;
   outline: 0;
   background-color: tokens.$bpk-modal-background-color;
   opacity: tokens.$bpk-modal-opacity;
