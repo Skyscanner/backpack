@@ -667,11 +667,11 @@
   margin: 0;
   padding: 0;
   border: (tokens.$bpk-one-pixel-rem * 3) solid;
+  border-radius: (tokens.$bpk-one-pixel-rem * 4);
   border-color: var(
     --bpk-private-checkbox-border-default-not-checked,
     tokens.$bpk-text-secondary-day
   );
-  border-radius: (tokens.$bpk-one-pixel-rem * 4);
   cursor: pointer;
   vertical-align: text-bottom;
   appearance: none;
