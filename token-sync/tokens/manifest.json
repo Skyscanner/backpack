@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-16T18:23:00.105Z",
+  "generatedAt": "2026-07-23T18:25:03.273Z",
   "files": [
     {
       "fileName": "backpack.light.json",
       "collectionName": "Backpack",
       "modeName": "Light",
       "role": "semantic",
-      "variableCount": 354,
-      "preservedAliasCount": 307,
+      "variableCount": 358,
+      "preservedAliasCount": 280,
       "inlinedAliasCount": 30,
       "skippedVariableCount": 7
     },
@@ -16,8 +16,8 @@
       "collectionName": "Backpack",
       "modeName": "Dark",
       "role": "semantic",
-      "variableCount": 354,
-      "preservedAliasCount": 304,
+      "variableCount": 358,
+      "preservedAliasCount": 277,
       "inlinedAliasCount": 29,
       "skippedVariableCount": 7
     },
