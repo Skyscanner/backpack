@@ -61,6 +61,9 @@
 
     // We inherit radius from the outer modal so they match and align correctly to the container.
     border-radius: inherit;
-    background-color: tokens.$bpk-surface-contrast-day;
+    background-color: var(
+      --bpk-surface-contrast,
+      #{tokens.$bpk-surface-contrast-day}
+    );
   }
 }
