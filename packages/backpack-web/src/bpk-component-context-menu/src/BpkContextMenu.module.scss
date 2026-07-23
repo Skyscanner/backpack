@@ -24,6 +24,19 @@ $context-menu-duration: tokens.$bpk-duration-sm;
 $context-menu-min-width: 12rem;
 $context-menu-max-width: 20rem;
 
+// Default trigger button — resets browser button styles so consumers get a
+// clean base to build on via className. Consumers own the visual design.
+.bpk-context-menu__trigger {
+  display: inline-flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 // Positioner is a bare wrapper that Floating UI (via Ark/Zag) positions.
 // It must not carry padding or width — those live on the content surface —
 // otherwise Floating UI's measurements will include the wrong box.
@@ -112,9 +125,11 @@ $context-menu-max-width: 20rem;
 }
 
 .bpk-context-menu__item-label {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   min-inline-size: 0;
 }
 
@@ -130,7 +145,7 @@ $context-menu-max-width: 20rem;
 
 .bpk-context-menu__item-group {
   --bpk-context-menu-item-divider: #{tokens.$bpk-border-size-sm} solid
-    #{tokens.$bpk-line-day};
+    #{tokens.$bpk-canvas-contrast-day};
 }
 
 .bpk-context-menu__separator {

@@ -20,30 +20,40 @@ import type { ReactNode } from 'react';
 
 import { Menu } from '@ark-ui/react';
 
+import { cssModules } from '../../bpk-react-utils';
+
+import STYLES from './BpkContextMenu.module.scss';
+
+const getClassName = cssModules(STYLES);
+
 export type BpkContextMenuTriggerProps = {
-  /**
-   * The element that will open the menu when clicked.
-   *
-   * When `asChild` is true (default), the consumer's element (e.g. their own
-   * heart button) becomes the trigger via slot composition — the Menu attaches
-   * its click/keyboard handlers and ARIA attributes to that element instead of
-   * rendering an additional wrapping button.
-   */
   children: ReactNode;
   /**
+   * Accessible label for the trigger button. Required when the trigger
+   * contains only an icon with no visible text.
+   */
+  'aria-label'?: string;
+  /**
    * When true, delegates trigger behaviour to the child element rather than
-   * rendering a Backpack-owned button. Defaults to true because the context
-   * menu is opened by a consumer-owned icon (e.g. a heart) that already has
-   * its own visual state, saved-state, and analytics wiring.
+   * rendering a Backpack-owned button. The child must be a DOM element or a
+   * forwardRef component. Use this to compose with an existing product button
+   * (e.g. BpkSaveButton) that owns its own styling and state.
    */
   asChild?: boolean;
 };
 
 const BpkContextMenuTrigger = ({
-  asChild = true,
+  'aria-label': ariaLabel,
+  asChild = false,
   children,
 }: BpkContextMenuTriggerProps) => (
-  <Menu.Trigger asChild={asChild}>{children}</Menu.Trigger>
+  <Menu.Trigger
+    asChild={asChild}
+    aria-label={ariaLabel}
+    className={asChild ? undefined : getClassName('bpk-context-menu__trigger')}
+  >
+    {children}
+  </Menu.Trigger>
 );
 
 export default BpkContextMenuTrigger;

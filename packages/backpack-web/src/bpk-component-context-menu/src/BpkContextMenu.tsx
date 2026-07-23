@@ -21,6 +21,7 @@ import BpkContextMenuItem from './BpkContextMenuItem';
 import BpkContextMenuItemGroup from './BpkContextMenuItemGroup';
 import BpkContextMenuRoot from './BpkContextMenuRoot';
 import BpkContextMenuSeparator from './BpkContextMenuSeparator';
+import BpkContextMenuSubTriggerItem from './BpkContextMenuSubTriggerItem';
 import BpkContextMenuTrigger from './BpkContextMenuTrigger';
 
 const BpkContextMenu = {
@@ -30,6 +31,7 @@ const BpkContextMenu = {
   Item: BpkContextMenuItem,
   ItemGroup: BpkContextMenuItemGroup,
   Separator: BpkContextMenuSeparator,
+  TriggerItem: BpkContextMenuSubTriggerItem,
 };
 
 export default BpkContextMenu;
