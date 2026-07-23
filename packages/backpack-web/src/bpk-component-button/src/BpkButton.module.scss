@@ -65,9 +65,14 @@
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
 
-    &--implicit {
-      @include typography.bpk-link--implicit;
-    }
+    // Note: `implicit` deliberately sets no `color` here. The generic
+    // `bpk-button--link--implicit` class is emitted for BOTH link and
+    // link-on-dark variants (BpkButton.tsx), so any colour set here would
+    // fight the variant base class at equal specificity — source-order
+    // decides the winner, which mini-css-extract reorders in prod (dark text
+    // on the dark header → WCAG contrast fail). `implicit` governs only the
+    // underline, handled by the separate `--link-underlined--implicit`
+    // classes; colour comes from the variant base class below.
 
     &--icon-only {
       @include buttons.bpk-button--link-icon-only;
@@ -81,10 +86,6 @@
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
-
-    &--implicit {
-      @include typography.bpk-link--implicit;
-    }
   }
 
   &--link-underlined {
