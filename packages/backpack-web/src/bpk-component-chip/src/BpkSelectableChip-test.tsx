@@ -110,5 +110,4 @@ describe('BpkSelectableChip', () => {
     const { asFragment } = render(<TestChip className="custom-class" />);
     expect(asFragment()).toMatchSnapshot();
   });
-
 });
