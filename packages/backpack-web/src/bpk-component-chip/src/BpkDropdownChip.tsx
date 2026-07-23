@@ -21,8 +21,6 @@ The dropdown chip component is just a selectable chip component
 with a trailing accessory view of a chevron down icon.
 */
 
-import { forwardRef } from 'react';
-
 import ChevronDownIconSm from '../../bpk-component-icon/sm/chevron-down';
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -31,15 +29,14 @@ import { CHIP_TYPES } from './commonTypes';
 
 import type { CommonProps as Props } from './commonTypes';
 
-const BpkDropdownChip = forwardRef<HTMLButtonElement, Props>(({
+const BpkDropdownChip = ({
   disabled = false,
   leadingAccessoryView = null,
   selected = false,
   type = CHIP_TYPES.default,
   ...rest
-}, ref) => (
+}: Props) => (
   <BpkSelectableChip
-    ref={ref}
     disabled={disabled}
     leadingAccessoryView={leadingAccessoryView}
     selected={selected}
@@ -48,8 +45,6 @@ const BpkDropdownChip = forwardRef<HTMLButtonElement, Props>(({
     {...rest}
     trailingAccessoryView={<ChevronDownIconSm />}
   />
-));
-
-BpkDropdownChip.displayName = 'BpkDropdownChip';
+);
 
 export default BpkDropdownChip;

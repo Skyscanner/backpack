@@ -21,6 +21,7 @@ import { useState } from 'react';
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import { CHIP_TYPES, BpkDropdownChip } from '../../bpk-component-chip';
+import { BpkVessel } from '../../bpk-component-layout';
 import BpkPopover from '../../bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -464,14 +465,16 @@ const makePopoverRenderChip =
         onClose={() => {}}
         style={{ marginTop: '8px' }}
         target={
-          <BpkDropdownChip
-            accessibilityLabel={accessibilityLabel}
-            type={chipStyle}
-            selected={selected}
-            onClick={onClick}
-          >
-            {label}
-          </BpkDropdownChip>
+          <BpkVessel style={{ display: 'inline-block' }}>
+            <BpkDropdownChip
+              accessibilityLabel={accessibilityLabel}
+              type={chipStyle}
+              selected={selected}
+              onClick={onClick}
+            >
+              {label}
+            </BpkDropdownChip>
+          </BpkVessel>
         }
       >
         <BpkText>Content for {label}</BpkText>

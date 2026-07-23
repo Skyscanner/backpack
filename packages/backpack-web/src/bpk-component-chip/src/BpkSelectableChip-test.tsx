@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-import { createRef } from 'react';
-
 import { render } from '@testing-library/react';
 
 import BpkSelectableChip from './BpkSelectableChip';
@@ -113,14 +111,4 @@ describe('BpkSelectableChip', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should forward its ref to the underlying button', () => {
-    const ref = createRef<HTMLButtonElement>();
-    render(
-      <BpkSelectableChip ref={ref} onClick={() => null} accessibilityLabel="Toggle">
-        Toggle me
-      </BpkSelectableChip>,
-    );
-    expect(ref.current).toBeInstanceOf(HTMLButtonElement);
-    expect(ref.current?.tagName).toBe('BUTTON');
-  });
 });
