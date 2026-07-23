@@ -94,6 +94,7 @@
 
   &__close-button {
     float: right;
+    margin-inline-start: auto;
 
     @include utils.bpk-rtl {
       float: left;
