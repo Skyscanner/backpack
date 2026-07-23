@@ -141,6 +141,7 @@ describe('BpkMultiSelectChipGroup', () => {
         accessibilityLabel: 'Custom',
         index: 0,
         onClick: expect.any(Function),
+        role: 'checkbox',
       }),
     );
   });
@@ -178,5 +179,19 @@ describe('BpkMultiSelectChipGroup', () => {
     );
     expect(screen.queryByTestId('custom-chip')).not.toBeInTheDocument();
     expect(renderChip).not.toHaveBeenCalled();
+  });
+
+  it('should pass role="radio" to renderChip in single-select context', () => {
+    const renderChip = jest.fn(() => <div data-testid="custom-chip" />);
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        ariaMultiselectable={false}
+        chips={[{ text: 'Custom', renderChip }]}
+      />,
+    );
+    expect(renderChip).toHaveBeenCalledWith(
+      expect.objectContaining({ role: 'radio' }),
+    );
   });
 });

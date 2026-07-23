@@ -75,6 +75,7 @@ export type ChipRenderProps = {
   accessibilityLabel: string;
   onClick: () => void;
   index: number;
+  role: 'checkbox' | 'radio';
 };
 
 export type ChipItem = {
@@ -138,24 +139,25 @@ const Chip = ({
     }
   };
 
+  const chipRenderProps: ChipRenderProps = {
+    selected: selected ?? false,
+    chipStyle,
+    accessibilityLabel: accessibilityLabel || text,
+    onClick: handleClick,
+    index: chipIndex,
+    role: ariaMultiselectable ? 'checkbox' : 'radio',
+  };
+
   if (renderChip) {
-    return renderChip({
-      selected: selected ?? false,
-      chipStyle,
-      accessibilityLabel: accessibilityLabel || text,
-      onClick: handleClick,
-      index: chipIndex,
-    });
+    return renderChip(chipRenderProps);
   }
 
+  const { chipStyle: type, index: _index, ...restChipProps } = chipRenderProps;
   const Component = CHIP_COMPONENT_MAP[component];
   return (
     <Component
-      selected={selected ?? false}
-      type={chipStyle}
-      accessibilityLabel={accessibilityLabel || text}
-      onClick={handleClick}
-      role={ariaMultiselectable ? 'checkbox' : 'radio'}
+      {...restChipProps}
+      type={type}
       leadingAccessoryView={leadingAccessoryView}
       {...rest}
     >
