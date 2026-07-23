@@ -452,7 +452,7 @@ const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
 
 const makePopoverRenderChip =
   (label: string) =>
-  ({ accessibilityLabel, chipStyle, index, selected }: ChipRenderProps) =>
+  ({ accessibilityLabel, chipStyle, index, onClick, selected }: ChipRenderProps) =>
     (
       <BpkPopover
         id={`popover-chip-${index}`}
@@ -468,7 +468,7 @@ const makePopoverRenderChip =
             accessibilityLabel={accessibilityLabel}
             type={chipStyle}
             selected={selected}
-            onClick={() => {}}
+            onClick={onClick}
           >
             {label}
           </BpkDropdownChip>
@@ -479,6 +479,8 @@ const makePopoverRenderChip =
     );
 
 const WithPopoverExample = () => {
+  const [stickySelected, setStickySelected] = useState(false);
+
   const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
     text: label,
     renderChip: makePopoverRenderChip(label),
@@ -486,7 +488,8 @@ const WithPopoverExample = () => {
 
   const stickyChip: ChipItem = {
     text: 'Sort & Filter',
-    renderChip: makePopoverRenderChip('Sort & Filter'),
+    selected: stickySelected,
+    onClick: (selected: boolean) => setStickySelected(selected),
   };
 
   return (
