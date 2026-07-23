@@ -107,61 +107,6 @@ const SingleSelectExample = () => {
 };
 ```
 
-## Anchoring a popover to a specific chip (`renderChip`)
-
-By default the chip group renders each chip from the `chips` data array, and
-those chips do not expose a ref — so a `BpkPopover` cannot anchor to an
-individual chip. Use the optional `renderChip` render prop to take over
-rendering of a chip slot and return your own element (e.g. a chip wrapped in a
-`BpkPopover`). The group hands your function the computed `selected`, a pre-wired
-`onClick` (which fires the item's `onClick(!selected, index)`), `chipStyle`,
-`accessibilityLabel`, and `index`, so you don't rebuild the default bindings.
-
-```tsx
-import BpkMultiSelectChipGroup, {
-  CHIP_GROUP_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-chip-group';
-import { BpkDropdownChip } from '@skyscanner/backpack-web/bpk-component-chip';
-import BpkPopover from '@skyscanner/backpack-web/bpk-component-popover';
-
-import type { ChipItem, ChipRenderProps } from '@skyscanner/backpack-web/bpk-component-chip-group';
-
-const chips: ChipItem[] = ['Flights', 'Hotels'].map((label, i) => ({
-  text: label,
-  renderChip: ({ accessibilityLabel, chipStyle, selected }: ChipRenderProps) => (
-    <BpkPopover
-      id={`popover-chip-${i}`}
-      label={`${label} options`}
-      labelAsTitle
-      placement="bottom"
-      closeButtonLabel={`Close ${label} options`}
-      onClose={() => {}}
-      target={
-        <BpkDropdownChip
-          accessibilityLabel={accessibilityLabel}
-          type={chipStyle}
-          selected={selected}
-          onClick={() => {}}
-        >
-          {label}
-        </BpkDropdownChip>
-      }
-    >
-      Content for {label}
-    </BpkPopover>
-  ),
-}));
-
-<BpkMultiSelectChipGroup
-  type={CHIP_GROUP_TYPES.wrap}
-  chips={chips}
-  ariaLabel="Select filters"
-/>;
-```
-
-When `renderChip` is provided, the caller owns the returned element entirely —
-including any accessibility attributes beyond those passed in `ChipRenderProps`.
-
 ## Props
 
 Check out the full list of props on Skyscanner's [design system documentation website](https://www.skyscanner.design/latest/components/chip-group/web-4eQsMvYv).
