@@ -6,6 +6,7 @@
 /dist
 /packages/backpack-web/dist
 /packages/backpack-adoption-guard/dist
+/packages/backpack-adoption-nx-plugin/dist
 /dist-sassdoc
 /libs/backpack-storybook-host/dist-storybook
 /coverage
