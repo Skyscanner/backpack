@@ -23,10 +23,10 @@ import {
   evaluateGuard,
 } from "@skyscanner/backpack-adoption-analyzer";
 
-import { DEFAULT_RESULTS_FILE_NAME, writeProjectResult } from "../results-store.ts";
+import { DEFAULT_RESULTS_FILE_NAME, writeProjectResult } from "../results-store";
 
 import type { ExecutorContext, PromiseExecutor } from "@nx/devkit";
-import type { AnalyzeExecutorSchema } from "./schema.ts";
+import type { AnalyzeExecutorSchema } from "./schema";
 
 /**
  * Analyzes a single NX project's Backpack adoption and writes a per-project

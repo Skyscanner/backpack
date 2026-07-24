@@ -43,7 +43,14 @@ export const readProjectResult = (
 ): ProjectAdoptionResult | null => {
   try {
     return JSON.parse(readFileSync(resultsPath, "utf8")) as ProjectAdoptionResult;
-  } catch {
-    return null;
+  } catch (error) {
+    if (
+      error instanceof SyntaxError ||
+      (error instanceof Error && (error as NodeJS.ErrnoException).code === "ENOENT")
+    ) {
+      return null;
+    }
+
+    throw error;
   }
 };

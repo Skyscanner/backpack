@@ -18,5 +18,5 @@
 // This package is consumed via its NX executors (see executors.json),
 // referenced by name in consumers' project.json — not via JS imports. This
 // barrel only exists to satisfy package.json's `main`/`exports` fields.
-export type { AnalyzeExecutorSchema } from "./executors/analyze/schema.ts";
-export type { ReportExecutorSchema } from "./executors/report/schema.ts";
+export type { AnalyzeExecutorSchema } from "./executors/analyze/schema";
+export type { ReportExecutorSchema } from "./executors/report/schema";

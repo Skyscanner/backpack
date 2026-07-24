@@ -18,11 +18,11 @@
 import { joinPathFragments, logger } from "@nx/devkit";
 import { combineGuardStatuses } from "@skyscanner/backpack-adoption-analyzer";
 
-import { DEFAULT_RESULTS_FILE_NAME, readProjectResult } from "../results-store.ts";
+import { DEFAULT_RESULTS_FILE_NAME, readProjectResult } from "../results-store";
 
 import type { GuardResult } from "@skyscanner/backpack-adoption-analyzer";
 import type { ExecutorContext, PromiseExecutor } from "@nx/devkit";
-import type { ReportExecutorSchema } from "./schema.ts";
+import type { ReportExecutorSchema } from "./schema";
 
 // No repo-wide analysis run backs this aggregation (each project already ran
 // its own `analyze` executor) — this trivial "pass" baseline lets
