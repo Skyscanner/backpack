@@ -85,11 +85,12 @@ const runExecutor: PromiseExecutor<ReportExecutorSchema> = async (
   }
 
   const statuses = Object.values(projectGuards).map((guard) => guard.status);
-  const combinedStatus = statuses.includes("fail")
-    ? "fail"
-    : statuses.includes("warn")
-      ? "warn"
-      : "pass";
+  let combinedStatus: GuardResult["status"] = "pass";
+  if (statuses.includes("fail")) {
+    combinedStatus = "fail";
+  } else if (statuses.includes("warn")) {
+    combinedStatus = "warn";
+  }
 
   if (combinedStatus === "fail") {
     const failingProjects = Object.entries(projectGuards)
