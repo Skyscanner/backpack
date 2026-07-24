@@ -40,6 +40,7 @@ import {
 } from "../git/base-worktree";
 import { createGitHubActionsIO, getBooleanInput } from "./io";
 import type { ActionIO } from "./io";
+import { ADOPTION_OUTPUTS } from "./outputs";
 import { buildStepSummary } from "./summary";
 
 export type RunOptions = {
@@ -82,12 +83,12 @@ const writeOutputs = (io: ActionIO, result: ActionResult) => {
     headBackpackPercentage,
   } = result.comparison;
 
-  io.setOutput("head-backpack-adoption", String(headBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.head, String(headBackpackPercentage));
   io.setOutput(
-    "base-backpack-adoption",
+    ADOPTION_OUTPUTS.base,
     baseBackpackPercentage === null ? "" : String(baseBackpackPercentage),
   );
-  io.setOutput("backpack-adoption-delta", delta === null ? "" : String(delta));
+  io.setOutput(ADOPTION_OUTPUTS.delta, delta === null ? "" : String(delta));
 };
 
 const createActionResult = ({
