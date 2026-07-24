@@ -77,10 +77,12 @@ export type ChipItem = {
   hidden?: boolean;
 } & SingleSelectChipItem;
 
-export type ChipRenderProps = Omit<ChipItem, 'component' | 'renderChip' | 'onClick'> & {
+export type ChipRenderProps = Omit<ChipItem, 'component' | 'renderChip' | 'onClick' | 'accessibilityLabel' | 'leadingAccessoryView'> & {
   type: ChipStyleType;
   role: 'checkbox' | 'radio';
   onClick: () => void;
+  accessibilityLabel: string;
+  leadingAccessoryView: ReactNode;
 };
 
 type CommonProps = {
@@ -115,8 +117,10 @@ const Chip = ({
   ariaMultiselectable: boolean;
 }) => {
   const {
+    accessibilityLabel,
     component = CHIP_COMPONENT.selectable,
     hidden = false,
+    leadingAccessoryView = null,
     onClick,
     renderChip,
     selected,
@@ -137,6 +141,8 @@ const Chip = ({
   const chipRenderProps: ChipRenderProps = {
     ...rest,
     text,
+    accessibilityLabel: accessibilityLabel || text,
+    leadingAccessoryView,
     selected,
     onClick: handleClick,
     type: chipStyle,
@@ -148,13 +154,8 @@ const Chip = ({
   }
 
   const Component = CHIP_COMPONENT_MAP[component];
-  const { accessibilityLabel, leadingAccessoryView = null, ...componentProps } = chipRenderProps;
   return (
-    <Component
-      {...componentProps}
-      accessibilityLabel={accessibilityLabel || text}
-      leadingAccessoryView={leadingAccessoryView}
-    >
+    <Component {...chipRenderProps}>
       {text}
     </Component>
   );
