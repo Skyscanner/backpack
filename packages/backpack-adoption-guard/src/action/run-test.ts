@@ -137,10 +137,7 @@ export const App = () => (
     expect(metrics).not.toHaveProperty("parseErrors");
     expect(metrics).not.toHaveProperty("projects");
     expect(result.guard).not.toHaveProperty("projects");
-    expect(io.setOutput).toHaveBeenCalledWith(
-      ADOPTION_OUTPUTS.head,
-      String(result.comparison.headBackpackPercentage),
-    );
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.head, "66.67");
     expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.base, "");
     expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.delta, "");
   });
@@ -179,14 +176,9 @@ export const App = () => <BpkButton>Book</BpkButton>;
 
     expect(result.comparison.baseBackpackPercentage).not.toBeNull();
     expect(result.comparison.delta).not.toBeNull();
-    expect(io.setOutput).toHaveBeenCalledWith(
-      ADOPTION_OUTPUTS.base,
-      String(result.comparison.baseBackpackPercentage),
-    );
-    expect(io.setOutput).toHaveBeenCalledWith(
-      ADOPTION_OUTPUTS.delta,
-      String(result.comparison.delta),
-    );
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.head, "100.00");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.base, "0.00");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.delta, "100.00");
   });
 
   it("reports NX workspaces as a single repository", async () => {

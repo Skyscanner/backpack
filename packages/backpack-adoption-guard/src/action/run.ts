@@ -76,6 +76,9 @@ const writeResults = async (
   );
 };
 
+const formatOutput = (value: number | null) =>
+  value === null ? "" : value.toFixed(2);
+
 const writeOutputs = (io: ActionIO, result: ActionResult) => {
   const {
     baseBackpackPercentage,
@@ -83,12 +86,9 @@ const writeOutputs = (io: ActionIO, result: ActionResult) => {
     headBackpackPercentage,
   } = result.comparison;
 
-  io.setOutput(ADOPTION_OUTPUTS.head, String(headBackpackPercentage));
-  io.setOutput(
-    ADOPTION_OUTPUTS.base,
-    baseBackpackPercentage === null ? "" : String(baseBackpackPercentage),
-  );
-  io.setOutput(ADOPTION_OUTPUTS.delta, delta === null ? "" : String(delta));
+  io.setOutput(ADOPTION_OUTPUTS.head, formatOutput(headBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.base, formatOutput(baseBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.delta, formatOutput(delta));
 };
 
 const createActionResult = ({

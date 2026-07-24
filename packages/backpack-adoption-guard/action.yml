@@ -21,11 +21,11 @@ inputs:
 
 outputs:
   head-backpack-adoption:
-    description: Numeric percentage string (0-100, up to two decimal places, no percent sign) for the checked-out ref.
+    description: Numeric percentage string from 0 to 100 with exactly two decimal places and no percent sign for the checked-out ref.
   base-backpack-adoption:
-    description: Numeric percentage string (0-100, up to two decimal places, no percent sign) for the PR base ref, or an empty string when unavailable.
+    description: Numeric percentage string from 0 to 100 with exactly two decimal places and no percent sign for the PR base ref, or an empty string when unavailable.
   backpack-adoption-delta:
-    description: Signed numeric percentage-point string (up to two decimal places, no percent sign), or an empty string when unavailable.
+    description: Signed numeric percentage-point string with exactly two decimal places and no percent sign, or an empty string when unavailable.
 
 runs:
   using: node24

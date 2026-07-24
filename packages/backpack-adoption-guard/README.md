@@ -54,9 +54,9 @@ The action emits one of three guard statuses:
 
 | Output | Description |
 | --- | --- |
-| `head-backpack-adoption` | Numeric percentage string from `0` to `100`, rounded to at most two decimal places with no `%` suffix, for the checked-out ref. |
-| `base-backpack-adoption` | Numeric percentage string from `0` to `100`, rounded to at most two decimal places with no `%` suffix, for the PR base ref; empty when unavailable. |
-| `backpack-adoption-delta` | Signed numeric percentage-point string, rounded to at most two decimal places with no `%` suffix; empty when unavailable. |
+| `head-backpack-adoption` | Numeric percentage string from `0` to `100` with exactly two decimal places and no `%` suffix, for the checked-out ref. |
+| `base-backpack-adoption` | Numeric percentage string from `0` to `100` with exactly two decimal places and no `%` suffix, for the PR base ref; empty when unavailable. |
+| `backpack-adoption-delta` | Signed numeric percentage-point string with exactly two decimal places and no `%` suffix; empty when unavailable. |
 
 ## Uploading metrics to Cortex
 
