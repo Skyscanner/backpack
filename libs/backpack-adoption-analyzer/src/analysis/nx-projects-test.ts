@@ -111,6 +111,15 @@ describe("nx-projects", () => {
       expect(entry.prefix).toBe("apps/web/");
       expect(resolveProject("apps/web/Home.tsx", [entry])).toBe("web");
     });
+
+    it("maps a root of \".\" to an empty prefix that matches every path", () => {
+      const [entry] = buildProjectIndex([
+        { name: "root", root: ".", type: null },
+      ]);
+
+      expect(entry.prefix).toBe("");
+      expect(resolveProject("App.tsx", [entry])).toBe("root");
+    });
   });
 
   describe("resolveProject", () => {
