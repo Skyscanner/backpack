@@ -6,7 +6,7 @@
       "collectionName": "Backpack",
       "modeName": "Light",
       "role": "semantic",
-      "variableCount": 358,
+      "variableCount": 200,
       "preservedAliasCount": 280,
       "inlinedAliasCount": 30,
       "skippedVariableCount": 7
@@ -16,7 +16,7 @@
       "collectionName": "Backpack",
       "modeName": "Dark",
       "role": "semantic",
-      "variableCount": 358,
+      "variableCount": 200,
       "preservedAliasCount": 277,
       "inlinedAliasCount": 29,
       "skippedVariableCount": 7

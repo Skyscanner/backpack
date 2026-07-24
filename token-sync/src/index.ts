@@ -51,6 +51,9 @@ async function main() {
     // can fix the broken reference in Figma.
     skipUnresolvedAliases: true,
     modeNameMap: MODE_NAME_OVERRIDES,
+    // Typography tokens are not ready to sync yet — exclude all variables
+    // whose Figma name starts with these prefixes.
+    excludeVariablePrefixes: ['Typography'],
   });
 
   for (const line of formatBuildSummary(result)) {
