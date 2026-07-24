@@ -110,4 +110,86 @@ describe('BpkMultiSelectChipGroup', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(onClick).toHaveBeenCalledWith(true, 1);
   });
+
+  it('should render a custom element via renderChip instead of the default chip', () => {
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        chips={[
+          {
+            text: 'Custom',
+            renderChip: () => <div data-testid="custom-chip">Custom content</div>,
+          },
+        ]}
+      />,
+    );
+    expect(screen.getByTestId('custom-chip')).toHaveTextContent('Custom content');
+  });
+
+  it('should hand group-computed props to renderChip', () => {
+    const renderChip = jest.fn(() => <div data-testid="custom-chip" />);
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        chips={[{ text: 'Custom', selected: true, renderChip }]}
+      />,
+    );
+    expect(renderChip).toHaveBeenCalledWith(
+      expect.objectContaining({
+        selected: true,
+        type: expect.any(String),
+        onClick: expect.any(Function),
+        role: 'checkbox',
+      }),
+    );
+  });
+
+  it('should fire the item onClick via the renderChip-provided onClick', async () => {
+    const user = userEvent.setup();
+    const onClick = jest.fn();
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        chips={[
+          {
+            text: 'Custom',
+            onClick,
+            renderChip: (props) => (
+              <button type="button" data-testid="custom-chip" onClick={props.onClick}>
+                go
+              </button>
+            ),
+          },
+        ]}
+      />,
+    );
+    await user.click(screen.getByTestId('custom-chip'));
+    expect(onClick).toHaveBeenCalledWith(true, 0);
+  });
+
+  it('should not render a renderChip chip when hidden', () => {
+    const renderChip = jest.fn(() => <div data-testid="custom-chip" />);
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        chips={[{ text: 'Custom', hidden: true, renderChip }]}
+      />,
+    );
+    expect(screen.queryByTestId('custom-chip')).not.toBeInTheDocument();
+    expect(renderChip).not.toHaveBeenCalled();
+  });
+
+  it('should pass role="radio" to renderChip in single-select context', () => {
+    const renderChip = jest.fn(() => <div data-testid="custom-chip" />);
+    render(
+      <BpkMultiSelectChipGroup
+        {...defaultProps}
+        ariaMultiselectable={false}
+        chips={[{ text: 'Custom', renderChip }]}
+      />,
+    );
+    expect(renderChip).toHaveBeenCalledWith(
+      expect.objectContaining({ role: 'radio' }),
+    );
+  });
 });
