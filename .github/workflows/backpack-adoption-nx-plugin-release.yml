@@ -59,6 +59,15 @@ jobs:
           release_type: ${{ inputs.release_type || 'minor' }}
           tag_prefix: backpack-adoption-nx-plugin
 
+      - name: Ensure release tag does not already exist
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.release_tag }}
+        run: |
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists"
+            exit 1
+          fi
+
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
@@ -107,6 +116,15 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: npx nx run backpack-adoption-nx-plugin:build
+      - name: Recheck release tag before publishing
+        env:
+          RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
+        run: |
+          git fetch --force --tags origin
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists"
+            exit 1
+          fi
       - name: Stamp release version
         env:
           RELEASE_VERSION: ${{ needs.Validate.outputs.release_version }}

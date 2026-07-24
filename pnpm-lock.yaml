@@ -353,7 +353,7 @@ importers:
   packages/backpack-adoption-nx-plugin:
     dependencies:
       '@nx/devkit':
-        specifier: 22.7.1
+        specifier: '>=20'
         version: 22.7.1(nx@22.7.1)
       nx:
         specifier: '>=20'
