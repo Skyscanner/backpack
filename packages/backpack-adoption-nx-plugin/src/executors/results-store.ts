@@ -46,7 +46,10 @@ export const readProjectResult = (
   } catch (error) {
     if (
       error instanceof SyntaxError ||
-      (error instanceof Error && (error as NodeJS.ErrnoException).code === "ENOENT")
+      (typeof error === "object" &&
+        error !== null &&
+        "code" in error &&
+        error.code === "ENOENT")
     ) {
       return null;
     }
