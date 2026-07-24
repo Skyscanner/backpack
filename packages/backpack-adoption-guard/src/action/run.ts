@@ -75,6 +75,21 @@ const writeResults = async (
   );
 };
 
+const writeOutputs = (io: ActionIO, result: ActionResult) => {
+  const {
+    baseBackpackPercentage,
+    delta,
+    headBackpackPercentage,
+  } = result.comparison;
+
+  io.setOutput("head-backpack-adoption", String(headBackpackPercentage));
+  io.setOutput(
+    "base-backpack-adoption",
+    baseBackpackPercentage === null ? "" : String(baseBackpackPercentage),
+  );
+  io.setOutput("backpack-adoption-delta", delta === null ? "" : String(delta));
+};
+
 const createActionResult = ({
   baseReport,
   eventName,
@@ -205,6 +220,7 @@ export const run = async ({
   });
 
   await writeResults(cwd, outputPath, result);
+  writeOutputs(io, result);
   await io.appendSummary(buildStepSummary(result));
 
   io.info(`Backpack adoption results written to ${outputPath}`);
