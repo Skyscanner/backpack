@@ -138,7 +138,6 @@ describe('BpkMultiSelectChipGroup', () => {
       expect.objectContaining({
         selected: true,
         type: expect.any(String),
-        onClick: expect.any(Function),
         role: 'checkbox',
       }),
     );
@@ -154,8 +153,12 @@ describe('BpkMultiSelectChipGroup', () => {
           {
             text: 'Custom',
             onClick,
-            renderChip: (props) => (
-              <button type="button" data-testid="custom-chip" onClick={props.onClick}>
+            renderChip: ({ onClick: onChipClick, selected }) => (
+              <button
+                type="button"
+                data-testid="custom-chip"
+                onClick={() => onChipClick?.(!selected, 0)}
+              >
                 go
               </button>
             ),
