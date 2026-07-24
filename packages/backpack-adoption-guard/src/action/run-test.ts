@@ -40,6 +40,7 @@ const createTestIO = (inputs: Record<string, string> = {}): ActionIO => ({
   warning: jest.fn(),
   error: jest.fn(),
   setFailed: jest.fn(),
+  setOutput: jest.fn(),
   appendSummary: jest.fn().mockResolvedValue(undefined),
 });
 
@@ -88,7 +89,8 @@ export const App = () => (
 `,
     );
 
-    const result = await run({ cwd: repoPath, io: createTestIO() });
+    const io = createTestIO();
+    const result = await run({ cwd: repoPath, io });
     const resultsFile = JSON.parse(
       await readFile(join(repoPath, "backpack-adoption-results.json"), "utf8"),
     );
@@ -114,6 +116,15 @@ export const App = () => (
     expect(metrics).not.toHaveProperty("parseErrors");
     expect(metrics).not.toHaveProperty("projects");
     expect(result.guard).not.toHaveProperty("projects");
+    expect(io.setOutput).toHaveBeenCalledWith(
+      "head-backpack-adoption",
+      String(result.comparison.headBackpackPercentage),
+    );
+    expect(io.setOutput).toHaveBeenCalledWith(
+      "base-backpack-adoption",
+      "",
+    );
+    expect(io.setOutput).toHaveBeenCalledWith("backpack-adoption-delta", "");
   });
 
   it("reports NX workspaces as a single repository", async () => {

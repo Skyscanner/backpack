@@ -19,6 +19,14 @@ inputs:
     required: false
     default: "60"
 
+outputs:
+  head-backpack-adoption:
+    description: Backpack adoption percentage for the checked-out ref.
+  base-backpack-adoption:
+    description: Backpack adoption percentage for the PR base ref, or an empty string when unavailable.
+  backpack-adoption-delta:
+    description: Head minus base Backpack adoption percentage, or an empty string when unavailable.
+
 runs:
   using: node24
   main: dist/index.js
