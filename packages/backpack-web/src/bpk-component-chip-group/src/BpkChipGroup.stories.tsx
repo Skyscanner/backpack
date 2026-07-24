@@ -453,10 +453,10 @@ const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
 
 const makePopoverRenderChip =
   (label: string) =>
-  ({ accessibilityLabel, chipStyle, index, onClick, selected }: ChipRenderProps) =>
+  ({ accessibilityLabel, onClick, selected, type }: ChipRenderProps) =>
     (
       <BpkPopover
-        id={`popover-chip-${index}`}
+        id={`popover-chip-${label}`}
         label={`${label} options`}
         labelAsTitle
         placement="bottom"
@@ -468,7 +468,7 @@ const makePopoverRenderChip =
           <BpkVessel style={{ display: 'inline-block' }}>
             <BpkDropdownChip
               accessibilityLabel={accessibilityLabel}
-              type={chipStyle}
+              type={type}
               selected={selected}
               onClick={onClick}
             >

@@ -157,8 +157,9 @@ const Chip = ({
   }
 
   const Component = CHIP_COMPONENT_MAP[component];
+  const { text: _text, ...componentProps } = chipRenderProps;
   return (
-    <Component {...chipRenderProps}>
+    <Component {...componentProps}>
       {text}
     </Component>
   );
