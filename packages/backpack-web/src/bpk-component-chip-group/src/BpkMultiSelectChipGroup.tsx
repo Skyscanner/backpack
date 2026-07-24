@@ -69,15 +69,6 @@ export type SingleSelectChipItem = {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
-export type ChipRenderProps = {
-  selected: boolean;
-  chipStyle: ChipStyleType;
-  accessibilityLabel: string;
-  onClick: () => void;
-  index: number;
-  role: 'checkbox' | 'radio';
-};
-
 export type ChipItem = {
   component?: ChipComponentType;
   renderChip?: (props: ChipRenderProps) => ReactElement | null;
@@ -85,6 +76,12 @@ export type ChipItem = {
   selected?: boolean;
   hidden?: boolean;
 } & SingleSelectChipItem;
+
+export type ChipRenderProps = Omit<ChipItem, 'component' | 'renderChip' | 'onClick'> & {
+  type: ChipStyleType;
+  role: 'checkbox' | 'radio';
+  onClick: () => void;
+};
 
 type CommonProps = {
   label?: string;
@@ -118,10 +115,8 @@ const Chip = ({
   ariaMultiselectable: boolean;
 }) => {
   const {
-    accessibilityLabel,
     component = CHIP_COMPONENT.selectable,
     hidden = false,
-    leadingAccessoryView = null,
     onClick,
     renderChip,
     selected,
@@ -140,11 +135,11 @@ const Chip = ({
   };
 
   const chipRenderProps: ChipRenderProps = {
-    selected: selected ?? false,
-    chipStyle,
-    accessibilityLabel: accessibilityLabel || text,
+    ...rest,
+    text,
+    selected,
     onClick: handleClick,
-    index: chipIndex,
+    type: chipStyle,
     role: ariaMultiselectable ? 'checkbox' : 'radio',
   };
 
@@ -152,14 +147,13 @@ const Chip = ({
     return renderChip(chipRenderProps);
   }
 
-  const { chipStyle: type, index: _index, ...restChipProps } = chipRenderProps;
   const Component = CHIP_COMPONENT_MAP[component];
+  const { accessibilityLabel, leadingAccessoryView = null, ...componentProps } = chipRenderProps;
   return (
     <Component
-      {...restChipProps}
-      type={type}
+      {...componentProps}
+      accessibilityLabel={accessibilityLabel || text}
       leadingAccessoryView={leadingAccessoryView}
-      {...rest}
     >
       {text}
     </Component>

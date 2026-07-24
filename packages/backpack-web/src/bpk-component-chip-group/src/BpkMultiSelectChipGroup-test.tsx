@@ -137,9 +137,7 @@ describe('BpkMultiSelectChipGroup', () => {
     expect(renderChip).toHaveBeenCalledWith(
       expect.objectContaining({
         selected: true,
-        chipStyle: expect.any(String),
-        accessibilityLabel: 'Custom',
-        index: 0,
+        type: expect.any(String),
         onClick: expect.any(Function),
         role: 'checkbox',
       }),
