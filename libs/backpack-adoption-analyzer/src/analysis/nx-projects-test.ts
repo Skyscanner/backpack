@@ -102,6 +102,17 @@ describe("nx-projects", () => {
     });
   });
 
+  describe("buildProjectIndex", () => {
+    it("strips trailing slashes from the project root when building the prefix", () => {
+      const [entry] = buildProjectIndex([
+        { name: "web", root: "apps/web///", type: null },
+      ]);
+
+      expect(entry.prefix).toBe("apps/web/");
+      expect(resolveProject("apps/web/Home.tsx", [entry])).toBe("web");
+    });
+  });
+
   describe("resolveProject", () => {
     it("uses longest-prefix match and falls back to the unassigned bucket", () => {
       const index = buildProjectIndex([
