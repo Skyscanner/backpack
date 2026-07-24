@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import { BpkSaveButton } from '../../bpk-component-card-button';
 import { withRtlSupport } from '../../bpk-component-icon';
 import ChevronRightIconBase from '../../bpk-component-icon/sm/chevron-right';
 import HeartIcon from '../../bpk-component-icon/sm/heart';
@@ -29,14 +30,23 @@ import type { Meta } from '@storybook/react';
 
 const ChevronRightIcon = withRtlSupport(ChevronRightIconBase);
 
+const SaveTrigger = ({ checked = false }: { checked?: boolean }) => (
+  <BpkContextMenu.Trigger asChild>
+    <BpkSaveButton
+      checked={checked}
+      accessibilityLabel="Save to trip"
+      onCheckedChange={() => {}}
+      hoverEffect={false}
+    />
+  </BpkContextMenu.Trigger>
+);
+
 const DefaultExample = () => (
   <BpkProvider>
     {/* onClick per item — useful when each item has distinct logic,
         e.g. trips.map(trip => <Item onClick={() => saveToTrip(trip.id)} />) */}
     <BpkContextMenu.Root>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item value="tokyo" onClick={() => {}}>Tokyo 2026</BpkContextMenu.Item>
@@ -62,9 +72,7 @@ const DefaultExample = () => (
 const NoTripsExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
@@ -82,9 +90,7 @@ const NoTripsExample = () => (
 const WithDestructiveItemExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger checked />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item
@@ -112,9 +118,7 @@ const WithDestructiveItemExample = () => (
 const WithDisabledItemExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
@@ -140,9 +144,7 @@ const WithDisabledItemExample = () => (
 const LongListExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           {Array.from({ length: 12 }, (_, i) => (
@@ -168,9 +170,7 @@ const LongListExample = () => (
 const LongTripNameExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item value="long-1" onClick={() => {}}>
@@ -201,9 +201,7 @@ const LongTripNameExample = () => (
 const OpenByDefaultExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root defaultOpen>
-      <BpkContextMenu.Trigger aria-label="Save to trip">
-        <HeartIcon />
-      </BpkContextMenu.Trigger>
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
@@ -265,18 +263,16 @@ export const VisualTestNoTrips = {
   render: () => (
     <BpkProvider>
       <BpkContextMenu.Root defaultOpen>
-        <BpkContextMenu.Trigger aria-label="Save to trip">
-          <HeartIcon />
-        </BpkContextMenu.Trigger>
+        <SaveTrigger />
         <BpkContextMenu.Content>
-        <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
-            Plan a new trip
-          </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
-            Quick save
-          </BpkContextMenu.Item>
-        </BpkContextMenu.ItemGroup>
+          <BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+              Plan a new trip
+            </BpkContextMenu.Item>
+            <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+              Quick save
+            </BpkContextMenu.Item>
+          </BpkContextMenu.ItemGroup>
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>
     </BpkProvider>
@@ -287,9 +283,7 @@ export const VisualTestDestructive = {
   render: () => (
     <BpkProvider>
       <BpkContextMenu.Root defaultOpen>
-        <BpkContextMenu.Trigger aria-label="Save to trip">
-          <HeartIcon />
-        </BpkContextMenu.Trigger>
+        <SaveTrigger checked />
         <BpkContextMenu.Content>
           <BpkContextMenu.ItemGroup>
             <BpkContextMenu.Item

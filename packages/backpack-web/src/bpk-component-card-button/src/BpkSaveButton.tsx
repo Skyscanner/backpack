@@ -17,7 +17,7 @@
  */
 
 import type { MouseEvent } from 'react';
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 
 import {
   colorBlack,
@@ -55,6 +55,18 @@ type Props = {
   onCheckedChange: (e: MouseEvent) => void;
   size?: SizeType;
   style?: StyleType;
+  /**
+   * Optional click handler applied to the underlying button. Fires before
+   * `onCheckedChange`. Used by wrappers like `BpkContextMenu.Trigger` (via
+   * `asChild`) to attach menu-open behaviour.
+   */
+  onClick?: (e: MouseEvent) => void;
+  /**
+   * When false, suppresses the hover preview animation (outline fading to
+   * filled heart). Use this when the button opens a menu rather than
+   * directly toggling a saved state.
+   */
+  hoverEffect?: boolean;
 };
 
 const AlignedHeartIcon = BpkHeartIcon;
@@ -62,14 +74,16 @@ const AlignedHeartOutlineIcon = BpkHeartOutlineIcon;
 const AlignedHeartIconSm = BpkHeartIconSm;
 const AlignedHeartOutlineIconSm = BpkHeartOutlineIconSm;
 
-const BpkSaveButton = ({
+const BpkSaveButton = forwardRef<HTMLButtonElement, Props>(({
   accessibilityLabel,
   checked,
+  hoverEffect = true,
   onCheckedChange,
+  onClick,
   size = SIZE_TYPES.default,
   style = STYLE_TYPES.default,
   ...rest
-}: Props) => {
+}, ref) => {
   const [shouldPlayAnim, setPlayAnim] = useState(false);
   const smallSize = size === SIZE_TYPES.small;
   const HeartIcon = smallSize ? AlignedHeartIconSm : AlignedHeartIcon;
@@ -78,6 +92,8 @@ const BpkSaveButton = ({
     : AlignedHeartOutlineIcon;
   return (
     <button
+      {...rest}
+      ref={ref}
       type="button"
       aria-label={accessibilityLabel}
       aria-pressed={checked}
@@ -88,25 +104,29 @@ const BpkSaveButton = ({
       )}
       {...getDataComponentAttribute('SaveButton')}
       onClick={(e: MouseEvent) => {
+        onClick?.(e);
         onCheckedChange(e);
         if (!checked) {
           setPlayAnim(true);
         }
       }}
-      {...rest}
     >
       <div
         className={getClassName(
           `bpk-save-button__heartIcon`,
           checked && shouldPlayAnim && `bpk-save-button__heartIcon--clicked`,
           `bpk-save-button__heartIcon--${style}`,
+          !hoverEffect && `bpk-save-button__heartIcon--no-hover`,
         )}
         data-show={checked}
       >
         <HeartIcon />
       </div>
       <div
-        className={getClassName(`bpk-save-button__heartOutlineIcon`)}
+        className={getClassName(
+          `bpk-save-button__heartOutlineIcon`,
+          !hoverEffect && `bpk-save-button__heartOutlineIcon--no-hover`,
+        )}
         data-show={!checked}
       >
         <HeartOutLineIcon
@@ -115,6 +135,8 @@ const BpkSaveButton = ({
       </div>
     </button>
   );
-};
+});
+
+BpkSaveButton.displayName = 'BpkSaveButton';
 
 export default BpkSaveButton;

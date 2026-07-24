@@ -56,6 +56,13 @@
   background-color: transparent;
   cursor: pointer;
 
+  // Suppress the global button:focus-visible outline when this button is a
+  // menu trigger (Ark sets aria-haspopup). Ark restores focus programmatically
+  // after menu close, which browsers may treat as :focus-visible.
+  &[aria-haspopup]:focus-visible {
+    outline: none;
+  }
+
   &__icon {
     position: absolute;
     top: 50%;
@@ -78,6 +85,15 @@
 
     &[data-show='false'] {
       opacity: 0;
+    }
+
+    &--no-hover {
+      &[data-show='true'] {
+        @include utils.bpk-hover {
+          transition: none;
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -119,6 +135,15 @@
 
         &[data-show='true'] {
           fill: tokens.$bpk-core-accent-day;
+        }
+      }
+    }
+
+    &--no-hover {
+      &[data-show='false'] {
+        @include utils.bpk-hover {
+          transition: none;
+          opacity: 0;
         }
       }
     }
