@@ -81,6 +81,13 @@
     justify-content: space-between;
     align-items: center;
     flex: 0 0;
+
+    // Keep the close control at the trailing edge even when the title is
+    // visually hidden (out of flex flow) and only one flex item remains.
+    // Covers both the close-button and closeText (BpkLink) variants.
+    > :last-child {
+      margin-inline-start: auto;
+    }
   }
 
   &__heading {
