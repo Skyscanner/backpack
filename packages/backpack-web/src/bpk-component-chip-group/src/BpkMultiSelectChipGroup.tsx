@@ -62,10 +62,15 @@ export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
 export type ChipComponentType =
   (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
 
-export type SingleSelectChipItem = {
+type ChipBaseProps = {
   text: string;
   accessibilityLabel?: string;
   leadingAccessoryView?: ReactNode;
+  selected?: boolean;
+  hidden?: boolean;
+};
+
+export type SingleSelectChipItem = ChipBaseProps & {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
@@ -73,11 +78,9 @@ export type ChipItem = {
   component?: ChipComponentType;
   renderChip?: (props: ChipRenderProps) => ReactElement | null;
   onClick?: (selected: boolean, index: number) => void;
-  selected?: boolean;
-  hidden?: boolean;
 } & SingleSelectChipItem;
 
-export type ChipRenderProps = Omit<ChipItem, 'component' | 'renderChip' | 'onClick' | 'accessibilityLabel' | 'leadingAccessoryView'> & {
+export type ChipRenderProps = ChipBaseProps & {
   type: ChipStyleType;
   role: 'checkbox' | 'radio';
   onClick: () => void;
