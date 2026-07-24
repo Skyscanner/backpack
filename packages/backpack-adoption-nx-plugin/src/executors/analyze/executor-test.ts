@@ -120,6 +120,8 @@ export const App = () => <div>Raw HTML only</div>;
     expect(written.headReport.filesAnalyzed).toBe(1);
     expect(written.headReport.usage.backpack.count).toBe(1);
     expect(written.guard.threshold).toBe(75);
+    expect(written.guard.status).toBe("pass");
+    expect(written.guard.reason).toContain("never blocks");
   });
 
   it("compares against a base worktree when baseWorktreePath is provided", async () => {

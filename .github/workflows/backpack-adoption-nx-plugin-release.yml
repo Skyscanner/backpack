@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/backpack-adoption-nx-plugin-release.yml'
+      - '.github/actions/compute-next-semver/**'
       - 'libs/backpack-adoption-analyzer/**'
       - 'packages/backpack-adoption-nx-plugin/**'
       - 'pnpm-lock.yaml'
@@ -29,7 +30,7 @@ defaults:
 permissions: {}
 
 concurrency:
-  group: backpack-adoption-nx-plugin-release
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -50,28 +51,13 @@ jobs:
       - id: source
         run: echo "target_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
+      - run: git fetch --force --tags origin
+
       - id: version
-        env:
-          RELEASE_TYPE: ${{ inputs.release_type || 'minor' }}
-        run: |
-          git fetch --force --tags origin
-          latest="$(git tag --list 'backpack-adoption-nx-plugin/v[0-9]*.[0-9]*.[0-9]*' | sed -nE 's#^backpack-adoption-nx-plugin/v([0-9]+\.[0-9]+\.[0-9]+)$#\1#p' | sort -V | tail -n 1)"
-          if [ -z "$latest" ]; then
-            case "$RELEASE_TYPE" in
-              major) next="1.0.0" ;;
-              minor) next="0.1.0" ;;
-              patch) next="0.0.1" ;;
-            esac
-          else
-            IFS=. read -r major minor patch <<< "$latest"
-            case "$RELEASE_TYPE" in
-              major) next="$((major + 1)).0.0" ;;
-              minor) next="$major.$((minor + 1)).0" ;;
-              patch) next="$major.$minor.$((patch + 1))" ;;
-            esac
-          fi
-          echo "release_version=$next" >> "$GITHUB_OUTPUT"
-          echo "release_tag=backpack-adoption-nx-plugin/v$next" >> "$GITHUB_OUTPUT"
+        uses: ./.github/actions/compute-next-semver
+        with:
+          release_type: ${{ inputs.release_type || 'minor' }}
+          tag_prefix: backpack-adoption-nx-plugin
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
@@ -113,7 +99,8 @@ jobs:
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          # Node 24 includes npm 11, required for npm trusted publishing OIDC.
+          # Validation uses .nvmrc; Node 24 is only used here because its npm
+          # 11 supports npm trusted publishing through OIDC.
           node-version: 24.14.0
           registry-url: https://registry.npmjs.org
           cache: pnpm

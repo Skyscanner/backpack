@@ -66,7 +66,10 @@ const runExecutor: PromiseExecutor<AnalyzeExecutorSchema> = async (
     baseReport,
     dryRun: options.dryRun ?? false,
     headReport,
-    isMain: false,
+    // A threshold guards regressions, which requires a base report. Without a
+    // base worktree this is a metrics-only invocation, equivalent to main:
+    // report adoption without blocking the target.
+    isMain: !options.baseWorktreePath,
     threshold,
   });
 

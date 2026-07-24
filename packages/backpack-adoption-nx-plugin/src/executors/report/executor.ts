@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 import { joinPathFragments, logger } from "@nx/devkit";
-import { combineGuardStatuses } from "@skyscanner/backpack-adoption-analyzer";
 
 import { DEFAULT_RESULTS_FILE_NAME, readProjectResult } from "../results-store";
 
@@ -24,19 +23,8 @@ import type { GuardResult } from "@skyscanner/backpack-adoption-analyzer";
 import type { ExecutorContext, PromiseExecutor } from "@nx/devkit";
 import type { ReportExecutorSchema } from "./schema";
 
-// No repo-wide analysis run backs this aggregation (each project already ran
-// its own `analyze` executor) — this trivial "pass" baseline lets
-// combineGuardStatuses reduce purely to "fail if any project fails, warn if
-// any warns, else pass".
-const BASELINE_PASS_GUARD: GuardResult = {
-  status: "pass",
-  reason: "No repo-wide guard; verdict is derived entirely from per-project results.",
-  dryRun: false,
-  threshold: 0,
-  baseBackpackPercentage: null,
-  headBackpackPercentage: 0,
-  delta: null,
-};
+const getErrorMessage = (error: unknown): string =>
+  error instanceof Error ? error.message : String(error);
 
 /**
  * Aggregates every NX project's `adoption-guard-results.json` (written by
@@ -53,16 +41,37 @@ const runExecutor: PromiseExecutor<ReportExecutorSchema> = async (
     options.projects ?? Object.keys(context.projectsConfigurations.projects);
 
   const projectGuards: Record<string, GuardResult> = {};
+  let hasConfigurationError = false;
 
   for (const projectName of projectNames) {
     const projectRoot = context.projectsConfigurations.projects[projectName]?.root;
     if (!projectRoot) {
+      if (options.projects) {
+        logger.error(`Could not resolve project root for ${projectName}.`);
+        hasConfigurationError = true;
+      }
       continue;
     }
 
     const resultsPath = joinPathFragments(context.root, projectRoot, resultsFileName);
-    const result = readProjectResult(resultsPath);
+    let result;
+    try {
+      result = readProjectResult(resultsPath);
+    } catch (error) {
+      logger.error(
+        `[${projectName}] Could not read adoption result at ${resultsPath}: ${getErrorMessage(error)}`,
+      );
+      hasConfigurationError = true;
+      continue;
+    }
+
     if (!result) {
+      if (options.projects) {
+        logger.error(
+          `[${projectName}] No adoption result found at ${resultsPath}. Ensure its analyze target runs before this report.`,
+        );
+        hasConfigurationError = true;
+      }
       continue;
     }
 
@@ -70,7 +79,17 @@ const runExecutor: PromiseExecutor<ReportExecutorSchema> = async (
     logger.info(`[${projectName}] guard status: ${result.guard.status}`);
   }
 
-  const combinedStatus = combineGuardStatuses(BASELINE_PASS_GUARD, projectGuards);
+  if (hasConfigurationError) {
+    logger.error("Backpack adoption report has configuration errors.");
+    return { success: false };
+  }
+
+  const statuses = Object.values(projectGuards).map((guard) => guard.status);
+  const combinedStatus = statuses.includes("fail")
+    ? "fail"
+    : statuses.includes("warn")
+      ? "warn"
+      : "pass";
 
   if (combinedStatus === "fail") {
     const failingProjects = Object.entries(projectGuards)

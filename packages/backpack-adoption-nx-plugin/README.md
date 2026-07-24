@@ -40,6 +40,10 @@ The executor scans `**/*.{jsx,tsx}` below the project root by default. It
 writes `adoption-guard-results.json` in that root and always succeeds so all
 projects can report their results before the final verdict is calculated.
 
+Without `baseWorktreePath`, this is a metrics-only run: it reports the current
+adoption percentage but does not block. To enforce regression protection in a
+pull-request workflow, provide a checkout of the base ref as described below.
+
 For pull-request comparisons, provide `baseWorktreePath` as an absolute path
 to a checkout of the base ref. The base checkout must be **outside** the Nx
 workspace root, otherwise Nx discovers its `project.json` files a second time
@@ -75,7 +79,9 @@ nx run workspace:adoption-guard-report
 ```
 
 `projects` is optional. When omitted, the report executor considers all NX
-projects that have a result file at the configured location. Use
+projects that have a result file at the configured location. When it is set,
+every listed project must resolve and must have produced a result file; this
+prevents a typo or missing dependency from yielding a false passing verdict. Use
 `resultsFileName` on the report target if the analyse targets use a different
 result filename.
 

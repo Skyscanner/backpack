@@ -209,4 +209,32 @@ describe("report executor", () => {
 
     expect(result.success).toBe(true);
   });
+
+  it("fails when an explicitly listed project cannot be resolved", async () => {
+    const context = buildContext(workspaceRoot, { flights: "apps/flights" });
+
+    const result = await runExecutor({ projects: ["flgihts"] }, context);
+
+    expect(result.success).toBe(false);
+  });
+
+  it("fails when an explicitly listed project did not produce a result", async () => {
+    const context = buildContext(workspaceRoot, { flights: "apps/flights" });
+
+    const result = await runExecutor({ projects: ["flights"] }, context);
+
+    expect(result.success).toBe(false);
+  });
+
+  it("fails cleanly when a result path cannot be read", async () => {
+    await mkdir(join(workspaceRoot, "apps/flights/results"), { recursive: true });
+    const context = buildContext(workspaceRoot, { flights: "apps/flights" });
+
+    const result = await runExecutor(
+      { projects: ["flights"], resultsFileName: "results" },
+      context,
+    );
+
+    expect(result.success).toBe(false);
+  });
 });
