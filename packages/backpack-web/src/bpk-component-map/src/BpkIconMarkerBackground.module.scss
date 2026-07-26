@@ -43,7 +43,7 @@
   }
 
   &--selected {
-    fill: tokens.$bpk-core-primary-day;
+    fill: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
 
     @include utils.bpk-themeable-property(
       stroke,
