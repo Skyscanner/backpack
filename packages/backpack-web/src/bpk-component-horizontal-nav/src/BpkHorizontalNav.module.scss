@@ -23,11 +23,17 @@
   position: relative;
 
   &--show-default-underline {
-    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day, '');
+    @include borders.bpk-border-bottom-sm(
+      var(--bpk-other-line-default, tokens.$bpk-line-day),
+      ''
+    );
   }
 
   &--show-light-underline {
-    @include borders.bpk-border-bottom-sm(tokens.$bpk-line-day, '');
+    @include borders.bpk-border-bottom-sm(
+      var(--bpk-other-line-default, tokens.$bpk-line-day),
+      ''
+    );
   }
 
   &__list {
