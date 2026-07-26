@@ -17,8 +17,8 @@
  */
 
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/utils';
 
+// TODO: $bpk-icon-size-sm, $bpk-icon-size-lg, $bpk-icon-size-xxxl - no CSS custom property equivalent yet
 @mixin large-star {
   width: tokens.$bpk-icon-size-lg;
   height: tokens.$bpk-icon-size-lg;
@@ -36,7 +36,7 @@
   width: tokens.$bpk-icon-size-sm;
   height: tokens.$bpk-icon-size-sm;
   vertical-align: text-bottom;
-  fill: tokens.$bpk-text-disabled-day;
+  fill: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
 
   &--large {
     @include large-star;
@@ -48,15 +48,11 @@
 
   &--half {
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
   }
 
   &--filled {
-    @include utils.bpk-themeable-property(
-      fill,
-      --bpk-star-rating-filled-color,
-      tokens.$bpk-status-warning-spot-day
-    );
+    fill: var(--bpk-status-warning-spot, tokens.$bpk-status-warning-spot-day);
   }
 
   &__container {
