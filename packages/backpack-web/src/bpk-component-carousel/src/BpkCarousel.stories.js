@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { VARIANT } from '../../bpk-component-page-indicator';
+import readme from '../README.md';
+
 
 import BpkCarousel from './BpkCarousel';
 
@@ -62,6 +66,18 @@ const WithCarouselPageIndicatorExample = () => (
   </div>
 );
 
+const SingleImageExample = () => (
+  <div
+    style={{
+      maxWidth: '800px',
+      width: '100%',
+      margin: 'auto',
+    }}
+  >
+    <BpkCarousel images={[imagesList[0]]} bottom={16} />
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <DefaultExample />
@@ -73,6 +89,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-carousel',
   component: BpkCarousel,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;
@@ -83,6 +109,10 @@ export const Default = {
 
 export const WithCarouselPageIndicator = {
   render: () => <WithCarouselPageIndicatorExample />,
+};
+
+export const SingleImage = {
+  render: () => <SingleImageExample />,
 };
 
 export const VisualTest = {

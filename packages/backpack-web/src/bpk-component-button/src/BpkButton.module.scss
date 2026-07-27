@@ -65,10 +65,6 @@
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
 
-    &--implicit {
-      @include typography.bpk-link--implicit;
-    }
-
     &--icon-only {
       @include buttons.bpk-button--link-icon-only;
     }
@@ -81,10 +77,6 @@
     // override SVG display for link buttons
     --bpk-button-svg-display: inline-block;
     --bpk-button-svg-vertical-align: middle;
-
-    &--implicit {
-      @include typography.bpk-link--implicit;
-    }
   }
 
   &--link-underlined {

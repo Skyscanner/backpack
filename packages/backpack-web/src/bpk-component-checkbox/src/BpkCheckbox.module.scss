@@ -38,7 +38,10 @@
     @include forms.bpk-checkbox--disabled;
 
     &--white {
-      color: tokens.$bpk-text-disabled-on-dark-day;
+      color: var(
+        --bpk-text-disabled-on-dark,
+        tokens.$bpk-text-disabled-on-dark-day
+      );
     }
   }
 
@@ -58,7 +61,10 @@
         width: tokens.bpk-spacing-xxl() * 0.25;
         height: tokens.bpk-spacing-sm() - tokens.$bpk-one-pixel-rem;
         border-radius: tokens.$bpk-border-size-lg;
-        background-color: tokens.$bpk-surface-default-day;
+        background-color: var(
+          --bpk-surface-default,
+          tokens.$bpk-surface-default-day
+        );
       }
     }
 
@@ -67,11 +73,14 @@
     }
 
     &-white {
-      background-color: tokens.$bpk-surface-default-day;
+      background-color: var(
+        --bpk-surface-default,
+        tokens.$bpk-surface-default-day
+      );
     }
   }
 
   &__asterisk {
-    color: tokens.$bpk-status-danger-spot-day;
+    color: var(--bpk-status-danger-spot, tokens.$bpk-status-danger-spot-day);
   }
 }

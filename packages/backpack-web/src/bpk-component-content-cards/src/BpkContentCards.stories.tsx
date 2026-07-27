@@ -18,6 +18,10 @@
 
 import type { ComponentProps } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkContentCards from './BpkContentCards';
 
 import type { Meta } from '@storybook/react';
@@ -26,6 +30,16 @@ import type { Meta } from '@storybook/react';
 const meta = {
   title: 'bpk-component-content-cards',
   component: BpkContentCards,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -19,6 +19,8 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   borderRadiusLg,
   corePrimaryDay,
@@ -34,6 +36,7 @@ import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkDismissibleChip from './BpkDismissibleChip';
 import BpkDropdownChip from './BpkDropdownChip';
@@ -384,6 +387,16 @@ const meta = {
     BpkDismissibleChip,
     BpkDropdownChip,
     BpkIconChip,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

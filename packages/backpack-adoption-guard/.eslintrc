@@ -6,6 +6,27 @@
     "jest": true
   },
   "rules": {
+    // @skyscanner/backpack-adoption-analyzer is intentionally build-less
+    // (TS-source-only, consumed via workspace linking — see its package.json)
+    // so @nx/enforce-module-boundaries' enforceBuildableLibDependency check
+    // is not applicable here; disable it for this package only.
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "enforceBuildableLibDependency": false,
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "scope:publishable",
+            "onlyDependOnLibsWithTags": ["scope:publishable"]
+          },
+          {
+            "sourceTag": "scope:internal",
+            "onlyDependOnLibsWithTags": ["scope:publishable", "scope:internal"]
+          }
+        ]
+      }
+    ],
     "backpack/use-tokens": "off",
     "compat/compat": "off",
     "dot-notation": "off",

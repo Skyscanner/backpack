@@ -19,6 +19,14 @@ inputs:
     required: false
     default: "60"
 
+outputs:
+  head-backpack-adoption:
+    description: Numeric percentage string from 0 to 100 with exactly two decimal places and no percent sign for the checked-out ref.
+  base-backpack-adoption:
+    description: Numeric percentage string from 0 to 100 with exactly two decimal places and no percent sign for the PR base ref, or an empty string when unavailable.
+  backpack-adoption-delta:
+    description: Signed numeric percentage-point string with exactly two decimal places and no percent sign, or an empty string when unavailable.
+
 runs:
   using: node24
   main: dist/index.js

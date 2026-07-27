@@ -85,7 +85,13 @@ describe('BpkCarousel', () => {
     expect(screen.getByTestId('image-gallery-scroll-container').childElementCount).toBe(1);
   });
 
-  it('should render costom bottom', async () => {
+  it('should not render page indicator when only one image is present', () => {
+    render(<BpkCarousel images={[images[0]]} />);
+
+    expect(screen.queryByTestId('carousel-page-indicator-container')).toBeNull();
+  });
+
+  it('should render custom bottom', async () => {
     render(<BpkCarousel images={images} bottom={48} />);
 
     expect(screen.getByTestId('carousel-page-indicator-container')).toHaveStyle({bottom: '48px'});

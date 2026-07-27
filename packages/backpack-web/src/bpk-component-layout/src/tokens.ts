@@ -36,9 +36,12 @@ export const BpkSpacing = {
   LG: 'bpk-spacing-lg',
   XL: 'bpk-spacing-xl',
   XXL: 'bpk-spacing-xxl',
+  XXXL: 'bpk-spacing-xxxl',
 } as const;
 
 export type BpkSpacingToken = typeof BpkSpacing[keyof typeof BpkSpacing];
+
+export const BPK_SPACING_TOKEN_SET: ReadonlySet<string> = new Set(Object.values(BpkSpacing));
 
 /**
  * Backpack Breakpoint Tokens
@@ -94,14 +97,15 @@ export type BpkSizeValue =
   | 'fit-content';
 
 /**
- * Helper type for position props that can use rem, percentages, or bare zero.
+ * Helper type for position props that can use rem, percentages, bare zero, or BPK spacing tokens.
  * CSS allows `0` without a unit; `'0'` is therefore an explicit allowed value.
  * We intentionally do not allow other semantic values like 'auto' here.
  */
 export type BpkPositionValue =
   | `${number}rem`
   | `${number}%`
-  | '0';
+  | '0'
+  | BpkSpacingToken;
 
 /**
  * CSS `position` property keyword values.
@@ -164,7 +168,7 @@ export type BpkResponsiveValue<T> =
  * @returns {boolean} True if the value is a valid percentage string
  */
 export function isPercentage(value: string): boolean {
-  return /^\d+(\.\d+)?%$/.test(value);
+  return /^-?\d+(\.\d+)?%$/.test(value);
 }
 
 /**
@@ -174,7 +178,7 @@ export function isPercentage(value: string): boolean {
  * @returns {boolean} True if the value is a valid Backpack spacing token or percentage
  */
 export function isValidSpacingValue(value: string): boolean {
-  return Object.values(BpkSpacing).includes(value as BpkSpacingToken) || isPercentage(value);
+  return BPK_SPACING_TOKEN_SET.has(value) || isPercentage(value);
 }
 
 /**
@@ -205,15 +209,16 @@ export function isValidSizeValue(value: string): boolean {
 }
 
 /**
- * Validates if a position value is valid
+ * Validates if a position value is valid (rem, %, bare zero, or BPK spacing token)
  *
  * @param {string} value - The position value to validate
- * @returns {boolean} True if the value is a valid rem or percentage
+ * @returns {boolean} True if the value is valid
  */
 export function isValidPositionValue(value: string): boolean {
   return (
     value === '0' || // bare zero — valid CSS without a unit
     /^-?\d+(\.\d+)?rem$/.test(value) || // rem values
-    isPercentage(value) // percentage values
+    isPercentage(value) || // percentage values
+    BPK_SPACING_TOKEN_SET.has(value) // BPK spacing tokens
   );
 }

@@ -18,8 +18,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import { BpkProvider, BpkVessel } from '..';
 import BpkText from '../../bpk-component-text';
+import readme from '../README.md';
 
 import type { Meta } from '@storybook/react';
 
@@ -67,6 +71,16 @@ const meta = {
       </BpkProvider>
     ),
   ],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

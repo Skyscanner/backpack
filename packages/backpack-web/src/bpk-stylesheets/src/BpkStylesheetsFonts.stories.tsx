@@ -16,7 +16,13 @@
  * limitations under the License.
  */
 
+import type { ReactNode } from 'react';
+
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
+
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -31,6 +37,7 @@ type LanguageSample = { text: string; lang?: string };
 const LANGUAGE_SAMPLES: Record<string, LanguageSample> = {
   english: {
     text: 'The quick brown fox jumps over the lazy dog',
+    lang: 'en-GB',
   },
   vietnamese: {
     text: 'Tiếng Việt là ngôn ngữ chính thức của Việt Nam. Xin chào và chúc mừng năm mới!',
@@ -97,6 +104,59 @@ const LARKEN_WEIGHTS = [
   { weight: 300, style: FONT_STYLES.NORMAL, label: '300' },
   { weight: 400, style: FONT_STYLES.NORMAL, label: '400' },
 ];
+
+const JAPANESE_LINE_BREAK_SAMPLE = [
+  'プライスアラートを',
+  <wbr key="price-alert" />,
+  '設定して',
+  <wbr key="set-up" />,
+  '東京行きの',
+  <wbr key="tokyo-bound" />,
+  'お得な航空券を',
+  <wbr key="flight-ticket" />,
+  '見つけましょう',
+];
+
+const LineBreakSample = ({
+  children,
+  label,
+  lang,
+}: {
+  children: ReactNode;
+  label: string;
+  lang: string;
+}) => (
+  <div style={{ marginBottom: '1rem' }}>
+    <BpkText textStyle={TEXT_STYLES.caption}>{label}</BpkText>
+    <div lang={lang}>
+      <BpkText
+        textStyle={TEXT_STYLES.editorial2}
+        style={{
+          fontWeight: 300,
+        }}
+      >
+        {children}
+      </BpkText>
+    </div>
+  </div>
+);
+
+const LarkenLineBreakExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Japanese line-break validation
+    </BpkText>
+    <LineBreakSample lang="ja-JP" label="Japanese default line breaks">
+      プライスアラートを設定して東京行きのお得な航空券を見つけましょう
+    </LineBreakSample>
+    <LineBreakSample lang="ja-JP" label="Japanese phrase break hints">
+      {JAPANESE_LINE_BREAK_SAMPLE}
+    </LineBreakSample>
+    <LineBreakSample lang="ko-KR" label="Korean comparison">
+      가격 알림을 설정하고 도쿄행 저렴한 항공권을 찾아보세요
+    </LineBreakSample>
+  </div>
+);
 
 interface FontTestRowProps {
   text: string;
@@ -171,6 +231,7 @@ const LarkenExample = () => (
         ))}
       </div>
     ))}
+    <LarkenLineBreakExample />
   </>
 );
 
@@ -183,6 +244,16 @@ const MixedExample = () => (
 
 const meta = {
   title: 'bpk-stylesheets-fonts',
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

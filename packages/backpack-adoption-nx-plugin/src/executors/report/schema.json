@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Backpack Adoption Report executor",
+  "description": "Aggregates per-project Backpack adoption results (written by the analyze executor) into one pass/fail verdict.",
+  "type": "object",
+  "properties": {
+    "projects": {
+      "type": "array",
+      "description": "NX project names whose adoption-guard results should be aggregated. Defaults to every project with a results file on disk.",
+      "items": { "type": "string" }
+    },
+    "resultsFileName": {
+      "type": "string",
+      "description": "Filename (relative to each project's root) that the analyze executor wrote its results to.",
+      "default": "adoption-guard-results.json"
+    }
+  }
+}

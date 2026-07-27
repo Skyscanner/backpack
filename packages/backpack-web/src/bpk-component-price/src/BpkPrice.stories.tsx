@@ -16,11 +16,26 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import {
+  coreAccentDay,
+  statusDangerSpotDay,
+  statusSuccessSpotDay,
+  surfaceContrastDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
+import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkPrice from './BpkPrice';
-import { SIZES, ALIGNS } from './common-types';
+import { SIZES, ALIGNS, VARIANTS } from './common-types';
 
 import type { Meta } from '@storybook/react';
 
@@ -363,10 +378,94 @@ const MixedExample = () => (
   </div>
 );
 
+const OnContrastExample = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: surfaceContrastDay }}
+  >
+    <BpkPrice
+      size={SIZES.large}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      variant={VARIANTS.onContrast}
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const OnContrastRightExample = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: surfaceContrastDay }}
+  >
+    <BpkPrice
+      size={SIZES.large}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      align={ALIGNS.right}
+      variant={VARIANTS.onContrast}
+    />
+  </BpkDarkExampleWrapper>
+);
+
+const MixedOnContrastExample = () => (
+  <BpkDarkExampleWrapper
+    padded
+    style={{ backgroundColor: surfaceContrastDay }}
+  >
+    <BpkPrice
+      size={SIZES.large}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      variant={VARIANTS.onContrast}
+    />
+    <BpkPrice
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      variant={VARIANTS.onContrast}
+    />
+    <BpkPrice
+      size={SIZES.small}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      align={ALIGNS.right}
+      variant={VARIANTS.onContrast}
+    />
+    <BpkPrice
+      size={SIZES.xsmall}
+      previousPrice="£2,033"
+      leadingText="App only deal"
+      price="£1,830"
+      trailingText="per day"
+      align={ALIGNS.right}
+      variant={VARIANTS.onContrast}
+    />
+  </BpkDarkExampleWrapper>
+);
+
 const meta = {
   title: 'bpk-component-price',
   component: BpkPrice,
   tags: ['dark-mode-compatible'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -535,8 +634,20 @@ export const LargeLongPrice = {
   render: () => <LargeLongPriceExample />,
 };
 
+export const OnContrast = {
+  render: () => <OnContrastExample />,
+};
+
+export const OnContrastRight = {
+  render: () => <OnContrastRightExample />,
+};
+
 export const VisualTest = {
   render: () => <MixedExample />,
+};
+
+export const VisualTestOnContrast = {
+  render: () => <MixedOnContrastExample />,
 };
 
 export const VisualTestWithZoom = {
@@ -544,4 +655,69 @@ export const VisualTestWithZoom = {
   args: {
     zoomEnabled: true,
   },
+};
+
+const ThemedExample = () => (
+  <div>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Default (no theme)
+    </BpkText>
+    <BpkPrice
+      size={SIZES.large}
+      price="£1,830"
+      leadingText="from"
+      trailingText="per day"
+      previousPrice="£2,033"
+    />
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      Themed
+    </BpkText>
+    <BpkThemeProvider
+      theme={{ textPrimary: statusDangerSpotDay, textSecondary: statusSuccessSpotDay, textError: coreAccentDay }}
+      themeAttributes={['textPrimary', 'textSecondary', 'textError']}
+    >
+      <BpkPrice
+        size={SIZES.large}
+        price="£1,830"
+        leadingText="from"
+        trailingText="per day"
+        previousPrice="£2,033"
+      />
+    </BpkThemeProvider>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      onContrast (no theme)
+    </BpkText>
+    <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
+      <BpkPrice
+        size={SIZES.large}
+        price="£1,830"
+        leadingText="from"
+        trailingText="per day"
+        previousPrice="£2,033"
+        variant={VARIANTS.onContrast}
+      />
+    </BpkDarkExampleWrapper>
+    <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
+      onContrast themed
+    </BpkText>
+    <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
+      <BpkThemeProvider
+        theme={{ textOnDark: statusDangerSpotDay, textSecondaryOnContrast: statusSuccessSpotDay, textError: coreAccentDay }}
+        themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
+      >
+        <BpkPrice
+          size={SIZES.large}
+          price="£1,830"
+          leadingText="from"
+          trailingText="per day"
+          previousPrice="£2,033"
+          variant={VARIANTS.onContrast}
+        />
+      </BpkThemeProvider>
+    </BpkDarkExampleWrapper>
+  </div>
+);
+
+export const Themed = {
+  render: () => <ThemedExample />,
 };

@@ -25,7 +25,7 @@
   &--link {
     position: relative;
     display: block;
-    border-radius: tokens.$bpk-border-radius-md;
+    border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
     color: inherit;
     /* stylelint-disable backpack/use-typography-styles */
     font: inherit;
@@ -40,6 +40,7 @@
     display: grid;
     column-gap: tokens.bpk-spacing-xxl();
     grid-template-columns:
+      /* tokens.$bpk-one-pixel-rem is used for pixel-precise sizing; no CSS var equivalent */
       minmax(min(10%, 50%), tokens.$bpk-one-pixel-rem * 620)
       40%;
     align-items: center;
@@ -85,7 +86,7 @@
   }
 
   &--description {
-    color: tokens.$bpk-text-secondary-day;
+    color: var(--bpk-text-secondary, tokens.$bpk-text-secondary-day);
 
     @include typography.bpk-body-default;
   }
@@ -93,7 +94,7 @@
   &--image {
     width: 100%;
     height: 100%;
-    border-radius: tokens.$bpk-border-radius-md;
+    border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
     object-fit: cover;
   }
 }

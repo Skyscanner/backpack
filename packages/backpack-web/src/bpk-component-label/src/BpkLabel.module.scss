@@ -18,7 +18,6 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/forms';
-@use '../../bpk-mixins/utils';
 
 .bpk-label {
   @include forms.bpk-label;
@@ -35,15 +34,14 @@
     @include forms.bpk-label--disabled;
 
     &--white {
-      color: tokens.$bpk-text-disabled-on-dark-day;
+      color: var(
+        --bpk-text-disabled-on-dark,
+        tokens.$bpk-text-disabled-on-dark-day
+      );
     }
   }
 
   &__asterisk {
-    @include utils.bpk-themeable-property(
-      color,
-      --bpk-form-validation-text-color,
-      tokens.$bpk-form-validation-color
-    );
+    color: var(--bpk-status-danger-spot, tokens.$bpk-form-validation-color);
   }
 }

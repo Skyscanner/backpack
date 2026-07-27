@@ -18,11 +18,14 @@
 
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkFieldSet from '../../bpk-component-fieldset';
 import BpkImage from '../../bpk-component-image';
+import readme from '../README.md';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+
 import BpkPhoneInput from './BpkPhoneInput';
 
 import type { Meta } from '@storybook/react';
@@ -176,6 +179,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-phone-input',
   component: BpkPhoneInput,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

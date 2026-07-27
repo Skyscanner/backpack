@@ -16,9 +16,12 @@
  * limitations under the License.
  */
 
+
+
 import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { memoize } from 'lodash';
 
 import {
@@ -53,6 +56,7 @@ import {
 } from '../../bpk-component-calendar/test-utils';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkDatepicker from './BpkDatepicker';
 
@@ -665,6 +669,16 @@ const VisualRangeExample = () => (
 const meta = {
   title: 'bpk-component-datepicker',
   component: BpkDatepicker,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

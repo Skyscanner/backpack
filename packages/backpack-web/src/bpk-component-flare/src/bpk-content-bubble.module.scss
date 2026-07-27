@@ -64,12 +64,13 @@
 
   &__rounded-corner {
     position: absolute;
+
     // stylelint-disable-next-line unit-disallowed-list
     bottom: calc(tokens.$bpk-flare-height-desktop - 2px);
     left: 0;
     width: tokens.$bpk-flare-corner-radius;
     height: tokens.$bpk-flare-corner-radius;
-    fill: tokens.$bpk-surface-default-day;
+    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     @include breakpoints.bpk-breakpoint-mobile {
       // stylelint-disable-next-line unit-disallowed-list

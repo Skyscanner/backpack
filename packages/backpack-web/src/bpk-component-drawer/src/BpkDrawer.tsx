@@ -26,6 +26,10 @@ import { withScrim } from '../../bpk-scrim-utils';
 
 import BpkDrawerContent from './BpkDrawerContent';
 
+import type { SecondaryPanelProps } from './types';
+
+export type { SecondaryPanelProps };
+
 const BpkScrimDrawerContent = withScrim(BpkDrawerContent);
 
 export type Props = {
@@ -53,6 +57,7 @@ export type Props = {
   padded?: boolean,
   mobileModalDisplay?: boolean,
   containerClassName?: string,
+  secondaryPanel?: SecondaryPanelProps,
 };
 
 const BpkDrawer = ({
@@ -73,11 +78,13 @@ const BpkDrawer = ({
   onClose,
   padded = true,
   renderTarget = null,
+  secondaryPanel = undefined,
   title,
   width = '90%',
 }: Props) =>  {
 
   const [isDrawerShown, setIsDrawerShown] = useState(true);
+
   useEffect(() => {
     if (isOpen) {
       setIsDrawerShown(true);
@@ -117,6 +124,7 @@ const BpkDrawer = ({
           padded={padded}
           mobileModalDisplay={mobileModalDisplay}
           containerClassName={containerClassName}
+          secondaryPanel={secondaryPanel}
         >
           {children}
         </BpkScrimDrawerContent>

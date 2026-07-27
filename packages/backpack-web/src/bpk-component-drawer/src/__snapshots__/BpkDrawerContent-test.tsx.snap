@@ -18,7 +18,6 @@ exports[`BpkDrawerContent should render correctly 1`] = `
       >
         Drawer title
       </h2>
-       
       <div
         class="bpk-drawer__close-button"
       >
@@ -74,7 +73,6 @@ exports[`BpkDrawerContent should render correctly when it has a className 1`] = 
       >
         Drawer title
       </h2>
-       
       <div
         class="bpk-drawer__close-button"
       >
@@ -130,7 +128,6 @@ exports[`BpkDrawerContent should render correctly when it has a contentClassName
       >
         Drawer title
       </h2>
-       
       <div
         class="bpk-drawer__close-button"
       >
@@ -186,7 +183,6 @@ exports[`BpkDrawerContent should render correctly when it has padded=true 1`] = 
       >
         Drawer title
       </h2>
-       
       <div
         class="bpk-drawer__close-button"
       >
@@ -241,7 +237,6 @@ exports[`BpkDrawerContent should render correctly with arbitrary attributes 1`] 
       >
         Drawer title
       </h2>
-       
       <div
         class="bpk-drawer__close-button"
       >
@@ -297,7 +292,6 @@ exports[`BpkDrawerContent should render correctly with hideTitle 1`] = `
       >
         Drawer title
       </h2>
-       
       <div
         class="bpk-drawer__close-button"
       >
