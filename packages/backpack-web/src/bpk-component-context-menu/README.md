@@ -8,7 +8,7 @@ Check the main [Readme](https://github.com/Skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-The context menu is opened from a consumer-owned trigger. Pass the trigger element to `BpkContextMenu.Trigger` — `asChild` is on by default so no wrapping button is rendered.
+The context menu is opened from a consumer-owned trigger. Pass the trigger element to `BpkContextMenu.Trigger`. By default a wrapper `<button>` is rendered; pass `asChild` to merge the menu trigger props onto your own element instead.
 
 ```jsx
 import BpkContextMenu, {
@@ -48,10 +48,12 @@ import BpkContextMenu, {
 | Part | Wraps | Purpose |
 |------|-------|---------|
 | `BpkContextMenu.Root` | `Menu.Root` | State container. Handles open state, keyboard navigation, and selection dispatch. |
-| `BpkContextMenu.Trigger` | `Menu.Trigger` | Wraps the consumer's trigger element via `asChild` (default). |
+| `BpkContextMenu.Trigger` | `Menu.Trigger` | Wraps the consumer's trigger element. Pass `asChild` to merge trigger props onto your own element rather than rendering a wrapper button. |
 | `BpkContextMenu.Content` | `Menu.Positioner` + `Menu.Content` | The floating menu surface. Portalled so it escapes overflow-hidden ancestors. |
 | `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `endIcon` and `destructive` variant. |
 | `BpkContextMenu.Separator` | `Menu.Separator` | Visual divider between logical groups of items. |
+| `BpkContextMenu.ItemGroup` | `<div>` | Groups a set of related items under a shared container. Use to visually cluster items that belong together (e.g. a set of saved trips). |
+| `BpkContextMenu.TriggerItem` | `Menu.TriggerItem` | A menu row that opens a nested sub-menu on hover/arrow-right. Accepts an optional `endIcon` (typically a chevron) to signal the sub-menu. |
 
 ## Item variants
 

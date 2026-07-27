@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BpkContextMenu from './BpkContextMenu';
@@ -110,6 +110,91 @@ describe('BpkContextMenu', () => {
     );
 
     expect(screen.getByTestId('end-icon')).toBeVisible();
+  });
+
+  describe('Trigger focus ring suppression', () => {
+    const renderMenuWithTrigger = (open = false) =>
+      render(
+        <BpkContextMenu.Root open={open}>
+          <BpkContextMenu.Trigger aria-label="Open menu">
+            <span />
+          </BpkContextMenu.Trigger>
+          <BpkContextMenu.Content>
+            <BpkContextMenu.Item value="item">Item</BpkContextMenu.Item>
+          </BpkContextMenu.Content>
+        </BpkContextMenu.Root>,
+      );
+
+    it('registers pointerdown and keydown listeners on document on mount', () => {
+      const addSpy = jest.spyOn(document, 'addEventListener');
+      renderMenuWithTrigger();
+      expect(addSpy).toHaveBeenCalledWith('pointerdown', expect.any(Function), true);
+      expect(addSpy).toHaveBeenCalledWith('keydown', expect.any(Function), true);
+      addSpy.mockRestore();
+    });
+
+    it('removes event listeners from document on unmount', () => {
+      const removeSpy = jest.spyOn(document, 'removeEventListener');
+      const { unmount } = renderMenuWithTrigger();
+      unmount();
+      expect(removeSpy).toHaveBeenCalledWith('pointerdown', expect.any(Function), true);
+      expect(removeSpy).toHaveBeenCalledWith('keydown', expect.any(Function), true);
+      removeSpy.mockRestore();
+    });
+
+    it('sets data-pointer-focus when focus follows a pointer interaction', () => {
+      renderMenuWithTrigger();
+      const trigger = screen.getByRole('button', { name: 'Open menu' });
+
+      fireEvent.pointerDown(document);
+      fireEvent.focus(trigger);
+
+      expect(trigger).toHaveAttribute('data-pointer-focus');
+    });
+
+    it('does not set data-pointer-focus when focus follows a Tab keydown', () => {
+      renderMenuWithTrigger();
+      const trigger = screen.getByRole('button', { name: 'Open menu' });
+
+      fireEvent.pointerDown(document);
+      fireEvent.keyDown(document, { key: 'Tab' });
+      fireEvent.focus(trigger);
+
+      expect(trigger).not.toHaveAttribute('data-pointer-focus');
+    });
+
+    it('does not reset pointer mode for non-Tab keys such as Enter', () => {
+      renderMenuWithTrigger();
+      const trigger = screen.getByRole('button', { name: 'Open menu' });
+
+      fireEvent.pointerDown(document);
+      fireEvent.keyDown(document, { key: 'Enter' });
+      fireEvent.focus(trigger);
+
+      expect(trigger).toHaveAttribute('data-pointer-focus');
+    });
+
+    it('sets data-pointer-focus when focus returns from inside the menu', () => {
+      renderMenuWithTrigger(true);
+      const trigger = screen.getByRole('button', { name: 'Open menu' });
+      const menuItem = screen.getByText('Item');
+
+      fireEvent.focus(trigger, { relatedTarget: menuItem });
+
+      expect(trigger).toHaveAttribute('data-pointer-focus');
+    });
+
+    it('removes data-pointer-focus on blur', () => {
+      renderMenuWithTrigger();
+      const trigger = screen.getByRole('button', { name: 'Open menu' });
+
+      fireEvent.pointerDown(document);
+      fireEvent.focus(trigger);
+      expect(trigger).toHaveAttribute('data-pointer-focus');
+
+      fireEvent.blur(trigger);
+      expect(trigger).not.toHaveAttribute('data-pointer-focus');
+    });
   });
 
   it('does not accept className from consumers', () => {

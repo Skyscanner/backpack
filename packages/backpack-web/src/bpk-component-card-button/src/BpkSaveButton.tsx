@@ -105,9 +105,11 @@ const BpkSaveButton = forwardRef<HTMLButtonElement, Props>(({
       {...getDataComponentAttribute('SaveButton')}
       onClick={(e: MouseEvent) => {
         onClick?.(e);
-        onCheckedChange(e);
-        if (!checked) {
-          setPlayAnim(true);
+        if (!e.defaultPrevented) {
+          onCheckedChange(e);
+          if (!checked) {
+            setPlayAnim(true);
+          }
         }
       }}
     >

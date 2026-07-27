@@ -56,11 +56,12 @@
   background-color: transparent;
   cursor: pointer;
 
-  // Suppress the global button:focus-visible outline when this button is a
-  // menu trigger (Ark sets aria-haspopup). Ark restores focus programmatically
-  // after menu close, which browsers may treat as :focus-visible.
-  &[aria-haspopup]:focus-visible {
+  &:focus {
     outline: none;
+  }
+
+  &:focus-visible:not([data-pointer-focus]) {
+    @include utils.bpk-focus-indicator;
   }
 
   &__icon {

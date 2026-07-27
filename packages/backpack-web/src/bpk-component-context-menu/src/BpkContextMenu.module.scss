@@ -35,6 +35,14 @@ $context-menu-max-width: 20rem;
   background: none;
   color: inherit;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible:not([data-pointer-focus]) {
+    @include utils.bpk-focus-indicator;
+  }
 }
 
 // Positioner is a bare wrapper that Floating UI (via Ark/Zag) positions.
@@ -52,7 +60,7 @@ $context-menu-max-width: 20rem;
   display: flex;
   padding: tokens.bpk-spacing-sm() 0;
   flex-direction: column;
-  border-radius: tokens.$bpk-border-radius-sm;
+  border-radius: tokens.$bpk-border-radius-lg;
   outline: none;
   background-color: tokens.$bpk-canvas-day;
   box-shadow: tokens.$bpk-box-shadow-lg;
@@ -77,6 +85,7 @@ $context-menu-max-width: 20rem;
 
   &[data-state='closed'] {
     animation: bpk-context-menu-fade-out $context-menu-duration ease forwards;
+    pointer-events: none;
   }
 }
 
@@ -97,13 +106,13 @@ $context-menu-max-width: 20rem;
   @include typography.bpk-body-default;
 
   &:hover:not([data-disabled]) {
-    background-color: tokens.$bpk-surface-highlight-day;
+    background-color: tokens.$bpk-canvas-contrast-day;
   }
 
   // Ark exposes `data-highlighted` on keyboard-navigated items. We reuse the
   // hover surface treatment so mouse and keyboard land on the same visual.
   &[data-highlighted] {
-    background-color: tokens.$bpk-surface-highlight-day;
+    background-color: tokens.$bpk-canvas-contrast-day;
   }
 
   &[data-disabled] {

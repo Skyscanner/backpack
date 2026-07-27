@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { type FocusEvent, type ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { Menu } from '@ark-ui/react';
 
@@ -46,14 +46,53 @@ const BpkContextMenuTrigger = ({
   'aria-label': ariaLabel,
   asChild = false,
   children,
-}: BpkContextMenuTriggerProps) => (
-  <Menu.Trigger
-    asChild={asChild}
-    aria-label={ariaLabel}
-    className={asChild ? undefined : getClassName('bpk-context-menu__trigger')}
-  >
-    {children}
-  </Menu.Trigger>
-);
+}: BpkContextMenuTriggerProps) => {
+  // Track whether the last document interaction was pointer or keyboard.
+  // Zag calls focus({ preventScroll: true }) on close, but some browsers
+  // still show :focus-visible when keyboard navigation happened inside the
+  // menu. We suppress it ourselves when the close was pointer-initiated.
+  const isPointerRef = useRef(false);
+
+  useEffect(() => {
+    const onPointerDown = () => { isPointerRef.current = true; };
+    // Only Tab (inter-element navigation) switches to keyboard mode.
+    // Arrow keys, Enter, Space, Escape are intra-widget and should not
+    // override a pointer-initiated session.
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') isPointerRef.current = false;
+    };
+    document.addEventListener('pointerdown', onPointerDown, true);
+    document.addEventListener('keydown', onKeyDown, true);
+    return () => {
+      // on unMount remove the eventListeners
+      document.removeEventListener('pointerdown', onPointerDown, true);
+      document.removeEventListener('keydown', onKeyDown, true);
+    };
+  }, []);
+
+  const handleFocus = useCallback((e: FocusEvent<HTMLElement>) => {
+    const relatedTarget = e.relatedTarget as Element | null;
+    const fromMenu = relatedTarget?.closest('[role="menu"]') != null;
+    if (isPointerRef.current || fromMenu) {
+      e.currentTarget.setAttribute('data-pointer-focus', '');
+    }
+  }, []);
+
+  const handleBlur = useCallback((e: FocusEvent<HTMLElement>) => {
+    e.currentTarget.removeAttribute('data-pointer-focus');
+  }, []);
+
+  return (
+    <Menu.Trigger
+      asChild={asChild}
+      aria-label={ariaLabel}
+      className={asChild ? undefined : getClassName('bpk-context-menu__trigger')}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+    >
+      {children}
+    </Menu.Trigger>
+  );
+};
 
 export default BpkContextMenuTrigger;

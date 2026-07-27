@@ -43,8 +43,6 @@ const SaveTrigger = ({ checked = false }: { checked?: boolean }) => (
 
 const DefaultExample = () => (
   <BpkProvider>
-    {/* onClick per item — useful when each item has distinct logic,
-        e.g. trips.map(trip => <Item onClick={() => saveToTrip(trip.id)} />) */}
     <BpkContextMenu.Root>
       <SaveTrigger />
       <BpkContextMenu.Content>
@@ -104,9 +102,11 @@ const WithDestructiveItemExample = () => (
               Move
             </BpkContextMenu.TriggerItem>
             <BpkContextMenu.Content>
-              <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-              <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-              <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+              <BpkContextMenu.ItemGroup>
+                <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
+                <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
+                <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+              </BpkContextMenu.ItemGroup>
             </BpkContextMenu.Content>
           </BpkContextMenu.Root>
         </BpkContextMenu.ItemGroup>

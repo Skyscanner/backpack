@@ -47,6 +47,7 @@ const BpkContextMenuRoot = ({
     onOpenChange={onOpenChange}
     onSelect={onSelect}
     open={open}
+    unmountOnExit
     {...getDataComponentAttribute('ContextMenu')}
   >
     {children}
