@@ -79,14 +79,17 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     }
 
     &--default {
-      background-color: var(--bpk-other-line-default, tokens.$bpk-line-day);
+      background-color: var(
+        --bpk-private-page-indicator-bg-default-unselected,
+        tokens.$bpk-line-day
+      );
     }
 
     &--overImage,
     &--overImageSpaced,
     &--carousel {
       background-color: var(
-        --bpk-other-line-on-contrast,
+        --bpk-private-page-indicator-bg-over-image-unselected,
         tokens.$bpk-line-on-dark-day
       );
     }
@@ -94,7 +97,7 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     &--active {
       &-default {
         background-color: var(
-          --bpk-text-secondary,
+          --bpk-private-page-indicator-bg-default-selected,
           tokens.$bpk-text-secondary-day
         );
         pointer-events: none;
@@ -103,7 +106,10 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
       &-overImage,
       &-overImageSpaced,
       &-carousel {
-        background-color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+        background-color: var(
+          --bpk-private-page-indicator-bg-over-image-selected,
+          tokens.$bpk-text-on-dark-day
+        );
         pointer-events: none;
       }
     }
