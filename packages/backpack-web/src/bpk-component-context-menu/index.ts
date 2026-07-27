@@ -34,3 +34,4 @@ export type { BpkContextMenuItemProps } from './src/BpkContextMenuItem';
 export type { BpkContextMenuSeparatorProps } from './src/BpkContextMenuSeparator';
 export type { BpkContextMenuItemGroupProps } from './src/BpkContextMenuItemGroup';
 export type { BpkContextMenuSubTriggerItemProps } from './src/BpkContextMenuSubTriggerItem';
+export type { BpkContextMenuSaveTriggerProps } from './src/BpkContextMenuSaveTrigger';

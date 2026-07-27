@@ -8,39 +8,52 @@ Check the main [Readme](https://github.com/Skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-The context menu is opened from a consumer-owned trigger. Pass the trigger element to `BpkContextMenu.Trigger`. By default a wrapper `<button>` is rendered; pass `asChild` to merge the menu trigger props onto your own element instead.
+### With SaveTrigger (save-to-list pattern)
+
+Use `BpkContextMenu.SaveTrigger` when the trigger should look like a heart-icon save button. It renders a pre-styled circular button owned by Backpack — no extra styling needed from the consumer.
 
 ```jsx
-import BpkContextMenu, {
-  CONTEXT_MENU_ITEM_VARIANTS,
-} from '@skyscanner/backpack-web/bpk-component-context-menu';
+import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu';
 
-<BpkContextMenu.Root
-  onSelect={({ value }) => {
-    // handle selection
-  }}
->
-  <BpkContextMenu.Trigger>
-    <MyHeartButton />
-  </BpkContextMenu.Trigger>
+<BpkContextMenu.Root onSelect={({ value }) => { /* handle selection */ }}>
+  <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
 
   <BpkContextMenu.Content>
-    <BpkContextMenu.Item value="sightseeing">Sightseeing</BpkContextMenu.Item>
-    <BpkContextMenu.Item value="christmas-shopping">
-      Christmas shopping
-    </BpkContextMenu.Item>
-    <BpkContextMenu.Item value="relax">Relax</BpkContextMenu.Item>
+    <BpkContextMenu.ItemGroup>
+      <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
+      <BpkContextMenu.Item value="relax">Relax</BpkContextMenu.Item>
+    </BpkContextMenu.ItemGroup>
 
     <BpkContextMenu.Separator />
 
-    <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
-      Plan a new trip
-    </BpkContextMenu.Item>
-    <BpkContextMenu.Item value="quick-save" endIcon={<BookmarkIcon />}>
-      Quick save
+    <BpkContextMenu.ItemGroup>
+      <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+        Plan a new trip
+      </BpkContextMenu.Item>
+    </BpkContextMenu.ItemGroup>
+  </BpkContextMenu.Content>
+</BpkContextMenu.Root>
+```
+
+### With a custom trigger
+
+Use `BpkContextMenu.Trigger` when you need a different trigger element. By default it renders a plain `<button>`; pass `asChild` to merge the trigger props onto your own element instead.
+
+```jsx
+import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu';
+
+<BpkContextMenu.Root onSelect={({ value }) => { /* handle selection */ }}>
+  <BpkContextMenu.Trigger aria-label="Open options">
+    <SettingsIcon />
+  </BpkContextMenu.Trigger>
+
+  <BpkContextMenu.Content>
+    <BpkContextMenu.Item value="edit">Edit</BpkContextMenu.Item>
+    <BpkContextMenu.Item value="delete" variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}>
+      Delete
     </BpkContextMenu.Item>
   </BpkContextMenu.Content>
-</BpkContextMenu.Root>;
+</BpkContextMenu.Root>
 ```
 
 ## Parts
@@ -48,11 +61,12 @@ import BpkContextMenu, {
 | Part | Wraps | Purpose |
 |------|-------|---------|
 | `BpkContextMenu.Root` | `Menu.Root` | State container. Handles open state, keyboard navigation, and selection dispatch. |
-| `BpkContextMenu.Trigger` | `Menu.Trigger` | Wraps the consumer's trigger element. Pass `asChild` to merge trigger props onto your own element rather than rendering a wrapper button. |
+| `BpkContextMenu.Trigger` | `Menu.Trigger` | Generic trigger. Renders a plain `<button>` by default; pass `asChild` to merge trigger props onto a custom element. |
+| `BpkContextMenu.SaveTrigger` | `Menu.Trigger` | Pre-styled circular heart-icon trigger for the save-to-list pattern. Accepts `aria-label` only — no consumer styling required. |
 | `BpkContextMenu.Content` | `Menu.Positioner` + `Menu.Content` | The floating menu surface. Portalled so it escapes overflow-hidden ancestors. |
-| `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `endIcon` and `destructive` variant. |
+| `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `endIcon`, `destructive` variant, and an optional `onClick` for item-specific handlers alongside the root `onSelect`. |
 | `BpkContextMenu.Separator` | `Menu.Separator` | Visual divider between logical groups of items. |
-| `BpkContextMenu.ItemGroup` | `<div>` | Groups a set of related items under a shared container. Use to visually cluster items that belong together (e.g. a set of saved trips). |
+| `BpkContextMenu.ItemGroup` | `<div>` | Groups related items under a shared container. Use to visually cluster items that belong together (e.g. a set of saved trips). |
 | `BpkContextMenu.TriggerItem` | `Menu.TriggerItem` | A menu row that opens a nested sub-menu on hover/arrow-right. Accepts an optional `endIcon` (typically a chevron) to signal the sub-menu. |
 
 ## Item variants
@@ -66,7 +80,7 @@ import BpkContextMenu, {
 
 - Arrow keys navigate between items, Enter activates the highlighted item, Escape closes the menu.
 - The content receives `role="menu"` and each item receives `role="menuitem"` automatically via Ark UI.
-- The consumer's trigger element receives `aria-haspopup` and `aria-expanded` via `asChild` slot composition.
+- The trigger button receives `aria-haspopup` and `aria-expanded` automatically via Ark UI.
 - The menu is rendered in a portal, so it will not be clipped by an ancestor with `overflow: hidden`.
 
 ## Do not

@@ -56,14 +56,6 @@
   background-color: transparent;
   cursor: pointer;
 
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible:not([data-pointer-focus]) {
-    @include utils.bpk-focus-indicator;
-  }
-
   &__icon {
     position: absolute;
     top: 50%;
@@ -86,15 +78,6 @@
 
     &[data-show='false'] {
       opacity: 0;
-    }
-
-    &--no-hover {
-      &[data-show='true'] {
-        @include utils.bpk-hover {
-          transition: none;
-          opacity: 1;
-        }
-      }
     }
   }
 
@@ -136,15 +119,6 @@
 
         &[data-show='true'] {
           fill: tokens.$bpk-core-accent-day;
-        }
-      }
-    }
-
-    &--no-hover {
-      &[data-show='false'] {
-        @include utils.bpk-hover {
-          transition: none;
-          opacity: 0;
         }
       }
     }

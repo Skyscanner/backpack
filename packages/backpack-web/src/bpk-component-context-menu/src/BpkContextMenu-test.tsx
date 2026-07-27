@@ -112,13 +112,11 @@ describe('BpkContextMenu', () => {
     expect(screen.getByTestId('end-icon')).toBeVisible();
   });
 
-  describe('Trigger focus ring suppression', () => {
-    const renderMenuWithTrigger = (open = false) =>
+  describe('SaveTrigger', () => {
+    const renderMenuWithSaveTrigger = (open = false) =>
       render(
         <BpkContextMenu.Root open={open}>
-          <BpkContextMenu.Trigger aria-label="Open menu">
-            <span />
-          </BpkContextMenu.Trigger>
+          <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
           <BpkContextMenu.Content>
             <BpkContextMenu.Item value="item">Item</BpkContextMenu.Item>
           </BpkContextMenu.Content>
@@ -127,7 +125,7 @@ describe('BpkContextMenu', () => {
 
     it('registers pointerdown and keydown listeners on document on mount', () => {
       const addSpy = jest.spyOn(document, 'addEventListener');
-      renderMenuWithTrigger();
+      renderMenuWithSaveTrigger();
       expect(addSpy).toHaveBeenCalledWith('pointerdown', expect.any(Function), true);
       expect(addSpy).toHaveBeenCalledWith('keydown', expect.any(Function), true);
       addSpy.mockRestore();
@@ -135,16 +133,28 @@ describe('BpkContextMenu', () => {
 
     it('removes event listeners from document on unmount', () => {
       const removeSpy = jest.spyOn(document, 'removeEventListener');
-      const { unmount } = renderMenuWithTrigger();
+      const { unmount } = renderMenuWithSaveTrigger();
       unmount();
       expect(removeSpy).toHaveBeenCalledWith('pointerdown', expect.any(Function), true);
       expect(removeSpy).toHaveBeenCalledWith('keydown', expect.any(Function), true);
       removeSpy.mockRestore();
     });
 
+    it('renders a button with the given aria-label', () => {
+      renderMenuWithSaveTrigger();
+      expect(screen.getByRole('button', { name: 'Save to trip' })).toBeVisible();
+    });
+
+    it('has the ContextMenuSaveTrigger data-component attribute', () => {
+      renderMenuWithSaveTrigger();
+      expect(
+        document.querySelector('[data-component="ContextMenuSaveTrigger"]'),
+      ).toBeInTheDocument();
+    });
+
     it('sets data-pointer-focus when focus follows a pointer interaction', () => {
-      renderMenuWithTrigger();
-      const trigger = screen.getByRole('button', { name: 'Open menu' });
+      renderMenuWithSaveTrigger();
+      const trigger = screen.getByRole('button', { name: 'Save to trip' });
 
       fireEvent.pointerDown(document);
       fireEvent.focus(trigger);
@@ -153,8 +163,8 @@ describe('BpkContextMenu', () => {
     });
 
     it('does not set data-pointer-focus when focus follows a Tab keydown', () => {
-      renderMenuWithTrigger();
-      const trigger = screen.getByRole('button', { name: 'Open menu' });
+      renderMenuWithSaveTrigger();
+      const trigger = screen.getByRole('button', { name: 'Save to trip' });
 
       fireEvent.pointerDown(document);
       fireEvent.keyDown(document, { key: 'Tab' });
@@ -164,8 +174,8 @@ describe('BpkContextMenu', () => {
     });
 
     it('does not reset pointer mode for non-Tab keys such as Enter', () => {
-      renderMenuWithTrigger();
-      const trigger = screen.getByRole('button', { name: 'Open menu' });
+      renderMenuWithSaveTrigger();
+      const trigger = screen.getByRole('button', { name: 'Save to trip' });
 
       fireEvent.pointerDown(document);
       fireEvent.keyDown(document, { key: 'Enter' });
@@ -175,8 +185,8 @@ describe('BpkContextMenu', () => {
     });
 
     it('sets data-pointer-focus when focus returns from inside the menu', () => {
-      renderMenuWithTrigger(true);
-      const trigger = screen.getByRole('button', { name: 'Open menu' });
+      renderMenuWithSaveTrigger(true);
+      const trigger = screen.getByRole('button', { name: 'Save to trip' });
       const menuItem = screen.getByText('Item');
 
       fireEvent.focus(trigger, { relatedTarget: menuItem });
@@ -185,14 +195,13 @@ describe('BpkContextMenu', () => {
     });
 
     it('removes data-pointer-focus on blur', () => {
-      renderMenuWithTrigger();
-      const trigger = screen.getByRole('button', { name: 'Open menu' });
+      renderMenuWithSaveTrigger();
+      const trigger = screen.getByRole('button', { name: 'Save to trip' });
 
       fireEvent.pointerDown(document);
       fireEvent.focus(trigger);
-      expect(trigger).toHaveAttribute('data-pointer-focus');
-
       fireEvent.blur(trigger);
+
       expect(trigger).not.toHaveAttribute('data-pointer-focus');
     });
   });

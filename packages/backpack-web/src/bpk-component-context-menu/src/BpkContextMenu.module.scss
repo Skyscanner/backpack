@@ -45,6 +45,33 @@ $context-menu-max-width: 20rem;
   }
 }
 
+// Circular heart-icon button — matches BpkSaveButton sizing so consumers
+// get the correct visual without depending on BpkSaveButton as a trigger.
+.bpk-context-menu__save-trigger {
+  display: inline-flex;
+  width: tokens.bpk-spacing-xxl();
+  height: tokens.bpk-spacing-xxl();
+  padding: tokens.bpk-spacing-md();
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible:not([data-pointer-focus]) {
+    @include utils.bpk-focus-indicator;
+  }
+
+  svg {
+    fill: currentcolor;
+  }
+}
+
 // Positioner is a bare wrapper that Floating UI (via Ark/Zag) positions.
 // It must not carry padding or width — those live on the content surface —
 // otherwise Floating UI's measurements will include the wrong box.

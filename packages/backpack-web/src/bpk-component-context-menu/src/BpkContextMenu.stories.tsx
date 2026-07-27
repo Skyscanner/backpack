@@ -16,7 +16,6 @@
  * limitations under the License.
  */
 
-import { BpkSaveButton } from '../../bpk-component-card-button';
 import { withRtlSupport } from '../../bpk-component-icon';
 import ChevronRightIconBase from '../../bpk-component-icon/sm/chevron-right';
 import HeartIcon from '../../bpk-component-icon/sm/heart';
@@ -30,15 +29,8 @@ import type { Meta } from '@storybook/react';
 
 const ChevronRightIcon = withRtlSupport(ChevronRightIconBase);
 
-const SaveTrigger = ({ checked = false }: { checked?: boolean }) => (
-  <BpkContextMenu.Trigger asChild>
-    <BpkSaveButton
-      checked={checked}
-      accessibilityLabel="Save to trip"
-      onCheckedChange={() => {}}
-      hoverEffect={false}
-    />
-  </BpkContextMenu.Trigger>
+const SaveTrigger = () => (
+  <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
 );
 
 const DefaultExample = () => (
@@ -88,7 +80,7 @@ const NoTripsExample = () => (
 const WithDestructiveItemExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
-      <SaveTrigger checked />
+      <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
           <BpkContextMenu.Item
@@ -283,7 +275,7 @@ export const VisualTestDestructive = {
   render: () => (
     <BpkProvider>
       <BpkContextMenu.Root defaultOpen>
-        <SaveTrigger checked />
+        <SaveTrigger />
         <BpkContextMenu.Content>
           <BpkContextMenu.ItemGroup>
             <BpkContextMenu.Item

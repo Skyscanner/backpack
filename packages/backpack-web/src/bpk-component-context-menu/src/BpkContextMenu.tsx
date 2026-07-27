@@ -20,6 +20,7 @@ import BpkContextMenuContent from './BpkContextMenuContent';
 import BpkContextMenuItem from './BpkContextMenuItem';
 import BpkContextMenuItemGroup from './BpkContextMenuItemGroup';
 import BpkContextMenuRoot from './BpkContextMenuRoot';
+import BpkContextMenuSaveTrigger from './BpkContextMenuSaveTrigger';
 import BpkContextMenuSeparator from './BpkContextMenuSeparator';
 import BpkContextMenuSubTriggerItem from './BpkContextMenuSubTriggerItem';
 import BpkContextMenuTrigger from './BpkContextMenuTrigger';
@@ -27,6 +28,7 @@ import BpkContextMenuTrigger from './BpkContextMenuTrigger';
 const BpkContextMenu = {
   Root: BpkContextMenuRoot,
   Trigger: BpkContextMenuTrigger,
+  SaveTrigger: BpkContextMenuSaveTrigger,
   Content: BpkContextMenuContent,
   Item: BpkContextMenuItem,
   ItemGroup: BpkContextMenuItemGroup,

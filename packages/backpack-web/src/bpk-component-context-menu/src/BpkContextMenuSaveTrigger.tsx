@@ -16,11 +16,10 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
-
 import { Menu } from '@ark-ui/react';
 
-import { cssModules } from '../../bpk-react-utils';
+import HeartOutlineIcon from '../../bpk-component-icon/lg/heart--outline';
+import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
 import useMenuTriggerFocusGuard from './useMenuTriggerFocusGuard';
 
@@ -28,40 +27,27 @@ import STYLES from './BpkContextMenu.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkContextMenuTriggerProps = {
-  children: ReactNode;
-  /**
-   * Accessible label for the trigger button. Required when the trigger
-   * contains only an icon with no visible text.
-   */
-  'aria-label'?: string;
-  /**
-   * When true, delegates trigger behaviour to the child element rather than
-   * rendering a Backpack-owned button. The child must be a DOM element or a
-   * forwardRef component. Use this to compose with an existing product button
-   * (e.g. BpkSaveButton) that owns its own styling and state.
-   */
-  asChild?: boolean;
+export type BpkContextMenuSaveTriggerProps = {
+  /** Accessible label for the button. Required. */
+  'aria-label': string;
 };
 
-const BpkContextMenuTrigger = ({
+const BpkContextMenuSaveTrigger = ({
   'aria-label': ariaLabel,
-  asChild = false,
-  children,
-}: BpkContextMenuTriggerProps) => {
+}: BpkContextMenuSaveTriggerProps) => {
   const { onBlur, onFocus } = useMenuTriggerFocusGuard();
 
   return (
     <Menu.Trigger
-      asChild={asChild}
       aria-label={ariaLabel}
-      className={asChild ? undefined : getClassName('bpk-context-menu__trigger')}
+      className={getClassName('bpk-context-menu__save-trigger')}
       onFocus={onFocus}
       onBlur={onBlur}
+      {...getDataComponentAttribute('ContextMenuSaveTrigger')}
     >
-      {children}
+      <HeartOutlineIcon />
     </Menu.Trigger>
   );
 };
 
-export default BpkContextMenuTrigger;
+export default BpkContextMenuSaveTrigger;
