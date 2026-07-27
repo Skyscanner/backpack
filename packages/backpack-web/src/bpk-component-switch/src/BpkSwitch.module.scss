@@ -37,11 +37,7 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
     opacity: 0;
 
     &:checked ~ .bpk-switch__switch {
-      @include utils.bpk-themeable-property(
-        background,
-        --bpk-switch-checked-color,
-        tokens.$bpk-core-accent-day
-      );
+      background: var(--bpk-core-accent, tokens.$bpk-core-accent-day);
 
       &::before {
         left: ($width - $height) + $border-width;
@@ -62,7 +58,7 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
     height: $height;
     transition: background tokens.$bpk-duration-sm linear;
     border-radius: $height * 0.5;
-    background: tokens.$bpk-text-disabled-day;
+    background: var(--bpk-text-disabled, tokens.$bpk-text-disabled-day);
     cursor: pointer;
 
     // The 'handle'.
@@ -76,7 +72,7 @@ $border-width: tokens.$bpk-one-pixel-rem * 2;
       height: $height - ($border-width * 2);
       transition: left tokens.$bpk-duration-sm ease-out;
       border-radius: 50%;
-      background: tokens.$bpk-text-on-dark-day;
+      background: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
 
       @include shadows.bpk-box-shadow-sm;
     }

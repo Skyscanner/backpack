@@ -50,16 +50,16 @@ $icon-height: math.div(tokens.$bpk-line-height-xs, 2);
 .bpk-data-table-column__sort-icon {
   display: block;
   line-height: $icon-height;
-  fill: tokens.$bpk-line-day;
+  fill: var(--bpk-other-line-default, tokens.$bpk-line-day);
 
   &:hover {
-    fill: tokens.$bpk-line-day;
+    fill: var(--bpk-other-line-default, tokens.$bpk-line-day);
   }
 
   &--selected {
     &,
     &:hover {
-      fill: tokens.$bpk-core-accent-day;
+      fill: var(--bpk-core-accent, tokens.$bpk-core-accent-day);
     }
   }
 }

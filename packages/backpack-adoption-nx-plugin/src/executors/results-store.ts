@@ -1,0 +1,59 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
+
+import type { AdoptionReport, GuardResult } from "@skyscanner/backpack-adoption-analyzer";
+
+export const DEFAULT_RESULTS_FILE_NAME = "adoption-guard-results.json";
+
+export type ProjectAdoptionResult = {
+  projectName: string;
+  threshold: number;
+  headReport: AdoptionReport;
+  baseReport: AdoptionReport | null;
+  guard: GuardResult;
+};
+
+export const writeProjectResult = (
+  outputPath: string,
+  result: ProjectAdoptionResult,
+): void => {
+  mkdirSync(dirname(outputPath), { recursive: true });
+  writeFileSync(outputPath, `${JSON.stringify(result, null, 2)}\n`, "utf8");
+};
+
+export const readProjectResult = (
+  resultsPath: string,
+): ProjectAdoptionResult | null => {
+  try {
+    return JSON.parse(readFileSync(resultsPath, "utf8")) as ProjectAdoptionResult;
+  } catch (error) {
+    if (
+      error instanceof SyntaxError ||
+      (typeof error === "object" &&
+        error !== null &&
+        "code" in error &&
+        error.code === "ENOENT")
+    ) {
+      return null;
+    }
+
+    throw error;
+  }
+};

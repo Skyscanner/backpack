@@ -18,13 +18,16 @@
 
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
 
 .bpk-skip-link {
   padding: (12 * tokens.$bpk-one-pixel-rem) tokens.bpk-spacing-base();
   transition: opacity tokens.$bpk-duration-sm ease-in-out;
-  border-radius: tokens.$bpk-border-radius-sm;
-  color: tokens.$bpk-text-on-dark-day;
+  border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
+  background-color: var(
+    --bpk-status-danger-spot,
+    tokens.$bpk-status-danger-spot-day
+  );
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   text-decoration: none;
   opacity: 0;
   overflow: hidden;
@@ -35,11 +38,6 @@
   transition-delay: tokens.$bpk-duration-sm;
 
   @include typography.bpk-heading-5;
-  @include utils.bpk-themeable-property(
-    background-color,
-    --bpk-skip-link-background-color,
-    tokens.$bpk-status-danger-spot-day
-  );
 
   &:focus-within,
   &:focus {

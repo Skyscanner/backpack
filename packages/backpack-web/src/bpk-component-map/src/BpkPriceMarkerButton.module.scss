@@ -24,7 +24,7 @@
   padding: 0 tokens.bpk-spacing-md();
   justify-content: center;
   align-items: center;
-  border-radius: tokens.$bpk-border-radius-sm;
+  border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
   box-shadow: tokens.$bpk-box-shadow-sm;
   gap: tokens.bpk-spacing-md();
 
@@ -33,29 +33,32 @@
   }
 
   &-unselected {
-    background-color: tokens.$bpk-text-on-dark-day;
-    color: tokens.$bpk-text-on-light-day;
+    background-color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
 
     &--icon {
-      fill: tokens.$bpk-text-on-light-day;
+      fill: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
     }
   }
 
   &-previous_selected {
-    background-color: tokens.$bpk-private-map-previous-selection-day;
-    color: tokens.$bpk-text-on-light-day;
+    background-color: var(
+      --bpk-private-map-previous-selection,
+      tokens.$bpk-private-map-previous-selection-day
+    );
+    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
 
     &--icon {
-      fill: tokens.$bpk-text-on-light-day;
+      fill: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
     }
   }
 
   &-selected {
-    background-color: tokens.$bpk-core-primary-day;
-    color: tokens.$bpk-text-on-dark-day;
+    background-color: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
 
     &--icon {
-      fill: tokens.$bpk-text-on-dark-day;
+      fill: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
     }
   }
 

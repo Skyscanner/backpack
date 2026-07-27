@@ -466,6 +466,56 @@ const ContextReader = () => {
   );
 };
 
+// Demonstrates asChild on Root: the Root merges its props onto the child
+// element instead of injecting a wrapper <div>. No hook required.
+const AsChildRoot = () => (
+  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      Without <code>asChild</code>: Root renders a wrapper{' '}
+      <code>&lt;div&gt;</code> around its child.
+    </BpkText>
+    <div>
+      <BpkCollapsible.Root defaultOpen>
+        <div>
+          <BpkCollapsible.Trigger>
+            <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </div>
+      </BpkCollapsible.Root>
+    </div>
+
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      With <code>asChild</code>: the <code>&lt;li&gt;</code> becomes the root
+      — no wrapper inserted.
+    </BpkText>
+    <ul>
+      <BpkCollapsible.Root asChild defaultOpen>
+        <li>
+          <BpkCollapsible.Trigger>
+            <BpkText textStyle={TEXT_STYLES.heading5}>With asChild</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </li>
+      </BpkCollapsible.Root>
+    </ul>
+  </BpkVStack>
+);
+
 // Demonstrates asChild: the RootProvider merges its props onto the child
 // <li> element instead of injecting a wrapper <div>. Inspect the DOM to
 // confirm the output is <li data-backpack-ds-component …> with no extra node.
@@ -577,4 +627,5 @@ export const CollapsedHeightShowMore = { render: () => <ShowMore /> };
 export const LongContentExample = { render: () => <LongContent /> };
 export const VisualTestComposite = { render: () => <VisualTest /> };
 export const ContextReaderHook = { render: () => <ContextReader /> };
+export const AsChildOnRoot = { render: () => <AsChildRoot /> };
 export const AsChildOnRootProvider = { render: () => <AsChildRootProvider /> };

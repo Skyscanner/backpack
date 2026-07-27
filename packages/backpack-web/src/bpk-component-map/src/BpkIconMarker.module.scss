@@ -62,7 +62,7 @@
     // centre of the marker.
     top: 4.8px;
     left: ($marker-width - $bpk-icon-size-sm-px) * 0.5;
-    color: tokens.$bpk-surface-default-day;
+    color: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     @include icons.bpk-icon--rtl-support;
 

@@ -40,6 +40,7 @@ import {
 } from "../git/base-worktree";
 import { createGitHubActionsIO, getBooleanInput } from "./io";
 import type { ActionIO } from "./io";
+import { ADOPTION_OUTPUTS } from "./outputs";
 import { buildStepSummary } from "./summary";
 
 export type RunOptions = {
@@ -73,6 +74,21 @@ const writeResults = async (
     `${JSON.stringify(resultsFile, null, 2)}\n`,
     "utf8",
   );
+};
+
+const formatOutput = (value: number | null) =>
+  value === null ? "" : value.toFixed(2);
+
+const writeOutputs = (io: ActionIO, result: ActionResult) => {
+  const {
+    baseBackpackPercentage,
+    delta,
+    headBackpackPercentage,
+  } = result.comparison;
+
+  io.setOutput(ADOPTION_OUTPUTS.head, formatOutput(headBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.base, formatOutput(baseBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.delta, formatOutput(delta));
 };
 
 const createActionResult = ({
@@ -205,6 +221,7 @@ export const run = async ({
   });
 
   await writeResults(cwd, outputPath, result);
+  writeOutputs(io, result);
   await io.appendSummary(buildStepSummary(result));
 
   io.info(`Backpack adoption results written to ${outputPath}`);

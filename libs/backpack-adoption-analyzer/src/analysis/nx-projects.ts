@@ -88,12 +88,18 @@ export function detectNxProjects(
   return { isNx: true, projects };
 }
 
+function stripTrailingSlashes(value: string): string {
+  let end = value.length;
+  while (end > 0 && value[end - 1] === "/") end -= 1;
+  return value.slice(0, end);
+}
+
 export function buildProjectIndex(projects: NxProject[]): NxProjectIndexEntry[] {
   return projects
     .map((project) => ({
       name: project.name,
       root: project.root,
-      prefix: project.root === "." ? "" : `${project.root.replace(/\/+$/, "")}/`,
+      prefix: project.root === "." ? "" : `${stripTrailingSlashes(project.root)}/`,
     }))
     .sort((a, b) => b.prefix.length - a.prefix.length);
 }

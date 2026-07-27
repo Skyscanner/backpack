@@ -22,7 +22,10 @@
 @use '../../bpk-mixins/shadows';
 
 $arrow-size: tokens.bpk-spacing-md();
-$dark-background-color: tokens.$bpk-surface-contrast-day;
+$dark-background-color: var(
+  --bpk-surface-contrast,
+  tokens.$bpk-surface-contrast-day
+);
 
 .bpk-tooltip--container {
   z-index: tokens.$bpk-zindex-tooltip;
@@ -46,7 +49,7 @@ $dark-background-color: tokens.$bpk-surface-contrast-day;
   &__arrow {
     width: $arrow-size;
     height: $arrow-size;
-    fill: tokens.$bpk-surface-default-day;
+    fill: var(--bpk-surface-default, tokens.$bpk-surface-default-day);
 
     &--dark {
       fill: $dark-background-color;
@@ -59,7 +62,7 @@ $dark-background-color: tokens.$bpk-surface-contrast-day;
     }
 
     &--dark {
-      color: tokens.$bpk-text-primary-inverse-day;
+      color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
 
       @include layers.bpk-layer($dark-background-color, $dark-background-color);
     }

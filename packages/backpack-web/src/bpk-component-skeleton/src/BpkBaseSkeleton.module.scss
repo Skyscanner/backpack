@@ -22,7 +22,7 @@
 .bpk-skeleton {
   width: tokens.$bpk-one-pixel-rem * 96;
   height: tokens.$bpk-one-pixel-rem * 96;
-  background: tokens.$bpk-surface-highlight-day;
+  background: var(--bpk-surface-highlight, tokens.$bpk-surface-highlight-day);
   background-image: linear-gradient(
     to right,
     tokens.$bpk-private-skeleton-shimmer-start-end-day 7.08%,

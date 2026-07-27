@@ -33,9 +33,9 @@
   transition:
     opacity tokens.$bpk-duration-base ease-in-out,
     transform tokens.$bpk-duration-base ease-in-out;
-  border-radius: tokens.$bpk-border-radius-md;
-  background: tokens.$bpk-core-primary-day;
-  color: tokens.$bpk-text-on-dark-day;
+  border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
+  background: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
+  color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   box-shadow: tokens.$bpk-box-shadow-xl, tokens.$bpk-box-shadow-lg;
 
   @include breakpoints.bpk-breakpoint-mobile {
@@ -44,8 +44,11 @@
   }
 
   &--critical {
-    background-color: tokens.$bpk-status-danger-spot-day;
-    color: tokens.$bpk-text-primary-inverse-day;
+    background-color: var(
+      --bpk-status-danger-spot,
+      tokens.$bpk-status-danger-spot-day
+    );
+    color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &--leave {
