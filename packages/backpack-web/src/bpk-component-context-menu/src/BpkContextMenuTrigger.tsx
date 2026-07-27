@@ -36,10 +36,14 @@ export type BpkContextMenuTriggerProps = {
    */
   'aria-label'?: string;
   /**
-   * When true, delegates trigger behaviour to the child element rather than
-   * rendering a Backpack-owned button. The child must be a DOM element or a
-   * forwardRef component. Use this to compose with an existing product button
-   * (e.g. BpkSaveButton) that owns its own styling and state.
+   * When true, merges trigger behaviour (aria-haspopup, aria-expanded, click
+   * handler) onto the child element instead of rendering a Backpack-owned
+   * wrapper button.
+   *
+   * **Requirement:** the child must be a native DOM element or a component
+   * wrapped in React.forwardRef that spreads `...rest` onto its root node.
+   * Plain function components without forwardRef will silently drop the merged
+   * props and the menu will not open.
    */
   asChild?: boolean;
 };

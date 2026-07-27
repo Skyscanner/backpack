@@ -24,6 +24,11 @@ $context-menu-duration: tokens.$bpk-duration-sm;
 $context-menu-min-width: 12rem;
 $context-menu-max-width: 20rem;
 
+// Measured rendered height of one item row (vertical padding + line-height).
+// Update this if item padding or typography changes.
+$context-menu-item-height: 2.6rem;
+$context-menu-max-visible-items: 8.5;
+
 // Default trigger button — resets browser button styles so consumers get a
 // clean base to build on via className. Consumers own the visual design.
 .bpk-context-menu__trigger {
@@ -76,7 +81,7 @@ $context-menu-max-width: 20rem;
 // It must not carry padding or width — those live on the content surface —
 // otherwise Floating UI's measurements will include the wrong box.
 .bpk-context-menu__positioner {
-  z-index: 1;
+  z-index: tokens.$bpk-zindex-popover;
   pointer-events: none;
 }
 
@@ -89,12 +94,10 @@ $context-menu-max-width: 20rem;
   flex-direction: column;
   border-radius: tokens.$bpk-border-radius-lg;
   outline: none;
-  background-color: tokens.$bpk-canvas-day;
+  background-color: var(--bpk-canvas, #{tokens.$bpk-canvas-day});
   box-shadow: tokens.$bpk-box-shadow-lg;
   overflow-y: auto;
-
-  // 8.5 items: (8.5 × 2.5rem item-height) = 21.25rem.
-  max-block-size: 21.25rem;
+  max-block-size: $context-menu-item-height * $context-menu-max-visible-items;
   max-inline-size: $context-menu-max-width;
   min-inline-size: $context-menu-min-width;
   pointer-events: auto;
@@ -126,24 +129,30 @@ $context-menu-max-width: 20rem;
   border: 0;
   outline: none;
   background: transparent;
-  color: tokens.$bpk-text-primary-day;
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
   cursor: pointer;
   gap: tokens.bpk-spacing-base();
 
   @include typography.bpk-body-default;
 
   &:hover:not([data-disabled]) {
-    background-color: tokens.$bpk-canvas-contrast-day;
+    background-color: var(
+      --bpk-canvas-contrast,
+      #{tokens.$bpk-canvas-contrast-day}
+    );
   }
 
   // Ark exposes `data-highlighted` on keyboard-navigated items. We reuse the
   // hover surface treatment so mouse and keyboard land on the same visual.
   &[data-highlighted] {
-    background-color: tokens.$bpk-canvas-contrast-day;
+    background-color: var(
+      --bpk-canvas-contrast,
+      #{tokens.$bpk-canvas-contrast-day}
+    );
   }
 
   &[data-disabled] {
-    color: tokens.$bpk-text-disabled-day;
+    color: var(--bpk-text-disabled, #{tokens.$bpk-text-disabled-day});
     cursor: not-allowed;
   }
 
@@ -157,7 +166,7 @@ $context-menu-max-width: 20rem;
 }
 
 .bpk-context-menu__item--destructive {
-  color: tokens.$bpk-status-danger-spot-day;
+  color: var(--bpk-status-danger-spot, #{tokens.$bpk-status-danger-spot-day});
 }
 
 .bpk-context-menu__item-label {
@@ -181,7 +190,7 @@ $context-menu-max-width: 20rem;
 
 .bpk-context-menu__item-group {
   --bpk-context-menu-item-divider: #{tokens.$bpk-border-size-sm} solid
-    #{tokens.$bpk-canvas-contrast-day};
+    var(--bpk-canvas-contrast, #{tokens.$bpk-canvas-contrast-day});
 }
 
 .bpk-context-menu__separator {
@@ -189,7 +198,8 @@ $context-menu-max-width: 20rem;
   margin: tokens.bpk-spacing-sm() 0;
   border: 0;
   block-size: 0;
-  border-block-start: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+  border-block-start: tokens.$bpk-border-size-sm solid
+    var(--bpk-line, #{tokens.$bpk-line-day});
   inline-size: 100%;
 }
 

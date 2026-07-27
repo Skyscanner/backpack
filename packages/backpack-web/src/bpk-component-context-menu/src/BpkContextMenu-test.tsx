@@ -31,7 +31,7 @@ const renderBasicMenu = ({
 } = {}) => (
   <BpkContextMenu.Root open={open} onSelect={onSelect}>
     <BpkContextMenu.Trigger>
-      <button type="button">Open menu</button>
+      <span>Open menu</span>
     </BpkContextMenu.Trigger>
     <BpkContextMenu.Content>
       <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
@@ -75,7 +75,7 @@ describe('BpkContextMenu', () => {
     render(
       <BpkContextMenu.Root open>
         <BpkContextMenu.Trigger>
-          <button type="button">Open</button>
+          <span>Open</span>
         </BpkContextMenu.Trigger>
         <BpkContextMenu.Content>
           <BpkContextMenu.Item
@@ -96,7 +96,7 @@ describe('BpkContextMenu', () => {
     render(
       <BpkContextMenu.Root open>
         <BpkContextMenu.Trigger>
-          <button type="button">Open</button>
+          <span>Open</span>
         </BpkContextMenu.Trigger>
         <BpkContextMenu.Content>
           <BpkContextMenu.Item

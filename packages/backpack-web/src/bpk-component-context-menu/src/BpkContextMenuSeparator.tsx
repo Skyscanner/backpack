@@ -24,7 +24,7 @@ import STYLES from './BpkContextMenu.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkContextMenuSeparatorProps = Record<string, never>;
+export type BpkContextMenuSeparatorProps = {};
 
 const BpkContextMenuSeparator = () => (
   <Menu.Separator className={getClassName('bpk-context-menu__separator')} />

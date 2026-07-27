@@ -61,7 +61,7 @@ import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu'
 | Part | Wraps | Purpose |
 |------|-------|---------|
 | `BpkContextMenu.Root` | `Menu.Root` | State container. Handles open state, keyboard navigation, and selection dispatch. |
-| `BpkContextMenu.Trigger` | `Menu.Trigger` | Generic trigger. Renders a plain `<button>` by default; pass `asChild` to merge trigger props onto a custom element. |
+| `BpkContextMenu.Trigger` | `Menu.Trigger` | Generic trigger. Renders a plain `<button>` by default; pass `asChild` to merge trigger props onto a custom element. When using `asChild` the child must be a native DOM element or a `React.forwardRef` component that spreads `...rest` — plain function components will silently drop the merged props. |
 | `BpkContextMenu.SaveTrigger` | `Menu.Trigger` | Pre-styled circular heart-icon trigger for the save-to-list pattern. Accepts `aria-label` only — no consumer styling required. |
 | `BpkContextMenu.Content` | `Menu.Positioner` + `Menu.Content` | The floating menu surface. Portalled so it escapes overflow-hidden ancestors. |
 | `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `endIcon`, `destructive` variant, and an optional `onClick` for item-specific handlers alongside the root `onSelect`. |

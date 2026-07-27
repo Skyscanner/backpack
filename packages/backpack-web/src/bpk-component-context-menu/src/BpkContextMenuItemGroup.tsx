@@ -28,10 +28,17 @@ export type BpkContextMenuItemGroupProps = {
   children: ReactNode;
 };
 
+// role="group" gives screen readers group-boundary announcements.
+// Menu.ItemGroup is intentionally avoided here: it auto-generates an id and
+// sets aria-labelledby, which would dangle without a paired ItemGroupLabel.
+// The current design uses visual separators rather than labelled groups, so
+// a plain role="group" div is the correct semantic choice.
 const BpkContextMenuItemGroup = ({
   children,
 }: BpkContextMenuItemGroupProps) => (
-  <div className={getClassName('bpk-context-menu__item-group')}>{children}</div>
+  <div role="group" className={getClassName('bpk-context-menu__item-group')}>
+    {children}
+  </div>
 );
 
 export default BpkContextMenuItemGroup;

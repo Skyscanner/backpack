@@ -26,10 +26,8 @@ describe('BpkContextMenu accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (closed)', async () => {
     const { container } = render(
       <BpkContextMenu.Root>
-        <BpkContextMenu.Trigger>
-          <button type="button" aria-label="Save to trip">
-            ♥
-          </button>
+        <BpkContextMenu.Trigger aria-label="Save to trip">
+          <span>♥</span>
         </BpkContextMenu.Trigger>
         <BpkContextMenu.Content>
           <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
@@ -43,10 +41,8 @@ describe('BpkContextMenu accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (open)', async () => {
     const { container } = render(
       <BpkContextMenu.Root open>
-        <BpkContextMenu.Trigger>
-          <button type="button" aria-label="Save to trip">
-            ♥
-          </button>
+        <BpkContextMenu.Trigger aria-label="Save to trip">
+          <span>♥</span>
         </BpkContextMenu.Trigger>
         <BpkContextMenu.Content>
           <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>

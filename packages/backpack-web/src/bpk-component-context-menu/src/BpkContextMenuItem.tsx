@@ -56,20 +56,15 @@ const BpkContextMenuItem = ({
   onClick,
   value,
   variant = CONTEXT_MENU_ITEM_VARIANTS.default,
-}: BpkContextMenuItemProps) => {
-  const variantModifier =
-    variant === CONTEXT_MENU_ITEM_VARIANTS.destructive
-      ? 'destructive'
-      : 'default';
-
-  return (
+}: BpkContextMenuItemProps) => (
     <Menu.Item
       value={value}
       disabled={disabled}
       onClick={onClick}
       className={getClassName(
         'bpk-context-menu__item',
-        `bpk-context-menu__item--${variantModifier}`,
+        variant === CONTEXT_MENU_ITEM_VARIANTS.destructive &&
+          'bpk-context-menu__item--destructive',
       )}
       {...getDataComponentAttribute('ContextMenuItem')}
     >
@@ -83,6 +78,5 @@ const BpkContextMenuItem = ({
       )}
     </Menu.Item>
   );
-};
 
 export default BpkContextMenuItem;

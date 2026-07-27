@@ -26,7 +26,7 @@ import STYLES from './BpkContextMenu.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkContextMenuSubTriggerItemProps = {
+export type BpkContextMenuTriggerItemProps = {
   children: ReactNode;
   /**
    * Optional trailing element rendered on the end side of the row.
@@ -38,7 +38,7 @@ export type BpkContextMenuSubTriggerItemProps = {
 const BpkContextMenuSubTriggerItem = ({
   children,
   endIcon,
-}: BpkContextMenuSubTriggerItemProps) => (
+}: BpkContextMenuTriggerItemProps) => (
   <Menu.TriggerItem
     className={getClassName('bpk-context-menu__item')}
     {...getDataComponentAttribute('ContextMenuSubTriggerItem')}

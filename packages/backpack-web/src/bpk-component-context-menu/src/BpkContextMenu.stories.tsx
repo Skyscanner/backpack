@@ -89,6 +89,9 @@ const WithDestructiveItemExample = () => (
           >
             Remove
           </BpkContextMenu.Item>
+          {/* Sub-menu: nesting BpkContextMenu.Root inside the parent Content
+              is the correct Ark UI pattern. TriggerItem is the row that
+              opens the child menu on hover / arrow-right. */}
           <BpkContextMenu.Root>
             <BpkContextMenu.TriggerItem endIcon={<ChevronRightIcon />}>
               Move
@@ -284,9 +287,18 @@ export const VisualTestDestructive = {
             >
               Remove
             </BpkContextMenu.Item>
-            <BpkContextMenu.Item value="move" endIcon={<ChevronRightIcon />}>
-              Move
-            </BpkContextMenu.Item>
+            <BpkContextMenu.Root>
+              <BpkContextMenu.TriggerItem endIcon={<ChevronRightIcon />}>
+                Move
+              </BpkContextMenu.TriggerItem>
+              <BpkContextMenu.Content>
+                <BpkContextMenu.ItemGroup>
+                  <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
+                  <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
+                  <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+                </BpkContextMenu.ItemGroup>
+              </BpkContextMenu.Content>
+            </BpkContextMenu.Root>
           </BpkContextMenu.ItemGroup>
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>
