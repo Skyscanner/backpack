@@ -42,6 +42,6 @@
   }
 
   &__asterisk {
-    color: tokens.$bpk-form-validation-color;
+    color: var(--bpk-status-danger-spot, tokens.$bpk-form-validation-color);
   }
 }
