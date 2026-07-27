@@ -19,7 +19,11 @@
 import type React from 'react';
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { updateOnDirectionChange } from '../../bpk-component-rtl-toggle';
+import readme from '../README.md';
+
 
 import BpkSlider from './BpkSlider';
 
@@ -111,6 +115,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-slider',
   component: BpkSlider,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -27,6 +27,28 @@ export default () => (
 );
 ```
 
+### With unlimited input
+
+```tsx
+import BpkChatbotInput from '@skyscanner/backpack-web/bpk-component-chatbot-input';
+
+export default () => (
+  <BpkChatbotInput.Root>
+    <BpkChatbotInput.Input
+      inputValue=""
+      loadingAriaLabel="Loading"
+      sendAriaLabel="Send"
+      placeholder="Ask away"
+      noCharacterLimit
+      onInputChange={(value) => console.log(value)}
+      onInputFocus={() => {}}
+      onInputBlur={() => {}}
+      onSubmit={() => {}}
+    />
+  </BpkChatbotInput.Root>
+);
+```
+
 ### With toolbar
 
 ```tsx

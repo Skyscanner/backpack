@@ -19,8 +19,12 @@
 import { Component } from 'react';
 import type { ChangeEvent } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import
 import { action } from 'bpk-storybook-utils';
+
+import readme from '../README.md';
 
 import BpkSelect from './BpkSelect';
 
@@ -282,6 +286,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-select',
   component: BpkSelect,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -19,10 +19,14 @@
 import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkButton from '../../bpk-component-button';
 import BpkInput, { withOpenEvents } from '../../bpk-component-input';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkPopover from './BpkPopover';
 
@@ -193,6 +197,16 @@ const VisualExample = () => (
 const meta = {
   title: 'bpk-component-popover',
   component: BpkPopover,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

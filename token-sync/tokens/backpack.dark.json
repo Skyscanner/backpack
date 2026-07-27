@@ -53,12 +53,6 @@
           "$value": "{Spacing.md}"
         },
         "$type": "dimension"
-      },
-      "Typography": {
-        "tmp-badge-label": {
-          "$value": "14px"
-        },
-        "$type": "dimension"
       }
     },
     "Button": {
@@ -73,7 +67,7 @@
           "$value": "{Neutral.Dark Grey 00}"
         },
         "bg-feature-pressed": {
-          "$value": "{Colour.Bright Blue 20}"
+          "$value": "{Colour.Bright Blue}"
         },
         "bg-featured": {
           "$value": "{Colour.Bright Blue 20}"
@@ -87,6 +81,9 @@
         "bg-primary": {
           "$value": "{Colour.Sky Blue 85}"
         },
+        "bg-primary-pressed": {
+          "$value": "{Colour.Twilight}"
+        },
         "bg-primaryOnDark": {
           "$value": "{Neutral.White}"
         },
@@ -94,10 +91,10 @@
           "$value": "{Neutral.Grey 30}"
         },
         "bg-primaryOnLight": {
-          "$value": "{Neutral.White}"
+          "$value": "{Colour.Dark Sky}"
         },
         "bg-primaryOnLight-pressed": {
-          "$value": "{Colour.Dark Blue 100}"
+          "$value": "{Colour.Dark Sky 85}"
         },
         "bg-secondary": {
           "$value": "{Neutral.Dark Grey 25}"
@@ -120,8 +117,8 @@
         "bg-secondaryOnDark-pressed": {
           "$value": "{Alpha.White Alpha 20}"
         },
-        "text-disruptive": {
-          "$value": "{Colour.Bright Berry}"
+        "text-destructive": {
+          "$value": "{Colour.Berry}"
         },
         "text-feature": {
           "$value": "{Neutral.Dark Grey 10}"
@@ -144,23 +141,11 @@
         "min-height-default": {
           "$value": "{Heights.36}"
         },
-        "min-height-large": {
-          "$value": "48px"
-        },
-        "min-weight-large": {
-          "$value": "48px"
-        },
         "padding-horizontal-default": {
           "$value": "{Spacing.base}"
         },
         "padding-horizontal-large": {
           "$value": "{Spacing.base}"
-        },
-        "$type": "dimension"
-      },
-      "Typography": {
-        "tmp-default-label": {
-          "$value": "16px"
         },
         "$type": "dimension"
       }
@@ -226,7 +211,7 @@
         "$type": "dimension"
       }
     },
-    "Chip-group-filter": {
+    "Chip Group": {
       "Colour": {
         "bg-icon-hover-on-image": {
           "$value": "{Neutral.Dark Grey 10}"
@@ -416,6 +401,21 @@
       },
       "selected": {
         "$value": "{Colour.Twilight}"
+      },
+      "$type": "color"
+    },
+    "Page Indicator": {
+      "bg-default-selected": {
+        "$value": "{Neutral.White}"
+      },
+      "bg-default-unselected": {
+        "$value": "{Alpha.White Alpha 50}"
+      },
+      "bg-overImage-selected": {
+        "$value": "{Neutral.White}"
+      },
+      "bg-overImage-unselected": {
+        "$value": "{Alpha.White Alpha 50}"
       },
       "$type": "color"
     },
@@ -647,6 +647,9 @@
     "line-onContrast": {
       "$value": "{Alpha.White Alpha 20}"
     },
+    "line-subtle": {
+      "$value": "{Alpha.White Alpha 10}"
+    },
     "$type": "color"
   },
   "Status": {
@@ -746,139 +749,5 @@
   "Title?": {
     "$value": true,
     "$type": "boolean"
-  },
-  "Typography": {
-    "Family": {
-      "Sans Serif": {
-        "$value": "Skyscanner Relative"
-      },
-      "Serif": {
-        "$value": "Larken"
-      },
-      "$type": "fontFamily"
-    },
-    "Kerning": {
-      "Default": {
-        "$value": "0px"
-      },
-      "Loose": {
-        "$value": "0px"
-      },
-      "Tight": {
-        "$value": "0px"
-      },
-      "$type": "dimension"
-    },
-    "Line Heights": {
-      "16": {
-        "$value": "16px"
-      },
-      "20": {
-        "$value": "20px"
-      },
-      "24": {
-        "$value": "24px"
-      },
-      "28": {
-        "$value": "28px"
-      },
-      "40": {
-        "$value": "40px"
-      },
-      "48": {
-        "$value": "48px"
-      },
-      "64": {
-        "$value": "64px"
-      },
-      "76": {
-        "$value": "76px"
-      },
-      "82": {
-        "$value": "82px"
-      },
-      "96": {
-        "$value": "96px"
-      },
-      "115": {
-        "$value": "115px"
-      },
-      "120": {
-        "$value": "120px"
-      },
-      "153": {
-        "$value": "154px"
-      },
-      "192": {
-        "$value": "192px"
-      },
-      "$type": "dimension"
-    },
-    "Sizes": {
-      "12": {
-        "$value": "12px"
-      },
-      "14": {
-        "$value": "14px"
-      },
-      "20": {
-        "$value": "20px"
-      },
-      "24": {
-        "$value": "24px"
-      },
-      "32": {
-        "$value": "32px"
-      },
-      "40": {
-        "$value": "40px"
-      },
-      "48": {
-        "$value": "48px"
-      },
-      "64": {
-        "$value": "64px"
-      },
-      "76": {
-        "$value": "76px"
-      },
-      "96": {
-        "$value": "96px"
-      },
-      "120": {
-        "$value": "120px"
-      },
-      "144": {
-        "$value": "144px"
-      },
-      "192": {
-        "$value": "192px"
-      },
-      "240": {
-        "$value": "240px"
-      },
-      "base": {
-        "$value": "16px"
-      },
-      "$type": "dimension"
-    },
-    "Style": {
-      "Body": {
-        "$value": 400
-      },
-      "Headline": {
-        "$value": 700
-      },
-      "Hero": {
-        "$value": 900
-      },
-      "Label": {
-        "$value": 700
-      },
-      "Subhead": {
-        "$value": 300
-      },
-      "$type": "fontWeight"
-    }
   }
 }

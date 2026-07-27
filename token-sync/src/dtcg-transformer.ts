@@ -155,7 +155,7 @@ export function figmaColorToCss(value: FigmaRGBA): string {
 }
 
 // Figma FLOAT scopes that unambiguously indicate a unitless numeric value.
-// OPACITY is 0..1; LINE_HEIGHT is commonly a multiplier (1.5) in Figma and
+// OPACITY is 0..1; LINE_HEIGHT is a multiplier (e.g. 1.5) in Figma and
 // converting it to "1.5px" is always wrong.
 const NUMBER_FLOAT_SCOPES: readonly string[] = ['OPACITY', 'LINE_HEIGHT'];
 

@@ -19,6 +19,8 @@
 import { useState, Component } from 'react';
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   canvasContrastDay,
   colorWhite,
@@ -45,6 +47,7 @@ import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-containe
 import BpkPrice from '../../bpk-component-price';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import {
   BpkCheckboxCard,
@@ -841,6 +844,16 @@ const meta = {
       </BpkProvider>
     ),
   ],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -23,6 +23,7 @@ export type ActionIO = {
   warning: (message: string) => void;
   error: (message: string) => void;
   setFailed: (message: string) => void;
+  setOutput: (name: string, value: string) => void;
   appendSummary: (markdown: string) => Promise<void>;
 };
 
@@ -37,6 +38,7 @@ export const createGitHubActionsIO = (): ActionIO => ({
   warning: (message) => core.warning(message),
   error: (message) => core.error(message),
   setFailed: (message) => core.setFailed(message),
+  setOutput: (name, value) => core.setOutput(name, value),
   appendSummary: async (markdown) => {
     if (!process.env.GITHUB_STEP_SUMMARY) {
       return;

@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 
 import BpkButton from '../../bpk-component-button';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkScrim from './BpkScrim';
 import withScrimmedPortal from './withScrimmedPortal';
@@ -97,7 +98,7 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
           <Markdown>
           {`\`withScrim\` sends all props it receives down to the component, except \`getApplicationElement\` and \`padded\`. It also adds some props that are used for a11y and closing the modal:

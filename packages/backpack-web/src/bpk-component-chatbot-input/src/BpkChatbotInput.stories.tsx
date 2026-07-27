@@ -19,6 +19,8 @@
 import { useState } from 'react';
 import type { ComponentProps } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   borderRadiusLg,
   corePrimaryDay,
@@ -38,6 +40,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
 import BpkThemeProvider from '../../bpk-theming';
+import readme from '../README.md';
 
 import BpkChatbotInput from './BpkChatbotInput';
 import { CHATBOT_INPUT_TYPES } from './common-types';
@@ -140,6 +143,16 @@ const ComposerOver500Example = () => (
   <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
     <ChatbotInputWithState
       inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+      initialValue={longText}
+    />
+  </div>
+);
+
+const ComposerUnlimitedExample = () => (
+  <div className={getClassName('bpk-chatbot-input-examples--on-canvas')}>
+    <ChatbotInputWithState
+      inputType={CHATBOT_INPUT_TYPES.COMPOSER}
+      noCharacterLimit
       initialValue={longText}
     />
   </div>
@@ -383,6 +396,16 @@ const meta = {
       </BpkProvider>
     ),
   ],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -401,6 +424,10 @@ export const ComposerSending = {
 
 export const ComposerOver500 = {
   render: () => <ComposerOver500Example />,
+};
+
+export const ComposerUnlimited = {
+  render: () => <ComposerUnlimitedExample />,
 };
 
 export const WithToolbar = {

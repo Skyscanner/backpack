@@ -17,12 +17,9 @@
  */
 
 @use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/borders';
 @use '../../bpk-mixins/breakpoints';
 @use '../../bpk-mixins/radii';
 @use '../../bpk-mixins/shadows';
-@use '../../bpk-mixins/typography';
-@use '../../bpk-mixins/utils';
 
 @mixin animation-slide-up {
   animation-duration: tokens.$bpk-duration-sm;
@@ -66,7 +63,8 @@
     height: fit-content;
     max-height: 90%;
     margin-bottom: 0;
-    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    border-radius: var(--bpk-radius-lg, tokens.$bpk-border-radius-lg)
+      var(--bpk-radius-lg, tokens.$bpk-border-radius-lg) 0 0;
     overflow-x: hidden;
   }
 
@@ -181,10 +179,8 @@
     position: sticky;
     top: 0;
     z-index: tokens.$bpk-zindex-tooltip - 1;
-
-    @include utils.bpk-themeable-property(
-      background-color,
-      --bpk-navigation-bar-background-color,
+    background-color: var(
+      --bpk-surface-default,
       tokens.$bpk-surface-default-day
     );
   }

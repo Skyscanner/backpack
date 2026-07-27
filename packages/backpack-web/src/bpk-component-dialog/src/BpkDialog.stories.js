@@ -16,8 +16,12 @@
  * limitations under the License.
  */
 
+
+
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
 import BpkButton from '../../bpk-component-button';
 import InfoIcon from '../../bpk-component-icon/lg/information-circle';
@@ -25,6 +29,7 @@ import TickIcon from '../../bpk-component-icon/lg/tick';
 import TrashIcon from '../../bpk-component-icon/lg/trash';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules, withDefaultProps } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkDialog from './BpkDialog';
 import { HEADER_ICON_TYPES } from './common-types';
@@ -169,6 +174,16 @@ const WithFlareExample = () => (
 const meta = {
   title: 'bpk-component-dialog',
   component: BpkDialog,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;

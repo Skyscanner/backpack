@@ -16,12 +16,15 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import BpkPanel from '../../bpk-component-panel';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkLink from './BpkLink';
 
@@ -226,6 +229,16 @@ const meta = {
     alternate: false,
     blank: false,
     implicit: false,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

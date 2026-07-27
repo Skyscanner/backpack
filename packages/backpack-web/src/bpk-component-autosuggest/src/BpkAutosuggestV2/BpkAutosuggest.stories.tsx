@@ -19,11 +19,12 @@
 import { Component } from 'react';
 import type { ReactElement, InputHTMLAttributes, Ref } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { userEvent, within } from 'storybook/test';
-
 
 import { withRtlSupport } from '../../../bpk-component-icon';
 import FlightIcon from '../../../bpk-component-icon/lg/flight';
+import readme from '../../README.md';
 import BpkAutosuggestSuggestion from '../BpkAutosuggestSuggestion';
 
 import BpkAutosuggest from './BpkAutosuggest';
@@ -283,6 +284,16 @@ export default {
   component: BpkAutosuggest,
   subcomponents: {
     BpkAutosuggestSuggestion,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta<typeof BpkAutosuggest>;
 

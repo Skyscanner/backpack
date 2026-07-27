@@ -18,6 +18,8 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
@@ -33,10 +35,12 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkCollapsible from './BpkCollapsible';
 import { COLLAPSIBLE_VARIANTS } from './common-types';
 import useBpkCollapsible from './useBpkCollapsible';
+import useBpkCollapsibleContext from './useBpkCollapsibleContext';
 
 import type { Meta } from '@storybook/react';
 
@@ -421,6 +425,152 @@ const RootProviderWithStateMachine = () => {
   );
 };
 
+// Reads state via useBpkCollapsibleContext() — no props passed in from above.
+// Rendered adjacent to the trigger so the values are always visible regardless
+// of open state, making it clear the hook works outside Content too.
+const StateReadout = () => {
+  const { disabled, open, visible } = useBpkCollapsibleContext();
+  return (
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      open: {String(open)} · visible: {String(visible)} · disabled:{' '}
+      {String(disabled)}
+    </BpkText>
+  );
+};
+
+const ContextReader = () => {
+  const collapsible = useBpkCollapsible();
+  return (
+    <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+      <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+        <code>StateReadout</code> calls <code>useBpkCollapsibleContext()</code>{' '}
+        directly — no props passed to it from above.
+      </BpkText>
+      <BpkCollapsible.RootProvider value={collapsible}>
+        <BpkCollapsible.Trigger>
+          <BpkText textStyle={TEXT_STYLES.heading5}>Toggle</BpkText>
+          <BpkCollapsible.Indicator>
+            <ChevronIcon />
+          </BpkCollapsible.Indicator>
+        </BpkCollapsible.Trigger>
+        <StateReadout />
+        <BpkCollapsible.Content>
+          <BpkBox paddingTop={BpkSpacing.SM}>
+            <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+              Hidden content
+            </BpkText>
+          </BpkBox>
+        </BpkCollapsible.Content>
+      </BpkCollapsible.RootProvider>
+    </BpkVStack>
+  );
+};
+
+// Demonstrates asChild on Root: the Root merges its props onto the child
+// element instead of injecting a wrapper <div>. No hook required.
+const AsChildRoot = () => (
+  <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      Without <code>asChild</code>: Root renders a wrapper{' '}
+      <code>&lt;div&gt;</code> around its child.
+    </BpkText>
+    <div>
+      <BpkCollapsible.Root defaultOpen>
+        <div>
+          <BpkCollapsible.Trigger>
+            <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </div>
+      </BpkCollapsible.Root>
+    </div>
+
+    <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+      With <code>asChild</code>: the <code>&lt;li&gt;</code> becomes the root
+      — no wrapper inserted.
+    </BpkText>
+    <ul>
+      <BpkCollapsible.Root asChild defaultOpen>
+        <li>
+          <BpkCollapsible.Trigger>
+            <BpkText textStyle={TEXT_STYLES.heading5}>With asChild</BpkText>
+            <BpkCollapsible.Indicator>
+              <ChevronIcon />
+            </BpkCollapsible.Indicator>
+          </BpkCollapsible.Trigger>
+          <BpkCollapsible.Content>
+            <BpkBox paddingTop={BpkSpacing.SM}>
+              <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+            </BpkBox>
+          </BpkCollapsible.Content>
+        </li>
+      </BpkCollapsible.Root>
+    </ul>
+  </BpkVStack>
+);
+
+// Demonstrates asChild: the RootProvider merges its props onto the child
+// <li> element instead of injecting a wrapper <div>. Inspect the DOM to
+// confirm the output is <li data-backpack-ds-component …> with no extra node.
+const AsChildRootProvider = () => {
+  const withoutAsChild = useBpkCollapsible({ defaultOpen: true });
+  const withAsChild = useBpkCollapsible({ defaultOpen: true });
+  return (
+    <BpkVStack gap={BpkSpacing.Base} alignItems="flex-start">
+      <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+        Without <code>asChild</code>: RootProvider renders a wrapper{' '}
+        <code>&lt;div&gt;</code> around its child.
+      </BpkText>
+      <div>
+        <BpkCollapsible.RootProvider value={withoutAsChild}>
+          <div>
+            <BpkCollapsible.Trigger>
+              <BpkText textStyle={TEXT_STYLES.heading5}>Without asChild</BpkText>
+              <BpkCollapsible.Indicator>
+                <ChevronIcon />
+              </BpkCollapsible.Indicator>
+            </BpkCollapsible.Trigger>
+            <BpkCollapsible.Content>
+              <BpkBox paddingTop={BpkSpacing.SM}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+              </BpkBox>
+            </BpkCollapsible.Content>
+          </div>
+        </BpkCollapsible.RootProvider>
+      </div>
+
+      <BpkText textStyle={TEXT_STYLES.bodyDefault}>
+        With <code>asChild</code>: the <code>&lt;li&gt;</code> becomes the root
+        — no wrapper inserted.
+      </BpkText>
+      <ul>
+        <BpkCollapsible.RootProvider value={withAsChild} asChild>
+          <li>
+            <BpkCollapsible.Trigger>
+              <BpkText textStyle={TEXT_STYLES.heading5}>With asChild</BpkText>
+              <BpkCollapsible.Indicator>
+                <ChevronIcon />
+              </BpkCollapsible.Indicator>
+            </BpkCollapsible.Trigger>
+            <BpkCollapsible.Content>
+              <BpkBox paddingTop={BpkSpacing.SM}>
+                <BpkText textStyle={TEXT_STYLES.bodyDefault}>Content</BpkText>
+              </BpkBox>
+            </BpkCollapsible.Content>
+          </li>
+        </BpkCollapsible.RootProvider>
+      </ul>
+    </BpkVStack>
+  );
+};
+
 const VisualTest = () => (
   <BpkVStack gap={BpkSpacing.Base}>
     <Basic />
@@ -436,6 +586,16 @@ const VisualTest = () => (
 const meta = {
   title: 'bpk-component-collapsible',
   component: BpkCollapsible.Root,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
   decorators: [
     (Story: any) => (
       <BpkProvider>
@@ -466,3 +626,6 @@ export const DisabledState = { render: () => <Disabled /> };
 export const CollapsedHeightShowMore = { render: () => <ShowMore /> };
 export const LongContentExample = { render: () => <LongContent /> };
 export const VisualTestComposite = { render: () => <VisualTest /> };
+export const ContextReaderHook = { render: () => <ContextReader /> };
+export const AsChildOnRoot = { render: () => <AsChildRoot /> };
+export const AsChildOnRootProvider = { render: () => <AsChildRootProvider /> };

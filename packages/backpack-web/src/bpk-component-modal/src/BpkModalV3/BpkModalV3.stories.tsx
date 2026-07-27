@@ -19,6 +19,8 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkButton from '../../../bpk-component-button';
 import {
   BpkBox,
@@ -32,6 +34,7 @@ import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 import BpkVisuallyHidden from '../../../bpk-component-visually-hidden';
 
 import BpkModalV3 from './BpkModalV3';
+import readme from './README.md';
 import { MODAL_V3_TYPES } from './common-types';
 
 import type { Meta } from '@storybook/react';
@@ -697,6 +700,16 @@ const meta = {
   argTypes: {
     zoomEnabled: {
       control: 'boolean',
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
     },
   },
 } satisfies Meta;

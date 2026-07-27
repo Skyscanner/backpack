@@ -18,20 +18,20 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { basename, dirname, resolve } from "node:path";
 
-import { analyzeRepository } from "../analysis/analyze-repository";
 import {
   BACKPACK_ADOPTION_OUTPUT_KEY,
   DEFAULT_ADOPTION_GUARD_THRESHOLD,
   DEFAULT_OUTPUT_PATH,
   DEFAULT_PATTERN,
-} from "../shared/config";
+  analyzeRepository,
+  evaluateGuard,
+} from "@skyscanner/backpack-adoption-analyzer";
 import type {
   ActionResult,
   AdoptionReport,
   BackpackAdoptionMetrics,
   ResultsFile,
-} from "../shared/types";
-import { evaluateGuard } from "../guard/evaluate-guard";
+} from "@skyscanner/backpack-adoption-analyzer";
 import {
   getPullRequestBaseRef,
   isMainBranch,
@@ -40,6 +40,7 @@ import {
 } from "../git/base-worktree";
 import { createGitHubActionsIO, getBooleanInput } from "./io";
 import type { ActionIO } from "./io";
+import { ADOPTION_OUTPUTS } from "./outputs";
 import { buildStepSummary } from "./summary";
 
 export type RunOptions = {
@@ -73,6 +74,21 @@ const writeResults = async (
     `${JSON.stringify(resultsFile, null, 2)}\n`,
     "utf8",
   );
+};
+
+const formatOutput = (value: number | null) =>
+  value === null ? "" : value.toFixed(2);
+
+const writeOutputs = (io: ActionIO, result: ActionResult) => {
+  const {
+    baseBackpackPercentage,
+    delta,
+    headBackpackPercentage,
+  } = result.comparison;
+
+  io.setOutput(ADOPTION_OUTPUTS.head, formatOutput(headBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.base, formatOutput(baseBackpackPercentage));
+  io.setOutput(ADOPTION_OUTPUTS.delta, formatOutput(delta));
 };
 
 const createActionResult = ({
@@ -205,6 +221,7 @@ export const run = async ({
   });
 
   await writeResults(cwd, outputPath, result);
+  writeOutputs(io, result);
   await io.appendSummary(buildStepSummary(result));
 
   io.info(`Backpack adoption results written to ${outputPath}`);
@@ -227,12 +244,12 @@ export const run = async ({
     );
   }
 
-  if (guard.status === "warn") {
-    io.warning(guard.reason);
+  if (result.guard.status === "warn") {
+    io.warning(result.guard.reason);
   }
 
-  if (guard.status === "fail") {
-    io.setFailed(guard.reason);
+  if (result.guard.status === "fail") {
+    io.setFailed(result.guard.reason);
   }
 
   return result;

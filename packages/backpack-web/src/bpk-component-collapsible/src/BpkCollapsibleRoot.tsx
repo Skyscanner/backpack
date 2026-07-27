@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Collapsible } from '@ark-ui/react';
 
@@ -31,8 +31,9 @@ import type {
 
 type ElementIds = Partial<{ root: string; trigger: string; content: string }>;
 
+// Discriminated union so `asChild: true` enforces a single ReactElement child
+// (required by Ark's slot merging) while the default case keeps ReactNode.
 export type BpkCollapsibleRootProps = {
-  children: ReactNode;
   collapsedHeight?: string | number;
   defaultOpen?: boolean;
   disabled?: boolean;
@@ -43,9 +44,13 @@ export type BpkCollapsibleRootProps = {
   open?: boolean;
   unmountOnExit?: boolean;
   variant?: BpkCollapsibleVariant;
-};
+} & (
+  | { asChild: true; children: ReactElement }
+  | { asChild?: false; children: ReactNode }
+);
 
 const BpkCollapsibleRoot = ({
+  asChild,
   children,
   collapsedHeight,
   defaultOpen,
@@ -59,6 +64,7 @@ const BpkCollapsibleRoot = ({
   variant = COLLAPSIBLE_VARIANTS.default,
 }: BpkCollapsibleRootProps) => (
   <Collapsible.Root
+    asChild={asChild}
     className={getRootClassName(variant)}
     collapsedHeight={collapsedHeight}
     defaultOpen={defaultOpen}

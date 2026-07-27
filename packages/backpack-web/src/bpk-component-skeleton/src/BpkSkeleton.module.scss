@@ -24,13 +24,13 @@
     height: tokens.$bpk-one-pixel-rem * 96;
 
     &--rounded {
-      border-radius: tokens.$bpk-border-radius-sm;
+      border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
     }
   }
 
   &__headline {
     width: tokens.$bpk-one-pixel-rem * 80;
-    border-radius: tokens.$bpk-border-radius-xs;
+    border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
 
     &--small {
       height: tokens.$bpk-one-pixel-rem * 8;
@@ -39,12 +39,12 @@
 
     &--default {
       height: tokens.$bpk-one-pixel-rem * 16;
-      border-radius: tokens.$bpk-border-radius-xs;
+      border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
     }
 
     &--large {
       height: tokens.$bpk-one-pixel-rem * 32;
-      border-radius: tokens.$bpk-border-radius-xs;
+      border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
     }
   }
 
@@ -80,6 +80,6 @@
   }
 
   &__onContrast {
-    background-color: tokens.$bpk-surface-tint-day;
+    background-color: var(--bpk-surface-tint, tokens.$bpk-surface-tint-day);
   }
 }

@@ -46,6 +46,7 @@ To contribute please see [contributing.md](CONTRIBUTING.md).
 [`bpk-component-datepicker`](/packages/backpack-web/src/bpk-component-datepicker)
 [`bpk-component-description-list`](/packages/backpack-web/src/bpk-component-description-list)
 [`bpk-component-dialog`](/packages/backpack-web/src/bpk-component-dialog)
+[`bpk-component-divider`](/packages/backpack-web/src/bpk-component-divider)
 [`bpk-component-drawer`](/packages/backpack-web/src/bpk-component-drawer)
 [`bpk-component-fieldset`](/packages/backpack-web/src/bpk-component-fieldset)
 [`bpk-component-form-validation`](/packages/backpack-web/src/bpk-component-form-validation)

@@ -18,12 +18,16 @@
 
 import { useState } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import {
   BpkBox,
   BpkHStack,
   BpkProvider,
   BpkSpacing,
 } from '../../bpk-component-layout';
+import readme from '../README.md';
+
 
 import BpkThumbButton from './BpkThumbButton';
 
@@ -124,6 +128,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-thumb-button',
   component: BpkThumbButton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

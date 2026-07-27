@@ -16,11 +16,12 @@
  * limitations under the License.
  */
 
-$base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
-$font-formats: (woff2, woff, ttf);
-
 @use 'sass:list';
 @use 'sass:map';
+@use './locale-line-breaks';
+
+$base-url: 'https://js.skyscnr.com/sttc/bpk-fonts';
+$font-formats: (woff2, woff, ttf);
 
 // Table-driven font registry: add families/weights in $bpk-fonts, and the mixin
 // will emit matching @font-face rules. Filenames are the hashed names without
@@ -532,3 +533,5 @@ $bpk-fonts: (
 :where([lang]) {
   font-family: var(--bpk-base-font-stack);
 }
+
+@include locale-line-breaks.bpk-locale-line-breaks;

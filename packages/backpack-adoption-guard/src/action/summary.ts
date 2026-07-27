@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ActionResult, AdoptionReport, GuardResult } from "../shared/types";
+import type {
+  ActionResult,
+  AdoptionReport,
+  GuardResult,
+} from "@skyscanner/backpack-adoption-analyzer";
 
 const STATUS_HEADER: Record<GuardResult["status"], string> = {
   pass: "✅ Backpack Adoption Guard — Pass",
@@ -106,7 +110,6 @@ ${buildPlainEnglishMain(head)}
 | └ With className override | ${formatCount(head.usage.nonPureBackpack.count)} | ${head.usage.nonPureBackpack.percentage.toFixed(2)}% |
 | Non-Backpack | ${formatCount(head.usage.nonBackpack.count)} | ${head.usage.nonBackpack.percentage.toFixed(2)}% |
 | Raw HTML | ${formatCount(head.usage.rawHtml.count)} | ${head.usage.rawHtml.percentage.toFixed(2)}% |
-
 ### Run details
 
 | Detail | Value |
@@ -138,7 +141,6 @@ ${buildPlainEnglishMain(head)}
 | └ With className override | ${formatCount(head.usage.nonPureBackpack.count)} | ${head.usage.nonPureBackpack.percentage.toFixed(2)}% |
 | Non-Backpack | ${formatCount(head.usage.nonBackpack.count)} | ${head.usage.nonBackpack.percentage.toFixed(2)}% |
 | Raw HTML | ${formatCount(head.usage.rawHtml.count)} | ${head.usage.rawHtml.percentage.toFixed(2)}% |
-
 ### Run details
 
 | Detail | Value |
@@ -176,7 +178,6 @@ ${buildPlainEnglishComparison(head, base)}
 | └ With className override | ${formatPercentageAndCount(head.usage.nonPureBackpack.percentage, head.usage.nonPureBackpack.count)} | ${formatPercentageAndCount(base.usage.nonPureBackpack.percentage, base.usage.nonPureBackpack.count)} | ${formatDelta(Number((head.usage.nonPureBackpack.percentage - base.usage.nonPureBackpack.percentage).toFixed(2)))} |
 | Non-Backpack | ${formatPercentageAndCount(head.usage.nonBackpack.percentage, head.usage.nonBackpack.count)} | ${formatPercentageAndCount(base.usage.nonBackpack.percentage, base.usage.nonBackpack.count)} | ${formatDelta(Number((head.usage.nonBackpack.percentage - base.usage.nonBackpack.percentage).toFixed(2)))} |
 | Raw HTML | ${formatPercentageAndCount(head.usage.rawHtml.percentage, head.usage.rawHtml.count)} | ${formatPercentageAndCount(base.usage.rawHtml.percentage, base.usage.rawHtml.count)} | ${formatDelta(Number((head.usage.rawHtml.percentage - base.usage.rawHtml.percentage).toFixed(2)))} |
-
 ### Run details
 
 | Detail | Value |

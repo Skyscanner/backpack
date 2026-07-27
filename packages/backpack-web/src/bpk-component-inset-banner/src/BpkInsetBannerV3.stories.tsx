@@ -19,6 +19,9 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import {
   canvasContrastDay,
   surfaceSubtleDay,
@@ -42,6 +45,7 @@ import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
 
 import BpkInsetBannerV3 from './BpkInsetBannerV3/BpkInsetBannerV3';
+import readme from './BpkInsetBannerV3/README.md';
 
 import type { Meta } from '@storybook/react';
 
@@ -600,6 +604,16 @@ const meta = {
   title: 'bpk-component-inset-banner-v3',
   component: BpkInsetBannerV3.Root,
   decorators: [(story: () => ReactNode) => <BpkProvider>{story()}</BpkProvider>],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

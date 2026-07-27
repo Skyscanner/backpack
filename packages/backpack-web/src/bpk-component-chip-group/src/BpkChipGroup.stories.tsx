@@ -18,9 +18,14 @@
 
 import { useState } from 'react';
 
-import { CHIP_TYPES } from '../../bpk-component-chip';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import { CHIP_TYPES, BpkDropdownChip } from '../../bpk-component-chip';
+import { BpkVessel } from '../../bpk-component-layout';
+import BpkPopover from '../../bpk-component-popover';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkMultiSelectChipGroup, {
   CHIP_GROUP_TYPES,
@@ -28,7 +33,7 @@ import BpkMultiSelectChipGroup, {
 } from './BpkMultiSelectChipGroup';
 import BpkSingleSelectChipGroup from './BpkSingleSelectChipGroup';
 
-import type { MultiSelectProps, ChipItem } from './BpkMultiSelectChipGroup';
+import type { MultiSelectProps, ChipItem, ChipRenderProps } from './BpkMultiSelectChipGroup';
 import type { SingleSelectProps } from './BpkSingleSelectChipGroup';
 import type { Meta } from '@storybook/react';
 
@@ -390,6 +395,16 @@ const meta = {
     BpkChipGroupSingleSelect: BpkSingleSelectChipGroup,
     // TODO: can we show the shape of ChipItem here?
   },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -432,6 +447,68 @@ export const AllChipTypes = {
 
 export const ExampleStateManagement = {
   render: () => <StateManagement />,
+};
+
+const POPOVER_CHIP_LABELS = ['Flights', 'Hotels', 'Car hire', 'Trains'];
+
+const makePopoverRenderChip =
+  (label: string) =>
+  ({ accessibilityLabel, onClick, selected, type }: ChipRenderProps) =>
+    (
+      <BpkPopover
+        id={`popover-chip-${label}`}
+        label={`${label} options`}
+        labelAsTitle
+        placement="bottom"
+        showArrow={false}
+        closeButtonLabel={`Close ${label} options`}
+        onClose={() => {}}
+        style={{ marginTop: '8px' }}
+        target={
+          <BpkVessel style={{ display: 'inline-block' }}>
+            <BpkDropdownChip
+              accessibilityLabel={accessibilityLabel}
+              type={type}
+              selected={selected}
+              onClick={onClick}
+            >
+              {label}
+            </BpkDropdownChip>
+          </BpkVessel>
+        }
+      >
+        <BpkText>Content for {label}</BpkText>
+      </BpkPopover>
+    );
+
+const WithPopoverExample = () => {
+  const [stickySelected, setStickySelected] = useState(false);
+
+  const chipsWithPopover: ChipItem[] = POPOVER_CHIP_LABELS.map((label) => ({
+    text: label,
+    renderChip: makePopoverRenderChip(label),
+  }));
+
+  const stickyChip: ChipItem = {
+    text: 'Sort & Filter',
+    selected: stickySelected,
+    onClick: (selected: boolean) => setStickySelected(selected),
+  };
+
+  return (
+    <BpkMultiSelectChipGroupState
+      type={CHIP_GROUP_TYPES.rail}
+      chips={chipsWithPopover}
+      stickyChip={stickyChip}
+      ariaLabel="Select filters"
+      leadingNudgerLabel="Scroll back"
+      trailingNudgerLabel="Scroll forward"
+    />
+  );
+};
+
+export const WithPopover = {
+  render: () => <WithPopoverExample />,
 };
 
 export const VisualTest = {

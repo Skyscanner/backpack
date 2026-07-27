@@ -17,6 +17,7 @@
  */
 
 @use '../../bpk-mixins/badges';
+@use '../../bpk-mixins/utils';
 
 .bpk-badge {
   @include badges.bpk-badge;
@@ -67,5 +68,15 @@
 
   &--subtle {
     @include badges.bpk-badge--subtle;
+  }
+
+  &--interactive {
+    text-decoration: none;
+
+    @include badges.bpk-badge--interactive;
+
+    &:focus-visible {
+      @include utils.bpk-focus-indicator;
+    }
   }
 }

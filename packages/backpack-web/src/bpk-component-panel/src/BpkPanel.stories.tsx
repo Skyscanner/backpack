@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkText, { TEXT_COLORS } from '../../bpk-component-text';
+import readme from '../README.md';
+
 
 import BpkPanel, { PANEL_BG_COLORS } from './BpkPanel';
 
@@ -125,6 +129,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-panel',
   component: BpkPanel,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

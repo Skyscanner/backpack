@@ -17,8 +17,12 @@
  */
 
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkStarRating from '../../bpk-component-star-rating';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkRating from './BpkRating';
 import { RATING_SIZES, RATING_SCALES } from './common-types';
@@ -364,6 +368,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-rating',
   component: BpkRating,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

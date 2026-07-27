@@ -16,7 +16,11 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
+
 
 import BpkSkeleton from './BpkSkeleton';
 import { SKELETON_TYPES, SIZE_TYPES, IMAGE_SKELETON_STYLE, BACKGROUND_STYLE } from './common-types';
@@ -136,6 +140,16 @@ const BackgroundStyleOnContrastExample = () => (
 const meta = {
   title: 'bpk-component-skeleton',
   component: BpkSkeleton,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

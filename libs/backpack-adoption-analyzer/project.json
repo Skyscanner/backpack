@@ -1,0 +1,43 @@
+{
+  "name": "backpack-adoption-analyzer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backpack-adoption-analyzer/src",
+  "projectType": "library",
+  "tags": ["scope:internal", "type:tooling"],
+  "targets": {
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm --filter @skyscanner/backpack-adoption-analyzer run lint"
+      },
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.{js,ts}",
+        "{workspaceRoot}/.eslintrc*",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm --filter @skyscanner/backpack-adoption-analyzer run test"
+      },
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm --filter @skyscanner/backpack-adoption-analyzer run typecheck"
+      },
+      "outputs": [],
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/tsconfig*.json",
+        "{workspaceRoot}/tsconfig.base.json",
+        "{workspaceRoot}/tsconfig.json"
+      ]
+    }
+  }
+}
