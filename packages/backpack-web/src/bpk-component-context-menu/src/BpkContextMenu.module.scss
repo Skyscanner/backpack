@@ -92,7 +92,7 @@ $context-menu-max-visible-items: 8.5;
 .bpk-context-menu__content {
   display: flex;
   flex-direction: column;
-  border-radius: tokens.$bpk-border-radius-lg;
+  border-radius: tokens.$bpk-border-radius-md;
   outline: none;
   background-color: var(
     --bpk-surface-elevated,
