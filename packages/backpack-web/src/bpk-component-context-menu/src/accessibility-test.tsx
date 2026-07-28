@@ -24,7 +24,7 @@ import { CONTEXT_MENU_ITEM_VARIANTS } from './common-types';
 
 describe('BpkContextMenu accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (closed)', async () => {
-    const { container } = render(
+    render(
       <BpkContextMenu.Root>
         <BpkContextMenu.Trigger aria-label="Save to trip">
           <span>♥</span>
@@ -34,12 +34,14 @@ describe('BpkContextMenu accessibility tests', () => {
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>,
     );
-    const results = await axe(container);
+    // BpkContextMenuContent renders in a Portal appended to document.body,
+    // so axe must scan document.body rather than the render container.
+    const results = await axe(document.body);
     expect(results).toHaveNoViolations();
   });
 
   it('should not have programmatically-detectable accessibility issues (open)', async () => {
-    const { container } = render(
+    render(
       <BpkContextMenu.Root open>
         <BpkContextMenu.Trigger aria-label="Save to trip">
           <span>♥</span>
@@ -66,7 +68,36 @@ describe('BpkContextMenu accessibility tests', () => {
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>,
     );
-    const results = await axe(container);
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('BpkContextMenu.SaveTrigger accessibility tests', () => {
+  it('should not have programmatically-detectable accessibility issues (closed)', async () => {
+    render(
+      <BpkContextMenu.Root>
+        <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
+        <BpkContextMenu.Content>
+          <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
+        </BpkContextMenu.Content>
+      </BpkContextMenu.Root>,
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should not have programmatically-detectable accessibility issues (open)', async () => {
+    render(
+      <BpkContextMenu.Root open>
+        <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
+        <BpkContextMenu.Content>
+          <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
+          <BpkContextMenu.Item value="new-trip">Plan a new trip</BpkContextMenu.Item>
+        </BpkContextMenu.Content>
+      </BpkContextMenu.Root>,
+    );
+    const results = await axe(document.body);
     expect(results).toHaveNoViolations();
   });
 });

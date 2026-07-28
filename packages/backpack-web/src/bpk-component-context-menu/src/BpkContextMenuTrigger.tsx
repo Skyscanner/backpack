@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Menu } from '@ark-ui/react';
 
@@ -28,25 +28,33 @@ import STYLES from './BpkContextMenu.module.scss';
 
 const getClassName = cssModules(STYLES);
 
-export type BpkContextMenuTriggerProps = {
-  children: ReactNode;
-  /**
-   * Accessible label for the trigger button. Required when the trigger
-   * contains only an icon with no visible text.
-   */
+type BpkContextMenuTriggerBase = {
+  /** Accessible label. Required when the trigger contains only an icon. */
   'aria-label'?: string;
+};
+
+type BpkContextMenuTriggerWithAsChild = BpkContextMenuTriggerBase & {
   /**
-   * When true, merges trigger behaviour (aria-haspopup, aria-expanded, click
-   * handler) onto the child element instead of rendering a Backpack-owned
-   * wrapper button.
+   * Merges trigger behaviour (aria-haspopup, aria-expanded, click handler)
+   * onto the child element instead of rendering a Backpack-owned wrapper button.
    *
    * **Requirement:** the child must be a native DOM element or a component
    * wrapped in React.forwardRef that spreads `...rest` onto its root node.
    * Plain function components without forwardRef will silently drop the merged
    * props and the menu will not open.
    */
-  asChild?: boolean;
+  asChild: true;
+  children: ReactElement;
 };
+
+type BpkContextMenuTriggerWithoutAsChild = BpkContextMenuTriggerBase & {
+  asChild?: false;
+  children: ReactNode;
+};
+
+export type BpkContextMenuTriggerProps =
+  | BpkContextMenuTriggerWithAsChild
+  | BpkContextMenuTriggerWithoutAsChild;
 
 const BpkContextMenuTrigger = ({
   'aria-label': ariaLabel,

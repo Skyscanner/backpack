@@ -62,6 +62,7 @@ $context-menu-max-visible-items: 8.5;
   border: 0;
   border-radius: 50%;
   background-color: transparent;
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
   cursor: pointer;
 
   &:focus {
@@ -94,7 +95,10 @@ $context-menu-max-visible-items: 8.5;
   flex-direction: column;
   border-radius: tokens.$bpk-border-radius-lg;
   outline: none;
-  background-color: var(--bpk-canvas, #{tokens.$bpk-canvas-day});
+  background-color: var(
+    --bpk-surface-elevated,
+    #{tokens.$bpk-surface-elevated-day}
+  );
   box-shadow: tokens.$bpk-box-shadow-lg;
   overflow-y: auto;
   max-block-size: $context-menu-item-height * $context-menu-max-visible-items;
@@ -135,11 +139,13 @@ $context-menu-max-visible-items: 8.5;
 
   @include typography.bpk-body-default;
 
-  &:hover:not([data-disabled]) {
-    background-color: var(
-      --bpk-canvas-contrast,
-      #{tokens.$bpk-canvas-contrast-day}
-    );
+  @include utils.bpk-hover {
+    &:not([data-disabled]) {
+      background-color: var(
+        --bpk-canvas-contrast,
+        #{tokens.$bpk-canvas-contrast-day}
+      );
+    }
   }
 
   // Ark exposes `data-highlighted` on keyboard-navigated items. We reuse the
@@ -199,7 +205,7 @@ $context-menu-max-visible-items: 8.5;
   border: 0;
   block-size: 0;
   border-block-start: tokens.$bpk-border-size-sm solid
-    var(--bpk-line, #{tokens.$bpk-line-day});
+    var(--bpk-other-line-default, #{tokens.$bpk-line-day});
   inline-size: 100%;
 }
 

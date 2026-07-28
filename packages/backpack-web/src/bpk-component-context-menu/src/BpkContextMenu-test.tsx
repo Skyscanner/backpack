@@ -145,10 +145,10 @@ describe('BpkContextMenu', () => {
       expect(screen.getByRole('button', { name: 'Save to trip' })).toBeVisible();
     });
 
-    it('has the ContextMenuSaveTrigger data-component attribute', () => {
+    it('has the ContextMenuSaveTrigger data-backpack-ds-component attribute', () => {
       renderMenuWithSaveTrigger();
       expect(
-        document.querySelector('[data-component="ContextMenuSaveTrigger"]'),
+        document.querySelector('[data-backpack-ds-component="ContextMenuSaveTrigger"]'),
       ).toBeInTheDocument();
     });
 
@@ -209,7 +209,31 @@ describe('BpkContextMenu', () => {
   it('does not accept className from consumers', () => {
     // @ts-expect-error — className is intentionally not part of the public API
     render(<BpkContextMenu.Root className="custom-classname" open />);
-    const root = document.querySelector('[data-component="ContextMenu"]');
+    const root = document.querySelector('[data-backpack-ds-component="ContextMenu"]');
     expect(root?.className).not.toContain('custom-classname');
+  });
+
+  it('renders TriggerItem with endIcon', () => {
+    render(
+      <BpkContextMenu.Root open>
+        <BpkContextMenu.Trigger aria-label="Open">
+          <span />
+        </BpkContextMenu.Trigger>
+        <BpkContextMenu.Content>
+          <BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Root>
+              <BpkContextMenu.TriggerItem endIcon={<span data-testid="chevron">›</span>}>
+                Move
+              </BpkContextMenu.TriggerItem>
+              <BpkContextMenu.Content>
+                <BpkContextMenu.Item value="dest">Destination</BpkContextMenu.Item>
+              </BpkContextMenu.Content>
+            </BpkContextMenu.Root>
+          </BpkContextMenu.ItemGroup>
+        </BpkContextMenu.Content>
+      </BpkContextMenu.Root>,
+    );
+    expect(screen.getByText('Move')).toBeVisible();
+    expect(screen.getByTestId('chevron')).toBeVisible();
   });
 });
