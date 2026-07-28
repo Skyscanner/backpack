@@ -99,6 +99,7 @@ $context-menu-max-visible-items: 8.5;
     #{tokens.$bpk-surface-elevated-day}
   );
   box-shadow: tokens.$bpk-box-shadow-lg;
+  overflow-x: hidden;
   overflow-y: auto;
   max-block-size: $context-menu-item-height * $context-menu-max-visible-items;
   max-inline-size: $context-menu-max-width;
