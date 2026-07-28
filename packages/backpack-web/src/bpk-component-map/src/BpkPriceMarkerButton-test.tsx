@@ -93,11 +93,24 @@ describe('BpkPriceMarkerButton', () => {
     );
   });
 
-  it('should render correctly with a "onClick" attribute', () => {
-    const mockOnClick = jest.fn();
-    render(<BpkPriceMarkerButton label="£120" onClick={mockOnClick} />);
+  it('should pass the click event to the "onClick" handler', () => {
+    const parentOnClick = jest.fn();
+    let handlerCalled = false;
+    render(
+      <BpkPriceMarkerButton
+        label="£120"
+        onClick={(event) => {
+          handlerCalled = true;
+          event.stopPropagation();
+        }}
+      />,
+    );
+    document.addEventListener('click', parentOnClick);
 
     fireEvent.click(screen.getByRole('button'));
-    expect(mockOnClick).toHaveBeenCalledTimes(1);
+    document.removeEventListener('click', parentOnClick);
+
+    expect(handlerCalled).toBe(true);
+    expect(parentOnClick).not.toHaveBeenCalled();
   });
 });
