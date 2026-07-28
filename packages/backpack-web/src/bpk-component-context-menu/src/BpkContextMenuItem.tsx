@@ -46,21 +46,22 @@ export type BpkContextMenuItemProps = {
   endIcon?: ReactNode;
   variant?: BpkContextMenuItemVariant;
   disabled?: boolean;
-  onClick?: () => void;
+  /** Fires when the item is activated by pointer or keyboard. */
+  onSelect?: () => void;
 };
 
 const BpkContextMenuItem = ({
   children,
   disabled = false,
   endIcon,
-  onClick,
+  onSelect,
   value,
   variant = CONTEXT_MENU_ITEM_VARIANTS.default,
 }: BpkContextMenuItemProps) => (
     <Menu.Item
       value={value}
       disabled={disabled}
-      onClick={onClick}
+      onSelect={onSelect}
       className={getClassName(
         'bpk-context-menu__item',
         variant === CONTEXT_MENU_ITEM_VARIANTS.destructive &&

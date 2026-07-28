@@ -39,18 +39,18 @@ const DefaultExample = () => (
       <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="tokyo" onClick={() => {}}>Tokyo 2026</BpkContextMenu.Item>
-          <BpkContextMenu.Item value="christmas" onClick={() => {}}>
+          <BpkContextMenu.Item value="tokyo" onSelect={() => {}}>Tokyo 2026</BpkContextMenu.Item>
+          <BpkContextMenu.Item value="christmas" onSelect={() => {}}>
             Christmas shopping
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="relax" onClick={() => {}}>Relax</BpkContextMenu.Item>
+          <BpkContextMenu.Item value="relax" onSelect={() => {}}>Relax</BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onClick={() => {}}>
+          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onSelect={() => {}}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onClick={() => {}}>
+          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onSelect={() => {}}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -168,22 +168,22 @@ const LongTripNameExample = () => (
       <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="long-1" onClick={() => {}}>
+          <BpkContextMenu.Item value="long-1" onSelect={() => {}}>
             Summer holiday in Southeast Asia 2026
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="long-2" onClick={() => {}}>
+          <BpkContextMenu.Item value="long-2" onSelect={() => {}}>
             Christmas markets — Vienna, Prague &amp; Budapest
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="long-3" onClick={() => {}}>
+          <BpkContextMenu.Item value="long-3" onSelect={() => {}}>
             Superlongwordwithnospacesthatbreakslayout
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onClick={() => {}}>
+          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onSelect={() => {}}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onClick={() => {}}>
+          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onSelect={() => {}}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>

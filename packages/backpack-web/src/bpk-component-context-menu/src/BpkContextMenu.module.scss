@@ -171,7 +171,7 @@ $context-menu-max-visible-items: 8.5;
   }
 }
 
-.bpk-context-menu__item--destructive {
+.bpk-context-menu__item--destructive:not([data-disabled]) {
   color: var(--bpk-status-danger-spot, #{tokens.$bpk-status-danger-spot-day});
 }
 

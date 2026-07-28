@@ -64,7 +64,7 @@ import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu'
 | `BpkContextMenu.Trigger` | `Menu.Trigger` | Generic trigger. Renders a plain `<button>` by default; pass `asChild` to merge trigger props onto a custom element. When using `asChild` the child must be a native DOM element or a `React.forwardRef` component that spreads `...rest` — plain function components will silently drop the merged props. |
 | `BpkContextMenu.SaveTrigger` | `Menu.Trigger` | Pre-styled circular heart-icon trigger for the save-to-list pattern. Accepts `aria-label` only — no consumer styling required. |
 | `BpkContextMenu.Content` | `Menu.Positioner` + `Menu.Content` | The floating menu surface. Portalled so it escapes overflow-hidden ancestors. |
-| `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `endIcon`, `destructive` variant, and an optional `onClick` for item-specific handlers alongside the root `onSelect`. |
+| `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `endIcon`, `destructive` variant, and an optional `onSelect` for item-specific handlers (fires for both pointer and keyboard activation). |
 | `BpkContextMenu.Separator` | `Menu.Separator` | Visual divider between logical groups of items. |
 | `BpkContextMenu.ItemGroup` | `<div>` | Groups related items under a shared container. Use to visually cluster items that belong together (e.g. a set of saved trips). |
 | `BpkContextMenu.TriggerItem` | `Menu.TriggerItem` | A menu row that opens a nested sub-menu on hover/arrow-right. Accepts an optional `endIcon` (typically a chevron) to signal the sub-menu. |
