@@ -115,6 +115,14 @@ $context-menu-max-visible-items: 8.5;
 
   &[data-state='open'] {
     animation: bpk-context-menu-fade-in $context-menu-duration ease;
+
+    // Suppress hover background for the duration of the open animation.
+    // CSS animations take cascade precedence over :hover, so the item stays
+    // transparent until the menu has finished appearing. The animation runs
+    // once and does not fill-forward, so normal hover resumes after ~200ms.
+    .bpk-context-menu__item {
+      animation: bpk-context-menu-item-hover-guard $context-menu-duration ease;
+    }
   }
 
   &[data-state='closed'] {
@@ -207,6 +215,24 @@ $context-menu-max-visible-items: 8.5;
   border-block-start: tokens.$bpk-border-size-sm solid
     var(--bpk-other-line-default, #{tokens.$bpk-line-day});
   inline-size: 100%;
+}
+
+// Keeps item background transparent for the duration of the open animation,
+// preventing ghost hover when the cursor happens to be over an item on open.
+@keyframes bpk-context-menu-item-hover-guard {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bpk-context-menu__item {
+    animation: none;
+  }
 }
 
 @keyframes bpk-context-menu-fade-in {
