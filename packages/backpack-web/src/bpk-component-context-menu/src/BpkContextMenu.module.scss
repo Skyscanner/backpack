@@ -91,7 +91,6 @@ $context-menu-max-visible-items: 8.5;
 // look consistent.
 .bpk-context-menu__content {
   display: flex;
-  padding: tokens.bpk-spacing-sm() 0;
   flex-direction: column;
   border-radius: tokens.$bpk-border-radius-lg;
   outline: none;
