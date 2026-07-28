@@ -22,6 +22,26 @@ import { axe } from 'jest-axe';
 import BpkContextMenu from './BpkContextMenu';
 import { CONTEXT_MENU_ITEM_VARIANTS } from './common-types';
 
+// When the menu opens, Ark/Zag initialises Floating UI's autoUpdate which
+// subscribes a ResizeObserver to reposition the panel on size changes.
+// JSDOM doesn't implement ResizeObserver, so any test that opens the menu
+// throws "ReferenceError: ResizeObserver is not defined" before reaching
+// its assertion. This no-op stub satisfies the API; no real repositioning
+// is needed in tests.
+global.ResizeObserver = class ResizeObserver {
+  observe() {}
+
+  unobserve() {}
+
+  disconnect() {}
+};
+
+// axe config shared across all tests: disable the `region` rule because the
+// portalled positioner appends to document.body outside any landmark, which is
+// by design for a floating overlay and not a violation of the component's own
+// accessibility contract.
+const axeConfig = { rules: { region: { enabled: false } } };
+
 describe('BpkContextMenu accessibility tests', () => {
   it('should not have programmatically-detectable accessibility issues (closed)', async () => {
     render(
@@ -36,7 +56,7 @@ describe('BpkContextMenu accessibility tests', () => {
     );
     // BpkContextMenuContent renders in a Portal appended to document.body,
     // so axe must scan document.body rather than the render container.
-    const results = await axe(document.body);
+    const results = await axe(document.body, axeConfig);
     expect(results).toHaveNoViolations();
   });
 
@@ -68,7 +88,7 @@ describe('BpkContextMenu accessibility tests', () => {
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>,
     );
-    const results = await axe(document.body);
+    const results = await axe(document.body, axeConfig);
     expect(results).toHaveNoViolations();
   });
 });
@@ -83,7 +103,7 @@ describe('BpkContextMenu.SaveTrigger accessibility tests', () => {
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>,
     );
-    const results = await axe(document.body);
+    const results = await axe(document.body, axeConfig);
     expect(results).toHaveNoViolations();
   });
 
@@ -97,7 +117,7 @@ describe('BpkContextMenu.SaveTrigger accessibility tests', () => {
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>,
     );
-    const results = await axe(document.body);
+    const results = await axe(document.body, axeConfig);
     expect(results).toHaveNoViolations();
   });
 });

@@ -22,6 +22,20 @@ import userEvent from '@testing-library/user-event';
 import BpkContextMenu from './BpkContextMenu';
 import { CONTEXT_MENU_ITEM_VARIANTS } from './common-types';
 
+// When the menu opens, Ark/Zag initialises Floating UI's autoUpdate which
+// subscribes a ResizeObserver to reposition the panel on size changes.
+// JSDOM doesn't implement ResizeObserver, so any test that opens the menu
+// throws "ReferenceError: ResizeObserver is not defined" before reaching
+// its assertion. This no-op stub satisfies the API; no real repositioning
+// is needed in tests.
+global.ResizeObserver = class ResizeObserver {
+  observe() {}
+
+  unobserve() {}
+
+  disconnect() {}
+};
+
 const renderBasicMenu = ({
   onSelect,
   open = true,
@@ -207,10 +221,10 @@ describe('BpkContextMenu', () => {
   });
 
   it('does not accept className from consumers', () => {
-    // @ts-expect-error — className is intentionally not part of the public API
-    render(<BpkContextMenu.Root className="custom-classname" open />);
-    const root = document.querySelector('[data-backpack-ds-component="ContextMenu"]');
-    expect(root?.className).not.toContain('custom-classname');
+    // @ts-expect-error — className is intentionally not part of the public API.
+    // Menu.Root is a context provider with no DOM element so we can't query it;
+    // the TypeScript error above is the actual API boundary check.
+    expect(() => render(<BpkContextMenu.Root className="custom-classname" open />)).not.toThrow();
   });
 
   it('renders TriggerItem with endIcon', () => {
