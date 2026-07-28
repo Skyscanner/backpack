@@ -209,17 +209,13 @@ export const usePageScrollSync = ({
     const firstVisibleIndex = visibilityList.indexOf(1);
     if (firstVisibleIndex === -1) return;
 
-    // When the final page holds fewer cards than initiallyShownCards, scrolling to
-    // the end can't bring that page's first card to the start of the viewport, so
-    // firstVisibleIndex still points at the previous page. If the last card is
-    // visible we've reached the end, so snap the indicator to the final page.
-    const totalPages = Math.ceil(visibilityList.length / initiallyShownCards);
-    const isLastCardVisible =
-      visibilityList[visibilityList.length - 1] === 1;
-
-    const newPageIndex = isLastCardVisible
-      ? totalPages - 1
-      : Math.floor(firstVisibleIndex / initiallyShownCards);
+    // A short final page can't scroll its first card to the viewport start, so
+    // firstVisibleIndex stays on the previous page. Treat a visible last card as
+    // the final page.
+    const newPageIndex =
+      visibilityList[visibilityList.length - 1] === 1
+        ? Math.ceil(visibilityList.length / initiallyShownCards) - 1
+        : Math.floor(firstVisibleIndex / initiallyShownCards);
     if (newPageIndex !== currentIndex) {
       setCurrentIndex(newPageIndex);
       lastCurrentIndexRef.current = newPageIndex;
