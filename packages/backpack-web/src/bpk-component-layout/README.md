@@ -104,15 +104,15 @@ BpkVessel accepts **all React.HTMLAttributes** to maximize migration flexibility
 The layout API is intentionally limited and strongly typed. The main groups are:
 
 - **Spacing** – `padding`, `margin`, logical props (`marginStart`, `marginEnd`, `paddingInline`), `gap`:
-  - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …, `BpkSpacing.XXXL`) or percentages (e.g. `'50%'`).
+  - Values: `BpkSpacing` tokens (`BpkSpacing.XS`, `BpkSpacing.SM`, `BpkSpacing.MD`, …, `BpkSpacing.XXXL`) or non-negative percentages (e.g. `'50%'`). Negative values are not supported.
 - **Flex gaps** – `BpkFlex` supports `gap`, `rowGap`, and `columnGap` for shared or independent flex row/column spacing.
-  - Values: `BpkSpacing` tokens (`BpkSpacing.SM`, `BpkSpacing.LG`, …) or percentages.
+  - Values: `BpkSpacing` tokens (`BpkSpacing.SM`, `BpkSpacing.LG`, …) or non-negative percentages.
 - **Size** – `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight`:
   - Values: rem strings (e.g. `'6rem'`), percentages (e.g. `'50%'`) or semantic values (`'auto' | 'full' | 'fit-content'`).
 - **Position keyword** – `position`:
   - Values: `'static' | 'relative' | 'absolute' | 'fixed' | 'sticky'`. Supports responsive overrides.
 - **Position offsets** – `top`, `right`, `bottom`, `left`, `insetInlineStart`, `insetInlineEnd`, `scrollMarginTop`, `scrollMarginBottom`:
-  - Values: rem strings (e.g. `'1rem'`), percentages (e.g. `'50%'`), bare `'0'`, or **BPK spacing tokens** (e.g. `BpkSpacing.Base`). `top/right/bottom/left/insetInline*` support responsive overrides; `scrollMargin*` are scalar only.
+  - Values: rem strings (e.g. `'1rem'`, `'-1rem'`), percentages (e.g. `'50%'`, `'-50%'`), bare `'0'`, or **BPK spacing tokens** (e.g. `BpkSpacing.Base`). Negative rem and negative percentage values are supported for offset patterns such as translate tricks. `top/right/bottom/left/insetInline*` support responsive overrides; `scrollMargin*` are scalar only.
   - `insetInlineStart`/`insetInlineEnd` are the RTL-safe logical equivalents of `left`/`right`.
   - `scrollMarginTop`/`scrollMarginBottom` offset the scroll snap position, typically matching a sticky header height (e.g. `scrollMarginTop="3.5rem"`).
 - **Overflow** – `overflow`, `overflowX`, `overflowY`:
@@ -272,7 +272,7 @@ To keep layout predictable, performant and consistent with Backpack:
 - **No typography props** – font family/size/line height/etc. should come from dedicated text components, not from layout primitives.
 - **No transition props** – layout components are purely structural; CSS transitions should live in higher‑level components or CSS classes.
 - **`transform` on BpkBox only** – `BpkBox` supports a `transform?: string` prop (e.g. `translateX(16px)`, `rotate(10deg)`). Other layout primitives (`BpkFlex`, `BpkGrid`, `BpkStack`) do not expose `transform`.
-- **Token‑driven spacing** – spacing props only accept Backpack spacing tokens (or percentages) to keep design consistent and avoid magic numbers.
+- **Token‑driven spacing** – spacing props only accept Backpack spacing tokens (or non-negative percentages) to keep design consistent and avoid magic numbers. Negative values are not supported for padding, margin, or gap.
 - **Breakpoint‑driven responsiveness** – responsive overrides must use Backpack breakpoint keys in object form; array syntax is intentionally disabled.
 
 ## Storybook and examples
