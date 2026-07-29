@@ -4,6 +4,7 @@ packages:
 
 overrides:
   braces: 3.0.3
+  lodash: ^4.18.1
 
 allowBuilds:
   '@parcel/watcher': true
