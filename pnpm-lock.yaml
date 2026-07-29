@@ -438,13 +438,13 @@ importers:
         specifier: ^15.7.2
         version: 15.8.1
       react:
-        specifier: 18.3.1 - 19.2.5
+        specifier: ^18.3.1 || ^19.0.0
         version: 18.3.1
       react-autosuggest:
         specifier: ^9.4.3
         version: 9.4.3(react@18.3.1)
       react-dom:
-        specifier: 18.3.1 - 19.2.5
+        specifier: ^18.3.1 || ^19.0.0
         version: 18.3.1(react@18.3.1)
       react-table:
         specifier: ^7.8.0
