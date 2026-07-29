@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
 
@@ -101,7 +101,13 @@ type Props = {
   className?: string | null;
   color?: TextColor | null;
   textAlign?: TextAlign | null;
+  /**
+   * Maximum number of lines to display before truncating the text with an
+   * ellipsis. Must be a positive integer.
+   */
+  lineClamp?: number | null;
   strikethrough?: boolean;
+  underline?: boolean;
   id?: string;
   [rest: string]: any;
 };
@@ -110,25 +116,50 @@ const BpkText = ({
   children,
   className = null,
   color = null,
+  lineClamp = null,
   strikethrough = false,
   tagName: TagName = 'span',
   textAlign = null,
   textStyle = TEXT_STYLES.bodyDefault,
+  underline = false,
   ...rest
 }: Props) => {
+  const { style, ...restProps } = rest;
+  const shouldClamp =
+    typeof lineClamp === 'number' &&
+    Number.isInteger(lineClamp) &&
+    lineClamp > 0;
+  const lineClampStyle = shouldClamp
+    ? ({
+        ...style,
+        '--bpk-text-line-clamp': lineClamp,
+      } as CSSProperties)
+    : style;
+
   const classNames = getClassName(
     'bpk-text',
     `bpk-text--${textStyle}`,
     color ? `bpk-text--${color}` : '',
     textAlign ? `bpk-text--align-${textAlign}` : '',
+    underline ? 'bpk-text--underline' : '',
     strikethrough ? 'bpk-text--strikethrough' : '',
+    shouldClamp ? 'bpk-text--line-clamp' : '',
     className,
   );
 
+  const tagProps = {
+    className: classNames,
+    style: lineClampStyle,
+  };
+
+  // TagName is constrained to DOM elements, so native className and style
+  // attributes are safe to pass through.
   return (
-    // Allowed, TagName is always a dom element.
-    // eslint-disable-next-line @skyscanner/rules/forbid-component-props
-    <TagName className={classNames} {...getDataComponentAttribute('Text')} {...rest}>
+    <TagName
+      {...tagProps}
+      {...getDataComponentAttribute('Text')}
+      {...restProps}
+    >
       {children}
     </TagName>
   );

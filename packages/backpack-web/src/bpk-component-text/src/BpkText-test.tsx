@@ -117,6 +117,85 @@ describe('BpkText', () => {
     });
   });
 
+  describe('text decoration props', () => {
+    it('should not add a text decoration class by default', () => {
+      const { getByText } = render(<BpkText>{text}</BpkText>);
+
+      expect(getByText(text)).not.toHaveClass('bpk-text--underline');
+      expect(getByText(text)).not.toHaveClass('bpk-text--strikethrough');
+    });
+
+    it('should render correctly with underline', () => {
+      const { getByText } = render(<BpkText underline>{text}</BpkText>);
+
+      expect(getByText(text)).toHaveClass('bpk-text--underline');
+    });
+
+    it('should render correctly with underline and strikethrough', () => {
+      const { getByText } = render(
+        <BpkText strikethrough underline>
+          {text}
+        </BpkText>,
+      );
+
+      expect(getByText(text)).toHaveClass(
+        'bpk-text--underline',
+        'bpk-text--strikethrough',
+      );
+    });
+  });
+
+  describe('lineClamp prop', () => {
+    it('should not clamp text by default', () => {
+      const { getByText } = render(<BpkText>{text}</BpkText>);
+
+      expect(getByText(text)).not.toHaveClass('bpk-text--line-clamp');
+      expect(
+        getByText(text).style.getPropertyValue('--bpk-text-line-clamp'),
+      ).toBe('');
+    });
+
+    it.each([1, 3])('should truncate text after %i line(s)', (lineClamp) => {
+      const { getByText } = render(
+        <BpkText lineClamp={lineClamp}>{text}</BpkText>,
+      );
+
+      expect(getByText(text)).toHaveClass('bpk-text--line-clamp');
+      expect(
+        getByText(text).style.getPropertyValue('--bpk-text-line-clamp'),
+      ).toBe(`${lineClamp}`);
+    });
+
+    it.each([0, -1, 1.5, NaN, Infinity])(
+      'should not clamp text when lineClamp is %p',
+      (lineClamp) => {
+        const { getByText } = render(
+          <BpkText lineClamp={lineClamp}>{text}</BpkText>,
+        );
+
+        expect(getByText(text)).not.toHaveClass('bpk-text--line-clamp');
+        expect(
+          getByText(text).style.getPropertyValue('--bpk-text-line-clamp'),
+        ).toBe('');
+      },
+    );
+
+    it('should preserve consumer styles when clamping text', () => {
+      const { getByText } = render(
+        <BpkText lineClamp={2} style={{ backgroundColor: textSuccessDay }}>
+          {text}
+        </BpkText>,
+      );
+
+      expect(getByText(text)).toHaveStyle({
+        backgroundColor: textSuccessDay,
+      });
+      expect(
+        getByText(text).style.getPropertyValue('--bpk-text-line-clamp'),
+      ).toBe('2');
+    });
+  });
+
   describe('text color prop', () => {
     it('should render correctly with prop color is token textSecondary', () => {
       const { getByText } = render(

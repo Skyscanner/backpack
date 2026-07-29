@@ -209,6 +209,42 @@ const StrikethroughExample = () => (
   </div>
 );
 
+const UnderlineExample = () => (
+  <div>
+    <BpkText tagName="p" underline>
+      Plain underlined text
+    </BpkText>
+    <BpkText tagName="p" color={TEXT_COLORS.textError} underline>
+      Underlined text with textError color
+    </BpkText>
+    <BpkText tagName="p" color={TEXT_COLORS.textSecondary} underline>
+      Underlined text with textSecondary color
+    </BpkText>
+  </div>
+);
+
+const LineClampExample = () => (
+  <div className={getClassName('bpk-stories-text_line-clamp')}>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      lineClamp=1
+    </BpkText>
+    <BpkText tagName="p" lineClamp={1}>
+      Single-line truncation keeps this long sentence on one line and displays
+      an ellipsis when the text exceeds the available width.
+    </BpkText>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      lineClamp=3
+    </BpkText>
+    <BpkText tagName="p" lineClamp={3}>
+      Multi-line truncation allows consumers to choose how many lines should be
+      visible before an ellipsis is displayed. This example is intentionally
+      long enough to extend beyond three lines within its container, so the
+      remaining content is hidden without requiring BpkText to own the width of
+      the surrounding layout.
+    </BpkText>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
@@ -218,6 +254,8 @@ const MixedExample = () => (
     <LarkenStylesExample />
     <ColorPropExample />
     <StrikethroughExample />
+    <UnderlineExample />
+    <LineClampExample />
   </div>
 );
 
@@ -287,6 +325,14 @@ export const ColorProp = {
 
 export const Strikethrough = {
   render: () => <StrikethroughExample />,
+};
+
+export const Underline = {
+  render: () => <UnderlineExample />,
+};
+
+export const LineClamp = {
+  render: () => <LineClampExample />,
 };
 
 export const VisualTest = {

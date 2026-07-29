@@ -182,6 +182,24 @@ $text-colors: (
     text-decoration: line-through;
   }
 
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--underline.bpk-text--strikethrough {
+    text-decoration: underline line-through;
+  }
+
+  &--line-clamp {
+    display: -webkit-box;
+    overflow: hidden;
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-box-orient: vertical;
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-line-clamp: var(--bpk-text-line-clamp);
+    line-clamp: var(--bpk-text-line-clamp);
+  }
+
   $text-aligns: 'start', 'end', 'center', 'justify';
 
   @each $align in $text-aligns {

@@ -22,4 +22,8 @@
   &_success {
     color: tokens.$bpk-text-success-day;
   }
+
+  &_line-clamp {
+    width: 50%;
+  }
 }
