@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { MouseEventHandler, ReactNode } from 'react';
 
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
@@ -37,7 +37,7 @@ export type Props = {
   label: string;
   icon?: ReactNode;
   className?: string | null;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   buttonProps?: { [key: string]: string };
   status?: Status;
 };

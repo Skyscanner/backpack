@@ -150,6 +150,39 @@ Defined in `font.scss`, `larken.scss`
 - If you introduce a new weight, add the corresponding `@font-face` entries.
 - In verification, check each used weight renders from the expected family in DevTools.
 
+## Locale-aware line breaking
+
+`font.scss` and `larken.scss` ship locale-aware line-break rules (`_locale-line-breaks.scss`) that are applied globally via the `:lang()` selector — they hook off the `<html lang="…">` (or any element `lang`) attribute you already set, so **no per-component or per-consumer changes are required**. The rules implement the kinsoku/line-break conventions for CJK, Korean, Thai, Arabic, Hebrew, and other non-Latin scripts.
+
+### Japanese phrase-level breaking (optional `<wbr>` hints)
+
+By default, Japanese text (`:lang(ja)`) wraps safely in every browser:
+
+- **Chromium** (Chrome/Edge) uses `word-break: auto-phrase` to break at natural phrase (文節) boundaries automatically.
+- **Firefox / Safari** have no equivalent, so they fall back to standard per-character wrapping under kinsoku (`line-break: strict`). This is the conventional way Japanese wraps in print and never overflows the container.
+
+For key marketing/UI copy where you want phrase-aware breaks in **all modern browsers** (Chrome 105+, Safari 15.4+, Firefox 121+), insert `<wbr>` at the phrase boundaries. Backpack detects the presence of `<wbr>` via `:lang(ja):has(wbr)` and automatically switches that text to `word-break: keep-all`, making the `<wbr>` marks the only break points — so Firefox and Safari honour the same boundaries as Chromium.
+
+```jsx
+// Without <wbr>: safe everywhere, phrase-aware only in Chromium.
+<BpkText>プライスアラートを設定して東京行きのお得な航空券を見つけましょう</BpkText>
+
+// With <wbr>: phrase-aware in all modern browsers (Chrome 105+, Safari 15.4+, Firefox 121+). No className needed —
+// the presence of <wbr> is itself the opt-in signal.
+<BpkText>
+  プライスアラートを<wbr />設定して<wbr />東京行きの<wbr />
+  お得な航空券を<wbr />見つけましょう
+</BpkText>
+```
+
+Guidance:
+
+- `<wbr>` is content, not a style API — pass it as part of the text children. Consumers never add a className.
+- Mark **every** phrase boundary. Under `keep-all`, per-character wrapping is suppressed, so a long stretch of Japanese with no `<wbr>` between it can overflow. (`overflow-wrap: break-word` remains as a last-resort safety net for embedded URLs / Latin runs, but not for pure Japanese.)
+- Only the author knows the semantic 文節 boundaries, which is why this is opt-in rather than automatic.
+
+See the [`bpk-stylesheets-fonts`](https://backpack.github.io/storybook/?path=/story/bpk-stylesheets-fonts--larken-font) Larken story ("Japanese line-break validation") for live examples — compare the default sample against the `<wbr>`-hinted sample in Firefox to see the difference.
+
 ## Contributing
 
 Don't forget to rebuild and commit `base.css` after you make changes to this package.

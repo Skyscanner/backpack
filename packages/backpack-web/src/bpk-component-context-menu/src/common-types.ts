@@ -16,32 +16,14 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/forms';
+export const CONTEXT_MENU_ITEM_VARIANTS = {
+  default: 'default',
+  destructive: 'destructive',
+} as const;
 
-.bpk-label {
-  @include forms.bpk-label;
+export type BpkContextMenuItemVariant =
+  (typeof CONTEXT_MENU_ITEM_VARIANTS)[keyof typeof CONTEXT_MENU_ITEM_VARIANTS];
 
-  &--white {
-    @include forms.bpk-label--white;
-  }
+export type BpkContextMenuSelectionDetails = { value: string };
 
-  &--invalid {
-    @include forms.bpk-label--invalid;
-  }
-
-  &--disabled {
-    @include forms.bpk-label--disabled;
-
-    &--white {
-      color: var(
-        --bpk-text-disabled-on-dark,
-        tokens.$bpk-text-disabled-on-dark-day
-      );
-    }
-  }
-
-  &__asterisk {
-    color: var(--bpk-status-danger-spot, tokens.$bpk-form-validation-color);
-  }
-}
+export type BpkContextMenuOpenChangeDetails = { open: boolean };

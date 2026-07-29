@@ -16,32 +16,18 @@
  * limitations under the License.
  */
 
-@use '../../bpk-mixins/tokens';
-@use '../../bpk-mixins/forms';
+import { Menu } from '@ark-ui/react';
 
-.bpk-label {
-  @include forms.bpk-label;
+import { cssModules } from '../../bpk-react-utils';
 
-  &--white {
-    @include forms.bpk-label--white;
-  }
+import STYLES from './BpkContextMenu.module.scss';
 
-  &--invalid {
-    @include forms.bpk-label--invalid;
-  }
+const getClassName = cssModules(STYLES);
 
-  &--disabled {
-    @include forms.bpk-label--disabled;
+export type BpkContextMenuSeparatorProps = {};
 
-    &--white {
-      color: var(
-        --bpk-text-disabled-on-dark,
-        tokens.$bpk-text-disabled-on-dark-day
-      );
-    }
-  }
+const BpkContextMenuSeparator = () => (
+  <Menu.Separator className={getClassName('bpk-context-menu__separator')} />
+);
 
-  &__asterisk {
-    color: var(--bpk-status-danger-spot, tokens.$bpk-form-validation-color);
-  }
-}
+export default BpkContextMenuSeparator;
