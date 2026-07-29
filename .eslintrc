@@ -200,7 +200,13 @@
               "Dialog.Description", // allowed for styling to be passed to ark-ui component
               "Dialog.Positioner", // allowed for styling to be passed to ark-ui component
               "Dialog.Trigger", // allowed for styling to be passed to ark-ui component
-              "Dialog.Title" // allowed for styling to be passed to ark-ui component
+              "Dialog.Title", // allowed for styling to be passed to ark-ui component
+              "Menu.Content", // allowed for styling to be passed to ark-ui component
+              "Menu.Item", // allowed for styling to be passed to ark-ui component
+              "Menu.Positioner", // allowed for styling to be passed to ark-ui component
+              "Menu.Separator", // allowed for styling to be passed to ark-ui component
+              "Menu.Trigger", // allowed for styling to be passed to ark-ui component
+              "Menu.TriggerItem" // allowed for styling to be passed to ark-ui component
             ]
           }
         ]
