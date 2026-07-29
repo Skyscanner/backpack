@@ -162,20 +162,22 @@ export type BpkResponsiveValue<T> =
   | Partial<Record<BpkBreakpointToken | 'base', T>>;
 
 /**
- * Validates if a value is a percentage string
+ * Validates if a value is a non-negative percentage string.
+ * Used by spacing validators (padding, margin, gap) where negative percentages are not valid.
+ * Position and size validators use their own regex that permits negative percentages.
  *
  * @param {string} value - The value to validate
- * @returns {boolean} True if the value is a valid percentage string
+ * @returns {boolean} True if the value is a valid non-negative percentage string
  */
 export function isPercentage(value: string): boolean {
-  return /^-?\d+(\.\d+)?%$/.test(value);
+  return /^\d+(\.\d+)?%$/.test(value);
 }
 
 /**
- * Validates if a spacing value is valid (token or percentage)
+ * Validates if a spacing value is valid (token or non-negative percentage)
  *
  * @param {string} value - The spacing value to validate
- * @returns {boolean} True if the value is a valid Backpack spacing token or percentage
+ * @returns {boolean} True if the value is a valid Backpack spacing token or non-negative percentage
  */
 export function isValidSpacingValue(value: string): boolean {
   return BPK_SPACING_TOKEN_SET.has(value) || isPercentage(value);
@@ -200,8 +202,8 @@ export function isValidMarginValue(value: string): boolean {
  */
 export function isValidSizeValue(value: string): boolean {
   return (
-    /^-?\d+(\.\d+)?rem$/.test(value) || // rem values
-    isPercentage(value) || // percentage values
+    /^-?\d+(\.\d+)?rem$/.test(value) || // rem values (negative allowed for transforms)
+    /^-?\d+(\.\d+)?%$/.test(value) || // percentage values (negative allowed)
     value === 'auto' ||
     value === 'full' ||
     value === 'fit-content'
@@ -209,7 +211,9 @@ export function isValidSizeValue(value: string): boolean {
 }
 
 /**
- * Validates if a position value is valid (rem, %, bare zero, or BPK spacing token)
+ * Validates if a position value is valid (rem, %, bare zero, or BPK spacing token).
+ * Negative rem and negative percentage values are intentionally allowed for offset patterns
+ * such as translate offsets (e.g. top: '-50%', left: '-1rem').
  *
  * @param {string} value - The position value to validate
  * @returns {boolean} True if the value is valid
@@ -217,8 +221,8 @@ export function isValidSizeValue(value: string): boolean {
 export function isValidPositionValue(value: string): boolean {
   return (
     value === '0' || // bare zero — valid CSS without a unit
-    /^-?\d+(\.\d+)?rem$/.test(value) || // rem values
-    isPercentage(value) || // percentage values
+    /^-?\d+(\.\d+)?rem$/.test(value) || // rem values (negative allowed)
+    /^-?\d+(\.\d+)?%$/.test(value) || // percentage values (negative allowed)
     BPK_SPACING_TOKEN_SET.has(value) // BPK spacing tokens
   );
 }

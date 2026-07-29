@@ -422,7 +422,7 @@ describe('processBpkProps', () => {
     expect(result.scrollMarginBottom).toBe('0');
   });
 
-  it('passes through negative percentages for position props (e.g. top: -50% for vertical centering)', () => {
+  it('passes through negative percentages for position props (e.g. top: -50% for translate offsets)', () => {
     const result = processBpkProps({
       top: '-50%',
       left: '-100%',
@@ -430,6 +430,46 @@ describe('processBpkProps', () => {
 
     expect(result.top).toBe('-50%');
     expect(result.left).toBe('-100%');
+  });
+
+  it('rejects negative percentage for padding and drops the prop', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      padding: '-10%' as any,
+      paddingTop: '-5%' as any,
+    });
+
+    expect(result.padding).toBeUndefined();
+    expect(result.paddingTop).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('rejects negative percentage for margin and drops the prop', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      margin: '-20%' as any,
+      marginTop: '-5%' as any,
+    });
+
+    expect(result.margin).toBeUndefined();
+    expect(result.marginTop).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
+  });
+
+  it('rejects negative percentage for gap and drops the prop', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    const result = processBpkProps({
+      gap: '-10%' as any,
+    });
+
+    expect(result.gap).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 });
 
