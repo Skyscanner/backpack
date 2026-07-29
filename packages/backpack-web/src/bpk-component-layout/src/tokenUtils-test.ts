@@ -436,6 +436,12 @@ describe('processBpkProps', () => {
     expect(result.left).toBe('-100%');
   });
 
+  it('passes through non-negative percentage for padding (regression guard)', () => {
+    const result = processBpkProps({ padding: '50%' });
+
+    expect(result.padding).toBe('50%');
+  });
+
   it('rejects negative percentage for padding and drops the prop', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
@@ -446,7 +452,8 @@ describe('processBpkProps', () => {
 
     expect(result.padding).toBeUndefined();
     expect(result.paddingTop).toBeUndefined();
-    expect(warnSpy).toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('-10%'));
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('-5%'));
     warnSpy.mockRestore();
   });
 
@@ -460,19 +467,25 @@ describe('processBpkProps', () => {
 
     expect(result.margin).toBeUndefined();
     expect(result.marginTop).toBeUndefined();
-    expect(warnSpy).toHaveBeenCalled();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('-20%'));
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('-5%'));
     warnSpy.mockRestore();
   });
 
-  it('rejects negative percentage for gap and drops the prop', () => {
+  it('rejects negative percentage for gap, rowGap and columnGap and drops those props', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
 
     const result = processBpkProps({
       gap: '-10%' as any,
+      rowGap: '-5%' as any,
+      columnGap: '-5%' as any,
     });
 
     expect(result.gap).toBeUndefined();
-    expect(warnSpy).toHaveBeenCalled();
+    expect(result.rowGap).toBeUndefined();
+    expect(result.columnGap).toBeUndefined();
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('-10%'));
+    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('-5%'));
     warnSpy.mockRestore();
   });
 });
