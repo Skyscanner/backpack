@@ -161,14 +161,14 @@ export type BpkResponsiveValue<T> =
   | T
   | Partial<Record<BpkBreakpointToken | 'base', T>>;
 
-// Matches percentage strings that include a leading minus sign, e.g. '-50%', '-0.5%'.
-// Used only by position validators where negative offsets are intentional.
-const NEGATIVE_PERCENTAGE_RE = /^-?\d+(\.\d+)?%$/;
+// Matches both positive and negative percentage strings, e.g. '50%', '-50%', '-0.5%'.
+// Used by position validators where negative offsets are intentional.
+const SIGNED_PERCENTAGE_RE = /^-?\d+(\.\d+)?%$/;
 
 /**
  * Validates if a value is a non-negative percentage string.
  * Used by spacing validators (padding, margin, gap) where negative percentages are not valid.
- * Position validators use NEGATIVE_PERCENTAGE_RE directly to permit negative percentages.
+ * Position validators use SIGNED_PERCENTAGE_RE directly to permit negative percentages.
  *
  * @param {string} value - The value to validate
  * @returns {boolean} True if the value is a valid non-negative percentage string
@@ -226,7 +226,7 @@ export function isValidPositionValue(value: string): boolean {
   return (
     value === '0' || // bare zero — valid CSS without a unit
     /^-?\d+(\.\d+)?rem$/.test(value) || // rem values (negative allowed)
-    NEGATIVE_PERCENTAGE_RE.test(value) || // percentage values (negative allowed)
+    SIGNED_PERCENTAGE_RE.test(value) || // percentage values (negative allowed)
     BPK_SPACING_TOKEN_SET.has(value) // BPK spacing tokens
   );
 }
