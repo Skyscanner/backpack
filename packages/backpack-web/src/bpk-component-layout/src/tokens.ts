@@ -202,8 +202,8 @@ export function isValidMarginValue(value: string): boolean {
  */
 export function isValidSizeValue(value: string): boolean {
   return (
-    /^-?\d+(\.\d+)?rem$/.test(value) || // rem values (negative allowed for transforms)
-    /^-?\d+(\.\d+)?%$/.test(value) || // percentage values (negative allowed)
+    /^\d+(\.\d+)?rem$/.test(value) || // rem values
+    isPercentage(value) || // non-negative percentage values
     value === 'auto' ||
     value === 'full' ||
     value === 'fit-content'

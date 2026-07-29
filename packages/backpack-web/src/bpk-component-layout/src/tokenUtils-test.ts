@@ -26,6 +26,10 @@ import {
 import { BpkSpacing } from './tokens';
 
 describe('processBpkProps', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   it('converts spacing tokens to rem values', () => {
     const result = processBpkProps({ padding: BpkSpacing.MD });
 
