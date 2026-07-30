@@ -13,3 +13,4 @@ coverage
 *.d.ts
 *.figma.ts
 *.figma.batch.ts
+*.figma.batch.json

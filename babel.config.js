@@ -63,7 +63,6 @@ module.exports = {
             fileName.includes('.stories') ||
             /\/node_modules\//.test(fileName) ||
             fileName.includes('.d.ts') ||
-            fileName.includes('.figma.tsx') ||
             fileName.includes('.figma.ts')
           ),
       ],
