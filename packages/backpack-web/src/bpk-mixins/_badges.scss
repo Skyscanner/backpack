@@ -271,3 +271,15 @@
     tokens.bpk-spacing-sm()
   );
 }
+
+@mixin bpk-badge--interactive {
+  // to get the gap between text and info icon right
+  display: inline-flex;
+  align-items: center;
+
+  // to create an unstyled button
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  gap: tokens.bpk-spacing-md();
+}

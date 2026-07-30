@@ -18,8 +18,12 @@
 
 import { Component } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkFieldSet from '../../bpk-component-fieldset';
 import BpkImage from '../../bpk-component-image';
+import readme from '../README.md';
 
 
 import BpkPhoneInput from './BpkPhoneInput';
@@ -175,6 +179,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-phone-input',
   component: BpkPhoneInput,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

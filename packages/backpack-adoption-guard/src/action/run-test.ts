@@ -15,12 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { execFile } from "node:child_process";
 import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { promisify } from "node:util";
 
 import { run } from "./run";
 import type { ActionIO } from "./io";
+import { ADOPTION_OUTPUTS } from "./outputs";
+
+const execFileAsync = promisify(execFile);
 
 const createRepo = async () => mkdtemp(join(tmpdir(), "bpk-action-test-"));
 
@@ -34,12 +39,29 @@ const writeRepoFile = async (
   await writeFile(absolutePath, content, "utf8");
 };
 
+const commitRepository = async (repoPath: string) => {
+  await execFileAsync("git", ["-C", repoPath, "init"]);
+  await execFileAsync("git", ["-C", repoPath, "config", "user.email", "test@example.com"]);
+  await execFileAsync("git", ["-C", repoPath, "config", "user.name", "Test User"]);
+  await execFileAsync("git", ["-C", repoPath, "add", "."]);
+  await execFileAsync("git", ["-C", repoPath, "commit", "-m", "Base"]);
+  const { stdout } = await execFileAsync("git", [
+    "-C",
+    repoPath,
+    "rev-parse",
+    "HEAD",
+  ]);
+
+  return stdout.trim();
+};
+
 const createTestIO = (inputs: Record<string, string> = {}): ActionIO => ({
   getInput: (name) => inputs[name] || "",
   info: jest.fn(),
   warning: jest.fn(),
   error: jest.fn(),
   setFailed: jest.fn(),
+  setOutput: jest.fn(),
   appendSummary: jest.fn().mockResolvedValue(undefined),
 });
 
@@ -88,7 +110,8 @@ export const App = () => (
 `,
     );
 
-    const result = await run({ cwd: repoPath, io: createTestIO() });
+    const io = createTestIO();
+    const result = await run({ cwd: repoPath, io });
     const resultsFile = JSON.parse(
       await readFile(join(repoPath, "backpack-adoption-results.json"), "utf8"),
     );
@@ -112,6 +135,90 @@ export const App = () => (
     expect(metrics).not.toHaveProperty("guard");
     expect(metrics).not.toHaveProperty("componentCounts");
     expect(metrics).not.toHaveProperty("parseErrors");
+    expect(metrics).not.toHaveProperty("projects");
+    expect(result.guard).not.toHaveProperty("projects");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.head, "66.67");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.base, "");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.delta, "");
+  });
+
+  it("emits base and delta outputs for pull requests", async () => {
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      "export const App = () => <div>Raw HTML</div>;",
+    );
+    const baseSha = await commitRepository(repoPath);
+    const eventPath = join(repoPath, "event.json");
+    await writeFile(
+      eventPath,
+      JSON.stringify({ pull_request: { base: { sha: baseSha } } }),
+      "utf8",
+    );
+    await writeRepoFile(
+      repoPath,
+      "src/App.tsx",
+      `
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+
+export const App = () => <BpkButton>Book</BpkButton>;
+`,
+    );
+    process.env = {
+      ...originalEnv,
+      GITHUB_EVENT_NAME: "pull_request",
+      GITHUB_EVENT_PATH: eventPath,
+      GITHUB_REF: "refs/pull/1/merge",
+    };
+
+    const io = createTestIO();
+    const result = await run({ cwd: repoPath, io });
+
+    expect(result.comparison.baseBackpackPercentage).not.toBeNull();
+    expect(result.comparison.delta).not.toBeNull();
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.head, "100.00");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.base, "0.00");
+    expect(io.setOutput).toHaveBeenCalledWith(ADOPTION_OUTPUTS.delta, "100.00");
+  });
+
+  it("reports NX workspaces as a single repository", async () => {
+    await writeRepoFile(repoPath, "nx.json", JSON.stringify({ version: 2 }));
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/project.json",
+      JSON.stringify({
+        name: "flights",
+        root: "apps/flights",
+        projectType: "application",
+      }),
+    );
+    await writeRepoFile(
+      repoPath,
+      "apps/flights/src/App.tsx",
+      `
+import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+
+export const App = () => <BpkButton>Book</BpkButton>;
+`,
+    );
+    await writeRepoFile(
+      repoPath,
+      "RootThing.tsx",
+      `
+export const RootThing = () => <div>root</div>;
+`,
+    );
+
+    const result = await run({ cwd: repoPath, io: createTestIO() });
+    const resultsFile = JSON.parse(
+      await readFile(join(repoPath, "backpack-adoption-results.json"), "utf8"),
+    );
+    const metrics = resultsFile["backpack-adoption"];
+
+    expect(result.head.isNx).toBeUndefined();
+    expect(result.head.projects).toBeUndefined();
+    expect(result.guard.projects).toBeUndefined();
+    expect(metrics.projects).toBeUndefined();
   });
 
   it("uses the default guard threshold when the input is omitted", async () => {

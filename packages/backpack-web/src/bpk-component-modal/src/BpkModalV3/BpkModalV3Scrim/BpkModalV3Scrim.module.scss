@@ -22,7 +22,7 @@
   position: fixed;
   z-index: tokens.$bpk-zindex-modal;
   transition: opacity tokens.$bpk-duration-sm ease-in-out;
-  background-color: tokens.$bpk-scrim-day;
+  background-color: var(--bpk-other-scrim, tokens.$bpk-scrim-day);
   opacity: 0;
   inset: 0;
   pointer-events: none;

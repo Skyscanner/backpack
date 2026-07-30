@@ -55,7 +55,7 @@ export interface BuildDTCGOutputsResult {
 export function buildDTCGOutputs(
   response: GetLocalVariablesResponse,
   targetNames: readonly string[],
-  options: { skipUnresolvedAliases?: boolean; modeNameMap?: Record<string, string> } = {},
+  options: { skipUnresolvedAliases?: boolean; modeNameMap?: Record<string, string>; excludeVariablePrefixes?: readonly string[] } = {},
 ): BuildDTCGOutputsResult {
   const localVariables = response.meta.variables;
   const localCollectionsById = response.meta.variableCollections;
@@ -79,8 +79,11 @@ export function buildDTCGOutputs(
   const outputs: DTCGModeOutput[] = [];
   for (const classifiedCollection of classified) {
     const { collection } = classifiedCollection;
+    const excludePrefixes = options.excludeVariablePrefixes ?? [];
     const collectionVariables = Object.values(localVariables).filter(
-      (variable) => variable.variableCollectionId === collection.id,
+      (variable) =>
+        variable.variableCollectionId === collection.id &&
+        !excludePrefixes.some((prefix) => variable.name.startsWith(prefix)),
     );
     const preservedReferenceKeys = buildPreservedReferenceKeys(
       classified,
@@ -126,6 +129,7 @@ export interface BuildDTCGOptions {
   outputDir: string;
   skipUnresolvedAliases?: boolean;
   modeNameMap?: Record<string, string>;
+  excludeVariablePrefixes?: readonly string[];
   now?: () => Date;
 }
 
@@ -147,7 +151,11 @@ export async function buildDTCG(
   const { classified, missingNames, outputs } = buildDTCGOutputs(
     response,
     options.targetNames,
-    { skipUnresolvedAliases: options.skipUnresolvedAliases, modeNameMap: options.modeNameMap },
+    {
+      skipUnresolvedAliases: options.skipUnresolvedAliases,
+      modeNameMap: options.modeNameMap,
+      excludeVariablePrefixes: options.excludeVariablePrefixes,
+    },
   );
 
   const manifest = await writeDTCGFiles(

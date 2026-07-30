@@ -20,9 +20,7 @@ import type { ReactNode } from 'react';
 
 import { getDataComponentAttribute } from '../../bpk-react-utils';
 
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkOverlayView from './BpkOverlayView';
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { type LatLong } from './common-types';
 
 type Props = {

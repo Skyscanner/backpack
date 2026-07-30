@@ -50,6 +50,14 @@ The action emits one of three guard statuses:
 | `output-path` | Path for the generated adoption result JSON. | No | `backpack-adoption-results.json` |
 | `threshold` | Backpack adoption percentage threshold before the guard starts blocking decreases. | No | `60` |
 
+## Outputs
+
+| Output | Description |
+| --- | --- |
+| `head-backpack-adoption` | Numeric percentage string from `0` to `100` with exactly two decimal places and no `%` suffix, for the checked-out ref. |
+| `base-backpack-adoption` | Numeric percentage string from `0` to `100` with exactly two decimal places and no `%` suffix, for the PR base ref; empty when unavailable. |
+| `backpack-adoption-delta` | Signed numeric percentage-point string with exactly two decimal places and no `%` suffix; empty when unavailable. |
+
 ## Uploading metrics to Cortex
 
 This action only writes a JSON results file. To ship the results to Cortex on

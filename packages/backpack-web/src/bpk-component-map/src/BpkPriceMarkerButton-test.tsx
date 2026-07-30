@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import type { MouseEvent } from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import BpkPriceMarkerButton, { MARKER_STATUSES } from './BpkPriceMarkerButton';
@@ -93,11 +95,33 @@ describe('BpkPriceMarkerButton', () => {
     );
   });
 
-  it('should render correctly with a "onClick" attribute', () => {
-    const mockOnClick = jest.fn();
-    render(<BpkPriceMarkerButton label="£120" onClick={mockOnClick} />);
+  it('should pass the click event to the "onClick" handler', () => {
+    const parentOnClick = jest.fn();
+    const onClick = jest.fn((event: MouseEvent<HTMLButtonElement>) => {
+      event.stopPropagation();
+    });
+    const { baseElement } = render(
+      <BpkPriceMarkerButton label="£120" onClick={onClick} />,
+    );
+    baseElement.addEventListener('click', parentOnClick);
 
     fireEvent.click(screen.getByRole('button'));
-    expect(mockOnClick).toHaveBeenCalledTimes(1);
+    baseElement.removeEventListener('click', parentOnClick);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(parentOnClick).not.toHaveBeenCalled();
+  });
+
+  it('should allow the click event to propagate when it is not stopped', () => {
+    const parentOnClick = jest.fn();
+    const { baseElement } = render(
+      <BpkPriceMarkerButton label="£120" onClick={jest.fn()} />,
+    );
+    baseElement.addEventListener('click', parentOnClick);
+
+    fireEvent.click(screen.getByRole('button'));
+    baseElement.removeEventListener('click', parentOnClick);
+
+    expect(parentOnClick).toHaveBeenCalledTimes(1);
   });
 });

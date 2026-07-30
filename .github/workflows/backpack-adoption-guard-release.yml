@@ -51,59 +51,14 @@ jobs:
           echo "target_sha=${sha}" >> "$GITHUB_OUTPUT"
           echo "Resolved ${GITHUB_REF} -> ${sha}"
 
+      - run: git fetch --force --tags origin
+
       - name: Compute next release tag
         id: compute
-        env:
-          RELEASE_TYPE: ${{ inputs.release_type }}
-        run: |
-          case "$RELEASE_TYPE" in
-            patch|minor|major) ;;
-            *)
-              echo "::error::release_type must be patch, minor, or major (got: $RELEASE_TYPE)"
-              exit 1
-              ;;
-          esac
-
-          git fetch --force --tags origin
-
-          latest_version="$(
-            git tag --list 'backpack-adoption-guard/v[0-9]*.[0-9]*.[0-9]*' \
-              | sed -nE 's#^backpack-adoption-guard/v([0-9]+)\.([0-9]+)\.([0-9]+)$#\1.\2.\3#p' \
-              | sort -V \
-              | tail -n 1
-          )"
-
-          if [ -z "$latest_version" ]; then
-            case "$RELEASE_TYPE" in
-              major) next_version="1.0.0" ;;
-              minor) next_version="0.1.0" ;;
-              patch) next_version="0.0.1" ;;
-            esac
-          else
-            IFS=. read -r major minor patch <<< "$latest_version"
-            case "$RELEASE_TYPE" in
-              major)
-                major=$((major + 1))
-                minor=0
-                patch=0
-                ;;
-              minor)
-                minor=$((minor + 1))
-                patch=0
-                ;;
-              patch)
-                patch=$((patch + 1))
-                ;;
-            esac
-            next_version="${major}.${minor}.${patch}"
-          fi
-
-          {
-            echo "release_version=${next_version}"
-            echo "release_tag=backpack-adoption-guard/v${next_version}"
-          } >> "$GITHUB_OUTPUT"
-          echo "Latest release: ${latest_version:-none}"
-          echo "Next ${RELEASE_TYPE} release: ${next_version}"
+        uses: ./.github/actions/compute-next-semver
+        with:
+          release_type: ${{ inputs.release_type }}
+          tag_prefix: backpack-adoption-guard
 
       - name: Ensure release tag does not already exist
         env:

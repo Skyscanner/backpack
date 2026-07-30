@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
-import { ArgTypes, Title, Markdown } from '@storybook/addon-docs/blocks';
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
+import readme from '../README.md';
 
 import BpkBackgroundImage from './BpkBackgroundImage';
 import BpkImage from './BpkImage';
@@ -181,13 +183,10 @@ const meta = {
     docs: {
       page: () => (
         <>
-          <Title />
+          <Markdown>{readme}</Markdown>
           <ArgTypes exclude={['zoomEnabled']} />
-          <Markdown>
-            {`**Note:** All [standard img attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img#Attributes) including \`srcSet\` are also supported.`}
-          </Markdown>
         </>
-      )
+      ),
     },
   },
 };

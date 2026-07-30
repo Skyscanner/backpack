@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReactNode } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 import { useRef } from 'react';
 
 import BpkBreakpoint, { BREAKPOINTS } from '../../bpk-component-breakpoint';
@@ -62,19 +62,31 @@ export type ChipStyleType = (typeof CHIP_TYPES)[keyof typeof CHIP_TYPES];
 export type ChipComponentType =
   (typeof CHIP_COMPONENT)[keyof typeof CHIP_COMPONENT];
 
-export type SingleSelectChipItem = {
+type ChipBaseProps = {
   text: string;
   accessibilityLabel?: string;
   leadingAccessoryView?: ReactNode;
+  selected?: boolean;
+  hidden?: boolean;
+};
+
+export type SingleSelectChipItem = ChipBaseProps & {
   [rest: string]: any; // Inexact rest. See decisions/inexact-rest.md
 };
 
 export type ChipItem = {
   component?: ChipComponentType;
+  renderChip?: (props: ChipRenderProps) => ReactElement | null;
   onClick?: (selected: boolean, index: number) => void;
-  selected?: boolean;
-  hidden?: boolean;
 } & SingleSelectChipItem;
+
+export type ChipRenderProps = ChipBaseProps & {
+  type: ChipStyleType;
+  role: 'checkbox' | 'radio';
+  onClick: () => void;
+  accessibilityLabel: string;
+  leadingAccessoryView: ReactNode;
+};
 
 type CommonProps = {
   label?: string;
@@ -113,25 +125,41 @@ const Chip = ({
     hidden = false,
     leadingAccessoryView = null,
     onClick,
+    renderChip,
     selected,
     text,
     ...rest
   } = chipItem;
+
+  if (hidden) {
+    return null;
+  }
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick(!selected, chipIndex);
+    }
+  };
+
+  const chipRenderProps: ChipRenderProps = {
+    ...rest,
+    text,
+    accessibilityLabel: accessibilityLabel || text,
+    leadingAccessoryView,
+    selected,
+    onClick: handleClick,
+    type: chipStyle,
+    role: ariaMultiselectable ? 'checkbox' : 'radio',
+  };
+
+  if (renderChip) {
+    return renderChip(chipRenderProps);
+  }
+
   const Component = CHIP_COMPONENT_MAP[component];
-  return hidden ? null : (
-    <Component
-      selected={selected ?? false}
-      type={chipStyle}
-      accessibilityLabel={accessibilityLabel || text}
-      onClick={() => {
-        if (onClick) {
-          onClick(!selected, chipIndex);
-        }
-      }}
-      role={ariaMultiselectable ? 'checkbox' : 'radio'}
-      leadingAccessoryView={leadingAccessoryView}
-      {...rest}
-    >
+  const { text: _text, ...componentProps } = chipRenderProps;
+  return (
+    <Component {...componentProps}>
       {text}
     </Component>
   );

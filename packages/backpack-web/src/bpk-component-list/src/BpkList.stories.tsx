@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkList from './BpkList';
 import BpkListItem from './BpkListItem';
 
@@ -57,6 +61,16 @@ const meta = {
   component: BpkList,
   subcomponents: {
     BpkListItem,
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkInsetBanner, { VARIANT } from './BpkInsetBanner';
 
 import type { Meta } from '@storybook/react';
@@ -23,6 +27,16 @@ import type { Meta } from '@storybook/react';
 const meta = {
   title: 'bpk-component-inset-banner',
   component: BpkInsetBanner,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -16,10 +16,14 @@
  * limitations under the License.
  */
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+
 import BpkButton from '../../bpk-component-button';
 import { withButtonAlignment } from '../../bpk-component-icon/index';
 import SmallLongArrowRightIcon from '../../bpk-component-icon/sm/long-arrow-right';
 import { cssModules } from '../../bpk-react-utils';
+import readme from '../README.md';
 
 import BpkSectionHeader, { SECTION_TYPES } from './BpkSectionHeader';
 
@@ -92,6 +96,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-section-header',
   component: BpkSectionHeader,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

@@ -55,7 +55,7 @@
     position: fixed;
     z-index: 0;
     margin: 0 auto;
-    background-color: tokens.$bpk-scrim-day;
+    background-color: var(--bpk-other-scrim, tokens.$bpk-scrim-day);
     animation: bpk-modal-scrim tokens.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
@@ -98,7 +98,7 @@
     max-width: none;
     height: fit-content;
     max-height: 90%;
-    border-radius: tokens.$bpk-border-radius-md;
+    border-radius: var(--bpk-radius-md, tokens.$bpk-border-radius-md);
 
     &--full-screen-desktop {
       width: 100%;
@@ -131,7 +131,7 @@
 
   &::backdrop {
     position: fixed;
-    background-color: tokens.$bpk-scrim-day;
+    background-color: var(--bpk-other-scrim, tokens.$bpk-scrim-day);
     animation: bpk-modal-scrim tokens.$bpk-duration-sm ease-in-out;
     inset: 0;
     inset-block-end: 0;
@@ -149,7 +149,10 @@
     @include header;
 
     &-style--surface-contrast {
-      background-color: tokens.$bpk-surface-contrast-day;
+      background-color: var(
+        --bpk-surface-contrast,
+        tokens.$bpk-surface-contrast-day
+      );
       color: tokens.$bpk-text-primary-dark-color;
     }
   }
@@ -167,7 +170,10 @@
     @include header;
 
     &-style--surface-contrast {
-      background-color: tokens.$bpk-surface-contrast-day;
+      background-color: var(
+        --bpk-surface-contrast,
+        tokens.$bpk-surface-contrast-day
+      );
       color: tokens.$bpk-text-primary-dark-color;
     }
   }
@@ -185,7 +191,10 @@
     }
 
     &--surface-contrast {
-      background-color: tokens.$bpk-surface-contrast-day;
+      background-color: var(
+        --bpk-surface-contrast,
+        tokens.$bpk-surface-contrast-day
+      );
       color: tokens.$bpk-text-primary-dark-color;
     }
   }

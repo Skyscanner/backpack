@@ -16,10 +16,12 @@
  * limitations under the License.
  */
 
+
+
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 import { addMonths } from 'date-fns/addMonths';
 import { startOfDay } from 'date-fns/startOfDay';
 
@@ -34,6 +36,7 @@ import {
   composeCalendar,
 } from '..';
 import BpkText from '../../bpk-component-text';
+import readme from '../README.md';
 
 import CalendarContainer, { MonthViewCalendar } from './BpkCalendar.stories-components';
 import {
@@ -432,6 +435,16 @@ export default {
     BpkCalendarGridHeader: BpkCalendarGridHeaderComponent,
     BpkCalendarDate: BpkCalendarDateComponent,
     BpkCalendarContainer: BpkCalendarContainerMock
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
   },
 };
 

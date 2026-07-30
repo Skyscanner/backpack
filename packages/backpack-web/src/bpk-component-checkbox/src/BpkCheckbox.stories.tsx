@@ -19,8 +19,13 @@
 import { Component } from 'react';
 import type { ComponentProps } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { action, BpkDarkExampleWrapper } from 'bpk-storybook-utils';
+
+
+import readme from '../README.md';
 
 import BpkCheckbox from './BpkCheckbox';
 
@@ -182,6 +187,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-checkbox',
   component: BpkCheckbox,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;

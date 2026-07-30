@@ -18,6 +18,10 @@
 
 import type { ReactNode } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
+import readme from '../README.md';
+
 import BpkPriceRange, {
   type BpkPriceRangeProps,
 } from './BpkPriceRange';
@@ -175,6 +179,16 @@ const MixedExample = () => (
 const meta = {
   title: 'bpk-component-price-range',
   component: BpkPriceRange,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta;
 
 export default meta;
