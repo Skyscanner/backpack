@@ -1,7 +1,8 @@
 {
   "codeConnect": {
     "include": [
-      "/**/*.{tsx,jsx}"
+      "/**/*.{tsx,jsx}",
+      "/**/*.figma.batch.json"
     ],
     "label": "React",
     "importPaths": {

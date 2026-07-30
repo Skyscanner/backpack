@@ -16,14 +16,14 @@
  * limitations under the License.
  */
 
-import figma from '@figma/code-connect';
+// eslint-disable-next-line import/no-unresolved
+import figma from 'figma'
 
-import BpkModal from './BpkModal';
-
-figma.connect(
-  BpkModal,
-  'https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A24026',
-  {
-    example: () => <BpkModal />,
-  },
-);
+export default {
+  id: figma.batch.id,
+  variant: { [figma.batch.variantProp]: `${figma.batch.sizeVariant}` },
+  example: figma.code`<${figma.batch.componentName} />`,
+  imports: [
+    `import ${figma.batch.componentName} from '${figma.batch.importPath}'`,
+  ],
+}
