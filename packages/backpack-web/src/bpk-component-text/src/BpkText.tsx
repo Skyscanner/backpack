@@ -107,6 +107,10 @@ type Props = {
    */
   lineClamp?: number | null;
   strikethrough?: boolean;
+  /**
+   * Truncates overflowing text to a single line with an ellipsis.
+   */
+  truncate?: boolean;
   underline?: boolean;
   id?: string;
   [rest: string]: any;
@@ -121,6 +125,7 @@ const BpkText = ({
   tagName: TagName = 'span',
   textAlign = null,
   textStyle = TEXT_STYLES.bodyDefault,
+  truncate = false,
   underline = false,
   ...rest
 }: Props) => {
@@ -129,6 +134,7 @@ const BpkText = ({
     typeof lineClamp === 'number' &&
     Number.isInteger(lineClamp) &&
     lineClamp > 0;
+  const shouldTruncate = truncate && !shouldClamp;
   const lineClampStyle = shouldClamp
     ? ({
         ...style,
@@ -143,6 +149,7 @@ const BpkText = ({
     textAlign ? `bpk-text--align-${textAlign}` : '',
     underline ? 'bpk-text--underline' : '',
     strikethrough ? 'bpk-text--strikethrough' : '',
+    shouldTruncate ? 'bpk-text--truncate' : '',
     shouldClamp ? 'bpk-text--line-clamp' : '',
     className,
   );

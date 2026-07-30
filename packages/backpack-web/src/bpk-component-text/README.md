@@ -102,7 +102,9 @@ The `underline` prop renders text with a basic underline. It defaults to
 prop or dark mode is used.
 
 ```javascript
-import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, {
+  TEXT_COLORS,
+} from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
   <>
@@ -114,65 +116,35 @@ export default () => (
 );
 ```
 
-### Line Clamp Prop
+### Truncation Props
 
-The `lineClamp` prop truncates overflowing text with an ellipsis after the
-specified number of lines. Pass a positive integer; use `1` for single-line
-truncation or a larger value for multi-line truncation. The text must have a
-constrained available width in order to wrap and truncate. Invalid values such
-as `0`, negative numbers, non-integers, and non-finite numbers (`NaN` and
-`Infinity`) are ignored.
+Use `truncate` for no-wrap, single-line truncation, or pass a positive integer
+to `lineClamp` to truncate after a specific number of lines. Both need a
+constrained available width. Invalid `lineClamp` values are ignored, and a
+valid `lineClamp` takes precedence when both props are provided.
 
 ```javascript
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
   <div className="text-container">
-    <BpkText lineClamp={1}>Text truncated after one line</BpkText>
+    <BpkText truncate>Text truncated without wrapping</BpkText>
     <BpkText lineClamp={3}>Text truncated after three lines</BpkText>
   </div>
 );
 ```
 
-#### Using Line Clamp in Flex Layouts
-
-Flex items use `min-width: auto` by default, which can prevent them from
-shrinking below their content's intrinsic minimum width. When this happens, the
-text may overflow its container instead of wrapping, and `lineClamp` may appear
-not to work.
-
-Set `min-width: 0` on the flex item that contains `BpkText` so it can shrink to
-the available width:
-
-```scss
-.row {
-  display: flex;
-}
-
-.text-container {
-  flex: 1;
-  min-width: 0;
-}
-```
-
-```javascript
-export default () => (
-  <div className="row">
-    <div className="text-container">
-      <BpkText lineClamp={2}>
-        Long text that should wrap and truncate within the available flex space
-      </BpkText>
-    </div>
-  </div>
-);
-```
+`lineClamp` changes the element's display mode, so apply it to the text element
+rather than an element responsible for flex or grid layout.
 
 ### Color Prop
 
-The `color` prop allows you to set the text color directly rather override by  `className`. It uses predefined `TEXT_COLORS` tokens to ensure ux consistency with the design system.
+The `color` prop allows you to set the text color directly rather override by `className`. It uses predefined `TEXT_COLORS` tokens to ensure ux consistency with the design system.
 
 ```javascript
-import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, {
+  TEXT_COLORS,
+} from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
   <BpkText color={TEXT_COLORS.textSecondary}>
@@ -180,8 +152,6 @@ export default () => (
   </BpkText>
 );
 ```
-
-
 
 ## Props
 

@@ -45,4 +45,16 @@ describe('BpkText accessibility tests', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
+
+  it('should not have programmatically-detectable accessibility issues with single-line truncation', async () => {
+    const { container } = render(
+      <BpkText truncate>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
+      </BpkText>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

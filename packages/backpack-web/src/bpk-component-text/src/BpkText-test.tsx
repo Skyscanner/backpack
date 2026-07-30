@@ -196,6 +196,42 @@ describe('BpkText', () => {
     });
   });
 
+  describe('truncate prop', () => {
+    it('should not truncate text by default', () => {
+      const { getByText } = render(<BpkText>{text}</BpkText>);
+
+      expect(getByText(text)).not.toHaveClass('bpk-text--truncate');
+    });
+
+    it('should truncate text to a single line', () => {
+      const { getByText } = render(<BpkText truncate>{text}</BpkText>);
+
+      expect(getByText(text)).toHaveClass('bpk-text--truncate');
+    });
+
+    it('should prefer a valid lineClamp when both props are supplied', () => {
+      const { getByText } = render(
+        <BpkText lineClamp={1} truncate>
+          {text}
+        </BpkText>,
+      );
+
+      expect(getByText(text)).toHaveClass('bpk-text--line-clamp');
+      expect(getByText(text)).not.toHaveClass('bpk-text--truncate');
+    });
+
+    it('should truncate when lineClamp is invalid', () => {
+      const { getByText } = render(
+        <BpkText lineClamp={0} truncate>
+          {text}
+        </BpkText>,
+      );
+
+      expect(getByText(text)).toHaveClass('bpk-text--truncate');
+      expect(getByText(text)).not.toHaveClass('bpk-text--line-clamp');
+    });
+  });
+
   describe('text color prop', () => {
     it('should render correctly with prop color is token textSecondary', () => {
       const { getByText } = render(

@@ -190,6 +190,12 @@ $text-colors: (
     text-decoration: underline line-through;
   }
 
+  &--truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
   &--line-clamp {
     display: -webkit-box;
     overflow: hidden;
@@ -203,6 +209,7 @@ $text-colors: (
     // declarations above; revisit the display model when standard line-clamp
     // support is broadly available.
     line-clamp: var(--bpk-text-line-clamp);
+    overflow-wrap: anywhere;
   }
 
   $text-aligns: 'start', 'end', 'center', 'justify';

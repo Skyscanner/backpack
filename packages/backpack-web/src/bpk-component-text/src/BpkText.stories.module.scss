@@ -26,4 +26,24 @@
   &_line-clamp {
     width: 20rem;
   }
+
+  &_truncation-example {
+    padding: tokens.bpk-spacing-sm();
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    box-sizing: border-box;
+  }
+
+  &_comparison-section {
+    margin-top: tokens.bpk-spacing-lg();
+  }
+
+  &_flex-container {
+    justify-content: space-between;
+    align-items: center;
+    gap: tokens.bpk-spacing-sm();
+  }
+}
+
+:where(.bpk-stories-text_flex-container) {
+  display: flex;
 }

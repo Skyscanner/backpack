@@ -176,12 +176,12 @@ const ColorPropExample = () => (
 
     <div className={getClassName('bpk-stories-text_success')}>
       <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
-          Text with color prop textSecondary with parent className override
+        Text with color prop textSecondary with parent className override
       </BpkText>
     </div>
 
     <div className={getClassName('bpk-stories-text_success')}>
-       <BpkText tagName="p">
+      <BpkText tagName="p">
         Text without color prop with parent color override
       </BpkText>
     </div>
@@ -191,7 +191,6 @@ const ColorPropExample = () => (
         Text with color prop textSecondary with self className override
       </BpkText>
     </div>
-
   </div>
 );
 
@@ -223,27 +222,100 @@ const UnderlineExample = () => (
   </div>
 );
 
-const lineClampExampleText =
-  'Full text displays all available content without truncation. This example is intentionally long enough to wrap across multiple lines within its container, so consumers can compare the default behaviour with the line-clamped examples below.';
+const truncationExampleText =
+  'This introduction demonstrates internationalisation in a constrained container, while additional details explain how each truncation method handles wrapping across several lines and hides content beyond the configured limit.';
+
+const unbrokenTruncationExampleText =
+  'ThisIsAnUnbrokenEnglishStringDesignedToCompareHowTruncateAndLineClampHandleLongContentWithoutAnySpacesOrNaturalWrappingPoints';
+
+const truncationExampleClassName = getClassName(
+  'bpk-stories-text_truncation-example',
+);
+
+const flexContainerExampleClassName = getClassName(
+  'bpk-stories-text_truncation-example',
+  'bpk-stories-text_flex-container',
+);
+
+const comparisonSectionClassName = getClassName(
+  'bpk-stories-text_comparison-section',
+);
+
+const FlexLayoutContent = () => (
+  <>
+    <BpkText tagName="span">Flexible child</BpkText>
+    <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+      Fixed child
+    </BpkText>
+  </>
+);
 
 const LineClampExample = () => (
   <div className={getClassName('bpk-stories-text_line-clamp')}>
     <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
       Full text
     </BpkText>
-    <BpkText tagName="p">{lineClampExampleText}</BpkText>
+    <BpkText tagName="p" className={truncationExampleClassName}>
+      {truncationExampleText}
+    </BpkText>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      truncate
+    </BpkText>
+    <BpkText tagName="p" className={truncationExampleClassName} truncate>
+      {truncationExampleText}
+    </BpkText>
     <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
       lineClamp=1
     </BpkText>
-    <BpkText tagName="p" lineClamp={1}>
-      {lineClampExampleText}
+    <BpkText tagName="p" className={truncationExampleClassName} lineClamp={1}>
+      {truncationExampleText}
     </BpkText>
     <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
       lineClamp=3
     </BpkText>
-    <BpkText tagName="p" lineClamp={3}>
-      {lineClampExampleText}
+    <BpkText tagName="p" className={truncationExampleClassName} lineClamp={3}>
+      {truncationExampleText}
     </BpkText>
+
+    <section className={comparisonSectionClassName}>
+      <BpkText tagName="h3" textStyle={TEXT_STYLES.heading5}>
+        Flex container comparison
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        truncate
+      </BpkText>
+      <BpkText tagName="p" className={flexContainerExampleClassName} truncate>
+        <FlexLayoutContent />
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        lineClamp=1
+      </BpkText>
+      <BpkText
+        tagName="p"
+        className={flexContainerExampleClassName}
+        lineClamp={1}
+      >
+        <FlexLayoutContent />
+      </BpkText>
+    </section>
+
+    <section className={comparisonSectionClassName}>
+      <BpkText tagName="h3" textStyle={TEXT_STYLES.heading5}>
+        Unbroken text comparison
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        truncate
+      </BpkText>
+      <BpkText tagName="p" className={truncationExampleClassName} truncate>
+        {unbrokenTruncationExampleText}
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        lineClamp=1
+      </BpkText>
+      <BpkText tagName="p" className={truncationExampleClassName} lineClamp={1}>
+        {unbrokenTruncationExampleText}
+      </BpkText>
+    </section>
   </div>
 );
 
