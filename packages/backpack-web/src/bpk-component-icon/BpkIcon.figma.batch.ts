@@ -16,12 +16,11 @@
  * limitations under the License.
  */
 
-// eslint-disable-next-line import/no-unresolved
 import figma from 'figma'
 
 export default {
   id: figma.batch.id,
-  variant: { [figma.batch.variantProp]: `${figma.batch.sizeVariant}` },
+  variant: { Size: `${figma.batch.sizeVariant}` },
   example: figma.code`<${figma.batch.componentName} />`,
   imports: [
     `import ${figma.batch.componentName} from '${figma.batch.importPath}'`,
