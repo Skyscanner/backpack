@@ -223,24 +223,26 @@ const UnderlineExample = () => (
   </div>
 );
 
+const lineClampExampleText =
+  'Full text displays all available content without truncation. This example is intentionally long enough to wrap across multiple lines within its container, so consumers can compare the default behaviour with the line-clamped examples below.';
+
 const LineClampExample = () => (
   <div className={getClassName('bpk-stories-text_line-clamp')}>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      Full text
+    </BpkText>
+    <BpkText tagName="p">{lineClampExampleText}</BpkText>
     <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
       lineClamp=1
     </BpkText>
     <BpkText tagName="p" lineClamp={1}>
-      Single-line truncation keeps this long sentence on one line and displays
-      an ellipsis when the text exceeds the available width.
+      {lineClampExampleText}
     </BpkText>
     <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
       lineClamp=3
     </BpkText>
     <BpkText tagName="p" lineClamp={3}>
-      Multi-line truncation allows consumers to choose how many lines should be
-      visible before an ellipsis is displayed. This example is intentionally
-      long enough to extend beyond three lines within its container, so the
-      remaining content is hidden without requiring BpkText to own the width of
-      the surrounding layout.
+      {lineClampExampleText}
     </BpkText>
   </div>
 );

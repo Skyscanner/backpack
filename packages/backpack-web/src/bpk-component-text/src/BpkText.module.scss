@@ -197,6 +197,11 @@ $text-colors: (
     -webkit-box-orient: vertical;
     // stylelint-disable-next-line property-no-vendor-prefix
     -webkit-line-clamp: var(--bpk-text-line-clamp);
+
+    // Retain the standard property for vendor-prefix tooling and future
+    // compatibility. Current browser behaviour relies on the legacy WebKit
+    // declarations above; revisit the display model when standard line-clamp
+    // support is broadly available.
     line-clamp: var(--bpk-text-line-clamp);
   }
 
