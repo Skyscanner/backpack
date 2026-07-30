@@ -105,10 +105,12 @@ prop or dark mode is used.
 import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
-  <BpkText underline>Underlined text</BpkText>
-  <BpkText color={TEXT_COLORS.textError} underline>
-    Underlined error text
-  </BpkText>
+  <>
+    <BpkText underline>Underlined text</BpkText>
+    <BpkText color={TEXT_COLORS.textError} underline>
+      Underlined error text
+    </BpkText>
+  </>
 );
 ```
 
@@ -118,7 +120,8 @@ The `lineClamp` prop truncates overflowing text with an ellipsis after the
 specified number of lines. Pass a positive integer; use `1` for single-line
 truncation or a larger value for multi-line truncation. The text must have a
 constrained available width in order to wrap and truncate. Invalid values such
-as `0`, negative numbers, and non-integers are ignored.
+as `0`, negative numbers, non-integers, and non-finite numbers (`NaN` and
+`Infinity`) are ignored.
 
 ```javascript
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
