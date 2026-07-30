@@ -19,7 +19,6 @@
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15024-7431
 // source=packages/backpack-web/src/bpk-component-modal/src/BpkModalV3/BpkModalV3.tsx
 // component=BpkModalV3
-// eslint-disable-next-line import/no-unresolved
 import figma from 'figma'
 
 const instance = figma.selectedInstance
@@ -28,7 +27,7 @@ const type = instance.getEnum('Type', {
   'Overlay': 'default',
   'Modal Sheet': 'sheet',
   'Modal Full': 'full',
-  '🚧 Drawer': 'default',
+  '🚧 Drawer': 'default', // WIP placeholder: maps to Overlay Modal until Drawer has its own component
 })
 
 const hasHeadline = instance.getBoolean('Headline?')

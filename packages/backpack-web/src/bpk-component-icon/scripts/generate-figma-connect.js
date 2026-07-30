@@ -113,6 +113,13 @@ const SPELLING_ALIASES = {
   centre: 'center',
 };
 
+/**
+ * Normalises a kebab-case icon name for fuzzy matching.
+ * Collapses double-hyphens and applies SPELLING_ALIASES so that
+ * Figma names like "centre" match the code name "center".
+ * @param {string} name - kebab-case icon name to normalise
+ * @returns {string} normalised name
+ */
 function normalize(name) {
   const collapsed = name.replace(/--/g, '-');
   return collapsed
@@ -121,6 +128,14 @@ function normalize(name) {
     .join('-');
 }
 
+/**
+ * Returns the code icon name that corresponds to a Figma component name,
+ * or null if no match exists. First tries an exact match, then falls back
+ * to normalised comparison so spelling aliases (e.g. centre/center) resolve.
+ * @param {string} figmaName - icon name from Figma
+ * @param {Set<string>} codeIcons - set of icon names from the codebase
+ * @returns {string|null} matching code name, or null
+ */
 function findCodeMatch(figmaName, codeIcons) {
   if (codeIcons.has(figmaName)) return figmaName;
 
