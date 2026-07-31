@@ -20,18 +20,18 @@
 @use '../../../bpk-mixins/utils';
 
 .bpk-inset-banner-v3 {
-  border-radius: tokens.$bpk-border-radius-sm;
+  border-radius: var(--bpk-radius-sm, tokens.$bpk-border-radius-sm);
   overflow: hidden;
   container-type: inline-size;
 
   &--on-light {
-    color: tokens.$bpk-text-on-light-day;
-    fill: tokens.$bpk-text-on-light-day;
+    color: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
+    fill: var(--bpk-text-on-light, tokens.$bpk-text-on-light-day);
   }
 
   &--on-dark {
-    color: tokens.$bpk-text-on-dark-day;
-    fill: tokens.$bpk-text-on-dark-day;
+    color: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
+    fill: var(--bpk-text-on-dark, tokens.$bpk-text-on-dark-day);
   }
 
   &__header {

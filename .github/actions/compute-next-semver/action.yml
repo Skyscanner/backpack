@@ -1,0 +1,73 @@
+name: Compute next semver release tag
+description: Computes the next stable semver version and tag for a package release.
+
+inputs:
+  release_type:
+    description: Semver component to increment.
+    required: true
+  tag_prefix:
+    description: Prefix before /vX.Y.Z in release tags.
+    required: true
+
+outputs:
+  release_tag:
+    description: The next release tag.
+    value: ${{ steps.compute.outputs.release_tag }}
+  release_version:
+    description: The next release version.
+    value: ${{ steps.compute.outputs.release_version }}
+
+runs:
+  using: composite
+  steps:
+    - id: compute
+      shell: bash
+      env:
+        RELEASE_TYPE: ${{ inputs.release_type }}
+        TAG_PREFIX: ${{ inputs.tag_prefix }}
+      run: |
+        case "$RELEASE_TYPE" in
+          patch|minor|major) ;;
+          *)
+            echo "::error::release_type must be patch, minor, or major (got: $RELEASE_TYPE)"
+            exit 1
+            ;;
+        esac
+
+        latest_version="$(
+          while IFS= read -r tag; do
+            version="${tag#"$TAG_PREFIX"/v}"
+            if [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "$version"
+            fi
+          done < <(git tag --list "$TAG_PREFIX/v*" | sort -V)
+        )"
+        latest_version="$(printf '%s\n' "$latest_version" | tail -n 1)"
+
+        if [ -z "$latest_version" ]; then
+          case "$RELEASE_TYPE" in
+            major) next_version="1.0.0" ;;
+            minor) next_version="0.1.0" ;;
+            patch) next_version="0.0.1" ;;
+          esac
+        else
+          IFS=. read -r major minor patch <<< "$latest_version"
+          case "$RELEASE_TYPE" in
+            major)
+              major=$((major + 1))
+              minor=0
+              patch=0
+              ;;
+            minor)
+              minor=$((minor + 1))
+              patch=0
+              ;;
+            patch) patch=$((patch + 1)) ;;
+          esac
+          next_version="${major}.${minor}.${patch}"
+        fi
+
+        {
+          echo "release_version=${next_version}"
+          echo "release_tag=${TAG_PREFIX}/v${next_version}"
+        } >> "$GITHUB_OUTPUT"

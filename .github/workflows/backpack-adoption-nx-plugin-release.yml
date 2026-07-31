@@ -1,0 +1,145 @@
+name: Backpack Adoption NX Plugin Release
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/backpack-adoption-nx-plugin-release.yml'
+      - '.github/actions/compute-next-semver/**'
+      - 'libs/backpack-adoption-analyzer/**'
+      - 'packages/backpack-adoption-nx-plugin/**'
+      - 'pnpm-lock.yaml'
+      - 'tsconfig.json'
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: Semver bump to release
+        required: true
+        type: choice
+        default: minor
+        options: [patch, minor, major]
+      dry_run:
+        description: Validate only; do not publish or tag
+        required: false
+        type: boolean
+        default: false
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  Validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      release_tag: ${{ steps.version.outputs.release_tag }}
+      release_version: ${{ steps.version.outputs.release_version }}
+      target_sha: ${{ steps.source.outputs.target_sha }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - id: source
+        run: echo "target_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - run: git fetch --force --tags origin
+
+      - id: version
+        uses: ./.github/actions/compute-next-semver
+        with:
+          release_type: ${{ inputs.release_type || 'minor' }}
+          tag_prefix: backpack-adoption-nx-plugin
+
+      - name: Ensure release tag does not already exist
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.release_tag }}
+        run: |
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists"
+            exit 1
+          fi
+
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: .nvmrc
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: npx nx run backpack-adoption-nx-plugin:lint
+      - run: npx nx run backpack-adoption-nx-plugin:typecheck
+      - run: npx nx run backpack-adoption-nx-plugin:test
+      - run: npx nx run backpack-adoption-nx-plugin:build
+      - run: npm pack --dry-run --ignore-scripts
+        working-directory: packages/backpack-adoption-nx-plugin
+
+  Publish:
+    runs-on: ubuntu-latest
+    needs: Validate
+    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          permission-contents: write
+
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ needs.Validate.outputs.target_sha }}
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          # Validation uses .nvmrc; Node 24 is only used here because its npm
+          # 11 supports npm trusted publishing through OIDC.
+          node-version: 24.14.0
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: npx nx run backpack-adoption-nx-plugin:build
+      - name: Recheck release tag before publishing
+        env:
+          RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
+        run: |
+          git fetch --force --tags origin
+          if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "::error::Tag $RELEASE_TAG already exists"
+            exit 1
+          fi
+      - name: Stamp release version
+        env:
+          RELEASE_VERSION: ${{ needs.Validate.outputs.release_version }}
+        run: npm version "$RELEASE_VERSION" --no-git-tag-version --ignore-scripts
+        working-directory: packages/backpack-adoption-nx-plugin
+      - name: Publish public npm package
+        run: npm publish --ignore-scripts --access public --provenance
+        working-directory: packages/backpack-adoption-nx-plugin
+      - name: Create and push release tag
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG"
+          basic_auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${basic_auth}" push origin "refs/tags/$RELEASE_TAG"

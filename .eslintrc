@@ -207,7 +207,13 @@
               "Drawer.GrabberIndicator", // allowed for styling to be passed to ark-ui component
               "Drawer.Positioner", // allowed for styling to be passed to ark-ui component
               "Drawer.SwipeArea", // allowed for styling to be passed to ark-ui component
-              "Drawer.Title" // allowed for styling to be passed to ark-ui component
+              "Drawer.Title", // allowed for styling to be passed to ark-ui component
+              "Menu.Content", // allowed for styling to be passed to ark-ui component
+              "Menu.Item", // allowed for styling to be passed to ark-ui component
+              "Menu.Positioner", // allowed for styling to be passed to ark-ui component
+              "Menu.Separator", // allowed for styling to be passed to ark-ui component
+              "Menu.Trigger", // allowed for styling to be passed to ark-ui component
+              "Menu.TriggerItem" // allowed for styling to be passed to ark-ui component
             ]
           }
         ]

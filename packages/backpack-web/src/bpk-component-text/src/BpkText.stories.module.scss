@@ -22,4 +22,25 @@
   &_success {
     color: tokens.$bpk-text-success-day;
   }
+
+  &_line-clamp {
+    width: 20rem;
+  }
+
+  &_truncation-example {
+    padding: tokens.bpk-spacing-sm();
+    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    box-sizing: border-box;
+  }
+
+  &_comparison-section {
+    margin-top: tokens.bpk-spacing-lg();
+  }
+
+  &_flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: tokens.bpk-spacing-sm();
+  }
 }

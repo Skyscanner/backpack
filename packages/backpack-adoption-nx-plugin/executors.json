@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "executors": {
+    "analyze": {
+      "implementation": "./dist/executors/analyze/executor.js",
+      "schema": "./dist/executors/analyze/schema.json",
+      "description": "Analyze this NX project's JSX/TSX files for Backpack adoption and write a per-project result file."
+    },
+    "report": {
+      "implementation": "./dist/executors/report/executor.js",
+      "schema": "./dist/executors/report/schema.json",
+      "description": "Aggregate per-project Backpack adoption results (written by the analyze executor) into one pass/fail verdict."
+    }
+  }
+}

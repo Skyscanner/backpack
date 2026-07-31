@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Backpack Adoption Analyze executor",
+  "description": "Analyzes this NX project's JSX/TSX files for Backpack adoption and writes a per-project result file.",
+  "type": "object",
+  "properties": {
+    "pattern": {
+      "type": "string",
+      "description": "Glob (relative to the project root) for files to scan.",
+      "default": "**/*.{jsx,tsx}"
+    },
+    "threshold": {
+      "type": "number",
+      "description": "Backpack adoption percentage threshold for this project.",
+      "default": 60
+    },
+    "dryRun": {
+      "type": "boolean",
+      "description": "Report regressions as warnings instead of failures.",
+      "default": false
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "Where to write this project's adoption result JSON, relative to the project root.",
+      "default": "adoption-guard-results.json"
+    },
+    "baseWorktreePath": {
+      "type": "string",
+      "description": "Absolute path to a checkout of the PR base ref (workspace root), if PR comparison is desired. When omitted, only head is reported."
+    }
+  }
+}

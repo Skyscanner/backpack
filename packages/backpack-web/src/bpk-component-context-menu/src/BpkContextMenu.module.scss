@@ -1,0 +1,260 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../bpk-mixins/tokens';
+@use '../../bpk-mixins/typography';
+@use '../../bpk-mixins/utils';
+
+$context-menu-duration: tokens.$bpk-duration-sm;
+$context-menu-min-width: 12rem;
+$context-menu-max-width: 20rem;
+
+// Measured rendered height of one item row (vertical padding + line-height).
+// Update this if item padding or typography changes.
+$context-menu-item-height: 2.6rem;
+$context-menu-max-visible-items: 8.5;
+
+// Default trigger button — resets browser button styles so consumers get a
+// clean base to build on via className. Consumers own the visual design.
+.bpk-context-menu__trigger {
+  display: inline-flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible:not([data-pointer-focus]) {
+    @include utils.bpk-focus-indicator;
+  }
+}
+
+// Circular heart-icon button — matches BpkSaveButton sizing so consumers
+// get the correct visual without depending on BpkSaveButton as a trigger.
+.bpk-context-menu__save-trigger {
+  display: inline-flex;
+  width: tokens.bpk-spacing-xxl();
+  height: tokens.bpk-spacing-xxl();
+  padding: tokens.bpk-spacing-md();
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible:not([data-pointer-focus]) {
+    @include utils.bpk-focus-indicator;
+  }
+
+  svg {
+    fill: currentcolor;
+  }
+}
+
+// Positioner is a bare wrapper that Floating UI (via Ark/Zag) positions.
+// It must not carry padding or width — those live on the content surface —
+// otherwise Floating UI's measurements will include the wrong box.
+.bpk-context-menu__positioner {
+  z-index: tokens.$bpk-zindex-popover;
+  pointer-events: none;
+}
+
+// The content surface — this is the visible "card". Rounded corners, elevation,
+// canvas background. Renders a min/max width so short and long trip names both
+// look consistent.
+.bpk-context-menu__content {
+  display: flex;
+  flex-direction: column;
+  border-radius: tokens.$bpk-border-radius-md;
+  outline: none;
+  background-color: var(
+    --bpk-surface-elevated,
+    #{tokens.$bpk-surface-elevated-day}
+  );
+  box-shadow: tokens.$bpk-box-shadow-lg;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-block-size: $context-menu-item-height * $context-menu-max-visible-items;
+  max-inline-size: $context-menu-max-width;
+  min-inline-size: $context-menu-min-width;
+  pointer-events: auto;
+
+  @media (prefers-reduced-motion: reduce) {
+    &[data-state='open'],
+    &[data-state='closed'] {
+      animation: none;
+    }
+  }
+
+  &[data-state='open'] {
+    animation: bpk-context-menu-fade-in $context-menu-duration ease;
+
+    // Suppress hover background for the duration of the open animation.
+    // CSS animations take cascade precedence over :hover, so the item stays
+    // transparent until the menu has finished appearing. The animation runs
+    // once and does not fill-forward, so normal hover resumes after ~200ms.
+    .bpk-context-menu__item {
+      animation: bpk-context-menu-item-hover-guard $context-menu-duration ease;
+    }
+  }
+
+  &[data-state='closed'] {
+    animation: bpk-context-menu-fade-out $context-menu-duration ease forwards;
+    pointer-events: none;
+  }
+}
+
+// Each item is a flex row: label pushes to the start, optional end icon parks
+// on the end via `margin-inline-start: auto` on its container.
+.bpk-context-menu__item {
+  display: flex;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
+  cursor: pointer;
+  gap: tokens.bpk-spacing-base();
+
+  @include typography.bpk-body-default;
+
+  @include utils.bpk-hover {
+    &:not([data-disabled]) {
+      background-color: var(
+        --bpk-canvas-contrast,
+        #{tokens.$bpk-canvas-contrast-day}
+      );
+    }
+  }
+
+  // Ark exposes `data-highlighted` on keyboard-navigated items. We reuse the
+  // hover surface treatment so mouse and keyboard land on the same visual.
+  &[data-highlighted] {
+    background-color: var(
+      --bpk-canvas-contrast,
+      #{tokens.$bpk-canvas-contrast-day}
+    );
+  }
+
+  &[data-disabled] {
+    color: var(--bpk-text-disabled, #{tokens.$bpk-text-disabled-day});
+    cursor: not-allowed;
+  }
+
+  & + & {
+    border-block-start: var(--bpk-context-menu-item-divider, 0);
+  }
+
+  &:focus-visible {
+    @include utils.bpk-focus-indicator;
+  }
+}
+
+.bpk-context-menu__item--destructive:not([data-disabled]) {
+  color: var(--bpk-status-danger-spot, #{tokens.$bpk-status-danger-spot-day});
+}
+
+.bpk-context-menu__item-label {
+  display: block;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-inline-size: 0;
+}
+
+.bpk-context-menu__item-end-icon {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+
+  svg {
+    fill: currentcolor;
+  }
+}
+
+.bpk-context-menu__item-group {
+  --bpk-context-menu-item-divider: #{tokens.$bpk-border-size-sm} solid
+    var(--bpk-canvas-contrast, #{tokens.$bpk-canvas-contrast-day});
+}
+
+.bpk-context-menu__separator {
+  display: block;
+  margin: tokens.bpk-spacing-sm() 0;
+  border: 0;
+  block-size: 0;
+  border-block-start: tokens.$bpk-border-size-sm solid
+    var(--bpk-other-line-default, #{tokens.$bpk-line-day});
+  inline-size: 100%;
+}
+
+// Keeps item background transparent for the duration of the open animation,
+// preventing ghost hover when the cursor happens to be over an item on open.
+@keyframes bpk-context-menu-item-hover-guard {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bpk-context-menu__item {
+    animation: none;
+  }
+}
+
+@keyframes bpk-context-menu-fade-in {
+  from {
+    transform: translateY(-0.25rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bpk-context-menu-fade-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-0.25rem);
+    opacity: 0;
+  }
+}

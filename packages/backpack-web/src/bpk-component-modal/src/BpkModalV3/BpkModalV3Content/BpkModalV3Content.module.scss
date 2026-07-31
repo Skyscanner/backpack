@@ -54,7 +54,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: tokens.$bpk-surface-elevated-day;
+  background-color: var(
+    --bpk-surface-elevated,
+    tokens.$bpk-surface-elevated-day
+  );
   overflow: clip;
   pointer-events: none;
 
@@ -71,7 +74,7 @@
     transition:
       transform tokens.$bpk-duration-sm ease-in-out,
       opacity tokens.$bpk-duration-sm ease-in-out;
-    border-radius: tokens.$bpk-border-radius-lg;
+    border-radius: var(--bpk-radius-lg, tokens.$bpk-border-radius-lg);
     opacity: 0;
 
     @include shadows.bpk-box-shadow-lg;
@@ -114,7 +117,8 @@
     transition:
       opacity tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1),
       transform tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1);
-    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    border-radius: var(--bpk-radius-lg, tokens.$bpk-border-radius-lg)
+      var(--bpk-radius-lg, tokens.$bpk-border-radius-lg) 0 0;
     opacity: 0;
 
     @include shadows.bpk-box-shadow-lg;
@@ -159,7 +163,10 @@
     transform: translateX(100%);
     transition: transform tokens.$bpk-duration-base cubic-bezier(0.5, 0, 0, 1);
     border-radius: 0;
-    background-color: tokens.$bpk-canvas-contrast-day;
+    background-color: var(
+      --bpk-canvas-contrast,
+      tokens.$bpk-canvas-contrast-day
+    );
 
     @include utils.bpk-rtl {
       transform: translateX(-100%);

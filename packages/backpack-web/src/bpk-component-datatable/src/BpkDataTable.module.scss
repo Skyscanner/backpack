@@ -21,22 +21,18 @@
 @use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
 
-$bpk-border-size-datatable: tokens.$bpk-border-size-xl * 2;
+$bpk-outline-offset: -1 * (4 * tokens.$bpk-one-pixel-rem);
 
 @mixin bpk-datatable-border-left() {
-  @include borders.bpk-border-left(
-    $bpk-border-size-datatable,
-    tokens.$bpk-core-accent-day,
-    inset
-  );
+  // Datatable accent border = $bpk-border-size-xl * 2 = 6px
+  box-shadow: calc(var(--bpk-border-3, tokens.$bpk-border-size-xl) * 2) 0 0 0
+    var(--bpk-core-accent, tokens.$bpk-core-accent-day) inset;
 }
 
 @mixin bpk-datatable-border-right() {
-  @include borders.bpk-border-right(
-    $bpk-border-size-datatable,
-    tokens.$bpk-core-accent-day,
-    inset
-  );
+  // Datatable accent border = $bpk-border-size-xl * 2 = 6px
+  box-shadow: calc(var(--bpk-border-3, tokens.$bpk-border-size-xl) * -2) 0 0 0
+    var(--bpk-core-accent, tokens.$bpk-core-accent-day) inset;
 }
 
 .bpk-data-table {
@@ -50,19 +46,24 @@ $bpk-border-size-datatable: tokens.$bpk-border-size-xl * 2;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+    border: var(--bpk-border-1, tokens.$bpk-border-size-sm) solid
+      var(--bpk-other-line-default, tokens.$bpk-line-day);
     border-bottom: none;
-    outline-offset: -1 * (4 * tokens.$bpk-one-pixel-rem);
-    color: tokens.$bpk-text-primary-day;
+    outline-offset: $bpk-outline-offset;
+    color: var(--bpk-text-primary, tokens.$bpk-text-primary-day);
 
     @include typography.bpk-footnote;
 
     &:last-child:not(.bpk-data-table__header-row) {
-      border-bottom: tokens.$bpk-border-size-sm solid tokens.$bpk-line-day;
+      border-bottom: var(--bpk-border-1, tokens.$bpk-border-size-sm) solid
+        var(--bpk-other-line-default, tokens.$bpk-line-day);
     }
 
     &--clickable:not(.bpk-data-table__header-row):hover {
-      background-color: tokens.$bpk-canvas-contrast-day;
+      background-color: var(
+        --bpk-canvas-contrast,
+        tokens.$bpk-canvas-contrast-day
+      );
       cursor: pointer;
 
       @include bpk-datatable-border-left;
@@ -73,7 +74,10 @@ $bpk-border-size-datatable: tokens.$bpk-border-size-xl * 2;
     }
 
     &--selected {
-      background-color: tokens.$bpk-status-warning-fill-day;
+      background-color: var(
+        --bpk-surface-warning-fill,
+        tokens.$bpk-status-warning-fill-day
+      );
 
       @include bpk-datatable-border-left;
 

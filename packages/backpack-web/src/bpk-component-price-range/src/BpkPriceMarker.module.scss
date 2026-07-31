@@ -29,7 +29,7 @@ $arrow-size: tokens.bpk-spacing-base();
   align-items: center;
   flex: none;
   border: none;
-  border-radius: tokens.$bpk-border-radius-xs;
+  border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
   background: none;
   white-space: nowrap;
   box-shadow: tokens.$bpk-box-shadow-sm;
@@ -39,8 +39,8 @@ $arrow-size: tokens.bpk-spacing-base();
     display: inline-flex;
     z-index: 1;
     padding: math.div(tokens.bpk-spacing-sm(), 2) tokens.bpk-spacing-md();
-    border-radius: tokens.$bpk-border-radius-xs;
-    color: tokens.$bpk-text-primary-inverse-day;
+    border-radius: var(--bpk-radius-xs, tokens.$bpk-border-radius-xs);
+    color: var(--bpk-text-inverse, tokens.$bpk-text-primary-inverse-day);
   }
 
   &__arrow {
@@ -55,14 +55,20 @@ $arrow-size: tokens.bpk-spacing-base();
   }
 
   &--low {
-    background-color: tokens.$bpk-status-success-spot-day;
+    background-color: var(
+      --bpk-status-success-spot,
+      tokens.$bpk-status-success-spot-day
+    );
   }
 
   &--medium {
-    background-color: tokens.$bpk-core-primary-day;
+    background-color: var(--bpk-core-primary, tokens.$bpk-core-primary-day);
   }
 
   &--high {
-    background-color: tokens.$bpk-status-danger-spot-day;
+    background-color: var(
+      --bpk-status-danger-spot,
+      tokens.$bpk-status-danger-spot-day
+    );
   }
 }

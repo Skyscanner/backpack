@@ -79,25 +79,37 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     }
 
     &--default {
-      background-color: tokens.$bpk-line-day;
+      background-color: var(
+        --bpk-private-page-indicator-bg-default-unselected,
+        tokens.$bpk-line-day
+      );
     }
 
     &--overImage,
     &--overImageSpaced,
     &--carousel {
-      background-color: tokens.$bpk-line-on-dark-day;
+      background-color: var(
+        --bpk-private-page-indicator-bg-over-image-unselected,
+        tokens.$bpk-line-on-dark-day
+      );
     }
 
     &--active {
       &-default {
-        background-color: tokens.$bpk-text-secondary-day;
+        background-color: var(
+          --bpk-private-page-indicator-bg-default-selected,
+          tokens.$bpk-text-secondary-day
+        );
         pointer-events: none;
       }
 
       &-overImage,
       &-overImageSpaced,
       &-carousel {
-        background-color: tokens.$bpk-text-on-dark-day;
+        background-color: var(
+          --bpk-private-page-indicator-bg-over-image-selected,
+          tokens.$bpk-text-on-dark-day
+        );
         pointer-events: none;
       }
     }
@@ -107,7 +119,10 @@ $container-width: $dot-size * $displayed-total + $dot-margin *
     --bpk-private-button-dimension-radius: 50%;
     --bpk-private-button-colour-bg-secondary-on-dark: #{tokens.$bpk-private-page-indicator-button-carousel-normal-background-day};
     --bpk-private-button-colour-bg-secondary-on-dark-pressed: #{tokens.$bpk-private-page-indicator-button-carousel-pressed-background-day};
-    --bpk-private-button-colour-text-secondary-on-dark: #{tokens.$bpk-text-primary-day};
+    --bpk-private-button-colour-text-secondary-on-dark: var(
+      --bpk-text-primary,
+      #{tokens.$bpk-text-primary-day}
+    );
 
     // Keep this selector more specific than BpkButton's icon-only padding,
     // which may be loaded later in production CSS chunks.

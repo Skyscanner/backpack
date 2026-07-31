@@ -144,7 +144,22 @@ const Example = () => {
 
 ### Preventing a wrapper element with `asChild`
 
-By default `RootProvider` renders a `<div>` to host its ARIA attributes and class names. Pass `asChild` to merge those props onto your single child element instead — useful when the provider wraps an existing item element and an extra DOM node would break layout or produce invalid HTML:
+Both `Root` and `RootProvider` accept an `asChild` prop. By default they render a `<div>` to host ARIA attributes and class names. Pass `asChild` to merge those props onto your single child element instead — useful when an extra DOM node would break layout or produce invalid HTML.
+
+**With `Root`:**
+
+```tsx
+<ul>
+  <BpkCollapsible.Root asChild>
+    <li>
+      <BpkCollapsible.Trigger>…</BpkCollapsible.Trigger>
+      <BpkCollapsible.Content>…</BpkCollapsible.Content>
+    </li>
+  </BpkCollapsible.Root>
+</ul>
+```
+
+**With `RootProvider`:**
 
 ```tsx
 <ul>
@@ -157,9 +172,9 @@ By default `RootProvider` renders a `<div>` to host its ARIA attributes and clas
 </ul>
 ```
 
-The `<li>` becomes the collapsible root — no wrapper `<div>` is inserted between it and the `<ul>`.
+In both cases the `<li>` becomes the collapsible root — no wrapper `<div>` is inserted between it and the `<ul>`.
 
-> **Note:** `asChild` requires exactly one React element child. Passing a fragment, a string, or multiple siblings will throw a runtime error from Ark's slot merging.
+> **Note:** `asChild` requires exactly one React element child. Passing a fragment, a string, or multiple siblings will throw a runtime error from Ark's slot merging. If the child is a custom React component (rather than a DOM element), it must forward the merged props and `ref` to an underlying DOM node — e.g. via `forwardRef` — otherwise the class names, ARIA attributes, and data attributes will not be applied.
 
 ## Lazy mounting
 
