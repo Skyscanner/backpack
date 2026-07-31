@@ -38,12 +38,9 @@
   }
 
   &_flex-container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: tokens.bpk-spacing-sm();
   }
-}
-
-:where(.bpk-stories-text_flex-container) {
-  display: flex;
 }

@@ -111,6 +111,7 @@ type Props = {
    * Truncates overflowing text to a single line with an ellipsis.
    */
   truncate?: boolean;
+  /** Renders the text with an underline. */
   underline?: boolean;
   id?: string;
   [rest: string]: any;
@@ -138,7 +139,7 @@ const BpkText = ({
   const lineClampStyle = shouldClamp
     ? ({
         ...style,
-        '--bpk-text-line-clamp': lineClamp,
+        '--bpk-text-line-clamp': lineClamp.toString(),
       } as CSSProperties)
     : style;
 

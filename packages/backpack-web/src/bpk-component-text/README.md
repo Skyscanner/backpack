@@ -8,19 +8,21 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-```javascript
+```tsx
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
-  <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>My heading</BpkText>
-  <BpkText tagName="p">My paragraph</BpkText>
-  <BpkText tagName="p" textStyle={TEXT_STYLES.bodyLongform}>My callout paragraph</BpkText>
+  <>
+    <BpkText tagName="h1" textStyle={TEXT_STYLES.subheading}>My heading</BpkText>
+    <BpkText tagName="p">My paragraph</BpkText>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.bodyLongform}>My callout paragraph</BpkText>
+  </>
 );
 ```
 
 When using the same style in many places repeating the `textStyle` and `tagName` props can become tedious in this case you can use `withDefaultProps` from `bpk-react-utils`.
 
-```javascript
+```tsx
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 import { withDefaultProps } from '@skyscanner/backpack-web/bpk-react-utils';
 
@@ -57,12 +59,14 @@ export default () => (
 
 Heading `textStyle` should not be confused with heading `tagName` that provide structure for SEO and Accessibility. The weight which is normally applied using `tagName` will be overwritten by the weight defined in the `textStyle`.
 
-```javascript
+```tsx
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
-  <BpkText tagName="h1" textStyle={TEXT_STYLES.heading1}>My heading</BpkText>
-  <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>My subhheading</BpkText>
+  <>
+    <BpkText tagName="h1" textStyle={TEXT_STYLES.heading1}>My heading</BpkText>
+    <BpkText tagName="h2" textStyle={TEXT_STYLES.subheading}>My subhheading</BpkText>
+  </>
 );
 ```
 
@@ -70,7 +74,7 @@ export default () => (
 
 For use cases where the new Editorial Larken font is required, there are 3 textStyles available to apply this styling.
 
-```javascript
+```tsx
 import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
@@ -84,14 +88,16 @@ export default () => (
 
 The `strikethrough` prop renders text with a line through it. It defaults to `false`. When combined with the `color` prop, both the text and the decoration line use the same color, ensuring visual consistency — including in dark mode.
 
-```javascript
+```tsx
 import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
-  <BpkText strikethrough>Struck-through text</BpkText>
-  <BpkText color={TEXT_COLORS.textError} strikethrough>
-    Struck-through error text
-  </BpkText>
+  <>
+    <BpkText strikethrough>Struck-through text</BpkText>
+    <BpkText color={TEXT_COLORS.textError} strikethrough>
+      Struck-through error text
+    </BpkText>
+  </>
 );
 ```
 
@@ -101,7 +107,7 @@ The `underline` prop renders text with a basic underline. It defaults to
 `false`. The underline uses the current text color, including when the `color`
 prop or dark mode is used.
 
-```javascript
+```tsx
 import BpkText, {
   TEXT_COLORS,
 } from '@skyscanner/backpack-web/bpk-component-text';
@@ -120,10 +126,11 @@ export default () => (
 
 Use `truncate` for no-wrap, single-line truncation, or pass a positive integer
 to `lineClamp` to truncate after a specific number of lines. Both need a
-constrained available width. Invalid `lineClamp` values are ignored, and a
-valid `lineClamp` takes precedence when both props are provided.
+constrained available width. Invalid `lineClamp` values (zero, negative, non-integers,
+`NaN`, and `Infinity`) are ignored, and a valid `lineClamp` takes precedence when
+both props are provided.
 
-```javascript
+```tsx
 import BpkText from '@skyscanner/backpack-web/bpk-component-text';
 
 export default () => (
@@ -134,14 +141,16 @@ export default () => (
 );
 ```
 
-`lineClamp` changes the element's display mode, so apply it to the text element
-rather than an element responsible for flex or grid layout.
+`lineClamp` changes the element's display mode and sets `overflow-wrap: anywhere`,
+which allows line breaks at any character. This may affect elements with existing
+custom line-breaking rules. Apply `lineClamp` to the text element itself rather than
+an element responsible for flex or grid layout.
 
 ### Color Prop
 
 The `color` prop allows you to set the text color directly rather override by `className`. It uses predefined `TEXT_COLORS` tokens to ensure ux consistency with the design system.
 
-```javascript
+```tsx
 import BpkText, {
   TEXT_COLORS,
 } from '@skyscanner/backpack-web/bpk-component-text';

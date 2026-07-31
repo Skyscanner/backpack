@@ -254,6 +254,14 @@ const FlexLayoutContent = () => (
   </>
 );
 
+const TruncateExample = () => (
+  <div className={getClassName('bpk-stories-text_line-clamp')}>
+    <BpkText tagName="p" className={truncationExampleClassName} truncate>
+      {truncationExampleText}
+    </BpkText>
+  </div>
+);
+
 const LineClampExample = () => (
   <div className={getClassName('bpk-stories-text_line-clamp')}>
     <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
@@ -417,6 +425,10 @@ export const Strikethrough = {
 
 export const Underline = {
   render: () => <UnderlineExample />,
+};
+
+export const Truncate = {
+  render: () => <TruncateExample />,
 };
 
 export const LineClamp = {
