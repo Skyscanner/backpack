@@ -1,0 +1,55 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../../bpk-mixins/focus-indicator-v2';
+@use '../../../../bpk-mixins/tokens';
+
+.bpk-drawer-v2__grabber {
+  display: flex;
+  justify-content: center;
+
+  // Match Ark UI's grabber affordance for pointer devices.
+  // stylelint-disable-next-line plugin/no-unsupported-browser-features
+  cursor: grab;
+  padding-block: tokens.bpk-spacing-base() tokens.bpk-spacing-sm();
+
+  &:focus-visible {
+    @include focus-indicator-v2.bpk-focus-indicator-v2;
+  }
+}
+
+.bpk-drawer-v2__content[data-dragging] .bpk-drawer-v2__grabber,
+.bpk-drawer-v2__content[data-swiping] .bpk-drawer-v2__grabber {
+  // stylelint-disable-next-line plugin/no-unsupported-browser-features
+  cursor: grabbing;
+}
+
+.bpk-drawer-v2__grabber-indicator {
+  display: block;
+  border-radius: tokens.$bpk-border-radius-sm;
+  background-color: tokens.$bpk-line-day;
+  block-size: 0.375rem;
+  inline-size: 3rem;
+  pointer-events: none;
+}
+
+.bpk-drawer-v2__grabber:hover .bpk-drawer-v2__grabber-indicator,
+.bpk-drawer-v2__content[data-dragging] .bpk-drawer-v2__grabber-indicator,
+.bpk-drawer-v2__content[data-swiping] .bpk-drawer-v2__grabber-indicator {
+  background-color: tokens.$bpk-text-secondary-day;
+}
