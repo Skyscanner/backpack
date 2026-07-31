@@ -247,7 +247,7 @@ const comparisonSectionClassName = getClassName(
 
 const FlexLayoutContent = () => (
   <>
-    <BpkText tagName="span">Flexible child</BpkText>
+    <BpkText tagName="span">This is a flexible child with a long text that should overflow when truncated</BpkText>
     <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
       Fixed child
     </BpkText>
