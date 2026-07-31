@@ -11,3 +11,6 @@ coverage
 /packages/backpack-web/src/bpk-component-spinner/src/spinners
 /packages/backpack-web/src/bpk-stylesheets/base.js
 *.d.ts
+*.figma.ts
+*.figma.batch.ts
+*.figma.batch.json
