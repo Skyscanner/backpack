@@ -180,12 +180,12 @@ const ColorPropExample = () => (
 
     <div className={getClassName('bpk-stories-text_success')}>
       <BpkText tagName="p" color={TEXT_COLORS.textSecondary}>
-          Text with color prop textSecondary with parent className override
+        Text with color prop textSecondary with parent className override
       </BpkText>
     </div>
 
     <div className={getClassName('bpk-stories-text_success')}>
-       <BpkText tagName="p">
+      <BpkText tagName="p">
         Text without color prop with parent color override
       </BpkText>
     </div>
@@ -195,7 +195,6 @@ const ColorPropExample = () => (
         Text with color prop textSecondary with self className override
       </BpkText>
     </div>
-
   </div>
 );
 
@@ -213,6 +212,125 @@ const StrikethroughExample = () => (
   </div>
 );
 
+const UnderlineExample = () => (
+  <div>
+    <BpkText tagName="p" underline>
+      Plain underlined text
+    </BpkText>
+    <BpkText tagName="p" color={TEXT_COLORS.textError} underline>
+      Underlined text with textError color
+    </BpkText>
+    <BpkText tagName="p" color={TEXT_COLORS.textSecondary} underline>
+      Underlined text with textSecondary color
+    </BpkText>
+  </div>
+);
+
+const truncationExampleText =
+  'This introduction demonstrates internationalisation in a constrained container, while additional details explain how each truncation method handles wrapping across several lines and hides content beyond the configured limit.';
+
+const unbrokenTruncationExampleText =
+  'ThisIsAnUnbrokenEnglishStringDesignedToCompareHowTruncateAndLineClampHandleLongContentWithoutAnySpacesOrNaturalWrappingPoints';
+
+const truncationExampleClassName = getClassName(
+  'bpk-stories-text_truncation-example',
+);
+
+const flexContainerExampleClassName = getClassName(
+  'bpk-stories-text_truncation-example',
+  'bpk-stories-text_flex-container',
+);
+
+const comparisonSectionClassName = getClassName(
+  'bpk-stories-text_comparison-section',
+);
+
+const FlexLayoutContent = () => (
+  <>
+    <BpkText tagName="span">This is a flexible child with a long text that should overflow when truncated</BpkText>
+    <BpkText tagName="span" textStyle={TEXT_STYLES.label2}>
+      Fixed child
+    </BpkText>
+  </>
+);
+
+const TruncateExample = () => (
+  <div className={getClassName('bpk-stories-text_line-clamp')}>
+    <BpkText tagName="p" className={truncationExampleClassName} truncate>
+      {truncationExampleText}
+    </BpkText>
+  </div>
+);
+
+const LineClampExample = () => (
+  <div className={getClassName('bpk-stories-text_line-clamp')}>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      Full text
+    </BpkText>
+    <BpkText tagName="p" className={truncationExampleClassName}>
+      {truncationExampleText}
+    </BpkText>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      truncate
+    </BpkText>
+    <BpkText tagName="p" className={truncationExampleClassName} truncate>
+      {truncationExampleText}
+    </BpkText>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      lineClamp=1
+    </BpkText>
+    <BpkText tagName="p" className={truncationExampleClassName} lineClamp={1}>
+      {truncationExampleText}
+    </BpkText>
+    <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+      lineClamp=3
+    </BpkText>
+    <BpkText tagName="p" className={truncationExampleClassName} lineClamp={3}>
+      {truncationExampleText}
+    </BpkText>
+
+    <section className={comparisonSectionClassName}>
+      <BpkText tagName="h3" textStyle={TEXT_STYLES.heading5}>
+        Flex container comparison
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        truncate
+      </BpkText>
+      <BpkText tagName="p" className={flexContainerExampleClassName} truncate>
+        <FlexLayoutContent />
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        lineClamp=1
+      </BpkText>
+      <BpkText
+        tagName="p"
+        className={flexContainerExampleClassName}
+        lineClamp={1}
+      >
+        <FlexLayoutContent />
+      </BpkText>
+    </section>
+
+    <section className={comparisonSectionClassName}>
+      <BpkText tagName="h3" textStyle={TEXT_STYLES.heading5}>
+        Unbroken text comparison
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        truncate
+      </BpkText>
+      <BpkText tagName="p" className={truncationExampleClassName} truncate>
+        {unbrokenTruncationExampleText}
+      </BpkText>
+      <BpkText tagName="p" textStyle={TEXT_STYLES.label2}>
+        lineClamp=1
+      </BpkText>
+      <BpkText tagName="p" className={truncationExampleClassName} lineClamp={1}>
+        {unbrokenTruncationExampleText}
+      </BpkText>
+    </section>
+  </div>
+);
+
 const MixedExample = () => (
   <div>
     <HeroStylesExample />
@@ -222,6 +340,8 @@ const MixedExample = () => (
     <LarkenStylesExample />
     <ColorPropExample />
     <StrikethroughExample />
+    <UnderlineExample />
+    <LineClampExample />
   </div>
 );
 
@@ -301,6 +421,18 @@ export const ColorProp = {
 
 export const Strikethrough = {
   render: () => <StrikethroughExample />,
+};
+
+export const Underline = {
+  render: () => <UnderlineExample />,
+};
+
+export const Truncate = {
+  render: () => <TruncateExample />,
+};
+
+export const LineClamp = {
+  render: () => <LineClampExample />,
 };
 
 export const VisualTest = {
