@@ -217,6 +217,6 @@ export const SnapPoints: Story = {
   ),
 };
 
-export const PersistentSnapPoints: Story = {
+export const ClickablePillWithInteractableBackground: Story = {
   render: () => <PersistentSnapDrawer />,
 };
