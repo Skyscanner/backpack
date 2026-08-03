@@ -24,11 +24,14 @@ import {
   type MouseEvent,
 } from 'react';
 
+import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
+
 import BpkButton from '../../../bpk-component-button';
 import { BpkProvider } from '../../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../../bpk-component-text';
 
 import BpkDrawerV2 from './BpkDrawerV2';
+import readme from './README.md';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -136,8 +139,18 @@ const PersistentSnapDrawer = () => {
 };
 
 const meta: Meta<typeof BpkDrawerV2.Root> = {
-  title: 'bpk-component-drawer/BpkDrawerV2',
+  title: 'bpk-component-drawer-v2',
   component: BpkDrawerV2.Root,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Markdown>{readme}</Markdown>
+          <ArgTypes exclude={['zoomEnabled']} />
+        </>
+      ),
+    },
+  },
 };
 
 export default meta;
