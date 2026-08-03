@@ -203,7 +203,6 @@ export const SnapPoints: Story = {
       <BpkDrawerV2.Root
         snapPoints={[0.4, 0.9]}
         defaultSnapPoint={0.4}
-        snapToSequentialPoints
       >
         <BpkDrawerV2.Trigger asChild>
           <BpkButton>Open snap drawer</BpkButton>
