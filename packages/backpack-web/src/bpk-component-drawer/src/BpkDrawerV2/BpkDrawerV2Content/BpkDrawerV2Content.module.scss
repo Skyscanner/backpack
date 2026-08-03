@@ -37,8 +37,11 @@ $drawer-bleed: 3rem;
   transition:
     opacity $drawer-duration $drawer-easing,
     transform $drawer-duration $drawer-easing;
-  background-color: tokens.$bpk-surface-elevated-day;
-  color: tokens.$bpk-text-primary-day;
+  background-color: var(
+    --bpk-surface-elevated,
+    #{tokens.$bpk-surface-elevated-day}
+  );
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
   opacity: 0;
   overflow: clip;
   max-block-size: 100dvh;

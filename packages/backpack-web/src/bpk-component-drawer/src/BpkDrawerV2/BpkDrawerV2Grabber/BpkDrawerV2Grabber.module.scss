@@ -42,7 +42,7 @@
 .bpk-drawer-v2__grabber-indicator {
   display: block;
   border-radius: tokens.$bpk-border-radius-sm;
-  background-color: tokens.$bpk-line-day;
+  background-color: var(--bpk-other-line-default, #{tokens.$bpk-line-day});
   block-size: 0.375rem;
   inline-size: 3rem;
   pointer-events: none;
@@ -51,5 +51,8 @@
 .bpk-drawer-v2__grabber:hover .bpk-drawer-v2__grabber-indicator,
 .bpk-drawer-v2__content[data-dragging] .bpk-drawer-v2__grabber-indicator,
 .bpk-drawer-v2__content[data-swiping] .bpk-drawer-v2__grabber-indicator {
-  background-color: tokens.$bpk-text-secondary-day;
+  background-color: var(
+    --bpk-text-secondary,
+    #{tokens.$bpk-text-secondary-day}
+  );
 }
