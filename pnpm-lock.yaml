@@ -45,8 +45,8 @@ importers:
         specifier: ^7.28.3
         version: 7.28.3(@babel/core@7.29.6)
       '@figma/code-connect':
-        specifier: ^1.4.9
-        version: 1.4.9
+        specifier: ^1.5.0
+        version: 1.5.0
       '@figma/rest-api-spec':
         specifier: ^0.37.0
         version: 0.37.0
@@ -1791,8 +1791,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@figma/code-connect@1.4.9':
-    resolution: {integrity: sha512-Ifan9Kb5oXHAh0wXu0BM8Iy+AEhWM8NoJSTBr3oU0vQTwggleK55CUHnh5zEYl6tQjj83mg6mTo4klDgcgDprg==}
+  '@figma/code-connect@1.5.0':
+    resolution: {integrity: sha512-dzdSDvZrDHTEm7oh/J5RMeb3BWcJRUt7+xxf9IpuFoI/Z1avsVACGe0Igr5o0GKyJha+obrrhLwzOlQUta8yHA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6338,6 +6338,11 @@ packages:
 
   es6-promise@4.2.8:
     resolution: {integrity: sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==}
+
+  esbuild-wasm@0.27.3:
+    resolution: {integrity: sha512-AUXuOxZ145/5Az+lIqk6TdJbxKTyDGkXMJpTExmBdbnHR6n6qAFx+F4oG9ORpVYJ9dQYeQAqzv51TO4DFKsbXw==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   esbuild@0.27.7:
     resolution: {integrity: sha512-IxpibTjyVnmrIQo5aqNpCgoACA/dTKLTlhMHihVHhdkxKyPO1uBBthumT0rdHmcsk9uMonIWS0m4FljWzILh3w==}
@@ -13627,7 +13632,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@figma/code-connect@1.4.9':
+  '@figma/code-connect@1.5.0':
     dependencies:
       boxen: 5.1.1
       chalk: 4.1.2
@@ -13635,6 +13640,7 @@ snapshots:
       compare-versions: 6.1.1
       cross-spawn: 7.0.6
       dotenv: 16.6.1
+      esbuild-wasm: 0.27.3
       fast-fuzzy: 1.12.0
       find-up: 5.0.0
       glob: 11.1.0
@@ -19372,6 +19378,8 @@ snapshots:
   es6-promise@3.3.1: {}
 
   es6-promise@4.2.8: {}
+
+  esbuild-wasm@0.27.3: {}
 
   esbuild@0.27.7:
     optionalDependencies:

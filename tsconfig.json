@@ -12,5 +12,9 @@
     "jsx": "react-jsx",
     "allowJs": false
   },
-  "include": ["packages", "@types", "token-sync"]
+  "include": ["packages", "@types", "token-sync"],
+  "exclude": [
+    "**/*.figma.ts",
+    "**/*.figma.batch.ts"
+  ]
 }

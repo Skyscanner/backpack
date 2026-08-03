@@ -2,10 +2,14 @@ on:
   push:
     paths:
       - packages/backpack-web/**/*.figma.tsx
+      - packages/backpack-web/**/*.figma.ts
+      - packages/backpack-web/**/*.figma.batch.json
     branches: [main]
   pull_request:
     paths:
       - packages/backpack-web/**/*.figma.tsx
+      - packages/backpack-web/**/*.figma.ts
+      - packages/backpack-web/**/*.figma.batch.json
     branches: [main]
 
 permissions: {}
