@@ -18,9 +18,34 @@
 
 @use '../../../bpk-mixins/tokens';
 
+$swipe-area-size: tokens.bpk-spacing-xl();
+
 .bpk-drawer-v2__swipe-area {
   position: fixed;
-  z-index: tokens.$bpk-zindex-modal;
-  inset: 0;
+  z-index: tokens.$bpk-zindex-modal + 1;
   pointer-events: auto;
+
+  &[data-swipe-direction='up'] {
+    block-size: $swipe-area-size;
+    inset-block-end: 0;
+    inset-inline: 0;
+  }
+
+  &[data-swipe-direction='down'] {
+    block-size: $swipe-area-size;
+    inset-block-start: 0;
+    inset-inline: 0;
+  }
+
+  &[data-swipe-direction='left'] {
+    inline-size: $swipe-area-size;
+    inset-block: 0;
+    inset-inline-end: 0;
+  }
+
+  &[data-swipe-direction='right'] {
+    inline-size: $swipe-area-size;
+    inset-block: 0;
+    inset-inline-start: 0;
+  }
 }

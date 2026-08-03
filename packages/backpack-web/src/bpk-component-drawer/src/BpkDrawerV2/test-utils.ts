@@ -16,25 +16,14 @@
  * limitations under the License.
  */
 
-import { Drawer } from '@ark-ui/react';
-
-// @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
-import BpkCloseButton from '../../../../bpk-component-close-button';
-import { getDataComponentAttribute } from '../../../../bpk-react-utils';
-
-export type BpkDrawerV2CloseTriggerProps = {
-  label: string;
+const mockResizeObserver = () => {
+  window.ResizeObserver =
+    window.ResizeObserver ||
+    jest.fn().mockImplementation(() => ({
+      disconnect: jest.fn(),
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+    }));
 };
 
-const BpkDrawerV2CloseTrigger = ({
-  label,
-}: BpkDrawerV2CloseTriggerProps) => (
-  <Drawer.CloseTrigger asChild>
-    <BpkCloseButton
-      label={label}
-      {...getDataComponentAttribute('DrawerV2CloseTrigger')}
-    />
-  </Drawer.CloseTrigger>
-);
-
-export default BpkDrawerV2CloseTrigger;
+export default mockResizeObserver;

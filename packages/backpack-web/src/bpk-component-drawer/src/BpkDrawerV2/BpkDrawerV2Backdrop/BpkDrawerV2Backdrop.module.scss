@@ -26,9 +26,11 @@ $drawer-easing: cubic-bezier(0.5, 0, 0, 1);
   z-index: tokens.$bpk-zindex-modal;
   background-color: tokens.$bpk-scrim-day;
   inset: 0;
+  pointer-events: none;
 
   &[data-state='open'] {
     animation: bpk-drawer-v2-backdrop-in $drawer-duration $drawer-easing;
+    pointer-events: auto;
   }
 
   &[data-state='closing'],

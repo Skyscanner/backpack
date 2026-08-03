@@ -25,7 +25,7 @@ $drawer-bleed: 3rem;
 
 .bpk-drawer-v2__positioner {
   position: fixed;
-  z-index: tokens.$bpk-zindex-modal;
+  z-index: tokens.$bpk-zindex-modal + 1;
   inset: 0;
   pointer-events: none;
 }

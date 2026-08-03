@@ -23,16 +23,11 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import BpkDrawerV2 from './BpkDrawerV2';
+import mockResizeObserver from './test-utils';
 import useBpkDrawerV2 from './useBpkDrawerV2';
 import useBpkDrawerV2Context from './useBpkDrawerV2Context';
 
-window.ResizeObserver =
-  window.ResizeObserver ||
-  jest.fn().mockImplementation(() => ({
-    disconnect: jest.fn(),
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-  }));
+beforeAll(mockResizeObserver);
 
 const renderDrawerV2 = (
   props: Partial<Parameters<typeof BpkDrawerV2.Root>[0]> = {},

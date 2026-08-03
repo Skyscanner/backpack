@@ -20,14 +20,9 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import BpkDrawerV2 from './BpkDrawerV2';
+import mockResizeObserver from './test-utils';
 
-window.ResizeObserver =
-  window.ResizeObserver ||
-  jest.fn().mockImplementation(() => ({
-    disconnect: jest.fn(),
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-  }));
+beforeAll(mockResizeObserver);
 
 describe('BpkDrawerV2 accessibility tests', () => {
   it('has no accessibility violations when open', async () => {
