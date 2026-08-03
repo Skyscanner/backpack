@@ -40,14 +40,12 @@ const BpkDrawerV2Content = ({
 }: BpkDrawerV2ContentProps) => (
   <Drawer.Positioner
     className={getClassName('bpk-drawer-v2__positioner')}
-    hidden={false}
     {...getDataComponentAttribute('DrawerV2Positioner')}
   >
     <Drawer.Content
       {...rest}
       className={getClassName('bpk-drawer-v2__content')}
       draggable={draggable}
-      hidden={false}
       {...getDataComponentAttribute('DrawerV2Content')}
     >
       {children}
