@@ -28,7 +28,7 @@ const getClassName = cssModules(STYLES);
 
 export type BpkDrawerV2ContentProps = Omit<
   ComponentProps<typeof Drawer.Content>,
-  'children' | 'className' | 'style'
+  'children' | 'className' | 'hidden' | 'style'
 > & {
   children: ReactNode;
 };
@@ -46,6 +46,7 @@ const BpkDrawerV2Content = ({
       {...rest}
       className={getClassName('bpk-drawer-v2__content')}
       draggable={draggable}
+      hidden={false}
       {...getDataComponentAttribute('DrawerV2Content')}
     >
       {children}

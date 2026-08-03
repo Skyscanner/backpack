@@ -22,6 +22,7 @@
 $drawer-duration: tokens.$bpk-duration-base;
 $drawer-easing: cubic-bezier(0.5, 0, 0, 1);
 $drawer-bleed: 3rem;
+$drawer-side-inline-size: 24rem;
 
 .bpk-drawer-v2__positioner {
   position: fixed;
@@ -87,7 +88,7 @@ $drawer-bleed: 3rem;
   &[data-swipe-direction='left'] {
     transform: translate3d(-100%, 0, 0);
     border-radius: 0 tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0;
-    inline-size: min(24rem, 100vw);
+    inline-size: min($drawer-side-inline-size, 100vw);
     inset-block: 0;
     inset-inline-start: 0;
 
@@ -101,7 +102,7 @@ $drawer-bleed: 3rem;
   &[data-swipe-direction='right'] {
     transform: translate3d(100%, 0, 0);
     border-radius: tokens.$bpk-border-radius-lg 0 0 tokens.$bpk-border-radius-lg;
-    inline-size: min(24rem, 100vw);
+    inline-size: min($drawer-side-inline-size, 100vw);
     inset-block: 0;
     inset-inline-end: 0;
 
@@ -183,7 +184,9 @@ html[dir='rtl']
     animation: none;
   }
 
-  .bpk-drawer-v2__content[data-swipe-direction] {
+  .bpk-drawer-v2__content[data-state='open'],
+  .bpk-drawer-v2__content[data-dragging],
+  .bpk-drawer-v2__content[data-swiping] {
     transform: translate3d(
       var(--drawer-translate-x, 0),
       var(--drawer-translate-y, 0),

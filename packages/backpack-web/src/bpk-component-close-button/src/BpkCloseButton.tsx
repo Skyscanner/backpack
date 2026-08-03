@@ -27,7 +27,7 @@ const getClassName = cssModules(STYLES);
 
 type Props = {
   label: string;
-  onClick?: (event: SyntheticEvent<any>) => any;
+  onClick: (event: SyntheticEvent<any>) => any;
   className?: string | null;
   customIcon?: FunctionComponent<any> | null;
   onDark?: Boolean;

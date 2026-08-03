@@ -19,6 +19,9 @@
 @use '../../../../bpk-mixins/focus-indicator-v2';
 @use '../../../../bpk-mixins/tokens';
 
+$grabber-indicator-block-size: 0.375rem;
+$grabber-indicator-inline-size: 3rem;
+
 .bpk-drawer-v2__grabber {
   display: flex;
   justify-content: center;
@@ -43,8 +46,8 @@
   display: block;
   border-radius: tokens.$bpk-border-radius-sm;
   background-color: var(--bpk-other-line-default, #{tokens.$bpk-line-day});
-  block-size: 0.375rem;
-  inline-size: 3rem;
+  block-size: $grabber-indicator-block-size;
+  inline-size: $grabber-indicator-inline-size;
   pointer-events: none;
 }
 
