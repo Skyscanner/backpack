@@ -584,6 +584,78 @@ describe('usePageScrollSync', () => {
       expect(mockSetCurrentIndex).not.toHaveBeenCalled();
     });
 
+    it('should snap to the last page when the final (short) page cannot scroll its first card to the start', () => {
+      // 3 cards, 2 shown per page => page 0 = [0,1], page 1 = [2].
+      // The final page holds fewer cards than initiallyShownCards, so scrolling to
+      // the end leaves card 2 alongside card 1 (firstVisibleIndex stays at 1).
+      // Because the last card is visible, we should still land on page 1.
+      const shortCardRefs = { current: [] as Array<HTMLDivElement | null> };
+      Array.from({ length: 3 }).forEach((_, index) => {
+        const { mockDiv } = makeMockDiv(index);
+        mockDiv.scrollIntoView = jest.fn();
+        shortCardRefs.current.push(mockDiv);
+      });
+
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: shortCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 2,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            visibilityList: [1, 1, 0],
+          },
+        },
+      );
+
+      // User initiates scroll via wheel
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
+
+      // Scrolled to the end: cards 1 and 2 visible, card 0 out of view
+      rerender({ visibilityList: [0, 1, 1] });
+
+      expect(mockSetCurrentIndex).toHaveBeenCalledWith(1);
+    });
+
+    it('should NOT snap to the last page when all cards are visible in a wide viewport', () => {
+      // 4 cards, 2 per page => page 0 = [0,1], page 1 = [2,3].
+      // The final page is NOT short (4 % 2 === 0), so all cards fitting in the
+      // viewport at once should not falsely advance the indicator to page 1.
+      const { rerender } = renderHook(
+        ({ visibilityList }) =>
+          usePageScrollSync({
+            cardRefs: mockCardRefs,
+            container: mockContainer,
+            currentIndex: 0,
+            enabled: true,
+            initiallyShownCards: 2,
+            setCurrentIndex: mockSetCurrentIndex,
+            visibilityList,
+          }),
+        {
+          initialProps: {
+            visibilityList: [1, 1, 1, 1],
+          },
+        },
+      );
+
+      act(() => {
+        mockContainer.dispatchEvent(new Event('wheel'));
+      });
+
+      rerender({ visibilityList: [1, 1, 1, 1] });
+
+      expect(mockSetCurrentIndex).not.toHaveBeenCalled();
+    });
+
     it('should handle partial visibility at page boundaries by using first visible card', () => {
       // When scrolling between pages, the first visible index determines the page.
       // With firstVisibleIndex=2 and initiallyShownCards=3: Math.floor(2/3) = 0

@@ -286,6 +286,32 @@ const GridToStackExample = () => (
   </PageContainer>
 );
 
+const RowToRailShortFinalPageExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard, 3)}
+      initiallyShownCardsDesktop={2}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+  </PageContainer>
+);
+
+const RowToRailShortFinalPageWiderExample = () => (
+  <PageContainer>
+    <BpkCardList
+      {...commonProps}
+      cardList={makeList(DestinationCard, 10)}
+      initiallyShownCardsDesktop={4}
+      layoutDesktop={LAYOUTS.row}
+      layoutMobile={LAYOUTS.rail}
+      accessoryDesktop={ACCESSORY_DESKTOP_TYPES.pagination}
+    />
+  </PageContainer>
+);
+
 const RowToStackWithExpandExample = () => {
   const [expandText, setExpandText] = useState('Show more');
 
@@ -433,6 +459,8 @@ export const RowToStackWithExpand = { render: () => <RowToStackWithExpandExample
 export const GridToStackWithExpand = { render: () => <GridToStackWithExpandExample /> };
 export const RowToRailForSnippets = { render: () => <RowToRailForSnippetsExample /> };
 export const RowToRailWithoutTitle = { render: () => <RowToRailWithoutTitleExample /> };
+export const RowToRailShortFinalPage = { render: () => <RowToRailShortFinalPageExample /> };
+export const RowToRailShortFinalPageWider = { render: () => <RowToRailShortFinalPageWiderExample /> };
 
 export const MultiComponentsScrollingTest = { render: () => <MultiComponentsScrollingTestExample /> };
 export const VisualTest = { render: () => <BasicExample /> };
