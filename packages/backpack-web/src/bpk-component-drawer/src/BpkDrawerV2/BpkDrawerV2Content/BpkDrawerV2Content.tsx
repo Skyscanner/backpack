@@ -40,6 +40,7 @@ const BpkDrawerV2Content = ({
 }: BpkDrawerV2ContentProps) => (
   <Drawer.Positioner
     className={getClassName('bpk-drawer-v2__positioner')}
+    hidden={false}
     {...getDataComponentAttribute('DrawerV2Positioner')}
   >
     <Drawer.Content
