@@ -54,6 +54,6 @@ export default () => (
 
 `Content` accepts `draggable` to control whether the drawer content can be dragged. If `draggable` is `false`, the drawer can still be dragged from `Grabber`.
 
-`Trigger` supports `asChild` so you can use a Backpack component such as `BpkButton` as the interactive trigger.
+`Trigger` supports `asChild` so you can use a Backpack component such as `BpkButton` as the interactive trigger. When using `asChild`, the child must be a native DOM element or a `React.forwardRef` component that spreads `...rest` onto its root node.
 
 `BpkDrawerV2` does not expose `className` or `style` props. Wrap it in Backpack layout primitives when surrounding layout constraints are needed.

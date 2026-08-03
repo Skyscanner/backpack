@@ -16,17 +16,29 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { Drawer } from '@ark-ui/react';
 
 import { getDataComponentAttribute } from '../../../bpk-react-utils';
 
-export type BpkDrawerV2TriggerProps = {
-  asChild?: boolean;
-  children: ReactNode;
+type BpkDrawerV2TriggerBaseProps = {
   value?: string;
 };
+
+type BpkDrawerV2TriggerWithAsChildProps = BpkDrawerV2TriggerBaseProps & {
+  asChild: true;
+  children: ReactElement;
+};
+
+type BpkDrawerV2TriggerWithoutAsChildProps = BpkDrawerV2TriggerBaseProps & {
+  asChild?: false;
+  children: ReactNode;
+};
+
+export type BpkDrawerV2TriggerProps =
+  | BpkDrawerV2TriggerWithAsChildProps
+  | BpkDrawerV2TriggerWithoutAsChildProps;
 
 const BpkDrawerV2Trigger = ({
   asChild,
