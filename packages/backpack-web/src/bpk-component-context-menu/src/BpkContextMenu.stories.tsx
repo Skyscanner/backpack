@@ -33,6 +33,42 @@ const SaveTrigger = () => (
   <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
 );
 
+// Shared sub-menu body used by both mobile (Panel) and desktop (flyout Content).
+// BackButton is CSS-hidden on desktop (display:none) so it is absent from the
+// accessibility tree and tab order — no harm on desktop.
+const MoveSubMenuBody = () => (
+  <>
+    <BpkContextMenu.StickyHeader>
+      <BpkContextMenu.BackButton />
+      <BpkContextMenu.ItemGroup>
+        <BpkContextMenu.Item value="move-new-trip" startIcon={<PlusIcon />}>
+          Plan a new trip
+        </BpkContextMenu.Item>
+        <BpkContextMenu.Item value="move-quick-save" startIcon={<HeartIcon />}>
+          Quick save
+        </BpkContextMenu.Item>
+      </BpkContextMenu.ItemGroup>
+      <BpkContextMenu.Separator />
+    </BpkContextMenu.StickyHeader>
+    <BpkContextMenu.ScrollableList>
+      <BpkContextMenu.ItemGroup>
+        {Array.from({ length: 12 }, (_, i) => (
+          <BpkContextMenu.Item key={i} value={`move-trip-${i}`}>
+            {`Trip ${i + 1}`}
+          </BpkContextMenu.Item>
+        ))}
+      </BpkContextMenu.ItemGroup>
+    </BpkContextMenu.ScrollableList>
+  </>
+);
+
+// Desktop flyout wrapper — provides the Ark portal + Menu.Content context.
+const MoveDesktopFlyout = () => (
+  <BpkContextMenu.Content>
+    <MoveSubMenuBody />
+  </BpkContextMenu.Content>
+);
+
 const DefaultExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
@@ -94,31 +130,17 @@ const WithDestructiveItemExample = () => (
               <BpkContextMenu.TriggerItem
                 panelId="move"
                 endIcon={<ChevronRightIcon />}
-                desktopFlyout={
-                  <BpkContextMenu.Content>
-                    <BpkContextMenu.ItemGroup>
-                      <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                      <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                      <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-                    </BpkContextMenu.ItemGroup>
-                  </BpkContextMenu.Content>
-                }
+                desktopFlyout={<MoveDesktopFlyout />}
               >
                 Move
               </BpkContextMenu.TriggerItem>
             </BpkContextMenu.ItemGroup>
           </BpkContextMenu.Panel>
 
-          {/* Mobile-only panel: replaces the root panel when Move is tapped. */}
+          {/* Mobile panel — same body as the desktop flyout; BackButton is
+              visible here and CSS-hidden in the flyout. */}
           <BpkContextMenu.Panel id="move">
-            <BpkContextMenu.StickyHeader>
-              <BpkContextMenu.BackButton />
-            </BpkContextMenu.StickyHeader>
-            <BpkContextMenu.ItemGroup>
-              <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-              <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-              <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-            </BpkContextMenu.ItemGroup>
+            <MoveSubMenuBody />
           </BpkContextMenu.Panel>
         </BpkContextMenu.PanelGroup>
       </BpkContextMenu.Content>
@@ -339,29 +361,14 @@ export const VisualTestDestructive = {
                 <BpkContextMenu.TriggerItem
                   panelId="move"
                   endIcon={<ChevronRightIcon />}
-                  desktopFlyout={
-                    <BpkContextMenu.Content>
-                      <BpkContextMenu.ItemGroup>
-                        <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                        <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                        <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-                      </BpkContextMenu.ItemGroup>
-                    </BpkContextMenu.Content>
-                  }
+                  desktopFlyout={<MoveDesktopFlyout />}
                 >
                   Move
                 </BpkContextMenu.TriggerItem>
               </BpkContextMenu.ItemGroup>
             </BpkContextMenu.Panel>
             <BpkContextMenu.Panel id="move">
-              <BpkContextMenu.StickyHeader>
-                <BpkContextMenu.BackButton />
-              </BpkContextMenu.StickyHeader>
-              <BpkContextMenu.ItemGroup>
-                <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-              </BpkContextMenu.ItemGroup>
+              <MoveSubMenuBody />
             </BpkContextMenu.Panel>
           </BpkContextMenu.PanelGroup>
         </BpkContextMenu.Content>

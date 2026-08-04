@@ -36,6 +36,12 @@ $context-menu-item-height: 2.55rem;
 $context-menu-max-visible-items-mobile: 7.7;
 $context-menu-max-visible-items-desktop: 8.7;
 
+// When a ScrollableList is present, the card's max-block-size is removed and
+// the list owns its own cap. These values are the visible trip count in the
+// scrollable area — the sticky header adds height on top rather than sharing.
+$context-menu-max-scroll-items-mobile: 4.5;
+$context-menu-max-scroll-items-desktop: 8.5;
+
 // Default trigger button — resets browser button styles so consumers get a
 // clean base to build on via className. Consumers own the visual design.
 .bpk-context-menu__trigger {
@@ -129,11 +135,13 @@ $context-menu-max-visible-items-desktop: 8.7;
   &[data-state='open'] {
     animation: bpk-context-menu-fade-in $context-menu-duration ease;
 
-    // Suppress hover background for the duration of the open animation.
-    // CSS animations take cascade precedence over :hover, so the item stays
-    // transparent until the menu has finished appearing. The animation runs
-    // once and does not fill-forward, so normal hover resumes after ~200ms.
-    .bpk-context-menu__item {
+    // Suppress hover/highlighted background for the duration of the open
+    // animation. CSS animations take cascade precedence over :hover and
+    // data-highlighted, so items stay transparent until the menu has finished
+    // appearing. Also targets [data-part='trigger-item'] because Ark's
+    // TriggerItem briefly receives data-highlighted on parent menu open.
+    .bpk-context-menu__item,
+    [data-part='trigger-item'] {
       animation: bpk-context-menu-item-hover-guard $context-menu-duration ease;
     }
   }
@@ -146,9 +154,12 @@ $context-menu-max-visible-items-desktop: 8.7;
 
 // Applied by BpkContextMenuContent when a ScrollableList child is mounted.
 // The list owns the scrollbar, so the card itself must not scroll.
+// max-block-size is removed from the card and moved to the scrollable list,
+// so a sticky header adds height on top rather than stealing from the list.
 // Keyed off a React-toggled modifier rather than :has() for broader support.
 .bpk-context-menu__content--scrollable {
   overflow: hidden;
+  max-block-size: none;
 }
 
 // Each item is a flex row. gap separates the optional icon (left) from the
@@ -317,7 +328,14 @@ $context-menu-max-visible-items-desktop: 8.7;
 .bpk-context-menu__scrollable-list {
   flex: 1;
   overflow-y: auto;
+  max-block-size: $context-menu-item-height *
+    $context-menu-max-scroll-items-mobile;
   min-block-size: 0;
+
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    max-block-size: $context-menu-item-height *
+      $context-menu-max-scroll-items-desktop;
+  }
 }
 
 // Anchors its children to the top of the scrolling content surface.
