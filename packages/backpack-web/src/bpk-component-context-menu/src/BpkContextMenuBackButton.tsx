@@ -18,13 +18,16 @@
 
 import { Menu } from '@ark-ui/react';
 
-import ChevronLeftIcon from '../../bpk-component-icon/sm/chevron-left';
+import { withRtlSupport } from '../../bpk-component-icon';
+import ChevronLeftIconBase from '../../bpk-component-icon/sm/chevron-left';
 import { cssModules } from '../../bpk-react-utils';
 
 import { useBpkContextMenuNav } from './BpkContextMenuNavContext';
 import useMenuTriggerFocusGuard from './useMenuTriggerFocusGuard';
 
 import STYLES from './BpkContextMenu.module.scss';
+
+const ChevronLeftIcon = withRtlSupport(ChevronLeftIconBase);
 
 const getClassName = cssModules(STYLES);
 

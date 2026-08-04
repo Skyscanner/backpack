@@ -16,11 +16,13 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { type ReactNode, useCallback, useState } from 'react';
 
 import { Menu, Portal } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../bpk-react-utils';
+
+import BpkContextMenuScrollContext from './BpkContextMenuScrollContext';
 
 import STYLES from './BpkContextMenu.module.scss';
 
@@ -30,17 +32,30 @@ export type BpkContextMenuContentProps = {
   children: ReactNode;
 };
 
-const BpkContextMenuContent = ({ children }: BpkContextMenuContentProps) => (
-  <Portal>
-    <Menu.Positioner className={getClassName('bpk-context-menu__positioner')}>
-      <Menu.Content
-        className={getClassName('bpk-context-menu__content')}
-        {...getDataComponentAttribute('ContextMenuContent')}
-      >
-        {children}
-      </Menu.Content>
-    </Menu.Positioner>
-  </Portal>
-);
+const BpkContextMenuContent = ({ children }: BpkContextMenuContentProps) => {
+  const [hasScrollableList, setHasScrollableList] = useState(false);
+
+  const setScrollable = useCallback((value: boolean) => {
+    setHasScrollableList(value);
+  }, []);
+
+  return (
+    <BpkContextMenuScrollContext.Provider value={{ setScrollable }}>
+      <Portal>
+        <Menu.Positioner className={getClassName('bpk-context-menu__positioner')}>
+          <Menu.Content
+            className={getClassName(
+              'bpk-context-menu__content',
+              hasScrollableList && 'bpk-context-menu__content--scrollable',
+            )}
+            {...getDataComponentAttribute('ContextMenuContent')}
+          >
+            {children}
+          </Menu.Content>
+        </Menu.Positioner>
+      </Portal>
+    </BpkContextMenuScrollContext.Provider>
+  );
+};
 
 export default BpkContextMenuContent;

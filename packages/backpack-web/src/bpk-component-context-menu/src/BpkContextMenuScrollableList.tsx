@@ -20,6 +20,8 @@ import { type ReactNode, useEffect, useRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
+import { useBpkContextMenuScroll } from './BpkContextMenuScrollContext';
+
 import STYLES from './BpkContextMenu.module.scss';
 
 const getClassName = cssModules(STYLES);
@@ -32,6 +34,20 @@ const BpkContextMenuScrollableList = ({
   children,
 }: BpkContextMenuScrollableListProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const scroll = useBpkContextMenuScroll();
+
+  // Tell the parent Content to apply the --scrollable modifier so the card
+  // uses overflow:hidden and the scrollbar is scoped to this element.
+  // More robust than CSS :has() which lacks universal browser support.
+  //
+  // No cleanup: BpkContextMenuContent resets hasScrollableList on its own
+  // remount. Calling setScrollable(false) on unmount triggers a state update
+  // outside React's act() scope during test teardown, producing spurious
+  // "not wrapped in act" warnings.
+  useEffect(() => {
+    scroll?.setScrollable(true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const container = ref.current;
