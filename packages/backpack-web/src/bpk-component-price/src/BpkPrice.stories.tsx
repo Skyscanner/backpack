@@ -32,7 +32,7 @@ import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { BpkLegacyThemeProvider } from '../../bpk-theming';
+import { BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkPrice from './BpkPrice';
@@ -673,7 +673,7 @@ const ThemedExample = () => (
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Themed
     </BpkText>
-    <BpkLegacyThemeProvider
+    <BpkThemeProvider
       theme={{ textPrimary: statusDangerSpotDay, textSecondary: statusSuccessSpotDay, textError: coreAccentDay }}
       themeAttributes={['textPrimary', 'textSecondary', 'textError']}
     >
@@ -684,7 +684,7 @@ const ThemedExample = () => (
         trailingText="per day"
         previousPrice="£2,033"
       />
-    </BpkLegacyThemeProvider>
+    </BpkThemeProvider>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       onContrast (no theme)
     </BpkText>
@@ -702,7 +702,7 @@ const ThemedExample = () => (
       onContrast themed
     </BpkText>
     <BpkDarkExampleWrapper padded style={{ backgroundColor: surfaceContrastDay }}>
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ textOnDark: statusDangerSpotDay, textSecondaryOnContrast: statusSuccessSpotDay, textError: coreAccentDay }}
         themeAttributes={['textOnDark', 'textSecondaryOnContrast', 'textError']}
       >
@@ -714,7 +714,7 @@ const ThemedExample = () => (
           previousPrice="£2,033"
           variant={VARIANTS.onContrast}
         />
-      </BpkLegacyThemeProvider>
+      </BpkThemeProvider>
     </BpkDarkExampleWrapper>
   </div>
 );

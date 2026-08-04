@@ -46,7 +46,7 @@ import {
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkPrice from '../../bpk-component-price';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
-import { BpkLegacyThemeProvider } from '../../bpk-theming';
+import { BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import {
@@ -357,7 +357,7 @@ const WithIndicatorExample = () => {
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>
         Select neighbourhoods
       </BpkText>
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={indicatorTheme}
         themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}
       >
@@ -394,7 +394,7 @@ const WithIndicatorExample = () => {
             ),
           )}
         </BpkHStack>
-      </BpkLegacyThemeProvider>
+      </BpkThemeProvider>
     </BpkVStack>
   );
 };
@@ -416,7 +416,7 @@ const WithCustomThemeExample = () => {
 
   return (
     <BpkVStack padding="bpk-spacing-lg" align="start">
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={customTheme}
         themeAttributes={CHECKBOX_CARD_THEME_ATTRIBUTES}
       >
@@ -467,7 +467,7 @@ const WithCustomThemeExample = () => {
             </BpkCheckboxCard.Root>
           </BpkBox>
         </BpkHStack>
-      </BpkLegacyThemeProvider>
+      </BpkThemeProvider>
     </BpkVStack>
   );
 };

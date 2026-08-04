@@ -17,11 +17,11 @@
  */
 
 export {
-  default as BpkThemeProvider,
+  default as BpkThemeProviderV2,
   useBpkTheme,
-} from './src/BpkThemeProvider';
-export type { BpkTheme, BpkThemedValue } from './src/BpkThemeProvider';
+} from './src/BpkThemeProviderV2';
+export type { BpkTheme, BpkThemedValue } from './src/BpkThemeProviderV2';
 export {
   default,
-  default as BpkLegacyThemeProvider,
-} from './src/BpkLegacyThemeProvider';
+  default as BpkThemeProvider,
+} from './src/BpkThemeProvider';

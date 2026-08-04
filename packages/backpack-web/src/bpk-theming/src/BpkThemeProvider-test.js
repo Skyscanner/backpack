@@ -23,7 +23,7 @@ import { render } from '@testing-library/react';
 
 import { colorWhite } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
-import BpkLegacyThemeProvider from './BpkLegacyThemeProvider';
+import BpkThemeProvider from './BpkThemeProvider';
 
 const CustomComponentFunction = ({ children, ...rest }) => (
   <span {...rest}>{children}</span>
@@ -45,92 +45,92 @@ CustomComponentClass.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-describe('BpkLegacyThemeProvider', () => {
+describe('BpkThemeProvider', () => {
   it('should render correctly', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite }}
         themeAttributes={['color']}
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom native component', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite }}
         themeAttributes={['color']}
         component="header"
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom component function', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite }}
         themeAttributes={['color']}
         component={CustomComponentFunction}
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with custom component', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite }}
         themeAttributes={['color']}
         component={CustomComponentClass}
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary props', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite }}
         themeAttributes={['color']}
         id="arbitrary"
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render correctly with arbitrary user defined style', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite }}
         themeAttributes={['color']}
         style={{ content: 'user defined' }}
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should correctly flatten the themeAttribute prop', () => {
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ color: colorWhite, background: 'black' }}
         themeAttributes={[['color'], ['background']]}
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -138,9 +138,9 @@ describe('BpkLegacyThemeProvider', () => {
   it('should render without theming when theme is missing attributes', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
-      <BpkLegacyThemeProvider theme={{}} themeAttributes={['color']}>
+      <BpkThemeProvider theme={{}} themeAttributes={['color']}>
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -148,12 +148,12 @@ describe('BpkLegacyThemeProvider', () => {
   it('should strip out extraneous theme attributes', () => {
     jest.spyOn(console, 'error').mockImplementation(() => jest.fn());
     const { asFragment } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ a: 'a', color: colorWhite }}
         themeAttributes={['color']}
       >
         <p>Lorem Ipsum</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -161,36 +161,36 @@ describe('BpkLegacyThemeProvider', () => {
   it('should warn about missing theme attributes', () => {
     expect(
       // eslint-disable-next-line react/forbid-foreign-prop-types
-      BpkLegacyThemeProvider.propTypes
+      BpkThemeProvider.propTypes
         .themeAttributes(
           {
             theme: {},
             themeAttributes: ['one'],
           },
           'themeAttributes',
-          'BpkLegacyThemeProvider',
+          'BpkThemeProvider',
         )
         .toString(),
     ).toEqual(
-      'Error: BpkLegacyThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)',
+      'Error: BpkThemeProvider: To apply theming, the theme prop must include `one` (missing `one`)',
     );
   });
 
   it('should warn about extraneous theme attributes', () => {
     expect(
       // eslint-disable-next-line react/forbid-foreign-prop-types
-      BpkLegacyThemeProvider.propTypes
+      BpkThemeProvider.propTypes
         .themeAttributes(
           {
             theme: { one: 'a', two: 'a' },
             themeAttributes: ['one'],
           },
           'themeAttributes',
-          'BpkLegacyThemeProvider',
+          'BpkThemeProvider',
         )
         .toString(),
     ).toEqual(
-      'Error: BpkLegacyThemeProvider: Extraneous theme attributes supplied: `two`.',
+      'Error: BpkThemeProvider: Extraneous theme attributes supplied: `two`.',
     );
   });
 });

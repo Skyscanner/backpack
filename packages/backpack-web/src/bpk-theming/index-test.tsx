@@ -18,22 +18,22 @@
 
 import { render } from '@testing-library/react';
 
-import BpkLegacyThemeProvider, {
-  BpkLegacyThemeProvider as NamedBpkLegacyThemeProvider,
-  BpkThemeProvider,
+import BpkThemeProvider, {
+  BpkThemeProvider as NamedBpkThemeProvider,
+  BpkThemeProviderV2,
 } from './index';
 
 describe('bpk-theming exports', () => {
   it('keeps the legacy provider as the default export', () => {
-    expect(BpkLegacyThemeProvider).toBe(NamedBpkLegacyThemeProvider);
+    expect(BpkThemeProvider).toBe(NamedBpkThemeProvider);
 
     const { container } = render(
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{ buttonColor: '#e00045' }}
         themeAttributes={['buttonColor']}
       >
         <p>Themed</p>
-      </BpkLegacyThemeProvider>,
+      </BpkThemeProvider>,
     );
 
     expect(
@@ -45,9 +45,9 @@ describe('bpk-theming exports', () => {
 
   it('exposes the typed provider as an opt-in named export', () => {
     const { container } = render(
-      <BpkThemeProvider theme={{ corePrimary: '#e00045' }}>
+      <BpkThemeProviderV2 theme={{ corePrimary: '#e00045' }}>
         <p>Themed</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
 
     expect(

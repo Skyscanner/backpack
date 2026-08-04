@@ -38,7 +38,7 @@ import { BpkProvider } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import BpkVisuallyHidden from '../../bpk-component-visually-hidden';
 import { cssModules } from '../../bpk-react-utils';
-import { BpkLegacyThemeProvider } from '../../bpk-theming';
+import { BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkChatbotInput from './BpkChatbotInput';
@@ -249,7 +249,7 @@ const ThemedExample = () => (
         With theme override (pill border-radius + navy focus colour)
       </BpkText>
     </div>
-    <BpkLegacyThemeProvider
+    <BpkThemeProvider
       theme={{
         chatbotInputBorderRadius: borderRadiusLg,
         chatbotInputFocusBorderColor: corePrimaryDay,
@@ -274,7 +274,7 @@ const ThemedExample = () => (
         </BpkText>
         <ChatbotInputWithState inputType={CHATBOT_INPUT_TYPES.CARS_COMPOSER} />
       </div>
-    </BpkLegacyThemeProvider>
+    </BpkThemeProvider>
 
     <div className={getClassName('bpk-chatbot-input-examples__section-label')}>
       <BpkText tagName="p" textStyle={TEXT_STYLES.label1}>

@@ -31,7 +31,7 @@ import {
   BpkSpacing,
   BpkVStack,
 } from '../../../bpk-component-layout';
-import { BpkLegacyThemeProvider } from '../../../bpk-theming';
+import { BpkThemeProvider } from '../../../bpk-theming';
 
 
 import BpkCheckboxV2 from './BpkCheckboxV2';
@@ -142,7 +142,7 @@ const InvalidExample = () => (
 
 const ThemedExample = () => (
   <BpkProvider>
-    <BpkLegacyThemeProvider
+    <BpkThemeProvider
       theme={{
         checkboxSelectedColor: statusDangerSpotDay,
         checkboxBorderRadius: borderRadiusFull,
@@ -172,7 +172,7 @@ const ThemedExample = () => (
           <BpkCheckboxV2.HiddenInput />
         </BpkCheckboxV2.Root>
       </BpkFlex>
-    </BpkLegacyThemeProvider>
+    </BpkThemeProvider>
   </BpkProvider>
 );
 

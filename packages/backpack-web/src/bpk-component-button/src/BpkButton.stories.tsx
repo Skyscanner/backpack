@@ -40,7 +40,7 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import BpkThemeProvider from '../../bpk-theming';
+import { BpkThemeProviderV2 as BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 

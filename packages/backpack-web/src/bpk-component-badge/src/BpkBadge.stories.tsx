@@ -34,7 +34,7 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
-import { BpkLegacyThemeProvider } from '../../bpk-theming';
+import { BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 
@@ -249,7 +249,7 @@ const ThemedExample = () => (
           <BadgeRow key={row.label} {...row} />
         ))}
       </BpkVStack>
-      <BpkLegacyThemeProvider
+      <BpkThemeProvider
         theme={{
           privateBadgeColourBgDefault: 'rgba(0, 0, 0, 0)',
           privateBadgeDimensionPaddingHorizontalDefault: '0',
@@ -265,7 +265,7 @@ const ThemedExample = () => (
             <BadgeRow key={row.label} {...row} />
           ))}
         </BpkVStack>
-      </BpkLegacyThemeProvider>
+      </BpkThemeProvider>
     </BpkFlex>
   </BpkProvider>
 );

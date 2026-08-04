@@ -28,7 +28,7 @@ import FaceHappyIconSm from '../../bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import { BpkLegacyThemeProvider } from '../../bpk-theming';
+import { BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkDismissibleChip from './BpkDismissibleChip';
@@ -340,7 +340,7 @@ const ThemedExample = () => (
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Custom theme override
     </BpkText>
-    <BpkLegacyThemeProvider
+    <BpkThemeProvider
       theme={{
         chipBorderRadius: borderRadiusLg,
         chipDefaultBorderColor: statusDangerSpotDay,
@@ -365,7 +365,7 @@ const ThemedExample = () => (
       ]}
     >
       <StatefulSelectableChips type={CHIP_TYPES.default} />
-    </BpkLegacyThemeProvider>
+    </BpkThemeProvider>
     <BpkText textStyle={TEXT_STYLES.heading3} tagName="h3">
       Default theme (no override)
     </BpkText>

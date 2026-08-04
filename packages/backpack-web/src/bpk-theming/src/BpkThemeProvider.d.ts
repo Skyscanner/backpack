@@ -18,7 +18,7 @@
 
 import type { ComponentType, ReactNode } from 'react';
 
-interface BpkLegacyThemeProviderProps {
+interface BpkThemeProviderProps {
   children: ReactNode;
   theme?: Record<string, string>;
   themeAttributes?: readonly string[] | string[] | string[][];
@@ -27,5 +27,5 @@ interface BpkLegacyThemeProviderProps {
   [key: string]: any;
 }
 
-declare const BpkLegacyThemeProvider: ComponentType<BpkLegacyThemeProviderProps>;
-export default BpkLegacyThemeProvider;
+declare const BpkThemeProvider: ComponentType<BpkThemeProviderProps>;
+export default BpkThemeProvider;

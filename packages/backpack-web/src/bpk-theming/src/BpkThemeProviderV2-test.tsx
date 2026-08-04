@@ -18,9 +18,9 @@
 
 import { render } from '@testing-library/react';
 
-import BpkThemeProvider, { useBpkTheme } from './BpkThemeProvider';
+import BpkThemeProviderV2, { useBpkTheme } from './BpkThemeProviderV2';
 
-import type { BpkTheme } from './BpkThemeProvider';
+import type { BpkTheme } from './BpkThemeProviderV2';
 
 const THEME: BpkTheme = {
   corePrimary: '#e00045',
@@ -28,30 +28,30 @@ const THEME: BpkTheme = {
   button: { colourBgPrimary: '#e00045' },
 };
 
-describe('BpkThemeProvider', () => {
+describe('BpkThemeProviderV2', () => {
   it('renders children without a theme', () => {
     const { asFragment } = render(
-      <BpkThemeProvider>
+      <BpkThemeProviderV2>
         <p>No theme</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders children with a partial theme and sets CSS vars', () => {
     const { asFragment } = render(
-      <BpkThemeProvider theme={THEME}>
+      <BpkThemeProviderV2 theme={THEME}>
         <p>Themed</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('applies flat semantic string values as inline CSS vars', () => {
     const { container } = render(
-      <BpkThemeProvider theme={{ corePrimary: '#e00045' }}>
+      <BpkThemeProviderV2 theme={{ corePrimary: '#e00045' }}>
         <p>check</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     const wrapper = container.firstChild as HTMLElement;
     expect(wrapper.style.getPropertyValue('--bpk-core-primary')).toBe(
@@ -61,9 +61,9 @@ describe('BpkThemeProvider', () => {
 
   it('applies namespaced component string values as inline CSS vars', () => {
     const { container } = render(
-      <BpkThemeProvider theme={{ button: { colourBgPrimary: '#e00045' } }}>
+      <BpkThemeProviderV2 theme={{ button: { colourBgPrimary: '#e00045' } }}>
         <p>check</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     const wrapper = container.firstChild as HTMLElement;
     expect(
@@ -73,11 +73,11 @@ describe('BpkThemeProvider', () => {
 
   it('renders a <style> tag for flat semantic mode-specific values', () => {
     const { container } = render(
-      <BpkThemeProvider
+      <BpkThemeProviderV2
         theme={{ corePrimary: { light: '#e00045', dark: '#ff6b8a' } }}
       >
         <p>mode</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     const styleTag = container.querySelector('style');
     expect(styleTag).not.toBeNull();
@@ -88,11 +88,11 @@ describe('BpkThemeProvider', () => {
 
   it('renders the correct <style> tag dark mode selector', () => {
     const { container } = render(
-      <BpkThemeProvider
+      <BpkThemeProviderV2
         theme={{ corePrimary: { light: '#e00045', dark: '#ff6b8a' } }}
       >
         <p>mode</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     const styleTag = container.querySelector('style');
     expect(styleTag!.textContent).toContain(':root[data-theme="dark"]');
@@ -100,9 +100,9 @@ describe('BpkThemeProvider', () => {
 
   it('renders with as="section" wrapper element', () => {
     const { asFragment } = render(
-      <BpkThemeProvider as="section" theme={THEME}>
+      <BpkThemeProviderV2 as="section" theme={THEME}>
         <p>Section</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     expect(asFragment()).toMatchSnapshot();
     expect(asFragment().querySelector('section')).not.toBeNull();
@@ -110,30 +110,30 @@ describe('BpkThemeProvider', () => {
 
   it('renders with legacy component prop', () => {
     const { asFragment } = render(
-      <BpkThemeProvider component="header" theme={THEME}>
+      <BpkThemeProviderV2 component="header" theme={THEME}>
         <p>Header</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('ignores legacy themeAttributes prop without error', () => {
     const { asFragment } = render(
-      <BpkThemeProvider
+      <BpkThemeProviderV2
         theme={{ corePrimary: '#e00045' }}
         themeAttributes={['corePrimary']}
       >
         <p>Legacy</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders without theme when theme is undefined', () => {
     const { container } = render(
-      <BpkThemeProvider>
+      <BpkThemeProviderV2>
         <p>No vars</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     const wrapper = container.firstChild as HTMLElement;
     expect(wrapper.style.cssText).toBe('');
@@ -141,12 +141,12 @@ describe('BpkThemeProvider', () => {
 
   it('applies user style alongside theme vars', () => {
     const { container } = render(
-      <BpkThemeProvider
+      <BpkThemeProviderV2
         theme={{ corePrimary: '#e00045' }}
         style={{ padding: '8px' }}
       >
         <p>Padded</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     const wrapper = container.firstChild as HTMLElement;
     expect(wrapper.style.padding).toBe('8px');
@@ -157,20 +157,20 @@ describe('BpkThemeProvider', () => {
 
   it('spreads arbitrary props onto the wrapper element', () => {
     const { container } = render(
-      <BpkThemeProvider theme={THEME} data-testid="wrapper">
+      <BpkThemeProviderV2 theme={THEME} data-testid="wrapper">
         <p>Arbitrary props</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     expect(container.querySelector('[data-testid="wrapper"]')).not.toBeNull();
   });
 
   it('does not inject inline vars for mode-specific values', () => {
     const { container } = render(
-      <BpkThemeProvider
+      <BpkThemeProviderV2
         theme={{ corePrimary: { light: '#e00045', dark: '#ff6b8a' } }}
       >
         <p>mode only</p>
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
     // Wrapper div must not have --bpk-core-primary in its inline style
     const wrapperDivs = container.querySelectorAll('div');
@@ -201,9 +201,9 @@ describe('useBpkTheme', () => {
     };
 
     render(
-      <BpkThemeProvider theme={THEME}>
+      <BpkThemeProviderV2 theme={THEME}>
         <Consumer />
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
 
     expect(capturedTheme).toEqual(THEME);
@@ -218,9 +218,9 @@ describe('useBpkTheme', () => {
     };
 
     render(
-      <BpkThemeProvider>
+      <BpkThemeProviderV2>
         <Consumer />
-      </BpkThemeProvider>,
+      </BpkThemeProviderV2>,
     );
 
     expect(capturedTheme).toBeNull();

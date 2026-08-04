@@ -73,7 +73,7 @@ function buildModeStyleTag(
 
 // ─── Props ───────────────────────────────────────────────────────────────────
 
-export interface BpkThemeProviderProps {
+export interface BpkThemeProviderV2Props {
   children: ReactNode;
   theme?: BpkTheme;
   /** Override the wrapper element type. Defaults to "div". */
@@ -95,7 +95,7 @@ export interface BpkThemeProviderProps {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
-const BpkThemeProvider = ({
+const BpkThemeProviderV2 = ({
   as: WrapperComponent = 'div',
   children,
   component,
@@ -103,7 +103,7 @@ const BpkThemeProvider = ({
   theme,
   themeAttributes: _themeAttributes,
   ...rest
-}: BpkThemeProviderProps) => {
+}: BpkThemeProviderV2Props) => {
   const resolvedComponent = component ?? WrapperComponent;
   const id = useId().replace(/:/g, '');
   const Wrapper = resolvedComponent as ElementType;
@@ -173,4 +173,4 @@ function extractModeEntries(
   return entries;
 }
 
-export default BpkThemeProvider;
+export default BpkThemeProviderV2;
