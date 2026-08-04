@@ -238,18 +238,14 @@ html[dir='rtl']
 @keyframes bpk-drawer-v2-content-out-down {
   from {
     transform: translate3d(
-      var(--drawer-translate-x, 0px),
-      var(--drawer-translate-y, 0px),
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
       0
     );
   }
 
   to {
-    transform: translate3d(
-      0,
-      max(100%, var(--drawer-translate-y, 0px)),
-      0
-    );
+    transform: translate3d(0, 100%, 0);
   }
 }
 
@@ -270,18 +266,14 @@ html[dir='rtl']
 @keyframes bpk-drawer-v2-content-out-up {
   from {
     transform: translate3d(
-      var(--drawer-translate-x, 0px),
-      var(--drawer-translate-y, 0px),
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
       0
     );
   }
 
   to {
-    transform: translate3d(
-      0,
-      min(-100%, var(--drawer-translate-y, 0px)),
-      0
-    );
+    transform: translate3d(0, -100%, 0);
   }
 }
 
@@ -302,18 +294,14 @@ html[dir='rtl']
 @keyframes bpk-drawer-v2-content-out-left {
   from {
     transform: translate3d(
-      var(--drawer-translate-x, 0px),
-      var(--drawer-translate-y, 0px),
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
       0
     );
   }
 
   to {
-    transform: translate3d(
-      min(-100%, var(--drawer-translate-x, 0px)),
-      0,
-      0
-    );
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -334,17 +322,13 @@ html[dir='rtl']
 @keyframes bpk-drawer-v2-content-out-right {
   from {
     transform: translate3d(
-      var(--drawer-translate-x, 0px),
-      var(--drawer-translate-y, 0px),
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
       0
     );
   }
 
   to {
-    transform: translate3d(
-      max(100%, var(--drawer-translate-x, 0px)),
-      0,
-      0
-    );
+    transform: translate3d(100%, 0, 0);
   }
 }
