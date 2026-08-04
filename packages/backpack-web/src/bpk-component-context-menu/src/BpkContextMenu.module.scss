@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+@use '../../bpk-mixins/breakpoints';
 @use '../../bpk-mixins/tokens';
 @use '../../bpk-mixins/typography';
 @use '../../bpk-mixins/utils';
@@ -26,8 +27,12 @@ $context-menu-max-width: 20rem;
 
 // Measured rendered height of one item row (vertical padding + line-height).
 // Update this if item padding or typography changes.
-$context-menu-item-height: 2.6rem;
-$context-menu-max-visible-items: 8.5;
+$context-menu-item-height: 2.55rem;
+
+// Mobile: back button (1) + sticky header (2 action items + separator ≈ 2.2)
+// + 4.5 visible scrollable items below = ~7.7 item-heights total.
+$context-menu-max-visible-items-mobile: 7.7;
+$context-menu-max-visible-items-desktop: 8.5;
 
 // Default trigger button — resets browser button styles so consumers get a
 // clean base to build on via className. Consumers own the visual design.
@@ -101,10 +106,16 @@ $context-menu-max-visible-items: 8.5;
   box-shadow: tokens.$bpk-box-shadow-lg;
   overflow-x: hidden;
   overflow-y: auto;
-  max-block-size: $context-menu-item-height * $context-menu-max-visible-items;
+  max-block-size: $context-menu-item-height *
+    $context-menu-max-visible-items-mobile;
   max-inline-size: $context-menu-max-width;
   min-inline-size: $context-menu-min-width;
   pointer-events: auto;
+
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    max-block-size: $context-menu-item-height *
+      $context-menu-max-visible-items-desktop;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     &[data-state='open'],
@@ -129,6 +140,12 @@ $context-menu-max-visible-items: 8.5;
     animation: bpk-context-menu-fade-out $context-menu-duration ease forwards;
     pointer-events: none;
   }
+
+  // When a ScrollableList is present the list owns the scrollbar,
+  // so the card itself must not scroll.
+  &:has(.bpk-context-menu__scrollable-list) {
+    overflow: hidden;
+  }
 }
 
 // Each item is a flex row: label pushes to the start, optional end icon parks
@@ -136,7 +153,6 @@ $context-menu-max-visible-items: 8.5;
 .bpk-context-menu__item {
   display: flex;
   padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
-  justify-content: space-between;
   align-items: center;
   border: 0;
   outline: none;
@@ -192,14 +208,79 @@ $context-menu-max-visible-items: 8.5;
   min-inline-size: 0;
 }
 
-.bpk-context-menu__item-end-icon {
+.bpk-context-menu__item-icon {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   color: inherit;
 
   svg {
     fill: currentcolor;
   }
+}
+
+// Back button — mobile only. Hidden on tablet and above.
+// Rendered inside StickyHeader so it scrolls with the anchored section.
+.bpk-context-menu__back-button {
+  display: flex;
+  width: 100%;
+  padding: tokens.bpk-spacing-md() tokens.bpk-spacing-base();
+  align-items: center;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
+  cursor: pointer;
+  border-block-end: tokens.$bpk-border-size-sm solid
+    var(--bpk-canvas-contrast, #{tokens.$bpk-canvas-contrast-day});
+  gap: tokens.bpk-spacing-base();
+
+  @include typography.bpk-body-default;
+
+  @include utils.bpk-hover {
+    background-color: var(
+      --bpk-canvas-contrast,
+      #{tokens.$bpk-canvas-contrast-day}
+    );
+  }
+
+  @include breakpoints.bpk-breakpoint-above-mobile {
+    display: none;
+  }
+
+  // Specificity 0-2-0 beats the global button:focus-visible (0-1-1) rule,
+  // suppressing the ring when focus was pointer-initiated (menu open via click).
+  &:focus-visible:not([data-pointer-focus]) {
+    @include utils.bpk-focus-indicator;
+  }
+
+  &[data-pointer-focus]:focus-visible {
+    outline: none;
+  }
+}
+
+.bpk-context-menu__back-button-icon {
+  flex-shrink: 0;
+  fill: currentcolor;
+}
+
+// Scrollable region for the trip list. When present, the content surface
+// switches to overflow:hidden (via :has) so the scrollbar is scoped here
+// rather than running the full height of the card alongside the sticky header.
+.bpk-context-menu__scrollable-list {
+  flex: 1;
+  overflow-y: auto;
+  min-block-size: 0;
+}
+
+// Anchors its children to the top of the scrolling content surface.
+// Inherits the surface background so items scrolling beneath don't bleed
+// through. z-index: 1 keeps it above the item hover backgrounds.
+.bpk-context-menu__sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: inherit;
 }
 
 .bpk-context-menu__item-group {

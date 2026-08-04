@@ -39,11 +39,11 @@ export type BpkContextMenuItemProps = {
    */
   value: string;
   /**
-   * Optional trailing element rendered on the end side of the row.
-   * Typically an icon (e.g. `+` for "Plan a new trip", bookmark for
-   * "Quick save", chevron for a nested menu entry point).
+   * Optional icon rendered on the start (left) side of the row.
+   * Typically used for action items (e.g. `+` for "Plan a new trip",
+   * bookmark for "Quick save").
    */
-  endIcon?: ReactNode;
+  icon?: ReactNode;
   variant?: BpkContextMenuItemVariant;
   disabled?: boolean;
   /** Fires when the item is activated by pointer or keyboard. */
@@ -53,7 +53,7 @@ export type BpkContextMenuItemProps = {
 const BpkContextMenuItem = ({
   children,
   disabled = false,
-  endIcon,
+  icon,
   onSelect,
   value,
   variant = CONTEXT_MENU_ITEM_VARIANTS.default,
@@ -69,14 +69,14 @@ const BpkContextMenuItem = ({
       )}
       {...getDataComponentAttribute('ContextMenuItem')}
     >
+      {icon && (
+        <span className={getClassName('bpk-context-menu__item-icon')}>
+          {icon}
+        </span>
+      )}
       <span className={getClassName('bpk-context-menu__item-label')}>
         {children}
       </span>
-      {endIcon && (
-        <span className={getClassName('bpk-context-menu__item-end-icon')}>
-          {endIcon}
-        </span>
-      )}
     </Menu.Item>
   );
 

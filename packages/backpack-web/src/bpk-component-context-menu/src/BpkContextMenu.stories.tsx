@@ -47,10 +47,10 @@ const DefaultExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />} onSelect={() => {}}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />} onSelect={() => {}}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -65,10 +65,10 @@ const NoTripsExample = () => (
       <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+          <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+          <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -124,10 +124,10 @@ const WithDisabledItemExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+          <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+          <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -141,22 +141,27 @@ const LongListExample = () => (
     <BpkContextMenu.Root>
       <SaveTrigger />
       <BpkContextMenu.Content>
-        <BpkContextMenu.ItemGroup>
-          {Array.from({ length: 12 }, (_, i) => (
-            <BpkContextMenu.Item key={i} value={`trip-${i}`}>
-              {`Trip ${i + 1}`}
+        <BpkContextMenu.StickyHeader>
+          <BpkContextMenu.BackButton onClick={() => {}} />
+          <BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />}>
+              Plan a new trip
             </BpkContextMenu.Item>
-          ))}
-        </BpkContextMenu.ItemGroup>
-        <BpkContextMenu.Separator />
-        <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
-            Plan a new trip
-          </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
-            Quick save
-          </BpkContextMenu.Item>
-        </BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />}>
+              Quick save
+            </BpkContextMenu.Item>
+          </BpkContextMenu.ItemGroup>
+          <BpkContextMenu.Separator />
+        </BpkContextMenu.StickyHeader>
+        <BpkContextMenu.ScrollableList>
+          <BpkContextMenu.ItemGroup>
+            {Array.from({ length: 12 }, (_, i) => (
+              <BpkContextMenu.Item key={i} value={`trip-${i}`}>
+                {`Trip ${i + 1}`}
+              </BpkContextMenu.Item>
+            ))}
+          </BpkContextMenu.ItemGroup>
+        </BpkContextMenu.ScrollableList>
       </BpkContextMenu.Content>
     </BpkContextMenu.Root>
   </BpkProvider>
@@ -180,10 +185,10 @@ const LongTripNameExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />} onSelect={() => {}}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />} onSelect={() => {}}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -207,10 +212,10 @@ const OpenByDefaultExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+          <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+          <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -261,10 +266,10 @@ export const VisualTestNoTrips = {
         <SaveTrigger />
         <BpkContextMenu.Content>
           <BpkContextMenu.ItemGroup>
-            <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+            <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />}>
               Plan a new trip
             </BpkContextMenu.Item>
-            <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+            <BpkContextMenu.Item value="quick-save" icon={<HeartIcon />}>
               Quick save
             </BpkContextMenu.Item>
           </BpkContextMenu.ItemGroup>
