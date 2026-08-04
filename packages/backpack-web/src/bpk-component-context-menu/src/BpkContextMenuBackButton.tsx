@@ -36,8 +36,6 @@ export type BpkContextMenuBackButtonProps = {
   label?: string;
 };
 
-const ROOT_PANEL = 'root';
-
 const BpkContextMenuBackButton = ({
   label = 'Back',
 }: BpkContextMenuBackButtonProps) => {
@@ -51,7 +49,7 @@ const BpkContextMenuBackButton = ({
           value="_back"
           closeOnSelect={false}
           onSelect={() => {
-            if (nav && nav.activePanel !== ROOT_PANEL) {
+            if (nav?.canGoBack) {
               nav.goBack();
             } else {
               api.setOpen(false);

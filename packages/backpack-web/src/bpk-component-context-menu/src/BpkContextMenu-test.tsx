@@ -163,7 +163,7 @@ describe('BpkContextMenu', () => {
     expect(item?.className).toContain('destructive');
   });
 
-  it('renders the endIcon slot when provided', () => {
+  it('renders the icon slot when provided', () => {
     render(
       <BpkContextMenu.Root open>
         <BpkContextMenu.Trigger>
@@ -172,7 +172,7 @@ describe('BpkContextMenu', () => {
         <BpkContextMenu.Content>
           <BpkContextMenu.Item
             value="new-trip"
-            endIcon={<span data-testid="end-icon">+</span>}
+            startIcon={<span data-testid="item-icon">+</span>}
           >
             Plan a new trip
           </BpkContextMenu.Item>
@@ -180,7 +180,7 @@ describe('BpkContextMenu', () => {
       </BpkContextMenu.Root>,
     );
 
-    expect(screen.getByTestId('end-icon')).toBeVisible();
+    expect(screen.getByTestId('item-icon')).toBeVisible();
   });
 
   describe('SaveTrigger', () => {

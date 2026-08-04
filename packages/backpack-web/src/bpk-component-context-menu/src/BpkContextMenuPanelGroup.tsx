@@ -41,7 +41,12 @@ const BpkContextMenuPanelGroup = ({
 
   return (
     <BpkContextMenuNavContext.Provider
-      value={{ activePanel: stack[stack.length - 1], navigate, goBack }}
+      value={{
+        activePanel: stack[stack.length - 1],
+        navigate,
+        goBack,
+        canGoBack: stack.length > 1,
+      }}
     >
       {children}
     </BpkContextMenuNavContext.Provider>

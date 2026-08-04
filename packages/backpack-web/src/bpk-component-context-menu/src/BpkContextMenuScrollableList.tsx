@@ -39,15 +39,14 @@ const BpkContextMenuScrollableList = ({
   // Tell the parent Content to apply the --scrollable modifier so the card
   // uses overflow:hidden and the scrollbar is scoped to this element.
   // More robust than CSS :has() which lacks universal browser support.
-  //
-  // No cleanup: BpkContextMenuContent resets hasScrollableList on its own
-  // remount. Calling setScrollable(false) on unmount triggers a state update
-  // outside React's act() scope during test teardown, producing spurious
-  // "not wrapped in act" warnings.
+  // Cleanup is required: if the user navigates to a panel that has no
+  // ScrollableList (e.g., root → move), Content stays mounted but ScrollableList
+  // unmounts — without cleanup the card keeps overflow:hidden with nothing
+  // scrolling.
   useEffect(() => {
     scroll?.setScrollable(true);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return () => scroll?.setScrollable(false);
+  }, [scroll]);
 
   useEffect(() => {
     const container = ref.current;

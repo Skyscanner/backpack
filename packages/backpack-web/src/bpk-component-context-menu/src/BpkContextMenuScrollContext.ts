@@ -18,18 +18,14 @@
 
 import { createContext, useContext } from 'react';
 
-export type BpkContextMenuNavContextType = {
-  activePanel: string;
-  navigate: (id: string) => void;
-  goBack: () => void;
-  /** True when there is a previous panel to return to. */
-  canGoBack: boolean;
+type BpkContextMenuScrollContextType = {
+  setScrollable: (value: boolean) => void;
 };
 
-const BpkContextMenuNavContext =
-  createContext<BpkContextMenuNavContextType | null>(null);
+const BpkContextMenuScrollContext =
+  createContext<BpkContextMenuScrollContextType | null>(null);
 
-export const useBpkContextMenuNav = () =>
-  useContext(BpkContextMenuNavContext);
+export const useBpkContextMenuScroll = () =>
+  useContext(BpkContextMenuScrollContext);
 
-export default BpkContextMenuNavContext;
+export default BpkContextMenuScrollContext;

@@ -224,6 +224,20 @@ $context-menu-max-visible-items-desktop: 8.7;
   }
 }
 
+.bpk-context-menu__item-end-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: inherit;
+
+  // Push end icon to the trailing edge regardless of label length.
+  margin-inline-start: auto;
+
+  svg {
+    fill: currentcolor;
+  }
+}
+
 // Back button — mobile only. Hidden on tablet and above.
 // In the default layout the whole card scrolls, so the back button moves with
 // the content. When a ScrollableList is present, the card itself is overflow:
