@@ -142,7 +142,7 @@ const LongListExample = () => (
       <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.StickyHeader>
-          <BpkContextMenu.BackButton onClick={() => {}} />
+          <BpkContextMenu.BackButton />
           <BpkContextMenu.ItemGroup>
             <BpkContextMenu.Item value="new-trip" icon={<PlusIcon />}>
               Plan a new trip

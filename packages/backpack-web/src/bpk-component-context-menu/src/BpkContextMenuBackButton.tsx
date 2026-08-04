@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import { Menu } from '@ark-ui/react';
+
 import ChevronLeftIcon from '../../bpk-component-icon/sm/chevron-left';
 import { cssModules } from '../../bpk-react-utils';
 
@@ -26,30 +28,32 @@ import STYLES from './BpkContextMenu.module.scss';
 const getClassName = cssModules(STYLES);
 
 export type BpkContextMenuBackButtonProps = {
-  onClick: () => void;
   /** Accessible label and visible text for the back button. Defaults to "Back". */
   label?: string;
 };
 
 const BpkContextMenuBackButton = ({
   label = 'Back',
-  onClick,
 }: BpkContextMenuBackButtonProps) => {
   const { onBlur, onFocus } = useMenuTriggerFocusGuard();
 
   return (
-    <button
-      type="button"
-      className={getClassName('bpk-context-menu__back-button')}
-      onClick={onClick}
-      onFocus={onFocus}
-      onBlur={onBlur}
-    >
-      <span className={getClassName('bpk-context-menu__back-button-icon')}>
-        <ChevronLeftIcon />
-      </span>
-      {label}
-    </button>
+    <Menu.Context>
+      {(api) => (
+        <button
+          type="button"
+          className={getClassName('bpk-context-menu__back-button')}
+          onClick={() => api.setOpen(false)}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        >
+          <span className={getClassName('bpk-context-menu__back-button-icon')}>
+            <ChevronLeftIcon />
+          </span>
+          {label}
+        </button>
+      )}
+    </Menu.Context>
   );
 };
 

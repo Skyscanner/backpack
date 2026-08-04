@@ -31,8 +31,10 @@ $context-menu-item-height: 2.55rem;
 
 // Mobile: back button (1) + sticky header (2 action items + separator ≈ 2.2)
 // + 4.5 visible scrollable items below = ~7.7 item-heights total.
+// Both use .7 fractional so the scroll indicator (partial last item) is
+// consistently ~1.8rem tall across all viewports.
 $context-menu-max-visible-items-mobile: 7.7;
-$context-menu-max-visible-items-desktop: 8.5;
+$context-menu-max-visible-items-desktop: 8.7;
 
 // Default trigger button — resets browser button styles so consumers get a
 // clean base to build on via className. Consumers own the visual design.
@@ -260,8 +262,13 @@ $context-menu-max-visible-items-desktop: 8.5;
 }
 
 .bpk-context-menu__back-button-icon {
+  display: inline-flex;
+  align-items: center;
   flex-shrink: 0;
-  fill: currentcolor;
+
+  svg {
+    fill: currentcolor;
+  }
 }
 
 // Scrollable region for the trip list. When present, the content surface

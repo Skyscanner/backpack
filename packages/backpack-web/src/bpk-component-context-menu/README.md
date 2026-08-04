@@ -67,7 +67,7 @@ import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu'
 | `BpkContextMenu.Item` | `Menu.Item` | Selectable menu row. Supports `icon` (rendered on the left), `destructive` variant, and an optional `onSelect` for item-specific handlers (fires for both pointer and keyboard activation). |
 | `BpkContextMenu.Separator` | `Menu.Separator` | Visual divider between logical groups of items. |
 | `BpkContextMenu.StickyHeader` | `<div>` | Anchors its children to the top of the scrolling content surface. Use to pin action items (e.g. "Plan a new trip") above a long scrollable list. |
-| `BpkContextMenu.BackButton` | `<button>` | Mobile-only back button rendered at the top of `StickyHeader`. Hidden on tablet and above. Accepts `onClick` and an optional `label` (defaults to `"Back"`). |
+| `BpkContextMenu.BackButton` | `<button>` | Mobile-only back button rendered at the top of `StickyHeader`. Hidden on tablet and above. Automatically closes the nearest menu context — closes the root menu when in the top-level menu, or returns to the parent when in a sub-menu. Accepts an optional `label` (defaults to `"Back"`). |
 | `BpkContextMenu.ItemGroup` | `<div>` | Groups related items under a shared container. Use to visually cluster items that belong together (e.g. a set of saved trips). |
 | `BpkContextMenu.TriggerItem` | `Menu.TriggerItem` | A menu row that opens a nested sub-menu on hover/arrow-right. Accepts an optional `endIcon` (typically a chevron) to signal the sub-menu. |
 
