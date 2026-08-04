@@ -21,14 +21,21 @@ import { useState } from 'react';
 
 import { ArgTypes, Markdown } from '@storybook/addon-docs/blocks';
 
-import { borderRadiusLg, corePrimaryDay, lineDay, statusDangerSpotDay, surfaceHighlightDay, textOnDarkDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
+import {
+  borderRadiusLg,
+  corePrimaryDay,
+  lineDay,
+  statusDangerSpotDay,
+  surfaceHighlightDay,
+  textOnDarkDay,
+} from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 import AriaLiveDemo from '../../bpk-component-aria-live/src/BpkAriaLive.story-helpers';
 import FaceHappyIconSm from '../../bpk-component-icon/sm/face--happy';
 import FilterIconSm from '../../bpk-component-icon/sm/filter';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import { BpkThemeProvider } from '../../bpk-theming';
+import BpkThemeProvider from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkDismissibleChip from './BpkDismissibleChip';

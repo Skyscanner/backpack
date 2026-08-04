@@ -34,9 +34,8 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
 import { cssModules } from '../../bpk-react-utils';
-import { BpkThemeProvider } from '../../bpk-theming';
+import BpkThemeProvider from '../../bpk-theming';
 import readme from '../README.md';
-
 
 import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 

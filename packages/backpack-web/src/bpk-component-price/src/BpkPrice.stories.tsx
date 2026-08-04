@@ -27,12 +27,11 @@ import {
 // @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
 import { BpkDarkExampleWrapper } from 'bpk-storybook-utils';
 
-// @ts-ignore
-
 
 import NewWindowIcon from '../../bpk-component-icon/sm/new-window';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text/src/BpkText';
-import { BpkThemeProvider } from '../../bpk-theming';
+// @ts-ignore Untyped import. See `decisions/imports-ts-suppressions.md`.
+import BpkThemeProvider from '../../bpk-theming';
 import readme from '../README.md';
 
 import BpkPrice from './BpkPrice';

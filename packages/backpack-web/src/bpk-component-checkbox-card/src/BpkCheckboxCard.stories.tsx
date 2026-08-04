@@ -46,7 +46,7 @@ import {
 import BpkMobileScrollContainer from '../../bpk-component-mobile-scroll-container';
 import BpkPrice from '../../bpk-component-price';
 import BpkText, { TEXT_COLORS, TEXT_STYLES } from '../../bpk-component-text';
-import { BpkThemeProvider } from '../../bpk-theming';
+import BpkThemeProvider from '../../bpk-theming';
 import readme from '../README.md';
 
 import {
@@ -55,7 +55,9 @@ import {
   CHECKBOX_CARD_RADIUS,
   useCheckboxCardContext,
 } from './BpkCheckboxCard';
-import CHECKBOX_CARD_THEME_ATTRIBUTES, { createCheckboxCardTheme } from './themeAttributes';
+import CHECKBOX_CARD_THEME_ATTRIBUTES, {
+  createCheckboxCardTheme,
+} from './themeAttributes';
 
 import type { Meta } from '@storybook/react';
 
