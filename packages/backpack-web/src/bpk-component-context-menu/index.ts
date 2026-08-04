@@ -35,6 +35,8 @@ export type { BpkContextMenuSeparatorProps } from './src/BpkContextMenuSeparator
 export type { BpkContextMenuItemGroupProps } from './src/BpkContextMenuItemGroup';
 export type { BpkContextMenuTriggerItemProps } from './src/BpkContextMenuSubTriggerItem';
 export type { BpkContextMenuSaveTriggerProps } from './src/BpkContextMenuSaveTrigger';
+export type { BpkContextMenuPanelGroupProps } from './src/BpkContextMenuPanelGroup';
+export type { BpkContextMenuPanelProps } from './src/BpkContextMenuPanel';
 export type { BpkContextMenuScrollableListProps } from './src/BpkContextMenuScrollableList';
 export type { BpkContextMenuStickyHeaderProps } from './src/BpkContextMenuStickyHeader';
 export type { BpkContextMenuBackButtonProps } from './src/BpkContextMenuBackButton';

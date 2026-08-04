@@ -21,6 +21,7 @@ import { Menu } from '@ark-ui/react';
 import ChevronLeftIcon from '../../bpk-component-icon/sm/chevron-left';
 import { cssModules } from '../../bpk-react-utils';
 
+import { useBpkContextMenuNav } from './BpkContextMenuNavContext';
 import useMenuTriggerFocusGuard from './useMenuTriggerFocusGuard';
 
 import STYLES from './BpkContextMenu.module.scss';
@@ -32,18 +33,28 @@ export type BpkContextMenuBackButtonProps = {
   label?: string;
 };
 
+const ROOT_PANEL = 'root';
+
 const BpkContextMenuBackButton = ({
   label = 'Back',
 }: BpkContextMenuBackButtonProps) => {
+  const nav = useBpkContextMenuNav();
   const { onBlur, onFocus } = useMenuTriggerFocusGuard();
 
   return (
     <Menu.Context>
       {(api) => (
-        <button
-          type="button"
+        <Menu.Item
+          value="_back"
+          closeOnSelect={false}
+          onSelect={() => {
+            if (nav && nav.activePanel !== ROOT_PANEL) {
+              nav.goBack();
+            } else {
+              api.setOpen(false);
+            }
+          }}
           className={getClassName('bpk-context-menu__back-button')}
-          onClick={() => api.setOpen(false)}
           onFocus={onFocus}
           onBlur={onBlur}
         >
@@ -51,7 +62,7 @@ const BpkContextMenuBackButton = ({
             <ChevronLeftIcon />
           </span>
           {label}
-        </button>
+        </Menu.Item>
       )}
     </Menu.Context>
   );

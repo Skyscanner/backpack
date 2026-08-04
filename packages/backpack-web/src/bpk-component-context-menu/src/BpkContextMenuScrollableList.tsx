@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import type { ReactNode } from 'react';
+import { type ReactNode, useEffect, useRef } from 'react';
 
 import { cssModules } from '../../bpk-react-utils';
 
@@ -30,10 +30,42 @@ export type BpkContextMenuScrollableListProps = {
 
 const BpkContextMenuScrollableList = ({
   children,
-}: BpkContextMenuScrollableListProps) => (
-  <div className={getClassName('bpk-context-menu__scrollable-list')}>
-    {children}
-  </div>
-);
+}: BpkContextMenuScrollableListProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return undefined;
+
+    // Ark highlights items via data-highlighted rather than moving DOM focus,
+    // so the browser never auto-scrolls. Watch for attribute changes and
+    // scroll the newly highlighted item into view within this container.
+    const observer = new MutationObserver(() => {
+      const highlighted = container.querySelector<HTMLElement>(
+        '[data-highlighted]',
+      );
+      if (highlighted) {
+        highlighted.scrollIntoView({ block: 'nearest' });
+      }
+    });
+
+    observer.observe(container, {
+      attributes: true,
+      attributeFilter: ['data-highlighted'],
+      subtree: true,
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={getClassName('bpk-context-menu__scrollable-list')}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default BpkContextMenuScrollableList;

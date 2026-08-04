@@ -20,6 +20,8 @@ import BpkContextMenuBackButton from './BpkContextMenuBackButton';
 import BpkContextMenuContent from './BpkContextMenuContent';
 import BpkContextMenuItem from './BpkContextMenuItem';
 import BpkContextMenuItemGroup from './BpkContextMenuItemGroup';
+import BpkContextMenuPanel from './BpkContextMenuPanel';
+import BpkContextMenuPanelGroup from './BpkContextMenuPanelGroup';
 import BpkContextMenuRoot from './BpkContextMenuRoot';
 import BpkContextMenuSaveTrigger from './BpkContextMenuSaveTrigger';
 import BpkContextMenuScrollableList from './BpkContextMenuScrollableList';
@@ -33,6 +35,8 @@ const BpkContextMenu = {
   BackButton: BpkContextMenuBackButton,
   Trigger: BpkContextMenuTrigger,
   SaveTrigger: BpkContextMenuSaveTrigger,
+  PanelGroup: BpkContextMenuPanelGroup,
+  Panel: BpkContextMenuPanel,
   ScrollableList: BpkContextMenuScrollableList,
   StickyHeader: BpkContextMenuStickyHeader,
   Content: BpkContextMenuContent,

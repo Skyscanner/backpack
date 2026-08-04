@@ -82,29 +82,45 @@ const WithDestructiveItemExample = () => (
     <BpkContextMenu.Root>
       <SaveTrigger />
       <BpkContextMenu.Content>
-        <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item
-            value="remove"
-            variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
-          >
-            Remove
-          </BpkContextMenu.Item>
-          {/* Sub-menu: nesting BpkContextMenu.Root inside the parent Content
-              is the correct Ark UI pattern. TriggerItem is the row that
-              opens the child menu on hover / arrow-right. */}
-          <BpkContextMenu.Root>
-            <BpkContextMenu.TriggerItem endIcon={<ChevronRightIcon />}>
-              Move
-            </BpkContextMenu.TriggerItem>
-            <BpkContextMenu.Content>
-              <BpkContextMenu.ItemGroup>
-                <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-              </BpkContextMenu.ItemGroup>
-            </BpkContextMenu.Content>
-          </BpkContextMenu.Root>
-        </BpkContextMenu.ItemGroup>
+        <BpkContextMenu.PanelGroup>
+          <BpkContextMenu.Panel id="root">
+            <BpkContextMenu.ItemGroup>
+              <BpkContextMenu.Item
+                value="remove"
+                variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
+              >
+                Remove
+              </BpkContextMenu.Item>
+              <BpkContextMenu.TriggerItem
+                panelId="move"
+                endIcon={<ChevronRightIcon />}
+                desktopFlyout={
+                  <BpkContextMenu.Content>
+                    <BpkContextMenu.ItemGroup>
+                      <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
+                      <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
+                      <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+                    </BpkContextMenu.ItemGroup>
+                  </BpkContextMenu.Content>
+                }
+              >
+                Move
+              </BpkContextMenu.TriggerItem>
+            </BpkContextMenu.ItemGroup>
+          </BpkContextMenu.Panel>
+
+          {/* Mobile-only panel: replaces the root panel when Move is tapped. */}
+          <BpkContextMenu.Panel id="move">
+            <BpkContextMenu.StickyHeader>
+              <BpkContextMenu.BackButton />
+            </BpkContextMenu.StickyHeader>
+            <BpkContextMenu.ItemGroup>
+              <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
+              <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
+              <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+            </BpkContextMenu.ItemGroup>
+          </BpkContextMenu.Panel>
+        </BpkContextMenu.PanelGroup>
       </BpkContextMenu.Content>
     </BpkContextMenu.Root>
   </BpkProvider>
@@ -285,26 +301,43 @@ export const VisualTestDestructive = {
       <BpkContextMenu.Root defaultOpen>
         <SaveTrigger />
         <BpkContextMenu.Content>
-          <BpkContextMenu.ItemGroup>
-            <BpkContextMenu.Item
-              value="remove"
-              variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
-            >
-              Remove
-            </BpkContextMenu.Item>
-            <BpkContextMenu.Root>
-              <BpkContextMenu.TriggerItem endIcon={<ChevronRightIcon />}>
-                Move
-              </BpkContextMenu.TriggerItem>
-              <BpkContextMenu.Content>
-                <BpkContextMenu.ItemGroup>
-                  <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                  <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                  <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-                </BpkContextMenu.ItemGroup>
-              </BpkContextMenu.Content>
-            </BpkContextMenu.Root>
-          </BpkContextMenu.ItemGroup>
+          <BpkContextMenu.PanelGroup>
+            <BpkContextMenu.Panel id="root">
+              <BpkContextMenu.ItemGroup>
+                <BpkContextMenu.Item
+                  value="remove"
+                  variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
+                >
+                  Remove
+                </BpkContextMenu.Item>
+                <BpkContextMenu.TriggerItem
+                  panelId="move"
+                  endIcon={<ChevronRightIcon />}
+                  desktopFlyout={
+                    <BpkContextMenu.Content>
+                      <BpkContextMenu.ItemGroup>
+                        <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
+                        <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
+                        <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+                      </BpkContextMenu.ItemGroup>
+                    </BpkContextMenu.Content>
+                  }
+                >
+                  Move
+                </BpkContextMenu.TriggerItem>
+              </BpkContextMenu.ItemGroup>
+            </BpkContextMenu.Panel>
+            <BpkContextMenu.Panel id="move">
+              <BpkContextMenu.StickyHeader>
+                <BpkContextMenu.BackButton />
+              </BpkContextMenu.StickyHeader>
+              <BpkContextMenu.ItemGroup>
+                <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
+                <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
+                <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
+              </BpkContextMenu.ItemGroup>
+            </BpkContextMenu.Panel>
+          </BpkContextMenu.PanelGroup>
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>
     </BpkProvider>

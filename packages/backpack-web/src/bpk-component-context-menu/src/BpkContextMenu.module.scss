@@ -193,6 +193,8 @@ $context-menu-max-visible-items-desktop: 8.7;
   }
 
   &:focus-visible {
+    outline-offset: 0;
+
     @include utils.bpk-focus-indicator;
   }
 }
@@ -250,9 +252,19 @@ $context-menu-max-visible-items-desktop: 8.7;
     display: none;
   }
 
-  // Specificity 0-2-0 beats the global button:focus-visible (0-1-1) rule,
-  // suppressing the ring when focus was pointer-initiated (menu open via click).
+  &[data-highlighted] {
+    background-color: var(
+      --bpk-canvas-contrast,
+      #{tokens.$bpk-canvas-contrast-day}
+    );
+  }
+
+  // Specificity 0-2-0 beats the global button:focus-visible (0-1-1) rule.
+  // outline-offset: 0 keeps the ring inside the button bounds so the bottom
+  // edge doesn't bleed out and appear as a separator line.
   &:focus-visible:not([data-pointer-focus]) {
+    outline-offset: 0;
+
     @include utils.bpk-focus-indicator;
   }
 
@@ -269,6 +281,16 @@ $context-menu-max-visible-items-desktop: 8.7;
   svg {
     fill: currentcolor;
   }
+}
+
+// Panel within a PanelGroup. Visibility is toggled by BpkContextMenuPanel
+// based on the active panel in the navigation stack.
+// Animation placeholder: add slide/fade transitions here later.
+.bpk-context-menu__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-block-size: 0;
 }
 
 // Scrollable region for the trip list. When present, the content surface
@@ -298,6 +320,7 @@ $context-menu-max-visible-items-desktop: 8.7;
 .bpk-context-menu__separator {
   display: block;
   margin: tokens.bpk-spacing-sm() 0;
+  align-self: stretch;
   border: 0;
   block-size: 0;
   border-block-start: tokens.$bpk-border-size-sm solid
