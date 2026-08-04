@@ -84,28 +84,40 @@ describe('BpkDrawerV2', () => {
     });
 
     it('passes swipeDirection to Ark', () => {
-      const { container } = renderDrawerV2({ swipeDirection: 'end' });
+      renderDrawerV2({ swipeDirection: 'end' });
       expect(
-        container.querySelector('[data-scope="drawer"][data-part="content"]'),
+        document.body.querySelector(
+          '[data-scope="drawer"][data-part="content"]',
+        ),
       ).toHaveAttribute('data-swipe-direction', 'right');
     });
   });
 
   describe('Parts', () => {
-    it('renders the backdrop with the Backpack class', () => {
+    it('portals the backdrop with the Backpack class', () => {
       const { container } = renderDrawerV2();
       const backdrop = container.querySelector(
         '[data-backpack-ds-component="DrawerV2Backdrop"]',
       );
-      expect(backdrop?.className).toContain('bpk-drawer-v2__backdrop');
+      expect(backdrop).not.toBeInTheDocument();
+      expect(
+        document.body.querySelector(
+          '[data-backpack-ds-component="DrawerV2Backdrop"]',
+        )?.className,
+      ).toContain('bpk-drawer-v2__backdrop');
     });
 
-    it('renders the content with the Backpack class', () => {
+    it('portals the content with the Backpack class', () => {
       const { container } = renderDrawerV2();
       const content = container.querySelector(
         '[data-backpack-ds-component="DrawerV2Content"]',
       );
-      expect(content?.className).toContain('bpk-drawer-v2__content');
+      expect(content).not.toBeInTheDocument();
+      expect(
+        document.body.querySelector(
+          '[data-backpack-ds-component="DrawerV2Content"]',
+        )?.className,
+      ).toContain('bpk-drawer-v2__content');
     });
 
     it('renders the header, title, and body', () => {
@@ -145,9 +157,11 @@ describe('BpkDrawerV2', () => {
     });
 
     it('marks body content as a no-drag area', () => {
-      const { container } = renderDrawerV2();
+      renderDrawerV2();
       expect(
-        container.querySelector('[data-backpack-ds-component="DrawerV2Body"]'),
+        document.body.querySelector(
+          '[data-backpack-ds-component="DrawerV2Body"]',
+        ),
       ).toHaveAttribute('data-no-drag');
     });
   });
@@ -160,6 +174,7 @@ describe('BpkDrawerV2', () => {
 
       await user.click(screen.getByRole('button', { name: 'Close filters' }));
 
+      expect(onOpenChange).toHaveBeenCalledTimes(1);
       expect(onOpenChange).toHaveBeenCalledWith(
         expect.objectContaining({ open: false }),
       );

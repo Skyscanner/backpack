@@ -18,7 +18,7 @@
 
 import type { ComponentProps, ReactNode } from 'react';
 
-import { Drawer } from '@ark-ui/react';
+import { Drawer, Portal } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
@@ -38,19 +38,21 @@ const BpkDrawerV2Content = ({
   draggable = true,
   ...rest
 }: BpkDrawerV2ContentProps) => (
-  <Drawer.Positioner
-    className={getClassName('bpk-drawer-v2__positioner')}
-    {...getDataComponentAttribute('DrawerV2Positioner')}
-  >
-    <Drawer.Content
-      {...rest}
-      className={getClassName('bpk-drawer-v2__content')}
-      draggable={draggable}
-      {...getDataComponentAttribute('DrawerV2Content')}
+  <Portal>
+    <Drawer.Positioner
+      className={getClassName('bpk-drawer-v2__positioner')}
+      {...getDataComponentAttribute('DrawerV2Positioner')}
     >
-      {children}
-    </Drawer.Content>
-  </Drawer.Positioner>
+      <Drawer.Content
+        {...rest}
+        className={getClassName('bpk-drawer-v2__content')}
+        draggable={draggable}
+        {...getDataComponentAttribute('DrawerV2Content')}
+      >
+        {children}
+      </Drawer.Content>
+    </Drawer.Positioner>
+  </Portal>
 );
 
 export default BpkDrawerV2Content;

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Drawer } from '@ark-ui/react';
+import { Drawer, Portal } from '@ark-ui/react';
 
 import { cssModules, getDataComponentAttribute } from '../../../../bpk-react-utils';
 
@@ -25,10 +25,12 @@ import STYLES from './BpkDrawerV2Backdrop.module.scss';
 const getClassName = cssModules(STYLES);
 
 const BpkDrawerV2Backdrop = () => (
-  <Drawer.Backdrop
-    className={getClassName('bpk-drawer-v2__backdrop')}
-    {...getDataComponentAttribute('DrawerV2Backdrop')}
-  />
+  <Portal>
+    <Drawer.Backdrop
+      className={getClassName('bpk-drawer-v2__backdrop')}
+      {...getDataComponentAttribute('DrawerV2Backdrop')}
+    />
+  </Portal>
 );
 
 export default BpkDrawerV2Backdrop;

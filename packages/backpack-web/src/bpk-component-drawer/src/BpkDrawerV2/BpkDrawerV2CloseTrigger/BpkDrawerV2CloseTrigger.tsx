@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import { Drawer, useDrawerContext } from '@ark-ui/react';
+import { Drawer } from '@ark-ui/react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../../../bpk-component-close-button';
@@ -28,18 +28,14 @@ export type BpkDrawerV2CloseTriggerProps = {
 
 const BpkDrawerV2CloseTrigger = ({
   label,
-}: BpkDrawerV2CloseTriggerProps) => {
-  const drawer = useDrawerContext();
-
-  return (
-    <Drawer.CloseTrigger asChild>
-      <BpkCloseButton
-        label={label}
-        onClick={() => drawer.setOpen(false)}
-        {...getDataComponentAttribute('DrawerV2CloseTrigger')}
-      />
-    </Drawer.CloseTrigger>
-  );
-};
+}: BpkDrawerV2CloseTriggerProps) => (
+  <Drawer.CloseTrigger asChild>
+    <BpkCloseButton
+      label={label}
+      onClick={() => {}}
+      {...getDataComponentAttribute('DrawerV2CloseTrigger')}
+    />
+  </Drawer.CloseTrigger>
+);
 
 export default BpkDrawerV2CloseTrigger;

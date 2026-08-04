@@ -26,7 +26,7 @@ beforeAll(mockResizeObserver);
 
 describe('BpkDrawerV2 accessibility tests', () => {
   it('has no accessibility violations when open', async () => {
-    const { container } = render(
+    const { baseElement } = render(
       <BpkDrawerV2.Root open onOpenChange={jest.fn()}>
         <BpkDrawerV2.Backdrop />
         <BpkDrawerV2.Content>
@@ -40,11 +40,11 @@ describe('BpkDrawerV2 accessibility tests', () => {
       </BpkDrawerV2.Root>,
     );
 
-    expect(await axe(container)).toHaveNoViolations();
+    expect(await axe(baseElement)).toHaveNoViolations();
   });
 
   it('has no accessibility violations with description', async () => {
-    const { container } = render(
+    const { baseElement } = render(
       <BpkDrawerV2.Root open onOpenChange={jest.fn()}>
         <BpkDrawerV2.Content>
           <BpkDrawerV2.Header>
@@ -59,11 +59,11 @@ describe('BpkDrawerV2 accessibility tests', () => {
       </BpkDrawerV2.Root>,
     );
 
-    expect(await axe(container)).toHaveNoViolations();
+    expect(await axe(baseElement)).toHaveNoViolations();
   });
 
   it('has no accessibility violations as a side drawer', async () => {
-    const { container } = render(
+    const { baseElement } = render(
       <BpkDrawerV2.Root
         open
         onOpenChange={jest.fn()}
@@ -80,6 +80,6 @@ describe('BpkDrawerV2 accessibility tests', () => {
       </BpkDrawerV2.Root>,
     );
 
-    expect(await axe(container)).toHaveNoViolations();
+    expect(await axe(baseElement)).toHaveNoViolations();
   });
 });
