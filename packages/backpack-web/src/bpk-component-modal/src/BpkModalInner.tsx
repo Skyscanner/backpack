@@ -20,7 +20,7 @@ import type { ReactNode } from 'react';
 
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import BpkLink from '../../bpk-component-link';
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkNavigationBar, {
   BAR_STYLES,
 } from '../../bpk-component-navigation-bar';
@@ -151,13 +151,16 @@ const BpkModalInner = ({
               leadingButton={accessoryViewFinal}
               trailingButton={
                 closeText ? (
-                  <BpkLink
-                    as="button"
+                  <BpkButton
+                    type={
+                      modalStyle === MODAL_STYLING.surfaceContrast
+                        ? BUTTON_TYPES.linkOnDark
+                        : BUTTON_TYPES.link
+                    }
                     onClick={onClose}
-                    alternate={modalStyle === MODAL_STYLING.surfaceContrast}
                   >
                     {closeText}
-                  </BpkLink>
+                  </BpkButton>
                 ) : (
                   <BpkCloseButton
                     label={closeLabel}
