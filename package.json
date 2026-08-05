@@ -47,6 +47,7 @@
     "tokens:fetch": "tsx token-sync/src/index.ts",
     "tokens:build-css": "tsx token-sync/src/build-css-cli.ts",
     "tokens:sync": "pnpm run tokens:fetch && pnpm run tokens:build-css",
+    "build:theme-types": "tsx token-sync/src/typescript-theme-formatter.ts",
     "sassdoc": "nx run backpack-web:sassdoc",
     "test": "pnpm run lint && pnpm run check-react-versions && pnpm run check-bpk-dependencies && pnpm run jest",
     "typecheck": "tsc && nx run-many -t typecheck",
@@ -66,6 +67,10 @@
   "jest": {
     "coverageReporters": [
       "text"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/generated/"
     ],
     "coverageThreshold": {
       "global": {

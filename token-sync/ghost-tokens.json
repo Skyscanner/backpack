@@ -1,0 +1,44 @@
+{
+  "Button": [
+    {
+      "key": "colourTextDestructivePressed",
+      "cssVar": "bpk-private-button-colour-text-destructive-pressed",
+      "note": "Text colour for destructive button in pressed/hover state — not modelled in Figma"
+    },
+    {
+      "key": "colourTextDisabled",
+      "cssVar": "bpk-private-button-colour-text-disabled",
+      "note": "Text colour for all disabled button variants — not modelled in Figma"
+    },
+    {
+      "key": "colourTextLink",
+      "cssVar": "bpk-private-button-colour-text-link",
+      "note": "Text colour for link-style button — not modelled in Figma"
+    },
+    {
+      "key": "colourTextPrimary",
+      "cssVar": "bpk-private-button-colour-text-primary",
+      "note": "Text colour for primary button (normal and hover) — not modelled in Figma"
+    },
+    {
+      "key": "colourTextPrimaryOnDark",
+      "cssVar": "bpk-private-button-colour-text-primary-on-dark",
+      "note": "Text colour for primaryOnDark button — not modelled in Figma"
+    },
+    {
+      "key": "colourTextPrimaryOnLight",
+      "cssVar": "bpk-private-button-colour-text-primary-on-light",
+      "note": "Text colour for primaryOnLight button — not modelled in Figma"
+    },
+    {
+      "key": "colourTextSecondaryOnDark",
+      "cssVar": "bpk-private-button-colour-text-secondary-on-dark",
+      "note": "Text colour for secondaryOnDark button — not modelled in Figma"
+    },
+    {
+      "key": "dimensionMinHeightLarge",
+      "cssVar": "bpk-private-button-dimension-min-height-large",
+      "note": "Min-height for the large button size — not modelled in Figma"
+    }
+  ]
+}

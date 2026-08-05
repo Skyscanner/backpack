@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`BpkThemeProviderV2 ignores legacy themeAttributes prop without error 1`] = `
+<DocumentFragment>
+  <div
+    style="--bpk-core-primary: #e00045;"
+  >
+    <p>
+      Legacy
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkThemeProviderV2 renders children with a partial theme and sets CSS vars 1`] = `
+<DocumentFragment>
+  <div
+    style="--bpk-core-accent: #0770e3; --bpk-core-primary: #e00045; --bpk-private-button-colour-bg-primary: #e00045;"
+  >
+    <p>
+      Themed
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkThemeProviderV2 renders children without a theme 1`] = `
+<DocumentFragment>
+  <div>
+    <p>
+      No theme
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`BpkThemeProviderV2 renders with as="section" wrapper element 1`] = `
+<DocumentFragment>
+  <section
+    style="--bpk-core-accent: #0770e3; --bpk-core-primary: #e00045; --bpk-private-button-colour-bg-primary: #e00045;"
+  >
+    <p>
+      Section
+    </p>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`BpkThemeProviderV2 renders with legacy component prop 1`] = `
+<DocumentFragment>
+  <header
+    style="--bpk-core-accent: #0770e3; --bpk-core-primary: #e00045; --bpk-private-button-colour-bg-primary: #e00045;"
+  >
+    <p>
+      Header
+    </p>
+  </header>
+</DocumentFragment>
+`;

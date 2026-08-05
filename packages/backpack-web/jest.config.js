@@ -28,6 +28,10 @@ module.exports = {
     '^.+\\.[jt]sx?$': ['babel-jest', { rootMode: 'upward' }],
   },
   coverageReporters: ['text'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/generated/',
+  ],
   coverageThreshold: {
     global: {
       branches: 70,

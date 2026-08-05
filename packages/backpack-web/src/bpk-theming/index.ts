@@ -16,18 +16,12 @@
  * limitations under the License.
  */
 
-// Hand-written declaration for the JS-only `bpk-theming` package. Remove once
-// BpkThemeProvider moves to TS.
-import type { ComponentType, ReactNode } from 'react';
-
-interface BpkThemeProviderProps {
-  children: ReactNode;
-  theme?: Record<string, string>;
-  themeAttributes?: readonly string[] | string[] | string[][];
-  component?: ComponentType<any> | string;
-  style?: Record<string, string>;
-  [key: string]: any;
-}
-
-declare const BpkThemeProvider: ComponentType<BpkThemeProviderProps>;
-export default BpkThemeProvider;
+export {
+  default as BpkThemeProviderV2,
+  useBpkTheme,
+} from './src/BpkThemeProviderV2';
+export type { BpkTheme, BpkThemedValue } from './src/BpkThemeProviderV2';
+export {
+  default,
+  default as BpkThemeProvider,
+} from './src/BpkThemeProvider';

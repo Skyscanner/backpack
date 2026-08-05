@@ -40,16 +40,34 @@ import {
 } from '../../bpk-component-layout';
 import BpkText, { TEXT_STYLES } from '../../bpk-component-text';
 import { cssModules } from '../../bpk-react-utils';
-import BpkThemeProvider from '../../bpk-theming';
+import { BpkThemeProviderV2 as BpkThemeProvider } from '../../bpk-theming';
 import readme from '../README.md';
+
 
 import BpkButton from './BpkButton';
 import { BUTTON_TYPES, SIZE_TYPES } from './common-types';
-import { allButtonThemeAttributes } from './themeAttributes';
 
+import type { BpkTheme } from '../../bpk-theming';
 import type { Meta } from '@storybook/react';
 
 import STYLES from './BpkButton.stories.module.scss';
+
+// VDL (Visual Design Language) theme sourced from Figma:
+//   Light: https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX?node-id=16727-13420
+//   Dark:  https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX?node-id=16727-13421
+// Toggle the Storybook colour-scheme toolbar to switch between modes.
+const THEMED_BUTTON_THEME: BpkTheme = {
+  button: {
+    dimensionRadius: '999px',
+    colourBgSecondary: { light: '#E3F0FF' },
+    colourBgSecondaryPressed: { light: '#B4D7FF' },
+    colourBgSecondaryOnContrast: { light: '#E3F0FF' },
+    colourBgSecondaryOnContrastPressed: { light: '#B4D7FF' },
+    colourBgSecondaryOnDarkPressed: { light: '#00000080' },
+    dimensionPaddingHorizontalLarge: '1.5rem',
+    dimensionMinHeightLarge: '3.5rem',
+  },
+};
 
 const RtlSmallLongArrowRightIcon = withRtlSupport(SmallLongArrowRightIcon);
 const RtlLargeLongArrowRightIcon = withRtlSupport(LargeLongArrowRightIcon);
@@ -455,10 +473,7 @@ const SubmitButtonExample = (props: any) => (
 );
 
 const ThemedBorderRadiusExample = () => (
-  <BpkThemeProvider
-    theme={{ privateButtonDimensionRadius: '999px' }}
-    themeAttributes={['privateButtonDimensionRadius']}
-  >
+  <BpkThemeProvider theme={{ button: { dimensionRadius: '999px' } }}>
     <PrimaryExample />
   </BpkThemeProvider>
 );
@@ -478,51 +493,13 @@ const ALL_BUTTON_ROWS: Array<{
   { type: BUTTON_TYPES.linkOnDark, label: 'LinkOnDark', dark: true },
 ];
 
-const THEMED_BUTTON_THEME = {
-  privateButtonDimensionRadius: '999px',
-  privateButtonDimensionMinHeightDefault: '36px',
-  privateButtonDimensionPaddingHorizontalDefault: '16px',
-  privateButtonDimensionMinHeightLarge: '56px',
-  privateButtonDimensionPaddingHorizontalLarge: '24px',
-  privateButtonColourBgDisabled: '#e0e4e9',
-  privateButtonColourTextDisabled: 'rgba(0, 0, 0, 0.2)',
-  privateButtonColourBgPrimary: '#05203c',
-  privateButtonColourBgPrimaryPressed: '#154679',
-  privateButtonColourTextPrimary: '#ffffff',
-  privateButtonColourBgPrimaryOnDark: '#ffffff',
-  privateButtonColourBgPrimaryOnDarkPressed: '#c1c7cf',
-  privateButtonColourTextPrimaryOnDark: '#161616',
-  privateButtonColourBgPrimaryOnLight: '#05203c',
-  privateButtonColourBgPrimaryOnLightPressed: '#154679',
-  privateButtonColourTextPrimaryOnLight: '#ffffff',
-  privateButtonColourTextSecondary: '#161616',
-  privateButtonColourBgSecondary: '#e3f0ff',
-  privateButtonColourBgSecondaryPressed: '#b4d7ff',
-  privateButtonColourBgSecondaryOnDark: 'rgba(255, 255, 255, 0.1)',
-  privateButtonColourBgSecondaryOnDarkPressed: 'rgba(0, 0, 0, 0.5)',
-  privateButtonColourBgSecondaryOnDarkDisabled: '#0b121d',
-  privateButtonColourTextSecondaryOnDark: '#ffffff',
-  privateButtonColourTextFeature: '#ffffff',
-  privateButtonColourBgFeatured: '#0062e3',
-  privateButtonColourBgFeaturePressed: '#024daf',
-  privateButtonColourTextDestructive: '#e70866',
-  privateButtonColourTextDestructivePressed: '#ffffff',
-  privateButtonColourBgDestructive: '#e0e4e9',
-  privateButtonColourBgDestructivePressed: '#e70866',
-  privateButtonColourTextLink: '#161616',
-  privateButtonColourTextLinkOnDark: '#ffffff',
-};
-
 const ButtonRow = ({ dark, label, type }: (typeof ALL_BUTTON_ROWS)[number]) => {
   const row = (
     <BpkHStack gap={BpkSpacing.XL} align="center" flexGrow={1}>
       <BpkButton type={type} size={SIZE_TYPES.large} onClick={action('Button clicked')}>
         {label}
       </BpkButton>
-      <BpkThemeProvider
-        theme={THEMED_BUTTON_THEME}
-        themeAttributes={allButtonThemeAttributes}
-      >
+      <BpkThemeProvider theme={THEMED_BUTTON_THEME}>
         <BpkButton type={type} size={SIZE_TYPES.large} onClick={action('Button clicked')}>
           {label}
         </BpkButton>
