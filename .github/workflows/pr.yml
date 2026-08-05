@@ -70,86 +70,79 @@ jobs:
       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
 
-  StorybookDeploy:
+  Upload-Storybook-Preview:
     runs-on: ubuntu-latest-2cores
     needs: [Create-Build-Cache]
     permissions:
       contents: read
-      pull-requests: write
-      id-token: write
     steps:
-    - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      with:
-        persist-credentials: false
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
-    - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+      - name: Restore Storybook cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        id: storybook-dist-cache
+        with:
+          path: |
+            libs/backpack-storybook-host/dist-storybook/
+            .nx/cache/
+          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
-    - name: Configure Artifactory credentials
-      uses: skyscanner/configure-artifactory-credentials@7b3605d5461d8e115421d0d206602e927e0afc8a # zizmor: ignore[unpinned-uses]
+      - name: Verify Storybook preview is available
+        run: test -f libs/backpack-storybook-host/dist-storybook/index.html
 
-    - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
-      with:
-        node-version-file: '.nvmrc'
-        registry-url: https://artifactory.skyscannertools.net/artifactory/api/npm/npm/
-        cache: 'pnpm'
+      - name: Upload Storybook preview artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: storybook-preview
+          path: libs/backpack-storybook-host/dist-storybook/
 
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+  Publish-Storybook-Preview:
+    needs: [Upload-Storybook-Preview]
+    permissions:
+      contents: read
+      id-token: write
+    uses: Skyscanner/reusable-workflows/.github/workflows/static-content.yaml@v9.3.1
+    with:
+      target: /design-system/storybook/pr-${{ github.event.pull_request.number }}/
+      artifact-name: storybook-preview
+      public: false
+      gzip: false
 
-    - name: Restore Cache
-      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-      id: storybook-dist-cache
-      with:
-        path: |
-          libs/backpack-storybook-host/dist-storybook/
-          .nx/cache/
-        key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
-
-    - name: Prepare to deploy Storybook (pull request build)
-      run: |
-        mkdir build
-        mv libs/backpack-storybook-host/dist-storybook $PR_NUMBER
-        cp -R $PR_NUMBER build/
-      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-      env:
-        PR_NUMBER: ${{ github.event.pull_request.number }}
-
-    - name: Preserve .github from storybook-prs
-      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-      env:
-        GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-      run: |
-        trap 'rm -rf _prs_tmp' EXIT
-        gh repo clone backpack/storybook-prs _prs_tmp -- \
-          --depth 1 --filter=blob:none --sparse --branch main
-        git -C _prs_tmp sparse-checkout set .github
-        if [ -d _prs_tmp/.github ]; then
-          mkdir -p build/.github
-          cp -r _prs_tmp/.github/. build/.github/
-        fi
-
-    - name: Deploy Storybook to backpack.github.io/storybook-prs
-      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
-      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-      with:
-        personal_token: ${{ secrets.DEPLOY_TOKEN }}
-        publish_dir: build/
-        keep_files: true
-        exclude_assets: ''
-        external_repository: backpack/storybook-prs
-        publish_branch: main
-
-    - name: Link to the pull request build
-      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
-      if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name && github.actor != 'dependabot[bot]'
-      with:
-        github-token: ${{ github.token }}
-        script: |
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: `Visit https://backpack.github.io/storybook-prs/${ process.env.PR_NUMBER } to see this build running in a browser.`
-          })
-      env:
-        PR_NUMBER: ${{ github.event.pull_request.number }}
+  Comment-Storybook-Preview:
+    runs-on: ubuntu-latest-2cores
+    needs: [Publish-Storybook-Preview]
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Create or update Storybook preview comment
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const marker = '<!-- design-system-storybook-preview -->';
+            const url = `https://skyscanner-prod-sttc-int-eu-west-1.s3.amazonaws.com/sttc/design-system/storybook/pr-${context.issue.number}/index.html`;
+            const commit = context.payload.pull_request.head.sha.slice(0, 7);
+            const body = `${marker}\nVisit [Storybook preview](${url}) for commit \`${commit}\`.`;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find((comment) => comment.body?.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
