@@ -35,9 +35,10 @@ concurrency:
 
 jobs:
   Validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     permissions:
       contents: read
+      id-token: write
     outputs:
       release_tag: ${{ steps.version.outputs.release_tag }}
       release_version: ${{ steps.version.outputs.release_version }}
@@ -46,12 +47,19 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0
-          persist-credentials: false
+          # The subsequent tag fetch needs the job's same-repository token.
+          persist-credentials: true
 
       - id: source
         run: echo "target_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - run: git fetch --force --tags origin
+      - name: Fetch adoption-plugin release tags
+        # The repository has thousands of tags. Version calculation only needs
+        # this package's tags, so avoid fetching every historical component tag
+        # on each pull request.
+        run: >-
+          git fetch --force origin
+          'refs/tags/backpack-adoption-nx-plugin*:refs/tags/backpack-adoption-nx-plugin*'
 
       - id: version
         uses: ./.github/actions/compute-next-semver
@@ -70,10 +78,13 @@ jobs:
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@v2.0.0
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: .nvmrc
-          registry-url: https://registry.npmjs.org
+          registry-url: https://artifactory.skyscannertools.net/artifactory/api/npm/npm/
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
@@ -85,33 +96,27 @@ jobs:
         working-directory: packages/backpack-adoption-nx-plugin
 
   Publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     needs: Validate
     if: ${{ github.event_name == 'workflow_dispatch' && !inputs.dry_run && github.ref == 'refs/heads/main' }}
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
-      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        id: app-token
-        with:
-          app-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-          permission-contents: write
-
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: ${{ needs.Validate.outputs.target_sha }}
-          persist-credentials: false
+          persist-credentials: true
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@v2.0.0
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          # Validation uses .nvmrc; Node 24 is only used here because its npm
-          # 11 supports npm trusted publishing through OIDC.
-          node-version: 24.14.0
-          registry-url: https://registry.npmjs.org
+          node-version-file: .nvmrc
+          registry-url: https://artifactory.skyscannertools.net/artifactory/api/npm/npm/
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
@@ -120,7 +125,7 @@ jobs:
         env:
           RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
         run: |
-          git fetch --force --tags origin
+          git fetch --force origin 'refs/tags/backpack-adoption-nx-plugin*:refs/tags/backpack-adoption-nx-plugin*'
           if git rev-parse "refs/tags/$RELEASE_TAG" >/dev/null 2>&1; then
             echo "::error::Tag $RELEASE_TAG already exists"
             exit 1
@@ -130,16 +135,14 @@ jobs:
           RELEASE_VERSION: ${{ needs.Validate.outputs.release_version }}
         run: npm version "$RELEASE_VERSION" --no-git-tag-version --ignore-scripts
         working-directory: packages/backpack-adoption-nx-plugin
-      - name: Publish public npm package
-        run: npm publish --ignore-scripts --access public --provenance
+      - name: Publish internal Artifactory package
+        run: npm publish --ignore-scripts
         working-directory: packages/backpack-adoption-nx-plugin
       - name: Create and push release tag
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           RELEASE_TAG: ${{ needs.Validate.outputs.release_tag }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git tag -a "$RELEASE_TAG" -m "$RELEASE_TAG"
-          basic_auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')"
-          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic ${basic_auth}" push origin "refs/tags/$RELEASE_TAG"
+          git push origin "refs/tags/$RELEASE_TAG"

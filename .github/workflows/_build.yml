@@ -3,8 +3,6 @@ name: Build
 on:
   workflow_call:
     secrets:
-      GH_APP_PRIVATE_KEY:
-        required: true
       PERCY_TOKEN:
         required: false
 
@@ -18,13 +16,14 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     permissions:
       # actions: read is mandatory for nrwl/nx-set-shas to read base/head SHAs
       # via the GitHub Actions API. Without it, `nx affected` silently runs
       # against the wrong baseline.
       actions: read
       contents: read
+      id-token: write
       statuses: write
       pull-requests: write
 
@@ -35,6 +34,9 @@ jobs:
           persist-credentials: false
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@v2.0.0
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -53,16 +55,10 @@ jobs:
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
-      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        id: nx-shas-token
-        with:
-          app-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-
       - name: Derive Nx affected SHAs
         uses: nrwl/nx-set-shas@afb73a62d26e41464e9254689e1fd6122ee683c1 # v5.0.1
         with:
-          gh-token: ${{ steps.nx-shas-token.outputs.token }}
+          gh-token: ${{ github.token }}
 
       - name: Setup logs directory
         run: mkdir logs
@@ -106,10 +102,12 @@ jobs:
     # node_modules (no save) and run typecheck + jest. Allowed to fail while
     # the migration lands; flip to required once Repo 1 (backpack-web) is
     # released and consumers can opt in.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     needs: Build
     continue-on-error: true
     permissions:
+      contents: read
+      id-token: write
       statuses: write
       pull-requests: write
 
@@ -119,6 +117,9 @@ jobs:
           persist-credentials: false
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@v2.0.0
 
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
@@ -143,9 +144,11 @@ jobs:
         run: TZ=Etc/UTC pnpm run jest
 
   Danger:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     needs: Build
     permissions:
+      contents: read
+      id-token: write
       statuses: write
       pull-requests: write
 
@@ -155,6 +158,9 @@ jobs:
           persist-credentials: false
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@v2.0.0
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -175,22 +181,25 @@ jobs:
           brotli -d ${{env.BUILD_LOGS}}.tar.br
           tar -xf ${{env.BUILD_LOGS}}.tar
 
-      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        id: app-token
-        with:
-          app-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-
       - name: Danger
         run: pnpm run danger
         if: github.ref != 'refs/heads/main' && github.repository == github.event.pull_request.head.repo.full_name
         env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITHUB_TOKEN: ${{ github.token }}
 
   PercyTests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-medium
+    defaults:
+      run:
+        # A login shell resets PNPM_HOME in the Cypress container.
+        shell: bash
+    container:
+      image: 325714046698.dkr.ecr.eu-west-1.amazonaws.com/docker/cypress/service:0.2.6
+      options: --user root
     needs: [Danger]
     permissions:
+      contents: read
+      id-token: write
       statuses: write
       pull-requests: write
 
@@ -199,12 +208,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
-
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          # This container starts with Node 18, while pnpm/action-setup's
+          # self-installer requires a newer Node runtime.
+          package-manager-cache: false
+
+      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@v2.0.0
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -217,6 +231,12 @@ jobs:
             libs/backpack-storybook-host/dist-storybook/
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
+
+      - name: Build Storybook when cache is unavailable
+        if: steps.storybook-dist-cache.outputs.cache-hit != 'true'
+        run: |
+          pnpm run build
+          pnpm run storybook:dist
 
       - name: Percy Test
         if: ( github.ref == 'refs/heads/main' || github.repository == github.event.pull_request.head.repo.full_name) && github.actor != 'dependabot[bot]'

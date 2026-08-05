@@ -1,0 +1,16 @@
+# Specification https://skyscanner.atlassian.net/l/cp/U0rFrY7n
+version: '1'
+type: library
+component:
+  name: design-system
+  owner:
+    - Backpack Web
+  description: Skyscanner's internal Backpack design system library.
+  serviceClass: economy-class
+  public: False
+  personalDataHandling: none
+  soxScope: False
+  paymentProcessing: False
+  outOfHoursSupportRequired: False
+  lifecycleState: production
+  sonarqubeProjectKey: Skyscanner_backpack

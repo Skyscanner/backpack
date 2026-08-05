@@ -1,5 +1,5 @@
 {
-  "name": "@skyscanner/backpack-adoption-nx-plugin",
+  "name": "@skyscanner-internal/backpack-adoption-nx-plugin",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "repository": {
@@ -17,8 +17,7 @@
   },
   "files": ["dist", "executors.json", "README.md"],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://artifactory.skyscannertools.net/artifactory/api/npm/npm/"
   },
   "scripts": {
     "build": "node scripts/build.js",
