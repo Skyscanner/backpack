@@ -18,9 +18,9 @@
 
 import type { ReactNode } from 'react';
 
+import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 // @ts-expect-error Untyped import. See `decisions/imports-ts-suppressions.md`.
 import BpkCloseButton from '../../bpk-component-close-button';
-import BpkButton, { BUTTON_TYPES } from '../../bpk-component-button';
 import BpkNavigationBar, {
   BAR_STYLES,
 } from '../../bpk-component-navigation-bar';
