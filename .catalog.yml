@@ -4,13 +4,12 @@ type: library
 component:
   name: design-system
   owner:
-    - Backpack Web
+    - clover
   description: Skyscanner's internal Backpack design system library.
   serviceClass: economy-class
-  public: False
+  public: false
   personalDataHandling: none
-  soxScope: False
-  paymentProcessing: False
-  outOfHoursSupportRequired: False
+  soxScope: false
+  paymentProcessing: false
+  outOfHoursSupportRequired: false
   lifecycleState: production
-  sonarqubeProjectKey: Skyscanner_backpack
