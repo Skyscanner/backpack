@@ -513,7 +513,7 @@ exports[`BpkModalInner should render correctly with closeText prop 1`] = `
           class="bpk-navigation-bar__trailing-item bpk-navigation-bar__trailing-item-default"
         >
           <button
-            class="bpk-button bpk-button--link bpk-modal__close-text"
+            class="bpk-button bpk-button--link"
             data-backpack-ds-component="Button"
             type="button"
           >
