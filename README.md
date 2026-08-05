@@ -2,6 +2,11 @@
 
 > Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
 
+> [!WARNING]
+> This repository has been archived and is no longer maintained.
+>
+> The final public release is [`@skyscanner/backpack-web@43.16.0`](https://www.npmjs.com/package/@skyscanner/backpack-web/v/43.16.0). No further public releases will be published.
+
 [![npm version](https://badge.fury.io/js/@skyscanner%2Fbackpack-web.svg)](https://badge.fury.io/js/@skyscanner%2Fbackpack-web)
 [![Build Status](https://github.com/Skyscanner/backpack/workflows/Backpack%20CI/badge.svg)](https://github.com/Skyscanner/backpack/actions)
 
@@ -104,4 +109,3 @@ These are installed separately and installation information can be found in the 
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`@skyscanner/bpk-svgs`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-svgs)                       | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-svgs)                       |
 | [`@skyscanner/bpk-foundations-web`](https://github.com/Skyscanner/backpack-foundations/tree/main/packages/bpk-foundations-web) | [![npm version](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web.svg)](https://badge.fury.io/js/%40skyscanner%2Fbpk-foundations-web) |
-
