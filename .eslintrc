@@ -201,6 +201,13 @@
               "Dialog.Positioner", // allowed for styling to be passed to ark-ui component
               "Dialog.Trigger", // allowed for styling to be passed to ark-ui component
               "Dialog.Title", // allowed for styling to be passed to ark-ui component
+              "Drawer.Backdrop", // allowed for styling to be passed to ark-ui component
+              "Drawer.Content", // allowed for styling to be passed to ark-ui component
+              "Drawer.Grabber", // allowed for styling to be passed to ark-ui component
+              "Drawer.GrabberIndicator", // allowed for styling to be passed to ark-ui component
+              "Drawer.Positioner", // allowed for styling to be passed to ark-ui component
+              "Drawer.SwipeArea", // allowed for styling to be passed to ark-ui component
+              "Drawer.Title", // allowed for styling to be passed to ark-ui component
               "Menu.Content", // allowed for styling to be passed to ark-ui component
               "Menu.Item", // allowed for styling to be passed to ark-ui component
               "Menu.Positioner", // allowed for styling to be passed to ark-ui component

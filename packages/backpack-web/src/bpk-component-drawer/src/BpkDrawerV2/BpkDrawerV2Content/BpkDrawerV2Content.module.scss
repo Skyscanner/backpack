@@ -1,0 +1,334 @@
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../../../bpk-mixins/shadows';
+@use '../../../../bpk-mixins/tokens';
+
+$drawer-duration: tokens.$bpk-duration-base;
+$drawer-easing: cubic-bezier(0.5, 0, 0, 1);
+$drawer-bleed: 3rem;
+$drawer-side-inline-size: 24rem;
+
+.bpk-drawer-v2__positioner {
+  position: fixed;
+  z-index: tokens.$bpk-zindex-modal + 1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bpk-drawer-v2__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transition: transform $drawer-duration $drawer-easing;
+  background-color: var(
+    --bpk-surface-elevated,
+    #{tokens.$bpk-surface-elevated-day}
+  );
+  color: var(--bpk-text-primary, #{tokens.$bpk-text-primary-day});
+  overflow: clip;
+  max-block-size: 100dvh;
+  pointer-events: none;
+
+  @include shadows.bpk-box-shadow-lg;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-color: inherit;
+    pointer-events: none;
+  }
+
+  &[data-swipe-direction='down'] {
+    transform: translate3d(0, 100%, 0);
+    border-radius: tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0 0;
+    block-size: 100dvh;
+    inset-block-end: 0;
+    inset-inline: 0;
+
+    &::after {
+      block-size: $drawer-bleed;
+      inset-block-start: 100%;
+      inset-inline: 0;
+    }
+  }
+
+  &[data-swipe-direction='up'] {
+    transform: translate3d(0, -100%, 0);
+    border-radius: 0 0 tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg;
+    block-size: 100dvh;
+    inset-block-start: 0;
+    inset-inline: 0;
+
+    &::after {
+      block-size: $drawer-bleed;
+      inset-block-end: 100%;
+      inset-inline: 0;
+    }
+  }
+
+  &[data-swipe-direction='left'] {
+    transform: translate3d(-100%, 0, 0);
+    border-radius: 0 tokens.$bpk-border-radius-lg tokens.$bpk-border-radius-lg 0;
+    inline-size: min($drawer-side-inline-size, 100vw);
+    inset-block: 0;
+    inset-inline-start: 0;
+
+    &::after {
+      inline-size: $drawer-bleed;
+      inset-block: 0;
+      inset-inline-end: 100%;
+    }
+  }
+
+  &[data-swipe-direction='right'] {
+    transform: translate3d(100%, 0, 0);
+    border-radius: tokens.$bpk-border-radius-lg 0 0 tokens.$bpk-border-radius-lg;
+    inline-size: min($drawer-side-inline-size, 100vw);
+    inset-block: 0;
+    inset-inline-end: 0;
+
+    &::after {
+      inline-size: $drawer-bleed;
+      inset-block: 0;
+      inset-inline-start: 100%;
+    }
+  }
+
+  &[data-state='open'],
+  &[data-dragging],
+  &[data-swiping] {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+    pointer-events: auto;
+  }
+
+  &[data-swipe-direction='down'][data-state='open'] {
+    animation: bpk-drawer-v2-content-in-down $drawer-duration $drawer-easing;
+  }
+
+  &[data-swipe-direction='down'][data-state='closed'] {
+    animation: bpk-drawer-v2-content-out-down $drawer-duration $drawer-easing
+      forwards;
+  }
+
+  &[data-swipe-direction='up'][data-state='open'] {
+    animation: bpk-drawer-v2-content-in-up $drawer-duration $drawer-easing;
+  }
+
+  &[data-swipe-direction='up'][data-state='closed'] {
+    animation: bpk-drawer-v2-content-out-up $drawer-duration $drawer-easing
+      forwards;
+  }
+
+  &[data-swipe-direction='left'][data-state='open'] {
+    animation: bpk-drawer-v2-content-in-left $drawer-duration $drawer-easing;
+  }
+
+  &[data-swipe-direction='left'][data-state='closed'] {
+    animation: bpk-drawer-v2-content-out-left $drawer-duration $drawer-easing
+      forwards;
+  }
+
+  &[data-swipe-direction='right'][data-state='open'] {
+    animation: bpk-drawer-v2-content-in-right $drawer-duration $drawer-easing;
+  }
+
+  &[data-swipe-direction='right'][data-state='closed'] {
+    animation: bpk-drawer-v2-content-out-right $drawer-duration $drawer-easing
+      forwards;
+  }
+
+  &[data-dragging],
+  &[data-swiping] {
+    transition: none;
+    animation: none;
+  }
+}
+
+html[dir='rtl'] .bpk-drawer-v2__content {
+  &[data-swipe-direction='left'] {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  &[data-swipe-direction='right'] {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+html[dir='rtl'] .bpk-drawer-v2__content[data-state='open'],
+html[dir='rtl'] .bpk-drawer-v2__content[data-dragging],
+html[dir='rtl'] .bpk-drawer-v2__content[data-swiping] {
+  transform: translate3d(
+    var(--drawer-translate-x, 0),
+    var(--drawer-translate-y, 0),
+    0
+  );
+}
+
+html[dir='rtl']
+  .bpk-drawer-v2__content[data-swipe-direction='left'][data-state='open'] {
+  animation-name: bpk-drawer-v2-content-in-right;
+}
+
+html[dir='rtl']
+  .bpk-drawer-v2__content[data-swipe-direction='left'][data-state='closed'] {
+  animation-name: bpk-drawer-v2-content-out-right;
+}
+
+html[dir='rtl']
+  .bpk-drawer-v2__content[data-swipe-direction='right'][data-state='open'] {
+  animation-name: bpk-drawer-v2-content-in-left;
+}
+
+html[dir='rtl']
+  .bpk-drawer-v2__content[data-swipe-direction='right'][data-state='closed'] {
+  animation-name: bpk-drawer-v2-content-out-left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bpk-drawer-v2__content {
+    transition: none;
+    animation: none;
+  }
+
+  .bpk-drawer-v2__content[data-state='open'],
+  .bpk-drawer-v2__content[data-dragging],
+  .bpk-drawer-v2__content[data-swiping] {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+}
+
+@keyframes bpk-drawer-v2-content-in-down {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+}
+
+@keyframes bpk-drawer-v2-content-out-down {
+  from {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes bpk-drawer-v2-content-in-up {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+}
+
+@keyframes bpk-drawer-v2-content-out-up {
+  from {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes bpk-drawer-v2-content-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+}
+
+@keyframes bpk-drawer-v2-content-out-left {
+  from {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes bpk-drawer-v2-content-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+}
+
+@keyframes bpk-drawer-v2-content-out-right {
+  from {
+    transform: translate3d(
+      var(--drawer-translate-x, 0),
+      var(--drawer-translate-y, 0),
+      0
+    );
+  }
+
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
