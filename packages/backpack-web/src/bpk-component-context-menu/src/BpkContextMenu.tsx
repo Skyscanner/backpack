@@ -16,19 +16,29 @@
  * limitations under the License.
  */
 
+import BpkContextMenuBackButton from './BpkContextMenuBackButton';
 import BpkContextMenuContent from './BpkContextMenuContent';
 import BpkContextMenuItem from './BpkContextMenuItem';
 import BpkContextMenuItemGroup from './BpkContextMenuItemGroup';
+import BpkContextMenuPanel from './BpkContextMenuPanel';
+import BpkContextMenuPanelGroup from './BpkContextMenuPanelGroup';
 import BpkContextMenuRoot from './BpkContextMenuRoot';
 import BpkContextMenuSaveTrigger from './BpkContextMenuSaveTrigger';
+import BpkContextMenuScrollableList from './BpkContextMenuScrollableList';
 import BpkContextMenuSeparator from './BpkContextMenuSeparator';
+import BpkContextMenuStickyHeader from './BpkContextMenuStickyHeader';
 import BpkContextMenuSubTriggerItem from './BpkContextMenuSubTriggerItem';
 import BpkContextMenuTrigger from './BpkContextMenuTrigger';
 
 const BpkContextMenu = {
   Root: BpkContextMenuRoot,
+  BackButton: BpkContextMenuBackButton,
   Trigger: BpkContextMenuTrigger,
   SaveTrigger: BpkContextMenuSaveTrigger,
+  PanelGroup: BpkContextMenuPanelGroup,
+  Panel: BpkContextMenuPanel,
+  ScrollableList: BpkContextMenuScrollableList,
+  StickyHeader: BpkContextMenuStickyHeader,
   Content: BpkContextMenuContent,
   Item: BpkContextMenuItem,
   ItemGroup: BpkContextMenuItemGroup,

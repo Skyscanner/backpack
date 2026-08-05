@@ -33,6 +33,42 @@ const SaveTrigger = () => (
   <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
 );
 
+// Shared sub-menu body used by both mobile (Panel) and desktop (flyout Content).
+// BackButton is CSS-hidden on desktop (display:none) so it is absent from the
+// accessibility tree and tab order — no harm on desktop.
+const MoveSubMenuBody = () => (
+  <>
+    <BpkContextMenu.StickyHeader>
+      <BpkContextMenu.BackButton />
+      <BpkContextMenu.ItemGroup>
+        <BpkContextMenu.Item value="move-new-trip" startIcon={<PlusIcon />}>
+          Plan a new trip
+        </BpkContextMenu.Item>
+        <BpkContextMenu.Item value="move-quick-save" startIcon={<HeartIcon />}>
+          Quick save
+        </BpkContextMenu.Item>
+      </BpkContextMenu.ItemGroup>
+      <BpkContextMenu.Separator />
+    </BpkContextMenu.StickyHeader>
+    <BpkContextMenu.ScrollableList>
+      <BpkContextMenu.ItemGroup>
+        {Array.from({ length: 12 }, (_, i) => (
+          <BpkContextMenu.Item key={i} value={`move-trip-${i}`}>
+            {`Trip ${i + 1}`}
+          </BpkContextMenu.Item>
+        ))}
+      </BpkContextMenu.ItemGroup>
+    </BpkContextMenu.ScrollableList>
+  </>
+);
+
+// Desktop flyout wrapper — provides the Ark portal + Menu.Content context.
+const MoveDesktopFlyout = () => (
+  <BpkContextMenu.Content>
+    <MoveSubMenuBody />
+  </BpkContextMenu.Content>
+);
+
 const DefaultExample = () => (
   <BpkProvider>
     <BpkContextMenu.Root>
@@ -47,10 +83,10 @@ const DefaultExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />} onSelect={() => {}}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />} onSelect={() => {}}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -65,10 +101,10 @@ const NoTripsExample = () => (
       <SaveTrigger />
       <BpkContextMenu.Content>
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+          <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+          <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -82,29 +118,31 @@ const WithDestructiveItemExample = () => (
     <BpkContextMenu.Root>
       <SaveTrigger />
       <BpkContextMenu.Content>
-        <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item
-            value="remove"
-            variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
-          >
-            Remove
-          </BpkContextMenu.Item>
-          {/* Sub-menu: nesting BpkContextMenu.Root inside the parent Content
-              is the correct Ark UI pattern. TriggerItem is the row that
-              opens the child menu on hover / arrow-right. */}
-          <BpkContextMenu.Root>
-            <BpkContextMenu.TriggerItem endIcon={<ChevronRightIcon />}>
-              Move
-            </BpkContextMenu.TriggerItem>
-            <BpkContextMenu.Content>
-              <BpkContextMenu.ItemGroup>
-                <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-              </BpkContextMenu.ItemGroup>
-            </BpkContextMenu.Content>
-          </BpkContextMenu.Root>
-        </BpkContextMenu.ItemGroup>
+        <BpkContextMenu.PanelGroup>
+          <BpkContextMenu.Panel id="root">
+            <BpkContextMenu.ItemGroup>
+              <BpkContextMenu.Item
+                value="remove"
+                variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
+              >
+                Remove
+              </BpkContextMenu.Item>
+              <BpkContextMenu.TriggerItem
+                panelId="move"
+                endIcon={<ChevronRightIcon />}
+                desktopFlyout={<MoveDesktopFlyout />}
+              >
+                Move
+              </BpkContextMenu.TriggerItem>
+            </BpkContextMenu.ItemGroup>
+          </BpkContextMenu.Panel>
+
+          {/* Mobile panel — same body as the desktop flyout; BackButton is
+              visible here and CSS-hidden in the flyout. */}
+          <BpkContextMenu.Panel id="move">
+            <MoveSubMenuBody />
+          </BpkContextMenu.Panel>
+        </BpkContextMenu.PanelGroup>
       </BpkContextMenu.Content>
     </BpkContextMenu.Root>
   </BpkProvider>
@@ -124,10 +162,10 @@ const WithDisabledItemExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+          <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+          <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -141,22 +179,27 @@ const LongListExample = () => (
     <BpkContextMenu.Root>
       <SaveTrigger />
       <BpkContextMenu.Content>
-        <BpkContextMenu.ItemGroup>
-          {Array.from({ length: 12 }, (_, i) => (
-            <BpkContextMenu.Item key={i} value={`trip-${i}`}>
-              {`Trip ${i + 1}`}
+        <BpkContextMenu.StickyHeader>
+          <BpkContextMenu.BackButton />
+          <BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />}>
+              Plan a new trip
             </BpkContextMenu.Item>
-          ))}
-        </BpkContextMenu.ItemGroup>
-        <BpkContextMenu.Separator />
-        <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
-            Plan a new trip
-          </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
-            Quick save
-          </BpkContextMenu.Item>
-        </BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />}>
+              Quick save
+            </BpkContextMenu.Item>
+          </BpkContextMenu.ItemGroup>
+          <BpkContextMenu.Separator />
+        </BpkContextMenu.StickyHeader>
+        <BpkContextMenu.ScrollableList>
+          <BpkContextMenu.ItemGroup>
+            {Array.from({ length: 12 }, (_, i) => (
+              <BpkContextMenu.Item key={i} value={`trip-${i}`}>
+                {`Trip ${i + 1}`}
+              </BpkContextMenu.Item>
+            ))}
+          </BpkContextMenu.ItemGroup>
+        </BpkContextMenu.ScrollableList>
       </BpkContextMenu.Content>
     </BpkContextMenu.Root>
   </BpkProvider>
@@ -180,10 +223,10 @@ const LongTripNameExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />} onSelect={() => {}}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />} onSelect={() => {}}>
+          <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />} onSelect={() => {}}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -207,10 +250,10 @@ const OpenByDefaultExample = () => (
         </BpkContextMenu.ItemGroup>
         <BpkContextMenu.Separator />
         <BpkContextMenu.ItemGroup>
-          <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+          <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />}>
             Plan a new trip
           </BpkContextMenu.Item>
-          <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+          <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />}>
             Quick save
           </BpkContextMenu.Item>
         </BpkContextMenu.ItemGroup>
@@ -246,6 +289,32 @@ export const LongList = {
   render: () => <LongListExample />,
 };
 
+export const WithEndIcon = {
+  render: () => (
+    <BpkProvider>
+      <BpkContextMenu.Root>
+        <SaveTrigger />
+        <BpkContextMenu.Content>
+          <BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="tokyo">Tokyo 2026</BpkContextMenu.Item>
+            <BpkContextMenu.Item value="christmas">Christmas shopping</BpkContextMenu.Item>
+            <BpkContextMenu.Item value="relax">Relax</BpkContextMenu.Item>
+          </BpkContextMenu.ItemGroup>
+          <BpkContextMenu.Separator />
+          <BpkContextMenu.ItemGroup>
+            <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+              Plan a new trip
+            </BpkContextMenu.Item>
+            <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+              Quick save
+            </BpkContextMenu.Item>
+          </BpkContextMenu.ItemGroup>
+        </BpkContextMenu.Content>
+      </BpkContextMenu.Root>
+    </BpkProvider>
+  ),
+};
+
 export const LongTripName = {
   render: () => <LongTripNameExample />,
 };
@@ -261,10 +330,10 @@ export const VisualTestNoTrips = {
         <SaveTrigger />
         <BpkContextMenu.Content>
           <BpkContextMenu.ItemGroup>
-            <BpkContextMenu.Item value="new-trip" endIcon={<PlusIcon />}>
+            <BpkContextMenu.Item value="new-trip" startIcon={<PlusIcon />}>
               Plan a new trip
             </BpkContextMenu.Item>
-            <BpkContextMenu.Item value="quick-save" endIcon={<HeartIcon />}>
+            <BpkContextMenu.Item value="quick-save" startIcon={<HeartIcon />}>
               Quick save
             </BpkContextMenu.Item>
           </BpkContextMenu.ItemGroup>
@@ -280,26 +349,28 @@ export const VisualTestDestructive = {
       <BpkContextMenu.Root defaultOpen>
         <SaveTrigger />
         <BpkContextMenu.Content>
-          <BpkContextMenu.ItemGroup>
-            <BpkContextMenu.Item
-              value="remove"
-              variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
-            >
-              Remove
-            </BpkContextMenu.Item>
-            <BpkContextMenu.Root>
-              <BpkContextMenu.TriggerItem endIcon={<ChevronRightIcon />}>
-                Move
-              </BpkContextMenu.TriggerItem>
-              <BpkContextMenu.Content>
-                <BpkContextMenu.ItemGroup>
-                  <BpkContextMenu.Item value="move-tokyo">Tokyo 2026</BpkContextMenu.Item>
-                  <BpkContextMenu.Item value="move-christmas">Christmas shopping</BpkContextMenu.Item>
-                  <BpkContextMenu.Item value="move-relax">Relax</BpkContextMenu.Item>
-                </BpkContextMenu.ItemGroup>
-              </BpkContextMenu.Content>
-            </BpkContextMenu.Root>
-          </BpkContextMenu.ItemGroup>
+          <BpkContextMenu.PanelGroup>
+            <BpkContextMenu.Panel id="root">
+              <BpkContextMenu.ItemGroup>
+                <BpkContextMenu.Item
+                  value="remove"
+                  variant={CONTEXT_MENU_ITEM_VARIANTS.destructive}
+                >
+                  Remove
+                </BpkContextMenu.Item>
+                <BpkContextMenu.TriggerItem
+                  panelId="move"
+                  endIcon={<ChevronRightIcon />}
+                  desktopFlyout={<MoveDesktopFlyout />}
+                >
+                  Move
+                </BpkContextMenu.TriggerItem>
+              </BpkContextMenu.ItemGroup>
+            </BpkContextMenu.Panel>
+            <BpkContextMenu.Panel id="move">
+              <MoveSubMenuBody />
+            </BpkContextMenu.Panel>
+          </BpkContextMenu.PanelGroup>
         </BpkContextMenu.Content>
       </BpkContextMenu.Root>
     </BpkProvider>

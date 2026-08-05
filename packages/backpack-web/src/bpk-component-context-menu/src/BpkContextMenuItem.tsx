@@ -39,9 +39,13 @@ export type BpkContextMenuItemProps = {
    */
   value: string;
   /**
-   * Optional trailing element rendered on the end side of the row.
-   * Typically an icon (e.g. `+` for "Plan a new trip", bookmark for
-   * "Quick save", chevron for a nested menu entry point).
+   * Optional icon rendered on the start (left) side of the row.
+   * Typically used for action items (e.g. `+` for "Plan a new trip").
+   */
+  startIcon?: ReactNode;
+  /**
+   * Optional icon rendered on the end (right) side of the row.
+   * Typically used for indicators such as a chevron on a sub-menu trigger.
    */
   endIcon?: ReactNode;
   variant?: BpkContextMenuItemVariant;
@@ -55,29 +59,35 @@ const BpkContextMenuItem = ({
   disabled = false,
   endIcon,
   onSelect,
+  startIcon,
   value,
   variant = CONTEXT_MENU_ITEM_VARIANTS.default,
 }: BpkContextMenuItemProps) => (
-    <Menu.Item
-      value={value}
-      disabled={disabled}
-      onSelect={onSelect}
-      className={getClassName(
-        'bpk-context-menu__item',
-        variant === CONTEXT_MENU_ITEM_VARIANTS.destructive &&
-          'bpk-context-menu__item--destructive',
-      )}
-      {...getDataComponentAttribute('ContextMenuItem')}
-    >
-      <span className={getClassName('bpk-context-menu__item-label')}>
-        {children}
+  <Menu.Item
+    value={value}
+    disabled={disabled}
+    onSelect={onSelect}
+    className={getClassName(
+      'bpk-context-menu__item',
+      variant === CONTEXT_MENU_ITEM_VARIANTS.destructive &&
+        'bpk-context-menu__item--destructive',
+    )}
+    {...getDataComponentAttribute('ContextMenuItem')}
+  >
+    {startIcon && (
+      <span className={getClassName('bpk-context-menu__item-icon')}>
+        {startIcon}
       </span>
-      {endIcon && (
-        <span className={getClassName('bpk-context-menu__item-end-icon')}>
-          {endIcon}
-        </span>
-      )}
-    </Menu.Item>
-  );
+    )}
+    <span className={getClassName('bpk-context-menu__item-label')}>
+      {children}
+    </span>
+    {endIcon && (
+      <span className={getClassName('bpk-context-menu__item-end-icon')}>
+        {endIcon}
+      </span>
+    )}
+  </Menu.Item>
+);
 
 export default BpkContextMenuItem;
