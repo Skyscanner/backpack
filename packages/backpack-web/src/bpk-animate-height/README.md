@@ -9,7 +9,7 @@ More information on the easing values can be found at [http://easings.net/](http
 
 ## Installation
 
-Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
+Check the main [Readme](https://github.com/Skyscanner/design-system#usage) for a complete installation guide.
 
 ## Usage
 

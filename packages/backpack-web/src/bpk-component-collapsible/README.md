@@ -4,7 +4,7 @@
 
 ## Installation
 
-Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
+Check the main [Readme](https://github.com/Skyscanner/design-system#usage) for a complete installation guide.
 
 > **RTL support:** `BpkCollapsible` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner-internal/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
 
