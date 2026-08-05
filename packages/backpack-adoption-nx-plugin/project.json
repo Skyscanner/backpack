@@ -8,7 +8,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm --filter @skyscanner/backpack-adoption-nx-plugin run build"
+        "command": "pnpm --filter @skyscanner-internal/backpack-adoption-nx-plugin run build"
       },
       "outputs": ["{projectRoot}/dist"],
       "cache": true,
@@ -17,7 +17,7 @@
     "lint": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm --filter @skyscanner/backpack-adoption-nx-plugin run lint"
+        "command": "pnpm --filter @skyscanner-internal/backpack-adoption-nx-plugin run lint"
       },
       "cache": true,
       "inputs": [
@@ -29,7 +29,7 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm --filter @skyscanner/backpack-adoption-nx-plugin run test"
+        "command": "pnpm --filter @skyscanner-internal/backpack-adoption-nx-plugin run test"
       },
       "cache": true,
       "inputs": ["default", "^production"]
@@ -37,7 +37,7 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm --filter @skyscanner/backpack-adoption-nx-plugin run typecheck"
+        "command": "pnpm --filter @skyscanner-internal/backpack-adoption-nx-plugin run typecheck"
       },
       "outputs": [],
       "cache": true,

@@ -31,7 +31,7 @@ jobs:
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
       - name: Configure Artifactory credentials
-        uses: skyscanner/configure-artifactory-credentials@7b3605d5461d8e115421d0d206602e927e0afc8a # zizmor: ignore[unpinned-uses]
+        uses: skyscanner/configure-artifactory-credentials@7b3605d5461d8e115421d0d206602e927e0afc8a # v2.0.0
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -78,6 +78,12 @@ jobs:
 
 
   Publish-Storybook-Preview:
+    # Fork and Dependabot PRs cannot receive the OIDC credentials needed to
+    # publish internal content. The required StorybookDeploy job handles the
+    # skipped result below so those PRs remain mergeable.
+    if: >-
+      github.repository == github.event.pull_request.head.repo.full_name &&
+      github.actor != 'dependabot[bot]'
     needs: [Create-Build-Cache]
     permissions:
       contents: read
@@ -91,12 +97,25 @@ jobs:
 
   # Keep this name to satisfy the existing required check on main.
   StorybookDeploy:
+    # Run even when the preview job is intentionally skipped for a fork or
+    # Dependabot PR, so the existing required check always reports a result.
+    if: ${{ always() }}
     runs-on: ubuntu-latest-2cores
     needs: [Publish-Storybook-Preview]
     permissions:
       pull-requests: write
     steps:
+      - name: Fail when an eligible preview publish fails
+        if: >-
+          needs.Publish-Storybook-Preview.result != 'success' &&
+          needs.Publish-Storybook-Preview.result != 'skipped'
+        run: exit 1
+
       - name: Create or update Storybook preview comment
+        if: >-
+          needs.Publish-Storybook-Preview.result == 'success' &&
+          github.repository == github.event.pull_request.head.repo.full_name &&
+          github.actor != 'dependabot[bot]'
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ github.token }}

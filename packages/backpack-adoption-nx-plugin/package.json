@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Skyscanner/backpack.git",
+    "url": "git+https://github.com/Skyscanner/design-system.git",
     "directory": "packages/backpack-adoption-nx-plugin"
   },
   "main": "dist/index.js",

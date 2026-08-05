@@ -1,6 +1,6 @@
 # Backpack Adoption Guard NX Plugin
 
-This public npm package provides per-project Backpack adoption guard thresholds. Each
+This internal npm package provides per-project Backpack adoption guard thresholds. Each
 project runs the `analyze` executor and writes its own result file; a workspace
 target runs the `report` executor after those tasks and produces the overall
 pass/fail verdict.
@@ -12,7 +12,7 @@ threshold in each project's `project.json`.
 Install it in the consuming workspace:
 
 ```bash
-pnpm add -D @skyscanner/backpack-adoption-nx-plugin
+pnpm add -D @skyscanner-internal/backpack-adoption-nx-plugin
 ```
 
 The plugin bundle includes Backpack's private analyzer implementation. Consumers
@@ -27,7 +27,7 @@ configured locally, so each project can choose its own adoption starting point.
 {
   "targets": {
     "adoption-guard": {
-      "executor": "@skyscanner/backpack-adoption-nx-plugin:analyze",
+      "executor": "@skyscanner-internal/backpack-adoption-nx-plugin:analyze",
       "options": {
         "threshold": 75
       }
@@ -60,7 +60,7 @@ project's adoption guard fails.
 {
   "targets": {
     "adoption-guard-report": {
-      "executor": "@skyscanner/backpack-adoption-nx-plugin:report",
+      "executor": "@skyscanner-internal/backpack-adoption-nx-plugin:report",
       "dependsOn": [
         { "target": "adoption-guard", "projects": "all" }
       ],
@@ -87,18 +87,15 @@ result filename.
 
 ## Publishing
 
-`@skyscanner/backpack-adoption-nx-plugin` is released to the public npm
-registry by the **Backpack Adoption NX Plugin Release** workflow. The published
+`@skyscanner-internal/backpack-adoption-nx-plugin` is released to the internal
+Artifactory npm registry by the **Backpack Adoption NX Plugin Release** workflow. The published
 bundle contains the private `backpack-adoption-analyzer` implementation, so
 there is no analyzer package for consumers to install or version separately.
 
 Pull requests that change the plugin or analyzer run the workflow's validation
 job automatically. The publish job only runs from a manual, non-dry-run
-dispatch on `main`. Before automated publishing, configure npm trusted
-publishing for `@skyscanner/backpack-adoption-nx-plugin` with GitHub Actions:
-organization `Skyscanner`, repository `backpack`, and workflow filename
-`backpack-adoption-nx-plugin-release.yml`. The workflow uses its OIDC identity
-and does not require an npm publish token.
+dispatch on `main`. The workflow uses GitHub OIDC to obtain Artifactory
+credentials and does not require an npm publish token.
 
 ## Options
 
