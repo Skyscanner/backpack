@@ -89,7 +89,8 @@ jobs:
       public: false
       gzip: false
 
-  Comment-Storybook-Preview:
+  # Keep this name to satisfy the existing required check on main.
+  StorybookDeploy:
     runs-on: ubuntu-latest-2cores
     needs: [Publish-Storybook-Preview]
     permissions:
