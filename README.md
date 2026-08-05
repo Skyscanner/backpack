@@ -1,11 +1,13 @@
 # Backpack Design System
 
-> Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
-
 > [!WARNING]
 > This repository has been archived and is no longer maintained.
 >
 > The final public release is [`@skyscanner/backpack-web@43.16.0`](https://www.npmjs.com/package/@skyscanner/backpack-web/v/43.16.0). No further public releases will be published.
+>
+> Internal Skyscanner users should continue contributing in the `design-system` repository.
+
+> Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
 
 [![npm version](https://badge.fury.io/js/@skyscanner%2Fbackpack-web.svg)](https://badge.fury.io/js/@skyscanner%2Fbackpack-web)
 [![Build Status](https://github.com/Skyscanner/backpack/workflows/Backpack%20CI/badge.svg)](https://github.com/Skyscanner/backpack/actions)
