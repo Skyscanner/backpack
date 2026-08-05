@@ -3,6 +3,7 @@ version: '1'
 type: library
 component:
   name: design-system
+  awsProjectTag: design-system
   owner:
     - clover
   description: Skyscanner's internal Backpack design system library.
