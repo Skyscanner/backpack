@@ -429,8 +429,8 @@ importers:
         specifier: ^4.0.8
         version: 4.0.8
       normalize.css:
-        specifier: 4.2.0
-        version: 4.2.0
+        specifier: 8.0.1
+        version: 8.0.1
       object-assign:
         specifier: ^4.1.1
         version: 4.1.1
@@ -8891,8 +8891,8 @@ packages:
     resolution: {integrity: sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==}
     engines: {node: '>=8'}
 
-  normalize.css@4.2.0:
-    resolution: {integrity: sha512-6vowjfebV3sEudR9vL2p3NQY3CliFBcM0LWr/S97RNosTmu63HQhcggCOtGjQQmtJuCwIABPEYqtItp2PlwTsg==}
+  normalize.css@8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
 
   now-and-later@2.0.1:
     resolution: {integrity: sha512-KGvQ0cB70AQfg107Xvs/Fbu+dGmZoTRJp2TaPwcwQm3/7PteUyN2BCgk8KBMPGBUXZdVwyWS8fDCGFygBm19UQ==}
@@ -22465,7 +22465,7 @@ snapshots:
 
   normalize-url@4.5.1: {}
 
-  normalize.css@4.2.0: {}
+  normalize.css@8.0.1: {}
 
   now-and-later@2.0.1:
     dependencies:
