@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkBreakpoint, { BREAKPOINTS } from '@skyscanner/backpack-web/bpk-component-breakpoint';
+import BpkBreakpoint, { BREAKPOINTS } from '@skyscanner-internal/backpack-web/bpk-component-breakpoint';
 
 export default () => (
   <BpkBreakpoint query={BREAKPOINTS.MOBILE}>
@@ -51,11 +51,11 @@ the jest testing environment.
 
 A mock were you only wanted your mobile BpkBreakpoint to render:
 ```js
-import { useMediaQuery, BREAKPOINTS } from '@skyscanner/backpack-web/bpk-component-breakpoint';
+import { useMediaQuery, BREAKPOINTS } from '@skyscanner-internal/backpack-web/bpk-component-breakpoint';
 
-jest.mock('@skyscanner/backpack-web/bpk-component-breakpoint', () => {
+jest.mock('@skyscanner-internal/backpack-web/bpk-component-breakpoint', () => {
   __esModule: true,
-  ...jest.requireActual('@skyscanner/backpack-web/bpk-component-breakpoint'),
+  ...jest.requireActual('@skyscanner-internal/backpack-web/bpk-component-breakpoint'),
   useMediaQuery: jest.fn(),
 });
 describe('tests', () => {
@@ -69,9 +69,9 @@ describe('tests', () => {
 
 A simpler mock were you want all BpkBreakpoints to render:
 ```js
-jest.mock('@skyscanner/backpack-web/bpk-component-breakpoint', () => {
+jest.mock('@skyscanner-internal/backpack-web/bpk-component-breakpoint', () => {
   __esModule: true,
-  ...jest.requireActual('@skyscanner/backpack-web/bpk-component-breakpoint'),
+  ...jest.requireActual('@skyscanner-internal/backpack-web/bpk-component-breakpoint'),
   useMediaQuery: () => true,
 });
 ```

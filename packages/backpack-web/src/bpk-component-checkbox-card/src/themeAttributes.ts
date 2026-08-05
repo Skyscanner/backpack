@@ -39,12 +39,12 @@ import {
  * the attributes you want to change; the rest fall back to design tokens.
  *
  * @example
- * import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
+ * import BpkThemeProvider from '@skyscanner-internal/backpack-web/bpk-theming';
  * import {
  *   BpkCheckboxCard,
  *   CHECKBOX_CARD_THEME_ATTRIBUTES,
  *   createCheckboxCardTheme,
- * } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+ * } from '@skyscanner-internal/backpack-web/bpk-component-checkbox-card';
  *
  * const theme = createCheckboxCardTheme({
  *   checkboxCardCheckedBackgroundColor: '#FFFFFF',

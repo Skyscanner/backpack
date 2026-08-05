@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkInsetBanner, { VARIANT } from '@skyscanner/backpack-web/bpk-component-inset-banner';
+import BpkInsetBanner, { VARIANT } from '@skyscanner-internal/backpack-web/bpk-component-inset-banner';
 
 export default () => (
   <BpkInsetBanner

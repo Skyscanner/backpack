@@ -5,8 +5,8 @@ A modal-based table component for comparing up to 3 items side by side. The cons
 ## Usage
 
 ```tsx
-import { BpkComparisonTable } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import { BpkComparisonTable } from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
@@ -21,9 +21,9 @@ import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner/ba
 ## Example
 
 ```tsx
-import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
-import { BpkComparisonTable } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import BpkAiBlurb from '@skyscanner-internal/backpack-web/bpk-component-ai-blurb';
+import { BpkComparisonTable } from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
+import type { BpkCompareColumn, BpkComparisonTableStrings } from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
 
 const [isOpen, setIsOpen] = useState(false);
 const [columns, setColumns] = useState<BpkCompareColumn[]>([

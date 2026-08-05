@@ -92,7 +92,7 @@ module.exports = ({ config }) => {
     react: path.join(rootDir, 'node_modules/react'),
     'react-dom': path.join(rootDir, 'node_modules/react-dom'),
     'bpk-storybook-utils': path.join(rootDir, 'libs/backpack-storybook-utils'),
-    '@skyscanner/backpack-web': path.join(rootDir, 'packages/backpack-web/src'),
+    '@skyscanner-internal/backpack-web': path.join(rootDir, 'packages/backpack-web/src'),
   };
   config.module.rules.push({
     test: /\.[jt]sx?$/,

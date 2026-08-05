@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15024%3A6380
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-ai-blurb/src/BpkAiBlurb.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-ai-blurb/src/BpkAiBlurb.tsx
 // component=BpkAiBlurb.Root
 
 import figma from "figma"
@@ -32,7 +32,7 @@ if (figma.selectedInstance.getPropertyValue("State") === "Default") {
   template = {
     id: "BpkAiBlurb.Root",
     imports: [
-      "import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';",
+      "import BpkAiBlurb from '@skyscanner-internal/backpack-web/bpk-component-ai-blurb';",
     ],
     example: figma.code`<BpkAiBlurb.Root>
         <BpkAiBlurb.Header${figma.helpers.react.renderProp(
@@ -53,7 +53,7 @@ if (figma.selectedInstance.getPropertyValue("State") === "Default") {
   template = {
     id: "BpkAiBlurb.Root",
     imports: [
-      "import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';",
+      "import BpkAiBlurb from '@skyscanner-internal/backpack-web/bpk-component-ai-blurb';",
     ],
     example: figma.code`<BpkAiBlurb.Root>
         <BpkAiBlurb.Header title="Summarized by AI"/>
@@ -68,7 +68,7 @@ if (figma.selectedInstance.getPropertyValue("State") === "Default") {
   template = {
     id: "BpkAiBlurb.Root",
     imports: [
-      "import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';",
+      "import BpkAiBlurb from '@skyscanner-internal/backpack-web/bpk-component-ai-blurb';",
     ],
     example: figma.code`<BpkAiBlurb.Root>
         <BpkAiBlurb.Header title="Summarized by AI"/>
@@ -79,7 +79,7 @@ if (figma.selectedInstance.getPropertyValue("State") === "Default") {
   template = {
     id: "BpkAiBlurb.Root",
     imports: [
-      "import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';",
+      "import BpkAiBlurb from '@skyscanner-internal/backpack-web/bpk-component-ai-blurb';",
     ],
     example: figma.code`<BpkAiBlurb.Root>
         <BpkAiBlurb.Header title="Summarized by AI"/>

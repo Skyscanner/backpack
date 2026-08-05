@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A4953
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-fieldset/src/BpkFieldset.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-fieldset/src/BpkFieldset.tsx
 // component=BpkFieldset
 
 import figma from "figma"
@@ -40,7 +40,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Input") {
     id: "BpkFieldset",
     imports: [
       'import BpkInput, { INPUT_TYPES } from "../../bpk-component-input";',
-      "import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';",
+      "import BpkFieldset from '@skyscanner-internal/backpack-web/bpk-component-fieldset';",
     ],
     example: figma.code`<BpkFieldset${figma.helpers.react.renderProp(
       "label",
@@ -65,7 +65,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Input") {
     id: "BpkFieldset",
     imports: [
       'import BpkSelect from "../../bpk-component-select";',
-      "import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';",
+      "import BpkFieldset from '@skyscanner-internal/backpack-web/bpk-component-fieldset';",
     ],
     example: figma.code`<BpkFieldset${figma.helpers.react.renderProp(
       "label",
@@ -94,7 +94,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Input") {
     id: "BpkFieldset",
     imports: [
       'import BpkTextarea from "../../bpk-component-textarea";',
-      "import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';",
+      "import BpkFieldset from '@skyscanner-internal/backpack-web/bpk-component-fieldset';",
     ],
     example: figma.code`<BpkFieldset${figma.helpers.react.renderProp(
       "label",
@@ -119,7 +119,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Input") {
     id: "BpkFieldset",
     imports: [
       'import BpkCheckbox from "../../bpk-component-checkbox";',
-      "import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';",
+      "import BpkFieldset from '@skyscanner-internal/backpack-web/bpk-component-fieldset';",
     ],
     example: figma.code`<BpkFieldset${figma.helpers.react.renderProp(
       "label",
@@ -147,7 +147,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Input") {
     id: "BpkFieldset",
     imports: [
       'import BpkCheckbox from "../../bpk-component-checkbox";',
-      "import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';",
+      "import BpkFieldset from '@skyscanner-internal/backpack-web/bpk-component-fieldset';",
     ],
     example: figma.code`<BpkFieldset${figma.helpers.react.renderProp(
       "label",

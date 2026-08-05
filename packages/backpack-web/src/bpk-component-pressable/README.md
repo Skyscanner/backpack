@@ -4,12 +4,12 @@
 
 ## Installation
 
-Check the main [Backpack readme](https://github.com/Skyscanner/backpack/blob/main/README.md) for a complete installation guide.
+Check the main [Backpack readme](https://github.com/Skyscanner/design-system/blob/main/README.md) for a complete installation guide.
 
 ## Usage
 
 ```tsx
-import BpkPressable from '@skyscanner/backpack-web/bpk-component-pressable';
+import BpkPressable from '@skyscanner-internal/backpack-web/bpk-component-pressable';
 
 // Button-like: fires an action, no navigation
 <BpkPressable onClick={() => console.log('pressed')}>

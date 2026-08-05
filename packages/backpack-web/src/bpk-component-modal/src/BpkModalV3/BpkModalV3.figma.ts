@@ -54,6 +54,6 @@ export default {
   </BpkModalV3.Portal>
 </BpkModalV3.Root>
   `,
-  imports: [`import { BpkModalV3 } from '@skyscanner/backpack-web/bpk-component-modal'`],
+  imports: [`import { BpkModalV3 } from '@skyscanner-internal/backpack-web/bpk-component-modal'`],
   id: 'bpk-modal-v3',
 }

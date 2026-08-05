@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkBlockquote from '@skyscanner/backpack-web/bpk-component-blockquote';
+import BpkBlockquote from '@skyscanner-internal/backpack-web/bpk-component-blockquote';
 
 export default () => (
   <BpkBlockquote extraSpace>

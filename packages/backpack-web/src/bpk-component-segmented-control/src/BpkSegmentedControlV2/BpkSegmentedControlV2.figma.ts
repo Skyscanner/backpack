@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17386-8546
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-segmented-control/src/BpkSegmentedControlV2/BpkSegmentedControlV2.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-segmented-control/src/BpkSegmentedControlV2/BpkSegmentedControlV2.tsx
 // component=BpkSegmentedControlV2.Root
 
 import figma from "figma"
@@ -40,7 +40,7 @@ const type = figma.selectedInstance.getEnum("Style", {
 export default {
   id: "BpkSegmentedControlV2.Root",
   imports: [
-    "import BpkSegmentedControlV2 from '@skyscanner/backpack-web/bpk-component-segmented-control';",
+    "import BpkSegmentedControlV2 from '@skyscanner-internal/backpack-web/bpk-component-segmented-control';",
   ],
   example: figma.code`<BpkSegmentedControlV2.Root${figma.helpers.react.renderProp(
     "type",

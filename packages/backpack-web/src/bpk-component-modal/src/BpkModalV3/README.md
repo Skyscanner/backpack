@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import { BpkModalV3 as BpkModal, MODAL_V3_TYPES } from '@skyscanner/backpack-web/bpk-component-modal';
+import { BpkModalV3 as BpkModal, MODAL_V3_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-modal';
 ```
 
 ### Trigger
@@ -246,7 +246,7 @@ When no visible title is needed, wrap the title text in `BpkVisuallyHidden` to p
 The `MODAL_V3_TYPES` constant is exported as a convenience reference for all valid type values:
 
 ```tsx
-import { MODAL_V3_TYPES } from '@skyscanner/backpack-web/bpk-component-modal';
+import { MODAL_V3_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-modal';
 
 <BpkModal.Root type={MODAL_V3_TYPES.chatbot}>
   ...

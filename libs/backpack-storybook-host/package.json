@@ -15,7 +15,7 @@
     "@types/node": "25.9.1"
   },
   "dependencies": {
-    "@skyscanner/backpack-web": "workspace:*",
+    "@skyscanner-internal/backpack-web": "workspace:*",
     "bpk-storybook-utils": "workspace:*"
   }
 }

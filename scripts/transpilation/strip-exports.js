@@ -20,7 +20,7 @@ const fs = require('fs');
 const path = require('path');
 
 // The source-time package.json declares an `exports` map with `./src/...`
-// paths so sibling workspace packages can resolve `@skyscanner/backpack-web/foo`
+// paths so sibling workspace packages can resolve `@skyscanner-internal/backpack-web/foo`
 // against the source tree before the package is built. The published artifact
 // is built from packages/backpack-web/dist and has historically relied on
 // Node's legacy filesystem resolution (no `exports` field), which is what

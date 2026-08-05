@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```tsx
 import BpkChatBubble, {
   CHAT_BUBBLE_TYPE,
-} from '@skyscanner/backpack-web/bpk-component-chat-bubble';
+} from '@skyscanner-internal/backpack-web/bpk-component-chat-bubble';
 
 export default () => (
   <BpkChatBubble type={CHAT_BUBBLE_TYPE.bot}>

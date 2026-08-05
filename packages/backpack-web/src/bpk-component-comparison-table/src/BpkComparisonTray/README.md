@@ -5,7 +5,7 @@ A tray component for comparing up to 3 items. The consumer owns and manage the i
 ## Usage
 
 ```tsx
-import { BpkComparisonTray } from '@skyscanner/backpack-web/bpk-component-comparison-table';
+import { BpkComparisonTray } from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Consumer responsibilities
@@ -51,8 +51,8 @@ useEffect(() => {
 ## Example
 
 ```tsx
-import { BpkComparisonTray } from '@skyscanner/backpack-web/bpk-component-comparison-table';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkComparisonTray } from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 const MAX_ITEMS = 3;
 

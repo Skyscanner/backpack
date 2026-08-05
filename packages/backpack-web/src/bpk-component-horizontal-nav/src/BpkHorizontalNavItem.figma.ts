@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A3845
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-horizontal-nav/src/BpkHorizontalNavItem.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-horizontal-nav/src/BpkHorizontalNavItem.tsx
 // component=BpkHorizontalNavItem
 
 import figma from "figma"
@@ -34,7 +34,7 @@ const children = figma.selectedInstance.findText("Label").__render__()
 export default {
   id: "BpkHorizontalNavItem",
   imports: [
-    "import BpkHorizontalNavItem from '@skyscanner/backpack-web/bpk-component-horizontal-nav';",
+    "import BpkHorizontalNavItem from '@skyscanner-internal/backpack-web/bpk-component-horizontal-nav';",
   ],
   example: figma.code`<BpkHorizontalNavItem${figma.helpers.react.renderProp(
     "selected",

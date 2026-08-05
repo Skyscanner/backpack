@@ -16,7 +16,7 @@ This makes it possible to use the `action` both within and without environments 
 #### Usage
 
 ```js
-import { action } from '@skyscanner/backpack-web/bpk-storybook-utils';
+import { action } from '@skyscanner-internal/backpack-web/bpk-storybook-utils';
 
 ...
 
@@ -30,7 +30,7 @@ Adds a dark background, useful for displaying components that don't appear on a 
 #### Usage
 
 ```js
-import { BpkDarkExampleWrapper } from '@skyscanner/backpack-web/bpk-storybook-utils';
+import { BpkDarkExampleWrapper } from '@skyscanner-internal/backpack-web/bpk-storybook-utils';
 
 ...
 

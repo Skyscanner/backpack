@@ -89,7 +89,7 @@ describe("run", () => {
       "package.json",
       JSON.stringify({
         dependencies: {
-          "@skyscanner/backpack-web": "^42.21.1",
+          "@skyscanner-internal/backpack-web": "^42.21.1",
         },
       }),
     );
@@ -97,8 +97,8 @@ describe("run", () => {
       repoPath,
       "src/App.tsx",
       `
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export const App = () => (
   <>
@@ -159,7 +159,7 @@ export const App = () => (
       repoPath,
       "src/App.tsx",
       `
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 export const App = () => <BpkButton>Book</BpkButton>;
 `,
@@ -196,7 +196,7 @@ export const App = () => <BpkButton>Book</BpkButton>;
       repoPath,
       "apps/flights/src/App.tsx",
       `
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 export const App = () => <BpkButton>Book</BpkButton>;
 `,

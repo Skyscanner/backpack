@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A52693
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-table/src/BpkTable.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-table/src/BpkTable.tsx
 // component=BpkTable
 
 import figma from "figma"
@@ -25,12 +25,12 @@ import figma from "figma"
 export default {
   id: "BpkTable",
   imports: [
-    "import BpkTable from '@skyscanner/backpack-web/bpk-component-table';",
-    "import BpkTableBody from '@skyscanner/backpack-web/bpk-component-table';",
-    "import BpkTableCell from '@skyscanner/backpack-web/bpk-component-table';",
-    "import BpkTableHead from '@skyscanner/backpack-web/bpk-component-table';",
-    "import BpkTableHeadCell from '@skyscanner/backpack-web/bpk-component-table';",
-    "import BpkTableRow from '@skyscanner/backpack-web/bpk-component-table';",
+    "import BpkTable from '@skyscanner-internal/backpack-web/bpk-component-table';",
+    "import BpkTableBody from '@skyscanner-internal/backpack-web/bpk-component-table';",
+    "import BpkTableCell from '@skyscanner-internal/backpack-web/bpk-component-table';",
+    "import BpkTableHead from '@skyscanner-internal/backpack-web/bpk-component-table';",
+    "import BpkTableHeadCell from '@skyscanner-internal/backpack-web/bpk-component-table';",
+    "import BpkTableRow from '@skyscanner-internal/backpack-web/bpk-component-table';",
   ],
   example: figma.code`<BpkTable>
         <BpkTableHead>

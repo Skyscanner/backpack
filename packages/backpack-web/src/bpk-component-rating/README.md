@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkRating, { RATING_SIZES, RATING_SCALES } from '@skyscanner/backpack-web/bpk-component-rating';
+import BpkRating, { RATING_SIZES, RATING_SCALES } from '@skyscanner-internal/backpack-web/bpk-component-rating';
 
 export default () => (
   <BpkRating

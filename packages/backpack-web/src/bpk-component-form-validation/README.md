@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkFormValidation from '@skyscanner/backpack-web/bpk-component-form-validation';
+import BpkFormValidation from '@skyscanner-internal/backpack-web/bpk-component-form-validation';
 
 export default () => (
   <BpkFormValidation id="my-form-validation" expanded>

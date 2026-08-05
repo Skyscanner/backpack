@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
+import BpkBadge, { BADGE_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-badge';
 
 export default () => (
   <BpkBadge type={BADGE_TYPES.warning}>
@@ -25,8 +25,8 @@ BpkBadge supports theming via `BpkThemeProvider`. Background colours and horizon
 Use `allBadgeThemeAttributes` to declare which properties you are overriding. All attributes in the array must be supplied or `BpkThemeProvider` will silently ignore the theme:
 
 ```tsx
-import BpkBadge, { BADGE_TYPES, allBadgeThemeAttributes } from '@skyscanner/backpack-web/bpk-component-badge';
-import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
+import BpkBadge, { BADGE_TYPES, allBadgeThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-badge';
+import BpkThemeProvider from '@skyscanner-internal/backpack-web/bpk-theming';
 
 export default () => (
   <BpkThemeProvider
@@ -65,7 +65,7 @@ Use `as='button'` for actions or `as='a'` for navigation. Interactive badges alw
 ### Usage
 
 ```tsx
-import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';
+import BpkBadge, { BADGE_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-badge';
 
 // Rendering as a button
 export default () => (

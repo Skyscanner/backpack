@@ -6,7 +6,7 @@ This guide provides instructions and context for AI agents working with the Back
 
 **Backpack** is Skyscanner's design system - a collection of design resources, reusable components, and guidelines for creating consistent user interfaces across Skyscanner's products.
 
-- **Repository**: Skyscanner/backpack
+- **Repository**: Skyscanner/design-system
 - **Language**: TypeScript/JavaScript (React components)
 - **Package Manager**: pnpm
 - **Build System**: Webpack, Gulp + custom scripts
@@ -314,7 +314,7 @@ Backpack provides a comprehensive set of typography mixins for consistent text s
 - Follow Figma component naming conventions
 
 ### Package Publishing
-- All packages are published to npm under `@skyscanner/` scope
+- The web package is published to internal Artifactory under the `@skyscanner-internal/` scope
 - Follow semantic versioning
 - Update changelogs for releases
 - Coordinate with design team for major changes
@@ -351,10 +351,10 @@ packages/backpack-web/src/bpk-component-example/
 ### Import Patterns
 ```typescript
 // Component imports
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 // Token imports
-@use '@skyscanner/backpack-web/bpk-mixins/tokens';
+@use '@skyscanner-internal/backpack-web/bpk-mixins/tokens';
 ```
 
 This guide should help AI agents understand the structure, patterns, and conventions used in the Backpack Design System codebase.

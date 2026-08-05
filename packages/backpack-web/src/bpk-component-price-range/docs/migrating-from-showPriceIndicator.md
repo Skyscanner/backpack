@@ -93,7 +93,7 @@ If you're using `showPriceIndicator={false}` to hide boundary prices and show a 
 
 **After:**
 ```tsx
-import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
+import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-price-range';
 
 <BpkPriceRange
   marker={{
@@ -152,7 +152,7 @@ If you're using `showPriceIndicator` conditionally (e.g., based on some state), 
 
 **After:**
 ```tsx
-import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
+import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-price-range';
 
 <BpkPriceRange
   marker={{
@@ -181,7 +181,7 @@ Follow these steps to migrate your codebase:
     `type: MARKER_DISPLAY_TYPES.BUBBLE` (replacing true) or `MARKER_DISPLAY_TYPES.DOT` (replacing false).
 - [ ] **Import the constant**: Ensure `MARKER_DISPLAY_TYPES` is imported where needed:
   ```tsx
-  import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-price-range';
+  import BpkPriceRange, { MARKER_DISPLAY_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-price-range';
   ```
 - [ ] **Test the component**: Verify that boundary prices show/hide as expected
 - [ ] **Check TypeScript warnings**: The deprecated prop should show as strikethrough in your IDE

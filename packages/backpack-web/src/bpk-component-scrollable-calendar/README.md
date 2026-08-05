@@ -10,8 +10,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import { DateUtils } from '@skyscanner/backpack-web/bpk-component-calendar';
-import BpkScrollableCalendar, { CALENDAR_SELECTION_TYPE } from '@skyscanner/backpack-web/bpk-component-scrollable-calendar';
+import { DateUtils } from '@skyscanner-internal/backpack-web/bpk-component-calendar';
+import BpkScrollableCalendar, { CALENDAR_SELECTION_TYPE } from '@skyscanner-internal/backpack-web/bpk-component-scrollable-calendar';
 import format from 'date-fns/format';
 
 const formatDateFull = date => format(date, 'EEEE, do MMMM yyyy');

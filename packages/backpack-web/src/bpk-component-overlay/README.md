@@ -9,8 +9,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
-import BpkOverlay, { OVERLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-overlay';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
+import BpkOverlay, { OVERLAY_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-overlay';
 
 export default () => (
   <div>

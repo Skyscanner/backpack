@@ -11,7 +11,7 @@ errors, not style issues. Return issues as JSON.
 
 **PR mode:**
 ```bash
-gh pr diff [NUMBER] --repo Skyscanner/backpack
+gh pr diff [NUMBER] --repo Skyscanner/design-system
 ```
 **Local mode:**
 ```bash

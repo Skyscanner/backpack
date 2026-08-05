@@ -18,7 +18,7 @@ Compared to the previous `BpkPriceMarker` component, the new version introduces 
 #### Original
 
 ```jsx
-import { BpkPriceMarker } from '@skyscanner/backpack-web/bpk-component-map';
+import { BpkPriceMarker } from '@skyscanner-internal/backpack-web/bpk-component-map';
 
 const MyComponent = () => (
   <BpkPriceMarker
@@ -36,8 +36,8 @@ const MyComponent = () => (
 #### Replacement
 
 ```jsx
-import { BpkPriceMarker } from '@skyscanner/backpack-web/bpk-component-map';
-import AirportsIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/airports';
+import { BpkPriceMarker } from '@skyscanner-internal/backpack-web/bpk-component-map';
+import AirportsIconSm from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/airports';
 
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
 

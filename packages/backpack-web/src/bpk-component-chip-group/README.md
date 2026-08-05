@@ -18,8 +18,8 @@ import BpkMultiSelectChipGroup, {
   BpkChipGroupSingleSelectState,
   CHIP_GROUP_TYPES,
   CHIP_COMPONENT,
-} from '@skyscanner/backpack-web/bpk-component-chip-group';
-import { CHIP_TYPES } from '@skyscanner/backpack-web/bpk-component-chip';
+} from '@skyscanner-internal/backpack-web/bpk-component-chip-group';
+import { CHIP_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-chip';
 import { useState } from 'react';
 
 const MainExample = () => (

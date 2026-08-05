@@ -9,11 +9,11 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
-import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
-import LightningIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/lightning';
-import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
-import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
+import { withButtonAlignment, withRtlSupport } from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import ArrowIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/long-arrow-right';
+import LightningIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/lightning';
+import BpkButton, { BUTTON_TYPES, SIZE_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-button';
+import BpkVisuallyHidden from '@skyscanner-internal/backpack-web/bpk-component-visually-hidden';
 
 const AlignedArrowIcon = withButtonAlignment(withRtlSupport(ArrowIcon));
 

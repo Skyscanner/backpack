@@ -46,7 +46,7 @@ describe("analyzeRepository", () => {
       "package.json",
       JSON.stringify({
         dependencies: {
-          "@skyscanner/backpack-web": "^42.0.0",
+          "@skyscanner-internal/backpack-web": "^42.0.0",
         },
       }),
     );
@@ -54,8 +54,8 @@ describe("analyzeRepository", () => {
       repoPath,
       "src/App.tsx",
       `
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-import { BpkText } from '@skyscanner/backpack-web';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
+import { BpkText } from '@skyscanner-internal/backpack-web';
 import styles from './App.module.scss';
 
 const LocalCard = () => (
@@ -124,7 +124,7 @@ export const App = () => (
       repoPath,
       "src/App.tsx",
       `
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export const App = () => <BpkText>Only production file</BpkText>;
 `,
@@ -146,7 +146,7 @@ export const App = () => <BpkText>Only production file</BpkText>;
       repoPath,
       "src/App.tsx",
       `
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 import classNames from 'classnames';
 
 const dynamic = 'pill';
@@ -171,7 +171,7 @@ export const App = () => (
       repoPath,
       "src/App.tsx",
       `
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 import classNames from 'classnames';
 
 export const App = () => (
@@ -213,7 +213,7 @@ export const App = () => (
       repoPath,
       "apps/flights/src/App.tsx",
       `
-import { BpkButton } from '@skyscanner/backpack-web';
+import { BpkButton } from '@skyscanner-internal/backpack-web';
 
 export const App = () => <BpkButton>Go</BpkButton>;
 `,
@@ -222,7 +222,7 @@ export const App = () => <BpkButton>Go</BpkButton>;
       repoPath,
       "libs/shared-ui/src/Card.tsx",
       `
-import { BpkCard, BpkText } from '@skyscanner/backpack-web';
+import { BpkCard, BpkText } from '@skyscanner-internal/backpack-web';
 
 export const Card = () => <BpkCard><BpkText>t</BpkText></BpkCard>;
 `,
@@ -297,7 +297,7 @@ export const RootThing = () => <div>root</div>;
       repoPath,
       "src/App.tsx",
       `
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export const App = () => <BpkText>Prod</BpkText>;
 `,
@@ -314,7 +314,7 @@ export const App = () => <BpkText>Prod</BpkText>;
       repoPath,
       "src/App.tsx",
       `
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export const App = () => <BpkText>Prod</BpkText>;
 `,

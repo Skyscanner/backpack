@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from '@skyscanner/backpack-web/bpk-component-input';
+import BpkInput, { INPUT_TYPES, CLEAR_BUTTON_MODES } from '@skyscanner-internal/backpack-web/bpk-component-input';
 
 export default () => (
   <BpkInput
@@ -31,8 +31,8 @@ export default () => (
 The `withOpenEvents` higher-order component encapsulates input event handlers for opening popovers or modals.
 
 ```js
-import BpkInput, { withOpenEvents } from '@skyscanner/backpack-web/bpk-component-input';
-import BpkPopover from '@skyscanner/backpack-web/bpk-component-popover';
+import BpkInput, { withOpenEvents } from '@skyscanner-internal/backpack-web/bpk-component-input';
+import BpkPopover from '@skyscanner-internal/backpack-web/bpk-component-popover';
 
 const EnhancedInput = withOpenEvents(BpkInput);
 

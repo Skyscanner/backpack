@@ -10,14 +10,14 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ### Default
 ```ts
-import BpkJourneyArrow from '@skyscanner/backpack-web/bpk-component-journey-arrow';
+import BpkJourneyArrow from '@skyscanner-internal/backpack-web/bpk-component-journey-arrow';
 
 export default () => <BpkJourneyArrow />;
 ```
 
 ### With stops count
 ```ts
-import BpkJourneyArrow from '@skyscanner/backpack-web/bpk-component-journey-arrow';
+import BpkJourneyArrow from '@skyscanner-internal/backpack-web/bpk-component-journey-arrow';
 
 export default () => <BpkJourneyArrow stops={3} />;
 ```

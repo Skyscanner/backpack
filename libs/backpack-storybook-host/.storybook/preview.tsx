@@ -18,13 +18,13 @@
 
 import { ArgTypes, Title } from '@storybook/addon-docs/blocks';
 
-import BpkRtlToggle from '@skyscanner/backpack-web/bpk-component-rtl-toggle';
+import BpkRtlToggle from '@skyscanner-internal/backpack-web/bpk-component-rtl-toggle';
 
 import type { Preview } from '@storybook/react';
 
-import '@skyscanner/backpack-web/bpk-stylesheets';
-import '@skyscanner/backpack-web/bpk-stylesheets/font';
-import '@skyscanner/backpack-web/bpk-stylesheets/larken';
+import '@skyscanner-internal/backpack-web/bpk-stylesheets';
+import '@skyscanner-internal/backpack-web/bpk-stylesheets/font';
+import '@skyscanner-internal/backpack-web/bpk-stylesheets/larken';
 
 const preview: Preview = {
   globalTypes: {

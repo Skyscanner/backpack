@@ -1,10 +1,10 @@
 {
-  "name": "@skyscanner/backpack-web",
+  "name": "@skyscanner-internal/backpack-web",
   "version": "21.0.1",
   "description": "Backpack Design System web library",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Skyscanner/backpack.git"
+    "url": "git@github.com:Skyscanner/design-system.git"
   },
   "keywords": [
     "design system",
@@ -14,12 +14,11 @@
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Skyscanner/backpack/issues"
+    "url": "https://github.com/Skyscanner/design-system/issues"
   },
-  "homepage": "https://github.com/Skyscanner/backpack#readme",
+  "homepage": "https://github.com/Skyscanner/design-system#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "registry": "https://artifactory.skyscannertools.net/artifactory/api/npm/npm/"
   },
   "exports": {
     "./package.json": "./package.json",

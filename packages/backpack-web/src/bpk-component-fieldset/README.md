@@ -10,8 +10,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkFieldset from '@skyscanner/backpack-web/bpk-component-fieldset';
-import BpkInput, { INPUT_TYPES } from '@skyscanner/backpack-web/bpk-component-input';
+import BpkFieldset from '@skyscanner-internal/backpack-web/bpk-component-fieldset';
+import BpkInput, { INPUT_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-input';
 
 class FieldsetContainer extends Component {
   constructor(props) {

@@ -21,8 +21,8 @@
  *
  * Usage with BpkThemeProvider:
  *
- *   import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
- *   import BpkChatbotInput, { themeAttributes } from '@skyscanner/backpack-web/bpk-component-chatbot-input';
+ *   import BpkThemeProvider from '@skyscanner-internal/backpack-web/bpk-theming';
+ *   import BpkChatbotInput, { themeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-chatbot-input';
  *
  *   <BpkThemeProvider theme={{ chatbotInputBorderRadius: '999px', chatbotInputFocusBorderColor: '#FF6600' }} themeAttributes={themeAttributes}>
  *     <BpkChatbotInput ... />

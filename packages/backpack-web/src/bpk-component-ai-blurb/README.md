@@ -9,8 +9,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkAiBlurb from '@skyscanner/backpack-web/bpk-component-ai-blurb';
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkAiBlurb from '@skyscanner-internal/backpack-web/bpk-component-ai-blurb';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 // AI response state with feedback
 <BpkAiBlurb.Root>

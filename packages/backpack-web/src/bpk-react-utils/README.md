@@ -14,9 +14,9 @@ it's necessary in overcoming z-index issues when absolutely positioning elements
 ### Usage
 
 ```js
-import { Portal } from '@skyscanner/backpack-web/bpk-react-utils';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-import { BpkCode } from '@skyscanner/backpack-web/bpk-component-code';
+import { Portal } from '@skyscanner-internal/backpack-web/bpk-react-utils';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
+import { BpkCode } from '@skyscanner-internal/backpack-web/bpk-component-code';
 import { Component } from 'react';
 
 class MyComponent extends Component {
@@ -82,7 +82,7 @@ A helpful utility which permits backwards compatibility with hard coded classes 
 ### Usage
 
 ```js
-import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
+import { cssModules } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 import STYLES from './MyComponent.scss';
 
@@ -114,7 +114,7 @@ Without CSS modules:
 The returned function accepts multiple class names and ignores values other than strings. e.g:
 
 ```js
-import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
+import { cssModules } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 import STYLES from './MyComponent.scss';
 
@@ -142,7 +142,7 @@ components initial mount. All you need to provide is two class names and a timeo
 ### Usage
 
 ```js
-import { TransitionInitialMount } from '@skyscanner/backpack-web/bpk-react-utils';
+import { TransitionInitialMount } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 const MyComponent = (props) => (
   <TransitionInitialMount
@@ -156,7 +156,7 @@ const MyComponent = (props) => (
 ```
 
 ```scss
-@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
+@import '~@skyscanner-internal/backpack-web/bpk-mixins/index.scss';
 
 .my-transition-class {
   transition: opacity $bpk-duration-sm ease-in-out;
@@ -188,7 +188,7 @@ Returns true if the browser is showing content right-to-left.
 ### Usage
 
 ```js
-import { isRTL } from '@skyscanner/backpack-web/bpk-react-utils';
+import { isRTL } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 if (isRTL()) {
   // do RTL stuff
@@ -204,7 +204,7 @@ Returns true if the device is an iPhone.
 ### Usage
 
 ```js
-import { isDeviceIphone } from '@skyscanner/backpack-web/bpk-react-utils';
+import { isDeviceIphone } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 if (isDeviceIphone()) {
   // do iPhone specific stuff
@@ -220,7 +220,7 @@ Returns true if the device is an iPad.
 ### Usage
 
 ```js
-import { isDeviceIpad } from '@skyscanner/backpack-web/bpk-react-utils';
+import { isDeviceIpad } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 if (isDeviceIpad()) {
   // do iPad specific stuff
@@ -236,7 +236,7 @@ Returns true if the platform is iOS (iPhone/iPad).
 ### Usage
 
 ```js
-import { isDeviceIos } from '@skyscanner/backpack-web/bpk-react-utils';
+import { isDeviceIos } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 if (isDeviceIos()) {
   // do iOS specific stuff
@@ -252,7 +252,7 @@ Higher order component that adds a scrim behind components, manages focus and ha
 ### Usage
 
 ```js
-import { BpkDialogWrapper } from '@skyscanner/backpack-web/bpk-dialog-utils';
+import { BpkDialogWrapper } from '@skyscanner-internal/backpack-web/bpk-dialog-utils';
 
 const Component = props => (
   <BpkDialogWrapper

@@ -2,20 +2,27 @@
 
 > Backpack is a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
 
-[![npm version](https://badge.fury.io/js/@skyscanner%2Fbackpack-web.svg)](https://badge.fury.io/js/@skyscanner%2Fbackpack-web)
-[![Build Status](https://github.com/Skyscanner/backpack/workflows/Backpack%20CI/badge.svg)](https://github.com/Skyscanner/backpack/actions)
+[![Build Status](https://github.com/Skyscanner/design-system/workflows/Backpack%20CI/badge.svg)](https://github.com/Skyscanner/design-system/actions)
 
 ## Quick links
 
 - [Documentation](https://www.skyscanner.design/)
-- [Changelog](https://github.com/Skyscanner/backpack/releases)
+- [Changelog](https://github.com/Skyscanner/design-system/releases)
 
 ## Usage
 
 ### Installation
 
+Configure the internal Artifactory registry with your approved credentials:
+
 ```sh
-npm install --save @skyscanner/backpack-web
+npm config set @skyscanner-internal:registry https://artifactory.skyscannertools.net/artifactory/api/npm/npm/
+```
+
+Then install the package:
+
+```sh
+npm install --save @skyscanner-internal/backpack-web
 ```
 
 ## Contributing

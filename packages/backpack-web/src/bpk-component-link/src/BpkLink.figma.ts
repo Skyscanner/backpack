@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10885%3A9743
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-link/src/BpkLink.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-link/src/BpkLink.tsx
 // component=BpkLink
 
 import figma from "figma"
@@ -34,7 +34,7 @@ const alternate = figma.selectedInstance.getEnum("Style", {
 export default {
   id: "BpkLink",
   imports: [
-    "import BpkLink from '@skyscanner/backpack-web/bpk-component-link';",
+    "import BpkLink from '@skyscanner-internal/backpack-web/bpk-component-link';",
   ],
   example: figma.code`<BpkLink href="#"${figma.helpers.react.renderProp(
     "implicit",

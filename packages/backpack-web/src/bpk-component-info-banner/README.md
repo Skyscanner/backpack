@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### Default
 
 ```tsx
-import BpkInfoBanner, { ALERT_TYPES } from '@skyscanner/backpack-web/bpk-component-info-banner';
+import BpkInfoBanner, { ALERT_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-info-banner';
 
 export default () => (
   <BpkInfoBanner
@@ -24,7 +24,7 @@ export default () => (
 ### Critical
 
 ```tsx
-import BpkInfoBanner, { ALERT_TYPES } from '@skyscanner/backpack-web/bpk-component-info-banner';
+import BpkInfoBanner, { ALERT_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-info-banner';
 
 export default () => (
   <BpkInfoBanner
@@ -38,7 +38,7 @@ export default () => (
 
 ```tsx
 import { Component } from 'react';
-import { ALERT_TYPES, BpkInfoBannerDismissable } from '@skyscanner/backpack-web/bpk-component-info-banner';
+import { ALERT_TYPES, BpkInfoBannerDismissable } from '@skyscanner-internal/backpack-web/bpk-component-info-banner';
 
 class DismissableBpkInfoBanner extends Component {
   constructor() {
@@ -78,7 +78,7 @@ export default () => (
 
 ```tsx
 import { Component } from 'react';
-import { ALERT_TYPES, withBannerAlertState, BpkInfoBannerDismissable, BpkInfoBannerExpandable } from '@skyscanner/backpack-web/bpk-component-info-banner';
+import { ALERT_TYPES, withBannerAlertState, BpkInfoBannerDismissable, BpkInfoBannerExpandable } from '@skyscanner-internal/backpack-web/bpk-component-info-banner';
 
 const InfoBannerDismissableState = withBannerAlertState(BpkInfoBannerDismissable);
 const InfoBannerExpandableState = withBannerAlertState(BpkInfoBannerExpandable);

@@ -757,7 +757,7 @@ async function runAnalyzer(
 }
 
 /**
- * Locates the @skyscanner/backpack-web version in the consumer repo.
+ * Locates the @skyscanner-internal/backpack-web version in the consumer repo.
  *
  * Search order mirrors ds-analyser report-json-api.js: try the root
  * package.json first, then fall back to other package.json files (limited via
@@ -771,8 +771,8 @@ async function findBackpackWebVersion(repoPath: string): Promise<string | null> 
         devDependencies?: Record<string, string>;
       };
       return (
-        pkg.dependencies?.["@skyscanner/backpack-web"] ||
-        pkg.devDependencies?.["@skyscanner/backpack-web"] ||
+        pkg.dependencies?.["@skyscanner-internal/backpack-web"] ||
+        pkg.devDependencies?.["@skyscanner-internal/backpack-web"] ||
         null
       );
     } catch {

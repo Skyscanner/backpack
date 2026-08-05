@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkRadio from '@skyscanner/backpack-web/bpk-component-radio';
+import BpkRadio from '@skyscanner-internal/backpack-web/bpk-component-radio';
 
 export default () => (
   <BpkRadio

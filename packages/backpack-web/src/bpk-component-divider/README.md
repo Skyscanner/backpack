@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkDivider from '@skyscanner/backpack-web/bpk-component-divider';
+import BpkDivider from '@skyscanner-internal/backpack-web/bpk-component-divider';
 
 export default () => (
   <>

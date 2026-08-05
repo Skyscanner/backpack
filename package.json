@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Skyscanner/backpack.git"
+    "url": "git@github.com:Skyscanner/design-system.git"
   },
   "author": "Backpack Design System <backpack@skyscanner.net>",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://artifactory.skyscannertools.net/artifactory/api/npm/npm/"
   },
   "scripts": {
     "build": "nx run-many -t build",

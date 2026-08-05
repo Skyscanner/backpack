@@ -18,48 +18,48 @@
 
 /* @flow */
 
-import { themeAttributes as badgeThemeAttributes } from '@skyscanner/backpack-web/bpk-component-badge';
-import { themeAttributes as bannerAlertThemeAttributes } from '@skyscanner/backpack-web/bpk-component-banner-alert';
-import { themeAttributes as barchartThemeAttributes } from '@skyscanner/backpack-web/bpk-component-barchart';
-import { themeAttributes as blockquoteThemeAttributes } from '@skyscanner/backpack-web/bpk-component-blockquote';
+import { themeAttributes as badgeThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-badge';
+import { themeAttributes as bannerAlertThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-banner-alert';
+import { themeAttributes as barchartThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-barchart';
+import { themeAttributes as blockquoteThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-blockquote';
 import {
   buttonThemeAttributes,
   primaryThemeAttributes,
   secondaryThemeAttributes,
   featuredThemeAttributes,
   destructiveThemeAttributes,
-} from '@skyscanner/backpack-web/bpk-component-button';
-import { themeAttributes as calendarThemeAttributes } from '@skyscanner/backpack-web/bpk-component-calendar';
-import { themeAttributes as checkboxThemeAttributes } from '@skyscanner/backpack-web/bpk-component-checkbox';
-import { themeAttributes as chipThemeAttributes } from '@skyscanner/backpack-web/bpk-component-chip';
-import { themeAttributes as datepickerThemeAttributes } from '@skyscanner/backpack-web/bpk-component-datepicker';
-import { themeAttributes as drawerThemeAttributes } from '@skyscanner/backpack-web/bpk-component-drawer';
-import { themeAttributes as fieldsetThemeAttributes } from '@skyscanner/backpack-web/bpk-component-fieldset';
-import { themeAttributes as formValidationThemeAttributes } from '@skyscanner/backpack-web/bpk-component-form-validation';
-import { themeAttributes as horizontalNavThemeAttributes } from '@skyscanner/backpack-web/bpk-component-horizontal-nav';
-import { themeAttributes as inputThemeAttributes } from '@skyscanner/backpack-web/bpk-component-input';
+} from '@skyscanner-internal/backpack-web/bpk-component-button';
+import { themeAttributes as calendarThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-calendar';
+import { themeAttributes as checkboxThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-checkbox';
+import { themeAttributes as chipThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-chip';
+import { themeAttributes as datepickerThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-datepicker';
+import { themeAttributes as drawerThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-drawer';
+import { themeAttributes as fieldsetThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-fieldset';
+import { themeAttributes as formValidationThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-form-validation';
+import { themeAttributes as horizontalNavThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-horizontal-nav';
+import { themeAttributes as inputThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-input';
 import {
   linkAlternateThemeAttributes,
   themeAttributes as linkThemeAttributes,
-} from '@skyscanner/backpack-web/bpk-component-link';
+} from '@skyscanner-internal/backpack-web/bpk-component-link';
 import {
   defaultIconMarkerThemeAttributes,
   priceMarkerThemeAttributes,
-} from '@skyscanner/backpack-web/bpk-component-map';
-import { themeAttributes as modalThemeAttributes } from '@skyscanner/backpack-web/bpk-component-modal';
-import { themeAttributes as navigationBarThemeAttributes } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
-import { themeAttributes as nudgerThemeAttributes } from '@skyscanner/backpack-web/bpk-component-nudger';
-import { themeAttributes as paginationThemeAttributes } from '@skyscanner/backpack-web/bpk-component-pagination';
-import { themeAttributes as popoverThemeAttributes } from '@skyscanner/backpack-web/bpk-component-popover';
-import { themeAttributes as progressThemeAttributes } from '@skyscanner/backpack-web/bpk-component-progress';
-import { themeAttributes as radioThemeAttributes } from '@skyscanner/backpack-web/bpk-component-radio';
-import { themeAttributes as selectThemeAttributes } from '@skyscanner/backpack-web/bpk-component-select';
-import { themeAttributes as skipLinkThemeAttributes } from '@skyscanner/backpack-web/bpk-component-skip-link';
-import { themeAttributes as sliderThemeAttributes } from '@skyscanner/backpack-web/bpk-component-slider';
-import { themeAttributes as spinnerThemeAttributes } from '@skyscanner/backpack-web/bpk-component-spinner';
-import { themeAttributes as starRatingThemeAttributes } from '@skyscanner/backpack-web/bpk-component-star-rating';
-import { themeAttributes as switchThemeAttributes } from '@skyscanner/backpack-web/bpk-component-switch';
-import { themeAttributes as textareaThemeAttributes } from '@skyscanner/backpack-web/bpk-component-textarea';
+} from '@skyscanner-internal/backpack-web/bpk-component-map';
+import { themeAttributes as modalThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-modal';
+import { themeAttributes as navigationBarThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-navigation-bar';
+import { themeAttributes as nudgerThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-nudger';
+import { themeAttributes as paginationThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-pagination';
+import { themeAttributes as popoverThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-popover';
+import { themeAttributes as progressThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-progress';
+import { themeAttributes as radioThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-radio';
+import { themeAttributes as selectThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-select';
+import { themeAttributes as skipLinkThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-skip-link';
+import { themeAttributes as sliderThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-slider';
+import { themeAttributes as spinnerThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-spinner';
+import { themeAttributes as starRatingThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-star-rating';
+import { themeAttributes as switchThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-switch';
+import { themeAttributes as textareaThemeAttributes } from '@skyscanner-internal/backpack-web/bpk-component-textarea';
 
 const storybookAttributes = ['primaryColor', 'themeName', 'logoFillColor'];
 

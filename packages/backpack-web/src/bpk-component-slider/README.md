@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkSlider from '@skyscanner/backpack-web/bpk-component-slider';
+import BpkSlider from '@skyscanner-internal/backpack-web/bpk-component-slider';
 
 const Slider = () => (
   <BpkSlider

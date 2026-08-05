@@ -14,7 +14,7 @@ import BpkStarRating, {
   STAR_TYPES,
   BpkInteractiveStarRating,
   withInteractiveStarRatingState
-} from '@skyscanner/backpack-web/bpk-component-star-rating';
+} from '@skyscanner-internal/backpack-web/bpk-component-star-rating';
 
 const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
 

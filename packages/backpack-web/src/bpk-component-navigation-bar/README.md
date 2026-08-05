@@ -11,10 +11,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### BpkNavigationBar
 
 ```js
-import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-left';
-import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
+import ArrowIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/long-arrow-left';
+import { withRtlSupport } from '@skyscanner-internal/backpack-web/bpk-component-icon';
 
-import BpkNavigationBar, { BpkNavigationBarIconButton, BpkNavigationBarButtonLink } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
+import BpkNavigationBar, { BpkNavigationBarIconButton, BpkNavigationBarButtonLink } from '@skyscanner-internal/backpack-web/bpk-component-navigation-bar';
 
 const ArrowIconWithRtl = withRtlSupport(ArrowIcon);
 
@@ -38,8 +38,8 @@ export default () => (
 ### BpkNavigationBarIconButton
 
 ```js
-import ArrowIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-left';
-import { BpkNavigationBarIconButton } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
+import ArrowIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/long-arrow-left';
+import { BpkNavigationBarIconButton } from '@skyscanner-internal/backpack-web/bpk-component-navigation-bar';
 
 export default () => (
   <BpkNavigationBarIconButton
@@ -53,7 +53,7 @@ export default () => (
 ### BpkNavigationBarButtonLink
 
 ```js
-import { BpkNavigationBarButtonLink } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
+import { BpkNavigationBarButtonLink } from '@skyscanner-internal/backpack-web/bpk-component-navigation-bar';
 
 export default () => (
   <BpkNavigationBarButtonLink onClick={() => {}}>

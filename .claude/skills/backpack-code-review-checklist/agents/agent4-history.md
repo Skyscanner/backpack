@@ -11,7 +11,7 @@ issues. Return issues as JSON.
 
 **PR mode:**
 ```bash
-gh pr diff [NUMBER] --repo Skyscanner/backpack
+gh pr diff [NUMBER] --repo Skyscanner/design-system
 ```
 **Local mode:**
 ```bash
@@ -24,13 +24,13 @@ Use `git log` and `gh pr view` for history lookups.
 ```bash
 git log --oneline -10 -- [file]
 git log --oneline --all --grep="revert" -- [file]
-gh pr list --repo Skyscanner/backpack --state merged --limit 10 --search "[filename]"
+gh pr list --repo Skyscanner/design-system --state merged --limit 10 --search "[filename]"
 ```
 
 ## Step 3: For the most relevant past PRs, check their review comments
 
 ```bash
-gh pr view [PAST_PR_NUMBER] --repo Skyscanner/backpack --comments
+gh pr view [PAST_PR_NUMBER] --repo Skyscanner/design-system --comments
 ```
 
 ## Step 4: Analyse patterns

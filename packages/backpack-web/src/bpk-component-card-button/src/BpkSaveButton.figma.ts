@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A50640
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-card-button/src/BpkSaveButton.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-card-button/src/BpkSaveButton.tsx
 // component=BpkSaveButton
 
 import figma from "figma"
@@ -38,7 +38,7 @@ const checked = figma.selectedInstance.getEnum("State", {
 export default {
   id: "BpkSaveButton",
   imports: [
-    "import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from '@skyscanner/backpack-web/bpk-component-card-button'",
+    "import BpkSaveButton, { SIZE_TYPES, STYLE_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-card-button'",
   ],
   example: figma.code`<BpkSaveButton${figma.helpers.react.renderProp(
     "checked",

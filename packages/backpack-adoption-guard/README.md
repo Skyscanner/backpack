@@ -10,7 +10,7 @@ adoption rate.
 - uses: actions/checkout@v6
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
+  uses: Skyscanner/design-system/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
   with:
     dry-run: ${{ vars.BACKPACK_ADOPTION_DRY_RUN }}
 ```
@@ -92,7 +92,7 @@ data stays in the GitHub step summary and action internals.
 - uses: actions/checkout@v6
 
 - name: Backpack Adoption Guard
-  uses: Skyscanner/backpack/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
+  uses: Skyscanner/design-system/packages/backpack-adoption-guard@backpack-adoption-guard/v1.0.0
 
 - name: Upload Backpack adoption metrics to Cortex
   if: github.ref == 'refs/heads/main'

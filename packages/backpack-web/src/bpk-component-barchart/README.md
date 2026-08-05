@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkBarchart from '@skyscanner/backpack-web/bpk-component-barchart';
+import BpkBarchart from '@skyscanner-internal/backpack-web/bpk-component-barchart';
 
 const priceData = [
   {

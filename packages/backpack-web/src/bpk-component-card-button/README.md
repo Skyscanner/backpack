@@ -15,7 +15,7 @@ import {
   BpkSaveButton,
   SIZE_TYPES,
   STYLE_TYPES
-} from '@skyscanner/backpack-web/bpk-component-card-button';
+} from '@skyscanner-internal/backpack-web/bpk-component-card-button';
 
 export default () =>
   <BpkSaveButton

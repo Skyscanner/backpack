@@ -11,7 +11,7 @@ compliance. Return issues as JSON.
 
 **PR mode:**
 ```bash
-gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.scss'
+gh pr diff [NUMBER] --repo Skyscanner/design-system -- '*.scss'
 ```
 **Local mode:**
 ```bash

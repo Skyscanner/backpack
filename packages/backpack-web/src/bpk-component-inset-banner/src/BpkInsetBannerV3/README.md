@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 A composable inset banner built from named sub-components. The banner is structured as a `Root` container with an explicit `Header` slot (for logo, text, and actions) and an optional `Body` slot (for extended content such as images or descriptive text).
 
 ```tsx
-import { BpkInsetBannerV3 } from '@skyscanner/backpack-web/bpk-component-inset-banner';
+import { BpkInsetBannerV3 } from '@skyscanner-internal/backpack-web/bpk-component-inset-banner';
 ```
 
 ### Horizontal layout (default)
@@ -73,4 +73,3 @@ Pass `layout="vertical"` to `Header` to stack slots top-to-bottom instead of sid
   </BpkInsetBannerV3.Body>
 </BpkInsetBannerV3.Root>
 ```
-

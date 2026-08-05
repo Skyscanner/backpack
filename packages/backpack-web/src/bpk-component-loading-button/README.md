@@ -9,10 +9,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkLoadingButton from '@skyscanner/backpack-web/bpk-component-loading-button';
-import BaggageIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/baggage';
-import { withButtonAlignment, withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
-import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
+import BpkLoadingButton from '@skyscanner-internal/backpack-web/bpk-component-loading-button';
+import BaggageIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/baggage';
+import { withButtonAlignment, withRtlSupport } from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import BpkVisuallyHidden from '@skyscanner-internal/backpack-web/bpk-component-visually-hidden';
 
 const AlignedBaggageIcon = withButtonAlignment(withRtlSupport(BaggageIcon));
 const icon = <AlignedBaggageIcon />;

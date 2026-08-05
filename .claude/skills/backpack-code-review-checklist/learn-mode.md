@@ -10,7 +10,7 @@ prompt files, and proposes edits. All writes require explicit user confirmation.
 
 ```bash
 gh pr list \
-  --repo Skyscanner/backpack \
+  --repo Skyscanner/design-system \
   --state merged \
   --limit [N] \
   --json number,title,mergedAt,files
@@ -21,11 +21,11 @@ If `--component COMP` is specified, filter to PRs touching `packages/backpack-we
 For each PR, fetch review comments:
 ```bash
 # PR-level comments (includes review summaries)
-gh api repos/Skyscanner/backpack/issues/[NUMBER]/comments --paginate \
+gh api repos/Skyscanner/design-system/issues/[NUMBER]/comments --paginate \
   --jq '[.[].body]'
 
 # Inline diff comments (line-level review threads)
-gh api repos/Skyscanner/backpack/pulls/[NUMBER]/comments --paginate \
+gh api repos/Skyscanner/design-system/pulls/[NUMBER]/comments --paginate \
   --jq '[.[].body]'
 ```
 

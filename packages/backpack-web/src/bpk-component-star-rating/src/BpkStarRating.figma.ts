@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A49089
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-star-rating/src/BpkStarRating.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-star-rating/src/BpkStarRating.tsx
 // component=BpkStarRating
 
 import figma from "figma"
@@ -45,7 +45,7 @@ const ratingLabel = figma.selectedInstance.getEnum("Rating", {
 export default {
   id: "BpkStarRating",
   imports: [
-    "import BpkStarRating from '@skyscanner/backpack-web/bpk-component-star-rating';",
+    "import BpkStarRating from '@skyscanner-internal/backpack-web/bpk-component-star-rating';",
   ],
   example: figma.code`<BpkStarRating${figma.helpers.react.renderProp(
     "ratingLabel",

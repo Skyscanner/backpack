@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkSwitch from '@skyscanner/backpack-web/bpk-component-switch';
+import BpkSwitch from '@skyscanner-internal/backpack-web/bpk-component-switch';
 
 export default () => (
   <div>

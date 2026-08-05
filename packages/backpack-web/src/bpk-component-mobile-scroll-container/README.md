@@ -9,8 +9,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import { cssModules } from '@skyscanner/backpack-web/bpk-react-utils';
-import BpkMobileScrollContainer from '@skyscanner/backpack-web/bpk-component-mobile-scroll-container';
+import { cssModules } from '@skyscanner-internal/backpack-web/bpk-react-utils';
+import BpkMobileScrollContainer from '@skyscanner-internal/backpack-web/bpk-component-mobile-scroll-container';
 
 import STYLES from './MyComponent.scss';
 
@@ -39,7 +39,7 @@ export default () => (
 
 *`MyComponent.scss`:*
 ```scss
-@import '~@skyscanner/backpack-web/bpk-mixins/index.scss';
+@import '~@skyscanner-internal/backpack-web/bpk-mixins/index.scss';
 
 .my-component {
   display: flex;

@@ -454,7 +454,7 @@ type Bpk[ComponentName]Props = {
 **Structure**:
 1. **Title**: Component name in sentence case (e.g., "Bar chart")
 2. **Description**: Plain English, describe purpose (not configuration)
-3. **Installation**: `npm install @skyscanner/backpack-web`
+3. **Installation**: `npm install @skyscanner-internal/backpack-web`
 4. **Usage**: Code example with basic usage
 5. **Props**: Table with prop name, type, default, description
 6. **Browser Support**: Link to browser support info
@@ -471,11 +471,11 @@ colours and labels. Ideal for presenting comparative data in a clear format.
 
 ## Installation
 
-npm install @skyscanner/backpack-web
+npm install @skyscanner-internal/backpack-web
 
 ## Usage
 
-import BpkBarchart from '@skyscanner/backpack-web/bpk-component-barchart';
+import BpkBarchart from '@skyscanner-internal/backpack-web/bpk-component-barchart';
 
 <BpkBarchart data={chartData} />
 
@@ -608,7 +608,7 @@ figma.connect(Bpk[ComponentName], 'https://www.figma.com/file/...', {
 ### Version Determination (per `decisions/versioning-rules.md`)
 
 **This component is**: [Select one]
-- [ ] **NEW COMPONENT** → **MINOR** version bump for `@skyscanner/backpack-web`
+- [ ] **NEW COMPONENT** → **MINOR** version bump for `@skyscanner-internal/backpack-web`
 - [ ] **MAJOR UPDATE** → **MAJOR** version bump (breaking API/visual changes)
 - [ ] **ENHANCEMENT** → **MINOR** version bump (new optional features)
 - [ ] **BUG FIX** → **PATCH** version bump
@@ -674,10 +674,10 @@ const Bpk[ComponentName] = ({ newProp, oldProp }: Bpk[ComponentName]Props) => {
 **Example**:
 ```typescript
 // Current usage
-import Bpk[ComponentName] from '@skyscanner/backpack-web/bpk-component-name';
+import Bpk[ComponentName] from '@skyscanner-internal/backpack-web/bpk-component-name';
 
 // Opt-in to future API
-import Bpk[ComponentName]V2 from '@skyscanner/backpack-web/bpk-component-name/Bpk[ComponentName]V2';
+import Bpk[ComponentName]V2 from '@skyscanner-internal/backpack-web/bpk-component-name/Bpk[ComponentName]V2';
 ```
 
 ## Release Checklist

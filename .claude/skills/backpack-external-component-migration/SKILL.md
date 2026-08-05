@@ -449,7 +449,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 \`\`\`tsx
-import Bpk[ComponentName] from '@skyscanner/backpack-web/bpk-component-[name]';
+import Bpk[ComponentName] from '@skyscanner-internal/backpack-web/bpk-component-[name]';
 
 export default () => (
   <Bpk[ComponentName] someRequiredProp="value" />

@@ -7,8 +7,8 @@
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
 ```js
-import { withScrim } from '@skyscanner/backpack-web/bpk-scrim-utils';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { withScrim } from '@skyscanner-internal/backpack-web/bpk-scrim-utils';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 const Box = props => (
   <div ref={props.dialogRef}>
@@ -25,8 +25,8 @@ The version using a [React portal](https://react.dev/reference/react-dom/createP
 The `withScrimmedPortal` works with SSR, as well as CSR. On the server, it renders a scrim to block users from interacting with the page and making it evident that the page is not interactive.
 
 ```js
-import { withScrimmedPortal } from '@skyscanner/backpack-web/bpk-scrim-utils';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import { withScrimmedPortal } from '@skyscanner-internal/backpack-web/bpk-scrim-utils';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 const Box = props => {
   const dialogRef = useRef(null);

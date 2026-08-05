@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=19850%3A20116
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-journey-arrow/src/BpkJourneyArrow.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-journey-arrow/src/BpkJourneyArrow.tsx
 // component=BpkJourneyArrow
 
 import figma from "figma"
@@ -25,7 +25,7 @@ import figma from "figma"
 export default {
   id: "BpkJourneyArrow",
   imports: [
-    "import BpkJourneyArrow from '@skyscanner/backpack-web/bpk-component-journey-arrow';",
+    "import BpkJourneyArrow from '@skyscanner-internal/backpack-web/bpk-component-journey-arrow';",
   ],
   example: figma.code`<BpkJourneyArrow stops={1}/>`,
 }

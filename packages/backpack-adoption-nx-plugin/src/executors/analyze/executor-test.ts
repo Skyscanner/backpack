@@ -89,7 +89,7 @@ describe("analyze executor", () => {
       workspaceRoot,
       "apps/flights/src/App.tsx",
       `
-import { BpkButton } from '@skyscanner/backpack-web';
+import { BpkButton } from '@skyscanner-internal/backpack-web';
 export const App = () => <BpkButton>Go</BpkButton>;
 `,
     );
@@ -131,7 +131,7 @@ export const App = () => <div>Raw HTML only</div>;
         baseWorktreePath,
         "apps/flights/src/App.tsx",
         `
-import { BpkButton } from '@skyscanner/backpack-web';
+import { BpkButton } from '@skyscanner-internal/backpack-web';
 export const App = () => <BpkButton>Go</BpkButton>;
 `,
       );

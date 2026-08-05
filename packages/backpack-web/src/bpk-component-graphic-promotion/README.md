@@ -7,7 +7,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkGraphicPromo from '@skyscanner/backpack-web/bpk-component-graphic-promotion';
+import BpkGraphicPromo from '@skyscanner-internal/backpack-web/bpk-component-graphic-promotion';
 
 export default () => (
   <BpkGraphicPromo
@@ -31,7 +31,7 @@ export default () => (
 ### Use anchor tag as wrapper
 
 ```tsx
-import BpkGraphicPromo from '@skyscanner/backpack-web/bpk-component-graphic-promotion';
+import BpkGraphicPromo from '@skyscanner-internal/backpack-web/bpk-component-graphic-promotion';
 
 export default () => (
   <BpkGraphicPromo

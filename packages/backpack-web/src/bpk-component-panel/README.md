@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkPanel, { PANEL_BG_COLORS } from '@skyscanner/backpack-web/bpk-component-panel';
+import BpkPanel, { PANEL_BG_COLORS } from '@skyscanner-internal/backpack-web/bpk-component-panel';
 
 export default () => (
   <BpkPanel bgColor={PANEL_BG_COLORS.surfaceSubtle}>

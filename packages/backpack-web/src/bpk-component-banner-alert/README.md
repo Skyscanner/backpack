@@ -13,7 +13,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### Default
 
 ```tsx
-import BpkBannerAlert, { ALERT_TYPES } from '@skyscanner/backpack-web/bpk-component-banner-alert';
+import BpkBannerAlert, { ALERT_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-banner-alert';
 
 export default () => (
   <BpkBannerAlert
@@ -27,7 +27,7 @@ export default () => (
 
 ```tsx
 import { Component } from 'react';
-import { ALERT_TYPES, BpkBannerAlertDismissable } from '@skyscanner/backpack-web/bpk-component-banner-alert';
+import { ALERT_TYPES, BpkBannerAlertDismissable } from '@skyscanner-internal/backpack-web/bpk-component-banner-alert';
 
 class DismissableBpkBannerAlert extends Component {
   constructor() {
@@ -67,7 +67,7 @@ export default () => (
 
 ```tsx
 import { Component } from 'react';
-import { ALERT_TYPES, withBannerAlertState, BpkBannerAlertDismissable, BpkBannerAlertExpandable } from '@skyscanner/backpack-web/bpk-component-banner-alert';
+import { ALERT_TYPES, withBannerAlertState, BpkBannerAlertDismissable, BpkBannerAlertExpandable } from '@skyscanner-internal/backpack-web/bpk-component-banner-alert';
 
 const BannerAlertDismissableState = withBannerAlertState(BpkBannerAlertDismissable);
 const BannerAlertExpandableState = withBannerAlertState(BpkBannerAlertExpandable);

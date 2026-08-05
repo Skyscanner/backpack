@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10911%3A19302
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-price/src/BpkPrice.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-price/src/BpkPrice.tsx
 // component=BpkPrice
 
 import figma from "figma"
@@ -42,7 +42,7 @@ const trailingText = figma.selectedInstance.getString("Trailing text")
 export default {
   id: "BpkPrice",
   imports: [
-    "import BpkPrice from '@skyscanner/backpack-web/bpk-component-price'",
+    "import BpkPrice from '@skyscanner-internal/backpack-web/bpk-component-price'",
   ],
   example: figma.code`<BpkPrice${figma.helpers.react.renderProp(
     "price",

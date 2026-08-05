@@ -16,7 +16,7 @@ import {
   BpkTableRow,
   BpkTableCell,
   BpkTableHeadCell,
-} from '@skyscanner/backpack-web/bpk-component-table';
+} from '@skyscanner-internal/backpack-web/bpk-component-table';
 
 export default () => (
   <BpkTable>
@@ -62,7 +62,7 @@ import {
   BpkTableHeadCell,
   type BpkTableProps,
   type BpkTableCellProps,
-} from '@skyscanner/backpack-web/bpk-component-table';
+} from '@skyscanner-internal/backpack-web/bpk-component-table';
 ```
 
 ## Props
@@ -85,7 +85,7 @@ Optional prop on `BpkTableBody` that controls the table body styling. Set `type=
 import {
   BpkTableBody,
   TABLE_BODY_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-table';
+} from '@skyscanner-internal/backpack-web/bpk-component-table';
 
 <BpkTableBody type={TABLE_BODY_TYPES.striped}>
   <BpkTableRow>...</BpkTableRow>

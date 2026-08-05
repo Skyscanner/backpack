@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkChatbotInput from '@skyscanner/backpack-web/bpk-component-chatbot-input';
+import BpkChatbotInput from '@skyscanner-internal/backpack-web/bpk-component-chatbot-input';
 
 export default () => (
   <BpkChatbotInput.Root>
@@ -30,7 +30,7 @@ export default () => (
 ### With unlimited input
 
 ```tsx
-import BpkChatbotInput from '@skyscanner/backpack-web/bpk-component-chatbot-input';
+import BpkChatbotInput from '@skyscanner-internal/backpack-web/bpk-component-chatbot-input';
 
 export default () => (
   <BpkChatbotInput.Root>
@@ -52,11 +52,11 @@ export default () => (
 ### With toolbar
 
 ```tsx
-import BpkChatbotInput from '@skyscanner/backpack-web/bpk-component-chatbot-input';
-import BpkButton, { BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
-import SmallPlusIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/plus';
-import SmallFilterIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/filter';
-import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
+import BpkChatbotInput from '@skyscanner-internal/backpack-web/bpk-component-chatbot-input';
+import BpkButton, { BUTTON_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-button';
+import SmallPlusIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/plus';
+import SmallFilterIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/filter';
+import BpkVisuallyHidden from '@skyscanner-internal/backpack-web/bpk-component-visually-hidden';
 
 export default () => (
   <BpkChatbotInput.Root>

@@ -10,9 +10,9 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkModal from '@skyscanner/backpack-web/bpk-component-modal';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-import { BpkNavigationBarButtonLink } from '@skyscanner/backpack-web/bpk-component-navigation-bar';
+import BpkModal from '@skyscanner-internal/backpack-web/bpk-component-modal';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
+import { BpkNavigationBarButtonLink } from '@skyscanner-internal/backpack-web/bpk-component-navigation-bar';
 
 class App extends Component {
   constructor() {
@@ -79,4 +79,4 @@ Check out the full list of props on Skyscanner's [design system documentation we
 
 A composable modal built on [Ark UI](https://ark-ui.com/). Usage is split across slot components: `Root`, `Trigger`, `Backdrop`, `Positioner`, `Content`, `Header`, `Body`, and `CloseTrigger`.
 
-> **RTL support:** `BpkModalV3` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
+> **RTL support:** `BpkModalV3` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner-internal/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.

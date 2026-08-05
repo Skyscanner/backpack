@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15086%3A15207
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-card/src/BpkCardV2/BpkCardV2.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-card/src/BpkCardV2/BpkCardV2.tsx
 // component=BpkCardV2
 
 import figma from "figma"
@@ -55,7 +55,7 @@ const children = figma.properties.slot("Contents")
 export default {
   id: "BpkCardV2",
   imports: [
-    "import BpkCardV2 from '@skyscanner/backpack-web/bpk-component-card';",
+    "import BpkCardV2 from '@skyscanner-internal/backpack-web/bpk-component-card';",
   ],
   example: figma.code`<BpkCardV2.Root${figma.helpers.react.renderProp(
     "bgColor",

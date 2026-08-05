@@ -10,11 +10,11 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import PropTypes from 'prop-types';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
-import BpkSpinner, { SPINNER_TYPES } from '@skyscanner/backpack-web/bpk-component-spinner';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
+import BpkSpinner, { SPINNER_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-spinner';
 import withInfiniteScroll, {
   ArrayDataSource,
-} from '@skyscanner/backpack-web/bpk-component-infinite-scroll';
+} from '@skyscanner-internal/backpack-web/bpk-component-infinite-scroll';
 
 const SomeList = ({ elements }) => (
   <div id="list">
@@ -104,7 +104,7 @@ its data.
 
 ```js
 import PropTypes from 'prop-types';
-import withInfiniteScroll, { DataSource } from '@skyscanner/backpack-web/bpk-component-infinite-scroll';
+import withInfiniteScroll, { DataSource } from '@skyscanner-internal/backpack-web/bpk-component-infinite-scroll';
 
 const SomeList = ({ elements }) => (
   <div id="list">

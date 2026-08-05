@@ -7,7 +7,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkFloatingNotification from '@skyscanner/backpack-web/bpk-component-floating-notification';
+import BpkFloatingNotification from '@skyscanner-internal/backpack-web/bpk-component-floating-notification';
 import BpkIconHeart from '../../packages/bpk-component-icon/sm/heart';
 
 export default () => (
@@ -23,7 +23,7 @@ export default () => (
 ### Critical
 
 ```js
-import BpkFloatingNotification, { NOTIFICATION_TYPES } from '@skyscanner/backpack-web/bpk-component-floating-notification';
+import BpkFloatingNotification, { NOTIFICATION_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-floating-notification';
 
 export default () => (
   <BpkFloatingNotification

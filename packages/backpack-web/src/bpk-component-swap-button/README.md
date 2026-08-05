@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```ts
-import BpkSwapButton from '@skyscanner/backpack-web/bpk-swap-button';
+import BpkSwapButton from '@skyscanner-internal/backpack-web/bpk-swap-button';
 
 export default () =>
   <BpkSwapButton

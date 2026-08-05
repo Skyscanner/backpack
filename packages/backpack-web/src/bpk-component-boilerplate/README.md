@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```ts
-import BpkBoilerplate from '@skyscanner/backpack-web/bpk-component-code';
+import BpkBoilerplate from '@skyscanner-internal/backpack-web/bpk-component-code';
 
 export default () => <BpkBoilerplate />;
 ```

@@ -35,4 +35,4 @@
 @forward 'typography';
 @forward 'utils';
 
-@warn "You're using blank import of all mixins. This might affect performance of your build tool and your bundle size. \nConsider switching to more granular imports, e.g. @use '@skyscanner/backpack-web/bpk-mixins/buttons'";
+@warn "You're using blank import of all mixins. This might affect performance of your build tool and your bundle size. \nConsider switching to more granular imports, e.g. @use '@skyscanner-internal/backpack-web/bpk-mixins/buttons'";

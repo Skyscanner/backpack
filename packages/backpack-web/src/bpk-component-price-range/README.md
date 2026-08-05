@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkPriceRange from '@skyscanner/backpack-web/bpk-component-price-range';
+import BpkPriceRange from '@skyscanner-internal/backpack-web/bpk-component-price-range';
 
 export default () => (
   <BpkPriceRange
@@ -55,7 +55,7 @@ The marker's colour indicates which price segment it falls into:
 When the `marker` prop is omitted, only the three-tier price range bars (low/medium/high segments) are displayed with boundary prices shown:
 
 ```tsx
-import BpkPriceRange from '@skyscanner/backpack-web/bpk-component-price-range';
+import BpkPriceRange from '@skyscanner-internal/backpack-web/bpk-component-price-range';
 
 export default () => (
   <BpkPriceRange

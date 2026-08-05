@@ -6,7 +6,7 @@
 
 Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a complete installation guide.
 
-> **RTL support:** `BpkCollapsible` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
+> **RTL support:** `BpkCollapsible` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner-internal/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
 
 ## Anatomy
 
@@ -27,10 +27,10 @@ The package also exports:
 ## Usage
 
 ```tsx
-import BpkCollapsible from '@skyscanner/backpack-web/bpk-component-collapsible';
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
-import ChevronDownIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/chevron-down';
-import AirportsIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/airports';
+import BpkCollapsible from '@skyscanner-internal/backpack-web/bpk-component-collapsible';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
+import ChevronDownIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/chevron-down';
+import AirportsIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/airports';
 
 const Example = () => (
   <BpkCollapsible.Root defaultOpen={false}>
@@ -63,7 +63,7 @@ const Example = () => (
 - `onContrast` — for use on a contrasting/dark surface (e.g. inside a `BpkBox` with `backgroundColor="surface-contrast"`). Switches text and chevron colours to the on-dark token set.
 
 ```tsx
-import BpkCollapsible, { COLLAPSIBLE_VARIANTS } from '@skyscanner/backpack-web/bpk-component-collapsible';
+import BpkCollapsible, { COLLAPSIBLE_VARIANTS } from '@skyscanner-internal/backpack-web/bpk-component-collapsible';
 
 <BpkCollapsible.Root variant={COLLAPSIBLE_VARIANTS.onContrast}>
   …
@@ -92,7 +92,7 @@ For uncontrolled use, pass `defaultOpen` (defaults to `false`).
 For deeper integration — driving the same machine from multiple places, or reading derived state such as `visible` while the close animation runs — own the state machine yourself with `useBpkCollapsible` and pass it to `BpkCollapsible.RootProvider`.
 
 ```tsx
-import BpkCollapsible, { useBpkCollapsible } from '@skyscanner/backpack-web/bpk-component-collapsible';
+import BpkCollapsible, { useBpkCollapsible } from '@skyscanner-internal/backpack-web/bpk-component-collapsible';
 
 const Example = () => {
   const collapsible = useBpkCollapsible();
@@ -123,7 +123,7 @@ Any component inside a `Root` or `RootProvider` subtree can call `useBpkCollapsi
 import BpkCollapsible, {
   useBpkCollapsible,
   useBpkCollapsibleContext,
-} from '@skyscanner/backpack-web/bpk-component-collapsible';
+} from '@skyscanner-internal/backpack-web/bpk-component-collapsible';
 
 const StatusBadge = () => {
   const { disabled, open } = useBpkCollapsibleContext();

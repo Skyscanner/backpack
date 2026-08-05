@@ -312,11 +312,11 @@ const BpkText = ({text, color, sparkles}: Props) => {
 
 For anything non-trivial, we strongly recommend speaking to somebody from Backpack design system team before starting work on a PR. This lets us pass on any advice or knowledge we already have about the work you're proposing. It might even be something we're already working on. After this, follow the steps below.
 
-1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/backpack/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository. This contains information about setting up your Github account such as how to get added to the Skyscanner organisation, or set an SSH key to swap between your GH Enterprise and public GH accounts.
+1. If you are not a Skyscanner employee, [fork the repository](https://github.com/Skyscanner/design-system/fork). If you are a Skyscanner employee, please follow the "Engineering Contribution" guide in the Backpack space in Confluence to get push rights to this repository. This contains information about setting up your Github account such as how to get added to the Skyscanner organisation, or set an SSH key to swap between your GH Enterprise and public GH accounts.
 2. Create a new branch.
 3. Make your changes.
 4. Commit and push your new branch.
-5. Submit a [pull request](https://github.com/Skyscanner/backpack/pulls). When submitting a PR ensure you add the correct label to your PR.
+5. Submit a [pull request](https://github.com/Skyscanner/design-system/pulls). When submitting a PR ensure you add the correct label to your PR.
     * major, A breaking change (visual or API contract changes)
     * minor, A non-breaking change or a new component
     * patch, A fixed bug or updates to documentation
@@ -357,7 +357,7 @@ Visual regression tests run on all Storybook stories titled _'Visual test'_.
 
 Releases are managed by the Backpack design system team. If you have contributed a change and would like it included in a release, please notify the Backpack design system team on your PR.
 
-- Publish the latest draft on the [releases pages](https://github.com/Skyscanner/backpack/releases)
+- Publish the latest draft on the [releases pages](https://github.com/Skyscanner/design-system/releases)
 - Ensure CI runs the release workflow successfully
 - Once released verify the artifacts are available
 
@@ -382,7 +382,7 @@ This runs two scripts in sequence:
 
 ### Import path configuration
 
-`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `pnpm run figma:generate-config` to update it after adding new components.
+`figma.config.json` contains `importPaths` that map relative imports in `.figma.tsx` files to consumer-facing `@skyscanner-internal/backpack-web/` package paths. This config is auto-generated — do not edit it manually. Run `pnpm run figma:generate-config` to update it after adding new components.
 
 ### Icon mappings
 

@@ -13,7 +13,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 The `withSingleItemAccordionState` higher-order component is used to limit one section to be expanded at any time.
 
 ```js
-import { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState } from '@skyscanner/backpack-web/bpk-component-accordion';
+import { BpkAccordion, BpkAccordionItem, withSingleItemAccordionState } from '@skyscanner-internal/backpack-web/bpk-component-accordion';
 
 const SingleItemAccordion = withSingleItemAccordionState(BpkAccordion);
 
@@ -37,7 +37,7 @@ export default () => (
 The `withAccordionItemState` higher-order component is used to allow multiple items to be expanded simultaneously.
 
 ```js
-import { BpkAccordion, BpkAccordionItem, withAccordionItemState } from '@skyscanner/backpack-web/bpk-component-accordion';
+import { BpkAccordion, BpkAccordionItem, withAccordionItemState } from '@skyscanner-internal/backpack-web/bpk-component-accordion';
 
 const StatefulAccordionItem = withAccordionItemState(BpkAccordionItem);
 
@@ -61,9 +61,9 @@ export default () => (
 `BpkAccordionItem` supports the use of displaying icons alongside the title. To do this you will need to align your icon to the text using `withAlignment` and pass through the matching sizes for the icon you wish to use. For more information see [Alignment](https://skyscanner.design/latest/components/alignment/web.html)
 
 ```js
-import { BpkAccordion, BpkAccordionItem } from '@skyscanner/backpack-web/bpk-component-accordion';
-import { withAlignment } from '@skyscanner/backpack-web/bpk-component-icon';
-import StopsIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/stops';
+import { BpkAccordion, BpkAccordionItem } from '@skyscanner-internal/backpack-web/bpk-component-accordion';
+import { withAlignment } from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import StopsIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/stops';
 import { lineHeightBase, iconSizeSm, colorPanjin } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const AlignedStopsIcon = withAlignment(StopsIcon, lineHeightBase, iconSizeSm);

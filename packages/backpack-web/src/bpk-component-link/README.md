@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### Default anchor link
 
 ```tsx
-import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
+import BpkLink from '@skyscanner-internal/backpack-web/bpk-component-link';
 
 <BpkLink href="http://www.skyscanner.net/">Visit Skyscanner</BpkLink>
 ```
@@ -21,7 +21,7 @@ import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 BpkLink supports a polymorphic `as` prop that allows rendering as different HTML elements while maintaining consistent link styling.
 
 ```tsx
-import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
+import BpkLink from '@skyscanner-internal/backpack-web/bpk-component-link';
 
 // Rendering as a button (for actions without navigation)
 <BpkLink as="button" onClick={() => {}}>
@@ -91,7 +91,7 @@ If you're using a SPA framework like `react-router-dom` or `Next.js` to navigate
 ```tsx
 // React Router v6
 import { Link } from 'react-router-dom';
-import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
+import BpkLink from '@skyscanner-internal/backpack-web/bpk-component-link';
 
 <Link to="/flights" component={BpkLink}>
   View flights
@@ -99,7 +99,7 @@ import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 
 // Next.js
 import Link from 'next/link';
-import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
+import BpkLink from '@skyscanner-internal/backpack-web/bpk-component-link';
 
 <Link href="/flights" passHref legacyBehavior>
   <BpkLink>View flights</BpkLink>
@@ -112,11 +112,11 @@ import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
 
 ```tsx
 // Before (deprecated)
-import { BpkButtonLink } from '@skyscanner/backpack-web/bpk-component-link';
+import { BpkButtonLink } from '@skyscanner-internal/backpack-web/bpk-component-link';
 <BpkButtonLink onClick={handleClick}>Click me</BpkButtonLink>
 
 // After (recommended)
-import BpkLink from '@skyscanner/backpack-web/bpk-component-link';
+import BpkLink from '@skyscanner-internal/backpack-web/bpk-component-link';
 <BpkLink as="button" onClick={handleClick}>Click me</BpkLink>
 ```
 

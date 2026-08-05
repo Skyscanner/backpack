@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A3878
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-horizontal-nav/src/BpkHorizontalNav.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-horizontal-nav/src/BpkHorizontalNav.tsx
 // component=BpkHorizontalNav
 
 import figma from "figma"
@@ -31,8 +31,8 @@ const type = figma.selectedInstance.getEnum("Style", {
 export default {
   id: "BpkHorizontalNav",
   imports: [
-    "import BpkHorizontalNav, { HORIZONTAL_NAV_TYPES } from '@skyscanner/backpack-web/bpk-component-horizontal-nav';",
-    "import BpkHorizontalNavItem from '@skyscanner/backpack-web/bpk-component-horizontal-nav';",
+    "import BpkHorizontalNav, { HORIZONTAL_NAV_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-horizontal-nav';",
+    "import BpkHorizontalNavItem from '@skyscanner-internal/backpack-web/bpk-component-horizontal-nav';",
   ],
   example: figma.code`<BpkHorizontalNav${figma.helpers.react.renderProp(
     "showUnderline",

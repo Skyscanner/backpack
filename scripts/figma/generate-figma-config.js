@@ -61,9 +61,9 @@ const importPaths = {};
 
 // Icon paths — preserve filename with trailing *
 importPaths['bpk-component-icon/sm/*'] =
-  '@skyscanner/backpack-web/bpk-component-icon/sm/*';
+  '@skyscanner-internal/backpack-web/bpk-component-icon/sm/*';
 importPaths['bpk-component-icon/lg/*'] =
-  '@skyscanner/backpack-web/bpk-component-icon/lg/*';
+  '@skyscanner-internal/backpack-web/bpk-component-icon/lg/*';
 
 // Component paths — map src/* to the package root
 for (const pkg of [...pkgs].sort()) {
@@ -72,7 +72,7 @@ for (const pkg of [...pkgs].sort()) {
     // eslint-disable-next-line no-continue
     continue;
   }
-  importPaths[`${pkg}/src/*`] = `@skyscanner/backpack-web/${pkg}`;
+  importPaths[`${pkg}/src/*`] = `@skyscanner-internal/backpack-web/${pkg}`;
 }
 
 const config = {

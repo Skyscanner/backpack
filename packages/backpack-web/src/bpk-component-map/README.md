@@ -11,14 +11,14 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
-import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
-import LandmarkIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/landmark';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
+import { withRtlSupport } from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import LandmarkIconSm from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/landmark';
 import AirportsIconSm from '../../packages/bpk-component-icon/sm/airports';
 import BpkMap, {
   BpkIconMarker,
   BpkOverlayView,
-} from '@skyscanner/backpack-web/bpk-component-map';
+} from '@skyscanner-internal/backpack-web/bpk-component-map';
 
 const AlignedLandmarkIconSm = withRtlSupport(LandmarkIconSm);
 const AlignedAirportsIconSm = withRtlSupport(AirportsIconSm);
@@ -64,7 +64,7 @@ Price markers are used to display clickable prices on a map.
 import BpkMap, {
   BpkPriceMarker,
   MARKER_STATUSES,
-} from '@skyscanner/backpack-web/bpk-component-map';
+} from '@skyscanner-internal/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -104,7 +104,7 @@ Price markers are used to display clickable prices on a map.
 import BpkMap, {
   BpkPriceMarker,
   MARKER_STATUSES,
-} from '@skyscanner/backpack-web/bpk-component-map';
+} from '@skyscanner-internal/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkMap
@@ -155,7 +155,7 @@ BpkPriceMarkerButton is a marker-style button typically used on maps.
 import BpkMap, {
   BpkPriceMarkerButton,
   MARKER_STATUSES,
-} from '@skyscanner/backpack-web/bpk-component-map';
+} from '@skyscanner-internal/backpack-web/bpk-component-map';
 
 export default () => (
   <BpkPriceMarkerButton
@@ -193,7 +193,7 @@ If you intend to include multiple maps on one page, it's better to load the Goog
 ```js
 import BpkMap, {
   withGoogleMapsScript,
-} from '@skyscanner/backpack-web/bpk-component-map';
+} from '@skyscanner-internal/backpack-web/bpk-component-map';
 
 const BpkMapWithScript = withGoogleMapsScript(BpkMap);
 

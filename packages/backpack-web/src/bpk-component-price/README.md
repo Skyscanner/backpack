@@ -13,7 +13,7 @@ import BpkPrice, {
   SIZES,
   ALIGNS,
   VARIANTS,
-} from '@skyscanner/backpack-web/bpk-component-price';
+} from '@skyscanner-internal/backpack-web/bpk-component-price';
 
 export default () => (
   <BpkPrice

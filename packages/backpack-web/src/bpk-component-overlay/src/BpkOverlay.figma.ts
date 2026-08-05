@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A17397
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-overlay/src/BpkOverlay.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-overlay/src/BpkOverlay.tsx
 // component=BpkOverlay
 
 import figma from "figma"
@@ -47,8 +47,8 @@ const style = figma.selectedInstance.getEnum("Style", {
 export default {
   id: "BpkOverlay",
   imports: [
-    "import BpkImage from '@skyscanner/backpack-web/bpk-component-image';",
-    "import BpkOverlay, { OVERLAY_TYPES } from '@skyscanner/backpack-web/bpk-component-overlay';",
+    "import BpkImage from '@skyscanner-internal/backpack-web/bpk-component-image';",
+    "import BpkOverlay, { OVERLAY_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-overlay';",
   ],
   example: figma.code`<BpkOverlay${figma.helpers.react.renderProp(
     "overlayType",

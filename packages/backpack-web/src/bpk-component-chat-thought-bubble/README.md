@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkChatThoughtBubble from '@skyscanner/backpack-web/bpk-component-chat-thought-bubble';
+import BpkChatThoughtBubble from '@skyscanner-internal/backpack-web/bpk-component-chat-thought-bubble';
 
 export default () => (
   <BpkChatThoughtBubble content="AI is thinking" />

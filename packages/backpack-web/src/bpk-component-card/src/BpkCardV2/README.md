@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### Basic usage
 
 ```tsx
-import { BpkCardV2 } from '@skyscanner/backpack-web/bpk-component-card';
+import { BpkCardV2 } from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCardV2.Root>
@@ -37,7 +37,7 @@ Use the `variant` prop to control the card's visual treatment. Available values 
 import {
   BpkCardV2,
   CARD_V2_VARIANTS,
-} from '@skyscanner/backpack-web/bpk-component-card';
+} from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCardV2.Root variant={CARD_V2_VARIANTS.outlined}>
@@ -54,7 +54,7 @@ Use the `bgColor` prop to set the card's background surface color. Available val
 import {
   BpkCardV2,
   CARD_V2_SURFACE_COLORS,
-} from '@skyscanner/backpack-web/bpk-component-card';
+} from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCardV2.Root bgColor={CARD_V2_SURFACE_COLORS.surfaceElevated}>
@@ -68,7 +68,7 @@ export default () => (
 Use `templateColumns` on `BpkCardV2.Body` to create responsive multi-column layouts. Add a `BpkCardV2.Divider` between `BpkCardV2.Section` children and include an `auto` column in `templateColumns` to reserve space for it.
 
 ```tsx
-import { BpkCardV2 } from '@skyscanner/backpack-web/bpk-component-card';
+import { BpkCardV2 } from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCardV2.Root>
@@ -95,7 +95,7 @@ Passing `bgColor` alongside `variant="carsPrompt"` is a **TypeScript error** —
 import {
   BpkCardV2,
   CARD_V2_VARIANTS,
-} from '@skyscanner/backpack-web/bpk-component-card';
+} from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   // bgColor must not be set here — TypeScript will report an error if you try.

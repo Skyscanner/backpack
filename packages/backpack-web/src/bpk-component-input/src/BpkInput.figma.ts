@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10872%3A5030
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-input/src/BpkInput.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-input/src/BpkInput.tsx
 // component=BpkInput
 
 import figma from "figma"
@@ -39,7 +39,7 @@ const dockedLast = figma.selectedInstance.getEnum("Docking", {
 export default {
   id: "BpkInput",
   imports: [
-    "import BpkInput from '@skyscanner/backpack-web/bpk-component-input';",
+    "import BpkInput from '@skyscanner-internal/backpack-web/bpk-component-input';",
   ],
   example: figma.code`<BpkInput id="input-id" name="" value=""${figma.helpers.react.renderProp(
     "large",

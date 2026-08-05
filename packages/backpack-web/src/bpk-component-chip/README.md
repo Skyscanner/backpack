@@ -19,8 +19,8 @@ import BpkSelectableChip, {
   chipDefaultThemeAttributes,
   chipOnDarkThemeAttributes,
   chipOnImageThemeAttributes,
-} from '@skyscanner/backpack-web/bpk-component-chip';
-import BeachIconSm from '@skyscanner/backpack-web/bpk-component-icon/sm/beach';
+} from '@skyscanner-internal/backpack-web/bpk-component-chip';
+import BeachIconSm from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/beach';
 
 export default () => (
   <div style={{ display: 'flex' }}>

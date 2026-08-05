@@ -10,10 +10,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
-import { withRtlSupport } from '@skyscanner/backpack-web/bpk-component-icon';
-import FlightIcon from '@skyscanner/backpack-web/bpk-component-icon/lg/flight';
-import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkLabel from '@skyscanner-internal/backpack-web/bpk-component-label';
+import { withRtlSupport } from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import FlightIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/lg/flight';
+import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 
 const BpkFlightIcon = withRtlSupport(FlightIcon);
 
@@ -109,13 +109,13 @@ class MyComponent extends Component {
 The default export is now **BpkAutosuggest** (V2):
 
 ```js
-import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkAutosuggest from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 ```
 
 The legacy implementation is still available as a named export:
 
 ```js
-import { BpkAutosuggestLegacy } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import { BpkAutosuggestLegacy } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 ```
 
 - **Migration guide**: see `docs/migrating-from-v1-to-v2.md`.

@@ -8,10 +8,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ## Usage
 
-> **RTL support:** `BpkCheckboxCard` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
+> **RTL support:** `BpkCheckboxCard` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner-internal/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
 
 ```tsx
-import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from '@skyscanner-internal/backpack-web/bpk-component-checkbox-card';
 
 export default () => (
   <BpkCheckboxCard.Root
@@ -33,7 +33,7 @@ export default () => (
 The `cars` variant is intended for the cars product context. It uses the same styling as `onCanvasDefault` but **automatically renders the corner `Indicator`** — there is no need to add `<BpkCheckboxCard.Indicator />` manually.
 
 ```tsx
-import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from '@skyscanner/backpack-web/bpk-component-checkbox-card';
+import { BpkCheckboxCard, CHECKBOX_CARD_VARIANTS } from '@skyscanner-internal/backpack-web/bpk-component-checkbox-card';
 
 export default () => (
   <BpkCheckboxCard.Root

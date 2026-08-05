@@ -62,8 +62,8 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 **Step 0.1 — Determine review mode:**
 
 - **PR mode**: message contains a `github.com/.../pull/NNN` URL
-  - Extract PR number; run `gh pr view NNN --repo Skyscanner/backpack --json headRefOid,files,state,isDraft,body`
-  - Link format: `https://github.com/Skyscanner/backpack/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
+  - Extract PR number; run `gh pr view NNN --repo Skyscanner/design-system --json headRefOid,files,state,isDraft,body`
+  - Link format: `https://github.com/Skyscanner/design-system/blob/[HEAD_COMMIT_SHA]/[PATH]#L[START]-L[END]`
   - **Autopost: OFF by default in PR mode.** Output to conversation only unless user explicitly says "post" / "post to GitHub" / `BACKPACK_REVIEW_AUTOPOST=true`.
     When autopost is enabled, uses the GitHub Reviews API to place **inline comments on diff lines**.
     Issues with confidence 75–90 require human confirmation before posting.
@@ -88,7 +88,7 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 - **Read the full PR description** to extract motivation, design decisions, known trade-offs,
   and any reviewer notes. In local mode, first check for an open PR on the current branch:
   ```bash
-  gh pr list --repo Skyscanner/backpack --head $(git branch --show-current) --json number,body,state
+  gh pr list --repo Skyscanner/design-system --head $(git branch --show-current) --json number,body,state
   ```
   If a PR exists, read its description. If not, fall back to commit messages:
   `git log main...HEAD --format='%s%n%b'`
@@ -98,7 +98,7 @@ If the invocation contains `learn`, read and follow `learn-mode.md`. Stop here.
 **Inline review comment fetch (PR mode only — skip in local mode):**
 Fetch the current PR's own inline review comments (line-level diff threads):
 ```bash
-gh api repos/Skyscanner/backpack/pulls/[NUMBER]/comments --paginate \
+gh api repos/Skyscanner/design-system/pulls/[NUMBER]/comments --paginate \
   --jq '[.[] | {id:.id, path:.path, line:(.line // .original_line), body:.body, in_reply_to_id:.in_reply_to_id}]'
 ```
 Note: `.line` is `null` for outdated comments (position became stale after a subsequent push).
@@ -108,7 +108,7 @@ Group comments into threads by `in_reply_to_id` (top-level = no `in_reply_to_id`
 
 Classify each thread into one of two sets:
 - **RESOLVED_SET**: thread has at least one reply containing a resolution signal — a commit URL
-  (`github.com/Skyscanner/backpack/pull/NNN/commits/` or `github.com/Skyscanner/backpack/commit/`),
+  (`github.com/Skyscanner/design-system/pull/NNN/commits/` or `github.com/Skyscanner/design-system/commit/`),
   or the words "Done", "Fixed", "Fixed in", "updated in", "addressed in", "resolved"
   (case-insensitive). Record `{path, line, summary}` for each thread.
   If `line` is still `null` after the fallback, record with `line: null` and match by `path` only
@@ -127,13 +127,13 @@ When dispatching, pass the changed file list (newline-separated full paths) from
 Extract component names from changed paths (max 3).
 - **Normal case** (≤70% brand-new files): search by component name — finds PRs for the same component:
   ```bash
-  gh pr list --repo Skyscanner/backpack --state merged --limit 5 \
+  gh pr list --repo Skyscanner/design-system --state merged --limit 5 \
     --search "[COMPONENT_NAME]" --json number,title,mergedAt
   ```
 - **All-new-files case** (>70% brand-new): widen the query to recent PRs generally, because new component
   authors are the highest-risk group for anti-patterns they haven't seen yet. Search a broader set:
   ```bash
-  gh pr list --repo Skyscanner/backpack --state merged --limit 20 \
+  gh pr list --repo Skyscanner/design-system --state merged --limit 20 \
     --search "bpk-component" --json number,title,mergedAt
   ```
 
@@ -142,11 +142,11 @@ Collect every PR number returned from Step 1 (up to 15 total). For each PR, issu
 PR-level comments and one for inline diff comments — all in a single message:
 ```bash
 # PR-level (issue) comments — includes review summaries
-gh api repos/Skyscanner/backpack/issues/[N]/comments --paginate \
+gh api repos/Skyscanner/design-system/issues/[N]/comments --paginate \
   --jq '[.[].body]'
 
 # Inline diff comments — line-level review threads
-gh api repos/Skyscanner/backpack/pulls/[N]/comments --paginate \
+gh api repos/Skyscanner/design-system/pulls/[N]/comments --paginate \
   --jq '[.[].body]'
 ```
 Collect and concatenate all returned body strings into raw comment text.
@@ -346,7 +346,7 @@ Below-threshold observations (confidence 60–(threshold-1), not blocking):
 
 **Conversation:** Print the same `### Code review` block as local mode (for human review),
 but links use full SHA permalinks:
-`https://github.com/Skyscanner/backpack/blob/[SHA]/[PATH]#L[START]-L[END]`
+`https://github.com/Skyscanner/design-system/blob/[SHA]/[PATH]#L[START]-L[END]`
 
 Observations (if any) appear in the conversation block only — they are **never included in the GitHub payload**.
 
@@ -374,7 +374,7 @@ cat > /tmp/bpk_review_[NUMBER].json << 'ENDJSON'
 }
 ENDJSON
 
-gh api repos/Skyscanner/backpack/pulls/[NUMBER]/reviews \
+gh api repos/Skyscanner/design-system/pulls/[NUMBER]/reviews \
   --method POST \
   --input /tmp/bpk_review_[NUMBER].json \
   --jq '{id: .id, state: .state, html_url: .html_url}'

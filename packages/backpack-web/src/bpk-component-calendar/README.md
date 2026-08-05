@@ -12,10 +12,10 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import { Component } from 'react';
 import BpkCalendar, {
   CALENDAR_SELECTION_TYPE,
-} from '@skyscanner/backpack-web/bpk-component-calendar';
+} from '@skyscanner-internal/backpack-web/bpk-component-calendar';
 import BpkInput, {
   INPUT_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-input';
+} from '@skyscanner-internal/backpack-web/bpk-component-input';
 import format from 'date-fns/format';
 
 const formatDateFull = (date) => format(date, 'EEEE, do MMMM yyyy');

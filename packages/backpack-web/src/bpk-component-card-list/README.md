@@ -24,7 +24,7 @@ import BpkCardList, {
   LAYOUTS,
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-card-list';
+} from '@skyscanner-internal/backpack-web/bpk-component-card-list';
 
 export default () => {
   const [expandText, setExpandText] = useState('Show more');
@@ -65,7 +65,7 @@ import BpkCardList, {
   LAYOUTS,
   ACCESSORY_DESKTOP_TYPES,
   ACCESSORY_MOBILE_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-card-list';
+} from '@skyscanner-internal/backpack-web/bpk-component-card-list';
 
 export default () => (
   <BpkCardList
@@ -97,13 +97,13 @@ You can pass React nodes containing SVGs to the `buttonContent` property.
 ```js
 import BpkCardList, {
   LAYOUTS,
-} from '@skyscanner/backpack-web/bpk-component-card-list';
+} from '@skyscanner-internal/backpack-web/bpk-component-card-list';
 
 import {
   withButtonAlignment,
   withLargeButtonAlignment,
-} from '@skyscanner/backpack-web/bpk-component-icon';
-import BpkSmallFlightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/flight';
+} from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import BpkSmallFlightIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/flight';
 
 const AlignedRtlSupportedBpkSmallFlightIcon = withButtonAlignment(
   withRtlSupport(BpkSmallFlightIcon),
@@ -146,7 +146,7 @@ You can use the `className` property to apply styles that set a minimum width fo
 Apply the class to the card, then input it into BpkCardList inside a list:
 
 ```js
-import { BpkCard } from '@skyscanner/backpack-web/bpk-component-card';
+import { BpkCard } from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCardList
@@ -181,7 +181,7 @@ By setting `buttonHref`, you can force the button to render as a `<a>` element i
 ```js
 import BpkCardList, {
   LAYOUTS,
-} from '@skyscanner/backpack-web/bpk-component-card-list';
+} from '@skyscanner-internal/backpack-web/bpk-component-card-list';
 
 export default () => (
   <BpkCardList
@@ -209,8 +209,8 @@ You can include a chip group for filtering or categorizing items within the card
 ```js
 import BpkCardList, {
   LAYOUTS,
-} from '@skyscanner/backpack-web/bpk-component-card-list';
-import BpkMultiSelectChipGroup from '@skyscanner/backpack-web/bpk-component-chip-group';
+} from '@skyscanner-internal/backpack-web/bpk-component-card-list';
+import BpkMultiSelectChipGroup from '@skyscanner-internal/backpack-web/bpk-component-chip-group';
 
 const [selectedIndex, setSelectedIndex] = useState(0);
 const cardListsContent = [

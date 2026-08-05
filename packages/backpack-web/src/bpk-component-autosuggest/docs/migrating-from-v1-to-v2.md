@@ -1,6 +1,6 @@
 ## Autosuggest (legacy) → Autosuggest (V2) migration guide (Web)
 
-This guide is for consumers of `@skyscanner/backpack-web/bpk-component-autosuggest`. It helps you migrate from **Autosuggest (legacy)** (named export `BpkAutosuggestLegacy`, based on `react-autosuggest`) to **Autosuggest (V2)** (**default export `BpkAutosuggest`**, based on `downshift`).
+This guide is for consumers of `@skyscanner-internal/backpack-web/bpk-component-autosuggest`. It helps you migrate from **Autosuggest (legacy)** (named export `BpkAutosuggestLegacy`, based on `react-autosuggest`) to **Autosuggest (V2)** (**default export `BpkAutosuggest`**, based on `downshift`).
 
 **Autosuggest (V2) is a modern redesign**: it significantly improves accessibility (a11y), maintainability, and alignment with modern React/web platform patterns. As a result, it **does not preserve legacy (react-autosuggest-style) callback signatures** — this is an intentional breaking change.
 
@@ -11,13 +11,13 @@ Most consumers can migrate with minimal code changes by **removing external inpu
 - **Legacy (v1)**: named export
 
 ```js
-import { BpkAutosuggestLegacy } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import { BpkAutosuggestLegacy } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 ```
 
 - **V2**: default export
 
 ```js
-import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkAutosuggest from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 ```
 
 > The first migration step is usually changing the import from named → default.
@@ -83,8 +83,8 @@ Below is a typical “type → fetch suggestions → render → select” flow.
 
 ```js
 import { Component } from 'react';
-import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
-import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkLabel from '@skyscanner-internal/backpack-web/bpk-component-label';
+import { BpkAutosuggestLegacy, BpkAutosuggestSuggestion } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 
 class MyComponent extends Component {
   state = { value: '', suggestions: [] };
@@ -134,10 +134,10 @@ This example uses hooks for clarity; **class components can be migrated in the s
 
 ```tsx
 import { useState } from 'react';
-import BpkLabel from '@skyscanner/backpack-web/bpk-component-label';
+import BpkLabel from '@skyscanner-internal/backpack-web/bpk-component-label';
 import BpkAutosuggest, {
   BpkAutosuggestSuggestion,
-} from '@skyscanner/backpack-web/bpk-component-autosuggest';
+} from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 
 type Office = { name: string; code: string; country: string };
 
@@ -341,7 +341,7 @@ const inputRef = useRef<HTMLInputElement | null>(null);
 V2 still supports `theme` for overriding classNames. It also exports `defaultTheme` for extending:
 
 ```ts
-import BpkAutosuggest, { defaultTheme } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkAutosuggest, { defaultTheme } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 
 <BpkAutosuggest
   // ...
@@ -418,4 +418,3 @@ The skill has knowledge of the following non-obvious edge cases (see sections ab
 > 1. Read through the generated code before committing
 > 2. Cross-check against the API mapping table in [section 4](#4-api-mapping-table-v1--v2)
 > 3. Run your tests to verify behavior is preserved
-

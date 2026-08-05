@@ -24,7 +24,7 @@ import figma from "figma"
 export default {
   id: "BpkSpinner",
   imports: [
-    "import { BpkSpinner } from '@skyscanner/backpack-web/bpk-component-spinner';",
+    "import { BpkSpinner } from '@skyscanner-internal/backpack-web/bpk-component-spinner';",
   ],
   example: figma.code`<BpkSpinner />`,
 }

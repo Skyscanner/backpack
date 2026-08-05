@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkTicket from '@skyscanner/backpack-web/bpk-component-ticket';
+import BpkTicket from '@skyscanner-internal/backpack-web/bpk-component-ticket';
 
 export default () => (
   <BpkTicket stub="Lorem ipsum dolor sit amet.">

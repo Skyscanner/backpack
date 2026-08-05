@@ -2,7 +2,7 @@
 
 > Backpack datatable component.
 
-To migrate to `@skyscanner/backpack-web` v32, see [migration guide](./docs/migrating.md) for details on how to migrate to the latest version of datatable.
+To migrate to `@skyscanner-internal/backpack-web` v32, see [migration guide](./docs/migrating.md) for details on how to migrate to the latest version of datatable.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import { BpkDataTable, BpkDataTableColumn } from '@skyscanner/backpack-web/bpk-component-datatable';
+import { BpkDataTable, BpkDataTableColumn } from '@skyscanner-internal/backpack-web/bpk-component-datatable';
 
 const rows = [
   { name: 'Jose', description: 'Software Engineer' },
@@ -47,7 +47,7 @@ By default `BpkDataTable` sorts the column alphanumerically using the value of t
 
 ```js
 import { Fragment } from 'react';
-import { BpkDataTable, BpkDataTableColumn } from '@skyscanner/backpack-web/bpk-component-datatable';
+import { BpkDataTable, BpkDataTableColumn } from '@skyscanner-internal/backpack-web/bpk-component-datatable';
 
 const complexRows = [
     {

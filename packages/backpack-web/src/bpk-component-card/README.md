@@ -11,7 +11,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ### BpkCard
 
 ```tsx
-import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
+import BpkCard from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCard>
@@ -28,7 +28,7 @@ export default () => (
 import {
   BpkDividedCard,
   ORIENTATION,
-} from '@skyscanner/backpack-web/bpk-component-card';
+} from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <>
@@ -51,9 +51,9 @@ export default () => (
 ### BpkCardWrapper
 
 ```tsx
-import { BpkCardWrapper } from '@skyscanner/backpack-web/bpk-component-card';
+import { BpkCardWrapper } from '@skyscanner-internal/backpack-web/bpk-component-card';
 import { coreAccentDay } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
-import BpkCard from '@skyscanner/backpack-web/bpk-component-card';
+import BpkCard from '@skyscanner-internal/backpack-web/bpk-component-card';
 
 export default () => (
   <BpkCardWrapper

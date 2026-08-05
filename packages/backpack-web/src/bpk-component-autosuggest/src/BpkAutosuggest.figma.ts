@@ -24,7 +24,7 @@ import figma from "figma"
 export default {
   id: "BpkAutosuggest",
   imports: [
-    "import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest';",
+    "import BpkAutosuggest from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';",
   ],
   example: figma.code`<BpkAutosuggest />`,
 }

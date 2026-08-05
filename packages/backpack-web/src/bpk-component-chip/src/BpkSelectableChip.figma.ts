@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A52134
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-chip/src/BpkSelectableChip.tsx
 // component=BpkSelectableChip
 
 import figma from "figma"
@@ -41,7 +41,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Selectable") {
   template = {
     id: "BpkSelectableChip",
     imports: [
-      "import BpkSelectableChip from '@skyscanner/backpack-web/bpk-component-chip';",
+      "import BpkSelectableChip from '@skyscanner-internal/backpack-web/bpk-component-chip';",
     ],
     example: figma.code`<BpkSelectableChip onClick={() => null}${figma.helpers.react.renderProp(
       "leadingAccessoryView",
@@ -76,7 +76,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Selectable") {
   template = {
     id: "BpkDropdownChip",
     imports: [
-      "import BpkDropdownChip from '@skyscanner/backpack-web/bpk-component-chip';",
+      "import BpkDropdownChip from '@skyscanner-internal/backpack-web/bpk-component-chip';",
     ],
     example: figma.code`<BpkDropdownChip onClick={() => null}${figma.helpers.react.renderProp(
       "accessibilityLabel",
@@ -108,7 +108,7 @@ if (figma.selectedInstance.getPropertyValue("Type") === "Selectable") {
   template = {
     id: "BpkDismissibleChip",
     imports: [
-      "import BpkDismissibleChip from '@skyscanner/backpack-web/bpk-component-chip';",
+      "import BpkDismissibleChip from '@skyscanner-internal/backpack-web/bpk-component-chip';",
     ],
     example: figma.code`<BpkDismissibleChip onClick={() => null}${figma.helpers.react.renderProp(
       "leadingAccessoryView",

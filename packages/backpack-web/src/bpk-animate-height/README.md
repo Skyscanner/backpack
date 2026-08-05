@@ -14,7 +14,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import AnimateHeight from '@skyscanner/backpack-web/bpk-animate-height';
+import AnimateHeight from '@skyscanner-internal/backpack-web/bpk-animate-height';
 import { Component } from 'react';
 
 class AnimateHeightContainer extends Component {

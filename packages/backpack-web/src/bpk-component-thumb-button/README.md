@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```tsx
 import { useState } from 'react';
-import BpkThumbButton from '@skyscanner/backpack-web/bpk-component-thumb-button';
+import BpkThumbButton from '@skyscanner-internal/backpack-web/bpk-component-thumb-button';
 
 export default () => {
   const [selectedThumb, setSelectedThumb] = useState<'up' | 'down' | null>(null);

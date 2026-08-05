@@ -10,8 +10,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { useRef } from 'react';
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
-import BpkTooltip from '@skyscanner/backpack-web/bpk-component-tooltip';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
+import BpkTooltip from '@skyscanner-internal/backpack-web/bpk-component-tooltip';
 
 const App = () => (
   const targetRef = useRef(null);

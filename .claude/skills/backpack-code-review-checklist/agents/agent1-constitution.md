@@ -13,7 +13,7 @@ by Agent 2, and accessibility/testing checks are handled by Agent 3.
 
 **PR mode:**
 ```bash
-gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.ts' '*.tsx'
+gh pr diff [NUMBER] --repo Skyscanner/design-system -- '*.ts' '*.tsx'
 ```
 **Local mode:**
 ```bash

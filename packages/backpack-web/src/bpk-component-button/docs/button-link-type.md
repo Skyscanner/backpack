@@ -19,7 +19,7 @@ The link button (`type="link"` or `type="linkOnDark"`) is styled like `BpkLink` 
 ## Basic Usage
 
 ```jsx
-import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import { BpkButton, BUTTON_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 // Default link with underline
 <BpkButton type={BUTTON_TYPES.link}>
@@ -49,9 +49,9 @@ import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-
 Use the `leadingIcon` and `trailingIcon` props to add icons before or after the button label. Icons are automatically aligned and spaced.
 
 ```jsx
-import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
-import SmallLightningIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/lightning';
-import SmallLongArrowRightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
+import { BpkButton, BUTTON_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-button';
+import SmallLightningIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/lightning';
+import SmallLongArrowRightIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/long-arrow-right';
 
 // Link with trailing icon
 <BpkButton type={BUTTON_TYPES.link} trailingIcon={<SmallLongArrowRightIcon />}>
@@ -96,13 +96,13 @@ import SmallLongArrowRightIcon from '@skyscanner/backpack-web/bpk-component-icon
 When wrapping text and icon inside `BpkText` or `<span>`, there is **no automatic spacing** between them. To ensure proper vertical alignment, the icon should be wrapped with `withButtonAlignment`.
 
 ```jsx
-import { BpkButton, BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import { BpkButton, BUTTON_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-button';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
 import {
   withButtonAlignment,
   withRtlSupport,
-} from '@skyscanner/backpack-web/bpk-component-icon';
-import SmallLongArrowRightIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/long-arrow-right';
+} from '@skyscanner-internal/backpack-web/bpk-component-icon';
+import SmallLongArrowRightIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/long-arrow-right';
 
 const AlignedSmallLongArrowRightIcon = withButtonAlignment(
   withRtlSupport(SmallLongArrowRightIcon),

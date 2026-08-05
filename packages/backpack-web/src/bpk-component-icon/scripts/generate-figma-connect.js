@@ -165,7 +165,7 @@ function generateBatchJson(iconSets, smIcons, lgIcons) {
           url,
           id: `bpk-icon-sm-${name}`,
           componentName: `BpkSmall${pascal}Icon`,
-          importPath: `@skyscanner/backpack-web/bpk-component-icon/sm/${smMatch}`,
+          importPath: `@skyscanner-internal/backpack-web/bpk-component-icon/sm/${smMatch}`,
           variantProp,
           sizeVariant: '16',
         });
@@ -177,7 +177,7 @@ function generateBatchJson(iconSets, smIcons, lgIcons) {
           url,
           id: `bpk-icon-lg-${name}`,
           componentName: `BpkLarge${pascal}Icon`,
-          importPath: `@skyscanner/backpack-web/bpk-component-icon/lg/${lgMatch}`,
+          importPath: `@skyscanner-internal/backpack-web/bpk-component-icon/lg/${lgMatch}`,
           variantProp,
           sizeVariant: '24',
         });

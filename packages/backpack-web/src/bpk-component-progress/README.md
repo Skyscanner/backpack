@@ -10,7 +10,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkProgress from '@skyscanner/backpack-web/bpk-component-progress';
+import BpkProgress from '@skyscanner-internal/backpack-web/bpk-component-progress';
 
 const Progress = () => (
   <BpkProgress

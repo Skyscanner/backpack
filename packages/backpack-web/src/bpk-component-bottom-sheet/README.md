@@ -10,8 +10,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 
 ```js
 import { Component } from 'react';
-import BpkBottomSheet, { PADDING_TYPE } from '@skyscanner/backpack-web/bpk-component-bottom-sheet';
-import BpkButton from '@skyscanner/backpack-web/bpk-component-button';
+import BpkBottomSheet, { PADDING_TYPE } from '@skyscanner-internal/backpack-web/bpk-component-bottom-sheet';
+import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button';
 
 class App extends Component {
   constructor() {
@@ -64,7 +64,7 @@ Ensure your body/children is accessible via Voice Over. You may need to specify 
 The `title` prop accepts either a string or a custom React component:
 
 ```js
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 <BpkBottomSheet
   id="my-bottom-sheet"

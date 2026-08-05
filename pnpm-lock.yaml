@@ -318,7 +318,7 @@ importers:
 
   libs/backpack-storybook-host:
     dependencies:
-      '@skyscanner/backpack-web':
+      '@skyscanner-internal/backpack-web':
         specifier: workspace:*
         version: link:../../packages/backpack-web
       bpk-storybook-utils:

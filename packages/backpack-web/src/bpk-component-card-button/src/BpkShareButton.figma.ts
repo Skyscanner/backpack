@@ -24,7 +24,7 @@ import figma from "figma"
 export default {
   id: "BpkSaveButton",
   imports: [
-    "import { BpkSaveButton } from '@skyscanner/backpack-web/bpk-component-card-button';",
+    "import { BpkSaveButton } from '@skyscanner-internal/backpack-web/bpk-component-card-button';",
   ],
   example: figma.code`<BpkSaveButton />`,
 }

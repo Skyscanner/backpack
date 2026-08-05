@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkImage from '@skyscanner/backpack-web/bpk-component-image';
+import BpkImage from '@skyscanner-internal/backpack-web/bpk-component-image';
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 export default () => (
@@ -31,7 +31,7 @@ The `BpkImage` component will only load images if `inView` is true.
 Using this HOC can make pages load faster and prevent data being used to display images which are never seen by the user.
 
 ```js
-import BpkImage, { withLazyLoading, withLoadingBehavior } from '@skyscanner/backpack-web/bpk-component-image';
+import BpkImage, { withLazyLoading, withLoadingBehavior } from '@skyscanner-internal/backpack-web/bpk-component-image';
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 // Support for SSR
@@ -55,7 +55,7 @@ export default () => (
 When the `loading` prop is set true, a spinner will be displayed. When this changes to false, the spinner will fade away and the loaded image and content will fade into view.
 
 ```js
-import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from '@skyscanner/backpack-web/bpk-component-image';
+import BpkImage, { BpkBackgroundImage, withLazyLoading, withLoadingBehavior } from '@skyscanner-internal/backpack-web/bpk-component-image';
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const FadingImage = withLoadingBehavior(BpkImage);
@@ -87,7 +87,7 @@ export default () => (
 Combining `withLazyLoading` and `withLoadingBehavior` gives us a lazily loaded image that will show a spinner while the image loads.
 
 ```js
-import BpkImage, { withLazyLoading, withLoadingBehavior } from '@skyscanner/backpack-web/bpk-component-image';
+import BpkImage, { withLazyLoading, withLoadingBehavior } from '@skyscanner-internal/backpack-web/bpk-component-image';
 import { breakpointDesktop, breakpointTablet } from '@skyscanner/bpk-foundations-web/tokens/base.es6';
 
 const documentIfExists = typeof window !== 'undefined' ? document : null;

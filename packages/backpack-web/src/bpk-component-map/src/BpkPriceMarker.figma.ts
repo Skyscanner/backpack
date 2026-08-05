@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10908%3A1778
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-map/src/BpkPriceMarker.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-map/src/BpkPriceMarker.tsx
 // component=BpkPriceMarker
 
 import figma from "figma"
@@ -37,7 +37,7 @@ const icon = figma.selectedInstance.getBoolean("Icon?", {
 export default {
   id: "BpkPriceMarker",
   imports: [
-    "import BpkPriceMarker from '@skyscanner/backpack-web/bpk-component-map';",
+    "import BpkPriceMarker from '@skyscanner-internal/backpack-web/bpk-component-map';",
   ],
   example: figma.code`<BpkPriceMarker accessibilityLabel="£370" position={{ latitude: 0.0, longitude: 0.0 }} label="£370"${figma.helpers.react.renderProp(
     "status",

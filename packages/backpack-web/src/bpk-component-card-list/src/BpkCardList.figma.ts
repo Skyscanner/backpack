@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A37194
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-card-list/src/BpkCardList.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-card-list/src/BpkCardList.tsx
 // component=BpkCardList
 
 import figma from "figma"
@@ -25,7 +25,7 @@ import figma from "figma"
 export default {
   id: "BpkCardList",
   imports: [
-    "import BpkCardList from '@skyscanner/backpack-web/bpk-component-card-list';",
+    "import BpkCardList from '@skyscanner-internal/backpack-web/bpk-component-card-list';",
   ],
   example: figma.code`<BpkCardList />`,
 }

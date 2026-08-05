@@ -483,7 +483,7 @@ All changes MUST:
 1. Changes are merged to `main` branch
 2. Version is bumped according to SemVer rules (using PR labels: major/minor/patch/skip-changelog)
 3. Changelog is updated (automatic via Release Drafter)
-4. Package is published to npm as `@skyscanner/backpack-web`
+4. Package is published to npm as `@skyscanner-internal/backpack-web`
 5. Storybook is deployed for visual documentation
 6. Notify #backpack Slack channel
 

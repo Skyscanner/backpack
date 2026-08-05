@@ -13,7 +13,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ```tsx
 import BpkSegmentedControl, {
   SEGMENT_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-segmented-control';
+} from '@skyscanner-internal/backpack-web/bpk-component-segmented-control';
 
 export default () => (
   <BpkSegmentedControl
@@ -35,7 +35,7 @@ import { useState, useMemo } from 'react';
 import BpkSegmentedControl, {
   useSegmentedControlPanels,
   SEGMENT_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-segmented-control';
+} from '@skyscanner-internal/backpack-web/bpk-component-segmented-control';
 
 const TabbedContent = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -122,7 +122,7 @@ Check out the full list of props on Skyscanner's [design system documentation we
 
 A composable, accessible segmented control backed by [Ark-UI SegmentGroup](https://ark-ui.com/react/docs/components/segment-group). Each segment is composed from slot components — `Item`, `ItemText`, `ItemControl`, and `ItemHiddenInput` — giving full control over content structure. Theming is driven by CSS custom properties so VDL 2.0 adopters can override tokens at any wrapper level.
 
-> **RTL support:** `BpkSegmentedControlV2` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
+> **RTL support:** `BpkSegmentedControlV2` is built on Ark UI and requires [`BpkProvider`](https://www.skyscanner.design/latest/components/layout/web) from `@skyscanner-internal/backpack-web/bpk-component-layout` for correct RTL layout. Wrap your application (or the relevant subtree) with `<BpkProvider>`.
 
 ### Basic usage
 
@@ -131,7 +131,7 @@ import { useState } from 'react';
 import {
   BpkSegmentedControlV2,
   SEGMENT_TYPES_V2,
-} from '@skyscanner/backpack-web/bpk-component-segmented-control';
+} from '@skyscanner-internal/backpack-web/bpk-component-segmented-control';
 
 const SortControl = () => {
   const [selected, setSelected] = useState('price');
@@ -187,9 +187,9 @@ const SortControl = () => {
 Wrap icon-only items with `BpkVisuallyHidden` to satisfy WCAG 4.1.2:
 
 ```tsx
-import BpkVisuallyHidden from '@skyscanner/backpack-web/bpk-component-visually-hidden';
-import GridLayoutIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/grid-layout';
-import ListIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/list';
+import BpkVisuallyHidden from '@skyscanner-internal/backpack-web/bpk-component-visually-hidden';
+import GridLayoutIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/grid-layout';
+import ListIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/list';
 
 <BpkSegmentedControlV2.Root label="View layout" defaultValue="grid">
   <BpkSegmentedControlV2.Indicator />

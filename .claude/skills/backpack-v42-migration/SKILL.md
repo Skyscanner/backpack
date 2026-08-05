@@ -1,6 +1,6 @@
 ---
 name: backpack-v42-migration
-description: Migrate a codebase from @skyscanner/backpack-web v41.x to v42.0. Handles BpkButtonV2 → BpkButton rename, deep import removal, and BpkAutosuggest legacy → V2 API migration. Use when upgrading Backpack to v42.
+description: Migrate a codebase from @skyscanner-internal/backpack-web v41.x to v42.0. Handles BpkButtonV2 → BpkButton rename, deep import removal, and BpkAutosuggest legacy → V2 API migration. Use when upgrading Backpack to v42.
 metadata:
   version: 1.0.0
   date: 2026-03-13
@@ -8,7 +8,7 @@ metadata:
 
 # Backpack Web v42.0 Migration
 
-This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0. It handles all breaking changes introduced in the major version bump.
+This skill migrates a codebase from `@skyscanner-internal/backpack-web` v41.x to v42.0.0. It handles all breaking changes introduced in the major version bump.
 
 ## Breaking Changes in v42
 
@@ -22,14 +22,14 @@ This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0.
 
 | Before (v41.x) | After (v42) |
 |---|---|
-| `import { BpkButtonV2 } from '@skyscanner/backpack-web/bpk-component-button'` | `import BpkButton from '@skyscanner/backpack-web/bpk-component-button'` |
+| `import { BpkButtonV2 } from '@skyscanner-internal/backpack-web/bpk-component-button'` | `import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'` |
 | `import { BpkButtonV2, BUTTON_TYPES } from '...'` | `import BpkButton, { BUTTON_TYPES } from '...'` |
-| `import type { ButtonType } from '.../bpk-component-button/src/BpkButtonV2/common-types'` | `import type { ButtonType } from '@skyscanner/backpack-web/bpk-component-button'` |
-| Any `@skyscanner/backpack-web/bpk-component-button/src/...` deep import | Use public API from `@skyscanner/backpack-web/bpk-component-button` |
+| `import type { ButtonType } from '.../bpk-component-button/src/BpkButtonV2/common-types'` | `import type { ButtonType } from '@skyscanner-internal/backpack-web/bpk-component-button'` |
+| Any `@skyscanner-internal/backpack-web/bpk-component-button/src/...` deep import | Use public API from `@skyscanner-internal/backpack-web/bpk-component-button` |
 | `<BpkButtonV2 ...>` in JSX | `<BpkButton ...>` in JSX |
 
 **Notes:**
-- Files that already use `import BpkButton from '@skyscanner/backpack-web/bpk-component-button'` are already compliant — no changes needed.
+- Files that already use `import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'` are already compliant — no changes needed.
 - Named exports like `BUTTON_TYPES` and `SIZE_TYPES` remain available from the package root.
 - In v41, the default export already resolved to `BpkButtonV2`, so teams can migrate to the supported import pattern **before** adopting v42.
 
@@ -53,8 +53,8 @@ This skill migrates a codebase from `@skyscanner/backpack-web` v41.x to v42.0.0.
 | `containerProps`, `valid` (top-level) | Removed — see Phase 3 |
 
 **Two migration paths:**
-- **Using V2 already** (`BpkAutosuggestV2`) → rename to default import: `import BpkAutosuggest from '@skyscanner/backpack-web/bpk-component-autosuggest'`
-- **Still on V1** → either migrate to V2 API (see Phase 3), or temporarily keep legacy behavior: `import { BpkAutosuggestLegacy } from '@skyscanner/backpack-web/bpk-component-autosuggest'`
+- **Using V2 already** (`BpkAutosuggestV2`) → rename to default import: `import BpkAutosuggest from '@skyscanner-internal/backpack-web/bpk-component-autosuggest'`
+- **Still on V1** → either migrate to V2 API (see Phase 3), or temporarily keep legacy behavior: `import { BpkAutosuggestLegacy } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest'`
 
 **Autosuggest migration is complex and context-dependent.** Each file needs careful analysis.
 
@@ -101,7 +101,7 @@ Scan the codebase to find all affected files. Run these searches:
    ```
    Grep: from.*bpk-component-.*/src/
    ```
-   Common example: `import type { InputProps } from '@skyscanner/backpack-web/bpk-component-input/src/common-types'`
+   Common example: `import type { InputProps } from '@skyscanner-internal/backpack-web/bpk-component-input/src/common-types'`
 
 **IMPORTANT discovery notes:**
 - The JSX grep (`<BpkButtonV2`) gives the true file count. Import-line greps will undercount because multi-line imports split `BpkButtonV2` and `from '...'` across lines.
@@ -133,7 +133,7 @@ Ask the user which categories to proceed with. Default: all.
 The migration script should perform these steps **in order** for each file:
 
 1. **Fix deep imports first** (before renaming, so the path `BpkButtonV2` is still matchable):
-   - Replace `@skyscanner/backpack-web/bpk-component-button/src/BpkButtonV2/common-types` → `@skyscanner/backpack-web/bpk-component-button`
+   - Replace `@skyscanner-internal/backpack-web/bpk-component-button/src/BpkButtonV2/common-types` → `@skyscanner-internal/backpack-web/bpk-component-button`
    - For any other deep `src/` import, map to the public API equivalent
 
 2. **Rename `BpkButtonV2` → `BpkButton` globally** in the file (covers JSX, types, variables, import names):
@@ -315,7 +315,7 @@ const { inputRef, onBlur, onClear, onFocus, ref, value, ...rest } = inputProps;
 V2 exports `defaultTheme`. Always spread it first when customising:
 
 ```typescript
-import BpkAutosuggest, { defaultTheme } from '@skyscanner/backpack-web/bpk-component-autosuggest';
+import BpkAutosuggest, { defaultTheme } from '@skyscanner-internal/backpack-web/bpk-component-autosuggest';
 
 // Desktop
 const desktopProps = { isDesktop: true, theme: defaultTheme, renderInputComponent };
@@ -646,7 +646,7 @@ Present the user with:
 This skill lives in this repo but is designed to help all Skyscanner codebases upgrade to Backpack v42.
 The learnings from this run could help other teams. Would you like to contribute them back?
 
-**How:** Open a PR to https://github.com/Skyscanner/backpack adding or updating the v42
+**How:** Open a PR to https://github.com/Skyscanner/design-system adding or updating the v42
 migration guide with the new learnings from this run.
 
 I can help you:
@@ -655,9 +655,9 @@ I can help you:
 ```
 
 If the user agrees:
-1. Ask which remote fork/branch to push to (they may not have write access to `Skyscanner/backpack` directly)
+1. Ask which remote fork/branch to push to (they may not have write access to `Skyscanner/design-system` directly)
 2. Prepare the content — adapt the learnings from SKILL.md into the format used by Backpack's migration documentation
-3. Help create the PR targeting `Skyscanner/backpack`
+3. Help create the PR targeting `Skyscanner/design-system`
 
 **Note:** Even if the user declines the upstream contribution, always update the local SKILL.md. The local improvements compound across runs within this org.
 
@@ -680,7 +680,7 @@ If the user agrees:
 import {
   BpkButtonV2,
   BUTTON_TYPES,
-} from '@skyscanner/backpack-web/bpk-component-button';
+} from '@skyscanner-internal/backpack-web/bpk-component-button';
 ```
 Single-line grep patterns only match ~25% of files. Always use the JSX grep (`<BpkButtonV2`) as the source of truth for file counts.
 
@@ -701,7 +701,7 @@ Always use `--exclude-dir=node_modules` with grep, or target specific source dir
 ### Default import aliased as BpkButtonV2 is a distinct pattern
 Some files already use the correct default import but alias it:
 ```javascript
-import BpkButtonV2, { BUTTON_TYPES } from '@skyscanner/backpack-web/bpk-component-button';
+import BpkButtonV2, { BUTTON_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-button';
 ```
 Both import-line greps miss this entirely — only `<BpkButtonV2` JSX grep catches it. The script handles it correctly without changes (step 2's global rename fixes the alias; step 3 skips it because `BpkButton` isn't in the named imports list).
 
@@ -774,7 +774,7 @@ Discovery should also check:
 ```
 Grep: from.*bpk-component-.*/src/
 ```
-Common example: `import type { InputProps } from '@skyscanner/backpack-web/bpk-component-input/src/common-types'`
+Common example: `import type { InputProps } from '@skyscanner-internal/backpack-web/bpk-component-input/src/common-types'`
 
 ### Deep imports migration: not all types are re-exported at component roots
 When migrating deep `src/` imports to public roots, many components only re-export a subset of their internal types. Classified by fix strategy:

@@ -9,8 +9,8 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkChatNotification from '@skyscanner/backpack-web/bpk-component-chat-notification';
-import TickCircleIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/tick-circle';
+import BpkChatNotification from '@skyscanner-internal/backpack-web/bpk-component-chat-notification';
+import TickCircleIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/tick-circle';
 
 // With icon
 export default () => (
@@ -32,4 +32,3 @@ export const ErrorExample = () => (
 | -------- | ----------- | -------- | ------------- |
 | text     | string      | true     | -             |
 | icon     | FunctionComponent | false    | null          |
-

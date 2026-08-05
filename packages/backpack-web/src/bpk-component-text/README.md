@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```tsx
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <>
@@ -23,8 +23,8 @@ export default () => (
 When using the same style in many places repeating the `textStyle` and `tagName` props can become tedious in this case you can use `withDefaultProps` from `bpk-react-utils`.
 
 ```tsx
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
-import { withDefaultProps } from '@skyscanner/backpack-web/bpk-react-utils';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
+import { withDefaultProps } from '@skyscanner-internal/backpack-web/bpk-react-utils';
 
 const LargeParagraph = withDefaultProps(BpkText, {
   textStyle: 'bodyLongform',
@@ -60,7 +60,7 @@ export default () => (
 Heading `textStyle` should not be confused with heading `tagName` that provide structure for SEO and Accessibility. The weight which is normally applied using `tagName` will be overwritten by the weight defined in the `textStyle`.
 
 ```tsx
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <>
@@ -75,7 +75,7 @@ export default () => (
 For use cases where the new Editorial Larken font is required, there are 3 textStyles available to apply this styling.
 
 ```tsx
-import BpkText, { TEXT_STYLES } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, { TEXT_STYLES } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <BpkText tagName="h1" textStyle={TEXT_STYLES.editorial1}>Editorial 1</BpkText>
@@ -89,7 +89,7 @@ export default () => (
 The `strikethrough` prop renders text with a line through it. It defaults to `false`. When combined with the `color` prop, both the text and the decoration line use the same color, ensuring visual consistency — including in dark mode.
 
 ```tsx
-import BpkText, { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText, { TEXT_COLORS } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <>
@@ -110,7 +110,7 @@ prop or dark mode is used.
 ```tsx
 import BpkText, {
   TEXT_COLORS,
-} from '@skyscanner/backpack-web/bpk-component-text';
+} from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <>
@@ -131,7 +131,7 @@ constrained available width. Invalid `lineClamp` values (zero, negative, non-int
 both props are provided.
 
 ```tsx
-import BpkText from '@skyscanner/backpack-web/bpk-component-text';
+import BpkText from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <div className="text-container">
@@ -153,7 +153,7 @@ The `color` prop allows you to set the text color directly rather override by `c
 ```tsx
 import BpkText, {
   TEXT_COLORS,
-} from '@skyscanner/backpack-web/bpk-component-text';
+} from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default () => (
   <BpkText color={TEXT_COLORS.textSecondary}>

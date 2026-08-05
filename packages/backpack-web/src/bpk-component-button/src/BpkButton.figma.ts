@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A8677
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-button/src/BpkButton.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-button/src/BpkButton.tsx
 // component=BpkButton
 
 import figma from "figma"
@@ -58,8 +58,8 @@ if (figma.selectedInstance.getPropertyValue("Icon") === "Icon only") {
   template = {
     id: "BpkButton",
     imports: [
-      "import LightningIcon from '@skyscanner/backpack-web/bpk-component-icon/sm/lightning';",
-      "import BpkButton from '@skyscanner/backpack-web/bpk-component-button'",
+      "import LightningIcon from '@skyscanner-internal/backpack-web/bpk-component-icon/sm/lightning';",
+      "import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'",
     ],
     example: figma.code`<BpkButton${figma.helpers.react.renderProp(
       "type",
@@ -111,7 +111,7 @@ if (figma.selectedInstance.getPropertyValue("Icon") === "Icon only") {
   template = {
     id: "BpkButton",
     imports: [
-      "import BpkButton from '@skyscanner/backpack-web/bpk-component-button'",
+      "import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'",
     ],
     example: figma.code`<BpkButton${figma.helpers.react.renderProp(
       "type",
@@ -163,7 +163,7 @@ if (figma.selectedInstance.getPropertyValue("Icon") === "Icon only") {
   template = {
     id: "BpkButton",
     imports: [
-      "import BpkButton from '@skyscanner/backpack-web/bpk-component-button'",
+      "import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'",
     ],
     example: figma.code`<BpkButton${figma.helpers.react.renderProp(
       "type",
@@ -215,7 +215,7 @@ if (figma.selectedInstance.getPropertyValue("Icon") === "Icon only") {
   template = {
     id: "BpkButton",
     imports: [
-      "import BpkButton from '@skyscanner/backpack-web/bpk-component-button'",
+      "import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'",
     ],
     example: figma.code`<BpkButton${figma.helpers.react.renderProp(
       "type",
@@ -264,7 +264,7 @@ if (figma.selectedInstance.getPropertyValue("Icon") === "Icon only") {
   template = {
     id: "BpkButton",
     imports: [
-      "import BpkButton from '@skyscanner/backpack-web/bpk-component-button'",
+      "import BpkButton from '@skyscanner-internal/backpack-web/bpk-component-button'",
     ],
     example: figma.code`<BpkButton${figma.helpers.react.renderProp(
       "type",

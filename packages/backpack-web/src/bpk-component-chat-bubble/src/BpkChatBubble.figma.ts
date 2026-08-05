@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=17976-8767
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-chat-bubble/src/BpkChatBubble.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-chat-bubble/src/BpkChatBubble.tsx
 // component=BpkChatBubble
 
 import figma from "figma"
@@ -36,7 +36,7 @@ const content = figma.selectedInstance.findText("chat text").__render__()
 export default {
   id: "BpkChatBubble",
   imports: [
-    "import BpkChatBubble from '@skyscanner/backpack-web/bpk-component-chat-bubble';",
+    "import BpkChatBubble from '@skyscanner-internal/backpack-web/bpk-component-chat-bubble';",
   ],
   example: figma.code`<BpkChatBubble${figma.helpers.react.renderProp(
     "type",

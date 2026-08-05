@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkCheckboxV2 from '@skyscanner/backpack-web/bpk-component-checkbox';
+import BpkCheckboxV2 from '@skyscanner-internal/backpack-web/bpk-component-checkbox';
 ```
 
 ### Simple label
@@ -101,8 +101,8 @@ import {
   BpkCheckboxV2,
   checkboxSelectedColorThemeAttributes,
   checkboxBorderRadiusThemeAttributes,
-} from '@skyscanner/backpack-web/bpk-component-checkbox';
-import BpkThemeProvider from '@skyscanner/backpack-web/bpk-theming';
+} from '@skyscanner-internal/backpack-web/bpk-component-checkbox';
+import BpkThemeProvider from '@skyscanner-internal/backpack-web/bpk-theming';
 
 // Theme colour only
 <BpkThemeProvider

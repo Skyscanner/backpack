@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkTextarea from '@skyscanner/backpack-web/bpk-component-textarea';
+import BpkTextarea from '@skyscanner-internal/backpack-web/bpk-component-textarea';
 
 export default () => (
   <BpkTextarea

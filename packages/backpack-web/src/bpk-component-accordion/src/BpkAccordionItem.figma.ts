@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=15011%3A6079
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-accordion/src/BpkAccordionItem.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-accordion/src/BpkAccordionItem.tsx
 // component=BpkAccordionItem
 
 import figma from "figma"
@@ -31,7 +31,7 @@ const textStyle = figma.selectedInstance.getEnum("Size", {
 export default {
   id: "BpkAccordionItem",
   imports: [
-    "import BpkAccordionItem from '@skyscanner/backpack-web/bpk-component-accordion';",
+    "import BpkAccordionItem from '@skyscanner-internal/backpack-web/bpk-component-accordion';",
   ],
   example: figma.code`<BpkAccordionItem id="accordion-item"${figma.helpers.react.renderProp(
     "title",

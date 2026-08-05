@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkSkipLink from '@skyscanner/backpack-web/bpk-component-skip-link';
+import BpkSkipLink from '@skyscanner-internal/backpack-web/bpk-component-skip-link';
 
 export default () => <BpkSkipLink href="#main" label="Skip to main content" />;
 ```

@@ -13,7 +13,7 @@ Check the main [Readme](https://github.com/Skyscanner/backpack#usage) for a comp
 Use `BpkContextMenu.SaveTrigger` when the trigger should look like a heart-icon save button. It renders a pre-styled circular button owned by Backpack — no extra styling needed from the consumer.
 
 ```jsx
-import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu';
+import BpkContextMenu from '@skyscanner-internal/backpack-web/bpk-component-context-menu';
 
 <BpkContextMenu.Root onSelect={({ value }) => { /* handle selection */ }}>
   <BpkContextMenu.SaveTrigger aria-label="Save to trip" />
@@ -40,7 +40,7 @@ import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu'
 Use `BpkContextMenu.Trigger` when you need a different trigger element. By default it renders a plain `<button>`; pass `asChild` to merge the trigger props onto your own element instead.
 
 ```jsx
-import BpkContextMenu from '@skyscanner/backpack-web/bpk-component-context-menu';
+import BpkContextMenu from '@skyscanner-internal/backpack-web/bpk-component-context-menu';
 
 <BpkContextMenu.Root onSelect={({ value }) => { /* handle selection */ }}>
   <BpkContextMenu.Trigger aria-label="Open options">

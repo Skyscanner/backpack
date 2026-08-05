@@ -23,7 +23,7 @@ Under the hood, this package is implemented as a **facade over a layout system**
 `BpkProvider` must wrap any layout components so that they can resolve Backpack tokens correctly:
 
 ```tsx
-import { BpkProvider } from '@skyscanner/backpack-web/bpk-component-layout';
+import { BpkProvider } from '@skyscanner-internal/backpack-web/bpk-component-layout';
 
 export default function App({ children }) {
   return <BpkProvider>{children}</BpkProvider>;
@@ -40,8 +40,8 @@ import {
   BpkBox,
   BpkProvider,
   BpkSpacing,
-} from '@skyscanner/backpack-web/bpk-component-layout';
-import { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+} from '@skyscanner-internal/backpack-web/bpk-component-layout';
+import { TEXT_COLORS } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 export default function Example() {
   return (
@@ -69,7 +69,7 @@ export default function Example() {
 > ⚠️ **Important:** BpkVessel is a **temporary migration tool**, not a permanent solution.
 
 ```tsx
-import { BpkVessel } from '@skyscanner/backpack-web/bpk-component-layout';
+import { BpkVessel } from '@skyscanner-internal/backpack-web/bpk-component-layout';
 
 export default function Example() {
   return (
@@ -161,7 +161,7 @@ Layout primitives expose this event surface only where the underlying rendered e
 **`color`** – accepts any value from `TEXT_COLORS` (re-exported from `bpk-component-text`):
 
 ```tsx
-import { TEXT_COLORS } from '@skyscanner/backpack-web/bpk-component-text';
+import { TEXT_COLORS } from '@skyscanner-internal/backpack-web/bpk-component-text';
 
 <BpkBox color={TEXT_COLORS.textPrimary}>...</BpkBox>
 <BpkFlex color={TEXT_COLORS.textOnDark}>...</BpkFlex>
@@ -180,7 +180,7 @@ import {
   BACKGROUND_COLORS,
   BpkBox,
   BpkStack,
-} from '@skyscanner/backpack-web/bpk-component-layout';
+} from '@skyscanner-internal/backpack-web/bpk-component-layout';
 
 <BpkBox backgroundColor={BACKGROUND_COLORS.surfaceDefault}>...</BpkBox>
 <BpkStack backgroundColor={BACKGROUND_COLORS.statusSuccessFill}>...</BpkStack>

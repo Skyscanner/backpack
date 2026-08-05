@@ -17,7 +17,7 @@
  */
 
 // url=https://www.figma.com/design/KXf2gHNLDe2cXWUoHl4cTX/Backpack%E2%80%A8Foundations---Components?node-id=10858%3A5938
-// source=https://github.com/Skyscanner/backpack/blob/main/packages/backpack-web/src/bpk-component-badge/src/BpkBadge.tsx
+// source=https://github.com/Skyscanner/design-system/blob/main/packages/backpack-web/src/bpk-component-badge/src/BpkBadge.tsx
 // component=BpkBadge
 
 import figma from "figma"
@@ -37,7 +37,7 @@ const label = figma.selectedInstance.findText("Attribute").__render__()
 export default {
   id: "BpkBadge",
   imports: [
-    "import BpkBadge, { BADGE_TYPES } from '@skyscanner/backpack-web/bpk-component-badge';",
+    "import BpkBadge, { BADGE_TYPES } from '@skyscanner-internal/backpack-web/bpk-component-badge';",
   ],
   example: figma.code`<BpkBadge${figma.helpers.react.renderProp(
     "type",

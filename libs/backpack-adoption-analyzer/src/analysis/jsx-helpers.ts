@@ -36,10 +36,10 @@ export const PARSER_PLUGINS = [
 
 /**
  * Determines if an import source is from the design system.
- * Supports @skyscanner/backpack-web (mirrors ds-analyser).
+ * Supports @skyscanner-internal/backpack-web (mirrors ds-analyser).
  */
 export function isDesignSystemImport(source: string): boolean {
-  return source.startsWith("@skyscanner/backpack-web");
+  return source.startsWith("@skyscanner-internal/backpack-web");
 }
 
 /**

@@ -9,7 +9,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 ## Usage
 
 ```js
-import BpkSectionList, { BpkSectionListSection, BpkSectionListItem } from '@skyscanner/backpack-web/bpk-component-section-list';
+import BpkSectionList, { BpkSectionListSection, BpkSectionListItem } from '@skyscanner-internal/backpack-web/bpk-component-section-list';
 
 export default () => (
   <BpkSectionList>

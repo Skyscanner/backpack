@@ -8,7 +8,7 @@ on:
         required: true
         type: number
       dry_run:
-        description: "Run the full build pipeline without publishing to npm"
+        description: "Run the full build pipeline without publishing to Artifactory"
         required: false
         type: boolean
         default: false
@@ -25,7 +25,7 @@ permissions: {}
 jobs:
   SecurityCheck:
     name: Validate PR and permissions
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     permissions:
       contents: read
       pull-requests: write
@@ -38,18 +38,12 @@ jobs:
           persist-credentials: false
           sparse-checkout: .github/actions
 
-      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        id: app-token
-        with:
-          app-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-
       - name: Validate PR security
         id: validate
         uses: ./.github/actions/pr-security-validation
         with:
           pr_number: ${{ inputs.pr_number }}
-          github_token: ${{ steps.app-token.outputs.token }}
+          github_token: ${{ github.token }}
 
       - name: Add or update starting comment on PR
         if: success()
@@ -57,7 +51,7 @@ jobs:
         with:
           pr_number: ${{ inputs.pr_number }}
           marker: ${{ env.PR_COMMENT_MARKER }}
-          github_token: ${{ steps.app-token.outputs.token }}
+          github_token: ${{ github.token }}
           body: |
             ${{ env.PR_COMMENT_MARKER }}
             ### Dev Release Started
@@ -74,7 +68,7 @@ jobs:
         with:
           pr_number: ${{ inputs.pr_number }}
           marker: ${{ env.PR_COMMENT_MARKER }}
-          github_token: ${{ steps.app-token.outputs.token }}
+          github_token: ${{ github.token }}
           body: |
             ${{ env.PR_COMMENT_MARKER }}
             ### Dev Release Failed
@@ -85,16 +79,17 @@ jobs:
 
   DevRelease:
     name: Build and publish dev release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     # Dry runs do not need maintainer approval because they never publish.
     # Real publishes still go through the Publishing environment so the
-    # backpack-web team approves the npm release. The expression must put
+    # backpack-web team approves the Artifactory release. The expression must put
     # 'Publishing' on the truthy branch — `cond && '' || 'X'` always yields
     # 'X' because '' is falsy in GitHub Actions expressions.
     environment: ${{ !inputs.dry_run && 'Publishing' || '' }}
     needs: [SecurityCheck]
     permissions:
       contents: read
+      id-token: write
     outputs:
       dev_version: ${{ steps.version.outputs.dev_version }}
     steps:
@@ -106,10 +101,13 @@ jobs:
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
 
+      - name: Configure Artifactory credentials
+        uses: skyscanner/configure-artifactory-credentials@7b3605d5461d8e115421d0d206602e927e0afc8a # v2.0.0
+
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version-file: ".nvmrc"
-          registry-url: 'https://registry.npmjs.org'
+          node-version-file: '.nvmrc'
+          registry-url: https://artifactory.skyscannertools.net/artifactory/api/npm/npm/
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -141,19 +139,17 @@ jobs:
 
       # `--ignore-scripts` prevents npm from running prepack / prepare /
       # prepublishOnly / postpack / postpublish hooks from the PR's
-      # package.json with NPM_TOKEN in scope. The published artifact is
+      # package.json with Artifactory credentials in scope. The published artifact is
       # already fully built by the Build step above, so no script needs to
       # run at publish time.
-      - name: Publish dev release to npm
+      - name: Publish dev release to Artifactory
         if: ${{ inputs.dry_run != true }}
         working-directory: packages/backpack-web/dist
         run: npm publish --ignore-scripts --tag dev
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   ReportResults:
     name: Report results on PR
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-2cores
     needs: [SecurityCheck, DevRelease]
     if: always() && needs.SecurityCheck.result == 'success'
     permissions:
@@ -165,12 +161,6 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: .github/actions
-
-      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        id: app-token
-        with:
-          app-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Build comment body
         id: build-body
@@ -195,7 +185,7 @@ jobs:
                 '',
                 `**Version (not published):** \`${process.env.DEV_VERSION}\``,
                 '',
-                'The build completed successfully. No package was published to npm.',
+                'The build completed successfully. No package was published to Artifactory.',
                 '',
                 'Run the workflow again without dry run to publish this version.',
                 '',
@@ -210,12 +200,12 @@ jobs:
                 '',
                 '**Install with:**',
                 '```',
-                `npm install @skyscanner/backpack-web@${process.env.DEV_VERSION}`,
+                `npm install @skyscanner-internal/backpack-web@${process.env.DEV_VERSION}`,
                 '```',
                 '',
                 `You can also use the dev tag to install the latest dev release:`,
                 '```',
-                'npm install @skyscanner/backpack-web@dev',
+                'npm install @skyscanner-internal/backpack-web@dev',
                 '```',
                 '',
                 `Published from commit ${process.env.PR_SHA} by @${context.actor}.`,
@@ -239,4 +229,4 @@ jobs:
           pr_number: ${{ inputs.pr_number }}
           marker: ${{ env.PR_COMMENT_MARKER }}
           body: ${{ steps.build-body.outputs.body }}
-          github_token: ${{ steps.app-token.outputs.token }}
+          github_token: ${{ github.token }}

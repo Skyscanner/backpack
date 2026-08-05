@@ -24,7 +24,7 @@ import figma from "figma"
 export default {
   id: "BpkInsetBanner",
   imports: [
-    "import { BpkInsetBanner } from '@skyscanner/backpack-web/bpk-component-inset-banner';",
+    "import { BpkInsetBanner } from '@skyscanner-internal/backpack-web/bpk-component-inset-banner';",
   ],
   example: figma.code`<BpkInsetBanner />`,
 }

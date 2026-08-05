@@ -12,7 +12,7 @@ Check the main [Readme](https://github.com/skyscanner/backpack#usage) for a comp
 import {
   BpkComparisonTray,
   BpkComparisonTable,
-} from '@skyscanner/backpack-web/bpk-component-comparison-table';
+} from '@skyscanner-internal/backpack-web/bpk-component-comparison-table';
 ```
 
 ## Components

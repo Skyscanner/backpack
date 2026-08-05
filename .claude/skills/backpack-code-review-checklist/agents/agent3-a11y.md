@@ -11,7 +11,7 @@ and test compliance. Return issues as JSON.
 
 **PR mode:**
 ```bash
-gh pr diff [NUMBER] --repo Skyscanner/backpack -- '*.ts' '*.tsx'
+gh pr diff [NUMBER] --repo Skyscanner/design-system -- '*.ts' '*.tsx'
 ```
 **Local mode:**
 ```bash
@@ -37,7 +37,7 @@ Only flag issues that are **visible in the changed lines**. Do not speculatively
 For each `packages/backpack-web/src/bpk-component-*/` directory that appears in the changed files list,
 verify that an `accessibility-test.tsx` exists in that directory:
 ```bash
-gh api repos/Skyscanner/backpack/contents/packages/[COMPONENT_DIR] \
+gh api repos/Skyscanner/design-system/contents/packages/[COMPONENT_DIR] \
   --jq '[.[].name] | map(select(. == "accessibility-test.tsx")) | length'
 ```
 Flag if missing. This applies to both new and existing components — Phase 3 will score this at 100 (NON-NEGOTIABLE, Constitution IV).
