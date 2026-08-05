@@ -51,11 +51,18 @@ jobs:
             .nx/cache/
           key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
 
-      - name: Create build cache
-        if: ${{ steps.storybook-dist-cache.outputs.cache-hit != 'true' }}
+      - name: Build Storybook when cache is unavailable or incomplete
         run: |
-          pnpm run build
-          pnpm run storybook:dist
+          if [ ! -f libs/backpack-storybook-host/dist-storybook/index.html ]; then
+            pnpm run build
+            pnpm run storybook:dist
+          fi
+
+      - name: Upload Storybook preview artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: storybook-preview
+          path: libs/backpack-storybook-host/dist-storybook/
 
   Build:
     permissions:
@@ -70,36 +77,8 @@ jobs:
       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
 
-  Upload-Storybook-Preview:
-    runs-on: ubuntu-latest-2cores
-    needs: [Create-Build-Cache]
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-        with:
-          persist-credentials: false
-
-      - name: Restore Storybook cache
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        id: storybook-dist-cache
-        with:
-          path: |
-            libs/backpack-storybook-host/dist-storybook/
-            .nx/cache/
-          key: ${{ env.BUILD_CACHE_NAME }}-${{ hashFiles('packages/backpack-web/**', 'libs/backpack-storybook-utils/**', 'libs/backpack-storybook-host/**') }}
-
-      - name: Verify Storybook preview is available
-        run: test -f libs/backpack-storybook-host/dist-storybook/index.html
-
-      - name: Upload Storybook preview artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: storybook-preview
-          path: libs/backpack-storybook-host/dist-storybook/
-
   Publish-Storybook-Preview:
-    needs: [Upload-Storybook-Preview]
+    needs: [Create-Build-Cache]
     permissions:
       contents: read
       id-token: write
