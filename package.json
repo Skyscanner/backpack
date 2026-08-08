@@ -125,7 +125,7 @@
     "@nx/jest": "22.7.1",
     "@nx/js": "22.7.1",
     "@nx/react": "22.7.1",
-    "@nx/storybook": "22.7.1",
+    "@nx/storybook": "23.1.0",
     "@nx/webpack": "22.7.1",
     "@percy/cli": "^1.31.0",
     "@percy/storybook": "^9.1.0",
